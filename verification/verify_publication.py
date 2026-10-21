@@ -24,6 +24,9 @@ from urllib.parse import unquote, urlsplit
 import zipfile
 
 EXPECTED_YEARS = {2023: 114, 2024: 237, 2025: 351, 2026: 349}
+ATLAS_ARCHIVE_NAME = 'Mathematics_Atlas_2023_2026_Source_Bundle.zip'
+ATLAS_ARCHIVE_SIZE = 22147097
+ATLAS_ARCHIVE_SHA256 = '69e639d10f90a50180dcee289d31f0a405cafb882705f1813a53c3cf56046475'
 TEXT_SUFFIXES = {'.py', '.js', '.json', '.md', '.html', '.htm', '.csv', '.tsv', '.txt', '.yml', '.yaml', '.toml', '.ini', '.cfg', '.sha256'}
 # Runtime paths in sealed historical receipts are portability notes, not secrets.
 PATTERNS = {
@@ -170,6 +173,46 @@ def archive_audit(audit: Audit, archive: Path, annual: Path, year: int, expected
         audit.check(not mirrors, f'Public annual root preserves sealed files: {year}', {'mismatches': mirrors})
 
 
+def resolve_atlas_download(audit: Audit, root: Path, temporary_root: Path):
+    """Accept the identical full ZIP, or strictly verify/reassemble raw parts.
+
+    The expected original byte count and SHA-256 are fixed, not trusted solely
+    from the delivery index. Reassembly never writes into the public repository.
+    """
+    full=root/'downloads'/ATLAS_ARCHIVE_NAME
+    if full.is_file():
+        valid=full.stat().st_size==ATLAS_ARCHIVE_SIZE and sha256_file(full)==ATLAS_ARCHIVE_SHA256
+        audit.check(valid,'Full atlas source archive has exact delivery bytes',{'size':full.stat().st_size,'expected_size':ATLAS_ARCHIVE_SIZE,'expected_sha256':ATLAS_ARCHIVE_SHA256})
+        return full if valid else None
+    folder=root/'downloads/atlas-source-parts';index=folder/'parts.json'
+    if not audit.check(index.is_file(),'Atlas source archive available as full ZIP or indexed raw parts'):
+        return None
+    try:
+        data=load(index)
+        valid=(data.get('filename')==ATLAS_ARCHIVE_NAME and type(data.get('size')) is int and data['size']==ATLAS_ARCHIVE_SIZE and data.get('sha256')==ATLAS_ARCHIVE_SHA256 and isinstance(data.get('parts'),list) and bool(data['parts']))
+        if not audit.check(valid,'Split atlas delivery index has exact archive identity'):
+            return None
+        output=temporary_root/ATLAS_ARCHIVE_NAME;digest=hashlib.sha256();total=0;seen=set();details=[]
+        with output.open('wb') as assembled:
+            for part in data['parts']:
+                name=part['filename'];size=part['size'];expected=part['sha256']
+                if not isinstance(name,str) or name in seen or type(size) is not int or not 0<size<=ATLAS_ARCHIVE_SIZE or not isinstance(expected,str) or not re.fullmatch(r'[0-9a-f]{64}',expected):
+                    raise ValueError('Invalid or duplicated raw-part record')
+                seen.add(name);path=contained(folder,name)
+                if not path.is_file() or path.stat().st_size!=size or sha256_file(path)!=expected:
+                    raise ValueError('Raw-part size or SHA-256 mismatch')
+                with path.open('rb') as source:
+                    for chunk in iter(lambda:source.read(1024*1024),b''):
+                        assembled.write(chunk);digest.update(chunk);total+=len(chunk)
+                details.append({'filename':name,'size':size,'sha256':expected})
+        exact=total==ATLAS_ARCHIVE_SIZE and digest.hexdigest()==ATLAS_ARCHIVE_SHA256
+        audit.check(exact,'Reassembled atlas ZIP is byte-identical to full archive',{'size':total,'sha256':digest.hexdigest(),'parts':details,'destination':'temporary directory only'})
+        return output if exact else None
+    except (OSError,ValueError,KeyError,TypeError) as error:
+        audit.check(False,'Atlas raw-part reconstruction',{'error_type':type(error).__name__,'reason':str(error)})
+        return None
+
+
 def delivered_archive_audit(audit: Audit, archive: Path, component: Path):
     """Validate a downloadable atlas/research bundle against its public tree."""
     if not audit.check(archive.is_file(), 'Downloadable source bundle exists: '+audit.rel(archive)):
@@ -196,7 +239,7 @@ def delivered_archive_audit(audit: Audit, archive: Path, component: Path):
         audit.check(bool(count) and not errors,'Download bundle matches expanded component: '+archive.name,{'files':count,'errors':errors})
 
 
-def privacy_scan(audit: Audit, archives=True):
+def privacy_scan(audit: Audit, archives=True, extra_archives=()):
     findings = []
     scanned = 0
     archive_seen = set()
@@ -249,6 +292,9 @@ def privacy_scan(audit: Audit, archives=True):
                 scan_bytes(rel, path.read_bytes(), historical=rel.startswith(('compendium/', 'research/')))
             elif archives and path.suffix.lower() == '.zip':
                 scan_zip(rel, path.read_bytes())
+    if archives:
+        for label,path in extra_archives:
+            scan_zip(label,path.read_bytes())
     critical = [f for f in findings if f['classification'] == 'review']
     audit.check(not critical, 'No Library identifiers/helpers or credential material in public payload', {'text_members_scanned': scanned, 'review_findings': critical})
     notes = [f for f in findings if f['classification'] == 'note']
@@ -392,7 +438,9 @@ def main():
         sealed=atlas_root/'sources'/f'{year}_Mathematics_Source_Bundle.zip'
         download=root/'downloads'/sealed.name
         audit.check(download.is_file() and sealed.is_file() and sha256_file(download)==sha256_file(sealed),f'Annual download equals atlas source archive: {year}')
-    delivered_archive_audit(audit,root/'downloads/Mathematics_Atlas_2023_2026_Source_Bundle.zip',atlas_root)
+    atlas_delivery_temporary=tempfile.TemporaryDirectory(prefix='publication-atlas-delivery-')
+    atlas_download=resolve_atlas_download(audit,root,Path(atlas_delivery_temporary.name))
+    if atlas_download is not None:delivered_archive_audit(audit,atlas_download,atlas_root)
     delivered_archive_audit(audit,root/'downloads/Nonlinear_Hamiltonian_Partners_Source_Bundle.zip',hamiltonian)
     atlas = None
     atlas_path = atlas_root/'data/atlas.json'
@@ -413,14 +461,16 @@ def main():
         record=load(redactions)
         for name,item in record.get('archives',{}).items():
             for relative in item.get('public_locations',[]):
-                path=contained(root,relative)
-                audit.check(path.is_file() and sha256_file(path)==item['public_derivative_sha256'],'Documented public-derivative hash: '+relative)
+                is_atlas_delivery=(relative=='downloads/'+ATLAS_ARCHIVE_NAME or item.get('reassembled_filename')=='downloads/'+ATLAS_ARCHIVE_NAME)
+                path=atlas_download if is_atlas_delivery else contained(root,relative)
+                audit.check(path is not None and path.is_file() and sha256_file(path)==item['public_derivative_sha256'],'Documented public-derivative hash: '+relative)
         for relative,digest in record.get('canonical_mathematical_payloads_unchanged',{}).items():
             path=contained(root,relative)
             audit.check(path.is_file() and sha256_file(path)==digest,'Documented unchanged mathematical payload: '+relative)
         audit.check(record.get('occurrences_redacted')==2 and record.get('identifier_values_recorded') is False,'Redaction provenance records counts without identifier values')
     documentation_links(audit, components)
-    privacy = privacy_scan(audit, archives=not args.skip_archive_privacy_scan)
+    extra_archives=[('downloads/atlas-source-parts (reassembled atlas ZIP)',atlas_download)] if atlas_download is not None else []
+    privacy = privacy_scan(audit, archives=not args.skip_archive_privacy_scan,extra_archives=extra_archives)
     if args.skip_archive_privacy_scan:
         audit.warn('Nested ZIP privacy scan was explicitly omitted; archive manifests and source equality were still checked.')
     replay = []
@@ -451,6 +501,7 @@ def main():
         args.output.parent.mkdir(parents=True,exist_ok=True)
         args.output.write_text(rendered,encoding='utf-8')
     print(rendered,end='')
+    atlas_delivery_temporary.cleanup()
     return 0 if not audit.failures else 1
 
 

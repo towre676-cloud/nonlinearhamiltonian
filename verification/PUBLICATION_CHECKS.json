@@ -1,7 +1,7 @@
 {
   "status": "passed",
   "date": "2026-10-21",
-  "scope": "Final public artifact audit plus six completed top-level mathematical replays. Annual suites ran once each in disposable copies; atlas used --skip-annual; Hamiltonian ran once. Later staging additions were navigation/readable derivatives and the final metadata audit was rerun without repeating mathematical suites.",
+  "scope": "Final split-delivery public artifact audit plus six completed top-level mathematical replays. Annual suites ran once each in disposable copies; atlas used --skip-annual; Hamiltonian ran once. Splitting changed no archive bytes or mathematical payloads. The original six replay results are preserved, and the final metadata audit was refreshed without repeating mathematical suites.",
   "source_counts": {
     "main_treatments": 1051,
     "supplementary_treatments": 14,
@@ -268,7 +268,56 @@
         "status": "passed"
       },
       {
-        "check": "Downloadable source bundle exists: downloads/Mathematics_Atlas_2023_2026_Source_Bundle.zip",
+        "check": "Atlas source archive available as full ZIP or indexed raw parts",
+        "status": "passed"
+      },
+      {
+        "check": "Split atlas delivery index has exact archive identity",
+        "status": "passed"
+      },
+      {
+        "check": "Reassembled atlas ZIP is byte-identical to full archive",
+        "status": "passed",
+        "details": {
+          "size": 22147097,
+          "sha256": "69e639d10f90a50180dcee289d31f0a405cafb882705f1813a53c3cf56046475",
+          "parts": [
+            {
+              "filename": "Mathematics_Atlas_2023_2026_Source_Bundle.zip.part001",
+              "size": 4194304,
+              "sha256": "16745dcee30db6fead4f4ebcd4c19cbfb7a5b1aaff490a268fe05e7fac291c09"
+            },
+            {
+              "filename": "Mathematics_Atlas_2023_2026_Source_Bundle.zip.part002",
+              "size": 4194304,
+              "sha256": "679440134ed844d8edaf6fda6c606194e8ae33d06ea12bdb68939f3fbc610e7e"
+            },
+            {
+              "filename": "Mathematics_Atlas_2023_2026_Source_Bundle.zip.part003",
+              "size": 4194304,
+              "sha256": "eb2bdfc02c8a3563c60973dad1ca82c2c02e58e0969f1034845aac67087a7cba"
+            },
+            {
+              "filename": "Mathematics_Atlas_2023_2026_Source_Bundle.zip.part004",
+              "size": 4194304,
+              "sha256": "c211186ac5c3b6ea5f652e7996863fcfc45d724c88147576649f40606712969b"
+            },
+            {
+              "filename": "Mathematics_Atlas_2023_2026_Source_Bundle.zip.part005",
+              "size": 4194304,
+              "sha256": "348833663eb88d89c62365342717b174fa1e0acd46667160b136996343ae7934"
+            },
+            {
+              "filename": "Mathematics_Atlas_2023_2026_Source_Bundle.zip.part006",
+              "size": 1175577,
+              "sha256": "ab066b36b68fd80feffa14af032e97b4b922763cca9455e0b8b44a28d4c32e7a"
+            }
+          ],
+          "destination": "temporary directory only"
+        }
+      },
+      {
+        "check": "Downloadable source bundle exists: Mathematics_Atlas_2023_2026_Source_Bundle.zip",
         "status": "passed"
       },
       {
@@ -398,7 +447,7 @@
         "status": "passed"
       },
       {
-        "check": "Documented public-derivative hash: downloads/Mathematics_Atlas_2023_2026_Source_Bundle.zip",
+        "check": "Documented public-derivative hash: downloads/atlas-source-parts/parts.json",
         "status": "passed"
       },
       {
@@ -440,7 +489,7 @@
         "check": "No Library identifiers/helpers or credential material in public payload",
         "status": "passed",
         "details": {
-          "text_members_scanned": 2717,
+          "text_members_scanned": 2720,
           "review_findings": []
         }
       }
@@ -672,28 +721,28 @@
             "historical": true
           },
           {
-            "path": "downloads/Mathematics_Atlas_2023_2026_Source_Bundle.zip!Mathematics_Atlas_2023_2026/RESULTS.json",
+            "path": "downloads/atlas-source-parts (reassembled atlas ZIP)!Mathematics_Atlas_2023_2026/RESULTS.json",
             "category": "runtime_path_note",
             "matches": 1,
             "classification": "note",
             "historical": true
           },
           {
-            "path": "downloads/Mathematics_Atlas_2023_2026_Source_Bundle.zip!Mathematics_Atlas_2023_2026/domains/analysis/visual_review.json",
+            "path": "downloads/atlas-source-parts (reassembled atlas ZIP)!Mathematics_Atlas_2023_2026/domains/analysis/visual_review.json",
             "category": "runtime_path_note",
             "matches": 26,
             "classification": "note",
             "historical": true
           },
           {
-            "path": "downloads/Mathematics_Atlas_2023_2026_Source_Bundle.zip!Mathematics_Atlas_2023_2026/domains/geometry/visual_review.json",
+            "path": "downloads/atlas-source-parts (reassembled atlas ZIP)!Mathematics_Atlas_2023_2026/domains/geometry/visual_review.json",
             "category": "runtime_path_note",
             "matches": 24,
             "classification": "note",
             "historical": true
           },
           {
-            "path": "downloads/Mathematics_Atlas_2023_2026_Source_Bundle.zip!Mathematics_Atlas_2023_2026/domains/probability/visual_review.json",
+            "path": "downloads/atlas-source-parts (reassembled atlas ZIP)!Mathematics_Atlas_2023_2026/domains/probability/visual_review.json",
             "category": "runtime_path_note",
             "matches": 24,
             "classification": "note",
@@ -924,28 +973,28 @@
           "historical": true
         },
         {
-          "path": "downloads/Mathematics_Atlas_2023_2026_Source_Bundle.zip!Mathematics_Atlas_2023_2026/RESULTS.json",
+          "path": "downloads/atlas-source-parts (reassembled atlas ZIP)!Mathematics_Atlas_2023_2026/RESULTS.json",
           "category": "runtime_path_note",
           "matches": 1,
           "classification": "note",
           "historical": true
         },
         {
-          "path": "downloads/Mathematics_Atlas_2023_2026_Source_Bundle.zip!Mathematics_Atlas_2023_2026/domains/analysis/visual_review.json",
+          "path": "downloads/atlas-source-parts (reassembled atlas ZIP)!Mathematics_Atlas_2023_2026/domains/analysis/visual_review.json",
           "category": "runtime_path_note",
           "matches": 26,
           "classification": "note",
           "historical": true
         },
         {
-          "path": "downloads/Mathematics_Atlas_2023_2026_Source_Bundle.zip!Mathematics_Atlas_2023_2026/domains/geometry/visual_review.json",
+          "path": "downloads/atlas-source-parts (reassembled atlas ZIP)!Mathematics_Atlas_2023_2026/domains/geometry/visual_review.json",
           "category": "runtime_path_note",
           "matches": 24,
           "classification": "note",
           "historical": true
         },
         {
-          "path": "downloads/Mathematics_Atlas_2023_2026_Source_Bundle.zip!Mathematics_Atlas_2023_2026/domains/probability/visual_review.json",
+          "path": "downloads/atlas-source-parts (reassembled atlas ZIP)!Mathematics_Atlas_2023_2026/domains/probability/visual_review.json",
           "category": "runtime_path_note",
           "matches": 24,
           "classification": "note",
@@ -1214,5 +1263,19 @@
   },
   "output_path_normalization": "Disposable runtime directory prefixes in captured suite output were replaced by the corresponding repository component path. Mathematical values, statuses and scoped assertions are unchanged. Original captured receipts remain retained outside the public repository.",
   "repository_manifest_phase": "The repository-wide MANIFEST.sha256 is generated after this receipt. The final verifier invocation checks it without changing this receipt.",
-  "claim_scope": "Integrity and source coverage plus the scoped finite/exact/numerical checks implemented by the delivered suites. This is not fresh historical transcript retrieval, formal proof-kernel certification of all prose, or a rerun of absent historical research inputs."
+  "claim_scope": "Integrity and source coverage plus the scoped finite/exact/numerical checks implemented by the delivered suites. This is not fresh historical transcript retrieval, formal proof-kernel certification of all prose, or a rerun of absent historical research inputs.",
+  "delivery_form": {
+    "status": "passed",
+    "atlas_archive_filename": "Mathematics_Atlas_2023_2026_Source_Bundle.zip",
+    "size": 22147097,
+    "sha256": "69e639d10f90a50180dcee289d31f0a405cafb882705f1813a53c3cf56046475",
+    "parts_index": "downloads/atlas-source-parts/parts.json",
+    "raw_parts": 6,
+    "verification": "Every part and reconstructed archive checked by exact size/SHA-256 before the unchanged ZIP-manifest, expanded-component, provenance and recursive-disclosure checks. Reassembly occurred only in a temporary directory.",
+    "additional_branch_checks": [
+      "full ZIP accepted with exact bytes",
+      "all six raw parts reconstructed byte-identically",
+      "incorrect index archive hash rejected"
+    ]
+  }
 }
