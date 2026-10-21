@@ -1,0 +1,134 @@
+{
+  "scope": "M057–M077",
+  "checks": [
+    {
+      "id": "M057",
+      "name": "Cauchy averaging characteristic function",
+      "status": "pass",
+      "detail": "For five sample sizes and five frequencies, φ(t/n)^n=φ(t) to numerical precision; P(|X̄|≤1)=1/2 for the standard Cauchy law. Distributional proof is in the entry."
+    },
+    {
+      "id": "M058",
+      "name": "Jordan-block transient formula",
+      "status": "pass",
+      "detail": "Exact rational multiplication verifies A^n=a^n I+n a^(n−1)bN for n=1,…,15; a=1/2,b=4 gives one-step norm amplification √65/2 from e₂."
+    },
+    {
+      "id": "M059",
+      "name": "Block-energy accounting",
+      "status": "pass",
+      "detail": "Disjoint row energies 5+25=30; repeating the first row gives 35, exactly the predicted multiplicity overcount."
+    },
+    {
+      "id": "M060",
+      "name": "Probability versus amplitude weighting",
+      "status": "pass",
+      "detail": "Exact rational arithmetic yields 13, 37/4 and variance 3/4 for the specified two-point example."
+    },
+    {
+      "id": "M061",
+      "name": "Covariance Gram matrix",
+      "status": "pass",
+      "detail": "The two-point law gives Σ=[[1,2],[2,4]], determinant zero, and exact null combination 2X−Y."
+    },
+    {
+      "id": "M062",
+      "name": "PSD quadratic programs and nonnegative KKT certificate",
+      "status": "pass",
+      "detail": "Exact examples give positive-definite minimum 4/5, rank-one constant objective 1, unconstrained value 5/6 at (7/6,−1/6), and constrained value 1 with KKT dual slack (0,2)."
+    },
+    {
+      "id": "M063",
+      "name": "Amplitude damping Kraus channel",
+      "status": "pass",
+      "detail": "Kraus completeness, trace, positivity and semigroup composition verified on the stated qubit examples and five damping parameters; q=1/4 gives determinant 3/64."
+    },
+    {
+      "id": "M064",
+      "name": "Exponential target-time correction",
+      "status": "pass",
+      "detail": "Real crossing 32767.109878086045; first integer crossing 32768; continuous-rate comparison 32758.920830185452."
+    },
+    {
+      "id": "M065",
+      "name": "Gradient-flow coordinate transport",
+      "status": "pass",
+      "detail": "A scaled coordinate change with transported mobility K̃=SSᵀ reproduces the similarity-transformed generator exactly; quadratic energy dissipation is nonpositive."
+    },
+    {
+      "id": "M066",
+      "name": "Bessel residual",
+      "status": "pass",
+      "detail": "The incomplete two-coordinate projection has exact residual squared norm 36, while total norm squared is 49 and measured coefficient energy is 13."
+    },
+    {
+      "id": "M067",
+      "name": "Young inequality and sharp equality",
+      "status": "pass",
+      "detail": "p=3,q=3/2,a=2,b=4 attains equality; a finite nonnegative grid satisfies the inequality."
+    },
+    {
+      "id": "M068",
+      "name": "Distinct matrix norms",
+      "status": "pass",
+      "detail": "The example has ||A||₁=||A||∞=3, ||A||F=√6, and ||A||₂=1+√2, satisfying the singular-value comparison."
+    },
+    {
+      "id": "M069",
+      "name": "Exact Lyapunov certificate",
+      "status": "pass",
+      "detail": "P has positive leading minors and AᵀP+PA=−I exactly, even though V=xᵀx has derivative 4 at (1,1)."
+    },
+    {
+      "id": "M070",
+      "name": "Einstein-equation dimensional exponents",
+      "status": "pass",
+      "detail": "G_N c⁻⁴ times stress-energy has dimension vector (0,−2,0), matching curvature in the stated length-coordinate frame."
+    },
+    {
+      "id": "M071",
+      "name": "Newtonian normalization factor",
+      "status": "pass",
+      "detail": "Trace reversal contributes 1/2 to the dust 00 source; matching the Poisson coefficient 4π yields 8π. Differential geometry derivation and conventions are in the entry."
+    },
+    {
+      "id": "M072",
+      "name": "Component and canonical counts",
+      "status": "pass",
+      "detail": "Symmetric 4×4 display has 10 independent components; the regular vacuum canonical count leaves 4 phase variables, or 2 configuration polarizations, after four first-class constraints."
+    },
+    {
+      "id": "M073",
+      "name": "FLRW continuity exponents",
+      "status": "pass",
+      "detail": "ε∝a⁻³ for dust and ε∝a⁻⁴ for radiation satisfy the stated continuity equation; a doubling gives factors 8 and 16."
+    },
+    {
+      "id": "M074",
+      "name": "Finite-rank closure illustration only",
+      "status": "pass",
+      "detail": "V₂∈V₃ but P(V₂)=V₃∉V₃, illustrating why a finite rank cutoff is not the required universe closure. Existence of inaccessible cardinals is not computationally verified or asserted."
+    },
+    {
+      "id": "M075",
+      "name": "Partition counts and discrete continuum energy",
+      "status": "pass",
+      "detail": "S(4,2)=7 versus 3 contiguous partitions. For θ=x² on [0,1], exact rational energies equal 2/3−1/(6N²) for N=1,…,29."
+    },
+    {
+      "id": "M076",
+      "name": "Exact frame conversion and speed",
+      "status": "pass",
+      "detail": "The rational 3/5,4/5 rotation preserves squared norm 1 for forward input and squared norm 2 for raw diagonal input."
+    },
+    {
+      "id": "M077",
+      "name": "Periodic two-band dispersion and gap",
+      "status": "pass",
+      "detail": "The minimum squared band magnitude is (|t₁|−|t₂|)² across five signed hopping examples; (2,1) has bands ±3 at k=0, ±1 at k=π and gap 2."
+    }
+  ],
+  "check_count": 21,
+  "all_passed": true,
+  "method": "Exact rational arithmetic where possible; explicit floating-point checks otherwise; proofs and conditional scope in entries.json."
+}

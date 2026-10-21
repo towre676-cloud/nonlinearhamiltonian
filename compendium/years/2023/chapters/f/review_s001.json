@@ -1,0 +1,8 @@
+{
+  "reviewed": [
+    "S001"
+  ],
+  "blocking_issues": 0,
+  "issues": [],
+  "assessment": "The scalar finite-realization/Hankel-rank/forward-recurrence theorem and proof are correct. The first r Krylov columns and observation rows are independent in the reachable-observable scalar quotient; their square product is therefore the invertible leading r×r Hankel block. Finite nilpotent transients and the zero-sequence convention are correctly addressed. The explicit determinant-one example and aliasing example are correct."
+}

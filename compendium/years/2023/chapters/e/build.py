@@ -1,0 +1,282 @@
+from pathlib import Path
+import json
+P=Path(__file__).parent
+entries=[]
+def add(id,title,summary,definitions,name,statement,proof,setup,calculation,conclusion,limits,extension,refs=()):
+ entries.append(dict(id=id,title=title,status='Developed classical result with worked example',summary=summary,definitions=definitions,result=dict(name=name,statement=statement,proof=proof),example=dict(setup=setup,calculation=calculation,conclusion=conclusion),limits=limits,extension=extension,references=[dict(label=a,url=b) for a,b in refs]))
+
+add('M078','Residual energy and exact Gaussian calibration',
+'The original squared-deviation formula becomes useful once its units, reference model and covariance are specified. A squared residual is a geometric discrepancy. An entropy is a functional of a probability distribution. Neither name determines the other.',
+['Let r=X−μ∈Rᵈ. The raw residual energy is E=rᵀr. If Σ is a specified positive-definite covariance, the whitened discrepancy is Q=rᵀΣ⁻¹r.','Here μ and Σ are known constants under the null model, rather than estimates obtained from the same observations.'],
+'Whitened Gaussian discrepancy',
+'If X has multivariate normal distribution N(μ,Σ) with Σ positive definite, then Q has the χ² distribution with d degrees of freedom. Consequently E[Q]=d and Var(Q)=2d. The unweighted E generally depends on the coordinate units.',
+'Factor Σ=LLᵀ with L invertible and put Z=L⁻¹r. The change-of-variables formula gives independent standard normal coordinates Z₁,…,Z_d. Then Q=ZᵀZ=ΣZᵢ². Its moment-generating function is the product (1−2t)^(−d/2), obtained by completing the square in each one-dimensional Gaussian integral. Differentiation at zero gives the stated moments. Changing the scale of one coordinate changes E but is canceled by the corresponding covariance transformation in Q.',
+'Take r=(1,2) and Σ=diag(1,4).',
+'The raw residual is E=1+4=5. Whitening gives Z=(1,1), so Q=2. If both coordinates are expressed in ten times larger numerical units, r becomes (10,20) and Σ becomes diag(100,400); E becomes 500, whereas Q remains 2.',
+'The standardized discrepancy is dimensionless and has an exact reference distribution under the declared Gaussian null. It has not thereby become Shannon entropy.',
+'Estimating means, regression coefficients or covariance from the same sample changes the null distribution. In ordinary known-variance linear regression, orthogonal projection gives n−p residual degrees of freedom; estimated covariance can instead lead to F or other statistics. Nonnormal residuals need separate calibration.',
+'Study how Q changes under covariance uncertainty by bounding it between eigenvalue-controlled quadratic forms. This produces an honest robustness interval rather than assigning an entropy interpretation to a residual.');
+
+add('M079','The chain rule as a statement about local linear maps',
+'The derivative is the linear part of a local approximation. The chain rule composes these linear parts and tracks their domains; a secant slope or a scalar symbol does not replace a multivariable derivative.',
+['For differentiable g:Rᵐ→Rⁿ and f:Rⁿ→Rᵏ, Dg(x):Rᵐ→Rⁿ and Df(g(x)):Rⁿ→Rᵏ are linear maps.','Differentiability means g(x+h)=g(x)+Dg(x)h+o(||h||), with the remainder small relative to ||h||.'],
+'Typed chain rule',
+'D(f∘g)(x)=Df(g(x))Dg(x). If a scalar F has Hessian operator norm at most M along the segment from x to x+h, its linearization remainder is at most M||h||²/2.',
+'Insert the differentiability expansion of g into the expansion of f at g(x). Since g(x+h)−g(x)=O(||h||), the outer remainder is o(||h||). The coefficient of h is exactly the displayed composition. For the second statement, integrate the directional derivative along the segment twice; the second integral is ∫₀¹(1−t)hᵀH_F(x+th)h dt, whose absolute value is bounded by M||h||²/2.',
+'Let g(u,v)=(u²+v,eᵘ) and f(a,b)=ab, so F(u,v)=(u²+v)eᵘ.',
+'Dg=[[2u,1],[eᵘ,0]], while Df(g)=[eᵘ,u²+v]. Multiplication gives DF=[eᵘ(2u+u²+v),eᵘ]. At (1,2), DF=(5e,e). Direct differentiation of F gives the same row vector and therefore independently checks the composition order.',
+'A perturbation (h₁,h₂) changes F to first order by 5eh₁+eh₂. The two inputs have different sensitivities; one scalar slope would omit that distinction.',
+'The Hessian remainder bound requires a neighborhood with a uniform bound. A pointwise derivative alone supplies no global finite-step error estimate. Nondifferentiable coordinate changes need different calculus.',
+'For a long computation, propagate both Jacobians and explicit remainder bounds. This distinguishes a mathematically controlled sensitivity estimate from an uncalibrated finite-difference plot.');
+
+add('M080','Graph heat flow and the stability of a discrete gradient step',
+'Heat evolution and gradient descent share a variational structure after choosing a metric and boundary conditions. Their discrete stability restrictions come from the spectrum of the actual discretized operator.',
+['Let L be a symmetric positive-semidefinite graph Laplacian and E(x)=xᵀLx/2.','Continuous heat evolution is ẋ=−Lx. A forward Euler step is x⁺=(I−ηL)x. The constant vector is in the kernel when L is an ordinary graph Laplacian.'],
+'Spectral energy decrease',
+'Continuous evolution satisfies dE/dt=−||Lx||². A discrete step is nonexpansive in Euclidean norm for every x exactly when 0≤η≤2/λ_max, assuming λ_max>0; the same interval makes E nonincreasing. Strict decay on every positive eigenspace holds for the explicit open interval 0<η<2/λ_max; η=0 produces no decay.',
+'Choose an orthonormal eigenbasis Lqᵢ=λᵢqᵢ and write x=Σcᵢqᵢ. Continuous coefficients are cᵢ(t)=e^(−λᵢt)cᵢ(0). For the step, cᵢ⁺=(1−ηλᵢ)cᵢ. Thus ||x⁺||²−||x||²=Σ[(1−ηλᵢ)²−1]cᵢ². This is nonpositive for every coefficient vector precisely when every factor has magnitude at most one. Multiplying each term by λᵢ/2 proves the energy version. Also 1ᵀx⁺=1ᵀx, so mass is preserved independently of decay.',
+'Use the four-cycle Laplacian with eigenvalues 0,2,2,4.',
+'For η=0.4, the update factors are 1,0.2,0.2,−0.6, hence every nonconstant mode contracts. For η=0.6, the largest-frequency factor is −1.4 and that mode grows. The equilibrium constant mode remains unchanged in both cases.',
+'A large time step can turn a dissipative differential equation into an unstable numerical scheme. Continuous dissipation alone cannot certify the discretization.',
+'Energy monotonicity does not imply positivity of each coordinate. Positivity of forward Euler is governed by entrywise update weights and can require a smaller bound. Nonsymmetric operators require a different argument.',
+'Compare forward, backward and exponential steps for a common graph, recording preservation of mass, positivity and decay separately.');
+
+add('M081','Exact exponent arithmetic before approximation',
+'Very large magnitudes are best handled by separating an exact exponent from a modest mantissa. That separation avoids overflow and makes errors in scale immediately visible.',
+['Scientific notation writes a positive number as a×10ᵏ with 1≤a<10.','Relative error for an approximation ỹ to y≠0 is |ỹ−y|/|y|. A decimal logarithm adds log₁₀a to the exponent.'],
+'Square-root normalization',
+'For an integer m and a>0, √(a×10^(2m))=√a×10ᵐ. For the recovered expression, √(5×10^54004)=√5×10^27002 exactly.',
+'Both factors on the right are positive, and squaring gives 5×10^(2×27002), which is the original radicand. Uniqueness of the positive square root completes the proof. If an exponent is odd, move one factor of 10 into the mantissa before taking the square root; there is no need to evaluate the enormous number itself.',
+'Approximate the exact answer by 10^27002, or instead retain eleven significant mantissa digits.',
+'The exact logarithm is 27002+(log₁₀5)/2. Omitting √5 gives relative error 1−1/√5≈0.5527864045, over 55 percent. Keeping 2.2360679775 as mantissa gives a small rounding error whose size can be bounded by squaring rational decimal endpoints around √5. The old comparison with 25,000×10^50,000 differs by tens of thousands of decimal orders.',
+'An order-of-magnitude summary and a numerical approximation answer different questions. Stating the exact exponent costs essentially no extra computation.',
+'Exponent manipulations assume the usual positive real square root. Complex powers require a branch convention, and expressions with uncertain exponents need interval propagation rather than a single rounded exponent.',
+'Use rational interval endpoints for the mantissa and retain an integer exponent in all later products, quotients and roots. This gives a small certificate that can be replayed without arbitrary-precision libraries.');
+
+add('M082','Competing response laws and identifiable parameters',
+'A named empirical law is a family of fitted functions with a domain and an error model. A rigorous mathematical comparison first asks whether the parameters and competing shapes can be distinguished at all.',
+['For x>0, a power response is y=axᵇ with a>0. Its logarithm is log y=α+b log x, α=log a.','An additive Gaussian model for y and an additive Gaussian model for log y imply different likelihoods. Hick-type logarithmic response models use a different independent variable and cannot be substituted without defining the experiment.'],
+'Two-point identifiability in the noiseless power family',
+'For two distinct positive inputs x₁≠x₂ and positive outputs, there is a unique power-law interpolant: b=log(y₂/y₁)/log(x₂/x₁) and a=y₁/x₁ᵇ. This identifies a family member, not the truth of the family.',
+'Taking logarithms makes the problem a two-equation linear system with design rows (1,log x₁) and (1,log x₂). Its determinant log(x₂/x₁) is nonzero, so the solution is unique. A third input is therefore already an opportunity to reject the noiseless family rather than simply refit its two parameters. Under noise, a likelihood and uncertainty model are needed; logging observations changes the effective error structure.',
+'Consider synthetic observations at x=1,2,4 with y=3,12,48.',
+'The first two pairs give b=2 and a=3. The third output predicted by the same parameters is 3×4²=48. If the third output were 45, the exact interpolation claim would fail. A measurement error model would decide whether that discrepancy is tolerable; the name of the law cannot decide it.',
+'The example supplies a clear algebraic diagnostic without asserting any real psychophysical mechanism.',
+'Three agreeing points do not establish extrapolation, uniqueness among all functional families, or a causal explanation. Fitting and evaluating on the same observations measures interpolation.',
+'Compare out-of-sample log likelihoods or explicitly bounded approximation errors for power, logarithmic and saturating families, with the same observation protocol and parameter accounting.');
+
+add('M083','Tensor order and matrix rank are different invariants',
+'A second-order tensor may be represented by a matrix, but its order is not the number of nonzero eigenvalues. A dyadic decomposition adds a third meaning of rank that needs a stated field and symmetry convention.',
+['For a real matrix A, rank(A) is the dimension of its image. A rank-one dyad uvᵀ maps x to u(vᵀx).','For a real symmetric A, the spectral theorem gives an orthonormal eigenbasis and A=Σλᵢvᵢvᵢᵀ. Negative coefficients are permitted in this signed decomposition.'],
+'Minimal dyadic count for a symmetric matrix',
+'The minimum number of unrestricted real rank-one matrix summands is rank(A). A symmetric matrix has a signed symmetric dyadic representation with exactly that many nonzero terms. A decomposition into positive-weight vvᵀ terms exists only for positive-semidefinite A.',
+'The image of a sum of r rank-one maps is contained in the span of their r output vectors, so its rank is at most r. Therefore at least rank(A) summands are necessary. The spectral theorem supplies exactly rank(A) nonzero signed symmetric dyads. Finally every sum Σcᵢvᵢvᵢᵀ with cᵢ≥0 has nonnegative quadratic form, so an indefinite matrix cannot possess such a decomposition.',
+'Let A=diag(−2,0,3).',
+'Its tensor order is two, its matrix rank is two, and its signed dyadic decomposition is −2e₁e₁ᵀ+3e₃e₃ᵀ. At e₁ the quadratic form equals −2, excluding any sum of positive dyads. Replacing the zero entry by ε≠0 changes rank to three even when ||A_ε−A||₂=|ε| is arbitrarily small.',
+'Exact rank is discontinuous at a rank-deficient matrix; numerical effective rank requires a declared threshold and noise scale.',
+'These conclusions concern matrices. Higher-order tensor rank, symmetric rank and border rank are different problems, and a matrix spectral decomposition does not solve them.',
+'Study a noisy matrix through singular-value intervals and separate exact algebraic rank from a tolerance-dependent approximation rank.');
+
+add('M084','Directional cancellation as a limited shearlet illustration',
+'A useful entry point to shearlets is to show why a directional high-pass filter can avoid wasting coefficients along a straight edge. This finite calculation illustrates a mechanism, not a theorem of universal representation superiority.',
+['An anisotropic dilation can be A_a=diag(a,√a), and a shear S_s=[[1,s],[0,1]]. A normalized analyzing function has form a^(−3/4)ψ(A_a⁻¹S_s⁻¹(x−t)).','The factor a^(−3/4) preserves the L² norm because det A_a=a^(3/2). A full shearlet frame additionally requires a designed generator, sampling and frame bounds.'],
+'Exact cancellation along a discrete straight edge',
+'For the finite binary image F(i,j)=1[j≥i], the tangent difference F(i+1,j+1)−F(i,j) vanishes wherever both samples exist. The horizontal difference F(i+1,j)−F(i,j) is nonzero on the diagonal.',
+'Adding one to both i and j preserves the inequality j≥i, so the tangent statement follows pointwise. Holding j fixed while increasing i by one changes the truth value exactly when j=i. Thus a coordinate direction aligned with the edge recognizes a coherent geometric feature that an unaligned difference repeatedly crosses. The normalization formula follows separately from a change of variables in the L² integral.',
+'Use a 16×16 sample grid and compare valid interior differences.',
+'All 225 tangent differences are zero. Among the 240 valid horizontal differences, 15 are nonzero. Reversing or rotating the edge changes which directional operator cancels, so the favorable orientation is part of the setup. A separable wavelet can itself be extremely sparse for an axis-aligned edge.',
+'The calculation validates an orientation mechanism and its restrictions. It does not compare complete reconstruction errors, coefficient budgets or full shearlet and wavelet systems.',
+'Nearly optimal approximation theorems concern specified cartoon-like regularity classes and particular frames. They are not established by this image experiment and do not extend to every signal.',
+'Implement matched complete transforms and plot best-N-term reconstruction errors under a declared edge model, coefficient budget and boundary convention.',
+[('Kutyniok, Lemvig and Lim, Shearlets and Optimally Sparse Approximations','https://arxiv.org/abs/1106.1325')] )
+
+add('M085','A fully normalized spin one-half Wigner representation',
+'The spin phase space is a sphere, and its kernel and measure must be chosen together. For a qubit the complete reconstruction can be derived from elementary spherical moments, including the appearance of negative quasiprobabilities.',
+['Write A=a₀I+a·σ, with Pauli matrices σ=(σ_x,σ_y,σ_z). For Hermitian A, the four coefficients are real.','Choose Δ(n)=(I+√3 n·σ)/2 for unit n∈S² and measure dμ=dΩ/(2π), whose total mass is two. Define W_A(n)=Tr(AΔ(n)).'],
+'Self-dual reconstruction and trace pairing',
+'W_A(n)=a₀+√3a·n, A=∫W_A(n)Δ(n)dμ and Tr(AB)=∫W_AW_Bdμ. For a density matrix ρ=(I+r·σ)/2, ∫W_ρdμ=1 even though W_ρ need not be nonnegative.',
+'Use Trσ_i=0 and Tr(σ_iσ_j)=2δ_ij. The spherical moments are ∫1dμ=2, ∫n_idμ=0 and ∫n_in_jdμ=(2/3)δ_ij. Substitution gives the symbol immediately. Expanding W_AΔ and integrating leaves a₀I+a·σ. Expanding W_AW_B gives 2a₀b₀+2a·b, exactly Tr(AB). These calculations also fix the measure normalization; using dΩ/(4π) without changing other factors would break reconstruction.',
+'Take the pure spin-up state r=(0,0,1).',
+'Its symbol is W(n)=(1+√3n_z)/2, with minimum (1−√3)/2<0 at the south pole. The six directions ±e_x,±e_y,±e_z with weights 1/3 each reproduce all required spherical moments exactly, so the reconstruction and trace identity can be checked by a six-point sum.',
+'Negativity is compatible with reconstruction because Δ(n) is not a positive measurement effect. Treating W as an ordinary probability density would lose this distinction.',
+'This derivation concerns spin one-half and a specific self-dual convention. Higher-spin kernels have more multipoles, and changing conventions changes constants and symbol products.',
+'Derive the induced star product from matrix multiplication and study its finite spherical-harmonic content before comparing it with a flat Moyal product.',
+[('Tilma and coauthors, Wigner Functions for Arbitrary Quantum Systems','https://arxiv.org/abs/1601.07772'),('Rundle and Everitt, Overview of phase-space quantum mechanics','https://arxiv.org/abs/2102.11095')])
+
+add('M086','Exact polynomial Moyal products',
+'On polynomial symbols the Moyal exponential terminates, so one can verify noncommutativity and associativity with exact arithmetic rather than relying on an informal infinite series.',
+['For canonical coordinates (q,p), let B=←∂_q→∂_p−←∂_p→∂_q and define f⋆g=Σₙ≥₀(iℏ/2)ⁿBⁿ(f,g)/n!.','For polynomials only finitely many differentiated terms survive. The corresponding formal-series definition can be used beyond polynomials without claiming analytic convergence.'],
+'Canonical commutator and classical limit',
+'q⋆p−p⋆q=iℏ. More generally the antisymmetrized product divided by iℏ equals the Poisson bracket plus terms of formal order ℏ². The product is associative in the polynomial or formal setting.',
+'At first order q⋆p=qp+iℏ/2 and p⋆q=pq−iℏ/2; higher derivatives vanish. Interchanging f and g changes the sign of B, so only odd n contribute to the commutator. After division by iℏ, the n=1 term is the Poisson bracket and the next possible term has order ℏ². For associativity, introduce three tensor factors. The constant-coefficient bidifferential operators B₁₂, B₁₃ and B₂₃ commute. Either parenthesization is ordinary multiplication after exp[(iℏ/2)(B₁₂+B₁₃+B₂₃)], establishing equality.',
+'Set ℏ=1 and take f=q², g=p².',
+'The finite expansion gives q²⋆p²=q²p²+2iqp−1/2, while p²⋆q²=q²p²−2iqp−1/2. Their commutator is 4iqp, agreeing with i times {q²,p²}=4qp. The verifier also compares both parenthesizations for a family of low-degree monomials with rational complex coefficients.',
+'The example checks a finite, exact algebra. It requires no discretized phase-space grid and therefore has no grid-resolution error.',
+'Formal associativity does not prove convergence of the Moyal series for arbitrary smooth functions. Trace-integral identities require integrability and boundary conditions; polynomial symbols on the full plane are usually not integrable.',
+'Specify a Schwartz-class or other analytic symbol space and prove continuity or trace properties there, keeping that analysis separate from the formal calculation.',
+[('Lizzi and Vitale, Matrix Bases for Star Products','https://sigma-journal.com/2014/086/')])
+
+add('M087','A spectral definition of fractional quantum evolution',
+'A fractional differential symbol becomes a definite evolution only after specifying its self-adjoint operator, domain and boundary convention. A periodic box gives an explicit example with no ambiguous boundary prescription.',
+['On the circle of length 2π, use normalized Fourier modes e_n(x)=e^(inx)/√(2π). For α>0, define (−Δ)^(α/2)e_n=|n|^αe_n.','Take ℏ=1 and H=D_α(−Δ)^(α/2) with D_α>0. Its domain consists of coefficients satisfying Σ|n|^(2α)|c_n|²<∞.'],
+'Unitary fractional evolution on the circle',
+'The solution of iψ_t=Hψ is ψ(t)=Σc_ne^(−itD_α|n|^α)e_n. It preserves the L² norm and the spectral energy wherever that expectation is finite. The case α=2 recovers the usual quadratic dispersion with D₂=1/(2m) in ℏ=1 units.',
+'The Fourier transform is unitary from L² of the circle to ℓ²(Z). Under it H is multiplication by the real nonnegative sequence D_α|n|^α on its maximal domain, hence self-adjoint. Exponentiation multiplies each coefficient by a complex number of modulus one. Parseval therefore gives ||ψ(t)||²=Σ|c_n|². Multiplying by the same unchanged spectral weights proves energy conservation for states in the form domain.',
+'Choose D_α=1, α=3/2 and ψ(0)=(e₀+e₁+e₂)/√3.',
+'The three energies are 0,1,2√2. The coefficients at time t are (1,e^(−it),e^(−i2√2t))/√3, so their squared magnitudes still sum to one. At α=2 the energies become 0,1,4; this is a change in dispersion, not a change of normalization.',
+'The finite-mode example can be replayed exactly at the spectral level and numerically in physical space.',
+'On an interval, spectral, restricted and regional fractional Laplacians are generally different operators. This periodic calculation does not choose among them or validate a physical interpretation for every α.',
+'Compare two explicitly defined bounded-domain operators using the same initial data and observable, and distinguish operator-domain effects from fractional-order effects.',
+[('Nick Laskin, Fractional Schrodinger equation','https://arxiv.org/abs/quant-ph/0206098')])
+
+add('M088','Lagrange identity and its equality geometry',
+'The finite-dimensional identity is an exact decomposition of the Cauchy–Schwarz deficit. An operator boundary identity sharing the same historical name is a separate theorem with separate domains.',
+['For a,b∈Rⁿ, define the antisymmetric coordinate minors m_ij=a_i b_j−a_j b_i.','The exterior product a∧b has squared norm Σ_{i<j}m_ij² in the orthonormal exterior basis.'],
+'Lagrange identity',
+'||a||²||b||²−(a·b)²=Σ_{i<j}(a_i b_j−a_j b_i)². Equality in Cauchy–Schwarz holds exactly when all these minors vanish, equivalently when the two vectors are linearly dependent.',
+'Expand the right-hand side and rewrite the sum over i<j as one half of the sum over all ordered pairs. The squared terms contribute Σ_i a_i²Σ_j b_j². The cross terms contribute −Σ_ij a_i a_j b_i b_j=−(a·b)². If a≠0 and every minor vanishes, select an index i with a_i≠0. The identities a_i b_j=a_j b_i give b=(b_i/a_i)a. If a=0, dependence is immediate.',
+'Let a=(1,2,3), b=(2,−1,4).',
+'Their squared norms are 14 and 21, and their dot product is 12, giving 294−144=150. The three minors are −5,−2,11, whose squares sum to 25+4+121=150. In three dimensions this is also ||a×b||².',
+'The identity quantifies the area spanned by two vectors; it does not itself introduce a field equation or an elasticity model.',
+'For complex vectors the Hermitian inner product and absolute squares must be used. Green or Lagrange identities for differential operators introduce integration by parts, boundary traces and domain assumptions not present here.',
+'For a stated PDE operator, derive its own boundary pairing and use the finite-dimensional inequality only at the particular algebraic step where it is applicable.');
+
+add('M089','Winding number and Gauss–Bonnet with boundaries explicit',
+'Topological charges are attached to specified spaces and deformation classes. Winding number and Euler characteristic are both invariant quantities, but they are not interchangeable measurements of a generic defect.',
+['For a closed C¹ loop z:[0,2π]→C∖{0}, the winding number is w=(1/(2πi))∫z′(t)/z(t)dt.','For a closed oriented smooth surface, Gauss–Bonnet states ∫K dA=2πχ. A surface with boundary needs a boundary-geodesic-curvature term and possible corner contributions.'],
+'Integer winding and homotopy stability',
+'The displayed winding integral is an integer and remains unchanged during a continuous homotopy of loops that avoids zero. Passing through zero removes the hypothesis that protects the invariant.',
+'Lift the argument along the parameter interval: z(t)=r(t)e^(iθ(t)) with r>0 and continuous θ. Then z′/z=r′/r+iθ′ wherever derivatives exist. The radial integral vanishes because r has equal endpoints. Since the loop closes, θ(2π)−θ(0) is an integer multiple of 2π. Under a zero-avoiding homotopy, the resulting winding is continuous in the homotopy parameter and integer-valued, hence constant. Smooth approximation extends the argument to continuous loops.',
+'Use z(t)=e^(3it), and separately use a round sphere of radius R.',
+'For the loop, z′/z=3i and the winding is three. For the sphere, K=R⁻² and area=4πR², so the curvature integral is 4π and χ=2. A flat disk has zero interior curvature but χ=1; its circular boundary contributes 2π, demonstrating why the closed-surface formula cannot simply be reused.',
+'Each calculation answers a specific topological question and exhibits its own necessary boundary condition.',
+'Winding depends on a chosen omitted point or target circle. Gauss–Bonnet requires sufficient regularity and the correct boundary terms. Neither invariant completely classifies arbitrary spaces or dynamical defects.',
+'Construct a one-parameter family that crosses a zero and calculate the jump in winding; separately examine a surface family where a topology change destroys smooth-manifold hypotheses.');
+
+add('M090','An explicit marked-torus deformation',
+'A torus supplies a complete elementary setting in which deformation parameters, marking, Beltrami coefficient and dilatation can all be written down. This replaces the old undefined sum of named geometric quantities.',
+['For τ in the upper half-plane, the marked complex torus is C/(Z+τZ). The marking identifies the two chosen lattice generators with a fixed reference basis.','A quasiconformal map has f_z̄=μf_z with |μ|<1 almost everywhere. For a real-linear orientation-preserving map its maximal dilatation is K=(1+|μ|)/(1−|μ|).'],
+'Rectangular torus stretch',
+'The map F(x+iy)=x+iby from the square marked torus to the rectangular marked torus of parameter ib has μ=(1−b)/(1+b) and K=max(b,1/b), for b>0. It realizes the classical torus Teichmüller distance |log b|/2.',
+'Since x=(z+z̄)/2 and iy=(z−z̄)/2, F=((1+b)/2)z+((1−b)/2)z̄. Thus F_z=(1+b)/2, F_z̄=(1−b)/2 and the coefficient follows. The real singular values are 1 and b, giving the same K as their ratio. For optimality among maps in the marking class, the standard extremal-length distortion bound applied to horizontal and vertical curve families gives K at least max(b,1/b); this affine map attains it. The extremal-length bound is the classical geometric input, not a consequence merely of the algebraic derivative calculation.',
+'Set b=2.',
+'The map doubles the vertical period, has μ=−1/3 and K=2. Its Teichmüller distance is (log2)/2. Replacing b by 1/2 reverses the stretch and has the same distance. Changing the marking by an integer modular transformation is a separate quotient operation.',
+'Every number in this example has a defined geometric role, unlike an arbitrary linear combination of unrelated invariants.',
+'The affine torus formula does not classify extremal maps of higher-genus surfaces. Teichmüller space and the moduli-space quotient should not be identified.',
+'For a specified higher-genus surface, choose a quadratic differential and formulate the associated deformation with its normalization and marking retained.',
+[('Howard Masur, Teichmuller geometry of moduli space','https://www.math.uchicago.edu/~masur/handbook1.pdf')])
+
+add('M091','Certified first logistic-map period doublings',
+'The first two bifurcation parameters can be obtained algebraically, so they provide exact calibration points before any numerical Feigenbaum-ratio experiment.',
+['Let f_r(x)=rx(1−x), with r in [0,4] and x in [0,1]. A period-k orbit is stable when the absolute value of the derivative of f_r^k along it is less than one.','A flip bifurcation is detected when this multiplier passes through −1, subject to the usual nondegeneracy conditions.'],
+'First two flip thresholds',
+'The nonzero fixed point x*=1−1/r loses linear stability at r₁=3. The genuine two-cycle, existing for r>3, has multiplier m₂=−r²+2r+4 and is stable for 3<r<1+√6. At r₂=1+√6 the multiplier crosses −1 transversely; the classical flip theorem applies and produces the standard supercritical period-four branch.',
+'At the fixed point, f′_r(x*)=r−2r(1−1/r)=2−r, so its stability interval is 1<r<3. Dividing f_r²(x)−x by the fixed-point factor leaves the two-cycle quadratic r²x²−r(r+1)x+(r+1). Its roots are x_±=(r+1±√((r−3)(r+1)))/(2r), giving multiplier −r²+2r+4 by their sum and product. The equation m₂=−1 selects r₂=1+√6, with derivative −2√6≠0. To check the flip nondegeneracy rather than infer birth from the multiplier alone, let g=f_r² near one cycle point. The logistic Schwarzian is Sf=−6/(1−2x)², and Sg=(Sf∘f)(f′)²+Sf<0 on the threshold cycle, where both first derivatives are nonzero. At g′=−1, the cubic normal-form coefficient is g‴/6+(g″)²/4=−Sg/6>0. Transversality and this positive coefficient are the hypotheses of the classical supercritical flip theorem. The algebra verifies those hypotheses; the local bifurcation theorem is classical input.',
+'Certify the second threshold using rational decimal endpoints.',
+'Squaring 2.449489742783178 and 2.449489742783179 as exact fractions brackets six. Therefore 3.449489742783178<r₂<3.449489742783179. At r=3.2 the multiplier is 0.16; at r=3.5 it is −1.25, independently locating stability and instability.',
+'The first low-order thresholds are now exact benchmarks, not points inferred from a bifurcation picture.',
+'Two thresholds do not estimate the asymptotic Feigenbaum constant reliably. Universality is a theorem with hypotheses, not an inference from any finite list of ratios. Higher-period orbit equations require root isolation and exclusion of lower periods.',
+'Isolate subsequent flip parameters with interval arithmetic, verify minimal period, and report rigorous intervals for successive scaling ratios rather than bare decimal limits.',
+[('Yuri Kuznetsov, Elements of Applied Bifurcation Theory, flip theorem','https://www.ma.imperial.ac.uk/~dturaev/kuznetsov.pdf')]);
+
+add('M092','Parameter loci, orbit closures and dissipative flows',
+'Pictures of the Mandelbrot set, a logistic bifurcation diagram and a Lorenz trajectory refer to different mathematical spaces. Defining the plotted object prevents geometric resemblance from being mistaken for a common theorem.',
+['For z₀=0 and zₙ₊₁=zₙ²+c, the Mandelbrot set is the set of parameters c whose critical orbit remains bounded.','The Lorenz vector field is ẋ=σ(y−x), ẏ=x(ρ−z)−y, ż=xy−βz. Its state space is R³; σ,ρ,β are separate parameters.'],
+'Escape and volume contraction are different tests',
+'For the quadratic family, an orbit point with |z|>max(2,|c|) grows without bound. For positive Lorenz parameters the divergence is the constant −σ−1−β<0, so volume transported by a smooth local flow contracts exponentially. Volume contraction alone does not prove chaos.',
+'The triangle inequality gives |z²+c|≥|z|²−|c|. If |z|>max(2,|c|), then |z|²−|c|>|z|²−|z|>|z|. The same inequality persists and gives eventual unbounded growth. For the flow, the diagonal derivatives are −σ,−1,−β. Liouville’s formula for the derivative flow gives det DΦ_t=exp(−(σ+1+β)t) while the solution exists. This controls transported volume, not orbit separation in every direction.',
+'Compare c=0, c=−1 and c=1, and compare the Lorenz divergence at σ=10,β=8/3.',
+'The critical orbit for c=0 stays zero. For c=−1 it alternates 0,−1. For c=1 it begins 0,1,2,5 and then escapes by the criterion. The Lorenz volume factor is exp(−41t/3), regardless of ρ; this cannot alone distinguish periodic from chaotic parameter regimes.',
+'A bounded critical orbit and a contracting state-space volume are statements about different objects and require different evidence.',
+'A finite run without detected escape does not certify Mandelbrot membership. Negative divergence does not imply a strange attractor, positive Lyapunov exponent or a complete global existence theorem.',
+'Use rigorous escape certificates or validated trapping regions for individual questions, and label parameter space separately from state space in every visualization.');
+
+add('M093','Convex conjugates with their actual domains',
+'A Legendre–Fenchel transform is a supremum over a declared domain. Solving a derivative equation is sufficient only after boundary and finiteness cases are checked.',
+['For an extended-real function f:R→R∪{+∞}, f*(p)=sup_x(px−f(x)). A domain restriction is encoded by f=+∞ outside the domain.','Fenchel’s inequality says f(x)+f*(p)≥px. Equality holds exactly when p is a subgradient of a closed proper convex f at x.'],
+'Quadratic and exponential conjugates',
+'For k>0, f(x)=kx² on R gives f*(p)=p²/(4k). Restricting to x≥0 gives f*(p)=max(p,0)²/(4k). For f(x)=eˣ, f*(p)=p logp−p if p>0, f*(0)=0 and f*(p)=+∞ if p<0.',
+'Complete the square: px−kx²=p²/(4k)−k(x−p/(2k))². On the half-line, the interior optimizer is feasible only if p≥0; otherwise the maximum is at x=0. For the exponential, differentiating gives eˣ=p, so p>0 has the unique maximizer x=logp. If p=0, the supremum of −eˣ is zero but is approached only as x→−∞. If p<0, sending x→−∞ makes px−eˣ diverge to +∞. These cases prove the complete extended-real formula.',
+'Take k=2 and p=−4.',
+'On the full line the maximizer is x=−1 and the conjugate value is 2. On x≥0, the maximizer is x=0 and the value is zero. The same stationary equation cannot be used unchanged in both domains. For eˣ at p=0, no finite maximizer exists despite a finite conjugate value.',
+'The example distinguishes finite supremum, attainment and an interior critical point.',
+'Biconjugacy f**=f requires f to be proper, lower semicontinuous and convex; otherwise f** gives the appropriate closed convex envelope rather than recovering arbitrary input data.',
+'Develop a multivariable constrained example using normal cones and KKT conditions, recording both primal feasibility and dual equality as the certificate.');
+
+add('M094','The CHSH bound and a finite-sample test',
+'The mathematical content of a Bell test begins with a probability model and a clear null hypothesis. A violation claim needs a sampling argument in addition to a formal inequality.',
+['A deterministic local assignment specifies A₀,A₁,B₀,B₁∈{−1,1}. Shared randomness makes a convex mixture of such assignments when settings are independent of that randomness.','The CHSH expression is S=E[A₀B₀]+E[A₀B₁]+E[A₁B₀]−E[A₁B₁]. In its uniformly sampled game version, a trial wins when A_xB_y=(−1)^(xy).'],
+'Classical bound and an iid tail certificate',
+'Every local model with measurement independence obeys |S|≤2, equivalently game success probability at most 3/4. For independent identically distributed trials under this null, P(ŵ≥3/4+ε)≤exp(−2nε²).',
+'For a deterministic assignment, S=A₀(B₀+B₁)+A₁(B₀−B₁). Exactly one bracket is zero and the other is ±2, so S=±2. Convex averaging preserves the bound. Uniform setting probabilities give w=1/2+S/8. For the finite-sample statement, wins are independent variables in [0,1] with mean at most 3/4, and Hoeffding’s inequality supplies the displayed one-sided tail. Exhausting the sixteen deterministic assignments independently verifies the algebraic bound.',
+'Suppose n=1000 independent uniformly sampled trials have observed win fraction 0.80.',
+'Here ε=0.05, so the upper bound on the null tail is exp(−5)≈0.00673795. This calculation uses the declared iid sampling and measurement-independence assumptions; it is not a p-value for an unspecified physical dataset.',
+'The finite count, the null model and the test statistic are all explicit, making the strength and limitations of the evidence assessable.',
+'Adaptive devices, memory, nonuniform settings, missing detections or postselection require revised statistical reasoning and may alter the applicable null. Metaphysical conclusions do not follow from the probability algebra alone.',
+'Replace the iid assumption by a clearly specified sequential local model and use a valid supermartingale test without discarding trials.');
+
+add('M095','An exact free resolution and a separate geometric blowup',
+'A free resolution records relations among polynomial generators. A resolution of singularities changes a geometric space by a birational morphism. The two constructions can inform one another but their outputs and correctness criteria are different.',
+['Let R=k[x,y] and I=(x²,xy,y²). Define d₀:R³→I by d₀(a,b,c)=ax²+bxy+cy².','Let d₁:R²→R³ have columns s₁=(−y,x,0) and s₂=(0,−y,x). With grading, the complex is 0→R(−3)²→R(−2)³→I→0.'],
+'A minimal graded free resolution of I',
+'The displayed complex is exact, and its entries lie in the homogeneous maximal ideal, so it is minimal as a graded free resolution.',
+'First d₀s₁=d₀s₂=0. Suppose ax²+bxy+cy²=0. Reducing modulo x gives c≡0 modulo x, so c=xc₁. Dividing by x gives ax+by+c₁y²=0. Reducing modulo y gives a≡0 modulo y; write a=−ya₁. Then b=xa₁−yc₁. Thus (a,b,c)=a₁s₁+c₁s₂, proving equality of image and kernel. If u s₁+v s₂=0, the first coordinate gives yu=0 and the last gives xv=0, so u=v=0 because R is a domain. This proves injectivity. The standard graded minimality criterion applies since no differential entry is a unit.',
+'Compare the plane cusp y²=x³ over a field of characteristic zero.',
+'In the blowup chart y=xv, the total transform is x²(v²−x)=0. The strict transform v²−x=0 is smooth because its derivative with respect to x is −1. Its parametrization x=v²,y=v³ gives the familiar normalization map. It remains tangent to the exceptional divisor x=0; a normal-crossings embedded resolution requires further work.',
+'The syzygy calculation proves exactness of a module complex. The blowup calculation proves smoothness of a strict transform in the relevant chart. Neither should be described as the other.',
+'The one-chart cusp example is not a general resolution algorithm or a completed embedded normal-crossings calculation. Schreyer methods do not automatically supply the geometric blowup data.',
+'Construct a separate certificate for each stage of an embedded resolution, including exceptional multiplicities and intersection behavior.',
+[('Singular official tutorial, free resolutions and Schreyer methods','https://www.singular.uni-kl.de/ftp/pub/Math/Singular/doc/tutor.pdf')])
+
+add('M096','A complete two-dimensional toric subdivision',
+'A rational cone contains enough combinatorial data to detect and resolve a simple affine toric singularity. The lattice, primitive generators and subdivision must be specified rather than inferred from a picture.',
+['Use N=Z² and the cone σ generated by v₀=(1,0),v₂=(1,2). A full-dimensional two-dimensional cone is regular when its primitive ray generators form a lattice basis.','The affine toric variety is Spec C[σ∨∩M], where M is the dual lattice. Subdividing a cone without changing its support defines a proper birational toric morphism.'],
+'Regular subdivision of an index-two cone',
+'The original cone has determinant two and is singular. Adding the primitive ray v₁=(1,1) divides it into two determinant-one cones, giving a smooth toric surface mapping properly and birationally to the original affine surface.',
+'The determinant det(v₀,v₂)=2 is the index of their generated sublattice. The adjacent determinants det(v₀,v₁)=det(v₁,v₂)=1, so both charts have ray bases of N and are smooth. The fan has the same support and agrees with the original torus, establishing properness and birationality by the standard toric fan criterion. The dual semigroup is generated by (0,1),(1,0),(2,−1), with the relation (0,1)+(2,−1)=2(1,0). Hence the original coordinate ring is C[u,v,w]/(uw−v²), whose gradient vanishes at the origin.',
+'Calculate the determinant and ring descriptions directly.',
+'The defining polynomial F=uw−v² has gradient (w,−2v,u), so the only complex singular point is the origin. Each subdivided chart is a polynomial two-variable chart because its ray basis is unimodular. The exceptional curve records the new ray and is contracted by the toric morphism.',
+'This supplies a full combinatorial smoothness certificate for this fan and a concrete algebraic model of the singular target.',
+'A determinant test at one cone does not establish smoothness of every cone in a larger fan. Properness depends on support and fan compatibility, not only local determinants.',
+'Implement a two-dimensional subdivision certificate that checks primitive rays, angular ordering, unchanged support and determinant one for every resulting cone.');
+
+add('M097','Hodge numbers constrained by geometry',
+'A Hodge diamond is meaningful only after choosing a cohomology theory and geometric hypotheses. Smooth projective complex examples provide exact checks of both the numbers and their symmetries.',
+['For a smooth projective complex variety X, h^(p,q)=dim H^q(X,Ω_X^p) and b_k=Σ_{p+q=k}h^(p,q).','For a smooth connected projective complex curve of genus g, the only nonzero Hodge numbers are h^(0,0)=h^(1,1)=1 and h^(1,0)=h^(0,1)=g.'],
+'Curve and product examples',
+'A genus-g curve has Betti numbers (1,2g,1) and Euler characteristic 2−2g. For P¹×P¹ the nonzero Hodge numbers are h^(0,0)=h^(2,2)=1 and h^(1,1)=2, giving Euler characteristic four.',
+'For curves, holomorphic one-forms have dimension g, and complex conjugation gives the antiholomorphic dimension g. Connectedness and orientation give the degree-zero and degree-two classes. Summing along diagonals proves the Betti numbers. For P¹, the Hodge polynomial is 1+uv. The Künneth formula for the product gives (1+uv)²=1+2uv+u²v², from which all displayed Hodge numbers follow. Their alternating total agrees with the product of the two sphere Euler characteristics.',
+'Use an elliptic curve and a smooth plane quintic.',
+'At g=1, the elliptic curve has Betti numbers (1,2,1) and χ=0. A smooth plane curve of degree d has genus (d−1)(d−2)/2 by adjunction; at d=5 this gives g=6, hence Betti numbers (1,12,1) and χ=−10. This also independently diagnoses the earlier confusion between a plane quintic curve and a quintic Calabi–Yau threefold.',
+'The numbers are linked by proven geometric structure, rather than predicted merely from a name or a numerical pattern.',
+'Singular, nonproper or non-Kähler examples require modified statements; ordinary pure Hodge symmetries cannot be assumed unchanged. Numerical estimates are not exact Hodge-number certificates.',
+'For a specified smooth hypersurface, compute its relevant graded Jacobian pieces and reconcile the resulting Hodge numbers with independent Euler and symmetry checks.');
+
+add('M098','A rational parametrization and a nonexistence certificate',
+'Finding many points and proving a point set complete are different achievements. Elementary conics already show how parametrization, integer constraints and local obstructions lead to distinct certificates.',
+['For an equation X defined over Q, X(Q) is the rational point set, X(Z) the integral point set and X(F_p) a reduction over a finite field when defined.','Clearing denominators in a rational point yields a primitive integer tuple; primitivity must be retained in divisibility arguments.'],
+'Two conic certificates',
+'Every rational point of x²+y²=1 except (−1,0) is x=(1−t²)/(1+t²), y=2t/(1+t²) for t∈Q. The conic x²+y²=3 has no rational point.',
+'For the circle, draw the line y=t(x+1) through (−1,0). Substitution factors out the known intersection and yields the displayed second point. Conversely, for a rational circle point with x≠−1, t=y/(x+1) is rational and reconstructs the point, proving completeness. For x²+y²=3, a rational point would yield primitive integers a,b,c with a²+b²=3c². Modulo three, squares are zero or one; their sum can be zero only when a and b are divisible by three. Substituting a=3a₁,b=3b₁ gives c²=3(a₁²+b₁²), so c is also divisible by three, contradicting primitivity.',
+'Set t=2 for the parametrized circle.',
+'This gives x=−3/5,y=4/5 and verifies the equation exactly. By contrast no finite search is needed for the second conic: the divisibility contradiction rules out every rational denominator at once. Its lack of integer points also follows from squares modulo four, but that easier integer argument alone would not automatically prove the rational statement.',
+'A complete parametrization and a nonexistence proof are both finite certificates, though of different kinds.',
+'Local solvability is not a general guarantee of global rational solvability for arbitrary varieties. A bounded search with no point is not itself a nonexistence theorem.',
+'Choose a higher-degree curve and state exactly which global theorem or height bound would turn a point search into a complete result.');
+
+add('M099','A typed glossary that prevents invalid compositions',
+'A useful glossary is attached to one mathematical argument. Recording domains, codomains, fields and adjoints prevents expressions that look symbolic but cannot be composed or interpreted consistently.',
+['Use F:R²→R, g:R³→R², DF(g(x)):R²→R and Dg(x):R³→R². Their composition DF(g(x))Dg(x):R³→R is well typed.','Over C, Aᵀ denotes transpose and A† conjugate transpose. They serve different bilinear and Hermitian pairings.'],
+'Type correctness and positivity are substantive conditions',
+'The matrix product rule requires the inner dimensions to match. A complex squared norm is z†z, not zᵀz. The latter can vanish for a nonzero vector, so substituting transpose for adjoint can invalidate a positivity argument.',
+'An m×n matrix represents a map from n-dimensional coordinate vectors to m-dimensional vectors. Composition A∘B is represented by AB when B has matching output dimension n; coordinate expansion proves the familiar summation over the shared index. For positivity, z†z=Σ|z_i|² is real and nonnegative, and equals zero only at z=0. In contrast zᵀz is a complex bilinear expression whose terms can cancel. These are algebraic differences, not stylistic notation choices.',
+'Take z=(1,i) and a derivative composition with DF=[2,3], Dg=[[1,0,4],[0,1,5]].',
+'Here zᵀz=1+i²=0 although z is nonzero, whereas z†z=2. The derivative product is [2,3,23], a 1×3 row representing a map R³→R. Reversing the factors is not even dimensionally defined. The checker verifies the legal product and rejects incompatible dimensions.',
+'A short typed glossary can therefore expose a false proof before any sophisticated theorem is invoked.',
+'Matching dimensions is necessary but not sufficient: boundedness, differentiability, measurability, convergence and geometric compatibility may also be required. A formal type checker cannot silently supply them.',
+'Attach assumptions and units to the same signatures, then propagate them through a complete worked calculation so every invoked theorem has a visible hypothesis ledger.');
+
+assert len(entries)==22
+assert {x['id'] for x in entries}=={f'M{i:03d}' for i in range(78,100)}
+P.joinpath('entries.json').write_text(json.dumps(entries,ensure_ascii=False,indent=2))
+print(json.dumps({'entries':len(entries),'words':sum(len(json.dumps(x,ensure_ascii=False).split()) for x in entries)}))

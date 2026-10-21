@@ -1,0 +1,131 @@
+# Six connections worth developing
+
+Editorial reconstruction from the completed atlas. These six essays reproduce its bridge mathematics, including hypotheses, limits and explicit operational routes. They supply a substantive discussion of the strongest cross-domain material without inventing the missing wording of an earlier chat.
+
+## B01: Quotients, observability and the information a decision actually needs
+
+**Question.** When can a target be recovered without reconstructing the entire hidden state?
+
+**Scope.** Proved bridge in a linear model
+
+Let X, Y and Z be finite-dimensional vector spaces, with linear observation H:X→Y and linear target G:X→Z. Exact target recovery means that some map K on the reachable observations satisfies G=KH. The necessary and sufficient condition is ker H⊆ker G. Necessity follows immediately by applying KH to an invisible state. For sufficiency, define K(Hx)=Gx. If Hx=Hx′, then x−x′ lies in ker H and hence in ker G, so the definition is independent of the representative. It is linear on im H and may be extended linearly to Y. Thus the target descends through the observable quotient X/ker H. There is no requirement that H be injective on X.
+
+This gives a precise relationship between algebraic quotients and experimental design. Rows of H are available measurements; rows of G are the desired quantities. The inclusion of kernels is equivalent to row(G)⊆row(H), and therefore to rank([H;G])=rank(H). A finite candidate-probe catalogue with costs becomes a discrete optimization problem: find a cheapest subset whose row span contains row(G). The lab checks every subset of six probes by exact rational elimination. The distinction between full-state observability and target observability is visible immediately: one probe x₁+x₂ suffices for the sum target even though it leaves a three-dimensional hidden subspace.
+
+The same quotient principle applies to a deterministic machine only after its equivalence relation is specified. Histories u and v may be identified when every future continuation gives the same output; this is a congruence compatible with concatenation. For a linear realization, reachable states and unobservable states lead to the usual reachable-observable reduction. These are rigorous constructions in their respective categories. Calling any two lossy summaries the same quotient would skip the essential work of defining the objects, equivalence relation and compatible operations.
+
+A robust decision can need less information than either absolute value. In J_A=c+δ and J_B=c, the difference is δ. Common uncertainty c disappears under the difference functional. The joint uncertainty set, rather than two marginal intervals, carries the fact that the same c appears twice. With |c|≤10 and δ∈[1,2], the individual intervals [−9,12] and [−10,10] overlap substantially, while J_A−J_B is strictly positive throughout the joint set. This is an exact cancellation theorem for the stated model. It is not an argument for canceling two unrelated uncertain inputs.
+
+The useful general question is therefore not “How much data can we collect?” but “Which distinctions between states can alter the target?” Its answer specifies an equivalence relation and then a sufficient observation map. In nonlinear problems the linear kernel condition must be replaced by constancy of the target on observation fibres; continuity, stability and computational tractability require additional hypotheses. An algebraic factorization can exist while being numerically unstable or impractical. The atlas keeps those three questions—existence, stability and implementation—separate.
+
+**Domain route.** [D03](../compendium/readable/domains/D03.md) → [D14](../compendium/readable/domains/D14.md) → [D15](../compendium/readable/domains/D15.md) → [D11](../compendium/readable/domains/D11.md) → [D12](../compendium/readable/domains/D12.md).
+
+**Interactive companion.** L01, L08 in the [offline atlas](../compendium/atlas/output/Mathematics_Atlas_2023_2026.html).
+
+## B02: Local compatibility, cohomology and transport around a loop
+
+**Question.** Why can locally consistent data fail to assemble into one global object?
+
+**Scope.** Exact finite chain model; geometric bridge under stated hypotheses
+
+A cochain complex consists of groups or vector spaces Cᵏ and maps dᵏ:Cᵏ→Cᵏ⁺¹ with dᵏ⁺¹dᵏ=0. A compatible datum is a cocycle, an element of ker dᵏ. A change generated at the preceding level is a coboundary, an element of im dᵏ⁻¹. Cohomology Hᵏ=ker dᵏ/im dᵏ⁻¹ records the remaining compatible data modulo those changes. The equation d²=0 makes the quotient legitimate. This formal pattern becomes useful only when the complex is built from the actual restriction, transition or boundary maps of the problem.
+
+For a finite oriented simplicial complex, the boundary of an oriented triangle [0,1,2] is [1,2]−[0,2]+[0,1]. Its next boundary is zero because every vertex contribution cancels with the appropriate sign. Over Q, β₁=E−rank ∂₁−rank ∂₂. The graph consisting of three edges around a triangle has β₁=1. Adding the filled two-simplex introduces a boundary generator and changes β₁ to zero. A drawing of three mutually adjacent vertices does not tell us whether the face is present. The interactive homology model makes this modeling decision explicit, which prevents confusing a graph with its clique complex.
+
+In an additive gluing problem, differences on overlaps form a Čech 1-cocycle. If that cocycle is a coboundary, local corrections can remove it and the local sections glue. If its cohomology class is nonzero, the failure survives all allowed local corrections. This statement requires the relevant sheaf, cover and restriction maps; the abstract slogan “there is an obstruction” supplies none of them. Higher-degree classes arise when compatibility itself must be made compatible at the next level. Integer coefficients can also carry torsion that a rational rank calculation cannot detect.
+
+Transport supplies a related but distinct view. For a local system, moving along paths gives linear maps, and concatenation becomes composition. A closed loop may return a vector transformed by a nonidentity matrix. In the lab, U=[[1,a],[0,1]] and V=[[1,0],[b,1]] give the loop UVU⁻¹V⁻¹=[[1+ab+a²b²,−a²b],[ab²,1−ab]]. Its determinant is one, but the loop can still act nontrivially. With a=2 and b=1, the result is [[7,−4],[2,−1]]. The determinant constraint alone misses the order dependence.
+
+There are important distinctions. Holonomy is the ordered transport around a based loop. A change of fibre coordinates conjugates its matrix, so the conjugacy class is gauge invariant. For a flat connection it depends on the based homotopy class. Curvature concerns infinitesimal transport for a connection; cohomology requires its chosen differential and coefficient system. Flatness permits monodromy on spaces with nontrivial fundamental group, so zero curvature need not force trivial global transport. A finite pair of shears is an exact illustration of noncommuting composition, not a construction of a smooth connection. The bridge worth carrying forward is the explicit passage from local maps to consistency equations, and from those equations to a quotient that measures the failure of a global solution.
+
+**Domain route.** [D04](../compendium/readable/domains/D04.md) → [D05](../compendium/readable/domains/D05.md) → [D06](../compendium/readable/domains/D06.md) → [D13](../compendium/readable/domains/D13.md).
+
+**Interactive companion.** L05, L09 in the [offline atlas](../compendium/atlas/output/Mathematics_Atlas_2023_2026.html).
+
+## B03: Spectra, inverse problems and why identifiability is weaker than stability
+
+**Question.** What changes when a target is uniquely determined but small noise is greatly amplified?
+
+**Scope.** Proved analytic bridge for diagonal Hilbert-space models
+
+Consider a diagonal forward operator Ae_k=σ_ke_k on a Hilbert basis. If every σ_k is positive, the noiseless data determine every coordinate x_k. Yet if σ_k→0, the formal inverse divides by smaller and smaller numbers and is unbounded on the ambient data space. Uniqueness has therefore been proved without stable inversion. This is the analytic counterpart of the finite quotient criterion: invisible directions can obstruct well-defined target recovery, while nearly invisible directions obstruct conditioning.
+
+Assume the unknown belongs to the ellipsoid Σk≥1 k^(2r)|x_k|²≤1 and the data error has norm at most δ. The spectral cutoff inverse keeps the first N coordinates. The tail obeys ||x−P_Nx||≤(N+1)^(−r), because all discarded weights are at least (N+1)^(2r). The propagated noise obeys ||A_N^†e||≤δ/σ_N for decreasing σ_k. The triangle inequality gives the fully specified deterministic bound B(N)=(N+1)^(−r)+δ/σ_N. This is an upper bound over all admissible signals and noises, not a fitted prediction of the error in one sample.
+
+For mildly decaying singular values σ_k=k^(−p), balancing the two terms suggests N of order δ^(−1/(p+r)) and a rate δ^(r/(p+r)). Matching lower bounds can be obtained by choosing two signals separated along a coordinate near that cutoff whose forward images differ by no more than the noise scale. Their data neighborhoods overlap, so an estimator cannot distinguish both perfectly. Such a lower-bound argument proves a limit of the information model rather than a defect of one algorithm.
+
+For severe decay σ_k=exp(−ck), write δ=exp(−L). A leading estimate N≈L/c can make the noise term order one. To keep noise on the same polynomial scale as the bias, use a correction of the form N≈(L−r log L)/c, with integer rounding and bounded-L behavior handled explicitly. The lab displays both terms and their sum so that a visually appealing increase in resolution cannot hide noise amplification. The more general exp(−ck^β) model requires the corresponding β-dependent correction; the implemented lab intentionally fixes β=1.
+
+Spectral gaps also govern iterative convergence, but their operators must be named. If P and Q are orthogonal projections onto distinct lines meeting at angle θ, then PQP=cos²θ P. The n-fold product has norm cos^(2n)θ on the surviving direction. A small angle gives slow convergence, even though the intersection is trivial and the limiting projection is known. The commutator norm |sin 2θ|/2 is a different quantity and is small near both alignment and orthogonality, so it cannot substitute for the contraction factor.
+
+The shared capacity is to locate directions that a map suppresses and quantify the cost of recovering them. Inverse regularization, spectral iteration and experimental design can then exchange specific tools: singular values, principal angles, norm bounds and minimax tests. They do not become the same problem merely because an eigenvalue appears in each. The next useful experiment is always tied to a hypothesis: estimate a singular-value tail, perturb a nearly null direction, or compare a proposed cutoff with an explicit uniform error bound.
+
+**Domain route.** [D07](../compendium/readable/domains/D07.md) → [D08](../compendium/readable/domains/D08.md) → [D15](../compendium/readable/domains/D15.md) → [D11](../compendium/readable/domains/D11.md).
+
+**Interactive companion.** L04, L05 in the [offline atlas](../compendium/atlas/output/Mathematics_Atlas_2023_2026.html).
+
+## B04: Exact counting, generating functions and the limits of a summary
+
+**Question.** When does a finite summary support a proof, and when can different objects share it?
+
+**Scope.** Exact finite combinatorial bridge
+
+For a finite configuration set Ω and statistic T:Ω→S, exact counting produces the fibre sizes n_s=|T⁻¹(s)|. Under the uniform distribution, n_s/|Ω| is the law of T. A generating function packages those same counts as coefficients. If a weight or sampling law is changed, the induced distribution changes accordingly; counting alone does not justify a new probability model. This simple distinction connects combinatorics to inference without assuming that every enumeration is a statistically representative sample.
+
+An optimization problem adds an objective and a feasible set. In a six-item 0–1 knapsack with weights (2,3,4,5,6,7), values (3,4,6,7,9,10), and budget 12, exhaustive enumeration finds 28 feasible subsets and a unique optimum of value 18, selecting items 1,3,5. Because all 64 masks have been checked, existence, optimality and uniqueness are separate certified statements with a transparent common witness set. Ordering feasible masks also gives a ranking and unranking operation. A larger problem may require a recurrence, decision diagram, branch bound or formal certificate instead; the six-item lab does not recover missing large-instance input data.
+
+A summary can be exact and still incomplete. For a graph G and vertex heights h, let E_G(h)=Σ_{uv∈E(G)}(h_u−h_v)². Two explicitly recovered seven-vertex graphs have identical joint counts of Hamming weight and energy for all 128 binary assignments h∈{0,1}⁷. Consequently every invariant that is only a function of that binary census agrees on the pair. This is a rigorous information-loss result. It does not imply that the graphs agree under a richer measurement scheme.
+
+Allow nonnegative integer heights with total mass three. The corresponding energy generating polynomials differ by q³(1−q)(1−q³)²(1−q⁴)². At q=1/2 this difference is 11025/262144, so a higher-height measurement distinguishes them. At q=1 both polynomials count the same total number of configurations, and the difference vanishes. The choice of evaluation point is therefore part of the probe. The interactive lab exposes the integer coefficient census alongside the floating evaluation, making it possible to see precisely what was counted and which information was discarded.
+
+Cyclotomic phase fibres provide a second exact counting-to-quotient bridge. Reduction of units U(1680)→U(30) is surjective. Its fibres are cosets of a kernel and hence all have equal size. Since φ(1680)=384 and φ(30)=8, each fibre has 48 elements. The 56th powers of primitive 1680th roots correspond to the eight primitive 30th-root phases. This proves a finite phase multiplicity theorem; it does not prove density or closure of a matrix group generated by braiding operators.
+
+A useful research discipline emerges: identify the full configuration space, the statistic, the admissible weights, and the reconstruction goal. Then ask whether the statistic separates the objects relevant to that goal. A collision is constructive evidence of a missing distinction and a guide to designing a richer probe. Exact coefficients are especially valuable because they separate a mathematical collision from a numerical tolerance accident. The source bundles preserve unrecovered-instance boundaries so that a historical claim is not silently converted into a newly verified computation.
+
+**Domain route.** [D13](../compendium/readable/domains/D13.md) → [D10](../compendium/readable/domains/D10.md) → [D11](../compendium/readable/domains/D11.md) → [D12](../compendium/readable/domains/D12.md) → [D14](../compendium/readable/domains/D14.md).
+
+**Interactive companion.** L02, L03, L07 in the [offline atlas](../compendium/atlas/output/Mathematics_Atlas_2023_2026.html).
+
+## B05: Poisson structure, Moyal deformation and the first nonzero obstruction
+
+**Question.** How can a classical bracket agree with a deformed bracket at one order and still fail later?
+
+**Scope.** Exact polynomial deformation calculation
+
+On the canonical plane with coordinates (q,p), the Poisson bracket is {f,g}=∂qf∂pg−∂pf∂qg. Fix the Weyl–Moyal product f⋆g=f exp[(iℏ/2)(←∂q→∂p−←∂p→∂q)]g. Its normalized commutator (f⋆g−g⋆f)/(iℏ) has only odd derivative orders, and its leading term is the Poisson bracket. For polynomials the series terminates, so the comparison is an exact finite algebraic calculation rather than a convergence claim about a formal infinite sum.
+
+For f=q^a p^b and g=q^c p^d, define S_k=Σ_{j=0}^k(−1)^j binom(k,j)(a)_{k−j}(b)_j(c)_j(d)_{k−j}, with falling factorials zero beyond the degree. The order-k contribution for odd k is (−1)^((k−1)/2)ℏ^(k−1)S_k q^(a+c−k)p^(b+d−k)/(2^(k−1)k!). All coefficients are rational integers divided by an explicit denominator. The lab uses arbitrary-precision integer arithmetic and rational normalization, so no cancellation is decided by a numerical threshold.
+
+For f=q³ and g=p³, the result is 9q²p²−(3/2)ℏ². This fixes the sign and normalization convention. More revealing is f=qp⁵ and g=q⁵p³: S₃=0, but S₅=201600, so the bracket is −22q⁵p⁷+105ℏ⁴qp³. Stopping after the cubic derivative test would certify the wrong conclusion. The first surviving obstruction may occur later than the first possible obstruction.
+
+There are also infinite exact families for structural reasons. For f=qp³ and g=q^(3r+2)p^r with nonnegative integer r, the third-order coefficient cancels, and higher odd orders vanish because the relevant total degree of f is four. In this family the cancellation plus a degree cutoff is sufficient. The missing step in an informal argument is often exactly that cutoff: a vanishing coefficient proves nothing about orders that were not examined unless another theorem excludes them.
+
+This illustrates the proper role of deformation language. A first-order Poisson structure can describe the leading deformation, while associativity and equivalence involve higher compatibility equations. An infinitesimal solution need not integrate to a global family, and a small verified monomial family need not generate a closed algebra under the desired operations. A classification must state its ambient vector space, degree bounds, closure conditions and equivalences. The new bounded sextic monomial enumeration in the algebra chapter is labeled as an atlas computation, not a historical discovery and not a classification of arbitrary sextic polynomial subspaces.
+
+The bridge to exact certification is practical: expand the defining operator with an explicit convention, use structural vanishing to bound the search, and certify every surviving order. The bridge to geometry is conceptual but specific: the Poisson bivector is the operator contracted repeatedly in this canonical constant-coefficient model. Extending the same formula to a curved manifold without charts, connections or a compatible star-product construction would require new mathematics.
+
+**Domain route.** [D03](../compendium/readable/domains/D03.md) → [D06](../compendium/readable/domains/D06.md) → [D16](../compendium/readable/domains/D16.md) → [D14](../compendium/readable/domains/D14.md).
+
+**Interactive companion.** L06 in the [offline atlas](../compendium/atlas/output/Mathematics_Atlas_2023_2026.html).
+
+## B06: Arithmetic reduction, orbit completeness and finite certificates of infinite families
+
+**Question.** How can a finite list certify an infinite arithmetic family?
+
+**Scope.** Exact unit action with a reduction proof
+
+A recurrence can produce infinitely many solutions without proving that it produces all solutions. For x²−2y²=−7, multiplication of α=x+y√2 by the norm-one unit u=3+2√2 gives (x,y)↦(3x+4y,2x+3y). Direct expansion proves that x²−2y² is invariant. The inverse unit gives (x,y)↦(3x−4y,−2x+3y), again preserving integrality and the norm. This establishes a group action on the solution set. Completeness is a separate reduction theorem.
+
+For y>0 and x>0, α>√7 and its conjugate is −7/α. Multiplying by a suitable integral power of u brings α into the half-open interval [√7,u√7). Then x=(α−7/α)/2 and y=(α+7/α)/(2√2) show that the reduced positive representative has 0≤x<8 and 0<y<6. Exact checking in that finite rectangle leaves (1,2) and (5,4). The endpoint α=√7 would give x=0, which cannot solve 2y²=7 in integers. Thus every positive solution reduces to one of those two seeds. Overall sign and signed unit powers cover the other sign choices in the corresponding real embeddings.
+
+The numerical interval is merely a way to derive a finite search bound. The proof rests on the norm identity and the fundamental multiplicative interval, and the final candidate test is an exact integer equation. The interactive lab moves in either direction along each orbit with arbitrary-precision integers and checks the norm at every displayed point. Watching many solutions appear is useful intuition; the interval reduction is what makes the list complete.
+
+Congruence conditions can further restrict the orbit. Reducing the recurrence matrix modulo m gives a finite permutation of its admissible residue states. One may determine which powers hit a desired residue class, then combine those periodic conditions with the unit parameter. This is a precise connection between infinite Diophantine families and finite automata. It requires a proof that all solutions have entered the chosen orbit parametrization before a residue sieve can claim completeness.
+
+The same finite-certificate strategy appears elsewhere in arithmetic, with different hypotheses. A rational point on an elliptic curve can be checked by substitution; a claim that a point generates all rational points needs a rank and saturation argument. A finite-field group order can be checked by exhaustive counting for a small field or by a certified algorithm for a large field. A p-adic approximation is an element of a compatible residue system, and lifting a root requires its own derivative or multiplicity hypotheses. None of these certificates can be replaced by the fact that a calculation produced a plausible point.
+
+This is a durable connection across the annual work: turn an unbounded question into finitely many representatives through a proved action, reduction or compactness argument; then verify the finite residue exactly. The bridge from arithmetic to dynamics is the explicit recurrence matrix, not a metaphor about motion. The bridge to computation is a terminating reduction algorithm plus a checkable certificate, not a claim that brute force settles every infinite search.
+
+**Domain route.** [D01](../compendium/readable/domains/D01.md) → [D02](../compendium/readable/domains/D02.md) → [D09](../compendium/readable/domains/D09.md) → [D14](../compendium/readable/domains/D14.md).
+
+**Interactive companion.** L07, L10 in the [offline atlas](../compendium/atlas/output/Mathematics_Atlas_2023_2026.html).

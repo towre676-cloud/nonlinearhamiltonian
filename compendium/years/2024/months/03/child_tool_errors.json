@@ -1,0 +1,34 @@
+[
+  {
+    "receipt_id": "R03-01",
+    "query": "The user requests a comprehensive mathematics-only reconstruction and development of all their 2024 conversations, month by month, modeled on the completed 2023 mathematical compendium. Search ONLY March 1–March 31, 2024, inclusive. Recover as many distinct mathematical conversations and mathematical concepts as possible, with exact dates and titles if available, original fragments/equations, and explicit user-versus-assistant attribution. Include pure mathematics and substantive mathematical physics, geometry, analysis, information theory, optimization and learning theory; exclude nonmathematical content. Do not infer missing user prompts from assistant replies and do not substitute later file summaries. Say what is incomplete and return surviving fragments even when the month cannot be exhaustively indexed.",
+    "result": {
+      "status": "fulfilled",
+      "value": {
+        "content": [
+          {
+            "type": "text",
+            "text": "Personal context is unavailable for this conversation."
+          }
+        ],
+        "isError": true
+      }
+    }
+  },
+  {
+    "receipt_id": "R03-02",
+    "query": "The user is developing a mathematics-only retrospective of March 2024. Search March 31, 2024 specifically for the surviving mathematical exchanges on stationary action, fractal entropy, Fisher information, quantum evolution, Geometric Musical Language, topology, and the proposed Unified Complexity Measure. Earlier retrieved archive summaries identified assistant passages that day, but we need the actual surviving date-stamped evidence and attribution. Return original user text only if directly present; otherwise clearly mark assistant-only fragments. Do not replace missing 2024 evidence with 2025–2026 files.",
+    "result": {
+      "status": "fulfilled",
+      "value": {
+        "content": [
+          {
+            "type": "text",
+            "text": "Personal context is unavailable for this conversation."
+          }
+        ],
+        "isError": true
+      }
+    }
+  }
+]

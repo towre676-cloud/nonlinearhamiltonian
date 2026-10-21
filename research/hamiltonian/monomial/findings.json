@@ -1,0 +1,76 @@
+{
+  "scope": "Canonical Weyl\u2013Moyal product, one phase-space pair, characteristic zero, hbar-independent polynomial partners of monomial Hamiltonians. No priority claim.",
+  "definition": "E(H)={G in k[q,p]: [H,G]_star/(i hbar)={H,G}}; exactness is coefficientwise in hbar.",
+  "theorems": [
+    {
+      "id": "MON-01",
+      "title": "Canonical exponent basis",
+      "statement": "For H=q^a p^b, E(H) is spanned by precisely those q^c p^d for which S_k(a,b;c,d)=0 for every odd k>=3. There is no cancellation between different partner monomials at a fixed correction order.",
+      "status": "proved",
+      "proof": "Each order maps exponent pair (c,d) injectively to (a+c-k,b+d-k); different orders have different hbar powers."
+    },
+    {
+      "id": "MON-02",
+      "title": "Complete effective classification for every unequal a,b>=2",
+      "statement": "Every partner exponent lies in finite-width strips or one rational affine line forced by the highest odd correction. All residual candidates are integer roots of finitely many nonzero degree-at-most-three polynomials, except the symbolic coordinate-axis algebra when a=2 or b=2. Check all odd corrections on that finite list. classification.py implements the complete terminating procedure without a partner-degree cutoff.",
+      "status": "proved and implemented",
+      "odd_total_degree": "S_D=(-1)^b D! (c)_b(d)_a; therefore c<b or d<a.",
+      "even_total_degree": "S_(D-1)=(-1)^(b-1)(D-1)!(c)_(b-1)(d)_(a-1)[b(d-a+1)-a(c-b+1)]; therefore c<b-1 or d<a-1 or b(d+1)=a(c+1).",
+      "line_parameter": "g=gcd(a,b), c=(b/g)n\u22121,d=(a/g)n\u22121,n>=1; nonzero S3 continuation at n=0 is \u22126(a\u2212b)[a\u00b2+b\u00b2\u22123(a+b)+2].",
+      "files": [
+        "classification.py",
+        "complete_table_2_to_12.json"
+      ]
+    },
+    {
+      "id": "MON-03",
+      "title": "Balanced monomials have a closed complete classification",
+      "statement": "With P_2 the total-degree<=2 polynomials: E((qp)^2)=k[q]+k[p]+k[qp]; E((qp)^3)=k[qp]+P_2+span{qp^11,q^11p}; E((qp)^m)=k[qp]+P_2 for every m>=4. All sums are vector-space sums. For m<=1 every polynomial is exact.",
+      "status": "proved",
+      "proof_certificate": "S3 and S5 factor through (d-c); a formal elimination certificate makes simultaneous off-diagonal vanishing impossible for m>=4,c+d>2. Exact symbolic coefficient replay is in verify.py."
+    },
+    {
+      "id": "MON-04",
+      "title": "Sharp criterion for infinitely many noncommuting exact directions",
+      "statement": "For a nonlinear monomial H=q^a p^b with a+b>=3, E(H)/(E(H) intersect ker{H,-}) is infinite-dimensional if and only if min(a,b)<=2.",
+      "status": "proved",
+      "sufficiency": "If a=1 or 2, p^r have distinct nonzero Poisson images and are exact by derivative width. If a=0, use qp^r. Swap coordinates when b<=2.",
+      "necessity": "For unequal a,b>=3, MON-02 makes E finite-dimensional. For equal a=b>=3, MON-03 leaves only a finite-dimensional off-diagonal part; the infinite diagonal algebra commutes.",
+      "balanced_noncommuting_quotient_dimensions": {
+        "m=3": 6,
+        "m>=4": 4
+      }
+    },
+    {
+      "id": "MON-05",
+      "title": "Ordinary powers do not generate automatic exact partners",
+      "statement": "S3(a,b;ar,br)=-2ab r(a-b)(r-1)[(a+b)(r+1)-3]. Thus for unequal a,b>=2 and integer r>=2, H^r is classically commuting but not Moyal-exact. When unequal a,b>=3, E(H) intersect ker{H,-}=span{1,H}.",
+      "status": "proved by formal polynomial identity",
+      "distinction": "Star powers may depend on hbar and do not answer the hbar-independent symbol question."
+    }
+  ],
+  "complete_examples": [
+    {
+      "H": "q^2p^3",
+      "E": "k[p]+span{q,qp,q^2,q^2p^3,q^8p}"
+    },
+    {
+      "H": "q^2p^8",
+      "E": "k[p]+span{q,qp,q^2,q^2p^8,q^3p}"
+    },
+    {
+      "H": "q^3p^4",
+      "E": "P_2+span{q^3p^4,qp^14}"
+    },
+    {
+      "H": "q^4p^5",
+      "E": "P_2+span{q^4p^5}"
+    }
+  ],
+  "table_scope": "All 55 unequal Hamiltonians 2<=a<b<=12, each with every partner degree completely classified by the finite theorem. Separate bounded grids cross-check implementation only.",
+  "open": [
+    "A universal closed list of exceptional finite basis exponents for all unequal a,b is not claimed; a complete effective algorithm is supplied.",
+    "The criterion does not classify nonmonomial polynomial Hamiltonians or equivalence under nonlinear canonical transformations.",
+    "No claim that E(H) is an ordinary polynomial algebra or is invariant under Hamiltonian evolution."
+  ]
+}

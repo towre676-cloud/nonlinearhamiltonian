@@ -1,0 +1,389 @@
+{
+  "roots": [
+    [
+      -1.4142135623730951,
+      -1.0
+    ],
+    [
+      -1.4142135623730951,
+      1.0
+    ],
+    [
+      1.4142135623730951,
+      -1.0
+    ],
+    [
+      1.4142135623730951,
+      1.0
+    ]
+  ],
+  "traces": [
+    {
+      "p": 2,
+      "points": 5,
+      "trace": -2,
+      "warped": -2.0532524574329076,
+      "difference": -0.05325245743290763
+    },
+    {
+      "p": 3,
+      "points": 7,
+      "trace": -3,
+      "warped": -3.069959882474707,
+      "difference": -0.06995988247470697
+    },
+    {
+      "p": 5,
+      "points": 8,
+      "trace": -2,
+      "warped": -2.0532524574329076,
+      "difference": -0.05325245743290763
+    },
+    {
+      "p": 7,
+      "points": 9,
+      "trace": -1,
+      "warped": -1.0334,
+      "difference": -0.033400000000000096
+    },
+    {
+      "p": 11,
+      "points": 17,
+      "trace": -5,
+      "warped": -5.098662764417461,
+      "difference": -0.09866276441746091
+    },
+    {
+      "p": 13,
+      "points": 16,
+      "trace": -2,
+      "warped": -2.0532524574329076,
+      "difference": -0.05325245743290763
+    },
+    {
+      "p": 17,
+      "points": 18,
+      "trace": 0,
+      "warped": 0,
+      "difference": 0
+    },
+    {
+      "p": 19,
+      "points": 20,
+      "trace": 0,
+      "warped": 0,
+      "difference": 0
+    },
+    {
+      "p": 23,
+      "points": 22,
+      "trace": 2,
+      "warped": 2.0532524574329076,
+      "difference": 0.05325245743290763
+    },
+    {
+      "p": 29,
+      "points": 24,
+      "trace": 6,
+      "warped": 6.111542983936993,
+      "difference": 0.11154298393699325
+    },
+    {
+      "p": 31,
+      "points": 36,
+      "trace": -4,
+      "warped": -4.084904916845619,
+      "difference": -0.08490491684561885
+    }
+  ],
+  "jordan": [
+    {
+      "epsilon": 0.5623413251903491,
+      "operator_perturbation": 0.5623413251903491,
+      "eigenvalue_magnitude": 0.7498942093324559,
+      "eigenvector_condition": 1.333521432163324
+    },
+    {
+      "epsilon": 0.31622776601683794,
+      "operator_perturbation": 0.31622776601683794,
+      "eigenvalue_magnitude": 0.5623413251903491,
+      "eigenvector_condition": 1.7782794100389228
+    },
+    {
+      "epsilon": 0.1778279410038923,
+      "operator_perturbation": 0.1778279410038923,
+      "eigenvalue_magnitude": 0.4216965034285823,
+      "eigenvector_condition": 2.371373705661655
+    },
+    {
+      "epsilon": 0.1,
+      "operator_perturbation": 0.1,
+      "eigenvalue_magnitude": 0.31622776601683794,
+      "eigenvector_condition": 3.162277660168379
+    },
+    {
+      "epsilon": 0.05623413251903491,
+      "operator_perturbation": 0.05623413251903491,
+      "eigenvalue_magnitude": 0.23713737056616555,
+      "eigenvector_condition": 4.216965034285822
+    },
+    {
+      "epsilon": 0.03162277660168379,
+      "operator_perturbation": 0.03162277660168379,
+      "eigenvalue_magnitude": 0.17782794100389226,
+      "eigenvector_condition": 5.623413251903491
+    },
+    {
+      "epsilon": 0.01778279410038923,
+      "operator_perturbation": 0.01778279410038923,
+      "eigenvalue_magnitude": 0.1333521432163324,
+      "eigenvector_condition": 7.498942093324558
+    },
+    {
+      "epsilon": 0.01,
+      "operator_perturbation": 0.01,
+      "eigenvalue_magnitude": 0.1,
+      "eigenvector_condition": 10.0
+    },
+    {
+      "epsilon": 0.005623413251903491,
+      "operator_perturbation": 0.005623413251903491,
+      "eigenvalue_magnitude": 0.07498942093324558,
+      "eigenvector_condition": 13.335214321633241
+    },
+    {
+      "epsilon": 0.0031622776601683794,
+      "operator_perturbation": 0.0031622776601683794,
+      "eigenvalue_magnitude": 0.05623413251903491,
+      "eigenvector_condition": 17.78279410038923
+    },
+    {
+      "epsilon": 0.0017782794100389228,
+      "operator_perturbation": 0.0017782794100389228,
+      "eigenvalue_magnitude": 0.042169650342858224,
+      "eigenvector_condition": 23.71373705661655
+    },
+    {
+      "epsilon": 0.001,
+      "operator_perturbation": 0.001,
+      "eigenvalue_magnitude": 0.03162277660168379,
+      "eigenvector_condition": 31.622776601683796
+    },
+    {
+      "epsilon": 0.0005623413251903491,
+      "operator_perturbation": 0.0005623413251903491,
+      "eigenvalue_magnitude": 0.023713737056616554,
+      "eigenvector_condition": 42.169650342858226
+    },
+    {
+      "epsilon": 0.00031622776601683794,
+      "operator_perturbation": 0.00031622776601683794,
+      "eigenvalue_magnitude": 0.01778279410038923,
+      "eigenvector_condition": 56.2341325190349
+    },
+    {
+      "epsilon": 0.00017782794100389227,
+      "operator_perturbation": 0.00017782794100389227,
+      "eigenvalue_magnitude": 0.01333521432163324,
+      "eigenvector_condition": 74.98942093324558
+    },
+    {
+      "epsilon": 0.0001,
+      "operator_perturbation": 0.0001,
+      "eigenvalue_magnitude": 0.01,
+      "eigenvector_condition": 100.0
+    },
+    {
+      "epsilon": 5.623413251903491e-05,
+      "operator_perturbation": 5.623413251903491e-05,
+      "eigenvalue_magnitude": 0.007498942093324558,
+      "eigenvector_condition": 133.35214321633242
+    },
+    {
+      "epsilon": 3.1622776601683795e-05,
+      "operator_perturbation": 3.1622776601683795e-05,
+      "eigenvalue_magnitude": 0.005623413251903491,
+      "eigenvector_condition": 177.82794100389228
+    },
+    {
+      "epsilon": 1.778279410038923e-05,
+      "operator_perturbation": 1.778279410038923e-05,
+      "eigenvalue_magnitude": 0.004216965034285823,
+      "eigenvector_condition": 237.13737056616552
+    },
+    {
+      "epsilon": 1e-05,
+      "operator_perturbation": 1e-05,
+      "eigenvalue_magnitude": 0.0031622776601683794,
+      "eigenvector_condition": 316.2277660168379
+    },
+    {
+      "epsilon": 5.623413251903491e-06,
+      "operator_perturbation": 5.623413251903491e-06,
+      "eigenvalue_magnitude": 0.0023713737056616554,
+      "eigenvector_condition": 421.6965034285822
+    },
+    {
+      "epsilon": 3.162277660168379e-06,
+      "operator_perturbation": 3.162277660168379e-06,
+      "eigenvalue_magnitude": 0.0017782794100389228,
+      "eigenvector_condition": 562.3413251903492
+    },
+    {
+      "epsilon": 1.778279410038923e-06,
+      "operator_perturbation": 1.778279410038923e-06,
+      "eigenvalue_magnitude": 0.001333521432163324,
+      "eigenvector_condition": 749.8942093324558
+    },
+    {
+      "epsilon": 1e-06,
+      "operator_perturbation": 1e-06,
+      "eigenvalue_magnitude": 0.001,
+      "eigenvector_condition": 1000.0
+    },
+    {
+      "epsilon": 5.62341325190349e-07,
+      "operator_perturbation": 5.62341325190349e-07,
+      "eigenvalue_magnitude": 0.0007498942093324557,
+      "eigenvector_condition": 1333.521432163324
+    },
+    {
+      "epsilon": 3.162277660168379e-07,
+      "operator_perturbation": 3.162277660168379e-07,
+      "eigenvalue_magnitude": 0.0005623413251903491,
+      "eigenvector_condition": 1778.2794100389228
+    },
+    {
+      "epsilon": 1.7782794100389227e-07,
+      "operator_perturbation": 1.7782794100389227e-07,
+      "eigenvalue_magnitude": 0.00042169650342858224,
+      "eigenvector_condition": 2371.3737056616555
+    },
+    {
+      "epsilon": 1e-07,
+      "operator_perturbation": 1e-07,
+      "eigenvalue_magnitude": 0.00031622776601683794,
+      "eigenvector_condition": 3162.277660168379
+    },
+    {
+      "epsilon": 5.6234132519034905e-08,
+      "operator_perturbation": 5.6234132519034905e-08,
+      "eigenvalue_magnitude": 0.0002371373705661655,
+      "eigenvector_condition": 4216.965034285823
+    },
+    {
+      "epsilon": 3.162277660168379e-08,
+      "operator_perturbation": 3.162277660168379e-08,
+      "eigenvalue_magnitude": 0.00017782794100389227,
+      "eigenvector_condition": 5623.413251903491
+    },
+    {
+      "epsilon": 1.7782794100389228e-08,
+      "operator_perturbation": 1.7782794100389228e-08,
+      "eigenvalue_magnitude": 0.0001333521432163324,
+      "eigenvector_condition": 7498.942093324558
+    },
+    {
+      "epsilon": 1e-08,
+      "operator_perturbation": 1e-08,
+      "eigenvalue_magnitude": 0.0001,
+      "eigenvector_condition": 10000.0
+    },
+    {
+      "epsilon": 5.623413251903491e-09,
+      "operator_perturbation": 5.623413251903491e-09,
+      "eigenvalue_magnitude": 7.498942093324559e-05,
+      "eigenvector_condition": 13335.21432163324
+    },
+    {
+      "epsilon": 3.1622776601683795e-09,
+      "operator_perturbation": 3.1622776601683795e-09,
+      "eigenvalue_magnitude": 5.623413251903491e-05,
+      "eigenvector_condition": 17782.79410038923
+    },
+    {
+      "epsilon": 1.7782794100389228e-09,
+      "operator_perturbation": 1.7782794100389228e-09,
+      "eigenvalue_magnitude": 4.216965034285822e-05,
+      "eigenvector_condition": 23713.737056616555
+    },
+    {
+      "epsilon": 1e-09,
+      "operator_perturbation": 1e-09,
+      "eigenvalue_magnitude": 3.1622776601683795e-05,
+      "eigenvector_condition": 31622.776601683792
+    },
+    {
+      "epsilon": 5.623413251903491e-10,
+      "operator_perturbation": 5.623413251903491e-10,
+      "eigenvalue_magnitude": 2.3713737056616554e-05,
+      "eigenvector_condition": 42169.65034285822
+    },
+    {
+      "epsilon": 3.1622776601683795e-10,
+      "operator_perturbation": 3.1622776601683795e-10,
+      "eigenvalue_magnitude": 1.778279410038923e-05,
+      "eigenvector_condition": 56234.1325190349
+    },
+    {
+      "epsilon": 1.778279410038923e-10,
+      "operator_perturbation": 1.778279410038923e-10,
+      "eigenvalue_magnitude": 1.333521432163324e-05,
+      "eigenvector_condition": 74989.42093324558
+    },
+    {
+      "epsilon": 1e-10,
+      "operator_perturbation": 1e-10,
+      "eigenvalue_magnitude": 1e-05,
+      "eigenvector_condition": 99999.99999999999
+    },
+    {
+      "epsilon": 5.6234132519034906e-11,
+      "operator_perturbation": 5.6234132519034906e-11,
+      "eigenvalue_magnitude": 7.498942093324558e-06,
+      "eigenvector_condition": 133352.14321633242
+    },
+    {
+      "epsilon": 3.1622776601683794e-11,
+      "operator_perturbation": 3.1622776601683794e-11,
+      "eigenvalue_magnitude": 5.623413251903491e-06,
+      "eigenvector_condition": 177827.94100389228
+    },
+    {
+      "epsilon": 1.7782794100389227e-11,
+      "operator_perturbation": 1.7782794100389227e-11,
+      "eigenvalue_magnitude": 4.216965034285822e-06,
+      "eigenvector_condition": 237137.37056616554
+    },
+    {
+      "epsilon": 1e-11,
+      "operator_perturbation": 1e-11,
+      "eigenvalue_magnitude": 3.162277660168379e-06,
+      "eigenvector_condition": 316227.76601683797
+    },
+    {
+      "epsilon": 5.6234132519034904e-12,
+      "operator_perturbation": 5.6234132519034904e-12,
+      "eigenvalue_magnitude": 2.3713737056616552e-06,
+      "eigenvector_condition": 421696.5034285823
+    },
+    {
+      "epsilon": 3.1622776601683794e-12,
+      "operator_perturbation": 3.1622776601683794e-12,
+      "eigenvalue_magnitude": 1.778279410038923e-06,
+      "eigenvector_condition": 562341.325190349
+    },
+    {
+      "epsilon": 1.7782794100389228e-12,
+      "operator_perturbation": 1.7782794100389228e-12,
+      "eigenvalue_magnitude": 1.333521432163324e-06,
+      "eigenvector_condition": 749894.2093324558
+    },
+    {
+      "epsilon": 1e-12,
+      "operator_perturbation": 1e-12,
+      "eigenvalue_magnitude": 1e-06,
+      "eigenvector_condition": 1000000.0
+    }
+  ]
+}

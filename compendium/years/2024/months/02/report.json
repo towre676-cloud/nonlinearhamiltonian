@@ -1,0 +1,27 @@
+{
+  "month": "2024-02",
+  "status": "partial_recovered_fragments_developed",
+  "entry_count": 3,
+  "root_retrieval_calls": 4,
+  "child_access_failures": 4,
+  "coverage": "Three dated assistant-only concepts were recoverable across four root retrieval calls. February 13 concentration/area arithmetic and February 25 area-ratio arithmetic contain numerical material; the February 19 battery passage is qualitative and is developed through a clearly declared new mathematical model. The retrieved fragments do not establish exhaustive coverage of the month.",
+  "source_dates": [
+    "2024-02-13T06:01:20Z",
+    "2024-02-19T01:19:06Z",
+    "2024-02-25T03:31:43Z"
+  ],
+  "evidence_counts": {
+    "assistant_only": 3,
+    "user_authored": 0
+  },
+  "original_user_questions_recovered": 0,
+  "coverage_exclusions": "No user prompt was recovered. No dated fuller force/gravity content was recovered. Old 2023 file matches are excluded from the February evidence.",
+  "mathematical_verification_scope": "Thirteen exact or bounded worked-example checks and an attribution audit. These verify the declared calculations, not historical completeness or empirical model validity.",
+  "receipt_files": [
+    "receipts.json",
+    "root_receipts.json",
+    "root_followups.json",
+    "root_details.json",
+    "child_access_errors.json"
+  ]
+}

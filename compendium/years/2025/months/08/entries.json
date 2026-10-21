@@ -1,0 +1,1673 @@
+[
+  {
+    "id": "Y25-08-001",
+    "title": "Spirograph closure is a commensurability theorem",
+    "status": "Developed classical mathematics with explicit hypotheses and scoped evidence",
+    "summary": "The August3 spirograph discussion linked geometry to Lie groups and speculative applications. The exact mathematical kernel is a sum of rotating complex vectors. Closure can be proved from its frequencies without endorsing an application or assuming every spatial curve is a group orbit.",
+    "definitions": [
+      "For R>r>0 and d>0 define z(t)=(R−r)e^(it)+d e^(−i(R−r)t/r). Assume its two distinct frequencies have nonzero coefficients. A period means z(t+T)=z(t) for every t, not merely one accidental self-intersection."
+    ],
+    "result": {
+      "name": "Rational frequency ratio gives a closed curve",
+      "statement": "If R/r=a/b in lowest positive terms,2πb is a period. If R/r is irrational, the function has no positive period. Degenerate zero-coefficient cases must be treated separately.",
+      "proof": "The two exponentials return together at T=2πb because their phases change by2πb and−2π(a−b). Conversely equality of the two trigonometric sums for every t implies that each distinct-frequency coefficient has the same phase before and after translation; linear independence follows, for example, by evaluating the function and its derivative. Thus e^(iT)=1 and e^(−i(R−r)T/r)=1. The first gives T=2πm, and the second makes m(R−r)/r an integer, impossible for irrational R/r. This is a theorem about the declared parametrization. A third coordinate such as hsin(ωt) adds a further frequency whose commensurability must also be checked."
+    },
+    "example": {
+      "setup": "Use R=5,r=2,d=1.",
+      "calculation": "The frequencies are1 and−3/2, so T=4π works. A3D lift with vertical frequency1/3 has common period12π, whereas an irrational vertical frequency destroys periodicity.",
+      "conclusion": "Closure is governed by all active frequencies, rather than by a visual resemblance or an arbitrary Lie-group label."
+    },
+    "limits": "The proof gives no fabrication, biological or drug-design result. Self-intersection, knot type and embeddedness need further analysis.",
+    "extension": "For a specified spatial lift, classify self-intersections and prove whether the closed image is an embedding before assigning knot invariants.",
+    "references": [],
+    "original": {
+      "date": "2025-08-03",
+      "month": "2025-08",
+      "evidence": "U",
+      "field": "Parametric geometry",
+      "concept": "Spirograph closure is a commensurability theorem",
+      "origin": "Dated historical retrieval; see exact source line",
+      "question": "Which frequency ratios make the stated trochoid close, and which extra data define a three-dimensional version?",
+      "math": "If R/r=a/b in lowest positive terms,2πb is a period. If R/r is irrational, the function has no positive period. Degenerate zero-coefficient cases must be treated separately.",
+      "finish": "Proof, worked example and explicit remaining problem",
+      "kind": "Revised mathematical treatment",
+      "refs": [],
+      "source_excerpt": "- [USER_FACT] [c9] U@2025-08-03T14:16:57Z, -1y2m: August 2025 mathematics cluster centers on 3D spirographs, hypotrochoid/epitrochoid equations, Lie groups SO(2)/SO(3), so(3) skew matrices, exponential maps, BCH commutators, spherical harmonics, quaternions, PDEs, Lagrangian mechanics, topology, and speculative nanoparticle/drug-design models.",
+      "retrieval_receipt": "root_receipts.json record 0",
+      "original_question": null,
+      "attribution_note": "The excerpt is an exact retrieval-result line, usually a historical paraphrase rather than a verbatim original prompt. User-attributed topics and assistant assertions remain distinct. The revised question, classical proof and example are newly authored; absent history and novelty are not claimed."
+    }
+  },
+  {
+    "id": "Y25-08-002",
+    "title": "SO(3) rotations have a precise infinitesimal commutator",
+    "status": "Developed classical mathematics with explicit hypotheses and scoped evidence",
+    "summary": "The August3 source named skew matrices, quaternions and BCH. Rodrigues’ formula supplies an exact operator, while a basis commutator identifies the first noncommutative correction. Neither implies a speculative model of an external system.",
+    "definitions": [
+      "For a unit vector a∈R³ let Kv=a×v. Then Kᵀ=−K,K²=aaᵀ−I and K³=−K. Let J_x,J_y,J_z be the corresponding unit-axis matrices."
+    ],
+    "result": {
+      "name": "Rodrigues formula and Lie bracket",
+      "statement": "exp(θK)=I+(sinθ)K+(1−cosθ)K² lies in SO(3). The generators satisfy[J_x,J_y]=J_z, with cyclic variants. Small rotations therefore commute only up to a second-order bracket term.",
+      "proof": "The vector triple-product identity gives K²v=a(a·v)−v and hence K³=−K. Separate the exponential series into its odd and even powers to obtain Rodrigues’ expression. Since K is skew, exp(θK)ᵀexp(θK)=I; its determinant is exp(tr θK)=1. For the bracket, apply the two compositions to v and use a×(b×v)−b×(a×v)=(a×b)×v. Expanding exponentials gives e^(εJx)e^(εJy)−e^(εJy)e^(εJx)=ε²Jz+O(ε³), making noncommutativity quantitative. A quaternion representation must use the half-angle if it is to reproduce a spatial rotation of angleθ."
+    },
+    "example": {
+      "setup": "Rotate e_z successively by right-angle rotations around x and y.",
+      "calculation": "R_x(π/2)R_y(π/2)e_z=e_x, whereas R_y(π/2)R_x(π/2)e_z=−e_y. The order matters even though both factors individually preserve lengths and orientation.",
+      "conclusion": "The group action, matrix convention and order of composition are now explicit."
+    },
+    "limits": "This calculation establishes rotation geometry, not a PDE, energy functional or physical coupling.",
+    "extension": "Specify the representation and dynamics, then derive any symmetry reduction from actual commuting operators rather than axis labels.",
+    "references": [
+      {
+        "label": "Etingof, Lie Groups and Lie Algebras I",
+        "url": "https://ocw.mit.edu/courses/18-745-lie-groups-and-lie-algebras-i-fall-2020/"
+      }
+    ],
+    "original": {
+      "date": "2025-08-03",
+      "month": "2025-08",
+      "evidence": "U",
+      "field": "Lie groups",
+      "concept": "SO(3) rotations have a precise infinitesimal commutator",
+      "origin": "Dated historical retrieval; see exact source line",
+      "question": "What does the exponential of a skew matrix prove, and why do finite rotations about different axes fail to commute?",
+      "math": "exp(θK)=I+(sinθ)K+(1−cosθ)K² lies in SO(3). The generators satisfy[J_x,J_y]=J_z, with cyclic variants. Small rotations therefore commute only up to a second-order bracket term.",
+      "finish": "Proof, worked example and explicit remaining problem",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://ocw.mit.edu/courses/18-745-lie-groups-and-lie-algebras-i-fall-2020/"
+      ],
+      "source_excerpt": "- [USER_FACT] [c9] U@2025-08-03T14:16:57Z, -1y2m: August 2025 mathematics cluster centers on 3D spirographs, hypotrochoid/epitrochoid equations, Lie groups SO(2)/SO(3), so(3) skew matrices, exponential maps, BCH commutators, spherical harmonics, quaternions, PDEs, Lagrangian mechanics, topology, and speculative nanoparticle/drug-design models.",
+      "retrieval_receipt": "root_receipts.json record 0",
+      "original_question": null,
+      "attribution_note": "The excerpt is an exact retrieval-result line, usually a historical paraphrase rather than a verbatim original prompt. User-attributed topics and assistant assertions remain distinct. The revised question, classical proof and example are newly authored; absent history and novelty are not claimed."
+    }
+  },
+  {
+    "id": "Y25-08-003",
+    "title": "A Temperley–Lieb trace needs a positivity check",
+    "status": "Developed classical mathematics with explicit hypotheses and scoped evidence",
+    "summary": "The August9 synthesis used Temperley–Lieb, Markov traces and thermodynamics together. A two-strand calculation isolates a necessary positivity condition. It does not claim that a condition sufficient for this small algebra is sufficient for every level of a TL tower.",
+    "definitions": [
+      "Let TL₂(δ) have basis1,e with e*=e and e²=δe,δ real and nonzero. Declare tr(1)=1,tr(e)=1/δ. The trace inner product is⟨x,y⟩=tr(x*y)."
+    ],
+    "result": {
+      "name": "Two-strand positivity criterion",
+      "statement": "For x=a+be, tr(x*x)=|a|²+2Re(overline a b)/δ+|b|². It is positive semidefinite exactly when|δ|≥1, and positive definite when|δ|>1.",
+      "proof": "Expand x*x using e²=δe and apply the declared trace. In the basis1,e the Gram matrix is[[1,1/δ],[1/δ,1]], with eigenvalues1±1/δ. Both are nonnegative exactly when|δ|≥1. Ifδ=±1 there is a nonzero null vector and a quotient is needed for a Hilbert-space realization. At higher TL levels additional positivity restrictions arise; passing one finite Gram test cannot justify a full C*-tower or KMS identification. The algebraic relation and a trace functional are distinct data, and positivity must be proved after choosing them."
+    },
+    "example": {
+      "setup": "Compare δ=2 and δ=1/2.",
+      "calculation": "Atδ=2 the Gram eigenvalues are3/2 and1/2. Atδ=1/2, x=1−e has tr(x*x)=2−2/δ=−2, so this cannot be a squared Hilbert norm.",
+      "conclusion": "The example converts a named trace into a verifiable mathematical condition and identifies a concrete failure."
+    },
+    "limits": "The full Markov-trace tower, Jones parameter classification and graph-C*-algebra dynamics are not constructed by this two-dimensional computation.",
+    "extension": "Compute Gram matrices at successive diagram levels and identify the null ideal or parameter restrictions before asserting a positive tower representation.",
+    "references": [],
+    "original": {
+      "date": "2025-08-09",
+      "month": "2025-08",
+      "evidence": "A",
+      "field": "Operator algebras",
+      "concept": "A Temperley–Lieb trace needs a positivity check",
+      "origin": "Dated historical retrieval; see exact source line",
+      "question": "Do the finite TL relations and a declared trace actually define a positive inner product?",
+      "math": "For x=a+be, tr(x*x)=|a|²+2Re(overline a b)/δ+|b|². It is positive semidefinite exactly when|δ|≥1, and positive definite when|δ|>1.",
+      "finish": "Proof, worked example and explicit remaining problem",
+      "kind": "Revised mathematical treatment",
+      "refs": [],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c3] A@2025-08-09T23:12:05Z, -1y2m: Mathematical synthesis: TL relations \\(e_i^2=de_i,\\ e_ie_{i\\pm1}e_i=e_i\\); Markov trace; Bratteli/KMS PF equation \\(A^tm=e^\\beta m\\); homoclinic sequences; Sazonov–Minlos Gaussian extension; Chevalley/GIT and Hilbert–Mumford; cubic KKT system \\(c_j+3x_j^2\\sum_i\\lambda_iA_{ij}=0\\); Čech \\(H^1\\) obstruction; pressure variational principle.",
+      "retrieval_receipt": "root_receipts.json record 0",
+      "original_question": null,
+      "attribution_note": "The excerpt is an exact retrieval-result line, usually a historical paraphrase rather than a verbatim original prompt. User-attributed topics and assistant assertions remain distinct. The revised question, classical proof and example are newly authored; absent history and novelty are not claimed."
+    }
+  },
+  {
+    "id": "Y25-08-004",
+    "title": "Perron data define a Markov measure and a pressure value",
+    "status": "Developed classical mathematics with explicit hypotheses and scoped evidence",
+    "summary": "The August9 PF/KMS discussion can be grounded in a finite primitive adjacency matrix. Its Perron eigenvectors define an exact stationary Markov chain. A relative-entropy calculation proves the relevant variational statement for this specified class of chains.",
+    "definitions": [
+      "Let A be a primitive0–1 matrix with positive right/left PF vectors Ar=λr,ℓᵀA=λℓᵀ,ℓᵀr=1. Set P_ij=A_ij r_j/(λr_i) and π_i=ℓ_i r_i."
+    ],
+    "result": {
+      "name": "Perron Markov chain and entropy maximization",
+      "statement": "P is stochastic,π is stationary, and its entropy rate is logλ. Every stationary Markov chain Q supported on the same allowed edges has entropy rate at most logλ.",
+      "proof": "The PF equations giveΣ_jP_ij=1 andΣ_iπ_iP_ij=π_j. On allowed edges logP_ij=logr_j−logr_i−logλ. Averaging with stationary edge weightsπ_iP_ij cancels the r terms, giving−Σπ_iP_ijlogP_ij=logλ. For another stationary chain(Q,ν), nonnegativity of the rowwise KL divergencesΣ_iν_iΣ_jQ_ijlog(Q_ij/P_ij) yields h(Q)≤−Σν_iQ_ijlogP_ij=logλ, again by stationarity. This proves the finite Markov variational problem without silently extending it to every dynamical or C*-algebraic setting."
+    },
+    "example": {
+      "setup": "Use A=[[1,1],[1,0]] and φ=(1+√5)/2.",
+      "calculation": "Take r=(φ,1),ℓ=r/(φ²+1). Then P=[[1/φ,1/φ²],[1,0]], andπ=(φ²,1)/(φ²+1). The entropy rate is logφ. A KMS inverse-temperature interpretation requires a separately specified algebra and time evolution.",
+      "conclusion": "The normalization, stationary law and pressure value are explicit rather than conflated."
+    },
+    "limits": "The full pressure variational principle and a particular KMS theorem need additional categories, measures and dynamics. A PF eigenvalue alone does not provide those identifications.",
+    "extension": "Introduce a declared edge potential W_ij>0 and repeat the eigenvector construction and KL proof for weighted pressure.",
+    "references": [],
+    "original": {
+      "date": "2025-08-09",
+      "month": "2025-08",
+      "evidence": "A",
+      "field": "Symbolic dynamics",
+      "concept": "Perron data define a Markov measure and a pressure value",
+      "origin": "Dated historical retrieval; see exact source line",
+      "question": "Which normalization turns an adjacency matrix into a stochastic transition matrix, and why does its entropy equal logλ?",
+      "math": "P is stochastic,π is stationary, and its entropy rate is logλ. Every stationary Markov chain Q supported on the same allowed edges has entropy rate at most logλ.",
+      "finish": "Proof, worked example and explicit remaining problem",
+      "kind": "Revised mathematical treatment",
+      "refs": [],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c3] A@2025-08-09T23:12:05Z, -1y2m: Mathematical synthesis: TL relations \\(e_i^2=de_i,\\ e_ie_{i\\pm1}e_i=e_i\\); Markov trace; Bratteli/KMS PF equation \\(A^tm=e^\\beta m\\); homoclinic sequences; Sazonov–Minlos Gaussian extension; Chevalley/GIT and Hilbert–Mumford; cubic KKT system \\(c_j+3x_j^2\\sum_i\\lambda_iA_{ij}=0\\); Čech \\(H^1\\) obstruction; pressure variational principle.",
+      "retrieval_receipt": "root_receipts.json record 0",
+      "original_question": null,
+      "attribution_note": "The excerpt is an exact retrieval-result line, usually a historical paraphrase rather than a verbatim original prompt. User-attributed topics and assistant assertions remain distinct. The revised question, classical proof and example are newly authored; absent history and novelty are not claimed."
+    }
+  },
+  {
+    "id": "Y25-08-005",
+    "title": "The Perron projection must carry the Perron eigenvalue",
+    "status": "Developed classical mathematics with explicit hypotheses and scoped evidence",
+    "summary": "The August10 source simultaneously claimed λ≈1.618,Π=rℓᵀ,R=M−Π,Rr=0 and M^k→Π. These assertions cannot all hold. The correct decomposition is elementary and makes the normalization error decisive.",
+    "definitions": [
+      "Let Mr=λr,ℓᵀM=λℓᵀ,ℓᵀr=1 and Π=rℓᵀ. Assume λ is simple and all other eigenvalues have modulus belowλ>0."
+    ],
+    "result": {
+      "name": "Correct spectral projection decomposition",
+      "statement": "With R=M−λΠ, one has Π²=Π,ΠR=RΠ=0 and M^k=λ^kΠ+R^k for k≥1. Therefore(M/λ)^k→Π whenρ(R)<λ. Defining R=M−Π instead gives Rr=(λ−1)r.",
+      "proof": "The normalization gives Π²=r(ℓᵀr)ℓᵀ=Π and MΠ=ΠM=λΠ. SubtractingλΠ yields the zero cross-products, so binomial expansion has only the two pure terms. Powers of R/λ tend to zero in finite dimension when its spectral radius is below one, including possible polynomial Jordan factors. The erroneous definition subtracts only r from Mr, leaving(λ−1)r, which directly contradicts the claimed annihilation unlessλ=1. Also a number1−ρ(R) is not a universal transient norm budget for a nonnormal matrix."
+    },
+    "example": {
+      "setup": "Use the symmetric Fibonacci matrix M=[[1,1],[1,0]].",
+      "calculation": "Its eigenvalues areφ and−1/φ. The orthogonal PF projection isΠ=(1/(φ²+1))[[φ²,φ],[φ,1]]. Here R=−φ⁻¹(I−Π), and normalized errors decay exactly asφ^(−2k). Unnormalized M^k grows along r rather than converging.",
+      "conclusion": "A single exact eigenvector calculation exposes the historical inconsistency and supplies the corrected convergence theorem."
+    },
+    "limits": "General nonsymmetric matrices may have large transient constants. Spectral radius alone does not certify a numerical solver or perturbation margin.",
+    "extension": "Add a proved norm or resolvent bound and distinguish asymptotic rate from finite-step amplification before claiming a stability budget.",
+    "references": [],
+    "original": {
+      "date": "2025-08-10",
+      "month": "2025-08",
+      "evidence": "A",
+      "field": "Spectral linear algebra",
+      "concept": "The Perron projection must carry the Perron eigenvalue",
+      "origin": "Dated historical retrieval; see exact source line",
+      "question": "Why is M=Π+R inconsistent with a Perron eigenvalueφ when Πr=r and Rr=0?",
+      "math": "With R=M−λΠ, one has Π²=Π,ΠR=RΠ=0 and M^k=λ^kΠ+R^k for k≥1. Therefore(M/λ)^k→Π whenρ(R)<λ. Defining R=M−Π instead gives Rr=(λ−1)r.",
+      "finish": "Proof, worked example and explicit remaining problem",
+      "kind": "Revised mathematical treatment",
+      "refs": [],
+      "source_excerpt": "[PRIOR_ASSISTANT_OUTPUT] [c8] A@2025-08-10T04:17:52Z, -1y2m11d: Mathematical source cluster: \\(M=\\Pi+R\\); Perron–Frobenius \\(\\lambda_{\\mathrm{PF}}\\approx1.618\\); right/left eigenvectors \\(Mr=\\lambda_{\\mathrm{PF}}r\\), \\(\\ell^\\top M=\\lambda_{\\mathrm{PF}}\\ell^\\top\\), normalized \\(\\ell^\\top r=1\\); \\(\\Pi=r\\ell^\\top\\); \\(R=M-\\Pi\\); \\(\\ell^\\top R=0,\\ Rr=0\\); \\(\\rho(R)=0.62<1\\); claimed budget \\(1-\\rho(R)=0.38\\); \\(M^k=\\Pi+R^k\\to\\Pi\\).",
+      "retrieval_receipt": "root_receipts.json record 0",
+      "original_question": null,
+      "attribution_note": "The excerpt is an exact retrieval-result line, usually a historical paraphrase rather than a verbatim original prompt. User-attributed topics and assistant assertions remain distinct. The revised question, classical proof and example are newly authored; absent history and novelty are not claimed."
+    }
+  },
+  {
+    "id": "Y25-08-006",
+    "title": "Chebyshev acceleration needs an interval and a norm",
+    "status": "Developed classical mathematics with explicit hypotheses and scoped evidence",
+    "summary": "The solver narrative named Chebyshev spectrum shaping without recovered operators. A positive-definite matrix with a known interval admits an exact polynomial bound. The assumptions explain why the same formula cannot be transferred blindly to a nonnormal operator.",
+    "definitions": [
+      "Let A be real symmetric positive definite with spectrum in[a,b],0<a<b. Set c=(a+b)/2,d=(b−a)/2 and p_m(λ)=T_m((c−λ)/d)/T_m(c/d), where T_m(cosθ)=cos(mθ). Then p_m(0)=1."
+    ],
+    "result": {
+      "name": "Uniform residual polynomial bound",
+      "statement": "For e_m=p_m(A)e₀, ||e_m||₂≤|T_m(c/d)|⁻¹||e₀||₂≤2((√κ−1)/(√κ+1))^m||e₀||₂,κ=b/a.",
+      "proof": "The affine map sends[a,b] to[−1,1], where|T_m|≤1. The spectral theorem turns the matrix norm into the maximum scalar modulus on its spectrum. For z>1, T_m(z)=(w^m+w^(−m))/2 with w=z+√(z²−1)>1, so its reciprocal is at most2w^(−m). At z=c/d, w=(√κ+1)/(√κ−1), giving the formula. A nonsymmetric right preconditioner can destroy symmetry in the Euclidean inner product; eigenvalue placement alone then does not justify the same norm equality. One must identify an appropriate energy inner product or use a different resolvent-based argument."
+    },
+    "example": {
+      "setup": "Take A=diag(1,4),m=1.",
+      "calculation": "Here c/d=5/3 and p₁(λ)=1−2λ/5. Its eigenvalue multipliers are3/5 and−3/5, so the exact worst-case contraction is3/5. The general asymptotic bound is looser but valid.",
+      "conclusion": "The interval, polynomial normalization and norm are part of the theorem, not implementation details."
+    },
+    "limits": "No source preconditioner matrix or spectrum certificate was recovered. This does not validate the historical solver’s claimed performance.",
+    "extension": "Construct a symmetric positive preconditioner with certified spectral bounds, then compare finite-step residual norms against the exact polynomial certificate.",
+    "references": [],
+    "original": {
+      "date": "2025-08-10",
+      "month": "2025-08",
+      "evidence": "A",
+      "field": "Iterative methods",
+      "concept": "Chebyshev acceleration needs an interval and a norm",
+      "origin": "Dated historical retrieval; see exact source line",
+      "question": "Which spectral assumptions justify a Chebyshev residual bound, and why is a generic preconditioner label insufficient?",
+      "math": "For e_m=p_m(A)e₀, ||e_m||₂≤|T_m(c/d)|⁻¹||e₀||₂≤2((√κ−1)/(√κ+1))^m||e₀||₂,κ=b/a.",
+      "finish": "Proof, worked example and explicit remaining problem",
+      "kind": "Revised mathematical treatment",
+      "refs": [],
+      "source_excerpt": "[PRIOR_ASSISTANT_OUTPUT] [c8] A@2025-08-10T04:19:50Z, -1y2m11d: Follow-on claims: right preconditioning via Chebyshev spectrum shaping (`make_right_preconditioner_op`, `pre",
+      "retrieval_receipt": "root_receipts.json record 0",
+      "original_question": null,
+      "attribution_note": "The excerpt is an exact retrieval-result line, usually a historical paraphrase rather than a verbatim original prompt. User-attributed topics and assistant assertions remain distinct. The revised question, classical proof and example are newly authored; absent history and novelty are not claimed."
+    }
+  },
+  {
+    "id": "Y25-08-007",
+    "title": "Cubic KKT equations do not certify a global maximum",
+    "status": "Developed classical mathematics with explicit hypotheses and scoped evidence",
+    "summary": "The August9 maximality solver repeatedly produced KKT roots and square-root formulas. Their algebra is a necessary first-order condition under regularity, not an automatic global certificate. A one-dimensional cubic constraint makes both sign branches and missing optima explicit.",
+    "definitions": [
+      "Consider f(x)=cᵀx and equality constraints g_i(x)=Σ_jA_ijx_j³−b_i=0. With L=f+Σλ_ig_i, set S_j=Σ_iλ_iA_ij. Assume the constraint gradients are independent at the candidate."
+    ],
+    "result": {
+      "name": "First-order stationarity and its scope",
+      "statement": "A regular constrained extremum satisfies c_j+3x_j²S_j=0. If S_j≠0, real solutions require−c_j/(3S_j)≥0 and generally have both signs. Stationarity alone implies neither existence nor global optimality.",
+      "proof": "The multiplier theorem puts∇f in the span of the constraint gradients, yielding the displayed equations. Solving for x_j² gives the square-root condition; taking only the positive root excludes legitimate candidates unless x_j≥0 was separately imposed. If S_j=0, the equation requires c_j=0 and cannot be divided by S_j. Even all valid stationary points need not cover singular optima. Finally a continuous objective reaches a maximum on a nonempty compact feasible set, but arbitrary affine algebraic sets need not be compact; a cubic parametrization does not supply boundedness."
+    },
+    "example": {
+      "setup": "Minimize or maximize x subject to x³=−1.",
+      "calculation": "The only feasible point is x=−1. Its gradient constraint is3 and stationarity uses λ=−1/3. The positive-root-only expression would produce+1 and miss the feasible point. Separately f(x)=x on the unconstrained real line has no maximum at all.",
+      "conclusion": "A solver needs feasibility, regularity/singular-case handling and a global comparison certificate after computing multipliers."
+    },
+    "limits": "Random surrogate restriction matrices and reported H¹ dimensions do not prove that a KKT optimum solves a geometric problem. The source matrices were not recovered.",
+    "extension": "Restrict to a proved compact semialgebraic domain and certify candidate completeness and objective bounds with exact elimination or interval methods.",
+    "references": [],
+    "original": {
+      "date": "2025-08-09",
+      "month": "2025-08",
+      "evidence": "U",
+      "field": "Constrained optimization",
+      "concept": "Cubic KKT equations do not certify a global maximum",
+      "origin": "Dated historical retrieval; see exact source line",
+      "question": "What hypotheses justify the cubic multiplier equations, and what can a stationary solution actually prove?",
+      "math": "A regular constrained extremum satisfies c_j+3x_j²S_j=0. If S_j≠0, real solutions require−c_j/(3S_j)≥0 and generally have both signs. Stationarity alone implies neither existence nor global optimality.",
+      "finish": "Proof, worked example and explicit remaining problem",
+      "kind": "Revised mathematical treatment",
+      "refs": [],
+      "source_excerpt": "- [USER_FACT] [c0] U@2025-08-09T16:20:30Z, -1y2m: August 9 material covers maximality/KKT cubic constraints, \\(c_j+3X_j^2S_j=0\\), \\(X_j=\\sqrt{-c_j/(3S_j)}\\), multiplier equations; later audit accepted research-prototype status and marked claims unsupported.",
+      "retrieval_receipt": "root_followups.json record 0",
+      "original_question": null,
+      "attribution_note": "The excerpt is an exact retrieval-result line, usually a historical paraphrase rather than a verbatim original prompt. User-attributed topics and assistant assertions remain distinct. The revised question, classical proof and example are newly authored; absent history and novelty are not claimed."
+    }
+  },
+  {
+    "id": "Y25-08-008",
+    "title": "Consistent Gaussian coordinates need not live in the Hilbert space",
+    "status": "Developed classical mathematics with explicit hypotheses and scoped evidence",
+    "summary": "The August9 synthesis invoked Sazonov and Minlos. A diagonal Hilbert-space construction proves a concrete sufficient condition and exhibits the failure of identity covariance. This keeps a genuine measure theorem separate from formal consistency or category names.",
+    "definitions": [
+      "Let H=ℓ² with basis e_n and independent standard normals Z_n. For q_n≥0 consider X=Σ√q_nZ_ne_n. The covariance has diagonal entries q_n."
+    ],
+    "result": {
+      "name": "Trace-summable construction and identity-covariance failure",
+      "statement": "IfΣq_n<∞, X converges almost surely in H and in mean square, with characteristic function exp(−Σq_nh_n²/2). For q_n=1 the coordinate law givesℓ² probability zero.",
+      "proof": "The nonnegative random sum S=Σq_nZ_n² has expectationΣq_n by monotone convergence. Finite expectation implies S<∞ almost surely, which is exactly square summability of the coordinates. The tail mean-square error equalsΣ_{n>N}q_n, proving L² convergence. Finite Gaussian characteristic functions multiply, and dominated convergence yields the displayed limit. The resulting Borel probability on the Polish spaceℓ² is Radon. By contrast the strong law gives N⁻¹Σ_{n≤N}Z_n²→1 almost surely when q_n=1, forcing divergence of the squared norm. Consistency of all finite marginals remains true, but their product measure is supported outsideℓ²."
+    },
+    "example": {
+      "setup": "Choose q_n=2^(−n),n≥1.",
+      "calculation": "The covariance trace and E||X||² are one. Truncation after N has squared mean error2^(−N). Identity-covariance truncations have expected squared norm N and their probability of lying in any fixed-radius ball tends to zero.",
+      "conclusion": "Support and tightness, not just finite consistency, are the decisive missing hypotheses."
+    },
+    "limits": "This proves the diagonal case, not the general Sazonov or nuclear-space Minlos theorem. Cameron–Martin vectors and typical samples also have different meanings.",
+    "extension": "Specify the actual topological vector space and covariance, then prove the continuity/tightness assumptions of the chosen extension theorem.",
+    "references": [],
+    "original": {
+      "date": "2025-08-09",
+      "month": "2025-08",
+      "evidence": "A",
+      "field": "Gaussian measures",
+      "concept": "Consistent Gaussian coordinates need not live in the Hilbert space",
+      "origin": "Dated historical retrieval; see exact source line",
+      "question": "Which covariance condition turns cylinder data into an actual Hilbert-valued random variable?",
+      "math": "IfΣq_n<∞, X converges almost surely in H and in mean square, with characteristic function exp(−Σq_nh_n²/2). For q_n=1 the coordinate law givesℓ² probability zero.",
+      "finish": "Proof, worked example and explicit remaining problem",
+      "kind": "Revised mathematical treatment",
+      "refs": [],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c3] A@2025-08-09T23:12:05Z, -1y2m: Mathematical synthesis: TL relations \\(e_i^2=de_i,\\ e_ie_{i\\pm1}e_i=e_i\\); Markov trace; Bratteli/KMS PF equation \\(A^tm=e^\\beta m\\); homoclinic sequences; Sazonov–Minlos Gaussian extension; Chevalley/GIT and Hilbert–Mumford; cubic KKT system \\(c_j+3x_j^2\\sum_i\\lambda_iA_{ij}=0\\); Čech \\(H^1\\) obstruction; pressure variational principle.",
+      "retrieval_receipt": "root_receipts.json record 0",
+      "original_question": null,
+      "attribution_note": "The excerpt is an exact retrieval-result line, usually a historical paraphrase rather than a verbatim original prompt. User-attributed topics and assistant assertions remain distinct. The revised question, classical proof and example are newly authored; absent history and novelty are not claimed."
+    }
+  },
+  {
+    "id": "Y25-08-009",
+    "title": "Čech obstruction transfer requires a chain equivalence",
+    "status": "Developed classical mathematics with explicit hypotheses and scoped evidence",
+    "summary": "The August12–13 assistant asserted literal equivalence across four domains. A finite cochain complex gives a valid obstruction test, while an explicit counterexample shows why arbitrary adapters do not induce isomorphisms. The historical random surrogate matrices are not adopted as geometric data.",
+    "definitions": [
+      "A cochain complex has C⁰→δ⁰ C¹→δ¹ C² with δ¹δ⁰=0. Its H¹ is kerδ¹/imδ⁰. A cochain map F satisfies Fδ=δF. A cochain homotopy equivalence has an inverse up to maps of the form δh+hδ."
+    ],
+    "result": {
+      "name": "Homotopy equivalence preserves obstruction classes",
+      "statement": "A cochain homotopy equivalence induces an isomorphism on H¹. An arbitrary cochain map, even between three-patch constructions, need not be injective or surjective.",
+      "proof": "A cochain map sends cocycles to cocycles and coboundaries to coboundaries, hence induces cohomology maps. If GF−I=δh+hδ, then on a cocycle z the difference GFz−z=δhz is a coboundary. Thus the induced composite is the identity; the other homotopy proves the inverse composite. Without these hypotheses the zero map between identical nontrivial complexes is already a counterexample to injectivity. Cover preservation and finite-limit preservation by themselves are not a substitute for the specific descent and comparison hypotheses of a sheaf-cohomology theorem."
+    },
+    "example": {
+      "setup": "Use the triangle graph complex C⁰=Q³,C¹=Q³,C²=0 with oriented edge differences.",
+      "calculation": "The vertex-to-edge matrix has rank two, so H¹ has dimension one. The constant1 edge circulation is a nonzero class. The identity preserves it and the zero chain map kills it. Filling the triangle adds a rank-one δ¹ condition and removes this class entirely.",
+      "conclusion": "The domain adapters need actual complexes, restriction maps and a proved comparison, not shared names for a nonzero number."
+    },
+    "limits": "No CA/relativity/urban/category equivalence or persistence correspondence is established. The source’s claimed H¹=15/0 values lacked recovered genuine restriction matrices.",
+    "extension": "Return all boundary matrices, prove δ²=0 and construct explicit comparison maps with inverse homotopies before transporting an obstruction.",
+    "references": [],
+    "original": {
+      "date": "2025-08-12",
+      "month": "2025-08",
+      "evidence": "A",
+      "field": "Cohomology",
+      "concept": "Čech obstruction transfer requires a chain equivalence",
+      "origin": "Dated historical retrieval; see exact source line",
+      "question": "What exact map preserves a first-cohomology obstruction, and why are cover-preserving labels alone insufficient?",
+      "math": "A cochain homotopy equivalence induces an isomorphism on H¹. An arbitrary cochain map, even between three-patch constructions, need not be injective or surjective.",
+      "finish": "Proof, worked example and explicit remaining problem",
+      "kind": "Revised mathematical treatment",
+      "refs": [],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c2] A@2025-08-12T23:55:18Z, -433d: Four-way obstruction model: nonzero Čech class \\([c]\\in H^1\\), persistence \\(P_1>0\\), mapped across CA, BSSNOK/NR, hyperbolic Urb, and Cat; prior response asserted literal equivalence, not proved.",
+      "retrieval_receipt": "root_receipts.json record 0",
+      "original_question": null,
+      "attribution_note": "The excerpt is an exact retrieval-result line, usually a historical paraphrase rather than a verbatim original prompt. User-attributed topics and assistant assertions remain distinct. The revised question, classical proof and example are newly authored; absent history and novelty are not claimed."
+    }
+  },
+  {
+    "id": "Y25-08-010",
+    "title": "Translated cellular-automaton recurrence is a relative periodic orbit",
+    "status": "Developed classical mathematics with explicit hypotheses and scoped evidence",
+    "summary": "The August15 response supplied blinker and glider examples. The mathematical invariant is relative periodicity under a translation symmetry. Its iteration law can be proved without assuming that every repeated pattern is a new cohomological obstruction.",
+    "definitions": [
+      "Let a deterministic map f commute with a translation action S^T,T∈Z^d. A state x is relatively periodic when f^k(x)=S^Tx for some k>0. Ordinary periodicity is the special case T=0."
+    ],
+    "result": {
+      "name": "Iteration of a relative period",
+      "statement": "If f^k(x)=S^Tx and f commutes with translations, then f^(mk)(x)=S^(mT)x for every m≥0. On a finite periodic lattice, some multiple becomes an ordinary period.",
+      "proof": "Induct on m. If the relation holds for m, apply f^k and commute it past S^(mT) to get S^(mT)f^k(x)=S^((m+1)T)x. On a finite translation group, T has finite order r, so f^(rk)(x)=x. On an infinite lattice, nonzero translation drift generally prevents an ordinary period unless the state has a matching spatial stabilizer. This makes time covers and moving frames precise. An observed visual repetition is not sufficient: the equality must hold for the full state under an explicitly defined update and boundary condition."
+    },
+    "example": {
+      "setup": "Use the historical formal glider data k=4,T=(1,1) on an L×L periodic torus.",
+      "calculation": "The iteration law gives f^(4m)(x)=S^(m,m)x. Since S^(L,L)=I,4L is an ordinary period bound, possibly not minimal if the pattern has extra symmetry. A blinker with k=2,T=0 is already periodic after two steps.",
+      "conclusion": "The exact recurrence distinguishes drift, temporal period and boundary-induced return."
+    },
+    "limits": "No historical code bytes or full configurations were recovered here. The proof validates the implication from a checked equality, not the unverified claim that a particular implementation satisfies it.",
+    "extension": "Specify the local rule and finite support/boundaries, verify the entire relative-period equality, and compute the translation stabilizer to certify minimal return time.",
+    "references": [],
+    "original": {
+      "date": "2025-08-15",
+      "month": "2025-08",
+      "evidence": "A",
+      "field": "Discrete dynamics",
+      "concept": "Translated cellular-automaton recurrence is a relative periodic orbit",
+      "origin": "Dated historical retrieval; see exact source line",
+      "question": "What exactly does S^(−T)f^k(x)=x prove, and how does it differ from ordinary periodicity?",
+      "math": "If f^k(x)=S^Tx and f commutes with translations, then f^(mk)(x)=S^(mT)x for every m≥0. On a finite periodic lattice, some multiple becomes an ordinary period.",
+      "finish": "Proof, worked example and explicit remaining problem",
+      "kind": "Revised mathematical treatment",
+      "refs": [],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c17] A@2025-08-15T03:59:41Z, -1y2m: Implemented CA time covers: period-\\(k\\), translated condition \\(S^{-T}f^k(x)=x\\); blinker \\(k=2\\), glider \\(k=4,T=(1,1)\\).",
+      "retrieval_receipt": "root_receipts.json record 0",
+      "original_question": null,
+      "attribution_note": "The excerpt is an exact retrieval-result line, usually a historical paraphrase rather than a verbatim original prompt. User-attributed topics and assistant assertions remain distinct. The revised question, classical proof and example are newly authored; absent history and novelty are not claimed."
+    }
+  },
+  {
+    "id": "Y25-08-011",
+    "title": "Measurability and Lᵖ convergence need different hypotheses",
+    "status": "Developed classical mathematics with explicit hypotheses and scoped evidence",
+    "summary": "The August20 continuum combined outer measure and several function spaces. A precise construction and a spike counterexample separate those issues. Neither a measurability theorem nor a small pointwise error controls an integral norm without additional hypotheses.",
+    "definitions": [
+      "An outer measure μ* is monotone,countably subadditive and zero on∅. A set E is Carathéodory measurable if μ*(A)=μ*(A∩E)+μ*(A∖E) for every A. For p≥1, ||f||_p=(∫|f|^p)^(1/p)."
+    ],
+    "result": {
+      "name": "Carathéodory measurability and an Lᵖ spike",
+      "statement": "The measurable sets form a sigma-algebra on which μ* is countably additive. On[0,1], f_n=n^(1/p)1_(0,1/n) converges to zero almost everywhere while||f_n||_p=1.",
+      "proof": "For the measure theorem, the criterion is invariant under complements. Applying it successively proves finite disjoint splitting and closure under finite unions. For a disjoint measurable sequence E_j, split an arbitrary A by the first N sets; monotonicity and the finite splitting give the required lower bound byΣ_{j≤N}μ*(A∩E_j). Passing to the supremum and combining countable subadditivity proves measurability of the union and countable additivity on measurable sets. For the spike, every fixed x>0 eventually lies outside(0,1/n), but∫|f_n|^p=n·(1/n)=1. Thus norm convergence fails despite pointwise convergence. A common integrable dominating pth power would repair this through dominated convergence."
+    },
+    "example": {
+      "setup": "Compare fixed amplitude with growing amplitude.",
+      "calculation": "For g_n=1_(0,1/n),||g_n||_p=n^(−1/p)→0. Multiplying by n^(1/p) preserves its p-norm. The support size alone therefore does not determine convergence.",
+      "conclusion": "Outer-measure construction, mode of convergence and uniform integrability are separate mathematical requirements."
+    },
+    "limits": "No genomic or hyperspectral interpretation is inferred from the function-space labels. SobolevH¹ and HardyH¹ are different spaces.",
+    "extension": "State the measure, norm and a domination or uniform-integrability condition before transferring pointwise approximation claims into an integral error estimate.",
+    "references": [],
+    "original": {
+      "date": "2025-08-20",
+      "month": "2025-08",
+      "evidence": "A",
+      "field": "Measure theory",
+      "concept": "Measurability and Lᵖ convergence need different hypotheses",
+      "origin": "Dated historical retrieval; see exact source line",
+      "question": "What does the Carathéodory criterion prove, and why does pointwise convergence not imply norm convergence?",
+      "math": "The measurable sets form a sigma-algebra on which μ* is countably additive. On[0,1], f_n=n^(1/p)1_(0,1/n) converges to zero almost everywhere while||f_n||_p=1.",
+      "finish": "Proof, worked example and explicit remaining problem",
+      "kind": "Revised mathematical treatment",
+      "refs": [],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c4] A@2025-08-20T22:37:32Z, -1y2m: equations/topics included Carathéodory criterion μ*(A)=μ*(A∩E)+μ*(A∖E), Lᵖ convergence, torus g=(R−√(x²+y²))²+z²−r², δ(g) surface measure, hyperspectral L²/H¹, BMO oscillation, Fefferman (H¹)′=BMO, electroweak masses, LINE-1/genomic L¹.",
+      "retrieval_receipt": "root_receipts.json record 0",
+      "original_question": null,
+      "attribution_note": "The excerpt is an exact retrieval-result line, usually a historical paraphrase rather than a verbatim original prompt. User-attributed topics and assistant assertions remain distinct. The revised question, classical proof and example are newly authored; absent history and novelty are not claimed."
+    }
+  },
+  {
+    "id": "Y25-08-012",
+    "title": "A torus delta integral requires a coarea factor",
+    "status": "Developed classical mathematics with explicit hypotheses and scoped evidence",
+    "summary": "The August20 torus equation supports an exact correction. A delta distribution on a regular level set is weighted by the reciprocal gradient norm. The resulting factor is constant for this particular defining function, but changes when the equation is rescaled.",
+    "definitions": [
+      "Let R>r>0,ρ=√(x²+y²),g=(R−ρ)²+z²−r². Its zero set is a smooth torus. Coarea gives∫fδ(g)dx=∫_{g=0}f/|∇g|dA for suitable test functions."
+    ],
+    "result": {
+      "name": "Exact torus normalization",
+      "statement": "On g=0,|∇g|=2r. Hence∫fδ(g)dx=(1/(2r))∫_TfdA, whileδ(g)|∇g|dx represents dA. In particular∫δ(g)dx=2π²R.",
+      "proof": "Differentiate in cylindrical coordinates:∇g has radial component2(ρ−R) and vertical component2z. Its squared norm on the torus is4[(ρ−R)²+z²]=4r², so the coarea factor is constant2r. Parametrize by((R+r cosv)cosu,(R+r cosv)sinu,r sinv). The area density is r(R+r cosv); integrating u,v over[0,2π] gives4π²Rr. Dividing by2r proves the delta integral. If g is replaced by cg,δ(cg)=δ(g)/|c|, whereas the zero set and its geometric area are unchanged. The compensating gradient factor is therefore indispensable."
+    },
+    "example": {
+      "setup": "Take R=3,r=1.",
+      "calculation": "The area is12π² but the unweighted delta integral is6π². Using2g as a defining equation halves that delta integral again while preserving the torus itself.",
+      "conclusion": "A geometric observable must be invariant under harmless rescaling of its defining equation."
+    },
+    "limits": "The delta is a distribution, not an ordinary pointwise function. Regularity fails for other level sets if∇g vanishes, and the present formula then needs replacement.",
+    "extension": "Derive the appropriate coarea formula for the actual level-set model and test invariance under reparametrization before interpreting surface integrals.",
+    "references": [],
+    "original": {
+      "date": "2025-08-20",
+      "month": "2025-08",
+      "evidence": "A",
+      "field": "Geometric integration",
+      "concept": "A torus delta integral requires a coarea factor",
+      "origin": "Dated historical retrieval; see exact source line",
+      "question": "Does δ(g)dx equal the induced surface measure, or is a gradient factor missing?",
+      "math": "On g=0,|∇g|=2r. Hence∫fδ(g)dx=(1/(2r))∫_TfdA, whileδ(g)|∇g|dx represents dA. In particular∫δ(g)dx=2π²R.",
+      "finish": "Proof, worked example and explicit remaining problem",
+      "kind": "Revised mathematical treatment",
+      "refs": [],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c4] A@2025-08-20T22:37:32Z, -1y2m: equations/topics included Carathéodory criterion μ*(A)=μ*(A∩E)+μ*(A∖E), Lᵖ convergence, torus g=(R−√(x²+y²))²+z²−r², δ(g) surface measure, hyperspectral L²/H¹, BMO oscillation, Fefferman (H¹)′=BMO, electroweak masses, LINE-1/genomic L¹.",
+      "retrieval_receipt": "root_receipts.json record 0",
+      "original_question": null,
+      "attribution_note": "The excerpt is an exact retrieval-result line, usually a historical paraphrase rather than a verbatim original prompt. User-attributed topics and assistant assertions remain distinct. The revised question, classical proof and example are newly authored; absent history and novelty are not claimed."
+    }
+  },
+  {
+    "id": "Y25-08-013",
+    "title": "Hardy atoms bound BMO pairings with an explicit constant",
+    "status": "Developed classical mathematics with explicit hypotheses and scoped evidence",
+    "summary": "The August20 synthesis named Fefferman duality and controlled irregularity. A local atomic inequality can be proved completely and is useful without pretending to prove the full global duality theorem or identify Sobolev and Hardy spaces.",
+    "definitions": [
+      "For an interval I define b_I=|I|⁻¹∫_Ib and osc_I(b)=|I|⁻¹∫_I|b−b_I|. A real Hardy atom a is supported on I, has mean zero and||a||∞≤1/|I|. The BMO seminorm is sup_I osc_I(b)."
+    ],
+    "result": {
+      "name": "Atomic pairing and bounded perturbation",
+      "statement": "|∫ab|≤osc_I(b). If b∈BMO and||e||∞≤ε, then b+e∈BMO and| ||b+e||_BMO−||b||_BMO |≤2ε.",
+      "proof": "Mean zero gives∫ab=∫a(b−b_I); bounding a by1/|I| proves the pairing. For perturbations, osc_I(b+e)≤osc_I(b)+osc_I(e) by the triangle inequality. Since|e_I|≤ε, the second oscillation is at most2ε. Taking suprema and exchanging b with b+e proves the finite two-sided bound. These arguments identify exactly which norms control cancellation and perturbation. Full(H¹)*=BMO involves atomic decompositions and functional representation beyond this single estimate; merely choosing a function called entropy does not establish that theorem’s hypotheses."
+    },
+    "example": {
+      "setup": "Take I=[−1,1],a=sign(x)/2 and b=x.",
+      "calculation": "The atom has zero mean and sup norm1/2. Here b_I=0,osc_I(b)=1/2 and∫ab=(1/2)∫|x|dx=1/2, so the local constant is attained. The function x on all of R is not claimed globally BMO.",
+      "conclusion": "The cancellation, coefficient convention and perturbation class make the irregularity claim mathematically testable."
+    },
+    "limits": "No physiological or urban-model inference follows from this local estimate. HardyH¹ is not the derivative-based SobolevH¹.",
+    "extension": "Specify the intended function space and atoms, then prove the required global decomposition or embedding with constants uniform in the proposed parameters.",
+    "references": [
+      {
+        "label": "Bonn, Hardy spaces and BMO notes",
+        "url": "https://www.math.uni-bonn.de/ag/ana/WiSe1415/V4B5_hardy.pdf"
+      }
+    ],
+    "original": {
+      "date": "2025-08-20",
+      "month": "2025-08",
+      "evidence": "U",
+      "field": "Harmonic analysis",
+      "concept": "Hardy atoms bound BMO pairings with an explicit constant",
+      "origin": "Dated historical retrieval; see exact source line",
+      "question": "Which cancellation and oscillation estimates support the named Hardy–BMO connection?",
+      "math": "|∫ab|≤osc_I(b). If b∈BMO and||e||∞≤ε, then b+e∈BMO and| ||b+e||_BMO−||b||_BMO |≤2ε.",
+      "finish": "Proof, worked example and explicit remaining problem",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://www.math.uni-bonn.de/ag/ana/WiSe1415/V4B5_hardy.pdf"
+      ],
+      "source_excerpt": "- [USER_PREFERENCE] [c4] U@2025-08-20T22:37:05Z, -1y2m: requested HARSH audits and continuous refinement of monographs; accepted a Carathéodory–Lebesgue–Fefferman–Genomics continuum.",
+      "retrieval_receipt": "root_receipts.json record 0",
+      "original_question": null,
+      "attribution_note": "The excerpt is an exact retrieval-result line, usually a historical paraphrase rather than a verbatim original prompt. User-attributed topics and assistant assertions remain distinct. The revised question, classical proof and example are newly authored; absent history and novelty are not claimed."
+    }
+  },
+  {
+    "id": "Y25-08-014",
+    "title": "A Landau quartic has a precise minimizer set",
+    "status": "Developed classical mathematics with explicit hypotheses and scoped evidence",
+    "summary": "The categorical August20 discussion also named a Landau–Ginzburg energy. Its pointwise potential is solvable exactly. Separating that minimization from the gradient energy and statistical model prevents a formal minimum circle from being presented as a proved physical phase transition.",
+    "definitions": [
+      "Let φ∈C,u>0 and V(φ)=r|φ|²+u|φ|⁴ with r real. For a spatial field one may add∫|∇φ|², but boundary conditions and function space must then be stated separately."
+    ],
+    "result": {
+      "name": "Exact quartic minima",
+      "statement": "If r≥0,V has unique minimum atφ=0. If r<0, its minimum is−r²/(4u), attained exactly on|φ|=√(−r/(2u)).",
+      "proof": "Set s=|φ|²≥0. Complete the square:rs+us²=u(s+r/(2u))²−r²/(4u). If r<0 the square vanishes at an allowed positive s, giving the circle. If r≥0 the function is increasing for s≥0 and minimized at zero. Along a nonzero minimum the phase direction costs no pointwise potential, while radial perturbations do. For a field with unconstrained periodic boundaries, constant minimizers also minimize the nonnegative gradient term. Nonconstant boundary conditions, topological sectors or fluctuations change the variational problem and require additional analysis."
+    },
+    "example": {
+      "setup": "Use r=−2,u=1.",
+      "calculation": "V=|φ|⁴−2|φ|²=(|φ|²−1)²−1. Every unit complex number minimizes it with value−1;φ=0 has value0 and is not a minimum. Fixing the field to zero on a boundary prevents a nonzero constant from meeting that boundary condition.",
+      "conclusion": "The minimizer manifold is a proved feature of a declared polynomial, with the remaining physical interpretation separated."
+    },
+    "limits": "No quantum field theory, finite-temperature transition or categorical Ext obstruction is established by this elementary potential calculation.",
+    "extension": "Specify a domain and boundary conditions and prove existence and stability of minimizers for the full gradient-plus-potential energy.",
+    "references": [],
+    "original": {
+      "date": "2025-08-20",
+      "month": "2025-08",
+      "evidence": "A",
+      "field": "Variational calculus",
+      "concept": "A Landau quartic has a precise minimizer set",
+      "origin": "Dated historical retrieval; see exact source line",
+      "question": "Which conclusions follow from the stated quartic potential before invoking a field theory or phase transition?",
+      "math": "If r≥0,V has unique minimum atφ=0. If r<0, its minimum is−r²/(4u), attained exactly on|φ|=√(−r/(2u)).",
+      "finish": "Proof, worked example and explicit remaining problem",
+      "kind": "Revised mathematical treatment",
+      "refs": [],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c4] A@2025-08-20T23:22:57Z, -1y2m: additional categorical mathematics: Landau–Ginzburg ℒ=|∇φ|²+r|φ|²+u|φ|⁴; cohomology/Ext² obstructions; Hall product [a]*[b]=Σgᵃ,ᵇ_c[c]; spectral sequences; derived-category",
+      "retrieval_receipt": "root_receipts.json record 0",
+      "original_question": null,
+      "attribution_note": "The excerpt is an exact retrieval-result line, usually a historical paraphrase rather than a verbatim original prompt. User-attributed topics and assistant assertions remain distinct. The revised question, classical proof and example are newly authored; absent history and novelty are not claimed."
+    }
+  },
+  {
+    "id": "Y25-08-015",
+    "title": "Hall coefficients count subobjects even when Ext¹ vanishes",
+    "status": "Developed classical mathematics with explicit hypotheses and scoped evidence",
+    "summary": "The August20 synthesis connected Hall algebras, Ext² and spectral sequences. Finite vector spaces provide a complete Hall counting example. It also distinguishes counting subobjects from detecting a nonsplit extension.",
+    "definitions": [
+      "Work in finite-dimensional vector spaces over F_q. Let[n] denote an isomorphism class of dimension n. Use the Hall convention[a]*[b]=Σ_c g^a,b_c[c], where g counts b-dimensional subspaces with a-dimensional quotient."
+    ],
+    "result": {
+      "name": "Gaussian binomial coefficients and flag associativity",
+      "statement": "[a]*[b]=GaussianBinomial(a+b,b)_q[a+b]. In particular[1]*[1]=(q+1)[2], and[1]^3=(q+1)(q²+q+1)[3].",
+      "proof": "Only a space of dimension a+b can contribute. Count ordered linearly independent b-tuples in F_q^(a+b):there are∏_{j=0}^{b−1}(q^(a+b)−q^j). Divide by the number∏_{j=0}^{b−1}(q^b−q^j) of ordered bases of a fixed b-plane. This yields the Gaussian binomial. Associativity counts the same flags with two successive quotient dimensions in either parenthesization. For three one-dimensional factors, choose a line and then a plane containing it, giving(q²+q+1)(q+1). Every short exact sequence of vector spaces splits, so Ext¹=0 here despite nontrivial Hall coefficients. In a spectral sequence, classes can similarly disappear under later differentials; a page dimension is not automatically an abutment dimension."
+    },
+    "example": {
+      "setup": "Take q=2.",
+      "calculation": "There are three lines in F₂², so[1]*[1]=3[2]. In F₂³ there are seven lines and three planes through each line, giving21 complete line-plane flags and[1]^3=21[3].",
+      "conclusion": "A named algebra becomes an exact finite counting structure, distinct from an obstruction group."
+    },
+    "limits": "No derived Hall algebra or specific Ext² obstruction is constructed. Spectral-sequence claims require actual differentials and convergence data.",
+    "extension": "Move to a specified finite quiver category, enumerate extensions and automorphism factors, and verify associativity with the chosen normalization.",
+    "references": [],
+    "original": {
+      "date": "2025-08-20",
+      "month": "2025-08",
+      "evidence": "A",
+      "field": "Finite algebra",
+      "concept": "Hall coefficients count subobjects even when Ext¹ vanishes",
+      "origin": "Dated historical retrieval; see exact source line",
+      "question": "Which actual counting problem defines the Hall product, and what does a small example say about extension obstructions?",
+      "math": "[a]*[b]=GaussianBinomial(a+b,b)_q[a+b]. In particular[1]*[1]=(q+1)[2], and[1]^3=(q+1)(q²+q+1)[3].",
+      "finish": "Proof, worked example and explicit remaining problem",
+      "kind": "Revised mathematical treatment",
+      "refs": [],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c4] A@2025-08-20T23:22:57Z, -1y2m: additional categorical mathematics: Landau–Ginzburg ℒ=|∇φ|²+r|φ|²+u|φ|⁴; cohomology/Ext² obstructions; Hall product [a]*[b]=Σgᵃ,ᵇ_c[c]; spectral sequences; derived-category",
+      "retrieval_receipt": "root_receipts.json record 0",
+      "original_question": null,
+      "attribution_note": "The excerpt is an exact retrieval-result line, usually a historical paraphrase rather than a verbatim original prompt. User-attributed topics and assistant assertions remain distinct. The revised question, classical proof and example are newly authored; absent history and novelty are not claimed."
+    }
+  },
+  {
+    "id": "Y25-08-016",
+    "title": "Gauge transformations and Picard–Fuchs coordinates must be normalized",
+    "status": "Developed classical mathematics with explicit hypotheses and scoped evidence",
+    "summary": "The August13 synthesis mixed ribbon forms with mirror-quintic, BPZ and Seiberg–Witten equations. A formal factorial series and a gauge-conjugation identity provide exact mathematics. They do not construct the claimed inter-domain adapters or their monodromy comparisons.",
+    "definitions": [
+      "Let θ=z d/dz and a_n=(5n)!/(n!)⁵. Put F(z)=Σa_nz^n. A scalar gauge y=z^αv is interpreted on a chosen branch over a punctured neighborhood."
+    ],
+    "result": {
+      "name": "Factorial recurrence and gauge shift",
+      "statement": "F solves[θ⁴−5z(5θ+1)(5θ+2)(5θ+3)(5θ+4)]F=0 formally. Gauge conjugation gives z^(−α)θz^α=θ+α.",
+      "proof": "The factorial quotient gives n⁴a_n=5(5n−4)(5n−3)(5n−2)(5n−1)a_{n−1}; these are exactly the coefficient equations of the displayed operator. Its first coefficients are1,120,113400. An operator with−ζ rather than−5z uses a rescaled coordinateζ=5z and correspondingly rescaled coefficients; the two conventions cannot be mixed. The product rule givesθ(z^αv)=z^α(θ+α)v, proving conjugation for any polynomial inθ, with coefficient multiplication retained in its proper order. A loop around zero multiplies z^α by e^(2πiα), so a half-power gauge contributes−1 to monodromy."
+    },
+    "example": {
+      "setup": "Use α=1/2 and the coefficient at z¹.",
+      "calculation": "The recurrence gives a₁=5·1·2·3·4=120. The gauge shifts everyθ by1/2 and changes a local monodromy matrix by its scalar branch factor. It is not a declaration that two unmodified differential operators are identical.",
+      "conclusion": "Variables, operator order and branch factors are essential data in any claimed transport between differential systems."
+    },
+    "limits": "No integral symplectic basis, geometric period map or actual AGT/SW adapter was recovered. Formal annihilation does not validate physical or arithmetic interpretations.",
+    "extension": "Supply connection matrices, path ordering and comparison covectors, then verify the proposed gauge relation coefficientwise and compare monodromy in the same basis.",
+    "references": [
+      {
+        "label": "Zhou, Hodge-theoretic mirror symmetry for the quintic",
+        "url": "https://sites.math.northwestern.edu/~byzhou01/MS_quintic_E.pdf"
+      }
+    ],
+    "original": {
+      "date": "2025-08-13",
+      "month": "2025-08",
+      "evidence": "A",
+      "field": "Differential equations",
+      "concept": "Gauge transformations and Picard–Fuchs coordinates must be normalized",
+      "origin": "Dated historical retrieval; see exact source line",
+      "question": "Which operator annihilates the factorial period series, and how does a square-root gauge change its local monodromy?",
+      "math": "F solves[θ⁴−5z(5θ+1)(5θ+2)(5θ+3)(5θ+4)]F=0 formally. Gauge conjugation gives z^(−α)θz^α=θ+α.",
+      "finish": "Proof, worked example and explicit remaining problem",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://sites.math.northwestern.edu/~byzhou01/MS_quintic_E.pdf"
+      ],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c5] A@2025-08-13T13:58:44Z, -1y2m: August mathematical synthesis: condensed ∞-topos; \\(R_{\\rm arith}\\) with \\(z=p^{-s}u\\), \\(|u|=1\\); \\(T_{\\rm mot}=(-1)^np^{-q}u\\); \\(\\omega=i\\pi dn-(\\ln p)dq+i\\,d\\arg u\\); claimed \\(d\\log T_{\\rm mot}=\\omega\\). Bridges: mirror-quintic Picard–Fuchs \\(L=\\theta^4-\\zeta(5\\theta+1)\\cdots(5\\theta+4)\\), AGT/BPZ gauge \\(x^{1/2}\\), Seiberg–Witten hypergeometric gauge \\(\\lambda^{1/2}\\), abelian Langlands theorem, nonabelian factorization conjecture, tmf sigma-orientation.",
+      "retrieval_receipt": "root_receipts.json record 0",
+      "original_question": null,
+      "attribution_note": "The excerpt is an exact retrieval-result line, usually a historical paraphrase rather than a verbatim original prompt. User-attributed topics and assistant assertions remain distinct. The revised question, classical proof and example are newly authored; absent history and novelty are not claimed."
+    }
+  },
+  {
+    "id": "Y25-08-017",
+    "title": "Phase consistency is a cycle condition, not a missing matrix certificate",
+    "status": "Developed classical mathematics with explicit hypotheses and scoped evidence",
+    "summary": "The August20 source reports ranks and maximal exact subsets but does not supply its full coefficient matrix. A clearly defined graph-potential model can still be analyzed exactly. It must not be silently identified with that missing model, because it gives different subset counts.",
+    "definitions": [
+      "For a directed ratio edge u/v with label b_uv∈F₅ define the equation x_u−x_v=b_uv. On a connected graph, potentials are defined up to adding a constant. The published mod60 representatives can be reduced modulo five, but this does not recover every original axis constraint."
+    ],
+    "result": {
+      "name": "Cycle criterion for graph potentials",
+      "statement": "The graph equations are solvable exactly when every signed cycle sum vanishes. A connected incidence matrix has rank|V|−1. The recovered representatives are inconsistent in this model, but deleting the c/s edge leaves ten consistent edges.",
+      "proof": "Necessity follows by telescoping potential differences around a cycle. For sufficiency choose a root potential zero and integrate labels along a spanning tree. Two paths give the same value precisely when their difference cycle has zero sum. Tree edges are independent and all remaining incidence rows lie in their span, proving the rank. In the source list every mod5 label is zero except c/s=17≡2. Yet c/τ=55,τ/μ=0 and s/μ=55 force x_c=x_τ=x_μ=x_s, contradicting x_c−x_s=2. If that one edge is removed, the zero potential satisfies all remaining ten equations. Thus the source’s claimed maximum-eight family cannot be reconstructed from edge phases alone; its original matrix contains missing structure or different semantics."
+    },
+    "example": {
+      "setup": "Follow the cycle c→τ→μ→s→c.",
+      "calculation": "The first three differences are zero and the last contributes−2, giving a nonzero cycle. CRT modulo60 combines residues modulo3,4,5 only after each component is consistent; it does not repair a contradiction modulo five.",
+      "conclusion": "The exact obstruction is real for the declared graph model, while unrecovered ranks and subset statistics remain qualified historical claims."
+    },
+    "limits": "The original eleven-edge exponent/axis matrix and seed table were not recovered. This entry does not certify its reported maximal subsets or a physical mass relation.",
+    "extension": "Publish the exact matrix and right-hand side, then enumerate feasible subsets and provide explicit left-nullspace inconsistency witnesses.",
+    "references": [],
+    "original": {
+      "date": "2025-08-20",
+      "month": "2025-08",
+      "evidence": "A",
+      "field": "Finite-field cohomology",
+      "concept": "Phase consistency is a cycle condition, not a missing matrix certificate",
+      "origin": "Dated historical retrieval; see exact source line",
+      "question": "What can be verified from the recovered edge labels when the original eleven-edge coefficient matrix is unavailable?",
+      "math": "The graph equations are solvable exactly when every signed cycle sum vanishes. A connected incidence matrix has rank|V|−1. The recovered representatives are inconsistent in this model, but deleting the c/s edge leaves ten consistent edges.",
+      "finish": "Proof, worked example and explicit remaining problem",
+      "kind": "Revised mathematical treatment",
+      "refs": [],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c6] A@2025-08-20T17:42:04Z, +14mo: Variant A locked: axis-5 = ln(mp/me); μ→t→e→b→μ 4-cycle PASS (LHS=RHS=0 mod 5); full 11-edge GF(5) inconsistent, rank(A)=6, rank([A|b])=7, nullity=1; 1 eight-edge and 25 seven-edge maximal exact sets; CRT mod-60 representatives: t/μ=5, b/μ=5, c/τ=55, b/e=5, t/e=5, s/e=55, s/μ=55, c/s=17, b/s=5, μ/e=20, τ/μ=0.",
+      "retrieval_receipt": "root_receipts.json record 0",
+      "original_question": null,
+      "attribution_note": "The excerpt is an exact retrieval-result line, usually a historical paraphrase rather than a verbatim original prompt. User-attributed topics and assistant assertions remain distinct. The revised question, classical proof and example are newly authored; absent history and novelty are not claimed."
+    }
+  },
+  {
+    "id": "Y25-08-018",
+    "title": "The denominator5760 follows from a characteristic power series",
+    "status": "Developed classical mathematics with explicit hypotheses and scoped evidence",
+    "summary": "The August16 framework used5760 alongside proposed gravitational and coupling formulas. The characteristic-class coefficient has an exact formal derivation. Its arithmetic does not imply those external formulas without an independent geometric and physical construction.",
+    "definitions": [
+      "Use formal Pontryagin roots x_i with p₁=Σx_i² and p₂=Σ_{i<j}x_i²x_j². The Â multiplicative sequence is∏_i[(x_i/2)/sinh(x_i/2)]. The variables are formal characteristic roots, not observed coupling constants."
+    ],
+    "result": {
+      "name": "Degree-eight Â polynomial",
+      "statement": "Â=1−p₁/24+(7p₁²−4p₂)/5760+terms of higher degree.",
+      "proof": "Expanding sinh gives(x/2)/sinh(x/2)=1−x²/24+7x⁴/5760+O(x⁶). In the product, the quadratic-root term is−Σx_i²/24. The quartic-root term is7Σx_i⁴/5760+Σ_{i<j}x_i²x_j²/576. SubstituteΣx_i⁴=p₁²−2p₂ to obtain(7p₁²−14p₂+10p₂)/5760. This proves the stated polynomial using only formal series multiplication. Integrating the appropriate degree over a compact oriented manifold requires actual characteristic classes; integrality of the Dirac index additionally uses a spin structure and the index theorem. An integer denominator in a universal polynomial is not by itself a derivation of a running coupling or a Planck scale."
+    },
+    "example": {
+      "setup": "Use two formal roots x,y.",
+      "calculation": "The x²y² coefficient in the product is1/576. In the Pontryagin expression it is(14−4)/5760=1/576, an exact independent cross-term check.",
+      "conclusion": "The normalization and coefficient are classical and reproducible, while the proposed physical identifications remain separate hypotheses."
+    },
+    "limits": "No source manifold, bundle or compactification data justify the historical numerical physical formulas. No current measurement or prediction is endorsed.",
+    "extension": "Specify an actual spin manifold and bundle, compute its characteristic numbers, and distinguish the proved index from any subsequent model-dependent identification.",
+    "references": [],
+    "original": {
+      "date": "2025-08-16",
+      "month": "2025-08",
+      "evidence": "U",
+      "field": "Characteristic classes",
+      "concept": "The denominator5760 follows from a characteristic power series",
+      "origin": "Dated historical retrieval; see exact source line",
+      "question": "What mathematical normalization produces the Â polynomial, and what does it not determine about physical constants?",
+      "math": "Â=1−p₁/24+(7p₁²−4p₂)/5760+terms of higher degree.",
+      "finish": "Proof, worked example and explicit remaining problem",
+      "kind": "Revised mathematical treatment",
+      "refs": [],
+      "source_excerpt": "- [USER_FACT] [c7] U@2025-08-16T02:46:47Z, -1y2mo: August 16 mathematics centers on a proposed 5760/\\(\\hat A\\)-genus framework: \\(\\alpha^{-1}(M_Z)=2\\pi+\\frac b{2\\pi}\\ln(M_c/M_Z)+P_G\\); gravitational \\(M_{\\rm Pl,eff}^2\\); \\(U(1)_Y\\), SM beta coefficients, Witten genus/\\(\\Lambda\\).",
+      "retrieval_receipt": "root_receipts.json record 0",
+      "original_question": null,
+      "attribution_note": "The excerpt is an exact retrieval-result line, usually a historical paraphrase rather than a verbatim original prompt. User-attributed topics and assistant assertions remain distinct. The revised question, classical proof and example are newly authored; absent history and novelty are not claimed."
+    }
+  },
+  {
+    "id": "Y25-08-019",
+    "title": "A B₅ symmetry label does not force empirical rank five",
+    "status": "Developed classical mathematics with explicit hypotheses and scoped evidence",
+    "summary": "The August17–18 source alternated between rank-three/rank-four results and unsupported rank-five claims. The group order is exact, but orbit size and design-matrix rank require separate calculations. A finite counterexample prevents symmetry terminology from manufacturing empirical evidence.",
+    "definitions": [
+      "The Weyl groups B₅ and C₅ act by arbitrary coordinate permutations and independent sign changes on R⁵. Their order is2⁵·5!=3840. An orbit has size group order divided by stabilizer order. A log-monomial model is linear regression after taking declared dimensionless logarithms."
+    ],
+    "result": {
+      "name": "Generic orbits versus degenerate orbits and feature rank",
+      "statement": "A vector with nonzero pairwise-distinct absolute coordinates has orbit3840. The vector(1,1,0,0,0) has orbit40. Neither group action determines the rank of a separately constructed data matrix.",
+      "proof": "There are5! permutations and2⁵ sign choices. Under the stated generic condition no nonidentity choice fixes the vector, so the stabilizer is trivial. For(1,1,0,0,0), choose the two nonzero positions in ten ways and their signs in four ways; permuting equal entries or flipping zeros changes nothing, giving40. For feature rank, a constant column becomes zero after centering. More generally exact linear dependence between declared features bounds the rank independently of their labels. An invariant polynomial ring can have five algebraically independent generators while a particular finite dataset explores fewer independent directions."
+    },
+    "example": {
+      "setup": "Take five centered columns with the fifth equal to twice the first.",
+      "calculation": "The matrix rank is at most four even if its columns are named after five physical axes. Conversely a group orbit count3840 does not equal the number of independent observations or a held-out error statistic.",
+      "conclusion": "Symmetry order, effective rank and predictive accuracy are different quantities with different certificates."
+    },
+    "limits": "The historical physical datasets, train/test split and claimed MSE were not recovered. They remain assistant claims, not validated empirical results or mass predictions.",
+    "extension": "Freeze dimensionless features and data provenance, publish singular values and exact dependencies, then calibrate a predeclared held-out test against a justified null model.",
+    "references": [
+      {
+        "label": "Etingof, Lie Groups and Lie Algebras I",
+        "url": "https://ocw.mit.edu/courses/18-745-lie-groups-and-lie-algebras-i-fall-2020/"
+      }
+    ],
+    "original": {
+      "date": "2025-08-17",
+      "month": "2025-08",
+      "evidence": "U",
+      "field": "Invariant theory",
+      "concept": "A B₅ symmetry label does not force empirical rank five",
+      "origin": "Dated historical retrieval; see exact source line",
+      "question": "What does the signed-permutation group actually imply, and what would establish a five-dimensional feature model?",
+      "math": "A vector with nonzero pairwise-distinct absolute coordinates has orbit3840. The vector(1,1,0,0,0) has orbit40. Neither group action determines the rank of a separately constructed data matrix.",
+      "finish": "Proof, worked example and explicit remaining problem",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://ocw.mit.edu/courses/18-745-lie-groups-and-lie-algebras-i-fall-2020/"
+      ],
+      "source_excerpt": "- [USER_FACT] [c1] U@2025-08-17T20:36:59Z, -430d: August work centered on speculative B₅/C₅ (Weyl order 3840) organizing subatomic mass ratios via α-bounded sparse log-monomials, φ-gating, RG robustness, rational exponents, invariants, and empirical-null calibration.",
+      "retrieval_receipt": "root_receipts.json record 0",
+      "original_question": null,
+      "attribution_note": "The excerpt is an exact retrieval-result line, usually a historical paraphrase rather than a verbatim original prompt. User-attributed topics and assistant assertions remain distinct. The revised question, classical proof and example are newly authored; absent history and novelty are not claimed."
+    }
+  },
+  {
+    "id": "Y25-08-020",
+    "title": "BFGS positivity requires curvature, not Armijo alone",
+    "status": "Developed classical mathematics with explicit hypotheses and scoped evidence",
+    "summary": "The August10 narrative compiler included L-BFGS scaling and Armijo backtracking. A complete quadratic example checks its line search and scale. The inverse-update formula identifies the separate curvature safeguard required for positive-definite search directions.",
+    "definitions": [
+      "Let H be symmetric positive definite,s=x⁺−x,y=∇f(x⁺)−∇f(x),ρ=(yᵀs)⁻¹. The inverse-BFGS update is H⁺=(I−ρsyᵀ)H(I−ρysᵀ)+ρssᵀ."
+    ],
+    "result": {
+      "name": "Curvature condition and positive definiteness",
+      "statement": "If yᵀs>0, then H⁺ is positive definite. An Armijo decrease test alone does not guarantee this curvature condition.",
+      "proof": "For any z≠0, zᵀH⁺z=wᵀHw+ρ(sᵀz)² with w=(I−ρysᵀ)z. Both terms are nonnegative. If sᵀz≠0 the second is positive; if it is zero then w=z and the first is positive. This proves the claim. Armijo bounds f(x+αp) against f(x)+c₁α∇fᵀp, but does not bound the new directional derivative; a curvature/Wolfe condition or an explicit yᵀs safeguard is additional. The scale H₀=(sᵀy)/(yᵀy)I is positive only under the same sign requirement and a nonzero denominator."
+    },
+    "example": {
+      "setup": "Use f=(x₀−1)²+(x₁+2)² at x=(4,−6).",
+      "calculation": "The gradient is(6,−8), initial objective25. A unit steepest-descent step leaves objective25 and fails Armijo at c₁=10⁻⁴. Step1/2 reaches(1,−2) with objective0. Then s=(−3,4),y=(−6,8),sᵀy=50,yᵀy=100, so the initial inverse scale is1/2.",
+      "conclusion": "The test checks real derivative and update identities rather than merely a solver status."
+    },
+    "limits": "No global L-BFGS convergence theorem follows from one quadratic. Nonsmooth objectives and skipped or damped updates require their own hypotheses.",
+    "extension": "Certify descent, curvature and sufficient-decrease conditions at every update, then compare finite-memory outputs with a direct inverse update on a small exact problem.",
+    "references": [
+      {
+        "label": "Nocedal, Updating quasi-Newton matrices with limited storage",
+        "url": "https://courses.engr.illinois.edu/ece544na/fa2014/nocedal80.pdf"
+      }
+    ],
+    "original": {
+      "date": "2025-08-10",
+      "month": "2025-08",
+      "evidence": "U",
+      "field": "Numerical optimization",
+      "concept": "BFGS positivity requires curvature, not Armijo alone",
+      "origin": "Dated historical retrieval; see exact source line",
+      "question": "Which algebraic condition preserves a positive inverse-Hessian estimate, and what does the recovered quadratic test actually verify?",
+      "math": "If yᵀs>0, then H⁺ is positive definite. An Armijo decrease test alone does not guarantee this curvature condition.",
+      "finish": "Proof, worked example and explicit remaining problem",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://courses.engr.illinois.edu/ece544na/fa2014/nocedal80.pdf"
+      ],
+      "source_excerpt": "- [USER_FACT] [c13] U@2025-08-10T19:41:33Z, -1y2m10d: August mathematics project: narrative compiler for optimization algorithms; user supplied L-BFGS two-loop recursion, \\(H_0=(s^Ty)/(y^Ty)\\), Armijo \\(c_1=10^{-4}\\), rolling \\(s,y,\\rho\\) memory, quadratic \\(f=(x_0-1)^2+(x_1+2)^2\\), gradient, \\(x_0=[4,-6]\\), target \\([1,-2]\\).",
+      "retrieval_receipt": "root_receipts.json record 0",
+      "original_question": null,
+      "attribution_note": "The excerpt is an exact retrieval-result line, usually a historical paraphrase rather than a verbatim original prompt. User-attributed topics and assistant assertions remain distinct. The revised question, classical proof and example are newly authored; absent history and novelty are not claimed."
+    }
+  },
+  {
+    "id": "Y25-08-021",
+    "title": "ISTA and conjugate gradients need different mathematical contracts",
+    "status": "Developed classical mathematics with explicit hypotheses and scoped evidence",
+    "summary": "The August10 compiler listed several algorithms with validators. The mathematical contract must depend on the chosen solver. A proximal descent proof and an SPD residual bound show two distinct valid certificates, neither of which follows merely from matching array shapes.",
+    "definitions": [
+      "Let f have L-Lipschitz gradient and let g be convex. A proximal step minimizes g(z)+(1/(2t))||z−x+t∇f(x)||². Separately, for Ax=b assume A symmetric positive definite and λ_min(A)≥a>0."
+    ],
+    "result": {
+      "name": "Descent and a residual error bound",
+      "statement": "For0<t≤1/L, the proximal step satisfies F(x⁺)≤F(x)−(1/t−L/2)||x⁺−x||², F=f+g. For an approximate SPD solve with residual r=b−Ax, ||x−x*||_A≤||r||₂/√a.",
+      "proof": "Optimality of the proximal minimizer gives s=−∇f(x)−(x⁺−x)/t∈∂g(x⁺). Convexity of g bounds its change by−∇f(x)·d−||d||²/t, where d=x⁺−x. The gradient descent lemma bounds f’s change by∇f(x)·d+(L/2)||d||². Adding proves descent. For the linear solve, e=x*−x=A⁻¹r, so||e||_A²=rᵀA⁻¹r≤||r||²/a by the spectral theorem. Nonsymmetric or indefinite matrices invalidate this SPD energy argument, even when an iterative routine returns a small-looking number."
+    },
+    "example": {
+      "setup": "Take f(x)=||x−(3,−1)||²/2,g=||x||₁ and t=1.",
+      "calculation": "L=1 and the proximal step is coordinate soft-thresholding of(3,−1) at one, giving(2,0), the separable global optimum. A CG symmetry warning is not a certificate that an unrelated operator meets this proximal contract.",
+      "conclusion": "Algorithm-specific hypotheses yield checkable decrease or error statements."
+    },
+    "limits": "The source implementation and all test matrices were not recovered. No universal convergence claim is made for the narrative compiler.",
+    "extension": "Attach an exact problem class and stopping certificate to each solver, and reject inputs whose assumptions cannot be verified.",
+    "references": [],
+    "original": {
+      "date": "2025-08-10",
+      "month": "2025-08",
+      "evidence": "A",
+      "field": "Convex algorithms",
+      "concept": "ISTA and conjugate gradients need different mathematical contracts",
+      "origin": "Dated historical retrieval; see exact source line",
+      "question": "Which assumptions justify a proximal step or a residual certificate, rather than a generic solver-success label?",
+      "math": "For0<t≤1/L, the proximal step satisfies F(x⁺)≤F(x)−(1/t−L/2)||x⁺−x||², F=f+g. For an approximate SPD solve with residual r=b−Ax, ||x−x*||_A≤||r||₂/√a.",
+      "finish": "Proof, worked example and explicit remaining problem",
+      "kind": "Revised mathematical treatment",
+      "refs": [],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c13] A@2025-08-10T19:42:49Z, -1y2m10d: Callable-aware \\(f,\\nabla f\\), locked-down eval, validators for rectangular \\(A,b,M\\), CG symmetry warning, ISTA \\(t=1/\\max(L,10",
+      "retrieval_receipt": "root_receipts.json record 0",
+      "original_question": null,
+      "attribution_note": "The excerpt is an exact retrieval-result line, usually a historical paraphrase rather than a verbatim original prompt. User-attributed topics and assistant assertions remain distinct. The revised question, classical proof and example are newly authored; absent history and novelty are not claimed."
+    }
+  },
+  {
+    "id": "Y25-08-022",
+    "title": "Optimizer hypergradients must follow the entire state recursion",
+    "status": "Developed classical mathematics with explicit hypotheses and scoped evidence",
+    "summary": "This topic comes from a later recovery file attributing an OptComp project to August12, not a recovered original transcript. The distinction is retained as T evidence with no exact chat date. A newly derived one-step calculation tests the chain rule without claiming to recover the old program bytes.",
+    "definitions": [
+      "For fixed θ₀,u₀ define θ₁=θ₀−ηu₀−ηλθ₀. The direction u₀ is held fixed only for this partial-derivative example. Let L=||θ₁−y||²/2. In a multi-step optimizer, momentum and adaptive moments are part of the differentiated state."
+    ],
+    "result": {
+      "name": "One-step outer derivatives",
+      "statement": "∂_ηθ₁=−u₀−λθ₀ and∂_λθ₁=−ηθ₀. Thus∂_ηL=(θ₁−y)·(−u₀−λθ₀) and∂_λL=(θ₁−y)·(−ηθ₀).",
+      "proof": "Differentiate the explicit affine update while holding the stated inputs fixed, then apply the ordinary chain rule to the quadratic loss. For a full state recursion s_{t+1}=U_φ(s_t), its Jacobian obeys J_{t+1}=(∂_sU)J_t+∂_φU, not just the last-step partial. Removing a dependency with a detached value can make an automatic-differentiation gradient zero even when the mathematical derivative is nonzero. Conversely a true stationary point can also give zero; the value must be checked against the actual graph and an independent derivative calculation."
+    },
+    "example": {
+      "setup": "Use θ₀=(1,−2),u₀=(1/2,−1/4),η=1/10,λ=1/5,y=0.",
+      "calculation": "Then θ₁=(93/100,−387/200). The exact gradients are∂_ηL=−1527/800=−1.90875 and∂_λL=−12/25=−0.48. Centered finite differences of this quadratic reproduce them exactly in rational arithmetic.",
+      "conclusion": "A nonzero analytic test is available, while the historical zero-gradient report remains unverified evidence."
+    },
+    "limits": "The later file’s audit and finite-difference work are not original successful tuning results. Real AdamW directions generally depend on parameters and previous state; those paths must be included.",
+    "extension": "Specify the entire optimizer-state graph and compare its Jacobian-vector products with exact or interval finite differences on a small deterministic problem.",
+    "references": [],
+    "original": {
+      "date": null,
+      "month": "2025-08",
+      "evidence": "T",
+      "field": "Differentiation",
+      "concept": "Optimizer hypergradients must follow the entire state recursion",
+      "origin": "Dated historical retrieval; see exact source line",
+      "question": "What derivative should a one-step AdamW outer loss have, and why is a zero reported gradient not a success certificate?",
+      "math": "∂_ηθ₁=−u₀−λθ₀ and∂_λθ₁=−ηθ₀. Thus∂_ηL=(θ₁−y)·(−u₀−λθ₀) and∂_λL=(θ₁−y)·(−ηθ₀).",
+      "finish": "Proof, worked example and explicit remaining problem",
+      "kind": "Revised mathematical treatment",
+      "refs": [],
+      "source_excerpt": "- [FILE_FACT] [f0] **2025-08-12:** user pursued “OptComp” for categorical optimizer composition, hypergradient propagation, and formal couplers; recovered objective: \\(\\min_\\phi L_{\\rm val}(\\theta_T(\\phi))\\), with optimizer state advanced by \\(U_\\phi\\). [f0]",
+      "retrieval_receipt": "root_receipts.json record 0",
+      "original_question": null,
+      "attribution_note": "The excerpt is an exact retrieval-result line, usually a historical paraphrase rather than a verbatim original prompt. User-attributed topics and assistant assertions remain distinct. The revised question, classical proof and example are newly authored; absent history and novelty are not claimed."
+    }
+  },
+  {
+    "id": "Y25-08-023",
+    "title": "The Heawood spectrum follows from Fano-plane incidence",
+    "status": "Developed classical mathematics with explicit hypotheses and scoped evidence",
+    "summary": "The August23 testbeds named Ramanujan graphs, graph zeta functions and primitive geodesics. A finite incidence construction gives a complete spectral certificate. It distinguishes the ordinary Laplacian zeta from Ihara’s nonbacktracking zeta.",
+    "definitions": [
+      "Let B be the7×7 point-line incidence matrix of the Fano plane: each point lies on three lines and each distinct pair shares one line. Let A=[[0,B],[Bᵀ,0]] and L=3I−A. Remove the zero Laplacian eigenvalue from ζ_L(s)."
+    ],
+    "result": {
+      "name": "Exact Heawood spectrum and zeta",
+      "statement": "A has eigenvalues3,−3, and±√2 each with multiplicity six. Thus ζ_L(s)=6(3−√2)^(−s)+6(3+√2)^(−s)+6^(−s).",
+      "proof": "The incidence property gives BBᵀ=2I+J. On the constant line this has eigenvalue9, while the six-dimensional orthogonal complement has eigenvalue2. The symmetric block adjacency matrix therefore has the positive and negative singular values3 and√2 with the stated multiplicities. Subtracting from3 gives Laplacian eigenvalues0,6,3±√2. Their power sum proves the zeta formula. The nontrivial adjacency values satisfy the cubic Ramanujan bound2√(3−1), but that does not identify graph zeta zeros with arithmetic L-function zeros. Ihara’s determinant formula uses det(I−uA+2u²I) and a separate factor(1−u²)^(21−14), not the Laplacian inverse-power sum."
+    },
+    "example": {
+      "setup": "Evaluate ζ_L(1).",
+      "calculation": "The conjugate reciprocal sum is1/(3−√2)+1/(3+√2)=6/7, so ζ_L(1)=36/7+1/6=223/42. The graph has14 vertices and21 edges; its girth-six property is separately checked from its incidence structure.",
+      "conclusion": "A complete finite operator identity supports the exact graph claims and keeps the two zeta constructions distinct."
+    },
+    "limits": "This does not prove a number-field Riemann hypothesis, spectral universality or a statistical law for arbitrary graphs.",
+    "extension": "Construct the nonbacktracking matrix and verify Bass’s determinant identity directly, including multiplicities and the first cycle lengths.",
+    "references": [],
+    "original": {
+      "date": "2025-08-23",
+      "month": "2025-08",
+      "evidence": "A",
+      "field": "Spectral graph theory",
+      "concept": "The Heawood spectrum follows from Fano-plane incidence",
+      "origin": "Dated historical retrieval; see exact source line",
+      "question": "Which exact incidence identity proves the graph spectrum and the displayed Laplacian zeta function?",
+      "math": "A has eigenvalues3,−3, and±√2 each with multiplicity six. Thus ζ_L(s)=6(3−√2)^(−s)+6(3+√2)^(−s)+6^(−s).",
+      "finish": "Proof, worked example and explicit remaining problem",
+      "kind": "Revised mathematical treatment",
+      "refs": [],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c11] A@2025-08-23T18:57:00Z, -1y2m: Ramanujan testbeds: Heawood spectrum \\(\\{3,-3,\\pm\\sqrt2^{\\times6}\\}\\); \\(\\zeta_L(s)=6(3-\\sqrt2)^{-s}+6(3+\\sqrt2)^{-s}+6^{-s}\\). For \\(K_{d,d}\\), \\(\\zeta_L(s)=(2d)^{-s}+(2d-2)d^{-s}\\); Ihara determinant factorizations and primitive-geodesic first lengths (Heawood girth 6, \\(K_{d,d}\\) girth 4) given.",
+      "retrieval_receipt": "root_receipts.json record 0",
+      "original_question": null,
+      "attribution_note": "The excerpt is an exact retrieval-result line, usually a historical paraphrase rather than a verbatim original prompt. User-attributed topics and assistant assertions remain distinct. The revised question, classical proof and example are newly authored; absent history and novelty are not claimed."
+    }
+  },
+  {
+    "id": "Y25-08-024",
+    "title": "Paley Laplacian moments have closed rational values",
+    "status": "Developed classical mathematics with explicit hypotheses and scoped evidence",
+    "summary": "The August23 source supplied striking exact zeta values. They follow algebraically from a specific strongly regular graph spectrum, not from a general anomaly law. The smallest example is a five-cycle and can be checked without approximate eigenvalue fitting.",
+    "definitions": [
+      "Let q be an odd prime power with q≡1 mod4. The Paley graph joins elements of F_q whose difference is a nonzero square. Its degree is d=(q−1)/2; the classical nontrivial adjacency eigenvalues are(−1±√q)/2, each with multiplicity d."
+    ],
+    "result": {
+      "name": "First two Laplacian inverse moments",
+      "statement": "The positive Laplacian eigenvalues are(q±√q)/2, each with multiplicity d. Therefore ζ_L(1)=2 and ζ_L(2)=4(q+1)/(q(q−1)).",
+      "proof": "Subtract the adjacency eigenvalues from d. Their positive Laplacian pair has sum q and product q(q−1)/4. The sum of reciprocals is4/(q−1); multiply by d to get two. The sum of reciprocal squares is(sum²−2product)/product²; simplifying and multiplying by d gives the second formula. The underlying adjacency spectrum is a classical quadratic-character/Gauss-sum theorem and is stated as such, rather than proved from these moments. The moments do not uniquely identify an arbitrary graph, since different spectra can share a few power sums."
+    },
+    "example": {
+      "setup": "Use q=5.",
+      "calculation": "The Paley graph is C₅. Its positive Laplacian values are(5±√5)/2, each twice. Hence ζ_L(1)=2 and ζ_L(2)=6/5. Kirchhoff’s matrix-tree formula gives five spanning trees, agreeing with the elementary fact that removing any one edge of a five-cycle produces a tree.",
+      "conclusion": "The exact rational moments are explained by conjugate algebraic eigenvalues."
+    },
+    "limits": "The q≡1 mod4 condition ensures an undirected graph. These formulas are not a universal spectral signature or an arithmetic L-function theorem.",
+    "extension": "Derive the adjacency spectrum from a specified additive-character convention and verify both moment and spanning-tree formulas independently.",
+    "references": [],
+    "original": {
+      "date": "2025-08-23",
+      "month": "2025-08",
+      "evidence": "A",
+      "field": "Spectral graph theory",
+      "concept": "Paley Laplacian moments have closed rational values",
+      "origin": "Dated historical retrieval; see exact source line",
+      "question": "Under which finite-field hypotheses do the Paley spectral formulas apply, and what do their inverse moments count?",
+      "math": "The positive Laplacian eigenvalues are(q±√q)/2, each with multiplicity d. Therefore ζ_L(1)=2 and ζ_L(2)=4(q+1)/(q(q−1)).",
+      "finish": "Proof, worked example and explicit remaining problem",
+      "kind": "Revised mathematical treatment",
+      "refs": [],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c11] A@2025-08-23T19:02:03Z, -1y2m: Paley \\(P(q)\\): \\(d=(q-1)/2\\), nontrivial eigenvalues \\(r=(-1+\\sqrt q)/2,s=(-1-\\sqrt q)/2\\); Laplacian atoms \\((q\\mp\\sqrt q)/2\\), each multiplicity \\(d\\); \\(\\zeta_L(1)=2\\), \\(\\zeta_L(2)=4(q+1)/(q(q-1))\\), \\(\\zeta",
+      "retrieval_receipt": "root_receipts.json record 0",
+      "original_question": null,
+      "attribution_note": "The excerpt is an exact retrieval-result line, usually a historical paraphrase rather than a verbatim original prompt. User-attributed topics and assistant assertions remain distinct. The revised question, classical proof and example are newly authored; absent history and novelty are not claimed."
+    }
+  },
+  {
+    "id": "Y25-08-025",
+    "title": "CRT and finite entropy do not prove decimal normality",
+    "status": "Developed classical mathematics with explicit hypotheses and scoped evidence",
+    "summary": "The August24 source reported a16-row seed, a near-maximal ternary entropy and a PASS verdict. The full table was not recovered. CRT reconstruction and the maximal possible entropy of sixteen ternary observations can still be proved, exposing why a finite diagnostic is not an asymptotic randomness theorem.",
+    "definitions": [
+      "For r∈Z/48 let a=r mod16 and b=r mod3. For counts n₀+n₁+n₂=16 define H=−Σ(n_i/16)log(n_i/16). The source sequence r_n=floor(48{10^nx}) uses x=(φπ)^(2/9); exact evaluation requires sufficient precision."
+    ],
+    "result": {
+      "name": "CRT reconstruction and finite entropy ceiling",
+      "statement": "r≡33a+16b mod48. Among sixteen ternary samples, entropy is maximized by counts(6,5,5) up to permutation, giving H/log3≈0.9965. This does not prove equidistribution or normality of x.",
+      "proof": "The CRT coefficients satisfy33≡1 mod16,33≡0 mod3,16≡0 mod16 and16≡1 mod3, proving reconstruction and uniqueness. For entropy, the function−t logt is concave. If two integer counts differ by at least two, moving one from the larger to the smaller increases the sum. Repeating yields the balanced integer partition6,5,5. Thus the reported entropy scale can arise simply from the best-balanced count pattern at this sample size. Decimal normality requires limiting frequencies of all blocks; neither sixteen residues nor a cryptographic manifest proves it. Binary floating multiplication by10^n can also lose fractional information and must not be treated as exact real arithmetic."
+    },
+    "example": {
+      "setup": "Take a=7,b=2.",
+      "calculation": "The reconstructed residue is33·7+16·2=263≡23 mod48; indeed23 mod16=7 and23 mod3=2. The capped valuation convention v₂(0)=4 means min(v₂(r),4), not the ordinary valuation of zero.",
+      "conclusion": "The exact finite checks survive, while the unrecovered seed verdict and asymptotic interpretation remain qualified."
+    },
+    "limits": "No seed table, null calibration or proof of normality was recovered. A near-maximal marginal entropy can coexist with completely periodic data.",
+    "extension": "Publish exact residues with interval precision certificates, predeclare block statistics and compare against a stated null without treating finite acceptance as a theorem about the infinite sequence.",
+    "references": [],
+    "original": {
+      "date": "2025-08-24",
+      "month": "2025-08",
+      "evidence": "U",
+      "field": "Finite statistics",
+      "concept": "CRT and finite entropy do not prove decimal normality",
+      "origin": "Dated historical retrieval; see exact source line",
+      "question": "Which six-kernel statistics are exact, and what can sixteen residues actually establish?",
+      "math": "r≡33a+16b mod48. Among sixteen ternary samples, entropy is maximized by counts(6,5,5) up to permutation, giving H/log3≈0.9965. This does not prove equidistribution or normality of x.",
+      "finish": "Proof, worked example and explicit remaining problem",
+      "kind": "Revised mathematical treatment",
+      "refs": [],
+      "source_excerpt": "- [USER_FACT] [c12] U@2025-08-24T16:06:53Z, -1y2m: August mathematical cluster: Six-Kernel Covenant; octahedral residue dynamics with \\(x=(\\varphi\\pi)^{2/9}\\), \\(m=48\\), \\(r_n=\\lfloor48\\{10^nx\\}\\rfloor\\), CRT projections \\(a_n\\bmod16,b_n\\bmod3\\), 16-row seed table, \\(S_2=4\\), \\(H_3\\approx0.9965\\log3\\), PASS.",
+      "retrieval_receipt": "root_receipts.json record 0",
+      "original_question": null,
+      "attribution_note": "The excerpt is an exact retrieval-result line, usually a historical paraphrase rather than a verbatim original prompt. User-attributed topics and assistant assertions remain distinct. The revised question, classical proof and example are newly authored; absent history and novelty are not claimed."
+    }
+  },
+  {
+    "id": "Y25-08-026",
+    "title": "The lattice symbol has a proved dispersion and anisotropy bound",
+    "status": "Developed classical mathematics with explicit hypotheses and scoped evidence",
+    "summary": "The August26 HLR work corrected its discrete symbol and reported very small numerical residues. Fourier analysis supplies the exact operator and an explicit approximation bound. A self-consistency residual using the same symbol is distinguished from independent validation.",
+    "definitions": [
+      "For mesh h, let−Δ_hu_j=(2u_j−u_{j+1}−u_{j−1})/h². On u_j=e^(ikjh), its symbol isσ_h(k)=4h⁻²sin²(kh/2). The two-dimensional rectangular symbol is the sum over coordinates."
+    ],
+    "result": {
+      "name": "Exact symbol and continuum-error bound",
+      "statement": "For real k,0≤k²−σ_h(k)≤h²k⁴/12. In two dimensions,0≤|k|²−σ≤(h_x²k_x⁴+h_y²k_y⁴)/12. Sampled modes alias under k↦k+2πm/h.",
+      "proof": "Substitute the exponential into the three-point stencil and use2−2cos(kh)=4sin²(kh/2). The inequalities1−u²/2≤cosu≤1−u²/2+u⁴/24 give the error bounds after multiplication by2/h². Adding coordinate bounds proves the rectangular case. Taylor expansion further givesσ_h=k²−h²k⁴/12+O(h⁴k⁶). On a square grid the fourth-order term depends on k_x⁴+k_y⁴, so rotational anisotropy is expected even though the continuum Laplacian is isotropic. The periodic cosine also proves aliasing. A code evaluating a mode with exactly this symbol may produce a ratio numerically one by construction; that does not test an independent continuum or renormalization hypothesis."
+    },
+    "example": {
+      "setup": "Take h=1,k=π.",
+      "calculation": "The symbol is4 while the continuum value isπ². Their difference is positive and belowπ⁴/12. Modesπ and−π have the same grid samples and symbol, illustrating Nyquist ambiguity.",
+      "conclusion": "Refinement and anisotropy now have explicit expected scales instead of relying on a roundoff-sized pass statistic."
+    },
+    "limits": "The historical implementation, mode tables and error gates were not recovered. No physical renormalization theorem follows from stencil consistency.",
+    "extension": "Use an independent continuum reference and a stable approximation norm; separate truncation, aliasing and floating-point errors in a refinement certificate.",
+    "references": [],
+    "original": {
+      "date": "2025-08-26",
+      "month": "2025-08",
+      "evidence": "U",
+      "field": "Numerical analysis",
+      "concept": "The lattice symbol has a proved dispersion and anisotropy bound",
+      "origin": "Dated historical retrieval; see exact source line",
+      "question": "Which refinement discrepancy is expected from the discrete Laplacian, and when is a residue check circular?",
+      "math": "For real k,0≤k²−σ_h(k)≤h²k⁴/12. In two dimensions,0≤|k|²−σ≤(h_x²k_x⁴+h_y²k_y⁴)/12. Sampled modes alias under k↦k+2πm/h.",
+      "finish": "Proof, worked example and explicit remaining problem",
+      "kind": "Revised mathematical treatment",
+      "refs": [],
+      "source_excerpt": "- [USER_FACT] [c15] U@2025-08-26T18:09:45Z, -422d: August mathematics centers on Harsh-Lattice Renormalization (HLR): corrected discrete Laplacian symbol \\(\\sigma_h(k)=4h^{-2}\\sin^2(kh/2)\\), mode residue \\(r\\), refinement invariance, anisotropy bounds, shell aliasing, gates, and reproducibility.",
+      "retrieval_receipt": "root_receipts.json record 0",
+      "original_question": null,
+      "attribution_note": "The excerpt is an exact retrieval-result line, usually a historical paraphrase rather than a verbatim original prompt. User-attributed topics and assistant assertions remain distinct. The revised question, classical proof and example are newly authored; absent history and novelty are not claimed."
+    }
+  },
+  {
+    "id": "Y25-08-027",
+    "title": "The Riccati flow and its wall times are exact within the model",
+    "status": "Developed classical mathematics with explicit hypotheses and scoped evidence",
+    "summary": "The August25 source gives a calibrated scalar flow with several derived quantities. The ODE and hitting-time formulas can be verified exactly. Their correctness does not establish the proposed information-geometric or A₂ interpretation.",
+    "definitions": [
+      "Let b,μ₀>0 and μ(0)=μ₀,μ′=bμ². Define F(μ)=−nc logμ/(2b),N(ℓ)=log[1/(1−bμ₀ℓ)]/(6b), onℓ<1/(bμ₀)."
+    ],
+    "result": {
+      "name": "Flow invariant and half-integer walls",
+      "statement": "μ=μ₀/(1−bμ₀ℓ),1/μ+bℓ−1/μ₀=0,F′(ℓ)=−ncμ/2 and N′=μ/6. The time satisfying N(ℓ_k)=k/2 isℓ_k=(1−e^(−3bk))/(bμ₀).",
+      "proof": "Differentiate1/μ to obtain−b and integrate. This proves both the rational solution and invariant; the denominator gives the finite forward pole. Chain differentiation gives F′=−ncμ′/(2bμ)=−ncμ/2. Differentiating N givesμ/6. Solving its logarithmic equation at k/2 yields the wall formula. For k≥0 the walls increase toward the pole and never cross it. If one defines an entropy as∫μ′dℓ=μ−μ₀, that identity is simply the fundamental theorem of calculus; it does not identify Fisher information or physical entropy without a probability model."
+    },
+    "example": {
+      "setup": "Use the stipulated b=0.0455=91/2000 and μ₀=0.1.",
+      "calculation": "The pole is20000/91≈219.78022. Atℓ=100,μ=20/109≈0.183486, and the invariant is exactly109/20+91/20−10=0. Wall values use the same fixed parameters and can be checked by substitution.",
+      "conclusion": "The calibrated ODE is mathematically complete within its declared domain, while its external interpretation is not promoted."
+    },
+    "limits": "The truncated tuple later in the source was not recovered. No Fisher, winding or particle-model claim is established by scalar integration.",
+    "extension": "Specify an actual likelihood or geometric connection and prove the proposed invariant relation before interpreting F,N or the pole physically.",
+    "references": [],
+    "original": {
+      "date": "2025-08-25",
+      "month": "2025-08",
+      "evidence": "U",
+      "field": "Differential equations",
+      "concept": "The Riccati flow and its wall times are exact within the model",
+      "origin": "Dated historical retrieval; see exact source line",
+      "question": "Which identities genuinely follow from μ′=bμ², and which entropy or winding interpretations are extra assumptions?",
+      "math": "μ=μ₀/(1−bμ₀ℓ),1/μ+bℓ−1/μ₀=0,F′(ℓ)=−ncμ/2 and N′=μ/6. The time satisfying N(ℓ_k)=k/2 isℓ_k=(1−e^(−3bk))/(bμ₀).",
+      "finish": "Proof, worked example and explicit remaining problem",
+      "kind": "Revised mathematical treatment",
+      "refs": [],
+      "source_excerpt": "- [USER_FACT] [c16] U@2025-08-25T12:57:18Z, -422d: August mathematics includes a calibrated Riccati/RG model: μ(ℓ)=μ₀/(1−bμ₀ℓ), b=.0455, μ₀=.1; invariant 1/μ+bℓ−1/μ₀=0; F(μ)=−(nc/2b)log μ; dF/dℓ=−(n/2)cμ; N(ℓ)=(6b)⁻¹log[1/(1−bμ₀ℓ)]; closed-form half-integer walls ℓ_k=(bμ₀)⁻¹(1−e^(−3bk)).",
+      "retrieval_receipt": "root_receipts.json record 0",
+      "original_question": null,
+      "attribution_note": "The excerpt is an exact retrieval-result line, usually a historical paraphrase rather than a verbatim original prompt. User-attributed topics and assistant assertions remain distinct. The revised question, classical proof and example are newly authored; absent history and novelty are not claimed."
+    }
+  },
+  {
+    "id": "Y25-08-028",
+    "title": "Complete-graph labels must obey the edge-count bound",
+    "status": "Developed classical mathematics with explicit hypotheses and scoped evidence",
+    "summary": "The August15 project reported strong triangular-number fits and a high R². Exact combinatorics already finds inconsistent labels. A fit statistic cannot repair a value outside the feasible simple-graph range or an off-by-one triangular convention.",
+    "definitions": [
+      "For a simple undirected graph on n≥2 vertices,0≤e≤C(n,2). Define completeness C=e/C(n,2) and residual r=e−C(n,2). Use the standard triangular number T_k=k(k+1)/2."
+    ],
+    "result": {
+      "name": "Edge feasibility and corrected examples",
+      "statement": "A complete graph K_n has exactly n(n−1)/2 edges. Thus K₂₃ has253 edges, not231; K₁₀ has45 edges, so78 cannot be its simple-graph edge count. The counts528,946,4371 are correct for K₃₃,K₄₄,K₉₄.",
+      "proof": "Every edge is an unordered pair of distinct vertices, and there are C(n,2) such pairs. A simple graph chooses a subset, proving both the maximum and equality criterion. For the stated examples direct multiplication gives23·22/2=253 and10·9/2=45. With e=231 at n=23, the residual is−22 and completeness is21/23; it is a possible incomplete graph, not K₂₃. With e=78 at n=10, completeness is26/15>1, impossible in the stated model. The value78 is the complete edge count for n=13. Calling both values triangular without fixing the indexing convention can hide this mismatch."
+    },
+    "example": {
+      "setup": "Compare the two problematic records.",
+      "calculation": "The first could describe a graph missing22 edges. The second needs a corrected vertex count, multigraph semantics or a data correction. They cannot be treated as the same kind of small measurement noise.",
+      "conclusion": "Feasibility is an exact prerequisite to regression, cross-domain scaling and interpretation."
+    },
+    "limits": "The full42-pair dataset, extraction rule and claimed81%/71% statistics were not recovered, so they are not recomputed or endorsed.",
+    "extension": "Publish the raw vertex/edge extraction and graph model, audit every pair, and fit only after separating invalid data and indexing errors.",
+    "references": [],
+    "original": {
+      "date": "2025-08-15",
+      "month": "2025-08",
+      "evidence": "U",
+      "field": "Graph combinatorics",
+      "concept": "Complete-graph labels must obey the edge-count bound",
+      "origin": "Dated historical retrieval; see exact source line",
+      "question": "Which of the recovered edge counts can describe a simple graph on the stated number of vertices?",
+      "math": "A complete graph K_n has exactly n(n−1)/2 edges. Thus K₂₃ has253 edges, not231; K₁₀ has45 edges, so78 cannot be its simple-graph edge count. The counts528,946,4371 are correct for K₃₃,K₄₄,K₉₄.",
+      "finish": "Proof, worked example and explicit remaining problem",
+      "kind": "Revised mathematical treatment",
+      "refs": [],
+      "source_excerpt": "- [USER_FACT] [c18] U@2025-08-15T03:20:12Z, -1y2m: August mathematics centered on \\(k_n\\) edge-count extraction: 42 \\((n,e)\\) pairs; claimed 81% triangular, 71% exact \\(\\binom n2\\), \\(R^2\\approx0.992\\); examples \\(K_{23}\\mapsto231=T_{22}\\), \\(K_{33}\\mapsto528\\), \\(K_{44}\\mapsto946\\), \\(K_{94}\\mapsto4371\\), and \\(K_{10}\\mapsto78=T_{13}\\).",
+      "retrieval_receipt": "root_receipts.json record 0",
+      "original_question": null,
+      "attribution_note": "The excerpt is an exact retrieval-result line, usually a historical paraphrase rather than a verbatim original prompt. User-attributed topics and assistant assertions remain distinct. The revised question, classical proof and example are newly authored; absent history and novelty are not claimed."
+    }
+  },
+  {
+    "id": "Y25-08-029",
+    "title": "A rank-one CRO matrix has an exact spectrum and inverse",
+    "status": "Developed classical mathematics with explicit hypotheses and scoped evidence",
+    "summary": "The August31 source combines a concrete rank-one matrix with sheaf and Frobenius terminology. The matrix itself is completely analyzable. Its spectral facts neither identify crystalline cohomology nor turn finite decimal constants into special transcendental invariants.",
+    "definitions": [
+      "For n≥2 let1∈R^n be the all-ones vector and S(t)=I+t11ᵀ. Put P=11ᵀ/n, the orthogonal projection onto the constant line. Then S=(I−P)+(1+nt)P."
+    ],
+    "result": {
+      "name": "Spectrum, inverse and positivity",
+      "statement": "S has eigenvalue1+nt on the constant line and1 on its orthogonal complement. detS=1+nt; for t≠−1/n, S⁻¹=I−[t/(1+nt)]11ᵀ. It is positive definite exactly when t>−1/n.",
+      "proof": "Since1ᵀ1=n,P²=P and P*=P. The direct-sum expression gives the eigenvalues and determinant immediately. Invert separately on the two orthogonal subspaces to obtain(I−P)+(1+nt)⁻¹P; expanding P gives the displayed rank-one inverse. Positive definiteness is equivalent to positivity of both scalar eigenvalues. The spectral norm is max(1,|1+nt|), and the condition number follows from the ratio of largest to smallest singular values. No sheaf or cohomology assumption is used anywhere. The source decimals α=0.0333996828 and β=0.6732050807568877 are rational numbers when taken literally as finite strings."
+    },
+    "example": {
+      "setup": "Use n=3,t=1/6.",
+      "calculation": "The eigenvalues are3/2,1,1, determinant3/2 and inverseI−(1/9)11ᵀ. Multiplying S by that inverse gives I exactly. At t=−1/3 the constant vector lies in the kernel.",
+      "conclusion": "The concrete matrix has precise classical meaning; any additional geometry needs an independently defined construction."
+    },
+    "limits": "No recovered Frobenius action, integral lattice or comparison theorem identifies this matrix with crystalline cohomology. A fitted decimal does not prove a universal constant.",
+    "extension": "Specify the base field, module and Frobenius-semilinear map, then prove which matrix invariant survives a change of basis.",
+    "references": [],
+    "original": {
+      "date": "2025-08-31",
+      "month": "2025-08",
+      "evidence": "U",
+      "field": "Matrix analysis",
+      "concept": "A rank-one CRO matrix has an exact spectrum and inverse",
+      "origin": "Dated historical retrieval; see exact source line",
+      "question": "What can the recovered matrix S(t) actually prove before invoking a crystalline interpretation?",
+      "math": "S has eigenvalue1+nt on the constant line and1 on its orthogonal complement. detS=1+nt; for t≠−1/n, S⁻¹=I−[t/(1+nt)]11ᵀ. It is positive definite exactly when t>−1/n.",
+      "finish": "Proof, worked example and explicit remaining problem",
+      "kind": "Revised mathematical treatment",
+      "refs": [],
+      "source_excerpt": "- [USER_FACT] [c0] U@2025-08-31T03:59:27Z, -416d: August evidence retrieved only for Aug 31; user developed CRO/crystalline mathematics around \\(S(t)=I+t11^\\top\\), constants \\(\\alpha=0.0333996828,\\beta=0.6732050807568877\\), τ-sheaf, Frobenius, residue complexes, crystalline cohomology, and cryptographic ledger.",
+      "retrieval_receipt": "root_receipts.json record 0",
+      "original_question": null,
+      "attribution_note": "The excerpt is an exact retrieval-result line, usually a historical paraphrase rather than a verbatim original prompt. User-attributed topics and assistant assertions remain distinct. The revised question, classical proof and example are newly authored; absent history and novelty are not claimed."
+    }
+  },
+  {
+    "id": "Y25-08-030",
+    "title": "A residual for one vector cannot certify vanishing of H¹",
+    "status": "Developed classical mathematics with explicit hypotheses and scoped evidence",
+    "summary": "The August31 CRO response asserted equivalence between a runtime residue and vanishing H¹ while retaining stubs. A minimal cochain example rejects that equivalence. A separate decay-rate bound shows what the surviving logarithmic diagnostic can legitimately certify.",
+    "definitions": [
+      "For a finite cochain complex, H¹=kerδ¹/imδ⁰. In an inner-product complex the Hodge Laplacian is L₁=δ⁰δ⁰*+δ¹*δ¹. For positive observed energy set αhat=−(logE_k−logE_{k−1})/Δt."
+    ],
+    "result": {
+      "name": "Residual scope and logarithmic sensitivity",
+      "statement": "A zero Laplacian residual can occur for a nonzero H¹ class. If E_k=e^(−αt_k+η_k) with|η_k|≤ε, then|αhat−α|≤2ε/Δt. A hash ledger certifies neither cohomology nor the truth of its logged claims.",
+      "proof": "Take C⁰=C¹=R,C²=0 andδ⁰=δ¹=0. Then H¹=R and L₁=0, so every vector has zero Laplacian residual although cohomology is nonzero. More generally Hodge theory identifies kerL₁ with cohomology, so a nonzero harmonic vector is precisely the wrong witness for global vanishing. For the rate bound, substitute the noisy log energy:αhat=α−(η_k−η_{k−1})/Δt and apply the triangle inequality. Smaller time steps amplify bounded log noise. Finally a finite digest records a function of bytes; correctness of the bytes’ mathematical assertion is a separate predicate and is not implied by digest equality."
+    },
+    "example": {
+      "setup": "Use Δt=1/10 and log-noise boundε=1/1000.",
+      "calculation": "The rate error can be as large as1/50=0.02. Meanwhile the zero map in the one-dimensional complex has zero residual and H¹ dimension one. Neither a small rate discrepancy nor a SHA manifest changes that algebra.",
+      "conclusion": "The diagnostic becomes useful only when its actual implication and sensitivity are stated."
+    },
+    "limits": "The original residue complex, norms and completed Lean proof were not recovered. No vanishing equivalence or crystalline-descent theorem is accepted from a stub or a logged PASS.",
+    "extension": "Publish exact boundary maps, verify δ²=0 and prove a quantitative equivalence between the chosen residual and the specific class property being tested; retain certificate provenance separately.",
+    "references": [],
+    "original": {
+      "date": "2025-08-31",
+      "month": "2025-08",
+      "evidence": "A",
+      "field": "Cohomology and numerical certificates",
+      "concept": "A residual for one vector cannot certify vanishing of H¹",
+      "origin": "Dated historical retrieval; see exact source line",
+      "question": "What does zero numerical residue actually imply, and what exact algebra would establish a cohomology-vanishing theorem?",
+      "math": "A zero Laplacian residual can occur for a nonzero H¹ class. If E_k=e^(−αt_k+η_k) with|η_k|≤ε, then|αhat−α|≤2ε/Δt. A hash ledger certifies neither cohomology nor the truth of its logged claims.",
+      "finish": "Proof, worked example and explicit remaining problem",
+      "kind": "Revised mathematical treatment",
+      "refs": [],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c0] A@2025-08-31T04:01:37Z, -416d: Assistant supplied Lean-like CRO definitions/theorem (with stubs/admitted steps), including `residueNorm`, `ResidueDescentTheorem`, and claimed equivalence between vanishing residue norm and vanishing \\(H^1\\); later supplied PETSc/C/Python runtime instrumentation and formulas \\(\\widehat\\alpha=-(\\log E_k-\\log E_{k-1})/\\Delta t\\), \\(R_1=|\\widehat\\alpha-\\alpha|\\), Frobenius probe \\(R_2\\), composite residue, SHA-256 ledger.",
+      "retrieval_receipt": "root_receipts.json record 0",
+      "original_question": null,
+      "attribution_note": "The excerpt is an exact retrieval-result line, usually a historical paraphrase rather than a verbatim original prompt. User-attributed topics and assistant assertions remain distinct. The revised question, classical proof and example are newly authored; absent history and novelty are not claimed."
+    }
+  },
+  {
+    "id": "Y25-08-901",
+    "title": "An exact KP line soliton from a traveling-wave reduction",
+    "status": "Developed classical result with a scoped worked example",
+    "summary": "The source proposed a symbolic tanh solver. A complete solution begins by fixing the PDE normalization and deriving the algebraic constraints. The single-soliton family provides an exact benchmark for a symbolic solver and a numerical residual.",
+    "definitions": [
+      "Use (u_t+6uu_x+u_xxx)_x+3s u_yy=0 with s=+1 or -1.",
+      "Let X=x+ell*y-c*t, k>0, and impose decay of U(X), U-prime and U-double-prime at both infinities."
+    ],
+    "result": {
+      "name": "Exact traveling-wave and tau-function identity",
+      "statement": "u(x,y,t)=2k² sech²(kX) solves KP when c=4k²+3s*ell². It also equals2 partial_x² log(1+exp(2kX)).",
+      "proof": "Substitution gives [-cU-prime+6UU-prime+U-triple-prime]-prime+3s*ell² U-double-prime=0. Integrate twice using the stated decay to obtain U-double-prime+(3s*ell²-c)U+3U²=0. For f=sech²(kX), direct differentiation yields f-double-prime=4k²f-6k²f². Setting U=2k²f therefore gives U-double-prime=4k²U-3U²; the reduced ODE vanishes exactly at the stated speed. Differentiating log(1+exp(2kX)) twice gives k²sech²(kX), proving the tau representation. The tanh form is U=2k²[1-tanh²(kX)], so degree balancing M=2 becomes a verified consequence in this example."
+    },
+    "example": {
+      "setup": "Choose k=1/2, ell=1 and s=+1.",
+      "calculation": "The amplitude is1/2, speed c=4 and profile U(X)=(1/2)sech²(X/2). At X=0, U=1/2 and U-double-prime=-1/4, so U-double-prime- U+3U²=-1/4-1/2+3/4=0. Its line-integrated mass is integral U dX=4k=2.",
+      "conclusion": "All solution parameters and the PDE residual are determined analytically."
+    },
+    "limits": "A KP solution alone establishes neither a tsunami source model nor accuracy near shorelines, breaking waves or varying bathymetry. Those require additional equations and data.",
+    "extension": "Extend the symbolic procedure to a two-exponential tau function and derive the interaction coefficient from the bilinear KP identity; verify the one-soliton limit before numerical comparisons.",
+    "references": [
+      {
+        "label": "Hirota, Exact Solution of the Korteweg-de Vries Equation for Multiple Collisions of Solitons",
+        "url": "https://doi.org/10.1103/PhysRevLett.27.1192"
+      }
+    ],
+    "original": {
+      "date": "2025-08-02T05:10:45Z",
+      "month": "2025-08",
+      "evidence": "U",
+      "field": "Analysis, arithmetic and geometry",
+      "concept": "An exact KP line soliton from a traveling-wave reduction",
+      "origin": "Dated mathematical fragment recovered from the August2025 coverage sweep",
+      "question": "Which tanh ansatz solves a precisely normalized KP equation, and how do amplitude, width and transverse slope determine speed?",
+      "math": "u(x,y,t)=2k² sech²(kX) solves KP when c=4k²+3s*ell². It also equals2 partial_x² log(1+exp(2kX)).",
+      "finish": "Proof or derivation and worked example",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://doi.org/10.1103/PhysRevLett.27.1192"
+      ],
+      "source_excerpt": "- [USER_FACT] [c2] U@2025-08-02T05:10:45Z, 1y2mo: mathematical conversations centered on KP equation, one-soliton sech²/tanh form, Hirota tau-function, tanh expansion with M=2, and identities such as sech²ξ=1−tanh²ξ.",
+      "retrieval_receipt": "root_coverage.json record0",
+      "original_question": null,
+      "attribution_note": "The source line is retained exactly. The question, proposition and example are newly developed here; a verbatim historical prompt is not claimed."
+    }
+  },
+  {
+    "id": "Y25-08-902",
+    "title": "Finite-field Hilbert90 as an exact descent calculation",
+    "status": "Developed classical result with a scoped worked example",
+    "summary": "The source requested a concrete Hilbert90 example rather than an unspecified obstruction. A quadratic finite field makes the cocycle, norm and coboundary entirely visible.",
+    "definitions": [
+      "Let F49=F7[a]/(a²-3);3 is not a square in F7.",
+      "The nontrivial Galois automorphism is sigma(a)=a^7=-a. A multiplicative1-cocycle for this cyclic group is specified by u with u*sigma(u)=1."
+    ],
+    "result": {
+      "name": "Explicit finite-field Hilbert90",
+      "statement": "Every norm-one u in F49-star is v/sigma(v). The element u=5-a is obtained from v=1+a.",
+      "proof": "The multiplicative group F49-star is cyclic of order48. Its norm is x maps to x^8, whose image has order6 and whose kernel has order8. The homomorphism v maps to v/sigma(v)=v^(-6) has kernel F7-star of order6, hence image of order8. Every image element has norm1 by cancellation, so image and norm kernel coincide. For the explicit example, (1+a)/(1-a)=(1+a)²/(1-a²)=(4+2a)/5=5+6a=5-a in F7. Its norm is(5-a)(5+a)=25-3=22=1 modulo7. Thus the cocycle is a coboundary with an explicit witness."
+    },
+    "example": {
+      "setup": "Represent field elements by pairs(r,s), meaning r+s*a, with multiplication(r,s)(t,v)=(rt+3sv,rv+st) modulo7.",
+      "calculation": "Enumeration gives48 nonzero elements,8 norm-one elements and8 distinct ratios v/sigma(v). The displayed ratio and norm both hold exactly in this pair arithmetic.",
+      "conclusion": "The descent claim is certified by finite algebra, and its witness can be independently replayed."
+    },
+    "limits": "Hilbert90 eliminates this particular multiplicative cocycle obstruction. It does not solve arbitrary discrete logarithms or identify every arithmetic obstruction with a finite-field cocycle.",
+    "extension": "Generalize the enumerator to F(q^n), compare the norm kernel with the image of v/sigma(v), and then separate linear-algebra cost from a discrete-logarithm representation of the same elements.",
+    "references": [
+      {
+        "label": "Milne, Class Field Theory, Hilbert90 and cyclic extensions",
+        "url": "https://www.jmilne.org/math/CourseNotes/cft.html"
+      }
+    ],
+    "original": {
+      "date": "2025-08-04T15:37:10Z",
+      "month": "2025-08",
+      "evidence": "U",
+      "field": "Analysis, arithmetic and geometry",
+      "concept": "Finite-field Hilbert90 as an exact descent calculation",
+      "origin": "Dated mathematical fragment recovered from the August2025 coverage sweep",
+      "question": "Can a norm-one element be written explicitly as v/Frobenius(v), and which part of this computation constitutes descent?",
+      "math": "Every norm-one u in F49-star is v/sigma(v). The element u=5-a is obtained from v=1+a.",
+      "finish": "Proof or derivation and worked example",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://www.jmilne.org/math/CourseNotes/cft.html"
+      ],
+      "source_excerpt": "- [USER_FACT] [c3] U@2025-08-04T15:37:10Z, -2y: User requested explicit 2-cocycle construction, a finite-field Hilbert-90 example, and transition to Picard-based torsor descent; proposed \\(\\mathbb Q(\\sqrt{-5})\\) class-group obstruction.",
+      "retrieval_receipt": "root_coverage.json record0",
+      "original_question": null,
+      "attribution_note": "The source line is retained exactly. The question, proposition and example are newly developed here; a verbatim historical prompt is not claimed."
+    }
+  },
+  {
+    "id": "Y25-08-903",
+    "title": "A nonprincipal ideal gives an actual Picard obstruction",
+    "status": "Developed classical result with a scoped worked example",
+    "summary": "The proposed torsor-descent framework becomes concrete over the integers of Q(sqrt(-5)). An ideal can have a principal square while itself remaining nonprincipal; that is a genuine Picard-group phenomenon.",
+    "definitions": [
+      "Let O=Z[a], a²=-5, the ring of integers of Q(sqrt(-5)). Let I=(2,1+a).",
+      "For the fppf topology the Kummer sequence gives0→O-star/(O-star)²→H¹(Spec O,mu2)→Pic(O)[2]→0."
+    ],
+    "result": {
+      "name": "An explicit nonzero class of order2",
+      "statement": "I has norm2, satisfies I²=(2), and is not principal. Its ideal class is a nonzero element of Pic(O)[2].",
+      "proof": "Reduction modulo I sends a to1 in F2 and identifies O/I with F2, so the ideal norm is2. The square I² is generated by4,2+2a and-4+2a. All are divisible by2, and(2+2a)-(-4+2a)-4=2; hence I²=(2). If I were generated by r+s*a, its norm would be |r²+5s²|=2, impossible for integers r,s. Thus[I] is nonzero and2[I]=0. The fppf Kummer exact sequence places this obstruction in the image of a mu2 torsor. More explicitly, the isomorphism I-tensor-I→O given by multiplication followed by division by2 supplies a square trivialization of the invertible module I."
+    },
+    "example": {
+      "setup": "Compare the norm equation for a generator with the explicit generators of the squared ideal.",
+      "calculation": "For s=0, r²=2 has no integral solution; for |s|>=1 the norm is at least5. Nevertheless the displayed integral combination of generators of I² equals2 exactly.",
+      "conclusion": "The obstruction and its order are proved without an unprovided Selmer computation."
+    },
+    "limits": "At the prime2 the mu2 torsor need not be étale; the fppf topology is essential here. No claim about the complexity of general torsor descent follows.",
+    "extension": "Compute the local trivializations of O direct-sum I with multiplication(v,w)→vw/2, then verify the transition cocycle and its Kummer boundary explicitly.",
+    "references": [
+      {
+        "label": "The Stacks Project, Kummer theory",
+        "url": "https://stacks.math.columbia.edu/tag/03PK"
+      },
+      {
+        "label": "Milne, Algebraic Number Theory",
+        "url": "https://www.jmilne.org/math/CourseNotes/ant.html"
+      }
+    ],
+    "original": {
+      "date": "2025-08-04T15:22:05Z",
+      "month": "2025-08",
+      "evidence": "U",
+      "field": "Analysis, arithmetic and geometry",
+      "concept": "A nonprincipal ideal gives an actual Picard obstruction",
+      "origin": "Dated mathematical fragment recovered from the August2025 coverage sweep",
+      "question": "What exact ideal-class obstruction survives after finite-field multiplicative cocycles have vanished?",
+      "math": "I has norm2, satisfies I²=(2), and is not principal. Its ideal class is a nonzero element of Pic(O)[2].",
+      "finish": "Proof or derivation and worked example",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://stacks.math.columbia.edu/tag/03PK",
+        "https://www.jmilne.org/math/CourseNotes/ant.html"
+      ],
+      "source_excerpt": "- [USER_FACT] [c3] U@2025-08-04T15:22:05Z, -2y: August 4 mathematics project: “The Discrete Logarithm Problem as Arakelov-Metrized Torsor Descent,” synthesizing CRT-DLP, Kummer cup products, Arakelov metrics, Selmer groups, Tannakian stacks, algorithms, and examples.",
+      "retrieval_receipt": "root_coverage.json record0",
+      "original_question": null,
+      "attribution_note": "The source line is retained exactly. The question, proposition and example are newly developed here; a verbatim historical prompt is not claimed."
+    }
+  },
+  {
+    "id": "Y25-08-904",
+    "title": "Clutching produces a computable cohomological obstruction",
+    "status": "Developed classical result with a scoped worked example",
+    "summary": "A proposed universal degree delta=d+s leaves the actual obstruction group and class unspecified. Circle bundles on the same two-sphere give a complete small model in which every integer obstruction can occur.",
+    "definitions": [
+      "Cover S² by northern and southern discs; on their equatorial overlap glue complex lines by g_m(exp(i*phi))=exp(i*m*phi), m an integer.",
+      "Use the convention c1=[F/(2pi)]; reversing the clutching convention reverses both signs. In polar coordinates take A_N=(m/2)(1-cos theta)dphi and A_S=-(m/2)(1+cos theta)dphi."
+    ],
+    "result": {
+      "name": "Clutching degree and curvature certificate",
+      "statement": "The resulting line bundle has first Chern number m and is trivial exactly when m=0. Fixed dimensions therefore do not determine its obstruction.",
+      "proof": "On the overlap A_N-A_S=m*dphi, matching the logarithmic derivative of the transition function under the stated convention. Both local curvatures equal F=(m/2)sin(theta)dtheta-wedge-dphi. Its normalized integral is(2pi)^(-1) integral F=m. Changing a local trivialization on a disc multiplies the equatorial transition by a loop that extends across that disc and has winding0, so it cannot change m. Conversely, a degree-zero map S¹→U(1) is null-homotopic; its extension across a hemisphere removes the transition and trivializes the bundle. Thus the integer is both an obstruction and a complete invariant in this clutching problem."
+    },
+    "example": {
+      "setup": "Keep the base S² and group U(1) fixed and choose m=0,1,2.",
+      "calculation": "The curvature integrals are0,2pi,4pi. All three models have identical base and group dimensions, while only the first bundle is trivial.",
+      "conclusion": "A meaningful obstruction requires coefficients, degree and a class, all visible in this example."
+    },
+    "limits": "This calculation does not classify loop groups, gerbes or higher stacks. Their obstruction theories need their own coefficient objects and descent data.",
+    "extension": "Construct a gerbe on a three-sphere from explicit triple-overlap data and determine the corresponding integral degree-three class, keeping the cocycle identities separate from dimensional labels.",
+    "references": [
+      {
+        "label": "Hatcher, Vector Bundles and K-Theory",
+        "url": "https://pi.math.cornell.edu/~hatcher/VBKT/VB.pdf"
+      }
+    ],
+    "original": {
+      "date": "2025-08-05T06:22:34Z",
+      "month": "2025-08",
+      "evidence": "U",
+      "field": "Analysis, arithmetic and geometry",
+      "concept": "Clutching produces a computable cohomological obstruction",
+      "origin": "Dated mathematical fragment recovered from the August2025 coverage sweep",
+      "question": "Which explicit obstruction distinguishes bundles with identical base dimension and structure group?",
+      "math": "The resulting line bundle has first Chern number m and is trivial exactly when m=0. Fixed dimensions therefore do not determine its obstruction.",
+      "finish": "Proof or derivation and worked example",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://pi.math.cornell.edu/~hatcher/VBKT/VB.pdf"
+      ],
+      "source_excerpt": "- [USER_FACT] [c0] U@2025-08-05T06:22:34Z, +2y2m: User supplied “Universal Cohomological Obstruction Theory,” asserting \\(\\delta=d+s\\), categorical level \\(\\delta-1\\), arithmetic/Lie/quantum applications, examples, conjectures, and Sage code.",
+      "retrieval_receipt": "root_coverage.json record0",
+      "original_question": null,
+      "attribution_note": "The source line is retained exactly. The question, proposition and example are newly developed here; a verbatim historical prompt is not claimed."
+    }
+  },
+  {
+    "id": "Y25-08-905",
+    "title": "An Eisenstein correction has an exact modular transformation law",
+    "status": "Developed classical result with a scoped worked example",
+    "summary": "The CP-moonshine manuscript used E2(9*tau) as an analytic lift. A scalar weight-two example gives an exact covariance benchmark before introducing unknown triplet representations or fitted physics parameters.",
+    "definitions": [
+      "Use E2(tau)=1-24 sum(n>=1)sigma1(n)q^n with q=exp(2pi*i*tau).",
+      "For N>1 define F_N(tau)=E2(tau)-N*E2(N*tau). For gamma in Gamma0(N), c is divisible by N."
+    ],
+    "result": {
+      "name": "Cancellation of the quasimodular anomaly",
+      "statement": "F_N transforms with weight2 on Gamma0(N). Its holomorphic modular-form extension at the cusps is the standard weight-two Eisenstein construction.",
+      "proof": "The classical formula is E2(gamma*tau)=(c*tau+d)²E2(tau)+[6/(pi*i)]c(c*tau+d). Since c is divisible by N, the integral matrix gamma_N=(a,Nb;c/N,d) lies in SL2(Z) and satisfies N*gamma*tau=gamma_N*(N*tau). Applying the same transformation to E2(N*gamma*tau) gives anomaly[6/(pi*i)](c/N)(c*tau+d). Multiplication by N makes this anomaly identical to the first one, so their difference vanishes. Holomorphy at cusps follows from the standard Eisenstein-series construction; the displayed calculation proves the covariance directly. It also shows why E2(N*tau) alone does not have the claimed homogeneous weight-two law."
+    },
+    "example": {
+      "setup": "Take N=9 and compute the constant and q^9 coefficients.",
+      "calculation": "The constant is1-9=-8. Since sigma1(9)=13, the q^9 coefficient is-24*13+216*1=-96; the q coefficient is-24. The nonzero constant term means this example is not a cusp form.",
+      "conclusion": "The normalization and exact covariance are fixed independently of numerical success percentages."
+    },
+    "limits": "No unprovided Delta(27) representation, mock completion or shadow integral has been certified. Finite sampled transformation tests cannot establish a global modular identity.",
+    "extension": "Specify exact S and T matrices and prove their group relations, then derive the completed vector-valued transformation law with a stated shadow and convergence domain.",
+    "references": [
+      {
+        "label": "Mathlib, exact transformation formulas for the weight-two Eisenstein series",
+        "url": "https://leanprover-community.github.io/mathlib4_docs/Mathlib/NumberTheory/ModularForms/EisensteinSeries/E2/Transform.html"
+      }
+    ],
+    "original": {
+      "date": "2025-08-02T00:45:27Z",
+      "month": "2025-08",
+      "evidence": "U",
+      "field": "Analysis, arithmetic and geometry",
+      "concept": "An Eisenstein correction has an exact modular transformation law",
+      "origin": "Dated mathematical fragment recovered from the August2025 coverage sweep",
+      "question": "Which combination involving E2(9*tau) is genuinely modular, and why does its anomalous term cancel?",
+      "math": "F_N transforms with weight2 on Gamma0(N). Its holomorphic modular-form extension at the cusps is the standard weight-two Eisenstein construction.",
+      "finish": "Proof or derivation and worked example",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://leanprover-community.github.io/mathlib4_docs/Mathlib/NumberTheory/ModularForms/EisensteinSeries/E2/Transform.html"
+      ],
+      "source_excerpt": "- [USER_FACT] [c5] U@2025-08-02T00:45:27Z, -442d: Revised manuscript added analytic lifts \\(E_2(9\\tau),\\eta(9\\tau)^3\\), \\(\\tau=i\\sqrt3\\) shadow-integral verification, triplet errors \\(<10^{-17}\\), and singlet nonconvergence (1₀ errors 1.062–1.127; 1₁ ~0.5–0.6).",
+      "retrieval_receipt": "root_coverage.json record0",
+      "original_question": null,
+      "attribution_note": "The source line is retained exactly. The question, proposition and example are newly developed here; a verbatim historical prompt is not claimed."
+    }
+  },
+  {
+    "id": "Y25-08-906",
+    "title": "A Mellin split gives a reproducible central L-value formula",
+    "status": "Developed classical result with a scoped worked example",
+    "summary": "The historical approximate-functional-equation outputs disagree even in sign. For a weight-two form, splitting the Mellin integral at the Fricke fixed point gives a rapidly convergent center formula whose normalization can be checked directly.",
+    "definitions": [
+      "Let f(tau)=sum(n>=1)a_n exp(2pi*i*n*tau) be a weight-two cusp form of level N.",
+      "Assume f(i/(N*t))=epsilon*N*t²*f(i*t), epsilon=+1 or -1, and |a_n|<=2n. Put c=2pi/sqrt(N)."
+    ],
+    "result": {
+      "name": "Exact central-value series with an explicit tail",
+      "statement": "L(1,f)=(1+epsilon)sum(n>=1)(a_n/n)exp(-c*n). Truncation after M terms has absolute tail at most2|1+epsilon|exp[-c(M+1)]/(1-exp(-c)).",
+      "proof": "The Mellin identity gives L(1,f)=2pi integral(0,infinity)f(i*t)dt. Set A=1/sqrt(N) and substitute t=1/(N*u) in the lower integral. The Fricke identity turns it into epsilon integral(A,infinity)f(i*u)du. Thus the full integral equals(1+epsilon) times the upper integral. Termwise integration is justified by absolute exponential convergence on t>=A and gives the stated series. The coefficient bound yields |a_n/n|<=2, so a geometric series bounds the omitted tail. In particular epsilon=-1 forces the center value to vanish. For an elliptic newform, the bound follows from |a_n|<=d(n)sqrt(n) and the elementary inequality d(n)<=2sqrt(n)."
+    },
+    "example": {
+      "setup": "For N=11 use f=eta(tau)²eta(11*tau)², whose Fricke sign is epsilon=+1.",
+      "calculation": "The q product q*product(1-q^n)²(1-q^(11n))² yields exact integer coefficients. Twenty terms give approximately0.2538418608559107, with analytic tail below3e-17 under the coefficient bound. The numerical approximation has its own rounding error; the tail formula is independent of quadrature-node choices.",
+      "conclusion": "The local normalization, functional equation and truncation error are exposed rather than hidden in a generic AFE routine."
+    },
+    "limits": "The theorem assumes genuine modular coefficients and the stated Fricke law. Applying it to arbitrary surrogate traces would not construct a modular L-function.",
+    "extension": "Implement interval exponential evaluation and retain the exact Fourier coefficients plus the analytic tail to produce a completely rounded central-value enclosure.",
+    "references": [
+      {
+        "label": "LMFDB, weight-two level11 modular forms",
+        "url": "https://www.lmfdb.org/ModularForm/GL2/Q/holomorphic/11/2/a/"
+      },
+      {
+        "label": "Milne, Modular Functions and Modular Forms",
+        "url": "https://www.jmilne.org/math/CourseNotes/MF.pdf"
+      }
+    ],
+    "original": {
+      "date": "2025-08-08T23:35:01Z",
+      "month": "2025-08",
+      "evidence": "A",
+      "field": "Analysis, arithmetic and geometry",
+      "concept": "A Mellin split gives a reproducible central L-value formula",
+      "origin": "Dated mathematical fragment recovered from the August2025 coverage sweep",
+      "question": "What exact functional-equation identity can replace an unstable central-value quadrature?",
+      "math": "L(1,f)=(1+epsilon)sum(n>=1)(a_n/n)exp(-c*n). Truncation after M terms has absolute tail at most2|1+epsilon|exp[-c(M+1)]/(1-exp(-c)).",
+      "finish": "Proof or derivation and worked example",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://www.lmfdb.org/ModularForm/GL2/Q/holomorphic/11/2/a/",
+        "https://www.jmilne.org/math/CourseNotes/MF.pdf"
+      ],
+      "source_excerpt": "[PRIOR_ASSISTANT_OUTPUT] [c6] A@2025-08-08T23:35:01Z, -1y2m12d: AFE reconstruction for \\(11.2.a.a\\): \\(L(1)=\\sum_{n\\le2000}a_n n^{-1}V(n/\\sqrt N)+\\varepsilon\\sum a_n n^{-1}V(\\sqrt N/n)\\); claimed target \\(0.25384186087905164\\), later reported GH values \\(0.0254310979335844\\) (160 nodes), \\(0.0150942075229083\\) (192), \\(-0.0175369634529434\\) (256).",
+      "retrieval_receipt": "root_coverage.json record0",
+      "original_question": null,
+      "attribution_note": "The source line is retained exactly. The question, proposition and example are newly developed here; a verbatim historical prompt is not claimed."
+    }
+  },
+  {
+    "id": "Y25-08-907",
+    "title": "Filtered Frobenius membership needs a precision certificate",
+    "status": "Developed classical result with a scoped worked example",
+    "summary": "The proposed Generator5 returns a vanishing code from phi(v)-p^(-1)v in Fil1. Even before a genuine syntomic realization is supplied, a filtered-vector-space example explains which finite-precision conclusions are valid.",
+    "definitions": [
+      "Let V=Q5², Fil1=span(e2), phi=diag(1,5), and pi:V→V/Fil1 be first-coordinate projection.",
+      "Define the integral-scaled obstruction R(v)=pi[(5phi-I)v]. Membership phi(v)-v/5 in Fil1 is equivalent to R(v)=0."
+    ],
+    "result": {
+      "name": "Exact obstruction and finite-precision distinction",
+      "statement": "For v=(x,y), R(v)=4x. Exact splitting is equivalent to x=0; a zero residue modulo5^N proves only x=0 modulo5^N.",
+      "proof": "The first coordinate of(5phi-I)v is4x, while the second is24y and disappears in the quotient. Since4 is a5-adic unit, multiplication by4 preserves the5-adic valuation. Therefore an observed residual of valuation k<N certifies a nonzero obstruction, while a residual represented by0 modulo5^N only bounds its valuation below by N. It cannot distinguish exact0 from5^N times a nonzero unit. This conclusion uses the exact filtered matrix and the declared input precision; it does not depend on an empirical threshold. The denominator p^(-1) must also be accounted for when converting a residual precision back to the original equation."
+    },
+    "example": {
+      "setup": "Choose v=(25,1).",
+      "calculation": "R(v)=100 has5-adic valuation2. It is0 modulo25 but100 modulo125, so the precision-two verdict cannot establish vanishing and the precision-three verdict disproves it.",
+      "conclusion": "The example produces an explicit precision-stable nonvanishing decision once sufficient digits are available."
+    },
+    "limits": "This is a stipulated filtered linear-algebra model, not a computed syntomic cohomology group or a Selmer certificate for an elliptic curve.",
+    "extension": "For an actual filtered(phi,N) module, compute quotient matrices over a valuation ring, certify their elementary divisors and propagate input precision through each denominator and inverse.",
+    "references": [
+      {
+        "label": "Milne, Class Field Theory, local fields and valuations",
+        "url": "https://www.jmilne.org/math/CourseNotes/cft.html"
+      }
+    ],
+    "original": {
+      "date": "2025-08-04T02:41:44Z",
+      "month": "2025-08",
+      "evidence": "U",
+      "field": "Analysis, arithmetic and geometry",
+      "concept": "Filtered Frobenius membership needs a precision certificate",
+      "origin": "Dated mathematical fragment recovered from the August2025 coverage sweep",
+      "question": "What can a finite p-adic residual prove about a proposed filtered Frobenius splitting condition?",
+      "math": "For v=(x,y), R(v)=4x. Exact splitting is equivalent to x=0; a zero residue modulo5^N proves only x=0 modulo5^N.",
+      "finish": "Proof or derivation and worked example",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://www.jmilne.org/math/CourseNotes/cft.html"
+      ],
+      "source_excerpt": "- [USER_FACT] [c7] U@2025-08-04T02:41:44Z, -1y2m17d: proposed Generator 5 input \\((E/\\mathbb Q,p,N)\\), output \\((\\text{vanishing\\_code},\\text{regulator\\_approximation},\\text{filtration\\_signature})\\); splitting test \\(\\varphi(v)-p^{-1}v\\in\\mathrm{Fil}^1\\).",
+      "retrieval_receipt": "root_coverage.json record0",
+      "original_question": null,
+      "attribution_note": "The source line is retained exactly. The question, proposition and example are newly developed here; a verbatim historical prompt is not claimed."
+    }
+  },
+  {
+    "id": "Y25-08-908",
+    "title": "The classical Heegner hypothesis is a local test",
+    "status": "Developed classical result with a scoped worked example",
+    "summary": "A formal q-deformation must begin with a correctly specified classical construction. The conductor and quadratic field already decide whether the standard X0(N) Heegner-point setup applies.",
+    "definitions": [
+      "Use the classical Heegner hypothesis: every rational prime dividing the conductor N splits in the imaginary quadratic field K.",
+      "For the source curve N=32. Q(i) has discriminant-4; a prime dividing the discriminant is ramified rather than split."
+    ],
+    "result": {
+      "name": "Failure at2 and a split-prime alternative",
+      "statement": "The source pair fails the classical split-prime hypothesis because2 ramifies in Q(i). In Q(sqrt(-7)),2 splits, so the prime condition for level32 is satisfied.",
+      "proof": "In Z[i],2=-i(1+i)², proving ramification directly. In the ring of integers Z[(1+sqrt(-7))/2], the generator theta satisfies theta²-theta+2=0. Modulo2 its polynomial is X(X-1), with two distinct roots. Dedekind factorization, or the corresponding two distinct norm-two ideals, therefore gives splitting of2. These calculations check the exact local premise of the classical modular-curve construction. They do not supply the height formula, prove a point has infinite order or define a q-deformation. A generalized Heegner construction allowing ramification would require its own different hypotheses."
+    },
+    "example": {
+      "setup": "Compare discriminants-4 and-7 at the unique prime dividing32.",
+      "calculation": "The first has discriminant divisible by2 and a repeated factor; the second has discriminant congruent1 modulo8 and distinct factors over F2. No numerical period calculation is required for this decision.",
+      "conclusion": "The starting field can be chosen to meet a precise classical condition before any formal deformation is attempted."
+    },
+    "limits": "A satisfied Heegner hypothesis alone does not imply a nonzero L-derivative or a non-torsion point. Formal power-series coordinates are not automatically points on the original elliptic curve.",
+    "extension": "Specify the modular parametrization and CM ideal, compute a genuine classical Heegner point, verify its curve equation, and only then formulate an algebraic deformation with a proved specialization map.",
+    "references": [
+      {
+        "label": "Gross and Zagier, Heegner points and derivatives of L-series",
+        "url": "https://doi.org/10.1007/BF01388809"
+      }
+    ],
+    "original": {
+      "date": "2025-08-03T03:56:33Z",
+      "month": "2025-08",
+      "evidence": "U",
+      "field": "Analysis, arithmetic and geometry",
+      "concept": "The classical Heegner hypothesis is a local test",
+      "origin": "Dated mathematical fragment recovered from the August2025 coverage sweep",
+      "question": "Does the proposed pair E:y²=x³-x and K=Q(i) satisfy the classical split-prime Heegner hypothesis?",
+      "math": "The source pair fails the classical split-prime hypothesis because2 ramifies in Q(i). In Q(sqrt(-7)),2 splits, so the prime condition for level32 is satisfied.",
+      "finish": "Proof or derivation and worked example",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://doi.org/10.1007/BF01388809"
+      ],
+      "source_excerpt": "- [USER_FACT] [c8] U@2025-08-03T03:56:33Z, -1y2m18d: mathematical program on q-deformed Heegner points, Gross–Zagier, Euler systems, Iwasawa μ-invariants, BSD constants; explicit target \\(E:y^2=x^3-x\\), \\(K=\\mathbb Q(i)\\), expansion to \\((q-1)^3\\).",
+      "retrieval_receipt": "root_coverage.json record0",
+      "original_question": null,
+      "attribution_note": "The source line is retained exactly. The question, proposition and example are newly developed here; a verbatim historical prompt is not claimed."
+    }
+  },
+  {
+    "id": "Y25-08-909",
+    "title": "A calibrated search has a computable multiplicity cost",
+    "status": "Developed classical result with a scoped worked example",
+    "summary": "The source moonshine interpretation selected fitted coordinates and reported a significance value. A finite family of tests gives an exact mathematical benchmark for distinguishing one prespecified statistic from a selected maximum.",
+    "definitions": [
+      "Let p1,...,pM be valid null p-values, so Pr(pj<=u)<=u for each j.",
+      "Define p_adj=min(1,M*min_j pj). Independence is not assumed for the familywise bound."
+    ],
+    "result": {
+      "name": "Finite-search familywise control",
+      "statement": "Pr(p_adj<=alpha)<=alpha. If the p-values are independent uniform variables, Pr(min pj<=u)=1-(1-u)^M exactly.",
+      "proof": "The event p_adj<=alpha is contained in the union of events pj<=alpha/M. The union bound gives probability at most sum_j alpha/M=alpha, proving the adjusted test. Under independence, the complementary event pj>u for all j has probability(1-u)^M, giving the exact formula. The theorem concerns the whole specified search family: fitting extra parameters, choosing observables after inspection or retaining only successful seeds enlarges that family or requires a different null calibration. A held-out evaluation can avoid reusing the same observations for both selection and confirmation."
+    },
+    "example": {
+      "setup": "As a newly stipulated illustration, take M=1000 independent null tests and u=0.001.",
+      "calculation": "The chance of at least one such small p-value is1-0.999^1000, approximately0.6323. Thus a selected value0.001 does not carry the interpretation of one prespecified test.",
+      "conclusion": "The cost of selection can be computed without asserting any physical mechanism or interpreting fitted couplings as predictions."
+    },
+    "limits": "The exact independence formula is illustrative. The historical search size, data covariance and original analysis are unavailable, so no corrected historical significance is claimed.",
+    "extension": "Freeze the observables and coordinate map, simulate the complete selection procedure under a stated correlated null, and compare a separately held-out statistic with that calibrated distribution.",
+    "references": [],
+    "original": {
+      "date": "2025-08-01T16:13:11Z",
+      "month": "2025-08",
+      "evidence": "U",
+      "field": "Analysis, arithmetic and geometry",
+      "concept": "A calibrated search has a computable multiplicity cost",
+      "origin": "Dated mathematical fragment recovered from the August2025 coverage sweep",
+      "question": "How does searching many modular-coordinate fits change the interpretation of the best apparent anomaly?",
+      "math": "Pr(p_adj<=alpha)<=alpha. If the p-values are independent uniform variables, Pr(min pj<=u)=1-(1-u)^M exactly.",
+      "finish": "Proof or derivation and worked example",
+      "kind": "Revised mathematical treatment",
+      "refs": [],
+      "source_excerpt": "- [USER_FACT] [c4] U@2025-08-01T16:13:11Z, +1y2m19d: claimed 3.12σ Higgs-coupling anomaly; table maps κₜ=1.000, κ_b=.235, κγ=1.714, κg=.500 to M₂₄ predictions .913,.304,.870,.304; proposed modular-form/K3 interpretation.",
+      "retrieval_receipt": "root_coverage.json record0",
+      "original_question": null,
+      "attribution_note": "The source line is retained exactly. The question, proposition and example are newly developed here; a verbatim historical prompt is not claimed."
+    }
+  },
+  {
+    "id": "Y25-08-910",
+    "title": "Compounding distinguishes price growth from purchasing-power decay",
+    "status": "Developed classical result with a scoped worked example",
+    "summary": "The source challenged an invented annual rate. The mathematical repair is to state a hypothetical rate transparently and distinguish the two reciprocal quantities before inserting any empirical index.",
+    "definitions": [
+      "Let the annual price multiplier be1+pi>0 and the annual purchasing-power multiplier be1-d>0.",
+      "Purchasing power is reciprocal to the price index for a fixed nominal amount and a fixed basket."
+    ],
+    "result": {
+      "name": "Exact reciprocal compounding",
+      "statement": "(1-d)=1/(1+pi), so d=pi/(1+pi). After T years the price factor is(1+pi)^T and the purchasing-power factor is(1-d)^T.",
+      "proof": "If one basket costs P0 initially and PT=P0(1+pi)^T later, a fixed nominal amount buys PT/P0 times fewer baskets; its relative purchasing power is P0/PT. Equating the annual reciprocal factor with1-d gives the stated conversion. For variable annual rates pi_t, replace the power by the product of(1+pi_t); averaging rates arithmetically does not in general reproduce that product. The constant equivalent annual rate is exp[T^(-1)sum log(1+pi_t)]-1. These are index identities, not estimates of any country or historical period."
+    },
+    "example": {
+      "setup": "Stipulate d=0.033 for T=30; do not treat it as a measured historical rate.",
+      "calculation": "The purchasing-power factor is0.967^30, approximately0.3654, and the reciprocal price factor is about2.7366. The corresponding price inflation rate is0.033/0.967, approximately3.4126 percent, rather than3.3 percent.",
+      "conclusion": "The example separates a mathematical scenario from the missing empirical rate and keeps numerator and denominator conventions consistent."
+    },
+    "limits": "Actual purchasing power depends on a declared basket, index construction, time window and source series. No current inflation or investment conclusion is inferred from this hypothetical example.",
+    "extension": "Given a specified historical index series, compute log growth by interval, chain the factors exactly to the available decimal precision, and quantify how alternative basket definitions change the result.",
+    "references": [],
+    "original": {
+      "date": "2025-08-05T15:20:07Z",
+      "month": "2025-08",
+      "evidence": "A",
+      "field": "Analysis, arithmetic and geometry",
+      "concept": "Compounding distinguishes price growth from purchasing-power decay",
+      "origin": "Dated mathematical fragment recovered from the August2025 coverage sweep",
+      "question": "What mathematical relation connects an annual inflation factor, an annual purchasing-power loss and a thirty-year cumulative ratio?",
+      "math": "(1-d)=1/(1+pi), so d=pi/(1+pi). After T years the price factor is(1+pi)^T and the purchasing-power factor is(1-d)^T.",
+      "finish": "Proof or derivation and worked example",
+      "kind": "Revised mathematical treatment",
+      "refs": [],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c1] A@2025-08-05T15:20:07Z, -442d: Assistant gave hypothetical compounding: \\(0.967^{30}\\approx0.365\\), 2.737× PPP; stated 1995 CPI≈152.4, 2025 CPI estimated≈310–320, implying ≈2.07× and ≈2.48% average annual depreciation.",
+      "retrieval_receipt": "root_coverage.json record0",
+      "original_question": null,
+      "attribution_note": "The source line is retained exactly. The question, proposition and example are newly developed here; a verbatim historical prompt is not claimed."
+    }
+  }
+]

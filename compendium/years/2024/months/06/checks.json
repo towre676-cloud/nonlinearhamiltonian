@@ -1,0 +1,149 @@
+{
+  "checks": [
+    {
+      "id": "Y24-06-001",
+      "name": "Number-field norm, F4 and quaternion relations",
+      "status": "pass",
+      "detail": "Exact finite field and matrix identities. Classification of all listed number systems is not inferred from these samples."
+    },
+    {
+      "id": "Y24-06-002",
+      "name": "sl2 closure and periodic generator",
+      "status": "pass",
+      "detail": "Exact brackets and J squared equal minus identity; written exponential proof gives all real times."
+    },
+    {
+      "id": "Y24-06-003",
+      "name": "Canonical symplectic matrix and oscillator invariants",
+      "status": "pass",
+      "detail": "Exact infinitesimal symplectic identity plus sample evaluations. Constancy of every canonical Casimir is proved in prose with coordinate test functions."
+    },
+    {
+      "id": "Y24-06-004",
+      "name": "Rational circle parametrization",
+      "status": "pass",
+      "detail": "Exact worked point and inverse parameter; density and cardinality are proof statements."
+    },
+    {
+      "id": "Y24-06-005",
+      "name": "Factorial tail bound and affine area",
+      "status": "pass",
+      "detail": "Exact finite-tail inequalities check the displayed irrationality argument; its infinite geometric bound is supplied by the written proof."
+    },
+    {
+      "id": "Y24-06-006",
+      "name": "Coordinate-ring radius rescaling",
+      "status": "pass",
+      "detail": "Exact point and polynomial substitution check; irreducibility/domain statements use the written algebraic proof."
+    },
+    {
+      "id": "Y24-06-007",
+      "name": "Correct quartic roots and V4 sign automorphisms",
+      "status": "pass",
+      "detail": "Exact arithmetic in basis 1,sqrt2,i,sqrt2 i checks all four roots and all four sign maps. Field degree is proved separately."
+    },
+    {
+      "id": "Y24-06-008",
+      "name": "Weight-four Hecke eigen-coefficients",
+      "status": "pass",
+      "detail": "Exact first100 nonconstant coefficients for T2 E4=9E4, with the required 2^(k-1) a_(n/2) term; the divisor proof establishes all n."
+    },
+    {
+      "id": "Y24-06-009",
+      "name": "Two-arc Cech constant-sheaf differential",
+      "status": "pass",
+      "detail": "Exact differential rank and quotient dimension for this cover; this is not a violation of the sheaf gluing axiom."
+    },
+    {
+      "id": "Y24-06-010",
+      "name": "Formal Laurent-polynomial braid and Hecke equations",
+      "status": "pass",
+      "detail": "All8 basis triples and4 pairs are checked exactly over Q[q,q^-1], so this finite symbolic identity holds for every nonzero q in the declared convention."
+    },
+    {
+      "id": "Y24-06-011",
+      "name": "Trefoil bracket and writhe normalization",
+      "status": "pass",
+      "detail": "Exact Temperley-Lieb Laurent calculation in the stated crossing and variable convention; knot invariance is the cited bracket theorem."
+    },
+    {
+      "id": "Y24-06-012",
+      "name": "Hyperbolic geodesic and Cayley metric factors",
+      "status": "pass",
+      "detail": "Sample evaluations check the explicit metric identity and vertical geodesic. Differentiated formulas in the entry prove the identities for all points."
+    },
+    {
+      "id": "Y24-06-013",
+      "name": "Virasoro central-cocycle arithmetic",
+      "status": "pass",
+      "detail": "625 exact mode pairs and the low modes are checked; the written polynomial cancellation proves the unbounded Jacobi identity."
+    },
+    {
+      "id": "Y24-06-014",
+      "name": "Triangle boundary and filling homology",
+      "status": "pass",
+      "detail": "Exact mod-two ranks support the finite cell example. General sphere and surface fundamental groups use the explicit covering and van Kampen arguments, not these ranks."
+    },
+    {
+      "id": "Y24-06-015",
+      "name": "Exterior forms and oriented determinant",
+      "status": "pass",
+      "detail": "Pullbacks along the unit circle and a wedge determinant are checked. The exact integrals are constants times2pi; nonexactness follows from the written period proof."
+    },
+    {
+      "id": "Y24-06-016",
+      "name": "Affine tetrahedron mass",
+      "status": "pass",
+      "detail": "Exact barycentric, monomial and centroid values agree; no quadrature tolerance is used."
+    },
+    {
+      "id": "Y24-06-017",
+      "name": "Exact Poisson CG iteration",
+      "status": "pass",
+      "detail": "Fraction arithmetic reaches the stated solution in exactly two steps. The general SPD requirement is proved by the displayed sum of squares."
+    },
+    {
+      "id": "Y24-06-018",
+      "name": "Toroidal complex, Hamiltonian cycle and Morse indices",
+      "status": "pass",
+      "detail": "Exact boundary ranks, all12 cycle vertices/edges and four diagonal Hessian indices are checked for the newly declared toy complex."
+    },
+    {
+      "id": "Y24-06-019",
+      "name": "Normalized Rademacher sums",
+      "status": "pass",
+      "detail": "Finite characteristic-function errors decrease in the displayed sample and the fourth cumulant scales exactly. The finite-variance limit theorem is proved analytically in the entry."
+    },
+    {
+      "id": "Y24-06-020",
+      "name": "Skew-matrix and gauge-patch checks",
+      "status": "pass",
+      "detail": "Exact odd skew determinant plus patch-coefficient identity. Flux4pi g follows from the stated elementary integral; no monopole existence is inferred."
+    },
+    {
+      "id": "Y24-06-021",
+      "name": "Finite Ising normalization and detailed balance",
+      "status": "pass",
+      "detail": "All16 transition entries, stationary pair flows and the correlation are checked exactly with rational probabilities."
+    },
+    {
+      "id": "Y24-06-022",
+      "name": "Parameter shift and non-descent counterexample",
+      "status": "pass",
+      "detail": "Analytic formulas checked numerically, including a strict loss increase for the recovered heuristic update; no empirical training claim."
+    },
+    {
+      "id": "Y24-06-023",
+      "name": "Bell dephasing density matrix and blind marginals",
+      "status": "pass",
+      "detail": "Exact rational states at q=0,1/4,1 check normalization, positivity eigenvalues, both marginals and joint XX/ZZ. Kraus proof establishes complete positivity for all0≤q≤1."
+    },
+    {
+      "id": "Y24-06-024",
+      "name": "Additive-model sensitivity rank and null directions",
+      "status": "pass",
+      "detail": "Exact scalar and four-output ranks, all four null directions and the independently informative two-equation example."
+    }
+  ],
+  "scope": "Finite certificates and arithmetic checks accompany the entries. Their details distinguish exact identities, numerical samples and proof-only general statements."
+}

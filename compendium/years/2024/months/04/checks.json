@@ -1,0 +1,325 @@
+{
+  "scope": "Finite examples, exact certificates and stated numerical identities only. General existence, convergence, topology and physical applicability are not certified by these checks.",
+  "checks": [
+    {
+      "id": "Y24-04-001",
+      "name": "clustering",
+      "status": "passed",
+      "detail": {
+        "exhaustive_unlabeled_partitions": 8,
+        "scatter_certificate": [
+          [
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            "1",
+            "0"
+          ],
+          [
+            [
+              0,
+              0,
+              0,
+              1
+            ],
+            "2/3",
+            "1/3"
+          ],
+          [
+            [
+              0,
+              0,
+              1,
+              0
+            ],
+            "2/3",
+            "1/3"
+          ],
+          [
+            [
+              0,
+              0,
+              1,
+              1
+            ],
+            "0",
+            "1"
+          ],
+          [
+            [
+              0,
+              1,
+              0,
+              0
+            ],
+            "2/3",
+            "1/3"
+          ],
+          [
+            [
+              0,
+              1,
+              0,
+              1
+            ],
+            "1",
+            "0"
+          ],
+          [
+            [
+              0,
+              1,
+              1,
+              0
+            ],
+            "1",
+            "0"
+          ],
+          [
+            [
+              0,
+              1,
+              1,
+              1
+            ],
+            "2/3",
+            "1/3"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "Y24-04-002",
+      "name": "potts",
+      "status": "passed",
+      "detail": [
+        {
+          "gamma": "1/2",
+          "minimum": "1/2",
+          "minimizers": [
+            [
+              0,
+              0,
+              1,
+              1
+            ]
+          ]
+        },
+        {
+          "gamma": "1",
+          "minimum": "1",
+          "minimizers": [
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              1,
+              1
+            ]
+          ]
+        },
+        {
+          "gamma": "2",
+          "minimum": "1",
+          "minimizers": [
+            [
+              0,
+              0,
+              0,
+              0
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Y24-04-003",
+      "name": "regularizers",
+      "status": "passed",
+      "detail": "Three distinct exact KKT certificates atz(3,4),λ1; radial output length4."
+    },
+    {
+      "id": "Y24-04-004",
+      "name": "online",
+      "status": "passed",
+      "detail": {
+        "impulse_weights": [
+          "1/8",
+          "1/4",
+          "1/2"
+        ],
+        "variance": "21/64",
+        "limiting_variance": "1/3"
+      }
+    },
+    {
+      "id": "Y24-04-005",
+      "name": "kernels",
+      "status": "passed",
+      "detail": "Exact principal minors4,3,8; indefinite counterexample quadratic form−4."
+    },
+    {
+      "id": "Y24-04-006",
+      "name": "bayes",
+      "status": "passed",
+      "detail": "Posterior square completion exactly3(θ−1)²+2; singular duplicate covariance leaves variance1."
+    },
+    {
+      "id": "Y24-04-007",
+      "name": "transfer",
+      "status": "passed",
+      "detail": "Finite change-of-measure identity exact; unsupported target point cannot have finite source density ratio."
+    },
+    {
+      "id": "Y24-04-008",
+      "name": "ratios",
+      "status": "passed",
+      "detail": {
+        "shares": [
+          "1130/1379",
+          "249/1379"
+        ],
+        "separate_ratio": "723/13790",
+        "lottery_demo": [
+          "1/5",
+          "19/100"
+        ],
+        "historical_denominator": "unavailable"
+      }
+    },
+    {
+      "id": "Y24-04-009",
+      "name": "geometry",
+      "status": "passed",
+      "detail": "Two cells: exterior6, distinct edges7, patch perimeter sum8; shared-edge perimeter formula independently counted."
+    },
+    {
+      "id": "Y24-04-010",
+      "name": "fractal",
+      "status": "passed",
+      "detail": "Cantor finite-level2^n covering pieces and3^−n lengths throughn8; raw log ratio changes from3 to2 under two unit scalings. Limit proof is in text."
+    },
+    {
+      "id": "Y24-04-011",
+      "name": "division",
+      "status": "passed",
+      "detail": {
+        "D": "21/32",
+        "merged_D": "5/8",
+        "effective_count": "32/11"
+      }
+    },
+    {
+      "id": "Y24-04-012",
+      "name": "pca",
+      "status": "passed",
+      "detail": "Exact covarianceI/2 and reconstruction error1/2 for two different rank-one projectors; not a manifold-dimension estimator."
+    },
+    {
+      "id": "Y24-04-013",
+      "name": "spectral",
+      "status": "passed",
+      "detail": "Four-dimensional page differential has square zero, rank1 and homology dimension2; zero differential leaves4. Serre existence/convergence is cited background."
+    },
+    {
+      "id": "Y24-04-014",
+      "name": "sheaf",
+      "status": "passed",
+      "detail": "Compatible finite-section gluing; wedge determinant11; triangle boundary-square zero. Continuous sheaf proof and Stokes argument remain in text."
+    },
+    {
+      "id": "Y24-04-015",
+      "name": "braid",
+      "status": "passed",
+      "detail": {
+        "commutator": [
+          [
+            13,
+            8
+          ],
+          [
+            8,
+            5
+          ]
+        ],
+        "deletion_images": "all identity",
+        "scope": "Representation proves nontriviality; strand deletion geometry is justified in text."
+      }
+    },
+    {
+      "id": "Y24-04-016",
+      "name": "elasticity",
+      "status": "passed",
+      "detail": "Exact tensor-shear factor and negative dilation-energy counterexample verified."
+    },
+    {
+      "id": "Y24-04-017",
+      "name": "populations",
+      "status": "passed",
+      "detail": "SIR conservation and threshold example exact; Lotka–Volterra first-integral derivative zero at three independent rational states."
+    },
+    {
+      "id": "Y24-04-018",
+      "name": "oscillators",
+      "status": "passed",
+      "detail": "Exact automatic differentiation and discrete multipliers reproduce all local-stability examples."
+    },
+    {
+      "id": "Y24-04-019",
+      "name": "lorenz",
+      "status": "passed",
+      "detail": "Independent exact Jacobian/cubic coefficients at a rational Lorenz equilibrium; classic threshold470/19 and Rössler equilibria verified."
+    },
+    {
+      "id": "Y24-04-020",
+      "name": "reaction",
+      "status": "passed",
+      "detail": "Exact AD reaction Jacobian; stable homogeneous determinant1/trace−1/2; spatial determinant−29/10/trace−53/5."
+    },
+    {
+      "id": "Y24-04-021",
+      "name": "gradient",
+      "status": "passed",
+      "detail": {
+        "Fourier_rates": [
+          "0",
+          "3/16",
+          "-2"
+        ],
+        "AC_dissipation": -1.9634954084936207,
+        "CH_dissipation": -3.5342917352885173,
+        "scope": "Periodic smooth-field energy identities are proved in text; this checks one independent trigonometric example."
+      }
+    },
+    {
+      "id": "Y24-04-022",
+      "name": "kuramoto",
+      "status": "passed",
+      "detail": "Exact two-phase solution differentiated numerically; independent three-vertex potential dissipation check."
+    },
+    {
+      "id": "Y24-04-023",
+      "name": "gauge",
+      "status": "passed",
+      "detail": {
+        "configurations": 16,
+        "gauge_transform_pairs": 256,
+        "orbit_sizes": [
+          8,
+          8
+        ],
+        "partition_function_beta1": 9.082682265892903
+      }
+    }
+  ],
+  "passed": 23,
+  "failed": 0
+}

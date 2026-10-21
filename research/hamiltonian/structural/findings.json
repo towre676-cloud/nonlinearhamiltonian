@@ -1,0 +1,87 @@
+{
+  "status": "proved_with_exact_fixtures",
+  "scope": "Polynomial Weyl–Moyal exactness as a formal identity in hbar, characteristic zero; no priority claim.",
+  "definitions": {
+    "exact_partner_space": "E(H)=intersection over odd k>=3 of ker Lambda^k(H,.)",
+    "dynamic_core": "D_infinity(H)={G:D_H^r G belongs to E(H) for every r>=0}",
+    "coordinate_algebra": "A=k[p] direct-sum q k[p]"
+  },
+  "theorems": [
+    {
+      "id": "S01",
+      "title": "Complete arbitrary-F classification for H=qF(p)",
+      "statement": "Let M=degF>=2 and A=k[p]+qk[p]. For M=2, E=A direct-sum q^2 k[q]. For M=3, y=F'' is affine and E=A direct-sum span{q^(3r+2)y^r:r>=0}. For M>=4, E=A direct-sum k q^2, plus one additional line k q^3 R iff F''=gamma R^3 for nonzero constant gamma.",
+      "proof": "Expand G=sum q^c A_c(p). For odd k>=3, Lambda^k(qF,q^c A)=(c)_(k-1) q^(c-k+1)[k F^(k-1) A'-(c-k+1)F^k A]. Different c cannot cancel. At k=3, 3F''A'=(c-2)F'''A, whose nonzero polynomial solution is at most one-dimensional. M2 forces A constant; M3 forces c=3r+2 and A proportional(F'')^r. For M>=4, c2 gives a constant, c3 gives A^3 proportional F''. For c>=4, leading-degree k3 gives d=(M-2)(c-2)/3; k5 has nonzero factor 5d-(M-4)(c-4)=2[(M+1)(c+1)-15]/3>0. Thus every c>=4 is excluded.",
+      "unrestricted": true,
+      "example": "F=5p^8+28p^6+70p^4+140p^2 has F''=280(p^2+1)^3, so q^3(p^2+1) is an extra exact partner for degree-nine H=qF."
+    },
+    {
+      "id": "S02",
+      "title": "Complete dynamic core and largest exact Lie sector for qF",
+      "statement": "For every degF>=2, D_infinity(qF)=A. A is the unique largest Poisson Lie subalgebra contained in E(qF) and containing qF; it is also pairwise Moyal-exact.",
+      "proof": "D_H(q^c A_c)=q^c(FA_c'-cF'A_c). For c>=2, exact coefficient space is at most one-dimensional, with d=degA=(M-2)(c-2)/3. The leading coefficient d-cM=-2[(M+1)c+(M-2)]/3 never vanishes, and the image degree is M+d-1>d. Thus every exceptional component exits E after one action. A is invariant and Lie closed: {qA+B,qC+D}=q(AC'-A'C)+(AD'-B'C). Any Lie subalgebra of E containing H must be ad_H invariant and hence lie in D_infinity=A.",
+      "interpretation": "Known coordinate/first-order transport algebra; Hamiltonian-specific forced-core classification follows from the proof."
+    },
+    {
+      "id": "S03",
+      "title": "Complete cubic characteristic-PDE organization",
+      "statement": "If H has nonzero homogeneous cubic part H3, with arbitrary lower terms, E(H)=ker H3(partial_p,-partial_q). In homogeneous degree n, dim E(H)_n=min(n+1,3). Through degree N>=2, dim E(H)_<=N=3N. Every such cubic has unbounded-degree noncommuting exact partners.",
+      "proof": "Only Lambda^3 survives and equals6H3(partial_p,-partial_q). Its degreewise transpose under apolar pairing is multiplication by a nonzero cubic, hence injective, so the differential map onto degree n-3 is surjective. Factor H3=gamma product ell_i^m_i over C. With L_i=a_i partial_p-b_i partial_q annihilating ell_i=a_iq+b_ip, choose transverse t_i withL_it_i=1. E is the sum over i,j<m_i of t_i^j k[ell_i]. Completeness follows by taking apolar orthogonal complements: intersection of distinct principal-power ideals is their product. Noncommuting arbitrary powers of a characteristic factor work unless H3 is a pure cube, where a transverse-linear factor supplies the family.",
+      "factorization_types": [
+        "pure cube: three transverse layers",
+        "double and simple factor: two layers plus one line family",
+        "three distinct factors: three arbitrary-function line families"
+      ]
+    },
+    {
+      "id": "S04",
+      "title": "Quadratic perturbations preserve isolated exactness but can collapse dynamics",
+      "statement": "E(H+Q)=E(H) for every polynomial Q of total degree<=2. Yet H=qp^3+q^2 has D_infinity(H)=span{1,H}, whereas D_infinity(qp^3)=A.",
+      "proof": "Quadratic Q has no third or higher derivatives. For the perturbed H, higher resonant q^(3r+2)p^r,r>=1 are eliminated from E1 by distinct q-degree residue classes. Writing a remaining G=u q^2+A(p)+qB(p), membership of DG inE forces B'=3u p^2+b1, hence E1={uH+A(p)+q(b1p+b0)}. For suchG, DG=p^3A'+q(2A'-2b1p^3-3b0p^2)+2b1q^2. RequiringDG inE1 forces A'=2b1p^3+(3/2)b0p^2+linear, hence E2=span{1,p,p^2,Y,pY,H}, Y=q+p^3/2. Dp=2Y,DY=3p^5/2,Dp^2=4pY,D(pY)=2H+2p^6. ModE2, p^5 andp^6 are independent, so an invariant subspace has noY/pY components; then no p/p^2 components. The surviving span{1,H} is invariant.",
+      "credit": "Root-derived perturbation theorem, independently reviewed here."
+    },
+    {
+      "id": "S05",
+      "title": "Affine symplectic covariance and explicit nonlinear failure",
+      "statement": "Affine symplectic substitutions transport E and D_infinity exactly. Ordinary nonlinear canonical substitutions of unchanged Weyl symbols do not. Q=q,P=p+q^2 transports exact pair P^3,Q^2P to a pair with normalized Moyal correction3hbar^2q.",
+      "proof": "Affine symplectic chain rule preserves every constant Poisson contraction. For the nonlinear shear, H=(p+q^2)^3,G=q^2(p+q^2) have Lambda^3=-72q and all higher odd contractions zero. The cubic correction coefficient is-1/24, giving+3hbar^2q."
+    },
+    {
+      "id": "S06",
+      "title": "Complete one-linear-coordinate classification in any dimension",
+      "statement": "For H=F(L), L a nonconstant affine linear observable, degF>=3, E(H)=kerX_L^3, whereX_L={L,.}. In a conjugate coordinateQ this means degreeQ<=2, with arbitrary spectator dependence. D_infinity(H)=E(H).",
+      "proof": "Lambda^3(H,G)=F'''(L)X_L^3G. Integral-domain cancellation forcesX_L^3G=0, which kills every higher odd derivative. D_H=F'(L)X_L commutes withX_L becauseX_LF'(L)=0, preserving the kernel."
+    },
+    {
+      "id": "S07",
+      "title": "Lagrangian-degree budget and coherent n-variable coordinate algebra",
+      "statement": "If total q-degrees ofH,G are bounded byr,s withr+s<=2, their Moyal and Poisson brackets agree exactly regardless of p-degrees. A_n={sum_i q_i F_i(p)+B(p)} is pairwise exact and Poisson Lie closed.",
+      "proof": "Every orderk contraction usesk total q derivatives acrossH,G. For k>=3 the budget makes this impossible. The Poisson bracket of two q-affine symbols remains q-affine."
+    },
+    {
+      "id": "S08",
+      "title": "Composition rules with their precise scope",
+      "statement": "A one-pair H has E_n(H)=E_1(H) tensor k[spectators] as vector spaces. For H=sum_iH_i on disjoint canonical pairs, E(H) contains products of individual partners. For separableV(q)+T(p), all nine biquadratic basis monomials are exact.",
+      "limits": "Spectator extension need not preserve Lie closure. Tensor inclusion is not equality. The finite biquadratic sector alone does not classify arbitrary high-degree separable Hamiltonians."
+    }
+  ],
+  "counterexamples": [
+    {
+      "Hamiltonian": "p^3",
+      "exact_partners": "q andq^2",
+      "failure": "productq^3 is not exact"
+    },
+    {
+      "Hamiltonian": "p^3",
+      "exact_partners": "q^2 andq^2p",
+      "failure": "Poisson bracket2q^3 is not exact"
+    },
+    {
+      "Hamiltonian": "qp^3",
+      "exact_partner": "q^2",
+      "failure": "second Moyal action adds18hbar^2p^2 to the second classical action"
+    }
+  ],
+  "verification": "verify.py:8 scoped groups,90 exact kernel-dimension cases,80 cubic-degree cases,147 univariate monomial cases,150 coordinate-algebra pairs,explicit closure/shear counterexamples.",
+  "open_boundary": "The companion quartic investigation classifies all nonzero homogeneous binary quartics degreewise. Arbitrary inhomogeneous quartics and general higher-degree Hamiltonians, especially their dynamically invariant exact cores, remain beyond the complete classifications here."
+}

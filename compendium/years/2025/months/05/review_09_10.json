@@ -1,0 +1,57 @@
+{
+  "reviewer": "arithmetic_and_waves",
+  "reviewed_months": [
+    "2025-09",
+    "2025-10"
+  ],
+  "status": "approved",
+  "scope": "Independent read of stated definitions, results, proofs and finite examples across 21 September and 36 October entries. Particular attention to cocycle/cokernel, 11a arithmetic and symmetric-square normalization, Selmer cardinalities, the real-quadratic L-derivative, heat residues and October 31 integrals. Source anchoring was checked selectively; this is not a full transcript-level historical audit.",
+  "verification": [
+    {
+      "month": "2025-09",
+      "command": "python verify.py",
+      "passed": 21,
+      "failed": 0,
+      "scope": "Declared finite examples/certificates, not standalone proofs of the general theorems."
+    },
+    {
+      "month": "2025-10",
+      "command": "python verify.py",
+      "passed": 36,
+      "failed": 0,
+      "scope": "Declared finite examples/certificates, not standalone proofs of the general theorems."
+    }
+  ],
+  "issues": [
+    {
+      "severity": "medium",
+      "id": "Y25-10-026",
+      "description": "Current original.source_excerpt is a retrieval limitation saying the requested problem was not present, labeled USER_CONSTRAINT. That is not sufficient historic user attribution for this trace problem. The mathematical correction itself is sound.",
+      "fix": "Use the adjacent exact PRIOR_ASSISTANT_OUTPUT A@2025-10-31T00:48:10Z line in root_specifics.json record 0 containing the actual (p+1) trace formula and claimed 30/13; set original.evidence=A and preserve the attribution note.",
+      "status": "corrected_and_independently_rechecked"
+    },
+    {
+      "severity": "low",
+      "id": "Y25-10-011",
+      "description": "The definitions say Hilbert complex without explicitly limiting dimension, while the theorem includes t=0, finite dimension differences and an ordinary finite heat supertrace. Infinite-dimensional Hilbert complexes need additional trace/Fredholm hypotheses.",
+      "fix": "Explicitly specify a finite-dimensional real or complex Hilbert complex; the existing finite singular-value/rank-nullity proof and example then apply exactly.",
+      "status": "corrected_and_independently_rechecked"
+    }
+  ],
+  "approved_scopes": [
+    "Transport defects satisfy the stated composition cocycle identity, and the dual norm bound is sharp for the given norms.",
+    "Cokernel torsion is correctly distinguished from a real residual or an integer-valued functional.",
+    "The 11a1 curve equation, small-prime counts, good-prime Euler factor, Hecke recurrence and arithmetic symmetric-square three-root normalization agree.",
+    "Rank two forces at least sixteen 4-Selmer elements. The stated Selmer exact-sequence argument does not assume finiteness of the whole Tate-Shafarevich group.",
+    "The character modulo five has L(0)=0 and L prime(0)=log((1+sqrt(5))/2); the norm-minus-one and total-positive-unit factor conventions are acknowledged.",
+    "Circle spectral-zeta residue is L/(2*pi), derived from its heat term and gamma factor; it is correctly distinguished from an integer index.",
+    "The Picard-Fuchs recurrence, theta heat normalization and four-object bicharacter model satisfy their declared conventions.",
+    "October 31 sine-quotient parity integral, logarithmic-sine/Catalan decomposition and exact fourth-power logarithmic integral have consistent substitutions, endpoint limits, factors and signs.",
+    "Trace-class versus Hilbert-Schmidt hierarchy and strong-limit counterexamples are correct.",
+    "Periodic Cahn-Hilliard energy and mass identities, product-fiber integration convention and Bloch-Wigner coefficient correction are correctly bounded in scope.",
+    "Prime-log incommensurability, second/fourth finite Dirichlet-polynomial means and product-variable zeta reduction are sound in the explicitly finite or integrable settings.",
+    "No theorem closes a claimed broad nonlinear, physical, Langlands or regulator classification; examples are labeled as newly developed bounded models."
+  ],
+  "limitations": "Numerical verifier success corroborates declared finite calculations. It does not substitute for the written arguments, validate historical empirical claims, or certify every external reference URL or historical attribution.",
+  "final_recheck": "Author corrected both builder and entries, reran 36 October checks successfully; reviewer independently reread the corrected entry fields."
+}

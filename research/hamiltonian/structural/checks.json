@@ -1,0 +1,69 @@
+{
+  "status": "passed",
+  "check_count": 8,
+  "scope": "Exact rational polynomial fixtures; proofs supply unrestricted classification.",
+  "checks": [
+    {
+      "name": "Complete qF bounded kernel dimensions agree with theorem",
+      "status": "passed",
+      "details": {
+        "Hamiltonians": 6,
+        "q_degrees": 15,
+        "p_degree_bound": 8,
+        "cases": 90
+      }
+    },
+    {
+      "name": "Every exceptional qF basis partner exits after one classical action",
+      "status": "passed",
+      "details": {
+        "partners": 24
+      }
+    },
+    {
+      "name": "Coordinate algebra pairwise exactness and invariant-strip checks",
+      "status": "passed",
+      "details": {
+        "pairs": 150
+      }
+    },
+    {
+      "name": "Every nonzero binary cubic has Hilbert function min(n+1,3)",
+      "status": "passed",
+      "details": {
+        "Hamiltonians": 5,
+        "degrees": 16,
+        "cases": 80
+      }
+    },
+    {
+      "name": "Univariate Hamiltonian full transverse-strip classification",
+      "status": "passed",
+      "details": {
+        "monomial_cases": 147
+      }
+    },
+    {
+      "name": "Exact partner spaces need not be multiplicative, Lie closed or dynamically invariant",
+      "status": "passed",
+      "details": {
+        "second_action_correction": "18 hbar^2 p^2"
+      }
+    },
+    {
+      "name": "Nonlinear canonical shear does not preserve naive Weyl symbols",
+      "status": "passed",
+      "details": {
+        "Lambda3": "-72q",
+        "normalized_correction": "3 hbar^2 q"
+      }
+    },
+    {
+      "name": "Separable potentials have a biquadratic exact sector",
+      "status": "passed",
+      "details": {
+        "basis_dimension": 9
+      }
+    }
+  ]
+}

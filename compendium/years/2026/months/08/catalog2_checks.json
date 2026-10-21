@@ -1,0 +1,105 @@
+{
+  "checks": [
+    {
+      "id": "Y26-08-801",
+      "name": "feasible optimum monotonicity",
+      "status": "passed",
+      "detail": "Exact finite cost set gives improved optimum9 and search regret1."
+    },
+    {
+      "id": "Y26-08-801",
+      "name": "separated observation error",
+      "status": "passed",
+      "detail": "Triangle error bound1.4≤1.5; distinct from certifying physical calibration."
+    },
+    {
+      "id": "Y26-08-802",
+      "name": "rotation commutant",
+      "status": "passed",
+      "detail": "Exact rational rotation and nontrivial aI+bJ commutant."
+    },
+    {
+      "id": "Y26-08-802",
+      "name": "exact QK score gauge",
+      "status": "passed",
+      "detail": "A=2I preserves both plain and RoPE scores exactly."
+    },
+    {
+      "id": "Y26-08-802",
+      "name": "exact VO gauge",
+      "status": "passed",
+      "detail": "Output matrix and value basis changes cancel by rational multiplication."
+    },
+    {
+      "id": "Y26-08-802",
+      "name": "SwiGLU linear-branch scaling",
+      "status": "passed",
+      "detail": "Nonzero diagonal scaling oflinear branch cancels inoutput; gate scaling is not assumed."
+    },
+    {
+      "id": "Y26-08-802",
+      "name": "GQA wreath count",
+      "status": "passed",
+      "detail": "All24 permutations enumerated; exactly8 preserve two sharing groups ofsize2."
+    },
+    {
+      "id": "Y26-08-803",
+      "name": "future equivalence versus scalar minimum",
+      "status": "passed",
+      "detail": "a,c merge; b has same minimum but differs under actionL restriction."
+    },
+    {
+      "id": "Y26-08-803",
+      "name": "partition direction",
+      "status": "passed",
+      "detail": "A refinement has at least asmany blocks onthe same state set."
+    },
+    {
+      "id": "Y26-08-804",
+      "name": "complete physical-to-bank fiber enumeration",
+      "status": "passed",
+      "detail": "All43,680 injections enumerated; every one of256 banktuples appears withthe exact fiber formula."
+    },
+    {
+      "id": "Y26-08-804",
+      "name": "unequal fibers and route tree bound",
+      "status": "passed",
+      "detail": "Fiber sizes24 and256; full four-ary depth-four tree341."
+    },
+    {
+      "id": "Y26-08-805",
+      "name": "exact repeated-layer min-plus identity",
+      "status": "passed",
+      "detail": "M²=5+I and M^(L+2)=5+M^L verified onexact integer/infinity matrices throughL13."
+    },
+    {
+      "id": "Y26-08-805",
+      "name": "frontier versus exhaustive chain optimum",
+      "status": "passed",
+      "detail": "Boundary sizeone dynamic program matches all64 binary assignments, optimum8."
+    },
+    {
+      "id": "Y26-08-806",
+      "name": "connectivity matrix factorization small exhaustive",
+      "status": "passed",
+      "detail": "All25 join tests equalthe F2cut-row dotproducts."
+    },
+    {
+      "id": "Y26-08-806",
+      "name": "weighted representatives all small completions",
+      "status": "passed",
+      "detail": "Cost-ordered rowbasis preservesminimum for allfive completionpartitions."
+    },
+    {
+      "id": "Y26-08-806",
+      "name": "Bell-eight count and full cut rank",
+      "status": "passed",
+      "detail": "All4,140 partitions generated; exact F2rowelimination givesrank128 over128cutcolumns."
+    }
+  ],
+  "all_passed": true,
+  "provenance": {
+    "entries": 6,
+    "literal_excerpts": "passed"
+  }
+}

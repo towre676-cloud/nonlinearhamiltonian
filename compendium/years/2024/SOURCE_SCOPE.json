@@ -1,0 +1,22 @@
+{
+  "year": 2024,
+  "edition_created": "2026-10-21",
+  "coverage": "A month-by-month reconstruction from retrieved dated fragments, not a complete export of the user's conversations.",
+  "date_convention": "Dates are retained in UTC when a timestamp was supplied; original local calendar dates may differ.",
+  "evidence_labels": {
+    "U": "A retrieval result attributes content or a question to the user; this is not necessarily a verbatim original prompt.",
+    "A": "An assistant-authored passage survives; the original user question is unavailable.",
+    "T": "Only a dated topic-level fragment survives."
+  },
+  "new_work": "All revised questions, expositions, examples and verification programs belong to the present edition unless a recovered source is explicitly quoted.",
+  "january": "Four root-context searches returned no matching January conversations. This is an access/coverage gap, not evidence that no mathematics was discussed.",
+  "march_catalog": "The recovered source names an adjacent unnumbered Laplace transform and entries 81–100 of a claimed 100-equation list. Items 1–80 were not recovered and are not reconstructed.",
+  "excluded_retrievals": [
+    {
+      "path": "months/03/root_specifics.json",
+      "record": 2,
+      "reason": "The result echoes the present request to retrieve entries 41–60 and mislabels it as historical user content. It is excluded from historical evidence."
+    }
+  ],
+  "mathematical_scope": "Written derivations, exact finite certificates, numerical checks and literature dependencies remain distinct. No claim of mathematical novelty or proof of RH/BSD/Langlands follows from this retrospective."
+}

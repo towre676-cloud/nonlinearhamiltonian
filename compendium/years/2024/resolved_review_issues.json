@@ -1,0 +1,6 @@
+{
+  "status": "resolved",
+  "issue": "April020 sign of linear coefficient in optional Turing criterion",
+  "correction": "Write C=D_v(B−1)−D_uA², so the determinant polynomial is A²−Cs+D_uD_vs². It is negative for some s>0 exactly when C>2√(D_uD_vA²).",
+  "scope": "Clarifies C as the negative of the actual linear coefficient; the explicit instability example and all executable checks are unchanged."
+}

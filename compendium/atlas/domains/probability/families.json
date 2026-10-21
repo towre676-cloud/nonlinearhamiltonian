@@ -1,0 +1,1729 @@
+[
+  {
+    "id": "D10-F01",
+    "domain_id": "D10",
+    "title": "Probability laws, moments and joint dependence",
+    "central_question": "Which parts of a conclusion follow from marginal probabilities, and which require a full joint law?",
+    "synopsis": "A probability model is an assignment of mass to compatible outcomes before it is a formula for an average. The earliest finite probability questions, the distinction between population and amplitude weights, reliability calculations, Bayesian prediction and the final three-item surplus model all converge on this point. Linearity of expectation survives dependence, whereas the probability of a conjunction generally does not. The most productive revision is to preserve the entire compatibility structure until the requested functional has been calculated. A mean, a variance, a tail probability and an optimal action use different parts of that structure. This family therefore treats uncertainty as a mathematical input with explicitly stated moments, rather than as a single decorative error bar.",
+    "definitions": [
+      "A finite law is p(ω)≥0 with Σωp(ω)=1; E f=Σωp(ω)f(ω). A covariance requires finite second moments.",
+      "For Bernoulli indicators B_i, marginal success probabilities p_i=E B_i specify only n linear constraints on their joint table.",
+      "Population-weighted energy is Σp_i|a_i|²=‖diag(√p)a‖²; replacing √p by p changes the quantity.",
+      "A posterior predictive probability integrates a conditional law against the posterior; its repeated outcomes can be dependent after the latent parameter is integrated out."
+    ],
+    "theorem": {
+      "statement": "For events A_1,…,A_n with probabilities p_i, max(0,Σp_i−n+1)≤P(∩A_i)≤min_i p_i. For any integrable B_i, EΣB_i=ΣE B_i without independence. If p is random, conditionally independent future Bernoulli outcomes have unconditional covariance Var(p), so their joint success probability is E p² rather than (E p)².",
+      "proof": "The upper intersection bound follows from containment. For the lower bound apply the union bound to the complementary events: P(∩A_i)=1−P(∪A_i^c)≥1−Σ(1−p_i), then combine with nonnegativity. Linearity is a finite rearrangement of sums, or the linearity of the Lebesgue integral. For two future indicators, conditional independence gives E[B_1B_2|p]=p², and the tower property yields E B_1B_2=E p². Each mean is E p; subtraction gives Var(p). Thus independence conditional on one variable cannot be silently transported through marginalization. The proof also identifies the missing datum: a coupling or a latent-parameter distribution."
+    },
+    "worked_example": {
+      "setup": "Three indicators each have success probability 4/5, and an illustrative surplus is Π=10(B_1+B_2+B_3)−95/4.",
+      "calculation": "The mean is 30·4/5−95/4=1/4 for every compatible coupling. Profit requires three successes, whose probability lies between 2/5 and 4/5. The lower endpoint is attained by assigning mass 2/5 to 111 and 1/5 each to 110,101,011. The upper endpoint is attained by mass 4/5 at 111 and 1/5 at 000. Independence instead yields 64/125. In a Beta(4,2) posterior, the mean success probability is 2/3 but the probability of two future successes is 4·5/(6·7)=10/21, exceeding 4/9 by 2/63.",
+      "meaning": "A positive expectation and a frequent positive outcome are separate objectives. These exact fixtures give a practical diagnostic: ask whether the claimed conclusion remains constant over all joint laws with the supplied marginals. If it does not, the dependence model belongs in the question itself. This is also the common starting point for distributionally robust decisions."
+    },
+    "source_uids": [
+      "2023:M060",
+      "2023:M106",
+      "2024:Y24-04-008",
+      "2025:Y25-07-009",
+      "2026:Y26-06-007",
+      "2026:Y26-10-040",
+      "2023:M057",
+      "2025:Y25-03-025"
+    ],
+    "anchor_uids": [
+      "2023:M060",
+      "2023:M106",
+      "2024:Y24-04-008",
+      "2025:Y25-07-009",
+      "2026:Y26-06-007",
+      "2026:Y26-10-040",
+      "2023:M057",
+      "2025:Y25-03-025"
+    ],
+    "progression": [
+      {
+        "year": 2023,
+        "evidence_uids": [
+          "2023:M060",
+          "2023:M106",
+          "2023:M057"
+        ],
+        "narrative": "Dated topic continuity is evidenced by Population weights versus amplitude weights; Joint reliability is a dependence problem. The theorem and worked synthesis here are newly authored; this date does not attribute the present proof or an unobserved discovery to that exchange."
+      },
+      {
+        "year": 2024,
+        "evidence_uids": [
+          "2024:Y24-04-008"
+        ],
+        "narrative": "Dated topic continuity is evidenced by Ratios, percentages and lottery events require a denominator. The theorem and worked synthesis here are newly authored; this date does not attribute the present proof or an unobserved discovery to that exchange."
+      },
+      {
+        "year": 2025,
+        "evidence_uids": [
+          "2025:Y25-07-009",
+          "2025:Y25-03-025"
+        ],
+        "narrative": "Dated topic continuity is evidenced by Bayesian prediction differs from plug-in independence; Second-order correlations are factorial moments with distinguishable models. The theorem and worked synthesis here are newly authored; this date does not attribute the present proof or an unobserved discovery to that exchange."
+      },
+      {
+        "year": 2026,
+        "evidence_uids": [
+          "2026:Y26-06-007",
+          "2026:Y26-10-040"
+        ],
+        "narrative": "Dated topic continuity is evidenced by Two-sector failure has a correlation parameter and a rigorous confidence envelope; Expected surplus and probability of profit require different dependence assumptions. The theorem and worked synthesis here are newly authored; this date does not attribute the present proof or an unobserved discovery to that exchange."
+      }
+    ],
+    "connections": [
+      {
+        "target_domain": "D12",
+        "relation": "Robust decisions over couplings",
+        "mathematical_bridge": "Optimize an expected loss or event probability over the polytope of joint tables with fixed marginals.",
+        "scope": "Finite marginals define a feasible polytope, not calibrated empirical uncertainty."
+      },
+      {
+        "target_domain": "D03",
+        "relation": "Covariance is a positive quadratic form",
+        "mathematical_bridge": "Var(wᵀX)=wᵀΣw and Σ≥0 when second moments exist.",
+        "scope": "The Cauchy example lies outside the second-moment hypothesis."
+      }
+    ],
+    "capabilities": [
+      "C01",
+      "C02",
+      "C03",
+      "C06",
+      "C12"
+    ],
+    "interactive_contract": {
+      "lab_ids": [],
+      "inputs": "A declared finite probability table, covariance model, convex objective, or common uncertainty set, as specified in the worked example. Parameters without a sampling or error model are treated as assumptions.",
+      "outputs": "Exact finite values and rational certificates when available; otherwise numerical values explicitly restricted to the stated worked model.",
+      "validation": "The domain verify.py independently checks representative finite identities and numerical formulas. No historical program, empirical dataset, or out-of-sample claim is replayed.",
+      "status": "Mathematical recipe with executable scoped checks; no general interactive estimator or solver is implemented."
+    },
+    "limits": "Finite moment calculations do not establish that observations follow the proposed law. A Cauchy sample mean remains Cauchy because its characteristic function is stable under averaging, so even increasing sample size does not repair a nonexistent mean. Signed weights need not define probability or positive energy. Marginal confidence statements also require simultaneous coverage before they define a valid joint uncertainty set.",
+    "open_questions": [
+      "Characterize extremizing couplings when both marginals and pairwise intersections are fixed.",
+      "For a specified posterior family, bound the gap E p^k−(E p)^k and state how it changes a chosen finite loss."
+    ],
+    "references": [
+      {
+        "label": "Boyd and Vandenberghe Introduction to Applied Linear Algebra",
+        "url": "https://stanford.edu/~boyd/vmls/"
+      },
+      {
+        "label": "MIT probability course materials",
+        "url": "https://ocw.mit.edu/courses/6-041sc-probabilistic-systems-analysis-and-applied-probability-fall-2013/"
+      },
+      {
+        "label": "David Aldous, graduate probability course notes",
+        "url": "https://www.stat.berkeley.edu/~aldous/205A/"
+      },
+      {
+        "label": "NIST Cauchy distribution reference",
+        "url": "https://itl.nist.gov/div898/handbook/eda/section3/eda3663.htm"
+      },
+      {
+        "label": "Verdú The Cauchy Distribution in Information Theory",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9955388/"
+      },
+      {
+        "label": "Glauber, The quantum theory of optical coherence",
+        "url": "https://doi.org/10.1103/PhysRev.130.2529"
+      }
+    ]
+  },
+  {
+    "id": "D10-F02",
+    "domain_id": "D10",
+    "title": "Random filtrations, weighted sampling and exact inclusion laws",
+    "central_question": "How can random selection be transported into an exact expectation of a combinatorial or topological observable?",
+    "synopsis": "Random filtrations connect probability with topology by making the event that a face is present explicit. The source trajectory runs from elementary denominators and collision probabilities to fractal measures, random birth times and weighted fixed-size samples. A random complex cannot be understood solely by calling it random: its vertex law, face rule, dependence and filtration parameter must be declared. Once those inputs are fixed, indicator expansion often turns a seemingly global expected invariant into a short exact sum. This family organizes three scales of the same idea: finite subset enumeration, order statistics of random birth times, and weak approximation of measures by coupled partial constructions.",
+    "definitions": [
+      "For positive weights w_1,…,w_N and fixed size m, assign a subset S probability proportional to ∏_{i∈S}w_i. The normalizer e_m(w) is the degree-m elementary symmetric polynomial.",
+      "For a prescribed face F with b vertices, the inclusion indicator is 1_{F⊆S}. A simplicial complex is induced by the selected vertices only after the face rule is specified.",
+      "The Euler characteristic of a finite complex is χ=Σ_F(−1)^{dim F}; expectation commutes with this finite sum.",
+      "A filtration K_t is increasing in t. Independent uniform vertex birth times create correlated face births via the maximum over each face."
+    ],
+    "theorem": {
+      "statement": "Under weighted fixed-size sampling, P(F⊆S)=w_F e_{m−b}(w_{F^c})/e_m(w), taking e_r=0 outside valid degrees. Consequently Eχ(K[S])=Σ_F(−1)^{dim F}P(F⊆S). In the equal-weight case this becomes binom(N−b,m−b)/binom(N,m).",
+      "proof": "Every selected subset containing F is uniquely F∪T with T⊆F^c and |T|=m−b. Its unnormalized mass is w_F∏_{i∈T}w_i. Summing over T gives the numerator; summing over all size-m subsets gives the denominator. The Euler formula follows by inserting one inclusion indicator per face and using linearity, with no independence assumption between faces. The normalizers satisfy E_{j,r}=E_{j−1,r}+w_jE_{j−1,r−1}, because each size-r subset either excludes j or includes it. This dynamic program is an exact coefficient computation, not a Monte Carlo estimate. Equal weights reduce both symmetric polynomials to binomial coefficients and recover the hypergeometric law."
+    },
+    "worked_example": {
+      "setup": "Select two vertices from four with weights (1,2,3,4). Separately, let the four vertices of a cycle appear at independent uniform times, with edges appearing when both endpoints are present and the filling two-cell arriving at time one.",
+      "calculation": "Here e_2=2+3+4+6+8+12=35. Vertex one is selected with probability (2+3+4)/35=9/35; the pair {1,2} is selected with probability 2/35. If K is the four-cycle, Eχ=Σ_iP(i∈S)−Σ_edgesP(edge⊆S)=2−(2+6+12+4)/35=46/35. In the birth-time model, the loop appears at B=max(U_1,…,U_4), hence P(B≤t)=t^4. Its barcode is [B,1), and E(1−B)=∫_0^1t^4dt=1/5.",
+      "meaning": "The expected Euler characteristic needs only face inclusion probabilities, whereas expected Betti numbers usually require joint rank information. The barcode example is exactly solvable because the topology has one possible loop. The distinction prevents a facewise expectation formula from being mistaken for a general persistent-homology estimator."
+    },
+    "source_uids": [
+      "2026:Y26-02-003",
+      "2026:Y26-02-002",
+      "2025:Y25-03-029",
+      "2024:Y24-04-011",
+      "2026:Y26-10-016"
+    ],
+    "anchor_uids": [
+      "2026:Y26-02-003",
+      "2026:Y26-02-002",
+      "2025:Y25-03-029",
+      "2024:Y24-04-011",
+      "2026:Y26-10-016"
+    ],
+    "progression": [
+      {
+        "year": 2024,
+        "evidence_uids": [
+          "2024:Y24-04-011"
+        ],
+        "narrative": "Dated topic continuity is evidenced by Landscape division is a collision probability with exact merge laws. The theorem and worked synthesis here are newly authored; this date does not attribute the present proof or an unobserved discovery to that exchange."
+      },
+      {
+        "year": 2025,
+        "evidence_uids": [
+          "2025:Y25-03-029"
+        ],
+        "narrative": "Dated topic continuity is evidenced by A fractal probability measure has a quantitative weak-convergence proof. The theorem and worked synthesis here are newly authored; this date does not attribute the present proof or an unobserved discovery to that exchange."
+      },
+      {
+        "year": 2026,
+        "evidence_uids": [
+          "2026:Y26-02-003",
+          "2026:Y26-02-002",
+          "2026:Y26-10-016"
+        ],
+        "narrative": "Dated topic continuity is evidenced by Weighted sampling replaces hypergeometric ratios by symmetric polynomials; Random birth times connect order statistics to an exact barcode law. The theorem and worked synthesis here are newly authored; this date does not attribute the present proof or an unobserved discovery to that exchange."
+      }
+    ],
+    "connections": [
+      {
+        "target_domain": "D05",
+        "relation": "Random topology",
+        "mathematical_bridge": "Face indicators give Eχ, while boundary-matrix ranks determine Betti numbers.",
+        "scope": "The implemented homology lab is a finite worked complex; these weighted formulas are a recipe beyond it."
+      },
+      {
+        "target_domain": "D13",
+        "relation": "Exact combinatorial normalizers",
+        "mathematical_bridge": "Elementary symmetric polynomials enumerate weighted subsets by coefficient extraction.",
+        "scope": "Strictly positive weights ensure the stated probability law."
+      },
+      {
+        "target_domain": "D14",
+        "relation": "Count before sampling",
+        "mathematical_bridge": "Completion counts give exact uniform addresses and rejection sampling.",
+        "scope": "A deterministic seed alone supplies reproducibility rather than uniformity."
+      }
+    ],
+    "capabilities": [
+      "C01",
+      "C02",
+      "C03",
+      "C07",
+      "C12",
+      "C15"
+    ],
+    "interactive_contract": {
+      "lab_ids": [
+        "L02",
+        "L09"
+      ],
+      "inputs": "Related current UI only: L02 varies the integer budget 0–27 and requested feasible rank 0–63 for six fixed items; L09 selects triangle, square or K3,3 and whether to fill the triangle.",
+      "outputs": "L02 enumerates 64 masks, counts feasible subsets, returns optimum masks and one ranked subset. L09 returns exact rational boundary ranks and Betti numbers of the selected fixed complex. Weighted sampling, random birth times and expected barcode laws remain recipes.",
+      "validation": "The domain verify.py independently checks representative finite identities and numerical formulas. No historical program, empirical dataset, or out-of-sample claim is replayed.",
+      "status": "Related deterministic finite labs are implemented; the random-filtration and weighted-sampling models in this family are not interactive."
+    },
+    "limits": "The fixed-cardinality law is different from independent Bernoulli selection or sequential probability-proportional-to-size sampling. Faces are strongly dependent. Expected χ can conceal simultaneous changes in several Betti numbers. Random birth-time claims need their continuity and independence assumptions; ties, delayed edges or an early filling cell change the barcode. Weighted expected persistence is not implemented by the atlas.",
+    "open_questions": [
+      "Derive exact expected Betti curves for a supplied small complex by grouping subsets according to boundary rank.",
+      "Compute weighted barcode distributions with rational weights and compare coefficient dynamic programming with exhaustive enumeration."
+    ],
+    "references": [
+      {
+        "label": "Richard P. Stanley, Enumerative Combinatorics, Volume 2",
+        "url": "https://doi.org/10.1017/CBO9780511609589"
+      },
+      {
+        "label": "Afra Zomorodian and Gunnar Carlsson, Computing Persistent Homology",
+        "url": "https://doi.org/10.1007/s00454-004-1146-y"
+      },
+      {
+        "label": "Cohen-Steiner–Edelsbrunner–Harer, Stability of persistence diagrams",
+        "url": "https://doi.org/10.1007/s00454-006-1276-5"
+      },
+      {
+        "label": "FRAGSTATS Landscape Division Index",
+        "url": "https://fragstats.org/index.php/fragstats-metrics/patch-based-metrics/aggregation-metrics/l9-landscape-division-index"
+      },
+      {
+        "label": "Bryant: graph-based Boolean-function algorithms",
+        "url": "https://doi.org/10.1184/r1/6605990"
+      }
+    ]
+  },
+  {
+    "id": "D10-F03",
+    "domain_id": "D10",
+    "title": "Stochastic dynamics, Itô correction and finite-horizon prediction",
+    "central_question": "Which drift, noise and observation model determines the uncertainty at a future time?",
+    "synopsis": "The stochastic strand becomes coherent when a process is specified before its spectrum, stationary law or prediction error is computed. Finite reversible chains, a two-spin Gibbs model, Ornstein–Uhlenbeck dynamics, bridge functionals and exact linear propagation supply complementary levels of resolution. The key unification is the generator: transition rates in a finite state space and second derivatives in a diffusion both encode how expectations evolve. They do not make deterministic gradient descent, white noise and colored fluctuations interchangeable. The prediction problem adds a second layer: an observation changes the present conditional law, then a common transition propagates that law and introduces fresh process noise. Reversibility supplies a complementary finite certificate: detailed balance makes a Markov generator symmetric after weighting by its stationary law, so its relaxation modes can be checked spectrally. That self-adjoint reduction is specific to the declared chain and is not available for arbitrary driven dynamics.",
+    "definitions": [
+      "An Itô diffusion satisfies dX=b(X,t)dt+σ(X,t)dW; its generator is Lf=b·∇f+(1/2)tr(σσᵀD²f).",
+      "For dX=AXdt+LdW with deterministic coefficients, F=e^{AΔ} and Q=∫_0^Δe^{As}LLᵀe^{Aᵀs}ds describe the exact transition.",
+      "An OU process has drift −κX, κ>0; a stationary variance solves the scalar Lyapunov equation −2κv+σ²=0.",
+      "A Brownian bridge B_t=W_t−(t/T)W_T conditions the endpoint, changing covariances and all integrals sensitive to constants."
+    ],
+    "theorem": {
+      "statement": "For dX=−κXdt+σdW and deterministic X_t=x, E[X_T²|X_t=x]=e^{−2κτ}x²+σ²(1−e^{−2κτ})/(2κ), τ=T−t. More generally a linear Gaussian prior covariance P propagates to FPFᵀ+Q. A common propagation preserves Loewner order between two posterior covariances.",
+      "proof": "The integrating factor gives X_T=e^{−κτ}x+σ∫_t^Te^{−κ(T−s)}dW_s. The stochastic integral has mean zero and, by Itô isometry, variance σ²∫_0^τe^{−2κs}ds. Squaring and taking expectations gives the displayed expression. The generator gives the same conclusion: L(x²)=−2κx²+σ², where the constant σ² is the Itô correction. For the matrix process use the variation-of-constants formula, independence of future Wiener increments and the matrix isometry. If P_1≤P_2, then F(P_2−P_1)Fᵀ≥0. Adding the same Q preserves the order. Different terminal times require different F and Q and therefore are outside that comparison."
+    },
+    "worked_example": {
+      "setup": "Let X=(position,driver), A=[[0,1],[0,0]], prior P=I, horizon Δ=10, and a scalar sensor with noise variance r=1/100. Compare measuring position with measuring driver, both at the present time.",
+      "calculation": "F=[[1,10],[0,1]]. A measurement of position gives posterior diag(1/101,1), so terminal position variance is 100+1/101. A driver measurement gives diag(1,1/101), hence variance 1+100/101=201/101. The indirect sensor is better for this future target. If L=(0,1)ᵀ, process covariance is [[Δ³/3,Δ²/2],[Δ²/2,Δ]]; at Δ=2 it has determinant 4/3 and must be added for either sensor. For OU Euler–Maruyama, stationary variance is σ²/(2κ−κ²h), existing only for 0<κh<2.",
+      "meaning": "A good present measurement and a good future-target measurement are different design questions. The exact transition separates structural ignorance, current sensor noise, future noise and numerical discretization bias. Each has a different remedy and a different mathematical certificate."
+    },
+    "source_uids": [
+      "2024:Y24-05-012",
+      "2025:Y25-12-007",
+      "2025:Y25-12-027",
+      "2026:Y26-01-901",
+      "2026:Y26-09-021",
+      "2025:Y25-11-004",
+      "2023:M023",
+      "2024:Y24-06-021",
+      "2025:Y25-03-005",
+      "2025:Y25-03-022",
+      "2025:Y25-12-011",
+      "2026:Y26-04-015"
+    ],
+    "anchor_uids": [
+      "2024:Y24-05-012",
+      "2025:Y25-12-007",
+      "2025:Y25-12-027",
+      "2026:Y26-01-901",
+      "2026:Y26-09-021",
+      "2025:Y25-11-004",
+      "2023:M023",
+      "2024:Y24-06-021"
+    ],
+    "progression": [
+      {
+        "year": 2023,
+        "evidence_uids": [
+          "2023:M023"
+        ],
+        "narrative": "Dated topic continuity is evidenced by A reversible q-dependent chain with an exact gap. The theorem and worked synthesis here are newly authored; this date does not attribute the present proof or an unobserved discovery to that exchange."
+      },
+      {
+        "year": 2024,
+        "evidence_uids": [
+          "2024:Y24-05-012",
+          "2024:Y24-06-021"
+        ],
+        "narrative": "Dated topic continuity is evidenced by A specified noisy dynamics and its stationary covariance; A complete two-spin Gibbs and Metropolis model. The theorem and worked synthesis here are newly authored; this date does not attribute the present proof or an unobserved discovery to that exchange."
+      },
+      {
+        "year": 2025,
+        "evidence_uids": [
+          "2025:Y25-12-007",
+          "2025:Y25-12-027",
+          "2025:Y25-11-004",
+          "2025:Y25-03-005",
+          "2025:Y25-03-022",
+          "2025:Y25-12-011"
+        ],
+        "narrative": "Dated topic continuity is evidenced by Euler–Maruyama and an exact Ornstein–Uhlenbeck comparison; Cumulant evolution is triangular for an actual OU process. The theorem and worked synthesis here are newly authored; this date does not attribute the present proof or an unobserved discovery to that exchange."
+      },
+      {
+        "year": 2026,
+        "evidence_uids": [
+          "2026:Y26-01-901",
+          "2026:Y26-09-021",
+          "2026:Y26-04-015"
+        ],
+        "narrative": "Dated topic continuity is evidenced by Itô correction and a Feynman–Kac model with an exact solution; Exact SDE propagation can make a driver measurement more informative than a direct present-target measurement. The theorem and worked synthesis here are newly authored; this date does not attribute the present proof or an unobserved discovery to that exchange."
+      }
+    ],
+    "connections": [
+      {
+        "target_domain": "D08",
+        "relation": "Backward equations",
+        "mathematical_bridge": "The conditional second moment solves u_t+Lu=0 with terminal data x².",
+        "scope": "Feynman–Kac needs the stated integrability or martingale conditions."
+      },
+      {
+        "target_domain": "D15",
+        "relation": "Sensor design",
+        "mathematical_bridge": "Compare lᵀ(FP_postFᵀ+Q)l at one fixed terminal time.",
+        "scope": "The observability lab is deterministic and does not implement arbitrary Kalman filtering."
+      },
+      {
+        "target_domain": "D09",
+        "relation": "Numerical dynamics",
+        "mathematical_bridge": "The Euler multiplier 1−κh controls stability and stationary bias.",
+        "scope": "Continuous dissipation does not prove discrete stability."
+      }
+    ],
+    "capabilities": [
+      "C01",
+      "C03",
+      "C05",
+      "C07",
+      "C08",
+      "C12",
+      "C14"
+    ],
+    "interactive_contract": {
+      "lab_ids": [
+        "L01"
+      ],
+      "inputs": "Related current UI only: L01 selects the target x1+x2 or (x1,x2) and a mask of six fixed linear probes on four real coordinates.",
+      "outputs": "Exact rational row-space observability and all 64 fixed probe-subset comparisons. No stochastic transition, covariance update, OU simulation or filter is exposed in the UI.",
+      "validation": "The domain verify.py independently checks representative finite identities and numerical formulas. No historical program, empirical dataset, or out-of-sample claim is replayed.",
+      "status": "L01 is a related deterministic observation model; all stochastic dynamics in this family remain mathematical recipes with scoped Python checks."
+    },
+    "limits": "Linearity and Gaussianity make these covariance calculations closed. Nonlinear filtering needs a different theorem. Spectral color additionally needs stationarity or a declared integrated process and finite cutoffs when variance would diverge. A bridge cannot be treated as independent Brownian noise: its constant test functional vanishes. None of the illustrative matrices validates a historical weather or sensor-performance number.",
+    "open_questions": [
+      "Bound finite-horizon prediction error when A and L range over a declared compact uncertainty set.",
+      "For an OU discretization, choose a step to control stationary variance bias and computational cost simultaneously."
+    ],
+    "references": [
+      {
+        "label": "Øksendal, Stochastic Differential Equations",
+        "url": "https://doi.org/10.1007/978-3-642-14394-6"
+      },
+      {
+        "label": "Särkkä and Solin Applied Stochastic Differential Equations, author text",
+        "url": "https://users.aalto.fi/~ssarkka/pub/sde_book.pdf"
+      },
+      {
+        "label": "Doob, conditioned Brownian motion",
+        "url": "https://doi.org/10.1090/S0002-9947-1957-0087087-4"
+      },
+      {
+        "label": "Levin and Peres Markov Chains and Mixing Times",
+        "url": "https://pages.uoregon.edu/dlevin/MARKOV/"
+      },
+      {
+        "label": "David Tong Statistical Physics, canonical ensemble",
+        "url": "https://www.damtp.cam.ac.uk/user/tong/statphys.html"
+      },
+      {
+        "label": "Metropolis et al Equation of state calculations by fast computing machines",
+        "url": "https://doi.org/10.1063/1.1699114"
+      }
+    ]
+  },
+  {
+    "id": "D10-F04",
+    "domain_id": "D10",
+    "title": "Scaling limits, stable laws and the geometry of approximation",
+    "central_question": "When does repeated averaging simplify a law, and which quantitative information survives the limit?",
+    "synopsis": "Averaging, renormalization, heavy tails, multiplicative products and infinite-dimensional Gaussian models share a demand for explicit scaling. A Gaussian fixed point is a theorem about normalized sums with finite variance, not a universal fate of every noise source. Cauchy stability provides an exact countermodel, and multiplicative products become additive only after taking logarithms. The fractal measure construction adds a different kind of approximation: convergence follows from a direct coupling bound rather than from a central limit theorem. This family distinguishes exact finite identities, limiting distributions and numerical approximations, preserving the assumptions that make each useful.",
+    "definitions": [
+      "For independent copies X_1,X_2 of a centered variable, the averaging renormalization is R(X)=(X_1+X_2)/√2.",
+      "The characteristic function is φ(t)=E e^{itX}; independent summation multiplies characteristic functions.",
+      "An α-stable fixed law for R_α=(X_1+X_2)/2^{1/α} has characteristic function exp(−c|t|^α) in the symmetric model.",
+      "A Gaussian series X=Σ√q_nZ_ne_n is H-valued in mean square when Σq_n<∞; cylindrical coordinate consistency alone does not guarantee H-valued samples."
+    ],
+    "theorem": {
+      "statement": "If a centered nondegenerate finite-variance law is fixed under R_α, then α=2; under R_2 its characteristic function is Gaussian. More generally R^k(X) converges in distribution to the centered Gaussian of variance v when EX=0 and EX²=v<∞.",
+      "proof": "A fixed law has v=2·2^{−2/α}v, so nonzero finite v forces α=2. In that case the characteristic-function equation implies φ(t)=[φ(t/√n)]^n for dyadic n. Finite variance and centering give φ(s)=1−vs²/2+o(s²). Inserting s=t/√n and letting n grow yields exp(−vt²/2), proving the fixed-law assertion. The same expansion applied to the normalized sum of n independent copies proves convergence of characteristic functions, and hence convergence in distribution, for dyadic n and for the usual all-n central limit theorem. If higher cumulants exist, the rth cumulant scales as n^{1−r/2}; this records the disappearance of finite higher-order cumulants without asserting a uniform density approximation or a rate from only two moments."
+    },
+    "worked_example": {
+      "setup": "Let U_j be independent uniform variables on (0,1), κ_k=∏_{j=1}^kU_j and Y_j=−log U_j. Also compare a standard Cauchy sample mean.",
+      "calculation": "Each Y_j has exponential density e^{−y} for y>0, mean and variance one. Therefore k^{−1}logκ_k→−1 almost surely and (logκ_k+k)/√k converges to N(0,1). The transform Eκ_k^{−βγ}=(1−βγ)^{−k} is finite precisely for βγ<1. For a Cauchy variable, φ(t)=e^{−|t|}; averaging n copies yields [φ(t/n)]^n=e^{−|t|}, so the mean never concentrates and P(|X̄_n|≤1)=1/2 for every n. For a Cantor coupling whose omitted tail is at most 3^{−n}, every L-Lipschitz test has expectation error at most L3^{−n}.",
+      "meaning": "Different mechanisms supply different error statements: a weak Gaussian limit, exact Cauchy stability, a transform convergence threshold, or a deterministic transport bound. Choosing among them begins by stating which observable must be approximated and in which metric. A visual similarity between histograms does not substitute for that choice."
+    },
+    "source_uids": [
+      "2024:Y24-06-019",
+      "2026:Y26-05-003",
+      "2026:Y26-01-027",
+      "2023:M057",
+      "2024:Y24-11-014",
+      "2025:Y25-03-029",
+      "2024:Y24-09-015",
+      "2024:Y24-03-027"
+    ],
+    "anchor_uids": [
+      "2024:Y24-06-019",
+      "2026:Y26-05-003",
+      "2026:Y26-01-027",
+      "2023:M057",
+      "2024:Y24-11-014",
+      "2025:Y25-03-029",
+      "2024:Y24-09-015"
+    ],
+    "progression": [
+      {
+        "year": 2023,
+        "evidence_uids": [
+          "2023:M057"
+        ],
+        "narrative": "Dated topic continuity is evidenced by A Cauchy model has no ordinary mean or variance. The theorem and worked synthesis here are newly authored; this date does not attribute the present proof or an unobserved discovery to that exchange."
+      },
+      {
+        "year": 2024,
+        "evidence_uids": [
+          "2024:Y24-06-019",
+          "2024:Y24-11-014",
+          "2024:Y24-09-015",
+          "2024:Y24-03-027"
+        ],
+        "narrative": "Dated topic continuity is evidenced by A renormalization map with a proved Gaussian fixed point; Cylindrical Gaussian data versus a Radon Gaussian on Hilbert space. The theorem and worked synthesis here are newly authored; this date does not attribute the present proof or an unobserved discovery to that exchange."
+      },
+      {
+        "year": 2025,
+        "evidence_uids": [
+          "2025:Y25-03-029"
+        ],
+        "narrative": "Dated topic continuity is evidenced by A fractal probability measure has a quantitative weak-convergence proof. The theorem and worked synthesis here are newly authored; this date does not attribute the present proof or an unobserved discovery to that exchange."
+      },
+      {
+        "year": 2026,
+        "evidence_uids": [
+          "2026:Y26-05-003",
+          "2026:Y26-01-027"
+        ],
+        "narrative": "Dated topic continuity is evidenced by The RG characteristic-function map has explicit stable fixed points and a finite-variance Gaussian obstruction; Multiplicative random products give a testable CLT and convergence threshold. The theorem and worked synthesis here are newly authored; this date does not attribute the present proof or an unobserved discovery to that exchange."
+      }
+    ],
+    "connections": [
+      {
+        "target_domain": "D07",
+        "relation": "Transforms and convergence",
+        "mathematical_bridge": "Characteristic functions turn independent convolution into products; logarithms turn positive products into sums.",
+        "scope": "Transform convergence and moment convergence are distinct."
+      },
+      {
+        "target_domain": "D06",
+        "relation": "Measure transport",
+        "mathematical_bridge": "A coupling with |X−X_n|≤ε controls Lipschitz observables by Lε.",
+        "scope": "This does not imply total-variation convergence for singular and discrete measures."
+      },
+      {
+        "target_domain": "D01",
+        "relation": "Leading digits",
+        "mathematical_bridge": "Benford frequencies follow from equidistribution of fractional logarithms.",
+        "scope": "No decimal-normality conclusion follows from a finite entropy calculation."
+      }
+    ],
+    "capabilities": [
+      "C01",
+      "C03",
+      "C07",
+      "C08",
+      "C09",
+      "C12"
+    ],
+    "interactive_contract": {
+      "lab_ids": [],
+      "inputs": "A declared finite probability table, covariance model, convex objective, or common uncertainty set, as specified in the worked example. Parameters without a sampling or error model are treated as assumptions.",
+      "outputs": "Exact finite values and rational certificates when available; otherwise numerical values explicitly restricted to the stated worked model.",
+      "validation": "The domain verify.py independently checks representative finite identities and numerical formulas. No historical program, empirical dataset, or out-of-sample claim is replayed.",
+      "status": "Mathematical recipe with executable scoped checks; no general interactive estimator or solver is implemented."
+    },
+    "limits": "Finite variance supplies no universal finite-sample normal-approximation rate. A third absolute moment enables further theorems, but is an additional hypothesis. Infinite covariance trace obstructs an ℓ² Gaussian even though each finite coordinate vector is valid. The product fixture is an iid uniform construction; dependence, atoms at zero or heavy logarithmic tails change its law. Its exact transform threshold is unrelated to an empirical phase transition unless a model is supplied.",
+    "open_questions": [
+      "For a specified non-Gaussian input with finite third moment, derive an explicit approximation error for the chosen normalized sum.",
+      "For a covariance sequence q_n, bound the mean-square tail and the error of a supplied Lipschitz functional."
+    ],
+    "references": [
+      {
+        "label": "MIT OpenCourseWare Probability characteristic functions and the central limit theorem",
+        "url": "https://ocw.mit.edu/courses/18-175-theory-of-probability-spring-2014/"
+      },
+      {
+        "label": "John Nolan, Univariate Stable Distributions",
+        "url": "https://link.springer.com/book/10.1007/978-3-030-52915-4"
+      },
+      {
+        "label": "Amir Dembo and Ofer Zeitouni, Large Deviations Techniques and Applications",
+        "url": "https://doi.org/10.1007/978-3-642-03311-7"
+      },
+      {
+        "label": "NIST Cauchy distribution reference",
+        "url": "https://itl.nist.gov/div898/handbook/eda/section3/eda3663.htm"
+      },
+      {
+        "label": "Verdú The Cauchy Distribution in Information Theory",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9955388/"
+      },
+      {
+        "label": "Sazonov, characteristic functionals",
+        "url": "https://doi.org/10.1137/1103018"
+      },
+      {
+        "label": "Cohen-Steiner–Edelsbrunner–Harer, Stability of persistence diagrams",
+        "url": "https://doi.org/10.1007/s00454-006-1276-5"
+      },
+      {
+        "label": "NIST Digital Library of Mathematical Functions",
+        "url": "https://dlmf.nist.gov/"
+      }
+    ]
+  },
+  {
+    "id": "D11-F01",
+    "domain_id": "D11",
+    "title": "Covariance geometry, nonlinear uncertainty and hidden-target risk",
+    "central_question": "Which uncertainty is reducible by precision, and which requires a different observation?",
+    "synopsis": "The covariance strand connects finite quadratic forms, data fusion, singular maps and statistical observability. Its central revision is to separate an exact law from a linearized uncertainty approximation, and to separate noise in an observed coordinate from a target component that the observation never determines. Positive semidefiniteness is a structural constraint on covariances, not merely a numerical preference. The observation sigma-algebra determines what can be estimated; the loss determines what error means. Together these ideas give a precise route from a hidden coordinate to an irreducible risk, while preventing a zero Jacobian from being read as zero nonlinear uncertainty.",
+    "definitions": [
+      "For X∈L², Σ=E[(X−EX)(X−EX)ᵀ] is positive semidefinite; singularity records an almost-sure linear relation.",
+      "The exact output law under f is the pushforward f_#μ. The delta approximation ε²JΣJᵀ applies to f(x_0+εZ) only as an asymptotic statement with appropriate moments and remainders.",
+      "For target T∈L² and observation Z, the squared-loss Bayes estimator is E[T|Z] and its risk is E Var(T|Z).",
+      "The Markov condition T→Z→Y means Y supplies no target information beyond Z; this includes adding independent measurement noise to Z."
+    ],
+    "theorem": {
+      "statement": "Under T→Z→Y, E Var(T|Y)=E Var(T|Z)+E Var(E[T|Z]|Y). Thus the best noisy-observation risk is at least the noise-free hidden-target floor. Separately, for X∼N(0,σ²), Var(X²)=2σ⁴ even though the derivative of x² at zero vanishes.",
+      "proof": "Write m=E[T|Z], e=T−m. Conditional independence gives E[e|Z,Y]=0, hence E[T|Y]=E[m|Y]. Expand T−E[T|Y]=e+m−E[m|Y]. Conditioning on Z,Y kills the cross term, so the mean squared error is E e²+E(m−E[m|Y])². Conditional-mean optimality itself follows by decomposing T−a(Y) into T−E[T|Y] and E[T|Y]−a(Y). The nonlinear example uses E X²=σ² and E X⁴=3σ⁴. Its full density follows by the two inverse branches ±√y and their Jacobians. The nonzero variance is of order σ⁴; the failed linear term would have been order σ², so the issue is an altered leading order rather than a contradiction."
+    },
+    "worked_example": {
+      "setup": "Take independent X_1 and Z_3∼N(0,σ²), target T=X_1+Z_3², and observe X_1 exactly. Compare independent repeated sensors with identical copies of one sensor.",
+      "calculation": "The best estimate is X_1+σ² and risk is 2σ⁴. Repeating a noiseless observation of X_1 leaves the observation sigma-algebra unchanged. A sensor informative about Z_3 can improve the risk because it enlarges that sigma-algebra. For n independent observations of a scalar mean with noise variance s², averaging has variance s²/n. For n identical copies of one noise realization, Σ=s²11ᵀ and every unbiased weighted average has variance s². If local covariances C_j and means μ_j are mixed with p_j≥0, total covariance is Σp_jC_j+Σp_j(μ_j−μ)(μ_j−μ)ᵀ, preserving positivity.",
+      "meaning": "This family connects experimental design directly to target information. More repetitions can remove measurement noise; a new kind of observation can remove hidden-target ambiguity. A coordinate covariance, a worst-case fibre width and a Bayes risk are distinct quantities with distinct units and quantifiers. The atlas makes those distinctions operational in its worked examples."
+    },
+    "source_uids": [
+      "2026:Y26-09-022",
+      "2026:Y26-02-025",
+      "2024:Y24-04-006",
+      "2025:Y25-05-015",
+      "2023:M061",
+      "2026:Y26-09-027",
+      "2026:Y26-08-009",
+      "2026:Y26-09-023",
+      "2024:Y24-08-003",
+      "2026:Y26-04-013"
+    ],
+    "anchor_uids": [
+      "2026:Y26-09-022",
+      "2026:Y26-02-025",
+      "2024:Y24-04-006",
+      "2025:Y25-05-015",
+      "2023:M061",
+      "2026:Y26-09-027",
+      "2026:Y26-08-009",
+      "2026:Y26-09-023"
+    ],
+    "progression": [
+      {
+        "year": 2023,
+        "evidence_uids": [
+          "2023:M061"
+        ],
+        "narrative": "Dated topic continuity is evidenced by Covariance inequalities with finite moments. The theorem and worked synthesis here are newly authored; this date does not attribute the present proof or an unobserved discovery to that exchange."
+      },
+      {
+        "year": 2024,
+        "evidence_uids": [
+          "2024:Y24-04-006",
+          "2024:Y24-08-003"
+        ],
+        "narrative": "Dated topic continuity is evidenced by Bayesian uncertainty and data fusion depend on covariance. The theorem and worked synthesis here are newly authored; this date does not attribute the present proof or an unobserved discovery to that exchange."
+      },
+      {
+        "year": 2025,
+        "evidence_uids": [
+          "2025:Y25-05-015"
+        ],
+        "narrative": "Dated topic continuity is evidenced by Uncertainty propagation needs covariance and does not create a field. The theorem and worked synthesis here are newly authored; this date does not attribute the present proof or an unobserved discovery to that exchange."
+      },
+      {
+        "year": 2026,
+        "evidence_uids": [
+          "2026:Y26-09-022",
+          "2026:Y26-02-025",
+          "2026:Y26-09-027",
+          "2026:Y26-08-009",
+          "2026:Y26-09-023",
+          "2026:Y26-04-013"
+        ],
+        "narrative": "Dated topic continuity is evidenced by A hidden-target conditional variance is a genuine noise-free error floor; Linear covariance transport can vanish while nonlinear uncertainty remains. The theorem and worked synthesis here are newly authored; this date does not attribute the present proof or an unobserved discovery to that exchange."
+      }
+    ],
+    "connections": [
+      {
+        "target_domain": "D15",
+        "relation": "Observability and target fibres",
+        "mathematical_bridge": "A target constant on each observation fibre has zero noise-free ambiguity; probabilistically, T measurable with respect to Z has zero conditional variance.",
+        "scope": "Zero Bayes risk is distribution-dependent; deterministic identifiability quantifies over all admissible states."
+      },
+      {
+        "target_domain": "D06",
+        "relation": "Singular nonlinear maps",
+        "mathematical_bridge": "A fold can annihilate the Jacobian while transporting nonzero fourth-order uncertainty.",
+        "scope": "The metric alone does not select a coordinate noise law."
+      },
+      {
+        "target_domain": "D12",
+        "relation": "Decision-focused experiments",
+        "mathematical_bridge": "A sensor need only resolve the sign of the decision difference, which may require less than reconstructing T.",
+        "scope": "A robust fibre certificate and an expected risk reduction are different design objectives."
+      }
+    ],
+    "capabilities": [
+      "C01",
+      "C03",
+      "C05",
+      "C08",
+      "C12",
+      "C14"
+    ],
+    "interactive_contract": {
+      "lab_ids": [
+        "L01",
+        "L08"
+      ],
+      "inputs": "Related UI: L01 target and six-probe mask; L08 common radius C from 0 to 30 and differential endpoints from −5 to 5.",
+      "outputs": "Deterministic observable-target certificates in L01 and coupled score intervals with robust sign flags in L08. The Gaussian-square pushforward, conditional variance and posterior covariance calculations are text-and-check recipes.",
+      "validation": "The domain verify.py independently checks representative finite identities and numerical formulas. No historical program, empirical dataset, or out-of-sample claim is replayed.",
+      "status": "Related deterministic observation and additive-cancellation labs are implemented; no interactive covariance estimator, nonlinear filter or conditional-risk engine is implemented."
+    },
+    "limits": "Second moments and the Markov hypothesis are essential. An extra sensor correlated with the hidden residual is not a noisier version of the old observation. A signed correction can leave the PSD cone even if it improves one scalar statistic. The Gaussian example gives an exact model, not a calibration for unprovided observations. General nonlinear filtering and empirical conditional-variance estimation remain recipes.",
+    "open_questions": [
+      "For a specified polynomial target and Gaussian hidden variables, compute the first nonzero uncertainty order and bound its Taylor remainder.",
+      "Design the cheapest finite sensor panel whose observation fibres reduce a stated risk or decision margin below a specified threshold."
+    ],
+    "references": [
+      {
+        "label": "Williams Probability with Martingales, conditional expectation",
+        "url": "https://doi.org/10.1017/CBO9780511813658"
+      },
+      {
+        "label": "Patrick Billingsley, Probability and Measure",
+        "url": "https://www.wiley.com/en-us/Probability+and+Measure%2C+Anniversary+Edition-p-9781118122372"
+      },
+      {
+        "label": "Kevin Murphy Machine Learning: A Probabilistic Perspective author site",
+        "url": "https://probml.github.io/pml-book/"
+      },
+      {
+        "label": "Boyd and Vandenberghe Convex Optimization",
+        "url": "https://web.stanford.edu/~boyd/cvxbook/"
+      },
+      {
+        "label": "NIST uncertainty propagation guidelines",
+        "url": "https://www.nist.gov/pml/nist-technical-note-1297/nist-tn-1297-5-combined-standard-uncertainty"
+      },
+      {
+        "label": "Boyd and Vandenberghe Introduction to Applied Linear Algebra",
+        "url": "https://stanford.edu/~boyd/vmls/"
+      },
+      {
+        "label": "Särkkä and Solin linear Gaussian dynamics",
+        "url": "https://users.aalto.fi/~ssarkka/pub/sde_book.pdf"
+      }
+    ]
+  },
+  {
+    "id": "D11-F02",
+    "domain_id": "D11",
+    "title": "Entropy contraction, channel information and Fisher geometry",
+    "central_question": "Which information quantity is monotone under a declared transformation, and what geometry does it induce?",
+    "synopsis": "Entropy appears across finite chains, communication channels, softmax models, quantum states and gradient diffusion. The synthesis needs a reference measure and a transformation before it needs a slogan about disorder. Shannon entropy can decrease under a nonuniform Markov equilibrium while relative entropy to that equilibrium decreases as well. Mutual information describes a joint distribution and contracts along a Markov channel; it does not assign a causal arrow. At small scale, relative entropy generates Fisher geometry, whose null directions express parameter redundancy. These facts connect probabilistic coarse-graining, differential geometry and optimization through explicit maps rather than through a shared word.",
+    "definitions": [
+      "For positive finite q, D(p||q)=Σp_i log(p_i/q_i), with 0 log0=0; Shannon entropy is H(p)=−Σp_i logp_i.",
+      "A stochastic channel T maps input distributions to output distributions. Mutual information is D(p_XY||p_Xp_Y).",
+      "For logits u, A(u)=logΣe^{u_i}, p_i=e^{u_i−A(u)}, and F=diag(p)−ppᵀ. A common additive logit is unidentifiable.",
+      "For a faithful density matrix σ, its modular Hamiltonian is −logσ. Matrix entropy and classical entropy agree on diagonal states, but their full differential geometry requires operator calculus."
+    ],
+    "theorem": {
+      "statement": "Every finite stochastic channel satisfies D(Tp||Tq)≤D(p||q). For softmax probabilities, F≥0, F1=0, and D(p(u)||p(u+h))=(1/2)hᵀFh+O(‖h‖³). At uniform p on m outcomes, F=(I−11ᵀ/m)/m and H=logm.",
+      "proof": "For each output j, apply the log-sum inequality to a_i=T_{ji}p_i and b_i=T_{ji}q_i. Summing the inequalities over j and using Σ_jT_{ji}=1 gives contraction. Equality requires the likelihood ratio p_i/q_i to be constant across every collection of inputs mixed into a positive output. For the geometric statement, differentiating A gives ∇A=p and ∇²A=F. The quadratic form vᵀFv=Σp_iv_i²−(Σp_iv_i)² is a variance, hence nonnegative and zero on constants. The KL expression is exactly A(u+h)−A(u)−p(u)·h; Taylor expansion supplies the local quadratic term. This proves the geometry on the quotient by common logits rather than pretending the full Fisher matrix is invertible."
+    },
+    "worked_example": {
+      "setup": "Take a Markov matrix whose every row is π=(9/10,1/10), and initial p=(1/2,1/2). Then compare a fair bit passed through two binary symmetric channels with flip probability 1/10.",
+      "calculation": "One Markov step sends p to π, reducing H from log2 to −.9log.9−.1log.1, while D(p||π)=log(5/3) falls to zero. In the channel cascade the effective flip probability is 2(.1)(.9)=.18. Information therefore falls from 1−h_2(.1)≈.531004 bits to 1−h_2(.18)≈.319923 bits. At m=97 uniform classes, entropy is log97≈4.574711 nats and the 96 nonzero Fisher eigenvalues are 1/97. Neither uniform entropy nor a small parameter step reports classification accuracy.",
+      "meaning": "The correct monotone depends on the experiment: relative entropy for a fixed reference law, mutual information for a channel, or KL locally for a parameterized model. This provides a useful common language while preserving their distinct arguments, units and equality conditions. An information quantity can be mathematically exact even when its proposed application lacks data."
+    },
+    "source_uids": [
+      "2023:M026",
+      "2023:M047",
+      "2024:Y24-07-002",
+      "2024:Y24-10-031",
+      "2025:Y25-12-014",
+      "2026:Y26-01-023",
+      "2026:Y26-01-020",
+      "2025:Y25-03-013",
+      "2025:Y25-01-023",
+      "2024:Y24-03-004",
+      "2024:Y24-10-004",
+      "2026:Y26-01-026"
+    ],
+    "anchor_uids": [
+      "2023:M026",
+      "2023:M047",
+      "2024:Y24-07-002",
+      "2024:Y24-10-031",
+      "2025:Y25-12-014",
+      "2026:Y26-01-023",
+      "2026:Y26-01-020",
+      "2025:Y25-03-013"
+    ],
+    "progression": [
+      {
+        "year": 2023,
+        "evidence_uids": [
+          "2023:M026",
+          "2023:M047"
+        ],
+        "narrative": "Dated topic continuity is evidenced by Relative entropy along a finite Markov chain; Mutual information detects dependence rather than a causal channel. The theorem and worked synthesis here are newly authored; this date does not attribute the present proof or an unobserved discovery to that exchange."
+      },
+      {
+        "year": 2024,
+        "evidence_uids": [
+          "2024:Y24-07-002",
+          "2024:Y24-10-031",
+          "2024:Y24-03-004",
+          "2024:Y24-10-004"
+        ],
+        "narrative": "Dated topic continuity is evidenced by Ψ mutual information and capacity need a channel; Entropy is a concave function with an exact uniform maximum. The theorem and worked synthesis here are newly authored; this date does not attribute the present proof or an unobserved discovery to that exchange."
+      },
+      {
+        "year": 2025,
+        "evidence_uids": [
+          "2025:Y25-12-014",
+          "2025:Y25-03-013",
+          "2025:Y25-01-023"
+        ],
+        "narrative": "Dated topic continuity is evidenced by Softmax Fisher geometry and a uniform fixed-point diagnostic; The entropy first law is an exact first derivative at a faithful state. The theorem and worked synthesis here are newly authored; this date does not attribute the present proof or an unobserved discovery to that exchange."
+      },
+      {
+        "year": 2026,
+        "evidence_uids": [
+          "2026:Y26-01-023",
+          "2026:Y26-01-020",
+          "2026:Y26-01-026"
+        ],
+        "narrative": "Dated topic continuity is evidenced by A computational monotone needs a specified coarse-graining map; Fokker–Planck entropy decay follows from an explicit gradient structure. The theorem and worked synthesis here are newly authored; this date does not attribute the present proof or an unobserved discovery to that exchange."
+      }
+    ],
+    "connections": [
+      {
+        "target_domain": "D10",
+        "relation": "Markov evolution",
+        "mathematical_bridge": "A stationary π makes D(p_t||π) decrease under the Markov semigroup.",
+        "scope": "A quantitative rate requires an additional functional inequality or finite spectral estimate."
+      },
+      {
+        "target_domain": "D06",
+        "relation": "Information geometry",
+        "mathematical_bridge": "The Hessian of log-partition defines a positive metric after quotienting redundant parameters.",
+        "scope": "The local quadratic approximation is not a global distance identity."
+      },
+      {
+        "target_domain": "D16",
+        "relation": "State entropy",
+        "mathematical_bridge": "For a faithful reference, D(ρ||σ)=Tr((ρ−σ)(−logσ))−(S(ρ)−S(σ)).",
+        "scope": "The quantum matrix identity needs positivity and the declared algebra."
+      }
+    ],
+    "capabilities": [
+      "C01",
+      "C03",
+      "C04",
+      "C09",
+      "C12",
+      "C13",
+      "C15"
+    ],
+    "interactive_contract": {
+      "lab_ids": [],
+      "inputs": "A declared finite probability table, covariance model, convex objective, or common uncertainty set, as specified in the worked example. Parameters without a sampling or error model are treated as assumptions.",
+      "outputs": "Exact finite values and rational certificates when available; otherwise numerical values explicitly restricted to the stated worked model.",
+      "validation": "The domain verify.py independently checks representative finite identities and numerical formulas. No historical program, empirical dataset, or out-of-sample claim is replayed.",
+      "status": "Mathematical recipe with executable scoped checks; no general interactive estimator or solver is implemented."
+    },
+    "limits": "Finite alphabets avoid differential-entropy coordinate issues. Continuous densities must first be normalized and have adequate integrability for differentiation. Mutual information alone does not identify causal direction, and a proposed logarithmic transform of mutual information need not be a metric. Fisher, empirical Fisher, Gauss–Newton and the objective Hessian are different matrices outside special model assumptions.",
+    "open_questions": [
+      "Find the exact equality fibres for a supplied stochastic coarse-graining and determine its sufficient statistic.",
+      "Compare an actual KL-constrained step with a Fisher quadratic step using an explicit third-order remainder bound."
+    ],
+    "references": [
+      {
+        "label": "Levin and Peres Markov Chains and Mixing Times",
+        "url": "https://pages.uoregon.edu/dlevin/MARKOV/"
+      },
+      {
+        "label": "Claude Shannon A Mathematical Theory of Communication",
+        "url": "https://www.princeton.edu/~wbialek/rome/refs/shannon_48.pdf"
+      },
+      {
+        "label": "Shannon A Mathematical Theory of Communication",
+        "url": "https://people.math.harvard.edu/~ctm/home/text/others/shannon/entropy/entropy.pdf"
+      },
+      {
+        "label": "C. E. Shannon, A mathematical theory of communication",
+        "url": "https://doi.org/10.1002/j.1538-7305.1948.tb01338.x"
+      },
+      {
+        "label": "Amari, natural gradient",
+        "url": "https://doi.org/10.1162/089976698300017746"
+      },
+      {
+        "label": "Imre Csiszár, Information-Type Measures of Difference of Probability Distributions",
+        "url": "https://doi.org/10.1007/BF02159459"
+      },
+      {
+        "label": "Richard Jordan, David Kinderlehrer and Felix Otto, The Variational Formulation of the Fokker–Planck Equation",
+        "url": "https://doi.org/10.1137/S0036141096303359"
+      },
+      {
+        "label": "Araki, Relative entropy of states of von Neumann algebras",
+        "url": "https://doi.org/10.2977/prims/1195191148"
+      }
+    ]
+  },
+  {
+    "id": "D11-F03",
+    "domain_id": "D11",
+    "title": "Identifiability, calibration and honest statistical validation",
+    "central_question": "What mathematical contract turns a fitted pattern into a justified inference about unseen outcomes?",
+    "synopsis": "The inference strand develops from an identifiable logistic design and calibrated residual energy to finite strategy search, PAC–Bayes bounds, rank statistics and exact randomization. Its organizing distinction is between fitting a chosen sample, identifying a model parameter, calibrating a test under a null, and predicting a new draw. Each asks a different question. A low residual proves a relation within a specified sample geometry; it does not automatically validate a causal mechanism or a future performance claim. This family supplies positive mathematical tools for stronger questions: declare the sampling law, expose the selection step, reserve independent data, and report an uncertainty statement whose quantifiers survive that selection.",
+    "definitions": [
+      "A parameter is identifiable if distinct admissible values produce distinct observation laws at the stated design.",
+      "For a fixed predictor f and bounded loss in [0,1], true risk R(f) is the expected loss under a declared sampling distribution, while empirical risk is the sample mean.",
+      "A valid p-value obeys P_0(p≤α)≤α for every α∈[0,1] under the stated null. Pairing alone does not supply the null.",
+      "AUROC is P(s_+>s_−)+(1/2)P(s_+=s_−) for independent uniform empirical positive and negative choices; its tie rule belongs to the definition."
+    ],
+    "theorem": {
+      "statement": "For K fixed candidates evaluated on n iid validation observations with loss in [0,1], with probability at least 1−δ all risk errors are at most ε=√(log(2K/δ)/(2n)). The empirically best candidate then has true risk at most 2ε above the best candidate. A paired fair-sign randomization test has a finite superuniform p-value under its exchangeable sign null.",
+      "proof": "Hoeffding's bound gives P(|Rhat_k−R_k|>ε)≤2e^{−2nε²} for one fixed candidate. A union bound over K choices yields δ at the stated ε. On the simultaneous event, R(fhat)≤Rhat(fhat)+ε≤Rhat(f*)+ε≤R(f*)+2ε. The candidates must be fixed independently of this validation sample, or their entire adaptive selection must be included in a stronger valid argument. For the randomization result, condition on the observed magnitudes and enumerate every equally likely sign assignment. Ranking the test statistic within that finite null population makes the upper-tail rank p superuniform; ties only make it conservative. This proof is finite and requires no normal approximation."
+    },
+    "worked_example": {
+      "setup": "Eight paired differences have illustrative magnitudes all one, and the observed signs are all positive. A separate two-class score example has positive scores (2,1) and negative scores (1,0).",
+      "calculation": "There are 2^8=256 sign vectors. Only one gives signed sum eight, so the one-sided exact p-value is 1/256. The absolute statistic has two extremes, giving 1/128. For AUROC, the four positive-negative comparisons yield wins 1,1,0,1 with the tied comparison replaced by 1/2, so the total is 7/2 and AUROC=7/8. Every strictly increasing score transformation preserves these comparisons. Multiplying all paired magnitudes by a positive constant leaves randomization p unchanged, demonstrating that statistical evidence and practical effect size are different outputs.",
+      "meaning": "The sources on regressions, periodic contrasts, spectral fits and normalized residuals become useful when attached to this contract. A period-matched difference can identify an exact trend in a declared model; a nested regression always improves training fit; neither alone supplies a future-risk bound. The best revised question names both the estimand and the independent evidence that could challenge it."
+    },
+    "source_uids": [
+      "2025:Y25-02-012",
+      "2025:Y25-05-021",
+      "2026:Y26-09-004",
+      "2026:Y26-04-021",
+      "2023:M004",
+      "2023:M078",
+      "2026:Y26-04-024",
+      "2026:Y26-09-003",
+      "2024:Y24-12-016",
+      "2026:Y26-03-022",
+      "2025:Y25-07-028",
+      "2024:Y24-04-007",
+      "2024:Y24-09-017",
+      "2024:Y24-10-006",
+      "2025:Y25-06-020",
+      "2025:Y25-09-018",
+      "2026:Y26-01-025",
+      "2026:Y26-01-008"
+    ],
+    "anchor_uids": [
+      "2025:Y25-02-012",
+      "2025:Y25-05-021",
+      "2026:Y26-09-004",
+      "2026:Y26-04-021",
+      "2023:M004",
+      "2023:M078",
+      "2026:Y26-04-024",
+      "2026:Y26-09-003"
+    ],
+    "progression": [
+      {
+        "year": 2023,
+        "evidence_uids": [
+          "2023:M004",
+          "2023:M078"
+        ],
+        "narrative": "Dated topic continuity is evidenced by A valid probability model and identifiable parameters; Residual energy and exact Gaussian calibration. The theorem and worked synthesis here are newly authored; this date does not attribute the present proof or an unobserved discovery to that exchange."
+      },
+      {
+        "year": 2024,
+        "evidence_uids": [
+          "2024:Y24-12-016",
+          "2024:Y24-04-007",
+          "2024:Y24-09-017",
+          "2024:Y24-10-006"
+        ],
+        "narrative": "Dated topic continuity is evidenced by Spectral fitting is not prediction: six-point statistics and prescribed masses. The theorem and worked synthesis here are newly authored; this date does not attribute the present proof or an unobserved discovery to that exchange."
+      },
+      {
+        "year": 2025,
+        "evidence_uids": [
+          "2025:Y25-02-012",
+          "2025:Y25-05-021",
+          "2025:Y25-07-028",
+          "2025:Y25-06-020",
+          "2025:Y25-09-018"
+        ],
+        "narrative": "Dated topic continuity is evidenced by Searching many strategies needs an independent validation contract; A PAC–Bayes guarantee needs a sampling law, prior and bounded loss. The theorem and worked synthesis here are newly authored; this date does not attribute the present proof or an unobserved discovery to that exchange."
+      },
+      {
+        "year": 2026,
+        "evidence_uids": [
+          "2026:Y26-09-004",
+          "2026:Y26-04-021",
+          "2026:Y26-04-024",
+          "2026:Y26-09-003",
+          "2026:Y26-03-022",
+          "2026:Y26-01-025",
+          "2026:Y26-01-008"
+        ],
+        "narrative": "Dated topic continuity is evidenced by A paired sign-randomization test has a finite exact null certificate; AUROC is an exact pairwise statistic with a specified tie convention. The theorem and worked synthesis here are newly authored; this date does not attribute the present proof or an unobserved discovery to that exchange."
+      }
+    ],
+    "connections": [
+      {
+        "target_domain": "D12",
+        "relation": "Selection versus evaluation",
+        "mathematical_bridge": "Uniform validation bounds survive choosing the best of a fixed finite candidate family.",
+        "scope": "Searching on the validation labels violates that fixed-family contract."
+      },
+      {
+        "target_domain": "D15",
+        "relation": "Experiment design",
+        "mathematical_bridge": "A full-rank design separates structural parameter identifiability from estimator variance.",
+        "scope": "Rank conditions do not imply predictive adequacy."
+      },
+      {
+        "target_domain": "D10",
+        "relation": "Null probabilities",
+        "mathematical_bridge": "Exact enumeration gives finite reference distributions and confidence inversion.",
+        "scope": "Exchangeability is an assumption to justify, not a consequence of pairing."
+      }
+    ],
+    "capabilities": [
+      "C01",
+      "C02",
+      "C03",
+      "C08",
+      "C12",
+      "C14"
+    ],
+    "interactive_contract": {
+      "lab_ids": [],
+      "inputs": "A declared finite probability table, covariance model, convex objective, or common uncertainty set, as specified in the worked example. Parameters without a sampling or error model are treated as assumptions.",
+      "outputs": "Exact finite values and rational certificates when available; otherwise numerical values explicitly restricted to the stated worked model.",
+      "validation": "The domain verify.py independently checks representative finite identities and numerical formulas. No historical program, empirical dataset, or out-of-sample claim is replayed.",
+      "status": "Mathematical recipe with executable scoped checks; no general interactive estimator or solver is implemented."
+    },
+    "limits": "No historical raw paired samples, strategy logs or model checkpoints were provided for replay. These are mathematical fixtures and guarantees under stated laws. Covariate transfer additionally needs support coverage and conditional invariance. A large correlation can arise from a common cause; an intervention requires causal assumptions beyond its joint table. Zero observed failures yields an upper confidence bound, never a deterministic zero-risk certificate.",
+    "open_questions": [
+      "For a specified adaptive search, construct a fresh holdout or a selection-aware guarantee and compare its sample cost.",
+      "Combine exact randomization inference with a prespecified practical-effect threshold and an independent correctness gate."
+    ],
+    "references": [
+      {
+        "label": "Wassily Hoeffding Probability inequalities for sums of bounded random variables",
+        "url": "https://doi.org/10.1080/01621459.1963.10500830"
+      },
+      {
+        "label": "Seldin et al., PAC–Bayesian inequalities for martingales",
+        "url": "https://arxiv.org/abs/1110.6886"
+      },
+      {
+        "label": "Seldin PAC–Bayesian thesis",
+        "url": "https://people.kyb.tuebingen.mpg.de/seldin/publications/SeldinPhDThesis.pdf"
+      },
+      {
+        "label": "Fisher The Design of Experiments, bibliographic record",
+        "url": "https://archive.org/details/in.ernet.dli.2015.502684"
+      },
+      {
+        "label": "Boyd and Vandenberghe, Convex Optimization",
+        "url": "https://web.stanford.edu/~boyd/cvxbook/bv_cvxbook.pdf"
+      },
+      {
+        "label": "Boyd and Vandenberghe Convex Optimization, linear least squares",
+        "url": "https://web.stanford.edu/~boyd/cvxbook/"
+      },
+      {
+        "label": "Montgomery, pair correlation of zeros",
+        "url": "https://doi.org/10.1090/pspum/024"
+      }
+    ]
+  },
+  {
+    "id": "D11-F04",
+    "domain_id": "D11",
+    "title": "Finite information, observation equivalence and diagnostic statistics",
+    "central_question": "How much can an observation distinguish, and what information does a summary discard?",
+    "synopsis": "Several source questions use entropy, spectral flatness, phase concentration, compression or correlation as a proxy for a richer structure. Their strongest mathematical development begins by specifying the observation map and its fibres. A summary can be exactly computed and still fail to separate the objects relevant to the question. Conversely, an injective finite encoding supports exact recovery regardless of whether its values resemble a preferred statistical distribution. This family organizes capacity and diagnostics as distinct operations: counting distinguishable messages, preserving information under a reversible map, and measuring one chosen feature of a data object.",
+    "definitions": [
+      "An observation h:X→Y induces equivalence x∼x′ when h(x)=h(x′). Exact reconstruction from h exists precisely when the required target is constant on each fibre.",
+      "A lossless finite encoder E has a decoder D with D(E(x))=x, hence must be injective.",
+      "A b-ary prefix X_1,…,X_k has entropy H_k; its increment is conditional entropy, lying between zero and log b.",
+      "For positive powers P_i, spectral flatness is (∏P_i)^{1/n}/((ΣP_i)/n). For phases θ_j, circular resultant is |Σe^{iθ_j}|/n."
+    ],
+    "theorem": {
+      "statement": "A lossless fixed-length binary code for N objects needs b≥ceil(log_2N). No injective binary encoder can strictly shorten every binary string of lengths at most b. Prefix entropy obeys H_{k+1}−H_k=H(X_{k+1}|X_1,…,X_k), independently of a metric contraction placed on the symbolic space.",
+      "proof": "Injectivity follows by applying D to a collision E(x)=E(x′). A b-bit codomain contains only 2^b addresses, so N≤2^b. For universal shortening, the number of strings of lengths at most b is 2^{b+1}−1, whereas all shorter outputs through length b−1 number only 2^b−1; the pigeonhole principle rules out injectivity. The entropy chain rule follows by factoring p(x_1,…,x_{k+1}) into p(x_1,…,x_k)p(x_{k+1}|x_1,…,x_k) and expanding the logarithm in the expectation. Conditional entropy is nonnegative and at most log b. No property of an externally imposed ultrametric enters this algebra, so a metric contraction alone cannot prove an entropy decrease."
+    },
+    "worked_example": {
+      "setup": "Suppose five feasible objects are indexed by three bits, and examine two phase populations: all phases zero, or half zero and half π. Compare flat and nonflat power arrays.",
+      "calculation": "Three bits suffice because ceil(log_25)=3. Drawing a uniform three-bit address and rejecting 5,6,7 yields each valid object with probability 1/5. Taking the address modulo five instead gives probabilities (2,2,2,1,1)/8. The all-zero phase population has resultant one; the two-opposite-cluster population has resultant zero despite being sharply concentrated in two directions. Powers (1,1,1,1) have flatness one, while (1,1,1,9) have flatness √3/3<1. Neither flatness nor resultant defines a false-acceptance exponent without an observation and null model.",
+      "meaning": "The useful output is a hierarchy of observables, each with a declared invariance and a known failure mode. AUROC preserves ranking but discards calibration. Spectral power discards phase. A finite entropy calculation records empirical symbol balance but cannot establish decimal normality. A reversible code preserves object identity but does not imply shorter descriptions for every object. These distinctions turn diagnostics into well-typed tools."
+    },
+    "source_uids": [
+      "2026:Y26-06-028",
+      "2026:Y26-02-034",
+      "2026:Y26-02-023",
+      "2026:Y26-02-024",
+      "2025:Y25-11-015",
+      "2025:Y25-08-025",
+      "2025:Y25-01-025",
+      "2024:Y24-03-033",
+      "2026:Y26-10-016",
+      "2026:Y26-04-022",
+      "2025:Y25-02-005"
+    ],
+    "anchor_uids": [
+      "2026:Y26-06-028",
+      "2026:Y26-02-034",
+      "2026:Y26-02-023",
+      "2026:Y26-02-024",
+      "2025:Y25-11-015",
+      "2025:Y25-08-025",
+      "2025:Y25-01-025",
+      "2024:Y24-03-033"
+    ],
+    "progression": [
+      {
+        "year": 2024,
+        "evidence_uids": [
+          "2024:Y24-03-033"
+        ],
+        "narrative": "Dated topic continuity is evidenced by A linear chirp has quadratic phase, with a precise sampling ambiguity. The theorem and worked synthesis here are newly authored; this date does not attribute the present proof or an unobserved discovery to that exchange."
+      },
+      {
+        "year": 2025,
+        "evidence_uids": [
+          "2025:Y25-11-015",
+          "2025:Y25-08-025",
+          "2025:Y25-01-025",
+          "2025:Y25-02-005"
+        ],
+        "narrative": "Dated topic continuity is evidenced by Circular concentration measures evidence, not a motivic sector; CRT and finite entropy do not prove decimal normality. The theorem and worked synthesis here are newly authored; this date does not attribute the present proof or an unobserved discovery to that exchange."
+      },
+      {
+        "year": 2026,
+        "evidence_uids": [
+          "2026:Y26-06-028",
+          "2026:Y26-02-034",
+          "2026:Y26-02-023",
+          "2026:Y26-02-024",
+          "2026:Y26-10-016",
+          "2026:Y26-04-022"
+        ],
+        "narrative": "Dated topic continuity is evidenced by Lossless reconstruction forces injectivity and gives a counting lower bound on compression; Prefix entropy grows by conditional information, not by metric contraction alone. The theorem and worked synthesis here are newly authored; this date does not attribute the present proof or an unobserved discovery to that exchange."
+      }
+    ],
+    "connections": [
+      {
+        "target_domain": "D14",
+        "relation": "Exact encoding and quotienting",
+        "mathematical_bridge": "An address bijection recovers every source object; a quotient only recovers its equivalence class.",
+        "scope": "Completion counts support finite exact indexing, not a universal compression claim."
+      },
+      {
+        "target_domain": "D07",
+        "relation": "Phase and spectra",
+        "mathematical_bridge": "Fourier powers retain magnitudes while discarding relative phases.",
+        "scope": "A spectral statistic needs its window, normalization and reference ensemble."
+      },
+      {
+        "target_domain": "D15",
+        "relation": "Observation sufficiency",
+        "mathematical_bridge": "A target factors through h exactly when it is constant on observation fibres.",
+        "scope": "Finite message capacity and continuous-state error need a declared resolution model."
+      }
+    ],
+    "capabilities": [
+      "C01",
+      "C02",
+      "C03",
+      "C04",
+      "C05",
+      "C09",
+      "C12"
+    ],
+    "interactive_contract": {
+      "lab_ids": [
+        "L02"
+      ],
+      "inputs": "L02 integer budget 0–27 and requested feasible rank 0–63 for six fixed weighted items.",
+      "outputs": "Feasible count, optimum masks and the item subset at the clamped rank. The current UI does not draw random addresses, encode arbitrary objects, calculate entropy, or analyze an uploaded spectrum.",
+      "validation": "The domain verify.py independently checks representative finite identities and numerical formulas. No historical program, empirical dataset, or out-of-sample claim is replayed.",
+      "status": "A related finite count-and-rank model is implemented; information capacity, random sampling and diagnostic calculations remain recipes."
+    },
+    "limits": "A real number contains arbitrarily many formal digits but a finite-resolution device distinguishes only finitely many separated values. Strict spacing conventions matter at endpoints. Differential entropy changes under coordinates, while message count does not. The examples supply no empirical hardware capacity, compression benchmark or false-acceptance rate. Those require raw data and operational noise models.",
+    "open_questions": [
+      "For a supplied finite observation map, enumerate fibres and compute which target functions factor through it.",
+      "Design a sufficient diagnostic panel for a specified finite family, minimizing measurement cost while preserving target distinctions."
+    ],
+    "references": [
+      {
+        "label": "Claude Shannon, A Mathematical Theory of Communication",
+        "url": "https://doi.org/10.1002/j.1538-7305.1948.tb01338.x"
+      },
+      {
+        "label": "Clopper and Pearson, The Use of Confidence or Fiducial Limits Illustrated in the Case of the Binomial",
+        "url": "https://doi.org/10.1093/biomet/26.4.404"
+      },
+      {
+        "label": "NIST DLMF modified Bessel functions",
+        "url": "https://dlmf.nist.gov/10.25"
+      },
+      {
+        "label": "NIST Guide for the Use of the International System of Units",
+        "url": "https://www.nist.gov/pml/special-publication-811"
+      },
+      {
+        "label": "Georgia Tech DSP First, AM/FM and chirp signals",
+        "url": "https://dspfirst.gatech.edu/chapters/DSP1st2eLabs/AMFMSignalsLab.pdf"
+      },
+      {
+        "label": "UCLA IPAM wavelet tutorial on chirps",
+        "url": "https://helper.ipam.ucla.edu/publications/mpstut/mpstut_13975.pdf"
+      },
+      {
+        "label": "Bryant: graph-based Boolean-function algorithms",
+        "url": "https://doi.org/10.1184/r1/6605990"
+      }
+    ]
+  },
+  {
+    "id": "D12-F01",
+    "domain_id": "D12",
+    "title": "Convex duality, singular quadratic programs and global certificates",
+    "central_question": "What finite certificate proves global optimality, including null directions and boundary cases?",
+    "synopsis": "The optimization strand is strongest when an answer arrives with a lower bound and a feasible point attaining it. The source sequence links constrained covariance minimization, Fenchel conjugates, polyhedral actions and semidefinite primal-dual gaps. These are several forms of one principle: weak duality gives an inequality valid over the entire feasible set, and a matching construction turns it into a global theorem. The singular cases deserve equal status with the invertible ones. A pseudoinverse is meaningful only after the nullspace has been checked against the constraint; stationarity alone cannot provide the missing boundedness or convexity.",
+    "definitions": [
+      "For convex f, its conjugate is f*(p)=sup_x(p·x−f(x)); the domain of x is part of f and changes the conjugate.",
+      "A symmetric covariance matrix Σ≥0 defines the objective wᵀΣw. The affine budget is cᵀw=1 with c≠0.",
+      "The Moore–Penrose inverse Σ⁺ inverts positive eigenspaces and vanishes on the nullspace.",
+      "An SDP primal feasible X≥0 and dual slack S=C−Σ_i y_iA_i≥0 satisfy constraints Tr(A_iX)=b_i."
+    ],
+    "theorem": {
+      "statement": "If some z∈kerΣ has cᵀz≠0, the constrained quadratic minimum is zero. Otherwise c∈rangeΣ and, with q=cᵀΣ⁺c>0, all minimizers are Σ⁺c/q+z for z∈kerΣ, with minimum 1/q. For every SDP feasible pair, the objective gap is Tr(SX)≥0; a zero gap certifies global optimality without requiring a separate strong-duality theorem.",
+      "proof": "In the first quadratic case scale z by 1/(cᵀz); feasibility and zero energy follow, while nonnegativity proves minimality. Otherwise decompose w into positive spectral and null components. The constraint sees only the positive part. Cauchy–Schwarz applied to Σ^{1/2}w and Σ^{+1/2}c gives 1=(cᵀw)²≤(wᵀΣw)(cᵀΣ⁺c), so the objective is at least 1/q. Equality gives the displayed positive component, with arbitrary invisible null addition. For the SDP, subtract the objectives, insert the primal equalities, and obtain Tr(SX). This is nonnegative because Tr(SX)=Tr(X^{1/2}SX^{1/2}) and the enclosed matrix is PSD. A feasible zero-gap pair therefore sandwiches the optimum exactly."
+    },
+    "worked_example": {
+      "setup": "Minimize w_1²+4w_2² subject to w_1+w_2=1. Compare Σ=diag(0,4), then Σ=11ᵀ. A separate SDP minimizes Tr(diag(1,2)X) subject to Tr X=1 and X≥0.",
+      "calculation": "For the positive definite quadratic, q=1+1/4=5/4 and w*=(4/5,1/5), giving value 4/5. For diag(0,4), the null vector e_1 satisfies the budget and achieves zero. For 11ᵀ, every feasible point has value one; the nullspace is budget-invisible. In the SDP, X*=diag(1,0), y=1 and S=diag(0,1) are feasible and give Tr(SX*)=0. Finally, the conjugate of kx² on all real x is p²/(4k), but restricting x≥0 changes it to max(p,0)²/(4k).",
+      "meaning": "The same computational discipline applies across these examples: inspect feasibility, preserve the actual domain, identify nullspaces, and produce a global inequality. A solver residual can guide a candidate, while an exact rational primal-dual pair can turn it into a reviewable certificate. Boundary constraints may alter the optimum and cannot be repaired by postprocessing an unconstrained answer."
+    },
+    "source_uids": [
+      "2023:M062",
+      "2023:M093",
+      "2025:Y25-12-009",
+      "2026:Y26-05-012",
+      "2026:Y26-08-007",
+      "2026:Y26-09-035",
+      "2024:Y24-05-001",
+      "2025:Y25-08-007"
+    ],
+    "anchor_uids": [
+      "2023:M062",
+      "2023:M093",
+      "2025:Y25-12-009",
+      "2026:Y26-05-012",
+      "2026:Y26-08-007",
+      "2026:Y26-09-035",
+      "2024:Y24-05-001"
+    ],
+    "progression": [
+      {
+        "year": 2023,
+        "evidence_uids": [
+          "2023:M062",
+          "2023:M093"
+        ],
+        "narrative": "Dated topic continuity is evidenced by A quadratic program with singular cases included; Convex conjugates with their actual domains. The theorem and worked synthesis here are newly authored; this date does not attribute the present proof or an unobserved discovery to that exchange."
+      },
+      {
+        "year": 2024,
+        "evidence_uids": [
+          "2024:Y24-05-001"
+        ],
+        "narrative": "Dated topic continuity is evidenced by Finite mixtures and typed kernel pairings. The theorem and worked synthesis here are newly authored; this date does not attribute the present proof or an unobserved discovery to that exchange."
+      },
+      {
+        "year": 2025,
+        "evidence_uids": [
+          "2025:Y25-12-009",
+          "2025:Y25-08-007"
+        ],
+        "narrative": "Dated topic continuity is evidenced by Polyhedral Fenchel duality and the drift-action distinction. The theorem and worked synthesis here are newly authored; this date does not attribute the present proof or an unobserved discovery to that exchange."
+      },
+      {
+        "year": 2026,
+        "evidence_uids": [
+          "2026:Y26-05-012",
+          "2026:Y26-08-007",
+          "2026:Y26-09-035"
+        ],
+        "narrative": "Dated topic continuity is evidenced by An SDP primal-dual pair gives an exact certificate and a traceable gap; A danger-to-information quotient is finite only after its null directions are checked. The theorem and worked synthesis here are newly authored; this date does not attribute the present proof or an unobserved discovery to that exchange."
+      }
+    ],
+    "connections": [
+      {
+        "target_domain": "D03",
+        "relation": "PSD geometry",
+        "mathematical_bridge": "Nullspaces and ranges determine whether quadratic objectives see feasible directions.",
+        "scope": "Indefinite forms require a different boundedness analysis."
+      },
+      {
+        "target_domain": "D11",
+        "relation": "Information-danger quotients",
+        "mathematical_bridge": "A generalized quotient is finite only when the information nullspace lies in the danger nullspace.",
+        "scope": "The finite quotient is a largest generalized eigenvalue on the supported subspace."
+      },
+      {
+        "target_domain": "D07",
+        "relation": "Spectral convexity",
+        "mathematical_bridge": "Ky Fan eigenvalue sums are convex and their smooth edge remainder is a weighted curvature integral.",
+        "scope": "Eigenvalue crossings may require a nonsmooth formulation."
+      }
+    ],
+    "capabilities": [
+      "C01",
+      "C03",
+      "C06",
+      "C09",
+      "C12"
+    ],
+    "interactive_contract": {
+      "lab_ids": [],
+      "inputs": "A declared finite probability table, covariance model, convex objective, or common uncertainty set, as specified in the worked example. Parameters without a sampling or error model are treated as assumptions.",
+      "outputs": "Exact finite values and rational certificates when available; otherwise numerical values explicitly restricted to the stated worked model.",
+      "validation": "The domain verify.py independently checks representative finite identities and numerical formulas. No historical program, empirical dataset, or out-of-sample claim is replayed.",
+      "status": "Mathematical recipe with executable scoped checks; no general interactive estimator or solver is implemented."
+    },
+    "limits": "KKT equations are sufficient only under the appropriate convexity and regularity conditions; a cubic stationary system may contain saddles or fail to have a global maximizer. Zero-gap feasible certificates avoid an appeal to strong duality but do require exact feasibility. Floating-point near-feasibility needs explicit error bounds before it becomes a certificate. A convex relaxation need not attain the original discrete optimum.",
+    "open_questions": [
+      "Convert an approximate rational SDP pair into certified feasible points with a bound on the resulting gap.",
+      "Classify how an additional nonnegativity or box constraint changes the singular quadratic minimizer set."
+    ],
+    "references": [
+      {
+        "label": "Boyd and Vandenberghe Convex Optimization",
+        "url": "https://web.stanford.edu/~boyd/cvxbook/"
+      },
+      {
+        "label": "Rockafellar, Convex Analysis",
+        "url": "https://doi.org/10.1515/9781400873173"
+      },
+      {
+        "label": "Ky Fan On a theorem of Weyl concerning eigenvalues",
+        "url": "https://doi.org/10.1073/pnas.35.11.652"
+      },
+      {
+        "label": "NIST DLMF integral operators and numerical quadrature background",
+        "url": "https://dlmf.nist.gov/3.5"
+      }
+    ]
+  },
+  {
+    "id": "D12-F02",
+    "domain_id": "D12",
+    "title": "Proximal maps, projected descent and stable optimization dynamics",
+    "central_question": "Which update respects the feasible geometry and comes with a descent or contraction theorem?",
+    "synopsis": "The source development repeatedly distinguishes an intended variational objective from an informal update rule. Soft thresholding, radial shrinkage, ridge regularization, projected gradient, Mahalanobis steps, resolvents and Wasserstein proximal maps all become coherent when the update is defined as a minimizer. This family uses that minimization property to derive an inequality, then studies what remains invisible in a projected or singular geometry. Continuous dissipation and discrete stability are related but separate claims. A small gradient, a clipped direction or an Armijo line search is not a substitute for the exact hypotheses needed by the chosen method. Exact proximal examples also show what the objective preserves: radial shrinkage keeps direction, soft thresholding can change support, and a subspace projector can permanently preserve invisible components.",
+    "definitions": [
+      "For a proper convex g, prox_{ηg}(z)=argmin_x[g(x)+‖x−z‖²/(2η)] where the minimizer exists; the quadratic supplies strict convexity.",
+      "Projection Π_C is the proximal map of the indicator of a nonempty closed convex set C.",
+      "An M-weighted step uses ‖d‖_M²=dᵀMd with M>0; the metric is part of the algorithm.",
+      "For differentiable f with L-Lipschitz gradient, the descent lemma is f(y)≤f(x)+∇f(x)·(y−x)+(L/2)‖y−x‖²."
+    ],
+    "theorem": {
+      "statement": "For x∈C closed convex and x+=Π_C(x−η∇f(x)), f(x+)≤f(x)−(1/η−L/2)‖x+−x‖². Thus 0<η<2/L gives strict descent unless the step vanishes. For a quadratic local model with Hessian H, the resolvent step δ=−η(I+ηH)^{-1}g is the unique minimizer when I+ηH>0.",
+      "proof": "The projection variational inequality gives (x−η∇f(x)−x+)·(x−x+)≤0. Rearranging yields ∇f(x)·(x+−x)≤−‖x+−x‖²/η. Substitute this into the descent lemma to obtain the bound. Convexity is used for the projection inequality; smoothness controls the objective. The resolvent follows by differentiating q(δ)=g·δ+(1/2)δᵀHδ+‖δ‖²/(2η). Its Hessian H+I/η is positive definite under the stated condition, so the stationary point is the global unique minimizer. In an H eigenbasis each component is −ηg_i/(1+ηλ_i), making curvature damping and a possible negative-curvature obstruction explicit."
+    },
+    "worked_example": {
+      "setup": "For z=(3,4), compare the minimizers of (1/2)‖x−z‖²+λ‖x‖_1, with λ‖x‖_2, and with (λ/2)‖x‖² at λ=1. Also inspect a four-cycle quadratic energy.",
+      "calculation": "The three updates are respectively (2,3), (12/5,16/5), and (3/2,2). Componentwise sparsity, radial shrinkage and uniform rescaling are different objectives. For a graph Laplacian with spectrum (0,2,2,4), a gradient step has factors 1,1−2η,1−2η,1−4η. At η=.4 every nonconstant mode contracts; at η=.6 the top factor is −1.4 and grows. For η>0 and convex potential a|x|²/2 with a≥0, the quadratic Wasserstein proximal map is the pushforward x↦x/(1+ηa). W_2 distances scale exactly by q=1/(1+ηa); this is strict contraction when a>0 and the identity when a=0.",
+      "meaning": "The source sequence now has a common constructive workflow: state the objective and metric, derive its minimizing map, then prove feasibility, descent and any stronger convergence property separately. A projected update can vanish because the gradient points into an excluded subspace, even when the original objective is not stationary. That may be a desired constraint, but its interpretation must be declared."
+    },
+    "source_uids": [
+      "2024:Y24-04-003",
+      "2025:Y25-10-021",
+      "2025:Y25-12-015",
+      "2026:Y26-02-026",
+      "2026:Y26-02-035",
+      "2026:Y26-04-023",
+      "2023:M080",
+      "2026:Y26-02-017",
+      "2025:Y25-08-020",
+      "2025:Y25-08-021",
+      "2024:Y24-04-004",
+      "2025:Y25-06-017",
+      "2026:Y26-01-012",
+      "2026:Y26-05-004"
+    ],
+    "anchor_uids": [
+      "2024:Y24-04-003",
+      "2025:Y25-10-021",
+      "2025:Y25-12-015",
+      "2026:Y26-02-026",
+      "2026:Y26-02-035",
+      "2026:Y26-04-023",
+      "2023:M080",
+      "2026:Y26-02-017"
+    ],
+    "progression": [
+      {
+        "year": 2023,
+        "evidence_uids": [
+          "2023:M080"
+        ],
+        "narrative": "Dated topic continuity is evidenced by Graph heat flow and the stability of a discrete gradient step. The theorem and worked synthesis here are newly authored; this date does not attribute the present proof or an unobserved discovery to that exchange."
+      },
+      {
+        "year": 2024,
+        "evidence_uids": [
+          "2024:Y24-04-003",
+          "2024:Y24-04-004"
+        ],
+        "narrative": "Dated topic continuity is evidenced by Three regularizers produce three different shrinkage rules. The theorem and worked synthesis here are newly authored; this date does not attribute the present proof or an unobserved discovery to that exchange."
+      },
+      {
+        "year": 2025,
+        "evidence_uids": [
+          "2025:Y25-10-021",
+          "2025:Y25-12-015",
+          "2025:Y25-08-020",
+          "2025:Y25-08-021",
+          "2025:Y25-06-017"
+        ],
+        "narrative": "Dated topic continuity is evidenced by Projecting the updated state has a descent proof; clipping the gradient is a different operation; Mahalanobis proximal steps and what a tube projector preserves. The theorem and worked synthesis here are newly authored; this date does not attribute the present proof or an unobserved discovery to that exchange."
+      },
+      {
+        "year": 2026,
+        "evidence_uids": [
+          "2026:Y26-02-026",
+          "2026:Y26-02-035",
+          "2026:Y26-04-023",
+          "2026:Y26-02-017",
+          "2026:Y26-01-012",
+          "2026:Y26-05-004"
+        ],
+        "narrative": "Dated topic continuity is evidenced by Quasi-static elimination is a resolvent step with a stability condition; A quadratic Wasserstein proximal step has an exact pushforward solution. The theorem and worked synthesis here are newly authored; this date does not attribute the present proof or an unobserved discovery to that exchange."
+      }
+    ],
+    "connections": [
+      {
+        "target_domain": "D09",
+        "relation": "Stable discretization",
+        "mathematical_bridge": "Spectral multipliers 1−ηλ determine whether discrete descent follows continuous dissipation.",
+        "scope": "Positivity preservation can impose a stricter step bound."
+      },
+      {
+        "target_domain": "D06",
+        "relation": "Metric projection",
+        "mathematical_bridge": "M>0 gives unique convex projection and its variational inequality.",
+        "scope": "A nonconvex admissible set can have several nearest branches."
+      },
+      {
+        "target_domain": "D15",
+        "relation": "Control geometry",
+        "mathematical_bridge": "A projected gradient can miss directions that control a target or objective.",
+        "scope": "Descent on the selected subspace is not full-state identifiability."
+      }
+    ],
+    "capabilities": [
+      "C01",
+      "C03",
+      "C06",
+      "C07",
+      "C08",
+      "C11",
+      "C13"
+    ],
+    "interactive_contract": {
+      "lab_ids": [],
+      "inputs": "A declared finite probability table, covariance model, convex objective, or common uncertainty set, as specified in the worked example. Parameters without a sampling or error model are treated as assumptions.",
+      "outputs": "Exact finite values and rational certificates when available; otherwise numerical values explicitly restricted to the stated worked model.",
+      "validation": "The domain verify.py independently checks representative finite identities and numerical formulas. No historical program, empirical dataset, or out-of-sample claim is replayed.",
+      "status": "Mathematical recipe with executable scoped proximal and gradient-step checks; no general interactive optimizer, proximal map or Wasserstein solver is implemented."
+    },
+    "limits": "The projection theorem does not cover arbitrary nonconvex sets or projecting the gradient instead of the updated state. BFGS positive definiteness needs yᵀs>0; Armijo decrease alone does not ensure it. Fisher, Gauss–Newton and Hessian substitutions need their own approximation analysis. These worked maps are not an implementation of a general optimizer or Wasserstein solver.",
+    "open_questions": [
+      "For a supplied metric M and nonsmooth separable regularizer, derive the proximal map or an exact dual certificate.",
+      "Choose the largest stable step compatible with objective descent, coordinate positivity and a specified approximation error."
+    ],
+    "references": [
+      {
+        "label": "Parikh and Boyd Proximal Algorithms",
+        "url": "https://web.stanford.edu/~boyd/papers/prox_algs.html"
+      },
+      {
+        "label": "Boyd and Vandenberghe Convex Optimization",
+        "url": "https://web.stanford.edu/~boyd/cvxbook/"
+      },
+      {
+        "label": "R. Tyrrell Rockafellar, Monotone Operators and the Proximal Point Algorithm",
+        "url": "https://doi.org/10.1137/0314056"
+      },
+      {
+        "label": "Richard Jordan, David Kinderlehrer and Felix Otto, The Variational Formulation of the Fokker–Planck Equation",
+        "url": "https://doi.org/10.1137/S0036141096303359"
+      },
+      {
+        "label": "Boyd and Vandenberghe, Convex Optimization",
+        "url": "https://web.stanford.edu/~boyd/cvxbook/bv_cvxbook.pdf"
+      },
+      {
+        "label": "James Martens, New Insights and Perspectives on the Natural Gradient Method",
+        "url": "https://www.jmlr.org/papers/v21/17-678.html"
+      },
+      {
+        "label": "Nocedal, Updating quasi-Newton matrices with limited storage",
+        "url": "https://courses.engr.illinois.edu/ece544na/fa2014/nocedal80.pdf"
+      }
+    ]
+  },
+  {
+    "id": "D12-F03",
+    "domain_id": "D12",
+    "title": "Objective design, discrete selection and certified finite search",
+    "central_question": "Which feasible set and objective make a proposed improvement mathematically meaningful?",
+    "synopsis": "Many optimization questions initially hide their most consequential choice: what is being optimized over which alternatives. Clustering weights can duplicate one scatter identity; capacity quotas are different from score weights; Pareto points can resist every linear selector; a QUBO is meaningful only after the binary variables and constraints are fixed. The later equivalence-class and separator constructions improve search by preserving the cost of every legal continuation. This family unifies these questions around a typed feasible set and a certified objective, while distinguishing an abstract optimum from a measured implementation cost.",
+    "definitions": [
+      "A feasible optimization problem is (X,J), with optimum inf_{x∈X}J(x); changing X or J changes the problem.",
+      "A vector objective is Pareto nondominated when no feasible competitor improves all coordinates and at least one strictly.",
+      "A QUBO minimizes a quadratic polynomial on {0,1}^n; a graph-cut objective is one exact finite instance.",
+      "A frontier state in dynamic programming is sufficient only when its signature retains all information connecting processed choices to future feasibility and cost."
+    ],
+    "theorem": {
+      "statement": "For fixed data, total scatter T equals within-cluster scatter W plus between-cluster scatter B. Therefore maximizing aB−bW with a,b≥0 and a+b>0 is equivalent to minimizing W over the same partitions. Separately, if a frontier signature determines every future interaction, retaining only the cheapest prefix per signature preserves the global optimum.",
+      "proof": "For the scatter identity, insert x_i−μ=(x_i−μ_{c(i)})+(μ_{c(i)}−μ). Cross terms vanish within each cluster because Σ_{i∈c}(x_i−μ_c)=0. Hence T=W+B and aB−bW=aT−(a+b)W, differing from −W only by a positive scale and constant. For frontier compression, take two partial solutions with the same sufficient signature. Every legal completion contributes the same added cost and has the same feasibility for both; replacing the dearer prefix with the cheaper one can only improve the total. Induct over processed layers. The proof requires equality of continuation behavior, not merely equality of the currently best continuation or the present objective value."
+    },
+    "worked_example": {
+      "setup": "Use the triangle maximum-cut problem and a two-state repeated-layer transfer. Also consider minimization of two costs at feasible points A=(0,2), B=(1,3/2), C=(2,0).",
+      "calculation": "The triangle has eight binary labelings: the two constant ones cut zero edges and all six nonconstant ones cut two, proving optimum two by enumeration. In min-plus algebra, M=[[∞,2],[3,∞]] has M⊗M=5I_minplus. Thus with initial costs (0,∞), the minimum terminal sequence is 0,2,5,7,10,… and d_{L+2}=d_L+5. In the Pareto fixture all three points are nondominated. For positive weights α,β, choosing B over A requires α≤β/2, while choosing B over C requires α≥3β/2, impossible. The middle Pareto point cannot be reached by a positive linear selector.",
+      "meaning": "The scatter identity shows how a proposed extra criterion can collapse algebraically; the Pareto example shows how a single scalarization can omit legitimate tradeoffs; the transfer identity shows how finite search can be compressed without losing its optimum. Together they support a stronger design practice: simplify the objective symbolically, preserve deployment constraints, and certify both the search reduction and the final feasible candidate."
+    },
+    "source_uids": [
+      "2024:Y24-04-001",
+      "2024:Y24-04-002",
+      "2025:Y25-02-003",
+      "2025:Y25-03-004",
+      "2025:Y25-10-019",
+      "2026:Y26-08-801",
+      "2026:Y26-08-805",
+      "2026:Y26-08-803",
+      "2026:Y26-08-806"
+    ],
+    "anchor_uids": [
+      "2024:Y24-04-001",
+      "2024:Y24-04-002",
+      "2025:Y25-02-003",
+      "2025:Y25-03-004",
+      "2025:Y25-10-019",
+      "2026:Y26-08-801",
+      "2026:Y26-08-805",
+      "2026:Y26-08-803"
+    ],
+    "progression": [
+      {
+        "year": 2024,
+        "evidence_uids": [
+          "2024:Y24-04-001",
+          "2024:Y24-04-002"
+        ],
+        "narrative": "Dated topic continuity is evidenced by Specify the clustering objective before adding weights; Spatial coherence gives an exact cut-versus-fit threshold. The theorem and worked synthesis here are newly authored; this date does not attribute the present proof or an unobserved discovery to that exchange."
+      },
+      {
+        "year": 2025,
+        "evidence_uids": [
+          "2025:Y25-02-003",
+          "2025:Y25-03-004",
+          "2025:Y25-10-019"
+        ],
+        "narrative": "Dated topic continuity is evidenced by Weighted scores and capacity quotas need different constraints; A QUBO and a one-edge QAOA instance can be solved exactly. The theorem and worked synthesis here are newly authored; this date does not attribute the present proof or an unobserved discovery to that exchange."
+      },
+      {
+        "year": 2026,
+        "evidence_uids": [
+          "2026:Y26-08-801",
+          "2026:Y26-08-805",
+          "2026:Y26-08-803",
+          "2026:Y26-08-806"
+        ],
+        "narrative": "Dated topic continuity is evidenced by Semantic fibers enlarge the feasible optimum only when deployment constraints are preserved; A frontier state supports exact min-plus transfer when it separates past from future. The theorem and worked synthesis here are newly authored; this date does not attribute the present proof or an unobserved discovery to that exchange."
+      }
+    ],
+    "connections": [
+      {
+        "target_domain": "D13",
+        "relation": "Finite enumeration",
+        "mathematical_bridge": "Binary labels, graph cuts and frontier signatures give exact finite search spaces.",
+        "scope": "Enumeration proves only the declared finite instance."
+      },
+      {
+        "target_domain": "D14",
+        "relation": "Continuation semantics",
+        "mathematical_bridge": "Safe merging is a quotient preserving all relevant future costs.",
+        "scope": "A current optimum is insufficient to define a stable quotient."
+      },
+      {
+        "target_domain": "D11",
+        "relation": "Selection and measurement",
+        "mathematical_bridge": "Abstract optimum gap, search error, model error and measurement error are separate quantities.",
+        "scope": "No runtime or generalization claim follows from a smaller state count alone."
+      }
+    ],
+    "capabilities": [
+      "C01",
+      "C02",
+      "C03",
+      "C04",
+      "C06",
+      "C15"
+    ],
+    "interactive_contract": {
+      "lab_ids": [
+        "L02",
+        "L03"
+      ],
+      "inputs": "L02 varies budget and requested rank for six fixed items. L03 varies total nonnegative integer height 0–6 and q in [0,1] for two fixed seven-vertex graphs.",
+      "outputs": "L02 returns exhaustive feasible counts, the exact finite optimum and its masks, and a ranked subset. L03 returns exact integer energy censuses and a floating evaluation of their difference. Pareto optimization, QUBO, min-plus transfer and automatic frontier compression remain recipes.",
+      "validation": "The domain verify.py independently checks representative finite identities and numerical formulas. No historical program, empirical dataset, or out-of-sample claim is replayed.",
+      "status": "The fixed knapsack and graph-census labs are implemented; no general search, dynamic-programming or Pareto solver is exposed."
+    },
+    "limits": "The exact examples do not replay absent historical placement tables, graph instances or runtime benchmarks. A sufficient separator may need auxiliary connectivity state, and algebraic compression preserves only its stated future predicate. A quantum circuit formula for one edge is a finite calculation, not an asymptotic algorithmic advantage. Nonlinear objectives or changed deployment constraints require a new feasible-set argument.",
+    "open_questions": [
+      "For a supplied search system, prove that its frontier signature separates past and future, or exhibit a minimal counterexample.",
+      "Enumerate a finite Pareto set and compare which members can be selected by linear, constrained and nonlinear preferences."
+    ],
+    "references": [
+      {
+        "label": "Boyd and Vandenberghe Convex Optimization",
+        "url": "https://web.stanford.edu/~boyd/cvxbook/"
+      },
+      {
+        "label": "Farhi–Goldstone–Gutmann, A quantum approximate optimization algorithm",
+        "url": "https://arxiv.org/abs/1411.4028"
+      },
+      {
+        "label": "Bodlaender, Cygan, Kratsch and Nederlof, Solving weighted and counting variants of connectivity problems parameterized by treewidth deterministically in single exponential time",
+        "url": "https://arxiv.org/abs/1211.1505"
+      }
+    ]
+  },
+  {
+    "id": "D12-F04",
+    "domain_id": "D12",
+    "title": "Shared uncertainty, robust margins and decision-sufficient measurement",
+    "central_question": "What must be measured to certify the decision, rather than reconstruct every uncertain score?",
+    "synopsis": "The final decision strand ties the archive together especially well. Earlier finite thresholds, singular covariance optimization, normalized residual margins and later target-observation questions lead to a precise endpoint: compare the competing actions under the same compatible state. Independent score intervals can erase cancellation and make an easy decision look unresolved. A decision difference may depend on only a small part of a high-dimensional uncertainty set. The best experiment can therefore be one that resolves the sign of that difference, even if it leaves most of the system unknown. This is a mathematical design principle with deterministic quantifiers, distinct from a posterior preference or an empirical forecast.",
+    "definitions": [
+      "Let X be a nonempty uncertainty set and J_A,J_B:X→R be scores, with larger preferred; δ(x)=J_A(x)−J_B(x).",
+      "A strict robust certificate is a proved m>0 with δ(x)≥m for every x∈X; the infimum need not be attained.",
+      "A bounded-error measurement h(x)≈z restricts compatibility to X_z={x∈X:|h(x)−z|≤ε}.",
+      "A decision-sufficient finite test makes each nonempty outcome fibre certify one action. Its objective may be worst-case cost rather than expected estimation error."
+    ],
+    "theorem": {
+      "statement": "Joint comparison satisfies inf_X(J_A−J_B)≥inf_XJ_A−sup_XJ_B, often strictly. Restricting to a measurement fibre cannot decrease the lower margin for A. In the shared model J_A=c+d, J_B=c, c∈[0,100], d∈[7/4,9/4], the exact robust A-margin is 7/4 although subtraction of separate score intervals yields lower bound −393/4.",
+      "proof": "For every x, J_A(x)≥inf J_A and J_B(x)≤sup J_B, so subtraction and then infimization prove the inequality. Separate extrema may occur at incompatible x, explaining strictness. If X_z⊆X, every lower bound valid on X remains valid on X_z. In the shared example δ=d because the common c cancels before minimization. The independent ranges are J_A∈[7/4,409/4] and J_B∈[0,100], whose separate lower difference is 7/4−100=−393/4. The distinction is about preserving the same state in both scores. In a finite test tree, a recurrence V(S)=min_t[c_t+max_oV(S∩t^{-1}(o))], with V=0 on decision-certified states, computes the cheapest guaranteed procedure when the admissible tests and stopping certificates are fixed and a terminating strategy exists."
+    },
+    "worked_example": {
+      "setup": "The L08 worked model uses a common nuisance score and an interval for the decision difference. A second fixture measures d with absolute error at most 1/10.",
+      "calculation": "For c∈[0,100] and d∈[7/4,9/4], every compatible state prefers A with margin at least 1.75, regardless of nuisance width. Changing c's range changes the separate-score bound but leaves the joint margin unchanged. A measurement z=1/4 implies d≥z−1/10=3/20>0, certifying A. A result z=1/20 yields d∈[−1/20,3/20], which certifies neither direction. With affine δ=aᵀx+b on a box, its exact lower bound is b+Σ_j min(a_jl_j,a_ju_j); shared-variable simplification should precede this bound.",
+      "meaning": "This creates a bridge from information to action: the required observation need distinguish states only when they demand different actions. Reconstructing nuisance coordinates can be unnecessary. Conversely a confident score estimate without a defensible compatibility set cannot become a robust theorem. L08 exposes the common-variable cancellation directly; arbitrary semialgebraic positivity and automatic measurement-tree synthesis remain specified extensions. L08 centers the nuisance interval as [−C,C]; C=50 gives the same width and independent lower bound as [0,100], with both scores translated by −50. It does not implement the bounded-error measurement or test-tree extensions."
+    },
+    "source_uids": [
+      "2026:Y26-10-023",
+      "2026:Y26-01-033",
+      "2023:M055",
+      "2023:M056",
+      "2026:Y26-09-022",
+      "2026:Y26-08-007",
+      "2026:Y26-08-801"
+    ],
+    "anchor_uids": [
+      "2026:Y26-10-023",
+      "2026:Y26-01-033",
+      "2023:M055",
+      "2023:M056",
+      "2026:Y26-09-022",
+      "2026:Y26-08-007",
+      "2026:Y26-08-801"
+    ],
+    "progression": [
+      {
+        "year": 2023,
+        "evidence_uids": [
+          "2023:M055",
+          "2023:M056"
+        ],
+        "narrative": "Dated topic continuity is evidenced by Decision thresholds and genuine strategic equilibria; Infinite utilities through controlled finite limits. The theorem and worked synthesis here are newly authored; this date does not attribute the present proof or an unobserved discovery to that exchange."
+      },
+      {
+        "year": 2026,
+        "evidence_uids": [
+          "2026:Y26-10-023",
+          "2026:Y26-01-033",
+          "2026:Y26-09-022",
+          "2026:Y26-08-007",
+          "2026:Y26-08-801"
+        ],
+        "narrative": "Dated topic continuity is evidenced by Shared uncertainty should be optimized jointly in a decision difference; A normalized maximum residual gives a robust acceptance margin. The theorem and worked synthesis here are newly authored; this date does not attribute the present proof or an unobserved discovery to that exchange."
+      }
+    ],
+    "connections": [
+      {
+        "target_domain": "D11",
+        "relation": "Information sufficient for action",
+        "mathematical_bridge": "Observation fibres need preserve the sign of δ, a weaker requirement than reconstructing the whole state.",
+        "scope": "A Bayes risk uses a distribution; robust certification quantifies over X."
+      },
+      {
+        "target_domain": "D15",
+        "relation": "Target observability",
+        "mathematical_bridge": "A decision target can be observable even when the physical state is not.",
+        "scope": "The admissible state set and measurement error must be stated."
+      },
+      {
+        "target_domain": "D14",
+        "relation": "Optimal experiment trees",
+        "mathematical_bridge": "Finite Bellman recursion compares test cost against the resulting compatible-state fibres.",
+        "scope": "This requires declared finite tests and termination; no general test planner is implemented."
+      }
+    ],
+    "capabilities": [
+      "C01",
+      "C03",
+      "C05",
+      "C06",
+      "C12",
+      "C14"
+    ],
+    "interactive_contract": {
+      "lab_ids": [
+        "L08"
+      ],
+      "inputs": "Current L08 UI: C∈[0,30] with integer steps, lo,hi∈[−5,5] with decimal step .1; reversed endpoints are ordered. The nuisance is c∈[−C,C]. The source text separately uses c∈[0,100], whose common translation leaves the decision difference unchanged.",
+      "outputs": "Decimal score intervals A=[−C+lo,C+hi], B=[−C,C], interval overlap and strict robust preference flags from lo>0 or hi<0. The algebraic formulas are exact; their displayed evaluation uses floating arithmetic. No measurement-error fibre, positivity solver or test tree is implemented.",
+      "validation": "The domain verify.py independently checks representative finite identities and numerical formulas. No historical program, empirical dataset, or out-of-sample claim is replayed.",
+      "status": "The specified additive shared-variable comparison is implemented in L08. Measurement and decision-tree extensions remain mathematical recipes."
+    },
+    "limits": "An uncertainty set inferred from data needs its own coverage justification. A posterior credible set and a uniform deterministic error bound are different inputs. Infinite utilities require a controlled limiting model; even a common limiting prior may produce different preferences if utility scales simultaneously. A strict sign certificate differs from a numerical optimizer returning a small positive value. These examples concern abstract scores and carry no empirical or financial-performance claim.",
+    "open_questions": [
+      "Produce an exact positivity certificate for a supplied rational or polynomial δ on a compact semialgebraic set.",
+      "Given a finite family of bounded-error tests with costs, solve and certify the cheapest terminating decision tree."
+    ],
+    "references": [
+      {
+        "label": "Boyd and Vandenberghe: convex optimization",
+        "url": "https://web.stanford.edu/~boyd/cvxbook/"
+      },
+      {
+        "label": "John Nash Equilibrium points in n-person games",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC1063129/"
+      },
+      {
+        "label": "Williams Probability with Martingales, conditional expectation",
+        "url": "https://doi.org/10.1017/CBO9780511813658"
+      }
+    ]
+  }
+]

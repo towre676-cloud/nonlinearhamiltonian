@@ -1,0 +1,687 @@
+{
+  "status": "passed",
+  "stdlib_only": true,
+  "checks": [
+    {
+      "name": "Formal balanced S3 factorization",
+      "status": "passed",
+      "details": null
+    },
+    {
+      "name": "Formal balanced S5 factorization",
+      "status": "passed",
+      "details": null
+    },
+    {
+      "name": "Formal balanced elimination certificate",
+      "status": "passed",
+      "details": null
+    },
+    {
+      "name": "Formal ordinary-power obstruction",
+      "status": "passed",
+      "details": null
+    },
+    {
+      "name": "Correct even-line nonzero constant certificate",
+      "status": "passed",
+      "details": null
+    },
+    {
+      "name": "Highest correction formal identity 2,2",
+      "status": "passed",
+      "details": null
+    },
+    {
+      "name": "Highest correction formal identity 2,3",
+      "status": "passed",
+      "details": null
+    },
+    {
+      "name": "Highest correction formal identity 2,4",
+      "status": "passed",
+      "details": null
+    },
+    {
+      "name": "Highest correction formal identity 2,5",
+      "status": "passed",
+      "details": null
+    },
+    {
+      "name": "Highest correction formal identity 2,6",
+      "status": "passed",
+      "details": null
+    },
+    {
+      "name": "Highest correction formal identity 2,7",
+      "status": "passed",
+      "details": null
+    },
+    {
+      "name": "Highest correction formal identity 2,8",
+      "status": "passed",
+      "details": null
+    },
+    {
+      "name": "Highest correction formal identity 2,9",
+      "status": "passed",
+      "details": null
+    },
+    {
+      "name": "Highest correction formal identity 2,10",
+      "status": "passed",
+      "details": null
+    },
+    {
+      "name": "Highest correction formal identity 2,11",
+      "status": "passed",
+      "details": null
+    },
+    {
+      "name": "Highest correction formal identity 2,12",
+      "status": "passed",
+      "details": null
+    },
+    {
+      "name": "Highest correction formal identity 3,2",
+      "status": "passed",
+      "details": null
+    },
+    {
+      "name": "Highest correction formal identity 3,3",
+      "status": "passed",
+      "details": null
+    },
+    {
+      "name": "Highest correction formal identity 3,4",
+      "status": "passed",
+      "details": null
+    },
+    {
+      "name": "Highest correction formal identity 3,5",
+      "status": "passed",
+      "details": null
+    },
+    {
+      "name": "Highest correction formal identity 3,6",
+      "status": "passed",
+      "details": null
+    },
+    {
+      "name": "Highest correction formal identity 3,7",
+      "status": "passed",
+      "details": null
+    },
+    {
+      "name": "Highest correction formal identity 3,8",
+      "status": "passed",
+      "details": null
+    },
+    {
+      "name": "Highest correction formal identity 3,9",
+      "status": "passed",
+      "details": null
+    },
+    {
+      "name": "Highest correction formal identity 3,10",
+      "status": "passed",
+      "details": null
+    },
+    {
+      "name": "Highest correction formal identity 3,11",
+      "status": "passed",
+      "details": null
+    },
+    {
+      "name": "Highest correction formal identity 3,12",
+      "status": "passed",
+      "details": null
+    },
+    {
+      "name": "Highest correction formal identity 4,2",
+      "status": "passed",
+      "details": null
+    },
+    {
+      "name": "Highest correction formal identity 4,3",
+      "status": "passed",
+      "details": null
+    },
+    {
+      "name": "Highest correction formal identity 4,4",
+      "status": "passed",
+      "details": null
+    },
+    {
+      "name": "Highest correction formal identity 4,5",
+      "status": "passed",
+      "details": null
+    },
+    {
+      "name": "Highest correction formal identity 4,6",
+      "status": "passed",
+      "details": null
+    },
+    {
+      "name": "Highest correction formal identity 4,7",
+      "status": "passed",
+      "details": null
+    },
+    {
+      "name": "Highest correction formal identity 4,8",
+      "status": "passed",
+      "details": null
+    },
+    {
+      "name": "Highest correction formal identity 4,9",
+      "status": "passed",
+      "details": null
+    },
+    {
+      "name": "Highest correction formal identity 4,10",
+      "status": "passed",
+      "details": null
+    },
+    {
+      "name": "Highest correction formal identity 4,11",
+      "status": "passed",
+      "details": null
+    },
+    {
+      "name": "Highest correction formal identity 4,12",
+      "status": "passed",
+      "details": null
+    },
+    {
+      "name": "Highest correction formal identity 5,2",
+      "status": "passed",
+      "details": null
+    },
+    {
+      "name": "Highest correction formal identity 5,3",
+      "status": "passed",
+      "details": null
+    },
+    {
+      "name": "Highest correction formal identity 5,4",
+      "status": "passed",
+      "details": null
+    },
+    {
+      "name": "Highest correction formal identity 5,5",
+      "status": "passed",
+      "details": null
+    },
+    {
+      "name": "Highest correction formal identity 5,6",
+      "status": "passed",
+      "details": null
+    },
+    {
+      "name": "Highest correction formal identity 5,7",
+      "status": "passed",
+      "details": null
+    },
+    {
+      "name": "Highest correction formal identity 5,8",
+      "status": "passed",
+      "details": null
+    },
+    {
+      "name": "Highest correction formal identity 5,9",
+      "status": "passed",
+      "details": null
+    },
+    {
+      "name": "Highest correction formal identity 5,10",
+      "status": "passed",
+      "details": null
+    },
+    {
+      "name": "Highest correction formal identity 5,11",
+      "status": "passed",
+      "details": null
+    },
+    {
+      "name": "Highest correction formal identity 5,12",
+      "status": "passed",
+      "details": null
+    },
+    {
+      "name": "Highest correction formal identity 6,2",
+      "status": "passed",
+      "details": null
+    },
+    {
+      "name": "Highest correction formal identity 6,3",
+      "status": "passed",
+      "details": null
+    },
+    {
+      "name": "Highest correction formal identity 6,4",
+      "status": "passed",
+      "details": null
+    },
+    {
+      "name": "Highest correction formal identity 6,5",
+      "status": "passed",
+      "details": null
+    },
+    {
+      "name": "Highest correction formal identity 6,6",
+      "status": "passed",
+      "details": null
+    },
+    {
+      "name": "Highest correction formal identity 6,7",
+      "status": "passed",
+      "details": null
+    },
+    {
+      "name": "Highest correction formal identity 6,8",
+      "status": "passed",
+      "details": null
+    },
+    {
+      "name": "Highest correction formal identity 6,9",
+      "status": "passed",
+      "details": null
+    },
+    {
+      "name": "Highest correction formal identity 6,10",
+      "status": "passed",
+      "details": null
+    },
+    {
+      "name": "Highest correction formal identity 6,11",
+      "status": "passed",
+      "details": null
+    },
+    {
+      "name": "Highest correction formal identity 6,12",
+      "status": "passed",
+      "details": null
+    },
+    {
+      "name": "Highest correction formal identity 7,2",
+      "status": "passed",
+      "details": null
+    },
+    {
+      "name": "Highest correction formal identity 7,3",
+      "status": "passed",
+      "details": null
+    },
+    {
+      "name": "Highest correction formal identity 7,4",
+      "status": "passed",
+      "details": null
+    },
+    {
+      "name": "Highest correction formal identity 7,5",
+      "status": "passed",
+      "details": null
+    },
+    {
+      "name": "Highest correction formal identity 7,6",
+      "status": "passed",
+      "details": null
+    },
+    {
+      "name": "Highest correction formal identity 7,7",
+      "status": "passed",
+      "details": null
+    },
+    {
+      "name": "Highest correction formal identity 7,8",
+      "status": "passed",
+      "details": null
+    },
+    {
+      "name": "Highest correction formal identity 7,9",
+      "status": "passed",
+      "details": null
+    },
+    {
+      "name": "Highest correction formal identity 7,10",
+      "status": "passed",
+      "details": null
+    },
+    {
+      "name": "Highest correction formal identity 7,11",
+      "status": "passed",
+      "details": null
+    },
+    {
+      "name": "Highest correction formal identity 7,12",
+      "status": "passed",
+      "details": null
+    },
+    {
+      "name": "Highest correction formal identity 8,2",
+      "status": "passed",
+      "details": null
+    },
+    {
+      "name": "Highest correction formal identity 8,3",
+      "status": "passed",
+      "details": null
+    },
+    {
+      "name": "Highest correction formal identity 8,4",
+      "status": "passed",
+      "details": null
+    },
+    {
+      "name": "Highest correction formal identity 8,5",
+      "status": "passed",
+      "details": null
+    },
+    {
+      "name": "Highest correction formal identity 8,6",
+      "status": "passed",
+      "details": null
+    },
+    {
+      "name": "Highest correction formal identity 8,7",
+      "status": "passed",
+      "details": null
+    },
+    {
+      "name": "Highest correction formal identity 8,8",
+      "status": "passed",
+      "details": null
+    },
+    {
+      "name": "Highest correction formal identity 8,9",
+      "status": "passed",
+      "details": null
+    },
+    {
+      "name": "Highest correction formal identity 8,10",
+      "status": "passed",
+      "details": null
+    },
+    {
+      "name": "Highest correction formal identity 8,11",
+      "status": "passed",
+      "details": null
+    },
+    {
+      "name": "Highest correction formal identity 8,12",
+      "status": "passed",
+      "details": null
+    },
+    {
+      "name": "Highest correction formal identity 9,2",
+      "status": "passed",
+      "details": null
+    },
+    {
+      "name": "Highest correction formal identity 9,3",
+      "status": "passed",
+      "details": null
+    },
+    {
+      "name": "Highest correction formal identity 9,4",
+      "status": "passed",
+      "details": null
+    },
+    {
+      "name": "Highest correction formal identity 9,5",
+      "status": "passed",
+      "details": null
+    },
+    {
+      "name": "Highest correction formal identity 9,6",
+      "status": "passed",
+      "details": null
+    },
+    {
+      "name": "Highest correction formal identity 9,7",
+      "status": "passed",
+      "details": null
+    },
+    {
+      "name": "Highest correction formal identity 9,8",
+      "status": "passed",
+      "details": null
+    },
+    {
+      "name": "Highest correction formal identity 9,9",
+      "status": "passed",
+      "details": null
+    },
+    {
+      "name": "Highest correction formal identity 9,10",
+      "status": "passed",
+      "details": null
+    },
+    {
+      "name": "Highest correction formal identity 9,11",
+      "status": "passed",
+      "details": null
+    },
+    {
+      "name": "Highest correction formal identity 9,12",
+      "status": "passed",
+      "details": null
+    },
+    {
+      "name": "Highest correction formal identity 10,2",
+      "status": "passed",
+      "details": null
+    },
+    {
+      "name": "Highest correction formal identity 10,3",
+      "status": "passed",
+      "details": null
+    },
+    {
+      "name": "Highest correction formal identity 10,4",
+      "status": "passed",
+      "details": null
+    },
+    {
+      "name": "Highest correction formal identity 10,5",
+      "status": "passed",
+      "details": null
+    },
+    {
+      "name": "Highest correction formal identity 10,6",
+      "status": "passed",
+      "details": null
+    },
+    {
+      "name": "Highest correction formal identity 10,7",
+      "status": "passed",
+      "details": null
+    },
+    {
+      "name": "Highest correction formal identity 10,8",
+      "status": "passed",
+      "details": null
+    },
+    {
+      "name": "Highest correction formal identity 10,9",
+      "status": "passed",
+      "details": null
+    },
+    {
+      "name": "Highest correction formal identity 10,10",
+      "status": "passed",
+      "details": null
+    },
+    {
+      "name": "Highest correction formal identity 10,11",
+      "status": "passed",
+      "details": null
+    },
+    {
+      "name": "Highest correction formal identity 10,12",
+      "status": "passed",
+      "details": null
+    },
+    {
+      "name": "Highest correction formal identity 11,2",
+      "status": "passed",
+      "details": null
+    },
+    {
+      "name": "Highest correction formal identity 11,3",
+      "status": "passed",
+      "details": null
+    },
+    {
+      "name": "Highest correction formal identity 11,4",
+      "status": "passed",
+      "details": null
+    },
+    {
+      "name": "Highest correction formal identity 11,5",
+      "status": "passed",
+      "details": null
+    },
+    {
+      "name": "Highest correction formal identity 11,6",
+      "status": "passed",
+      "details": null
+    },
+    {
+      "name": "Highest correction formal identity 11,7",
+      "status": "passed",
+      "details": null
+    },
+    {
+      "name": "Highest correction formal identity 11,8",
+      "status": "passed",
+      "details": null
+    },
+    {
+      "name": "Highest correction formal identity 11,9",
+      "status": "passed",
+      "details": null
+    },
+    {
+      "name": "Highest correction formal identity 11,10",
+      "status": "passed",
+      "details": null
+    },
+    {
+      "name": "Highest correction formal identity 11,11",
+      "status": "passed",
+      "details": null
+    },
+    {
+      "name": "Highest correction formal identity 11,12",
+      "status": "passed",
+      "details": null
+    },
+    {
+      "name": "Highest correction formal identity 12,2",
+      "status": "passed",
+      "details": null
+    },
+    {
+      "name": "Highest correction formal identity 12,3",
+      "status": "passed",
+      "details": null
+    },
+    {
+      "name": "Highest correction formal identity 12,4",
+      "status": "passed",
+      "details": null
+    },
+    {
+      "name": "Highest correction formal identity 12,5",
+      "status": "passed",
+      "details": null
+    },
+    {
+      "name": "Highest correction formal identity 12,6",
+      "status": "passed",
+      "details": null
+    },
+    {
+      "name": "Highest correction formal identity 12,7",
+      "status": "passed",
+      "details": null
+    },
+    {
+      "name": "Highest correction formal identity 12,8",
+      "status": "passed",
+      "details": null
+    },
+    {
+      "name": "Highest correction formal identity 12,9",
+      "status": "passed",
+      "details": null
+    },
+    {
+      "name": "Highest correction formal identity 12,10",
+      "status": "passed",
+      "details": null
+    },
+    {
+      "name": "Highest correction formal identity 12,11",
+      "status": "passed",
+      "details": null
+    },
+    {
+      "name": "Highest correction formal identity 12,12",
+      "status": "passed",
+      "details": null
+    },
+    {
+      "name": "Balanced theorem defining-sum grid",
+      "status": "passed",
+      "details": {
+        "cases": 75615,
+        "m": [
+          2,
+          16
+        ],
+        "partner_exponents": [
+          0,
+          70
+        ],
+        "scope": "regression; universal proof in proofs.md"
+      }
+    },
+    {
+      "name": "All 55 complete unequal classifications and swapped symmetry",
+      "status": "passed",
+      "details": {
+        "hamiltonians": 55,
+        "defining_sum_grid_cases": 204655,
+        "partner_exponents": [
+          0,
+          60
+        ],
+        "classification_scope": "all partner degrees via top-order/cubic theorem"
+      }
+    },
+    {
+      "name": "Sextic exceptional degree twelve partners",
+      "status": "passed",
+      "details": null
+    },
+    {
+      "name": "Quintic exceptional partner",
+      "status": "passed",
+      "details": null
+    },
+    {
+      "name": "Degree ten exceptional partner",
+      "status": "passed",
+      "details": null
+    },
+    {
+      "name": "Unequal noncommuting-power example",
+      "status": "passed",
+      "details": null
+    }
+  ],
+  "check_count": 132,
+  "scope": "formal polynomial certificates; complete cubic-root tables for 55 fixed Hamiltonians; bounded independent defining-sum regression grids; universal proofs in proofs.md"
+}

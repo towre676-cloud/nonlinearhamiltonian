@@ -1,0 +1,50 @@
+{
+  "status": "passed_with_cosmetic_notes",
+  "pdf_sha256": "d842d7e4d5db50a284ac8bceefd875c3bbfb260b9e11dd73c7acba7b4b811920",
+  "page_range": [
+    13,
+    24
+  ],
+  "contact_sheets_reviewed": [
+    "/workspace/scratch/724ab8464145/moyal_partner_research/tmp/visual/contact-013-024.jpg"
+  ],
+  "full_samples_reviewed": [
+    "/workspace/scratch/724ab8464145/moyal_partner_research/tmp/visual/full-013.png",
+    "/workspace/scratch/724ab8464145/moyal_partner_research/tmp/visual/full-016.png",
+    "/workspace/scratch/724ab8464145/moyal_partner_research/tmp/visual/full-018.png",
+    "/workspace/scratch/724ab8464145/moyal_partner_research/tmp/visual/full-021.png",
+    "/workspace/scratch/724ab8464145/moyal_partner_research/tmp/visual/full-024.png"
+  ],
+  "blocking_issues": [],
+  "cosmetic_notes": [
+    {
+      "pages": [
+        16,
+        22,
+        24
+      ],
+      "issue": "Sparse appendix-ending pages before forced section starts; page24 contains only a short closing Hilbert-series paragraph. Could compact or allow the next appendix to follow on the same page if desired."
+    },
+    {
+      "pages": [
+        17,
+        18,
+        19,
+        20,
+        21,
+        23,
+        24
+      ],
+      "issue": "Appendix source formulas retain plain caret/underscore notation. They remain legible and within margins, but selected long identities would read more smoothly as display mathematics."
+    }
+  ],
+  "checks": [
+    "All12 pages inspected on contact sheet",
+    "Fivefullpages inspected at readable scale",
+    "No formula overflow or clipping",
+    "No text/footer overlap",
+    "No missing glyphboxes observed",
+    "Hierarchy and section titles clear",
+    "Dense appendix notation remains readable within margins"
+  ]
+}

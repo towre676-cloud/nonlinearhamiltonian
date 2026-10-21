@@ -1,0 +1,80 @@
+{
+  "scope": "Final visual QA of report pages169–249 using every assigned contact sheet and all five full-page samples.",
+  "pdf_sha256_reviewed": "4b255bc807380a2900c3d311bc58327265d215448a0a1557f72629674710878b",
+  "pages": {
+    "start": 169,
+    "end": 249,
+    "count": 81
+  },
+  "sheets": [
+    {
+      "path": "/workspace/scratch/724ab8464145/mathematics_atlas_2023_2026/tmp/visual/contact-169-180.jpg",
+      "status": "inspected_no_layout_defect"
+    },
+    {
+      "path": "/workspace/scratch/724ab8464145/mathematics_atlas_2023_2026/tmp/visual/contact-181-192.jpg",
+      "status": "inspected_no_layout_defect"
+    },
+    {
+      "path": "/workspace/scratch/724ab8464145/mathematics_atlas_2023_2026/tmp/visual/contact-193-204.jpg",
+      "status": "inspected_no_layout_defect"
+    },
+    {
+      "path": "/workspace/scratch/724ab8464145/mathematics_atlas_2023_2026/tmp/visual/contact-205-216.jpg",
+      "status": "inspected_no_layout_defect"
+    },
+    {
+      "path": "/workspace/scratch/724ab8464145/mathematics_atlas_2023_2026/tmp/visual/contact-217-228.jpg",
+      "status": "inspected_no_layout_defect"
+    },
+    {
+      "path": "/workspace/scratch/724ab8464145/mathematics_atlas_2023_2026/tmp/visual/contact-229-240.jpg",
+      "status": "inspected_no_layout_defect"
+    },
+    {
+      "path": "/workspace/scratch/724ab8464145/mathematics_atlas_2023_2026/tmp/visual/contact-241-249.jpg",
+      "status": "inspected_no_layout_defect"
+    }
+  ],
+  "samples": [
+    {
+      "path": "/workspace/scratch/724ab8464145/mathematics_atlas_2023_2026/tmp/visual/full-169.png",
+      "status": "inspected_legible_no_clipping_or_overlap"
+    },
+    {
+      "path": "/workspace/scratch/724ab8464145/mathematics_atlas_2023_2026/tmp/visual/full-172.png",
+      "status": "inspected_legible_no_clipping_or_overlap"
+    },
+    {
+      "path": "/workspace/scratch/724ab8464145/mathematics_atlas_2023_2026/tmp/visual/full-209.png",
+      "status": "inspected_legible_no_clipping_or_overlap"
+    },
+    {
+      "path": "/workspace/scratch/724ab8464145/mathematics_atlas_2023_2026/tmp/visual/full-246.png",
+      "status": "inspected_legible_no_clipping_or_overlap"
+    },
+    {
+      "path": "/workspace/scratch/724ab8464145/mathematics_atlas_2023_2026/tmp/visual/full-249.png",
+      "status": "inspected_legible_no_clipping_or_overlap"
+    }
+  ],
+  "status": "pass",
+  "findings": {
+    "hierarchy": "Domain and family titles, central questions, bold proof/example headings and index/table headings are consistent.",
+    "clipping": "No clipping, table overflow, text overlap or footer collisions observed.",
+    "glyphs": "Full samples show mathematical and Greek symbols without missing-glyph boxes; linear math remains legible.",
+    "source_index": "Index rows wrap within columns, repeated headers are aligned, missing dates read Date unavailable, and the additional 2023 annual-synthesis table is visibly distinct.",
+    "blanks": "No unintended blank pages. Closing reproducibility page is intentionally sparse. L10 now fits as a complete block on page199."
+  },
+  "issues": [],
+  "resolved_previous_issues": [
+    {
+      "description": "Literal None dates replaced by Date unavailable.",
+      "status": "resolved"
+    },
+    {
+      "description": "L10 Limits orphan removed; complete L10 block remains with its inputs and limits on page199.",
+      "status": "resolved"
+    }
+  ]
+}

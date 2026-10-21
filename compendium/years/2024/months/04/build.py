@@ -1,0 +1,392 @@
+from pathlib import Path
+import json
+HERE=Path(__file__).resolve().parent
+entries=[]
+def put(n,title,date,field,excerpt,receipt,question,maths,finish,defs,statement,proof,setup,calculation,conclusion,limits,extension,refs):
+ entries.append(dict(id=f'Y24-04-{n:03d}',title=title,status='Corrected formulation or classical result with an explicit worked example',summary=question,definitions=defs,result=dict(name=title,statement=statement,proof=proof),example=dict(setup=setup,calculation=calculation,conclusion=conclusion),limits=limits,extension=extension,references=[dict(label=a,url=b) for a,b in refs],original=dict(date=date,month='2024-04',evidence='A',field=field,concept=title,origin=excerpt,question=question,math=maths,finish=finish,kind='Developed mathematical treatment',refs=[],source_excerpt=excerpt,retrieval_receipt=receipt,original_question=None,attribution_note='Only an assistant-attributed historical retrieval fragment is available. The revised question and all worked development are newly authored. Missing original user wording and unavailable formulas are not reconstructed.')))
+CL='[c10] A@2024-04-04T22:04:27Z: weighted intercluster/intracluster/coherence/synchronization objective; α||C||₁+β||M||₂; C_new=C_old+η(x_new−C_old); kernels, PCA, Bayesian uncertainty, fusion and transfer learning.'
+DYN='[c1] A@2024-04-20T19:09:16Z: Hamilton; SIR; Lotka–Volterra; logistic map; Lorenz; Rössler; Van der Pol; FitzHugh–Nagumo; Brusselator; Gray–Scott; Kuramoto; Ginzburg–Landau; Cahn–Hilliard; Swift–Hohenberg.'
+LAND='[c3] A@2024-04-20T21:09:25Z: LSI=0.25Σp_i/√A; PAR=P/A; proposed fractal dimension D=2logP/logA; LDI=1−Σ(a_i/A)².'
+TOP='[c4] A@2024-04-20T00:28:59Z: spectral-sequence expression E²_pq=H_p(X;H_q(Y)); sheaf F(U); GeneExpression=f(...); elasticity τ=με.'
+CVX=('Boyd and Vandenberghe Convex Optimization','https://web.stanford.edu/~boyd/cvxbook/')
+PROX=('Parikh and Boyd Proximal Algorithms','https://web.stanford.edu/~boyd/papers/prox_algs.html')
+
+put(1,'Specify the clustering objective before adding weights','2024-04-04','Optimization',CL,'root_receipts.json#0',
+ 'Which definitions of between-cluster separation and within-cluster scatter actually create independent objectives?',
+ 'For squared Euclidean data, total scatter T equals within scatter W plus between scatter B. Consequently maximizing aB−bW is equivalent to minimizing (a+b)W when T is fixed.',
+ 'Derive the identity, test it on a finite dataset and identify which additional coherence terms can change the optimum.',
+ ['A partition consists of nonempty clusters C_j, sizes n_j and centroids μ_j. The global centroid is μ.',
+  'Define W=Σ_jΣ_{i∈C_j}||x_i−μ_j||², B=Σ_jn_j||μ_j−μ||² and T=Σ_i||x_i−μ||².',
+  'These definitions apply to a fixed dataset and fixed Euclidean metric. An objective also needs a direction of optimization, admissible partitions and explicit weights.'],
+ 'T=W+B. For nonnegative a,b with a+b>0, maximizing aB−bW over the same partitions gives exactly the minimizers of W. An added spatial or graph term can create a new tradeoff, but two copies of the same scatter information do not.',
+ 'Write x_i−μ=(x_i−μ_j)+(μ_j−μ) for i in cluster j. Expand its squared norm. The cross term sums to zero because Σ_{i∈C_j}(x_i−μ_j)=0. Summing proves the decomposition. Substituting B=T−W into aB−bW gives aT−(a+b)W. The first term is independent of the partition, which proves the optimizer statement, including all ties. This derivation prevents an apparently richer objective from concealing a redundant parameter. If cluster count is unrestricted, singleton clusters give W=0; a complexity penalty or fixed count is then necessary to obtain a meaningful grouping problem.',
+ 'Use four scalar observations 0,0,1,1 and compare two clusters {0,0},{1,1} with the crossed partition {0,1},{0,1}.',
+ 'The global mean is one half and T=1. The first partition has W=0,B=1; the crossed partition has W=1,B=0. With a=2,b=3, the scores are two and negative three, exactly aT−5W. Repeating the data coordinates with a changed scale changes T,W,B quadratically, so unrelated penalties must be scaled or normalized deliberately.',
+ 'The revised objective states what each term contributes and which weights are identifiable from the minimizers.',
+ 'The scatter identity does not apply unchanged to arbitrary definitions of pairwise separation, nonsquared distances or kernel similarities. A source label such as synchronization does not define a function until its variables and symmetry are supplied.',
+ 'For any proposed extra term R, exhibit two partitions with the same W but different R. Such a pair proves that R supplies information not already contained in Euclidean scatter. Otherwise simplify the objective before tuning its parameters.',[CVX])
+
+put(2,'Spatial coherence gives an exact cut-versus-fit threshold','2024-04-04','Graph optimization',CL,'root_receipts.json#0',
+ 'When does a spatial penalty improve a clustering model, and when does it erase a real boundary?',
+ 'For a stated adjacency graph, J=W+γ·cut counts fit error and neighboring label disagreements. Even four observations exhibit a sharp parameter threshold.',
+ 'Enumerate all two-label partitions of a four-vertex path and certify the complete minimizer transition.',
+ ['Take the path 1–2–3–4, scalar data (0,0,1,1), and partitions into at most two nonempty clusters.',
+  'W is within-cluster squared error using fitted centroids; cut is the number of path edges whose endpoints receive different labels.',
+  'Labels are immaterial: a binary labeling and its global complement encode the same partition. Use first label zero to enumerate eight cases exactly.'],
+ 'For γ≥0, the optimum is min(γ,1). The true split 00|11 is uniquely optimal as an unlabeled partition for γ<1; the one-cluster partition is uniquely optimal for γ>1; both tie at γ=1.',
+ 'The all-equal partition has cut zero and W=1. Every nonconstant labeling on a connected path has at least one cut and W≥0, so its objective is at least γ. The labeling (0,0,1,1) has one cut and W=0, attaining that lower bound. For γ<1 it beats the constant partition. Equality in the nonconstant lower bound requires W=0, so no cluster can mix a zero and a one. With at most two clusters this forces exactly the split by value. For γ>1, every nonconstant partition has objective at least γ>1. The same argument gives only the two stated optima at equality; exhaustive enumeration independently checks the finite certificate.',
+ 'Compare γ=1/2, γ=1 and γ=2 without refitting or rescaling the data.',
+ 'The split objectives are 1/2,1,2; the constant objective is always one. Thus increasing the spatial penalty crosses an exact boundary and eventually merges the two groups. Multiplying every observation by c multiplies W by c² but leaves cut unchanged, moving the threshold to γ=c².',
+ 'Spatial regularization is a tunable mathematical preference with a measurable failure mode. It is not an automatic improvement independent of units or data contrast.',
+ 'The proof uses this path, these observations and at most two clusters. More labels, normalized cuts, weighted edges or higher-dimensional data create different thresholds. A continuum perimeter limit needs additional scaling assumptions.',
+ 'On a larger finite graph, retain each partition’s pair (cut,W). Lower supporting lines of these points determine all parameter transitions. Dominated pairs can be discarded, yielding a compact exact certificate of the regularization path.',[('Boyd Convex Optimization','https://web.stanford.edu/~boyd/cvxbook/')])
+
+put(3,'Three regularizers produce three different shrinkage rules','2024-04-04','Convex analysis',CL,'root_receipts.json#0',
+ 'Does the model penalize an ℓ₁ norm, an ℓ₂ norm or a squared ℓ₂ norm, and what solution does that choice actually imply?',
+ 'The minimizer of ||x−z||²/2 plus a norm penalty is a proximal map. ℓ₁, ℓ₂ and squared ℓ₂ penalties are not interchangeable.',
+ 'Derive all three maps from their optimality conditions and compare them on the same vector.',
+ ['Fix z∈Rⁿ and λ>0. Strict convexity of the quadratic term gives a unique minimizer for each convex penalty.',
+  'The ℓ₁ penalty is λΣ|x_i|. The unsquared ℓ₂ penalty is λ√Σx_i². Ridge uses λ||x||₂²/2.',
+  'A subgradient g of a convex function f at x satisfies f(y)≥f(x)+gᵀ(y−x) for every y.'],
+ 'The solutions are componentwise soft threshold x_i=sign(z_i)max(|z_i|−λ,0), radial shrink x=max(1−λ/||z||₂,0)z, and ridge x=z/(1+λ), respectively.',
+ 'For ℓ₁ the coordinates separate. At a positive coordinate, optimality gives x_i−z_i+λ=0; at a negative one it gives x_i−z_i−λ=0. At zero, the subgradient interval [−λ,λ] contains z_i exactly when |z_i|≤λ. For the unsquared ℓ₂ norm and a nonzero solution, x−z+λx/||x||=0, so x points along z and its length is ||z||−λ. At zero, optimality requires z in the radius-λ Euclidean ball, giving the threshold case. Ridge is differentiable everywhere: x−z+λx=0. These conditions are sufficient by convexity and unique by strict convexity of the full objective.',
+ 'Use z=(3,4), λ=1, and then a small first coordinate z=(1/2,4).',
+ 'For (3,4), soft threshold gives (2,3); radial shrink gives (12/5,16/5), since ||z||=5; ridge gives (3/2,2). For (1/2,4), ℓ₁ sets the first coordinate exactly to zero, while both other rules retain a nonzero first coordinate. Thus sparsity of individual coefficients follows from a specific corner geometry rather than from the generic word regularization.',
+ 'Writing ||M||₂ without stating whether M is a vector or a matrix is incomplete: a matrix spectral norm, Frobenius norm and entrywise norm lead to different optimization problems.',
+ 'The derivation concerns an identity quadratic data term. Replacing it with ||Ax−z||² generally destroys the coordinatewise closed form. It does not establish that any penalty identifies a scientifically correct model.',
+ 'For disjoint groups of coefficients, Σ_g||x_g||₂ yields one radial threshold per group. This keeps or removes entire groups and provides a precise intermediate choice between coordinate sparsity and uniform ridge shrinkage.',[PROX])
+
+put(4,'An online centroid is a mean only for the right step sizes','2024-04-04','Stochastic approximation',CL,'root_receipts.json#0',
+ 'When is C_new=C_old+η(x_new−C_old) the sample mean, and when is it an exponentially weighted filter?',
+ 'The choice η_n=1/n gives the exact mean after n observations. A constant η∈(0,1) forgets older observations geometrically and retains nonzero steady noise variance.',
+ 'Solve the recurrence and quantify its bias and variance under an explicit independent-data model.',
+ ['For one cluster let c_n=(1−η_n)c_{n−1}+η_nx_n. Assignment of new points to a cluster is a separate problem from this update.',
+  'For the variance statement assume scalar independent x_n with common mean μ and variance σ², and a deterministic initial c₀.',
+  'For constant η define r=1−η. A forgetting factor r near one remembers more observations but adapts more slowly.'],
+ 'With η_n=1/n and c₁=x₁, c_n=(x₁+⋯+x_n)/n. With constant η, c_n=rⁿc₀+ηΣ_{j=1}ⁿr^{n−j}x_j, E c_n=μ+rⁿ(c₀−μ), and Var(c_n)=ησ²(1−r^{2n})/(2−η).',
+ 'The mean formula follows by induction after multiplying the recurrence by n. For constant η, repeated substitution gives the geometric expansion. Taking expectations and using ηΣ_{k=0}^{n−1}r^k=1−rⁿ yields the bias formula. Independence eliminates covariance cross terms, so variance is η²σ²Σ_{k=0}^{n−1}r^{2k}. Summing the geometric series and using 1−r²=η(2−η) gives the stated result. Its positive limit ησ²/(2−η) shows that fixed-step smoothing is not a consistent estimator of a static mean as n tends to infinity, although tracking a changing mean may motivate it.',
+ 'Start at c₀=0 and feed the sequence 0,0,9 with constant η=1/2.',
+ 'The final value is 9/2, whereas the exact sample mean is three. Their disagreement is intentional weighting, not floating-point error. Under independent unit-variance observations the asymptotic filter variance is 1/3. At n=3 the exact variance is (1/3)(1−1/64)=21/64, from weights 1/8,1/4,1/2 on the three observations.',
+ 'The update now has an explicit statistical interpretation and a calculable adaptation-versus-noise tradeoff.',
+ 'Cluster memberships selected from the same observations introduce selection and dependence; the elementary iid calculation no longer applies unchanged. Large steps or changing units can also change practical stability.',
+ 'For a deterministic drifting mean μ_n, the expected error satisfies e_n=(1−η)e_{n−1}+(1−η)(μ_{n−1}−μ_n). Solve this forced recurrence to bound tracking lag from a stated drift bound rather than describing the algorithm as universally adaptive.',[('Robbins and Monro original stochastic approximation paper','https://doi.org/10.1214/aoms/1177729586')])
+
+put(5,'A similarity becomes a kernel only after a positivity check','2024-04-04','Kernel methods',CL,'root_receipts.json#0',
+ 'Which proposed similarity admits a Euclidean feature representation, and how can an invalid choice be rejected finitely?',
+ 'A real symmetric kernel is positive semidefinite when every finite Gram matrix is PSD. An explicit feature map proves this property; one negative quadratic form disproves it.',
+ 'Construct a polynomial feature map and contrast it with a symmetric but indefinite similarity.',
+ ['For observations x₁,…,x_n, the Gram matrix has entries K_ij=k(x_i,x_j). PSD means aᵀKa≥0 for every real vector a.',
+  'If k(x,y)=φ(x)ᵀφ(y), then aᵀKa=||Σa_iφ(x_i)||². This is a direct certificate, valid for arbitrary finite samples.',
+  'Symmetry alone does not imply positivity, and a positive entrywise table need not be a PSD matrix.'],
+ 'For scalar x,y, k(x,y)=(1+xy)² is PSD, with φ(x)=(1,√2x,x²). By contrast k_bad(x,y)=1−xy fails PSD even on the two points −1 and one.',
+ 'Expand the polynomial: (1+xy)²=1+2xy+x²y², equal to the stated dot product. The norm-square identity proves positivity without requiring an eigenvalue calculation for each dataset. For the counterexample, the diagonal values at ±1 are zero and the off-diagonal values are two. Thus K_bad=[[0,2],[2,0]]. Taking a=(1,−1) gives aᵀK_bada=−4. This is a complete obstruction to a real Hilbert-space feature map with that similarity. A kernel used inside a quadratic objective needs its positivity assumptions checked before convexity or Euclidean geometry is inferred.',
+ 'Use x=(−1,0,1) for the valid kernel, and x=(−1,1) for the invalid one.',
+ 'The valid Gram matrix is [[4,1,0],[1,1,1],[0,1,4]], whose leading principal determinants are four, three and eight. It is positive definite on these distinct points. The invalid matrix has eigenvalues two and negative two. Even its nonnegative entries cannot rescue the missing PSD property.',
+ 'This separates a computable mathematical certificate from the informal description quantum-inspired or nonlinear.',
+ 'Finite positive tests cannot prove a proposed formula is PSD on every possible sample; the explicit feature map does. Conversely one finite negative test is decisive. Matrix rounding can require tolerances, but the supplied examples use exact integers.',
+ 'The squared feature distance is k(x,x)+k(y,y)−2k(x,y). Center the Gram matrix with H=I−11ᵀ/n before kernel PCA; HKH remains PSD because aᵀHKHa=(Ha)ᵀK(Ha). State this centering step when comparing kernel geometry to ordinary PCA.',[('Schölkopf Smola and Müller Nonlinear component analysis','https://doi.org/10.1162/089976698300017467')])
+
+put(6,'Bayesian uncertainty and data fusion depend on covariance','2024-04-04','Probability',CL,'root_receipts.json#0',
+ 'How does an explicit probabilistic model combine observations, and why can duplicated evidence not count as independent precision?',
+ 'A Gaussian prior and independent Gaussian observations give additive precisions. Correlated copies require their joint covariance and do not provide repeated independent information.',
+ 'Complete the square for a posterior and calculate the exact variance inflation from perfectly duplicated measurements.',
+ ['Let θ∼N(m₀,v₀) and y_i|θ be independent N(θ,σ²). Precision is reciprocal variance.',
+  'For a linear estimate wᵀY with E Y=θ1, unbiasedness is wᵀ1=1 and variance is wᵀΣw.',
+  'A posterior variance describes uncertainty under a stated model. It is not a model-free confidence guarantee.'],
+ 'The posterior variance and mean are v=(v₀⁻¹+nσ⁻²)⁻¹ and m=v(m₀/v₀+Σy_i/σ²). If Y consists of n identical copies of a single noisy measurement, Σ=σ²11ᵀ and every unbiased weighted estimate has variance σ², not σ²/n.',
+ 'The log posterior is, up to constants, −(θ−m₀)²/(2v₀)−Σ(y_i−θ)²/(2σ²). Collecting its quadratic and linear coefficients gives −(θ−m)²/(2v) plus a constant, which proves the update. A future independent observation adds σ² to the posterior predictive variance. For duplicated evidence, compute wᵀΣw=σ²(wᵀ1)²=σ². No choice of unbiased weights reduces it. Treating the n coordinates as independent replaces this singular covariance with σ²I and would manufacture precision absent from the observations.',
+ 'Take m₀=0,v₀=1,σ²=1 and two independent observations y₁=1,y₂=2. Contrast them with two copies of the same observation.',
+ 'The independent-data posterior is N(1,1/3); a new observation has predictive variance 4/3. For two duplicated unit-variance measurements the average retains variance one, whereas two independent ones would average to variance one half. The posterior based on one measurement copied twice should therefore use one likelihood contribution, giving variance one half under this prior, rather than one third.',
+ 'Fusion quality depends on dependence structure as much as on the number of input channels.',
+ 'The Gaussian formulas require their likelihood, prior and independence assumptions. Perfect duplication is an extreme example; partially correlated inputs need covariance estimation and can be ill-conditioned. Neither a narrow posterior nor a numerical fusion score alone establishes model adequacy.',
+ 'For positive-definite Σ, minimize wᵀΣw subject to wᵀ1=1. A Lagrange multiplier gives w=Σ⁻¹1/(1ᵀΣ⁻¹1) and variance 1/(1ᵀΣ⁻¹1). At singular Σ, solve on its supported subspace rather than substituting an inverse that does not exist.',[('Kevin Murphy Machine Learning: A Probabilistic Perspective author site','https://probml.github.io/pml-book/'),CVX])
+
+put(7,'Transfer learning needs a support and invariance assumption','2024-04-04','Statistical learning',CL,'root_receipts.json#0',
+ 'Under what assumptions can a source-domain loss estimate target-domain performance?',
+ 'Under covariate shift, a shared conditional law and absolute continuity give a change-of-measure identity. Without target support in the source, source evidence alone cannot determine target risk.',
+ 'Prove the weighted-risk formula and exhibit a finite support-gap counterexample.',
+ ['Let P_S and P_T be source and target joint distributions of (X,Y), with bounded loss ℓ(f(X),Y).',
+  'Covariate shift means P_T(Y|X)=P_S(Y|X) on relevant support, while the marginal distribution of X may differ.',
+  'If P_T^X is absolutely continuous with respect to P_S^X, let w=dP_T^X/dP_S^X. In a finite space this is the ratio of target to source probabilities.'],
+ 'Under the stated assumptions, R_T(f)=E_S[w(X)ℓ(f(X),Y)]. A region with positive target probability but zero source probability cannot be handled by finite importance weights. Its labels can change target risk without changing any source observations.',
+ 'Condition on X. Shared conditionals make the conditional expected loss g(X)=E[ℓ(f(X),Y)|X] the same in both domains. Then R_T=∫g dP_T^X=∫wg dP_S^X=E_S[wℓ]. This uses the Radon–Nikodym change of measure, not a claim that any transferred representation preserves the conditional law. For the obstruction, place all source mass at X=0 and all target mass at X=1. Two data-generating worlds can agree on the source label Y=0 at zero but assign opposite labels at one. Every source dataset is identically distributed in both worlds, while a fixed predictor has different target error. Source-only risk estimation cannot distinguish them.',
+ 'Let X∈{0,1}, P_S=(3/4,1/4), P_T=(1/4,3/4), with Y=X and predictor f≡0 under zero-one loss.',
+ 'Source risk is 1/4 and target risk is 3/4. Weights are 1/3 at zero and three at one, so weighted source risk is (1/4)·3=3/4 exactly. The identity works because both target points occur in the source. It fails to supply an estimator in the support-gap example, where the required ratio at one has a zero denominator.',
+ 'The revised question exposes the mathematical assumptions behind an asserted benefit from transferring a model.',
+ 'This identity does not prove low variance of an empirical estimator, successful representation learning or unchanged conditionals. Large weights can make estimation unstable. Biological or other applied interpretations from the source are not inferred from the algebra.',
+ 'For losses in [0,1] and weights bounded by M, a simple second-moment bound is E_S[(wℓ)²]≤M E_S[w]=M. It quantifies one reason that overlap and controlled density ratios matter for reliable transfer.',[('Shimodaira Improving predictive inference under covariate shift','https://doi.org/10.1016/S0378-3758(00)00115-4')])
+
+put(8,'Ratios, percentages and lottery events require a denominator','2024-04-07','Arithmetic and elementary probability',
+ '[c2] A@2024-04-07T12:24:39Z: numbers 2.26,0.498,total2.758, comparison0.1446 and shares about82/18; [c3] A@2024-04-07T13:46:45Z: lottery fragment begins 1/292,200… and is truncated.',
+ 'root_receipts.json#0;root_followups.json#0',
+ 'Which denominator defines each reported share, and are multiple tickets distinct outcomes of one draw or repeated independent experiments?',
+ 'For given arithmetic inputs the two shares sum to one, while an additional comparison is a separate ratio. Multiple distinct tickets in one uniform draw have a different probability formula from repeated independent draws.',
+ 'Recompute the recovered ratios exactly and retain an unspecified lottery outcome count N wherever its historical digits are truncated.',
+ ['Treat a=2.26,b=0.498,c=0.1446 purely as numerical inputs, without validating the applied labels attached to them in the old assistant output.',
+  'For a total T=a+b, the component shares are a/T and b/T. A percentage is one hundred times a dimensionless ratio.',
+  'Let a lottery have N equally likely outcomes and exactly one winning outcome per draw. The complete historical value of N is not recovered and is not supplied here.'],
+ 'T=2.758, a/T=1130/1379 and b/T=249/1379. The separate comparison c/T=723/13790≈0.0524293. For m distinct tickets in one draw, win probability is m/N; for one ticket in each of m independent draws it is 1−(1−1/N)^m.',
+ 'Converting the decimals to integer fractions gives T=1379/500. Division gives the stated component shares, whose numerators sum to1379. The comparison uses c=723/5000 and is not a third component to add to the original two shares unless the total is redefined. For a single draw, m distinct favorable outcomes form a disjoint union of singleton events, so probabilities add to m/N. Across independent draws, the complement event is losing every time, with probability (1−1/N)^m. These event structures are different even though their first-order approximations agree when m/N is small.',
+ 'Calculate the original numerical shares and illustrate the probability distinction using a newly chosen N=10,m=2.',
+ 'The shares are approximately81.9434% and18.0566%; the separate comparison is approximately5.24293%, not an exact5.25%. Two distinct tickets in one ten-outcome draw win with probability1/5. One ticket in each of two independent ten-outcome draws wins at least once with probability19/100. The illustrative N=10 is explicitly unrelated to the truncated historical denominator.',
+ 'Exact rational arithmetic makes the denominator choice visible and avoids turning rounded or missing source data into an invented precision claim.',
+ 'No medical, physical-dose or lottery-product assertion is validated. Equal likelihood, distinct tickets and draw independence are hypotheses of the probability calculation. Duplicate tickets do not create new favorable outcomes in a single draw.',
+ 'By the union bound, 1−(1−p)^m≤mp. The second-order correction is approximately m(m−1)p²/2 for small p. Report whether the event is at least one win, an expected number of wins or an expected payout before comparing options.',[('MIT probability course materials','https://ocw.mit.edu/courses/6-041sc-probabilistic-systems-analysis-and-applied-probability-fall-2013/')])
+put(9,'Perimeter–area measures need units and an edge-count convention','2024-04-20','Geometry of shape',LAND,'root_details.json#0',
+ 'Which landscape statistic is invariant under changing length units, and which boundaries are counted in its perimeter?',
+ 'Under dilation by s, perimeter scales by s and area by s². Thus P/A scales as 1/s, whereas P/(4√A) is scale invariant. A sum of patch perimeters need not equal a count of distinct landscape edges.',
+ 'Compute both scaling and boundary multiplicity on a two-patch example before interpreting a reported index.',
+ ['Let P be perimeter measured in a declared length unit and A positive area in the corresponding squared unit.',
+  'PAR=P/A has units of inverse length. The square-normalized ratio P/(4√A) is dimensionless; a disk-based normalization uses a different constant.',
+  'When patches share edges, summing every patch perimeter counts a shared edge twice. A distinct-edge total counts it once, and an exterior perimeter omits it.'],
+ 'The scaling laws follow directly from length and area. For a rectangle with sides a,b, P/(4√A)=(a+b)/(2√ab)≥1, with equality exactly for a square. Boundary conventions can produce different values even on the same partition.',
+ 'Dilation sends a,b to sa,sb, so P′=sP,A′=s²A. The ratios then transform as stated. The rectangle inequality is equivalent to a+b≥2√ab, or (√a−√b)²≥0. Its value depends only on aspect ratio and not size. Now partition a 2×1 rectangle into two adjacent unit squares. The patch perimeter sum is eight, the distinct-edge total is seven and the exterior perimeter is six. Dividing any of these by 4√2 gives a different statistic. Therefore replacing a named index by an unqualified sum Σp_i can change its meaning even though the expression is dimensionless.',
+ 'Use the two adjacent unit squares and then double all lengths.',
+ 'The three candidate shape ratios are √2,7/(4√2),3/(2√2), approximately1.4142,1.2374,1.0607. All stay unchanged after dilation. The exterior PAR changes from6/2=3 to12/8=3/2. Thus scale invariance and edge-count agreement are separate checks; passing one does not establish the other.',
+ 'The original LSI-like expression is retained as historical evidence, while the revised statistic explicitly defines its numerator and normalization.',
+ 'A continuum perimeter, a raster edge count and a vector-map boundary length need not converge identically under resolution changes. The inequality with square normalization is a rectangle statement; the Euclidean isoperimetric optimum among all shapes is a disk and uses a different constant.',
+ 'For a connected n-cell raster region, perimeter in cell units is4n−2e, where e counts shared internal cell edges. This exact combinatorial identity separates geometry from double counting and supplies a useful implementation certificate.',[('FRAGSTATS Landscape Shape Index','https://www.fragstats.org/index.php/fragstats-metrics/patch-based-metrics/aggregation-metrics/l5-landscape-shape-index')])
+
+put(10,'Replace a single-patch log ratio by a dimension definition','2024-04-20','Fractal geometry',LAND,'root_details.json#0',
+ 'Why is 2logP/logA not an intrinsic fractal dimension, and which scaling procedure would define a legitimate quantity?',
+ 'A raw logarithmic ratio of dimensional perimeter and area is unit dependent and can be undefined. Box dimension uses the asymptotic growth of covering counts; a perimeter–area regression is a separate fitted descriptor.',
+ 'Disprove the raw formula by unit rescaling and compute a genuine self-similar dimension with explicit covering bounds.',
+ ['For a bounded set F, let N(ε) be the number of side-ε grid boxes intersecting it. When the limit exists, its box dimension is lim_{ε→0}logN(ε)/log(1/ε).',
+  'For the middle-third Cantor set C, the nth construction stage consists of2ⁿ disjoint length3⁻ⁿ intervals.',
+  'A fitted relation logA=b₀+b₁logP across multiple patches gives a perimeter–area exponent2/b₁ under the stated convention; it is not a theorem about one patch’s boundary.'],
+ 'The Cantor set has box dimension log2/log3. The source expression2logP/logA is not invariant under changing length units, so it cannot serve as an intrinsic dimension without substantial redefinition.',
+ 'At scale ε=3⁻ⁿ, at most2ⁿ aligned intervals cover C. Conversely, a length3⁻ⁿ interval can intersect only a bounded number of the level-n pieces, so a covering needs at least a constant times2ⁿ boxes. Constants disappear after dividing logarithms by nlog3. For intermediate scales choose3⁻⁽ⁿ⁺¹⁾<ε≤3⁻ⁿ and squeeze the counts between adjacent levels, proving the same limit. For the counterexample, a unit square has P=4,A=1, making the proposed denominator zero. After numerical rescaling by s, the formula becomes2(log4+logs)/(2logs)=1+log4/logs, which changes with s. A dimension cannot depend on whether lengths are recorded in meters or centimeters.',
+ 'Fit a family of geometrically similar squares and compare with the Cantor construction.',
+ 'Squares satisfy A=P²/16, so regressing logA against logP gives slope two and perimeter–area exponent one, consistent with their smooth one-dimensional boundaries. In contrast the Cantor dimension is approximately0.63093. Intercepts shift when units change, while a correctly specified regression slope remains invariant under a common unit conversion.',
+ 'The repaired discussion distinguishes an exact asymptotic dimension from a finite-sample shape regression and an invalid single-observation ratio.',
+ 'Real maps have a finite resolution range, so a fitted slope is not automatically an asymptotic dimension. A patch’s filled region, its boundary and a collection of patches are different sets and can have different dimensions. The verifier checks exact finite counts, not an empirical claim of fractality.',
+ 'For a product C×C, aligned squares at scale3⁻ⁿ number4ⁿ, giving dimension2log2/log3 by the same squeezing argument. Record the scale interval and covering convention when estimating such an exponent from data.',[('FRAGSTATS Perimeter–Area Fractal Dimension','https://fragstats.org/index.php/fragstats-metrics/patch-based-metrics/shape-metrics/c1-perimeter-area-fractal-dimension'),('Kenneth Falconer Fractal Geometry author page','https://kennethfalconer.org/books/')])
+
+put(11,'Landscape division is a collision probability with exact merge laws','2024-04-20','Probability and partition statistics',LAND,'root_details.json#0',
+ 'What event does D=1−Σ(a_i/A)² measure, and how does it change when patches merge?',
+ 'For positive patch areas partitioning the whole area, D is the probability that two independent uniform locations lie in different patches. Merging area fractions a,b decreases D by exactly2ab.',
+ 'Derive sharp bounds, an effective-count interpretation and an exact finite example.',
+ ['Assume patch areas a_i≥0 sum to A>0, and write p_i=a_i/A. Uniform location sampling assigns patch label i with probability p_i.',
+  'The two sampled locations are independent and drawn with replacement in this probability model.',
+  'The concentration Q=Σp_i² is the probability of equal patch labels. Its reciprocal N_eff=1/Q is an effective number of equally sized patches.'],
+ 'For at most n nonzero patches,0≤D≤1−1/n, with equality on the right precisely for n equal areas. Replacing two fractions a,b by their sum changes D to D−2ab; splitting does the reverse.',
+ 'Independence gives P(same)=ΣP(first=i)P(second=i)=Σp_i². Complementation proves the event interpretation. Since Σp_i=1, Q≤1 follows by expanding(Σp_i)² and discarding nonnegative cross terms. Cauchy–Schwarz gives1=(Σp_i)²≤nΣp_i², proving Q≥1/n. Equality requires equal nonzero fractions. A merge replaces a²+b² by(a+b)², increasing Q by2ab and decreasing D by the same amount. These statements depend only on area proportions: no patch adjacency, boundary length or spatial arrangement appears in the calculation.',
+ 'Use four patches with area fractions1/2,1/4,1/8,1/8, and merge the two smallest.',
+ 'Initially Q=1/4+1/16+1/64+1/64=11/32, so D=21/32 and N_eff=32/11. After merging, fractions are1/2,1/4,1/4; Q=3/8 and D=5/8. The decrease is1/32=2·(1/8)·(1/8), exactly the merge law. Four equal patches instead give D=3/4, the sharp upper bound.',
+ 'This makes the statistic interpretable without claiming that it measures every kind of geometric fragmentation.',
+ 'Identical fractions arranged as a compact set or as separated strips have the same D. If listed patches do not partition A, the fractions no longer sum to one and the event interpretation must include an additional category or a renormalization. Sampling without replacement from finitely many cells gives a finite-population correction.',
+ 'For N cells divided into integer patch sizes n_i, sample two distinct cells. The equal-label probability isΣn_i(n_i−1)/(N(N−1)); compare it explicitly withΣ(n_i/N)². The difference records the sampling convention rather than a disagreement in arithmetic.',[('FRAGSTATS Landscape Division Index','https://fragstats.org/index.php/fragstats-metrics/patch-based-metrics/aggregation-metrics/l9-landscape-division-index')])
+
+put(12,'PCA reconstruction rank is not intrinsic dimension','2024-04-20','Linear algebra and dimension reduction',
+ '[c3] A@2024-04-20T21:09:25Z: landscape and dimensionality discussion; root earlier assistant-only mathematical cluster also includes PCA, t-SNE, trees/forests and intrinsic dimension. PCA is independently recovered in Apr4 clustering.',
+ 'root_details.json#0;root_receipts.json#0',
+ 'Which dimension is measured by a covariance spectrum, and what information is changed by a neighborhood embedding?',
+ 'PCA minimizes squared linear reconstruction error. A curved one-dimensional set can require two principal coordinates for exact linear reconstruction. t-SNE optimizes neighborhood probabilities and does not by itself certify manifold dimension.',
+ 'Prove the PCA error identity and use a uniform circle as an exact counterexample to conflating linear rank with intrinsic dimension.',
+ ['For centered random X∈Rᵈ with covariance Σ, a rank-k orthogonal projector P reconstructs PX and has expected squared error E||X−PX||².',
+  'PCA chooses the projector onto k eigenvectors with largest covariance eigenvalues. Intrinsic dimension instead concerns a local parameterization or another explicitly stated nonlinear definition.',
+  'The uniform circle is X=(cosΘ,sinΘ) with Θ uniform on[0,2π). It has one angular parameter and a two-dimensional affine span.'],
+ 'If eigenvalues areλ₁≥⋯≥λ_d≥0, the optimal rank-k linear reconstruction error isΣ_{j>k}λ_j. For the uniform unit circle,Σ=I/2; every rank-one projector leaves error1/2 despite the curve being one-dimensional.',
+ 'Expand E||X−PX||²=tr((I−P)Σ), using symmetry and idempotence of P. In an eigenbasis ofΣ, tr(PΣ)=Σλ_jp_jj, where0≤p_jj≤1 andΣp_jj=k. Moving weight from a smallerλ to a larger one cannot reduce this sum, so its maximum is the sum of the k largest eigenvalues. This proves the PCA claim directly. On the circle, angular averages of cos² and sin² are1/2 and the cross average is zero. Thus both eigenvalues are positive and equal, and every line loses exactly half the variance. Local angular charts nevertheless describe a one-dimensional smooth manifold.',
+ 'Use the four points(1,0),(0,1),(−1,0),(0,−1) with equal weights as an exact covariance certificate.',
+ 'Their mean is zero and covariance is I/2. Projection onto the x-axis gives errors0,1,0,1 and mean1/2; every other line has the same mean error. A discrete sample alone is not assigned a manifold dimension by this calculation; the continuous-circle model supplies that separate hypothesis.',
+ 'The revised question prevents a variance threshold or a visually compelling embedding from being reported as a theorem about intrinsic dimension.',
+ 'Only PCA is unambiguously anchored to the recovered Apr4 fragment; the broader Apr20 dimensionality passage is incompletely retrieved. The circle and comparison with t-SNE are new mathematical development, not a reconstruction of unseen wording.',
+ 't-SNE minimizes a KL divergence between high- and low-dimensional neighborhood distributions. Analyze its actual objective and initialization when interpreting a display; neither exact global distance preservation nor uniqueness follows from minimizing that divergence.',[('van der Maaten and Hinton Visualizing Data using t-SNE','https://www.jmlr.org/papers/v9/vandermaaten08a.html')])
+
+put(13,'An E² page is not already the homology of the total space','2024-04-20','Algebraic topology',TOP,'root_followups.json#1',
+ 'Which fibration and coefficient assumptions justify E²_pq=H_p(B;H_q(F)), and which differentials must still be computed?',
+ 'For a suitable Serre fibration F→E→B with simply connected base, the homology Serre spectral sequence has E²_pq=H_p(B;H_q(F;K)) and converges to a filtration of H_*(E;K). Differentials can remove apparent classes.',
+ 'Contrast the product S²×S¹ with the Hopf fibration S¹→S³→S² using their identical E² dimensions.',
+ ['Use field coefficients K, connected CW-type spaces and a Serre fibration. A non-simply-connected base generally requires the monodromy local coefficient system.',
+  'A homological differential has bidegree d_r:(p,q)↦(p−r,q+r−1). The limiting page gives associated graded homology, not automatically a canonical direct-sum decomposition.',
+  'The existence and convergence theorem is classical topology; the small-page calculation below illustrates it and does not purport to construct the theorem.'],
+ 'For both fibrations over S² with fiber S¹, E² has one K in positions(0,0),(2,0),(0,1),(2,1). For the product the relevant differential is zero; for the Hopf fibration d₂:(2,0)→(0,1) is an isomorphism, leaving total degrees zero and three.',
+ 'The sphere and circle homology groups give the four nonzero terms directly. In the product, the cross-product classes yield nonzero homology in degrees0,1,2,3, so there can be no cancellation of these one-dimensional terms. In the Hopf fibration the total space is S³, whose homology in degrees one and two is zero. The only possible differential that can remove the positions carrying those degrees is d₂ from(2,0) to(0,1): all other candidate sources or targets vanish by the displayed support. It must therefore have rank one. Positions(0,0) and(2,1) survive, matching H₀ and H₃. This is a forced differential computation from the known total-space topology, not a way to identify an unknown total space from E² alone.',
+ 'Represent the four terms as a four-dimensional vector space and the Hopf differential as a single nonzero arrow.',
+ 'The differential has rank one and square zero. Its homology has total dimension4−2·1=2. With the zero differential the dimension stays four. Equal initial tables therefore permit different final answers, and the missing arrow is mathematically decisive.',
+ 'A bare formula with symbols X and Y has omitted a fibration, coefficients, monodromy and convergence data.',
+ 'The example does not infer a spectral sequence for an arbitrary pair of spaces or validate historical applications to a social or biological system. Extension problems matter over integer coefficients even after all page differentials are known.',
+ 'Write the page support and bidegrees before computing. When dimensional support forces every possible differential to vanish, collapse is justified; otherwise identify geometric information that determines the surviving arrows.',[('Allen Hatcher Spectral Sequences in Algebraic Topology','https://pi.math.cornell.edu/~hatcher/SSAT/SSATpage.html')])
+
+put(14,'Sheaf notation needs a gluing rule and cohomology needs a complex','2024-04-20','Sheaves and cohomology',TOP,'root_followups.json#1',
+ 'What local objects are assigned to an open set, and what theorem connects compatible local data to a global section?',
+ 'Continuous real-valued functions form a sheaf by pointwise gluing. A nontrivial cohomology class instead records a specified obstruction or global feature; the symbol F(U) alone computes neither.',
+ 'Prove the gluing axiom and give an explicit cup-product calculation on a torus to distinguish a sheaf definition from additional topology.',
+ ['Assign F(U)=C⁰(U,R), with restriction maps that restrict functions. A sheaf requires locality and unique gluing for every open cover.',
+  'On the smooth torus T²=R²/Z², the one-forms dx and dy descend globally even though the functions x and y do not.',
+  'For differential forms, the cohomology product is represented by wedge product. Its identification with the ordinary real cup product is the classical de Rham theorem.'],
+ 'Compatible continuous functions on an open cover glue uniquely to a continuous global function. On T² the classes[dx],[dy] have a nonzero product represented by dx∧dy, whose integral is one; each class squares to zero.',
+ 'Given f_i∈C⁰(U_i,R) agreeing on overlaps, set f(x)=f_i(x) for any i containing x. Agreement makes the definition independent of the choice. Continuity is local: every point has a neighborhood on which f equals a continuous f_i. Uniqueness follows because every point lies in some U_i. For the torus calculation, the integral of dx∧dy over a fundamental unit square is one. If this two-form were exact, Stokes’ theorem on the closed torus would make that integral zero. It therefore represents a nonzero cohomology class. Alternation gives dx∧dx=dy∧dy=0, while dy∧dx=−dx∧dy. These explicit statements require a space and cochain model, not merely a named sheaf.',
+ 'Take α=2dx+3dy and β=−dx+4dy on the unit torus.',
+ 'Their wedge is(2·4−3·(−1))dx∧dy=11dx∧dy, so the product integrates to eleven and is nonzero. The same α satisfies α∧α=0 by cancellation. The coefficient is a determinant, giving a compact exact arithmetic certificate for this example.',
+ 'The treatment supplies actual local-to-global content and an actual product, with their distinct assumptions exposed.',
+ 'A function written GeneExpression=f(arguments) in the old fragment has no specified domain, data or sheaf structure and yields no mathematical theorem by itself. Not every presheaf glues: assigning one constant value to every nonempty open set fails on a disconnected union whose components carry different constants.',
+ 'To study a proposed obstruction, state the restriction maps and a covering, construct the Čech or other cochain complex and verify that consecutive coboundaries compose to zero. Only then interpret its kernel modulo image as cohomology.',[('Stacks Project Sheaves','https://stacks.math.columbia.edu/tag/006S'),('Allen Hatcher Algebraic Topology','https://pi.math.cornell.edu/~hatcher/AT/ATpage.html')])
+
+put(15,'A Brunnian pure braid has an exact deletion certificate',None,'Braid groups',
+ '[c6][c2][c7] assistant-only dated range2024-04-18T21:30:49Z–2024-04-30T19:15:05Z: Brunnian braids with sheaves, cohomology, cup products and spectral sequences; exact date-to-topic assignment not retrieved.',
+ 'root_followups.json#1',
+ 'Can one construct a nontrivial pure braid that becomes trivial after deleting any strand, with both claims checked explicitly?',
+ 'In B₃, the commutator b=[σ₁²,σ₂²] is pure, nontrivial and becomes the identity after deleting any one strand. This is a Brunnian property of the braid, not a complete classification of its closure.',
+ 'Give deletion maps and a matrix representation that independently certifies nontriviality.',
+ ['The three-strand braid group has generators σ₁,σ₂ and relationσ₁σ₂σ₁=σ₂σ₁σ₂. Squaring an adjacent crossing yields a pure braid, so every strand returns to its own endpoint.',
+  'For pure braids, deleting a specified strand is a homomorphism. A full twist involving that deleted strand disappears; a surviving pair retains its two-strand twist.',
+  'Use the commutator convention[A,B]=ABA⁻¹B⁻¹. Brunnian means the object is nontrivial while every single-strand deletion is trivial.'],
+ 'Let A=σ₁² and B=σ₂². Deleting strand1 kills A, deleting strand3 kills B, and deleting strand2 kills both. Each image of[A,B] is therefore the identity. Yet b has nonidentity image[[13,8],[8,5]] under an explicit SL₂(Z) representation.',
+ 'Assign σ₁↦U=[[1,1],[0,1]] and σ₂↦V=[[1,0],[−1,1]]. Direct multiplication gives UVU=VUV=[[0,1],[−1,0]], so the assignment respects the braid relation and defines a homomorphism. Then A↦U²=[[1,2],[0,1]], B↦V²=[[1,0],[−2,1]]. Multiplying their commutator gives[[13,8],[8,5]], which is not the identity; hence the original braid cannot be trivial. This conclusion needs no faithfulness of the representation, since a homomorphism always sends the group identity to the matrix identity. The deletion statements use the pure-braid strand labels and the elementary full-twist geometry, rather than trying to delete arbitrary nonpure generator words.',
+ 'Check the relation, determinants, commutator and the three deletion images.',
+ 'Both generator matrices have determinant one, as does the commutator13·5−8²=1. Deleting strand1 maps(A,B) to(1,T), strand3 to(T,1), and strand2 to(1,1), giving trivial commutators in every case. The matrix trace eighteen distinguishes the original image decisively from the identity trace two.',
+ 'This is a complete worked example of a global interaction that disappears under each prescribed deletion.',
+ 'No exact historical braid word was recovered; this is a newly chosen development of the recovered topic. The example does not prove a general relation to sheaves or machine learning, and a Brunnian braid statement should not silently become a classification of Brunnian links.',
+ 'For n pure strands, iterated commutators can be designed so that every deletion kills a nested factor. Nontriviality still needs a separate certificate; deletion identities alone also hold for the trivial braid.',[('Joan Birman Braids Links and Mapping Class Groups','https://press.princeton.edu/books/paperback/9780691081496/braids-links-and-mapping-class-groups')])
+
+put(16,'A scalar stress law is not the full elasticity tensor','2024-04-20','Linear algebra of elasticity',TOP,'root_followups.json#1',
+ 'Which strain convention makes τ=με correct, and which parameter conditions make the associated quadratic energy positive?',
+ 'In three-dimensional isotropic linear elasticity,σ=2με+λtr(ε)I for symmetric infinitesimal strainε. The energy isμ||ε||_F²+(λ/2)(trε)² and is positive definite exactly whenμ>0 and3λ+2μ>0.',
+ 'Derive the trace/deviatoric decomposition and exhibit the factor-of-two distinction between tensor shear and engineering shear.',
+ ['For a displacement u, the infinitesimal strain tensor isε=(∇u+∇uᵀ)/2. The Cauchy stressσ is another symmetric matrix in the model.',
+  'Lamé parametersλ,μ are scalar material coefficients. The Frobenius norm satisfies||ε||_F²=Σ_ijε_ij², including both off-diagonal entries.',
+  'Engineering shearγ_xy=∂_yu_x+∂_xu_y=2ε_xy. Thusτ_xy=μγ_xy andτ_xy=2με_xy describe the same conventionally defined model.'],
+ 'Writingε=e+(trε)I/3 withtr(e)=0 gives energyμ||e||_F²+(μ/3+λ/2)(trε)². This is positive for every nonzero symmetric strain exactly under the stated two strict inequalities.',
+ 'The trace-free and scalar matrices are orthogonal in the Frobenius inner product because〈e,I〉=tr(e)=0. Therefore||ε||²=||e||²+(trε)²/3. Substitution gives the displayed energy decomposition. Necessity ofμ>0 follows by testing a nonzero trace-free strain. Necessity ofμ/3+λ/2>0 follows by testing a scalar strain. If both coefficients are positive, their sum is positive unless both components vanish, proving sufficiency. Differentiating the quadratic energy with respect toε givesσ=2με+λtrε I. This matrix law cannot be inferred from an isolated symbolτ=με unless the variables and conventions have already been defined.',
+ 'Use simple shear u(x,y,z)=(ay,0,0), then use uniform dilation u=b(x,y,z).',
+ 'For shear,ε_xy=ε_yx=a/2, trace zero and energyμa²/2; the shear stress isμa. For dilation,ε=bI, energy3μb²+(9λ/2)b²=(3/2)(2μ+3λ)b². Takingμ=1,λ=−1 leaves positive shear energy but negative dilation energy, an exact counterexample to checking onlyμ>0.',
+ 'The repaired formula states both the tensor type and the stability condition behind a scalar shorthand.',
+ 'This is infinitesimal, isotropic, homogeneous linear elasticity; finite deformation, anisotropy and spatially varying coefficients require different laws. The mathematical example makes no claim about a geological sample or an unprovided constitutive dataset.',
+ 'For a general anisotropic material, vectorize the six independent strain components with a stated shear normalization and test the resulting symmetric stiffness matrix for positive definiteness. Its eigenvalue lower bound gives an explicit coercivity constant for the energy.',[('MIT Elasticity course materials','https://ocw.mit.edu/courses/2-080j-structural-mechanics-fall-2013/')])
+put(17,'Conservation and first integrals distinguish two population models','2024-04-20','Ordinary differential equations',DYN,'root_details.json#0',
+ 'Which invariant can be derived for a specified system before fitting or simulating its trajectories?',
+ 'The basic SIR system conserves total population and has an exact trajectory invariant. The classical two-species Lotka–Volterra system has a different first integral and closed positive orbits around its coexistence equilibrium.',
+ 'Derive both invariants directly from their vector fields and check them at explicit states.',
+ ['Use Ṡ=−βSI,İ=βSI−γI,Ṙ=γI withβ,γ>0 and nonnegative initial values.',
+  'Use ẋ=x(α−by),ẏ=y(dx−c), with positive parameters and positive initial coordinates, for the classical predator–prey model.',
+  'A first integral H is constant along a solution because∇H·F=0. It is distinct from a fitted conservation law or a numerical pattern.'],
+ 'For SIR, S+I+R is constant and I+S−(γ/β)logS is constant whileS>0. For Lotka–Volterra, H=dx−clogx+by−αlogy is constant. Its nonminimal positive level sets are closed orbits.',
+ 'Summing the SIR equations gives zero. Differentiating I+S−(γ/β)logS gives−γI−(γ/β)(−βI)=0. Positivity follows because each vanishing coordinate has no vector-field component pointing outside the nonnegative region. For Lotka–Volterra, differentiate H to get(dx−c)(α−by)+(by−α)(dx−c)=0. Its Hessian isdiag(c/x²,α/y²), positive definite. It has a unique critical point(c/d,α/b), and diverges at the positive-quadrant boundary and at infinity. Every higher level is therefore a compact smooth strictly convex closed curve, and the vector field is nonzero there. Motion around such a curve is periodic because its speed has a positive minimum on that compact curve. This describes the ideal classical system, not generic interacting populations.',
+ 'Setβ=2,γ=1 and(S,I,R)=(4/5,1/5,0). Separately set all Lotka–Volterra parameters to one and(x,y)=(2,1/2).',
+ 'The SIR derivative is(−8/25,3/25,1/5), summing to zero; infection increases becauseS>γ/β=1/2. The second vector field is(1,1/2). Its first-integral gradient is(1/2,−1), whose dot product with the vector field is zero exactly.',
+ 'Different models have different exact constraints; a shared nonlinear appearance does not make their qualitative conclusions interchangeable.',
+ 'These are deterministic homogeneous models with fixed parameters. Added births, losses, saturation, noise or time dependence can destroy the invariants. No epidemiological or ecological forecast is made from these mathematical examples.',
+ 'A numerical solver should monitor its invariant drift at several step sizes. Preserving a first integral is a useful diagnostic but does not alone prove an accurate time parameterization of the orbit.',[('Kermack and McKendrick original epidemic model','https://doi.org/10.1098/rspa.1927.0118'),('Alfred Lotka Elements of Physical Biology','https://archive.org/details/elementsofphysic017171mbp')])
+
+put(18,'Fixed-point stability separates maps from planar oscillators','2024-04-20','Local dynamics',DYN,'root_details.json#0',
+ 'What does linearization actually establish for the logistic map, Van der Pol oscillator and FitzHugh–Nagumo equations?',
+ 'A discrete map uses multiplier modulus; a continuous planar system uses eigenvalue real parts. Applying the wrong criterion confuses contraction, oscillation and instability.',
+ 'Calculate each linearization and show explicitly why local instability is not a proof of a limit cycle or chaos.',
+ ['The logistic map isx_{n+1}=rx_n(1−x_n), with parameter r and discrete time.',
+  'A planar Van der Pol form isẋ=y,ẏ=μ(1−x²)y−x. A FitzHugh–Nagumo form isv̇=v−v³/3−w+I,ẇ=ε(v+a−bw), withε>0.',
+  'For a planar real matrix, negative trace and positive determinant imply both eigenvalues have negative real parts. A map is locally attracting when all multipliers have modulus less than one.'],
+ 'The nonzero logistic fixed pointx*=1−1/r is locally attracting exactly for1<r<3. The Van der Pol origin has traceμ and determinant one. At a=I=0, the FitzHugh–Nagumo origin has trace1−εb and determinantε(1−b).',
+ 'Solve x=rx(1−x) to get zero and, forr≠0, the second fixed point. Its derivative isr(1−2x*)=2−r; solving|2−r|<1 yields the interval. The Van der Pol Jacobian at zero is[[0,1],[−1,μ]], with characteristic polynomialλ²−μλ+1. The FitzHugh–Nagumo Jacobian is[[1,−1],[ε,−εb]], giving the stated trace and determinant. Hyperbolic stable and unstable conclusions then follow from the linearization theorem. At a zero real part or unit-modulus multiplier, linearization alone is inconclusive; higher-order terms or an explicit bifurcation theorem are needed.',
+ 'Use logisticr=5/2 andr=7/2. For the planar models chooseμ=−1/2, andε=3,b=1/2,a=I=0.',
+ 'The logistic multipliers are−1/2 and−3/2: the first fixed point attracts locally, the second repels locally. The Van der Pol Jacobian has trace−1/2, determinant one. The FitzHugh–Nagumo Jacobian has trace−1/2, determinant3/2. Both continuous equilibria are locally asymptotically stable despite their different equations and frequencies.',
+ 'The revised comparison identifies a limited theorem shared by the models without collapsing their global dynamics into a single label.',
+ 'The source supplies model names, not parameter values or initial conditions; all choices here are new examples. An unstable fixed point does not establish a stable cycle, and a nonlinear model name does not establish chaos. The classical positive-μ Van der Pol limit-cycle theorem needs its separate global hypotheses.',
+ 'For a proposed Hopf bifurcation, check a conjugate pair crossing the imaginary axis with nonzero speed and compute the first Lyapunov coefficient. For a period-doubling map, check the multiplier crossing−1 and the nonlinear nondegeneracy conditions instead.',[('MIT Nonlinear Dynamics and Chaos','https://ocw.mit.edu/courses/18-353j-nonlinear-dynamics-and-chaos-fall-2012/')])
+
+put(19,'Lorenz and Rössler labels do not constitute a chaos certificate','2024-04-20','Dynamical systems',DYN,'root_details.json#0',
+ 'Which equilibrium and volume calculations can be proved exactly, and what further work is needed to infer chaos?',
+ 'For the Lorenz equations, the nonzero equilibria have a cubic stability polynomial with an explicit Routh–Hurwitz boundary. Negative divergence means volume contraction, not chaos.',
+ 'Derive the boundary and contrast it with a solvable Rössler equilibrium calculation.',
+ ['Use Lorenzẋ=σ(y−x),ẏ=x(ρ−z)−y,ż=xy−βz, withσ,β>0.',
+  'Use Rösslerẋ=−y−z,ẏ=x+ay,ż=b+z(x−c), witha≠0 for the displayed equilibrium formula.',
+  'Forλ³+A₁λ²+A₂λ+A₃ with allA_i>0, the strict cubic Routh–Hurwitz criterion isA₁A₂>A₃. Its theorem is classical background; the coefficients are independently computed here.'],
+ 'Forρ>1, Lorenz equilibria are(±√(β(ρ−1)),±√(β(ρ−1)),ρ−1). Their coefficients areA₁=σ+β+1,A₂=β(σ+ρ),A₃=2σβ(ρ−1). Ifσ>β+1, they are stable exactly for1<ρ<σ(σ+β+3)/(σ−β−1).',
+ 'At equilibrium the first equation givesy=x, the third givesz=x²/β, and the second givesx(ρ−1−z)=0. These yield the origin and the stated pair. Substituting each into the Jacobian determinant gives the cubic coefficients. Their positive-coefficient condition is automatic forρ>1. The remaining Hurwitz expression simplifies toβ[σ(σ+β+3)−ρ(σ−β−1)], giving the strict boundary. The divergence is the constant−σ−1−β, so infinitesimal volume contracts exponentially. This cannot prove chaotic dynamics: the linear systemu̇=−u in three dimensions also has negative divergence and every trajectory tends to one point. For Rössler, equilibrium requiresy=−x/a,z=x/a andx²−cx+ab=0, a different algebraic structure.',
+ 'Take Lorenzσ=10,β=8/3 and compareρ=20 withρ=28. For Rössler choosea=b=1,c=3.',
+ 'The Lorenz boundary is470/19≈24.7368. The nonzero equilibria are stable at20 and unstable at28; the latter conclusion alone does not prove a strange attractor. Rössler equilibria have x=(3±√5)/2,y=−x,z=x, and substitution reduces the final equation to x²−3x+1=0 exactly.',
+ 'The examples provide exact local and algebraic claims while keeping a global chaotic-attractor assertion separate.',
+ 'The threshold excludes nonhyperbolic equality and does not classify all attractors. A positive finite-time numerical Lyapunov estimate is also not automatically a rigorous infinite-time chaos proof. The historical fragment does not supply a numerical experiment to audit.',
+ 'A rigorous chaos certificate can use an explicitly verified return map with expansion and a trapping region, or a suitable established theorem with matched parameters. State the definition of chaos and the required global evidence before attaching that word to a simulation.',[('Edward Lorenz Deterministic Nonperiodic Flow','https://doi.org/10.1175/1520-0469(1963)020%3C0130:DNF%3E2.0.CO;2'),('Otto Rössler An equation for continuous chaos','https://doi.org/10.1016/0375-9601(76)90101-8')])
+
+put(20,'Reaction stability and diffusion-driven instability are different tests','2024-04-20','Reaction–diffusion equations',DYN,'root_details.json#0',
+ 'Can an equilibrium stable in a spatially homogeneous model be unstable to a spatial Fourier mode?',
+ 'Yes. Linearizing a two-species reaction–diffusion equation givesJ−sD for Laplacian eigenvalue−s. Diffusion can turn its determinant negative even whenJ itself is stable.',
+ 'Derive an exact Brusselator example and state separately the distinct Gray–Scott reaction terms.',
+ ['Use Brusselatoru_t=A−(B+1)u+u²v+D_uΔu,v_t=Bu−u²v+D_vΔv, withA,B,D_u,D_v>0.',
+  'The homogeneous equilibrium is(u*,v*)=(A,B/A). On a periodic domain, a modee^{ikx} hass=k² and evolves byJ−sdiag(D_u,D_v).',
+  'Gray–Scott is a different system, typicallyu_t=D_uΔu−uv²+F(1−u),v_t=D_vΔv+uv²−(F+k)v; its parameters and equilibrium tests must be derived from those reactions.'],
+ 'The Brusselator Jacobian is[[B−1,A²],[−B,−A²]], withtraceB−1−A² anddetA². ForA=1,B=3/2,D_u=1,D_v=100, it is stable at zero wave number, but the spatial mode s=|k|²=1/10 has determinant−29/10<0 and is unstable.',
+ 'Differentiate the reaction terms at(A,B/A) to obtainJ. For any s≥0, det(J−sD)=A²−[D_v(B−1)−D_uA²]s+D_uD_vs². The trace decreases withs, so it stays negative if homogeneous stability holds. With the chosen parameters, traceJ=−1/2 anddetJ=1. The determinant polynomial is1−49s+100s². At s=1/10 it is1−49/10+1=−29/10. A real two-by-two matrix with negative determinant has two real eigenvalues of opposite signs, proving exponential growth of that mode. A periodic interval of length2π√10 has a first nonzero wave number1/√10 and realizes the mode exactly.',
+ 'Compare the homogeneous mode with the first periodic spatial mode on that interval.',
+ 'The homogeneous eigenvalues have negative real parts. The spatial-mode trace is−1/2−101/10=−53/5, while its determinant is−29/10. The determinant sign alone certifies one positive eigenvalue. For Gray–Scott, the ever-present equilibrium(1,0) instead has reaction Jacobian diag(−F,−F−k), so adding positive diagonal diffusion cannot destabilize that particular equilibrium.',
+ 'The same linear-algebra method applies across models, but a Turing conclusion depends on the equilibrium, parameter values, diffusion contrast and allowed domain modes.',
+ 'Linear instability does not prove the eventual nonlinear pattern, its wavelength selection or long-time existence. The symbol k in Gray–Scott is a reaction parameter, distinct from a Fourier wave number; variables should be renamed when comparing them.',
+ 'Write C=D_v(B−1)−D_uA², so the determinant polynomial is A²−Cs+D_uD_vs². It is negative for some s>0 exactly when C>2√(D_uD_vA²). A finite domain must additionally contain an allowed Laplacian eigenvalue inside that unstable interval.',[('Alan Turing The Chemical Basis of Morphogenesis','https://doi.org/10.1098/rstb.1952.0012')])
+
+put(21,'Gradient flows separate mass conservation from energy decay','2024-04-20','Partial differential equations',DYN,'root_details.json#0',
+ 'Which of the named field equations decreases a specified energy, and which also conserves spatial mass?',
+ 'Allen–Cahn type real Ginzburg–Landau flow and Cahn–Hilliard flow share an energy but use different metrics. Their energy dissipation and mass laws differ. Swift–Hohenberg uses a different energy and preferred linear wave number.',
+ 'Derive each dissipation identity under periodic boundary conditions and compute the corresponding Fourier growth rates.',
+ ['For a real smooth periodic scalar field defineE(u)=∫[ε²|∇u|²/2+(u²−1)²/4]dx and chemical potentialμ=−ε²Δu+u³−u.',
+  'The real nonconserved flow is u_t=−μ; the conserved Cahn–Hilliard flow is u_t=Δμ. The generic name Ginzburg–Landau also covers other real or complex conventions, which must be specified.',
+  'Swift–Hohenberg here meansu_t=ru−(1+Δ)²u−u³, withE_SH=∫[((1+Δ)u)²/2−ru²/2+u⁴/4]dx.'],
+ 'For the first flow,Ė=−∫μ². For Cahn–Hilliard,Ė=−∫|∇μ|² and∂_t∫u=0. For Swift–Hohenberg,Ė_SH=−∫u_t². Aroundu=0, Fourier growth rates are1−ε²s,s(1−ε²s), andr−(1−s)² respectively, withs=|k|².',
+ 'The first variation ofE is∫μη, obtained by integration by parts with no boundary term. ThusĖ=∫μu_t. Substituting−μ gives the first formula; substitutingΔμ and integrating by parts gives the second. IntegratingΔμ over a periodic cell gives zero, proving conserved mass. The first flow has no such identity and generally changes its mean. For Swift–Hohenberg the operator1+Δ is self-adjoint, so its energy gradient is(1+Δ)²u−ru+u³, the negative ofu_t. This gives its dissipation law. Linearizeu³ to zero and replaceΔ by−s to obtain all three growth rates without simulating a nonlinear PDE.',
+ 'Takeε=1 and compare modes withs=0,1/4,2. For Swift–Hohenberg taker=1/10.',
+ 'Cahn–Hilliard growth rates are0,3/16,−2, while the nonconserved rates are1,3/4,−1. In particular the conserved constant mode is neutral rather than growing. Swift–Hohenberg grows fastest ats=1, with rate1/10; ats=0 its rate is−9/10. These exact mode tests distinguish three mechanisms often grouped together as pattern formation.',
+ 'A common energy or visual resemblance does not imply the same conservation laws, dynamics or selected wavelengths.',
+ 'All integrations assume smooth periodic solutions or boundary conditions that cancel the relevant flux terms. Energy decay alone is not a proof of convergence to one equilibrium, global regularity in every dimension or a particular observed pattern. Complex Ginzburg–Landau with imaginary coefficients need not be this gradient flow.',
+ 'A numerical discretization should preserve the declared mass exactly for the conserved equation and satisfy a discrete energy inequality when claimed. These are separate checks; matching a plotted pattern is weaker than either one.',[('John Cahn and John Hilliard Free Energy of a Nonuniform System','https://doi.org/10.1063/1.1744102'),('Swift and Hohenberg Hydrodynamic fluctuations at the convective instability','https://doi.org/10.1103/PhysRevA.15.319')])
+
+put(22,'Kuramoto coherence has a Lyapunov function under precise symmetry','2024-04-20','Synchronization on graphs',DYN,'root_details.json#0',
+ 'When is an oscillator synchronization model a gradient system, and does decreasing its energy imply all phases synchronize?',
+ 'For identical frequencies and symmetric edge weights, Kuramoto dynamics in a rotating frame is a gradient flow. Energy decreases, but disconnected graphs and competing weights prevent a universal single-phase conclusion.',
+ 'Derive the potential and solve the two-oscillator phase difference exactly enough to identify its attractor.',
+ ['Let an undirected graph have real symmetric weightsK_ij=K_ji, andθ̇_i=ω+Σ_jK_ij sin(θ_j−θ_i).',
+  'Move toφ_i=θ_i−ωt. For each unordered edge defineV(φ)=−Σ_{i<j}K_ijcos(φ_i−φ_j).',
+  'Global rotation adds the same constant to every phase and leavesV unchanged. Phase differences, rather than a unique absolute phase, are observable in this model.'],
+ 'The rotating dynamics isφ̇=−∇V andV̇=−Σ_iφ̇_i²≤0. For two oscillators withK>0,δ=φ₂−φ₁ obeysδ̇=−2Ksinδ; the aligned state is stable and the antipodal state unstable.',
+ 'For an edge(i,j), differentiating−K_ijcos(φ_i−φ_j) with respect toφ_i givesK_ij sin(φ_i−φ_j). Its negative is exactly the corresponding coupling term. Summing edges yields the gradient formula. The chain rule givesV̇=∇V·φ̇=−||∇V||². For two vertices, subtract their equations to get the scalar phase-difference equation. Nearδ=0 its derivative is−2K, while nearπ it is+2K. On any branch avoidingπ, separation of variables gives tan(δ(t)/2)=tan(δ(0)/2)e^{−2Kt}, exhibiting convergence to alignment modulo2π. This is a full reduced solution, not only a small-angle approximation.',
+ 'TakeK=1/2 and initial differenceδ(0)=π/2. Also consider two disconnected edges.',
+ 'The exact difference isδ(t)=2arctan(e^{−t}), tending to zero. Its initial derivative is−1, consistent with the vector field. On two disconnected edges, each pair can align while the two pair phases remain arbitrarily different. The energy is minimized on each component, yet there is no unique global synchronized phase.',
+ 'A coherence term can now be tied to a specified graph, symmetry and conservation of global rotation rather than an unqualified synchronization claim.',
+ 'Unequal natural frequencies generally break the same periodic gradient-potential description. Negative weights can favor opposition, and general networks can have other phase-locked states. Energy descent alone therefore does not certify global consensus from every initial condition.',
+ 'Linearizing near alignment yieldsφ̇=−L_Kφ. On a connected graph with positive weights, the nonzero Laplacian eigenvalues control local decay while the one-dimensional constant mode reflects rotation symmetry. This connects a dynamical robustness estimate to a computable spectral gap.',[('Steven Strogatz From Kuramoto to Crawford','https://doi.org/10.1016/S0167-2789(00)00094-4')])
+
+put(23,'A finite lattice gauge action needs a local transformation law','2024-04-30','Algebra and lattice gauge theory',
+ '[c2] A@2024-04-30T19:15:05Z: assistant-only excerpt begins S=S_gauge+S_fermion+S_Yukawa and is truncated before its definitions.',
+ 'root_details.json#0',
+ 'What finite model makes gauge invariance directly checkable, rather than inferring a theory from a sum of named action terms?',
+ 'On an oriented graph with group-valued edge variables, vertex gauge transformations conjugate each closed-loop product. A trace action is invariant; an open-edge value is not.',
+ 'Prove the telescoping law and exhaustively verify a four-edge Z₂ plaquette.',
+ ['AssignU_ij∈G to each oriented edge, withU_ji=U_ij⁻¹. A vertex assignmentg_i∈G transformsU_ij to g_iU_ijg_j⁻¹.',
+  'For a loop1→2→3→4→1, the plaquette product isP=U₁₂U₂₃U₃₄U₄₁. A matrix-group action may useRe tr(P), invariant under conjugation.',
+  'UseG=Z₂={−1,+1} for the exact finite example, withS(U)=β(1−P). This is a new model; the source does not recover its fermion or Yukawa terms.'],
+ 'For any group, the transformed plaquette isP′=g₁Pg₁⁻¹. ForZ₂ it is exactlyP. The sixteen four-edge configurations split into two gauge orbits of eight, classified by their plaquette sign.',
+ 'Multiply transformed edges in loop order. Every adjacentg_j⁻¹g_j cancels, leaving only conjugation at the base vertex. Trace is cyclic, so its value is unchanged. For the finite model, each of four vertex signs appears twice in the product and squares to one, provingP′=P. There are sixteen gauge assignments, but the all-negative assignment acts trivially just like the all-positive assignment. The action therefore has an effective group of size eight. If a gauge assignment fixes every edge, connectedness forces all its vertex signs equal, so this is the entire stabilizer and every orbit has size eight. Eight configurations have each product sign, completing the classification.',
+ 'Enumerate all sixteen edge assignments and all sixteen vertex gauge assignments on one square. Useβ=1.',
+ 'Every positive-plaquette configuration has action zero and every negative one action two. The verifier checks all256 transformed pairs, finds exactly two orbits of size eight and confirms the partition functionZ=8(1+e^{−2}). A single edge sign changes under a suitable endpoint transformation even though its closed-loop product stays fixed.',
+ 'The result supplies a rigorous finite gauge example and shows exactly which quantities survive a local symmetry.',
+ 'It neither reconstructs the missing historical action nor claims a continuum limit, fermion determinant, Yukawa coupling or solution to a quantum field theory. Adding terms requires specifying their fields and transformation laws and checking each term, not only naming it.',
+ 'On a connected graph withn vertices andm edges, fix a spanning tree by gauge transformations. The remainingm−n+1 edge variables encode independent cycles for an abelian group. ForZ₂ this gives2^{m−n+1} orbits, which can be checked on further finite graphs.',[('David Tong Gauge Theory lectures','https://www.damtp.cam.ac.uk/user/tong/gaugetheory/gt.pdf')])
+
+# Additional consequences make the distinct parameter and degeneracy cases explicit.
+entries[2]['extension']+=' Each of these proximal maps is nonexpansive: if outputs x,y correspond to inputs z,w, monotonicity of the convex subgradient gives〈(z−x)−(w−y),x−y〉≥0. Hence||x−y||²≤〈z−w,x−y〉≤||z−w||||x−y||, proving the unit Lipschitz bound.'
+entries[3]['extension']+=' Matching the stationary variance with the varianceσ²/n of an equally weighted mean gives an effective sample size n_eff=(2−η)/η. Atη=1/2 this is three, even after infinitely many observations. This is a variance comparison under the iid model, not a count of actual retained records.'
+entries[4]['extension']+=' Products of valid kernels remain valid: ifk=φ·φ′ andh=ψ·ψ′, thenkh is the dot product of tensor featuresφ⊗ψ andφ′⊗ψ′. This proves a construction rule for richer similarities while preserving the positivity certificate.'
+entries[10]['extension']+=' Repeated merging can only decreaseD, but the same statistic does not order spatial connectedness: permuting patch locations leaves everyp_i and thereforeD unchanged. A connectivity claim requires adjacency information in addition to these proportions.'
+entries[15]['limits']+=' Atμ=0, all trace-free strains have zero energy; at3λ+2μ=0, scalar dilation has zero energy. These boundary cases are positive semidefinite only under the remaining nonnegative condition and cannot support a strictly positive coercivity bound.'
+entries[16]['extension']+=' In the SIR example, a positive interior maximum ofI occurs whenS=γ/β. The first integral givesI_peak=I₀+S₀−γ/β−(γ/β)log(S₀β/γ), provided the solution actually crosses that threshold. This distinguishes a trajectory peak from an equilibrium assertion.'
+entries[18]['result']['proof']+=' At the Lorenz origin, the characteristic polynomial factors as(λ+β)[λ²+(σ+1)λ+σ(1−ρ)]. Forρ>1 the quadratic constant term is negative, giving one positive root and proving instability of that equilibrium too. This remains a local statement even when all listed equilibria are unstable.'
+entries[19]['extension']+=' In the concrete example the unstable interval has endpoints(49−√2001)/200 and(49+√2001)/200. The chosen s=1/10 lies strictly between them, so its instability has a positive parameter margin rather than resting on an equality case.'
+entries[20]['example']['calculation']+=' A spatially constant fieldu=1/2 is stationary under Cahn–Hilliard becauseΔμ=0, while its nonconserved derivative is3/8. Thus mass conservation separates the two dynamics even before nonconstant Fourier modes are considered.'
+entries[21]['extension']+=' For the two-vertex example, the Laplacian eigenvalues are zero and2K=1. The exact nonlinear solution has asymptotic phase-difference decay proportional toe^{−t}, agreeing with the nonzero linear eigenvalue and providing an independent local consistency check.'
+
+# Historical metadata is separated from the newly authored summary.
+for e in entries:
+ e['summary']=e['result']['statement']+' '+e['example']['conclusion']
+ ex=e['original']['source_excerpt']
+ if ex==CL: origin='Assistant discussion of weighted clustering, regularization, online updates and statistical learning methods.'
+ elif ex==DYN: origin='Assistant list of classical nonlinear dynamical models and field equations.'
+ elif ex==LAND: origin='Assistant formulas for landscape shape, perimeter–area measures and landscape division.'
+ elif ex==TOP: origin='Assistant use of spectral-sequence, sheaf and scalar elasticity notation.'
+ else: origin='Assistant-attributed mathematical fragment; the surviving source wording is preserved in source_excerpt.'
+ e['original']['origin']=origin
+# Only Apr4 PCA is securely dated; the t-SNE comparison is editorial development.
+e=next(e for e in entries if e['id']=='Y24-04-012')
+e['original'].update(date='2024-04-04',source_excerpt=CL,retrieval_receipt='root_receipts.json#0',origin='Assistant clustering discussion included PCA; the t-SNE and intrinsic-dimension comparison is new development.')
+e['limits']='The historical fragment explicitly supplies PCA but not a complete dimension-estimation algorithm. The t-SNE comparison and circle example are newly authored development rather than recovered historical claims. A discrete point cloud needs a separate geometric model before a manifold dimension can be assigned.'
+HERE.joinpath('entries.json').write_text(json.dumps(entries,ensure_ascii=False,indent=2))
+print(len(entries))

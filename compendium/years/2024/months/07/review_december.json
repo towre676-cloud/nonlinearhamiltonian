@@ -1,0 +1,65 @@
+{
+  "reviewed_file": "../12/entries.json",
+  "reviewer": "independent linear algebra, probability and mathematical physics review",
+  "scope": [
+    "Y24-12-005 Jordan",
+    "Y24-12-010 Laguerre/spherical normalization",
+    "Y24-12-011 Gram phase derivatives",
+    "Y24-12-014 compact-circle heat/spectral zeta",
+    "Y24-12-024 exact P30 rejection",
+    "Y24-12-028 spin Hamiltonian",
+    "Y24-12-029 GHZ/Zeno",
+    "Y24-12-030 A2 cluster",
+    "Y24-12-034 toric modular datum",
+    "Y24-12-035 toric stabilizers",
+    "Y24-12-037 Stinespring channel"
+  ],
+  "issues": [
+    {
+      "severity": "low",
+      "id": "Y24-12-011",
+      "description": "The core energy/phase theorem is correct. Its extension introduces a localized operator W without specifying the positivity/self-adjointness needed for c*G_Wc to be a real nonnegative energy.",
+      "fix": "Require W bounded positive self-adjoint, for example multiplication by a bounded nonnegative observation window. Then G_W is Hermitian positive semidefinite and the same phase derivative applies."
+    }
+  ],
+  "approved_scopes": [
+    "Jordan nullity increments correctly count blocks; exact generalized eigenspaces are preserved by genuinely commuting symmetries. The recovered upper-triangular matrix eigenvectors and the near-defective 2×2 example are correct.",
+    "Laguerre normalization exactly cancels r²dr after x=kr; α>−1 is sufficient for the stated radial integrability, and angular orthogonality is with S² measure, not a torus. The α=2 n=0,1 examples are correct.",
+    "With the stated conjugate-linear-first convention, ∂E/∂χ_n=2 Im(conj(c_n)(Gc)_n) has the correct sign. Diagonal G removes all phase dependence. Two-mode minimization selects π rather than alignment, correctly distinguished from maximizing energy.",
+    "Circle eigenvalues, multiplicity two, zero-mode subtraction, zeta scaling 2(L/(2π))^(2s)ζ_R(2s), Mellin half-plane Re(s)>1/2 and Poisson factor L/sqrt(4πt) are correct. The unconfined hydrogen Gibbs divergence is not confused with compact positive elliptic heat theory.",
+    "P30 residual after t=sqrtπ and clearing t²⁴ is a nonzero integer polynomial with coefficient −b in degree24. Transcendence and the independent elementary π-interval inequality are both valid. Cleared denominator constants 59049,6561,1089,891 are correct.",
+    "Spin convention S=σ/2 gives exchange triplet energy J/4 and singlet −3J/4; field splitting J/4±h is correct. Real continuous finite Hermitian H(t) produces unitary ODE evolution.",
+    "The GHZ generator γ/2 times (ZρZ−ρ) gives coherence exponent Nγ, including the factor 1/2 in the original density entry. The Zeno all-success limit is valid for the ideal repeated-projection model and is not claimed to solve unconditional noise.",
+    "A2 coefficient-free mutation algebra has exactly the displayed Laurent expressions and five-periodicity in the rational function field; singular numerical specializations are properly excluded.",
+    "Toric S,T satisfy S²=T²=(ST)³=I and ε twist −1. Framing distinctions are explicit. Stabilizer rank 2L²−2 and distance L hold for the specified periodic square code L≥3, with no passive self-correction claim.",
+    "The finite Kraus isometry uses the correct normalization ΣK_a* K_a=I. Partial trace, complete positivity and qubit dephasing multiplier 2p−1 are proved with the correct sign and normalization."
+  ],
+  "independent_checks": [
+    {
+      "name": "P30 interval gap",
+      "status": "pass",
+      "detail": "Exact cleared-denominator integer is positive; decimal digit count 97."
+    },
+    {
+      "name": "Laguerre factorial integrals",
+      "status": "pass",
+      "detail": "Cross numerator 3·2!−3!=0; second norm numerator 9·2!−6·3!+4!=6."
+    },
+    {
+      "name": "Gram phase sign",
+      "status": "pass",
+      "detail": "At c=(1,i), overlap 1/2, exact derivative vector is (1,−1), summing to zero as required by global-phase invariance."
+    },
+    {
+      "name": "Spin exchange",
+      "status": "pass",
+      "detail": "Exact rational 4×4 matrix gives eigenvalues 1/4 on symmetric middle vector and −3/4 on antisymmetric vector."
+    },
+    {
+      "name": "Toric modular identities",
+      "status": "pass",
+      "detail": "Independent Fraction matrix multiplication verifies S²=I and (ST)³=I."
+    }
+  ],
+  "scope_note": "The review checks specified mathematical constructions. It does not validate historical applied interpretations, claim a new field theory or prove general conjectures from finite examples."
+}

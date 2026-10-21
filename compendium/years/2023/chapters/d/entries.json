@@ -1,0 +1,570 @@
+[
+  {
+    "id": "M057",
+    "title": "A Cauchy model has no ordinary mean or variance",
+    "status": "Classical result developed and worked",
+    "summary": "The useful revision is a complete separation between symmetry, existence of a mean, and concentration of an estimator. The Cauchy family gives an exact example in which averaging independent observations does not improve the distribution of the sample mean. This is a classical stability calculation, not a conclusion about any particular empirical dataset.",
+    "definitions": [
+      "A Cauchy law with location μ and scale γ>0 has density γ/[π((x−μ)²+γ²)]. Its characteristic function is φ(t)=exp(iμt−γ|t|). Independence multiplies characteristic functions."
+    ],
+    "result": {
+      "name": "Exact failure of sample-mean concentration",
+      "statement": "If X₁,…,Xₙ are independent Cauchy(μ,γ), then their arithmetic mean is again Cauchy(μ,γ), for every positive integer n. Neither E[X] nor Var(X) exists as an ordinary finite moment.",
+      "proof": "The positive and negative parts of the centered first-moment integral each diverge logarithmically because x/(1+x²) has a logarithmic antiderivative. Symmetric truncation cancels these divergences, but that principal value is not a Lebesgue expectation. For the mean, independence gives E exp(itΣXⱼ/n)=φ(t/n)ⁿ=exp(iμt−γ|t|). Uniqueness of characteristic functions identifies the law. Thus no finite-variance central-limit estimate can be invoked. The same tail calculation gives a divergent second moment."
+    },
+    "example": {
+      "setup": "Take standard Cauchy observations and ask whether the mean is within one unit of zero.",
+      "calculation": "For every n, P(|X̄ₙ|≤1)=F(1)−F(−1)=1/2, using F(x)=1/2+arctan(x)/π. The probability remains one half even when n increases. In contrast, the population median is μ and independent sample quantiles can consistently estimate it because F is continuous and strictly increasing there.",
+      "conclusion": "A stable distribution can make an apparently reasonable estimator permanently noisy. Quantile estimation and distribution fitting must be evaluated under their actual assumptions."
+    },
+    "limits": "This does not establish that observations are Cauchy, that every heavy-tailed law lacks a mean, or that all robust estimators have the same behavior. Dependence would also change the characteristic-function multiplication.",
+    "extension": "For a specified tail exponent, determine which absolute moments exist, then compare mean, median and trimmed estimators using exact or justified asymptotic distributions.",
+    "references": [
+      {
+        "label": "NIST Cauchy distribution reference",
+        "url": "https://itl.nist.gov/div898/handbook/eda/section3/eda3663.htm"
+      },
+      {
+        "label": "Verdú The Cauchy Distribution in Information Theory",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9955388/"
+      }
+    ]
+  },
+  {
+    "id": "M058",
+    "title": "Feedback instability is a mechanism to specify",
+    "status": "Classical result developed and worked",
+    "summary": "Feedback questions become testable once an update matrix and a measured norm are fixed. Eigenvalues determine asymptotic decay in finite dimension, but they do not bound all finite-time amplification. A two-dimensional Jordan block makes the distinction completely explicit.",
+    "definitions": [
+      "A discrete linear system is xₙ₊₁=Axₙ. Spectral radius ρ(A) is the largest eigenvalue modulus. The Euclidean amplification at step n is the induced norm ||Aⁿ||₂. A real matrix is normal when AAᵀ=AᵀA."
+    ],
+    "result": {
+      "name": "Exact transient amplification in an asymptotically stable system",
+      "statement": "For A=aI+bN with N=[[0,1],[0,0]], N²=0 and 0<a<1, Aⁿ=aⁿI+n aⁿ⁻¹bN. Although ρ(A)=a<1 and Aⁿ→0, intermediate norms can be arbitrarily large as |b| increases.",
+      "proof": "The binomial theorem applies because I and N commute and every power Nᵏ with k≥2 vanishes. Only the terms k=0 and k=1 survive. The scalar sequences aⁿ and n aⁿ⁻¹ both tend to zero, proving asymptotic stability. Acting on e₂ yields Aⁿe₂=(n aⁿ⁻¹b,aⁿ), so its Euclidean norm supplies a lower bound on ||Aⁿ||₂. At a fixed step n this lower bound grows linearly in |b| without changing either eigenvalue."
+    },
+    "example": {
+      "setup": "Choose A=[[1/2,4],[0,1/2]] and initial state e₂.",
+      "calculation": "At one step the output is (4,1/2), with norm √65/2>4. At two steps the output is (4,1/4), although the eigenvalues remain 1/2. The exact formula predicts eventual decay after this transient. The corresponding continuous example A_c=[[-1,4],[0,−1]] has exp(tA_c)=e^(−t)[[1,4t],[0,1]].",
+      "conclusion": "A stability statement and a peak-amplification statement answer different questions. A mechanism for a large transient can be proved without asserting any probability distribution for external shocks."
+    },
+    "limits": "The calculation assumes a fixed finite matrix. Nonlinear saturation, delayed feedback, time-varying matrices and stochastic inputs require additional models. A large matrix norm does not by itself imply a particular event occurs.",
+    "extension": "Optimize supₙ||Aⁿ|| over a parameter family, then compare Euclidean bounds with a quadratic Lyapunov norm that contracts at every step.",
+    "references": [
+      {
+        "label": "Boyd and Vandenberghe Introduction to Applied Linear Algebra",
+        "url": "https://stanford.edu/~boyd/vmls/"
+      },
+      {
+        "label": "Boyd and coauthors Linear Matrix Inequalities in System and Control Theory",
+        "url": "https://web.stanford.edu/~boyd/lmibook/index.html"
+      }
+    ]
+  },
+  {
+    "id": "M059",
+    "title": "Frobenius energy across disjoint blocks",
+    "status": "Classical result developed and worked",
+    "summary": "A multiscale norm construction needs a bookkeeping theorem. The Frobenius norm behaves like a Euclidean norm on the list of matrix entries, so squared energies add over disjoint blocks. Overlapping descriptions need multiplicity corrections instead of an unqualified addition rule.",
+    "definitions": [
+      "For a real or complex matrix A, ||A||_F²=Σᵢⱼ|aᵢⱼ|²=Tr(A* A). A block here means a subset of entry indices; blocks may have irregular shapes. A partition uses every entry exactly once."
+    ],
+    "result": {
+      "name": "Partition additivity and the overlap correction",
+      "statement": "If entry blocks B₁,…,B_m partition the indices, then ||A||_F²=Σ_b||A|B_b||_F². If they cover entries with multiplicities cᵢⱼ, the uncorrected sum is Σᵢⱼcᵢⱼ|aᵢⱼ|².",
+      "proof": "Expand every block norm as a sum of squared moduli and interchange two finite sums. The coefficient of a given entry is exactly the number of blocks containing it. For a partition that number is one. When every covered entry has positive multiplicity, assigning weight 1/cᵢⱼ to that entry within each occurrence restores the original energy. The argument needs no independence or probabilistic assumptions. An equivalent Hilbert-space statement uses orthogonal coordinate projections P_b and the identity ΣP_b=I."
+    },
+    "example": {
+      "setup": "Let A=[[1,2],[3,4]]. Partition it by rows, then deliberately count its first row twice.",
+      "calculation": "The complete squared Frobenius norm is 1+4+9+16=30. Row energies are 5 and 25, adding to 30. Repeating the first row gives 35, exposing five units of double counting. Dividing the two first-row occurrences by multiplicity two restores 30. By contrast, the unsquared norms √5+5 do not equal √30.",
+      "conclusion": "Disjoint block decomposition preserves total squared energy. It does not automatically make values comparable across blocks of different cardinalities."
+    },
+    "limits": "When comparing differently sized systems, one must choose total energy, mean squared entry, an operator norm or a dimensionless normalization. Those choices encode different questions. Orthogonal-coordinate arguments also do not apply unchanged to arbitrary overlapping learned features.",
+    "extension": "For nonorthogonal feature maps F_b, study frame bounds a||x||²≤Σ||F_bx||²≤b||x||² and determine whether a tight-frame normalization can preserve the intended energy.",
+    "references": [
+      {
+        "label": "Boyd and Vandenberghe Introduction to Applied Linear Algebra",
+        "url": "https://stanford.edu/~boyd/vmls/"
+      }
+    ]
+  },
+  {
+    "id": "M060",
+    "title": "Population weights versus amplitude weights",
+    "status": "Classical result developed and worked",
+    "summary": "The distinction between probability weights and amplitude weights can be settled before any elaborate multiscale model is built. The former defines an expected square; the latter first attenuates the signal and then squares it. They agree only under special circumstances.",
+    "definitions": [
+      "Let p_i≥0 with Σp_i=1 and let a_i be real or complex values. Expected square is E|A|²=Σp_i|a_i|². Entrywise amplitude weighting by p gives ||p⊙a||₂²=Σp_i²|a_i|²."
+    ],
+    "result": {
+      "name": "Probabilistic weighting is implemented by square-root amplitudes",
+      "statement": "The probability-weighted squared magnitude equals ||diag(√p_i)a||₂². Weighting the amplitudes by p_i instead yields a different quadratic form. Since 0≤p_i≤1, the second is no larger than the first.",
+      "proof": "Expand the Euclidean norm after applying the diagonal matrix. Each squared coefficient is (√p_i)²=p_i. The ordinary amplitude weight p_i is squared by the norm, producing p_i². The inequality follows term by term from p_i²≤p_i. Equality requires p_i(1−p_i)|a_i|²=0 for every i: nonzero signals can occur only at weights zero or one, apart from degenerate cancellations that are impossible in this nonnegative sum."
+    },
+    "example": {
+      "setup": "Use values a=(2,4) and probabilities p=(1/4,3/4).",
+      "calculation": "Expected square is (1/4)4+(3/4)16=13. Squared probability-amplitude weighting gives (1/16)4+(9/16)16=37/4=9.25. The weighted mean is 7/2, so the variance is 13−(7/2)²=3/4. None of these three quantities is a substitute for the others.",
+      "conclusion": "A correct implementation starts by deciding whether the data describe sampling frequencies, deliberate attenuation or an averaging measure. The square-root representation then supplies a precise matrix formula."
+    },
+    "limits": "If some weights vanish, the resulting quadratic form is only a seminorm on the full coordinate space. Importance weights need not sum to one, while signed weights need not produce a positive quadratic form at all.",
+    "extension": "For a general positive measure μ, formulate the same distinction as an L²(μ) norm versus a weighted amplitude map, and establish invariance under a change of sampling representation.",
+    "references": [
+      {
+        "label": "Boyd and Vandenberghe Introduction to Applied Linear Algebra",
+        "url": "https://stanford.edu/~boyd/vmls/"
+      }
+    ]
+  },
+  {
+    "id": "M061",
+    "title": "Covariance inequalities with finite moments",
+    "status": "Classical result developed and worked",
+    "summary": "Covariance optimization is legitimate only after existence of the required moments is established. Once variables are square integrable, covariance becomes a positive semidefinite Gram matrix in an L² space, and the familiar bounds follow from one short argument.",
+    "definitions": [
+      "For square-integrable X and Y, Cov(X,Y)=E[(X−EX)overline(Y−EY)]. For a real random vector Z, its covariance matrix Σ has entries Cov(Z_i,Z_j). Positive semidefinite means wᵀΣw≥0 for every w."
+    ],
+    "result": {
+      "name": "Covariance as a Gram matrix and its equality condition",
+      "statement": "|Cov(X,Y)|²≤Var(X)Var(Y). For a finite square-integrable real vector, Var(wᵀZ)=wᵀΣw. If both variances are positive, equality in the scalar bound occurs precisely when the centered variables are proportional almost surely.",
+      "proof": "Centered variables are elements of the Hilbert space L². Cauchy–Schwarz gives the bound. Alternatively, for real variables, nonnegativity of E[(X−EX−t(Y−EY))²] for every real t forces the discriminant of this quadratic in t to be nonpositive. Expanding the centered weighted sum proves the matrix identity and hence positive semidefiniteness. Equality in Cauchy–Schwarz identifies linear dependence in L², where two representatives differing only on a null set are equivalent."
+    },
+    "example": {
+      "setup": "Let X be equally likely to be −1 or 1, and let Y=2X.",
+      "calculation": "Both means vanish. Variances are 1 and 4, covariance is 2, and Σ=[[1,2],[2,4]] has determinant zero. The combination 2X−Y vanishes almost surely, so its variance is zero. This explains the singularity structurally rather than treating it as a numerical failure.",
+      "conclusion": "A singular covariance matrix records an exact L² dependency. It can be essential information for a constrained quadratic calculation."
+    },
+    "limits": "The Cauchy example M057 is outside these hypotheses; finite-sample covariance numbers do not create a population covariance that fails to exist. For complex variables, conjugation must be retained. Estimated matrices may require a separate analysis of sampling error.",
+    "extension": "Characterize which dependencies are preserved under an observation map and how eigenvalue perturbation bounds distinguish a true null direction from one introduced by finite precision.",
+    "references": [
+      {
+        "label": "Boyd and Vandenberghe Introduction to Applied Linear Algebra",
+        "url": "https://stanford.edu/~boyd/vmls/"
+      }
+    ]
+  },
+  {
+    "id": "M062",
+    "title": "A quadratic program with singular cases included",
+    "status": "Classical result developed and worked",
+    "summary": "The positive-definite inverse formula is only one branch of the quadratic-program problem. The singular case admits a clean complete classification, and inequality constraints can change the optimizer even when the matrix is nonsingular. These are mathematical statements about quadratic forms, not practical allocation recommendations.",
+    "definitions": [
+      "Let Σ be a symmetric positive semidefinite real matrix and c≠0. Minimize wᵀΣw subject to cᵀw=1. Write Σ⁺ for its Moore–Penrose inverse and kerΣ for its nullspace."
+    ],
+    "result": {
+      "name": "Complete equality-constrained PSD classification",
+      "statement": "If some z∈kerΣ has cᵀz≠0, the minimum is zero and all minimizers are the feasible null vectors. Otherwise c∈rangeΣ, q=cᵀΣ⁺c>0, the minimum is 1/q, and all minimizers are Σ⁺c/q+z with z∈kerΣ.",
+      "proof": "In the first case, z/(cᵀz) is feasible and has zero objective; positive semidefiniteness rules out a lower value. In the second case, c is orthogonal to the nullspace and hence lies in the range. Set w₀=Σ⁺c/q. It is feasible and Σw₀=c/q. For any feasible w=w₀+h, cᵀh=0, so the cross term 2hᵀΣw₀ vanishes and the objective is 1/q+hᵀΣh. Equality holds exactly when h∈kerΣ. This also proves uniqueness precisely when the feasible tangent space contains no nonzero null vector."
+    },
+    "example": {
+      "setup": "Compare a diagonal matrix, a rank-one matrix, and a nonnegative constraint.",
+      "calculation": "For Σ=diag(1,4), c=(1,1), w*=(4/5,1/5) and the minimum is 4/5. For Σ=11ᵀ, every feasible w has objective one. For Σ=[[1,2],[2,9]], the unrestricted optimizer is (7/6,−1/6) with value 5/6; imposing w≥0 gives (1,0) with value one. Its KKT multiplier for the second coordinate is positive.",
+      "conclusion": "Nullspaces, budgets and inequality constraints must be handled together; merely replacing an inverse by a pseudoinverse does not cover every singular case."
+    },
+    "limits": "If Σ is indefinite the convex proof fails and the objective may be unbounded below along feasible directions. Additional bounds or penalties define different programs.",
+    "extension": "For rational inputs, produce exact KKT and nullspace certificates, then study the parameter loci where the active set or nullspace changes.",
+    "references": [
+      {
+        "label": "Boyd and Vandenberghe Convex Optimization",
+        "url": "https://web.stanford.edu/~boyd/cvxbook/"
+      }
+    ]
+  },
+  {
+    "id": "M063",
+    "title": "Open-system dynamics must preserve physical states",
+    "status": "Classical result developed and worked",
+    "summary": "An open-system equation must preserve the convex set of density operators, including when an auxiliary system is attached. An exactly solvable qubit channel provides a stronger check than inspection of trace alone. Its Kraus form supplies complete positivity directly.",
+    "definitions": [
+      "A density operator is a positive semidefinite matrix ρ with trace one. A map is completely positive when its tensor product with the identity map on any finite auxiliary system preserves positivity. Set ℏ=1."
+    ],
+    "result": {
+      "name": "Exact amplitude-damping semigroup",
+      "statement": "For H=0 and L=√γ |0⟩⟨1| with γ≥0, the Lindblad equation sends ρ=[[a,b],[b*,d]] to [[a+(1−q)d,√q b],[√q b*,qd]], where q=e^(−γt), t≥0. This defines a trace-preserving completely positive semigroup.",
+      "proof": "Direct matrix multiplication in LρL†−{L†L,ρ}/2 gives ḋ=−γd, ḃ=−γb/2 and ȧ=γd, which solve to the displayed formula. Define K₀=diag(1,√q) and K₁=√(1−q)|0⟩⟨1|. Their adjoint squares sum to I, and ΣK_jρK_j† reproduces the solution. Tensoring each K_j with an auxiliary identity shows complete positivity. Since q(t+s)=q(t)q(s), composition satisfies the semigroup law."
+    },
+    "example": {
+      "setup": "Start from |+⟩⟨+|, so a=d=b=1/2.",
+      "calculation": "At q=1/4 the output is [[7/8,1/4],[1/4,1/8]], with trace one and determinant 3/64>0. More generally detρ(t)=q detρ(0)+q(1−q)d²≥0, giving an additional two-by-two positivity check. As t tends to infinity the state approaches |0⟩⟨0|.",
+      "conclusion": "The exact solution verifies what the mathematical generator does. It does not establish that this generator describes any proposed physical mechanism."
+    },
+    "limits": "A reduced microscopic model can require weak-coupling, coarse-graining or Markov assumptions before it has this form. Trace preservation alone is weaker than positivity, and positivity alone is weaker than complete positivity. Negative-time inversion is not a physical damping channel.",
+    "extension": "Add a specified Hamiltonian or dephasing operator and test whether an exact solution, a spectral decomposition of the generator, or a controlled splitting error is available.",
+    "references": [
+      {
+        "label": "Microscopic derivation of one-qubit amplitude and phase damping Kraus operators",
+        "url": "https://arxiv.org/abs/1606.01145"
+      },
+      {
+        "label": "Solution of the Lindblad equation in the Kraus representation",
+        "url": "https://doi.org/10.1103/PhysRevA.74.062113"
+      }
+    ]
+  },
+  {
+    "id": "M064",
+    "title": "Population growth and the actual logarithmic time",
+    "status": "Classical result developed and worked",
+    "summary": "The original numerical claim can be resolved entirely within its assumed exponential model. The corrected answer is a model time, not a prediction of a real population. The factor of one half changes the initial condition and must not be silently discarded.",
+    "definitions": [
+      "For discrete-time growth, P(t)=P₀(1+r)^t with r>−1; allowing real t is an interpolation of that formula. A continuous exponential with the same unit-step multiplier has rate λ=log(1+r), not r exactly."
+    ],
+    "result": {
+      "name": "Exact target time and rate sensitivity",
+      "statement": "For P(t)=154000(1.0005)^t/2, the starting value is 77000. The time to P*=10¹² is t*=log(10¹²/77000)/log(1.0005)=32767.109878086… in the specified time units. If only integer times are allowed, the first crossing is 32768.",
+      "proof": "Take logarithms of the positive equation P*=77000(1.0005)^t. Strict monotonicity of the exponential gives a unique real solution, and integer rounding follows from the same monotonicity. For a general multiplier 1+r>1, differentiation yields ∂t*/∂r=−log(P*/P₀)/[(1+r)log(1+r)²]. This makes the long extrapolation highly sensitive to the assumed rate. Replacing log(1+r) by r is only a small-r approximation whose cumulative error should be reported."
+    },
+    "example": {
+      "setup": "Compare the stated discrete interpolation with a continuous model using λ=0.0005.",
+      "calculation": "The latter target time is log(10¹²/77000)/0.0005≈32758.92083, about 8.18905 units earlier. Substituting t*=32767.109878086 back into the original formula recovers 10¹² to the working floating-point precision. The previously reported value near 11788 does not satisfy the equation.",
+      "conclusion": "Correct arithmetic settles a question about a formula; it does not supply evidence that the formula remains valid over tens of thousands of units."
+    },
+    "limits": "The model assumes a fixed rate and no carrying capacity, migration, stochasticity or resource constraint. Any logistic replacement needs a stated carrying capacity larger than the target, otherwise the target is never reached in finite time.",
+    "extension": "Specify a bounded-growth ODE, derive its target-time formula and classify unreachable targets before computing a numerical crossing.",
+    "references": []
+  },
+  {
+    "id": "M065",
+    "title": "A unified equation needs shared variables and invariances",
+    "status": "Classical result developed and worked",
+    "summary": "A useful unification identifies a common mathematical structure and proves a transportable statement. Gradient flows provide one such structure, but the metric and mobility are part of the model. Sharing an energy symbol does not make two systems dynamically equivalent.",
+    "definitions": [
+      "Let E:Rⁿ→R be differentiable. A mobility K(x) is a symmetric positive semidefinite matrix. The dynamics ẋ=−K(x)∇E(x) uses the chosen Euclidean coordinates; positive-definite K defines a corresponding metric interpretation."
+    ],
+    "result": {
+      "name": "Energy dissipation and coordinate transport",
+      "statement": "Every sufficiently differentiable solution satisfies dE/dt=−∇EᵀK∇E≤0. Under an invertible linear change y=Sx, the transported energy Ẽ(y)=E(S⁻¹y) and mobility K̃(y)=SK(S⁻¹y)Sᵀ preserve this dissipation identity.",
+      "proof": "The chain rule gives Ė=∇Eᵀẋ, and positive semidefiniteness gives the sign. For the coordinate change, ∇_yẼ=S⁻ᵀ∇_xE and ẏ=Sẋ=−SKSᵀ∇_yẼ. Substitution recovers the same scalar energy derivative. This calculation explains why transforming only the state while keeping an arbitrary identity mobility generally changes the dynamics. The result requires neither thermodynamic terminology nor a claim that all dissipative systems are gradient flows."
+    },
+    "example": {
+      "setup": "Take E(x)=xᵀAx/2 with symmetric A positive semidefinite, and K=I.",
+      "calculation": "Then ẋ=−Ax and Ė=−xᵀA²x. A finite weighted-graph heat equation has this form with A equal to the graph Laplacian, while the scalar equation ẋ=−x is its one-dimensional instance. A constant component in the Laplacian nullspace is preserved rather than dissipated, which shows the difference between nonincrease and convergence to a unique state.",
+      "conclusion": "The shared theorem is energy monotonicity under a specified positive mobility. A proof of equivalence requires an actual state-space map such as S and the correctly transported energy and mobility."
+    },
+    "limits": "Nonsymmetric transport, Hamiltonian components, constraints and nonlocal metrics require extensions. Energy decrease alone does not prove boundedness, uniqueness, convergence rate or identification from observations.",
+    "extension": "Separate a generator into dissipative and skew parts, prove the resulting balance law and ask which observations distinguish the mobility from the energy.",
+    "references": [
+      {
+        "label": "Boyd and Vandenberghe Convex Optimization",
+        "url": "https://web.stanford.edu/~boyd/cvxbook/"
+      }
+    ]
+  },
+  {
+    "id": "M066",
+    "title": "Bessel versus Parseval",
+    "status": "Classical result developed and worked",
+    "summary": "The missing distinction in the original inequality list is completeness. Bessel’s inequality is an exact statement about projection error; Parseval’s equality appears when the chosen orthonormal family spans the relevant Hilbert space. A residual formula makes the practical meaning immediate.",
+    "definitions": [
+      "Use an inner product linear in its first argument. For an orthonormal family e₁,…,e_m, define P_mx=Σ⟨x,e_j⟩e_j. Its span is a closed finite-dimensional subspace of the Hilbert space H."
+    ],
+    "result": {
+      "name": "Projection residual and completeness criterion",
+      "statement": "For every x, ||x||²=Σ_{j=1}^m|⟨x,e_j⟩|²+||x−P_mx||². For a countable orthonormal family, the infinite coefficient sum is at most ||x||². Equality for every x holds exactly when its closed linear span is H.",
+      "proof": "The residual is orthogonal to every e_j because taking its inner product with e_j subtracts the same coefficient. Pythagoras therefore splits the norm into projection and residual, and orthonormality gives the coefficient sum. Finite partial sums are increasing and bounded, so their limit exists. The partial projections form a Cauchy sequence, with squared differences equal to sums of omitted squared coefficients. Their limit projects onto the closed span. Equality means the residual projection onto the orthogonal complement vanishes. If equality holds for all x, that complement is zero and the span is dense."
+    },
+    "example": {
+      "setup": "Take x=(2,3,6) in R³ and initially observe only e₁,e₂.",
+      "calculation": "The observed squared coefficient sum is 4+9=13, total squared norm is 49, and residual squared norm is 36. Adding e₃ removes the residual exactly. Omitting e₃ never becomes harmless merely because the first two coefficients were calculated to high precision.",
+      "conclusion": "This is both an approximation certificate and a statement of what the measurement family cannot see."
+    },
+    "limits": "An infinite orthonormal family need not be complete. For nonorthogonal features, coefficients from raw inner products are not automatically orthogonal projections, and frame or Gram-matrix analysis is needed.",
+    "extension": "Develop a frame analogue with lower and upper frame bounds, or identify the cheapest observation family whose residual vanishes on a specified finite-dimensional model class.",
+    "references": [
+      {
+        "label": "MIT OpenCourseWare Functional Analysis Hilbert spaces",
+        "url": "https://ocw.mit.edu/courses/18-102-introduction-to-functional-analysis-spring-2021/"
+      }
+    ]
+  },
+  {
+    "id": "M067",
+    "title": "Hölder and Young with equality cases",
+    "status": "Classical result developed and worked",
+    "summary": "Conjugate exponents and equality cases turn a generic inequality into a sharp tool. The proof below also states what must be checked before applying it: measurability, the relevant integrability and the distinction between the absolute-value bound and the signed integral.",
+    "definitions": [
+      "Let 1<p<∞ and q=p/(p−1), so 1/p+1/q=1. Norms are ||f||_p=(∫|f|^p)^(1/p) and the analogous q-norm, on one fixed measure space."
+    ],
+    "result": {
+      "name": "Young and Hölder with sharp equality",
+      "statement": "For a,b≥0, ab≤a^p/p+b^q/q, with equality exactly when a^p=b^q. Consequently ∫|fg|≤||f||_p||g||_q. For nonzero finite norms, equality holds exactly when |f|^p/||f||_p^p=|g|^q/||g||_q^q almost everywhere.",
+      "proof": "Fix a and minimize h(b)=b^q/q−ab+a^p/p over b≥0. Its derivative is b^(q−1)−a, with its unique minimum at b=a^(p−1), and the minimum equals zero. Normalize nonzero f,g to unit p- and q-norms, apply the scalar inequality pointwise and integrate. Equality in the integrated nonnegative difference requires pointwise equality almost everywhere, which yields the normalized-power condition. To obtain equality for |∫fg| as well, the product must also have an almost-everywhere constant phase or sign."
+    },
+    "example": {
+      "setup": "Choose p=3, q=3/2, a=2 and b=4.",
+      "calculation": "Here a^p=b^q=8, so Young is exact: ab=8=8/3+8/(3/2). For a finite counting measure, proportional normalized powers supply equally explicit Hölder equality examples. Choosing disjointly supported nonzero functions makes the product integral zero while both norms are positive, showing a strict case.",
+      "conclusion": "The equality condition identifies when a proposed estimate is sharp and which directions are responsible for slack."
+    },
+    "limits": "The endpoints p=1,q=∞ require essential-supremum language and a different equality statement. If either required norm is infinite, the finite useful estimate is unavailable even when a formal product expression can be written.",
+    "extension": "Use the equality characterization to optimize a linear functional on an L^p unit ball and compare existence and uniqueness in endpoint versus strictly convex cases.",
+    "references": [
+      {
+        "label": "MIT OpenCourseWare Functional Analysis Lp spaces",
+        "url": "https://ocw.mit.edu/courses/18-102-introduction-to-functional-analysis-spring-2021/"
+      }
+    ]
+  },
+  {
+    "id": "M068",
+    "title": "Matrix norms and the quantity being bounded",
+    "status": "Classical result developed and worked",
+    "summary": "Choosing a norm means choosing how input and output error are measured. A norm catalogue becomes useful only when attached to its induced error inequality. A two-dimensional example shows that several plausible norms report different numerical amplification.",
+    "definitions": [
+      "The induced p-norm is ||A||_p=sup_{x≠0}||Ax||_p/||x||_p. The induced 1-norm is the largest absolute column sum, the induced infinity-norm is the largest absolute row sum, and the Frobenius norm is a Euclidean norm on entries."
+    ],
+    "result": {
+      "name": "Sharp induced bounds and singular-value comparisons",
+      "statement": "For every vector x, ||Ax||_p≤||A||_p||x||_p. In Euclidean norm, ||A||₂ is the largest singular value, while ||A||_F² is the sum of squared singular values; hence ||A||₂≤||A||_F≤√r||A||₂ for rank r>0.",
+      "proof": "The first inequality is the definition of the supremum. For p=1, triangle inequalities bound each output coordinate and collecting each |x_j| gives the maximum column sum; choosing a coordinate vector at a maximizing column attains it. The infinity case uses a maximizing row and matching signs. Orthogonal or unitary invariance reduces the Euclidean claims to a diagonal singular-value matrix, where the largest entry bounds their squared sum above and below. The rank-zero case has both norms zero."
+    },
+    "example": {
+      "setup": "Let A=[[1,2],[0,1]].",
+      "calculation": "Its induced 1- and infinity-norms are both three. Its Frobenius norm is √6. The eigenvalues of AᵀA=[[1,2],[2,5]] are 3±2√2, so ||A||₂=√(3+2√2)=1+√2. These are distinct measures of the same operator. A claim of amplification three is sharp for a 1-norm or infinity-norm question, but overestimates the sharp Euclidean factor.",
+      "conclusion": "Reporting the input and output norms is part of stating the bound, not a cosmetic implementation detail."
+    },
+    "limits": "Condition numbers also depend on the norm and require invertibility or a specified pseudoinverse/restricted subspace. An entrywise norm cannot replace an induced one without tracking the comparison constants.",
+    "extension": "For a chosen observation map, compute the restricted operator norm on the admissible state subspace and quantify how much a generic full-space bound overestimates the actual errors.",
+    "references": [
+      {
+        "label": "Boyd and Vandenberghe Introduction to Applied Linear Algebra",
+        "url": "https://stanford.edu/~boyd/vmls/"
+      }
+    ]
+  },
+  {
+    "id": "M069",
+    "title": "Lyapunov conditions in the right direction",
+    "status": "Classical result developed and worked",
+    "summary": "A Lyapunov certificate is a sufficient argument tied to a chosen function. Failure of one function is not a system-instability certificate. The exact example below resolves that logical error and produces a contracting quadratic geometry for the same stable system.",
+    "definitions": [
+      "For ẋ=Ax and symmetric P, define V(x)=xᵀPx. Positive definiteness P≻0 makes V comparable with ||x||². Along a trajectory, V̇=xᵀ(AᵀP+PA)x. A Hurwitz matrix has all eigenvalues in the open left half-plane."
+    ],
+    "result": {
+      "name": "Quadratic certificate and a counterexample to the failed converse",
+      "statement": "If P≻0 and AᵀP+PA=−Q with Q≻0, then V(t)≤exp(−λ_min(Q)t/λ_max(P))V(0), proving exponential stability. A stable A can nevertheless make d||x||²/dt positive at some state.",
+      "proof": "The derivative identity follows by the product rule. Since xᵀQx≥λ_min(Q)||x||² and V≤λ_max(P)||x||², V̇≤−[λ_min(Q)/λ_max(P)]V. Integration gives exponential decay of V; the lower eigenvalue bound on P translates this into a Euclidean state bound. The proof makes no assertion that every positive function has a negative derivative. For Hurwitz A, the integral P=∫₀∞exp(tAᵀ)Qexp(tA)dt provides the converse existence result, with convergence following from exponential matrix decay."
+    },
+    "example": {
+      "setup": "Take A=[[-1,4],[0,−1]], whose eigenvalues are both −1.",
+      "calculation": "At x=(1,1), Ax=(3,−1) and d(xᵀx)/dt=2xᵀAx=4>0. Yet P=[[1/2,1],[1,9/2]] has positive leading minor and determinant 5/4, and direct multiplication gives AᵀP+PA=−I. Thus the Euclidean norm can temporarily grow while the certified P-norm decreases.",
+      "conclusion": "The apparent contradiction disappears once the certificate is interpreted in the right direction and its metric is stated."
+    },
+    "limits": "A certificate for one linearization is not automatically a global nonlinear proof. Semidefinite Q needs an invariance argument for asymptotic convergence, and strict inequalities matter near marginal modes.",
+    "extension": "Find a common quadratic Lyapunov function for a specified family of matrices, or exhibit why switching among individually stable matrices defeats a proposed common bound.",
+    "references": [
+      {
+        "label": "Boyd and coauthors Linear Matrix Inequalities in System and Control Theory",
+        "url": "https://web.stanford.edu/~boyd/lmibook/index.html"
+      }
+    ]
+  },
+  {
+    "id": "M070",
+    "title": "Units of the Einstein equation",
+    "status": "Classical result developed and worked",
+    "summary": "Dimensional statements about tensor components must name the coordinate or frame convention. Using a local orthonormal frame and x⁰=ct makes the audit simple, while also explaining why coordinate components in other charts can carry different units.",
+    "definitions": [
+      "Use metric signature (−,+,+,+), spacetime coordinates of length dimension, and a dimensionless orthonormal metric. Write G_N for Newton’s constant, c for speed, ε for energy density and G_μν for the Einstein tensor; the two symbols G have unrelated types."
+    ],
+    "result": {
+      "name": "A consistent dimensional audit of Einstein’s equation",
+      "statement": "In this convention G_μν and Λg_μν have dimensions L⁻²; T_μν has dimensions ML⁻¹T⁻². Since [G_N]=L³M⁻¹T⁻² and [c⁴]=L⁴T⁻⁴, (G_N/c⁴)T_μν has dimension L⁻². The factor 8π is dimensionless and is not selected by dimensional analysis.",
+      "proof": "A connection coefficient contains one derivative of a dimensionless metric, giving L⁻¹, and curvature has a derivative of the connection or a product of two connections, giving L⁻². Energy per volume is (ML²T⁻²)/L³=ML⁻¹T⁻². Multiplying exponents in G_N c⁻⁴T gives zero mass exponent, length exponent −2 and zero time exponent. The cosmological constant must have the same curvature dimension when it multiplies the dimensionless metric. All statements are frame and coordinate dependent at the component level, while the tensor equation is geometric."
+    },
+    "example": {
+      "setup": "Consider a perfect-fluid stress tensor in its local rest frame.",
+      "calculation": "T_00=ε and T_ii=p in the orthonormal convention, so pressure and energy density have matching units. If instead time is represented by t rather than ct, changing the coordinate basis introduces c factors into the time components; one must transform the tensor rather than recycle the orthonormal component units.",
+      "conclusion": "The repaired equation is G_μν+Λg_μν=(8πG_N/c⁴)T_μν. It passes a dimensional audit without confusing Newton’s constant, curvature or matter units."
+    },
+    "limits": "The audit cannot fix signs, the numerical coupling or a curvature convention. Those require definitions and a limiting calculation. Natural units c=1 suppress dimensions in notation but do not remove the need to restore them consistently.",
+    "extension": "Carry the same equation through an explicit coordinate rescaling and verify the transformed component units and physical observables.",
+    "references": [
+      {
+        "label": "Sean Carroll General Relativity lecture notes",
+        "url": "https://www.preposterousuniverse.com/wp-content/uploads/2015/08/grtinypdf.pdf"
+      }
+    ]
+  },
+  {
+    "id": "M071",
+    "title": "Why the coefficient is 8π",
+    "status": "Classical result developed and worked",
+    "summary": "The coefficient 8π is determined by matching a conventioned relativistic field equation to Newtonian Poisson gravity. The trace reversal supplies a crucial factor one half. This is a derivation of the classical normalization, not a new gravitational law.",
+    "definitions": [
+      "Set Λ=0 for the local weak-field limit. Use signature (−,+,+,+), x⁰=ct and R^ρ_{σμν}=∂_μΓ^ρ_{νσ}−∂_νΓ^ρ_{μσ}+Γ^ρ_{μα}Γ^α_{νσ}−Γ^ρ_{να}Γ^α_{μσ}, with R_σν=R^ρ_{σρν}. Let G_μν=κT_μν initially have an unknown κ."
+    ],
+    "result": {
+      "name": "Newtonian matching yields κ=8πG_N/c⁴",
+      "statement": "For a static weak potential with g_00=−(1+2Φ/c²), slow matter and negligible pressure, R_00≈∇²Φ/c² and the trace-reversed source is T_00−g_00T/2≈ρc²/2. Matching ∇²Φ=4πG_Nρ therefore gives κ=8πG_N/c⁴.",
+      "proof": "Contract the field equation in four dimensions: −R=κT. Substituting back gives R_μν=κ(T_μν−g_μνT/2). For dust at rest, T_00≈ρc², spatial diagonal stresses are negligible, and T≈−ρc²; with g_00≈−1 the displayed source becomes ρc²−ρc²/2. The weak, static connection is Γ^i_{00}≈∂_iΦ/c². In R_00, time derivatives vanish and connection products are higher order, leaving ∂_iΓ^i_{00}≈∇²Φ/c². Thus ∇²Φ=(κc⁴/2)ρ. Equating its coefficient with Poisson’s coefficient fixes κ."
+    },
+    "example": {
+      "setup": "Track the factors before inserting the answer.",
+      "calculation": "If one incorrectly equates R_00 with κρc² without trace reversal, the inferred coupling would differ by a factor of two. If one uses time rather than ct, the connection and stress components must both be rescaled. Either mistake can produce superficially plausible but inconsistent equations.",
+      "conclusion": "The numerical factor and powers of c are fixed together once geometric, matter and Newtonian conventions are stated."
+    },
+    "limits": "This leading-order derivation assumes weak fields, slow motion, small stresses and a regime in which Λ is negligible. Reversing the Riemann-tensor sign requires changing the field-equation sign convention consistently. The result does not derive Einstein’s equation uniquely from Newtonian gravity.",
+    "extension": "Continue to the first post-Newtonian corrections and identify which additional observations distinguish relativistic field equations sharing the same Newtonian limit.",
+    "references": [
+      {
+        "label": "Sean Carroll General Relativity lecture notes",
+        "url": "https://www.preposterousuniverse.com/wp-content/uploads/2015/08/grtinypdf.pdf"
+      }
+    ]
+  },
+  {
+    "id": "M072",
+    "title": "Sixteen entries but ten independent components",
+    "status": "Classical result developed and worked",
+    "summary": "There are several counts in general relativity, and conflating them produces incorrect conclusions. Matrix entries, independent tensor components, differential identities, initial-data constraints and physical propagating modes belong to different stages of the analysis.",
+    "definitions": [
+      "Use indices μ,ν∈{0,1,2,3}. A symmetric covariant tensor satisfies S_μν=S_νμ. The Einstein tensor obeys four contracted Bianchi identities. In a 3+1 formulation, the spatial metric and its conjugate momentum have six components each."
+    ],
+    "result": {
+      "name": "Component count and local vacuum degree-of-freedom count",
+      "statement": "A symmetric four-by-four tensor has ten independent components: four diagonal and six off-diagonal. The four contracted Bianchi identities are differential identities, not four duplicate entries. For regular vacuum general relativity, four first-class constraints acting on twelve spatial canonical variables leave four physical phase-space variables, or two configuration polarizations per spatial point.",
+      "proof": "For an n-by-n symmetric matrix there are n diagonal entries and n(n−1)/2 unordered off-diagonal pairs, giving n(n+1)/2. At n=4 this is ten, although the full display contains sixteen slots. The Bianchi relations differentiate combinations of field-equation components; they do not identify any selected four slots algebraically. In the canonical count, a first-class constraint imposes one phase-space condition and generates one gauge direction. Four such constraints therefore remove eight of the twelve spatial canonical variables. Dividing the remaining four phase-space variables into coordinate-momentum pairs gives two local propagating degrees of freedom."
+    },
+    "example": {
+      "setup": "Write the first row as S_00,S_01,S_02,S_03 and the remaining rows with S_10=S_01 and the corresponding symmetries.",
+      "calculation": "There is no S_44 in the chosen zero-through-three convention. A one-through-four convention may use it, but mixing the two is invalid. In a linearized plane-wave gauge, the remaining transverse-traceless amplitudes can be represented by h_+ and h_×, illustrating rather than replacing the constrained Hamiltonian count.",
+      "conclusion": "The repaired statement retains all ten independent equations while explaining their differential dependence and gauge structure."
+    },
+    "limits": "Boundary conditions, global moduli, matter fields and singular constraint surfaces can affect global degrees of freedom. Subtracting four identities from ten components is not on its own a derivation of two propagating modes.",
+    "extension": "Perform an explicit linearized gauge reduction for a plane wave and compare it with the canonical count in a stated background and boundary setting.",
+    "references": [
+      {
+        "label": "Sean Carroll General Relativity lecture notes",
+        "url": "https://preposterousuniverse.com/wp-content/uploads/grnotes-one.pdf"
+      }
+    ]
+  },
+  {
+    "id": "M073",
+    "title": "Covariant conservation is a structural condition",
+    "status": "Classical result developed and worked",
+    "summary": "Covariant conservation is the compatibility condition supplied by the geometry of the field equation. It does not say that coordinate components are constant, or that a global conserved total energy exists in every spacetime. A homogeneous expanding metric gives an exact example of the distinction.",
+    "definitions": [
+      "For the Levi-Civita connection, ∇g=0 and the contracted Bianchi identity is ∇^μG_μν=0. Let κ and Λ be constants. A perfect fluid has rest energy density ε, pressure p and four-velocity normalized by u·u=−1 in a c=1 convention."
+    ],
+    "result": {
+      "name": "Source conservation and the FLRW continuity equation",
+      "statement": "The field equation G_μν+Λg_μν=κT_μν with κ≠0 implies ∇^μT_μν=0. In a homogeneous FLRW metric, this includes ε̇+3H(ε+p)=0, where H=ȧ/a. For constant equation-of-state parameter p=wε, εa^{3(1+w)} is constant.",
+      "proof": "Apply the covariant divergence to the field equation. The geometric identity and metric compatibility eliminate the left side, and constant κ gives the conclusion. In comoving FLRW coordinates, expanding ∇_μT^{μ0}=0 combines the ordinary time derivative of ε with the connection terms associated with the changing spatial volume a³; isotropic pressure contributes three identical work terms. Substitution p=wε yields d logε/dt=−3(1+w)d loga/dt, whose integral gives the power law wherever ε and a are positive."
+    },
+    "example": {
+      "setup": "Compare dust and radiation under a scale factor that doubles.",
+      "calculation": "For dust w=0, energy density falls by 2³=8. For radiation w=1/3, it falls by 2⁴=16. Neither changing component violates covariant conservation. The additional radiation factor expresses the pressure-work or redshift contribution in this model.",
+      "conclusion": "A conservation law can involve geometric transport and changing volume. Ordinary component constancy is not the right test."
+    },
+    "limits": "A global conserved charge generally needs an appropriate symmetry or boundary construction. If κ or Λ varies, additional derivative terms enter and the simple inference must be revised. Matter models must satisfy their own evolution equations consistently.",
+    "extension": "Given a Killing field ξ, derive conservation of J^μ=T^{μν}ξ_ν for symmetric covariantly conserved T, and identify the boundary conditions needed to turn it into a constant integrated charge.",
+    "references": [
+      {
+        "label": "Sean Carroll General Relativity lecture notes",
+        "url": "https://www.preposterousuniverse.com/wp-content/uploads/2015/08/grtinypdf.pdf"
+      }
+    ]
+  },
+  {
+    "id": "M074",
+    "title": "Grothendieck universes and their logical cost",
+    "status": "Classical result developed and worked",
+    "summary": "Universe language is a relative-size discipline backed by a set-theoretic assumption. It is not a mechanism for eliminating every paradox without cost. The useful mathematical task is to state the closure axioms and show exactly which categorical constructions they permit.",
+    "definitions": [
+      "A Grothendieck universe U is a transitive set closed under pairing, power sets and unions indexed by a set belonging to U, with the family’s members in U. To support ordinary infinite mathematics one asks ω∈U. A U-small set is an element of U, which differs from merely being a subset of U."
+    ],
+    "result": {
+      "name": "The inaccessible-cardinal construction of a universe",
+      "statement": "If κ is a strongly inaccessible cardinal, then V_κ is a Grothendieck universe containing ω. Consequently U-small sets, maps, finite products and function sets can be handled inside one fixed relative-size level. The existence of such an uncountable inaccessible cardinal is an additional assumption, not a theorem of bare ZFC.",
+      "proof": "Transitivity of the cumulative hierarchy is immediate. If x,y∈V_κ, their ranks are below κ, so pairing and power sets still have rank below κ because κ is a limit ordinal. For an indexed family (x_i)_{i∈I} with I∈V_κ, strong inaccessibility ensures every set in V_κ has cardinality below κ. Regularity then bounds the supremum of the fewer-than-κ ranks of x_i below κ, so their union remains in V_κ. For function sets X→Y, their graphs are subsets of X×Y and are therefore contained in a suitable iterated power-set construction inside U."
+    },
+    "example": {
+      "setup": "Take two U-small sets X and Y.",
+      "calculation": "Ordered pairs can be constructed by the Kuratowski definition, yielding X×Y∈U. Every function graph lies in P(X×Y), and the collection of all such graphs is a subset of that power set, hence U-small under the closure axioms. By contrast, the entire collection of all U-small sets is U itself; asserting U∈U would contradict foundation. It belongs to a larger universe only when another size assumption is made.",
+      "conclusion": "The construction makes size bookkeeping precise while retaining a visible logical boundary."
+    },
+    "limits": "This treatment proves the conditional construction, not consistency or existence of inaccessible cardinals. Degenerate finite universes and conventions excluding or including ω must be distinguished. Different foundational treatments can avoid universe axioms for specific constructions.",
+    "extension": "Rebuild one category-of-structures construction using a fixed cardinal bound instead, then compare its smallness guarantees with the universe-based version.",
+    "references": [
+      {
+        "label": "SGA 4 Exposé I universes and strongly inaccessible cardinals",
+        "url": "https://grothendiecksga.com/read/sga4/en/I-A-5.html"
+      },
+      {
+        "label": "Stacks Project constructing categories of schemes",
+        "url": "https://stacks.math.columbia.edu/tag/000H"
+      }
+    ]
+  },
+  {
+    "id": "M075",
+    "title": "Stirling partitions do not supply torsional energy",
+    "status": "Classical result developed and worked",
+    "summary": "The original torsion comparison combined two unrelated notions of structure: set partitions and elastic deformation. Both can be developed, but a counting theorem does not determine an energy. An explicit discrete energy and continuum limit provide the missing bridge when an actual rod model is intended.",
+    "definitions": [
+      "S(N,k) counts partitions of N labeled objects into k nonempty unlabeled subsets. A contiguous partition of an ordered chain instead cuts k−1 of its N−1 gaps. For a rod of length L, θ(x) is an angular displacement and GJ>0 is a torsional stiffness parameter."
+    ],
+    "result": {
+      "name": "Distinct partition counts and a consistent torsional energy",
+      "statement": "Arbitrary partitions satisfy S(N,k)=kS(N−1,k)+S(N−1,k−1); contiguous k-block partitions number C(N−1,k−1). For grid spacing h=L/N, E_N=(GJ/2)Σ_{i=0}^{N−1}[(θ_{i+1}−θ_i)/h]²h equals the continuum Dirichlet energy of the piecewise-linear interpolant.",
+      "proof": "For Stirling’s recurrence, the last label either joins one of k existing blocks or forms a singleton. For contiguous partitions, choosing the cut gaps is a bijection. For energy, the interpolant derivative is constant on each grid interval and equals the difference quotient; integrating its squared derivative gives the formula exactly. Thus strong H¹ convergence of interpolants implies energy convergence. A bounded-energy sequence with a fixed endpoint has an H¹ bound; weak lower semicontinuity gives a lower energy bound at weak limits, while interpolating smooth functions supplies elementary recovery approximations. No set-partition count is needed for this argument."
+    },
+    "example": {
+      "setup": "First take N=4,k=2, then a constant total twist Θ.",
+      "calculation": "The partition counts are seven and three respectively. For θ_i=Θi/N, every difference quotient is Θ/L and E_N=GJΘ²/(2L) for every N. For L=GJ=1 and θ(x)=x², endpoint interpolation gives E_N=2/3−1/(6N²), converging to (1/2)∫₀¹4x²dx=2/3.",
+      "conclusion": "The continuum energy follows from a stated stiffness law and interpolation, not from taking a limit of the Stirling numbers."
+    },
+    "limits": "The one-dimensional quadratic energy assumes a chosen linear elastic model. Material nonlinearities, warping, varying stiffness and topology of configurations require additional specification. Algebraic torsion in a group is a different concept again.",
+    "extension": "If partitions represent actual latent material domains, define a weighted sum over contiguous partitions with a stated domain energy and examine its continuum or large-system limit.",
+    "references": []
+  },
+  {
+    "id": "M076",
+    "title": "Vector motion and rotation conventions",
+    "status": "Classical result developed and worked",
+    "summary": "Movement commands can be formulated without ambiguous appeals to trigonometry. Linear algebra combines the local commands; a rotation converts the resulting vector into another frame. Keeping magnitude conventions explicit resolves diagonal-speed discrepancies.",
+    "definitions": [
+      "In a right-handed plane use column vectors and counterclockwise rotation R(θ)=[[cosθ,−sinθ],[sinθ,cosθ]]. Let a local command u=(u₁,u₂) specify components in orthonormal local axes. World velocity is v=su rotated by R, namely v=sR(θ)u."
+    ],
+    "result": {
+      "name": "Rotation preserves speed but raw diagonal input changes it",
+      "statement": "Because RᵀR=I, ||v||₂=s||u||₂. A single unit-axis command has speed s, while raw input u=(1,1) has speed s√2. Normalizing nonzero input by its Euclidean norm produces constant speed s regardless of its direction.",
+      "proof": "Multiply the displayed matrix by its transpose and use cos²θ+sin²θ=1 and cancellation of the cross terms. Taking squared norms then gives the identity. The difference between axis and diagonal commands follows from ||(1,0)||=1 and ||(1,1)||=√2. If the desired control preserves analog intensity below unit radius, the mapping u↦u/max(1,||u||) leaves small commands unchanged and caps only those outside the unit disk. This is a specified control law, not a consequence forced by coordinate geometry."
+    },
+    "example": {
+      "setup": "Use the exact rotation with cosθ=3/5 and sinθ=4/5.",
+      "calculation": "The unit forward command maps to (3/5,4/5), of squared norm one. The unnormalized diagonal maps to (−1/5,7/5), of squared norm two. Its normalized version divides both components by √2, returning squared norm one. These checks use exact rational arithmetic before the final normalization.",
+      "conclusion": "Coordinate conversion and speed policy can be independently tested. This makes it possible to change a frame without silently changing the physical or numerical interpretation of commands."
+    },
+    "limits": "Nonorthogonal coordinate bases, perspective projection, acceleration limits and a non-Euclidean metric alter the formula or the appropriate norm. Time-dependent frames introduce additional derivative terms when differentiating positions.",
+    "extension": "Specify an anisotropic metric or acceleration constraint, then derive the admissible velocity set and a frame-consistent control projection onto it.",
+    "references": []
+  },
+  {
+    "id": "M077",
+    "title": "A proposed analogy needs a dimensionless correspondence",
+    "status": "Classical result developed and worked",
+    "summary": "A spectral analogy becomes mathematical only when state spaces, operators, units and observables are related by an explicit map. A small periodic hopping model supplies a genuine Bloch calculation, while a similarity-transform example separates shared eigenvalues from shared dynamics.",
+    "definitions": [
+      "Consider a two-site unit cell on an infinite one-dimensional lattice with real hoppings t₁,t₂. Its Hermitian Bloch matrix is H(k)=[[0,t₁+t₂e^(−ik)],[t₁+t₂e^(ik),0]], where k is a dimensionless crystal phase. Hopping parameters and eigenvalues have a common energy unit."
+    ],
+    "result": {
+      "name": "An explicit band gap and a warning about spectral equivalence",
+      "statement": "The two bands are E_±(k)=±√(t₁²+t₂²+2t₁t₂cosk). Their minimum separation is 2||t₁|−|t₂||. Equality of eigenvalue sets in another model does not establish equivalence of observation maps or Euclidean amplification.",
+      "proof": "The characteristic polynomial is E²−|t₁+t₂e^(−ik)|². Expanding the squared modulus gives the dispersion relation. Its minimum is (|t₁|−|t₂|)² because cosk ranges over [−1,1]. If B=SAS⁻¹, A and B share characteristic polynomials, but exp(tB)=S exp(tA)S⁻¹ and Euclidean norm bounds acquire the condition number of S. Only a unitary S preserves every Euclidean norm and the inner-product structure automatically. Observables must also transform, for example C_B=C_A S⁻¹, to preserve measured outputs."
+    },
+    "example": {
+      "setup": "Take t₁=2,t₂=1 and compare an unrelated rescaled two-state model.",
+      "calculation": "The bands at k=0 are ±3 and at k=π are ±1, so the gap is two. To transfer this statement, another model must supply a compatible periodic operator, an energy-scale conversion and a map respecting the relevant measurements. A match between an energy number and some unrelated flux number has no meaning until units and maps are supplied.",
+      "conclusion": "This example yields an actual operator theorem and a precise test for proposed cross-domain correspondences."
+    },
+    "limits": "The toy model does not establish that another physical system has Bloch periodicity, the same Hilbert space or the same operator domain. Isospectral operators can remain distinguishable by eigenvectors, locality and response functions.",
+    "extension": "Classify intertwiners BS=SA that also preserve a chosen observation map, and determine which spectral or transport identities survive after taking dimensionless variables.",
+    "references": [
+      {
+        "label": "Asboth Oroszlany and Palyi A Short Course on Topological Insulators",
+        "url": "https://arxiv.org/abs/1509.02295"
+      }
+    ]
+  }
+]

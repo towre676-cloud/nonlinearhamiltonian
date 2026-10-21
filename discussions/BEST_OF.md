@@ -1,0 +1,17 @@
+# The best of the retrospective
+
+Edited discussion prepared from the retained mathematics. The strongest organizing question is: **what information must a mathematical map preserve for a particular purpose?** This question becomes precise in several different settings, with different answers and hypotheses.
+
+For target recovery, let $H:X\to Y$ be a linear observation and $G:X\to Z$ a desired quantity. A reconstruction $G=KH$ exists exactly when $\ker H\subseteq\ker G$. Thus recovering a sum can require fewer measurements than recovering every coordinate. A quotient identifies the distinctions irrelevant to the target; it does not establish stability under noisy measurements. The [first bridge essay](SYNTHESIS.md#b01-quotients-observability-and-the-information-a-decision-actually-needs) proves the factorization and connects it to finite probe selection.
+
+For memory and recurrence, a sequence $y_n=cA^n b$ has Hankel matrix $\mathcal H_{ij}=y_{i+j}$. Factoring $\mathcal H$ into observability and reachability matrices explains why its rank is the minimal reachable-observable realization dimension. This may be smaller than the supplied state dimension. One must retain the distinctions needed by future observations, which links [minimal memory](../compendium/readable/families/D14-F02.md) to [target-relative observability](../compendium/readable/families/D15-F01.md).
+
+For gluing, compatible local values define a global section only after the restriction maps and consistency equations have been specified. A nonzero quotient class measures an obstruction under the chosen complex. This is why a sheaf calculation, a cycle period and a curvature calculation require their own maps, rather than merely a shared “local-to-global” analogy. The [complete bridge essays](SYNTHESIS.md) and [gluing family](../compendium/readable/families/D05-F03.md) make those distinctions explicit.
+
+For inverse problems, keeping more spectral modes reduces truncation bias while amplifying noise through small singular values. A bound is useful when it names both terms and the norm in which the target is measured. The [spectral inverse-problem family](../compendium/readable/families/D15-F03.md) supplies proofs and worked models; the atlas lab lets the balance be inspected without claiming to solve arbitrary inverse problems.
+
+For arithmetic, a recurrence generating infinitely many solutions becomes a classification only with a reduction argument showing that every solution belongs to the permitted seed orbits. The [Pell family](../compendium/readable/families/D01-F04.md) combines exact recurrences, descent, congruence filters and population estimates. The finite certificate and the proof of completeness play different roles.
+
+For quantum deformation, the leading Poisson bracket can agree with the normalized star commutator while later odd-derivative corrections survive. The [favorite equation](FAVORITE_EQUATION.md) is compelling because all of those corrections vanish for an unbounded family of polynomial partners. The [Hamiltonian research](HAMILTONIAN_RESEARCH.md) asks what organizes such families, and discovers that size, algebraic closure and repeated dynamics lead to different classification questions.
+
+These are six substantive relationships, each supported by definitions and results in the collection. Their common editorial theme does not identify all their mathematical objects or prove that one universal formalism subsumes them.

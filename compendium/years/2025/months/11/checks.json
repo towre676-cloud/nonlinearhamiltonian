@@ -1,0 +1,196 @@
+{
+  "checks": [
+    {
+      "id": "Y25-11-000",
+      "name": "Schema and dated attribution",
+      "status": "pass",
+      "detail": "31 entries and dated provenance validated; T passage carries an explicit file date."
+    },
+    {
+      "id": "Y25-11-001",
+      "name": "Quartic integral formula",
+      "status": "pass",
+      "detail": "Parity identity and independent quadrature agree with the exact contour formula within a rigorous quartic-tail allowance."
+    },
+    {
+      "id": "Y25-11-002",
+      "name": "Atlas integral checks",
+      "status": "pass",
+      "detail": "Correct Lorentzian normalization, tangent antiderivative and positive double-integral value checked."
+    },
+    {
+      "id": "Y25-11-003",
+      "name": "Positive-definite counterexample",
+      "status": "pass",
+      "detail": "Exact 3x3 Gram determinant -157/1156 rejects positive definiteness."
+    },
+    {
+      "id": "Y25-11-004",
+      "name": "Bridge variance",
+      "status": "pass",
+      "detail": "Bridge covariance correction gives 1/12 for f=t and zero for f=1."
+    },
+    {
+      "id": "Y25-11-005",
+      "name": "Beam spectral threshold",
+      "status": "pass",
+      "detail": "Hinged eigenvalues and sharp threshold P=1 at L=pi,D=1."
+    },
+    {
+      "id": "Y25-11-006",
+      "name": "Entropy normalization",
+      "status": "pass",
+      "detail": "The two entropy sample spaces differ; exact-period obstruction is proved by the endpoint theorem in text."
+    },
+    {
+      "id": "Y25-11-007",
+      "name": "Gamma spectrum ratios",
+      "status": "pass",
+      "detail": "Successive spectral ratios equal pi*e*n, not a fixed limit."
+    },
+    {
+      "id": "Y25-11-008",
+      "name": "Lame n=1 residual",
+      "status": "pass",
+      "detail": "Exact sn Lamé residual for m=1/2; cn/dn derivative identities and factorization are proved in text."
+    },
+    {
+      "id": "Y25-11-009",
+      "name": "Humbert primitiveness",
+      "status": "pass",
+      "detail": "Primitive rho=0 relation has discriminant1; doubling it is nonprimitive."
+    },
+    {
+      "id": "Y25-11-010",
+      "name": "Wallis/hypergeometric recurrence",
+      "status": "pass",
+      "detail": "Hypergeometric coefficient residuals through degree5; corrected c2=1024/105."
+    },
+    {
+      "id": "Y25-11-011",
+      "name": "Volterra expansion remainder",
+      "status": "pass",
+      "detail": "Exact nonlinear ODE solution obeys the stated geometric-series remainder."
+    },
+    {
+      "id": "Y25-11-012",
+      "name": "Hecke coefficient identity",
+      "status": "pass",
+      "detail": "Full prime-divisibility Hecke recurrence checked exactly for 87 cases."
+    },
+    {
+      "id": "Y25-11-013",
+      "name": "Ricci flow convention",
+      "status": "pass",
+      "detail": "Round-sphere metric scaling agrees with the corrected Ricci commutator; general derivation is in text."
+    },
+    {
+      "id": "Y25-11-014",
+      "name": "Commutator trace",
+      "status": "pass",
+      "detail": "Finite commutator is Hermitian trace-zero; weighted trace at s=1 is 1/2."
+    },
+    {
+      "id": "Y25-11-015",
+      "name": "Circular mixture ambiguity",
+      "status": "pass",
+      "detail": "Opposing phase cones have zero first resultant and unit second resultant."
+    },
+    {
+      "id": "Y25-11-016",
+      "name": "Kronecker averages",
+      "status": "pass",
+      "detail": "Active irrational character averages satisfy the exact O(1/T) bound."
+    },
+    {
+      "id": "Y25-11-017",
+      "name": "Phase-ridge distinction",
+      "status": "pass",
+      "detail": "Landau minimized energy has distinct left/right second derivatives; inflection ridge remains polynomial."
+    },
+    {
+      "id": "Y25-11-018",
+      "name": "Finite modular spectrum",
+      "status": "pass",
+      "detail": "Finite modular eigenvalue ratios 1,2,1/2,1 from the faithful density matrix."
+    },
+    {
+      "id": "Y25-11-019",
+      "name": "Commutant and distance",
+      "status": "pass",
+      "detail": "Commuting nonscalar multiplicity block and two-point distance 1/2."
+    },
+    {
+      "id": "Y25-11-020",
+      "name": "Stencil Fourier certificate",
+      "status": "pass",
+      "detail": "Standard Catmull-Clark block trace, determinant and real discriminant checked across valences3-9."
+    },
+    {
+      "id": "Y25-11-021",
+      "name": "Levi singular spectrum",
+      "status": "pass",
+      "detail": "B*B has trace3 determinant1, hence Levi characteristic t4-3t2+1."
+    },
+    {
+      "id": "Y25-11-022",
+      "name": "Hodge and symplectic data",
+      "status": "pass",
+      "detail": "Cycle harmonic vector and determinant-one nonsymplectic 4x4 counterexample."
+    },
+    {
+      "id": "Y25-11-023",
+      "name": "Block forcing and Schur complement",
+      "status": "pass",
+      "detail": "Forced recurrence and positive/negative Schur complements checked exactly."
+    },
+    {
+      "id": "Y25-11-024",
+      "name": "S6 decomposition",
+      "status": "pass",
+      "detail": "Universal block algebra checked: commuting nilpotent squares to zero, raw triangle cubes to zero with nonzero square."
+    },
+    {
+      "id": "Y25-11-025",
+      "name": "Plastic Pisot recurrence",
+      "status": "pass",
+      "detail": "Padovan terms and cubic discriminant -23 checked exactly."
+    },
+    {
+      "id": "Y25-11-026",
+      "name": "Drift extrapolation",
+      "status": "pass",
+      "detail": "Exact quartic cancellation and sixth-order remainder constant."
+    },
+    {
+      "id": "Y25-11-027",
+      "name": "IMP limit counterexample",
+      "status": "pass",
+      "detail": "Oblique stochastic iteration limit computed by exact powers."
+    },
+    {
+      "id": "Y25-11-028",
+      "name": "Unstable recovered block",
+      "status": "pass",
+      "detail": "Recovered curvature determinant/trace and chi(-1)<0 certify an eigenvalue below -1."
+    },
+    {
+      "id": "Y25-11-029",
+      "name": "Low-rank cost arithmetic",
+      "status": "pass",
+      "detail": "Isolated rank-factor multiplication costs differ by256, not the differently normalized6144."
+    },
+    {
+      "id": "Y25-11-030",
+      "name": "LQR Riccati solution",
+      "status": "pass",
+      "detail": "Explicit Riccati solution satisfies Pprime=P2-1 and P(1)=0."
+    },
+    {
+      "id": "Y25-11-031",
+      "name": "Poisson smoothing mode",
+      "status": "pass",
+      "detail": "Poisson cosine residual and zero-mode compatibility checked."
+    }
+  ]
+}

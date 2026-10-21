@@ -1,0 +1,160 @@
+[
+  {
+    "id": "Y24-02-001",
+    "title": "Concentration times area does not determine an amount",
+    "status": "Developed mathematical repair with exact worked checks; historical evidence is assistant-only",
+    "summary": "The recovered calculation contains a dimensional defect before any numerical approximation is considered. Concentration measures amount per volume, whereas the supplied spatial quantity is an area. Their product has amount per length, so an amount cannot be inferred without a depth or volume model. The molar conversion at the end can be correct while the preceding quantity is ill-defined. This entry develops only the mathematics of that error, not an environmental prescription.",
+    "definitions": [
+      "Use C in mol/L, A in m², h in m and M in g/mol. One litre is exactly 10^(−3)m³, so one m³ is 1000L and one km³ is 10^12L.",
+      "For the stipulated historical inputs take C=1μmol/L=10^(−6)mol/L, A=10km²=10^7m² and M=55.845g/mol. The numerical M is an input to this calculation, not an exact claim about every material.",
+      "A uniform slab has volume V=Ah. For a nonuniform domain use a depth function h(x) and a concentration field C(x,z) in a common consistent unit system."
+    ],
+    "result": {
+      "name": "An exact missing-depth law and nonidentifiability",
+      "statement": "For a uniform slab with the stipulated inputs, m(h)=558.45h kg when h is measured in metres. Without h or an equivalent volume constraint, the amount is not identified. The source fragment’s 10^6L/km³ factor is also incorrect: the exact factor is 10^12L/km³.",
+      "proof": "The volume is 10^7h m³=10^10h L. Multiplying by 10^(−6)mol/L gives 10^4h mol; multiplying by 55.845g/mol gives 558450h g=558.45h kg. At every step the units cancel to the required quantity. Holding C and A fixed while replacing h by sh for any s>0 leaves all supplied concentration and area data unchanged but multiplies the amount by s. Thus those data alone cannot distinguish different amounts. For a variable concentration or depth, integrate the local amount density over the actual volume. Constant C gives C∫_A h(x)dA, so even then the required extra datum is the area-integrated depth. Bounds C_min≤C≤C_max and h_min≤h≤h_max yield corresponding integral bounds, but an area by itself supplies neither."
+    },
+    "example": {
+      "setup": "Use the source’s stipulated concentration, area and molar mass, then choose h=2.5m as an explicitly new illustrative model parameter.",
+      "calculation": "The volume is 25,000,000m³=25,000,000,000L. The amount is 25,000mol and the mass is 1,396,125g=1,396.125kg. If one instead chooses h=0.001m, the formula gives 558.45g. This explains which additional depth would reproduce the old final number; it does not show that the missing depth was actually present in the original conversation. Separately, 10^7μmol does equal 10mol, and 10×55.845g/mol equals 558.45g. That final arithmetic does not repair the unsupported amount estimate.",
+      "conclusion": "The repair identifies exactly where information and dimensions were lost, rather than simply replacing one unsupported number with another."
+    },
+    "limits": "The recovered evidence is an assistant-only summary, and the complete original modeling context is unavailable. The uniform-slab example is a declared mathematical reconstruction. No depth, concentration field, physical efficacy or deployment recommendation is inferred from the historical fragment.",
+    "extension": "If depth and concentration are interval-valued, derive rigorous integral bounds. If they are spatially correlated random fields, specify their joint law before replacing an expected product by the product of expectations. That would be an additional uncertainty model, not a consequence of unit conversion.",
+    "references": [
+      {
+        "label": "NIST SI Units Volume",
+        "url": "https://www.nist.gov/pml/owm/si-units-volume"
+      },
+      {
+        "label": "NIST Guide to the SI conversion factors",
+        "url": "https://www.nist.gov/pml/special-publication-811/nist-guide-si-appendix-b-conversion-factors/nist-guide-si-appendix-b9"
+      },
+      {
+        "label": "NIST Chemistry WebBook iron molecular weight",
+        "url": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C7439896"
+      }
+    ],
+    "original": {
+      "date": "2024-02-13T06:01:20Z",
+      "month": "2024-02",
+      "evidence": "A",
+      "field": "Dimensional analysis and integration",
+      "concept": "Concentration times area does not determine an amount",
+      "origin": "A recovered assistant answer multiplied a concentration by an area, supplied an incorrect L/km³ conversion and reported approximately 558 grams. No depth was stated in the retrieved fragment.",
+      "question": "Reconstruction: Which volume or depth is missing from the calculation, what do exact unit conversions give, and can the requested amount be identified from concentration and area alone?",
+      "math": "For uniform concentration C, area A, depth h and stipulated molar mass M, m=MCAh with consistent volume units. More generally m=M∫_A∫_0^{h(x)}C(x,z) dz dA.",
+      "finish": "Prove the missing-parameter obstruction; audit every conversion; give an exact symbolic depth dependence and a rational worked example.",
+      "kind": "Repair",
+      "refs": [],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c2] A@2024-02-13T06:01:20Z, -2y8m: Applied quantitative estimate for ocean iron fertilization: assumed 1 μmol/L over 10 km²; stated calculation 1 μmol/L × 10 km² × 10⁶ L/km³ = 10⁷ μmol, then ≈558 g Fe (molar mass 55.845 g/mol). Original user prompt unavailable.",
+      "retrieval_receipt": "root_receipts.json record 0",
+      "original_question": null,
+      "attribution_note": "The excerpt is a dated retrieval summary of a prior assistant answer, not a complete transcript or a verbatim user prompt. The original user question is unavailable. The revised mathematical question is an editorial reconstruction."
+    }
+  },
+  {
+    "id": "Y24-02-002",
+    "title": "An area ratio is not a geometric packing theorem",
+    "status": "Developed mathematical repair with exact worked checks; historical evidence is assistant-only",
+    "summary": "The old setup mixes a geographic label, a numerical comparison and an implicit geometric claim. These must be separated. An area ratio answers how many equal units of area one total contains, not how many congruent silhouettes can be placed inside another. The word America also does not uniquely specify the United States, North America or the combined Americas. The recovered user wording is unavailable, so the denominator cannot be assigned to the user by inference.",
+    "definitions": [
+      "Use A and B for the areas of two explicitly chosen measurable regions in the same area unit, with B>0. Their quotient R=A/B is dimensionless.",
+      "For a packing interpretation, copies must have disjoint interiors and be contained in the target; congruence preserves each copy’s area. A selection of overlapping zones requires the measure of their union rather than an uncorrected sum.",
+      "Treat A=30.37 and B=9.8 million km² solely as the approximate inputs preserved in the assistant fragment. They are not asserted here as independently verified contemporary geographic measurements."
+    ],
+    "result": {
+      "name": "Exact ratio, monotone interval bound and packing obstruction",
+      "statement": "If the intended reference is the stipulated U.S. area, the ratio is 30.37/9.8=3037/980≈3.09897959. If A∈[A_−,A_+] and B∈[B_−,B_+] with B_−>0, then A/B∈[A_−/B_+,A_+/B_−]. The packing bound N≤floor(A/B) is necessary but not sufficient.",
+      "proof": "The common million-km² factor cancels, and rational arithmetic gives the displayed quotient. For positive B, the ratio increases with A and decreases with B, proving the interval enclosure. For packing, finite additivity gives area of the union of N disjoint-interior congruent copies as NB, and containment bounds this by A. The converse fails because area does not control width or shape. A rectangle of size 20 by 1/2 has area ten, larger than the area π of a unit-radius disk, but cannot contain even one such disk: the disk has vertical extent two under every rotation, exceeding the strip width. Thus surplus area can coexist with zero feasible copies. If the intended denominator is instead a union of selected zones, its area must first be defined; for two zones, |Z₁∪Z₂|=|Z₁|+|Z₂|−|Z₁∩Z₂|."
+    },
+    "example": {
+      "setup": "First calculate from the stated approximate inputs. Then impose a separate illustrative rounding assumption: A was rounded to the nearest 0.01 million km² and B to the nearest 0.1 million km².",
+      "calculation": "The point ratio is approximately 3.099. Under that added rounding assumption, A lies in [30.365,30.375] and B in [9.75,9.85]. The exact ratio enclosure is [6073/1970,81/26], approximately [3.08274112,3.11538462]. This is a deterministic rounding enclosure, not a statistical confidence interval. Its lower endpoint exceeds three and its upper endpoint is below four, so the area-only integer upper bound remains three throughout. No claim is made that three actual geographic shapes can be packed.",
+      "conclusion": "A precise denominator yields a complete arithmetic answer, while the geometric question remains a different problem requiring shapes and allowed transformations."
+    },
+    "limits": "The original user prompt and intended meaning of America were not recovered. The inputs, rounding model and rectangle/disk example must therefore remain explicitly distinguished as historical approximations versus new mathematical illustrations. Maps with unequal area distortion can also mislead visual comparisons.",
+    "extension": "If actual planar boundaries and permitted rotations are supplied, formulate a packing optimization with containment and nonoverlap constraints. Retain the area bound as a certificate of impossibility for excessive copy counts, while using geometric certificates to establish any feasible placements.",
+    "references": [
+      {
+        "label": "NIST SI Units Area",
+        "url": "https://www.nist.gov/pml/owm/metric-si/si-units-area"
+      },
+      {
+        "label": "NIST SI conventions for dimensionless ratios",
+        "url": "https://www.nist.gov/pml/special-publication-811/nist-guide-si-chapter-7-rules-and-style-conventions-expressing-values"
+      }
+    ],
+    "original": {
+      "date": "2024-02-25T03:31:43Z",
+      "month": "2024-02",
+      "evidence": "A",
+      "field": "Measurement ratios and geometry",
+      "concept": "An area ratio is not a geometric packing theorem",
+      "origin": "A recovered assistant answer supplied approximate Africa and U.S. areas, then left an inconsistent denominator involving selected populated zones and did not complete the ratio.",
+      "question": "Reconstruction: What does America mean in the denominator, is the intended comparison an area ratio or a shape-packing problem, and what follows from the stipulated approximate numbers?",
+      "math": "For positive areas the dimensionless ratio is R=A/B. Nonoverlapping congruent copies imply NB≤A, hence N≤floor(A/B), but that necessary area condition is not sufficient for geometric placement.",
+      "finish": "Define the reference region; compute the ratio exactly from the stipulated inputs; propagate explicit rounding intervals; give a geometric counterexample to the packing inference.",
+      "kind": "Calculation",
+      "refs": [],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c4] A@2024-02-25T03:31:43Z, -2y7m: Area-ratio setup: Africa ≈30.37 million km²; U.S. ≈9.8 million km²; proposed “number of Americas” = Africa area ÷ combined land area of selected populated zones, but did not complete calculation. Original prompt unavailable.",
+      "retrieval_receipt": "root_receipts.json record 0",
+      "original_question": null,
+      "attribution_note": "The excerpt is a dated retrieval summary of a prior assistant answer, not a complete transcript or a verbatim user prompt. The original user question is unavailable. The revised mathematical question is an editorial reconstruction."
+    }
+  },
+  {
+    "id": "Y24-02-003",
+    "title": "Stored energy needs a state function and a power balance",
+    "status": "Developed mathematical repair with exact worked checks; historical evidence is assistant-only",
+    "summary": "This entry is a new mathematical reconstruction of a recovered qualitative concept. The source does not contain the equations below. The useful correction is to distinguish charge, voltage, energy and power instead of treating a carrier count or a metaphor as an energy calculation. A simple declared state model is enough to show what information a quantitative answer would require.",
+    "definitions": [
+      "Charge q is measured in coulombs, current I in coulombs per second, voltage in joules per coulomb, energy in joules and power in joules per second.",
+      "Let q∈[0,Q] denote remaining charge. Prescribe a continuous open-circuit voltage function V_oc(q) and define the model storage function E(q)=∫_0^q V_oc(s)ds.",
+      "For discharge take I(t)≥0, qdot=−I, resistance R≥0 and terminal voltage V(t)=V_oc(q(t))−RI(t). This is a stated lumped model, not a complete electrochemical description."
+    ],
+    "result": {
+      "name": "An exact balance law for the prescribed storage model",
+      "statement": "Along an absolutely continuous charge trajectory with integrable power terms, Edot=−V_oc(q)I almost everywhere. Therefore Edot+P_out+P_loss=0 with P_out=VI and P_loss=RI². Charge capacity Q alone does not determine stored energy: the voltage-state law is also required.",
+      "proof": "The fundamental theorem of calculus gives E′(q)=V_oc(q). Applying the chain rule to qdot=−I yields Edot=−V_oc(q)I. The terminal relation gives P_out=(V_oc−RI)I, and adding RI² recovers V_ocI, proving the identity. Integration from t0 to t1 gives E(q(t0))−E(q(t1))=∫P_out dt+∫RI²dt. The loss is nonnegative because R≥0. To prove nonidentifiability from charge alone, compare two constant laws V_oc(q)=v1 and V_oc(q)=v2 with v1≠v2: both allow the same Q but give E(Q)=v1Q and v2Q. For a variable law the correct quantity is its integral, not an arbitrarily selected endpoint voltage times Q."
+    },
+    "example": {
+      "setup": "As an explicitly constructed example choose Q=3600C, V_oc(q)=3+q/Q volts, R=1/10Ω and constant discharge I=2A until q reaches zero.",
+      "calculation": "The duration is Q/I=1800s. Initial stored model energy is ∫_0^Q(3+q/Q)dq=(7/2)Q=12600J. Resistive loss is (1/10)·2²·1800=720J. Delivered energy is 11880J, and the balance is exact. Because one watt-hour is 3600J, these values are 3.5Wh, 0.2Wh and 3.3Wh. Terminal voltage decreases from 3.8V to 2.8V and remains positive in this example. These parameters were selected for the worked mathematics and were not recovered from the 2024 passage.",
+      "conclusion": "The model turns an imprecise storage metaphor into a transparent differential and integral calculation, while preserving the distinction between source evidence and newly supplied mathematics."
+    },
+    "limits": "The available historical passage is qualitative and assistant-only; this is not evidence that the user proposed the storage law or asked this mathematical question in 2024. The model omits temperature, hysteresis, state-dependent losses and other effects, and its identity holds for its declared assumptions rather than for every real device.",
+    "extension": "Allow R=R(q,I)≥0 or an additional internal state and ask which nonnegative storage function makes the balance inequality valid. State what is observed before attempting to identify that function from terminal data.",
+    "references": [
+      {
+        "label": "NIST Guide to SI derived units",
+        "url": "https://www.nist.gov/pml/special-publication-811/nist-guide-si-chapter-4-two-classes-si-units-and-si-prefixes"
+      },
+      {
+        "label": "NIST SI unit conversion factors",
+        "url": "https://www.nist.gov/pml/special-publication-811/nist-guide-si-appendix-b-conversion-factors/nist-guide-si-appendix-b9"
+      },
+      {
+        "label": "MIT Circuits and Electronics energy and power",
+        "url": "https://ocw.mit.edu/courses/6-002-circuits-and-electronics-spring-2007/resources/lecture-22/"
+      }
+    ],
+    "original": {
+      "date": "2024-02-19T01:19:06Z",
+      "month": "2024-02",
+      "evidence": "A",
+      "field": "Calculus and energy accounting",
+      "concept": "Stored energy needs a state function and a power balance",
+      "origin": "A dated assistant-only passage used a qualitative metaphor about battery electrons and stored energy. No historical equation or mathematical user question is preserved in that fragment.",
+      "question": "Reconstruction: What extra state relation is needed to turn charge into an energy quantity, and how does a specified lumped model account for delivered power and loss?",
+      "math": "For remaining charge q and prescribed voltage law V_oc(q), define E(q)=∫_0^q V_oc(s)ds. With qdot=−I and terminal voltage V=V_oc(q)−RI, the model obeys Edot+VI+RI²=0.",
+      "finish": "State the reconstructed model explicitly; prove its balance identity; compute an exact variable-voltage example without assigning the model to the historical user.",
+      "kind": "Calculation",
+      "refs": [],
+      "source_excerpt": "[PRIOR_ASSISTANT_OUTPUT] [c0][c1] A@2024-02-19T01:19:06Z, -2y8m: Assistant-only battery-energy excerpts: stored energy likened to electrons held in physical structure under external stresses; electrons compared to “ashes in an urn”; energy potential released on demand. At 01:23:43Z, assistant discussed skepticism, electrochemistry, energy-storage/retrieval efficiency, safety, scalability, and mathematical/logistical support.",
+      "retrieval_receipt": "root_details.json record 0",
+      "original_question": null,
+      "attribution_note": "The excerpt is a dated retrieval summary of a prior assistant answer, not a complete transcript or a verbatim user prompt. The original user question is unavailable. The revised mathematical question is an editorial reconstruction."
+    }
+  }
+]

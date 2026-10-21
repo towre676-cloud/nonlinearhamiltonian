@@ -1,0 +1,207 @@
+{
+  "checks": [
+    {
+      "id": "Y26-04-001",
+      "name": "K3,3 rank and cycle basis",
+      "status": "passed",
+      "detail": "Exact incidence rank5, nullity4 and four independent integer circulations."
+    },
+    {
+      "id": "Y26-04-002",
+      "name": "quartic Gaussian coefficient",
+      "status": "passed",
+      "detail": "Only all-four-distinct term survives;24 multinomial permutations cancel4!, giving residue−4."
+    },
+    {
+      "id": "Y26-04-003",
+      "name": "Gaussian monomial norm",
+      "status": "passed",
+      "detail": "Squared coefficient gives6, and repeated observables force rank1."
+    },
+    {
+      "id": "Y26-04-004",
+      "name": "coboundary secondary defect",
+      "status": "passed",
+      "detail": "Typed maps deltaY:Y0→Y1,deltaZ:Z0→Z1 andB0:Y0→Z0; nextdifferentialszero. Closedinput transports toanonclosedoutput; no square-zeroendomorphism claimed."
+    },
+    {
+      "id": "Y26-04-005",
+      "name": "exact shear-loop commutator",
+      "status": "passed",
+      "detail": "Four rational matrix products give nonidentity determinant-one loop."
+    },
+    {
+      "id": "Y26-04-006",
+      "name": "return second-iterate coefficient",
+      "status": "passed",
+      "detail": "Exact rational cubic coefficient of R²−identity."
+    },
+    {
+      "id": "Y26-04-007",
+      "name": "pressure root and sensitivity",
+      "status": "passed",
+      "detail": "Two constant branches give root log2/log3 and exact implicit derivative."
+    },
+    {
+      "id": "Y26-04-008",
+      "name": "finite Poisson solution",
+      "status": "passed",
+      "detail": "Mean-zero spectral multiplier1/2, inverse2 and exact solution(2,−2)."
+    },
+    {
+      "id": "Y26-04-009",
+      "name": "nonresonant invariant graph",
+      "status": "passed",
+      "detail": "Exact quadratic graph coefficient20/3 and transverse multiplier1/10."
+    },
+    {
+      "id": "Y26-04-010",
+      "name": "resonant analytic graph family",
+      "status": "passed",
+      "detail": "Cubic resonance leaves free C; checked C=1 exactly."
+    },
+    {
+      "id": "Y26-04-011",
+      "name": "exact cyclic difference rank",
+      "status": "passed",
+      "detail": "36×12 declared difference matrix has rank11 and uniform-shift kernel."
+    },
+    {
+      "id": "Y26-04-012",
+      "name": "family-constant target cancellation",
+      "status": "passed",
+      "detail": "Each cyclic family sums tozero; three-cycle constant residual energy3/2."
+    },
+    {
+      "id": "Y26-04-013",
+      "name": "realizable nested least-squares sensitivity rank",
+      "status": "passed",
+      "detail": "Atgamma=(1,1,1),x*=0,Hpositive withdet11; exact sensitivity rank2 andsumDk=0 respectstationarity."
+    },
+    {
+      "id": "Y26-04-014",
+      "name": "participation ratio versus rank",
+      "status": "passed",
+      "detail": "Eigenvalues9,1,0 give rank2 and effective dimension50/41."
+    },
+    {
+      "id": "Y26-04-015",
+      "name": "Brownian noise calibration",
+      "status": "passed",
+      "detail": "H=1/2 has zero nonzero-lag increment covariance and flat stationary-noise spectrumβ=0."
+    },
+    {
+      "id": "Y26-04-016",
+      "name": "equal volume different sphere norm",
+      "status": "passed",
+      "detail": "Unit-determinant shear family has Q=(3t²+1)/8."
+    },
+    {
+      "id": "Y26-04-017",
+      "name": "spherical pairing normalization",
+      "status": "passed",
+      "detail": "Exact pairing counts and sphere denominators for orthonormal4/5-tuples."
+    },
+    {
+      "id": "Y26-04-018",
+      "name": "trace normalization and dyadic growth",
+      "status": "passed",
+      "detail": "Rank3 inM8 has trace3/8; later1/16 is outside previous eighth lattice."
+    },
+    {
+      "id": "Y26-04-019",
+      "name": "gapped finite trace label",
+      "status": "passed",
+      "detail": "One negative eigenvalue gives normalized trace1/3 and a gap margin greater than1/2."
+    },
+    {
+      "id": "Y26-04-020",
+      "name": "Morita lattice arithmetic",
+      "status": "passed",
+      "detail": "Reciprocal√2 scaling interchanges lattice coefficient coordinates."
+    },
+    {
+      "id": "Y26-04-021",
+      "name": "exact AUROC pair table",
+      "status": "passed",
+      "detail": "Four pair values1,1/2,1,1 giveAUROC7/8."
+    },
+    {
+      "id": "Y26-04-022",
+      "name": "pooled covariance confounding",
+      "status": "passed",
+      "detail": "Eight equally likely samples have pooledρ=25/26 although each domain covariance iszero."
+    },
+    {
+      "id": "Y26-04-023",
+      "name": "nonconvex projection tie",
+      "status": "passed",
+      "detail": "Two nonconvex branches tie at trialzero; convex interval includes unique minimizerzero."
+    },
+    {
+      "id": "Y26-04-024",
+      "name": "R squared arithmetic and runs expectation",
+      "status": "passed",
+      "detail": "Exact reported decimal increment and balanced-sign expected runs60; no p-value asserted."
+    },
+    {
+      "id": "Y26-04-025",
+      "name": "compatibility minimum",
+      "status": "passed",
+      "detail": "Fixedalpha0 givesc=.3610237, zeta=sqrt(c/a), unique minimizingxi1."
+    },
+    {
+      "id": "Y26-04-026",
+      "name": "layout preserves values not adjacency",
+      "status": "passed",
+      "detail": "Equal sample multiset can have different adjacency statistics; analytic conjugation proved intext."
+    },
+    {
+      "id": "Y26-04-027",
+      "name": "diamond path circulation",
+      "status": "passed",
+      "detail": "Exact path difference spans incidence nullity1."
+    },
+    {
+      "id": "Y26-04-028",
+      "name": "cover period depends on coefficients",
+      "status": "passed",
+      "detail": "A degree-two cover does not kill integer periodone but kills it modulo2."
+    },
+    {
+      "id": "Y26-04-029",
+      "name": "silver-mean eigenvector frequencies",
+      "status": "passed",
+      "detail": "Correct normalized letters(1/√2,1−1/√2); reciprocalλ is frequency ratio."
+    },
+    {
+      "id": "Y26-04-030",
+      "name": "exact dihedral root permutation group",
+      "status": "passed",
+      "detail": "Root permutations generate8-element D4 withτ ρ τ=ρ⁻¹; degree proof is algebraic intext."
+    },
+    {
+      "id": "Y26-04-031",
+      "name": "exact coupled resolvent inverse",
+      "status": "passed",
+      "detail": "Atz0, exact inverse−H/(1+eps²); Neumann bound is sufficient, not necessary."
+    },
+    {
+      "id": "Y26-04-032",
+      "name": "discrete product correction",
+      "status": "passed",
+      "detail": "Forward difference ofx² atzero ish, and internal graph flux conserves mass."
+    },
+    {
+      "id": "Y26-04-033",
+      "name": "quotient factorization test",
+      "status": "passed",
+      "detail": "Parity descends throughZ/6; mod4 doesnot."
+    }
+  ],
+  "provenance": {
+    "entries": 33,
+    "literal_source_excerpts": "passed"
+  },
+  "all_passed": true
+}

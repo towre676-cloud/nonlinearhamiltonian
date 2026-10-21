@@ -1,0 +1,75 @@
+{
+  "status": "pass",
+  "reviewer": "analysis_and_arithmetic_geometry",
+  "manifest": "/workspace/scratch/724ab8464145/year_2025/tmp/visual/manifest.json",
+  "pdf_sha256": "45aedac827e99ced08330977ba8dc99cbbdfdca133bbd490aba39e1df31345b2",
+  "pdf_page_count": 491,
+  "reviewed_range": {
+    "start": 1,
+    "end": 168,
+    "page_count": 168
+  },
+  "reviewed_sheet_paths": [
+    "/workspace/scratch/724ab8464145/year_2025/tmp/visual/contact-001-012.jpg",
+    "/workspace/scratch/724ab8464145/year_2025/tmp/visual/contact-013-024.jpg",
+    "/workspace/scratch/724ab8464145/year_2025/tmp/visual/contact-025-036.jpg",
+    "/workspace/scratch/724ab8464145/year_2025/tmp/visual/contact-037-048.jpg",
+    "/workspace/scratch/724ab8464145/year_2025/tmp/visual/contact-049-060.jpg",
+    "/workspace/scratch/724ab8464145/year_2025/tmp/visual/contact-061-072.jpg",
+    "/workspace/scratch/724ab8464145/year_2025/tmp/visual/contact-073-084.jpg",
+    "/workspace/scratch/724ab8464145/year_2025/tmp/visual/contact-085-096.jpg",
+    "/workspace/scratch/724ab8464145/year_2025/tmp/visual/contact-097-108.jpg",
+    "/workspace/scratch/724ab8464145/year_2025/tmp/visual/contact-109-120.jpg",
+    "/workspace/scratch/724ab8464145/year_2025/tmp/visual/contact-121-132.jpg",
+    "/workspace/scratch/724ab8464145/year_2025/tmp/visual/contact-133-144.jpg",
+    "/workspace/scratch/724ab8464145/year_2025/tmp/visual/contact-145-156.jpg",
+    "/workspace/scratch/724ab8464145/year_2025/tmp/visual/contact-157-168.jpg"
+  ],
+  "reviewed_full_pages": [
+    {
+      "page": 1,
+      "path": "/workspace/scratch/724ab8464145/year_2025/tmp/visual/full-001.png"
+    },
+    {
+      "page": 4,
+      "path": "/workspace/scratch/724ab8464145/year_2025/tmp/visual/full-004.png"
+    },
+    {
+      "page": 84,
+      "path": "/workspace/scratch/724ab8464145/year_2025/tmp/visual/full-084.png"
+    },
+    {
+      "page": 165,
+      "path": "/workspace/scratch/724ab8464145/year_2025/tmp/visual/full-165.png"
+    },
+    {
+      "page": 168,
+      "path": "/workspace/scratch/724ab8464145/year_2025/tmp/visual/full-168.png"
+    }
+  ],
+  "method": "Visually inspected all 14 contact sheets covering every page in the assigned range, and all five supplied full-size representative page images using view_image. No PDF or source modifications were made.",
+  "issues": [],
+  "findings": [
+    {
+      "category": "text and formulas",
+      "status": "pass",
+      "detail": "No visible clipping, overlapping lines, missing glyph boxes, or text outside page boundaries. Full-size sample pages have readable body text and mathematical strings."
+    },
+    {
+      "category": "tables",
+      "status": "pass",
+      "detail": "Month overview tables stay within their columns and page boundaries. Header bands, row rules and wrapped text remain distinct; full-size page 4 confirms table readability."
+    },
+    {
+      "category": "pagination and flow",
+      "status": "pass",
+      "detail": "No accidental blank pages or major layout breaks were observed. Month boundaries and short closing pages leave deliberate whitespace; continuation pages and entry headings retain coherent reading order."
+    },
+    {
+      "category": "full-size samples",
+      "status": "pass",
+      "detail": "Pages 1, 4, 84, 165 and 168 have clean margins, readable headings and highlighted result boxes, and unobstructed footers."
+    }
+  ],
+  "scope_limit": "All 168 pages were inspected at contact-sheet scale; five specified pages were also inspected at full size. This is visual layout QA, not a new mathematical or provenance audit."
+}

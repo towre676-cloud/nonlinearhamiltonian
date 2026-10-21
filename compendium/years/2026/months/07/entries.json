@@ -1,0 +1,1265 @@
+[
+  {
+    "id": "Y26-07-001",
+    "title": "Finite spectral rigidity needs annihilation and support witnesses",
+    "status": "Developed classical mathematics with explicit hypotheses and scoped evidence",
+    "summary": "The July1 source reports a rational spectral-rigidity theorem with support0,1,2,4,5,6,8. Its original matrix and boundary seeds are not fully retrieved. A complete general certificate states exactly what those missing data would need to establish, and gives an explicit rational model rather than adopting an unseen computation.",
+    "definitions": [
+      "Let S={0,1,2,4,5,6,8} and p(t)=∏_{λ∈S}(t−λ). Let T be an endomorphism of a finite-dimensional rational vector space. Define e_λ(t)=∏_{ν∈S,ν≠λ}(t−ν)/(λ−ν)."
+    ],
+    "result": {
+      "name": "Lagrange spectral certificate",
+      "statement": "If p(T)=0, then E_λ=e_λ(T) are pairwise disjoint idempotents, sum to I and satisfy T=ΣλE_λ. The spectrum equals S exactly when every E_λ is nonzero; one vector with E_λv≠0 certifies each nonzero projector.",
+      "proof": "On the seven roots, e_λ(ν)=δ_λν. Thus e_λ²−e_λ, e_λe_ν for λ≠ν, Σe_λ−1 and t−Σλe_λ all vanish on S and are divisible by the square-free polynomial p. Evaluating at T proves the identities. The image of E_λ consists of λ-eigenvectors because(t−λ)e_λ is divisible by p. Their direct sum is the entire space, so p(T)=0 also proves semisimplicity rather than merely listing possible eigenvalues. Conversely a nonzero E_λ supplies an eigenvector, making the support criterion exact. A spectral list alone would not exclude a Jordan block, for which p(T) could fail. The same projectors compute every polynomial observable: h(T)=Σh(λ)E_λ. For z outsideS they also give the exact resolvent(zI−T)^{-1}=ΣE_λ/(z−λ), verified by multiplication. Thus the certificate supplies inversion and spectral decomposition, not just an eigenvalue list. Its denominators are explicit rational differences between distinct roots."
+    },
+    "example": {
+      "setup": "Take T=diag(0,1,2,4,5,6,8) and v=(1,1,1,1,1,1,1).",
+      "calculation": "Each E_λv is the corresponding standard basis vector. All seven eigenvalues therefore occur. The minimal polynomial is p, and seven independent boundary projections certify the full support without numerical diagonalization.",
+      "conclusion": "An exact rational certificate is a polynomial identity plus explicit support witnesses, with no floating eigenvalue tolerance."
+    },
+    "limits": "This does not reproduce the reported Theorem C until its actual T and seed vectors are supplied. An arbitrary matrix sharing the spectrum need not share other structure.",
+    "extension": "Publish T and sparse witness vectors, verify all polynomial identities over Q, and identify which hypotheses make this finite rigidity stable under a specified deformation.",
+    "references": [],
+    "original": {
+      "date": "2026-07-01",
+      "month": "2026-07",
+      "evidence": "U",
+      "field": "Exact linear algebra",
+      "concept": "Finite spectral rigidity needs annihilation and support witnesses",
+      "origin": "Dated historical retrieval; see exact source line",
+      "question": "Which exact polynomial and boundary witnesses suffice to certify the seven-point spectrum?",
+      "math": "If p(T)=0, then E_λ=e_λ(T) are pairwise disjoint idempotents, sum to I and satisfy T=ΣλE_λ. The spectrum equals S exactly when every E_λ is nonzero; one vector with E_λv≠0 certifies each nonzero projector.",
+      "finish": "Proof, worked example and explicit remaining problem",
+      "kind": "Revised mathematical treatment",
+      "refs": [],
+      "source_excerpt": "- [USER_FACT] [c0] U@2026-07-01T13:48:05Z, -3mo 3w: Theorem C finite spectral rigidity proved over ℚ; exact spectrum support {0,1,2,4,5,6,8}, boundary seeds isolate it.",
+      "retrieval_receipt": "root_receipts.json record 0",
+      "original_question": null,
+      "attribution_note": "The excerpt is an exact retrieval-result line, usually a historical paraphrase rather than a verbatim original prompt. User-attributed topics and assistant assertions remain distinct. The revised question, classical proof and example are newly authored; absent history and novelty are not claimed."
+    }
+  },
+  {
+    "id": "Y26-07-002",
+    "title": "Quadratic jets need their cubic closure to become finite",
+    "status": "Developed classical mathematics with explicit hypotheses and scoped evidence",
+    "summary": "The July3 target specifies two quadrics and a Hilbert function(1,2,1,0). The quadrics alone do not have that finite Hilbert function. An invertible coordinate change makes both the obstruction and the intended cubic closure completely explicit over every field.",
+    "definitions": [
+      "Let k be any field and λ∈k. In k[a,b] set Q=(a²−λ²b²,ab−λb²). Let m=(a,b),u=a−λb and v=b. The coordinate change is invertible with a=u+λv."
+    ],
+    "result": {
+      "name": "Exact jet normal form",
+      "statement": "Q=(u²,uv). Its quotient has Hilbert function1,2,1,1,1,… and is not Artinian. Adding m³ gives I=(u²,uv,v³), with basis1,u,v,v² and Hilbert function(1,2,1,0,…).",
+      "proof": "The second quadric becomes uv. The first becomes u²+2λuv, so subtracting2λ times the second gives u²; this works even in characteristic two. Conversely these formulas recover the original generators. Every quotient monomial is then a power of v or the single monomial u; powers v^d survive in every degree. Adding all cubics kills v³, while u³,u²v,uv² were already killed. The four remaining monomials are independent because the ideal is monomial and none is divisible by u²,uv or v³. Thus the desired finite jet depends essentially on the cubic-closure hypothesis, not on a two-prime experimental agreement. The finite quotient has maximal ideal generated byu,v, with square spanned byv² and cube zero. Its socle containsu andv² and has dimension two. Consequently its symmetric Hilbert function does not make it a Gorenstein algebra: the multiplication pairing from degree one to the top degree is degenerate becauseu annihilates both generators."
+    },
+    "example": {
+      "setup": "Use λ=2 over Q or over F₇.",
+      "calculation": "With u=a−2b,v=b, the original quadrics are u²+4uv and uv. Both fields give the same four standard monomials after cubic closure. Without closure, v⁴ survives, contradicting the claimed terminal zero Hilbert coefficient.",
+      "conclusion": "The coordinate calculation gives a characteristic-independent constructive model and states precisely which quotient is being studied."
+    },
+    "limits": "No larger W₁ containment or stage-N computation is inferred from this local normal form. Its relation to those packets needs an actual map and ideal certificate.",
+    "extension": "Construct the map from the full target ideal to this jet model and return exact generator-reduction identities proving the intended cubic closure.",
+    "references": [],
+    "original": {
+      "date": "2026-07-03",
+      "month": "2026-07",
+      "evidence": "A",
+      "field": "Commutative algebra",
+      "concept": "Quadratic jets need their cubic closure to become finite",
+      "origin": "Dated historical retrieval; see exact source line",
+      "question": "What quotient is defined by the two quadrics, and what changes when all cubic monomials are added?",
+      "math": "Q=(u²,uv). Its quotient has Hilbert function1,2,1,1,1,… and is not Artinian. Adding m³ gives I=(u²,uv,v³), with basis1,u,v,v² and Hilbert function(1,2,1,0,…).",
+      "finish": "Proof, worked example and explicit remaining problem",
+      "kind": "Revised mathematical treatment",
+      "refs": [],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c0] A@2026-07-03T03:51:08Z, -3mo 2w: finite-field quadratic jet target: \\(Q_2=\\langle a^2-\\lambda^2b^2,ab-\\lambda b^2\\rangle\\), cubic closure, \\(H_{W_1}=(1,2,1,0)\\), verified N=7,9,11,13,15 at two primes.",
+      "retrieval_receipt": "root_receipts.json record 0",
+      "original_question": null,
+      "attribution_note": "The excerpt is an exact retrieval-result line, usually a historical paraphrase rather than a verbatim original prompt. User-attributed topics and assistant assertions remain distinct. The revised question, classical proof and example are newly authored; absent history and novelty are not claimed."
+    }
+  },
+  {
+    "id": "Y26-07-003",
+    "title": "The Hilbert–Burch quotient has type two despite its symmetric Hilbert function",
+    "status": "Developed classical mathematics with explicit hypotheses and scoped evidence",
+    "summary": "The July3 source correctly isolates I=(x²,xy,y³), Betti numbers(1,3,2) and socle dimension two. These can be proved directly, exposing why a short symmetric Hilbert function does not imply Gorenstein duality or a Pfaffian structure.",
+    "definitions": [
+      "Let R=k[x,y],A=R/(x²,xy,y³). Its socle is{x∈A:(x,y)x=0}. Use φ=[[y,0],[−x,y²],[0,−x]], whose columns are syzygies among the ordered generators x²,xy,y³."
+    ],
+    "result": {
+      "name": "Exact minimal graded resolution",
+      "statement": "There is a minimal resolution0→R(−3)⊕R(−4)→R(−2)²⊕R(−3)→R→A→0. A has basis1,x,y,y² and socle span{x,y²}, so its type is two.",
+      "proof": "The two column relations are yx²−x(xy)=0 and y²(xy)−x(y³)=0. To prove they generate every syzygy, let ax²+bxy+cy³=0. Setting x=0 implies x divides c; write c=xc₁. Divide by x to get ax+by+c₁y³=0. Setting y=0 implies y divides a; write a=ya₁. Then b=−xa₁−y²c₁. This is a₁ times the first column plus−c₁ times the second. Injectivity of φ follows from ya₁=0 and−xc₂=0 in the domain R. All entries lie in the homogeneous maximal ideal, proving minimality. Multiplication by x,y on the four standard monomials gives the stated socle. The alternating graded resolution gives Hilbert numerator1−2t²−t³+t³+t⁴=1−2t²+t⁴. Dividing by(1−t)² yields1+2t+t². The cancellation of the two degree-three terms in this numerical series conceals their distinct homological origins, which is why the Hilbert series alone cannot decide whether the displayed resolution is a complete intersection."
+    },
+    "example": {
+      "setup": "Compare with B=R/(x²,y²).",
+      "calculation": "Both A and B have Hilbert function(1,2,1). But B has socle span{xy} and total Betti numbers(1,2,1), whereas A has a degree-one socle class x and type two. The Hilbert numerator of A has a cancellation at degree three that does not cancel a minimal free module.",
+      "conclusion": "Resolution and socle data distinguish algebras that their length and Hilbert function cannot."
+    },
+    "limits": "This elementary proof concerns the declared ideal, not every reported finite-field target. Gorenstein and Pfaffian classifications need the appropriate codimension and type assumptions.",
+    "extension": "Compute the multiplication pairing into the socle and identify the precise duality obstruction before proposing a higher-codimension structural theorem.",
+    "references": [],
+    "original": {
+      "date": "2026-07-03",
+      "month": "2026-07",
+      "evidence": "U",
+      "field": "Free resolutions",
+      "concept": "The Hilbert–Burch quotient has type two despite its symmetric Hilbert function",
+      "origin": "Dated historical retrieval; see exact source line",
+      "question": "What exact resolution and socle distinguish this quotient from a complete intersection?",
+      "math": "There is a minimal resolution0→R(−3)⊕R(−4)→R(−2)²⊕R(−3)→R→A→0. A has basis1,x,y,y² and socle span{x,y²}, so its type is two.",
+      "finish": "Proof, worked example and explicit remaining problem",
+      "kind": "Revised mathematical treatment",
+      "refs": [],
+      "source_excerpt": "- [USER_FACT] [c0] U@2026-07-03T13:52:04Z, -3mo 2w: exact ℚ Hilbert–Burch resolution \\(\\phi=\\begin{pmatrix}y&0\\\\-x&y^2\\\\0&-x\\end{pmatrix}\\), minors generate \\((x^2,xy,y^3)\\), Betti (1,3,2), socle dimension 2; Pfaffian/Buchsbaum–Eisenbud elevation falsified, corrected tensor resolution Betti (1,4,",
+      "retrieval_receipt": "root_receipts.json record 0",
+      "original_question": null,
+      "attribution_note": "The excerpt is an exact retrieval-result line, usually a historical paraphrase rather than a verbatim original prompt. User-attributed topics and assistant assertions remain distinct. The revised question, classical proof and example are newly authored; absent history and novelty are not claimed."
+    }
+  },
+  {
+    "id": "Y26-07-004",
+    "title": "Tensoring by a dual-number factor gives Betti numbers(1,4,5,2)",
+    "status": "Developed classical mathematics with explicit hypotheses and scoped evidence",
+    "summary": "The source says the Pfaffian elevation was falsified and a tensor resolution substituted, but its last coefficients are truncated. A fully specified tensor extension can be computed exactly. It provides a constructive model without inventing the missing historical tail.",
+    "definitions": [
+      "Let S=k[x,y,z] and B=S/(x²,xy,y³,z²)=A⊗_k k[z]/(z²), with A from the preceding ideal. Tensor the explicit two-step resolution of A with0→k[z](−2)→k[z]→k[z]/z²→0."
+    ],
+    "result": {
+      "name": "Exact tensor resolution and non-Gorenstein certificate",
+      "statement": "B has total Betti numbers(1,4,5,2), length eight and Hilbert function(1,3,3,1). Its socle is span{xz,y²z}, of dimension two, so this codimension-three algebra is not Gorenstein.",
+      "proof": "The two resolutions are complexes of free modules over disjoint polynomial variables. Over a field their tensor total complex resolves the tensor quotient; exactness follows degreewise from the exact tensor functor or the elementary Künneth theorem. All matrix entries remain in(x,y,z), so the total resolution is minimal. Its total ranks are the coefficient convolution(1+3t+2t²)(1+t)=1+4t+5t²+2t³. The eight basis monomials are the four A monomials multiplied by1 or z. A socle element must be killed by z and hence have a z factor; its A coefficient must lie in socle(A), giving exactly the two stated classes. The symmetric Hilbert series(1+t)³ therefore again fails to imply type one. Tensoring the socles also gives a direct type certificate: the only elements killed byx,y,z are scalar combinations ofxz andy²z. Their independence follows from the eight standard monomials. Hence the last free-module rank two matches a genuinely two-dimensional socle, and the symmetric Hilbert function cannot rescue a proposed Gorenstein interpretation."
+    },
+    "example": {
+      "setup": "Compare B with k[x,y,z]/(x²,y²,z²).",
+      "calculation": "The complete intersection has the same Hilbert function and length but Betti numbers(1,3,3,1) and one-dimensional socle xyz. The distinction is exact, not a finite-precision discrepancy.",
+      "conclusion": "A tensor construction gives a rigorous replacement for an unsupported Gorenstein elevation."
+    },
+    "limits": "The displayed tensor extension is authored here; the original truncated packet is not silently identified with it. A codimension-three Gorenstein Pfaffian theorem cannot be invoked for this type-two quotient.",
+    "extension": "Recover the actual third-variable relations, compare their minimal resolution with this model, and prove any flat-family claim over the relevant parameter ring.",
+    "references": [],
+    "original": {
+      "date": "2026-07-03",
+      "month": "2026-07",
+      "evidence": "U",
+      "field": "Homological algebra",
+      "concept": "Tensoring by a dual-number factor gives Betti numbers(1,4,5,2)",
+      "origin": "Dated historical retrieval; see exact source line",
+      "question": "What happens to the exact resolution when an independent square-zero variable is adjoined?",
+      "math": "B has total Betti numbers(1,4,5,2), length eight and Hilbert function(1,3,3,1). Its socle is span{xz,y²z}, of dimension two, so this codimension-three algebra is not Gorenstein.",
+      "finish": "Proof, worked example and explicit remaining problem",
+      "kind": "Revised mathematical treatment",
+      "refs": [],
+      "source_excerpt": "- [USER_FACT] [c0] U@2026-07-03T13:52:04Z, -3mo 2w: exact ℚ Hilbert–Burch resolution \\(\\phi=\\begin{pmatrix}y&0\\\\-x&y^2\\\\0&-x\\end{pmatrix}\\), minors generate \\((x^2,xy,y^3)\\), Betti (1,3,2), socle dimension 2; Pfaffian/Buchsbaum–Eisenbud elevation falsified, corrected tensor resolution Betti (1,4,",
+      "retrieval_receipt": "root_receipts.json record 0",
+      "original_question": null,
+      "attribution_note": "The excerpt is an exact retrieval-result line, usually a historical paraphrase rather than a verbatim original prompt. User-attributed topics and assistant assertions remain distinct. The revised question, classical proof and example are newly authored; absent history and novelty are not claimed."
+    }
+  },
+  {
+    "id": "Y26-07-005",
+    "title": "Two-prime agreement is not a rational membership proof",
+    "status": "Developed classical mathematics with explicit hypotheses and scoped evidence",
+    "summary": "The July3 ladder reports N=7,N=9 and a pending N=11 exponent17 at two primes, while explicitly recording that Singular was not run in one response. Exact lifting logic distinguishes useful modular evidence from a rational theorem and gives a concrete certificate format.",
+    "definitions": [
+      "Let p,q be distinct primes and M an integer matrix. A polynomial membership witness for f∈(g₁,…,g_s) over Q is an exact identity Df=Σh_ig_i with D a nonzero integer and h_i integral polynomials. Minimal nilpotence exponent also requires a valid nonmembership witness for the preceding power."
+    ],
+    "result": {
+      "name": "One-sided rank lifting and a two-prime counterexample",
+      "statement": "rank_Fp(M modp)≤rank_QM. A nonzero modular minor proves the corresponding rational minor is nonzero. Vanishing modulo p and q alone does not prove rational vanishing.",
+      "proof": "A modular nonzero determinant is the reduction of the same integer determinant, so that integer is nonzero; this proves the rank inequality. For the converse failure take the1×1 matrix[pq]. It is zero over both finite fields and nonzero over Q. Polynomial membership has an additional denominator issue: I=(px) in Z[x] becomes(x) over Q but becomes the zero ideal modulo p. Thus a failed modular membership test may also be a bad-prime phenomenon unless a monic Gröbner basis or a flat integral model controls specialization. An exact identity Df=Σh_ig_i avoids ambiguity and lifts directly after dividing by D. To claim the smallest exponent e, also prove f^(e−1) has nonzero normal form under a certified rational Gröbner basis."
+    },
+    "example": {
+      "setup": "Use p=32003,q=40009.",
+      "calculation": "The integer1280408027=pq vanishes at both primes but is not zero. Conversely the monomial quotient(x²,xy,y³) has a free integral standard-monomial basis, so its Hilbert function is genuinely identical after every prime reduction.",
+      "conclusion": "Modular computations can guide discovery while the final certificate identifies exactly what is proved over Q."
+    },
+    "limits": "The reported stage exponents and full containment remain historical computational claims until their actual generators and certificates are recovered.",
+    "extension": "Publish exact polynomial identities or rational Gröbner certificates, with prime exclusions and coefficient bounds if CRT reconstruction is used.",
+    "references": [],
+    "original": {
+      "date": "2026-07-03",
+      "month": "2026-07",
+      "evidence": "A",
+      "field": "Exact certification",
+      "concept": "Two-prime agreement is not a rational membership proof",
+      "origin": "Dated historical retrieval; see exact source line",
+      "question": "Which finite-field conclusions lift to Q, and what certificate proves an exponent or ideal containment?",
+      "math": "rank_Fp(M modp)≤rank_QM. A nonzero modular minor proves the corresponding rational minor is nonzero. Vanishing modulo p and q alone does not prove rational vanishing.",
+      "finish": "Proof, worked example and explicit remaining problem",
+      "kind": "Revised mathematical treatment",
+      "refs": [],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c1] A@2026-07-03T15:29:33Z, +3mo17d: Claimed ladder: N=7 reaches 9, N=9 reaches 13, N=11 conjecturally queued at 17; two-prime return of 17 would justify QQ-lift, otherwise update conjecture.",
+      "retrieval_receipt": "root_receipts.json record 0",
+      "original_question": null,
+      "attribution_note": "The excerpt is an exact retrieval-result line, usually a historical paraphrase rather than a verbatim original prompt. User-attributed topics and assistant assertions remain distinct. The revised question, classical proof and example are newly authored; absent history and novelty are not claimed."
+    }
+  },
+  {
+    "id": "Y26-07-006",
+    "title": "Pauli centralizers are exact symplectic kernels",
+    "status": "Developed classical mathematics with explicit hypotheses and scoped evidence",
+    "summary": "The July4 sector calculations have a precise finite-field core. Once the actual nonzero Pauli support is specified, its centralizer follows from one symplectic nullspace. This constructive theorem states what the reported chemical, spin and lattice dimensions would need to certify without adopting unseen matrices.",
+    "definitions": [
+      "Encode an n-qubit Pauli up to phase by v=(x,z)∈F₂^(2n). Define ω(v,w)=x·z′+z·x′. Let H=Σ_{s∈S}h_sP(s), with distinct support labels and all h_s≠0."
+    ],
+    "result": {
+      "name": "Centralizer formula",
+      "statement": "P(v) commutes with H exactly when ω(v,s)=0 for every s∈S. Thus C(H)=span(S)^⊥ has dimension2n−rank_F2(S).",
+      "proof": "The single-qubit relation XZ=−ZX gives P(v)P(s)=(−1)^ω(v,s)P(s)P(v). If all pairings vanish, each term commutes. Conversely a nonzero commutator is a sum of nonzero multiples of Pauli matrices labeled v+s for the anticommuting support labels. Those labels are distinct, so linear independence of the Pauli basis prevents cancellation. Therefore all pairings must vanish. The symplectic form is nondegenerate, so the annihilator dimension is the ambient dimension minus the support span dimension. This proof also explains why one must first combine duplicate Pauli terms and remove coefficients that cancel to zero. Each independent binary commutation equation halves the number of solutions. If the support span has rankr, the kernel therefore contains exactly2^{2n−r} Pauli labels. This is a count of Pauli symmetries modulo scalar phase, not automatically the dimension of the full operator commutant ofH; degeneracies may create further linear combinations of operators commuting withH."
+    },
+    "example": {
+      "setup": "Take n=2,H=Z₁+Z₂.",
+      "calculation": "The support equations force x₁=x₂=0 and leave z₁,z₂ free. The Pauli centralizer has dimension two and consists of I,Z₁,Z₂,Z₁Z₂ up to phase. Replacing H by X₁+Z₁+X₂+Z₂ makes the four binary support directions span everything, so the Pauli centralizer is zero-dimensional.",
+      "conclusion": "Exact GF₂ linear algebra yields the symmetry space; interpreting it as a commuting sector algebra additionally requires an isotropic choice."
+    },
+    "limits": "A Pauli centralizer is not the entire real or complex operator commutant. The source’s particular Hamiltonian support tables were not recovered, so their dimension reports remain qualified.",
+    "extension": "Publish each support matrix and row-reduction certificate, then select and certify a maximal isotropic commuting subgroup with the intended phase conventions.",
+    "references": [],
+    "original": {
+      "date": "2026-07-04",
+      "month": "2026-07",
+      "evidence": "U",
+      "field": "Finite quantum algebra",
+      "concept": "Pauli centralizers are exact symplectic kernels",
+      "origin": "Dated historical retrieval; see exact source line",
+      "question": "Which binary matrix computes the Pauli symmetries of a declared Hamiltonian?",
+      "math": "P(v) commutes with H exactly when ω(v,s)=0 for every s∈S. Thus C(H)=span(S)^⊥ has dimension2n−rank_F2(S).",
+      "finish": "Proof, worked example and explicit remaining problem",
+      "kind": "Revised mathematical treatment",
+      "refs": [],
+      "source_excerpt": "- [USER_FACT] [c3] U@2026-07-04T14:48:45Z, -3mo: Computed exact GF(2) centralizers \\(C(H)=S(H)^\\perp\\), isotropic \\(Q\\) discovery, and real results: H_chem \\(\\dim Q=3\\), H_spin \\(\\dim Q=1\\), H_lat \\(\\dim Q=2\\), negative control \\(\\dim C=0\\).",
+      "retrieval_receipt": "root_coverage_0.json record 0",
+      "original_question": null,
+      "attribution_note": "The excerpt is an exact retrieval-result line, usually a historical paraphrase rather than a verbatim original prompt. User-attributed topics and assistant assertions remain distinct. The revised question, classical proof and example are newly authored; absent history and novelty are not claimed."
+    }
+  },
+  {
+    "id": "Y26-07-007",
+    "title": "Sector transition counts use the symplectic-kernel quotient",
+    "status": "Developed classical mathematics with explicit hypotheses and scoped evidence",
+    "summary": "The source reports2^a sectors from a quotient involving G and Q. Quotient cardinality is elementary, but identifying it with character transitions requires the correct kernel. The exact transition theorem both proves the constructive part and identifies an assumption that cannot be omitted.",
+    "definitions": [
+      "Let Q be an r-dimensional isotropic binary Pauli subspace with independent commuting Hermitian generators. Its joint eigenspaces are H_χ,χ∈F₂^r. For v define δ_v(q)=ω(v,q). Let G be any binary subspace of possible Pauli interventions."
+    ],
+    "result": {
+      "name": "Character transport and orbit cardinality",
+      "statement": "P(v)H_χ=H_(χ+δ_v). The number of reachable character shifts is2^rankδ=2^[dimG−dim(G∩Q^⊥)]. Replacing Q^⊥ by Q requires the extra identity G∩Q^⊥=G∩Q.",
+      "proof": "If ψ has eigenvalue(−1)^χ(q) under P(q), commuting P(q) past P(v) multiplies it by(−1)^ω(q,v), giving the shifted character. P(v) is invertible, so this is an equality of eigenspaces. The shift map G→Q* is linear with kernel G∩Q^⊥; rank-nullity proves its image cardinality. Independently, every joint character sector has dimension2^(n−r): its projector is the product of r factors(I+(−1)^χ_jP(q_j))/2, and all nonidentity Pauli terms have trace zero. A formula using dimG−dim(G∩Q) counts a different vector-space quotient unless the kernels agree. The character-shift map is linear overF₂, so all nonempty fibres have the same size2^{dim(G∩Q⊥)}. Its image acts freely by translations on the character labels, and the orbit size is exactly the image cardinality. This proves the sector-count statement through an explicit action, without conflating the stabilizer with an unrelated isotropic subgroup."
+    },
+    "example": {
+      "setup": "Use Q=span{Z₁} and G=span{Z₁,Z₂}.",
+      "calculation": "Every element of G commutes with Q, so all character shifts are zero and only one sector is reachable. Yet dimG−dim(G∩Q)=1 would predict two if misinterpreted. For the full Pauli space and a maximal Lagrangian Q the required kernel identity does hold.",
+      "conclusion": "The genuine theorem is a symplectic transition statement, with sector counts tied to explicit hypotheses."
+    },
+    "limits": "The historical quotient may have a different intended meaning; its exact definition was not recovered. No reported sector dimension is silently rejected or accepted without that identification.",
+    "extension": "Recover the actual G,Q pair, compute both intersections and demonstrate whether the desired quotient is the character-shift quotient.",
+    "references": [],
+    "original": {
+      "date": "2026-07-04",
+      "month": "2026-07",
+      "evidence": "U",
+      "field": "Representation sectors",
+      "concept": "Sector transition counts use the symplectic-kernel quotient",
+      "origin": "Dated historical retrieval; see exact source line",
+      "question": "Which quotient counts distinct character shifts, and when does the source’s dimension formula apply?",
+      "math": "P(v)H_χ=H_(χ+δ_v). The number of reachable character shifts is2^rankδ=2^[dimG−dim(G∩Q^⊥)]. Replacing Q^⊥ by Q requires the extra identity G∩Q^⊥=G∩Q.",
+      "finish": "Proof, worked example and explicit remaining problem",
+      "kind": "Revised mathematical treatment",
+      "refs": [],
+      "source_excerpt": "- [USER_FACT] [c3] U@2026-07-04T07:23:57Z, -3mo: Discussed Pauli finite-sector mathematics: \\(v\\in Q^\\perp\\), symplectic orthogonals, sector–abelian quotient \\(a=\\dim G-\\dim(G\\cap Q)\\), and \\(2^a\\) sectors.",
+      "retrieval_receipt": "root_coverage_0.json record 0",
+      "original_question": null,
+      "attribution_note": "The excerpt is an exact retrieval-result line, usually a historical paraphrase rather than a verbatim original prompt. User-attributed topics and assistant assertions remain distinct. The revised question, classical proof and example are newly authored; absent history and novelty are not claimed."
+    }
+  },
+  {
+    "id": "Y26-07-008",
+    "title": "Sector Schmidt ranks add only across orthogonal blocks",
+    "status": "Developed classical mathematics with explicit hypotheses and scoped evidence",
+    "summary": "The July4 source reports a sector–Schmidt split3+2. The exact algebra is a block singular-value decomposition when the sectors are orthogonal on both tensor factors. Orthogonality on just one side does not suffice to add ranks.",
+    "definitions": [
+      "Represent a bipartite pure state by its coefficient matrix C. Assume orthogonal decompositions on both sides put C into block diagonal form diag(C₁,…,C_s). Normalize||C||_F²=1 and set p_j=||C_j||_F²."
+    ],
+    "result": {
+      "name": "Block Schmidt decomposition",
+      "statement": "rankC=ΣrankC_j. Its reduced-state spectrum is the union of the spectra C_jC_j*, and its entropy is H(p)+Σp_jS(C_jC_j*/p_j), omitting zero blocks.",
+      "proof": "Block multiplication gives CC*=diag(C₁C₁*,…,C_sC_s*), so eigenvalues and ranks are unions. Write each nonzero block spectrum as p_jλ_{jk} withΣ_kλ_{jk}=1. Then−Σ_jk p_jλ_jk log(p_jλ_jk)=−Σ_jp_jlogp_j+Σ_jp_j[−Σ_kλ_jklogλ_jk], proving the entropy identity. If only one-side sectors are orthogonal, C may instead be a vertical stack with overlapping row spaces; its rank can be smaller than the sum. Thus a global charge label alone must be translated into the relevant local block structure before the formula is used. For normalized coefficients the entropy formula is obtained by listing every squared singular value of a block as p_j s_{j,k}, withΣ_k s_{j,k}=1. Expanding−Σ_{j,k}p_js_{j,k}log(p_js_{j,k}) separates the sector entropy−Σp_jlogp_j from the average within-sector entropy. This calculation shows exactly why probabilities, rather than unnormalized block ranks, enter the entropy identity."
+    },
+    "example": {
+      "setup": "Take C=I₅/√5 split into a3×3 and2×2 block.",
+      "calculation": "The Schmidt rank is five. Sector probabilities are3/5 and2/5 and the entropy is H(3/5,2/5)+(3/5)log3+(2/5)log2=log5. In contrast stacking two identical one-row matrices gives rank one, despite a sum of individual ranks two.",
+      "conclusion": "The rank sum and entropy decomposition now have a complete hypothesis and proof."
+    },
+    "limits": "The actual H_spin coefficient blocks were not retrieved. This is the exact theorem their reported decomposition would need, not a reproduction of the original state.",
+    "extension": "Return orthogonal local sector projectors and coefficient blocks, then certify their singular ranks and entropy bounds with exact or interval data.",
+    "references": [],
+    "original": {
+      "date": "2026-07-04",
+      "month": "2026-07",
+      "evidence": "U",
+      "field": "Tensor linear algebra",
+      "concept": "Sector Schmidt ranks add only across orthogonal blocks",
+      "origin": "Dated historical retrieval; see exact source line",
+      "question": "Which block structure justifies a sector rank sum3+2=5, and what happens to entropy?",
+      "math": "rankC=ΣrankC_j. Its reduced-state spectrum is the union of the spectra C_jC_j*, and its entropy is H(p)+Σp_jS(C_jC_j*/p_j), omitting zero blocks.",
+      "finish": "Proof, worked example and explicit remaining problem",
+      "kind": "Revised mathematical treatment",
+      "refs": [],
+      "source_excerpt": "- [USER_FACT] [c3] U@2026-07-04T07:41:32Z, -3mo: Verified transition theorem \\(P(v):\\mathcal H_\\chi\\to\\mathcal H_{\\chi+\\delta_v}\\), \\(\\delta_v(q)=\\omega(v,q)\\); H_spin sector–Schmidt ranks split \\(3+2=5\\).",
+      "retrieval_receipt": "root_coverage_0.json record 0",
+      "original_question": null,
+      "attribution_note": "The excerpt is an exact retrieval-result line, usually a historical paraphrase rather than a verbatim original prompt. User-attributed topics and assistant assertions remain distinct. The revised question, classical proof and example are newly authored; absent history and novelty are not claimed."
+    }
+  },
+  {
+    "id": "Y26-07-009",
+    "title": "The discriminant−23 cubic and the plastic unit are exactly related",
+    "status": "Developed classical mathematics with explicit hypotheses and scoped evidence",
+    "summary": "The July5 knot-arithmetic discussion begins with a fully defined cubic. Its discriminant, signature and relation to the plastic number can be proved exactly. These facts do not themselves identify a hyperbolic structure, regulator normalization or Mahler-measure formula.",
+    "definitions": [
+      "Let f(t)=t³−t²+1 and let t₀ be its real root. Let ρ>1 solveρ³−ρ−1=0. The polynomial discriminant of t³+at²+bt+c is a²b²−4b³−4a³c−27c²+18abc."
+    ],
+    "result": {
+      "name": "Exact field and unit data",
+      "statement": "f is irreducible,Disc(f)=−23, and Q(t₀)=Q(ρ) with t₀=−1/ρ. The field has one real and one complex-conjugate pair of embeddings;ρ is a norm-one algebraic unit. The splitting-field Galois group is S₃.",
+      "proof": "The only possible rational roots are±1, and neither vanishes. Substituting a=−1,b=0,c=1 gives4−27=−23. Its square-free discriminant implies the index of Z[t₀] in the full integer ring is one, since an index square must divide23. Negative discriminant gives signature(1,1). Substituting t=−1/ρ turns f(t) into(ρ³−ρ−1)/ρ³, proving the field relation. The monic polynomial forρ has constant−1, so its norm is one and it is a unit. An irreducible cubic has transitive subgroup A₃ or S₃; its nonsquare discriminant excludes A₃. Modulo two f is irreducible, while modulo five it factors(t−2)(t²+t+2) with irreducible quadratic, independently exhibiting3-cycle and transposition types. Square-freeness matters because the discriminant of an order equals the field discriminant times its index squared. Since23 has no square factor, the orderZ[t] cannot have index larger than one. This argument proves maximality of the order, but does not identify a fundamental unit: a visible unit might be a proper power of another unit."
+    },
+    "example": {
+      "setup": "Compare the real root and unit numerically only after the exact relation.",
+      "calculation": "ρ≈1.324718 and t₀≈−0.754878. Their product is−1. The complex roots of f have modulus√ρ because their product isρ. Calling logρ the full regulator additionally requires provingρ is a fundamental unit; unit status alone is insufficient.",
+      "conclusion": "The exact cubic arithmetic is separated from every further knot or period identification."
+    },
+    "limits": "No atlas of28 volume identities or p-adic regulator is reproduced. Those require the actual shapes, branches and arithmetic normalization.",
+    "extension": "Certify a fundamental unit and an integral basis, then derive any proposed regulator or knot trace-field map with explicit comparison data.",
+    "references": [
+      {
+        "label": "Milne, Algebraic Number Theory",
+        "url": "https://www.jmilne.org/math/CourseNotes/ANT.pdf"
+      },
+      {
+        "label": "LMFDB number field3.1.23.1",
+        "url": "https://www.lmfdb.org/NumberField/3.1.23.1"
+      }
+    ],
+    "original": {
+      "date": "2026-07-05",
+      "month": "2026-07",
+      "evidence": "U",
+      "field": "Algebraic number theory",
+      "concept": "The discriminant−23 cubic and the plastic unit are exactly related",
+      "origin": "Dated historical retrieval; see exact source line",
+      "question": "Which field, unit and Galois group follow from t³−t²+1?",
+      "math": "f is irreducible,Disc(f)=−23, and Q(t₀)=Q(ρ) with t₀=−1/ρ. The field has one real and one complex-conjugate pair of embeddings;ρ is a norm-one algebraic unit. The splitting-field Galois group is S₃.",
+      "finish": "Proof, worked example and explicit remaining problem",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://www.jmilne.org/math/CourseNotes/ANT.pdf",
+        "https://www.lmfdb.org/NumberField/3.1.23.1"
+      ],
+      "source_excerpt": "- [USER_FACT] [c0] U@2026-07-05T23:19:43Z, 3mo: July mathematics centered on \\(f(t)=t^3-t^2+1\\), cubic field discriminant \\(-23\\), plastic number, knot \\(5_2\\), hyperbolic volume, modular form \\(\\eta(\\tau)\\eta(23\\tau)\\), graph spectrum \\(\\{1+\\sqrt5,1-\\sqrt5,-2,0,0\\}\\), and \\(\\Theta=\\zeta_K(2)|\\Delta_K|^{3/2}/(\\pi^4\\mathrm{Vol})\\).",
+      "retrieval_receipt": "root_coverage_0.json record 0",
+      "original_question": null,
+      "attribution_note": "The excerpt is an exact retrieval-result line, usually a historical paraphrase rather than a verbatim original prompt. User-attributed topics and assistant assertions remain distinct. The revised question, classical proof and example are newly authored; absent history and novelty are not claimed."
+    }
+  },
+  {
+    "id": "Y26-07-010",
+    "title": "The eta product has exact coefficients and a Fricke law",
+    "status": "Developed classical mathematics with explicit hypotheses and scoped evidence",
+    "summary": "The July5 source couples an eta product to cubic and knot data. Its q-expansion and two functional equations are independently meaningful classical mathematics. They provide genuine consistency tests while leaving a full geometric correspondence unproved.",
+    "definitions": [
+      "For Imτ>0 set q=e^(2πiτ) and η(τ)=q^(1/24)∏_{n≥1}(1−q^n). Use η(τ+1)=e^(πi/12)η(τ) and η(−1/τ)=√(−iτ)η(τ), with the standard holomorphic square-root branch. Put F=η(τ)η(23τ)."
+    ],
+    "result": {
+      "name": "Product and Fricke identities",
+      "statement": "F=q∏(1−q^n)(1−q^(23n)),F(τ+1)=F(τ), and F(−1/(23τ))=−i√23 τF(τ). Its first coefficients are q−q²−q³+q⁶+q⁸+….",
+      "proof": "The q-prefactors multiply to q^[(1+23)/24]=q. Translation multiplies the first eta by e^(πi/12) and the second by e^(23πi/12), whose product is one. For the Fricke substitution apply the inversion formula to each factor, obtaining√(−i23τ)√(−iτ)=−i√23τ. The branch equality holds on the positive imaginary axis and hence throughout the connected upper half-plane by analytic continuation. Below degree24 the23n product contributes only its constant term, so finite expansion of∏(1−q^n), or Euler’s pentagonal identity, gives the displayed coefficients. These calculations are exact, not recognized from a numerical plot. The initialq factor proves vanishing at the cusp∞ because the remaining product has constant term one and converges forImτ>0. It does not by itself check every cusp ofΓ₀(23), nor the full character law. Those require the eta-quotient transformation theorem or separate cusp calculations, rather than an inference from the two displayed transformations alone."
+    },
+    "example": {
+      "setup": "Evaluate the Fricke multiplier at its fixed pointτ=i/√23.",
+      "calculation": "The multiplier−i√23τ is one, consistent with a nonzero product there. The coefficient at q² is−1 and at q⁵ is zero, matching the small-prime S₃ trace pattern only after a separate modular/Artin theorem is specified.",
+      "conclusion": "The analytic object has a concrete domain, branch convention and verified transformations."
+    },
+    "limits": "Two generator-type identities do not by themselves prove the entire Γ₀(23) multiplier law, an Artin correspondence or a knot-volume identity. Those need their own theorem and normalization.",
+    "extension": "Prove the complete eta-quotient modularity and character, then identify the associated representation using exact Hecke data and a suitable uniqueness theorem.",
+    "references": [
+      {
+        "label": "NIST DLMF eta transformations",
+        "url": "https://dlmf.nist.gov/23.18"
+      }
+    ],
+    "original": {
+      "date": "2026-07-05",
+      "month": "2026-07",
+      "evidence": "U",
+      "field": "Modular analysis",
+      "concept": "The eta product has exact coefficients and a Fricke law",
+      "origin": "Dated historical retrieval; see exact source line",
+      "question": "Which transformation identities can be proved for η(τ)η(23τ) before invoking a knot correspondence?",
+      "math": "F=q∏(1−q^n)(1−q^(23n)),F(τ+1)=F(τ), and F(−1/(23τ))=−i√23 τF(τ). Its first coefficients are q−q²−q³+q⁶+q⁸+….",
+      "finish": "Proof, worked example and explicit remaining problem",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://dlmf.nist.gov/23.18"
+      ],
+      "source_excerpt": "- [USER_FACT] [c0] U@2026-07-05T23:19:43Z, 3mo: July mathematics centered on \\(f(t)=t^3-t^2+1\\), cubic field discriminant \\(-23\\), plastic number, knot \\(5_2\\), hyperbolic volume, modular form \\(\\eta(\\tau)\\eta(23\\tau)\\), graph spectrum \\(\\{1+\\sqrt5,1-\\sqrt5,-2,0,0\\}\\), and \\(\\Theta=\\zeta_K(2)|\\Delta_K|^{3/2}/(\\pi^4\\mathrm{Vol})\\).",
+      "retrieval_receipt": "root_coverage_0.json record 0",
+      "original_question": null,
+      "attribution_note": "The excerpt is an exact retrieval-result line, usually a historical paraphrase rather than a verbatim original prompt. User-attributed topics and assistant assertions remain distinct. The revised question, classical proof and example are newly authored; absent history and novelty are not claimed."
+    }
+  },
+  {
+    "id": "Y26-07-011",
+    "title": "The five-vertex spectrum reconstructs a graph exactly",
+    "status": "Developed classical mathematics with explicit hypotheses and scoped evidence",
+    "summary": "The July5 spectrum has a complete finite interpretation. Under the simple-graph hypothesis it identifies a five-vertex graph uniquely up to isomorphism. A separate graph-to-knot assignment is still required before this becomes a knot invariant.",
+    "definitions": [
+      "Let A be the adjacency matrix of a simple undirected graph on five vertices with spectrum{1+√5,1−√5,−2,0,0}. For such graphs trA²=2|E| and trA³=6 times the triangle count."
+    ],
+    "result": {
+      "name": "A small spectral-rigidity result",
+      "statement": "The graph is K₅ with two disjoint edges removed. Its characteristic polynomial is t²(t+2)(t²−2t−4)=t⁵−8t³−8t².",
+      "proof": "The squared eigenvalues sum to16, so there are eight edges, exactly two fewer than K₅. Their cubes sum to24, so there are four triangles. Deleting two adjacent edges from K₅ destroys five triangles, leaving five, because the deleted edges share one triangle. Deleting disjoint edges destroys six, leaving four. Thus the two missing edges must be disjoint, proving uniqueness. Conversely pair the missing-edge endpoints into two groups of size two and leave the fifth vertex alone. Differences within either pair give two zero eigenvectors. The difference between the pair-constant vectors gives eigenvalue−2. On the remaining pair-symmetric/central subspace the quotient matrix[[2,1],[4,0]] has eigenvalues1±√5. This constructs the spectrum rather than only checking moments."
+    },
+    "example": {
+      "setup": "Take the missing edges12 and34.",
+      "calculation": "The graph has eight edges and four triangles. Multiplying the displayed factors gives t⁵−8t³−8t², independently consistent with the edge and triangle traces. Other graphs can be cospectral in larger orders; the uniqueness here uses the complete five-vertex classification after fixing the edge deficit.",
+      "conclusion": "The spectrum supports an exact graph theorem with a small transparent proof."
+    },
+    "limits": "The source did not recover the map assigning this graph to5₂ or prove invariance under diagram moves. Spectral uniqueness of a graph is not uniqueness of a knot.",
+    "extension": "Define the graph assignment, check its behavior under the intended diagram moves and compare which graph invariants actually descend to knot invariants.",
+    "references": [],
+    "original": {
+      "date": "2026-07-05",
+      "month": "2026-07",
+      "evidence": "U",
+      "field": "Spectral graph theory",
+      "concept": "The five-vertex spectrum reconstructs a graph exactly",
+      "origin": "Dated historical retrieval; see exact source line",
+      "question": "Which graph invariants and uniqueness statement follow from the reported spectrum?",
+      "math": "The graph is K₅ with two disjoint edges removed. Its characteristic polynomial is t²(t+2)(t²−2t−4)=t⁵−8t³−8t².",
+      "finish": "Proof, worked example and explicit remaining problem",
+      "kind": "Revised mathematical treatment",
+      "refs": [],
+      "source_excerpt": "- [USER_FACT] [c0] U@2026-07-05T23:19:43Z, 3mo: July mathematics centered on \\(f(t)=t^3-t^2+1\\), cubic field discriminant \\(-23\\), plastic number, knot \\(5_2\\), hyperbolic volume, modular form \\(\\eta(\\tau)\\eta(23\\tau)\\), graph spectrum \\(\\{1+\\sqrt5,1-\\sqrt5,-2,0,0\\}\\), and \\(\\Theta=\\zeta_K(2)|\\Delta_K|^{3/2}/(\\pi^4\\mathrm{Vol})\\).",
+      "retrieval_receipt": "root_coverage_0.json record 0",
+      "original_question": null,
+      "attribution_note": "The excerpt is an exact retrieval-result line, usually a historical paraphrase rather than a verbatim original prompt. User-attributed topics and assistant assertions remain distinct. The revised question, classical proof and example are newly authored; absent history and novelty are not claimed."
+    }
+  },
+  {
+    "id": "Y26-07-012",
+    "title": "Numerical volume closure needs a geometric certificate",
+    "status": "Developed classical mathematics with explicit hypotheses and scoped evidence",
+    "summary": "The July5 atlas reports extremely small Mahler-volume discrepancies and rational-looking normalized values. Those remain historical computational reports without their shape and integration certificates. A constructive local-to-global criterion explains the missing mathematical work.",
+    "definitions": [
+      "An ideal hyperbolic tetrahedron is determined by a shape z in the upper half-plane. Its volume is the Bloch–Wigner function D(z)=ImLi₂(z)+arg(1−z)log|z|. A triangulated complete manifold requires edge gluing and cusp-completeness equations, not just a root of one polynomial."
+    ],
+    "result": {
+      "name": "Finite-cover volume ratios and certified-shape scope",
+      "statement": "If two finite-volume hyperbolic manifolds have a common finite cover with degrees m,n, then Vol(M)/Vol(N)=n/m. A collection of certified positively oriented complete shapes permits summing their tetrahedral volumes; an approximate shape list alone does not prove the topology or completeness.",
+      "proof": "A covering is a local isometry, so the volume form pulls back and integration over the cover multiplies volume by its degree. Thus mVol(M)=nVol(N), proving the rational ratio. Restricting the ratio further to powers of two and three would require corresponding index or arithmetic information. For shapes, gluing equations identify the tetrahedral metrics along faces and ensure the angle/product condition around edges; cusp completeness is the additional condition preventing incomplete peripheral geometry. These hypotheses, plus a validated solution and the correct triangulated manifold, are what permit the volume sum. Numerical agreement at38 digits does not establish them or an equality involving a Mahler-measure integral."
+    },
+    "example": {
+      "setup": "Consider a common cover of degrees4 over M and9 over N.",
+      "calculation": "The ratio is9/4 by integration, with no numerical recognition. This is only an illustrative index calculation; it does not assert that5₂ has such a cover or is arithmetic. Complex conjugating every shape reverses D’s sign, demonstrating the importance of orientation and branches.",
+      "conclusion": "Exact geometric and analytic premises are needed before the atlas’s normalization can become a theorem."
+    },
+    "limits": "The original28-row data, A-polynomial, quadrature enclosure and shape certificates were not retrieved. No equalityπm(A)=Vol or specific normalized Θ value is adopted as proved here.",
+    "extension": "Recover the exact triangulation and polynomials, verify complete shapes with intervals, and enclose the independent Mahler integral before comparing both sides.",
+    "references": [
+      {
+        "label": "SnapPy verified computations",
+        "url": "https://snappy.computop.org/verify.html"
+      }
+    ],
+    "original": {
+      "date": "2026-07-05",
+      "month": "2026-07",
+      "evidence": "U",
+      "field": "Hyperbolic geometry",
+      "concept": "Numerical volume closure needs a geometric certificate",
+      "origin": "Dated historical retrieval; see exact source line",
+      "question": "What turns algebraic shape parameters and a small numerical residual into a volume identity?",
+      "math": "If two finite-volume hyperbolic manifolds have a common finite cover with degrees m,n, then Vol(M)/Vol(N)=n/m. A collection of certified positively oriented complete shapes permits summing their tetrahedral volumes; an approximate shape list alone does not prove the topology or completeness.",
+      "finish": "Proof, worked example and explicit remaining problem",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://snappy.computop.org/verify.html"
+      ],
+      "source_excerpt": "- [USER_FACT] [c2] U@2026-07-05T16:30:21Z, 3mo: discussed \\(5_2\\), cubic field \\(f(t)=t^3-t^2+1,\\Delta_K=-23\\), plastic regulator, Bloch–Wigner volume \\(\\operatorname{Vol}(5_2)=3D(\\alpha_2)\\), Borel–Zagier \\(\\zeta_K(2)\\), A-polynomial/Mahler measure, Berkovich/Newton skeleton, eta products, graph invariants, census atlas.",
+      "retrieval_receipt": "root_coverage_0.json record 0",
+      "original_question": null,
+      "attribution_note": "The excerpt is an exact retrieval-result line, usually a historical paraphrase rather than a verbatim original prompt. User-attributed topics and assistant assertions remain distinct. The revised question, classical proof and example are newly authored; absent history and novelty are not claimed."
+    }
+  },
+  {
+    "id": "Y26-07-013",
+    "title": "A parametrix isolates a singularity and a smooth remainder",
+    "status": "Developed classical mathematics with explicit hypotheses and scoped evidence",
+    "summary": "The July6 discussion emphasized singularities, Green functions and parametrix thinking. A one-dimensional model proves the central idea exactly. A wave example then distinguishes stationary elliptic singularities from hyperbolic propagation without importing an unspecified microlocal framework.",
+    "definitions": [
+      "Let L=−d²/dx²+1 on R and G(x)=e^(−|x|)/2. Choose smooth compactly supported χ equal to one near zero. Distributional derivatives include the jump in G′ at zero."
+    ],
+    "result": {
+      "name": "A local inverse with a smooth error",
+      "statement": "LG=δ₀ and L(χG)=δ₀+r, where r=−χ″G−2χ′G′ is smooth and supported away from zero. Thus convolution by χG is a local parametrix with smoothing remainder.",
+      "proof": "For x≠0, G″=G. Its first derivative jumps from1/2 to−1/2, so distributionally G″=G−δ₀. This proves the fundamental-solution identity. The product rule gives the cutoff formula; since derivatives of χ vanish near zero, the potentially nonsmooth factors are only used where G is smooth, making r smooth. Convolution with the smooth compactly supported remainder smooths compactly supported distributions. This is the exact decomposition into a universal local singularity and a regular error. By contrast the1+1-dimensional wave equation transports initial singularities: with initial displacement f and zero velocity, u(t,x)=[f(x−t)+f(x+t)]/2. A step in f produces characteristic fronts x=±t rather than a singularity fixed at x=0. Distributionally the sign follows by integration by parts on the two half-lines: the smooth terms cancel againstG itself and the boundary contribution is−[G′]₀φ(0)=φ(0) for a test functionφ. This explains why a derivative jump, not a pointwise second derivative atzero, carries the Dirac source in a Green kernel."
+    },
+    "example": {
+      "setup": "Use f=1_(x≥0) for the wave comparison.",
+      "calculation": "The solution has jumps along two lightlike lines, while G is continuous with a derivative jump only at the source point. The different differential operators dictate the propagation law.",
+      "conclusion": "A precise parametrix is an operator identity with a controlled remainder, not merely a metaphor for approximation."
+    },
+    "limits": "This elementary example does not construct a curved-space Hadamard parametrix, a wavefront-set calculus or an elliptic-cohomology invariant.",
+    "extension": "For a specified variable-coefficient operator, construct the local singular kernel, prove remainder regularity and derive the correct propagation relation.",
+    "references": [],
+    "original": {
+      "date": "2026-07-06",
+      "month": "2026-07",
+      "evidence": "U",
+      "field": "Differential equations",
+      "concept": "A parametrix isolates a singularity and a smooth remainder",
+      "origin": "Dated historical retrieval; see exact source line",
+      "question": "What is a concrete singular model, and how does it differ from a complete inverse or a propagation theorem?",
+      "math": "LG=δ₀ and L(χG)=δ₀+r, where r=−χ″G−2χ′G′ is smooth and supported away from zero. Thus convolution by χG is a local parametrix with smoothing remainder.",
+      "finish": "Proof, worked example and explicit remaining problem",
+      "kind": "Revised mathematical treatment",
+      "refs": [],
+      "source_excerpt": "- [USER_FACT] [c2] U@2026-07-06T17:00:29Z, -3mo: mathematics discussed: Hadamard parametrices, Green’s functions, wave propagation, wavefront sets, microlocal analysis, Fourier integral operators, elliptic cohomology, tmf, anomalies, \\(E_8\\), spin representations, and \\( \\mathfrak e_8\\cong\\mathfrak{so}_{16}\\oplus S^+\\) with \\(\\dim S^+=128\\).",
+      "retrieval_receipt": "root_followups_0.json record 0",
+      "original_question": null,
+      "attribution_note": "The excerpt is an exact retrieval-result line, usually a historical paraphrase rather than a verbatim original prompt. User-attributed topics and assistant assertions remain distinct. The revised question, classical proof and example are newly authored; absent history and novelty are not claimed."
+    }
+  },
+  {
+    "id": "Y26-07-014",
+    "title": "The120+128 decomposition is a dimension and weight calculation",
+    "status": "Developed classical mathematics with explicit hypotheses and scoped evidence",
+    "summary": "The July6 source highlights the exact vector-space decomposition e₈≅so₁₆⊕S⁺. Its dimensions and root weights can be computed concretely. A direct sum of vector spaces is not automatically a Lie algebra; the mixed and spin-spin brackets remain essential.",
+    "definitions": [
+      "For so₂n the dimension is n(2n−1). Its complex spin module can be modeled onΛ* C^n, split into even and odd exterior degree. For n=8 each half-spin space has dimension2⁷."
+    ],
+    "result": {
+      "name": "Exact dimension and E₈ root accounting",
+      "statement": "dim so₁₆=120 and dimS⁺=128, totaling248. The112 D₈ roots±e_i±e_j plus128 even-parity half-integral weights give the240 roots of E₈; adding rank eight gives its Lie-algebra dimension.",
+      "proof": "Skew16×16 matrices have16·15/2=120 independent entries. The exterior algebra on eight generators has dimension2⁸; toggling one generator pairs even and odd subsets, so each parity half has128. D₈ roots choose two of eight positions and four signs, giving4C(8,2)=112. The half-spin weights are(±1/2,…,±1/2) with even minus parity, again128. Every displayed root has squared length two, and the count is112+128=240. Constructing e₈ additionally requires the so₁₆ action onS⁺ and a compatible equivariant bracket[S⁺,S⁺]→so₁₆ satisfying Jacobi; dimension arithmetic alone does not supply those maps. The weight count distinguishes a representation from a Lie-algebra construction. To recoverE₈ one must define anso₁₆-equivariant mapΛ²S⁺→so₁₆, choose its normalization and verify the Jacobi identity for triples of spinors. Dimension agreement and a plausible root count are strong consistency checks but do not replace that bracket calculation."
+    },
+    "example": {
+      "setup": "Compare the half-spin count with the full spin representation.",
+      "calculation": "The full spin space has256 dimensions, so120+256 would give376, not248. Choosing one chirality is substantive. The number128 is therefore a representation dimension under stated algebraic hypotheses, not evidence for a physical hidden dimension.",
+      "conclusion": "The count explains the precise decomposition while preserving the distinction between module data and a Lie bracket."
+    },
+    "limits": "No anomaly cancellation, tmf orientation or physical field content follows from the count. Such interpretations need independent structures and theorems.",
+    "extension": "Write the equivariant spin-spin bracket explicitly and verify Jacobi on generators before using the decomposition in a geometric or physical model.",
+    "references": [
+      {
+        "label": "Etingof, Lie groups and Lie algebras",
+        "url": "https://ocw.mit.edu/courses/18-745-lie-groups-and-lie-algebras-i-fall-2020/"
+      }
+    ],
+    "original": {
+      "date": "2026-07-06",
+      "month": "2026-07",
+      "evidence": "A",
+      "field": "Lie theory",
+      "concept": "The120+128 decomposition is a dimension and weight calculation",
+      "origin": "Dated historical retrieval; see exact source line",
+      "question": "Why do so₁₆ and a half-spin module contribute248 dimensions, and what additional structure makes the sum into e₈?",
+      "math": "dim so₁₆=120 and dimS⁺=128, totaling248. The112 D₈ roots±e_i±e_j plus128 even-parity half-integral weights give the240 roots of E₈; adding rank eight gives its Lie-algebra dimension.",
+      "finish": "Proof, worked example and explicit remaining problem",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://ocw.mit.edu/courses/18-745-lie-groups-and-lie-algebras-i-fall-2020/"
+      ],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c2] A@2026-07-06T17:00:30Z, -3mo: central concepts: singularities as structured information; propagation over statics; “parametrix thinking” (local singular model, propagation law, smooth remainder); \\( \\mathfrak e_8\\cong\\mathfrak{so}_{16}\\oplus S^+\\); 128 as a half-spin representation dimension.",
+      "retrieval_receipt": "root_followups_0.json record 0",
+      "original_question": null,
+      "attribution_note": "The excerpt is an exact retrieval-result line, usually a historical paraphrase rather than a verbatim original prompt. User-attributed topics and assistant assertions remain distinct. The revised question, classical proof and example are newly authored; absent history and novelty are not claimed."
+    }
+  },
+  {
+    "id": "Y26-07-015",
+    "title": "A derivative residual can be an identity rather than a prediction",
+    "status": "Developed classical mathematics with explicit hypotheses and scoped evidence",
+    "summary": "The July6 mass-ratio campaign reported very high identity-energy R² values. Those reports require the unrecovered dataset for empirical assessment. A direct differentiation theorem separates a valid invariant residual from a circular fit or an independent predictive test.",
+    "definitions": [
+      "Let y_i,x_a be differentiable functions ofℓ, with fixed coefficients q_i,κ_i. Define z_i=d(y_i−q_ix_{a_i})/dℓ. Assume the model y_i′=κ_iγ_m+ε_i. A change of fixed units adds constants to the logarithmic variables."
+    ],
+    "result": {
+      "name": "Exact residual decomposition and unit invariance",
+      "statement": "z_i=κ_iγ_m−q_ix′_{a_i}+ε_i. Fixed additive unit constants cancel from derivatives. If q_i varies, an extra−q_i′x_{a_i} term is mandatory.",
+      "proof": "Differentiate the definition using the product rule, then substitute the model equation. This proves the decomposition without regression. Replacing a logarithm y_i by y_i+c_i and x_a by x_a+d_a leaves derivatives unchanged, proving the unit statement. If a comparison target is built from the same assumed derivative identity, its small residual tests internal algebra or numerical consistency, not independent explanatory power. A held-out target can be meaningful only if its data, coefficients and feature choices were fixed independently of the test. Very high R² alone does not reveal which of these situations occurred. A logarithm of a dimensional quantity should be read aslog(m/m₀) with a fixed reference unitm₀; differentiation removes the constantlogm₀. If the reference or coefficient changes withℓ, an extra derivative appears. Piecewise threshold models also require separate one-sided derivatives and matching conditions, so a smooth identity cannot be applied across an unexplained discontinuity."
+    },
+    "example": {
+      "setup": "Take x(ℓ)=ℓ,y(ℓ)=3ℓ+7,q=2,κ=3,γ_m=1.",
+      "calculation": "Both sides give z=1 exactly. Adding100 to y or subtracting4 from x changes nothing. If q(ℓ)=2+ℓ, however,z=d[3ℓ+7−(2+ℓ)ℓ]/dℓ=1−2ℓ; omitting q′ would incorrectly give1−ℓ.",
+      "conclusion": "The invariant derivative is a genuine mathematical fact, while its empirical interpretation needs a separate test design."
+    },
+    "limits": "The source’s grid, target labels and reported prediction errors are not reproduced or endorsed. No particle-mass or running-coupling law is inferred.",
+    "extension": "Freeze coefficients and data provenance, distinguish identity checks from independent predictions, and derive a stated uncertainty model for every differentiation step.",
+    "references": [],
+    "original": {
+      "date": "2026-07-06",
+      "month": "2026-07",
+      "evidence": "A",
+      "field": "Model identifiability",
+      "concept": "A derivative residual can be an identity rather than a prediction",
+      "origin": "Dated historical retrieval; see exact source line",
+      "question": "What is tested when the residual subtracts quantities already tied by the assumed differential law?",
+      "math": "z_i=κ_iγ_m−q_ix′_{a_i}+ε_i. Fixed additive unit constants cancel from derivatives. If q_i varies, an extra−q_i′x_{a_i} term is mandatory.",
+      "finish": "Proof, worked example and explicit remaining problem",
+      "kind": "Revised mathematical treatment",
+      "refs": [],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c3] A@2026-07-06T15:16:32Z, -3mo 2w: Publication candidate: \\(z_i(\\ell)=\\frac d{d\\ell}[y_i-q_ix_{a_i}]=\\kappa_i\\gamma_m-q_ix'_{a_i}+\\varepsilon_i\\); identity energy \\(R^2=.9999860924308357\\), residual fraction \\(1.39\\times10^{-5}\\), median relative error \\(3.52\\times10^{-3}\\).",
+      "retrieval_receipt": "root_followups_0.json record 0",
+      "original_question": null,
+      "attribution_note": "The excerpt is an exact retrieval-result line, usually a historical paraphrase rather than a verbatim original prompt. User-attributed topics and assistant assertions remain distinct. The revised question, classical proof and example are newly authored; absent history and novelty are not claimed."
+    }
+  },
+  {
+    "id": "Y26-07-016",
+    "title": "Finite positive atoms produce a Herglotz function, but differences need a new proof",
+    "status": "Developed classical mathematics with explicit hypotheses and scoped evidence",
+    "summary": "The July Clark campaign reports a finite symmetric atomic measure and a residual positivity atlas. The atomic transform has a complete elementary proof. It must be separated from a difference of transforms and from the unbounded-height theorem required by the broader RH programme.",
+    "definitions": [
+      "Let λ_k>0 be distinct and μ₀,μ_k>0. For Imz>0 define M(z)=−μ₀/z+Σ_{k=1}^N2μ_kz/(λ_k²−z²). A Herglotz function is analytic in the upper half-plane with positive imaginary part."
+    ],
+    "result": {
+      "name": "Finite atomic positivity and real interlacing",
+      "statement": "M is Herglotz. Its real poles are0,±λ_k, with negative residues of magnitudesμ₀,μ_k. Between successive poles M is strictly increasing and has exactly one zero.",
+      "proof": "Rewrite each symmetric summand asμ_k/(λ_k−z)+μ_k/(−λ_k−z). Every atom μ/(t−z) has imaginary partμ Imz/|t−z|²>0. Their finite sum proves analyticity and positivity. On the real line away from poles, M′(x)=Σ_t μ_t/(t−x)²>0. Immediately right of a pole the function tends−∞ and immediately left of the next it tends+∞, so monotonicity gives exactly one zero. But the class of Herglotz functions is not closed under subtraction: M₁=−1/z and M₂=−2/z are both Herglotz, while M₁−M₂=1/z has negative imaginary part. Therefore positivity of a reported residual requires its exact definition and a separate certificate. Near a real poleλ with massμ>0, the summandμ/(λ−z) tends to plus infinity from the left and minus infinity from the right. Between adjacent poles the derivative is a sum of positive terms, so continuity, strict monotonicity and these endpoint limits give exactly one zero. This is a finite rational-function theorem independent of the number137."
+    },
+    "example": {
+      "setup": "Take one symmetric pairλ=2 and all three masses one.",
+      "calculation": "M=−1/z+2z/(4−z²). At z=i its imaginary part is1+2/5=7/5. Its real zeros solve−4+3x²=0, giving±2/√3 between the three poles−2,0,2.",
+      "conclusion": "Positive atomic weights yield a rigorous finite function theorem, not automatically every claimed remainder or global zeta statement."
+    },
+    "limits": "The source’s137-atom data and interval atlases are historical reports unless their certificates are supplied. A finite-height result does not control the T→∞ tail or prove RH.",
+    "extension": "Recover the exact residual sign convention and decompose its representing measure, or verify a uniform analytic lower bound including every omitted tail term.",
+    "references": [
+      {
+        "label": "Baranov et al., Spectral synthesis in de Branges spaces",
+        "url": "https://arxiv.org/abs/1309.6915"
+      }
+    ],
+    "original": {
+      "date": "2026-07-14",
+      "month": "2026-07",
+      "evidence": "A",
+      "field": "Complex analysis",
+      "concept": "Finite positive atoms produce a Herglotz function, but differences need a new proof",
+      "origin": "Dated historical retrieval; see exact source line",
+      "question": "Which positivity statement follows from positive Clark-type masses, and which residual positivity does not?",
+      "math": "M is Herglotz. Its real poles are0,±λ_k, with negative residues of magnitudesμ₀,μ_k. Between successive poles M is strictly increasing and has exactly one zero.",
+      "finish": "Proof, worked example and explicit remaining problem",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://arxiv.org/abs/1309.6915"
+      ],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c6] A@2026-07-14T15:20:28Z, -3mo: Phase II.8 built \\(M(z)=-\\mu_0/z+\\sum_{k=1}^{137}2\\mu_kz/(\\lambda_k^2-z^2)\\), positive masses, residue cancellation, analyticity on \\([2,12]\\times[0.5,4]\\), and 45-point \\(\\operatorname{Im}R>0\\) evidence.",
+      "retrieval_receipt": "root_followups_0.json record 0",
+      "original_question": null,
+      "attribution_note": "The excerpt is an exact retrieval-result line, usually a historical paraphrase rather than a verbatim original prompt. User-attributed topics and assistant assertions remain distinct. The revised question, classical proof and example are newly authored; absent history and novelty are not claimed."
+    }
+  },
+  {
+    "id": "Y26-07-017",
+    "title": "Monotone phase gives interlacing roots and positive local masses",
+    "status": "Developed classical mathematics with explicit hypotheses and scoped evidence",
+    "summary": "The July13–14 interpretation correctly distinguishes B-zeros from direct zeta-zero tracking. A phase theorem makes that distinction exact. It also states the nonvanishing and derivative hypotheses needed before a numerical root family becomes a certified analytic curve.",
+    "definitions": [
+      "Let E_α(x)=A_α(x)−iB_α(x)=r_α(x)e^(−iφ_α(x)), with r>0 and real-analytic data on a rectangle. Suppose∂_xφ≥c>0. Put m=−A/B wherever B≠0."
+    ],
+    "result": {
+      "name": "Level curves, interlacing and local atomic weight",
+      "statement": "B-zeros occur atφ=kπ and A-zeros atφ=π/2+kπ, so they are simple and interlace. Each B-root continues analytically with λ′=−φ_α/φ_x. Its local Herglotz-normalized mass is A(λ)/B′(λ)=1/φ_x(λ)>0.",
+      "proof": "The polar form gives A=r cosφ and B=r sinφ. Strict phase monotonicity makes each level have at most one root and gives the alternating order of the two level families. At a B-root, B′=rφ_x cosφ is nonzero, proving simplicity; the analytic implicit-function theorem then gives the parameter derivative. Dividing A by B′ cancels rcosφ and gives the mass. Near λ, m(z)=−[A(λ)/B′(λ)]/(z−λ)+an analytic term, matching a positive atomμ/(λ−z). None of this asserts global Herglotz positivity from local residues alone; an entire upper-half-plane condition is stronger. At aB-zero, B′=rφ_x cosφ because the termr′sinφ vanishes, whileA=r cosφ. Their ratio is therefore1/φ_x with no dependence on the amplitude r. This cancellation explains the positive mass formula. Real phase monotonicity on a finite interval alone does not establish a global upper-half-plane Herglotz representation."
+    },
+    "example": {
+      "setup": "Useφ(x)=πx and inspect0<x<137.75.",
+      "calculation": "There are137 positive B-levels at1,…,137 and138 positive A-levels at1/2,3/2,…,137.5. The central B-level is zero. Every local mass is1/π. These exact counts show how the source’s137/138 pattern can arise from phase levels without identifying them with zeros of another function.",
+      "conclusion": "Root counts and masses follow from a uniform phase theorem with explicit boundaries."
+    },
+    "limits": "The actual ξ logarithmic-derivative enclosure is not reconstructed here. Endpoints crossing a level change the count, and E=0 would invalidate the polar representation.",
+    "extension": "Publish a nonvanishing enclosure and a positive derivative lower bound over the full rectangle, then continue every labeled level with validated endpoint control.",
+    "references": [],
+    "original": {
+      "date": "2026-07-13",
+      "month": "2026-07",
+      "evidence": "A",
+      "field": "Spectral analysis",
+      "concept": "Monotone phase gives interlacing roots and positive local masses",
+      "origin": "Dated historical retrieval; see exact source line",
+      "question": "How does a strict phase derivative imply root counting, analytic continuation and residue positivity?",
+      "math": "B-zeros occur atφ=kπ and A-zeros atφ=π/2+kπ, so they are simple and interlace. Each B-root continues analytically with λ′=−φ_α/φ_x. Its local Herglotz-normalized mass is A(λ)/B′(λ)=1/φ_x(λ)>0.",
+      "finish": "Proof, worked example and explicit remaining problem",
+      "kind": "Revised mathematical treatment",
+      "refs": [],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c5] A@2026-07-13T17:22:53Z, -3mo: July 13: corrected interpretation: \\(B_\\alpha\\)-zeros interlace \\(A_\\alpha\\)-zeros; key target \\(\\phi'_\\alpha(x)=\\Re[\\xi'/\\xi(1/2+\\alpha-ix)]>0\\), not direct zeta-zero tracking.",
+      "retrieval_receipt": "root_followups_0.json record 0",
+      "original_question": null,
+      "attribution_note": "The excerpt is an exact retrieval-result line, usually a historical paraphrase rather than a verbatim original prompt. User-attributed topics and assistant assertions remain distinct. The revised question, classical proof and example are newly authored; absent history and novelty are not claimed."
+    }
+  },
+  {
+    "id": "Y26-07-018",
+    "title": "A positivity atlas needs a covering bound, not a dense scatterplot",
+    "status": "Developed classical mathematics with explicit hypotheses and scoped evidence",
+    "summary": "The July16–18 continuation used moving centers, Taylor models and adaptive subdivision. A finite-box theorem identifies the essential certificate. It explains both the legitimate advantage of anisotropy and why the reported center values or45-point checks alone cannot prove a continuum claim.",
+    "definitions": [
+      "Let f be continuously differentiable on a box centered at c with radii r_i. Suppose an enclosure gives f(c)≥m and uniform coordinate derivative bounds|∂_if|≤L_i. All quantities are rigorous bounds, not point samples."
+    ],
+    "result": {
+      "name": "A box positivity certificate and an optimal first-order shape",
+      "statement": "If m−ΣL_ir_i>0, then f>0 everywhere in the box. With positive L_i and a fixed budgetΣL_ir_i≤M, the unconstrained maximum-volume box has r_i=M/(dL_i).",
+      "proof": "Integrate f along the coordinate-segment path from c to any x in the box. The absolute change is at mostΣL_i|x_i−c_i|≤ΣL_ir_i, proving the lower bound. For volume, set a_i=L_ir_i. AM–GM gives∏a_i≤(M/d)^d, with equality when every a_i=M/d. Thus the longest certified direction is the one with the smallest derivative bound. Higher Taylor models can replace the linear budget, but then their coefficient and remainder enclosures must remain uniform throughout each cell. A union of certified boxes proves the global statement only if it really covers the intended domain and every center’s certificate uses the correct parameter/base point."
+    },
+    "example": {
+      "setup": "Use d=2,m=1,L₁=10,L₂=1 and budget M=1/2.",
+      "calculation": "The optimal radii are r₁=1/40,r₂=1/4. The lower bound is1/2. An isotropic radius constrained by the same budget is1/22, whose area is substantially smaller. The numerical gain follows from the derivative geometry, not an intrinsic superiority of a named jet architecture.",
+      "conclusion": "The proof separates predictor accuracy, validated local remainder and global cover completeness."
+    },
+    "limits": "No original271-cell atlas, synchronized centers or derivative bounds were recovered as executable certificates. A historical PASS count is not substituted for them.",
+    "extension": "Export each cell, exact center, lower margin and uniform derivative/Taylor bounds; independently verify both its local inequality and the union’s coverage.",
+    "references": [],
+    "original": {
+      "date": "2026-07-16",
+      "month": "2026-07",
+      "evidence": "U",
+      "field": "Validated analysis",
+      "concept": "A positivity atlas needs a covering bound, not a dense scatterplot",
+      "origin": "Dated historical retrieval; see exact source line",
+      "question": "What local inequality certifies positivity on an entire parameter box, and how should anisotropic boxes be chosen?",
+      "math": "If m−ΣL_ir_i>0, then f>0 everywhere in the box. With positive L_i and a fixed budgetΣL_ir_i≤M, the unconstrained maximum-volume box has r_i=M/(dL_i).",
+      "finish": "Proof, worked example and explicit remaining problem",
+      "kind": "Revised mathematical treatment",
+      "refs": [],
+      "source_excerpt": "- [USER_FACT] [c7] U@2026-07-16T15:03:27Z, -96d: Discussed rigorous continuation of \\(\\operatorname{Im}R_{\\alpha,300}(z)>0\\) over \\(z\\in[2,12]\\times[0.5,4]\\), using 137 atoms, Taylor models, interval arithmetic, moving centers, and adaptive subdivision.",
+      "retrieval_receipt": "root_followups_0.json record 0",
+      "original_question": null,
+      "attribution_note": "The excerpt is an exact retrieval-result line, usually a historical paraphrase rather than a verbatim original prompt. User-attributed topics and assistant assertions remain distinct. The revised question, classical proof and example are newly authored; absent history and novelty are not claimed."
+    }
+  },
+  {
+    "id": "Y26-07-019",
+    "title": "The small-alpha frontier is a critical-point normal form",
+    "status": "Developed classical mathematics with explicit hypotheses and scoped evidence",
+    "summary": "The July18 frontier discussion proposes B=αBhat and finiteαμ_k. A real-analytic normal form proves this behavior under precise nondegeneracy assumptions. It also shows that the limiting mass sign is a substantive condition, not automatic from formal scaling.",
+    "definitions": [
+      "Let F be real on a real interval and holomorphic nearby. Set E_α(x)=F(x+iα)=A_α(x)−iB_α(x). Let x₀ satisfy F′(x₀)=0,F″(x₀)≠0 and F(x₀)≠0."
+    ],
+    "result": {
+      "name": "Critical-point continuation and renormalized mass",
+      "statement": "For smallα>0 there is a B-root λ(α)=x₀+[F‴(x₀)/(6F″(x₀))]α²+O(α⁴). With μ=A(λ)/B′(λ), αμ→−F(x₀)/F″(x₀).",
+      "proof": "Taylor expansion gives A=F−α²F″/2+O(α⁴) and B=−αF′+α³F‴/6+O(α⁵). Divide B byα and useβ=α². Its derivative in x at(0,x₀) is−F″≠0, so the analytic implicit-function theorem supplies a root analytic inβ. Comparing theβ coefficient gives the shift. Also B′(λ)=−αF″(x₀)+O(α³), while A(λ)=F(x₀)+O(α²), proving the mass limit. It is positive precisely when F and F″ have opposite signs at the critical point. Multiple critical points or F(x₀)=0 require a different scaling. The finite-height qualification is mathematical, not merely computational: an enclosure on a compact x-interval cannot exclude a new critical point or sign change beyond that interval. To pass to all heights, one needs uniform lower bounds or an independently controlled tail that dominates every remainder. Shrinking α also amplifies μ like1/α, so transporting the unrenormalized masses with a fixed absolute error budget is intrinsically ill-conditioned. The finite limit of αμ suggests the correct unknown to enclose, but does not itself prove positivity of the full renormalized kernel."
+    },
+    "example": {
+      "setup": "Take F(x)=1−x².",
+      "calculation": "Then A=1−x²+α² and B=2αx. The root stays at zero,μ=(1+α²)/(2α), andαμ→1/2, exactly−F(0)/F″(0). The unscaled mass diverges although its renormalization is regular.",
+      "conclusion": "A proved normal form explains the singular scale without converting a finite-height continuation into a global theorem."
+    },
+    "limits": "The example is newly chosen. Applying it to Ξ requires the stated analytic and nondegeneracy hypotheses at every relevant critical point; an unbounded-height uniform limit is not established.",
+    "extension": "Certify the nondegenerate critical points and uniform Taylor remainders, then determine whether the renormalized family extends continuously or analytically to the full boundary.",
+    "references": [],
+    "original": {
+      "date": "2026-07-18",
+      "month": "2026-07",
+      "evidence": "A",
+      "field": "Analytic perturbation",
+      "concept": "The small-alpha frontier is a critical-point normal form",
+      "origin": "Dated historical retrieval; see exact source line",
+      "question": "Why can B-roots approach critical points rather than zeros, and which renormalized mass has a finite limit?",
+      "math": "For smallα>0 there is a B-root λ(α)=x₀+[F‴(x₀)/(6F″(x₀))]α²+O(α⁴). With μ=A(λ)/B′(λ), αμ→−F(x₀)/F″(x₀).",
+      "finish": "Proof, worked example and explicit remaining problem",
+      "kind": "Revised mathematical treatment",
+      "refs": [],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c8] A@2026-07-18T22:31:42Z, 3 months 2d: Zero-frontier reconnaissance: atoms converge to 137 simple \\(\\Xi'\\)-critical points; \\(B=\\alpha\\widehat B\\), \\(\\beta=\\alpha^2\\), \\(\\alpha\\mu_k\\) finite, \\(Q\\sim\\alpha^{-2}\\), and proposed renormalized \\(\\widehat Q=\\alpha^2Q\\) closure.",
+      "retrieval_receipt": "root_followups_0.json record 0",
+      "original_question": null,
+      "attribution_note": "The excerpt is an exact retrieval-result line, usually a historical paraphrase rather than a verbatim original prompt. User-attributed topics and assistant assertions remain distinct. The revised question, classical proof and example are newly authored; absent history and novelty are not claimed."
+    }
+  },
+  {
+    "id": "Y26-07-020",
+    "title": "Moment inversion must preserve the root count and its conditioning",
+    "status": "Developed classical mathematics with explicit hypotheses and scoped evidence",
+    "summary": "The July20 cluster reported three roots and a padded degree-five inversion with a tiny complex pair. Newton identities explain an exact failure mode. It is a reconstruction artifact unless the analytic root count and moment enclosures independently justify the larger degree.",
+    "definitions": [
+      "For N roots r_j, power sums are s_k=Σr_j^k, including s₀=N. Newton identities recursively give ke_k=Σ_{i=1}^k(−1)^(i−1)e_{k−i}s_i,e₀=1. The monic polynomial is t^N−e₁t^(N−1)+⋯+(−1)^Ne_N."
+    ],
+    "result": {
+      "name": "Exact reconstruction and padding instability",
+      "statement": "The first N positive power sums and the correct N determine the polynomial. Multiplying it by t^m leaves every positive power sum unchanged but adds m zero roots; ignoring s₀ therefore loses degree information.",
+      "proof": "Newton’s recursion derives by comparing the logarithmic derivative of∏(1+r_jz) with its power-series expansion, or by multiplying the root equations and collecting symmetric terms. Appending zero roots changes no s_k for k≥1 but changes s₀, proving the ambiguity. Repeated padded zeros are ill-conditioned: t(t²−1)(t²+ε) differs from the padded polynomial t³(t²−1) by coefficients of orderε but has an extra pair±i√ε. A small coefficient or moment error can therefore produce a much larger imaginary displacement. A separate transport law multiplying a moment error by4^m amplifies its absolute enclosure by that factor unless correlations are explicitly retained."
+    },
+    "example": {
+      "setup": "Use original roots−1,0,1.",
+      "calculation": "Their moments are s₀=3,s₁=0,s₂=2,s₃=0. Degree three yields t³−t. Degree five with the same positive moments introduces extra zeros. Atε=10⁻⁸ the perturbed padded factor gives imaginary roots±10⁻⁴i, despite coefficient changes of size10⁻⁸.",
+      "conclusion": "A complex pair in a padded reconstruction is not evidence of off-axis zeros of the original analytic function."
+    },
+    "limits": "The source’s moment quadrature and zero counts were not recovered as validated intervals. No reported zeta ordinate is certified here.",
+    "extension": "First certify the analytic number of roots by an argument-principle contour, then solve the correctly sized moment problem with interval-aware conditioning bounds.",
+    "references": [],
+    "original": {
+      "date": "2026-07-20",
+      "month": "2026-07",
+      "evidence": "U",
+      "field": "Polynomial reconstruction",
+      "concept": "Moment inversion must preserve the root count and its conditioning",
+      "origin": "Dated historical retrieval; see exact source line",
+      "question": "What information do the power sums determine, and why can padding create tiny complex roots?",
+      "math": "The first N positive power sums and the correct N determine the polynomial. Multiplying it by t^m leaves every positive power sum unchanged but adds m zero roots; ignoring s₀ therefore loses degree information.",
+      "finish": "Proof, worked example and explicit remaining problem",
+      "kind": "Revised mathematical treatment",
+      "refs": [],
+      "source_excerpt": "- [USER_FACT] [c5] U@2026-07-20T04:16:20Z, -93d: New \\(\\Xi\\)-zero cluster near \\(c=6986\\): \\(\\gamma=\\{6985.151721856233,6986.003674960957,6986.850633675518\\}\\), \\(h=0.895578\\ldots\\); direct moments \\(s_0=3.000003,s_1=0.0067345,s_2=1.7993283,s_3=0.0070996\\); Newton roots \\(\\{-0.9471857,0.9498162,0.0041041\\}\\), max error \\(8.2\\times10^{-7}\\); padded degree-5 inversion produced \\(-7.67\\times10^{-13}\\pm7.94\\times10^{-8}i\\).",
+      "retrieval_receipt": "root_followups_1.json record 0",
+      "original_question": null,
+      "attribution_note": "The excerpt is an exact retrieval-result line, usually a historical paraphrase rather than a verbatim original prompt. User-attributed topics and assistant assertions remain distinct. The revised question, classical proof and example are newly authored; absent history and novelty are not claimed."
+    }
+  },
+  {
+    "id": "Y26-07-021",
+    "title": "Integral homology retains torsion that rational ranks erase",
+    "status": "Developed classical mathematics with explicit hypotheses and scoped evidence",
+    "summary": "The recovered Morphonic discussion includes integral homology, Smith normal form and discrete Stokes. Their constructive content is an integer chain complex together with unimodular change-of-basis witnesses. Rational ranks recover Betti numbers, but cannot by themselves recover finite torsion.",
+    "definitions": [
+      "A chain complex consists of free abelian groups C_k and integer matrices ∂_k satisfying ∂_k∂_{k+1}=0. Its homology is ker∂_k/im∂_{k+1}. A unimodular matrix has determinant±1 and an integer inverse. Cochains C^k=Hom(C_k,Z) have coboundary δφ=φ∘∂."
+    ],
+    "result": {
+      "name": "Integer cokernel and discrete Stokes certificates",
+      "statement": "If PMQ=diag(d₁,…,d_r,0), with P,Q unimodular and d_i dividing d_{i+1}, then cokerM≅⊕Z/d_i⊕Z^{m−r}. For every cochainφ and chainc, ⟨δφ,c⟩=⟨φ,∂c⟩ exactly.",
+      "proof": "Changing domain basis by Q and codomain basis by P preserves the image quotient. For a diagonal matrix the quotient separates coordinate by coordinate, proving the cokernel formula directly. The invariant factors arise from integer Euclidean row and column operations; floating elimination cannot replace their divisibility data. The pairing identity follows immediately from the definition of δ, so discrete Stokes is compatible with the actual integer boundary operator rather than a numerical approximation. For general homology, first compute an integer basis of ker∂_k, express im∂_{k+1} in that basis, and take its cokernel. Applying Smith form to an unrelated boundary matrix without this kernel step can give the wrong group."
+    },
+    "example": {
+      "setup": "Take M=[[2,4],[6,8]], P=[[1,0],[3,−1]] and Q=[[1,−2],[0,1]]. Also consider the cellular complex of RP².",
+      "calculation": "Both P and Q are unimodular and PMQ=diag(2,4), hence cokerM≅Z/2⊕Z/4. For RP² the complex is Z --2→ Z --0→ Z, giving H₁=Z/2, H₂=0 and H₀=Z. Over Q its first homology vanishes: the torsion was erased by changing coefficients.",
+      "conclusion": "The integer matrix products and divisibility conditions provide a compact independently replayable certificate."
+    },
+    "limits": "The source did not supply all original cellular boundary matrices. These examples establish the method, not a homology computation for an unidentified object.",
+    "extension": "Return boundary matrices, integer kernel bases and unimodular normal-form witnesses for every proposed complex, then compare integral persistence with rational persistence.",
+    "references": [],
+    "original": {
+      "date": "2026-07-25",
+      "month": "2026-07",
+      "evidence": "A",
+      "field": "Homological algebra",
+      "concept": "Integral homology retains torsion that rational ranks erase",
+      "origin": "Dated historical retrieval; see exact source line",
+      "question": "How do integer normal forms and the boundary–coboundary pairing turn a topological calculation into a checkable certificate?",
+      "math": "If PMQ=diag(d₁,…,d_r,0), with P,Q unimodular and d_i dividing d_{i+1}, then cokerM≅⊕Z/d_i⊕Z^{m−r}. For every cochainφ and chainc, ⟨δφ,c⟩=⟨φ,∂c⟩ exactly.",
+      "finish": "Proof, worked example and explicit remaining problem",
+      "kind": "Revised mathematical treatment",
+      "refs": [],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c0] A@2026-07-25T17:11:42Z, -1y3mo: v1.0 finite topology/transport baseline: integral Smith normal form, torsion-sensitive homology, cohomology/Stokes, Gauss–Bonnet, matrix transport, gauge transformations, and globally nontrivial holonomy.",
+      "retrieval_receipt": "root_followups_1.json record 0",
+      "original_question": null,
+      "attribution_note": "The excerpt is an exact retrieval-result line, usually a historical paraphrase rather than a verbatim original prompt. User-attributed topics and assistant assertions remain distinct. The revised question, classical proof and example are newly authored; absent history and novelty are not claimed."
+    }
+  },
+  {
+    "id": "Y26-07-022",
+    "title": "A rank-one cellular sheaf on a circle is controlled by holonomy",
+    "status": "Developed classical mathematics with explicit hypotheses and scoped evidence",
+    "summary": "The late-July source connects cellular sheaves, cohomology and compositional consistency. A circle with scalar transports gives a complete exact example in which a topological cycle and a nonzero cohomology class are distinct questions: the coefficient system matters.",
+    "definitions": [
+      "Use an oriented cycle with m vertices and m edges over a field k. Put k at every vertex and edge, choose nonzero r_j∈k, and define (δs)_j=s_{j+1}−r_js_j, with indices modulo m. Set H⁰=kerδ, H¹=cokerδ, and h=∏r_j."
+    ],
+    "result": {
+      "name": "Holonomy criterion for a local system on the cycle",
+      "statement": "If h=1, both H⁰ and H¹ have dimension one. If h≠1, both vanish. The underlying graph still has an ordinary cycle in either case.",
+      "proof": "A global section satisfies s_{j+1}=r_js_j. Propagating once around the cycle gives s₀=hs₀. If h≠1 this forces s₀=0 and hence all s_j=0. If h=1 every choice of s₀ propagates consistently, giving a one-dimensional kernel. Since δ is a square m×m matrix, its cokernel and kernel have equal dimensions by rank-nullity. This proves the complete statement without assuming the transports can be globally trivialized. Rescaling vertex coordinates changes individual r_j but leaves their product invariant. In a higher-dimensional cell complex, restriction maps must also satisfy the face-composition identities that make the cochain differential square to zero; arbitrary matrices called transports need not define a sheaf complex. Likewise a cup product needs compatible bilinear maps of coefficient systems, rather than following from linear stalks alone."
+    },
+    "example": {
+      "setup": "Take a three-cycle over Q. First use r=(2,3,1/6), then r=(2,3,1).",
+      "calculation": "For the first choice, s=(1,2,6) is a nonzero global section and spans H⁰; h=1, so dimH¹=1. For the second, h=6, and the equations s₁=2s₀,s₂=3s₁,s₀=s₂ imply5s₀=0, hence δ is invertible over Q and both groups vanish.",
+      "conclusion": "Global compatibility is detected by the product around the loop, with a fully specified coefficient convention."
+    },
+    "limits": "This is a rank-one local system on a graph. It does not identify an unretrieved higher-dimensional Morphonic sheaf or justify arbitrary claimed multiplication laws.",
+    "extension": "Construct an explicit two-dimensional cellular sheaf, verify every face-composition square, and compute how monodromy and two-cell attachment change its cohomology.",
+    "references": [],
+    "original": {
+      "date": "2026-07-26",
+      "month": "2026-07",
+      "evidence": "U",
+      "field": "Cellular sheaves",
+      "concept": "A rank-one cellular sheaf on a circle is controlled by holonomy",
+      "origin": "Dated historical retrieval; see exact source line",
+      "question": "Which global sections and first cohomology survive a nontrivial rank-one transport around a cycle?",
+      "math": "If h=1, both H⁰ and H¹ have dimension one. If h≠1, both vanish. The underlying graph still has an ordinary cycle in either case.",
+      "finish": "Proof, worked example and explicit remaining problem",
+      "kind": "Revised mathematical treatment",
+      "refs": [],
+      "source_excerpt": "- [USER_FACT] [c1] U@2026-07-26T00:20:43Z, -87d: Mathematics discussed: cellular sheaves; coherent face-poset transport; direct sums/tensor products; sheaf-valued cup products; long exact sequences and connecting maps; geometric stalk metrics/Hodge theory.",
+      "retrieval_receipt": "root_followups_1.json record 0",
+      "original_question": null,
+      "attribution_note": "The excerpt is an exact retrieval-result line, usually a historical paraphrase rather than a verbatim original prompt. User-attributed topics and assistant assertions remain distinct. The revised question, classical proof and example are newly authored; absent history and novelty are not claimed."
+    }
+  },
+  {
+    "id": "Y26-07-023",
+    "title": "Total-complex signs and mapping cones are structural data",
+    "status": "Developed classical mathematics with explicit hypotheses and scoped evidence",
+    "summary": "The retrieved July discussion includes double complexes, Koszul signs and mapping cones. These operations become rigorous only after fixing degrees and signs. A small rational example exposes the failure that an unsigned sum would conceal.",
+    "definitions": [
+      "Let C^{p,q} have horizontal δ:C^{p,q}→C^{p+1,q} and vertical ∂:C^{p,q}→C^{p,q+1}, with δ²=∂²=0 and δ∂=∂δ. Total degree is p+q. For a cochain map f:C→D, Cone(f)^n=D^n⊕C^{n+1}."
+    ],
+    "result": {
+      "name": "Signed totalization and cone criterion",
+      "statement": "D_tot=δ+(−1)^p∂ satisfies D_tot²=0. The cone differential d(d,c)=(d_Dd+fc,−d_Cc) squares to zero precisely when f commutes with the differentials.",
+      "proof": "On bidegree(p,q), the mixed term from δ followed by the signed vertical map has sign(−1)^{p+1}, whereas the reverse mixed term has sign(−1)^p. They cancel because δ and ∂ commute; their pure squares vanish. In the cone, applying d twice gives first component d_D²d+(d_Df−fd_C)c and second component d_C²c. Thus the only possible obstruction is exactly the chain-map defect. The shift and its minus sign are indispensable. A cone records whether f is a quasi-isomorphism: its long exact cohomology sequence follows by taking the short exact sequence D→Cone(f)→C[1] and tracing cocycle representatives. In particular Cone(id) is contractible; an explicit homotopy is h(d,c)=(0,d), since dh+hd=(d,c). The characteristic matters to the diagnostic example: in characteristic two the unsigned product2 vanishes, so that particular numerical failure disappears. The sign convention nevertheless remains the correct degree bookkeeping over arbitrary rings and is necessary for uniform compatibility with shifts, tensor products and cone triangles. A rational example avoids concealing the issue behind2=0."
+    },
+    "example": {
+      "setup": "Tensor two complexes Q --id→ Q in degrees0 and1.",
+      "calculation": "The total groups have dimensions1,2,1. With degree-one coordinates ordered(horizontal,vertical), d⁰(1)=(1,1) and d¹(a,b)=−a+b. Their product is zero, and ker d¹=span(1,1)=im d⁰, so the total complex is acyclic. Using the unsigned map a+b instead gives d¹d⁰(1)=2, which fails over Q.",
+      "conclusion": "Signs can be verified on exact matrices and give a real compatibility test rather than decorative notation."
+    },
+    "limits": "The convention assumes commuting raw differentials. If the starting bicomplex already anticommutes, one uses a different totalization convention. No full higher-coherence structure is recovered from this example.",
+    "extension": "Build the proposed Morphonic bicomplex as explicit graded matrices and verify its total differential, cone homotopies and induced connecting maps over the intended coefficient ring.",
+    "references": [],
+    "original": {
+      "date": "2026-07-26",
+      "month": "2026-07",
+      "evidence": "A",
+      "field": "Chain complexes",
+      "concept": "Total-complex signs and mapping cones are structural data",
+      "origin": "Dated historical retrieval; see exact source line",
+      "question": "Which sign makes two commuting differentials into a total differential, and why does the mapping cone test chain-map compatibility?",
+      "math": "D_tot=δ+(−1)^p∂ satisfies D_tot²=0. The cone differential d(d,c)=(d_Dd+fc,−d_Cc) squares to zero precisely when f commutes with the differentials.",
+      "finish": "Proof, worked example and explicit remaining problem",
+      "kind": "Revised mathematical treatment",
+      "refs": [],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c1] A@2026-07-26T02:07:27Z, -87d: v1.4 topics: bounded sheaf complexes, total differential \\(D=d_{\\mathrm{sheaf}}+(-1)^p\\partial\\), hypercohomology, shifts, mapping cones, chain homotopies, quasi-isomorphisms, \\(E_1/E_2\\) spectral sequences, derived tensor products/Koszul signs.",
+      "retrieval_receipt": "root_followups_1.json record 0",
+      "original_question": null,
+      "attribution_note": "The excerpt is an exact retrieval-result line, usually a historical paraphrase rather than a verbatim original prompt. User-attributed topics and assistant assertions remain distinct. The revised question, classical proof and example are newly authored; absent history and novelty are not claimed."
+    }
+  },
+  {
+    "id": "Y26-07-024",
+    "title": "Tensor–Hom adjunction separates currying from dualizability",
+    "status": "Developed classical mathematics with explicit hypotheses and scoped evidence",
+    "summary": "The source’s tensor, internal-Hom and adjunction language has a concrete linear model. Currying works for arbitrary algebraic vector spaces. A coevaluation satisfying both triangle identities is a stronger requirement and forces finite dimension.",
+    "definitions": [
+      "All tensor products are algebraic over a field k. Hom denotes all linear maps. A duality datum for V consists of a vector space W, evaluation ev:W⊗V→k and coevaluation coev:k→V⊗W satisfying the two triangle identities."
+    ],
+    "result": {
+      "name": "Adjunction and the finite-dimensional duality criterion",
+      "statement": "Hom(V⊗W,U)≅Hom(V,Hom(W,U)) naturally, without a dimension restriction. A vector space V is dualizable in this tensor category if and only if V is finite-dimensional.",
+      "proof": "Given F:V⊗W→U, send v to the map w↦F(v⊗w). Conversely a linear map v↦G_v gives the bilinear pairing(v,w)↦G_v(w), which factors uniquely through V⊗W. The constructions are inverse by evaluation on pure tensors; naturality follows by composition. For finite-dimensional V with basis e_i and dual basis e^i, take W=V*, ev(φ⊗v)=φ(v) and coev(1)=Σe_i⊗e^i. Either triangle identity reduces to v=Σe^i(v)e_i. Conversely every algebraic tensor coev(1) is a finite sum Σ_{i=1}^r v_i⊗w_i. The triangle identity then writes every v as Σv_i ev(w_i⊗v), so V is spanned by finitely many v_i. This proves necessity and explains why a formal infinite basis sum is not an algebraic tensor. Naturality can also be checked explicitly: replacingv byw(v) before currying is the same as precomposing the resulting mapV→Hom(W,U), and postcomposingF byU→U′ commutes with pointwise postcomposition. Thus the isomorphism respects the actual morphisms, which is the additional content of an adjunction beyond equality of two dimensions."
+    },
+    "example": {
+      "setup": "Take V=Q², W=Q³, U=Q and F(v⊗w)=vᵀMw with M=[[1,2,3],[4,5,6]].",
+      "calculation": "Currying sends v=(a,b) to the functional with coefficients(a+4b,2a+5b,3a+6b). For v=(2,−1), this is(−2,−1,0), giving F(v⊗(1,2,3))=−4 by either route. Coevaluation for Q² uses exactly e₁⊗e¹+e₂⊗e² and reconstructs(2,−1).",
+      "conclusion": "The adjunction is an explicit universal-property statement; duality adds a finite-rank identity certificate."
+    },
+    "limits": "Topological tensor products and continuous duals belong to different categories and require separate hypotheses. This proof does not establish unspecified enriched or higher adjunctions.",
+    "extension": "Specify the actual objects, morphisms and monoidal product before proposing higher duality, then test the triangle identities on a finite chain-complex model.",
+    "references": [],
+    "original": {
+      "date": "2026-07-26",
+      "month": "2026-07",
+      "evidence": "A",
+      "field": "Linear algebra and category theory",
+      "concept": "Tensor–Hom adjunction separates currying from dualizability",
+      "origin": "Dated historical retrieval; see exact source line",
+      "question": "What does tensor–Hom adjunction prove for arbitrary vector spaces, and which extra finiteness hypothesis produces a dual?",
+      "math": "Hom(V⊗W,U)≅Hom(V,Hom(W,U)) naturally, without a dimension restriction. A vector space V is dualizable in this tensor category if and only if V is finite-dimensional.",
+      "finish": "Proof, worked example and explicit remaining problem",
+      "kind": "Revised mathematical treatment",
+      "refs": [],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c1] A@2026-07-26T20:04:29Z, -87d: v1.14 equations/topics: tensor–Hom adjunction; literal \\(U\\circ C=C\\circ U=\\mathrm{id}\\); derived evaluation/coevaluation; triangle/naturality laws; remaining resolution-independent homotopy coherence.",
+      "retrieval_receipt": "root_followups_1.json record 0",
+      "original_question": null,
+      "attribution_note": "The excerpt is an exact retrieval-result line, usually a historical paraphrase rather than a verbatim original prompt. User-attributed topics and assistant assertions remain distinct. The revised question, classical proof and example are newly authored; absent history and novelty are not claimed."
+    }
+  },
+  {
+    "id": "Y26-07-025",
+    "title": "The elliptic curve of discriminant37 admits exact group-law and rank-lower-bound certificates",
+    "status": "Developed classical mathematics with explicit hypotheses and scoped evidence",
+    "summary": "The July29 source reports multiples, a 2-descent and rank-one conclusions for the conductor37 curve. Exact group arithmetic and reductions modulo small primes give a self-contained rank lower bound. The stronger Selmer and Tate–Shafarevich claims remain conditional on an unavailable descent certificate.",
+    "definitions": [
+      "Let E/Q be y²+y=x³−x with identity O at infinity and P=(0,0). Negation is−(x,y)=(x,−1−y). The discriminant is Δ=37. A prime is good when it does not divideΔ."
+    ],
+    "result": {
+      "name": "Infinite order without adopting the reported descent",
+      "statement": "E(Q) has trivial torsion and P has infinite order; consequently its rank is at least one. The displayed calculation alone does not prove rank exactly one.",
+      "proof": "For distinct points use slopeλ=(y₂−y₁)/(x₂−x₁); doubling uses λ=(3x₁²−1)/(2y₁+1). Then x₃=λ²−x₁−x₂ and y₃=−y₁−1+λ(x₁−x₃). These formulas give exact rational multiples. Counting solutions over F₃ and F₅ gives group orders7 and8, respectively. Good reduction injects the prime-to-p rational torsion into E(F_p). Any torsion prime other than3,5 would therefore divide gcd(7,8)=1. A 3-primary torsion point would inject at5 and require3|8; a 5-primary one would inject at3 and require5|7. Neither is possible, so the torsion subgroup is trivial. P is a finite point and hence nonzero, proving infinite order. This argument supplies no upper rank bound. A certified 2-Selmer calculation of dimension one, together with the found point and no rational2-torsion, would supply that missing bound."
+    },
+    "example": {
+      "setup": "Compute P through6P, and transform the equation for a 2-division check.",
+      "calculation": "The multiples are2P=(1,0),3P=(−1,−1),4P=(2,−3),5P=(1/4,−5/8),6P=(6,14). With X=4x,Y=8y+4 the equation becomes Y²=X³−16X+16. Its cubic has no rational root, consistently with no rational2-torsion; the exact torsion argument above is stronger.",
+      "conclusion": "The visible orbit is an exact constructive result, while descent claims are kept distinct from it."
+    },
+    "limits": "No covering curves, local-solubility witnesses or Selmer basis were recovered. The source’s exact rank and Sha[2] assertions are not certified here.",
+    "extension": "Return a complete2-descent packet with étale-algebra representatives, local tests and covering maps, then combine its upper bound with the explicit infinite-order point.",
+    "references": [
+      {
+        "label": "Milne, Elliptic Curves",
+        "url": "https://www.jmilne.org/math/Books/EC2.pdf"
+      }
+    ],
+    "original": {
+      "date": "2026-07-29",
+      "month": "2026-07",
+      "evidence": "A",
+      "field": "Elliptic curves",
+      "concept": "The elliptic curve of discriminant37 admits exact group-law and rank-lower-bound certificates",
+      "origin": "Dated historical retrieval; see exact source line",
+      "question": "Which exact computations on y²+y=x³−x prove that a visible point has infinite order, and what still requires a descent?",
+      "math": "E(Q) has trivial torsion and P has infinite order; consequently its rank is at least one. The displayed calculation alone does not prove rank exactly one.",
+      "finish": "Proof, worked example and explicit remaining problem",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://www.jmilne.org/math/Books/EC2.pdf"
+      ],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c2] A@2026-07-29T02:39:43Z, -2mo 3w: flagship elliptic curve \\(E:y^2+y=x^3-x\\), discriminant \\(37\\).",
+      "retrieval_receipt": "root_followups_1.json record 0",
+      "original_question": null,
+      "attribution_note": "The excerpt is an exact retrieval-result line, usually a historical paraphrase rather than a verbatim original prompt. User-attributed topics and assistant assertions remain distinct. The revised question, classical proof and example are newly authored; absent history and novelty are not claimed."
+    }
+  },
+  {
+    "id": "Y26-07-026",
+    "title": "Riemann–Roch proves a code bound, not an unexhibited minimum-weight word",
+    "status": "Developed classical mathematics with explicit hypotheses and scoped evidence",
+    "summary": "The July31 assistant source gives a genus-three curve over F₄₉,92 rational points and a code[91,37,52]. The curve equation, point list and decoder were not recovered. A conditional theorem proves the guaranteed dimension and distance bound without promoting an asserted exact distance into a demonstrated one.",
+    "definitions": [
+      "Let X/F_q be a smooth projective geometrically integral curve of genus g. Choose distinct rational points P₁,…,P_n and a divisor G disjoint from them. The evaluation code is C_L(D,G)={ (f(P₁),…,f(P_n)):f∈L(G)}, with D=ΣP_i."
+    ],
+    "result": {
+      "name": "One-point Goppa parameter certificate",
+      "statement": "If2g−2<degG<n, then dimC_L=degG+1−g and its minimum distance is at least n−degG. Thus a genus-three curve with92 rational points yields a one-point code[91,37,d≥52] usingG=39P_∞ and the other91 points.",
+      "proof": "The kernel of evaluation is L(G−D). Its divisor degree is negative, so only zero belongs to that space: a nonzero function has principal divisor degree zero and cannot satisfy a negative-degree effectivity condition. Evaluation is therefore injective. Riemann–Roch and degG>2g−2 giveℓ(G)=degG+1−g. A nonzero f∈L(G) has at mostdegG zeros among the evaluation points, since its zero divisor and pole divisor have the same degree and its poles are bounded byG. Its evaluation has weight at least n−degG. These arguments prove a lower bound; equality additionally needs an f attaining exactlydegG evaluation zeros. The Hasse–Weil upper bound atq49,g3 is49+1+2·3·7=92, so the reported count would indeed be maximal, provided the actual curve and count are verified."
+    },
+    "example": {
+      "setup": "Work conditionally with q=49,g=3,N=92,n=91 and degG=39.",
+      "calculation": "The dimension is39+1−3=37 and the designed distance is91−39=52. A nearest-codeword decoder is uniquely defined for every received word within⌊(52−1)/2⌋=25 errors of a codeword. An algorithm reported only through24 errors may have a weaker guarantee; that does not contradict the distance bound. It does not establish an efficient25-error algorithm either.",
+      "conclusion": "The construction separates existence, parameter bounds, exact distance and algorithmic decoding into independent mathematical obligations."
+    },
+    "limits": "The actual curve and decoder remain unavailable. Larger reported tower-code tuples likewise need explicit function fields, evaluation divisors and certificates.",
+    "extension": "Publish the curve over F₇[u]/(u²+1), its92 points and an evaluation basis, then exhibit a weight52 codeword or prove the true distance is larger.",
+    "references": [
+      {
+        "label": "Brouwer, Riemann–Roch and algebraic geometry codes",
+        "url": "https://aeb.win.tue.nl/2WF02/rr.pdf"
+      }
+    ],
+    "original": {
+      "date": "2026-07-31",
+      "month": "2026-07",
+      "evidence": "A",
+      "field": "Algebraic-geometric coding theory",
+      "concept": "Riemann–Roch proves a code bound, not an unexhibited minimum-weight word",
+      "origin": "Dated historical retrieval; see exact source line",
+      "question": "Assuming the reported maximal genus-three curve exists, which code parameters and decoding radius follow rigorously?",
+      "math": "If2g−2<degG<n, then dimC_L=degG+1−g and its minimum distance is at least n−degG. Thus a genus-three curve with92 rational points yields a one-point code[91,37,d≥52] usingG=39P_∞ and the other91 points.",
+      "finish": "Proof, worked example and explicit remaining problem",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://aeb.win.tue.nl/2WF02/rr.pdf"
+      ],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c3] A@2026-07-31T15:55:55Z, -81d: Key dated equations/parameters: field size 49; 4,096 anonymous curves, 39 maximal; selected genus-3 curve with 92 points (91 affine + infinity), Hasse–Weil maximal; code [91,37,52] over F₄₉; decoder guarantee 24 errors; TVZ/Gilbert–Varshamov comparisons; unfinished tower code length 100,842, dimension ≥34,010, distance ≥50,417.",
+      "retrieval_receipt": "root_followups_1.json record 0",
+      "original_question": null,
+      "attribution_note": "The excerpt is an exact retrieval-result line, usually a historical paraphrase rather than a verbatim original prompt. User-attributed topics and assistant assertions remain distinct. The revised question, classical proof and example are newly authored; absent history and novelty are not claimed."
+    }
+  },
+  {
+    "id": "Y26-07-027",
+    "title": "Base twelve changes representation while preserving exact arithmetic",
+    "status": "Developed classical mathematics with explicit hypotheses and scoped evidence",
+    "summary": "The July31 language discussion includes base twelve and symbolic representation. Its mathematical core is a division algorithm, not a change in the underlying rational numbers. Exact remainder orbits give terminating and repeating expansions with unambiguous conventions.",
+    "definitions": [
+      "Use digits0,…,9,A,B for values0,…,11. For a rational0≤a/b<1 in lowest terms, long division sets r₀=a,12r_j=b d_{j+1}+r_{j+1}, with0≤r_{j+1}<b. A bar denotes infinite repetition."
+    ],
+    "result": {
+      "name": "Termination and periodicity criterion",
+      "statement": "The base-twelve expansion of a/b terminates exactly when b divides12^N for some N, equivalently b has no prime factors except2 and3. Every rational has an eventually periodic expansion; after removing the2- and3-parts of the denominator, the period divides the multiplicative order of12 modulo its remaining part.",
+      "proof": "AfterN steps the division identities telescope to a/b=Σ_{j=1}^N d_j12^{-j}+r_N/(b12^N). Termination is equivalent to r_N=0 and hence to b|12^N because gcd(a,b)=1. Conversely that divisibility forces zero remainder. Only finitely many remainders occur, so a nonzero remainder must eventually repeat and the deterministic update then repeats forever. When the denominator is coprime to12, the remainder is12^j a modb and the first return occurs at the multiplicative order of12. Powers of2 and3 contribute only a finite preperiod. An expansion ending in infinitely manyB digits is the familiar alternate representation of a terminating number; choosing the non-B-tail convention restores uniqueness. The same remainder identity certifies truncation error without a decimal approximation: afterN digits the omitted fraction is exactlyr_N/(b12^N), betweenzero and12^{-N}. For a repeating block oflengthh, multiplying by12^h and subtracting yields a rational denominator12^h−1. These two identities provide exact conversion in both directions."
+    },
+    "example": {
+      "setup": "Represent2026,1/8 and1/5 in base twelve.",
+      "calculation": "2026=1·12³+2·12²+0·12+10, so it is120A₁₂. Also.16₁₂=1/12+6/144=1/8. For1/5 the remainders follow1→2→4→3→1 and the digits are2,4,9,7. Thus1/5=.overline{2497}₁₂; equivalently(2·12³+4·12²+9·12+7)/(12⁴−1)=4147/20735=1/5.",
+      "conclusion": "Each symbolic statement reduces to an integer identity and a finite remainder certificate."
+    },
+    "limits": "This does not support claims that a base or symbolic language changes numerical truth or objectively improves perception. Those would require separately defined criteria.",
+    "extension": "Specify a concrete coding cost for a symbolic arithmetic language and compare bases by provable representation length and exact arithmetic complexity rather than aesthetic analogy.",
+    "references": [],
+    "original": {
+      "date": "2026-07-31",
+      "month": "2026-07",
+      "evidence": "U",
+      "field": "Number representation",
+      "concept": "Base twelve changes representation while preserving exact arithmetic",
+      "origin": "Dated historical retrieval; see exact source line",
+      "question": "Which rational numbers have finite duodecimal expansions, and how are periodic expansions certified?",
+      "math": "The base-twelve expansion of a/b terminates exactly when b divides12^N for some N, equivalently b has no prime factors except2 and3. Every rational has an eventually periodic expansion; after removing the2- and3-parts of the denominator, the period divides the multiplicative order of12 modulo its remaining part.",
+      "finish": "Proof, worked example and explicit remaining problem",
+      "kind": "Revised mathematical treatment",
+      "refs": [],
+      "source_excerpt": "- [USER_FACT] [c3] U@2026-07-31T15:54:54Z, -81d: Discussed Morphonic Kernel v1.74 mathematics: exact vs approximate representations, morphons, canonical base-12 numerals with concentric place-value shells, structural objects, bridges/commuting diagrams, arithmetic genesis, rationals/reals/p-adics, fields, curves, sheaves/cohomology, finite-field algebraic geometry, and error-correcting codes.",
+      "retrieval_receipt": "root_followups_1.json record 0",
+      "original_question": null,
+      "attribution_note": "The excerpt is an exact retrieval-result line, usually a historical paraphrase rather than a verbatim original prompt. User-attributed topics and assistant assertions remain distinct. The revised question, classical proof and example are newly authored; absent history and novelty are not claimed."
+    }
+  },
+  {
+    "id": "Y26-07-028",
+    "title": "A root atlas combines Rouché counts with explicit root squaring",
+    "status": "Developed classical mathematics with explicit hypotheses and scoped evidence",
+    "summary": "The July31 source proposes square-free reduction, Pellet/Graeffe filters and a universal polynomial-solving atlas. A useful classical atlas certifies where roots are and how many occur. It does not bypass the obstruction to general radical formulas.",
+    "definitions": [
+      "For p(c+rw)=Σ_{j=0}^n b_jw^j, a disk means|z−c|<r and roots are counted with multiplicity. Write p(z)=E(z²)+zO(z²), with even and odd parts separated."
+    ],
+    "result": {
+      "name": "Dominant-term disk count and Graeffe identity",
+      "statement": "If|b_k|>Σ_{j≠k}|b_j|, then p has exactly k roots in the disk. For leading coefficienta and rootsr_i counted with multiplicity, G(y)=E(y)²−yO(y)²=(−1)^n a²∏(y−r_i²). Thus its roots are the squares of those ofp, with multiplicities.",
+      "proof": "On|w|=1 the non-k terms have magnitude at mostΣ_{j≠k}|b_j|, strictly below|b_kw^k|. Rouché’s theorem therefore gives the same zero count as the monomial b_kw^k, namelyk. Strictness also proves the boundary is root-free. For the second statement, p(z)p(−z)=E(z²)²−z²O(z²)². Factoring p(z)=a∏(z−r_i) gives p(z)p(−z)=(−1)^n a²∏(z²−r_i²). Substituting y=z² proves the claim and the sign. Root squaring separates distinct root moduli, but may merge roots of opposite signs and amplify coefficient ranges. It is a filtering tool; square-free factorization and subsequent certified isolation remain necessary. The boundary inequalities also distinguish open disks from uncertain boundary roots. Equality in a coefficient comparison is not a validRouché certificate; it may place a root directly on the circle. For p(z)=z−1 at radiusone, the two coefficient magnitudes tie and the root lies on the boundary, exactly the situation strict dominance excludes."
+    },
+    "example": {
+      "setup": "Use p(z)=z³−4z+1 for disk counts and q(z)=z²−3z+2 for root squaring.",
+      "calculation": "On|z|=1,4>1+1 proves one root inside. On|z|=3,27>12+1 proves all three inside; hence exactly two lie in1<|z|<3. Forq, E(y)=y+2 and O(y)=−3, soG(y)=(y+2)²−9y=y²−5y+4, with roots1 and4, the squares of1 and2.",
+      "conclusion": "The output is a finite exact counting certificate with stated disks and multiplicities."
+    },
+    "limits": "No original all-degree solver or test corpus was recovered. These sufficient tests can be inconclusive, especially near equal-modulus clusters; inconclusive does not mean root-free.",
+    "extension": "Combine exact square-free factorization, adaptive rational disks, Graeffe filters and certified local Newton steps, returning an independently checkable disjoint root cover.",
+    "references": [],
+    "original": {
+      "date": "2026-07-31",
+      "month": "2026-07",
+      "evidence": "A",
+      "field": "Polynomial root certification",
+      "concept": "A root atlas combines Rouché counts with explicit root squaring",
+      "origin": "Dated historical retrieval; see exact source line",
+      "question": "How can a coefficient inequality and a Graeffe step certify root counts without pretending to give universal radical formulas?",
+      "math": "If|b_k|>Σ_{j≠k}|b_j|, then p has exactly k roots in the disk. For leading coefficienta and rootsr_i counted with multiplicity, G(y)=E(y)²−yO(y)²=(−1)^n a²∏(y−r_i²). Thus its roots are the squares of those ofp, with multiplicities.",
+      "finish": "Proof, worked example and explicit remaining problem",
+      "kind": "Revised mathematical treatment",
+      "refs": [],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c4] A@2026-07-31T21:44:38Z, -81d: Fusion Atlas topics/equations: Pellet–Rouché cluster counts \\(|b_k|>\\sum_{j\\ne k}|b_j|\\); Dandelin–Graeffe \\(G(q)=E^2-yO^2\\); root-free annuli; quartic/quintic/sextic Galois classification; Frobenius cycle types, wreath products, primitivity, Jordan witnesses, \\(A_n/S_n\\).",
+      "retrieval_receipt": "root_followups_1.json record 0",
+      "original_question": null,
+      "attribution_note": "The excerpt is an exact retrieval-result line, usually a historical paraphrase rather than a verbatim original prompt. User-attributed topics and assistant assertions remain distinct. The revised question, classical proof and example are newly authored; absent history and novelty are not claimed."
+    }
+  },
+  {
+    "id": "Y26-07-029",
+    "title": "A contraction certificate gives a genuinely guaranteed Newton enclosure",
+    "status": "Developed classical mathematics with explicit hypotheses and scoped evidence",
+    "summary": "The late-July universal-solving discussion is made constructive by replacing an unqualified convergence promise with a local certificate. A fixed inverse-Jacobian approximation produces a contraction whose hypotheses can be checked with rational bounds.",
+    "definitions": [
+      "Let f be continuously differentiable on I=[c−r,c+r], choose a nonzero constant C, and set T(x)=x−Cf(x). Assume sup_I|1−Cf′(x)|≤q<1."
+    ],
+    "result": {
+      "name": "One-dimensional interval Newton–Banach certificate",
+      "statement": "If|Cf(c)|+qr≤r, then f has exactly one root inI. Starting anywhere inI, iteratingT converges to that root with geometric contraction factorq.",
+      "proof": "The derivative bound and the mean-value theorem give|T(x)−T(y)|≤q|x−y|. Moreover|T(x)−c|≤|T(c)−c|+q|x−c|≤|Cf(c)|+qr≤r, soT maps the closed interval into itself. Completeness and the contraction theorem give a unique fixed point. SinceC≠0, fixed points are exactly zeros off. The same argument bounds the distance from an iterate to the root by|T(x)−x|/(1−q). Every hypothesis is local and explicit. A convergence plot or small residual is weaker: for example a nearly singular derivative can make a tiny residual coexist with a substantial root error. In several variables the analogous test uses a norm bound forI−CJF throughout a box and an inclusion test for its centered image. A practical certificate may choose a fixedC rather than recomputingf′(x)^{-1} at each step. This makes the map and its derivative bound uniform on the entire interval. Newton iteration with a changing inverse may converge faster, but its guarantee must be established separately or shown to stay inside the same certified domain."
+    },
+    "example": {
+      "setup": "Certify the positive root off(x)=x²−2 usingc=7/5,C=5/14 andr=1/50.",
+      "calculation": "OnI=[69/50,71/50], T′=1−5x/7 ranges from1/70 to−1/70, so q=1/70. Also|Cf(c)|=1/70. The inclusion bound is1/70+1/3500=51/3500<1/50=70/3500. Thus there is exactly one root in[1.38,1.42], and the fixed-inverse iteration converges from every point of this interval. The negative root lies outside it.",
+      "conclusion": "Existence, uniqueness, enclosure and a convergence rate are certified by exact inequalities."
+    },
+    "limits": "This local theorem does not guarantee finding a valid box for every polynomial or remove global root-separation costs. The source’s universal algorithm was not retrieved as a complete implementation.",
+    "extension": "Use an exact global root count to seed intervals, then attach such certificates to every isolated simple root and a separate multiplicity-aware certificate to repeated roots.",
+    "references": [],
+    "original": {
+      "date": "2026-07-31",
+      "month": "2026-07",
+      "evidence": "U",
+      "field": "Validated nonlinear solving",
+      "concept": "A contraction certificate gives a genuinely guaranteed Newton enclosure",
+      "origin": "Dated historical retrieval; see exact source line",
+      "question": "What finite inequalities prove existence and uniqueness of a root in a chosen interval?",
+      "math": "If|Cf(c)|+qr≤r, then f has exactly one root inI. Starting anywhere inI, iteratingT converges to that root with geometric contraction factorq.",
+      "finish": "Proof, worked example and explicit remaining problem",
+      "kind": "Revised mathematical treatment",
+      "refs": [],
+      "source_excerpt": "- [USER_FACT] [c4] U@2026-07-31T19:05:44Z, -81d: pursued universal polynomial solving; discussed Abel–Ruffini, Tschirnhaus/Bring–Jerrard forms, hyperelliptic integrals, theta functions, homotopy continuation, Smale \\(\\alpha\\)-theory, certified root finding.",
+      "retrieval_receipt": "root_followups_1.json record 0",
+      "original_question": null,
+      "attribution_note": "The excerpt is an exact retrieval-result line, usually a historical paraphrase rather than a verbatim original prompt. User-attributed topics and assistant assertions remain distinct. The revised question, classical proof and example are newly authored; absent history and novelty are not claimed."
+    }
+  },
+  {
+    "id": "Y26-07-030",
+    "title": "Discrete Gauss–Bonnet is an exact angle-counting identity",
+    "status": "Developed classical mathematics with explicit hypotheses and scoped evidence",
+    "summary": "The July25 finite-topology register names Gauss–Bonnet alongside homology and transport. Its simplest complete version is a piecewise Euclidean surface theorem. It connects local geometric data with an independently countable topological invariant and supplies an exact baseline for any richer representation.",
+    "definitions": [
+      "Let a finite triangulation of a closed surface haveV vertices,E edges andF faces. Give each face a nondegenerate Euclidean triangle metric, with matching lengths across glued edges. At a vertexv define angular defectκ_v=2π−Σ_{f∋v}θ_{f,v}. Euler characteristic isχ=V−E+F."
+    ],
+    "result": {
+      "name": "Polyhedral Gauss–Bonnet",
+      "statement": "The total angular defect isΣ_vκ_v=2πχ. No orientability assumption is needed for this counting form of the theorem.",
+      "proof": "Every Euclidean face contributes exactlyπ when its three angles are added. ThusΣ_vκ_v=2πV−πF. Because the surface is closed, every edge is incident to two triangular faces, so3F=2E. Substitute this relation into2π(V−E+F) to obtain2πV−πF, proving the identity. Both the local-angle sum and global incidence counts are essential. A mesh with boundary has boundary edges incident to one face and requires an additional boundary turning term; the closed formula cannot simply be copied. The theorem is insensitive to how curvature is redistributed among vertices while the incidence topology stays fixed. It does not say that every assignment of defects summing to2πχ is realizable by a chosen edge-length metric."
+    },
+    "example": {
+      "setup": "Take the boundary of a regular tetrahedron, with four equilateral triangular faces.",
+      "calculation": "HereV=4,E=6,F=4 andχ=2. Exactly three face anglesπ/3 meet at each vertex, so each angular defect isπ. The total is4π=2π·2. Subdividing a flat face by adding an interior vertex creates no new total defect: the interior angle sum is2π and the surrounding old angles still add to the original three face angles.",
+      "conclusion": "A topology–geometry bridge is certified by elementary incidence and angle identities rather than a visual resemblance."
+    },
+    "limits": "No original Morphonic mesh, edge lengths or curvature table was recovered. This theorem provides a constructive finite baseline, not a check of an unseen realization.",
+    "extension": "Publish a piecewise Euclidean complex with exact angle or interval enclosures, verify all edge gluings and compare its defect measure with a refined discrete connection.",
+    "references": [],
+    "original": {
+      "date": "2026-07-25",
+      "month": "2026-07",
+      "evidence": "A",
+      "field": "Finite geometry and topology",
+      "concept": "Discrete Gauss–Bonnet is an exact angle-counting identity",
+      "origin": "Dated historical retrieval; see exact source line",
+      "question": "How does a local angular defect recover Euler characteristic on a triangulated surface?",
+      "math": "The total angular defect isΣ_vκ_v=2πχ. No orientability assumption is needed for this counting form of the theorem.",
+      "finish": "Proof, worked example and explicit remaining problem",
+      "kind": "Revised mathematical treatment",
+      "refs": [],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c0] A@2026-07-25T17:11:42Z, -1y3mo: v1.0 finite topology/transport baseline: integral Smith normal form, torsion-sensitive homology, cohomology/Stokes, Gauss–Bonnet, matrix transport, gauge transformations, and globally nontrivial holonomy.",
+      "retrieval_receipt": "root_followups_1.json record 0",
+      "original_question": null,
+      "attribution_note": "The excerpt is an exact retrieval-result line, usually a historical paraphrase rather than a verbatim original prompt. User-attributed topics and assistant assertions remain distinct. The revised question, classical proof and example are newly authored; absent history and novelty are not claimed."
+    }
+  },
+  {
+    "id": "Y26-07-031",
+    "title": "A p-adic completion changes convergence while keeping rational identities",
+    "status": "Developed classical mathematics with explicit hypotheses and scoped evidence",
+    "summary": "The July31 representation discussion includes rationals, reals and p-adics. A valuation makes this distinction precise: it changes which approximations are small, while preserving ordinary algebraic equalities on the embedded rational field. Root lifting provides a constructive rather than purely metaphorical example.",
+    "definitions": [
+      "For a primep and nonzero rationalx, letv_p(x) be the exponent ofp in its factorization and|x|_p=p^{-v_p(x)}; set|0|_p=0. Q_p is the completion ofQ in this metric. Congruence modulo p^n records an error ofp-adic norm at mostp^{-n}."
+    ],
+    "result": {
+      "name": "Geometric convergence and simple-root lifting",
+      "statement": "The seriesΣ_{j≥0}p^j converges inQ_p to1/(1−p). If an integer polynomialf hasf(r₁)≡0 modp andf′(r₁)≠0 modp, its root lifts uniquely through compatible congruencesr_n modulo p^n, producing a root inZ_p.",
+      "proof": "The finite geometric identity(1−p)Σ_{j=0}^{N−1}p^j=1−p^N is valid overQ. Since|p^N|_p=p^{-N}→0, completeness gives the stated limit; the real terms instead grow and their partial sums diverge. For lifting supposef(r_n)≡0 modp^n andtryr_{n+1}=r_n+t p^n with0≤t<p. Taylor expansion modulo p^{n+1} givesf(r_{n+1})≡f(r_n)+t p^n f′(r_n). Dividing byp^n leaves one linear equation fort modulop. The derivative is a unit modulo p, so that equation has exactly one solution. The compatible sequence is Cauchy and continuity of polynomial evaluation gives a root. Uniqueness applies to the root in the chosen residue class, not every root ofthe polynomial."
+    },
+    "example": {
+      "setup": "Takep=5 andf(x)=x²−6, starting withr₁=1.",
+      "calculation": "The successive least residues are r₂=16 modulo25, r₃=16 modulo125 andr₄=516 modulo625. Their squares are6 modulo the respective moduli, and each new residue agrees with the previous one. The other root begins in the residue class−1, so the construction does not claim global uniqueness.",
+      "conclusion": "Exact modular corrections build an infinite object with a proved convergence metric."
+    },
+    "limits": "A p-adic root need not be a rational number or correspond to an ordinary real approximation. No source-specific p-adic curve or regulator computation is inferred.",
+    "extension": "Construct a compatible p-adic representation layer with explicit precision propagation, proving how addition, multiplication and simple-root lifting preserve the advertised error bounds.",
+    "references": [],
+    "original": {
+      "date": "2026-07-31",
+      "month": "2026-07",
+      "evidence": "U",
+      "field": "Valuations and exact lifting",
+      "concept": "A p-adic completion changes convergence while keeping rational identities",
+      "origin": "Dated historical retrieval; see exact source line",
+      "question": "How can the same rational series diverge in the real metric yet converge p-adically, and how is a p-adic root built exactly?",
+      "math": "The seriesΣ_{j≥0}p^j converges inQ_p to1/(1−p). If an integer polynomialf hasf(r₁)≡0 modp andf′(r₁)≠0 modp, its root lifts uniquely through compatible congruencesr_n modulo p^n, producing a root inZ_p.",
+      "finish": "Proof, worked example and explicit remaining problem",
+      "kind": "Revised mathematical treatment",
+      "refs": [],
+      "source_excerpt": "- [USER_FACT] [c3] U@2026-07-31T15:54:54Z, -81d: Discussed Morphonic Kernel v1.74 mathematics: exact vs approximate representations, morphons, canonical base-12 numerals with concentric place-value shells, structural objects, bridges/commuting diagrams, arithmetic genesis, rationals/reals/p-adics, fields, curves, sheaves/cohomology, finite-field algebraic geometry, and error-correcting codes.",
+      "retrieval_receipt": "root_followups_1.json record 0",
+      "original_question": null,
+      "attribution_note": "The excerpt is an exact retrieval-result line, usually a historical paraphrase rather than a verbatim original prompt. User-attributed topics and assistant assertions remain distinct. The revised question, classical proof and example are newly authored; absent history and novelty are not claimed."
+    }
+  }
+]

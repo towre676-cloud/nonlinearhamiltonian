@@ -1,0 +1,293 @@
+{
+  "checks": [
+    {
+      "id": "M038",
+      "name": "Finite Fourier coefficients and exact tail energy",
+      "status": "pass",
+      "detail": "The degree-two trigonometric polynomial has squared cutoff error 1/2; finite quadrature recovers each coefficient."
+    },
+    {
+      "id": "M038",
+      "name": "SU(2) Haar integrals",
+      "status": "pass",
+      "detail": {
+        "spin_one_mean": 2.716299911617424e-18,
+        "spin_one_squared_norm": 1.0000000000000002,
+        "scope": "Quadrature checks explicit integrals; analytic orthogonality proof is in the text."
+      }
+    },
+    {
+      "id": "M039",
+      "name": "Unitary Fourier matrix attains rephasing-invariant bound",
+      "status": "pass",
+      "detail": {
+        "J": 0.09622504486493769,
+        "bound": 0.09622504486493763,
+        "rephased_J": 0.09622504486493771
+      }
+    },
+    {
+      "id": "M040",
+      "name": "Boundary ranks reproduce the entire filtration",
+      "status": "pass",
+      "detail": {
+        "betti_by_time": [
+          [
+            3,
+            0
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        "H1_interval": [
+          3,
+          4
+        ],
+        "field": "F2"
+      }
+    },
+    {
+      "id": "M041",
+      "name": "Berry holonomy and sampled gauge cancellation",
+      "status": "pass",
+      "detail": {
+        "discrete_holonomy": [
+          2.4223657264939823e-07,
+          -1.0000000000000178
+        ],
+        "target": [
+          0,
+          -1
+        ],
+        "gauge_difference": 4.549217610323778e-14,
+        "scope": "Numerical convergence check; exact latitude formula is proved analytically."
+      }
+    },
+    {
+      "id": "M042",
+      "name": "Exact two-level square and gap",
+      "status": "pass",
+      "detail": {
+        "identity": "H²=(t²+ε²)I",
+        "epsilon": "1/5",
+        "minimum_gap": "2/5",
+        "arithmetic": "rational"
+      }
+    },
+    {
+      "id": "M043",
+      "name": "Moore-spectrum cofiber argument",
+      "status": "proof-only",
+      "detail": "The K(0) and K(n) conclusions are derived from the homology long exact sequence in the text. No finite program is claimed to compute Morava K-theory from first principles."
+    },
+    {
+      "id": "M044",
+      "name": "Exact conservation contraction and positivity counterexample",
+      "status": "pass",
+      "detail": {
+        "mass_before": "3",
+        "mass_after": "3",
+        "positive_impulse": [
+          "1/2",
+          "1/4",
+          "0",
+          "0",
+          "1/4"
+        ],
+        "outside_range_central": "-1/2"
+      }
+    },
+    {
+      "id": "M045",
+      "name": "Reflection commutator on a basis and asymmetric witness",
+      "status": "pass",
+      "detail": "Exact linear-basis checks certify commutation for the five-node symmetric operator. The asymmetric impulse is an explicit failure witness; the general coefficient criterion is proved in text."
+    },
+    {
+      "id": "M046",
+      "name": "Affine composition order",
+      "status": "pass",
+      "detail": {
+        "rotation_after_translation": [
+          0,
+          1
+        ],
+        "translation_after_rotation": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "id": "M047",
+      "name": "Direct joint-table information and cascade loss",
+      "status": "pass",
+      "detail": {
+        "first_channel_bits": 0.5310044064107189,
+        "cascade_bits": 0.3199229542717203,
+        "common_cause_bits": 1
+      }
+    },
+    {
+      "id": "M048",
+      "name": "A second effect separates otherwise identical probabilities",
+      "status": "pass",
+      "detail": {
+        "coordinate_probability_both": 0.75,
+        "plus_probability_pure": 0.9330127018922192,
+        "plus_probability_mixed": 0.5
+      }
+    },
+    {
+      "id": "M049",
+      "name": "Observable timescale saturates Robertson-derived bound",
+      "status": "pass",
+      "detail": {
+        "hbar_units": 1,
+        "Delta_H": 0.9999999999999999,
+        "tau_A": 0.5000000000000002,
+        "product": 0.5000000000000001,
+        "scope": "A finite-time nonzero-rate example, not a universal time-operator assertion."
+      }
+    },
+    {
+      "id": "M050",
+      "name": "Eisenstein coefficients and forced-zero numerical residual",
+      "status": "pass",
+      "detail": {
+        "E4_coefficients": [
+          240,
+          2160,
+          6720,
+          17520
+        ],
+        "E6_i_residual_float": -4.440892098500626e-16,
+        "analytic_tail_bound_after_20_terms": 2.1528457306052734e-47,
+        "scope": "Floating residual includes rounding error; the exact E6(i)=0 result follows from the transformation law."
+      }
+    },
+    {
+      "id": "M051",
+      "name": "Torus action and a periodic small gauge change",
+      "status": "pass",
+      "detail": {
+        "action": -1.0000000000000677,
+        "gauge_changed_action": -1.000000000000006,
+        "scope": "A smooth globally defined trivial-bundle example; large-gauge quantization is not tested."
+      }
+    },
+    {
+      "id": "M052",
+      "name": "Torus anomaly and complete two-label fusion table",
+      "status": "pass",
+      "detail": {
+        "fusion": {
+          "000": 0.9999999999999999,
+          "001": 0.0,
+          "010": 0.0,
+          "011": 0.9999999999999999,
+          "100": 0.0,
+          "101": 0.9999999999999999,
+          "110": 0.9999999999999999,
+          "111": 0.0
+        },
+        "unadjusted_cubic_scalar": [
+          0.7071067811865476,
+          0.7071067811865475
+        ],
+        "adjusted_cubic_relation": "identity to floating precision",
+        "scope": "These matrix checks do not reconstruct all modular-functor gluing data."
+      }
+    },
+    {
+      "id": "M053",
+      "name": "Kuramoto branches and nonlocking witness",
+      "status": "pass",
+      "detail": {
+        "stable_difference": 0.5235987755982988,
+        "unstable_difference": 2.6179938779914944,
+        "stable_linear_rate": -1.7320508075688774,
+        "no_lock_Deltaomega": 3
+      }
+    },
+    {
+      "id": "M054",
+      "name": "Exact conductance nonidentifiability witness",
+      "status": "pass",
+      "detail": {
+        "conductances_original": [
+          "2",
+          "2",
+          "2"
+        ],
+        "conductances_changed": [
+          "9/4",
+          "3/2",
+          "9/4"
+        ],
+        "G": 6,
+        "B": 6,
+        "scope": "Frozen-gate protocol only; not a universal nonidentifiability theorem for the full model."
+      }
+    },
+    {
+      "id": "M054",
+      "name": "Gate closed-form invariant interval samples",
+      "status": "pass",
+      "detail": {
+        "equilibrium": 0.4,
+        "time_constant": 2.0,
+        "scope": "The all-time interval claim is proved by boundary invariance in the text, not by these samples."
+      }
+    },
+    {
+      "id": "M055",
+      "name": "Finite decision threshold and mixed best-response equality",
+      "status": "pass",
+      "detail": {
+        "decision_threshold": "1/10",
+        "mixed_B_probability": "1/3",
+        "mixed_payoff": "2/3"
+      }
+    },
+    {
+      "id": "M056",
+      "name": "Nonuniform prior-and-utility limit",
+      "status": "pass",
+      "detail": {
+        "family": "p_M=1/2+a/M",
+        "expected_A": "2a exactly",
+        "a_values": [
+          -1,
+          0,
+          1
+        ],
+        "M_values": [
+          10,
+          100,
+          1000
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "pass": 20,
+    "proof_only": 1,
+    "entries": 19,
+    "scope": "Examples and algebraic checks support stated elementary results. Deep general theories remain referenced, not machine-proved."
+  }
+}

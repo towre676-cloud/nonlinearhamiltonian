@@ -1,0 +1,208 @@
+{
+  "checks": [
+    {
+      "id": "Y26-05-001",
+      "name": "Meet propagation",
+      "status": "pass",
+      "detail": "Exact ordinal-coordinate calculation."
+    },
+    {
+      "id": "Y26-05-002",
+      "name": "Perturbed contraction",
+      "status": "pass",
+      "detail": "Exact differential/homotopy identity on contractible summand."
+    },
+    {
+      "id": "Y26-05-003",
+      "name": "RG characteristic functions",
+      "status": "pass",
+      "detail": "Finite Gaussian evaluations; the finite-variance classification is proved in the entry."
+    },
+    {
+      "id": "Y26-05-004",
+      "name": "Cycle Hessian",
+      "status": "pass",
+      "detail": "Exact first cycle eigenmode; the full spectrum is derived in the written Fourier proof."
+    },
+    {
+      "id": "Y26-05-005",
+      "name": "Unit and length conventions",
+      "status": "pass",
+      "detail": "Exact Fibonacci matrix product and independent real unit evaluation."
+    },
+    {
+      "id": "Y26-05-006",
+      "name": "Mechanical word balance",
+      "status": "pass",
+      "detail": "200-symbol finite corroboration; uniform balance is proved by telescoping."
+    },
+    {
+      "id": "Y26-05-007",
+      "name": "Finite maximal ideals",
+      "status": "pass",
+      "detail": "Exhaustive divisor-generated ideals of Z/12Z."
+    },
+    {
+      "id": "Y26-05-008",
+      "name": "Triangle gauge classes and spectra",
+      "status": "pass",
+      "detail": "Exact determinant evaluations of degree-three characteristic polynomials at seven points."
+    },
+    {
+      "id": "Y26-05-009",
+      "name": "Spin ladder Casimir",
+      "status": "pass",
+      "detail": "Exact Casimir identity in sectors n=0..9."
+    },
+    {
+      "id": "Y26-05-010",
+      "name": "Observation weak direction",
+      "status": "pass",
+      "detail": "Exact factor100 amplification in the stipulated weakest channel."
+    },
+    {
+      "id": "Y26-05-011",
+      "name": "Lyapunov metric",
+      "status": "pass",
+      "detail": "Exact positive metric, P≤3I and Lyapunov identity; Euclidean symmetric part has positive direction(1,1)."
+    },
+    {
+      "id": "Y26-05-012",
+      "name": "SDP primal-dual certificate",
+      "status": "pass",
+      "detail": "Exact feasible-pair gap and a non-PSD perturbation counterexample."
+    },
+    {
+      "id": "Y26-05-013",
+      "name": "Annealed versus quenched",
+      "status": "pass",
+      "detail": "Strict Jensen example and deterministic pressure zero."
+    },
+    {
+      "id": "Y26-05-014",
+      "name": "Hyperbolic metric scale",
+      "status": "pass",
+      "detail": "Two independent hyperbolic-length formulas."
+    },
+    {
+      "id": "Y26-05-015",
+      "name": "Heat trace exact geometric tail",
+      "status": "pass",
+      "detail": "Exact ten-term heat trace plus tail."
+    },
+    {
+      "id": "Y26-05-016",
+      "name": "Pendulum separatrix residual",
+      "status": "pass",
+      "detail": "Finite independent energy residuals; ODE identity proved analytically."
+    },
+    {
+      "id": "Y26-05-017",
+      "name": "Reduced oscillator",
+      "status": "pass",
+      "detail": "Momentum3 oscillator energy five."
+    },
+    {
+      "id": "Y26-05-018",
+      "name": "Hydrate mass accounting",
+      "status": "pass",
+      "detail": "Exact molar conversion and retained magnesium."
+    },
+    {
+      "id": "Y26-05-019",
+      "name": "Least representative",
+      "status": "pass",
+      "detail": "All exponent assignments to2,3,5 enumerated."
+    },
+    {
+      "id": "Y26-05-020",
+      "name": "Divisor rank polynomial",
+      "status": "pass",
+      "detail": "Exact polynomial convolution."
+    },
+    {
+      "id": "Y26-05-021",
+      "name": "Species count through12",
+      "status": "pass",
+      "detail": "Exact primorial partition enumeration without log rounding."
+    },
+    {
+      "id": "Y26-05-022",
+      "name": "Leading saddle constant",
+      "status": "pass",
+      "detail": "Constant algebra only; the PNT/Laplace asymptotics are stated analytic hypotheses."
+    },
+    {
+      "id": "Y26-05-023",
+      "name": "Coercivity ledger and triangle",
+      "status": "pass",
+      "detail": "Exact budget and separate gluing obstruction."
+    },
+    {
+      "id": "Y26-05-024",
+      "name": "Two-qubit source statistic",
+      "status": "pass",
+      "detail": "Exact probabilities with numerical entropy; Bell log-distance is negative."
+    },
+    {
+      "id": "Y26-05-025",
+      "name": "Graph homology ranks",
+      "status": "pass",
+      "detail": "Exact rational elimination on two triangles with a bridge."
+    },
+    {
+      "id": "Y26-05-026",
+      "name": "Hybrid rate threshold",
+      "status": "pass",
+      "detail": "Exact formula checked at five jumps; theorem proves all times."
+    },
+    {
+      "id": "Y26-05-027",
+      "name": "F8 arithmetic and Frobenius",
+      "status": "pass",
+      "detail": "All elements and primitive powers checked with binary polynomial reduction."
+    },
+    {
+      "id": "Y26-05-028",
+      "name": "Hamming code",
+      "status": "pass",
+      "detail": "All128 words enumerated; exact syndrome and weight distribution."
+    },
+    {
+      "id": "Y26-05-029",
+      "name": "Maurer-Cartan cancellation",
+      "status": "pass",
+      "detail": "Exact coefficients of t²; centrality makes all higher brackets vanish in the stated model."
+    },
+    {
+      "id": "Y26-05-030",
+      "name": "Groebner ideal witnesses",
+      "status": "pass",
+      "detail": "Exact multivariate polynomial identities in both containment directions."
+    },
+    {
+      "id": "Y26-05-031",
+      "name": "Cusp transform and intersection",
+      "status": "pass",
+      "detail": "Exact blowup polynomial factor; quotient basis is1,x,x²."
+    },
+    {
+      "id": "Y26-05-032",
+      "name": "Extension ambiguity",
+      "status": "pass",
+      "detail": "Element-order invariant separates Z/4 from(Z/2)^2."
+    },
+    {
+      "id": "Y26-05-033",
+      "name": "Pairwise compatibility is not global",
+      "status": "pass",
+      "detail": "All Boolean assignments checked exactly."
+    },
+    {
+      "id": "metadata",
+      "name": "Schema and attribution",
+      "status": "pass",
+      "detail": "Historical source lines are retrieval summaries; no invented original prompts."
+    }
+  ]
+}

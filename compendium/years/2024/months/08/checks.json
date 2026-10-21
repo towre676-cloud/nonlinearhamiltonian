@@ -1,0 +1,90 @@
+{
+  "month": "2024-08",
+  "scope": "Exact finite examples and algebra; no numerical proof of RH, generic geometry, physical validation or current-data claim.",
+  "checks": [
+    {
+      "id": "Y24-08-001",
+      "name": "Exhaustive diagram matchings",
+      "status": "pass",
+      "detail": "All 7 partial bijections enumerated with all unmatched points sent to diagonal."
+    },
+    {
+      "id": "Y24-08-002",
+      "name": "Graph Dirac polynomial and nullity",
+      "status": "pass",
+      "detail": "Exact D(D²−I)(D²−3I)=0 and rank 4, agreeing with spectrum 0,±1,±√3; no assertion about zeta zeros."
+    },
+    {
+      "id": "Y24-08-003",
+      "name": "Exact historical stipulated covariance calculation",
+      "status": "pass",
+      "detail": "Exact mean .173, variance .02898125, positive leading principal minors; inputs are stipulated historical values."
+    },
+    {
+      "id": "Y24-08-004",
+      "name": "Energy-density dimensions and isotropic transport factor",
+      "status": "pass",
+      "detail": "n hc/λ has energy-density dimensions; multiplying by speed supplies flux. Hemisphere integral (2π)(1/2)/(4π)=1/4 under isotropic convention."
+    },
+    {
+      "id": "Y24-08-005",
+      "name": "Deformation tangent and obstruction",
+      "status": "pass",
+      "detail": "For u=1+aε, relation u²=1 gives 2a=0. At char 2 the lift 1+η+bη² has unavoidable η² coefficient 1; all b share the obstruction."
+    },
+    {
+      "id": "Y24-08-006",
+      "name": "Prime-level subgroup index finite enumeration",
+      "status": "pass",
+      "detail": "SL₂(F_p) and upper triangular determinant-one subgroup enumerated completely for p=2,3,5, giving index p+1."
+    },
+    {
+      "id": "Y24-08-007",
+      "name": "Lorentz condition and semidirect commutator",
+      "status": "pass",
+      "detail": "Exact rational boost preserves signature (−+++); [boost, translation e₀] translates by (2/3,4/3,0,0)."
+    },
+    {
+      "id": "Y24-08-008",
+      "name": "Symmetry does not imply critical-line zeros",
+      "status": "pass",
+      "detail": "Exact coefficients satisfy P(1−s)=P(s); factors visibly have roots 1/4±i and 3/4±i. This changes analytic class and is not a counterexample to RH."
+    },
+    {
+      "id": "Y24-08-009",
+      "name": "Projective-line zeta coefficient identity",
+      "status": "pass",
+      "detail": "Log-derivative recurrence from point counts matches rational zeta 1/((1−t)(1−2t)) through degree 8; counts differ from series coefficients."
+    },
+    {
+      "id": "Y24-08-010",
+      "name": "Associative first-order deformation",
+      "status": "pass",
+      "detail": "All 64 basis triples in k[x]/(x⁴) checked; identify ε=x², so x²=ε and ε²=0, a free rank-two dual-number algebra."
+    },
+    {
+      "id": "Y24-08-011",
+      "name": "Gauss norm multiplicativity example",
+      "status": "pass",
+      "detail": "p=3 polynomial example has all Gauss norms 1; T−a has norm 1 despite evaluating to zero at a. General multiplicativity is proved by reduction in text."
+    },
+    {
+      "id": "Y24-08-012",
+      "name": "BV differential and odd Jacobi identities",
+      "status": "pass",
+      "detail": "Δ²=0 on six basis monomials; all 216 homogeneous monomial Jacobi triples replayed with shifted signs; two displayed brackets exact. General second-order identity proved in text."
+    },
+    {
+      "id": "Y24-08-013",
+      "name": "Atomic local Hardy–BMO pairing",
+      "status": "pass",
+      "detail": "For I=[−1,1], a=sign(x)/2 has mean zero, sup norm 1/2, pairing ∫|x|/2=1/2, and mean oscillation |I|⁻¹∫|x|=1/2. Full duality is sourced, not proved by this one atom."
+    },
+    {
+      "id": "Y24-08-014",
+      "name": "Power-law ratios and finite-data nonuniqueness",
+      "status": "pass",
+      "detail": "Exact scale ratios and elimination exponent 4 verified; perturbation vanishes at n=2,4 and not n=3, so finitely many samples do not identify a global power law."
+    }
+  ]
+}

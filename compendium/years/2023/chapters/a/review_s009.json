@@ -1,0 +1,59 @@
+{
+  "reviewer": "arithmetic_and_waves",
+  "id": "S009",
+  "status": "approved without mathematical changes",
+  "issues": [],
+  "approved_scopes": [
+    "The incidence map on a tree is injective on edge flows, has image 1-perp, and the stated head-side cut sum has the correct sign.",
+    "On a tree, edge differences modulo 2pi uniquely determine a phase-torus class modulo common phase. Hence strict feasibility gives exactly 2^(n−1) locked classes; saturated edges reduce the count by one binary choice each.",
+    "B^T restricted to 1-perp is an isomorphism, so Sylvester congruence with diag(Kcos(delta)) gives the precise Hessian inertia and q unstable directions for q negative cosines. The sign reversal from Hessian to dynamics is correct.",
+    "The mean-frequency rotating frame and the local rather than global potential argument are appropriately scoped. The local convex-ball proof yields genuine nonlinear local exponential stability.",
+    "The edge-flow derivative, mean-zero phase sensitivity norm and cut Rayleigh upper bound are correct; the rational q-family and rate-times-sensitivity interval follow with the stated constants.",
+    "Full edge observation loses only common phase locally; uniform natural-frequency shifts are invisible to relative measurements. The center-only star pair motion exactly cancels at the sensor and supplies a nonlinear blindness example, not only a linearized one."
+  ],
+  "independent_exact_checks": {
+    "phasor_head_tail_ratios": [
+      [
+        "4/5",
+        "3/5"
+      ],
+      [
+        "12/13",
+        "5/13"
+      ],
+      [
+        "1",
+        "0"
+      ]
+    ],
+    "cut_flows": [
+      "1/2",
+      "1/3",
+      "0"
+    ],
+    "positive_weights": [
+      "2/3",
+      "4/5",
+      "1/2"
+    ],
+    "mean_zero_incidence_map_determinant": -4,
+    "weighted_tree_cofactor": "4/15"
+  },
+  "S008_review": {
+    "status": "core theorem and finite certificate approved; one extension wording fix requested",
+    "verifier": "12 checks pass; all 64 coordinate panels replayed, 34 feasible, unique optimum A,E cost13 and greedy cost16.",
+    "issues": [
+      {
+        "severity": "medium",
+        "id": "S008",
+        "description": "The extension says projection matrices become rational when B and Sigma are rational. The noncentrality quadratic-form matrix B^T(BSigmaB^T)^(-1)B is rational, but the Euclidean orthogonal projection in whitened coordinates contains Sigma^(1/2) and need not be rational. Example Sigma=diag(1,2), B=(1,1) gives P=(1/3)[[1,sqrt2],[sqrt2,2]]. The inverse formula also needs full row rank of B or a pseudoinverse convention.",
+        "fix": "Specify full-row-rank B; say the noncentrality quadratic-form matrix is rational for rational B,Sigma. Distinguish it from the whitened orthogonal projector, whose entries can be algebraic. State a pseudoinverse if redundant measurement rows are allowed."
+      }
+    ],
+    "approved_scopes": [
+      "Projection-ball robust margin is exact, and threshold one at radius one reduces to energy at least four.",
+      "Analytic uniqueness certificate and the specific greedy trace are correct. The six nonredundancy witnesses and all-channel inclusion-minimal participation are meaningful and verified.",
+      "The withheld-direction argument establishes exact equality of selected Gaussian laws at that alternative. It is properly distinguished from calibration or power across different panel dimensions."
+    ]
+  }
+}

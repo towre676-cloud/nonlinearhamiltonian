@@ -1,0 +1,1234 @@
+[
+  {
+    "id": "Y24-11-001",
+    "title": "Compound growth, resource totals, and consistent denominators",
+    "status": "Developed classical result with a checked example; historical claims corrected where needed",
+    "summary": "The recovered calculations mix five-year growth, land allocation, production cycles, and weekly percentages. Each becomes reliable after identifying its denominator and checking conservation of totals. A numerical projection is a conditional calculation, not evidence for its assumptions.",
+    "definitions": [
+      "A category weight w_i is nonnegative and the weights sum to one.",
+      "A rate has a numerator, denominator, and specified time interval."
+    ],
+    "result": {
+      "name": "Weighted growth bounds and normalization",
+      "statement": "For principal P≥0, integer n≥0, rates r_i≥−1 and weights w_i, A_n=PΣw_i(1+r_i)^n lies between P(1+r_min)^n and P(1+r_max)^n. A weekly total reported as a sum of daily RDI percentages must be divided by 700%, not 100%, to obtain the fraction of the seven-day target.",
+      "proof": "Each growth factor lies between the extreme factors; multiplying by nonnegative weights and summing proves the bound. Conversely every value in the interval is achievable by mixing the two extreme categories. Thus the three rates alone do not determine a portfolio result: at least two independent weights are needed. Normalization follows by adding seven daily denominators of 100%. Changing from a 400-day cycle to a 365-day year multiplies an annualized amount by 365/400. These are consequences of units and convex combinations and do not depend on an economic or nutritional model."
+    },
+    "example": {
+      "setup": "Take P=100000 and recovered rates 8%, 12%, and 18%; also audit the recovered seven land allocations and a 700000-unit annual total shared by 1000 recipients.",
+      "calculation": "The five-year extreme values are 100000·1.08^5=146932.80768 and 100000·1.18^5=228775.77568. The historical 177543 is feasible but its weights are missing. The listed allocations sum to 74500, exceeding the claimed 70000 by 4500. A weekly total of 245% is 245/700=35% of its weekly target. Finally 700000/1000=700 units per recipient per year, and 700·1300=910000 energy units per recipient, while the aggregate is 910000000.",
+      "conclusion": "If 99.2 kW is already rated output, a 40% capacity factor gives99.2·8760·0.4=347596.8kWh=347.5968MWh per year; separately multiplying capture and conversion again would require a different definition of rated power. Every discrepancy can be located in a missing weight, a sum, or a denominator."
+    },
+    "limits": "Rates, prices, yields, and compositional coefficients were historical assumptions and are not validated here. Gross revenue is not profit. The botanical and operational contexts are omitted.",
+    "extension": "Attach units and intervals to every spreadsheet column, then express resource allocation as Ax≤b with x≥0 and verify feasibility before optimizing.",
+    "references": [
+      {
+        "label": "NIST Guide to the SI",
+        "url": "https://www.nist.gov/pml/special-publication-811"
+      }
+    ],
+    "original": {
+      "date": "2024-11-01",
+      "month": "2024-11",
+      "evidence": "A",
+      "field": "Applied arithmetic",
+      "concept": "Compound growth, resource totals, and consistent denominators",
+      "origin": "Recovered dated conversation evidence",
+      "question": "How can growth and resource calculations be checked without inventing missing weights or mixing time periods?",
+      "math": "For principal P≥0, integer n≥0, rates r_i≥−1 and weights w_i, A_n=PΣw_i(1+r_i)^n lies between P(1+r_min)^n and P(1+r_max)^n. A weekly total reported as a sum of daily RDI percentages must be divided by 700%, not 100%, to obtain the fraction of the seven-day target.",
+      "finish": "Worked result, explicit example, and stated limits",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://www.nist.gov/pml/special-publication-811"
+      ],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c7][c13] A@2024-11-01T10:44:53Z, -719d: Mathematical content includes compound-growth formula \\(A=P(1+\\mathrm{CAGR})^n\\), five-year category projections totaling \\$177,543; FB-SURD assessment uses harmonic analysis/Littlewood–Paley decomposition, Lyapunov stability, modular divisibility, asymptotic scaling, probabilistic filtering, coherence metrics, and BS-rank 0.5–1. Note: [c13] is dated 2024-11-02.",
+      "retrieval_receipt": "root_receipts.json record 0",
+      "original_question": null,
+      "attribution_note": "The dated source identifies a topic or paraphrases a historical exchange; the revised question and worked development here are newly authored. No verbatim original user question is claimed."
+    }
+  },
+  {
+    "id": "Y24-11-002",
+    "title": "Frequency filtering with an actual stability certificate",
+    "status": "Developed classical result with a checked example; historical claims corrected where needed",
+    "summary": "The historical assessment named Littlewood–Paley damping, Lyapunov functions, divisibility, and probabilistic filtering but did not define a single operator or the claimed rank scale. A finite Fourier model isolates a rigorous statement that can actually be checked.",
+    "definitions": [
+      "On C^N use the unitary discrete Fourier transform F.",
+      "Let P_j be mutually orthogonal Fourier-band projections with ΣP_j=I, and let a_j≥0 be damping rates."
+    ],
+    "result": {
+      "name": "Bandwise contraction",
+      "statement": "For A=Σa_jP_j, the evolution u(t)=exp(−tA)u(0) satisfies ||u(t)||²=Σexp(−2a_jt)||P_ju(0)||² and d||u||²/dt=−2Σa_j||P_ju||²≤0.",
+      "proof": "Orthogonality gives P_iP_j=δ_ijP_j, so every power of A acts separately on each band. Summing the exponential series yields exp(−tA)=Σexp(−a_jt)P_j. Parseval gives the norm identity. Differentiation gives the Lyapunov inequality. If every active rate is at least a>0, the norm decays by exp(−at). If a band has zero rate, its component is preserved, so asymptotic convergence to zero cannot be concluded. For a forward Euler update I−hA, the multiplier in band j is 1−ha_j. Contractivity is equivalent to |1−ha_j|≤1, hence 0≤ha_j≤2 for every band; continuous stability alone does not justify an arbitrary step size."
+    },
+    "example": {
+      "setup": "Choose N=4, retain the constant Fourier mode, and damp the other three modes at rate 2. Let u(0)=(1,0,0,0).",
+      "calculation": "The constant projection is (1,1,1,1)/4 and its squared norm is 1/4. The orthogonal remainder has squared norm 3/4. Therefore ||u(t)||²=1/4+(3/4)e^(−4t). A forward Euler step is contractive for h≤1, but h=3/2 gives a multiplier −2 on the damped subspace and quadruples that component’s energy.",
+      "conclusion": "The filter is stable in a stated norm and converges to the undamped subspace, with an explicit discrete-time restriction."
+    },
+    "limits": "No definition of the historical “BS-rank 0.5–1” was recovered. Frequency damping does not prove modular divisibility, nonlinear blow-up prevention, or a probabilistic reliability percentage.",
+    "extension": "For nonlinear u′=−Au+N(u), derive an estimate Re⟨u,N(u)⟩≤c||u||² and compare c with the smallest damping rate.",
+    "references": [
+      {
+        "label": "MIT Fourier analysis course notes",
+        "url": "https://math.mit.edu/~gs/cse/websections/cse4.2.pdf"
+      }
+    ],
+    "original": {
+      "date": "2024-11-02",
+      "month": "2024-11",
+      "evidence": "A",
+      "field": "Harmonic analysis and dynamics",
+      "concept": "Frequency filtering with an actual stability certificate",
+      "origin": "Recovered dated conversation evidence",
+      "question": "Which parts of the proposed harmonic filter admit a precise, provable stability statement?",
+      "math": "For A=Σa_jP_j, the evolution u(t)=exp(−tA)u(0) satisfies ||u(t)||²=Σexp(−2a_jt)||P_ju(0)||² and d||u||²/dt=−2Σa_j||P_ju||²≤0.",
+      "finish": "Worked result, explicit example, and stated limits",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://math.mit.edu/~gs/cse/websections/cse4.2.pdf"
+      ],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c0] A@2024-11-02T20:38:24Z, -1y353d: FB-SURD Operator assessment: harmonic analysis/Littlewood–Paley frequency damping; Lyapunov stability; modular divisibility; asymptotic blowup control; probabilistic filtering; coherence metrics; final “BS-Rank” 0.5–1.",
+      "retrieval_receipt": "root_followups.json record 0",
+      "original_question": null,
+      "attribution_note": "The dated source identifies a topic or paraphrases a historical exchange; the revised question and worked development here are newly authored. No verbatim original user question is claimed."
+    }
+  },
+  {
+    "id": "Y24-11-003",
+    "title": "A positive Schrödinger discretization and the limits of zero matching",
+    "status": "Developed classical result with a checked example; historical claims corrected where needed",
+    "summary": "The historical list contained a negative eigenvalue for −d²/dx²+x² on a very coarse grid. The operator and boundary convention must be reconstructed before interpreting a spectrum. Positivity already supplies a decisive audit independent of numerical diagonalization.",
+    "definitions": [
+      "Use grid x_j=−10+5j, j=0,…,4, and zero ghost values at j=−1,5.",
+      "Let L be the tridiagonal matrix with diagonal 2 and adjacent entries −1; set S=L/25+diag(100,25,0,25,100)."
+    ],
+    "result": {
+      "name": "Discrete quadratic-form positivity",
+      "statement": "For every nonzero v∈C^5, v*Sv=(1/25)Σ_{j=−1}^4|v_{j+1}−v_j|²+Σx_j²|v_j|²>0, where v_{−1}=v_5=0. Thus every eigenvalue is positive.",
+      "proof": "Expand each squared difference. Every interior |v_j|² occurs twice and every adjacent cross-term occurs with coefficient −2, recovering v*Lv. If the sum of difference squares vanishes, every value equals both boundary ghost values, so v=0. The potential term is nonnegative. The spectral theorem now gives strict positivity of all eigenvalues. Gershgorin bounds additionally place the central row in [0,0.16], the two next rows in [25,25.16], and the endpoint rows in [100.04,100.12]. The lowest eigenvalue is at most the central Rayleigh quotient 0.08. Refinement and domain enlargement are separate error limits; a five-point grid of spacing five cannot resolve the continuum oscillator’s low modes accurately."
+    },
+    "example": {
+      "setup": "Audit the historical values −0.08,24.88,24.96,99.88,100.04 against this explicitly stated discretization.",
+      "calculation": "The negative first value violates positivity; 24.88 and 99.88 lie outside the displayed Gershgorin union. For the central coordinate vector e_2, e_2*Se_2=2/25=0.08. These facts are exact rational checks and do not depend on rounding an eigensolver output.",
+      "conclusion": "The old list cannot be the spectrum of the specified positive matrix. Correct numerical spectra still would not establish a relation to zeros of an unrelated analytic function."
+    },
+    "limits": "The historical boundary conditions and source code were not recovered, so this is a corrected reproducible model, not a claim to reconstruct the exact old implementation. An identity Ψ(1/2+iλ)=0 requires an independently defined Ψ and a proof.",
+    "extension": "Use piecewise-linear finite elements with a proved coercive form, then establish eigenvalue convergence before testing any independently motivated arithmetic conjecture.",
+    "references": [
+      {
+        "label": "NIST DLMF harmonic oscillator applications",
+        "url": "https://dlmf.nist.gov/18.39"
+      }
+    ],
+    "original": {
+      "date": "2024-11-03",
+      "month": "2024-11",
+      "evidence": "A",
+      "field": "Numerical spectral theory",
+      "concept": "A positive Schrödinger discretization and the limits of zero matching",
+      "origin": "Recovered dated conversation evidence",
+      "question": "What does the recovered five-point harmonic-oscillator matrix actually certify, and can its eigenvalues establish a zeta-zero correspondence?",
+      "math": "For every nonzero v∈C^5, v*Sv=(1/25)Σ_{j=−1}^4|v_{j+1}−v_j|²+Σx_j²|v_j|²>0, where v_{−1}=v_5=0. Thus every eigenvalue is positive.",
+      "finish": "Worked result, explicit example, and stated limits",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://dlmf.nist.gov/18.39"
+      ],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c11] A@2024-11-03T23:40:34Z, -1y352d: Finite-difference spectral operator \\(S=-d^2/dx^2+V(x)\\), \\(V=x^2\\), 5-point grid \\([-10,10]\\), matrix eigenvalues \\(-0.08,24.88,24.96,99.88,100.04\\); proposed \\(\\Psi(\\tfrac12+i\\lambda_n)=0\\) correspondence, explicitly",
+      "retrieval_receipt": "root_followups.json record 0",
+      "original_question": null,
+      "attribution_note": "The dated source identifies a topic or paraphrases a historical exchange; the revised question and worked development here are newly authored. No verbatim original user question is claimed."
+    }
+  },
+  {
+    "id": "Y24-11-004",
+    "title": "Euler products: convergence, nonvanishing, and sensitivity",
+    "status": "Developed classical result with a checked example; historical claims corrected where needed",
+    "summary": "The recovered experiment evaluated ordinary partial Euler products on the critical line and interpreted small values as evidence for zeros. The product’s justified domain and its exact factor sensitivity resolve the issue before any high-precision computation.",
+    "definitions": [
+      "For Re(s)=σ>1 define Z_P(s)=∏_{p<P}(1−p^(−s))^(−1).",
+      "Use p^(−s)=exp(−s log p) with the real logarithm of the positive prime p."
+    ],
+    "result": {
+      "name": "Absolute convergence and a finite-factor perturbation identity",
+      "statement": "For σ>1 the infinite Euler product converges to ζ(s) and is nonzero. Replacing one factor z=p^(−s) by (1+δ)z changes the finite product by the exact ratio (1−z)/(1−(1+δ)z)=1/[1−δz/(1−z)], whenever the denominator is nonzero.",
+      "proof": "Expand each factor as its absolutely convergent geometric series. Unique factorization identifies the resulting sum with Σn^(−s), and absolute convergence justifies rearrangement. Alternatively Σ_pΣ_k|p^(−ks)|/k is finite because it is bounded by a constant times Σ_{n≥2}n^(−σ); its exponential gives a nonzero product. The perturbation formula follows by cancelling every unchanged factor, then algebraically factoring the denominator. Its derivative at δ=0 is z/(1−z), so the conditioning depends on the complex phase as well as the size of p. These arguments do not extend absolute Euler-product convergence to σ=1/2. Analytic continuation of ζ is a different construction."
+    },
+    "example": {
+      "setup": "At s=2 perturb the p=2 factor and compare with the full product. Then examine any finite product at s=1/2+it.",
+      "calculation": "Here z=1/4 and the ratio is 1/(1−δ/3); the first-order relative change is δ/3. At any point with Re(s)>0 every |p^(−s)|<1, so each finite factor is finite and nonzero and consequently the finite product cannot be a zero of ζ. A numerical value near zero is not a zero certificate.",
+      "conclusion": "The original critical-line experiment had no established convergence argument and cannot prove the Riemann hypothesis or even locate a zero reliably by ordinary Euler products."
+    },
+    "limits": "This does not rule out suitably regularized products, explicit formulas, or Euler–Hadamard hybrid approximations; each needs its own theorem and error bounds.",
+    "extension": "For σ>1, bound the omitted logarithmic tail by Σ_{n≥P}n^(−σ)/(1−2^(−σ)), and compare that rigorous error with the computed value.",
+    "references": [
+      {
+        "label": "NIST DLMF Euler products",
+        "url": "https://dlmf.nist.gov/25.2"
+      }
+    ],
+    "original": {
+      "date": "2024-11-01",
+      "month": "2024-11",
+      "evidence": "A",
+      "field": "Analytic number theory",
+      "concept": "Euler products: convergence, nonvanishing, and sensitivity",
+      "origin": "Recovered dated conversation evidence",
+      "question": "Where does a finite Euler product approximate ζ, and what does perturbing a prime factor measure?",
+      "math": "For σ>1 the infinite Euler product converges to ζ(s) and is nonzero. Replacing one factor z=p^(−s) by (1+δ)z changes the finite product by the exact ratio (1−z)/(1−(1+δ)z)=1/[1−δz/(1−z)], whenever the denominator is nonzero.",
+      "finish": "Worked result, explicit example, and stated limits",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://dlmf.nist.gov/25.2"
+      ],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c12] A@2024-11-01T23:39:00Z, -1y11m: Riemann-zeta numerical artifact: partial Euler product \\(\\zeta_P(s)=\\prod_{p<P}(1-p^{-s})^{-1}\\), evaluated near \\(\\rho=0.5+14.134725i\\), with \\(P=10{,}000\\), 50-digit precision; plots prime-factor magnitudes/phases and perturbs \\(p=3\\) by \\(\\delta=10^{-10}\\). Includes Python using `mpmath`, `sympy`, `matplotlib`; assistant claimed convergence toward zero and lower-prime sensitivity. Original user prompt/title unavailable.",
+      "retrieval_receipt": "root_receipts.json record 0",
+      "original_question": null,
+      "attribution_note": "The dated source identifies a topic or paraphrases a historical exchange; the revised question and worked development here are newly authored. No verbatim original user question is claimed."
+    }
+  },
+  {
+    "id": "Y24-11-005",
+    "title": "A typed unification test: supersymmetry and finite Fourier duality",
+    "status": "Developed classical result with a checked example; historical claims corrected where needed",
+    "summary": "The historical request combined spectral operators, supersymmetry, arithmetic, geometric Langlands, and topology. A meaningful bridge must specify domains, products, and intertwining maps. Two finite constructions show how to do this without claiming a universal theory.",
+    "definitions": [
+      "Let D:C→C² be D(z)=(z,0), with grading Γ=diag(1,−1,−1) on C⊕C².",
+      "On a finite abelian group A, a character χ:A→C× is a homomorphism with |χ(a)|=1."
+    ],
+    "result": {
+      "name": "Exact graded pairing and character diagonalization",
+      "statement": "For Q=[[0,D*],[D,0]], H=Q²=diag(1,1,0), and Str(e^(−tH))=Tr(Γe^(−tH))=−1. Separately, finite Fourier characters diagonalize all translation operators on C^A.",
+      "proof": "Block multiplication gives Q²=diag(D*D,DD*) and ΓQ=−QΓ. The two positive-energy states occur once in each grading and cancel in the supertrace; the remaining odd zero mode contributes −1. This proves a finite index relation directly. For the Fourier assertion, define T_bf(a)=f(a+b). A character obeys T_bχ(a)=χ(b)χ(a), so it is a simultaneous eigenvector for every translation. Character orthogonality follows by translating the sum Σ_aχ(a)overline{ψ(a)} by an element on which χ/ψ is not one. The sum must then equal a nontrivial multiple of itself and vanish. Normalized characters form an orthonormal basis."
+    },
+    "example": {
+      "setup": "Take A=Z/3Z with ω=e^(2πi/3) and characters χ_k(a)=ω^(ka).",
+      "calculation": "The transform F_{ka}=ω^(−ka)/√3 is unitary and F T_1 F*=diag(1,ω,ω²), up to the explicitly chosen transform ordering. In the supersymmetric example the heat supertrace is e^(−t)−e^(−t)−1=−1 for every t. Both identities are exact finite matrix calculations.",
+      "conclusion": "Each relationship has defined spaces, a precise map, and an identity. Naming spectral and automorphic categories without a functor and hypotheses provides no comparable proof."
+    },
+    "limits": "The finite Fourier transform is an illustration of duality, not a proof of geometric Langlands. The recovered de Rham/Betti/tempered category fragment does not specify a curve, group, stack, or equivalence, so no missing categorical theorem is supplied.",
+    "extension": "To formulate an actual geometric problem, first fix a smooth curve X, reductive G, the relevant moduli stacks and sheaf categories, and the exact proposed functor.",
+    "references": [
+      {
+        "label": "MIT representation theory notes",
+        "url": "https://math.mit.edu/~etingof/reprbook.pdf"
+      }
+    ],
+    "original": {
+      "date": "2024-11-04",
+      "month": "2024-11",
+      "evidence": "U",
+      "field": "Operator algebra",
+      "concept": "A typed unification test: supersymmetry and finite Fourier duality",
+      "origin": "Recovered dated conversation evidence",
+      "question": "Which proposed unifications can be demonstrated in a finite model, and which require additional objects and maps?",
+      "math": "For Q=[[0,D*],[D,0]], H=Q²=diag(1,1,0), and Str(e^(−tH))=Tr(Γe^(−tH))=−1. Separately, finite Fourier characters diagonalize all translation operators on C^A.",
+      "finish": "Worked result, explicit example, and stated limits",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://math.mit.edu/~etingof/reprbook.pdf"
+      ],
+      "source_excerpt": "- [USER_CONSTRAINT] [c14] U@2024-11-04T14:59:50Z, +716d: mathematics-only topic: arithmetic order/chaos, zeros and primes; requested professional continuation, Odlyzko/LMFDB tableaus, unified complex operator/function.",
+      "retrieval_receipt": "root_receipts.json record 0",
+      "original_question": null,
+      "attribution_note": "The dated source identifies a topic or paraphrases a historical exchange; the revised question and worked development here are newly authored. No verbatim original user question is claimed."
+    }
+  },
+  {
+    "id": "Y24-11-006",
+    "title": "BSD ranks and the logical burden of a spectral realization",
+    "status": "Developed classical result with a checked example; historical claims corrected where needed",
+    "summary": "The corrected historical formula concerns an elliptic curve over Q, its rational points, and the order of vanishing of its L-function. A proposed eigenvalue multiplicity is a separate structure and must not silently turn the rank conjecture into a theorem.",
+    "definitions": [
+      "For an elliptic curve E/Q, Mordell–Weil gives E(Q)≅Z^r⊕T with T finite.",
+      "If an analytic function f is not identically zero near s=1, ord_1(f) is the least k with f^(k)(1)≠0."
+    ],
+    "result": {
+      "name": "What a local determinant actually encodes",
+      "statement": "For a finite Hermitian matrix A and f(s)=det(A+(s−1)I), ord_1(f)=dim ker A. This is a proved matrix identity; identifying f with a normalized elliptic L-function would require an additional independent theorem.",
+      "proof": "The spectral theorem supplies real eigenvalues λ_1,…,λ_n and f(s)=∏(λ_j+s−1). Exactly the zero eigenvalues contribute factors s−1; each nonzero eigenvalue contributes a factor nonzero at s=1. Therefore the order equals the nullity. Without Hermiticity, the order is algebraic multiplicity and can exceed kernel dimension: a nonzero nilpotent Jordan block already demonstrates the distinction. The BSD rank assertion r=ord_1L(E,s) is a deep arithmetic conjecture in general, with important proved cases; neither the finite determinant identity nor naming an operator proves it. A viable spectral proposal must construct its domain independently, prove self-adjointness or its replacement, and establish an actual determinant or trace formula with convergence and normalization."
+    },
+    "example": {
+      "setup": "Take A=diag(0,0,2) and N=[[0,1],[0,0]].",
+      "calculation": "det(A+(s−1)I)=(s−1)²(s+1), so the order and nullity are both two. For N, det(N+(s−1)I)=(s−1)² but ker N has dimension one. This exactly exposes the missing semisimplicity assumption in a generic “multiplicity equals rank” sentence.",
+      "conclusion": "The historical formula can be retained as a conjectural arithmetic target, while the elementary spectral consequence is stated with sufficient hypotheses."
+    },
+    "limits": "No historical elliptic curve, conductor, L-series, or spectral operator was recovered. The general BSD conjecture is not proved here, and a diagonal operator manufactured from desired ranks has no predictive arithmetic content.",
+    "extension": "Choose a specific curve with documented analytic and algebraic rank, compute its rational-point subgroup and L-series independently, and then test a separately defined spectral construction.",
+    "references": [
+      {
+        "label": "Clay Mathematics Institute: Birch and Swinnerton-Dyer",
+        "url": "https://www.claymath.org/millennium/birch-and-swinnerton-dyer-conjecture/"
+      }
+    ],
+    "original": {
+      "date": "2024-11-04",
+      "month": "2024-11",
+      "evidence": "U",
+      "field": "Arithmetic geometry",
+      "concept": "BSD ranks and the logical burden of a spectral realization",
+      "origin": "Recovered dated conversation evidence",
+      "question": "What would a spectral operator have to prove in order to encode the Mordell–Weil rank rather than merely restate it?",
+      "math": "For a finite Hermitian matrix A and f(s)=det(A+(s−1)I), ord_1(f)=dim ker A. This is a proved matrix identity; identifying f with a normalized elliptic L-function would require an additional independent theorem.",
+      "finish": "Worked result, explicit example, and stated limits",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://www.claymath.org/millennium/birch-and-swinnerton-dyer-conjecture/"
+      ],
+      "source_excerpt": "- [USER_FACT] [c2] U@2024-11-04T15:06:56Z, -716d: requested BSD-rank correction; assistant stated \\(r_E=\\operatorname{ord}_{s=1}L(E,s)\\), proposing spectral multiplicity \\(=\\!r_E\\).",
+      "retrieval_receipt": "root_followups.json record 0",
+      "original_question": null,
+      "attribution_note": "The dated source identifies a topic or paraphrases a historical exchange; the revised question and worked development here are newly authored. No verbatim original user question is claimed."
+    }
+  },
+  {
+    "id": "Y24-11-007",
+    "title": "Finite Gibbs states, the KMS boundary condition, and a Laplace resolvent",
+    "status": "Developed classical result with a checked example; historical claims corrected where needed",
+    "summary": "Thermal analyticity and resolvent transforms are genuine operator identities with different domains. A finite model establishes both and makes clear why they do not automatically produce an arithmetic L-function or a thermal state for an unconfined Coulomb system.",
+    "definitions": [
+      "For a Hermitian matrix H and β>0, let ρ=e^(−βH)/Tr(e^(−βH)) and α_t(B)=e^(itH)Be^(−itH).",
+      "Set ω(B)=Tr(ρB), using units ℏ=1."
+    ],
+    "result": {
+      "name": "Finite-dimensional KMS and Laplace identities",
+      "statement": "F_AB(z)=ω(Aα_z(B)) is entire and satisfies F_AB(t+iβ)=ω(α_t(B)A). For Re(s)>0, ∫₀∞e^(−st)e^(−itH)dt=(sI+iH)^(−1).",
+      "proof": "In an eigenbasis H e_j=E_je_j, F_AB(z) is a finite sum of terms ρ_j A_jk B_kj exp(iz(E_k−E_j)); hence it is entire. Replacing z by t+iβ multiplies the summand by exp(−β(E_k−E_j)), changing ρ_j to ρ_k. Interchanging j,k gives precisely the reversed-order trace. This proves the KMS boundary relation with the stated sign convention. For the Laplace transform, the spectral theorem reduces each matrix component to ∫₀∞exp(−(s+iE_j)t)dt=1/(s+iE_j), valid because Re(s)>0. Reassembling the eigenbasis proves the resolvent identity; no formal exchange with an infinite sum is needed."
+    },
+    "example": {
+      "setup": "Take H=diag(0,Δ), A=|0⟩⟨1| and B=|1⟩⟨0|.",
+      "calculation": "F_AB(t)=ρ_0e^(itΔ). At t+iβ it becomes ρ_0e^(−βΔ)e^(itΔ)=ρ_1e^(itΔ), exactly ω(α_t(B)A). The Laplace transform is diag(1/s,1/(s+iΔ)); its poles encode the two chosen energies, not zeros of an independently specified zeta function.",
+      "conclusion": "The thermal strip boundary and the transform have complete proofs, explicit conventions, and a directly testable two-level example."
+    },
+    "limits": "An infinite-volume hydrogen Hamiltonian does not have a finite Gibbs trace merely because it is self-adjoint; its continuum and accumulating bound states obstruct this naive partition function. Infinite-system KMS states require an algebraic framework.",
+    "extension": "For a confined Schrödinger operator, prove heat-trace finiteness and appropriate trace bounds before replacing the finite sums by infinite spectral expansions.",
+    "references": [
+      {
+        "label": "Haag, Hugenholtz and Winnink, equilibrium states",
+        "url": "https://doi.org/10.1007/BF01646342"
+      }
+    ],
+    "original": {
+      "date": "2024-11-04",
+      "month": "2024-11",
+      "evidence": "U",
+      "field": "Mathematical physics",
+      "concept": "Finite Gibbs states, the KMS boundary condition, and a Laplace resolvent",
+      "origin": "Recovered dated conversation evidence",
+      "question": "Can the thermal and Laplace-transform parts of the historical operator proposal be made exact?",
+      "math": "F_AB(z)=ω(Aα_z(B)) is entire and satisfies F_AB(t+iβ)=ω(α_t(B)A). For Re(s)>0, ∫₀∞e^(−st)e^(−itH)dt=(sI+iH)^(−1).",
+      "finish": "Worked result, explicit example, and stated limits",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://doi.org/10.1007/BF01646342"
+      ],
+      "source_excerpt": "- [USER_FACT] [c2] U@2024-11-04T15:08:52Z, -716d: asked to connect KMS states and “hydrogenicity”; assistant gave KMS strip condition, \\(H_{\\rm hydrogen}=-\\frac{\\hbar^2}{2m}\\nabla^2-\\frac{e^2}{r}\\), \\(H_{\\rm SUSY}=\\{Q,\\bar Q\\}\\), and \\(\\mathcal F(s)=\\int_0^\\infty e^{-st}\\phi(e^{-i\\mathcal Ot})dt\\).",
+      "retrieval_receipt": "root_followups.json record 0",
+      "original_question": null,
+      "attribution_note": "The dated source identifies a topic or paraphrases a historical exchange; the revised question and worked development here are newly authored. No verbatim original user question is claimed."
+    }
+  },
+  {
+    "id": "Y24-11-008",
+    "title": "Wave, photon, charge, and simulation formulas with consistent units",
+    "status": "Developed classical result with a checked example; historical claims corrected where needed",
+    "summary": "The recovered discussion mixed wavelengths, modulation, photon energy, Gibbs energy, Faraday’s law, and numerical models. Correct units expose an erroneous current formula and prevent a frequency from being mistaken for an energy or a reaction rate.",
+    "definitions": [
+      "A wave speed v, frequency f and wavelength λ obey λ=v/f in a nondispersive model.",
+      "The Faraday constant F carries units C/mol; a molar production rate dn/dt carries mol/s."
+    ],
+    "result": {
+      "name": "Charge conservation and dimensional normalization",
+      "statement": "For a reaction transferring z electrons per molecular event, I=zF dn/dt. An ideal reversible potential is V_rev=ΔG/(zF). A Tafel logarithm must be log(I/I₀), with dimensionless argument.",
+      "proof": "One mole of electrons has charge F. Producing dn moles in time dt with z electrons per event transfers charge dQ=zF dn. Differentiating gives current I=dQ/dt. Dividing Gibbs energy per mole by charge per mole gives joules per coulomb, which are volts. A formula such as I=zFA/C with undefined A and C is not charge conservation and cannot be used without definitions and units. For a wave, one period 1/f transports a phase crest by v/f; this gives wavelength but says nothing about material absorption or reaction kinetics. Likewise E=hf is the energy per photon, whereas molar energy is N_Ahf. A numerical scheme approximates a specified equation; discretization convergence does not validate the physical model or constitutive coefficients."
+    },
+    "example": {
+      "setup": "Use v=299792458 m/s, f=26965000 Hz, z=2, F≈96485 C/mol and ΔG=237000 J/mol.",
+      "calculation": "The wavelength is approximately 11.11784 m. At 432 Hz the same vacuum-wave formula gives approximately 693964 m; an acoustic wave requires its own speed. The reversible voltage is 237000/(2·96485)≈1.22817 V. A rate 10^(−6) mol/s would correspond to 0.19297 A by charge conservation. These are algebraic examples, not an apparatus design.",
+      "conclusion": "Frequency, photon energy, electrical potential, and molar rate are distinct quantities connected only by explicitly stated laws."
+    },
+    "limits": "The examples supply no material resonance, efficiency improvement, or device performance. Dispersion, losses, temperature, and kinetics require independent data and governing equations.",
+    "extension": "Separate a model-error term from a discretization-error term: ||u_true−u_h||≤||u_true−u_model||+||u_model−u_h||, then estimate each using appropriate evidence.",
+    "references": [
+      {
+        "label": "BIPM SI Brochure",
+        "url": "https://www.bipm.org/en/publications/si-brochure"
+      }
+    ],
+    "original": {
+      "date": "2024-11-12",
+      "month": "2024-11",
+      "evidence": "U",
+      "field": "Dimensional analysis",
+      "concept": "Wave, photon, charge, and simulation formulas with consistent units",
+      "origin": "Recovered dated conversation evidence",
+      "question": "Which recovered wave and electrochemical formulas are dimensionally valid, and what can a simulation certify?",
+      "math": "For a reaction transferring z electrons per molecular event, I=zF dn/dt. An ideal reversible potential is V_rev=ΔG/(zF). A Tafel logarithm must be log(I/I₀), with dimensionless argument.",
+      "finish": "Worked result, explicit example, and stated limits",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://www.bipm.org/en/publications/si-brochure"
+      ],
+      "source_excerpt": "- [USER_CONSTRAINT] [c2] U@2024-11-12T05:53:32Z, -1y11mo: Mathematical content requested/included: wavelength formula λ=c/f; 26.965 MHz → ≈11.12 m, quarter-wave ≈2.78 m, half-wave ≈5.56 m; 432 Hz → ≈694,444 m; harmonic examples 3rd=1296 Hz, 5th=2160 Hz; pulse-train/modulation discussion.",
+      "retrieval_receipt": "root_receipts.json record 0",
+      "original_question": null,
+      "attribution_note": "The dated source identifies a topic or paraphrases a historical exchange; the revised question and worked development here are newly authored. No verbatim original user question is claimed."
+    }
+  },
+  {
+    "id": "Y24-11-009",
+    "title": "Maxima, constructible images, and the danger of missing compactness",
+    "status": "Developed classical result with a checked example; historical claims corrected where needed",
+    "summary": "The historical claim that differing degrees of a property force a maximum is false without restrictions. Compactness, continuity, and the distinction between closed and constructible images give a precise replacement for the suggested Chevalley-based argument.",
+    "definitions": [
+      "A supremum is a least upper bound, which need not be a value of the function.",
+      "A constructible subset of an algebraic variety is a finite union of locally closed subsets."
+    ],
+    "result": {
+      "name": "Attainment under compactness; an algebraic projection counterexample",
+      "statement": "A continuous real-valued function on a nonempty compact space attains both extrema. However the projection of a closed affine algebraic set need not be closed: the image of xy=1 under (x,y)↦x is A¹ minus {0}.",
+      "proof": "For the analytic assertion, the continuous image of a compact space is compact in R and therefore closed and bounded. Its supremum belongs to that closed image, hence is attained. The hypotheses are essential: f(x)=x on (0,1) has supremum one but never reaches it, and f(x)=x on R is unbounded. For the algebraic assertion, every nonzero x has y=1/x and zero has none, proving the exact image. It is open and constructible but not Zariski closed. Chevalley’s theorem predicts constructibility for finite-type morphisms, not universal closedness. Proper morphisms, including projections with a projective factor, provide stronger closed-image statements."
+    },
+    "example": {
+      "setup": "Compare f(x)=x/(1+x) on [0,∞) with the same f on [0,M], and compare the affine hyperbola projection with a projective parameter space.",
+      "calculation": "On the half-line, f increases toward one, so sup f=1 but there is no maximizing point. On [0,M], the maximum is M/(1+M). The derivative 1/(1+x)² is never zero, so solving ∇f=0 would find neither the boundary maximizer nor the unattained limit. Algebraic rational functions also require their denominator-nonzero domain to be stated.",
+      "conclusion": "A degree comparison alone proves neither boundedness nor attainment. The required hypotheses can be checked explicitly."
+    },
+    "limits": "Complex projective varieties are compact analytically, but a rational function may have poles and fail to extend continuously everywhere. A vanishing first Chern class by itself does not supply an optimization theorem.",
+    "extension": "For polynomial optimization on a compact semialgebraic set, include boundary constraints and compare critical values on all strata.",
+    "references": [
+      {
+        "label": "Stacks Project: Chevalley theorem",
+        "url": "https://stacks.math.columbia.edu/tag/054K"
+      }
+    ],
+    "original": {
+      "date": "2024-11-15",
+      "month": "2024-11",
+      "evidence": "U",
+      "field": "Analysis and algebraic geometry",
+      "concept": "Maxima, constructible images, and the danger of missing compactness",
+      "origin": "Recovered dated conversation evidence",
+      "question": "When do differing property values imply an attained maximum, and what does algebraic projection actually preserve?",
+      "math": "A continuous real-valued function on a nonempty compact space attains both extrema. However the projection of a closed affine algebraic set need not be closed: the image of xy=1 under (x,y)↦x is A¹ minus {0}.",
+      "finish": "Worked result, explicit example, and stated limits",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://stacks.math.columbia.edu/tag/054K"
+      ],
+      "source_excerpt": "- [USER_FACT] [c11] U@2024-11-15T03:39:44Z, -1y11m: 2024-11-15 source title shown: “Debating Degrees of Properties and Maximal Limits”; user supplied claim that differing property degrees imply a maximum, with counter-fragments on dynamic time domains, contextual minima/maxima, stacks, dimensional reduction, and “4d hypersphere in cartesian 3d planes.”",
+      "retrieval_receipt": "root_receipts.json record 0",
+      "original_question": null,
+      "attribution_note": "The dated source identifies a topic or paraphrases a historical exchange; the revised question and worked development here are newly authored. No verbatim original user question is claimed."
+    }
+  },
+  {
+    "id": "Y24-11-010",
+    "title": "Invariant averaging as a legitimate symmetry reduction",
+    "status": "Developed classical result with a checked example; historical claims corrected where needed",
+    "summary": "The historical discussion sought a bridge from finite-group blocks to fluid design. A defensible bridge begins with a group acting on a specified state space and an operator commuting with that action. It yields invariant subspaces, not a numerical identity between character heights and Reynolds numbers.",
+    "definitions": [
+      "Let a finite group G act unitarily through U_g on a finite-dimensional Hilbert space V.",
+      "Define the averaging operator P=|G|^(−1)Σ_g U_g."
+    ],
+    "result": {
+      "name": "Reynolds projection and equivariant block decomposition",
+      "statement": "P is the orthogonal projection onto V^G. If L commutes with every U_g, then LP=PL; more generally L preserves each isotypic component of the representation.",
+      "proof": "For every h, U_hP=P because multiplication permutes G. Thus the image is invariant, and P acts as the identity on invariant vectors. Hence P²=P. Taking adjoints replaces each g by g^(−1), so P*=P and the projection is orthogonal. If LU_g=U_gL for every g, linearity gives LP=PL. Decomposing V into irreducible G-types and using the character central projectors gives preservation of each isotypic piece. Multiplicity spaces may still have nontrivial dynamics; symmetry alone does not diagonalize them. This proof is valid for a finite discretization of a PDE whenever both the discretization and boundary conditions preserve the action."
+    },
+    "example": {
+      "setup": "Let G=C₂ act on R² by swapping coordinates and let L=[[a,b],[b,a]].",
+      "calculation": "P=(1/2)[[1,1],[1,1]] projects onto span(1,1). The complementary antisymmetric line is span(1,−1). L acts with eigenvalues a+b and a−b on these lines. Conversely a general matrix [[a,b],[c,d]] commutes with the swap exactly when a=d and b=c, so this reduction is a checkable assumption, not an automatic consequence of a geometric picture.",
+      "conclusion": "Symmetry yields an exact computational reduction once the representation and equivariance are supplied."
+    },
+    "limits": "Complex representations and modular p-blocks involve different coefficient characteristics. No recovered map identifies Brauer defect groups with fluid observables, and the historical analogy does not prove one.",
+    "extension": "For a symmetric domain and boundary conditions, construct the induced action on a finite element space and check the assembled mass and stiffness matrices commute with every generator.",
+    "references": [
+      {
+        "label": "MIT representation theory notes",
+        "url": "https://math.mit.edu/~etingof/reprbook.pdf"
+      }
+    ],
+    "original": {
+      "date": "2024-11-19",
+      "month": "2024-11",
+      "evidence": "U",
+      "field": "Representation theory",
+      "concept": "Invariant averaging as a legitimate symmetry reduction",
+      "origin": "Recovered dated conversation evidence",
+      "question": "What useful connection between representation theory and differential models follows from an actual symmetry action?",
+      "math": "P is the orthogonal projection onto V^G. If L commutes with every U_g, then LP=PL; more generally L preserves each isotypic component of the representation.",
+      "finish": "Worked result, explicit example, and stated limits",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://math.mit.edu/~etingof/reprbook.pdf"
+      ],
+      "source_excerpt": "- [USER_FACT] [c1] U@2024-11-19T19:17:02Z, -1y11m: Mathematical conversation dated Nov 19, 2024; user requested equation-heavy, paragraph-only exposition connecting block/representation theory with fluid dynamics and airplane/ship design.",
+      "retrieval_receipt": "root_receipts.json record 0",
+      "original_question": null,
+      "attribution_note": "The dated source identifies a topic or paraphrases a historical exchange; the revised question and worked development here are newly authored. No verbatim original user question is claimed."
+    }
+  },
+  {
+    "id": "Y24-11-011",
+    "title": "Higher-dimensional slices, projections, and visible singularities",
+    "status": "Developed classical result with a checked example; historical claims corrected where needed",
+    "summary": "The recovered geometry discussion used higher-dimensional objects to motivate real-world inference. A concrete four-dimensional ball shows exactly what observations preserve and what they cannot determine. A slice fixes a coordinate; a projection forgets it.",
+    "definitions": [
+      "Let B⁴_R={(x,w)∈R³×R: ||x||²+w²≤R²}.",
+      "The slice at w=t intersects a hyperplane; the projection π(x,w)=x maps to R³."
+    ],
+    "result": {
+      "name": "Exact slice and fiber formulas",
+      "statement": "For |t|≤R the slice of B⁴_R is a three-ball of radius √(R²−t²), while its projection is the full three-ball B³_R. For ||x||<R the projection fiber is an interval of length 2√(R²−||x||²).",
+      "proof": "Fixing w=t converts the defining inequality into ||x||²≤R²−t², proving the slice formula and showing the slice is empty for |t|>R. For a projection point x, a suitable w exists exactly when ||x||≤R, because w=0 is then allowed. Solving the inequality for w gives the fiber interval. On the boundary sphere S³_R, a generic interior point of B³_R has two preimages w=±√(R²−||x||²), which merge at ||x||=R. Thus a smooth higher-dimensional manifold can project with a critical boundary or fold; the projected set is not a faithful copy of the original geometry. Inferring hidden dimension from an image requires additional assumptions on fibers and measurement maps."
+    },
+    "example": {
+      "setup": "Take R=2 and slices w=0,√3,2. Compare their volumes and the full projection.",
+      "calculation": "The slice radii are 2,1,0, with three-volumes 32π/3,4π/3,0 respectively. All slices together project to the radius-two three-ball, but no single generic slice equals the original four-ball. Fubini’s theorem recovers the four-volume by integrating (4π/3)(R²−t²)^(3/2) from −R to R, yielding π²R⁴/2.",
+      "conclusion": "Slicing, projecting, and reconstructing are different operations with explicitly different outputs."
+    },
+    "limits": "The toy model proves no biological, material, or computational claim. A projection’s apparent singularity need not be a singularity of its smooth source, while singular sources may also project smoothly.",
+    "extension": "For a linear projection of a polytope, eliminate coordinates by linear programming; for nonlinear varieties, compare critical values with constructible-image descriptions.",
+    "references": [
+      {
+        "label": "MIT multivariable integration notes",
+        "url": "https://ocw.mit.edu/courses/18-02sc-multivariable-calculus-fall-2010/"
+      }
+    ],
+    "original": {
+      "date": "2024-11-16",
+      "month": "2024-11",
+      "evidence": "U",
+      "field": "Geometry",
+      "concept": "Higher-dimensional slices, projections, and visible singularities",
+      "origin": "Recovered dated conversation evidence",
+      "question": "How do cross-sections and projections of a higher-dimensional object differ mathematically?",
+      "math": "For |t|≤R the slice of B⁴_R is a three-ball of radius √(R²−t²), while its projection is the full three-ball B³_R. For ||x||<R the projection fiber is an interval of length 2√(R²−||x||²).",
+      "finish": "Worked result, explicit example, and stated limits",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://ocw.mit.edu/courses/18-02sc-multivariable-calculus-fall-2010/"
+      ],
+      "source_excerpt": "- [USER_CONSTRAINT] [c0] U@2024-11-16T17:20:48Z, -711d: Introduced higher-dimensional polytopes/function fields for computational complexity; requested projective varieties, Grassmannians, quartics, equation-heavy professional synthesis.",
+      "retrieval_receipt": "root_followups.json record 1",
+      "original_question": null,
+      "attribution_note": "The dated source identifies a topic or paraphrases a historical exchange; the revised question and worked development here are newly authored. No verbatim original user question is claimed."
+    }
+  },
+  {
+    "id": "Y24-11-012",
+    "title": "Temperley–Lieb quotients and why the affine relation must be specified",
+    "status": "Developed classical result with a checked example; historical claims corrected where needed",
+    "summary": "The recovered question asked whether ordinary Temperley–Lieb is a quotient of an affine version. The answer depends on the precise affine presentation and the relation that closes or removes the winding generator. The universal quotient construction can be proved before making that choice.",
+    "definitions": [
+      "TL₃(δ) is generated by 1,e₁,e₂ with e_i²=δe_i, e₁e₂e₁=e₁ and e₂e₁e₂=e₂.",
+      "For an algebra A and subset R, ⟨R⟩ denotes the two-sided ideal generated by R."
+    ],
+    "result": {
+      "name": "Universal property of imposing relations",
+      "statement": "A homomorphism φ:A→B satisfying φ(r)=0 for all r∈R factors uniquely through A/⟨R⟩. A proposed affine-to-finite quotient therefore requires explicit generator images that satisfy every affine relation.",
+      "proof": "The kernel of φ is a two-sided ideal containing R, hence contains ⟨R⟩. Define φ̄(a+⟨R⟩)=φ(a); if two representatives differ by the ideal their images agree, so this is well-defined. It is a homomorphism, and uniqueness follows because the quotient map is surjective. In TL₃, every word can be reduced using e_i² and alternating triples to a span of 1,e₁,e₂,e₁e₂,e₂e₁: a word with no repeated adjacent generator must alternate, and any alternating word of length at least three has a reducible triple. Diagram representations show these five elements are independent in the abstract diagram algebra, even when special parameter values make a particular matrix representation nonfaithful."
+    },
+    "example": {
+      "setup": "Use rank-one projections P,Q on R² with unit spanning vectors u,v satisfying ⟨u,v⟩=1/δ, and put e₁=δP,e₂=δQ, for real δ≥1.",
+      "calculation": "e₁²=δe₁ and e₂²=δe₂. Also P Q P=|⟨u,v⟩|²P=P/δ², so e₁e₂e₁=δ³PQP=δP=e₁; the other triple relation is identical. At δ=2 choose u=(1,0),v=(1/2,√3/2), giving a fully explicit representation.",
+      "conclusion": "The finite relations have a concrete representation and the quotient criterion is exact. An unspecified “set the affine generator to one” instruction is insufficient unless all relations survive."
+    },
+    "limits": "Different affine and annular Temperley–Lieb conventions have different generators, central winding elements, and quotients. No unique affine presentation was recovered, so no convention-dependent quotient is asserted.",
+    "extension": "Write the chosen annular diagram relations, define a filling or evaluation map, and identify its kernel rather than guessing one relation.",
+    "references": [
+      {
+        "label": "Jones, index for subfactors",
+        "url": "https://doi.org/10.1007/BF01389127"
+      }
+    ],
+    "original": {
+      "date": "2024-11-15",
+      "month": "2024-11",
+      "evidence": "U",
+      "field": "Algebra",
+      "concept": "Temperley–Lieb quotients and why the affine relation must be specified",
+      "origin": "Recovered dated conversation evidence",
+      "question": "What does it mean rigorously to obtain one diagram algebra as a quotient of another?",
+      "math": "A homomorphism φ:A→B satisfying φ(r)=0 for all r∈R factors uniquely through A/⟨R⟩. A proposed affine-to-finite quotient therefore requires explicit generator images that satisfy every affine relation.",
+      "finish": "Worked result, explicit example, and stated limits",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://doi.org/10.1007/BF01389127"
+      ],
+      "source_excerpt": "- [USER_FACT] [c12] U@2024-11-15T19:20:54Z, -1y11m: Asked about Temperley–Lieb as a quotient of affine TL; finite-ones binary sequences as homoclinic to all-zero; conditions for pushing forward canonical Gaussian cylinder measures to true measures.",
+      "retrieval_receipt": "root_followups.json record 0",
+      "original_question": null,
+      "attribution_note": "The dated source identifies a topic or paraphrases a historical exchange; the revised question and worked development here are newly authored. No verbatim original user question is claimed."
+    }
+  },
+  {
+    "id": "Y24-11-013",
+    "title": "Homoclinic sequences and a precise horseshoe model",
+    "status": "Developed classical result with a checked example; historical claims corrected where needed",
+    "summary": "The recovered symbolic example is correct once the two-sided shift topology is specified. It supplies a complete model calculation; applications to a flow require a separate conjugacy or hyperbolic return-map argument.",
+    "definitions": [
+      "Let Σ={0,1}^Z with d(x,y)=Σ_{k∈Z}2^(−|k|)|x_k−y_k|.",
+      "The left shift is (σx)_k=x_{k+1}; zero is a fixed point."
+    ],
+    "result": {
+      "name": "Finite-support homoclinic characterization",
+      "statement": "A binary sequence is homoclinic to zero, meaning d(σ^n x,0)→0 as n→±∞, if and only if it has only finitely many nonzero coordinates. The full two-shift has topological entropy log 2.",
+      "proof": "If x is supported in [−M,M], then σ^n x is supported in [−M−n,M−n]. As |n| grows this interval leaves every fixed coordinate window. The metric tail outside a large window is arbitrarily small, proving convergence in both directions. Conversely d(σ^n x,0)≥|(σ^n x)_0|=x_n. Since this is zero or one, convergence as n→+∞ forces x_n=0 for every sufficiently large positive n; convergence as n→−∞ forces the same in the negative tail. Only a finite window remains. For entropy, every length-N binary word occurs and two differing words can be distinguished at some one of the first N iterates, yielding 2^N separated orbit patterns. Conversely there are only 2^N such central words up to fixed finite-window boundary factors, giving entropy log 2."
+    },
+    "example": {
+      "setup": "Let x have ones at −2,0,3 and zero elsewhere. Track the support under σ^n.",
+      "calculation": "The support becomes {−2−n,−n,3−n}. For n≥4, all nonzero coordinates are negative and the largest metric weight is at most 2^(−(n−3)); summing three contributions bounds d(σ^n x,0)≤3·2^(−(n−3)). A similar bound applies as n→−∞. The convergence is thus explicitly exponential for this finite pattern.",
+      "conclusion": "The symbolic homoclinic statement is fully proved and gives a precise recurrent-orbit model."
+    },
+    "limits": "A transverse homoclinic intersection for a smooth hyperbolic periodic orbit can lead to a horseshoe, but no concrete historical vector field, return map, or transversality certificate was recovered. Listing application areas is not such a certificate.",
+    "extension": "For an actual map, locate a hyperbolic periodic point and rigorously bound stable/unstable manifold intersections or exhibit two mapped strips with verified cone conditions.",
+    "references": [
+      {
+        "label": "Smale, differentiable dynamical systems",
+        "url": "https://doi.org/10.1090/S0002-9904-1967-11798-1"
+      }
+    ],
+    "original": {
+      "date": "2024-11-15",
+      "month": "2024-11",
+      "evidence": "U",
+      "field": "Dynamical systems",
+      "concept": "Homoclinic sequences and a precise horseshoe model",
+      "origin": "Recovered dated conversation evidence",
+      "question": "Why are finite-support binary sequences homoclinic to zero, and what is still required to infer a physical horseshoe?",
+      "math": "A binary sequence is homoclinic to zero, meaning d(σ^n x,0)→0 as n→±∞, if and only if it has only finitely many nonzero coordinates. The full two-shift has topological entropy log 2.",
+      "finish": "Worked result, explicit example, and stated limits",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://doi.org/10.1090/S0002-9904-1967-11798-1"
+      ],
+      "source_excerpt": "- [USER_FACT] [c12] U@2024-11-15T19:20:54Z, -1y11m: Asked about Temperley–Lieb as a quotient of affine TL; finite-ones binary sequences as homoclinic to all-zero; conditions for pushing forward canonical Gaussian cylinder measures to true measures.",
+      "retrieval_receipt": "root_followups.json record 0",
+      "original_question": null,
+      "attribution_note": "The dated source identifies a topic or paraphrases a historical exchange; the revised question and worked development here are newly authored. No verbatim original user question is claimed."
+    }
+  },
+  {
+    "id": "Y24-11-014",
+    "title": "Cylindrical Gaussian data versus a Radon Gaussian on Hilbert space",
+    "status": "Developed classical result with a checked example; historical claims corrected where needed",
+    "summary": "Consistent finite-dimensional Gaussian distributions need not live in the proposed infinite-dimensional space. On a separable Hilbert space, a positive trace-class covariance gives a direct construction, while identity covariance supplies the decisive counterexample.",
+    "definitions": [
+      "Take H=ℓ² with orthonormal basis e_n and eigenvalues q_n≥0.",
+      "Let Z_n be independent standard real normal random variables."
+    ],
+    "result": {
+      "name": "Trace-class diagonal Gaussian construction",
+      "statement": "If Σq_n<∞, then X=Σ√q_n Z_ne_n converges in H almost surely and in mean square, with characteristic function E exp(i⟨h,X⟩)=exp(−Σq_n h_n²/2). Identity covariance does not define an ℓ²-valued Gaussian.",
+      "proof": "The nonnegative random variable S=Σq_nZ_n² has expectation Σq_n by monotone convergence. Finite expectation implies S<∞ almost surely, proving that the coordinate series is square-summable almost surely. The tail mean square is Σ_{n>N}q_n→0, proving L² convergence. Finite-dimensional normal characteristic functions multiply, and dominated convergence passes to the limit, giving the displayed formula. Since ℓ² is a separable complete metric space, its Borel probability law is Radon. In contrast, for q_n=1, the strong law gives N^(−1)Σ_{n≤N}Z_n²→1 almost surely, so the squared norm diverges. The consistent cylinder marginals still exist as a product measure on R^N, but that measure gives ℓ² probability zero."
+    },
+    "example": {
+      "setup": "Choose q_n=2^(−n), n≥1, and compare with q_n=1.",
+      "calculation": "The trace is Σ2^(−n)=1, so E||X||²=1, and truncating after N coordinates has squared mean error 2^(−N). The identity-covariance truncation instead has expected squared norm N and no tight ℓ² limit. For any fixed radius R, the strong law shows its probability of lying in that radius tends to zero.",
+      "conclusion": "The missing issue is support and tightness, not merely consistency of finite-dimensional marginals."
+    },
+    "limits": "This proves the diagonal Hilbert-space Gaussian case; general Sazonov extension theorems use an appropriate topology on the dual and require their own hypotheses. A pushforward also requires a specified measurable map and target space.",
+    "extension": "For a general positive self-adjoint trace-class covariance, diagonalize it by the compact spectral theorem and repeat the construction; compare the Cameron–Martin range with the sample space.",
+    "references": [
+      {
+        "label": "Sazonov, characteristic functionals",
+        "url": "https://doi.org/10.1137/1103018"
+      }
+    ],
+    "original": {
+      "date": "2024-11-15",
+      "month": "2024-11",
+      "evidence": "U",
+      "field": "Probability in infinite dimensions",
+      "concept": "Cylindrical Gaussian data versus a Radon Gaussian on Hilbert space",
+      "origin": "Recovered dated conversation evidence",
+      "question": "Which covariance condition makes the recovered Gaussian cylinder data an actual Hilbert-space-valued random variable?",
+      "math": "If Σq_n<∞, then X=Σ√q_n Z_ne_n converges in H almost surely and in mean square, with characteristic function E exp(i⟨h,X⟩)=exp(−Σq_n h_n²/2). Identity covariance does not define an ℓ²-valued Gaussian.",
+      "finish": "Worked result, explicit example, and stated limits",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://doi.org/10.1137/1103018"
+      ],
+      "source_excerpt": "- [USER_PREFERENCE] [c15] U@2024-11-15T19:27:57Z, -1y11m: requested equation-heavy continuation to completion across Temperley–Lieb algebras, homoclinic orbits, Gaussian measures/Sazonov, Bratteli diagrams, and Chevalley/algebraic geometry.",
+      "retrieval_receipt": "root_receipts.json record 0",
+      "original_question": null,
+      "attribution_note": "The dated source identifies a topic or paraphrases a historical exchange; the revised question and worked development here are newly authored. No verbatim original user question is claimed."
+    }
+  },
+  {
+    "id": "Y24-11-015",
+    "title": "Bratteli diagrams as exact branching and path-count data",
+    "status": "Developed classical result with a checked example; historical claims corrected where needed",
+    "summary": "The recovered request connected Bratteli diagrams with Gaussian extensions and dynamical constructions. The basic algebraic content is a multiplicity matrix describing how simple matrix blocks embed, together with path counts. It is useful without identifying unrelated constructions.",
+    "definitions": [
+      "Let A_n=⊕_{v∈V_n}M_{d_v}(C).",
+      "An edge multiplicity B_{wv} records how many copies of the v-th defining representation occur in the w-th block at the next level."
+    ],
+    "result": {
+      "name": "Dimension consistency and path counting",
+      "statement": "A unital block inclusion requires d′_w=Σ_vB_{wv}d_v. Iterating gives d^(n)=B_{n−1}⋯B_0d^(0); the matrix product entries count directed paths with their edge multiplicities.",
+      "proof": "A representation of ⊕_vM_{d_v} on the next block’s space decomposes into copies of the standard modules C^{d_v}. If there are B_{wv} copies, dimensions add to Σ_vB_{wv}d_v. A unital embedding fills the entire next block, giving equality. Matrix multiplication counts paths because a path from v to u through w has multiplicity B_next(u,w)B_current(w,v), and summing over w counts every possible intermediate vertex exactly once. The same argument inducts over levels. The diagram therefore records inclusion multiplicities, though additional equivalences and ordered K-theory are needed for broad classification claims."
+    },
+    "example": {
+      "setup": "Use two vertices per level, incidence B=[[1,1],[1,0]], and initial dimension vector (1,1).",
+      "calculation": "The successive vectors are (2,1),(3,2),(5,3). The first inclusion C⊕C→M₂(C)⊕C sends (a,b) to (diag(a,b),a). At the next level the first block combines one copy of dimensions two and one, giving M₃; the second uses the two-dimensional block, giving M₂. The total algebra dimensions as vector spaces are 2,5,13,34, since they are sums of squared block dimensions, not sums of path counts.",
+      "conclusion": "The distinction between module dimension, algebra dimension, and number of paths is explicit and prevents common bookkeeping errors."
+    },
+    "limits": "No historical inductive system or map linking this diagram to a Gaussian measure was specified. A diagram does not by itself create a probability measure; path probabilities require consistent normalized weights.",
+    "extension": "Assign transition probabilities to edges, verify the cylinder consistency equations, and compare the resulting path-space measure with any separately defined random process.",
+    "references": [
+      {
+        "label": "Bratteli, inductive limits of finite dimensional C*-algebras",
+        "url": "https://doi.org/10.1090/S0002-9947-1972-0312282-5"
+      }
+    ],
+    "original": {
+      "date": "2024-11-15",
+      "month": "2024-11",
+      "evidence": "U",
+      "field": "Operator algebras and combinatorics",
+      "concept": "Bratteli diagrams as exact branching and path-count data",
+      "origin": "Recovered dated conversation evidence",
+      "question": "How do branching multiplicities determine dimensions in an inductive system of finite-dimensional algebras?",
+      "math": "A unital block inclusion requires d′_w=Σ_vB_{wv}d_v. Iterating gives d^(n)=B_{n−1}⋯B_0d^(0); the matrix product entries count directed paths with their edge multiplicities.",
+      "finish": "Worked result, explicit example, and stated limits",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://doi.org/10.1090/S0002-9947-1972-0312282-5"
+      ],
+      "source_excerpt": "- [USER_PREFERENCE] [c15] U@2024-11-15T19:27:57Z, -1y11m: requested equation-heavy continuation to completion across Temperley–Lieb algebras, homoclinic orbits, Gaussian measures/Sazonov, Bratteli diagrams, and Chevalley/algebraic geometry.",
+      "retrieval_receipt": "root_receipts.json record 0",
+      "original_question": null,
+      "attribution_note": "The dated source identifies a topic or paraphrases a historical exchange; the revised question and worked development here are newly authored. No verbatim original user question is claimed."
+    }
+  },
+  {
+    "id": "Y24-11-016",
+    "title": "Geometric complexity needs an input model and a certificate",
+    "status": "Developed classical result with a checked example; historical claims corrected where needed",
+    "summary": "The recovered labels P_AG, NP_AG, and SEACC lack an encoded input, cost model, and quantifiers. A precise invariant-subspace problem shows how Grassmannian dimension and polynomial equations enter without mistaking them for computational complexity classes.",
+    "definitions": [
+      "Input consists of rational n×n matrices A₁,…,A_m and an integer k, with rational entries encoded by numerator and denominator bits.",
+      "A k-plane may be represented by a full-column-rank n×k matrix X, modulo right multiplication by GL_k."
+    ],
+    "result": {
+      "name": "Invariant-subspace certificate on a Grassmannian chart",
+      "statement": "The columns of X span a common invariant k-plane exactly when, for every i, there exists a k×k matrix B_i with A_iX=XB_i. On a chart where selected k rows of X form I_k, these are explicit polynomial equations of degree at most two.",
+      "proof": "If the span is invariant, each column of A_iX is a linear combination of the independent columns of X, and the coefficient vectors form B_i. Conversely the equation places every A_i image in the span. On the chosen chart the identity minor already proves rank k, while the remaining k(n−k) entries are free coordinates on the Grassmannian chart. The equations have rational coefficients inherited from the input and can be checked exactly for a rational certificate. However an existing invariant subspace may require algebraic or real coordinates with large description size; therefore this formulation alone does not place the unrestricted problem in classical NP. A degree-times-dimension score ignores coefficient bit length and cannot establish a polynomial-time algorithm."
+    },
+    "example": {
+      "setup": "Take A=[[0,−1],[1,0]], a rational planar rotation, and ask for a one-dimensional invariant subspace.",
+      "calculation": "Over R there is no invariant real line: a real eigenvalue would satisfy λ²+1=0. Over C there are two lines, represented by X=(1,−i)^T and X=(1,i)^T with eigenvalues i and −i. Thus the coefficient field is part of the problem, not an implementation detail. A diagonal matrix diag(1,2) instead has two rational invariant lines.",
+      "conclusion": "The revised question has explicit inputs, equations, rank conditions, and field dependence. It does not rely on an undefined hierarchy."
+    },
+    "limits": "Geometric dimension is not bit complexity. Borel subgroups, profinite groups, and inverse Galois terminology do not resolve this missing computational specification.",
+    "extension": "Fix a rational-certificate variant with bounded coordinate bit length and analyze exact verification time; separately study algebraic certificates through minimal polynomials and isolating data.",
+    "references": [
+      {
+        "label": "Stacks Project: Grassmannians",
+        "url": "https://stacks.math.columbia.edu/tag/089R"
+      }
+    ],
+    "original": {
+      "date": "2024-11-16",
+      "month": "2024-11",
+      "evidence": "U",
+      "field": "Computational algebra",
+      "concept": "Geometric complexity needs an input model and a certificate",
+      "origin": "Recovered dated conversation evidence",
+      "question": "Can the proposed geometric complexity hierarchy be replaced by a well-defined decision problem with a verifiable algebraic certificate?",
+      "math": "The columns of X span a common invariant k-plane exactly when, for every i, there exists a k×k matrix B_i with A_iX=XB_i. On a chart where selected k rows of X form I_k, these are explicit polynomial equations of degree at most two.",
+      "finish": "Worked result, explicit example, and stated limits",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://stacks.math.columbia.edu/tag/089R"
+      ],
+      "source_excerpt": "- [USER_FACT] [c9] U@2024-11-16T18:10:22Z; U@2024-11-16T18:12:06Z, -1y11m: pursued an “Invariant Subspace Complexity Theorem” using projective varieties, Grassmannians, quartic hypersurfaces, Borel/profinite symmetries, representation theory, and GIO; ultimately questioned whether it was “ironically too computationally intensive to be useful.”",
+      "retrieval_receipt": "root_receipts.json record 0",
+      "original_question": null,
+      "attribution_note": "The dated source identifies a topic or paraphrases a historical exchange; the revised question and worked development here are newly authored. No verbatim original user question is claimed."
+    }
+  },
+  {
+    "id": "Y24-11-017",
+    "title": "Brauer height zero: precise theorem and a quaternion audit",
+    "status": "Developed classical result with a checked example; historical claims corrected where needed",
+    "summary": "The recovered source is Malle, Navarro, Schaeffer Fry, and Tiep’s proof of the remaining odd-prime implication of Brauer’s height zero conjecture. The full theorem is distinguished from the elementary character computations that can be supplied here.",
+    "definitions": [
+      "For a p-block B of a finite group G with defect group D, χ(1)_p=|G:D|_p p^{hχ} defines the nonnegative height hχ of χ∈Irr(B).",
+      "For an integer n, n_p is its largest power-of-p divisor."
+    ],
+    "result": {
+      "name": "Brauer height zero theorem, with an independently proved example",
+      "statement": "All ordinary irreducible characters in B have height zero if and only if D is abelian. The cited paper establishes the previously open implication for odd p; its classification-based proof is not reproduced. For the p-group Q₈ at p=2, the unique block has four height-zero characters and one height-one character.",
+      "proof": "For a finite p-group the defect group of its unique p-block is the whole group, so |G:D|_p=1 and hχ is the p-adic valuation of χ(1). In Q₈, the quotient by the central subgroup {±1} is C₂×C₂, giving four distinct linear characters. The five conjugacy classes are {1},{−1},{±i},{±j},{±k}, so there are five irreducible characters. The sum-of-squares identity Σχχ(1)²=|Q₈|=8 leaves 8−4=4 for the last degree squared, making its degree two. Its height is one; the four linear degrees have height zero. Q₈ is nonabelian, so the presence of a positive-height character matches the theorem. For an abelian p-group every irreducible character is linear and all heights are zero."
+    },
+    "example": {
+      "setup": "Compare Q₈ with C₈, both of order eight, in characteristic two.",
+      "calculation": "Q₈ has degree multiset (1,1,1,1,2), with squared sum eight and height multiset (0,0,0,0,1). C₈ has eight degree-one characters and eight zero heights. The common group order does not determine the heights; the character and block structure matters.",
+      "conclusion": "The recovered formula has a precise arithmetic interpretation, and the example checks it without pretending to reproduce the deep theorem."
+    },
+    "limits": "The elementary p-group block fact and the general theorem are cited background. No relationship between character height and a fluid parameter follows from equal-looking symbols or units.",
+    "extension": "For a chosen non-p-group, supply the actual block partition and defect orders before computing heights; ordinary character degrees alone need not determine block membership.",
+    "references": [
+      {
+        "label": "Malle et al., specified arXiv version",
+        "url": "https://arxiv.org/abs/2209.04736v2"
+      },
+      {
+        "label": "Published theorem",
+        "url": "https://annals.math.princeton.edu/2024/200-2/p04"
+      }
+    ],
+    "original": {
+      "date": "2024-11-19",
+      "month": "2024-11",
+      "evidence": "U",
+      "field": "Modular representation theory",
+      "concept": "Brauer height zero: precise theorem and a quaternion audit",
+      "origin": "Recovered dated conversation evidence",
+      "question": "What does the recovered height formula mean, and what elementary examples show the theorem’s actual content?",
+      "math": "All ordinary irreducible characters in B have height zero if and only if D is abelian. The cited paper establishes the previously open implication for odd p; its classification-based proof is not reproduced. For the p-group Q₈ at p=2, the unique block has four height-zero characters and one height-one character.",
+      "finish": "Worked result, explicit example, and stated limits",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://arxiv.org/abs/2209.04736v2",
+        "https://annals.math.princeton.edu/2024/200-2/p04"
+      ],
+      "source_excerpt": "- [USER_FACT] [c5] U@2024-11-19T19:06:20Z, -1y11mo: supplied arXiv:2209.04736v2, “Brauer’s Height Zero Conjecture,” and requested mathematical recovery; core formula \\(\\chi(1)_p=|G:D|_p p^{h_\\chi}\\), conjecture: all heights zero iff \\(D\\) abelian; Theorem A proves odd-\\(p\\) open direction.",
+      "retrieval_receipt": "root_followups.json record 1",
+      "original_question": null,
+      "attribution_note": "The dated source identifies a topic or paraphrases a historical exchange; the revised question and worked development here are newly authored. No verbatim original user question is claimed."
+    }
+  },
+  {
+    "id": "Y24-11-018",
+    "title": "Harper operators: norm bounds, flux symmetries, and touching bands",
+    "status": "Developed classical result with a checked example; historical claims corrected where needed",
+    "summary": "The Harper discussion contains genuine exact symmetries and a useful rational-flux reduction. “Q bands” should mean Q continuous band branches counted with multiplicity; adjacent branches may meet, so it does not imply Q disjoint intervals or Q−1 open gaps.",
+    "definitions": [
+      "On ℓ²(Z), define (H_{α,θ}u)_n=u_{n+1}+u_{n−1}+2cos(2παn+θ)u_n.",
+      "At α=P/Q in lowest terms, the coefficients are Q-periodic and a Bloch fiber satisfies u_{n+Q}=e^(ik)u_n."
+    ],
+    "result": {
+      "name": "Spectral bound and flux symmetry",
+      "statement": "H is bounded self-adjoint with ||H||≤4, so its spectrum lies in [−4,4]. H_{α+1,θ}=H_{α,θ}; H_{−α,θ}=H_{α,−θ}. The union over θ is symmetric under E↦−E.",
+      "proof": "The forward and backward shifts each have norm one and are adjoints; the real diagonal cosine operator has norm at most two. The triangle inequality gives the norm bound and self-adjointness. Periodicity in α follows because 2πn is an integer multiple of 2π. The reflection identity follows from cosine’s evenness. Let (Ju)_n=(−1)^nu_n; conjugating the shifts changes their signs, whereas the diagonal potential is unchanged. Therefore JH_{α,θ}J=−H_{α,θ+π}, proving energy reflection for the phase-union spectrum. For rational flux, Bloch decomposition reduces to a Q-dimensional Hermitian fiber depending continuously on k and θ; its Q ordered eigenvalues are continuous branches, whose ranges may touch."
+    },
+    "example": {
+      "setup": "At α=1/2, write even and odd coordinates and use the two-site Bloch phase.",
+      "calculation": "The fiber is [[2cosθ,1+e^(−ik)],[1+e^(ik),−2cosθ]]. Its eigenvalues are ±√(4cos²θ+|1+e^(ik)|²). At θ=π/2 and k=π both vanish, so the two branches meet. The phase-union range is [−2√2,2√2], consistent with the universal [−4,4] bound.",
+      "conclusion": "The elementary facts are exact, while the rational band count is stated without asserting nonexistent open gaps."
+    },
+    "limits": "For irrational α, fine Cantor-spectrum and spectral-type results are deep and depend on coupling, arithmetic, and phase hypotheses. A positive Lyapunov exponent alone does not mean a finite sample has GUE statistics.",
+    "extension": "Compute rational approximants with error control, distinguish the spectrum at fixed θ from the phase union, and track actual open gaps rather than merely sorting eigenvalues.",
+    "references": [
+      {
+        "label": "Hofstadter, energy levels in a magnetic field",
+        "url": "https://doi.org/10.1103/PhysRevB.14.2239"
+      }
+    ],
+    "original": {
+      "date": "2024-11-20",
+      "month": "2024-11",
+      "evidence": "U",
+      "field": "Spectral theory",
+      "concept": "Harper operators: norm bounds, flux symmetries, and touching bands",
+      "origin": "Recovered dated conversation evidence",
+      "question": "Which of the recovered Harper spectral statements follow directly from the operator, and how should rational bands be counted?",
+      "math": "H is bounded self-adjoint with ||H||≤4, so its spectrum lies in [−4,4]. H_{α+1,θ}=H_{α,θ}; H_{−α,θ}=H_{α,−θ}. The union over θ is symmetric under E↦−E.",
+      "finish": "Worked result, explicit example, and stated limits",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://doi.org/10.1103/PhysRevB.14.2239"
+      ],
+      "source_excerpt": "- [USER_FACT] [c4] U@2024-11-20T18:48:46Z, -706d: supplied Harper equation facts: \\(\\alpha\\)-periodicity/reflection symmetry; \\(\\epsilon\\in[-4,4]\\); rational \\(\\alpha=P/Q\\) gives \\(Q\\) bands; Wannier Diophantine equation \\(n/n_0=S+T\\alpha\\); irrational \\(\\alpha\\) yields infinitely many \\(\\epsilon_\\alpha\\); proposed \\(\\theta=(\\sqrt5",
+      "retrieval_receipt": "root_followups.json record 1",
+      "original_question": null,
+      "attribution_note": "The dated source identifies a topic or paraphrases a historical exchange; the revised question and worked development here are newly authored. No verbatim original user question is claimed."
+    }
+  },
+  {
+    "id": "Y24-11-019",
+    "title": "IDS gap labels and a rational Diophantine calculation",
+    "status": "Developed classical result with a checked example; historical claims corrected where needed",
+    "summary": "The integrated density of states counts states below an energy per lattice site. In a spectral gap it can have arithmetic labels. The label constrains a gap value, not an arbitrary eigenvalue, and its topological interpretation requires a specified two-parameter family.",
+    "definitions": [
+      "For a rational flux P/Q, a gap above r of the Q band branches has normalized IDS r/Q.",
+      "A gap label N=S+Tα has integers S,T; at rational flux it implies r=QS+PT."
+    ],
+    "result": {
+      "name": "Rational label congruence and ambiguity",
+      "statement": "If gcd(P,Q)=1, the equation r=QS+PT has integer solutions and determines T modulo Q. It does not determine a unique integer T without an additional selection rule or a Chern-number calculation.",
+      "proof": "Bézout’s identity supplies integers a,b with aP+bQ=1. Multiplying by r gives T=ar,S=br as one solution. If (S,T) and (S′,T′) are solutions, Q(S−S′)=−P(T−T′). Coprimality forces T−T′ to be a multiple of Q and S−S′ the opposite multiple of P. Conversely every such pair solves the equation. Thus the label is a congruence class. For an actual isolated Bloch spectral projection over a two-torus, its first Chern number can select the Hall integer, but one must prove the projection is smooth and the gap stays open. An arithmetic equation alone neither proves existence of the gap nor chooses its orientation convention."
+    },
+    "example": {
+      "setup": "Take α=2/5 and a putative gap above r=1 band.",
+      "calculation": "1=5S+2T has solution S=1,T=−2, and all solutions are S=1−2k,T=−2+5k. A conventional representative |T|≤5/2 gives T=−2. For r=2, T=1,S=0 is a representative. If those gaps close, the equations remain soluble but no isolated spectral projection exists there; the labels do not create missing gaps.",
+      "conclusion": "The old Wannier formula becomes an exact solvable arithmetic condition, with its spectral and topological assumptions separated."
+    },
+    "limits": "The irrational gap-label group Z+αZ is a deep operator-algebraic result; dense possible labels do not imply every label is realized by an open gap at every coupling. No irrational “infinitely many energy solutions” claim follows merely by algebra.",
+    "extension": "For a fixed open rational gap, evaluate the Berry-curvature integral of the occupied Bloch bundle and verify it matches the chosen Diophantine integer under the same orientation conventions.",
+    "references": [
+      {
+        "label": "Thouless, Kohmoto, Nightingale and den Nijs",
+        "url": "https://doi.org/10.1103/PhysRevLett.49.405"
+      },
+      {
+        "label": "Hofstadter original model",
+        "url": "https://doi.org/10.1103/PhysRevB.14.2239"
+      }
+    ],
+    "original": {
+      "date": "2024-11-20",
+      "month": "2024-11",
+      "evidence": "U",
+      "field": "Spectral and topological arithmetic",
+      "concept": "IDS gap labels and a rational Diophantine calculation",
+      "origin": "Recovered dated conversation evidence",
+      "question": "What does the recovered relation N(E)=S+Tα constrain, and what does it leave undecided?",
+      "math": "If gcd(P,Q)=1, the equation r=QS+PT has integer solutions and determines T modulo Q. It does not determine a unique integer T without an additional selection rule or a Chern-number calculation.",
+      "finish": "Worked result, explicit example, and stated limits",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://doi.org/10.1103/PhysRevLett.49.405",
+        "https://doi.org/10.1103/PhysRevB.14.2239"
+      ],
+      "source_excerpt": "- [USER_FACT] [c4] U@2024-11-20T18:48:46Z, -706d: supplied Harper equation facts: \\(\\alpha\\)-periodicity/reflection symmetry; \\(\\epsilon\\in[-4,4]\\); rational \\(\\alpha=P/Q\\) gives \\(Q\\) bands; Wannier Diophantine equation \\(n/n_0=S+T\\alpha\\); irrational \\(\\alpha\\) yields infinitely many \\(\\epsilon_\\alpha\\); proposed \\(\\theta=(\\sqrt5",
+      "retrieval_receipt": "root_followups.json record 1",
+      "original_question": null,
+      "attribution_note": "The dated source identifies a topic or paraphrases a historical exchange; the revised question and worked development here are newly authored. No verbatim original user question is claimed."
+    }
+  },
+  {
+    "id": "Y24-11-020",
+    "title": "Flow scaling and a dissipative energy identity",
+    "status": "Developed classical result with a checked example; historical claims corrected where needed",
+    "summary": "A Reynolds number summarizes competing terms after nondimensionalization, while an energy identity gives a proved inequality under boundary and regularity assumptions. These statements are mathematical; neither imports finite-group character heights into a fluid model.",
+    "definitions": [
+      "For incompressible flow on a periodic box, ∂_tu+(u·∇)u=−∇p+νΔu+f and ∇·u=0.",
+      "With velocity U and length L, Re=UL/ν; nondimensional time is L/U."
+    ],
+    "result": {
+      "name": "Energy balance and nondimensional viscosity",
+      "statement": "A smooth periodic solution satisfies (1/2)d||u||²₂/dt+ν||∇u||²₂=⟨f,u⟩. Scaling x=Lx′,t=(L/U)t′,u=Uu′ makes the Laplacian coefficient 1/Re.",
+      "proof": "Take the spatial inner product with u. The nonlinear term integrates to (1/2)∫u·∇|u|²=0 by periodicity and incompressibility. The pressure term is −∫∇p·u=∫p∇·u=0. Integration by parts gives ∫u·Δu=−||∇u||². This proves the identity. Substituting the scales shows the inertial terms have factor U²/L and diffusion has νU/L², whose ratio is ν/(UL). If f=0, kinetic energy decreases; with mean-zero u, a Poincaré bound gives exponential energy decay. These formal integrations require enough smoothness; for weak solutions an energy inequality is the appropriate statement, and general three-dimensional smooth global existence is not supplied."
+    },
+    "example": {
+      "setup": "On a 2π-periodic box take u(x,y,z,t)=(a(t)sin y,0,0), f=0.",
+      "calculation": "The convection term vanishes because u·∇=a sin y ∂_x and u is independent of x. The Laplacian is −u, so a′=−νa and a(t)=a(0)e^(−νt). Both sides of the energy identity agree exactly, and energy decays as e^(−2νt).",
+      "conclusion": "A concrete solution verifies the scaling and energy law without any unproved dynamical or engineering inference."
+    },
+    "limits": "The historical supercritical microchannel parameters lie outside this simple incompressible constant-viscosity model. No design dimensions, performance estimates, or material assumptions are carried forward.",
+    "extension": "For a chosen PDE model, specify boundaries and constitutive laws, then establish energy estimates uniformly in the discretization before interpreting simulated patterns.",
+    "references": [
+      {
+        "label": "Clay Mathematics Institute: Navier–Stokes problem",
+        "url": "https://www.claymath.org/millennium/navier-stokes-equation/"
+      }
+    ],
+    "original": {
+      "date": "2024-11-19",
+      "month": "2024-11",
+      "evidence": "A",
+      "field": "Partial differential equations",
+      "concept": "Flow scaling and a dissipative energy identity",
+      "origin": "Recovered dated conversation evidence",
+      "question": "What can dimensional reduction and the energy method establish for a fluid equation independently of the speculative representation-theory analogy?",
+      "math": "A smooth periodic solution satisfies (1/2)d||u||²₂/dt+ν||∇u||²₂=⟨f,u⟩. Scaling x=Lx′,t=(L/U)t′,u=Uu′ makes the Laplacian coefficient 1/Re.",
+      "finish": "Worked result, explicit example, and stated limits",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://www.claymath.org/millennium/navier-stokes-equation/"
+      ],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c1] A@2024-11-19T19:21:52Z, -1y11m: covered χ(1)p=(|G|p/|D|)p^hχ; Re=ρVL/μ; Navier–Stokes pressure gradient; Deligne–Lusztig sum; Γ=∮V·dl; ω=∇×V; F*(G)=F(G)E(G)=(Q×Z)*E(G); Cp=(p−p∞)/(½ρV∞²); wall shear τw=μ(∂u/∂y)y=0; lift L=½ρV²SC_L; correspondences to vortices, boundary layers, Coandă attachment, turbulent",
+      "retrieval_receipt": "root_receipts.json record 0",
+      "original_question": null,
+      "attribution_note": "The dated source identifies a topic or paraphrases a historical exchange; the revised question and worked development here are newly authored. No verbatim original user question is claimed."
+    }
+  },
+  {
+    "id": "Y24-11-021",
+    "title": "Frenet frames, Darboux rotation, and covariant differentiation",
+    "status": "Developed classical result with a checked example; historical claims corrected where needed",
+    "summary": "The historical Beta-frame equations reproduce the Frenet–Serret system under an arc-length and positive-curvature hypothesis. They describe local rotation of an orthonormal moving frame; their coefficients are not automatically new physical tensor components.",
+    "definitions": [
+      "Let γ(s) be a C³ unit-speed curve in oriented Euclidean three-space with curvature κ=||γ″||>0.",
+      "Set T=γ′, N=T′/κ, B=T×N, and τ=−B′·N."
+    ],
+    "result": {
+      "name": "Frenet–Serret equations and the Darboux vector",
+      "statement": "T′=κN, N′=−κT+τB, B′=−τN. The vector Ω=τT+κB satisfies E′=Ω×E for E=T,N,B.",
+      "proof": "Because the frame is orthonormal, differentiating its pairwise dot products makes its derivative matrix skew-symmetric. The definition gives T′=κN and therefore N′·T=−κ. Since T′·B=0 and B′·T=−B·T′=0, B′ lies along N; its coefficient is −τ. Orthogonality then gives N′·B=τ and no N-component, proving all three equations. Cross products T×N=B, B×T=N and T×B=−N verify the Darboux expression. On an oriented Riemannian three-manifold, replace ordinary derivatives by ∇_T and use the metric-compatible cross product; covariant frame equations still describe motion along the curve. Ambient curvature enters comparisons around loops and commutators of covariant derivatives, not an arbitrary extra term in each Euclidean formula."
+    },
+    "example": {
+      "setup": "Take γ(s)=(a cos(s/c),a sin(s/c),bs/c) with c=√(a²+b²) and a>0.",
+      "calculation": "Its speed is one, κ=a/(a²+b²), and τ=b/(a²+b²). For a=b=1 these are both 1/2. A planar circle has b=0, hence τ=0 and a fixed binormal; a straight line has κ=0 and the Frenet normal is undefined, requiring a different frame such as a parallel-transport frame.",
+      "conclusion": "The equations have exact hypotheses, a geometric derivation, and a worked nonplanar example."
+    },
+    "limits": "At zero curvature, the Frenet construction fails even for a smooth curve. A frame equation by itself supplies no field equation, stress tensor, or unification with quantum groups.",
+    "extension": "Use a Bishop frame to pass smoothly through curvature zeros, and compute holonomy separately when the ambient connection has nonzero curvature.",
+    "references": [
+      {
+        "label": "MIT differential geometry course",
+        "url": "https://ocw.mit.edu/courses/18-950-differential-geometry-fall-2008/"
+      }
+    ],
+    "original": {
+      "date": "2024-11-30",
+      "month": "2024-11",
+      "evidence": "U",
+      "field": "Differential geometry",
+      "concept": "Frenet frames, Darboux rotation, and covariant differentiation",
+      "origin": "Recovered dated conversation evidence",
+      "question": "Which frame equations are intrinsic geometric identities, and how do they change on a curved manifold?",
+      "math": "T′=κN, N′=−κT+τB, B′=−τN. The vector Ω=τT+κB satisfies E′=Ω×E for E=T,N,B.",
+      "finish": "Worked result, explicit example, and stated limits",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://ocw.mit.edu/courses/18-950-differential-geometry-fall-2008/"
+      ],
+      "source_excerpt": "- [USER_FACT] [c6] U@2024-11-30T01:42:58Z, -1y325d: User-authored mathematical framework: wave-tensor configurations; Beta/Frenet frame equations \\(\\dot T=\\kappa_\\beta N_\\beta,\\dot N_\\beta=-\\kappa_\\beta T+\\tau_\\beta B_\\beta,\\dot B_\\beta=-\\tau_\\beta N_\\beta\\); Pontryagin classes; quantum groups; superselection condition \\(\\langle\\psi_1|A|\\psi_2\\rangle=0\\); actions containing \\(R\\) and \\(\\epsilon RR\\); phase relation \\(\\psi(x+L)=e^{i\\theta}\\psi(x)\\).",
+      "retrieval_receipt": "root_receipts.json record 0",
+      "original_question": null,
+      "attribution_note": "The dated source identifies a topic or paraphrases a historical exchange; the revised question and worked development here are newly authored. No verbatim original user question is claimed."
+    }
+  },
+  {
+    "id": "Y24-11-022",
+    "title": "Characteristic forms and why a topological density is not a bulk field equation",
+    "status": "Developed classical result with a checked example; historical claims corrected where needed",
+    "summary": "The recovered catalogue mentioned Pontryagin terms alongside curvature actions. Chern–Weil theory gives precise invariant integrals; their local variations are boundary terms under the appropriate hypotheses. This is a different role from an Einstein–Hilbert kinetic term.",
+    "definitions": [
+      "For a connection A on a complex bundle, F=dA+A∧A and D_AF=0 is the Bianchi identity.",
+      "For a Hermitian line bundle write its unitary curvature as iF_real with F_real a real two-form; c₁ is represented by F_real/(2π)."
+    ],
+    "result": {
+      "name": "An explicit characteristic number and its variation",
+      "statement": "On the unit four-torus, a line bundle with curvature 2π(n dx₁∧dx₂+m dx₃∧dx₄) has ∫c₁²=2nm. In general δ tr(F∧F)=2d tr(δA∧F).",
+      "proof": "For the line-bundle example, squaring the two-form gives twice the cross term because two-forms commute under wedge product and each individual square vanishes. Integration over the unit oriented four-torus gives 2nm. Integer periods of the normalized curvature encode the line bundle’s Chern class. For the variation, δF=D_AδA. Cyclicity of trace and the even degree of F give δtr(F∧F)=2tr(D_AδA∧F). Apply the covariant Leibniz rule and use D_AF=0; taking a trace removes commutators, leaving an ordinary exterior derivative. On a closed manifold its integral is zero by Stokes, so a constant multiple of this topological term contributes no local bulk Euler–Lagrange equation under smooth variations within the same bundle."
+    },
+    "example": {
+      "setup": "Choose n=2,m=3. Compare a closed torus with a four-manifold with boundary.",
+      "calculation": "The integral is 2·2·3=12. For the underlying oriented real plane bundle, p₁=c₁² in this convention, so its first Pontryagin number is also 12. On a manifold with boundary, the action variation is the boundary integral 2∫∂M tr(δA∧F), which need not vanish without boundary conditions or a compensating term.",
+      "conclusion": "A topological curvature integral is invariant under allowed interior deformations, while boundary data can carry genuine variation."
+    },
+    "limits": "Normalization, real versus complex curvature conventions, and trace representation affect constants. No claim is made that a Pontryagin density alone supplies the Einstein equations or a quantum-gravity measure.",
+    "extension": "Compare the variation of ∫tr(F∧*F), whose Hodge star introduces a metric and whose equation is D_A*F=0, with the topological density.",
+    "references": [
+      {
+        "label": "Chern, characteristic classes of Hermitian manifolds",
+        "url": "https://doi.org/10.2307/1969037"
+      }
+    ],
+    "original": {
+      "date": "2024-11-30",
+      "month": "2024-11",
+      "evidence": "U",
+      "field": "Characteristic classes",
+      "concept": "Characteristic forms and why a topological density is not a bulk field equation",
+      "origin": "Recovered dated conversation evidence",
+      "question": "How do curvature forms yield topological numbers, and why must they not be confused with a variational gravitational action?",
+      "math": "On the unit four-torus, a line bundle with curvature 2π(n dx₁∧dx₂+m dx₃∧dx₄) has ∫c₁²=2nm. In general δ tr(F∧F)=2d tr(δA∧F).",
+      "finish": "Worked result, explicit example, and stated limits",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://doi.org/10.2307/1969037"
+      ],
+      "source_excerpt": "- [USER_FACT] [c6] U@2024-11-30T01:42:58Z, -1y325d: User-authored mathematical framework: wave-tensor configurations; Beta/Frenet frame equations \\(\\dot T=\\kappa_\\beta N_\\beta,\\dot N_\\beta=-\\kappa_\\beta T+\\tau_\\beta B_\\beta,\\dot B_\\beta=-\\tau_\\beta N_\\beta\\); Pontryagin classes; quantum groups; superselection condition \\(\\langle\\psi_1|A|\\psi_2\\rangle=0\\); actions containing \\(R\\) and \\(\\epsilon RR\\); phase relation \\(\\psi(x+L)=e^{i\\theta}\\psi(x)\\).",
+      "retrieval_receipt": "root_receipts.json record 0",
+      "original_question": null,
+      "attribution_note": "The dated source identifies a topic or paraphrases a historical exchange; the revised question and worked development here are newly authored. No verbatim original user question is claimed."
+    }
+  },
+  {
+    "id": "Y24-11-023",
+    "title": "Twisted boundary conditions and a self-adjoint circle spectrum",
+    "status": "Developed classical result with a checked example; historical claims corrected where needed",
+    "summary": "The historical equation ψ(x+L)=e^(iθ)ψ(x) is meaningful only with an operator domain. For a second-order operator the derivative boundary condition is equally necessary. The resulting spectrum is elementary and supplies a precise holonomy example.",
+    "definitions": [
+      "On L²([0,L]), let A_θ=−d²/dx² with domain {f∈H²: f(L)=e^(iθ)f(0), f′(L)=e^(iθ)f′(0)}.",
+      "The boundary phase θ is real and defined modulo 2π."
+    ],
+    "result": {
+      "name": "Self-adjoint twisted Laplacian and shifted Fourier modes",
+      "statement": "A_θ is self-adjoint and has orthonormal eigenbasis L^(−1/2)exp(i(2πn+θ)x/L), n∈Z, with eigenvalues ((2πn+θ)/L)².",
+      "proof": "Integration by parts gives the boundary form [−overline f g′+overline f′g]_0^L. The equal phase factors in function and derivative values cancel, so the form vanishes on the domain. To establish self-adjointness, multiply by exp(−iθx/L), a unitary map to periodic functions. Under this gauge transformation A_θ becomes (−i∂_x+θ/L)² on the periodic H² domain. Its action on the complete periodic Fourier basis is multiplication by real numbers ((2πn+θ)/L)² with the usual square-summability domain, which is self-adjoint. This also proves completeness, not merely a list of candidate eigenfunctions. If only the function boundary condition were imposed, the boundary form would retain uncontrolled derivative terms and symmetry could fail."
+    },
+    "example": {
+      "setup": "Take L=2π and compare θ=0 with θ=π.",
+      "calculation": "At θ=0 the eigenvalues are n², including a zero constant mode. At θ=π they are (n+1/2)², so the least eigenvalue is 1/4 with multiplicity two and there is no zero mode. The spectra at θ and θ+2π coincide after reindexing n, while their eigenfunctions differ by a gauge relabeling.",
+      "conclusion": "The boundary twist shifts momentum exactly, with a proved operator domain and no speculative identification of the phase."
+    },
+    "limits": "This is a one-dimensional free operator. Interactions, nonabelian holonomy, and physical superselection require additional specified structures. A boundary phase is not by itself an error-correcting code.",
+    "extension": "For a matrix-valued unitary boundary holonomy, diagonalize the unitary and obtain a union of shifted spectra, while retaining both boundary conditions.",
+    "references": [
+      {
+        "label": "MIT spectral theory notes",
+        "url": "https://math.mit.edu/~rbm/18.102Sp20/"
+      }
+    ],
+    "original": {
+      "date": "2024-11-30",
+      "month": "2024-11",
+      "evidence": "U",
+      "field": "Functional analysis",
+      "concept": "Twisted boundary conditions and a self-adjoint circle spectrum",
+      "origin": "Recovered dated conversation evidence",
+      "question": "What domain makes a phase-twisted circle Laplacian self-adjoint, and how does the phase change its spectrum?",
+      "math": "A_θ is self-adjoint and has orthonormal eigenbasis L^(−1/2)exp(i(2πn+θ)x/L), n∈Z, with eigenvalues ((2πn+θ)/L)².",
+      "finish": "Worked result, explicit example, and stated limits",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://math.mit.edu/~rbm/18.102Sp20/"
+      ],
+      "source_excerpt": "- [USER_FACT] [c6] U@2024-11-30T01:42:58Z, -1y325d: User-authored mathematical framework: wave-tensor configurations; Beta/Frenet frame equations \\(\\dot T=\\kappa_\\beta N_\\beta,\\dot N_\\beta=-\\kappa_\\beta T+\\tau_\\beta B_\\beta,\\dot B_\\beta=-\\tau_\\beta N_\\beta\\); Pontryagin classes; quantum groups; superselection condition \\(\\langle\\psi_1|A|\\psi_2\\rangle=0\\); actions containing \\(R\\) and \\(\\epsilon RR\\); phase relation \\(\\psi(x+L)=e^{i\\theta}\\psi(x)\\).",
+      "retrieval_receipt": "root_receipts.json record 0",
+      "original_question": null,
+      "attribution_note": "The dated source identifies a topic or paraphrases a historical exchange; the revised question and worked development here are newly authored. No verbatim original user question is claimed."
+    }
+  },
+  {
+    "id": "Y24-11-024",
+    "title": "Schmidt decomposition, superselection, and a limited error-correction claim",
+    "status": "Developed classical result with a checked example; historical claims corrected where needed",
+    "summary": "The recovered catalogue named these concepts together but they express different mathematical constraints. A finite construction gives one theorem for each and shows why the error set and observable algebra must always be specified.",
+    "definitions": [
+      "For a pure bipartite vector, the Schmidt coefficients are singular values of its coefficient matrix.",
+      "A superselection algebra acting block-diagonally on H=H₀⊕H₁ has no matrix elements between the sectors."
+    ],
+    "result": {
+      "name": "Finite Schmidt and error-correction checks",
+      "statement": "A bipartite pure state has reduced eigenvalues equal to the squares of its Schmidt coefficients. The repetition code span{|000⟩,|111⟩} corrects the error set {I,X₁,X₂,X₃}, but not that set enlarged by Z₁.",
+      "proof": "Write the state coefficient matrix C and use its singular value decomposition C=UΣV*. This gives orthonormal Schmidt vectors, and partial tracing yields UΣ²U*, proving the reduced spectrum. For the code projector P and two errors E_a,E_b in the displayed bit-flip set, P E_a*E_b P is P if a=b and zero otherwise: a nontrivial product flips one or two bits and maps either codeword outside the code. Thus the Knill–Laflamme scalar condition holds. But PZ₁P has diagonal entries 1 and −1 in the logical basis, not a scalar multiple of P, so a phase error is not correctable by this code. Finally if A=A₀⊕A₁, then ⟨ψ₀,Aψ₁⟩=0 for sector vectors simply by orthogonality; this is an algebra restriction, not a statement that all possible coherent superpositions cease to exist mathematically."
+    },
+    "example": {
+      "setup": "Use the Bell state (|00⟩+|11⟩)/√2 and the repetition code above.",
+      "calculation": "The Bell reduced density is I/2 and its entropy is log 2. The four bit-flip syndrome subspaces are pairwise orthogonal, permitting recovery. Yet a Z₁ error changes the relative logical phase and stays inside the code space, so a bit-flip syndrome alone cannot detect it.",
+      "conclusion": "The three notions are linked only through explicitly defined states, observables, and errors; none implies all the others."
+    },
+    "limits": "No continuum quantum field theory or experimentally protected implementation follows. The Bell entropy uses the natural logarithm; it is one bit if logarithm base two is chosen.",
+    "extension": "For a proposed physical noise model, compress every E_a*E_b to the code and check the scalar condition before claiming correction or topological protection.",
+    "references": [
+      {
+        "label": "Knill and Laflamme, quantum error-correcting codes",
+        "url": "https://arxiv.org/abs/quant-ph/9604034"
+      }
+    ],
+    "original": {
+      "date": "2024-11-30",
+      "month": "2024-11",
+      "evidence": "A",
+      "field": "Quantum information",
+      "concept": "Schmidt decomposition, superselection, and a limited error-correction claim",
+      "origin": "Recovered dated conversation evidence",
+      "question": "What can entanglement, superselection, and error correction each prove in a finite Hilbert space?",
+      "math": "A bipartite pure state has reduced eigenvalues equal to the squares of its Schmidt coefficients. The repetition code span{|000⟩,|111⟩} corrects the error set {I,X₁,X₂,X₃}, but not that set enlarged by Z₁.",
+      "finish": "Worked result, explicit example, and stated limits",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://arxiv.org/abs/quant-ph/9604034"
+      ],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c7] A@2024-11-30T02:45:45Z, -696d: mathematics included Gelfond–Schneider \\(a^b\\), Beta-frame \\(\\dot T=\\kappa N,\\dot N=-\\kappa T+\\tau B,\\dot B=-\\tau N\\); quantum evolution \\(e^{-iHt/\\hbar}\\); \\(q\\)-numbers; Riemann zeros as spectra; Yang–Mills/Schrödinger equations; relativistic \\(E^2=p^2c^2+m^2c^4\\); Chern/topological actions; \\(W^{k,p}\\), Lax–Milgram, RG beta functions, Chern number, Gauss–Bonnet action, partition functions, Schmidt decomposition.",
+      "retrieval_receipt": "root_followups.json record 1",
+      "original_question": null,
+      "attribution_note": "The dated source identifies a topic or paraphrases a historical exchange; the revised question and worked development here are newly authored. No verbatim original user question is claimed."
+    }
+  },
+  {
+    "id": "Y24-11-025",
+    "title": "Lax–Milgram coercivity as a usable existence theorem",
+    "status": "Developed classical result with a checked example; historical claims corrected where needed",
+    "summary": "The recovered mathematical-physics catalogue included weak formulations and Lax–Milgram. A complete one-dimensional example gives a concrete existence, uniqueness, and stability result, while exposing the difference between coercivity and a merely symmetric expression.",
+    "definitions": [
+      "Let H=H₀¹(0,1) with norm ||u||_H=||u′||₂.",
+      "For μ≥0 define a(u,v)=∫u′v′+μ∫uv and ℓ(v)=∫fv for f∈L²."
+    ],
+    "result": {
+      "name": "Unique weak solution and an energy bound",
+      "statement": "There exists a unique u∈H satisfying a(u,v)=ℓ(v) for every v∈H, and ||u′||₂≤||f||₂/π. If μ=0 and f=1, the solution is u(x)=x(1−x)/2.",
+      "proof": "Poincaré’s inequality ||v||₂≤||v′||₂/π makes ℓ bounded with norm at most ||f||₂/π. Cauchy–Schwarz and the same inequality show a is bounded. Since μ≥0, a(v,v)≥||v′||², so it is coercive. To prove the needed existence rather than merely name it, equip H with the equivalent inner product a. The Riesz representation theorem supplies u with a(u,v)=ℓ(v). Uniqueness follows because a(u−w,u−w)=0 implies u=w. Taking v=u and combining coercivity with the functional bound gives the stated estimate. For f=1,μ=0, differentiating x(1−x)/2 gives −u″=1 and zero endpoint values; integration by parts verifies the weak equation."
+    },
+    "example": {
+      "setup": "Compare μ=0 with the sign-changed form a_−(u,v)=∫u′v′−π²∫uv.",
+      "calculation": "The function sin(πx) is nonzero but a_−(sinπx,v)=0 for every v∈H by integration by parts. Thus the sign-changed form is not coercive and its homogeneous equation is nonunique. The original solution has u′=(1−2x)/2 and ||u′||₂²=1/12, consistent with the bound ||u′||₂≤1/π.",
+      "conclusion": "Existence follows from explicit Hilbert-space hypotheses, and the counterexample identifies exactly where uniqueness can fail."
+    },
+    "limits": "This is a linear elliptic result, not a general theorem for nonlinear quantum or gravitational equations. Boundary conditions and coefficient lower bounds are essential.",
+    "extension": "For a finite element approximation, use Galerkin orthogonality and coercivity to derive a best-approximation error estimate in the energy norm.",
+    "references": [
+      {
+        "label": "Lax and Milgram, parabolic equations chapter",
+        "url": "https://www.jstor.org/stable/j.ctt1bc545c"
+      }
+    ],
+    "original": {
+      "date": "2024-11-30",
+      "month": "2024-11",
+      "evidence": "A",
+      "field": "Weak partial differential equations",
+      "concept": "Lax–Milgram coercivity as a usable existence theorem",
+      "origin": "Recovered dated conversation evidence",
+      "question": "Which hypotheses turn a formal differential equation into a uniquely solvable weak problem?",
+      "math": "There exists a unique u∈H satisfying a(u,v)=ℓ(v) for every v∈H, and ||u′||₂≤||f||₂/π. If μ=0 and f=1, the solution is u(x)=x(1−x)/2.",
+      "finish": "Worked result, explicit example, and stated limits",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://www.jstor.org/stable/j.ctt1bc545c"
+      ],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c7] A@2024-11-30T02:45:45Z, -696d: mathematics included Gelfond–Schneider \\(a^b\\), Beta-frame \\(\\dot T=\\kappa N,\\dot N=-\\kappa T+\\tau B,\\dot B=-\\tau N\\); quantum evolution \\(e^{-iHt/\\hbar}\\); \\(q\\)-numbers; Riemann zeros as spectra; Yang–Mills/Schrödinger equations; relativistic \\(E^2=p^2c^2+m^2c^4\\); Chern/topological actions; \\(W^{k,p}\\), Lax–Milgram, RG beta functions, Chern number, Gauss–Bonnet action, partition functions, Schmidt decomposition.",
+      "retrieval_receipt": "root_followups.json record 1",
+      "original_question": null,
+      "attribution_note": "The dated source identifies a topic or paraphrases a historical exchange; the revised question and worked development here are newly authored. No verbatim original user question is claimed."
+    }
+  },
+  {
+    "id": "Y24-11-026",
+    "title": "Renormalization-flow formulas as ordinary differential equations",
+    "status": "Developed classical result with a checked example; historical claims corrected where needed",
+    "summary": "The historical catalogue invoked renormalization-group flow and scale hierarchies. Once a beta function and convention are fixed, its local consequences are an ordinary differential equation. The integration is exact within that assumed truncation, while physical validity remains a separate question.",
+    "definitions": [
+      "Let t=log(μ/μ₀) and consider dg/dt=−b g² with b a fixed real number.",
+      "A fixed point is a zero of the specified beta function β(g); a truncation is a chosen approximate beta function, not an exact model by default."
+    ],
+    "result": {
+      "name": "Exact solution of the quadratic beta-flow model",
+      "statement": "For initial g(0)=g₀, g(t)=g₀/(1+bg₀t) on the maximal interval where the denominator is nonzero. For b,g₀>0 it decreases to zero as t→+∞ and has a backward pole at t=−1/(bg₀).",
+      "proof": "If g₀=0 the zero solution is immediate. Otherwise differentiating 1/g gives d(1/g)/dt=b as long as g is nonzero. Integration gives 1/g=1/g₀+bt and hence the formula; direct substitution verifies it. Local uniqueness for the polynomial vector field prevents a nonzero solution from crossing the zero equilibrium. The denominator determines the maximal interval in this model. A pole of a truncated equation does not by itself prove a physical singularity: neglected terms or a different effective description can become important first. Replacing μ by a different dimensional unit leaves t unchanged if μ and μ₀ use the same unit; writing log μ alone would hide a necessary reference scale."
+    },
+    "example": {
+      "setup": "Take b=2,g₀=1/4 and compare scales μ₀ and e²μ₀.",
+      "calculation": "At t=2 the coupling is (1/4)/(1+1)=1/8. The model’s backward pole is at t=−2, corresponding to μ=μ₀e^(−2). If β(g)=−2g²+cg³ instead, the extra term changes the ODE and may add a nonzero fixed point at 2/c; it is not legitimate to retain the old solution without an error estimate.",
+      "conclusion": "The recovered scaling language becomes a checkable flow calculation with a defined reference scale and a stated approximation."
+    },
+    "limits": "No interacting continuum quantum field theory is constructed. Numerical coefficients depend on the coupling definition and loop convention, so the example is not a numerical QCD prediction.",
+    "extension": "For a beta function known with a remainder bound, compare the exact and truncated flows by a differential inequality on a compact coupling interval.",
+    "references": [
+      {
+        "label": "Wilson, renormalization group and critical phenomena",
+        "url": "https://doi.org/10.1103/PhysRevB.4.3174"
+      }
+    ],
+    "original": {
+      "date": "2024-11-30",
+      "month": "2024-11",
+      "evidence": "A",
+      "field": "Dynamical systems and formal physics",
+      "concept": "Renormalization-flow formulas as ordinary differential equations",
+      "origin": "Recovered dated conversation evidence",
+      "question": "Which conclusions about a running parameter follow from its stated differential equation, without adding an unconstructed field theory?",
+      "math": "For initial g(0)=g₀, g(t)=g₀/(1+bg₀t) on the maximal interval where the denominator is nonzero. For b,g₀>0 it decreases to zero as t→+∞ and has a backward pole at t=−1/(bg₀).",
+      "finish": "Worked result, explicit example, and stated limits",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://doi.org/10.1103/PhysRevB.4.3174"
+      ],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c7] A@2024-11-30T02:45:45Z, -696d: mathematics included Gelfond–Schneider \\(a^b\\), Beta-frame \\(\\dot T=\\kappa N,\\dot N=-\\kappa T+\\tau B,\\dot B=-\\tau N\\); quantum evolution \\(e^{-iHt/\\hbar}\\); \\(q\\)-numbers; Riemann zeros as spectra; Yang–Mills/Schrödinger equations; relativistic \\(E^2=p^2c^2+m^2c^4\\); Chern/topological actions; \\(W^{k,p}\\), Lax–Milgram, RG beta functions, Chern number, Gauss–Bonnet action, partition functions, Schmidt decomposition.",
+      "retrieval_receipt": "root_followups.json record 1",
+      "original_question": null,
+      "attribution_note": "The dated source identifies a topic or paraphrases a historical exchange; the revised question and worked development here are newly authored. No verbatim original user question is claimed."
+    }
+  }
+]

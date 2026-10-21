@@ -1,0 +1,579 @@
+{
+  "supplement": "S012",
+  "status": "passed",
+  "checks": [
+    {
+      "id": "S012",
+      "name": "Nontrivial output-quotient counterexample",
+      "status": "passed",
+      "detail": "Q=diag(2,0,3), two-output B: Penrose equations, primal feasibility, stationarity and dual equality all exact. Correct energy 3/5; naive pseudoinverse value 1. Independent one-variable elimination agrees."
+    },
+    {
+      "id": "S012",
+      "name": "Ridge separation of range and nullspace",
+      "status": "passed",
+      "detail": {
+        "range_conjugate": "5/2",
+        "exact_ridge_values": [
+          {
+            "epsilon": "1",
+            "range_value": "43/24",
+            "nullspace_increment": "1/2"
+          },
+          {
+            "epsilon": "1/2",
+            "range_value": "73/35",
+            "nullspace_increment": "1"
+          },
+          {
+            "epsilon": "1/10",
+            "range_value": "1565/651",
+            "nullspace_increment": "5"
+          },
+          {
+            "epsilon": "1/100",
+            "range_value": "150650/60501",
+            "nullspace_increment": "50"
+          }
+        ],
+        "range_error_bound": "epsilon*13/8",
+        "nullspace_divergence": "1/(2epsilon)"
+      }
+    },
+    {
+      "id": "S012",
+      "name": "Infeasibility by a dual separating direction",
+      "status": "passed",
+      "detail": "B=[[1,0],[0,0]], z=(0,1): B^T w=0 but w^T z=1 for w=(0,1). Thus no primal solution exists and the dual ray grows as t."
+    },
+    {
+      "id": "S012",
+      "name": "Rank and active-constraint parameter strata",
+      "status": "passed",
+      "detail": {
+        "representative_points": 30,
+        "certificates": [
+          {
+            "t": "0",
+            "a": "-3",
+            "stratum": "rank_one",
+            "value": "0",
+            "x": [
+              "0",
+              "1",
+              "0"
+            ],
+            "lambda_": "0",
+            "nu": [
+              "0",
+              "0",
+              "0"
+            ]
+          },
+          {
+            "t": "0",
+            "a": "-1",
+            "stratum": "rank_one",
+            "value": "0",
+            "x": [
+              "0",
+              "1",
+              "0"
+            ],
+            "lambda_": "0",
+            "nu": [
+              "0",
+              "0",
+              "0"
+            ]
+          },
+          {
+            "t": "0",
+            "a": "0",
+            "stratum": "rank_one",
+            "value": "0",
+            "x": [
+              "0",
+              "1",
+              "0"
+            ],
+            "lambda_": "0",
+            "nu": [
+              "0",
+              "0",
+              "0"
+            ]
+          },
+          {
+            "t": "0",
+            "a": "1/2",
+            "stratum": "rank_one",
+            "value": "0",
+            "x": [
+              "0",
+              "1",
+              "0"
+            ],
+            "lambda_": "0",
+            "nu": [
+              "0",
+              "0",
+              "0"
+            ]
+          },
+          {
+            "t": "0",
+            "a": "1",
+            "stratum": "rank_one",
+            "value": "0",
+            "x": [
+              "0",
+              "1",
+              "0"
+            ],
+            "lambda_": "0",
+            "nu": [
+              "0",
+              "0",
+              "0"
+            ]
+          },
+          {
+            "t": "0",
+            "a": "3",
+            "stratum": "rank_one",
+            "value": "0",
+            "x": [
+              "0",
+              "1",
+              "0"
+            ],
+            "lambda_": "0",
+            "nu": [
+              "0",
+              "0",
+              "0"
+            ]
+          },
+          {
+            "t": "1/3",
+            "a": "-3",
+            "stratum": "negative_null_blocked",
+            "value": "1/8",
+            "x": [
+              "1/4",
+              "3/4",
+              "0"
+            ],
+            "lambda_": "1/4",
+            "nu": [
+              "0",
+              "0",
+              "3/4"
+            ]
+          },
+          {
+            "t": "1/3",
+            "a": "-1",
+            "stratum": "negative_null_blocked",
+            "value": "1/8",
+            "x": [
+              "1/4",
+              "3/4",
+              "0"
+            ],
+            "lambda_": "1/4",
+            "nu": [
+              "0",
+              "0",
+              "1/4"
+            ]
+          },
+          {
+            "t": "1/3",
+            "a": "0",
+            "stratum": "zero_coupling",
+            "value": "1/8",
+            "x": [
+              "1/4",
+              "3/4",
+              "0"
+            ],
+            "lambda_": "1/4",
+            "nu": [
+              "0",
+              "0",
+              "0"
+            ]
+          },
+          {
+            "t": "1/3",
+            "a": "1/2",
+            "stratum": "positive_null_access",
+            "value": "0",
+            "x": [
+              "0",
+              "0",
+              "2"
+            ],
+            "lambda_": "0",
+            "nu": [
+              "0",
+              "0",
+              "0"
+            ]
+          },
+          {
+            "t": "1/3",
+            "a": "1",
+            "stratum": "positive_null_access",
+            "value": "0",
+            "x": [
+              "0",
+              "0",
+              "1"
+            ],
+            "lambda_": "0",
+            "nu": [
+              "0",
+              "0",
+              "0"
+            ]
+          },
+          {
+            "t": "1/3",
+            "a": "3",
+            "stratum": "positive_null_access",
+            "value": "0",
+            "x": [
+              "0",
+              "0",
+              "1/3"
+            ],
+            "lambda_": "0",
+            "nu": [
+              "0",
+              "0",
+              "0"
+            ]
+          },
+          {
+            "t": "1",
+            "a": "-3",
+            "stratum": "negative_null_blocked",
+            "value": "1/4",
+            "x": [
+              "1/2",
+              "1/2",
+              "0"
+            ],
+            "lambda_": "1/2",
+            "nu": [
+              "0",
+              "0",
+              "3/2"
+            ]
+          },
+          {
+            "t": "1",
+            "a": "-1",
+            "stratum": "negative_null_blocked",
+            "value": "1/4",
+            "x": [
+              "1/2",
+              "1/2",
+              "0"
+            ],
+            "lambda_": "1/2",
+            "nu": [
+              "0",
+              "0",
+              "1/2"
+            ]
+          },
+          {
+            "t": "1",
+            "a": "0",
+            "stratum": "zero_coupling",
+            "value": "1/4",
+            "x": [
+              "1/2",
+              "1/2",
+              "0"
+            ],
+            "lambda_": "1/2",
+            "nu": [
+              "0",
+              "0",
+              "0"
+            ]
+          },
+          {
+            "t": "1",
+            "a": "1/2",
+            "stratum": "positive_null_access",
+            "value": "0",
+            "x": [
+              "0",
+              "0",
+              "2"
+            ],
+            "lambda_": "0",
+            "nu": [
+              "0",
+              "0",
+              "0"
+            ]
+          },
+          {
+            "t": "1",
+            "a": "1",
+            "stratum": "positive_null_access",
+            "value": "0",
+            "x": [
+              "0",
+              "0",
+              "1"
+            ],
+            "lambda_": "0",
+            "nu": [
+              "0",
+              "0",
+              "0"
+            ]
+          },
+          {
+            "t": "1",
+            "a": "3",
+            "stratum": "positive_null_access",
+            "value": "0",
+            "x": [
+              "0",
+              "0",
+              "1/3"
+            ],
+            "lambda_": "0",
+            "nu": [
+              "0",
+              "0",
+              "0"
+            ]
+          },
+          {
+            "t": "2",
+            "a": "-3",
+            "stratum": "negative_null_blocked",
+            "value": "1/3",
+            "x": [
+              "2/3",
+              "1/3",
+              "0"
+            ],
+            "lambda_": "2/3",
+            "nu": [
+              "0",
+              "0",
+              "2"
+            ]
+          },
+          {
+            "t": "2",
+            "a": "-1",
+            "stratum": "negative_null_blocked",
+            "value": "1/3",
+            "x": [
+              "2/3",
+              "1/3",
+              "0"
+            ],
+            "lambda_": "2/3",
+            "nu": [
+              "0",
+              "0",
+              "2/3"
+            ]
+          },
+          {
+            "t": "2",
+            "a": "0",
+            "stratum": "zero_coupling",
+            "value": "1/3",
+            "x": [
+              "2/3",
+              "1/3",
+              "0"
+            ],
+            "lambda_": "2/3",
+            "nu": [
+              "0",
+              "0",
+              "0"
+            ]
+          },
+          {
+            "t": "2",
+            "a": "1/2",
+            "stratum": "positive_null_access",
+            "value": "0",
+            "x": [
+              "0",
+              "0",
+              "2"
+            ],
+            "lambda_": "0",
+            "nu": [
+              "0",
+              "0",
+              "0"
+            ]
+          },
+          {
+            "t": "2",
+            "a": "1",
+            "stratum": "positive_null_access",
+            "value": "0",
+            "x": [
+              "0",
+              "0",
+              "1"
+            ],
+            "lambda_": "0",
+            "nu": [
+              "0",
+              "0",
+              "0"
+            ]
+          },
+          {
+            "t": "2",
+            "a": "3",
+            "stratum": "positive_null_access",
+            "value": "0",
+            "x": [
+              "0",
+              "0",
+              "1/3"
+            ],
+            "lambda_": "0",
+            "nu": [
+              "0",
+              "0",
+              "0"
+            ]
+          },
+          {
+            "t": "5",
+            "a": "-3",
+            "stratum": "negative_null_blocked",
+            "value": "5/12",
+            "x": [
+              "5/6",
+              "1/6",
+              "0"
+            ],
+            "lambda_": "5/6",
+            "nu": [
+              "0",
+              "0",
+              "5/2"
+            ]
+          },
+          {
+            "t": "5",
+            "a": "-1",
+            "stratum": "negative_null_blocked",
+            "value": "5/12",
+            "x": [
+              "5/6",
+              "1/6",
+              "0"
+            ],
+            "lambda_": "5/6",
+            "nu": [
+              "0",
+              "0",
+              "5/6"
+            ]
+          },
+          {
+            "t": "5",
+            "a": "0",
+            "stratum": "zero_coupling",
+            "value": "5/12",
+            "x": [
+              "5/6",
+              "1/6",
+              "0"
+            ],
+            "lambda_": "5/6",
+            "nu": [
+              "0",
+              "0",
+              "0"
+            ]
+          },
+          {
+            "t": "5",
+            "a": "1/2",
+            "stratum": "positive_null_access",
+            "value": "0",
+            "x": [
+              "0",
+              "0",
+              "2"
+            ],
+            "lambda_": "0",
+            "nu": [
+              "0",
+              "0",
+              "0"
+            ]
+          },
+          {
+            "t": "5",
+            "a": "1",
+            "stratum": "positive_null_access",
+            "value": "0",
+            "x": [
+              "0",
+              "0",
+              "1"
+            ],
+            "lambda_": "0",
+            "nu": [
+              "0",
+              "0",
+              "0"
+            ]
+          },
+          {
+            "t": "5",
+            "a": "3",
+            "stratum": "positive_null_access",
+            "value": "0",
+            "x": [
+              "0",
+              "0",
+              "1/3"
+            ],
+            "lambda_": "0",
+            "nu": [
+              "0",
+              "0",
+              "0"
+            ]
+          }
+        ],
+        "scope": "Exact rational certificates at sample parameters; the text proves the formulas for all real parameters in each declared stratum."
+      }
+    },
+    {
+      "id": "S012",
+      "name": "Degenerate optimizer sets",
+      "status": "passed",
+      "detail": "Sample points on the exact rank-one optimal segments/rays and the a=0 null-coordinate family remain feasible with the stated energy. Full optimizer-set formulas are proved in the text."
+    }
+  ],
+  "count": 5,
+  "method": "Python standard library exact fractions and polynomial identities; no numerical pseudoinverse or optimizer."
+}

@@ -1,0 +1,853 @@
+[
+  {
+    "id": "Y24-03-020",
+    "title": "Laplace transforms turn an initial-value equation into algebra",
+    "status": "Classical mathematics newly developed from a recovered assistant-only catalog name",
+    "summary": "A transform formula needs a domain of convergence and a rule for boundary terms. Those conditions explain why the initial value appears when a differential equation becomes an algebraic equation. The recovered passage explicitly gives the one-sided integral; the following initial-value problem and its analysis are newly chosen.",
+    "definitions": [
+      "For locally integrable f on [0,∞), define F(s)=∫₀∞e^(−st)f(t)dt wherever the integral converges absolutely. The variable s may be complex.",
+      "A sufficient condition is |f(t)|≤Me^(αt) for all sufficiently large t; then absolute convergence holds for Re(s)>α. Assume f is locally absolutely continuous when transforming f′, and assume both f and f′ have suitable exponential bounds.",
+      "For two causal functions define (f*g)(t)=∫₀ᵗf(τ)g(t−τ)dτ. Absolute integrability after a common exponential weight justifies changing the order of integration."
+    ],
+    "result": {
+      "name": "Derivative and convolution identities with their boundary conditions",
+      "statement": "For Re(s) sufficiently large, L[f′](s)=sF(s)−f(0) and L[f*g](s)=F(s)G(s). Consequently y′+2y=1, y(0)=0 has y(t)=(1−e^(−2t))/2 for t≥0.",
+      "proof": "Integrating e^(−st)f′ by parts on [0,T] gives e^(−sT)f(T)−f(0)+s∫₀ᵀe^(−st)f(t)dt. The exponential bound makes the first term vanish as T→∞ when Re(s)>α. For convolution, set t=τ+u in the triangular integration region. Fubini then factors ∫₀∞∫₀∞e^(−sτ)f(τ)e^(−su)g(u)dudτ into F(s)G(s). In the chosen equation the transformed constant is 1/s and the derivative identity yields (s+2)Y(s)=1/s, so Y(s)=1/[s(s+2)]=(1/2)(1/s−1/(s+2)). Direct integration verifies the displayed inverse. Existence can also be checked by substitution, and uniqueness does not need a transform inversion theorem here: the difference of two solutions satisfies z′+2z=0 and z(0)=0, hence e^(2t)z(t) is identically zero."
+    },
+    "example": {
+      "setup": "Use the exact rational transform values s=1,2,3 and inspect the time-domain solution at t=0 and t=1.",
+      "calculation": "The partial-fraction expression gives Y(1)=1/3, Y(2)=1/8 and Y(3)=1/15. The solution starts at zero, has derivative e^(−2t), and satisfies y′+2y=1 identically. At t=1 it is approximately 0.432332358381694. The verifier checks the rational transform identity and the analytic residual at selected times; the algebraic proof establishes the identity for all t.",
+      "conclusion": "The transform incorporates the initial value through a controlled boundary term. A formal table lookup without a convergence half-plane would omit part of the mathematical statement."
+    },
+    "limits": "These are sufficient regularity hypotheses, not the most general transform theory. An absolutely convergent Laplace integral need not converge on its boundary line. No inversion claim is made for arbitrary functions outside the stated class.",
+    "extension": "For an input u(t), the same equation has y(t)=e^(−2t)y(0)+(e^(−2·)*u)(t). This makes the impulse-response kernel explicit and supplies the bound |y(t)|≤|y(0)|e^(−2t)+||u||∞(1−e^(−2t))/2 for bounded inputs.",
+    "references": [
+      {
+        "label": "MIT one-sided Laplace transform and IVPs",
+        "url": "https://ocw.mit.edu/courses/18-03sc-differential-equations-fall-2011/pages/unit-iii-fourier-series-and-laplace-transform/laplace-transform-solving-initial-value-problems/"
+      },
+      {
+        "label": "MIT Laplace basics",
+        "url": "https://ocw.mit.edu/courses/18-03sc-differential-equations-fall-2011/pages/unit-iii-fourier-series-and-laplace-transform/laplace-transform-basics/"
+      }
+    ],
+    "catalog_concepts": [
+      "Laplace transform"
+    ],
+    "original": {
+      "date": "2024-03-31T02:28:25Z",
+      "month": "2024-03",
+      "evidence": "A",
+      "field": "Laplace transforms turn an initial-value equation into algebra",
+      "concept": "Laplace transform",
+      "origin": "The recovered assistant passage names these concepts in the end of a purported 100-equation list. The mathematics below is a newly authored classical development, not recovered wording.",
+      "question": "Reconstruction: When does the one-sided Laplace integral converge, how does it encode an initial value, and what exact solution results for y′+2y=1 with y(0)=0?",
+      "math": "For Re(s) sufficiently large, L[f′](s)=sF(s)−f(0) and L[f*g](s)=F(s)G(s). Consequently y′+2y=1, y(0)=0 has y(t)=(1−e^(−2t))/2 for t≥0.",
+      "finish": "Supply explicit hypotheses, a proof or delimited classical input, and a checked worked example for every named concept.",
+      "kind": "Classical development",
+      "refs": [],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c3] A@2024-03-31T02:28:25Z, -2y6m: retrieved passage begins with an unnumbered “LaPlace Transform”: \\(F(s)=\\int_0^\\infty e^{-st}f(t)\\,dt\\), then lists 81–100 (Legendre Polynomials through Stokes’ Law); no entries 61–80 are present.",
+      "retrieval_receipt": "root_specifics.json record 3",
+      "source_numbers": [],
+      "original_question": null,
+      "attribution_note": "A@ denotes prior assistant output. No original user prompt was recovered. Except for the Laplace definition, the receipt names concepts rather than reproducing their exact historical equations. All formulations, proofs, examples and grouping here are new editorial work; unavailable items 1–80 are not filled in."
+    }
+  },
+  {
+    "id": "Y24-03-021",
+    "title": "Legendre polynomials from a derivative formula to orthogonal projection",
+    "status": "Classical mathematics newly developed from a recovered assistant-only catalog name",
+    "summary": "Legendre polynomials are useful because a concrete derivative construction produces a basis adapted to integration on [−1,1]. The improvement over a bare formula is to connect normalization, orthogonality and coefficient extraction. Everything beyond the recovered catalog name is a new classical development.",
+    "definitions": [
+      "For an integer n≥0, set Pₙ(x)=(1/(2ⁿn!))dⁿ/dxⁿ[(x²−1)ⁿ]. This normalization gives Pₙ(1)=1.",
+      "Use the real inner product ⟨f,g⟩=∫₋₁¹f(x)g(x)dx. Orthogonality means ⟨Pₙ,Pₘ⟩=0 when n≠m.",
+      "The leading coefficient of Pₙ is cₙ=(2n)!/[2ⁿ(n!)²], so P₀,…,Pₙ form a basis of polynomials of degree at most n."
+    ],
+    "result": {
+      "name": "Rodrigues orthogonality and the exact norm",
+      "statement": "For every polynomial q of degree less than n, ∫₋₁¹Pₙq=0. Moreover ∫₋₁¹Pₙ²dx=2/(2n+1), so the Legendre coefficient of f is aₙ=((2n+1)/2)∫₋₁¹fPₙ when this integral exists.",
+      "proof": "The factor (x²−1)ⁿ has zeros of order n at both endpoints. Integrating by parts n times therefore kills every boundary term and transfers all n derivatives to q; the resulting integral is zero because q^(n)=0. For the norm, write Pₙ=cₙxⁿ+q with deg(q)<n, so ⟨Pₙ,Pₙ⟩=cₙ⟨Pₙ,xⁿ⟩. The same integration-by-parts argument gives ⟨Pₙ,xⁿ⟩=2^(−n)∫₋₁¹(1−x²)ⁿdx. Set Iₙ equal to that last integral. A single integration by parts, or the substitution x=sin θ, gives I₀=2 and Iₙ=(2n/(2n+1))Iₙ₋₁. Thus Iₙ=2^(2n+1)(n!)²/(2n+1)!, and multiplying by cₙ/2ⁿ proves the norm formula. Orthogonality and nonzero norms then make the projection coefficient formula immediate. For a finite polynomial this is exact basis expansion, without any infinite-series convergence issue."
+    },
+    "example": {
+      "setup": "Expand f(x)=x² and evaluate its squared L² norm by orthogonality.",
+      "calculation": "Rodrigues gives P₀=1, P₁=x and P₂=(3x²−1)/2, hence x²=(1/3)P₀+(2/3)P₂. The expansion predicts ∫₋₁¹x⁴dx=(1/9)·2+(4/9)·(2/5)=2/5, matching direct integration. The verifier constructs P₀ through P₆ with rational coefficients and checks their pairwise inner products exactly. If only a constant approximation is permitted, the best L² constant is 1/3. Orthogonality splits the error into a nonnegative constant-coefficient error plus the unavoidable squared residual 8/45, so this minimizer is unique.",
+      "conclusion": "A derivative formula becomes a complete small spectral calculation, including the normalization factors that are easily lost in a formula catalog."
+    },
+    "limits": "The finite polynomial arguments prove no pointwise convergence theorem for an arbitrary infinite Legendre series. For general functions one should separately specify an L² space and the intended mode of convergence.",
+    "extension": "The same integration-by-parts structure gives the Sturm–Liouville equation ((1−x²)Pₙ′)′+n(n+1)Pₙ=0. It explains why distinct eigenvalues are orthogonal under the stated endpoint behavior.",
+    "references": [
+      {
+        "label": "NIST DLMF explicit polynomial representations",
+        "url": "https://dlmf.nist.gov/18.5"
+      },
+      {
+        "label": "NIST DLMF orthogonal-polynomial definitions",
+        "url": "https://dlmf.nist.gov/18.3"
+      },
+      {
+        "label": "NIST DLMF Legendre differential equation",
+        "url": "https://dlmf.nist.gov/14.2"
+      }
+    ],
+    "catalog_concepts": [
+      "Legendre polynomials"
+    ],
+    "original": {
+      "date": "2024-03-31T02:28:25Z",
+      "month": "2024-03",
+      "evidence": "A",
+      "field": "Legendre polynomials from a derivative formula to orthogonal projection",
+      "concept": "Legendre polynomials",
+      "origin": "The recovered assistant passage names these concepts in the end of a purported 100-equation list. The mathematics below is a newly authored classical development, not recovered wording.",
+      "question": "Reconstruction: How does Rodrigues’ formula force Legendre orthogonality, and what is the exact projection of x² onto its first three modes?",
+      "math": "For every polynomial q of degree less than n, ∫₋₁¹Pₙq=0. Moreover ∫₋₁¹Pₙ²dx=2/(2n+1), so the Legendre coefficient of f is aₙ=((2n+1)/2)∫₋₁¹fPₙ when this integral exists.",
+      "finish": "Supply explicit hypotheses, a proof or delimited classical input, and a checked worked example for every named concept.",
+      "kind": "Classical development",
+      "refs": [],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c0] A@2024-03-31T02:28:25Z, -2y 7m: Items 81–100 of 100: Legendre polynomials; Bessel functions; Helmholtz equation; Schwarzian derivative; Euclidean algorithm; Brouwer fixed-point theorem; Hairy Ball theorem; Cauchy integral formula; Maxwell–Boltzmann distribution; Catenary equation; Navier’s thin-plate equation; Rayleigh quotient; Laplace tidal equations; Pell’s equation; Hamilton’s equations; Routh–Hurwitz criterion; chirp signal; Hamilton–Jacobi equation; Riccati equation; Stokes’ drag law. Exact formulas/concepts are present in [c0]; assistant says this completes the 100-equation list.",
+      "retrieval_receipt": "root_details.json record 0",
+      "source_numbers": [
+        81
+      ],
+      "original_question": null,
+      "attribution_note": "A@ denotes prior assistant output. No original user prompt was recovered. Except for the Laplace definition, the receipt names concepts rather than reproducing their exact historical equations. All formulations, proofs, examples and grouping here are new editorial work; unavailable items 1–80 are not filled in."
+    }
+  },
+  {
+    "id": "Y24-03-022",
+    "title": "Bessel functions are the radial modes of the Helmholtz equation",
+    "status": "Classical mathematics newly developed from a recovered assistant-only catalog name",
+    "summary": "These neighboring catalog entries belong together: the special function solves the radial ordinary differential equation produced by a rotationally symmetric partial differential equation. The domain and boundary conditions determine which modes are admissible. The examples and derivation below are newly selected.",
+    "definitions": [
+      "For real k>0, the two-dimensional Helmholtz equation is Δu+k²u=0. In polar coordinates away from r=0, Δ=∂ᵣᵣ+r^(−1)∂ᵣ+r^(−2)∂θθ.",
+      "For an integer m≥0, Jₘ(z)=Σⱼ≥₀(−1)ʲ(z/2)^(2j+m)/[j!(j+m)!]. Its series converges for every complex z.",
+      "A separated angular mode e^(imθ) is single valued because m is an integer. A bounded smooth solution at the disk center uses the regular radial mode Jₘ(kr), rather than the singular second solution."
+    ],
+    "result": {
+      "name": "Separation, coefficient recurrence and a concrete Helmholtz mode",
+      "statement": "Substituting u=R(r)e^(imθ) into Helmholtz yields r²R″+rR′+(k²r²−m²)R=0. With z=kr this is Bessel’s equation, and Jₘ is its regular series solution. Independently, sin(3x)sin(4y) solves Δu+25u=0.",
+      "proof": "Differentiating the separated product and cancelling the nonzero angular factor gives the radial equation directly. For R=Σⱼcⱼz^(m+2j), the coefficient of z^(m+2j) in z²R″+zR′−m²R+z²R is 4j(m+j)cⱼ+cⱼ₋₁ for j≥1. Therefore cⱼ=−cⱼ₋₁/[4j(m+j)], which is exactly the displayed Jₘ coefficient sequence after choosing c₀=1/(2ᵐm!). The ratio test proves convergence on every compact set and justifies termwise differentiation. For the Cartesian example, ∂ₓₓu=−9u and ∂ᵧᵧu=−16u, so the residual is zero. On the rectangle (0,π/3)×(0,π/4) the same function vanishes on all four sides. On a disk of radius a, an analogous regular Dirichlet mode must instead satisfy Jₘ(ka)=0; that boundary condition is an extra spectral restriction, not part of the differential equation alone."
+    },
+    "example": {
+      "setup": "Evaluate the regular axisymmetric solution J₀(1), and verify a rectangular mode without numerical differentiation.",
+      "calculation": "At z=1 the series is Σⱼ≥₀(−1)ʲ/[4ʲ(j!)²]. Taking j=0,…,10 gives an alternating-series enclosure whose width is 1/[4¹¹(11!)²]<1.6×10^(−22). It contains J₀(1)≈0.7651976865579666. The verifier uses rational arithmetic for that enclosure and for the radial coefficient recurrence. The Helmholtz example is checked by the exact coefficient equality −3²−4²+5²=0.",
+      "conclusion": "The calculation links a special-function definition, its ODE, the PDE origin and the independent role of boundary conditions."
+    },
+    "limits": "The integer-order restriction avoids branch choices in z^ν. A truncated series does not solve the ODE exactly: the verifier checks the exact recurrence of its retained coefficients and a rigorously bounded value, while the convergent infinite-series argument proves the differential equation.",
+    "extension": "For a disk eigenproblem, bracket individual positive zeros of Jₘ using certified function enclosures before reporting eigenfrequencies. A floating-point root by itself is not a proof of the eigenvalue or its ordering.",
+    "references": [
+      {
+        "label": "NIST DLMF Bessel equation and first-kind series",
+        "url": "https://dlmf.nist.gov/10.2"
+      },
+      {
+        "label": "NIST DLMF Bessel zeros",
+        "url": "https://dlmf.nist.gov/10.21"
+      }
+    ],
+    "catalog_concepts": [
+      "Bessel functions",
+      "Helmholtz equation"
+    ],
+    "original": {
+      "date": "2024-03-31T02:28:25Z",
+      "month": "2024-03",
+      "evidence": "A",
+      "field": "Bessel functions are the radial modes of the Helmholtz equation",
+      "concept": "Bessel functions; Helmholtz equation",
+      "origin": "The recovered assistant passage names these concepts in the end of a purported 100-equation list. The mathematics below is a newly authored classical development, not recovered wording.",
+      "question": "Reconstruction: How does separation of variables in the Helmholtz equation produce Bessel’s equation, which solution is regular at the origin, and how can a finite series evaluation be certified?",
+      "math": "Substituting u=R(r)e^(imθ) into Helmholtz yields r²R″+rR′+(k²r²−m²)R=0. With z=kr this is Bessel’s equation, and Jₘ is its regular series solution. Independently, sin(3x)sin(4y) solves Δu+25u=0.",
+      "finish": "Supply explicit hypotheses, a proof or delimited classical input, and a checked worked example for every named concept.",
+      "kind": "Classical development",
+      "refs": [],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c0] A@2024-03-31T02:28:25Z, -2y 7m: Items 81–100 of 100: Legendre polynomials; Bessel functions; Helmholtz equation; Schwarzian derivative; Euclidean algorithm; Brouwer fixed-point theorem; Hairy Ball theorem; Cauchy integral formula; Maxwell–Boltzmann distribution; Catenary equation; Navier’s thin-plate equation; Rayleigh quotient; Laplace tidal equations; Pell’s equation; Hamilton’s equations; Routh–Hurwitz criterion; chirp signal; Hamilton–Jacobi equation; Riccati equation; Stokes’ drag law. Exact formulas/concepts are present in [c0]; assistant says this completes the 100-equation list.",
+      "retrieval_receipt": "root_details.json record 0",
+      "source_numbers": [
+        82,
+        83
+      ],
+      "original_question": null,
+      "attribution_note": "A@ denotes prior assistant output. No original user prompt was recovered. Except for the Laplace definition, the receipt names concepts rather than reproducing their exact historical equations. All formulations, proofs, examples and grouping here are new editorial work; unavailable items 1–80 are not filled in."
+    }
+  },
+  {
+    "id": "Y24-03-023",
+    "title": "The Schwarzian chain rule detects projective rather than affine structure",
+    "status": "Classical mathematics newly developed from a recovered assistant-only catalog name",
+    "summary": "The Schwarzian involves third derivatives but has a particularly simple composition law. Specifying the order of composition matters: postcomposing by a Möbius map leaves it unchanged, whereas precomposition contributes a squared derivative. This entry derives the identities directly rather than relying on a memorized invariance slogan.",
+    "definitions": [
+      "For a real C³ function f on an interval with f′≠0, define S(f)=f‴/f′−(3/2)(f″/f′)². The same formula applies to locally univalent holomorphic functions.",
+      "Write P(f)=f″/f′. Then S(f)=P(f)′−P(f)²/2, which makes cancellation in the composition rule visible.",
+      "A nonconstant Möbius map is M(x)=(ax+b)/(cx+d), with ad−bc≠0, restricted to an interval avoiding its pole."
+    ],
+    "result": {
+      "name": "A chain rule and the local zero-Schwarzian classification",
+      "statement": "S(f∘g)=(S(f)∘g)(g′)²+S(g). Every Möbius map has zero Schwarzian, and locally every C³ map with nonzero derivative and zero Schwarzian is Möbius. Hence S(M∘f)=S(f), with the indicated domain restrictions.",
+      "proof": "The ordinary chain rule gives P(f∘g)=(P(f)∘g)g′+P(g). Differentiate this identity, subtract half its square, and use g″=P(g)g′. The two mixed terms cancel, leaving exactly the displayed formula. To classify S(f)=0, put P=f″/f′; it satisfies P′=P²/2. Local uniqueness for this scalar ODE implies either P is identically zero or, after separating variables, P=−2/(x+c) on a suitable interval. The first case integrates to a nonconstant affine f. The second gives f′=A/(x+c)² and f=B−A/(x+c), again Möbius. Conversely direct differentiation of a Möbius map, or these forms, gives S=0. This is a local statement: poles and coordinate domains must still be tracked when joining intervals."
+    },
+    "example": {
+      "setup": "Compare f(x)=eˣ, g(x)=x² on x>0, and their composite.",
+      "calculation": "Since all derivatives of eˣ are eˣ, S(eˣ)=−1/2. For x², S(x²)=−3/(2x²). Thus S(e^(x²))=(−1/2)(2x)²−3/(2x²)=−2x²−3/(2x²), equal to −7/2 at x=1. Differentiating e^(x²) independently gives f′=2xe^(x²), f″=(2+4x²)e^(x²) and f‴=(12x+8x³)e^(x²), confirming the same rational expression. The verifier checks this at exact rational x after cancelling the common exponential factors.",
+      "conclusion": "The third-derivative invariant has a short structural proof, and the example fixes both the sign and the placement of the derivative factor."
+    },
+    "limits": "Nonvanishing f′ and g′ is essential wherever the formula is used. Zero Schwarzian does not imply that a map is affine; reciprocal maps are immediate counterexamples. No global univalence theorem follows merely from this local computation.",
+    "extension": "If y₁,y₂ are independent solutions of y″+Q(x)y=0, their ratio has Schwarzian 2Q where y₂ and the Wronskian do not vanish. This supplies a bridge to projective coordinates, with domains stated before taking the ratio.",
+    "references": [
+      {
+        "label": "University of Eastern Finland projective geometry notes",
+        "url": "https://cs.uef.fi/matematiikka/kurssit/Differential%20Projective%20Geometry%20and%20Schwarzian%20Derivative/Differential%20projective%20geometry_Ch_001.pdf"
+      },
+      {
+        "label": "Ovsienko and Tabachnikov research on the Schwarzian",
+        "url": "https://arxiv.org/abs/dg-ga/9510007"
+      }
+    ],
+    "catalog_concepts": [
+      "Schwarzian derivative"
+    ],
+    "original": {
+      "date": "2024-03-31T02:28:25Z",
+      "month": "2024-03",
+      "evidence": "A",
+      "field": "The Schwarzian chain rule detects projective rather than affine structure",
+      "concept": "Schwarzian derivative",
+      "origin": "The recovered assistant passage names these concepts in the end of a purported 100-equation list. The mathematics below is a newly authored classical development, not recovered wording.",
+      "question": "Reconstruction: What is the correct Schwarzian composition law, which functions have zero Schwarzian locally, and how do exp(x) and exp(x²) illustrate the distinction?",
+      "math": "S(f∘g)=(S(f)∘g)(g′)²+S(g). Every Möbius map has zero Schwarzian, and locally every C³ map with nonzero derivative and zero Schwarzian is Möbius. Hence S(M∘f)=S(f), with the indicated domain restrictions.",
+      "finish": "Supply explicit hypotheses, a proof or delimited classical input, and a checked worked example for every named concept.",
+      "kind": "Classical development",
+      "refs": [],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c0] A@2024-03-31T02:28:25Z, -2y 7m: Items 81–100 of 100: Legendre polynomials; Bessel functions; Helmholtz equation; Schwarzian derivative; Euclidean algorithm; Brouwer fixed-point theorem; Hairy Ball theorem; Cauchy integral formula; Maxwell–Boltzmann distribution; Catenary equation; Navier’s thin-plate equation; Rayleigh quotient; Laplace tidal equations; Pell’s equation; Hamilton’s equations; Routh–Hurwitz criterion; chirp signal; Hamilton–Jacobi equation; Riccati equation; Stokes’ drag law. Exact formulas/concepts are present in [c0]; assistant says this completes the 100-equation list.",
+      "retrieval_receipt": "root_details.json record 0",
+      "source_numbers": [
+        84
+      ],
+      "original_question": null,
+      "attribution_note": "A@ denotes prior assistant output. No original user prompt was recovered. Except for the Laplace definition, the receipt names concepts rather than reproducing their exact historical equations. All formulations, proofs, examples and grouping here are new editorial work; unavailable items 1–80 are not filled in."
+    }
+  },
+  {
+    "id": "Y24-03-024",
+    "title": "Euclidean certificates and a complete Pell example",
+    "status": "Classical mathematics newly developed from a recovered assistant-only catalog name",
+    "summary": "These arithmetic concepts are connected by explicit certificates rather than a shared formula. The Euclidean algorithm produces a finite integer identity; Pell’s equation supplies an infinite family whose recurrence preserves a norm. A descent argument is included so that the chosen Pell example is more than a list of numerically observed solutions.",
+    "definitions": [
+      "For integers a,b not both zero, gcd(a,b) is the positive generator of their common-divisor ideal. Bézout coefficients u,v satisfy ua+vb=gcd(a,b).",
+      "For the specific Pell equation x²−2y²=1 use integers x,y≥0. Multiplication in Z[√2] preserves the norm N(x+y√2)=x²−2y².",
+      "The unit 3+2√2 has norm one. Its powers define x₀=1,y₀=0 and xₙ₊₁=3xₙ+4yₙ, yₙ₊₁=2xₙ+3yₙ."
+    ],
+    "result": {
+      "name": "A terminating gcd algorithm and all nonnegative solutions for D=2",
+      "statement": "Replacing (a,b) by (b,a−qb) preserves common divisors; choosing the remainder 0≤r<|b| ensures termination. For Pell D=2, every solution x,y≥0 is x+y√2=(3+2√2)ⁿ for a unique n≥0.",
+      "proof": "For the gcd claim, any divisor of a,b divides b,a−qb, and conversely a=(a−qb)+qb. Positive remainders strictly decrease, so the last nonzero remainder is the gcd; back-substitution yields Bézout coefficients. For Pell, norm multiplication first proves that all stated powers are solutions. Conversely take any solution with y>0. If y=1, x²=3 is impossible. For y≥2, x/y=√(2+1/y²)≤3/2 and exceeds √2. Multiplying by 3−2√2 gives x′=3x−4y>0 and y′=3y−2x≥0. Moreover y′<y because x>y. The new pair remains integral with norm one, so this descent terminates at y=0, x=1. Reversing every step expresses the original pair as a power of 3+2√2. The exponent is unique because the positive real powers strictly increase. This proves the complete classification for this one value of D, without asserting a general fundamental-unit algorithm."
+    },
+    "example": {
+      "setup": "Run Euclid on 240 and 46; then calculate the first four positive Pell pairs.",
+      "calculation": "The remainders are 10,6,4,2,0, and back-substitution gives 2=−9·240+47·46. The Pell recurrence gives (3,2),(17,12),(99,70),(577,408); their norm-one identities are exact. For example 577²−2·408²=332929−332928=1. The verifier checks the Bézout identity, the recurrence and norm through twenty steps, and the descent for the same generated pairs.",
+      "conclusion": "Finite integer arithmetic yields independently inspectable certificates. The written descent, rather than finite sampling, establishes that no nonnegative D=2 solutions are missing."
+    },
+    "limits": "The Pell classification is explicitly restricted to D=2 and nonnegative x,y; signs produce the other integer solutions. For square D the equation has a different character, and the general nonsquare case requires an additional existence and fundamental-unit argument.",
+    "extension": "The error in xₙ/yₙ as an approximation to √2 is exactly 1/[yₙ²(xₙ/yₙ+√2)] for yₙ>0. Thus the same norm certificate gives a quantitative rational-approximation bound without subtracting nearly equal floating-point numbers.",
+    "references": [
+      {
+        "label": "MIT number theory notes: Euclidean algorithm and Brahmagupta–Pell",
+        "url": "https://ocw.mit.edu/courses/18-781-theory-of-numbers-spring-2012/pages/lecture-notes/"
+      }
+    ],
+    "catalog_concepts": [
+      "Euclidean algorithm",
+      "Pell’s equation"
+    ],
+    "original": {
+      "date": "2024-03-31T02:28:25Z",
+      "month": "2024-03",
+      "evidence": "A",
+      "field": "Euclidean certificates and a complete Pell example",
+      "concept": "Euclidean algorithm; Pell’s equation",
+      "origin": "The recovered assistant passage names these concepts in the end of a purported 100-equation list. The mathematics below is a newly authored classical development, not recovered wording.",
+      "question": "Reconstruction: How does the Euclidean algorithm certify a greatest common divisor, and how does multiplication of quadratic units generate and classify the positive solutions of x²−2y²=1?",
+      "math": "Replacing (a,b) by (b,a−qb) preserves common divisors; choosing the remainder 0≤r<|b| ensures termination. For Pell D=2, every solution x,y≥0 is x+y√2=(3+2√2)ⁿ for a unique n≥0.",
+      "finish": "Supply explicit hypotheses, a proof or delimited classical input, and a checked worked example for every named concept.",
+      "kind": "Classical development",
+      "refs": [],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c0] A@2024-03-31T02:28:25Z, -2y 7m: Items 81–100 of 100: Legendre polynomials; Bessel functions; Helmholtz equation; Schwarzian derivative; Euclidean algorithm; Brouwer fixed-point theorem; Hairy Ball theorem; Cauchy integral formula; Maxwell–Boltzmann distribution; Catenary equation; Navier’s thin-plate equation; Rayleigh quotient; Laplace tidal equations; Pell’s equation; Hamilton’s equations; Routh–Hurwitz criterion; chirp signal; Hamilton–Jacobi equation; Riccati equation; Stokes’ drag law. Exact formulas/concepts are present in [c0]; assistant says this completes the 100-equation list.",
+      "retrieval_receipt": "root_details.json record 0",
+      "source_numbers": [
+        85,
+        94
+      ],
+      "original_question": null,
+      "attribution_note": "A@ denotes prior assistant output. No original user prompt was recovered. Except for the Laplace definition, the receipt names concepts rather than reproducing their exact historical equations. All formulations, proofs, examples and grouping here are new editorial work; unavailable items 1–80 are not filled in."
+    }
+  },
+  {
+    "id": "Y24-03-025",
+    "title": "Brouwer and hairy-ball obstructions require the right domain",
+    "status": "Classical mathematics newly developed from a recovered assistant-only catalog name",
+    "summary": "These are global existence and obstruction theorems, not identities evaluated at a point. A closed ball and its boundary sphere behave differently, and even-dimensional spheres have a parity obstruction absent on S¹. The statements below make those distinctions explicit and identify the classical topological input used in each proof.",
+    "definitions": [
+      "Brouwer: every continuous F:Bⁿ→Bⁿ on a closed Euclidean n-ball has a fixed point. Equivalently use the standard simplex Δⁿ={xᵢ≥0,Σxᵢ=1}.",
+      "For x∈S²⊂R³, a tangent vector v(x) satisfies x·v(x)=0. A tangent field is continuous when its three coordinate functions are continuous.",
+      "Use the classical degree facts deg(id:S²→S²)=1, deg(−id)=−1, and homotopy invariance of degree. These are explicit inputs to the hairy-ball proof."
+    ],
+    "result": {
+      "name": "A simplex limiting proof and a sphere-degree contradiction",
+      "statement": "A continuous self-map of a closed ball has at least one fixed point. Every continuous tangent field on S² has at least one zero; neither assertion guarantees uniqueness, and the sphere itself is not the ball in Brouwer’s theorem.",
+      "proof": "For Brouwer, use arbitrarily fine triangulations of Δⁿ and the classical Sperner lemma: if a vertex on a face receives a label belonging to that face, some small simplex has all n+1 labels. If F has no fixed vertex, label each vertex v by an i with vᵢ>Fᵢ(v); such an index exists because both coordinate sums are one, and vᵢ=0 prevents that label because Fᵢ≥0. A fully labeled small simplex therefore exists. Let its mesh tend to zero and choose a convergent subsequence of its vertices using compactness. Continuity gives xᵢ≥Fᵢ(x) for every i at the common limiting point. Equal coordinate sums force equality in all coordinates, giving a fixed point. This proof uses Sperner’s lemma as a stated classical combinatorial input. For hairy ball, suppose a nowhere-zero tangent field exists and normalize it to w(x). Then H(x,t)=cos(πt)x+sin(πt)w(x) stays on S² because x and w are orthogonal unit vectors. It is a homotopy from id to −id, contradicting their different degrees. This proves the obstruction using the stated degree facts."
+    },
+    "example": {
+      "setup": "On [0,1]² take F(x,y)=(x/2+1/4,y/4+1/4). On S² project the fixed vector e₃ into each tangent plane.",
+      "calculation": "The square map has fixed point (1/2,1/3), and each coordinate stays in [0,1]. The tangent field v(x,y,z)=e₃−z(x,y,z) has x·v=0 and ||v||²=1−z²; its zeros are exactly the north and south poles. In contrast w(x,y)=(−y,x) is a nonvanishing unit tangent field on S¹. The verifier checks these algebraic examples exactly. It does not pretend to verify a global topological theorem by sampling.",
+      "conclusion": "Existence is supplied by compactness and topology, while the finite examples reveal the geometric content of the hypotheses."
+    },
+    "limits": "The proof explicitly imports Sperner’s lemma and basic degree theory rather than claiming a self-contained foundation of topology. Continuity, the closed-ball domain, and the even sphere dimension cannot simply be removed. A circle rotation has no fixed point despite being a continuous sphere self-map.",
+    "extension": "In applications a stronger contraction estimate can additionally yield uniqueness and an iteration rate. For the square example the Euclidean Lipschitz constant is 1/2, a quantitative fact that Brouwer alone does not provide.",
+    "references": [
+      {
+        "label": "Brouwer and degree lecture notes, University of Edinburgh",
+        "url": "https://webhomes.maths.ed.ac.uk/~v1ranick/slides/brouwer.pdf"
+      },
+      {
+        "label": "Milnor, analytic proofs of hairy ball and Brouwer",
+        "url": "https://www.tandfonline.com/doi/abs/10.1080/00029890.1978.11994635"
+      },
+      {
+        "label": "Rogers, a proof of Brouwer",
+        "url": "https://people.math.aau.dk/~cornean/index.html/newindex_files/brouwer.pdf"
+      }
+    ],
+    "catalog_concepts": [
+      "Brouwer fixed-point theorem",
+      "Hairy Ball theorem"
+    ],
+    "original": {
+      "date": "2024-03-31T02:28:25Z",
+      "month": "2024-03",
+      "evidence": "A",
+      "field": "Brouwer and hairy-ball obstructions require the right domain",
+      "concept": "Brouwer fixed-point theorem; Hairy Ball theorem",
+      "origin": "The recovered assistant passage names these concepts in the end of a purported 100-equation list. The mathematics below is a newly authored classical development, not recovered wording.",
+      "question": "Reconstruction: Why does a continuous self-map of a closed ball have a fixed point, why must a continuous tangent field on S² vanish, and what explicit examples show the hypotheses?",
+      "math": "A continuous self-map of a closed ball has at least one fixed point. Every continuous tangent field on S² has at least one zero; neither assertion guarantees uniqueness, and the sphere itself is not the ball in Brouwer’s theorem.",
+      "finish": "Supply explicit hypotheses, a proof or delimited classical input, and a checked worked example for every named concept.",
+      "kind": "Classical development",
+      "refs": [],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c0] A@2024-03-31T02:28:25Z, -2y 7m: Items 81–100 of 100: Legendre polynomials; Bessel functions; Helmholtz equation; Schwarzian derivative; Euclidean algorithm; Brouwer fixed-point theorem; Hairy Ball theorem; Cauchy integral formula; Maxwell–Boltzmann distribution; Catenary equation; Navier’s thin-plate equation; Rayleigh quotient; Laplace tidal equations; Pell’s equation; Hamilton’s equations; Routh–Hurwitz criterion; chirp signal; Hamilton–Jacobi equation; Riccati equation; Stokes’ drag law. Exact formulas/concepts are present in [c0]; assistant says this completes the 100-equation list.",
+      "retrieval_receipt": "root_details.json record 0",
+      "source_numbers": [
+        86,
+        87
+      ],
+      "original_question": null,
+      "attribution_note": "A@ denotes prior assistant output. No original user prompt was recovered. Except for the Laplace definition, the receipt names concepts rather than reproducing their exact historical equations. All formulations, proofs, examples and grouping here are new editorial work; unavailable items 1–80 are not filled in."
+    }
+  },
+  {
+    "id": "Y24-03-026",
+    "title": "Cauchy’s integral formula is coefficient extraction with hypotheses",
+    "status": "Classical mathematics newly developed from a recovered assistant-only catalog name",
+    "summary": "A contour formula is incomplete without its enclosed point, orientation and analytic domain. With those specified, Cauchy’s formula turns a seemingly difficult complex integral into derivative evaluation. The formula also yields a useful derivative bound, so the same theorem supports both exact calculation and error control.",
+    "definitions": [
+      "Let f be holomorphic on an open set containing the closed disk |z−a|≤r, with r>0. Let C be its counterclockwise circular boundary.",
+      "For an integer n≥0, Cauchy’s formula reads f^(n)(a)=n!/(2πi)∮_C f(z)/(z−a)^(n+1) dz. More general simple closed curves work when the same analyticity and interior conditions hold.",
+      "A line integral uses a parameterization z(t) and the factor z′(t)dt. Omitting that factor or reversing the orientation changes the calculation."
+    ],
+    "result": {
+      "name": "Boundary data recover derivatives and control their size",
+      "statement": "Under the stated hypotheses, the derivative formula holds and |f^(n)(a)|≤n!M/rⁿ, where M=max_C|f|. In particular ∮_|z|=2 (z⁴+2z)/(z−1)³ dz=12πi and ∮_|z|=2 eᶻ/(z−1)³ dz=πie.",
+      "proof": "For n=0, Cauchy’s theorem on the annulus between C and a small circle around a equates the two integrals of f(z)/(z−a). Parameterizing the small circle as a+εe^(it) makes its integral i∫₀^(2π)f(a+εe^(it))dt, which tends to 2πif(a) by uniform continuity. This proves the base formula using Cauchy’s theorem as the classical analytic input. For an interior variable a, differentiate under the boundary integral; the denominator stays uniformly separated from zero on a sufficiently small neighborhood. Repeating n times supplies n!/(z−a)^(n+1). The bound follows by taking absolute values, using contour length 2πr and denominator modulus r^(n+1). In the first example f″(1)=12, and the derivative formula multiplies this by 2πi/2!=πi. In the second f″(1)=e, giving πie. The pole at one is strictly inside |z|=2 and neither numerator has another singularity."
+    },
+    "example": {
+      "setup": "Compute the two displayed integrals on z(t)=2e^(it), 0≤t≤2π.",
+      "calculation": "For the polynomial, expanding z⁴+2z around z=1 gives coefficient six on (z−1)², so division by (z−1)³ has residue six and integral 12πi. For eᶻ, the corresponding coefficient is e/2 and integral πie. A periodic trapezoidal quadrature with 256 points independently approximates each integral and is compared with the analytic answers. That numerical agreement is a finite check; the coefficient and contour arguments give the proof.",
+      "conclusion": "Both examples fix the factorial, orientation and 2πi normalization, while the bound shows what analyticity additionally controls."
+    },
+    "limits": "A contour passing through a singularity is outside these hypotheses. Merely having a real derivative on a curve does not imply complex analyticity inside it. The numerical quadrature is not used as a substitute for those conditions.",
+    "extension": "If f is bounded by M on a disk of radius R, the Taylor remainder at |z−a|=ρ<R is bounded by M(ρ/R)^(N+1)/(1−ρ/R). This follows from the coefficient bounds and a geometric series, giving a directly usable analytic approximation certificate.",
+    "references": [
+      {
+        "label": "MIT Jeremy Orloff, Cauchy integral formula notes",
+        "url": "https://ocw.mit.edu/courses/18-04-complex-variables-with-applications-spring-2018/b1a90df19f643b974555bbbb93138a48_MIT18_04S18_topic4.pdf"
+      }
+    ],
+    "catalog_concepts": [
+      "Cauchy integral formula"
+    ],
+    "original": {
+      "date": "2024-03-31T02:28:25Z",
+      "month": "2024-03",
+      "evidence": "A",
+      "field": "Cauchy’s integral formula is coefficient extraction with hypotheses",
+      "concept": "Cauchy integral formula",
+      "origin": "The recovered assistant passage names these concepts in the end of a purported 100-equation list. The mathematics below is a newly authored classical development, not recovered wording.",
+      "question": "Reconstruction: Under which analyticity and orientation assumptions does a contour integral recover a derivative, and what exact integrals result for a polynomial and an exponential?",
+      "math": "Under the stated hypotheses, the derivative formula holds and |f^(n)(a)|≤n!M/rⁿ, where M=max_C|f|. In particular ∮_|z|=2 (z⁴+2z)/(z−1)³ dz=12πi and ∮_|z|=2 eᶻ/(z−1)³ dz=πie.",
+      "finish": "Supply explicit hypotheses, a proof or delimited classical input, and a checked worked example for every named concept.",
+      "kind": "Classical development",
+      "refs": [],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c0] A@2024-03-31T02:28:25Z, -2y 7m: Items 81–100 of 100: Legendre polynomials; Bessel functions; Helmholtz equation; Schwarzian derivative; Euclidean algorithm; Brouwer fixed-point theorem; Hairy Ball theorem; Cauchy integral formula; Maxwell–Boltzmann distribution; Catenary equation; Navier’s thin-plate equation; Rayleigh quotient; Laplace tidal equations; Pell’s equation; Hamilton’s equations; Routh–Hurwitz criterion; chirp signal; Hamilton–Jacobi equation; Riccati equation; Stokes’ drag law. Exact formulas/concepts are present in [c0]; assistant says this completes the 100-equation list.",
+      "retrieval_receipt": "root_details.json record 0",
+      "source_numbers": [
+        88
+      ],
+      "original_question": null,
+      "attribution_note": "A@ denotes prior assistant output. No original user prompt was recovered. Except for the Laplace definition, the receipt names concepts rather than reproducing their exact historical equations. All formulations, proofs, examples and grouping here are new editorial work; unavailable items 1–80 are not filled in."
+    }
+  },
+  {
+    "id": "Y24-03-027",
+    "title": "Maxwell–Boltzmann speed is a radial Gaussian distribution",
+    "status": "Classical mathematics newly developed from a recovered assistant-only catalog name",
+    "summary": "A velocity component and a nonnegative speed have different distributions. The factor proportional to speed squared comes from three-dimensional volume, not an arbitrary correction. The derivation below identifies that Jacobian and calculates the distinct characteristic speeds from one normalized model.",
+    "definitions": [
+      "Assume an equilibrium classical ideal-gas velocity vector V=(V₁,V₂,V₃) with independent centered Gaussian components of variance σ²=k_BT/m>0.",
+      "The vector density is (2πσ²)^(−3/2)exp(−|v|²/(2σ²)) on R³. The speed is R=|V|≥0.",
+      "The spherical volume element is r²sinθ drdθdφ. Integrating over directions contributes 4πr², so a speed density must include this factor."
+    ],
+    "result": {
+      "name": "Normalization, moments and three characteristic speeds",
+      "statement": "The speed density is g(r)=√(2/π)r²σ^(−3)e^(−r²/(2σ²)) for r≥0. Its mode is √2σ, mean is √(8/π)σ, and root-mean-square speed is √3σ. More generally E[Rᵖ]=2^(p/2+1)Γ((p+3)/2)σᵖ/√π for p>−3.",
+      "proof": "Integrate the vector density over each sphere of radius r to obtain g. The one-dimensional Gaussian integral can be normalized by squaring ∫e^(−x²/2)dx and changing to polar coordinates in R²; thus the joint Gaussian has total mass one, as does g. For the moments substitute u=r²/(2σ²) into ∫₀∞rᵖg(r)dr. The power of r and dr produce the stated gamma integral, finite near zero exactly when p>−3. Substituting p=1 and p=2 gives the mean and second moment. Alternatively E[R²]=ΣE[Vᵢ²]=3σ², an independent check. For the mode differentiate log g(r)=constant+2log r−r²/(2σ²) on r>0. Its derivative vanishes only at r=√2σ, changes from positive to negative, and the density vanishes at zero and infinity. This proves it is the unique positive maximum."
+    },
+    "example": {
+      "setup": "Choose the nondimensional model σ=1, then compare the three speeds and the first two moments.",
+      "calculation": "The mode is approximately 1.41421356, the mean 1.59576912 and the root-mean-square speed 1.73205081. The exact second moment is three and the variance is 3−8/π≈0.45352091. The verifier integrates g, rg and r²g over [0,10] with a declared composite Simpson rule, compares to 1,√(8/π),3 and reports the finite integration errors. The unintegrated tail is exponentially small; the proof of normalization and moments is the analytic gamma calculation, not the quadrature.",
+      "conclusion": "The three commonly quoted speeds answer different mathematical questions, and their ordering is a consequence of the density rather than a convention."
+    },
+    "limits": "This is the explicitly assumed classical equilibrium Gaussian model, not a statement about every velocity sample or every interacting system. The scalar component density has its maximum at zero, while the speed density has its maximum away from zero; confusing them removes the radial Jacobian.",
+    "extension": "For anisotropic independent variances σ₁²,σ₂²,σ₃² the second moment remains their sum, but the speed is generally not Maxwell distributed. This supplies a concrete diagnostic for whether isotropy was used in a calculation.",
+    "references": [
+      {
+        "label": "University of Texas Maxwell velocity distribution",
+        "url": "https://farside.ph.utexas.edu/teaching/sm1/Thermalhtml/node87.html"
+      },
+      {
+        "label": "MIT ionized-gas distribution and moment notes",
+        "url": "https://ocw.mit.edu/courses/16-55-ionized-gases-fall-2014/pages/lecture-notes/"
+      }
+    ],
+    "catalog_concepts": [
+      "Maxwell–Boltzmann distribution"
+    ],
+    "original": {
+      "date": "2024-03-31T02:28:25Z",
+      "month": "2024-03",
+      "evidence": "A",
+      "field": "Maxwell–Boltzmann speed is a radial Gaussian distribution",
+      "concept": "Maxwell–Boltzmann distribution",
+      "origin": "The recovered assistant passage names these concepts in the end of a purported 100-equation list. The mathematics below is a newly authored classical development, not recovered wording.",
+      "question": "Reconstruction: Starting from three independent Gaussian velocity components, what is the normalized speed density and how do its mode, mean and root-mean-square speed differ?",
+      "math": "The speed density is g(r)=√(2/π)r²σ^(−3)e^(−r²/(2σ²)) for r≥0. Its mode is √2σ, mean is √(8/π)σ, and root-mean-square speed is √3σ. More generally E[Rᵖ]=2^(p/2+1)Γ((p+3)/2)σᵖ/√π for p>−3.",
+      "finish": "Supply explicit hypotheses, a proof or delimited classical input, and a checked worked example for every named concept.",
+      "kind": "Classical development",
+      "refs": [],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c0] A@2024-03-31T02:28:25Z, -2y 7m: Items 81–100 of 100: Legendre polynomials; Bessel functions; Helmholtz equation; Schwarzian derivative; Euclidean algorithm; Brouwer fixed-point theorem; Hairy Ball theorem; Cauchy integral formula; Maxwell–Boltzmann distribution; Catenary equation; Navier’s thin-plate equation; Rayleigh quotient; Laplace tidal equations; Pell’s equation; Hamilton’s equations; Routh–Hurwitz criterion; chirp signal; Hamilton–Jacobi equation; Riccati equation; Stokes’ drag law. Exact formulas/concepts are present in [c0]; assistant says this completes the 100-equation list.",
+      "retrieval_receipt": "root_details.json record 0",
+      "source_numbers": [
+        89
+      ],
+      "original_question": null,
+      "attribution_note": "A@ denotes prior assistant output. No original user prompt was recovered. Except for the Laplace definition, the receipt names concepts rather than reproducing their exact historical equations. All formulations, proofs, examples and grouping here are new editorial work; unavailable items 1–80 are not filled in."
+    }
+  },
+  {
+    "id": "Y24-03-028",
+    "title": "A catenary is fixed by force balance and an explicit length constraint",
+    "status": "Classical mathematics newly developed from a recovered assistant-only catalog name",
+    "summary": "A catenary has a parameter with a physical and geometric meaning: horizontal tension divided by weight per unit arc length. Stating that meaning avoids confusing a chain under its own weight with a cable under a load uniform per horizontal distance, which instead gives a parabola.",
+    "definitions": [
+      "Use a planar, perfectly flexible, inextensible chain in static equilibrium. Let w>0 be weight per unit arc length, H>0 the constant horizontal tension, and a=H/w.",
+      "Measure x horizontally and y upwards, with the lowest point at x=0. Let s(x) be signed arc length from that point, so s′=√(1+y′²).",
+      "For equal-height supports at x=±b, b>0, write the lowest height as y(0)=0. The total chain length is L>2b."
+    ],
+    "result": {
+      "name": "The catenary law and uniqueness of the length parameter",
+      "statement": "Force balance gives y″=(1/a)√(1+y′²). With a horizontal tangent at the lowest point, y(x)=a(cosh(x/a)−1). Its length between ±b is L(a)=2a sinh(b/a). For each L>2b there is exactly one a>0 satisfying this equation.",
+      "proof": "The vertical tension on the segment between the lowest point and x balances its weight ws. The tangent slope is vertical tension divided by horizontal tension, hence Hy′=ws. Differentiating and substituting s′ gives the stated ODE. Therefore d(arcsinh y′)/dx=1/a. With y′(0)=0, integration gives y′=sinh(x/a) and then the catenary expression. Its arc-length density is cosh(x/a), so integrating from −b to b gives L(a). To prove uniqueness, put z=b/a>0 and differentiate: L′(a)=2(sinh z−z cosh z). The expression in parentheses is zero at z=0 and has derivative −z sinh z<0 for z>0. Thus L′<0. As a→∞ the limit is 2b, while a→0⁺ sends L to infinity. Continuity and strict monotonicity give existence and uniqueness for every L>2b. The argument determines the one-parameter equilibrium graph in this model; it is not a claim about elastic or self-contacting chains."
+    },
+    "example": {
+      "setup": "Take a=2 length units and b=2, so the supports are four units apart.",
+      "calculation": "The endpoint sag above the lowest point is 2(cosh 1−1)≈1.08616126963. The length is 4sinh 1≈4.70080477458. At x=2 the slope is sinh 1 and the arc-length density is cosh 1. The ODE residual cancels because y″=(1/2)cosh(x/2) and √(1+y′²)=cosh(x/2). The verifier checks these identities numerically and brackets the unique inverse length parameter near a=2 using the proven monotonicity.",
+      "conclusion": "The length condition fixes the scale and exposes exactly why a bare cosh formula has an undetermined parameter."
+    },
+    "limits": "Uniform weight here means uniform per actual arc length. A distributed horizontal load, bending stiffness, stretch, friction or unequal support heights changes the model or its boundary conditions. Finite numerical residuals confirm the chosen example; the differentiations and monotonicity argument provide the proof.",
+    "extension": "For unequal support heights use y=a cosh((x−x₀)/a)+c and solve the endpoint and length constraints for a,x₀,c. Keeping the signed arc-length relation is often a cleaner route than squaring the equations and introducing spurious signs.",
+    "references": [
+      {
+        "label": "University of Illinois, Liberzon catenary derivation",
+        "url": "https://liberzon.csl.illinois.edu/teaching/cvoc/node23.html"
+      },
+      {
+        "label": "University of Virginia statics and catenary",
+        "url": "https://galileoandeinstein.phys.virginia.edu/7010/CM_01_Intro_Statics_Catenary_Arch.html"
+      }
+    ],
+    "catalog_concepts": [
+      "Catenary equation"
+    ],
+    "original": {
+      "date": "2024-03-31T02:28:25Z",
+      "month": "2024-03",
+      "evidence": "A",
+      "field": "A catenary is fixed by force balance and an explicit length constraint",
+      "concept": "Catenary equation",
+      "origin": "The recovered assistant passage names these concepts in the end of a purported 100-equation list. The mathematics below is a newly authored classical development, not recovered wording.",
+      "question": "Reconstruction: Why does a uniformly weighted flexible chain satisfy a hyperbolic-cosine equation, and when do span and length determine its scale uniquely?",
+      "math": "Force balance gives y″=(1/a)√(1+y′²). With a horizontal tangent at the lowest point, y(x)=a(cosh(x/a)−1). Its length between ±b is L(a)=2a sinh(b/a). For each L>2b there is exactly one a>0 satisfying this equation.",
+      "finish": "Supply explicit hypotheses, a proof or delimited classical input, and a checked worked example for every named concept.",
+      "kind": "Classical development",
+      "refs": [],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c0] A@2024-03-31T02:28:25Z, -2y 7m: Items 81–100 of 100: Legendre polynomials; Bessel functions; Helmholtz equation; Schwarzian derivative; Euclidean algorithm; Brouwer fixed-point theorem; Hairy Ball theorem; Cauchy integral formula; Maxwell–Boltzmann distribution; Catenary equation; Navier’s thin-plate equation; Rayleigh quotient; Laplace tidal equations; Pell’s equation; Hamilton’s equations; Routh–Hurwitz criterion; chirp signal; Hamilton–Jacobi equation; Riccati equation; Stokes’ drag law. Exact formulas/concepts are present in [c0]; assistant says this completes the 100-equation list.",
+      "retrieval_receipt": "root_details.json record 0",
+      "source_numbers": [
+        90
+      ],
+      "original_question": null,
+      "attribution_note": "A@ denotes prior assistant output. No original user prompt was recovered. Except for the Laplace definition, the receipt names concepts rather than reproducing their exact historical equations. All formulations, proofs, examples and grouping here are new editorial work; unavailable items 1–80 are not filled in."
+    }
+  },
+  {
+    "id": "Y24-03-029",
+    "title": "Navier plate modes and the Rayleigh quotient share a spectral calculation",
+    "status": "Classical mathematics newly developed from a recovered assistant-only catalog name",
+    "summary": "A plate equation needs its boundary conditions before a Fourier formula is valid. A simply supported rectangle provides a case where each sine mode diagonalizes both the static equation and the vibration equation. The Rayleigh quotient is the corresponding energy ratio, with a small matrix example showing its algebra transparently.",
+    "definitions": [
+      "In the linear isotropic Kirchhoff–Love model let D=Eh³/[12(1−ν²)]>0 be bending stiffness and μ=ρh>0 surface mass density. Use DΔ²w+μw_tt=p.",
+      "On a rectangle (0,a)×(0,b), Navier simply supported conditions are w=0 and Δw=0 on each straight edge. For a smooth solution they agree with zero normal bending moment because the tangential second derivative of the zero boundary trace vanishes.",
+      "For real symmetric A and nonzero v, define R_A(v)=vᵀAv/(vᵀv). For an admissible Navier plate mode the corresponding ratio is D∫(Δw)²/(μ∫w²)."
+    ],
+    "result": {
+      "name": "Mode amplitudes, vibration frequencies and a residual bound",
+      "statement": "Let φ_mn=sin(mπx/a)sin(nπy/b), λ_mn=(mπ/a)²+(nπ/b)². Then Δφ=−λφ and Δ²φ=λ²φ. A static load Pφ gives w=Pφ/(Dλ²), and a free vibration in this mode has ω²=Dλ²/μ. Also λ_min(A)≤R_A(v)≤λ_max(A) and dist(R_A(v),spectrum(A))≤||Av−R_A(v)v||/||v||.",
+      "proof": "Differentiate each sine twice to obtain its Laplacian. Both φ and Δφ vanish on all four edges, so the mode satisfies the declared boundary conditions. Substitution reduces the static PDE to Dλ²W=P and the vibration PDE to μW″+Dλ²W=0. For the matrix statements, expand v=Σcⱼeⱼ in an orthonormal eigenbasis. Then R is the weighted average Σλⱼcⱼ²/Σcⱼ², proving the interval bound. The squared normalized residual is Σ(λⱼ−R)²cⱼ²/Σcⱼ², at least the square of the distance to the spectrum. This proves the residual estimate. Two integrations by parts under w=Δw=0 similarly turn ∫wΔ²w into ∫(Δw)², explaining the plate energy quotient. No unproved convergence assertion for an arbitrary Fourier load is needed for the single-mode example."
+    },
+    "example": {
+      "setup": "Take a=b=π, m=n=1, D=3, μ=2 and load p=12sin x sin y. Separately take A=[[2,1],[1,2]], v=(1,2).",
+      "calculation": "For the plate λ=2, so w=sin x sin y and ω²=6. The matrix has eigenvalues one and three, while R_A(v)=14/5. Its residual is (6/5,−3/5), giving normalized residual 3/5. The distance from 14/5 to the spectrum is 1/5, within that bound. The verifier checks all matrix identities exactly and checks the plate coefficients symbolically by integer arithmetic.",
+      "conclusion": "Boundary conditions make the PDE mode legitimate, and the quotient supplies a concrete spectral bound rather than merely a suggestive analogy."
+    },
+    "limits": "This uses a thin, small-deflection, linear plate model. Clamped edges require different mode shapes, so the same sine formula cannot be transferred to them. A Rayleigh quotient is an estimate for a specified self-adjoint operator; it need not be an eigenvalue.",
+    "extension": "For a finite span of admissible modes, form stiffness and mass matrices and solve Kc=ω²Mc. With positive definite M this becomes a symmetric matrix problem after conjugating by M^(−1/2), preserving the quotient interpretation.",
+    "references": [
+      {
+        "label": "RWTH Aachen continuum mechanics, thin plates",
+        "url": "https://mbd.pages.rwth-aachen.de/courses/cmm/content/script/chapters/linearelastics.html"
+      },
+      {
+        "label": "MIT linear algebra Rayleigh quotient notes",
+        "url": "https://ocw.mit.edu/courses/18-06sc-linear-algebra-fall-2011/pages/positive-definite-matrices-and-applications/positive-definite-matrices-and-minima/"
+      }
+    ],
+    "catalog_concepts": [
+      "Navier’s thin-plate equation",
+      "Rayleigh quotient"
+    ],
+    "original": {
+      "date": "2024-03-31T02:28:25Z",
+      "month": "2024-03",
+      "evidence": "A",
+      "field": "Navier plate modes and the Rayleigh quotient share a spectral calculation",
+      "concept": "Navier’s thin-plate equation; Rayleigh quotient",
+      "origin": "The recovered assistant passage names these concepts in the end of a purported 100-equation list. The mathematics below is a newly authored classical development, not recovered wording.",
+      "question": "Reconstruction: For a simply supported rectangular thin plate, what does a single sine load produce, and how does the Rayleigh quotient bound an eigenvalue and quantify an approximate eigenvector?",
+      "math": "Let φ_mn=sin(mπx/a)sin(nπy/b), λ_mn=(mπ/a)²+(nπ/b)². Then Δφ=−λφ and Δ²φ=λ²φ. A static load Pφ gives w=Pφ/(Dλ²), and a free vibration in this mode has ω²=Dλ²/μ. Also λ_min(A)≤R_A(v)≤λ_max(A) and dist(R_A(v),spectrum(A))≤||Av−R_A(v)v||/||v||.",
+      "finish": "Supply explicit hypotheses, a proof or delimited classical input, and a checked worked example for every named concept.",
+      "kind": "Classical development",
+      "refs": [],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c0] A@2024-03-31T02:28:25Z, -2y 7m: Items 81–100 of 100: Legendre polynomials; Bessel functions; Helmholtz equation; Schwarzian derivative; Euclidean algorithm; Brouwer fixed-point theorem; Hairy Ball theorem; Cauchy integral formula; Maxwell–Boltzmann distribution; Catenary equation; Navier’s thin-plate equation; Rayleigh quotient; Laplace tidal equations; Pell’s equation; Hamilton’s equations; Routh–Hurwitz criterion; chirp signal; Hamilton–Jacobi equation; Riccati equation; Stokes’ drag law. Exact formulas/concepts are present in [c0]; assistant says this completes the 100-equation list.",
+      "retrieval_receipt": "root_details.json record 0",
+      "source_numbers": [
+        91,
+        92
+      ],
+      "original_question": null,
+      "attribution_note": "A@ denotes prior assistant output. No original user prompt was recovered. Except for the Laplace definition, the receipt names concepts rather than reproducing their exact historical equations. All formulations, proofs, examples and grouping here are new editorial work; unavailable items 1–80 are not filled in."
+    }
+  },
+  {
+    "id": "Y24-03-030",
+    "title": "Laplace tidal equations yield a local rotating-wave certificate",
+    "status": "Classical mathematics newly developed from a recovered assistant-only catalog name",
+    "summary": "The tidal equations are a system for horizontal velocity and free-surface displacement. Their spherical geometry should not be silently replaced by a Cartesian formula. This treatment states the global coordinate model and then develops a precisely delimited local constant-depth calculation whose signs can be checked directly.",
+    "definitions": [
+      "On a sphere of radius a use longitude λ, latitude φ, eastward velocity u, northward velocity v, constant mean depth H>0 and displacement η. Set f=2Ωsinφ and take g>0.",
+      "For a specified potential Φ, the spherical linear equations are u_t−fv=−(gη+Φ)_λ/(a cosφ), v_t+fu=−(gη+Φ)_φ/a, and η_t+H[ u_λ+(v cosφ)_φ ]/(a cosφ)=0, away from coordinate poles.",
+      "A small local patch freezes f and replaces metric derivatives by ∂x,∂y. With Φ=0 this gives u_t−fv=−gη_x, v_t+fu=−gη_y, η_t+H(u_x+v_y)=0. The calculation below is for this f-plane system."
+    ],
+    "result": {
+      "name": "Local energy balance and Poincaré-wave dispersion",
+      "statement": "The local unforced system obeys ∂t[H(u²+v²)/2+gη²/2]+∇·[gHη(u,v)]=0. For a nonzero horizontal wavenumber k, a wave traveling along x has ω²=f²+gHk² and can be written η=Acosθ, u=ωAcosθ/(Hk), v=fAsinθ/(Hk), θ=kx−ωt.",
+      "proof": "Multiply the first momentum equation by Hu and the second by Hv. Their Coriolis terms cancel exactly because −fuv+fvu=0. Multiply continuity by gη and add. The gradient products combine into the displayed divergence by the product rule. Thus integration over a periodic region or a region with zero normal velocity conserves the total positive quadratic energy. For the wave, continuity requires u to have amplitude ωA/(Hk). The second momentum equation then fixes the quadrature component v=fAsinθ/(Hk). Substitution in the first gives (ω²−f²)A/(Hk)=gkA, proving the dispersion relation for A≠0. This direct substitution also fixes the sign of the sine component. A stationary geostrophic component is possible in the full system and is not represented by this propagating branch."
+    },
+    "example": {
+      "setup": "Use the constructed nondimensional coefficients H=1, g=16, f=3, k=1 and A=1/10.",
+      "calculation": "Then ω=5, η=(1/10)cos(x−5t), u=(1/2)cos(x−5t), and v=(3/10)sin(x−5t). The momentum coefficient identities are 5·(1/2)−3·(3/10)=16/10 and −5·(3/10)+3·(1/2)=0. Continuity gives 5/10−1/2=0. The time period is 2π/5. These residuals and the dispersion equation 25=9+16 are checked exactly with rational coefficients.",
+      "conclusion": "The example is a real solution certificate of the declared local system, while the global equations retain the geometry needed for an actual spherical tide model."
+    },
+    "limits": "The f-plane approximation is local, and the source’s catalog name alone supplies no coastline, depth map, forcing or dissipation data. The sinusoidal example is not an ocean prediction. Nonlinear advection, changing depth and friction require additional terms and may change the energy budget.",
+    "extension": "Add Rayleigh friction −ru,−rv with r≥0. The energy law then has the nonpositive sink −rH(u²+v²). Including a specified potential contributes work −H(u,v)·∇Φ, which must be retained when comparing forcing and dissipation.",
+    "references": [
+      {
+        "label": "University of Texas derivation of Laplace tidal equations",
+        "url": "https://farside.ph.utexas.edu/teaching/336L/Fluid/node170.html"
+      },
+      {
+        "label": "MIT rotating shallow-water and spherical tide notes",
+        "url": "https://ocw.mit.edu/courses/12-802-wave-motion-in-the-ocean-and-the-atmosphere-spring-2008/pages/lecture-notes/"
+      }
+    ],
+    "catalog_concepts": [
+      "Laplace tidal equations"
+    ],
+    "original": {
+      "date": "2024-03-31T02:28:25Z",
+      "month": "2024-03",
+      "evidence": "A",
+      "field": "Laplace tidal equations yield a local rotating-wave certificate",
+      "concept": "Laplace tidal equations",
+      "origin": "The recovered assistant passage names these concepts in the end of a purported 100-equation list. The mathematics below is a newly authored classical development, not recovered wording.",
+      "question": "Reconstruction: What are the linear tidal equations on a sphere, what assumptions give their local f-plane form, and what energy law and plane-wave dispersion relation follow?",
+      "math": "The local unforced system obeys ∂t[H(u²+v²)/2+gη²/2]+∇·[gHη(u,v)]=0. For a nonzero horizontal wavenumber k, a wave traveling along x has ω²=f²+gHk² and can be written η=Acosθ, u=ωAcosθ/(Hk), v=fAsinθ/(Hk), θ=kx−ωt.",
+      "finish": "Supply explicit hypotheses, a proof or delimited classical input, and a checked worked example for every named concept.",
+      "kind": "Classical development",
+      "refs": [],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c0] A@2024-03-31T02:28:25Z, -2y 7m: Items 81–100 of 100: Legendre polynomials; Bessel functions; Helmholtz equation; Schwarzian derivative; Euclidean algorithm; Brouwer fixed-point theorem; Hairy Ball theorem; Cauchy integral formula; Maxwell–Boltzmann distribution; Catenary equation; Navier’s thin-plate equation; Rayleigh quotient; Laplace tidal equations; Pell’s equation; Hamilton’s equations; Routh–Hurwitz criterion; chirp signal; Hamilton–Jacobi equation; Riccati equation; Stokes’ drag law. Exact formulas/concepts are present in [c0]; assistant says this completes the 100-equation list.",
+      "retrieval_receipt": "root_details.json record 0",
+      "source_numbers": [
+        93
+      ],
+      "original_question": null,
+      "attribution_note": "A@ denotes prior assistant output. No original user prompt was recovered. Except for the Laplace definition, the receipt names concepts rather than reproducing their exact historical equations. All formulations, proofs, examples and grouping here are new editorial work; unavailable items 1–80 are not filled in."
+    }
+  },
+  {
+    "id": "Y24-03-031",
+    "title": "Hamilton, Hamilton–Jacobi and Riccati equations meet at a caustic",
+    "status": "Classical mathematics newly developed from a recovered assistant-only catalog name",
+    "summary": "Three separately named catalog items can be made concrete with one harmonic oscillator. The Hamiltonian flow is a smooth rotation in phase space; a quadratic Hamilton–Jacobi function describes a graph inside it; a scalar Riccati equation controls that graph’s slope. The finite-time pole is therefore a coordinate failure of the graph description, not a singularity in the underlying oscillator.",
+    "definitions": [
+      "For a C² Hamiltonian H(q,p,t), canonical equations are qdot=H_p, pdot=−H_q. Along a solution, dH/dt=H_t.",
+      "A C² Hamilton–Jacobi function S(q,t) solves S_t+H(q,S_q,t)=0. Its momentum graph is p=S_q, on a region where this is a valid smooth graph.",
+      "For H=(p²+q²)/2 and the quadratic ansatz S=A(t)q²/2, the PDE reduces to the scalar Riccati equation A′+A²+1=0.",
+      "More generally y′=a(t)+b(t)y+c(t)y² is Riccati. If c is C¹ and nowhere zero, y=−u′/(cu) transforms it, wherever u≠0, into u″−(b+c′/c)u′+acu=0."
+    ],
+    "result": {
+      "name": "Characteristic mechanics and an exactly solvable graph singularity",
+      "statement": "For the unit oscillator, q(t)=q₀cos t+p₀sin t and p(t)=p₀cos t−q₀sin t solve Hamilton’s equations for all real t. With initial graph p₀=0, the Hamilton–Jacobi solution S(q,t)=−(tan t)q²/2 is valid for |t|<π/2, and A(t)=−tan t solves the associated Riccati equation.",
+      "proof": "The oscillator expressions differentiate to qdot=p and pdot=−q. Their squared norm is q₀²+p₀², proving energy conservation directly, while the general chain rule gives H_qH_p−H_pH_q+H_t=H_t. For a general smooth S solving Hamilton–Jacobi, follow qdot=H_p(q,S_q,t). Differentiating p=S_q along that path gives pdot=S_qt+S_qqH_p. Differentiating the PDE in q gives S_qt+H_q+H_pS_qq=0, so pdot=−H_q: its characteristics obey Hamilton’s equations. In the quadratic oscillator ansatz, S_t=A′q²/2 and H(q,S_q)=(A²+1)q²/2, yielding Riccati. The initial value A(0)=0 has A=−tan t, or equivalently A=u′/u with u=cos t solving u″+u=0. For the general substitution write v=u′/u. Then v′+v²=u″/u; substituting y=−v/c yields precisely the displayed linear second-order equation. These transformations are valid only while their denominators do not vanish."
+    },
+    "example": {
+      "setup": "Set q₀=2,p₀=0 and evaluate at t=π/4, then inspect the limit t→π/2.",
+      "calculation": "At π/4 the trajectory has q=√2,p=−√2 and energy two. The phase coefficient is A=−1, so p=Aq and S=−q²/2 agree with the same graph. The Hamilton–Jacobi residual is [A′+A²+1]q²/2=0 because A′=−sec²t. At π/2 the trajectory is (0,−2), perfectly finite, but A=−tan t diverges. All starting q₀ with p₀=0 project to q=0 there, so one graph p(q) can no longer represent the family. The verifier checks the analytic coefficient identities numerically and uses exact rational values for the A=−1 residual.",
+      "conclusion": "The shared example explains both the strength and the domain of the Riccati reduction, including a genuine geometric reason for its pole."
+    },
+    "limits": "This is the classical Hamilton–Jacobi equation, not automatically the Hamilton–Jacobi–Bellman equation of an optimal-control problem. A local smooth phase need not exist globally after characteristics cross. The written calculation does not claim global smooth solutions for an arbitrary Hamiltonian.",
+    "extension": "For a quadratic multidimensional Hamiltonian, a matrix phase S=qᵀPq/2 produces a matrix Riccati equation. The graph remains meaningful only while the relevant position block of the linear symplectic flow is invertible; a singular block again indicates a projection caustic.",
+    "references": [
+      {
+        "label": "MIT Advanced Classical Mechanics notes",
+        "url": "https://ocw.mit.edu/courses/8-09-classical-mechanics-iii-fall-2014/d9bac33f6c60b304dc0398e99b327102_MIT8_09F14_full.pdf"
+      },
+      {
+        "label": "MIT optimal-control notes for comparison of HJ and Riccati formulations",
+        "url": "https://ocw.mit.edu/courses/16-323-principles-of-optimal-control-spring-2008/pages/lecture-notes/"
+      }
+    ],
+    "catalog_concepts": [
+      "Hamilton’s equations",
+      "Hamilton–Jacobi equation",
+      "Riccati equation"
+    ],
+    "original": {
+      "date": "2024-03-31T02:28:25Z",
+      "month": "2024-03",
+      "evidence": "A",
+      "field": "Hamilton, Hamilton–Jacobi and Riccati equations meet at a caustic",
+      "concept": "Hamilton’s equations; Hamilton–Jacobi equation; Riccati equation",
+      "origin": "The recovered assistant passage names these concepts in the end of a purported 100-equation list. The mathematics below is a newly authored classical development, not recovered wording.",
+      "question": "Reconstruction: How are Hamilton’s equations related to the Hamilton–Jacobi PDE, how does a quadratic phase produce a Riccati equation, and why can that Riccati variable blow up while the mechanical trajectory remains smooth?",
+      "math": "For the unit oscillator, q(t)=q₀cos t+p₀sin t and p(t)=p₀cos t−q₀sin t solve Hamilton’s equations for all real t. With initial graph p₀=0, the Hamilton–Jacobi solution S(q,t)=−(tan t)q²/2 is valid for |t|<π/2, and A(t)=−tan t solves the associated Riccati equation.",
+      "finish": "Supply explicit hypotheses, a proof or delimited classical input, and a checked worked example for every named concept.",
+      "kind": "Classical development",
+      "refs": [],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c0] A@2024-03-31T02:28:25Z, -2y 7m: Items 81–100 of 100: Legendre polynomials; Bessel functions; Helmholtz equation; Schwarzian derivative; Euclidean algorithm; Brouwer fixed-point theorem; Hairy Ball theorem; Cauchy integral formula; Maxwell–Boltzmann distribution; Catenary equation; Navier’s thin-plate equation; Rayleigh quotient; Laplace tidal equations; Pell’s equation; Hamilton’s equations; Routh–Hurwitz criterion; chirp signal; Hamilton–Jacobi equation; Riccati equation; Stokes’ drag law. Exact formulas/concepts are present in [c0]; assistant says this completes the 100-equation list.",
+      "retrieval_receipt": "root_details.json record 0",
+      "source_numbers": [
+        95,
+        98,
+        99
+      ],
+      "original_question": null,
+      "attribution_note": "A@ denotes prior assistant output. No original user prompt was recovered. Except for the Laplace definition, the receipt names concepts rather than reproducing their exact historical equations. All formulations, proofs, examples and grouping here are new editorial work; unavailable items 1–80 are not filled in."
+    }
+  },
+  {
+    "id": "Y24-03-032",
+    "title": "A cubic Routh–Hurwitz test with an exact stability boundary",
+    "status": "Classical mathematics newly developed from a recovered assistant-only catalog name",
+    "summary": "The stability criterion is most useful when it gives a parameter certificate rather than a list of approximate roots. A cubic is small enough that the criterion can be proved directly from its possible real and complex factors. The equality boundary also reveals why strict inequalities are required.",
+    "definitions": [
+      "A real polynomial is strictly Hurwitz when every complex root has negative real part. This is the spectral condition relevant to an autonomous linear ODE with that characteristic polynomial.",
+      "Write p(s)=s³+as²+bs+c with real a,b,c. Strict cubic Hurwitz conditions are a>0, b>0, c>0 and ab>c.",
+      "When a≠0, the cubic Routh first column is 1,a,(ab−c)/a,c. The proof below establishes the stable cubic case directly, without relying on a general root-count theorem."
+    ],
+    "result": {
+      "name": "Necessary and sufficient cubic inequalities",
+      "statement": "The monic real cubic is strictly Hurwitz if and only if a,b,c>0 and ab>c. In the family p_K=s³+2s²+2s+K, this holds exactly for 0<K<4. At K=4 the factorization is (s+2)(s²+2), so the imaginary pair prevents strict stability.",
+      "proof": "If all three roots are negative real numbers, write their negatives r₁,r₂,r₃>0. The elementary symmetric coefficient formulas make a,b,c positive, and expanding ab−c gives a sum of positive terms. If there is one negative real root −r and a conjugate pair −u±iv with r,u>0, factor p=(s+r)(s²+2us+u²+v²). Its coefficients are positive and direct expansion gives ab−c=2u[(r+u)²+v²]>0. This proves necessity. Conversely assume the inequalities. Positive coefficients imply p(s)>0 for all real s≥0, so no root is a nonnegative real number. If an unstable nonreal pair u±iv with u≥0 existed, the remaining real root would be −r with r>0, since c=r(u²+v²)>0. Factoring p=(s+r)(s²−2us+u²+v²) then gives ab−c=−2u[(r−u)²+v²]≤0, contradicting ab>c. All roots therefore lie strictly left of the imaginary axis. Applying the inequalities to a=b=2 gives K>0 and 4>K, as claimed."
+    },
+    "example": {
+      "setup": "Compare K=2, K=4 and K=5 using exact coefficients.",
+      "calculation": "For K=2 the Routh first column is (1,2,1,2), and the proved inequalities certify strict stability. For K=4 it is (1,2,0,4), signaling a boundary case; the exact factorization displays roots −2 and ±i√2. For K=5 the coefficient product ab−c is −1. Since all coefficients remain positive there is no nonnegative real root, and the failed strict criterion together with exclusion of an imaginary pair shows that the unstable roots are a conjugate pair with positive real part. The verifier checks the rational columns, inequalities and boundary product exactly.",
+      "conclusion": "The parameter interval and its boundary are established without trusting floating-point root classifications near the imaginary axis."
+    },
+    "limits": "This proof is for a monic cubic with real coefficients. It is not a proof of the general Routh–Hurwitz theorem or its unstable-root counting rule. An imaginary-axis root means the strict criterion fails; any claim about bounded motion or nonlinear stability would need separate analysis.",
+    "extension": "For a parameter-dependent polynomial, retaining symbolic Hurwitz determinants produces exact semialgebraic stability regions. A meaningful robustness certificate requires positive lower bounds on the relevant determinants throughout a stated parameter box.",
+    "references": [
+      {
+        "label": "MIT Dynamics and Control II, Routh–Hurwitz lecture",
+        "url": "https://ocw.mit.edu/courses/2-004-dynamics-and-control-ii-spring-2008/resources/lecture_25/"
+      },
+      {
+        "label": "MIT Routh–Hurwitz course notes",
+        "url": "https://sites.mit.edu/meche2004/news/routh-hurwitz-stability-criterion/"
+      }
+    ],
+    "catalog_concepts": [
+      "Routh–Hurwitz criterion"
+    ],
+    "original": {
+      "date": "2024-03-31T02:28:25Z",
+      "month": "2024-03",
+      "evidence": "A",
+      "field": "A cubic Routh–Hurwitz test with an exact stability boundary",
+      "concept": "Routh–Hurwitz criterion",
+      "origin": "The recovered assistant passage names these concepts in the end of a purported 100-equation list. The mathematics below is a newly authored classical development, not recovered wording.",
+      "question": "Reconstruction: For a real monic cubic, which coefficient inequalities are equivalent to strict left-half-plane stability, and where does s³+2s²+2s+K lose that property?",
+      "math": "The monic real cubic is strictly Hurwitz if and only if a,b,c>0 and ab>c. In the family p_K=s³+2s²+2s+K, this holds exactly for 0<K<4. At K=4 the factorization is (s+2)(s²+2), so the imaginary pair prevents strict stability.",
+      "finish": "Supply explicit hypotheses, a proof or delimited classical input, and a checked worked example for every named concept.",
+      "kind": "Classical development",
+      "refs": [],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c0] A@2024-03-31T02:28:25Z, -2y 7m: Items 81–100 of 100: Legendre polynomials; Bessel functions; Helmholtz equation; Schwarzian derivative; Euclidean algorithm; Brouwer fixed-point theorem; Hairy Ball theorem; Cauchy integral formula; Maxwell–Boltzmann distribution; Catenary equation; Navier’s thin-plate equation; Rayleigh quotient; Laplace tidal equations; Pell’s equation; Hamilton’s equations; Routh–Hurwitz criterion; chirp signal; Hamilton–Jacobi equation; Riccati equation; Stokes’ drag law. Exact formulas/concepts are present in [c0]; assistant says this completes the 100-equation list.",
+      "retrieval_receipt": "root_details.json record 0",
+      "source_numbers": [
+        96
+      ],
+      "original_question": null,
+      "attribution_note": "A@ denotes prior assistant output. No original user prompt was recovered. Except for the Laplace definition, the receipt names concepts rather than reproducing their exact historical equations. All formulations, proofs, examples and grouping here are new editorial work; unavailable items 1–80 are not filled in."
+    }
+  },
+  {
+    "id": "Y24-03-033",
+    "title": "A linear chirp has quadratic phase, with a precise sampling ambiguity",
+    "status": "Classical mathematics newly developed from a recovered assistant-only catalog name",
+    "summary": "A time-dependent number placed directly into the argument of a cosine is not automatically its instantaneous frequency. Frequency is the derivative of phase divided by 2π. Starting from that definition fixes a common factor-of-two error and exposes an exact aliasing identity for sampled signals.",
+    "definitions": [
+      "For the declared complex unit-amplitude signal z(t)=exp(iφ(t)) with differentiable unwrapped phase, define instantaneous frequency f(t)=φ′(t)/(2π), in cycles per unit time.",
+      "A linear chirp with starting frequency f₀ and rate κ is z(t)=exp(i[φ₀+2πf₀t+πκt²]). Its real part is the corresponding cosine.",
+      "Uniform samples have times tₙ=n/F_s. The phase must be interpreted as an unwrapped model; an isolated real cosine sample does not itself determine a unique phase."
+    ],
+    "result": {
+      "name": "Integrated frequency and an exact aliasing identity",
+      "statement": "The stated chirp has f(t)=f₀+κt and net phase cycles N(T)=f₀T+κT²/2. Signals with f₀ replaced by f₀+ℓF_s, for any integer ℓ, have exactly the same complex samples. The discrete phase increment in cycles is [f₀+κ(n+1/2)/F_s]/F_s.",
+      "proof": "Differentiate φ₀+2πf₀t+πκt² and divide by 2π to obtain the frequency. Integrating that frequency from zero to T gives the cycle count. In contrast, the tempting phase 2π(f₀+κt)t differentiates to frequency f₀+2κt, so it sweeps twice as fast. For sampled ambiguity, the extra starting frequency ℓF_s contributes phase 2πℓF_stₙ=2πℓn, whose complex exponential is one for every integer n. Thus no method using those samples alone can distinguish these models without a frequency prior. Finally subtract the quadratic phase at tₙ and tₙ₊₁; the difference of squares yields the displayed midpoint-frequency increment. If the modeled increment stays strictly between zero and half a cycle, the model’s successive phase steps are in the principal positive half-turn range. This condition describes the selected phase progression; it is not a proof that a finite-duration chirp is band limited."
+    },
+    "example": {
+      "setup": "Take f₀=100Hz, κ=50Hz/s, T=2s and F_s=1000Hz.",
+      "calculation": "The ending instantaneous frequency is 200Hz and the total net phase advance is 300 cycles. The naive unsafely substituted phase would end at 300Hz and accumulate 400 cycles. For n=0,…,1999 the correct sample increment ranges from 0.100025 to 0.199975 cycles. Increasing f₀ to 1100Hz gives the same 2001 complex samples at tₙ=n/1000 for n=0,…,2000, although its continuous frequencies differ by 1000Hz. The verifier proves the increment and cycle identities with rational arithmetic and checks a few exponential sample coincidences numerically.",
+      "conclusion": "Integrating frequency gives the intended signal, and the exact sampling identity states a real nonidentifiability rather than an implementation defect."
+    },
+    "limits": "The instantaneous frequency of a real signal requires a chosen phase representation; zeros and multi-component mixtures can complicate that choice. A time-truncated chirp is not strictly band limited, so a Nyquist claim based solely on its endpoint instantaneous frequencies would overstate what was proved.",
+    "extension": "For an arbitrary specified frequency law f(t), define φ(t)=φ₀+2π∫₀ᵗf(s)ds before sampling. An exponential frequency sweep then has exponential-integral phase rather than the quadratic phase of this linear model.",
+    "references": [
+      {
+        "label": "Georgia Tech DSP First, AM/FM and chirp signals",
+        "url": "https://dspfirst.gatech.edu/chapters/DSP1st2eLabs/AMFMSignalsLab.pdf"
+      },
+      {
+        "label": "UCLA IPAM wavelet tutorial on chirps",
+        "url": "https://helper.ipam.ucla.edu/publications/mpstut/mpstut_13975.pdf"
+      }
+    ],
+    "catalog_concepts": [
+      "Chirp signal"
+    ],
+    "original": {
+      "date": "2024-03-31T02:28:25Z",
+      "month": "2024-03",
+      "evidence": "A",
+      "field": "A linear chirp has quadratic phase, with a precise sampling ambiguity",
+      "concept": "Chirp signal",
+      "origin": "The recovered assistant passage names these concepts in the end of a purported 100-equation list. The mathematics below is a newly authored classical development, not recovered wording.",
+      "question": "Reconstruction: How must phase be chosen to make frequency sweep linearly, how many cycles occur in a fixed interval, and what frequency ambiguity remains after sampling?",
+      "math": "The stated chirp has f(t)=f₀+κt and net phase cycles N(T)=f₀T+κT²/2. Signals with f₀ replaced by f₀+ℓF_s, for any integer ℓ, have exactly the same complex samples. The discrete phase increment in cycles is [f₀+κ(n+1/2)/F_s]/F_s.",
+      "finish": "Supply explicit hypotheses, a proof or delimited classical input, and a checked worked example for every named concept.",
+      "kind": "Classical development",
+      "refs": [],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c0] A@2024-03-31T02:28:25Z, -2y 7m: Items 81–100 of 100: Legendre polynomials; Bessel functions; Helmholtz equation; Schwarzian derivative; Euclidean algorithm; Brouwer fixed-point theorem; Hairy Ball theorem; Cauchy integral formula; Maxwell–Boltzmann distribution; Catenary equation; Navier’s thin-plate equation; Rayleigh quotient; Laplace tidal equations; Pell’s equation; Hamilton’s equations; Routh–Hurwitz criterion; chirp signal; Hamilton–Jacobi equation; Riccati equation; Stokes’ drag law. Exact formulas/concepts are present in [c0]; assistant says this completes the 100-equation list.",
+      "retrieval_receipt": "root_details.json record 0",
+      "source_numbers": [
+        97
+      ],
+      "original_question": null,
+      "attribution_note": "A@ denotes prior assistant output. No original user prompt was recovered. Except for the Laplace definition, the receipt names concepts rather than reproducing their exact historical equations. All formulations, proofs, examples and grouping here are new editorial work; unavailable items 1–80 are not filled in."
+    }
+  },
+  {
+    "id": "Y24-03-034",
+    "title": "Stokes drag comes from a stress integral, not dimensional analysis alone",
+    "status": "Classical mathematics newly developed from a recovered assistant-only catalog name",
+    "summary": "Dimensions suggest drag proportional to viscosity, radius and speed, but cannot determine its numerical coefficient. That coefficient comes from the no-slip exterior Stokes solution and integration of its surface traction. A constructed settling example then checks whether the low-Reynolds-number hypothesis is internally consistent.",
+    "definitions": [
+      "Assume a rigid sphere of radius a>0 in an unbounded incompressible Newtonian fluid of dynamic viscosity μ>0, with no slip and steady negligible inertia. The equations are ∇·u=0 and −∇p+μΔu=0.",
+      "In the sphere frame let the uniform far velocity be Ue_z. The standard Stokes solution is u_r=Ucosθ(1−3a/(2r)+a³/(2r³)), u_θ=−Usinθ(1−3a/(4r)−a³/(4r³)), p−p∞=−3μUa cosθ/(2r²).",
+      "Fluid stress is σ=−pI+μ(∇u+∇uᵀ). The traction integrated on the sphere gives the force exerted by the fluid. For a sphere translating at V relative to still fluid, set U=−V."
+    ],
+    "result": {
+      "name": "The surface integral and its low-Reynolds-number consequence",
+      "statement": "The force on a translating sphere is F=−6πμaV. If its density exceeds the fluid density by Δρ>0 and gravity magnitude is g, the model terminal speed is V_t=2a²Δρg/(9μ). Its applicability must be checked using Re=2aρ_fV_t/μ≪1.",
+      "proof": "Use the stated classical exterior solution as input; it satisfies no slip at r=a and tends to the chosen uniform flow at infinity. At the surface ∂_ru_r=0, so after subtracting the irrelevant constant pressure, σ_rr=(3μU/(2a))cosθ. The shear component is σ_rθ=μ(∂_ru_θ−u_θ/r+r^(−1)∂_θu_r)=−(3μU/(2a))sinθ there. The z component of traction is σ_rrcosθ−σ_rθsinθ=3μU/(2a), independent of θ. Integrating over area 4πa² gives 6πμaU. Equivalently the pressure contributes 2πμaU and shear contributes 4πμaU. Switching from incoming fluid velocity to body velocity reverses the sign. For settling, equate the magnitude 6πμaV_t to the net weight (4π/3)a³Δρg and cancel common factors to obtain the terminal formula. Thus the coefficient is derived from the explicit stress field, while the governing exterior solution itself is a stated classical input."
+    },
+    "example": {
+      "setup": "Choose illustrative SI values a=10^(−5)m, μ=10^(−3)Pa·s, fluid density ρ_f=1000kg/m³, Δρ=1000kg/m³ and g=9.81m/s².",
+      "calculation": "The formula gives V_t=0.000218m/s and Re=0.00436, small compared with one. Both expressions use exact terminating-decimal inputs, and the verifier evaluates them with rational arithmetic. It also checks the surface stress coefficients and the pressure/shear angular integrals exactly after dividing out πμaU. These calculations verify the chosen model; the parameters are not recovered historical measurements or a proposed experiment.",
+      "conclusion": "The worked model explains the factor 6π, the direction of drag and the independent consistency check needed after calculating a speed."
+    },
+    "limits": "The derivation assumes an isolated sphere, no-slip boundary conditions and negligible inertia. Walls, finite Reynolds number, non-Newtonian rheology or slip change the problem. A small numerical Re supports this approximation within the declared model but is not a rigorous bound on every neglected physical correction.",
+    "extension": "Within the same instantaneous-drag particle model, adding inertia gives mV′=F₀−6πμaV and an exponential relaxation time m/(6πμa). Unsteady fluid inertia and added-mass effects would require another model rather than being silently absorbed into that scalar ODE.",
+    "references": [
+      {
+        "label": "University of Texas exterior Stokes solution for a sphere",
+        "url": "https://farside.ph.utexas.edu/teaching/336L/Fluidhtml/node142.html"
+      },
+      {
+        "label": "MIT fluid motions notes on Stokes drag",
+        "url": "https://ocw.mit.edu/courses/12-090-introduction-to-fluid-motions-sediment-transport-and-current-generated-sedimentary-structures-fall-2006/7841d9b1681d6748fa2f5cbc6d6f1cb2_ch3.pdf"
+      }
+    ],
+    "catalog_concepts": [
+      "Stokes’ drag law"
+    ],
+    "original": {
+      "date": "2024-03-31T02:28:25Z",
+      "month": "2024-03",
+      "evidence": "A",
+      "field": "Stokes drag comes from a stress integral, not dimensional analysis alone",
+      "concept": "Stokes’ drag law",
+      "origin": "The recovered assistant passage names these concepts in the end of a purported 100-equation list. The mathematics below is a newly authored classical development, not recovered wording.",
+      "question": "Reconstruction: Under the creeping-flow assumptions, where does the coefficient 6π in spherical drag come from, and how can terminal speed and Reynolds number be checked consistently?",
+      "math": "The force on a translating sphere is F=−6πμaV. If its density exceeds the fluid density by Δρ>0 and gravity magnitude is g, the model terminal speed is V_t=2a²Δρg/(9μ). Its applicability must be checked using Re=2aρ_fV_t/μ≪1.",
+      "finish": "Supply explicit hypotheses, a proof or delimited classical input, and a checked worked example for every named concept.",
+      "kind": "Classical development",
+      "refs": [],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c0] A@2024-03-31T02:28:25Z, -2y 7m: Items 81–100 of 100: Legendre polynomials; Bessel functions; Helmholtz equation; Schwarzian derivative; Euclidean algorithm; Brouwer fixed-point theorem; Hairy Ball theorem; Cauchy integral formula; Maxwell–Boltzmann distribution; Catenary equation; Navier’s thin-plate equation; Rayleigh quotient; Laplace tidal equations; Pell’s equation; Hamilton’s equations; Routh–Hurwitz criterion; chirp signal; Hamilton–Jacobi equation; Riccati equation; Stokes’ drag law. Exact formulas/concepts are present in [c0]; assistant says this completes the 100-equation list.",
+      "retrieval_receipt": "root_details.json record 0",
+      "source_numbers": [
+        100
+      ],
+      "original_question": null,
+      "attribution_note": "A@ denotes prior assistant output. No original user prompt was recovered. Except for the Laplace definition, the receipt names concepts rather than reproducing their exact historical equations. All formulations, proofs, examples and grouping here are new editorial work; unavailable items 1–80 are not filled in."
+    }
+  }
+]

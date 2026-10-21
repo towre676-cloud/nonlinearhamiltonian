@@ -1,0 +1,112 @@
+{
+  "reviewer": "arithmetic_and_waves",
+  "scope": [
+    "2024-07 entries.json and verify.py",
+    "2024-08 entries.json and verify.py"
+  ],
+  "status": "Approved after all three local review corrections were incorporated and both verifiers rerun",
+  "verification": [
+    {
+      "month": "2024-07",
+      "result": "15/15 checks passed",
+      "command": "python year_2024/months/07/verify.py"
+    },
+    {
+      "month": "2024-08",
+      "result": "14/14 checks passed",
+      "command": "python year_2024/months/08/verify.py"
+    }
+  ],
+  "issues": [
+    {
+      "severity": "medium",
+      "id": "Y24-07-003",
+      "description": "The result says a code’s numerical Hamming distance is preserved only when the ambient bijection is an isometry (or the metric is transported). This is false as a necessary condition for one code or its minimum distance: an ambient permutation can fix every codeword while non-isometrically permuting words outside the code.",
+      "fix": "State instead that an ambient isometry guarantees preservation, and preserving all ambient pairwise Hamming distances is exactly the isometry condition. A particular code’s minimum distance may coincide accidentally under a non-isometric permutation. Retain the correct repetition-code counterexample as proof that categorical composition preservation alone gives no distance guarantee.",
+      "status": "resolved",
+      "resolution": "The revised result explicitly distinguishes ambient isometry from accidental preservation of one code/minimum distance."
+    },
+    {
+      "severity": "low",
+      "id": "Y24-07-014; Y24-08-013",
+      "description": "Some verifier expressions are tautological rather than independent evaluations: July contact check includes a*a==a*a, and August Hardy check consists of constant equalities. The mathematical proofs in the entries are sound, but these lines provide less evidence than the check labels suggest.",
+      "fix": "For the Hardy example, independently integrate the two piecewise polynomial halves to compute zero mean, pairing and oscillation; verify the atom bound from interval length. For contact scaling, independently expand the pullback’s dz and y dx coefficients and compare with the scaled form. Alternatively label those parts as textual proof audits rather than computational identity checks.",
+      "status": "resolved",
+      "resolution": "The contact check now computes the covector pullback with a Jacobian independently; the Hardy check integrates the two affine pieces exactly."
+    },
+    {
+      "severity": "low",
+      "id": "Y24-08-013",
+      "description": "The final two-sided finite seminorm-difference statement tacitly assumes b has finite BMO seminorm. For a merely locally integrable function both seminorms can be infinite, so their difference need not be defined.",
+      "fix": "Explicitly assume b∈BMO for the statement | ||b+e||_BMO−||b||_BMO |≤2ε. The one-sided extended-valued inequality and local atom bound need no change.",
+      "status": "resolved",
+      "resolution": "The finite two-sided seminorm statement now explicitly assumes b∈BMO and concludes b+e∈BMO."
+    }
+  ],
+  "approved_scopes": [
+    {
+      "ids": [
+        "Y24-07-001",
+        "Y24-07-002",
+        "Y24-07-005",
+        "Y24-07-006",
+        "Y24-07-007",
+        "Y24-07-010",
+        "Y24-07-015"
+      ],
+      "finding": "Measurable conjugacy, BSC capacity and relabeling, scalar PID characteristic polynomial/feedthrough, dimensionless logarithms, ideal positive algebra and diffusion/observation identities are correct under the declared hypotheses."
+    },
+    {
+      "ids": [
+        "Y24-08-002"
+      ],
+      "finding": "The path-three incidence convention is explicit. BBᵀ has eigenvalues one and three, giving the complete Dirac spectrum 0,±1,±√3 and nullity one. Orientation changes are orthogonal conjugacies."
+    },
+    {
+      "ids": [
+        "Y24-08-005"
+      ],
+      "finding": "The characteristic-two tangent direction is nontrivial and obstructed modulo η³. The representing fixed-characteristic relation k[[t]]/(t²) and mixed-characteristic qualification 2t+t² are correct."
+    },
+    {
+      "ids": [
+        "Y24-08-012"
+      ],
+      "finding": "All four BV bracket formulas have the correct degree-minus-one signs for the stated convention. Δ²=0 and order at most two justify the classical odd Jacobi input; 216 finite Jacobi triples also pass."
+    },
+    {
+      "ids": [
+        "Y24-08-013"
+      ],
+      "finding": "The local Hardy atom estimate is valid and attained by the stated example. The global BMO and Hardy-vs-Sobolev limits are preserved. The 2ε perturbation constant is valid, even though it is not claimed optimal."
+    },
+    {
+      "ids": [
+        "Y24-08-004",
+        "Y24-08-014"
+      ],
+      "finding": "Photon number density times hc/λ has energy-density units; directed, net isotropic and one-sided isotropic flux are correctly distinguished, including cu/4. Power-law ratio and finite-data nonidentifiability claims are appropriately conditional."
+    },
+    {
+      "ids": [
+        "Y24-07-008",
+        "Y24-07-009",
+        "Y24-07-011",
+        "Y24-07-012",
+        "Y24-07-013",
+        "Y24-07-014",
+        "Y24-08-001",
+        "Y24-08-003",
+        "Y24-08-006",
+        "Y24-08-007",
+        "Y24-08-008",
+        "Y24-08-009",
+        "Y24-08-010",
+        "Y24-08-011"
+      ],
+      "finding": "Remaining arithmetic, formal-series, differential-form, motivic-realization, monodromy, intersection-cohomology, contact, persistence, covariance, modular, semidirect-product, symmetry-counterexample, finite-field zeta, operadic-deformation and Gauss-norm statements were read and found mathematically sound within their explicit toy/classical scope. No RH, physical-validation or full-geometry conclusion is inferred from finite verification."
+    }
+  ],
+  "historical_attribution": "All original prompts are null. The unresolved Hardy two-day cluster retains nullable date and evidence T rather than a fabricated exact historical question. Review did not treat source gaps as absence of historical mathematics.",
+  "post_correction_validation": "July verifier rerun: 15/15 passed. August verifier rerun: 14/14 passed. Corrected result statements and the new verifier computations were reread."
+}

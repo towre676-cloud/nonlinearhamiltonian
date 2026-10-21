@@ -1,0 +1,533 @@
+{
+  "checks": [
+    {
+      "id": "Y26-02-001",
+      "name": "c1",
+      "status": "passed",
+      "detail": {
+        "complete_induced_pair_distribution": {
+          "1": 4,
+          "2": 2
+        },
+        "expected_Euler": "4/3"
+      }
+    },
+    {
+      "id": "Y26-02-002",
+      "name": "c2",
+      "status": "passed",
+      "detail": "All proper induced supports contain no cycle; birth CDFt^4, mean4/5 and mean bar1/5 checked by exact integration."
+    },
+    {
+      "id": "Y26-02-003",
+      "name": "c3",
+      "status": "passed",
+      "detail": {
+        "subset_weights": [
+          2,
+          3,
+          6
+        ],
+        "marginals": [
+          "5/11",
+          "8/11",
+          "9/11"
+        ],
+        "Euler_mean": "20/11"
+      }
+    },
+    {
+      "id": "Y26-02-004",
+      "name": "c4",
+      "status": "passed",
+      "detail": "Exact compatible and incompatible augmented ranks2 versus3, with cycle obstruction0 versus1."
+    },
+    {
+      "id": "Y26-02-005",
+      "name": "c5",
+      "status": "passed",
+      "detail": "All triples of eight depth5 words satisfy the ultrametric; exact terminating/nonterminating binary limit identity checked. Hausdorff proof is in text."
+    },
+    {
+      "id": "Y26-02-006",
+      "name": "c6",
+      "status": "passed",
+      "detail": "Exact rational interpretation of binary64 verifies retained residual1 and scalar cancellation failure."
+    },
+    {
+      "id": "Y26-02-007",
+      "name": "c7",
+      "status": "passed",
+      "detail": "Independent exact-sequence rank check gives h0E1 versus split2; Serre duality/genus input are cited background, not a computational geometric proof."
+    },
+    {
+      "id": "Y26-02-008",
+      "name": "c8",
+      "status": "passed",
+      "detail": "Explicit two-factor heart cutoffs and aisle shift closure checked; classification proof uses complete semisimple splitting in text."
+    },
+    {
+      "id": "Y26-02-009",
+      "name": "c9",
+      "status": "passed",
+      "detail": {
+        "Gaussian_quadrature": 1.7724538509055159,
+        "shifted_Gaussian_quadrature": 2.275875794468747,
+        "scope": "finite quadrature interval; omitted Gaussian tails <1e-24, period identities proved analytically"
+      }
+    },
+    {
+      "id": "Y26-02-010",
+      "name": "c10",
+      "status": "passed",
+      "detail": {
+        "exact_depth_values": [
+          313,
+          97969,
+          9597924961
+        ],
+        "soundness_composition": "set inclusion and union-bound proof in text; no hardness assumption certified"
+      }
+    },
+    {
+      "id": "Y26-02-011",
+      "name": "c11",
+      "status": "passed",
+      "detail": {
+        "nontrivial_loop_holonomy": [
+          [
+            3,
+            -1
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        "ordered_hash_endpoints": [
+          5,
+          7
+        ],
+        "toy_collision_endpoint": 3
+      }
+    },
+    {
+      "id": "Y26-02-012",
+      "name": "c12",
+      "status": "passed",
+      "detail": {
+        "exact_autocorrelation": [
+          4,
+          1,
+          1,
+          1,
+          1,
+          1,
+          2,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "all_12_power_values": [
+          16.0,
+          2.0,
+          4.0,
+          2.0,
+          4.0,
+          2.0,
+          4.0,
+          2.0,
+          4.0,
+          2.0,
+          4.0,
+          2.0
+        ],
+        "all_dihedral_equivalences_excluded": true
+      }
+    },
+    {
+      "id": "Y26-02-013",
+      "name": "c13",
+      "status": "passed",
+      "detail": "All ell0–10 sphere indicial roots and exact homothety exponents checked; anisotropic Laplacian deliberately not identified with ordinary cone."
+    },
+    {
+      "id": "Y26-02-014",
+      "name": "c14",
+      "status": "passed",
+      "detail": {
+        "mixed_validity_fiber": [
+          [
+            0,
+            0,
+            1,
+            1
+          ],
+          [
+            0,
+            1,
+            0,
+            1
+          ]
+        ],
+        "common_feature": 2,
+        "factorization_bound": "common acceptance p cannot be >=1-eps and <=eps for eps<1/2"
+      }
+    },
+    {
+      "id": "Y26-02-015",
+      "name": "c15",
+      "status": "passed",
+      "detail": "Twenty-one compatible 2-adic residues certify the displayed -1/3 obstruction; cokernel isomorphism and its nonintegrality are proved in prose."
+    },
+    {
+      "id": "Y26-02-016",
+      "name": "c16",
+      "status": "passed",
+      "detail": "Exact alternating contraction counterexample and strict-boundary resolution times k+1, not automatic ceiling equality."
+    },
+    {
+      "id": "Y26-02-017",
+      "name": "c17",
+      "status": "passed",
+      "detail": "Scalar nonlinear least squares distinguishes Fisher/GGN/Hessian at exact-fit and stationary negative-curvature points."
+    },
+    {
+      "id": "Y26-02-018",
+      "name": "c18",
+      "status": "passed",
+      "detail": {
+        "Smith_diagonal": [
+          2,
+          4
+        ],
+        "unimodular_V": [
+          [
+            1,
+            -1
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "quotient_order": 8,
+        "sample_class_order": 4
+      }
+    },
+    {
+      "id": "Y26-02-019",
+      "name": "c19",
+      "status": "passed",
+      "detail": {
+        "cycle_amplitude": 0.9921767742046339,
+        "high_Q_60dB_cycles": 879.5227186553188,
+        "driven_recurrence_exact_value": "-21358/3125"
+      }
+    },
+    {
+      "id": "Y26-02-020",
+      "name": "c20",
+      "status": "passed",
+      "detail": "Constant coupler monodromy and variable-gain extra harmonics checked independently; reverse SL2 trace equality is exact algebra."
+    },
+    {
+      "id": "Y26-02-021",
+      "name": "c21",
+      "status": "passed",
+      "detail": {
+        "independent_RK4_monodromies": [
+          {
+            "q": 0.02,
+            "trace": 1.9980260953915878,
+            "second_order": 1.9980260791197821,
+            "determinant": 0.9999999999999916
+          },
+          {
+            "q": 0.01,
+            "trace": 1.9995065207969331,
+            "second_order": 1.9995065197799455,
+            "determinant": 0.9999999999999984
+          },
+          {
+            "q": -0.02,
+            "trace": 1.9980260953915934,
+            "second_order": 1.9980260791197821,
+            "determinant": 0.9999999999999969
+          }
+        ],
+        "scope": "numerical spot checks, not a certified uniform O(q^4) remainder"
+      }
+    },
+    {
+      "id": "Y26-02-022",
+      "name": "c22",
+      "status": "passed",
+      "detail": "Discrete set models of sizes1,2,7 have singleton based-path total space at every basepoint; general path-induction proof is in text."
+    },
+    {
+      "id": "Y26-02-023",
+      "name": "c23",
+      "status": "passed",
+      "detail": {
+        "robust_scalar_messages": 41,
+        "spacing": "1/40",
+        "readout_error": "1/100",
+        "information_bits": 5.357552004618084
+      }
+    },
+    {
+      "id": "Y26-02-024",
+      "name": "c24",
+      "status": "passed",
+      "detail": {
+        "flatness": 0.42105263157894735,
+        "zero_failures_95pct_upper_bound": 2.995727786352544e-06,
+        "claim_scope": "no adversarial or cryptographic probability is inferred"
+      }
+    },
+    {
+      "id": "Y26-02-025",
+      "name": "c25",
+      "status": "passed",
+      "detail": "Independent Gaussian quadrature verifies nonzero mean.01 and variance.0002 despite zero Jacobian."
+    },
+    {
+      "id": "Y26-02-026",
+      "name": "c26",
+      "status": "passed",
+      "detail": "Exact stationarity and completed quadratic minimum -11/20 for damping step(-1,-1/10)."
+    },
+    {
+      "id": "Y26-02-027",
+      "name": "c27",
+      "status": "passed",
+      "detail": "Exact prime enumeration and equal-sum energy comparison; finite partition has no position dependence."
+    },
+    {
+      "id": "Y26-02-028",
+      "name": "c28",
+      "status": "passed",
+      "detail": {
+        "N3": 7,
+        "N9": 15,
+        "F9_affine_points": [
+          [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              0
+            ],
+            [
+              2,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              1
+            ],
+            [
+              2,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              2
+            ],
+            [
+              1,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              2
+            ],
+            [
+              2,
+              0
+            ]
+          ],
+          [
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              0
+            ]
+          ],
+          [
+            [
+              1,
+              0
+            ],
+            [
+              2,
+              0
+            ]
+          ],
+          [
+            [
+              2,
+              0
+            ],
+            [
+              1,
+              0
+            ]
+          ],
+          [
+            [
+              2,
+              0
+            ],
+            [
+              2,
+              0
+            ]
+          ],
+          [
+            [
+              2,
+              1
+            ],
+            [
+              1,
+              2
+            ]
+          ],
+          [
+            [
+              2,
+              1
+            ],
+            [
+              2,
+              1
+            ]
+          ],
+          [
+            [
+              2,
+              2
+            ],
+            [
+              1,
+              1
+            ]
+          ],
+          [
+            [
+              2,
+              2
+            ],
+            [
+              2,
+              2
+            ]
+          ]
+        ],
+        "Frobenius_polynomial_descending": [
+          1,
+          3,
+          7,
+          9,
+          9
+        ],
+        "smoothness": "text Euclidean gcd certificate; derivative splits inF9"
+      }
+    },
+    {
+      "id": "Y26-02-029",
+      "name": "c29",
+      "status": "passed",
+      "detail": "Conductor sums for explicitly supplied cyclic filtrations; Artin–Schreier break3 is cited background, not independently reconstructed."
+    },
+    {
+      "id": "Y26-02-030",
+      "name": "c30",
+      "status": "passed",
+      "detail": {
+        "exhaustive_legal_word_counts_L1to10": [
+          2,
+          3,
+          5,
+          8,
+          13,
+          21,
+          34,
+          55,
+          89,
+          144
+        ],
+        "substitution_H_after4": [
+          5,
+          3
+        ]
+      }
+    },
+    {
+      "id": "Y26-02-031",
+      "name": "c31",
+      "status": "passed",
+      "detail": "All 1092 ternary slack sequences of lengths1–6 verify the closed suffix-deficit formula; reordered zero-sum examples differ."
+    },
+    {
+      "id": "Y26-02-032",
+      "name": "c32",
+      "status": "passed",
+      "detail": {
+        "annual_contribution_for_hypothetical_5pct_trillion": 0.30242587190691284,
+        "balance_after20": 9.999999999999986,
+        "scope": "constant-return mathematical scenario only"
+      }
+    },
+    {
+      "id": "Y26-02-033",
+      "name": "c33",
+      "status": "passed",
+      "detail": "Integer solution family and divisibility obstruction independently checked, alongside rational solvability."
+    },
+    {
+      "id": "Y26-02-034",
+      "name": "c34",
+      "status": "passed",
+      "detail": "Complete finite prefix distributions give4bits,3bits,4bits for original,fixed-prefix,fresh-random-prefix cases."
+    },
+    {
+      "id": "Y26-02-035",
+      "name": "c35",
+      "status": "passed",
+      "detail": "All121 rational point pairs verify the coupling square-completion identity; exact Gaussian pushforward mean1 variance9/4."
+    }
+  ],
+  "scope": "Exact finite certificates and declared numerical spot checks; general categorical, probabilistic and geometric theorems are proved in prose or cited, not claimed as computationally proved."
+}

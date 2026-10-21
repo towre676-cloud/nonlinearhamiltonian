@@ -1,0 +1,37 @@
+{
+  "status": "completed",
+  "date": "2026-10-21",
+  "category": "opaque Library file identifier",
+  "occurrences_redacted": 2,
+  "identifier_values_recorded": false,
+  "canonical_mathematical_payloads_unchanged": {
+    "compendium/years/2025/compendium.json": "f6c0c2a0374ec645e877d54df90e568588945df5127b89a2daceebd4d0f9c55d",
+    "compendium/atlas/data/atlas.json": "27d43bd2e8e29d6381d4e05f70886abd36a780c68309cb4fafc423f0aa54eeb4"
+  },
+  "archives": {
+    "annual_2025": {
+      "original_sha256": "de0061ccdba1d1abc59bc0682144f9de6010e2856eaed0a3354b427206058f44",
+      "public_derivative_sha256": "b8586483c403bf7d30b507b03cd0ec942d2f4dd00d3667c023f0fae01e5f4627",
+      "public_locations": [
+        "compendium/atlas/sources/2025_Mathematics_Source_Bundle.zip",
+        "downloads/2025_Mathematics_Source_Bundle.zip"
+      ]
+    },
+    "atlas": {
+      "original_sha256": "8ef89da6f7aa23020dc11768d445f566306ab0482438a084c73f53c086e8265e",
+      "public_derivative_sha256": "69e639d10f90a50180dcee289d31f0a405cafb882705f1813a53c3cf56046475",
+      "public_locations": [
+        "downloads/Mathematics_Atlas_2023_2026_Source_Bundle.zip"
+      ]
+    }
+  },
+  "direct_redaction_path": "compendium/years/2025/months/12/root_details.json",
+  "archive_member_redaction_path": "2025_Mathematics/months/12/root_details.json",
+  "metadata_or_integrity_paths_updated": [
+    "compendium/years/2025/MANIFEST.sha256",
+    "compendium/atlas/MANIFEST.sha256",
+    "compendium/atlas/README.md",
+    "compendium/atlas/PUBLICATION_NOTICE.md"
+  ],
+  "checker_hash_review": "Annual and atlas checkers have no hard-coded annual ZIP hashes. Their compendium source hashes are unchanged; manifests now hash the public derivatives."
+}

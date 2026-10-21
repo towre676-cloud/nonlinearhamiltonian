@@ -1,0 +1,80 @@
+[
+  {
+    "id": "R-ROBERT-2023",
+    "authors": "Didier Robert",
+    "title": "When Poisson and Moyal Brackets are equal?",
+    "year": 2023,
+    "url": "https://arxiv.org/pdf/2207.08798",
+    "arxiv": "2207.08798v2",
+    "primary": true,
+    "web_ref": "turn172view0",
+    "theorem": "Theorem 1.1; fixed hbar=1, H∈S^μ_δ with δ<1/2, equality for every A in Schwartz space implies degree H≤2.",
+    "use": "Universal-observable boundary; does not exclude restricted infinite exact-partner sectors.",
+    "root_reopen_required": true
+  },
+  {
+    "id": "R-GOTAY-1999",
+    "authors": "Mark J. Gotay",
+    "title": "On the Groenewold–Van Hove problem for R2n",
+    "year": 1999,
+    "journal": "Journal of Mathematical Physics 40, 2107–2116",
+    "url": "https://www.pims.math.ca/~gotay/r2n.pdf",
+    "arxiv": "math-ph/9809015",
+    "primary": true,
+    "web_ref": "turn172view1",
+    "find_ref": "turn173view2",
+    "theorem": "Theorem 8 and Corollary 9, n=1, maximal polynomial Lie algebras containing the Heisenberg algebra: quadratic and coordinate types up to isomorphism.",
+    "use": "Classical origin of affine-in-one-variable exact Lie sectors and scope distinction from fixed-H partner kernels.",
+    "root_reopen_required": true
+  },
+  {
+    "id": "R-OLVER-SANDERS-2000",
+    "authors": "Peter J. Olver; Jan A. Sanders",
+    "title": "Transvectants, Modular Forms, and the Heisenberg Algebra",
+    "year": 2000,
+    "journal": "Advances in Applied Mathematics 25(3), 252–283",
+    "doi": "10.1006/aama.2000.0700",
+    "url": "https://www.sciencedirect.com/science/article/pii/S0196885800907000",
+    "author_pdf": "https://www-users.cse.umn.edu/~olver/a_/tvm.pdf",
+    "primary": true,
+    "web_ref": "turn174search0",
+    "author_bibliography_ref": "turn175view0",
+    "pdf_ref": "turn177view0",
+    "use": "Established transvectant/invariant-theory/Heisenberg/Moyal relationship; PDF text extraction corrupt, so no unverified specific theorem borrowed.",
+    "root_reopen_required": true
+  },
+  {
+    "id": "R-PERFECTJET-PARTNER",
+    "authors": "PerfectJet repository contributors",
+    "title": "Partner incidence over the full sextic space",
+    "year": 2026,
+    "repository": "towre676-cloud/PerfectJet",
+    "ref": "494caaf6df145175e11ac65c260b39b6e1aa2765",
+    "git_blob_sha": "cd6ae12a2f9ec04d357d6c5efcf18c58e3efc009",
+    "url": "https://github.com/towre676-cloud/PerfectJet/blob/494caaf6df145175e11ac65c260b39b6e1aa2765/docs/PARTNER_INCIDENCE.md",
+    "primary": true,
+    "use": "Current full-space sextic classification through partner degree20, archived external solver dependencies, activity distinction, degree>=21 boundary."
+  },
+  {
+    "id": "R-PERFECTJET-INTEGRATION",
+    "authors": "PerfectJet repository contributors",
+    "title": "Sextic research integration, v0.17.0",
+    "year": 2026,
+    "repository": "towre676-cloud/PerfectJet",
+    "ref": "494caaf6df145175e11ac65c260b39b6e1aa2765",
+    "git_blob_sha": "5e9c537f609aaccefe27426f0218ae75a828d37b",
+    "url": "https://github.com/towre676-cloud/PerfectJet/blob/494caaf6df145175e11ac65c260b39b6e1aa2765/docs/SEXTIC_INTEGRATION.md",
+    "primary": true,
+    "use": "Explicit trust boundary: exact instance replay versus archived msolve/Singular receipts and remaining formal/independent obligations."
+  },
+  {
+    "id": "R-SHANK-2002",
+    "authors": "R. James Shank",
+    "title": "Classical Covariants and Modular Invariants",
+    "year": 2002,
+    "url": "https://www.kent.ac.uk/smsas/personal/rjs/ccmi.pdf",
+    "primary": true,
+    "web_ref": "turn180view0",
+    "use": "Example5.2 lists classical quartic covariant generators f,H,i,t,j. Does not directly certify the session apolar-adjoint formula."
+  }
+]

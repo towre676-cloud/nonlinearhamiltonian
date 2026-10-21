@@ -1,0 +1,141 @@
+{
+  "month": "2024-07",
+  "policy": "Complete raw successful root retrieval queries/results retained. Child access errors are in child_access_errors.json and are not evidence of a historical gap.",
+  "receipts": [
+    {
+      "receipt": "root_receipts.json#0",
+      "month": "07",
+      "name": "July",
+      "query": "The user asks for a month-by-month, mathematics-only retrospective of their 2024 ChatGPT conversations, with rewritten questions and developed mathematical concepts. Retrieve all available mathematical content from conversations actually dated July 1–31, 2024 (2024-07-01 through 2024-07-31), covering the whole month. Include every distinct mathematical topic, exact source dates and titles if available, user-authored questions/fragments distinguished from assistant-only explanations, formulas, examples, follow-ups, and source identifiers. Do not substitute 2023 or 2025–2026 material. Do not guess subjects from the user's later projects. Include mathematical reasoning in applied discussions when present, but omit nonmathematical material. Mark unavailable original prompts and missing dates clearly. I need the actual historical evidence, not a generic mathematics syllabus or a summary of the current request.",
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "[convo search]\n- [PRIOR_ASSISTANT_OUTPUT] [c0] A@2024-07-20T22:31:50Z, -2y3m: Distance laser-cutting calculation context: 30 m range; approximately 10 MW output claimed; cited YAG laser example rated 10 kW, implying multiple/enhanced units; beam optics, cooling, adaptive optics, and control systems discussed.\n- [PRIOR_ASSISTANT_OUTPUT] [c5] A@2024-07-14T02:58:28Z, -2y3m: Robotic-arm control mathematics: sound trigger threshold 80 dB; PID parameters \\(K_p=1.2,\\ K_i=0.5,\\ K_d=0.1\\); visual sensing used to calculate distance/direction and optimize movements.\n- [PRIOR_ASSISTANT_OUTPUT] [c1] A@2024-07-13T21:25:20Z, -2y3m: Hydrogen-generation cost estimate: revised to “$90 or more,” based on safety equipment, materials, and tools; no further mathematical development.\n\n- [PRIOR_ASSISTANT_OUTPUT] [c3] A@2024-07-02T04:06:49Z, -2y3m: Ψ-number theory applied to neuronanotechnology: Ψ-measure/ergodic theory, Ψ-mutual information/capacity, Ψ-category theory, Ψ-cryptography/coding, and high-dimensional neural-data analysis; user prompt unavailable.\n- [PRIOR_ASSISTANT_OUTPUT] [c2][c8] A@2024-07-20T22:47:41Z, -2y3m: 100W/12V coil mathematics: \\(R=V^2/P=1.44\\Omega\\), \\(I=V/R\\approx8.33A\\); body-current examples \\(12V/1000\\Omega=12mA\\), \\(12V/10000\\Omega=1.2mA\\). GoSun Coil discussion was descriptive, with no substantive mathematics.\n- [PRIOR_ASSISTANT_OUTPUT] [c10][c11] A@2024-07-21T02:38:05Z, -2y3m: Fusion-material figures: heat loads up to \\(10\\,MW/m^2\\), self-healing restoring up to 90%, progress estimates 40–60%. Cognitive-mathematical framework included 11D variety \\(X\\), \\(D^\nDot search unavailable.\n\n[gmail]\n[INSUFFICIENT] Gmail search failed before it could retrieve matching emails.\n\n[files]\n[INSUFFICIENT] No relevant file context found.\n\n<assistant_usage_note>\nWhen using the personal context above, treat relevant facts as binding context for this reply.\nBefore answering, silently identify: (1) relevant facts to preserve, and (2) hard constraints / exclusions to obey.\nIn the final answer:\nCarry forward relevant names, dates, amounts, option labels, locations, qualifiers, preferences, and task constraints from the context.\nTreat dislike / avoid / only / not / no / without / prefer / required statements as constraints.\nDo not add options, ingredients, products, places, methods, tools, backups, caveats, or \"if you're okay with...\" suggestions that conflict with any known constraint.\nDo not add new personalized recommendations unless they are supported by the context above or explicitly requested.\nIf a needed fact is already provided, use it directly instead of asking the user to confirm it.\nBefore sending, check the final answer for any missing relevant context or any suggestion that violates a known constraint.\nDo not quote or mention this assistant_usage_note in the final answer.\n</assistant_usage_note>"
+          }
+        ],
+        "structuredContent": {
+          "messages": [
+            {
+              "author_role": "tool",
+              "content": "[convo search]\n- [PRIOR_ASSISTANT_OUTPUT] [c0] A@2024-07-20T22:31:50Z, -2y3m: Distance laser-cutting calculation context: 30 m range; approximately 10 MW output claimed; cited YAG laser example rated 10 kW, implying multiple/enhanced units; beam optics, cooling, adaptive optics, and control systems discussed.\n- [PRIOR_ASSISTANT_OUTPUT] [c5] A@2024-07-14T02:58:28Z, -2y3m: Robotic-arm control mathematics: sound trigger threshold 80 dB; PID parameters \\(K_p=1.2,\\ K_i=0.5,\\ K_d=0.1\\); visual sensing used to calculate distance/direction and optimize movements.\n- [PRIOR_ASSISTANT_OUTPUT] [c1] A@2024-07-13T21:25:20Z, -2y3m: Hydrogen-generation cost estimate: revised to “$90 or more,” based on safety equipment, materials, and tools; no further mathematical development.\n\n- [PRIOR_ASSISTANT_OUTPUT] [c3] A@2024-07-02T04:06:49Z, -2y3m: Ψ-number theory applied to neuronanotechnology: Ψ-measure/ergodic theory, Ψ-mutual information/capacity, Ψ-category theory, Ψ-cryptography/coding, and high-dimensional neural-data analysis; user prompt unavailable.\n- [PRIOR_ASSISTANT_OUTPUT] [c2][c8] A@2024-07-20T22:47:41Z, -2y3m: 100W/12V coil mathematics: \\(R=V^2/P=1.44\\Omega\\), \\(I=V/R\\approx8.33A\\); body-current examples \\(12V/1000\\Omega=12mA\\), \\(12V/10000\\Omega=1.2mA\\). GoSun Coil discussion was descriptive, with no substantive mathematics.\n- [PRIOR_ASSISTANT_OUTPUT] [c10][c11] A@2024-07-21T02:38:05Z, -2y3m: Fusion-material figures: heat loads up to \\(10\\,MW/m^2\\), self-healing restoring up to 90%, progress estimates 40–60%. Cognitive-mathematical framework included 11D variety \\(X\\), \\(D^\nDot search unavailable.\n\n[gmail]\n[INSUFFICIENT] Gmail search failed before it could retrieve matching emails.\n\n[files]\n[INSUFFICIENT] No relevant file context found."
+            }
+          ],
+          "error": null
+        },
+        "isError": false
+      }
+    },
+    {
+      "receipt": "root_followups.json#0",
+      "month": "07",
+      "range": [
+        1,
+        15
+      ],
+      "query": "Recover the mathematics in the user's historical ChatGPT discussions dated July 1–15, 2024 only (2024-07-01 through 2024-07-15). This is one half-month of a comprehensive month-by-month mathematical retrospective. Give all distinct mathematical questions/concepts/formulas with their actual dates, brief source excerpts and user-versus-assistant attribution. Include follow-up passages that the broad whole-month search might miss. Do not return a generic topic list, later memories, or 2023 records. If no matching history is accessible say so. Original user wording is valuable but assistant-only mathematical evidence is also useful if labeled.",
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "[convo search]\n- [PRIOR_ASSISTANT_OUTPUT] [c4] A@2024-07-02T04:06:49Z, -2y3mo: Ψ-number theory discussion: Ψ-measure/ergodic theory for synaptic plasticity; Ψ-mutual information and Ψ-capacity; Ψ-category theory, Ψ-cryptography, coding theory, and high-dimensional neural-data analysis.\n- [PRIOR_ASSISTANT_OUTPUT] [c3] A@2024-07-03T00:56:42Z, -2y3mo: PPP calculation: \\(5.75/0.56\\approx10.27\\); $5.75/hour in Mexico described as ≈$10.27/hour local purchasing-power equivalent.\n- [PRIOR_ASSISTANT_OUTPUT] [c0] A@2024-07-14T02:58:28Z, -2y3mo: Robotic-arm PID parameters \\(K_p=1.2,\\ K_i=0.5,\\ K_d=0.1\\); sound trigger example 80 dB; visual sensing used for distance/direction and movement calculation.\nDot search unavailable.\n\n[gmail]\n[INSUFFICIENT] Gmail search failed before it could retrieve matching emails.\n\n[files]\nSources:\n[f0] 2023_Revised_Mathematics_Table.html\n\nEvidence:\n- [FILE_METADATA] [f0] The retrieved mathematics archive is explicitly a **2023** table; its July entries are dated **2023-07-18** and **2023-07-28**, not 2024.\n- [INSUFFICIENT] No accessible file evidence was retrieved for mathematical discussions dated **2024-07-01 through 2024-07-15**; therefore no valid 2024 questions, formulas, excerpts, or attribution can be recovered.\n\n<assistant_usage_note>\nWhen using the personal context above, treat relevant facts as binding context for this reply.\nBefore answering, silently identify: (1) relevant facts to preserve, and (2) hard constraints / exclusions to obey.\nIn the final answer:\nCarry forward relevant names, dates, amounts, option labels, locations, qualifiers, preferences, and task constraints from the context.\nTreat dislike / avoid / only / not / no / without / prefer / required statements as constraints.\nDo not add options, ingredients, products, places, methods, tools, backups, caveats, or \"if you're okay with...\" suggestions that conflict with any known constraint.\nDo not add new personalized recommendations unless they are supported by the context above or explicitly requested.\nIf a needed fact is already provided, use it directly instead of asking the user to confirm it.\nBefore sending, check the final answer for any missing relevant context or any suggestion that violates a known constraint.\nDo not quote or mention this assistant_usage_note in the final answer.\n</assistant_usage_note>"
+          }
+        ],
+        "structuredContent": {
+          "messages": [
+            {
+              "author_role": "tool",
+              "content": "[convo search]\n- [PRIOR_ASSISTANT_OUTPUT] [c4] A@2024-07-02T04:06:49Z, -2y3mo: Ψ-number theory discussion: Ψ-measure/ergodic theory for synaptic plasticity; Ψ-mutual information and Ψ-capacity; Ψ-category theory, Ψ-cryptography, coding theory, and high-dimensional neural-data analysis.\n- [PRIOR_ASSISTANT_OUTPUT] [c3] A@2024-07-03T00:56:42Z, -2y3mo: PPP calculation: \\(5.75/0.56\\approx10.27\\); $5.75/hour in Mexico described as ≈$10.27/hour local purchasing-power equivalent.\n- [PRIOR_ASSISTANT_OUTPUT] [c0] A@2024-07-14T02:58:28Z, -2y3mo: Robotic-arm PID parameters \\(K_p=1.2,\\ K_i=0.5,\\ K_d=0.1\\); sound trigger example 80 dB; visual sensing used for distance/direction and movement calculation.\nDot search unavailable.\n\n[gmail]\n[INSUFFICIENT] Gmail search failed before it could retrieve matching emails.\n\n[files]\nSources:\n[f0] 2023_Revised_Mathematics_Table.html\n\nEvidence:\n- [FILE_METADATA] [f0] The retrieved mathematics archive is explicitly a **2023** table; its July entries are dated **2023-07-18** and **2023-07-28**, not 2024.\n- [INSUFFICIENT] No accessible file evidence was retrieved for mathematical discussions dated **2024-07-01 through 2024-07-15**; therefore no valid 2024 questions, formulas, excerpts, or attribution can be recovered."
+            }
+          ],
+          "error": null
+        },
+        "isError": false
+      }
+    },
+    {
+      "receipt": "root_followups.json#1",
+      "month": "07",
+      "range": [
+        16,
+        31
+      ],
+      "query": "Recover the mathematics in the user's historical ChatGPT discussions dated July 16–31, 2024 only (2024-07-16 through 2024-07-31). This is one half-month of a comprehensive month-by-month mathematical retrospective. Give all distinct mathematical questions/concepts/formulas with their actual dates, brief source excerpts and user-versus-assistant attribution. Include follow-up passages that the broad whole-month search might miss. Do not return a generic topic list, later memories, or 2023 records. If no matching history is accessible say so. Original user wording is valuable but assistant-only mathematical evidence is also useful if labeled.",
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "[convo search]\n- [PRIOR_ASSISTANT_OUTPUT] [c0] A@2024-07-20T14:28:11Z, -2y3m: Modular forms applied to partition theory (Euler’s pentagonal number theorem), moduli spaces of curves/algebraic topology, representation theory/Langlands, error-correcting codes, string theory/conformal field theory, complex dynamics, and cyclical economic modeling.\n- [PRIOR_ASSISTANT_OUTPUT] [c3] A@2024-07-21T15:39:03Z, -2y3m: Proposed “cognitive complexity index” formula \\(CCI(X,t)=\\mu_{mot}(X)\\times E(t)\\), with \\(E(t)\\) an EEG-derived neural-entropy measure; framed within cognitive motivic measure theory and reduced-homology refinements.\n\n- [PRIOR_ASSISTANT_OUTPUT] [c4] A@2024-07-21T02:38:05Z, -2y3m: Fusion-materials estimates: overall 50%; coatings 60%; layered tungsten-copper FGMs handle up to \\(10\\,\\mathrm{MW/m^2}\\) (55%); self-healing restores up to 90% strength (40%).\n- [PRIOR_ASSISTANT_OUTPUT] [c6] A@2024-07-20T22:47:41Z, -2y3m: 100W/12V coil: \\(R=V^2/P=1.44\\,\\Omega\\), \\(I=V/R\\approx8.33\\,A\\); body-current examples 12 mA at 1 kΩ and 1.2 mA at 10 kΩ; estimated pain 2–4/10.\n- [PRIOR_ASSISTANT_OUTPUT] [c9] A@2024-07-21T13:48:43Z, -2y3m: Mathematical cognition framework included \\(\\partial\\psi/\\partial t=\\cdots+M(\\psi)-\\nabla f(\\psi)\\), \\(\\partial\\phi/\\partial t=D\\nabla^2\\phi+\\gamma(\\psi-\\phi)\\), mixed-Hodge/D-module functors, intersection cohomology, Legendrian invariants\nDot search unavailable.\n\n[gmail]\n[INSUFFICIENT] Gmail search failed before it could retrieve matching emails.\n\n[files]\n[INSUFFICIENT] No relevant file context found.\n\n<assistant_usage_note>\nWhen using the personal context above, treat relevant facts as binding context for this reply.\nBefore answering, silently identify: (1) relevant facts to preserve, and (2) hard constraints / exclusions to obey.\nIn the final answer:\nCarry forward relevant names, dates, amounts, option labels, locations, qualifiers, preferences, and task constraints from the context.\nTreat dislike / avoid / only / not / no / without / prefer / required statements as constraints.\nDo not add options, ingredients, products, places, methods, tools, backups, caveats, or \"if you're okay with...\" suggestions that conflict with any known constraint.\nDo not add new personalized recommendations unless they are supported by the context above or explicitly requested.\nIf a needed fact is already provided, use it directly instead of asking the user to confirm it.\nBefore sending, check the final answer for any missing relevant context or any suggestion that violates a known constraint.\nDo not quote or mention this assistant_usage_note in the final answer.\n</assistant_usage_note>"
+          }
+        ],
+        "structuredContent": {
+          "messages": [
+            {
+              "author_role": "tool",
+              "content": "[convo search]\n- [PRIOR_ASSISTANT_OUTPUT] [c0] A@2024-07-20T14:28:11Z, -2y3m: Modular forms applied to partition theory (Euler’s pentagonal number theorem), moduli spaces of curves/algebraic topology, representation theory/Langlands, error-correcting codes, string theory/conformal field theory, complex dynamics, and cyclical economic modeling.\n- [PRIOR_ASSISTANT_OUTPUT] [c3] A@2024-07-21T15:39:03Z, -2y3m: Proposed “cognitive complexity index” formula \\(CCI(X,t)=\\mu_{mot}(X)\\times E(t)\\), with \\(E(t)\\) an EEG-derived neural-entropy measure; framed within cognitive motivic measure theory and reduced-homology refinements.\n\n- [PRIOR_ASSISTANT_OUTPUT] [c4] A@2024-07-21T02:38:05Z, -2y3m: Fusion-materials estimates: overall 50%; coatings 60%; layered tungsten-copper FGMs handle up to \\(10\\,\\mathrm{MW/m^2}\\) (55%); self-healing restores up to 90% strength (40%).\n- [PRIOR_ASSISTANT_OUTPUT] [c6] A@2024-07-20T22:47:41Z, -2y3m: 100W/12V coil: \\(R=V^2/P=1.44\\,\\Omega\\), \\(I=V/R\\approx8.33\\,A\\); body-current examples 12 mA at 1 kΩ and 1.2 mA at 10 kΩ; estimated pain 2–4/10.\n- [PRIOR_ASSISTANT_OUTPUT] [c9] A@2024-07-21T13:48:43Z, -2y3m: Mathematical cognition framework included \\(\\partial\\psi/\\partial t=\\cdots+M(\\psi)-\\nabla f(\\psi)\\), \\(\\partial\\phi/\\partial t=D\\nabla^2\\phi+\\gamma(\\psi-\\phi)\\), mixed-Hodge/D-module functors, intersection cohomology, Legendrian invariants\nDot search unavailable.\n\n[gmail]\n[INSUFFICIENT] Gmail search failed before it could retrieve matching emails.\n\n[files]\n[INSUFFICIENT] No relevant file context found."
+            }
+          ],
+          "error": null
+        },
+        "isError": false
+      }
+    },
+    {
+      "receipt": "root_specifics.json#0",
+      "month": "07",
+      "query": "For the2024 mathematics retrospective, retrieve actual July21,2024 mathematics around13:48:43Z and15:39:03Z: 11D/cognitive varieties, mixedHodge/Dmodules, reactiondiffusion, Legendrian/intersectioncohomology and CCI=motivicmeasure*entropy. Give source excerpts, actual definitions/equations and user/assistant attribution. Do not invent an original question or generate contemporary explanations.",
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "[convo search]\n- [PRIOR_ASSISTANT_OUTPUT] [c0] A@2024-07-21T13:48:43Z, -2y3mo: Defines 11-dimensional “cognitive superspace”; ψ∈D^bMHM(X); rat_X:D^bMHM(X)→D^b_cs(X;Q), Dmod_X→D^b_coh(D_X), linked by DR_X; ∂φ/∂t=D∇²φ+γ(ψ−φ); Legendrian ξstd=ker(dz−y dx), CH*(L)=Ker∂n/Im∂n+1; IH^k(X)=H^k(p_*IC•Q_X).\n- [PRIOR_ASSISTANT_OUTPUT] [c1] A@2024-07-21T15:02:41Z, -2y3mo: Introduces CAF(x,ξ,t)=μloc(S)(x,ξ)*E(x,t); ψ_f(t)=∫N(x,t)dx, φ_f(t)=∫V(x,t)dx; coupled reaction-diffusion ∂φ/∂t=D∇²φ+γ(ψ−φ)+K(t), ∂ψ/∂t=H(ψ)+λ(φ−ψ)+S(t); CCI(X,t)=μ_mot(X)*E(t), E(t)=EEG\n\n[gmail]\n[INSUFFICIENT] Gmail search failed before it could retrieve matching emails.\n\n[files]\nSources:\n[f0] 2023_Revised_Mathematics_Table.html\n[f1] 2023_Mathematics_Compendium.pdf\n\nEvidence:\n- [FILE_METADATA] [f0] Retrieved material is dated/organized as 2023 entries; no July 21, 2024 timestamps or 13:48:43Z/15:39:03Z transcript attribution appears.\n- [FILE_CONTENT] [f0] Relevant equations include: “For a smooth projective complex variety, \\(b_k=\\sum_{p+q=k}h^{p,q}\\)”; singular/nonproper varieties “often [require] mixed Hodge structures.” The reaction–diffusion entry gives \\(n_i^{n+1}=n_i^n+r(n_{i+1}^n-2n_i^n+n_{i-1}^n)\\), \\(r=D\\Delta t/\\Delta x^2\\), with \\(0\\le r\\le 1/2\\).\n- [FILE_CONTENT] [f1] The compendium states for a graph update \\(P_h\\): \\(0\\le h\\le1/d_{\\max}\\) gives a nonnegative doubly stochastic update and nondecreasing Shannon entropy; it explicitly says reaction terms require additional analysis.\n- [INSUFFICIENT] [f0][f1] No retrieved excerpt contains the requested 11D/cognitive varieties, mixed-Hodge/D-modules, Legendrian/intersection-cohomology, “CCI = motivic measure * entropy,” or user/assistant turns at the specified July 21, 2024 times.\n\n<assistant_usage_note>\nWhen using the personal context above, treat relevant facts as binding context for this reply.\nBefore answering, silently identify: (1) relevant facts to preserve, and (2) hard constraints / exclusions to obey.\nIn the final answer:\nCarry forward relevant names, dates, amounts, option labels, locations, qualifiers, preferences, and task constraints from the context.\nTreat dislike / avoid / only / not / no / without / prefer / required statements as constraints.\nDo not add options, ingredients, products, places, methods, tools, backups, caveats, or \"if you're okay with...\" suggestions that conflict with any known constraint.\nDo not add new personalized recommendations unless they are supported by the context above or explicitly requested.\nIf a needed fact is already provided, use it directly instead of asking the user to confirm it.\nBefore sending, check the final answer for any missing relevant context or any suggestion that violates a known constraint.\nDo not quote or mention this assistant_usage_note in the final answer.\n</assistant_usage_note>"
+          }
+        ],
+        "structuredContent": {
+          "messages": [
+            {
+              "author_role": "tool",
+              "content": "[convo search]\n- [PRIOR_ASSISTANT_OUTPUT] [c0] A@2024-07-21T13:48:43Z, -2y3mo: Defines 11-dimensional “cognitive superspace”; ψ∈D^bMHM(X); rat_X:D^bMHM(X)→D^b_cs(X;Q), Dmod_X→D^b_coh(D_X), linked by DR_X; ∂φ/∂t=D∇²φ+γ(ψ−φ); Legendrian ξstd=ker(dz−y dx), CH*(L)=Ker∂n/Im∂n+1; IH^k(X)=H^k(p_*IC•Q_X).\n- [PRIOR_ASSISTANT_OUTPUT] [c1] A@2024-07-21T15:02:41Z, -2y3mo: Introduces CAF(x,ξ,t)=μloc(S)(x,ξ)*E(x,t); ψ_f(t)=∫N(x,t)dx, φ_f(t)=∫V(x,t)dx; coupled reaction-diffusion ∂φ/∂t=D∇²φ+γ(ψ−φ)+K(t), ∂ψ/∂t=H(ψ)+λ(φ−ψ)+S(t); CCI(X,t)=μ_mot(X)*E(t), E(t)=EEG\n\n[gmail]\n[INSUFFICIENT] Gmail search failed before it could retrieve matching emails.\n\n[files]\nSources:\n[f0] 2023_Revised_Mathematics_Table.html\n[f1] 2023_Mathematics_Compendium.pdf\n\nEvidence:\n- [FILE_METADATA] [f0] Retrieved material is dated/organized as 2023 entries; no July 21, 2024 timestamps or 13:48:43Z/15:39:03Z transcript attribution appears.\n- [FILE_CONTENT] [f0] Relevant equations include: “For a smooth projective complex variety, \\(b_k=\\sum_{p+q=k}h^{p,q}\\)”; singular/nonproper varieties “often [require] mixed Hodge structures.” The reaction–diffusion entry gives \\(n_i^{n+1}=n_i^n+r(n_{i+1}^n-2n_i^n+n_{i-1}^n)\\), \\(r=D\\Delta t/\\Delta x^2\\), with \\(0\\le r\\le 1/2\\).\n- [FILE_CONTENT] [f1] The compendium states for a graph update \\(P_h\\): \\(0\\le h\\le1/d_{\\max}\\) gives a nonnegative doubly stochastic update and nondecreasing Shannon entropy; it explicitly says reaction terms require additional analysis.\n- [INSUFFICIENT] [f0][f1] No retrieved excerpt contains the requested 11D/cognitive varieties, mixed-Hodge/D-modules, Legendrian/intersection-cohomology, “CCI = motivic measure * entropy,” or user/assistant turns at the specified July 21, 2024 times."
+            }
+          ],
+          "error": null
+        },
+        "isError": false
+      }
+    }
+  ],
+  "access_errors": [
+    {
+      "id": "R001",
+      "query": "The user asks to fully recover and mathematically develop their 2024 ChatGPT conversations month by month. Search only July 1 through July 31, 2024 inclusive (2024-07-01 to 2024-07-31). Recover all distinct mathematically substantive conversations available in this month, without guessing likely subjects from later work. Return exact dates/timestamps, titles or source identifiers if available, actual user questions/excerpts when accessible, and separate user text from assistant text and retrospective summaries. Include formulas, definitions, attempted connections, claimed results, mistakes and unresolved questions. Mathematics only, including mathematical parts of applied subjects; exclude nonmathematical advice and material from other dates. Explicitly report inaccessible or incomplete coverage rather than saying no mathematics existed.",
+      "result": {
+        "status": "fulfilled",
+        "value": {
+          "content": [
+            {
+              "type": "text",
+              "text": "Personal context is unavailable for this conversation."
+            }
+          ],
+          "isError": true
+        }
+      }
+    },
+    {
+      "id": "R002",
+      "query": "Recover this user's mathematics history strictly within 2024-07-01T00:00:00Z through 2024-07-31T23:59:59Z. The current request is a month-by-month mathematical development of all their 2024 chats. List dated mathematical exchanges and their actual surviving text, with explicit user-versus-assistant attribution; do not infer subjects or reconstruct absent user prompts. A previous request failed because personal context was unavailable. If access is still unavailable, return that limitation; missing retrieval must not be described as an absence of mathematics.",
+      "result": {
+        "status": "fulfilled",
+        "value": {
+          "content": [
+            {
+              "type": "text",
+              "text": "Personal context is unavailable for this conversation."
+            }
+          ],
+          "isError": true
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "reviewed_files": [
+    "../03/entries.json",
+    "../04/entries.json"
+  ],
+  "reviewer": "independent linear algebra, probability and mathematical-physics review",
+  "entry_counts": {
+    "03": 35,
+    "04": 28
+  },
+  "focused_ids": [
+    "Y25-03-011",
+    "Y25-03-012",
+    "Y25-03-013",
+    "Y25-03-014",
+    "Y25-03-017",
+    "Y25-03-018",
+    "Y25-03-021",
+    "Y25-03-030",
+    "Y25-03-032",
+    "Y25-03-034",
+    "Y25-04-003",
+    "Y25-04-004",
+    "Y25-04-009",
+    "Y25-04-010",
+    "Y25-04-011",
+    "Y25-04-022"
+  ],
+  "issues": [],
+  "approved_scopes": [
+    "The π/840 sine transform correctly requires indices1..839 and standard SU2 level838. The first-row truncation argument is exact: all omitted first-row terms are positive. The m4 matrix and truncated row norm3/4 are correct.",
+    "Dimension-weight normalization is independently inconsistent with1680: the first24 terms already exceed1960 using π²<10. Full normalization420/sin²θ and the m4 Shannon/Renyi values are correct.",
+    "Milnor numbers44 and33560 follow from exact monomial quotients and correct exponents. The Milnor fiber has complex dimension2, while its link is a real3-manifold; fiber middle homology is not substituted for link homology.",
+    "For the two stated Brieskorn link interpretations, the double-cover/Alexander determinant calculation gives torsion orders5 and41. Since both are prime, the integral H1 groups are cyclic; rational Betti vanishing does not make an integral homology sphere. The derivation handles the removable t=−1 zero correctly.",
+    "Standard-form modular Δ=LρRρ^{-1}, eigenvalues pi/pj and K=−logΔ have correct signs. The Tomita formula S(Y)=ρ^{-1/2}Y*ρ^{1/2}=JΔ^{1/2}Y is correct. It is properly distinguished from the density Hamiltonian−logρ and its entropy expectation.",
+    "The finite entropy first law uses a faithful reference state and traceless perturbation. The exact finite-change identity and positive binary Hessian have correct signs and normalization.",
+    "The cocycle u_t=ρ^{it}σ^{−it} obeys u_{s+t}=u_s ασ_s(u_t), not a generic ordinary group law. The proof cancels adjacent factors without commuting distinct density matrices, and the intertwining formula is valid.",
+    "Spectral flow in the finite path counts two upward crossings and reverses sign under reversed path. Odd-character winding normalization1/(2πi) is correct. Even curvature ch_n cannot be integrated over an odd-dimensional sphere as a top-degree invariant without additional structure.",
+    "Constant higher-gauge comparison A=Xdx+Ydy has curvature[X,Y]dx∧dy, including the1/2 graded-bracket factor. The stated L∞ convention has operations of degree2−n and requires its own identities; no unspecified2-crossed module is promoted to a theorem.",
+    "The two-edge blocking maps satisfy the claimed integer chain-homotopy identity with the stated orientations. The homotopy fiber of point→S1 retains winding classes; the double mapping cylinder span point←S0→point gives a circle. These are scoped classical comparisons, not unproved derived-category identifications.",
+    "The polynomial top-form quotient vanishes if all exact top forms are removed; the repaired Jacobian quotient and n2 example are correct. The Brieskorn module is explicitly distinguished from that finite quotient.",
+    "The dual-number Hochschild free resolution is exact before tensoring, and its differential becomes alternating0 and2ε afterward. HH0 dimension2 and all positive dimensions1, with the stated parity representatives, are correct."
+  ],
+  "independent_checks": [
+    {
+      "name": "840 sine norm",
+      "status": "pass",
+      "detail": "Full first-row norm=1;384-term norm=0.4159710010546177. The text provides the exact positivity argument."
+    },
+    {
+      "name": "Milnor products and link prerequisites",
+      "status": "pass",
+      "detail": "4·11=44;40·839=33560;gcd(5,12)=gcd(41,840)=1. Prime determinant orders give C5/C41."
+    },
+    {
+      "name": "Integer chain-homotopy certificate",
+      "status": "pass",
+      "detail": "Explicit r,i,h matrices independently satisfy ir−I=Bh in degree0 and hB in degree1."
+    },
+    {
+      "name": "Constant gauge commutator",
+      "status": "pass",
+      "detail": "The exact2×2 matrices give diag(1,−1)."
+    },
+    {
+      "name": "Entropy finite-change identity",
+      "status": "pass",
+      "detail": "Binary relative entropy=0.007002106647214991>0; exact-identity residual below1e−14."
+    },
+    {
+      "name": "March and April portable verifiers",
+      "status": "pass",
+      "detail": "python -S: March35/35 and April28/28 passed."
+    }
+  ],
+  "provenance_scope": "Focused excerpts support the stated historical topics with explicit replacement examples and limits. They are not treated as original proofs; original_question remains null in the inspected records. No material provenance mismatch found in the focused subset.",
+  "status": "approved within stated hypotheses and source gaps"
+}

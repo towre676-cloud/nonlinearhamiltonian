@@ -1,0 +1,588 @@
+[
+  {
+    "id": "Y24-08-001",
+    "title": "Diagram distances require diagonal matching and a stated filtration",
+    "status": "Revised classical development with scoped worked result",
+    "summary": "Persistence diagrams are multisets of birth-death pairs rather than ordinary point clouds with a fixed number of points. Their distance permits matching a feature to the diagonal, so comparing only correspondingly numbered points is insufficient. A two-feature example can be solved exhaustively and shows how a precise diagram question differs from an unspecified claim about three-dimensional features.",
+    "definitions": [
+      "A finite off-diagonal persistence diagram consists of pairs(b,d) with b<d. Use L∞ point cost max(|b−b′|,|d−d′|); matching(b,d) to the diagonal costs(d−b)/2. The bottleneck distance minimizes the maximum cost over partial bijections, with unmatched points matched to the diagonal."
+    ],
+    "result": {
+      "name": "An exact finite bottleneck certificate",
+      "statement": "For D={(0,3),(1,2)} and E={(1/10,16/5),(4/5,23/10)}, the bottleneck distance is3/10. Pairing the long features and the short features attains it, and no alternative matching has a smaller maximum cost.",
+      "proof": "The long-to-long cost is1/5 and the short-to-short cost is3/10. The cross pairing sends(0,3) to(4/5,23/10) at cost4/5, already too large. Leaving any feature unmatched has diagonal cost at least1/2 for the short D feature,3/4 for the short E feature, or more for either long feature. Thus no partial matching other than the direct full matching can have maximum below3/10. This proves optimality without relying on a numerical assignment routine. The same finite enumeration can certify other small diagrams."
+    },
+    "example": {
+      "setup": "Compare these two diagrams under both bottleneck and the matching2-Wasserstein cost built from the same L∞ point metric.",
+      "calculation": "The direct matching has squared2-Wasserstein cost(1/5)²+(3/10)²=13/100. Every cross or diagonal alternative has a larger squared sum in this example, giving distance√13/10. These two metrics summarize perturbation differently even though they share the minimizing pairing here.",
+      "conclusion": "An exact distance calculation is meaningful only after the filtration and coefficient conventions defining the diagrams are supplied."
+    },
+    "limits": "The old source supplies no actual filtration, diagrams or measured time series. The example proves a metric calculation, not stability of an unspecified processing pipeline. General persistence stability theorems need their own hypotheses.",
+    "extension": "Construct a finite lower-star filtration explicitly, compute its intervals and propagate a sup-norm bound on vertex values into a diagram-distance certificate.",
+    "references": [
+      {
+        "label": "Cohen-Steiner Edelsbrunner and Harer Stability of Persistence Diagrams",
+        "url": "https://doi.org/10.1007/s00454-006-1276-5"
+      }
+    ],
+    "original": {
+      "date": "2024-08-04",
+      "month": "2024-08",
+      "evidence": "A",
+      "field": "Persistent homology",
+      "concept": "Diagram distances require diagonal matching and a stated filtration",
+      "origin": "The assistant named persistence-diagram spaces and persistent time-series features without a recovered filtration.",
+      "question": "What diagrams are produced by which filtration, and what exact distance distinguishes a real change from a coordinate perturbation?",
+      "math": "For D={(0,3),(1,2)} and E={(1/10,16/5),(4/5,23/10)}, the bottleneck distance is3/10. Pairing the long features and the short features attains it, and no alternative matching has a smaller maximum cost.",
+      "finish": "Check the explicit hypotheses and reproduce the stated finite calculation.",
+      "kind": "Developed mathematical revision",
+      "refs": [],
+      "source_excerpt": "persistence-diagram spaces/topological data analysis; persistent 3-dimensional time-series features",
+      "retrieval_receipt": "root_receipts.json#0",
+      "original_question": null,
+      "attribution_note": "The historical evidence is an assistant-only retrieval summary or a topic fragment; no original user prompt survives here. This excerpt quotes the retrieval summary, not a verified original transcript. All revised questions and worked results are authored now, and are not attributed to the user or claimed as historical discoveries."
+    }
+  },
+  {
+    "id": "Y24-08-002",
+    "title": "A graph Dirac gap is a concrete operator statement",
+    "status": "Revised classical development with scoped worked result",
+    "summary": "A finite graph provides a fully defined Dirac-type operator whose spectral gap and homological kernel can be proved exactly. It illustrates legitimate spectral topology without claiming that an arbitrary operator realizes the zeros of an L-function. The latter correspondence would require a separate theorem covering every relevant zero.",
+    "definitions": [
+      "For an oriented finite graph, let B:C₀→C₁ be its incidence matrix over R. On C₀⊕C₁ define D=[[0,Bᵀ],[B,0]]. It is symmetric, and D²=diag(BᵀB,BBᵀ). Nonzero singular values of B generate paired eigenvalues±σ of D."
+    ],
+    "result": {
+      "name": "The complete path-three Dirac spectrum",
+      "statement": "For the path with three vertices and two edges, B=[[-1,1,0],[0,−1,1]]. The resulting five-by-five D has spectrum{0,±1,±√3}, so its smallest positive absolute eigenvalue is1. Its kernel dimension is one.",
+      "proof": "The two-by-two edge Laplacian BBᵀ=[[2,−1],[−1,2]] has eigenvalues1 and3, with independent eigenvectors(1,1) and(1,−1). Each nonzero singular mode produces a pair of D eigenvectors by solving Bv=σw and Bᵀw=σv. The vertex Laplacian has the additional constant null vector(1,1,1), while Bᵀ has no nonzero edge null vector. This supplies all five independent modes. Equivalently D(D²−I)(D²−3I)=0, which the verifier checks by exact integer matrix multiplication."
+    },
+    "example": {
+      "setup": "Orient both edges in the same direction and reverse one orientation.",
+      "calculation": "Reversing an edge multiplies one row of B by−1. The full D is conjugated by an orthogonal sign matrix on its edge component, preserving its spectrum and gap. This is an actual operator equivalence. Merely matching a numerical gap with an unrelated zero spacing would not give such an intertwiner.",
+      "conclusion": "The gap, kernel and orientation invariance follow from a stated finite operator, with no speculative arithmetic identification."
+    },
+    "limits": "A continuous Dirac operator needs a manifold, metric, spin or Clifford structure and operator domain. A graph gap does not prove a Riemann hypothesis or determine all persistence intervals.",
+    "extension": "Specify a weighted graph family, track singular values under perturbation and determine which observation maps preserve the operator’s kernel and low-frequency modes.",
+    "references": [],
+    "original": {
+      "date": "2024-08-04",
+      "month": "2024-08",
+      "evidence": "A",
+      "field": "Spectral topology",
+      "concept": "A graph Dirac gap is a concrete operator statement",
+      "origin": "Dirac-operator spectral gaps appeared beside persistence and L-function zero clustering.",
+      "question": "Which self-adjoint operator is defined, and what exact relation connects its spectrum to the object being studied?",
+      "math": "For the path with three vertices and two edges, B=[[-1,1,0],[0,−1,1]]. The resulting five-by-five D has spectrum{0,±1,±√3}, so its smallest positive absolute eigenvalue is1. Its kernel dimension is one.",
+      "finish": "Check the explicit hypotheses and reproduce the stated finite calculation.",
+      "kind": "Developed mathematical revision",
+      "refs": [],
+      "source_excerpt": "Dirac-operator spectral gaps; clustering of L-function zeros",
+      "retrieval_receipt": "root_receipts.json#0",
+      "original_question": null,
+      "attribution_note": "The historical evidence is an assistant-only retrieval summary or a topic fragment; no original user prompt survives here. This excerpt quotes the retrieval summary, not a verified original transcript. All revised questions and worked results are authored now, and are not attributed to the user or claimed as historical discoveries."
+    }
+  },
+  {
+    "id": "Y24-08-003",
+    "title": "The stipulated return and covariance example has two arithmetic corrections",
+    "status": "Revised classical development with scoped worked result",
+    "summary": "This is an audit of historical stipulated numbers, not an assertion about current prices, expected performance or an investment recommendation. Treating them as an abstract three-variable random vector permits exact rational arithmetic and identifies which parts of the old answer were numerical mistakes rather than conceptual mysteries.",
+    "definitions": [
+      "Let a real random vector R have stipulated mean m=(.15,.18,.20) and covariance C=[[.04,.01,.015],[.01,.0625,.02],[.015,.02,.09]]. Take w=(.40,.35,.25), whose entries sum to one. Mean is wᵀm and variance is wᵀCw when the second moments exist."
+    ],
+    "result": {
+      "name": "Exact mean and variance under the declared inputs",
+      "statement": "The weighted mean is173/1000=.173. The variance is4637/160000=.02898125, so the standard deviation is approximately.170238802862. The stated16 percent and23 percent values do not follow from these inputs.",
+      "proof": "Linearity of expectation gives the mean. Centering R and expanding E[(Σw_i(R_i−m_i))²] gives the covariance quadratic form, including both off-diagonal cross terms. Compute the diagonal contributions .0064,.00765625,.005625 and the doubled cross contribution .0093; their sum is .02898125. The covariance is symmetric and its leading principal minors are positive, which can be checked with exact fractions, so it is a valid positive-definite matrix for this abstract model. Positive definiteness gives a nonnegative variance for every nonzero weighted combination."
+    },
+    "example": {
+      "setup": "Use the displayed weights exactly rather than rounding intermediate products.",
+      "calculation": ".40×.15+.35×.18+.25×.20=.06+.063+.05=.173. The square root is taken only after all nine quadratic-form terms have been summed. Omitting cross terms would produce .01968125, which is another different value. A time-horizon change would require its own mean/covariance model rather than a label change.",
+      "conclusion": "The corrected calculation is fully replayable. A valid covariance example does not establish that its input estimates were measured correctly."
+    },
+    "limits": "No current financial data or probability calibration is inferred. The historic source contains no estimation window, uncertainty analysis or evidence of finite-moment stationarity. A covariance formula does not by itself validate a forecast.",
+    "extension": "Keep the same rational matrix and solve a stated equality-constrained quadratic program with a KKT certificate, then vary the covariance within a declared uncertainty set.",
+    "references": [
+      {
+        "label": "Boyd and Vandenberghe Introduction to Applied Linear Algebra",
+        "url": "https://stanford.edu/~boyd/vmls/"
+      }
+    ],
+    "original": {
+      "date": "2024-08-05",
+      "month": "2024-08",
+      "evidence": "A",
+      "field": "Quadratic probability models",
+      "concept": "The stipulated return and covariance example has two arithmetic corrections",
+      "origin": "The assistant supplied a three-variable covariance matrix and weights, but reported a16 percent mean and roughly23 percent standard deviation.",
+      "question": "What do the stated inputs actually imply, and which positive-definiteness and unit assumptions justify the quadratic expression?",
+      "math": "The weighted mean is173/1000=.173. The variance is4637/160000=.02898125, so the standard deviation is approximately.170238802862. The stated16 percent and23 percent values do not follow from these inputs.",
+      "finish": "Check the explicit hypotheses and reproduce the stated finite calculation.",
+      "kind": "Developed mathematical revision",
+      "refs": [],
+      "source_excerpt": "covariance matrix [[.04,.01,.015],[.01,.0625,.02],[.015,.02,.09]]; weights(.40,.35,.25)",
+      "retrieval_receipt": "root_followups.json#0",
+      "original_question": null,
+      "attribution_note": "The historical evidence is an assistant-only retrieval summary or a topic fragment; no original user prompt survives here. This excerpt quotes the retrieval summary, not a verified original transcript. All revised questions and worked results are authored now, and are not attributed to the user or claimed as historical discoveries."
+    }
+  },
+  {
+    "id": "Y24-08-004",
+    "title": "Photon number density times photon energy is energy density",
+    "status": "Revised classical development with scoped worked result",
+    "summary": "The important mathematical correction is dimensional, not a revised high-power threshold. Number density multiplied by energy per particle has units of energy density. Flux additionally involves transport speed and direction. The historical extrapolations therefore cannot be repaired by a new numerical substitution alone, and no operational optical calculation is developed here.",
+    "definitions": [
+      "Let n have units L⁻³, wavelength λ units L, Planck’s constant h units ML²T⁻¹, and speed c units LT⁻¹. For a monochromatic idealization, photon energy is E=hc/λ and energy density is u=nE. Energy flux has units energy/(area×time)."
+    ],
+    "result": {
+      "name": "Energy density and directed flux have different dimensions",
+      "statement": "The product nhc/λ has units ML⁻¹T⁻², not the MT⁻³ units of intensity. For a perfectly collimated stream normal to a plane, flux is cu. An isotropic radiation field has zero net vector flux despite positive energy density.",
+      "proof": "Add unit exponents in nhc/λ to obtain L⁻³·ML²T⁻¹·LT⁻¹/L=ML⁻¹T⁻². To form a flux one multiplies directional energy density by velocity and integrates its normal component. For a collimated normal stream that velocity factor is c. For an isotropic directional distribution, opposite directions have equal energy and opposite velocity, so their vector contributions cancel exactly. The one-sided incident flux through a plane in an isotropic field is instead cu/4, obtained by averaging cosθ over one hemisphere, not cu."
+    },
+    "example": {
+      "setup": "Use a normalized isotropic angular energy distribution u/(4π).",
+      "calculation": "The incident hemispherical normal flux is ∫₀^{2π}∫₀^{π/2}c[u/(4π)]cosθ sinθ dθdφ=cu/4. Integrating over the full sphere gives zero net flux. The same scalar energy density can therefore accompany distinct transport configurations.",
+      "conclusion": "A unit audit exposes the missing transport assumption before any threshold numbers are considered."
+    },
+    "limits": "The historical material parameter and proposed photon-density limits were not verified, and no vacuum or material threshold follows from this derivation. It provides no beam-design or exposure instructions.",
+    "extension": "For a specified spectral and angular distribution, derive energy density and flux as different moments and state the transport model needed to relate them.",
+    "references": [],
+    "original": {
+      "date": "2024-08-04",
+      "month": "2024-08",
+      "evidence": "A",
+      "field": "Dimensional analysis",
+      "concept": "Photon number density times photon energy is energy density",
+      "origin": "The assistant equated a number-density energy product with an intensity and extrapolated unverified thresholds.",
+      "question": "Which quantity has units of energy per volume, and what additional directional-transport assumption converts it to a flux?",
+      "math": "The product nhc/λ has units ML⁻¹T⁻², not the MT⁻³ units of intensity. For a perfectly collimated stream normal to a plane, flux is cu. An isotropic radiation field has zero net vector flux despite positive energy density.",
+      "finish": "Check the explicit hypotheses and reproduce the stated finite calculation.",
+      "kind": "Developed mathematical revision",
+      "refs": [],
+      "source_excerpt": "I=n hc/λ",
+      "retrieval_receipt": "root_followups.json#0",
+      "original_question": null,
+      "attribution_note": "The historical evidence is an assistant-only retrieval summary or a topic fragment; no original user prompt survives here. This excerpt quotes the retrieval summary, not a verified original transcript. All revised questions and worked results are authored now, and are not attributed to the user or claimed as historical discoveries."
+    }
+  },
+  {
+    "id": "Y24-08-005",
+    "title": "A tangent deformation can exist while its next lift is obstructed",
+    "status": "Revised classical development with scoped worked result",
+    "summary": "A finite-group character gives a complete toy deformation problem. It makes the difference between a nonzero tangent space and a smooth deformation space explicit, without pretending to reconstruct an absent Galois representation or Eisenstein ideal. The group is deliberately small so that the full relation can be checked by polynomial arithmetic.",
+    "definitions": [
+      "Let G be cyclic of order two, generated by g. Over a field k, take the trivial one-dimensional residual character. A deformation over a local Artinian k-algebra sends g to a unit u≡1 modulo its maximal ideal and must satisfy u²=1. Conjugation is trivial in dimension one."
+    ],
+    "result": {
+      "name": "Characteristic two supplies a nontrivial obstructed tangent direction",
+      "statement": "Over k[ε]/(ε²), write u=1+aε. The character relation is2a=0. For characteristic different from two, the tangent space is zero. In characteristic two it is one-dimensional, represented by arbitrary a. The tangent u=1+ε does not lift to u=1+η+bη² over k[η]/(η³) for any b.",
+      "proof": "Expand(1+aε)²=1+2aε because ε²=0. In characteristic two the linear relation disappears. For a prospective second-order lift, square1+η+bη² moduloη³: all doubled terms vanish and η² survives, yielding1+η² rather than1. Thus no choice of b solves the relation. The complete fixed-characteristic local relation can be represented by k[[t]]/(t²), since u=1+t and u²=1 is exactly t²=0 in characteristic two."
+    },
+    "example": {
+      "setup": "Compare the number of first-order characters over F₂ and F₃.",
+      "calculation": "Over F₂ there are two, with a=0 or1; over F₃ only a=0 works. The nontrivial F₂ tangent direction is obstructed at the next order. A one-dimensional tangent space therefore does not imply a one-dimensional smooth formal family.",
+      "conclusion": "The deformation functor, its coefficient category and its relation determine what the tangent calculation means."
+    },
+    "limits": "This is a finite-group character example, not a proof about G_Q, a modularity theorem or an Eisenstein deformation ring. Mixed-characteristic deformation rings need their own base ring; the relation would be2t+t² rather than simply t².",
+    "extension": "Specify a residual matrix representation and local conditions, compute its H¹ tangent data and an H² obstruction, then test whether the resulting functor has a representing ring.",
+    "references": [
+      {
+        "label": "Barry Mazur Deforming Galois Representations",
+        "url": "https://bpb-us-e1.wpmucdn.com/sites.harvard.edu/dist/a/189/files/2023/01/Deforming-Galois-Representations.pdf"
+      }
+    ],
+    "original": {
+      "date": "2024-08-17",
+      "month": "2024-08",
+      "evidence": "A",
+      "field": "Deformation theory",
+      "concept": "A tangent deformation can exist while its next lift is obstructed",
+      "origin": "The assistant discussed Galois-representation deformation rings and Eisenstein ideals without concrete equations.",
+      "question": "Which residual representation and coefficient category define the deformation functor, and what do tangent directions and obstructions actually compute?",
+      "math": "Over k[ε]/(ε²), write u=1+aε. The character relation is2a=0. For characteristic different from two, the tangent space is zero. In characteristic two it is one-dimensional, represented by arbitrary a. The tangent u=1+ε does not lift to u=1+η+bη² over k[η]/(η³) for any b.",
+      "finish": "Check the explicit hypotheses and reproduce the stated finite calculation.",
+      "kind": "Developed mathematical revision",
+      "refs": [],
+      "source_excerpt": "deformation rings encode Galois-representation deformations; Eisenstein ideals influence associated deformation spaces; no exact formulas/user text",
+      "retrieval_receipt": "root_specifics.json#0",
+      "original_question": null,
+      "attribution_note": "The historical evidence is an assistant-only retrieval summary or a topic fragment; no original user prompt survives here. This excerpt quotes the retrieval summary, not a verified original transcript. All revised questions and worked results are authored now, and are not attributed to the user or claimed as historical discoveries."
+    }
+  },
+  {
+    "id": "Y24-08-006",
+    "title": "A modular-curve quotient has a concrete finite-index calculation",
+    "status": "Revised classical development with scoped worked result",
+    "summary": "The simplest useful development fixes the congruence subgroup and proves its prime-level index. This supplies an actual modular-curve calculation and a moduli interpretation, while leaving the much deeper links to deformation rings and Shimura varieties conditional on named theorems and hypotheses.",
+    "definitions": [
+      "Let H be the complex upper half-plane and Γ₀(N)={[[a,b],[c,d]]∈SL₂(Z):c≡0 modN}. It acts byτ↦(aτ+b)/(cτ+d). The open modular curve is the quotient with its appropriate orbifold/coarse-space conventions; X₀(N) denotes its cusp compactification."
+    ],
+    "result": {
+      "name": "Prime-level index and a preserved cyclic subgroup",
+      "statement": "For a prime p, [SL₂(Z):Γ₀(p)]=p+1. A pointτ determines E_τ=C/(Zτ+Z) with the cyclic subgroup generated by1/N; Γ₀(N) preserves the isomorphism class of this pair.",
+      "proof": "Reduction modulo p maps SL₂(Z) onto SL₂(F_p); elementary upper and lower unipotent matrices give the needed generators. The subgroup with c=0 stabilizes the line∞ in P¹(F_p). The finite group acts transitively on its p+1 lines, so orbit-stabilizer gives the index. For the pair interpretation, multiplication by1/(cτ+d) identifies E_τ with E_τ′. The identity1/(cτ+d)=a−cτ′ shows that the image of1/N is congruent to a/N in the new torus when N divides c. Since a is invertible modulo N, this generates the same cyclic subgroup."
+    },
+    "example": {
+      "setup": "Take p=2 and enumerate matrices over F₂.",
+      "calculation": "There are six determinant-one matrices, and two have c=0, so the index is three. This finite check confirms the general orbit argument in the smallest prime case. It does not calculate the genus or every cohomology group of the compactified curve.",
+      "conclusion": "The quotient, level and cyclic-subgroup data are now explicit. A named modular curve is no longer standing in for an unspecified arithmetic space."
+    },
+    "limits": "Elliptic stabilizers and boundary conventions matter for a smooth-moduli or stack statement. General Shimura varieties need different group data. No R=T theorem or Eisenstein-ideal identification follows from this index calculation.",
+    "extension": "Choose a level with a specified torsion-free subgroup, calculate cusps and compactification data, and state precisely which deformation problem is related to it.",
+    "references": [
+      {
+        "label": "J S Milne Modular Functions and Modular Forms",
+        "url": "https://www.jmilne.org/math/CourseNotes/MF.pdf"
+      }
+    ],
+    "original": {
+      "date": "2024-08-17",
+      "month": "2024-08",
+      "evidence": "A",
+      "field": "Arithmetic geometry",
+      "concept": "A modular-curve quotient has a concrete finite-index calculation",
+      "origin": "X₀(N) appeared in the deformation overview, and Shimura varieties appeared in a later August topic fragment.",
+      "question": "Which quotient and moduli problem are being used, and what finite information can be calculated before invoking a general arithmetic-geometric bridge?",
+      "math": "For a prime p, [SL₂(Z):Γ₀(p)]=p+1. A pointτ determines E_τ=C/(Zτ+Z) with the cyclic subgroup generated by1/N; Γ₀(N) preserves the isomorphism class of this pair.",
+      "finish": "Check the explicit hypotheses and reproduce the stated finite calculation.",
+      "kind": "Developed mathematical revision",
+      "refs": [],
+      "source_excerpt": "deformation functors, Eisenstein ideals, cohomology, modular curve X_0(N)",
+      "retrieval_receipt": "root_followups.json#1",
+      "original_question": null,
+      "attribution_note": "The historical evidence is an assistant-only retrieval summary or a topic fragment; no original user prompt survives here. This excerpt quotes the retrieval summary, not a verified original transcript. All revised questions and worked results are authored now, and are not attributed to the user or claimed as historical discoveries."
+    }
+  },
+  {
+    "id": "Y24-08-007",
+    "title": "The Poincaré group is a noncommutative semidirect product",
+    "status": "Revised classical development with scoped worked result",
+    "summary": "The product law is the central mathematical content of the symmetry claim. Writing it explicitly distinguishes a direct product from a semidirect one, identifies the inverse and gives a finite exact test of metric preservation. Dimension and group-component choices then become declared parts of the structure rather than interchangeable labels.",
+    "definitions": [
+      "Use Minkowski metricη=diag(−1,1,1,1). A Lorentz matrix Λ satisfiesΛᵀηΛ=η. If desired restrict to the proper orthochronous component SO⁺(1,3); the source’s SO notation alone does not state a time-orientation restriction. A Poincaré element(a,Λ) acts byx↦Λx+a."
+    ],
+    "result": {
+      "name": "Composition law and an exact boost-translation commutator",
+      "statement": "The product is(a,Λ)(b,M)=(a+Λb,ΛM), with inverse(−Λ⁻¹a,Λ⁻¹). Translations preserve differences and Lorentz matrices preserve their Minkowski square. The two subgroups generally do not commute.",
+      "proof": "Compose the affine actions directly: Λ(Mx+b)+a=(ΛM)x+(a+Λb). Solving for an affine inverse gives the displayed formula. For two points, translations cancel, and the metric condition gives(Λ(x−y))ᵀηΛ(x−y)=(x−y)ᵀη(x−y). A pure Lorentz transformation conjugates a translation b to a translation Λb, so their commutator is translation byΛb−b. This is nonzero whenever b is not fixed by Λ."
+    },
+    "example": {
+      "setup": "In the time-space plane use the exact boost L=[[5/3,4/3],[4/3,5/3]], embedded with identity on the other coordinates, and b=(1,0,0,0).",
+      "calculation": "Its determinant is one and Lᵀdiag(−1,1)L=diag(−1,1). The translation commutator is(2/3,4/3,0,0), proving noncommutativity with exact fractions. The real Lie-group dimension in four spacetime dimensions is4+6=10; the six Lorentz directions correspond to the six independent antisymmetric generators relative toη.",
+      "conclusion": "The representation fixes signature, action, composition and component conventions. Different dimensions or signatures define related but distinct groups."
+    },
+    "limits": "Conformal and super-Poincaré extensions introduce additional structure and are not obtained merely by changing a parameter in this finite matrix example. A symmetry group does not determine a field equation or spectrum on its own.",
+    "extension": "Specify a representation and invariant operator, then calculate how its eigenspaces transform and which observables distinguish translation from boost covariance.",
+    "references": [],
+    "original": {
+      "date": "2024-08-19",
+      "month": "2024-08",
+      "evidence": "A",
+      "field": "Lie groups",
+      "concept": "The Poincaré group is a noncommutative semidirect product",
+      "origin": "The assistant listed Poincaré groups in several dimensions and signatures.",
+      "question": "Which Lorentz-group component and metric signature are chosen, and how do translations and linear transformations compose?",
+      "math": "The product is(a,Λ)(b,M)=(a+Λb,ΛM), with inverse(−Λ⁻¹a,Λ⁻¹). Translations preserve differences and Lorentz matrices preserve their Minkowski square. The two subgroups generally do not commute.",
+      "finish": "Check the explicit hypotheses and reproduce the stated finite calculation.",
+      "kind": "Developed mathematical revision",
+      "refs": [],
+      "source_excerpt": "P(1,3)=R^{1,3}⋊SO(1,3)",
+      "retrieval_receipt": "root_receipts.json#0",
+      "original_question": null,
+      "attribution_note": "The historical evidence is an assistant-only retrieval summary or a topic fragment; no original user prompt survives here. This excerpt quotes the retrieval summary, not a verified original transcript. All revised questions and worked results are authored now, and are not attributed to the user or claimed as historical discoveries."
+    }
+  },
+  {
+    "id": "Y24-08-008",
+    "title": "Finite zero checks and an arbitrary spectral gap cannot prove a Riemann hypothesis",
+    "status": "Revised classical development with scoped worked result",
+    "summary": "A rigorous revision identifies the specific analytic function and the missing all-zero theorem. Functional symmetry, entire continuation and a finite verified zero list are valuable information, but do not force every future zero onto a line in a broad class of analytic functions. A polynomial modification makes that limitation exact without constructing a counterexample to an actual L-function conjecture.",
+    "definitions": [
+      "For the Riemann zeta function define ξ(s)=s(s−1)π^(−s/2)Γ(s/2)ζ(s)/2, with its analytic continuation. It is entire and satisfiesξ(s)=ξ(1−s), together with conjugation symmetry. RH concerns its zeros on Re(s)=1/2. Generalized versions must name a different L-function and its completion."
+    ],
+    "result": {
+      "name": "Symmetry alone does not force the critical line",
+      "statement": "The real polynomial P(s)=[(s−1/4)²+1][(s−3/4)²+1] satisfiesP(1−s)=P(s) and has zeros1/4±i,3/4±i. Multiplying an entire symmetric function by P preserves those elementary symmetries while adding off-line zeros.",
+      "proof": "The substitution s↦1−s exchanges the two quadratic factors, so their product is invariant. Real coefficients give conjugation symmetry, and factoring each positive quadratic over C gives its declared roots. Multiplication by a polynomial preserves entire continuation and does not alter previously known zeros. It does not preserve an Euler product or make the new function an arithmetic L-function. Thus the example refutes only an inference from these insufficient analytic conditions, not RH itself. An operator proof would additionally need a rigorous bijection covering every zero, with the correct multiplicities and domain conditions."
+    },
+    "example": {
+      "setup": "Let a self-adjoint operator A have real spectral parametersλ and proposeρ=1/2+iλ.",
+      "calculation": "Any zero genuinely represented this way lies on the critical line. The unsolved step is proving that every relevant zero has such a representation; a few matching gaps or numerical spacings cannot supply surjectivity. The polynomial P explicitly shows why omitted zeros can defeat an otherwise symmetric analytic construction.",
+      "conclusion": "The revised programme separates a possible sufficient theorem from numerical motivation and from a counterexample in an enlarged function class."
+    },
+    "limits": "No RH or GRH proof, counterexample, universal zero clustering law or arithmetic-complexity reduction is claimed. The historical source did not provide the missing operator correspondence or an exact L-function specification.",
+    "extension": "State the completed L-function, its Euler factors and functional equation, then formulate the exact spectral or positivity statement that would imply its named hypothesis.",
+    "references": [
+      {
+        "label": "NIST DLMF Riemann Zeta Zeros",
+        "url": "https://dlmf.nist.gov/25.10"
+      }
+    ],
+    "original": {
+      "date": "2024-08-20",
+      "month": "2024-08",
+      "evidence": "A",
+      "field": "Analytic number theory",
+      "concept": "Finite zero checks and an arbitrary spectral gap cannot prove a Riemann hypothesis",
+      "origin": "A framework connected QFT, motives, complexity and generalized Riemann hypotheses; zero clustering appeared earlier in the month.",
+      "question": "Which L-function and exact operator correspondence are intended, and what hypothesis covers every nontrivial zero rather than a finite sample?",
+      "math": "The real polynomial P(s)=[(s−1/4)²+1][(s−3/4)²+1] satisfiesP(1−s)=P(s) and has zeros1/4±i,3/4±i. Multiplying an entire symmetric function by P preserves those elementary symmetries while adding off-line zeros.",
+      "finish": "Check the explicit hypotheses and reproduce the stated finite calculation.",
+      "kind": "Developed mathematical revision",
+      "refs": [],
+      "source_excerpt": "generalized Riemann hypotheses across L-functions",
+      "retrieval_receipt": "root_receipts.json#0",
+      "original_question": null,
+      "attribution_note": "The historical evidence is an assistant-only retrieval summary or a topic fragment; no original user prompt survives here. This excerpt quotes the retrieval summary, not a verified original transcript. All revised questions and worked results are authored now, and are not attributed to the user or claimed as historical discoveries."
+    }
+  },
+  {
+    "id": "Y24-08-009",
+    "title": "A finite-field zeta example gives a genuine cohomological counting bridge",
+    "status": "Revised classical development with scoped worked result",
+    "summary": "The projective line over a finite field supplies a complete classical example of arithmetic counting and a rational zeta function. It illustrates an actual bridge between algebraic geometry and an analytic-looking generating series. It does not identify this finite-field theorem with a number-field Riemann hypothesis or with an unspecified physical operator.",
+    "definitions": [
+      "For a finite-type variety X over F_q define its formal zeta series Z(X,t)=exp(Σ_{n≥1}#X(F_{q^n})t^n/n). The exponential and logarithm are formal power series over Q, so every finite coefficient calculation is well defined."
+    ],
+    "result": {
+      "name": "Exact zeta function of the projective line",
+      "statement": "For X=P¹ over F_q, #X(F_{q^n})=q^n+1 and Z(X,t)=1/[(1−t)(1−qt)]. Its two elementary factors record the constant and degree-two cohomological contributions in the standard Frobenius interpretation.",
+      "proof": "Every F_{q^n}-point of P¹ is either an affine coordinate in F_{q^n} or the single point at infinity, giving the count. Substitute it into the logarithm of Z. The formal identity−log(1−at)=Σ_{n≥1}a^nt^n/n gives−log(1−qt)−log(1−t); exponentiating yields the rational expression. Coefficients can be checked independently by multiplying the two geometric series: the coefficient of t^m is1+q+⋯+q^m. This establishes the complete rational formula without a numerical approximation."
+    },
+    "example": {
+      "setup": "Choose q=2 and calculate the first three extension-field counts and series coefficients.",
+      "calculation": "The counts for n=1,2,3 are3,5,9. The series coefficients through degree three are1,3,7,15. The count at n=2 is five, not the series coefficient seven: logarithmic point-count data and ordinary generating coefficients are different sequences. The verifier checks both and their formal logarithmic relation.",
+      "conclusion": "The example provides an explicit arithmetic object, a count and a theorem connecting them. It also exposes which sequence an algorithm is actually computing."
+    },
+    "limits": "The general Weil conjectures and arbitrary motivic L-functions are far beyond this elementary example. The formula does not establish a number-field GRH, a cryptographic hardness claim or a QFT interpretation.",
+    "extension": "For a specified curve over F_q, compute enough counts to determine its zeta numerator under a stated degree bound and verify the resulting recurrence with independently counted extensions.",
+    "references": [],
+    "original": {
+      "date": "2024-08-20",
+      "month": "2024-08",
+      "evidence": "A",
+      "field": "Arithmetic geometry",
+      "concept": "A finite-field zeta example gives a genuine cohomological counting bridge",
+      "origin": "Motives, number theory and L-functions were connected without a recovered example.",
+      "question": "What arithmetic object is counted, and what exact generating function records its extension-field counts?",
+      "math": "For X=P¹ over F_q, #X(F_{q^n})=q^n+1 and Z(X,t)=1/[(1−t)(1−qt)]. Its two elementary factors record the constant and degree-two cohomological contributions in the standard Frobenius interpretation.",
+      "finish": "Check the explicit hypotheses and reproduce the stated finite calculation.",
+      "kind": "Developed mathematical revision",
+      "refs": [],
+      "source_excerpt": "framework connecting quantum field theory, motives, number theory, computational complexity",
+      "retrieval_receipt": "root_receipts.json#0",
+      "original_question": null,
+      "attribution_note": "The historical evidence is an assistant-only retrieval summary or a topic fragment; no original user prompt survives here. This excerpt quotes the retrieval summary, not a verified original transcript. All revised questions and worked results are authored now, and are not attributed to the user or claimed as historical discoveries."
+    }
+  },
+  {
+    "id": "Y24-08-010",
+    "title": "Operadic corrections need actual compositions and an associativity constraint",
+    "status": "Revised classical development with scoped worked result",
+    "summary": "An endomorphism operad and a first-order associative deformation make the word correction precise. The example is ordinary algebra, with no claim that the historic rigid or p-adic spaces automatically carry the required operad action. It supplies a complete finite cocycle calculation and a nontrivial deformation rather than an application slogan.",
+    "definitions": [
+      "For a vector space V, its endomorphism operad has O(n)=Hom(V^⊗n,V), with insertion of one multilinear map into a chosen input of another. A bilinear multiplication m is associative when m(m(a,b),c)=m(a,m(b,c)). Work over a characteristic-zero field with ε²=0."
+    ],
+    "result": {
+      "name": "The first-order associativity equation is a Hochschild cocycle condition",
+      "statement": "For m_ε=m+εφ, associativity modulo ε² is equivalent to aφ(b,c)−φ(ab,c)+φ(a,bc)−φ(a,b)c=0 for all a,b,c. On A=k[x]/(x²), the normalized correctionφ(x,x)=1, φ(1,a)=φ(a,1)=0 satisfies it and is not removed by a first-order unital basis change.",
+      "proof": "Expand the two parenthesizations and compare their ε coefficients; rearranging gives the displayed equation. For the dual-number algebra it is enough to check triples of basis elements1,x by multilinearity. Triples involving1 cancel by normalization, while the all-x triple givesx−x=0. The deformed algebra is the free rank-two algebra over k[ε]/(ε²) with relationx²=ε, whose quotient multiplication is associative directly. Under x′=x+ε(a+bx), one has(x′)²=ε+2aεx modulo ε², so the scalar ε term cannot be removed; the original undeformed relation x²=0 is not restored."
+    },
+    "example": {
+      "setup": "Multiply the three x factors in either order.",
+      "calculation": "Both(x*x)*x andx*(x*x) equalεx. Every product reduces uniquely to A(ε)+B(ε)x. The verifier enumerates all eight basis triples and checks associativity exactly in the truncated coefficient ring.",
+      "conclusion": "The correction is a genuine first-order algebraic deformation with an explicit equivalence convention."
+    },
+    "limits": "This example does not construct an operadic action on a rigid analytic space, identify a universal deformation or establish higher-order unobstructedness. Higher powers of ε require additional equations.",
+    "extension": "Choose the actual operation algebra in the intended geometric category, compute its deformation complex and test whether a first-order correction extends beyond the tangent level.",
+    "references": [],
+    "original": {
+      "date": "2024-08-22",
+      "month": "2024-08",
+      "evidence": "A",
+      "field": "Operads and deformation",
+      "concept": "Operadic corrections need actual compositions and an associativity constraint",
+      "origin": "The assistant discussed operadic corrections in an analogical list of geometric settings.",
+      "question": "Which operations compose, and what equation must a first-order correction satisfy?",
+      "math": "For m_ε=m+εφ, associativity modulo ε² is equivalent to aφ(b,c)−φ(ab,c)+φ(a,bc)−φ(a,b)c=0 for all a,b,c. On A=k[x]/(x²), the normalized correctionφ(x,x)=1, φ(1,a)=φ(a,1)=0 satisfies it and is not removed by a first-order unital basis change.",
+      "finish": "Check the explicit hypotheses and reproduce the stated finite calculation.",
+      "kind": "Developed mathematical revision",
+      "refs": [],
+      "source_excerpt": "operadic corrections; no exact formulas/user text",
+      "retrieval_receipt": "root_specifics.json#0",
+      "original_question": null,
+      "attribution_note": "The historical evidence is an assistant-only retrieval summary or a topic fragment; no original user prompt survives here. This excerpt quotes the retrieval summary, not a verified original transcript. All revised questions and worked results are authored now, and are not attributed to the user or claimed as historical discoveries."
+    }
+  },
+  {
+    "id": "Y24-08-011",
+    "title": "Formal, rigid and Berkovich disks are related constructions with different data",
+    "status": "Revised classical development with scoped worked result",
+    "summary": "The closed unit disk over a nonarchimedean field gives a concrete way to distinguish formal models, analytic functions and seminorm points. The Gauss norm can be proved multiplicative, and a simple polynomial shows that the resulting Berkovich point is not evaluation at a single ordinary field-valued point.",
+    "definitions": [
+      "Let K=Q_p with its usual nonarchimedean absolute value. The Tate algebra K⟨T⟩ consists of seriesΣa_nT^n with a_n→0, endowed with Gauss norm max_n|a_n|. A standard integral formal model uses Z_p⟨T⟩. A Berkovich point is an appropriate bounded multiplicative seminorm extending the absolute value on K."
+    ],
+    "result": {
+      "name": "The Gauss norm is multiplicative and differs from point evaluation",
+      "statement": "For polynomials f,g over K, ||fg||_G=||f||_G||g||_G. Evaluation at any a with|a|≤1 satisfies|f(a)|≤||f||_G. The Gauss seminorm is not evaluation at any single such a∈K.",
+      "proof": "The coefficient triangle inequality gives the upper bound. Rescale each nonzero polynomial by a coefficient of maximal absolute value, so both have integral coefficients and a nonzero reduction in F_p[T]. Their reductions have a nonzero product because that polynomial ring is a domain. Some coefficient of the product is therefore a unit, proving the lower bound after restoring the scales. The evaluation inequality follows termwise from the ultrametric inequality and|a|≤1. For any proposed evaluation point a, the polynomial T−a has Gauss norm one but evaluates to zero at a, disproving equality of these seminorms."
+    },
+    "example": {
+      "setup": "Use p=3, f=1+3T and g=1+T.",
+      "calculation": "Both Gauss norms are one, and fg=1+4T+3T² still has norm one. Their reductions are1 and1+T, whose product is nonzero. The formal reduction of the integral model records a special fiber over F₃, whereas the generic analytic disk concerns a K-algebra. The Gauss point records the whole unit-disk norm rather than choosing one residue or evaluation coordinate.",
+      "conclusion": "The constructions are related by precise model and analytification procedures, not by interchangeable terminology."
+    },
+    "limits": "This polynomial proof is not a construction of all rigid or Berkovich geometry. Extensions to convergent series use completion, and generic-fiber conventions depend on the formal topology. No operadic correction is supplied by the mere existence of these spaces.",
+    "extension": "Specify an actual affinoid algebra or formal model, determine its reduction and compare evaluation points with its multiplicative seminorm points.",
+    "references": [
+      {
+        "label": "Matthew Baker and Robert Rumely Analysis and dynamics on the Berkovich projective line",
+        "url": "https://arxiv.org/abs/math/0407433"
+      }
+    ],
+    "original": {
+      "date": "2024-08-22",
+      "month": "2024-08",
+      "evidence": "A",
+      "field": "Nonarchimedean geometry",
+      "concept": "Formal, rigid and Berkovich disks are related constructions with different data",
+      "origin": "The assistant analogized rigid, p-adic, formal and Berkovich spaces without formulas.",
+      "question": "Which coefficient field, normed algebra and notion of point define the geometric object?",
+      "math": "For polynomials f,g over K, ||fg||_G=||f||_G||g||_G. Evaluation at any a with|a|≤1 satisfies|f(a)|≤||f||_G. The Gauss seminorm is not evaluation at any single such a∈K.",
+      "finish": "Check the explicit hypotheses and reproduce the stated finite calculation.",
+      "kind": "Developed mathematical revision",
+      "refs": [],
+      "source_excerpt": "rigid, p-adic, formal, Berkovich spaces",
+      "retrieval_receipt": "root_specifics.json#0",
+      "original_question": null,
+      "attribution_note": "The historical evidence is an assistant-only retrieval summary or a topic fragment; no original user prompt survives here. This excerpt quotes the retrieval summary, not a verified original transcript. All revised questions and worked results are authored now, and are not attributed to the user or claimed as historical discoveries."
+    }
+  },
+  {
+    "id": "Y24-08-012",
+    "title": "A BV operator generates a concrete odd bracket",
+    "status": "Revised classical development with scoped worked result",
+    "summary": "A one-even-variable, one-odd-variable algebra gives an explicit model in which square-zero and bracket calculations can be completed. It turns the recovered BV definition into an actual example, while keeping the full Gerstenhaber identity a consequence of a correctly specified second-order operator rather than an arbitrary nilpotent linear map.",
+    "definitions": [
+      "Let A=k[x]⊗Λ(θ), characteristic zero, with|x|=0, |θ|=1 andθ²=0. LetΔ=∂_x∂_θ, degree−1. For homogeneous a,b define{a,b}=(−1)^|a|[Δ(ab)−(Δa)b−(−1)^|a|aΔb]."
+    ],
+    "result": {
+      "name": "A square-zero second-order differential operator and its generated bracket",
+      "statement": "Δ²=0 and Δ has differential order at most two. For polynomials f,g, {f,g}=0, {f,gθ}=f′g, {fθ,g}=−fg′ and{fθ,gθ}=(f′g−fg′)θ. In particular{x,θ}=1 and{θ,x}=−1.",
+      "proof": "Every element is f(x)+g(x)θ, andΔ sends it to g′(x), whose odd derivative vanishes on a second application. The operator is a composition of two derivations, giving order at most two, and it kills1. Substitute each of the four parity cases into the defining formula to obtain the bracket expressions. These expressions verify the degree−1 graded antisymmetry; differentiation of products gives the graded derivation law. The standard BV theorem, or a direct check of the finitely many parity cases using commuting ordinary derivatives, gives the odd Jacobi identity. Nilpotence without the second-order condition would not justify this conclusion."
+    },
+    "example": {
+      "setup": "Take a=x² and b=xθ.",
+      "calculation": "Δa=0, Δb=1 andΔ(ab)=Δ(x³θ)=3x². Thus{a,b}=3x²−x²=2x², agreeing with f′g=(2x)x. For two odd elements xθ and x²θ, the bracket is(x²−2x²)θ=−x²θ. The verifier represents even and odd polynomials separately and checks these formulas and sample Jacobi identities.",
+      "conclusion": "The algebra, grading, operator order and signs now determine a checkable bracket."
+    },
+    "limits": "The example is a classical BV algebra. It does not supply a quantum field theory, a geometric BV operator on an unspecified space or a proof that every Gerstenhaber algebra admits such a generator.",
+    "extension": "For a declared graded algebra, compute whether a proposed square-zero operator has differential order at most two and whether its induced bracket matches the intended geometry.",
+    "references": [
+      {
+        "label": "Ezra Getzler Batalin-Vilkovisky algebras and two-dimensional topological field theories",
+        "url": "https://arxiv.org/abs/hep-th/9212043"
+      }
+    ],
+    "original": {
+      "date": "2024-08-25",
+      "month": "2024-08",
+      "evidence": "A",
+      "field": "Graded algebra",
+      "concept": "A BV operator generates a concrete odd bracket",
+      "origin": "The assistant specified graded commutativity, a degree−1 square-zero second-order operator and a Gerstenhaber extension.",
+      "question": "Which algebra and sign convention realize the BV identity, and what bracket does the operator actually generate?",
+      "math": "Δ²=0 and Δ has differential order at most two. For polynomials f,g, {f,g}=0, {f,gθ}=f′g, {fθ,g}=−fg′ and{fθ,gθ}=(f′g−fg′)θ. In particular{x,θ}=1 and{θ,x}=−1.",
+      "finish": "Check the explicit hypotheses and reproduce the stated finite calculation.",
+      "kind": "Developed mathematical revision",
+      "refs": [],
+      "source_excerpt": "graded-commutative A, degree(−1)Δ, Δ²=0, second-order operator",
+      "retrieval_receipt": "root_specifics.json#0",
+      "original_question": null,
+      "attribution_note": "The historical evidence is an assistant-only retrieval summary or a topic fragment; no original user prompt survives here. This excerpt quotes the retrieval summary, not a verified original transcript. All revised questions and worked results are authored now, and are not attributed to the user or claimed as historical discoveries."
+    }
+  },
+  {
+    "id": "Y24-08-013",
+    "title": "Controlled irregularity needs a norm and a perturbation estimate",
+    "status": "Revised classical development with scoped worked result",
+    "summary": "The source gap is preserved: no exact Hardy–BMO modification or date within the two-day cluster is invented. A standard mean-oscillation estimate provides a rigorous replacement for the phrase controlled irregularity. A local atomic pairing is sufficient for a fully worked example without pretending to prove the entire Hardy-space duality theorem.",
+    "definitions": [
+      "For a locally integrable real b and bounded interval I, let b_I be its average and osc_I(b)=|I|⁻¹∫_I|b−b_I|. The classical BMO seminorm is the supremum over intervals. An H¹ atom on I has mean zero, support in I and L∞ norm at most1/|I|."
+    ],
+    "result": {
+      "name": "A sharp local atom pairing and a robust BMO perturbation bound",
+      "statement": "|∫ab|≤osc_I(b) for an atom a supported on I. If b∈BMO and||e||∞≤ε, then b+e∈BMO and||b+e||_BMO≤||b||_BMO+2ε. Applying the same bound to−e gives the finite two-sided seminorm difference bound.",
+      "proof": "Because the atom has mean zero, ∫ab=∫a(b−b_I). Bounding|a| by1/|I| gives the first inequality. For the perturbation, write(b+e)−(b+e)_I=(b−b_I)+(e−e_I); the triangle inequality gives osc_I(b+e)≤osc_I(b)+osc_I(e). Since|e_I|≤ε, the latter oscillation is at most2ε. Take the supremum over I, then exchange b and b+e to obtain the reverse comparison. The argument identifies exactly which perturbation norm controls the irregularity seminorm."
+    },
+    "example": {
+      "setup": "On I=[−1,1], take b(x)=x and a(x)=sign(x)/2, zero outside I.",
+      "calculation": "The atom has zero mean and L∞ norm1/2. The average of b on I is zero and osc_I(b)=1/2. The pairing is∫a(x)b(x)dx=(1/2)∫_{−1}¹|x|dx=1/2, so the local bound is attained. This is a local interval example; the function x on all of R is not being claimed to have finite global BMO seminorm.",
+      "conclusion": "The norm, cancellation and perturbation class make controlled irregularity an actual statement."
+    },
+    "limits": "The historical altered parameters and intended application are not recovered. Sobolev H¹ and real Hardy H¹ are different spaces, and the local atom estimate alone is not a complete proof of global H¹–BMO duality.",
+    "extension": "Specify the modified function space and its atoms, then prove a pairing or embedding estimate with constants that remain controlled across the declared parameter range.",
+    "references": [
+      {
+        "label": "University of Bonn Hardy spaces duality and BMO notes",
+        "url": "https://www.math.uni-bonn.de/ag/ana/WiSe1415/V4B5_hardy.pdf"
+      }
+    ],
+    "original": {
+      "date": null,
+      "month": "2024-08",
+      "evidence": "T",
+      "field": "Harmonic analysis",
+      "concept": "Controlled irregularity needs a norm and a perturbation estimate",
+      "origin": "A broad August24–25 topic summary named Hardy H1, BMO, inequalities and modified parameters; narrower retrieval did not recover a dated formula.",
+      "question": "Which mean-oscillation seminorm measures the proposed irregularity, and how does it change under a bounded perturbation?",
+      "math": "|∫ab|≤osc_I(b) for an atom a supported on I. If b∈BMO and||e||∞≤ε, then b+e∈BMO and||b+e||_BMO≤||b||_BMO+2ε. Applying the same bound to−e gives the finite two-sided seminorm difference bound.",
+      "finish": "Check the explicit hypotheses and reproduce the stated finite calculation.",
+      "kind": "Developed mathematical revision",
+      "refs": [],
+      "source_excerpt": "H1–BMO spaces, inequalities, controlled irregularity, and modified parameters",
+      "retrieval_receipt": "root_receipts.json#0",
+      "original_question": null,
+      "attribution_note": "The historical evidence is an assistant-only retrieval summary or a topic fragment; no original user prompt survives here. This excerpt quotes the retrieval summary, not a verified original transcript. All revised questions and worked results are authored now, and are not attributed to the user or claimed as historical discoveries."
+    }
+  },
+  {
+    "id": "Y24-08-014",
+    "title": "Two power laws are assumptions with testable ratios, not a derived physical theory",
+    "status": "Revised classical development with scoped worked result",
+    "summary": "The two formulas can be developed as stipulated scaling laws without endorsing a new gravitational or quantum model. Their mathematical consequences include exact ratios, logarithmic elasticities and a direct relation between the two observables. Finite agreement with such consequences remains insufficient to identify the law outside the observed domain.",
+    "definitions": [
+      "Take n>0 dimensionless and G₀,Λ₀ fixed nonzero constants with their own declared units. Define G(n)=G₀n⁻² and L(n)=Λ₀n⁻⁸. The label L avoids confusing the second quantity with a linear operator in this example. If n is restricted to integers, derivatives concern a chosen continuous interpolation."
+    ],
+    "result": {
+      "name": "Exact ratios and a nonidentifiability construction",
+      "statement": "For a,b>0, G(b)/G(a)=(a/b)² and L(b)/L(a)=(a/b)⁸. Moreover L(n)/Λ₀=[G(n)/G₀]⁴. On the stated continuous model, the logarithmic elasticities are−2 and−8.",
+      "proof": "Divide each power law at two positive inputs to cancel its constant. Eliminating n gives the fourth-power relation. Differentiate logG=logG₀−2logn and the corresponding L expression when the constants and functions are positive; for fixed-sign nonzero quantities, use logarithms of absolute values. To see the finite-data limit, take any finite observed set{n_j} and define G̃(n)=G₀n⁻²exp(ε∏_j(n−n_j)). It agrees at every listed point yet differs elsewhere for ε≠0. Positivity is preserved when G₀>0, so that condition alone cannot eliminate the ambiguity."
+    },
+    "example": {
+      "setup": "Use a=2,b=4 and constants normalized to one.",
+      "calculation": "The G ratio is1/4 and the L ratio is1/256, exactly the fourth power of1/4. At n=2, G=1/4 and L=1/256. These are consequences of the assumptions, not independent evidence for them. The perturbed function using observed inputs2 and4 passes both G values while changing its derivative and its values at other inputs.",
+      "conclusion": "A proposed scaling programme becomes falsifiable only after the meaning, domain and measurement of n are specified independently."
+    },
+    "limits": "No physical evolution of a quantum number, frequency-shift prediction or variation of constants is established. The historical framework supplies formulas but not an accepted governing theory or an uncertainty-calibrated dataset. Its acronym is not treated as a theorem.",
+    "extension": "State an identifiable observation model for n and the constants, compare the power-law family with explicit alternatives, and report uncertainty in the exponents before transferring the formulas into a physical prediction.",
+    "references": [],
+    "original": {
+      "date": "2024-08-26",
+      "month": "2024-08",
+      "evidence": "A",
+      "field": "Scaling models",
+      "concept": "Two power laws are assumptions with testable ratios, not a derived physical theory",
+      "origin": "The assistant proposed G(n)=G₀/n² and Λ(n)=Λ₀/n⁸ in an RHP framework.",
+      "question": "What is the domain of n, which constants and units are fixed, and what follows algebraically before any physical interpretation is attempted?",
+      "math": "For a,b>0, G(b)/G(a)=(a/b)² and L(b)/L(a)=(a/b)⁸. Moreover L(n)/Λ₀=[G(n)/G₀]⁴. On the stated continuous model, the logarithmic elasticities are−2 and−8.",
+      "finish": "Check the explicit hypotheses and reproduce the stated finite calculation.",
+      "kind": "Developed mathematical revision",
+      "refs": [],
+      "source_excerpt": "G(n)=G_0/n²; Λ(n)=Λ_0/n⁸",
+      "retrieval_receipt": "root_followups.json#1",
+      "original_question": null,
+      "attribution_note": "The historical evidence is an assistant-only retrieval summary or a topic fragment; no original user prompt survives here. This excerpt quotes the retrieval summary, not a verified original transcript. All revised questions and worked results are authored now, and are not attributed to the user or claimed as historical discoveries."
+    }
+  }
+]

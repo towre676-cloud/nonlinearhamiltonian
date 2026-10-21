@@ -1,0 +1,48 @@
+{
+  "reviewer": "linear_probability_and_relativity",
+  "reviewed_files": ["chapters/f/entries.json", "chapters/f/verify.py", "syntheses.json entries S001 S004 S006"],
+  "verifier_result": {"checks": 15, "all_passed": true},
+  "issues": [
+    {
+      "severity": "minor",
+      "id": "S004",
+      "description": "The result statement begins with t≥0 and then presents logarithmic recovery and a 1/t inverse bound. The definitions already set t>0, so the intended scope is correct, but a reader could mistakenly carry the first t≥0 quantifier into the inverse claims. At t=0 every heat matrix is I and recovery is impossible.",
+      "fix": "Write explicitly: the forward inequality holds for t≥0; uniqueness and the inverse bound hold for t>0. Optionally note the total information loss at t=0."
+    }
+  ],
+  "approved_scopes": [
+    {
+      "id": "M100",
+      "detail": "The monomial certificate and normal-order minimality argument are sound in the stated characteristic-zero polynomial Weyl algebra. A target x^(ms) term forces j=m+i, and every such falling factorial contains the candidate m-factor b-function. The multivariable example retains the repeated (s+1) root, and the invertible complex linear coordinate change for x²+y² legitimately preserves the problem."
+    },
+    {
+      "id": "M103",
+      "detail": "The current OPE follows from the declared Fock representation. The vacuum L₂L₋₂ check is correctly scoped as a central-term calculation, not a finite verification of all vertex-algebra axioms."
+    },
+    {
+      "id": "M104",
+      "detail": "For H=Σ(I−swap) on four periodic sites, the one-magnon energies 0,2,2,4 and rapidities 1/2,0,−1/2 agree. The uniform state is explicitly retained by the infinite-root limit. Singular roots and arbitrary-sector completeness are explicitly excluded, so the finite result is not overstated."
+    },
+    {
+      "id": "M105",
+      "detail": "Independently checked the declared Ω normalization, H₁=−Ω, H₂=Ω, and singlet eigenvalues (+3/2,−3/2). Combining fractions gives u=1/[2x(x−1)(2x−1)]. The x=1/2 double pole cancels in u²−u′, and the remaining potential is 3/[4x²(x−1)²]. Expanding gives simple residues +3/2 at 0 and −3/2 at 1. For q₁=x−1/2 and q₂=x²−x/2+1/4, q₁q₂′−q₁′q₂=x²−x, so the displayed solution Wronskian is one. The scalar monodromy and projectively trivial claim are justified for these explicit solutions, with no full Langlands or completeness claim."
+    },
+    {
+      "id": "M108–M114",
+      "detail": "The Klein–Gordon dispersion, minimally coupled Pauli reduction and magnetic sign, local-versus-global Maxwell distinction, longitudinal Ward construction and transverse freedom, zero-dimensional quartic coefficients and finite-order remainder, RG coordinate invariance with a regular change of variable, and implicit-level velocity are correctly conventioned and bounded. The quartic example is properly identified as a toy integral and its infinite perturbative series as divergent; the relativistic reduction is correctly labeled formal rather than a uniform error theorem."
+    },
+    {
+      "id": "S001",
+      "detail": "The minimal SISO realization proof is sound: reachable and observable quotient dimension r makes both the first r Krylov columns and first r observation rows invertible, hence the leading r×r Hankel block is invertible. The everywhere-valid recurrence and zero-sequence convention handle finite nilpotent transients. The warning that finite prefixes alone do not certify the recurrence is necessary and present."
+    },
+    {
+      "id": "S004",
+      "detail": "Apart from the t=0 wording issue, the noncommutative Duhamel bound and logarithm resolvent inequality are valid for the stated symmetric PSD generators. The rook and Shrikhande heat-diagonal formula follows from their stated spectrum and vertex transitivity. The time 1/Λ correctly optimizes only the displayed absolute-error upper bound."
+    },
+    {
+      "id": "S006",
+      "detail": "The whitening, projection formula for noncentrality, invisible-shift example and exact robust minimum max(||Pd₀||−ε,0)² are correct for known SPD covariance, a full-row-rank linear panel and a Euclidean uncertainty ball in whitened coordinates. The statement appropriately avoids claiming a universal comparison between detectors with different degrees of freedom."
+    }
+  ],
+  "overall": "No material mathematical error found in chapter f. One minor quantifier clarification in synthesis S004 is recommended."
+}

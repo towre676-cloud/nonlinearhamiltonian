@@ -1,0 +1,321 @@
+{
+  "checks": [
+    {
+      "id": "Y26-01-001",
+      "name": "c1",
+      "status": "passed",
+      "detail": {
+        "states": 24,
+        "kernel": [
+          [
+            0,
+            2,
+            3
+          ],
+          [
+            1,
+            2,
+            3
+          ]
+        ],
+        "method": "all principal two-sided ideals, not an assumed product formula"
+      }
+    },
+    {
+      "id": "Y26-01-002",
+      "name": "c2",
+      "status": "passed",
+      "detail": {
+        "exhaustive_discrete_log_solutions": [
+          6
+        ],
+        "generic lower bound": "cited theorem, not proved by this finite test"
+      }
+    },
+    {
+      "id": "Y26-01-003",
+      "name": "c3",
+      "status": "passed",
+      "detail": "All four complete periodic traces distinguish exactly 2 parity classes or 4 marked-state classes."
+    },
+    {
+      "id": "Y26-01-004",
+      "name": "c4",
+      "status": "passed",
+      "detail": "Exact determinant convention and independent integer-representation distinction; all-integer nonrepresentation proved by square completion in text."
+    },
+    {
+      "id": "Y26-01-005",
+      "name": "c5",
+      "status": "passed",
+      "detail": {
+        "exact_determinants_N1_to8": [
+          "1",
+          "1/4",
+          "1/36",
+          "1/576",
+          "1/14400",
+          "1/518400",
+          "1/25401600",
+          "1/1625702400"
+        ],
+        "infinite norm bound": "Schur proof in prose"
+      }
+    },
+    {
+      "id": "Y26-01-006",
+      "name": "c6",
+      "status": "passed",
+      "detail": "All 30 coordinates of a signed rational matvec agree between direct gcd entries and independent divisor accumulation; 3x3 determinant23/36."
+    },
+    {
+      "id": "Y26-01-007",
+      "name": "c7",
+      "status": "passed",
+      "detail": "Exact commutator and independent propagator norm witness sqrt17/e>1."
+    },
+    {
+      "id": "Y26-01-008",
+      "name": "c8",
+      "status": "passed",
+      "detail": {
+        "all_Rademacher_values": [
+          7,
+          3,
+          3,
+          7
+        ],
+        "mean": "5",
+        "variance": "4",
+        "Gaussian_variance": 30
+      }
+    },
+    {
+      "id": "Y26-01-009",
+      "name": "c9",
+      "status": "passed",
+      "detail": "Three exact cubic critical-value/elimination checks; oscillatory Airy identity is derived and cited, not numerically quadrature-certified."
+    },
+    {
+      "id": "Y26-01-010",
+      "name": "c10",
+      "status": "passed",
+      "detail": "Four independent shear points satisfy the corrected logarithmic PDE; directional term sign derived algebraically in prose."
+    },
+    {
+      "id": "Y26-01-011",
+      "name": "c11",
+      "status": "passed",
+      "detail": "Periodic quadrature exactly resolves squared Fourier modes n1,3,7; collinearity leaves all pairwise Gram determinants zero."
+    },
+    {
+      "id": "Y26-01-012",
+      "name": "c12",
+      "status": "passed",
+      "detail": "Projected Hessian norm and full diagonal-quadratic solution checked; curvature2/(5sqrt5)."
+    },
+    {
+      "id": "Y26-01-013",
+      "name": "c13",
+      "status": "passed",
+      "detail": "Unit-speed curve derivatives yield kappa=s/2 and cost1/4 independently; global optimality uses sharp Cauchy–Schwarz proof."
+    },
+    {
+      "id": "Y26-01-014",
+      "name": "c14",
+      "status": "passed",
+      "detail": "Exact D4 determinant, complete inverse and covariance trace5."
+    },
+    {
+      "id": "Y26-01-015",
+      "name": "c15",
+      "status": "passed",
+      "detail": "Exact two-level KMS boundary identity with Boltzmann ratio1/3."
+    },
+    {
+      "id": "Y26-01-016",
+      "name": "c16",
+      "status": "passed",
+      "detail": {
+        "phi1680": 384,
+        "real_cyclotomic_degree": 192,
+        "phi30030": 5760,
+        "kappa6": "192/1001",
+        "reciprocal_power_ratio": 9.058088554513462
+      }
+    },
+    {
+      "id": "Y26-01-017",
+      "name": "c17",
+      "status": "passed",
+      "detail": "Exact Newtonian trajectory and independent Jacobi quadrature verify different exponents; turning tube delta<epsilon²/2."
+    },
+    {
+      "id": "Y26-01-018",
+      "name": "c18",
+      "status": "passed",
+      "detail": "Legendre inversion and independently differentiated Helmholtz potential at three states; Maxwell identity derived exactly."
+    },
+    {
+      "id": "Y26-01-019",
+      "name": "c19",
+      "status": "passed",
+      "detail": {
+        "two_loop_blowup_time": 0.3068528194400547,
+        "elapsed_to_mu2": 0.2123179275482253,
+        "method": "separated integral quadrature versus primitive"
+      }
+    },
+    {
+      "id": "Y26-01-020",
+      "name": "c20",
+      "status": "passed",
+      "detail": "Exact Gaussian moments give entropy2exp(-2t), Fisher4exp(-2t); general integration-by-parts identity is proved in text."
+    },
+    {
+      "id": "Y26-01-021",
+      "name": "c21",
+      "status": "passed",
+      "detail": "Exact cycle rank1 and independent closed stochastic semigroup verify mixing alongside nonzero topology."
+    },
+    {
+      "id": "Y26-01-022",
+      "name": "c22",
+      "status": "passed",
+      "detail": {
+        "A_dimension": [
+          0,
+          -3,
+          0,
+          0
+        ],
+        "corrected_length_m": 9.885623073997522,
+        "uncorrected_numeric_expression": 18.04859584207335
+      }
+    },
+    {
+      "id": "Y26-01-023",
+      "name": "c23",
+      "status": "passed",
+      "detail": {
+        "fine_relative_entropy": 0.17328679513998632,
+        "coarse_relative_entropy": 0.13081203594113697
+      }
+    },
+    {
+      "id": "Y26-01-024",
+      "name": "c24",
+      "status": "passed",
+      "detail": {
+        "divided_difference": -1.8126924692201813,
+        "three_term_value": -1.8133333333333335,
+        "recurrences_checked": 8
+      }
+    },
+    {
+      "id": "Y26-01-025",
+      "name": "c25",
+      "status": "passed",
+      "detail": "Independent trapezoid area45M versus constant endpoint scenario75M; stock integral750M job-years."
+    },
+    {
+      "id": "Y26-01-026",
+      "name": "c26",
+      "status": "passed",
+      "detail": {
+        "finite_difference_partition_response": -0.11304776798004566,
+        "exact_response": -0.11304776798075326,
+        "sector_mixture_scope": "commutative direct-sum model only"
+      }
+    },
+    {
+      "id": "Y26-01-027",
+      "name": "c27",
+      "status": "passed",
+      "detail": "Independent exponential-moment quadrature gives Z4=16; convex rate function minimum is zero at1. CLT is cited theorem under explicit iid assumptions."
+    },
+    {
+      "id": "Y26-01-028",
+      "name": "c28",
+      "status": "passed",
+      "detail": "Independent Fourier quadrature distinguishes first-mode signal from nonuniform second-mode counterexample."
+    },
+    {
+      "id": "Y26-01-029",
+      "name": "c29",
+      "status": "passed",
+      "detail": "Exact fold, duplicate-event distinction and certified-prefix idempotence on every example prefix."
+    },
+    {
+      "id": "Y26-01-030",
+      "name": "c30",
+      "status": "passed",
+      "detail": "Cech kernel/cokernel dimension1 and acyclic directed diamond underlying cycle dimension1; no DAG/cohomology conflation."
+    },
+    {
+      "id": "Y26-01-031",
+      "name": "c31",
+      "status": "passed",
+      "detail": "Finite exact-sequence dimensions and both Selmer-compatible rank scenarios checked; global Kummer/duality result remains background."
+    },
+    {
+      "id": "Y26-01-032",
+      "name": "c32",
+      "status": "passed",
+      "detail": {
+        "3": {
+          "points": 4,
+          "trace": 0
+        },
+        "5": {
+          "points": 8,
+          "trace": -2
+        },
+        "7": {
+          "points": 8,
+          "trace": 0
+        },
+        "11": {
+          "points": 12,
+          "trace": 0
+        },
+        "19": {
+          "points": 20,
+          "trace": 0
+        },
+        "23": {
+          "points": 24,
+          "trace": 0
+        },
+        "31": {
+          "points": 32,
+          "trace": 0
+        },
+        "43": {
+          "points": 44,
+          "trace": 0
+        }
+      }
+    },
+    {
+      "id": "Y26-01-033",
+      "name": "c33",
+      "status": "passed",
+      "detail": "All eight extreme perturbations satisfy the exact weighted-infinity-norm margin."
+    },
+    {
+      "id": "Y26-01-034",
+      "name": "c34",
+      "status": "passed",
+      "detail": {
+        "F7_dual_number_elements": 49,
+        "units": 42,
+        "radical_size": 7,
+        "radical_square_zero": true,
+        "resolution_map_rank": 1,
+        "Morita_scope": "matrix-unit equivalence is proved in prose"
+      }
+    }
+  ],
+  "scope": "Finite exact examples and stated numerical identities; general infinite-dimensional, geometric and cohomological theorems are proved in prose or cited with hypotheses."
+}

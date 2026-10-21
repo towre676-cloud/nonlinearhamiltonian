@@ -1,0 +1,172 @@
+{
+  "checks": [
+    {
+      "id": "Y24-09-001",
+      "name": "Power-law identification and erroneous source decimals",
+      "status": "passed",
+      "detail": "{'two_point_beta': 0.6666666666666667, 'first_historical_claim_actual': 0.036474307765451554, 'second_actual': 0.10150358285424899}"
+    },
+    {
+      "id": "Y24-09-002",
+      "name": "Signed deformation sample and endpoint",
+      "status": "passed",
+      "detail": "Signed map monotonicity/inverse-Lipschitz inequalities on declared samples; exact endpoint 28/3."
+    },
+    {
+      "id": "Y24-09-003",
+      "name": "Transported cubic operation",
+      "status": "passed",
+      "detail": "Associative transported sum verified after cubing; multiplication is ordinary."
+    },
+    {
+      "id": "Y24-09-004",
+      "name": "Constant-width curvature bound and nonlinear obstruction",
+      "status": "passed",
+      "detail": "Curvature lower bound1/2; strict concavity width loss."
+    },
+    {
+      "id": "Y24-09-005",
+      "name": "Irrational endpoint gap",
+      "status": "passed",
+      "detail": "r(0) andr(2π) differ; numerical gap illustrates exact irrationality proof."
+    },
+    {
+      "id": "Y24-09-006",
+      "name": "Geometric regularity bounds",
+      "status": "passed",
+      "detail": "Exact M0=1/14,M2=1/8."
+    },
+    {
+      "id": "Y24-09-007",
+      "name": "Graph boundary rank and cycle dimensions",
+      "status": "passed",
+      "detail": "Triangle boundary has rank2 and cycle rank1; wedge loop count2."
+    },
+    {
+      "id": "Y24-09-008",
+      "name": "Finite persistence interleaving",
+      "status": "passed",
+      "detail": "All threshold breakpoints satisfy the two1-shift cell inclusions."
+    },
+    {
+      "id": "Y24-09-009",
+      "name": "Circle Čech rank",
+      "status": "passed",
+      "detail": "Kernel and cokernel dimensions each1."
+    },
+    {
+      "id": "Y24-09-010",
+      "name": "HH0 commutator basis and K0 ranks",
+      "status": "passed",
+      "detail": "Three matrix commutators span all traceless2×2 matrices; projection ranks1+1=2."
+    },
+    {
+      "id": "Y24-09-011",
+      "name": "Fractional solution coefficient recurrence",
+      "status": "passed",
+      "detail": "First8 Mittag-Leffler coefficient shifts under Caputo order1/2, using gamma values."
+    },
+    {
+      "id": "Y24-09-012",
+      "name": "Exact finite-field counts and discriminant",
+      "status": "passed",
+      "detail": "Counts[5,7,8,9], traces[−2,−3,−2,−1], discriminant37."
+    },
+    {
+      "id": "Y24-09-013",
+      "name": "Non-torsion certificate data",
+      "status": "passed",
+      "detail": "Group orders8 and9 are coprime; rational point(−5/9,8/27) lies exactly onE. Prime-to-p logic is in proof."
+    },
+    {
+      "id": "Y24-09-014",
+      "name": "Normalized trace second moments",
+      "status": "passed",
+      "detail": "Exact sample mean52/35; theoretical density normalization derived in text."
+    },
+    {
+      "id": "Y24-09-015",
+      "name": "Benford logarithmic-fraction computation",
+      "status": "passed",
+      "detail": "{'N': 10000, 'leading_digit_counts': [3011, 1759, 1250, 970, 791, 671, 580, 510, 458], 'scope': 'finite illustration; limit proved by geometric sums'}"
+    },
+    {
+      "id": "Y24-09-016",
+      "name": "Nonnormal residual counterexample",
+      "status": "passed",
+      "detail": "Spectrum distance1, unit-vector residual1/√10001."
+    },
+    {
+      "id": "Y24-09-017",
+      "name": "Wigner-surmise gamma integrals",
+      "status": "passed",
+      "detail": "{'mass': 0.9999999999999998, 'mean': 1.0, 'second_moment': 1.1780972450961724}"
+    },
+    {
+      "id": "Y24-09-018",
+      "name": "Euler-product tail enclosure atσ2,P100",
+      "status": "passed",
+      "detail": "{'logarithmic_tail': 0.0018186679895119129, 'proved_upper_bound': 0.013333333333333334}"
+    },
+    {
+      "id": "Y24-09-019",
+      "name": "CHSH exact local enumeration",
+      "status": "passed",
+      "detail": "All16 deterministic local cases have bound2; declared singlet directions give2√2."
+    },
+    {
+      "id": "Y24-09-020",
+      "name": "Two-level temporal overlap",
+      "status": "passed",
+      "detail": "Survival probabilities atπ/4 andπ/2 are1/2 and0."
+    },
+    {
+      "id": "Y24-09-021",
+      "name": "Toeplitz moment and exact n3 spectrum",
+      "status": "passed",
+      "detail": "TrT3²=31=11·3−2."
+    },
+    {
+      "id": "Y24-09-022",
+      "name": "Toeplitz determinant recurrence",
+      "status": "passed",
+      "detail": "Exact determinant sequence1,3,8,21,55 and closed-formn4 check."
+    },
+    {
+      "id": "Y24-09-023",
+      "name": "Hardy one-atom sharpness",
+      "status": "passed",
+      "detail": "g L1 norm2; g/2 L2 norm1/√2; upper and lower atomic bounds2."
+    },
+    {
+      "id": "Y24-09-024",
+      "name": "A6 exact conjugacy-class enumeration",
+      "status": "passed",
+      "detail": "{'group_order': 360, 'class_sizes': [1, 40, 40, 45, 72, 72, 90], 'scope': 'no full automorphism classification claimed'}"
+    },
+    {
+      "id": "Y24-09-025",
+      "name": "Weight38 monomials and Fourier independence",
+      "status": "passed",
+      "detail": "{'basis_first_three_coefficients': [[1, 1416, 645768], [1, -312, -515448], [1, -2040, 1309320]], 'dimension': 3, 'cusp_dimension': 2}"
+    },
+    {
+      "id": "Y24-09-026",
+      "name": "Magic-square dimension arithmetic",
+      "status": "passed",
+      "detail": "[[3, 8, 21, 52], [8, 16, 35, 78], [21, 35, 66, 133], [52, 78, 133, 248]]"
+    },
+    {
+      "id": "Y24-09-027",
+      "name": "Quiver cotangent chart and dimension",
+      "status": "passed",
+      "detail": "Chartz=(1,u),w=(−up,p) solves moment equation; quotient dimension2 at m2."
+    },
+    {
+      "id": "Y24-09-028",
+      "name": "Logistic deformation second zero",
+      "status": "passed",
+      "detail": "{'second_zero_negative_x': -4.629597479721547e-06, 'initial_bracket': [-4.6296296296296296e-06, -1.3717421124828533e-06], 'scope': 'bisection illustrates monotone exact existence proof'}"
+    }
+  ]
+}

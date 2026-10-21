@@ -1,0 +1,56 @@
+{
+  "status": "approved",
+  "reviewer": "representations_and_dynamics",
+  "month": "2026-05",
+  "entry_count": 33,
+  "scope": [
+    "Read all33 entries: definitions/hypotheses, theorem statements, proofs, worked examples and stated limitations; reviewed all34 verifier records and code.",
+    "Replayed the supplied stdlib verifier:34/34pass. Replayed an isolated copy of only entries.json+verify.py from /:34/34pass.",
+    "Audited every exact source excerpt against its specified raw receipt/record and matched date/U/A role:33/33pass. No literal original question is claimed.",
+    "Assessed reference relevance across all entries. Independently checked Hatcher primary topology material and the explicit classical-input scope of the loop-space ring; this is not an exhaustive HTTP availability audit of every reference.",
+    "After author corrections, directly inspected the revised May004 verifier scope and strengthened May011 rational nonnormal example; reran34/34 checks."
+  ],
+  "approved_delicate_scopes": [
+    {
+      "id": "Y26-05-022",
+      "detail": "Tilted partition proof correctly treats the three Laplace derivative estimates as hypotheses/analytic input, obtains upper/lower leading exponential constant and avoids asserting an unproved local-density prefactor."
+    },
+    {
+      "id": "Y26-05-029",
+      "detail": "Graded-Lie signs, cocycle condition and exact central finite model are consistent; the polynomial Maurer-Cartan series cancels at every order in that model."
+    },
+    {
+      "id": "Y26-05-030",
+      "detail": "Both ideal-containment directions and the sole S-pair reduction are correct; standard monomial dimension is three."
+    },
+    {
+      "id": "Y26-05-032",
+      "detail": "Corrects homology/Pontryagin versus cohomology/cup confusion. The degree-one integral cup square vanishes by graded commutativity and torsion freeness. Exterior-degree-one times divided-power-degree-two ring is classical input, explicitly not proved from one spectral-sequence arrow. The finite Z/4 versus(Z/2)^2 extension witness is exact."
+    }
+  ],
+  "findings": [
+    {
+      "severity": "low",
+      "id": "Y26-05-004",
+      "description": "Verifier detail says the eigenvalue list is checked by characteristic determinant at0,2,4, but the actual callable checks only the displayed first eigenmode. The entry theorem/proof/example are correct.",
+      "fix": "Revise that detail to state only the eigenmode actually checked, or add the described characteristic-polynomial calculation.",
+      "blocking": false,
+      "status": "resolved",
+      "resolution": "Author revised the verifier detail to the exact first eigenmode actually checked; reviewer confirmed directly."
+    },
+    {
+      "severity": "low",
+      "id": "Y26-05-011",
+      "description": "The stated Lyapunov theorem and rational P calculation are correct, but the chosen A has negative-definite Euclidean symmetric part already. It therefore does not itself illustrate the title’s phrase about Euclidean symmetric-part failure.",
+      "fix": "Optionally shorten the title, or supply a separately checked more nonnormal example. No change to the valid theorem is required.",
+      "blocking": false,
+      "status": "resolved",
+      "resolution": "Author replaced the example by A=[[-1,3],[0,-1]], P=[[1/2,3/4],[3/4,11/4]]. Reviewer confirmed A^T P+PA=−I, detP13/16, det(3I−P)1/16, alpha1/6, robustness1/15 and the positive Euclidean growth direction(1,1). Supplied verifier rerun34/34pass."
+    }
+  ],
+  "reference_notes": [
+    "Hatcher Algebraic Topology chapter3/loop-space material is relevant. A direct additional locator for the loop-space/spectral-sequence calculation is the author’s https://pi.math.cornell.edu/~hatcher/SSAT/SSch1.pdf .",
+    "General Milne references provide arithmetic background; the finite species/divisor arguments are proved in the entry rather than asserted to be quotations of those notes."
+  ],
+  "material_limit": "This review checks the revised mathematics and preserved fragment attribution, not unreturned historical matrices, benchmark suites, measurements or completeness of historical recovery."
+}

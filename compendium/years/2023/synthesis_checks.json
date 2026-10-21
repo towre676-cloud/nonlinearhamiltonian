@@ -1,0 +1,296 @@
+{
+  "checks": [
+    {
+      "id": "S001",
+      "name": "Exact second-order recurrence",
+      "status": "passed",
+      "detail": {
+        "prefix": [
+          2,
+          5,
+          13,
+          35,
+          97,
+          275,
+          793,
+          2315,
+          6817,
+          20195,
+          60073,
+          179195
+        ],
+        "scope": "Arithmetic check of the explicitly proved exponential example"
+      }
+    },
+    {
+      "id": "S001",
+      "name": "Minimality witness",
+      "status": "passed",
+      "detail": {
+        "leading_Hankel_determinant": 1
+      }
+    },
+    {
+      "id": "S001",
+      "name": "Subsampling alias",
+      "status": "passed",
+      "detail": {
+        "subsequence": [
+          2,
+          8,
+          32,
+          128,
+          512,
+          2048,
+          8192,
+          32768
+        ],
+        "new_order": 1
+      }
+    },
+    {
+      "id": "S002",
+      "name": "Finite-bin Fisher information after Gudermannian quantization",
+      "status": "passed",
+      "detail": {
+        "unquantized_information": 0.6944444444444444,
+        "calculations": [
+          {
+            "mu": 0.0,
+            "bins": 4,
+            "information": 0.6031374507109264
+          },
+          {
+            "mu": 0.0,
+            "bins": 8,
+            "information": 0.6640774392802642
+          },
+          {
+            "mu": 0.0,
+            "bins": 16,
+            "information": 0.6850868083403252
+          },
+          {
+            "mu": 0.0,
+            "bins": 32,
+            "information": 0.6916963166865046
+          },
+          {
+            "mu": 0.3,
+            "bins": 4,
+            "information": 0.5967013838877111
+          },
+          {
+            "mu": 0.3,
+            "bins": 8,
+            "information": 0.6610688718769131
+          },
+          {
+            "mu": 0.3,
+            "bins": 16,
+            "information": 0.6839686947267758
+          },
+          {
+            "mu": 0.3,
+            "bins": 32,
+            "information": 0.6913341138147162
+          },
+          {
+            "mu": 1.7,
+            "bins": 4,
+            "information": 0.4059384071546165
+          },
+          {
+            "mu": 1.7,
+            "bins": 8,
+            "information": 0.5483440145377653
+          },
+          {
+            "mu": 1.7,
+            "bins": 16,
+            "information": 0.632079038415323
+          },
+          {
+            "mu": 1.7,
+            "bins": 32,
+            "information": 0.6716874788964484
+          }
+        ],
+        "scope": "Floating-point Gaussian CDF example, not a proof of the general inequality"
+      }
+    },
+    {
+      "id": "S002",
+      "name": "Gudermannian chart and Jacobian identities",
+      "status": "passed",
+      "detail": {
+        "sample_points": [
+          -4,
+          -1.2,
+          0,
+          0.8,
+          4
+        ],
+        "scope": "Numerical identities accompanying the analytic proof"
+      }
+    },
+    {
+      "id": "S003",
+      "name": "Observation class counts",
+      "status": "passed",
+      "detail": {
+        "single_probe": [
+          0,
+          1,
+          1,
+          2
+        ],
+        "separating_combination": [
+          0,
+          3,
+          1,
+          4
+        ]
+      }
+    },
+    {
+      "id": "S003",
+      "name": "Exact Lagrange indicator basis",
+      "status": "passed",
+      "detail": {
+        "indicator_table": [
+          [
+            "1",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "1",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "1",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "1"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "S004",
+      "name": "Noncommuting symmetric generators satisfy forward and inverse example bounds",
+      "status": "passed",
+      "detail": {
+        "Lambda": 3.312435565298214,
+        "calculations": [
+          {
+            "t": 0.05,
+            "kernel_distance": 0.031371423637735214,
+            "generator_distance": 0.7082762530298218,
+            "forward_bound": 0.03541381265149109,
+            "inverse_bound": 0.740445072801712,
+            "reconstruction_error": 4.460365043975677e-15
+          },
+          {
+            "t": 0.2,
+            "kernel_distance": 0.0878770019177658,
+            "generator_distance": 0.7082762530298218,
+            "forward_bound": 0.14165525060596437,
+            "inverse_bound": 0.8522357213292844,
+            "reconstruction_error": 7.283604593613869e-15
+          },
+          {
+            "t": 0.7,
+            "kernel_distance": 0.11805549208997754,
+            "generator_distance": 0.7082762530298218,
+            "forward_bound": 0.49579337712087523,
+            "inverse_bound": 1.71391349036632,
+            "reconstruction_error": 8.926984408492576e-16
+          },
+          {
+            "t": 1.5,
+            "kernel_distance": 0.08293150130309912,
+            "generator_distance": 0.7082762530298218,
+            "forward_bound": 1.0624143795447327,
+            "inverse_bound": 7.952194612146136,
+            "reconstruction_error": 1.5355979519659253e-15
+          }
+        ],
+        "scope": "Numerical spot checks; the written Duhamel/resolvent proof provides the general result"
+      }
+    },
+    {
+      "id": "S005",
+      "name": "Exact stochasticity and entropy example on a four-cycle",
+      "status": "passed",
+      "detail": {
+        "steps": [
+          "1/8",
+          "1/4",
+          "1/2"
+        ],
+        "scope": "Exact rational update properties and numerical entropy values"
+      }
+    },
+    {
+      "id": "S005",
+      "name": "Positivity endpoint can retain a periodic mode",
+      "status": "passed",
+      "detail": {
+        "alternating_mode_multiplier": -1
+      }
+    },
+    {
+      "id": "S006",
+      "name": "Retained and invisible Gaussian shifts",
+      "status": "passed",
+      "detail": {
+        "retained_shift": [
+          3,
+          4,
+          0
+        ],
+        "invisible_shift": [
+          0,
+          0,
+          5
+        ],
+        "full_noncentralities": [
+          25,
+          25
+        ],
+        "panel_noncentralities": [
+          25,
+          0
+        ]
+      }
+    },
+    {
+      "id": "S006",
+      "name": "Worst-case robust noncentrality is attained",
+      "status": "passed",
+      "detail": {
+        "epsilon": 2,
+        "perturbation": [
+          "-6/5",
+          "-8/5",
+          "0"
+        ],
+        "retained_noncentrality": 9
+      }
+    }
+  ],
+  "count": 12,
+  "status": "passed",
+  "scope": "Exact checks are marked as such. Floating-point examples do not replace the written proofs."
+}

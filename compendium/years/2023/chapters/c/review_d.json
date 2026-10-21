@@ -1,0 +1,43 @@
+{
+  "reviewed_scope": "M057–M077 with emphasis on M062 M063 M069 M070–M075",
+  "independent_verifier_copy_exit_code": 0,
+  "findings": [],
+  "approved_scopes": [
+    {
+      "id": "M062",
+      "scope": "Complete equality-constrained PSD classification is correct under the stated symmetric PSD matrix and c≠0 hypotheses; nullspace feasibility and all-minimizer cases are handled. The inequality-constrained example has correct KKT slack (0,2)."
+    },
+    {
+      "id": "M063",
+      "scope": "Amplitude-damping solution, Kraus completeness, determinant identity and semigroup law are correct for γ≥0,t≥0. The text correctly separates complete positivity from microscopic modeling assumptions."
+    },
+    {
+      "id": "M069",
+      "scope": "Lyapunov rate and exact P certificate are correct. The positive Euclidean derivative is a legitimate counterexample to the failed converse, not a contradiction to stability."
+    },
+    {
+      "id": "M070–M073",
+      "scope": "Length-coordinate and orthonormal conventions are stated. Curvature units, c powers, trace-reversal factor 1/2, Riemann sign convention and Newtonian 8π normalization are internally consistent. The regular spatial canonical count and covariant-conservation example are qualified."
+    },
+    {
+      "id": "M074",
+      "scope": "Conditional Vκ construction is valid for a strongly inaccessible κ; the text does not claim existence in bare ZFC. The finite check is explicitly only an illustration."
+    },
+    {
+      "id": "M075",
+      "scope": "Partition classes, exact piecewise-linear energy identity, strong H1 energy convergence and the x² formula are correct. Weak lower semicontinuity is not being advertised as a complete new continuum-limit theorem."
+    },
+    {
+      "id": "M057–M077",
+      "scope": "Reviewed remaining finite examples and proofs; found no blocking mathematical error. Numerical demonstrations are scoped as examples rather than general machine proofs."
+    }
+  ],
+  "optional_improvements": [
+    {
+      "severity": "minor",
+      "id": "M058",
+      "description": "One verifier assertion checks only the first component squared of A e2 (=16), although the following close() correctly checks the full norm. This is harmless but can be clearer.",
+      "fix": "Optionally replace that assertion by sum(z[0]**2 for z in mm(A,[[0],[1]]))==Fraction(65,4)."
+    }
+  ]
+}

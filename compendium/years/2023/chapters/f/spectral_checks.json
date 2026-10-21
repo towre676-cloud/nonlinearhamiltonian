@@ -1,0 +1,172 @@
+{
+  "checks": [
+    {
+      "id": "S013",
+      "name": "Exceptional Gram and constant-projector identities",
+      "status": "passed",
+      "detail": "In Q(tau), both v and v′ are bilinearly isotropic, vᵀv′=−3/p0, and Q=−p0(v′vᵀ+vv′ᵀ)/3 exactly. Q²=Q; the nonzero leading divergence coefficient C=−p0vvᵀ/2 satisfies C²=0."
+    },
+    {
+      "id": "S013",
+      "name": "All three exact nonzero square-zero Jordan parts",
+      "status": "passed",
+      "detail": "Each N_i=(H_i−E_i)Q equals (p0 a_i²/3)vvᵀ, is nonzero, has square zero and is supported on Q. The differentiated generalized-eigenvector identities hold, proving a size-two block for every H_i on the highest-weight plane."
+    },
+    {
+      "id": "S013",
+      "name": "Projector blowup with bounded sum",
+      "status": "passed",
+      "detail": "Complex sample approaches satisfy the exact projector formula, show ε||P+|| tending to a nonzero coefficient and cancellation P++P−=Q to roundoff. This numerical illustration accompanies the analytic |D|^(−1/2) proof."
+    },
+    {
+      "id": "S013",
+      "name": "Tracked spectral-cover label exchange",
+      "status": "passed",
+      "detail": "A small loop around one discriminant root flips the continued square root and exchanges w+ with w−. This is a label-continuation calculation, not KZ parallel transport; the proof uses the winding of D."
+    }
+  ],
+  "exact_field": "Q(tau), tau²−tau+1=0",
+  "exceptional_root": "1/3 + (1/3)tau",
+  "p0": "-1/9 + (2/9)tau",
+  "v": [
+    "2 + (-1)tau",
+    "-1 + (-1)tau",
+    "-1 + (2)tau"
+  ],
+  "vprime": [
+    "-3 + (3)tau",
+    "0 + (-3)tau",
+    "3 + (0)tau"
+  ],
+  "Q": [
+    [
+      "2/3 + (0)tau",
+      "-1/3 + (0)tau",
+      "-1/3 + (0)tau"
+    ],
+    [
+      "-1/3 + (0)tau",
+      "2/3 + (0)tau",
+      "-1/3 + (0)tau"
+    ],
+    [
+      "-1/3 + (0)tau",
+      "-1/3 + (0)tau",
+      "2/3 + (0)tau"
+    ]
+  ],
+  "leading_projector_coefficient_C": [
+    [
+      "-1/6 + (-1/6)tau",
+      "-1/6 + (1/3)tau",
+      "1/3 + (-1/6)tau"
+    ],
+    [
+      "-1/6 + (1/3)tau",
+      "1/3 + (-1/6)tau",
+      "-1/6 + (-1/6)tau"
+    ],
+    [
+      "1/3 + (-1/6)tau",
+      "-1/6 + (-1/6)tau",
+      "-1/6 + (1/3)tau"
+    ]
+  ],
+  "nilpotents": [
+    [
+      [
+        "2/3 + (-1/3)tau",
+        "-1/3 + (-1/3)tau",
+        "-1/3 + (2/3)tau"
+      ],
+      [
+        "-1/3 + (-1/3)tau",
+        "-1/3 + (2/3)tau",
+        "2/3 + (-1/3)tau"
+      ],
+      [
+        "-1/3 + (2/3)tau",
+        "2/3 + (-1/3)tau",
+        "-1/3 + (-1/3)tau"
+      ]
+    ],
+    [
+      [
+        "-1/3 + (2/3)tau",
+        "2/3 + (-1/3)tau",
+        "-1/3 + (-1/3)tau"
+      ],
+      [
+        "2/3 + (-1/3)tau",
+        "-1/3 + (-1/3)tau",
+        "-1/3 + (2/3)tau"
+      ],
+      [
+        "-1/3 + (-1/3)tau",
+        "-1/3 + (2/3)tau",
+        "2/3 + (-1/3)tau"
+      ]
+    ],
+    [
+      [
+        "-1/3 + (-1/3)tau",
+        "-1/3 + (2/3)tau",
+        "2/3 + (-1/3)tau"
+      ],
+      [
+        "-1/3 + (2/3)tau",
+        "2/3 + (-1/3)tau",
+        "-1/3 + (-1/3)tau"
+      ],
+      [
+        "2/3 + (-1/3)tau",
+        "-1/3 + (-1/3)tau",
+        "-1/3 + (2/3)tau"
+      ]
+    ]
+  ],
+  "approaches": [
+    {
+      "epsilon": 0.1,
+      "projector_norm": 8.660254037844387,
+      "scaled_norm": 0.8660254037844388,
+      "leading_coefficient_error": 0.07082922216453462,
+      "sum_projector_error": 1.5242840565028428e-15
+    },
+    {
+      "epsilon": 0.03,
+      "projector_norm": 28.867513459481287,
+      "scaled_norm": 0.8660254037844386,
+      "leading_coefficient_error": 0.021216387087833893,
+      "sum_projector_error": 9.77532301874046e-15
+    },
+    {
+      "epsilon": 0.01,
+      "projector_norm": 86.60254037844385,
+      "scaled_norm": 0.8660254037844385,
+      "leading_coefficient_error": 0.007071185669870794,
+      "sum_projector_error": 1.4056493334205914e-14
+    },
+    {
+      "epsilon": 0.003,
+      "projector_norm": 288.67513459481285,
+      "scaled_norm": 0.8660254037844386,
+      "leading_coefficient_error": 0.0021213235255568012,
+      "sum_projector_error": 1.1305082750639716e-13
+    },
+    {
+      "epsilon": 0.001,
+      "projector_norm": 866.0254037844386,
+      "scaled_norm": 0.8660254037844386,
+      "leading_coefficient_error": 0.0007071068990377006,
+      "sum_projector_error": 1.2516291193361888e-13
+    }
+  ],
+  "continuation": {
+    "radius": 0.01,
+    "steps": 256,
+    "root_flip_error": 0.0,
+    "eigenroot_exchange_error": 0.0
+  },
+  "scope": "Algebraic Jordan and projector identities use exact quadratic-field arithmetic. Limit samples and the continuation path use ordinary floating-point complex numbers and accompany written analytic arguments."
+}

@@ -1,0 +1,232 @@
+{
+  "checks": [
+    {
+      "id": "Y24-12-000",
+      "name": "Schema and attribution",
+      "status": "pass",
+      "detail": "37 complete entries; selected excerpt dates and authorship agree; revised prompts are not represented as verbatim originals."
+    },
+    {
+      "id": "Y24-12-001",
+      "name": "Willmore pointwise certificate",
+      "status": "pass",
+      "detail": "Exact H squared minus K identity and scale-independent spherical energy."
+    },
+    {
+      "id": "Y24-12-002",
+      "name": "TT basis and rotation",
+      "status": "pass",
+      "detail": "Two free TT components and the passive double-angle sign checked."
+    },
+    {
+      "id": "Y24-12-003",
+      "name": "Scale-equation residual",
+      "status": "pass",
+      "detail": "Exact chain-rule residual for F=1/g-b log(mu L)."
+    },
+    {
+      "id": "Y24-12-004",
+      "name": "Quiddity and transfer certificate",
+      "status": "pass",
+      "detail": "Quiddity product -I and all three historical incidence-sum failures checked exactly."
+    },
+    {
+      "id": "Y24-12-005",
+      "name": "Jordan and diagonalization examples",
+      "status": "pass",
+      "detail": "Exact eigenbasis for the recovered matrix; perturbed Jordan family squares to epsilon I."
+    },
+    {
+      "id": "Y24-12-006",
+      "name": "Bundle algebra type checks",
+      "status": "pass",
+      "detail": "Curvature annihilation obstruction and determinant tautology checked in the exact finite example."
+    },
+    {
+      "id": "Y24-12-007",
+      "name": "Nonnormal transient certificate",
+      "status": "pass",
+      "detail": "Negative eigenvalues coexist with positive initial energy derivative 4."
+    },
+    {
+      "id": "Y24-12-008",
+      "name": "Character series convergence example",
+      "status": "pass",
+      "detail": "Divisor coefficients, exact geometric partial sum and unit-circle domain checked."
+    },
+    {
+      "id": "Y24-12-009",
+      "name": "Exact electronvolt-rate conversion",
+      "status": "pass",
+      "detail": "Power is exactly 1.12953452697 mW, not 1.13 kW; efficiency multiplication checked."
+    },
+    {
+      "id": "Y24-12-010",
+      "name": "Laguerre radial integration certificate",
+      "status": "pass",
+      "detail": "Exact radial norms 2 and 6 and zero cross term for alpha=2, n=0,1."
+    },
+    {
+      "id": "Y24-12-011",
+      "name": "Gram phase derivative",
+      "status": "pass",
+      "detail": "Analytic relative-phase derivative has the stated sign; orthogonal Gram energy has zero phase derivative."
+    },
+    {
+      "id": "Y24-12-012",
+      "name": "Wave and Laurent-symbol calculation",
+      "status": "pass",
+      "detail": "Laurent symbol reduces to the quadratic with exact range endpoints -4 and 9/4."
+    },
+    {
+      "id": "Y24-12-013",
+      "name": "Interference logic and learning gradient",
+      "status": "pass",
+      "detail": "All XOR truth-table rows and the modal least-squares gradient step checked exactly."
+    },
+    {
+      "id": "Y24-12-014",
+      "name": "Circle heat/zeta normalization",
+      "status": "pass",
+      "detail": "Poisson heat-trace factor checked numerically; zeta(1) agrees within the elementary tail bound."
+    },
+    {
+      "id": "Y24-12-015",
+      "name": "Graded differential certificate",
+      "status": "pass",
+      "detail": "Odd Q has square I and the adjoint graded differential squares to zero on the displayed even matrix."
+    },
+    {
+      "id": "Y24-12-016",
+      "name": "Isospectral-fit audit",
+      "status": "pass",
+      "detail": "Chosen masses remain eigenvalues after nontrivial exact rational orthogonal conjugation; six-sample tuple count checked."
+    },
+    {
+      "id": "Y24-12-017",
+      "name": "SU(2) and metric counterexample",
+      "status": "pass",
+      "detail": "SU(2) unitary diagonal instance and exact weighted-metric triangle failure."
+    },
+    {
+      "id": "Y24-12-018",
+      "name": "Quadratic local arithmetic",
+      "status": "pass",
+      "detail": "Odd-prime quadratic splitting criterion independently enumerated; ramification factorization checked."
+    },
+    {
+      "id": "Y24-12-019",
+      "name": "S4 character certificate",
+      "status": "pass",
+      "detail": "Complete S4 character table weighted orthogonality and degree-square completeness checked exactly."
+    },
+    {
+      "id": "Y24-12-020",
+      "name": "Eisenstein coefficient normalization",
+      "status": "pass",
+      "detail": "E2 first divisor coefficients and the fixed-point j normalization checked; modular transformations are cited and derived in text."
+    },
+    {
+      "id": "Y24-12-021",
+      "name": "Frequency-to-cents calculations",
+      "status": "pass",
+      "detail": "Recovered frequencies converted using a single explicit logarithmic pitch convention."
+    },
+    {
+      "id": "Y24-12-022",
+      "name": "Crystallographic arithmetic",
+      "status": "pass",
+      "detail": "Root/Lie dimensions, allowable rotation traces, and mineral percentage arithmetic checked; no dataset attribution invented."
+    },
+    {
+      "id": "Y24-12-023",
+      "name": "Cross-polytope homology certificate",
+      "status": "pass",
+      "detail": "All 6 boundary ranks over F2 computed independently: Betti numbers [1,0,0,0,0,1], with the stated 12-vertex face vector."
+    },
+    {
+      "id": "Y24-12-024",
+      "name": "P30 polynomial and interval rejection",
+      "status": "pass",
+      "detail": "Exact expanded sparse residual has degree 24, leading coefficient -b; independent rational-bound gap is positive (97 decimal digits)."
+    },
+    {
+      "id": "Y24-12-025",
+      "name": "Torsion and height-lattice example",
+      "status": "pass",
+      "detail": "All cubic rational two-torsion x-coordinates and height-Gram determinant/norm checked exactly."
+    },
+    {
+      "id": "Y24-12-026",
+      "name": "Height-width calculation",
+      "status": "pass",
+      "detail": "All three pairwise height distances equal sqrt2; chosen unit direction attains this diameter."
+    },
+    {
+      "id": "Y24-12-027",
+      "name": "Landau and two-band certificates",
+      "status": "pass",
+      "detail": "Coexisting quartic minima and equal-hopping Bloch dispersion checked."
+    },
+    {
+      "id": "Y24-12-028",
+      "name": "Two-spin Hamiltonian spectrum",
+      "status": "pass",
+      "detail": "All four spin-exchange eigenvectors reconstructed from Swap/2-I/4."
+    },
+    {
+      "id": "Y24-12-029",
+      "name": "GHZ and Zeno normalization",
+      "status": "pass",
+      "detail": "Local dephasing generator sums to -N gamma on GHZ coherence; ideal-projection survival tends toward one in explicit sequence."
+    },
+    {
+      "id": "Y24-12-030",
+      "name": "A2 mutation pentagon",
+      "status": "pass",
+      "detail": "Exchange recurrence independently evaluated at three rational initial pairs; closed Laurent expressions and pentagon period match."
+    },
+    {
+      "id": "Y24-12-031",
+      "name": "Quiver Grassmannian incidence",
+      "status": "pass",
+      "detail": "Projective parameter count and rank-one kernel line confirmed independently; complex Euler counts follow the cell decomposition in text."
+    },
+    {
+      "id": "Y24-12-032",
+      "name": "Krasner quotient and projective count",
+      "status": "pass",
+      "detail": "Both zero and nonzero quotient sums occur; projective point-count polynomial checked."
+    },
+    {
+      "id": "Y24-12-033",
+      "name": "Flag and matroid support",
+      "status": "pass",
+      "detail": "Plucker incidence residual vanishes and the claimed support changes occur exactly."
+    },
+    {
+      "id": "Y24-12-034",
+      "name": "Toric S and T certificate",
+      "status": "pass",
+      "detail": "All toric modular identities are exact rational matrix products."
+    },
+    {
+      "id": "Y24-12-035",
+      "name": "Toric stabilizer certificate",
+      "status": "pass",
+      "detail": "Independent 3x3 lattice reconstruction: star/plaquette commutation, ranks8+8, and weight-three nonboundary logical loop."
+    },
+    {
+      "id": "Y24-12-036",
+      "name": "Running-coupling convention",
+      "status": "pass",
+      "detail": "Exact coefficient identity verifies the factor-of-two correction between log mu and log mu squared."
+    },
+    {
+      "id": "Y24-12-037",
+      "name": "Finite Stinespring example",
+      "status": "pass",
+      "detail": "Exact dephasing channel, trace, positive determinant and Kraus normalization checked."
+    }
+  ]
+}

@@ -1,0 +1,115 @@
+{
+  "month": "2024-02",
+  "checks": [
+    {
+      "id": "Y24-02-001",
+      "name": "The missing length dimension",
+      "status": "passed",
+      "detail": "Concentration×area is amount/length; including depth and molar mass gives mass."
+    },
+    {
+      "id": "Y24-02-001",
+      "name": "Exact cubic conversion",
+      "status": "passed",
+      "detail": "1km³=10^9m³=10^12L; a factor of 10^6L/km³ is not the SI conversion."
+    },
+    {
+      "id": "Y24-02-001",
+      "name": "Exact depth-dependent mass coefficient",
+      "status": "passed",
+      "detail": {
+        "kg_per_metre_depth": "11169/20",
+        "scope": "The stated concentration, area and molar mass are stipulated inputs."
+      }
+    },
+    {
+      "id": "Y24-02-001",
+      "name": "Worked slab calculation",
+      "status": "passed",
+      "detail": {
+        "new_example_depth_metres": "5/2",
+        "volume_litres": "25000000000",
+        "moles": "25000",
+        "kilograms": "11169/8"
+      }
+    },
+    {
+      "id": "Y24-02-001",
+      "name": "What added depth reproduces the old final number",
+      "status": "passed",
+      "detail": "A newly chosen depth of 0.001m yields 558.45g; this depth is not claimed to have appeared in the historical conversation."
+    },
+    {
+      "id": "Y24-02-002",
+      "name": "Stipulated area ratio",
+      "status": "passed",
+      "detail": {
+        "exact_ratio": "3037/980",
+        "decimal": 3.0989795918367347,
+        "scope": "Arithmetic on historical approximate inputs, not contemporary geographic measurements."
+      }
+    },
+    {
+      "id": "Y24-02-002",
+      "name": "Conditional rounding enclosure",
+      "status": "passed",
+      "detail": {
+        "enclosure": [
+          "6073/1970",
+          "81/26"
+        ],
+        "integer_area_bound": 3,
+        "scope": "An explicitly added deterministic rounding model, not a confidence interval."
+      }
+    },
+    {
+      "id": "Y24-02-002",
+      "name": "Area versus width packing counterexample",
+      "status": "passed",
+      "detail": "The target rectangle has surplus area but insufficient width for a radius-one disk. Rotating a disk does not change its width."
+    },
+    {
+      "id": "Y24-02-002",
+      "name": "Union area differs from summed overlap",
+      "status": "passed",
+      "detail": "Two constructed zones of areas six and five with overlap two have union area nine, not eleven."
+    },
+    {
+      "id": "Y24-02-003",
+      "name": "Independent integral storage balance",
+      "status": "passed",
+      "detail": {
+        "seconds": "1800",
+        "stored_joules": "12600",
+        "loss_joules": "720",
+        "delivered_joules": "11880",
+        "method": "Storage is integrated in charge; delivered power is independently integrated as an affine function of time."
+      }
+    },
+    {
+      "id": "Y24-02-003",
+      "name": "Charge and energy unit conversions",
+      "status": "passed",
+      "detail": {
+        "capacity_ampere_hours": 1,
+        "stored_watt_hours": "7/2",
+        "loss_watt_hours": "1/5",
+        "delivered_watt_hours": "33/10"
+      }
+    },
+    {
+      "id": "Y24-02-003",
+      "name": "Pointwise balance samples",
+      "status": "passed",
+      "detail": "Exact rational evaluation accompanies the chain-rule proof. The chosen storage model is an editorial reconstruction of a qualitative historical fragment."
+    },
+    {
+      "id": "MONTH-2024-02",
+      "name": "Attribution and receipt audit",
+      "status": "passed",
+      "detail": "Every current entry has a dated assistant fragment, a reconstructed question and a null original user prompt. Mathematical checks do not establish full-month retrieval."
+    }
+  ],
+  "count": 13,
+  "status": "passed"
+}

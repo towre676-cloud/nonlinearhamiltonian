@@ -1,0 +1,23 @@
+[
+  {
+    "query": "Recover November10,2025 mathematics specifically Lamé equation, elliptic-periodic potentials, Fourier/Bernoulli/zeta expansions, genus2 Siegel space and Humbert surfaces H_D, period-matrix relations, H4 product-locus claim and proposed v2 potential. Need full actual dated equations, index conventions and author roles to reconstruct user's mathematics rigorously; do not invent coefficients or endorse claimed spectral-band proofs.",
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "[convo search]\n- [USER_FACT] [c0] U@2025-11-10T05:03:11Z, 11mo: User’s stated Lamé equation: \\(y''+[h-n(n+1)k^2\\operatorname{sn}^2(z,k)]y=0\\), period \\(4K(k)\\); requested rigorous reconstruction without endorsing spectral/RH claims.\n- [USER_FACT] [c0] U@2025-11-10T05:11:18Z, 11mo: User supplied \\( \\mathfrak H_2\\), \\( \\Omega=\\begin{psmallmatrix}\\tau_1&\\rho\\\\\\rho&\\tau_2\\end{psmallmatrix}\\), Humbert relation \\(a\\Omega_{11}+b\\Omega_{12}+c\\Omega_{22}=0,\\ b^2-4ac=D\\), and claimed \\(H_4\\) product locus; needs correction/checking.\n- [PRIOR_ASSISTANT_OUTPUT] [c0] A@2025-11-10T05:11:19Z, 11mo: Prior assistant proposed “Off-Critical Catastrophe” by forcing \\(s_0=0.3+14.1347i\\), but explicitly called it a toy/counterfactual visualization; no proof of RH, Humbert-flow dynamics, or spectral-band claims.\n\n[gmail]\n[INSUFFICIENT] Gmail search failed before it could retrieve matching emails.\n\n[files]\n[INSUFFICIENT] No relevant file context found.\n\n<assistant_usage_note>\nWhen using the personal context above, treat relevant facts as binding context for this reply.\nBefore answering, silently identify: (1) relevant facts to preserve, and (2) hard constraints / exclusions to obey.\nIn the final answer:\nCarry forward relevant names, dates, amounts, option labels, locations, qualifiers, preferences, and task constraints from the context.\nTreat dislike / avoid / only / not / no / without / prefer / required statements as constraints.\nDo not add options, ingredients, products, places, methods, tools, backups, caveats, or \"if you're okay with...\" suggestions that conflict with any known constraint.\nDo not add new personalized recommendations unless they are supported by the context above or explicitly requested.\nIf a needed fact is already provided, use it directly instead of asking the user to confirm it.\nBefore sending, check the final answer for any missing relevant context or any suggestion that violates a known constraint.\nDo not quote or mention this assistant_usage_note in the final answer.\n</assistant_usage_note>"
+        }
+      ],
+      "structuredContent": {
+        "messages": [
+          {
+            "author_role": "tool",
+            "content": "[convo search]\n- [USER_FACT] [c0] U@2025-11-10T05:03:11Z, 11mo: User’s stated Lamé equation: \\(y''+[h-n(n+1)k^2\\operatorname{sn}^2(z,k)]y=0\\), period \\(4K(k)\\); requested rigorous reconstruction without endorsing spectral/RH claims.\n- [USER_FACT] [c0] U@2025-11-10T05:11:18Z, 11mo: User supplied \\( \\mathfrak H_2\\), \\( \\Omega=\\begin{psmallmatrix}\\tau_1&\\rho\\\\\\rho&\\tau_2\\end{psmallmatrix}\\), Humbert relation \\(a\\Omega_{11}+b\\Omega_{12}+c\\Omega_{22}=0,\\ b^2-4ac=D\\), and claimed \\(H_4\\) product locus; needs correction/checking.\n- [PRIOR_ASSISTANT_OUTPUT] [c0] A@2025-11-10T05:11:19Z, 11mo: Prior assistant proposed “Off-Critical Catastrophe” by forcing \\(s_0=0.3+14.1347i\\), but explicitly called it a toy/counterfactual visualization; no proof of RH, Humbert-flow dynamics, or spectral-band claims.\n\n[gmail]\n[INSUFFICIENT] Gmail search failed before it could retrieve matching emails.\n\n[files]\n[INSUFFICIENT] No relevant file context found."
+          }
+        ],
+        "error": null
+      },
+      "isError": false
+    }
+  }
+]

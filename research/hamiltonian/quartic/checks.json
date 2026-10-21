@@ -1,0 +1,662 @@
+{
+  "status": "passed",
+  "stdlib_only": true,
+  "checks": [
+    {
+      "label": "Apolar adjoint identity on complete monomial bases for degrees2\u201314",
+      "status": "passed",
+      "details": {
+        "basis_triples": 5005
+      }
+    },
+    {
+      "label": "Complete homogeneous kernel dimensions: fourth power",
+      "status": "passed",
+      "details": {
+        "primitive_root_degree": 1,
+        "degrees": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26
+        ],
+        "dimensions": [
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3
+        ]
+      }
+    },
+    {
+      "label": "Complete homogeneous kernel dimensions: triple/simple roots",
+      "status": "passed",
+      "details": {
+        "primitive_root_degree": 4,
+        "degrees": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26
+        ],
+        "dimensions": [
+          3,
+          2,
+          2,
+          2,
+          3,
+          2,
+          2,
+          2,
+          3,
+          2,
+          2,
+          2,
+          3,
+          2,
+          2,
+          2,
+          3,
+          2,
+          2,
+          2,
+          3,
+          2,
+          2,
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "label": "Complete homogeneous kernel dimensions: two double roots",
+      "status": "passed",
+      "details": {
+        "primitive_root_degree": 2,
+        "degrees": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26
+        ],
+        "dimensions": [
+          3,
+          2,
+          3,
+          2,
+          3,
+          2,
+          3,
+          2,
+          3,
+          2,
+          3,
+          2,
+          3,
+          2,
+          3,
+          2,
+          3,
+          2,
+          3,
+          2,
+          3,
+          2,
+          3,
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "label": "Complete homogeneous kernel dimensions: double/simple/simple",
+      "status": "passed",
+      "details": {
+        "primitive_root_degree": 4,
+        "degrees": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26
+        ],
+        "dimensions": [
+          3,
+          2,
+          2,
+          2,
+          3,
+          2,
+          2,
+          2,
+          3,
+          2,
+          2,
+          2,
+          3,
+          2,
+          2,
+          2,
+          3,
+          2,
+          2,
+          2,
+          3,
+          2,
+          2,
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "label": "Complete homogeneous kernel dimensions: four distinct Fermat",
+      "status": "passed",
+      "details": {
+        "primitive_root_degree": 4,
+        "degrees": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26
+        ],
+        "dimensions": [
+          3,
+          2,
+          2,
+          2,
+          3,
+          2,
+          2,
+          2,
+          3,
+          2,
+          2,
+          2,
+          3,
+          2,
+          2,
+          2,
+          3,
+          2,
+          2,
+          2,
+          3,
+          2,
+          2,
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "label": "Complete homogeneous kernel dimensions: four distinct symmetric2",
+      "status": "passed",
+      "details": {
+        "primitive_root_degree": 4,
+        "degrees": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26
+        ],
+        "dimensions": [
+          3,
+          2,
+          2,
+          2,
+          3,
+          2,
+          2,
+          2,
+          3,
+          2,
+          2,
+          2,
+          3,
+          2,
+          2,
+          2,
+          3,
+          2,
+          2,
+          2,
+          3,
+          2,
+          2,
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "label": "Complete homogeneous kernel dimensions: square of positive quadratic",
+      "status": "passed",
+      "details": {
+        "primitive_root_degree": 2,
+        "degrees": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26
+        ],
+        "dimensions": [
+          3,
+          2,
+          3,
+          2,
+          3,
+          2,
+          3,
+          2,
+          3,
+          2,
+          3,
+          2,
+          3,
+          2,
+          3,
+          2,
+          3,
+          2,
+          3,
+          2,
+          3,
+          2,
+          3,
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "label": "Complete homogeneous kernel dimensions: mixed primitive quartic",
+      "status": "passed",
+      "details": {
+        "primitive_root_degree": 4,
+        "degrees": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26
+        ],
+        "dimensions": [
+          3,
+          2,
+          2,
+          2,
+          3,
+          2,
+          2,
+          2,
+          3,
+          2,
+          2,
+          2,
+          3,
+          2,
+          2,
+          2,
+          3,
+          2,
+          2,
+          2,
+          3,
+          2,
+          2,
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "label": "Universal quartic Hessian partner identity by exact tensor interpolation",
+      "status": "passed",
+      "details": {
+        "grid_points": 1024,
+        "individual_coefficient_degree_bound": 3
+      }
+    },
+    {
+      "label": "Power obstruction formula: fourth power",
+      "status": "passed",
+      "details": {
+        "powers": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "Jacobian_zero": true,
+        "square_type": true
+      }
+    },
+    {
+      "label": "Power obstruction formula: triple/simple roots",
+      "status": "passed",
+      "details": {
+        "powers": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "Jacobian_zero": false,
+        "square_type": false
+      }
+    },
+    {
+      "label": "Power obstruction formula: two double roots",
+      "status": "passed",
+      "details": {
+        "powers": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "Jacobian_zero": true,
+        "square_type": true
+      }
+    },
+    {
+      "label": "Power obstruction formula: double/simple/simple",
+      "status": "passed",
+      "details": {
+        "powers": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "Jacobian_zero": false,
+        "square_type": false
+      }
+    },
+    {
+      "label": "Power obstruction formula: four distinct Fermat",
+      "status": "passed",
+      "details": {
+        "powers": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "Jacobian_zero": false,
+        "square_type": false
+      }
+    },
+    {
+      "label": "Power obstruction formula: four distinct symmetric2",
+      "status": "passed",
+      "details": {
+        "powers": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "Jacobian_zero": false,
+        "square_type": false
+      }
+    },
+    {
+      "label": "Power obstruction formula: square of positive quadratic",
+      "status": "passed",
+      "details": {
+        "powers": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "Jacobian_zero": true,
+        "square_type": true
+      }
+    },
+    {
+      "label": "Power obstruction formula: mixed primitive quartic",
+      "status": "passed",
+      "details": {
+        "powers": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "Jacobian_zero": false,
+        "square_type": false
+      }
+    },
+    {
+      "label": "Symmetric quartic Hessian/Jacobian and explicit cubic partner formulas",
+      "status": "passed",
+      "details": {
+        "lambda_values": [
+          -5,
+          -2,
+          -1,
+          0,
+          1,
+          2,
+          3,
+          7
+        ]
+      }
+    },
+    {
+      "label": "Constructive three-seed recurrence independently matches derivative operator",
+      "status": "passed",
+      "details": {
+        "exact_trials": 80
+      }
+    }
+  ],
+  "check_count": 20,
+  "scope": "Exact finite identities and homogeneous kernels accompany symbolic all-degree proofs; no novelty claim."
+}

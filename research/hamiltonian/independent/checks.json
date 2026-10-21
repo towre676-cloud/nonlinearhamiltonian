@@ -1,0 +1,910 @@
+{
+  "status": "passed",
+  "implementation": "direct derivative expansion with Gaussian rational coefficients",
+  "check_groups": 7,
+  "exact_assertions": 1144,
+  "checks": [
+    {
+      "name": "Canonical convention and higher obstruction",
+      "status": "passed",
+      "assertions": 3,
+      "details": {
+        "convention": "(f star g-g star f)/(i hbar), star=exp[(i hbar/2)Lambda]"
+      }
+    },
+    {
+      "name": "Complete qp3 exponent rule on an independent finite grid",
+      "status": "passed",
+      "assertions": 250,
+      "details": {
+        "monomials_tested": 225,
+        "homogeneous_dimensions": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            5,
+            2
+          ],
+          [
+            6,
+            3
+          ],
+          [
+            7,
+            2
+          ],
+          [
+            8,
+            2
+          ],
+          [
+            9,
+            2
+          ],
+          [
+            10,
+            3
+          ],
+          [
+            11,
+            2
+          ],
+          [
+            12,
+            2
+          ],
+          [
+            13,
+            2
+          ],
+          [
+            14,
+            3
+          ],
+          [
+            15,
+            2
+          ],
+          [
+            16,
+            2
+          ],
+          [
+            17,
+            2
+          ],
+          [
+            18,
+            3
+          ],
+          [
+            19,
+            2
+          ],
+          [
+            20,
+            2
+          ],
+          [
+            21,
+            2
+          ],
+          [
+            22,
+            3
+          ],
+          [
+            23,
+            2
+          ],
+          [
+            24,
+            2
+          ]
+        ]
+      }
+    },
+    {
+      "name": "Closure failures, dynamic discrepancy and exact strip Lie algebra",
+      "status": "passed",
+      "assertions": 158,
+      "details": {
+        "first_action": [
+          {
+            "hbar": 0,
+            "terms": [
+              {
+                "q": 2,
+                "p": 2,
+                "coefficient": "-6"
+              }
+            ]
+          }
+        ],
+        "second_action": [
+          {
+            "hbar": 0,
+            "terms": [
+              {
+                "q": 2,
+                "p": 4,
+                "coefficient": "24"
+              }
+            ]
+          },
+          {
+            "hbar": 2,
+            "terms": [
+              {
+                "q": 0,
+                "p": 2,
+                "coefficient": "18"
+              }
+            ]
+          }
+        ],
+        "Poisson_Lie_counterexample": [
+          {
+            "q": 2,
+            "p": 1,
+            "coefficient": "4"
+          }
+        ],
+        "random_strip_pairs": 50
+      }
+    },
+    {
+      "name": "Arbitrary-F classification and dynamic escape in full q/p rectangles",
+      "status": "passed",
+      "assertions": 356,
+      "details": [
+        {
+          "F": "p2",
+          "degree": 2,
+          "tested_q_degree_max": 10,
+          "tested_p_degree_max": 8,
+          "kernel_dimension": 27
+        },
+        {
+          "F": "p2+p+1",
+          "degree": 2,
+          "tested_q_degree_max": 10,
+          "tested_p_degree_max": 8,
+          "kernel_dimension": 27
+        },
+        {
+          "F": "p3+p",
+          "degree": 3,
+          "tested_q_degree_max": 10,
+          "tested_p_degree_max": 8,
+          "kernel_dimension": 21
+        },
+        {
+          "F": "p3+p2+1",
+          "degree": 3,
+          "tested_q_degree_max": 10,
+          "tested_p_degree_max": 8,
+          "kernel_dimension": 21
+        },
+        {
+          "F": "p4",
+          "degree": 4,
+          "tested_q_degree_max": 10,
+          "tested_p_degree_max": 8,
+          "kernel_dimension": 19
+        },
+        {
+          "F": "p4+p2",
+          "degree": 4,
+          "tested_q_degree_max": 10,
+          "tested_p_degree_max": 8,
+          "kernel_dimension": 19
+        },
+        {
+          "F": "p5+p",
+          "degree": 5,
+          "tested_q_degree_max": 10,
+          "tested_p_degree_max": 8,
+          "kernel_dimension": 20
+        },
+        {
+          "F": "p5+p3+p",
+          "degree": 5,
+          "tested_q_degree_max": 10,
+          "tested_p_degree_max": 8,
+          "kernel_dimension": 19
+        },
+        {
+          "F": "(p-1)5+3p+7",
+          "degree": 5,
+          "tested_q_degree_max": 10,
+          "tested_p_degree_max": 8,
+          "kernel_dimension": 20
+        },
+        {
+          "F": "integral of (p2+1)3",
+          "degree": 8,
+          "tested_q_degree_max": 10,
+          "tested_p_degree_max": 8,
+          "kernel_dimension": 20
+        }
+      ]
+    },
+    {
+      "name": "Associative-subalgebra rigidity for the favorite Hamiltonian",
+      "status": "passed",
+      "assertions": 80,
+      "details": {
+        "polynomial_cube_counterexamples": 40,
+        "theorem": "G cubed in E(qp3) implies G is in k[p]"
+      }
+    },
+    {
+      "name": "Independent quartic apolar adjoint, full degree dimensions and Hessian partners",
+      "status": "passed",
+      "assertions": 217,
+      "details": [
+        {
+          "H": "q4",
+          "primitive_root_degree": 1,
+          "dimensions": [
+            [
+              2,
+              3
+            ],
+            [
+              3,
+              3
+            ],
+            [
+              4,
+              3
+            ],
+            [
+              5,
+              3
+            ],
+            [
+              6,
+              3
+            ],
+            [
+              7,
+              3
+            ],
+            [
+              8,
+              3
+            ],
+            [
+              9,
+              3
+            ],
+            [
+              10,
+              3
+            ],
+            [
+              11,
+              3
+            ],
+            [
+              12,
+              3
+            ],
+            [
+              13,
+              3
+            ],
+            [
+              14,
+              3
+            ],
+            [
+              15,
+              3
+            ],
+            [
+              16,
+              3
+            ]
+          ]
+        },
+        {
+          "H": "q2p2",
+          "primitive_root_degree": 2,
+          "dimensions": [
+            [
+              2,
+              3
+            ],
+            [
+              3,
+              2
+            ],
+            [
+              4,
+              3
+            ],
+            [
+              5,
+              2
+            ],
+            [
+              6,
+              3
+            ],
+            [
+              7,
+              2
+            ],
+            [
+              8,
+              3
+            ],
+            [
+              9,
+              2
+            ],
+            [
+              10,
+              3
+            ],
+            [
+              11,
+              2
+            ],
+            [
+              12,
+              3
+            ],
+            [
+              13,
+              2
+            ],
+            [
+              14,
+              3
+            ],
+            [
+              15,
+              2
+            ],
+            [
+              16,
+              3
+            ]
+          ]
+        },
+        {
+          "H": "(q2+p2)2",
+          "primitive_root_degree": 2,
+          "dimensions": [
+            [
+              2,
+              3
+            ],
+            [
+              3,
+              2
+            ],
+            [
+              4,
+              3
+            ],
+            [
+              5,
+              2
+            ],
+            [
+              6,
+              3
+            ],
+            [
+              7,
+              2
+            ],
+            [
+              8,
+              3
+            ],
+            [
+              9,
+              2
+            ],
+            [
+              10,
+              3
+            ],
+            [
+              11,
+              2
+            ],
+            [
+              12,
+              3
+            ],
+            [
+              13,
+              2
+            ],
+            [
+              14,
+              3
+            ],
+            [
+              15,
+              2
+            ],
+            [
+              16,
+              3
+            ]
+          ]
+        },
+        {
+          "H": "qp3",
+          "primitive_root_degree": 4,
+          "dimensions": [
+            [
+              2,
+              3
+            ],
+            [
+              3,
+              2
+            ],
+            [
+              4,
+              2
+            ],
+            [
+              5,
+              2
+            ],
+            [
+              6,
+              3
+            ],
+            [
+              7,
+              2
+            ],
+            [
+              8,
+              2
+            ],
+            [
+              9,
+              2
+            ],
+            [
+              10,
+              3
+            ],
+            [
+              11,
+              2
+            ],
+            [
+              12,
+              2
+            ],
+            [
+              13,
+              2
+            ],
+            [
+              14,
+              3
+            ],
+            [
+              15,
+              2
+            ],
+            [
+              16,
+              2
+            ]
+          ]
+        },
+        {
+          "H": "q4+p4",
+          "primitive_root_degree": 4,
+          "dimensions": [
+            [
+              2,
+              3
+            ],
+            [
+              3,
+              2
+            ],
+            [
+              4,
+              2
+            ],
+            [
+              5,
+              2
+            ],
+            [
+              6,
+              3
+            ],
+            [
+              7,
+              2
+            ],
+            [
+              8,
+              2
+            ],
+            [
+              9,
+              2
+            ],
+            [
+              10,
+              3
+            ],
+            [
+              11,
+              2
+            ],
+            [
+              12,
+              2
+            ],
+            [
+              13,
+              2
+            ],
+            [
+              14,
+              3
+            ],
+            [
+              15,
+              2
+            ],
+            [
+              16,
+              2
+            ]
+          ]
+        },
+        {
+          "H": "q4+q2p2+p4",
+          "primitive_root_degree": 4,
+          "dimensions": [
+            [
+              2,
+              3
+            ],
+            [
+              3,
+              2
+            ],
+            [
+              4,
+              2
+            ],
+            [
+              5,
+              2
+            ],
+            [
+              6,
+              3
+            ],
+            [
+              7,
+              2
+            ],
+            [
+              8,
+              2
+            ],
+            [
+              9,
+              2
+            ],
+            [
+              10,
+              3
+            ],
+            [
+              11,
+              2
+            ],
+            [
+              12,
+              2
+            ],
+            [
+              13,
+              2
+            ],
+            [
+              14,
+              3
+            ],
+            [
+              15,
+              2
+            ],
+            [
+              16,
+              2
+            ]
+          ]
+        },
+        {
+          "H": "q4+qp3+p4",
+          "primitive_root_degree": 4,
+          "dimensions": [
+            [
+              2,
+              3
+            ],
+            [
+              3,
+              2
+            ],
+            [
+              4,
+              2
+            ],
+            [
+              5,
+              2
+            ],
+            [
+              6,
+              3
+            ],
+            [
+              7,
+              2
+            ],
+            [
+              8,
+              2
+            ],
+            [
+              9,
+              2
+            ],
+            [
+              10,
+              3
+            ],
+            [
+              11,
+              2
+            ],
+            [
+              12,
+              2
+            ],
+            [
+              13,
+              2
+            ],
+            [
+              14,
+              3
+            ],
+            [
+              15,
+              2
+            ],
+            [
+              16,
+              2
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Finite quantum ladders and all-r dynamic obstruction",
+      "status": "passed",
+      "assertions": 80,
+      "details": {
+        "finite_quantum_ladders": [
+          {
+            "m": 3,
+            "c": 2,
+            "d": 0,
+            "top_order": 3,
+            "nilpotence_index": 4
+          },
+          {
+            "m": 3,
+            "c": 5,
+            "d": 1,
+            "top_order": 7,
+            "nilpotence_index": 8
+          },
+          {
+            "m": 3,
+            "c": 8,
+            "d": 2,
+            "top_order": 11,
+            "nilpotence_index": 12
+          },
+          {
+            "m": 3,
+            "c": 11,
+            "d": 3,
+            "top_order": 15,
+            "nilpotence_index": 16
+          },
+          {
+            "m": 3,
+            "c": 14,
+            "d": 4,
+            "top_order": 19,
+            "nilpotence_index": 20
+          },
+          {
+            "m": 3,
+            "c": 17,
+            "d": 5,
+            "top_order": 23,
+            "nilpotence_index": 24
+          },
+          {
+            "m": 3,
+            "c": 20,
+            "d": 6,
+            "top_order": 27,
+            "nilpotence_index": 28
+          },
+          {
+            "m": 2,
+            "c": 1,
+            "d": 0,
+            "top_order": 2,
+            "nilpotence_index": 3
+          },
+          {
+            "m": 2,
+            "c": 2,
+            "d": 0,
+            "top_order": 4,
+            "nilpotence_index": 5
+          },
+          {
+            "m": 2,
+            "c": 3,
+            "d": 0,
+            "top_order": 6,
+            "nilpotence_index": 7
+          },
+          {
+            "m": 2,
+            "c": 4,
+            "d": 0,
+            "top_order": 8,
+            "nilpotence_index": 9
+          },
+          {
+            "m": 2,
+            "c": 5,
+            "d": 0,
+            "top_order": 10,
+            "nilpotence_index": 11
+          },
+          {
+            "m": 5,
+            "c": 4,
+            "d": 0,
+            "top_order": 5,
+            "nilpotence_index": 6
+          },
+          {
+            "m": 11,
+            "c": 3,
+            "d": 3,
+            "top_order": 3,
+            "nilpotence_index": 4
+          }
+        ],
+        "q2_first_four_derivatives": [
+          [
+            {
+              "hbar": 0,
+              "terms": [
+                {
+                  "q": 2,
+                  "p": 0,
+                  "coefficient": "1"
+                }
+              ]
+            }
+          ],
+          [
+            {
+              "hbar": 0,
+              "terms": [
+                {
+                  "q": 2,
+                  "p": 2,
+                  "coefficient": "-6"
+                }
+              ]
+            }
+          ],
+          [
+            {
+              "hbar": 0,
+              "terms": [
+                {
+                  "q": 2,
+                  "p": 4,
+                  "coefficient": "24"
+                }
+              ]
+            },
+            {
+              "hbar": 2,
+              "terms": [
+                {
+                  "q": 0,
+                  "p": 2,
+                  "coefficient": "18"
+                }
+              ]
+            }
+          ],
+          [
+            {
+              "hbar": 0,
+              "terms": [
+                {
+                  "q": 2,
+                  "p": 6,
+                  "coefficient": "-48"
+                }
+              ]
+            },
+            {
+              "hbar": 2,
+              "terms": [
+                {
+                  "q": 0,
+                  "p": 4,
+                  "coefficient": "-108"
+                }
+              ]
+            }
+          ]
+        ],
+        "all_r_second_action_formula_checked_r_max": 7,
+        "generic_quartic_dynamic_failure": "H=q4+p4,G=q2p2; correction in second action is960 hbar2 q2p2"
+      }
+    }
+  ],
+  "scope": "Finite checks corroborate the accompanying all-degree proofs; they do not replace those proofs or assert a global classification for arbitrary Hamiltonians."
+}

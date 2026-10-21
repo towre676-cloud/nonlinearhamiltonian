@@ -1,0 +1,205 @@
+{
+  "status": "passed",
+  "developed_entries": 349,
+  "months_represented": 10,
+  "months_with_recovered_entries": 10,
+  "verifier_programs": 16,
+  "scoped_records": 367,
+  "duplicate_records_omitted": 0,
+  "status_counts": {
+    "passed": 209,
+    "pass": 158
+  },
+  "results": [
+    {
+      "program": "months/01/verify.py",
+      "return_code": 0,
+      "stdout": "34/34 passed",
+      "stderr": ""
+    },
+    {
+      "program": "months/02/verify.py",
+      "return_code": 0,
+      "stdout": "35/35 passed",
+      "stderr": ""
+    },
+    {
+      "program": "months/03/verify.py",
+      "return_code": 0,
+      "stdout": "27 checks passed; literal provenance passed",
+      "stderr": ""
+    },
+    {
+      "program": "months/04/verify.py",
+      "return_code": 0,
+      "stdout": "33 checks passed; literal provenance passed",
+      "stderr": ""
+    },
+    {
+      "program": "months/05/verify.py",
+      "return_code": 0,
+      "stdout": "34 / 34 pass",
+      "stderr": ""
+    },
+    {
+      "program": "months/06/verify.py",
+      "return_code": 0,
+      "stdout": "33 / 33 pass",
+      "stderr": ""
+    },
+    {
+      "program": "months/07/verify.py",
+      "return_code": 0,
+      "stdout": "31/31 scoped checks passed",
+      "stderr": ""
+    },
+    {
+      "program": "months/08/verify.py",
+      "return_code": 0,
+      "stdout": "25/25 scoped checks passed",
+      "stderr": ""
+    },
+    {
+      "program": "months/09/verify.py",
+      "return_code": 0,
+      "stdout": "35 / 35 pass",
+      "stderr": ""
+    },
+    {
+      "program": "months/10/verify.py",
+      "return_code": 0,
+      "stdout": "41/41 passed",
+      "stderr": ""
+    },
+    {
+      "program": "months/01/catalog_verify.py",
+      "return_code": 0,
+      "stdout": "{\"status\": \"passed\", \"records\": 10}",
+      "stderr": ""
+    },
+    {
+      "program": "months/08/catalog2_verify.py",
+      "return_code": 0,
+      "stdout": "16 catalog2checks passed; all6literal source excerpts passed",
+      "stderr": ""
+    },
+    {
+      "program": "months/08/catalog_verify.py",
+      "return_code": 0,
+      "stdout": "{\"status\": \"passed\", \"records\": 7}",
+      "stderr": ""
+    },
+    {
+      "program": "independent_audit.py",
+      "return_code": 0,
+      "stdout": "{\"status\": \"passed\", \"records\": 4}",
+      "stderr": ""
+    },
+    {
+      "program": "independent_freelip_review.py",
+      "return_code": 0,
+      "stdout": "{\"supplied_verifier\": \"passed:126 all-state certificates,630 fixtures,2 error correction fixtures\", \"independent_bareiss_patterns\": 126, \"independent_dual_columns\": 630, \"additional_decoder_fixtures\": 6300, \"maximum_dual_bound_exact\": \"59762387137465627635627395045544/162259276829213363391578010288127\", \"maximum_dual_bound_approx\": 0.36831414699554443, \"interval_endpoint_cases\": 1919}",
+      "stderr": ""
+    },
+    {
+      "program": "verify_freelip.py",
+      "return_code": 0,
+      "stdout": "{\"status\": \"passed\", \"all_state_patterns\": 126, \"decoder_fixtures\": 630, \"error_correction_fixtures\": 2}",
+      "stderr": ""
+    }
+  ],
+  "reports": [
+    {
+      "report": "months/01/catalog_checks.json",
+      "records": 10,
+      "raw_records": 10,
+      "sha256": "5bb592e5e2cd21de165164daf05539a307938b2f822be9f70a5398f417631780"
+    },
+    {
+      "report": "months/01/checks.json",
+      "records": 34,
+      "raw_records": 34,
+      "sha256": "b304082a973de5950699785d42f4f77d154efef86decce2a315def88ca2ae90a"
+    },
+    {
+      "report": "months/02/checks.json",
+      "records": 35,
+      "raw_records": 35,
+      "sha256": "95b750d8f5bd50db3fffee963d802924b564a2b60c94f5b1ea5540987c85fa69"
+    },
+    {
+      "report": "months/03/checks.json",
+      "records": 27,
+      "raw_records": 27,
+      "sha256": "fba09e3c0252e5a02fb906abe3ac88cdbc79a0fbfe50564829fe1070568ad476"
+    },
+    {
+      "report": "months/04/checks.json",
+      "records": 33,
+      "raw_records": 33,
+      "sha256": "918b123c7abd60606805705b84041d8cbaaf51327cd14a7907b327dfecb89a6a"
+    },
+    {
+      "report": "months/05/checks.json",
+      "records": 34,
+      "raw_records": 34,
+      "sha256": "783f93c3e0275831b1fa39556c48483c11b3b571871a1d60ec031df0099b6b54"
+    },
+    {
+      "report": "months/06/checks.json",
+      "records": 33,
+      "raw_records": 33,
+      "sha256": "926213637c4d78f981d9dcddbe057610a46025902e2bd097048946c2a405d9e0"
+    },
+    {
+      "report": "months/07/checks.json",
+      "records": 31,
+      "raw_records": 31,
+      "sha256": "451f3a4b3585bf80b73066be6de97270ad0757af80a28b523894b9bf48a6140e"
+    },
+    {
+      "report": "months/08/catalog2_checks.json",
+      "records": 16,
+      "raw_records": 16,
+      "sha256": "dee60cc4545e9fecf32bc2a2c8fd68b4c89c50189aee93e2370144fc022acdb6"
+    },
+    {
+      "report": "months/08/catalog_checks.json",
+      "records": 7,
+      "raw_records": 7,
+      "sha256": "6b75536f09cad079c388bdcd1c17a7b8253dca1db1917c2d5aa3e48fa11a53e7"
+    },
+    {
+      "report": "months/08/checks.json",
+      "records": 25,
+      "raw_records": 25,
+      "sha256": "950053a2d33f597111ec9066353b0e563bcc572841c091dd76f56bac44664c5a"
+    },
+    {
+      "report": "months/09/checks.json",
+      "records": 35,
+      "raw_records": 35,
+      "sha256": "b20be616d67011d39ff5f4ef3a54adc093fdca931db818a41399d342024c3e82"
+    },
+    {
+      "report": "months/10/checks.json",
+      "records": 41,
+      "raw_records": 41,
+      "sha256": "1e3789fa5b10dd06e7ed03f2dd8df031e84b77e22a4193ecb3adb3e0d3ad736f"
+    },
+    {
+      "report": "independent_checks.json",
+      "records": 4,
+      "raw_records": 4,
+      "sha256": "ade3fc1a57c282503bceef613a97d9a383331ad3ba4e02dbe4fc4f950068ce60"
+    },
+    {
+      "report": "freelip_checks.json",
+      "records": 2,
+      "raw_records": 2,
+      "sha256": "f7b552f239c05c9e510113cb13b097e38eb418765d330e7271c8cdd32e64cfda"
+    }
+  ],
+  "failures": [],
+  "scope": "Finite examples, exact certificates and numerical checks only; written proofs and cited general results have their own stated scope. Retrieval/schema checks are separated in the individual ledger."
+}

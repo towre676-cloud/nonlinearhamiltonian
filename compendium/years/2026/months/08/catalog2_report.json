@@ -1,0 +1,29 @@
+{
+  "entry_count": 6,
+  "ids": [
+    "Y26-08-801",
+    "Y26-08-802",
+    "Y26-08-803",
+    "Y26-08-804",
+    "Y26-08-805",
+    "Y26-08-806"
+  ],
+  "check_count": 16,
+  "status": "complete",
+  "provenance": "All six excerpts literally matched actual raw result bullets with correct timestamp and role.",
+  "sources": [
+    "root_coverage_1.json record0"
+  ],
+  "limits": [
+    "Original transformer byte-format predicates and finite-orbit benchmark certificates not recovered.",
+    "Original route graph, objective implementation and reported timing/large optimum certificates not recovered.",
+    "Exact new models prove the six source-grounded structures; no past large run is represented as reproduced."
+  ],
+  "references_verified": [
+    "Attention1706.03762",
+    "RoFormer2104.09864",
+    "SwiGLU2002.05202",
+    "GQA2305.13245",
+    "Rank-based connectivity1211.1505"
+  ]
+}

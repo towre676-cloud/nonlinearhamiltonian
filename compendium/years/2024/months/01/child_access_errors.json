@@ -1,0 +1,35 @@
+{
+  "month": "2024-01",
+  "skill": "c16/personal-context",
+  "tool_instructions_read": true,
+  "receipts": [
+    {
+      "m": "01",
+      "id": "Y24-01-R01",
+      "query": "The user requests a mathematics-only, month-by-month reconstruction and rigorous development of ALL 2024 ChatGPT mathematical conversations. Search ONLY January 1, 2024 through January 31, 2024 inclusive (2024-01-01 to 2024-01-31). Return all accessible distinct mathematical exchanges across the whole month, with exact archive dates, actual original user questions where available, surviving assistant passages, mathematical formulas and concepts. Include pure mathematics and mathematically substantive applied topics, but no medical or financial advice. Preserve exact fragments and distinguish USER wording from ASSISTANT-only evidence and topic summaries. Do not substitute later-year retrospective files or infer missing history. State retrieval gaps explicitly; a sparse result does not establish that no mathematics occurred.",
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "Personal context is unavailable for this conversation."
+          }
+        ],
+        "isError": true
+      }
+    },
+    {
+      "m": "01",
+      "id": "Y24-01-R02",
+      "query": "The user is reconstructing mathematics from January 2024, and the initial month-wide retrieval returned 'Personal context is unavailable for this conversation.' Retry a narrower search restricted to 2024-01-01 through 2024-01-31 inclusive: retrieve concrete mathematical formulas, proofs, algebraic, geometric, arithmetic, analytic or dynamical questions from that month, with original dates and exact surviving fragments. Identify USER prompts versus ASSISTANT passages. Do not infer January topics from later work. If access is unavailable, report that access failure rather than claiming no January mathematics.",
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "Personal context is unavailable for this conversation."
+          }
+        ],
+        "isError": true
+      }
+    }
+  ]
+}

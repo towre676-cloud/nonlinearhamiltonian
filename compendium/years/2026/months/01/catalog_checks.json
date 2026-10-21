@@ -1,0 +1,143 @@
+{
+  "status": "passed",
+  "checks": [
+    {
+      "id": "Y26-01-901",
+      "name": "OU second-moment fixture",
+      "status": "passed",
+      "details": {
+        "moment": "7/4",
+        "Ito_variance_correction": "3/4"
+      },
+      "scope": "Exact finite arithmetic; general statements are proved separately in prose."
+    },
+    {
+      "id": "Y26-01-902",
+      "name": "Catalan moments and resolvent recurrence",
+      "status": "passed",
+      "details": {
+        "even_moments": [
+          1,
+          1,
+          2,
+          5,
+          14,
+          42,
+          132,
+          429,
+          1430,
+          4862,
+          16796,
+          58786
+        ]
+      },
+      "scope": "Exact finite arithmetic; general statements are proved separately in prose."
+    },
+    {
+      "id": "Y26-01-903",
+      "name": "Tangent-kernel reachable and invisible directions",
+      "status": "passed",
+      "details": {
+        "eigenvalues": [
+          2,
+          0
+        ],
+        "positive_direction": [
+          1,
+          1
+        ],
+        "null_direction": [
+          1,
+          -1
+        ]
+      },
+      "scope": "Exact finite arithmetic; general statements are proved separately in prose."
+    },
+    {
+      "id": "Y26-01-904",
+      "name": "Two-point commutator Lipschitz maximum",
+      "status": "passed",
+      "details": {
+        "m_values": [
+          "2",
+          "1/3",
+          "-5/7"
+        ],
+        "attaining_difference": "1/abs(m)"
+      },
+      "scope": "Exact finite arithmetic; general statements are proved separately in prose."
+    },
+    {
+      "id": "Y26-01-905",
+      "name": "Finite truncation boundary defects",
+      "status": "passed",
+      "details": {
+        "dimensions": "2..9",
+        "kernel_equals_cokernel": "k",
+        "finite_index": 0,
+        "infinite_shift_index": "-k by the separate closed-range proof"
+      },
+      "scope": "Exact finite arithmetic; general statements are proved separately in prose."
+    },
+    {
+      "id": "Y26-01-906",
+      "name": "Diagonal Frobenius handle values",
+      "status": "passed",
+      "details": {
+        "Z0": "3",
+        "Z1": "2",
+        "Z2": "3/2"
+      },
+      "scope": "Exact finite arithmetic; general statements are proved separately in prose."
+    },
+    {
+      "id": "Y26-01-907",
+      "name": "Recovered Picard\u2013Fuchs coefficient recurrence",
+      "status": "passed",
+      "details": {
+        "epsilon": 1,
+        "first_four": [
+          "1",
+          "-1/2",
+          "-9/16",
+          "-23/32"
+        ],
+        "exact_zero_residual_orders": "0..9"
+      },
+      "scope": "Exact finite arithmetic; general statements are proved separately in prose."
+    },
+    {
+      "id": "Y26-01-908",
+      "name": "Accelerated arctangent rational partial sum",
+      "status": "passed",
+      "details": {
+        "N": 20,
+        "sum_exact": "26227047399424/33393321606645",
+        "pi_interval_width": "2^-18"
+      },
+      "scope": "Term recurrence and rational interval width are exact; comparison against math.pi is only a floating cross-check. The inclusion follows analytically from the integral remainder."
+    },
+    {
+      "id": "Y26-01-909",
+      "name": "Factorial formal-ODE coefficients and remainder",
+      "status": "passed",
+      "details": {
+        "checked_coefficients": "1..9",
+        "negative_ray_remainder_N5_a0.1": "3/25000"
+      },
+      "scope": "Exact finite arithmetic; general statements are proved separately in prose."
+    },
+    {
+      "id": "Y26-01-910",
+      "name": "Dilogarithm endpoint tail bound",
+      "status": "passed",
+      "details": {
+        "N": 100,
+        "lower_exact": "161512564251871206214931748756945562974102708936910442090615436669891149226292608001/98190800587872484089555455643934937560359533983570370420054755825257316602690048000",
+        "upper_exact": "1599230555577381683418194508284280091144003254383667322307260038350873310952022381/972186144434381030589657976672623144161975583995746241782720354705517986165248000",
+        "width": "1/10100"
+      },
+      "scope": "Integral-test endpoints and width are exact; comparison with math.pi is a floating cross-check, and the value\u03c0\u00b2/6 has its own Fourier proof."
+    }
+  ]
+}

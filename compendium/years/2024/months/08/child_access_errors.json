@@ -1,0 +1,34 @@
+[
+  {
+    "id": "R001",
+    "query": "The user asks to fully recover and mathematically develop their 2024 ChatGPT conversations month by month. Search only August 1 through August 31, 2024 inclusive (2024-08-01 to 2024-08-31). Recover all distinct mathematically substantive conversations available in this month, without guessing likely subjects from later work. Return exact dates/timestamps, titles or source identifiers if available, actual user questions/excerpts when accessible, and separate user text from assistant text and retrospective summaries. Include formulas, definitions, attempted connections, claimed results, mistakes and unresolved questions. Mathematics only, including mathematical parts of applied subjects; exclude nonmathematical advice and material from other dates. Explicitly report inaccessible or incomplete coverage rather than saying no mathematics existed.",
+    "result": {
+      "status": "fulfilled",
+      "value": {
+        "content": [
+          {
+            "type": "text",
+            "text": "Personal context is unavailable for this conversation."
+          }
+        ],
+        "isError": true
+      }
+    }
+  },
+  {
+    "id": "R002",
+    "query": "Recover this user's mathematics history strictly within 2024-08-01T00:00:00Z through 2024-08-31T23:59:59Z. The current request is a month-by-month mathematical development of all their 2024 chats. List dated mathematical exchanges and their actual surviving text, with explicit user-versus-assistant attribution; do not infer subjects or reconstruct absent user prompts. A previous request failed because personal context was unavailable. If access is still unavailable, return that limitation; missing retrieval must not be described as an absence of mathematics.",
+    "result": {
+      "status": "fulfilled",
+      "value": {
+        "content": [
+          {
+            "type": "text",
+            "text": "Personal context is unavailable for this conversation."
+          }
+        ],
+        "isError": true
+      }
+    }
+  }
+]

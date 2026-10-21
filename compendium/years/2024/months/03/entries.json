@@ -1,0 +1,324 @@
+[
+  {
+    "id": "Y24-03-001",
+    "title": "Picard classes and the Néron–Severi quotient",
+    "status": "Classical result or corrected formulation with a worked example",
+    "summary": "On P¹×P¹, NS(X)=Pic(X)≅Z² with fiber-class intersection matrix [[0,1],[1,0]]. The class (a,b) has self-intersection 2ab. For a,b≥0, its space of sections has dimension (a+1)(b+1). The finite-rank divisor quotient is a well-defined geometric object. It is different from an unspecified real vector space obtained by tensoring every line bundle with R.",
+    "definitions": [
+      "For a smooth projective complex variety, Pic(X) is the abelian group of line bundles under tensor product. Pic⁰(X) denotes the subgroup algebraically equivalent to zero.",
+      "The Néron–Severi theorem makes NS(X) a finitely generated abelian group. Its real vector space has finite dimension ρ(X). This background theorem is not proved by a two-dimensional matrix check.",
+      "On X=P¹×P¹, write O(a,b) for the external tensor product of the two degree-a and degree-b bundles."
+    ],
+    "result": {
+      "name": "Picard classes and the Néron–Severi quotient",
+      "statement": "On P¹×P¹, NS(X)=Pic(X)≅Z² with fiber-class intersection matrix [[0,1],[1,0]]. The class (a,b) has self-intersection 2ab. For a,b≥0, its space of sections has dimension (a+1)(b+1).",
+      "proof": "The projective-bundle description of the product gives the two independent fiber classes and no Pic⁰ component. Two fibers of the same projection are disjoint and equivalent, so each fiber class squares to zero. A fiber of one projection meets a fiber of the other in one point; bilinearity gives (aF₁+bF₂)²=2ab. Sections of O(a,b) are bihomogeneous polynomials of bidegree (a,b). Their monomial basis consists of the (a+1) choices of first-factor exponent and (b+1) choices of second-factor exponent, proving the dimension formula directly. These explicit calculations use the product structure; they do not imply that Picard groups of arbitrary varieties are free of rank two."
+    },
+    "example": {
+      "setup": "Take O(2,3) on the product and compare it with O(1,0).",
+      "calculation": "The first class has twelve independent sections and self-intersection twelve. The second has two sections and self-intersection zero. Both are discrete divisor classes, whereas on an elliptic curve the degree-zero line bundles form a positive-dimensional Picard variety and cannot be replaced by a single rank count.",
+      "conclusion": "The finite-rank divisor quotient is a well-defined geometric object. It is different from an unspecified real vector space obtained by tensoring every line bundle with R."
+    },
+    "limits": "Picard number does not classify a variety or its automorphism group. Torsion in NS and continuous Pic⁰ information can be lost after tensoring with R. Statements about singular or nonprojective spaces require different hypotheses.",
+    "extension": "For a chosen surface, calculate a lattice basis, its intersection form and the image of geometric symmetries. State exactly which quotient or torsion information each calculation discards.",
+    "references": [
+      {
+        "label": "Rick Miranda lectures on the Picard and Néron–Severi groups",
+        "url": "https://www.math.colostate.edu/~miranda/BTES-Miranda.pdf"
+      }
+    ],
+    "original": {
+      "date": "2024-03-30",
+      "month": "2024-03",
+      "evidence": "A",
+      "field": "Algebraic geometry",
+      "concept": "Picard classes and the Néron–Severi quotient",
+      "origin": "Assistant comparison of the Néron–Severi group with a proposed Picard-action quantity.",
+      "question": "Which equivalence relation on line bundles is intended, and which part is discrete enough to have a finite rank?",
+      "math": "NS(X)=Pic(X)/Pic⁰(X); the Picard number is rank NS(X), not the dimension of the whole Picard group.",
+      "finish": "Calculate the line-bundle and intersection data on a fixed smooth projective example before attaching a numerical invariant.",
+      "kind": "Developed mathematical treatment",
+      "refs": [],
+      "source_excerpt": "[c2] A@2024-03-30T02:17:12Z: Néron–Severi group NS(X) (divisors modulo algebraic equivalence) versus “Picard intransigence” ι_P(X) (claimed corank of Aut(X) action on Pic(X)⊗R).",
+      "retrieval_receipt": "root_receipts.json#0",
+      "original_question": null,
+      "attribution_note": "The historical evidence is an assistant-only retrieval fragment, not the original user prompt. All revised questions, derivations and examples below are new editorial development; no missing historical wording is invented."
+    }
+  },
+  {
+    "id": "Y24-03-002",
+    "title": "Replace Picard intransigence by a defined fixed-space calculation",
+    "status": "Classical result or corrected formulation with a worked example",
+    "summary": "For a finite real representation, P=|G|⁻¹Σ_gρ(g) is a projection onto V^G. Its kernel is the span of all ρ(g)v−v. For the factor-swap involution of P¹×P¹, the invariant divisor subspace has dimension one. A repaired invariant is now computable and its blindness is exhibited, rather than hidden behind a new name.",
+    "definitions": [
+      "A representation of a finite group G on V assigns linear maps ρ(g) compatible with composition. Its fixed space is V^G={v:ρ(g)v=v for every g}.",
+      "For pullback actions, one may use g↦(g⁻¹)* to obtain a left representation; for an involution this convention makes no difference.",
+      "The retrieved label “Picard intransigence” is nonstandard and does not by itself define a linear map whose corank could be taken."
+    ],
+    "result": {
+      "name": "Replace Picard intransigence by a defined fixed-space calculation",
+      "statement": "For a finite real representation, P=|G|⁻¹Σ_gρ(g) is a projection onto V^G. Its kernel is the span of all ρ(g)v−v. For the factor-swap involution of P¹×P¹, the invariant divisor subspace has dimension one.",
+      "proof": "Multiplying P by ρ(h) merely permutes the summands, so every vector Pv is fixed. Conversely a fixed vector is unchanged by averaging, hence P acts as its identity and P²=P. Each difference ρ(g)v−v is killed by P. In the other direction v−Pv is an average of v−ρ(g)v, so every kernel vector belongs to the difference span. This proves the decomposition without assigning a vague scalar to the group itself. In the product-surface basis F₁,F₂, the swap is J=[[0,1],[1,0]], and P=(I+J)/2. Its image is span(F₁+F₂), while its kernel is span(F₁−F₂)."
+    },
+    "example": {
+      "setup": "Use the factor swap and an automorphism acting by a nontrivial Möbius transformation on the first P¹ factor only.",
+      "calculation": "The swap has rank(J−I)=1 and fixed dimension one. The factorwise Möbius automorphism acts trivially on both divisor classes, so its induced matrix is I despite being a nonidentity geometric map. Thus zero action rank does not mean the geometric automorphism is trivial.",
+      "conclusion": "A repaired invariant is now computable and its blindness is exhibited, rather than hidden behind a new name."
+    },
+    "limits": "Averaging over an infinite group is not justified by a finite sum. Finite generation and the choice of coefficient field matter. This calculation does not supply a complete invariant of Picard varieties or automorphism groups.",
+    "extension": "For finitely many specified automorphisms, stack the matrices g*−I and calculate their common kernel. Compare this exact fixed lattice with the coarser real subspace and identify the geometric information that both fail to detect.",
+    "references": [
+      {
+        "label": "Ravi Vakil Foundations of Algebraic Geometry",
+        "url": "https://math.stanford.edu/~vakil/216blog/FOAGjul2724public.pdf"
+      }
+    ],
+    "original": {
+      "date": "2024-03-30",
+      "month": "2024-03",
+      "evidence": "A",
+      "field": "Group actions",
+      "concept": "Replace Picard intransigence by a defined fixed-space calculation",
+      "origin": "Assistant comparison of the Néron–Severi group with a proposed Picard-action quantity.",
+      "question": "What finite-dimensional representation is being acted on, and which rank or invariant subspace is actually measured?",
+      "math": "Choose V=NS(X)⊗R and a stated automorphism g or finite group G. Then rank(g*−I) and dim V^G are defined quantities.",
+      "finish": "Publish the action matrices and distinguish fixed-space dimension from a purported corank of an entire unspecified group action.",
+      "kind": "Developed mathematical treatment",
+      "refs": [],
+      "source_excerpt": "[c2] A@2024-03-30T02:17:12Z: Néron–Severi group NS(X) (divisors modulo algebraic equivalence) versus “Picard intransigence” ι_P(X) (claimed corank of Aut(X) action on Pic(X)⊗R).",
+      "retrieval_receipt": "root_receipts.json#0",
+      "original_question": null,
+      "attribution_note": "The historical evidence is an assistant-only retrieval fragment, not the original user prompt. All revised questions, derivations and examples below are new editorial development; no missing historical wording is invented."
+    }
+  },
+  {
+    "id": "Y24-03-003",
+    "title": "Independent variations give separate Euler–Lagrange equations",
+    "status": "Classical result or corrected formulation with a worked example",
+    "summary": "Stationarity under every pair (ξ,η) is equivalent to the two residual equations. Stationarity only along η=κξ generally imposes just E_x+κE_y=0 and can miss genuine directions. The revised model separates a variational derivation, a constraint on variations and a degeneracy of the functional.",
+    "definitions": [
+      "Let x,y be smooth paths on [0,T] with fixed endpoints, and let ξ,η be independent smooth variations vanishing there.",
+      "The Euler–Lagrange residuals are E_x=L_x−d(L_ẋ)/dt and E_y=L_y−d(L_ẏ)/dt.",
+      "A weighting symbol must have a defined domain and value. It cannot replace the independent test functions required by a variational principle."
+    ],
+    "result": {
+      "name": "Independent variations give separate Euler–Lagrange equations",
+      "statement": "Stationarity under every pair (ξ,η) is equivalent to the two residual equations. Stationarity only along η=κξ generally imposes just E_x+κE_y=0 and can miss genuine directions.",
+      "proof": "Differentiate S[x+εξ,y+εη] at ε=0 and integrate the velocity terms by parts. Endpoint terms vanish, leaving δS=∫(E_xξ+E_yη)dt. First choose η=0 and arbitrary ξ, then ξ=0 and arbitrary η. The fundamental lemma gives each residual zero. If variations are restricted to η=κξ, the same reasoning gives only their weighted sum. This is a different constrained problem. In finite dimensions, S(a,b)=a−b has gradient (1,−1). Its derivative along the diagonal direction (1,1) vanishes everywhere, although it has no unconstrained stationary point. This simple counterexample disproves the idea that one cancelling sum certifies all variations."
+    },
+    "example": {
+      "setup": "Take L=(ẋ²+κẏ²)/2 with fixed endpoints.",
+      "calculation": "The equations are ẍ=0 and κÿ=0. If κ≠0, both paths are affine interpolants. At κ=0, the functional sees no y variation and every admissible y has the same contribution. The rank loss is an exact parameter stratum, not evidence that an undefined geometric coefficient creates an extra field law.",
+      "conclusion": "The revised model separates a variational derivation, a constraint on variations and a degeneracy of the functional."
+    },
+    "limits": "The calculation assumes sufficient regularity for differentiation and integration by parts. Weak solutions require a specified function space. Stationarity is not automatically minimality; the second variation must be checked.",
+    "extension": "For the oscillator action ∫(q̇²−ω²q²)/2, test q=εsin(πt/T). Its action is ε²T[(π/T)²−ω²]/4, negative when T>π/ω. This explicitly shows why the phrase least action must be handled as stationary action. For T<π/ω, the Poincaré inequality ∫q̇²≥(π/T)²∫q² proves positivity of the quadratic action for all zero-endpoint paths. The same time threshold therefore marks a real change in the second variation.",
+    "references": [
+      {
+        "label": "David Tong Classical Dynamics",
+        "url": "https://www.damtp.cam.ac.uk/user/tong/dynamics.htm"
+      }
+    ],
+    "original": {
+      "date": "2024-03-31",
+      "month": "2024-03",
+      "evidence": "A",
+      "field": "Calculus of variations",
+      "concept": "Independent variations give separate Euler–Lagrange equations",
+      "origin": "Assistant variational and entropy expressions accompanied by a numerical toy density.",
+      "question": "Which functional, admissible variations and boundary conditions make the proposed variational equation meaningful?",
+      "math": "For S[x,y]=∫L(x,y,ẋ,ẏ,t)dt, independent zero-endpoint variations force E_x=0 and E_y=0 separately.",
+      "finish": "Derive the first variation and exhibit why one weighted sum of residuals is not equivalent to full stationarity.",
+      "kind": "Developed mathematical treatment",
+      "refs": [],
+      "source_excerpt": "[c1] A@2024-03-31T12:27:41Z: ∫(δL/δx)dx+ι_q(X)∫(δL/δy)dy=0; ∂_tS=−k_B∬(∂_tρ)logρ dxdt+λW(∂_xρ); numerical example used ι_q=2,k_B=1,λ=.5,ρ=x²+t.",
+      "retrieval_receipt": "root_receipts.json#0",
+      "original_question": null,
+      "attribution_note": "The historical evidence is an assistant-only retrieval fragment, not the original user prompt. All revised questions, derivations and examples below are new editorial development; no missing historical wording is invented."
+    }
+  },
+  {
+    "id": "Y24-03-004",
+    "title": "Normalize the density before differentiating entropy",
+    "status": "Classical result or corrected formulation with a worked example",
+    "summary": "The normalized derivative is p_t=(1/3−x²)/(t+1/3)², whose integral is zero. At t=1, S=(7/6)−π/4−log(3/2), and Ṡ=(10−3π)/16>0. The omitted normalization changes the equation before any numerical optimizer is called. It cannot be repaired by merely selecting a parameter value.",
+    "definitions": [
+      "Use dimensionless x∈[0,1] and t>0. The toy function ρ=x²+t has mass M(t)=t+1/3 and is not a probability density.",
+      "Define p(x,t)=(x²+t)/(t+1/3) and differential entropy S(t)=−∫₀¹p logp dx.",
+      "A time-integrated entropy-rate expression is a total change over an interval. It is not the same object as a value of Ṡ at one time."
+    ],
+    "result": {
+      "name": "Normalize the density before differentiating entropy",
+      "statement": "The normalized derivative is p_t=(1/3−x²)/(t+1/3)², whose integral is zero. At t=1, S=(7/6)−π/4−log(3/2), and Ṡ=(10−3π)/16>0.",
+      "proof": "Differentiate −p logp under the integral to obtain Ṡ=−∫p_t(logp+1). Normalization removes the last term because ∫p_t=0. At t=1, p=3(1+x²)/4 and p_t=3(1−3x²)/16. The constant log(3/4) also drops from the derivative. Integration by parts gives ∫₀¹(1−3x²)log(1+x²)dx=π−10/3, yielding the exact derivative. A second elementary integration gives ∫₀¹(1+x²)log(1+x²)dx=(4/3)log2−14/9+π/3, which yields S(1). Positivity follows, for example, from π<10/3. These are checks on a declared probability model, not a validation of an added term W. Since p is a probability density on an interval of length one, Jensen’s inequality gives ∫p logp≥0 and S≤0. Thus the negative value of the differential entropy is consistent with its definition: its positive derivative describes approach toward the uniform-density maximum, not a negative probability."
+    },
+    "example": {
+      "setup": "Compare the derivative formula with numerical differentiation of the normalized entropy near t=1.",
+      "calculation": "Adaptive-free composite Simpson integration at increasing resolutions agrees with the exact value S(1) and central-difference derivative. The original unnormalized mass grows at rate one, so deleting the +1 term in that alternative model would change its derivative by exactly one when k_B=1.",
+      "conclusion": "The omitted normalization changes the equation before any numerical optimizer is called. It cannot be repaired by merely selecting a parameter value."
+    },
+    "limits": "Differential entropy depends on the reference coordinate measure and may be negative. The added symbol λW(∂_xρ) is undefined in the recovered fragment and is not included in this corrected calculation.",
+    "extension": "For positive periodic heat flow p_t=Dp_xx, integration by parts gives Ṡ=D∫p_x²/p. This is a genuine entropy–Fisher link under explicit no-boundary-flux assumptions, unlike adding unrelated named operators.",
+    "references": [
+      {
+        "label": "Frank Nielsen An Elementary Introduction to Information Geometry",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7650632/"
+      }
+    ],
+    "original": {
+      "date": "2024-03-31",
+      "month": "2024-03",
+      "evidence": "A",
+      "field": "Information theory",
+      "concept": "Normalize the density before differentiating entropy",
+      "origin": "Assistant variational and entropy expressions accompanied by a numerical toy density.",
+      "question": "Is ρ a normalized density, and does the displayed expression describe an instantaneous derivative or an accumulated time integral?",
+      "math": "For normalized positive p, S=−∫p logp and Ṡ=−∫p_t logp. For unnormalized ρ, the omitted term −∫ρ_t generally does not vanish.",
+      "finish": "Correct the normalization and compute a derivative exactly for the retrieved toy expression ρ=x²+t.",
+      "kind": "Developed mathematical treatment",
+      "refs": [],
+      "source_excerpt": "[c1] A@2024-03-31T12:27:41Z: ∫(δL/δx)dx+ι_q(X)∫(δL/δy)dy=0; ∂_tS=−k_B∬(∂_tρ)logρ dxdt+λW(∂_xρ); numerical example used ι_q=2,k_B=1,λ=.5,ρ=x²+t.",
+      "retrieval_receipt": "root_receipts.json#0",
+      "original_question": null,
+      "attribution_note": "The historical evidence is an assistant-only retrieval fragment, not the original user prompt. All revised questions, derivations and examples below are new editorial development; no missing historical wording is invented."
+    }
+  },
+  {
+    "id": "Y24-03-005",
+    "title": "A numerical optimizer does not certify an equation",
+    "status": "Classical result or corrected formulation with a worked example",
+    "summary": "The function R(a)=a²+1 has E(a)=(a²+1)² with unique global minimum one at a=0, yet the real equation R(a)=0 has no solution. For the toy polynomial x²+t on [0,1]², the double integral is exactly 5/6. A computational demonstration should have a mathematical contract before it has a success flag.",
+    "definitions": [
+      "For an equation R(a)=0, minimizing E(a)=R(a)² is an auxiliary optimization problem. Optimizer convergence and residual vanishing are different claims.",
+      "For an integral, the integration variables and bounds define the problem; nested integration routines must respect the chosen argument order.",
+      "A certificate must report a residual bound, an existence or uniqueness argument where needed, and the numerical error sources."
+    ],
+    "result": {
+      "name": "A numerical optimizer does not certify an equation",
+      "statement": "The function R(a)=a²+1 has E(a)=(a²+1)² with unique global minimum one at a=0, yet the real equation R(a)=0 has no solution. For the toy polynomial x²+t on [0,1]², the double integral is exactly 5/6.",
+      "proof": "Since a²≥0, R(a)≥1 and E(a)≥1, with equality exactly at zero. No successful minimization can change that impossibility. For the integral, integrate x first to obtain 1/3+t and then integrate t to obtain 1/3+1/2. Composite Simpson quadrature is exact on polynomials up to degree three in each variable, so the tensor-product method reproduces this result with exact rational arithmetic. Entropy integrands involving logρ need a separate positivity and endpoint analysis; x²+t vanishes at the origin when t starts at zero and cannot simply be passed to a rule that samples log0."
+    },
+    "example": {
+      "setup": "Use the polynomial integral as a quadrature regression example and the impossible residual equation as an optimization counterexample.",
+      "calculation": "The verifier evaluates tensor Simpson weights with Fraction arithmetic and obtains 5/6. It also evaluates E(a)−1=a²(a²+2), a nonnegative polynomial, giving a symbolic global certificate of the nonzero minimum.",
+      "conclusion": "A computational demonstration should have a mathematical contract before it has a success flag."
+    },
+    "limits": "These examples do not certify a general nonlinear equation solver or an arbitrary singular integral. Small residual alone may correspond to a large state error when the inverse problem is poorly conditioned.",
+    "extension": "For a scalar smooth equation with a known derivative lower bound |R′|≥m>0 near a unique root, combine a residual bound with the mean-value theorem to obtain a state-error bound |a−a*|≤|R(a)|/m. Verify the neighborhood and existence assumptions separately.",
+    "references": [
+      {
+        "label": "NIST DLMF numerical quadrature",
+        "url": "https://dlmf.nist.gov/3.5"
+      }
+    ],
+    "original": {
+      "date": "2024-03-31",
+      "month": "2024-03",
+      "evidence": "A",
+      "field": "Numerical analysis",
+      "concept": "A numerical optimizer does not certify an equation",
+      "origin": "Assistant variational and entropy expressions accompanied by a numerical toy density.",
+      "question": "Which exact residual is minimized, and what mathematical condition would turn a returned optimizer into a certified solution?",
+      "math": "A minimum of ||R(a)||² can have positive residual. A quadrature value requires domain, regularity and error control.",
+      "finish": "Separate integral evaluation, residual minimization and solution verification on independently checkable examples.",
+      "kind": "Developed mathematical treatment",
+      "refs": [],
+      "source_excerpt": "[c1] A@2024-03-31T12:27:41Z: ∫(δL/δx)dx+ι_q(X)∫(δL/δy)dy=0; ∂_tS=−k_B∬(∂_tρ)logρ dxdt+λW(∂_xρ); numerical example used ι_q=2,k_B=1,λ=.5,ρ=x²+t.",
+      "retrieval_receipt": "root_receipts.json#0",
+      "original_question": null,
+      "attribution_note": "The historical evidence is an assistant-only retrieval fragment, not the original user prompt. All revised questions, derivations and examples below are new editorial development; no missing historical wording is invented."
+    }
+  },
+  {
+    "id": "Y24-03-006",
+    "title": "Quantum evolution needs an explicit state space and norm",
+    "status": "Classical result or corrected formulation with a worked example",
+    "summary": "For H=[[0,κ],[κ,0]], κ real, and Ψ(0)=(1,0), the solution is Ψ(t)=(cosκt,−i sinκt). Its norm is one. Eliminating b gives ȧ(t)=−κ²∫₀ᵗa(s)ds, whose solution a=cosκt does not have constant squared modulus. The example supplies a consistent mathematical meaning for one possible quantum-evolution component and exposes a common normalization error.",
+    "definitions": [
+      "A quantum state in this example is a vector Ψ=(a,b)∈C² with Euclidean norm one. Time and coupling κ are expressed in compatible units, with ℏ=1.",
+      "Hermitian means H*=H. The source fragment recovers the name quantum evolution but no complete Hamiltonian or state-space definition; the model below is newly chosen, not a recovered formula.",
+      "The amplitude a alone describes a projection of the full state. It is not automatically a normalized state of a closed one-dimensional system."
+    ],
+    "result": {
+      "name": "Quantum evolution needs an explicit state space and norm",
+      "statement": "For H=[[0,κ],[κ,0]], κ real, and Ψ(0)=(1,0), the solution is Ψ(t)=(cosκt,−i sinκt). Its norm is one. Eliminating b gives ȧ(t)=−κ²∫₀ᵗa(s)ds, whose solution a=cosκt does not have constant squared modulus.",
+      "proof": "Differentiate Ψ*Ψ and use Ψ̇=−iHΨ to obtain iΨ*H*Ψ−iΨ*HΨ=0. Thus Hermiticity proves conservation for every initial state. In the chosen matrix, ȧ=−iκb and ḃ=−iκa. Integrating the second equation with b(0)=0 gives b(t)=−iκ∫₀ᵗa(s)ds. Substitution gives the memory equation with its negative sign. Differentiating again gives ä+κ²a=0, with a(0)=1 and ȧ(0)=0. The sine coordinate supplies exactly the probability absent from |a|². This derivation identifies what is eliminated rather than assigning an unexplained kernel a unitary interpretation."
+    },
+    "example": {
+      "setup": "Take κ=2 and t=π/8, then compare the whole state with the first coordinate.",
+      "calculation": "The full vector is (1/√2,−i/√2), with squared norm one. The first-coordinate probability is one half. At t=π/4, a vanishes while the full state remains normalized. These exact trigonometric checks distinguish probability transfer from a violation of the full evolution law.",
+      "conclusion": "The example supplies a consistent mathematical meaning for one possible quantum-evolution component and exposes a common normalization error."
+    },
+    "limits": "It does not recover the missing historical equation, attach a physical meaning to a consciousness variable, or justify arbitrary nonlinear additions. Infinite-dimensional Hamiltonians require operator domains and self-adjointness hypotheses beyond a matrix calculation.",
+    "extension": "For a block Hamiltonian, solve the hidden block by variation of constants and substitute it into the observed block. The resulting kernel and source term depend on the hidden Hamiltonian and initial condition; derive both before interpreting a reduced evolution.",
+    "references": [
+      {
+        "label": "David Tong Quantum Mechanics lectures",
+        "url": "https://www.damtp.cam.ac.uk/user/tong/quantum.html"
+      }
+    ],
+    "original": {
+      "date": "2024-03-31",
+      "month": "2024-03",
+      "evidence": "A",
+      "field": "Linear dynamics",
+      "concept": "Quantum evolution needs an explicit state space and norm",
+      "origin": "Assistant summary naming five proposed components: variational dynamics, entropy, quantum evolution, consciousness and unified complexity.",
+      "question": "Which stated evolution preserves probability, and what changes when an observed coordinate is only part of the state?",
+      "math": "For a finite-dimensional state ψ and Hermitian H, iψ̇=Hψ preserves ||ψ||². A projected coordinate need not preserve its own norm.",
+      "finish": "Replace an unprovided quantum-evolution formula by a fully defined two-state model, and show how an exact memory equation can arise from eliminating a coordinate.",
+      "kind": "Developed mathematical treatment",
+      "refs": [],
+      "source_excerpt": "[c5] A@2024-03-31T18:26:05Z: Five equations covering variational field dynamics, entropy, quantum evolution, consciousness, and unified complexity.",
+      "retrieval_receipt": "root_followups.json#1",
+      "original_question": null,
+      "attribution_note": "The historical evidence is an assistant-only retrieval fragment, not the original user prompt. All revised questions, derivations and examples below are new editorial development; no missing historical wording is invented."
+    }
+  },
+  {
+    "id": "Y24-03-007",
+    "title": "A complexity score requires units, weights and a stated inference",
+    "status": "Classical result or corrected formulation with a worked example",
+    "summary": "The score is invariant under the unit change exactly when its transformed weights satisfy w′=D⁻ᵀw. Any nonzero linear scalar score in dimension n>1 has a nontrivial blind subspace, so equal scores do not imply equal feature vectors. The repair separates an interpretable feature score from the much stronger and unsupported claim that it characterizes a psychological or physical state.",
+    "definitions": [
+      "A feature vector z consists of declared measured or computed quantities. The weight vector w has reciprocal units so that the sum has a coherent unit.",
+      "A score is a function with a domain and codomain. The names consciousness and unified complexity in the source fragment supply neither the missing definitions nor a theorem connecting a score to those concepts.",
+      "A change of feature units is represented by an invertible diagonal matrix D, with z′=Dz."
+    ],
+    "result": {
+      "name": "A complexity score requires units, weights and a stated inference",
+      "statement": "The score is invariant under the unit change exactly when its transformed weights satisfy w′=D⁻ᵀw. Any nonzero linear scalar score in dimension n>1 has a nontrivial blind subspace, so equal scores do not imply equal feature vectors.",
+      "proof": "Equality w′ᵀDz=wᵀz for every z means Dᵀw′=w, giving the weight rule. Rank–nullity gives dim ker wᵀ=n−1 because the row has rank one. Therefore z and z+v have equal scores whenever v lies in that kernel. For an explicit two-feature score w=(2,1), the vector v=(1,−2) is invisible. These are exact limitations of the declared function; they do not depend on an interpretation of the features. Conversely, a vector of several independent scores Wz preserves all feature information precisely when W has full column rank, a checkable property that a single score cannot have for n>1."
+    },
+    "example": {
+      "setup": "Compare z_A=(1,0) and z_B=(0,1) with w=(2,1), then rescale the first feature by one tenth.",
+      "calculation": "Initially C_A=2>C_B=1. If the old weights are reused after D=diag(1/10,1), the scores become 1/5 and one and their ranking reverses. Correct weights w′=(20,1) restore the scores two and one. Also C(1,0)=C(0,2)=2, displaying an exact collision even before any measurement error.",
+      "conclusion": "The repair separates an interpretable feature score from the much stronger and unsupported claim that it characterizes a psychological or physical state."
+    },
+    "limits": "The proof addresses linear aggregates. Nonlinear scores need their own regularity, invariance and identifiability analysis. The recovered source only supplies five framework labels, so no original formula or scientific validation is asserted here.",
+    "extension": "Specify a perturbation norm as well as weights. By Cauchy–Schwarz, |C(z+e)−C(z)|≤||w||₂||e||₂. Two scores separated by Δ retain their ordering under independent errors of radius ε whenever Δ>2ε||w||₂. This yields an honest robustness claim with an explicit margin.",
+    "references": [
+      {
+        "label": "Stephen Boyd and Lieven Vandenberghe Convex Optimization",
+        "url": "https://web.stanford.edu/~boyd/cvxbook/"
+      }
+    ],
+    "original": {
+      "date": "2024-03-31",
+      "month": "2024-03",
+      "evidence": "A",
+      "field": "Linear algebra and mathematical modeling",
+      "concept": "A complexity score requires units, weights and a stated inference",
+      "origin": "Assistant summary naming five proposed components: variational dynamics, entropy, quantum evolution, consciousness and unified complexity.",
+      "question": "What can a specified scalar aggregate of features distinguish, and which conclusions require more than naming the aggregate?",
+      "math": "For C(z)=wᵀz on Rⁿ, n>1 and w≠0, the indistinguishable directions form ker wᵀ of dimension n−1. Unit changes require a matching transformation of the weights.",
+      "finish": "Give an explicit aggregate a mathematical contract while leaving the unprovided consciousness and unified-complexity formulas unreconstructed.",
+      "kind": "Developed mathematical treatment",
+      "refs": [],
+      "source_excerpt": "[c5] A@2024-03-31T18:26:05Z: Five equations covering variational field dynamics, entropy, quantum evolution, consciousness, and unified complexity.",
+      "retrieval_receipt": "root_followups.json#1",
+      "original_question": null,
+      "attribution_note": "The historical evidence is an assistant-only retrieval fragment, not the original user prompt. All revised questions, derivations and examples below are new editorial development; no missing historical wording is invented."
+    }
+  }
+]

@@ -1,0 +1,1570 @@
+[
+  {
+    "id": "D04-F01",
+    "domain_id": "D04",
+    "title": "Universal constructions, quotients and equivalence",
+    "central_question": "Which maps descend through a quotient, and which reversible constructions preserve the whole mathematical problem?",
+    "synopsis": "The categorical thread becomes strongest when a named operation is replaced by a construction with a testable mapping property. A quotient first declares which distinctions are erased. A pushout identifies two copies of shared data. An adjunction converts one kind of mapping problem into another, while an equivalence supplies inverse functors and natural comparison maps. These statements organize mathematics across the archive because they separate an object from a chosen presentation and make compatibility part of the theorem. They also distinguish several levels of preservation: agreement of dimensions is weaker than an isomorphism, an isomorphism of individual objects is weaker than a natural equivalence, and an equivalence of categories must respect the specified morphisms.\n\nThe useful starting point is the category of linear dynamical systems. An object is a vector space with an endomorphism A; a morphism L satisfies LA=BL. This single equation guarantees L exp(tA)=exp(tB)L by the power series, so composition preserves dynamics rather than merely relabeling coordinates. The tensor–Hom correspondence then makes composition of structures explicit. Currying is available for arbitrary algebraic vector spaces, whereas a duality datum with coevaluation requires finite dimension. This distinction prevents an infinite formal basis sum from being treated as an algebraic tensor. Reconstruction has a similar demand: a finite group can be recovered from the natural automorphisms of the forgetful functor on all finite G-sets, using the regular G-set and its equivariant maps; one representation or one dimension table cannot carry the same information.",
+    "definitions": [
+      "For linear maps i:A→B and j:A→C, their pushout is P=(B⊕C)/R with R={(i(a),−j(a)):a∈A}. The structure maps send b and c to their corresponding quotient classes.",
+      "A categorical equivalence consists of functors F and G with natural isomorphisms GF≅Id and FG≅Id. An adjunction instead supplies natural bijections of Hom sets, with unit and counit satisfying the triangle identities.",
+      "In algebraic vector spaces, a duality datum ev:W⊗V→k and coev:k→V⊗W must reconstruct every vector through both triangle identities. Every algebraic tensor is a finite sum."
+    ],
+    "theorem": {
+      "statement": "The stated P is a pushout of i and j. Its dimension is dimB+dimC−rank(a↦(i(a),−j(a))). In particular the subtraction is dimA when at least one of i or j is injective. A vector space is dualizable under algebraic tensor product exactly when it is finite dimensional.",
+      "proof": "Given compatible maps u:B→V and v:C→V with ui=vj, the map (b,c)↦u(b)+v(c) kills every (i(a),−j(a)). It therefore descends uniquely to P because the quotient map is surjective. Conversely every map from P gives such a compatible pair by composition. Rank-nullity gives the dimension formula, including the correction needed when both legs have a common kernel. For finite-dimensional V choose a basis e_r and its dual basis; coev(1)=Σe_r⊗e^r and evaluation give v=Σe^r(v)e_r. Conversely, if coev(1)=Σ_{r=1}^n v_r⊗w_r, one triangle identity writes every v as Σv_r ev(w_r⊗v). Thus finitely many v_r span V. This proves the finite-dimensional necessity directly, rather than inferring duality from an informal adjunction symbol."
+    },
+    "worked_example": {
+      "setup": "Take A=Q, B=C=Q², i(a)=(a,0), j(a)=(0,a). Let u(b₁,b₂)=b₁+2b₂ and v(c₁,c₂)=3c₁+c₂.",
+      "calculation": "The relation is (a,0,0,−a), so P has dimension three. Coordinates (b₁+c₂,b₂,c₁) are invariant under this relation and identify P with Q³. The compatible functional descends to w(x,y,z)=x+2y+3z. For b=(2,1), c=(3,4), w(6,1,3)=17=u(b)+v(c). The equality is a certificate for this mapping problem, not just a matching dimension count.",
+      "meaning": "Universal properties are practical interfaces: later calculations can use the descended map without choosing representatives. Quotienting is information loss with a declared kernel, while equivalence preserves the specified category. Neither operation automatically supplies a metric, topology, probability model or computationally efficient algorithm."
+    },
+    "source_uids": [
+      "2024:Y24-05-010",
+      "2025:Y25-01-002",
+      "2025:Y25-02-013",
+      "2025:Y25-03-009",
+      "2025:Y25-04-022",
+      "2025:Y25-06-007",
+      "2025:Y25-10-006",
+      "2026:Y26-04-033",
+      "2026:Y26-07-024",
+      "2026:Y26-09-017",
+      "2025:Y25-06-008",
+      "2025:Y25-02-020"
+    ],
+    "anchor_uids": [
+      "2024:Y24-05-010",
+      "2025:Y25-02-013",
+      "2025:Y25-06-007",
+      "2025:Y25-10-006",
+      "2026:Y26-04-033",
+      "2026:Y26-07-024"
+    ],
+    "progression": [
+      {
+        "year": 2024,
+        "evidence_uids": [
+          "2024:Y24-05-010"
+        ],
+        "narrative": "Dated topic continuity is supported by: Intertwining maps define a category of dynamical systems. These records support the presence and refinement of the topic in this year; the present synthesis and proof do not establish historical priority, novelty or a recovered verbatim argument."
+      },
+      {
+        "year": 2025,
+        "evidence_uids": [
+          "2025:Y25-02-013",
+          "2025:Y25-06-007",
+          "2025:Y25-10-006"
+        ],
+        "narrative": "Dated topic continuity is supported by: A categorical equivalence has explicit units and counits; A fibre functor reconstructs a finite group only with its whole category; A pushout glues compatible maps by a universal property. These records support the presence and refinement of the topic in this year; the present synthesis and proof do not establish historical priority, novelty or a recovered verbatim argument."
+      },
+      {
+        "year": 2026,
+        "evidence_uids": [
+          "2026:Y26-04-033",
+          "2026:Y26-07-024"
+        ],
+        "narrative": "Dated topic continuity is supported by: A quotient has a universal factorization only after its equivalence relation is specified; Tensor–Hom adjunction separates currying from dualizability. These records support the presence and refinement of the topic in this year; the present synthesis and proof do not establish historical priority, novelty or a recovered verbatim argument."
+      }
+    ],
+    "connections": [
+      {
+        "target_domain": "D03",
+        "relation": "Representations and reconstruction",
+        "mathematical_bridge": "Intertwiners, induction–restriction and natural automorphisms of a fibre functor.",
+        "scope": "Requires the full declared category and its morphisms."
+      },
+      {
+        "target_domain": "D14",
+        "relation": "Semantic and computational quotients",
+        "mathematical_bridge": "A map descends exactly when it is constant on every specified equivalence class.",
+        "scope": "Existence does not imply an efficient decision procedure."
+      },
+      {
+        "target_domain": "D06",
+        "relation": "Quotients and geometry",
+        "mathematical_bridge": "A symplectic quotient adds a moment-map level and a regularity condition to a categorical quotient.",
+        "scope": "Metric and smooth structure require additional data."
+      }
+    ],
+    "capabilities": [
+      "C01",
+      "C03",
+      "C04",
+      "C15"
+    ],
+    "interactive_contract": {
+      "lab_ids": [],
+      "inputs": "Proof recipe: finite i,j,u,v matrices with ui=vj; objects and morphisms for any equivalence claim.",
+      "outputs": "Written construction of the pushout, descended map and finite duality certificate. No pushout or categorical-equivalence editor is implemented.",
+      "validation": "Standard-library exact checks in domains/geometry/verify.py. L05 and L09 are finite worked models; an unsupported arbitrary-input solver is not claimed.",
+      "status": "Proof-backed recipe; no dedicated interactive lab."
+    },
+    "limits": "The finite vector-space pushout is not a general homotopy pushout. A quotient metric may be only a pseudometric unless zero-distance classes are further identified. Higher adjunctions need their own coherence data; an equality of dimensions or a formal inverse symbol cannot replace units, counits and naturality.",
+    "open_questions": [
+      "For the actual proposed quotient, list all generating relations and determine whether their closure commutes with passage to each local carrier.",
+      "For a proposed equivalence, construct the two comparison natural transformations and verify their components and triangle identities on generators."
+    ],
+    "references": [
+      {
+        "label": "Stacks Project Galois categories and fundamental groups",
+        "url": "https://stacks.math.columbia.edu/tag/0BQ6"
+      },
+      {
+        "label": "Stacks Project schemes étale over a point",
+        "url": "https://stacks.math.columbia.edu/tag/04JI"
+      },
+      {
+        "label": "Stacks Project pushouts of modules",
+        "url": "https://stacks.math.columbia.edu/tag/0D12"
+      },
+      {
+        "label": "Milne, Group Theory",
+        "url": "https://www.jmilne.org/math/CourseNotes/GT.pdf"
+      }
+    ],
+    "substantive_word_count": 655
+  },
+  {
+    "id": "D04-F02",
+    "domain_id": "D04",
+    "title": "Chain complexes, exactness and certificates of equivalence",
+    "central_question": "How can a reduction preserve homology, and what finite identities certify that nothing essential was lost?",
+    "synopsis": "A chain complex records permitted boundaries and the relations among them. Its defining equation d²=0 is the first useful certificate: every boundary is a cycle, so a quotient of cycles by boundaries exists. The archive repeatedly approaches more elaborate constructions through this same requirement. Total complexes need Koszul signs; mapping cones need a genuine chain map; a blocked representation needs maps and a chain homotopy before it can inherit the original cohomology. These are constructive conditions. They provide explicit witnesses that a smaller calculation preserves the invariant instead of only producing similar output on an example.\n\nThe key distinction is between changing a presentation and changing an object. Adding a contractible pair increases the number of coordinates while preserving homology. Consequently total chain dimension cannot define an invariant of the derived object. Conversely a cochain map can annihilate a nonzero class, so the fact that an operation is linear or functorial does not prove that it preserves obstruction spaces. The finite Hodge decomposition gives a third view: with declared positive inner products, harmonic vectors represent homology, but that representative depends on the metric while the quotient space is invariant under chain equivalence. The supertrace index then becomes an exact cancellation statement, because all nonzero differential modes occur in paired even and odd degrees. No asymptotic heat approximation is required in the finite model.",
+    "definitions": [
+      "A cochain complex has d:Cⁿ→Cⁿ⁺¹ with d²=0 and Hⁿ=ker dⁿ/im dⁿ⁻¹. A cochain map f satisfies d_D f=f d_C.",
+      "A contraction onto H consists of maps i:H→C, p:C→H and degree −1 h with pi=Id and Id−ip=dh+hd. This convention fixes the sign of h.",
+      "For commuting raw horizontal and vertical differentials on C^{p,q}, the total differential is δ+(−1)^p∂. Cone(f)ⁿ=Dⁿ⊕Cⁿ⁺¹ has differential (u,v)↦(d_Du+fv,−d_Cv)."
+    ],
+    "theorem": {
+      "statement": "A contraction makes i and p inverse on cohomology. Signed totalization squares to zero, and the stated cone differential squares to zero exactly when f is a cochain map. In particular Cone(Id) is contractible.",
+      "proof": "For a cocycle c, the contraction identity gives c−ip(c)=d h(c), hence the classes of c and ip(c) agree. Since pi=Id, the induced maps are inverse. In a bicomplex the two mixed compositions have coefficients (−1)^p and (−1)^{p+1}; they cancel because the raw differentials commute. The remaining squares are zero. Applying the cone differential twice yields ((d_D f−f d_C)v,0), displaying the precise defect. When f=Id, define h(u,v)=(0,u); then dh(u,v)+hd(u,v)=(u,v). This is an explicit contracting homotopy. In finite inner-product complexes, orthogonality gives Cⁿ=im dⁿ⁻¹⊕ker Δ_n⊕im(dⁿ)*, because the orthogonal complement of the two images is exactly the simultaneous kernel of d and d*. Every cohomology class has one harmonic representative, although changing the metric changes that vector."
+    },
+    "worked_example": {
+      "setup": "Tensor two complexes Q --Id→ Q concentrated in degrees zero and one, using degree-one coordinates ordered horizontal, vertical.",
+      "calculation": "The total dimensions are (1,2,1). The exact matrices are d⁰=(1,1)ᵀ and d¹=(−1,1). Their product is zero, both maps have rank one, and the Betti vector is (0,0,0). Replacing the second matrix with the unsigned (1,1) produces d¹d⁰=2, so there is no complex over Q. Separately C⁻¹=Qe, C⁰=Qu⊕Qv with de=u contracts onto Qv: set p(u)=0, p(v)=v, i(v)=v, h(u)=e, h(v)=0. Both sides of Id−ip=dh+hd send u to u and v to zero. If de=(1+ε)u, the same certificate survives with h(u)=e/(1+ε) exactly when ε≠−1.",
+      "meaning": "The failure at ε=−1 is a real change of homology: the formerly contractible pair becomes two surviving classes. This makes perturbation a testable algebraic question and identifies the parameter where the reduction stops being valid."
+    },
+    "source_uids": [
+      "2023:M095",
+      "2024:Y24-10-022",
+      "2025:Y25-03-021",
+      "2025:Y25-03-034",
+      "2025:Y25-04-011",
+      "2025:Y25-08-009",
+      "2025:Y25-10-004",
+      "2025:Y25-10-011",
+      "2025:Y25-11-022",
+      "2026:Y26-05-002",
+      "2026:Y26-07-021",
+      "2026:Y26-07-023",
+      "2026:Y26-04-008"
+    ],
+    "anchor_uids": [
+      "2023:M095",
+      "2024:Y24-10-022",
+      "2025:Y25-03-021",
+      "2025:Y25-10-004",
+      "2026:Y26-05-002",
+      "2026:Y26-07-023"
+    ],
+    "progression": [
+      {
+        "year": 2023,
+        "evidence_uids": [
+          "2023:M095"
+        ],
+        "narrative": "Dated topic continuity is supported by: An exact free resolution and a separate geometric blowup. These records support the presence and refinement of the topic in this year; the present synthesis and proof do not establish historical priority, novelty or a recovered verbatim argument."
+      },
+      {
+        "year": 2024,
+        "evidence_uids": [
+          "2024:Y24-10-022"
+        ],
+        "narrative": "Dated topic continuity is supported by: A categorical decomposition needs a chain complex and an actual invariant. These records support the presence and refinement of the topic in this year; the present synthesis and proof do not establish historical priority, novelty or a recovered verbatim argument."
+      },
+      {
+        "year": 2025,
+        "evidence_uids": [
+          "2025:Y25-03-021",
+          "2025:Y25-10-004"
+        ],
+        "narrative": "Dated topic continuity is supported by: Cohomology-preserving blocking requires a chain homotopy certificate; The mapping cone turns an echo equivalence into an acyclicity test. These records support the presence and refinement of the topic in this year; the present synthesis and proof do not establish historical priority, novelty or a recovered verbatim argument."
+      },
+      {
+        "year": 2026,
+        "evidence_uids": [
+          "2026:Y26-05-002",
+          "2026:Y26-07-023"
+        ],
+        "narrative": "Dated topic continuity is supported by: A chain contraction proves homology equivalence and survives a controlled elementary perturbation; Total-complex signs and mapping cones are structural data. These records support the presence and refinement of the topic in this year; the present synthesis and proof do not establish historical priority, novelty or a recovered verbatim argument."
+      }
+    ],
+    "connections": [
+      {
+        "target_domain": "D05",
+        "relation": "Topological computation",
+        "mathematical_bridge": "Simplicial and cellular boundary matrices are complexes to which the same contraction and Hodge certificates apply.",
+        "scope": "Integral torsion additionally needs integer normal forms."
+      },
+      {
+        "target_domain": "D15",
+        "relation": "Reduction and observability",
+        "mathematical_bridge": "A declared reduction can be tested by commuting maps and a homotopy certificate.",
+        "scope": "No equivalence follows merely from similar trajectories."
+      },
+      {
+        "target_domain": "D03",
+        "relation": "Resolutions and syzygies",
+        "mathematical_bridge": "A free resolution is an exact complex whose differentials encode relations among generators.",
+        "scope": "Exactness and minimality are separate properties."
+      }
+    ],
+    "capabilities": [
+      "C01",
+      "C03",
+      "C05",
+      "C10",
+      "C15"
+    ],
+    "interactive_contract": {
+      "lab_ids": [
+        "L09"
+      ],
+      "inputs": "Implemented: select triangle, square or K3,3 and optionally fill the triangle. Recipe only: arbitrary complexes, chain maps and homotopies.",
+      "outputs": "Implemented: rational boundary ranks, Betti numbers and boundary-square check. Cones, signed bicomplex totalization and contraction parameters are exact written/verifier models, not UI operations.",
+      "validation": "Standard-library exact checks in domains/geometry/verify.py. L05 and L09 are finite worked models; an unsupported arbitrary-input solver is not claimed.",
+      "status": "Partial interactive support through L09; general complex operations remain recipes."
+    },
+    "limits": "The finite Hodge statement assumes positive definite inner products. Rational ranks do not retain integer torsion. A general perturbation lemma needs convergence or nilpotence conditions; the one-pair rational rescaling above proves only its own elementary model. Source conventions using ip−Id change the homotopy sign.",
+    "open_questions": [
+      "Construct explicit comparison maps for the proposed blocked complex and solve the chain-homotopy equations over its intended coefficient ring.",
+      "Determine the exact parameter set on which a proposed perturbation retains a bounded contraction, including the condition number of the chosen homotopy."
+    ],
+    "references": [
+      {
+        "label": "Singular official tutorial, free resolutions and Schreyer methods",
+        "url": "https://www.singular.uni-kl.de/ftp/pub/Math/Singular/doc/tutor.pdf"
+      },
+      {
+        "label": "Stacks Project cones of complexes",
+        "url": "https://stacks.math.columbia.edu/tag/0149"
+      },
+      {
+        "label": "The Stacks Project, complexes and homology",
+        "url": "https://stacks.math.columbia.edu/tag/010V"
+      },
+      {
+        "label": "Marius Crainic, On the perturbation lemma and deformations",
+        "url": "https://arxiv.org/abs/math/0403266"
+      }
+    ],
+    "substantive_word_count": 651
+  },
+  {
+    "id": "D04-F03",
+    "domain_id": "D04",
+    "title": "Derived products, extension classes and deformation obstructions",
+    "central_question": "What information survives in Tor, Ext and a tangent complex that an ordinary product or dimension count discards?",
+    "synopsis": "Derived constructions retain the effect of relations that ordinary algebra has suppressed. Tensoring a resolution and applying Hom to it produce Tor and Ext; these groups measure failures of exactness rather than furnishing decorative refinements of a product. A particular extension belongs to an Ext group, so the dimension of the ambient group cannot determine whether that extension splits. Likewise a nonzero obstruction space is a location where an obstruction may live, not a proof that every first-order motion fails. The actual class or nonlinear obstruction map must be computed.\n\nThis principle unifies three distinct lines of the source corpus. Dual numbers provide an exact module model with nonzero derived tensor groups in all positive degrees. A singular hypersurface supplies an explicit cotangent complex and a failed second-order lift. A differential graded Lie algebra organizes nonlinear compatibility through the Maurer–Cartan equation. These constructions share a mechanism: solve at first order, identify the next defect as a cocycle, and ask whether a correcting term makes it a boundary. Their coefficient rings and degree conventions remain different. A deformation of a scheme, an extension of modules and a flatness problem for an algebra must therefore be connected by an actual functor or comparison theorem before their obstruction groups are identified. The archive’s elliptic self-extension example is especially useful as a boundary: stable objects can have nontrivial self-extensions, whereas an honestly semisimple abelian category has none in positive Ext degree.",
+    "definitions": [
+      "For R=k[ε]/(ε²), let k=R/(ε). A free resolution of k has all positive differentials equal to multiplication by ε.",
+      "An element of Ext¹_R(C,A) classifies an extension 0→A→B→C→0 up to the stated equivalence; the zero class is the split extension.",
+      "For A=k[x]/(x²) in characteristic zero, the cotangent complex is [A --2x→ A] in degrees −1 and zero. Its derived dual at x=0 is the tangent complex.",
+      "In a differential graded Lie algebra, dα+[α,α]/2=0. Writing α=ta+t²b makes the first two equations da=0 and db=−[a,a]/2."
+    ],
+    "theorem": {
+      "statement": "For dual numbers, Tor_n^R(k,k)≅k and Extⁿ_R(k,k)≅k for every n≥0. The extension 0→k→R→k→0 is nonsplit. At the double point x²=0, a first-order displacement x=at lifts modulo t³ only if a²=0.",
+      "proof": "The resolution is exact because the kernel and image of multiplication by ε are both εR. Tensoring it with k makes every differential zero, as does applying Hom_R(−,k), proving the Tor and Ext assertions. An R-linear section of R→k would send 1 to a vector v with εv=0, hence v∈εR, whose quotient is zero; it cannot map back to 1. The direct-sum extension with middle term k⊕k does split although its endpoint Ext group is identical. For the singularity, differentiating x² gives 2x dx. At x=0 this map becomes zero, so the tangent and first obstruction spaces are each k. Direct substitution gives (at+bt²)²=a²t² modulo t³. This computes the actual obstruction map a↦a²; over a field it kills only a=0. In a differential graded Lie algebra, the derivation and Jacobi identities make [a,a]/2 closed when da=0. The next equation is solvable precisely when this cocycle class vanishes, which is a class-level criterion."
+    },
+    "worked_example": {
+      "setup": "Use a finite deformation model L¹=Qa⊕Qb, L²=Qc, with da=0, db=c, [a,a]=2c and all other relevant brackets zero.",
+      "calculation": "The first-order term ta is closed. Its quadratic defect is t²c, a nonzero vector that is nevertheless the boundary d(t²b). The correction α=ta−t²b satisfies dα+[α,α]/2=−t²c+t²c=0 exactly. Removing b from the complex makes c a nonzero H² class and prevents the same correction. Thus the raw size of the residual does not decide whether the deformation is obstructed.",
+      "meaning": "The constructive output is a lift or a nonzero quotient class. It specifies exactly which information the derived layer adds, and distinguishes algebraic failure from numerical error in a candidate representative."
+    },
+    "source_uids": [
+      "2024:Y24-09-010",
+      "2025:Y25-01-015",
+      "2025:Y25-05-011",
+      "2025:Y25-07-013",
+      "2025:Y25-10-015",
+      "2025:Y25-10-017",
+      "2026:Y26-02-007",
+      "2026:Y26-05-029",
+      "2026:Y26-07-004",
+      "2026:Y26-07-003"
+    ],
+    "anchor_uids": [
+      "2025:Y25-01-015",
+      "2025:Y25-05-011",
+      "2025:Y25-07-013",
+      "2025:Y25-10-017",
+      "2026:Y26-02-007",
+      "2026:Y26-05-029",
+      "2026:Y26-07-004"
+    ],
+    "progression": [
+      {
+        "year": 2024,
+        "evidence_uids": [
+          "2024:Y24-09-010"
+        ],
+        "narrative": "Dated topic continuity is supported by: Hochschild homology and K-theory detect different data. These records support the presence and refinement of the topic in this year; the present synthesis and proof do not establish historical priority, novelty or a recovered verbatim argument."
+      },
+      {
+        "year": 2025,
+        "evidence_uids": [
+          "2025:Y25-01-015",
+          "2025:Y25-05-011",
+          "2025:Y25-07-013",
+          "2025:Y25-10-017"
+        ],
+        "narrative": "Dated topic continuity is supported by: The derived tangent complex comes from the cotangent complex; Derived tensor products record information an ordinary product erases; The dimension of Ext is not the splitting class of one extension. These records support the presence and refinement of the topic in this year; the present synthesis and proof do not establish historical priority, novelty or a recovered verbatim argument."
+      },
+      {
+        "year": 2026,
+        "evidence_uids": [
+          "2026:Y26-02-007",
+          "2026:Y26-05-029",
+          "2026:Y26-07-004"
+        ],
+        "narrative": "Dated topic continuity is supported by: An elliptic curve has nontrivial self-extensions even for a stable line bundle; A second-order Maurer–Cartan obstruction is a cohomology class, not a numerical residual; Tensoring by a dual-number factor gives Betti numbers(1,4,5,2). These records support the presence and refinement of the topic in this year; the present synthesis and proof do not establish historical priority, novelty or a recovered verbatim argument."
+      }
+    ],
+    "connections": [
+      {
+        "target_domain": "D02",
+        "relation": "Singularities and moduli",
+        "mathematical_bridge": "The cotangent complex and actual lifting equations separate tangent directions from obstructions.",
+        "scope": "The hypersurface calculation assumes a regular-sequence presentation."
+      },
+      {
+        "target_domain": "D03",
+        "relation": "Modules and resolutions",
+        "mathematical_bridge": "Tor and Ext are computed from exact free resolutions; Betti and socle data constrain Gorenstein claims.",
+        "scope": "A symmetric Hilbert function alone is insufficient."
+      },
+      {
+        "target_domain": "D16",
+        "relation": "Deformation and quantization",
+        "mathematical_bridge": "Maurer–Cartan-type equations package higher compatibility and obstruction classes.",
+        "scope": "A specific controlling complex and bracket are required."
+      }
+    ],
+    "capabilities": [
+      "C01",
+      "C03",
+      "C11",
+      "C15"
+    ],
+    "interactive_contract": {
+      "lab_ids": [],
+      "inputs": "Proof recipe: dual-number modules, a declared hypersurface or a specified finite differential graded Lie algebra.",
+      "outputs": "Written Tor/Ext calculations, obstruction classes and explicit lift or failed-lift witnesses. No derived-functor or deformation solver is implemented.",
+      "validation": "Standard-library exact checks in domains/geometry/verify.py. L05 and L09 are finite worked models; an unsupported arbitrary-input solver is not claimed.",
+      "status": "Proof-backed recipe; no dedicated interactive lab."
+    },
+    "limits": "The finite Maurer–Cartan model is a complete example, not the missing controlling algebra of a historical proposal. A potential obstruction space can be nonzero while the actual class vanishes. Derived equivalence, formal smoothness and physical stability are distinct claims.",
+    "open_questions": [
+      "For a specified singularity, compute the nonlinear obstruction map through third order and determine which first-order directions lift.",
+      "For a proposed obstruction energy, show that its zero test factors through the relevant cohomology class rather than depending on a chosen cocycle representative."
+    ],
+    "references": [
+      {
+        "label": "Stacks Project The cotangent complex",
+        "url": "https://stacks.math.columbia.edu/tag/08P5"
+      },
+      {
+        "label": "Stacks Project homological algebra",
+        "url": "https://stacks.math.columbia.edu/tag/010V"
+      },
+      {
+        "label": "de Jong commutative algebra course and Tor constructions",
+        "url": "https://www.math.columbia.edu/~dejong/courses/commutative-algebra-fall-2021.html"
+      },
+      {
+        "label": "Etingof Gelaki Nikshych Ostrik Tensor Categories",
+        "url": "https://doi.org/10.1090/surv/205"
+      },
+      {
+        "label": "Marius Crainic, On the perturbation lemma and deformations",
+        "url": "https://arxiv.org/abs/math/0403266"
+      }
+    ],
+    "substantive_word_count": 685
+  },
+  {
+    "id": "D04-F04",
+    "domain_id": "D04",
+    "title": "Filtrations, spectral sequences and information at infinity",
+    "central_question": "How much of a total object can be recovered from graded pages, truncations and inverse systems?",
+    "synopsis": "A filtration is an organized sequence of partial views. Passing to the associated graded records the layers but suppresses how they interact. A spectral sequence progressively restores some of that interaction through differentials. Even after every differential is determined, reconstructing an integral group or ring can require extension and multiplicative data. The source sequence develops this distinction through fibrations, filtered complexes, cohomological shifts and inverse limits. Their common question is not whether the displayed table looks plausible, but which connecting maps remain unknown.\n\nThe Hopf fibration and the product S²×S¹ have the same initial Serre page but different transgressions. The finite model below makes the same phenomenon an exact two-coordinate computation. It also exposes a second loss: Z/4 and Z/2⊕Z/2 have the same two graded layers, although only the former has an element of order four. A filtration therefore supports a partial reconstruction interface, with each unknown differential and extension listed as an unresolved input. Perverse shifts and t-structures add a related bookkeeping lesson. The declaration of a heart or a support/cosupport condition changes which cohomological degrees count as an object; it is not recoverable from an unshifted label. Finally an infinite inverse system has genuinely limiting information. The doubling tower of integers has vanishing ordinary inverse limit but a nonzero derived limit; no finite truncation alone certifies that infinite result. These examples justify a hierarchy of outputs: graded dimensions, actual graded groups, filtered groups, rings, and geometric objects.",
+    "definitions": [
+      "Use an increasing filtration F_pC preserved by the differential. A component lowering filtration by r may first appear as the corresponding page differential after earlier components vanish.",
+      "An associated graded group is gr_F A=⊕F_pA/F_{p−1}A. It does not include a chosen splitting of the filtration.",
+      "For a countable inverse system A₀←A₁←⋯, define Δ:∏A_n→∏A_n by Δ(a)_n=a_n−f_n(a_{n+1}); then lim A=kerΔ and lim¹A=cokerΔ in this setting."
+    ],
+    "theorem": {
+      "statement": "There exist filtered complexes with identical associated graded differential but different total cohomology. There exist nonisomorphic integral groups with the same associated graded. For the doubling tower Z ←×2 Z ←×2 ⋯, lim=0 and lim¹≅Z₂/Z.",
+      "proof": "Let C⁰=Qv and C¹=Qw with v in filtration one and w in filtration zero. Both d=0 and dv=w induce zero on each same-filtration quotient, so their initial graded complexes agree. For dv=w the next filtration-dropping differential is an isomorphism and the total is acyclic; for d=0 both classes survive. For the extension example filter Z/4 by 0⊂2Z/4⊂Z/4 and filter (Z/2)² by one coordinate; each graded layer is Z/2, but their exponents differ. For the inverse limit, a compatible sequence satisfies a₀=2ⁿa_n for all n, hence a₀=0 and all a_n=0. Define S(b)=Σ2ⁿb_n in Z₂, convergent in the 2-adic topology. If b=Δ(a), partial sums telescope to a₀−2^{N+1}a_{N+1}, so S(b)=a₀∈Z. Conversely if S(b)=m∈Z, set a_n=(m−Σ_{j<n}2ʲb_j)/2ⁿ. The numerator is divisible by 2ⁿ, so a_n is an integer and a_n−2a_{n+1}=b_n. Binary digits make S onto Z₂. Thus S induces exactly cokerΔ≅Z₂/Z."
+    },
+    "worked_example": {
+      "setup": "Compare the two filtered two-term complexes and the two order-four groups just described.",
+      "calculation": "For dv=w the ranks are one and the Betti vector is (0,0); for d=0 they are zero and the Betti vector is (1,1). Yet each associated graded has one generator in its listed bidegree and zero initial differential. In the group comparison, enumerate element orders: Z/4 has orders (1,2,4,4), whereas (Z/2)² has (1,2,2,2). The order-four test detects an extension invisible to the common graded ranks.",
+      "meaning": "A page is useful evidence with a declared reconstruction stage. It becomes a complete answer only after the required differentials, convergence, extensions and products have been supplied."
+    },
+    "source_uids": [
+      "2024:Y24-04-013",
+      "2024:Y24-07-012",
+      "2024:Y24-10-025",
+      "2025:Y25-01-016",
+      "2025:Y25-03-011",
+      "2026:Y26-02-008",
+      "2026:Y26-02-015",
+      "2026:Y26-05-032"
+    ],
+    "anchor_uids": [
+      "2024:Y24-04-013",
+      "2024:Y24-10-025",
+      "2025:Y25-01-016",
+      "2025:Y25-03-011",
+      "2026:Y26-02-015",
+      "2026:Y26-05-032"
+    ],
+    "progression": [
+      {
+        "year": 2024,
+        "evidence_uids": [
+          "2024:Y24-04-013",
+          "2024:Y24-10-025"
+        ],
+        "narrative": "Dated topic continuity is supported by: An E² page is not already the homology of the total space; A cohomology comparison must survive a coefficient check. These records support the presence and refinement of the topic in this year; the present synthesis and proof do not establish historical priority, novelty or a recovered verbatim argument."
+      },
+      {
+        "year": 2025,
+        "evidence_uids": [
+          "2025:Y25-01-016",
+          "2025:Y25-03-011"
+        ],
+        "narrative": "Dated topic continuity is supported by: Perverse degree is fixed by support and cosupport; Coherence is an identity of operations, and a spectral page still needs a differential. These records support the presence and refinement of the topic in this year; the present synthesis and proof do not establish historical priority, novelty or a recovered verbatim argument."
+      },
+      {
+        "year": 2026,
+        "evidence_uids": [
+          "2026:Y26-02-015",
+          "2026:Y26-05-032"
+        ],
+        "narrative": "Dated topic continuity is supported by: A derived inverse-limit obstruction can be computed without a geometric analogy; A spectral-sequence page does not determine an integral ring or its extension data. These records support the presence and refinement of the topic in this year; the present synthesis and proof do not establish historical priority, novelty or a recovered verbatim argument."
+      }
+    ],
+    "connections": [
+      {
+        "target_domain": "D01",
+        "relation": "Integral and p-adic information",
+        "mathematical_bridge": "Derived inverse limits and integer extension classes retain arithmetic lost under rank computations.",
+        "scope": "A countable tower and its actual bonding maps are essential."
+      },
+      {
+        "target_domain": "D05",
+        "relation": "Fibrations and persistent layers",
+        "mathematical_bridge": "Filtrations organize homological information, while differential and extension data determine the total.",
+        "scope": "A persistence module is not itself the same invariant as a spectral sequence."
+      },
+      {
+        "target_domain": "D02",
+        "relation": "Derived and perverse structures",
+        "mathematical_bridge": "Support, cosupport, shifts and coefficient base change determine the valid comparison.",
+        "scope": "No unspecified motivic or perverse object is reconstructed from notation alone."
+      }
+    ],
+    "capabilities": [
+      "C01",
+      "C03",
+      "C04",
+      "C15"
+    ],
+    "interactive_contract": {
+      "lab_ids": [],
+      "inputs": "Proof recipe: filtered complexes, page differentials, integral extensions and actual inverse-system bonding maps.",
+      "outputs": "Written comparison of graded information, total cohomology, extension classes and the infinite doubling-tower proof. No spectral-sequence or inverse-limit UI is implemented.",
+      "validation": "Standard-library exact checks in domains/geometry/verify.py. L05 and L09 are finite worked models; an unsupported arbitrary-input solver is not claimed.",
+      "status": "Proof-backed recipe; no dedicated interactive lab."
+    },
+    "limits": "The proof of lim¹ is an infinite algebraic argument, while the executable tests check only finite supporting identities. A finite experiment cannot verify convergence of an arbitrary tower. Multiplicative structures require their own signs, coefficient ring and extension analysis.",
+    "open_questions": [
+      "For a specified filtered complex, compute the first nonzero differential and prove the relevant convergence statement.",
+      "Given a proposed integral cohomology ring, determine the additive extensions and cup products rather than reporting only graded ranks."
+    ],
+    "references": [
+      {
+        "label": "Allen Hatcher Spectral Sequences in Algebraic Topology",
+        "url": "https://pi.math.cornell.edu/~hatcher/SSAT/SSATpage.html"
+      },
+      {
+        "label": "Mark Goresky Lecture notes on sheaves and perverse sheaves",
+        "url": "https://arxiv.org/abs/2105.12045"
+      },
+      {
+        "label": "The Stacks Project, Inverse Systems",
+        "url": "https://stacks.math.columbia.edu/tag/02MY"
+      },
+      {
+        "label": "Allen Hatcher, Algebraic Topology, Chapter 3 and loopspace material",
+        "url": "https://pi.math.cornell.edu/~hatcher/AT/ATpage.html"
+      }
+    ],
+    "substantive_word_count": 651
+  },
+  {
+    "id": "D05-F01",
+    "domain_id": "D05",
+    "title": "Spaces, chains, torsion and refined homology",
+    "central_question": "Which features belong to the space, which to its cell structure, and which survive a change of coefficients?",
+    "synopsis": "The topological material repeatedly becomes more informative after the underlying space is specified. A triangle can mean three vertices, its three-edge boundary, or a filled two-simplex. These objects have different chain groups and therefore different homology. A graph drawn on a torus is still a one-dimensional complex until its faces are attached; its cycle rank need not equal the surface’s first Betti number. Polyhedral spheres have the same homology while retaining different symmetry groups. These examples teach how to ask a sharper classification question: first choose the equivalence relation, then ask which invariant can distinguish its classes.\n\nInteger coefficients add a second layer. Rational homology records free rank and erases torsion, so it cannot distinguish every space or quotient. A Smith normal form supplies an exact arithmetic certificate for the torsion, provided row and column operations are unimodular and the relevant quotient is actually the homology group. Reduced homology removes the connected-component contribution in degree zero; intersection homology instead restricts which chains may meet singular strata. The two operations address different questions. The cone on a torus is contractible as an ordinary space, yet lower-middle allowable chains retain two one-dimensional classes because their potential cone fillings meet the forbidden apex. A refinement is useful precisely because its allowed chains and intended invariance are explicit, rather than because the word cohomology was attached to a construction.",
+    "definitions": [
+      "For an oriented finite simplicial complex, ∂[v₀,…,v_k]=Σ(−1)^j[v₀,…,v̂_j,…,v_k]. Its cancellation identity is ∂²=0.",
+      "A finite connected graph with V vertices and E edges has free H₁ of rank E−V+1. Attaching faces adds ∂₂ and can kill cycles.",
+      "For an integer matrix M with Smith form diag(d₁,…,d_r,0), the cokernel is ⊕Z/d_i⊕Z^{m−r}; units contribute trivial factors.",
+      "Intersection homology fixes a stratification and a perversity; allowable chain dimensions at a singular stratum determine which fillings count."
+    ],
+    "theorem": {
+      "statement": "The triangle boundary has Betti vector (1,1), while the filled triangle has (1,0,0). A cellular model of RP² with one cell in dimensions zero, one and two has ∂₁=0 and ∂₂=2, giving H₁(RP²;Z)=Z/2 and H₂(RP²;Z)=0.",
+      "proof": "For the triangle use edges 01,12,02 and boundary columns (−1,1,0), (0,−1,1), (−1,0,1). The matrix has rank two and its kernel is generated by (1,1,−1). With no face this is a nonzero H₁ class. Adding the oriented face 012 gives precisely that vector as ∂₂, so the quotient is zero. In the projective plane, the two-cell attaches to the one-skeleton circle by a degree-two map, hence its cellular boundary is multiplication by two. Its kernel on Z is zero and its cokernel is Z/2. Tensoring the cellular complex with Q makes multiplication by two invertible and kills H₁. Tensoring with F₂ makes that differential zero and produces classes in degrees one and two. This change illustrates why coefficients belong in the question. For the cone on T², allowable one-cycles and their bounding two-chains cannot reach a codimension-three apex at lower-middle perversity. They therefore see the punctured cone, which retracts onto T²; the two degree-one classes survive. A three-chain may reach the apex and fills the link’s two-cycle."
+    },
+    "worked_example": {
+      "setup": "Compare a triangle boundary, a filled triangle and the integral cellular projective-plane model.",
+      "calculation": "Exact rational matrix ranks yield (β₀,β₁,β₂)=(1,1,0) and (1,0,0) for the two triangle models. In the projective-plane model the Smith entry is 2, so integral first homology has a generator a with 2a=0. The rational Betti vector is (1,0,0), but the mod-two Betti vector is (1,1,1). Euler characteristics remain consistent: 1−1+1=1 for the projective-plane cell counts and for its mod-two Betti numbers.",
+      "meaning": "A full answer records space, boundary convention, coefficient ring and the invariant’s scope. Equal Betti numbers are useful compression, not a complete geometric classification."
+    },
+    "source_uids": [
+      "2023:M043",
+      "2024:Y24-03-025",
+      "2024:Y24-06-014",
+      "2024:Y24-06-018",
+      "2024:Y24-07-013",
+      "2024:Y24-09-007",
+      "2024:Y24-12-023",
+      "2025:Y25-01-012",
+      "2025:Y25-01-014",
+      "2025:Y25-03-030",
+      "2025:Y25-04-010",
+      "2025:Y25-07-030",
+      "2026:Y26-07-021",
+      "2026:Y26-05-025"
+    ],
+    "anchor_uids": [
+      "2024:Y24-06-014",
+      "2024:Y24-06-018",
+      "2024:Y24-07-013",
+      "2024:Y24-12-023",
+      "2025:Y25-01-014",
+      "2026:Y26-07-021"
+    ],
+    "progression": [
+      {
+        "year": 2023,
+        "evidence_uids": [
+          "2023:M043"
+        ],
+        "narrative": "Dated topic continuity is supported by: A Moore spectrum as a precise chromatic example. These records support the presence and refinement of the topic in this year; the present synthesis and proof do not establish historical priority, novelty or a recovered verbatim argument."
+      },
+      {
+        "year": 2024,
+        "evidence_uids": [
+          "2024:Y24-06-014",
+          "2024:Y24-06-018",
+          "2024:Y24-07-013",
+          "2024:Y24-12-023"
+        ],
+        "narrative": "Dated topic continuity is supported by: Fundamental groups distinguish boundaries, fillings and quotients; A toroidal toy Tonnetz separates graph cycles from surface homology; Reduced homology and intersection cohomology remove different phenomena. These records support the presence and refinement of the topic in this year; the present synthesis and proof do not establish historical priority, novelty or a recovered verbatim argument."
+      },
+      {
+        "year": 2025,
+        "evidence_uids": [
+          "2025:Y25-01-014"
+        ],
+        "narrative": "Dated topic continuity is supported by: Intersection homology retains cycles that an ordinary cone contracts. These records support the presence and refinement of the topic in this year; the present synthesis and proof do not establish historical priority, novelty or a recovered verbatim argument."
+      },
+      {
+        "year": 2026,
+        "evidence_uids": [
+          "2026:Y26-07-021"
+        ],
+        "narrative": "Dated topic continuity is supported by: Integral homology retains torsion that rational ranks erase. These records support the presence and refinement of the topic in this year; the present synthesis and proof do not establish historical priority, novelty or a recovered verbatim argument."
+      }
+    ],
+    "connections": [
+      {
+        "target_domain": "D04",
+        "relation": "Algebraic certificates",
+        "mathematical_bridge": "Boundary matrices, exactness and chain homotopies give finite computations of invariants.",
+        "scope": "Homotopy groups require additional information beyond homology."
+      },
+      {
+        "target_domain": "D13",
+        "relation": "Graphs and cell complexes",
+        "mathematical_bridge": "Cycle rank E−V+C changes when two-cells are attached.",
+        "scope": "A drawing or decision reduction need not induce homology injections."
+      },
+      {
+        "target_domain": "D01",
+        "relation": "Torsion and arithmetic",
+        "mathematical_bridge": "Smith normal forms retain the finite abelian groups erased by rational rank.",
+        "scope": "The matrix must represent the actual integer quotient."
+      }
+    ],
+    "capabilities": [
+      "C01",
+      "C03",
+      "C04",
+      "C13"
+    ],
+    "interactive_contract": {
+      "lab_ids": [
+        "L09"
+      ],
+      "inputs": "Implemented: triangle, square or K3,3; optional triangle face.",
+      "outputs": "Implemented: exact rational boundary ranks, Betti numbers and boundary-square check. Integral Smith forms, RP2 torsion and intersection homology are written/verifier models, not UI operations.",
+      "validation": "Standard-library exact checks in domains/geometry/verify.py. L05 and L09 are finite worked models; an unsupported arbitrary-input solver is not claimed.",
+      "status": "Implemented finite rational-homology model; broader invariants remain recipes."
+    },
+    "limits": "The RP² calculation is cellular; a general integer homology computation must restrict ∂₂ to an integral basis of ker∂₁, rather than take coker∂₂ in the wrong ambient group. The intersection-homology cone formula depends on perversity and stratification. No complete homotopy classification is asserted.",
+    "open_questions": [
+      "For the proposed geometric construction, specify every face attachment and compute the integer homology with unimodular certificates.",
+      "Determine which spaces with identical Betti numbers in the source examples are distinguished by fundamental group, cup product, torsion or group action."
+    ],
+    "references": [
+      {
+        "label": "Allen Hatcher Algebraic Topology, fundamental groups",
+        "url": "https://pi.math.cornell.edu/~hatcher/AT/ATchapters.html"
+      },
+      {
+        "label": "Goresky and MacPherson Morse theory and intersection homology theory",
+        "url": "https://www.math.ias.edu/~goresky/pdf/MorseIH.pdf"
+      },
+      {
+        "label": "Hatcher, Algebraic Topology",
+        "url": "https://pi.math.cornell.edu/~hatcher/AT/ATpage.html"
+      },
+      {
+        "label": "Goresky and MacPherson Intersection homology theory",
+        "url": "https://doi.org/10.1016/0040-9383(80)90003-8"
+      }
+    ],
+    "substantive_word_count": 678
+  },
+  {
+    "id": "D05-F02",
+    "domain_id": "D05",
+    "title": "Persistent topology, interleavings and random birth laws",
+    "central_question": "How does a topological feature persist through a filtration, and what perturbation or randomness can be certified?",
+    "synopsis": "Persistence studies a sequence of spaces together with the maps between them. A barcode records the life of a class, including classes that disappear before the terminal space is reached. This is why the colimit cannot replace a persistence module: a finite bar contributes information during its lifetime even though its eventual image is zero. The archive moves from explicit small filtrations to diagram distances, stability and random birth times. These developments fit one constructive interface: input a legal filtration, compute boundary maps and induced maps on homology, and then declare which comparison theorem applies.\n\nThe legal-filtration requirement is essential. A simplex cannot enter before one of its faces. Assigning a dramatic label such as singularity or cavity to a parameter value does not change homology; the chain complex changes when cells or maps change. A metric between persistence diagrams also needs the diagonal. An unmatched point can die by matching to its closest diagonal point, with cost half its lifetime in the usual ℓ∞ convention. Stability then has an exact elementary core: uniformly close functions give mutually shifted sublevel inclusions. Passing to barcode stability adds finiteness or tameness assumptions. Random filtrations supply another useful bridge, because a feature born when all required edges are present has a birth time given by a maximum of random variables. This connects a topological lifetime to an exact order-statistic law without claiming that all random topology reduces to one scalar distribution.",
+    "definitions": [
+      "A filtration K_s⊆K_t for s≤t induces a persistence module H_k(K_s)→H_k(K_t) over a fixed field. A bar [b,d) records a feature born at b and killed at d.",
+      "For diagrams with the standard bottleneck distance, match points using ℓ∞ cost and allow arbitrary diagonal points. A point (b,d) has diagonal cost (d−b)/2.",
+      "For functions f,g on one space, their sublevel filtrations are F_t={f≤t}, G_t={g≤t}. A uniform bound ||f−g||∞≤ε gives an ε-interleaving by inclusions."
+    ],
+    "theorem": {
+      "statement": "A triangle whose vertices enter at zero, all edges at one and its face at two has one essential H₀ bar, two H₀ bars [0,1), and one H₁ bar [1,2). For a square whose four edge times are independent uniform variables on [0,1] and whose face enters at one, its H₁ birth B has P(B≤t)=t⁴ and expected lifetime 1/5.",
+      "proof": "Before time one the triangle has three components; at one its edge boundary matrix has rank two, merging them and leaving the one-dimensional cycle kernel. At two the face boundary spans that kernel. This proves the bars, including the two simultaneous deaths. For the random square, the unique graph cycle exists exactly when every edge has arrived, so B=max(U₁,U₂,U₃,U₄). Independence gives P(B≤t)=∏P(U_j≤t)=t⁴. The face kills it at one, hence expected lifetime is E(1−B)=∫₀¹P(B≤t)dt=1/5. At a fixed t<1 the first Betti number is its birth indicator, with expectation t⁴. For stability, if f(x)≤t then g(x)≤f(x)+ε≤t+ε, giving F_t⊆G_{t+ε}. The reverse inclusion is identical, and the composites are exactly the ordinary inclusion maps shifted by 2ε. This is the direct interleaving certificate before any diagram theorem is invoked."
+    },
+    "worked_example": {
+      "setup": "Use D={(0,3),(1,2)} and E={(1/10,16/5),(4/5,23/10)} with rational coordinates and the standard diagonal convention.",
+      "calculation": "Pairing long bar to long bar costs max(1/10,1/5)=1/5. Pairing short bar to short bar costs max(1/5,3/10)=3/10, so the bottleneck is at most 3/10. The point (1,2) has no match of cost below 3/10: its closest listed point has that cost and its diagonal cost is 1/2. Therefore the bottleneck is exactly 3/10. Exhaustive finite matchings including diagonal removals certify this small case.",
+      "meaning": "The stable statement concerns the declared filtration and distance. It controls the persistence invariant; it does not prove a geometric deformation is physically valid or recover all fine geometry from bars."
+    },
+    "source_uids": [
+      "2023:M040",
+      "2024:Y24-08-001",
+      "2024:Y24-09-008",
+      "2025:Y25-01-017",
+      "2025:Y25-03-003",
+      "2025:Y25-05-008",
+      "2026:Y26-02-001",
+      "2026:Y26-02-002"
+    ],
+    "anchor_uids": [
+      "2023:M040",
+      "2024:Y24-08-001",
+      "2024:Y24-09-008",
+      "2025:Y25-01-017",
+      "2025:Y25-03-003",
+      "2026:Y26-02-002"
+    ],
+    "progression": [
+      {
+        "year": 2023,
+        "evidence_uids": [
+          "2023:M040"
+        ],
+        "narrative": "Dated topic continuity is supported by: A complete small persistence calculation. These records support the presence and refinement of the topic in this year; the present synthesis and proof do not establish historical priority, novelty or a recovered verbatim argument."
+      },
+      {
+        "year": 2024,
+        "evidence_uids": [
+          "2024:Y24-08-001",
+          "2024:Y24-09-008"
+        ],
+        "narrative": "Dated topic continuity is supported by: Diagram distances require diagonal matching and a stated filtration; What persistence stability can certify for a deformation. These records support the presence and refinement of the topic in this year; the present synthesis and proof do not establish historical priority, novelty or a recovered verbatim argument."
+      },
+      {
+        "year": 2025,
+        "evidence_uids": [
+          "2025:Y25-01-017",
+          "2025:Y25-03-003"
+        ],
+        "narrative": "Dated topic continuity is supported by: A persistence module retains finite bars that its colimit forgets; Persistent topology starts with a chain complex whose boundary squares to zero. These records support the presence and refinement of the topic in this year; the present synthesis and proof do not establish historical priority, novelty or a recovered verbatim argument."
+      },
+      {
+        "year": 2026,
+        "evidence_uids": [
+          "2026:Y26-02-002"
+        ],
+        "narrative": "Dated topic continuity is supported by: Random birth times connect order statistics to an exact barcode law. These records support the presence and refinement of the topic in this year; the present synthesis and proof do not establish historical priority, novelty or a recovered verbatim argument."
+      }
+    ],
+    "connections": [
+      {
+        "target_domain": "D10",
+        "relation": "Random filtrations",
+        "mathematical_bridge": "Births defined by maxima of independent entry times yield exact order-statistic distributions.",
+        "scope": "Dependent entries or multiple interacting cycles require richer laws."
+      },
+      {
+        "target_domain": "D04",
+        "relation": "Maps and graded information",
+        "mathematical_bridge": "A persistence module retains maps and finite bars lost by a terminal colimit.",
+        "scope": "Persistence and spectral sequences organize different data."
+      },
+      {
+        "target_domain": "D11",
+        "relation": "Robust inference",
+        "mathematical_bridge": "Interleaving and bottleneck stability quantify how input perturbations affect a chosen invariant.",
+        "scope": "They do not identify the data-generating model."
+      }
+    ],
+    "capabilities": [
+      "C01",
+      "C02",
+      "C03",
+      "C07",
+      "C08",
+      "C12",
+      "C13"
+    ],
+    "interactive_contract": {
+      "lab_ids": [
+        "L09"
+      ],
+      "inputs": "Implemented supporting example: triangle face toggle. Recipe only: time-indexed filtrations, diagram matchings and random birth parameters.",
+      "outputs": "The UI shows homology before and after a face attachment. Barcode intervals, bottleneck 3/10 and random lifetime 1/5 are proved and exactly checked separately; there is no arbitrary persistence or diagram-distance UI.",
+      "validation": "Standard-library exact checks in domains/geometry/verify.py. L05 and L09 are finite worked models; an unsupported arbitrary-input solver is not claimed.",
+      "status": "Partial support from two homology snapshots; persistent-homology operations remain recipes."
+    },
+    "limits": "Barcode decompositions require an appropriate finite or tame setting. The linked lab uses one finite filtration, not arbitrary point-cloud persistence. Expected Euler characteristic is an alternating aggregate and does not determine expected Betti numbers separately.",
+    "open_questions": [
+      "For a specified noisy filtration, derive a uniform perturbation bound and state the exact tameness assumptions needed to pass from interleaving to diagram distance.",
+      "For a multi-cycle random complex, calculate joint births and deaths rather than inferring a barcode law from expected Euler characteristic."
+    ],
+    "references": [
+      {
+        "label": "Allen Hatcher Algebraic Topology homology chapters",
+        "url": "https://pi.math.cornell.edu/~hatcher/AT/ATchapters.html"
+      },
+      {
+        "label": "Cohen-Steiner Edelsbrunner and Harer Stability of Persistence Diagrams",
+        "url": "https://doi.org/10.1007/s00454-006-1276-5"
+      },
+      {
+        "label": "Edelsbrunner Letscher and Zomorodian Topological persistence and simplification",
+        "url": "https://doi.org/10.1007/s00454-002-2885-2"
+      },
+      {
+        "label": "Afra Zomorodian and Gunnar Carlsson, Computing Persistent Homology",
+        "url": "https://doi.org/10.1007/s00454-004-1146-y"
+      }
+    ],
+    "substantive_word_count": 678
+  },
+  {
+    "id": "D05-F03",
+    "domain_id": "D05",
+    "title": "Local-to-global gluing, cellular sheaves and Hodge obstructions",
+    "central_question": "When can compatible local data be replaced by one global object, and how can the obstruction be calculated exactly?",
+    "synopsis": "Gluing is a mapping problem with two distinct outcomes. A sheaf axiom says a compatible family glues uniquely; it does not say every arbitrary family is compatible or that higher cohomology vanishes. The circle examples make this distinction concrete. Two arcs overlap in two components, allowing two discrepancies; local constants can change both discrepancies only by the same amount. Their difference is therefore a one-dimensional global obstruction. This is an exact finite complex with a transparent quotient, not a violation of sheaf gluing.\n\nThe same mechanism extends to graph potentials, cellular sheaves and discrete Hodge theory. Edge values are globally integrable exactly when their cycle sums vanish. A spanning tree constructs the potential, while each remaining edge checks one cycle constraint. With matrix or scalar transport, the coefficient system changes the equation itself; the ordinary cycle of the underlying graph need not yield a nonzero sheaf class. A rank-one local system on a circle has cohomology controlled by its total monodromy. Its harmonic representative is then a metric-dependent choice inside a metric-independent quotient. This is especially relevant to source claims based on residuals: a vector with zero Hodge Laplacian residual may be a nonzero harmonic obstruction. Certifying H¹=0 requires a rank or coercivity statement on the entire relevant space, not one successful vector. Transfers between local models similarly need a chain equivalence before they can transport obstruction classes bijectively.",
+    "definitions": [
+      "For a connected oriented graph, D:C⁰→C¹ sends a potential f to edge differences f(head)−f(tail). Gluable edge data are imD; H¹=C¹/imD when no two-cells are present.",
+      "For the constant real sheaf on a two-arc circle cover with disconnected overlap, the Čech map is R²→R², (a,b)↦(b−a,b−a).",
+      "A rank-one local system on an m-cycle has nonzero transports r_j and differential (δs)_j=s_{j+1}−r_js_j. Its loop multiplier is h=∏r_j."
+    ],
+    "theorem": {
+      "statement": "On a connected graph, edge data are a potential difference exactly when every oriented cycle period vanishes; the potential is unique up to a constant. For the rank-one circle system, H⁰ and H¹ each have dimension one if h=1 and both vanish if h≠1.",
+      "proof": "Necessity of zero periods follows by telescoping potential differences around a closed walk. For sufficiency choose a root and define f(v) by summing edge data along a tree path to v. A zero period on the closed walk formed with any other path proves path independence. Every edge then has the required difference; two solutions differ by a function with zero difference on every edge, hence a constant. For the local system, a global section satisfies s_{j+1}=r_js_j. Once s₀ is chosen all others follow, and closure requires (h−1)s₀=0. Thus the kernel is one-dimensional when h=1 and zero otherwise. The differential is square, so rank-nullity gives the same cokernel dimension. Rescaling the basis at vertices changes individual transports but telescoping shows their product is unchanged. In a higher-dimensional cellular sheaf, face-composition identities must additionally make δ²=0; arbitrary transport matrices alone do not guarantee a complex."
+    },
+    "worked_example": {
+      "setup": "Use a three-cycle over Q. Compare transports r=(2,3,1/6) and r=(2,3,1), with δ rows expressing the three stated equations.",
+      "calculation": "The first product is one and (1,2,6) spans the kernel. The differential has rank two and a one-dimensional cokernel. The second product is six, forcing s₀=6s₀ and hence all section coordinates zero; the differential is invertible over Q. For additive triangle data (1,2,−3), total period is zero and f=(0,1,3) glues them. Replacing the last value by −2 gives period one and no potential. These exact checks distinguish coefficient holonomy from the graph’s ordinary cycle rank.",
+      "meaning": "The correct interactive output is a potential or an obstruction certificate, together with the coefficient system and a gauge convention. A residual can supplement this certificate but cannot replace its quotient meaning."
+    },
+    "source_uids": [
+      "2024:Y24-04-014",
+      "2024:Y24-06-009",
+      "2024:Y24-09-009",
+      "2025:Y25-05-016",
+      "2025:Y25-08-009",
+      "2025:Y25-08-017",
+      "2025:Y25-08-030",
+      "2025:Y25-11-022",
+      "2026:Y26-01-030",
+      "2026:Y26-01-021",
+      "2026:Y26-02-004",
+      "2026:Y26-04-028",
+      "2026:Y26-04-004",
+      "2026:Y26-05-023",
+      "2026:Y26-07-022",
+      "2026:Y26-09-025",
+      "2026:Y26-08-017"
+    ],
+    "anchor_uids": [
+      "2024:Y24-06-009",
+      "2024:Y24-09-009",
+      "2025:Y25-08-017",
+      "2025:Y25-11-022",
+      "2026:Y26-01-030",
+      "2026:Y26-02-004",
+      "2026:Y26-07-022"
+    ],
+    "progression": [
+      {
+        "year": 2024,
+        "evidence_uids": [
+          "2024:Y24-06-009",
+          "2024:Y24-09-009"
+        ],
+        "narrative": "Dated topic continuity is supported by: A nonzero H¹ from two arcs without violating sheaf gluing; A complete small sheaf calculation before spectral-sequence claims. These records support the presence and refinement of the topic in this year; the present synthesis and proof do not establish historical priority, novelty or a recovered verbatim argument."
+      },
+      {
+        "year": 2025,
+        "evidence_uids": [
+          "2025:Y25-08-017",
+          "2025:Y25-11-022"
+        ],
+        "narrative": "Dated topic continuity is supported by: Phase consistency is a cycle condition, not a missing matrix certificate; Discrete Hodge splitting and the correct cohomology transport group. These records support the presence and refinement of the topic in this year; the present synthesis and proof do not establish historical priority, novelty or a recovered verbatim argument."
+      },
+      {
+        "year": 2026,
+        "evidence_uids": [
+          "2026:Y26-01-030",
+          "2026:Y26-02-004",
+          "2026:Y26-07-022"
+        ],
+        "narrative": "Dated topic continuity is supported by: An exact Čech calculation distinguishes local primitives from global gluing; Compatibility and gluing can be tested by a linear obstruction; A rank-one cellular sheaf on a circle is controlled by holonomy. These records support the presence and refinement of the topic in this year; the present synthesis and proof do not establish historical priority, novelty or a recovered verbatim argument."
+      }
+    ],
+    "connections": [
+      {
+        "target_domain": "D04",
+        "relation": "Homotopy-invariant transfer",
+        "mathematical_bridge": "A cochain homotopy equivalence induces an isomorphism on obstruction groups.",
+        "scope": "A single cochain map can kill a nonzero class."
+      },
+      {
+        "target_domain": "D06",
+        "relation": "Connections and local systems",
+        "mathematical_bridge": "Transport around a loop controls twisted global sections.",
+        "scope": "Curvature requires two-dimensional geometric data."
+      },
+      {
+        "target_domain": "D15",
+        "relation": "Reconstruction",
+        "mathematical_bridge": "An incidence equation reconstructs potentials modulo constants after cycle compatibility is verified.",
+        "scope": "A coercivity margin and a gluing obstruction are independent unless explicitly coupled."
+      }
+    ],
+    "capabilities": [
+      "C01",
+      "C03",
+      "C05",
+      "C10",
+      "C13"
+    ],
+    "interactive_contract": {
+      "lab_ids": [
+        "L05"
+      ],
+      "inputs": "Implemented related example: integer shears a,b in [-3,3]. Recipe only: incidence data, local-system transports and Čech restriction maps.",
+      "outputs": "The related lab returns the shear commutator and determinant. It does not compute potentials, Čech cohomology, rank-one local-system groups or harmonic representatives; those are written/verifier models.",
+      "validation": "Standard-library exact checks in domains/geometry/verify.py. L05 and L09 are finite worked models; an unsupported arbitrary-input solver is not claimed.",
+      "status": "Related transport example implemented; gluing and sheaf solvers remain recipes."
+    },
+    "limits": "The examples concern finite graph complexes and a declared rank-one coefficient system. General sheaf cohomology needs a valid acyclic cover or an appropriate resolution. A vanishing residual for one vector cannot certify vanishing of an entire cohomology group.",
+    "open_questions": [
+      "For a proposed two-dimensional cellular sheaf, verify every face-composition identity and compute the exact cohomology over the intended ring.",
+      "Construct an explicit comparison chain equivalence before transferring a nonzero gluing class between two local models."
+    ],
+    "references": [
+      {
+        "label": "Milne Lectures on Etale Cohomology sheaves and Cech constructions",
+        "url": "https://www.jmilne.org/math/CourseNotes/LEC210.pdf"
+      },
+      {
+        "label": "Hatcher, Algebraic Topology",
+        "url": "https://pi.math.cornell.edu/~hatcher/AT/ATpage.html"
+      },
+      {
+        "label": "The Stacks Project, Čech Cohomology",
+        "url": "https://stacks.math.columbia.edu/tag/01EW"
+      }
+    ],
+    "substantive_word_count": 678
+  },
+  {
+    "id": "D05-F04",
+    "domain_id": "D05",
+    "title": "Periods, cocycles, winding and characteristic classes",
+    "central_question": "Which global defects survive changes of local choices, and what makes their values topological?",
+    "synopsis": "A cocycle expresses consistency of repeated composition; a coboundary expresses a defect removable by changing local choices. Periods and characteristic classes provide ways to detect what remains. The archive contains several versions: winding of a nonvanishing loop, projective phases of group actions, transition functions of bundles and characteristic-form integrals. They share an invariance mechanism, but their coefficients, degrees and products differ. A useful synthesis keeps the actual equation visible rather than treating every nonzero loop quantity as the same obstruction.\n\nWinding is protected by avoidance of the origin: a continuous nonvanishing loop has an integer degree, and a homotopy through nonvanishing loops preserves it. A curl flux is instead a boundary integral depending continuously on the field; equality for two surfaces with the same boundary is a Stokes statement, not automatic quantization. Group projective phases satisfy a two-cocycle equation because multiplication is associative. Rephasing the operators changes the cocycle by a coboundary, while the commutator phase for a commuting pair is unchanged. Bundle transition functions obey their own triple-overlap identity, and characteristic forms connect curvature to integral topology only for a declared bundle and normalization. The source corpus’s four-torus example makes the latter quantitative: if c₁=n dx₁∧dx₂+m dx₃∧dx₄ on the unit torus, then ∫c₁²=2nm, with the factor two arising from degree-two commutativity. A topological density can have a variation that is entirely a boundary term, so it need not furnish a bulk field equation.",
+    "definitions": [
+      "For a nonvanishing piecewise smooth complex loop γ, winding is (2πi)⁻¹∮γ⁻¹dγ. The integral depends on its homotopy class in the punctured complex plane.",
+      "For an abelian group written additively, a normalized multiplier σ satisfies σ(g,h)σ(g+h,k)=σ(h,k)σ(g,h+k). Rephasing by b(g) multiplies σ by b(g)b(h)/b(g+h).",
+      "A closed differential form is exact only if it has a global primitive; nonzero integral over a closed cycle certifies nonexactness."
+    ],
+    "theorem": {
+      "statement": "For G=F₂² and σ((a,b),(c,d))=(−1)^{bc}, σ is a two-cocycle which is not a coboundary. The angular form (−y dx+x dy)/(x²+y²) on the punctured plane is closed but not exact.",
+      "proof": "For the cocycle, write k=(e,f). The left exponent is bc+(b+d)e, while the right exponent is de+b(c+e); they agree modulo two. Hence the multiplication is associative. If σ were an abelian coboundary, it would be symmetric in g,h because b(g)b(h)/b(g+h) is symmetric. But for g=(1,0), h=(0,1), σ(g,h)=1 and σ(h,g)=−1, a contradiction. The alternating commutator ratio therefore detects the nontrivial projective class and survives rephasing. For the angular form, differentiation gives zero on the punctured plane. Restrict to the unit circle x=cos t,y=sin t: the form becomes dt and its integral is 2π. Every globally exact form has zero integral on a closed loop by the fundamental theorem, proving nonexactness. This is the same local-to-global pattern as gluing, with a de Rham coefficient model rather than finite incidence coordinates."
+    },
+    "worked_example": {
+      "setup": "Enumerate the four elements of F₂² and the sixty-four triples, then evaluate the multiplier and its commutator.",
+      "calculation": "Every triple passes the cocycle identity. The chosen coordinate generators anticommute projectively: their multiplier ratio is −1. In the geometric model γ(t)=e^{ikt} with integer k, γ⁻¹γ′=ik, so the winding is k. Under a homotopy that crosses zero, γ⁻¹ is undefined at the crossing and the certificate ceases to apply. For the unit four-torus with n=2,m=3, the normalized characteristic integral is 2·2·3=12, independently of the chosen connection representing that fixed line-bundle class.",
+      "meaning": "The invariant is the class with its hypotheses and normalization. Local changes of gauge alter representatives, while crossing a singularity, changing coefficients or changing the underlying bundle can alter the class itself."
+    },
+    "source_uids": [
+      "2023:M089",
+      "2024:Y24-06-015",
+      "2024:Y24-11-022",
+      "2025:Y25-01-004",
+      "2025:Y25-01-009",
+      "2025:Y25-01-022",
+      "2025:Y25-03-017",
+      "2025:Y25-03-020",
+      "2025:Y25-05-002",
+      "2025:Y25-09-003",
+      "2025:Y25-10-005",
+      "2025:Y25-12-019",
+      "2026:Y26-06-023",
+      "2024:Y24-05-002",
+      "2025:Y25-11-006"
+    ],
+    "anchor_uids": [
+      "2023:M089",
+      "2024:Y24-06-015",
+      "2024:Y24-11-022",
+      "2025:Y25-01-009",
+      "2025:Y25-03-020",
+      "2025:Y25-10-005",
+      "2026:Y26-06-023"
+    ],
+    "progression": [
+      {
+        "year": 2023,
+        "evidence_uids": [
+          "2023:M089"
+        ],
+        "narrative": "Dated topic continuity is supported by: Winding number and Gauss–Bonnet with boundaries explicit. These records support the presence and refinement of the topic in this year; the present synthesis and proof do not establish historical priority, novelty or a recovered verbatim argument."
+      },
+      {
+        "year": 2024,
+        "evidence_uids": [
+          "2024:Y24-06-015",
+          "2024:Y24-11-022"
+        ],
+        "narrative": "Dated topic continuity is supported by: Wedge products, Hodge duality and a genuine closed-form obstruction; Characteristic forms and why a topological density is not a bulk field equation. These records support the presence and refinement of the topic in this year; the present synthesis and proof do not establish historical priority, novelty or a recovered verbatim argument."
+      },
+      {
+        "year": 2025,
+        "evidence_uids": [
+          "2025:Y25-01-009",
+          "2025:Y25-03-020",
+          "2025:Y25-10-005"
+        ],
+        "narrative": "Dated topic continuity is supported by: Projective phases require a genuine two-cocycle; A projective multiplier gives a concrete H² cocycle; Transition functions satisfy a cocycle equation, and gauge changes preserve it. These records support the presence and refinement of the topic in this year; the present synthesis and proof do not establish historical priority, novelty or a recovered verbatim argument."
+      },
+      {
+        "year": 2026,
+        "evidence_uids": [
+          "2026:Y26-06-023"
+        ],
+        "narrative": "Dated topic continuity is supported by: A torus mirror cocycle can carry exactly one binary obstruction. These records support the presence and refinement of the topic in this year; the present synthesis and proof do not establish historical priority, novelty or a recovered verbatim argument."
+      }
+    ],
+    "connections": [
+      {
+        "target_domain": "D03",
+        "relation": "Projective representation theory",
+        "mathematical_bridge": "Associativity is the multiplier cocycle equation, with scalar rephasing acting by coboundaries.",
+        "scope": "The coefficient action matters for group cohomology."
+      },
+      {
+        "target_domain": "D06",
+        "relation": "Curvature and characteristic forms",
+        "mathematical_bridge": "Normalized curvature forms represent fixed bundle classes whose cycle integrals can be quantized.",
+        "scope": "Arbitrary matrix loop data do not define a Chern class."
+      },
+      {
+        "target_domain": "D07",
+        "relation": "Complex analysis",
+        "mathematical_bridge": "The argument principle can certify winding by counting zeros and poles.",
+        "scope": "One must exclude zeros on the integration contour."
+      }
+    ],
+    "capabilities": [
+      "C01",
+      "C03",
+      "C04",
+      "C10",
+      "C13"
+    ],
+    "interactive_contract": {
+      "lab_ids": [],
+      "inputs": "Proof recipe: group elements and multipliers, nonvanishing loops, or normalized curvature on a declared bundle.",
+      "outputs": "Written cocycle and period certificates, including all 64 multiplier identities in the verifier. No arbitrary cocycle, winding or characteristic-class UI is implemented.",
+      "validation": "Standard-library exact checks in domains/geometry/verify.py. L05 and L09 are finite worked models; an unsupported arbitrary-input solver is not claimed.",
+      "status": "Proof-backed recipe; no dedicated interactive lab."
+    },
+    "limits": "The finite multiplier is an explicit example, not an identification of every historical phase model. Characteristic forms require declared degree, orientation, trace and 2π conventions. A finite cover multiplies a nonzero integer circle class by its degree; it does not erase it.",
+    "open_questions": [
+      "For the proposed transition data, compute the actual cocycle and determine whether a gauge change can trivialize it.",
+      "For any claimed integer characteristic value, exhibit the bundle, orientation, integral cohomology class and normalized representative."
+    ],
+    "references": [
+      {
+        "label": "Bott and Tu Differential Forms in Algebraic Topology, publisher record",
+        "url": "https://link.springer.com/book/10.1007/978-1-4757-3951-0"
+      },
+      {
+        "label": "Chern, characteristic classes of Hermitian manifolds",
+        "url": "https://doi.org/10.2307/1969037"
+      },
+      {
+        "label": "J S Milne Group Theory",
+        "url": "https://www.jmilne.org/math/CourseNotes/GT.pdf"
+      },
+      {
+        "label": "Etingof–Gelaki–Nikshych–Ostrik, Tensor Categories",
+        "url": "https://math.mit.edu/~etingof/egnobookfinal.pdf"
+      },
+      {
+        "label": "Stacks Project descent data",
+        "url": "https://stacks.math.columbia.edu/tag/023U"
+      },
+      {
+        "label": "J. S. Milne, Class Field Theory, group cohomology background",
+        "url": "https://www.jmilne.org/math/CourseNotes/CFT.pdf"
+      }
+    ],
+    "substantive_word_count": 648
+  },
+  {
+    "id": "D06-F01",
+    "domain_id": "D06",
+    "title": "Metrics, curvature, scale and transport geometry",
+    "central_question": "Which conclusions follow from a declared metric, and which survive a change of scale or representation?",
+    "synopsis": "Geometry begins with enough data to measure. A coordinate chart does not select a Riemannian metric, a positive symmetric weight table need not satisfy the triangle inequality, and a Jacobian alone does not determine singular values without input and output inner products. These distinctions let the metric material in the archive be organized by constructive outputs: path length, geodesics, curvature, volume growth and transport distance. The archive’s hyperbolic examples are particularly coherent because the metric is explicit and each claimed phenomenon can be computed from it.\n\nOn the upper half-plane with ds²=(dx²+dy²)/y², the connection, vertical unit-speed geodesics and curvature −1 agree with the disk model under the Cayley map. Constant metric rescaling changes distances, volumes, curvature and Laplace spectra in related but distinct ways. This blocks a common confusion between a geometric normalization and a dimensionless threshold. Hyperbolic volume growth gives another exact boundary: local Euclidean behavior does not imply a global doubling bound. Discrete Ollivier curvature introduces still another metric construction, comparing probability distributions by optimal transport. Its value depends on the measure convention as well as the graph, and it cannot certify unrelated computational hardness. Prefix ultrametrics supply a complementary geometry: distance is controlled by the first differing digit, while a many-to-one real coding map can erase prefix information through carries. The best synthesis therefore treats metrics as inputs whose consequences can be tested, rather than as labels attached to algebraic expressions.",
+    "definitions": [
+      "A Riemannian metric g assigns positive inner products to tangent spaces; its path distance is the infimum of lengths of curves joining two points.",
+      "For a constant c>0, scaling g to c²g multiplies lengths by c, n-dimensional volume by cⁿ, sectional curvature by c⁻² and the scalar Laplacian by c⁻².",
+      "For graph measures m_x and m_y, Ollivier curvature on an edge is κ(x,y)=1−W₁(m_x,m_y)/d(x,y), with the measure convention declared.",
+      "On b-ary sequences, d(x,y)=a^{N(x,y)} for 0<a<1 and first-difference index N gives an ultrametric, since common prefixes concatenate by a minimum rule."
+    ],
+    "theorem": {
+      "statement": "The metric g=(dx²+dy²)/y² has Gaussian curvature −1 and vertical unit-speed geodesics y=y₀eᵗ. Hyperbolic three-space has ball volume V₃(R)=π(sinh 2R−2R), and consequently V₃(2R)/V₃(R) is unbounded. For nonlazy uniform-neighbor measures, K₂ has edge curvature zero and K₃ has curvature 1/2.",
+      "proof": "For the conformal plane metric e^{2u}(dx²+dy²), K=−e^{−2u}Δu. Here u=−log y, so Δu=1/y² and K=−1. A vertical path y=y₀eᵗ has speed |y′|/y=1 and satisfies the geodesic equation from Γʸ_yy=−1/y. In H³ the sphere area is 4πsinh²r. Integrating from zero to R gives π(sinh2R−2R). Its exponential leading term is (π/2)e^{2R}, so doubling the radius produces an unbounded ratio. For K₂, each nonlazy neighbor distribution is a point mass at the opposite endpoint, so W₁=1 and κ=0. For K₃, the neighbor measures share mass 1/2 at the third vertex; only the other mass 1/2 must move distance one, giving W₁=1/2. A transport plan attains that cost, and the mass discrepancy at one endpoint gives the matching lower bound."
+    },
+    "worked_example": {
+      "setup": "Fix the nonlazy neighbor convention on K₂ and K₃, and compare a constant rescaling g↦9g in the hyperbolic metric.",
+      "calculation": "The exact transport costs are 1 and 1/2, yielding curvatures 0 and 1/2. Under 9g, the old unit vertical geodesic has speed three in the same parameter, and reparametrization by t/3 restores unit speed. Gaussian curvature becomes −1/9. A Laplace eigenvalue or quadratic-form spectral threshold scales by 1/9 as well, whereas a dimensionless ratio formed with the squared length scale can remain unchanged.",
+      "meaning": "A metric-dependent value is meaningful when its convention is part of the result. Topological equivalence, geometric equivalence and equality of a few scalar observables remain different comparison problems."
+    },
+    "source_uids": [
+      "2024:Y24-06-012",
+      "2024:Y24-12-017",
+      "2025:Y25-03-008",
+      "2025:Y25-04-014",
+      "2025:Y25-04-016",
+      "2025:Y25-07-032",
+      "2026:Y26-02-005",
+      "2025:Y25-12-010",
+      "2026:Y26-03-019"
+    ],
+    "anchor_uids": [
+      "2024:Y24-06-012",
+      "2024:Y24-12-017",
+      "2025:Y25-03-008",
+      "2025:Y25-04-014",
+      "2025:Y25-07-032",
+      "2026:Y26-02-005"
+    ],
+    "progression": [
+      {
+        "year": 2024,
+        "evidence_uids": [
+          "2024:Y24-06-012",
+          "2024:Y24-12-017"
+        ],
+        "narrative": "Dated topic continuity is supported by: Hyperbolic curvature and geodesics in a declared metric; SU(2) rotations, area asymptotics, and a metric counterexample. These records support the presence and refinement of the topic in this year; the present synthesis and proof do not establish historical priority, novelty or a recovered verbatim argument."
+      },
+      {
+        "year": 2025,
+        "evidence_uids": [
+          "2025:Y25-03-008",
+          "2025:Y25-04-014",
+          "2025:Y25-07-032"
+        ],
+        "narrative": "Dated topic continuity is supported by: Spectral thresholds and curvature must survive changes of scale; Hyperbolic volume growth prevents a global Euclidean doubling argument; Ollivier curvature is a transport calculation, not a hardness oracle. These records support the presence and refinement of the topic in this year; the present synthesis and proof do not establish historical priority, novelty or a recovered verbatim argument."
+      },
+      {
+        "year": 2026,
+        "evidence_uids": [
+          "2026:Y26-02-005"
+        ],
+        "narrative": "Dated topic continuity is supported by: Prefix geometry has an exact Hausdorff dimension and a carry obstruction. These records support the presence and refinement of the topic in this year; the present synthesis and proof do not establish historical priority, novelty or a recovered verbatim argument."
+      }
+    ],
+    "connections": [
+      {
+        "target_domain": "D07",
+        "relation": "Spectral geometry",
+        "mathematical_bridge": "Quadratic forms and Laplace spectra depend on the declared metric and rescale by length⁻².",
+        "scope": "Curvature bounds alone do not determine the full spectrum."
+      },
+      {
+        "target_domain": "D10",
+        "relation": "Optimal transport",
+        "mathematical_bridge": "Wasserstein distance compares the chosen probability distributions.",
+        "scope": "Changing laziness changes discrete curvature."
+      },
+      {
+        "target_domain": "D14",
+        "relation": "Representation and coding",
+        "mathematical_bridge": "A prefix metric measures symbolic agreement that a real coding map may collapse.",
+        "scope": "A small image distance does not imply a long common prefix."
+      }
+    ],
+    "capabilities": [
+      "C01",
+      "C03",
+      "C08",
+      "C09",
+      "C13"
+    ],
+    "interactive_contract": {
+      "lab_ids": [],
+      "inputs": "Proof recipe: a declared metric, scaling factor or graph-neighbor measure convention.",
+      "outputs": "Written metric-scaling, hyperbolic and finite transport calculations. No arbitrary geodesic, curvature or Wasserstein solver is implemented.",
+      "validation": "Standard-library exact checks in domains/geometry/verify.py. L05 and L09 are finite worked models; an unsupported arbitrary-input solver is not claimed.",
+      "status": "Proof-backed recipe; no dedicated interactive lab."
+    },
+    "limits": "The exact graph checks cover two finite graphs, not a general optimal-transport solver. The hyperbolic formula assumes curvature −1 and the stated dimension. A positive weight matrix can fail metric axioms, and no unprovided metric is inferred from a historical coordinate description.",
+    "open_questions": [
+      "For a proposed metric deformation, prove positivity and the triangle property, then identify which quantities are invariant under the allowed coordinate changes.",
+      "For a claimed curvature-based certificate, state the measure convention and prove an explicit theorem linking that curvature quantity to the target property."
+    ],
+    "references": [
+      {
+        "label": "John Lee Introduction to Riemannian Manifolds, author page",
+        "url": "https://sites.math.washington.edu/~lee/Books/RM/"
+      },
+      {
+        "label": "Carbonaro–Mauceri–Meda, H1 and BMO for locally doubling spaces",
+        "url": "https://www.numdam.org/item/ASNSP_2009_5_8_3_543_0/"
+      },
+      {
+        "label": "Kenneth Falconer, Fractal Geometry",
+        "url": "https://doi.org/10.1002/9781118762868"
+      },
+      {
+        "label": "Yann Ollivier, Ricci curvature of Markov chains on metric spaces",
+        "url": "https://arxiv.org/abs/math/0701886"
+      }
+    ],
+    "substantive_word_count": 672
+  },
+  {
+    "id": "D06-F02",
+    "domain_id": "D06",
+    "title": "Hamiltonian, symplectic and contact structures",
+    "central_question": "How do conservation, reduction and projection follow from a specified geometric form?",
+    "synopsis": "Symplectic geometry makes dynamical rules structural: a nondegenerate closed two-form converts the derivative of a Hamiltonian into a vector field. Contact geometry replaces this even-dimensional structure with a maximally nonintegrable hyperplane distribution in odd dimension. The archive’s examples become coherent when these forms are written before their consequences. Hamiltonian conservation follows from antisymmetry, a Casimir is a much stronger object, and a cyclic coordinate can be removed only after its conjugate momentum is fixed. A dimension count for a quotient needs a regular constraint and a free action, not just a formal subtraction.\n\nThe oscillator links Hamilton’s equations, Hamilton–Jacobi graphs and Riccati evolution without identifying their coordinate descriptions. Its full phase-space flow is smooth for all times. The generating function for the image of one initial graph fails at a caustic because projection to configuration space ceases to be invertible. The divergence is in the graph representation rather than in the trajectory itself. The quiver-style cotangent quotient supplies an equally concrete reduction: solving a moment-map equation and quotienting a free scaling action produces cotangent coordinates, including their canonical one-form. Contact examples then add a compatible but distinct structure. A Legendrian curve satisfies a tangent condition such as dz−y dx=0; on a thermodynamic equilibrium surface the same contact logic yields a potential identity and a Maxwell relation, provided the stated differentiability and change of variables hold.",
+    "definitions": [
+      "Use ω=Σdq_j∧dp_j and define i_{X_H}ω=dH, giving q̇_j=∂H/∂p_j and ṗ_j=−∂H/∂q_j.",
+      "A canonical Casimir has zero Poisson bracket with every differentiable function; nondegeneracy forces it to be constant on a connected domain.",
+      "For a symmetry generated by translation of q₂, its momentum is p₂. The reduced space at p₂=μ is the momentum level modulo that translation.",
+      "A contact form α in dimension 2n+1 satisfies α∧(dα)ⁿ≠0. A Legendrian submanifold has dimension n and tangent bundle inside kerα."
+    ],
+    "theorem": {
+      "statement": "For H=(p₁²+p₂²)/2+V(q₁), reduction at p₂=μ yields ω_red=dq₁∧dp₁ and H_μ=p₁²/2+V(q₁)+μ²/2. For the scaling action on (z,w)∈Cᵐ⊕(Cᵐ)*, the regular quotient {w(z)=0,z≠0}/C* is T*P^{m−1}.",
+      "proof": "On the level p₂=μ every tangent variation has dp₂=0, so the pullback of ω is dq₁∧dp₁. Its kernel is precisely the q₂ translation direction. Quotienting removes that kernel and leaves a nondegenerate form. The restricted H is independent of q₂, so it descends; the projected full equations are exactly Hamilton’s equations of H_μ. In the complex quotient, z selects a line ℓ. The constraint makes w vanish on ℓ, and z⊗w defines an invariant map Cᵐ/ℓ→ℓ, canonically a cotangent vector at ℓ. Conversely a cotangent vector has such a representation after choosing a nonzero z, with different choices exactly the scaling action. The moment-map derivative is surjective on z≠0 by varying w, and the action is free there, giving dimension 2m−2. In a chart z₁=1 with z=(1,u), the constraint gives w=(−up,p) and the canonical one-form w·dz is p du."
+    },
+    "worked_example": {
+      "setup": "For the unit oscillator H=(q²+p²)/2 start with p₀=0, and compare the full trajectory with its Hamilton–Jacobi graph.",
+      "calculation": "Hamilton’s equations give q=q₀cos t, p=−q₀sin t. When cos t≠0 this graph is p=−q tan t, with generating function S=−q²tan t/2. Direct substitution gives S_t+(S_q²+q²)/2=0. At t=π/2 all initial q₀ project to q=0 while their momenta differ, so no single-valued p(q) describes the line. The phase-space map is still the exact symplectic rotation. For α=dz−y dx, γ(t)=(t,t,t²/2) satisfies γ*α=t dt−t dt=0 and is Legendrian.",
+      "meaning": "Reduction removes a declared symmetry after fixing conserved momentum. A caustic changes a coordinate description. Neither phenomenon means that the original smooth dynamics has ceased to exist."
+    },
+    "source_uids": [
+      "2024:Y24-03-031",
+      "2024:Y24-06-003",
+      "2024:Y24-07-014",
+      "2024:Y24-09-027",
+      "2026:Y26-01-018",
+      "2026:Y26-05-017",
+      "2026:Y26-05-016"
+    ],
+    "anchor_uids": [
+      "2024:Y24-03-031",
+      "2024:Y24-06-003",
+      "2024:Y24-07-014",
+      "2024:Y24-09-027",
+      "2026:Y26-01-018",
+      "2026:Y26-05-017"
+    ],
+    "progression": [
+      {
+        "year": 2024,
+        "evidence_uids": [
+          "2024:Y24-03-031",
+          "2024:Y24-06-003",
+          "2024:Y24-07-014",
+          "2024:Y24-09-027"
+        ],
+        "narrative": "Dated topic continuity is supported by: Hamilton, Hamilton–Jacobi and Riccati equations meet at a caustic; Hamiltonian conservation is not the Casimir property; Legendrian structure begins with a contact form and a tangent condition. These records support the presence and refinement of the topic in this year; the present synthesis and proof do not establish historical priority, novelty or a recovered verbatim argument."
+      },
+      {
+        "year": 2026,
+        "evidence_uids": [
+          "2026:Y26-01-018",
+          "2026:Y26-05-017"
+        ],
+        "narrative": "Dated topic continuity is supported by: Thermodynamic contact geometry derives a Maxwell relation; Symplectic reduction removes a cyclic coordinate only after fixing momentum. These records support the presence and refinement of the topic in this year; the present synthesis and proof do not establish historical priority, novelty or a recovered verbatim argument."
+      }
+    ],
+    "connections": [
+      {
+        "target_domain": "D09",
+        "relation": "Mechanics and dynamics",
+        "mathematical_bridge": "Hamiltonian vector fields and conserved momenta define the reduced dynamical model.",
+        "scope": "Energy conservation is weaker than the Casimir property."
+      },
+      {
+        "target_domain": "D12",
+        "relation": "Optimization and Hamilton–Jacobi",
+        "mathematical_bridge": "Generating functions and Riccati equations describe projections of Lagrangian evolution.",
+        "scope": "A graph chart can fail at a caustic while the geometric solution persists."
+      },
+      {
+        "target_domain": "D02",
+        "relation": "Geometric quotients",
+        "mathematical_bridge": "A moment-map equation and a free stable locus identify an actual cotangent bundle.",
+        "scope": "Singular strata require a separate quotient analysis."
+      }
+    ],
+    "capabilities": [
+      "C01",
+      "C03",
+      "C04",
+      "C07",
+      "C13",
+      "C15"
+    ],
+    "interactive_contract": {
+      "lab_ids": [],
+      "inputs": "Proof recipe: symplectic/contact form, Hamiltonian, symmetry action and fixed momentum value.",
+      "outputs": "Written reduction, cotangent quotient, oscillator-caustic and Legendrian certificates. No symplectic-reduction or Hamilton-Jacobi UI is implemented.",
+      "validation": "Standard-library exact checks in domains/geometry/verify.py. L05 and L09 are finite worked models; an unsupported arbitrary-input solver is not claimed.",
+      "status": "Proof-backed recipe; no dedicated interactive lab."
+    },
+    "limits": "The cotangent quotient is a Higgs-type complex symplectic model; identifying a hyperkähler metric or a Coulomb branch needs additional constructions. Singular momentum levels and nonfree actions require stratified reduction. The oscillator graph is valid only away from its caustic.",
+    "open_questions": [
+      "For a specified symmetry action, prove regularity and freeness on the chosen momentum level, and calculate the reduced form in compatible charts.",
+      "For a proposed Hamilton–Jacobi model, locate every projection singularity and replace failed graph coordinates with another local generating family."
+    ],
+    "references": [
+      {
+        "label": "MIT Advanced Classical Mechanics notes",
+        "url": "https://ocw.mit.edu/courses/8-09-classical-mechanics-iii-fall-2014/d9bac33f6c60b304dc0398e99b327102_MIT8_09F14_full.pdf"
+      },
+      {
+        "label": "MIT optimal-control notes for comparison of HJ and Riccati formulations",
+        "url": "https://ocw.mit.edu/courses/16-323-principles-of-optimal-control-spring-2008/pages/lecture-notes/"
+      },
+      {
+        "label": "Meinrenken Introduction to Poisson Geometry",
+        "url": "https://www.math.toronto.edu/mein/teaching/MAT1341_PoissonGeometry/Poisson7.pdf"
+      },
+      {
+        "label": "John Etnyre Legendrian and Transversal Knots",
+        "url": "https://arxiv.org/abs/math/0306256"
+      },
+      {
+        "label": "Hausel–Sturmfels, Toric Hyperkähler Varieties",
+        "url": "https://arxiv.org/abs/math/0203096"
+      },
+      {
+        "label": "Vladimir Arnold, Mathematical Methods of Classical Mechanics",
+        "url": "https://doi.org/10.1007/978-1-4757-2063-1"
+      },
+      {
+        "label": "Ana Cannas da Silva, Lectures on Symplectic Geometry",
+        "url": "https://www.math.ist.utl.pt/~acannas/Books/lsg.pdf"
+      }
+    ],
+    "substantive_word_count": 647
+  },
+  {
+    "id": "D06-F03",
+    "domain_id": "D06",
+    "title": "Connections, gauge covariance, curvature and holonomy",
+    "central_question": "How can local transport and global loop effects be distinguished and checked without confusing flatness with triviality?",
+    "synopsis": "A connection supplies a rule for differentiating and transporting sections. Curvature measures its local failure to commute in two independent directions; holonomy measures transport around a loop. They interact, but neither is interchangeable with the other or with the topology of the underlying space. A one-dimensional circle supports no curvature two-form and can still have nontrivial monodromy. On a simply connected surface, a nonflat connection can have loop holonomy arising from curvature even when the bundle is topologically trivial. A nontrivial bundle can additionally obstruct a global gauge potential. These distinctions give the archive’s connection and Berry material a common, precise architecture.\n\nGauge transformations change coordinates in the fibers. They conjugate loop holonomy at its base point, leaving conjugacy-invariant information such as trace, determinant and eigenvalues unchanged. The ordered product matters for matrices; scalar circulation cannot stand in for a nonabelian calculation. The source’s nilpotent shear example is especially effective because its exponentials terminate and its loop product is an exact polynomial. Berry transport adds a geometric realization: eigenlines form a bundle over a parameter space, and local eigenvector choices are gauge choices. A Chern number requires that declared bundle and a normalized curvature integral; it cannot be recovered from a phase function on an unidentified state space. For the spin-half sphere example the integral is one, proving that no globally smooth potential can represent that curvature on the whole sphere.",
+    "definitions": [
+      "For ∇=d+A on a vector bundle, curvature is F=dA+A∧A and ∇² acts by F. Parallel sections satisfy Fv=0, a necessary condition rather than a general converse.",
+      "For edge transport U_j:V_j→V_{j+1}, basis changes h_j act by U_j↦h_{j+1}U_jh_j⁻¹. Ordered loop holonomy is the composite returning to its base fiber.",
+      "Flat means F=0. Trivial holonomy means every relevant loop acts as identity. Topological triviality means the underlying bundle has a global trivialization; these are different properties."
+    ],
+    "theorem": {
+      "statement": "A loop holonomy transforms by conjugation at the base vertex. For X=[[0,1],[0,0]] and Y=[[0,0],[1,0]], the loop (I+xX)(I+yY)(I−xX)(I−yY) equals [[1+xy+x²y²,−x²y],[xy²,1−xy]]. Its mixed quadratic coefficient is [X,Y]=diag(1,−1).",
+      "proof": "Compose transformed edge maps in path order. Each interior h_j⁻¹ cancels its neighboring h_j, leaving only h₀Hh₀⁻¹; this proves gauge covariance and explains why entries themselves are not invariant. Since X²=Y²=0, exp(xX)=I+xX and exp(yY)=I+yY exactly. Multiplying the four factors gives the displayed polynomial, whose determinant is one and trace is 2+x²y². Setting x=y=ε yields I+ε²[X,Y] plus explicit cubic and quartic terms. This is the exact algebraic mechanism behind a small plaquette limit; a smooth curvature interpretation additionally needs specified base directions, derivative terms and a transport sign convention. On a circle A=iα dθ is flat by dimension, but with parallel transport defined by s′+iαs=0 its holonomy is exp(−2πiα), nontrivial for noninteger α. Thus flatness alone does not force global trivial monodromy."
+    },
+    "worked_example": {
+      "setup": "Take x=y=1 in the shear loop and a base gauge h=diag(2,1). Compare it with a rank-one flat circle connection.",
+      "calculation": "The shear holonomy is H=[[3,−1],[1,0]], with determinant one and trace three. Conjugation gives hHh⁻¹=[[3,−2],[1/2,0]], retaining both invariants. For α=1/2 the flat circle holonomy is −1. As a separate curved example on R², A=ix dy has F=i dx∧dy. Parallel transport around a positively oriented unit square is exp(−i) in the stated convention by the scalar Stokes theorem, despite the bundle and base being topologically trivial.",
+      "meaning": "These examples give three independent checks: fiber gauge covariance, local curvature and global monodromy. A numerical loop becomes geometric evidence only after these inputs and conventions are declared."
+    },
+    "source_uids": [
+      "2023:M041",
+      "2024:Y24-07-009",
+      "2024:Y24-12-006",
+      "2025:Y25-02-016",
+      "2025:Y25-03-032",
+      "2025:Y25-10-029",
+      "2026:Y26-04-005",
+      "2026:Y26-08-018",
+      "2025:Y25-03-015",
+      "2025:Y25-07-014",
+      "2024:Y24-07-012",
+      "2023:M110"
+    ],
+    "anchor_uids": [
+      "2023:M041",
+      "2024:Y24-12-006",
+      "2025:Y25-02-016",
+      "2026:Y26-04-005",
+      "2026:Y26-08-018"
+    ],
+    "progression": [
+      {
+        "year": 2023,
+        "evidence_uids": [
+          "2023:M041"
+        ],
+        "narrative": "Dated topic continuity is supported by: A two-level Berry holonomy with a gauge check. These records support the presence and refinement of the topic in this year; the present synthesis and proof do not establish historical priority, novelty or a recovered verbatim argument."
+      },
+      {
+        "year": 2024,
+        "evidence_uids": [
+          "2024:Y24-12-006"
+        ],
+        "narrative": "Dated topic continuity is supported by: Bundle curvature, parallel sections, and a determinant identity that needs evidence. These records support the presence and refinement of the topic in this year; the present synthesis and proof do not establish historical priority, novelty or a recovered verbatim argument."
+      },
+      {
+        "year": 2025,
+        "evidence_uids": [
+          "2025:Y25-02-016"
+        ],
+        "narrative": "Dated topic continuity is supported by: Berry curvature and a Chern number require a state bundle. These records support the presence and refinement of the topic in this year; the present synthesis and proof do not establish historical priority, novelty or a recovered verbatim argument."
+      },
+      {
+        "year": 2026,
+        "evidence_uids": [
+          "2026:Y26-04-005",
+          "2026:Y26-08-018"
+        ],
+        "narrative": "Dated topic continuity is supported by: Noncommuting shears have an exact loop commutator; Holonomy on a loop and curvature on a surface are different invariants. These records support the presence and refinement of the topic in this year; the present synthesis and proof do not establish historical priority, novelty or a recovered verbatim argument."
+      }
+    ],
+    "connections": [
+      {
+        "target_domain": "D05",
+        "relation": "Monodromy and gluing",
+        "mathematical_bridge": "Flat local systems can have nontrivial global holonomy and twisted cohomology.",
+        "scope": "The coefficient representation must be supplied."
+      },
+      {
+        "target_domain": "D16",
+        "relation": "Quantum state geometry",
+        "mathematical_bridge": "Berry connections live on declared eigenstate bundles, and their normalized curvature can yield Chern classes.",
+        "scope": "An adiabatic physical prediction needs its spectral-gap hypotheses."
+      },
+      {
+        "target_domain": "D15",
+        "relation": "Transport diagnostics",
+        "mathematical_bridge": "Loop matrices and area refinement provide candidate tests for a specified learned transport.",
+        "scope": "Unrecovered matrices or missing two-dimensional operators remain gaps."
+      }
+    ],
+    "capabilities": [
+      "C01",
+      "C03",
+      "C09",
+      "C10",
+      "C13"
+    ],
+    "interactive_contract": {
+      "lab_ids": [
+        "L05"
+      ],
+      "inputs": "Implemented: shear parameters a,b in [-3,3] and shear-loop mode. The separate projection mode selects a line angle from 5 to 85 degrees.",
+      "outputs": "Implemented: exact integer shear commutator and determinant; projection mode gives a floating contraction factor, commutator norm and iteration bound. Gauge conjugation, circle holonomy and curvature refinements are written/verifier models, not UI operations.",
+      "validation": "Standard-library exact checks in domains/geometry/verify.py. L05 and L09 are finite worked models; an unsupported arbitrary-input solver is not claimed.",
+      "status": "Finite shear and projection models implemented; general connections and curvature reconstruction remain recipes."
+    },
+    "limits": "The lab’s shear loop and rank-one circle are exact worked models. They do not certify an empirical connection whose matrices, base space or refinement rule are absent. A full curvature limit needs derivative contributions and quantitative area-normalized remainder control.",
+    "open_questions": [
+      "Construct actual plaquette transports on a two-dimensional parameter mesh and bound the difference between area-normalized holonomy and the declared curvature.",
+      "For a flat connection on a specified non-simply-connected base, compute its monodromy representation and determine whether a global parallel frame exists."
+    ],
+    "references": [
+      {
+        "label": "Michael Berry Quantal phase factors accompanying adiabatic changes",
+        "url": "https://doi.org/10.1098/rspa.1984.0023"
+      },
+      {
+        "label": "Chern, characteristic classes",
+        "url": "https://doi.org/10.2307/1969037"
+      }
+    ],
+    "substantive_word_count": 641
+  },
+  {
+    "id": "D06-F04",
+    "domain_id": "D06",
+    "title": "Curves, moving frames and geometric variational models",
+    "central_question": "Which curve geometry is fixed by curvature, and when does a variational principle actually select a shape?",
+    "synopsis": "Curves provide a manageable laboratory for separating geometry, coordinates and dynamics. An affine transformation composes by the semidirect rule, while a time-dependent coordinate frame adds velocity and acceleration terms. A Frenet frame follows a curve’s tangent, normal and binormal; its rotation can be written using a Darboux angular-velocity vector. Neither operation by itself is a new physical law. The archive’s most useful curve examples become explicit once the parameter, regularity and objective are fixed: winding requires a nonvanishing loop, spirograph closure requires commensurate frequencies, and a clothoid minimizes one declared curvature-rate energy with endpoint curvatures.\n\nThe variational distinction is especially important. Minimizing the squared derivative of curvature under fixed endpoint curvatures selects linear curvature, but prescribing endpoint positions and tangent directions adds integral constraints and changes the admissible problem. A clothoid is therefore an exact solution of a clearly stated functional, not a universal optimal connector. Extrinsic surface geometry makes a parallel point about normalization: if mean curvature is the average of the principal curvatures, a round sphere has Willmore energy 4π at every radius; using their sum changes the scale by four. Surface immersion, embedding and eversion are also different questions. The curve and surface material consequently contributes a practical discipline: identify the geometric object, pick invariant quantities, state the boundary data and only then optimize or classify.",
+    "definitions": [
+      "For a unit-speed regular space curve with nonzero curvature, the Frenet equations are T′=κN, N′=−κT+τB and B′=−τN. Their Darboux vector is Ω=τT+κB.",
+      "For a planar unit-speed curve, θ′=κ and γ′=(cosθ,sinθ). A curvature function plus an initial position and tangent determines the curve by integration.",
+      "Fix L>0 and endpoint curvatures κ(0)=κ₀, κ(L)=κ₁. The curvature-rate objective is J[κ]=(1/2)∫₀ᴸ(κ′)²ds on absolutely continuous κ with square-integrable derivative.",
+      "With averaged mean curvature H=(κ₁+κ₂)/2, the Willmore functional is ∫H²dA. Its normalization must be stated before numerical comparison."
+    ],
+    "theorem": {
+      "statement": "The unique minimizer of the stated curvature-rate problem is κ(s)=κ₀+(κ₁−κ₀)s/L, with J_min=(κ₁−κ₀)²/(2L). The associated tangent angle is θ₀+κ₀s+(κ₁−κ₀)s²/(2L). A round sphere has averaged-mean-curvature Willmore energy 4π independently of radius.",
+      "proof": "Write κ=κ_lin+η with η(0)=η(L)=0. Expanding J gives J[κ]=J[κ_lin]+(κ₁−κ₀)∫η′/L+(1/2)∫(η′)². The cross term vanishes because the endpoint difference of η is zero. The last term is nonnegative, with equality only when η is constant, hence zero. This proves existence and uniqueness without assuming an unproved Euler–Lagrange conclusion. Integrating θ′=κ gives the quadratic phase, and integrating the unit tangent yields Fresnel-type coordinates. For a sphere of radius R, both principal curvatures have magnitude 1/R, so H²=1/R² and area=4πR², giving 4π. The Frenet–Darboux identity follows directly from the oriented orthonormal cross-product relations: Ω×T=κN, Ω×N=−κT+τB and Ω×B=−τN. It describes the same frame rotation rather than an additional dynamical postulate."
+    },
+    "worked_example": {
+      "setup": "Set L=2, κ₀=0, κ₁=2 and θ₀=0. Compare linear curvature with κ_a(s)=s+a s(2−s).",
+      "calculation": "The minimizer is κ=s with θ=s²/2 and J=1. Since κ_a′=1+2a−2as, direct integration gives J[κ_a]=1+4a²/3, strictly larger for a≠0. For a moving affine frame y=M(t)x+b(t), differentiation gives ẏ=Mẋ+Ṁx+ḃ and ÿ=Mẍ+2Ṁẋ+M̈x+b̈; the extra terms are coordinate effects determined by the frame. For a two-frequency spirograph with both coefficients nonzero, rational frequency ratio gives a common period, while irrational ratio prevents one by uniqueness of finite exponential sums.",
+      "meaning": "The constructive geometric object comes from integrating declared local data. Optimality, closure and coordinate covariance each have their own explicit conditions, allowing the interactive atlas to vary one assumption at a time."
+    },
+    "source_uids": [
+      "2023:M046",
+      "2024:Y24-11-021",
+      "2024:Y24-12-001",
+      "2025:Y25-01-013",
+      "2025:Y25-08-001",
+      "2026:Y26-01-013",
+      "2026:Y26-06-030"
+    ],
+    "anchor_uids": [
+      "2023:M046",
+      "2024:Y24-11-021",
+      "2024:Y24-12-001",
+      "2025:Y25-08-001",
+      "2026:Y26-01-013"
+    ],
+    "progression": [
+      {
+        "year": 2023,
+        "evidence_uids": [
+          "2023:M046"
+        ],
+        "narrative": "Dated topic continuity is supported by: Affine coordinate changes and time evolution are different operations. These records support the presence and refinement of the topic in this year; the present synthesis and proof do not establish historical priority, novelty or a recovered verbatim argument."
+      },
+      {
+        "year": 2024,
+        "evidence_uids": [
+          "2024:Y24-11-021",
+          "2024:Y24-12-001"
+        ],
+        "narrative": "Dated topic continuity is supported by: Frenet frames, Darboux rotation, and covariant differentiation; Sphere eversion and a correctly normalized Willmore bound. These records support the presence and refinement of the topic in this year; the present synthesis and proof do not establish historical priority, novelty or a recovered verbatim argument."
+      },
+      {
+        "year": 2025,
+        "evidence_uids": [
+          "2025:Y25-08-001"
+        ],
+        "narrative": "Dated topic continuity is supported by: Spirograph closure is a commensurability theorem. These records support the presence and refinement of the topic in this year; the present synthesis and proof do not establish historical priority, novelty or a recovered verbatim argument."
+      },
+      {
+        "year": 2026,
+        "evidence_uids": [
+          "2026:Y26-01-013"
+        ],
+        "narrative": "Dated topic continuity is supported by: A clothoid is the minimizer of a specified curvature-rate functional. These records support the presence and refinement of the topic in this year; the present synthesis and proof do not establish historical priority, novelty or a recovered verbatim argument."
+      }
+    ],
+    "connections": [
+      {
+        "target_domain": "D08",
+        "relation": "Differential equations",
+        "mathematical_bridge": "Curvature and torsion determine frame ODEs; a chosen functional yields a boundary-value problem.",
+        "scope": "Additional endpoint-position constraints alter the minimizer."
+      },
+      {
+        "target_domain": "D12",
+        "relation": "Variational optimization",
+        "mathematical_bridge": "A square-completion proof gives a unique minimizer and an exact objective gap.",
+        "scope": "Optimality applies only to the declared admissible class."
+      },
+      {
+        "target_domain": "D05",
+        "relation": "Global closure and winding",
+        "mathematical_bridge": "Periodicity and origin avoidance supply global conditions beyond local curvature.",
+        "scope": "Equal local invariants need not determine identical global placement."
+      }
+    ],
+    "capabilities": [
+      "C01",
+      "C03",
+      "C06",
+      "C07",
+      "C13"
+    ],
+    "interactive_contract": {
+      "lab_ids": [],
+      "inputs": "Proof recipe: curvature endpoints, length and admissible curvature function, or declared moving-frame data.",
+      "outputs": "Written unique minimizer, objective-gap and frame identities. No curve drawing, constrained connector optimization or surface eversion UI is implemented.",
+      "validation": "Standard-library exact checks in domains/geometry/verify.py. L05 and L09 are finite worked models; an unsupported arbitrary-input solver is not claimed.",
+      "status": "Proof-backed recipe; no dedicated interactive lab."
+    },
+    "limits": "Frenet coordinates fail where curvature vanishes and need another frame. The clothoid theorem does not impose endpoint positions or fixed total turning. Sphere eversion uses immersions and can pass through self-intersections; it is not an isotopy of embedded spheres.",
+    "open_questions": [
+      "For a connector with fixed endpoint positions and tangents, formulate the additional integral constraints and derive the constrained Euler–Lagrange system.",
+      "For a proposed curve classification, determine whether the chosen invariants separate curves up to the exact rigid-motion, reparametrization or homotopy relation intended."
+    ],
+    "references": [
+      {
+        "label": "MIT differential geometry course",
+        "url": "https://ocw.mit.edu/courses/18-950-differential-geometry-fall-2008/"
+      },
+      {
+        "label": "Smale, A classification of immersions of the two-sphere",
+        "url": "https://doi.org/10.1090/S0002-9947-1959-0104227-9"
+      },
+      {
+        "label": "NIST DLMF, Fresnel Integrals",
+        "url": "https://dlmf.nist.gov/7.2"
+      }
+    ],
+    "substantive_word_count": 623
+  }
+]

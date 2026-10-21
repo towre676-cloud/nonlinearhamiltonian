@@ -1,0 +1,1195 @@
+[
+  {
+    "id": "Y25-06-001",
+    "title": "ABC quality starts with an exact triple audit",
+    "status": "Developed mathematical repair or classical result; speculative source claims delimited",
+    "summary": "A numerical quality is meaningful only after the integer identity and radical are checked. The recovered first example is valid, the second quality is wrong, and the third displayed triple fails the defining sum. Those finite corrections precede any curvature or asymptotic interpretation.",
+    "definitions": [
+      "For positive coprime a,b with a+b=c, define rad(n)=∏_{p|n}p and q=log c/log rad(abc). Distinct prime factors are counted once.",
+      "The classical ABC statement quantified in the source allows a constant K_ε depending onε; a finite observed maximum is not a theorem bounding all qualities."
+    ],
+    "result": {
+      "name": "Three exact source audits",
+      "statement": "For(2,6436341,6436343), rad(abc)=15042 and q≈1.6299116841. For(121,109375,109496), the radical is10538990 and q≈.7175768892, not1.5808. The displayed(24833,181307,22784) is not an ABC triple because the first two entries sum to206140.",
+      "proof": "The first factors are2,3^10·109 and23^5. Their distinct prime product is2·3·109·23=15042; pairwise coprimality follows from these disjoint prime factors. In the second example121=11²,109375=7·5^6, and109496=2³·13687, with13687 prime, giving the stated radical. Trial division through its square root certifies that primality. Exact addition verifies both sums and Euclid verifies coprimality. In the third, addition alone invalidates the setup, so its reported q cannot serve as an ABC quality. Logs are evaluated only after these integer certificates. If q>1+ε, rearrangement gives c>rad(abc)^(1+ε); this is an equivalence for one valid triple, not a proof of a universal finiteness statement."
+    },
+    "example": {
+      "setup": "Also evaluate the small triple3+125=128.",
+      "calculation": "Its radical is2·3·5=30 and its quality is log128/log30≈1.426565. The repeated powers5³ and2⁷ affect c but contribute only5 and2 to the radical. The verifier factors every displayed input and checks the source claims before approximating any logarithm.",
+      "conclusion": "The audit preserves a genuine strong example while removing two unsupported entries from the evidence base."
+    },
+    "limits": "No universal q_max≈1.63 or ABC proof follows from these finite examples. The arithmetic check does not adjudicate any claimed general proof of ABC.",
+    "extension": "Store each candidate with a+b−c, gcd, full prime factorization and a directed-rounding quality interval. A search can then report only certified records and an explicit finite search range.",
+    "references": [
+      {
+        "label": "Elkies number-theory publications",
+        "url": "https://people.math.harvard.edu/~elkies/math_pubs.html"
+      },
+      {
+        "label": "NIST DLMF prime factorization and arithmetic functions",
+        "url": "https://dlmf.nist.gov/27.2"
+      }
+    ],
+    "original": {
+      "date": "2025-06-01T03:08:28Z",
+      "month": "2025-06",
+      "evidence": "U",
+      "field": "ABC quality starts with an exact triple audit",
+      "concept": "ABC quality starts with an exact triple audit",
+      "origin": "Recovered dated mathematical source fragment; external file context only when evidence T",
+      "question": "Reconstruction: Which displayed ABC examples actually satisfy a+b=c, coprimality and their reported quality?",
+      "math": "For(2,6436341,6436343), rad(abc)=15042 and q≈1.6299116841. For(121,109375,109496), the radical is10538990 and q≈.7175768892, not1.5808. The displayed(24833,181307,22784) is not an ABC triple because the first two entries sum to206140.",
+      "finish": "Precise hypotheses, proof or derivation, worked example and finite verification",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://people.math.harvard.edu/~elkies/math_pubs.html",
+        "https://dlmf.nist.gov/27.2"
+      ],
+      "source_excerpt": "- [USER_FACT] [c0] U@2025-06-01T03:08:28Z, 1y4m: Claimed examples: \\((2,3^{10}109,23^5)=(2,6436341,6436343)\\), \\(q=1.6299\\); \\((121,109375,109496)\\), \\(q=1.5808\\); third displayed as \\((24833,181307,22784)\\), \\(q=1.5679\\).",
+      "retrieval_receipt": "root_followups.json record 0",
+      "original_question": null,
+      "attribution_note": "The source excerpt is the exact retrieved summary line, not a claimed verbatim historical prompt. The revised question, proof and example are newly authored. U identifies retrieved user attribution, A prior assistant output, and T external context rather than a recovered user conversation."
+    }
+  },
+  {
+    "id": "Y25-06-002",
+    "title": "A smoothed radical has computable derivatives but no automatic curvature",
+    "status": "Developed mathematical repair or classical result; speculative source claims delimited",
+    "summary": "The proposed smoothed radical is an explicit positive function of a real parameter. Its calculus can be proved exactly. The source’s separate scalar-curvature and eigenvalue formulas are not consequences of that definition without a metric, domain and operator.",
+    "definitions": [
+      "For fixed n>1 andσ≥0 define r_σ(n)=∏_{p|n}p^(1−p^(−σ)) and F(σ)=log r_σ=Σ_{p|n}(1−p^(−σ))log p.",
+      "For a valid ABC triple define E_σ=log c−σlog rad(abc). This uses the ordinary radical and is a separate affine function ofσ."
+    ],
+    "result": {
+      "name": "Monotonicity, concavity and the exact zero of the energy surrogate",
+      "statement": "F′(σ)=Σp^(−σ)(log p)²>0 and F″(σ)=−Σp^(−σ)(log p)³<0. Also r₀=1 and r_σ→rad(n) asσ→∞. The source’s E_σ vanishes exactly atσ=q and has constant negative derivative−log rad(abc).",
+      "proof": "Because the prime support is finite, differentiate each exponential term directly. All logarithms of primes are positive, giving the strict signs. Atσ=0 every exponent1−p^(−σ) vanishes; asσ increases each tends to one, proving the limits. Solving the affine equation E_σ=0 givesσ=log c/log rad(abc). Thus a crossing at the quality is built into the definition rather than independent evidence of a phase transition. A Riemannian scalar curvature depends on a declared metric and its first and second derivatives in coordinate directions; an eigenvalue depends on an operator domain and boundary conditions. Neither is determined merely by a scalar function F."
+    },
+    "example": {
+      "setup": "Choose n=6 and the valid triple3+125=128.",
+      "calculation": "Atσ=1, r₁(6)=2^(1/2)3^(2/3), whereas F′(1)=(log2)²/2+(log3)²/3 and F″(1)=−(log2)³/2−(log3)³/3. The triple’s E_σ crosses zero at its quality≈1.426565. The verifier checks derivative signs and the independent exponential identity numerically, with exact prime support.",
+      "conclusion": "The declared surrogate has a rigorous calculus, while its geometric and spectral interpretation remains a separate problem."
+    },
+    "limits": "No blow-up exponent, q_max, universal relationλ₁=|R_σ|/4 or arithmetic phase transition is proved. Calling a scalar expression curvature does not specify its underlying geometry.",
+    "extension": "Choose an explicit parameter manifold and positive metric tensor, compute its actual curvature, and separately define a self-adjoint operator. Only a proved comparison inequality could then connect that spectrum with the radical surrogate.",
+    "references": [
+      {
+        "label": "NIST DLMF elementary exponentials and logarithms",
+        "url": "https://dlmf.nist.gov/4.2"
+      }
+    ],
+    "original": {
+      "date": "2025-06-01T05:43:50Z",
+      "month": "2025-06",
+      "evidence": "A",
+      "field": "A smoothed radical has computable derivatives but no automatic curvature",
+      "concept": "A smoothed radical has computable derivatives but no automatic curvature",
+      "origin": "Recovered dated mathematical source fragment; external file context only when evidence T",
+      "question": "Reconstruction: What follows from the declared rad_σ formula, and what additional geometry would be required to call another expression its curvature or spectral gap?",
+      "math": "F′(σ)=Σp^(−σ)(log p)²>0 and F″(σ)=−Σp^(−σ)(log p)³<0. Also r₀=1 and r_σ→rad(n) asσ→∞. The source’s E_σ vanishes exactly atσ=q and has constant negative derivative−log rad(abc).",
+      "finish": "Precise hypotheses, proof or derivation, worked example and finite verification",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://dlmf.nist.gov/4.2"
+      ],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c3] A@2025-06-01T05:43:50Z, -508d: Paper draft introduced \\(\\operatorname{rad}_\\sigma(n)=\\prod_{p\\mid n}p^{1-p^{-\\sigma}}\\), claimed \\(R_\\sigma=-\\sigma^2\\operatorname{rad}(abc)^{-2}\\sum_{p\\mid abc}p^{-1-\\sigma}(\\log p)^3\\), \\(\\lambda_1=|R_\\sigma|/4\\), and \\(E_\\sigma=\\log c-\\sigma\\log\\operatorname{rad}(abc)\\); explicitly presented as empirical/geometric reformulation, not proof.",
+      "retrieval_receipt": "root_receipts.json record 0",
+      "original_question": null,
+      "attribution_note": "The source excerpt is the exact retrieved summary line, not a claimed verbatim historical prompt. The revised question, proof and example are newly authored. U identifies retrieved user attribution, A prior assistant output, and T external context rather than a recovered user conversation."
+    }
+  },
+  {
+    "id": "Y25-06-003",
+    "title": "Power-residue filters prove exclusions only for their declared sequence",
+    "status": "Developed mathematical repair or classical result; speculative source claims delimited",
+    "summary": "The analyzer names many rapidly growing sequences and exponents. A modular filter can be completely rigorous, but its scope is a particular equation, modulus and range. One simple obstruction already separates even and odd degrees rather than producing a universal threshold at seven.",
+    "definitions": [
+      "For a modulus M≥2 define R_d(M)={x^d mod M:x∈Z/MZ}. If S(n)±k=m^d then its residue must belong to R_d(M).",
+      "Take S(n)=n!, k=1, n≥3. For a prime p, the nonzero dth powers form the image of the dth-power map on the cyclic group F_p×."
+    ],
+    "result": {
+      "name": "An all-n factorial exclusion and an exact residue count",
+      "statement": "For every even d≥2 and n≥3, n!−1 is not a dth power of an integer. For a prime p, |R_d(p)|=1+(p−1)/gcd(d,p−1).",
+      "proof": "Since3 divides n!, n!−1≡−1≡2 mod3. Every even power modulo3 is zero or one, giving the contradiction for all n in the stated range. For the residue count, write F_p× as a cyclic group of order p−1. Its dth-power homomorphism has kernel size gcd(d,p−1), so its image has(p−1)/gcd(d,p−1) elements; add zero. This theorem counts residues for uniformly ranging bases modulo p, not solutions along a factorial or tower sequence. Different sequence residue distributions and different signs can therefore have different exclusion fractions."
+    },
+    "example": {
+      "setup": "Compare d=8 and d=7 modulo3, and inspect n=4.",
+      "calculation": "R₈(3)={0,1}, so4!−1=23 is excluded. R₇(3)={0,1,2}, so this modulus excludes nothing for odd degree seven, although it does not prove23 is a seventh power. The positive equation4!+1=25=5² shows that changing the sign matters. The verifier exhaustively constructs residue sets and uses an exact integer-root search for finite examples.",
+      "conclusion": "A modular rejection is a proof of impossibility; passing the filter is only a necessary condition and not a solution certificate."
+    },
+    "limits": "This does not classify n!+1, Fibonacci, Catalan, primorial or tower equations. The historicalρ=5/6 and d*=7 claims lack a defined sampling measure and proof. They are not consequences of this residue theorem.",
+    "extension": "For a fixed named sequence and k,d, combine several coprime moduli by the Chinese remainder theorem and prove the sequence’s residue frequencies. Only then define and estimate a density with an explicit limiting procedure.",
+    "references": [
+      {
+        "label": "MIT theory of numbers: finite fields and power residues",
+        "url": "https://ocw.mit.edu/courses/18-781-theory-of-numbers-spring-2012/pages/lecture-notes/"
+      }
+    ],
+    "original": {
+      "date": "2025-06-03T18:11:03Z",
+      "month": "2025-06",
+      "evidence": "U",
+      "field": "Power-residue filters prove exclusions only for their declared sequence",
+      "concept": "Power-residue filters prove exclusions only for their declared sequence",
+      "origin": "Recovered dated mathematical source fragment; external file context only when evidence T",
+      "question": "Reconstruction: Which exact modular obstruction applies to n!−1=m^d, and why do finite density patterns not imply a universal5/6 law?",
+      "math": "For every even d≥2 and n≥3, n!−1 is not a dth power of an integer. For a prime p, |R_d(p)|=1+(p−1)/gcd(d,p−1).",
+      "finish": "Precise hypotheses, proof or derivation, worked example and finite verification",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://ocw.mit.edu/courses/18-781-theory-of-numbers-spring-2012/pages/lecture-notes/"
+      ],
+      "source_excerpt": "- [USER_FACT] [c1] U@2025-06-03T18:11:03Z, 1y4mo: June 3 code defines sequences (factorial, primorial, exponentials, towers, tetration, Ackermann, Fibonacci, Catalan, superfactorial, double-factorial), tests \\(S(n)\\pm k=m^d\\) for \\(k\\in\\{1,3,8,9,15,16,25,27,32,49,64,81,125,128,243,256\\}\\), modular d-th-power residues, and classifies density regimes.",
+      "retrieval_receipt": "root_followups.json record 0",
+      "original_question": null,
+      "attribution_note": "The source excerpt is the exact retrieved summary line, not a claimed verbatim historical prompt. The revised question, proof and example are newly authored. U identifies retrieved user attribution, A prior assistant output, and T external context rather than a recovered user conversation."
+    }
+  },
+  {
+    "id": "Y25-06-004",
+    "title": "The factorial gcd ratio is an exact valuation calculation",
+    "status": "Developed mathematical repair or classical result; speculative source claims delimited",
+    "summary": "The source provides a piecewise ratio but not a justified physical interpretation. Its divisibility content is elementary and useful: prime-adic valuations determine exactly which branch applies and give a stable implementation without forming a gigantic factorial.",
+    "definitions": [
+      "For positive integers n,k let g=gcd(k,n!). Defineρ(n,k)=n!/g if k divides n!, andρ(n,k)=g/k otherwise, following the retrieved branch convention.",
+      "For a prime p, v_p(n!)=Σ_{j≥1}floor(n/p^j), a finite sum. Factor k=∏p^{a_p}."
+    ],
+    "result": {
+      "name": "Legendre valuations decide the branch exactly",
+      "statement": "g=∏_{p|k}p^{min(a_p,Σfloor(n/p^j))}; k divides n! exactly when each a_p is at most that factorial valuation. In the divisible branchρ=n!/k; otherwiseρ is the reciprocal of the positive integer k/g.",
+      "proof": "Count each factor of p in1,…,n. Multiples of p contribute one, multiples of p² contribute an additional one, and so on, proving Legendre’s sum. The valuation of a gcd is the minimum of the two valuations, yielding the product formula. Divisibility is equivalent to the componentwise inequalities. If k|n!, then g=k and the first branch simplifies as stated. In the other branch k/g is an integer greater than one, soρ=g/k∈(0,1). The two branches therefore occupy distinct numerical ranges, with equality one possible at k=n! in the first branch. This is a chosen arithmetic encoding, not a continuous response law."
+    },
+    "example": {
+      "setup": "Take n=5, so n!=120, and compare k=12 with k=16.",
+      "calculation": "For12=2²·3, the factorial valuations3 and1 suffice, so g=12 andρ=10. For16=2⁴, only three factors of2 occur, so g=8 andρ=1/2. At k=120 the value is one. The verifier compares the valuation formula with Euclid for every k through200 and n through12.",
+      "conclusion": "The formula can be certified completely while its proposed rigidity or thermodynamic meaning is withheld."
+    },
+    "limits": "A large value in one branch is not a measured energy or spectral gap. The discontinuous branch choice supplies no universal phase transition or special role for k=1 beyond its elementary divisibility.",
+    "extension": "Use valuation vectors as the state of a finite divisibility automaton, and prove a termination or search-pruning bound. This would turn the ratio into a transparent algorithmic tool with a specified objective.",
+    "references": [
+      {
+        "label": "MIT elementary number theory notes",
+        "url": "https://math.mit.edu/~dav/finalCheatSheet.pdf"
+      }
+    ],
+    "original": {
+      "date": "2025-06-04T12:43:38Z",
+      "month": "2025-06",
+      "evidence": "U",
+      "field": "The factorial gcd ratio is an exact valuation calculation",
+      "concept": "The factorial gcd ratio is an exact valuation calculation",
+      "origin": "Recovered dated mathematical source fragment; external file context only when evidence T",
+      "question": "Reconstruction: What does the piecewise factorial-gcd quantity compute, and how can its branches be certified without an arithmetic-physics interpretation?",
+      "math": "g=∏_{p|k}p^{min(a_p,Σfloor(n/p^j))}; k divides n! exactly when each a_p is at most that factorial valuation. In the divisible branchρ=n!/k; otherwiseρ is the reciprocal of the positive integer k/g.",
+      "finish": "Precise hypotheses, proof or derivation, worked example and finite verification",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://math.mit.edu/~dav/finalCheatSheet.pdf"
+      ],
+      "source_excerpt": "- [USER_FACT] [c4] U@2025-06-04T12:43:38Z, -504d: Later arithmetic-physics thread asserted \\(\\rho_s(n,k)=n!/\\gcd(k,n!)\\) if \\(k\\mid n!\\), otherwise \\(\\gcd(k,n!)/k\\",
+      "retrieval_receipt": "root_receipts.json record 0",
+      "original_question": null,
+      "attribution_note": "The source excerpt is the exact retrieved summary line, not a claimed verbatim historical prompt. The revised question, proof and example are newly authored. U identifies retrieved user attribution, A prior assistant output, and T external context rather than a recovered user conversation."
+    }
+  },
+  {
+    "id": "Y25-06-005",
+    "title": "The tanh fixed-point model has a provable threshold atλ=1",
+    "status": "Developed mathematical repair or classical result; speculative source claims delimited",
+    "summary": "The source imports a mean-field equation into an arithmetic narrative. The scalar equation itself has a classical exact analysis. Its threshold is a parameter valueλ=1; connecting that parameter to a Diophantine degree requires an additional justified mapλ(d).",
+    "definitions": [
+      "Consider m∈(−1,1), λ≥0 and h∈R with m=tanh(λm+h). For h=0, symmetry permits m=0 and opposite pairs.",
+      "On a smooth solution branch define susceptibilityχ=∂m/∂h. Use the local expansion atanh m=m+m³/3+O(m⁵)."
+    ],
+    "result": {
+      "name": "A complete zero-field fixed-point classification",
+      "statement": "For0≤λ≤1 the only fixed point is zero. Forλ>1 there are exactly three:0 and±m_λ with0<m_λ<1. Nearλ=1⁺, m_λ∼√[3(λ−1)]. On the zero branch forλ<1,χ=(1−λ)^(−1).",
+      "proof": "For m>0, the equation isλ=atanh(m)/m. This ratio tends to one at zero and infinity at one. Its derivative has numerator m/(1−m²)−atanh m, positive because atanh m=∫₀^m(1−t²)^(−1)dt<m/(1−m²). Hence the ratio is strictly increasing and crosses eachλ>1 exactly once. Negative solutions follow by symmetry. The Taylor expansion givesλ−1=m²/3+O(m⁴), proving the square-root behavior. Differentiating m=tanh(λm+h) givesχ=(1−m²)[λχ+1], soχ=(1−m²)/[1−λ(1−m²)] when the denominator is nonzero. Setting m=0 proves the stated susceptibility."
+    },
+    "example": {
+      "setup": "Chooseλ=2,h=0 and solve only the positive branch.",
+      "calculation": "Bisection gives m≈.9575040241 and a direct residual below the declared numerical tolerance. The zero solution also remains present; a solver returning one root is not a classification. For the separately declared fixed-point iteration m_next=tanh(2m), the derivative at this nonzero root is2(1−m²)≈.1664, below one; at zero it is two. Thus the iterative stability differs across these branches. The verifier checks the root bracket andχ=2 on the zero branch atλ=1/2.",
+      "conclusion": "The exponents are consequences of this model, while an arithmetic critical degree has not been derived."
+    },
+    "limits": "No universalρ_d, spectral centroid, correlation length or Diophantine transition follows. Ifλ(d)=1 at d=7 by definition, the location is stipulated rather than discovered.",
+    "extension": "Specify a rigorously derivedλ(d) and quantify its expansion near a crossing. Only then can the scalar asymptotics be transferred to d, with error terms and the domain where the reduction is valid.",
+    "references": [
+      {
+        "label": "MIT nonlinear dynamics and bifurcations",
+        "url": "https://ocw.mit.edu/courses/18-353j-nonlinear-dynamics-i-chaos-fall-2012/"
+      }
+    ],
+    "original": {
+      "date": "2025-06-03T20:46:33Z",
+      "month": "2025-06",
+      "evidence": "U",
+      "field": "The tanh fixed-point model has a provable threshold atλ=1",
+      "concept": "The tanh fixed-point model has a provable threshold atλ=1",
+      "origin": "Recovered dated mathematical source fragment; external file context only when evidence T",
+      "question": "Reconstruction: Which bifurcation and susceptibility exponents follow from m=tanh(λm+h), and does that determine a degree threshold d=7?",
+      "math": "For0≤λ≤1 the only fixed point is zero. Forλ>1 there are exactly three:0 and±m_λ with0<m_λ<1. Nearλ=1⁺, m_λ∼√[3(λ−1)]. On the zero branch forλ<1,χ=(1−λ)^(−1).",
+      "finish": "Precise hypotheses, proof or derivation, worked example and finite verification",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://ocw.mit.edu/courses/18-353j-nonlinear-dynamics-i-chaos-fall-2012/"
+      ],
+      "source_excerpt": "- [USER_FACT] [c1] U@2025-06-03T20:46:33Z, 1y4mo: User manuscript claims radical/ABC framing, universal \\(\\rho=5/6\\), threshold \\(d^*=7\\), and formulas: \\(\\operatorname{rad}(abc)^{1+\\epsilon}>c\\); \\(\\rho_d=1-e^{-\\lambda_d\\phi(d)}\\); \\(m=\\tanh(\\lambda_d m+h_d)\\); \\(\\chi_d\\sim|d-7|^{-1}\\), \\(\\xi_d\\sim|d-7|^{-1/2}\\).",
+      "retrieval_receipt": "root_followups.json record 0",
+      "original_question": null,
+      "attribution_note": "The source excerpt is the exact retrieved summary line, not a claimed verbatim historical prompt. The revised question, proof and example are newly authored. U identifies retrieved user attribution, A prior assistant output, and T external context rather than a recovered user conversation."
+    }
+  },
+  {
+    "id": "Y25-06-006",
+    "title": "A prime-delta operator needs a quadratic form and jump conditions",
+    "status": "Developed mathematical repair or classical result; speculative source claims delimited",
+    "summary": "The interval and numerical setup of the reported eigenvalues were not recovered. A bounded-interval point-interaction model nevertheless supports precise domain, min–max and perturbation statements. Prime locations are just one admissible finite set of interior points; their arithmetic labels do not prove a zeta correspondence.",
+    "definitions": [
+      "On(0,L), take finitely many distinct interior x_j andα_j≥0. On H₀¹ define q[u]=∫|u′|²dx+Σα_j|u(x_j)|².",
+      "The associated operator acts as−u″ between interaction points. Its domain has u continuous, piecewise H², Dirichlet endpoints and jumps u′(x_j+)−u′(x_j−)=α_ju(x_j)."
+    ],
+    "result": {
+      "name": "A closed positive form, spectral bracket and conditional perturbation derivative",
+      "statement": "The form defines a positive self-adjoint operator with discrete spectrum. With r interaction points, (nπ/L)²≤λ_n≤((n+r)π/L)², henceλ_n=(nπ/L)²+O(n). For a differentiable simple eigenbranch of q_ε=q₀+εΣα_j|u(x_j)|², λ_n′(0)=(2/L)Σα_j sin²(nπx_j/L).",
+      "proof": "Point evaluation is continuous on H₀¹, for example|u(x)|≤√L||u′||₂. Thus the form norm is equivalent to the H₀¹ norm and is closed; the closed-form representation theorem and compact embedding into L² are the stated classical functional-analytic inputs. Integration by parts on each subinterval gives the jump conditions. The lower bound is min–max monotonicity. For the upper bound, intersect the span of the first n+r free sine modes with the r evaluation kernels; its dimension is at least n, and on it the interaction term vanishes, giving the bound. For the derivative formula, differentiate the normalized eigenvalue identity; the terms from differentiating the eigenvector cancel by the eigen-equation and normalization, leaving the form derivative evaluated on√(2/L)sin(nπx/L)."
+    },
+    "example": {
+      "setup": "Take L=π and one interaction of strength2 atπ/2.",
+      "calculation": "A symmetric ground mode has wavenumber k∈(1,3/2) satisfying2k cot(πk/2)+2=0. The endpoint signs are exactly positive at1 and negative at3/2, and monotonicity gives one root; λ=k² lies in(1,9/4). Antisymmetric free modes vanishing at the midpoint remain unchanged. For strength2ε, the ground derivative at zero is4/π, also obtained by implicit differentiation of the scalar equation.",
+      "conclusion": "Domain and min–max arguments validate a real operator theorem without validating the source’s unreproducible eigenvalue table."
+    },
+    "limits": "The finite positive model does not imply an explicit formula for prime zeros. The first-order shift is a derivative at zero coupling, not an exact finite-strength correction. An unspecified interval cannot support a unique numerical spectrum.",
+    "extension": "Record the full interval and interaction list, bracket each eigenvalue through transfer matrices with interval arithmetic, and compare discretization errors before drawing spacing conclusions.",
+    "references": [
+      {
+        "label": "Point interactions and self-adjoint operators",
+        "url": "https://kth.diva-portal.org/smash/get/diva2%3A12212/FULLTEXT01.pdf"
+      },
+      {
+        "label": "Geometric approximation of delta interactions",
+        "url": "https://doi.org/10.1088/1751-8121/ac2d52"
+      }
+    ],
+    "original": {
+      "date": "2025-06-08T04:10:12Z",
+      "month": "2025-06",
+      "evidence": "A",
+      "field": "A prime-delta operator needs a quadratic form and jump conditions",
+      "concept": "A prime-delta operator needs a quadratic form and jump conditions",
+      "origin": "Recovered dated mathematical source fragment; external file context only when evidence T",
+      "question": "Reconstruction: Which self-adjoint operator realizes the delta expression, what eigenvalue bracket is justified, and when is the first-order shift formula valid?",
+      "math": "The form defines a positive self-adjoint operator with discrete spectrum. With r interaction points, (nπ/L)²≤λ_n≤((n+r)π/L)², henceλ_n=(nπ/L)²+O(n). For a differentiable simple eigenbranch of q_ε=q₀+εΣα_j|u(x_j)|², λ_n′(0)=(2/L)Σα_j sin²(nπx_j/L).",
+      "finish": "Precise hypotheses, proof or derivation, worked example and finite verification",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://kth.diva-portal.org/smash/get/diva2%3A12212/FULLTEXT01.pdf",
+        "https://doi.org/10.1088/1751-8121/ac2d52"
+      ],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c5] A@2025-06-08T04:10:12Z, -1y4m: Formal framework: domain continuity/Dirichlet conditions and derivative jump \\(f'(\\log p^+)-f'(\\log p^-)=a_p f(\\log p)/\\sqrt p\\); claimed self-adjointness; \\(\\lambda_n=n^2\\pi^2/L^2+O(n)\\); first-order shift \\(\\delta\\lambda_n=(2/L)\\sum_{p\\le P}a_p p^{-1/2}\\sin^2(n\\pi\\log p/L)\\); finite-difference scheme and explicit-formula analogy.",
+      "retrieval_receipt": "root_receipts.json record 0",
+      "original_question": null,
+      "attribution_note": "The source excerpt is the exact retrieved summary line, not a claimed verbatim historical prompt. The revised question, proof and example are newly authored. U identifies retrieved user attribution, A prior assistant output, and T external context rather than a recovered user conversation."
+    }
+  },
+  {
+    "id": "Y25-06-007",
+    "title": "A fibre functor reconstructs a finite group only with its whole category",
+    "status": "Developed mathematical repair or classical result; speculative source claims delimited",
+    "summary": "Grothendieck’s Galois theory is a substantial theorem about categories and fibre functors. A finite group version admits a short complete proof and identifies the essential naturality requirement. It does not assert that the historical modal implementation exists.",
+    "definitions": [
+      "Let G be a finite group, FinGSet its category of finite left G-sets and equivariant maps, and F its forgetful functor to finite sets.",
+      "A natural automorphismη of F is a family of bijectionsη_X:F(X)→F(X) commuting with every equivariant map. Its components are not required to be equivariant themselves."
+    ],
+    "result": {
+      "name": "Aut(F) is canonically G",
+      "statement": "The map a∈G↦[η_X(x)=ax] is a group isomorphism G→Aut(F). Natural automorphisms are determined by their action on the identity element of the regular G-set.",
+      "proof": "For any a, equivariance of a map f gives f(ax)=af(x), so the family is natural; the inverse family uses a^(−1). Conversely letη be natural and let a=η_G(1), where G carries its left regular action. For any G-set X and x∈X, the map f_x:G→X, g↦gx, is equivariant. Naturality givesη_X(x)=η_X(f_x(1))=f_x(η_G(1))=ax. Thus every natural family has the displayed form and its a is unique. Composition of families corresponds to multiplication ab, proving the group law. The proof uses all these maps f_x; isolated orbit sizes or a single matrix do not supply the reconstruction."
+    },
+    "example": {
+      "setup": "Take G=C₃ acting regularly on{0,1,2} by cyclic addition.",
+      "calculation": "The three possible natural families restrict to the three cyclic shifts on the regular set. A transposition fails to commute with its equivariant right translations and therefore cannot be a natural automorphism. The verifier enumerates all six permutations and retains exactly three.",
+      "conclusion": "The finite model shows what is reconstructed and why categorical compatibility is mathematical data rather than a label."
+    },
+    "limits": "The scheme-theoretic theorem needs a Galois category, a geometric fibre functor and a profinite group with continuity. No universal reconstruction of arbitrary schemes from an unspecified modality is claimed.",
+    "extension": "For a finite field, identify finite étale covers with finite sets carrying Frobenius permutation. Recover orbit lengths and extension degrees, then pass to the profinite limit only after verifying the relevant categorical hypotheses.",
+    "references": [
+      {
+        "label": "Stacks Project Galois categories and fundamental groups",
+        "url": "https://stacks.math.columbia.edu/tag/0BQ6"
+      },
+      {
+        "label": "Stacks Project schemes étale over a point",
+        "url": "https://stacks.math.columbia.edu/tag/04JI"
+      }
+    ],
+    "original": {
+      "date": "2025-06-12T05:44:12Z",
+      "month": "2025-06",
+      "evidence": "A",
+      "field": "A fibre functor reconstructs a finite group only with its whole category",
+      "concept": "A fibre functor reconstructs a finite group only with its whole category",
+      "origin": "Recovered dated mathematical source fragment; external file context only when evidence T",
+      "question": "Reconstruction: What exact finite theorem models Grothendieck Galois reconstruction, and which naturality data replace a bare claim of modal verification?",
+      "math": "The map a∈G↦[η_X(x)=ax] is a group isomorphism G→Aut(F). Natural automorphisms are determined by their action on the identity element of the regular G-set.",
+      "finish": "Precise hypotheses, proof or derivation, worked example and finite verification",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://stacks.math.columbia.edu/tag/0BQ6",
+        "https://stacks.math.columbia.edu/tag/04JI"
+      ],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c1] A@2025-06-12T05:44:12Z, 1y4m: prior assistant claimed Grothendieck Galois theory and comparison theorems were formalized and verified in modal logic, but presented only high-level assertions.",
+      "retrieval_receipt": "root_receipts.json record 0",
+      "original_question": null,
+      "attribution_note": "The source excerpt is the exact retrieved summary line, not a claimed verbatim historical prompt. The revised question, proof and example are newly authored. U identifies retrieved user attribution, A prior assistant output, and T external context rather than a recovered user conversation."
+    }
+  },
+  {
+    "id": "Y25-06-008",
+    "title": "A modal reflector can be exact while failing tensor preservation",
+    "status": "Developed mathematical repair or classical result; speculative source claims delimited",
+    "summary": "The historical correction marked the étale modality and implementation incomplete. An elementary representation example supplies genuine unit, idempotence and adjunction data. It also demonstrates that exactness or finite-limit preservation does not automatically make a reflector strong monoidal for a tensor product.",
+    "definitions": [
+      "Work over R with a finite-dimensional representation of C₂, specified by S²=I. Let V_+=ker(S−I) and V_−=ker(S+I), with projections P_±=(I±S)/2.",
+      "Let I include trivial representations and R(V)=V_+. A map to a trivial representation must satisfy fS=f."
+    ],
+    "result": {
+      "name": "A concrete reflector and a tensor obstruction",
+      "statement": "R is left adjoint to I through Hom(V_+,W)≅Hom_C₂(V,IW). The induced idempotent monad IR projects to the trivial summand and is exact. But R(V)⊗R(W)→R(V⊗W) need not be an isomorphism.",
+      "proof": "P_+²=P_+ follows from S²=I, and P_++P_−=I with P_+P_−=0 splits V into the two eigenspaces. If fS=f, then fP_+=f and f kills V_−, so f factors uniquely through V_+. This gives the adjunction and its naturality directly. An equivariant exact sequence splits into independent plus and minus sequences by these natural projections, proving exactness of R. For the tensor claim, take both V and W to be the one-dimensional sign representation. Each invariant subspace is zero, so R(V)⊗R(W)=0. Their tensor has action(−1)(−1)=+1, so R(V⊗W)=R, disproving strong tensor preservation."
+    },
+    "example": {
+      "setup": "Use S=diag(1,−1) and compare its plus projection with two sign factors.",
+      "calculation": "P_+=diag(1,0), with rank one and P_+²=P_+. A sign vector has zero plus projection, but the tensor of two sign vectors is invariant and nonzero. The verifier checks the matrices and tensor signs exactly. No postulate is counted as an implementation proof.",
+      "conclusion": "The example distinguishes categorical idempotence, exactness and monoidal compatibility, each of which has different obligations."
+    },
+    "limits": "This finite ordinary-category reflector is not the historical higher étale modality. HoTT modalities require their own dependent elimination and stability conditions; a linear idempotent alone is not enough.",
+    "extension": "State the actual ambient category and realization functor, construct its unit and comparison morphisms, and prove each required limit or tensor law. Test conservativity and monoidal strength separately before asserting a unified comparison theorem.",
+    "references": [
+      {
+        "label": "Rijke, Shulman and Spitters, modalities in HoTT",
+        "url": "https://arxiv.org/abs/1706.07526"
+      }
+    ],
+    "original": {
+      "date": "2025-06-12T13:25:59Z",
+      "month": "2025-06",
+      "evidence": "A",
+      "field": "A modal reflector can be exact while failing tensor preservation",
+      "concept": "A modal reflector can be exact while failing tensor preservation",
+      "origin": "Recovered dated mathematical source fragment; external file context only when evidence T",
+      "question": "Reconstruction: What explicit adjunction makes an idempotent operation a reflector, and why does that not prove every claimed realization compatibility?",
+      "math": "R is left adjoint to I through Hom(V_+,W)≅Hom_C₂(V,IW). The induced idempotent monad IR projects to the trivial summand and is exact. But R(V)⊗R(W)→R(V⊗W) need not be an isomorphism.",
+      "finish": "Precise hypotheses, proof or derivation, worked example and finite verification",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://arxiv.org/abs/1706.07526"
+      ],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c1] A@2025-06-12T13:25:59Z, 1y4m: later correction-oriented development explicitly marked étale modality incomplete, many proofs omitted, Agda implementation postulated, and motivic–étale comparison unproved.",
+      "retrieval_receipt": "root_receipts.json record 0",
+      "original_question": null,
+      "attribution_note": "The source excerpt is the exact retrieved summary line, not a claimed verbatim historical prompt. The revised question, proof and example are newly authored. U identifies retrieved user attribution, A prior assistant output, and T external context rather than a recovered user conversation."
+    }
+  },
+  {
+    "id": "Y25-06-009",
+    "title": "Projective motivic cohomology retains the base field in every summand",
+    "status": "Developed mathematical repair or classical result; speculative source claims delimited",
+    "summary": "Several retrieved rules attempted to compute all motivic cohomology from a small inequality in p,q,n. The projective-bundle theorem instead shifts the motivic cohomology of the base field. On the Chow diagonal this simplifies beautifully, but it does not erase off-diagonal field information.",
+    "definitions": [
+      "For a field k and standard integral motivic cohomology of smooth schemes, use H^{p,q}(X,Z)=CH^q(X,2q−p).",
+      "Let h be the hyperplane class of bidegree(2,1). The classical projective-bundle theorem is the stated input below."
+    ],
+    "result": {
+      "name": "Correct projective decomposition and the Chow diagonal",
+      "statement": "H^{p,q}(P^n_k,Z)≅⊕_{i=0}^n H^{p−2i,q−i}(Spec k,Z). In particular CH^*(P^n_k)=Z[h]/(h^{n+1}); hence H^{2q,q}=Z for0≤q≤n and zero outside that Chow range. Other bidegrees are not specified by that diagonal rule.",
+      "proof": "The projective-bundle theorem states thatΣh^iπ^* gives the displayed isomorphism, withπ:P^n→Spec k. The shifts follow from deg(h^i)=(2i,i). On the diagonal, H^{2r,r}(k)=CH^r(Spec k), which is Z for r=0 and zero for r>0 because a point has no positive-codimension cycles. Thus only i=q survives, yielding the polynomial Chow ring and the relation h^{n+1}=0. Off the diagonal, H^{1,1}(k)=k× is generally nonzero, so a computer rule returning merely zero or one Tate symbol loses genuine base-field data. The general projective-bundle theorem is cited rather than claimed as proved by finite tests; the diagonal and grading consequences are derived explicitly."
+    },
+    "example": {
+      "setup": "For P² compute its Chow ranks and the product h·h.",
+      "calculation": "The groups in bidegrees(0,0),(2,1),(4,2) are each Z, h² is the point class, and h³=0. For P¹, H^{1,1} contains k× even though its Chow ranks are only one in codimensions zero and one. The verifier implements only the declared truncated polynomial ring and checks degree shifts and products; it does not pretend to compute arbitrary field K-theory.",
+      "conclusion": "A symbolic Tate-basis engine can be correct on a specified cellular Chow subtheory without being a universal motivic-cohomology algorithm."
+    },
+    "limits": "The source’s window formulas and parity tests are not accepted as general theorems. Coefficients, base field and cohomology model must be fixed before any computation is interpreted.",
+    "extension": "Represent field cohomology as an explicit coefficient object with certified operations, then apply the projective decomposition functorially. Extend to products only with all bidegree summands and coefficient Tor information preserved.",
+    "references": [
+      {
+        "label": "Mazza, Voevodsky and Weibel, motivic cohomology",
+        "url": "https://sites.math.rutgers.edu/~weibel/motiviclectures.html"
+      },
+      {
+        "label": "Voevodsky bibliography and higher-Chow comparison",
+        "url": "https://www.math.ias.edu/Voevodsky/voevodsky-publications_bib.html"
+      }
+    ],
+    "original": {
+      "date": "2025-06-12T13:55:56Z",
+      "month": "2025-06",
+      "evidence": "A",
+      "field": "Projective motivic cohomology retains the base field in every summand",
+      "concept": "Projective motivic cohomology retains the base field in every summand",
+      "origin": "Recovered dated mathematical source fragment; external file context only when evidence T",
+      "question": "Reconstruction: What is the correctly indexed projective-bundle formula, and why is a bidegree window returning onlyZ(q) insufficient?",
+      "math": "H^{p,q}(P^n_k,Z)≅⊕_{i=0}^n H^{p−2i,q−i}(Spec k,Z). In particular CH^*(P^n_k)=Z[h]/(h^{n+1}); hence H^{2q,q}=Z for0≤q≤n and zero outside that Chow range. Other bidegrees are not specified by that diagonal rule.",
+      "finish": "Precise hypotheses, proof or derivation, worked example and finite verification",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://sites.math.rutgers.edu/~weibel/motiviclectures.html",
+        "https://www.math.ias.edu/Voevodsky/voevodsky-publications_bib.html"
+      ],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c1] A@2025-06-12T13:55:56Z, -1y4m: projective-space claim was stated as \\(H_{\\mathrm{mot}}(\\mathbb P^n_k)^{p,q}=\\mathbb Z(q)\\) when \\(q\\le p\\le2q\\) and \\(p-q\\le n\\), otherwise \\(0\\).",
+      "retrieval_receipt": "root_details.json record 0",
+      "original_question": null,
+      "attribution_note": "The source excerpt is the exact retrieved summary line, not a claimed verbatim historical prompt. The revised question, proof and example are newly authored. U identifies retrieved user attribution, A prior assistant output, and T external context rather than a recovered user conversation."
+    }
+  },
+  {
+    "id": "Y25-06-010",
+    "title": "Motivic realization is not the claimed universal Betti isomorphism",
+    "status": "Developed mathematical repair or classical result; speculative source claims delimited",
+    "summary": "The source asserts H_mot^{p,q}(X)⊗C≅H_sing^{2q−p}(Xan,C) for every smooth proper complex X. This is false. The higher-Chow index2q−p is not the singular cohomological degree, and realization can discard nontrivial arithmetic or cycle data.",
+    "definitions": [
+      "For smooth complex X, integral motivic cohomology has a Betti cycle map to H_sing^p(Xan,Z(q)); the target degree is p. The map is not generally an isomorphism.",
+      "Use the classical low-degree identity H^{1,1}(Spec k,Z)=k×. The complex point Spec C is smooth and proper."
+    ],
+    "result": {
+      "name": "A counterexample at a point",
+      "statement": "At X=Spec C and(p,q)=(1,1), the source comparison has nonzero left side C×⊗_ZC but zero right side H_sing¹(point,C). Consequently it cannot be a universal isomorphism, even under its own smooth-proper hypothesis.",
+      "proof": "A point is contractible, so its positive-degree singular cohomology vanishes. The motivic weight-one complex yields the stated units group. To see the tensor on the left is nonzero, log|·|:C×→R is a surjective homomorphism of abelian groups; tensoring gives a surjection onto R⊗_ZC, which is nonzero. For example, the multiplication map R⊗_ZC→C sends1⊗1 to1. Thus the source cannot repair its claim merely by tensoring with C. The valid higher-Chow formula H^{p,q}=CH^q(X,2q−p) uses2q−p as a chain index, which is a different role from Betti degree."
+    },
+    "example": {
+      "setup": "Compare the weight-one group at a point with the Chow class on P¹.",
+      "calculation": "H^{1,1}(point)=C× maps to zero singular degree one. In contrast H^{2,1}(P¹)=CH¹(P¹)=Z maps to the degree-two generator of H²(P¹(C),Z(1)). The source’s formula would send that class to degree zero instead, disguising the wrong grading because both target groups happen to have rank one in this particular example.",
+      "conclusion": "Passing a small rank test on P¹ is therefore not sufficient to validate a universal comparison implementation."
+    },
+    "limits": "The low-degree motivic identities are classical inputs, not proved by a JavaScript test. This counterexample refutes the stated universal isomorphism; it does not refute valid finite-coefficient comparison theorems in their stable ranges.",
+    "extension": "For each realization, encode its source category, coefficient change, grading shifts and theorem range as part of the type. Include tests with nontrivial units and Picard-zero classes, not only cellular ranks.",
+    "references": [
+      {
+        "label": "Mazza, Voevodsky and Weibel, motivic cohomology",
+        "url": "https://sites.math.rutgers.edu/~weibel/motiviclectures.html"
+      },
+      {
+        "label": "Clay Hodge conjecture and cycle-map limitations",
+        "url": "https://www.claymath.org/millennium/hodge-conjecture/"
+      }
+    ],
+    "original": {
+      "date": "2025-06-12T14:38:37Z",
+      "month": "2025-06",
+      "evidence": "A",
+      "field": "Motivic realization is not the claimed universal Betti isomorphism",
+      "concept": "Motivic realization is not the claimed universal Betti isomorphism",
+      "origin": "Recovered dated mathematical source fragment; external file context only when evidence T",
+      "question": "Reconstruction: Which degree does the Betti cycle map use, and what elementary motivic group already disproves the stated all-bidegree comparison?",
+      "math": "At X=Spec C and(p,q)=(1,1), the source comparison has nonzero left side C×⊗_ZC but zero right side H_sing¹(point,C). Consequently it cannot be a universal isomorphism, even under its own smooth-proper hypothesis.",
+      "finish": "Precise hypotheses, proof or derivation, worked example and finite verification",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://sites.math.rutgers.edu/~weibel/motiviclectures.html",
+        "https://www.claymath.org/millennium/hodge-conjecture/"
+      ],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c0] A@2025-06-12T14:38:37Z, +1y4mo: For smooth proper \\(X/\\mathbb C\\): \\(H^{p,q}_{mot}(X)\\otimes\\mathbb C\\cong H^{2q-p}_{sing}(X^{an},\\mathbb C)\\); étale realization assumes \\(\\operatorname{char}k\\ne\\ell\\), with \\(\\mathbb Q_\\ell\\) coefficients and Galois action; suggested higher-Chow model \\(CH^q(X,2q-p)\\).",
+      "retrieval_receipt": "root_details.json record 0",
+      "original_question": null,
+      "attribution_note": "The source excerpt is the exact retrieved summary line, not a claimed verbatim historical prompt. The revised question, proof and example are newly authored. U identifies retrieved user attribution, A prior assistant output, and T external context rather than a recovered user conversation."
+    }
+  },
+  {
+    "id": "Y25-06-011",
+    "title": "Künneth signs and Tor corrections survive a tiny exact example",
+    "status": "Developed mathematical repair or classical result; speculative source claims delimited",
+    "summary": "The source itself notes missing Künneth summands and signs. A two-term integer complex gives a compact counterexample to naive rank multiplication and a direct certificate for the required sign. This is a test of homological algebra rather than a claimed universal motivic solver.",
+    "definitions": [
+      "Let C have Z in homological degrees one and zero, with differential multiplication by two. Thus H₀(C)=Z/2 and H₁(C)=0.",
+      "The tensor differential is d(x⊗y)=dx⊗y+(−1)^deg(x)x⊗dy. The classical Künneth framework uses derived tensor and Tor when coefficients are not flat."
+    ],
+    "result": {
+      "name": "The tensor has an additional degree-one Z/2",
+      "statement": "For D=C⊗C, the chain groups are Z,Z²,Z in degrees two,one,zero, with d₂=(-2,2)ᵀ and d₁=(2,2). Hence H₀(D)=Z/2,H₁(D)=Z/2,H₂(D)=0.",
+      "proof": "Choose the degree-one basis(e₁⊗e₀,e₀⊗e₁). The graded sign gives d(e₁⊗e₁)=2e₀⊗e₁−2e₁⊗e₀, the stated d₂. Each degree-one generator maps to2e₀⊗e₀, giving d₁. Their composition is−4+4=0. The kernel of d₁ is generated by(1,−1), while image(d₂) is twice that generator, so H₁ is Z/2. d₂ is injective, giving H₂=0, and image(d₁)=2Z gives H₀=Z/2. Omitting the sign would make d₁d₂=8 instead of zero. Multiplying only H₀ groups misses the degree-one Tor₁^Z(Z/2,Z/2)=Z/2 contribution."
+    },
+    "example": {
+      "setup": "Repeat the calculation with differential multiplication by three.",
+      "calculation": "The same argument gives H₀=Z/3,H₁=Z/3,H₂=0. The verifier checks matrix compositions and kernel/image indices for both examples exactly. Over a field the corresponding torsion obstruction disappears because vector spaces are flat; that is an extra coefficient hypothesis, not a reason to omit Tor over Z.",
+      "conclusion": "A small torsion test catches both a broken differential and a missing Künneth summand."
+    },
+    "limits": "This example does not assert that every motivic Künneth spectral sequence collapses or that an arbitrary product motive is determined by a rank table. Its domain is an explicit tensor of free complexes.",
+    "extension": "Use Smith normal forms and chain maps to certify integral homology and tensor products. A motivic layer should call that verified algebra only after providing its genuine complexes and comparison maps.",
+    "references": [
+      {
+        "label": "Stacks Project Künneth spectral sequence",
+        "url": "https://stacks.math.columbia.edu/tag/0H7V"
+      },
+      {
+        "label": "Stacks Project explicit Künneth Tor page",
+        "url": "https://stacks.math.columbia.edu/tag/0H7Z"
+      }
+    ],
+    "original": {
+      "date": "2025-06-12T15:00:47Z",
+      "month": "2025-06",
+      "evidence": "A",
+      "field": "Künneth signs and Tor corrections survive a tiny exact example",
+      "concept": "Künneth signs and Tor corrections survive a tiny exact example",
+      "origin": "Recovered dated mathematical source fragment; external file context only when evidence T",
+      "question": "Reconstruction: What does a tensor-complex implementation need to preserve, and what higher class is lost by multiplying only degree-zero ranks?",
+      "math": "For D=C⊗C, the chain groups are Z,Z²,Z in degrees two,one,zero, with d₂=(-2,2)ᵀ and d₁=(2,2). Hence H₀(D)=Z/2,H₁(D)=Z/2,H₂(D)=0.",
+      "finish": "Precise hypotheses, proof or derivation, worked example and finite verification",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://stacks.math.columbia.edu/tag/0H7V",
+        "https://stacks.math.columbia.edu/tag/0H7Z"
+      ],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c0] A@2025-06-12T15:00:47Z, +1y4mo: Proposed exact constructions: Künneth spectral sequence with Tor corrections; Mayer–Vietoris for \\(U\\cup V=X\\); blow-up and Gysin long exact sequences, with purity and codimension shifts. Explicit implementation caveats: Künneth simplified rules omit all bidegree summands/signs; extension `compute",
+      "retrieval_receipt": "root_details.json record 0",
+      "original_question": null,
+      "attribution_note": "The source excerpt is the exact retrieved summary line, not a claimed verbatim historical prompt. The revised question, proof and example are newly authored. U identifies retrieved user attribution, A prior assistant output, and T external context rather than a recovered user conversation."
+    }
+  },
+  {
+    "id": "Y25-06-012",
+    "title": "Gysin localization and a torus example force codimension shifts",
+    "status": "Developed mathematical repair or classical result; speculative source claims delimited",
+    "summary": "Mayer–Vietoris, Gysin and blow-up formulas are not interchangeable rank rules. Each has maps, shifts and geometric hypotheses. The one-dimensional torus supplies an exact low-degree test; a point blow-up of the plane supplies a second test for exceptional classes.",
+    "definitions": [
+      "For a smooth X, smooth closed Z of codimension c and U=X∖Z, motivic purity/localization gives …→H^{p−2c,q−c}(Z)→H^{p,q}(X)→H^{p,q}(U)→H^{p−2c+1,q−c}(Z)→… . This is a stated classical theorem.",
+      "For a field k, G_m=Spec k[t,t^(−1)] has units c t^n, with c∈k× and n∈Z."
+    ],
+    "result": {
+      "name": "The torus units and an exceptional-divisor rank check",
+      "statement": "H^{1,1}(G_m)=k×⊕Z, with the extra Z measured by the exponent of t. The codimension-one boundary map records that exponent. The classical blow-up formula adds CH^{r−1}(point) to CH^r(P²) when blowing up a point, so CH¹ gains one independent exceptional class.",
+      "proof": "To prove the units assertion directly, write any nonzero Laurent polynomial with least and greatest exponents a≤b. Under multiplication over a field the extreme coefficients cannot cancel, so exponent width b−a adds. A product equal to one has width zero, forcing each unit to be one monomial c t^n. Multiplication adds exponents, giving k[t,t^(−1)]×≅k×⊕Z. The classical identity H^{1,1}(Y)=O(Y)× identifies this with the motivic group. For X=A¹,Z={0},c=1, localization therefore compares k× with k×⊕Z and its quotient Z, matching the shift to H^{0,0}(Z). For a smooth codimension-c blow-up, the classical Chow formula contributesΣ_{i=1}^{c−1}CH^{r−i}(Z); at a point of P² only one extra codimension-one generator appears. The theorem is an explicit input, while these indices and ranks are its checked consequences."
+    },
+    "example": {
+      "setup": "Take the Laurent units 3t² and5t^(−3), and a point blow-up of P².",
+      "calculation": "Their product is15t^(−1), and the boundary exponents add2+(−3)=−1. The blow-up has Chow ranks1,2,1 rather than1,1,1. An algorithm returning the same rank table as P² would miss the exceptional divisor. The verifier checks exponent arithmetic and the shifted rank contribution.",
+      "conclusion": "The example gives concrete tests for maps and new classes, beyond a list of construction names."
+    },
+    "limits": "Purity needs regular embeddings or the appropriate replacement theorem. Singular centers, arbitrary coefficients and nonflat products require additional hypotheses. No general computation of tori, quadrics or complete intersections is supplied by these two tests.",
+    "extension": "Encode localization and blow-up as exact triangles with verified shifts and maps. Derive Mayer–Vietoris by an actual cover and test exactness rather than using an unproved universal rank-addition function.",
+    "references": [
+      {
+        "label": "Voevodsky motivic cohomology constructions",
+        "url": "https://www.math.ias.edu/Voevodsky/voevodsky-publications_bib.html"
+      },
+      {
+        "label": "Mazza, Voevodsky and Weibel, motivic localization",
+        "url": "https://sites.math.rutgers.edu/~weibel/motiviclectures.html"
+      }
+    ],
+    "original": {
+      "date": "2025-06-12T15:00:47Z",
+      "month": "2025-06",
+      "evidence": "A",
+      "field": "Gysin localization and a torus example force codimension shifts",
+      "concept": "Gysin localization and a torus example force codimension shifts",
+      "origin": "Recovered dated mathematical source fragment; external file context only when evidence T",
+      "question": "Reconstruction: What shifts appear in localization, and which exact calculation checks a torus or blow-up implementation?",
+      "math": "H^{1,1}(G_m)=k×⊕Z, with the extra Z measured by the exponent of t. The codimension-one boundary map records that exponent. The classical blow-up formula adds CH^{r−1}(point) to CH^r(P²) when blowing up a point, so CH¹ gains one independent exceptional class.",
+      "finish": "Precise hypotheses, proof or derivation, worked example and finite verification",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://www.math.ias.edu/Voevodsky/voevodsky-publications_bib.html",
+        "https://sites.math.rutgers.edu/~weibel/motiviclectures.html"
+      ],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c0] A@2025-06-12T15:00:47Z, +1y4mo: Proposed exact constructions: Künneth spectral sequence with Tor corrections; Mayer–Vietoris for \\(U\\cup V=X\\); blow-up and Gysin long exact sequences, with purity and codimension shifts. Explicit implementation caveats: Künneth simplified rules omit all bidegree summands/signs; extension `compute",
+      "retrieval_receipt": "root_details.json record 0",
+      "original_question": null,
+      "attribution_note": "The source excerpt is the exact retrieved summary line, not a claimed verbatim historical prompt. The revised question, proof and example are newly authored. U identifies retrieved user attribution, A prior assistant output, and T external context rather than a recovered user conversation."
+    }
+  },
+  {
+    "id": "Y25-06-013",
+    "title": "Étale and crystalline comparisons require different base data",
+    "status": "Developed mathematical repair or classical result; speculative source claims delimited",
+    "summary": "The retrieved equations omit data that distinguish complex Betti comparison from crystalline-to-de-Rham comparison and from p-adic étale comparison. These are separate classical theorems, not interchangeable modal identities. A projective-line calculation provides a transparent consistency check.",
+    "definitions": [
+      "For finite-type X over C, the classical comparison identifies étale Q_l cohomology with singular Q_l cohomology of X(C). For a smaller characteristic-zero field one must choose an embedding into C and base change.",
+      "For smooth proper X₀ over a perfect field k of characteristic p, put K₀=Frac W(k). A smooth proper lift𝔛/W(k) gives a crystalline–de-Rham comparison after tensoring with K₀. Relating p-adic étale cohomology generally uses a period ring such as B_cris and additional good-reduction hypotheses."
+    ],
+    "result": {
+      "name": "Typed comparison statements and a rank/Frobenius test",
+      "statement": "Under the lift hypotheses, H_crys^i(X₀/W(k))⊗K₀≅H_dR^i(𝔛_K₀/K₀). For P¹, both sides have rank one in degrees zero and two and vanish in degree one. Over F_p the crystalline Frobenius multiplies the hyperplane class by p.",
+      "proof": "The two comparison theorems are cited classical inputs rather than re-proved here. Their fields and spaces are part of the statement: a positive-characteristic X has no X(C) without a different characteristic-zero object, and X_K is undefined until a lift or model is given. For P¹ in characteristic zero, the Čech de-Rham calculation on its two affine charts leaves the constant in degree zero and the class dx/x in total degree two; positive and negative Laurent powers other than x^(−1) are removed by the chart subcomplexes. Equivalently its hyperplane cycle gives the unique degree-two class. Pullback under the p-power map takes O(1) to O(p), so the first Chern class is multiplied by p. This independently fixes the expected Frobenius factor for the cellular test object."
+    },
+    "example": {
+      "setup": "Use P¹ over F₅ with its standard smooth lift over Z₅.",
+      "calculation": "The ranks are(1,0,1), and Frobenius on degrees zero and two is(1,5). The resulting trace count is1+5=6, matching#P¹(F₅). Over F_{5²} it is1+25=26. The verifier checks these exact point counts and factors; it does not computationally certify the general comparison theorem.",
+      "conclusion": "Correct types and a simple functorial test prevent comparisons across incompatible spaces or coefficient fields."
+    },
+    "limits": "A comparison isomorphism may carry filtration, Frobenius and Galois data that a vector-space rank table omits. Lean/Agda-style pseudocode or postulated axioms are not evidence that these theorems were implemented or machine checked.",
+    "extension": "Build an interface whose type requires the base embedding or lift and records every preserved structure. Add period-ring base changes explicitly before attempting a unified p-adic realization diagram.",
+    "references": [
+      {
+        "label": "Brinon and Conrad p-adic Hodge notes",
+        "url": "https://math.stanford.edu/~conrad/papers/notes.pdf"
+      },
+      {
+        "label": "Bhatt crystalline and étale comparison lectures",
+        "url": "https://www.math.ias.edu/~bhatt/teaching/prismatic-columbia/"
+      }
+    ],
+    "original": {
+      "date": "2025-06-12T05:50:33Z",
+      "month": "2025-06",
+      "evidence": "A",
+      "field": "Étale and crystalline comparisons require different base data",
+      "concept": "Étale and crystalline comparisons require different base data",
+      "origin": "Recovered dated mathematical source fragment; external file context only when evidence T",
+      "question": "Reconstruction: Which base-field, lifting and coefficient hypotheses make the two proposed comparison equations meaningful?",
+      "math": "Under the lift hypotheses, H_crys^i(X₀/W(k))⊗K₀≅H_dR^i(𝔛_K₀/K₀). For P¹, both sides have rank one in degrees zero and two and vanish in degree one. Over F_p the crystalline Frobenius multiplies the hyperplane class by p.",
+      "finish": "Precise hypotheses, proof or derivation, worked example and finite verification",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://math.stanford.edu/~conrad/papers/notes.pdf",
+        "https://www.math.ias.edu/~bhatt/teaching/prismatic-columbia/"
+      ],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c1] A@2025-06-12T05:50:33Z, -1y4m: claimed \\(\\ell\\)-adic comparison \\(H^i_{\\mathrm{ét}}(X_{\\bar k},\\mathbb Q_\\ell)\\cong H^i_{\\mathrm{sing}}(X(\\mathbb C),\\mathbb Q_\\ell)\\), crystalline comparison \\(H^i_{\\mathrm{crys}}(X/W(k))\\otimes K\\cong H^i_{\\mathrm{dR}}(X_K/K)\\), plus Lean-style pseudocode; caveat: these are presented as framework claims, not established implementation.",
+      "retrieval_receipt": "root_details.json record 0",
+      "original_question": null,
+      "attribution_note": "The source excerpt is the exact retrieved summary line, not a claimed verbatim historical prompt. The revised question, proof and example are newly authored. U identifies retrieved user attribution, A prior assistant output, and T external context rather than a recovered user conversation."
+    }
+  },
+  {
+    "id": "Y25-06-014",
+    "title": "Rational musical intervals have an exact logarithmic lattice map",
+    "status": "Developed mathematical repair or classical result; speculative source claims delimited",
+    "summary": "The MUSICA source names logarithmic lattices and Baker bounds but supplies no certified constants. Prime-factor encoding already yields a rigorous group map, and a simple height bound gives a modest finite separation estimate. Neither requires a claimed perceptual or modular classifier.",
+    "definitions": [
+      "For distinct primes p₁,…,p_d and a∈Z^d, define r(a)=∏p_i^{a_i}>0 and c(a)=1200log₂r(a), measured in cents.",
+      "For two distinct ratios write r(a)/r(b)=A/B in lowest positive terms. A finite exponent box bounds both A and B by a declared M."
+    ],
+    "result": {
+      "name": "An injective additive encoding and a finite height bound",
+      "statement": "r(a+b)=r(a)r(b), c(a+b)=c(a)+c(b), and c is injective on Z^d. If A,B≤M and A≠B, then|c(a)−c(b)|≥1200/(Mlog2). Without a height bound there need not be a positive uniform octave-reduced separation.",
+      "proof": "The product and logarithm identities prove the homomorphism laws. If c(a)=0, exponentiation gives∏p_i^{a_i}=1, forcing all exponents zero by unique prime factorization; apply this to a−b for injectivity. Assume A>B. Then log(A/B)=∫_B^A dt/t≥(A−B)/A≥1/M, and multiply by1200/log2; reverse A,B otherwise. A sufficient box bound for|a_i|,|b_i|≤N is M=∏p_i^{2N}. For octave reduction, log₂3 is irrational by prime factorization. Pigeonholing N+1 fractional parts jlog₂3 into N equal intervals gives a nonzero multiple within1/N of an integer. Thus distinct intervals can approach an octave arbitrarily closely when exponent size is unbounded."
+    },
+    "example": {
+      "setup": "Compute the perfect fifth3/2 and the syntonic comma81/80.",
+      "calculation": "Their cents are approximately701.9550009 and21.5062896. The fifth differs from seven equal-tempered semitones by about1.955 cents. Multiplying intervals adds these values exactly before numerical approximation. The verifier checks rational prime encodings and logarithmic identities with declared tolerances.",
+      "conclusion": "The encoding is exact algebra; finite search separation and perceived distance are different questions."
+    },
+    "limits": "No explicit historical Baker constant, psychoacoustic adjunction, cultural metric or classifier accuracy was recovered. A logarithmic embedding does not prove a perception model or canonical musical∞-stack.",
+    "extension": "Fix a bounded interval vocabulary and an independently calibrated cost functional, then solve a finite nearest-lattice problem with interval-certified logarithms. A sharper linear-forms-in-logarithms bound can be added only with its actual constants and hypotheses.",
+    "references": [
+      {
+        "label": "NIST DLMF logarithms",
+        "url": "https://dlmf.nist.gov/4.2"
+      },
+      {
+        "label": "MIT elementary number theory",
+        "url": "https://ocw.mit.edu/courses/18-781-theory-of-numbers-spring-2012/"
+      }
+    ],
+    "original": {
+      "date": "2025-06-13T15:42:40Z",
+      "month": "2025-06",
+      "evidence": "U",
+      "field": "Rational musical intervals have an exact logarithmic lattice map",
+      "concept": "Rational musical intervals have an exact logarithmic lattice map",
+      "origin": "Recovered dated mathematical source fragment; external file context only when evidence T",
+      "question": "Reconstruction: Which algebraic properties do prime-factor intervals and cents satisfy, and what separation bound is justified on a finite search box?",
+      "math": "r(a+b)=r(a)r(b), c(a+b)=c(a)+c(b), and c is injective on Z^d. If A,B≤M and A≠B, then|c(a)−c(b)|≥1200/(Mlog2). Without a height bound there need not be a positive uniform octave-reduced separation.",
+      "finish": "Precise hypotheses, proof or derivation, worked example and finite verification",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://dlmf.nist.gov/4.2",
+        "https://ocw.mit.edu/courses/18-781-theory-of-numbers-spring-2012/"
+      ],
+      "source_excerpt": "- [USER_FACT] [c3] U@2025-06-13T15:42:40Z, 1y4m: MUSICA code defines rational intervals via prime factors/log cents, psychoacoustic effort, chord-progressions, musical manifold metrics, Hamiltonian tuning, modular-form classifier, cultural adaptation.",
+      "retrieval_receipt": "root_coverage.json record 0",
+      "original_question": null,
+      "attribution_note": "The source excerpt is the exact retrieved summary line, not a claimed verbatim historical prompt. The revised question, proof and example are newly authored. U identifies retrieved user attribution, A prior assistant output, and T external context rather than a recovered user conversation."
+    }
+  },
+  {
+    "id": "Y25-06-015",
+    "title": "Hamiltonian tuning dynamics need an energy and damping law",
+    "status": "Developed mathematical repair or classical result; speculative source claims delimited",
+    "summary": "The source names Hamiltonian and symplectic tuning dynamics but gives no operator or energy. A declared quadratic model separates conservative motion from an optimization flow. This prevents a mathematically Hamiltonian label from being interpreted as automatic convergence to a preferred tuning.",
+    "definitions": [
+      "Let q,p∈R^d, M,K positive definite symmetric matrices and target q*. Define H=pᵀM^(−1)p/2+(q−q*)ᵀK(q−q*)/2.",
+      "Use qdot=M^(−1)p and pdot=−K(q−q*)−D M^(−1)p, with D symmetric positive semidefinite. The variables may be declared logarithmic tuning coordinates in a new model."
+    ],
+    "result": {
+      "name": "Conservation without damping and dissipation with it",
+      "statement": "Hdot=−vᵀDv≤0 with v=M^(−1)p. If D=0, H is conserved and nontrivial trajectories need not converge. In the scalar model M=1,K=4,D=2, all solutions converge to the target with characteristic exponents−1±i√3.",
+      "proof": "Differentiate H along the trajectory. The kinetic derivative is vᵀpdot, and the potential derivative is(q−q*)ᵀKqdot. Their K terms cancel, leaving−vᵀDv. In the undamped scalar case the positive energy level is an ellipse and motion remains on it, so the target cannot be reached asymptotically unless the initial energy is zero. With the specified damping, write x=q−q* to obtain x″+2x′+4x=0. Its characteristic polynomial(s+1)²+3 has the stated roots; every real solution is e^(−t)(Acos√3t+Bsin√3t), proving convergence directly rather than invoking an unspecified optimizer."
+    },
+    "example": {
+      "setup": "Take q*=0,q(0)=1 and qdot(0)=0 in that scalar model.",
+      "calculation": "Then q(t)=e^(−t)[cos(√3t)+sin(√3t)/√3] and qdot(t)=−4e^(−t)sin(√3t)/√3. Initial energy is two and Hdot=−2qdot². The verifier differentiates the analytic coefficients and checks the ODE and energy balance numerically at declared times.",
+      "conclusion": "Conservation, dissipation and optimization are now distinct proved behaviors rather than interchangeable descriptions."
+    },
+    "limits": "The target, metric, stiffness and damping are newly stipulated, not recovered perceptual measurements. A symplectic integrator generally targets conservative structure; damping changes the system. No haptic or cultural interpretation follows from the ODE alone.",
+    "extension": "Fit a positive quadratic or geodesic cost from independent data, then prove stability of a discretization with explicit step-size bounds. An adjunction or coherence claim would require separately defined functors and natural transformations.",
+    "references": [
+      {
+        "label": "MIT classical mechanics Hamiltonian notes",
+        "url": "https://ocw.mit.edu/courses/8-09-classical-mechanics-iii-fall-2014/d9bac33f6c60b304dc0398e99b327102_MIT8_09F14_full.pdf"
+      }
+    ],
+    "original": {
+      "date": "2025-06-13T15:09:39Z",
+      "month": "2025-06",
+      "evidence": "U",
+      "field": "Hamiltonian tuning dynamics need an energy and damping law",
+      "concept": "Hamiltonian tuning dynamics need an energy and damping law",
+      "origin": "Recovered dated mathematical source fragment; external file context only when evidence T",
+      "question": "Reconstruction: What does an explicit Hamiltonian tuning model conserve, and which additional term actually makes errors decay?",
+      "math": "Hdot=−vᵀDv≤0 with v=M^(−1)p. If D=0, H is conserved and nontrivial trajectories need not converge. In the scalar model M=1,K=4,D=2, all solutions converge to the target with characteristic exponents−1±i√3.",
+      "finish": "Precise hypotheses, proof or derivation, worked example and finite verification",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://ocw.mit.edu/courses/8-09-classical-mechanics-iii-fall-2014/d9bac33f6c60b304dc0398e99b327102_MIT8_09F14_full.pdf"
+      ],
+      "source_excerpt": "- [USER_FACT] [c3] U@2025-06-13T15:09:39Z, 1y4m: mathematical framework passages: enriched categories/natural transformations, psychoacoustic adjunction, musical 2-category/coherence, Baker bounds for N=840, logarithmic lattice embedding, elliptic/modular constructions, Hamiltonian/symplectic tuning dynamics, geodesics.",
+      "retrieval_receipt": "root_coverage.json record 0",
+      "original_question": null,
+      "attribution_note": "The source excerpt is the exact retrieved summary line, not a claimed verbatim historical prompt. The revised question, proof and example are newly authored. U identifies retrieved user attribution, A prior assistant output, and T external context rather than a recovered user conversation."
+    }
+  },
+  {
+    "id": "Y25-06-016",
+    "title": "A nonlinear dyad has a rank-one Jacobian, not a bilinear tensor law",
+    "status": "Developed mathematical repair or classical result; speculative source claims delimited",
+    "summary": "The g-dyad proposal gives an explicit nonlinear action. Its derivative and compositions can be developed without claiming that arbitrary nonlinear or hysteretic behavior is a tensor product. A conservative-field test also determines when the action can come from a scalar variational energy.",
+    "definitions": [
+      "Let a,b∈R^d be fixed nonzero vectors and f:R→R be C¹. Define F(x)=a f(bᵀx). For composition let G(x)=c g(dᵀx).",
+      "A linear dyad abᵀ is a matrix. The geometric product uv=u·v+u∧v instead belongs to a specified Clifford algebra; it is a different algebraic construction."
+    ],
+    "result": {
+      "name": "Derivative, composition and a potential criterion",
+      "statement": "DF(x)=f′(bᵀx)abᵀ has rank at most one. F∘G(x)=a f((bᵀc)g(dᵀx)). If f′ is nonzero somewhere, F is a gradient field on R^d exactly when a is parallel to b.",
+      "proof": "Apply the chain rule componentwise to obtain the Jacobian and its rank bound. Substitution gives the composition, which generally leaves the original activation family unless it is closed under this scalar nesting. If F=∇V with V C², its Jacobian is symmetric, so abᵀ=baᵀ wherever f′≠0. For nonzero a,b this equality implies linear dependence: apply both sides to b to get a||b||²=b(a·b). Conversely if a=κb and F₀′=f, then V(x)=κF₀(bᵀx) has gradientκbf(bᵀx)=F(x). Thus a variational energy exists under an explicit alignment condition, not for every chosen dyad. For f(s)=s the composition reduces to the familiar rank-one matrix identity(abᵀ)(cdᵀ)=(bᵀc)adᵀ."
+    },
+    "example": {
+      "setup": "Choose a=(1,0),b=(0,1),f(s)=s².",
+      "calculation": "F(x,y)=(y²,0), with Jacobian[[0,2y],[0,0]]. At y≠0 it is nonsymmetric, so it cannot be the gradient of a C² potential. Choosing instead a=b=(1,0) gives F=(x²,0)=∇(x³/3). The verifier checks the derivative matrices, rank and linear composition identity exactly.",
+      "conclusion": "The nonlinear action has useful precise structure, while bilinearity, energy and algebraic product claims need separate hypotheses."
+    },
+    "limits": "Hysteresis is not a single-valued memoryless f unless an internal state is added. A nonlocal kernel requires its own function spaces. This example does not prove a nonlinear Koopman closure or equivalence with geometric algebra.",
+    "extension": "Define a finite sum of dyads, characterize symmetry of its full Jacobian, and derive a controlled low-rank approximation error. For state-dependent or hysteretic activations, enlarge the state space before analyzing spectra.",
+    "references": [
+      {
+        "label": "MIT differential calculus and Jacobians",
+        "url": "https://ocw.mit.edu/courses/18-02sc-multivariable-calculus-fall-2010/"
+      },
+      {
+        "label": "MIT matrix factorizations",
+        "url": "https://ocw.mit.edu/courses/18-06sc-linear-algebra-fall-2011/"
+      }
+    ],
+    "original": {
+      "date": "2025-06-22T16:55:09Z",
+      "month": "2025-06",
+      "evidence": "U",
+      "field": "A nonlinear dyad has a rank-one Jacobian, not a bilinear tensor law",
+      "concept": "A nonlinear dyad has a rank-one Jacobian, not a bilinear tensor law",
+      "origin": "Recovered dated mathematical source fragment; external file context only when evidence T",
+      "question": "Reconstruction: Which rank, composition and conservative-field properties follow from F(x)=a f(b·x), and how does this differ from a Clifford product?",
+      "math": "DF(x)=f′(bᵀx)abᵀ has rank at most one. F∘G(x)=a f((bᵀc)g(dᵀx)). If f′ is nonzero somewhere, F is a gradient field on R^d exactly when a is parallel to b.",
+      "finish": "Precise hypotheses, proof or derivation, worked example and finite verification",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://ocw.mit.edu/courses/18-02sc-multivariable-calculus-fall-2010/",
+        "https://ocw.mit.edu/courses/18-06sc-linear-algebra-fall-2011/"
+      ],
+      "source_excerpt": "- [USER_FACT] [c4] U@2025-06-22T16:55:09Z, -1y4m: Formalized g-dyads: nonlinear action \\(a f(b\\cdot x)\\), nonlocal field integral, polynomial/saturation/power-law/hysteretic \\(f\\), exponential/power-law/oscillatory kernels, composition, variational energy equation, linearization/Koopman spectra.",
+      "retrieval_receipt": "root_coverage.json record 0",
+      "original_question": null,
+      "attribution_note": "The source excerpt is the exact retrieved summary line, not a claimed verbatim historical prompt. The revised question, proof and example are newly authored. U identifies retrieved user attribution, A prior assistant output, and T external context rather than a recovered user conversation."
+    }
+  },
+  {
+    "id": "Y25-06-017",
+    "title": "Nonlocal dyad learning needs an adjoint in its variational update",
+    "status": "Developed mathematical repair or classical result; speculative source claims delimited",
+    "summary": "The source’s reconstruction and regularization terms are specific enough to motivate a rigorous linear inverse problem. Its update uses the adjoint of the forward operator, not the operator itself unless self-adjointness has been proved. Positivity then supplies a uniqueness certificate.",
+    "definitions": [
+      "Let K:H→Y be a bounded linear map between real Hilbert spaces. In a finite-dimensional model define J(u)=||Ku−y||²/2+α||u||²/2 withα>0.",
+      "For a smooth field on a bounded domain, addβ∫|∇u|²/2 withβ≥0 and choose boundary conditions before integration by parts."
+    ],
+    "result": {
+      "name": "A coercive normal equation and its gradient",
+      "statement": "The finite model has unique minimizer(K* K+αI)u=K*y. With an H¹ term its formal Euler equation is K*(Ku−y)+αu−βΔu=0, with the chosen natural or fixed boundary conditions.",
+      "proof": "Differentiate J(u+εv) at zero to obtain⟨Ku−y,Kv⟩+α⟨u,v⟩=⟨K*(Ku−y)+αu,v⟩. Thus the derivative vanishes for every v exactly at the normal equation. The quadratic form of K*K+αI is||Kv||²+α||v||²≥α||v||², so the finite matrix is positive definite and invertible, proving existence and uniqueness. For the gradient term, integration by parts givesβ∫∇u·∇v=−β∫Δu v plus boundary flux; it vanishes for fixed variations or yields a Neumann condition in the natural problem. In infinite dimensions a corresponding coercive bilinear-form theorem supplies existence under stated domain assumptions, rather than a matrix inverse being assumed automatically."
+    },
+    "example": {
+      "setup": "Take K=[[1,1],[0,1]], y=(1,0),α=1 andβ=0.",
+      "calculation": "The normal matrix is[[2,1],[1,3]], its determinant is five, and K*y=(1,1). Therefore u=(2/5,1/5). The forward residual is(−2/5,1/5), and K*residual+u=(0,0). For any perturbation h, J(u+h)−J(u)=(||Kh||²+||h||²)/2≥||h||²/2, an exact global optimum certificate.",
+      "conclusion": "The adjoint, coercivity constant and objective gap can all be verified independently of the proposed learning architecture."
+    },
+    "limits": "Optimizing activation parameters or enforcing nonlinear spectral constraints generally destroys this convexity. A CP tensor factorization has scaling ambiguities and is not unique merely because a reconstruction error is small.",
+    "extension": "For a nonlinear forward map use its Fréchet derivative and adjoint in a Gauss–Newton step, then prove a local convergence region and a regularization-dependent error bound rather than extrapolating linear uniqueness globally.",
+    "references": [
+      {
+        "label": "MIT least squares and positive definiteness",
+        "url": "https://ocw.mit.edu/courses/18-06sc-linear-algebra-fall-2011/pages/positive-definite-matrices-and-applications/positive-definite-matrices-and-minima/"
+      }
+    ],
+    "original": {
+      "date": "2025-06-22T17:17:35Z",
+      "month": "2025-06",
+      "evidence": "U",
+      "field": "Nonlocal dyad learning needs an adjoint in its variational update",
+      "concept": "Nonlocal dyad learning needs an adjoint in its variational update",
+      "origin": "Recovered dated mathematical source fragment; external file context only when evidence T",
+      "question": "Reconstruction: What is the correct Euler equation for an L² reconstruction loss with H¹ regularization, and when is its minimizer unique?",
+      "math": "The finite model has unique minimizer(K* K+αI)u=K*y. With an H¹ term its formal Euler equation is K*(Ku−y)+αu−βΔu=0, with the chosen natural or fixed boundary conditions.",
+      "finish": "Precise hypotheses, proof or derivation, worked example and finite verification",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://ocw.mit.edu/courses/18-06sc-linear-algebra-fall-2011/pages/positive-definite-matrices-and-applications/positive-definite-matrices-and-minima/"
+      ],
+      "source_excerpt": "- [USER_FACT] [c4] U@2025-06-22T17:17:35Z, -1y4m: Variational g-dyad learning: reconstruction norm with \\(H^1/L^2\\) regularization, orthogonality/spectral constraints, Euler–Lagrange updates, Riemannian optimization, Koopman evolution; later viscoacoustic equations included coupling tensor and acoustic production term.",
+      "retrieval_receipt": "root_coverage.json record 0",
+      "original_question": null,
+      "attribution_note": "The source excerpt is the exact retrieved summary line, not a claimed verbatim historical prompt. The revised question, proof and example are newly authored. U identifies retrieved user attribution, A prior assistant output, and T external context rather than a recovered user conversation."
+    }
+  },
+  {
+    "id": "Y25-06-018",
+    "title": "Tripod overlap and sensor aliasing have exact finite certificates",
+    "status": "Developed mathematical repair or classical result; speculative source claims delimited",
+    "summary": "The robotics source combines gait geometry, sampling, scaling and feasibility numbers. Two elementary calculations can be established without recovering an apparatus: overlap of two periodic stance intervals, and the exact aliasing identity behind spatial sampling. Neither validates the endurance or sensor-rate estimates.",
+    "definitions": [
+      "Normalize a gait period to one. Let two tripod stance intervals each have durationβ∈[0,1], offset by1/2 on the circle.",
+      "Sample a spatial complex wave e^(ikx) on x_n=nh. A Nyquist spacing rule requires a known band limit|k|<π/h; endpoint equality needs separate conventions."
+    ],
+    "result": {
+      "name": "Support overlap and the spatial alias identity",
+      "statement": "Forβ≥1/2 the two tripods cover the whole cycle and overlap for fraction2β−1. Atβ=.7 the overlap is.4 and each exclusive stance occupies.3. Spatial waves with wavenumbers k and k+2πj/h have identical samples for every integer j.",
+      "proof": "Each interval has measureβ. Forβ≥1/2 their half-cycle offset leaves no gap, so union measure is one. Inclusion–exclusion gives overlap2β−1; subtracting it from each interval gives exclusive measure1−β. Forβ<1/2 the intervals are disjoint and the uncovered fraction is1−2β. For sampling, e^(i(k+2πj/h)nh)=e^(iknh)e^(2πijn)=e^(iknh), proving nonidentifiability without a band-limit prior. If the smallest modeled wavelength isλ_min and the model is genuinely band limited, choosing h<λ_min/2 prevents this aliasing within the admitted wavenumber interval. A finite set of samples does not itself establish that prior."
+    },
+    "example": {
+      "setup": "Useβ=7/10 and a constructed four-sensor data stream with640×480 pixels, eight bits/pixel and100 frames/s.",
+      "calculation": "The gait fractions are exactly4/10,3/10,3/10. The raw data rate is4·640·480·8·100=983040000bits/s before overhead or compression. This illustrative count shows why sensor dimensions, bit depth and frame rate are required before a reported200Gbps can be audited. The verifier checks the exact interval lengths, integer rate and alias samples.",
+      "conclusion": "Declared geometry and units produce real certificates, while physical load capacity and measured sensor performance remain separate."
+    },
+    "limits": "Tripod contact does not by itself prove static stability; support polygons and the center of mass are missing. The source’s M^(3/4) power scaling, Reynolds number and endurance need their actual parameters and validation.",
+    "extension": "Specify foot trajectories and center-of-mass paths, then certify support-polygon margins over each phase interval. Pair the sampling prior with an anti-alias filter model and a complete bandwidth budget.",
+    "references": [
+      {
+        "label": "MIT signals and sampling",
+        "url": "https://ocw.mit.edu/courses/6-003-signals-and-systems-fall-2011/"
+      }
+    ],
+    "original": {
+      "date": "2025-06-15T11:40:21Z",
+      "month": "2025-06",
+      "evidence": "U",
+      "field": "Tripod overlap and sensor aliasing have exact finite certificates",
+      "concept": "Tripod overlap and sensor aliasing have exact finite certificates",
+      "origin": "Recovered dated mathematical source fragment; external file context only when evidence T",
+      "question": "Reconstruction: What does duty factor.7 with half-cycle tripod offset imply, and which band-limit hypothesis is needed for a λ/2 sensor-spacing rule?",
+      "math": "Forβ≥1/2 the two tripods cover the whole cycle and overlap for fraction2β−1. Atβ=.7 the overlap is.4 and each exclusive stance occupies.3. Spatial waves with wavenumbers k and k+2πj/h have identical samples for every integer j.",
+      "finish": "Precise hypotheses, proof or derivation, worked example and finite verification",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://ocw.mit.edu/courses/6-003-signals-and-systems-fall-2011/"
+      ],
+      "source_excerpt": "- [USER_FACT] [c2] U@2025-06-15T11:40:21Z, -493d: Arthropod ground-robotics mathematics: tripod gait phase lag 0.5/duty factor 0.7; Nyquist sensor spacing λ/2; M^3/4 power scaling; small-world topology; energy-recovery percentages; swarm optimization.",
+      "retrieval_receipt": "root_coverage.json record 0",
+      "original_question": null,
+      "attribution_note": "The source excerpt is the exact retrieved summary line, not a claimed verbatim historical prompt. The revised question, proof and example are newly authored. U identifies retrieved user attribution, A prior assistant output, and T external context rather than a recovered user conversation."
+    }
+  },
+  {
+    "id": "Y25-06-019",
+    "title": "Resonance and regenerative accounting are separate mathematical claims",
+    "status": "Developed mathematical repair or classical result; speculative source claims delimited",
+    "summary": "A24Hz target, a lock interval and a power-reduction criterion are experimental specifications, not a resonance theorem. A linear oscillator supplies a precise frequency response. Energy accounting independently determines whether a regeneration term has already been subtracted by the meter.",
+    "definitions": [
+      "Let mx″+cx′+kx=F cosωt with m,k,c>0. Its steady displacement amplitude is A(ω)=F/√[(k−mω²)²+c²ω²].",
+      "Define gross electrical draw E_g, separately returned energy E_r and useful work W. Net input is E_g−E_r only when E_g is a gross measure; if the input is already net, subtracting E_r again double counts."
+    ],
+    "result": {
+      "name": "A resonance location and a net-efficiency identity",
+      "statement": "If c²<2km, the positive displacement peak occurs atω_r²=k/m−c²/(2m²). Otherwise the maximal amplitude is at zero frequency. The accounting efficiency is W/(E_g−E_r) under a positive, complete net denominator, not a theorem that energy has been created.",
+      "proof": "Minimize the squared amplitude denominator D(ω)=(k−mω²)²+c²ω². Its derivative is2ω[2m²ω²+c²−2km]. Thus an interior positive minimum exists precisely under the stated inequality, and its location is the displayedω_r. At high frequency D grows without bound, confirming the maximum. For accounting, write the control-volume balance E_g−E_r=W+E_loss+ΔE_store. Under steady storage and nonnegative losses this gives W≤E_g−E_r. The inequality depends on including every source and return in the same boundary and horizon; an incomplete denominator can manufacture an apparent efficiency."
+    },
+    "example": {
+      "setup": "Choose normalized m=1,k=25,c=2,F=1. Separately choose E_g=100,E_r=20,W=60.",
+      "calculation": "The displacement peak is at√23, not the undamped frequency five. The squared denominator there is96, versus100 atω=5. Net efficiency is60/80=.75, while gross work ratio is.6; both are valid different ratios with declared denominators. If the meter had already reported80 net, subtracting20 again would incorrectly report one.",
+      "conclusion": "The frequency and energy calculations are explicit and do not certify the proposed wing testbed’s performance."
+    },
+    "limits": "The linear oscillator omits nonlinear aerodynamic loading and controller dynamics. A frequency lock or40% reduction target requires measurements and a baseline definition. Positive regeneration numbers alone do not guarantee overall efficiency gain.",
+    "extension": "Identify the frequency response with uncertainty intervals, distinguish displacement and power peaks, and prove stability of the actual feedback loop. Report gross, returned and net energies separately so any claimed reduction is reproducible.",
+    "references": [
+      {
+        "label": "MIT vibrations and waves",
+        "url": "https://ocw.mit.edu/courses/8-03sc-physics-iii-vibrations-and-waves-fall-2016/"
+      },
+      {
+        "label": "NIST energy units",
+        "url": "https://www.nist.gov/pml/special-publication-811/nist-guide-si-chapter-4-two-classes-si-units-and-si-prefixes"
+      }
+    ],
+    "original": {
+      "date": "2025-06-15T12:22:14Z",
+      "month": "2025-06",
+      "evidence": "U",
+      "field": "Resonance and regenerative accounting are separate mathematical claims",
+      "concept": "Resonance and regenerative accounting are separate mathematical claims",
+      "origin": "Recovered dated mathematical source fragment; external file context only when evidence T",
+      "question": "Reconstruction: Where does a damped oscillator maximize displacement, and when is subtracting regenerated energy from electrical input a valid efficiency denominator?",
+      "math": "If c²<2km, the positive displacement peak occurs atω_r²=k/m−c²/(2m²). Otherwise the maximal amplitude is at zero frequency. The accounting efficiency is W/(E_g−E_r) under a positive, complete net denominator, not a theorem that energy has been created.",
+      "finish": "Precise hypotheses, proof or derivation, worked example and finite verification",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://ocw.mit.edu/courses/8-03sc-physics-iii-vibrations-and-waves-fall-2016/",
+        "https://www.nist.gov/pml/special-publication-811/nist-guide-si-chapter-4-two-classes-si-units-and-si-prefixes"
+      ],
+      "source_excerpt": "- [USER_FACT] [c2] U@2025-06-15T12:22:14Z, -493d: Resonant-wing testbed equation: η_system = Mechanical Work Output / (Electrical Energy Input − Regenerative Energy Recovered); 24 Hz resonance, ±2 Hz lock, 40% power-reduction criterion.",
+      "retrieval_receipt": "root_coverage.json record 0",
+      "original_question": null,
+      "attribution_note": "The source excerpt is the exact retrieved summary line, not a claimed verbatim historical prompt. The revised question, proof and example are newly authored. U identifies retrieved user attribution, A prior assistant output, and T external context rather than a recovered user conversation."
+    }
+  },
+  {
+    "id": "Y25-06-020",
+    "title": "A strong correlation is not a causal policy proof",
+    "status": "Developed mathematical repair or classical result; speculative source claims delimited",
+    "summary": "The source’s assistant called a transportation analysis a mathematical proof and treated correlations as causal certainty. A structural counterexample establishes the missing inference exactly. Discounted scenario sums can also be computed, but their inputs remain assumptions rather than proved consequences of correlation.",
+    "definitions": [
+      "Let U,V be independent mean-zero, variance-one variables. Define X=U and Y=−U+σV. An intervention do(X=x) replaces only the equation for X.",
+      "For a stipulated constant annual quantity b, discount r>0, horizon N and initial quantity C in compatible units, define V_N=Σ_{t=1}^N b/(1+r)^t−C."
+    ],
+    "result": {
+      "name": "An exact confounding example and a geometric-sum formula",
+      "statement": "Corr(X,Y)=−1/√(1+σ²), yet do(X=x) leaves the distribution of Y unchanged. Choosingσ²=(1000/973)²−1 gives correlation−.973 exactly. Also V_N=b[1−(1+r)^(−N)]/r−C.",
+      "proof": "Cov(X,Y)=−Var(U)=−1, Var(X)=1 and Var(Y)=1+σ², proving the correlation. The equation for Y contains U,V but no X, so intervening on X does not change it. Observational association can therefore be arbitrarily close to−1 with zero causal effect. For the sum, set a=(1+r)^(−1); Σ_{t=1}^Na^t=a(1−a^N)/(1−a)=[1−(1+r)^(−N)]/r. Multiplication by b and subtraction of C gives the expression. Its precision cannot validate b or the assumed intervention effect."
+    },
+    "example": {
+      "setup": "Use N=30,r=1/20,b=1,C=10 as a new normalized scenario.",
+      "calculation": "The finite geometric sum can be checked exactly as a rational number, then compared with its closed form. If a forecasted benefit b were actually zero under the confounded intervention model, the result would instead be−10. The verifier checks the correlation variance ratio and both sum forms.",
+      "conclusion": "A causal model and an arithmetic projection are separate objects; a precise projection can still rest on an unjustified causal input."
+    },
+    "limits": "No legal, fiscal, mortality or current-policy recommendation is supplied. The historical success probabilities and benefit estimates were not calibrated by this counterexample or sum identity.",
+    "extension": "Specify an identification strategy and uncertainty set for the intervention effect, then propagate that set through the finite scenario sum. Report sensitivity to unmeasured confounding and discount assumptions rather than replacing them with a correlation coefficient.",
+    "references": [
+      {
+        "label": "Pearl, causal inference overview",
+        "url": "https://ftp.cs.ucla.edu/pub/stat_ser/r350.pdf"
+      }
+    ],
+    "original": {
+      "date": "2025-06-17T17:13:49Z",
+      "month": "2025-06",
+      "evidence": "A",
+      "field": "A strong correlation is not a causal policy proof",
+      "concept": "A strong correlation is not a causal policy proof",
+      "origin": "Recovered dated mathematical source fragment; external file context only when evidence T",
+      "question": "Reconstruction: Why can a correlation of−.973 coexist with zero intervention effect, and what does a discounted30-year arithmetic model actually assume?",
+      "math": "Corr(X,Y)=−1/√(1+σ²), yet do(X=x) leaves the distribution of Y unchanged. Choosingσ²=(1000/973)²−1 gives correlation−.973 exactly. Also V_N=b[1−(1+r)^(−N)]/r−C.",
+      "finish": "Precise hypotheses, proof or derivation, worked example and finite verification",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://ftp.cs.ucla.edu/pub/stat_ser/r350.pdf"
+      ],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c9] A@2025-06-17T17:13:49Z, +1y4m3d: Assistant asserted the analysis was a “mathematical proof,” treating correlations (e.g. walkability vs deaths r=-0.973) as causal certainty.",
+      "retrieval_receipt": "root_coverage.json record 0",
+      "original_question": null,
+      "attribution_note": "The source excerpt is the exact retrieved summary line, not a claimed verbatim historical prompt. The revised question, proof and example are newly authored. U identifies retrieved user attribution, A prior assistant output, and T external context rather than a recovered user conversation."
+    }
+  },
+  {
+    "id": "Y25-06-021",
+    "title": "An invented coefficient cannot turn unlike quantities into a validated scalar",
+    "status": "Developed mathematical repair or classical result; speculative source claims delimited",
+    "summary": "The user explicitly identified invented coefficients and conversion factors as speculative. A weighted sum can be mathematically defined, but dimensional compatibility and independently justified weights are necessary before its numerical output has the proposed interpretation. This treatment preserves that criticism rather than repeating unsupported empirical totals.",
+    "definitions": [
+      "Let x=(x₁,…,x_d) be measured components and D_w(x)=Σw_ix_i. Either the components share a unit or each weight must convert its component into a declared common unit.",
+      "A change of component units x_i′=c_ix_i with c_i>0 must be accompanied by w_i′=w_i/c_i to preserve the scalar."
+    ],
+    "result": {
+      "name": "Unit invariance and arbitrary ranking under unconstrained weights",
+      "statement": "D is invariant under that coordinated unit change. Without a constraint or calibration on positive weights, even the ranking of x=(1,0) and y=(0,1) is undetermined: it is the sign of w₁−w₂.",
+      "proof": "Substituting w_i′x_i′=(w_i/c_i)(c_ix_i)=w_ix_i proves invariance term by term. If weights are retained while units change, the same physical observation produces a different scalar, so the expression is not unit invariant. In the two-component example D_w(x)=w₁ and D_w(y)=w₂; both orders are attainable with positive weights, as is equality. A numerical matrix or entropy multiplier chosen after seeing a desired conclusion can therefore encode that conclusion rather than establish it. Moreover an entropy in dimensionless bits cannot be relabeled joules without a stated conversion model and physical conditions."
+    },
+    "example": {
+      "setup": "Choose weights(2,1), then(1,2), for the same two observations.",
+      "calculation": "The ranking reverses from2>1 to1<2. Rescale the first component by100 and its weight by1/100; the score remains unchanged, providing an exact unit-change test. The verifier checks these algebraic identities and does not repeat the source’s invented population or health coefficients.",
+      "conclusion": "The sum is a declared index only after its units and weights are supplied; its real-world meaning is not created by notation."
+    },
+    "limits": "This result does not prohibit useful calibrated indices. It shows that free coefficients and unlike units leave conclusions unidentified. No empirical harm total or causal interpretation is inferred.",
+    "extension": "Define axioms for monotonicity, unit invariance and calibration, then determine the admissible weight set. Report only comparisons that hold for every admissible weight, producing a robust partial order rather than a fabricated precise score.",
+    "references": [
+      {
+        "label": "NIST SI rules for quantities and units",
+        "url": "https://www.nist.gov/pml/special-publication-811/nist-guide-si-chapter-7-rules-and-style-conventions-expressing-values"
+      }
+    ],
+    "original": {
+      "date": "2025-06-16T15:20:01Z",
+      "month": "2025-06",
+      "evidence": "U",
+      "field": "An invented coefficient cannot turn unlike quantities into a validated scalar",
+      "concept": "An invented coefficient cannot turn unlike quantities into a validated scalar",
+      "origin": "Recovered dated mathematical source fragment; external file context only when evidence T",
+      "question": "Reconstruction: Which unit and identifiability requirements are missing from D(t)=Σε_i d_i(t), and how can free weights reverse a conclusion?",
+      "math": "D is invariant under that coordinated unit change. Without a constraint or calibration on positive weights, even the ranking of x=(1,0) and y=(0,1) is undetermined: it is the sign of w₁−w₂.",
+      "finish": "Precise hypotheses, proof or derivation, worked example and finite verification",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://www.nist.gov/pml/special-publication-811/nist-guide-si-chapter-7-rules-and-style-conventions-expressing-values"
+      ],
+      "source_excerpt": "- [USER_FACT] [c7] U@2025-06-16T15:20:01Z, +1y4m: explicitly identified invented coefficients, arbitrary matrices, fabricated conversion factors, and pseudo-mathematical formalism as speculative rather than rigorous.",
+      "retrieval_receipt": "root_coverage.json record 0",
+      "original_question": null,
+      "attribution_note": "The source excerpt is the exact retrieved summary line, not a claimed verbatim historical prompt. The revised question, proof and example are newly authored. U identifies retrieved user attribution, A prior assistant output, and T external context rather than a recovered user conversation."
+    }
+  },
+  {
+    "id": "Y25-06-022",
+    "title": "Area, fourth-power temperature and efficiency ratios need the same balance",
+    "status": "Developed mathematical repair or classical result; speculative source claims delimited",
+    "summary": "The engine passage reports assumed heat-transfer and output changes. The mathematical repair fixes the dependent variables in a fourth-power model and keeps auxiliary input in the efficiency denominator. It does not validate the proposed integration or its performance.",
+    "definitions": [
+      "For a declared ideal radiation relation use P=cAT⁴ with c>0 fixed. Comparing two states gives P₂/P₁=(A₂/A₁)(T₂/T₁)⁴.",
+      "For a complete steady energy boundary useη=P_out/(Q_source+P_aux). A heat moved per actuator power ratio is not automatically an energy-conversion efficiency."
+    ],
+    "result": {
+      "name": "An exact area-temperature scaling and denominator audit",
+      "statement": "At fixed P, multiplying area by1.7 divides temperature by1.7^(1/4). Multiplying both area by1.7 and temperature by1.7^(1/4) instead multiplies P by1.7²=2.89. The source’s150/555 and150/277.5 ratios are≈.27027 and.54054 before auxiliary power.",
+      "proof": "Divide P=cAT⁴ between states and solve for the unknown ratio. The fixed-power conclusion follows by setting P₂/P₁=1. If both source multipliers are inserted, their product is1.7·1.7. For efficiency, conservation under a steady boundary requires all positive energy inputs in the denominator. Adding an auxiliary2.5 units changes the displayed ratios to150/557.5≈.26906 and150/280≈.53571. The arithmetic does not prove that the thermal input can be halved at unchanged useful output; that is a separate unverified premise. SimilarlyΔQ/P_acoustic=100 states a ratio of moved heat to actuator power, not100 times net generated energy."
+    },
+    "example": {
+      "setup": "Apply the temperature multiplier to1800K only as a stipulated arithmetic example.",
+      "calculation": "1800·1.7^(1/4)≈2055.3450K, while the fixed-power, increased-area value is about1576.38K. The source’s approximate2052K is a rough numerical estimate, but the larger issue is which power is held fixed. The verifier checks the fourth-power identities, exact power ratios and numerical roots.",
+      "conclusion": "Correct algebra identifies the model assumption responsible for the apparent gain rather than presenting it as a demonstrated device result."
+    },
+    "limits": "Real radiation, convection, combustion and storage require a complete transport model. No temperature, acoustic drive, safety limit or apparatus instruction is recommended. The source itself later called the integration unvalidated.",
+    "extension": "Write a closed input-output energy balance with uncertainty intervals and measured auxiliary power. Prove an upper bound under that boundary before fitting any claimed enhancement factor.",
+    "references": [
+      {
+        "label": "NIST SI energy and power units",
+        "url": "https://www.nist.gov/pml/special-publication-811/nist-guide-si-chapter-4-two-classes-si-units-and-si-prefixes"
+      },
+      {
+        "label": "MIT heat and mass transfer",
+        "url": "https://ocw.mit.edu/courses/2-51-intermediate-heat-and-mass-transfer-fall-2011/"
+      }
+    ],
+    "original": {
+      "date": "2025-06-24T05:21:32Z",
+      "month": "2025-06",
+      "evidence": "A",
+      "field": "Area, fourth-power temperature and efficiency ratios need the same balance",
+      "concept": "Area, fourth-power temperature and efficiency ratios need the same balance",
+      "origin": "Recovered dated mathematical source fragment; external file context only when evidence T",
+      "question": "Reconstruction: What follows from a fourth-power radiation model and the stated power ratios, and which claimed improvements remain assumptions?",
+      "math": "At fixed P, multiplying area by1.7 divides temperature by1.7^(1/4). Multiplying both area by1.7 and temperature by1.7^(1/4) instead multiplies P by1.7²=2.89. The source’s150/555 and150/277.5 ratios are≈.27027 and.54054 before auxiliary power.",
+      "finish": "Precise hypotheses, proof or derivation, worked example and finite verification",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://www.nist.gov/pml/special-publication-811/nist-guide-si-chapter-4-two-classes-si-units-and-si-prefixes",
+        "https://ocw.mit.edu/courses/2-51-intermediate-heat-and-mass-transfer-fall-2011/"
+      ],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c6] A@2025-06-24T05:21:32Z, -1y4m: Mathematical claims included \\(COP_{ta}=\\Delta Q/P_{acoustic}\\), assumed \\(2.5\\,W\\to250\\,W\\) (\\(COP=100\\)); assumed heat-transfer doubling, changing \\(555\\,W\\) thermal input/\\(150\\,W\\) electric (\\(27\\%\\)) to \\(277.5\\,W\\) and \\(54\\%\\); assumed \\(1.7\\times\\) flame area, \\(T=(1.7)^{1/4}1800\\approx2052\\,K\\), enthalpy \\(2.99\\to3.53\\,MJ/kg\\); assumed ±20% output, \\(120\\)–\\(180\\,W\\).",
+      "retrieval_receipt": "root_receipts.json record 0",
+      "original_question": null,
+      "attribution_note": "The source excerpt is the exact retrieved summary line, not a claimed verbatim historical prompt. The revised question, proof and example are newly authored. U identifies retrieved user attribution, A prior assistant output, and T external context rather than a recovered user conversation."
+    }
+  },
+  {
+    "id": "Y25-06-023",
+    "title": "The mod-three B₄ action has five exact orbits",
+    "status": "Developed mathematical repair or classical result; speculative source claims delimited",
+    "summary": "The program description names B₄,E₆,E₇,E₈ and coordinate reflections. Signed coordinate permutations give a genuine B₄ action with an exact finite classification. Names of exceptional groups do not make them the same representation, and their orders already rule out some proposed faithful linear identifications.",
+    "definitions": [
+      "Let B₄ be the group of signed4×4 permutation matrices over F₃. Each sign is±1, distinct in this field. It acts on the81 vectors in F₃⁴.",
+      "Hamming weight w(x) is the number of nonzero coordinates. The reduced quadratic sumΣx_i² equals w(x) modulo three, a coarser invariant."
+    ],
+    "result": {
+      "name": "Order, orbits and a faithful-representation obstruction",
+      "statement": "|B₄|=2⁴·4!=384. Its orbits are exactly the five Hamming-weight classes, of sizes1,8,24,32,16. A faithful linear action of W(E₈) on F₃⁴ is impossible because|W(E₈)|=696729600 exceeds|GL₄(F₃)|=24261120.",
+      "proof": "Choose a permutation of the four coordinates and an independent sign for each output coordinate; the resulting384 matrices are distinct. They preserve the number of nonzero coordinates. Conversely any vector of weight r can be moved to(1,…,1,0,…,0) by a permutation and sign flips, proving one orbit for each r. Choose its support in binomial(4,r) ways and its nonzero signs in2^r ways, giving the sizes. Their sum is81. For the obstruction, a faithful linear action embeds its group into GL₄(F₃). Counting ordered independent columns gives(81−1)(81−3)(81−9)(81−27)=24261120, too small for W(E₈). The quoted E₈ order is a classical root-system input; the cardinality contradiction is elementary."
+    },
+    "example": {
+      "setup": "Compare vectors(1,0,0,0) and(1,1,1,1).",
+      "calculation": "Both have quadratic sum one modulo three, but their Hamming weights one and four put them in different B₄ orbits. The verifier enumerates all81 vectors and all384 signed permutations, checking the orbit partition exactly. It also checks the GL order and the order obstruction.",
+      "conclusion": "A complete finite group-action result replaces a loose exceptional-group label without claiming a review of unrecovered source code."
+    },
+    "limits": "A nonfaithful action or a higher-dimensional exceptional representation is not excluded. The finite orbit calculation establishes no L-function, modularity, mirror-symmetry or deductive proof capability.",
+    "extension": "Supply actual generator matrices for every claimed group and verify defining relations, group order and faithfulness. Compare orbit invariants only after that representation certificate is complete.",
+    "references": [
+      {
+        "label": "Frame, characters of the Weyl group E₈",
+        "url": "https://www.sciencedirect.com/science/chapter/edited-volume/abs/pii/B9780080129754500175"
+      },
+      {
+        "label": "MIT algebra linear groups",
+        "url": "https://ocw.mit.edu/courses/18-701-algebra-i-fall-2010/"
+      }
+    ],
+    "original": {
+      "date": "2025-06-28T00:09:50Z",
+      "month": "2025-06",
+      "evidence": "A",
+      "field": "The mod-three B₄ action has five exact orbits",
+      "concept": "The mod-three B₄ action has five exact orbits",
+      "origin": "Recovered dated mathematical source fragment; external file context only when evidence T",
+      "question": "Reconstruction: What group action is actually realized by signed coordinate reflections on F₃⁴, and can it be identified with exceptional Weyl groups without further data?",
+      "math": "|B₄|=2⁴·4!=384. Its orbits are exactly the five Hamming-weight classes, of sizes1,8,24,32,16. A faithful linear action of W(E₈) on F₃⁴ is impossible because|W(E₈)|=696729600 exceeds|GL₄(F₃)|=24261120.",
+      "finish": "Precise hypotheses, proof or derivation, worked example and finite verification",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://www.sciencedirect.com/science/chapter/edited-volume/abs/pii/B9780080129754500175",
+        "https://ocw.mit.edu/courses/18-701-algebra-i-fall-2010/"
+      ],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c2] A@2025-06-28T00:09:50Z, -1y4m: Prior exposition described `MathematicalObject`, mod-3 primitives, \\(B_4/E_6/E_7/E_8\\) Weyl groups, coordinate reflections/orbits, L-function and modular-form conjectures, heuristic proof verification, research-engine routing, cohomology/moduli/mirror-symmetry and physics analyses, hybrid polynomial/matrix integration, and human collaboration sessions.",
+      "retrieval_receipt": "root_receipts.json record 0",
+      "original_question": null,
+      "attribution_note": "The source excerpt is the exact retrieved summary line, not a claimed verbatim historical prompt. The revised question, proof and example are newly authored. U identifies retrieved user attribution, A prior assistant output, and T external context rather than a recovered user conversation."
+    }
+  },
+  {
+    "id": "Y25-06-024",
+    "title": "Exhaustive finite tests prove a polynomial identity only with a degree bound",
+    "status": "Developed mathematical repair or classical result; speculative source claims delimited",
+    "summary": "The source correctly distinguished computational verification from deductive proof. A finite-field identity theorem makes that distinction sharper: an exhaustive test can be a complete certificate within a specified reduced polynomial space. Without the degree restriction a nonzero polynomial can vanish at every test point.",
+    "definitions": [
+      "Let f∈F₃[x₁,x₂,x₃,x₄] have degree at most two in each separate variable. Evaluate it on every point of F₃⁴.",
+      "The polynomial-function quotient is F₃[x₁,…,x₄]/(x₁³−x₁,…,x₄³−x₄). Each class has a unique representative with those separate degree bounds."
+    ],
+    "result": {
+      "name": "A complete finite certificate and its exact counterexample",
+      "statement": "If the reduced f vanishes on all81 points, then f is the zero polynomial. Without the bound, x₁³−x₁ is a nonzero formal polynomial that vanishes at all81 points.",
+      "proof": "A univariate polynomial of degree at most two over a field with three distinct roots is zero. View f as a polynomial in x₄ with coefficients in the first three variables. For any fixed values of those three variables, its three x₄ evaluations force all three coefficients to vanish at that triple. Repeat the argument in the remaining variables; induction makes every coefficient zero. Existence of a reduced representative follows by repeatedly replacing x_i³ by x_i, lowering degree; uniqueness follows from the just-proved evaluation injectivity. There are3^81 reduced polynomials and3^81 functions on an81-point set, so evaluation is also surjective. The counterexample violates the degree restriction and is zero only in the quotient of polynomial functions."
+    },
+    "example": {
+      "setup": "Test the identity(x+y)³=x³+y³ over F₃ and distinguish it from the formal claim x³=x.",
+      "calculation": "The first is a true polynomial identity because intermediate binomial coefficients are divisible by three. The second is true as a function on F₃ but false in the polynomial ring. The verifier evaluates every point and independently compares coefficient dictionaries, showing both the complete bounded certificate and the danger of an unstated quotient.",
+      "conclusion": "A program can issue a deductive finite certificate when its theorem class and algebra are explicit."
+    },
+    "limits": "Testing a finite domain does not prove arbitrary integer, real, analytic or number-theoretic conjectures. The recovered program description does not provide its actual proof certificates, source code or a formal soundness theorem.",
+    "extension": "Have the research engine emit a reduced polynomial, the reduction trace and all evaluation values, then check that certificate with a small independent verifier. General conjecture generation should remain separate from the trusted proof kernel.",
+    "references": [
+      {
+        "label": "MIT finite fields and polynomial algebra",
+        "url": "https://ocw.mit.edu/courses/18-701-algebra-i-fall-2010/"
+      }
+    ],
+    "original": {
+      "date": "2025-06-28T00:08:43Z",
+      "month": "2025-06",
+      "evidence": "A",
+      "field": "Exhaustive finite tests prove a polynomial identity only with a degree bound",
+      "concept": "Exhaustive finite tests prove a polynomial identity only with a degree bound",
+      "origin": "Recovered dated mathematical source fragment; external file context only when evidence T",
+      "question": "Reconstruction: When can an81-point test on F₃⁴ be a proof, and when is it merely evidence about a different polynomial claim?",
+      "math": "If the reduced f vanishes on all81 points, then f is the zero polynomial. Without the bound, x₁³−x₁ is a nonzero formal polynomial that vanishes at all81 points.",
+      "finish": "Precise hypotheses, proof or derivation, worked example and finite verification",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://ocw.mit.edu/courses/18-701-algebra-i-fall-2010/"
+      ],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c2] A@2025-06-28T00:08:43Z, -1y4m: Earlier assistant characterized the broader program as categorical configuration space \\(\\mathbb F_3^4\\), with conjecture generation and computational verification, but explicitly noted it does not provide deductive proofs; this was an unproved framing claim, not a demonstrated theorem.",
+      "retrieval_receipt": "root_receipts.json record 0",
+      "original_question": null,
+      "attribution_note": "The source excerpt is the exact retrieved summary line, not a claimed verbatim historical prompt. The revised question, proof and example are newly authored. U identifies retrieved user attribution, A prior assistant output, and T external context rather than a recovered user conversation."
+    }
+  }
+]

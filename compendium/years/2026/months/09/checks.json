@@ -1,0 +1,215 @@
+{
+  "checks": [
+    {
+      "id": "Y26-09-001",
+      "name": "Cyclic period and orbit count",
+      "status": "pass",
+      "detail": "Exhaustive3,240 modulus/increment pairs up to40, including zero and negative increments. The coprimality proof covers all integers."
+    },
+    {
+      "id": "Y26-09-002",
+      "name": "Hidden-port quotient failure and two-sample reconstruction",
+      "status": "pass",
+      "detail": "All four states, orbit phases and delayed observations checked exactly in the explicitly new model."
+    },
+    {
+      "id": "Y26-09-003",
+      "name": "Periodic-regression parameter recovery",
+      "status": "pass",
+      "detail": "Exact rational recovery for periods1..7 and the stated phase-two fixture; historical timing slope not assumed."
+    },
+    {
+      "id": "Y26-09-004",
+      "name": "Exact sign-randomization distribution",
+      "status": "pass",
+      "detail": "All finite signs through8 pairs and every attainable significance cutoff checked; the rank proof establishes arbitrary m."
+    },
+    {
+      "id": "Y26-09-005",
+      "name": "Typed min-plus associativity and synchronized minimum",
+      "status": "pass",
+      "detail": "Exact finite matrix products including impossible transitions and strict shared-choice counterexample."
+    },
+    {
+      "id": "Y26-09-006",
+      "name": "TTL finite-horizon refinement",
+      "status": "pass",
+      "detail": "All words through length3 checked for the declared three-state machine. General stable-partition completeness is proved analytically."
+    },
+    {
+      "id": "Y26-09-007",
+      "name": "Tropical rank-two certificate",
+      "status": "pass",
+      "detail": "Exact unequal2×2 cross sums rule out rank one; a rank-two identity factorization attains the bound."
+    },
+    {
+      "id": "Y26-09-008",
+      "name": "S3 invariant observation and derivative rank",
+      "status": "pass",
+      "detail": "All six permutations and exact Jacobian kernels/ranks checked; derivative equivariance follows by chain rule."
+    },
+    {
+      "id": "Y26-09-009",
+      "name": "Rational zero-Hom and exceptional characteristic",
+      "status": "pass",
+      "detail": "Exact linear ranks overQ,F5,F3; no large historical Hom table is claimed reproduced."
+    },
+    {
+      "id": "Y26-09-010",
+      "name": "Hankel/algebra dimension and reversed words",
+      "status": "pass",
+      "detail": "All matrix units and exact physical/algebra outputs checked. The rank-two Hankel minor is the identity described in the proof."
+    },
+    {
+      "id": "Y26-09-011",
+      "name": "Exact K4,7 call-cover optimum",
+      "status": "pass",
+      "detail": "All2,048 vertex subsets enumerated; historical81-call problem has different unrecovered data."
+    },
+    {
+      "id": "Y26-09-012",
+      "name": "Exact hyperplane-fault repair cases",
+      "status": "pass",
+      "detail": "All nine coefficient cases checked in the declared4D model; no152D historical basis is assumed."
+    },
+    {
+      "id": "Y26-09-013",
+      "name": "Recovered quintic Hensel branches",
+      "status": "pass",
+      "detail": "Exact integer polynomial, derivative, primality and p-squared congruence checks for both actual recovered branches."
+    },
+    {
+      "id": "Y26-09-014",
+      "name": "Fitting toy order and contracted support",
+      "status": "pass",
+      "detail": "Exact integral multiplication image is2Z×Z; determinant and quotient verify support{2} in the declared order only."
+    },
+    {
+      "id": "Y26-09-015",
+      "name": "S3 actor and derived subgroup",
+      "status": "pass",
+      "detail": "All group elements/commutators and centralizers checked; general formation-residual theorem is proved with its closure hypotheses."
+    },
+    {
+      "id": "Y26-09-016",
+      "name": "Actual W960 module/action certificate",
+      "status": "pass",
+      "detail": "All60 even permutations,16 vectors,960 action pairs and A5 commutators verify faithfulness, fixed space, full commutator span and perfect actor."
+    },
+    {
+      "id": "Y26-09-017",
+      "name": "Local/global carrier discrepancy and character blindness",
+      "status": "pass",
+      "detail": "Exact subgroup sets and all four order-two characters; large historical multiplier lattice not reconstructed."
+    },
+    {
+      "id": "Y26-09-018",
+      "name": "Exact target-relative factor and sharp constant",
+      "status": "pass",
+      "detail": "Optimal ratio5 and a PSD outer-product residual; target failure on the hidden coordinate checked exactly."
+    },
+    {
+      "id": "Y26-09-019",
+      "name": "Sharp finite-amplitude nonlinear fiber",
+      "status": "pass",
+      "detail": "Exact polynomial target and Hessian remainder over rational sample points; global extrema and all-point theorem proved analytically."
+    },
+    {
+      "id": "Y26-09-020",
+      "name": "Correlated target widths and separation",
+      "status": "pass",
+      "detail": "Exact covariance inverse and both target directions; Mahalanobis separation5 exceeds the squared common-radius cutoff4."
+    },
+    {
+      "id": "Y26-09-021",
+      "name": "Integrated SDE covariance and terminal-target reversal",
+      "status": "pass",
+      "detail": "Exact rational finite-time covariance and both future variances in the declared new fixtures; no reported historical variance accepted."
+    },
+    {
+      "id": "Y26-09-022",
+      "name": "Conditional-variance decomposition",
+      "status": "pass",
+      "detail": "Exact six-state Bayes-risk identity and Gaussian moment arithmetic; general conditional-expectation proof gives the noise-free floor."
+    },
+    {
+      "id": "Y26-09-023",
+      "name": "Common-information versus changed-horizon comparison",
+      "status": "pass",
+      "detail": "Exact posterior/process variances and explicit nonnormal transient norm; logarithmic-norm tube is proved analytically."
+    },
+    {
+      "id": "Y26-09-024",
+      "name": "Exact15-parameter affine-field design",
+      "status": "pass",
+      "detail": "Full rational design rank15 and same-beam rank5 certified; no actual scan geometry invented."
+    },
+    {
+      "id": "Y26-09-025",
+      "name": "Flow determinant and advected pairing",
+      "status": "pass",
+      "detail": "Explicit diagonal flow has determinant and transported-vector/gradient pairing one. Fourier reconstruction and Hodge nullspace are analytic identities, not inferred from samples."
+    },
+    {
+      "id": "Y26-09-026",
+      "name": "Quadratic branch and discriminant boundary",
+      "status": "pass",
+      "detail": "Exact double-root boundary and numerical golden-root substitution; derivative blowup follows from the explicit formula."
+    },
+    {
+      "id": "Y26-09-027",
+      "name": "PSD stress and total-covariance split",
+      "status": "pass",
+      "detail": "Exact covariance, determinant and grouped variance calculation; negative signed correction counterexample is direct in the text."
+    },
+    {
+      "id": "Y26-09-028",
+      "name": "Exact linear perfect-power classification",
+      "status": "pass",
+      "detail": "All400 coefficient/exponent cases and80,000 candidate n values verified with integer roots; no floating underflow."
+    },
+    {
+      "id": "Y26-09-029",
+      "name": "Complete Pell recurrence arithmetic and modular filter",
+      "status": "pass",
+      "detail": "Exact first15 solutions, inverse descent, square-triangular transformation and full period-four mod3 orbit. Counting/shift asymptotics are analytic proofs."
+    },
+    {
+      "id": "Y26-09-030",
+      "name": "Recovered cubic norm and exponent residues",
+      "status": "pass",
+      "detail": "All121 integer norm substitutions, complete rational-root candidates and signed exponent divisions checked exactly; no global unit bound claimed."
+    },
+    {
+      "id": "Y26-09-031",
+      "name": "GL2 transport and nonunimodular domain loss",
+      "status": "pass",
+      "detail": "Exact polynomial transport/inverse on121 pairs and a full parity obstruction to the omitted-lattice problem."
+    },
+    {
+      "id": "Y26-09-032",
+      "name": "Exact recovered855 witness and logical coverage distinctions",
+      "status": "pass",
+      "detail": "Actual855 andD56 point certificates, complete bounded census and global modular-unsatisfiability example; no unsupported global census."
+    },
+    {
+      "id": "Y26-09-033",
+      "name": "Green identity and determinant regularization",
+      "status": "pass",
+      "detail": "All81 rational coordinate pairs, exact trace/HS integrals and telescoping ordinary determinants; infinite det2 convergence is proved by the square-summable log tail."
+    },
+    {
+      "id": "Y26-09-034",
+      "name": "Bessel scaling and exact variational bounds",
+      "status": "pass",
+      "detail": "Exact gamma-integral arithmetic for both boundary trials. The Bessel chain-rule identity, compactness and spectral interpretation are analytic proofs, not a numerical root search."
+    },
+    {
+      "id": "Y26-09-035",
+      "name": "Exact2x2 Ky Fan family and curvature remainder",
+      "status": "pass",
+      "detail": "Rational matrix-square/eigenvalue relation and independent smooth quadrature. Convexity and weighted Taylor identity are general written proofs."
+    }
+  ],
+  "scope": "Exact finite certificates, exhaustive bounded examples and explicitly labeled numerical checks complement the written general proofs."
+}

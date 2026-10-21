@@ -1,0 +1,131 @@
+{
+  "checks": [
+    {
+      "id": "Y25-09-001",
+      "name": "Exact affine fixed point and norm",
+      "status": "pass",
+      "detail": "Rational matrix equation and symmetric eigenvalue bound; the general Banach theorem is proved in the entry."
+    },
+    {
+      "id": "Y25-09-002",
+      "name": "Cosine bracket and finite increment check",
+      "status": "pass",
+      "detail": "The displayed bracket is checked numerically; uniform interval contraction and infinite-tail bound are analytic proofs, not inferred from40 samples."
+    },
+    {
+      "id": "Y25-09-003",
+      "name": "Cocycle and exact Lipschitz example",
+      "status": "pass",
+      "detail": "All transport defects and weighted scalars are exact integers; the general inequality is proved in prose."
+    },
+    {
+      "id": "Y25-09-004",
+      "name": "Cokernel of diag2,3",
+      "status": "pass",
+      "detail": "All six CRT classes and rational zero-residual solution checked; integral obstruction remains nonzero."
+    },
+    {
+      "id": "Y25-09-005",
+      "name": "Rewrite invariants",
+      "status": "pass",
+      "detail": "Exact local annihilation and finite trace values; the written induction certifies arbitrary trace length."
+    },
+    {
+      "id": "Y25-09-006",
+      "name": "11a1 point counts and Hecke recurrence",
+      "status": "pass",
+      "detail": "Exact finite-field enumeration at all four stated primes and integral prime-power coefficients; no rank or BSD claim checked."
+    },
+    {
+      "id": "Y25-09-007",
+      "name": "Symmetric-square local factor",
+      "status": "pass",
+      "detail": "Exact cubic coefficient and reciprocal-series certificate for p2,a−2; global functoriality is outside scope."
+    },
+    {
+      "id": "Y25-09-008",
+      "name": "Fourier aliasing counterexample",
+      "status": "pass",
+      "detail": "Finite grid equality and exact second-derivative discrepancy; general nonidentifiability follows from the explicit family."
+    },
+    {
+      "id": "Y25-09-009",
+      "name": "Two simple roots within a certified contour",
+      "status": "pass",
+      "detail": "Exact Rouche margin and numerical root substitution; the written complex-analysis theorem certifies total multiplicity."
+    },
+    {
+      "id": "Y25-09-010",
+      "name": "Exact mu and lambda of primitive products",
+      "status": "pass",
+      "detail": "Integer coefficient valuations before and after multiplying by1+T; infinite-series invariance proved separately."
+    },
+    {
+      "id": "Y25-09-011",
+      "name": "Six cross-ratio parameters and one j value",
+      "status": "pass",
+      "detail": "Exact rational six-point collision and pushforward example; no isogeny or physical classification claimed."
+    },
+    {
+      "id": "Y25-09-012",
+      "name": "Quadratic residue at163",
+      "status": "pass",
+      "detail": "Two exact roots, Euler exponent and elementary primality check; semantic labels such as Tamagawa are not certified."
+    },
+    {
+      "id": "Y25-09-013",
+      "name": "Fractional ownership budget",
+      "status": "pass",
+      "detail": "Exact rational compatibility and incompatibility examples; no program race-freedom claim."
+    },
+    {
+      "id": "Y25-09-014",
+      "name": "Finite bisimulation certificate",
+      "status": "pass",
+      "detail": "Every forth/back transition checked; general trace preservation is the written induction theorem."
+    },
+    {
+      "id": "Y25-09-015",
+      "name": "Square-root smoothing and endpoint defect",
+      "status": "pass",
+      "detail": "Explicit finite counterexample to commutation and linearity; limit dynamics proved analytically."
+    },
+    {
+      "id": "Y25-09-016",
+      "name": "Micro quantizer exact envelope",
+      "status": "pass",
+      "detail": "Exact integer samples and the500-fold input amplification; the all-input rounding bound is proved in the entry."
+    },
+    {
+      "id": "Y25-09-017",
+      "name": "Normalized Chebyshev local coefficients",
+      "status": "pass",
+      "detail": "Exact integral recurrence and finite sample bound; the trigonometric sum proves the general bound."
+    },
+    {
+      "id": "Y25-09-018",
+      "name": "Geometric sample count and decay estimate",
+      "status": "pass",
+      "detail": "Finite exact schedule and slope/noise calculations; no PDE or performance interpretation."
+    },
+    {
+      "id": "Y25-09-019",
+      "name": "Rational and modular ranks",
+      "status": "pass",
+      "detail": "Exact ranks, unit minor, null vector and rank-drop counterexample; prime moduli explicitly stated."
+    },
+    {
+      "id": "Y25-09-020",
+      "name": "Exact finite monotonicity certificate",
+      "status": "pass",
+      "detail": "All15 ordered pairs and telescoping gaps checked with rational timestamps."
+    },
+    {
+      "id": "Y25-09-021",
+      "name": "KdV traveling-wave profile identity",
+      "status": "pass",
+      "detail": "Finite evaluations check the exact differentiated formula; cancellation and mass integral are proved analytically."
+    }
+  ],
+  "scope": "Exact finite certificates and labeled numerical examples accompany, but do not replace, the written general proofs."
+}

@@ -1,0 +1,81 @@
+{
+  "reviewer": "representations_and_dynamics",
+  "status": "Selected mathematical scopes approved after one minor example correction; both monthly verifiers pass",
+  "issues": [
+    {
+      "severity": "minor",
+      "id": "Y24-09-014",
+      "description": "The proof says scaling t by c with c≠1 changes the second moment and support. For c=−1, the symmetric Sato–Tate law, its support and its second moment are unchanged.",
+      "fix": "Use |c|≠1 or c²≠1 for this particular scaling counterexample; retain the general pushforward-law statement.",
+      "status": "Resolved: author changed the condition to |c|≠1, confirmed in the current entries.json"
+    }
+  ],
+  "approved_scopes": [
+    {
+      "ids": [
+        "Y24-09-012",
+        "Y24-09-013"
+      ],
+      "scope": "Discriminant37, good-prime counts5,7,8,9 at2,3,5,7, corresponding traces, prime-to-p torsion injection argument, rank lower bound and rational multiples through7P.",
+      "evidence": "Independent exact point enumeration and Fraction group-law computation confirm all displayed data. The reduction argument rules out every possible torsion prime without assuming BSD or rank exactly1."
+    },
+    {
+      "ids": [
+        "Y24-09-014",
+        "Y24-09-015"
+      ],
+      "scope": "Normalized Sato–Tate moments and pushforward interpretation, subject to the minor c=−1 correction; Benford sufficient criterion and irrational exponential model.",
+      "evidence": "Moment integral and52/35 finite sample agree. The finite geometric-sum bound proves Weyl equidistribution for irrational theta; no unsupported Benford law for elliptic coefficients is claimed."
+    },
+    {
+      "ids": [
+        "Y24-09-016",
+        "Y24-10-001",
+        "Y24-10-002",
+        "Y24-10-003",
+        "Y24-10-008",
+        "Y24-10-029"
+      ],
+      "scope": "Self-adjoint residual estimate and nonnormal counterexample; bounded self-adjoint perturbation on the fixed Dirichlet domain; compact resolvent; finite-interval density obstruction; finite determinant identities; periodic-time domain and divergent heat trace; Schwartz-state uncertainty example.",
+      "evidence": "Domain and boundedness assumptions are explicit. Resolvent factorization, min–max count, nonnormal residual, sign of i∂t eigenvalues, Gaussian variance and finite trace obstruction are consistent. No RH proof or general unbounded perturbation theorem is inferred."
+    },
+    {
+      "ids": [
+        "Y24-09-021",
+        "Y24-09-022"
+      ],
+      "scope": "Real scalar tridiagonal Toeplitz law, continuous test functions, and positive-symbol log determinant.",
+      "evidence": "Sine eigenbasis, exact second moment11−2/n, determinant recurrence and characteristic roots check out. The strict a>2|b| hypothesis correctly permits the logarithm argument; zero-touching and complex cases are excluded."
+    },
+    {
+      "ids": [
+        "Y24-09-024",
+        "Y24-09-025"
+      ],
+      "scope": "A6 conjugacy inventory and necessary automorphism invariants; level-one weight38 modular form and cusp bases.",
+      "evidence": "Class sizes total360, five-cycle splitting follows from the odd-free centralizer, and no full Out(A6) classification is claimed proved. The weight equations yield exactly the displayed monomials, cusp dimensions and coefficients1416,−312,−2040."
+    },
+    {
+      "ids": [
+        "Y24-10-009",
+        "Y24-10-010",
+        "Y24-10-021"
+      ],
+      "scope": "Pointwise mu Lambda equals negative prime-only weight, convolution mu*log=Lambda, and normalized rational projective heights.",
+      "evidence": "Prime powers and squarefree composite cases exhaust the support calculation; divisor-sum inversion is exact. Product-formula scaling cancels for rational heights, including[3:2] to[15:10]. No undefined historical interaction height is accepted as an invariant."
+    }
+  ],
+  "verifiers": [
+    {
+      "month": "2024-09",
+      "status": "pass",
+      "detail": "Author verifier executed independently:28/28 checks pass."
+    },
+    {
+      "month": "2024-10",
+      "status": "pass",
+      "detail": "Author verifier delivered and independently executed:32/32 checks pass."
+    }
+  ],
+  "general_limit": "This is a selected mathematical review, not a claim of complete source-archive recovery, full proof checking of every monthly entry, or verification of the cited deep theorems themselves."
+}

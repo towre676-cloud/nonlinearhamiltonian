@@ -1,0 +1,126 @@
+{
+  "month": "2024-07",
+  "entry_count": 15,
+  "check_count": 15,
+  "passed": 15,
+  "evidence_counts": {
+    "U": 0,
+    "A": 15,
+    "T": 0
+  },
+  "dates": [
+    "2024-07-02",
+    "2024-07-03",
+    "2024-07-14",
+    "2024-07-20",
+    "2024-07-21"
+  ],
+  "historical_queries": 4,
+  "retrieval_complete": false,
+  "attribution": "All recovered dated passages are assistant output. No original user-authored mathematical prompt is recovered. Revised questions/proofs/examples are authored now, mostly classical; they are not attributed to the user or asserted as new research.",
+  "source_gaps": [
+    "Retrieval is not a complete transcript export: topics not returned are not recovered, not proved absent.",
+    "Some named frameworks lack definitions, objects, proofs or formulas; those gaps are preserved and replaced only by explicitly chosen classical comparisons.",
+    "Exact user questions and conversation titles were not recovered.",
+    "July2 Ψ vocabulary has no recovered axioms or new mathematical structure.",
+    "July21 labels mixed Hodge modules, D modules, cognitive superspace and complexity measures without a concrete geometric/empirical construction.",
+    "A historical applied PID fragment is developed only as a stated normalized scalar plant. Operational laser-cutting and body-current material is excluded from developed entries.",
+    "Broad modular-form application lists and unsupported physical percentages are not promoted into separate invented mathematical results."
+  ],
+  "portable_verification": "Run python verify.py in this directory. Only Python standard library is required; paths resolve relative to this file.",
+  "entries": [
+    {
+      "id": "Y24-07-001",
+      "date": "2024-07-02",
+      "evidence": "A",
+      "title": "An undefined Ψ measure needs an actual transport law"
+    },
+    {
+      "id": "Y24-07-002",
+      "date": "2024-07-02",
+      "evidence": "A",
+      "title": "Ψ mutual information and capacity need a channel"
+    },
+    {
+      "id": "Y24-07-003",
+      "date": "2024-07-02",
+      "evidence": "A",
+      "title": "Functorial relabeling does not automatically preserve code distance"
+    },
+    {
+      "id": "Y24-07-004",
+      "date": "2024-07-03",
+      "evidence": "A",
+      "title": "A purchasing-power ratio is a stipulated unit conversion"
+    },
+    {
+      "id": "Y24-07-005",
+      "date": "2024-07-14",
+      "evidence": "A",
+      "title": "PID gains require a plant and a stability calculation"
+    },
+    {
+      "id": "Y24-07-006",
+      "date": "2024-07-14",
+      "evidence": "A",
+      "title": "A logarithmic threshold needs a reference and a squared-amplitude convention"
+    },
+    {
+      "id": "Y24-07-007",
+      "date": "2024-07-20",
+      "evidence": "A",
+      "title": "Ideal power identities as a typed algebraic system"
+    },
+    {
+      "id": "Y24-07-008",
+      "date": "2024-07-20",
+      "evidence": "A",
+      "title": "Euler’s product yields an exact partition recurrence"
+    },
+    {
+      "id": "Y24-07-009",
+      "date": "2024-07-21",
+      "evidence": "A",
+      "title": "An eleven-dimensional space does not determine an operator"
+    },
+    {
+      "id": "Y24-07-010",
+      "date": "2024-07-21",
+      "evidence": "A",
+      "title": "A coupled diffusion model needs an energy balance"
+    },
+    {
+      "id": "Y24-07-011",
+      "date": "2024-07-21",
+      "evidence": "A",
+      "title": "A product of motivic measure and entropy needs a scalar realization"
+    },
+    {
+      "id": "Y24-07-012",
+      "date": "2024-07-21",
+      "evidence": "A",
+      "title": "A flat connection is not automatically a mixed Hodge module"
+    },
+    {
+      "id": "Y24-07-013",
+      "date": "2024-07-21",
+      "evidence": "A",
+      "title": "Reduced homology and intersection cohomology remove different phenomena"
+    },
+    {
+      "id": "Y24-07-014",
+      "date": "2024-07-21",
+      "evidence": "A",
+      "title": "Legendrian structure begins with a contact form and a tangent condition"
+    },
+    {
+      "id": "Y24-07-015",
+      "date": "2024-07-21",
+      "evidence": "A",
+      "title": "Spatial averages can erase the diffusion parameter"
+    }
+  ],
+  "corrections": [
+    "Exact ratio 575/56; PID stability conditional on a specified plant; motivic scalar realization can be zero/negative; derived/perverse shift conventions stated; global means erase diffusion."
+  ]
+}

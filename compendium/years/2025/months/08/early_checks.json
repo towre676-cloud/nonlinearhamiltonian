@@ -1,0 +1,76 @@
+{
+  "checks": [
+    {
+      "id": "Y25-08-901",
+      "name": "Exact polynomial traveling-wave residual",
+      "status": "passed",
+      "detail": "In the coordinate v=tanh(kX), rational polynomial differentiation verifies U-double-prime-4k\u00b2U+3U\u00b2=0 for the worked parameters. The proof gives the general identity."
+    },
+    {
+      "id": "Y25-08-902",
+      "name": "Exhaustive Hilbert90 witness calculation over F49",
+      "status": "passed",
+      "detail": "All48 nonzero elements give exactly the8 norm-one ratios; the explicit witness1+a maps to5-a."
+    },
+    {
+      "id": "Y25-08-903",
+      "name": "Squared-ideal certificate",
+      "status": "passed",
+      "detail": "The exact generator combination gives2 in I\u00b2 and all square generators lie in(2). The norm obstruction is proved in the text; a finite small check agrees."
+    },
+    {
+      "id": "Y25-08-904",
+      "name": "Curvature integral normalization",
+      "status": "passed",
+      "detail": "The angular factors integral sin(theta)dtheta=2 and integral dphi=2pi give normalized Chern number m; the clutching proof supplies the classification."
+    },
+    {
+      "id": "Y25-08-905",
+      "name": "Eisenstein coefficient normalization",
+      "status": "passed",
+      "detail": "The q9 coefficient of E2-9E2(9tau) is-96 and its constant term is-8; covariance is the exact anomaly-cancellation derivation in the text."
+    },
+    {
+      "id": "Y25-08-906",
+      "name": "Eta product, independent point counts and central-value example",
+      "status": "passed",
+      "detail": {
+        "value_40_terms": 0.2538418608559107,
+        "analytic_tail_after20": 2.4836936817012958e-17,
+        "scope": "Integer coefficients through40; good-prime coefficients independently counted on11a. Floating exponential evaluation is illustrative; analytic tail is separate from rounding error."
+      }
+    },
+    {
+      "id": "Y25-08-907",
+      "name": "p-adic nonvanishing precision example",
+      "status": "passed",
+      "detail": "Residual100 vanishes mod25 and not mod125, and has valuation2."
+    },
+    {
+      "id": "Y25-08-908",
+      "name": "Heegner split/ramified prime distinction",
+      "status": "passed",
+      "detail": "X\u00b2-X+2 has the two distinct roots0,1 modulo2, whereas2=-i(1+i)\u00b2 in Z[i]."
+    },
+    {
+      "id": "Y25-08-909",
+      "name": "Explicit independent-test selection probability",
+      "status": "passed",
+      "detail": {
+        "probability": 0.6323045752290363,
+        "scope": "A newly stipulated1000-test independent null example, not the historical search size."
+      }
+    },
+    {
+      "id": "Y25-08-910",
+      "name": "Exact reciprocal compounding",
+      "status": "passed",
+      "detail": {
+        "power_factor": "365421606438574662795191529287025504503746306710815676828838586876555229392397647777920849/1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "numeric_power": 0.3654216064385747,
+        "price_factor": 2.736565059045282,
+        "price_rate": "33/967"
+      }
+    }
+  ]
+}

@@ -1,0 +1,191 @@
+{
+  "scope": "Exact displayed examples and provenance only; not unavailable historical computations",
+  "checks": [
+    {
+      "id": "Y26-07-001",
+      "name": "Rational Lagrange spectral projectors",
+      "status": "pass",
+      "detail": "Evaluated every exact projector polynomial on every declared eigenvalue."
+    },
+    {
+      "id": "Y26-07-002",
+      "name": "Cubic closure standard monomials",
+      "status": "pass",
+      "detail": "Exact monomial divisibility; without v³ all powers of v survive."
+    },
+    {
+      "id": "Y26-07-003",
+      "name": "Hilbert–Burch syzygies and socle",
+      "status": "pass",
+      "detail": "Both displayed columns annihilate(x²,xy,y³); x and y² are killed by the maximal ideal."
+    },
+    {
+      "id": "Y26-07-004",
+      "name": "Tensor resolution Betti convolution",
+      "status": "pass",
+      "detail": "Resolution ranks and quotient Hilbert series independently convolved."
+    },
+    {
+      "id": "Y26-07-005",
+      "name": "Two-prime nonzero integer counterexample",
+      "status": "pass",
+      "detail": "A nonzero rational matrix entry can vanish at both selected primes."
+    },
+    {
+      "id": "Y26-07-006",
+      "name": "Exhaustive two-qubit Pauli centralizers",
+      "status": "pass",
+      "detail": "Enumerated all16 binary Pauli labels: centralizer dimensions2 and0."
+    },
+    {
+      "id": "Y26-07-007",
+      "name": "Sector-kernel counterexample",
+      "status": "pass",
+      "detail": "G has dimension2 but its action on the Z1 character is trivial, contradicting the naive kernel G∩Q rule."
+    },
+    {
+      "id": "Y26-07-008",
+      "name": "Schmidt block rank and one-sided failure",
+      "status": "pass",
+      "detail": "Two-sided orthogonal blocks3+2 have rank5; one-sided stacking of equal rows has rank1."
+    },
+    {
+      "id": "Y26-07-009",
+      "name": "Cubic discriminant and modular factor patterns",
+      "status": "pass",
+      "detail": "Discriminant−23; irreducible mod2; the residual quadratic mod5 is irreducible."
+    },
+    {
+      "id": "Y26-07-010",
+      "name": "Eta-product initial coefficients",
+      "status": "pass",
+      "detail": "Exact truncated product, shifted by its initial q factor; no modularity claim tested numerically."
+    },
+    {
+      "id": "Y26-07-011",
+      "name": "Graph edge and triangle counts",
+      "status": "pass",
+      "detail": "Constructed K5 minus a matching; traces give8 edges and4 triangles, rank3 gives two zero eigenvalues."
+    },
+    {
+      "id": "Y26-07-012",
+      "name": "Finite-cover degree example",
+      "status": "pass",
+      "detail": "Only the displayed degree4/degree9 volume-ratio arithmetic is replayed; existence of a common cover is an explicit hypothesis."
+    },
+    {
+      "id": "Y26-07-013",
+      "name": "Green-kernel local equation and derivative jump",
+      "status": "pass",
+      "detail": "The positive-half Taylor coefficients satisfy G″=G and the two one-sided derivatives jump by−1."
+    },
+    {
+      "id": "Y26-07-014",
+      "name": "Half-spin and root counts",
+      "status": "pass",
+      "detail": "Exterior even-degree dimension, so16 dimension and D8+spin weight counts."
+    },
+    {
+      "id": "Y26-07-015",
+      "name": "Variable-coefficient product-rule example",
+      "status": "pass",
+      "detail": "For x=l,y=3l+7, fixed q2 gives derivative1; q=2+l gives1−2l, checked at l2."
+    },
+    {
+      "id": "Y26-07-016",
+      "name": "Finite Herglotz example",
+      "status": "pass",
+      "detail": "At z=i the imaginary part is7/5; the real zero equation is3x²−4=0. No old137-atom dataset tested."
+    },
+    {
+      "id": "Y26-07-017",
+      "name": "Monotone-phase model counts",
+      "status": "pass",
+      "detail": "Exact positive integer and half-integer counts through137.75."
+    },
+    {
+      "id": "Y26-07-018",
+      "name": "Anisotropic box budget",
+      "status": "pass",
+      "detail": "Equalized coordinate error shares for the declared two-dimensional volume optimum."
+    },
+    {
+      "id": "Y26-07-019",
+      "name": "Critical-point normal-form example",
+      "status": "pass",
+      "detail": "For F=1−x², B=2αx and αμ=(1+α²)/2 exactly; limit1/2 follows algebraically."
+    },
+    {
+      "id": "Y26-07-020",
+      "name": "Padded moment polynomial perturbation",
+      "status": "pass",
+      "detail": "Coefficient perturbation ε opens an imaginary pair at magnitude√ε."
+    },
+    {
+      "id": "Y26-07-021",
+      "name": "Unimodular Smith witness",
+      "status": "pass",
+      "detail": "Exact integer matrix multiplication certifies the displayed Smith diagonal2,4."
+    },
+    {
+      "id": "Y26-07-022",
+      "name": "Twisted-cycle cohomology ranks",
+      "status": "pass",
+      "detail": "Holonomy1 gives kernel/cokernel dimension1; holonomy6 gives both zero."
+    },
+    {
+      "id": "Y26-07-023",
+      "name": "Signed total-complex matrix product",
+      "status": "pass",
+      "detail": "The1→2→1 total complex squares tozero and is acyclic; unsigned product would be2."
+    },
+    {
+      "id": "Y26-07-024",
+      "name": "Currying example by both contractions",
+      "status": "pass",
+      "detail": "The tensor bilinear map and curried functional give the same exact value."
+    },
+    {
+      "id": "Y26-07-025",
+      "name": "Elliptic multiples and reduction counts",
+      "status": "pass",
+      "detail": "Exact rational group law through6P and full enumeration over F3,F5."
+    },
+    {
+      "id": "Y26-07-026",
+      "name": "Conditional code parameters and field model",
+      "status": "pass",
+      "detail": "Riemann–Roch example arithmetic and irreducibility of u²+1 overF7; no original curve certified."
+    },
+    {
+      "id": "Y26-07-027",
+      "name": "Base-twelve rational identities",
+      "status": "pass",
+      "detail": "Integer place values and both finite/repeating fractional representations checked exactly."
+    },
+    {
+      "id": "Y26-07-028",
+      "name": "Rouché margins and Graeffe coefficients",
+      "status": "pass",
+      "detail": "Dominant coefficient inequalities and root-squared polynomial y²−5y+4."
+    },
+    {
+      "id": "Y26-07-029",
+      "name": "Exact contraction box for sqrt2",
+      "status": "pass",
+      "detail": "Both derivative and self-mapping bounds verified with rational arithmetic."
+    },
+    {
+      "id": "Y26-07-030",
+      "name": "Tetrahedral angular-defect count",
+      "status": "pass",
+      "detail": "Angles are measured in π units; four defectsπ sum to2πχ withχ2."
+    },
+    {
+      "id": "Y26-07-031",
+      "name": "Exact Hensel lifts of sqrt6 at5",
+      "status": "pass",
+      "detail": "Residues checked modulo5,25,125,625 and compatibility checked at every lift."
+    }
+  ]
+}

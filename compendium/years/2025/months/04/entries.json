@@ -1,0 +1,1307 @@
+[
+  {
+    "id": "Y25-04-001",
+    "title": "The number384 is a cyclotomic degree, with a computable Galois group",
+    "status": "Developed classical result with a checked example; recovered claims corrected where needed",
+    "summary": "The recovered user framework centers on the correct arithmetic identityφ(1680)=384. This can be developed into a precise field degree and a complete finite Galois-group calculation. Those facts do not select the rank of a fusion category or a spectral operator.",
+    "definitions": [
+      "Write1680=2⁴·3·5·7 andζ=e^(2πi/1680)=e^(iπ/840).",
+      "For the cyclotomic fieldK=Q(ζ), classical cyclotomic theory givesGal(K/Q)≅(Z/1680Z)*, acting byζ↦ζ^a."
+    ],
+    "result": {
+      "name": "Exact degree and group structure",
+      "statement": "[K:Q]=384 andGal(K/Q)≅C4²×C2³×C3. Its exponent is12, so it is not cyclic of order384. The maximal real subfield has degree192.",
+      "proof": "The totient product is1680(1−1/2)(1−1/3)(1−1/5)(1−1/7)=384. The Chinese remainder theorem decomposes the unit group intoU16×U3×U5×U7. HereU16≅C4×C2, generated for example by3 and−1; the remaining factors areC2,C4,C6. SplittingC6 asC2×C3 gives the stated structure. The least common multiple of its cyclic orders is12, so no element can generate all384 automorphisms. Complex conjugation corresponds to−1, has order2, and is nontrivial becauseζ is nonreal. Its fixed real field therefore has half the degree by the Galois correspondence. The irreducibility of cyclotomic polynomials is a stated classical input; the arithmetic and group decomposition are checked explicitly."
+    },
+    "example": {
+      "setup": "Compare the field degree with the angle denominator and element orders.",
+      "calculation": "The primitive root has order1680, the field degree is384 and the largest automorphism order is12. These three integers measure different objects. Enumeration of all residues verifies384 units and maximum multiplicative order12.",
+      "conclusion": "The framework now has a genuine exact arithmetic foundation, with its numerical meanings distinguished."
+    },
+    "limits": "No theorem identifies this degree with a category’s number of simple objects, total quantum dimension or a conjecture-resolving operator dimension.",
+    "extension": "Compute the real-subfield minimal polynomial or explicit subfields from the unit-group quotient, and state an actual functor if a categorical connection is intended.",
+    "references": [
+      {
+        "label": "Milne, Algebraic Number Theory",
+        "url": "https://www.jmilne.org/math/CourseNotes/ANT.pdf"
+      }
+    ],
+    "original": {
+      "date": "2025-04-01T15:59:45Z",
+      "month": "2025-04",
+      "evidence": "U",
+      "field": "Algebraic number theory",
+      "concept": "The number384 is a cyclotomic degree, with a computable Galois group",
+      "origin": "Recovered dated conversation evidence; mathematical development newly written",
+      "question": "What exact arithmetic follows from1680 and which categorical dimensions do not follow from it?",
+      "math": "[K:Q]=384 andGal(K/Q)≅C4²×C2³×C3. Its exponent is12, so it is not cyclic of order384. The maximal real subfield has degree192.",
+      "finish": "Precise result, proof, worked example and explicit limits",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://www.jmilne.org/math/CourseNotes/ANT.pdf"
+      ],
+      "source_excerpt": "- [USER_FACT] [c0] U@2025-04-01T15:59:45Z, -1y6m: User supplied April-1 mathematical source titled “A Comprehensive Framework for 384-Dimensional Categorical Resolution of Mathematical Conjectures,” centered on φ(1680)=384 and θ=π/840.",
+      "retrieval_receipt": "root_receipts.json record 0",
+      "original_question": null,
+      "attribution_note": "The dated source identifies user-authored material; the revised question and proof are new unless verbatim wording is separately provided. The source_excerpt is a literal retrieved result bullet (including any original truncation), not a reconstructed transcript. It may summarize historical content; no verbatim original question is inferred."
+    }
+  },
+  {
+    "id": "Y25-04-002",
+    "title": "A finite characteristic polynomial cannot equal a zeta entire function",
+    "status": "Developed classical result with a checked example; recovered claims corrected where needed",
+    "summary": "The prior assistant asserted grand proofs from a finite384-dimensional determinant identity. IfH384 is an ordinary finite matrix andc≠0, the identity is impossible: a polynomial has finitely many zeros while the completed zeta function has infinitely many. A finite spectral model remains useful, but proves only its own spectral algebra.",
+    "definitions": [
+      "For a384×384 matrixH, p_H(s)=det(sI−H) is a monic polynomial of degree384.",
+      "The completed xi function is entire and has the nontrivial zeta zeros; their infinitude is a classical theorem independent of RH."
+    ],
+    "result": {
+      "name": "A finite-degree obstruction and a valid product identity",
+      "statement": "No ordinary finiteH and nonzeroc satisfy p_H(s)=cξ(s)^384 for allcomplexs. For a finite Hermitian matrix, the valid identity is p_H(s)=∏_j(s−λ_j), with realλ_j.",
+      "proof": "The determinant expansion has leading terms^384 and therefore defines a nonzero polynomial with at most384 distinct roots. The right-hand side vanishes at every zero ofξ, an infinite set; equality would give infinitely many polynomial roots, a contradiction. Ifc=0, equality is also impossible becausep_H is monic. An infinite-dimensional regularized determinant is a different object and needs convergence, continuation and normalization; changing the word determinant does not supply those theorems. For the valid finite model, unitary diagonalizationH=Udiag(λ_j)U* and multiplicativity of determinant yield the product, whileHermiticity makesλ_j real."
+    },
+    "example": {
+      "setup": "TakeH=diag(1,4).",
+      "calculation": "p_H(s)=(s−1)(s−4)=s²−5s+4. The resolvent trace away from its poles is1/(s−1)+1/(s−4)=p_H′(s)/p_H(s). This exact identity encodes two eigenvalues and no assertion about all zeros of an arithmetic function.",
+      "conclusion": "The finite construction can be checked, while the impossible entire-function identity is discarded."
+    },
+    "limits": "The historical definitions ofH384 and the categorical determinant were not recovered. No proof ofRH, BSD, Langlands, mass gap or fluid regularity is inherited from those claims.",
+    "extension": "If an infinite spectral determinant is intended, define the operator and its counting law, prove a regularization and derive an arithmetic identity without presupposing the desired zero location.",
+    "references": [
+      {
+        "label": "NIST DLMF, Zeros of the Riemann zeta function",
+        "url": "https://dlmf.nist.gov/25.10"
+      }
+    ],
+    "original": {
+      "date": "2025-04-01T15:59:47Z",
+      "month": "2025-04",
+      "evidence": "A",
+      "field": "Complex analysis",
+      "concept": "A finite characteristic polynomial cannot equal a zeta entire function",
+      "origin": "Recovered dated conversation evidence; mathematical development newly written",
+      "question": "What exact obstruction rules out the recovered finite determinant identity, and what valid finite determinant model remains?",
+      "math": "No ordinary finiteH and nonzeroc satisfy p_H(s)=cξ(s)^384 for allcomplexs. For a finite Hermitian matrix, the valid identity is p_H(s)=∏_j(s−λ_j), with realλ_j.",
+      "finish": "Precise result, proof, worked example and explicit limits",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://dlmf.nist.gov/25.10"
+      ],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c0] A@2025-04-01T15:59:47Z, -1y6m: Prior assistant asserted, without demonstrated validity, constructions including \\(H_{384}\\), \\(\\det(s-H_{384})=c\\xi(s)^{384}\\), and “proofs” of RH, BSD, Langlands, Yang–Mills mass gap, and Navier–Stokes regularity.",
+      "retrieval_receipt": "root_receipts.json record 0",
+      "original_question": null,
+      "attribution_note": "The historical mathematical excerpt is assistant-authored. No original user question is inferred; the revised question and worked development are new. The source_excerpt is a literal retrieved result bullet (including any original truncation), not a reconstructed transcript. It may summarize historical content; no verbatim original question is inferred."
+    }
+  },
+  {
+    "id": "Y25-04-003",
+    "title": "The sine matrix at π/840 is orthogonal only with the full839 indices",
+    "status": "Developed classical result with a checked example; recovered claims corrected where needed",
+    "summary": "The recovered source explicitly truncates the sine matrix to indices0 through383. The standard discrete sine transform with this angle has839 rows and columns. Its orthogonality can be proved directly, making the truncation failure an exact mathematical issue.",
+    "definitions": [
+      "Letm≥2 andS_rs=√(2/m)sin(πrs/m), withr,s=1,…,m−1.",
+      "For the recovered anglem=840, the full index count ism−1=839, corresponding toSU2 levelk=m−2=838 in the standard convention."
+    ],
+    "result": {
+      "name": "Exact sine orthogonality",
+      "statement": "Σ_(s=1)^(m−1)sin(πrs/m)sin(πts/m)=(m/2)δ_rt. HenceS is real symmetric withS²=I. The384×384 principal truncation at m=840 is not orthogonal.",
+      "proof": "Use2sin u sinv=cos(u−v)−cos(u+v), and sum the finite geometric series of exponentials on the2mth roots of unity. Orthogonality of the odd Fourier combinations gives the displayed identity; equivalently, the vectors are the complete eigenbasis of the path adjacency matrix with zero boundary values. For the truncation, its first-row squared norm is(2/840)Σ_(s=1)^384sin²(sπ/840). The full norm is1, and every omitted term for385≤s≤839 is strictly positive. Thus the truncated norm is strictly less than1, disproving orthogonality without any numerical tolerance. Keeping the prefactor and angle while changing the rank destroys the identity."
+    },
+    "example": {
+      "setup": "Usem=4 as an exact small transform.",
+      "calculation": "S=(1/2)[[1,√2,1],[√2,0,−√2],[1,−√2,1]]. Multiplication givesS²=I3. Deleting the last row and column leaves first-row squared norm3/4, not1, exactly illustrating the same truncation mechanism.",
+      "conclusion": "The matrix is now a proven transform with an explicit index convention. Cyclotomic degree384 does not change its required size."
+    },
+    "limits": "Orthogonality alone does not construct a modular tensor category; fusion integrality, twists and coherence require additional data. The source’s symbolK²=C was not defined and is not silently identified with this matrix.",
+    "extension": "If a384-object category is intended, supply its actualS,T and fusion coefficients and verify the consistency relations instead of taking a principal block of a larger transform.",
+    "references": [
+      {
+        "label": "Etingof–Gelaki–Nikshych–Ostrik, Tensor Categories",
+        "url": "https://math.mit.edu/~etingof/egnobookfinal.pdf"
+      }
+    ],
+    "original": {
+      "date": "2025-04-10T00:59:30Z",
+      "month": "2025-04",
+      "evidence": "A",
+      "field": "Fourier analysis and fusion data",
+      "concept": "The sine matrix at π/840 is orthogonal only with the full839 indices",
+      "origin": "Recovered dated conversation evidence; mathematical development newly written",
+      "question": "Which index range makes the recovered sine matrix a unitary modular candidate?",
+      "math": "Σ_(s=1)^(m−1)sin(πrs/m)sin(πts/m)=(m/2)δ_rt. HenceS is real symmetric withS²=I. The384×384 principal truncation at m=840 is not orthogonal.",
+      "finish": "Precise result, proof, worked example and explicit limits",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://math.mit.edu/~etingof/egnobookfinal.pdf"
+      ],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c0] A@2025-04-10T00:59:30Z, -559d: claimed \\(384\\)-object \\(\\mathcal C_{\\pi/840}\\), \\(d_i=\\sin((i+1)\\pi/840)/\\sin(\\pi/840)\\), \\(D=\\sum_{i=0}^{383}d_i^2=1680\\), and \\(S_{ij}=\\sqrt{2/840}\\sin((i+1)(j+1)\\pi/840)\\); unsupported/possibly inconsistent source.",
+      "retrieval_receipt": "root_followups.json record 0",
+      "original_question": null,
+      "attribution_note": "The historical mathematical excerpt is assistant-authored. No original user question is inferred; the revised question and worked development are new. The source_excerpt is a literal retrieved result bullet (including any original truncation), not a reconstructed transcript. It may summarize historical content; no verbatim original question is inferred."
+    }
+  },
+  {
+    "id": "Y25-04-004",
+    "title": "Quantum-dimension probabilities must be normalized by their actual sum",
+    "status": "Developed classical result with a checked example; recovered claims corrected where needed",
+    "summary": "The recovered dimension sum1680 is inconsistent with the displayed trigonometric formula and index range. A direct bound already disproves it. With the proper sum, the quantities become legitimate probabilities and their Rényi entropies can be calculated in a small exact example.",
+    "definitions": [
+      "Letd_(r−1)=sin(rθ)/sinθ,θ=π/840, andD_N=Σ_(r=1)^Nd_(r−1)².",
+      "Setp_r=d_(r−1)²/D_N. Forq>0,q≠1, H_q=(1/(1−q))logΣp_r^q; theq→1 limit is Shannon entropy."
+    ],
+    "result": {
+      "name": "An exact contradiction and a corrected law",
+      "statement": "D_384>1960>1680. For the full839 indices,D_839=420/sin²θ andp_r=sin²(rθ)/420. Atm=4 the probabilities are(1/4,1/2,1/4), withH1=(3/2)log2 andH2=log(8/3).",
+      "proof": "For1≤r≤24, rθ≤π/2 andsin(rθ)≥2rθ/π, while sinθ≤θ. Hence d_(r−1)²≥4r²/π². Summing givesD_384≥(4/π²)Σ_(r=1)^24r²=19600/π²>1960, usingπ²<10. The omitted positive terms make the lower bound strict as needed. Full normalization follows from the sine orthogonality sumΣsin²(rθ)=840/2. For m=4, the dimensions are1,√2,1 and their squared sum is4. Direct substitution into the entropy definitions gives the displayed values, includingΣp²=3/8."
+    },
+    "example": {
+      "setup": "Compare the recovered putativeμ weights with the corrected law.",
+      "calculation": "The first24μ weights alone sum to more than1960/1680=7/6, so the full source list cannot be a probability distribution. Dividing by its actualD_384 repairs normalization but does not repair the truncatedS-matrix orthogonality.",
+      "conclusion": "The correction is not a small rounding adjustment; the claimed probabilities fail an exact total-mass test."
+    },
+    "limits": "Quantum dimensions must come from a defined fusion structure. The calculation treats the given trigonometric numbers precisely but does not validate a new category or entropy-based prediction.",
+    "extension": "Compute exact normalization and entropy bounds for the actual category, then distinguish truncating an observable from truncating the underlying fusion theory.",
+    "references": [
+      {
+        "label": "Etingof–Gelaki–Nikshych–Ostrik, Tensor Categories",
+        "url": "https://math.mit.edu/~etingof/egnobookfinal.pdf"
+      }
+    ],
+    "original": {
+      "date": "2025-04-10T00:59:30Z",
+      "month": "2025-04",
+      "evidence": "A",
+      "field": "Probability and trigonometric algebra",
+      "concept": "Quantum-dimension probabilities must be normalized by their actual sum",
+      "origin": "Recovered dated conversation evidence; mathematical development newly written",
+      "question": "What is the correct normalization and which entropy values can be computed exactly?",
+      "math": "D_384>1960>1680. For the full839 indices,D_839=420/sin²θ andp_r=sin²(rθ)/420. Atm=4 the probabilities are(1/4,1/2,1/4), withH1=(3/2)log2 andH2=log(8/3).",
+      "finish": "Precise result, proof, worked example and explicit limits",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://math.mit.edu/~etingof/egnobookfinal.pdf"
+      ],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c0] A@2025-04-10T00:59:30Z, -559d: claimed \\(384\\)-object \\(\\mathcal C_{\\pi/840}\\), \\(d_i=\\sin((i+1)\\pi/840)/\\sin(\\pi/840)\\), \\(D=\\sum_{i=0}^{383}d_i^2=1680\\), and \\(S_{ij}=\\sqrt{2/840}\\sin((i+1)(j+1)\\pi/840)\\); unsupported/possibly inconsistent source.",
+      "retrieval_receipt": "root_followups.json record 0",
+      "original_question": null,
+      "attribution_note": "The historical mathematical excerpt is assistant-authored. No original user question is inferred; the revised question and worked development are new. The source_excerpt is a literal retrieved result bullet (including any original truncation), not a reconstructed transcript. It may summarize historical content; no verbatim original question is inferred."
+    }
+  },
+  {
+    "id": "Y25-04-005",
+    "title": "Fusion coefficients are constrained by a recurrence and parity",
+    "status": "Developed classical result with a checked example; recovered claims corrected where needed",
+    "summary": "The source supplies isolated fusion numbers without a category definition. If the intended structure is theSU2 family associated with the earlier sine matrix, its integer labels have a precise parity and truncation rule. A path matrix gives an elementary constructive realization of the fusion ring.",
+    "definitions": [
+      "Letk≥2 and use labelsj=0,…,k. LetN1 be the adjacency matrix of the path withk+1 vertices.",
+      "DefineN0=I andN_(j+1)=N1N_j−N_(j−1), withN_(k+1)=0. EquivalentlyN_j=U_j(N1/2) for Chebyshev polynomialsU_j."
+    ],
+    "result": {
+      "name": "An exact basic fusion identity",
+      "statement": "N1²=N0+N2, soN_11^1=0 in this convention. For k≥4, N2²=N0+N2+N4. Allowed output labels have the same parity asi+j.",
+      "proof": "The first identity is the definition ofN2. SinceN2=N1²−I, square it to obtainN2²=N1⁴−2N1²+I. The recurrence givesN4=N1⁴−3N1²+I, soN0+N2+N4=N1⁴−2N1²+I as required. The sine eigenvectors diagonalize the path matrix with eigenvalues2cos(rπ/(k+2)); the recurrence therefore has the matching eigenvalue ratiossin((j+1)rθ)/sin(rθ). Each multiplication byN1 changes the parity of a path vertex, so the polynomialN_j only connects vertices of parity shifted byj. This enforcesi+j+ℓ even on a fusion coefficient. Thus the source’s odd outputs in2×2 cannot be imported into this specific convention."
+    },
+    "example": {
+      "setup": "Takek=4, giving a five-vertex path.",
+      "calculation": "The fundamental product is1×1=0+2 and2×2=0+2+4. Direct integer matrix multiplication verifies both identities and all entries are nonnegative. The matrixN4 reverses the five vertices, soN4²=I.",
+      "conclusion": "The ring structure supplies exact integer constraints and a reproducible replacement for unexplained coefficients."
+    },
+    "limits": "A different category or a different label convention could have other fusion numbers. The historicalX37 L-value and unspecified categorical data remain unverified. A fusion ring alone does not determine associators or braiding.",
+    "extension": "Construct the actualF andR symbols or cite a precise realization, then verify pentagon and hexagon identities in addition to the integer ring.",
+    "references": [
+      {
+        "label": "Etingof–Gelaki–Nikshych–Ostrik, Tensor Categories",
+        "url": "https://math.mit.edu/~etingof/egnobookfinal.pdf"
+      }
+    ],
+    "original": {
+      "date": "2025-04-23T20:22:00Z",
+      "month": "2025-04",
+      "evidence": "A",
+      "field": "Fusion rings",
+      "concept": "Fusion coefficients are constrained by a recurrence and parity",
+      "origin": "Recovered dated conversation evidence; mathematical development newly written",
+      "question": "Which exact fusion rule is compatible with the recovered SU2 sine data?",
+      "math": "N1²=N0+N2, soN_11^1=0 in this convention. For k≥4, N2²=N0+N2+N4. Allowed output labels have the same parity asi+j.",
+      "finish": "Precise result, proof, worked example and explicit limits",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://math.mit.edu/~etingof/egnobookfinal.pdf"
+      ],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c2] A@2025-04-23T20:22:00Z, -1y6m: Later claimed numerical data including \\(N_{1,1}^1=1,N_{2,2}^{1,3,4}=1\\), \\(L_{X_{37}}(2)=13\\pi^4/576\\), \\(\\dim(C_{384})=1680\\), \\(\\phi(1680)=384\\), and Cardy/Lagrangian constructions; these were asserted, not established",
+      "retrieval_receipt": "root_receipts.json record 0",
+      "original_question": null,
+      "attribution_note": "The historical mathematical excerpt is assistant-authored. No original user question is inferred; the revised question and worked development are new. The source_excerpt is a literal retrieved result bullet (including any original truncation), not a reconstructed transcript. It may summarize historical content; no verbatim original question is inferred."
+    }
+  },
+  {
+    "id": "Y25-04-006",
+    "title": "Müger nondegeneracy can be checked through an explicit bicharacter",
+    "status": "Developed classical result with a checked example; recovered claims corrected where needed",
+    "summary": "The recovered user source names Müger’s structural work. A pointed braided example gives a finite test of transparent objects and separates a symmetric category from a nondegenerate one. The general theorem is cited, while the finite calculation is explicit.",
+    "definitions": [
+      "LetG=F2² label invertible simple objects. Usequadratic functionq(a,b)=(−1)^(ab).",
+      "Its associated double-braiding bicharacter isB(v,w)=q(v+w)/(q(v)q(w))=(−1)^(ad+bc) forv=(a,b),w=(c,d). A label is transparent ifB(v,w)=1 for allw."
+    ],
+    "result": {
+      "name": "Exact triviality of the transparent subgroup",
+      "statement": "Onlyv=0 is transparent. The normalized matrixS_vw=B(v,w)/2 is a real orthogonal4×4 matrix.",
+      "proof": "Ifv=(a,b) is transparent, choosew=(0,1) to obtain(−1)^a=1, soa=0. Choosingw=(1,0) similarly givesb=0. For orthogonality, the inner product of rowsv,v′ is(1/4)Σ_wB(v−v′,w). This character sum is1 ifv=v′ and0 otherwise: a nontrivial character has equally many positive and negative values, as pairingw withw+w0 flips its sign. ThusSSᵀ=I. In the pointed realization, trivial transparent subgroup is the finite algebraic form of nondegeneracy. In a symmetric category, by contrast, all double braidings are identity and every object is transparent."
+    },
+    "example": {
+      "setup": "Order the labels00,10,01,11.",
+      "calculation": "S=(1/2)[[1,1,1,1],[1,1,−1,−1],[1,−1,1,−1],[1,−1,−1,1]]. Its determinant is±1 and its square isI. The four categorical dimensions are1, so global dimension is4.",
+      "conclusion": "A precise double-braiding law yields a complete transparency certificate rather than a claim based on rank alone."
+    },
+    "limits": "The realization as a braided fusion category uses standard pointed-category coherence data; an arbitrary table would still need that realization. The calculation does not establish a category of rank384.",
+    "extension": "For proposed fusion data, compute the transparent subcategory and determine whether modularization is required, stating all field and semisimplicity hypotheses.",
+    "references": [
+      {
+        "label": "Müger, On the structure of modular categories",
+        "url": "https://doi.org/10.1112/S0024611503014187"
+      },
+      {
+        "label": "Etingof–Gelaki–Nikshych–Ostrik, Tensor Categories",
+        "url": "https://math.mit.edu/~etingof/egnobookfinal.pdf"
+      }
+    ],
+    "original": {
+      "date": "2025-04-23T20:13:27Z",
+      "month": "2025-04",
+      "evidence": "U",
+      "field": "Braided categories",
+      "concept": "Müger nondegeneracy can be checked through an explicit bicharacter",
+      "origin": "Recovered dated conversation evidence; mathematical development newly written",
+      "question": "What does nondegenerate braiding mean in a concrete pointed model?",
+      "math": "Onlyv=0 is transparent. The normalized matrixS_vw=B(v,w)/2 is a real orthogonal4×4 matrix.",
+      "finish": "Precise result, proof, worked example and explicit limits",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://doi.org/10.1112/S0024611503014187",
+        "https://math.mit.edu/~etingof/egnobookfinal.pdf"
+      ],
+      "source_excerpt": "- [USER_FACT] [c2] U@2025-04-23T20:13:27Z, -1y6m: April 23 source names Michael Müger works/topics: superselection theory, modular invariants, braided tensor categories, Galois theory, Frobenius algebras, quantum doubles, Witt group, modular categories.",
+      "retrieval_receipt": "root_receipts.json record 0",
+      "original_question": null,
+      "attribution_note": "The dated source identifies user-authored material; the revised question and proof are new unless verbatim wording is separately provided. The source_excerpt is a literal retrieved result bullet (including any original truncation), not a reconstructed transcript. It may summarize historical content; no verbatim original question is inferred."
+    }
+  },
+  {
+    "id": "Y25-04-007",
+    "title": "The quantum double of Z2 has distinct flux and charge labels",
+    "status": "Developed classical result with a checked example; recovered claims corrected where needed",
+    "summary": "The user source names quantum doubles. The finite abelian exampleG=Z2 is completely calculable and produces four labels rather than merely repeating the original two. It is a constructive model of the distinction between an algebra and its center.",
+    "definitions": [
+      "For a finite abelianG, simple sectors of its untwisted double are pairs(g,χ), withg∈G andχ a character.",
+      "Fusion is(g,χ)(h,ψ)=(g+h,χψ), and the twist isθ_(g,χ)=χ(g)."
+    ],
+    "result": {
+      "name": "Exact Z2 double data",
+      "statement": "ForG=Z2 the labels are1,e,m,em, all dimension1, with twists1,1,1,−1. The double braiding ofe andm is−1, and itsS matrix is the four-label bicharacter matrix of the preceding model.",
+      "proof": "Z2 has two group elements and two charactersχ0,χ1, withχ1(1)=−1. Pairing them gives four labels. Componentwise fusion makes every nonidentity label square to1. The twist formula gives−1 only when both flux and charge are nontrivial. The monodromy between(g,χ) and(h,ψ) isχ(h)ψ(g), so choosing a pure charge and a pure flux gives−1. Character orthogonality makes the normalizedS matrix invertible, as can also be checked by squaring its explicit integer-sign matrix. These calculations are the finite instance of the general theorem that the Drinfeld center of a suitable fusion category is nondegenerate."
+    },
+    "example": {
+      "setup": "CompareVec_Z2 and its center.",
+      "calculation": "The original pointed fusion category has two simple labels and global dimension2. Its double has rank4 and global dimension4=2². Consequently passing to a center changes the object count and dimension; they are not inherited unchanged from the input.",
+      "conclusion": "The small double gives exact fusion, twist and braiding data with a clear origin."
+    },
+    "limits": "The untwisted abelian calculation does not cover nonabelian conjugacy-class centralizers or cocycle-twisted doubles. It also does not identify an unspecifiedSU4/Q8 framework with this category.",
+    "extension": "Compute the double of a declared nonabelian group by listing conjugacy classes and irreducible centralizer representations, then verify the sum of squared dimensions.",
+    "references": [
+      {
+        "label": "Müger, The quantum double of tensor categories and subfactors",
+        "url": "https://arxiv.org/abs/math/0111205"
+      }
+    ],
+    "original": {
+      "date": "2025-04-23T20:13:27Z",
+      "month": "2025-04",
+      "evidence": "U",
+      "field": "Representation theory",
+      "concept": "The quantum double of Z2 has distinct flux and charge labels",
+      "origin": "Recovered dated conversation evidence; mathematical development newly written",
+      "question": "What exact double construction can be worked out before claiming a large categorical unification?",
+      "math": "ForG=Z2 the labels are1,e,m,em, all dimension1, with twists1,1,1,−1. The double braiding ofe andm is−1, and itsS matrix is the four-label bicharacter matrix of the preceding model.",
+      "finish": "Precise result, proof, worked example and explicit limits",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://arxiv.org/abs/math/0111205"
+      ],
+      "source_excerpt": "- [USER_FACT] [c2] U@2025-04-23T20:13:27Z, -1y6m: April 23 source names Michael Müger works/topics: superselection theory, modular invariants, braided tensor categories, Galois theory, Frobenius algebras, quantum doubles, Witt group, modular categories.",
+      "retrieval_receipt": "root_receipts.json record 0",
+      "original_question": null,
+      "attribution_note": "The dated source identifies user-authored material; the revised question and proof are new unless verbatim wording is separately provided. The source_excerpt is a literal retrieved result bullet (including any original truncation), not a reconstructed transcript. It may summarize historical content; no verbatim original question is inferred."
+    }
+  },
+  {
+    "id": "Y25-04-008",
+    "title": "A Frobenius algebra and a Lagrangian dimension test require actual multiplication",
+    "status": "Developed classical result with a checked example; recovered claims corrected where needed",
+    "summary": "The recovered passage names Cardy and Lagrangian constructions without multiplication maps. In theZ2 double, the two-label object1⊕e gives a finite algebra whose dimension test can be checked. This is a classical model, not a reconstruction of missing384-object data.",
+    "definitions": [
+      "LetL={1,e} be the pure-charge subgroup in the four-label double. DefineA=1⊕e with multiplication induced bye²=1 and the ordinary group law.",
+      "The categorical dimension isdimA=2; global category dimension is4. The subgroup has trivial twist and trivial mutual braiding."
+    ],
+    "result": {
+      "name": "An explicit isotropic algebra and its dimension",
+      "statement": "The multiplication is associative and braided-commutative onA. It has a nondegenerate Frobenius pairingτ(ab), withτ selecting the identity coefficient. Moreover(dimA)²=4, the Lagrangian dimension condition in this model.",
+      "proof": "Associativity is exactly associativity of the two-element group. All braidings among pure charges are trivial, so multiplication is commutative in the braided sense. In the basis(1,e),τ(1)=1,τ(e)=0 and the pairing isdiag(1,1), proving nondegeneracy. OverC the algebra splits into the idempotents(1±e)/2, establishing separability in this elementary realization. The trivial twist ensures isotropy. Its dimension squared equals that of the ambient nondegenerate category; together with the specified connected commutative separable structure, this is the classical Lagrangian condition. The general relation between such algebras and Drinfeld centers is an external theorem explicitly referenced, not proved by a dimension equality alone."
+    },
+    "example": {
+      "setup": "Calculate the idempotents and the complementary flux interaction.",
+      "calculation": "p_+=(1+e)/2 andp_-=(1−e)/2 satisfyp_±²=p_±,p_+p_-=0 andp_++p_-=1. The fluxm braids nontrivially withe, so addingm to this algebra would require a new compatibility analysis rather than merely increasing its dimension.",
+      "conclusion": "The example supplies the maps and compatibility that a dimension-only claim omits. Its ambient double is Witt-trivial by the classical center relation."
+    },
+    "limits": "Not every object of dimension√D is a Lagrangian algebra. Multiplication, unit, separability, commutativity and twist conditions are essential. No historicalL-value is validated here.",
+    "extension": "For an actual category, list candidate summands and solve the associativity and braided-commutativity equations before applying a Lagrangian or Cardy theorem.",
+    "references": [
+      {
+        "label": "Müger, Frobenius algebras and Morita equivalence",
+        "url": "https://arxiv.org/abs/math/0111204"
+      },
+      {
+        "label": "Davydov–Müger–Nikshych–Ostrik, The Witt group of non-degenerate braided fusion categories",
+        "url": "https://arxiv.org/abs/1009.2117"
+      }
+    ],
+    "original": {
+      "date": "2025-04-23T20:22:00Z",
+      "month": "2025-04",
+      "evidence": "A",
+      "field": "Tensor categories",
+      "concept": "A Frobenius algebra and a Lagrangian dimension test require actual multiplication",
+      "origin": "Recovered dated conversation evidence; mathematical development newly written",
+      "question": "Which concrete algebra object demonstrates the meaning of a Lagrangian construction?",
+      "math": "The multiplication is associative and braided-commutative onA. It has a nondegenerate Frobenius pairingτ(ab), withτ selecting the identity coefficient. Moreover(dimA)²=4, the Lagrangian dimension condition in this model.",
+      "finish": "Precise result, proof, worked example and explicit limits",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://arxiv.org/abs/math/0111204",
+        "https://arxiv.org/abs/1009.2117"
+      ],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c2] A@2025-04-23T20:22:00Z, -1y6m: Later claimed numerical data including \\(N_{1,1}^1=1,N_{2,2}^{1,3,4}=1\\), \\(L_{X_{37}}(2)=13\\pi^4/576\\), \\(\\dim(C_{384})=1680\\), \\(\\phi(1680)=384\\), and Cardy/Lagrangian constructions; these were asserted, not established",
+      "retrieval_receipt": "root_receipts.json record 0",
+      "original_question": null,
+      "attribution_note": "The historical mathematical excerpt is assistant-authored. No original user question is inferred; the revised question and worked development are new. The source_excerpt is a literal retrieved result bullet (including any original truncation), not a reconstructed transcript. It may summarize historical content; no verbatim original question is inferred."
+    }
+  },
+  {
+    "id": "Y25-04-009",
+    "title": "Milnor numbers come from a finite Jacobian algebra",
+    "status": "Developed classical result with a checked example; recovered claims corrected where needed",
+    "summary": "The notationM(a,b,c) was not defined in the recovered source. A precise conditional interpretation isf=x^a+y^b+z^c witha,b,c≥2. Its Jacobian algebra gives a directly countable Milnor number and distinguishes the singularity fiber from its three-dimensional link.",
+    "definitions": [
+      "For an isolated polynomial critical point, the Jacobian algebra isQ_f=C[x,y,z]/(f_x,f_y,f_z); its finite dimension is the Milnor number.",
+      "The Milnor fiberf=ε in a small ball has complex dimension2; the linkf=0 intersected with a small5-sphere has real dimension3."
+    ],
+    "result": {
+      "name": "Exact monomial basis",
+      "statement": "Forf=x^a+y^b+z^c, the monomialsx^iy^jz^k with0≤i≤a−2,0≤j≤b−2,0≤k≤c−2 form a basis, givingμ=(a−1)(b−1)(c−1).",
+      "proof": "The partial derivatives are nonzero scalar multiples ofx^(a−1),y^(b−1),z^(c−1), so their ideal is generated by those three pure powers. Every monomial with an exponent beyond a bound vanishes in the quotient; the remaining monomials are linearly independent because a monomial ideal contains no nonzero linear combination supported on standard monomials. Counting the independent exponent choices proves the formula. The critical point is isolated because all three derivatives vanish simultaneously only at0. Identifying this algebraic number with the bouquet-of-spheres count of the Milnor fiber is Milnor’s structural theorem, not a new consequence of the count."
+    },
+    "example": {
+      "setup": "Use(a,b,c)=(5,12,2) and(41,840,2).",
+      "calculation": "The first basis has4·11·1=44 elements. The second has40·839·1=33560. The Milnor fiber hasb2=μ and reduced homology in that middle degree under the classical theorem; it is not a closed3-manifold withb3=1.",
+      "conclusion": "The recoveredμ=44 is correct in this explicit interpretation, while the topology and dimension of the associated object must be kept separate."
+    },
+    "limits": "The historicalM notation and the meaning ofΩ were not recovered. This conditional development does not identifyμ with a spectral gap, a regulator or a categorical rank.",
+    "extension": "Compute monodromy and intersection forms for the specified polynomial, then use those matrices to investigate its link rather than inferring link homology fromμ alone.",
+    "references": [
+      {
+        "label": "Milnor, Singular Points of Complex Hypersurfaces",
+        "url": "https://www.jstor.org/stable/j.ctt1bd6kvv"
+      }
+    ],
+    "original": {
+      "date": "2025-04-18T17:31:12Z",
+      "month": "2025-04",
+      "evidence": "U",
+      "field": "Singularity theory",
+      "concept": "Milnor numbers come from a finite Jacobian algebra",
+      "origin": "Recovered dated conversation evidence; mathematical development newly written",
+      "question": "What exact invariant is obtained if the recovered triple is interpreted as a Brieskorn polynomial?",
+      "math": "Forf=x^a+y^b+z^c, the monomialsx^iy^jz^k with0≤i≤a−2,0≤j≤b−2,0≤k≤c−2 form a basis, givingμ=(a−1)(b−1)(c−1).",
+      "finish": "Precise result, proof, worked example and explicit limits",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://www.jstor.org/stable/j.ctt1bd6kvv"
+      ],
+      "source_excerpt": "- [USER_FACT] [c3] U@2025-04-18T17:31:12Z, -551d: April 18 Ω-framework source: M(41,840,2), α=41/840, b0=b3=1,b1=b2=0, ΔE1≈0.426, Ω=149421.7628351893…, κ≈0.015373; generalized Ω, μ=(p−1)(q−1)(r−1), Hofstadter gap formula, M(5,12,2) μ=44, σ≈0.574, κ≈0.0786.",
+      "retrieval_receipt": "root_receipts.json record 0",
+      "original_question": null,
+      "attribution_note": "The dated source identifies user-authored material; the revised question and proof are new unless verbatim wording is separately provided. The source_excerpt is a literal retrieved result bullet (including any original truncation), not a reconstructed transcript. It may summarize historical content; no verbatim original question is inferred."
+    }
+  },
+  {
+    "id": "Y25-04-010",
+    "title": "A Brieskorn link can have torsion invisible to its Betti numbers",
+    "status": "Developed classical result with a checked example; recovered claims corrected where needed",
+    "summary": "The recovered Betti numbers resemble a rational homology sphere but do not determine integral homology. For the explicit linksΣ(2,a,b) witha odd,b even andgcd(a,b)=1, an exact determinant calculation detects nontrivial torsion. This is a useful refinement of the conditional Brieskorn interpretation.",
+    "definitions": [
+      "LetΣ(2,a,b) be the link ofz²+x^a+y^b=0, oriented as a complex link. It is the double branched cover ofS³ over the(a,b) torus knot.",
+      "A classical branched-cover theorem states that the order ofH1 is|Δ_(a,b)(−1)| when nonzero, whereΔ is the knot Alexander polynomial normalized up to units."
+    ],
+    "result": {
+      "name": "Exact torsion order for the recovered examples",
+      "statement": "For odda and evenb withgcd(a,b)=1, |H1(Σ(2,a,b);Z)|=a. ThusΣ(2,5,12) hasH1≅Z/5 andΣ(2,41,840) hasH1≅Z/41, while their first and second rational Betti numbers vanish.",
+      "proof": "The torus-knot polynomial isΔ_(a,b)(t)=[(t^(ab)−1)(t−1)]/[(t^a−1)(t^b−1)]. At t=−1, both theab andb factors vanish, but their ratio tendsa(−1)^(ab−b)=a becauseb is even. The remaining ratio(t−1)/(t^a−1) tends1 becausea is odd. Hence the determinant is a, which is finite and nonzero. The branched-cover theorem gives a finite first homology of that order. In the two examples a is prime, so the only abelian group of that order isZ/a. RationalH1 therefore vanishes; Poincaré duality on the closed oriented link gives rationalH2=0 andb0=b3=1."
+    },
+    "example": {
+      "setup": "Check the coprimality and determinant data.",
+      "calculation": "gcd(5,12)=1 andgcd(41,840)=1. The corresponding orders are5 and41, not1. Thus the recovered Betti pattern can hold rationally while the statement “integral homology sphere” would be false for these links.",
+      "conclusion": "Torsion supplies mathematical information that a real-valued or rational Betti table discards."
+    },
+    "limits": "The result uses the stated link interpretation and classical branched-cover/Alexander theorems. It does not classify the full fundamental group or validate an undefinedM model.",
+    "extension": "Construct an explicit Seifert presentation or surgery matrix and compute its Smith normal form as a second independent certificate of the integral group.",
+    "references": [
+      {
+        "label": "Milnor, Singular Points of Complex Hypersurfaces",
+        "url": "https://www.jstor.org/stable/j.ctt1bd6kvv"
+      }
+    ],
+    "original": {
+      "date": "2025-04-18T17:31:12Z",
+      "month": "2025-04",
+      "evidence": "U",
+      "field": "Low-dimensional topology",
+      "concept": "A Brieskorn link can have torsion invisible to its Betti numbers",
+      "origin": "Recovered dated conversation evidence; mathematical development newly written",
+      "question": "What link homology can be checked when a recovered Betti table omits torsion?",
+      "math": "For odda and evenb withgcd(a,b)=1, |H1(Σ(2,a,b);Z)|=a. ThusΣ(2,5,12) hasH1≅Z/5 andΣ(2,41,840) hasH1≅Z/41, while their first and second rational Betti numbers vanish.",
+      "finish": "Precise result, proof, worked example and explicit limits",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://www.jstor.org/stable/j.ctt1bd6kvv"
+      ],
+      "source_excerpt": "- [USER_FACT] [c3] U@2025-04-18T17:31:12Z, -551d: April 18 Ω-framework source: M(41,840,2), α=41/840, b0=b3=1,b1=b2=0, ΔE1≈0.426, Ω=149421.7628351893…, κ≈0.015373; generalized Ω, μ=(p−1)(q−1)(r−1), Hofstadter gap formula, M(5,12,2) μ=44, σ≈0.574, κ≈0.0786.",
+      "retrieval_receipt": "root_receipts.json record 0",
+      "original_question": null,
+      "attribution_note": "The dated source identifies user-authored material; the revised question and proof are new unless verbatim wording is separately provided. The source_excerpt is a literal retrieved result bullet (including any original truncation), not a reconstructed transcript. It may summarize historical content; no verbatim original question is inferred."
+    }
+  },
+  {
+    "id": "Y25-04-011",
+    "title": "The recovered top-form quotient would vanish if all exact forms are removed",
+    "status": "Developed classical result with a checked example; recovered claims corrected where needed",
+    "summary": "The recovered Brieskorn-module formula includes all exact top forms in the denominator. For polynomial forms overC, every top form is exact, so that quotient is zero. A nearby correct quotient recovers the Milnor algebra; a genuine Brieskorn module uses a different denominator.",
+    "definitions": [
+      "LetΩ^j denote polynomial differentialj-forms in n variables overC.",
+      "The Jacobian top-form quotient isΩ^n/(df∧Ω^(n−1)). A standard Brieskorn module instead usesdf∧dΩ^(n−2), with indexing conventions stated."
+    ],
+    "result": {
+      "name": "Exact vanishing and the repaired finite quotient",
+      "statement": "dΩ^(n−1)=Ω^n, soΩ^n/(df∧Ω^(n−1)+dΩ^(n−1))=0. MeanwhileΩ^n/(df∧Ω^(n−1))≅C[x1,…,xn]/(∂1f,…,∂nf) times the volume form.",
+      "proof": "For a polynomialp, integrate it termwise inx1 to obtain a polynomialP with∂1P=p. Then d(Pdx2∧⋯∧dxn)=pdx1∧⋯∧dxn; terms differentiated in other variables wedge a repeated differential and vanish. Thus every top form is exact, proving the first assertion. For the second, wedge df with a general(n−1)-form. Its coefficient of the volume form is an arbitrary linear combination of the partial derivatives, so its image is precisely the Jacobian ideal times that form. Taking the quotient proves the identification. This does not identify that finite quotient with the full Gauss–Manin or Brieskorn module, which retains deformation-parameter information."
+    },
+    "example": {
+      "setup": "Takef=x³+y² in two variables.",
+      "calculation": "The Jacobian ideal is(x²,y), so the repaired top-form quotient has basisdx∧dy andx dx∧dy, dimension2. Both forms are nevertheless exact:dx∧dy=d(xdy) andx dx∧dy=d((x²/2)dy). Adding all exact forms kills the entire two-dimensional quotient.",
+      "conclusion": "The difference between the denominators changes the object from a meaningful invariant to zero; it is not a notation choice."
+    },
+    "limits": "The proof is for polynomial or convergent local forms in characteristic0. A full Brieskorn-lattice theorem, freeness and period connection require further structure.",
+    "extension": "Choose one standard module convention, define its parameter action and calculate the Gauss–Manin connection for a small singularity before comparing periods.",
+    "references": [
+      {
+        "label": "Milnor, Singular Points of Complex Hypersurfaces",
+        "url": "https://www.jstor.org/stable/j.ctt1bd6kvv"
+      }
+    ],
+    "original": {
+      "date": "2025-04-20T20:11:26Z",
+      "month": "2025-04",
+      "evidence": "A",
+      "field": "Commutative algebra and differential forms",
+      "concept": "The recovered top-form quotient would vanish if all exact forms are removed",
+      "origin": "Recovered dated conversation evidence; mathematical development newly written",
+      "question": "Which quotient actually produces the finite Jacobian algebra, and why is the displayed extra denominator fatal?",
+      "math": "dΩ^(n−1)=Ω^n, soΩ^n/(df∧Ω^(n−1)+dΩ^(n−1))=0. MeanwhileΩ^n/(df∧Ω^(n−1))≅C[x1,…,xn]/(∂1f,…,∂nf) times the volume form.",
+      "finish": "Precise result, proof, worked example and explicit limits",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://www.jstor.org/stable/j.ctt1bd6kvv"
+      ],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c6] A@2025-04-20T20:11:26Z, -549d: Claimed \\(\\mathcal H_\\infty=\\mathrm{hocolim}(\\mathcal C_{384}\\leftarrow\\mathcal B\\to\\mathcal E_8)\\); \\(\\phi(1680)=384\\), \\(\\sum_X\\dim(X)^2=1680\\), twists/cyclotomic data, Brieskorn \\(H_f=\\Omega^n/(df\\wedge\\Omega^{n-1}+d\\Omega^{n-1})\\), \\(\\mu=\\prod(a_i-1)\\), and speculative constant formulas for \\(\\pi,e,\\gamma,\\zeta(3),\\alpha\\).",
+      "retrieval_receipt": "root_receipts.json record 0",
+      "original_question": null,
+      "attribution_note": "The historical mathematical excerpt is assistant-authored. No original user question is inferred; the revised question and worked development are new. The source_excerpt is a literal retrieved result bullet (including any original truncation), not a reconstructed transcript. It may summarize historical content; no verbatim original question is inferred."
+    }
+  },
+  {
+    "id": "Y25-04-012",
+    "title": "A logarithmic derivative is local analytic data, not an undefined regulator identity",
+    "status": "Developed classical result with a checked example; recovered claims corrected where needed",
+    "summary": "The recoveredΩ formula does not specify a cycle, regulator normalization, L-function or evaluation point. A logarithmic derivative is a function of a variable, usually meromorphic, whereaslogΩ is a number. A finite Euler factor gives a fully defined elementary model and exposes the missing data.",
+    "definitions": [
+      "For a nonvanishing holomorphicL near s0, (logL)′=L′/L locally, independently of the additive logarithm branch.",
+      "ConsiderL(s)=1−2^(−s), a single entire Euler-factor polynomial in2^(−s), not a global arithmetic L-function."
+    ],
+    "result": {
+      "name": "An exact evaluation and singularity test",
+      "statement": "L′(s)/L(s)=log2/(2^s−1). At s=1 this islog2, so imposinglogΩ=L′(1)/L(1) would giveΩ=2. At s=0 the logarithmic derivative has a simple pole.",
+      "proof": "Differentiate2^(−s)=e^(−slog2):L′=(log2)2^(−s). Division gives the stated expression. At s=1 the denominator is1. Near zero,2^s−1=slog2+O(s²), soL′/L=1/s+O(1), displaying the pole arising from the zero ofL. More generally, ifL(s)=(s−s0)^m g(s) withg(s0)≠0, thenL′/L=m/(s−s0)+g′/g. Thus an evaluation at a zero is not an ordinary finite value unless a finite-part or leading-coefficient convention is specified. A regulator value additionally needs a defined cycle and map; no such data follows from this analytic identity."
+    },
+    "example": {
+      "setup": "Compare twoevaluation points for the same explicitfactor.",
+      "calculation": "At s=1 the imposedΩ would be2; at s=2 it would beexp[(log2)/3]=2^(1/3). The number changes with the point, showing why suppressing the argument is mathematically consequential.",
+      "conclusion": "A complete identity must name its objects, evaluation point and normalization. The historical decimalΩ is not established by the displayed equality."
+    },
+    "limits": "The exactX37 L-value remains unverified becauseX37 and its L-function are not defined in the recovered excerpt. This model is clearly illustrative, not a replacement historical result.",
+    "extension": "Specify the motive or curve, the cycle class, the regulator map and the precise leading-value statement. Compute both sides independently with certified errors.",
+    "references": [],
+    "original": {
+      "date": "2025-04-19T20:21:13Z",
+      "month": "2025-04",
+      "evidence": "A",
+      "field": "Complex analysis",
+      "concept": "A logarithmic derivative is local analytic data, not an undefined regulator identity",
+      "origin": "Recovered dated conversation evidence; mathematical development newly written",
+      "question": "What does a claimed Ω–L-function identity need, and what exact model can actually be calculated?",
+      "math": "L′(s)/L(s)=log2/(2^s−1). At s=1 this islog2, so imposinglogΩ=L′(1)/L(1) would giveΩ=2. At s=0 the logarithmic derivative has a simple pole.",
+      "finish": "Precise result, proof, worked example and explicit limits",
+      "kind": "Revised mathematical treatment",
+      "refs": [],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c3] A@2025-04-19T20:21:13Z, -550d: M(5,12,2) μ=44; asserted motivic identity \\(\\log Ω=r_D([Z])=L'/L\\), dilogarithmic approxim",
+      "retrieval_receipt": "root_receipts.json record 0",
+      "original_question": null,
+      "attribution_note": "The historical mathematical excerpt is assistant-authored. No original user question is inferred; the revised question and worked development are new. The source_excerpt is a literal retrieved result bullet (including any original truncation), not a reconstructed transcript. It may summarize historical content; no verbatim original question is inferred."
+    }
+  },
+  {
+    "id": "Y25-04-013",
+    "title": "Golden-ratio dilogarithms have exact functional-identity evaluations",
+    "status": "Developed classical result with a checked example; recovered claims corrected where needed",
+    "summary": "The recovered passage mentions dilogarithmic approximations. A constructive replacement is an exact evaluation at the inverse golden ratio, linked to the same golden scaling used elsewhere that month. The proof uses functional identities derivable by differentiation.",
+    "definitions": [
+      "For0≤x≤1 defineLi2(x)=Σ_(n≥1)x^n/n², withLi2′(x)=−log(1−x)/x on(0,1).",
+      "Letφ=(1+√5)/2 andr=1/φ, so r²=1−r and1+r=1/r."
+    ],
+    "result": {
+      "name": "Exact golden dilogarithms",
+      "statement": "Li2(r)=π²/10−log²φ andLi2(r²)=π²/15−log²φ.",
+      "proof": "The reflection identityLi2(x)+Li2(1−x)=π²/6−logxlog(1−x) follows by differentiating both sides and evaluating atx→0. AlsoLi2(x)+Li2(−x)=(1/2)Li2(x²) follows directly from the series, andLi2(x/(1+x))=−Li2(−x)−(1/2)log²(1+x) follows by differentiation and the value at0. PutA=Li2(r),B=Li2(r²),l=logr. Reflection givesA+B=π²/6−2l². The other two identities, usingr/(1+r)=r², giveA=(3/2)B+(1/2)l². Solving the two linear equations yieldsB=π²/15−l² andA=π²/10−l², equal to the stated forms because l²=log²φ."
+    },
+    "example": {
+      "setup": "Evaluate both sides by a positive convergent series.",
+      "calculation": "AfterN terms at0<x<1, the tail is at mostx^(N+1)/[(N+1)²(1−x)]. AtN=80 this bounds the error forx=r by less than10^(−19), enough to check many digits without an arbitrary fit.",
+      "conclusion": "The special value follows from exact identities and a reproducible error bound, giving a genuine alternative to an unexplained numerical coincidence."
+    },
+    "limits": "These identities do not prove the recoveredΩ regulator formula or any physical constant relation. Real arguments avoid branch choices; complex dilogarithms need an explicit analytic continuation convention.",
+    "extension": "Identify the exact algebraic arguments in an actual period integral and reduce them using functional equations before proposing a numerical recognition relation.",
+    "references": [
+      {
+        "label": "NIST DLMF, Polylogarithms",
+        "url": "https://dlmf.nist.gov/25.12"
+      }
+    ],
+    "original": {
+      "date": "2025-04-19T20:21:13Z",
+      "month": "2025-04",
+      "evidence": "A",
+      "field": "Special functions",
+      "concept": "Golden-ratio dilogarithms have exact functional-identity evaluations",
+      "origin": "Recovered dated conversation evidence; mathematical development newly written",
+      "question": "Which real dilogarithm value can be proved exactly instead of numerically fitting an unexplained constant?",
+      "math": "Li2(r)=π²/10−log²φ andLi2(r²)=π²/15−log²φ.",
+      "finish": "Precise result, proof, worked example and explicit limits",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://dlmf.nist.gov/25.12"
+      ],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c3] A@2025-04-19T20:21:13Z, -550d: M(5,12,2) μ=44; asserted motivic identity \\(\\log Ω=r_D([Z])=L'/L\\), dilogarithmic approxim",
+      "retrieval_receipt": "root_receipts.json record 0",
+      "original_question": null,
+      "attribution_note": "The historical mathematical excerpt is assistant-authored. No original user question is inferred; the revised question and worked development are new. The source_excerpt is a literal retrieved result bullet (including any original truncation), not a reconstructed transcript. It may summarize historical content; no verbatim original question is inferred."
+    }
+  },
+  {
+    "id": "Y25-04-014",
+    "title": "Hyperbolic volume growth prevents a global Euclidean doubling argument",
+    "status": "Developed classical result with a checked example; recovered claims corrected where needed",
+    "summary": "The recovered H1–BMO passage proposes exponential rates and thresholds without proofs. Constant-curvature hyperbolic space has an exact radial measure that explains exponential volume growth. This establishes a clear geometric fact while leaving any claimed mixing exponent unproved.",
+    "definitions": [
+      "InH^n of curvature−1, polar volume isω_(n−1)sinh^(n−1)r dr. LetV_n(R) be the ballvolume.",
+      "A globally doubling measure would haveV_n(2R)≤CV_n(R) for one constantC and everyR."
+    ],
+    "result": {
+      "name": "Exact growth and nondoubling",
+      "statement": "For n≥2,V_n(R) is asymptotic to[ω_(n−1)/((n−1)2^(n−1))]e^((n−1)R). HenceV_n(2R)/V_n(R)→∞. InH³,V_3(R)=π(sinh2R−2R).",
+      "proof": "Write sinhr=(e^r/2)(1−e^(−2r)). Dividing the radial integrand bye^((n−1)r) gives a limit2^(−(n−1)). Integrating or applying l’Hôpital toV_n(R)/e^((n−1)R) yields the displayed constant. The volume ratio therefore grows likee^((n−1)R), disproving global doubling. Forn=3,ω2=4π andsinh²r=(cosh2r−1)/2; integration givesπsinh2R−2πR. At smallR theTaylor expansion is(4π/3)R³+O(R⁵), consistent with local Euclidean behavior. Thus local doubling can hold on bounded radii although a uniform all-radius constant fails."
+    },
+    "example": {
+      "setup": "CompareH³ balls of radiiR and2R.",
+      "calculation": "The exact ratio is[sinh4R−4R]/[sinh2R−2R]. At smallR it tends8, the Euclidean3D factor; at largeR it is asymptotic toe^(2R). One cannot use the small-radius constant at every scale.",
+      "conclusion": "Exponential geometric growth is established. It does not by itself determine a dynamical decay coefficient or a BMO transition."
+    },
+    "limits": "The calculation assumes the exact curvature−1 model. Quotients, finite-volume cusps and variable curvature require additional hypotheses. Noλ≈20 transition follows.",
+    "extension": "Declare the radius range of an atomic or oscillation norm, then derive constants from the actual volume comparison valid on that range.",
+    "references": [
+      {
+        "label": "Carbonaro–Mauceri–Meda, H1 and BMO for locally doubling spaces",
+        "url": "https://www.numdam.org/item/ASNSP_2009_5_8_3_543_0/"
+      }
+    ],
+    "original": {
+      "date": "2025-04-18T17:35:51Z",
+      "month": "2025-04",
+      "evidence": "A",
+      "field": "Hyperbolic geometry",
+      "concept": "Hyperbolic volume growth prevents a global Euclidean doubling argument",
+      "origin": "Recovered dated conversation evidence; mathematical development newly written",
+      "question": "Which exact geometric fact controls the recovered large-radius comparisons?",
+      "math": "For n≥2,V_n(R) is asymptotic to[ω_(n−1)/((n−1)2^(n−1))]e^((n−1)R). HenceV_n(2R)/V_n(R)→∞. InH³,V_3(R)=π(sinh2R−2R).",
+      "finish": "Precise result, proof, worked example and explicit limits",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://www.numdam.org/item/ASNSP_2009_5_8_3_543_0/"
+      ],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c3] A@2025-04-18T17:35:51Z, -551d: Hyperbolic H¹–BMO passage: Δ_Hn formula, spectral decomposition, oscillation index \\(O(f)\\), Monte Carlo geodesic-ball deviation, conjectural β(r)=ce^{-(n−1)r}, λ≈20 transition and logarithmic BMO growth.",
+      "retrieval_receipt": "root_receipts.json record 0",
+      "original_question": null,
+      "attribution_note": "The historical mathematical excerpt is assistant-authored. No original user question is inferred; the revised question and worked development are new. The source_excerpt is a literal retrieved result bullet (including any original truncation), not a reconstructed transcript. It may summarize historical content; no verbatim original question is inferred."
+    }
+  },
+  {
+    "id": "Y25-04-015",
+    "title": "Local hyperbolic Hardy atoms pair with the matching BMO norm",
+    "status": "Developed classical result with a checked example; recovered claims corrected where needed",
+    "summary": "The recovered notationH1 may denote Hardy space or a Sobolev space; these are different. On hyperbolic space, an explicit local atom convention gives an elementary pairing theorem with a matching local BMO seminorm. The proof needs cancellation and a specified ball radius.",
+    "definitions": [
+      "FixR0>0. A local L∞ atom a is supported in a geodesic ballB of radius≤R0, has∫a=0 and||a||∞≤1/VolB.",
+      "Define||b||_(BMO,R0)=sup_(radB≤R0)(1/VolB)∫_B|b−b_B|. Define the atomic norm by the infimum ofΣ|λj| inΣλjaj."
+    ],
+    "result": {
+      "name": "A directly proved pairing bound",
+      "statement": "For a finite atomic sumf, |∫fb|≤||f||_(atomic)||b||_(BMO,R0). Every globally Lipschitz b with constantL has this local seminorm at most2LR0.",
+      "proof": "For an atom, cancellation gives∫ab=∫_Ba(b−b_B). Its absolute value is at most(1/VolB)∫_B|b−b_B|, bounded by the stated seminorm. Sum the coefficient bounds and take the infimum over finite representations. For theLipschitz claim, |b(x)−b_B|≤(1/VolB)∫_B|b(x)−b(y)|dy≤2LR0 because any two points inB are at distance at most2R0. Integrating proves the bound. No global doubling constant was needed for this finite pairing estimate. A completion and a converse duality theorem need additional function-space and geometric work."
+    },
+    "example": {
+      "setup": "Takeb(x)=distance(x,o), which is1-Lipschitz by the triangle inequality.",
+      "calculation": "For every ball of radius≤1, the local BMO seminorm is at most2. Any canceled atom pairs withb by an absolute value at most2. A noncanceled bump is not covered: adding a constant tob changes its integral pairing, whereas the BMO seminorm ignores constants.",
+      "conclusion": "The exact hypotheses explain why cancellation, radius scale and the choice ofH1 are essential."
+    },
+    "limits": "This proves one bounded pairing, not the entire Hardy–BMO duality theorem or a large-radius growth claim. The Sobolev norm∫(|f|²+|∇f|²) is not the atomic norm used here.",
+    "extension": "Choose an actual local Hardy-space completion and prove its dual description under the locally doubling hypotheses, then compare a declared oscillation statistic with that norm.",
+    "references": [
+      {
+        "label": "Carbonaro–Mauceri–Meda, H1 and BMO for locally doubling spaces",
+        "url": "https://www.numdam.org/item/ASNSP_2009_5_8_3_543_0/"
+      }
+    ],
+    "original": {
+      "date": "2025-04-18T17:35:51Z",
+      "month": "2025-04",
+      "evidence": "A",
+      "field": "Harmonic analysis",
+      "concept": "Local hyperbolic Hardy atoms pair with the matching BMO norm",
+      "origin": "Recovered dated conversation evidence; mathematical development newly written",
+      "question": "What bounded pairing can be proved without importing an undefined oscillation threshold?",
+      "math": "For a finite atomic sumf, |∫fb|≤||f||_(atomic)||b||_(BMO,R0). Every globally Lipschitz b with constantL has this local seminorm at most2LR0.",
+      "finish": "Precise result, proof, worked example and explicit limits",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://www.numdam.org/item/ASNSP_2009_5_8_3_543_0/"
+      ],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c3] A@2025-04-18T17:35:51Z, -551d: Hyperbolic H¹–BMO passage: Δ_Hn formula, spectral decomposition, oscillation index \\(O(f)\\), Monte Carlo geodesic-ball deviation, conjectural β(r)=ce^{-(n−1)r}, λ≈20 transition and logarithmic BMO growth.",
+      "retrieval_receipt": "root_receipts.json record 0",
+      "original_question": null,
+      "attribution_note": "The historical mathematical excerpt is assistant-authored. No original user question is inferred; the revised question and worked development are new. The source_excerpt is a literal retrieved result bullet (including any original truncation), not a reconstructed transcript. It may summarize historical content; no verbatim original question is inferred."
+    }
+  },
+  {
+    "id": "Y25-04-016",
+    "title": "A hyperbolic spectral lower bound follows from a completed square",
+    "status": "Developed classical result with a checked example; recovered claims corrected where needed",
+    "summary": "The recovered passage cites a hyperbolic Laplacian and numerical thresholds. A coordinate calculation gives a real theorem: the quadratic-form spectrum has a positive lower bound depending only on dimension and the curvature normalization.",
+    "definitions": [
+      "Use the upper-half-space metricg=y^(−2)(dx²+dy²),y>0,onH^n. The Laplacian sign isΔ=divgrad.",
+      "Letb=−logy. Direct calculation gives|∇b|=1 andΔb=n−1. Test functionsu are real smooth and compactly supported."
+    ],
+    "result": {
+      "name": "An exact Poincaré inequality",
+      "statement": "∫|∇u|²dV≥((n−1)²/4)∫u²dV. Thus the nonnegative operator−Δ has no spectrum below this quadratic-form bound.",
+      "proof": "The coordinate expression isΔ=y²(Δ_x+∂y²)−(n−2)y∂y; substitutingb givesΔb=n−1, and the inverse metric gives|∇b|²=y²(1/y²)=1. For any reala, expand∫|∇u+a u∇b|². The cross term isa∫∇(u²)·∇b=−a∫u²Δb, with no boundary term becauseu is compactly supported. Therefore the nonnegative square equals∫|∇u|²+[a²−a(n−1)]∫u². Choosea=(n−1)/2 to minimize the bracket, yielding the inequality. The passage from the form inequality to the Friedrichs self-adjoint operator is standard; equality of the spectral bottom needs an additional approximating-sequence argument."
+    },
+    "example": {
+      "setup": "InH³ the lower bound is1; inH² it is1/4.",
+      "calculation": "Scaling the metric to curvature−κ² multiplies the operator byκ² and the lower bound becomesκ²(n−1)²/4. Thus a bare threshold20 has no invariant significance without metric units and a specified operator.",
+      "conclusion": "The estimate is proved analytically and its scale dependence is explicit."
+    },
+    "limits": "The positive generalized functions y^s are not square-integrable eigenvectors on allH^n, so substituting them alone would not prove a spectral theorem. Quotients may have additional low discrete eigenvalues and require separate analysis.",
+    "extension": "Construct compactly supported cutoff functions approaching the lower Rayleigh bound and prove spectral-bottom equality in this model, then study a declared quotient.",
+    "references": [
+      {
+        "label": "Carbonaro–Mauceri–Meda, H1 and BMO for locally doubling spaces",
+        "url": "https://www.numdam.org/item/ASNSP_2009_5_8_3_543_0/"
+      }
+    ],
+    "original": {
+      "date": "2025-04-18T17:35:51Z",
+      "month": "2025-04",
+      "evidence": "A",
+      "field": "Spectral geometry",
+      "concept": "A hyperbolic spectral lower bound follows from a completed square",
+      "origin": "Recovered dated conversation evidence; mathematical development newly written",
+      "question": "What rigorous spectral estimate replaces an unexplained numerical transition inH^n?",
+      "math": "∫|∇u|²dV≥((n−1)²/4)∫u²dV. Thus the nonnegative operator−Δ has no spectrum below this quadratic-form bound.",
+      "finish": "Precise result, proof, worked example and explicit limits",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://www.numdam.org/item/ASNSP_2009_5_8_3_543_0/"
+      ],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c3] A@2025-04-18T17:35:51Z, -551d: Hyperbolic H¹–BMO passage: Δ_Hn formula, spectral decomposition, oscillation index \\(O(f)\\), Monte Carlo geodesic-ball deviation, conjectural β(r)=ce^{-(n−1)r}, λ≈20 transition and logarithmic BMO growth.",
+      "retrieval_receipt": "root_receipts.json record 0",
+      "original_question": null,
+      "attribution_note": "The historical mathematical excerpt is assistant-authored. No original user question is inferred; the revised question and worked development are new. The source_excerpt is a literal retrieved result bullet (including any original truncation), not a reconstructed transcript. It may summarize historical content; no verbatim original question is inferred."
+    }
+  },
+  {
+    "id": "Y25-04-017",
+    "title": "A rational Harper operator is a finite clock–shift problem",
+    "status": "Developed classical result with a checked example; recovered claims corrected where needed",
+    "summary": "The recoveredΩ framework supplies rationalα and references Hofstadter gaps. A rational flux determines a finite projective translation relation after boundary phases are chosen. This gives a precise matrix model without identifying its size with a Milnor number.",
+    "definitions": [
+      "Forcoprime p,q, letUe_j=e_(j−1) cyclically andVe_j=e^(2πipj/q)e_j, withj modq. ThenUV=e^(2πip/q)VU.",
+      "Define the Hermitian clock–shift matrixH=U+U*+V+V*. Other boundary phases give a family of Bloch matrices."
+    ],
+    "result": {
+      "name": "An exact half-flux spectrum",
+      "statement": "Atp=1,q=2,U=X,V=Z andH=2X+2Z, with eigenvalues±2√2. In general the declared model isq×q, soα=41/840 yields840 dimensions.",
+      "proof": "The commutation relation follows by applyinge_j to both products and comparing the phase atj versusj−1. The adjoint pairs makeH Hermitian. Forq=2, X²=Z²=I andXZ=−ZX, soH²=4(X+Z)²=8I. SinceTrH=0, its two eigenvalues are opposite and equal in magnitude to√8. This computes a genuine finite spectrum. The matrix dimension comes from the denominator of the rational projective phase and not fromφ(q),φ(2q) or(a−1)(b−1)(c−1) of a different polynomial."
+    },
+    "example": {
+      "setup": "Compareα=1/2 andα=41/840.",
+      "calculation": "The former has the exact2×2 matrix[[2,2],[2,−2]]. The latter requires an840×840 Bloch model in this convention. Different boundary phases can move finite eigenvalues, so the fullband problem is not one isolated matrix at an unspecified phase.",
+      "conclusion": "The recovered rational is now connected to a well-defined finite operator and a testable spectral problem."
+    },
+    "limits": "This calculation does not prove gap opening at every label, a Hall-conductance statement or anΩ formula. Irrational flux is an infinite-operator problem with different limiting questions.",
+    "extension": "For a fixedp/q, track the eigenvalues over both boundary phases, enclose band edges and verify whether a claimed gap remains open.",
+    "references": [
+      {
+        "label": "Hofstadter, Energy levels and wave functions of Bloch electrons in rational and irrational magnetic fields",
+        "url": "https://doi.org/10.1103/PhysRevB.14.2239"
+      }
+    ],
+    "original": {
+      "date": "2025-04-18T17:31:12Z",
+      "month": "2025-04",
+      "evidence": "U",
+      "field": "Linear algebra and spectral theory",
+      "concept": "A rational Harper operator is a finite clock–shift problem",
+      "origin": "Recovered dated conversation evidence; mathematical development newly written",
+      "question": "What finite operator actually corresponds to a rational flux parameter?",
+      "math": "Atp=1,q=2,U=X,V=Z andH=2X+2Z, with eigenvalues±2√2. In general the declared model isq×q, soα=41/840 yields840 dimensions.",
+      "finish": "Precise result, proof, worked example and explicit limits",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://doi.org/10.1103/PhysRevB.14.2239"
+      ],
+      "source_excerpt": "- [USER_FACT] [c3] U@2025-04-18T17:31:12Z, -551d: April 18 Ω-framework source: M(41,840,2), α=41/840, b0=b3=1,b1=b2=0, ΔE1≈0.426, Ω=149421.7628351893…, κ≈0.015373; generalized Ω, μ=(p−1)(q−1)(r−1), Hofstadter gap formula, M(5,12,2) μ=44, σ≈0.574, κ≈0.0786.",
+      "retrieval_receipt": "root_receipts.json record 0",
+      "original_question": null,
+      "attribution_note": "The dated source identifies user-authored material; the revised question and proof are new unless verbatim wording is separately provided. The source_excerpt is a literal retrieved result bullet (including any original truncation), not a reconstructed transcript. It may summarize historical content; no verbatim original question is inferred."
+    }
+  },
+  {
+    "id": "Y25-04-018",
+    "title": "A gap-label Diophantine equation determines a residue class, not an open gap",
+    "status": "Developed classical result with a checked example; recovered claims corrected where needed",
+    "summary": "The recovered framework combines rational flux and spectral-gap numerics. The associated Diophantine equation has a precise elementary content: it determines an integer residue class if a gap with a given band count is under discussion. It cannot by itself prove that the gap exists.",
+    "definitions": [
+      "Forcoprime p,q and integerband countr, consider r=pt+qs with unknownintegerst,s.",
+      "Reducing moduloq determines t moduloq. Any additional centered representative or topological interpretation is a separate convention or theorem."
+    ],
+    "result": {
+      "name": "Exact solutions for the recovered rationals",
+      "statement": "Forp=41,q=840, t≡41r mod840 because41²≡1 mod840. Forp=5,q=12, t≡5r mod12. At r=1 the solutions include(t,s)=(41,−2) and(5,−2), respectively.",
+      "proof": "Bezout’s identity gives an inverse ofp moduloq sincegcd(p,q)=1. Thus the congruencer≡pt has exactly one solution class moduloq. If(t0,s0) is one solution, all solutions are(t0+kq,s0−kp) forintegerk, as substitution verifies. Conversely, subtracting two solutions givesp(t−t0)=−q(s−s0); coprimality forcesq|(t−t0), proving completeness. Here41²=1681=1+2·840 and5²=25=1+2·12, supplying the inverses and the explicitr=1 pairs."
+    },
+    "example": {
+      "setup": "Enumerate allr from0 throughq−1 for the first recovered rational.",
+      "calculation": "Multiplication by41 permutes the840 residue classes, so everyband count has one algebraically allowed class. That fact alone cannot imply840 spectral gaps: a spectral model may have touching bands, and some labels may not occur as open intervals.",
+      "conclusion": "Integer solvability is now fully classified, while the spectral existence question remains correctly separate."
+    },
+    "limits": "The physical identification oft with a Chern number requires a specific magnetic Bloch bundle and a proved gap theorem. The algebraic equation alone supplies neither.",
+    "extension": "Choose a candidate open gap of the actual Harper family, certify it over the Bloch torus, then compute the corresponding vector-bundle invariant and check the Diophantine relation.",
+    "references": [
+      {
+        "label": "Thouless–Kohmoto–Nightingale–den Nijs, Quantized Hall conductance in a two-dimensional periodic potential",
+        "url": "https://doi.org/10.1103/PhysRevLett.49.405"
+      }
+    ],
+    "original": {
+      "date": "2025-04-18T17:31:12Z",
+      "month": "2025-04",
+      "evidence": "U",
+      "field": "Elementary number theory",
+      "concept": "A gap-label Diophantine equation determines a residue class, not an open gap",
+      "origin": "Recovered dated conversation evidence; mathematical development newly written",
+      "question": "What exactly is solved by the integer gap-label equation?",
+      "math": "Forp=41,q=840, t≡41r mod840 because41²≡1 mod840. Forp=5,q=12, t≡5r mod12. At r=1 the solutions include(t,s)=(41,−2) and(5,−2), respectively.",
+      "finish": "Precise result, proof, worked example and explicit limits",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://doi.org/10.1103/PhysRevLett.49.405"
+      ],
+      "source_excerpt": "- [USER_FACT] [c3] U@2025-04-18T17:31:12Z, -551d: April 18 Ω-framework source: M(41,840,2), α=41/840, b0=b3=1,b1=b2=0, ΔE1≈0.426, Ω=149421.7628351893…, κ≈0.015373; generalized Ω, μ=(p−1)(q−1)(r−1), Hofstadter gap formula, M(5,12,2) μ=44, σ≈0.574, κ≈0.0786.",
+      "retrieval_receipt": "root_receipts.json record 0",
+      "original_question": null,
+      "attribution_note": "The dated source identifies user-authored material; the revised question and proof are new unless verbatim wording is separately provided. The source_excerpt is a literal retrieved result bullet (including any original truncation), not a reconstructed transcript. It may summarize historical content; no verbatim original question is inferred."
+    }
+  },
+  {
+    "id": "Y25-04-019",
+    "title": "Golden-ratio contraction with two overlapping branches fills an interval",
+    "status": "Developed classical result with a checked example; recovered claims corrected where needed",
+    "summary": "The recovered source applies a Cantor-style dimension formula to a contraction ratio near0.618. Two equal interval branches at that ratio overlap. The simplest declared iterated-function system has attractor the entire unit interval andHausdorff dimension1, so the displayed formula cannot be used as its dimension.",
+    "definitions": [
+      "For0<r<1, definef0(x)=rx andf1(x)=rx+1−r onR. The attractor is the unique nonempty compactK withK=f0(K)∪f1(K).",
+      "The similarity exponent solves2r^s=1, giving s=log2/log(1/r); equality with Hausdorff dimension needs separation hypotheses."
+    ],
+    "result": {
+      "name": "An exact overlap obstruction",
+      "statement": "Ifr≥1/2, the attractor is[0,1] and has dimension1. At r=1/φ, the similarity exponent islog2/logφ>1, so it cannot equal the dimension of this subset ofR.",
+      "proof": "The images of[0,1] are[0,r] and[1−r,1]. They cover the entire interval exactly whenr≥1/2, so[0,1] is a fixed compact set. The Hutchinson set map contracts Hausdorff distance by at mostr; iteration or the contraction principle gives uniqueness of the compact attractor. Hence it is[0,1]. ItsHausdorff dimension is1. Sinceφ<2, logφ<log2 and the formal similarity exponent exceeds1. The failure is overlap, not a subtle new fractional dimension. Forr<1/2, the two branches are separated and the standard equal-ratio Cantor dimension theorem applies, but that is a different parameter regime."
+    },
+    "example": {
+      "setup": "Compare r=1/3 withr=1/φ.",
+      "calculation": "The first produces the middle-thirdCantor set withdimensionlog2/log3. The second produces[0,1] even though the contraction remains strict. A single scalar ratio does not determine a fractal dimension without the maps and overlaps.",
+      "conclusion": "The recovered golden scaling can define a legitimate contraction, but the claimed Cantor dimension needs a corrected model."
+    },
+    "limits": "Different translations or higher-dimensional maps may yield other attractors. The conclusion is for the explicitly specified two-branch line system, not every construction involving the golden ratio.",
+    "extension": "Write the actual maps, analyze exact overlaps and verify an open-set or alternative dimension theorem before assigning an exponent.",
+    "references": [
+      {
+        "label": "Hutchinson, Fractals and self similarity",
+        "url": "https://doi.org/10.1512/iumj.1981.30.30030"
+      }
+    ],
+    "original": {
+      "date": "2025-04-20T00:41:00Z",
+      "month": "2025-04",
+      "evidence": "U",
+      "field": "Fractal geometry",
+      "concept": "Golden-ratio contraction with two overlapping branches fills an interval",
+      "origin": "Recovered dated conversation evidence; mathematical development newly written",
+      "question": "When does the familiar two-map similarity-dimension formula fail?",
+      "math": "Ifr≥1/2, the attractor is[0,1] and has dimension1. At r=1/φ, the similarity exponent islog2/logφ>1, so it cannot equal the dimension of this subset ofR.",
+      "finish": "Precise result, proof, worked example and explicit limits",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://doi.org/10.1512/iumj.1981.30.30030"
+      ],
+      "source_excerpt": "- [USER_FACT] [c5] U@2025-04-20T00:41:00Z, +549d: April math context includes CSCNA wavelet coherence, UCQF Cantor scaling \\(\\theta_{\\rm rod}\\approx0.6180339887\\), \\(\\dim_H=\\log2/\\log(1/\\theta_{\\rm rod})\\), SYMMETRON \\(G=(2e^2/h)f(\\alpha,\\beta,\\kappa)\\), Attractor evolution \\(A_{\\rm new}=A_{\\rm old}(1+\\lambda\\theta_{\\rm rod})\\), \\(\\Omega\\approx149421.7628351893\\), and *-deformation.",
+      "retrieval_receipt": "root_receipts.json record 0",
+      "original_question": null,
+      "attribution_note": "The dated source identifies user-authored material; the revised question and proof are new unless verbatim wording is separately provided. The source_excerpt is a literal retrieved result bullet (including any original truncation), not a reconstructed transcript. It may summarize historical content; no verbatim original question is inferred."
+    }
+  },
+  {
+    "id": "Y25-04-020",
+    "title": "A multiplicative attractor update is a linear recurrence with a sharp stability test",
+    "status": "Developed classical result with a checked example; recovered claims corrected where needed",
+    "summary": "The recovered recurrence is elementary enough to solve exactly, but calling its iterates an attractor does not make them bounded. A precise stability analysis separates a positive growth multiplier from a contracting map with an actual fixed point.",
+    "definitions": [
+      "LetA_(n+1)=aA_n witha=1+λr, where0<r<1 andλ real.",
+      "An equilibrium0 is asymptotically stable exactly when every sufficiently small initial condition tends to0."
+    ],
+    "result": {
+      "name": "Exact linear stability",
+      "statement": "A_n=a^nA0. The equilibrium is asymptotically stable iff|1+λr|<1, equivalently−2/r<λ<0. Forλ>0 every nonzero magnitude grows exponentially.",
+      "proof": "Induction gives the closed form. If|a|<1, powers tend0 and remain bounded by|A0|, proving stability and attraction. If|a|>1, arbitrarily small nonzero initial values eventually leave any fixed neighborhood, so stability fails. Ata=1 the iterates are constant and ata=−1 they alternate; neither attracts allnearby points to0. The real inequality−1<1+λr<1 solves to the stated interval because r>0. A parameter namedβ≈0.673 would be a contraction factor only if it actually bounds the derivative or multiplier of the defined map."
+    },
+    "example": {
+      "setup": "Taker=1/φ. Withλ=1, a=1+r=φ.",
+      "calculation": "A_n=φ^nA0 diverges in magnitude forA0≠0. Withλ=−1, a=1−r=r², soA_n=r^(2n)A0 tends0. Adding a constantc givesA_(n+1)=aA_n+c; when|a|<1 its unique fixed point isc/(1−a), and subtracting that point reduces to the same contraction proof.",
+      "conclusion": "The proposed update has an exact parameter classification, not a generic stability guarantee."
+    },
+    "limits": "A bounded nonlinear state space, saturation or projection would define another map and require a new proof. No empirical stability threshold is inferred from the recovered decimalβ.",
+    "extension": "Define the full nonlinear update and bound its derivative on an invariant interval. Use that bound to prove a fixed point and a quantitative convergence rate.",
+    "references": [
+      {
+        "label": "Hutchinson, Fractals and self similarity",
+        "url": "https://doi.org/10.1512/iumj.1981.30.30030"
+      }
+    ],
+    "original": {
+      "date": "2025-04-20T00:41:00Z",
+      "month": "2025-04",
+      "evidence": "U",
+      "field": "Dynamical systems",
+      "concept": "A multiplicative attractor update is a linear recurrence with a sharp stability test",
+      "origin": "Recovered dated conversation evidence; mathematical development newly written",
+      "question": "Which mathematical stability statement follows from the recovered update rule?",
+      "math": "A_n=a^nA0. The equilibrium is asymptotically stable iff|1+λr|<1, equivalently−2/r<λ<0. Forλ>0 every nonzero magnitude grows exponentially.",
+      "finish": "Precise result, proof, worked example and explicit limits",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://doi.org/10.1512/iumj.1981.30.30030"
+      ],
+      "source_excerpt": "- [USER_FACT] [c5] U@2025-04-20T00:41:00Z, +549d: April math context includes CSCNA wavelet coherence, UCQF Cantor scaling \\(\\theta_{\\rm rod}\\approx0.6180339887\\), \\(\\dim_H=\\log2/\\log(1/\\theta_{\\rm rod})\\), SYMMETRON \\(G=(2e^2/h)f(\\alpha,\\beta,\\kappa)\\), Attractor evolution \\(A_{\\rm new}=A_{\\rm old}(1+\\lambda\\theta_{\\rm rod})\\), \\(\\Omega\\approx149421.7628351893\\), and *-deformation.",
+      "retrieval_receipt": "root_receipts.json record 0",
+      "original_question": null,
+      "attribution_note": "The dated source identifies user-authored material; the revised question and proof are new unless verbatim wording is separately provided. The source_excerpt is a literal retrieved result bullet (including any original truncation), not a reconstructed transcript. It may summarize historical content; no verbatim original question is inferred."
+    }
+  },
+  {
+    "id": "Y25-04-021",
+    "title": "Wavelet coherence needs smoothing to avoid an identically-one ratio",
+    "status": "Developed classical result with a checked example; recovered claims corrected where needed",
+    "summary": "The recovered user source names wavelet coherence but does not define its smoothing operator. Pointwise normalization of a single product gives1 whenever both coefficients are nonzero. An averaged complex inner product supplies a nontrivial statistic with a complete inequality.",
+    "definitions": [
+      "For complex coefficient sequencesx_j,y_j and nonnegative weightsw_j, defineC=|Σw_jx_jconj(y_j)|²/[(Σw_j|x_j|²)(Σw_j|y_j|²)], when both denominator terms are positive.",
+      "The indexj may represent a declared time-scale neighborhood of wavelet coefficients; its weights are part of the definition."
+    ],
+    "result": {
+      "name": "Exact coherence bound and degeneracy",
+      "statement": "0≤C≤1 byCauchy–Schwarz, with equality1 exactly when the weighted nonzero coefficient vectors are proportional. For a single coefficient the statistic is always1.",
+      "proof": "ApplyCauchy–Schwarz to the vectors(√w_jx_j) and(√w_jy_j). Their squared inner-product magnitude is at most the product of their squared norms, proving the bound. Equality inCauchy–Schwarz requires linear dependence, giving the stated criterion after ignoring zero weights. With one nonzero weighted slot, the numerator isw²|x|²|y|² and the denominator is identical. Therefore the unsmoothed pointwise ratio cannot distinguish two nonzero signals. The meaningful information comes fromphase and amplitude consistency across the averaging neighborhood, not merely from writing a normalized product."
+    },
+    "example": {
+      "setup": "Takex=(1,1),y=(1,−1) with equal weights1.",
+      "calculation": "The averaged cross term is1−1=0, soC=0, although each individual one-slot ratio is1. Replacingy by(2,2) makesC=1. Thus averaging reveals cancellation invisible to pointwise normalization.",
+      "conclusion": "The statistic is now defined, bounded and interpretable in an exact finite example."
+    },
+    "limits": "The calculation does not validate any recovered empirical coherence value. Wavelet admissibility, edge handling, scale weights, missing data and significance tests need separate specifications.",
+    "extension": "Choose a precise wavelet transform and smoothing kernel, then test phase-shifted and independent synthetic controls with a declared uncertainty model.",
+    "references": [],
+    "original": {
+      "date": "2025-04-20T00:41:00Z",
+      "month": "2025-04",
+      "evidence": "U",
+      "field": "Harmonic analysis",
+      "concept": "Wavelet coherence needs smoothing to avoid an identically-one ratio",
+      "origin": "Recovered dated conversation evidence; mathematical development newly written",
+      "question": "What normalized coherence can be mathematically informative at a finite set of coefficients?",
+      "math": "0≤C≤1 byCauchy–Schwarz, with equality1 exactly when the weighted nonzero coefficient vectors are proportional. For a single coefficient the statistic is always1.",
+      "finish": "Precise result, proof, worked example and explicit limits",
+      "kind": "Revised mathematical treatment",
+      "refs": [],
+      "source_excerpt": "- [USER_FACT] [c5] U@2025-04-20T00:41:00Z, +549d: April math context includes CSCNA wavelet coherence, UCQF Cantor scaling \\(\\theta_{\\rm rod}\\approx0.6180339887\\), \\(\\dim_H=\\log2/\\log(1/\\theta_{\\rm rod})\\), SYMMETRON \\(G=(2e^2/h)f(\\alpha,\\beta,\\kappa)\\), Attractor evolution \\(A_{\\rm new}=A_{\\rm old}(1+\\lambda\\theta_{\\rm rod})\\), \\(\\Omega\\approx149421.7628351893\\), and *-deformation.",
+      "retrieval_receipt": "root_receipts.json record 0",
+      "original_question": null,
+      "attribution_note": "The dated source identifies user-authored material; the revised question and proof are new unless verbatim wording is separately provided. The source_excerpt is a literal retrieved result bullet (including any original truncation), not a reconstructed transcript. It may summarize historical content; no verbatim original question is inferred."
+    }
+  },
+  {
+    "id": "Y25-04-022",
+    "title": "A homotopy pushout needs a common category and actual arrows",
+    "status": "Developed classical result with a checked example; recovered claims corrected where needed",
+    "summary": "The recovered formula places a category and anE8 object in a span without defining the common ambient category or maps. A homotopy pushout is not an instruction to add labels. The simplest space-level span already differs from its ordinary pushout.",
+    "definitions": [
+      "Take the span*←S0→*, whereS0 consists of two points and both arrows collapse to the corresponding point.",
+      "A homotopy pushout can be modeled by the double mapping cylinder: attachS0×[0,1] to the two target points at its ends."
+    ],
+    "result": {
+      "name": "An exact homotopy pushout",
+      "statement": "The ordinary pushout is a single point, while the homotopy pushout is a circle withH1≅Z.",
+      "proof": "In the ordinary quotient, each point ofS0 identifies the two target points, leaving just one point. In the double mapping cylinder, the two components ofS0 create two separate intervals joining the same pair of vertices. Their union is a circle. Its chain complex hasC1=Z²,C0=Z²; orient both edges fromleft vertex toright vertex, so the boundary matrix has two identical columns(−1,1). Its rank is1 and its kernel is generated by the edge difference. There are no2-cells, givingH1≅Z andH0≅Z. This proves the homotopy distinction directly rather than relying on a picture. It also shows why the arrows and model category matter: replacing a homotopy construction by an ordinary quotient can erase a cycle."
+    },
+    "example": {
+      "setup": "Compare numerical ranks in the two constructions.",
+      "calculation": "The point hasβ1=0; the homotopy pushout hasβ1=1. Neither result follows by adding the cardinalities of the input spaces, and a number like384 cannot serve as the missing gluing map.",
+      "conclusion": "The operation has mathematical content only after objects, morphisms and equivalences are fixed."
+    },
+    "limits": "The example does not define a homotopy pushout of a fusion category and a Lie algebra. AnE8 representation category could be a different eligible object, but the functors fromB would still need specification.",
+    "extension": "Choose a single∞-category and explicit span, state its universal property and compute a small invariant of its colimit before assigning physical interpretations.",
+    "references": [
+      {
+        "label": "Etingof–Gelaki–Nikshych–Ostrik, Tensor Categories",
+        "url": "https://math.mit.edu/~etingof/egnobookfinal.pdf"
+      }
+    ],
+    "original": {
+      "date": "2025-04-20T20:11:26Z",
+      "month": "2025-04",
+      "evidence": "A",
+      "field": "Algebraic topology and category theory",
+      "concept": "A homotopy pushout needs a common category and actual arrows",
+      "origin": "Recovered dated conversation evidence; mathematical development newly written",
+      "question": "What concrete homotopy-colimit calculation clarifies the missing data in the recovered categorical synthesis?",
+      "math": "The ordinary pushout is a single point, while the homotopy pushout is a circle withH1≅Z.",
+      "finish": "Precise result, proof, worked example and explicit limits",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://math.mit.edu/~etingof/egnobookfinal.pdf"
+      ],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c6] A@2025-04-20T20:11:26Z, -549d: Claimed \\(\\mathcal H_\\infty=\\mathrm{hocolim}(\\mathcal C_{384}\\leftarrow\\mathcal B\\to\\mathcal E_8)\\); \\(\\phi(1680)=384\\), \\(\\sum_X\\dim(X)^2=1680\\), twists/cyclotomic data, Brieskorn \\(H_f=\\Omega^n/(df\\wedge\\Omega^{n-1}+d\\Omega^{n-1})\\), \\(\\mu=\\prod(a_i-1)\\), and speculative constant formulas for \\(\\pi,e,\\gamma,\\zeta(3),\\alpha\\).",
+      "retrieval_receipt": "root_receipts.json record 0",
+      "original_question": null,
+      "attribution_note": "The historical mathematical excerpt is assistant-authored. No original user question is inferred; the revised question and worked development are new. The source_excerpt is a literal retrieved result bullet (including any original truncation), not a reconstructed transcript. It may summarize historical content; no verbatim original question is inferred."
+    }
+  },
+  {
+    "id": "Y25-04-023",
+    "title": "Chromatic height is visible in a formal-group p-series",
+    "status": "Developed classical result with a checked example; recovered claims corrected where needed",
+    "summary": "The recovered source namesTMF and transchromatic structures but supplies no spectrum or formal group. The multiplicative formal group gives a complete algebraic calculation ofheight1 at every prime. It distinguishes a real invariant from assigning a prime to a framework label.",
+    "definitions": [
+      "A one-dimensional formal group lawF(x,y) is an associative commutative power series withidentity0. Its[p]_F(x) addsx to itselfp times.",
+      "Over a field of characteristicp, finite heighth means the first nonzero term of[p]_F has degreep^h; if[p]_F=0 the height is infinite."
+    ],
+    "result": {
+      "name": "Exact additive and multiplicative heights",
+      "statement": "ForF_m(x,y)=x+y+xy, [p](x)=(1+x)^p−1, reducing tox^p in characteristicp, so its height is1. The additive lawF_a=x+y has[p]=px=0 in characteristicp and infinite height.",
+      "proof": "The identity1+F_m(x,y)=(1+x)(1+y) proves associativity, commutativity and the p-fold formula by ordinary multiplication. The inverse is−x/(1+x), a formal power series with zero constant term. In characteristicp, the binomial theorem removes all intermediate coefficients becausep divides binomial(p,j) for0<j<p, leavingx^p. The additive calculation is immediate. Thus two simple formal groups over the same characteristic have different heights. An invertible coordinate changeg(x)=ux+O(x²),u≠0, conjugates the p-series and preserves the lowest nonzero exponent, so this distinction is intrinsic to the formal-group isomorphism class."
+    },
+    "example": {
+      "setup": "Atp=3, compare the integral p-series before and after reduction.",
+      "calculation": "ForF_m, [3](x)=3x+3x²+x³, which becomesx³ overF3. ForF_a it is3x, which becomes0. The same prime therefore does not determine the height without a formal group.",
+      "conclusion": "The chromatic terminology now has a defined algebraic invariant and an exact computation."
+    },
+    "limits": "TMF involves a much deeper sheaf of spectra over elliptic moduli; this formal calculation does not build it or establish a new field theory. No scattering or black-hole prediction follows.",
+    "extension": "Specify an elliptic curve and prime, compute its formal p-series or Hasse invariant and distinguish ordinary fromsupersingular reduction before proposing a chromatic comparison.",
+    "references": [
+      {
+        "label": "Hopkins, Algebraic topology and modular forms",
+        "url": "https://arxiv.org/abs/math/0212397"
+      }
+    ],
+    "original": {
+      "date": "2025-04-27T04:14:14Z",
+      "month": "2025-04",
+      "evidence": "U",
+      "field": "Formal groups and algebraic topology",
+      "concept": "Chromatic height is visible in a formal-group p-series",
+      "origin": "Recovered dated conversation evidence; mathematical development newly written",
+      "question": "What exact algebraic example gives meaning to a prime-dependent chromatic label?",
+      "math": "ForF_m(x,y)=x+y+xy, [p](x)=(1+x)^p−1, reducing tox^p in characteristicp, so its height is1. The additive lawF_a=x+y has[p]=px=0 in characteristicp and infinite height.",
+      "finish": "Precise result, proof, worked example and explicit limits",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://arxiv.org/abs/math/0212397"
+      ],
+      "source_excerpt": "- [USER_FACT] [c7] U@2025-04-27T04:14:14Z, 541d: April 27 conversation centers on speculative “transchromatic field theory,” TMF, prime-stratified categories, gerbal fields, Lagrangians, field equations, amplitudes, black holes, and predictions.",
+      "retrieval_receipt": "root_receipts.json record 0",
+      "original_question": null,
+      "attribution_note": "The dated source identifies user-authored material; the revised question and proof are new unless verbatim wording is separately provided. The source_excerpt is a literal retrieved result bullet (including any original truncation), not a reconstructed transcript. It may summarize historical content; no verbatim original question is inferred."
+    }
+  },
+  {
+    "id": "Y25-04-024",
+    "title": "Dimensionful constants cannot be numerical predictions of unit-free integers alone",
+    "status": "Developed classical result with a checked example; recovered claims corrected where needed",
+    "summary": "The recovered framework attempts to derive several dimensional constants from categorical integers and an angle. A precise unit-change argument distinguishes numerical conventions from dimensionless predictions. This is a mathematical consistency test, not a claim that constants cannot be related within a defined theory.",
+    "definitions": [
+      "Use base dimensionsM,L,T. Then[ℏ]=ML²T⁻¹,[c]=LT⁻¹,[G]=L³M⁻¹T⁻².",
+      "A dimensionless monomialℏ^a c^b G^d has zero exponent in each base dimension."
+    ],
+    "result": {
+      "name": "An exact dimension-rank test",
+      "statement": "The only dimensionless monomial formed solely fromℏ,c,G is the trivial onea=b=d=0. Their three-dimensional unit-exponent matrix is invertible, so their numerical values can all be changed by a choice ofM,L,T units.",
+      "proof": "The dimension equations area−d=0,2a+b+3d=0,−a−b−2d=0. The first givesd=a; substituting into the other two givesb=−5a andb=−3a, so2a=0 and all exponents vanish. Equivalently the determinant of the exponent matrix is nonzero. Thus a bare integer or angle cannot specify a unit-independent numerical value of one of these dimensional constants without a scale convention. Planck combinations are dimensionful definitions:√(ℏG/c³) has length,√(ℏG/c⁵) has time and√(ℏc/G) has mass. Their numerical values become1 in corresponding units, which is a coordinate choice rather than a prediction."
+    },
+    "example": {
+      "setup": "Check the length dimension ofℓ_P=√(ℏG/c³).",
+      "calculation": "Its squared dimension is(ML²T⁻¹)(L³M⁻¹T⁻²)/(L³T⁻³)=L², so the square root has dimensionL. A proposed pure number forℓ_P would change under length-unit rescaling. A dimensionlessα could in principle be predicted, but that requires an independently defined equation and a proof, not this dimensional argument.",
+      "conclusion": "The unit-invariant content of a claimed derivation is now explicit."
+    },
+    "limits": "This does not rule out relations among dimensionless constants or a theory with specified scales. The historical formulas for those constants were not fully recovered and are not validated.",
+    "extension": "List every parameter with its dimension, compute the nullspace of the dimension matrix and express candidate predictions only through the resulting invariant combinations.",
+    "references": [],
+    "original": {
+      "date": "2025-04-01T20:19:02Z",
+      "month": "2025-04",
+      "evidence": "U",
+      "field": "Dimensional analysis",
+      "concept": "Dimensionful constants cannot be numerical predictions of unit-free integers alone",
+      "origin": "Recovered dated conversation evidence; mathematical development newly written",
+      "question": "Which proposed constants are invariant under unit changes, and what can an integer framework actually determine?",
+      "math": "The only dimensionless monomial formed solely fromℏ,c,G is the trivial onea=b=d=0. Their three-dimensional unit-exponent matrix is invertible, so their numerical values can all be changed by a choice ofM,L,T units.",
+      "finish": "Precise result, proof, worked example and explicit limits",
+      "kind": "Revised mathematical treatment",
+      "refs": [],
+      "source_excerpt": "- [USER_FACT] [c4] U@2025-04-01T20:19:02Z, -1y6m: April mathematics included a “Quantum-Categorical Dodecahedral Framework” with \\(\\theta=\\pi/840\\), \\(\\phi(1680)=384\\), and attempted derivations of \\(\\alpha,\\hbar,c,G,k_B,\\gamma,\\phi\\), exceptional-group dimensions.",
+      "retrieval_receipt": "root_receipts.json record 0",
+      "original_question": null,
+      "attribution_note": "The dated source identifies user-authored material; the revised question and proof are new unless verbatim wording is separately provided. The source_excerpt is a literal retrieved result bullet (including any original truncation), not a reconstructed transcript. It may summarize historical content; no verbatim original question is inferred."
+    }
+  },
+  {
+    "id": "Y25-04-025",
+    "title": "A two-level gap produces an exact doubled-frequency observable",
+    "status": "Developed classical result with a checked example; recovered claims corrected where needed",
+    "summary": "The recovered passage invokesZitterbewegung andDCE but supplies no fullDirac state or operator domain. A two-level Hamiltonian gives a rigorous limited model: off-diagonal observables oscillate at the energy difference. It clarifies the factor2 without making a device or particle-trajectory claim.",
+    "definitions": [
+      "LetH=E Z onC²,E>0, withℏ>0. In Heisenberg evolutionA(t)=e^(itH/ℏ)Ae^(−itH/ℏ).",
+      "The two energies are+E and−E; their difference is2E."
+    ],
+    "result": {
+      "name": "Exact observable oscillation",
+      "statement": "X(t)=cos(2Et/ℏ)X−sin(2Et/ℏ)Y. For the initial+X state, its expectation iscos(2Et/ℏ).",
+      "proof": "In theZ eigenbasis, e^(itH/ℏ)=diag(e^(iEt/ℏ),e^(−iEt/ℏ)). ConjugatingX makes its upper off-diagonal entrye^(2iEt/ℏ) and its lower entry the conjugate. Writing these ascos±isin gives the displayedX,Y combination with the stated sign. The+X vector hasexpectations〈X〉=1,〈Y〉=0, so its evolved expectation is the cosine. More generally an off-diagonal matrix unit between energiesEa,Eb acquires phasee^(it(Ea−Eb)/ℏ). This is a direct spectral difference, not an automatic spatial motion law."
+    },
+    "example": {
+      "setup": "PutE=mc² as an illustrative energy parameter.",
+      "calculation": "The angular frequency is2mc²/ℏ, matching the recovered scale. An energy eigenstate instead has zeroX expectation for alltime, so the existence of the gap does not force every state to show an oscillation.",
+      "conclusion": "The frequency factor is derived exactly and its state dependence is explicit."
+    },
+    "limits": "A fullDirac position operator has momentum-dependent drift, positive/negative energy sectors and domain issues. The finite model does not reconstruct those formulas or prove aDCE resonance.",
+    "extension": "Specify the actual self-adjointDirac Hamiltonian and wave packet, then compute the relevant expectation with domains and localization assumptions stated.",
+    "references": [
+      {
+        "label": "Moore, Quantum theory of the electromagnetic field in a variable-length one-dimensional cavity",
+        "url": "https://doi.org/10.1063/1.1665432"
+      }
+    ],
+    "original": {
+      "date": "2025-04-23T20:06:04Z",
+      "month": "2025-04",
+      "evidence": "A",
+      "field": "Linear dynamics",
+      "concept": "A two-level gap produces an exact doubled-frequency observable",
+      "origin": "Recovered dated conversation evidence; mathematical development newly written",
+      "question": "What exact spectral calculation underlies a doubled energy-frequency scale?",
+      "math": "X(t)=cos(2Et/ℏ)X−sin(2Et/ℏ)Y. For the initial+X state, its expectation iscos(2Et/ℏ).",
+      "finish": "Precise result, proof, worked example and explicit limits",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://doi.org/10.1063/1.1665432"
+      ],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c2] A@2025-04-23T20:06:04Z, -1y6m: Claimed DCE/Zitterbewegung formulas: \\(\\omega_z=2mc^2/\\hbar\\), \\(x(t)\\) Dirac oscillation, resonance \\(\\Omega=2\\omega_k\\), symplectic form, Bogoliubov coefficients, and categorical unification; claims were not demonstrated.",
+      "retrieval_receipt": "root_receipts.json record 0",
+      "original_question": null,
+      "attribution_note": "The historical mathematical excerpt is assistant-authored. No original user question is inferred; the revised question and worked development are new. The source_excerpt is a literal retrieved result bullet (including any original truncation), not a reconstructed transcript. It may summarize historical content; no verbatim original question is inferred."
+    }
+  },
+  {
+    "id": "Y25-04-026",
+    "title": "A Bogoliubov transformation must preserve the canonical commutator",
+    "status": "Developed classical result with a checked example; recovered claims corrected where needed",
+    "summary": "The recoveredDCE discussion mentionsBogoliubov coefficients without specifying them. A single bosonic mode yields a complete algebraic test and an exactly computable vacuum excitation. This is a canonical-transformation calculation, not a claim about measured emission.",
+    "definitions": [
+      "Let[a,a†]=1 anddefineb=αa+βa† withcomplexα,β.",
+      "The input vacuum obeysa|0〉=0. Canonical means[b,b†]=1."
+    ],
+    "result": {
+      "name": "Exact canonical condition and vacuum count",
+      "statement": "The transformation is canonical iff|α|²−|β|²=1. The mean output occupation in the input vacuum is〈0|b†b|0〉=|β|². Choosingα=coshr,β=sinhr satisfies the condition.",
+      "proof": "Expand the commutator. Theaa and a†a† contributions vanish, while|α|²[a,a†]+|β|²[a†,a]=|α|²−|β|². This proves necessity and sufficiency. Next expandb†b; all terms vanish in the vacuum expectation except|β|²aa†, whose expectation is1. The hyperbolic identitycosh²r−sinh²r=1 verifies the proposed family exactly. In quadrature coordinates, the corresponding real linear map preserves the standard symplectic form; determinant1 alone would suffice in dimension2, but higher-dimensional symplecticity is stronger than a determinant condition."
+    },
+    "example": {
+      "setup": "Taker=log2.",
+      "calculation": "coshr=(2+1/2)/2=5/4 andsinhr=(2−1/2)/2=3/4. Thus|α|²−|β|²=25/16−9/16=1 and the vacuum occupation is9/16. Coefficientsα=β=1 would fail the commutator test despite looking like a balanced mixture.",
+      "conclusion": "The coefficients now satisfy an exact structural invariant and yield a reproducible expectation."
+    },
+    "limits": "The value ofr must come from a defined dynamical equation andboundary conditions; it is not selected by the commutator alone. Infinite-mode implementability requires additional summability.",
+    "extension": "For a mode family, compute the fullBogoliubov matrices, verify both canonical identities and testΣ|βjk|² for unitary implementability.",
+    "references": [
+      {
+        "label": "Moore, Quantum theory of the electromagnetic field in a variable-length one-dimensional cavity",
+        "url": "https://doi.org/10.1063/1.1665432"
+      }
+    ],
+    "original": {
+      "date": "2025-04-23T20:06:04Z",
+      "month": "2025-04",
+      "evidence": "A",
+      "field": "Symplectic linear algebra",
+      "concept": "A Bogoliubov transformation must preserve the canonical commutator",
+      "origin": "Recovered dated conversation evidence; mathematical development newly written",
+      "question": "What exact algebraic condition is necessary before a claimed mode conversion is canonical?",
+      "math": "The transformation is canonical iff|α|²−|β|²=1. The mean output occupation in the input vacuum is〈0|b†b|0〉=|β|². Choosingα=coshr,β=sinhr satisfies the condition.",
+      "finish": "Precise result, proof, worked example and explicit limits",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://doi.org/10.1063/1.1665432"
+      ],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c2] A@2025-04-23T20:06:04Z, -1y6m: Claimed DCE/Zitterbewegung formulas: \\(\\omega_z=2mc^2/\\hbar\\), \\(x(t)\\) Dirac oscillation, resonance \\(\\Omega=2\\omega_k\\), symplectic form, Bogoliubov coefficients, and categorical unification; claims were not demonstrated.",
+      "retrieval_receipt": "root_receipts.json record 0",
+      "original_question": null,
+      "attribution_note": "The historical mathematical excerpt is assistant-authored. No original user question is inferred; the revised question and worked development are new. The source_excerpt is a literal retrieved result bullet (including any original truncation), not a reconstructed transcript. It may summarize historical content; no verbatim original question is inferred."
+    }
+  },
+  {
+    "id": "Y25-04-027",
+    "title": "A switched oscillator gives exact parametric instability without a resonance slogan",
+    "status": "Developed classical result with a checked example; recovered claims corrected where needed",
+    "summary": "The recovered resonance condition is not a proof of an instability band. A piecewise-constant oscillator has an exact monodromy matrix, letting symplecticity and exponential growth be checked without an uncontrolled averaging approximation.",
+    "definitions": [
+      "Forq″+ω²q=0, the state(q,p) withp=q′ evolves byS_ω(t)=[[cosωt,sinωt/ω],[−ωsinωt,cosωt]].",
+      "Alternate frequenciesω1,ω2>0 for quarter periodsT1=π/(2ω1),T2=π/(2ω2), repeating the cycle."
+    ],
+    "result": {
+      "name": "Exact Floquet multipliers",
+      "statement": "The one-cycle matrixS_(ω2)(T2)S_(ω1)(T1)=diag(−ω1/ω2,−ω2/ω1). Its determinant is1 and one multiplier has modulus>1 wheneverω1≠ω2.",
+      "proof": "Solve the constant-frequency equation with its two initial conditions to obtainS_ω. At a quarter period, it becomes[[0,1/ω],[−ω,0]]. Multiply the two matrices in chronological order to get the diagonal expression. Their reciprocal multipliers prove symplectic area preservation and, if the frequencies differ, exponential growth along one state axis under repeated cycles. The other axis contracts. This supplies an exact instability example without claiming that all periodically driven oscillators or all frequencies near a symbolic2ω condition behave identically."
+    },
+    "example": {
+      "setup": "Takeω1=1,ω2=2.",
+      "calculation": "The cycle duration is3π/4 and the monodromy isdiag(−1/2,−2). Starting at(q,p)=(0,1), aftern cycles the state is(0,(−2)^n). The exponential growth rate per unit time islog2/(3π/4)=4log2/(3π).",
+      "conclusion": "A defined periodic system has a proven Floquet instability and an exact rate."
+    },
+    "limits": "The coefficient jumps require an external parameter change; this is not a closed-system energy-conservation claim. It does not prove a quantum particle-production rate or validate a recoveredDCE apparatus.",
+    "extension": "Replace the jumps with a specified smoothperiodic modulation and enclose the monodromy trace to certify stable and unstable parameter bands.",
+    "references": [
+      {
+        "label": "Moore, Quantum theory of the electromagnetic field in a variable-length one-dimensional cavity",
+        "url": "https://doi.org/10.1063/1.1665432"
+      }
+    ],
+    "original": {
+      "date": "2025-04-23T20:06:04Z",
+      "month": "2025-04",
+      "evidence": "A",
+      "field": "Differential equations",
+      "concept": "A switched oscillator gives exact parametric instability without a resonance slogan",
+      "origin": "Recovered dated conversation evidence; mathematical development newly written",
+      "question": "What fully solved oscillator model can demonstrate growth from periodic parameter variation?",
+      "math": "The one-cycle matrixS_(ω2)(T2)S_(ω1)(T1)=diag(−ω1/ω2,−ω2/ω1). Its determinant is1 and one multiplier has modulus>1 wheneverω1≠ω2.",
+      "finish": "Precise result, proof, worked example and explicit limits",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://doi.org/10.1063/1.1665432"
+      ],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c2] A@2025-04-23T20:06:04Z, -1y6m: Claimed DCE/Zitterbewegung formulas: \\(\\omega_z=2mc^2/\\hbar\\), \\(x(t)\\) Dirac oscillation, resonance \\(\\Omega=2\\omega_k\\), symplectic form, Bogoliubov coefficients, and categorical unification; claims were not demonstrated.",
+      "retrieval_receipt": "root_receipts.json record 0",
+      "original_question": null,
+      "attribution_note": "The historical mathematical excerpt is assistant-authored. No original user question is inferred; the revised question and worked development are new. The source_excerpt is a literal retrieved result bullet (including any original truncation), not a reconstructed transcript. It may summarize historical content; no verbatim original question is inferred."
+    }
+  },
+  {
+    "id": "Y25-04-028",
+    "title": "The E8 dimension248 follows from an explicit root count",
+    "status": "Developed classical result with a checked example; recovered claims corrected where needed",
+    "summary": "The recovered framework uses the correct number248 forE8. An explicit root-system count explains that number and separates it from the384 cyclotomic degree. The dimension formula is a classical Lie-theoretic input, while the root enumeration is elementary and reproducible.",
+    "definitions": [
+      "InR8, theE8 roots are the112 vectors±ei±ej,i<j, and the128 vectors(±1/2,…,±1/2) with an even number of minus signs.",
+      "For a complex semisimple Lie algebra, its root-space decomposition has one Cartan direction per rank and one dimension per root."
+    ],
+    "result": {
+      "name": "Exact root count and dimension",
+      "statement": "The displayed set has240 roots of squared length2, spansR8, and givesdimE8=8+240=248.",
+      "proof": "The first family hasC(8,2) choices ofcoordinate pair and four sign choices, giving28·4=112. In the second family, exactly half of the2⁸ sign patterns have even parity: flip one chosen sign to biject even and odd patterns. Thus it has128 elements. Each first-family vector has two unit coordinates, so squared length2; each half-vector has eight coordinates of square1/4, again total2. The first family spansR8 because sums and differences ofei±ej recover the coordinate directions. Thus rank8 is explicit. Using the classical root-space dimension formula gives248. Verifying that this root set realizes theE8 Lie algebra rather than merely an equal-sized set uses the standard root-system construction, cited separately."
+    },
+    "example": {
+      "setup": "Compare the three central integers in the recovered framework.",
+      "calculation": "248 is a Lie-algebra dimension,240 is its root count and384 is the degree ofQ(ζ1680). None is the sum of the other two or an automatically inherited category rank. The verifier enumerates all240 distinct root vectors and checks their squared lengths exactly.",
+      "conclusion": "TheE8 number has a genuine structural derivation, while an asserted relation to384 remains a separate question."
+    },
+    "limits": "The count alone does not construct a functor betweenE8 representations and a proposed fusion category or determine a homotopy colimit.",
+    "extension": "Give an explicit representation or branching rule and compare its character dimensions with the proposed categorical data, stating the ambient category and tensor functor.",
+    "references": [
+      {
+        "label": "American Institute of Mathematics, What is E8?",
+        "url": "https://aimath.org/E8/e8.html"
+      }
+    ],
+    "original": {
+      "date": "2025-04-20T20:11:26Z",
+      "month": "2025-04",
+      "evidence": "U",
+      "field": "Lie theory",
+      "concept": "The E8 dimension248 follows from an explicit root count",
+      "origin": "Recovered dated conversation evidence; mathematical development newly written",
+      "question": "Which exact part of the recoveredE8 data can be established independently of a categorical synthesis?",
+      "math": "The displayed set has240 roots of squared length2, spansR8, and givesdimE8=8+240=248.",
+      "finish": "Precise result, proof, worked example and explicit limits",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://aimath.org/E8/e8.html"
+      ],
+      "source_excerpt": "- [USER_FACT] [c6] U@2025-04-20T20:11:26Z, -549d: April 2025 core project is speculative \\(\\mathcal H_\\infty(E_8,384)\\): MTC rank 384, \\(E_8\\) dimension 248, cyclotomic \\(\\mathbb Q(\\zeta_{1680})\\), TQFT/annulus, Brieskorn modules, Victorian invariant geometry.",
+      "retrieval_receipt": "root_receipts.json record 0",
+      "original_question": null,
+      "attribution_note": "The dated source identifies user-authored material; the revised question and proof are new unless verbatim wording is separately provided. The source_excerpt is a literal retrieved result bullet (including any original truncation), not a reconstructed transcript. It may summarize historical content; no verbatim original question is inferred."
+    }
+  }
+]

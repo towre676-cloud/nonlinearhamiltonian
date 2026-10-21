@@ -1,0 +1,96 @@
+{
+  "month": "2024-07",
+  "scope": "Finite examples and exact algebra replayed; general theorems retain their stated proof/source scope.",
+  "checks": [
+    {
+      "id": "Y24-07-001",
+      "name": "Four-cycle conjugacy and invariant sets",
+      "status": "pass",
+      "detail": "All 16 subsets examined; only empty/full invariant; conjugacy holds pointwise."
+    },
+    {
+      "id": "Y24-07-002",
+      "name": "Binary symmetric channel capacity example",
+      "status": "pass",
+      "detail": "Capacity formula and 1,001 input distributions replayed; global maximality follows entropy proof, not grid search."
+    },
+    {
+      "id": "Y24-07-003",
+      "name": "Relabeling can destroy Hamming distance",
+      "status": "pass",
+      "detail": "Ambient permutation checked bijective; repetition-code distance falls from 3 to 1."
+    },
+    {
+      "id": "Y24-07-004",
+      "name": "Exact quotient and interval endpoints",
+      "status": "pass",
+      "detail": "Exact fractions certify quotient, reverse convention and interval bounds."
+    },
+    {
+      "id": "Y24-07-005",
+      "name": "PID characteristic quadratic and feedthrough",
+      "status": "pass",
+      "detail": "Characteristic coefficients (11/10,11/5,1/2); both exact-form roots negative; ideal high-frequency ratio 1/11."
+    },
+    {
+      "id": "Y24-07-006",
+      "name": "Power and amplitude logarithms",
+      "status": "pass",
+      "detail": "Dimensionless ratios only; amplitude formula assumes power proportional to amplitude squared."
+    },
+    {
+      "id": "Y24-07-007",
+      "name": "Positive ideal-circuit algebra",
+      "status": "pass",
+      "detail": "Normalized positive example exactly satisfies both stipulated equations; no body-current or apparatus calculation."
+    },
+    {
+      "id": "Y24-07-008",
+      "name": "Partition recurrence versus independent counting",
+      "status": "pass",
+      "detail": "Independent part-size dynamic program and pentagonal recurrence agree through n=60; not an all-orders proof of Euler identity."
+    },
+    {
+      "id": "Y24-07-009",
+      "name": "Exterior-algebra dimensions and wedge cancellation",
+      "status": "pass",
+      "detail": "Dimensions by exact binomial coefficients; worked mixed derivative terms cancel with opposite wedge signs. General d²=0 is proved in text."
+    },
+    {
+      "id": "Y24-07-010",
+      "name": "Diffusion mode eigenvalues and coupling energy",
+      "status": "pass",
+      "detail": "k=1 mode has decay rates 1,3; coupling quadratic identity checked on integer grid and proved algebraically in text."
+    },
+    {
+      "id": "Y24-07-011",
+      "name": "Euler realization and entropy sign counterexample",
+      "status": "pass",
+      "detail": "Genus 0,1,2 yield 2 log 2,0,−2 log 2; Grothendieck/Hodge realization facts are sourced theorem scope."
+    },
+    {
+      "id": "Y24-07-012",
+      "name": "Rank-one monodromy example",
+      "status": "pass",
+      "detail": "α=1/2 gives −1 and square 1. Irrational non-root assertion follows mα∈Z proof, not finite numeric testing; Hodge-module compatibility is not computationally certified."
+    },
+    {
+      "id": "Y24-07-013",
+      "name": "Triangle homology ranks",
+      "status": "pass",
+      "detail": "Triangle graph H₁ dimension 1; filling adds rank-one boundary and kills it. Nodal-curve IH is explicitly a cited theorem, not this matrix check."
+    },
+    {
+      "id": "Y24-07-014",
+      "name": "Legendrian tangent and contact scaling",
+      "status": "pass",
+      "detail": "Polynomial tangent z′−yx′=0, pullback scaling a² and two-cusp tb=−1 replayed; knot classification not asserted."
+    },
+    {
+      "id": "Y24-07-015",
+      "name": "Aggregation erases diffusion while contrast distinguishes it",
+      "status": "pass",
+      "detail": "Closed mean matrix independent of D; common mean 1 unchanged; contrasting Fourier mode rates −3 and −4 distinguish the two stipulated models."
+    }
+  ]
+}

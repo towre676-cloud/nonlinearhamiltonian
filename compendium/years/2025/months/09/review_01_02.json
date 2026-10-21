@@ -1,0 +1,78 @@
+{
+  "reviewer": "representations_and_dynamics",
+  "status": "Selected scopes approved; minor smooth-curve hypothesis clarification resolved",
+  "issues": [
+    {
+      "severity": "minor",
+      "id": "Y25-01-016",
+      "description": "The proof identifies the Verdier dual of L[1] with L-dual[1], using the smooth complex-curve dualizing complex. The stated ambient C is only called a complex algebraic curve, which does not explicitly ensure smoothness.",
+      "fix": "State that C is a smooth complex algebraic curve throughout this elementary example. Alternatively supply the needed singular-curve duality argument, rather than using the smooth identity without its hypothesis.",
+      "status": "Resolved: author added smoothness in builder and entries, confirmed by reviewer; January verifier rerun25/25 by author."
+    }
+  ],
+  "approved_scopes": [
+    {
+      "ids": [
+        "Y25-01-010",
+        "Y25-01-011"
+      ],
+      "detail": "The S6 pentad certificate genuinely enumerates15 synthemes, all five-subsets with complete edge coverage, six pentads and all720 distinct action images; the transposition image has type2^3. The E8 projection counts all240 doubled-coordinate roots and the full fiber histogram24 long singleton images,24 short eight-element fibers and the24-element zero fiber. These are exhaustive finite certificates, not sampled claims."
+    },
+    {
+      "ids": [
+        "Y25-01-001",
+        "Y25-01-014",
+        "Y25-01-015",
+        "Y25-01-018"
+      ],
+      "detail": "The centered monodromy filtration and sl2 indexing are consistent; the integer coinvariants retain Z/n torsion. The lower-middle cone cutoff for a real3-dimensional cone on T2 correctly retains IH1 and kills the link2-cycle. The hypersurface cotangent complex and a-to-a-squared lifting obstruction are correct in the stated characteristic-zero model. The unipotent complement action correctly rules out a splitting canonical from the filtered-vector-space data alone, without denying additional mixed-Hodge splitting theorems."
+    },
+    {
+      "ids": [
+        "Y25-01-006",
+        "Y25-01-009",
+        "Y25-01-024"
+      ],
+      "detail": "The positive metric eta=(S inverse)*S inverse, exact weighted orthogonality and Jordan obstruction are correct. At s=1,t=pi the Euclidean norm1+sqrt2 is consistent with the matrix singular values. The F2-squared projective cocycle is nontrivial by its antisymmetric multiplier ratio. Controlled-unitary statements retain a separate error-model requirement."
+    },
+    {
+      "ids": [
+        "Y25-02-009",
+        "Y25-02-010",
+        "Y25-02-025"
+      ],
+      "detail": "Weighted cancellation and pairing use the same measure; the exact two-point atom saturates the stated BMO2 inequality. The result deliberately stops short of full global weighted H1-BMO duality. Hyperbolic3 volume growth, the radial ground-state transform and bottom spectral value1 are consistent with non-doubling global geometry. The hyperbolic cusp has finite area1/Y but infinite vertical extent, while the complete translation quotient has infinite area."
+    },
+    {
+      "ids": [
+        "Y25-02-013",
+        "Y25-02-015",
+        "Y25-02-016"
+      ],
+      "detail": "The Morita inverse and Frobenius reciprocity maps are explicit and correctly typed. The deformed polynomial derivative yields[D_kappa,X]=I+kappa s with the stated parity coefficients. The Berry curvature and integrated flux agree within the expressly declared sign/Chern convention; the two-chart obstruction follows from Stokes and is kept separate from algebraic rigidity."
+    },
+    {
+      "ids": [
+        "Y25-02-019",
+        "Y25-02-021",
+        "Y25-02-023",
+        "Y25-02-024"
+      ],
+      "detail": "The repetition code corrects precisely its stated bit-flip family and has weight-one logical Z, hence quantum distance1. The depolarizing Kraus coefficients and exact trace-distance factor(1-p)^n are valid for0<=p<=1. Bell and incoherent-mixture parity observations collide while XX distinguishes them and trace distance is1/2. The associator pentagon is exact on pure tensors and the five-edge unitary-error telescoping bound is valid."
+    }
+  ],
+  "verifiers": [
+    {
+      "month": "2025-01",
+      "status": "pass",
+      "detail": "Author verifier independently executed:25 checks, zero failures. Exhaustive S6 and E8 projection code inspected."
+    },
+    {
+      "month": "2025-02",
+      "status": "pass",
+      "detail": "Author verifier independently executed:25 checks, zero failures."
+    }
+  ],
+  "provenance_scope": "Selected entries consistently distinguish classical proofs from external geometric theorems and unsupported historical application claims. The February parity-coherence example explicitly identifies uploaded external text rather than inventing a conversation date. Root is separately auditing every literal receipt/date/author match.",
+  "limits": "Selected mathematical review, not a proof of the deep background theorems or a complete reconstruction of the original archive. Numerical sample checks are not promoted to general theorems."
+}

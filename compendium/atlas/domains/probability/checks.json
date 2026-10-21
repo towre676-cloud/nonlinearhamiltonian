@@ -1,0 +1,569 @@
+{
+  "scope": "Executed mathematical worked models only; no historical empirical dataset, trained model, forecasting system, or general solver is validated.",
+  "arithmetic_policy": "Fractions and finite enumerations are exact. Transcendental evaluations and recurrences are declared floating-point checks with explicit tolerances or monotone error checks.",
+  "check_count": 24,
+  "passed": 24,
+  "failed": 0,
+  "checks": [
+    {
+      "id": "P01",
+      "family_ids": [
+        "D10-F01"
+      ],
+      "status": "pass",
+      "method": "exact rational constructions",
+      "scope": "Sharp dependence bounds and expectation in the declared three-Bernoulli fixture",
+      "inputs": {
+        "marginals": "4/5 each"
+      },
+      "result": {
+        "mean_surplus": "1/4",
+        "profit_range": [
+          "2/5",
+          "4/5"
+        ],
+        "independent_profit": "64/125"
+      }
+    },
+    {
+      "id": "P02",
+      "family_ids": [
+        "D10-F01"
+      ],
+      "status": "pass",
+      "method": "exact rational beta moment arithmetic",
+      "scope": "Beta(4,2) posterior-predictive fixture, not a fitted dataset",
+      "inputs": {},
+      "result": {
+        "two_successes": "10/21",
+        "plug_in": "4/9",
+        "gap": "2/63"
+      }
+    },
+    {
+      "id": "P03",
+      "family_ids": [
+        "D10-F02"
+      ],
+      "status": "pass",
+      "method": "exhaustive subsets versus coefficient dynamic program",
+      "scope": "Weighted size-two selection on four vertices and induced four-cycle Euler characteristic",
+      "inputs": {
+        "weights": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "sample_size": 2
+      },
+      "result": {
+        "normalizer": 35,
+        "vertex_one_probability": "9/35",
+        "pair_probability": "2/35",
+        "expected_euler_characteristic": "46/35"
+      }
+    },
+    {
+      "id": "P04",
+      "family_ids": [
+        "D10-F02"
+      ],
+      "status": "pass",
+      "method": "exact polynomial integral",
+      "scope": "Maximum of four iid uniform birth times; loop filled at one",
+      "inputs": {
+        "birth_cdf": "t^4 on [0,1]"
+      },
+      "result": {
+        "expected_bar_length": "1/5"
+      }
+    },
+    {
+      "id": "P05",
+      "family_ids": [
+        "D10-F03"
+      ],
+      "status": "pass",
+      "method": "exact detailed balance and determinant roots",
+      "scope": "Reflecting three-state birth-death chain only",
+      "inputs": {
+        "q": 4,
+        "N": 2
+      },
+      "result": {
+        "stationary_weights": [
+          "1/21",
+          "4/21",
+          "16/21"
+        ],
+        "eigenvalues_negative_generator": [
+          0,
+          3,
+          7
+        ]
+      }
+    },
+    {
+      "id": "P06",
+      "family_ids": [
+        "D10-F03"
+      ],
+      "status": "pass",
+      "method": "declared floating-point covariance recurrence",
+      "scope": "OU Euler stationary bias for kappa=2,sigma=3,h=.1",
+      "inputs": {
+        "iterations": 1000
+      },
+      "result": {
+        "continuous_stationary_variance": 2.25,
+        "Euler_stationary_variance": 2.5,
+        "tolerance": 1e-11
+      }
+    },
+    {
+      "id": "P07",
+      "family_ids": [
+        "D10-F03"
+      ],
+      "status": "pass",
+      "method": "analytic derivative identity evaluated numerically",
+      "scope": "Backward OU moment PDE for the declared quadratic terminal observable",
+      "inputs": {
+        "tau": 0.7,
+        "x": 1.3,
+        "kappa": 1.4,
+        "sigma": 0.8
+      },
+      "result": {
+        "u": 0.4344259494317559,
+        "u_tau_equals_Lu_residual": 0.0
+      }
+    },
+    {
+      "id": "P08",
+      "family_ids": [
+        "D10-F03",
+        "D11-F01"
+      ],
+      "status": "pass",
+      "method": "exact rational propagation",
+      "scope": "Constant-driver two-dimensional fixture at common horizon 10",
+      "inputs": {
+        "prior": "I",
+        "sensor_noise": "1/100"
+      },
+      "result": {
+        "direct_sensor_future_variance": "10101/101",
+        "driver_sensor_future_variance": "201/101",
+        "process_covariance_at_horizon_two": [
+          [
+            "8/3",
+            "2"
+          ],
+          [
+            "2",
+            "2"
+          ]
+        ],
+        "process_determinant": "4/3"
+      }
+    },
+    {
+      "id": "P09",
+      "family_ids": [
+        "D10-F04"
+      ],
+      "status": "pass",
+      "method": "floating-point characteristic-function identities",
+      "scope": "Standard Gaussian normalized-sum fixed point and Cauchy arithmetic-mean stability",
+      "inputs": {
+        "t_values": [
+          -2,
+          -0.3,
+          0,
+          0.7,
+          2
+        ],
+        "n_values": [
+          1,
+          2,
+          8,
+          32
+        ]
+      },
+      "result": {
+        "Gaussian_fixed_point": true,
+        "Cauchy_mean_law_unchanged": true,
+        "tolerance": 1e-11
+      }
+    },
+    {
+      "id": "P10",
+      "family_ids": [
+        "D11-F01"
+      ],
+      "status": "pass",
+      "method": "exact finite conditional-expectation enumeration",
+      "scope": "Finite independent hidden-square fixture matching Gaussian second/fourth square moments; no Gaussian density claim",
+      "inputs": {
+        "hidden_square_mean": "1",
+        "hidden_square_variance": "2",
+        "bit_flip_probability": "1/4"
+      },
+      "result": {
+        "noiseless_target_floor": "2",
+        "additional_noise_risk": "3/4",
+        "total_noisy_risk": "11/4"
+      }
+    },
+    {
+      "id": "P11",
+      "family_ids": [
+        "D11-F01"
+      ],
+      "status": "pass",
+      "method": "exact rational covariance calculation",
+      "scope": "Three equally weighted vectors; signed rank-one correction of identity",
+      "inputs": {
+        "points": [
+          [
+            1,
+            0
+          ],
+          [
+            -1,
+            0
+          ],
+          [
+            0,
+            2
+          ]
+        ]
+      },
+      "result": {
+        "covariance": [
+          [
+            "2/3",
+            "0"
+          ],
+          [
+            "0",
+            "8/9"
+          ]
+        ],
+        "positive_determinant": "16/27",
+        "signed_correction_eigenvalues": [
+          -1,
+          1
+        ]
+      }
+    },
+    {
+      "id": "P12",
+      "family_ids": [
+        "D11-F02"
+      ],
+      "status": "pass",
+      "method": "declared numerical KL evaluation",
+      "scope": "Finite stochastic channel and concentrated reset equilibrium",
+      "inputs": {
+        "p": [
+          0.2,
+          0.8
+        ],
+        "q": [
+          0.6,
+          0.4
+        ],
+        "channel_columns": [
+          [
+            0.8,
+            0.3
+          ],
+          [
+            0.2,
+            0.7
+          ]
+        ]
+      },
+      "result": {
+        "KL_before": 0.3347952867143343,
+        "KL_after": 0.0810930216216329,
+        "Shannon_can_decrease": true,
+        "tolerance": 1e-11
+      }
+    },
+    {
+      "id": "P13",
+      "family_ids": [
+        "D11-F02"
+      ],
+      "status": "pass",
+      "method": "exact algebra evaluated numerically plus shrinking finite differences",
+      "scope": "Three-class categorical Fisher variance identity and local KL only",
+      "inputs": {
+        "p": [
+          0.2,
+          0.3,
+          0.5
+        ],
+        "direction": [
+          -1.0,
+          2.0,
+          0.4
+        ]
+      },
+      "result": {
+        "quadratic_form": 1.12,
+        "KL_coefficient_errors": [
+          5.4172772946392556e-06,
+          1.3538299339366233e-06,
+          3.383854779714923e-07
+        ],
+        "null_direction": "(1,1,1)"
+      }
+    },
+    {
+      "id": "P14",
+      "family_ids": [
+        "D11-F03"
+      ],
+      "status": "pass",
+      "method": "exhaustive 256-sign null distribution",
+      "scope": "Independent fair signs conditional on eight equal positive magnitudes",
+      "inputs": {},
+      "result": {
+        "one_sided_extreme_p": "1/256",
+        "two_sided_extreme_p": "1/128",
+        "superuniformity_all_attained_thresholds": true
+      }
+    },
+    {
+      "id": "P15",
+      "family_ids": [
+        "D11-F03"
+      ],
+      "status": "pass",
+      "method": "exact pair enumeration",
+      "scope": "Two positives and two negatives, ties split in half",
+      "inputs": {
+        "positive_scores": [
+          2,
+          1
+        ],
+        "negative_scores": [
+          1,
+          0
+        ]
+      },
+      "result": {
+        "AUROC": "7/8",
+        "strict_cubic_transform_invariant": true
+      }
+    },
+    {
+      "id": "P16",
+      "family_ids": [
+        "D11-F04"
+      ],
+      "status": "pass",
+      "method": "finite count and exhaustive addresses",
+      "scope": "Five objects encoded in three bits",
+      "inputs": {},
+      "result": {
+        "minimum_fixed_bits": 3,
+        "modulo_counts": [
+          2,
+          2,
+          2,
+          1,
+          1
+        ],
+        "rejection_valid_counts": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "id": "P17",
+      "family_ids": [
+        "D12-F01"
+      ],
+      "status": "pass",
+      "method": "exact completion-of-square identity",
+      "scope": "Two-dimensional constrained quadratic, plus feasible null vector",
+      "inputs": {
+        "Sigma": "diag(1,4)",
+        "budget": "w1+w2=1"
+      },
+      "result": {
+        "optimizer": [
+          "4/5",
+          "1/5"
+        ],
+        "minimum": "4/5",
+        "gap_identity": "5t^2",
+        "singular_diag_0_4_minimum": "0"
+      }
+    },
+    {
+      "id": "P18",
+      "family_ids": [
+        "D12-F01"
+      ],
+      "status": "pass",
+      "method": "exact rational primal-dual gap",
+      "scope": "2x2 SDP min Tr(diag(1,2)X), TrX=1, X PSD",
+      "inputs": {},
+      "result": {
+        "primal_optimum": "1",
+        "dual_optimum": "1",
+        "zero_gap_X": "diag(1,0)",
+        "dual_slack": "diag(0,1)"
+      }
+    },
+    {
+      "id": "P19",
+      "family_ids": [
+        "D12-F02"
+      ],
+      "status": "pass",
+      "method": "exact first-order convex optimality",
+      "scope": "Three strongly convex proximal models at lambda=1,z=(3,4)",
+      "inputs": {},
+      "result": {
+        "l1_solution": [
+          "2",
+          "3"
+        ],
+        "l2_solution": [
+          "12/5",
+          "16/5"
+        ],
+        "ridge_solution": [
+          "3/2",
+          "2"
+        ]
+      }
+    },
+    {
+      "id": "P20",
+      "family_ids": [
+        "D12-F02"
+      ],
+      "status": "pass",
+      "method": "exact rational spectral multipliers",
+      "scope": "Four-cycle quadratic gradient step",
+      "inputs": {},
+      "result": {
+        "eta_0_4_factors": [
+          "1",
+          "1/5",
+          "1/5",
+          "-3/5"
+        ],
+        "eta_0_6_top_factor": "-7/5"
+      }
+    },
+    {
+      "id": "P21",
+      "family_ids": [
+        "D12-F03"
+      ],
+      "status": "pass",
+      "method": "exhaustive cut labels and exact min-plus identity",
+      "scope": "Triangle and two-state repeated-layer fixtures",
+      "inputs": {},
+      "result": {
+        "cut_maximum": 2,
+        "maximizer_count": 6,
+        "terminal_costs": [
+          0,
+          2,
+          5,
+          7,
+          10,
+          12,
+          15,
+          17
+        ],
+        "two_layer_increment": 5
+      }
+    },
+    {
+      "id": "P22",
+      "family_ids": [
+        "D12-F03"
+      ],
+      "status": "pass",
+      "method": "exact finite dominance and incompatible weight inequalities",
+      "scope": "Three-point Pareto minimization fixture",
+      "inputs": {
+        "points": [
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            "3/2"
+          ],
+          [
+            2,
+            0
+          ]
+        ]
+      },
+      "result": {
+        "all_nondominated": true,
+        "middle_requires": "alpha<=beta/2 and alpha>=3beta/2",
+        "no_positive_linear_selector": true
+      }
+    },
+    {
+      "id": "P23",
+      "family_ids": [
+        "D12-F04"
+      ],
+      "status": "pass",
+      "method": "exact rational shared-variable simplification and fibre bounds",
+      "scope": "L08 scalar common-nuisance worked model only",
+      "inputs": {
+        "common_c_range": [
+          "0",
+          "100"
+        ],
+        "difference_range": [
+          "7/4",
+          "9/4"
+        ]
+      },
+      "result": {
+        "joint_margin": "7/4",
+        "separate_interval_lower": "-393/4",
+        "measurement_z_1_4_error_1_10_margin": "3/20",
+        "measurement_z_1_20_inconclusive": true
+      }
+    },
+    {
+      "id": "P24",
+      "family_ids": [
+        "D12-F04"
+      ],
+      "status": "pass",
+      "method": "exact outcome-fibre enumeration",
+      "scope": "Finite two-test fixture with a direct sign test and an irrelevant nuisance test",
+      "inputs": {},
+      "result": {
+        "sign_test_decision_sufficient": true,
+        "nuisance_test_decision_sufficient": false,
+        "minimum_guaranteed_cost_when_each_test_costs_one": 1
+      }
+    }
+  ]
+}

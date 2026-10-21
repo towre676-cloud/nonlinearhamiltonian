@@ -1,0 +1,181 @@
+{
+  "checks": [
+    {
+      "id": "S007",
+      "name": "Minimal invariant triangular feature spaces",
+      "status": "passed",
+      "detail": {
+        "exact_cases": [
+          {
+            "label": "distinct nonresonant",
+            "a": "2",
+            "b": "3",
+            "dimension": 5,
+            "nonlinear_groups": [
+              "4",
+              "8"
+            ],
+            "resonance": false,
+            "minimal_polynomial_degree": 5
+          },
+          {
+            "label": "quadratic resonance",
+            "a": "2",
+            "b": "4",
+            "dimension": 5,
+            "nonlinear_groups": [
+              "4",
+              "8"
+            ],
+            "resonance": true,
+            "minimal_polynomial_degree": 5
+          },
+          {
+            "label": "real parity collision",
+            "a": "-1",
+            "b": "1",
+            "dimension": 5,
+            "nonlinear_groups": [
+              "1",
+              "-1"
+            ],
+            "resonance": true,
+            "minimal_polynomial_degree": 3
+          },
+          {
+            "label": "a one nonresonant",
+            "a": "1",
+            "b": "2",
+            "dimension": 4,
+            "nonlinear_groups": [
+              "1"
+            ],
+            "resonance": false,
+            "minimal_polynomial_degree": 2
+          },
+          {
+            "label": "a one resonant",
+            "a": "1",
+            "b": "1",
+            "dimension": 4,
+            "nonlinear_groups": [
+              "1"
+            ],
+            "resonance": true,
+            "minimal_polynomial_degree": 2
+          },
+          {
+            "label": "a zero nilpotent resonance",
+            "a": "0",
+            "b": "0",
+            "dimension": 4,
+            "nonlinear_groups": [
+              "0"
+            ],
+            "resonance": true,
+            "minimal_polynomial_degree": 3
+          },
+          {
+            "label": "a zero constant resonance",
+            "a": "0",
+            "b": "1",
+            "dimension": 4,
+            "nonlinear_groups": [
+              "0"
+            ],
+            "resonance": true,
+            "minimal_polynomial_degree": 3
+          },
+          {
+            "label": "a zero nonresonant",
+            "a": "0",
+            "b": "2",
+            "dimension": 4,
+            "nonlinear_groups": [
+              "0"
+            ],
+            "resonance": false,
+            "minimal_polynomial_degree": 3
+          },
+          {
+            "label": "fourth-root collision resonant",
+            "a": "(0+(1)i)",
+            "b": "-1",
+            "dimension": 6,
+            "nonlinear_groups": [
+              "-1",
+              "(0+(-1)i)",
+              "1"
+            ],
+            "resonance": true,
+            "minimal_polynomial_degree": 5
+          },
+          {
+            "label": "fourth-root collision nonresonant",
+            "a": "(0+(1)i)",
+            "b": "2",
+            "dimension": 6,
+            "nonlinear_groups": [
+              "-1",
+              "(0+(-1)i)",
+              "1"
+            ],
+            "resonance": false,
+            "minimal_polynomial_degree": 5
+          },
+          {
+            "label": "affine resonance",
+            "a": "2",
+            "b": "2",
+            "dimension": 3,
+            "nonlinear_groups": [],
+            "resonance": true,
+            "minimal_polynomial_degree": 3
+          },
+          {
+            "label": "zero polynomial repeated diagonal eigenvalue",
+            "a": "2",
+            "b": "2",
+            "dimension": 3,
+            "nonlinear_groups": [],
+            "resonance": false,
+            "minimal_polynomial_degree": 2
+          }
+        ],
+        "method": "Exact Gaussian-rational polynomial composition, rank, closure and independent iterated-observable span."
+      }
+    },
+    {
+      "id": "S007",
+      "name": "Resonance Jordan chains and minimal polynomials",
+      "status": "passed",
+      "detail": "In every case the shifted y coordinate has the stated length-one or length-two chain. The asserted polynomial annihilates every basis vector, and deleting any one root factor fails."
+    },
+    {
+      "id": "S007",
+      "name": "Closed iterate formula including zero resonance",
+      "status": "passed",
+      "detail": "Direct composition equals the convolution-sum formula for n=0,...,7 in all twelve cases; no division at resonance or 0^0 convention is needed."
+    },
+    {
+      "id": "S007",
+      "name": "Invertible coupled degree-growth counterexample",
+      "status": "passed",
+      "detail": {
+        "map": "(x,y)→(y,y²−x)",
+        "inverse": "(x,y)→(x²−y,x)",
+        "degrees_of_iterated_y": [
+          1,
+          2,
+          4,
+          8,
+          16,
+          32
+        ],
+        "scope": "Exact finite examples accompany the general degree-growth proof."
+      }
+    }
+  ],
+  "status": "passed",
+  "count": 4
+}

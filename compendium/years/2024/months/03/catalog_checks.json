@@ -1,0 +1,273 @@
+{
+  "month": "2024-03",
+  "scope": "catalog supplement only; examples and attribution, not exhaustive historical retrieval",
+  "status": "passed",
+  "checks": [
+    {
+      "id": "Y24-03-020",
+      "name": "Exact Laplace partial fractions",
+      "status": "passed",
+      "detail": "The displayed transform agrees at rational s; the written identity follows by a common denominator."
+    },
+    {
+      "id": "Y24-03-020",
+      "name": "Time-domain initial value and residual",
+      "status": "passed",
+      "detail": {
+        "maximum_sampled_residual": 0.0,
+        "y_at_one": 0.43233235838169365,
+        "scope": "Numerical samples accompany the analytic derivative proof."
+      }
+    },
+    {
+      "id": "Y24-03-021",
+      "name": "Exact Rodrigues orthogonality, norms and ODE through degree six",
+      "status": "passed",
+      "detail": "Polynomial differentiation and integration use rational coefficients; finite checks supplement the all-degree proof."
+    },
+    {
+      "id": "Y24-03-021",
+      "name": "Exact x² projection",
+      "status": "passed",
+      "detail": "x²=P₀/3+2P₂/3 and the predicted squared norm is 2/5."
+    },
+    {
+      "id": "Y24-03-022",
+      "name": "Exact Bessel coefficient recurrence",
+      "status": "passed",
+      "detail": "All retained coefficients for m=0,1,2,3 satisfy the ODE recurrence. No truncated polynomial is called an exact full solution."
+    },
+    {
+      "id": "Y24-03-022",
+      "name": "Certified alternating-series enclosure for J₀(1)",
+      "status": "passed",
+      "detail": {
+        "lower_rational": "730544960145000545669/954714020936417280000",
+        "upper_rational": "3521910964886366267/4602615803412480000",
+        "enclosure_width": "1/6682998146554920960000",
+        "floating_midpoint": 0.7651976865579666
+      }
+    },
+    {
+      "id": "Y24-03-022",
+      "name": "Exact Helmholtz mode coefficient",
+      "status": "passed",
+      "detail": "sin(3x)sin(4y) has exact Helmholtz residual zero; endpoint sine values provide the rectangular Dirichlet boundary condition."
+    },
+    {
+      "id": "Y24-03-023",
+      "name": "Exact Schwarzian composition example",
+      "status": "passed",
+      "detail": "After cancelling the common exponential, rational differentiation agrees with −2x²−3/(2x²); at x=1 the value is −7/2."
+    },
+    {
+      "id": "Y24-03-024",
+      "name": "Euclidean remainder and Bézout certificate",
+      "status": "passed",
+      "detail": {
+        "gcd": 2,
+        "remainders": [
+          10,
+          6,
+          4,
+          2,
+          0
+        ],
+        "bezout_coefficients": [
+          -9,
+          47
+        ]
+      }
+    },
+    {
+      "id": "Y24-03-024",
+      "name": "Exact Pell recurrence, norm and descent examples",
+      "status": "passed",
+      "detail": {
+        "first_four_positive_pairs": [
+          [
+            3,
+            2
+          ],
+          [
+            17,
+            12
+          ],
+          [
+            99,
+            70
+          ],
+          [
+            577,
+            408
+          ]
+        ],
+        "checked_steps": 20,
+        "scope": "Completeness follows from the written descent proof, not this finite list."
+      }
+    },
+    {
+      "id": "Y24-03-025",
+      "name": "Exact square fixed point",
+      "status": "passed",
+      "detail": "The affine square self-map has the declared fixed point. This is an example, not a numerical proof of Brouwer."
+    },
+    {
+      "id": "Y24-03-025",
+      "name": "Tangent-field examples",
+      "status": "passed",
+      "detail": "The projected constant field is tangent and its norm identity identifies exactly the two poles as zeros. Degree theory, explicitly cited in the text, supplies the global obstruction."
+    },
+    {
+      "id": "Y24-03-026",
+      "name": "Cauchy coefficient and numerical contour checks",
+      "status": "passed",
+      "detail": {
+        "polynomial_integral_error": 3.557772152188741e-14,
+        "exponential_integral_error": 3.5692653049415554e-15,
+        "points": 256,
+        "scope": "The residue coefficient six is exact; quadrature independently checks the finite examples."
+      }
+    },
+    {
+      "id": "Y24-03-027",
+      "name": "Numerical speed-density moments",
+      "status": "passed",
+      "detail": {
+        "simpson_values": [
+          1.0,
+          1.595769121605729,
+          3.0
+        ],
+        "absolute_errors": [
+          0.0,
+          1.7763568394002505e-15,
+          0.0
+        ],
+        "panels": 20000,
+        "second_moment_tail_bound": 1.5855489930191248e-19,
+        "scope": "Moment proof uses the gamma integral. The stated tail bound follows by integration by parts and the Gaussian tail bound."
+      }
+    },
+    {
+      "id": "Y24-03-027",
+      "name": "Characteristic speed ordering",
+      "status": "passed",
+      "detail": {
+        "mode": 1.4142135623730951,
+        "mean": 1.5957691216057308,
+        "rms": 1.7320508075688772,
+        "variance": 0.45352091052967447
+      }
+    },
+    {
+      "id": "Y24-03-028",
+      "name": "Catenary ODE, length and inverse bracket",
+      "status": "passed",
+      "detail": {
+        "length": 4.7008047745752055,
+        "sag": 1.0861612696304874,
+        "maximum_sampled_residual": 0.0,
+        "unique_a_bracket": [
+          1.999,
+          2.001
+        ],
+        "scope": "Uniqueness follows from the written monotonicity proof."
+      }
+    },
+    {
+      "id": "Y24-03-029",
+      "name": "Exact Navier plate coefficients",
+      "status": "passed",
+      "detail": "On the π-square the (1,1) mode has Laplacian eigenvalue two, static stiffness twelve and squared frequency six."
+    },
+    {
+      "id": "Y24-03-029",
+      "name": "Exact Rayleigh quotient and residual",
+      "status": "passed",
+      "detail": {
+        "quotient": "14/5",
+        "normalized_residual_squared": "9/25",
+        "distance_to_spectrum_squared": "1/25"
+      }
+    },
+    {
+      "id": "Y24-03-030",
+      "name": "Exact rotating-wave residual and dispersion",
+      "status": "passed",
+      "detail": {
+        "surface_amplitude": "1/10",
+        "east_velocity_amplitude": "1/2",
+        "north_quadrature_amplitude": "3/10",
+        "frequency": "5",
+        "scope": "The check is for the explicitly local f-plane system, not global ocean geometry."
+      }
+    },
+    {
+      "id": "Y24-03-031",
+      "name": "Hamilton flow and Hamilton–Jacobi/Riccati residuals",
+      "status": "passed",
+      "detail": {
+        "maximum_numerical_residual": 8.881784197001252e-16,
+        "exact_A_at_pi_over_four": "-1",
+        "exact_A_derivative_at_pi_over_four": "-2",
+        "scope": "The graph is used before its first caustic; the written derivation proves the identities."
+      }
+    },
+    {
+      "id": "Y24-03-032",
+      "name": "Exact cubic stability parameter certificates",
+      "status": "passed",
+      "detail": "The certified strict interval is 0<K<4; K=4 has exact factorization (s+2)(s²+2)."
+    },
+    {
+      "id": "Y24-03-032",
+      "name": "Exact boundary polynomial multiplication",
+      "status": "passed",
+      "detail": "The boundary has roots −2 and ±i√2, and is not strictly Hurwitz."
+    },
+    {
+      "id": "Y24-03-033",
+      "name": "Exact linear-chirp cycles and phase increments",
+      "status": "passed",
+      "detail": {
+        "cycles": "300",
+        "first_increment_cycles": "4001/40000",
+        "last_increment_cycles": "7999/40000",
+        "scope": "A phase-increment statement, not a band-limiting theorem."
+      }
+    },
+    {
+      "id": "Y24-03-033",
+      "name": "Sample aliasing identity",
+      "status": "passed",
+      "detail": {
+        "maximum_numerical_sample_difference": 5.333228198356031e-13,
+        "proof": "The added phase is exactly 2πn at the sample times."
+      }
+    },
+    {
+      "id": "Y24-03-034",
+      "name": "Exact pressure and shear drag contributions",
+      "status": "passed",
+      "detail": "The angular pressure and shear integrals give 2πμaU and 4πμaU. Their sum fixes the coefficient 6π."
+    },
+    {
+      "id": "Y24-03-034",
+      "name": "Exact terminal speed and Reynolds check",
+      "status": "passed",
+      "detail": {
+        "terminal_metres_per_second": "109/500000",
+        "Reynolds_number": "109/25000",
+        "scope": "Constructed model inputs, not retrieved measurements; low Re is an internal approximation check."
+      }
+    },
+    {
+      "id": "CATALOG-2024-03",
+      "name": "Complete recovered-name coverage with attribution boundary",
+      "status": "passed",
+      "detail": "All 20 names numbered 81–100 plus the unnumbered Laplace transform are developed. No missing 1–80 entries and no query-echo U attribution are imported."
+    }
+  ],
+  "count": 27
+}

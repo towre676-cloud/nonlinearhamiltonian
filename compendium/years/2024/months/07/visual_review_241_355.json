@@ -1,0 +1,69 @@
+{
+  "document": "year_2024/output/2024_Month_by_Month_Mathematics.pdf",
+  "document_page_count": 355,
+  "reviewed_page_count": 115,
+  "reviewed_ranges": [
+    [
+      241,
+      270
+    ],
+    [
+      271,
+      300
+    ],
+    [
+      301,
+      330
+    ],
+    [
+      331,
+      355
+    ]
+  ],
+  "contact_sheets_inspected": [
+    "contact-09.jpg",
+    "contact-10.jpg",
+    "contact-11.jpg",
+    "contact-12.jpg"
+  ],
+  "method": "All 115 page thumbnails visually inspected using view_image; five selected dense/table/formula/illustration/reference pages independently rendered from the final PDF at 1600-pixel height for closer visual inspection.",
+  "full_page_checks": [
+    {
+      "page": 250,
+      "kind": "November opening summary table",
+      "status": "pass",
+      "finding": "Header, month heading, paragraph and table rows have clear separation. All cells wrap within borders; bottom row and footer fit."
+    },
+    {
+      "page": 286,
+      "kind": "December continuing summary table",
+      "status": "pass",
+      "finding": "Dense mathematical formulas wrap within the third column; table lines and cell text do not overlap or clip."
+    },
+    {
+      "page": 320,
+      "kind": "Long P30 integers and polynomial proof",
+      "status": "pass",
+      "finding": "Long integer wraps onto the next line and remains within margins. Formula/proof/box and subsequent entry heading are separated. No cropped text or missing glyphs observed."
+    },
+    {
+      "page": 334,
+      "kind": "Calculated illustrations and captions",
+      "status": "pass",
+      "finding": "Plot titles, labels, legends and captions remain clear and separate. Chart boundaries and caption lines fit page margins."
+    },
+    {
+      "page": 354,
+      "kind": "Mathematical references",
+      "status": "pass",
+      "finding": "Bold reference names and URL lines fit within page margins, with consistent spacing and no collision with footer."
+    }
+  ],
+  "findings": [],
+  "blank_pages_observed": [],
+  "clipped_text_observed": [],
+  "table_overlap_observed": [],
+  "major_layout_defects_observed": [],
+  "pass_status": "pass",
+  "scope": "Visual QA of final rendering only; no PDF, builder or source was modified. Contact-sheet inspection establishes layout coverage, with closer inspection concentrated on selected dense pages rather than a full-size reading of every page."
+}

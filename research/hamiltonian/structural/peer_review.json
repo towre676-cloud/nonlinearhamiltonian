@@ -1,0 +1,17 @@
+{
+  "status": "passed",
+  "reviewer": "structural_families",
+  "target": "monomial/proofs.md,classification.py,verify.py",
+  "reviewed_claims": [
+    "highest odd correction restricts to finite strips",
+    "highest even-degree correction restricts to strips and affine line",
+    "integer line parametrization c=1+Bn,d=1+An with n>=0",
+    "nonvanishing S3 polynomials and integer-root termination",
+    "balanced m2,m3 closed forms",
+    "balanced S3/S5 elimination certificate and strict positivity for m>=4",
+    "infinite active quotient iff min(a,b)<=2 for nonconstant monomial degree>=3",
+    "ordinary powers obstruction and commuting quotient scope"
+  ],
+  "findings": [],
+  "details": "Checked exact derivative signs, special a=2/b=2 axis cases, rational-r ordinary power condition, balanced exceptional exponents11, and positive factor 2(m²−3m+6)+(m−4)n. Formal sparse coefficient comparison in target verifier establishes the displayed identity; analytical positivity proves exclusion, rather than relying on bounded grids. Scope is correctly fixed-H complete algorithm, not universal closed formula for all unequal exponents."
+}

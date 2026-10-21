@@ -1,0 +1,14 @@
+[
+  {
+    "file": "june_quartic.png",
+    "caption": "The roots are ±√2±i. Independent changes of the signs of √2 and i generate the four automorphisms of Q(√2,i)/Q. Thus the splitting group is V₄. The figure is calculated from the corrected factorization; it is not an inference from approximate root geometry alone."
+  },
+  {
+    "file": "september_traces.png",
+    "caption": "Exact point counts determine integer Frobenius traces for y²+y=x³−x at the listed good primes. The displayed warp is a ↦ a+0.0334 sign(a)|a|^0.673, evaluated numerically. A transformed real number is not automatically the trace of another elliptic curve; retaining a numerical range does not establish integrality or an Euler factor of arithmetic origin."
+  },
+  {
+    "file": "december_jordan.png",
+    "caption": "At ε=0 the matrix has one Jordan block of length two. For 0<ε≤1 its eigenvalues are ±√ε, the perturbation has 2-norm ε, and V=[[1,1],[√ε,−√ε]] has condition number ε^(−1/2). This exact family explains why numerical Jordan-block decisions need more than an arbitrary small threshold."
+  }
+]

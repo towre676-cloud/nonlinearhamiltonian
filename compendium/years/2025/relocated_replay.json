@@ -1,0 +1,10 @@
+{
+  "status": "passed",
+  "manifest_files_checked": 185,
+  "replay_directory": "/workspace/scratch/724ab8464145/year_2025/tmp/relocated_q1zpcnk9/2025_Mathematics",
+  "cwd": "/",
+  "command": "python3 -X utf8 -S verify_all.py",
+  "stdout": "{\"status\": \"passed\", \"developed_entries\": 351, \"verifier_programs\": 14, \"scoped_records\": 360, \"status_counts\": {\"passed\": 168, \"pass\": 192}, \"failures\": []}",
+  "stderr": "",
+  "scope": "Extracted source archive replay with site packages disabled, from a different working directory."
+}

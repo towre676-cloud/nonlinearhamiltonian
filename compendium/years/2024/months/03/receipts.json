@@ -1,0 +1,228 @@
+[
+  {
+    "month": "03",
+    "name": "March",
+    "query": "The user asks for a month-by-month, mathematics-only retrospective of their 2024 ChatGPT conversations, with rewritten questions and developed mathematical concepts. Retrieve all available mathematical content from conversations actually dated March 1–31, 2024 (2024-03-01 through 2024-03-31), covering the whole month. Include every distinct mathematical topic, exact source dates and titles if available, user-authored questions/fragments distinguished from assistant-only explanations, formulas, examples, follow-ups, and source identifiers. Do not substitute 2023 or 2025–2026 material. Do not guess subjects from the user's later projects. Include mathematical reasoning in applied discussions when present, but omit nonmathematical material. Mark unavailable original prompts and missing dates clearly. I need the actual historical evidence, not a generic mathematics syllabus or a summary of the current request.",
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "[convo search]\n- [PRIOR_ASSISTANT_OUTPUT] [c2] A@2024-03-30T02:17:12Z, -2y6m: Algebraic geometry comparison: Néron–Severi group \\(NS(X)\\) (divisors modulo algebraic equivalence) versus “Picard intransigence” \\(\\iota_P(X)\\) (claimed corank of \\(\\mathrm{Aut}(X)\\) action on \\(\\mathrm{Pic}(X)\\otimes\\mathbb R\\)); focus, interpretation, applications, interrelation.\n- [PRIOR_ASSISTANT_OUTPUT] [c1] A@2024-03-31T12:27:41Z, -2y6m: Numerical treatment of two purported equations: \\(\\int(\\delta\\mathcal L/\\delta x)dx+\\iota_q(X)\\int(\\delta\\mathcal L/\\delta y)dy=0\\); \\(\\partial_tS=-k_B\\iint(\\partial_t\\rho)\\log\\rho\\,dxdt+\\lambda W(\\partial_x\\rho)\\); Python/NumPy/SciPy example using `dblquad`, `minimize`, \\(iota_q=2,k_B=1,\\lambda=.5,\\rho=x^2+t\\).\n- [PRIOR_ASSISTANT_OUTPUT] [c4][c5] A@2024-03-31T18\nDot search unavailable.\n\n[gmail]\n[INSUFFICIENT] Gmail search failed before it could retrieve matching emails.\n\n[files]\n[INSUFFICIENT] No relevant file context found.\n\n<assistant_usage_note>\nWhen using the personal context above, treat relevant facts as binding context for this reply.\nBefore answering, silently identify: (1) relevant facts to preserve, and (2) hard constraints / exclusions to obey.\nIn the final answer:\nCarry forward relevant names, dates, amounts, option labels, locations, qualifiers, preferences, and task constraints from the context.\nTreat dislike / avoid / only / not / no / without / prefer / required statements as constraints.\nDo not add options, ingredients, products, places, methods, tools, backups, caveats, or \"if you're okay with...\" suggestions that conflict with any known constraint.\nDo not add new personalized recommendations unless they are supported by the context above or explicitly requested.\nIf a needed fact is already provided, use it directly instead of asking the user to confirm it.\nBefore sending, check the final answer for any missing relevant context or any suggestion that violates a known constraint.\nDo not quote or mention this assistant_usage_note in the final answer.\n</assistant_usage_note>"
+        }
+      ],
+      "structuredContent": {
+        "messages": [
+          {
+            "author_role": "tool",
+            "content": "[convo search]\n- [PRIOR_ASSISTANT_OUTPUT] [c2] A@2024-03-30T02:17:12Z, -2y6m: Algebraic geometry comparison: Néron–Severi group \\(NS(X)\\) (divisors modulo algebraic equivalence) versus “Picard intransigence” \\(\\iota_P(X)\\) (claimed corank of \\(\\mathrm{Aut}(X)\\) action on \\(\\mathrm{Pic}(X)\\otimes\\mathbb R\\)); focus, interpretation, applications, interrelation.\n- [PRIOR_ASSISTANT_OUTPUT] [c1] A@2024-03-31T12:27:41Z, -2y6m: Numerical treatment of two purported equations: \\(\\int(\\delta\\mathcal L/\\delta x)dx+\\iota_q(X)\\int(\\delta\\mathcal L/\\delta y)dy=0\\); \\(\\partial_tS=-k_B\\iint(\\partial_t\\rho)\\log\\rho\\,dxdt+\\lambda W(\\partial_x\\rho)\\); Python/NumPy/SciPy example using `dblquad`, `minimize`, \\(iota_q=2,k_B=1,\\lambda=.5,\\rho=x^2+t\\).\n- [PRIOR_ASSISTANT_OUTPUT] [c4][c5] A@2024-03-31T18\nDot search unavailable.\n\n[gmail]\n[INSUFFICIENT] Gmail search failed before it could retrieve matching emails.\n\n[files]\n[INSUFFICIENT] No relevant file context found."
+          }
+        ],
+        "error": null
+      },
+      "isError": false
+    },
+    "receipt_id": "root_receipts.json#0",
+    "source_file": "root_receipts.json"
+  },
+  {
+    "month": "03",
+    "range": [
+      1,
+      15
+    ],
+    "query": "Recover the mathematics in the user's historical ChatGPT discussions dated March 1–15, 2024 only (2024-03-01 through 2024-03-15). This is one half-month of a comprehensive month-by-month mathematical retrospective. Give all distinct mathematical questions/concepts/formulas with their actual dates, brief source excerpts and user-versus-assistant attribution. Include follow-up passages that the broad whole-month search might miss. Do not return a generic topic list, later memories, or 2023 records. If no matching history is accessible say so. Original user wording is valuable but assistant-only mathematical evidence is also useful if labeled.",
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "[convo search]\nNo conversations matched the query.\nDot search unavailable.\n\n[gmail]\n[INSUFFICIENT] Gmail search failed before it could retrieve matching emails.\n\n[files]\n[INSUFFICIENT] No relevant file context found.\n\n<assistant_usage_note>\nWhen using the personal context above, treat relevant facts as binding context for this reply.\nBefore answering, silently identify: (1) relevant facts to preserve, and (2) hard constraints / exclusions to obey.\nIn the final answer:\nCarry forward relevant names, dates, amounts, option labels, locations, qualifiers, preferences, and task constraints from the context.\nTreat dislike / avoid / only / not / no / without / prefer / required statements as constraints.\nDo not add options, ingredients, products, places, methods, tools, backups, caveats, or \"if you're okay with...\" suggestions that conflict with any known constraint.\nDo not add new personalized recommendations unless they are supported by the context above or explicitly requested.\nIf a needed fact is already provided, use it directly instead of asking the user to confirm it.\nBefore sending, check the final answer for any missing relevant context or any suggestion that violates a known constraint.\nDo not quote or mention this assistant_usage_note in the final answer.\n</assistant_usage_note>"
+        }
+      ],
+      "structuredContent": {
+        "messages": [
+          {
+            "author_role": "tool",
+            "content": "[convo search]\nNo conversations matched the query.\nDot search unavailable.\n\n[gmail]\n[INSUFFICIENT] Gmail search failed before it could retrieve matching emails.\n\n[files]\n[INSUFFICIENT] No relevant file context found."
+          }
+        ],
+        "error": null
+      },
+      "isError": false
+    },
+    "receipt_id": "root_followups.json#0",
+    "source_file": "root_followups.json"
+  },
+  {
+    "month": "03",
+    "range": [
+      16,
+      31
+    ],
+    "query": "Recover the mathematics in the user's historical ChatGPT discussions dated March 16–31, 2024 only (2024-03-16 through 2024-03-31). This is one half-month of a comprehensive month-by-month mathematical retrospective. Give all distinct mathematical questions/concepts/formulas with their actual dates, brief source excerpts and user-versus-assistant attribution. Include follow-up passages that the broad whole-month search might miss. Do not return a generic topic list, later memories, or 2023 records. If no matching history is accessible say so. Original user wording is valuable but assistant-only mathematical evidence is also useful if labeled.",
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "[convo search]\n- [PRIOR_ASSISTANT_OUTPUT] [c5] A@2024-03-31T18:26:05Z, -2y 7m: Algebraic-geometry framework: Néron–Severi/Picard-related invariants; five equations covering variational field dynamics, entropy, quantum evolution, consciousness, and unified complexity.\n- [PRIOR_ASSISTANT_OUTPUT] [c2][c4] A@2024-03-31T12:27:41Z, -2y 7m: Numerical toy system: \\(\\int(\\delta\\mathcal L/\\delta x)dx+\\iota_q(X)\\int(\\delta\\mathcal L/\\delta y)dy=0\\); \\(\\partial S/\\partial t=-k_B\\iint(\\partial_t\\rho)\\log\\rho\\,dxdt+\\lambda W(\\partial_x\\rho)\\); SciPy/NumPy optimization example.\n- [PRIOR_ASSISTANT_OUTPUT] [c7] A@2024-03-31T02:28:25Z, -2y 7m: Formula list included Laplace transform, Legendre/Bessel formulas, Helmholtz equation, Schwarzian derivative, Euclidean algorithm, fixed-point/hairy-ball theorems, Cauchy formula, Maxwell–Boltzmann distribution, Hamilton equations, Hamilton–Jacobi, Riccati, Stokes drag, and\nDot search unavailable.\n\n[gmail]\n[INSUFFICIENT] Gmail search failed before it could retrieve matching emails.\n\n[files]\n[INSUFFICIENT] No relevant file context found.\n\n<assistant_usage_note>\nWhen using the personal context above, treat relevant facts as binding context for this reply.\nBefore answering, silently identify: (1) relevant facts to preserve, and (2) hard constraints / exclusions to obey.\nIn the final answer:\nCarry forward relevant names, dates, amounts, option labels, locations, qualifiers, preferences, and task constraints from the context.\nTreat dislike / avoid / only / not / no / without / prefer / required statements as constraints.\nDo not add options, ingredients, products, places, methods, tools, backups, caveats, or \"if you're okay with...\" suggestions that conflict with any known constraint.\nDo not add new personalized recommendations unless they are supported by the context above or explicitly requested.\nIf a needed fact is already provided, use it directly instead of asking the user to confirm it.\nBefore sending, check the final answer for any missing relevant context or any suggestion that violates a known constraint.\nDo not quote or mention this assistant_usage_note in the final answer.\n</assistant_usage_note>"
+        }
+      ],
+      "structuredContent": {
+        "messages": [
+          {
+            "author_role": "tool",
+            "content": "[convo search]\n- [PRIOR_ASSISTANT_OUTPUT] [c5] A@2024-03-31T18:26:05Z, -2y 7m: Algebraic-geometry framework: Néron–Severi/Picard-related invariants; five equations covering variational field dynamics, entropy, quantum evolution, consciousness, and unified complexity.\n- [PRIOR_ASSISTANT_OUTPUT] [c2][c4] A@2024-03-31T12:27:41Z, -2y 7m: Numerical toy system: \\(\\int(\\delta\\mathcal L/\\delta x)dx+\\iota_q(X)\\int(\\delta\\mathcal L/\\delta y)dy=0\\); \\(\\partial S/\\partial t=-k_B\\iint(\\partial_t\\rho)\\log\\rho\\,dxdt+\\lambda W(\\partial_x\\rho)\\); SciPy/NumPy optimization example.\n- [PRIOR_ASSISTANT_OUTPUT] [c7] A@2024-03-31T02:28:25Z, -2y 7m: Formula list included Laplace transform, Legendre/Bessel formulas, Helmholtz equation, Schwarzian derivative, Euclidean algorithm, fixed-point/hairy-ball theorems, Cauchy formula, Maxwell–Boltzmann distribution, Hamilton equations, Hamilton–Jacobi, Riccati, Stokes drag, and\nDot search unavailable.\n\n[gmail]\n[INSUFFICIENT] Gmail search failed before it could retrieve matching emails.\n\n[files]\n[INSUFFICIENT] No relevant file context found."
+          }
+        ],
+        "error": null
+      },
+      "isError": false
+    },
+    "receipt_id": "root_followups.json#1",
+    "source_file": "root_followups.json"
+  },
+  {
+    "month": "03",
+    "query": "Recover the March 31, 2024 conversation at approximately 02:28:25Z containing a mathematical formula list: Laplace transform, Legendre/Bessel formulas, Helmholtz, Schwarzian derivative, Euclidean algorithm, fixed-point/hairy-ball theorems, Cauchy formula, Maxwell–Boltzmann distribution, Hamilton–Jacobi, Riccati and Stokes drag. Retrieve the complete actual formula/concept list and original prompts if available, with dates and user/assistant attribution. This is source recovery for a 2024 mathematics retrospective; do not generate a new formula list.",
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "[convo search]\n- [PRIOR_ASSISTANT_OUTPUT] [c0] A@2024-03-31T02:28:25Z, -2y 7m: Items 81–100 of 100: Legendre polynomials; Bessel functions; Helmholtz equation; Schwarzian derivative; Euclidean algorithm; Brouwer fixed-point theorem; Hairy Ball theorem; Cauchy integral formula; Maxwell–Boltzmann distribution; Catenary equation; Navier’s thin-plate equation; Rayleigh quotient; Laplace tidal equations; Pell’s equation; Hamilton’s equations; Routh–Hurwitz criterion; chirp signal; Hamilton–Jacobi equation; Riccati equation; Stokes’ drag law. Exact formulas/concepts are present in [c0]; assistant says this completes the 100-equation list.\n\n[gmail]\n[INSUFFICIENT] Gmail search failed before it could retrieve matching emails.\n\n[files]\nSources:\n[f0] 2023_Revised_Mathematics_Table.html\n[f1] 2023_Mathematics_Compendium.pdf\n\nEvidence:\n- [FILE_METADATA] [f0] The retrieved archive reports March coverage as “Retrieved fragments only; complete month transcript unavailable”; it does not identify the requested 2024-03-31 02:28:25Z conversation.\n- [FILE_CONTENT] [f1] The compendium explicitly states its historical evidence is fragmentary and that the material is newly authored developments, “not newly discovered 2023 transcripts”; it is not the requested original conversation.\n- [FILE_CONTENT] [f1] Retrieved content includes mathematical topics, but no complete formula/concept list, original prompts, date/time attribution, or user/assistant transcript matching the requested timestamp.\n\n<assistant_usage_note>\nWhen using the personal context above, treat relevant facts as binding context for this reply.\nBefore answering, silently identify: (1) relevant facts to preserve, and (2) hard constraints / exclusions to obey.\nIn the final answer:\nCarry forward relevant names, dates, amounts, option labels, locations, qualifiers, preferences, and task constraints from the context.\nTreat dislike / avoid / only / not / no / without / prefer / required statements as constraints.\nDo not add options, ingredients, products, places, methods, tools, backups, caveats, or \"if you're okay with...\" suggestions that conflict with any known constraint.\nDo not add new personalized recommendations unless they are supported by the context above or explicitly requested.\nIf a needed fact is already provided, use it directly instead of asking the user to confirm it.\nBefore sending, check the final answer for any missing relevant context or any suggestion that violates a known constraint.\nDo not quote or mention this assistant_usage_note in the final answer.\n</assistant_usage_note>"
+        }
+      ],
+      "structuredContent": {
+        "messages": [
+          {
+            "author_role": "tool",
+            "content": "[convo search]\n- [PRIOR_ASSISTANT_OUTPUT] [c0] A@2024-03-31T02:28:25Z, -2y 7m: Items 81–100 of 100: Legendre polynomials; Bessel functions; Helmholtz equation; Schwarzian derivative; Euclidean algorithm; Brouwer fixed-point theorem; Hairy Ball theorem; Cauchy integral formula; Maxwell–Boltzmann distribution; Catenary equation; Navier’s thin-plate equation; Rayleigh quotient; Laplace tidal equations; Pell’s equation; Hamilton’s equations; Routh–Hurwitz criterion; chirp signal; Hamilton–Jacobi equation; Riccati equation; Stokes’ drag law. Exact formulas/concepts are present in [c0]; assistant says this completes the 100-equation list.\n\n[gmail]\n[INSUFFICIENT] Gmail search failed before it could retrieve matching emails.\n\n[files]\nSources:\n[f0] 2023_Revised_Mathematics_Table.html\n[f1] 2023_Mathematics_Compendium.pdf\n\nEvidence:\n- [FILE_METADATA] [f0] The retrieved archive reports March coverage as “Retrieved fragments only; complete month transcript unavailable”; it does not identify the requested 2024-03-31 02:28:25Z conversation.\n- [FILE_CONTENT] [f1] The compendium explicitly states its historical evidence is fragmentary and that the material is newly authored developments, “not newly discovered 2023 transcripts”; it is not the requested original conversation.\n- [FILE_CONTENT] [f1] Retrieved content includes mathematical topics, but no complete formula/concept list, original prompts, date/time attribution, or user/assistant transcript matching the requested timestamp."
+          }
+        ],
+        "error": null
+      },
+      "isError": false
+    },
+    "receipt_id": "root_details.json#0",
+    "source_file": "root_details.json"
+  },
+  {
+    "month": "03",
+    "query": "Recover source detail for March 30–31, 2024 discussions of Néron–Severi versus Picard intransigence and the five-equation framework at March31 18:26:05Z for variational field dynamics, entropy, quantum evolution, consciousness and unified complexity. Include exact historical formulas, surrounding definitions and user-versus-assistant attribution. Related Geometric Musical Language/Fisher information/Conscious Operator Function material only if actually present in those dated chats. We need source evidence, not a new model or generic explanation.",
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "[convo search]\n- [PRIOR_ASSISTANT_OUTPUT] [c0] A@2024-03-30T02:17:12Z, -2y 7mo: Compared Néron–Severi \\(NS(X)\\) (divisors modulo algebraic equivalence) with “Picard intransigence” \\(\\iota_P(X)\\), defined there as corank of \\(\\mathrm{Aut}(X)\\) acting on \\(\\mathrm{Pic}(X)\\otimes\\mathbb R\\); described focus, geometric interpretation, applications, and interrelation.\n- [PRIOR_ASSISTANT_OUTPUT] [c1] A@2024-03-31T12:27:41Z, -2y 7mo: Reproduced two equations: \\(\\int(\\delta\\mathcal L/\\delta x)dx+\\iota_q(X)\\int(\\delta\\mathcal L/\\delta y)dy=0\\); \\(\\partial S/\\partial t=-k_B\\iint(\\partial_t\\rho)\\log\\rho\\,dx\\,dt+\\lambda W(\\partial_x\\rho)\\). No five-equation framework, March31 18:26:05Z item, or Geometric Musical Language/Fisher/Conscious Operator material appears in retrieved context.\n\n[gmail]\n[INSUFFICIENT] Gmail search failed before it could retrieve matching emails.\n\n[files]\n[INSUFFICIENT] No relevant file context found.\n\n<assistant_usage_note>\nWhen using the personal context above, treat relevant facts as binding context for this reply.\nBefore answering, silently identify: (1) relevant facts to preserve, and (2) hard constraints / exclusions to obey.\nIn the final answer:\nCarry forward relevant names, dates, amounts, option labels, locations, qualifiers, preferences, and task constraints from the context.\nTreat dislike / avoid / only / not / no / without / prefer / required statements as constraints.\nDo not add options, ingredients, products, places, methods, tools, backups, caveats, or \"if you're okay with...\" suggestions that conflict with any known constraint.\nDo not add new personalized recommendations unless they are supported by the context above or explicitly requested.\nIf a needed fact is already provided, use it directly instead of asking the user to confirm it.\nBefore sending, check the final answer for any missing relevant context or any suggestion that violates a known constraint.\nDo not quote or mention this assistant_usage_note in the final answer.\n</assistant_usage_note>"
+        }
+      ],
+      "structuredContent": {
+        "messages": [
+          {
+            "author_role": "tool",
+            "content": "[convo search]\n- [PRIOR_ASSISTANT_OUTPUT] [c0] A@2024-03-30T02:17:12Z, -2y 7mo: Compared Néron–Severi \\(NS(X)\\) (divisors modulo algebraic equivalence) with “Picard intransigence” \\(\\iota_P(X)\\), defined there as corank of \\(\\mathrm{Aut}(X)\\) acting on \\(\\mathrm{Pic}(X)\\otimes\\mathbb R\\); described focus, geometric interpretation, applications, and interrelation.\n- [PRIOR_ASSISTANT_OUTPUT] [c1] A@2024-03-31T12:27:41Z, -2y 7mo: Reproduced two equations: \\(\\int(\\delta\\mathcal L/\\delta x)dx+\\iota_q(X)\\int(\\delta\\mathcal L/\\delta y)dy=0\\); \\(\\partial S/\\partial t=-k_B\\iint(\\partial_t\\rho)\\log\\rho\\,dx\\,dt+\\lambda W(\\partial_x\\rho)\\). No five-equation framework, March31 18:26:05Z item, or Geometric Musical Language/Fisher/Conscious Operator material appears in retrieved context.\n\n[gmail]\n[INSUFFICIENT] Gmail search failed before it could retrieve matching emails.\n\n[files]\n[INSUFFICIENT] No relevant file context found."
+          }
+        ],
+        "error": null
+      },
+      "isError": false
+    },
+    "receipt_id": "root_details.json#1",
+    "source_file": "root_details.json"
+  },
+  {
+    "month": "03",
+    "query": "Recover source evidence for the March31, 2024 historical 100-equation list, specifically numbered entries1–20. The known assistant passage at2024-03-31T02:28:25Z says it completes entries81–100, so earlier parts may be in the same dated thread. Return only the actual retrieved numbered names/formulas with attribution and timestamps, not a newly generated list. If entries1–20 cannot be found explicitly say unavailable.",
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "[convo search]\n- [PRIOR_ASSISTANT_OUTPUT] [c2] A@2024-03-31T02:28:25Z, -2y 7m: Retrieved passage explicitly contains entries 81–100, beginning “LaPlace Transform” (unnumbered in excerpt), then 81 Legendre Polynomials through 100 Stokes’ Law for Drag; entries 1–20 are unavailable in retrieved context.\n\n[gmail]\n[INSUFFICIENT] Gmail search failed before it could retrieve matching emails.\n\n[files]\n[INSUFFICIENT] No relevant file context found.\n\n<assistant_usage_note>\nWhen using the personal context above, treat relevant facts as binding context for this reply.\nBefore answering, silently identify: (1) relevant facts to preserve, and (2) hard constraints / exclusions to obey.\nIn the final answer:\nCarry forward relevant names, dates, amounts, option labels, locations, qualifiers, preferences, and task constraints from the context.\nTreat dislike / avoid / only / not / no / without / prefer / required statements as constraints.\nDo not add options, ingredients, products, places, methods, tools, backups, caveats, or \"if you're okay with...\" suggestions that conflict with any known constraint.\nDo not add new personalized recommendations unless they are supported by the context above or explicitly requested.\nIf a needed fact is already provided, use it directly instead of asking the user to confirm it.\nBefore sending, check the final answer for any missing relevant context or any suggestion that violates a known constraint.\nDo not quote or mention this assistant_usage_note in the final answer.\n</assistant_usage_note>"
+        }
+      ],
+      "structuredContent": {
+        "messages": [
+          {
+            "author_role": "tool",
+            "content": "[convo search]\n- [PRIOR_ASSISTANT_OUTPUT] [c2] A@2024-03-31T02:28:25Z, -2y 7m: Retrieved passage explicitly contains entries 81–100, beginning “LaPlace Transform” (unnumbered in excerpt), then 81 Legendre Polynomials through 100 Stokes’ Law for Drag; entries 1–20 are unavailable in retrieved context.\n\n[gmail]\n[INSUFFICIENT] Gmail search failed before it could retrieve matching emails.\n\n[files]\n[INSUFFICIENT] No relevant file context found."
+          }
+        ],
+        "error": null
+      },
+      "isError": false
+    },
+    "receipt_id": "root_specifics.json#0",
+    "source_file": "root_specifics.json"
+  },
+  {
+    "month": "03",
+    "query": "Recover source evidence for the March31, 2024 historical 100-equation list, specifically numbered entries21–40. The known assistant passage at2024-03-31T02:28:25Z says it completes entries81–100. Search preceding passages in that dated conversation; return actual retrieved names/formulas, timestamps and attribution. Do not regenerate a generic list or fill missing numbers.",
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "[convo search]\nNo conversations matched the query.\n\n[gmail]\n[INSUFFICIENT] Gmail search failed before it could retrieve matching emails.\n\n[files]\n[INSUFFICIENT] No relevant file context found.\n\n<assistant_usage_note>\nWhen using the personal context above, treat relevant facts as binding context for this reply.\nBefore answering, silently identify: (1) relevant facts to preserve, and (2) hard constraints / exclusions to obey.\nIn the final answer:\nCarry forward relevant names, dates, amounts, option labels, locations, qualifiers, preferences, and task constraints from the context.\nTreat dislike / avoid / only / not / no / without / prefer / required statements as constraints.\nDo not add options, ingredients, products, places, methods, tools, backups, caveats, or \"if you're okay with...\" suggestions that conflict with any known constraint.\nDo not add new personalized recommendations unless they are supported by the context above or explicitly requested.\nIf a needed fact is already provided, use it directly instead of asking the user to confirm it.\nBefore sending, check the final answer for any missing relevant context or any suggestion that violates a known constraint.\nDo not quote or mention this assistant_usage_note in the final answer.\n</assistant_usage_note>"
+        }
+      ],
+      "structuredContent": {
+        "messages": [
+          {
+            "author_role": "tool",
+            "content": "[convo search]\nNo conversations matched the query.\n\n[gmail]\n[INSUFFICIENT] Gmail search failed before it could retrieve matching emails.\n\n[files]\n[INSUFFICIENT] No relevant file context found."
+          }
+        ],
+        "error": null
+      },
+      "isError": false
+    },
+    "receipt_id": "root_specifics.json#1",
+    "source_file": "root_specifics.json"
+  },
+  {
+    "month": "03",
+    "query": "Recover source evidence for the March31, 2024 historical 100-equation list, specifically numbered entries41–60. The known assistant passage at2024-03-31T02:28:25Z says it completes entries81–100. Search preceding passages in that dated conversation; return actual retrieved names/formulas, timestamps and attribution. Do not regenerate a generic list or fill missing numbers.",
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "[convo search]\n[USER_CONSTRAINT] [c3] U@2024-03-31T02:28:25Z, -2y 7mo: retrieve preceding March 31 passages for entries 41–60; do not regenerate or fill missing numbers\n\n[gmail]\n[INSUFFICIENT] Gmail search failed before it could retrieve matching emails.\n\n[files]\n[INSUFFICIENT] No relevant file context found.\n\n<assistant_usage_note>\nWhen using the personal context above, treat relevant facts as binding context for this reply.\nBefore answering, silently identify: (1) relevant facts to preserve, and (2) hard constraints / exclusions to obey.\nIn the final answer:\nCarry forward relevant names, dates, amounts, option labels, locations, qualifiers, preferences, and task constraints from the context.\nTreat dislike / avoid / only / not / no / without / prefer / required statements as constraints.\nDo not add options, ingredients, products, places, methods, tools, backups, caveats, or \"if you're okay with...\" suggestions that conflict with any known constraint.\nDo not add new personalized recommendations unless they are supported by the context above or explicitly requested.\nIf a needed fact is already provided, use it directly instead of asking the user to confirm it.\nBefore sending, check the final answer for any missing relevant context or any suggestion that violates a known constraint.\nDo not quote or mention this assistant_usage_note in the final answer.\n</assistant_usage_note>"
+        }
+      ],
+      "structuredContent": {
+        "messages": [
+          {
+            "author_role": "tool",
+            "content": "[convo search]\n[USER_CONSTRAINT] [c3] U@2024-03-31T02:28:25Z, -2y 7mo: retrieve preceding March 31 passages for entries 41–60; do not regenerate or fill missing numbers\n\n[gmail]\n[INSUFFICIENT] Gmail search failed before it could retrieve matching emails.\n\n[files]\n[INSUFFICIENT] No relevant file context found."
+          }
+        ],
+        "error": null
+      },
+      "isError": false
+    },
+    "receipt_id": "root_specifics.json#2",
+    "source_file": "root_specifics.json",
+    "excluded_as_historical_evidence": "Response echoes the present source-recovery request as a dated user constraint. It is not an independently recovered historical user prompt."
+  },
+  {
+    "month": "03",
+    "query": "Recover source evidence for the March31, 2024 historical 100-equation list, specifically numbered entries61–80. The known assistant passage at2024-03-31T02:28:25Z says it completes entries81–100. Search preceding passages in that dated conversation; return actual retrieved names/formulas, timestamps and attribution. Do not regenerate a generic list or fill missing numbers.",
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "[convo search]\n- [PRIOR_ASSISTANT_OUTPUT] [c3] A@2024-03-31T02:28:25Z, -2y6m: retrieved passage begins with an unnumbered “LaPlace Transform”: \\(F(s)=\\int_0^\\infty e^{-st}f(t)\\,dt\\), then lists 81–100 (Legendre Polynomials through Stokes’ Law); no entries 61–80 are present.\n\n[gmail]\n[INSUFFICIENT] Gmail search failed before it could retrieve matching emails.\n\n[files]\n[INSUFFICIENT] No relevant file context found.\n\n<assistant_usage_note>\nWhen using the personal context above, treat relevant facts as binding context for this reply.\nBefore answering, silently identify: (1) relevant facts to preserve, and (2) hard constraints / exclusions to obey.\nIn the final answer:\nCarry forward relevant names, dates, amounts, option labels, locations, qualifiers, preferences, and task constraints from the context.\nTreat dislike / avoid / only / not / no / without / prefer / required statements as constraints.\nDo not add options, ingredients, products, places, methods, tools, backups, caveats, or \"if you're okay with...\" suggestions that conflict with any known constraint.\nDo not add new personalized recommendations unless they are supported by the context above or explicitly requested.\nIf a needed fact is already provided, use it directly instead of asking the user to confirm it.\nBefore sending, check the final answer for any missing relevant context or any suggestion that violates a known constraint.\nDo not quote or mention this assistant_usage_note in the final answer.\n</assistant_usage_note>"
+        }
+      ],
+      "structuredContent": {
+        "messages": [
+          {
+            "author_role": "tool",
+            "content": "[convo search]\n- [PRIOR_ASSISTANT_OUTPUT] [c3] A@2024-03-31T02:28:25Z, -2y6m: retrieved passage begins with an unnumbered “LaPlace Transform”: \\(F(s)=\\int_0^\\infty e^{-st}f(t)\\,dt\\), then lists 81–100 (Legendre Polynomials through Stokes’ Law); no entries 61–80 are present.\n\n[gmail]\n[INSUFFICIENT] Gmail search failed before it could retrieve matching emails.\n\n[files]\n[INSUFFICIENT] No relevant file context found."
+          }
+        ],
+        "error": null
+      },
+      "isError": false
+    },
+    "receipt_id": "root_specifics.json#3",
+    "source_file": "root_specifics.json"
+  }
+]

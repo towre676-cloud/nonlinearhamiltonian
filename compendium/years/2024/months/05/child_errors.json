@@ -1,0 +1,34 @@
+[
+  {
+    "receipt_id": "Y24-05-R01",
+    "query": "The user asks to recover and fully develop ALL of their 2024 mathematics, month by month. Search only May 1, 2024 through May 31, 2024, inclusive, for mathematical conversations. Recover as many distinct exchanges as accessible across this month, with exact dates, source excerpts, literal USER questions where available, mathematical objects/formulas, and speaker attribution. Keep pure mathematics and mathematically substantive physics/computation only; exclude nonmathematical advice. Do not infer likely topics from later work, other months, user profile, or retrospective files. Do not present an assistant statement as user-authored. Say which periods or prompts were not recovered rather than claiming no mathematics existed.",
+    "result": {
+      "status": "fulfilled",
+      "value": {
+        "content": [
+          {
+            "type": "text",
+            "text": "Personal context is unavailable for this conversation."
+          }
+        ],
+        "isError": true
+      }
+    }
+  },
+  {
+    "receipt_id": "Y24-05-R02",
+    "query": "Recover the user's mathematical conversation history strictly between 2024-05-01 and 2024-05-31 inclusive. This is a retry because the preceding May 2024 request returned 'Personal context is unavailable for this conversation.' Search the actual May 2024 conversations, return dated source excerpts and speaker labels, and distinguish direct user questions from assistant text. Do not fill the gap with 2023, later months, profile assumptions or undated retrospective files. If retrieval is still unavailable, report that technical limitation explicitly.",
+    "result": {
+      "status": "fulfilled",
+      "value": {
+        "content": [
+          {
+            "type": "text",
+            "text": "Personal context is unavailable for this conversation."
+          }
+        ],
+        "isError": true
+      }
+    }
+  }
+]

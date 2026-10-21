@@ -1,0 +1,19 @@
+{
+  "status": "passed",
+  "reviewer": "monomial classification agent",
+  "scope": [
+    "structural S04 quadratic perturbation collapse proof",
+    "quartic apolar adjoint, dimension/Hilbert classification, Hessian partner and power-obstruction proof",
+    "structural qF dynamic core and affine-covariance distinctions"
+  ],
+  "checks": [
+    {"claim":"E(qp^3+q^2)=E(qp^3)","result":"Confirmed from vanishing all third and higher derivatives of q^2."},
+    {"claim":"Perturbation collapse E1/E2","result":"Recomputed D=(p^3+2q)partial_p−3qp^2partial_q. Higher q^(3r+2)p^r resonances leave E at distinct q-degree residues. Remaining q² coefficient forces B'=3up²+b1; second closure gives E2=span{1,p,p²,Y,pY,H}."},
+    {"claim":"Perturbation invariant core","result":"Recomputed Dp=2Y,DY=3p^5/2,Dp²=4pY,D(pY)=2H+2p^6. Independent p5,p6 moduloE2 eliminateY,pY; subsequent invariance eliminatesp,p². Core is span{1,H}."},
+    {"claim":"Quartic apolar adjoint normalization","result":"Checked signs/scalar on H=q4,G=p3,F=p: both sides equal144. Monomial coefficient proof and centralizer factor argument are consistent."},
+    {"claim":"Quartic Hessian classification","result":"Root valuation2m−2 and coefficient−3m(4−m) correctly separate primitive quartics from squares. Checked Δ(Q²)=12det(D²Q)Q² on Q=qp and Q=q²+p²."},
+    {"claim":"Quartic power obstruction","result":"Formula agrees with independent monomial factor for H=qp³ and r=2: T3(H,H²)=216p6. Centralizer degree arguments and exactness dimensions check."}
+  ],
+  "issues": [],
+  "own_revision_note": "Independent reviewers caught and corrected an even-degree affine-line simplification sign in the monomial algorithm. Final corrected line is b(d+1)=a(c+1), parameter c=(b/g)n−1,d=(a/g)n−1,n>=1. Final verifier132checks pass and all55 complete tables regenerated; finite bases unchanged."
+}

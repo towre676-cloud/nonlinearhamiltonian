@@ -1,0 +1,40 @@
+{
+  "reviewed": [
+    "M001",
+    "M002",
+    "M003",
+    "M004",
+    "M005",
+    "M006",
+    "M007",
+    "M008",
+    "M009",
+    "M010",
+    "M011",
+    "M012",
+    "M013",
+    "M014",
+    "M015",
+    "M016",
+    "M017",
+    "M018"
+  ],
+  "verifier": "passed 17 checks",
+  "blocking_issues": 0,
+  "issues": [
+    {
+      "severity": "minor",
+      "id": "M017",
+      "description": "The continuous-time proof uses the matrix exponential and an integral, while this entry does not explicitly state its scalar field or class of inputs. M016 explicitly allowed an arbitrary field, so a reader could incorrectly carry that scope forward.",
+      "fix": "State V and Y are finite-dimensional real or complex vector spaces and inputs are piecewise continuous (or otherwise locally integrable); finite-field realizations should be formulated in discrete time instead."
+    }
+  ],
+  "assessments": {
+    "padic": "Fixed-point integrality, unit/nonunit distinction and Hensel digits are correct.",
+    "octonions": "Complete homogeneous-coefficient polarization is sufficient; 36 a-values and 64 basis b,c pairs determine the full Moufang polynomial. The sharp bound and equality criterion are correct.",
+    "tau": "KdV tau convention, interaction coefficient, phase-shift signs and mass are consistent. This is explicitly identified as a KdV family, not general KP.",
+    "gradients": "Scalar saturation and residual singular-value bounds follow with the stated global derivative bound.",
+    "recurrences": "Observable-quotient minimal polynomial theorem and scalar-output equality are correct; multi-output counterexample is correctly retained.",
+    "koopman": "Degree-growth no-go theorem is valid on an interval and correctly excludes finite-orbit restrictions."
+  }
+}

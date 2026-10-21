@@ -1,0 +1,54 @@
+{
+  "scope": "Finite examples and numerical identities only; no historical transcript completeness or general theorem proof is inferred. Catalog examples have their own verifier.",
+  "checks": [
+    {
+      "id": "Y24-03-001",
+      "name": "divisor example",
+      "status": "passed",
+      "detail": "12 independent bidegree(2,3) monomials and self-intersection12; this does not prove the general Néron–Severi theorem."
+    },
+    {
+      "id": "Y24-03-002",
+      "name": "finite action projection",
+      "status": "passed",
+      "detail": "Averaging projection verified on a121-point lattice test; rank-one image/kernel identified algebraically in text."
+    },
+    {
+      "id": "Y24-03-003",
+      "name": "variation counterexample",
+      "status": "passed",
+      "detail": "Cancelling directional derivative has nonzero full gradient; oscillator test is positive atT1 and negative atT4."
+    },
+    {
+      "id": "Y24-03-004",
+      "name": "normalized entropy",
+      "status": "passed",
+      "detail": {
+        "S1": -0.024196604838945923,
+        "rate1": 0.03595137745191379,
+        "independent_method": "composite Simpson plus central time difference",
+        "derivative_tolerance": 1e-09
+      }
+    },
+    {
+      "id": "Y24-03-005",
+      "name": "quadrature and residual",
+      "status": "passed",
+      "detail": "Tensor Simpson is exactly5/6; nonzero residual minimum certified by nonnegative factorization."
+    },
+    {
+      "id": "Y24-03-006",
+      "name": "unitary state versus projection",
+      "status": "passed",
+      "detail": "Full norm conservation and projected Volterra equation independently quadrature-checked at four times."
+    },
+    {
+      "id": "Y24-03-007",
+      "name": "score invariance and collision",
+      "status": "passed",
+      "detail": "Exact unit transformation restores ranking; explicit nonzero score-kernel direction verified."
+    }
+  ],
+  "passed": 7,
+  "failed": 0
+}

@@ -1,0 +1,21 @@
+{
+  "scope": "Child-context service errors only; these do not indicate historical absence.",
+  "receipts": [
+    {
+      "receipt_id": "Y24-09-R001",
+      "query": "The user asks for a complete mathematics-only reconstruction and development of their 2024 ChatGPT conversations, month by month. Search only conversations with dates from 2024-09-01 through 2024-09-30 inclusive (September 2024). Recover as many distinct mathematical exchanges as accessible: exact dates, conversation titles if available, direct user excerpts separately from assistant passages, mathematical formulas, named objects, questions and conclusions. Do not guess likely topics from recent projects or other years. Mathematical parts of physics or learning theory count, but omit nonmathematical material. Mark attribution explicitly and report retrieval gaps; absence from results is not proof that no mathematics existed that month.",
+      "result": {
+        "status": "fulfilled",
+        "value": {
+          "content": [
+            {
+              "type": "text",
+              "text": "Personal context is unavailable for this conversation."
+            }
+          ],
+          "isError": true
+        }
+      }
+    }
+  ]
+}

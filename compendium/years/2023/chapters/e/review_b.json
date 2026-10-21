@@ -1,0 +1,36 @@
+{
+  "reviewer": "analysis_geometry_and_computation",
+  "scope": "M019–M037 and root synthesis S004",
+  "issues": [],
+  "verifier": "Chapter b verify.py passed all 19 checks independently during this review.",
+  "reviewed": [
+    "Rook/Shrikhande adjacency square, clique certificate, full-versus-diagonal heat observation distinction",
+    "All C4 modularity affine score families and boundary multiplicities",
+    "Reflecting birth–death eigenvector recurrence and both endpoint equations",
+    "q-Hermite Jacobi norm bound, orthogonality induction and low moments",
+    "Γ(3) trace congruence, neatness, effective index and cusp/genus conventions",
+    "General type versus log-general type calculations for X(3), X(6), X(7)",
+    "Degree ≥2g+1 embedding proof via length-two subschemes and Serre duality",
+    "Hypersurface adjunction and quintic Chern coefficients",
+    "Formal inverse recursion and characteristic-independent Newton doubling",
+    "A2 denominator signs and Jacobi triple-product normalization by Durfee squares",
+    "Young-tableau corner recursion and hook example",
+    "S4 KL right-descent recurrence, Bruhat prefix criterion, 1+q examples and degree checks",
+    "BCH GF(16) convention, generator, exhaustive weight enumerator and radius-two disjointness",
+    "S004 Duhamel forward bound, SPD logarithm resolvent bound and optimal bound-time 1/Λ"
+  ],
+  "conclusion": "No mathematical blocker found. General existence theorems are accurately separated from the proved finite or curve examples. A finite computation is not promoted to general completeness.",
+  "supplement_S011": {
+    "issues": [],
+    "status": "approved",
+    "reviewed": [
+      "All strongly-regular triple-count formulas and the exhaustive eleven-class four-vertex distribution",
+      "The polynomial expression for K_t in I,A,J and all diagonal/edge/nonedge normalizations",
+      "Sharp known-time margin 1/16 and strict bounded-noise threshold epsilon<1/32",
+      "Known-mistiming loss expression and its worst endpoint",
+      "Unobserved timing nuisance: monotonic Shrikhande value, concave rook value, endpoint comparison, interval-separation bound",
+      "Exact delta=log(3/2)/4 endpoints 13/256,1/36, margin53/2304 and error threshold53/4608"
+    ],
+    "verifier": "supplement_verify.py passes; analytic extrema and conditional scope independently checked."
+  }
+}

@@ -1,0 +1,1521 @@
+[
+  {
+    "id": "Y24-10-001",
+    "title": "A formal Lakeland operator becomes an operator only after its domain is fixed",
+    "status": "Classical result; recovered proposal repaired",
+    "summary": "The recovered operator formula is useful as a template but does not define a domain, geometry or convergent prime sum. A rigorous starting point is a Dirichlet Laplacian on a bounded interval together with a norm-convergent bounded perturbation. This proves an actual spectral theorem in a stated model.",
+    "definitions": [
+      "Let A=−d²/dx² on L²(0,π), with domain H²(0,π)∩H₀¹(0,π).",
+      "Assume W is a bounded real multiplication operator, T_p are bounded self-adjoint operators on this same Hilbert space, and Σ_p|R_p| ||T_p||<∞."
+    ],
+    "result": {
+      "name": "A bounded self-adjoint perturbation theorem",
+      "statement": "For real λ_R,R_p, the operator L=A+λ_R W+Σ_pR_pT_p is self-adjoint on D(A), bounded below and has compact resolvent.",
+      "proof": "The coefficient condition makes the prime sum Cauchy in operator norm; its limit B is bounded and self-adjoint because taking adjoints is norm-continuous. Including λ_RW preserves these properties. The adjoint identity (A+B)*=A*+B* on D(A*) holds for bounded B, so L is self-adjoint on D(A). The form inequality 〈u,Lu〉≥(1−||B||)||u||² follows from the first Dirichlet eigenvalue1. For a sufficiently large negative real z, ||B(A−z)⁻¹||<1; a Neumann series makes I+B(A−z)⁻¹ invertible. The resolvent factorization (L−z)⁻¹=(A−z)⁻¹[I+B(A−z)⁻¹]⁻¹ is compact because the Laplacian resolvent is compact. Compactness then holds at all resolvent points by the resolvent identity."
+    },
+    "example": {
+      "setup": "Take W=0, T_p=I and R_p=p⁻².",
+      "calculation": "The series is bounded byΣ_(n≥2)n⁻²<∞. Hence B=cI with c=Σ_p p⁻², and eigenvalues are exactly n²+c with the ordinary sine eigenfunctions. The construction yields a valid prime-indexed operator but visibly does not supply a zeta-zero correspondence.",
+      "conclusion": "Self-adjointness is a domain theorem, not a consequence of real coefficients alone. Compact resolvent gives discrete eigenvalues in this concrete model."
+    },
+    "limits": "The broad receipt labels October7 content U, while the half-month receipt labels the same passage A. Attribution is therefore treated conservatively as assistant-level conflicting evidence. Unbounded Hecke operators or divergent sums are outside this bounded model.",
+    "extension": "Specify the intended manifold, boundary conditions and common invariant core. For unbounded perturbations, verify a relative bound below1 or construct a closed semibounded quadratic form before using a spectral theorem.",
+    "references": [
+      {
+        "label": "NIST DLMF, Zeros of the Riemann zeta function",
+        "url": "https://dlmf.nist.gov/25.10"
+      }
+    ],
+    "original": {
+      "date": "2024-10-07T03:51:27Z",
+      "month": "2024-10",
+      "evidence": "A",
+      "field": "Functional analysis",
+      "concept": "Self-adjoint sums and prime-indexed perturbations",
+      "origin": "Recovered historical conversation excerpt; development written for this retrospective",
+      "question": "Which explicit hypotheses make a prime-indexed perturbation of a Laplacian self-adjoint with compact resolvent?",
+      "math": "The theorem and example are newly developed mathematical repairs, not recovered historical proofs.",
+      "finish": "Established only within the stated hypotheses; no RH/GRH equivalence or security claim is inferred.",
+      "kind": "revised mathematical question and developed concept",
+      "refs": [
+        "zeros"
+      ],
+      "source_excerpt": "L_R=−Δ+λ_R W(z)+Σ_p R_p T_p",
+      "retrieval_receipt": "root_receipts.json",
+      "original_question": null,
+      "attribution_note": "Conflicting retrieval attribution: broad root_receipts marks U, half-month root_followups marks A at the same timestamp. Conservatively labeled A; no original user wording is asserted."
+    }
+  },
+  {
+    "id": "Y24-10-002",
+    "title": "A Weyl-law obstruction for a bounded-interval RH model",
+    "status": "Classical result; recovered proposal repaired",
+    "summary": "The historical proposal requires more than real eigenvalues: its counting function must match the number of all zeta zeros, with multiplicity. A basic asymptotic comparison rules out a large class of elementary candidate operators. It does not rule out every possible Hilbert–Pólya construction.",
+    "definitions": [
+      "For a positive discrete operator L, N_L(Λ) counts eigenvalues at mostΛ, with multiplicity.",
+      "The zeta-zero count is N_ζ(T)=T/(2π)log(T/(2π))−T/(2π)+O(logT), counting zeros in the critical strip with positive ordinate."
+    ],
+    "result": {
+      "name": "A concrete density mismatch",
+      "statement": "If L=−d²/dx²+B on(0,π) with Dirichlet conditions and bounded self-adjoint B, then N_L(Λ)=√Λ+O(1). It cannot equal the multiset {γ_n²} of ordinates of all nontrivial zeta zeros.",
+      "proof": "By the min–max principle, n²−||B||≤λ_n(L)≤n²+||B||. Consequently floor√(Λ−||B||)≤N_L(Λ)≤floor√(Λ+||B||), once the expressions are meaningful. Both endpoints are√Λ+O(1). If an exact multiplicity-preserving correspondence λ_n=γ_n² held for all zeros, the required count would instead be N_ζ(√Λ)=√Λ/(2π)log(√Λ/(2π))−√Λ/(2π)+O(logΛ). Dividing by√Λ, the latter grows like(logΛ)/(4π), while the Laplacian ratio tends to1. Equality is impossible. The argument uses the count of all zeros and makes no RH assumption: even off-line zeros have ordinates and contribute to that count."
+    },
+    "example": {
+      "setup": "Compare a diagonal model with eigenvalues n²+c against the required target density.",
+      "calculation": "Its firstN levels occupy an energy range of orderN². Inverting the zeta count gives roughly γ_N of orderN/logN, so γ_N² has orderN²/log²N. A constant spectral shift c cannot alter this leading discrepancy. Fitting any fixed initial list would leave the asymptotic contradiction intact.",
+      "conclusion": "A density comparison can reject a candidate before expensive numerical tuning. A finite match is weaker than an infinite counting theorem."
+    },
+    "limits": "This excludes bounded perturbations on a fixed finite interval, not noncompact geometries, singular potentials, nonlocal operators or other spectral settings. Those need their own Weyl analysis and domain construction.",
+    "extension": "Derive the candidate operator’s counting law independently, including lower-order terms, then compare it with the target zero count before discussing a trace formula.",
+    "references": [
+      {
+        "label": "NIST DLMF, Zeros of the Riemann zeta function",
+        "url": "https://dlmf.nist.gov/25.10"
+      }
+    ],
+    "original": {
+      "date": "2024-10-05T12:33:58Z",
+      "month": "2024-10",
+      "evidence": "A",
+      "field": "Spectral asymptotics",
+      "concept": "Counting-function compatibility",
+      "origin": "Recovered historical conversation excerpt; development written for this retrospective",
+      "question": "Could a bounded perturbation of a one-dimensional Laplacian have all squared zeta ordinates as its eigenvalues?",
+      "math": "The theorem and example are newly developed mathematical repairs, not recovered historical proofs.",
+      "finish": "Established only within the stated hypotheses; no RH/GRH equivalence or security claim is inferred.",
+      "kind": "revised mathematical question and developed concept",
+      "refs": [
+        "zeros"
+      ],
+      "source_excerpt": "Λ_n=γ_n²; Weyl/Riemann–von Mangoldt count",
+      "retrieval_receipt": "root_receipts.json",
+      "original_question": null,
+      "attribution_note": "Recovered mathematical passage is assistant-authored. Original user question was not recovered."
+    }
+  },
+  {
+    "id": "Y24-10-003",
+    "title": "A determinant identity needs a proved arithmetic correspondence",
+    "status": "Classical result; recovered proposal repaired",
+    "summary": "The recovered argument links spectral zeta functions, Hadamard products and zero ordinates. Each object can be legitimate while the claimed equality between them remains unproved. A finite-dimensional calculation isolates what follows automatically from spectral algebra.",
+    "definitions": [
+      "For a positive Hermitian d×d matrix L with eigenvalues λ_j, define D(t)=det(L+tI) and ζ_L(s)=Σ_jλ_j^(−s).",
+      "For infinite spectra, convergence of the series and analytic continuation required for a regularized determinant are additional assertions."
+    ],
+    "result": {
+      "name": "An exact logarithmic derivative",
+      "statement": "For t>−minλ_j, d(logD(t))/dt=Tr((L+tI)⁻¹)=Σ_j1/(λ_j+t), and logD(0)=−ζ_L′(0).",
+      "proof": "Unitary diagonalization yields D(t)=∏_j(λ_j+t). All factors are positive in the stated interval, so ordinary real differentiation gives the sum of reciprocal factors. The spectral theorem identifies that sum with the resolvent trace. Differentiating λ_j^(−s)=exp(−slogλ_j) at s=0 gives ζ_L′(0)=−Σ_jlogλ_j, which proves the determinant formula. In an infinite-dimensional case, these operations cannot be transferred without checking convergence: for λ_n=n², ζ_L(s)=ζ(2s) converges initially only for Re(s)>1/2, while Σlogλ_n diverges. Analytic continuation may define a regularized determinant, but its value depends on a proved continuation and normalization."
+    },
+    "example": {
+      "setup": "Let L=diag(1,4).",
+      "calculation": "D(t)=(1+t)(4+t)=t²+5t+4. Its logarithmic derivative is(2t+5)/(t²+5t+4)=1/(1+t)+1/(4+t). Also ζ_L(s)=1+4^(−s), so−ζ_L′(0)=log4=logdetL. Every identity is exact and contains no zeta-zero information.",
+      "conclusion": "A determinant packages a spectrum that has already been defined. To obtain an arithmetic theorem, one must prove an independent identity with an arithmetic entire function, including normalization and all zeros."
+    },
+    "limits": "Prescribing known ordinates as diagonal entries constructs a model from those numbers; it does not prove that all nontrivial zeros lie on the critical line. Hadamard products also require convergence factors and growth control.",
+    "extension": "Formulate a candidate entire-function identity, compare orders and normalization at a regular point, and prove equality through a trace or functional equation that does not assume the desired zero correspondence.",
+    "references": [
+      {
+        "label": "NIST DLMF, Euler products and Dirichlet series",
+        "url": "https://dlmf.nist.gov/27.4"
+      },
+      {
+        "label": "NIST DLMF, Zeros of the Riemann zeta function",
+        "url": "https://dlmf.nist.gov/25.10"
+      }
+    ],
+    "original": {
+      "date": "2024-10-05T12:33:58Z",
+      "month": "2024-10",
+      "evidence": "A",
+      "field": "Spectral theory",
+      "concept": "Spectral zeta functions, resolvents and determinants",
+      "origin": "Recovered historical conversation excerpt; development written for this retrospective",
+      "question": "What exact determinant–resolvent identity can be established, and why does it not by itself identify a spectral determinant with the Riemann xi function?",
+      "math": "The theorem and example are newly developed mathematical repairs, not recovered historical proofs.",
+      "finish": "Established only within the stated hypotheses; no RH/GRH equivalence or security claim is inferred.",
+      "kind": "revised mathematical question and developed concept",
+      "refs": [
+        "zeta",
+        "zeros"
+      ],
+      "source_excerpt": "ζ_L(s)=Σλ_n^(−s); Hadamard factorization; resolvent",
+      "retrieval_receipt": "root_receipts.json",
+      "original_question": null,
+      "attribution_note": "Recovered mathematical passage is assistant-authored. Original user question was not recovered."
+    }
+  },
+  {
+    "id": "Y24-10-004",
+    "title": "A heat trace and partition function have precise convexity identities",
+    "status": "Classical result; recovered proposal repaired",
+    "summary": "The recovered spectral proposal introduces a partition function. In a finite-dimensional model this gives an exact probability distribution and useful derivative identities. Infinite-dimensional heat traces require summability, which is not implied merely by self-adjointness.",
+    "definitions": [
+      "For real eigenvalues λ_1,…,λ_d and β>0, set Z(β)=Σ_je^(−βλ_j) and p_j=e^(−βλ_j)/Z.",
+      "The mean energy is E_β[λ]=Σ_jp_jλ_j and its variance isΣ_jp_j(λ_j−E_β[λ])²."
+    ],
+    "result": {
+      "name": "Convexity of the log partition function",
+      "statement": "d(logZ)/dβ=−E_β[λ] and d²(logZ)/dβ²=Var_β(λ)≥0. For a nonnegative infinite spectrum, the same identities hold wherever the needed weighted sums converge locally.",
+      "proof": "Finite differentiation gives Z′=−Σλ_je^(−βλ_j) and Z″=Σλ_j²e^(−βλ_j). Therefore(logZ)′=Z′/Z=−E_β[λ], and(logZ)″=Z″/Z−(Z′/Z)²=E_β[λ²]−E_β[λ]². The latter equals a sum of nonnegative squared deviations. Local domination justifies the identical calculation for an infinite series if, for example, Σ(1+λ_j²)e^(−β₀λ_j)<∞ for some β₀ below the evaluation interval. A bounded operator on an infinite-dimensional space generally fails this trace condition: infinitely many bounded eigenvalues makeΣe^(−βλ_j) diverge."
+    },
+    "example": {
+      "setup": "Take λ_1=0 and λ_2=1.",
+      "calculation": "Z=1+e^(−β), E_β[λ]=1/(e^β+1), and Var=e^β/(e^β+1)². At β=log3 the probabilities are3/4 and1/4, the mean is1/4 and the variance is3/16. For a graph Laplacian, a zero mode similarly contributes a constant1 to the heat trace on each connected component.",
+      "conclusion": "The derivatives measure moments of a specified spectrum. They do not establish that this spectrum is the zeta spectrum."
+    },
+    "limits": "A time-derivative operator with eigenvalues unbounded below does not have a finite positive-temperature heat trace without a different construction. A formal sum Z is not enough to justify differentiation or a path-integral interpretation.",
+    "extension": "For a concrete compact-resolvent operator, prove heat-trace convergence from eigenvalue growth, then derive its small-time asymptotics and compare them with the proposed arithmetic counting law.",
+    "references": [
+      {
+        "label": "NIST DLMF, Zeros of the Riemann zeta function",
+        "url": "https://dlmf.nist.gov/25.10"
+      }
+    ],
+    "original": {
+      "date": "2024-10-13T04:34:36Z",
+      "month": "2024-10",
+      "evidence": "A",
+      "field": "Analysis and probability",
+      "concept": "Heat trace and spectral partition function",
+      "origin": "Recovered historical conversation excerpt; development written for this retrospective",
+      "question": "What can be proved from a defined partition function, without converting statistical resemblance into an arithmetic theorem?",
+      "math": "The theorem and example are newly developed mathematical repairs, not recovered historical proofs.",
+      "finish": "Established only within the stated hypotheses; no RH/GRH equivalence or security claim is inferred.",
+      "kind": "revised mathematical question and developed concept",
+      "refs": [
+        "zeros"
+      ],
+      "source_excerpt": "Z(β)=Σ_n exp(−βΛ_n)",
+      "retrieval_receipt": "root_receipts.json",
+      "original_question": null,
+      "attribution_note": "Recovered mathematical passage is assistant-authored. Original user question was not recovered."
+    }
+  },
+  {
+    "id": "Y24-10-005",
+    "title": "A nonlinear eigenproblem is a constrained variational equation",
+    "status": "Classical result; recovered proposal repaired",
+    "summary": "The recovered nonlinear extension cannot be treated as an ordinary linear spectrum. A finite-dimensional constrained energy gives a complete model: its stationary points solve a nonlinear eigenvalue equation, and the multiplier depends on the state.",
+    "definitions": [
+      "For real ψ=(x,y) with x²+y²=1, let E(ψ)=(1/2)ψᵀLψ+(g/4)(x⁴+y⁴).",
+      "A constrained stationary point satisfies Lψ+g(ψ componentwise cubed)=λψ."
+    ],
+    "result": {
+      "name": "An exact nonlinear minimizer",
+      "statement": "For L=diag(0,1) and g=2, the global minimum is E=7/16, attained when x²=3/4 and y²=1/4. Its multiplier isλ=3/2.",
+      "proof": "Put u=x², so y²=1−u and0≤u≤1. The energy is(1/2)(1−u)+(1/2)[u²+(1−u)²]=u²−(3/2)u+1=(u−3/4)²+7/16. This gives the exact global minimum and all sign choices of its minimizers. For a nonzero coordinate the stationary equation gives2x²=λ and1+2y²=λ. Substitution of the minimizing squares yieldsλ=3/2 in both equations. The original linear matrix has eigenvalues0 and1, so the nonlinear multiplier is neither a new linear eigenvalue of L nor a value recoverable from the linear spectral theorem alone. Multiplying the equation by ψ givesλ=ψᵀLψ+g(x⁴+y⁴), which also verifies the value."
+    },
+    "example": {
+      "setup": "Use the positive representative ψ=(√3/2,1/2).",
+      "calculation": "Lψ=(0,1/2); the cubic term is2ψ³=(3√3/4,1/4). Their sum is(3√3/4,3/4)=(3/2)ψ. At the boundary state(1,0), the energy is1/2, strictly above7/16. Thus allowing a mixed state genuinely changes the optimizer.",
+      "conclusion": "An exact nonlinear variational calculation replaces the undefined idea that a cubic correction simply shifts every linear eigenvalue."
+    },
+    "limits": "The model is real and finite-dimensional. Complex phases, PDE compactness, existence of infinite families and linearization stability require additional analysis. No arithmetic zero correspondence follows from a nonlinear stationary equation.",
+    "extension": "Linearize the constrained gradient at each stationary point and compute the tangent-space Hessian. In a PDE model, state the function space and prove existence before comparing numerical nonlinear modes.",
+    "references": [
+      {
+        "label": "NIST Digital Library of Mathematical Functions",
+        "url": "https://dlmf.nist.gov/"
+      }
+    ],
+    "original": {
+      "date": "2024-10-13T04:34:36Z",
+      "month": "2024-10",
+      "evidence": "A",
+      "field": "Nonlinear analysis",
+      "concept": "Cubic spectral equations",
+      "origin": "Recovered historical conversation excerpt; development written for this retrospective",
+      "question": "What changes when a linear operator is supplemented by a state-dependent cubic term?",
+      "math": "The theorem and example are newly developed mathematical repairs, not recovered historical proofs.",
+      "finish": "Established only within the stated hypotheses; no RH/GRH equivalence or security claim is inferred.",
+      "kind": "revised mathematical question and developed concept",
+      "refs": [
+        "analysis"
+      ],
+      "source_excerpt": "L_NL; nonlinear +β|ψ_n|²",
+      "retrieval_receipt": "root_receipts.json",
+      "original_question": null,
+      "attribution_note": "Recovered mathematical passage is assistant-authored. Original user question was not recovered."
+    }
+  },
+  {
+    "id": "Y24-10-006",
+    "title": "Spectral rigidity is a fitted statistic with a declared unfolding",
+    "status": "Classical result; recovered proposal repaired",
+    "summary": "The recovered proposal cites spectral rigidity without defining its regression convention. A finite counting staircase and an ordinary least-squares fit give a fully specified statistic. This makes the dependence on interval placement and unfolding explicit.",
+    "definitions": [
+      "For levels x_j, let N(x)=#{j:x_j≤x}. On[a,a+L], define Δ3=L⁻¹min_(A,B)∫[N(x)−Ax−B]²dx.",
+      "Any unfolding map applied before this calculation is part of the statistical model."
+    ],
+    "result": {
+      "name": "An exact one-level example",
+      "statement": "For a single level at1/2 in the interval[0,1], the best affine fit to its counting staircase is(3/2)x−1/4 and Δ3=1/16.",
+      "proof": "Here N(x)=0 on[0,1/2) and1 on[1/2,1]. The normal equations are ∫(N−Ax−B)dx=0 and∫x(N−Ax−B)dx=0. The necessary moments are∫N=1/2,∫xN=3/8,∫x=1/2 and∫x²=1/3. Thus A/2+B=1/2 and A/3+B/2=3/8, giving A=3/2,B=−1/4. Orthogonal projection gives the minimum squared error ∫N²−A∫xN−B∫N=1/2−9/16+1/8=1/16. Direct integration of the two quadratic pieces gives the same result. Since L=1, no further normalization is needed."
+    },
+    "example": {
+      "setup": "Compare with an interval containing no level, and with a change of the horizontal coordinate.",
+      "calculation": "If N is constant on the whole interval, choosing A=0 and B=N gives Δ3=0. A nonlinear unfolding changes both level positions and the measure dx, so it can change the value. It is therefore inappropriate to choose an unfolding after seeing which one most closely resembles a target curve.",
+      "conclusion": "The statistic measures a defined least-squares deviation. Its value is not an operator identity or proof of spectral correspondence."
+    },
+    "limits": "A single interval is not the averaged Dyson–Mehta statistic usually used in large-sample comparisons. Boundary conventions at jump points have measure zero, but interval selection and averaging do matter. Random-matrix expectations require an independently justified ensemble.",
+    "extension": "Predeclare a smooth counting approximation for unfolding and a family of windows, compute exact staircase integrals, and report the window-to-window spread alongside the mean.",
+    "references": [
+      {
+        "label": "NIST DLMF, Zeros of the Riemann zeta function",
+        "url": "https://dlmf.nist.gov/25.10"
+      }
+    ],
+    "original": {
+      "date": "2024-10-13T04:34:36Z",
+      "month": "2024-10",
+      "evidence": "A",
+      "field": "Statistics and spectral analysis",
+      "concept": "Dyson–Mehta rigidity",
+      "origin": "Recovered historical conversation excerpt; development written for this retrospective",
+      "question": "How can a rigidity statistic be computed exactly on a finite interval, and what information does it retain?",
+      "math": "The theorem and example are newly developed mathematical repairs, not recovered historical proofs.",
+      "finish": "Established only within the stated hypotheses; no RH/GRH equivalence or security claim is inferred.",
+      "kind": "revised mathematical question and developed concept",
+      "refs": [
+        "zeros"
+      ],
+      "source_excerpt": "GUE spacing P(s); rigidity Δ3(L)",
+      "retrieval_receipt": "root_receipts.json",
+      "original_question": null,
+      "attribution_note": "Recovered mathematical passage is assistant-authored. Original user question was not recovered."
+    }
+  },
+  {
+    "id": "Y24-10-007",
+    "title": "Adelic data require a common restricted-product space",
+    "status": "Classical result; recovered proposal repaired",
+    "summary": "The recovered advanced operator adds terms belonging to different local settings. A sum of operators requires a common space and convergence. The restricted-product definition of adeles and a simple weighted tensor model clarify two distinct constructions that should not be conflated.",
+    "definitions": [
+      "The adele ring A_Q consists of(x∞,(x_p)_p) with x∞∈R,x_p∈Q_p and x_p∈Z_p for all but finitely many primes.",
+      "On an infinite tensor product with a chosen reference vector, let P_k be commuting norm-one projections acting on the kth factor."
+    ],
+    "result": {
+      "name": "A convergent local sum need not have compact resolvent",
+      "statement": "B=Σ_(k≥1)2^(−k)P_k converges in operator norm and is bounded self-adjoint. In the reference-sector binary tensor model it has infinitely many orthogonal eigenvectors with eigenvalues2^(−k), so it has no compact resolvent.",
+      "proof": "The tail norm is bounded byΣ_(k>N)2^(−k)=2^(−N), proving norm convergence and self-adjointness. Choose each local space C² with reference vector e0, and P_ke1=e1,P_ke0=0. The vector v_k with e1 at sitek and e0 elsewhere is a legal finite excitation. These vectors are orthonormal and Bv_k=2^(−k)v_k. If(B+iI)⁻¹ were compact, its images of this bounded orthonormal sequence would have a convergent subsequence. But the images are(2^(−k)+i)⁻¹v_k, whose norms tend to1 and whose pairwise distances stay bounded away from zero. Compactness is impossible. Norm convergence of local terms therefore supplies a legitimate operator but not a discrete spectrum with eigenvalues tending to infinity."
+    },
+    "example": {
+      "setup": "Compare the true adele x with x_p=1/p for every prime against a valid rational diagonal embedding.",
+      "calculation": "The all-prime tuple1/p is not an adele, because1/p∉Z_p at every p. In contrast, a rational number a/b belongs to Z_p at all primes not dividing b, so its diagonal embedding is an adele. The restricted condition is structural, not an optional numerical cutoff.",
+      "conclusion": "Both global space and spectral compactness need proof. Writing a real term beside infinitely many p-adic terms does not provide either."
+    },
+    "limits": "The tensor example is illustrative and is not identified with L²(A_Q). Restricted tensor products also require distinguished local vectors or subspaces and compatible measures. No global trace formula is inferred.",
+    "extension": "Choose a precise adelic representation and common dense core. State local actions there and prove convergence or form bounds for the global sum before studying its trace or spectrum.",
+    "references": [
+      {
+        "label": "MIT 18.785, Number Theory I, lecture notes",
+        "url": "https://ocw.mit.edu/courses/18-785-number-theory-i-fall-2021/pages/lecture-notes/"
+      }
+    ],
+    "original": {
+      "date": "2024-10-11T13:27:29Z",
+      "month": "2024-10",
+      "evidence": "A",
+      "field": "Adelic analysis",
+      "concept": "Restricted products and local operators",
+      "origin": "Recovered historical conversation excerpt; development written for this retrospective",
+      "question": "How can local real and p-adic terms be assembled into a mathematically defined global object?",
+      "math": "The theorem and example are newly developed mathematical repairs, not recovered historical proofs.",
+      "finish": "Established only within the stated hypotheses; no RH/GRH equivalence or security claim is inferred.",
+      "kind": "revised mathematical question and developed concept",
+      "refs": [
+        "adeles"
+      ],
+      "source_excerpt": "L_Advanced=L∞+Σ_p L_ℏp+L_topo+L_coupling+L_time",
+      "retrieval_receipt": "root_receipts.json",
+      "original_question": null,
+      "attribution_note": "Recovered mathematical passage is assistant-authored. Original user question was not recovered."
+    }
+  },
+  {
+    "id": "Y24-10-008",
+    "title": "Adding time as an operator changes the spectral problem",
+    "status": "Classical result; recovered proposal repaired",
+    "summary": "The historical advanced sum includes iℏ∂t+H(t). Even when this is self-adjoint, it is an operator on a time-function space, not merely an additional spatial potential. Its basic periodic spectrum is unbounded in both directions.",
+    "definitions": [
+      "Work on L²(R/TZ)⊗C^d with periodic H¹ domain, letω=2π/T andℏ>0.",
+      "Take a constant Hermitian matrix H0 with eigenvectors u_j and eigenvaluesμ_j."
+    ],
+    "result": {
+      "name": "Exact periodic-time spectrum",
+      "statement": "K=iℏ∂t+H0 is self-adjoint and has eigenvectors e^(inωt)u_j with eigenvaluesμ_j−ℏnω, n∈Z. Its heat traceΣe^(−βλ) diverges for everyβ>0.",
+      "proof": "The periodic Fourier basis diagonalizes i∂t: differentiation of e^(inωt) gives inω times the function, so multiplication by i yields−nω. The self-adjoint diagonal operator has domain characterized by square-summability of n times the Fourier coefficients, which is the periodic H¹ domain. The bounded Hermitian term H0 commutes with this Fourier decomposition and preserves self-adjointness. The displayed tensor products form a complete orthogonal basis. For n→+∞, μ_j−ℏnω→−∞; consequently e^(−β(μ_j−ℏnω)) tends to infinity rather than zero. The positive heat-trace sum cannot converge. Quasienergy is often considered moduloℏω in Floquet theory, but that quotient is a separate spectral interpretation, not a convergent Gibbs trace of K."
+    },
+    "example": {
+      "setup": "Let d=1,μ=1/3,ℏ=1,T=2π.",
+      "calculation": "The eigenvalues are1/3−n, so n=−1,0,1 give4/3,1/3,−2/3. The same physical quasienergy class has infinitely many translated representatives. Inserting these raw eigenvalues into a positive-temperature partition sum makes it diverge.",
+      "conclusion": "The time term is mathematically meaningful on a defined domain, but it changes boundedness and multiplicity properties that a spatial heat-trace argument may have relied on."
+    },
+    "limits": "A genuinely time-dependent H(t) leads to a monodromy or propagator problem. The constant example does not prove a general Floquet theorem, and it supplies no arithmetic correspondence.",
+    "extension": "Construct the unitary propagator over one period and compare its eigenphases with K moduloℏω. Keep that unitary spectral problem distinct from a semibounded elliptic operator.",
+    "references": [
+      {
+        "label": "NIST Digital Library of Mathematical Functions",
+        "url": "https://dlmf.nist.gov/"
+      }
+    ],
+    "original": {
+      "date": "2024-10-11T13:27:29Z",
+      "month": "2024-10",
+      "evidence": "A",
+      "field": "Operator theory",
+      "concept": "Periodic time and Floquet spectra",
+      "origin": "Recovered historical conversation excerpt; development written for this retrospective",
+      "question": "What spectrum results from the recovered time-derivative term in the simplest periodic model?",
+      "math": "The theorem and example are newly developed mathematical repairs, not recovered historical proofs.",
+      "finish": "Established only within the stated hypotheses; no RH/GRH equivalence or security claim is inferred.",
+      "kind": "revised mathematical question and developed concept",
+      "refs": [
+        "analysis"
+      ],
+      "source_excerpt": "L_time(t)=iℏ∂t+H(t)",
+      "retrieval_receipt": "root_receipts.json",
+      "original_question": null,
+      "attribution_note": "Recovered mathematical passage is assistant-authored. Original user question was not recovered."
+    }
+  },
+  {
+    "id": "Y24-10-009",
+    "title": "The pointwise product μΛ has the wrong sign for the recovered prime sum",
+    "status": "Classical result; recovered proposal repaired",
+    "summary": "The recovered equation contains an exact sign and support error. With the standard ideal Möbius and von Mangoldt functions, their pointwise product is negative on prime ideals and zero on all higher prime powers. It is not the von Mangoldt function whose summatory function appears in the usual explicit formula.",
+    "definitions": [
+      "For nonzero integral ideals, μ_K(𝔞)=0 if a prime square divides𝔞; otherwise it is(−1)^r for a product of r distinct primes.",
+      "Λ_K(𝔞)=logN𝔭 when𝔞=𝔭^m,m≥1, and is zero otherwise."
+    ],
+    "result": {
+      "name": "Exact support and sign",
+      "statement": "J(𝔞)=μ_K(𝔞)Λ_K(𝔞) equals−logN𝔭 at𝔞=𝔭 and0 otherwise. ThusΣ_(N𝔞≤x)J(𝔞)=−θ_K(x), while ψ_K(x)=Σ_(N𝔭^m≤x)logN𝔭 includes positive prime-power contributions.",
+      "proof": "On a prime ideal, μ_K(𝔭)=−1 andΛ_K(𝔭)=logN𝔭. On𝔭^m withm≥2, μ_K is zero. On an ideal containing at least two different prime factors, Λ_K is zero. These cases exhaust the possibilities and prove the formula. The recovered equality to a positive prime-only sum therefore fails already at the first prime ideal. It also conflates θ_K andψ_K, which differ byΣ_(m≥2,N𝔭^m≤x)logN𝔭. The standard logarithmic derivative of an Euler product producesψ_K, because its geometric expansion retains all powers. Multiplying byμ_K pointwise removes precisely those higher-power terms rather than recovering them."
+    },
+    "example": {
+      "setup": "Over Q, compare the arithmetic weights for n=2,4,6,8,9 and the summatory functions at10.",
+      "calculation": "J(2)=−log2; J(4)=J(6)=J(8)=J(9)=0. The prime-only sum isθ(10)=log2+log3+log5+log7. The von Mangoldt sum isψ(10)=θ(10)+2log2+log3, because4,8 and9 contribute. The J-sum is−θ(10). These identities can be checked symbolically by keeping coefficients of each log prime as integers.",
+      "conclusion": "The historical J expression has a perfectly definite classical meaning, and that meaning differs from the stated explicit-formula weight."
+    },
+    "limits": "The recovered α-notation for field elements does not resolve the distinction between elements, principal ideals and arbitrary ideals. The entry uses ideals so factorization and norms are unambiguous. No GRH error bound is transferred to an undefined modified L-function.",
+    "extension": "If a positive prime-only weight is intended, define−μ_KΛ_K. If the standard Chebyshev explicit formula is intended, useΛ_K. Derive the corresponding Dirichlet series before assigning any spectral interpretation.",
+    "references": [
+      {
+        "label": "NIST DLMF, Euler products and Dirichlet series",
+        "url": "https://dlmf.nist.gov/27.4"
+      },
+      {
+        "label": "J. S. Milne, Algebraic Number Theory",
+        "url": "https://www.jmilne.org/math/CourseNotes/ANT.pdf"
+      }
+    ],
+    "original": {
+      "date": "2024-10-20T15:59:22Z",
+      "month": "2024-10",
+      "evidence": "A",
+      "field": "Multiplicative number theory",
+      "concept": "Prime ideals versus prime powers",
+      "origin": "Recovered historical conversation excerpt; development written for this retrospective",
+      "question": "What arithmetic function is actually defined by the recovered pointwise product?",
+      "math": "The theorem and example are newly developed mathematical repairs, not recovered historical proofs.",
+      "finish": "Established only within the stated hypotheses; no RH/GRH equivalence or security claim is inferred.",
+      "kind": "revised mathematical question and developed concept",
+      "refs": [
+        "zeta",
+        "ant"
+      ],
+      "source_excerpt": "J=μ_KΛ_K; Σ μ_K(𝔭^k)Λ_K(𝔭^k)=Σ logN𝔭",
+      "retrieval_receipt": "root_details.json",
+      "original_question": null,
+      "attribution_note": "Recovered mathematical passage is assistant-authored. Original user question was not recovered."
+    }
+  },
+  {
+    "id": "Y24-10-010",
+    "title": "The convolution identity μ*log=Λ explains the Euler logarithmic derivative",
+    "status": "Classical result; recovered proposal repaired",
+    "summary": "The pointwise product in the historical J-function can be contrasted with a genuine Möbius-inversion identity. Dirichlet convolution, rather than pointwise multiplication, converts logarithmic size into the von Mangoldt function. This explains exactly why the logarithmic derivative retains prime powers.",
+    "definitions": [
+      "For functions on positive integers, (f*g)(n)=Σ_(d|n)f(d)g(n/d). Let log(n) denote the ordinary logarithm.",
+      "The same definitions apply to nonzero integral ideals, replacing divisors by ideal divisors and logn by logN𝔞."
+    ],
+    "result": {
+      "name": "An exact Möbius inversion identity",
+      "statement": "μ*log=Λ. Consequently, for Re(s)>1, −ζ′(s)/ζ(s)=Σ_(n≥1)Λ(n)n^(−s)=Σ_pΣ_(m≥1)(logp)p^(−ms).",
+      "proof": "For n=∏p_i^e_i, the sum of Λ(d) over divisors d isΣ_ie_i logp_i=logn, because precisely the divisors p_i^m contribute. Thus1*Λ=log. Also μ*1 is the convolution identity ε, sinceΣ_(d|n)μ(d)=0 for n>1 and1 for n=1; expanding over subsets of distinct prime divisors gives(1−1)^r. Associativity of the finite divisor sums yields μ*log=μ*(1*Λ)=Λ. To obtain the Dirichlet series, differentiate the absolutely convergent logarithmic Euler expansion logζ(s)=Σ_pΣ_(m≥1)p^(−ms)/m in any half-plane Re(s)≥1+δ. Differentiation cancels m in the denominator and yields the displayed prime-power sum. Absolute convergence on these smaller half-planes justifies the operation."
+    },
+    "example": {
+      "setup": "Compute the convolution at n=12 and n=8.",
+      "calculation": "At12, the squarefree divisors1,2,3,6 give log12−log6−log4+log2=0=Λ(12). At8 they give log8−log4=log2=Λ(8). The pointwise product μ(8)Λ(8) is instead0. This single example distinguishes the two operations conclusively.",
+      "conclusion": "The correct algebraic identity supplies an actual route from ideal factorization to an Euler logarithmic derivative."
+    },
+    "limits": "Continuing the Dirichlet series past Re(s)>1 and shifting contours to an explicit formula require analytic continuation, growth estimates and treatment of poles. None follows merely from the convolution identity.",
+    "extension": "For a specified Hecke character, write the Euler factors and derive the twisted prime-power coefficients first. Then state exactly which zeros, poles and conductor enter the resulting explicit formula.",
+    "references": [
+      {
+        "label": "NIST DLMF, Euler products and Dirichlet series",
+        "url": "https://dlmf.nist.gov/27.4"
+      }
+    ],
+    "original": {
+      "date": "2024-10-20T15:59:22Z",
+      "month": "2024-10",
+      "evidence": "A",
+      "field": "Analytic number theory",
+      "concept": "Dirichlet convolution and prime-power weights",
+      "origin": "Recovered historical conversation excerpt; development written for this retrospective",
+      "question": "Which arithmetic operation actually produces von Mangoldt weights from Möbius inversion?",
+      "math": "The theorem and example are newly developed mathematical repairs, not recovered historical proofs.",
+      "finish": "Established only within the stated hypotheses; no RH/GRH equivalence or security claim is inferred.",
+      "kind": "revised mathematical question and developed concept",
+      "refs": [
+        "zeta"
+      ],
+      "source_excerpt": "J_χ=μ_KΛ_Kχ; explicit formula",
+      "retrieval_receipt": "root_receipts.json",
+      "original_question": null,
+      "attribution_note": "Recovered mathematical passage is assistant-authored. Original user question was not recovered."
+    }
+  },
+  {
+    "id": "Y24-10-011",
+    "title": "Prime ideals in Q(i) give an exact local-factor model",
+    "status": "Classical result; recovered proposal repaired",
+    "summary": "The recovered ideal-distribution proposal becomes arithmetically transparent over the Gaussian rationals. The local factor at a rational prime depends on its splitting type. This is information that a generic scalar J-value cannot replace without an explicit relation to ideal factorization.",
+    "definitions": [
+      "Let K=Q(i), with ring of integers Z[i]. The norm of(a+bi) is a²+b².",
+      "A prime ideal𝔭 has absolute norm |Z[i]/𝔭|. For an unramified rational prime p, residue degreef means N𝔭=p^f."
+    ],
+    "result": {
+      "name": "Exact splitting and Euler factors",
+      "statement": "The prime2 ramifies, primes p≡1 mod4 split into two primes of normp, and primes p≡3 mod4 remain prime with normp². Hence ζ_K(s)=ζ(s)L(s,χ_−4) in Re(s)>1.",
+      "proof": "For odd p, reduce x²+1 modulo p. It has a root exactly when−1 is a square, equivalently p≡1 mod4 by the cyclic group F_p*. A split polynomial gives two quotient fields F_p, while an irreducible polynomial gives F_(p²). At2, 2 is a unit times(1+i)², giving a single prime of norm2. The ideal Euler factors are therefore(1−2^(−s))⁻¹ at2,(1−p^(−s))⁻² for split primes, and(1−p^(−2s))⁻¹ for inert primes. Multiplying the rational zeta factor by the quadratic-character factor gives these three cases: χ_−4(p)=1,−1,0 respectively. Equality of the absolutely convergent Euler products proves the asserted identity in its initial domain."
+    },
+    "example": {
+      "setup": "List prime ideals of norm at most10.",
+      "calculation": "There is one above2 of norm2; two above5 of norm5; one above3 of norm9; and none above7 within the bound because its prime ideal has norm49. Thusπ_K(10)=4. The corresponding prime-only log sum is log2+2log5+log9. It differs from summing logp over rational primes≤10 and from including all ideal prime powers.",
+      "conclusion": "Even a simple field changes the meaning of the sampling variable. Norm cutoffs and splitting multiplicities must be stated."
+    },
+    "limits": "This local calculation is not a proof of a prime-ideal theorem or Chebotarev density. Ramification and character conductors require care in more general fields. Elements differing by units represent the same principal ideal and must not be overcounted.",
+    "extension": "Build exact local tables for a declared number field and compare prime-only, prime-power and character-twisted sums. Use those distinct quantities consistently in any later explicit formula.",
+    "references": [
+      {
+        "label": "J. S. Milne, Algebraic Number Theory",
+        "url": "https://www.jmilne.org/math/CourseNotes/ANT.pdf"
+      }
+    ],
+    "original": {
+      "date": "2024-10-20T15:59:22Z",
+      "month": "2024-10",
+      "evidence": "A",
+      "field": "Algebraic number theory",
+      "concept": "Splitting, norms and Dedekind zeta factors",
+      "origin": "Recovered historical conversation excerpt; development written for this retrospective",
+      "question": "How do prime-ideal counts differ from rational-prime counts in a concrete quadratic field?",
+      "math": "The theorem and example are newly developed mathematical repairs, not recovered historical proofs.",
+      "finish": "Established only within the stated hypotheses; no RH/GRH equivalence or security claim is inferred.",
+      "kind": "revised mathematical question and developed concept",
+      "refs": [
+        "ant"
+      ],
+      "source_excerpt": "prime-ideal distribution; quadratic/cyclotomic fields; character twists",
+      "retrieval_receipt": "root_receipts.json",
+      "original_question": null,
+      "attribution_note": "Recovered mathematical passage is assistant-authored. Original user question was not recovered."
+    }
+  },
+  {
+    "id": "Y24-10-012",
+    "title": "A two-state transfer gap proves mixing, not the prime number theorem",
+    "status": "Classical result; recovered proposal repaired",
+    "summary": "The recovered passage takes a two-number spectrum as evidence for prime-counting conclusions. An exact Markov operator shows what these eigenvalues really control: relaxation of functions or probability distributions in the specified finite dynamical system.",
+    "definitions": [
+      "Let P=[[3/4,1/4],[1/4,3/4]] act on functions on two states, and letΠ be projection onto constants by the uniform average.",
+      "The total variation distance between probabilities(p,1−p) and(q,1−q) is|p−q|."
+    ],
+    "result": {
+      "name": "An exact mixing identity",
+      "statement": "P has eigenvalues1 and1/2 and satisfies P^n=Π+2^(−n)(I−Π). Every initial probability distribution approaches(1/2,1/2) in total variation by the exact factor2^(−n).",
+      "proof": "The vectors(1,1) and(1,−1) are an orthogonal basis. Applying P gives respectively the same vector and half the vector. Hence P=Π+(1/2)(I−Π), and the two orthogonal projections annihilate one another. Raising to the nth power yields the formula. An initial probability(p,1−p) equals(1/2,1/2)+(p−1/2)(1,−1). Multiplication by P^n scales its second component by2^(−n), giving total variation2^(−n)|p−1/2|. This exhausts what the two-state spectrum establishes. There are no primes, integer cutoffx or zeta function in this model, even though its eigenvalues are exactly the recovered pair."
+    },
+    "example": {
+      "setup": "Start at state1 and take n=3.",
+      "calculation": "The distribution is(1/2+1/16,1/2−1/16)=(9/16,7/16), with total variation1/16 from stationarity. A completely unrelated sequence can be attached as labels to the same two states without changing P or this computation.",
+      "conclusion": "The spectral gap1/2 quantifies a defined mixing problem. An arithmetic conclusion requires a separate theorem connecting that problem to prime-counting observables."
+    },
+    "limits": "This finite countermodel does not rule out genuine transfer-operator methods in number theory. Such methods specify spaces, nuclearity or trace properties, a determinant identity and a precise link to an arithmetic L-function.",
+    "extension": "If a transfer operator is intended to encode primes, prove an exact trace or Fredholm determinant relation and show how the relevant arithmetic cutoff is represented. Then derive, rather than assume, the error term.",
+    "references": [
+      {
+        "label": "NIST DLMF, Asymptotic formulas for primes",
+        "url": "https://dlmf.nist.gov/27.12"
+      }
+    ],
+    "original": {
+      "date": "2024-10-22T00:10:37Z",
+      "month": "2024-10",
+      "evidence": "A",
+      "field": "Dynamical systems",
+      "concept": "Transfer-operator spectrum and mixing",
+      "origin": "Recovered historical conversation excerpt; development written for this retrospective",
+      "question": "What theorem follows from the two recovered eigenvalues, and which missing identification would be needed for an arithmetic conclusion?",
+      "math": "The theorem and example are newly developed mathematical repairs, not recovered historical proofs.",
+      "finish": "Established only within the stated hypotheses; no RH/GRH equivalence or security claim is inferred.",
+      "kind": "revised mathematical question and developed concept",
+      "refs": [
+        "primes"
+      ],
+      "source_excerpt": "λ1=1, λ2=0.5; prime gaps and quantum gaps",
+      "retrieval_receipt": "root_followups.json",
+      "original_question": null,
+      "attribution_note": "Recovered mathematical passage is assistant-authored. Original user question was not recovered."
+    }
+  },
+  {
+    "id": "Y24-10-013",
+    "title": "The prime-counting main term cannot be truncated at x/logx for a square-root error",
+    "status": "Classical result; recovered proposal repaired",
+    "summary": "The recovered October22 formula is mathematically incorrect for small positive ε. It omits the second main term, which is much larger than a square-root error. This is independent of any proposed spectral framework.",
+    "definitions": [
+      "For x>2 define Li₂(x)=∫₂ˣdt/logt; the conventional li(x) differs by a constant.",
+      "For fixed0<ε<1/2, x/log²x grows faster than x^(1/2+ε)."
+    ],
+    "result": {
+      "name": "The missing second term",
+      "statement": "Li₂(x)=x/logx+x/log²x+O(x/log³x). The classical prime number theorem with its known stronger error then gives π(x)−x/logx∼x/log²x. Under RH the usual square-root-scale statement is π(x)=li(x)+O(√xlogx).",
+      "proof": "Integration by parts gives Li₂(x)=x/logx−2/log2+∫₂ˣdt/log²t. Repeating gives∫₂ˣdt/log²t=x/log²x−2/log²2+2∫₂ˣdt/log³t. The last integral is O(x/log³x): split at√x, bound the first interval by O(√x), and use logt≥(1/2)logx on the second. The known unconditional bound π(x)−li(x)=O(xe^(−c√logx)) is o(x/log^m x) for every fixedm. Combining it with the expansion proves the asymptotic difference. Finally[x/log²x]/x^(1/2+ε)=x^(1/2−ε)/log²x→∞, so the recovered error claim cannot absorb the omitted term. The RH bound is cited as a separate classical conditional theorem, not proved by this elementary integration."
+    },
+    "example": {
+      "setup": "Take ε=1/4 and compare the scale ratio at x=e^u.",
+      "calculation": "The ratio is e^(u/4)/u², which tends to infinity. For u=100 it already equals e^25/10000, more than seven million. This compares asymptotic scales rather than approximating a finite prime count, so no numerical prime table is needed to expose the contradiction.",
+      "conclusion": "Correct main-term bookkeeping is essential. A spectral gap cannot repair an asymptotically missing deterministic term."
+    },
+    "limits": "The unconditional and RH error estimates are classical inputs with their own proofs and hypotheses. The entry establishes the main-term obstruction, not RH. For number fields, constants and possible exceptional-zero effects require a separately stated theorem.",
+    "extension": "Before proposing any improved error bound, expand its main term far enough to identify every omitted term larger than the claimed remainder, or retain the full logarithmic integral.",
+    "references": [
+      {
+        "label": "NIST DLMF, Asymptotic formulas for primes",
+        "url": "https://dlmf.nist.gov/27.12"
+      }
+    ],
+    "original": {
+      "date": "2024-10-22T00:10:37Z",
+      "month": "2024-10",
+      "evidence": "A",
+      "field": "Asymptotic number theory",
+      "concept": "Logarithmic-integral main term",
+      "origin": "Recovered historical conversation excerpt; development written for this retrospective",
+      "question": "Why must an RH-scale prime-counting error use li(x), rather than only its first asymptotic term?",
+      "math": "The theorem and example are newly developed mathematical repairs, not recovered historical proofs.",
+      "finish": "Established only within the stated hypotheses; no RH/GRH equivalence or security claim is inferred.",
+      "kind": "revised mathematical question and developed concept",
+      "refs": [
+        "primes"
+      ],
+      "source_excerpt": "π(x)=x/logx+O(x^(1/2+ε))",
+      "retrieval_receipt": "root_details.json",
+      "original_question": null,
+      "attribution_note": "Recovered mathematical passage is assistant-authored. Original user question was not recovered."
+    }
+  },
+  {
+    "id": "Y24-10-014",
+    "title": "Haar analysis of prime gaps has an exact finite energy identity",
+    "status": "Classical result; recovered proposal repaired",
+    "summary": "The recovered October18 material is a proposed analysis using synthetic data, not a recovered result about primes. An exact Haar transform of a declared prime-gap vector gives a useful finite calculation. It detects differences at scales, without turning those coefficients into a prime-distribution theorem.",
+    "definitions": [
+      "For a pair(a,b), the orthonormal Haar transform is((a+b)/√2,(a−b)/√2). Recursively transform the averages for lengths2^k.",
+      "Use the first nine primes2,3,5,7,11,13,17,19,23, giving eight gaps1,2,2,4,2,4,2,4."
+    ],
+    "result": {
+      "name": "Exact Parseval identity for the finite transform",
+      "statement": "The squared Haar coefficients sum to the original squared data norm. For the stated gap vector the energy is65, decomposed as441/8 at the coarsest mean,9/8 at the coarsest detail,9/4 at the next details and13/2 at the finest details.",
+      "proof": "For each pair, ((a+b)/√2)²+((a−b)/√2)²=a²+b². Every recursive stage is therefore orthogonal and preserves total squared norm. The initial energy is1+4+4+16+4+16+4+16=65. The first-stage details are−1/√2,−2/√2,−2/√2,−2/√2, whose squared sum is13/2. The next-stage details are−3/2 and0, contributing9/4. The final detail is−3/(2√2), contributing9/8, while the final average is21/(2√2), contributing441/8. Adding these rational energies gives(441+9+18+52)/8=65. The computation is exact even if floating-point square roots are used for a visual display."
+    },
+    "example": {
+      "setup": "Compare the genuine gap vector with any permutation of its entries.",
+      "calculation": "Every permutation has the same total energy65 and the same coarsest mean, but its scale details generally change because adjacency changes. Consequently a histogram or marginal gap distribution cannot determine a wavelet spectrum. A synthetic sequence can be matched to one statistic while disagreeing in another.",
+      "conclusion": "The transform certifies finite scale-dependent structure in a specified sequence. The provenance of the data is part of the statement."
+    },
+    "limits": "No infinite limiting wavelet law, prime-gap conjecture or quantum interpretation follows from eight gaps. The historical source did not recover an implemented transform or genuine prime-data conclusion.",
+    "extension": "Generate primes by an exact sieve over a declared range, fix normalization and boundary treatment, and compare genuine data with explicitly described controls. Report finite observations as observations.",
+    "references": [
+      {
+        "label": "I. Daubechies, Orthonormal bases of compactly supported wavelets",
+        "url": "https://doi.org/10.1002/cpa.3160410705"
+      }
+    ],
+    "original": {
+      "date": "2024-10-18T12:28:50Z",
+      "month": "2024-10",
+      "evidence": "A",
+      "field": "Harmonic analysis",
+      "concept": "Wavelet analysis of arithmetic data",
+      "origin": "Recovered historical conversation excerpt; development written for this retrospective",
+      "question": "What can a wavelet computation prove exactly, and how should genuine prime data be distinguished from synthetic sequences?",
+      "math": "The theorem and example are newly developed mathematical repairs, not recovered historical proofs.",
+      "finish": "Established only within the stated hypotheses; no RH/GRH equivalence or security claim is inferred.",
+      "kind": "revised mathematical question and developed concept",
+      "refs": [
+        "haar"
+      ],
+      "source_excerpt": "Wavelet Transform Analysis of prime gaps using synthetic data",
+      "retrieval_receipt": "root_followups.json",
+      "original_question": null,
+      "attribution_note": "Recovered mathematical passage is assistant-authored. Original user question was not recovered."
+    }
+  },
+  {
+    "id": "Y24-10-015",
+    "title": "A modified discrete logarithm may be only a group relabeling",
+    "status": "Classical result; recovered proposal repaired",
+    "summary": "The recovered application list gives no precise group operation or map. A rigorous algebraic analysis can nevertheless identify a broad case: bijective transport produces the same group in new coordinates. This is a structural theorem, with no security claim attached.",
+    "definitions": [
+      "Let G=〈g〉 be a cyclic group of ordern andφ:G→S a bijection. Define a⋆b=φ(φ⁻¹(a)φ⁻¹(b)).",
+      "The transported power is defined using⋆, including the transported identityφ(1)."
+    ],
+    "result": {
+      "name": "An exact equivalence of logarithm equations",
+      "statement": "φ(g) raised to k using⋆ equalsφ(g^k). Thus φ(g)^⋆k=φ(h) if and only if g^k=h. The group and its exponent equation are isomorphic to the originals.",
+      "proof": "Induct on nonnegativek. Atk=0 both sides equalφ(1). If the identity holds atk, then φ(g)^⋆(k+1)=φ(φ⁻¹(φ(g^k))g)=φ(g^(k+1)). Negative exponents follow from transported inverses. Injectivity ofφ proves equivalence of the equations. Associativity and all group identities are inherited through the same calculation. Ifφ andφ⁻¹ are explicitly available, converting between equation instances is exact. If either map is unavailable or many-to-one, this theorem no longer describes the proposal: the resulting operation, representation and possible collisions must be specified separately."
+    },
+    "example": {
+      "setup": "Use the multiplicative group F_7* with generatorg=3, andφ(x)=x² only on a declared subset versusφ(x)=2x mod7 on all nonzero residues.",
+      "calculation": "The mapx↦2x is a bijection of the six labels. Since3⁴≡4 mod7, its transported equation isφ(3)^⋆4=φ(4), or6^⋆4=1. The label1 is not the transported identity, which is2. In contrastx↦x² is not bijective onF_7*:1 and6 collide, so it cannot serve as this transport without changing the quotient problem.",
+      "conclusion": "The group law, not a new symbol alone, determines what the exponent equation means."
+    },
+    "limits": "The historical J map, cost model and complete construction were not recovered. This does not establish computational hardness, an attack or any bit-security level; it identifies exact algebraic equivalence in the stated bijective case.",
+    "extension": "Specify the map and operation, test injectivity and derive its kernel or inverse. Only then classify whether the object is a relabeling, a quotient, an extension or a genuinely different problem.",
+    "references": [
+      {
+        "label": "J. S. Milne, Fields and Galois Theory",
+        "url": "https://www.jmilne.org/math/CourseNotes/FT.pdf"
+      }
+    ],
+    "original": {
+      "date": "2024-10-25T19:49:16Z",
+      "month": "2024-10",
+      "evidence": "A",
+      "field": "Group theory",
+      "concept": "Transported cyclic groups",
+      "origin": "Recovered historical conversation excerpt; development written for this retrospective",
+      "question": "If a J-based map relabels a cyclic group bijectively, what changes mathematically in its discrete-log equation?",
+      "math": "The theorem and example are newly developed mathematical repairs, not recovered historical proofs.",
+      "finish": "Established only within the stated hypotheses; no RH/GRH equivalence or security claim is inferred.",
+      "kind": "revised mathematical question and developed concept",
+      "refs": [
+        "ft"
+      ],
+      "source_excerpt": "modified discrete-log cryptography",
+      "retrieval_receipt": "root_followups.json",
+      "original_question": null,
+      "attribution_note": "Recovered mathematical passage is assistant-authored. Original user question was not recovered."
+    }
+  },
+  {
+    "id": "Y24-10-016",
+    "title": "A homomorphic encoding must prove an operation-preserving identity",
+    "status": "Classical result; recovered proposal repaired",
+    "summary": "The recovered application list uses the word homomorphic but gives no map identity. The mathematical core can be developed without making an applied cryptographic recommendation: a homomorphism must preserve a specified operation, and its kernel controls the information lost.",
+    "definitions": [
+      "For additive groups, f is a homomorphism when f(x+y)=f(x)+f(y) andf(0)=0.",
+      "For a ring map, multiplication and the unit must also be handled under the chosen convention."
+    ],
+    "result": {
+      "name": "A quadratic correction is generally not additive",
+      "statement": "Over a commutative ringR, letf(x)=x+cx². Then f(x+y)−f(x)−f(y)=2cxy. OverZ/qZ, additivity for allx,y is equivalent to2c=0 modq.",
+      "proof": "Expand(x+y)²=x²+2xy+y² and subtract. Necessity follows by settingx=y=1, and sufficiency follows immediately if2c=0. Thus over an odd prime field the only additive member of this family is c=0. In characteristic2, squaring is additive, so the conclusion changes: x↦x² is the Frobenius homomorphism. Additivity alone still does not ensure multiplicativity or invertibility. This small calculation illustrates why the base ring and operation cannot be omitted from a claimed “homomorphic” deformation. If an encoding transports the operation by a bijection as in the previous entry, it is homomorphic by construction, but that is a different operation from ordinary addition on the output labels."
+    },
+    "example": {
+      "setup": "TakeR=Z/7Z andc=1.",
+      "calculation": "f(1)=2 andf(2)=6, whereasf(1)+f(1)=4, so additivity fails. Alsof(1)=f(5)=2 mod7, showing this map is not injective. A collision matters algebraically: it prevents recovery of a unique input through an inverse, regardless of how the map is named. For comparison, x↦3x mod7 is an additive bijection with inversex↦5x, but it is not a unital ring automorphism because it maps1 to3.",
+      "conclusion": "One exact identity can validate or refute a proposed algebraic property. Nonlinearity by itself is neither homomorphism nor secrecy."
+    },
+    "limits": "The historical proposal does not supply a full encoding scheme, so no homomorphic-encryption construction or security conclusion is claimed. The entry isolates only the group and ring conditions.",
+    "extension": "Write every required operation-preservation identity, calculate the kernel and image, and test whether a decoder is well-defined. Treat any additional security property as a separate mathematical statement with a complete model.",
+    "references": [
+      {
+        "label": "J. S. Milne, Fields and Galois Theory",
+        "url": "https://www.jmilne.org/math/CourseNotes/FT.pdf"
+      }
+    ],
+    "original": {
+      "date": "2024-10-25T19:49:16Z",
+      "month": "2024-10",
+      "evidence": "A",
+      "field": "Algebra",
+      "concept": "Homomorphisms and collisions",
+      "origin": "Recovered historical conversation excerpt; development written for this retrospective",
+      "question": "What algebraic condition distinguishes a homomorphic map from a nonlinear feature map?",
+      "math": "The theorem and example are newly developed mathematical repairs, not recovered historical proofs.",
+      "finish": "Established only within the stated hypotheses; no RH/GRH equivalence or security claim is inferred.",
+      "kind": "revised mathematical question and developed concept",
+      "refs": [
+        "ft"
+      ],
+      "source_excerpt": "homomorphic encryption; J̃K applications",
+      "retrieval_receipt": "root_followups.json",
+      "original_question": null,
+      "attribution_note": "Recovered mathematical passage is assistant-authored. Original user question was not recovered."
+    }
+  },
+  {
+    "id": "Y24-10-017",
+    "title": "An invertible LWE coordinate change preserves the exact sample equation",
+    "status": "Classical result; recovered proposal repaired",
+    "summary": "The recovered source states a288-bit claim and benchmark score but gives no parameters or reduction. An exact coordinate-change theorem is a meaningful mathematical replacement: it states when a modified noisy linear equation is merely the same sample distribution in different coordinates.",
+    "definitions": [
+      "OverZ/qZ, an LWE-form sample is(a,b), with a∈(Z/qZ)^d andb=aᵀs+e, for a specified secret and error distribution.",
+      "LetT be an invertibled×d matrix overZ/qZ and set a′=Tᵀa,s′=T⁻¹s."
+    ],
+    "result": {
+      "name": "Exact invariance under an invertible change of basis",
+      "statement": "The equation is unchanged: a′ᵀs′=aᵀs. Uniforma remains uniforma′. The secret distribution becomes its pushforward underT⁻¹, while the scalar error distribution is unchanged.",
+      "proof": "Transpose multiplication gives a′ᵀs′=aᵀTT⁻¹s=aᵀs, so the sameb ande satisfy the transformed equation. The map a↦Tᵀa is a bijection of the finite module and therefore preserves the uniform distribution exactly. The map on secrets is likewise a bijection, but it preserves a particular prior only if that prior is invariant under the map; a small-coordinate distribution usually is not. Thus exact sample equivalence includes the transformed secret law, not merely the equation. Over a composite modulus, invertibility requires detT to be a unit moduloq, equivalently gcd(detT,q)=1. A noninvertible map can collapse samples and secrets, so the inverse reduction is unavailable."
+    },
+    "example": {
+      "setup": "Letq=7,T=[[1,1],[0,1]],s=(2,3),a=(4,5) ande=1.",
+      "calculation": "T⁻¹=[[1,−1],[0,1]], sos′=(6,3) mod7. Alsoa′=(4,2) andb=4·2+5·3+1=24≡3. The transformed product is4·6+2·3+1=31≡3, confirming the identical sample equation. The determinant is1, so the inverse exists over every modulus.",
+      "conclusion": "The verified algebra says exactly what this transformation preserves. It supplies no numerical security level."
+    },
+    "limits": "The recovered J̃K-LWE parameters, error law, reductions and cost estimates are not available. A benchmark score or a printed bit number is not a theorem. This entry makes no applied security recommendation.",
+    "extension": "Write the full transformed probability law and provide inverse maps between instances. If the intended modification changes the error distribution or ring, analyze that change explicitly rather than attributing it to a coordinate relabeling.",
+    "references": [
+      {
+        "label": "O. Regev, On lattices, learning with errors, random linear codes, and cryptography",
+        "url": "https://arxiv.org/abs/2401.03703"
+      }
+    ],
+    "original": {
+      "date": "2024-10-26T20:12:18Z",
+      "month": "2024-10",
+      "evidence": "A",
+      "field": "Linear algebra over finite rings",
+      "concept": "Coordinate changes in noisy linear equations",
+      "origin": "Recovered historical conversation excerpt; development written for this retrospective",
+      "question": "Which part of a claimed modified LWE construction can be checked purely algebraically, without accepting an unsupported bit-security number?",
+      "math": "The theorem and example are newly developed mathematical repairs, not recovered historical proofs.",
+      "finish": "Established only within the stated hypotheses; no RH/GRH equivalence or security claim is inferred.",
+      "kind": "revised mathematical question and developed concept",
+      "refs": [
+        "lwe"
+      ],
+      "source_excerpt": "J̃K-LWE claims 288-bit quantum-resistant security",
+      "retrieval_receipt": "root_details.json",
+      "original_question": null,
+      "attribution_note": "Recovered mathematical passage is assistant-authored. Original user question was not recovered."
+    }
+  },
+  {
+    "id": "Y24-10-018",
+    "title": "Class groups and Galois groups are different invariants",
+    "status": "Classical result; recovered proposal repaired",
+    "summary": "The recovered application list joins class-group and Galois-group computations. These are distinct mathematical tasks. The Gaussian field gives a complete contrast: its ideal class group is trivial while its Galois group overQ has two elements.",
+    "definitions": [
+      "The ideal class group of a number field is its nonzero fractional ideals modulo principal ideals.",
+      "The Galois group Gal(K/Q) consists of field automorphisms fixingQ, with composition."
+    ],
+    "result": {
+      "name": "An exact Gaussian example",
+      "statement": "ForK=Q(i), Cl(Z[i]) is trivial andGal(K/Q)≅C2. The two invariants cannot be identified even in this simplest quadratic case.",
+      "proof": "To prove the class-group statement, use Euclidean division inZ[i]. For nonzeroβ and anyα, writeα/β=u+iv and choose Gaussian integerq by roundingu andv to nearest integers. Then|α/β−q|²≤1/2<1, soN(α−qβ)<Nβ. The norm is a Euclidean function, hence every ideal is principal: choose a nonzero element of minimum norm in the ideal and divide any other element by it; the smaller remainder must vanish. Thus every fractional-ideal class is trivial. For the Galois group, an automorphism must sendi to a root ofx²+1, so there are at most two possibilities. Bothi↦i andi↦−i extend toQ-automorphisms. The latter has order2, givingC2."
+    },
+    "example": {
+      "setup": "Compare an invariant assigned to the prime37 with these groups.",
+      "calculation": "Because37=1²+6²=(1+6i)(1−6i), its ideal splits into two principal prime ideals, both trivial in the class group. Complex conjugation exchanges them and is nontrivial in the Galois group. A scalar weight on37 does not specify either the ideal equivalence relation or the field automorphism action.",
+      "conclusion": "The groups arise from different constructions and can have different sizes. Exact algorithms need the corresponding ideals or field equations."
+    },
+    "limits": "The example does not solve arbitrary class-group or Galois-group computation, nor does it validate an undefined J-based shortcut. Class field theory relates certain abelian Galois groups to ideal-theoretic data, but it does not identify every Galois group with the ordinary class group.",
+    "extension": "Given a number field polynomial, compute its ring of integers and ideal relations separately from its splitting-field automorphisms. If a J-map is proposed as an accelerator, prove which of these data it preserves.",
+    "references": [
+      {
+        "label": "J. S. Milne, Algebraic Number Theory",
+        "url": "https://www.jmilne.org/math/CourseNotes/ANT.pdf"
+      },
+      {
+        "label": "J. S. Milne, Fields and Galois Theory",
+        "url": "https://www.jmilne.org/math/CourseNotes/FT.pdf"
+      }
+    ],
+    "original": {
+      "date": "2024-10-25T19:49:16Z",
+      "month": "2024-10",
+      "evidence": "A",
+      "field": "Algebraic number theory",
+      "concept": "Class-group versus Galois-group computation",
+      "origin": "Recovered historical conversation excerpt; development written for this retrospective",
+      "question": "What exact small examples prevent a scalar arithmetic feature from being mistaken for either a class group or a Galois group?",
+      "math": "The theorem and example are newly developed mathematical repairs, not recovered historical proofs.",
+      "finish": "Established only within the stated hypotheses; no RH/GRH equivalence or security claim is inferred.",
+      "kind": "revised mathematical question and developed concept",
+      "refs": [
+        "ant",
+        "ft"
+      ],
+      "source_excerpt": "class/Galois-group computation",
+      "retrieval_receipt": "root_followups.json",
+      "original_question": null,
+      "attribution_note": "Recovered mathematical passage is assistant-authored. Original user question was not recovered."
+    }
+  },
+  {
+    "id": "Y24-10-019",
+    "title": "The feature map x↦(x²,x³) is injective but singular at zero",
+    "status": "Classical result; recovered proposal repaired",
+    "summary": "The recovered two-component feature has a precise geometric interpretation independent of any unspecified spectral application. It parameterizes a cusp, retains the sign through its cubic coordinate and loses first-order sensitivity at zero.",
+    "definitions": [
+      "LetΦ:R→R² beΦ(x)=(x²,x³). Its image satisfiesv²=u³ andu≥0.",
+      "The inverse isx=v/u whenu>0, withx=0 at(u,v)=(0,0)."
+    ],
+    "result": {
+      "name": "Injectivity and inverse instability",
+      "statement": "Φ is injective. It is a homeomorphism onto the real cusp, but its inverse is not locally Lipschitz at the origin. In polynomial coordinate rings,C[t²,t³] is strictly smaller than its normalizationC[t].",
+      "proof": "Ifx²=y² theny=x ory=−x. In the latter case equality of cubic coordinates forcesx³=−x³, hencex=0; thereforex=y. The displayed inverse is continuous away from zero; near zero,|x|=√u ensures continuity there as well. But||Φ(x)−Φ(0)||=x²√(1+x²), so|x|/||Φ(x)||=1/(|x|√(1+x²))→∞. No finite inverse Lipschitz constant exists near zero. Algebraically,t is integral overR0=C[t²,t³] because it satisfiesX²−t²=0 witht²∈R0, but t∉R0: every nonconstant monomial in the generators has degree at least2. Moreover t=t³/t² lies in its fraction field. The ringC[t] is integrally closed and integral overR0, yielding the standard cusp normalization."
+    },
+    "example": {
+      "setup": "Compare inputsε and−ε.",
+      "calculation": "Their squared coordinates coincide, while cubic coordinates differ by2ε³. Thus||Φ(ε)−Φ(−ε)||=2|ε|³ even though their input distance is2|ε|. Withε=1/10 the feature distance is1/500 and the input distance1/5. The cubic coordinate preserves the sign exactly in noiseless arithmetic but becomes extremely small near zero.",
+      "conclusion": "Injectivity does not guarantee a well-conditioned feature representation. The derivativeΦ′(0)=(0,0) explains the local loss of sensitivity."
+    },
+    "limits": "This establishes properties of the specified feature map, not a spectral-learning advantage or an arithmetic correspondence. Inverse behavior under noisy measurements depends on a declared noise model and domain.",
+    "extension": "If stable inversion is required near zero, include a linear coordinate or restrict|x| away from zero. Prove the resulting conditioning bounds on the stated domain.",
+    "references": [
+      {
+        "label": "NIST Digital Library of Mathematical Functions",
+        "url": "https://dlmf.nist.gov/"
+      }
+    ],
+    "original": {
+      "date": "2024-10-25T19:49:16Z",
+      "month": "2024-10",
+      "evidence": "A",
+      "field": "Algebraic geometry and analysis",
+      "concept": "Cusp feature geometry",
+      "origin": "Recovered historical conversation excerpt; development written for this retrospective",
+      "question": "What information does the recovered polynomial feature map preserve, and how stable is its inverse?",
+      "math": "The theorem and example are newly developed mathematical repairs, not recovered historical proofs.",
+      "finish": "Established only within the stated hypotheses; no RH/GRH equivalence or security claim is inferred.",
+      "kind": "revised mathematical question and developed concept",
+      "refs": [
+        "analysis"
+      ],
+      "source_excerpt": "spectral features [x²,x³]",
+      "retrieval_receipt": "root_followups.json",
+      "original_question": null,
+      "attribution_note": "Recovered mathematical passage is assistant-authored. Original user question was not recovered."
+    }
+  },
+  {
+    "id": "Y24-10-020",
+    "title": "A deformed graph Laplacian is controlled by its edge weights",
+    "status": "Classical result; recovered proposal repaired",
+    "summary": "The historical application does not specify the modified Laplacian. A concrete weighted graph model supplies an exact theorem: nonnegative symmetric weights give a positive semidefinite energy and heat evolution, while negative weights can reverse the conclusion.",
+    "definitions": [
+      "For symmetric weightsw_ij≥0, define(Lu)_i=Σ_jw_ij(u_i−u_j). The graph connects vertices linked by positive weights.",
+      "Heat evolution is u′=−Lu. Constants on each connected component form the expected equilibrium space."
+    ],
+    "result": {
+      "name": "Energy identity and decay",
+      "statement": "uᵀLu=Σ_(i<j)w_ij(u_i−u_j)²≥0. Along heat flow,d(||u||²/2)/dt=−uᵀLu≤0. On the orthogonal complement of componentwise constants, decay is exponential at the smallest positive eigenvalue.",
+      "proof": "ExpanduᵀLu=Σ_iu_iΣ_jw_ij(u_i−u_j). Pair theij andji terms to obtainw_ij(u_i−u_j)² for each unordered edge. Vanishing of all terms forces equality ofu across every positive edge and hence across each connected component. Symmetry allows orthogonal diagonalization; on a positive-eigenvalue component with eigenvalueλ, the solution coefficient is multiplied bye^(−λt). This proves the decay statement, while zero modes remain constant. If a proposed J weight is negative, the nonnegative-square proof fails andL may have a negative eigenvalue; the corresponding “heat” mode then grows."
+    },
+    "example": {
+      "setup": "Take a three-vertex path with unit weights.",
+      "calculation": "L=[[1,−1,0],[−1,2,−1],[0,−1,1]] has eigenvalues0,1,3 with eigenvectors(1,1,1),(1,0,−1),(1,−2,1). Starting from(1,0,−1), heat evolution is exactlye^(−t)(1,0,−1). On two vertices with weight−1, the difference mode instead has eigenvalue−2 and growse^(2t).",
+      "conclusion": "A valid Laplacian modification needs symmetry and positivity, or an explicit alternative theory. A named arithmetic weight does not automatically possess them."
+    },
+    "limits": "No connection between the recovered J-function and a graph or domain is available, so the weights here are a clearly declared model. This is not a claim about prime distributions or quantum energy levels.",
+    "extension": "For an actual arithmetic graph, list its vertices, edge rule and weight formula. Prove weight bounds and compare quadratic forms to obtain quantitative eigenvalue estimates.",
+    "references": [
+      {
+        "label": "NIST Digital Library of Mathematical Functions",
+        "url": "https://dlmf.nist.gov/"
+      }
+    ],
+    "original": {
+      "date": "2024-10-25T19:49:16Z",
+      "month": "2024-10",
+      "evidence": "A",
+      "field": "Spectral graph theory",
+      "concept": "Weighted Laplacian evolution",
+      "origin": "Recovered historical conversation excerpt; development written for this retrospective",
+      "question": "Which exact positivity and decay statements follow when a recovered modification is defined as edge weights?",
+      "math": "The theorem and example are newly developed mathematical repairs, not recovered historical proofs.",
+      "finish": "Established only within the stated hypotheses; no RH/GRH equivalence or security claim is inferred.",
+      "kind": "revised mathematical question and developed concept",
+      "refs": [
+        "analysis"
+      ],
+      "source_excerpt": "J̃K-modified Laplacian evolution",
+      "retrieval_receipt": "root_followups.json",
+      "original_question": null,
+      "attribution_note": "Recovered mathematical passage is assistant-authored. Original user question was not recovered."
+    }
+  },
+  {
+    "id": "Y24-10-021",
+    "title": "The height sum is meaningful only with normalized local absolute values",
+    "status": "Classical result; recovered proposal repaired",
+    "summary": "The recovered height discussion adds categorical, geometric and homotopical contributions and gives unexplained numerical totals. A classical Weil height is instead a well-defined function because normalized local absolute values satisfy the product formula. That condition can be checked completely overQ.",
+    "definitions": [
+      "Forp prime, set|x|_p=p^(−v_p(x)); use the ordinary absolute value at∞.",
+      "For reduceda/b withb>0, defineh(a/b)=Σ_vlogmax(1,|a/b|_v). Only finitely many terms are nonzero."
+    ],
+    "result": {
+      "name": "An exact rational height formula",
+      "statement": "h(a/b)=logmax(|a|,b). The projective formulah([a:b])=Σ_vlogmax(|a|_v,|b|_v) is invariant under simultaneous nonzero rational scaling.",
+      "proof": "For reduceda,b, a finite place contributes tologmax(1,|a/b|_p) exactly whenp dividesb, and its contribution isv_p(b)logp. Their sum islogb. The infinite contribution islogmax(1,|a|/b), yieldinglogmax(|a|,b). For projective scaling byc, each local maximum is multiplied by|c|_v, so the total changes byΣ_vlog|c|_v. Writingc=±∏p^e_p giveslog|c|∞=Σe_plogp andΣ_plog|c|_p=−Σe_plogp, so the change is zero. This is the product formula, proved here directly by rational factorization."
+    },
+    "example": {
+      "setup": "Compute the height of3/2 using local contributions and rescale its homogeneous coordinates.",
+      "calculation": "The infinite contribution islog(3/2), the2-adic contribution islog2, and all others vanish; the total islog3. The projective points[3:2] and[15:10] give the same total: the scale factor5 addslog5 at∞ and−log5 atp=5. An arbitrary extra “interaction height” would need its own scaling-invariance proof.",
+      "conclusion": "Local contributions become an arithmetic invariant through an exact normalization identity. Summing unexplained numerical categories does not establish that identity."
+    },
+    "limits": "The recovered values nearp=37 lack a defined object, metric and local normalization, so they cannot be reproduced as Weil heights. The displayed sum90.273+83.0527+75.829 equals249.1547, a numerical total but not a definition of an arithmetic height.",
+    "extension": "For a geometric extension, specify a line bundle with adelic metrics and verify coordinate compatibility and convergence. For a categorical object, first define which numerical invariant is intended and prove its basic functorial properties.",
+    "references": [
+      {
+        "label": "MIT 18.782, Introduction to Arithmetic Geometry, lecture notes",
+        "url": "https://math.mit.edu/classes/18.782/2013fa/lectures.html"
+      }
+    ],
+    "original": {
+      "date": "2024-10-28T01:43:15Z",
+      "month": "2024-10",
+      "evidence": "A",
+      "field": "Diophantine geometry",
+      "concept": "Weil heights and the product formula",
+      "origin": "Recovered historical conversation excerpt; development written for this retrospective",
+      "question": "What exact local-to-global identity makes a rational height independent of coordinates?",
+      "math": "The theorem and example are newly developed mathematical repairs, not recovered historical proofs.",
+      "finish": "Established only within the stated hypotheses; no RH/GRH equivalence or security claim is inferred.",
+      "kind": "revised mathematical question and developed concept",
+      "refs": [
+        "height"
+      ],
+      "source_excerpt": "h(α)=Σ_vλ_v(α); p=37 local249.154 and interaction20,630.61",
+      "retrieval_receipt": "root_receipts.json",
+      "original_question": null,
+      "attribution_note": "Recovered mathematical passage is assistant-authored. Original user question was not recovered."
+    }
+  },
+  {
+    "id": "Y24-10-022",
+    "title": "A categorical decomposition needs a chain complex and an actual invariant",
+    "status": "Classical result; recovered proposal repaired",
+    "summary": "The recovered ∞-topos discussion does not define its new height. A rigorous foundational requirement is invariance under the chosen equivalence relation. A finite chain-complex example shows that counting components of a presentation can change while the represented cohomology does not.",
+    "definitions": [
+      "A cochain complex is a sequenceC^i with differentialsd satisfyingd²=0. A quasi-isomorphism is a chain map inducing isomorphisms on all cohomology groups.",
+      "The two-term complexK=(R→R), with differential the identity, is acyclic."
+    ],
+    "result": {
+      "name": "An exact presentation-invariance obstruction",
+      "statement": "C andC⊕K are quasi-isomorphic and have identical cohomology, but their total vector-space dimensions differ by2. Any proposed invariant depending only on the derived object must assign them the same value.",
+      "proof": "The projectionC⊕K→C is a chain map. Becauseker(id_R)=0 andcoker(id_R)=0, K has zero cohomology in every degree. Direct sums commute with kernels and images here, soH^i(C⊕K)=H^i(C)⊕H^i(K)=H^i(C). The projection is a quasi-isomorphism. Nevertheless the sum of dimensions of its presentation spaces increases by2. Thus an uncorrected “height” counting those spaces cannot be invariant under quasi-isomorphism. The Euler characteristic avoids this specific problem because the two added terms occur in consecutive degrees with opposite signs, contributing1−1=0. This does not make Euler characteristic an arithmetic height, but it gives a complete model of the invariance check that is missing."
+    },
+    "example": {
+      "setup": "TakeC=R concentrated in degree0.",
+      "calculation": "C hasH0=R and total dimension1. The complexC⊕K has a two-dimensional degree0 term, a one-dimensional degree1 term and an identity map on the added summand. Its cohomology is againR in degree0 and0 elsewhere, its total dimension is3, and both Euler characteristics equal1.",
+      "conclusion": "A category-theoretic vocabulary must be accompanied by a defined equivalence-invariant construction. A list of component values does not supply one."
+    },
+    "limits": "This is a finite homological-algebra model, not a definition of heights on ∞-topoi. Equivalence in an ∞-category, convergence of infinite sums and arithmetic metrics require substantially more structure.",
+    "extension": "Define the object category, equivalences, target group and additivity law for the proposed invariant. Test it on contractible or acyclic additions before attaching numerical examples.",
+    "references": [
+      {
+        "label": "Bhatt–Scholze, Prisms and prismatic cohomology",
+        "url": "https://people.mpim-bonn.mpg.de/scholze/prisms.pdf"
+      }
+    ],
+    "original": {
+      "date": "2024-10-28T01:43:15Z",
+      "month": "2024-10",
+      "evidence": "A",
+      "field": "Homological algebra",
+      "concept": "Derived invariance versus labels",
+      "origin": "Recovered historical conversation excerpt; development written for this retrospective",
+      "question": "Which elementary test prevents a proposed categorical height from depending on an arbitrary presentation?",
+      "math": "The theorem and example are newly developed mathematical repairs, not recovered historical proofs.",
+      "finish": "Established only within the stated hypotheses; no RH/GRH equivalence or security claim is inferred.",
+      "kind": "revised mathematical question and developed concept",
+      "refs": [
+        "prism"
+      ],
+      "source_excerpt": "infinity-topoi; categorical/geometric/homotopical height components",
+      "retrieval_receipt": "root_receipts.json",
+      "original_question": null,
+      "attribution_note": "Recovered mathematical passage is assistant-authored. Original user question was not recovered."
+    }
+  },
+  {
+    "id": "Y24-10-023",
+    "title": "A concrete perfectoid field requires completeness and Frobenius surjectivity",
+    "status": "Classical result; recovered proposal repaired",
+    "summary": "The recovered formula refers to a modified perfectoid structure sheaf, but no underlying ring or valuation is supplied. An explicit characteristic-p field gives a correct base example and makes the roles of nondiscreteness and completeness visible.",
+    "definitions": [
+      "Fixp and start withK0=⋃_(n≥0)F_p((t^(1/p^n))), witht-adic valuation normalized byv(t)=1. LetK be its completion.",
+      "A rank-one valued field of residue characteristicp is perfectoid when it is complete, its valuation is nondiscrete and Frobenius is surjective on its power-bounded ring modulop."
+    ],
+    "result": {
+      "name": "An explicit characteristic-p perfectoid field",
+      "statement": "The fieldK is perfectoid. Its value group containsp^(−n), so the valuation is nondiscrete, and Frobenius onK is bijective.",
+      "proof": "Every Laurent series overF_p in the variablet^(1/p^n) has a pth root obtained by dividing its exponents byp and taking the unique pth roots of coefficients inF_p. This root lies at the next level, so Frobenius is bijective onK0. Ifx_m is a Cauchy sequence inK0, its rootsy_m satisfy|y_m−y_l|^p=|x_m−x_l| in characteristicp. They are therefore Cauchy and converge inK. Their limit is a pth root of the limit ofx_m, by continuity of multiplication. Frobenius is injective in a field, so it is bijective onK. It preserves the valuation ring in both directions. Sincep=0 inK, the quotient of that ring byp is the ring itself, and the required surjectivity follows. Completeness holds by construction and nondiscreteness follows fromv(t^(1/p^n))=p^(−n)→0."
+    },
+    "example": {
+      "setup": "Atp=2, take the element1+t^(1/2).",
+      "calculation": "Its square is1+t because the cross term vanishes in characteristic2. Its square root1+t^(1/4) appears at the next level. Arbitrarily small positive valuations are realized byt^(1/2^n), so this is not a discretely valued Laurent-series field.",
+      "conclusion": "The definition can be verified on an explicit object before any cohomological comparison or height weighting is proposed."
+    },
+    "limits": "A multiplicative tilting correspondence does not identify characteristic0 and characteristicp structure sheaves as rings. Arbitrary exponentials of real-valued heights need not belong to a p-adic coefficient ring or define sheaf restriction maps.",
+    "extension": "For a modification, specify the coefficient ring and the local sections of the intended sheaf, prove restriction compatibility and ring closure, then formulate a comparison map with stated coefficients.",
+    "references": [
+      {
+        "label": "P. Scholze, Perfectoid spaces",
+        "url": "https://people.mpim-bonn.mpg.de/scholze/PerfectoidSpaces.pdf"
+      }
+    ],
+    "original": {
+      "date": "2024-10-27T14:58:14Z",
+      "month": "2024-10",
+      "evidence": "A",
+      "field": "p-adic geometry",
+      "concept": "A characteristic-p perfectoid model",
+      "origin": "Recovered historical conversation excerpt; development written for this retrospective",
+      "question": "What actual perfectoid object can be exhibited before modifying its structure sheaf?",
+      "math": "The theorem and example are newly developed mathematical repairs, not recovered historical proofs.",
+      "finish": "Established only within the stated hypotheses; no RH/GRH equivalence or security claim is inferred.",
+      "kind": "revised mathematical question and developed concept",
+      "refs": [
+        "perfectoid"
+      ],
+      "source_excerpt": "quantum-height-modified perfectoid/prismatic framework",
+      "retrieval_receipt": "root_receipts.json",
+      "original_question": null,
+      "attribution_note": "Recovered mathematical passage is assistant-authored. Original user question was not recovered."
+    }
+  },
+  {
+    "id": "Y24-10-024",
+    "title": "A prism is a structured pair, not a new label for a height weight",
+    "status": "Classical result; recovered proposal repaired",
+    "summary": "The recovered comparison is not a theorem until its two sites, coefficient sheaves and comparison map are defined. The standard crystalline prism(Z_p,(p)) supplies a complete elementary verification of the underlying algebraic axioms.",
+    "definitions": [
+      "Aδ-ring has a Frobenius liftφ(x)=x^p+pδ(x); on a p-torsion-free ring such a lift determinesδ.",
+      "A prism(A,I) hasI defining a Cartier divisor,A derived(p,I)-complete andp∈I+φ(I)A. It is bounded whenA/I has boundedp-power torsion."
+    ],
+    "result": {
+      "name": "The crystalline base prism",
+      "statement": "OnA=Z_p takeφ=id andδ(x)=(x−x^p)/p. Then(A,(p)) is a bounded prism with quotientF_p.",
+      "proof": "Fermat’s congruence and continuity showx−x^p is divisible byp inZ_p, soδ is well-defined. The identity map is a ring homomorphism whose reduction modulo p equals Frobenius onF_p, becausex^p=x there. Thereforeδ has exactly theδ-ring identities induced by this lift. The ideal(p) is generated by a non-zero-divisor inZ_p and so defines a Cartier divisor. The ring is p-adically complete; because it is p-torsion-free this also supplies the relevant derived completeness in this example. Finallyφ(p)=p, sop lies in(p)+φ((p))A=(p). The quotient isF_p, whosep-torsion is killed byp, establishing boundedness. These checks exhibit all the named data, rather than merely appending a subscript to a cohomology symbol."
+    },
+    "example": {
+      "setup": "Takep=3 and evaluateδ on a few ordinary integers embedded inZ_3.",
+      "calculation": "δ(2)=(2−8)/3=−2, δ(3)=(3−27)/3=−8 andδ(1)=0. The mapδ is not an ordinary derivation:δ(2·2)=δ(4)=−20, whereas2δ(2)+2δ(2)=−8. Its product rule includes the Frobenius andp terms encoded byφ.",
+      "conclusion": "The simplest valid prism already requires a precise algebraic structure. A height-weighted version must establish analogous axioms and a genuine site."
+    },
+    "limits": "This proves a base example, not a general comparison theorem. Bhatt–Scholze comparisons involve particular coefficient rings and base changes; they do not assert that any two expressions labeled perfectoid and prismatic are isomorphic.",
+    "extension": "Define the proposed modifiedδ-ring and ideal, verify the prism axioms, and give a map of ringed sites or complexes. Only then ask whether that map is a quasi-isomorphism.",
+    "references": [
+      {
+        "label": "Bhatt–Scholze, Prisms and prismatic cohomology",
+        "url": "https://people.mpim-bonn.mpg.de/scholze/prisms.pdf"
+      }
+    ],
+    "original": {
+      "date": "2024-10-27T14:58:14Z",
+      "month": "2024-10",
+      "evidence": "A",
+      "field": "Arithmetic geometry",
+      "concept": "Prisms and δ-rings",
+      "origin": "Recovered historical conversation excerpt; development written for this retrospective",
+      "question": "Which explicit prism can be checked, and what data are absent from the recovered modified comparison?",
+      "math": "The theorem and example are newly developed mathematical repairs, not recovered historical proofs.",
+      "finish": "Established only within the stated hypotheses; no RH/GRH equivalence or security claim is inferred.",
+      "kind": "revised mathematical question and developed concept",
+      "refs": [
+        "prism"
+      ],
+      "source_excerpt": "RΓ_perf,J̃K(X,O)≅RΓ_Δ,J̃K(X,O)",
+      "retrieval_receipt": "root_receipts.json",
+      "original_question": null,
+      "attribution_note": "Recovered mathematical passage is assistant-authored. Original user question was not recovered."
+    }
+  },
+  {
+    "id": "Y24-10-025",
+    "title": "A cohomology comparison must survive a coefficient check",
+    "status": "Classical result; recovered proposal repaired",
+    "summary": "The recovered period and comparison maps omit their source and target categories and coefficient rings. An elementary point example shows why these omissions are decisive. Even when both sides have cohomology concentrated in degree0, different coefficient groups need not be isomorphic.",
+    "definitions": [
+      "A quasi-isomorphism of complexes induces an isomorphism on every cohomology group in the stated coefficient category.",
+      "For a complex consisting of a ringR in degree0, its only cohomology isH0=R."
+    ],
+    "result": {
+      "name": "A coefficient obstruction and a valid derived reduction",
+      "statement": "The degree0 complexesZ_p andF_p are not quasi-isomorphic as complexes of abelian groups. ButZ_p⊗^L_(Z_p)F_p≃F_p, so an explicitly stated base change gives a valid comparison.",
+      "proof": "Every element of the additive groupF_p is killed byp. InZ_p, multiplication byp is injective and1 is not killed byp. Hence their degree0 cohomology groups are not isomorphic, ruling out a quasi-isomorphism. For the derived tensor product overZ_p, the moduleZ_p is free of rank1 over itself, so no higher resolution is needed:Z_p⊗_(Z_p)F_p=F_p concentrated in degree0. As a second caution, tensoringF_p with itself overZ_p is different: the free resolution[Z_p —p→ Z_p] gives after tensoring the complex[F_p —0→ F_p], with nonzeroTor1 as well as degree0. Thus even an apparently harmless coefficient substitution may introduce a higher derived term."
+    },
+    "example": {
+      "setup": "Usep=3 and compare the three complexes just described.",
+      "calculation": "H0(Z_3)=Z_3 andH0(F_3)=F_3 differ by torsion. The base-changedZ_3 complex has onlyF_3 in degree0. The self-derived tensorF_3⊗^L_(Z_3)F_3 hasF_3 in degrees0 and−1, so replacing derived tensor by ordinary tensor would lose a cohomology group.",
+      "conclusion": "Coefficient and base-change data are part of a theorem’s content. They cannot be supplied by a shared notation or a claimed period-map analogy."
+    },
+    "limits": "This does not identify either historical symbol with these elementary complexes. It gives a necessary consistency test for any precise formulation. Perfectoid and prismatic comparisons have additional hypotheses beyond this coefficient check.",
+    "extension": "Write the proposed map between explicit complexes over an explicit base ring, state every tensor operation as ordinary or derived, and test it first on a point and on a non-flat coefficient example.",
+    "references": [
+      {
+        "label": "Bhatt–Scholze, Prisms and prismatic cohomology",
+        "url": "https://people.mpim-bonn.mpg.de/scholze/prisms.pdf"
+      }
+    ],
+    "original": {
+      "date": "2024-10-27T14:58:14Z",
+      "month": "2024-10",
+      "evidence": "A",
+      "field": "Homological algebra",
+      "concept": "Base change in comparison statements",
+      "origin": "Recovered historical conversation excerpt; development written for this retrospective",
+      "question": "What elementary obstruction can refute an undefined comparison before advanced machinery is invoked?",
+      "math": "The theorem and example are newly developed mathematical repairs, not recovered historical proofs.",
+      "finish": "Established only within the stated hypotheses; no RH/GRH equivalence or security claim is inferred.",
+      "kind": "revised mathematical question and developed concept",
+      "refs": [
+        "prism"
+      ],
+      "source_excerpt": "RΓ_perf,J̃K≅RΓ_Δ,J̃K; period map",
+      "retrieval_receipt": "root_receipts.json",
+      "original_question": null,
+      "attribution_note": "Recovered mathematical passage is assistant-authored. Original user question was not recovered."
+    }
+  },
+  {
+    "id": "Y24-10-026",
+    "title": "Propositional connectives can be specified by complete truth tables",
+    "status": "Classical result; recovered proposal repaired",
+    "summary": "The recovered October13 logic material names the standard connectives. A precise development treats formulas as expressions evaluated under Boolean assignments. This makes equivalence a checkable universal statement and prevents material implication from being confused with causal language.",
+    "definitions": [
+      "A valuation assigns each propositional variable a value0 or1. Negation sendsp to1−p.",
+      "Conjunction is true only when both inputs are true; disjunction is true when at least one is true; material implicationp→q means¬p∨q."
+    ],
+    "result": {
+      "name": "Exact implication and equivalence identities",
+      "statement": "p→q is false only at(p,q)=(1,0). The biconditionalp⇔q is equivalent to(p→q)∧(q→p), andp→(q→r) is equivalent to(p∧q)→r.",
+      "proof": "Usingp→q=¬p∨q, the biconditional expression is(¬p∨q)∧(¬q∨p). It is true at(0,0) and(1,1), and false at the two unequal assignments, exactly matching equality of truth values. For the nesting identity,p→(q→r)=¬p∨(¬q∨r). By associativity and De Morgan’s law this is¬(p∧q)∨r, which is(p∧q)→r. This does not imply that(p→q)→r is equivalent. Atp=0,q=0,r=0, the first nested formula is true while(p→q)→r is false, because the inner implicationp→q is true. Parentheses therefore change a mathematically testable property."
+    },
+    "example": {
+      "setup": "Write the four rows forp→q and the biconditional.",
+      "calculation": "For(p,q)=(0,0),(0,1),(1,0),(1,1), the implication values are1,1,0,1 and the biconditional values are1,0,0,1. A short exhaustive verifier evaluates all eight assignments for the three-variable identity, rather than relying on an informal reading of “if.”",
+      "conclusion": "Truth conditions and grouping provide a complete finite certificate for propositional equivalence."
+    },
+    "limits": "Material implication is a truth-functional connective; it does not assert relevance, time order or causality. Natural-language “or” can have exclusive uses, so translation choices must be stated. This entry does not address quantified domains yet.",
+    "extension": "Build formulas as abstract syntax trees and evaluate them recursively. For a proposed equivalence withn variables, enumerate2^n assignments or provide a symbolic Boolean derivation.",
+    "references": [
+      {
+        "label": "Open Logic Project, author-maintained text",
+        "url": "https://builds.openlogicproject.org/open-logic-complete.pdf"
+      }
+    ],
+    "original": {
+      "date": "2024-10-13T19:38:24Z",
+      "month": "2024-10",
+      "evidence": "A",
+      "field": "Mathematical logic",
+      "concept": "Boolean connectives and implication",
+      "origin": "Recovered historical conversation excerpt; development written for this retrospective",
+      "question": "Which exact truth conditions and countermodels replace ambiguous prose combinations?",
+      "math": "The theorem and example are newly developed mathematical repairs, not recovered historical proofs.",
+      "finish": "Established only within the stated hypotheses; no RH/GRH equivalence or security claim is inferred.",
+      "kind": "revised mathematical question and developed concept",
+      "refs": [
+        "logic"
+      ],
+      "source_excerpt": "∧,∨,¬,→,⇔; precedence and grouping",
+      "retrieval_receipt": "root_receipts.json",
+      "original_question": null,
+      "attribution_note": "Recovered mathematical passage is assistant-authored. Original user question was not recovered."
+    }
+  },
+  {
+    "id": "Y24-10-027",
+    "title": "Quantifier order and variable binding change the theorem",
+    "status": "Classical result; recovered proposal repaired",
+    "summary": "The recovered logic examples become rigorous after specifying a domain and interpretation. Quantifier order is not a stylistic choice: it can distinguish a uniform witness from a witness that depends on the input. Variable substitution must also avoid changing which variables are bound.",
+    "definitions": [
+      "∀x∃yR(x,y) permitsy to depend onx; ∃y∀xR(x,y) requires one witness for allx.",
+      "A free occurrence of a variable is not governed by a quantifier for that variable. Substitution replaces free occurrences only, with bound variables renamed if needed."
+    ],
+    "result": {
+      "name": "An exact two-element countermodel",
+      "statement": "OnD={0,1} withR(x,y) meaningx=y, ∀x∃yR(x,y) is true and∃y∀xR(x,y) is false. Thus the two quantifier orders are not logically equivalent.",
+      "proof": "For eachx choosey=x, proving the first formula. For any fixedy∈D choosex=1−y; thenx≠y, so the universal condition fails and the second formula is false. The reverse implication is valid in every nonempty domain: one uniform witness also serves each individualx. For binding, considerφ(x)=∃y(x≠y). Substituting a free variabley forx cannot produce∃y(y≠y), because that would capture the newly inserted occurrence. First rename the bound variable toz, giving∃z(x≠z), then substitute to obtain∃z(y≠z). The latter retains the intended dependence on the free value ofy."
+    },
+    "example": {
+      "setup": "Evaluate the capture example overD={0,1}.",
+      "calculation": "The correctly substituted formula∃z(y≠z) is true for either free valuey, by choosing the other element. The captured formula∃y(y≠y) is false. Thus a syntactic substitution mistake can reverse truth even in the smallest nontrivial model.",
+      "conclusion": "Quantifier scope and binding are part of the mathematical claim, and finite countermodels can expose an invalid rewrite immediately."
+    },
+    "limits": "Empty-domain conventions can affect some quantifier laws, so standard first-order logic usually assumes a nonempty domain. Natural-language subject–verb–object order does not by itself determine quantifier scope.",
+    "extension": "For a formal-language project, assign every relation an arity, every term a type and every quantifier an explicit scope. Implement alpha-renaming and free-variable checks before attempting automated derivations.",
+    "references": [
+      {
+        "label": "Open Logic Project, author-maintained text",
+        "url": "https://builds.openlogicproject.org/open-logic-complete.pdf"
+      }
+    ],
+    "original": {
+      "date": "2024-10-13T19:42:21Z",
+      "month": "2024-10",
+      "evidence": "A",
+      "field": "First-order logic",
+      "concept": "Quantifiers and scope",
+      "origin": "Recovered historical conversation excerpt; development written for this retrospective",
+      "question": "How do quantifier order and capture-avoiding substitution affect a formal mathematical statement?",
+      "math": "The theorem and example are newly developed mathematical repairs, not recovered historical proofs.",
+      "finish": "Established only within the stated hypotheses; no RH/GRH equivalence or security claim is inferred.",
+      "kind": "revised mathematical question and developed concept",
+      "refs": [
+        "logic"
+      ],
+      "source_excerpt": "∀x(Human(x)→Mortal(x)); ∃x(Human(x)∧Loves(x,Socrates))",
+      "retrieval_receipt": "root_receipts.json",
+      "original_question": null,
+      "attribution_note": "Recovered mathematical passage is assistant-authored. Original user question was not recovered."
+    }
+  },
+  {
+    "id": "Y24-10-028",
+    "title": "Exponent towers require a parse tree",
+    "status": "Classical result; recovered proposal repaired",
+    "summary": "The recovered flashcard includes2^(3²)=512. This is an opportunity to make the expression tree explicit: exponentiation is not associative, and programming notation may use a different symbol from ordinary mathematical writing. The mathematical statement is simple but exact.",
+    "definitions": [
+      "A towera^(b^c) means exponentiateb byc first. The parenthesized expression(a^b)^c is a different binary-operation tree.",
+      "For positivea, a^r can be defined as exp(r loga), making the comparison meaningful for real exponents."
+    ],
+    "result": {
+      "name": "An exact associativity comparison",
+      "statement": "For positivea,(a^b)^c=a^(bc), whereas a^(b^c) generally differs. Ifa≠1, equality holds exactly whenbc=b^c.",
+      "proof": "From the exponential definition,(a^b)^c=exp(c log(exp(b loga)))=exp(bc loga)=a^(bc), sincea>0. For a≠1 the functionr↦a^r is injective, so equality witha^(b^c) is equivalent tobc=b^c. For a=1 all real powers are1. Restrictions are essential when allowing negative bases or complex exponents, because logarithm branches then prevent the same unrestricted argument. A parser records exponentiation as a node with left and right children; choosing right association createsa^(b^c), while left association creates(a^b)^c. No appeal to typographic intuition is needed once the tree is specified."
+    },
+    "example": {
+      "setup": "Evaluate the recovered numbersa=2,b=3,c=2.",
+      "calculation": "The right-associated tower is2^(3²)=2^9=512. The left-associated value is(2³)²=8²=64=2^6. Their ratio is8. In Python the exponentiation token is**; the token^ denotes bitwise exclusive-or on integers, so source code must use2**(3**2) to express the intended tower. The included verifier uses explicit parentheses.",
+      "conclusion": "An explicit parse tree prevents a basic arithmetic statement from becoming a notation or code error."
+    },
+    "limits": "This entry concerns exact finite values. Huge towers require modular arithmetic or logarithmic descriptions, and floating-point exponentiation can overflow even when the mathematical expression is well-defined.",
+    "extension": "For a symbolic-language framework, give exponentiation its own grammar rule and store parentheses structurally. Test the rendered expression against the abstract syntax tree rather than relying on a string of caret symbols.",
+    "references": [
+      {
+        "label": "NIST Digital Library of Mathematical Functions",
+        "url": "https://dlmf.nist.gov/"
+      }
+    ],
+    "original": {
+      "date": "2024-10-10T13:05:52Z",
+      "month": "2024-10",
+      "evidence": "A",
+      "field": "Elementary arithmetic and syntax",
+      "concept": "Exponent associativity",
+      "origin": "Recovered historical conversation excerpt; development written for this retrospective",
+      "question": "How should a nested exponent be parsed so that a calculation remains unambiguous?",
+      "math": "The theorem and example are newly developed mathematical repairs, not recovered historical proofs.",
+      "finish": "Established only within the stated hypotheses; no RH/GRH equivalence or security claim is inferred.",
+      "kind": "revised mathematical question and developed concept",
+      "refs": [
+        "analysis"
+      ],
+      "source_excerpt": "Python formula 2^(3^2)=512",
+      "retrieval_receipt": "root_followups.json",
+      "original_question": null,
+      "attribution_note": "Recovered mathematical passage is assistant-authored. Original user question was not recovered."
+    }
+  },
+  {
+    "id": "Y24-10-029",
+    "title": "The uncertainty inequality is a Cauchy–Schwarz theorem with domain conditions",
+    "status": "Classical result; recovered proposal repaired",
+    "summary": "The recovered list mentions uncertainty without a proof or operator domains. The finite-dimensional version gives a clean theorem, and a Gaussian computation explains the familiar position–momentum case when the required differentiability and decay are available.",
+    "definitions": [
+      "For a unit vectorψ and HermitianA,B, seta=〈A〉,b=〈B〉 andΔA=||(A−aI)ψ||.",
+      "The commutator is[A,B]=AB−BA. In an unbounded settingψ must belong to domains needed for the products or an appropriate form version."
+    ],
+    "result": {
+      "name": "A commutator lower bound",
+      "statement": "ΔAΔB≥(1/2)|〈ψ,[A,B]ψ〉|. For positionX and momentumP=−iℏd/dx on a suitable Schwartz state, this givesΔXΔP≥ℏ/2.",
+      "proof": "Letu=(A−aI)ψ andv=(B−bI)ψ. Cauchy–Schwarz gives||u||||v||≥|〈u,v〉|≥|Im〈u,v〉|. Hermiticity implies〈ψ,[A,B]ψ〉=2iIm〈u,v〉, proving the bound. For Schwartz functions, integration by parts has no boundary terms and direct differentiation gives[X,P]ψ=iℏψ, yieldingℏ/2. The finite-dimensional commutator cannot equaliℏI because its trace is zero; thus the position–momentum relation is not a finite matrix identity and its domains cannot be ignored."
+    },
+    "example": {
+      "setup": "Takeψ(x)=(2πσ²)^(−1/4)exp(−x²/(4σ²)), withσ>0.",
+      "calculation": "The squared magnitude is a centered Gaussian of varianceσ², soΔX=σ. Differentiation givesPψ=iℏxψ/(2σ²), with mean momentum0 and varianceℏ²/(4σ²). ThereforeΔP=ℏ/(2σ) and the product is exactlyℏ/2, attaining the lower bound.",
+      "conclusion": "The inequality is a precise norm-and-commutator statement. Equality is realized by an explicit family rather than asserted by analogy."
+    },
+    "limits": "For unbounded observables, formal commutator algebra can be invalid outside a common domain. The proof does not interpret measurement disturbance or establish a spectral–arithmetic connection.",
+    "extension": "Use the full complex covariance in Cauchy–Schwarz to derive the stronger Schrödinger–Robertson bound, and characterize equality by linear dependence of the centered vectors.",
+    "references": [
+      {
+        "label": "H. P. Robertson, The uncertainty principle",
+        "url": "https://doi.org/10.1103/PhysRev.34.163"
+      }
+    ],
+    "original": {
+      "date": "2024-10-10T13:05:52Z",
+      "month": "2024-10",
+      "evidence": "A",
+      "field": "Functional analysis",
+      "concept": "Variance and commutators",
+      "origin": "Recovered historical conversation excerpt; development written for this retrospective",
+      "question": "What exact mathematical inequality underlies the recovered uncertainty flashcard?",
+      "math": "The theorem and example are newly developed mathematical repairs, not recovered historical proofs.",
+      "finish": "Established only within the stated hypotheses; no RH/GRH equivalence or security claim is inferred.",
+      "kind": "revised mathematical question and developed concept",
+      "refs": [
+        "uncertainty"
+      ],
+      "source_excerpt": "Heisenberg uncertainty; Schrödinger equation",
+      "retrieval_receipt": "root_followups.json",
+      "original_question": null,
+      "attribution_note": "Recovered mathematical passage is assistant-authored. Original user question was not recovered."
+    }
+  },
+  {
+    "id": "Y24-10-030",
+    "title": "Least action reduces to a first variation with fixed endpoints",
+    "status": "Classical result; recovered proposal repaired",
+    "summary": "The recovered flashcards include least action and Newton’s law. Their mathematical core is a stationary-action calculation, with an important distinction between stationarity and a genuine minimum. An elementary quadratic action permits both to be checked exactly.",
+    "definitions": [
+      "For a C² pathx:[0,T]→R with fixed endpoint values, takeS[x]=∫₀ᵀ[(m/2)(x′)²−V(x)]dt, withm>0.",
+      "An admissible variationη is smooth and vanishes at0 andT. Stationarity means the derivative ofS[x+εη] atε=0 vanishes for everyη."
+    ],
+    "result": {
+      "name": "First and second variation",
+      "statement": "Stationarity impliesmx″+V′(x)=0. ForV(x)=kx²/2 and zero-endpoint variations, the second variation is∫[m(η′)²−kη²]dt and is positive whenk<mπ²/T².",
+      "proof": "Differentiate under the integral to getδS=∫[mx′η′−V′(x)η]dt. Integration by parts removes the endpoint term becauseη vanishes there, leaving−∫[mx″+V′(x)]ηdt. The fundamental lemma of the calculus of variations forces the continuous bracket to vanish. For the quadraticV, differentiating a second time gives the stated form exactly. The Dirichlet Poincaré inequality∫η²≤(T/π)²∫(η′)² then bounds it below by[m−kT²/π²]∫(η′)². Strict positivity proves a strict minimum for this quadratic functional under fixed endpoints. Ifk>mπ²/T², takeη=sin(πt/T); the second variation is negative, so a stationary path need not minimize the action."
+    },
+    "example": {
+      "setup": "Choosem=1,k=1 andT=π versusT=2π.",
+      "calculation": "AtT=π, the variationη=sin t has zero second variation. AtT=2π,η=sin(t/2) gives∫η′²=π/4 and∫η²=π, soδ²S=−3π/4. The same stationary zero path is therefore not an action minimum on the longer interval.",
+      "conclusion": "“Least” action requires an actual second-variation argument. The Euler–Lagrange equation alone proves stationarity."
+    },
+    "limits": "The argument is one-dimensional with smooth data and fixed endpoints. Constraints, gauge symmetry, weak minimizers and boundary variations require revised function spaces and boundary conditions.",
+    "extension": "For a specified field action, calculate the first variation, include all boundary terms and determine the Hessian on the admissible variation space before making a minimization claim.",
+    "references": [
+      {
+        "label": "NIST Digital Library of Mathematical Functions",
+        "url": "https://dlmf.nist.gov/"
+      }
+    ],
+    "original": {
+      "date": "2024-10-10T13:05:52Z",
+      "month": "2024-10",
+      "evidence": "A",
+      "field": "Calculus of variations",
+      "concept": "Euler–Lagrange equations",
+      "origin": "Recovered historical conversation excerpt; development written for this retrospective",
+      "question": "What rigorous variational calculation replaces a formula-only least-action flashcard?",
+      "math": "The theorem and example are newly developed mathematical repairs, not recovered historical proofs.",
+      "finish": "Established only within the stated hypotheses; no RH/GRH equivalence or security claim is inferred.",
+      "kind": "revised mathematical question and developed concept",
+      "refs": [
+        "analysis"
+      ],
+      "source_excerpt": "least action; F=ma; Schrödinger equation",
+      "retrieval_receipt": "root_followups.json",
+      "original_question": null,
+      "attribution_note": "Recovered mathematical passage is assistant-authored. Original user question was not recovered."
+    }
+  },
+  {
+    "id": "Y24-10-031",
+    "title": "Entropy is a concave function with an exact uniform maximum",
+    "status": "Classical result; recovered proposal repaired",
+    "summary": "The recovered list names entropy without specifying a probability space or convention. On a finite alphabet, Shannon entropy is a concrete concave function and its maximum has a short complete proof. This supplies mathematical content without importing thermodynamic interpretations.",
+    "definitions": [
+      "For probabilitiesp_i≥0 withΣp_i=1, defineH(p)=−Σp_i logp_i, with0log0=0 and natural logarithms.",
+      "For positive reference probabilitiesq_i, the relative entropy isD(p||q)=Σ_(p_i>0)p_i log(p_i/q_i)."
+    ],
+    "result": {
+      "name": "Exact upper bound and equality case",
+      "statement": "For a distribution onm outcomes,0≤H(p)≤logm. The maximum occurs exactly at the uniform distribution; the minimum0 occurs exactly at point masses.",
+      "proof": "The elementary inequalitylogu≤u−1 gives−log(q_i/p_i)≥1−q_i/p_i forp_i>0. Multiplying byp_i and summing provesD(p||q)≥1−Σ_(p_i>0)q_i≥0. Withuniformq_i=1/m, D(p||q)=logm−H(p), soH≤logm. Equality inlogu≤u−1 requiresu=1 on the support and no missing positiveq mass, forcingp uniform. Nonnegativity follows termwise from−p_i logp_i≥0. A term vanishes only atp_i=0 or1, soH=0 forces a point mass. On the interior, the Hessian ofH isdiag(−1/p_i); restricting to the probability simplex shows strict concavity, consistent with uniqueness of the maximum."
+    },
+    "example": {
+      "setup": "Comparep=(1/2,1/4,1/4) with the uniform distribution on three outcomes.",
+      "calculation": "H(p)=(1/2)log2+2(1/4)log4=(3/2)log2≈1.03972. The maximum islog3≈1.09861, so the deficit isD(p||uniform)=log3−(3/2)log2≈0.05889. These exact expressions specify the logarithm base; base2 would divide every value bylog2.",
+      "conclusion": "Entropy is a defined functional whose inequality and equality cases can be proved, rather than a universal synonym for disorder."
+    },
+    "limits": "Continuous differential entropy has different transformation properties and can be negative. No thermodynamic entropy, residual calibration or arithmetic spectral invariant is identified with this finite functional without an explicit map.",
+    "extension": "For a constrained maximum-entropy problem, state the moment constraints and solve its Lagrange equations, then use relative entropy to prove that the candidate is the global maximizer.",
+    "references": [
+      {
+        "label": "C. E. Shannon, A mathematical theory of communication",
+        "url": "https://doi.org/10.1002/j.1538-7305.1948.tb01338.x"
+      }
+    ],
+    "original": {
+      "date": "2024-10-10T13:05:52Z",
+      "month": "2024-10",
+      "evidence": "A",
+      "field": "Probability and convex analysis",
+      "concept": "Finite Shannon entropy",
+      "origin": "Recovered historical conversation excerpt; development written for this retrospective",
+      "question": "Which exact optimization theorem can be proved for the recovered entropy concept?",
+      "math": "The theorem and example are newly developed mathematical repairs, not recovered historical proofs.",
+      "finish": "Established only within the stated hypotheses; no RH/GRH equivalence or security claim is inferred.",
+      "kind": "revised mathematical question and developed concept",
+      "refs": [
+        "shannon"
+      ],
+      "source_excerpt": "entropy flashcards",
+      "retrieval_receipt": "root_followups.json",
+      "original_question": null,
+      "attribution_note": "Recovered mathematical passage is assistant-authored. Original user question was not recovered."
+    }
+  },
+  {
+    "id": "Y24-10-032",
+    "title": "The differential identities behind Maxwell-type constraints are exact complexes",
+    "status": "Classical result; recovered proposal repaired",
+    "summary": "The recovered material mentions Maxwell equations and Ohm’s law. Their common mathematical structure includes incidence operators, conservation and positive quadratic forms. A finite complex supplies an exact version of the differential identitydivcurl=0, with no physical assumptions required.",
+    "definitions": [
+      "Orient a triangle with vertices1,2,3 and directed edges12,23,31. LetB be its vertex–edge incidence matrix.",
+      "The oriented boundary of its single face is the edge vectorc=(1,1,1). For positive edge resistancesR=diag(r_e), use the quadratic formjᵀRj."
+    ],
+    "result": {
+      "name": "Boundary of boundary and a one-cycle energy",
+      "statement": "Bc=0, the discrete boundary-of-boundary identity. Every divergence-free edge vector isj=tc. Its energy ist²(r_12+r_23+r_31), positive for nonzerot when allresistances are positive.",
+      "proof": "The three incidence columns are(−1,1,0),(0,−1,1),(1,0,−1), whose sum is zero, provingBc=0. IfBj=0, the vertex equations givej_12=j_23=j_31, hencekerB is exactly the line spanned byc. The energy statement follows by substitution into the diagonal quadratic form. For a vertex potentialu, the edge gradient isBᵀu, andcᵀBᵀu=(Bc)ᵀu=0: a gradient has zero circulation around the face. These are discrete counterparts ofcurlgrad=0 anddivcurl=0, both consequences of commuting mixed derivatives in the smooth setting. Positive conductance weights similarly give the symmetric LaplacianBWBᵀ and energyΣ_ew_e(u_head−u_tail)²."
+    },
+    "example": {
+      "setup": "Take resistances1,2,3 and cycle coefficientt=2.",
+      "calculation": "The current vector is(2,2,2), divergence is zero at every vertex and the quadratic energy is4(1+2+3)=24. If potentials areu=(0,1,4), the edge differences are(1,3,−4), whose oriented cycle sum is0. These are exact integer checks.",
+      "conclusion": "Conservation and compatibility can be expressed as matrix identities before adding dynamics or constitutive laws."
+    },
+    "limits": "The triangle example does not derive the complete Maxwell equations or a circuit model. Topology matters: curl-free fields need not be globally gradients on spaces with nontrivial first cohomology, and a graph without filled faces retains cycle classes.",
+    "extension": "For a chosen cell complex, write every incidence matrix and verify consecutive products vanish. Then distinguish algebraic constraints, constitutive positive weights and evolution equations.",
+    "references": [
+      {
+        "label": "NIST Digital Library of Mathematical Functions",
+        "url": "https://dlmf.nist.gov/"
+      }
+    ],
+    "original": {
+      "date": "2024-10-10T13:05:52Z",
+      "month": "2024-10",
+      "evidence": "A",
+      "field": "Vector calculus and discrete geometry",
+      "concept": "Gradient–curl–divergence identities",
+      "origin": "Recovered historical conversation excerpt; development written for this retrospective",
+      "question": "What pure mathematical identities underlie the recovered field-equation and circuit flashcards?",
+      "math": "The theorem and example are newly developed mathematical repairs, not recovered historical proofs.",
+      "finish": "Established only within the stated hypotheses; no RH/GRH equivalence or security claim is inferred.",
+      "kind": "revised mathematical question and developed concept",
+      "refs": [
+        "analysis"
+      ],
+      "source_excerpt": "Maxwell equations; Ohm’s law V=IR",
+      "retrieval_receipt": "root_followups.json",
+      "original_question": null,
+      "attribution_note": "Recovered mathematical passage is assistant-authored. Original user question was not recovered."
+    }
+  }
+]

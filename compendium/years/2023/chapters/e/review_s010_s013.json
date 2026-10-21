@@ -1,0 +1,32 @@
+{
+  "reviewer": "analysis_geometry_and_computation",
+  "scope": [
+    "S010",
+    "S013"
+  ],
+  "issues": [],
+  "status": "approved",
+  "verification": [
+    "S010 supplement_verify.py passes all five groups",
+    "S013 spectral_verify.py passes all four groups",
+    "Independently rebuilt the full three-site rational 8×8 Hamiltonians from Ω_ij=swap_ij−I/2 at sites(0,1,8/3), in low-bit-first tensor ordering; all three match the published certificate exactly"
+  ],
+  "S010_review": [
+    "Derived the pair-site action and the full off-shell eigenvector residual independently",
+    "Checked critical-root simplicity implies distinct eigenvalues for every fixed H_i and hence finite-sector completeness",
+    "Checked Rolle interlacing and degree count give all real-site critical roots and their simplicity",
+    "Verified bilinear Gram identity −p″(w)/p(w) and algebraic spectral-projector scope over complex sites",
+    "Derived scalar-potential double coefficients and residues at sites and cancellation at the critical apparent point",
+    "Integrated p(x)/(x−w)² independently to recover q₂ and Wronskian one",
+    "Checked that the generalized vector follows by differentiating at fixed exceptional t with B=B′=0, and that (u,v,v′) is a basis"
+  ],
+  "S013_review": [
+    "Checked the exact discriminant locus, distinct physical sites, nonzero p₀ and generalized-eigenvector coefficients",
+    "Derived P± from p″(w±)=±2√D and the bilinear norm",
+    "Checked Laurent constant term: t−t₀=O(epsilon²), w±−w₀=±epsilon/3+O(epsilon²), yielding the stated −p₀ cross-term/6 for each projector",
+    "Verified Q=−p₀(v′vᵀ+vv′ᵀ)/3 and N_i=(p₀a_i²/3)vvᵀ using the bilinear Gram pairings; N_i is nonzero and square zero",
+    "Checked that nonzero numerator establishes |D|^(−1/2) divergence in any fixed finite-dimensional norm while the sum remains Q",
+    "Checked the simple-discriminant winding proves a sheet exchange; this is correctly distinguished from KZ transport and scalar spatial-ODE monodromy"
+  ],
+  "conclusion": "No mathematical blocker. Exact field identities carry the algebraic claims; floating-point path calculations are properly labeled illustrations. General higher-sector and higher-multiplicity classifications remain explicit limitations."
+}

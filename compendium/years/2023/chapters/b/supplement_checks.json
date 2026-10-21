@@ -1,0 +1,231 @@
+{
+  "checks": [
+    {
+      "id": "S011",
+      "name": "Observation order and sharp aligned heat-entry margin",
+      "status": "passed",
+      "detail": "Induced graph distributions agree at orders0–3, differ atorder4; all11 four-vertex classes enumerated. Heat margin maximum1/16 at t=log2/4, bounded-error threshold1/32 for the specified aligned pair.",
+      "orders_zero_through_three": {
+        "0": {
+          "rook": {
+            "0": 1
+          },
+          "shrikhande": {
+            "0": 1
+          }
+        },
+        "1": {
+          "rook": {
+            "0": 16
+          },
+          "shrikhande": {
+            "0": 16
+          }
+        },
+        "2": {
+          "rook": {
+            "1": 48,
+            "0": 72
+          },
+          "shrikhande": {
+            "1": 48,
+            "0": 72
+          }
+        },
+        "3": {
+          "rook": {
+            "7": 32,
+            "3": 144,
+            "1": 288,
+            "0": 96
+          },
+          "shrikhande": {
+            "3": 144,
+            "7": 32,
+            "1": 288,
+            "0": 96
+          }
+        }
+      },
+      "srg_triple_formulas": {
+        "empty": 96,
+        "single_edge": 288,
+        "path": 144,
+        "triangle": 32
+      },
+      "four_vertex_distributions": [
+        {
+          "canonical_mask": 0,
+          "name": "empty",
+          "edges": 0,
+          "degrees": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "rook": 24,
+          "shrikhande": 16
+        },
+        {
+          "canonical_mask": 1,
+          "name": "one edge and two isolated vertices",
+          "edges": 1,
+          "degrees": [
+            1,
+            1,
+            0,
+            0
+          ],
+          "rook": 288,
+          "shrikhande": 336
+        },
+        {
+          "canonical_mask": 3,
+          "name": "three-vertex path and isolated vertex",
+          "edges": 2,
+          "degrees": [
+            2,
+            1,
+            1,
+            0
+          ],
+          "rook": 576,
+          "shrikhande": 480
+        },
+        {
+          "canonical_mask": 7,
+          "name": "three-leaf star",
+          "edges": 3,
+          "degrees": [
+            3,
+            1,
+            1,
+            1
+          ],
+          "rook": 0,
+          "shrikhande": 32
+        },
+        {
+          "canonical_mask": 11,
+          "name": "triangle and isolated vertex",
+          "edges": 3,
+          "degrees": [
+            2,
+            2,
+            2,
+            0
+          ],
+          "rook": 96,
+          "shrikhande": 128
+        },
+        {
+          "canonical_mask": 12,
+          "name": "two disjoint edges",
+          "edges": 2,
+          "degrees": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "rook": 216,
+          "shrikhande": 192
+        },
+        {
+          "canonical_mask": 13,
+          "name": "four-vertex path",
+          "edges": 3,
+          "degrees": [
+            2,
+            2,
+            1,
+            1
+          ],
+          "rook": 288,
+          "shrikhande": 384
+        },
+        {
+          "canonical_mask": 15,
+          "name": "triangle with pendant vertex",
+          "edges": 4,
+          "degrees": [
+            3,
+            2,
+            2,
+            1
+          ],
+          "rook": 288,
+          "shrikhande": 192
+        },
+        {
+          "canonical_mask": 30,
+          "name": "four-cycle",
+          "edges": 4,
+          "degrees": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "rook": 36,
+          "shrikhande": 12
+        },
+        {
+          "canonical_mask": 31,
+          "name": "diamond",
+          "edges": 5,
+          "degrees": [
+            3,
+            3,
+            2,
+            2
+          ],
+          "rook": 0,
+          "shrikhande": 48
+        },
+        {
+          "canonical_mask": 63,
+          "name": "four-clique",
+          "edges": 6,
+          "degrees": [
+            3,
+            3,
+            3,
+            3
+          ],
+          "rook": 8,
+          "shrikhande": 0
+        }
+      ],
+      "heat_margin": {
+        "aligned_vertices": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "time": "log(2)/4",
+        "rook_entry": "5/64",
+        "shrikhande_entry": "1/64",
+        "margin": "1/16",
+        "strict_bounded_error_threshold": "1/32",
+        "midpoint_threshold": "3/64",
+        "scope": "known coordinate labels and one fixed pair of candidate graphs; not uniform unlabeled recovery"
+      },
+      "unobserved_time_example": {
+        "time_halfwidth": "log(3/2)/4",
+        "minimum_rook": "13/256",
+        "maximum_shrikhande": "1/36",
+        "uniform_gap": "53/2304",
+        "strict_error_threshold": "53/4608"
+      }
+    }
+  ],
+  "passed": 1,
+  "failed": 0
+}

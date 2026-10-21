@@ -1,0 +1,24 @@
+[
+  {
+    "month": "01",
+    "query": "Search the user's conversations actually dated January 1–31, 2024, without requiring a mathematics keyword match. Identify any available conversation dates/titles and mathematical or quantitative fragments in those dated conversations. Three prior mathematics-specific January searches matched nothing. We are establishing whether any January source can be recovered for a mathematics-only retrospective, not proving that the month had no conversations. Do not substitute other dates or invent content.",
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "[convo search]\nNo conversations matched the query.\nDot search unavailable.\n\n[gmail]\n[INSUFFICIENT] Gmail search failed before it could retrieve matching emails.\n\n[files]\n[INSUFFICIENT] No relevant file context found.\n\n<assistant_usage_note>\nWhen using the personal context above, treat relevant facts as binding context for this reply.\nBefore answering, silently identify: (1) relevant facts to preserve, and (2) hard constraints / exclusions to obey.\nIn the final answer:\nCarry forward relevant names, dates, amounts, option labels, locations, qualifiers, preferences, and task constraints from the context.\nTreat dislike / avoid / only / not / no / without / prefer / required statements as constraints.\nDo not add options, ingredients, products, places, methods, tools, backups, caveats, or \"if you're okay with...\" suggestions that conflict with any known constraint.\nDo not add new personalized recommendations unless they are supported by the context above or explicitly requested.\nIf a needed fact is already provided, use it directly instead of asking the user to confirm it.\nBefore sending, check the final answer for any missing relevant context or any suggestion that violates a known constraint.\nDo not quote or mention this assistant_usage_note in the final answer.\n</assistant_usage_note>"
+        }
+      ],
+      "structuredContent": {
+        "messages": [
+          {
+            "author_role": "tool",
+            "content": "[convo search]\nNo conversations matched the query.\nDot search unavailable.\n\n[gmail]\n[INSUFFICIENT] Gmail search failed before it could retrieve matching emails.\n\n[files]\n[INSUFFICIENT] No relevant file context found."
+          }
+        ],
+        "error": null
+      },
+      "isError": false
+    }
+  }
+]

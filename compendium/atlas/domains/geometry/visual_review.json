@@ -1,0 +1,67 @@
+{
+  "pdf_sha256": "4b255bc807380a2900c3d311bc58327265d215448a0a1557f72629674710878b",
+  "pdf_pages": 249,
+  "pages": {
+    "start": 1,
+    "end": 84
+  },
+  "sheets": [
+    "/workspace/scratch/724ab8464145/mathematics_atlas_2023_2026/tmp/visual/contact-001-012.jpg",
+    "/workspace/scratch/724ab8464145/mathematics_atlas_2023_2026/tmp/visual/contact-013-024.jpg",
+    "/workspace/scratch/724ab8464145/mathematics_atlas_2023_2026/tmp/visual/contact-025-036.jpg",
+    "/workspace/scratch/724ab8464145/mathematics_atlas_2023_2026/tmp/visual/contact-037-048.jpg",
+    "/workspace/scratch/724ab8464145/mathematics_atlas_2023_2026/tmp/visual/contact-049-060.jpg",
+    "/workspace/scratch/724ab8464145/mathematics_atlas_2023_2026/tmp/visual/contact-061-072.jpg",
+    "/workspace/scratch/724ab8464145/mathematics_atlas_2023_2026/tmp/visual/contact-073-084.jpg"
+  ],
+  "samples": [
+    "/workspace/scratch/724ab8464145/mathematics_atlas_2023_2026/tmp/visual/full-001.png",
+    "/workspace/scratch/724ab8464145/mathematics_atlas_2023_2026/tmp/visual/full-004.png",
+    "/workspace/scratch/724ab8464145/mathematics_atlas_2023_2026/tmp/visual/full-042.png",
+    "/workspace/scratch/724ab8464145/mathematics_atlas_2023_2026/tmp/visual/full-081.png",
+    "/workspace/scratch/724ab8464145/mathematics_atlas_2023_2026/tmp/visual/full-084.png"
+  ],
+  "status": "pass",
+  "review_method": "Final iteration: re-viewed all seven refreshed contact sheets and all five full-resolution samples through view_image. This review supersedes both earlier draft hashes.",
+  "findings": {
+    "hierarchy": "Title, domain and family hierarchy is clear and consistent.",
+    "clipping": "No clipped text, overlapping sections, broken margins or table overflow observed.",
+    "glyphs_and_math": "Greek symbols, superscripts, matrix notation and mathematical expressions remain readable in the full samples; no replacement boxes or broken glyphs observed. Inline formulas retain literal notation in places.",
+    "tables": "The page 4 domain and verification tables fit the page, have aligned columns and readable rows.",
+    "pagination": "TOC remains on page 2; no frontier-only page; core-object blocks retain their headings. Short lab contracts stay together. Longer contracts may span a page with continuous content. Sparse domain-ending reference tails are normal pagination and cause no clipping.",
+    "contracts": "Refreshed geometry pages show specific implemented-model inputs and outputs, with broader operations labeled recipes.",
+    "scope": "Every page 1–84 inspected at contact-sheet scale; pages 1,4,42,81,84 also inspected at full resolution in this final 249-page iteration.",
+    "references": "Compressed reference lines remain readable in the full page 84 sample and do not collide with the next family heading.",
+    "source_count": "Title page clearly distinguishes 1,051 main treatments from fourteen separately retained 2023 synthesis treatments, giving 1,065 retained bodies including supplements."
+  },
+  "resolved_issues": [
+    {
+      "prior_page": 3,
+      "type": "toc_spill",
+      "resolution": "Contents now occupies page 2 only; verified in refreshed contact sheet."
+    },
+    {
+      "prior_page": 60,
+      "type": "short_frontier_orphan",
+      "resolution": "Frontier appears with the overview/core objects; D05 begins on page 59 without a frontier-only page."
+    },
+    {
+      "prior_pages": [
+        49,
+        50,
+        61,
+        62,
+        73,
+        74
+      ],
+      "type": "split_core_objects",
+      "resolution": "All observed core-object blocks are kept with their heading, including refreshed pages 49,60,71."
+    },
+    {
+      "prior_page": 81,
+      "type": "outdated_contract_wording",
+      "resolution": "Audited geometry contract wording appears in refreshed pages 51,53,56,58,62,64,66,69,73,75,77–80."
+    }
+  ],
+  "issues": []
+}

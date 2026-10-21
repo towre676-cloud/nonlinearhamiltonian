@@ -1,0 +1,208 @@
+{
+  "status": "passed",
+  "developed_entries": 114,
+  "verifier_programs": 16,
+  "scoped_records": 174,
+  "status_counts": {
+    "passed": 111,
+    "pass": 62,
+    "proof-only": 1
+  },
+  "failures": [],
+  "results": [
+    {
+      "verifier": "a/verify.py",
+      "return_code": 0,
+      "stdout": "{\"checks\": 17, \"passed\": true, \"gradient\": 1.827402660495528e-24, \"gradient_bound\": 3.098648872097085e-12}",
+      "stderr": "",
+      "records": 17,
+      "status_counts": {
+        "passed": 17
+      },
+      "record_digest": "ec7569f21c9d7978f1bb62aae3f46d499a7c8ee532ef72e9120df2538b76f307",
+      "report": "chapters/a/checks.json"
+    },
+    {
+      "verifier": "a/supplement_verify.py",
+      "return_code": 0,
+      "stdout": "{\"cases\": 12, \"checks\": 4, \"status\": \"passed\", \"coupled_degrees\": [1, 2, 4, 8, 16, 32]}",
+      "stderr": "",
+      "records": 4,
+      "status_counts": {
+        "passed": 4
+      },
+      "record_digest": "c0cd303b6e4c0189e1f2eed914745c85463f75249dfac778cb894fb6f0661648",
+      "report": "chapters/a/supplement_checks.json"
+    },
+    {
+      "verifier": "b/verify.py",
+      "return_code": 0,
+      "stdout": "{\"passed\": 19, \"failed\": 0, \"output\": \"/workspace/scratch/724ab8464145/expansion/chapters/b/checks.json\"}",
+      "stderr": "",
+      "records": 19,
+      "status_counts": {
+        "passed": 19
+      },
+      "record_digest": "d8154e23c72ac061cf2988060aabf0acec3358bba9c25c2ae008a7a7a13b303b",
+      "report": "chapters/b/checks.json"
+    },
+    {
+      "verifier": "b/supplement_verify.py",
+      "return_code": 0,
+      "stdout": "{\"passed\": 1, \"four_vertex_classes\": 11, \"rook_four_cliques\": 8, \"shrikhande_four_cliques\": 0, \"output\": \"/workspace/scratch/724ab8464145/expansion/chapters/b/supplement_checks.json\"}\n[{\"canonical_mask\": 0, \"name\": \"empty\", \"edges\": 0, \"degrees\": [0, 0, 0, 0], \"rook\": 24, \"shrikhande\": 16}, {\"canonical_mask\": 1, \"name\": \"one edge and two isolated vertices\", \"edges\": 1, \"degrees\": [1, 1, 0, 0], \"rook\": 288, \"shrikhande\": 336}, {\"canonical_mask\": 3, \"name\": \"three-vertex path and isolated vertex\", \"edges\": 2, \"degrees\": [2, 1, 1, 0], \"rook\": 576, \"shrikhande\": 480}, {\"canonical_mask\": 7, \"name\": \"three-leaf star\", \"edges\": 3, \"degrees\": [3, 1, 1, 1], \"rook\": 0, \"shrikhande\": 32}, {\"canonical_mask\": 11, \"name\": \"triangle and isolated vertex\", \"edges\": 3, \"degrees\": [2, 2, 2, 0], \"rook\": 96, \"shrikhande\": 128}, {\"canonical_mask\": 12, \"name\": \"two disjoint edges\", \"edges\": 2, \"degrees\": [1, 1, 1, 1], \"rook\": 216, \"shrikhande\": 192}, {\"canonical_mask\": 13, \"name\": \"four-vertex path\", \"edges\": 3, \"degrees\": [2, 2, 1, 1], \"rook\": 288, \"shrikhande\": 384}, {\"canonical_mask\": 15, \"name\": \"triangle with pendant vertex\", \"edges\": 4, \"degrees\": [3, 2, 2, 1], \"rook\": 288, \"shrikhande\": 192}, {\"canonical_mask\": 30, \"name\": \"four-cycle\", \"edges\": 4, \"degrees\": [2, 2, 2, 2], \"rook\": 36, \"shrikhande\": 12}, {\"canonical_mask\": 31, \"name\": \"diamond\", \"edges\": 5, \"degrees\": [3, 3, 2, 2], \"rook\": 0, \"shrikhande\": 48}, {\"canonical_mask\": 63, \"name\": \"four-clique\", \"edges\": 6, \"degrees\": [3, 3, 3, 3], \"rook\": 8, \"shrikhande\": 0}]",
+      "stderr": "",
+      "records": 1,
+      "status_counts": {
+        "passed": 1
+      },
+      "record_digest": "eeffb83cf67986ec1e4c1883ee56b8d3148caa78cd529069ec4e2b422c335f89",
+      "report": "chapters/b/supplement_checks.json"
+    },
+    {
+      "verifier": "c/verify.py",
+      "return_code": 0,
+      "stdout": "{\"pass\": 20, \"proof_only\": 1, \"entries\": 19, \"scope\": \"Examples and algebraic checks support stated elementary results. Deep general theories remain referenced, not machine-proved.\"}",
+      "stderr": "",
+      "records": 21,
+      "status_counts": {
+        "pass": 20,
+        "proof-only": 1
+      },
+      "record_digest": "02b9f36931f5ca51641906b4d1c96c8e13ab0e9e3ea5701978cc232cc123d21c",
+      "report": "chapters/c/checks.json"
+    },
+    {
+      "verifier": "c/supplement_verify.py",
+      "return_code": 0,
+      "stdout": "{\"check_count\": 9, \"all_passed\": true, \"method\": \"Exact Fraction arithmetic for phasors flows Laplacians ranks and congruences; explicitly scoped floating eigenvalue and ODE residual checks.\"}",
+      "stderr": "",
+      "records": 9,
+      "status_counts": {
+        "pass": 9
+      },
+      "record_digest": "028fc269f2d6cf5e6bca3b6dcf3bdda9c2d30592eafae1eedc2a39d94412e451",
+      "report": "chapters/c/supplement_checks.json"
+    },
+    {
+      "verifier": "d/verify.py",
+      "return_code": 0,
+      "stdout": "{\"check_count\": 21, \"all_passed\": true, \"entry_count\": 21}",
+      "stderr": "",
+      "records": 21,
+      "status_counts": {
+        "pass": 21
+      },
+      "record_digest": "054d6f493648168fc74de0283b2bf007b23abe223ddbd22782ef1337dff5081c",
+      "report": "chapters/d/checks.json"
+    },
+    {
+      "verifier": "d/supplement_verify.py",
+      "return_code": 0,
+      "stdout": "{\"check_count\": 12, \"all_passed\": true, \"panels_enumerated\": 64, \"feasible_panels\": 34, \"optimal_cost\": 13, \"optimal_panel\": [\"A\", \"E\"], \"greedy_cost\": 16, \"greedy_panel\": [\"C\", \"D\", \"F\"]}",
+      "stderr": "",
+      "records": 12,
+      "status_counts": {
+        "pass": 12
+      },
+      "record_digest": "3ce6a1957df78f8904a7b2c27192cc420eb020f1b1a3d98593eacc76e53788b1",
+      "report": "chapters/d/supplement_checks.json"
+    },
+    {
+      "verifier": "e/verify.py",
+      "return_code": 0,
+      "stdout": "{\"chapter\": \"e\", \"checks\": 22, \"status\": \"passed\"}",
+      "stderr": "",
+      "records": 22,
+      "status_counts": {
+        "passed": 22
+      },
+      "record_digest": "b82184c6b8b7f48f627321acaa59373544d091d24df17e6f65a364005f56d031",
+      "report": "chapters/e/checks.json"
+    },
+    {
+      "verifier": "e/supplement_verify.py",
+      "return_code": 0,
+      "stdout": "{\"supplement\": \"S012\", \"status\": \"passed\", \"checks\": 5, \"parameter_certificates\": 30}",
+      "stderr": "",
+      "records": 5,
+      "status_counts": {
+        "passed": 5
+      },
+      "record_digest": "1c341d53c88bdb496ae3ac201819d9d3c883eac54181a48ed8bf40be850dde2f",
+      "report": "chapters/e/supplement_checks.json"
+    },
+    {
+      "verifier": "e/independent_s014.py",
+      "return_code": 0,
+      "stdout": "{\"id\": \"S014\", \"independent_quartic_check\": \"passed\", \"field\": \"Q(i)\", \"basis_rank\": 4, \"nilpotent_ranks\": [2, 1, 0], \"eight_site_determinants_checked\": 9}",
+      "stderr": "",
+      "records": 2,
+      "status_counts": {
+        "passed": 2
+      },
+      "record_digest": "1467909091c6b7c891fe30e042e5f104c616d2779830e00aeecb376bed0912fa",
+      "report": "chapters/e/independent_s014_checks.json"
+    },
+    {
+      "verifier": "f/verify.py",
+      "return_code": 0,
+      "stdout": "{\"checks\": 16, \"passed\": true, \"entries\": 15, \"certificate_file\": \"gaudin_certificate.json\"}",
+      "stderr": "",
+      "records": 16,
+      "status_counts": {
+        "passed": 16
+      },
+      "record_digest": "81b49cf5fac72a41a9dfcb728f641d210c38d8430b6a7dad88ca5db248f9c8c8",
+      "report": "chapters/f/checks.json"
+    },
+    {
+      "verifier": "f/supplement_verify.py",
+      "return_code": 0,
+      "stdout": "{\"id\": \"S010\", \"checks\": 5, \"passed\": true, \"exact_rational_examples\": [2, 3, 4], \"exceptional_field\": \"Q(tau), tau\\u00b2\\u2212tau+1=0\"}",
+      "stderr": "",
+      "records": 5,
+      "status_counts": {
+        "passed": 5
+      },
+      "record_digest": "c8be7b85bc5cc2a6bb3b0dcdef2c0f3f010cf7852e9bf4552d290422294194c0",
+      "report": "chapters/f/supplement_checks.json"
+    },
+    {
+      "verifier": "f/spectral_verify.py",
+      "return_code": 0,
+      "stdout": "{\"id\": \"S013\", \"checks\": 4, \"exact_Jordan_identities\": \"passed\", \"projector_limit_and_cover_examples\": \"passed\"}",
+      "stderr": "",
+      "records": 4,
+      "status_counts": {
+        "passed": 4
+      },
+      "record_digest": "247f27af0ec3817f7a0c1f4cf21340972c5d61fbb0255cc626cf827a963f559e",
+      "report": "chapters/f/spectral_checks.json"
+    },
+    {
+      "verifier": "f/jordan_verify.py",
+      "return_code": 0,
+      "stdout": "{\"id\": \"S014\", \"checks\": 4, \"arithmetic\": \"exact Q(i)\", \"status\": \"passed\"}",
+      "stderr": "",
+      "records": 4,
+      "status_counts": {
+        "passed": 4
+      },
+      "record_digest": "82e8117de685c89d4122afb72bbed23a3f4448d0e1b50df3096c2e18887a12e3",
+      "report": "chapters/f/jordan_checks.json"
+    },
+    {
+      "verifier": "syntheses",
+      "return_code": 0,
+      "stdout": "{\"checks\": 12, \"status\": \"passed\"}",
+      "stderr": "",
+      "records": 12,
+      "status_counts": {
+        "passed": 12
+      },
+      "record_digest": "d3497b2d785690a987de2f5e1eaea18b803e34881e88288cea1d416eb6aa7823",
+      "report": "synthesis_checks.json"
+    }
+  ],
+  "scope": "This runner replays finite, exact and numerical examples. Written proofs and literature dependencies retain the scopes stated in the compendium. Proof-only records are not executable confirmations."
+}

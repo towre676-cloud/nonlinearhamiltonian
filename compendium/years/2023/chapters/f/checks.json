@@ -1,0 +1,687 @@
+{
+  "checks": [
+    {
+      "id": "M100",
+      "name": "Bernstein–Sato coefficient identities",
+      "status": "passed",
+      "detail": "Exact rational coefficient equality for x^m, m=1,…,8, and x²y³; the quadratic Laplacian coefficient is 4(s+1)². Minimality is proved in the entry by normal-order exponent comparison."
+    },
+    {
+      "id": "M101",
+      "name": "Conic polarity and tangent-locus test",
+      "status": "passed",
+      "detail": "Qp=(2,0,−1); Q⁻¹(Qp)=p. A rational point satisfies its tangent equation. The polar of the exterior point has dual quadratic value 3 and is not itself tangent."
+    },
+    {
+      "id": "M102",
+      "name": "Ordered cross-ratio under a projectivity",
+      "status": "passed",
+      "detail": "The homogeneous tuple (−1,1;0,∞) has cross-ratio −1 before and after the determinant-one map z↦(2z+3)/(z+2)."
+    },
+    {
+      "id": "M103",
+      "name": "Heisenberg mode algebra on polynomial states",
+      "status": "passed",
+      "detail": "All 162 mixed-mode commutators tested equal mδ_mn on the selected monomials. L₂L₋₂ applied to the vacuum is exactly 1/2, giving c=1 in the stated Virasoro convention. These finite checks accompany, not replace, the formal proof."
+    },
+    {
+      "id": "M104",
+      "name": "Four-site XXX spectrum and Bethe roots",
+      "status": "passed",
+      "detail": "The integer one-magnon Hamiltonian has a checked eigenbasis with energies 0,2,2,4. The three finite rapidities satisfy the one-root periodic Bethe equation and match the nonuniform-state energies; the uniform state is the infinite-root limit."
+    },
+    {
+      "id": "M105",
+      "name": "Gaudin matrices and exact oper residual polynomials",
+      "status": "passed",
+      "detail": "The singlet and triplet Ω eigenvalues are verified with rational matrices. The polynomial 4g²(1+D′)−3D² is identically zero, proving V=3/(4g²), not merely sampling it. Both scaled solution residual polynomials vanish identically, and their Wronskian is exactly one. Full coefficient certificate is included."
+    },
+    {
+      "id": "M105",
+      "name": "Complete rational three-site Gaudin spectrum and opers",
+      "status": "passed",
+      "detail": "For z=(0,1,8/3), roots 2 and4/9 produce two joint doublets; the vacuum family supplies a quartet. Eight explicit rational eigenvectors have rank8 and all three full Hamiltonians commute. Both Miura potential identities have exactly zero cross-multiplied residual polynomials, proving apparent-pole cancellation and residue/eigenvalue agreement."
+    },
+    {
+      "id": "M106",
+      "name": "Independence arithmetic and dependence bounds",
+      "status": "passed",
+      "detail": "The exact rational product is approximately 0.00482230805327. Fréchet bounds from the 104 marginals are [0,0.95]. Enumerating the four XOR outcomes verifies pairwise independence while the three-way all-one event has probability zero."
+    },
+    {
+      "id": "M107",
+      "name": "Nonlinear observation collision",
+      "status": "passed",
+      "detail": "For both initial states ±1, y(t)=1/(1+2t) satisfies y′=−2y² exactly at rational test times; the entry proves the full formula and convergence, so the sign collision holds for the entire time history."
+    },
+    {
+      "id": "M108",
+      "name": "Klein–Gordon dispersion residual",
+      "status": "passed",
+      "detail": "For c=ℏ=1,m=2,k=(3,0,0),ω²=13 gives the exact polynomial residual −13+9+4=0. The general dispersion is derived directly in the entry."
+    },
+    {
+      "id": "M109",
+      "name": "Pauli algebra and nonrelativistic energy expansion",
+      "status": "passed",
+      "detail": "Exact small-matrix products verify σ₁σ₂=iσ₃ and σᵢ²=I. The squared truncated polynomial (1+x/2−x²/8)² agrees with 1+x through x². The entry derives the magnetic sign from the covariant-momentum commutator."
+    },
+    {
+      "id": "M110",
+      "name": "Exterior derivative and plane-wave checks",
+      "status": "passed",
+      "detail": "The mixed second-derivative coefficients cancel in d²χ and dF for the stated potential, while the vacuum dispersion residual ω²−k² vanishes. The proof uses d²=0 and states the local/global potential distinction."
+    },
+    {
+      "id": "M111",
+      "name": "Ward difference identity and transverse null direction",
+      "status": "passed",
+      "detail": "The longitudinal vertex obeys the matrix-valued difference identity exactly for rational momenta in a two-dimensional Euclidean Clifford example. A separately constructed nonzero transverse term contracts to zero."
+    },
+    {
+      "id": "M112",
+      "name": "Gaussian quartic perturbation coefficients",
+      "status": "passed",
+      "detail": "Gaussian-moment recurrence gives Z=1−g/8+35g²/384+… and normalized G₂=1−g/2+2g²/3+…. Connected logZ has second coefficient 1/12. The coefficient ratio grows asymptotically as 2n/3; the entry provides a finite-order remainder bound rather than claiming convergence."
+    },
+    {
+      "id": "M113",
+      "name": "Toy beta flow and fixed-point slopes",
+      "status": "passed",
+      "detail": "g(t)=1/(1+e^t) satisfies β=−g+g² to numerical roundoff at sample times; β′(0)=−1 and β′(1)=1 are exact. The entry proves the formula and coordinate-invariance of fixed-point linearization."
+    },
+    {
+      "id": "M114",
+      "name": "Regular-level velocity and critical-level failure",
+      "status": "passed",
+      "detail": "For radii 1,2,3 at t=1,4,9, the exact differentiated constraint 2rr′−1=0 holds. At t=0 the spatial gradient is zero, exactly violating the regular-level assumption; the entry proves the general normal-velocity formula."
+    }
+  ],
+  "certificates": {
+    "bernstein_monomials": {
+      "1": [
+        "1",
+        "1"
+      ],
+      "2": [
+        "1/2",
+        "3/2",
+        "1"
+      ],
+      "3": [
+        "2/9",
+        "11/9",
+        "2",
+        "1"
+      ],
+      "4": [
+        "3/32",
+        "25/32",
+        "35/16",
+        "5/2",
+        "1"
+      ],
+      "5": [
+        "24/625",
+        "274/625",
+        "9/5",
+        "17/5",
+        "3",
+        "1"
+      ],
+      "6": [
+        "5/324",
+        "49/216",
+        "203/162",
+        "245/72",
+        "175/36",
+        "7/2",
+        "1"
+      ],
+      "7": [
+        "720/117649",
+        "13068/117649",
+        "268/343",
+        "967/343",
+        "40/7",
+        "46/7",
+        "4",
+        "1"
+      ],
+      "8": [
+        "315/131072",
+        "6849/131072",
+        "29531/65536",
+        "16821/8192",
+        "22449/4096",
+        "567/64",
+        "273/32",
+        "9/2",
+        "1"
+      ]
+    },
+    "gaudin_oper": {
+      "basis": [
+        "up up",
+        "up down",
+        "down up",
+        "down down"
+      ],
+      "Omega": [
+        [
+          "1/2",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "-1/2",
+          "1",
+          "0"
+        ],
+        [
+          "0",
+          "1",
+          "-1/2",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "1/2"
+        ]
+      ],
+      "singlet": [
+        0,
+        -1,
+        1,
+        0
+      ],
+      "Omega_singlet_eigenvalue": "-3/2",
+      "H1_singlet_eigenvalue": "3/2",
+      "H2_singlet_eigenvalue": "-3/2",
+      "Bethe_root": "1/2",
+      "g_ascending_coefficients": [
+        "0",
+        "-1",
+        "1"
+      ],
+      "u_denominator_D": [
+        "0",
+        "2",
+        "-6",
+        "4"
+      ],
+      "potential_identity": "4g²(1+D′)−3D²=0; hence u²−u′=3/(4g²)",
+      "potential_residual_ascending_coefficients": [
+        "0"
+      ],
+      "y1_numerator_q1": [
+        "-1/2",
+        "1"
+      ],
+      "y2_numerator_q2": [
+        "1/4",
+        "-1/2",
+        "1"
+      ],
+      "ODE_scaled_residual_q1": [
+        "0"
+      ],
+      "ODE_scaled_residual_q2": [
+        "0"
+      ],
+      "Wronskian_numerator": [
+        "0",
+        "-1",
+        "1"
+      ],
+      "Wronskian_denominator": [
+        "0",
+        "-1",
+        "1"
+      ],
+      "simple_residues_V_at_0_and_1": [
+        "3/2",
+        "-3/2"
+      ]
+    },
+    "gaudin_three_site": {
+      "sites": [
+        "0",
+        "1",
+        "8/3"
+      ],
+      "roots": [
+        "2",
+        "4/9"
+      ],
+      "vacuum_joint_eigenvalues": [
+        "-11/16",
+        "1/5",
+        "39/80"
+      ],
+      "two_spin_half_joint_eigenvalues": [
+        [
+          "-3/16",
+          "6/5",
+          "-81/80"
+        ],
+        [
+          "25/16",
+          "-8/5",
+          "3/80"
+        ]
+      ],
+      "joint_multiplicities": [
+        4,
+        2,
+        2
+      ],
+      "joint_eigenbasis_rank": 8,
+      "Miura_potential_cross_multiplied_residuals": [
+        [
+          "0"
+        ],
+        [
+          "0"
+        ]
+      ],
+      "scalar_ODE_solutions": [
+        {
+          "q1": [
+            "-2",
+            "1"
+          ],
+          "q2": [
+            "20/3",
+            "-10/3",
+            "-2/3",
+            "1/2"
+          ],
+          "residuals": [
+            [
+              "0"
+            ],
+            [
+              "0"
+            ]
+          ],
+          "Wronskian": "1",
+          "solutions": "q1/sqrt(g), q2/sqrt(g)"
+        },
+        {
+          "q1": [
+            "-4/9",
+            "1"
+          ],
+          "q2": [
+            "-256/243",
+            "64/27",
+            "-3",
+            "1/2"
+          ],
+          "residuals": [
+            [
+              "0"
+            ],
+            [
+              "0"
+            ]
+          ],
+          "Wronskian": "1",
+          "solutions": "q1/sqrt(g), q2/sqrt(g)"
+        }
+      ],
+      "identity": "V=3/4 sum_i (x−z_i)^(−2)+sum_i E_i(x−z_i)^(−1)",
+      "Hamiltonians": [
+        [
+          [
+            "-11/16",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "11/16",
+            "-1",
+            "0",
+            "-3/8",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "-1",
+            "5/16",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "-5/16",
+            "0",
+            "0",
+            "-3/8",
+            "0"
+          ],
+          [
+            "0",
+            "-3/8",
+            "0",
+            "0",
+            "-5/16",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "5/16",
+            "-1",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "-3/8",
+            "0",
+            "-1",
+            "11/16",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "-11/16"
+          ]
+        ],
+        [
+          [
+            "1/5",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "-4/5",
+            "1",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "1",
+            "-1/5",
+            "0",
+            "-3/5",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "4/5",
+            "0",
+            "-3/5",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "-3/5",
+            "0",
+            "4/5",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "-3/5",
+            "0",
+            "-1/5",
+            "1",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "1",
+            "-4/5",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "1/5"
+          ]
+        ],
+        [
+          [
+            "39/80",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "9/80",
+            "0",
+            "0",
+            "3/8",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "-9/80",
+            "0",
+            "3/5",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "-39/80",
+            "0",
+            "3/5",
+            "3/8",
+            "0"
+          ],
+          [
+            "0",
+            "3/8",
+            "3/5",
+            "0",
+            "-39/80",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "3/5",
+            "0",
+            "-9/80",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "3/8",
+            "0",
+            "0",
+            "9/80",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "39/80"
+          ]
+        ]
+      ],
+      "eigenbasis": [
+        [
+          "1",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "1",
+          "1",
+          "0",
+          "1",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "2",
+          "0",
+          "2",
+          "2",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "6"
+        ],
+        [
+          "0",
+          "1/2",
+          "1",
+          "0",
+          "-3/2",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "3/2",
+          "0",
+          "-1",
+          "-1/2",
+          "0"
+        ],
+        [
+          "0",
+          "9/4",
+          "-9/5",
+          "0",
+          "-9/20",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "9/20",
+          "0",
+          "9/5",
+          "-9/4",
+          "0"
+        ]
+      ]
+    },
+    "quartic_series": {
+      "Z": [
+        "1",
+        "-1/8",
+        "35/384",
+        "-385/3072"
+      ],
+      "normalized_G2_through_order2": [
+        "1",
+        "-1/2",
+        "2/3"
+      ],
+      "logZ_order1": "-1/8",
+      "logZ_order2": "1/12"
+    }
+  },
+  "scope": "Exact coefficient and matrix checks where stated; isolated floating checks accompany proofs and do not replace them."
+}

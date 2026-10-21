@@ -1,0 +1,529 @@
+{
+  "checks": [
+    {
+      "id": "Y26-10-001",
+      "name": "Squarefree gcd, Sturm intervals, exact double-root deflation",
+      "status": "passed",
+      "detail": {
+        "polynomial": [
+          "2",
+          "-3",
+          "0",
+          "1"
+        ],
+        "gcd": [
+          "-1",
+          "1"
+        ],
+        "sturm_variations": [
+          2,
+          1,
+          1,
+          0
+        ],
+        "multiplicities": {
+          "-2": 1,
+          "1": 2
+        }
+      }
+    },
+    {
+      "id": "Y26-10-002",
+      "name": "Finite-field cubic irreducibility and shifted Eisenstein quartic",
+      "status": "passed",
+      "detail": {
+        "cubic_mod2_values": [
+          1,
+          1
+        ],
+        "quartic_mod3_factors": [
+          [
+            2,
+            1,
+            1
+          ],
+          [
+            2,
+            2,
+            1
+          ]
+        ],
+        "shifted_eisenstein_coefficients": [
+          "2",
+          "4",
+          "6",
+          "4",
+          "1"
+        ]
+      }
+    },
+    {
+      "id": "Y26-10-003",
+      "name": "c3",
+      "status": "passed",
+      "detail": "729 exact factorial-unit/block comparisons; U3(10)=44800=7 mod9."
+    },
+    {
+      "id": "Y26-10-004",
+      "name": "c4",
+      "status": "passed",
+      "detail": {
+        "bounded_exhaustive_solutions": [
+          [
+            -144,
+            24
+          ],
+          [
+            -18,
+            6
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            18,
+            6
+          ],
+          [
+            144,
+            24
+          ]
+        ],
+        "bound_y150_count": 11
+      }
+    },
+    {
+      "id": "Y26-10-005",
+      "name": "c5",
+      "status": "passed",
+      "detail": {
+        "exponent_population": 12,
+        "address_range": [
+          0,
+          11
+        ]
+      }
+    },
+    {
+      "id": "Y26-10-006",
+      "name": "c6",
+      "status": "passed",
+      "detail": {
+        "bounded_solutions_y_le_1000": 16,
+        "reduction_seeds": [
+          [
+            1,
+            2
+          ],
+          [
+            5,
+            4
+          ]
+        ]
+      }
+    },
+    {
+      "id": "Y26-10-007",
+      "name": "c7",
+      "status": "passed",
+      "detail": "Exact GCD factorizations/determinants n1–10; independent rational inverse of min kernel."
+    },
+    {
+      "id": "Y26-10-008",
+      "name": "c8",
+      "status": "passed",
+      "detail": "Finite ramification/genus consistency grid and examples (2,3):g1,(3,4):g3; proof supplies general result."
+    },
+    {
+      "id": "Y26-10-009",
+      "name": "c9",
+      "status": "passed",
+      "detail": "125 independent determinant/norm comparisons, both unit norms and transported norm107."
+    },
+    {
+      "id": "Y26-10-010",
+      "name": "c10",
+      "status": "passed",
+      "detail": {
+        "eliminant_coefficients": [
+          "2",
+          "-8",
+          "11",
+          "-6",
+          "1"
+        ],
+        "exceptional_point": 1
+      }
+    },
+    {
+      "id": "Y26-10-011",
+      "name": "c11",
+      "status": "passed",
+      "detail": "Exact gcd split and modular inverse t/2; repeated-factor gcd obstruction checked."
+    },
+    {
+      "id": "Y26-10-012",
+      "name": "c12",
+      "status": "passed",
+      "detail": "Polynomial-in-tanh residuals vanish for zero and shape modes; exact normalization integral."
+    },
+    {
+      "id": "Y26-10-013",
+      "name": "c13",
+      "status": "passed",
+      "detail": "Two Darboux/cofactor identities checked coefficientwise over Q."
+    },
+    {
+      "id": "Y26-10-014",
+      "name": "c14",
+      "status": "passed",
+      "detail": "Formal logarithmic Schröder identity through degree12; resonance pattern checked."
+    },
+    {
+      "id": "Y26-10-015",
+      "name": "c15",
+      "status": "passed",
+      "detail": {
+        "population": 5,
+        "optimum": 7,
+        "optimum_multiplicity": 1,
+        "skipped_variable_example": 4
+      }
+    },
+    {
+      "id": "Y26-10-016",
+      "name": "c16",
+      "status": "passed",
+      "detail": "Complete rank/unrank inverse checks on all5 objects; modulo bias histogram(2,2,2,1,1)."
+    },
+    {
+      "id": "Y26-10-017",
+      "name": "c17",
+      "status": "passed",
+      "detail": "All binary gate fibres and elimination tables enumerated; unconstrained auxiliary count8."
+    },
+    {
+      "id": "Y26-10-018",
+      "name": "c18",
+      "status": "passed",
+      "detail": {
+        "hankel_determinant": "4",
+        "global_intertwiner_checked": true,
+        "recurrence_terms_checked": 25
+      }
+    },
+    {
+      "id": "Y26-10-019",
+      "name": "c19",
+      "status": "passed",
+      "detail": "Exact factorization L H=G and explicit nullspace witness for a nonidentifiable target."
+    },
+    {
+      "id": "Y26-10-020",
+      "name": "c20",
+      "status": "passed",
+      "detail": "Symbolic sine/cosine coefficient cancellation B′+BA=0; fixed-frame obstruction."
+    },
+    {
+      "id": "Y26-10-021",
+      "name": "c21",
+      "status": "passed",
+      "detail": {
+        "identity_classes": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "with_reset_classes": [
+          0,
+          1,
+          0,
+          2
+        ]
+      }
+    },
+    {
+      "id": "Y26-10-022",
+      "name": "c22",
+      "status": "passed",
+      "detail": "Exact minimax recursion on every reached subset: three-state optimum3, direct test4."
+    },
+    {
+      "id": "Y26-10-023",
+      "name": "c23",
+      "status": "passed",
+      "detail": {
+        "separate_interval": [
+          "-393/4",
+          "409/4"
+        ],
+        "joint_margin": "7/4",
+        "measurement_margin": "3/20"
+      }
+    },
+    {
+      "id": "Y26-10-024",
+      "name": "c24",
+      "status": "passed",
+      "detail": {
+        "toy_code_distinct_counts": [
+          8,
+          24,
+          31
+        ],
+        "toy_length5_distance": 3,
+        "actual_multiplier": "56455876562739436995171414077326",
+        "large_all_state_certificate": "separate root supplement Y26-10-901–902"
+      }
+    },
+    {
+      "id": "Y26-10-025",
+      "name": "c25",
+      "status": "passed",
+      "detail": {
+        "exact_condition_number": "2000000000001",
+        "attained_relative_error_bound": "2000000000001/1000000000000"
+      }
+    },
+    {
+      "id": "Y26-10-026",
+      "name": "c26",
+      "status": "passed",
+      "detail": {
+        "quotient_characteristic_coefficients": [
+          "36",
+          "24",
+          "-17",
+          "-4",
+          "1"
+        ],
+        "conditional_spectrum": {
+          "6": 1,
+          "2": 21,
+          "-1": 6,
+          "-3": 14
+        }
+      }
+    },
+    {
+      "id": "Y26-10-027",
+      "name": "c27",
+      "status": "passed",
+      "detail": {
+        "binary_assignments_checked": 128,
+        "height3_compositions": 84,
+        "difference": {
+          "3": 1,
+          "4": -1,
+          "6": -2,
+          "8": 2,
+          "9": 1,
+          "10": 3,
+          "11": -3,
+          "12": -1,
+          "13": -2,
+          "15": 2,
+          "17": 1,
+          "18": -1
+        },
+        "q_half": "11025/262144"
+      }
+    },
+    {
+      "id": "Y26-10-028",
+      "name": "c28",
+      "status": "passed",
+      "detail": [
+        {
+          "diagonal": [
+            "1/5",
+            "2/15",
+            "1/5"
+          ],
+          "reciprocal_max": "5"
+        },
+        {
+          "diagonal": [
+            "2/15",
+            "2/15",
+            "2/15"
+          ],
+          "reciprocal_max": "15/2"
+        },
+        {
+          "diagonal": [
+            "5/24",
+            "5/24",
+            "1/3"
+          ],
+          "reciprocal_max": "3"
+        }
+      ]
+    },
+    {
+      "id": "Y26-10-029",
+      "name": "c29",
+      "status": "passed",
+      "detail": {
+        "finite_closure_ranks": [
+          1,
+          2,
+          3,
+          3
+        ],
+        "rational_family_prefix_example": "a,ab determines all checked coefficients; general proof in text"
+      }
+    },
+    {
+      "id": "Y26-10-030",
+      "name": "c30",
+      "status": "passed",
+      "detail": {
+        "primitive_phase_fibres": {
+          "1": 48,
+          "7": 48,
+          "11": 48,
+          "13": 48,
+          "17": 48,
+          "19": 48,
+          "23": 48,
+          "29": 48
+        },
+        "companion_trace_checks": 60
+      }
+    },
+    {
+      "id": "Y26-10-031",
+      "name": "c31",
+      "status": "passed",
+      "detail": {
+        "total_power_roots": 264,
+        "primitive_roots": 240,
+        "extension_degree": 240
+      }
+    },
+    {
+      "id": "Y26-10-032",
+      "name": "c32",
+      "status": "passed",
+      "detail": {
+        "series_ODE_residual_through_degree": 30,
+        "first_coefficients": [
+          "1/2",
+          "1/24",
+          "1/180"
+        ],
+        "special_value_coefficient": "1/352800"
+      }
+    },
+    {
+      "id": "Y26-10-033",
+      "name": "c33",
+      "status": "passed",
+      "detail": {
+        "divisor_sum": "-4/15",
+        "zero_compensator": "4/15",
+        "logarithmic_coefficients_of_pi_squared": [
+          "-4/45",
+          "-1/15",
+          "-1/18"
+        ],
+        "log_derivative_coefficients_checked": 60
+      }
+    },
+    {
+      "id": "Y26-10-034",
+      "name": "c34",
+      "status": "passed",
+      "detail": {
+        "ordered_phase_pairs": 25,
+        "bernoulli_terms": 50,
+        "exact_I_over_pi_cubed": "955/867"
+      }
+    },
+    {
+      "id": "Y26-10-035",
+      "name": "c35",
+      "status": "passed",
+      "detail": "Exact determinant-twist and split-extension exponents checked in Z/17; no matrix density claim."
+    },
+    {
+      "id": "Y26-10-036",
+      "name": "c36",
+      "status": "passed",
+      "detail": {
+        "cube_coefficient_candidates": [
+          [
+            -1,
+            1
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        "global_proof_reduced_points": [
+          [
+            3,
+            -5
+          ],
+          [
+            3,
+            5
+          ]
+        ],
+        "Euclidean_rounding_corner_bound": "3/4"
+      }
+    },
+    {
+      "id": "Y26-10-037",
+      "name": "c37",
+      "status": "passed",
+      "detail": {
+        "doubled_point": [
+          "129/100",
+          "-383/1000"
+        ],
+        "halving_quartic_residual": "0"
+      }
+    },
+    {
+      "id": "Y26-10-038",
+      "name": "c38",
+      "status": "passed",
+      "detail": {
+        "method": "independent AGM numerical convention check",
+        "K": 10.596634757087662,
+        "split_error": -4.99741335158177e-05,
+        "proved_absolute_bound": 5e-05
+      }
+    },
+    {
+      "id": "Y26-10-039",
+      "name": "c39",
+      "status": "passed",
+      "detail": "Parabola evaluation kernel checked exactly; equality-bound nonvanishing counterexample det=64."
+    },
+    {
+      "id": "Y26-10-040",
+      "name": "c40",
+      "status": "passed",
+      "detail": {
+        "expectation": "1/4",
+        "positive_event_probability_range": [
+          "2/5",
+          "4/5"
+        ],
+        "independent_probability": "64/125"
+      }
+    },
+    {
+      "id": "Y26-10-SCHEMA",
+      "name": "Schema, cutoff and exact-source provenance audit",
+      "status": "passed",
+      "detail": "All40 IDs, cutoff dates, author labels, nullable prompts and exact raw source excerpts checked against actual receipts."
+    }
+  ]
+}

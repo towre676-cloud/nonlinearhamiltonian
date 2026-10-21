@@ -1,0 +1,1323 @@
+[
+  {
+    "id": "Y24-09-001",
+    "title": "What can actually determine the deformation parameters α and β?",
+    "status": "Classical result; recovered proposal repaired",
+    "summary": "The recovered user fragment asks about α and β and gives approximately 0.0334 and 0.673. Two numerical constants alone do not imply a mathematical relationship. A useful replacement is an identification problem with an explicit observation model and a dimensionless input.",
+    "definitions": [
+      "For x>0, write d(x)=αx^β, with α>0 and β real.",
+      "If X has units of length, α has units length^(1−β) in X+αX^β. A dimensionless convention is X*=X_P[u+a u^β], u=X/X_P, with dimensionless a."
+    ],
+    "result": {
+      "name": "Two-point identifiability",
+      "statement": "Two exact positive correction measurements d1=d(x1), d2=d(x2), with x1≠x2, determine β=log(d2/d1)/log(x2/x1) and α=d1/x1^β uniquely.",
+      "proof": "Taking logarithms gives log di=log α+β log xi. Subtracting the two equations eliminates log α; the nonzero denominator log(x2/x1) permits division. Substitution then gives α. Conversely, the resulting pair satisfies both observations, so existence and uniqueness hold. With noisy observations, the same transformation becomes linear regression, but its errors are logarithmic errors, not necessarily additive errors in the original units. One observation gives the entire curve α=d1x1^(−β), so it cannot distinguish exponents. A short input range makes log(x2/x1) small and amplifies measurement errors. This is a conditioning issue that extra printed decimal places do not resolve."
+    },
+    "example": {
+      "setup": "Take x1=1, x2=8, d1=1/30 and d2=2/15. These are exact model data for an illustrative exponent rather than historical measurements.",
+      "calculation": "d2/d1=4, so β=log4/log8=2/3; α=1/30. If the unit is rescaled by X=cY, then X*=c[Y+αc^(β−1)Y^β], and the numerical coefficient becomes α_Y=αc^(β−1). At c=8 and β=2/3 the coefficient halves. The subsequently recovered user-supplied decimal claims can also be checked directly: (1/137)^0.673=0.03647430776545, while0.0334^0.673=0.10150358285425. These do not equal the claimed0.0334 and0.0867. Using the longer recovered β gives about0.036437524 and0.101432200 instead, so extra digits do not repair the discrepancies.",
+      "conclusion": "The exponent can be invariant under unit changes while the dimensional coefficient changes. A claimed universal numerical α needs a specified normalization."
+    },
+    "limits": "No law relating the recovered decimals is proved. The displayed dimensionless convention uses u consistently; an extra independent x would define a different two-variable model. Negative inputs require a stated real-power convention.",
+    "extension": "Collect at least three exact or interval-valued correction measurements. Fit the logarithmic model, inspect residuals, and propagate input uncertainty before assigning any significance to a proposed algebraic relation between α and β.",
+    "references": [
+      {
+        "label": "NIST Digital Library of Mathematical Functions",
+        "url": "https://dlmf.nist.gov/"
+      }
+    ],
+    "original": {
+      "date": "2024-09-20T17:56:10Z",
+      "month": "2024-09",
+      "evidence": "U",
+      "field": "Real analysis and parameter identification",
+      "concept": "Power-law deformation parameters",
+      "origin": "Recovered historical conversation excerpt; development written for this retrospective",
+      "question": "Which observations identify α and β in a power correction, and which dimensional constraints must they satisfy?",
+      "math": "The result and worked example below are the revised mathematical development, not a recovered verbatim proof.",
+      "finish": "Established within the stated hypotheses; speculative historical conclusions are not inherited.",
+      "kind": "revised mathematical question and developed concept",
+      "refs": [
+        "analysis"
+      ],
+      "source_excerpt": "Relationship between α and β; U@2024-09-20T18:18:17Z supplied α=0.0333996828, β=0.67320508075688772, (1/137)^0.673≈0.0334 and0.0334^0.673≈0.0867.",
+      "retrieval_receipt": "root_receipts.json; root_details.json",
+      "original_question": "Relationship between α and β",
+      "attribution_note": "Direct user fragment recovered; only the quoted fragment is original wording."
+    }
+  },
+  {
+    "id": "Y24-09-002",
+    "title": "A sublinear signed deformation is a homeomorphism, with a cusp at zero",
+    "status": "Classical result; recovered proposal repaired",
+    "summary": "The historical radial correction becomes a precise real-variable map once its sign and parameter range are fixed. It is invertible for every α>0 and 0<β<1, but its derivative is unbounded near zero. This distinction matters whenever the map is inserted into a differential equation or metric.",
+    "definitions": [
+      "Let φ(x)=x+α sign(x)|x|^β and φ(0)=0.",
+      "A map is inverse 1-Lipschitz when |φ⁻¹(u)−φ⁻¹(v)|≤|u−v| for all u,v."
+    ],
+    "result": {
+      "name": "Global inversion and regularity",
+      "statement": "For α>0 and 0<β<1, φ is an increasing homeomorphism R→R. Its inverse is 1-Lipschitz. The map φ is smooth off zero and fails to have a finite derivative at zero.",
+      "proof": "The signed power s(x)=sign(x)|x|^β is continuous and strictly increasing. Thus for y>x, φ(y)−φ(x)=(y−x)+α[s(y)−s(x)]≥y−x>0. This proves injectivity and the inverse Lipschitz inequality. The limits at positive and negative infinity are respectively positive and negative infinity; continuity and the intermediate value theorem give surjectivity. A continuous strictly monotone bijection has a continuous inverse. For x≠0, φ′(x)=1+αβ|x|^(β−1)>1. At zero, φ(h)/h=1+α|h|^(β−1), which diverges as h→0. Consequently a smooth change-of-variables theorem requiring a finite nonzero derivative cannot be invoked at zero. There is a useful local Hölder estimate as well: for0<β<1, the signed power is β-Hölder with constant at most2^(1−β). On a bounded interval, φ therefore has a quantitative modulus of continuity even though it is not Lipschitz at zero. This separates continuity, differentiability and inverse stability."
+    },
+    "example": {
+      "setup": "Take α=1/3 and β=2/3. Evaluate at x=−8,0,8 and examine the inverse close to zero.",
+      "calculation": "φ(8)=8+4/3=28/3 and φ(−8)=−28/3. For small y, y≈α sign(x)|x|^β, hence φ⁻¹(y)≈sign(y)(|y|/α)^(1/β)=sign(y)(3|y|)^(3/2). The exact inverse inequality bounds any recovered-input error by the output error.",
+      "conclusion": "The transformation is globally well behaved for inversion, while differentiating it at its cusp requires separate treatment. These are compatible facts."
+    },
+    "limits": "The later logistic-factor formula X+α|X|^βF(X/X_P) is a different function and has not been substituted into this proof. Its negative-input behavior and monotonicity require their own analysis.",
+    "extension": "For an equation in the transformed variable, first derive its weak or integral form. Then state whether trajectories cross zero; a formal chain rule at the cusp can otherwise introduce a nonexistent derivative.",
+    "references": [
+      {
+        "label": "NIST Digital Library of Mathematical Functions",
+        "url": "https://dlmf.nist.gov/"
+      }
+    ],
+    "original": {
+      "date": "2024-09-20T18:19:30Z",
+      "month": "2024-09",
+      "evidence": "A",
+      "field": "Real analysis",
+      "concept": "Signed power coordinate change",
+      "origin": "Recovered historical conversation excerpt; development written for this retrospective",
+      "question": "When does x↦x+α sign(x)|x|^β define a globally invertible coordinate change, and what regularity does it lose?",
+      "math": "The result and worked example below are the revised mathematical development, not a recovered verbatim proof.",
+      "finish": "Established within the stated hypotheses; speculative historical conclusions are not inherited.",
+      "kind": "revised mathematical question and developed concept",
+      "refs": [
+        "analysis"
+      ],
+      "source_excerpt": "r*=r+0.0334 |r|^0.673 sign(r)",
+      "retrieval_receipt": "root_receipts.json",
+      "original_question": null,
+      "attribution_note": "The recovered formula/topic is assistant-authored. The revised question, theorem and example are newly written."
+    }
+  },
+  {
+    "id": "Y24-09-003",
+    "title": "A genuine deformed algebra requires transported operations",
+    "status": "Classical result; recovered proposal repaired",
+    "summary": "The recovered framework applies a common deformation to many algebraic objects. A rigorous interpretation is transport of structure: a bijection can re-express a known algebra without changing its identities. Merely replacing symbols by starred symbols does not determine a new multiplication.",
+    "definitions": [
+      "Let φ:R→R be a bijection. Define x⊕y=φ⁻¹(φ(x)+φ(y)) and x⊙y=φ⁻¹(φ(x)φ(y)).",
+      "The transported zero is z=φ⁻¹(0), and the transported unit is e=φ⁻¹(1). Scalar coordinates are part of the definition."
+    ],
+    "result": {
+      "name": "Transport gives an isomorphic field",
+      "statement": "The operations ⊕ and ⊙ make R into a field isomorphic to the ordinary real field by φ. In particular, associativity and distributivity are exact, irrespective of whether φ is linear.",
+      "proof": "Apply φ to (x⊕y)⊕w. The result is (φ(x)+φ(y))+φ(w), which equals φ(x)+(φ(y)+φ(w)); injectivity of φ proves associativity. Similarly φ(x⊙(y⊕w))=φ(x)(φ(y)+φ(w))=φ(x)φ(y)+φ(x)φ(w)=φ((x⊙y)⊕(x⊙w)). The remaining field axioms follow by the same argument, with additive inverse φ⁻¹(−φ(x)) and multiplicative inverse φ⁻¹(1/φ(x)) when x≠z. This proof also explains its limit: no new intrinsic field invariant appears, because φ is an explicit isomorphism. Geometry, norms or differentiation added afterward may change, but they need independent definitions. For the cubic example the transported additive inverse remains−x, but the transported sum is not ordinary addition. Its scalar action must likewise be transported: c acting onx becomesφ⁻¹(cφ(x)) if the scalar field itself is left in ordinary coordinates. Mixing these two scalar conventions would create a different structure."
+    },
+    "example": {
+      "setup": "Use φ(x)=x³, a simple exact bijection that avoids numerical inversion.",
+      "calculation": "x⊕y=(x³+y³)^(1/3), whereas x⊙y=xy. Thus 1⊕1=2^(1/3). Both (1⊕1)⊕(−1) and 1⊕(1⊕(−1)) equal1. Ordinary addition combined with an arbitrary corrected product would not be covered by this calculation.",
+      "conclusion": "The example supplies an exact associative deformation, with a completely explicit explanation of what has and has not changed."
+    },
+    "limits": "Transport through a coordinate bijection is not a proof that a proposed starred Lie algebra, magic square or mass formula has new representation theory. For vector spaces or noncommutative algebras, one must specify a bijection on the entire underlying set and transport all relevant operations.",
+    "extension": "Test a proposed new multiplication by computing its associator on a basis. If it is transported, exhibit the isomorphism; if it is not, prove the identities directly and identify an invariant distinguishing it from the starting algebra.",
+    "references": [
+      {
+        "label": "NIST Digital Library of Mathematical Functions",
+        "url": "https://dlmf.nist.gov/"
+      }
+    ],
+    "original": {
+      "date": "2024-09-20T23:49:35Z",
+      "month": "2024-09",
+      "evidence": "A",
+      "field": "Algebra",
+      "concept": "Coordinate transport of algebraic structure",
+      "origin": "Recovered historical conversation excerpt; development written for this retrospective",
+      "question": "What algebraic identities follow from a bijective deformation, and which operations must be specified?",
+      "math": "The result and worked example below are the revised mathematical development, not a recovered verbatim proof.",
+      "finish": "Established within the stated hypotheses; speculative historical conclusions are not inherited.",
+      "kind": "revised mathematical question and developed concept",
+      "refs": [
+        "analysis"
+      ],
+      "source_excerpt": "X*=X+α|X|^β F(X/X_P)",
+      "retrieval_receipt": "root_receipts.json",
+      "original_question": null,
+      "attribution_note": "The recovered formula/topic is assistant-authored. The revised question, theorem and example are newly written."
+    }
+  },
+  {
+    "id": "Y24-09-004",
+    "title": "Constant width is a condition on the support function",
+    "status": "Classical result; recovered proposal repaired",
+    "summary": "The geometry in the recovered framework becomes testable when width is expressed through a support function. This also separates a body’s radial distance from the distance of its supporting line, quantities that generally differ.",
+    "definitions": [
+      "For a convex body K, h(θ)=max{x·(cosθ,sinθ):x∈K} is its support function. Its width in direction θ is h(θ)+h(θ+π).",
+      "A twice continuously differentiable h with h+h″>0 parameterizes a strictly convex curve by x(θ)=h(θ)n(θ)+h′(θ)t(θ)."
+    ],
+    "result": {
+      "name": "An explicit family and an obstruction",
+      "statement": "The support function h(θ)=1+εcos3θ has constant width2 and is strictly convex for |ε|<1/8. Applying h↦h+αh^β, with α>0 and 0<β<1 and nonzero sufficiently small ε, generally destroys constant width.",
+      "proof": "Because cos(3(θ+π))=−cos3θ, the sum h(θ)+h(θ+π)=2. Differentiating twice gives h+h″=1−8εcos3θ, which is positive under the stated bound; the curve formula then has positive radius of curvature. For the nonlinear correction, write c=cos3θ. The new width is2+α[(1+εc)^β+(1−εc)^β]. At c=0 it is2+2α. At c=1 strict concavity of u^β yields (1+ε)^β+(1−ε)^β<2, so the width is strictly smaller. Equivalently its Taylor expansion starts2+2α+αβ(β−1)ε²c²+O(ε⁴). The nonconstant second-order term is an explicit obstruction. The support-function curve formula also explains closure: both h andh′ are2π-periodic, so the parameterized endpoints agree. Translating the body adds a first harmonic a cosθ+b sinθ to h; this preserves width because that harmonic is odd under the antipodal shift. The third harmonic changes shape without merely translating it."
+    },
+    "example": {
+      "setup": "Take ε=1/16, α=1/30 and β=2/3.",
+      "calculation": "The curvature radius lies between1/2 and3/2, so the starting curve is safely convex. Its original width is exactly2. The corrected widths at c=0 and c=1 differ by (1/30)[(17/16)^(2/3)+(15/16)^(2/3)−2], which is negative by strict concavity.",
+      "conclusion": "The proposed universal correction does not preserve constant width even on a small smooth family. A preservation theorem needs an odd-antipodal support perturbation."
+    },
+    "limits": "A radial function r(θ) cannot be treated as h(θ) without proving the relation for the chosen body. The proof is planar; higher-dimensional support functions have an analogous antipodal condition but different curvature tests.",
+    "extension": "Construct deformations h_t=w/2+g_t with g_t(θ+π)=−g_t(θ), and bound h_t+h_t″ below. This provides an actual admissible family rather than a visual approximation.",
+    "references": [
+      {
+        "label": "NIST Digital Library of Mathematical Functions",
+        "url": "https://dlmf.nist.gov/"
+      }
+    ],
+    "original": {
+      "date": "2024-09-20T23:49:35Z",
+      "month": "2024-09",
+      "evidence": "A",
+      "field": "Convex geometry",
+      "concept": "Constant-width deformation",
+      "origin": "Recovered historical conversation excerpt; development written for this retrospective",
+      "question": "Which smooth planar deformations preserve constant width, and why is a nonlinear radial correction insufficient?",
+      "math": "The result and worked example below are the revised mathematical development, not a recovered verbatim proof.",
+      "finish": "Established within the stated hypotheses; speculative historical conclusions are not inherited.",
+      "kind": "revised mathematical question and developed concept",
+      "refs": [
+        "analysis"
+      ],
+      "source_excerpt": "deformation of constant-width bodies",
+      "retrieval_receipt": "root_receipts.json",
+      "original_question": null,
+      "attribution_note": "The recovered formula/topic is assistant-authored. The revised question, theorem and example are newly written."
+    }
+  },
+  {
+    "id": "Y24-09-005",
+    "title": "An irrational angular frequency does not define a closed polar curve",
+    "status": "Classical result; recovered proposal repaired",
+    "summary": "The recovered “irrational monogon” series must first pass a periodicity test. A formula on the real angular line is not automatically a function on the quotient circle R/(2πZ). Without that descent, closing the curve and assigning its homology are extra operations.",
+    "definitions": [
+      "A function r:R→R descends to S¹ precisely when r(θ+2π)=r(θ) for all θ.",
+      "For positive continuous periodic r, the map θ↦r(θ)(cosθ,sinθ) is a polar graph."
+    ],
+    "result": {
+      "name": "A one-mode obstruction",
+      "statement": "For a≠0 and ξ>0, r(θ)=1+a cos(ξθ) is 2π-periodic if and only if ξ is an integer. For irrational ξ, the endpoints of its restriction to [0,2π] have different radial distances.",
+      "proof": "If r is periodic, evaluate at θ=0 to obtain cos(2πξ)=1, hence ξ is an integer. Conversely an integer frequency is periodic by the cosine addition formula. For irrational ξ, cos(2πξ)≠1, so r(2π)−r(0)=a[cos(2πξ)−1]≠0. The same polar direction at the two endpoints therefore has different radii. This proof does not automatically classify infinite sums: different frequencies can cancel, and their coefficients must be examined. It does show that irrationality by itself is not a mechanism producing a closed “one-sided” polygon. One may instead study an almost-periodic function on R, or add a closing segment, but those choices define different spaces. If a closing segment is explicitly added, the resulting loop can be studied, but its geometry depends on that segment. An endpoint identification in the parameter interval is a quotient construction instead and may fail to give a continuous planar map when the two endpoints have different images. These are distinct repairs."
+    },
+    "example": {
+      "setup": "Take r(θ)=1+(1/4)cos(√2θ). It stays between3/4 and5/4, so the issue is not passage through the origin.",
+      "calculation": "r(0)=5/4, while r(2π)=1+(1/4)cos(2π√2)≠5/4. The polar arc therefore has a nonzero endpoint gap of magnitude (1/4)|1−cos(2π√2)|. Replacing √2 by3 makes the endpoint gap zero and produces a threefold periodic radial graph.",
+      "conclusion": "A continuous nonclosed arc and a simple closed curve have different topological models. The model must be chosen before computing homology."
+    },
+    "limits": "This is a necessary-definition correction, not a proof that every irrational-frequency infinite series is nonperiodic. Nor does it preclude studying nonperiodic angular curves as legitimate objects.",
+    "extension": "For a finite trigonometric sum with distinct positive frequencies, prove linear independence of exponentials to determine exactly which coefficients can survive a prescribed period. Then specify whether the domain is R, an interval or S¹.",
+    "references": [
+      {
+        "label": "NIST Digital Library of Mathematical Functions",
+        "url": "https://dlmf.nist.gov/"
+      }
+    ],
+    "original": {
+      "date": "2024-09-20T18:19:30Z",
+      "month": "2024-09",
+      "evidence": "A",
+      "field": "Topology and Fourier analysis",
+      "concept": "Irrational monogon periodicity",
+      "origin": "Recovered historical conversation excerpt; development written for this retrospective",
+      "question": "Under what hypotheses does an angular series descend from R to the circle and describe a closed planar curve?",
+      "math": "The result and worked example below are the revised mathematical development, not a recovered verbatim proof.",
+      "finish": "Established within the stated hypotheses; speculative historical conclusions are not inherited.",
+      "kind": "revised mathematical question and developed concept",
+      "refs": [
+        "analysis"
+      ],
+      "source_excerpt": "r_ξ(θ)=1+Σ_n a_n cos(ξ^n θ)",
+      "retrieval_receipt": "root_receipts.json",
+      "original_question": null,
+      "attribution_note": "The recovered formula/topic is assistant-authored. The revised question, theorem and example are newly written."
+    }
+  },
+  {
+    "id": "Y24-09-006",
+    "title": "Regularity of the recovered lacunary angular series",
+    "status": "Classical result; recovered proposal repaired",
+    "summary": "A meaningful infinite angular construction needs a convergence theorem. The same coefficients that control its size do not necessarily control its slopes: each differentiation multiplies the nth oscillation by ξ^n. This gives an explicit hierarchy of sufficient conditions.",
+    "definitions": [
+      "Let ξ>1 and r(θ)=1+Σ_{n≥0}a_n cos(ξ^nθ).",
+      "For k≥0, put M_k=Σ_{n≥0}|a_n|ξ^(kn), allowing the value infinity."
+    ],
+    "result": {
+      "name": "A sufficient regularity criterion",
+      "statement": "If M_k is finite for an integer k≥0, the series defines a C^k function on R. Every derivative of order j≤k is obtained term by term and is uniformly bounded by M_j.",
+      "proof": "The jth derivative of a_n cos(ξ^nθ) has absolute value at most |a_n|ξ^(jn). Since ξ>1 and j≤k, finiteness of M_k implies finiteness of M_j. The Weierstrass uniform convergence test therefore applies to every derivative series through order k. To justify differentiation, fix a base point and integrate the uniformly convergent first derivative series: the fundamental theorem of calculus identifies its integral with the uniform limit of the original partial sums. Repeating this argument proves the result through order k. The criterion is sufficient only. Failure of absolute summability of derivative bounds does not by itself prove nondifferentiability, because cancellation can matter. For k=0 the uniform tail bound is sup|Σ_(n>N)a_n cos(ξ^nθ)|≤Σ_(n>N)|a_n|. In the first geometric example this equals(1/16)(1/8)^(N+1)/(1−1/8). Thus every plotted truncation has a certified amplitude error, independently of sampling density on the angular line."
+    },
+    "example": {
+      "setup": "Choose a_n=2^(−3n−4), ξ=2, and n starting at0. Compare it with a_n=2^(−n−4).",
+      "calculation": "For the first choice, M_0=(1/16)/(1−1/8)=1/14 and M_2=(1/16)/(1−1/2)=1/8. Hence r≥13/14 and r is C² with |r″|≤1/8. For the second, M_0=1/8 but the first derivative majorant is Σ1/16, which diverges; the theorem guarantees continuity but supplies no C¹ conclusion.",
+      "conclusion": "The first series is a quantitatively controlled positive radial function. The second needs additional analysis before slopes or curvature can be used."
+    },
+    "limits": "For noninteger ξ the resulting function still need not descend to S¹. Positivity and regularity do not repair missing periodicity. No fractal dimension is inferred from the divergence of a sufficient derivative bound.",
+    "extension": "Once periodicity is established, combine the derivative bounds with an explicit curvature formula for a polar graph to identify a rigorously convex parameter range.",
+    "references": [
+      {
+        "label": "NIST Digital Library of Mathematical Functions",
+        "url": "https://dlmf.nist.gov/"
+      }
+    ],
+    "original": {
+      "date": "2024-09-20T18:19:30Z",
+      "month": "2024-09",
+      "evidence": "A",
+      "field": "Real analysis",
+      "concept": "Uniform convergence and differentiability",
+      "origin": "Recovered historical conversation excerpt; development written for this retrospective",
+      "question": "Which coefficient bounds make the angular series continuous or differentiable, before any geometric interpretation is attempted?",
+      "math": "The result and worked example below are the revised mathematical development, not a recovered verbatim proof.",
+      "finish": "Established within the stated hypotheses; speculative historical conclusions are not inherited.",
+      "kind": "revised mathematical question and developed concept",
+      "refs": [
+        "analysis"
+      ],
+      "source_excerpt": "Σ_n a_n cos(ξ^n θ)",
+      "retrieval_receipt": "root_receipts.json",
+      "original_question": null,
+      "attribution_note": "The recovered formula/topic is assistant-authored. The revised question, theorem and example are newly written."
+    }
+  },
+  {
+    "id": "Y24-09-007",
+    "title": "Homology follows from a specified space, not a deformation name",
+    "status": "Classical result; recovered proposal repaired",
+    "summary": "The historical rank formula needs a definition of κ and a construction of the underlying space. Two elementary models expose the issue: a finite graph has computable cycle rank, whereas every positive continuous periodic radial graph is a single topological circle.",
+    "definitions": [
+      "A finite graph has V vertices, E edges and C connected components; homology here uses integer coefficients.",
+      "A positive radial graph is Γ={r(θ)(cosθ,sinθ):θ∈S¹} with continuous r>0."
+    ],
+    "result": {
+      "name": "Two exact homology models",
+      "statement": "For a finite graph, H0≅Z^C, H1≅Z^(E−V+C), and higher homology vanishes. A positive continuous radial graph has H0≅Z and H1≅Z.",
+      "proof": "Orient the graph edges. Its boundary map ∂1:Z^E→Z^V sends an oriented edge to head minus tail. On each connected component, a spanning tree supplies V_component−1 independent boundary columns; all columns lie in the subgroup whose coordinate sum on that component is zero. Thus rank ∂1=V−C. There are no 2-cells, so H1=ker∂1, a free group of rank E−V+C; H0 is the component group. For Γ, the polar parameterization is a continuous bijection from compact S¹ to a Hausdorff space: positivity makes its inverse the angular projection. It is therefore a homeomorphism, and the usual circle homology applies. Subdividing a graph edge increases both E and V by one and leaves E−V+C unchanged. This is an elementary consistency check for the claimed invariant: changing the mesh of a polygonal approximation should not create a new cycle merely by inserting vertices. Adding an actual closing edge can change the rank."
+    },
+    "example": {
+      "setup": "Compare a circle with a connected graph consisting of two circles meeting at one vertex.",
+      "calculation": "The one-vertex, one-loop circle has V=1,E=1 and β1=1. The wedge of two circles has V=1,E=2 and β1=2. Inserting a continuous positive factor r*(θ)/r(θ) in a radial graph changes neither its one-to-one angular parameterization nor β1.",
+      "conclusion": "To obtain rank κ−1, one can specify a connected graph with E−V+1=κ−1. The formula is then a graph theorem rather than a consequence of an irrational exponent."
+    },
+    "limits": "Self-intersections, quotient identifications, added closing arcs or singularities can change the space. They require an explicit cell complex; the simple radial-graph proof does not apply to them.",
+    "extension": "Build the proposed construction as a finite cellular approximation, list its incidence matrices, and compute their integer Smith normal forms. This separates actual topology from pictures of an oscillatory parametrization.",
+    "references": [
+      {
+        "label": "Cohen-Steiner–Edelsbrunner–Harer, Stability of persistence diagrams",
+        "url": "https://doi.org/10.1007/s00454-006-1276-5"
+      }
+    ],
+    "original": {
+      "date": "2024-09-20T18:19:30Z",
+      "month": "2024-09",
+      "evidence": "A",
+      "field": "Algebraic topology",
+      "concept": "Cycle rank and radial graphs",
+      "origin": "Recovered historical conversation excerpt; development written for this retrospective",
+      "question": "Which concrete spaces realize the claimed homology ranks, and what does a positive periodic radial deformation preserve?",
+      "math": "The result and worked example below are the revised mathematical development, not a recovered verbatim proof.",
+      "finish": "Established within the stated hypotheses; speculative historical conclusions are not inherited.",
+      "kind": "revised mathematical question and developed concept",
+      "refs": [
+        "pers"
+      ],
+      "source_excerpt": "H0≈Z, H1≈Z^(κ−1), higher0",
+      "retrieval_receipt": "root_receipts.json",
+      "original_question": null,
+      "attribution_note": "The recovered formula/topic is assistant-authored. The revised question, theorem and example are newly written."
+    }
+  },
+  {
+    "id": "Y24-09-008",
+    "title": "What persistence stability can certify for a deformation",
+    "status": "Classical result; recovered proposal repaired",
+    "summary": "Persistence becomes precise after choosing both a space and a filtration. The most elementary useful theorem is a pair of sublevel-set inclusions. It supplies a stable comparison without assuming the homology of an undefined geometric object.",
+    "definitions": [
+      "For a fixed space X and a function f:X→R, let F_t={x:f(x)≤t}.",
+      "Write G_t for the sublevel sets of g. A shift by ε means replacing the parameter t by t+ε."
+    ],
+    "result": {
+      "name": "Uniform perturbations yield an interleaving",
+      "statement": "If sup_X|f−g|≤ε, then F_t⊆G_(t+ε) and G_t⊆F_(t+ε) for every t. Applying homology gives maps whose twofold composites are the ordinary filtration maps shifted by2ε.",
+      "proof": "If x∈F_t then g(x)≤f(x)+ε≤t+ε, which proves the first inclusion. Interchanging f and g proves the second. The composite inclusion F_t→G_(t+ε)→F_(t+2ε) sends each point to itself, so functoriality makes its induced homology map equal the structure map H_k(F_t)→H_k(F_(t+2ε)). The other composite works identically. This is the definition of an ε-interleaving at the level of persistent homology. For finite filtered complexes, additional algebraic results identify this with a bottleneck matching bound on interval decompositions; that stronger correspondence is a classical theorem, not proved merely by drawing similar curves."
+    },
+    "example": {
+      "setup": "Take a graph with two vertices joined by one edge. Give its vertices f-values0 and2 and its edge value2; set g-values1 and2 on the vertices and3 on the edge.",
+      "calculation": "With the lower-star convention replaced here by these explicitly assigned cell values, both are valid filtrations because each edge appears no earlier than its endpoints. The cellwise sup difference is1. In degree0, f has one eternal component and a zero-length merge event at2; g has a component born at1 and a second born at2 that dies at3. Their changes fit the1-shift inclusions directly.",
+      "conclusion": "A small field perturbation controls persistence parameters, even when a short-lived component appears. It does not force every Betti number at each identical threshold to agree."
+    },
+    "limits": "The space and filtration remain fixed in this argument. Changing sampling, adjacency, coefficients or a geometric reconstruction requires a separate comparison map. Infinite spaces may need finiteness assumptions for barcode language.",
+    "extension": "For an explicit deformed radius, bound ||r*−r||∞ and build a common finite filtered complex. Report both the deterministic bound and the actual interval endpoints.",
+    "references": [
+      {
+        "label": "Cohen-Steiner–Edelsbrunner–Harer, Stability of persistence diagrams",
+        "url": "https://doi.org/10.1007/s00454-006-1276-5"
+      }
+    ],
+    "original": {
+      "date": "2024-09-20T18:19:30Z",
+      "month": "2024-09",
+      "evidence": "A",
+      "field": "Topological data analysis",
+      "concept": "Sublevel-set interleaving",
+      "origin": "Recovered historical conversation excerpt; development written for this retrospective",
+      "question": "If a deformation changes a scalar field by at most ε, what persistent-topology comparison follows directly?",
+      "math": "The result and worked example below are the revised mathematical development, not a recovered verbatim proof.",
+      "finish": "Established within the stated hypotheses; speculative historical conclusions are not inherited.",
+      "kind": "revised mathematical question and developed concept",
+      "refs": [
+        "pers"
+      ],
+      "source_excerpt": "persistence, sheaf spectral sequence, intersection products",
+      "retrieval_receipt": "root_receipts.json",
+      "original_question": null,
+      "attribution_note": "The recovered formula/topic is assistant-authored. The revised question, theorem and example are newly written."
+    }
+  },
+  {
+    "id": "Y24-09-009",
+    "title": "A complete small sheaf calculation before spectral-sequence claims",
+    "status": "Classical result; recovered proposal repaired",
+    "summary": "The recovered passage names sheaf spectral sequences without specifying a sheaf or cover. A two-set calculation gives the missing data and shows exactly where first cohomology comes from. The example uses the constant real sheaf on a circle.",
+    "definitions": [
+      "Cover S¹ by two connected proper open arcs U,V whose intersection has two connected components.",
+      "Locally constant real sections on a space with m connected components form R^m."
+    ],
+    "result": {
+      "name": "The circle Čech calculation",
+      "statement": "For this cover and the constant real sheaf, the Čech complex is R²→R², (a,b)↦(b−a,b−a), in degrees0 and1. Its cohomology is R in each of degrees0 and1, and zero above1.",
+      "proof": "A section on each connected arc is a single number, so degree0 is R⊕R. A section on U∩V can take independent values on its two components, so degree1 is R⊕R. Restriction subtracts the U-value from the V-value on both components, producing the displayed differential. Its kernel is the diagonal line a=b, and its image is the diagonal line in degree1. Thus H0 has dimension1 and H1 is R² modulo a one-dimensional diagonal, also dimension1. There are no triple intersections of distinct cover members, so higher Čech groups vanish. Because the arcs and their intersection components are contractible and acyclic for this sheaf, this cover computes the sheaf cohomology. The acyclicity is part of why this particular cover is useful."
+    },
+    "example": {
+      "setup": "Take the degree1 cochain c=(1,0). Determine whether it is a coboundary.",
+      "calculation": "Every coboundary has equal coordinates, so c cannot equal(b−a,b−a). Its class is nonzero. The quotient can be identified with R by the difference map (u,v)↦u−v; c maps to1. A class represented by(5,4) is the same class because their difference(4,4) is a coboundary.",
+      "conclusion": "The nontrivial class records incompatibility between the two overlap components. There is no need to infer it from an undefined “deformed” spectral sequence."
+    },
+    "limits": "A general sheaf, singular space or non-acyclic cover can have different cohomology. Čech and derived sheaf cohomology need not agree without suitable hypotheses. No intersection pairing has been introduced in this example.",
+    "extension": "Choose an explicit local system with monodromy q. The circle cellular complex then has differential q−1; when q≠1 both H0 and H1 vanish, illustrating that the sheaf matters as much as the space.",
+    "references": [
+      {
+        "label": "Cohen-Steiner–Edelsbrunner–Harer, Stability of persistence diagrams",
+        "url": "https://doi.org/10.1007/s00454-006-1276-5"
+      }
+    ],
+    "original": {
+      "date": "2024-09-20T18:19:30Z",
+      "month": "2024-09",
+      "evidence": "A",
+      "field": "Sheaf cohomology",
+      "concept": "Čech complex on a circle",
+      "origin": "Recovered historical conversation excerpt; development written for this retrospective",
+      "question": "How can one compute an actual sheaf-cohomology example associated with a closed one-dimensional object?",
+      "math": "The result and worked example below are the revised mathematical development, not a recovered verbatim proof.",
+      "finish": "Established within the stated hypotheses; speculative historical conclusions are not inherited.",
+      "kind": "revised mathematical question and developed concept",
+      "refs": [
+        "pers"
+      ],
+      "source_excerpt": "sheaf spectral sequence",
+      "retrieval_receipt": "root_receipts.json",
+      "original_question": null,
+      "attribution_note": "The recovered formula/topic is assistant-authored. The revised question, theorem and example are newly written."
+    }
+  },
+  {
+    "id": "Y24-09-010",
+    "title": "Hochschild homology and K-theory detect different data",
+    "status": "Classical result; recovered proposal repaired",
+    "summary": "Naming several invariants does not make them interchangeable. An exact matrix example supplies two computable definitions and shows why a topological-cycle rank cannot simply be reused as a Hochschild or K-theory rank.",
+    "definitions": [
+      "For a complex algebra A, HH0(A)=A/[A,A], where [A,A] is the linear span of commutators xy−yx.",
+      "For a unital C*-algebra, K0 is the group completion of stable projection classes. For complex matrix algebras these classes are classified by ordinary rank after stabilization."
+    ],
+    "result": {
+      "name": "An explicit matrix calculation",
+      "statement": "HH0(M₂(C))≅C via trace, whereas K0(M₂(C))≅Z via stable rank. With the rank-one projection as generator, the unit matrix has K0-class2.",
+      "proof": "Trace annihilates every commutator, since Tr(XY)=Tr(YX). Conversely, write Eij for matrix units. The off-diagonal units satisfy E12=[E11,E12] and E21=[E22,E21], while E11−E22=[E12,E21]. These three matrices span the traceless subspace. Hence the commutator span is exactly the kernel of trace, so the quotient is one-dimensional and trace identifies it with C. For K0, a complex projection is unitarily diagonalizable with diagonal entries0 or1. Under direct sum, ranks add. Every nonnegative rank occurs among matrix algebras over M₂(C), and equality of rank gives stable equivalence. The resulting monoid is N and its group completion is Z. The identity in M₂(C) has rank2, explaining the normalization of its class. The trace used in the Hochschild quotient is unnormalized, so the identity matrix maps to2. A normalized trace would send it to1 and change the numerical comparison with K0, without changing either invariant group. This small normalization choice is another reason to state a proposed comparison map explicitly."
+    },
+    "example": {
+      "setup": "Consider P=diag(1,0) and Q=diag(0,1).",
+      "calculation": "P−Q=[E12,E21] vanishes in HH0. In K0 the projections P and Q are equivalent via the matrix unit E21, so [P]−[Q]=0 as well. However Tr(P)=1 is a complex scalar while [P] is an integer class; these live in different coefficient groups. The trace induces a particular map between them after choosing the normalization.",
+      "conclusion": "Explicit definitions explain both agreements and distinctions. A common symbol or shared rank does not identify the theories."
+    },
+    "limits": "This proves only degree-zero Hochschild homology and K0 for this matrix algebra. Higher Hochschild/cyclic groups, topological K-theory of spaces and algebraic K-theory require their own definitions. No general deformation-invariance theorem is asserted.",
+    "extension": "For a proposed starred algebra, first give its multiplication and involution. Then exhibit an algebra isomorphism or compute a genuinely changed invariant, rather than transferring a graph’s Betti number by analogy.",
+    "references": [
+      {
+        "label": "J.-L. Loday, Cyclic Homology, author page",
+        "url": "https://irma.math.unistra.fr/~loday/"
+      }
+    ],
+    "original": {
+      "date": "2024-09-20T18:19:30Z",
+      "month": "2024-09",
+      "evidence": "A",
+      "field": "Noncommutative algebra",
+      "concept": "HH0 and matrix algebras",
+      "origin": "Recovered historical conversation excerpt; development written for this retrospective",
+      "question": "What can be established explicitly when a deformation is said to carry Hochschild and K-theoretic invariants?",
+      "math": "The result and worked example below are the revised mathematical development, not a recovered verbatim proof.",
+      "finish": "Established within the stated hypotheses; speculative historical conclusions are not inherited.",
+      "kind": "revised mathematical question and developed concept",
+      "refs": [
+        "cyclic"
+      ],
+      "source_excerpt": "Hochschild/cyclic homology, K-theory, noncommutative geometry",
+      "retrieval_receipt": "root_receipts.json",
+      "original_question": null,
+      "attribution_note": "The recovered formula/topic is assistant-authored. The revised question, theorem and example are newly written."
+    }
+  },
+  {
+    "id": "Y24-09-011",
+    "title": "Fractional running becomes a memory equation after choosing a derivative",
+    "status": "Classical result; recovered proposal repaired",
+    "summary": "The historical formula leaves the fractional derivative and its initial data unspecified. A clean model takes t=log(μ/μ0)≥0 and uses the Caputo derivative. Even a linear right-hand side then produces a different evolution law from an ordinary differential equation.",
+    "definitions": [
+      "For 0<γ<1, D_C^γg(t)=Γ(1−γ)⁻¹∫₀ᵗ(t−s)^(−γ)g′(s)ds when the integral is defined.",
+      "E_γ(z)=Σ_{n≥0}z^n/Γ(γn+1) is the Mittag-Leffler function."
+    ],
+    "result": {
+      "name": "Exact linear fractional evolution",
+      "statement": "The initial-value problem D_C^γg=ag, g(0)=g0 has solution g(t)=g0E_γ(at^γ). Equivalently, g=g0+(a/Γ(γ))∫₀ᵗ(t−s)^(γ−1)g(s)ds.",
+      "proof": "For a monomial with exponent q>0, the beta-integral substitution s=tu gives D_C^γt^q=Γ(q+1)t^(q−γ)/Γ(q+1−γ); a constant has Caputo derivative zero. Apply this identity to the convergent Mittag-Leffler series. Its nth term for n≥1 maps to a times the (n−1)st term, giving the differential equation and the stated initial value. Integrating the Caputo equation by the fractional integral yields the Volterra equation; conversely that equation can be differentiated fractionally under standard local regularity. Uniqueness on compact time intervals follows by iterating the Volterra bound: a difference is bounded by C|a|^nt^(nγ)/Γ(nγ+1) for all n, whose right side tends to zero. At γ=1 the Mittag-Leffler series becomes the ordinary exponential becauseΓ(n+1)=n!, so the model continuously connects to the familiar linear flow in that parameter limit. A constant forcing term b can also be handled explicitly: g(t)=g0E_γ(at^γ)+b t^γE_(γ,γ+1)(at^γ), with the two-parameter function defined by its gamma-denominator series."
+    },
+    "example": {
+      "setup": "Use γ=1/2, a=−1 and g0=1.",
+      "calculation": "The solution is E_(1/2)(−√t)=e^t erfc(√t). Its expansion begins1−2√t/√π+t−4t^(3/2)/(3√π)+…, so its initial ordinary derivative is singular. For large t it decays like1/√(πt), whereas the ordinary equation g′=−g gives e^(−t). These are mathematically different flows.",
+      "conclusion": "The fractional order changes the memory kernel and long-time decay, not merely a numerical coefficient in an ordinary beta function."
+    },
+    "limits": "A nonlinear gauge-theory beta function, renormalization interpretation and physical dimensions have not been supplied by this scalar model. Changing to a Riemann–Liouville derivative also changes the initial-data formulation.",
+    "extension": "For a locally Lipschitz nonlinear right-hand side, formulate the corresponding Volterra fixed-point problem and prove local existence on a stated interval before attempting parameter fitting.",
+    "references": [
+      {
+        "label": "Mainardi–Gorenflo, On Mittag-Leffler-type functions in fractional evolution processes",
+        "url": "https://arxiv.org/abs/0706.3866"
+      }
+    ],
+    "original": {
+      "date": "2024-09-20T23:54:44Z",
+      "month": "2024-09",
+      "evidence": "A",
+      "field": "Fractional calculus",
+      "concept": "Caputo evolution in logarithmic scale",
+      "origin": "Recovered historical conversation excerpt; development written for this retrospective",
+      "question": "What well-posed scalar fractional equation replaces a formal fractional beta-function formula?",
+      "math": "The result and worked example below are the revised mathematical development, not a recovered verbatim proof.",
+      "finish": "Established within the stated hypotheses; speculative historical conclusions are not inherited.",
+      "kind": "revised mathematical question and developed concept",
+      "refs": [
+        "frac"
+      ],
+      "source_excerpt": "D^γ g(μ)/D(log μ)^γ=β*_gauge(g)",
+      "retrieval_receipt": "root_receipts.json",
+      "original_question": null,
+      "attribution_note": "The recovered formula/topic is assistant-authored. The revised question, theorem and example are newly written."
+    }
+  },
+  {
+    "id": "Y24-09-012",
+    "title": "Frobenius traces for 37.a1 can be counted exactly",
+    "status": "Classical result; recovered proposal repaired",
+    "summary": "The historical assistant passage compares classical traces with a numerical deformation and invokes Sato–Tate and BSD. A reliable starting point is the undeformed curve and exact finite-field counts, including its point at infinity.",
+    "definitions": [
+      "Let E/Q be y²+y=x³−x. Its generalized Weierstrass coefficients are a1=a2=a6=0,a3=1,a4=−1.",
+      "At a prime p of good reduction, a_p=p+1−#E(F_p), and its Euler factor is (1−a_p p^(−s)+p^(1−2s))⁻¹."
+    ],
+    "result": {
+      "name": "Exact good-reduction data",
+      "statement": "The discriminant of E is37. Its point counts at p=2,3,5,7 are5,7,8,9, giving traces −2,−3,−2,−1 respectively.",
+      "proof": "The standard Weierstrass quantities are b2=0,b4=−2,b6=1,b8=−1. Substitution into Δ=−b2²b8−8b4³−27b6²+9b2b4b6 gives64−27=37, so all four listed primes are good. To count, enumerate x,y∈F_p satisfying y²+y−x³+x=0 and add one point at infinity. This is an exact finite computation, not a floating-point fit. The trace formula then gives the displayed a_p. Hasse’s bound |a_p|≤2√p is satisfied in each case. For p=2, x³−x=0 for both x, and y²+y=0 for both y, so there are four affine points and one point at infinity. The local Euler factor forces prime-power coefficient relations: at a good prime, a_(p²)=a_p²−p. Thus the counted a5=−2 determines a25=−1 in the classical L-series. A correction that changes a5 but leaves a25 untouched generally breaks this relation, even if both displayed angles remain within their allowed real range."
+    },
+    "example": {
+      "setup": "Compute the p=5 trace explicitly and compare its angle with a transformed trace.",
+      "calculation": "The right sides x³−x for x=0,1,2,3,4 are0,0,1,4,0. The left sides y²+y take the values0,2,1,2,0. Therefore the numbers of y-solutions are2,2,1,0,2, totaling7 affine points. Thus #E(F5)=8 and a5=−2, with cosθ5=−1/√5. Applying a power correction to −2 produces a different number which is not automatically a Frobenius trace of any elliptic curve.",
+      "conclusion": "The exact data can seed a reproducible classical plot. An arbitrary transformed trace does not inherit an Euler factor or arithmetic interpretation."
+    },
+    "limits": "These counts do not prove the Sato–Tate distribution, the full Mordell–Weil rank or BSD. The LMFDB label was recovered, but direct site access encountered a challenge; all displayed arithmetic is independently verified in the included program.",
+    "extension": "Extend the point-count table over a declared prime range, record excluded bad primes, and compare any transformed values with integrality and Hasse constraints before discussing distribution.",
+    "references": [
+      {
+        "label": "LMFDB 37.a1 record (access challenge encountered; calculations below are independent)",
+        "url": "https://www.lmfdb.org/EllipticCurve/Q/37/a/1"
+      },
+      {
+        "label": "J. S. Milne, Elliptic Curves",
+        "url": "https://www.jmilne.org/math/Books/EC2.pdf"
+      }
+    ],
+    "original": {
+      "date": "2024-09-08T20:07:59Z",
+      "month": "2024-09",
+      "evidence": "A",
+      "field": "Elliptic curves",
+      "concept": "Finite-field point counts",
+      "origin": "Recovered historical conversation excerpt; development written for this retrospective",
+      "question": "What exact arithmetic underlies a Frobenius-angle plot for the curve y²+y=x³−x?",
+      "math": "The result and worked example below are the revised mathematical development, not a recovered verbatim proof.",
+      "finish": "Established within the stated hypotheses; speculative historical conclusions are not inherited.",
+      "kind": "revised mathematical question and developed concept",
+      "refs": [
+        "ec",
+        "ecnotes"
+      ],
+      "source_excerpt": "elliptic curve 37.a1; classical/deformed Frobenius trace angles",
+      "retrieval_receipt": "root_receipts.json",
+      "original_question": null,
+      "attribution_note": "The recovered formula/topic is assistant-authored. The revised question, theorem and example are newly written."
+    }
+  },
+  {
+    "id": "Y24-09-013",
+    "title": "A rational point of infinite order without assuming BSD",
+    "status": "Classical result; recovered proposal repaired",
+    "summary": "A numerical deformation of Frobenius traces is not a rank theorem. For the same curve, a short exact argument proves a genuine rank lower bound by identifying a non-torsion rational point. This separates an established statement from the much stronger BSD claim.",
+    "definitions": [
+      "The rational points of an elliptic curve form an abelian group with identity O, the point at infinity.",
+      "At a good prime p, reduction is injective on rational torsion whose order is prime to p. This classical reduction theorem is the only structural input used here."
+    ],
+    "result": {
+      "name": "A certified non-torsion point",
+      "statement": "For E:y²+y=x³−x, the torsion subgroup E(Q)_tors is trivial. Consequently P=(0,0) has infinite order and rank E(Q)≥1.",
+      "proof": "The preceding exact counts give #E(F5)=8 and #E(F7)=9. Suppose E(Q) contains torsion of prime order ℓ. If ℓ≠5, injectivity of ℓ-torsion under reduction at5 forces ℓ|8, so ℓ=2. But reduction at7, where ℓ≠7, then forces2|9, impossible. If ℓ=5, reduction at7 forces5|9, also impossible. Every nontrivial finite abelian group has an element of prime order, so rational torsion is trivial. The point(0,0) lies on the curve and differs from O; it is therefore non-torsion. A non-torsion element supplies a copy of Z inside E(Q), proving the rank lower bound. This does not require knowing the analytic order of vanishing of L(E,s). The two reduction primes are used asymmetrically only to respect the prime-to-p restriction. In general, gcd(#E(Fp),#E(Fq))=1 at distinct good primes does not justify simply quoting an unrestricted injection twice; the proof must separately exclude possible p-primary and q-primary torsion. Those exclusions are explicit here."
+    },
+    "example": {
+      "setup": "Check several multiples of P by the generalized Weierstrass group law.",
+      "calculation": "Negation is(x,y)↦(x,−y−1). The tangent at P has slope−1, giving2P=(1,0). Adding P gives3P=(−1,−1). Further exact rational additions yield7P=(−5/9,8/27); substitution gives y²+y=280/729 and x³−x=280/729. The non-torsion conclusion itself comes from the reduction argument, not from merely observing several nonzero multiples.",
+      "conclusion": "An exact arithmetic certificate proves rank at least1 while leaving rank upper bounds and BSD outside its scope."
+    },
+    "limits": "The injectivity theorem is stated with its prime-to-p restriction; ignoring that restriction would invalidate many reduction arguments. This proof does not establish rank exactly1, finiteness of the Tate–Shafarevich group or the BSD leading coefficient.",
+    "extension": "For a full rank computation, add a rigorously documented descent giving an upper bound1. Treat an analytic L-value calculation as a separate theorem with explicit error control.",
+    "references": [
+      {
+        "label": "J. S. Milne, Elliptic Curves",
+        "url": "https://www.jmilne.org/math/Books/EC2.pdf"
+      }
+    ],
+    "original": {
+      "date": "2024-09-08T20:07:59Z",
+      "month": "2024-09",
+      "evidence": "A",
+      "field": "Arithmetic geometry",
+      "concept": "A finite-reduction non-torsion certificate",
+      "origin": "Recovered historical conversation excerpt; development written for this retrospective",
+      "question": "What can elementary arithmetic actually prove about the rational rank of the recovered curve?",
+      "math": "The result and worked example below are the revised mathematical development, not a recovered verbatim proof.",
+      "finish": "Established within the stated hypotheses; speculative historical conclusions are not inherited.",
+      "kind": "revised mathematical question and developed concept",
+      "refs": [
+        "ecnotes"
+      ],
+      "source_excerpt": "37.a1; rank/BSD claims",
+      "retrieval_receipt": "root_receipts.json",
+      "original_question": null,
+      "attribution_note": "The recovered formula/topic is assistant-authored. The revised question, theorem and example are newly written."
+    }
+  },
+  {
+    "id": "Y24-09-014",
+    "title": "Sato–Tate is a distribution of genuine normalized traces",
+    "status": "Classical result; recovered proposal repaired",
+    "summary": "The recovered passage jumps from transformed angles to major arithmetic conclusions. A precise replacement states the classical target measure and derives the moments that a numerical test can estimate. A transformed sequence requires its own pushforward distribution.",
+    "definitions": [
+      "For good primes set t_p=a_p/(2√p)∈[−1,1] and θ_p=arccos t_p∈[0,π].",
+      "The non-CM Sato–Tate measure on angles is(2/π)sin²θ dθ. Its trace-coordinate density is(2/π)√(1−t²)dt."
+    ],
+    "result": {
+      "name": "Normalization and elementary moments",
+      "statement": "The Sato–Tate probability law has E[t]=0 and E[t²]=1/4; equivalently for u=2t=a_p/√p it has E[u²]=1. If g is measurable, a transformed variable g(t) follows the pushforward law, not automatically the original law.",
+      "proof": "The substitution t=cosθ changes sin²θdθ into√(1−t²)dt, including the reversed integration limits. Symmetry makes E[t]=0. For the second moment, write t=sinφ and integrate: ∫_(−1)^1t²√(1−t²)dt=π/8. Multiplication by2/π gives1/4. More directly the beta integral gives the same value. The density integrates to1 because the upper semicircle has areaπ/2. For a transformed variable, probabilities satisfy P(g(t)∈B)=μ(g⁻¹(B)); unless g preserves μ, the law changes. For example g(t)=ct with |c|≠1 changes the second moment to c²/4 and its support to[−|c|,|c|]. Hasse’s bound is what keeps the classical t_p inside[−1,1]. If a correction sends it outside that interval, arccos no longer gives a real Frobenius angle at all. Even corrections remaining inside must be treated as a pushforward and can create atoms or changed endpoint behavior if the map is not injective."
+    },
+    "example": {
+      "setup": "Use the four exact traces at primes2,3,5,7 as a deliberately small sample.",
+      "calculation": "The normalized u²-values are4/2,9/3,4/5,1/7, so their average is(2+3+4/5+1/7)/4=52/35≈1.4857. This differs from the limiting target1 and is unsurprising for four primes. If the values were multiplied by c, this sample moment and the limiting target would both scale by c² in the corresponding pushforward model.",
+      "conclusion": "The normalization determines the target moments. A visually altered plot cannot be used as if its transformed data were still genuine traces."
+    },
+    "limits": "The classical distribution theorem for non-CM elliptic curves is deep and is cited rather than reproved here. Neither a finite sample nor a distribution theorem implies BSD, which concerns behavior of an L-function at a specific point.",
+    "extension": "Predeclare test functions, prime cutoffs and treatment of bad primes, then compute exact traces and uncertainty or discrepancy statistics. Treat a deformation as a separate explicitly defined distributional model.",
+    "references": [
+      {
+        "label": "Harris–Shepherd-Barron–Taylor, A family of Calabi–Yau varieties and potential automorphy",
+        "url": "https://annals.math.princeton.edu/2010/171-2/p04"
+      }
+    ],
+    "original": {
+      "date": "2024-09-08T20:07:59Z",
+      "month": "2024-09",
+      "evidence": "A",
+      "field": "Arithmetic statistics",
+      "concept": "Frobenius-angle normalization",
+      "origin": "Recovered historical conversation excerpt; development written for this retrospective",
+      "question": "Which distribution and normalization are being tested, and what changes when traces are transformed?",
+      "math": "The result and worked example below are the revised mathematical development, not a recovered verbatim proof.",
+      "finish": "Established within the stated hypotheses; speculative historical conclusions are not inherited.",
+      "kind": "revised mathematical question and developed concept",
+      "refs": [
+        "st"
+      ],
+      "source_excerpt": "classical/deformed Frobenius trace angles; Sato–Tate/BSD",
+      "retrieval_receipt": "root_receipts.json",
+      "original_question": null,
+      "attribution_note": "The recovered formula/topic is assistant-authored. The revised question, theorem and example are newly written."
+    }
+  },
+  {
+    "id": "Y24-09-015",
+    "title": "A Benford law needs logarithmic equidistribution",
+    "status": "Classical result; recovered proposal repaired",
+    "summary": "The September 10 assistant claim gives no usable definition or asymptotic proof of a deformed Benford law for elliptic coefficients. A sound formulation reduces leading digits to fractional logarithms and proves an exact model where equidistribution is available.",
+    "definitions": [
+      "For x>0, its base10 leading digit is d when the fractional part of log10x lies in[log10d,log10(d+1)).",
+      "For signed coefficients use |a_n|; zero coefficients must be excluded or counted in a separately specified category."
+    ],
+    "result": {
+      "name": "A sufficient criterion and a proved model",
+      "statement": "If the fractional parts of log10x_n are uniformly distributed on[0,1), then digit d has limiting frequency log10(1+1/d). For x_n=10^(nθ), every irrational θ satisfies this criterion.",
+      "proof": "The digit event is precisely the interval in the definition, whose length is log10(d+1)−log10d. Uniform distribution gives its limiting frequency. For the model sequence and every nonzero integer k, the exponential average is N⁻¹Σ_(n=1)^N exp(2πiknθ). It is a geometric sum with ratio q=exp(2πikθ)≠1. Its magnitude is at most2/(N|1−q|), which tends to zero. Weyl’s criterion therefore yields uniform distribution. The nonvanishing denominator is where irrationality is used. In contrast, x_n=10^n always begins with1; rapid growth alone is insufficient. A nonlinear change of the index or coefficients needs a new equidistribution argument, because it changes the logarithmic sequence. The exponential-sum estimate depends onk through|1−exp(2πikθ)|. It proves convergence for every fixed nonzerok but does not give a uniform discrepancy bound over allk. A quantitative digit error estimate needs additional Diophantine control or an explicit finite-frequency approximation of the interval indicator."
+    },
+    "example": {
+      "setup": "Take θ=√2 and compare x_n=10^(n√2) with y_n=10^n. No huge numbers need be formed.",
+      "calculation": "For x_n compute only {n√2}; the limiting probability of first digit1 is log10 2≈0.30103 and of digit9 is log10(10/9)≈0.04576. For y_n every fractional logarithm is0, so digit1 has frequency1. A finite program can count the first10000 logarithmic fractions reproducibly, but the geometric-sum proof supplies the actual limiting conclusion.",
+      "conclusion": "Benford behavior is an equidistribution theorem, not a generic consequence of attaching an exponent or a star to an arithmetic sequence."
+    },
+    "limits": "This does not establish any Benford law for elliptic-curve coefficients. Their zeros, multiplicativity, normalization and sampling over all integers versus primes are substantive choices. No historical original user question was recovered for this claim.",
+    "extension": "Define the intended sampling set and transformed coefficients exactly, then study exponential sums of their logarithms. Until such bounds exist, retain the digit histogram as a finite descriptive computation.",
+    "references": [
+      {
+        "label": "NIST Digital Library of Mathematical Functions",
+        "url": "https://dlmf.nist.gov/"
+      }
+    ],
+    "original": {
+      "date": "2024-09-10T10:34:37Z",
+      "month": "2024-09",
+      "evidence": "A",
+      "field": "Uniform distribution",
+      "concept": "Leading digits of L-series coefficients",
+      "origin": "Recovered historical conversation excerpt; development written for this retrospective",
+      "question": "What theorem would justify a leading-digit law, and why does a coefficient deformation not supply it?",
+      "math": "The result and worked example below are the revised mathematical development, not a recovered verbatim proof.",
+      "finish": "Established within the stated hypotheses; speculative historical conclusions are not inherited.",
+      "kind": "revised mathematical question and developed concept",
+      "refs": [
+        "analysis"
+      ],
+      "source_excerpt": "Dirichlet coefficients asymptotically follow a *-deformed Benford law",
+      "retrieval_receipt": "root_followups.json",
+      "original_question": null,
+      "attribution_note": "The recovered formula/topic is assistant-authored. The revised question, theorem and example are newly written."
+    }
+  },
+  {
+    "id": "Y24-09-016",
+    "title": "A residual certifies spectral proximity only with operator hypotheses",
+    "status": "Classical result; recovered proposal repaired",
+    "summary": "The recovered scripts compare finite eigenvalues with a short list of zeta-zero ordinates. A residual is a useful certificate when the operator is self-adjoint and its domain is controlled. Without those hypotheses even a very small residual may not place an eigenvalue nearby.",
+    "definitions": [
+      "For a unit vector v in the domain of A and a real candidate λ, the residual is r=Av−λv.",
+      "For self-adjoint A, its spectral measure represents squared norms by integrals over its spectrum."
+    ],
+    "result": {
+      "name": "A self-adjoint residual bound",
+      "statement": "If A is self-adjoint, dist(λ,σ(A))≤||r||. For a nonnormal matrix this conclusion can fail by an arbitrarily large factor.",
+      "proof": "By the spectral theorem, ||(A−λ)v||²=∫|t−λ|²dμ_v(t). The probability measure μ_v is supported on σ(A), so the integral is at least dist(λ,σ(A))²∫dμ_v=dist(λ,σ(A))². Taking square roots gives the bound. This asserts proximity to some spectral point; it does not identify which eigenvalue, prove multiplicity or exclude missing eigenvalues. For a nonnormal counterexample let A=[[0,M],[0,0]] and w=(1,1/M), with λ=1. Then (A−I)w=(0,−1/M), so the normalized residual is1/√(M²+1), while the spectrum is{0} and the spectral distance is1. A certified residual interval may contain several eigenvalues. If the operator has a known isolated spectral cluster and a gap separating it from the rest, stronger subspace-angle estimates become possible. Such a gap must be established independently; choosing the nearest target ordinate afterward does not provide it."
+    },
+    "example": {
+      "setup": "Use M=100 and compare with a diagonal self-adjoint matrix B=diag(1,4).",
+      "calculation": "The nonnormal matrix has a residual below0.01 at λ=1 despite having no eigenvalue within distance1 of that candidate. For B and v=(√(1−ε²),ε), the residual at λ=1 is3|ε|, and the true eigenvalue1 is indeed present. If a candidate is put into the matrix by construction, a small residual establishes only that construction, not correspondence with an independently defined arithmetic operator.",
+      "conclusion": "Operator structure turns a residual into a precise spectral statement. Matching finitely many target numbers is a different validation question."
+    },
+    "limits": "The recovered operator and discretization were not specified sufficiently to certify self-adjointness, convergence or a complete zero–eigenvalue bijection. Numerical matches do not prove RH.",
+    "extension": "For a concrete Galerkin scheme, prove a domain-compatible error bound and independently count eigenvalues in each certified interval. Record residuals, truncation error and the target arithmetic statement separately.",
+    "references": [
+      {
+        "label": "NIST DLMF, Zeros of the Riemann zeta function",
+        "url": "https://dlmf.nist.gov/25.10"
+      }
+    ],
+    "original": {
+      "date": "2024-09-27T23:45:40Z",
+      "month": "2024-09",
+      "evidence": "A",
+      "field": "Spectral analysis",
+      "concept": "Eigenpair residuals",
+      "origin": "Recovered historical conversation excerpt; development written for this retrospective",
+      "question": "What does a small computed eigenpair residual prove, and why can a matching list of zeta ordinates still be inconclusive?",
+      "math": "The result and worked example below are the revised mathematical development, not a recovered verbatim proof.",
+      "finish": "Established within the stated hypotheses; speculative historical conclusions are not inherited.",
+      "kind": "revised mathematical question and developed concept",
+      "refs": [
+        "zeros"
+      ],
+      "source_excerpt": "compare eigenvalues with zeta ordinates; H_ULQS tests",
+      "retrieval_receipt": "root_receipts.json",
+      "original_question": null,
+      "attribution_note": "The recovered formula/topic is assistant-authored. The revised question, theorem and example are newly written."
+    }
+  },
+  {
+    "id": "Y24-09-017",
+    "title": "The GUE Wigner surmise has exact normalization, but is a model",
+    "status": "Classical result; recovered proposal repaired",
+    "summary": "The recovered formula is the GUE Wigner surmise. It is an exact elementary density with unit mean and a useful model for unfolded spacings, rather than the exact universal nearest-neighbor law of large GUE matrices. This distinction prevents an approximate diagnostic from becoming a theorem about zeros.",
+    "definitions": [
+      "Let p(s)=(32/π²)s²e^(−4s²/π) for s≥0 and p(s)=0 otherwise.",
+      "An unfolded spacing compares neighboring levels after a declared transformation that makes their mean local density approximately1."
+    ],
+    "result": {
+      "name": "Normalization and first two moments",
+      "statement": "The density p integrates to1, E[s]=1 and E[s²]=3π/8. Its variance is3π/8−1.",
+      "proof": "For a>0, ∫₀∞s^m e^(−as²)ds=(1/2)a^(−(m+1)/2)Γ((m+1)/2), by u=as². Set a=4/π. For m=2 the integral is√π/(4a^(3/2))=π²/32, canceling the prefactor. For m=3 it is1/(2a²)=π²/32, so the mean is1. For m=4 it is3√π/(8a^(5/2)); multiplication gives3π/8. These identities certify the density, not a fit to a particular finite sequence. For zeta ordinates, the mean density varies with height, so raw gaps should not be pooled across very different heights without an explicit unfolding convention. The surmise has quadratic repulsion near zero because p(s)/s² tends to32/π². Its tail is Gaussian in s, unlike an exponential spacing law. These local and tail features are separate testable properties; imposing sample mean1 alone cannot enforce either of them on a finite dataset."
+    },
+    "example": {
+      "setup": "Use the five recovered approximate ordinates14.134725,21.022039,25.010857,30.424876,32.935061.",
+      "calculation": "The four gaps are6.887314,3.988818,5.414019,2.510185. Dividing by their sample mean4.700084 gives spacings with sample mean exactly1 by construction. That normalization consumes a degree of freedom and leaves only four observations; resemblance to a smooth density has no strong asymptotic content. The values were recovered as approximations, so no certified zero enclosure is claimed.",
+      "conclusion": "The formula itself is precisely checkable. A four-spacing comparison is a small descriptive experiment with no implication of an exact spectral correspondence."
+    },
+    "limits": "Neither agreement with a random-matrix model nor disagreement in a tiny sample proves or refutes RH. The infinite GUE spacing law is more complicated than this surmise.",
+    "extension": "Use a fixed smooth zero-counting approximation for unfolding, predeclare a large height window and examine several independent statistics. Keep sampling uncertainty separate from numerical error in the ordinates.",
+    "references": [
+      {
+        "label": "NIST DLMF, Zeros of the Riemann zeta function",
+        "url": "https://dlmf.nist.gov/25.10"
+      }
+    ],
+    "original": {
+      "date": "2024-09-27T23:45:40Z",
+      "month": "2024-09",
+      "evidence": "A",
+      "field": "Probability and random matrices",
+      "concept": "Spacing normalization",
+      "origin": "Recovered historical conversation excerpt; development written for this retrospective",
+      "question": "What is the precise normalization of the recovered spacing density, and what can a short zero list test?",
+      "math": "The result and worked example below are the revised mathematical development, not a recovered verbatim proof.",
+      "finish": "Established within the stated hypotheses; speculative historical conclusions are not inherited.",
+      "kind": "revised mathematical question and developed concept",
+      "refs": [
+        "zeros"
+      ],
+      "source_excerpt": "P(s)=(32/π²)s²exp(−4s²/π)",
+      "retrieval_receipt": "root_receipts.json",
+      "original_question": null,
+      "attribution_note": "The recovered formula/topic is assistant-authored. The revised question, theorem and example are newly written."
+    }
+  },
+  {
+    "id": "Y24-09-018",
+    "title": "Euler products require a convergence domain and controlled tails",
+    "status": "Classical result; recovered proposal repaired",
+    "summary": "The recovered moment formula is nonstandard and its quantities, factors, branches and error term were not defined adequately. A rigorous replacement starts with a classical Euler product in its absolute-convergence domain and derives an explicit truncation error. A Hadamard product over zeros is a separate analytic construction.",
+    "definitions": [
+      "For real σ>1 let Z_P(σ)=∏_{p≤P}(1−p^(−σ))⁻¹.",
+      "Absolute convergence permits expanding geometric series and reordering positive terms; for complex s one needs the corresponding absolute-value argument."
+    ],
+    "result": {
+      "name": "A reproducible Euler-product tail bound",
+      "statement": "For σ>1 and integer P≥2, 0≤logζ(σ)−logZ_P(σ)≤P^(1−σ)/[(σ−1)(1−2^(−σ))].",
+      "proof": "Unique factorization shows a finite product expands as the sum of n^(−σ) over integers whose prime factors are at mostP. Increasing P exhausts all integers, and monotone convergence yields ζ(σ). Next, −log(1−u)=Σ_{m≥1}u^m/m≤u/(1−u) for0≤u<1. Therefore the missing logarithm is at mostΣ_{p>P}p^(−σ)/(1−p^(−σ))≤(1−2^(−σ))⁻¹Σ_{n>P}n^(−σ). Since the summand decreases, the last tail is bounded by∫_P∞x^(−σ)dx=P^(1−σ)/(σ−1). This proves both convergence and the displayed certified inequality. It does not continue the product into the critical strip. The logarithmic enclosure can be exponentiated because all factors in the realσ>1 model are positive. For complexs, a chosen analytic logarithm is available through the absolutely convergent series, but an argument based only on positive inequalities no longer applies directly. The absolute-value majorant remains the appropriate starting point."
+    },
+    "example": {
+      "setup": "Take σ=2 and P=100.",
+      "calculation": "The logarithmic tail is at most1/[100(1−1/4)]=1/75. Thus Z_100(2)≤ζ(2)≤e^(1/75)Z_100(2), an explicit relative enclosure obtainable from finitely many primes. The bound is deliberately elementary and can be sharpened with arithmetic information.",
+      "conclusion": "A product formula needs definitions, a region and a truncation theorem. These are missing from the historical mixed moment/zero expression."
+    },
+    "limits": "The proposed exponent involving λ(1−λ) has ambiguous grouping in the retrieved text and may require complex branch choices. No claimed O(T^(−1/2+ε)) estimate is accepted. The proof above concerns only the classical zeta Euler product for σ>1.",
+    "extension": "For a specific L-function, first state its local factors and completed functional equation. Construct its canonical zero product with specified genus, and derive any moment relation from independently convergent expressions.",
+    "references": [
+      {
+        "label": "NIST DLMF, Euler products and Dirichlet series",
+        "url": "https://dlmf.nist.gov/27.4"
+      }
+    ],
+    "original": {
+      "date": "2024-09-29T14:26:48Z",
+      "month": "2024-09",
+      "evidence": "A",
+      "field": "Analytic number theory",
+      "concept": "Euler versus zero products",
+      "origin": "Recovered historical conversation excerpt; development written for this retrospective",
+      "question": "Which parts of a proposed prime-and-zero moment identity can be justified without inventing convergence?",
+      "math": "The result and worked example below are the revised mathematical development, not a recovered verbatim proof.",
+      "finish": "Established within the stated hypotheses; speculative historical conclusions are not inherited.",
+      "kind": "revised mathematical question and developed concept",
+      "refs": [
+        "zeta"
+      ],
+      "source_excerpt": "exp(M_k(T,f)) = ∏_p F_p(k) ∏_λ(...) + O(T^(−1/2+ε))",
+      "retrieval_receipt": "root_followups.json",
+      "original_question": null,
+      "attribution_note": "The recovered formula/topic is assistant-authored. The revised question, theorem and example are newly written."
+    }
+  },
+  {
+    "id": "Y24-09-019",
+    "title": "The Bell expression has a local bound2 and a quantum value2√2",
+    "status": "Classical result; recovered proposal repaired",
+    "summary": "The historical formula becomes rigorous when local outcomes are specified as signs on a common probability space. The same expression can then be evaluated for a singlet state and explicit spin observables. The two calculations use different mathematical models.",
+    "definitions": [
+      "Let A,A′,B,B′ be random variables taking values±1 on one probability space.",
+      "For the two-qubit singlet, spin measurements σ_a=a·σ and σ_b=b·σ have correlation E(a,b)=−a·b for unit vectors."
+    ],
+    "result": {
+      "name": "Local bound and exact quantum example",
+      "statement": "The displayed sum is at most2 in the common-probability-space model. The singlet with a=z,a′=x,b=(x+z)/√2,b′=(x−z)/√2 gives2√2.",
+      "proof": "Write E(AB)−E(AB′)=E[A(B−B′)] and E(A′B)+E(A′B′)=E[A′(B+B′)]. By the triangle inequality their absolute values sum to at most E[|B−B′|+|B+B′|]. For signs B,B′, exactly one of the two inner quantities is2 and the other is0, so the expectation is2. The singlet correlation identity follows from its density matrix or by evaluating the Pauli tensor products: equal-axis correlations are−1 and cross-axis correlations vanish. For the chosen unit directions, E(a,b)=−1/√2, E(a,b′)=+1/√2, and both E(a′,b),E(a′,b′)=−1/√2. Substitution gives√2+√2. The same local bound applies to convex mixtures of deterministic assignments: integrate the pointwise2 bound against the hidden-variable distribution. This is why checking deterministic signs suffices for the common-probability model. The quantum example violates that model’s correlation constraint; it does not violate an algebraic inequality proved under the model’s own assumptions."
+    },
+    "example": {
+      "setup": "Use the observable convention above, with outcomes±1 rather than±ℏ/2.",
+      "calculation": "The first difference is−√2 and the second sum is−√2, so the absolute-value expression equals2√2. If spin values±ℏ/2 were used instead, each correlation would carry a factorℏ²/4; the inequality and quantum value would both need that scaling.",
+      "conclusion": "The violation is an exact algebraic statement about incompatible measurement choices and the singlet correlation. Its normalization is fully specified."
+    },
+    "limits": "The local proof assumes all four outcome variables coexist on one probability space with the required correlations. The calculation does not justify unrelated claims about spacetime, arithmetic spectra or automatic temporal orthogonality.",
+    "extension": "For arbitrary unit measurement directions, express the CHSH operator and derive its norm bound2√2 from its square and Pauli commutators. Then study how a specified noise channel reduces the singlet correlations.",
+    "references": [
+      {
+        "label": "J. S. Bell, On the Einstein Podolsky Rosen paradox",
+        "url": "https://cds.cern.ch/record/111654/files/vol1p195-200_001.pdf"
+      }
+    ],
+    "original": {
+      "date": "2024-09-22T20:50:03Z",
+      "month": "2024-09",
+      "evidence": "A",
+      "field": "Probability and operator algebra",
+      "concept": "CHSH inequality",
+      "origin": "Recovered historical conversation excerpt; development written for this retrospective",
+      "question": "What assumptions yield the recovered Bell bound, and how is the corresponding quantum violation calculated?",
+      "math": "The result and worked example below are the revised mathematical development, not a recovered verbatim proof.",
+      "finish": "Established within the stated hypotheses; speculative historical conclusions are not inherited.",
+      "kind": "revised mathematical question and developed concept",
+      "refs": [
+        "bell"
+      ],
+      "source_excerpt": "|E(A⊗B)−E(A⊗B′)|+|E(A′⊗B)+E(A′⊗B′)|≤2",
+      "retrieval_receipt": "root_receipts.json",
+      "original_question": null,
+      "attribution_note": "The recovered formula/topic is assistant-authored. The revised question, theorem and example are newly written."
+    }
+  },
+  {
+    "id": "Y24-09-020",
+    "title": "Unitary evolution does not make neighboring states orthogonal",
+    "status": "Classical result; recovered proposal repaired",
+    "summary": "The recovered discussion mentions temporal orthogonality but the relevant formula is truncated. A two-dimensional example settles the basic issue: unitarity preserves inner products between jointly evolved states, but does not make a trajectory orthogonal to itself at every later time.",
+    "definitions": [
+      "For a self-adjoint finite-dimensional Hamiltonian H and ℏ=1, U(t)=e^(−itH).",
+      "The survival amplitude of a unit initial vector ψ is c(t)=〈ψ,U(t)ψ〉; orthogonality means c(t)=0."
+    ],
+    "result": {
+      "name": "An exact two-level orthogonality criterion",
+      "statement": "For H=diag(1,−1) and ψ=(1,1)/√2, c(t)=cos t. Orthogonality occurs exactly at t=π/2+kπ, not at arbitrary nonzero time steps.",
+      "proof": "Diagonal exponentiation gives U(t)=diag(e^(−it),e^(it)). Therefore c(t)=(e^(−it)+e^(it))/2=cos t. Its zeros are precisely the stated times. More generally, if ψ=Σ_jc_j e_j in an orthonormal eigenbasis, then c(t)=Σ_j|c_j|²e^(−itE_j). Thus the overlap is the Fourier transform of a probability measure on energies. If ψ is an eigenstate, the amplitude has modulus1 for every time and never vanishes. Also c(0)=1 and continuity ensures that every fixed finite-dimensional state has a nonzero overlap with itself for all sufficiently small time increments. A global phase multiplying a state changes its vector representative but not its ray or the modulus of its overlap. The eigenstate example makes this distinction exact: the vector rotates by e^(−it), yet its survival probability remains1. Orthogonality is invariant under those phase choices."
+    },
+    "example": {
+      "setup": "Compare the equal superposition ψ above with the eigenstate e1.",
+      "calculation": "For ψ, |c(π/4)|²=1/2 and |c(π/2)|²=0. For e1, c(t)=e^(−it) and |c(t)|²=1. The difference is entirely determined by the energy distribution, even though both evolutions are unitary under the same H.",
+      "conclusion": "Orthogonality is a special cancellation condition in the energy phases. It cannot be imposed as a universal property of continuous unitary evolution."
+    },
+    "limits": "This example does not derive a general quantum speed-limit theorem. Unbounded operators require a self-adjoint domain and additional moment assumptions if derivatives of c(t) are used. The truncated historical source cannot support a more specific original theorem.",
+    "extension": "Given a finite energy distribution, bound the earliest zero using its variance or spectral width, and state the equality cases. Such a bound is a meaningful replacement for an unsupported all-times orthogonality claim.",
+    "references": [
+      {
+        "label": "J. S. Bell, On the Einstein Podolsky Rosen paradox",
+        "url": "https://cds.cern.ch/record/111654/files/vol1p195-200_001.pdf"
+      }
+    ],
+    "original": {
+      "date": "2024-09-22T20:50:03Z",
+      "month": "2024-09",
+      "evidence": "A",
+      "field": "Linear algebra and quantum dynamics",
+      "concept": "Temporal overlap",
+      "origin": "Recovered historical conversation excerpt; development written for this retrospective",
+      "question": "When can a state become orthogonal to its earlier value under a self-adjoint Hamiltonian?",
+      "math": "The result and worked example below are the revised mathematical development, not a recovered verbatim proof.",
+      "finish": "Established within the stated hypotheses; speculative historical conclusions are not inherited.",
+      "kind": "revised mathematical question and developed concept",
+      "refs": [
+        "bell"
+      ],
+      "source_excerpt": "orthogonality <A(t)|A(t+Δt)>",
+      "retrieval_receipt": "root_receipts.json",
+      "original_question": null,
+      "attribution_note": "The recovered formula/topic is assistant-authored. The revised question, theorem and example are newly written."
+    }
+  },
+  {
+    "id": "Y24-09-021",
+    "title": "A Toeplitz eigenvalue law with a complete elementary proof",
+    "status": "Classical result; recovered proposal repaired",
+    "summary": "The recovered spectral-limit expression needs a symbol, matrix convention and test-function class. The tridiagonal Toeplitz family gives a complete exact calculation and makes the limiting measure visible without relying on a general theorem whose hypotheses were omitted.",
+    "definitions": [
+      "Let T_n have diagonal entries a and adjacent off-diagonal entries b, with real a,b. Its symbol is f(θ)=a+2b cosθ.",
+      "The empirical spectral average is n⁻¹Σ_(k=1)^nF(λ_k(T_n))."
+    ],
+    "result": {
+      "name": "An exact Toeplitz spectral limit",
+      "statement": "The eigenvalues are λ_k=a+2b cos(kπ/(n+1)). For every continuous F on[a−2|b|,a+2|b|], the empirical average tends toπ⁻¹∫₀πF(a+2b cosθ)dθ, equivalently the normalized circle integral.",
+      "proof": "For k=1,…,n set v_j=sin(jkπ/(n+1)), with boundary values v_0=v_(n+1)=0. The identity v_(j−1)+v_(j+1)=2cos(kπ/(n+1))v_j shows T_nv=λ_kv. The sine vectors are an orthogonal basis, so these are all eigenvalues, including multiplicities. The average of F at the equally spaced interior angles is a Riemann sum for the continuous integrand. Replacing n by n+1 in the normalization changes the limit by a factor tending to1, and the endpoints contribute vanishing weight. Reflection of cosine extends the half-circle integral to the full-circle expression. When b=0 the measure is the point mass at a, covered by the same formula. For b≠0, changing variablesx=a+2b cosθ gives limiting density1/[π√(4b²−(x−a)²)] on the interior of the spectral interval. Its integrable endpoint singularities explain why a uniform angular mesh does not produce a uniform eigenvalue density. This density is derived from the same cosine map, not separately fitted."
+    },
+    "example": {
+      "setup": "Choose a=3,b=1 and F(t)=t².",
+      "calculation": "Tr(T_n²)=n a²+2(n−1)b²=11n−2, so the empirical second moment is11−2/n. The integral gives the same limit because the cosine mean is0 and cosine-square mean is1/2: a²+4b²(1/2)=11. At n=3, the eigenvalues are3+√2,3,3−√2, with squares totaling31=11·3−2.",
+      "conclusion": "The recovered limit is valid here with explicit finite-size error for the quadratic test function."
+    },
+    "limits": "This proof is for a scalar real tridiagonal symbol and continuous F. General symbols, discontinuous tests, nonnormal Toeplitz matrices or logarithms near zero require additional theorems. A spectral average alone does not establish a proposed decay-rate formula.",
+    "extension": "For polynomial symbols, compare normalized traces of powers and control boundary terms. Then extend from polynomial to continuous test functions by uniform approximation.",
+    "references": [
+      {
+        "label": "NIST Digital Library of Mathematical Functions",
+        "url": "https://dlmf.nist.gov/"
+      }
+    ],
+    "original": {
+      "date": "2024-09-20T17:58:47Z",
+      "month": "2024-09",
+      "evidence": "A",
+      "field": "Matrix analysis",
+      "concept": "Toeplitz empirical spectral limits",
+      "origin": "Recovered historical conversation excerpt; development written for this retrospective",
+      "question": "How can the recovered Toeplitz limit be proved in a concrete nontrivial family?",
+      "math": "The result and worked example below are the revised mathematical development, not a recovered verbatim proof.",
+      "finish": "Established within the stated hypotheses; speculative historical conclusions are not inherited.",
+      "kind": "revised mathematical question and developed concept",
+      "refs": [
+        "analysis"
+      ],
+      "source_excerpt": "(1/n)ΣF(τ)→(1/2π)∫F(f(e^{iθ}))dθ",
+      "retrieval_receipt": "root_followups.json",
+      "original_question": null,
+      "attribution_note": "The recovered formula/topic is assistant-authored. The revised question, theorem and example are newly written."
+    }
+  },
+  {
+    "id": "Y24-09-022",
+    "title": "A Toeplitz log determinant needs positivity",
+    "status": "Classical result; recovered proposal repaired",
+    "summary": "The historical use of an integral of log f resembles a Toeplitz determinant theorem, but it was inserted into an undefined decay model. A positive tridiagonal family gives an exact determinant recurrence and an independently derived limiting logarithm.",
+    "definitions": [
+      "Let T_n=tridiag(b,a,b) with a>2|b| and D_n=detT_n; set D_0=1.",
+      "Define r_±=(a±√(a²−4b²))/2. For b≠0, 0<r_-<r_+; b=0 is immediate."
+    ],
+    "result": {
+      "name": "Exact determinant and limiting geometric mean",
+      "statement": "D_n=(r_+^(n+1)−r_-^(n+1))/(r_+−r_-), and lim n⁻¹logD_n=logr_+=π⁻¹∫₀πlog(a+2b cosθ)dθ.",
+      "proof": "Expansion along the last row gives D_n=aD_(n−1)−b²D_(n−2), with D_0=1,D_1=a. Solving this second-order recurrence yields the formula, as its two characteristic roots are r_±. Factor r_+^(n+1) to obtain logD_n=(n+1)logr_++log[1−(r_-/r_+)^(n+1)]−log(r_+−r_-). Division by n gives the limit. Independently, the preceding eigenvalue formula and the positivity bound λ_k≥a−2|b|>0 permit the continuous test F=log, so the same limit is the symbol integral. This proves the integral identity without importing a decay interpretation. Positivity supplies a consistent real logarithm and bounds it on the entire spectral interval. Positive definiteness can also be verified without eigenvectors: the quadratic form is aΣu_j²+2bΣu_ju_(j+1), bounded below by(a−2|b|)Σu_j² using2|uv|≤u²+v². Thus every finite determinant is positive under the same hypothesis, independently confirming that its real logarithm is legitimate."
+    },
+    "example": {
+      "setup": "Take a=3,b=1.",
+      "calculation": "D_0=1,D_1=3,D_2=8,D_3=21,D_4=55. The limiting geometric mean isr_+=(3+√5)/2≈2.61803. For n=4, D_4^(1/4)=55^(1/4), still above that limit. The recurrence gives every finite determinant exactly and a transparent exponential correction through(r_-/r_+)^(n+1).",
+      "conclusion": "The logarithmic integral computes a normalized determinant in this model. Calling its exponential a decay rate requires a separate, defined dynamical equation."
+    },
+    "limits": "At a=2|b| the symbol touches zero and the continuity argument for log fails, although some limits can still exist after extra work. With a sign-changing or complex symbol, branches, zeros and possible winding become substantive issues.",
+    "extension": "If a proposed Γ uses this determinant, state the finite-n formula relating Γ_n to D_n, check its units and derive its limit. Do not identify a geometric mean with a physical or arithmetic observable by notation alone.",
+    "references": [
+      {
+        "label": "NIST Digital Library of Mathematical Functions",
+        "url": "https://dlmf.nist.gov/"
+      }
+    ],
+    "original": {
+      "date": "2024-09-20T17:58:47Z",
+      "month": "2024-09",
+      "evidence": "A",
+      "field": "Asymptotic analysis",
+      "concept": "Log determinants and geometric means",
+      "origin": "Recovered historical conversation excerpt; development written for this retrospective",
+      "question": "When is the logarithmic symbol integral a valid determinant limit, and what does it actually compute?",
+      "math": "The result and worked example below are the revised mathematical development, not a recovered verbatim proof.",
+      "finish": "Established within the stated hypotheses; speculative historical conclusions are not inherited.",
+      "kind": "revised mathematical question and developed concept",
+      "refs": [
+        "analysis"
+      ],
+      "source_excerpt": "Γ*≈Γ0 exp[(4π)⁻¹∫log f*]",
+      "retrieval_receipt": "root_followups.json",
+      "original_question": null,
+      "attribution_note": "The recovered formula/topic is assistant-authored. The revised question, theorem and example are newly written."
+    }
+  },
+  {
+    "id": "Y24-09-023",
+    "title": "The atomic Hardy-space inequality requires cancellation",
+    "status": "Classical result; recovered proposal repaired",
+    "summary": "The recovered inequality is a standard atomic estimate once the function has mean zero. Omitting cancellation materially changes the theorem. The normalization can be proved in one line, but specifying the ambient real Hardy space and the atom conditions is essential.",
+    "definitions": [
+      "On R^d, an L² Hardy atom supported in a ball B has integral0 and L² norm at most |B|^(−1/2).",
+      "The atomic H¹ norm is the infimum of Σ|λ_j| over representations g=Σλ_ja_j by such atoms. This chooses an equivalent Hardy norm convention."
+    ],
+    "result": {
+      "name": "A correctly normalized one-atom estimate",
+      "statement": "If g∈L² is supported in B and ∫g=0, then ||g||_(H¹,atomic)≤|B|^(1/2)||g||₂. The zero function is included.",
+      "proof": "For g≠0 put λ=|B|^(1/2)||g||₂ and a=g/λ. The support and mean-zero conditions are preserved. Moreover ||a||₂=|B|^(−1/2), so a is an atom. The single-term representation g=λa gives the stated upper bound by the infimum definition. Also Cauchy–Schwarz gives ||a||₁≤1, so atomic convergence in coefficient sum entails L¹ convergence and preserves zero integral. Consequently every function represented by these global atoms has integral0. A nonnegative nonzero compactly supported bump has positive integral and cannot satisfy this global atomic H¹ condition, even though it has finite support and finite L² norm. This is a direct obstruction to dropping the cancellation hypothesis."
+    },
+    "example": {
+      "setup": "Let B=[−1,1] in R and g=1_[−1,0]−1_[0,1], with endpoints irrelevant in L².",
+      "calculation": "The support has measure2, the integral is0 and ||g||₂=√2. Hence the coefficient bound is2. Indeed a=g/2 has L² norm1/√2 and is an atom, while ||g||₁=2 forces every atomic coefficient sum to be at least2. Thus its atomic H¹ norm is exactly2 in this convention.",
+      "conclusion": "The example both proves the bound can be sharp and identifies the missing mean-zero assumption."
+    },
+    "limits": "Local Hardy spaces, Hardy spaces on compact groups and analytic Hardy spaces use related but different atom conventions. The constant changes under equivalent norm definitions. The historical notation did not specify which setting was intended.",
+    "extension": "For a supported function with nonzero mean, split it into a canceled part plus its average times a fixed bump. Analyze the second part in an appropriate local Hardy space rather than applying the global estimate.",
+    "references": [
+      {
+        "label": "Coifman, A real variable characterization of Hp",
+        "url": "https://doi.org/10.4064/sm-51-3-269-274"
+      }
+    ],
+    "original": {
+      "date": "2024-09-20T18:05:37Z",
+      "month": "2024-09",
+      "evidence": "A",
+      "field": "Harmonic analysis",
+      "concept": "L² atoms in real Hardy space",
+      "origin": "Recovered historical conversation excerpt; development written for this retrospective",
+      "question": "What missing cancellation hypothesis makes the recovered local L²-to-H¹ estimate correct?",
+      "math": "The result and worked example below are the revised mathematical development, not a recovered verbatim proof.",
+      "finish": "Established within the stated hypotheses; speculative historical conclusions are not inherited.",
+      "kind": "revised mathematical question and developed concept",
+      "refs": [
+        "hardy"
+      ],
+      "source_excerpt": "||g||H1≤c |B|^(1/2)||g||L2",
+      "retrieval_receipt": "root_followups.json",
+      "original_question": null,
+      "attribution_note": "The recovered formula/topic is assistant-authored. The revised question, theorem and example are newly written."
+    }
+  },
+  {
+    "id": "Y24-09-024",
+    "title": "A6 automorphisms must preserve element orders and class structure",
+    "status": "Classical result; recovered proposal repaired",
+    "summary": "The recovered passage names A6 outer automorphisms without specifying an actual map. Before proposing such a map, one can compute conjugacy classes and enforce automorphism invariants. This prevents an informal relabeling of cycle types from masquerading as an automorphism.",
+    "definitions": [
+      "A6 consists of the360 even permutations of six symbols. An automorphism is a bijective homomorphism A6→A6.",
+      "An inner automorphism is conjugation by a group element. Outer means its class modulo inner automorphisms is nontrivial."
+    ],
+    "result": {
+      "name": "Necessary invariants and an exact class inventory",
+      "statement": "Every automorphism preserves element order, centralizer size and conjugacy-class size. A6 has class sizes1,45,40,40,90,72,72, corresponding to types1,(2,2),(3),(3,3),(4,2) and two split5-cycle classes.",
+      "proof": "For an automorphism φ, φ(g^m)=φ(g)^m, and applying φ⁻¹ gives equality of orders. The map x↦φ(x) bijects C(g) with C(φ(g)), because commuting equations are preserved in both directions. Orbit–stabilizer then preserves class size. Count double transpositions by choosing their four symbols and one of three pairings:15·3=45. Three-cycles number C(6,3)·2=40. Products of two disjoint three-cycles number(1/2)C(6,3)·2²=40. Type(4,2) has C(6,4)·6=90. There are6·24=144 five-cycles. Their S6 class splits in A6: the centralizer of a five-cycle is its cyclic order5 subgroup and contains no odd permutation, so each A6 orbit has360/5=72 elements. The sizes total360 and exhaust the group."
+    },
+    "example": {
+      "setup": "Consider a proposed map taking a3-cycle to a5-cycle, and another merely exchanging the two order3 cycle types.",
+      "calculation": "The first proposal fails immediately because orders3 and5 differ. The second passes these necessary tests: both relevant classes have size40 and centralizer order9. Passing does not prove that an extension to all360 elements is a homomorphism. A full certificate must verify products, or provide a structural construction such as the exceptional S6 action and its restriction.",
+      "conclusion": "The exceptional phenomenon can be discussed precisely without inventing a map from matching labels alone."
+    },
+    "limits": "The full classification Out(A6)≅C2×C2 is a classical theorem requiring additional construction and proof; it is not derived by this inventory. The cited primary work constructs the exceptional S6 automorphism, a related ingredient. The executable check verifies the inventory, not the full automorphism classification.",
+    "extension": "Give images of a generating set, verify defining relations and prove injectivity or enumerate the generated action. Then identify whether the resulting map is inner by comparison with all conjugations.",
+    "references": [
+      {
+        "label": "Howard–Millson–Snowden–Vakil, The outer automorphism of S6",
+        "url": "https://math.stanford.edu/~vakil/files/sixjan2308.pdf"
+      }
+    ],
+    "original": {
+      "date": "2024-09-20T18:05:37Z",
+      "month": "2024-09",
+      "evidence": "A",
+      "field": "Finite group theory",
+      "concept": "Exceptional automorphisms and conjugacy classes",
+      "origin": "Recovered historical conversation excerpt; development written for this retrospective",
+      "question": "What concrete group-theoretic tests constrain a proposed exceptional automorphism of A6?",
+      "math": "The result and worked example below are the revised mathematical development, not a recovered verbatim proof.",
+      "finish": "Established within the stated hypotheses; speculative historical conclusions are not inherited.",
+      "kind": "revised mathematical question and developed concept",
+      "refs": [
+        "group"
+      ],
+      "source_excerpt": "A6 cycles/outer automorphisms",
+      "retrieval_receipt": "root_followups.json",
+      "original_question": null,
+      "attribution_note": "The recovered formula/topic is assistant-authored. The revised question, theorem and example are newly written."
+    }
+  },
+  {
+    "id": "Y24-09-025",
+    "title": "Weight38 modular forms: specify the group, then compute the space",
+    "status": "Classical result; recovered proposal repaired",
+    "summary": "The historical mention of weight38 does not specify level or character. The level-one case is a precise starting point with an exact basis. Weight alone would not determine a space at arbitrary level.",
+    "definitions": [
+      "Let M_k denote holomorphic modular forms of weight k for SL2(Z), and S_k its cusp subspace.",
+      "Use E4=1+240Σσ3(n)q^n, E6=1−504Σσ5(n)q^n and Δ=(E4³−E6²)/1728=q−24q²+…."
+    ],
+    "result": {
+      "name": "An exact level-one basis",
+      "statement": "M_38 has basis E4^8E6, E4^5E6³, E4²E6⁵ and dimension3. Its cusp subspace has dimension2 and equals ΔM_26, with basis ΔE4^5E6 and ΔE4²E6³.",
+      "proof": "The classical level-one structure theorem says the graded ring is C[E4,E6], with weights4 and6, and its cusp ideal is generated by Δ of weight12. These structural theorems are the stated external input; the remaining computation is elementary. Solving4a+6b=38 means2a+3b=19. Nonnegative solutions are(a,b)=(8,1),(5,3),(2,5). Algebraic independence supplies the displayed basis. Similarly4a+6b=26 gives(a,b)=(5,1),(2,3), proving the cusp dimension and basis after multiplication by Δ. Each weight38 monomial has constant term1, so the cusp condition on a linear combination is exactly that its three coefficients sum to zero; this independently identifies a two-dimensional kernel. For example E4^8E6−E4^5E6³=1728ΔE4^5E6 by the defining relation for Δ. Multiplication byΔ is injective because a holomorphic form whose product with the nonzero holomorphic functionΔ vanishes must itself vanish on a nonempty open set and hence everywhere. This justifies the dimension transfer S38=ΔM26 once the classical cusp-ideal theorem is supplied. A Fourier truncation is a check, not a replacement for the structure theorem."
+    },
+    "example": {
+      "setup": "Compute the first Fourier coefficient of the first two monomials.",
+      "calculation": "For E4^8E6 it is8·240−504=1416. For E4^5E6³ it is5·240−3·504=−312. Their difference has q-coefficient1728, agreeing with1728ΔE4^5E6 because Δ begins q and the remaining factor has constant term1. The third monomial has q-coefficient2·240−5·504=−2040.",
+      "conclusion": "The weight38 reference becomes a finite exact vector-space calculation with a clear cusp test."
+    },
+    "limits": "This does not determine a level-N space, Hecke eigenbasis, coefficient field or attached Galois representation. Those depend on additional data. The ring theorem is cited, while the basis enumeration and Fourier checks are reproduced exactly.",
+    "extension": "Choose a level and character, then compute the Hecke action on the specified space. For the level-one example, form the2×2 T2 matrix on S38 and solve its characteristic polynomial with explicit Fourier truncation bounds.",
+    "references": [
+      {
+        "label": "J. S. Milne, Modular Functions and Modular Forms",
+        "url": "https://www.jmilne.org/math/CourseNotes/MF.pdf"
+      }
+    ],
+    "original": {
+      "date": "2024-09-20T18:05:37Z",
+      "month": "2024-09",
+      "evidence": "A",
+      "field": "Modular forms",
+      "concept": "Weight38 on SL2(Z)",
+      "origin": "Recovered historical conversation excerpt; development written for this retrospective",
+      "question": "What is the full space of weight38 holomorphic modular forms for SL2(Z), and which elements are cuspidal?",
+      "math": "The result and worked example below are the revised mathematical development, not a recovered verbatim proof.",
+      "finish": "Established within the stated hypotheses; speculative historical conclusions are not inherited.",
+      "kind": "revised mathematical question and developed concept",
+      "refs": [
+        "mf"
+      ],
+      "source_excerpt": "weight38 modular forms",
+      "retrieval_receipt": "root_followups.json",
+      "original_question": null,
+      "attribution_note": "The recovered formula/topic is assistant-authored. The revised question, theorem and example are newly written."
+    }
+  },
+  {
+    "id": "Y24-09-026",
+    "title": "The magic square has a defined Lie bracket and integer dimensions",
+    "status": "Classical result; recovered proposal repaired",
+    "summary": "The recovered user request explicitly names dual Coxeter data and the Freudenthal magic square, but no starred bracket is recovered. The classical triality construction gives a concrete dimension calculation and explains why continuously changing dimensions or attaching an exponent does not define a Lie algebra.",
+    "definitions": [
+      "The real normed division algebras R,C,H,O have dimensions1,2,4,8. Their triality Lie algebras have dimensions0,2,9,28.",
+      "In the symmetric magic-square construction the underlying vector space is tri(A)⊕tri(B)⊕(A⊗B)³. A specific classical bracket, not an arbitrary direct-sum bracket, makes this a Lie algebra."
+    ],
+    "result": {
+      "name": "Dimension audit and uniform bracket scaling",
+      "statement": "The dimension is t_A+t_B+3d_Ad_B. The resulting4×4 dimension table is [3,8,21,52]; [8,16,35,78]; [21,35,66,133]; [52,78,133,248]. Uniformly scaling any Lie bracket by a nonzero scalar gives an isomorphic Lie algebra.",
+      "proof": "The dimension formula follows from dimensions of a direct sum and dim(A⊗B)=d_Ad_B. Substituting the four dimension pairs gives every table entry; for A=B=O it is28+28+3·64=248. Existence of the classical triality bracket and its exceptional identifications are cited structural inputs. For the scaling claim, let [x,y]_c=c[x,y]. Bilinearity and skew symmetry persist, and each term of the Jacobi sum acquires c², so it vanishes. The map F(x)=cx satisfies F([x,y]_c)=c²[x,y]=[F(x),F(y)] and is invertible for c≠0. Thus a uniform numerical deformation of structure constants supplies no new Lie-algebra isomorphism class. A nonlinear alteration of selected constants instead requires a fresh Jacobi check."
+    },
+    "example": {
+      "setup": "Take the compact octonionic diagonal entry, whose complexification is E8, and compare it with a uniformly rescaled bracket.",
+      "calculation": "Its dimension remains248, while the dual Coxeter number of the complex simple type E8 is30 in the standard long-root normalization. Rescaling basis coordinates does not change that root-system type. At c=0 the bracket becomes zero and the algebra is abelian, showing that the nonzero-scalar assumption is essential.",
+      "conclusion": "The classical construction supplies actual algebraic content. The recovered α and β do not by themselves select new magic-square entries or dual Coxeter numbers."
+    },
+    "limits": "This entry proves the dimension arithmetic and scaling claim, not the full exceptional Lie-algebra construction. Real form, bracket conventions and root normalization must be fixed before comparing further invariants.",
+    "extension": "Specify candidate bracket constants on a basis, solve the quadratic Jacobi equations and compute the Killing form. Only after those checks should one compare root data or claim a new deformation.",
+    "references": [
+      {
+        "label": "Barton–Sudbery, Magic squares and matrix models of Lie algebras",
+        "url": "https://arxiv.org/abs/math/0203010"
+      }
+    ],
+    "original": {
+      "date": "2024-09-20T23:48:20Z",
+      "month": "2024-09",
+      "evidence": "U",
+      "field": "Lie theory",
+      "concept": "Freudenthal magic square and dual Coxeter numbers",
+      "origin": "Recovered historical conversation excerpt; development written for this retrospective",
+      "question": "Which exact algebraic construction could replace a parameter-based analogy between the magic square and a deformation framework?",
+      "math": "The result and worked example below are the revised mathematical development, not a recovered verbatim proof.",
+      "finish": "Established within the stated hypotheses; speculative historical conclusions are not inherited.",
+      "kind": "revised mathematical question and developed concept",
+      "refs": [
+        "magic"
+      ],
+      "source_excerpt": "synthesize dual Coxeter groups, Freudenthal magic square",
+      "retrieval_receipt": "root_followups.json",
+      "original_question": null,
+      "attribution_note": "Direct user fragment recovered; only the quoted fragment is original wording."
+    }
+  },
+  {
+    "id": "Y24-09-027",
+    "title": "A quiver dimension count is valid on a free regular quotient",
+    "status": "Classical result; recovered proposal repaired",
+    "summary": "The recovered assistant passage invokes magnetic quivers and dimensions but does not supply a quiver, representation or quotient. A one-node framed example shows how a valid dimension count is obtained. It is a Higgs-type symplectic quotient model; it is not silently identified with an unspecified Coulomb branch.",
+    "definitions": [
+      "Let z∈C^m and w∈(C^m)*. C* acts by(z,w)↦(tz,t⁻¹w), preserving the canonical symplectic form.",
+      "The complex moment map is μ(z,w)=w(z). Restrict to μ=0 and z≠0, and take the geometric C* quotient."
+    ],
+    "result": {
+      "name": "An explicit cotangent-bundle quotient",
+      "statement": "The quotient {w(z)=0,z≠0}/C* is T*P^(m−1), with complex dimension2m−2, whose half is m−1. A hyperkähler interpretation additionally requires real moment-map and metric data.",
+      "proof": "The vector z determines a line ℓ=Cz in C^m. The covector w vanishes on ℓ, and the rank-one tensor z⊗w defines a linear map C^m/ℓ→ℓ. Under(z,w)↦(tz,t⁻¹w) this map is unchanged. The space Hom(C^m/ℓ,ℓ) is canonically the cotangent space atℓ, since the tangent space is Hom(ℓ,C^m/ℓ). Conversely every such cotangent vector can be written z⊗w after choosing a nonzero z∈ℓ, with different choices related exactly by C*. This proves the bundle identification. In coordinates, the ambient complex dimension is2m; the moment-map equation has surjective differential on z≠0 because varying w can change w(z) arbitrarily. It removes one dimension. The free C* action removes another, giving2m−2. In the chart z1≠0, the remaining m−1 coordinates of z and m−1 free covector coordinates of w account for all2m−2 dimensions. Other charts glue by the usual cotangent transition law, so this local calculation is compatible with the global bundle description rather than merely an informal equation count."
+    },
+    "example": {
+      "setup": "Take m=2 and work in the chart z1≠0.",
+      "calculation": "Use the C* action to set z=(1,u). The equation w1+uw2=0 gives w=(−up,p), so(u,p) are two free complex coordinates. The canonical one-form w·dz becomes p du in this gauge, confirming the cotangent chart. For m=1 the equation forces w=0 and the quotient is a point, consistent with dimension0.",
+      "conclusion": "A quotient dimension follows from actual independent equations and a free action, and can be checked in local coordinates."
+    },
+    "limits": "If z=0 is allowed, stabilizers and singular strata appear and the regular quotient argument no longer applies unchanged. A Coulomb branch has a different construction; a formal similarity of dimension formulas is insufficient to identify it with this example.",
+    "extension": "For a specified quiver and dimension vectors, write all moment-map equations, identify the stability condition and verify freeness on the chosen locus. Record singular strata separately before assigning a global dimension formula.",
+    "references": [
+      {
+        "label": "Hausel–Sturmfels, Toric Hyperkähler Varieties",
+        "url": "https://arxiv.org/abs/math/0203096"
+      }
+    ],
+    "original": {
+      "date": "2024-09-20T23:49:35Z",
+      "month": "2024-09",
+      "evidence": "A",
+      "field": "Symplectic geometry",
+      "concept": "Quiver moment-map dimension",
+      "origin": "Recovered historical conversation excerpt; development written for this retrospective",
+      "question": "Which dimension formula follows from a specified moment-map quotient, and what hypotheses prevent a formal count from being misleading?",
+      "math": "The result and worked example below are the revised mathematical development, not a recovered verbatim proof.",
+      "finish": "Established within the stated hypotheses; speculative historical conclusions are not inherited.",
+      "kind": "revised mathematical question and developed concept",
+      "refs": [
+        "quiver"
+      ],
+      "source_excerpt": "magnetic quivers; Coulomb-dimension formula",
+      "retrieval_receipt": "root_receipts.json",
+      "original_question": null,
+      "attribution_note": "The recovered formula/topic is assistant-authored. The revised question, theorem and example are newly written."
+    }
+  },
+  {
+    "id": "Y24-09-028",
+    "title": "The logistic universal deformation is not injective on the whole real line",
+    "status": "Classical result; recovered proposal repaired",
+    "summary": "The historical framework uses both a signed power deformation and a later logistic-factor formula. These are different maps. In the latter formula the correction is positive even for negative input, and the resulting map is not globally injective whenα>0 and0<β<1. This matters whenever global inversion or transported algebra is claimed.",
+    "definitions": [
+      "Fixα,k>0 and0<β<1, and defineψ(x)=x+α|x|^β/(1+e^(−x/k)), withψ(0)=0.",
+      "Fornegative inputx=−t,t>0, writeψ(−t)=t[h(t)−1], whereh(t)=αt^(β−1)/(1+e^(t/k))."
+    ],
+    "result": {
+      "name": "A second preimage of zero",
+      "statement": "There is a unique t0>0 withψ(−t0)=0, in addition toψ(0)=0. Thusψ is not injective onR. On the nonnegative half-line it is strictly increasing.",
+      "proof": "The positive functionh is continuous, tends to infinity ast→0+ becauseβ−1<0, and tends to zero ast→∞. Its logarithmic derivative is(β−1)/t−e^(t/k)/[k(1+e^(t/k))], which is strictly negative. The intermediate value theorem and strict monotonicity give exactly one root ofh(t)=1. This proves the two distinct preimages without any floating-point assumption. Onx>0, differentiatingψ gives1 plus two positive terms, soψ′>1; continuity extends strict increase to zero. From the negative side,ψ′(x) tends to negative infinity asx→0−, whereas from the positive side it tends to positive infinity. The cusp is therefore qualitatively different from the monotone signed map."
+    },
+    "example": {
+      "setup": "Takeα=1/30,β=2/3,k=1, a rational illustrative parameter choice.",
+      "calculation": "Att_L=(α/3)^3=1/729000, the numeratorαt_L^(−1/3)=3, while1+e^t_L<3, soh(t_L)>1. Att_U=(α/2)^3=1/216000, the numerator equals2 while1+e^t_U>2, soh(t_U)<1. Hence the additional negative root lies strictly between−1/216000 and−1/729000. The small scale does not remove the exact noninjectivity.",
+      "conclusion": "The logistic expression cannot be used as a bijective global coordinate map without restricting its domain or changing its definition."
+    },
+    "limits": "For a positive-only variable, the increasing half-line restriction may be appropriate and must be stated. Replacing the correction bysign(x)|x|^β times a suitable positive even factor defines a different map; it should not be silently substituted for the historical formula.",
+    "extension": "Choose the intended signed or positive domain explicitly. For a repaired signed model, prove monotonicity and its inverse regularity before transporting algebraic operations or differentiating through it.",
+    "references": [
+      {
+        "label": "NIST Digital Library of Mathematical Functions",
+        "url": "https://dlmf.nist.gov/"
+      }
+    ],
+    "original": {
+      "date": "2024-09-20T23:49:35Z",
+      "month": "2024-09",
+      "evidence": "A",
+      "field": "Real analysis",
+      "concept": "A missing sign in the logistic deformation",
+      "origin": "Recovered historical conversation excerpt; development written for this retrospective",
+      "question": "Does the recovered logistic-factor deformation define a global coordinate change on signed inputs?",
+      "math": "The result and worked example below are the revised mathematical development, not a recovered verbatim proof.",
+      "finish": "Established within the stated hypotheses; speculative historical conclusions are not inherited.",
+      "kind": "revised mathematical question and developed concept",
+      "refs": [
+        "analysis"
+      ],
+      "source_excerpt": "X*=X+α|X|^β/(1+exp(−X/0.0712))",
+      "retrieval_receipt": "root_details.json",
+      "original_question": null,
+      "attribution_note": "The recovered formula/topic is assistant-authored. The revised question, theorem and example are newly written."
+    }
+  }
+]

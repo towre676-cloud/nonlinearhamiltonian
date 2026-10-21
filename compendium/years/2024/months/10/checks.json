@@ -1,0 +1,196 @@
+{
+  "checks": [
+    {
+      "id": "Y24-10-001",
+      "name": "Bounded prime perturbation example",
+      "status": "passed",
+      "detail": "Prime p−2 sum dominated by integer p-series; eigenvaluesn²+c derived exactly."
+    },
+    {
+      "id": "Y24-10-002",
+      "name": "Weyl density mismatch",
+      "status": "passed",
+      "detail": "Target N(Λ)/√Λ grows aslogΛ/(4π), while interval model tends1. Exact inequalities in proof."
+    },
+    {
+      "id": "Y24-10-003",
+      "name": "Finite determinant logarithmic derivative",
+      "status": "passed",
+      "detail": "Rational determinant/resolvent identity at three parameter values; polynomial factorization is exact."
+    },
+    {
+      "id": "Y24-10-004",
+      "name": "Two-level Gibbs moments",
+      "status": "passed",
+      "detail": "Atβ=log3 probabilities3/4,1/4 and variance3/16."
+    },
+    {
+      "id": "Y24-10-005",
+      "name": "Exact nonlinear minimizer",
+      "status": "passed",
+      "detail": "{'minimum_energy': '7/16', 'squared_coordinates': ['3/4', '1/4'], 'multiplier': '3/2'}"
+    },
+    {
+      "id": "Y24-10-006",
+      "name": "Rigidity staircase least squares",
+      "status": "passed",
+      "detail": "Exact normal equations and least-square residual1/16."
+    },
+    {
+      "id": "Y24-10-007",
+      "name": "Local operator tail and orthogonal excitations",
+      "status": "passed",
+      "detail": "Tail afterN5 below2−5; resolvent image norms approach1, proving noncompactness in text."
+    },
+    {
+      "id": "Y24-10-008",
+      "name": "Periodic-time spectral values",
+      "status": "passed",
+      "detail": "Exact levels4/3,1/3,−2/3; lower tail unbounded."
+    },
+    {
+      "id": "Y24-10-009",
+      "name": "Pointwise μΛ sign and support",
+      "status": "passed",
+      "detail": "{'J_log_prime_coefficients': {2: -1, 3: -1, 5: -1, 7: -1}, 'psi_coefficients': {2: 3, 3: 2, 5: 1, 7: 1}, 'theta_coefficients': {2: 1, 3: 1, 5: 1, 7: 1}}"
+    },
+    {
+      "id": "Y24-10-010",
+      "name": "Convolution identity through100",
+      "status": "passed",
+      "detail": "Exact symbolic logarithm coefficients establish μ*log=Λ for every n≤100."
+    },
+    {
+      "id": "Y24-10-011",
+      "name": "Gaussian prime-ideal local model",
+      "status": "passed",
+      "detail": "{'prime_ideal_norms_through10': [2, 5, 5, 9], 'split37_norm': 37}"
+    },
+    {
+      "id": "Y24-10-012",
+      "name": "Two-state transfer mixing",
+      "status": "passed",
+      "detail": "P³ exact; first-state distribution9/16,7/16 and total variation1/16."
+    },
+    {
+      "id": "Y24-10-013",
+      "name": "Missing PNT term dominates proposed remainder",
+      "status": "passed",
+      "detail": "Atlogx100, omitted main-term scale / x^(3/4)>7million; asymptotic proof supplied."
+    },
+    {
+      "id": "Y24-10-014",
+      "name": "Exact Haar energy partition",
+      "status": "passed",
+      "detail": "{'gap_energy': 65, 'haar_scale_energies': ['441/8', '9/8', '9/4', '13/2']}"
+    },
+    {
+      "id": "Y24-10-015",
+      "name": "Cyclic group transport and collision",
+      "status": "passed",
+      "detail": "Transported fourth power6⋆4=1, identity label2; squaring collision1/6."
+    },
+    {
+      "id": "Y24-10-016",
+      "name": "Nonadditive quadratic map mod7",
+      "status": "passed",
+      "detail": "f1=2,f2=6,f1+f1=4,f5=2."
+    },
+    {
+      "id": "Y24-10-017",
+      "name": "Noisy linear equation coordinate change",
+      "status": "passed",
+      "detail": "Exact mod7 inverse, transformed secret/sample and identical noisy scalar3."
+    },
+    {
+      "id": "Y24-10-018",
+      "name": "Gaussian Euclidean division example family",
+      "status": "passed",
+      "detail": "All nonzero Gaussian divisors in box[−3,3]² satisfy exact nearest-integer remainder ratio≤1/2; Euclidean proof general."
+    },
+    {
+      "id": "Y24-10-019",
+      "name": "Cusp injectivity-conditioning example",
+      "status": "passed",
+      "detail": "Opposite inputs distance1/5, feature distance1/500; semigroup excludes degree1."
+    },
+    {
+      "id": "Y24-10-020",
+      "name": "Weighted Laplacian eigenmodes",
+      "status": "passed",
+      "detail": "Exact path eigenvectors0,1,3 and negative-edge eigenvalue−2."
+    },
+    {
+      "id": "Y24-10-021",
+      "name": "Height local normalization and source arithmetic",
+      "status": "passed",
+      "detail": "Rational product formula for three scales; h3/2=log3; historical sum249.1547."
+    },
+    {
+      "id": "Y24-10-022",
+      "name": "Acyclic presentation addition",
+      "status": "passed",
+      "detail": "C dimensions1 versus3; H0 dimension1 and Euler characteristic1 in both."
+    },
+    {
+      "id": "Y24-10-023",
+      "name": "Perfectoid model valuation sequence",
+      "status": "passed",
+      "detail": "Valuations2−n decrease to0; characteristic2 square(1+t^1/2)²=1+t verified symbolically in proof."
+    },
+    {
+      "id": "Y24-10-024",
+      "name": "Crystalline δ-ring identities",
+      "status": "passed",
+      "detail": "δ values and correct product identity in121 exact integer examples atp3."
+    },
+    {
+      "id": "Y24-10-025",
+      "name": "Derived coefficient reduction and Tor",
+      "status": "passed",
+      "detail": "Resolution differentialp reduces to0 overFp, producing one degree−1 Tor group; Zp free base change has none."
+    },
+    {
+      "id": "Y24-10-026",
+      "name": "Propositional truth-table exhaustiveness",
+      "status": "passed",
+      "detail": "All8 truth assignments verify nesting identity and an explicit reassociation countermodel."
+    },
+    {
+      "id": "Y24-10-027",
+      "name": "Quantifier and capture countermodels",
+      "status": "passed",
+      "detail": "Exact2-element model checks quantifier order and capture-changing truth."
+    },
+    {
+      "id": "Y24-10-028",
+      "name": "Explicit exponent parse",
+      "status": "passed",
+      "detail": "Right tree512,left tree64,ratio8."
+    },
+    {
+      "id": "Y24-10-029",
+      "name": "Gaussian uncertainty equality",
+      "status": "passed",
+      "detail": "Gaussian variance products exactly1/4 for three rational widths withℏ1; integrals derived in text."
+    },
+    {
+      "id": "Y24-10-030",
+      "name": "Second-variation sign threshold",
+      "status": "passed",
+      "detail": "AtT2π second variation−3π/4; thresholdTπ gives zero sine mode."
+    },
+    {
+      "id": "Y24-10-031",
+      "name": "Entropy exact expressions and numerical values",
+      "status": "passed",
+      "detail": "{'entropy': 1.0397207708399179, 'maximum': 1.0986122886681098, 'deficit': 0.05889151782819191}"
+    },
+    {
+      "id": "Y24-10-032",
+      "name": "Discrete differential complex",
+      "status": "passed",
+      "detail": "Exact boundary-of-boundary, gradient circulation and weighted cycle energy24."
+    }
+  ]
+}

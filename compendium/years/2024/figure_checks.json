@@ -1,0 +1,31 @@
+{
+  "checks": [
+    {
+      "id": "Illustrations",
+      "name": "Quartic plotted roots satisfy the polynomial",
+      "status": "passed",
+      "detail": {
+        "roots": 4,
+        "tolerance": 1e-12
+      }
+    },
+    {
+      "id": "Illustrations",
+      "name": "Independent exact finite-field point counts and Hasse bounds",
+      "status": "passed",
+      "detail": {
+        "good_primes": 11,
+        "equation": "y\u00b2+y=x\u00b3\u2212x"
+      }
+    },
+    {
+      "id": "Illustrations",
+      "name": "Jordan-family plotted quantities satisfy the exact identities",
+      "status": "passed",
+      "detail": {
+        "samples": 48,
+        "scope": "Numerical evaluation of explicitly proved formulas"
+      }
+    }
+  ]
+}

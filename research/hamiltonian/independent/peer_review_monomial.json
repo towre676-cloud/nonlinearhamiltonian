@@ -1,0 +1,19 @@
+{
+  "status": "passed",
+  "reviewed": "monomial/classification.py and proofs.md",
+  "exact_direct_star_cases": 1521,
+  "corrected_issue": "Even totaldegree affine line fixed to b(d+1)=a(c+1), c=B*n−1,d=A*n−1. Current code and proof reviewed.",
+  "formal_proof_review": [
+    "Top odd/even correction necessity and finite strip reduction",
+    "Nonzero strip polynomial leading coefficients",
+    "Corrected affine restriction nonzero constant",
+    "Balanced all-m S3/S5 elimination identity and positivity",
+    "Ordinary-power factor and commuting intersection",
+    "Infinite-dimensional noncommuting criterion min(a,b)<=2"
+  ],
+  "proof_scope": "The algorithm is complete for each fixed unequal a,b>=2; bounded direct-star regression validates implementation on selected pairs only.",
+  "file_sha256": {
+    "classification.py": "95de1cd44aa387eeb7e5712e35a08846004fccfea96fbcca8273d51c7459d5cd",
+    "proofs.md": "ca06087412d440f60a64f36a6f5af59537b208cbd91f4724c50ab6c388a9182b"
+  }
+}

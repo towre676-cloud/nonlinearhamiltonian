@@ -1,0 +1,18 @@
+{
+  "month": "2024-01",
+  "status": "source_gap",
+  "entry_count": 0,
+  "root_retrieval_calls": 4,
+  "child_access_failures": 4,
+  "coverage": "Four root retrieval calls covered the full calendar month: one broad mathematics query, two half-month queries, and a final query without the mathematics filter. None returned a matching conversation. This is an evidence-access gap, not a finding that no mathematics or conversations occurred in January.",
+  "source_dates": [],
+  "original_user_questions_recovered": 0,
+  "mathematical_verification_scope": "No mathematical entries are invented. The verifier checks the empty inventory and retrieval ledger only.",
+  "receipt_files": [
+    "receipts.json",
+    "root_receipts.json",
+    "root_followups.json",
+    "root_details.json",
+    "child_access_errors.json"
+  ]
+}

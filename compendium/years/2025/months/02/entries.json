@@ -1,0 +1,1212 @@
+[
+  {
+    "id": "Y25-02-001",
+    "title": "A cumulative wealth equation is a stock–flow identity",
+    "status": "Developed mathematical result with explicit hypotheses and checked example; historical claims repaired where necessary",
+    "summary": "Integrating a flow defines a stock but does not determine the flow. An explicitly specified linear feedback gives a solvable growth law, a stable regime and a transparent accounting of units.",
+    "definitions": [
+      "LetW(t)=W₀+∫₀ᵗ[αV(s)+βM(s)+γI(s)]ds. Each summand must have units of wealth per time.",
+      "For a new test model set the total flow equal toa+bW, wherea is constant wealth per time andb has inverse-time units.",
+      "The initial condition already fixes the integration constant; adding a second arbitrary constant would duplicate it."
+    ],
+    "result": {
+      "name": "Exact affine feedback solution",
+      "statement": "Forb≠0,W(t)=(W₀+a/b)e^{bt}−a/b. Forb=0,W=W₀+at. Ifb<0 the equilibrium−a/b attracts exponentially; ifb>0 it is unstable.",
+      "proof": "The fundamental theorem of calculus givesW′ equal to the integrand when that flow is continuous. Substituting the declared feedback givesW′−bW=a. Multiplication bye^{−bt} makes the left side the derivative ofe^{−bt}W; integrate from zero tot to obtain the formula. Perturbing the equilibrium byδ givesδ′=bδ, proving the stability statement. Thus the stock-flow identity and a causal feedback assumption are mathematically different premises. The integral by itself can represent every differentiableW after defining its flow asW′ and therefore cannot certify projected asset targets."
+    },
+    "example": {
+      "setup": "TakeW₀=0,a=10,b=−1/5 in consistent units.",
+      "calculation": "The solution isW(t)=50(1−e^{−t/5}), with initial flow ten and limiting stock fifty. In contrastb=1/5 gives50(e^{t/5}−1), with accelerating growth. Both start with the same value and derivative but give radically different long-run paths. A numerical projection must therefore report its feedback coefficient and not only its starting flow.",
+      "conclusion": "The revised equation becomes a testable dynamical model once its flow is independently specified."
+    },
+    "limits": "No historic asset-growth forecast or multiplier is validated. IfV,M,I already contain overlapping receipts, summing them can double count; a common unit does not establish disjoint economic contributions.",
+    "extension": "Add a capacity constraint or saturation term and establish an invariant nonnegative interval. Estimate parameters from independent flow observations and report whether the proposed long-run regime is identifiable from those data. If the coefficients are time dependent but b(t) is prescribed, the integrating factor gives W(t)=e^{B(t)}[W₀+∫₀ᵗe^{−B(s)}a(s)ds], where B(t)=∫₀ᵗb(s)ds. This formula separates observable input flows from amplification and exposes exactly which missing functions a numerical forecast would need.",
+    "references": [
+      {
+        "label": "Gerald Teschl Ordinary Differential Equations",
+        "url": "https://www.mat.univie.ac.at/~gerald/ftp/book-ode/ode.pdf"
+      }
+    ],
+    "original": {
+      "date": "2025-02-07",
+      "month": "2025-02",
+      "evidence": "U",
+      "field": "Differential equations and accounting",
+      "concept": "A cumulative wealth equation is a stock–flow identity",
+      "origin": "Recovered dated mathematical topic; newly revised and developed here.",
+      "question": "What does the recovered integral equation imply, and which independent assumptions turn it into a predictive dynamical model?",
+      "math": "Forb≠0,W(t)=(W₀+a/b)e^{bt}−a/b. Forb=0,W=W₀+at. Ifb<0 the equilibrium−a/b attracts exponentially; ifb>0 it is unstable.",
+      "finish": "Explicit derivation, worked example and scoped extension",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://www.mat.univie.ac.at/~gerald/ftp/book-ode/ode.pdf"
+      ],
+      "source_excerpt": "- [USER_FACT] [c3] U@2025-02-07T01:43:13Z, -1y8m: mathematical EMARDA framework; user supplied Wealth Transition Equation \\(W(x,t)=W(x,0)+\\int[\\alpha V+\\beta M+\\gamma I]dt+C\\), dynamic equations for \\(\\alpha,\\gamma\\), phased numerical targets, cost-of-delay calculations, and Monte Carlo projections.",
+      "retrieval_receipt": "root_coverage.json record 0",
+      "original_question": null,
+      "attribution_note": "The source is a dated retrieval fragment rather than a complete original transcript. Speaker attribution follows the retrieved tag. The revised question, proof and example are newly authored; no missing historical user wording or proof is invented."
+    }
+  },
+  {
+    "id": "Y25-02-002",
+    "title": "A network multiplier is an inverse matrix with a convergence condition",
+    "status": "Developed mathematical result with explicit hypotheses and checked example; historical claims repaired where necessary",
+    "summary": "A finite nonnegative input network has a convergent response series when its spectral radius is below one. A two-sector example yields an exact multiplier, showing why a universal scalar such as2.68 needs a declared model.",
+    "definitions": [
+      "Letx=Ax+d, whereA has nonnegative entries andd is an external input. All coordinates use compatible units.",
+      "Assume spectral radiusρ(A)<1. Then(I−A)⁻¹=Σ_{n≥0}Aⁿ and the response to a shockδd isδx=(I−A)⁻¹δd.",
+      "A scalar multiplier also needs an aggregation rowwᵀ; it iswᵀδx divided by a stated input normalization."
+    ],
+    "result": {
+      "name": "Exact two-sector propagation",
+      "statement": "ForA=[[0,1/4],[1/2,0]],(I−A)⁻¹=[[8/7,2/7],[4/7,8/7]]. A unit shock in sector one gives total output12/7; a unit shock in sector two gives10/7.",
+      "proof": "A²=I/8, so even and odd powers form two geometric series andρ(A)=1/√8<1. Their sum is(I+A)/(1−1/8), giving the inverse directly. Multiplication byI−A independently verifies the identity. The two different column sums demonstrate that even one fixed network need not have a single shock-independent scalar multiplier. For a general finite matrix the Neumann series follows by Jordan form or an equivalent norm in which high powers decay; the spectral-radius hypothesis is essential to that series interpretation."
+    },
+    "example": {
+      "setup": "Useδd=(1,0) and compare the first three response rounds.",
+      "calculation": "The direct response is(1,0), the first spillover(0,1/2), and the next(1/8,0). Summing all rounds gives(8/7,4/7). Counting the direct input once and then adding the full inverse response again would double count the zeroth round.",
+      "conclusion": "The mathematical multiplier is computable, directional and conditional on a network that must be independently justified."
+    },
+    "limits": "This is a linear propagation model, not evidence for any particular sectoral multiplier or monetary return. An inverse may exist even whenρ(A)≥1, but its Neumann-series and nonnegative-round interpretation can then fail.",
+    "extension": "For perturbationsA+E, use the resolvent identityB′−B=B′EB. If||B||||E||<1, derive||B′−B||≤||B||²||E||/(1−||B||||E||), quantifying how uncertain links can amplify multiplier uncertainty. For the concrete network, the sum of all response rounds after round m is bounded by a geometric tail because A²=I/8. Keeping only even powers through A^{2m} leaves their scalar geometric remainder (1/8)^{m+1}/(1−1/8). Thus a finite-round approximation can carry a rigorous truncation error rather than an arbitrary stopping choice.",
+    "references": [
+      {
+        "label": "Boyd and Vandenberghe Convex Optimization",
+        "url": "https://web.stanford.edu/~boyd/cvxbook/"
+      }
+    ],
+    "original": {
+      "date": "2025-02-05",
+      "month": "2025-02",
+      "evidence": "A",
+      "field": "Linear systems",
+      "concept": "A network multiplier is an inverse matrix with a convergence condition",
+      "origin": "Recovered dated mathematical topic; newly revised and developed here.",
+      "question": "Which matrix and convergence condition produce a claimed multiplier, and how does an input shock propagate through its network?",
+      "math": "ForA=[[0,1/4],[1/2,0]],(I−A)⁻¹=[[8/7,2/7],[4/7,8/7]]. A unit shock in sector one gives total output12/7; a unit shock in sector two gives10/7.",
+      "finish": "Explicit derivation, worked example and scoped extension",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://web.stanford.edu/~boyd/cvxbook/"
+      ],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c1] A@2025-02-05T09:51:24Z, -1y8mo: Defined \\(E(x,t)\\), its direct microcredit and infrastructure terms, and claimed semiconductor multiplier \\(2.68\\); later assistant outputs proposed CCS \\(=0.3A+0.3TC+0.2LP+0.2CE\\), PAI-D, adaptation factors, and HCCs.",
+      "retrieval_receipt": "root_receipts.json record 0",
+      "original_question": null,
+      "attribution_note": "The source is a dated retrieval fragment rather than a complete original transcript. Speaker attribution follows the retrieved tag. The revised question, proof and example are newly authored; no missing historical user wording or proof is invented."
+    }
+  },
+  {
+    "id": "Y25-02-003",
+    "title": "Weighted scores and capacity quotas need different constraints",
+    "status": "Developed mathematical result with explicit hypotheses and checked example; historical claims repaired where necessary",
+    "summary": "A quotient of capacity by demand is not itself an allocation theorem. A concave two-recipient model yields a unique feasible optimum and an exact water-filling rule.",
+    "definitions": [
+      "Letx_i≥0 be allocated units withΣx_i≤C,C>0. Let benefit beΣa_i log(1+x_i), witha_i>0.",
+      "A weighted index such as0.3A+0.3TC+0.2LP+0.2CE lies in[0,1] only after all four inputs are normalized to that interval.",
+      "A capacity ratioK/[θ(P+U)] requiresθ>0 andP+U>0. Its interpretation and rounding rule are additional modeling choices."
+    ],
+    "result": {
+      "name": "Unique concave allocation",
+      "statement": "The log-utility problem has a unique optimumx_i=max(a_i/λ−1,0), withλ>0 chosen soΣx_i=C. For(a₁,a₂)=(2,1),C=2, the allocation is(5/3,1/3).",
+      "proof": "The compact feasible simplex gives existence. The Hessian is diagonal with strictly negative entries−a_i/(1+x_i)², so the objective is strictly concave and has at most one maximizer. Each benefit increases, so capacity is exhausted. Lagrange optimality givesa_i/(1+x_i)=λ on positive coordinates and a_i≤λ on zero coordinates. These conditions yield the formula and are sufficient by concavity. For the example both coordinates are positive, so2/λ−1+1/λ−1=2 givesλ=3/4 and the displayed allocation."
+    },
+    "example": {
+      "setup": "Compare the optimum with equal allocation(1,1) and concentrated allocation(2,0).",
+      "calculation": "At the optimum both marginal benefits equal3/4. Equal allocation has marginal benefits one and one half, so moving a small unit from the second to the first improves the objective. Concentration at(2,0) has first marginal2/3 and second marginal one, so it is also improvable. The certificate uses exact marginal comparisons rather than promotional ranking.",
+      "conclusion": "A feasible allocation and an aggregate index have explicit but different mathematical contracts."
+    },
+    "limits": "No choice of utility or normalization is scientifically or socially compelled by this calculation. Zero demand makes the quoted ratio undefined, and unbounded capacity claims cannot be repaired by optimization alone.",
+    "extension": "Add lower guarantees, upper capacity bounds and multiple resource constraints. Derive the KKT multipliers and use complementary slackness to identify which resource actually limits expansion. The solution also has a precise activation threshold: recipient i receives a positive allocation exactly when a_i>λ. As capacity grows, λ decreases and additional recipients become active. This is a mathematical consequence of the specified concave utility, not a universal conclusion about participation or social value.",
+    "references": [
+      {
+        "label": "Boyd and Vandenberghe Convex Optimization",
+        "url": "https://web.stanford.edu/~boyd/cvxbook/"
+      }
+    ],
+    "original": {
+      "date": "2025-02-05",
+      "month": "2025-02",
+      "evidence": "A",
+      "field": "Constrained optimization",
+      "concept": "Weighted scores and capacity quotas need different constraints",
+      "origin": "Recovered dated mathematical topic; newly revised and developed here.",
+      "question": "How can a capacity-based allocation be formulated so that its units, feasible set and fairness objective are explicit?",
+      "math": "The log-utility problem has a unique optimumx_i=max(a_i/λ−1,0), withλ>0 chosen soΣx_i=C. For(a₁,a₂)=(2,1),C=2, the allocation is(5/3,1/3).",
+      "finish": "Explicit derivation, worked example and scoped extension",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://web.stanford.edu/~boyd/cvxbook/"
+      ],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c2] A@2025-02-05T20:28:07Z, -1y8m: formalized Dynamic Entry Quotas: \\(DEQ(t)=[\\lambda\\sum_iC_i(t)+\\mu\\sum_jI_j(t)]/[\\theta(P_t+U_t)]\\), with capacity-based universal entry, staged participation, sectoral alternatives, and expansion feedback.",
+      "retrieval_receipt": "root_receipts.json record 0",
+      "original_question": null,
+      "attribution_note": "The source is a dated retrieval fragment rather than a complete original transcript. Speaker attribution follows the retrieved tag. The revised question, proof and example are newly authored; no missing historical user wording or proof is invented."
+    }
+  },
+  {
+    "id": "Y25-02-004",
+    "title": "Debt-to-output dynamics include the primary flow",
+    "status": "Developed mathematical result with explicit hypotheses and checked example; historical claims repaired where necessary",
+    "summary": "An exact recurrence separates inherited debt, interest, output growth and the primary flow. Its stable fixed point can be calculated, giving a constructive alternative to an unconditional growth claim.",
+    "definitions": [
+      "LetD_{t+1}=(1+r)D_t+P_t andY_{t+1}=(1+g)Y_t withg>−1. Writeb_t=D_t/Y_t andp_t=P_t/Y_t.",
+      "PositiveP is a primary deficit under this sign convention; negativeP is a primary surplus.",
+      "For a fixed-flow model letp_t=p andr,g be constant."
+    ],
+    "result": {
+      "name": "Exact ratio recurrence and fixed point",
+      "statement": "b_{t+1}=[(1+r)b_t+p]/(1+g). It decreases exactly whenp<(g−r)b_t. Ifg>r and1+r≥0, the fixed pointb*=p/(g−r) is attracting.",
+      "proof": "Divide the debt equation by the new output level to obtain the recurrence. Subtractb_t and combine denominators to get[b_{t+1}−b_t]=[p−(g−r)b_t]/(1+g), proving the strict condition. Solveb*=((1+r)b*+p)/(1+g) to obtain the fixed point. Subtracting it givesb_{t+1}−b*=a(b_t−b*) witha=(1+r)/(1+g). Under the stated inequalities0≤a<1, so the difference decays geometrically. Thus a positive primary deficit can make the ratio increase despiteg>r, and the initial ratio’s position relative tob* determines the direction."
+    },
+    "example": {
+      "setup": "Taker=1/50,g=1/25,b₀=1 and comparep=1/100 withp=1/20.",
+      "calculation": "The first case givesb₁=103/104<1 and fixed point1/2. The second givesb₁=107/104>1 and fixed point5/2. The interest and growth rates are identical; only the primary flow changes. Repeating the first case givesb_t=1/2+(1/2)(51/52)^t exactly.",
+      "conclusion": "The recurrence gives conditions and trajectories rather than an unsupported prediction."
+    },
+    "limits": "These are accounting dynamics under fixed rates, not financial advice or a forecast. Inflation, valuation changes, maturity structure and changing primary flows require additional terms.",
+    "extension": "For bounded time-varyingr_t,g_t,p_t, derive product-sum bounds for the nonautonomous recurrence. Identify conditions giving a uniform contraction and an invariant interval for all admissible rate paths. With variable primary flows but fixed rates, b_t=a^t b₀+(1+g)⁻¹Σ_{j=0}^{t−1}a^{t−1−j}p_j. If 0≤a<1 and 0≤p_j≤p_max, the limiting upper bound is p_max/(g−r). This follows by summing a geometric series and makes the required bound on future flows explicit.",
+    "references": [
+      {
+        "label": "Olivier Blanchard Public Debt and Low Interest Rates",
+        "url": "https://doi.org/10.1257/aer.109.4.1197"
+      }
+    ],
+    "original": {
+      "date": "2025-02-05",
+      "month": "2025-02",
+      "evidence": "A",
+      "field": "Discrete dynamical systems",
+      "concept": "Debt-to-output dynamics include the primary flow",
+      "origin": "Recovered dated mathematical topic; newly revised and developed here.",
+      "question": "When does a debt ratio fall, and what is missing from comparing growth with the interest rate alone?",
+      "math": "b_{t+1}=[(1+r)b_t+p]/(1+g). It decreases exactly whenp<(g−r)b_t. Ifg>r and1+r≥0, the fixed pointb*=p/(g−r) is attracting.",
+      "finish": "Explicit derivation, worked example and scoped extension",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://doi.org/10.1257/aer.109.4.1197"
+      ],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c2] A@2025-02-05T20:36:11Z, -1y8m: claimed EMARDA keeps egg prices stable/decreasing via supply expansion, automation, reinvestment, and oversight; debt shrinks if real GDP growth exceeds debt interest, through productivity, tax-base expansion, lower transfers, and asset-backed investment.",
+      "retrieval_receipt": "root_receipts.json record 0",
+      "original_question": null,
+      "attribution_note": "The source is a dated retrieval fragment rather than a complete original transcript. Speaker attribution follows the retrieved tag. The revised question, proof and example are newly authored; no missing historical user wording or proof is invented."
+    }
+  },
+  {
+    "id": "Y25-02-005",
+    "title": "A Gini calculation and a growth decomposition measure different objects",
+    "status": "Developed mathematical result with explicit hypotheses and checked example; historical claims repaired where necessary",
+    "summary": "The finite-sample Gini is a normalized pairwise-difference sum. A Cobb–Douglas log differential is instead a production identity with a residual. Both can be computed exactly without validating a national comparison.",
+    "definitions": [
+      "For nonnegative incomesx_i with positive sum, useG=Σ_{i,j}|x_i−x_j|/[2nΣ_i x_i].",
+      "For positive outputY=AK^αL^β, take logarithms. A growth-accounting residual isdlogA=dlogY−αdlogK−βdlogL.",
+      "A dependency ratio also needs an explicit numerator population and denominator population; changing either changes the statistic."
+    ],
+    "result": {
+      "name": "Scale invariance and exact logarithmic decomposition",
+      "statement": "G is unchanged by multiplying every income by a positive constant. For(0,0,2,2),G=1/2; for(1,1,1,1),G=0. The production formula differentiates exactly todlogY=dlogA+αdlogK+βdlogL.",
+      "proof": "Both numerator and denominator ofG scale linearly, proving invariance. In the unequal example eight ordered pairs cross between zero and two, each contributing two, so the numerator is sixteen and the denominator2·4·4=32. Equal values have zero pairwise differences. For production, logY=logA+αlogK+βlogL, so ordinary differentiation gives the identity whenα,β are fixed. A measured residual is therefore whatever remains under the chosen functional form and coefficients; the algebra does not prove that it measures a unique causal technology effect."
+    },
+    "example": {
+      "setup": "Setα=β=1/2, holdA fixed, doubleK and halveL.",
+      "calculation": "The output ratio is√2·√(1/2)=1, while the exact log contributions cancel. A first-order percentage approximation should not replace this finite-change calculation for large changes. Separately,341,000,000 divided by10,000 is exactly34,100; a capacity rule requiring whole representatives uses a ceiling if the division leaves a remainder.",
+      "conclusion": "The revised comparison distinguishes inequality, growth accounting and representation arithmetic instead of treating them as interchangeable evidence."
+    },
+    "limits": "Zero total income makesG undefined. A finite Gini does not recover the whole distribution, and a growth residual depends on measurement and model choices. No country-specific data claim is established here.",
+    "extension": "For an inequality-reducing transfer preserving total income, derive the change in the pairwise sum while accounting for rank crossings. For production data, compare alternative elasticities and report the resulting range of residual growth. Dividing each income by its mean leaves the Gini unchanged, but adding the same positive constant to every income generally lowers it: the pairwise numerator stays fixed while the total-income denominator increases. This exact distinction separates scale changes from a uniform transfer and shows why both should not be called normalization.",
+    "references": [
+      {
+        "label": "World Bank Gini index definition",
+        "url": "https://data.worldbank.org/indicator/SI.POV.GINI"
+      },
+      {
+        "label": "Robert Solow A Contribution to the Theory of Economic Growth",
+        "url": "https://doi.org/10.2307/1884513"
+      }
+    ],
+    "original": {
+      "date": "2025-02-18",
+      "month": "2025-02",
+      "evidence": "U",
+      "field": "Statistics and growth accounting",
+      "concept": "A Gini calculation and a growth decomposition measure different objects",
+      "origin": "Recovered dated mathematical topic; newly revised and developed here.",
+      "question": "Which distribution statistic and production identity are actually being compared, and what assumptions determine each?",
+      "math": "G is unchanged by multiplying every income by a positive constant. For(0,0,2,2),G=1/2; for(1,1,1,1),G=0. The production formula differentiates exactly todlogY=dlogA+αdlogK+βdlogL.",
+      "finish": "Explicit derivation, worked example and scoped extension",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://data.worldbank.org/indicator/SI.POV.GINI",
+        "https://doi.org/10.2307/1884513"
+      ],
+      "source_excerpt": "- [USER_FACT] [c8] U@2025-02-18T21:22:15Z, -1y8m: comparative OECD–China analysis included Gini \\(G=A/(A+B)\\), dependency ratio, labor productivity, Solow growth \\(\\Delta Y/Y=\\alpha\\Delta K/K+\\beta\\Delta L/L+TFP\\), Mincer equation, trade-dependency ratio, and related quantitative claims.",
+      "retrieval_receipt": "root_receipts.json record 0",
+      "original_question": null,
+      "attribution_note": "The source is a dated retrieval fragment rather than a complete original transcript. Speaker attribution follows the retrieved tag. The revised question, proof and example are newly authored; no missing historical user wording or proof is invented."
+    }
+  },
+  {
+    "id": "Y25-02-006",
+    "title": "A simplified metric RHS has an exact solution but no relativity certificate",
+    "status": "Developed mathematical result with explicit hypotheses and checked example; historical claims repaired where necessary",
+    "summary": "The stated prototype is exactly solvable and gives a parameter-dependent positivity condition. This provides a useful code reference while exposing why damping one variable does not automatically preserve a metric.",
+    "definitions": [
+      "For scalar components takeA′=−κA,g′=−2A withκ>0 and initial valuesA₀,g₀.",
+      "A positive scalar metric component requiresg(t)>0; positive definiteness of a full matrix is a stronger joint condition.",
+      "Curvature, constraints, gauge equations and boundary conditions are not included in this two-variable model."
+    ],
+    "result": {
+      "name": "Exact damped-source evolution",
+      "statement": "A(t)=A₀e^{−κt} andg(t)=g₀−(2A₀/κ)(1−e^{−κt}). ForA₀>0,g stays strictly positive for all finite times ifg₀≥2A₀/κ, with a positive uniform lower bound only when the inequality is strict.",
+      "proof": "The first equation solves by separation. Integratingg′ using that solution gives the displayed expression. IfA₀>0,g is decreasing and has limitg∞=g₀−2A₀/κ. A strictly positive limit gives uniform positivity. At equalityg(t)=g₀e^{−κt}>0 for finite time but tends to zero, so uniform coercivity fails. If the limit is negative, continuity forces a finite zero crossing. Solvingg=0 givese^{−κt}=1−κg₀/(2A₀) when0<g₀<2A₀/κ. This is a complete exact diagnostic for the simplified system, independent of any GPU implementation."
+    },
+    "example": {
+      "setup": "Useκ=1/10,A₀=1/10,g₀=1.",
+      "calculation": "ThenA=(1/10)e^{−t/10} andg=2e^{−t/10}−1. The component reaches zero att=10log2 despite the sourceA decaying. Usingg₀=3 instead givesg=1+2e^{−t/10}, uniformly bounded below by one.",
+      "conclusion": "An analytic reference trajectory can test a numerical RHS while keeping its geometric interpretation conditional."
+    },
+    "limits": "The source explicitly labels the CUDA prototype simplified. Passing this ODE check proves neither the BSSN constraints nor stable Einstein evolution; omitted Christoffel/Ricci terms cannot be treated as validated placeholders.",
+    "extension": "For a full symmetric matrixg, derive an eigenvalue lower bound from an operator-norm integral estimate onA. Then test constraint propagation and convergence for a declared complete system and exact geometric benchmark. At κ=0 the solution is A=A₀ and g=g₀−2A₀t, obtained either directly or as the continuous κ→0 limit on every bounded time interval. Substituting κ=0 into a formula containing 1/κ without taking that limit would create a spurious singularity. Zero damping is a distinct parameter case.",
+    "references": [
+      {
+        "label": "Baumgarte and Shapiro Numerical integration of Einstein field equations",
+        "url": "https://doi.org/10.1103/PhysRevD.59.024007"
+      }
+    ],
+    "original": {
+      "date": "2025-02-16",
+      "month": "2025-02",
+      "evidence": "A",
+      "field": "Ordinary differential equations",
+      "concept": "A simplified metric RHS has an exact solution but no relativity certificate",
+      "origin": "Recovered dated mathematical topic; newly revised and developed here.",
+      "question": "What can the simplifiedg′=−2A,A′=−κA prototype establish before full geometric evolution terms are supplied?",
+      "math": "A(t)=A₀e^{−κt} andg(t)=g₀−(2A₀/κ)(1−e^{−κt}). ForA₀>0,g stays strictly positive for all finite times ifg₀≥2A₀/κ, with a positive uniform lower bound only when the inequality is strict.",
+      "finish": "Explicit derivation, worked example and scoped extension",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://doi.org/10.1103/PhysRevD.59.024007"
+      ],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c3] A@2025-02-16T16:01:12Z, -613d: CUDA BSSNOK RHS prototype includes B-spline derivative arrays, Christoffel/Ricci placeholders, \\(rhs_{gij}=-2A_{ij}\\), damping \\(-\\kappa A_{ij}\\), \\(\\kappa=0.1\\); explicitly labeled simplified.",
+      "retrieval_receipt": "root_receipts.json record 0",
+      "original_question": null,
+      "attribution_note": "The source is a dated retrieval fragment rather than a complete original transcript. Speaker attribution follows the retrieved tag. The revised question, proof and example are newly authored; no missing historical user wording or proof is invented."
+    }
+  },
+  {
+    "id": "Y25-02-007",
+    "title": "CFL stability and halo exchange have separate exact tests",
+    "status": "Developed mathematical result with explicit hypotheses and checked example; historical claims repaired where necessary",
+    "summary": "For periodic upwind advection, the CFL interval is an exact maximum-norm stability condition. Correct halo exchange reproduces the serial update algebraically, but says nothing by itself about speedup.",
+    "definitions": [
+      "Foru_t+cu_x=0,c>0, useu_j^{n+1}=(1−ν)u_j^n+νu_{j−1}^n withν=cΔt/Δx and periodic indices.",
+      "A one-cell halo stores the neighboring old-time value required at a subdomain boundary.",
+      "Strong-scaling speedup is measured wall time relative to a specified baseline; it cannot be inferred from a stable stencil."
+    ],
+    "result": {
+      "name": "Stability interval and decomposition equivalence",
+      "statement": "For0≤ν≤1, the update is anℓ∞ contraction. Forν>1, the alternating Fourier mode has amplification1−2ν with modulus greater than one. Two subdomains with correct old-time halos give the identical update to one serial domain.",
+      "proof": "In the stable interval each new value is a convex combination of two old values, so|u_j^{n+1}|≤max_k|u_k^n|. For the alternating modeu_j=(−1)^j, substitution gives(1−2ν)(−1)^j, proving the instability assertion. On a decomposed mesh, interior points use the same stencil. At the first point of each block, the needed predecessor is supplied by the halo; if it is the old-time predecessor from the adjacent block, the expression is exactly the serial one. Updating that halo from mixed time levels instead changes the method. Local refinement must therefore respect both a stability restriction and consistent interlevel synchronization."
+    },
+    "example": {
+      "setup": "Use four periodic cellsu=(0,1,2,3),ν=1/2 and split after the second cell.",
+      "calculation": "The serial result is(3/2,1/2,3/2,5/2). Supplying left halos three and one to the two blocks reproduces it exactly. The mean remains3/2 because the periodic shift has the same sum as the original vector.",
+      "conclusion": "The example supplies meaningful stability and communication certificates without claiming an unmeasured MPI/GPU efficiency."
+    },
+    "limits": "Higher-order, multidimensional and relativistic systems have different characteristic speeds and stability regions. A CFL inequality is generally necessary but may not suffice for a chosen time integrator and boundary treatment.",
+    "extension": "For an AMR interface, derive a conservative flux synchronization rule and verify equal-and-opposite interface fluxes. Then measure scaling with fixed problem, hardware, precision and synchronization policy.",
+    "references": [
+      {
+        "label": "Randall LeVeque Finite Volume Methods for Hyperbolic Problems",
+        "url": "https://doi.org/10.1017/CBO9780511791253"
+      }
+    ],
+    "original": {
+      "date": "2025-02-16",
+      "month": "2025-02",
+      "evidence": "A",
+      "field": "Numerical partial differential equations",
+      "concept": "CFL stability and halo exchange have separate exact tests",
+      "origin": "Recovered dated mathematical topic; newly revised and developed here.",
+      "question": "What does a CFL bound prove for one actual discretization, and how can domain decomposition be tested without inventing scaling benchmarks?",
+      "math": "For0≤ν≤1, the update is anℓ∞ contraction. Forν>1, the alternating Fourier mode has amplification1−2ν with modulus greater than one. Two subdomains with correct old-time halos give the identical update to one serial domain.",
+      "finish": "Explicit derivation, worked example and scoped extension",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://doi.org/10.1017/CBO9780511791253"
+      ],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c3] A@2025-02-16T16:32:29Z, -613d: Checklist/ranking: scaling benchmarks pending; TAMR next major step; CFL local stepping \\(\\Delta t_i\\le C\\Delta x_i/v_{\\max}\\); AMR octree/quadtree, Morton indexing, ParMETIS, multilevel ghosts; full evolution validation pending.",
+      "retrieval_receipt": "root_receipts.json record 0",
+      "original_question": null,
+      "attribution_note": "The source is a dated retrieval fragment rather than a complete original transcript. Speaker attribution follows the retrieved tag. The revised question, proof and example are newly authored; no missing historical user wording or proof is invented."
+    }
+  },
+  {
+    "id": "Y25-02-008",
+    "title": "A spline element has exact partition and stiffness certificates",
+    "status": "Developed mathematical result with explicit hypotheses and checked example; historical claims repaired where necessary",
+    "summary": "A quadratic Bernstein element gives exact partition of unity, polynomial reproduction and a positive-semidefinite stiffness matrix. These are local approximation facts that can be checked independently of a full relativity code.",
+    "definitions": [
+      "On[0,1], useB₀=(1−x)²,B₁=2x(1−x),B₂=x², the degree-two Bernstein basis, also a single-spanB-spline basis.",
+      "The stiffness matrix isK_ij=∫₀¹B_i′B_j′dx. Its quadratic form is the derivative energy of the represented polynomial.",
+      "The mass matrixM_ij=∫B_iB_jdx is a Gram matrix and is positive definite because the basis functions are linearly independent."
+    ],
+    "result": {
+      "name": "Exact local element identities",
+      "statement": "ΣB_i=1,x=(1/2)B₁+B₂ andx²=B₂. The stiffness matrix has diagonal4/3 and off-diagonal−2/3, hence eigenvalues0,2,2.",
+      "proof": "Expand the three polynomials to prove the reproduction identities coefficient by coefficient. Their derivatives are−2+2x,2−4x,2x. Integrating each derivative product gives the stated matrix, equivalentlyK=2I−(2/3)11ᵀ. The constant coefficient vector(1,1,1) is in its kernel, reflecting zero derivative of a constant. Every vector orthogonal to it has eigenvalue two, proving positivity on nonconstant modes. Independently,cᵀKc=∫|(Σc_iB_i)′|²≥0; equality means the polynomial is constant, giving the same kernel without spectral algebra."
+    },
+    "example": {
+      "setup": "Use coefficientsc=(0,0,1) forx² andc=(0,1/2,1) forx.",
+      "calculation": "The derivative energies are∫(2x)²dx=4/3 and∫1dx=1. Direct multiplicationcᵀKc gives the same values exactly. The constant vector gives zero energy and unit mass integral, supplying a small patch test for assembled operators.",
+      "conclusion": "These finite identities certify basis differentiation and an energy form, not a complete physical simulation."
+    },
+    "limits": "Multi-span splines need knot multiplicities and continuity specified. Curved geometry mappings add Jacobians, and boundary conditions determine whether the assembled stiffness becomes strictly positive.",
+    "extension": "On an explicitly mapped element, verify a positive Jacobian and transform the stiffness integrand by the inverse metric. Assemble adjacent spans and test global constant reproduction, flux consistency and the expected null space. The exact null vector must be retained before boundary conditions are imposed. Artificially inverting the local stiffness matrix would fail because its determinant is zero. Removing a Dirichlet degree of freedom or passing to a quotient by constants changes the operator domain and can produce a positive-definite reduced system with a meaningful inverse.",
+    "references": [
+      {
+        "label": "Thomas Hughes The Finite Element Method",
+        "url": "https://store.doverpublications.com/products/9780486411811"
+      }
+    ],
+    "original": {
+      "date": "2025-02-16",
+      "month": "2025-02",
+      "evidence": "A",
+      "field": "Approximation theory",
+      "concept": "A spline element has exact partition and stiffness certificates",
+      "origin": "Recovered dated mathematical topic; newly revised and developed here.",
+      "question": "Which finite identities should a basis satisfy before its derivative arrays are used in a geometric solver?",
+      "math": "ΣB_i=1,x=(1/2)B₁+B₂ andx²=B₂. The stiffness matrix has diagonal4/3 and off-diagonal−2/3, hence eigenvalues0,2,2.",
+      "finish": "Explicit derivation, worked example and scoped extension",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://store.doverpublications.com/products/9780486411811"
+      ],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c3] A@2025-02-16T16:01:12Z, -613d: CUDA BSSNOK RHS prototype includes B-spline derivative arrays, Christoffel/Ricci placeholders, \\(rhs_{gij}=-2A_{ij}\\), damping \\(-\\kappa A_{ij}\\), \\(\\kappa=0.1\\); explicitly labeled simplified.",
+      "retrieval_receipt": "root_receipts.json record 0",
+      "original_question": null,
+      "attribution_note": "The source is a dated retrieval fragment rather than a complete original transcript. Speaker attribution follows the retrieved tag. The revised question, proof and example are newly authored; no missing historical user wording or proof is invented."
+    }
+  },
+  {
+    "id": "Y25-02-009",
+    "title": "Weighted atoms must cancel in the same measure as their pairing",
+    "status": "Developed mathematical result with explicit hypotheses and checked example; historical claims repaired where necessary",
+    "summary": "A single consistent measure gives an elementaryH¹–BMO₂ estimate, including an exact sharp weighted two-point example. Mixing unweighted cancellation with a weighted pairing generally breaks the constant-removal step.",
+    "definitions": [
+      "Letν=wμ be a positive measure andB have0<ν(B)<∞. Aν-atoma is supported inB, has∫a dν=0 and||a||_{L²(ν)}≤ν(B)^−1/2.",
+      "Setb_B=ν(B)^−1∫_B b dν and||b||_{BMO₂(ν)}=sup_B[ν(B)^−1∫_B|b−b_B|²dν]^1/2.",
+      "For finite atomic sumsf=Σλ_ja_j, define the atomic norm by the infimum ofΣ|λ_j| over such representations."
+    ],
+    "result": {
+      "name": "Compatible-measure atomic bound",
+      "statement": "|∫ab dν|≤||b||_{BMO₂(ν)} and|∫fb dν|≤||f||_{H¹_at(ν)}||b||_{BMO₂(ν)} for finite atomic sums.",
+      "proof": "Cancellation gives∫ab=∫a(b−b_B). Cauchy–Schwarz bounds this byν(B)^−1/2||b−b_B||₂, proving the single-atom estimate. Sum the bounds and take the infimum over representations to get the finite-sum inequality. Completion needs a separately justified extension of the pairing. If instead∫a dμ=0 but∫a dν≠0, subtractingb_B changes the pairing byb_B∫a dν and the proof fails. Thus a weighted norm is not repaired by insertingw into one integral while keeping the rest of the Euclidean definition unchanged."
+    },
+    "example": {
+      "setup": "Use a two-point ball withν masses(1,3),b=(0,2), anda=(3c,−c),c=1/(4√3).",
+      "calculation": "The weighted mean ofb is3/2 and its normalized squared oscillation is3/4. The atom has zeroν mean and squaredν norm12c²=1/4, exactly the required bound. Its pairing is−6c=−√3/2, attaining the oscillation bound. All weighted constants and factors are visible.",
+      "conclusion": "The result gives a valid constructive fragment of weighted duality under declared definitions."
+    },
+    "limits": "It does not prove full weightedH¹–BMO duality on hyperbolic space. RelatingBMO₂ toBMO₁ requires geometric/weight hypotheses such as an appropriate doubling and John–Nirenberg theorem.",
+    "extension": "State an admissible ball family and weight class, prove its measure estimates and the required oscillation comparison, then establish both directions of the completed duality. Treat that as a theorem to prove, not a Monte Carlo conclusion. In the weighted two-point example, the normalized atom is proportional to b−b_B with the opposite sign, which is precisely the equality condition in Cauchy–Schwarz. The sharp constant therefore has an explicit optimizer. If cancellation were imposed with unweighted masses instead, a constant b could already produce a nonzero weighted pairing.",
+    "references": [
+      {
+        "label": "Coifman and Weiss Extensions of Hardy spaces and their use in analysis",
+        "url": "https://www.degruyterbrill.com/document/doi/10.1515/9781400827268.295/html"
+      }
+    ],
+    "original": {
+      "date": "2025-02-17",
+      "month": "2025-02",
+      "evidence": "A",
+      "field": "Harmonic analysis",
+      "concept": "Weighted atoms must cancel in the same measure as their pairing",
+      "origin": "Recovered dated mathematical topic; newly revised and developed here.",
+      "question": "Which normalization and cancellation make a weighted atomic pairing provably bounded?",
+      "math": "|∫ab dν|≤||b||_{BMO₂(ν)} and|∫fb dν|≤||f||_{H¹_at(ν)}||b||_{BMO₂(ν)} for finite atomic sums.",
+      "finish": "Explicit derivation, worked example and scoped extension",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://www.degruyterbrill.com/document/doi/10.1515/9781400827268.295/html"
+      ],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c0] A@2025-02-17T09:22:05Z, +1y8m: Proposed weighted/non-Euclidean H¹–BMO framework: weighted atoms (support cube, \\(\\int a=0\\), \\(\\|a\\|_{L^2(w)}\\le |Q|^{-1/2}\\)); \\(A_p\\)-type weight; hyperbolic geodesic-ball atoms; \\(\\|f\\|_{\\mathrm{BMO}_w}=\\sup_B|B|^{-1}\\int_B|f-f_B|w\\,d\\mu\\); hyperbolic Poisson/maximal \\(H^1\\), weighted pairing, wavelet/Monte-Carlo/spectral validation.",
+      "retrieval_receipt": "root_followups.json record 0",
+      "original_question": null,
+      "attribution_note": "The source is a dated retrieval fragment rather than a complete original transcript. Speaker attribution follows the retrieved tag. The revised question, proof and example are newly authored; no missing historical user wording or proof is invented."
+    }
+  },
+  {
+    "id": "Y25-02-010",
+    "title": "Hyperbolic volume growth changes global analysis",
+    "status": "Developed mathematical result with explicit hypotheses and checked example; historical claims repaired where necessary",
+    "summary": "Hyperbolic three-space has exponential ball growth and is not globally doubling. A radial energy identity proves the bottom spectral value one and explains why a global discrete eigenbasis cannot simply be assumed.",
+    "definitions": [
+      "For curvature−1 hyperbolic three-space, radial volume isdμ=4πsinh²r dr after angular integration.",
+      "For a radial compactly supported functionu, writeu(r)=v(r)/sinh r, withv(0)=0 and the endpoint behavior needed for integration by parts.",
+      "Use the nonnegative Laplacian convention−Δ and its Rayleigh quotient∫|∇u|²/∫|u|²."
+    ],
+    "result": {
+      "name": "Ball growth and exact radial spectral identity",
+      "statement": "V(R)=π(sinh2R−2R), soV(2R)/V(R) is unbounded. For radialu, its Rayleigh quotient is1+∫|v′|²dr/∫|v|²dr, whose infimum is one and is not attained by a nonzero radialL² eigenfunction at the bottom.",
+      "proof": "Integrate4πsinh²r using sinh²r=(cosh2r−1)/2 to getV. Its leading exponential is(π/2)e^{2R}, proving the ratio divergence. For the energy,sinh²r·|u′|²=|v′−v coth r|². Integrate the cross term−(v²)′coth r and use(coth r)′=−csch²r; the remaining coefficient is coth²r−csch²r=1. Boundary terms vanish under the stated conditions. For general smooth compactly supportedu, apply the radial identity to each angular direction and add the nonnegative angular-gradient energy. This proves the lower bound one for all such functions, not only radial ones. Takingv(r)=sin(πr/R) on[0,R], with standard smooth approximation at the endpoint, gives quotient1+π²/R²→1. Equality would forcev′=0 almost everywhere; its zero endpoint andL² condition then forcev=0."
+    },
+    "example": {
+      "setup": "Compare radiiR and2R and long radial test functions.",
+      "calculation": "The volume-doubling ratio grows asymptotically ase^{2R}. Increasing a radial support length fromR to2R divides the excess Rayleigh quotient above one by four. These are geometric and spectral effects with exact formulas, not evidence of a finite discrete mode list.",
+      "conclusion": "The example identifies which global hypotheses must be rebuilt for hyperbolic Hardy spaces and spectral algorithms."
+    },
+    "limits": "The radial calculation does not prove the entire spectral resolution or a weighted duality theorem. A bounded domain or compact quotient can have a discrete spectrum, unlike the complete noncompact model; boundary and quotient assumptions must be stated.",
+    "extension": "Separate local balls of bounded radius from global geometry. Establish local doubling constants and compare local atomic spaces with global spaces before transferring a Euclidean proof or wavelet construction.",
+    "references": [
+      {
+        "label": "Alexander Grigoryan Heat Kernel and Analysis on Manifolds",
+        "url": "https://www.math.uni-bielefeld.de/~grigor/pubs.htm"
+      }
+    ],
+    "original": {
+      "date": "2025-02-17",
+      "month": "2025-02",
+      "evidence": "U",
+      "field": "Hyperbolic analysis",
+      "concept": "Hyperbolic volume growth changes global analysis",
+      "origin": "Recovered dated mathematical topic; newly revised and developed here.",
+      "question": "Which Euclidean assumptions fail on the full hyperbolic space, and what spectral statement can be proved in a radial model?",
+      "math": "V(R)=π(sinh2R−2R), soV(2R)/V(R) is unbounded. For radialu, its Rayleigh quotient is1+∫|v′|²dr/∫|v|²dr, whose infimum is one and is not attained by a nonzero radialL² eigenfunction at the bottom.",
+      "finish": "Explicit derivation, worked example and scoped extension",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://www.math.uni-bielefeld.de/~grigor/pubs.htm"
+      ],
+      "source_excerpt": "- [USER_FACT] [c0] U@2025-02-17T10:02:35Z, -1y8m: February mathematics centered on extending weighted \\(H^1\\)-BMO duality to hyperbolic space \\(\\mathbb H^n\\): weighted norms, geodesic-ball atoms, pairings, Monte Carlo, wavelets, John–Nirenberg, and spectral methods.",
+      "retrieval_receipt": "root_receipts.json record 0",
+      "original_question": null,
+      "attribution_note": "The source is a dated retrieval fragment rather than a complete original transcript. Speaker attribution follows the retrieved tag. The revised question, proof and example are newly authored; no missing historical user wording or proof is invented."
+    }
+  },
+  {
+    "id": "Y25-02-011",
+    "title": "Frame bounds, coordinate changes and sampling errors are separate",
+    "status": "Developed mathematical result with explicit hypotheses and checked example; historical claims repaired where necessary",
+    "summary": "A four-point Haar basis gives exact Parseval reconstruction. A redundant duplication is still a tight frame, and a Jacobian factor—not a name such as Möbius-scaled—controls unitarity of coordinate pullback.",
+    "definitions": [
+      "InR⁴ useh₀=(1,1,1,1)/2,h₁=(1,1,−1,−1)/2,h₂=(1,−1,0,0)/√2,h₃=(0,0,1,−1)/√2.",
+      "A frame hasA||f||²≤Σ|〈f,ψ_j〉|²≤B||f||² withA>0. Its frame operator isSf=Σψ_j〈ψ_j,f〉.",
+      "For a smooth bijectiong in Euclidean coordinates, defineT_gf(x)=|detDg⁻¹(x)|^{1/2}f(g⁻¹x)."
+    ],
+    "result": {
+      "name": "Exact reconstruction and norm-preserving pullback",
+      "statement": "The fourh_j are orthonormal, sof=Σ〈f,h_j〉h_j and the frame bounds areA=B=1. Two copies of everyh_j scaled by1/√2 give a redundant tight frame with the same bounds. T_g is unitary onL².",
+      "proof": "Direct dot products giveh_iᵀh_j=δ_ij, and four orthonormal vectors spanR⁴. Parseval and reconstruction follow. In the duplicate family each squared coefficient is halved but occurs twice, so their total remains||f||² andS=I; redundancy does not imply unique coefficients. For the pullback, substitute x=g(y) in∫|T_gf(x)|²dx. The inverse Jacobian cancels the change-of-variables Jacobian, leaving∫|f(y)|²dy. A hyperbolic isometry preserves its invariant volume measure and needs no such Euclidean-coordinate correction once that measure is used consistently."
+    },
+    "example": {
+      "setup": "Apply the Haar transform tof=(0,1,2,3).",
+      "calculation": "The coefficients are3,−2,−1/√2,−1/√2; their squared sum is9+4+1/2+1/2=14, equal to||f||². Omitting the scaling on duplicate vectors doubles the frame energy to28 rather than preserving the stated normalization.",
+      "conclusion": "A proposed algorithm now has independent algebraic and geometric checks before performance claims are considered."
+    },
+    "limits": "A finite Haar example does not construct a hyperbolic wavelet frame. Monte Carlo agreement with one signal cannot prove a uniform lower frame bound; a missing lower bound permits unrecoverable modes.",
+    "extension": "For a finite discretization form the analysis matrixΨ and certify eigenvalue bounds forΨ*Ψ. Report discretization and quadrature errors separately from sampling variance and from GPU runtime. For uniform Monte Carlo sampling of this four-point signal, the mean is 3/2 and the population variance is 5/4. An average of m independent samples therefore has variance 5/(4m). This sampling uncertainty is distinct from the exact Parseval identity and does not decrease a deterministic missing-mode reconstruction error.",
+    "references": [
+      {
+        "label": "Ingrid Daubechies Ten Lectures on Wavelets",
+        "url": "https://doi.org/10.1137/1.9781611970104"
+      }
+    ],
+    "original": {
+      "date": "2025-02-17",
+      "month": "2025-02",
+      "evidence": "A",
+      "field": "Numerical harmonic analysis",
+      "concept": "Frame bounds, coordinate changes and sampling errors are separate",
+      "origin": "Recovered dated mathematical topic; newly revised and developed here.",
+      "question": "What finite certificate makes a family a frame, and which correction preserves its norm under a change of coordinates?",
+      "math": "The fourh_j are orthonormal, sof=Σ〈f,h_j〉h_j and the frame bounds areA=B=1. Two copies of everyh_j scaled by1/√2 give a redundant tight frame with the same bounds. T_g is unitary onL².",
+      "finish": "Explicit derivation, worked example and scoped extension",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://doi.org/10.1137/1.9781611970104"
+      ],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c0] A@2025-02-17T10:04:05Z, -1y8m: Proposed hyperbolic wavelets \\(\\psi_{\\lambda,\\xi}\\), frame bounds \\(A\\|f\\|^2\\le\\sum|\\langle f,\\psi_{\\lambda,\\xi}\\rangle|^2\\), Laplacian eigenproblem \\(\\Delta_{\\mathbb H^n}\\phi_k=\\lambda_k\\phi_k\\), \\(f=\\sum c_k\\phi_k\\), and GPU/CUDA algorithms.",
+      "retrieval_receipt": "root_receipts.json record 0",
+      "original_question": null,
+      "attribution_note": "The source is a dated retrieval fragment rather than a complete original transcript. Speaker attribution follows the retrieved tag. The revised question, proof and example are newly authored; no missing historical user wording or proof is invented."
+    }
+  },
+  {
+    "id": "Y25-02-012",
+    "title": "Searching many strategies needs an independent validation contract",
+    "status": "Developed mathematical result with explicit hypotheses and checked example; historical claims repaired where necessary",
+    "summary": "A finite-family concentration bound quantifies selection error under explicit independent bounded-data assumptions. It shows why a best synthetic Sharpe value is not a validated predictive result.",
+    "definitions": [
+      "LetK fixed candidate models have lossesℓ_k(Z)∈[0,1] on independent identically distributed validation observationsZ₁,…,Z_n.",
+      "WriteR_k=Eℓ_k andR̂_k=n⁻¹Σℓ_k(Z_i). The candidates must be fixed independently of this validation sample for the elementary bound.",
+      "The recovered gridj_min,j_max,λ₁,λ₂,Q and500-ms sampling describe a search procedure, not an independence or boundedness theorem for market returns."
+    ],
+    "result": {
+      "name": "Uniform finite-family validation bound",
+      "statement": "With probability at least1−δ, every candidate satisfies|R̂_k−R_k|≤ε=√[log(2K/δ)/(2n)]. The empirically best candidate then has true risk at most2ε above the best candidate’s true risk.",
+      "proof": "Hoeffding’s inequality givesP(|R̂_k−R_k|>ε)≤2e^{−2nε²} for each fixed candidate. A union bound overK candidates gives2Ke^{−2nε²}; setting this equal toδ gives the radius. Ifk̂ minimizes empirical risk andk* minimizes true risk, thenR_k̂≤R̂_k̂+ε≤R̂_k*+ε≤R_k*+2ε. This is a complete selection argument under the assumptions, not an assertion that arbitrary rolling returns satisfy them. Fitting candidates on the same validation sample violates the fixed-family premise unless the entire possible family was already included inK."
+    },
+    "example": {
+      "setup": "TakeK=1000,n=1000,δ=0.05.",
+      "calculation": "The radius is approximately0.07279 and the excess-risk bound approximately0.14558. Increasing the number of searched combinations without more independent observations enlarges the uniform uncertainty. A Sharpe ratio also needs a nonzero variance denominator; a constant positive synthetic return makes its naive ratio undefined or infinite rather than exceptionally certified.",
+      "conclusion": "The revised optimization specifies an out-of-sample inferential guarantee and its limitations."
+    },
+    "limits": "Actual time series can be dependent, nonstationary and heavy-tailed. This result is not financial guidance and does not certify a strategy. Synthetic signals test implementation behavior, not historical market performance.",
+    "extension": "Use a chronological training/validation/test split and an explicit dependence model. Derive a concentration or bootstrap procedure justified for that model and report the complete search family, costs and uncertainty of the final score. Reusing the validation sample adaptively changes the inference problem. A final untouched test set can evaluate the selected model after selection, but its confidence statement then concerns that fixed selected model, not a fresh search over the test data. Repeatedly checking and selecting on the final set destroys this separation.",
+    "references": [
+      {
+        "label": "Wassily Hoeffding Probability inequalities for sums of bounded random variables",
+        "url": "https://doi.org/10.1080/01621459.1963.10500830"
+      }
+    ],
+    "original": {
+      "date": "2025-02-19",
+      "month": "2025-02",
+      "evidence": "U",
+      "field": "Statistical learning",
+      "concept": "Searching many strategies needs an independent validation contract",
+      "origin": "Recovered dated mathematical topic; newly revised and developed here.",
+      "question": "How does optimizing a large parameter grid change the uncertainty of the selected score?",
+      "math": "With probability at least1−δ, every candidate satisfies|R̂_k−R_k|≤ε=√[log(2K/δ)/(2n)]. The empirically best candidate then has true risk at most2ε above the best candidate’s true risk.",
+      "finish": "Explicit derivation, worked example and scoped extension",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://doi.org/10.1080/01621459.1963.10500830"
+      ],
+      "source_excerpt": "- [USER_CONSTRAINT] [c8] U@2025-02-19T03:08:46Z, -1y8m: asked to “Access real data and improve on this” H1–BMO optimization; specified \\(j_{\\min},j_{\\max},\\lambda_1,\\lambda_2,Q\\), fixed \\(\\alpha=1\\), \\(n\\in\\{-5,\\ldots,5\\}\\), 500-ms sampling, grid-search Sharpe maximization, synthetic trend/volatility/noise model, Haar approximation, rolling BMO/H1 measures.",
+      "retrieval_receipt": "root_receipts.json record 0",
+      "original_question": null,
+      "attribution_note": "The source is a dated retrieval fragment rather than a complete original transcript. Speaker attribution follows the retrieved tag. The revised question, proof and example are newly authored; no missing historical user wording or proof is invented."
+    }
+  },
+  {
+    "id": "Y25-02-013",
+    "title": "A categorical equivalence has explicit units and counits",
+    "status": "Developed mathematical result with explicit hypotheses and checked example; historical claims repaired where necessary",
+    "summary": "Matrix Morita equivalence and a finite Frobenius-reciprocity calculation supply complete constructive models. They illustrate categorical language without asserting the recovered broad FLE formula under missing level and support hypotheses.",
+    "definitions": [
+      "LetA=M₂(k),e=E₁₁. For a leftA-moduleM defineF(M)=eM; for a vector spaceV defineG(V)=k²⊗V withA acting onk².",
+      "For finite groupsH⊂G, induction isk[G]⊗_{k[H]}V and restriction forgets part of the group action.",
+      "A claimed equivalence needs functors and natural isomorphismsFG≅Id,GF≅Id, not only a pair of category names."
+    ],
+    "result": {
+      "name": "Explicit Morita inverse and induction adjunction",
+      "statement": "F,G are inverse equivalences. AlsoHom_G(Ind_H^G V,W)≅Hom_H(V,Res W), naturally. ForG=S₃,H=A₃,V=1, the induced representation is1⊕sgn.",
+      "proof": "The mapk²⊗eM→M sendsbasis vector e_i⊗m toE_{i1}m. Its inverse sendsm toΣ_i e_i⊗E_{1i}m. The matrix-unit identities show both composites are identities and that the maps respectA actions. On the other side,e(k²⊗V) identifies directly withV. For Frobenius reciprocity, send aG-linear mapT to theH-linear mapv↦T(1⊗v). Conversely anH-linear mapf definesT(g⊗v)=gf(v); the tensor relation makes this well defined. For the exampleG/H has two cosets, and its permutation representation splits into the constant and alternating lines, giving1⊕sgn."
+    },
+    "example": {
+      "setup": "ApplyMorita equivalence toM=k² andM=k²⊕k².",
+      "calculation": "Their images arek andk², and the inverse tensor construction restores them. The functor preserves multiplicity but changes the presentation of the algebra. The two-coset induced example verifies dimensions and restriction compatibility exactly.",
+      "conclusion": "The mathematical content is now a pair of explicit equivalence/adjunction proofs rather than an unrestricted categorical slogan."
+    },
+    "limits": "This does not prove a critical-level Kac–Moody/oper equivalence. Fundamental local equivalences have precise groups, levels and categories; the recovered formula suppresses data essential in primary statements.",
+    "extension": "For a proposed geometric correspondence, write its actual adjoint functors, units and counits and specify compactness/support conditions. Test their compositions on stated generators before claiming an equivalence of whole categories. The explicit inverse maps also preserve all morphisms, not only dimensions. A linear map eM→eN induces the A-linear map reconstructed by the matrix units, and restricting that reconstruction returns the original map. This full-faithfulness check is essential: two categories can have matching object counts while having different morphism spaces.",
+    "references": [
+      {
+        "label": "Campbell Dhillon and Raskin Fundamental local equivalences",
+        "url": "https://arxiv.org/abs/1907.03204"
+      }
+    ],
+    "original": {
+      "date": "2025-02-22",
+      "month": "2025-02",
+      "evidence": "U",
+      "field": "Category theory and representation theory",
+      "concept": "A categorical equivalence has explicit units and counits",
+      "origin": "Recovered dated mathematical topic; newly revised and developed here.",
+      "question": "What finite example demonstrates the actual data required by a categorical equivalence and induction compatibility?",
+      "math": "F,G are inverse equivalences. AlsoHom_G(Ind_H^G V,W)≅Hom_H(V,Res W), naturally. ForG=S₃,H=A₃,V=1, the induced representation is1⊕sgn.",
+      "finish": "Explicit derivation, worked example and scoped extension",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://arxiv.org/abs/1907.03204"
+      ],
+      "source_excerpt": "- [USER_FACT] [c4] U@2025-02-22T19:41:43Z, -1y8mo: February mathematics included de Rham geometric Langlands, Kac–Moody localization, FLE, monodromy-free opers, Ran-space ind-coherent sheaves, chiral homology, and ∞-categories.",
+      "retrieval_receipt": "root_receipts.json record 0",
+      "original_question": null,
+      "attribution_note": "The source is a dated retrieval fragment rather than a complete original transcript. Speaker attribution follows the retrieved tag. The revised question, proof and example are newly authored; no missing historical user wording or proof is invented."
+    }
+  },
+  {
+    "id": "Y25-02-014",
+    "title": "Monodromy-free means identity, not eigenvalues equal to one",
+    "status": "Developed mathematical result with explicit hypotheses and checked example; historical claims repaired where necessary",
+    "summary": "A constant-potential equation on a periodic parameter has a complete monodromy calculation. The zero-potential case has only eigenvalue one but a nonidentity Jordan block, exposing a condition that spectral eigenvalues alone miss.",
+    "definitions": [
+      "Consider y″=λy over a parameter interval of length one and writev=(y,y′). Thenv′=A_λv withA_λ=[[0,1],[λ,0]].",
+      "The monodromy isM_λ=e^{A_λ}; monodromy-free in this model meansM_λ=I.",
+      "This scalar constant-coefficient test is newly specified; a general oper includes geometric and gauge data not recovered here."
+    ],
+    "result": {
+      "name": "Complete constant-potential monodromy test",
+      "statement": "Forλ=−4π²n² with nonzero integern,M_λ=I. Forλ=0,M₀=[[1,1],[0,1]]≠I although both eigenvalues are one.",
+      "proof": "A_λ²=λI. Ifλ=−ω² withω≠0, the exponential isIcosω+(A_λ/ω)sinω. It is the identity whenω=2πn, giving the stated family. Atλ=0 the square ofA vanishes, so its exponential isI+A, proving the nontrivial unipotent case. For general complexλ≠0, diagonalization gives eigenvaluese^{±√λ}. Both are one only when√λ is a nonzero integer multiple of2πi, in which case the matrix is diagonalizable and isI. The exceptionalλ=0 case is precisely where that diagonalization fails; replacing matrix equality by eigenvalue equality loses it."
+    },
+    "example": {
+      "setup": "Compare initial datav(0)=(0,1) atλ=0 andλ=−4π².",
+      "calculation": "At zero potential,y(t)=t andv(1)=(1,1), so the initial vector is not restored. Atλ=−4π²,y(t)=sin(2πt)/(2π) andv(1)=(0,1), restoring every solution’s data after one period.",
+      "conclusion": "The example supplies an exact monodromy condition rather than a label attached to an unspecified spectral support."
+    },
+    "limits": "It does not classify monodromy-free opers on arbitrary curves or justify the historical categorical equivalence. Gauge, singularity and global-bundle conditions matter.",
+    "extension": "For a piecewise constant potential, multiply the exact transfer matrices and solve the full matrix identityM=I. Compare it withtrM=2, which also admits nontrivial unipotent matrices and is therefore weaker. The determinant of every monodromy matrix in this model is one because tr A_λ=0 and det e^{A_λ}=e^{tr A_λ}. Nevertheless determinant one and trace two do not force identity: the zero-potential Jordan matrix satisfies both. A geometric condition stated through traces alone must therefore address this nonsemisimple exception.",
+    "references": [
+      {
+        "label": "Edward Frenkel Langlands Correspondence for Loop Groups",
+        "url": "https://doi.org/10.1017/CBO9780511543371"
+      }
+    ],
+    "original": {
+      "date": "2025-02-22",
+      "month": "2025-02",
+      "evidence": "A",
+      "field": "Differential equations and opers",
+      "concept": "Monodromy-free means identity, not eigenvalues equal to one",
+      "origin": "Recovered dated mathematical topic; newly revised and developed here.",
+      "question": "Which monodromy condition can be checked for a concrete second-order equation, and why is unipotent monodromy still nontrivial?",
+      "math": "Forλ=−4π²n² with nonzero integern,M_λ=I. Forλ=0,M₀=[[1,1],[0,1]]≠I although both eigenvalues are one.",
+      "finish": "Explicit derivation, worked example and scoped extension",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://doi.org/10.1017/CBO9780511543371"
+      ],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c4] A@2025-02-22T19:42:19Z, -1y8mo: stated FLE equivalence \\(\\mathrm{Mod}_{crit}(\\widehat{\\mathfrak g})\\simeq\\mathrm{IndCoh}_{mon-free}(\\mathrm{Op}_G)\\); parabolic compatibility \\(\\mathcal F\\circ\\mathrm{Ind}_P\\simeq\\mathrm{Ind}_P\\circ\\mathcal F\\); ambidexterity on cuspidals; categorical multiplicity-one.",
+      "retrieval_receipt": "root_receipts.json record 0",
+      "original_question": null,
+      "attribution_note": "The source is a dated retrieval fragment rather than a complete original transcript. Speaker attribution follows the retrieved tag. The revised question, proof and example are newly authored; no missing historical user wording or proof is invented."
+    }
+  },
+  {
+    "id": "Y25-02-015",
+    "title": "A reflection deformation has an explicit polynomial representation",
+    "status": "Developed mathematical result with explicit hypotheses and checked example; historical claims repaired where necessary",
+    "summary": "A rank-one Dunkl operator gives a concrete family satisfying a deformed commutator. The known Hochschild theorem for Weyl crossed products identifies the corresponding degree-two deformation direction.",
+    "definitions": [
+      "OnC[x], letX multiply byx andsf(x)=f(−x). DefineD_κf=f′+κ( f(x)−f(−x))/(2x).",
+      "The quotient is polynomial because the odd part of a polynomial is divisible byx.",
+      "The Weyl algebra convention is[D₀,X]=I. The reflection anticommutes with bothX andD_κ."
+    ],
+    "result": {
+      "name": "Exact deformed Weyl relation",
+      "statement": "[D_κ,X]=I+κs,s²=I,sX=−Xs,sD_κ=−D_κs. For the Weyl algebraA₁ crossed with{±I}, the standard Hochschild theorem givesHH²≅C, not zero.",
+      "proof": "ApplyD_κ tomonomialxⁿ. The result is[n+(κ/2)(1−(−1)ⁿ)]x^{n−1}: even degrees have coefficientn and odd degrees coefficientn+κ. SubtractXD_κxⁿ fromD_κXxⁿ. For evenn the difference is1+κ, and for oddn it is1−κ, exactly(I+κs)xⁿ. Parity reversal of a derivative and of the odd-part quotient gives the anticommutation relations. These formulas prove a consistent represented deformation family. The cited general theorem computesHH^j(A(V)⋊G) by conjugacy classes withrank(g−I)=j for finite symplecticG; in dimension two the identity contributes degree zero and−I contributes degree two. That theorem is background, distinct from the polynomial certificate."
+    },
+    "example": {
+      "setup": "Takeκ=2 and compareD_κ acting onx,x²,x³.",
+      "calculation": "The outputs are3,2x,5x², whereas ordinary differentiation gives1,2x,3x². The commutator on1 is three and onx is−x, agreeing withI+2s. The parameter is not absent from the operator relations.",
+      "conclusion": "This provides constructive deformation data rather than inferring rigidity from an unsupported zero cohomology assertion."
+    },
+    "limits": "The finite checks do not prove the full PBW or universal-deformation theorem. Hochschild rigidity also has no automatic implication for Berry curvature, which belongs to a specified parameterized state bundle.",
+    "extension": "Establish the PBW basisx^a s^εD^b for the abstract algebra using a confluence proof, then classify which parameter values admit finite-dimensional quotients of the polynomial representation. A special value can change the polynomial representation. If κ is a negative odd integer, D_κ annihilates x^{−κ} as well as the constant. This follows immediately from the odd-degree coefficient n+κ and signals an additional singular vector. Such exceptional parameters should be recorded before asserting uniform representation-theoretic behavior.",
+    "references": [
+      {
+        "label": "Georges Pinczon On two theorems about symplectic reflection algebras",
+        "url": "https://arxiv.org/abs/math/0612690"
+      },
+      {
+        "label": "Etingof and Ginzburg Symplectic reflection algebras",
+        "url": "https://arxiv.org/abs/math/0011114"
+      }
+    ],
+    "original": {
+      "date": "2025-02-24",
+      "month": "2025-02",
+      "evidence": "A",
+      "field": "Deformation theory",
+      "concept": "A reflection deformation has an explicit polynomial representation",
+      "origin": "Recovered dated mathematical topic; newly revised and developed here.",
+      "question": "Can a Weyl algebra crossed with a reflection group have a real deformation parameter, contrary to a blanket rigidity claim?",
+      "math": "[D_κ,X]=I+κs,s²=I,sX=−Xs,sD_κ=−D_κs. For the Weyl algebraA₁ crossed with{±I}, the standard Hochschild theorem givesHH²≅C, not zero.",
+      "finish": "Explicit derivation, worked example and scoped extension",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://arxiv.org/abs/math/0612690",
+        "https://arxiv.org/abs/math/0011114"
+      ],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c4] A@2025-02-24T12:26:01Z, -1y8mo: SYMMETRON claims \\(\\mathcal A=A_1(k)\\rtimes G\\), \\(HH^2(\\mathcal A)=0\\) for ADE, Berry curvature vanishing, \\(d_s(E)=4-\\alpha(E/E_P)^\\beta\\operatorname{se",
+      "retrieval_receipt": "root_receipts.json record 0",
+      "original_question": null,
+      "attribution_note": "The source is a dated retrieval fragment rather than a complete original transcript. Speaker attribution follows the retrieved tag. The revised question, proof and example are newly authored; no missing historical user wording or proof is invented."
+    }
+  },
+  {
+    "id": "Y25-02-016",
+    "title": "Berry curvature and a Chern number require a state bundle",
+    "status": "Developed mathematical result with explicit hypotheses and checked example; historical claims repaired where necessary",
+    "summary": "A two-component state over a sphere gives a unit Chern number through a direct patch calculation. The example separates a geometric curvature theorem from unprovided links to phonemes, gravity or algebraic rigidity.",
+    "definitions": [
+      "On a northern chart ofS² useu(θ,φ)=(cos(θ/2),e^{iφ}sin(θ/2)), withu†u=1.",
+      "Use Berry connectionA=−iu†du and curvatureF=dA. The first Chern number in this convention is(2π)⁻¹∫F.",
+      "Changing the local state by a phase changesA by an exact local differential and leavesF unchanged. A single chart need not extend over both poles."
+    ],
+    "result": {
+      "name": "Explicit Chern-one line bundle",
+      "statement": "A=sin²(θ/2)dφ,F=(1/2)sinθ dθ∧dφ, and(2π)⁻¹∫_{S²}F=1. No globally smooth one-formA onS² can have this curvature.",
+      "proof": "Differentiateu and take its inner product withu. Theθ contributions cancel and theφ contribution isi sin²(θ/2)dφ, givingA. Differentiation givesF. Integratingφ from zero to2π andθ from zero toπ yields2π. IfF=dA for a single smooth globalA, Stokes’ theorem on the closed sphere would force the integral to zero, a contradiction. The state therefore needs at least two phase charts. Multiplyingu bye^{−iφ} gives a southern choice whose potential differs by−dφ, encoding a winding-one transition. This is the local-to-global mechanism behind the integer, not an assumed physical protection law."
+    },
+    "example": {
+      "setup": "Compare the complete sphere with a contractible small patch.",
+      "calculation": "On a patch the sameF is exact by the displayed potential, so no local calculation alone detects the global obstruction. The full integral distinguishes the bundle. For an abelian four-dimensional potential, d(A∧dA)=F∧F; that differential identity is separate from whether a normalized integral is an integer on a closed manifold.",
+      "conclusion": "Connection, gauge changes, curvature and global topology are all explicit."
+    },
+    "limits": "An arbitrary integral ofTr exp(iF/2π) needs degree selection and bundle/normalization hypotheses before it is a Chern number. No claimed vanishing follows from a separate algebra’sHH², and no material or neural effect is derived.",
+    "extension": "For a supplied smooth family of gapped Hermitian matrices, compute its eigenprojectorP and Berry curvature fromP dP∧dP. Track gap closing separately, since the bundle can cease to be defined there.",
+    "references": [
+      {
+        "label": "Michael Berry Quantal phase factors accompanying adiabatic changes",
+        "url": "https://doi.org/10.1098/rspa.1984.0023"
+      }
+    ],
+    "original": {
+      "date": "2025-02-01",
+      "month": "2025-02",
+      "evidence": "U",
+      "field": "Differential geometry",
+      "concept": "Berry curvature and a Chern number require a state bundle",
+      "origin": "Recovered dated mathematical topic; newly revised and developed here.",
+      "question": "Which explicitly defined connection produces a nonzero topological invariant, and what normalization makes the integral an integer?",
+      "math": "A=sin²(θ/2)dφ,F=(1/2)sinθ dθ∧dφ, and(2π)⁻¹∫_{S²}F=1. No globally smooth one-formA onS² can have this curvature.",
+      "finish": "Explicit derivation, worked example and scoped extension",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://doi.org/10.1098/rspa.1984.0023"
+      ],
+      "source_excerpt": "- [USER_FACT] [c6] U@2025-02-01T19:32:52Z, -1y8m: February 1 cluster centers on phonemes as quantum numbers/operators, modular-tensor braiding, stress/Chern invariants, extended Chern–Simons action, vortices, winding \\(n=(2\\pi)^{-1}\\oint\\nabla\\theta\\cdot dl\\), Chern numbers, and speculative gravitational-wave/material/neural signatures.",
+      "retrieval_receipt": "root_receipts.json record 0",
+      "original_question": null,
+      "attribution_note": "The source is a dated retrieval fragment rather than a complete original transcript. Speaker attribution follows the retrieved tag. The revised question, proof and example are newly authored; no missing historical user wording or proof is invented."
+    }
+  },
+  {
+    "id": "Y25-02-017",
+    "title": "Heat dimension and summability are definitions with calculable limits",
+    "status": "Developed mathematical result with explicit hypotheses and checked example; historical claims repaired where necessary",
+    "summary": "A four-cycle gives an exact scale-dependent heat dimension. A separate diagonal model shows that compact resolvent and finite heat trace do not imply finite-power zeta summability.",
+    "definitions": [
+      "For the four-cycle graph Laplacian eigenvalues are0,2,2,4. SetP(t)=Tr(e^{−tL})/4 andd_s(t)=−2dlogP/dlogt.",
+      "For a diagonal positive operatorD with eigenvaluen of multiplicityd_n=ceil(e^{√n}), each eigenspace is finite dimensional.",
+      "A spectral-triple claim needs a represented algebra, a self-adjointD, compact resolvent and bounded commutators; its summability properties require additional estimates."
+    ],
+    "result": {
+      "name": "Exact heat dimension and a summability distinction",
+      "statement": "For the cycle,P(t)=(1+e^{−2t})²/4 andd_s(t)=8t/(e^{2t}+1), tending to zero at both ends. The diagonalD has compact resolvent andTr(e^{−tD})<∞ for everyt>0, butTr(D^{−p})=∞ for every finitep>0.",
+      "proof": "Sum the four heat eigenvalues and differentiate the logarithm to obtain the first formula. At smallt the numerator tends to zero; at larget exponential growth in the denominator dominates. ForD, eigenvalues tend to infinity with finite multiplicity, so the resolvent eigenvalues tend to zero and finite-rank truncations converge in norm. For fixedt>0,√n≤tn/2 for all sufficiently largen, givingd_ne^{−tn}≤2e^{−tn/2}, a convergent tail. Butd_n n^{−p} does not even tend to zero, so the power trace diverges. This example distinguishesθ-summability from finitep-summability without requiring a conjectural Monster spectrum."
+    },
+    "example": {
+      "setup": "Evaluate the cycle dimension att=1/2.",
+      "calculation": "It equals4/(e+1), approximately1.07577, while its large-time limit is zero because the constant zero mode dominates. A single reported dimension value therefore needs its scale, trace normalization and zero-mode convention.",
+      "conclusion": "The result provides analytic tests for a proposed spectral construction instead of treating a named algebra and a formalD as sufficient."
+    },
+    "limits": "The model multiplicities are newly chosen and are not claimed to be the exact gradedMonster dimensions. A termlogL₀ is undefined on a zero eigenspace unless its domain or regularization is specified.",
+    "extension": "For a supplied graded multiplicity sequence, prove asymptotic bounds strong enough to determine heat and zeta convergence. Then check commutator domains and the actual spectral-action expansion before assigning physical constants. For the finite graph, removing the constant mode changes the large-time behavior completely: the remaining normalized heat trace decays as e^{−2t}, so its logarithmic derivative grows linearly in t rather than tending to zero. Zero-mode subtraction is therefore a definition-changing choice, not a harmless numerical cleanup.",
+    "references": [
+      {
+        "label": "Alain Connes Noncommutative Geometry",
+        "url": "https://alainconnes.org/wp-content/uploads/book94bigpdf.pdf"
+      }
+    ],
+    "original": {
+      "date": "2025-02-25",
+      "month": "2025-02",
+      "evidence": "A",
+      "field": "Spectral geometry",
+      "concept": "Heat dimension and summability are definitions with calculable limits",
+      "origin": "Recovered dated mathematical topic; newly revised and developed here.",
+      "question": "What does a heat trace measure in a finite model, and which analytic conditions are needed before a proposed operator is a spectral triple?",
+      "math": "For the cycle,P(t)=(1+e^{−2t})²/4 andd_s(t)=8t/(e^{2t}+1), tending to zero at both ends. The diagonalD has compact resolvent andTr(e^{−tD})<∞ for everyt>0, butTr(D^{−p})=∞ for every finitep>0.",
+      "finish": "Explicit derivation, worked example and scoped extension",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://alainconnes.org/wp-content/uploads/book94bigpdf.pdf"
+      ],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c5] A@2025-02-25T11:07:56Z, -1y7m: purported “rigorous” Monster spectral triple: \\(\\mathcal A=\\mathbb C[\\mathbb M]\\rtimes\\mathfrak h\\), \\(\\mathcal H=L^2(V^\\natural)=\\bigoplus V_n^\\natural\\), \\(D=L(0)-c/24+\\sum_g\\gamma_gT_g+\\kappa\\log L(0)\\); claimed Chern character, spectral action, and \\",
+      "retrieval_receipt": "root_receipts.json record 0",
+      "original_question": null,
+      "attribution_note": "The source is a dated retrieval fragment rather than a complete original transcript. Speaker attribution follows the retrieved tag. The revised question, proof and example are newly authored; no missing historical user wording or proof is invented."
+    }
+  },
+  {
+    "id": "Y25-02-018",
+    "title": "A logarithmic L-derivative has a pole at a zero",
+    "status": "Developed mathematical result with explicit hypotheses and checked example; historical claims repaired where necessary",
+    "summary": "A local factorization completely determines the singular part of a logarithmic derivative. It supplies a concrete analytic boundary to parameter formulas whose underlyingL-function, normalization or nonvanishing was not supplied.",
+    "definitions": [
+      "LetL be holomorphic near s₀, not identically zero, with a zero of orderm≥0 there. ThenL(s)=(s−s₀)^m g(s),g(s₀)≠0.",
+      "A valueL′(s₀)/L(s₀) is an ordinary finite quotient only whenm=0.",
+      "A numerical expressionL(E,1),L(f,3/2) orL′(g,1)/L(g,1) must identify the curve/form, analytic normalization, conductor and required continuation."
+    ],
+    "result": {
+      "name": "Exact local logarithmic-derivative decomposition",
+      "statement": "L′(s)/L(s)=m/(s−s₀)+g′(s)/g(s). Thus a positive-order zero produces a simple pole with residuem, and multiplyingL by a nonzero constant does not change its logarithmic derivative.",
+      "proof": "Differentiate the product factorization and divide away froms₀. The quotient splits into the displayed terms. Sinceg is nonzero nearby,g′/g is holomorphic there. MultiplyingL byc≠0 cancels inL′/L, but multiplying it by an exponential e^{as} adds a. Therefore completed versus uncompletedL-functions can have different logarithmic derivatives even when they encode related arithmetic. Their gamma and conductor factors cannot be omitted from a numerical identification. For a contour enclosing onlys₀, integration gives(2πi)⁻¹∮L′/L=m, directly counting the zero order."
+    },
+    "example": {
+      "setup": "TakeL(s)=(s−1)²e^{3s}.",
+      "calculation": "Its logarithmic derivative is2/(s−1)+3 and has no finite value ats=1. MultiplyingL by seven leaves that derivative unchanged; replacing it bye^{−s}L changes the constant term from three to two. These exact examples separate scaling invariance from normalization sensitivity.",
+      "conclusion": "An arithmetic parameter formula now has a specific well-definedness and verification contract."
+    },
+    "limits": "No source-defined curve or modular form was recovered for the historicalα,β,κ constants, so their asserted decimal values are not newly certified. The analytic lemma does not prove their conjectural physical interpretation.",
+    "extension": "Supply the exact arithmetic object and completed-function convention, certify nonvanishing at the evaluation point and bound truncation/continuation error. If the point is a zero, use a stated regularized coefficient after subtracting the pole rather than an undefined quotient. The residue is stable under multiplication by any holomorphic nonvanishing factor because that factor contributes only a holomorphic logarithmic derivative. This makes zero order an invariant local quantity while the regular finite term remains normalization dependent. A proposed constant should specify which of those two pieces it intends to use.",
+    "references": [
+      {
+        "label": "NIST DLMF Zeta and Related Functions",
+        "url": "https://dlmf.nist.gov/25"
+      }
+    ],
+    "original": {
+      "date": "2025-02-25",
+      "month": "2025-02",
+      "evidence": "A",
+      "field": "Complex analysis",
+      "concept": "A logarithmic L-derivative has a pole at a zero",
+      "origin": "Recovered dated mathematical topic; newly revised and developed here.",
+      "question": "What data make anL-value constant well defined, and what happens toL′/L when the proposed evaluation point is a zero?",
+      "math": "L′(s)/L(s)=m/(s−s₀)+g′(s)/g(s). Thus a positive-order zero produces a simple pole with residuem, and multiplyingL by a nonzero constant does not change its logarithmic derivative.",
+      "finish": "Explicit derivation, worked example and scoped extension",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://dlmf.nist.gov/25"
+      ],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c5] A@2025-02-25T08:56:50Z, -1y7m: SYMMETRON essay asserted \\(\\alpha=L(E,1)/(2\\pi)\\approx0.0333996828\\), \\(\\beta=L(f,3/2)/\\pi^{3/2}\\approx0.67320508\\), \\(\\kappa=L'(g,1)/L(g,1)\\approx1.9236068\\), \\(C\\approx7042.25\\), with formulas for \\(g(E)\\), \\(\\rho_{\\rm EP}\\), \\(\\Lambda\\sim E_P^4/C\\), entropy, code \\([[196884,24,\\sqrt C]]\\), and Modular SYMMETRON relation.",
+      "retrieval_receipt": "root_receipts.json record 0",
+      "original_question": null,
+      "attribution_note": "The source is a dated retrieval fragment rather than a complete original transcript. Speaker attribution follows the retrieved tag. The revised question, proof and example are newly authored; no missing historical user wording or proof is invented."
+    }
+  },
+  {
+    "id": "Y25-02-019",
+    "title": "A repetition code corrects specified flips but has quantum distance one",
+    "status": "Developed mathematical result with explicit hypotheses and checked example; historical claims repaired where necessary",
+    "summary": "The three-qubit repetition subspace corrects any single bit flip, but it does not correct a single phase flip and has quantum distance one. The exact distinction prevents classical redundancy from being reported as universal quantum protection.",
+    "definitions": [
+      "LetC=span{|000⟩,|111⟩}, with projectorP. Consider errorsE={I,X₁,X₂,X₃}.",
+      "Knill–Laflamme requiresPE_a†E_bP=c_abP for the declared correctable error family.",
+      "A stabilizer code distance is the minimum integer weight of a nontrivial logical Pauli operator; it is not an arbitrary real expression√C."
+    ],
+    "result": {
+      "name": "Exact correction and exact uncorrectable error",
+      "statement": "For the four bit-flip errors,PE_a†E_bP=δ_abP, so they are jointly correctable. ButPZ₁P acts as logicaldiag(1,−1), not a scalar. Hence the code has parameters[[3,1,1]], despite its classical bit-flip distance three.",
+      "proof": "Ifa=b, the error product isI and the condition givesP. Ifa≠b, the product flips one or two distinct bits. Applied to either codeword it lands in a basis state orthogonal to both codewords, making the projected product zero. The four resulting error subspaces are mutually orthogonal and fill the eight-dimensional ambient space; measuring their syndrome and undoing the indicated flip gives recovery. A phase flipZ₁ leaves the basis strings in place but reverses the phase of|111⟩, so its restriction is a nontrivial logicalZ. This weight-one logical operator proves distance one. The distinction follows from the actual error action, not a code-size analogy."
+    },
+    "example": {
+      "setup": "ApplyX₂ andZ₁ separately to(|000⟩+|111⟩)/√2.",
+      "calculation": "X₂ gives(|010⟩+|101⟩)/√2 in a recognizable orthogonal syndrome subspace and is reversed byX₂. Z₁ gives(|000⟩−|111⟩)/√2 inside the original codespace, changing its encoded state while leaving the bit-flip syndrome trivial.",
+      "conclusion": "A code claim is now tied to an encoding and a checked error family."
+    },
+    "limits": "The source’s large parameter expression[[196884,24,√C]] does not provide an encoding, integer distance or recovery theorem. The quantum Singleton bound is a necessary parameter check, not an existence proof.",
+    "extension": "Construct a code correcting bothX andZ errors and verify all pairwise Knill–Laflamme products. Report the resulting integer distance and logical channel under a specified noisy recovery circuit.",
+    "references": [
+      {
+        "label": "Knill and Laflamme Theory of quantum error-correcting codes",
+        "url": "https://arxiv.org/abs/quant-ph/9604034"
+      }
+    ],
+    "original": {
+      "date": "2025-02-25",
+      "month": "2025-02",
+      "evidence": "A",
+      "field": "Quantum error correction",
+      "concept": "A repetition code corrects specified flips but has quantum distance one",
+      "origin": "Recovered dated mathematical topic; newly revised and developed here.",
+      "question": "Which error family is corrected by an explicit code, and why must code distance be an integer rather than a fitted real constant?",
+      "math": "For the four bit-flip errors,PE_a†E_bP=δ_abP, so they are jointly correctable. ButPZ₁P acts as logicaldiag(1,−1), not a scalar. Hence the code has parameters[[3,1,1]], despite its classical bit-flip distance three.",
+      "finish": "Explicit derivation, worked example and scoped extension",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://arxiv.org/abs/quant-ph/9604034"
+      ],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c5] A@2025-02-25T08:56:50Z, -1y7m: SYMMETRON essay asserted \\(\\alpha=L(E,1)/(2\\pi)\\approx0.0333996828\\), \\(\\beta=L(f,3/2)/\\pi^{3/2}\\approx0.67320508\\), \\(\\kappa=L'(g,1)/L(g,1)\\approx1.9236068\\), \\(C\\approx7042.25\\), with formulas for \\(g(E)\\), \\(\\rho_{\\rm EP}\\), \\(\\Lambda\\sim E_P^4/C\\), entropy, code \\([[196884,24,\\sqrt C]]\\), and Modular SYMMETRON relation.",
+      "retrieval_receipt": "root_receipts.json record 0",
+      "original_question": null,
+      "attribution_note": "The source is a dated retrieval fragment rather than a complete original transcript. Speaker attribution follows the retrieved tag. The revised question, proof and example are newly authored; no missing historical user wording or proof is invented."
+    }
+  },
+  {
+    "id": "Y25-02-020",
+    "title": "Descent and factorization need the actual diagram",
+    "status": "Developed mathematical result with explicit hypotheses and checked example; historical claims repaired where necessary",
+    "summary": "Functions on a finite cover satisfy an explicit equalizer formula. A circle’s algebraic factorization example leads toHH₀(A)=A/[A,A], which is calculable and different from merely naming a colimit.",
+    "definitions": [
+      "For a finite setU, letF(U)=k^U with restriction maps. A coverU=U₁∪U₂ produces the equalizer ofF(U₁)⊕F(U₂)⇉F(U₁∩U₂).",
+      "For an associative algebraA, the first Hochschild boundary isb(a⊗b)=ab−ba, soHH₀(A)=A/span{ab−ba}.",
+      "The general identification of factorization homology of a circle with Hochschild homology is background; the finite quotient below is proved directly."
+    ],
+    "result": {
+      "name": "Explicit gluing and trace quotient",
+      "statement": "Compatible functions onU₁,U₂ glue uniquely. ForA=M₂(k) in characteristic zero,HH₀(A) is one-dimensional and is detected by trace.",
+      "proof": "Define the glued function atx by either local value. Compatibility on the overlap makes it well defined, and every point lies in one cover member, proving uniqueness. Thus the equalizer is genuinely isomorphic tok^U. For matrices, every commutator has trace zero by cyclicity. Conversely the traceless basisE₁₂,E₂₁,E₁₁−E₂₂ consists of commutators[E₁₁,E₁₂],[E₂₂,E₂₁],[E₁₂,E₂₁]. Hence the commutator span is exactly the three-dimensional trace-zero subspace, and the quotient has dimension one. These are complete finite computations of two categorical constructions with all maps supplied."
+    },
+    "example": {
+      "setup": "UseU={1,2,3},U₁={1,2},U₂={2,3}.",
+      "calculation": "Local pairs(a,b) and(c,d) glue precisely whenb=c, giving the global triple(a,b,d). For matricesdiag(2,−2) vanishes inHH₀, whileI represents a nonzero class because its trace is two.",
+      "conclusion": "A limit or colimit notation becomes mathematical content only after its indexing category and maps are fixed."
+    },
+    "limits": "IncludingU itself as a terminal test object can make an unrestricted formulaF(U)=lim_{V→U}F(V) tautological rather than a descent theorem. The higher factorization-homology construction needs its algebraic and geometric hypotheses.",
+    "extension": "Specify a cover or disk-indexing diagram, construct its maps and compare the resulting derived limit/colimit with the intended object. Compute higher homology rather than identifying a single vector space with an entire persistence module. For a commutative algebra, every commutator is zero and HH₀(A)=A itself; for k×k it has dimension two. Thus replacing M₂(k) by an algebra with the same number of displayed matrix entries or a different decomposition can change the quotient. Algebra multiplication, not vector-space size alone, determines this invariant.",
+    "references": [
+      {
+        "label": "Loday Cyclic Homology",
+        "url": "https://doi.org/10.1007/978-3-662-11389-9"
+      }
+    ],
+    "original": {
+      "date": "2025-02-27",
+      "month": "2025-02",
+      "evidence": "A",
+      "field": "Sheaves and homological algebra",
+      "concept": "Descent and factorization need the actual diagram",
+      "origin": "Recovered dated mathematical topic; newly revised and developed here.",
+      "question": "What finite gluing diagram and algebraic quotient illustrate the limit and colimit constructions being invoked?",
+      "math": "Compatible functions onU₁,U₂ glue uniquely. ForA=M₂(k) in characteristic zero,HH₀(A) is one-dimensional and is detected by trace.",
+      "finish": "Explicit derivation, worked example and scoped extension",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://doi.org/10.1007/978-3-662-11389-9"
+      ],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c7] A@2025-02-27T15:12:04Z, -601d: Core mathematical claims included \\(F(U)\\simeq\\varprojlim_{V\\to U}F(V)\\), factorization homology \\(\\int_M\\mathcal A=\\mathrm{colim}_{U\\in\\mathrm{Disk}(M)}\\mathcal A(U)\\), persistent homology \\(H_n(X)\\cong\\bigoplus_{[b,d)\\in\\mathrm{Dgm}_n(X)}\\mathbb F[b,d)\\), CPTP updates \\(\\rho_{t+1}=E(\\rho_t)\\), and 95% “operational coherence.”",
+      "retrieval_receipt": "root_receipts.json record 0",
+      "original_question": null,
+      "attribution_note": "The source is a dated retrieval fragment rather than a complete original transcript. Speaker attribution follows the retrieved tag. The revised question, proof and example are newly authored; no missing historical user wording or proof is invented."
+    }
+  },
+  {
+    "id": "Y25-02-021",
+    "title": "A CPTP update gives a quantitative mixing law",
+    "status": "Developed mathematical result with explicit hypotheses and checked example; historical claims repaired where necessary",
+    "summary": "The qubit depolarizing channel has an exact Kraus certificate and contraction factor. Trace preservation does not mean preservation of an input’s off-diagonal information or a claimed operational-coherence percentage.",
+    "definitions": [
+      "For0≤p≤1 defineE_p(ρ)=(1−p)ρ+pI/2 on trace-one qubit matrices.",
+      "A Kraus representationE(ρ)=ΣK_jρK_j† is completely positive, andΣK_j†K_j=I gives trace preservation.",
+      "Trace distance isD(ρ,σ)=||ρ−σ||₁/2. Writeρ=(I+r·σ)/2 in Bloch coordinates."
+    ],
+    "result": {
+      "name": "Exact depolarizing contraction",
+      "statement": "Kraus operators are√(1−3p/4)I and√(p/4)X,Y,Z. The channel sendsr to(1−p)r and satisfiesD(E_p^nρ,E_p^nσ)=(1−p)^nD(ρ,σ).",
+      "proof": "The identityXρX+YρY+ZρZ=2Tr(ρ)I−ρ follows by expandingρ in the Pauli basis. Substituting the four Kraus terms gives(1−p)ρ+pI/2, and their squared coefficients sum to one, proving the channel properties. On a difference of two states the identity term cancels, soE_p(ρ−σ)=(1−p)(ρ−σ). Homogeneity of the trace norm proves the exact distance formula, with iteration giving its power. This is stronger and more specific than saying the update is coherent: it quantifies the information that is intentionally lost."
+    },
+    "example": {
+      "setup": "Takep=1/5,ρ=|0⟩⟨0|,σ=|1⟩⟨1| andn=5.",
+      "calculation": "Their initial trace distance is one; after five updates it is(4/5)^5=1024/3125≈0.32768. Each state approachesI/2. Off-diagonal input entries shrink by the same factor, so no nontrivial qubit coherence is exactly protected by this channel.",
+      "conclusion": "The update’s positivity, normalization and observability behavior have independent exact certificates."
+    },
+    "limits": "A genericCPTP map need not have this contraction rate or a unique stationary state. The historical95% phrase has no mathematical meaning until its observable, norm, sample and confidence rule are defined.",
+    "extension": "For a specified multi-qubit channel, determine its fixed-point algebra and peripheral spectrum. State which information is recoverable by an encoding and recovery map rather than equating complete positivity with error correction. At p=0 every state is fixed and there is no mixing. At p=1 every input becomes I/2 in one step. For 0<p≤1 the fixed state is unique because a fixed Bloch vector must satisfy r=(1−p)r. These endpoint and uniqueness cases are part of the exact channel theorem.",
+    "references": [
+      {
+        "label": "John Watrous The Theory of Quantum Information",
+        "url": "https://cs.uwaterloo.ca/~watrous/TQI/"
+      }
+    ],
+    "original": {
+      "date": "2025-02-27",
+      "month": "2025-02",
+      "evidence": "A",
+      "field": "Quantum channels",
+      "concept": "A CPTP update gives a quantitative mixing law",
+      "origin": "Recovered dated mathematical topic; newly revised and developed here.",
+      "question": "What does a specified completely positive update actually preserve, and which coherence decays under repetition?",
+      "math": "Kraus operators are√(1−3p/4)I and√(p/4)X,Y,Z. The channel sendsr to(1−p)r and satisfiesD(E_p^nρ,E_p^nσ)=(1−p)^nD(ρ,σ).",
+      "finish": "Explicit derivation, worked example and scoped extension",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://cs.uwaterloo.ca/~watrous/TQI/"
+      ],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c7] A@2025-02-27T15:12:04Z, -601d: Core mathematical claims included \\(F(U)\\simeq\\varprojlim_{V\\to U}F(V)\\), factorization homology \\(\\int_M\\mathcal A=\\mathrm{colim}_{U\\in\\mathrm{Disk}(M)}\\mathcal A(U)\\), persistent homology \\(H_n(X)\\cong\\bigoplus_{[b,d)\\in\\mathrm{Dgm}_n(X)}\\mathbb F[b,d)\\), CPTP updates \\(\\rho_{t+1}=E(\\rho_t)\\), and 95% “operational coherence.”",
+      "retrieval_receipt": "root_receipts.json record 0",
+      "original_question": null,
+      "attribution_note": "The source is a dated retrieval fragment rather than a complete original transcript. Speaker attribution follows the retrieved tag. The revised question, proof and example are newly authored; no missing historical user wording or proof is invented."
+    }
+  },
+  {
+    "id": "Y25-02-022",
+    "title": "Creation operators and Boolean cumulants have distinct finite tests",
+    "status": "Developed mathematical result with explicit hypotheses and checked example; historical claims repaired where necessary",
+    "summary": "Prefix creation on word space satisfies Cuntz–Toeplitz relations with a vacuum defect. Separately, the Boolean moment–cumulant recursion makes a symmetric two-point law Gaussian in the Boolean sense, unlike the classical Gaussian.",
+    "definitions": [
+      "Let the full word Hilbert space have orthonormal basis|w⟩ over finite words in two letters, including the empty vacuum. DefineL_i|w⟩=|iw⟩.",
+      "Boolean cumulantsb_n satisfy m₀=1 andm_n=Σ_{j=1}ⁿb_jm_{n−j}, equivalent to summing products over interval partitions.",
+      "These constructions require stated notions of independence; a word such as Itô does not transfer classical stochastic rules to a different probability theory."
+    ],
+    "result": {
+      "name": "Vacuum defect and exact Boolean cumulants",
+      "statement": "L_i*L_j=δ_ijI andΣ_iL_iL_i*=I−P_vac. For a symmetric variableX=±1,m_{2n}=1,m_{2n+1}=0 and its only nonzero Boolean cumulant isb₂=1.",
+      "proof": "Removing the first letter undoes prefixing when the letters agree and kills it otherwise, proving the first relation. Every nonempty word begins with exactly one letter, while the vacuum lies in neither range, proving the defect formula. In a finite-dimensional space two exact isometries with orthogonal ranges cannot both exist: their ranges would each have the full ambient dimension. Finite truncations therefore add boundary defects. For cumulants, the moment series isM(z)=1/(1−z²). The recursion impliesM=1+B M, soB=1−1/M=z². Thus onlyb₂ survives. This does not give the classical Gaussian, whose fourth moment is three; the two-point law has fourth moment one."
+    },
+    "example": {
+      "setup": "Inspect words of length at most two and compute the first six moments.",
+      "calculation": "There are1+2+4=7 basis words. Prefixing and truncating annihilates length-two inputs, so its adjoint-product is notI on that top layer. The moment sequence is1,0,1,0,1,0,1; interval-pairing recursion reproduces it exactly.",
+      "conclusion": "The result supplies concrete algebra and probability instead of treating advanced operator names as interchangeable."
+    },
+    "limits": "It does not construct a Cuntz–Pimsner market model or a Boolean stochastic differential equation. A stochastic integral and its Itô rule need their own Fock-space and adaptedness definitions.",
+    "extension": "State a correspondence and coefficient algebra for a genuine Cuntz–Pimsner construction. For Boolean dynamics, build a process with specified increment independence and derive its integral isometry before claiming a stochastic calculus.",
+    "references": [
+      {
+        "label": "Speicher and Woroudi Boolean convolution",
+        "url": "https://www.ams.org/books/fic/012/"
+      }
+    ],
+    "original": {
+      "date": "2025-02-19",
+      "month": "2025-02",
+      "evidence": "A",
+      "field": "Operator probability",
+      "concept": "Creation operators and Boolean cumulants have distinct finite tests",
+      "origin": "Recovered dated mathematical topic; newly revised and developed here.",
+      "question": "Which exact identities distinguish a creation algebra from a finite matrix approximation, and what does a Boolean Gaussian actually mean?",
+      "math": "L_i*L_j=δ_ijI andΣ_iL_iL_i*=I−P_vac. For a symmetric variableX=±1,m_{2n}=1,m_{2n+1}=0 and its only nonzero Boolean cumulant isb₂=1.",
+      "finish": "Explicit derivation, worked example and scoped extension",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://www.ams.org/books/fic/012/"
+      ],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c1] A@2025-02-19T09:40:30Z, -1y8m: Later assistant output asserted Cuntz–Pimsner algebras, quasi-free states, Bogoliubov transformations, Boolean stochastic calculus/Itô formula, renormalization-group market modeling, K-theory/persistent homology, and quantum ML/QGANs; no detailed formulas or hypotheses were provided.",
+      "retrieval_receipt": "root_followups.json record 0",
+      "original_question": null,
+      "attribution_note": "The source is a dated retrieval fragment rather than a complete original transcript. Speaker attribution follows the retrieved tag. The revised question, proof and example are newly authored; no missing historical user wording or proof is invented."
+    }
+  },
+  {
+    "id": "Y25-02-023",
+    "title": "Parity observations alone do not certify quantum coherence",
+    "status": "Developed mathematical result with explicit hypotheses and checked example; historical claims repaired where necessary",
+    "summary": "An uploaded external discussion questioned the strength of topological-qubit evidence. A finite two-qubit calculation gives the relevant identifiability principle without attributing that external discussion to the user or adjudicating device claims.",
+    "definitions": [
+      "Letρ_B=|Φ⁺⟩⟨Φ⁺| with|Φ⁺⟩=(|00⟩+|11⟩)/√2, andρ_M=(|00⟩⟨00|+|11⟩⟨11|)/2.",
+      "Computational-basis measurements andZZ parity are diagonal in the same basis. A coherence witness can be off diagonal, such asX⊗X.",
+      "The source is uploaded external text with its own February2025discussion dates; no date of a user conversation about it is recovered."
+    ],
+    "result": {
+      "name": "An exact observational collision",
+      "statement": "ρ_B andρ_M have identical computational-basis probabilities, identical one-qubit marginalsI/2 andZZ expectation one. ButTr(ρ_B XX)=1 andTr(ρ_M XX)=0, and their trace distance is1/2.",
+      "proof": "Both states place probability one half on00 and11 and zero elsewhere. Every diagonal observable therefore has the same expectation. Partial trace removes the Bell cross terms, leaving the same marginalI/2. The operatorXX exchanges00 and11, so its expectation is the sum of those cross terms: one for the Bell state and zero for the mixture. Their difference is( |00⟩⟨11|+|11⟩⟨00| )/2, whose nonzero eigenvalues are±1/2. Its trace norm is one, giving distance one half. This proves that one class of observations can agree exactly while a different observable resolves the states."
+    },
+    "example": {
+      "setup": "Use an equal mixture of the two states as a third candidate.",
+      "calculation": "It retains every stated diagonal statistic but hasXX expectation1/2. In fact the entire familyρ(q) with coherenceq/2,0≤q≤1, shares those diagonal observations whileXX readsq. Repeating only the diagonal measurements at greater precision cannot identifyq.",
+      "conclusion": "The mathematical issue is observation sufficiency, not merely the number of measurements."
+    },
+    "limits": "This example makes no factual claim about Microsoft hardware or Majorana modes. Topological invariants, lifetimes, coherent control and error rates require different defined observations and models.",
+    "extension": "Specify a measurement family and compute the kernel of its linear map on Hermitian matrices. Add observables until the targeted parameter is identifiable, then derive finite-sample confidence bounds for those observables.",
+    "references": [
+      {
+        "label": "John Watrous The Theory of Quantum Information",
+        "url": "https://cs.uwaterloo.ca/~watrous/TQI/"
+      }
+    ],
+    "original": {
+      "date": null,
+      "month": "2025-02",
+      "evidence": "T",
+      "field": "Quantum information and identifiability",
+      "concept": "Parity observations alone do not certify quantum coherence",
+      "origin": "Uploaded external February2025topological-qubit discussion; its participants and quoted questions are not attributed to the user.",
+      "question": "Which distinct states have identical parity observations, and what additional observable can distinguish their coherence?",
+      "math": "ρ_B andρ_M have identical computational-basis probabilities, identical one-qubit marginalsI/2 andZZ expectation one. ButTr(ρ_B XX)=1 andTr(ρ_M XX)=0, and their trace distance is1/2.",
+      "finish": "Explicit derivation, worked example and scoped extension",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://cs.uwaterloo.ca/~watrous/TQI/"
+      ],
+      "source_excerpt": "- [FILE_CONTENT] [f0] **February 20, 2025 — Microsoft topological-qubit/MZM claims:** Original questions challenged whether a qubit existed without reported coherence times/gate fidelities. The Nature paper reportedly says, “These measurements do not, by themselves, determine whether the low-energy states detected by interferometry are topological,” while an editorial note says the work “do[es] not represent evidence for the presence of Majorana zero modes.” Scott distinguished the press-release claim from the paper and said the review process had neither accepted nor rejected it. fileciteturn7file4L1-L12",
+      "retrieval_receipt": "root_receipts.json record 0",
+      "original_question": null,
+      "attribution_note": "The source is a dated retrieval fragment rather than a complete original transcript. Speaker attribution follows the retrieved tag. The revised question, proof and example are newly authored; no missing historical user wording or proof is invented."
+    }
+  },
+  {
+    "id": "Y25-02-024",
+    "title": "Pentagon consistency is a path identity with a norm error bound",
+    "status": "Developed mathematical result with explicit hypotheses and checked example; historical claims repaired where necessary",
+    "summary": "For ordinary vector-space tensor products the five parenthesizations are canonically identified and the pentagon commutes exactly. Approximate unitary identifications accumulate error according to a stated norm, not an undefined coherence percentage.",
+    "definitions": [
+      "The five parenthesizations of four ordered factors are(((AB)C)D),((A(BC))D),A((BC)D),A(B(CD)),(AB)(CD).",
+      "Each associator sends a pure tensor to the same ordered four-tuple of entries, changing only brackets.",
+      "For intended unitary mapsU_j and implemented unitaryV_j assume||V_j−U_j||≤ε_j in operator norm."
+    ],
+    "result": {
+      "name": "Exact pentagon and quantitative perturbation",
+      "statement": "The two directed associator paths from(((AB)C)D) toA(B(CD)) are equal. If their edge counts are three and two, their approximate products differ by at most the sum of the five edge errors.",
+      "proof": "Pure tensors span the tensor product. Along either path the elementary associators retain the same ordered entriesa,b,c,d and end at a⊗(b⊗(c⊗d)). The two linear maps are therefore equal. For approximate maps, compare each path product with its exact product using a telescoping sum. Unitary left and right factors have norm one, so one path error is at most the sum of its three edge errors and the other at most the sum of its two. Their exact middle products agree, and the triangle inequality gives the five-error bound. This proves a precise residual statement while avoiding any claim that arbitrary fusion-category matrices satisfy the pentagon."
+    },
+    "example": {
+      "setup": "Take all five errors bounded by0.07.",
+      "calculation": "The worst-case path discrepancy is at most0.35. This is an operator-norm upper bound, not a statement that65%,93% or95% of operations are coherent. A much smaller observed residual may be possible through cancellation, but would require actual matrix data and an independent numerical error bound.",
+      "conclusion": "The recovered tolerance now has a mathematical meaning tied to explicit maps and paths."
+    },
+    "limits": "Nontrivial fusion categories require their actual F-symbols, admissible labels, basis conventions and pentagon equations. Checking only that one F-matrix is unitary or involutive is insufficient. No hardware success rate follows from these algebraic identities.",
+    "extension": "Given exact fusion rules, enumerate every admissible labeled pentagon and certify the maximum residual with interval arithmetic. Separate truncation error, arithmetic error and experimental error before selecting a tolerance.",
+    "references": [
+      {
+        "label": "Etingof Gelaki Nikshych and Ostrik Tensor Categories",
+        "url": "https://math.mit.edu/~etingof/egnobookfinal.pdf"
+      }
+    ],
+    "original": {
+      "date": "2025-02-27",
+      "month": "2025-02",
+      "evidence": "A",
+      "field": "Coherence and operator estimates",
+      "concept": "Pentagon consistency is a path identity with a norm error bound",
+      "origin": "Recovered dated mathematical topic; newly revised and developed here.",
+      "question": "What finite identity is tested by an associativity pentagon, and what can a tolerance of0.07 actually imply?",
+      "math": "The two directed associator paths from(((AB)C)D) toA(B(CD)) are equal. If their edge counts are three and two, their approximate products differ by at most the sum of the five edge errors.",
+      "finish": "Explicit derivation, worked example and scoped extension",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://math.mit.edu/~etingof/egnobookfinal.pdf"
+      ],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c7] A@2025-02-27T15:15:55Z, -601d: Claimed CQLF began with Monstrous Moonshine, modular forms, VOAs, Monster-group/QFT links, modular bootstrap equations, quantum chaos, entropy, and turbulence; proposed 50→500→5,000-unit phases with \\(K_4\\) pentagon identities (0.07 tolerance), U(1), \\(b_1=12\\), then SU(3)/octonions, cobordism, ∞-categories, algebraic gravity, and homotopy type theory.",
+      "retrieval_receipt": "root_receipts.json record 0",
+      "original_question": null,
+      "attribution_note": "The source is a dated retrieval fragment rather than a complete original transcript. Speaker attribution follows the retrieved tag. The revised question, proof and example are newly authored; no missing historical user wording or proof is invented."
+    }
+  },
+  {
+    "id": "Y25-02-025",
+    "title": "A hyperbolic quotient needs an action and can have a noncompact cusp",
+    "status": "Developed mathematical result with explicit hypotheses and checked example; historical claims repaired where necessary",
+    "summary": "The translation quotient of the upper half-plane gives a concrete cusp geometry with an exact area and shrinking circular sections. This supplies real quotient mathematics without deriving an automorphic economic model from notation.",
+    "definitions": [
+      "LetH²={x+iy:y>0} withds²=(dx²+dy²)/y² and area formdxdy/y².",
+      "The groupZ acts freely and properly discontinuously byz↦z+n. Its quotient is a smooth hyperbolic cylinder, withx periodic modulo one.",
+      "The cusp regiony≥Y>0 in that quotient has a boundary circle aty=Y and remains unbounded in the logarithmic radial direction."
+    ],
+    "result": {
+      "name": "Exact cusp area and noncompactness",
+      "statement": "The cusp area is1/Y and its horizontal section aty has length1/y. It is noncompact despite finite area. The entire translation quotient has infinite area.",
+      "proof": "Translation preservesy anddx, so it preserves the metric. For any compact subset ofH² only finitely many integer translates meet it, proving proper discontinuity; no nonzero translation fixes a point. A strip0≤x<1 is a fundamental domain. Integrating its cusp area gives∫₀¹dx∫_Y^∞y⁻²dy=1/Y. The circle at heighty has length∫₀¹dx/y=1/y. Along a vertical path the distance fromY toy islog(y/Y), which tends to infinity, so no compact set contains the whole cusp. Extending the area integral down toy=0 diverges, showing that the full quotient and its cusp subregion must not be confused."
+    },
+    "example": {
+      "setup": "SetY=2 and compare sections aty=2 andy=8.",
+      "calculation": "The cusp area is1/2. Its two section lengths are1/2 and1/8, while the vertical separation islog4. The cross sections shrink but recede to infinite distance, explaining finite area without compactness.",
+      "conclusion": "Quotient, metric, measure and global geometry are all specified independently of an application label."
+    },
+    "limits": "A quotient[H³/Γ] requires an actual group, action and a choice between an orbifold/stack and a smooth manifold. Automorphic functions and Hecke operators need additional arithmetic structure; arbitrary urban data do not supply it.",
+    "extension": "For a supplied discrete arithmetic group, determine stabilizers, fundamental-domain volume and cusp structure. Then formulate the exact function space and Laplacian domain before invoking a discrete spectral expansion or trace formula.",
+    "references": [
+      {
+        "label": "Peter Buser Geometry and Spectra of Compact Riemann Surfaces",
+        "url": "https://doi.org/10.1007/978-0-8176-4992-0"
+      }
+    ],
+    "original": {
+      "date": "2025-02-18",
+      "month": "2025-02",
+      "evidence": "A",
+      "field": "Hyperbolic geometry",
+      "concept": "A hyperbolic quotient needs an action and can have a noncompact cusp",
+      "origin": "Recovered dated mathematical topic; newly revised and developed here.",
+      "question": "Which explicit group action defines a hyperbolic quotient, and why do finite volume and compactness remain different properties?",
+      "math": "The cusp area is1/Y and its horizontal section aty has length1/y. It is noncompact despite finite area. The entire translation quotient has infinite area.",
+      "finish": "Explicit derivation, worked example and scoped extension",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://doi.org/10.1007/978-0-8176-4992-0"
+      ],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c0] A@2025-02-18T00:35:51Z, -1y8m: Reframed speculative urban compensation as “Langlands” formalism: \\(\\mathcal M_{\\rm urban}=[\\mathbb H^3/\\Gamma]\\), automorphic \\(F\\), Hecke operators \\(T_p\\),",
+      "retrieval_receipt": "root_receipts.json record 0",
+      "original_question": null,
+      "attribution_note": "The source is a dated retrieval fragment rather than a complete original transcript. Speaker attribution follows the retrieved tag. The revised question, proof and example are newly authored; no missing historical user wording or proof is invented."
+    }
+  }
+]

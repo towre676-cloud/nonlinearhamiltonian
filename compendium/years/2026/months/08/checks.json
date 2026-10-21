@@ -1,0 +1,155 @@
+{
+  "scope": "Own25 entries; helper catalogs have independent verifiers; displayed examples only",
+  "checks": [
+    {
+      "id": "Y26-08-001",
+      "name": "Regular constrained pencil and regularized modes",
+      "status": "pass",
+      "detail": "For λ3 original determinant−4; perturbation gives finite modes−100/101 and100."
+    },
+    {
+      "id": "Y26-08-002",
+      "name": "Exact polynomial nullities through degree five",
+      "status": "pass",
+      "detail": "Constructed every block coefficient equation; right generator degree1 is not inferred from floating eigenvalues."
+    },
+    {
+      "id": "Y26-08-003",
+      "name": "Left-right sensitivity and damping numerator",
+      "status": "pass",
+      "detail": "Explicit normalized left/right vectors recover λ′; damping numerator is3/2."
+    },
+    {
+      "id": "Y26-08-004",
+      "name": "Rank-one contour margin improvement",
+      "status": "pass",
+      "detail": "Structured bound certifies δ3/2 while the loose global bound fails; perturbed second root remains outside unit disk."
+    },
+    {
+      "id": "Y26-08-005",
+      "name": "Exact Lyapunov identity and transient growth",
+      "status": "pass",
+      "detail": "Positive definite Lyapunov matrix and positive initial Euclidean norm derivative verified independently."
+    },
+    {
+      "id": "Y26-08-006",
+      "name": "Kalman ranks and stable Gramian",
+      "status": "pass",
+      "detail": "Declared controllability/observability ranks and exact infinite-horizon Gramian determinant."
+    },
+    {
+      "id": "Y26-08-007",
+      "name": "Information-volume versus worst-ratio example",
+      "status": "pass",
+      "detail": "D-optimal example prefersA while worst danger ratio prefersB; a null-information direction yields unbounded growth."
+    },
+    {
+      "id": "Y26-08-008",
+      "name": "Port-Hamiltonian skew power cancellation",
+      "status": "pass",
+      "detail": "At x=(2,3), skew power0 and dissipation22; the reset halves state and quarters energy."
+    },
+    {
+      "id": "Y26-08-009",
+      "name": "Improper Gaussian real covariance and exponent",
+      "status": "pass",
+      "detail": "Covariance diag4,1 and exponent at z2 equals1/2; normalization denominator4π."
+    },
+    {
+      "id": "Y26-08-010",
+      "name": "Weighted passive resolvent counterexample",
+      "status": "pass",
+      "detail": "Exact inverse is verified; its second-column norm exceeds5 despite accretive Y."
+    },
+    {
+      "id": "Y26-08-011",
+      "name": "Quiver path enumeration and relation rank",
+      "status": "pass",
+      "detail": "Enumerated all14 surviving paths; the nonzero source-to-sink relation has rank1 in every projective chart."
+    },
+    {
+      "id": "Y26-08-012",
+      "name": "Dual-number Hochschild cochain ranks",
+      "status": "pass",
+      "detail": "Alternating zero and rank-one maps leave one-dimensional positive-degree cohomology; s=ε has zero s13 obstruction through order12 but nonzero order13."
+    },
+    {
+      "id": "Y26-08-013",
+      "name": "Regulator branch enclosure and stability",
+      "status": "pass",
+      "detail": "A positive branch lies in(.9,1); its multiplier is below the bound at .9, itself below1."
+    },
+    {
+      "id": "Y26-08-014",
+      "name": "Skew condition and Poisson toy map",
+      "status": "pass",
+      "detail": "The valid skew map fixes x and has inverse division on y; the retrieved matrix fails skewness."
+    },
+    {
+      "id": "Y26-08-015",
+      "name": "Plücker minors shell and parity",
+      "status": "pass",
+      "detail": "All six minors and the shell coordinates derived from the original two integer vectors."
+    },
+    {
+      "id": "Y26-08-016",
+      "name": "Joint-dependence example and aggregate bookkeeping",
+      "status": "pass",
+      "detail": "Shared symbolic function a(t)=b(t) cancels exactly; old exclusion totals check arithmetically only."
+    },
+    {
+      "id": "Y26-08-017",
+      "name": "Cycle gradient and harmonic energy",
+      "status": "pass",
+      "detail": "A nonzero exact gradient has no harmonic part; constant0.1 adds energy3/50."
+    },
+    {
+      "id": "Y26-08-018",
+      "name": "Nonabelian infinitesimal loop commutator",
+      "status": "pass",
+      "detail": "Exact commutator matrix and numerical U1 six-edge holonomy composition; no inferred surface curvature."
+    },
+    {
+      "id": "Y26-08-019",
+      "name": "Exhaustive ordered-corner permutation",
+      "status": "pass",
+      "detail": "Generated every ordered corner in F2^4×F2^4 and checked the declared affine map permutes all of them."
+    },
+    {
+      "id": "Y26-08-020",
+      "name": "Halo-premise counterexample and exact swaps",
+      "status": "pass",
+      "detail": "Visible scalar bounds do not imply the missing weighted row; equal-size set swap distance independently computed."
+    },
+    {
+      "id": "Y26-08-021",
+      "name": "Integer saturation example",
+      "status": "pass",
+      "detail": "Rational ranks agree but generator has index2; reported graph scalars determine only E−V."
+    },
+    {
+      "id": "Y26-08-022",
+      "name": "Local potential failing edge",
+      "status": "pass",
+      "detail": "The second declared edge violates the proposed monotonicity although the total path change iszero."
+    },
+    {
+      "id": "Y26-08-023",
+      "name": "Fourier orthogonality and opened-mode conditioning",
+      "status": "pass",
+      "detail": "Numerical7-mode Fourier orthogonality cross-check plus exact condition number701; proof uses a geometric sum."
+    },
+    {
+      "id": "Y26-08-024",
+      "name": "Balanced-state fidelity and threshold",
+      "status": "pass",
+      "detail": "Direct overlap matchescos²(ε/2); the0.999 boundary is independently evaluated."
+    },
+    {
+      "id": "Y26-08-025",
+      "name": "dB addition and determinant-one counterexample",
+      "status": "pass",
+      "detail": "Power budgets add to−20dB; determinant1 fails the full flux identity."
+    }
+  ]
+}

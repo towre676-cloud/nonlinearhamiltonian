@@ -1,0 +1,1884 @@
+[
+  {
+    "id": "Y26-10-001",
+    "title": "Repeated polynomial roots require multiplicities and a squarefree isolation certificate",
+    "status": "Classical mathematics or a newly chosen finite model developed with proof; historical claims delimited",
+    "summary": "The dated file describes squarefree reduction, multiplicity gcds, dyadic deflation and interval refinement. These operations can be organized into a complete rational certificate. The recovered cubic is particularly useful because a sign-change-only search misses its double root. The calculation below is newly replayed exact arithmetic; it does not assert that any unobserved software implementation passed its tests.",
+    "definitions": [
+      "Work in Q[u]. A root has multiplicity m when (u−α)^m divides f and the next power does not.",
+      "For nonzero f in characteristic zero, its squarefree part is q=f/gcd(f,f′), with monic gcd. A Sturm chain starts q₀=q, q₁=q′ and q_(j+1)=−rem(q_(j−1),q_j). At a real endpoint, delete zero entries before counting sign variations V."
+    ],
+    "result": {
+      "name": "Squarefree reduction and a complete cubic certificate",
+      "statement": "For f(u)=(u−1)²(u+2)=u³−3u+2, gcd(f,f′)=u−1 and q=u²+u−2. The intervals (−5/2,−3/2) and (1/2,3/2) each contain exactly one distinct real root. Their roots are −2 with multiplicity one and 1 with multiplicity two.",
+      "proof": "If f=(u−α)^m g with g(α)≠0, differentiating gives f′=(u−α)^(m−1)[m g+(u−α)g′]. In characteristic zero the bracket is nonzero at α, so the gcd removes exactly m−1 copies. Thus q has precisely the same roots, all simple. Here f′=3(u−1)(u+1), giving the displayed gcd and q. Euclidean division yields the Sturm chain (u²+u−2,2u+1,9/4). At a zero of an interior chain member, its two neighbors have opposite signs by the negative-remainder recurrence, so the number of variations does not change. At a simple zero of q the sign of q crosses in the direction of q′, reducing V by one as u increases. Therefore V(a)−V(b) counts roots between nonroot endpoints. The four endpoint variations are respectively 2,1,1,0, proving both interval claims. Since q has degree two, these account for every root; exact division of f then supplies their multiplicities."
+    },
+    "example": {
+      "setup": "Compare exact isolation with the sign of f around the positive root.",
+      "calculation": "f(1/2)=5/8 and f(3/2)=7/8 are both positive, although f(1)=0. The squarefree q changes sign across that interval. Dividing f by u−1 twice gives u+2, and its value at 1 is 3, proving multiplicity exactly two. A dyadic endpoint that is itself a root can be recorded and deflated before further bisection; it should never be silently discarded by an endpoint convention.",
+      "conclusion": "The example certifies distinct-root completeness and multiplicity without floating-point decisions."
+    },
+    "limits": "An arbitrary interval with opposite endpoint signs need not contain exactly one root, and no sign change does not imply no root. This fixture proves no correctness claim about unrecovered repository code, nor does it cover positive-characteristic inseparability.",
+    "extension": "Build a proof-carrying algebraic-number interface whose records contain a squarefree polynomial, rational isolating interval, Sturm variation count and multiplicity factor; verify arithmetic operations by exact remainder and interval certificates rather than decimal agreement.",
+    "references": [
+      {
+        "label": "NIST DLMF: polynomial division and zeros",
+        "url": "https://dlmf.nist.gov/1.11"
+      },
+      {
+        "label": "Eberl: a formalisation of Sturm’s theorem",
+        "url": "https://www21.in.tum.de/~eberlm/sturm_paper.pdf"
+      }
+    ],
+    "original": {
+      "date": "2026-10-08",
+      "month": "2026-10",
+      "evidence": "T",
+      "field": "Exact real algebraic computation",
+      "concept": "Repeated polynomial roots require multiplicities and a squarefree isolation certificate",
+      "origin": "Retrieved file passage carrying a historical date",
+      "question": "How can an exact root pipeline preserve repeated roots while isolating every distinct real root, and what does the recovered cubic fixture actually certify?",
+      "math": "For f(u)=(u−1)²(u+2)=u³−3u+2, gcd(f,f′)=u−1 and q=u²+u−2. The intervals (−5/2,−3/2) and (1/2,3/2) each contain exactly one distinct real root. Their roots are −2 with multiplicity one and 1 with multiplicity two.",
+      "finish": "Definitions, proved proposition, worked example, limitations and extension",
+      "kind": "Revised mathematical development",
+      "refs": [
+        "https://dlmf.nist.gov/1.11",
+        "https://www21.in.tum.de/~eberlm/sturm_paper.pdf"
+      ],
+      "source_excerpt": "- [FILE_CONTENT] [f1] Dated 8 October 2026; records exact algebraic-root handling: squarefree parts, multiplicity gcds, dyadic-root deflation, interval sign refinement, and fixture \\((u-1)^2(u+2)\\). It explicitly distinguishes mathematical fixtures and source inspirations from imported guarantees.",
+      "retrieval_receipt": "root_receipts.json record 0",
+      "original_question": null,
+      "attribution_note": "The retrieved source passage and its author attribution are preserved. The revised question, proof and worked example are newly authored. Historical assistant claims, including claimed Lean or repository verification, are not treated as independently replayed certificates unless a specific executed certificate is expressly identified."
+    }
+  },
+  {
+    "id": "Y26-10-002",
+    "title": "Irreducibility certificates do not by themselves classify rational points",
+    "status": "Classical mathematics or a newly chosen finite model developed with proof; historical claims delimited",
+    "summary": "The recovered October workload distinguishes curve modules, irreducible equations and point-carrying cases. These are different mathematical obligations. A reusable reduction certificate can settle a polynomial irreducibility statement, while point completeness still requires the actual arithmetic argument. The examples here are explicitly chosen models, not reconstructions of the unavailable positive-k equations.",
+    "definitions": [
+      "A polynomial f in Z[x] is primitive when its coefficients have gcd one. Reduction modulo a prime p preserves its degree if p does not divide the leading coefficient.",
+      "Irreducibility is over a specified field. A rational-point completeness theorem asserts that every rational point satisfying the stated curve equation occurs in a specified list or parametrization."
+    ],
+    "result": {
+      "name": "A sound finite-field route and its scope",
+      "statement": "If a primitive f in Z[x] has degree-preserving irreducible reduction modulo p, then f is irreducible over Q. For degree two or three, irreducibility over F_p is equivalent to having no root in F_p. Neither statement supplies all rational points on an associated curve.",
+      "proof": "Gauss’s lemma turns a nontrivial rational factorization into f=gh with primitive integer factors of positive degree. Because the leading coefficient of f is nonzero modulo p, both leading coefficients of g and h are nonzero modulo p. Reduction therefore preserves their positive degrees and contradicts irreducibility of the reduction. For a quadratic or cubic over a field, any nontrivial factorization has a linear factor, equivalent to a root; conversely a root gives a linear divisor. In higher degree, rootlessness alone is insufficient because both factors may have degree at least two. This proves a precise certificate rule with no appeal to numeric root approximations. The logical separation from point classification is visible already in a hyperelliptic equation y²=f(x): irreducibility of f does not determine which rational x make f(x) a square."
+    },
+    "example": {
+      "setup": "Use f=x³−x+1 and contrast a fourth-degree polynomial.",
+      "calculation": "Modulo two, f becomes x³+x+1. Its values at 0 and 1 are both 1, so it is an irreducible cubic and f is irreducible over Q. The curve y²=x³−x+1 has the easily checked rational points (0,±1), (1,±1) and (3,±5). Irreducibility alone neither produces these points nor proves that any proposed finite list is complete. For a sharper algebraic caution, x⁴+1 factors modulo three as (x²+x+2)(x²+2x+2), although it is irreducible over Q: after x↦x+1 it becomes x⁴+4x³+6x²+4x+2, which is Eisenstein at two. A failed reduction test is therefore inconclusive.",
+      "conclusion": "One can replay small irreducibility certificates exactly while keeping the missing curve-completeness argument visible."
+    },
+    "limits": "The historical compilation and class-list counts are retrieved claims, not independently replayed here. No equation, discriminant, shared sublemma or Lean theorem name absent from the receipt is invented. The displayed models establish certificate logic only.",
+    "extension": "Create a dependency graph whose nodes separate polynomial irreducibility, local solubility, descent bounds and final point completeness; attach explicit prime-reduction or Eisenstein witnesses to the first class and require a theorem connecting the remaining classes before marking a curve classified.",
+    "references": [
+      {
+        "label": "Mathlib: irreducibility under polynomial reduction",
+        "url": "https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Polynomial/Eval/Irreducible.html"
+      },
+      {
+        "label": "Mathlib: Eisenstein criterion",
+        "url": "https://leanprover-community.github.io/mathlib4_docs/Mathlib/RingTheory/Polynomial/Eisenstein/Criterion.html"
+      }
+    ],
+    "original": {
+      "date": "2026-10-02",
+      "month": "2026-10",
+      "evidence": "U",
+      "field": "Arithmetic certificate design",
+      "concept": "Irreducibility certificates do not by themselves classify rational points",
+      "origin": "Dated recovered conversation evidence",
+      "question": "Which exact algebraic certificate can discharge an irreducibility task, and what additional theorem is needed before a curve classification follows?",
+      "math": "If a primitive f in Z[x] has degree-preserving irreducible reduction modulo p, then f is irreducible over Q. For degree two or three, irreducibility over F_p is equivalent to having no root in F_p. Neither statement supplies all rational points on an associated curve.",
+      "finish": "Definitions, proved proposition, worked example, limitations and extension",
+      "kind": "Revised mathematical development",
+      "refs": [
+        "https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Polynomial/Eval/Irreducible.html",
+        "https://leanprover-community.github.io/mathlib4_docs/Mathlib/RingTheory/Polynomial/Eisenstein/Criterion.html"
+      ],
+      "source_excerpt": "- [USER_FACT] [c0] U@2026-10-02T17:29:47Z, -18d: active push: 39 positive-k curve modules compiling; ClassList 6 proved unconditionally; 104 irreducible equations remain across 61 curves, 87 point-carrying.",
+      "retrieval_receipt": "root_receipts.json record 0",
+      "original_question": null,
+      "attribution_note": "The retrieved source passage and its author attribution are preserved. The revised question, proof and worked example are newly authored. Historical assistant claims, including claimed Lean or repository verification, are not treated as independently replayed certificates unless a specific executed certificate is expressly identified."
+    }
+  },
+  {
+    "id": "Y26-10-003",
+    "title": "Prime-stripped factorials have an exact recursive block algorithm",
+    "status": "Classical mathematics or a newly chosen finite model developed with proof; historical claims delimited",
+    "summary": "The recovered factorial-unit claim becomes a clean integer recursion. Removing powers of p must occur before modular reduction; division by p after reduction is not legitimate. The same decomposition yields a logarithmic-depth algorithm with exact residue-block products.",
+    "definitions": [
+      "For prime p, let v_p(n!)=Σ_(j≥1)⌊n/pʲ⌋ and U_p(n)=n!/p^(v_p(n!)), with U_p(0)=1.",
+      "Set m=pᵏ, W=∏_(1≤i≤m,p∤i)i modulo m, and V(r)=∏_(1≤i≤r,p∤i)i modulo m for 0≤r<m."
+    ],
+    "result": {
+      "name": "Unit recursion and complete-block reduction",
+      "statement": "U_p(n)=[∏_(1≤i≤n,p∤i)i]U_p(⌊n/p⌋) as integers. Consequently U_p(n)≡∏_(j≥0)W^(⌊⌊n/pʲ⌋/m⌋)V(⌊n/pʲ⌋ mod m) modulo m, with only finitely many nontrivial factors.",
+      "proof": "Partition the factors of n! into indices not divisible by p and indices i=pj. For the latter, stripping all powers of p leaves j/p^(v_p(j)), precisely the factors defining U_p(⌊n/p⌋). This proves the integer recursion, rather than an invalid modular cancellation. To compute its first factor modulo m, write n=am+r. Each complete interval ℓm+1,…,(ℓ+1)m has the same reduced residues modulo m; because p divides m, it also has exactly the same set of positions not divisible by p. Its unit product is therefore W. The remaining r positions contribute V(r). Iterating with n replaced by its successive p-quotients terminates at zero. The valuation formula follows separately by counting each factor p once for multiples of p, again for multiples of p², and so on. Both claims are finite integer factorizations and need no limiting p-adic argument."
+    },
+    "example": {
+      "setup": "Compute the unit part of 10! modulo nine.",
+      "calculation": "For p=3, v₃(10!)=3+1=4, so U₃(10)=3628800/81=44800≡7 mod 9. The nonmultiples-of-three product through ten is 22400≡8 mod 9, while U₃(3)=2. Their product gives 8·2≡7 mod 9, independently matching the stripped factorial.",
+      "conclusion": "The recursion preserves every unit factor and avoids modular division by three."
+    },
+    "limits": "A residue of the unit part is not the factorial itself; the valuation must be retained. Cancellation in a factorial ratio requires combining valuations and inverting only residues coprime to p. Historical sequence-family checks are not replayed merely by proving this recursion.",
+    "extension": "Apply the method to ∏(a_j n+b_j)!^(e_j): compute its exact valuation first, then its unit ratio modulo pᵏ, and state explicitly whether a negative valuation gives a p-adic number rather than an integer.",
+    "references": [
+      {
+        "label": "NIST DLMF: arithmetic functions",
+        "url": "https://dlmf.nist.gov/27.2"
+      }
+    ],
+    "original": {
+      "date": "2026-10-09",
+      "month": "2026-10",
+      "evidence": "A",
+      "field": "p-adic arithmetic",
+      "concept": "Prime-stripped factorials have an exact recursive block algorithm",
+      "origin": "Dated recovered conversation evidence",
+      "question": "How can the unit part of n! modulo pᵏ be computed without ever dividing a nonunit modulo pᵏ?",
+      "math": "U_p(n)=[∏_(1≤i≤n,p∤i)i]U_p(⌊n/p⌋) as integers. Consequently U_p(n)≡∏_(j≥0)W^(⌊⌊n/pʲ⌋/m⌋)V(⌊n/pʲ⌋ mod m) modulo m, with only finitely many nontrivial factors.",
+      "finish": "Definitions, proved proposition, worked example, limitations and extension",
+      "kind": "Revised mathematical development",
+      "refs": [
+        "https://dlmf.nist.gov/27.2"
+      ],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c0] A@2026-10-09T16:35:58Z, -12d: Factorial-unit identity: strip powers of \\(p\\) from \\(n!\\), then compute modulo \\(p^k\\) using residue blocks and successive quotients \\(n,\\lfloor n/p\\rfloor,\\ldots\\).",
+      "retrieval_receipt": "root_coverage_4.json record 0",
+      "original_question": null,
+      "attribution_note": "The retrieved source passage and its author attribution are preserved. The revised question, proof and worked example are newly authored. Historical assistant claims, including claimed Lean or repository verification, are not treated as independently replayed certificates unless a specific executed certificate is expressly identified."
+    }
+  },
+  {
+    "id": "Y26-10-004",
+    "title": "Perfect-power images admit complete valuation parametrizations",
+    "status": "Classical mathematics or a newly chosen finite model developed with proof; historical claims delimited",
+    "summary": "The recovered power-chart examples admit global elementary proofs. Prime valuations establish surjectivity of the parametrization; substitution alone would show only that a proposed family gives some solutions. Keeping the reverse direction is essential for exact enumeration or inverse lookup.",
+    "definitions": [
+      "For a nonzero integer a and a prime p, v_p(a) is the exponent of p in |a|.",
+      "All variables in the following statements are integers; powers and signs are interpreted in Z, not merely over positive reals."
+    ],
+    "result": {
+      "name": "Complete cusp parametrizations",
+      "statement": "x²=y³ if and only if (x,y)=(t³,t²) for a unique t∈Z. Also 2x²=3y³ if and only if (x,y)=(18t³,6t²) for a unique t∈Z.",
+      "proof": "The zero case forces both coordinates to vanish. Otherwise y>0. In x²=y³, the equality 2v_p(x)=3v_p(y) implies v_p(x)=3a_p and v_p(y)=2a_p for nonnegative integers a_p. Thus y=t² and |x|=|t|³; choose the sign of t to match x. This t is unique because integer cubing is injective. For 2x²=3y³, at p=2 we have 1+2a=3b, hence b=2r+1 and a=3r+1 with r≥0. At p=3, 2a=1+3b gives b=2s+1 and a=3s+2. Every other prime again has valuations (3a_p,2a_p). Extracting these factors yields |x|=18u³ and y=6u², where u≥1 is an integer. The sign of x determines t=±u. Conversely, direct substitution gives 2·18²t⁶=3·6³t⁶, so the parametrization is exact."
+    },
+    "example": {
+      "setup": "Invert a concrete point and impose an arithmetic restriction.",
+      "calculation": "For (x,y)=(−144,24), x/18=−8 gives t=−2, and 6t²=24 checks the other coordinate. Restricting y≤150 gives |t|≤5, hence exactly eleven solutions including zero. A further congruence can be tested on the single parameter; for example x≡0 mod 5 is equivalent to t≡0 mod 5 because 18 is invertible modulo five.",
+      "conclusion": "The nonlinear image becomes an explicitly invertible one-parameter integer population."
+    },
+    "limits": "Adding a nonzero constant generally destroys this cusp parametrization: y²=x³+k is an elliptic curve when k≠0 and its discriminant is nonzero. No global Mordell completeness theorem follows from the singular k=0 case.",
+    "extension": "For a x^m=b y^n, separate primes dividing ab and use gcd(m,n) to solve each valuation congruence; assemble finitely many coefficient classes and prove their images disjoint before supplying rank/unrank algorithms.",
+    "references": [
+      {
+        "label": "NIST DLMF: unique factorization and arithmetic functions",
+        "url": "https://dlmf.nist.gov/27.2"
+      }
+    ],
+    "original": {
+      "date": "2026-10-05",
+      "month": "2026-10",
+      "evidence": "A",
+      "field": "Diophantine parametrization",
+      "concept": "Perfect-power images admit complete valuation parametrizations",
+      "origin": "Dated recovered conversation evidence",
+      "question": "Can the nonlinear integer image be parametrized in both directions, including signs and zero?",
+      "math": "x²=y³ if and only if (x,y)=(t³,t²) for a unique t∈Z. Also 2x²=3y³ if and only if (x,y)=(18t³,6t²) for a unique t∈Z.",
+      "finish": "Definitions, proved proposition, worked example, limitations and extension",
+      "kind": "Revised mathematical development",
+      "refs": [
+        "https://dlmf.nist.gov/27.2"
+      ],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c5] A@2026-10-05T16:58:18Z, -15d: coefficient family \\(2x^2=3y^3\\): \\(x=\\pm18t^3,\\ y=6t^2\\); recurrence phase/value cycles and modular domains; 19 Lean declarations.",
+      "retrieval_receipt": "root_coverage_4.json record 0",
+      "original_question": null,
+      "attribution_note": "The retrieved source passage and its author attribution are preserved. The revised question, proof and worked example are newly authored. Historical assistant claims, including claimed Lean or repository verification, are not treated as independently replayed certificates unless a specific executed certificate is expressly identified."
+    }
+  },
+  {
+    "id": "Y26-10-005",
+    "title": "Integer lifting turns monomial equations into finite exponent lattices",
+    "status": "Classical mathematics or a newly chosen finite model developed with proof; historical claims delimited",
+    "summary": "The retrieved examples illustrate two forms of integer lifting: an affine line of solutions and a finite product of exponent lattices. Both require divisibility conditions, rather than a real-valued inverse followed by rounding. The exponent formulation is also the correct setting for Smith normal form compatibility tests.",
+    "definitions": [
+      "A positive integer has a unique vector of nonnegative prime exponents.",
+      "A unimodular integer change of variables has determinant ±1 and preserves the integer lattice; Smith normal form diagonalizes an integer linear map using such changes."
+    ],
+    "result": {
+      "name": "Complete affine and multiplicative solution sets",
+      "statement": "All integer solutions of 2x+3y=1 are (x,y)=(−1+3t,1−2t), t∈Z. The equation x²y³=2²⁰3¹² has exactly twelve positive integer solutions, indexed by 0≤r≤3 and 0≤s≤2 as x=2^(10−3r)3^(6−3s), y=2^(2r)3^(2s).",
+      "proof": "Reducing 2x+3y=1 modulo three gives x≡−1 mod 3, so x=−1+3t; substitution forces y=1−2t. Every t works, proving completeness and injectivity. For the multiplicative equation, no prime other than two or three can divide x or y, because all exponents are nonnegative. Write x=2ᵃ3ᶜ and y=2ᵇ3ᵈ. Unique factorization gives 2a+3b=20 and 2c+3d=12. The first equation forces b even, b=2r, and then a=10−3r≥0, so r=0,1,2,3. The second similarly gives d=2s and c=6−3s≥0, so s=0,1,2. These choices are independent and unique, producing 4·3=12 solutions. More generally, if UAV=diag(d₁,…,d_r,0,…) is a Smith decomposition of an exponent map, integer solvability requires d_i to divide (Ub)_i and zero coordinates of Ub to vanish; nonnegativity is an additional constraint after applying V."
+    },
+    "example": {
+      "setup": "Enumerate two endpoints and construct a reversible address.",
+      "calculation": "At (r,s)=(0,0), (x,y)=(2¹⁰3⁶,1); at (3,2), (x,y)=(2,2⁶3⁴). The address j=3r+s runs from zero to eleven; division with remainder recovers r=⌊j/3⌋ and s=j mod 3. Thus the count and inverse lookup are both exact.",
+      "conclusion": "Prime-exponent reduction proves every listed point and excludes every omitted positive point."
+    },
+    "limits": "Negative or zero solutions need separate sign and support cases. Smith invariant factors alone do not enforce nonnegativity, and a claimed perfect-cube compatibility obstruction requires the actual lattice map, not just a numerical determinant.",
+    "extension": "Combine Smith coordinates with polyhedral lattice-point enumeration to count bounded exponent populations and optimize a stated linear cost in the original exponents, preserving a certificate of every divisibility and sign condition.",
+    "references": [
+      {
+        "label": "Stanley: Smith normal form in combinatorics",
+        "url": "https://arxiv.org/abs/1602.00166"
+      }
+    ],
+    "original": {
+      "date": "2026-10-04",
+      "month": "2026-10",
+      "evidence": "A",
+      "field": "Integer lattices",
+      "concept": "Integer lifting turns monomial equations into finite exponent lattices",
+      "origin": "Dated recovered conversation evidence",
+      "question": "How can linear Diophantine lifting and prime-exponent constraints yield a complete, exactly countable population?",
+      "math": "All integer solutions of 2x+3y=1 are (x,y)=(−1+3t,1−2t), t∈Z. The equation x²y³=2²⁰3¹² has exactly twelve positive integer solutions, indexed by 0≤r≤3 and 0≤s≤2 as x=2^(10−3r)3^(6−3s), y=2^(2r)3^(2s).",
+      "finish": "Definitions, proved proposition, worked example, limitations and extension",
+      "kind": "Revised mathematical development",
+      "refs": [
+        "https://arxiv.org/abs/1602.00166"
+      ],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c10] A@2026-10-04T09:47:17Z, -17d: Smith factors \\((1,1,1,3)\\) impose a perfect-cube compatibility condition; \\(x^2y^3=2^{20}3^{12}\\) has exactly 12 positive integer pairs.",
+      "retrieval_receipt": "root_coverage_4.json record 0",
+      "original_question": null,
+      "attribution_note": "The retrieved source passage and its author attribution are preserved. The revised question, proof and worked example are newly authored. Historical assistant claims, including claimed Lean or repository verification, are not treated as independently replayed certificates unless a specific executed certificate is expressly identified."
+    }
+  },
+  {
+    "id": "Y26-10-006",
+    "title": "The negative Pell equation splits into two complete unit orbits",
+    "status": "Classical mathematics or a newly chosen finite model developed with proof; historical claims delimited",
+    "summary": "The recovered quadratic equation is a negative Pell equation. Multiplication by the fundamental norm-one unit gives exact transport, and reduction to a compact interval produces a finite seed proof. This supplies the global completeness argument missing from a table of recurrent solutions.",
+    "definitions": [
+      "In Z[√2], N(x+y√2)=x²−2y². Let ε=3+2√2, with N(ε)=1 and ε⁻¹=3−2√2.",
+      "For y>0 and N(α)=−7, the real number α=x+y√2 is positive because |x|<√2y."
+    ],
+    "result": {
+      "name": "Two-orbit completeness",
+      "statement": "Every solution with y>0 is given uniquely by α=(1+2√2)εⁿ or α=(5+4√2)εⁿ for n∈Z. Solutions with y<0 are obtained by negation; y=0 gives none.",
+      "proof": "Multiplying by ε sends (x,y) to (3x+4y,2x+3y), an invertible integer map preserving norm. For any positive α of norm −7 there is a unique n such that β=αε^(−n) lies in [√7,ε√7). Its conjugate is −7/β, so its coordinates satisfy x_β=(β−7/β)/2≥0 and y_β=(β+7/β)/(2√2). On this interval y_β≥√(7/2) and y_β<3√(7/2)<6, hence y_β is one of 2,3,4,5. The equation x_β²=2y_β²−7 gives respectively 1,11,25,43; only y_β=2,4 yield squares. Thus β is exactly 1+2√2 or 5+4√2. Both lie in the reduction interval, and the half-open interval gives uniqueness of the exponent and seed. Conversely, multiplying either seed by any integer power of ε preserves integral coordinates, positive α and norm −7; then y=(α+7/α)/(2√2)>0. This proves both coverage and absence of duplicates."
+    },
+    "example": {
+      "setup": "Generate and reverse a transported solution.",
+      "calculation": "The first seed (1,2) maps to (11,8), since 3+8=11 and 2+6=8; indeed 121+7=2·64. The second seed (5,4) maps to (31,22). Applying ε⁻¹ sends (11,8) to (3·11−4·8,−2·11+3·8)=(1,2).",
+      "conclusion": "Two seeds and an invertible recurrence describe the entire integer solution set, with the sign cases explicit."
+    },
+    "limits": "A norm-preserving recurrence by itself proves only closure. Completeness here depends on the compact reduction and exhaustive seed analysis. Different quadratic orders, norms and unit groups require their own reduction argument.",
+    "extension": "Intersect the two orbits with modular conditions by computing the unit action on (Z/mZ)²; use the resulting finite cycles to obtain exact admissible exponent classes and bounded rank/select operations.",
+    "references": [
+      {
+        "label": "Lenstra: solving the Pell equation",
+        "url": "https://www.ams.org/notices/200202/fea-lenstra.pdf"
+      }
+    ],
+    "original": {
+      "date": "2026-10-08",
+      "month": "2026-10",
+      "evidence": "A",
+      "field": "Pell equations",
+      "concept": "The negative Pell equation splits into two complete unit orbits",
+      "origin": "Dated recovered conversation evidence",
+      "question": "Can the integer solutions of x²+7=2y² be organized into complete transport orbits rather than generated only experimentally?",
+      "math": "Every solution with y>0 is given uniquely by α=(1+2√2)εⁿ or α=(5+4√2)εⁿ for n∈Z. Solutions with y<0 are obtained by negation; y=0 gives none.",
+      "finish": "Definitions, proved proposition, worked example, limitations and extension",
+      "kind": "Revised mathematical development",
+      "refs": [
+        "https://www.ams.org/notices/200202/fea-lenstra.pdf"
+      ],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c8] A@2026-10-08T01:46:33Z, -13d: \\((x^2+7)/2=y^2\\); singular \\(xy=0\\) chart switching; unordered weighted determinant identities; \\(8^2\\mid\\det A\\).",
+      "retrieval_receipt": "root_coverage_4.json record 0",
+      "original_question": null,
+      "attribution_note": "The retrieved source passage and its author attribution are preserved. The revised question, proof and worked example are newly authored. Historical assistant claims, including claimed Lean or repository verification, are not treated as independently replayed certificates unless a specific executed certificate is expressly identified."
+    }
+  },
+  {
+    "id": "Y26-10-007",
+    "title": "GCD matrices factor through divisor incidence and discrete Green kernels",
+    "status": "Classical mathematics or a newly chosen finite model developed with proof; historical claims delimited",
+    "summary": "The recovered GCD-kernel discussion has a precise arithmetic factorization. A related cumulative-sum kernel explains why a dense covariance matrix can have an integer tridiagonal inverse. These are separate examples of a common incidence-matrix principle.",
+    "definitions": [
+      "Let G_n have entries gcd(i,j), 1≤i,j≤n, and E_ij=1 when j divides i, zero otherwise. Let φ be Euler’s totient.",
+      "For the second example, let L_ij=1 when j≤i and K_ij=min(i,j)."
+    ],
+    "result": {
+      "name": "Exact arithmetic and chain-incidence factorizations",
+      "statement": "G_n=E diag(φ(1),…,φ(n))Eᵀ, so det G_n=∏_(j=1)^nφ(j)>0. Also K=LLᵀ and K⁻¹=DᵀD, where D has diagonal one and subdiagonal −1. Its diagonal is (2,…,2,1) and its adjacent off-diagonals are −1.",
+      "proof": "The divisor identity Σ_(d|m)φ(d)=m follows by grouping the integers 1,…,m according to their gcd with m. Hence (E diagφ Eᵀ)_ij=Σ_(d|i,d|j)φ(d)=gcd(i,j). E is lower triangular with diagonal one, proving the determinant and positive definiteness. Solving Gx=b reduces to two triangular substitutions and positive scalar divisions; the inverse incidence matrix is the divisibility Möbius matrix, by the identity Σ_(d|m)μ(d)=0 for m>1. For the chain kernel, (LLᵀ)_ij counts indices at most both i and j, giving min(i,j). D=L⁻¹ because first differences invert cumulative sums. Therefore K⁻¹=DᵀD; direct multiplication gives the stated tridiagonal entries. The last diagonal is one because the final coordinate occurs in only the last row of D."
+    },
+    "example": {
+      "setup": "Check the n=3 chain kernel and a GCD determinant.",
+      "calculation": "K=[[1,1,1],[1,2,2],[1,2,3]] has inverse [[2,−1,0],[−1,2,−1],[0,−1,1]]. The GCD matrix [[1,1,1],[1,2,1],[1,1,3]] has determinant φ(1)φ(2)φ(3)=2. Both identities are verified by exact matrix multiplication.",
+      "conclusion": "Dense kernels can have sparse inverses because they encode an integrated local difference operator."
+    },
+    "limits": "The min kernel is a newly chosen chain model, not an identification of every unspecified normalized GCD kernel in the source. A factorization over Q does not imply its inverse has integer entries; the totient diagonal generally introduces denominators.",
+    "extension": "Replace gcd(i,j) by f(gcd(i,j)); Möbius inversion gives diagonal weights (f*μ)(d). Positivity of those weights is then an explicit sufficient condition for positive definiteness on the initial divisor-closed set.",
+    "references": [
+      {
+        "label": "NIST DLMF: divisor sums and Möbius inversion",
+        "url": "https://dlmf.nist.gov/27.6"
+      }
+    ],
+    "original": {
+      "date": "2026-10-04",
+      "month": "2026-10",
+      "evidence": "A",
+      "field": "Arithmetic linear algebra",
+      "concept": "GCD matrices factor through divisor incidence and discrete Green kernels",
+      "origin": "Dated recovered conversation evidence",
+      "question": "Which exact incidence factorization explains invertibility, determinant and solution of a GCD linear system?",
+      "math": "G_n=E diag(φ(1),…,φ(n))Eᵀ, so det G_n=∏_(j=1)^nφ(j)>0. Also K=LLᵀ and K⁻¹=DᵀD, where D has diagonal one and subdiagonal −1. Its diagonal is (2,…,2,1) and its adjacent off-diagonals are −1.",
+      "finish": "Definitions, proved proposition, worked example, limitations and extension",
+      "kind": "Revised mathematical development",
+      "refs": [
+        "https://dlmf.nist.gov/27.6"
+      ],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c10] A@2026-10-04T18:37:46Z, -17d: Divisor sums diagonalize the GCD matrix into scalar equations; normalized kernel has cumulative-sum factorization and an integer tridiagonal inverse.",
+      "retrieval_receipt": "root_coverage_4.json record 0",
+      "original_question": null,
+      "attribution_note": "The retrieved source passage and its author attribution are preserved. The revised question, proof and worked example are newly authored. Historical assistant claims, including claimed Lean or repository verification, are not treated as independently replayed certificates unless a specific executed certificate is expressly identified."
+    }
+  },
+  {
+    "id": "Y26-10-008",
+    "title": "Superelliptic genus follows from finite and infinite ramification",
+    "status": "Classical mathematics or a newly chosen finite model developed with proof; historical claims delimited",
+    "summary": "The source gives a superelliptic genus formula and its Gauss–Bonnet counterpart. Both become rigorous on the smooth compact normalization of a squarefree equation. The point at infinity must be included: overlooking its gcd contribution changes the genus.",
+    "definitions": [
+      "Let P∈C[x] be squarefree of degree m≥1, let d≥2, and let C be the smooth projective normalization of yᵈ=P(x). Set δ=gcd(d,m).",
+      "The map x:C→P¹ has degree d. Curvature below is the Gaussian curvature of any smooth Riemannian metric on the compact oriented surface C."
+    ],
+    "result": {
+      "name": "Genus, curvature and branch monodromy",
+      "statement": "g(C)=[(d−1)(m−1)−δ+1]/2 and ∫_C K dA=2π[d+δ−m(d−1)]. Around a simple zero of P, analytic continuation multiplies a local branch of y by exp(2πi/d).",
+      "proof": "Near a simple zero a, write P(x)=(x−a)u(x), u(a)≠0. A holomorphic dth root of u exists locally, so a local parameter t can be chosen with x−a=tᵈ. The ramification index is d, contributing d−1 at each of the m finite branch points. At infinity the equation has orders d·ord(y)=m·ord(x); dividing by δ shows that there are δ points above infinity, each with ramification index d/δ. Their total contribution is d−δ. Riemann–Hurwitz gives 2g−2=−2d+m(d−1)+(d−δ)=m(d−1)−d−δ, which rearranges to the stated formula. Gauss–Bonnet gives ∫K=2π(2−2g), yielding the curvature expression. Finally, moving x−a once counterclockwise adds 2π to its argument, so its dth root and therefore y acquire exp(2πi/d). This is local covering monodromy, distinct from an arbitrary flat-connection holonomy."
+    },
+    "example": {
+      "setup": "Compare an elliptic and a higher-genus example.",
+      "calculation": "For y²=x³−x, d=2,m=3,δ=1 gives g=1 and total curvature zero. For y³=x⁴−1, d=3,m=4,δ=1 gives g=3 and total curvature −8π. In the latter, every finite root has local monodromy exp(2πi/3), while infinity is also totally ramified.",
+      "conclusion": "The recovered formulas hold after the singular affine equation is replaced by its smooth compact curve."
+    },
+    "limits": "Repeated roots require revised local ramification data and can make the displayed genus formula false. Gauss–Bonnet controls total curvature, not a pointwise curvature sign, and an affine noncompact chart has boundary/end corrections.",
+    "extension": "For yᵈ=∏(x−a_j)^(r_j), derive ramification contributions d−gcd(d,r_j), include infinity, and separate connected components when the equation is a nontrivial common power.",
+    "references": [
+      {
+        "label": "Stacks Project: Riemann–Hurwitz",
+        "url": "https://stacks.math.columbia.edu/tag/0C1B"
+      }
+    ],
+    "original": {
+      "date": "2026-10-04",
+      "month": "2026-10",
+      "evidence": "A",
+      "field": "Algebraic curves",
+      "concept": "Superelliptic genus follows from finite and infinite ramification",
+      "origin": "Dated recovered conversation evidence",
+      "question": "Under exactly which assumptions do the recovered genus, curvature and local monodromy formulas hold?",
+      "math": "g(C)=[(d−1)(m−1)−δ+1]/2 and ∫_C K dA=2π[d+δ−m(d−1)]. Around a simple zero of P, analytic continuation multiplies a local branch of y by exp(2πi/d).",
+      "finish": "Definitions, proved proposition, worked example, limitations and extension",
+      "kind": "Revised mathematical development",
+      "refs": [
+        "https://stacks.math.columbia.edu/tag/0C1B"
+      ],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c3] A@2026-10-04T08:23:41Z, -17d: Superelliptic geometry: \\(y^d=P(x)\\), \\(g=((d-1)(m-1)-\\gcd(d,m)+1)/2\\), \\(\\int K\\,dA=2\\pi[d+\\delta-m(d-1)]\\), and holonomy \\(\\exp(2\\pi i r_a/d)\\).",
+      "retrieval_receipt": "root_coverage_4.json record 0",
+      "original_question": null,
+      "attribution_note": "The retrieved source passage and its author attribution are preserved. The revised question, proof and worked example are newly authored. Historical assistant claims, including claimed Lean or repository verification, are not treated as independently replayed certificates unless a specific executed certificate is expressly identified."
+    }
+  },
+  {
+    "id": "Y26-10-009",
+    "title": "Cubic norms certify unit transport but not an unreplayed global search",
+    "status": "Classical mathematics or a newly chosen finite model developed with proof; historical claims delimited",
+    "summary": "The retrieved monograph claims a complete solution of u³+4v³=107 and records two units. The available evidence does not include its slab bounds or unit-exponent exclusion certificate. We can nevertheless derive the exact norm form, replay the units and the displayed solution, and state the missing completeness obligation without substituting a finite search for it.",
+    "definitions": [
+      "Let z³=−4 and use the integral basis 1,z,z² of the order Z[z]. Define N(a+bz+cz²) as the determinant of multiplication on this free Z-module.",
+      "An element with norm ±1 is a unit of this order because its integer multiplication matrix has an integer inverse."
+    ],
+    "result": {
+      "name": "Exact cubic norm and unit identities",
+      "statement": "N(a+bz+cz²)=a³−4b³+16c³+12abc. The elements η=5−3z+2z² and ε=1−z−z² both have norm one. Also N(u−vz)=u³+4v³, and (u,v)=(−1,3) gives norm 107.",
+      "proof": "Multiplication by a+bz+cz² in the indicated basis has matrix [[a,−4c,−4b],[b,a,−4c],[c,b,a]]. Expanding its determinant gives the stated cubic form, proving the identity without numeric algebraic approximations. For η, the four contributions are 125,108,128,−360, summing to one. For ε they are 1,4,−16,12, again summing to one. Determinants multiply, so multiplication by any ηʳεˢ preserves a norm equation. Setting (a,b,c)=(u,−v,0) gives u³+4v³; the displayed point gives −1+108=107. These calculations prove valid transport in a three-coordinate norm surface. They do not show that unit multiplication keeps c=0, nor that all norm-107 elements lie in an asserted seed orbit. A binary equation is an intersection of the norm surface with the plane c=0, so returning to that plane is an additional exact condition."
+    },
+    "example": {
+      "setup": "Compute one unit action on the displayed norm element.",
+      "calculation": "The element −1−3z corresponds to (−1,−3,0). Multiplication by ε=(1,−1,−1) gives (−13,−2,4), using z³=−4. Its norm remains 107 by multiplicativity, but its z² coefficient is four, so it is no longer a solution of the original two-variable equation.",
+      "conclusion": "The unit identities are verified, while the binary-plane return problem remains explicit."
+    },
+    "limits": "The historical statement that (−1,3) is the only integer solution is not independently established here. A 3,631-candidate slab or modular period is not a global bound unless its reduction theorem and all excluded exponent classes are supplied and replayed.",
+    "extension": "Produce a complete certificate consisting of norm-orbit representatives, a proved fundamental-domain reduction, an explicit bound on unit exponents satisfying c=0, and exact evaluation of every residual candidate; then the claimed uniqueness can be independently checked.",
+    "references": [
+      {
+        "label": "Mathlib: algebra norm as a determinant",
+        "url": "https://leanprover-community.github.io/mathlib4_docs/Mathlib/RingTheory/Norm/Basic.html"
+      }
+    ],
+    "original": {
+      "date": "2026-10-03",
+      "month": "2026-10",
+      "evidence": "T",
+      "field": "Algebraic number theory",
+      "concept": "Cubic norms certify unit transport but not an unreplayed global search",
+      "origin": "Retrieved file passage carrying a historical date",
+      "question": "Which exact cubic identities can be checked directly, and what is still required to prove the claimed global uniqueness of a norm-equation solution?",
+      "math": "N(a+bz+cz²)=a³−4b³+16c³+12abc. The elements η=5−3z+2z² and ε=1−z−z² both have norm one. Also N(u−vz)=u³+4v³, and (u,v)=(−1,3) gives norm 107.",
+      "finish": "Definitions, proved proposition, worked example, limitations and extension",
+      "kind": "Revised mathematical development",
+      "refs": [
+        "https://leanprover-community.github.io/mathlib4_docs/Mathlib/RingTheory/Norm/Basic.html"
+      ],
+      "source_excerpt": "- [FILE_FACT] [f0] **Oct 3:** Cubic norm equations and unit-orbit completeness. For \\(z^3=-4\\), norm \\(\\pm107\\), the exact result was \\(u^3+4v^3=107\\iff(u,v)=(-1,3)\\); units \\(\\eta=(5,-3,2)\\), \\(\\varepsilon=(1,-1,-1)\\), with a 3,631-candidate slab and period 3 mod 3.",
+      "retrieval_receipt": "root_coverage_4.json record 0",
+      "original_question": null,
+      "attribution_note": "The retrieved source passage and its author attribution are preserved. The revised question, proof and worked example are newly authored. Historical assistant claims, including claimed Lean or repository verification, are not treated as independently replayed certificates unless a specific executed certificate is expressly identified."
+    }
+  },
+  {
+    "id": "Y26-10-010",
+    "title": "Quadratic elimination needs conjugate and zero-denominator branch checks",
+    "status": "Classical mathematics or a newly chosen finite model developed with proof; historical claims delimited",
+    "summary": "The source describes norm elimination, reconstruction and a B=0 branch. The exact theorem clarifies why an eliminated polynomial gives necessary candidates rather than an automatic bijection. It also explains how a large resultant can contain both conjugate sheets and repeated exceptional factors.",
+    "definitions": [
+      "Let K be a characteristic-zero field, D∈K, and A,B∈K[x]. Work first with the algebra K[T]/(T²−D).",
+      "The norm polynomial is N(x)=A(x)²−DB(x)², the determinant of multiplication by A+TB on the basis 1,T."
+    ],
+    "result": {
+      "name": "Elimination and reconstruction with all branches",
+      "statement": "Every solution of T²=D and A+TB=0 satisfies N=0. If B(x)≠0, the converse holds with the unique reconstruction T=−A(x)/B(x). If B(x)=0, a solution exists exactly when A(x)=0 and T²=D; this branch must be handled separately. A prescribed real sign of T requires an additional sign test.",
+      "proof": "The conjugate product (A+TB)(A−TB)=A²−DB² proves necessity. For B≠0, N=0 gives (−A/B)²=D, and substitution gives A+(−A/B)B=0, proving the converse. For B=0 the original relation reduces to A=0, which cannot be inferred by dividing by B. If one starts with the fixed real constant T=√D rather than a free algebraic variable, N=0 combines both signs of √D. Reconstruction decides which sign a candidate belongs to. Over a quotient by another polynomial p, gcd(p,B) separates precisely the potentially singular components when p is squarefree. If p has nilpotents, pointwise branches alone do not capture the quotient algebra."
+    },
+    "example": {
+      "setup": "Use D=2, A=(x−1)(x−2), B=x−1.",
+      "calculation": "The eliminant is (x−1)²[(x−2)²−2]. For T=√2, the original equation is (x−1)(x−2+√2)=0, so its roots are x=1 and x=2−√2. The eliminant also contains x=2+√2, which reconstructs T=−√2 and must be rejected on the positive sheet. At x=1, A=B=0, so both signs of T satisfy the equation although the rational reconstruction is undefined.",
+      "conclusion": "The example exhibits both a genuine exceptional branch and a conjugate extraneous candidate."
+    },
+    "limits": "The recovered 26-term and 100-term counts cannot be replayed without the actual polynomials. Squaring or taking a norm can enlarge a prescribed real solution set, and integer reconstruction further requires exact divisibility and integrality tests.",
+    "extension": "Attach to every eliminant root an exact algebraic sign or isolating interval for −A/B; split gcd components first and record reconstruction identities in the quotient ring, producing a reversible elimination certificate.",
+    "references": [
+      {
+        "label": "Stacks Project: finite locally free norms",
+        "url": "https://stacks.math.columbia.edu/tag/0BD2"
+      }
+    ],
+    "original": {
+      "date": "2026-10-09",
+      "month": "2026-10",
+      "evidence": "A",
+      "field": "Elimination theory",
+      "concept": "Quadratic elimination needs conjugate and zero-denominator branch checks",
+      "origin": "Dated recovered conversation evidence",
+      "question": "When does eliminating T from T²=D and A(x)+TB(x)=0 preserve the desired solution branch?",
+      "math": "Every solution of T²=D and A+TB=0 satisfies N=0. If B(x)≠0, the converse holds with the unique reconstruction T=−A(x)/B(x). If B(x)=0, a solution exists exactly when A(x)=0 and T²=D; this branch must be handled separately. A prescribed real sign of T requires an additional sign test.",
+      "finish": "Definitions, proved proposition, worked example, limitations and extension",
+      "kind": "Revised mathematical development",
+      "refs": [
+        "https://stacks.math.columbia.edu/tag/0BD2"
+      ],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c9] A@2026-10-09T23:12:35Z, -11d: Quadratic elimination: modulo \\(T^2=D\\), \\(P=A+TB\\), norm \\(A^2-DB^2\\); source 26 terms → eliminated 100-term polynomial; reconstruction \\(T=-A/B\\), \\(B=0\\) branch, integer divisibility.",
+      "retrieval_receipt": "root_coverage_4.json record 0",
+      "original_question": null,
+      "attribution_note": "The retrieved source passage and its author attribution are preserved. The revised question, proof and worked example are newly authored. Historical assistant claims, including claimed Lean or repository verification, are not treated as independently replayed certificates unless a specific executed certificate is expressly identified."
+    }
+  },
+  {
+    "id": "Y26-10-011",
+    "title": "Squarefree quotient algebras split exceptional and regular branches by gcd",
+    "status": "Classical mathematics or a newly chosen finite model developed with proof; historical claims delimited",
+    "summary": "The recovered gcd branch splitting has a clean Chinese-remainder proof. It turns an informal instruction to avoid zero denominators into an exact decomposition of a finite algebra. The squarefree hypothesis is the structural reason the branches separate.",
+    "definitions": [
+      "Let K be a field, p∈K[t] squarefree, and a∈K[t]. Set g=gcd(p,a), h=p/g, with monic choices.",
+      "Write R=K[t]/(p). A component is regular for a when multiplication by a is invertible on it."
+    ],
+    "result": {
+      "name": "Exact regular/exceptional decomposition",
+      "statement": "g and h are coprime, and R≅K[t]/(g)×K[t]/(h). The image of a is zero in the first factor and invertible in the second; a Bézout identity supplies its inverse there.",
+      "proof": "Because p is squarefree, no irreducible factor dividing g can also divide h. The Chinese remainder map therefore has inverse constructed from Bézout polynomials ug+vh=1, proving the algebra isomorphism. Every factor of g divides a, so a is zero modulo g. Conversely, any common divisor of a and h would divide p and a, hence g, contradicting coprimality of g and h. Thus gcd(a,h)=1, and extended Euclid gives ra+sh=1; r is an exact inverse of a modulo h. No root approximations or heuristic branch labels enter. When g=1 there is no exceptional component; when h=1 every component is exceptional. These cases are naturally interpreted using the zero quotient factor."
+    },
+    "example": {
+      "setup": "Take K=Q, p=(t−1)(t+1)(t−2) and a=t−1.",
+      "calculation": "Here g=t−1 and h=t²−t−2. In K[t]/(h), (t−1)(t/2)=(t²−t)/2=1, so t/2 is the regular inverse. In the factor t=1, a is zero. Hence an expression b/a can be evaluated using bt/2 only on the h component; the t=1 component still requires its original undivided equation. For contrast, if p=(t−1)², then g=t−1 and h=t−1 are not coprime: the quotient contains a nonzero nilpotent and cannot be replaced by a product of two point factors.",
+      "conclusion": "The decomposition makes every denominator decision and exceptional branch auditable."
+    },
+    "limits": "This is an algebra decomposition, not a guarantee that all real roots are physically or arithmetically admissible. Repeated factors require primary or local-algebra methods, and real sign conditions remain additional data.",
+    "extension": "Combine this split with Sturm isolating intervals and norm reconstruction, so each real component carries both an exact inverse certificate and a proof of its sign and multiplicity.",
+    "references": [
+      {
+        "label": "Stacks Project: Chinese remainder theorem",
+        "url": "https://stacks.math.columbia.edu/tag/00DT"
+      }
+    ],
+    "original": {
+      "date": "2026-10-06",
+      "month": "2026-10",
+      "evidence": "A",
+      "field": "Exact algebraic branches",
+      "concept": "Squarefree quotient algebras split exceptional and regular branches by gcd",
+      "origin": "Dated recovered conversation evidence",
+      "question": "How can a denominator be inverted exactly on the valid components of a polynomial quotient without losing its exceptional components?",
+      "math": "g and h are coprime, and R≅K[t]/(g)×K[t]/(h). The image of a is zero in the first factor and invertible in the second; a Bézout identity supplies its inverse there.",
+      "finish": "Definitions, proved proposition, worked example, limitations and extension",
+      "kind": "Revised mathematical development",
+      "refs": [
+        "https://stacks.math.columbia.edu/tag/00DT"
+      ],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c6] A@2026-10-06T23:31:27Z, -14d: Polynomial quotient branch splitting via \\(\\gcd(p(t),a(t))\\); exact global-vacuum selection; matrix-word commutator probe \\([T_1,T_2]e_0=(0,0,0,-1/24)^T\\); Fourier positivity for phase constraints; wall operator \\(\\mathcal L=k^2[-\\partial_x^2+4-6\\operatorname{sech}^2x]\\), eigenvalues \\(0,3k^2\\), continuum \\(4k^2\\).",
+      "retrieval_receipt": "root_coverage_4.json record 0",
+      "original_question": null,
+      "attribution_note": "The retrieved source passage and its author attribution are preserved. The revised question, proof and worked example are newly authored. Historical assistant claims, including claimed Lean or repository verification, are not treated as independently replayed certificates unless a specific executed certificate is expressly identified."
+    }
+  },
+  {
+    "id": "Y26-10-012",
+    "title": "The wall fluctuation operator has exactly two bound-state levels",
+    "status": "Classical mathematics or a newly chosen finite model developed with proof; historical claims delimited",
+    "summary": "The explicit wall operator is a tractable Pöschl–Teller problem. Factorization proves stability and identifies its discrete modes. An intertwining argument excludes any additional bound state; the mathematical result does not certify the source’s physical mass or lifetime estimates.",
+    "definitions": [
+      "Let k>0 and L=k²[−d²/dx²+4−6 sech²x] on L²(R), with domain H²(R).",
+      "Use the L² adjoint of d/dx, namely −d/dx, and write A=d/dx+2tanh x and B=d/dx+tanh x."
+    ],
+    "result": {
+      "name": "Exact discrete and essential spectrum",
+      "statement": "L/k²=A* A≥0. Its discrete eigenvalues are 0 and 3, each simple, with eigenfunctions sech²x and sech x·tanh x respectively; its essential spectrum is [4,∞).",
+      "proof": "Using (tanh x)′=sech²x and tanh²x=1−sech²x gives A*A=−d²+4−6sech²x. The kernel solves Af=0, hence f=C sech²x, which is square-integrable and unique. The partner AA*=−d²+4−2sech²x equals B*B+3, while BB*=−d²+1. The kernel of B is span(sech x), giving an eigenvalue three of AA*. Applying A* yields a nonzero multiple of sech x·tanh x, hence the second eigenfunction of A*A. If A*A had any other positive eigenvalue λ<4, A would transport its eigenfunction to an eigenfunction of B*B with eigenvalue λ−3. Positivity excludes λ<3. For 3<λ<4, applying B would produce an L² eigenfunction of −d²+1 below one, impossible by its Fourier transform. At λ=3 the kernel of B is one-dimensional. The decaying bounded potential is a relatively compact perturbation of −d²+4, so the essential spectrum remains [4,∞); equivalently, the standard resolvent compactness follows by local Rellich compactness and a small sup-norm tail."
+    },
+    "example": {
+      "setup": "Check k=2 and normalize the zero mode.",
+      "calculation": "The levels become 0 and 12, with continuum beginning at 16. Since ∫R sech⁴x dx=4/3, the normalized zero mode is (√3/2)sech²x; substitution t=tanh x reduces that integral to ∫_(−1)^1(1−t²)dt.",
+      "conclusion": "The spectrum and nonnegativity are exact consequences of the stated operator."
+    },
+    "limits": "Coupled-field fluctuation matrices, resonance widths and unit conversions require their actual operators and parameters. A translational zero mode does not imply every coupled model is stable.",
+    "extension": "For a specified coupled operator, use a matrix factorization or an explicit coercive lower bound on the orthogonal complement of its symmetry modes; state the domain and threshold channels before inferring stability.",
+    "references": [
+      {
+        "label": "Lekner: reflectionless eigenstates of the sech² potential",
+        "url": "https://doi.org/10.1119/1.2787015"
+      }
+    ],
+    "original": {
+      "date": "2026-10-06",
+      "month": "2026-10",
+      "evidence": "A",
+      "field": "Spectral differential equations",
+      "concept": "The wall fluctuation operator has exactly two bound-state levels",
+      "origin": "Dated recovered conversation evidence",
+      "question": "Can the recovered levels 0 and 3k² be derived exactly, with the continuum threshold and positivity justified?",
+      "math": "L/k²=A* A≥0. Its discrete eigenvalues are 0 and 3, each simple, with eigenfunctions sech²x and sech x·tanh x respectively; its essential spectrum is [4,∞).",
+      "finish": "Definitions, proved proposition, worked example, limitations and extension",
+      "kind": "Revised mathematical development",
+      "refs": [
+        "https://doi.org/10.1119/1.2787015"
+      ],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c6] A@2026-10-06T23:31:27Z, -14d: Polynomial quotient branch splitting via \\(\\gcd(p(t),a(t))\\); exact global-vacuum selection; matrix-word commutator probe \\([T_1,T_2]e_0=(0,0,0,-1/24)^T\\); Fourier positivity for phase constraints; wall operator \\(\\mathcal L=k^2[-\\partial_x^2+4-6\\operatorname{sech}^2x]\\), eigenvalues \\(0,3k^2\\), continuum \\(4k^2\\).",
+      "retrieval_receipt": "root_coverage_4.json record 0",
+      "original_question": null,
+      "attribution_note": "The retrieved source passage and its author attribution are preserved. The revised question, proof and worked example are newly authored. Historical assistant claims, including claimed Lean or repository verification, are not treated as independently replayed certificates unless a specific executed certificate is expressly identified."
+    }
+  },
+  {
+    "id": "Y26-10-013",
+    "title": "Darboux cofactors give a certificate for rational first integrals",
+    "status": "Classical mathematics or a newly chosen finite model developed with proof; historical claims delimited",
+    "summary": "The source reports six invariant factors checked by their cofactors, but does not supply the six polynomials. A general cofactor theorem and a nontrivial explicit vector field provide a reproducible constructive replacement without pretending to replay those missing checks.",
+    "definitions": [
+      "A polynomial vector field X acts as a derivation on polynomials. A nonzero polynomial H is Darboux with cofactor K when X(H)=KH.",
+      "A rational first integral I satisfies X(I)=0 wherever its denominator is nonzero."
+    ],
+    "result": {
+      "name": "Cofactor cancellation and invariant hypersurfaces",
+      "statement": "If X(H_j)=K_jH_j and integers m_j satisfy Σm_jK_j=0, then I=∏H_j^(m_j) is a rational first integral. Each zero hypersurface H_j=0 is invariant under the local flow.",
+      "proof": "The derivation product and quotient rules give X(I)=IΣm_jX(H_j)/H_j=IΣm_jK_j on the open set where all negative-power factors are nonzero; cancellation proves the rational identity. Along a solution trajectory, H_j obeys the scalar linear equation dH_j/dt=K_j(x(t))H_j. Its unique solution is the initial value times an exponential integral, so an initial zero remains zero while the trajectory exists. Thus the hypersurface statement follows without dividing by H_j. Polynomial identities X(H_j)−K_jH_j=0 can be checked coefficient by coefficient, providing exact finite certificates. Cofactor dependence is sufficient for an integral, but a collection of invariant factors need not have any nontrivial integer relation among its cofactors."
+    },
+    "example": {
+      "setup": "Choose X=(x²−y²)∂_x+2xy∂_y.",
+      "calculation": "For H₁=y, X(H₁)=2xy=2xH₁. For H₂=x²+y², X(H₂)=2x(x²−y²)+4xy²=2xH₂. The cofactors agree, so I=(x²+y²)/y is constant on trajectories with y≠0. Direct differentiation gives numerator y·2x(x²+y²)−(x²+y²)·2xy=0. The excluded line y=0 is itself invariant and carries x′=x², so its trajectories require a separate chart.",
+      "conclusion": "The same algebra proves conservation and records exactly where the rational formula is defined."
+    },
+    "limits": "No completeness of all first integrals follows from finding several factors. Constants of motion do not guarantee global existence, and the missing historical six-factor calculation is not claimed verified.",
+    "extension": "Search cofactors in a bounded-degree polynomial space, solve exact linear dependence relations, and use the resulting integrals to reduce a specified flow on regular level sets while analyzing singular divisors separately.",
+    "references": [
+      {
+        "label": "Darboux polynomials and integrability: original research archive",
+        "url": "https://arxiv.org/abs/1009.2876"
+      }
+    ],
+    "original": {
+      "date": "2026-10-09",
+      "month": "2026-10",
+      "evidence": "A",
+      "field": "Polynomial dynamical systems",
+      "concept": "Darboux cofactors give a certificate for rational first integrals",
+      "origin": "Dated recovered conversation evidence",
+      "question": "When do exact cofactor identities combine into a conserved quantity, and what are the domain restrictions?",
+      "math": "If X(H_j)=K_jH_j and integers m_j satisfy Σm_jK_j=0, then I=∏H_j^(m_j) is a rational first integral. Each zero hypersurface H_j=0 is invariant under the local flow.",
+      "finish": "Definitions, proved proposition, worked example, limitations and extension",
+      "kind": "Revised mathematical development",
+      "refs": [
+        "https://arxiv.org/abs/1009.2876"
+      ],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c9] A@2026-10-09T23:22:44Z, -11d: Darboux polynomials \\(X(H)=KH\\); six invariant factors passed exact cofactor checks. Finite-jet dependency: \\(b_7\\) leaves orders 0–6 unchanged and enters order 7 with coefficient \\(1/128\\).",
+      "retrieval_receipt": "root_coverage_4.json record 0",
+      "original_question": null,
+      "attribution_note": "The retrieved source passage and its author attribution are preserved. The revised question, proof and worked example are newly authored. Historical assistant claims, including claimed Lean or repository verification, are not treated as independently replayed certificates unless a specific executed certificate is expressly identified."
+    }
+  },
+  {
+    "id": "Y26-10-014",
+    "title": "Schröder jets are solved degree by degree until a resonance occurs",
+    "status": "Classical mathematics or a newly chosen finite model developed with proof; historical claims delimited",
+    "summary": "The dated synthesis lists jets and Schröder equations, while another passage warns that a seventh-order coefficient leaves six lower orders unchanged. A formal coefficient argument explains both phenomena. The chosen example is explicitly solvable and does not assume convergence of a general formal conjugacy.",
+    "definitions": [
+      "Let f(x)=λx+Σ_(n≥2)f_nxⁿ over a characteristic-zero field, λ≠0. Seek h(x)=x+Σ_(n≥2)h_nxⁿ with h(f(x))=λh(x).",
+      "The N-jet is a power series modulo x^(N+1). A resonance at degree n means λⁿ=λ."
+    ],
+    "result": {
+      "name": "Nonresonant jet recursion",
+      "statement": "If λⁿ≠λ for 2≤n≤N, the normalized Schröder equation has exactly one N-jet solution. Each h_n depends only on f₂,…,f_n; changing f_(N+1) cannot alter the solution through degree N.",
+      "proof": "Assume h₂,…,h_(n−1) have been determined. In degree n, the contribution of h_nf(x)ⁿ is λⁿh_n; the right side contributes λh_n. Every remaining term uses only lower coefficients of h and coefficients of f through degree n. Thus (λⁿ−λ)h_n is a known scalar, uniquely determining h_n in the nonresonant case. Induction proves existence and uniqueness to every requested finite order and the triangular dependency. At a resonance the known scalar must vanish for solvability; if it vanishes, h_n is not determined at that order. This proves a precise obstruction rather than a general linearization promise. In particular, two maps differing first at degree seven have identical six-jets, so no procedure using only those six coefficients can distinguish them."
+    },
+    "example": {
+      "setup": "Take f(x)=2x+x².",
+      "calculation": "Here 1+f(x)=(1+x)², so h(x)=log(1+x) gives h(f(x))=2h(x) as a formal identity. Its first coefficients are x−x²/2+x³/3−x⁴/4. Direct degree-two comparison gives 1+4h₂=2h₂, hence h₂=−1/2; degree three gives 4h₂+8h₃=2h₃, hence h₃=1/3. For contrast, λ=−1 resonates at every odd degree greater than one.",
+      "conclusion": "The example links an exact conjugacy to the finite triangular calculation and makes the identifiability limit explicit."
+    },
+    "limits": "Formal existence is not analytic convergence; small denominators require additional estimates. The source’s specific coefficient 1/128 cannot be independently checked without its actual input map.",
+    "extension": "For a supplied analytic family, bound the coefficient recursion on a stated disk and derive a certified remainder after N terms; separately classify resonant obstructions instead of hiding them in an inverse matrix.",
+    "references": [
+      {
+        "label": "NIST DLMF: logarithmic power series",
+        "url": "https://dlmf.nist.gov/4.6"
+      }
+    ],
+    "original": {
+      "date": "2026-10-14",
+      "month": "2026-10",
+      "evidence": "T",
+      "field": "Formal dynamical systems",
+      "concept": "Schröder jets are solved degree by degree until a resonance occurs",
+      "origin": "Retrieved file passage carrying a historical date",
+      "question": "What exact hypotheses make a finite-jet linearization unique, and why can early jets fail to identify later coefficients?",
+      "math": "If λⁿ≠λ for 2≤n≤N, the normalized Schröder equation has exactly one N-jet solution. Each h_n depends only on f₂,…,f_n; changing f_(N+1) cannot alter the solution through degree N.",
+      "finish": "Definitions, proved proposition, worked example, limitations and extension",
+      "kind": "Revised mathematical development",
+      "refs": [
+        "https://dlmf.nist.gov/4.6"
+      ],
+      "source_excerpt": "- [FILE_CONTENT] [f0] Identified October mathematical areas include arithmetic geometry, Pell orbits and transport, integer lattices, series/Hankel quotients, jets/Schröder equations, collision zeta functions, Weyl exactness, deformation moduli, and mathematical physics; the retrieved passage supplies no original user questions, dates beyond 14 October, or full proofs.",
+      "retrieval_receipt": "root_receipts.json record 0",
+      "original_question": null,
+      "attribution_note": "The retrieved source passage and its author attribution are preserved. The revised question, proof and worked example are newly authored. Historical assistant claims, including claimed Lean or repository verification, are not treated as independently replayed certificates unless a specific executed certificate is expressly identified."
+    }
+  },
+  {
+    "id": "Y26-10-015",
+    "title": "Threshold completion counts certify a population and its optimum",
+    "status": "Classical mathematics or a newly chosen finite model developed with proof; historical claims delimited",
+    "summary": "The Petersen records give capacities and historical totals, but not the fifty coefficient and profit rows needed to replay them. The rigorous core is a threshold dynamic program with explicit terminal multiplicities. A small instance below independently verifies counting and uniqueness while preserving each original project coordinate.",
+    "definitions": [
+      "For n distinct projects, let w_i∈Z_≥0^d and capacity b∈Z^d. A binary selection x is feasible if Σw_i x_i≤b coordinatewise.",
+      "Let C(i,b) count feasible suffix assignments from coordinate i. A true terminal before the last variable represents every assignment of all remaining coordinates."
+    ],
+    "result": {
+      "name": "Counting recurrence and optimization certificate",
+      "statement": "C(i,b)=0 if any coordinate of b is negative, C(n,b)=1 for b≥0, and C(i,b)=C(i+1,b)+C(i+1,b−w_i). If b dominates the entire suffix weight, C(i,b)=2^(n−i). For integer profits, uniqueness at value v follows from one feasible witness of value v and exactly one feasible assignment with value at least v.",
+      "proof": "Partition the feasible suffixes by x_i=0 or x_i=1. These disjoint sets are respectively the two smaller capacity problems, proving the recurrence inductively from its terminal cases. If every suffix assignment fits, there are n−i freely chosen bits, so its contribution is a power of two, not one. A reduced decision diagram may omit coordinates on which the residual predicate does not depend; each such free bit still doubles the represented assignments. Equivalently, an edge skipping g variables carries multiplicity 2ᵍ. For the optimization statement, the threshold count excludes every assignment of higher profit and every second assignment of equal profit. Conversely a unique maximizer makes that threshold population a singleton. The coefficient-generating product ∏_i(1+z^(w_i)t^(p_i)) gives the same count by selecting either monomial from each distinct project factor; equal weight vectors do not identify the underlying selections."
+    },
+    "example": {
+      "setup": "Use weights (2,3,4), capacity five and profits (3,4,5).",
+      "calculation": "The feasible bit strings are 000,001,010,100,110, so the population is five. Their profits are 0,5,4,3,7; the unique optimum is 110 at seven, and the profit-at-least-seven population is one. A separate predicate x₀∧x₂ on four coordinates has four solutions because x₁ and x₃ are free, illustrating skipped-variable multiplicity.",
+      "conclusion": "The recurrence and a complete small optimum certificate are replayed independently."
+    },
+    "limits": "The historical 702,508,860,122,761 total and 16,537 optimum remain source claims here; a theorem about the recurrence is not a replay of an absent concrete DAG or coefficient table. Variable ordering can change computational cost while preserving the mathematical population.",
+    "extension": "Emit a certificate DAG whose nodes carry variable indices, residual capacities and exact counts; check every recurrence edge, terminal power and root count, then add a profit-threshold singleton certificate linked to the original project identities.",
+    "references": [
+      {
+        "label": "Bryant: graph-based Boolean-function algorithms",
+        "url": "https://doi.org/10.1184/r1/6605990"
+      }
+    ],
+    "original": {
+      "date": "2026-10-12",
+      "month": "2026-10",
+      "evidence": "T",
+      "field": "Exact constrained counting",
+      "concept": "Threshold completion counts certify a population and its optimum",
+      "origin": "Retrieved file passage carrying a historical date",
+      "question": "What recurrence counts every feasible selection once, including skipped variables, and what makes an optimum certificate complete?",
+      "math": "C(i,b)=0 if any coordinate of b is negative, C(n,b)=1 for b≥0, and C(i,b)=C(i+1,b)+C(i+1,b−w_i). If b dominates the entire suffix weight, C(i,b)=2^(n−i). For integer profits, uniqueness at value v follows from one feasible witness of value v and exactly one feasible assignment with value at least v.",
+      "finish": "Definitions, proved proposition, worked example, limitations and extension",
+      "kind": "Revised mathematical development",
+      "refs": [
+        "https://doi.org/10.1184/r1/6605990"
+      ],
+      "source_excerpt": "- [FILE_FACT] [f0] ROBDD recurrence: at level \\(i\\), capacity \\(b\\), threshold is false if \\(b<0\\), true if \\(b\\ge T_i\\), otherwise node children are \\((i+1,b)\\) and \\((i+1,b-c_i)\\); skipped variables pass the same operand to both AND branches. Unique optimum certificate: exactly one feasible selection with profit \\(\\ge16{,}537\\), profit \\(16{,}537\\), mask \\(95{,}583{,}623{,}577{,}551\\); total population \\(702{,}508{,}860{,}122{,}761\\).",
+      "retrieval_receipt": "root_followups_6.json record 0",
+      "original_question": null,
+      "attribution_note": "The retrieved source passage and its author attribution are preserved. The revised question, proof and worked example are newly authored. Historical assistant claims, including claimed Lean or repository verification, are not treated as independently replayed certificates unless a specific executed certificate is expressly identified."
+    }
+  },
+  {
+    "id": "Y26-10-016",
+    "title": "Completion counts make ranking, inverse ranking and sampling exact",
+    "status": "Classical mathematics or a newly chosen finite model developed with proof; historical claims delimited",
+    "summary": "The recovered query-space work emphasizes exact addresses, inverse lookup, pagination and uniform sampling. These are consequences of a single prefix-partition theorem. It is the disjoint completion population, not the apparent size of an ambient search box, that determines valid addresses.",
+    "definitions": [
+      "Let Ω⊆{0,1}ⁿ be a finite nonempty population ordered lexicographically with 0 before 1. For a prefix q, let C(q) count its feasible completions.",
+      "The empty prefix has C(∅)=|Ω| and C(q)=C(q0)+C(q1); a feasible complete word has count one."
+    ],
+    "result": {
+      "name": "Rank/unrank bijection and unbiased sampling",
+      "statement": "There is an exact bijection rank:Ω→{0,…,|Ω|−1}. At prefix q, all q0 completions occupy the first C(q0) addresses; the q1 block occupies the following C(q1). A uniform address therefore gives a uniform object.",
+      "proof": "At a node q, split its contiguous address interval into disjoint initial and final blocks with those lengths. For unranking, compare the residual address r with C(q0): choose 0 when r<C(q0), otherwise choose 1 and replace r by r−C(q0). The chosen block has positive length and its residual address is valid; induction reaches exactly one feasible leaf. For ranking, scan a feasible word and add C(q0) whenever its next bit is 1. At each step these operations are inverse translations on the two disjoint blocks, proving the global bijection. Consequently P(unrank(R)=ω)=1/|Ω| when R is uniform. Conditional populations use the same construction below a fixed prefix. To draw an exact uniform integer from random bits, rejection sampling of a b-bit integer with 2ᵇ≥|Ω| is unbiased; reducing that integer modulo |Ω| is generally biased unless the modulus divides 2ᵇ."
+    },
+    "example": {
+      "setup": "Rank the five feasible words from the three-project example.",
+      "calculation": "The list is 000,001,010,100,110 with ranks 0,…,4; the prefix 1 has two completions. To sample one of five objects, generate three fair bits and reject addresses 5,6,7. Each valid address has conditional probability 1/5. Direct reduction of all eight bit strings modulo five instead gives probabilities (2,2,2,1,1)/8 and is not uniform.",
+      "conclusion": "The population has a reversible exact index and a precisely stated sampling distribution."
+    },
+    "limits": "A deterministic seed supplies reproducibility, not by itself a proof of uniformity or cryptographic unpredictability. If distinct source objects were merged, the address bijection would index the quotient rather than the original population.",
+    "extension": "Use counted prefixes as a persistent paginated API: each page is a half-open rank interval, and every update carries a versioned population definition so old addresses cannot silently refer to different objects.",
+    "references": [
+      {
+        "label": "Bryant: graph-based Boolean-function algorithms",
+        "url": "https://doi.org/10.1184/r1/6605990"
+      }
+    ],
+    "original": {
+      "date": "2026-10-12",
+      "month": "2026-10",
+      "evidence": "A",
+      "field": "Finite population algorithms",
+      "concept": "Completion counts make ranking, inverse ranking and sampling exact",
+      "origin": "Dated recovered conversation evidence",
+      "question": "How do local completion counts yield a global bijection between feasible objects and integer addresses?",
+      "math": "There is an exact bijection rank:Ω→{0,…,|Ω|−1}. At prefix q, all q0 completions occupy the first C(q0) addresses; the q1 block occupies the following C(q1). A uniform address therefore gives a uniform object.",
+      "finish": "Definitions, proved proposition, worked example, limitations and extension",
+      "kind": "Revised mathematical development",
+      "refs": [
+        "https://doi.org/10.1184/r1/6605990"
+      ],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c6] A@2026-10-12T16:09:49Z, -9d: BDD/completion recurrence \\(C(q)=C(q0)+C(q1)\\); exact counts enable rank, inverse-rank, conditional queries, uniform sampling; preserve distinct original identities.",
+      "retrieval_receipt": "root_followups_6.json record 0",
+      "original_question": null,
+      "attribution_note": "The retrieved source passage and its author attribution are preserved. The revised question, proof and worked example are newly authored. Historical assistant claims, including claimed Lean or repository verification, are not treated as independently replayed certificates unless a specific executed certificate is expressly identified."
+    }
+  },
+  {
+    "id": "Y26-10-017",
+    "title": "Factor elimination preserves counts only when auxiliary fibres are controlled",
+    "status": "Classical mathematics or a newly chosen finite model developed with proof; historical claims delimited",
+    "summary": "The source distinguishes sparse elimination from implementation benchmarks and records a gate-projection bijection. Both can be proved directly by finite sums. Auxiliary variables are harmless only when their number of extensions is exactly controlled for every original assignment.",
+    "definitions": [
+      "Let variables range over finite sets and let Z=Σ_x∏_j f_j(x_scope(j)) over a commutative semiring, such as nonnegative integers.",
+      "For a Boolean relation F(x,a), let m(x)=|{a:F(x,a)}| be the auxiliary fibre size."
+    ],
+    "result": {
+      "name": "Exact elimination and unique-extension projection",
+      "statement": "Eliminating v replaces all factors involving v by g(y)=Σ_v∏_(j:v∈scope(j))f_j, leaving other factors unchanged and preserving Z. If F(x,a) encodes a predicate P(x) with exactly one auxiliary extension for each satisfying x and none otherwise, then #F=#P.",
+      "proof": "In the finite sum defining Z, factors independent of v can be moved outside the sum over v by distributivity. The remaining sum is precisely g, proving elimination. Repeating this operation in any order preserves the same partition sum, although intermediate scopes and cost can differ greatly. For projection, partition the satisfying assignments of F by their original x-coordinate. Its count is Σ_x m(x), which equals #P exactly when m(x)=1 on P and zero off P. Merely proving existence of an auxiliary extension proves equisatisfiability, not count equality. If the fibre size is a known constant c on P, the count is c#P and a correction is possible; varying multiplicity needs weights or explicit projection. The argument also explains why duplicate-looking original coordinates must not be merged without their multiplicities."
+    },
+    "example": {
+      "setup": "Introduce the gate a=x₁ XOR x₂.",
+      "calculation": "All four binary choices of (x₁,x₂) have exactly one admissible a, so the gate relation has four satisfying triples. If a is instead unconstrained, the count is eight although both formulas project to the same four original assignments. Adding the condition a=1 gives precisely the two original inputs 01 and 10. Eliminating a by summing its gate indicator times its output indicator yields the XOR indicator on the original variables.",
+      "conclusion": "The count-preserving gate theorem is verified on every fibre rather than inferred from satisfiability."
+    },
+    "limits": "The source’s benchmark solve counts and timing comparisons require raw instances and execution receipts; the algebraic theorem does not reproduce them. Real-valued signed factors can define a partition sum without defining a probability distribution.",
+    "extension": "Generate elimination certificates as exact local tables or symbolic factors, attach a unique-extension proof to each auxiliary gate, and check the final scalar independently of the optimizer used to choose elimination order.",
+    "references": [
+      {
+        "label": "Bryant: graph-based Boolean-function algorithms",
+        "url": "https://doi.org/10.1184/r1/6605990"
+      }
+    ],
+    "original": {
+      "date": "2026-10-12",
+      "month": "2026-10",
+      "evidence": "A",
+      "field": "Factor graphs and projection",
+      "concept": "Factor elimination preserves counts only when auxiliary fibres are controlled",
+      "origin": "Dated recovered conversation evidence",
+      "question": "Why does eliminating a variable preserve a partition sum, and when does introducing a functional gate preserve the original model count?",
+      "math": "Eliminating v replaces all factors involving v by g(y)=Σ_v∏_(j:v∈scope(j))f_j, leaving other factors unchanged and preserving Z. If F(x,a) encodes a predicate P(x) with exactly one auxiliary extension for each satisfying x and none otherwise, then #F=#P.",
+      "finish": "Definitions, proved proposition, worked example, limitations and extension",
+      "kind": "Revised mathematical development",
+      "refs": [
+        "https://doi.org/10.1184/r1/6605990"
+      ],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c6] A@2026-10-12T16:09:49Z, -9d: General factor counting \\(Z=\\sum_x\\prod_j f_j(x_{\\mathrm{scope}_j})\\); variable elimination preserves \\(Z\\), with component multiplication/addition and functional gates requiring exactly one auxiliary extension.",
+      "retrieval_receipt": "root_followups_6.json record 0",
+      "original_question": null,
+      "attribution_note": "The retrieved source passage and its author attribution are preserved. The revised question, proof and worked example are newly authored. Historical assistant claims, including claimed Lean or repository verification, are not treated as independently replayed certificates unless a specific executed certificate is expressly identified."
+    }
+  },
+  {
+    "id": "Y26-10-018",
+    "title": "A Hankel witness proves the minimum observable recurrence order",
+    "status": "Classical mathematics or a newly chosen finite model developed with proof; historical claims delimited",
+    "summary": "The source reports a six-to-three-state reduction with a nonsingular Hankel witness. Since its matrices are absent, the following explicit six-state model is newly chosen. It illustrates both halves of a complete certificate: an all-time intertwiner for correctness and a Hankel minor for minimality.",
+    "definitions": [
+      "For a sequence y_n=cAⁿb over Q, its Hankel matrix is H_ij=y_(i+j), i,j≥0.",
+      "A forward recurrence of order r means y_(n+r)=Σ_(j=0)^(r−1)a_j y_(n+j) for every n≥0, with constant coefficients."
+    ],
+    "result": {
+      "name": "Intertwining plus rank gives exact minimality",
+      "statement": "If RA=GR, Rb=β and c=dR, then y_n=dGⁿβ for every n≥0. Any r-state realization or order-r recurrence has Hankel rank at most r. Thus a nonzero r×r Hankel minor together with an r-state realization proves minimal dimension and recurrence order exactly r.",
+      "proof": "From RA=GR, induction gives RAⁿ=GⁿR; the input and output identities then yield the full sequence equality, not merely agreement on a sampled prefix. For an s-state realization, H_ij=(cAⁱ)(Aʲb), so every finite Hankel block factors through an s-dimensional space and has rank at most s. An order-s recurrence similarly expresses every later Hankel column as a fixed combination of the preceding s columns. Hence either model needs at least the size of a nonzero minor. Conversely, an r-dimensional realization supplies an order at most r through its characteristic polynomial by Cayley–Hamilton. This suffices for the certificate used here; general minimal realization can be constructed from the shift action on the finite-dimensional span of Hankel columns."
+    },
+    "example": {
+      "setup": "Take A=diag(1,2,3,4,5,6), b=(1,1,1,0,0,0)ᵀ and c=bᵀ.",
+      "calculation": "Projection R onto the first three coordinates gives G=diag(1,2,3), β=(1,1,1)ᵀ and d=(1,1,1). Thus y_n=1+2ⁿ+3ⁿ, starting 3,6,14,36,98. Its leading 3×3 Hankel determinant is four, the squared Vandermonde determinant on 1,2,3. The recurrence is y_(n+3)=6y_(n+2)−11y_(n+1)+6y_n, from (t−1)(t−2)(t−3). Therefore three is exact.",
+      "conclusion": "A global matrix identity and a finite nonzero determinant jointly certify the reduction and its optimality."
+    },
+    "limits": "No finite prefix alone rules out a later perturbation unless a model class or global recurrence is already proved. Approximate low rank and a small singular value do not establish exact state equivalence.",
+    "extension": "For a supplied rational automaton, compute reachable and observable quotients over Q, emit the intertwining matrices and a nonsingular Hankel minor, and connect the certificate to every original input and output channel.",
+    "references": [
+      {
+        "label": "Balle et al.: canonical forms for weighted automata",
+        "url": "https://arxiv.org/abs/1501.06841"
+      }
+    ],
+    "original": {
+      "date": "2026-10-10",
+      "month": "2026-10",
+      "evidence": "A",
+      "field": "Linear realization theory",
+      "concept": "A Hankel witness proves the minimum observable recurrence order",
+      "origin": "Dated recovered conversation evidence",
+      "question": "What proves that a reduced state model preserves every output and that no smaller exact recurrence exists?",
+      "math": "If RA=GR, Rb=β and c=dR, then y_n=dGⁿβ for every n≥0. Any r-state realization or order-r recurrence has Hankel rank at most r. Thus a nonzero r×r Hankel minor together with an r-state realization proves minimal dimension and recurrence order exactly r.",
+      "finish": "Definitions, proved proposition, worked example, limitations and extension",
+      "kind": "Revised mathematical development",
+      "refs": [
+        "https://arxiv.org/abs/1501.06841"
+      ],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c11] A@2026-10-10T19:12:14Z, -11d: exact generating-function/combinatorial mathematics: counted \\(500{,}000{,}000{,}001\\) allocations, rank/select and optimization; six-state-to-three-state reduction preserved count sequences via a nonsingular Hankel witness.",
+      "retrieval_receipt": "root_coverage_4.json record 0",
+      "original_question": null,
+      "attribution_note": "The retrieved source passage and its author attribution are preserved. The revised question, proof and worked example are newly authored. Historical assistant claims, including claimed Lean or repository verification, are not treated as independently replayed certificates unless a specific executed certificate is expressly identified."
+    }
+  },
+  {
+    "id": "Y26-10-019",
+    "title": "A target is recoverable exactly when it factors through the observation",
+    "status": "Classical mathematics or a newly chosen finite model developed with proof; historical claims delimited",
+    "summary": "The recovered kernel criterion is a complete finite-dimensional identifiability theorem. It separates state reconstruction from recovering a particular target. The distinction prevents unnecessary sensing and makes a missing-information claim testable by an explicit nullspace vector.",
+    "definitions": [
+      "Let V,W,Z be finite-dimensional vector spaces over Q or R, with observation H:V→W and target G:V→Z.",
+      "The target is identifiable when Hx=Hy implies Gx=Gy for every x,y∈V."
+    ],
+    "result": {
+      "name": "Kernel factorization criterion",
+      "statement": "The following are equivalent: the target is identifiable; ker H⊆ker G; and there is a linear L:W→Z such that G=LH. L is uniquely determined on im H but need not be unique on all W.",
+      "proof": "If the target is identifiable, set y=0 and x∈ker H to obtain Gx=0. Conversely, Hx=Hy means x−y∈ker H, so kernel inclusion gives Gx=Gy. To construct L on im H, define L(Hx)=Gx. If Hx=Hy the kernel condition makes this independent of the representative, and linearity follows from the linearity of H and G. Extend a basis of im H to a basis of W and define L arbitrarily on the complement. Then G=LH. The converse factorization immediately implies kernel inclusion. A violating vector v with Hv=0 but Gv≠0 is therefore a complete impossibility certificate: x and x+v have identical data and different targets."
+    },
+    "example": {
+      "setup": "Observe Hx=(x₁+x₂,x₂+x₃) and ask for Gx=x₁+2x₂+x₃.",
+      "calculation": "Here ker H is span((1,−1,1)), and G annihilates this vector. The reconstruction is Gx=(1,1)Hx. Asking instead for x₁ fails, since its value changes along the kernel. In four dimensions, observing only the first two coordinates leaves a two-dimensional fibre; two further independent scalar linear measurements are necessary and sufficient to reconstruct the whole state, although fewer may suffice for a particular G.",
+      "conclusion": "The theorem identifies precisely which uncertainty matters for a requested mathematical output."
+    },
+    "limits": "Nonlinear, noisy or restricted-state observations require revised conditions. Dimension counting is a lower bound for full linear reconstruction, not a universal lower bound for arbitrary discontinuous encodings or finite-state problems.",
+    "extension": "Under bounded noise, minimize an explicit norm of L subject to G=LH; the resulting operator norm bounds target error and turns exact identifiability into a conditioned sensor-design problem.",
+    "references": [
+      {
+        "label": "Mathlib: quotient maps and linear factorization",
+        "url": "https://leanprover-community.github.io/mathlib4_docs/Mathlib/LinearAlgebra/Quotient/Basic.html"
+      }
+    ],
+    "original": {
+      "date": "2026-10-16",
+      "month": "2026-10",
+      "evidence": "A",
+      "field": "Linear observability",
+      "concept": "A target is recoverable exactly when it factors through the observation",
+      "origin": "Dated recovered conversation evidence",
+      "question": "Which requested outputs are identifiable from a given observation, even when the entire hidden state is not?",
+      "math": "The following are equivalent: the target is identifiable; ker H⊆ker G; and there is a linear L:W→Z such that G=LH. L is uniquely determined on im H but need not be unique on all W.",
+      "finish": "Definitions, proved proposition, worked example, limitations and extension",
+      "kind": "Revised mathematical development",
+      "refs": [
+        "https://leanprover-community.github.io/mathlib4_docs/Mathlib/LinearAlgebra/Quotient/Basic.html"
+      ],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c10] A@2026-10-16T18:31:44Z, -4d: Key equations: \\(\\ker H\\subseteq\\ker G\\iff G=LH\\); \\(qF_a=\\bar F_aq\\); \\(H_{u,v}=f(uv)\\); \\(C(q)=C(q0)+C(q1)\\); \\(p(F(x))=Gp(x)\\); \\(V(B)=\\min_a[c_a+\\max_oV(B_{a,o})]\\); \\(\\kappa_{\\rm sum}=\\sum_j|t_j|/|\\sum_jt_j|\\).",
+      "retrieval_receipt": "root_coverage_5.json record 0",
+      "original_question": null,
+      "attribution_note": "The retrieved source passage and its author attribution are preserved. The revised question, proof and worked example are newly authored. Historical assistant claims, including claimed Lean or repository verification, are not treated as independently replayed certificates unless a specific executed certificate is expressly identified."
+    }
+  },
+  {
+    "id": "Y26-10-020",
+    "title": "A moving observation obeys a closed equation exactly when its transport identity holds",
+    "status": "Classical mathematics or a newly chosen finite model developed with proof; historical claims delimited",
+    "summary": "The recovered identity B′+BA=TB includes a term absent from a fixed quotient. It is both necessary and sufficient for exact closure on every initial state. A rotating example shows why ignoring B′ can incorrectly reject a valid reduction or accept an invalid one.",
+    "definitions": [
+      "Let A(t),B(t),T(t) be continuous matrix functions, with B continuously differentiable. Assume x′=A(t)x and define y(t)=B(t)x(t).",
+      "All statements are on a fixed interval where the linear ODE has an invertible fundamental matrix."
+    ],
+    "result": {
+      "name": "Exact moving-quotient criterion",
+      "statement": "Every solution satisfies y′=T(t)y if and only if B′(t)+B(t)A(t)=T(t)B(t) for every t. For full-row-rank B, some T exists at a given time exactly when ker B⊆ker(B′+BA).",
+      "proof": "The product rule gives y′=(B′+BA)x. The displayed identity therefore proves sufficiency. For necessity, fix a time t: the invertible fundamental solution maps initial states onto every possible x(t), so equality of the two proposed derivatives for all solutions forces equality of the matrices. The kernel condition is the preceding linear factorization theorem applied to B and B′+BA. When B has a right inverse R, one may construct T=(B′+BA)R, provided the kernel condition holds; it ensures that the construction acts correctly on every state. For a fixed observation B, the B′ term vanishes and the condition reduces to invariance of ker B under A."
+    },
+    "example": {
+      "setup": "Take A=[[0,−1],[1,0]] and B(t)=(cos t,sin t).",
+      "calculation": "Here B′=(−sin t,cos t) and BA=(sin t,−cos t), so B′+BA=0. The moving scalar y is therefore constant, with T=0. Indeed x(t) is the counterclockwise rotation of x(0), and B(t) projects onto the transported first coordinate. A fixed B=(1,0) gives BA=(0,−1), which cannot equal a scalar multiple of B; the first fixed coordinate alone has no closed first-order scalar equation valid for all states.",
+      "conclusion": "The moving frame cancels the hidden rotation exactly and yields a genuine one-dimensional quotient."
+    },
+    "limits": "An approximate residual B′+BA−TB gives an error term, not exact closure. Rank changes, singular frames and nonlinearity require separate treatment; no claim about the source’s unrecovered application matrices is inferred.",
+    "extension": "Given a residual norm bound ε(t) and a bound on hidden states, apply variation of constants to quantify reduced-output error; optimize B and T against this certified bound rather than only a fitted trajectory.",
+    "references": [
+      {
+        "label": "NIST DLMF: systems of differential equations",
+        "url": "https://dlmf.nist.gov/1.13"
+      }
+    ],
+    "original": {
+      "date": "2026-10-19",
+      "month": "2026-10",
+      "evidence": "A",
+      "field": "Time-dependent state reduction",
+      "concept": "A moving observation obeys a closed equation exactly when its transport identity holds",
+      "origin": "Dated recovered conversation evidence",
+      "question": "How can an observation subspace move with time while still carrying an exact closed dynamical equation?",
+      "math": "Every solution satisfies y′=T(t)y if and only if B′(t)+B(t)A(t)=T(t)B(t) for every t. For full-row-rank B, some T exists at a given time exactly when ker B⊆ker(B′+BA).",
+      "finish": "Definitions, proved proposition, worked example, limitations and extension",
+      "kind": "Revised mathematical development",
+      "refs": [
+        "https://dlmf.nist.gov/1.13"
+      ],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c8] A@2026-10-19T01:59:13Z, -2d: expanded mathematics into experiment design: robust separation, adaptive policies \\(V(S)=\\min_e[c_e+\\max_yV(S_{e,y})]\\), observability \\(\\ker H\\subseteq\\ker G\\), low-rank resolvents, period transport, and moving quotients \\(B'+BA=TB\\).",
+      "retrieval_receipt": "root_coverage_5.json record 0",
+      "original_question": null,
+      "attribution_note": "The retrieved source passage and its author attribution are preserved. The revised question, proof and worked example are newly authored. Historical assistant claims, including claimed Lean or repository verification, are not treated as independently replayed certificates unless a specific executed certificate is expressly identified."
+    }
+  },
+  {
+    "id": "Y26-10-021",
+    "title": "Permitted actions determine the correct finite observation quotient",
+    "status": "Classical mathematics or a newly chosen finite model developed with proof; historical claims delimited",
+    "summary": "The recovered future-state refinement is stronger than comparing current outputs. The relevant equivalence depends on the full action alphabet. A finite partition-refinement proof supplies an exact stopping criterion and a concrete example in which reset changes identifiability.",
+    "definitions": [
+      "Let S be a finite state set, o:S→O an output map, and F_a:S→S deterministic actions for a in a finite alphabet.",
+      "Two states are future-equivalent if o(F_w(s))=o(F_w(t)) for every finite action word w, including the empty word."
+    ],
+    "result": {
+      "name": "Greatest observable congruence by partition refinement",
+      "statement": "Start with the partition by current output and repeatedly split blocks according to the blocks containing every action successor. The process stabilizes after at most |S|−1 strict refinements, and its final blocks are precisely the future-equivalence classes.",
+      "proof": "At stage n, induction shows that two states share a block exactly when their outputs agree after every action word of length at most n: the next stage tests the empty word and then one action followed by a word of length at most n. Each strict refinement increases the number of nonempty blocks, which cannot exceed |S|. At a fixed point the partition respects both current output and every action, so induction over arbitrary word length gives future equivalence. Conversely states agreeing on all words are never separated at any finite stage. This proves the algorithm computes the greatest action-compatible quotient preserving observations. A new action can only refine this relation because it enlarges the set of possible experiments."
+    },
+    "example": {
+      "setup": "Use S={a,b,c,d}, outputs o(a)=o(b)=o(c)=0 and o(d)=1.",
+      "calculation": "With only an identity action, a and b remain indistinguishable forever. Add reset with reset(a)=c, reset(b)=d, reset(c)=c and reset(d)=d. The one-letter experiment reset now separates a and b. Thus a controller that omits reset may collapse states that a richer experiment vocabulary can distinguish.",
+      "conclusion": "Identifiability is an exact property of the stated action-and-output system."
+    },
+    "limits": "Current-output equality alone is insufficient. Conversely, a finite test suite proves equivalence only if it is known to include a distinguishing basis or a stabilized refinement. Continuous-state systems need additional finiteness or algebraic structure.",
+    "extension": "Attach a shortest distinguishing action word to every split; the resulting quotient certificate can support an adaptive experiment tree and reveal exactly which additional action reduces the unresolved state population.",
+    "references": [
+      {
+        "label": "Hopcroft: finite-automaton minimization",
+        "url": "https://doi.org/10.1016/B978-0-12-417750-5.50022-1"
+      }
+    ],
+    "original": {
+      "date": "2026-10-09",
+      "month": "2026-10",
+      "evidence": "A",
+      "field": "Finite-state equivalence",
+      "concept": "Permitted actions determine the correct finite observation quotient",
+      "origin": "Dated recovered conversation evidence",
+      "question": "When are two hidden states indistinguishable under every permitted experiment, and how can an additional action refine that quotient?",
+      "math": "Start with the partition by current output and repeatedly split blocks according to the blocks containing every action successor. The process stabilizes after at most |S|−1 strict refinements, and its final blocks are precisely the future-equivalence classes.",
+      "finish": "Definitions, proved proposition, worked example, limitations and extension",
+      "kind": "Revised mathematical development",
+      "refs": [
+        "https://doi.org/10.1016/B978-0-12-417750-5.50022-1"
+      ],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c9] A@2026-10-09T23:40:01Z, -11d: Exact fibres: two free directions under two observations; two additional scalar measurements necessary/sufficient. Future-state refinement distinguishes states under permitted actions; four-state example required reset.",
+      "retrieval_receipt": "root_coverage_4.json record 0",
+      "original_question": null,
+      "attribution_note": "The retrieved source passage and its author attribution are preserved. The revised question, proof and worked example are newly authored. Historical assistant claims, including claimed Lean or repository verification, are not treated as independently replayed certificates unless a specific executed certificate is expressly identified."
+    }
+  },
+  {
+    "id": "Y26-10-022",
+    "title": "Worst-case experiment design has an exact finite Bellman proof",
+    "status": "Classical mathematics or a newly chosen finite model developed with proof; historical claims delimited",
+    "summary": "The recovered decision recurrence becomes rigorous once terminal conditions, deterministic outcomes and admissible progress are specified. Its proof is an exact decision-tree induction. This gives a constructive optimum rather than an assertion that one greedy panel is best.",
+    "definitions": [
+      "Let S be a finite set of possible states and g:S→D the target decision. An experiment e has positive cost c_e and partitions S into outcome fibres S_(e,y).",
+      "A terminal set is one on which g is constant. Ignore experiments whose only nonempty outcome is S itself; they cannot improve a worst-case exact decision."
+    ],
+    "result": {
+      "name": "Bellman minimax recursion",
+      "statement": "If the available tests separate every pair with different target values, V(S)=0 on terminal sets and otherwise V(S)=min_e[c_e+max_(y:S_(e,y)≠∅)V(S_(e,y))], restricting to experiments with all nonempty fibres proper subsets. This equals the minimum worst-case cost of an exact adaptive decision tree.",
+      "proof": "A decision tree must choose some experiment e first. An adversarial outcome can choose the most expensive remaining fibre, so its worst-case cost is at least c_e+max_y V(S_(e,y)). Minimizing over the first choice gives a lower bound on every tree. Conversely, choose an experiment attaining the finite minimum and attach optimal subtrees on its proper fibres. Induction on |S| constructs a tree achieving exactly that cost. Pairwise separability ensures a nonterminal set has a useful splitting test and a finite exact tree; positive costs make a non-splitting first experiment wasteful. This proves both existence and optimality. For noisy observations the fibres would be replaced by feasible posterior sets and terminal robustness would need a separate definition."
+    },
+    "example": {
+      "setup": "Identify one of three states a,b,c.",
+      "calculation": "Experiment e₁ costs one and partitions {a} from {b,c}; e₂ costs two and partitions {b} from {a,c}; a direct three-way experiment costs four. Performing e₁ first and, only if necessary, e₂ has worst-case cost three. Every one-test cheaper choice leaves a two-state ambiguity requiring the other test, so the Bellman optimum is three. The early a outcome costs only one, showing the adaptive branch structure.",
+      "conclusion": "The decision policy and its lower bound arise from the same exact recurrence."
+    },
+    "limits": "A worst-case optimum need not minimize expected cost under a prior. Historical panel speedups or prediction accuracies cannot be inferred from this finite theorem without the original states, tests and evaluation data.",
+    "extension": "Enrich each outcome fibre with a target-separation certificate and an admissible lower bound on its remaining cost; branch-and-bound can then find an optimum while retaining a verifiable proof tree.",
+    "references": [
+      {
+        "label": "Bellman: dynamic programming",
+        "url": "https://doi.org/10.1515/9781400835386"
+      }
+    ],
+    "original": {
+      "date": "2026-10-19",
+      "month": "2026-10",
+      "evidence": "A",
+      "field": "Adaptive experiment design",
+      "concept": "Worst-case experiment design has an exact finite Bellman proof",
+      "origin": "Dated recovered conversation evidence",
+      "question": "What is the minimum guaranteed measurement cost for determining a target on a finite uncertainty set?",
+      "math": "If the available tests separate every pair with different target values, V(S)=0 on terminal sets and otherwise V(S)=min_e[c_e+max_(y:S_(e,y)≠∅)V(S_(e,y))], restricting to experiments with all nonempty fibres proper subsets. This equals the minimum worst-case cost of an exact adaptive decision tree.",
+      "finish": "Definitions, proved proposition, worked example, limitations and extension",
+      "kind": "Revised mathematical development",
+      "refs": [
+        "https://doi.org/10.1515/9781400835386"
+      ],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c8] A@2026-10-19T01:59:13Z, -2d: expanded mathematics into experiment design: robust separation, adaptive policies \\(V(S)=\\min_e[c_e+\\max_yV(S_{e,y})]\\), observability \\(\\ker H\\subseteq\\ker G\\), low-rank resolvents, period transport, and moving quotients \\(B'+BA=TB\\).",
+      "retrieval_receipt": "root_coverage_5.json record 0",
+      "original_question": null,
+      "attribution_note": "The retrieved source passage and its author attribution are preserved. The revised question, proof and worked example are newly authored. Historical assistant claims, including claimed Lean or repository verification, are not treated as independently replayed certificates unless a specific executed certificate is expressly identified."
+    }
+  },
+  {
+    "id": "Y26-10-023",
+    "title": "Shared uncertainty should be optimized jointly in a decision difference",
+    "status": "Classical mathematics or a newly chosen finite model developed with proof; historical claims delimited",
+    "summary": "The recovered final October target is to certify a decision using common uncertainty and the cheapest sufficient measurement. Joint modeling preserves cancellation that is destroyed by independent interval bounds. The following theorem is deterministic and concerns abstract scores, with no empirical or financial forecast assumed.",
+    "definitions": [
+      "Let X be a nonempty uncertainty set and let J_A,J_B:X→R be two scores, with larger preferred. Set δ(x)=J_A(x)−J_B(x).",
+      "A strict robust certificate is a positive lower bound m≤inf_(x∈X)δ(x). Attainment of the infimum is unnecessary if a bound is proved directly."
+    ],
+    "result": {
+      "name": "Joint dominance and measurement certificates",
+      "statement": "If inf_X(J_A−J_B)>0, A wins for every compatible state. In the shared model J_A=c+δ, J_B=c with δ∈[7/4,9/4], the margin is at least 7/4 regardless of the range of c. Separate interval subtraction can fail to certify the same fact.",
+      "proof": "The first assertion is immediate from the defining inequality for every x. Its content is the order of operations: subtraction must take place at the same uncertainty state before minimization. In general inf(A−B)≥inf A−sup B, but the inequality can be strict because the separate extrema need not occur at compatible states. For c∈[0,100], separate score ranges are A∈[7/4,409/4] and B∈[0,100]; their interval difference includes −393/4, even though the exact shared difference is always positive. A new measurement with result z and error bound ε restricts X to X_z={x:|h(x)−z|≤ε}; computing the margin on X_z can only improve its lower bound because X_z⊆X. A decision-sufficient experiment is one whose every nonempty outcome fibre gives a positive margin for one of the two directions."
+    },
+    "example": {
+      "setup": "Suppose δ itself is measured with absolute error at most 1/10.",
+      "calculation": "A result z=1/4 implies δ≥z−1/10=3/20>0, certifying A. A result z=1/20 gives δ∈[−1/20,3/20], so it does not certify either direction. With several possible tests, their costs and outcome fibres can be inserted into the finite Bellman recurrence to identify the cheapest guaranteed decision procedure.",
+      "conclusion": "The certificate exploits correlation exactly and states which remaining uncertainty matters."
+    },
+    "limits": "Overlapping separate intervals do not imply an undecidable joint model, while a positive estimate without an error bound is not a robust certificate. This theorem supplies no calibration of an empirical uncertainty set.",
+    "extension": "Use polynomial or rational score models on a semialgebraic X and produce an exact positivity certificate for J_A−J_B; then optimize measurement cost subject to such certificates on every admissible outcome fibre.",
+    "references": [
+      {
+        "label": "Boyd and Vandenberghe: convex optimization",
+        "url": "https://web.stanford.edu/~boyd/cvxbook/"
+      }
+    ],
+    "original": {
+      "date": "2026-10-21",
+      "month": "2026-10",
+      "evidence": "A",
+      "field": "Robust mathematical decisions",
+      "concept": "Shared uncertainty should be optimized jointly in a decision difference",
+      "origin": "Dated recovered conversation evidence",
+      "question": "How can a decision be certified when separate interval bounds overlap but the competing scores share the same uncertainty?",
+      "math": "If inf_X(J_A−J_B)>0, A wins for every compatible state. In the shared model J_A=c+δ, J_B=c with δ∈[7/4,9/4], the margin is at least 7/4 regardless of the range of c. Separate interval subtraction can fail to certify the same fact.",
+      "finish": "Definitions, proved proposition, worked example, limitations and extension",
+      "kind": "Revised mathematical development",
+      "refs": [
+        "https://web.stanford.edu/~boyd/cvxbook/"
+      ],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c7] A@2026-10-21T00:55:01Z, -4h: proposed shared-uncertainty decision certification, \\(\\min_{x\\in X}(J_A(x)-J_B(x))>0\\), exploiting cancellation \\(A=c+\\delta,\\ B=c,\\ A-B=\\delta\\ge1.75\\); target is cheapest measurement guaranteeing a decision.",
+      "retrieval_receipt": "root_coverage_5.json record 0",
+      "original_question": null,
+      "attribution_note": "The retrieved source passage and its author attribution are preserved. The revised question, proof and worked example are newly authored. Historical assistant claims, including claimed Lean or repository verification, are not treated as independently replayed certificates unless a specific executed certificate is expressly identified."
+    }
+  },
+  {
+    "id": "Y26-10-024",
+    "title": "Raw generator observability is an injective coding problem",
+    "status": "Classical mathematics or a newly chosen finite model developed with proof; historical claims delimited",
+    "summary": "The exact raw recurrence has now been retrieved. A separately replayed all-state lattice certificate is supplied in supplemental Y26-10-901–902; the accepted-output rule remains unavailable. Pigeonhole counting gives a rigorous lower bound. A collision criterion and a completely enumerated small analogue explain what an independent injectivity proof would have to establish.",
+    "definitions": [
+      "Let M=2¹⁰⁷−1, A=3¹²¹ mod M and b=2²⁶. States are x∈{0,…,M−1}, with F(x)=Ax mod M and output o(x)=x mod b.",
+      "The length-k observation code is C_k(x)=(o(x),o(Fx),…,o(F^(k−1)x)). Accepted/rejected observations define a different code and require their actual acceptance rule."
+    ],
+    "result": {
+      "name": "Information lower bound and exact collision obligations",
+      "statement": "Four raw outputs cannot determine every state because b⁴=2¹⁰⁴<M. Five outputs have sufficient alphabet capacity but are not proved injective by that inequality. If every five-coordinate projection of a length-L code is injective, its minimum Hamming distance is at least L−4, allowing one error in seven or two errors in nine.",
+      "proof": "The pigeonhole principle proves the lower bound by comparing M states with at most bᵏ output words. For a collision between states x and x′, write r_j=Aʲx mod M and r′_j=Aʲx′ mod M. Equal outputs mean r_j−r′_j is a multiple of b, while r_j−r′_j≡Aʲ(x−x′) mod M and |r_j−r′_j|<M. Thus collision differences lie in an explicitly defined integer lattice intersected with a bounded box; additionally they must be realizable by a common pair of states. Proving that there is no nonzero bounded lattice vector is sufficient for injectivity, while finding such a vector alone need not give a realizable collision. For the coding statement, two distinct codewords can agree in at most four positions; otherwise an injective five-coordinate projection would coincide. Their distance is therefore at least L−4. Disjoint Hamming balls of radius e follow when 2e is less than that distance."
+    },
+    "example": {
+      "setup": "Independently enumerate M=31, A=3, b=8 as a small chosen analogue.",
+      "calculation": "The one-, two- and three-output codes have respectively 8,24 and31 distinct words across all31 states. Thus three consecutive outputs are exactly sufficient in this model. Its length-five code has minimum Hamming distance three, hence corrects one arbitrary word error. These statements are checked by exhaustive exact integer enumeration.",
+      "conclusion": "The actual recurrence and its four-output obstruction are explicit; the small model demonstrates the logic, while the independent lattice supplement supplies the large raw-state theorem."
+    },
+    "limits": "The main entry’s toy enumeration is not a proof of the large raw-state theorem; the separate exact126-pattern lattice supplement supplies that proof. The six-accepted result remains a prior assistant claim because no rejection rule is recovered. No cryptographic security or provenance conclusion follows from the small analogue.",
+    "extension": "Extend the supplied raw-state lattice certificate to accepted observations only after recovering the acceptance rule; model the variable-length emission transducer explicitly, characterize its first-emitting-state quotient, and distinguish genuine hidden-state collisions from unobserved pre-call histories.",
+    "references": [],
+    "original": {
+      "date": "2026-10-20",
+      "month": "2026-10",
+      "evidence": "A",
+      "field": "Finite arithmetic observability",
+      "concept": "Raw generator observability is an injective coding problem",
+      "origin": "Dated recovered conversation evidence",
+      "question": "What can be proved from the recovered generator equations, and what certificate is needed for the claimed five-output reconstruction theorem?",
+      "math": "Four raw outputs cannot determine every state because b⁴=2¹⁰⁴<M. Five outputs have sufficient alphabet capacity but are not proved injective by that inequality. If every five-coordinate projection of a length-L code is injective, its minimum Hamming distance is at least L−4, allowing one error in seven or two errors in nine.",
+      "finish": "Definitions, proved proposition, worked example, limitations and extension",
+      "kind": "Revised mathematical development",
+      "refs": [],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c0] A@2026-10-20T23:59:42Z, -4h58m: FreeLIP recurrence \\(x_{i+1}=Ax_i\\bmod M\\), \\(M=2^{107}-1\\), \\(A=3^{121}\\bmod M\\); raw output \\(y_i=x_i\\bmod2^{26}\\). Five consecutive raw outputs uniquely determine every state; four cannot by \\(2^{104}<2^{107}-1\\).",
+      "retrieval_receipt": "root_exact_2.json record 0",
+      "original_question": null,
+      "attribution_note": "The retrieved source passage and its author attribution are preserved. The revised question, proof and worked example are newly authored. Historical assistant claims, including claimed Lean or repository verification, are not treated as independently replayed certificates unless a specific executed certificate is expressly identified."
+    }
+  },
+  {
+    "id": "Y26-10-025",
+    "title": "Cancellation controls the condition number of an exact sum",
+    "status": "Classical mathematics or a newly chosen finite model developed with proof; historical claims delimited",
+    "summary": "The retrieved condition number concerns the sum of terms, rather than the intrinsic truth of the identity. A direct perturbation bound makes its scope precise. It also explains why common-mode symbolic cancellation should occur before evaluating large nearly opposite quantities.",
+    "definitions": [
+      "Let S=Σ_(j=1)^n t_j≠0 be a real or complex sum. Define κ_sum=Σ|t_j|/|S|.",
+      "Assume perturbed terms satisfy |Δt_j|≤ε|t_j|; this is an input relative-error model, separate from the additional error of the summation algorithm."
+    ],
+    "result": {
+      "name": "Sharp first-order relative perturbation bound",
+      "statement": "|ΔS|/|S|≤εκ_sum. For real terms the bound can be attained by suitable independent signed perturbations. If S=0, relative conditioning is undefined and an absolute error bound must be used instead.",
+      "proof": "The triangle inequality gives |ΣΔt_j|≤Σε|t_j|, proving the bound. For real terms, choose every Δt_j with the same sign, of magnitude ε|t_j|; then their sum has magnitude εΣ|t_j|, giving equality. Since |Σt_j|≤Σ|t_j|, κ_sum≥1. For complex terms the same upper bound holds and alignment of perturbation directions similarly attains it under the stated independent complex-error balls. This is a worst-case conditioning theorem; a particular floating-point algorithm can add further rounding errors, while correlated input errors may cancel and require a joint model. Therefore a large κ is a warning about sensitivity, not a proof that any computed value is wrong."
+    },
+    "example": {
+      "setup": "Compare an unstable difference with an algebraically simplified one.",
+      "calculation": "For t₁=10¹²+1 and t₂=−10¹², S=1 and κ_sum=2·10¹²+1. Independent relative errors of only 10⁻¹² can therefore create absolute errors around two, larger than the true result. If both terms come from the exact common expression c, computing (c+1)−c symbolically as one removes the common uncertainty before numeric evaluation. This is valid only when the two c occurrences really represent the same quantity.",
+      "conclusion": "The condition number quantifies precisely how cancellation can magnify independent term errors."
+    },
+    "limits": "It is not an a posteriori interval certificate and does not bound errors in unrecovered historical high-precision calculations. Correlations, exact rational arithmetic and compensated summation alter the appropriate error model.",
+    "extension": "For a supplied special-function identity, derive interval enclosures for its individual terms, simplify shared algebraic pieces, and bound the final absolute residual with directed error control before interpreting extra decimal digits.",
+    "references": [
+      {
+        "label": "Higham: accuracy and stability of numerical algorithms",
+        "url": "https://doi.org/10.1137/1.9780898718027"
+      }
+    ],
+    "original": {
+      "date": "2026-10-16",
+      "month": "2026-10",
+      "evidence": "A",
+      "field": "Numerical conditioning",
+      "concept": "Cancellation controls the condition number of an exact sum",
+      "origin": "Dated recovered conversation evidence",
+      "question": "How can a mathematically exact identity be numerically unstable, and which error bound detects that instability?",
+      "math": "|ΔS|/|S|≤εκ_sum. For real terms the bound can be attained by suitable independent signed perturbations. If S=0, relative conditioning is undefined and an absolute error bound must be used instead.",
+      "finish": "Definitions, proved proposition, worked example, limitations and extension",
+      "kind": "Revised mathematical development",
+      "refs": [
+        "https://doi.org/10.1137/1.9780898718027"
+      ],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c10] A@2026-10-16T18:31:44Z, -4d: Key equations: \\(\\ker H\\subseteq\\ker G\\iff G=LH\\); \\(qF_a=\\bar F_aq\\); \\(H_{u,v}=f(uv)\\); \\(C(q)=C(q0)+C(q1)\\); \\(p(F(x))=Gp(x)\\); \\(V(B)=\\min_a[c_a+\\max_oV(B_{a,o})]\\); \\(\\kappa_{\\rm sum}=\\sum_j|t_j|/|\\sum_jt_j|\\).",
+      "retrieval_receipt": "root_coverage_5.json record 0",
+      "original_question": null,
+      "attribution_note": "The retrieved source passage and its author attribution are preserved. The revised question, proof and worked example are newly authored. Historical assistant claims, including claimed Lean or repository verification, are not treated as independently replayed certificates unless a specific executed certificate is expressly identified."
+    }
+  },
+  {
+    "id": "Y26-10-026",
+    "title": "A distance-regular intersection array fixes a conditional exact spectrum",
+    "status": "Classical mathematics or a newly chosen finite model developed with proof; historical claims delimited",
+    "summary": "The monograph supplies the array {6,5,1;1,1,6} and a relation B²=X+6I. These are useful exact constraints, but their operators must not be silently identified. The following result derives everything forced by the array under the explicit distance-regularity hypothesis.",
+    "definitions": [
+      "Let A be the adjacency matrix of a connected distance-regular graph with intersection array {6,5,1;1,1,6}.",
+      "For a fixed vertex, b_i and c_i count neighbors moving outward and inward between its distance shells; a_i=6−b_i−c_i counts neighbors staying in the same shell."
+    ],
+    "result": {
+      "name": "Conditional forty-two-vertex spectrum",
+      "statement": "Such a graph has 42 vertices and spectrum 6¹,2²¹,(−1)⁶,(−3)¹⁴. Its shell quotient is [[0,6,0,0],[1,0,5,0],[0,1,4,1],[0,0,6,0]], whose characteristic polynomial is (t−6)(t−2)(t+1)(t+3).",
+      "proof": "Counting edges between consecutive shells gives k_(i+1)c_(i+1)=k_i b_i. Starting k₀=1 produces shell sizes 1,6,30,5, hence 42 vertices. The stated quotient follows from the intersection numbers. The distance matrices A₀=I,A₁=A,A₂,A₃ satisfy a three-term multiplication recurrence; each A_i is a degree-i polynomial in A, and the final recurrence annihilates A with the quotient characteristic polynomial. The four nonempty disjoint distance matrices are linearly independent, so A has exactly four eigenvalues, precisely the quotient roots. Connected regularity makes eigenvalue six simple. If the other multiplicities are m₂,m_−1,m_−3, their sum is41, while tr A=0 and tr A²=42·6 give 6+2m₂−m_−1−3m_−3=0 and36+4m₂+m_−1+9m_−3=252. Solving yields21,6,14."
+    },
+    "example": {
+      "setup": "If the source relation uses B=A, derive the spectrum of X.",
+      "calculation": "From X=A²−6I, the spectral mapping theorem gives X-eigenvalues 30,−2,−5,3 with multiplicities1,21,6,14. The trace is30−42−30+42=0, consistent with a zero diagonal. This conditional implication requires the actual identification B=A; the array by itself does not prove it.",
+      "conclusion": "The spectrum is obtained from exact combinatorial data and trace equations."
+    },
+    "limits": "An admissible intersection array is not by itself an existence construction. No M22 embedding, mixing-angle exclusion or scanned-frame completeness is replayed without the actual graph and transport matrices.",
+    "extension": "Recover explicit adjacency and incidence matrices, verify every distance-shell count and B²=X+6I by integer multiplication, then compute invariant subspaces in the exact number field used for any residual-frame comparison.",
+    "references": [
+      {
+        "label": "Brouwer, Cohen and Neumaier: distance-regular graph data",
+        "url": "https://aeb.win.tue.nl/drg/index.html"
+      }
+    ],
+    "original": {
+      "date": "2026-10-05",
+      "month": "2026-10",
+      "evidence": "T",
+      "field": "Algebraic graph spectra",
+      "concept": "A distance-regular intersection array fixes a conditional exact spectrum",
+      "origin": "Retrieved file passage carrying a historical date",
+      "question": "What spectrum follows from the recovered intersection array, and which additional graph data are needed to identify the transport operator?",
+      "math": "Such a graph has 42 vertices and spectrum 6¹,2²¹,(−1)⁶,(−3)¹⁴. Its shell quotient is [[0,6,0,0],[1,0,5,0],[0,1,4,1],[0,0,6,0]], whose characteristic polynomial is (t−6)(t−2)(t+1)(t+3).",
+      "finish": "Definitions, proved proposition, worked example, limitations and extension",
+      "kind": "Revised mathematical development",
+      "refs": [
+        "https://aeb.win.tue.nl/drg/index.html"
+      ],
+      "source_excerpt": "- [FILE_FACT] [f2] **Oct 5:** M22 cap geometry and spectral algebra: \\(B^2=X+6I\\); intersection array \\(\\{6,5,1;1,1,6\\}\\); analysis of \\(C_{\\mathrm{eff}}=\\frac{|V_{ub}|(1-|V_{ub}|^2)}{|V_{us}||V_{cb}|}\\).",
+      "retrieval_receipt": "root_coverage_4.json record 0",
+      "original_question": null,
+      "attribution_note": "The retrieved source passage and its author attribution are preserved. The revised question, proof and worked example are newly authored. Historical assistant claims, including claimed Lean or repository verification, are not treated as independently replayed certificates unless a specific executed certificate is expressly identified."
+    }
+  },
+  {
+    "id": "Y26-10-027",
+    "title": "Binary graph censuses can agree while integer-height series separate",
+    "status": "Classical mathematics or a newly chosen finite model developed with proof; historical claims delimited",
+    "summary": "The exact edge lists make this a complete finite certificate rather than a qualitative graph-isomorphism claim. Binary heights see only cut boundaries. Integer heights add correlations invisible to that binary census and separate the supplied pair already at total height three.",
+    "definitions": [
+      "On vertices0,…,6, take E(G)={03,04,06,12,13,23,24,35} and E(H)={01,04,06,15,16,26,36,45}.",
+      "Define E_G(h)=Σ_(ij∈E(G))(h_i−h_j)² and F_G(x,q)=Σ_(h∈Z_≥0^7)x^(Σh_i)q^(E_G(h)). A support-marked version also includes z^(#{i:h_i>0})."
+    ],
+    "result": {
+      "name": "Exact binary collision and first height separation",
+      "statement": "The binary polynomials Σ_(h∈{0,1}⁷)x^(Σh_i)q^(E_G(h)) agree for G and H. Their integer-height series agree in degrees0,1,2, but [x³](F_G−F_H)=q³(1−q)(1−q³)²(1−q⁴)². The same difference is the coefficient x³z² in the support-marked version.",
+      "proof": "For a binary vector, each edge contributes one exactly when its endpoints lie on opposite sides of the selected subset. Thus the binary polynomial is obtained by enumerating the128 subsets and recording subset size and cut size. The verifier compares these exact integer histograms, not floating values at one q. At total height R, only finitely many weak compositions h₀+⋯+h₆=R occur, so direct enumeration gives the exact coefficient polynomial. For R=0,1,2 the histograms agree. For R=3 their subtraction has coefficient list q³−q⁴−2q⁶+2q⁸+q⁹+3q¹⁰−3q¹¹−q¹²−2q¹³+2q¹⁵+q¹⁷−q¹⁸, which multiplies out to the displayed factorization. Terms of support three are binary and cancel by the first identity. Terms of support one depend only on the degree census, which also agrees. Consequently the entire remaining difference has support two, proving the marked coefficient claim."
+    },
+    "example": {
+      "setup": "Evaluate the exact separation at q=1/2.",
+      "calculation": "The factorization gives (1/8)(1/2)(7/8)²(15/16)²=11025/262144>0. Therefore the full height series differ, and graph isomorphism is impossible because relabeling preserves every energy coefficient.",
+      "conclusion": "A finite, exactly replayed collision disproves completeness of the binary census while giving a stronger distinguishing invariant."
+    },
+    "limits": "No Euler-product singularity follows without a precisely defined prime product and analytic remainder bounds. The support-marked notation is explicitly defined here instead of assuming the unavailable original meaning of every series letter.",
+    "extension": "Classify the least total height separating all graphs in a fixed order, and compare this filtration with pinned or boundary observations; attach exact coefficient histograms to every claimed reconstruction.",
+    "references": [
+      {
+        "label": "Andrén and Markström: the bivariate Ising polynomial",
+        "url": "https://www.sciencedirect.com/science/article/pii/S0166218X09000821"
+      }
+    ],
+    "original": {
+      "date": "2026-10-17",
+      "month": "2026-10",
+      "evidence": "A",
+      "field": "Graph energy invariants",
+      "concept": "Binary graph censuses can agree while integer-height series separate",
+      "origin": "Dated recovered conversation evidence",
+      "question": "Can the retrieved seven-vertex collision be independently checked, including its first multilevel difference?",
+      "math": "The binary polynomials Σ_(h∈{0,1}⁷)x^(Σh_i)q^(E_G(h)) agree for G and H. Their integer-height series agree in degrees0,1,2, but [x³](F_G−F_H)=q³(1−q)(1−q³)²(1−q⁴)². The same difference is the coefficient x³z² in the support-marked version.",
+      "finish": "Definitions, proved proposition, worked example, limitations and extension",
+      "kind": "Revised mathematical development",
+      "refs": [
+        "https://www.sciencedirect.com/science/article/pii/S0166218X09000821"
+      ],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c0] A@2026-10-17T19:56:42Z, -3d: Seven-vertex graphs \\(E(G)=\\{03,04,06,12,13,23,24,35\\}\\), \\(E(H)=\\{01,04,06,15,16,26,36,45\\}\\); all 128 binary size/boundary assignments agree; first multilevel difference \\([x^3z^2](B_G-B_H)=q^3(1-q)(1-q^3)^2(1-q^4)^2\\), value \\(11025/262144\\) at \\(q=\\frac12\\); arithmetic ratio has \\(C(3s-1)^{-11025/262144}\\).",
+      "retrieval_receipt": "root_followups_7.json record 0",
+      "original_question": null,
+      "attribution_note": "The retrieved source passage and its author attribution are preserved. The revised question, proof and worked example are newly authored. Historical assistant claims, including claimed Lean or repository verification, are not treated as independently replayed certificates unless a specific executed certificate is expressly identified."
+    }
+  },
+  {
+    "id": "Y26-10-028",
+    "title": "The centered graph Green matrix gives a sharp constrained energy cost",
+    "status": "Classical mathematics or a newly chosen finite model developed with proof; historical claims delimited",
+    "summary": "The source gives a graph resolvent and reciprocal diagonal constants. These admit a sharp finite-dimensional variational proof. It is important to distinguish quadratic regularization, used here, from the separately recovered series with the linear term λΣh_i.",
+    "definitions": [
+      "For a graph on n≥2 vertices, let L be its Laplacian and λ>0. Put Q=L+λI, Π=I−11ᵀ/n and K=Q⁻¹−11ᵀ/(λn).",
+      "For real v, vᵀQv=Σ_(ij∈E)(v_i−v_j)²+λΣ_i v_i². Restrict to the mean-zero space1⊥."
+    ],
+    "result": {
+      "name": "Sharp one-coordinate energy minimization",
+      "statement": "K=ΠQ⁻¹Π is positive definite on1⊥. For each vertex i and real a, min{vᵀQv:1ᵀv=0,v_i=a}=a²/K_ii, attained at v=aKe_i/K_ii. Thus the least energy for a coordinate of magnitude a is a²/max_iK_ii.",
+      "proof": "Since L1=0, Q⁻¹1=λ⁻¹1, which proves the formula with Π. On1⊥, Q is positive definite and K is its inverse. For v in that space, e_iᵀv=(Ke_i)ᵀQv because QKe_i=Πe_i. Cauchy–Schwarz in the Q-inner product gives |v_i|²≤[(Ke_i)ᵀQ(Ke_i)]vᵀQv=K_ii vᵀQv. Equality occurs for a scalar multiple of Ke_i; its ith component fixes the scalar to a/K_ii. Since Πe_i is nonzero for n≥2, K_ii>0. Taking the best vertex proves the final statement. Uniqueness can also be checked without an inequality: every other admissible vector is v+u with u_i=0 and mean zero. The cross term vᵀQu=(a/K_ii)(Πe_i)ᵀu vanishes, leaving the strictly positive increment uᵀQu unless u=0. This is an exact Euler–Lagrange certificate for the constrained minimizer."
+    },
+    "example": {
+      "setup": "Compute λ=2 for three three-vertex graphs.",
+      "calculation": "For the path P₃, diag K=(1/5,2/15,1/5), so1/max K_ii=5. For the triangle, K=(1/5)Π, giving diag2/15 and reciprocal15/2. For an edge plus an isolated vertex, diag K=(5/24,5/24,1/3), giving reciprocal3. The verifier reconstructs L and inverts Q exactly over Q.",
+      "conclusion": "The three recovered constants are reproduced as rigorous quadratic-energy minima."
+    },
+    "limits": "This does not prove a theta-tail asymptotic or identify the linear-weight height series F_(G,λ) with a quadratic Gaussian series. Integer-lattice minimization and asymptotic prefactors require further arguments beyond the real variational minimum.",
+    "extension": "For integer mean-constrained heights, compare the sharp real minimizer with a nearest lattice point and bound the bounded rounding correction; only then derive any logarithmic tail rate with the exact series definition stated.",
+    "references": [
+      {
+        "label": "Boyd and Vandenberghe: quadratic optimization",
+        "url": "https://web.stanford.edu/~boyd/cvxbook/"
+      }
+    ],
+    "original": {
+      "date": "2026-10-19",
+      "month": "2026-10",
+      "evidence": "A",
+      "field": "Graph quadratic forms",
+      "concept": "The centered graph Green matrix gives a sharp constrained energy cost",
+      "origin": "Dated recovered conversation evidence",
+      "question": "Why do the recovered constants5,15/2 and3 arise from a centered resolvent, and which energy model do they belong to?",
+      "math": "K=ΠQ⁻¹Π is positive definite on1⊥. For each vertex i and real a, min{vᵀQv:1ᵀv=0,v_i=a}=a²/K_ii, attained at v=aKe_i/K_ii. Thus the least energy for a coordinate of magnitude a is a²/max_iK_ii.",
+      "finish": "Definitions, proved proposition, worked example, limitations and extension",
+      "kind": "Revised mathematical development",
+      "refs": [
+        "https://web.stanford.edu/~boyd/cvxbook/"
+      ],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c2] A@2026-10-19T06:27:42Z, -1d22h: recovered formulas: \\(A_{G,R}^{(\\lambda)}(q)=q^{\\lambda R^2/n}(\\Theta_{G,r}^{(\\lambda)}(q)-\\epsilon_{G,R})\\); \\(K_G=(L_G+\\lambda I)^{-1}-\\mathbf1\\mathbf1^\\top/(\\lambda n)\\); \\(\\lim_{k\\to\\infty}\\log\\epsilon_{G,kn+r}/(k^2\\log q)=1/\\max_i(K_G)_{ii}\\). Checks at \\(\\lambda=2\\): path \\(P_3\\): 5; triangle: \\(15/2\\); edge plus isolated vertex: 3.",
+      "retrieval_receipt": "root_followups_7.json record 0",
+      "original_question": null,
+      "attribution_note": "The retrieved source passage and its author attribution are preserved. The revised question, proof and worked example are newly authored. Historical assistant claims, including claimed Lean or repository verification, are not treated as independently replayed certificates unless a specific executed certificate is expressly identified."
+    }
+  },
+  {
+    "id": "Y26-10-029",
+    "title": "Finite observation cutoffs need a stated algebraic or linear closure theorem",
+    "status": "Classical mathematics or a newly chosen finite model developed with proof; historical claims delimited",
+    "summary": "The retrieved work separates a Noetherian existence claim from a finite-dimensional boundary-state closure. These are different kinds of certificate. One may prove that some finite prefix suffices without obtaining any effective numerical bound; a supplied finite transition system permits an explicit rank-based stopping test.",
+    "definitions": [
+      "Let a_n(θ) be polynomials over a field k in a fixed finite parameter tuple θ. Compare two parameter tuples θ and θ′.",
+      "For a separate linear model, let W₀ be a row space in k^m and M₁,…,M_r fixed matrices; define W_(j+1)=W_j+Σ_i W_jM_i."
+    ],
+    "result": {
+      "name": "Two precise finite-determination principles",
+      "statement": "There exists N such that equality a_n(θ)=a_n(θ′) for0≤n≤N implies equality for every n, with θ,θ′ in any field extension of k. In the linear model, the chain W_j stabilizes after at most m−dim W₀ strict increases; once stable, it contains every row wM_word with w∈W₀.",
+      "proof": "In k[θ,θ′], let I_N be the ideal generated by a_n(θ)−a_n(θ′) for n≤N. Hilbert’s basis theorem makes this polynomial ring Noetherian, so the ascending ideal chain stabilizes at some I_N. Every later coefficient difference is then a polynomial combination of the first N+1 differences, and vanishes at any pair of parameter values making those differences zero. This proves existence but supplies no general effective N. For the linear claim, dimensions cannot strictly increase more than m−dim W₀ times. If one step has W_(j+1)=W_j, then W_j is invariant under all right multiplications M_i; induction over word length includes every future row. Thus exact row reduction and explicit spanning identities give a computable closure certificate."
+    },
+    "example": {
+      "setup": "Use the rational family F_(a,b)(x)=a/(1−bx).",
+      "calculation": "Its coefficients are a_n=abⁿ. Equality of a₀ and a₁ determines all coefficients: if a≠0 it determines b, while if a=0 the entire series vanishes independently of b. Therefore this chosen family has cutoff N=1, although its parameters are not identifiable on a=0.",
+      "conclusion": "Finite series determination and parameter reconstruction are distinct conclusions."
+    },
+    "limits": "The theorem applies to a fixed finite polynomial parameterization; it gives no uniform cutoff across unbounded templates or arbitrary sequences. The historical22-dimensional closure ranks cannot be replayed without their matrices.",
+    "extension": "For the actual graph-template family, supply an explicit generating ideal or boundary transition representation and derive an effective cutoff; separately prove when equality of the resulting invariant forces graph isomorphism in the stated graph class.",
+    "references": [
+      {
+        "label": "Stacks Project: Hilbert basis theorem",
+        "url": "https://stacks.math.columbia.edu/tag/00FM"
+      }
+    ],
+    "original": {
+      "date": "2026-10-18",
+      "month": "2026-10",
+      "evidence": "A",
+      "field": "Algebraic reconstruction",
+      "concept": "Finite observation cutoffs need a stated algebraic or linear closure theorem",
+      "origin": "Dated recovered conversation evidence",
+      "question": "When does a finite observation prefix determine an infinite series, and can the cutoff be computed?",
+      "math": "There exists N such that equality a_n(θ)=a_n(θ′) for0≤n≤N implies equality for every n, with θ,θ′ in any field extension of k. In the linear model, the chain W_j stabilizes after at most m−dim W₀ strict increases; once stable, it contains every row wM_word with w∈W₀.",
+      "finish": "Definitions, proved proposition, worked example, limitations and extension",
+      "kind": "Revised mathematical development",
+      "refs": [
+        "https://stacks.math.columbia.edu/tag/00FM"
+      ],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c1] A@2026-10-18T19:41:27Z, -2d: height-series scope: fixed finite graph template with polynomial edge factors has a finite observation prefix determining the entire series by Noetherianity; no effective cutoff or general reconstruction theorem established.",
+      "retrieval_receipt": "root_followups_7.json record 0",
+      "original_question": null,
+      "attribution_note": "The retrieved source passage and its author attribution are preserved. The revised question, proof and worked example are newly authored. Historical assistant claims, including claimed Lean or repository verification, are not treated as independently replayed certificates unless a specific executed certificate is expressly identified."
+    }
+  },
+  {
+    "id": "Y26-10-030",
+    "title": "Conductor 1680 collapses to eight order30 phases with multiplicity48",
+    "status": "Classical mathematics or a newly chosen finite model developed with proof; historical claims delimited",
+    "summary": "The retrieved source specifies ω=ζ₁₆₈₀ and η=ω⁵⁶=ζ₃₀. This is enough to prove the phase and trace multiplicities directly. It does not by itself identify an integral lattice or replay the claimed E₈ coordinate matrices.",
+    "definitions": [
+      "Let ζ_N=exp(2πi/N), K=Q(ζ₁₆₈₀) and L=Q(ζ₃₀). The primitive phases are ζ_Nᵃ for gcd(a,N)=1.",
+      "Define c₃₀(n)=Σ_(a mod30,gcd(a,30)=1)ζ₃₀^(an), the Ramanujan sum."
+    ],
+    "result": {
+      "name": "Exact degree and trace transport",
+      "statement": "φ(1680)=384, φ(30)=8 and [K:L]=48. The map ζ₁₆₈₀ᵃ↦ζ₃₀ᵃ sends the384 primitive phases onto the eight primitive order30 phases with exactly48 preimages each. Consequently Tr_(K/Q)(ω^(56n))=48c₃₀(n).",
+      "proof": "The elementary totient product gives φ(1680)=1680(1−1/2)(1−1/3)(1−1/5)(1−1/7)=384 and φ(30)=8. Because η=ω⁵⁶ has order30, L⊆K; cyclotomic irreducibility and the tower law give extension degree48. Reduction of units modulo1680 to units modulo30 is surjective: a prescribed residue coprime to30 can be extended to an odd residue modulo16 and a nonzero residue modulo7 using the Chinese remainder theorem. Its fibres are cosets of the kernel and therefore all have size384/8=48. Summing ω^(56an)=ζ₃₀^(an) over the384 embeddings of K groups the terms into these equal fibres, proving the trace identity. Equivalently, an element of L has relative trace48 times itself before taking its trace to Q."
+    },
+    "example": {
+      "setup": "Compute a trace with n coprime to30.",
+      "calculation": "Möbius inclusion–exclusion gives c₃₀(1)=μ(30)=−1, hence Tr_(K/Q)(ω⁵⁶)=−48. At n=30, every primitive η contributes one, so c₃₀(30)=8 and the K-trace is384. At n=2, the divisor formula gives c₃₀(2)=−1+2=1, so the larger-field trace is48. At n=15, every primitive order30 phase has fifteenth power−1, giving c₃₀(15)=−8 and trace−384. The verifier independently enumerates the reduced residue fibres as integer classes.",
+      "conclusion": "The eight-phase reduction and48-fold trace scale are exact arithmetic facts."
+    },
+    "limits": "The equations BᵀAB=G and CⁿB=BDⁿ require the actual matrices to prove an integral E₈ identification; equal dimension or trace data alone do not establish it. No such matrix certificate is claimed replayed here.",
+    "extension": "Recover the proposed lattice basis B, verify its Gram matrix and the one-step intertwining CB=BD over integers, then use induction to obtain every power and compare lattice integrality separately from rational representation equivalence.",
+    "references": [
+      {
+        "label": "NIST DLMF: Ramanujan sums and finite Fourier series",
+        "url": "https://dlmf.nist.gov/27.10"
+      }
+    ],
+    "original": {
+      "date": "2026-10-16",
+      "month": "2026-10",
+      "evidence": "T",
+      "field": "Cyclotomic trace arithmetic",
+      "concept": "Conductor 1680 collapses to eight order30 phases with multiplicity48",
+      "origin": "Retrieved file passage carrying a historical date",
+      "question": "Which exact field and phase multiplicities underlie the conductor bridge, without assuming an unrecovered E₈ matrix intertwiner?",
+      "math": "φ(1680)=384, φ(30)=8 and [K:L]=48. The map ζ₁₆₈₀ᵃ↦ζ₃₀ᵃ sends the384 primitive phases onto the eight primitive order30 phases with exactly48 preimages each. Consequently Tr_(K/Q)(ω^(56n))=48c₃₀(n).",
+      "finish": "Definitions, proved proposition, worked example, limitations and extension",
+      "kind": "Revised mathematical development",
+      "refs": [
+        "https://dlmf.nist.gov/27.10"
+      ],
+      "source_excerpt": "- [FILE_FACT] [f1] Conductor bridge: \\(\\omega=\\zeta_{1680}\\), \\(\\eta=\\omega^{56}=\\zeta_{30}\\); \\(\\mathbb Q(\\eta)\\subset\\mathbb Q(\\omega)\\) has degree \\(48\\), so traces on the conductor-1680 module scale by \\(48\\). E₈ map satisfies \\(B^TAB=G\\) and \\(C^nB=BD^n\\), with \\(D\\) multiplication by \\(X\\) in \\(\\mathbb Z[X]/(\\Phi_{30})\\).",
+      "retrieval_receipt": "root_followups_6.json record 0",
+      "original_question": null,
+      "attribution_note": "The retrieved source passage and its author attribution are preserved. The revised question, proof and worked example are newly authored. Historical assistant claims, including claimed Lean or repository verification, are not treated as independently replayed certificates unless a specific executed certificate is expressly identified."
+    }
+  },
+  {
+    "id": "Y26-10-031",
+    "title": "A 264-fold root filter differs from a degree240 field extension",
+    "status": "Classical mathematics or a newly chosen finite model developed with proof; historical claims delimited",
+    "summary": "The source records the integers384,264 and240. They measure different objects: base-field degree, the number of complex roots of a power equation, and extension degree. The root-of-unity filter makes this distinction explicit and supplies a convergent exact identity.",
+    "definitions": [
+      "Set q=ζ₁₆₈₀, Q=ζ₄₄₃₅₂₀ and N=264, so Qᴺ=q. Let ξ=ζ_N.",
+      "For Re(s)>1 and |z|≤1, define Li_s(z)=Σ_(n≥1)zⁿ/nˢ by its absolutely convergent series."
+    ],
+    "result": {
+      "name": "Full-root polylogarithm filter and primitive count",
+      "statement": "Σ_(r=0)^(N−1)Li_s(Qξʳ)=N^(1−s)Li_s(q). There are264 distinct roots of X²⁶⁴=q, but exactly240 of them are primitive order443520 roots, and [Q(Q):Q(q)]=240.",
+      "proof": "Absolute convergence permits the finite root sum to be interchanged with the series. The geometric sum Σ_rξ^(rn) is N when N divides n and zero otherwise. Writing n=Nℓ leaves NΣ_ℓQ^(Nℓ)/(Nℓ)ˢ=N^(1−s)Li_s(q), proving the filter with no branch continuation. All roots are Qξʳ=ζ₄₄₃₅₂₀^(1+1680r),0≤r<264. Their exponents are automatically coprime to2,3,5,7. The only possible extra common factor is11; exactly one residue class of r modulo11 makes1+1680r divisible by11, removing24 roots. Thus240 are primitive. Independently, φ(443520)=92160 and φ(1680)=384, giving the same extension degree240 by the tower law. The excluded r satisfy r≡4 mod11. The remaining240 exponents are exactly the cyclotomic automorphisms fixing q, so their sum is a relative field trace, whereas the264-term expression is a complete root filter. Filtering over only the240 primitive roots would therefore be a different sum and does not satisfy the displayed264-term identity unchanged."
+    },
+    "example": {
+      "setup": "Check two elementary specializations.",
+      "calculation": "For N=2, Li₂(z)+Li₂(−z)=½Li₂(z²), by retaining the even series terms. Also q⁴²⁰=i, so Im Li₂(q⁴²⁰)=Σ_(m≥0)(−1)ᵐ/(2m+1)², the Catalan constant. These identities follow directly from convergent series and fix the phase conventions.",
+      "conclusion": "The power equation, primitive count and field degree are reconciled without mixing their meanings."
+    },
+    "limits": "At Re(s)≤1, convergence and branches need separate analysis. The full-root filter does not independently prove a proposed240-to-two formula or every high-weight cancellation listed in the source.",
+    "extension": "Decompose the264-root sum into primitive and nonprimitive contributions by exact Möbius inversion; use those trace formulas to derive a correctly normalized primitive-field identity at each specified weight.",
+    "references": [
+      {
+        "label": "NIST DLMF: polylogarithms",
+        "url": "https://dlmf.nist.gov/25.12"
+      },
+      {
+        "label": "NIST DLMF: finite Fourier sums",
+        "url": "https://dlmf.nist.gov/27.10"
+      }
+    ],
+    "original": {
+      "date": "2026-10-16",
+      "month": "2026-10",
+      "evidence": "T",
+      "field": "Polylogarithmic root filters",
+      "concept": "A 264-fold root filter differs from a degree240 field extension",
+      "origin": "Retrieved file passage carrying a historical date",
+      "question": "How do all264 roots above q relate to the240 primitive conjugates, and which polylogarithm identity is actually valid?",
+      "math": "Σ_(r=0)^(N−1)Li_s(Qξʳ)=N^(1−s)Li_s(q). There are264 distinct roots of X²⁶⁴=q, but exactly240 of them are primitive order443520 roots, and [Q(Q):Q(q)]=240.",
+      "finish": "Definitions, proved proposition, worked example, limitations and extension",
+      "kind": "Revised mathematical development",
+      "refs": [
+        "https://dlmf.nist.gov/25.12",
+        "https://dlmf.nist.gov/27.10"
+      ],
+      "source_excerpt": "- [FILE_CONTENT] [f2] Exact phase data include \\(q=\\zeta_{1680}\\), \\(Q=\\zeta_{443520}\\), \\(Q^{264}=q\\), and counts \\(384,264,240\\); the E₈ Coxeter operator yields an exact Mellin weight-two zero.",
+      "retrieval_receipt": "root_followups_6.json record 0",
+      "original_question": null,
+      "attribution_note": "The retrieved source passage and its author attribution are preserved. The revised question, proof and worked example are newly authored. Historical assistant claims, including claimed Lean or repository verification, are not treated as independently replayed certificates unless a specific executed certificate is expressly identified."
+    }
+  },
+  {
+    "id": "Y26-10-032",
+    "title": "The inverse-central-binomial series is an arcsine square",
+    "status": "Classical mathematics or a newly chosen finite model developed with proof; historical claims delimited",
+    "summary": "The source lists an arcsine family alongside cyclotomic phases. The base identity has a direct differential-equation proof, avoiding a fitted numerical constant. The conductor1680 argument is stated explicitly, so the rational multiple of π² has a reproducible origin.",
+    "definitions": [
+      "For |a|<2, define S(a)=Σ_(n≥1)a^(2n)/[n²·binom(2n,n)].",
+      "Use the principal real arcsine on[−1,1]; complex continuation is not needed for the worked example."
+    ],
+    "result": {
+      "name": "Exact inverse-binomial identity",
+      "statement": "S(a)=2arcsin(a/2)² for real |a|≤2. In particular, for a=2sin(π/840), S(a)=π²/352800.",
+      "proof": "Let c_n=1/[n²binom(2n,n)]. The ratio c_(n+1)/c_n=n²/[(2n+2)(2n+1)] shows that S is analytic for |a|<2. Comparing coefficients gives (4−a²)S″−aS′=4, with S(0)=S′(0)=0: the constant term is8c₁=4, and all later coefficients cancel by the ratio. Set u=arcsin(a/2) and v=√(4−a²). For F=2u², u′=1/v gives F′=4u/v and F″=4/v²+4au/v³. Hence (4−a²)F″−aF′=4 with the same initial data. Uniqueness of the analytic power-series solution proves S=F. For endpoint convergence, the elementary bound binom(2n,n)≥4ⁿ/(2√n) follows by induction: its consecutive-ratio comparison reduces to (2n+1)²≥4n(n+1). Thus the endpoint terms are at most2/n^(3/2), a summable majorant. Dominated continuity extends the identity to a=±2. For the specified positive a, π/840 lies in the principal arcsine interval, so 2(π/840)² gives the asserted denominator."
+    },
+    "example": {
+      "setup": "Compare a=1 and the conductor1680 phase.",
+      "calculation": "At a=1, S(1)=2(π/6)²=π²/18. Its first three coefficients are1/2,1/24,1/180. If q=ζ₁₆₈₀, then a=(q−q⁻¹)/q⁴²⁰=2sin(π/840), since q⁴²⁰=i. Thus the argument is an explicitly given algebraic number. For a certified finite truncation with q=a²/4<1, the same coefficient bound gives tail at most2q^(N+1)/[(N+1)^(3/2)(1−q)] after N terms. This is an actual error bound, rather than a match of displayed decimals.",
+      "conclusion": "The special value follows from an exact analytic identity and a fixed branch choice."
+    },
+    "limits": "The proof does not establish all reported harmonic-weight families through weight131 or any unprovided cancellation table. An unspecified symbol a cannot be assigned this π² value without the stated sine relation.",
+    "extension": "Differentiate or integrate a parameterized hypergeometric identity under proved convergence bounds to generate specified harmonic-weight companions, keeping their algebraic arguments and branch conditions explicit.",
+    "references": [
+      {
+        "label": "NIST DLMF: inverse trigonometric functions",
+        "url": "https://dlmf.nist.gov/4.23"
+      },
+      {
+        "label": "NIST DLMF: inverse-trigonometric further properties",
+        "url": "https://dlmf.nist.gov/4.24"
+      }
+    ],
+    "original": {
+      "date": "2026-10-16",
+      "month": "2026-10",
+      "evidence": "A",
+      "field": "Exact special-function series",
+      "concept": "The inverse-central-binomial series is an arcsine square",
+      "origin": "Dated recovered conversation evidence",
+      "question": "What exact identity produces the recovered π²/352800 value, and which algebraic argument is required?",
+      "math": "S(a)=2arcsin(a/2)² for real |a|≤2. In particular, for a=2sin(π/840), S(a)=π²/352800.",
+      "finish": "Definitions, proved proposition, worked example, limitations and extension",
+      "kind": "Revised mathematical development",
+      "refs": [
+        "https://dlmf.nist.gov/4.23",
+        "https://dlmf.nist.gov/4.24"
+      ],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c3] A@2026-10-16T21:04:39Z, -4d: Cyclotomic/polylog mathematics: \\(Q^{264}=q\\); \\(\\varphi(1680)=384\\), extension degree \\(240\\); 264-integral Fourier filter; 240-to-two reduction; \\(\\frac{22537}{6773760}\\pi^2\\); Catalan \\(G=\\Im\\operatorname{Li}_2(q^{420})\\); Raghava arcsine identities \\(\\sum a^{2n}/(n^2\\binom{2n}{n})=\\pi^2/352800\\).",
+      "retrieval_receipt": "root_coverage_5.json record 0",
+      "original_question": null,
+      "attribution_note": "The retrieved source passage and its author attribution are preserved. The revised question, proof and worked example are newly authored. Historical assistant claims, including claimed Lean or repository verification, are not treated as independently replayed certificates unless a specific executed certificate is expressly identified."
+    }
+  },
+  {
+    "id": "Y26-10-033",
+    "title": "The order30 cyclotomic kernel has an exact Mellin zero and logarithmic companion",
+    "status": "Classical mathematics or a newly chosen finite model developed with proof; historical claims delimited",
+    "summary": "The kernel formula is sufficiently explicit for a full proof. Its cancellation comes from a divisor sum, not from a numerical integration or an assumed E₈ interpretation. Differentiating the Mellin transform also derives the stated logarithmic companion.",
+    "definitions": [
+      "Let Φ₃₀(x)=x⁸+x⁷−x⁵−x⁴−x³+x+1 and K(x)=240x²⁹/(1−x³⁰)−Φ₃₀′(x)/Φ₃₀(x),0<x<1.",
+      "Let c₃₀(n)=Σ_(d|gcd(30,n))dμ(30/d). For Re(s)>1 set D(s)=Σ_(n≥1)[c₃₀(n)+240·1_(30|n)]/nˢ."
+    ],
+    "result": {
+      "name": "Exact zero and logarithmic Mellin derivative",
+      "statement": "∫₀¹(−log x)K(x)dx=0 and ∫₀¹(−log x)log(−log x)K(x)dx=−π²[16log2+12log3+10log5]/180.",
+      "proof": "From the product of Φ₃₀ over its primitive roots, logarithmic differentiation gives −Φ′/Φ=Σ_(n≥1)c₃₀(n)x^(n−1) for |x|<1. The other kernel term contributes240 precisely when30 divides n. The coefficients are bounded, so integrating against (−log x)^(s−1) is justified absolutely for Re(s)>1 and gives Γ(s)D(s). Summing the divisor formula yields D(s)=ζ(s)F(s), where F(s)=240·30^(−s)+∏_(p∈{2,3,5})(p^(1−s)−1). At s=2, the product is−4/15 and240/900=4/15, hence F(2)=D(2)=0. Differentiating under the integral is legitimate near s=2 by the same absolute bound with an additional |log(−log x)| factor. The Γ′ term vanishes because D(2)=0. Convergence can also be seen directly: Φ₃₀(1)=1, so the logarithmic derivative stays bounded near one while the first kernel term is asymptotic to8/(1−x). Multiplication by−log x removes this pole, and the extra logarithm leaves an integrable log(1−x) singularity. Near zero the kernel is bounded, so its logarithmic moments are integrable there as well. Logarithmic differentiation of the finite product gives F′(2)=−(4/15)[log30+log2+½log3+¼log5]. Multiplying by ζ(2)=π²/6 produces the displayed companion."
+    },
+    "example": {
+      "setup": "Check the coefficient arithmetic behind the cancellation.",
+      "calculation": "The eight divisors of30 give Σ_(d|30)μ(30/d)/d=−1+1/2+1/3+1/5−1/6−1/10−1/15+1/30=−4/15. The exact added coefficient240/30² is4/15. Their sum vanishes before any transcendental evaluation. The cancellation does not say K is zero: its limit at zero is−1, while it is positive and unbounded sufficiently near one. The integral balances genuinely nonzero regions of opposite sign.",
+      "conclusion": "Two recovered integral identities are fully proved with their convergence hypotheses."
+    },
+    "limits": "The name E₈ for this scalar kernel requires a separate Coxeter/lattice identification. This proof does not certify every reported cancellation family or infer a physical spectrum from a Mellin zero.",
+    "extension": "For a prescribed conductor N and weight s₀>1, choose the compensating coefficient C=−N^(s₀)Σ_(d|N)μ(N/d)d^(1−s₀); then derive the exact zero and its higher logarithmic derivatives from the finite divisor polynomial.",
+    "references": [
+      {
+        "label": "NIST DLMF: Ramanujan sums",
+        "url": "https://dlmf.nist.gov/27.10"
+      },
+      {
+        "label": "NIST DLMF: Euler products and Dirichlet series",
+        "url": "https://dlmf.nist.gov/27.4"
+      }
+    ],
+    "original": {
+      "date": "2026-10-16",
+      "month": "2026-10",
+      "evidence": "A",
+      "field": "Mellin transforms and cyclotomic sums",
+      "concept": "The order30 cyclotomic kernel has an exact Mellin zero and logarithmic companion",
+      "origin": "Dated recovered conversation evidence",
+      "question": "Can the recovered weight-two cancellation and logarithmic constant be derived exactly from the specified kernel?",
+      "math": "∫₀¹(−log x)K(x)dx=0 and ∫₀¹(−log x)log(−log x)K(x)dx=−π²[16log2+12log3+10log5]/180.",
+      "finish": "Definitions, proved proposition, worked example, limitations and extension",
+      "kind": "Revised mathematical development",
+      "refs": [
+        "https://dlmf.nist.gov/27.10",
+        "https://dlmf.nist.gov/27.4"
+      ],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c3] A@2026-10-16T21:21:41Z, -4d: Raghava harmonic families through weight 131; 120 cancellation identities; E8 kernel \\(K(x)=\\frac{240x^{29}}{1-x^{30}}-\\frac{\\Phi'_{30}}{\\Phi_{30}}\\); \\(\\int_0^1(-\\log x)K(x)\\,dx=0\\); logarithmic companion \\(=-\\frac{\\pi^2}{180}(16\\log2+12\\log3+10\\log5)\\).",
+      "retrieval_receipt": "root_coverage_5.json record 0",
+      "original_question": null,
+      "attribution_note": "The retrieved source passage and its author attribution are preserved. The revised question, proof and worked example are newly authored. Historical assistant claims, including claimed Lean or repository verification, are not treated as independently replayed certificates unless a specific executed certificate is expressly identified."
+    }
+  },
+  {
+    "id": "Y26-10-034",
+    "title": "The five-phase logarithmic integral equals 955π³/867 exactly",
+    "status": "Classical mathematics or a newly chosen finite model developed with proof; historical claims delimited",
+    "summary": "The exact phase set makes this one of the strongest independently checkable October identities. Fourier analysis reduces the integral to a finite Bernoulli-polynomial sum. Logarithmic endpoint and interior singularities are square-integrable and are part of the proof, not exclusions from it.",
+    "definitions": [
+      "Let S={0,1,2,4,11}, θ_s=2πs/17 and P(x)=∏_(s∈S)(2x−2cos θ_s).",
+      "Define I=∫_(−1)^1 log²|P(x)|/√(1−x²)dx, equivalently ∫₀^πlog²|P(cos t)|dt. Let B₂(u)=u²−u+1/6 and {u} denote fractional part."
+    ],
+    "result": {
+      "name": "Exact five-phase integral",
+      "statement": "I=(955/867)π³. More generally I/π³=Σ_(s,r∈S)[B₂({(s−r)/17})+B₂({(s+r)/17})] for this convention of product factors.",
+      "proof": "The factorization 2cos t−2cos θ=e^(−it)(e^(it)−e^(iθ))(e^(it)−e^(−iθ)) shows that log|2cos t−2cos θ|=−2Σ_(n≥1)cos(nt)cos(nθ)/n in L²(0,π). One can justify the boundary Fourier series by radial regularization of log|1−re^(iu)| and L² convergence of its square-summable coefficients as r↑1. Local logarithmic singularities, including the doubled endpoint singularity when θ=0, are L², so the factorization agrees with this limit. Summing over S gives −2Σa_ncos(nt)/n, where a_n=Σ_scos(nθ_s). Parseval yields I=2πΣa_n²/n². The identity2cos u cos v=cos(u−v)+cos(u+v), followed by Σ_(n≥1)cos(2πnu)/n²=π²B₂({u}), gives the finite formula. Evaluating its fifty rational B₂ terms with denominator17² gives exactly955/867. Individual B₂ terms may be negative, but the full quadratic expression is nonnegative for every phase multiset by its Parseval representation. This also checks the factor of two and shows why estimating each pair contribution independently can obscure the positivity of the original integral."
+    },
+    "example": {
+      "setup": "Give a rational-only arithmetic certificate for the coefficient.",
+      "calculation": "For residues k modulo17, B₂(k/17)=k²/289−k/17+1/6. The verifier loops over all25 ordered pairs (s,r), adds the difference and sum residues, and obtains Fraction(955,867). Root’s independent audit computes the same finite sum separately.",
+      "conclusion": "The integral is established analytically, and its final rational coefficient is independently replayable without numerical quadrature."
+    },
+    "limits": "A different normalization of each product factor would add constants inside the logarithm and change the integral. No KZ or group-closure conclusion follows merely from this phase integral.",
+    "extension": "For any finite rational phase set, derive the corresponding Bernoulli sum and classify sets with equal quadratic logarithmic energy; add higher moments only after proving convergence and the required multiple Fourier convolution identities.",
+    "references": [
+      {
+        "label": "NIST DLMF: Bernoulli Fourier expansions",
+        "url": "https://dlmf.nist.gov/24.8"
+      }
+    ],
+    "original": {
+      "date": "2026-10-20",
+      "month": "2026-10",
+      "evidence": "A",
+      "field": "Fourier analysis and exact integrals",
+      "concept": "The five-phase logarithmic integral equals 955π³/867 exactly",
+      "origin": "Dated recovered conversation evidence",
+      "question": "Can the recovered phase integral be proved, including its logarithmic singularities and rational coefficient?",
+      "math": "I=(955/867)π³. More generally I/π³=Σ_(s,r∈S)[B₂({(s−r)/17})+B₂({(s+r)/17})] for this convention of product factors.",
+      "finish": "Definitions, proved proposition, worked example, limitations and extension",
+      "kind": "Revised mathematical development",
+      "refs": [
+        "https://dlmf.nist.gov/24.8"
+      ],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c11] A@2026-10-20T22:13:45Z, -6h: Phase integral \\(\\int_{-1}^{1}\\frac{\\log^2|\\prod_{s\\in\\{0,1,2,4,11\\}}(2x-2\\cos(2\\pi s/17))|}{\\sqrt{1-x^2}}dx=\\frac{955\\pi^3}{867}\\), with \\(I=2",
+      "retrieval_receipt": "root_coverage_5.json record 0",
+      "original_question": null,
+      "attribution_note": "The retrieved source passage and its author attribution are preserved. The revised question, proof and worked example are newly authored. Historical assistant claims, including claimed Lean or repository verification, are not treated as independently replayed certificates unless a specific executed certificate is expressly identified."
+    }
+  },
+  {
+    "id": "Y26-10-035",
+    "title": "Determinant twists explain the claimed compact group form but do not prove density",
+    "status": "Classical mathematics or a newly chosen finite model developed with proof; historical claims delimited",
+    "summary": "The source asserts dense SU(5) monodromy and supplies braid, central-phase and determinant relations. The absent residues and matrices prevent an independent closure proof. Nevertheless the determinant twist, triangle-group quotient and structure of the proposed full compact group are exact conditional consequences that can be proved completely.",
+    "definitions": [
+      "Let ζ=exp(2πi/17). Assume unitary5×5 matrices R₁,R₂ satisfy the braid relation, det R_i=ζ⁹ and (R₁R₂)³=ζ⁴I.",
+      "Set T_i=ζ⁵R_i and G={g∈U(5):det(g)¹⁷=1}. The hypothesis that a generated subgroup is dense is separate from these finite relations."
+    ],
+    "result": {
+      "name": "Exact twist and split determinant group",
+      "statement": "T_i∈SU(5), they satisfy the braid relation, and (T₁T₂)³=I. If additionally T_i³⁴=I, they define a quotient of Δ(2,3,34). Moreover G≅SU(5)×μ₁₇ as compact groups, via (S,ξ)↦ξS.",
+      "proof": "Twisting a5×5 matrix by ζ⁵ multiplies its determinant by ζ²⁵; thus det T_i=ζ³⁴=1. Both sides of the braid relation gain the same scalar ζ¹⁵. The central relation gains ζ³⁰, cancelling ζ⁴ because ζ³⁴=1. Put a=T₁T₂T₁ and b=T₁T₂. The braid relation gives a²=b³=I, and b⁻¹a=T₁, so the extra relation T₁³⁴=I gives the triangle presentation with orders dividing2,3,34. For the group decomposition, ξ∈μ₁₇ has determinant ξ⁵. Since5 is invertible modulo17, this scalar determinant map is an automorphism; its inverse exponent is7. Given g∈G, set ξ=det(g)⁷ and S=ξ⁻¹g. Then det S=det(g)^(1−35)=1. This is a continuous inverse to (S,ξ)↦ξS, and the intersection SU(5)∩μ₁₇I is trivial, proving the product isomorphism."
+    },
+    "example": {
+      "setup": "Check phase consistency before any matrix computation.",
+      "calculation": "The determinant of (R₁R₂)³ is ζ⁵⁴=ζ³, while det(ζ⁴I)=ζ²⁰=ζ³, so the reported relations are mutually compatible at determinant level. The twist makes both determinants and the central cube exactly one.",
+      "conclusion": "The arithmetic structure of the proposed compact closure is verified conditionally, with its missing density step explicit."
+    },
+    "limits": "Finite order, irreducibility or a finite list of nonzero projector blocks does not alone prove density in SU(5). The actual matrices, unitarizing form and exclusion of finite and proper closed subgroups are not recovered; no claimed holonomy residual or Lean certificate is replayed.",
+    "extension": "Publish exact A,B or certified monodromy matrices, verify the unitary form and braid relations, and give an explicit Lie-algebra or subgroup-classification certificate for the connected closure before identifying the full determinant extension.",
+    "references": [
+      {
+        "label": "Brochier: cyclotomic KZ monodromy",
+        "url": "https://arxiv.org/abs/1011.4285"
+      }
+    ],
+    "original": {
+      "date": "2026-10-20",
+      "month": "2026-10",
+      "evidence": "A",
+      "field": "Braid representations and compact groups",
+      "concept": "Determinant twists explain the claimed compact group form but do not prove density",
+      "origin": "Dated recovered conversation evidence",
+      "question": "Which consequences of the recovered braid and determinant relations can be proved without the missing KZ matrices?",
+      "math": "T_i∈SU(5), they satisfy the braid relation, and (T₁T₂)³=I. If additionally T_i³⁴=I, they define a quotient of Δ(2,3,34). Moreover G≅SU(5)×μ₁₇ as compact groups, via (S,ξ)↦ξS.",
+      "finish": "Definitions, proved proposition, worked example, limitations and extension",
+      "kind": "Revised mathematical development",
+      "refs": [
+        "https://arxiv.org/abs/1011.4285"
+      ],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c0] A@2026-10-20T13:56:04Z, -15h: h=1/34 E8 KZ half-braids satisfy \\(R_1^2=U,R_2^2=V,R_1R_2R_1=R_2R_1R_2,(R_1R_2)^3=\\zeta_{17}^4I\\); actual/projective order 34, \\(\\det R_i=\\zeta_{17}^9\\).",
+      "retrieval_receipt": "root_exact_3.json record 0",
+      "original_question": null,
+      "attribution_note": "The retrieved source passage and its author attribution are preserved. The revised question, proof and worked example are newly authored. Historical assistant claims, including claimed Lean or repository verification, are not treated as independently replayed certificates unless a specific executed certificate is expressly identified."
+    }
+  },
+  {
+    "id": "Y26-10-036",
+    "title": "The integral Mordell equation y²=x³−2 has a complete elementary proof",
+    "status": "Classical mathematics or a newly chosen finite model developed with proof; historical claims delimited",
+    "summary": "The source proposes y²=x³−2 with integral points (3,±5). This particular completeness statement can be proved independently using a Euclidean quadratic order. The argument is special to this equation and does not certify the larger historical frontier of Mordell curves.",
+    "definitions": [
+      "Work in R=Z[√−2] with positive norm N(a+b√−2)=a²+2b². Units are ±1.",
+      "A norm-Euclidean ring admits unique factorization: Euclidean division gives a gcd algorithm, irreducibles are prime, and factorization follows by decreasing norm."
+    ],
+    "result": {
+      "name": "Complete integral solution set",
+      "statement": "The integer solutions of y²=x³−2 are exactly (x,y)=(3,5),(3,−5). Under x=5n−7 these become n=2 and y=±5.",
+      "proof": "First x must be odd: if x were even, y²+2≡0 mod4 would require a square congruent to2, impossible. Then y is odd. The ring R is norm-Euclidean: for any element of its fraction field, round the real coefficients in a+b√−2 to nearest integers; the remainder has norm at most1/4+2/4=3/4<1. Thus R is a UFD. Factor x³=(y+√−2)(y−√−2). A common divisor has norm dividing both the odd number x³ and N(2√−2)=8, so it is a unit. Unique factorization forces each coprime factor to be a cube, with a possible unit absorbed because both units are cubes. Write y+√−2=(a+b√−2)³. Comparing the √−2 coefficient gives1=b(3a²−2b²). Hence b=1 or−1. For b=1, a²=1; for b=−1,3a²=1 has no integer solution. The real coefficient is y=a³−6ab²=−5a, so y=±5. Norms give x=N(a+b√−2)=3. Direct substitution proves both points occur."
+    },
+    "example": {
+      "setup": "Transport the complete solution list through the affine restriction.",
+      "calculation": "For x=5n−7, the unique possible x=3 gives n=(3+7)/5=2. Conversely n=2 gives x=3 and both signs of y solve the equation. No residue filter or bounded search is needed to exclude other n because the source curve has already been classified globally.",
+      "conclusion": "This historical two-point list now has a self-contained global proof and an exact restriction transport."
+    },
+    "limits": "The argument depends on unique factorization and the coprimality established for this norm equation. It does not prove that all Mordell curves have similarly small solution sets, nor verify claimed rank witnesses or ClassList modules elsewhere.",
+    "extension": "For y²=x³−D, determine the correct quadratic order, analyze common ideal factors and its class group, and replace element cubing by ideal-theoretic descent when unique factorization fails.",
+    "references": [],
+    "original": {
+      "date": "2026-10-09",
+      "month": "2026-10",
+      "evidence": "A",
+      "field": "Integral points on a Mordell curve",
+      "concept": "The integral Mordell equation y²=x³−2 has a complete elementary proof",
+      "origin": "Dated recovered conversation evidence",
+      "question": "Can the retrieved integral-point list be proved globally instead of justified only by a finite search?",
+      "math": "The integer solutions of y²=x³−2 are exactly (x,y)=(3,5),(3,−5). Under x=5n−7 these become n=2 and y=±5.",
+      "finish": "Definitions, proved proposition, worked example, limitations and extension",
+      "kind": "Revised mathematical development",
+      "refs": [],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c0] A@2026-10-09T18:08:57Z, -12d: Proposed globally complete source \\(y^2=x^3-2\\), with integral solutions \\((3,-5),(3,5)\\), feeding restrictions, rank/selection, and optimization; also discussed \\(x=5n-7\\) preserving \\(x\\equiv3\\pmod5\\).",
+      "retrieval_receipt": "root_coverage_4.json record 0",
+      "original_question": null,
+      "attribution_note": "The retrieved source passage and its author attribution are preserved. The revised question, proof and worked example are newly authored. Historical assistant claims, including claimed Lean or repository verification, are not treated as independently replayed certificates unless a specific executed certificate is expressly identified."
+    }
+  },
+  {
+    "id": "Y26-10-037",
+    "title": "Elliptic multiplication fibres are kernel cosets, with halving checked by a quartic",
+    "status": "Classical mathematics or a newly chosen finite model developed with proof; historical claims delimited",
+    "summary": "The recovered halving and tripling discussion correctly points toward kernel cosets and possible missing rational preimages. A general group argument proves the fibre structure. The explicit doubling formula supplies an exact rational witness while showing why a quartic root alone is not a complete lift.",
+    "definitions": [
+      "Let E:y²=x³+ax+b be nonsingular over a field K of characteristic different from2 and3. Write O for its identity.",
+      "For n≥1, [n] denotes multiplication in E(K), and E(K)[n] its rational n-torsion subgroup."
+    ],
+    "result": {
+      "name": "Fibre-coset theorem and halving candidate equation",
+      "statement": "If [n]P₀=Q, then [n]⁻¹(Q)∩E(K)=P₀+E(K)[n]; otherwise the fibre is empty. For a finite P=(u,v) with v≠0 and x(2P)=X, u satisfies u⁴−4Xu³−2au²−(8b+4aX)u+a²−4bX=0.",
+      "proof": "For any other rational preimage P, the homomorphism law gives [n](P−P₀)=O, so P−P₀ is rational n-torsion. Conversely adding such a torsion point preserves the image; translation is a bijection, proving the coset theorem. For doubling, the tangent slope is m=(3u²+a)/(2v), obtained by differentiating the curve equation. Intersecting the tangent line with the cubic and reflecting the third point gives X=m²−2u. Substituting v²=u³+au+b and clearing its nonzero denominator yields X=(u⁴−2au²−8bu+a²)/[4(u³+au+b)], which rearranges to the quartic. A root u must still admit v∈K, have a valid denominator and yield the prescribed y-coordinate of Q; the x-coordinate equation also accepts −Q."
+    },
+    "example": {
+      "setup": "Use E:y²=x³−2 and P=(3,5).",
+      "calculation": "The slope is27/10, giving 2P=(129/100,−383/1000). Both coordinates satisfy the curve exactly, and the original P supplies a rational half of this Q. The rational2-torsion is trivial because y=0 would require a rational cube root of2; the rational-root theorem excludes one. Therefore this Q has exactly one rational half.",
+      "conclusion": "The fibre is characterized exactly, and a nontrivial rational doubling example is independently replayed."
+    },
+    "limits": "Having rational Q does not imply it has a rational n-preimage. A bounded saturation computation proves only its stated bound unless linked to a global divisibility theorem; generic tripling claims require their actual rational maps and exceptional cases.",
+    "extension": "For a supplied finitely generated subgroup, compute rational multiplication fibres with exact factorization and lifting checks, then state which primes and index bounds are sufficient for a complete saturation theorem.",
+    "references": [
+      {
+        "label": "Bernstein and Lange: explicit Weierstrass formulas",
+        "url": "https://www.hyperelliptic.org/EFD/g1p/auto-shortw.html"
+      }
+    ],
+    "original": {
+      "date": "2026-10-06",
+      "month": "2026-10",
+      "evidence": "A",
+      "field": "Elliptic group law",
+      "concept": "Elliptic multiplication fibres are kernel cosets, with halving checked by a quartic",
+      "origin": "Dated recovered conversation evidence",
+      "question": "Which part of rational preimage closure is automatic from the group law, and where does arithmetic divisibility remain?",
+      "math": "If [n]P₀=Q, then [n]⁻¹(Q)∩E(K)=P₀+E(K)[n]; otherwise the fibre is empty. For a finite P=(u,v) with v≠0 and x(2P)=X, u satisfies u⁴−4Xu³−2au²−(8b+4aX)u+a²−4bX=0.",
+      "finish": "Definitions, proved proposition, worked example, limitations and extension",
+      "kind": "Revised mathematical development",
+      "refs": [
+        "https://www.hyperelliptic.org/EFD/g1p/auto-shortw.html"
+      ],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c8] A@2026-10-06T19:05:33Z, -15d: Elliptic arithmetic: multiplication fibres as kernel cosets; generalized Weierstrass normalization; halving quartic; rational-root transport.",
+      "retrieval_receipt": "root_coverage_4.json record 0",
+      "original_question": null,
+      "attribution_note": "The retrieved source passage and its author attribution are preserved. The revised question, proof and worked example are newly authored. Historical assistant claims, including claimed Lean or repository verification, are not treated as independently replayed certificates unless a specific executed certificate is expressly identified."
+    }
+  },
+  {
+    "id": "Y26-10-038",
+    "title": "The elliptic logarithmic constant log4 follows from an exact integral split",
+    "status": "Classical mathematics or a newly chosen finite model developed with proof; historical claims delimited",
+    "summary": "The recovered limit is correct for the parameter convention of the complete elliptic integral. A symmetric change of variables reduces its asymptotic to an elementary inverse hyperbolic sine, yielding both the logarithmic divergence and its finite constant.",
+    "definitions": [
+      "Use the parameter convention K(m)=∫₀^(π/2)(1−m sin²θ)^(−1/2)dθ for0<m<1. In the DLMF modulus convention this is K_DLMF(√m).",
+      "Let z∈(0,1), s=√z and L=s^(−1/2)."
+    ],
+    "result": {
+      "name": "Parameter-normalized logarithmic asymptotic",
+      "statement": "K(1−z)+½log z→log4 as z↓0. More explicitly, |K(1−z)−2asinh(z^(−1/4))|≤√z/2, which already determines the limit.",
+      "proof": "The substitution t=tanθ gives K(1−z)=∫₀^∞dt/[√(1+t²)√(1+s²t²)]. The inversion t=1/(su) interchanges the intervals (0,L) and (L,∞) and preserves the integrand times its differential. Hence the integral is twice its restriction to(0,L). Its difference from2∫₀^Ldt/√(1+t²)=2asinh L is nonpositive. Using0≤1−(1+u)^(−1/2)≤u/2 gives absolute difference at most s²∫₀^L t²/√(1+t²)dt. Since t²/√(1+t²)≤t, this is at most s²L²/2=s/2. Finally2asinh L=2log(L+√(1+L²))=2log(2L)+o(1)=log4−log s+o(1). Because log s=½log z, the limit follows with its exact constant."
+    },
+    "example": {
+      "setup": "Take z=10⁻⁸ and keep a certified remainder.",
+      "calculation": "Then L=100 and the difference between K(1−10⁻⁸) and2asinh100 has magnitude at most5·10⁻⁵. No numerical integration is required for this enclosure. The elementary expression also gives the leading approximation log4−½log(10⁻⁸). Indeed0≤2asinh100−2log200≤1/20000, using √(1+u)≤1+u/2 and log(1+u)≤u. Combining this nonnegative correction with the nonpositive split error puts K minus its leading logarithm in[−1/20000,1/20000]. The constant is therefore fixed together with an explicit numerical enclosure. The inequality is also nonasymptotic: at z=1/16 it gives2asinh2−1/8≤K(15/16)≤2asinh2. Thus the same proof yields usable enclosures away from the limiting endpoint, without assuming z is infinitesimal.",
+      "conclusion": "The convention, divergence and finite constant are all fixed by a direct proof."
+    },
+    "limits": "Writing K for a modulus instead of a parameter changes the argument and the apparent logarithmic constant unless translated correctly. This local asymptotic is not a global period-comparison or arithmetic-motive identification.",
+    "extension": "Expand the symmetric finite integral to further orders with an explicit remainder, then compare its constant term against a separately normalized Picard–Fuchs basis and a fixed transport path.",
+    "references": [
+      {
+        "label": "NIST DLMF: elliptic integral asymptotics",
+        "url": "https://dlmf.nist.gov/19.12"
+      },
+      {
+        "label": "NIST DLMF: elliptic integral conventions",
+        "url": "https://dlmf.nist.gov/19.2"
+      }
+    ],
+    "original": {
+      "date": "2026-10-06",
+      "month": "2026-10",
+      "evidence": "A",
+      "field": "Elliptic integral asymptotics",
+      "concept": "The elliptic logarithmic constant log4 follows from an exact integral split",
+      "origin": "Dated recovered conversation evidence",
+      "question": "Which convention yields K(1−z)+½log z→log4, and can its constant be derived without fitting?",
+      "math": "K(1−z)+½log z→log4 as z↓0. More explicitly, |K(1−z)−2asinh(z^(−1/4))|≤√z/2, which already determines the limit.",
+      "finish": "Definitions, proved proposition, worked example, limitations and extension",
+      "kind": "Revised mathematical development",
+      "refs": [
+        "https://dlmf.nist.gov/19.12",
+        "https://dlmf.nist.gov/19.2"
+      ],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c1] A@2026-10-06T23:24:13Z, -14d: Point-law refinement, tripling identities, typed fibres, bounded saturation; \\(K(1-z)+\\tfrac12\\log z\\to\\log4\\); global Mordell/Matveev and generic tripling remained open.",
+      "retrieval_receipt": "root_coverage_4.json record 0",
+      "original_question": null,
+      "attribution_note": "The retrieved source passage and its author attribution are preserved. The revised question, proof and worked example are newly authored. Historical assistant claims, including claimed Lean or repository verification, are not treated as independently replayed certificates unless a specific executed certificate is expressly identified."
+    }
+  },
+  {
+    "id": "Y26-10-039",
+    "title": "A sufficiently divisible small integer determinant must vanish",
+    "status": "Classical mathematics or a newly chosen finite model developed with proof; historical claims delimited",
+    "summary": "The source discusses integral kernels, divisibility and determinant-zero arguments. The essential step is a strict comparison between a proved integer divisibility modulus and a proved archimedean bound. Without both, a determinant method supplies a candidate relation rather than a certificate.",
+    "definitions": [
+      "Let A be an r×r integer matrix. Let M≥1 be an integer with M dividing det A.",
+      "For its row vectors v_i, Hadamard’s bound is |det A|≤∏_i||v_i||₂. A simpler entry bound |A_ij|≤B gives |det A|≤r^(r/2)Bʳ."
+    ],
+    "result": {
+      "name": "Divisibility–size vanishing certificate",
+      "statement": "If M>|det A| as bounded independently, then det A=0. In particular M>∏||v_i||₂ suffices. Equality of the bound with M is inconclusive, since det A may be ±M.",
+      "proof": "Write det A=Mk with k∈Z. If |det A|<M then |k|<1, forcing k=0. For completeness, Hadamard’s bound follows by Gram–Schmidt on the real row vectors: elementary orthogonalization preserves determinant magnitude, the resulting orthogonal row lengths do not exceed the original lengths, and the determinant magnitude of the orthogonal matrix is their product. Thus an exact upper bound can be derived from rational squared row norms without approximating the determinant. Congruence information must establish divisibility of the determinant itself; entrywise patterns often do this by subtracting rows or extracting column factors, but their powers must be justified. Once a nonzero integer relation among evaluation columns is found, it must be checked on the intended points and its global scope proved separately."
+    },
+    "example": {
+      "setup": "Construct an exact relation on a parabola.",
+      "calculation": "Evaluate the functions1,x,y,x² at the four integer points (0,0),(1,1),(2,4),(3,9). The last two columns of the resulting matrix agree, so its determinant vanishes and the exact kernel vector (0,0,1,−1) records y−x²=0. A separate sharpness example A=[[M,0],[0,1]] has determinant M: M-divisibility and an upper bound of M do not force zero.",
+      "conclusion": "The criterion states the exact strict inequality needed for determinant vanishing and checks a recovered kernel relation."
+    },
+    "limits": "A relation found on finitely many points need not hold on an entire curve without a degree/intersection or structural argument. Historical claims such as8² dividing a particular determinant require the actual matrix for replay.",
+    "extension": "For a given bounded integer-point set, build a rational evaluation matrix, prove its p-adic determinant valuation and archimedean bound independently, and use a degree argument to turn the certified kernel into a complete auxiliary-curve covering.",
+    "references": [],
+    "original": {
+      "date": "2026-10-07",
+      "month": "2026-10",
+      "evidence": "A",
+      "field": "Exact determinant methods",
+      "concept": "A sufficiently divisible small integer determinant must vanish",
+      "origin": "Dated recovered conversation evidence",
+      "question": "What quantitative inequality turns congruence information about a determinant into an exact algebraic relation?",
+      "math": "If M>|det A| as bounded independently, then det A=0. In particular M>∏||v_i||₂ suffices. Equality of the bound with M is inconclusive, since det A may be ±M.",
+      "finish": "Definitions, proved proposition, worked example, limitations and extension",
+      "kind": "Revised mathematical development",
+      "refs": [],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c1] A@2026-10-07T01:44:33Z, -14d: Integral-kernel determinant relations, modular divisibility forcing determinant zero, complete bounded residue coverings, Taylor/lift identities; parabola relation \\(y-x^2=0\\).",
+      "retrieval_receipt": "root_coverage_4.json record 0",
+      "original_question": null,
+      "attribution_note": "The retrieved source passage and its author attribution are preserved. The revised question, proof and worked example are newly authored. Historical assistant claims, including claimed Lean or repository verification, are not treated as independently replayed certificates unless a specific executed certificate is expressly identified."
+    }
+  },
+  {
+    "id": "Y26-10-040",
+    "title": "Expected surplus and probability of profit require different dependence assumptions",
+    "status": "Classical mathematics or a newly chosen finite model developed with proof; historical claims delimited",
+    "summary": "The dated example gives three costs7.25, a shared cost2 and revenue10 per sale. Treating these as a hypothetical finite probability model yields an exact expectation threshold. It does not determine the probability of a positive outcome without information about dependence.",
+    "definitions": [
+      "Let X₁,X₂,X₃∈{0,1} indicate three sales, S=X₁+X₂+X₃ and Π=10S−95/4.",
+      "Assume only equal marginal probabilities P(X_i=1)=p. Independence, when invoked, is an additional explicit hypothesis."
+    ],
+    "result": {
+      "name": "Expectation threshold and sharp dependence bounds",
+      "statement": "EΠ=30p−95/4, so positive expected surplus is equivalent to p>19/24. Profit occurs exactly when all three items sell. Its probability satisfies max(0,3p−2)≤P(Π>0)≤p; under independence it is p³.",
+      "proof": "The total fixed cost is3·29/4+2=95/4. Linearity of expectation gives E S=3p without any independence assumption, proving the expected-value formula and threshold. Since two sales return20<95/4 and three return30>95/4, the positive event is the intersection of the three sale events. An intersection cannot exceed any individual event, proving the upper bound. The union bound on the three failures gives P(all sales)=1−P(at least one failure)≥1−3(1−p)=3p−2, together with nonnegativity. These bounds are sharp: perfect positive dependence gives the upper bound, while suitably disjoint failure events give the lower bound when p≥2/3; analogous constructions give zero for smaller p. Independence instead multiplies the marginal probabilities."
+    },
+    "example": {
+      "setup": "Use p=4/5.",
+      "calculation": "The expected surplus is24−95/4=1/4. The probability of profit can nevertheless range from2/5 to4/5 under different dependence structures; independence gives64/125. The four realized surpluses for S=0,1,2,3 are−95/4,−55/4,−15/4,25/4, matching the recovered arithmetic.",
+      "conclusion": "The expectation calculation is exact, while the uncertainty not specified by marginal probabilities is quantified."
+    },
+    "limits": "This is a hypothetical arithmetic model, not a market forecast or recommendation. It omits changing costs, recoverable unsold inventory and alternative objectives; no empirical sale probability is inferred from the historical example.",
+    "extension": "Given an explicit joint uncertainty model, optimize a stated objective such as worst-case loss or probability of positive surplus; compare it with expected-value optimization and certify which dependence assumptions drive any changed decision.",
+    "references": [],
+    "original": {
+      "date": "2026-10-16",
+      "month": "2026-10",
+      "evidence": "A",
+      "field": "Elementary probability models",
+      "concept": "Expected surplus and probability of profit require different dependence assumptions",
+      "origin": "Dated recovered conversation evidence",
+      "question": "Which parts of the recovered three-item example are exact arithmetic, and what can marginal sale probabilities actually determine?",
+      "math": "EΠ=30p−95/4, so positive expected surplus is equivalent to p>19/24. Profit occurs exactly when all three items sell. Its probability satisfies max(0,3p−2)≤P(Π>0)≤p; under independence it is p³.",
+      "finish": "Definitions, proved proposition, worked example, limitations and extension",
+      "kind": "Revised mathematical development",
+      "refs": [],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c9] A@2026-10-16T20:33:22Z, -5d: equations: Money down = 3×$7.25+$2=$23.75; at $10 each, 3 sold => +$6.25, 2 => −$3.75, 1 => −$13.75, 0 => −$23.75; break-even average sale probability >79.2%.",
+      "retrieval_receipt": "root_coverage_5.json record 0",
+      "original_question": null,
+      "attribution_note": "The retrieved source passage and its author attribution are preserved. The revised question, proof and worked example are newly authored. Historical assistant claims, including claimed Lean or repository verification, are not treated as independently replayed certificates unless a specific executed certificate is expressly identified."
+    }
+  }
+]

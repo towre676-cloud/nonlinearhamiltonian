@@ -1,0 +1,247 @@
+{
+  "month": "2026-04",
+  "entry_count": 33,
+  "entries": 33,
+  "check_count": 33,
+  "checks_passed": 33,
+  "status": "complete with explicit retrieval gaps",
+  "evidence_counts": {
+    "A": 25,
+    "U": 8
+  },
+  "source_receipts": [
+    "root_details_5.json",
+    "root_final_sweep.json",
+    "root_receipts.json"
+  ],
+  "retrieval_record_count": 3,
+  "date_range": [
+    "2026-04-01T20:11:49Z",
+    "2026-04-29T21:10:45Z"
+  ],
+  "original_questions_recovered": 0,
+  "provenance": "Every source_excerpt is a literal line in the actual raw returned result at its file/record locator; original.question is newly revised; original_question remains null. Retrieval author tags are preserved.",
+  "development_word_count": 9375,
+  "entry_word_count_range": [
+    224,
+    352
+  ],
+  "coverage": [
+    {
+      "id": "Y26-04-001",
+      "title": "The circulation space of K₃,₃ has an explicit four-cycle basis",
+      "date": "2026-04-26T02:32:14Z",
+      "evidence": "A"
+    },
+    {
+      "id": "Y26-04-002",
+      "title": "A Gaussian quartic probe extracts one exact multilinear coefficient",
+      "date": "2026-04-26T02:32:14Z",
+      "evidence": "A"
+    },
+    {
+      "id": "Y26-04-003",
+      "title": "Cycle-monomial Gram norms contain one squared coefficient, not a power indexed by length",
+      "date": "2026-04-26T05:15:15Z",
+      "evidence": "A"
+    },
+    {
+      "id": "Y26-04-004",
+      "title": "A secondary transport defect requires distinguishing coboundary from differential",
+      "date": "2026-04-17T01:26:30Z",
+      "evidence": "A"
+    },
+    {
+      "id": "Y26-04-005",
+      "title": "Noncommuting shears have an exact loop commutator",
+      "date": "2026-04-14T15:49:49Z",
+      "evidence": "A"
+    },
+    {
+      "id": "Y26-04-006",
+      "title": "A return-map jet at multiplier minus one has a computable second iterate",
+      "date": "2026-04-16T07:52:11Z",
+      "evidence": "A"
+    },
+    {
+      "id": "Y26-04-007",
+      "title": "A finite transfer operator has a genuine pressure and an implicit root derivative",
+      "date": "2026-04-16T08:45:46Z",
+      "evidence": "A"
+    },
+    {
+      "id": "Y26-04-008",
+      "title": "A two-term coboundary complex has exact kernels and ranges in a finite Markov example",
+      "date": "2026-04-17T01:26:30Z",
+      "evidence": "A"
+    },
+    {
+      "id": "Y26-04-009",
+      "title": "A triangular map admits an exact spectral-submanifold graph",
+      "date": "2026-04-12T20:40:02Z",
+      "evidence": "A"
+    },
+    {
+      "id": "Y26-04-010",
+      "title": "A spectral gap alone does not select the smoothest invariant graph",
+      "date": "2026-04-12T23:10:45Z",
+      "evidence": "A"
+    },
+    {
+      "id": "Y26-04-011",
+      "title": "A cyclic difference design has one exact gauge mode",
+      "date": "2026-04-03T21:13:13Z",
+      "evidence": "U"
+    },
+    {
+      "id": "Y26-04-012",
+      "title": "Family-constant targets vanish under a symmetric difference design",
+      "date": "2026-04-03T21:13:13Z",
+      "evidence": "U"
+    },
+    {
+      "id": "Y26-04-013",
+      "title": "Nested supports do not by themselves force a low-rank sensitivity matrix",
+      "date": "2026-04-06T22:00:15Z",
+      "evidence": "A"
+    },
+    {
+      "id": "Y26-04-014",
+      "title": "Participation ratio quantifies spectral concentration without replacing rank",
+      "date": "2026-04-09T11:49:09Z",
+      "evidence": "A"
+    },
+    {
+      "id": "Y26-04-015",
+      "title": "Temporal spectral color needs a specified stationary or integrated process",
+      "date": "2026-04-09T11:49:09Z",
+      "evidence": "A"
+    },
+    {
+      "id": "Y26-04-016",
+      "title": "A determinant measures volume but does not determine a directional product field",
+      "date": "2026-04-19T03:48:18Z",
+      "evidence": "U"
+    },
+    {
+      "id": "Y26-04-017",
+      "title": "Spherical product moments explain 105 and 945 Gaussian pairings",
+      "date": "2026-04-19T04:01:36Z",
+      "evidence": "U"
+    },
+    {
+      "id": "Y26-04-018",
+      "title": "Trace-range realization is explicit for cyclic and dyadic groups",
+      "date": "2026-04-23T06:55:19Z",
+      "evidence": "A"
+    },
+    {
+      "id": "Y26-04-019",
+      "title": "Gap-projection invariants factor through K₀ under an actual spectral gap",
+      "date": "2026-04-23T07:04:52Z",
+      "evidence": "A"
+    },
+    {
+      "id": "Y26-04-020",
+      "title": "Morita trace scaling is an arithmetic lattice identity after normalization",
+      "date": "2026-04-23T07:04:52Z",
+      "evidence": "A"
+    },
+    {
+      "id": "Y26-04-021",
+      "title": "AUROC is an exact pairwise statistic with a specified tie convention",
+      "date": "2026-04-29T21:10:45Z",
+      "evidence": "U"
+    },
+    {
+      "id": "Y26-04-022",
+      "title": "Pooling standardized domains can create a correlation absent from each domain",
+      "date": "2026-04-29T20:58:53Z",
+      "evidence": "U"
+    },
+    {
+      "id": "Y26-04-023",
+      "title": "Weighted projection is unique on a convex set but can have several competing branches",
+      "date": "2026-04-23T13:57:36Z",
+      "evidence": "A"
+    },
+    {
+      "id": "Y26-04-024",
+      "title": "A nested fit improves training R²; a residual runs test asks a different question",
+      "date": "2026-04-01T20:11:49Z",
+      "evidence": "A"
+    },
+    {
+      "id": "Y26-04-025",
+      "title": "A quadratic compatibility surface has a conditional minimum with a declared objective",
+      "date": "2026-04-02T07:43:38Z",
+      "evidence": "A"
+    },
+    {
+      "id": "Y26-04-026",
+      "title": "A zeta spiral is a sampling layout with a conjugation symmetry",
+      "date": "2026-04-14T20:38:43Z",
+      "evidence": "U"
+    },
+    {
+      "id": "Y26-04-027",
+      "title": "Path differences lie in a circulation kernel, with a useful converse on a finite DAG",
+      "date": "2026-04-28T17:45:36Z",
+      "evidence": "A"
+    },
+    {
+      "id": "Y26-04-028",
+      "title": "A Čech-type cocycle is removable exactly when its loop periods vanish",
+      "date": "2026-04-16T13:39:16Z",
+      "evidence": "U"
+    },
+    {
+      "id": "Y26-04-029",
+      "title": "The silver-mean substitution has exact eigenvalues and normalized letter frequencies",
+      "date": "2026-04-21T15:09:42Z",
+      "evidence": "A"
+    },
+    {
+      "id": "Y26-04-030",
+      "title": "The roots of x⁴−2 have a dihedral Galois action, not a physical trajectory",
+      "date": "2026-04-23T04:25:37Z",
+      "evidence": "A"
+    },
+    {
+      "id": "Y26-04-031",
+      "title": "A block resolvent controls weak coupling only relative to a spectral separation",
+      "date": "2026-04-22T02:53:03Z",
+      "evidence": "A"
+    },
+    {
+      "id": "Y26-04-032",
+      "title": "A finite-volume derivative has an exact product-rule correction",
+      "date": "2026-04-17T03:32:11Z",
+      "evidence": "A"
+    },
+    {
+      "id": "Y26-04-033",
+      "title": "A quotient has a universal factorization only after its equivalence relation is specified",
+      "date": "2026-04-21T15:09:42Z",
+      "evidence": "A"
+    }
+  ],
+  "source_gaps": [
+    "The original K3,3 density, all residue observables and source vectors were not recovered. Declared exact Gaussian models replace unsupported reproduction of reported norms and Gram rank.",
+    "The original twelve-coordinate Jacobian, row weights and context targets were not recovered. The cyclic-difference model is explicitly newly declared.",
+    "Full transfer branches and a validated pressure operator were not recovered, so the reported root near0.8802487 and numerical defect values are not certified.",
+    "The general Hilbert-space SSM/NHIM theorem, compact invariant chart, graph transform estimates and nonlinear small-divisor bounds were not recovered; exact finite models show both existence and a resonance obstruction.",
+    "The final sweep contains named speculative correspondences, BRST/D4/Khovanov/Hecke lists, global SRB claims and a0.384 invariant in file summaries without sufficient definitions/proofs. No historical theorem is invented from those labels.",
+    "Original data for fit statistics, nesting/effective rank, cross-domain tests and intervention trajectories were not recovered. Mathematical estimators and counterexamples are developed without claiming successful empirical validation."
+  ],
+  "excluded_nonmathematics": [
+    "Business-model and financial-advice discussion without a separately specified mathematical question."
+  ],
+  "historical_completeness": "Comprehensive for distinct meaningful recovered mathematical clusters. Retrieval is not a complete chat export; an unrecovered passage is not evidence that no mathematics existed.",
+  "verification_scope": "Portable standard-library scripts check exact rational identities, finite ranks, combinatorial counts and selected numerical examples. They do not turn approximations into interval-certified global theorems.",
+  "references": "Relevant primary papers, author notes, official DLMF and author textbooks checked by web retrieval; unrelated default references removed. Elementary complete proofs may have an empty external reference list.",
+  "peer_fixes": [
+    "004 explicitly types degree-zero/degree-one differential and transport maps in two-term complexes.",
+    "013 uses an actual stationary weighted least-squares rank-two example, with the obligatory sensitivity dependence proved."
+  ]
+}

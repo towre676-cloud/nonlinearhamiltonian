@@ -1,0 +1,178 @@
+{
+  "checks": [
+    {
+      "id": "S014",
+      "name": "Multiplicity-three critical point and complete length-three chain",
+      "status": "passed",
+      "detail": "For sites (1,−1,i,−i), all four Hamiltonians satisfy the exact Taylor-chain polynomial relations. The uniform vector plus V₀,V₁,V₂ has rank4. On the highest-weight plane N²≠0 and N³=0; the full characteristic polynomial is (λ−3/4)(λ+1/4)³."
+    },
+    {
+      "id": "S014",
+      "name": "Closed characteristic formula and fractional-linear Hamiltonian identities for four sites",
+      "status": "passed",
+      "detail": "Exact Gaussian-rational evaluation verifies χ_Hi(λ)=u^n p′(z_i+1/u)/p′(z_i) at the base site. All A_j[I+(z_i−z_j)A_i]=A_i identities hold with invertible denominators."
+    },
+    {
+      "id": "S014",
+      "name": "Mixed multiplicity example with exact characteristic factorization",
+      "status": "passed",
+      "detail": "For eight sites ±1,±i,±2,±2i, the multiplicity-three chain is checked for every Hamiltonian. An independent Newton/trace computation of the full H₁ characteristic polynomial exactly matches the stated cubic factor times four distinct regular-root factors and the uniform factor. All Hamiltonians commute."
+    },
+    {
+      "id": "S014",
+      "name": "Closed characteristic formula and fractional-linear identities in the mixed case",
+      "status": "passed",
+      "detail": "The general characteristic-polynomial formula independently reproduces the full degree-eight polynomial, and all eight Hamiltonian fractional-linear relations have exactly invertible denominators and zero residual matrices."
+    }
+  ],
+  "certificates": {
+    "four_site": {
+      "sites": [
+        "1 + (0)i",
+        "-1 + (0)i",
+        "0 + (1)i",
+        "0 + (-1)i"
+      ],
+      "chain": [
+        [
+          "-1 + (0)i",
+          "1 + (0)i",
+          "0 + (1)i",
+          "0 + (-1)i"
+        ],
+        [
+          "1 + (0)i",
+          "1 + (0)i",
+          "-1 + (0)i",
+          "-1 + (0)i"
+        ],
+        [
+          "0 + (0)i",
+          "2 + (0)i",
+          "-1 + (-1)i",
+          "-1 + (1)i"
+        ]
+      ],
+      "vacuum_eigenvalues": [
+        "3/4 + (0)i",
+        "-3/4 + (0)i",
+        "0 + (-3/4)i",
+        "0 + (3/4)i"
+      ],
+      "critical_eigenvalues": [
+        "-1/4 + (0)i",
+        "1/4 + (0)i",
+        "0 + (1/4)i",
+        "0 + (-1/4)i"
+      ],
+      "characteristic_polynomial_ascending": [
+        "-3/256 + (0)i",
+        "-1/8 + (0)i",
+        "-3/8 + (0)i",
+        "0 + (0)i",
+        "1 + (0)i"
+      ],
+      "N_squared": [
+        [
+          "1/4 + (0)i",
+          "-1/4 + (0)i",
+          "0 + (-1/4)i",
+          "0 + (1/4)i"
+        ],
+        [
+          "-1/4 + (0)i",
+          "1/4 + (0)i",
+          "0 + (1/4)i",
+          "0 + (-1/4)i"
+        ],
+        [
+          "0 + (-1/4)i",
+          "0 + (1/4)i",
+          "-1/4 + (0)i",
+          "1/4 + (0)i"
+        ],
+        [
+          "0 + (1/4)i",
+          "0 + (-1/4)i",
+          "1/4 + (0)i",
+          "-1/4 + (0)i"
+        ]
+      ],
+      "N_cubed": "zero"
+    },
+    "eight_site": {
+      "sites": [
+        "1 + (0)i",
+        "-1 + (0)i",
+        "0 + (1)i",
+        "0 + (-1)i",
+        "2 + (0)i",
+        "-2 + (0)i",
+        "0 + (2)i",
+        "0 + (-2)i"
+      ],
+      "chain": [
+        [
+          "-1 + (0)i",
+          "1 + (0)i",
+          "0 + (1)i",
+          "0 + (-1)i",
+          "-1/2 + (0)i",
+          "1/2 + (0)i",
+          "0 + (1/2)i",
+          "0 + (-1/2)i"
+        ],
+        [
+          "1 + (0)i",
+          "1 + (0)i",
+          "-1 + (0)i",
+          "-1 + (0)i",
+          "1/4 + (0)i",
+          "1/4 + (0)i",
+          "-1/4 + (0)i",
+          "-1/4 + (0)i"
+        ],
+        [
+          "0 + (0)i",
+          "2 + (0)i",
+          "-1 + (-1)i",
+          "-1 + (1)i",
+          "1/8 + (0)i",
+          "3/8 + (0)i",
+          "-1/4 + (-1/8)i",
+          "-1/4 + (1/8)i"
+        ]
+      ],
+      "base_vacuum_eigenvalue": "37/60 + (0)i",
+      "base_triple_eigenvalue": "-23/60 + (0)i",
+      "characteristic_polynomial_ascending": [
+        "-313135058641/55987200000000 + (0)i",
+        "457634197/139968000000 + (0)i",
+        "621949187/5832000000 + (0)i",
+        "-3147101/64800000 + (0)i",
+        "-612367/1296000 + (0)i",
+        "43891/54000 + (0)i",
+        "3/5 + (0)i",
+        "-37/15 + (0)i",
+        "1 + (0)i"
+      ],
+      "quartic_regular_factor_ascending": [
+        "695579/4320000 + (0)i",
+        "-59029/54000 + (0)i",
+        "1481/600 + (0)i",
+        "-3 + (0)i",
+        "1 + (0)i"
+      ],
+      "critical_factorization": "p′=4x³(2x⁴−17)",
+      "Jordan_block_sizes": [
+        3,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  "scope": "Every calculation here is exact in Q(i). The arbitrary-n classification and the squarefreeness criterion are proved in S014; they are not inferred from these examples."
+}

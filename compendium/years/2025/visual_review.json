@@ -1,0 +1,447 @@
+{
+  "status": "approved",
+  "final_pdf_sha256": "e3b5775deebc117b9201d0c7806a03ace8d7dc16b3b51e4263c936613db59cc2",
+  "pdf_pages": 491,
+  "contact_sheet_page_coverage": [
+    [
+      1,
+      168
+    ],
+    [
+      169,
+      336
+    ],
+    [
+      337,
+      491
+    ]
+  ],
+  "contact_sheets_inspected": 41,
+  "initial_full_page_samples": 19,
+  "unchanged_page_text_and_geometry_count": 478,
+  "changed_pages_reinspected": [
+    2,
+    343,
+    347,
+    357,
+    358,
+    359,
+    360,
+    361,
+    362,
+    363,
+    364,
+    365,
+    388
+  ],
+  "reports": [
+    {
+      "path": "months/01/visual_review_001_168.json",
+      "sha256": "077605c47d52e6ec144d820ddf5ebad07730e8d362ffc5de5ebe4db6919ed1b2",
+      "review": {
+        "status": "pass",
+        "reviewer": "analysis_and_arithmetic_geometry",
+        "manifest": "/workspace/scratch/724ab8464145/year_2025/tmp/visual/manifest.json",
+        "pdf_sha256": "45aedac827e99ced08330977ba8dc99cbbdfdca133bbd490aba39e1df31345b2",
+        "pdf_page_count": 491,
+        "reviewed_range": {
+          "start": 1,
+          "end": 168,
+          "page_count": 168
+        },
+        "reviewed_sheet_paths": [
+          "/workspace/scratch/724ab8464145/year_2025/tmp/visual/contact-001-012.jpg",
+          "/workspace/scratch/724ab8464145/year_2025/tmp/visual/contact-013-024.jpg",
+          "/workspace/scratch/724ab8464145/year_2025/tmp/visual/contact-025-036.jpg",
+          "/workspace/scratch/724ab8464145/year_2025/tmp/visual/contact-037-048.jpg",
+          "/workspace/scratch/724ab8464145/year_2025/tmp/visual/contact-049-060.jpg",
+          "/workspace/scratch/724ab8464145/year_2025/tmp/visual/contact-061-072.jpg",
+          "/workspace/scratch/724ab8464145/year_2025/tmp/visual/contact-073-084.jpg",
+          "/workspace/scratch/724ab8464145/year_2025/tmp/visual/contact-085-096.jpg",
+          "/workspace/scratch/724ab8464145/year_2025/tmp/visual/contact-097-108.jpg",
+          "/workspace/scratch/724ab8464145/year_2025/tmp/visual/contact-109-120.jpg",
+          "/workspace/scratch/724ab8464145/year_2025/tmp/visual/contact-121-132.jpg",
+          "/workspace/scratch/724ab8464145/year_2025/tmp/visual/contact-133-144.jpg",
+          "/workspace/scratch/724ab8464145/year_2025/tmp/visual/contact-145-156.jpg",
+          "/workspace/scratch/724ab8464145/year_2025/tmp/visual/contact-157-168.jpg"
+        ],
+        "reviewed_full_pages": [
+          {
+            "page": 1,
+            "path": "/workspace/scratch/724ab8464145/year_2025/tmp/visual/full-001.png"
+          },
+          {
+            "page": 4,
+            "path": "/workspace/scratch/724ab8464145/year_2025/tmp/visual/full-004.png"
+          },
+          {
+            "page": 84,
+            "path": "/workspace/scratch/724ab8464145/year_2025/tmp/visual/full-084.png"
+          },
+          {
+            "page": 165,
+            "path": "/workspace/scratch/724ab8464145/year_2025/tmp/visual/full-165.png"
+          },
+          {
+            "page": 168,
+            "path": "/workspace/scratch/724ab8464145/year_2025/tmp/visual/full-168.png"
+          }
+        ],
+        "method": "Visually inspected all 14 contact sheets covering every page in the assigned range, and all five supplied full-size representative page images using view_image. No PDF or source modifications were made.",
+        "issues": [],
+        "findings": [
+          {
+            "category": "text and formulas",
+            "status": "pass",
+            "detail": "No visible clipping, overlapping lines, missing glyph boxes, or text outside page boundaries. Full-size sample pages have readable body text and mathematical strings."
+          },
+          {
+            "category": "tables",
+            "status": "pass",
+            "detail": "Month overview tables stay within their columns and page boundaries. Header bands, row rules and wrapped text remain distinct; full-size page 4 confirms table readability."
+          },
+          {
+            "category": "pagination and flow",
+            "status": "pass",
+            "detail": "No accidental blank pages or major layout breaks were observed. Month boundaries and short closing pages leave deliberate whitespace; continuation pages and entry headings retain coherent reading order."
+          },
+          {
+            "category": "full-size samples",
+            "status": "pass",
+            "detail": "Pages 1, 4, 84, 165 and 168 have clean margins, readable headings and highlighted result boxes, and unobstructed footers."
+          }
+        ],
+        "scope_limit": "All 168 pages were inspected at contact-sheet scale; five specified pages were also inspected at full size. This is visual layout QA, not a new mathematical or provenance audit."
+      }
+    },
+    {
+      "path": "months/03/visual_review_169_336.json",
+      "sha256": "87b68f5a1f69d6df5ac2f68a900be8d23fa29ff83ed56ee66f33ce0753721d50",
+      "review": {
+        "reviewer": "analysis_geometry_and_computation",
+        "status": "approved",
+        "pdf_sha256": "45aedac827e99ced08330977ba8dc99cbbdfdca133bbd490aba39e1df31345b2",
+        "manifest": "tmp/visual/manifest.json",
+        "page_range": {
+          "start": 169,
+          "end": 336,
+          "count": 168
+        },
+        "method": "Visual inspection using view_image at original image detail: every assigned contact sheet plus all five assigned full-size representative page renders.",
+        "sheet_coverage": [
+          {
+            "file": "tmp/visual/contact-169-180.jpg",
+            "pages": {
+              "start": 169,
+              "end": 180
+            },
+            "status": "passed",
+            "observations": "No clipping, overlapping text, unintended blank pages, broken table alignment or obstructed page furniture observed."
+          },
+          {
+            "file": "tmp/visual/contact-181-192.jpg",
+            "pages": {
+              "start": 181,
+              "end": 192
+            },
+            "status": "passed",
+            "observations": "No clipping, overlapping text, unintended blank pages, broken table alignment or obstructed page furniture observed."
+          },
+          {
+            "file": "tmp/visual/contact-193-204.jpg",
+            "pages": {
+              "start": 193,
+              "end": 204
+            },
+            "status": "passed",
+            "observations": "No clipping, overlapping text, unintended blank pages, broken table alignment or obstructed page furniture observed."
+          },
+          {
+            "file": "tmp/visual/contact-205-216.jpg",
+            "pages": {
+              "start": 205,
+              "end": 216
+            },
+            "status": "passed",
+            "observations": "No clipping, overlapping text, unintended blank pages, broken table alignment or obstructed page furniture observed."
+          },
+          {
+            "file": "tmp/visual/contact-217-228.jpg",
+            "pages": {
+              "start": 217,
+              "end": 228
+            },
+            "status": "passed",
+            "observations": "No clipping, overlapping text, unintended blank pages, broken table alignment or obstructed page furniture observed."
+          },
+          {
+            "file": "tmp/visual/contact-229-240.jpg",
+            "pages": {
+              "start": 229,
+              "end": 240
+            },
+            "status": "passed",
+            "observations": "No clipping, overlapping text, unintended blank pages, broken table alignment or obstructed page furniture observed."
+          },
+          {
+            "file": "tmp/visual/contact-241-252.jpg",
+            "pages": {
+              "start": 241,
+              "end": 252
+            },
+            "status": "passed",
+            "observations": "No clipping, overlapping text, unintended blank pages, broken table alignment or obstructed page furniture observed."
+          },
+          {
+            "file": "tmp/visual/contact-253-264.jpg",
+            "pages": {
+              "start": 253,
+              "end": 264
+            },
+            "status": "passed",
+            "observations": "No clipping, overlapping text, unintended blank pages, broken table alignment or obstructed page furniture observed."
+          },
+          {
+            "file": "tmp/visual/contact-265-276.jpg",
+            "pages": {
+              "start": 265,
+              "end": 276
+            },
+            "status": "passed",
+            "observations": "No clipping, overlapping text, unintended blank pages, broken table alignment or obstructed page furniture observed."
+          },
+          {
+            "file": "tmp/visual/contact-277-288.jpg",
+            "pages": {
+              "start": 277,
+              "end": 288
+            },
+            "status": "passed",
+            "observations": "No clipping, overlapping text, unintended blank pages, broken table alignment or obstructed page furniture observed."
+          },
+          {
+            "file": "tmp/visual/contact-289-300.jpg",
+            "pages": {
+              "start": 289,
+              "end": 300
+            },
+            "status": "passed",
+            "observations": "No clipping, overlapping text, unintended blank pages, broken table alignment or obstructed page furniture observed."
+          },
+          {
+            "file": "tmp/visual/contact-301-312.jpg",
+            "pages": {
+              "start": 301,
+              "end": 312
+            },
+            "status": "passed",
+            "observations": "No clipping, overlapping text, unintended blank pages, broken table alignment or obstructed page furniture observed."
+          },
+          {
+            "file": "tmp/visual/contact-313-324.jpg",
+            "pages": {
+              "start": 313,
+              "end": 324
+            },
+            "status": "passed",
+            "observations": "No clipping, overlapping text, unintended blank pages, broken table alignment or obstructed page furniture observed."
+          },
+          {
+            "file": "tmp/visual/contact-325-336.jpg",
+            "pages": {
+              "start": 325,
+              "end": 336
+            },
+            "status": "passed",
+            "observations": "No clipping, overlapping text, unintended blank pages, broken table alignment or obstructed page furniture observed."
+          }
+        ],
+        "full_page_coverage": [
+          {
+            "file": "tmp/visual/full-169.png",
+            "page": 169,
+            "status": "passed",
+            "observations": "Body text, mathematical symbols, headings, theorem callout where present, source receipt and footer are rendered cleanly within the page margins."
+          },
+          {
+            "file": "tmp/visual/full-172.png",
+            "page": 172,
+            "status": "passed",
+            "observations": "Body text, mathematical symbols, headings, theorem callout where present, source receipt and footer are rendered cleanly within the page margins."
+          },
+          {
+            "file": "tmp/visual/full-252.png",
+            "page": 252,
+            "status": "passed",
+            "observations": "Body text, mathematical symbols, headings, theorem callout where present, source receipt and footer are rendered cleanly within the page margins."
+          },
+          {
+            "file": "tmp/visual/full-333.png",
+            "page": 333,
+            "status": "passed",
+            "observations": "Body text, mathematical symbols, headings, theorem callout where present, source receipt and footer are rendered cleanly within the page margins."
+          },
+          {
+            "file": "tmp/visual/full-336.png",
+            "page": 336,
+            "status": "passed",
+            "observations": "Body text, mathematical symbols, headings, theorem callout where present, source receipt and footer are rendered cleanly within the page margins."
+          }
+        ],
+        "checks": [
+          {
+            "name": "complete assigned sheet coverage",
+            "status": "passed",
+            "detail": "14 of 14 contact sheets inspected; continuous coverage of all 168 pages from 169 through 336."
+          },
+          {
+            "name": "complete assigned full-page coverage",
+            "status": "passed",
+            "detail": "Full-size pages 169, 172, 252, 333 and 336 inspected."
+          },
+          {
+            "name": "layout and table flow",
+            "status": "passed",
+            "detail": "Margins and spacing remain consistent; catalog tables continue with repeated headers and clean row boundaries; no overlap or visible clipping found."
+          },
+          {
+            "name": "page continuity and blank pages",
+            "status": "passed",
+            "detail": "All assigned page thumbnails contain expected content, with normal continuation and section transitions."
+          },
+          {
+            "name": "representative text and symbol legibility",
+            "status": "passed",
+            "detail": "Five full-size samples have legible body text and mathematical symbols, with no missing-glyph boxes or rendering corruption observed."
+          }
+        ],
+        "issues": [],
+        "scope_note": "This is a visual layout review, with contact-sheet inspection for every page and detailed inspection of the five assigned samples. It does not replace the separate source, mathematical and geometry audits. PDF was not modified."
+      }
+    },
+    {
+      "path": "months/11/visual_review_337_491.json",
+      "sha256": "ec8d9ed341388b43784ae6de8c823bcc0dec8c330e401a4e28cb593ff577584f",
+      "review": {
+        "reviewer": "dmodules_integrability_qft",
+        "status": "pass",
+        "pdf_sha256": "45aedac827e99ced08330977ba8dc99cbbdfdca133bbd490aba39e1df31345b2",
+        "actual_pdf_sha256": "45aedac827e99ced08330977ba8dc99cbbdfdca133bbd490aba39e1df31345b2",
+        "coverage": {
+          "start_page": 337,
+          "end_page": 491,
+          "pages_covered": 155,
+          "all_contact_sheets_inspected": true,
+          "contact_sheet_count": 13,
+          "contact_sheets": [
+            "/workspace/scratch/724ab8464145/year_2025/tmp/visual/contact-337-348.jpg",
+            "/workspace/scratch/724ab8464145/year_2025/tmp/visual/contact-349-360.jpg",
+            "/workspace/scratch/724ab8464145/year_2025/tmp/visual/contact-361-372.jpg",
+            "/workspace/scratch/724ab8464145/year_2025/tmp/visual/contact-373-384.jpg",
+            "/workspace/scratch/724ab8464145/year_2025/tmp/visual/contact-385-396.jpg",
+            "/workspace/scratch/724ab8464145/year_2025/tmp/visual/contact-397-408.jpg",
+            "/workspace/scratch/724ab8464145/year_2025/tmp/visual/contact-409-420.jpg",
+            "/workspace/scratch/724ab8464145/year_2025/tmp/visual/contact-421-432.jpg",
+            "/workspace/scratch/724ab8464145/year_2025/tmp/visual/contact-433-444.jpg",
+            "/workspace/scratch/724ab8464145/year_2025/tmp/visual/contact-445-456.jpg",
+            "/workspace/scratch/724ab8464145/year_2025/tmp/visual/contact-457-468.jpg",
+            "/workspace/scratch/724ab8464145/year_2025/tmp/visual/contact-469-480.jpg",
+            "/workspace/scratch/724ab8464145/year_2025/tmp/visual/contact-481-491.jpg"
+          ],
+          "all_requested_full_pages_inspected": true,
+          "requested_full_pages": [
+            337,
+            340,
+            414,
+            488,
+            491
+          ],
+          "requested_full_images": [
+            "/workspace/scratch/724ab8464145/year_2025/tmp/visual/full-337.png",
+            "/workspace/scratch/724ab8464145/year_2025/tmp/visual/full-340.png",
+            "/workspace/scratch/724ab8464145/year_2025/tmp/visual/full-414.png",
+            "/workspace/scratch/724ab8464145/year_2025/tmp/visual/full-488.png",
+            "/workspace/scratch/724ab8464145/year_2025/tmp/visual/full-491.png"
+          ],
+          "additional_full_pages": [
+            390,
+            430,
+            465,
+            466
+          ],
+          "additional_full_images": [
+            "/workspace/scratch/724ab8464145/year_2025/months/11/qa_table-390.png",
+            "/workspace/scratch/724ab8464145/year_2025/months/11/qa_table-430.png",
+            "/workspace/scratch/724ab8464145/year_2025/months/11/qa_illustrations-465.png",
+            "/workspace/scratch/724ab8464145/year_2025/months/11/qa_illustrations-466.png"
+          ]
+        },
+        "issues": [],
+        "observations": [
+          "No visible clipping,overlapping text,unexpected blank pages,unreadable tables,missing-glyph boxes,or content escaping margins in the155-page contact-sheet coverage.",
+          "Full-page samples confirm readable body text,equation boxes,reference labels and URLs,with consistent margins,headers and footers.",
+          "Additional full renders of both month-index tables confirm legible three-column wrapping and intact table borders/content.",
+          "Additional full renders of illustration pages465-466 confirm separated panels,visible axes/ticks/legends,uncropped curves,and captions clear of the plots and page furniture.",
+          "Sparse chapter-end and continuation pages retain meaningful content;no blank-page defect was found."
+        ],
+        "scope": "Read-only visual layout and legibility QA. Contact sheets cover every assigned page;requested full-page samples and four extra full renders check fine detail. This does not claim every formula was reread mathematically during the visual pass.",
+        "pdf_modified": false
+      }
+    }
+  ],
+  "final_delta_review": {
+    "status": "approved",
+    "approved": true,
+    "pdf_sha256": "e3b5775deebc117b9201d0c7806a03ace8d7dc16b3b51e4263c936613db59cc2",
+    "final_hash": "e3b5775deebc117b9201d0c7806a03ace8d7dc16b3b51e4263c936613db59cc2",
+    "pdf": "output/2025_Month_by_Month_Mathematics.pdf",
+    "pages": [
+      2,
+      343,
+      347,
+      357,
+      358,
+      359,
+      360,
+      361,
+      362,
+      363,
+      364,
+      365,
+      388
+    ],
+    "listed_pages": [
+      2,
+      343,
+      347,
+      357,
+      358,
+      359,
+      360,
+      361,
+      362,
+      363,
+      364,
+      365,
+      388
+    ],
+    "coverage": {
+      "full_size_pngs_inspected": 13,
+      "inspection_method": "Each listed full-size page PNG opened individually with view_image at original detail.",
+      "checks": [
+        "No clipping of text or formulas",
+        "No overlapping headings, text, tables, or theorem boxes",
+        "Monthly coverage and revised-question tables remain legible",
+        "Page breaks and continuation text preserve readable structure",
+        "Updated hypotheses and provenance render clearly"
+      ],
+      "unchanged_pages": 478,
+      "unchanged_page_basis": "Root final_delta manifest reports identical extracted-text and coordinate hashes against the previously reviewed edition.",
+      "manifest": "tmp/final_delta.json"
+    },
+    "issues": [],
+    "observations": "All thirteen changed pages are visually clean. The coverage table, October index rows, updated heat-supertrace hypothesis and theorem, subsequent entry flow, and revised cyclotomic provenance have clear margins and consistent typography.",
+    "pdf_modified": false
+  },
+  "scope": "All pages visually covered in indexed contact sheets, selected pages at full size, and every changed final page re-inspected at full size. Source and text geometry audits are separate."
+}

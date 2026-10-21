@@ -1,0 +1,25 @@
+{
+  "affine_map": "(q+p+1,p+2)",
+  "affine_tested_pairs": 100,
+  "affine_covariance_exact": true,
+  "nonlinear_map": "(q,p+q^2)",
+  "test_pair": [
+    "p^2",
+    "p"
+  ],
+  "nonlinear_poisson_covariance_exact": true,
+  "nonlinear_star_defect": {
+    "n": 1,
+    "terms": [
+      {
+        "hbar_power": 2,
+        "exponents": [
+          0,
+          0
+        ],
+        "real": "-1/2",
+        "imaginary": "0"
+      }
+    ]
+  }
+}

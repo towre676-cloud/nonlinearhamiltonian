@@ -1,0 +1,88 @@
+{
+  "basis": [
+    "up up",
+    "up down",
+    "down up",
+    "down down"
+  ],
+  "Omega": [
+    [
+      "1/2",
+      "0",
+      "0",
+      "0"
+    ],
+    [
+      "0",
+      "-1/2",
+      "1",
+      "0"
+    ],
+    [
+      "0",
+      "1",
+      "-1/2",
+      "0"
+    ],
+    [
+      "0",
+      "0",
+      "0",
+      "1/2"
+    ]
+  ],
+  "singlet": [
+    0,
+    -1,
+    1,
+    0
+  ],
+  "Omega_singlet_eigenvalue": "-3/2",
+  "H1_singlet_eigenvalue": "3/2",
+  "H2_singlet_eigenvalue": "-3/2",
+  "Bethe_root": "1/2",
+  "g_ascending_coefficients": [
+    "0",
+    "-1",
+    "1"
+  ],
+  "u_denominator_D": [
+    "0",
+    "2",
+    "-6",
+    "4"
+  ],
+  "potential_identity": "4g²(1+D′)−3D²=0; hence u²−u′=3/(4g²)",
+  "potential_residual_ascending_coefficients": [
+    "0"
+  ],
+  "y1_numerator_q1": [
+    "-1/2",
+    "1"
+  ],
+  "y2_numerator_q2": [
+    "1/4",
+    "-1/2",
+    "1"
+  ],
+  "ODE_scaled_residual_q1": [
+    "0"
+  ],
+  "ODE_scaled_residual_q2": [
+    "0"
+  ],
+  "Wronskian_numerator": [
+    "0",
+    "-1",
+    "1"
+  ],
+  "Wronskian_denominator": [
+    "0",
+    "-1",
+    "1"
+  ],
+  "simple_residues_V_at_0_and_1": [
+    "3/2",
+    "-3/2"
+  ]
+}

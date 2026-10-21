@@ -1,0 +1,100 @@
+{
+  "year": 2026,
+  "source_window_utc": [
+    "2026-01-01",
+    "2026-10-21"
+  ],
+  "months": 10,
+  "october_partial": true,
+  "historical_scope": "Bounded recovered fragments from prior conversations and secondary files; not an exhaustive message export.",
+  "authorship": "Revised questions, definitions, proofs and explicitly stipulated examples are new expositions. Exact original prompts remain null unless recovered literally.",
+  "excluded": "Nonmathematical conversation; retrieval query echoes; explicit earlier-year retrospective material as original2026 evidence.",
+  "verification": "Offline finite certificates and scoped numerical examples, plus separate provenance/schema and document audits.",
+  "retrieval_calls": 43,
+  "treatments": 349,
+  "per_month": {
+    "January": {
+      "treatments": 44,
+      "retrieval_calls": 4,
+      "evidence_labels": {
+        "A": 28,
+        "U": 16
+      }
+    },
+    "February": {
+      "treatments": 35,
+      "retrieval_calls": 4,
+      "evidence_labels": {
+        "A": 33,
+        "U": 2
+      }
+    },
+    "March": {
+      "treatments": 27,
+      "retrieval_calls": 3,
+      "evidence_labels": {
+        "U": 4,
+        "A": 23
+      }
+    },
+    "April": {
+      "treatments": 33,
+      "retrieval_calls": 3,
+      "evidence_labels": {
+        "A": 25,
+        "U": 8
+      }
+    },
+    "May": {
+      "treatments": 33,
+      "retrieval_calls": 4,
+      "evidence_labels": {
+        "U": 9,
+        "A": 24
+      }
+    },
+    "June": {
+      "treatments": 32,
+      "retrieval_calls": 3,
+      "evidence_labels": {
+        "A": 25,
+        "U": 2,
+        "T": 5
+      }
+    },
+    "July": {
+      "treatments": 31,
+      "retrieval_calls": 4,
+      "evidence_labels": {
+        "U": 17,
+        "A": 14
+      }
+    },
+    "August": {
+      "treatments": 37,
+      "retrieval_calls": 5,
+      "evidence_labels": {
+        "A": 24,
+        "T": 5,
+        "U": 8
+      }
+    },
+    "September": {
+      "treatments": 35,
+      "retrieval_calls": 6,
+      "evidence_labels": {
+        "A": 29,
+        "U": 6
+      }
+    },
+    "October": {
+      "treatments": 42,
+      "retrieval_calls": 7,
+      "evidence_labels": {
+        "U": 1,
+        "T": 7,
+        "A": 34
+      }
+    }
+  }
+}

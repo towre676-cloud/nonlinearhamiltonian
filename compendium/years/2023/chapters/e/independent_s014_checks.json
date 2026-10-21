@@ -1,0 +1,94 @@
+{
+  "id": "S014",
+  "status": "passed",
+  "method": "Independent construction from pair-site action, exact Gaussian rational arithmetic",
+  "jet_basis": [
+    [
+      "1+(0)i",
+      "1+(0)i",
+      "1+(0)i",
+      "1+(0)i"
+    ],
+    [
+      "-1+(0)i",
+      "1+(0)i",
+      "0+(1)i",
+      "0+(-1)i"
+    ],
+    [
+      "1+(0)i",
+      "1+(0)i",
+      "-1+(0)i",
+      "-1+(0)i"
+    ],
+    [
+      "0+(0)i",
+      "2+(0)i",
+      "-1+(-1)i",
+      "-1+(1)i"
+    ]
+  ],
+  "basis_rank": 4,
+  "base_nilpotent_ranks": [
+    2,
+    1,
+    0
+  ],
+  "all_four_Hamiltonians": "Each reconstructed exactly as vacuum projector plus critical projector and c1*N+c2*N^2; c1 nonzero. All four have critical nilpotent ranks2,1,0.",
+  "eight_site_independent_characteristic": {
+    "method": "Exact Gaussian-rational elimination at nine distinct rational spectral values proves equality of degree-eight monic polynomials, independently of Newton identities.",
+    "values": [
+      {
+        "lambda": -4,
+        "determinant": "6016328399444645359/55987200000000+(0)i"
+      },
+      {
+        "lambda": -3,
+        "determinant": "680774860800989759/55987200000000+(0)i"
+      },
+      {
+        "lambda": -2,
+        "determinant": "399075891561439/691200000000+(0)i"
+      },
+      {
+        "lambda": -1,
+        "determinant": "163914455521759/55987200000000+(0)i"
+      },
+      {
+        "lambda": 0,
+        "determinant": "-313135058641/55987200000000+(0)i"
+      },
+      {
+        "lambda": 1,
+        "determinant": "-8782923349547/18662400000000+(0)i"
+      },
+      {
+        "lambda": 2,
+        "determinant": "-159280569832241/55987200000000+(0)i"
+      },
+      {
+        "lambda": 3,
+        "determinant": "98688037495606559/55987200000000+(0)i"
+      },
+      {
+        "lambda": 4,
+        "determinant": "527953340887561253/18662400000000+(0)i"
+      }
+    ],
+    "factorization": "(lambda−37/60)(lambda+23/60)^3 [17q^4−2(q+1)^4]/15, q=lambda−37/60"
+  },
+  "checks": [
+    {
+      "id": "S014",
+      "name": "Independent quartic complete Jordan certificate",
+      "status": "passed",
+      "detail": "Exact Q(i) pair-site reconstruction of all four Hamiltonians, jet basis rank4, full operator reconstruction and common nilpotent ranks2,1,0."
+    },
+    {
+      "id": "S014",
+      "name": "Independent eight-site characteristic polynomial by determinants",
+      "status": "passed",
+      "detail": "Nine exact Gaussian-rational determinant evaluations prove the degree-eight factorization independently of the producer’s Newton/trace algorithm. Full values retained in this certificate."
+    }
+  ]
+}

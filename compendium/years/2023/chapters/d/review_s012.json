@@ -1,0 +1,36 @@
+{
+  "reviewer": "linear_probability_and_relativity",
+  "reviewed": "chapters/e/supplemental.json S012 and supplement_verify.py",
+  "issues": [],
+  "verifier": {
+    "method": "Copied the supplementary entry and verifier into a temporary directory under chapter d, then ran the copy without editing chapter e.",
+    "result": "5 checks passed; 30 rational parameter certificates verified."
+  },
+  "independent_mathematical_checks": [
+    {
+      "scope": "Nullspace quotient and feasibility",
+      "detail": "Writing x=r+n with r∈rangeQ and n∈kerQ makes Bx=z equivalent to PBr=Pz, because kerP=BkerQ. The matrix H=CCᵀ with C=PB(Q|R)^(−1/2) has exactly rangeC, so Pz∈rangeH is both necessary and sufficient, and equivalent to z∈rangeB. This does not assume away observed zero-energy directions."
+    },
+    {
+      "scope": "Optimizer and complete minimizer set",
+      "detail": "The least-norm u*=CᵀH⁺Pz is perpendicular to kerC, so its R-component is unique. Returning via Q_R^(−1/2) gives r*=Q⁺BᵀPH⁺Pz. The remaining residual lies in BkerQ, and all null corrections differ by kerQ∩kerB. The stated value and minimizer set follow without an invertibility assumption on Q or H."
+    },
+    {
+      "scope": "Dual admissibility and certificates",
+      "detail": "The condition Bᵀλ∈rangeQ is precisely λ⊥BkerQ. Since H⁺Pz lies in rangeH⊆W⊥, the proposed λ* is admissible. Moreover QQ⁺Bᵀλ*=Bᵀλ*, giving stationarity. Infeasible projected outputs admit a residual a∈kerH∩W⊥; positivity of Q⁺ on rangeQ and aᵀHa=0 force Bᵀa=0. Thus the separating dual ray and infeasibility certificate are valid."
+    },
+    {
+      "scope": "Nontrivial numerical example",
+      "detail": "For Q=diag(2,0,3) and the displayed B, P=(1/2)[[1,−1],[−1,1]], H=(5/24)[[1,−1],[−1,1]] and H⁺=(6/5)[[1,−1],[−1,1]]. The solution x*=(3/5,2/5,−2/5) is feasible, has energy3/5, and satisfies Qx*=Bᵀ(6/5,−6/5). Direct elimination x=(1−s,s,−s) gives the same minimizer s=2/5. The naive raw-pseudoinverse value1 is indeed wrong."
+    },
+    {
+      "scope": "Ridge conjugate and domain",
+      "detail": "The nullspace term ||y_N||²/(2ε) is exact and proves divergence off rangeQ. On rangeQ, the difference of reciprocal eigenvalues is ε/[λ(λ+ε)]≤ε/a², giving the stated finite error bound. These are properly distinguished limits."
+    },
+    {
+      "scope": "Rank and inequality strata",
+      "detail": "For t>0,a<0, the nonnegative constraint blocks the equality-only free null solution. The stated λ=t/(1+t) and ν₃=−aλ satisfy stationarity, dual feasibility and complementarity. For a>0 the free x₃=1/a is feasible and unique at zero energy; at a=0 x₃ is free and nonnegative; t=0 gives exactly the stated segment or ray. The objective-difference proof establishes global sufficiency. The a→0+ value jump is compatible with continuous data because the minimizing null coordinate escapes to infinity."
+    }
+  ],
+  "overall": "Approved within the stated finite-dimensional PSD equality setting and the separately solved nonnegative parameter family. No mathematical correction is required."
+}

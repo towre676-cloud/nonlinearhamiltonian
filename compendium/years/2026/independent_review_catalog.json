@@ -1,0 +1,1501 @@
+{
+  "status": "approved",
+  "created_at": "2026-10-21T05:42:39.012442+00:00",
+  "treatments": 349,
+  "months": 10,
+  "month_reviews": [
+    {
+      "month": "January",
+      "treatments": 44,
+      "report": "months/01/independent_review.json",
+      "report_sha256": "7b4592e3b7d8cfaed52800fe401ef48a4689bece340bf6142b093dd530e3de10",
+      "status": "approved",
+      "review": {
+        "reviewer": "Independent chapter10 author /root/dmodules_integrability_qft",
+        "month": "2026-01",
+        "status": "approved",
+        "scope": {
+          "entries_reviewed": 44,
+          "ids": [
+            "Y26-01-001",
+            "Y26-01-002",
+            "Y26-01-003",
+            "Y26-01-004",
+            "Y26-01-005",
+            "Y26-01-006",
+            "Y26-01-007",
+            "Y26-01-008",
+            "Y26-01-009",
+            "Y26-01-010",
+            "Y26-01-011",
+            "Y26-01-012",
+            "Y26-01-013",
+            "Y26-01-014",
+            "Y26-01-015",
+            "Y26-01-016",
+            "Y26-01-017",
+            "Y26-01-018",
+            "Y26-01-019",
+            "Y26-01-020",
+            "Y26-01-021",
+            "Y26-01-022",
+            "Y26-01-023",
+            "Y26-01-024",
+            "Y26-01-025",
+            "Y26-01-026",
+            "Y26-01-027",
+            "Y26-01-028",
+            "Y26-01-029",
+            "Y26-01-030",
+            "Y26-01-031",
+            "Y26-01-032",
+            "Y26-01-033",
+            "Y26-01-034",
+            "Y26-01-901",
+            "Y26-01-902",
+            "Y26-01-903",
+            "Y26-01-904",
+            "Y26-01-905",
+            "Y26-01-906",
+            "Y26-01-907",
+            "Y26-01-908",
+            "Y26-01-909",
+            "Y26-01-910"
+          ],
+          "proof_reading": "All listed definitions, theorem statements, proofs, worked examples and limits were read directly, including January034 added during the review and all ten root January catalog entries901–910.",
+          "source_audit": "Every source excerpt was checked as an exact substring of its actual receipt record; parsed U/A dates and roles match; month and nullable original-prompt fields checked.",
+          "finite_verifiers": [
+            "verify.py:34/34 passed",
+            "catalog_verify.py:10/10 passed"
+          ],
+          "limits": "Existing executable certificates were replayed. This review does not certify missing historical datasets, hidden Lean projects, analytic claims explicitly left conditional, or reference URLs beyond the mathematical scope read."
+        },
+        "proof_focus": [
+          "Monoid minimal ideals, observation quotient minimality, cross-term conventions and integral quadratic-form counterexample.",
+          "Reciprocal-maximum Gram determinant and weighted Schur bound; divisor-kernel factorization and arithmetic matvec complexity.",
+          "Airy scaling and discriminant normalization; vorticity-log diffusion signs; amplitude/angular misalignment counterexample; projected-Hessian curvature and clothoid variational constraints.",
+          "KMS sign convention and matrix witness; turning-point exponents; RG antiderivative; entropy/log-Sobolev rate; Frobenius coalescence logarithm.",
+          "Cech two-component overlap, Selmer/Sha exact sequence, CM character cancellation and residual margins.",
+          "Dual-number radical, periodic Ext resolution and explicit matrix Morita equivalence.",
+          "All ten root catalog proofs: Ito/Feynman–Kac conditions, Catalan moments, frozen tangent kernel, spectral distance, unilateral-shift index, Frobenius sewing, supplied Picard–Fuchs recurrence/logarithm, arctangent tail, Borel Stokes sign, triangular dilogarithm connection."
+        ],
+        "issues": [],
+        "remaining_blockers": [],
+        "source_results": [
+          {
+            "id": "Y26-01-001",
+            "status": "passed",
+            "receipt": "root_receipts.json record 0",
+            "date": "2026-01-01",
+            "evidence": "A"
+          },
+          {
+            "id": "Y26-01-002",
+            "status": "passed",
+            "receipt": "root_receipts.json record 0",
+            "date": "2026-01-01",
+            "evidence": "U"
+          },
+          {
+            "id": "Y26-01-003",
+            "status": "passed",
+            "receipt": "root_receipts.json record 0",
+            "date": "2026-01-05",
+            "evidence": "U"
+          },
+          {
+            "id": "Y26-01-004",
+            "status": "passed",
+            "receipt": "root_receipts.json record 0",
+            "date": "2026-01-05",
+            "evidence": "A"
+          },
+          {
+            "id": "Y26-01-005",
+            "status": "passed",
+            "receipt": "root_receipts.json record 0",
+            "date": "2026-01-06",
+            "evidence": "U"
+          },
+          {
+            "id": "Y26-01-006",
+            "status": "passed",
+            "receipt": "root_receipts.json record 0",
+            "date": "2026-01-06",
+            "evidence": "U"
+          },
+          {
+            "id": "Y26-01-007",
+            "status": "passed",
+            "receipt": "root_receipts.json record 0",
+            "date": "2026-01-08",
+            "evidence": "U"
+          },
+          {
+            "id": "Y26-01-008",
+            "status": "passed",
+            "receipt": "root_receipts.json record 0",
+            "date": "2026-01-08",
+            "evidence": "U"
+          },
+          {
+            "id": "Y26-01-009",
+            "status": "passed",
+            "receipt": "root_receipts.json record 0",
+            "date": "2026-01-11",
+            "evidence": "A"
+          },
+          {
+            "id": "Y26-01-010",
+            "status": "passed",
+            "receipt": "root_details_0.json record 0",
+            "date": "2026-01-13",
+            "evidence": "A"
+          },
+          {
+            "id": "Y26-01-011",
+            "status": "passed",
+            "receipt": "root_details_0.json record 0",
+            "date": "2026-01-13",
+            "evidence": "A"
+          },
+          {
+            "id": "Y26-01-012",
+            "status": "passed",
+            "receipt": "root_receipts.json record 0",
+            "date": "2026-01-13",
+            "evidence": "A"
+          },
+          {
+            "id": "Y26-01-013",
+            "status": "passed",
+            "receipt": "root_receipts.json record 0",
+            "date": "2026-01-13",
+            "evidence": "U"
+          },
+          {
+            "id": "Y26-01-014",
+            "status": "passed",
+            "receipt": "root_receipts.json record 0",
+            "date": "2026-01-15",
+            "evidence": "U"
+          },
+          {
+            "id": "Y26-01-015",
+            "status": "passed",
+            "receipt": "root_receipts.json record 0",
+            "date": "2026-01-15",
+            "evidence": "U"
+          },
+          {
+            "id": "Y26-01-016",
+            "status": "passed",
+            "receipt": "root_receipts.json record 0",
+            "date": "2026-01-17",
+            "evidence": "U"
+          },
+          {
+            "id": "Y26-01-017",
+            "status": "passed",
+            "receipt": "root_receipts.json record 0",
+            "date": "2026-01-21",
+            "evidence": "A"
+          },
+          {
+            "id": "Y26-01-018",
+            "status": "passed",
+            "receipt": "root_receipts.json record 0",
+            "date": "2026-01-21",
+            "evidence": "U"
+          },
+          {
+            "id": "Y26-01-019",
+            "status": "passed",
+            "receipt": "root_details_1.json record 0",
+            "date": "2026-01-21",
+            "evidence": "A"
+          },
+          {
+            "id": "Y26-01-020",
+            "status": "passed",
+            "receipt": "root_receipts.json record 0",
+            "date": "2026-01-21",
+            "evidence": "U"
+          },
+          {
+            "id": "Y26-01-021",
+            "status": "passed",
+            "receipt": "root_receipts.json record 0",
+            "date": "2026-01-31",
+            "evidence": "U"
+          },
+          {
+            "id": "Y26-01-022",
+            "status": "passed",
+            "receipt": "root_receipts.json record 0",
+            "date": "2026-01-25",
+            "evidence": "A"
+          },
+          {
+            "id": "Y26-01-023",
+            "status": "passed",
+            "receipt": "root_receipts.json record 0",
+            "date": "2026-01-26",
+            "evidence": "A"
+          },
+          {
+            "id": "Y26-01-024",
+            "status": "passed",
+            "receipt": "root_receipts.json record 0",
+            "date": "2026-01-28",
+            "evidence": "A"
+          },
+          {
+            "id": "Y26-01-025",
+            "status": "passed",
+            "receipt": "root_receipts.json record 0",
+            "date": "2026-01-04",
+            "evidence": "A"
+          },
+          {
+            "id": "Y26-01-026",
+            "status": "passed",
+            "receipt": "root_final_sweep.json record 0",
+            "date": "2026-01-16",
+            "evidence": "A"
+          },
+          {
+            "id": "Y26-01-027",
+            "status": "passed",
+            "receipt": "root_final_sweep.json record 0",
+            "date": "2026-01-18",
+            "evidence": "A"
+          },
+          {
+            "id": "Y26-01-028",
+            "status": "passed",
+            "receipt": "root_final_sweep.json record 0",
+            "date": "2026-01-24",
+            "evidence": "A"
+          },
+          {
+            "id": "Y26-01-029",
+            "status": "passed",
+            "receipt": "root_final_sweep.json record 0",
+            "date": "2026-01-20",
+            "evidence": "A"
+          },
+          {
+            "id": "Y26-01-030",
+            "status": "passed",
+            "receipt": "root_final_sweep.json record 0",
+            "date": "2026-01-30",
+            "evidence": "U"
+          },
+          {
+            "id": "Y26-01-031",
+            "status": "passed",
+            "receipt": "root_final_sweep.json record 0",
+            "date": "2026-01-30",
+            "evidence": "U"
+          },
+          {
+            "id": "Y26-01-032",
+            "status": "passed",
+            "receipt": "root_final_sweep.json record 0",
+            "date": "2026-01-30",
+            "evidence": "U"
+          },
+          {
+            "id": "Y26-01-033",
+            "status": "passed",
+            "receipt": "root_final_sweep.json record 0",
+            "date": "2026-01-30",
+            "evidence": "A"
+          },
+          {
+            "id": "Y26-01-034",
+            "status": "passed",
+            "receipt": "root_receipts.json record 0",
+            "date": "2026-01-05",
+            "evidence": "A"
+          },
+          {
+            "id": "Y26-01-901",
+            "status": "passed",
+            "receipt": "root_final_sweep.json record 0",
+            "date": "2026-01-28",
+            "evidence": "A"
+          },
+          {
+            "id": "Y26-01-902",
+            "status": "passed",
+            "receipt": "root_final_sweep.json record 0",
+            "date": "2026-01-28",
+            "evidence": "A"
+          },
+          {
+            "id": "Y26-01-903",
+            "status": "passed",
+            "receipt": "root_final_sweep.json record 0",
+            "date": "2026-01-28",
+            "evidence": "A"
+          },
+          {
+            "id": "Y26-01-904",
+            "status": "passed",
+            "receipt": "root_final_sweep.json record 0",
+            "date": "2026-01-28",
+            "evidence": "A"
+          },
+          {
+            "id": "Y26-01-905",
+            "status": "passed",
+            "receipt": "root_final_sweep.json record 0",
+            "date": "2026-01-28",
+            "evidence": "A"
+          },
+          {
+            "id": "Y26-01-906",
+            "status": "passed",
+            "receipt": "root_final_sweep.json record 0",
+            "date": "2026-01-28",
+            "evidence": "A"
+          },
+          {
+            "id": "Y26-01-907",
+            "status": "passed",
+            "receipt": "root_final_sweep.json record 0",
+            "date": "2026-01-28",
+            "evidence": "A"
+          },
+          {
+            "id": "Y26-01-908",
+            "status": "passed",
+            "receipt": "root_final_sweep.json record 0",
+            "date": "2026-01-28",
+            "evidence": "A"
+          },
+          {
+            "id": "Y26-01-909",
+            "status": "passed",
+            "receipt": "root_final_sweep.json record 0",
+            "date": "2026-01-29",
+            "evidence": "A"
+          },
+          {
+            "id": "Y26-01-910",
+            "status": "passed",
+            "receipt": "root_final_sweep.json record 0",
+            "date": "2026-01-29",
+            "evidence": "A"
+          }
+        ],
+        "snapshot_sha256": {
+          "entries.json": "5a7ea9ac1dc5264c5dd7591d011c8dd0a3e0c3b7e1123411f4de5987ab6aee63",
+          "catalog_entries.json": "8d0da6f20c47cbeb9bfddf7399b6bddb67c72c073026264c25f56425930405ac"
+        }
+      }
+    },
+    {
+      "month": "February",
+      "treatments": 35,
+      "report": "months/02/independent_review.json",
+      "report_sha256": "c5290f1d07a4164066e1d1047a47188f2d23ba6a7c5b62ad1970b7331d2b627b",
+      "status": "approved",
+      "review": {
+        "reviewer": "Independent chapter10 author /root/dmodules_integrability_qft",
+        "month": "2026-02",
+        "status": "approved",
+        "scope": {
+          "entries_reviewed": 35,
+          "ids": [
+            "Y26-02-001",
+            "Y26-02-002",
+            "Y26-02-003",
+            "Y26-02-004",
+            "Y26-02-005",
+            "Y26-02-006",
+            "Y26-02-007",
+            "Y26-02-008",
+            "Y26-02-009",
+            "Y26-02-010",
+            "Y26-02-011",
+            "Y26-02-012",
+            "Y26-02-013",
+            "Y26-02-014",
+            "Y26-02-015",
+            "Y26-02-016",
+            "Y26-02-017",
+            "Y26-02-018",
+            "Y26-02-019",
+            "Y26-02-020",
+            "Y26-02-021",
+            "Y26-02-022",
+            "Y26-02-023",
+            "Y26-02-024",
+            "Y26-02-025",
+            "Y26-02-026",
+            "Y26-02-027",
+            "Y26-02-028",
+            "Y26-02-029",
+            "Y26-02-030",
+            "Y26-02-031",
+            "Y26-02-032",
+            "Y26-02-033",
+            "Y26-02-034",
+            "Y26-02-035"
+          ],
+          "proof_reading": "All listed definitions, theorem statements, proofs, worked examples and limits were read directly, including January034 added during the review and all ten root January catalog entries901–910.",
+          "source_audit": "Every source excerpt was checked as an exact substring of its actual receipt record; parsed U/A dates and roles match; month and nullable original-prompt fields checked.",
+          "finite_verifiers": [
+            "verify.py:35/35 passed"
+          ],
+          "limits": "Existing executable certificates were replayed. This review does not certify missing historical datasets, hidden Lean projects, analytic claims explicitly left conditional, or reference URLs beyond the mathematical scope read."
+        },
+        "proof_focus": [
+          "Hypergeometric and weighted subset survival, exact random barcode law, linear gluing and ultrametric/carry distinction.",
+          "Rounding witness, elliptic Ext/Serre duality, bounded t-structure cutoffs, exponential period convergence.",
+          "Hash/holonomy path-domain distinction, homometric power-spectrum collision and anisotropic homothety/indicial signs.",
+          "Doubling-tower lim1=Z2/Z proof including telescoping and exact recursive injectivity; contraction versus observation-boundary counterexample.",
+          "Empirical Fisher/Hessian distinction, integer Smith basis certificate, damping sampling convention, coupler elimination and Mathieu q2 sign/analytic continuation.",
+          "Path-induction contractibility, packing strictness, statistical zero-event bound, nonlinear pushforward variance, resolvent convexity conditions.",
+          "Genus-two counts/reciprocal polynomial, Swan filtration accounting, transfer matrices, suffix-deficit recursion, annuity assumptions, prefix entropy and quadratic Wasserstein proximal minimizer."
+        ],
+        "issues": [
+          {
+            "severity": "medium",
+            "id": "Y26-02-011",
+            "status": "resolved",
+            "description": "The previous unconditional noninjectivity statement did not specify permitted transport histories; the given U,V have injective product encoding on their positive-word monoid.",
+            "fix": "Author now explicitly allows reverse-edge/backtracking histories for this claim and exhibits UU^-1 versus empty. The updated entry makes no noninjectivity claim for the restricted positive-word monoid.",
+            "resolution_review": "Corrected result.statement, proof and original.math were inspected, and the updated35-check verifier passes."
+          }
+        ],
+        "remaining_blockers": [],
+        "source_results": [
+          {
+            "id": "Y26-02-001",
+            "status": "passed",
+            "receipt": "root_receipts.json record 0",
+            "date": "2026-02-03",
+            "evidence": "A"
+          },
+          {
+            "id": "Y26-02-002",
+            "status": "passed",
+            "receipt": "root_receipts.json record 0",
+            "date": "2026-02-03",
+            "evidence": "A"
+          },
+          {
+            "id": "Y26-02-003",
+            "status": "passed",
+            "receipt": "root_receipts.json record 0",
+            "date": "2026-02-03",
+            "evidence": "A"
+          },
+          {
+            "id": "Y26-02-004",
+            "status": "passed",
+            "receipt": "root_receipts.json record 0",
+            "date": "2026-02-06",
+            "evidence": "A"
+          },
+          {
+            "id": "Y26-02-005",
+            "status": "passed",
+            "receipt": "root_details_2.json record 0",
+            "date": "2026-02-20",
+            "evidence": "A"
+          },
+          {
+            "id": "Y26-02-006",
+            "status": "passed",
+            "receipt": "root_receipts.json record 0",
+            "date": "2026-02-23",
+            "evidence": "A"
+          },
+          {
+            "id": "Y26-02-007",
+            "status": "passed",
+            "receipt": "root_receipts.json record 0",
+            "date": "2026-02-17",
+            "evidence": "A"
+          },
+          {
+            "id": "Y26-02-008",
+            "status": "passed",
+            "receipt": "root_receipts.json record 0",
+            "date": "2026-02-17",
+            "evidence": "A"
+          },
+          {
+            "id": "Y26-02-009",
+            "status": "passed",
+            "receipt": "root_receipts.json record 0",
+            "date": "2026-02-16",
+            "evidence": "A"
+          },
+          {
+            "id": "Y26-02-010",
+            "status": "passed",
+            "receipt": "root_receipts.json record 0",
+            "date": "2026-02-08",
+            "evidence": "U"
+          },
+          {
+            "id": "Y26-02-011",
+            "status": "passed",
+            "receipt": "root_receipts.json record 0",
+            "date": "2026-02-14",
+            "evidence": "A"
+          },
+          {
+            "id": "Y26-02-012",
+            "status": "passed",
+            "receipt": "root_receipts.json record 0",
+            "date": "2026-02-11",
+            "evidence": "A"
+          },
+          {
+            "id": "Y26-02-013",
+            "status": "passed",
+            "receipt": "root_receipts.json record 0",
+            "date": "2026-02-12",
+            "evidence": "A"
+          },
+          {
+            "id": "Y26-02-014",
+            "status": "passed",
+            "receipt": "root_receipts.json record 0",
+            "date": "2026-02-13",
+            "evidence": "A"
+          },
+          {
+            "id": "Y26-02-015",
+            "status": "passed",
+            "receipt": "root_details_3.json record 0",
+            "date": "2026-02-26",
+            "evidence": "A"
+          },
+          {
+            "id": "Y26-02-016",
+            "status": "passed",
+            "receipt": "root_details_3.json record 0",
+            "date": "2026-02-28",
+            "evidence": "A"
+          },
+          {
+            "id": "Y26-02-017",
+            "status": "passed",
+            "receipt": "root_receipts.json record 0",
+            "date": "2026-02-03",
+            "evidence": "A"
+          },
+          {
+            "id": "Y26-02-018",
+            "status": "passed",
+            "receipt": "root_details_2.json record 0",
+            "date": "2026-02-20",
+            "evidence": "A"
+          },
+          {
+            "id": "Y26-02-019",
+            "status": "passed",
+            "receipt": "root_receipts.json record 0",
+            "date": "2026-02-19",
+            "evidence": "A"
+          },
+          {
+            "id": "Y26-02-020",
+            "status": "passed",
+            "receipt": "root_receipts.json record 0",
+            "date": "2026-02-20",
+            "evidence": "A"
+          },
+          {
+            "id": "Y26-02-021",
+            "status": "passed",
+            "receipt": "root_receipts.json record 0",
+            "date": "2026-02-20",
+            "evidence": "A"
+          },
+          {
+            "id": "Y26-02-022",
+            "status": "passed",
+            "receipt": "root_receipts.json record 0",
+            "date": "2026-02-20",
+            "evidence": "A"
+          },
+          {
+            "id": "Y26-02-023",
+            "status": "passed",
+            "receipt": "root_receipts.json record 0",
+            "date": "2026-02-24",
+            "evidence": "U"
+          },
+          {
+            "id": "Y26-02-024",
+            "status": "passed",
+            "receipt": "root_receipts.json record 0",
+            "date": "2026-02-08",
+            "evidence": "A"
+          },
+          {
+            "id": "Y26-02-025",
+            "status": "passed",
+            "receipt": "root_final_sweep.json record 0",
+            "date": "2026-02-02",
+            "evidence": "A"
+          },
+          {
+            "id": "Y26-02-026",
+            "status": "passed",
+            "receipt": "root_final_sweep.json record 0",
+            "date": "2026-02-02",
+            "evidence": "A"
+          },
+          {
+            "id": "Y26-02-027",
+            "status": "passed",
+            "receipt": "root_final_sweep.json record 0",
+            "date": "2026-02-07",
+            "evidence": "A"
+          },
+          {
+            "id": "Y26-02-028",
+            "status": "passed",
+            "receipt": "root_final_sweep.json record 0",
+            "date": "2026-02-04",
+            "evidence": "A"
+          },
+          {
+            "id": "Y26-02-029",
+            "status": "passed",
+            "receipt": "root_final_sweep.json record 0",
+            "date": "2026-02-04",
+            "evidence": "A"
+          },
+          {
+            "id": "Y26-02-030",
+            "status": "passed",
+            "receipt": "root_final_sweep.json record 0",
+            "date": "2026-02-12",
+            "evidence": "A"
+          },
+          {
+            "id": "Y26-02-031",
+            "status": "passed",
+            "receipt": "root_final_sweep.json record 0",
+            "date": "2026-02-10",
+            "evidence": "A"
+          },
+          {
+            "id": "Y26-02-032",
+            "status": "passed",
+            "receipt": "root_final_sweep.json record 0",
+            "date": "2026-02-04",
+            "evidence": "A"
+          },
+          {
+            "id": "Y26-02-033",
+            "status": "passed",
+            "receipt": "root_final_sweep.json record 0",
+            "date": "2026-02-10",
+            "evidence": "A"
+          },
+          {
+            "id": "Y26-02-034",
+            "status": "passed",
+            "receipt": "root_details_2.json record 0",
+            "date": "2026-02-21",
+            "evidence": "A"
+          },
+          {
+            "id": "Y26-02-035",
+            "status": "passed",
+            "receipt": "root_details_3.json record 0",
+            "date": "2026-02-26",
+            "evidence": "A"
+          }
+        ],
+        "snapshot_sha256": {
+          "entries.json": "9403d31ac1f9a9eb1993e179e55cab2602f14237024bf4ccb6376bcb600718fe"
+        }
+      }
+    },
+    {
+      "month": "March",
+      "treatments": 27,
+      "report": "months/03/independent_review.json",
+      "report_sha256": "d28d9098c9996482a68bb85e1068cbaa50e7967f2312dcfa1392d42033449d01",
+      "status": "approved",
+      "review": {
+        "reviewer": "analysis_and_arithmetic_geometry",
+        "scope_actually_read": "Read every entry title, definitions, result statement, proof, worked example, limits and mathematical reference list. Audited every exact source excerpt against its cited file/record, assigned date and U/A attribution. References were assessed for mathematical relevance; this review does not claim a fresh network availability check of every URL. No source or author files were edited.",
+        "verification_scope": "Independent proof review rather than repeating implementation-mirroring checks. The substantive nested-least-squares correction was verified by exact Fraction arithmetic.",
+        "month": "2026-03",
+        "entry_count": 27,
+        "reviewed_ids": [
+          "Y26-03-001",
+          "Y26-03-002",
+          "Y26-03-003",
+          "Y26-03-004",
+          "Y26-03-005",
+          "Y26-03-006",
+          "Y26-03-007",
+          "Y26-03-008",
+          "Y26-03-009",
+          "Y26-03-010",
+          "Y26-03-011",
+          "Y26-03-012",
+          "Y26-03-013",
+          "Y26-03-014",
+          "Y26-03-015",
+          "Y26-03-016",
+          "Y26-03-017",
+          "Y26-03-018",
+          "Y26-03-019",
+          "Y26-03-020",
+          "Y26-03-021",
+          "Y26-03-022",
+          "Y26-03-023",
+          "Y26-03-024",
+          "Y26-03-025",
+          "Y26-03-026",
+          "Y26-03-027"
+        ],
+        "status": "approved",
+        "findings": [
+          {
+            "id": "Y26-03-007",
+            "severity": "minor",
+            "status": "resolved",
+            "issue": "The current source excerpt selects the matching-exponent bullet sharing the same timestamp, while the exact concentration inequalities occur in a separate bullet in the same raw record. The mathematics is supported by the receipt, but the direct excerpt should identify the actual formulas.",
+            "resolution_recommended": "Select the exact root_receipts.json record0 line containing derived concentration bound h_proj−D_conc≤χ≤h_proj and necessary condition D_conc≥h_proj+2V/3−rho. Date and assistant role stay unchanged.",
+            "resolution_confirmed": "Exact concentration-inequality source line now selected; source receipt inclusion, date and assistant role confirmed."
+          }
+        ],
+        "approved_scopes": [
+          "Hilbert semigroup generator-form equivalence with coercive P and proper operator-domain treatment.",
+          "Finite continuous/discrete Lyapunov certificates, resolvent derivatives and explicit counterexamples to overbroad curvature or gap claims.",
+          "Matching versus induced matching distinction; concentration inequality is explicitly conditional.",
+          "Logarithmic-cosine integral contour/Laplace derivation on its stated convergence strip; scalar elimination only proves a flip candidate.",
+          "Jet and recurrence calculations with exact-decimal scope, finite-jet exclusion limitations, conditional transcendence and Lambert-W branch restrictions.",
+          "Commuting-idempotent decomposition, metric covariance, strong convexity, quadratic gradient stability, exact square-root two-cycle and Fibonacci/Pisot identities."
+        ],
+        "provenance": {
+          "entries_checked": 27,
+          "exact_excerpt_date_role_mismatches": []
+        },
+        "final_recheck": "Re-read all three revised passages and confirmed corrections in both builder source and entries. All previously requested changes are resolved; no remaining review blocker."
+      }
+    },
+    {
+      "month": "April",
+      "treatments": 33,
+      "report": "months/04/independent_review.json",
+      "report_sha256": "b21ef88ddc1186982bb244f7cfb36a6692071bbe0c7a470ac97d1dcf64d3ec20",
+      "status": "approved",
+      "review": {
+        "reviewer": "analysis_and_arithmetic_geometry",
+        "scope_actually_read": "Read every entry title, definitions, result statement, proof, worked example, limits and mathematical reference list. Audited every exact source excerpt against its cited file/record, assigned date and U/A attribution. References were assessed for mathematical relevance; this review does not claim a fresh network availability check of every URL. No source or author files were edited.",
+        "verification_scope": "Independent proof review rather than repeating implementation-mirroring checks. The substantive nested-least-squares correction was verified by exact Fraction arithmetic.",
+        "month": "2026-04",
+        "entry_count": 33,
+        "reviewed_ids": [
+          "Y26-04-001",
+          "Y26-04-002",
+          "Y26-04-003",
+          "Y26-04-004",
+          "Y26-04-005",
+          "Y26-04-006",
+          "Y26-04-007",
+          "Y26-04-008",
+          "Y26-04-009",
+          "Y26-04-010",
+          "Y26-04-011",
+          "Y26-04-012",
+          "Y26-04-013",
+          "Y26-04-014",
+          "Y26-04-015",
+          "Y26-04-016",
+          "Y26-04-017",
+          "Y26-04-018",
+          "Y26-04-019",
+          "Y26-04-020",
+          "Y26-04-021",
+          "Y26-04-022",
+          "Y26-04-023",
+          "Y26-04-024",
+          "Y26-04-025",
+          "Y26-04-026",
+          "Y26-04-027",
+          "Y26-04-028",
+          "Y26-04-029",
+          "Y26-04-030",
+          "Y26-04-031",
+          "Y26-04-032",
+          "Y26-04-033"
+        ],
+        "status": "approved",
+        "findings": [
+          {
+            "id": "Y26-04-013",
+            "severity": "medium",
+            "status": "resolved",
+            "issue": "The three independent nested vectors used as the least-squares sensitivity counterexample cannot all be actual forcing vectors v_k=Y^T W_k r at a stationary solution with nonzero gamma: stationarity enforces sum gamma_k v_k=0. The main conclusion that nesting need not force dimension one is correct, but the example must respect the model.",
+            "resolution_recommended": "Use Y with rows (1,0),(0,1),(1,1), b=(2,3,-6), gamma=(1,1,1), W_k diagonal prefix supports. Then x*=0, H=[[4,1],[1,3]], forcing vectors (2,0),(2,3),(-4,-3), and sensitivities (6,-2)/11,(3,10)/11,(-9,-8)/11 span dimension2. Note the general dependence sum gamma_k D_k=0.",
+            "independent_certificate": {
+              "H_determinant": 11,
+              "forcing_sum": [
+                0,
+                0
+              ],
+              "sensitivity_columns": [
+                [
+                  "6/11",
+                  "-2/11"
+                ],
+                [
+                  "3/11",
+                  "10/11"
+                ],
+                [
+                  "-9/11",
+                  "-8/11"
+                ]
+              ],
+              "first_two_column_determinant": "6/11"
+            },
+            "resolution_confirmed": "Actual stationary least-squares rank2 model replaces unattainable independent forcings. Positive weights, weighted sensitivity relation and rank bound are stated. Exact H D, sumD=0 and nonzero2x2 determinant checked independently."
+          },
+          {
+            "id": "Y26-04-004",
+            "severity": "minor",
+            "status": "resolved",
+            "issue": "The example delta=diag(0,1) is not square-zero if interpreted as a differential endomorphism. It is valid as the only nonzero differential of a two-term complex, but the degree typing should be made explicit when invoking a cochain-map condition.",
+            "resolution_recommended": "Declare delta_Y:Y^0→Y^1 and delta_Z:Z^0→Z^1, with the next differentials zero. Use B^0 and B^1 in delta_Z B^0=B^1 delta_Y, or state explicitly that only an algebraic closed-subspace compatibility operator is intended.",
+            "resolution_confirmed": "Two-term complexes and the degrees of deltaY, deltaZ, B0 and B1 are explicit; next differentials zero; example is now correctly typed."
+          }
+        ],
+        "approved_scopes": [
+          "Exact K3,3 circulation basis, Gaussian monomial probe/Gram moments and spherical Wick normalization.",
+          "Shear commutator, cubic flip iterate, pressure derivative and finite coboundary inverse.",
+          "Analytic triangular invariant graphs with complete nonresonance and the resonant family showing nonuniqueness.",
+          "Cyclic gauge rank, symmetric target cancellation, effective dimension and spectral-color conventions.",
+          "Trace ranges, gap projection K0 factorization and Morita trace scaling with normalized-unit caveats.",
+          "Exact AUROC, pooled-covariance counterexample, convex projection, regression/run diagnostics and conditional constrained minimum.",
+          "Zeta conjugation/layout distinction, DAG path-difference spanning, cochain loop periods, silver-mean frequencies, D4 Galois group and block-resolvent bound.",
+          "Discrete product correction and precisely stated quotient universal property."
+        ],
+        "provenance": {
+          "entries_checked": 33,
+          "exact_excerpt_date_role_mismatches": []
+        },
+        "final_recheck": "Re-read all three revised passages and confirmed corrections in both builder source and entries. All previously requested changes are resolved; no remaining review blocker."
+      }
+    },
+    {
+      "month": "May",
+      "treatments": 33,
+      "report": "months/05/independent_review.json",
+      "report_sha256": "3cd3d386cf714d7482e5542483660a546b2ab5af7f9ee1dcdde15fd935135614",
+      "status": "approved",
+      "review": {
+        "status": "approved",
+        "reviewer": "representations_and_dynamics",
+        "month": "2026-05",
+        "entry_count": 33,
+        "scope": [
+          "Read all33 entries: definitions/hypotheses, theorem statements, proofs, worked examples and stated limitations; reviewed all34 verifier records and code.",
+          "Replayed the supplied stdlib verifier:34/34pass. Replayed an isolated copy of only entries.json+verify.py from /:34/34pass.",
+          "Audited every exact source excerpt against its specified raw receipt/record and matched date/U/A role:33/33pass. No literal original question is claimed.",
+          "Assessed reference relevance across all entries. Independently checked Hatcher primary topology material and the explicit classical-input scope of the loop-space ring; this is not an exhaustive HTTP availability audit of every reference.",
+          "After author corrections, directly inspected the revised May004 verifier scope and strengthened May011 rational nonnormal example; reran34/34 checks."
+        ],
+        "approved_delicate_scopes": [
+          {
+            "id": "Y26-05-022",
+            "detail": "Tilted partition proof correctly treats the three Laplace derivative estimates as hypotheses/analytic input, obtains upper/lower leading exponential constant and avoids asserting an unproved local-density prefactor."
+          },
+          {
+            "id": "Y26-05-029",
+            "detail": "Graded-Lie signs, cocycle condition and exact central finite model are consistent; the polynomial Maurer-Cartan series cancels at every order in that model."
+          },
+          {
+            "id": "Y26-05-030",
+            "detail": "Both ideal-containment directions and the sole S-pair reduction are correct; standard monomial dimension is three."
+          },
+          {
+            "id": "Y26-05-032",
+            "detail": "Corrects homology/Pontryagin versus cohomology/cup confusion. The degree-one integral cup square vanishes by graded commutativity and torsion freeness. Exterior-degree-one times divided-power-degree-two ring is classical input, explicitly not proved from one spectral-sequence arrow. The finite Z/4 versus(Z/2)^2 extension witness is exact."
+          }
+        ],
+        "findings": [
+          {
+            "severity": "low",
+            "id": "Y26-05-004",
+            "description": "Verifier detail says the eigenvalue list is checked by characteristic determinant at0,2,4, but the actual callable checks only the displayed first eigenmode. The entry theorem/proof/example are correct.",
+            "fix": "Revise that detail to state only the eigenmode actually checked, or add the described characteristic-polynomial calculation.",
+            "blocking": false,
+            "status": "resolved",
+            "resolution": "Author revised the verifier detail to the exact first eigenmode actually checked; reviewer confirmed directly."
+          },
+          {
+            "severity": "low",
+            "id": "Y26-05-011",
+            "description": "The stated Lyapunov theorem and rational P calculation are correct, but the chosen A has negative-definite Euclidean symmetric part already. It therefore does not itself illustrate the title’s phrase about Euclidean symmetric-part failure.",
+            "fix": "Optionally shorten the title, or supply a separately checked more nonnormal example. No change to the valid theorem is required.",
+            "blocking": false,
+            "status": "resolved",
+            "resolution": "Author replaced the example by A=[[-1,3],[0,-1]], P=[[1/2,3/4],[3/4,11/4]]. Reviewer confirmed A^T P+PA=−I, detP13/16, det(3I−P)1/16, alpha1/6, robustness1/15 and the positive Euclidean growth direction(1,1). Supplied verifier rerun34/34pass."
+          }
+        ],
+        "reference_notes": [
+          "Hatcher Algebraic Topology chapter3/loop-space material is relevant. A direct additional locator for the loop-space/spectral-sequence calculation is the author’s https://pi.math.cornell.edu/~hatcher/SSAT/SSch1.pdf .",
+          "General Milne references provide arithmetic background; the finite species/divisor arguments are proved in the entry rather than asserted to be quotations of those notes."
+        ],
+        "material_limit": "This review checks the revised mathematics and preserved fragment attribution, not unreturned historical matrices, benchmark suites, measurements or completeness of historical recovery."
+      }
+    },
+    {
+      "month": "June",
+      "treatments": 32,
+      "report": "months/06/independent_review.json",
+      "report_sha256": "1d38c322f09a78025fafdeecb2b0bbe6ee0f7cce994e38b02b822dbdf09a38a0",
+      "status": "approved",
+      "review": {
+        "status": "approved",
+        "reviewer": "representations_and_dynamics",
+        "month": "2026-06",
+        "entry_count": 32,
+        "scope": [
+          "Read all32 entries: definitions/hypotheses, theorem statements, proofs, worked examples and stated limitations; reviewed all33 verifier records and code.",
+          "Replayed supplied stdlib verifier:33/33pass. Replayed isolated copy of only entries.json+verify.py from /:33/33pass.",
+          "Audited every exact source excerpt against its specified raw receipt/record:32/32pass. All dated U/A roles match; undated file fragments remain T and have nullable dates.",
+          "Assessed reference relevance across all entries. Independently opened the Curtright/Zachos primary arXiv record; references are background, while the new monomial family is proved explicitly. No exhaustive URL availability claim is made.",
+          "Rechecked strengthened source anchors for June009(actual cubic/S3 content), June026(actual projection formulas), June027(actual closure formulas) against the literal raw receipts after source audit updates; revised mathematics is unchanged."
+        ],
+        "approved_delicate_scopes": [
+          {
+            "id": "Y26-06-003",
+            "detail": "Fourier sign conventions, S²=C, quadratic completion and(ST)^3=gamma*C are correct. The order-three Gauss phase is i; tensor factorization is valid."
+          },
+          {
+            "id": "Y26-06-009",
+            "detail": "Irreducible discriminant−23 cubic has S3 closure; a cubic root field cannot sit in any abelian Galois extension, hence cannot lie in a cyclotomic field. This is stronger and better scoped than a conductor search."
+          },
+          {
+            "id": "Y26-06-010",
+            "detail": "The Möbius coordinate u=(z−1)/z gives the actual cubic and divisor3[1]−2[0]−[infinity]; no forbidden denominator introduces an extraneous root."
+          },
+          {
+            "id": "Y26-06-018",
+            "detail": "Finite falling-factorial star commutator has correct even hbar powers after division by i*hbar, correct sign/factor2^(k−1)k!, and all derivatives vanish beyond active degree."
+          },
+          {
+            "id": "Y26-06-019",
+            "detail": "Uniform exact family f=q*p^3, g=q^(3r+2)*p^r is sound: first polynomial degree4 forces every fifth-order derivative to zero; S3 factors as6c(c−1)[3r−(c−2)]=0. The Poisson coefficient−8r−6 and exponents are correct. This repairs the retrieved assistant/file error rather than promoting it."
+          },
+          {
+            "id": "Y26-06-020",
+            "detail": "New replacement f=q*p^5,g=q^5*p^3 has S3=0,S5=201600, fifth-order coefficient105 and no seventh-order term. At q=p=hbar=1 the exact bracket is83 versus Poisson−22. Its newly authored status is explicit."
+          },
+          {
+            "id": "Y26-06-025",
+            "detail": "Habiro matrix eigenvectors/eigenvalues0,1,3 and kernel reduction are exact; real Gaussian quotient and epsilon renormalization use the stipulated Euclidean contour."
+          },
+          {
+            "id": "Y26-06-031",
+            "detail": "Symplectic-basis count and projective division by2 give4,680,000. Orbit-resource and magic-state claims are correctly withheld without actual allowed operations."
+          },
+          {
+            "id": "Y26-06-032",
+            "detail": "Mod2 irreducibility checks, reduced inverse product and norm39681 are consistent. The verifier checks norm and inverse by separate exact arithmetic. No knot-field identification is inferred."
+          }
+        ],
+        "findings": [],
+        "reference_notes": [
+          "https://arxiv.org/abs/1104.5269 is the actual Curtright/Zachos Quantum Mechanics in Phase Space article. It is relevant to the convention, while the exact monomial derivations are self-contained.",
+          "The primary DLMF, author lecture notes and explicit Galois/linear-algebra proofs give suitable scoped background. The review does not infer the geometric state-integral or categorical data absent from the recovered material."
+        ],
+        "material_limit": "Floating-point matrix/special-function corroborations are labeled and not substituted for analytic proofs. Historical physical thresholds, runtime speedups, raw compression files, knot volumes and categorical coherence remain outside the revised theorem scope."
+      }
+    },
+    {
+      "month": "July",
+      "treatments": 31,
+      "report": "months/07/independent_review.json",
+      "report_sha256": "6e9bce9ead0220db75b027a2285bd7e83e316a307f4467c08d3d12fe72d82686",
+      "status": "approved",
+      "review": {
+        "reviewer": "arithmetic_and_waves",
+        "month": "2026-07",
+        "status": "approved",
+        "scope": "Independent read of all31current July definitions, statements, proofs and worked examples, including new030polyhedralGauss–Bonnet and031p-adiccompletion/Hensellifting. Selected provenance reviewed; new030/031source bullets exactly match their actual receipt records and contain the stated historical mathematical topics. This is not a complete transcript-level historical audit.",
+        "issues": [
+          {
+            "severity": "medium",
+            "id": "Y26-07-028",
+            "description": "For arbitrary polynomial leading coefficient a, the Graeffe polynomial is G(y)=(−1)^n a²∏(y−r_i²). The proof includes a² correctly, but the statement gives only the factor(−1)^n relative to a monic root-squared polynomial.",
+            "fix": "Include a² in the statement or explicitly assume the input polynomial is monic.",
+            "status": "corrected_in_builder_and_entries_independently_reread"
+          }
+        ],
+        "verification": {
+          "script": "verify.py",
+          "status": "pass",
+          "passed": 31,
+          "failed": 0,
+          "scope": "Author scoped finite checks independently rerun; not substitutes for all general proofs."
+        },
+        "approved_scopes": [
+          "Lagrange annihilator projectors require both annihilation and nonzero support witnesses.",
+          "Quadratic jet normal form, Hilbert–Burch syzygy proof, socle type and tensor Betti convolution are exact.",
+          "Two-prime rank and membership boundaries are properly one-sided.",
+          "Pauli centralizer uses linear independence; transition quotient correctly usesQ-perp; Schmidt rank sum requires both-side orthogonal blocks.",
+          "Discriminant−23 cubic/plastic-unit relation and eta-product Fricke multiplier are correct.",
+          "Five-vertex graph rigidity proof uses exact edge/triangle counts and a complete small edge-deficit case split.",
+          "Finite Herglotz atoms, phase-level interlacing, positivity boxes and small-alpha critical-point expansions have correct signs and bounds.",
+          "Integer torsion, local-system holonomy, total-complex signs and finite-dimensional dualizability are correctly proved.",
+          "Elliptic good-reduction torsion argument gives rank lower bound only; AG code bound is conditional on the curve and point count.",
+          "Base-twelve arithmetic, Rouche disk counts and fixed-inverse Newton enclosure are exact within stated scope.",
+          "New030Gauss–Bonnet sum follows from triangle-angle sumπand closed-surface incidence3F=2E; tetrahedron defects and subdivision scope are correct without orientability.",
+          "New031geometric p-adic convergence and simple-root digit lifting have correct unit/uniqueness hypotheses;5-adic roots1→16→16→516are compatible and square to6at their moduli."
+        ],
+        "limits": "No original historical empirical counts, volume matches, descent or CI execution claims were promoted into proved theorems by this review."
+      }
+    },
+    {
+      "month": "August",
+      "treatments": 37,
+      "report": "months/08/independent_review.json",
+      "report_sha256": "db5ae3397035cf7cd717b1602cf42f1d51ddb65225bb47f40f02e5319f7c51c2",
+      "status": "approved",
+      "review": {
+        "reviewer": "arithmetic_and_waves",
+        "month": "2026-08",
+        "status": "approved",
+        "scope": "Read all37current mathematical treatments:25main entries plus12helper catalog entries. Definitions, statements, proofs and examples independently inspected. Original-source review is selective, including actual Aug2assistant descriptor anchor, external-filequiverT/null date and the new Aug17/30source additions.",
+        "verification": [
+          {
+            "script": "catalog_verify.py",
+            "status": "pass",
+            "records": 7
+          },
+          {
+            "script": "catalog2_verify.py",
+            "status": "pass",
+            "checks": 16,
+            "source_excerpt_checks": 6
+          },
+          {
+            "script": "verify.py",
+            "status": "pass",
+            "passed": 25,
+            "failed": 0,
+            "scope": "Main author finite checks independently rerun. General proofs reviewed separately."
+          }
+        ],
+        "issues": [
+          {
+            "severity": "low",
+            "id": "Y26-08-904",
+            "description": "The parameter-balance expression(δ/ρ)^(2/(2ν+1)) requiresρ>0, while a zero source-radius case is possible under the stated norm bound.",
+            "fix": "Assumeρ>0 for parameter tuning or state theρ=0case separately.",
+            "status": "corrected_parameter_balance_explicitly_assumes_rho_positive_independently_reread"
+          },
+          {
+            "severity": "low",
+            "id": "Y26-08-025",
+            "description": "Current retrievedUbullet begins with retrospective-review wording. It also contains actual applied mathematical topics, but an adjacentAline gives a more concrete multilayer/continuity anchor and avoids potential query-echo ambiguity.",
+            "fix": "Use the exactA@2026-08-17T09:15:46Zmultilayer/acousticABCD/P-SVcontinuity bullet fromroot_coverage_1.jsonrecord0andsetevidenceA.",
+            "status": "reanchored_to_actual_assistant_mathematical_bullet_independently_reread"
+          }
+        ],
+        "approved_scopes": [
+          "Diagonal regularization proof has explicit uniform-bias quantifiers and a valid diagonal parameter choice.",
+          "Mild and severe deterministic minimax lower bounds use indistinguishable opposite signals and match upper orders.",
+          "Severe cutoff needs the logarithmic safety margin; naive leading scale counterexample is valid.",
+          "Tikhonov qualification, sharp filter constants and the stipulated two-coordinate example agree.",
+          "Landweber noise norm and all-positive source-exponent bias bound are sound.",
+          "Ignition integral bounds, positive rational series and tail enclosure do not validate the hypothesized physical front law.",
+          "Semantic feasible-set monotonicity and error accounting are valid under full deployment constraints.",
+          "RoPE QK commutation, VO basis changes, allowed SwiGLU gauges and shared-head wreath product are consistent.",
+          "Bellman quotient needs complete continuation equivalence; scalar value equality alone is insufficient.",
+          "Channel erasure counts43680physical states and256bank tuples with correctly unequal fibers.",
+          "Separator dynamic programming and exact min-plus repeated-layer law are correctly bounded.",
+          "Connectivity matrix factorizationM=CC^T overF2and rank2^(k−1), including the weighted greedy representative proof, are valid.",
+          "Descriptor regularity, minimal-index nullity growth, simple eigenvalue derivative and structured contour homotopy are sound.",
+          "Nonnormal Lyapunov constants, controllability/observability Gramian equivalence and danger-information nullspace condition are correct.",
+          "Port-Hamiltonian energy/reset inequality, improper complex Gaussian density and R-inverse metric passive contraction have correct norms and signs.",
+          "The quiver pencil has14surviving path basis elements before a one-dimensional relation, giving13and vector bundleO^12⊕O(1).",
+          "Flatness versus Hochschild jump, finite-order obstruction, pitchfork expansion and skew-pairing wall automorphism are valid within declared hypotheses.",
+          "Pluecker inverse parity lattice, correlated-enclosure logic and cycle harmonic projection are exact.",
+          "Global loop holonomy is correctly separated from two-form curvature; affine ordered-corner model and toric saturation boundaries are explicit.",
+          "New022potential inequalities telescope correctly and the counterexample exposes an invalid local edge.",
+          "New023Fourier convention andJ+εIrank-opening/condition701calculation are consistent.",
+          "New024worst-state phase fidelitycos²(ε/2), threshold and telescoping unitary-product error bound are correct.",
+          "New025power/amplitude dBfactor andT*JTflux test are correct; determinant-one counterexample is valid."
+        ],
+        "limits": "All37mathematical treatments inspected:25main plus12helper catalogs. Author finite verifiers were independently rerun:25main,7rootcatalog records and16catalog2checks. Selected provenance anchors were inspected; full transcripts and historical empirical claims were not independently reconstituted."
+      }
+    },
+    {
+      "month": "September",
+      "treatments": 35,
+      "report": "months/09/independent_review.json",
+      "report_sha256": "43d1b359161d9c02972168d3aaa7ec6ee3703977d46896670ab1a58e3c1a9987",
+      "status": "approved; all recorded issues resolved",
+      "review": {
+        "status": "approved; all recorded issues resolved",
+        "reviewer": "analysis_geometry_and_computation",
+        "month": "2026-09",
+        "scope": {
+          "entries_reviewed": [
+            "Y26-09-001",
+            "Y26-09-002",
+            "Y26-09-003",
+            "Y26-09-004",
+            "Y26-09-005",
+            "Y26-09-006",
+            "Y26-09-007",
+            "Y26-09-008",
+            "Y26-09-009",
+            "Y26-09-010",
+            "Y26-09-011",
+            "Y26-09-012",
+            "Y26-09-013",
+            "Y26-09-014",
+            "Y26-09-015",
+            "Y26-09-016",
+            "Y26-09-017",
+            "Y26-09-018",
+            "Y26-09-019",
+            "Y26-09-020",
+            "Y26-09-021",
+            "Y26-09-022",
+            "Y26-09-023",
+            "Y26-09-024",
+            "Y26-09-025",
+            "Y26-09-026",
+            "Y26-09-027",
+            "Y26-09-028",
+            "Y26-09-029",
+            "Y26-09-030",
+            "Y26-09-031",
+            "Y26-09-032",
+            "Y26-09-033",
+            "Y26-09-034",
+            "Y26-09-035"
+          ],
+          "fields_read": [
+            "definitions",
+            "result.statement",
+            "result.proof",
+            "example",
+            "limits",
+            "original.source_excerpt",
+            "original.retrieval_receipt",
+            "references"
+          ],
+          "proof_review": "All35 entries read and checked against their declared hypotheses. Particular attention to future-equivalence/refinement, tropicalrank, equivariant/Hankel semantics, modular rank versus rational rank, residual formations, finite-amplitude and conditional-variance distinctions, Pell completeness, norm scaling, Green normalization and Bessel boundary derivation."
+        },
+        "verification": {
+          "author_verifier": "35/35 passed by running verify.py",
+          "independent_provenance": "All35 exact excerpts occur literally in actual result content at stated file/record; evidence and date prefix match returned author tag; original_question null for all35.",
+          "independent_exact_checks": [
+            {
+              "name": "Green kernel versus squared-kernel norms",
+              "status": "passed",
+              "detail": "KernelG: trace1/6,HS²1/90. KernelG²: trace1/30,HS²1/3150, independently obtained from exact beta integrals."
+            },
+            {
+              "name": "Bessel Rayleigh normalization",
+              "status": "passed",
+              "detail": "Dirichlet91/27 and Neumann259/135 reproduced from exact rational gamma integrals."
+            },
+            {
+              "name": "Pell orbit arithmetic",
+              "status": "passed",
+              "detail": "Firstfour positive n2,12,70,408 and m²−2n²=1 exact."
+            }
+          ]
+        },
+        "issues": [
+          {
+            "severity": "low",
+            "id": "Y26-09-033",
+            "description": "The phrase “Its integral operator” follows an identity forG², although the trace1/6,HS²1/90 and eigenvalues are for the operator with kernelG. The intended theorem/proof is correct, but the referent can be read as the squared-kernel operator.",
+            "fix": "Replace with “The integral operator with kernelG has trace1/6 and Hilbert–Schmidt squared norm1/90.” If the weighted operator is mentioned, explicitly define it as M_(sqrtq) G M_(sqrtq).",
+            "status": "resolved",
+            "resolution": "Confirmed final entry explicitly states the operator with kernel G has trace1/6 and Hilbert–Schmidt squared norm1/90, removing the G² ambiguity. Author rebuilt entries and refreshed checks/provenance."
+          }
+        ],
+        "limitations": [
+          "This review does not reproduce missing large historical matrices, raw empirical data or global Thue/unit completeness certificates. Entries correctly delimit those gaps.",
+          "References were checked for relevance to the nearby declared topic; this review does not certify every bibliographic URL against a fresh network retrieval."
+        ],
+        "overall": "All35 developments are approved under their stated hypotheses. All recorded review issues are resolved; newly declared models and missing historical certificates remain explicitly distinguished."
+      }
+    },
+    {
+      "month": "October",
+      "treatments": 42,
+      "report": "months/10/independent_review.json",
+      "report_sha256": "f435e65ac7ffdc9bab6374b5df894947ff6a7eb03fc46c23d5fcd4a0d91d9a64",
+      "status": "approved",
+      "review": {
+        "status": "approved",
+        "reviewer": "representations_and_dynamics",
+        "month": "2026-10",
+        "entry_count": 40,
+        "scope": [
+          "Read all40 main entries: definitions, statements, proofs, worked examples and limitations, not just the numerical checks.",
+          "Replayed the complete supplied stdlib verifier:41/41passed. Read verifier implementations corresponding to the arithmetic and the declared exact models; no new arbitrary numerical sampling was added.",
+          "Independently checked all40 literal source excerpts against the specified raw receipt and record; date and U/A role match in every case.",
+          "The two new FreeLIP catalog entries901/902 were reviewed separately with all-state proof scrutiny and an independent Bareiss/cofactor checker; see year_2026/freelip_review.json and independent_freelip_review_checks.json. They are not included in this40-entry count."
+        ],
+        "approved_delicate_scopes": [
+          {
+            "id": "Y26-10-006",
+            "detail": "The half-open positive real reduction interval[sqrt7,epsilon*sqrt7) is valid. Its y-coordinate bound is less than3sqrt(7/2)<6; y2..5 yields precisely the two seeds. Uniqueness of seed/exponent and negative-y sign transport are complete, rather than closure alone."
+          },
+          {
+            "id": "Y26-10-009",
+            "detail": "Multiplication matrix and norm a^3−4b^3+16c^3+12abc are correct; both displayed units have norm1. The transport of(-1,-3,0) to(-13,-2,4) keeps norm107 but leaves c0, correctly separating unit transport from a binary/global completeness theorem."
+          },
+          {
+            "id": "Y26-10-012",
+            "detail": "Darboux factorizations give levels0,3 for the scaled operator and k^2 times these for L. Positivity, one-dimensional kernels, partner-spectrum exclusion below threshold4, and relatively compact decaying potential establish the stated discrete and essential spectrum. The k2 example correctly scales to12/16."
+          },
+          {
+            "id": "Y26-10-018",
+            "detail": "Intertwining proves the entire sequence; the nonzero3x3 Hankel determinant4 and Cayley-Hamilton recurrence prove exact minimal order3."
+          },
+          {
+            "id": "Y26-10-026",
+            "detail": "Distance-shell sizes, quotient characteristic polynomial and trace equations correctly imply the42-vertex spectrum conditional on an actual graph with the stated intersection array. Graph existence and M22 transport are not inferred."
+          },
+          {
+            "id": "Y26-10-027",
+            "detail": "Binary histogram identity is a finite enumeration theorem; the degree3 integer-height difference is an exact polynomial certificate. It is not promoted to an unproved infinite Euler-product singularity."
+          },
+          {
+            "id": "Y26-10-028",
+            "detail": "Centered K is exactly the inverse of L+lambda*I on mean-zero vectors. Q-Cauchy-Schwarz proves a^2/Kii, and the explicit minimizer/uniqueness are correct. The three lambda2 constants5,15/2,3 are quadratic-energy minima; linear-in-height weight and integer asymptotic claims are explicitly kept outside the theorem."
+          },
+          {
+            "id": "Y26-10-029",
+            "detail": "Noetherian stabilization is used as eventual chain stabilization, not mistaken for one equal consecutive ideal. This gives an existential cutoff for fixed finite polynomial parameterization. The separate finite-dimensional word-closure argument is effective."
+          },
+          {
+            "id": "Y26-10-030",
+            "detail": "The384-to8 primitive phase map has exactly48 fibres by surjective reduction of units, hence the trace scaling48 is correct."
+          },
+          {
+            "id": "Y26-10-031",
+            "detail": "The264-root filter uses every root, whereas24 roots lose primitivity at11, leaving240 relative field embeddings. The excluded residue r4mod11, Euler degrees and polylog filter normalizationN^(1−s) are consistent."
+          },
+          {
+            "id": "Y26-10-032",
+            "detail": "Coefficient ratio and ODE match2arcsin(a/2)^2. Endpoint central-binomial majorant proves convergence; sine phase fixes the exact pi^2 denominator and branch."
+          },
+          {
+            "id": "Y26-10-033",
+            "detail": "Logarithmic derivative has the correct Ramanujan coefficient sign. D(s)=zeta(s)[240*30^(−s)+product(p^(1−s)−1)] cancels at2. Its derivative gives exactly−pi^2*(16log2+12log3+10log5)/180, with the Gamma derivative killed by D2=0. Absolute moment bounds justify integration and differentiation. No E8 lattice identification is inferred from the scalar kernel."
+          },
+          {
+            "id": "Y26-10-034",
+            "detail": "Log Fourier expansion has zero constant for the stipulated2x−2cos factors; Parseval and Bernoulli finite sum have the correct factors of2 and pi, including the doubled endpoint singularity. Rational coefficient955/867 is verified."
+          },
+          {
+            "id": "Y26-10-035",
+            "detail": "Determinant twist zeta^5 multiplies determinants byzeta^25 and killszeta^9; central cube gainszeta^30 and killszeta^4. Braid relations yield the conditional triangle quotient. Scalar determinant map exponent5 is inverted by7mod17, proving the direct compact product. No density or missing unitarization is claimed."
+          },
+          {
+            "id": "Y26-10-036",
+            "detail": "Norm-Euclidean Z[sqrt−2], parity and norm-coprimality prove the global two-point Mordell solution list. Coefficient b(3a^2−2b^2)=1 has precisely the stated cases."
+          },
+          {
+            "id": "Y26-10-037",
+            "detail": "Fibre-coset proof, halving quartic and rational doubling(129/100,−383/1000) are correct. Remaining sign/denominator and torsion obligations are explicit."
+          },
+          {
+            "id": "Y26-10-038",
+            "detail": "The inversion splitting at L=z^(−1/4) is exact and the signed error lies between−sqrt(z)/2 and0. Parameter/modulus convention, log4 constant and finite enclosures follow."
+          }
+        ],
+        "findings": [
+          {
+            "severity": "low",
+            "id": "Y26-10-011",
+            "description": "The general theorem correctly permits any field with squarefree p, but the specific example uses t/2 and roots1,−1,2 without naming its field. In characteristics2 or3 this p does not instantiate the squarefree hypothesis.",
+            "fix": "State K=Q in the example setup, or explicitly require characteristic different from2,3 there.",
+            "blocking": false,
+            "status": "resolved",
+            "resolution": "Author updated builder and entries to begin the example with Take K=Q. Reviewer inspected the corrected field directly; author reran41/41 checks."
+          }
+        ],
+        "material_limit": "Review approves the revised theorem scopes and exact worked examples, not unrecovered repository verification, large completion DAGs, historical performance, curve census completeness, rejected-output decoding, KZ/SU5 density or an integral E8 identification."
+      }
+    }
+  ],
+  "raw_state_independent_review": {
+    "status": "approved",
+    "reviewer": "representations_and_dynamics",
+    "reviewed_files": [
+      "year_2026/build_freelip_certificate.py",
+      "year_2026/verify_freelip.py",
+      "year_2026/freelip_certificate.json",
+      "year_2026/months/10/catalog_entries.json"
+    ],
+    "scope": [
+      "Read and independently checked all-state lattice proof, cardinality obstruction, exact affine decoder, Singleton distance equality and length-optimal error correction.",
+      "Inspected the complete generator/checker code and both catalog entries901/902. Independently replayed supplied verifier.",
+      "Recomputed all126 determinant and all630 inverse-column bounds using fraction-free Bareiss determinants and cofactor adjugates, independent of the supplied Gauss-Jordan inverse.",
+      "Additional50 states times126 patterns=6300 exact round/reconstruct fixtures, including state/alphabet boundaries and deterministically sampled states; these corroborate code but are not the all-state proof.",
+      "Checked1919 positive/negative/integer rational ceil endpoint cases against Python exact Fraction ceil."
+    ],
+    "all_state_reasoning": {
+      "lattice": "Congruence kernel has indexM^4 by an onto map to(Z/MZ)^4; checked row membership plus exact determinant proves full row lattice.",
+      "collision": "Same raw symbols imply differences b*d with |d_i|<=D, invertibility of b puts d in the lattice, and c=d*inverse_basis is an integer vector with each |c_j|<3/8<1. Therefore c=d=0; invertible A reverses the first selected time.",
+      "decoder": "y+b*z congruences give z in v+Lambda with the sign used in code. Multiplying z-v by the inverse basis gives exact coefficient intervals of width<3/8<1. A valid trajectory therefore produces exactly one integer in each interval; bound/congruence replay rejects invalid reconstructed candidates.",
+      "coding": "Any5 selected symbols identify state, so d_min>=n-4. Puncturing bound M<=b^(n-d+1), together with M>b^4, gives reverse inequality for5<=n<=9. The same argument yields n>=5+2t for arbitrary-word correction."
+    },
+    "checks": {
+      "supplied_verifier": "passed:126 all-state certificates,630 fixtures,2 error correction fixtures",
+      "independent_bareiss_patterns": 126,
+      "independent_dual_columns": 630,
+      "additional_decoder_fixtures": 6300,
+      "maximum_dual_bound_exact": "59762387137465627635627395045544/162259276829213363391578010288127",
+      "maximum_dual_bound_approx": 0.36831414699554443,
+      "interval_endpoint_cases": 1919
+    },
+    "findings": [],
+    "approved_scope": "Universal theorem for exact known raw-step positions0..8, every state0<=x<M, specified recurrence/output alphabet; accepted outputs with hidden rejected steps, cryptographic quality and empirical historical repository validation remain outside the proof.",
+    "comments": [
+      "No primality assumption for M is needed: the index proof uses a finite abelian quotient, while invertibility of A and b follows from gcd(3,M)=1 and M odd.",
+      "The builder LLL has no trusted role; basis membership, determinant, rational inverse and dual bounds suffice independently.",
+      "The small fixture set in the supplied verifier is correctly distinguished from the all-state certificate in the catalog.",
+      "No blocking mathematical or implementation issue found within the declared raw-output scope."
+    ]
+  },
+  "integration_review": {
+    "status": "approved; no remaining integration code blocker found",
+    "reviewer": "analysis_geometry_and_computation",
+    "reviewed_at": "2026-10-21T05:29:20.518299+00:00",
+    "reviewed_files": {
+      "common.py": "f9f1626dc4e4d771892701c4dd949311fc017eca66a71ef2a065ab66c3b2908c",
+      "build_compendium.py": "f95d4efbe4eb35c874d3c89f10ba43f6a980fdf686bb0c4cd91968aab2539e24",
+      "verify_all.py": "63fb3141aac7dc216169c07608874c9fa7ddab97a4940c1f5cd5c83a75c8f8a0",
+      "package_results.py": "383e2233d4bb1fddaa51bdec282e3dc8c111c3db75e0b95b1dd11df854e97e5b",
+      "document_audit.py": "48bfc9cf8d17ab5347a88b7725dbd85c9d993c62ba4f662777dfa40587efd1fd"
+    },
+    "scope": [
+      "Read the five integration scripts and supporting README/Windows launcher/FreeLIP checker/peer replay.",
+      "Read-only load of all current canonical monthly entries and supplements.",
+      "Parsed every current retrieval locator and checked literal source matching against its actual raw returned-result record.",
+      "Compared build-ledger and runner-ledger deduplication and checked the stdlib-only verifier imports and relative filesystem paths."
+    ],
+    "snapshot": {
+      "months": 10,
+      "entries": 347,
+      "month_counts": {
+        "01": 44,
+        "02": 35,
+        "03": 27,
+        "04": 33,
+        "05": 33,
+        "06": 32,
+        "07": 29,
+        "08": 37,
+        "09": 35,
+        "10": 42
+      },
+      "ledger_records": 311,
+      "source_rows_audited": 347,
+      "source_locator_errors": 0,
+      "after_cutoff_dates": 0,
+      "duplicate_entry_ids": 0,
+      "catalog2_ids": [
+        "Y26-08-801",
+        "Y26-08-802",
+        "Y26-08-803",
+        "Y26-08-804",
+        "Y26-08-805",
+        "Y26-08-806"
+      ]
+    },
+    "findings": [
+      {
+        "severity": "blocking",
+        "status": "resolved",
+        "file": "months/08/build_entries.py and common.py integration",
+        "description": "MainAugust originally concatenated both catalogs into entries.json, while common.month_entries loaded each again; common.load raised duplicateY26-08-901.",
+        "resolution": "Augustauthor removed supplemental concatenation; canonicalmain entries plus separately loaded catalogs now have zero duplicate IDs."
+      },
+      {
+        "severity": "medium",
+        "status": "resolved",
+        "file": "verify_all.py and package_results.py",
+        "description": "IndependentFreeLIPpeer checker/report initially omitted from runner and package.",
+        "resolution": "Runner now executes ROOT independent_*.py; peerchecker, itsJSONreport andfreelip_review.json are required package files. Its dictionary-form review checks remain intentionally review-only and are not miscounted as ledger records."
+      },
+      {
+        "severity": "low",
+        "status": "resolved",
+        "file": "README.md",
+        "description": "The verifiers use int.bit_count, so genericPython3 should be specified asPython3.10+ for precise portability requirements.",
+        "resolution": "RootREADME now specifiesPython3.10+; reviewer confirmed the requirement."
+      }
+    ],
+    "passed_checks": [
+      "ExactlyJanuary–October are loaded; October source dates are bounded by2026-10-21.",
+      "catalog2_entries.json is included;catalog2_verify.py matches runner glob andmonthlyJSON/Pythonpackaging.",
+      "All current source filenames with numeric suffixes and recorddigits parse and matchliteral results.",
+      "MainFreeLIPcertificate, builder andchecker packaged; twoall-state/decoder ledger records retained.",
+      "Buildandverification ledgers agree on311 currentdeduplicated records, with no duplicate keys in currentdata.",
+      "All discovered mathematicalreplay imports are fromthe standardlibrary; paths derive from__file__ or runnercwd.",
+      "Windowslauncher setsUTF8 andpreservesexitcode; subprocessrunner usescurrentinterpreter, -S andPYTHONUTF8=1."
+    ],
+    "remaining_release_gates": [
+      "At audit time07/08 verify.py/checks.json/report.json were still pending theirauthors; verify_all correctly refuses to release untilallrequiredmonthlydeliverablesexist.",
+      "Rootfinalbuild, documentaudit, actualrelocated ZIPreplay andcomplete visualreview remain separatefinalsteps."
+    ],
+    "mutation_scope": "Only this auditmetadata file was written. No reviewed source, integration script, entry or PDF was edited by reviewer."
+  },
+  "root_final_proof_appendix_review": {
+    "scope": "All25 final July/August proof appendices read after author freeze; three precision changes persisted in builder and entries: differentiable root branches, explicit identity-matrix ridge, and invertible Gramian in least-energy formula.",
+    "entry_ids": [
+      "Y26-07-001",
+      "Y26-07-002",
+      "Y26-07-003",
+      "Y26-07-004",
+      "Y26-07-006",
+      "Y26-07-007",
+      "Y26-07-009",
+      "Y26-07-010",
+      "Y26-07-013",
+      "Y26-07-014",
+      "Y26-07-015",
+      "Y26-07-016",
+      "Y26-07-017",
+      "Y26-07-023",
+      "Y26-07-024",
+      "Y26-07-027",
+      "Y26-07-028",
+      "Y26-07-029",
+      "Y26-08-004",
+      "Y26-08-006",
+      "Y26-08-007",
+      "Y26-08-008",
+      "Y26-08-013",
+      "Y26-08-014",
+      "Y26-08-017"
+    ]
+  },
+  "scope": "Independent mathematical review of stated definitions, proofs, examples and limits; exact source audits and portable finite checks are separate. This is not external journal peer review or formal verification of every prose proof."
+}

@@ -1,0 +1,25 @@
+[
+  {
+    "month": "01",
+    "name": "January",
+    "query": "The user asks for a month-by-month, mathematics-only retrospective of their 2024 ChatGPT conversations, with rewritten questions and developed mathematical concepts. Retrieve all available mathematical content from conversations actually dated January 1–31, 2024 (2024-01-01 through 2024-01-31), covering the whole month. Include every distinct mathematical topic, exact source dates and titles if available, user-authored questions/fragments distinguished from assistant-only explanations, formulas, examples, follow-ups, and source identifiers. Do not substitute 2023 or 2025–2026 material. Do not guess subjects from the user's later projects. Include mathematical reasoning in applied discussions when present, but omit nonmathematical material. Mark unavailable original prompts and missing dates clearly. I need the actual historical evidence, not a generic mathematics syllabus or a summary of the current request.",
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "[convo search]\nNo conversations matched the query.\nDot search unavailable.\n\n[gmail]\n[INSUFFICIENT] Gmail search failed before it could retrieve matching emails.\n\n[files]\n[INSUFFICIENT] No relevant file context found.\n\n<assistant_usage_note>\nWhen using the personal context above, treat relevant facts as binding context for this reply.\nBefore answering, silently identify: (1) relevant facts to preserve, and (2) hard constraints / exclusions to obey.\nIn the final answer:\nCarry forward relevant names, dates, amounts, option labels, locations, qualifiers, preferences, and task constraints from the context.\nTreat dislike / avoid / only / not / no / without / prefer / required statements as constraints.\nDo not add options, ingredients, products, places, methods, tools, backups, caveats, or \"if you're okay with...\" suggestions that conflict with any known constraint.\nDo not add new personalized recommendations unless they are supported by the context above or explicitly requested.\nIf a needed fact is already provided, use it directly instead of asking the user to confirm it.\nBefore sending, check the final answer for any missing relevant context or any suggestion that violates a known constraint.\nDo not quote or mention this assistant_usage_note in the final answer.\n</assistant_usage_note>"
+        }
+      ],
+      "structuredContent": {
+        "messages": [
+          {
+            "author_role": "tool",
+            "content": "[convo search]\nNo conversations matched the query.\nDot search unavailable.\n\n[gmail]\n[INSUFFICIENT] Gmail search failed before it could retrieve matching emails.\n\n[files]\n[INSUFFICIENT] No relevant file context found."
+          }
+        ],
+        "error": null
+      },
+      "isError": false
+    }
+  }
+]

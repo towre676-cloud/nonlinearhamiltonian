@@ -1,0 +1,258 @@
+{
+  "month": "2025-08",
+  "checks": [
+    {
+      "id": "Y25-08-001",
+      "name": "Trochoid frequency period",
+      "status": "pass",
+      "detail": "R/r=5/2 gives period4π; added frequency1/3 gives common period12π."
+    },
+    {
+      "id": "Y25-08-002",
+      "name": "Rotation bracket and order",
+      "status": "pass",
+      "detail": "Exact integer matrices verify Lie bracket and noncommuting right-angle example."
+    },
+    {
+      "id": "Y25-08-003",
+      "name": "TL trace Gram positivity",
+      "status": "pass",
+      "detail": "Two-strand δ=2 positive minors; δ=1/2 negative squared-norm witness."
+    },
+    {
+      "id": "Y25-08-004",
+      "name": "Perron stochastic normalization",
+      "status": "pass",
+      "detail": "Row sums, stationary law and entropy logφ numerically replayed to1e−14; variational bound proved by KL in text."
+    },
+    {
+      "id": "Y25-08-005",
+      "name": "Perron eigenvalue correction",
+      "status": "pass",
+      "detail": "Correct R=M−φΠ annihilates r; erroneous M−Π would leave(φ−1)r."
+    },
+    {
+      "id": "Y25-08-006",
+      "name": "Chebyshev degree-one example",
+      "status": "pass",
+      "detail": "For diag(1,4), p1(A) has exact multipliers±3/5; general bound uses spectral theorem."
+    },
+    {
+      "id": "Y25-08-007",
+      "name": "Cubic KKT sign branch",
+      "status": "pass",
+      "detail": "Negative feasible branch satisfies stationarity; positive-root-only branch is infeasible."
+    },
+    {
+      "id": "Y25-08-008",
+      "name": "Gaussian geometric covariance tail",
+      "status": "pass",
+      "detail": "Exact partial traces and tail2^−N. Almost-sure Gaussian support theorem proved in text, not simulated."
+    },
+    {
+      "id": "Y25-08-009",
+      "name": "Triangle cohomology and killed class",
+      "status": "pass",
+      "detail": "H1 dimension1 and nonzero harmonic circulation; zero adapter cannot induce injection."
+    },
+    {
+      "id": "Y25-08-010",
+      "name": "Relative-period return bound",
+      "status": "pass",
+      "detail": "Translation(1,1) on a7-torus has order7, giving relative-period4 return bound28; minimality not asserted."
+    },
+    {
+      "id": "Y25-08-011",
+      "name": "Lp spike norm",
+      "status": "pass",
+      "detail": "Spike pth power integrates exactly to1 while support shrinks; measure theorem is analytically proved."
+    },
+    {
+      "id": "Y25-08-012",
+      "name": "Torus coarea factor",
+      "status": "pass",
+      "detail": "R=3,r=1: area12π², delta integral6π², gradient norm2; geometric derivation in text."
+    },
+    {
+      "id": "Y25-08-013",
+      "name": "Atomic pairing exact integral",
+      "status": "pass",
+      "detail": "Piecewise affine integrals independently give sharp local atom pairing1/2."
+    },
+    {
+      "id": "Y25-08-014",
+      "name": "Landau quartic completion",
+      "status": "pass",
+      "detail": "Quartic completion exact on sample amplitudes; general square identity supplies global minima."
+    },
+    {
+      "id": "Y25-08-015",
+      "name": "Hall flag count",
+      "status": "pass",
+      "detail": "All nonzero vectors/functionals of F2^3 enumerate21 incident line-plane flags."
+    },
+    {
+      "id": "Y25-08-016",
+      "name": "Quintic factorial Picard-Fuchs recurrence",
+      "status": "pass",
+      "detail": "Exact coefficients verify θ4−5z product operator; coordinate factor5 retained."
+    },
+    {
+      "id": "Y25-08-017",
+      "name": "Graph-phase inconsistency certificate",
+      "status": "pass",
+      "detail": "Derived incidence model has rank6/augmented7, but deleting only c/s leaves10 feasible edges; original max8 cannot be reconstructed."
+    },
+    {
+      "id": "Y25-08-018",
+      "name": "A-hat cross coefficient",
+      "status": "pass",
+      "detail": "Exact two-root quartic cross coefficient(14−4)/5760=1/576; series derivation in text."
+    },
+    {
+      "id": "Y25-08-019",
+      "name": "Signed-permutation orbit size",
+      "status": "pass",
+      "detail": "Generic group order3840 contrasted with exact degenerate orbit40."
+    },
+    {
+      "id": "Y25-08-020",
+      "name": "Quadratic Armijo and BFGS secant",
+      "status": "pass",
+      "detail": "Exact curvature/scaling, secant identity and positive minors; half-step reaches the specified optimum."
+    },
+    {
+      "id": "Y25-08-021",
+      "name": "ISTA soft-threshold example",
+      "status": "pass",
+      "detail": "Identity least-squares plus l1 penalty gives exact proximal optimum(2,0)."
+    },
+    {
+      "id": "Y25-08-022",
+      "name": "One-step hypergradient exact values",
+      "status": "pass",
+      "detail": "Analytic partials evaluated in exact fractions; later recovery-file evidence is not a recovered original program."
+    },
+    {
+      "id": "Y25-08-023",
+      "name": "Fano incidence spectral certificate",
+      "status": "pass",
+      "detail": "Exact BBᵀ=2I+J establishes Heawood singular values; zeta1 simplification exact."
+    },
+    {
+      "id": "Y25-08-024",
+      "name": "Paley5 Laplacian polynomial",
+      "status": "pass",
+      "detail": "Exact C5 Laplacian satisfies L(L²−5L+5I)=0 with rank4; inverse moment6/5 follows conjugate roots."
+    },
+    {
+      "id": "Y25-08-025",
+      "name": "CRT and finite ternary entropy",
+      "status": "pass",
+      "detail": "All48 CRT pairs checked; maximal16-sample ternary entropy is near.9965 of log3, not a normality proof."
+    },
+    {
+      "id": "Y25-08-026",
+      "name": "Lattice symbol bounds",
+      "status": "pass",
+      "detail": "Declared h=1 dispersion bound checked at nine modes; global bound is proved analytically."
+    },
+    {
+      "id": "Y25-08-027",
+      "name": "Riccati invariant",
+      "status": "pass",
+      "detail": "Exact stipulated parameters, value at100 and pole time."
+    },
+    {
+      "id": "Y25-08-028",
+      "name": "Complete graph audit",
+      "status": "pass",
+      "detail": "All five recovered example counts checked; n10/e78 is infeasible for a simple graph."
+    },
+    {
+      "id": "Y25-08-029",
+      "name": "Rank-one inverse exact product",
+      "status": "pass",
+      "detail": "Exact n3,t1/6 inverse and constant-vector eigenvalue3/2."
+    },
+    {
+      "id": "Y25-08-030",
+      "name": "Residual counterexample and log-noise bound",
+      "status": "pass",
+      "detail": "Zero differential complex has H1 dimension1 despite zero Laplacian; deterministic rate error bound.02."
+    },
+    {
+      "id": "Y25-08-901",
+      "name": "Exact polynomial traveling-wave residual",
+      "status": "pass",
+      "detail": "In the coordinate v=tanh(kX), rational polynomial differentiation verifies U-double-prime-4k²U+3U²=0 for the worked parameters. The proof gives the general identity."
+    },
+    {
+      "id": "Y25-08-902",
+      "name": "Exhaustive Hilbert90 witness calculation over F49",
+      "status": "pass",
+      "detail": "All48 nonzero elements give exactly the8 norm-one ratios; the explicit witness1+a maps to5-a."
+    },
+    {
+      "id": "Y25-08-903",
+      "name": "Squared-ideal certificate",
+      "status": "pass",
+      "detail": "The exact generator combination gives2 in I² and all square generators lie in(2). The norm obstruction is proved in the text; a finite small check agrees."
+    },
+    {
+      "id": "Y25-08-904",
+      "name": "Curvature integral normalization",
+      "status": "pass",
+      "detail": "The angular factors integral sin(theta)dtheta=2 and integral dphi=2pi give normalized Chern number m; the clutching proof supplies the classification."
+    },
+    {
+      "id": "Y25-08-905",
+      "name": "Eisenstein coefficient normalization",
+      "status": "pass",
+      "detail": "The q9 coefficient of E2-9E2(9tau) is-96 and its constant term is-8; covariance is the exact anomaly-cancellation derivation in the text."
+    },
+    {
+      "id": "Y25-08-906",
+      "name": "Eta product, independent point counts and central-value example",
+      "status": "pass",
+      "detail": {
+        "value_40_terms": 0.2538418608559107,
+        "analytic_tail_after20": 2.4836936817012958e-17,
+        "scope": "Integer coefficients through40; good-prime coefficients independently counted on11a. Floating exponential evaluation is illustrative; analytic tail is separate from rounding error."
+      }
+    },
+    {
+      "id": "Y25-08-907",
+      "name": "p-adic nonvanishing precision example",
+      "status": "pass",
+      "detail": "Residual100 vanishes mod25 and not mod125, and has valuation2."
+    },
+    {
+      "id": "Y25-08-908",
+      "name": "Heegner split/ramified prime distinction",
+      "status": "pass",
+      "detail": "X²-X+2 has the two distinct roots0,1 modulo2, whereas2=-i(1+i)² in Z[i]."
+    },
+    {
+      "id": "Y25-08-909",
+      "name": "Explicit independent-test selection probability",
+      "status": "pass",
+      "detail": {
+        "probability": 0.6323045752290363,
+        "scope": "A newly stipulated1000-test independent null example, not the historical search size."
+      }
+    },
+    {
+      "id": "Y25-08-910",
+      "name": "Exact reciprocal compounding",
+      "status": "pass",
+      "detail": {
+        "power_factor": "365421606438574662795191529287025504503746306710815676828838586876555229392397647777920849/1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "numeric_power": 0.3654216064385747,
+        "price_factor": 2.736565059045282,
+        "price_rate": "33/967"
+      }
+    }
+  ],
+  "scope": "Thirty core examples plus ten separately implemented root helper checks; no empirical, universal cohomological or physical validation claimed."
+}

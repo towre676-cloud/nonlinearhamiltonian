@@ -1,0 +1,470 @@
+{
+  "scope": "Finite exact certificates and stated numerical checks only; general categorical, geometric and analytic background is proved in prose or cited separately.",
+  "checks": [
+    {
+      "id": "Y25-01-001",
+      "name": "c1",
+      "status": "passed",
+      "detail": "Exactnilpotent, rank andsl2brackets; weight-filtration proof in text."
+    },
+    {
+      "id": "Y25-01-002",
+      "name": "c2",
+      "status": "passed",
+      "detail": "Shift-swap twice restores every tested graded degree; explicit lossy functor has rank1 on simple classes. Category classification is proved in text."
+    },
+    {
+      "id": "Y25-01-003",
+      "name": "c3",
+      "status": "passed",
+      "detail": "Pauli commutator and sharp state uncertainty verified independently."
+    },
+    {
+      "id": "Y25-01-004",
+      "name": "c4",
+      "status": "passed",
+      "detail": "Three-segment polygon winding computed from signed angle increments; approximation homotopy estimate proved in text."
+    },
+    {
+      "id": "Y25-01-005",
+      "name": "c5",
+      "status": "passed",
+      "detail": "Dirichlet and periodic boundary frequencies checked for six modes; full operator-domain theorems are cited background."
+    },
+    {
+      "id": "Y25-01-006",
+      "name": "c6",
+      "status": "passed",
+      "detail": "Exactmetric identity and positive principal minors forfour independent parameter values; general similarity proof in text."
+    },
+    {
+      "id": "Y25-01-007",
+      "name": "c7",
+      "status": "passed",
+      "detail": "FullS3character orthogonality and tensor decomposition; moonshine dimension sums exact."
+    },
+    {
+      "id": "Y25-01-008",
+      "name": "c8",
+      "status": "passed",
+      "detail": {
+        "Laurent_coefficients_exponents_minus1_through2": [
+          1,
+          744,
+          196884,
+          21493760
+        ],
+        "method": "independent truncated polynomial multiplication and long division"
+      }
+    },
+    {
+      "id": "Y25-01-009",
+      "name": "c9",
+      "status": "passed",
+      "detail": "All64 cocycle triples checked; nonsymmetric multiplier obstructs an abelian coboundary."
+    },
+    {
+      "id": "Y25-01-010",
+      "name": "c10",
+      "status": "passed",
+      "detail": {
+        "synthemes": [
+          [
+            [
+              0,
+              1
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              4,
+              5
+            ]
+          ],
+          [
+            [
+              0,
+              1
+            ],
+            [
+              2,
+              4
+            ],
+            [
+              3,
+              5
+            ]
+          ],
+          [
+            [
+              0,
+              1
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              3,
+              4
+            ]
+          ],
+          [
+            [
+              0,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              4,
+              5
+            ]
+          ],
+          [
+            [
+              0,
+              2
+            ],
+            [
+              1,
+              4
+            ],
+            [
+              3,
+              5
+            ]
+          ],
+          [
+            [
+              0,
+              2
+            ],
+            [
+              1,
+              5
+            ],
+            [
+              3,
+              4
+            ]
+          ],
+          [
+            [
+              0,
+              3
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              4,
+              5
+            ]
+          ],
+          [
+            [
+              0,
+              3
+            ],
+            [
+              1,
+              4
+            ],
+            [
+              2,
+              5
+            ]
+          ],
+          [
+            [
+              0,
+              3
+            ],
+            [
+              1,
+              5
+            ],
+            [
+              2,
+              4
+            ]
+          ],
+          [
+            [
+              0,
+              4
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              3,
+              5
+            ]
+          ],
+          [
+            [
+              0,
+              4
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              2,
+              5
+            ]
+          ],
+          [
+            [
+              0,
+              4
+            ],
+            [
+              1,
+              5
+            ],
+            [
+              2,
+              3
+            ]
+          ],
+          [
+            [
+              0,
+              5
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              3,
+              4
+            ]
+          ],
+          [
+            [
+              0,
+              5
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              2,
+              4
+            ]
+          ],
+          [
+            [
+              0,
+              5
+            ],
+            [
+              1,
+              4
+            ],
+            [
+              2,
+              3
+            ]
+          ]
+        ],
+        "pentads_as_syntheme_indices": [
+          [
+            0,
+            4,
+            8,
+            10,
+            12
+          ],
+          [
+            0,
+            5,
+            7,
+            9,
+            13
+          ],
+          [
+            1,
+            3,
+            7,
+            11,
+            12
+          ],
+          [
+            1,
+            5,
+            6,
+            10,
+            14
+          ],
+          [
+            2,
+            3,
+            8,
+            9,
+            14
+          ],
+          [
+            2,
+            4,
+            6,
+            11,
+            13
+          ]
+        ],
+        "distinct_action_images": 720,
+        "transposition_image": [
+          1,
+          0,
+          3,
+          2,
+          5,
+          4
+        ]
+      }
+    },
+    {
+      "id": "Y25-01-011",
+      "name": "c11",
+      "status": "passed",
+      "detail": {
+        "doubled_coordinate_length_and_fiber_histogram": {
+          "(8, 1)": 24,
+          "(4, 8)": 24,
+          "(0, 24)": 1
+        },
+        "root_count": 240
+      }
+    },
+    {
+      "id": "Y25-01-012",
+      "name": "c12",
+      "status": "passed",
+      "detail": "Tetrahedral boundary ranks3,3 andchain-square zero; Betti1,0,1. Convex sphere identification is proved topologically."
+    },
+    {
+      "id": "Y25-01-013",
+      "name": "c13",
+      "status": "passed",
+      "detail": "All8 critical points and Hessian indices enumerated; fold rank is2 atx0,3 elsewhere."
+    },
+    {
+      "id": "Y25-01-014",
+      "name": "c14",
+      "status": "passed",
+      "detail": "LinkBetti1,2,1 and cone dimension cutoff2 checked. Allowable-chain proof and cone formula, not this arithmetic, establishIH1=k²."
+    },
+    {
+      "id": "Y25-01-015",
+      "name": "c15",
+      "status": "passed",
+      "detail": "All49 integer two-jet substitutions verify the quadratic obstruction; Jacobian ranks distinguish double and smooth points."
+    },
+    {
+      "id": "Y25-01-016",
+      "name": "c16",
+      "status": "passed",
+      "detail": "Explicit support-degree bounds and dual shifts verified. Verdier duality theorem is background, not numerically proved."
+    },
+    {
+      "id": "Y25-01-017",
+      "name": "c17",
+      "status": "passed",
+      "detail": {
+        "H0_dimensions": [
+          3,
+          1,
+          1,
+          1
+        ],
+        "H1_dimensions": [
+          0,
+          0,
+          1,
+          0
+        ],
+        "finite_bar": "[2,3)",
+        "colimit_H1": 0
+      }
+    },
+    {
+      "id": "Y25-01-018",
+      "name": "c18",
+      "status": "passed",
+      "detail": "All nonzero tested unipotent shifts move every selected complement while inducing identity on graded quotients; general proof in text."
+    },
+    {
+      "id": "Y25-01-019",
+      "name": "c19",
+      "status": "passed",
+      "detail": "Localization diagonal-map cokernel dimension1; compact-support Euler0. General localization sequence is cited background."
+    },
+    {
+      "id": "Y25-01-020",
+      "name": "c20",
+      "status": "passed",
+      "detail": {
+        "nested_commutator_terms": [
+          [
+            -4,
+            7
+          ],
+          [
+            -4,
+            7
+          ],
+          [
+            -4,
+            7
+          ]
+        ],
+        "Jacobiator": "−12e7",
+        "associator": "2e7"
+      }
+    },
+    {
+      "id": "Y25-01-021",
+      "name": "c21",
+      "status": "passed",
+      "detail": "ExactGaussian eigenvalue cancellation and quadraticMoyal correction; curvature and associativity proved in text."
+    },
+    {
+      "id": "Y25-01-022",
+      "name": "c22",
+      "status": "passed",
+      "detail": "Equivariant contraction and ordinaryloop contraction are explicit topological proofs; finite cell countsinCP^N are one per even degree through2N,checkedforN1–5."
+    },
+    {
+      "id": "Y25-01-023",
+      "name": "c23",
+      "status": "passed",
+      "detail": "Independent central differences verifyentropy first/second variations atp3/4,1/4."
+    },
+    {
+      "id": "Y25-01-024",
+      "name": "c24",
+      "status": "passed",
+      "detail": "ExactCNOT permutation/involution; Bell-state partial traceI/2 followsfrom rational density entries."
+    },
+    {
+      "id": "Y25-01-025",
+      "name": "c25",
+      "status": "passed",
+      "detail": "Amplitude/powerdB factors andallthree phase examples checked."
+    }
+  ],
+  "passed": 25,
+  "failed": 0
+}

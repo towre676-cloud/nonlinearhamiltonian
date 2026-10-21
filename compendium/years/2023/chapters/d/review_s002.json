@@ -1,0 +1,38 @@
+{
+  "reviewer": "linear_probability_and_relativity",
+  "reviewed": ["syntheses.json S002", "syntheses.json S006", "verify_syntheses.py"],
+  "verifier_result": "A relocated copy of verify_syntheses.py passes all12 checks. No root source files were edited.",
+  "issues": [
+    {
+      "severity": "minor verification label",
+      "id": "S002",
+      "description": "The check named 'Gudermannian chart and Jacobian identities' currently verifies only the forward/inverse round trip. The analytic Jacobian formula in the text is correct, but a derivative or equivalent Jacobian identity is not actually checked by that code block.",
+      "fix": "Either rename that finite check to 'Gudermannian forward/inverse chart' or additionally check sec(gd(x))=cosh(x), equivalently its reciprocal sech(x), at the existing sample points. This does not affect the theorem or the finite-bin calculation."
+    },
+    {
+      "severity": "optional clarity",
+      "id": "S006",
+      "description": "The statistic uses the true baseline μ. The limits already warn that estimated baselines change calibration, but the opening definition explicitly calls only Σ known.",
+      "fix": "Optionally say 'known baseline μ and known positive-definite Σ' in the first definition, to make the implementation assumption as explicit as the covariance assumption. The displayed distributional identity is already correct when centered at the stated true μ."
+    }
+  ],
+  "approved_mathematics": [
+    {
+      "id": "S002 observation transformation",
+      "detail": "The transform is explicitly θ-independent, invertible, differentiable and has nonzero Jacobian. Its transformed density is correct and its Jacobian contributes no θ-score. The transformed support is θ-independent because the original support and the chart are. Fisher equality follows by change of variables of the score's second moment. The text correctly distinguishes observation coordinates from reparameterization of θ."
+    },
+    {
+      "id": "S002 channel contraction",
+      "detail": "The conditional-score identity is properly conditional on a θ-independent channel and justified differentiation under the integral. The information difference is E[Cov(s_X|Z)] and is PSD, so the stated matrix inequality follows. This does not assert an inequality for parameter-dependent preprocessing or a model whose support changes with θ. The regularity caveats are present."
+    },
+    {
+      "id": "S002 Gaussian Gudermannian example",
+      "detail": "On (−π/2,π/2), x=artanh(sin y) and dx/dy=sec y>0. The transformed Gaussian density and μ-score are correct, giving I=1/σ² with known σ. For bin edges a,b in x-coordinates, ∂_μP=(φ((a−μ)/σ)−φ((b−μ)/σ))/σ; the verifier uses precisely this derivative. Uniform angle bins are correctly inverted at their interior edges, with true infinite endpoints. The finite-bin information sum is valid and bounded by the unquantized value in the tested regular model."
+    },
+    {
+      "id": "S006 projection and robustness",
+      "detail": "SPD Σ and full-row-rank B make BΣBᵀ invertible. The matrix (CCᵀ)^(−1/2)C has orthonormal rows, giving the stated Gaussian law, χ² degrees of freedom and projected noncentrality. The uncertainty ball is explicitly in whitened coordinates; the worst-case norm is attained by a retained-subspace perturbation. The nullspace impossibility and its detector-power caveat are sound. No material hidden assumption was found beyond the optional baseline clarification."
+    }
+  ],
+  "overall": "S002 and S006 are mathematically approved in their stated regular and known-model settings. One check-name clarification and one optional baseline clarification are recommended; neither changes the substantive results."
+}

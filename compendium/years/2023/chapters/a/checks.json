@@ -1,0 +1,360 @@
+{
+  "chapter": "a",
+  "entries": [
+    "M001",
+    "M002",
+    "M003",
+    "M004",
+    "M005",
+    "M006",
+    "M007",
+    "M008",
+    "M009",
+    "M010",
+    "M011",
+    "M012",
+    "M013",
+    "M014",
+    "M015",
+    "M016",
+    "M017",
+    "M018"
+  ],
+  "checks": [
+    {
+      "id": "M002",
+      "ids": [
+        "M002"
+      ],
+      "name": "Hensel simple-root lift",
+      "status": "passed",
+      "passed": true,
+      "detail": {
+        "prime": 7,
+        "roots_mod_successive_powers": [
+          3,
+          10,
+          108,
+          2166,
+          4567,
+          38181
+        ],
+        "new_digits": [
+          1,
+          2,
+          6,
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "id": "M003",
+      "ids": [
+        "M003"
+      ],
+      "name": "Finite affine fixed-point classification",
+      "status": "passed",
+      "passed": true,
+      "detail": "Exhaustive modulo p^n for p=2,3,5 and n=1,2,3 agrees with gcd divisibility and the predicted count of fixed residues."
+    },
+    {
+      "id": "M004",
+      "ids": [
+        "M004"
+      ],
+      "name": "Probability range counterexample",
+      "status": "passed",
+      "passed": true,
+      "detail": "P(1,0)=2, so the toy formula is not a probability throughout the unit square."
+    },
+    {
+      "id": "M004",
+      "ids": [
+        "M004"
+      ],
+      "name": "Logistic three-design example",
+      "status": "passed",
+      "passed": true,
+      "detail": {
+        "probabilities": [
+          0.5,
+          0.75,
+          0.25
+        ],
+        "design_rows": [
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            0,
+            1
+          ]
+        ],
+        "design_determinant": 1
+      }
+    },
+    {
+      "id": "M005",
+      "ids": [
+        "M005"
+      ],
+      "name": "Toy linear inversion attack",
+      "status": "passed",
+      "passed": true,
+      "detail": {
+        "public_modulus": 101,
+        "public_multiplier": 7,
+        "ciphertext": 35,
+        "recovered_x": 5
+      }
+    },
+    {
+      "id": "M006",
+      "ids": [
+        "M006"
+      ],
+      "name": "Exact geometric partial sums",
+      "status": "passed",
+      "passed": true,
+      "detail": "For N=1,...,29 exact rational sums equal 1−2^(-N); the general identity follows by multiplying the finite sum by two."
+    },
+    {
+      "id": "M007",
+      "ids": [
+        "M007",
+        "M008"
+      ],
+      "name": "Octonion associator and all alternation coefficients",
+      "status": "passed",
+      "passed": true,
+      "detail": {
+        "convention": "(a,b)(c,d)=(ac−conj(d)b, da+b conj(c)) on quaternion pairs",
+        "associator_e1_e2_e4": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2
+        ],
+        "basis_triples_checked": 512
+      }
+    },
+    {
+      "id": "M007",
+      "ids": [
+        "M007"
+      ],
+      "name": "Moufang identity checked by complete coefficient polarization",
+      "status": "passed",
+      "passed": true,
+      "detail": {
+        "evaluations": 2304,
+        "identity": "(ab)(ca)=a((bc)a)",
+        "scope": "All real octonions, because the tested homogeneous polynomial is quadratic in a and linear in b,c."
+      }
+    },
+    {
+      "id": "M008",
+      "ids": [
+        "M008"
+      ],
+      "name": "Sharp unit associator bound attained",
+      "status": "passed",
+      "passed": true,
+      "detail": "The normalized triple (e1,e2,e4) has defect 2; therefore the proved upper bound 2 is sharp."
+    },
+    {
+      "id": "M009",
+      "ids": [
+        "M009",
+        "M011"
+      ],
+      "name": "KdV residual polynomial identity",
+      "status": "passed",
+      "passed": true,
+      "detail": "For u=2(1−T²), d/dz=(1−T²)d/dT, −4u_z+6u*u_z+u_zzz is the zero polynomial. Scaling proves the stated κ-family."
+    },
+    {
+      "id": "M010",
+      "ids": [
+        "M010"
+      ],
+      "name": "Gudermannian identities and inverse",
+      "status": "passed",
+      "passed": true,
+      "detail": "Seven sample points verify circular/hyperbolic identities and inverse; the entry derives them for all real x."
+    },
+    {
+      "id": "M012",
+      "ids": [
+        "M012"
+      ],
+      "name": "Two-soliton Hirota identity",
+      "status": "passed",
+      "passed": true,
+      "detail": {
+        "exact_parameter_pairs": [
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            1,
+            4
+          ]
+        ],
+        "u_at_zero_for_k_1_2_delta_0": "153/98",
+        "linear_superposition_at_zero": "5/2",
+        "bilinear_form": "(D_x D_t+D_x^4)tau·tau=0"
+      }
+    },
+    {
+      "id": "M014",
+      "ids": [
+        "M014"
+      ],
+      "name": "q-Gudermannian secant bounds",
+      "status": "passed",
+      "passed": true,
+      "detail": [
+        {
+          "q": 0.5,
+          "x": 2,
+          "difference_quotient": 0.4359908528063564,
+          "bounds": [
+            0.2658022288340797,
+            0.6480542736638855
+          ]
+        },
+        {
+          "q": 2,
+          "x": 2,
+          "difference_quotient": 0.11620440414435906,
+          "bounds": [
+            0.03661899347368653,
+            0.2658022288340797
+          ]
+        },
+        {
+          "q": 0.5,
+          "x": -2,
+          "difference_quotient": 0.4359908528063564,
+          "bounds": [
+            0.2658022288340797,
+            0.6480542736638855
+          ]
+        },
+        {
+          "q": 1.001,
+          "x": 0.3,
+          "difference_quotient": 0.9565860983213824,
+          "bounds": [
+            0.9565442728311886,
+            0.9566279119002483
+          ]
+        }
+      ]
+    },
+    {
+      "id": "M015",
+      "ids": [
+        "M015"
+      ],
+      "name": "Twenty saturated scalar layers",
+      "status": "passed",
+      "passed": true,
+      "detail": {
+        "architecture": "h_(l+1)=gd(h_l+2), h_0=0",
+        "depth": 20,
+        "actual_input_derivative": 1.827402660495528e-24,
+        "proved_upper_bound": 3.098648872097085e-12
+      }
+    },
+    {
+      "id": "M016",
+      "ids": [
+        "M016"
+      ],
+      "name": "Observable universal recurrence",
+      "status": "passed",
+      "passed": true,
+      "detail": {
+        "A": "diag(1,2,3)",
+        "C": [
+          1,
+          1,
+          0
+        ],
+        "observable_rank": 2,
+        "universal_polynomial": "z²−3z+2",
+        "full_characteristic_polynomial": "(z−1)(z−2)(z−3)"
+      }
+    },
+    {
+      "id": "M017",
+      "ids": [
+        "M017"
+      ],
+      "name": "Reachable-visible quotient example",
+      "status": "passed",
+      "passed": true,
+      "detail": {
+        "A": "diag(−1,−2,3)",
+        "B": [
+          1,
+          0,
+          1
+        ],
+        "C": [
+          1,
+          1,
+          0
+        ],
+        "reachable_rank": 2,
+        "observable_rank": 2,
+        "zero_initial_minimal_dimension": 1,
+        "transfer_function": "1/(s+1)",
+        "hidden_unstable_mode": 3
+      }
+    },
+    {
+      "id": "M018",
+      "ids": [
+        "M018"
+      ],
+      "name": "Polynomial Koopman degree-growth obstruction",
+      "status": "passed",
+      "passed": true,
+      "detail": {
+        "map": "2x(1−x)",
+        "iterated_degrees": [
+          1,
+          2,
+          4,
+          8,
+          16,
+          32,
+          64
+        ],
+        "scope": "These exact calculations illustrate the analytic degree argument, which proves impossibility of every finite polynomial invariant space containing x on an interval."
+      }
+    }
+  ],
+  "passed": true
+}

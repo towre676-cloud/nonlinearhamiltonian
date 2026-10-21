@@ -1,0 +1,58 @@
+{
+  "reviewed": "S008",
+  "findings": [],
+  "approved_scopes": [
+    "Orthogonal-projection robust noncentrality reduction is exact, with allowed attaining perturbations in the full whitened Euclidean ball.",
+    "Gaussian identity-covariance coordinate-statistic noncentral chi-square law and differing-df calibration caveat are correct.",
+    "Independent enumeration confirms 34 feasible panels, unique cost13 AE optimum and unique gain-per-cost greedy path D,F,C of cost16.",
+    "The unlisted shift2e_D is exactly invisible to AE, including repeated observations, while full data retain the stated center and worst-case noncentralities.",
+    "Analytic optimality proof, nonredundancy witnesses and inclusion-minimality assertions are sound."
+  ],
+  "independent_enumeration": {
+    "feasible_panels": 34,
+    "first_panels": [
+      [
+        13,
+        "AE"
+      ],
+      [
+        14,
+        "BE"
+      ],
+      [
+        16,
+        "CDF"
+      ],
+      [
+        17,
+        "AEF"
+      ],
+      [
+        17,
+        "DEF"
+      ]
+    ],
+    "greedy_trace": [
+      [
+        "D",
+        "2/3"
+      ],
+      [
+        "F",
+        "1/4"
+      ],
+      [
+        "C",
+        "1/6"
+      ]
+    ]
+  },
+  "optional_improvements": [
+    {
+      "severity": "minor",
+      "id": "S008 extension",
+      "description": "The extension formula using (BΣBᵀ)⁻¹ implicitly needs B to have full row rank when Σ is positive definite. The finite coordinate instance already satisfies this, so the theorem/example is unaffected.",
+      "fix": "State full-row-rank B, or use the Moore–Penrose inverse when redundant linear channels are permitted."
+    }
+  ]
+}

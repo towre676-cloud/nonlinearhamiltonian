@@ -1,0 +1,101 @@
+"""New constructive developments of the recovered August approximation cluster."""
+from pathlib import Path
+import json,re
+P=Path(__file__).resolve().parent
+REF={'label':'Christian Clason, Regularization of Inverse Problems (author lecture notes)','url':'https://arxiv.org/abs/2001.00617'}
+def source(filename,needle):
+    data=json.loads((P/filename).read_text())
+    text=data[0]['result']['structuredContent']['messages'][0]['content']
+    return next(x for x in text.splitlines() if needle in x)
+entries=[]
+def add(n,title,question,summary,definitions,name,statement,proof,setup,calculation,conclusion,limits,extension,filename,needle,refs=True):
+    excerpt=source(filename,needle);match=re.search(r'([UA])@(2026-\d\d-\d\d)',excerpt)
+    evidence,date=match.groups() if match else ('T','2026-08-01')
+    entries.append(dict(id=f'Y26-08-{900+n:03}',title=title,status='Proved under the stated hypotheses; newly stipulated examples',summary=summary,definitions=definitions,result=dict(name=name,statement=statement,proof=proof),example=dict(setup=setup,calculation=calculation,conclusion=conclusion),limits=limits,extension=extension,references=[REF] if refs else [],original=dict(date=date,month='2026-08',evidence=evidence,field='Inverse problems and asymptotic analysis',concept=title,origin='Recovered August mathematical formula; the question, proof and worked model below are new developments.',question=question,math=statement,finish='Proof, explicit example, limitations and extension',kind='Revised mathematical treatment',refs=[REF['url']] if refs else [],source_excerpt=excerpt,retrieval_receipt=filename+' record 0',original_question=None,attribution_note='This is a retrieved topic summary, not a verbatim original user question. Speaker attribution follows its tag. Query echoes and unavailable historical numerical certificates are not used as evidence.')))
+add(1,'A cutoff theorem with the quantifiers made explicit',
+ 'When does increasing approximation resolution remain compatible with vanishing data noise, uniformly over a specified model class?',
+ 'The recovered master inequality becomes useful only after the model class, data norm and quantifiers are fixed. The fundamental issue is that approximation can improve while noise amplification becomes arbitrarily large. A diagonal parameter choice reconciles these two limits without requiring a guessed convergence rate.',
+ ['Let A:X→Y be bounded between normed spaces, let M⊂X be a specified nonempty class, and let R_n:Y→X be bounded linear maps. Data satisfy yδ=Ax+e with ||e||≤δ.',
+ 'Define B_M(n)=sup_{x∈M}||R_nAx−x||, S(n)=||R_n||, and Eδ(R_n;M)=sup_{x∈M,||e||≤δ}||R_n(Ax+e)−x||. Assume B_M(n) is finite and tends to zero.'],
+ 'Uniform bias–noise decomposition and diagonal regularization',
+ 'Eδ(R_n;M)≤B_M(n)+δS(n). There exists an integer choice n(δ)→∞ with Eδ(R_{n(δ)};M)→0. Every choice with B_M(n(δ))→0 and δS(n(δ))→0 has this property.',
+ 'Add and subtract R_nAx and apply the triangle inequality and the operator norm bound. For existence choose a strictly increasing sequence n_j with B_M(n_j)≤1/j. Put s_j=max(1,S(n_1),…,S(n_j)), and choose strictly decreasing positive d_j→0 with d_j≤1/(j s_j). For d_{j+1}<δ≤d_j use n(δ)=n_j. Then δS(n(δ))≤1/j and the total bound is at most 2/j. As δ→0 the interval index j→∞, hence the result. This proof does not assume that S is monotone or that B has a power-law rate. Uniform convergence of B is a substantive hypothesis: pointwise convergence R_nAx→x for each fixed x does not imply it on an arbitrary unbounded class. If A has a nonzero kernel and M contains x and x+h with h∈ker A, a uniform error tending to zero is impossible, since the data coincide. Thus the model class must encode identifiable information as well as approximation smoothness.',
+ 'Use a diagonal inverse problem on ℓ², Av=(v_k/k), the cutoff R_N and the ellipsoid M={x:Σk²|x_k|²≤1}.',
+ 'The tail is bounded by 1/(N+1), while S(N)=N. With N=⌊δ^(−1/2)⌋ and 0<δ≤1/4, the error is at most 1/(N+1)+δN≤2√δ. At δ=1/100, N=10 gives the sharper explicit bound 1/11+1/10=21/110.',
+ 'The same resolution parameter has a measurable cost and a justified accuracy bound. Unregularized inversion has unbounded norm and no such deterministic noise guarantee.',
+ 'The bound is deterministic and uniform over M. It does not estimate unknown noise, identify M from data, or imply that the two upper-bound terms can always be simultaneously attained.',
+ 'Construct a parameter rule from a known noise bound and a verifiable model hierarchy M_j, then prove an oracle inequality showing how far the selected resolution can be from the best admissible one.',
+ 'root_exact_1.json','August manuscript kernel')
+add(2,'Mild ill-posedness: an optimal rate from a concrete ellipsoid',
+ 'Can the polynomial cutoff rate be proved with both an upper bound and a matching impossibility argument?',
+ 'The source rate δ^{r/(p+r)} has a clean deterministic interpretation. It is the minimax order for a diagonal operator with polynomial singular values and a Sobolev-type ellipsoid. A two-point indistinguishability argument supplies the lower bound, so the rate expresses an information limitation rather than only the quality of one algorithm.',
+ ['Take X=Y=ℓ², Ae_k=k^(−p)e_k with p>0, and M_r={x:Σk^{2r}|x_k|²≤1}, r>0. Let R_N invert the first N coordinates and discard the rest.',
+ 'The deterministic minimax error is inf over all maps T:Y→X of sup_{x∈M_r,||e||≤δ}||T(Ax+e)−x||. The map T need not be linear or continuous.'],
+ 'Matching polynomial upper and lower rates',
+ 'For sufficiently small δ>0, spectral cutoff with N=⌊δ^(−1/(p+r))⌋ has worst-case error O(δ^{r/(p+r)}). No reconstruction map improves this order uniformly on M_r under norm-bounded noise.',
+ 'For x∈M_r, Σ_{k>N}|x_k|²≤(N+1)^(−2r)Σ_{k>N}k^{2r}|x_k|², so B(N)≤(N+1)^(−r). Also ||R_N||=N^p, because its diagonal coefficients are k^p. The master bound is therefore (N+1)^(−r)+δN^p. The stated N balances the two terms and gives the upper order. For the lower bound put K=⌈δ^(−1/(p+r))⌉ and v=K^(−r)e_K. Both v and −v belong to M_r and ||Av||=K^(−(p+r))≤δ. The observation zero can thus arise from v with noise −Av or from −v with noise Av. For any output z=T(0), the triangle inequality gives max(||z−v||,||z+v||)≥||v||. Since K≤2δ^(−1/(p+r)) for δ≤1, this is at least 2^(−r)δ^{r/(p+r)}. This applies to every possible estimator. It also explains why stronger algorithms alone cannot remove the smoothness–noise tradeoff.',
+ 'Set p=r=1 and δ=10^(−4).',
+ 'N=100 gives error at most 1/101+1/100<0.02. K=100 gives two opposite feasible signals ±e_100/100 that both produce zero within the noise budget. Every estimator has worst-case error at least 0.01.',
+ 'Cutoff is optimal up to a factor below two in this example; the exponent is exact at the level of uniform deterministic rates.',
+ 'This is a diagonal ellipsoid model. Replacing its coefficient condition by the pointwise assertion |x_k|≤Ck^(−s) changes the tail exponent to s−1/2 when s>1/2. The two smoothness conventions must not be silently identified.',
+ 'Extend the two-point proof to singular values comparable, rather than equal, to k^(−p), retaining explicit comparison constants and determining when adaptation to unknown r costs a logarithmic factor.',
+ 'root_exact_1.json','Mild ill-posed:')
+add(3,'Severe ill-posedness needs a logarithmic safety margin',
+ 'Which cutoff actually proves the logarithmic convergence rate when singular values decay exponentially?',
+ 'A bare rule N≈(log(1/δ)/c)^{1/β} can conceal a failure: at the exact leading balance, amplified noise can remain of order one. Subtracting a log-log term yields a valid convergent rule while preserving the advertised logarithmic rate. The lower bound again follows from two indistinguishable signals.',
+ ['Let Ae_k=exp(−c k^β)e_k on ℓ², with c,β>0, and use M_r={x:Σk^{2r}|x_k|²≤1}. Write L=log(1/δ).',
+ 'For sufficiently large L define tδ=((L−(r/β)log L)/c)^{1/β} and Nδ=⌊tδ⌋. The subtraction is part of the parameter rule; Nδ is positive once δ is sufficiently small.'],
+ 'Sharp logarithmic order with a valid parameter rule',
+ 'The cutoff error is O(L^(−r/β)) for the stated Nδ. This is also the deterministic minimax order on M_r. The leading equivalence Nδ∼(L/c)^{1/β} alone does not guarantee convergence for every sequence with that equivalence.',
+ 'As before B(N)≤(N+1)^(−r), and now S(N)=exp(cN^β). Since Nδ≤tδ, δS(Nδ)≤exp(−L+L−(r/β)log L)=L^(−r/β). Because tδ∼(L/c)^{1/β}, the bias has the same order. For a lower bound take K=⌈(L/c)^{1/β}⌉ and v=K^(−r)e_K. Then ||Av||=exp(−cK^β)K^(−r)≤δ, so zero is compatible with both ±v. Every reconstruction therefore incurs error at least K^(−r), which is bounded below by a positive constant times L^(−r/β) as L→∞. To see the danger of using only the leading scale, set β=c=1, δ_j=e^(−j) and N_j=j. Then N_j exactly equals log(1/δ_j), but δ_jS(N_j)=1 for every j. A noise vector δ_je_j is amplified to a unit coordinate. The cutoff rule is consequently inconsistent at the zero signal along this subsequence despite having the expected leading asymptotic size.',
+ 'Use c=β=r=1 and δ=e^(−100).',
+ 'The safe rule gives N=⌊100−log100⌋=95. Its bound is 1/96+e^(−5)<0.01716. The naive N=100 has noise amplification exactly1. The lower-bound signal ±e_100/100 remains indistinguishable at observation zero.',
+ 'A small change in resolution removes an order-one instability while keeping the optimal logarithmic information rate.',
+ 'The statements concern worst-case norm-bounded noise and a specified ellipsoid. They do not assert minimax rates for Gaussian white noise, whose effective noise size depends on dimension.',
+ 'Derive analogous safety margins for exp(−c k^β(log k)^γ), and provide a verified discrepancy rule that reaches the same order without knowledge of r.',
+ 'root_exact_1.json','Mild ill-posed:')
+add(4,'Tikhonov filters: qualification and explicit constants',
+ 'How do a spectral source condition and the filter maximum produce a complete Tikhonov error estimate?',
+ 'The filter formula in the recovered manuscript can be strengthened into an explicit theorem, including the range of smoothness for which the simple argument works. The parameter α controls both spectral bias and amplification; the source exponent determines their balance.',
+ ['Let A:X→Y be bounded between Hilbert spaces and define R_α=(A* A+αI)^(−1)A*, α>0. Assume x†=(A* A)^νw, ||w||≤ρ, with 0<ν≤1.',
+ 'The source condition places x† in ker(A) perpendicular and specifies spectral smoothness. Fractional powers are defined by the spectral calculus of the nonnegative bounded self-adjoint operator A* A.'],
+ 'Tikhonov source-condition bound',
+ 'For ||yδ−Ax†||≤δ, ||R_αyδ−x†||≤ρ cν α^ν+δ/(2√α), where cν=ν^ν(1−ν)^(1−ν) for0<ν<1 and c1=1. Forρ>0, a parameter of order (δ/ρ)^{2/(2ν+1)} gives error O(ρ^{1/(2ν+1)}δ^{2ν/(2ν+1)}).',
+ 'The residual is I−R_αA=α(A* A+αI)^(−1). On the source vector its spectral multiplier is αλ^ν/(λ+α)=α^ν t^ν/(1+t), with t=λ/α. Differentiating log(t^ν/(1+t)) gives ν/t−1/(1+t), so the maximum occurs at t=ν/(1−ν) when0<ν<1 and equals cν. Atν=1 the supremum is1. The noise multiplier is √λ/(λ+α); its derivative vanishes at λ=α and its global maximum is1/(2√α). The spectral theorem and the triangle inequality give the bound. Balancing α^νρ with δα^(−1/2) gives the parameter order and rate. The restriction ν≤1 is meaningful: forν>1 the ratio t^ν/(1+t) is unbounded on[0,∞), so this scale-free source estimate no longer follows from the same argument. A bounded spectrum gives another estimate, but it does not produce arbitrary qualification for ordinary Tikhonov regularization.',
+ 'Take A=diag(1,1/2), α=1/4, x†=(0,1/2)=A*w with w=(0,1), ν=1/2 andρ=1.',
+ 'R_α=diag(4/5,1). The exact noiseless reconstruction is(0,1/4), so the bias is1/4, equal to c_{1/2}α^{1/2}=(1/2)(1/2). Also ||R_α||=1=1/(2√α). Noiseδe_2 aligned against the bias attains total error1/4+δ.',
+ 'The bias and noise constants are simultaneously sharp for this explicitly stipulated two-coordinate model.',
+ 'Ifρ=0 the source class contains onlyx†=0 and the zero reconstruction is exact. The example verifies a finite case of the spectral estimate. Choosing α from unknown noise or unknownρ requires an additional selection theorem; the bound alone is not an implementable adaptive rule.',
+ 'Compare iterated Tikhonov, whose residual is (α/(λ+α))^m, with ordinary Tikhonov and prove qualification m with explicit constants and a corresponding stopping cost.',
+ 'root_exact_1.json','Tikhonov filter:')
+add(5,'Landweber iteration: regularization by stopping',
+ 'How can an iterative algorithm converge for exact data yet need early stopping for noisy data?',
+ 'The recovered Landweber filter makes the role of iteration count precise. Increasing m shrinks the spectral residual and increases the noise norm. The same controlled-approximation principle used for spectral cutoff therefore governs an algorithm with no explicit truncation.',
+ ['Let A be bounded between Hilbert spaces,0<ω≤||A||^(−2), and start x_0=0. Define x_{m+1}=x_m+ωA*(yδ−Ax_m). For A=0 the discussion is trivial, so assume ||A||>0.',
+ 'Assume x†=(A*A)^νw withν>0 and||w||≤ρ. At singular valueσ>0, g_m(σ)=[1−(1−ωσ²)^m]/σ, while the residual on λ=σ² is(1−ωλ)^m.'],
+ 'Landweber bias–noise bound and early stopping',
+ 'For m≥1, ||x_m−x†||≤ρ(ν/(eωm))^ν+δ√(ωm). Forρ>0, choosing m of order (ρ/δ)^{2/(2ν+1)} gives the source-condition rate δ^{2ν/(2ν+1)}, with constants depending onν andω.',
+ 'Iterating the affine recurrence gives x_m=ωΣ_{j=0}^{m−1}(I−ωA*A)^jA*yδ, hence the filter. For0≤ωλ≤1, (1−ωλ)^m≤exp(−ωmλ). The maximum of λ^νexp(−ωmλ) overλ≥0 is(ν/(eωm))^ν, giving the bias estimate. For noise use1−(1−t)^m≤min(1,mt) on[0,1]. Thus |g_m(σ)|≤min(1/σ,mωσ)≤√(mω): below the crossing use the second term and above it use the first. The operator norm follows by spectral calculus. Balancing m^(−ν)ρ andδm^(1/2) gives the rate. Exact-data convergence does not justify infinite iteration withδ>0: for arbitrarily small singular values, the eventual filter approaches1/σ. Early stopping chooses how much spectral information the noisy data can support. Unlike the single-step Tikhonov estimate, this exponential-residual argument works for everyν>0.',
+ 'Use the same A=diag(1,1/2), ω=1 and m=4.',
+ 'The first-coordinate residual is0 and the second is(3/4)^4=81/256. The second filter is2(1−81/256)=175/128, below√4=2. At the true signal x†=e_2 the exact bias is81/256. The verifier checks the recurrence and filter against each other using rational arithmetic.',
+ 'The iteration is exactly a family of bounded approximate inverses; stopping is the regularization parameter.',
+ 'Ifρ=0 the known source class is{0}, for which the zero reconstruction is exact. The source rate assumes deterministic bounded noise and a fixed stable step size. Acceleration, nonlinear operators and inexact matrix products need their own stability arguments.',
+ 'Allow deterministic per-step arithmetic errorsε_j and derive a stopping rule from the additional propagated sumωΣ||(I−ωA*A)^{m−1−j}ε_j||, then compare the bound with exact arithmetic cost.',
+ 'root_exact_1.json','Tikhonov filter:')
+add(6,'The ignition constant: a proved integral behind an unverified front law',
+ 'What can be established exactly about C0 without recovering the original front ODE or treating numerical agreement as its proof?',
+ 'The recovered integral is a well-defined mathematical object even though the governing front equation and normalization did not survive retrieval. It admits strict bounds, a positive rational series and controlled numerical quadrature. These results support a conditional interpretation of the reported large-Z law without inventing its missing derivation.',
+ ['Put s(t)=(1+t)e^(−t) for t≥0, h(t)=1−√(1−s(t)), and C0=∫_0^∞h(t)dt. Then0<s(t)≤1, s is strictly decreasing for t>0, and h is decreasing from1 to0.',
+ 'Let a_k=binom(2k,k)/(4^k(2k−1)) for k≥1, so1−√(1−z)=Σ_{k≥1}a_kz^k for0≤z≤1. Every coefficient is positive andΣa_k=1.'],
+ 'Exact bounds and a monotone rational series',
+ '1<C0<2 and C0=Σ_{k≥1}a_k Σ_{j=0}^k binom(k,j)j!/k^{j+1}. If S_K is the sum through K, then S_K<C0<S_K+2(1−Σ_{k≤K}a_k). All finite quantities in this enclosure are rational.',
+ 'Rationalize h=s/(1+√(1−s)). Since the denominator lies strictly between1 and2 for t>0, s/2<h<s there. The integral of s is2, proving the strict bounds and convergence. The binomial series has nonnegative terms, so monotone convergence permits integrating it term by term, including near t=0 where s=1. Expand(1+t)^k and use∫_0^∞t^j e^(−kt)dt=j!/k^{j+1}. This proves the series. For the tail, s(t)^k≤s(t) for everyk≥1; hence∫s^k≤2. Sum the omitted coefficients to obtain the rational upper error bound. The resulting enclosure is deliberately elementary rather than an efficient high-precision algorithm. For numerical work, monotonicity bounds the finite integral by left and right rectangles, whose difference is at most the step width. The tail after L is at most∫_L^∞s=(L+2)e^(−L). A floating implementation of those bounds still needs exponential rounding control before it becomes an interval-arithmetic certificate.',
+ 'Take the asymptotic law as an explicit hypothesis: c(Z,α)=1+(C0−3α)/Z+o(Z^(−1)), with fixedα. Setα=17/20.',
+ 'Then Z(1−c)→51/20−C0, which lies strictly between11/20 and31/20. Independent floating quadrature estimates C0≈1.344045682 and the limiting defect≈1.205954318. The rational-series verifier supplies a separate exact coarse enclosure, without calling this decimal a certified12-digit value.',
+ 'The sign of the leading defect is established for thisα under the stated asymptotic hypothesis. Its derivation from a physical front equation remains a separate mathematical task.',
+ 'No ODE, boundary conditions or normalization defining the historical c(Z,α) were recovered. This entry proves properties of C0 and conditional consequences of the displayed expansion, not that expansion or the previously reported ODE computations.',
+ 'Recover the actual traveling-wave boundary-value problem, prove existence and normalization, and estimate a uniform remainder on a specifiedα interval. Only then use the integral constant to certify finite-Z speed bounds.',
+ 'root_followups_2.json','Ignition-front large-',False)
+(P/'catalog_entries.json').write_text(json.dumps(entries,ensure_ascii=False,indent=2))
+(P/'catalog_report.json').write_text(json.dumps({'scope':'Six new treatments of recovered August1 inverse-problem/front formulas. No original front ODE recovered.','entries':len(entries),'source_files':['root_exact_1.json','root_followups_2.json'],'refs_checked':'Author primary lecture notes retrieved via web; proofs independently supplied here.'},indent=2))
+print(len(entries),'constructive approximation treatments written')

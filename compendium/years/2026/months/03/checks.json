@@ -1,0 +1,171 @@
+{
+  "checks": [
+    {
+      "id": "Y26-03-001",
+      "name": "generator energy form",
+      "status": "passed",
+      "detail": "AᵀP+PA=diag(−4,−6)≤diag(−4,−2)."
+    },
+    {
+      "id": "Y26-03-002",
+      "name": "exact nonnormal Lyapunov matrix",
+      "status": "passed",
+      "detail": "Exact rational equation and positive leading minors."
+    },
+    {
+      "id": "Y26-03-003",
+      "name": "inverse derivatives and independent Hessian",
+      "status": "passed",
+      "detail": "Scalar inverse second derivative 1/4; fixed resolvent permits Hessian condition100."
+    },
+    {
+      "id": "Y26-03-004",
+      "name": "Stein series and Euler step",
+      "status": "passed",
+      "detail": "P=4/3 for F=1/2; step3/2 gives unstable F=−2."
+    },
+    {
+      "id": "Y26-03-005",
+      "name": "gap and continuum tail",
+      "status": "passed",
+      "detail": "Inverse gap10; tC(t)=1−e^(−t) tends to1."
+    },
+    {
+      "id": "Y26-03-006",
+      "name": "ordinary versus induced matching",
+      "status": "passed",
+      "detail": "Complete2×2×2 support has matching2; any two selected triples generate cross edges, so induced optimum1."
+    },
+    {
+      "id": "Y26-03-007",
+      "name": "concentration threshold arithmetic",
+      "status": "passed",
+      "detail": "Necessary D≥1/3, and D=1/4 fails by1/12."
+    },
+    {
+      "id": "Y26-03-008",
+      "name": "independent endpoint-regularized integral",
+      "status": "passed",
+      "detail": "Power-substitution Simpson quadrature agrees with the analytic formula within2e−5; not a rigorous quadrature enclosure."
+    },
+    {
+      "id": "Y26-03-009",
+      "name": "parameter fibers",
+      "status": "passed",
+      "detail": "Pairs(2,1),(4,1/2) give exactly the same exponent1/2."
+    },
+    {
+      "id": "Y26-03-010",
+      "name": "recomputed flip candidate",
+      "status": "passed",
+      "detail": "Bisection bracket[.94,.95]; x≈0.9428576799823385, alpha≈0.7418045150878935; no global uniqueness claim."
+    },
+    {
+      "id": "Y26-03-011",
+      "name": "normalized jet ratios",
+      "status": "passed",
+      "detail": "Exact decimal-rational derivatives and logarithmic derivative slope."
+    },
+    {
+      "id": "Y26-03-012",
+      "name": "withheld recurrence coefficients",
+      "status": "passed",
+      "detail": "Rational two-equation fit; independent fifth/sixth residuals bounded far from zero."
+    },
+    {
+      "id": "Y26-03-013",
+      "name": "ADE information dimension",
+      "status": "passed",
+      "detail": "Degree≤2 in three variables has10 monomials; six reliably available rows cannot have full column rank."
+    },
+    {
+      "id": "Y26-03-014",
+      "name": "monotone exponential example bracket",
+      "status": "passed",
+      "detail": "Existence bracket and positive analytic derivative; transcendence uses the cited theorem, not numerics."
+    },
+    {
+      "id": "Y26-03-015",
+      "name": "Lambert lower-branch calibration",
+      "status": "passed",
+      "detail": "v=4 requires W_−1; principal real branch cannot return−2."
+    },
+    {
+      "id": "Y26-03-016",
+      "name": "commuting idempotent blocks",
+      "status": "passed",
+      "detail": "P,Q commute and are idempotent; three nonzero joint coordinate blocks sum toI."
+    },
+    {
+      "id": "Y26-03-017",
+      "name": "global counterexample and contraction",
+      "status": "passed",
+      "detail": "Nonsingular polar-exponential map has infinitely many zeros; invariant affine contraction has fixed point1/3."
+    },
+    {
+      "id": "Y26-03-018",
+      "name": "coupled residual normal matrix",
+      "status": "passed",
+      "detail": "Exact Hessian2I and unique residual zero(1/2,1/2)."
+    },
+    {
+      "id": "Y26-03-019",
+      "name": "anisotropy and equal singular values",
+      "status": "passed",
+      "detail": "Exact rational Gram matrix and mixed anisotropy41/210."
+    },
+    {
+      "id": "Y26-03-020",
+      "name": "log-scale integral",
+      "status": "passed",
+      "detail": "B0=2,w=1 gives exact area log5 and suppression1/5."
+    },
+    {
+      "id": "Y26-03-021",
+      "name": "invariant map ambiguity",
+      "status": "passed",
+      "detail": "Four even-power invariants fail to distinguish±2."
+    },
+    {
+      "id": "Y26-03-022",
+      "name": "least-squares slope",
+      "status": "passed",
+      "detail": "Sxx=2,Sxy=4, slope2 and intercept1; constant x gives zero denominator."
+    },
+    {
+      "id": "Y26-03-023",
+      "name": "quadratic gradient flip",
+      "status": "passed",
+      "detail": "Optimal step2/5 gives±3/5; stability boundary1/2 gives−1."
+    },
+    {
+      "id": "Y26-03-024",
+      "name": "exponential-kernel exact candidate",
+      "status": "passed",
+      "detail": "c=r=1: x=e⁻¹, alpha=e satisfy both equations."
+    },
+    {
+      "id": "Y26-03-025",
+      "name": "exact born two-cycle",
+      "status": "passed",
+      "detail": "Cycle±1/2 and multiplier1/4, exact rational arithmetic."
+    },
+    {
+      "id": "Y26-03-026",
+      "name": "reflection involution and damped multiplier",
+      "status": "passed",
+      "detail": "Anti-linear reflection squares toidentity; scalar multiplier modulus1/2 gives2⁻n decay."
+    },
+    {
+      "id": "Y26-03-027",
+      "name": "Fibonacci binomial and Pisot identity",
+      "status": "passed",
+      "detail": "Exact S6=13; conjugate power identityL6=18."
+    }
+  ],
+  "provenance": {
+    "entries": 27,
+    "literal_source_excerpts": "passed"
+  },
+  "all_passed": true
+}

@@ -1,0 +1,495 @@
+[
+  {
+    "id": "L01",
+    "title": "Observable quotient and cheapest probes",
+    "domains": [
+      "D14",
+      "D15",
+      "D12"
+    ],
+    "capabilities": [
+      "C03",
+      "C04",
+      "C05",
+      "C06",
+      "C14"
+    ],
+    "arithmetic": "Exact rational row reduction and all 64 candidate subsets",
+    "inputs": [
+      {
+        "key": "target",
+        "label": "Target",
+        "type": "select",
+        "options": [
+          [
+            "sum",
+            "x₁+x₂"
+          ],
+          [
+            "pair",
+            "(x₁,x₂)"
+          ]
+        ]
+      },
+      {
+        "key": "mask",
+        "label": "Probe subset mask (bits 0–5)",
+        "min": 0,
+        "max": 63,
+        "step": 1,
+        "value": 4
+      }
+    ],
+    "limits": "Four real coordinates and six fixed linear probes. This is a finite design problem, not a general nonlinear observability solver."
+  },
+  {
+    "id": "L02",
+    "title": "Finite selection, counting and ranking",
+    "domains": [
+      "D13",
+      "D12",
+      "D14"
+    ],
+    "capabilities": [
+      "C01",
+      "C02",
+      "C03",
+      "C06"
+    ],
+    "arithmetic": "Exhaustive integer enumeration of 64 masks",
+    "inputs": [
+      {
+        "key": "budget",
+        "label": "Weight budget",
+        "min": 0,
+        "max": 27,
+        "step": 1,
+        "value": 12
+      },
+      {
+        "key": "rank",
+        "label": "Requested zero-based feasible rank",
+        "min": 0,
+        "max": 63,
+        "step": 1,
+        "value": 0
+      },
+      {
+        "key": "mask",
+        "label": "Mask to rank (−1 result means infeasible)",
+        "min": 0,
+        "max": 63,
+        "step": 1,
+        "value": 21
+      }
+    ],
+    "limits": "Six fixed items; requested rank is clamped to the feasible range. The recovered annual records do not contain the complete Petersen-50 input table. Inverse ranking returns −1 for an infeasible query mask."
+  },
+  {
+    "id": "L03",
+    "title": "A graph census collision that higher heights resolve",
+    "domains": [
+      "D13",
+      "D09",
+      "D11"
+    ],
+    "capabilities": [
+      "C01",
+      "C02",
+      "C03",
+      "C04"
+    ],
+    "arithmetic": "Exact integer census; floating evaluation of its polynomial",
+    "inputs": [
+      {
+        "key": "total",
+        "label": "Total nonnegative integer height",
+        "min": 0,
+        "max": 6,
+        "step": 1,
+        "value": 3
+      },
+      {
+        "key": "q",
+        "label": "Polynomial evaluation q",
+        "min": 0,
+        "max": 1,
+        "step": 0.01,
+        "value": 0.5
+      }
+    ],
+    "limits": "Two explicit seven-vertex graphs. Equality of the binary census is verified for this pair only; it is not a universal graph reconstruction theorem."
+  },
+  {
+    "id": "L04",
+    "title": "Spectral cutoff: bias, noise and stable reconstruction",
+    "domains": [
+      "D15",
+      "D07",
+      "D08"
+    ],
+    "capabilities": [
+      "C05",
+      "C08",
+      "C09",
+      "C12"
+    ],
+    "arithmetic": "Analytic upper bounds evaluated in floating arithmetic",
+    "inputs": [
+      {
+        "key": "mode",
+        "label": "Singular-value decay",
+        "type": "select",
+        "options": [
+          [
+            "mild",
+            "Mild: k⁻ᵖ"
+          ],
+          [
+            "severe",
+            "Severe: exp(−ck)"
+          ]
+        ]
+      },
+      {
+        "key": "r",
+        "label": "Smoothness r",
+        "min": 0.5,
+        "max": 3,
+        "step": 0.5,
+        "value": 1
+      },
+      {
+        "key": "power",
+        "label": "Decay p or c",
+        "min": 0.5,
+        "max": 3,
+        "step": 0.5,
+        "value": 1
+      },
+      {
+        "key": "L",
+        "label": "Noise exponent L, δ=exp(−L)",
+        "min": 4,
+        "max": 14,
+        "step": 1,
+        "value": 8
+      },
+      {
+        "key": "N",
+        "label": "Selected cutoff N",
+        "min": 1,
+        "max": 60,
+        "step": 1,
+        "value": 8
+      }
+    ],
+    "limits": "Diagonal Hilbert-space model with a Sobolev ellipsoid and deterministic noise. The severe model fixes β=1. Bounds are not empirical error estimates."
+  },
+  {
+    "id": "L05",
+    "title": "Transport order and alternating projections",
+    "domains": [
+      "D06",
+      "D05",
+      "D07",
+      "D15"
+    ],
+    "capabilities": [
+      "C07",
+      "C09",
+      "C10",
+      "C13"
+    ],
+    "arithmetic": "Integer shears; floating trigonometric projection model",
+    "inputs": [
+      {
+        "key": "mode",
+        "label": "Model",
+        "type": "select",
+        "options": [
+          [
+            "holonomy",
+            "Shear loop"
+          ],
+          [
+            "projection",
+            "Alternating projections"
+          ]
+        ]
+      },
+      {
+        "key": "a",
+        "label": "Shear a",
+        "min": -3,
+        "max": 3,
+        "step": 1,
+        "value": 2
+      },
+      {
+        "key": "b",
+        "label": "Shear b",
+        "min": -3,
+        "max": 3,
+        "step": 1,
+        "value": 1
+      },
+      {
+        "key": "angle",
+        "label": "Line angle in degrees",
+        "min": 5,
+        "max": 85,
+        "step": 1,
+        "value": 35
+      }
+    ],
+    "limits": "Two explicit 2×2 constructions. Noncommutativity, curvature and convergence are related through specified operators; they are not interchangeable quantities."
+  },
+  {
+    "id": "L06",
+    "title": "Exact polynomial Moyal bracket",
+    "domains": [
+      "D16",
+      "D03",
+      "D06"
+    ],
+    "capabilities": [
+      "C01",
+      "C03",
+      "C11"
+    ],
+    "arithmetic": "Exact BigInt falling factorials and rational coefficients",
+    "inputs": [
+      {
+        "key": "a",
+        "label": "Exponent a in f=qᵃpᵇ",
+        "min": 0,
+        "max": 8,
+        "step": 1,
+        "value": 1
+      },
+      {
+        "key": "b",
+        "label": "Exponent b",
+        "min": 0,
+        "max": 8,
+        "step": 1,
+        "value": 5
+      },
+      {
+        "key": "c",
+        "label": "Exponent c in g=qᶜpᵈ",
+        "min": 0,
+        "max": 8,
+        "step": 1,
+        "value": 5
+      },
+      {
+        "key": "d",
+        "label": "Exponent d",
+        "min": 0,
+        "max": 8,
+        "step": 1,
+        "value": 3
+      }
+    ],
+    "limits": "One canonical pair (q,p), polynomial monomials, and the stated Weyl–Moyal convention. It does not classify arbitrary polynomial subspaces, nonlinear star products or all deformations."
+  },
+  {
+    "id": "L07",
+    "title": "Cyclotomic phase fibres",
+    "domains": [
+      "D01",
+      "D03",
+      "D16"
+    ],
+    "capabilities": [
+      "C01",
+      "C02",
+      "C04"
+    ],
+    "arithmetic": "Enumeration of all 384 units modulo 1680",
+    "inputs": [
+      {
+        "key": "modulus",
+        "label": "Target modulus m dividing 1680",
+        "type": "select",
+        "options": [
+          [
+            30,
+            "30 (56th-power phases)"
+          ],
+          [
+            6,
+            "6"
+          ],
+          [
+            8,
+            "8"
+          ],
+          [
+            10,
+            "10"
+          ],
+          [
+            12,
+            "12"
+          ],
+          [
+            15,
+            "15"
+          ],
+          [
+            24,
+            "24"
+          ],
+          [
+            40,
+            "40"
+          ],
+          [
+            48,
+            "48"
+          ],
+          [
+            60,
+            "60"
+          ],
+          [
+            120,
+            "120"
+          ]
+        ]
+      }
+    ],
+    "limits": "Exact phase counting. Projective braid-image closure requires the actual generating matrices and cannot be inferred from phase counts alone."
+  },
+  {
+    "id": "L08",
+    "title": "Shared uncertainty and robust comparison",
+    "domains": [
+      "D10",
+      "D11",
+      "D12"
+    ],
+    "capabilities": [
+      "C06",
+      "C12",
+      "C14"
+    ],
+    "arithmetic": "Exact interval formulas evaluated at decimal inputs",
+    "inputs": [
+      {
+        "key": "common",
+        "label": "Common uncertainty radius C",
+        "min": 0,
+        "max": 30,
+        "step": 1,
+        "value": 10
+      },
+      {
+        "key": "lo",
+        "label": "Lower differential effect",
+        "min": -5,
+        "max": 5,
+        "step": 0.1,
+        "value": 1
+      },
+      {
+        "key": "hi",
+        "label": "Upper differential effect",
+        "min": -5,
+        "max": 5,
+        "step": 0.1,
+        "value": 2
+      }
+    ],
+    "limits": "A specified jointly coupled additive model. Cancellation requires the same common variable in both alternatives; independent uncertainties would give a different set."
+  },
+  {
+    "id": "L09",
+    "title": "Homology changes when a face is filled",
+    "domains": [
+      "D04",
+      "D05",
+      "D13"
+    ],
+    "capabilities": [
+      "C01",
+      "C03",
+      "C10",
+      "C13"
+    ],
+    "arithmetic": "Exact rational boundary ranks",
+    "inputs": [
+      {
+        "key": "mode",
+        "label": "Finite complex",
+        "type": "select",
+        "options": [
+          [
+            "triangle",
+            "Triangle boundary"
+          ],
+          [
+            "square",
+            "Square cycle"
+          ],
+          [
+            "k33",
+            "K₃,₃ graph"
+          ]
+        ]
+      },
+      {
+        "key": "filled",
+        "label": "Fill the triangle face",
+        "type": "checkbox",
+        "value": false
+      }
+    ],
+    "limits": "Homology over Q of these small finite complexes. It does not compute integral torsion, sheaf cohomology or arbitrary persistent homology."
+  },
+  {
+    "id": "L10",
+    "title": "Complete Pell orbits, exact integer navigation",
+    "domains": [
+      "D01",
+      "D09",
+      "D14"
+    ],
+    "capabilities": [
+      "C01",
+      "C03",
+      "C04",
+      "C07"
+    ],
+    "arithmetic": "Exact integer unit recurrence and norm identity",
+    "inputs": [
+      {
+        "key": "seed",
+        "label": "Reduced seed",
+        "type": "select",
+        "options": [
+          [
+            "1,2",
+            "1+2√2"
+          ],
+          [
+            "5,4",
+            "5+4√2"
+          ]
+        ]
+      },
+      {
+        "key": "n",
+        "label": "Signed power of 3+2√2",
+        "min": -20,
+        "max": 20,
+        "step": 1,
+        "value": 4
+      }
+    ],
+    "limits": "The norm equation x²−2y²=−7 with its two reduced orbit seeds. The general Pell theory and other quadratic fields need their own reduction and local analysis."
+  }
+]

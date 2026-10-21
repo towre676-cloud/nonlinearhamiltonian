@@ -1,0 +1,50 @@
+{
+  "status": "passed",
+  "arithmetic": "exact rational/integer; standard library",
+  "suites": [
+    {
+      "suite": "quartic",
+      "return_code": 0,
+      "stdout": "{\"status\": \"passed\", \"check_count\": 20, \"apolar_basis_triples\": 5005, \"hessian_interpolation_points\": 1024}",
+      "stderr": ""
+    },
+    {
+      "suite": "structural",
+      "return_code": 0,
+      "stdout": "{\"status\": \"passed\", \"checks\": 8, \"classified_kernel_cases\": 90, \"cubic_kernel_cases\": 80}",
+      "stderr": ""
+    },
+    {
+      "suite": "monomial",
+      "return_code": 0,
+      "stdout": "{\"status\": \"passed\", \"checks\": 132, \"balanced_grid_cases\": 75615, \"unequal_grid_cases\": 204655}",
+      "stderr": ""
+    },
+    {
+      "suite": "independent",
+      "return_code": 0,
+      "stdout": "{\"status\": \"passed\", \"check_groups\": 7, \"exact_assertions\": 1144}",
+      "stderr": ""
+    },
+    {
+      "suite": "context",
+      "return_code": 0,
+      "stdout": "{\"status\": \"passed\", \"checks\": 5}",
+      "stderr": ""
+    },
+    {
+      "suite": "cubic factorization",
+      "return_code": 0,
+      "stdout": "{\"status\": \"passed\", \"exact_assertions\": 420}",
+      "stderr": ""
+    },
+    {
+      "suite": "user CLI integration",
+      "return_code": 0,
+      "stdout": "{\"status\": \"passed\", \"check_count\": 19, \"checks\": [{\"name\": \"Exact parser rational coefficients\", \"status\": \"passed\"}, {\"name\": \"Rejects unsupported expression __import__('os').system('x')\", \"status\": \"passed\"}, {\"name\": \"Rejects unsupported expression q/p\", \"status\": \"passed\"}, {\"name\": \"Rejects unsupported expression q**(-1)\", \"status\": \"passed\"}, {\"name\": \"Rejects unsupported expression unknown\", \"status\": \"passed\"}, {\"name\": \"Rejects unsupported expression 1/0\", \"status\": \"passed\"}, {\"name\": \"Zero numerator\", \"status\": \"passed\"}, {\"name\": \"Monomial finite all-degree example\", \"status\": \"passed\"}, {\"name\": \"Univariate exact space\", \"status\": \"passed\"}, {\"name\": \"Coordinate exchange explicit\", \"status\": \"passed\"}, {\"name\": \"Balanced active dimensions\", \"status\": \"passed\"}, {\"name\": \"Sextic exceptional partner\", \"status\": \"passed\"}, {\"name\": \"Higher monomial partner\", \"status\": \"passed\"}, {\"name\": \"Perturbed core full-space invariance\", \"status\": \"passed\"}, {\"name\": \"Homogeneous quartic kernel degree2\", \"status\": \"passed\"}, {\"name\": \"Homogeneous quartic kernel degree3\", \"status\": \"passed\"}, {\"name\": \"Homogeneous quartic kernel degree4\", \"status\": \"passed\"}, {\"name\": \"Homogeneous quartic kernel degree6\", \"status\": \"passed\"}, {\"name\": \"Homogeneous quartic kernel degree10\", \"status\": \"passed\"}]}",
+      "stderr": ""
+    }
+  ],
+  "failures": [],
+  "scope": "Named finite checks accompany all-degree proofs; this is not a formal proof-kernel certification or a new replay of archived global msolve receipts."
+}

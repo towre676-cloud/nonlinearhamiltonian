@@ -1,0 +1,106 @@
+{
+  "status": "passed",
+  "atlas_population": {
+    "main": 1051,
+    "supplementary": 14,
+    "total": 1065
+  },
+  "unique_uids": 1065,
+  "files": [
+    {
+      "file": "treatments.csv",
+      "rows": 1065,
+      "columns": 28,
+      "sha256": "371a31d7c5f07c578a799ac6e82ca269bcaa1c69792c2ea5e3cd283661f85a68"
+    },
+    {
+      "file": "treatments_2023.csv",
+      "rows": 128,
+      "columns": 28,
+      "sha256": "75bbc1d5d582486a7515c78f45f9426eaf53afe28436e123897e4434a1c8180e"
+    },
+    {
+      "file": "treatments_2024.csv",
+      "rows": 237,
+      "columns": 28,
+      "sha256": "4b540fc0c67eb28ea04dc9f7a51f9f3e0a5a5a67302d27ab667aaae66ef000d3"
+    },
+    {
+      "file": "treatments_2025.csv",
+      "rows": 351,
+      "columns": 28,
+      "sha256": "03dae8b5972882f913a80c71fed13e0c7040033774c02e4f0e7b4663368aee38"
+    },
+    {
+      "file": "treatments_2026.csv",
+      "rows": 349,
+      "columns": 28,
+      "sha256": "c9629034bc4accc2e3e6557bdadb0552183c36506184248d0603b278b5666a4d"
+    },
+    {
+      "file": "references.csv",
+      "rows": 997,
+      "columns": 4,
+      "sha256": "3ee05f0f9aa3880e54f11977e0416e77429a6ab9f8b856ad8002424e25b0ece3"
+    },
+    {
+      "file": "source_family_links.csv",
+      "rows": 919,
+      "columns": 4,
+      "sha256": "35d9449dbd08f3a28629373819f8dbdb48e8e947492bfa1d163ace3c492f2c47"
+    },
+    {
+      "file": "source_links.csv",
+      "rows": 68,
+      "columns": 3,
+      "sha256": "7ab236a2fbad7955aa84bec5e1f3c87ad4b2b57150e72ae84c1e9e286caa33e0"
+    },
+    {
+      "file": "year_coverage.csv",
+      "rows": 4,
+      "columns": 6,
+      "sha256": "c0060c00227a847c349691e9f886e80c9f5142e50fa6ca5e2b4c9106918217b0"
+    },
+    {
+      "file": "domain_year_coverage.csv",
+      "rows": 68,
+      "columns": 6,
+      "sha256": "93f917ea6332c89ff91b7143b331e897dea505165adc06549374798d044cdac0"
+    },
+    {
+      "file": "domains.csv",
+      "rows": 16,
+      "columns": 2,
+      "sha256": "5b99c3759c0ca3685c4913bfb7b60bb9e2e9a309b1d6befdb187c92b7b419f3a"
+    },
+    {
+      "file": "capabilities.csv",
+      "rows": 15,
+      "columns": 4,
+      "sha256": "aa9f81f4d63cce9ad8aa2a87e5c9acd4e229894b7b842292d7153dae631e5bd3"
+    },
+    {
+      "file": "families.csv",
+      "rows": 71,
+      "columns": 18,
+      "sha256": "09ab75773443361abcc082fa08eabc661540a87fceb2af800a6927e164d722ab"
+    }
+  ],
+  "formula_leading_text_escapes": [],
+  "credential_pattern_scan": {
+    "status": "no_patterns_found",
+    "scope": "Exported treatment columns only; no private retrieval metadata is exported."
+  },
+  "canonical_hash_policy": "Python json.dumps(source,sort_keys=True,separators=(comma,colon),ensure_ascii=False), UTF-8 SHA256",
+  "artifact_authoring": "All CSV data matrices authored and read back through @oai/artifact-tool Workbook range.values; CSV serialization preserves quoted multiline fields.",
+  "independent_roundtrip": {
+    "status": "passed",
+    "records_compared": 1065,
+    "canonical_hashes_compared": 1065,
+    "year_partitions_reconciled": true,
+    "source_math_columns_exact": true,
+    "original_date_spelling_exact": true,
+    "all_csv_rows_rectangular": true,
+    "all_csv_credential_pattern_scan": "no_patterns_found"
+  }
+}

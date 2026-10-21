@@ -1,0 +1,69 @@
+{
+  "reviewer": "analysis_and_arithmetic_geometry",
+  "scope": "Independent substantive and provenance review of all 35 July and 40 August entries available at this snapshot, with priority on arithmetic, spectral and cohomology claims.",
+  "status": "approved; all 75 owner check records pass and no actionable issue found",
+  "actionable_issues": [],
+  "reviewed_entry_counts": {
+    "07": 35,
+    "08": 40
+  },
+  "approved_scopes": [
+    "JulyQsqrt10finite rayclass computation uses the correct norm3 modulus and unit image; ordinary/narrow distinction and real-place conditions are explicit. Biquadratic discriminant andHilbertclassfield identification are consistent.",
+    "Julyternary7-adicobstruction,quarticnormalclosures,shadowweight/domain rejection,SATcrosspolytope counterexampleandExt-class-versus-dimension distinction are mathematically sound.",
+    "AugustPFprojection includesλ;GaussianHilbert-space support requires trace summability;Čech comparison requires homotopyequivalence;coarea includesgradient;Hallcounts correctlydifferfromExtclasses.",
+    "AugustHeawood/Paleyinverse moments,Picard–Fuchs recurrence/gaugefactor,rank-oneinverse,Hodge-residual counterexampleandp-adicprecision distinctions are correct.",
+    "SupplementaryAugustKPsoliton,Hilbert90,nonprincipalideal,clutchingChernclass,E2anomaly cancellation,Mellinsplit,Heegnerlocaltestandmultiplicityadjustment have soundhypothesesandproofs.",
+    "Alloriginaldateandreceiptfilenames/recordreferencesresolved;allassigneddatesappearinthecitedrawresultcontent. No inventedoriginaluserpromptwasfound in the reviewed metadata."
+  ],
+  "independent_checks": [
+    {
+      "name": "Heawood inverse moment via exact14x14matrix inversion",
+      "status": "passed",
+      "detail": "223/42"
+    },
+    {
+      "name": "Paley5moments via exact shifted-Laplacian inverse",
+      "status": "passed",
+      "detail": [
+        "2",
+        "6/5"
+      ]
+    },
+    {
+      "name": "Biquadratic discriminants andQraygroup",
+      "status": "passed",
+      "detail": "1600,6400;relative norm4;φ136=64"
+    },
+    {
+      "name": "Ternary square decomposition and7-adicdescent",
+      "status": "passed",
+      "detail": "729independent integer triples;generalproofcheckedalgebraically"
+    },
+    {
+      "name": "Quartic factorization at17",
+      "status": "passed",
+      "detail": "twoirreduciblequadratics;notcompletesplitting"
+    },
+    {
+      "name": "N11centralMellinsum independenteta-product coefficients",
+      "status": "passed",
+      "detail": {
+        "value": 0.2538418608559107,
+        "analytic_tail": 2.4836936817012958e-17,
+        "rounding": "notincludedintheanalytic-tailbound"
+      }
+    },
+    {
+      "name": "FiniteHilbert90and5-adicprecisionexamples",
+      "status": "passed",
+      "detail": "norm5−a=1;residual100invisiblemod25,visiblemod125"
+    },
+    {
+      "name": "Nonprincipalidealnorm2 andsquaredidealcombination",
+      "status": "passed",
+      "detail": "generatorcombinationgives2;positive-definitenormargumentvalidforallintegers"
+    }
+  ],
+  "author_verifier_status": "Both owner verifiers are now present and independently run successfully: July 35/35 checks; August 40/40 checks, including its 10 supplemental checks. Eight additional critical calculations were checked independently of those scripts.",
+  "limits": "General class field, duality, spectral and modular theorems remain cited background. Finite checks do not prove complete historical coverage or unrecovered empirical claims."
+}

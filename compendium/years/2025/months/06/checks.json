@@ -1,0 +1,217 @@
+{
+  "month": "2025-06",
+  "status": "passed",
+  "count": 25,
+  "checks": [
+    {
+      "id": "Y25-06-001",
+      "name": "Exact ABC source-table audit",
+      "status": "passed",
+      "detail": {
+        "radicals": [
+          15042,
+          10538990,
+          801426618118
+        ],
+        "logarithmic_qualities": [
+          1.6299116841270482,
+          0.7175768891692667,
+          0.3660685352932371
+        ],
+        "scope": "The third displayed tuple is rejected before being used as an ABC example."
+      }
+    },
+    {
+      "id": "Y25-06-002",
+      "name": "Smoothed-radical calculus example",
+      "status": "passed",
+      "detail": {
+        "r_sigma_one_n6": 2.94168275343288,
+        "first_log_derivative": 0.6425428272299614,
+        "second_log_derivative": -0.6085019793757673,
+        "scope": "No curvature or eigenvalue is inferred from these scalar derivatives."
+      }
+    },
+    {
+      "id": "Y25-06-003",
+      "name": "Power residues and factorial obstruction",
+      "status": "passed",
+      "detail": "Exact residue enumeration for four primes and twelve degrees, plus all-n modular proof in the entry."
+    },
+    {
+      "id": "Y25-06-004",
+      "name": "Factorial gcd via Legendre valuations",
+      "status": "passed",
+      "detail": "Valuation formula agrees with Euclid on2400 cases; exact branch examples give10 and1/2."
+    },
+    {
+      "id": "Y25-06-005",
+      "name": "Tanh positive branch and susceptibility",
+      "status": "passed",
+      "detail": {
+        "positive_root_at_lambda_two": 0.9575040240772688,
+        "residual": 0.0,
+        "scope": "Root count and asymptotics are proved analytically, not by this bisection."
+      }
+    },
+    {
+      "id": "Y25-06-006",
+      "name": "Point-interaction scalar equation and perturbation derivative",
+      "status": "passed",
+      "detail": {
+        "ground_wavenumber": 1.3957738437964173,
+        "ground_eigenvalue": 1.9481846230262256,
+        "small_coupling_difference_quotient": 1.2732354919275934,
+        "analytic_derivative": 1.2732395447351628,
+        "scope": "Finite numerical checks; the exact bracket and operator theorem are given in the text."
+      }
+    },
+    {
+      "id": "Y25-06-007",
+      "name": "Regular C3 naturality certificate",
+      "status": "passed",
+      "detail": "All six regular-set permutations checked; exactly the three translations commute with all equivariant right translations."
+    },
+    {
+      "id": "Y25-06-008",
+      "name": "Modal projector and tensor obstruction",
+      "status": "passed",
+      "detail": "The sign invariant space is zero, while sign⊗sign is trivial; categorical and tensor properties remain distinct."
+    },
+    {
+      "id": "Y25-06-009",
+      "name": "Declared projective Chow ring and shifts",
+      "status": "passed",
+      "detail": "Exact truncated ringZ[h]/h³. This tests the cellular Chow subtheory, not all field motivic cohomology."
+    },
+    {
+      "id": "Y25-06-010",
+      "name": "Nontrivial units witness against the false comparison",
+      "status": "passed",
+      "detail": "The unit2 has nonzero log-absolute-value image; H¹ of a point is zero. The all-degree/categorical contradiction is the written classical low-degree proof, not finite exponent sampling."
+    },
+    {
+      "id": "Y25-06-011",
+      "name": "Tensor-complex signs and torsion indices",
+      "status": "passed",
+      "detail": "For multiplication-by2 and3 complexes, d1d2=0; kernel generator(1,−1) is hit d times, giving both H0 and H1=Z/d. Omitting the sign gives nonzero composition."
+    },
+    {
+      "id": "Y25-06-012",
+      "name": "Torus unit exponents and blow-up rank shift",
+      "status": "passed",
+      "detail": "Laurent monomial product3t²·5t^(−3)=15t^(−1); the codimension-two point blow-up adds one Chow-degree-one class. General localization/blow-up theorems are explicit classical inputs."
+    },
+    {
+      "id": "Y25-06-013",
+      "name": "Projective-line finite-field and comparison test",
+      "status": "passed",
+      "detail": "Enumerated six F5 projective lines; Frobenius factors1 and5 give the same trace count. General comparison theorems are sourced, not certified by ranks."
+    },
+    {
+      "id": "Y25-06-014",
+      "name": "Rational interval logarithmic identities",
+      "status": "passed",
+      "detail": {
+        "fifth_cents": 701.9550008653874,
+        "syntonic_comma_cents": 21.50628959671478,
+        "scope": "No perceptual calibration or unrecovered Baker constant is asserted."
+      }
+    },
+    {
+      "id": "Y25-06-015",
+      "name": "Tuning oscillator and energy residual",
+      "status": "passed",
+      "detail": {
+        "maximum_residual": 2.220446049250313e-16,
+        "scope": "A new stipulated ODE, not a fitted musical model."
+      }
+    },
+    {
+      "id": "Y25-06-016",
+      "name": "Nonlinear Jacobian and dyad composition",
+      "status": "passed",
+      "detail": "The nonsymmetric Jacobian rules out a potential; independent rank-one matrix multiplication confirms the linear composition formula."
+    },
+    {
+      "id": "Y25-06-017",
+      "name": "Exact adjoint normal-equation solution",
+      "status": "passed",
+      "detail": "Forward and adjoint residual independently give zero gradient for the strictly convex regularized problem."
+    },
+    {
+      "id": "Y25-06-018",
+      "name": "Exact tripod overlap and sensor bitrate",
+      "status": "passed",
+      "detail": {
+        "overlap_and_exclusive_fractions": [
+          "2/5",
+          "3/10",
+          "3/10"
+        ],
+        "constructed_bits_per_second": 983040000
+      }
+    },
+    {
+      "id": "Y25-06-019",
+      "name": "Oscillator peak and regeneration denominator",
+      "status": "passed",
+      "detail": "Displacement peak squared frequency23 has denominator96 rather than100 at the undamped frequency; net and gross ratios differ."
+    },
+    {
+      "id": "Y25-06-020",
+      "name": "Exact confounding correlation and discount sum",
+      "status": "passed",
+      "detail": {
+        "squared_noise_scale": "53271/946729",
+        "normalized_30_year_sum": "24931666411171641005200513335660366546010/4640650289117164100520051333566036654601",
+        "scope": "No causal or policy benefit is inferred from the stipulated association."
+      }
+    },
+    {
+      "id": "Y25-06-021",
+      "name": "Unit invariance and arbitrary ranking",
+      "status": "passed",
+      "detail": "Weights(2,1) and(1,2) reverse the two coordinate-object rankings; coordinated unit change preserves the same scalar."
+    },
+    {
+      "id": "Y25-06-022",
+      "name": "Fourth-power balance and complete denominators",
+      "status": "passed",
+      "detail": {
+        "upward_stipulated_temperature": 2055.3450217837676,
+        "fixed_power_temperature_with_area_increase": 1576.3776717098856,
+        "with_auxiliary_efficiency": 0.5357142857142857,
+        "scope": "Arithmetic model audit, not device validation."
+      }
+    },
+    {
+      "id": "Y25-06-023",
+      "name": "Exhaustive B4 orbit and order certificate",
+      "status": "passed",
+      "detail": {
+        "orbit_sizes": [
+          1,
+          8,
+          24,
+          32,
+          16
+        ],
+        "GL4_F3_order": 24261120,
+        "scope": "Exceptional group order is a classical input; no unrecovered generator implementation is certified."
+      }
+    },
+    {
+      "id": "Y25-06-024",
+      "name": "Full reduced-polynomial evaluation isomorphism",
+      "status": "passed",
+      "detail": "The81×81 evaluation matrix has full rank overF3. The nonzero formal polynomial x³−x still vanishes on all points when the degree bound is removed."
+    },
+    {
+      "id": "MONTH-2025-06",
+      "name": "Attribution and proof scope audit",
+      "status": "passed",
+      "detail": "24 newly developed treatments; original prompts remain null, implementation postulates are not counted as proofs, and false universal motivic comparisons are corrected."
+    }
+  ]
+}

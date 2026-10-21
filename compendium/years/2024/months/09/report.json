@@ -1,0 +1,80 @@
+{
+  "month": "2024-09",
+  "status": "developed from all currently recovered month-bounded conversation clusters",
+  "entry_count": 28,
+  "ids": [
+    "Y24-09-001",
+    "Y24-09-002",
+    "Y24-09-003",
+    "Y24-09-004",
+    "Y24-09-005",
+    "Y24-09-006",
+    "Y24-09-007",
+    "Y24-09-008",
+    "Y24-09-009",
+    "Y24-09-010",
+    "Y24-09-011",
+    "Y24-09-012",
+    "Y24-09-013",
+    "Y24-09-014",
+    "Y24-09-015",
+    "Y24-09-016",
+    "Y24-09-017",
+    "Y24-09-018",
+    "Y24-09-019",
+    "Y24-09-020",
+    "Y24-09-021",
+    "Y24-09-022",
+    "Y24-09-023",
+    "Y24-09-024",
+    "Y24-09-025",
+    "Y24-09-026",
+    "Y24-09-027",
+    "Y24-09-028"
+  ],
+  "evidence_counts": {
+    "U": 2,
+    "A": 26
+  },
+  "recovered_dates": [
+    "2024-09-08",
+    "2024-09-10",
+    "2024-09-20",
+    "2024-09-22",
+    "2024-09-27",
+    "2024-09-29"
+  ],
+  "raw_retrieval_query_count": 5,
+  "raw_retrieval_files": [
+    "receipts.json",
+    "root_receipts.json",
+    "root_followups.json",
+    "root_details.json"
+  ],
+  "child_service_errors": "child_retrieval_errors.json; service unavailable in child context, not evidence of missing history",
+  "check_count": 28,
+  "checks_passed": 28,
+  "proof_scope": "Verifiers check the displayed finite calculations and algebraic certificates; manuscript proofs cover stated theorems. Referenced structural results are explicit external inputs.",
+  "development_word_count": 9777,
+  "entry_word_range": [
+    296,
+    399
+  ],
+  "source_gaps": [
+    "Conversation search returns selected excerpts rather than an exhaustive chat export; all currently recovered clusters are represented, but unrecovered chats may contain additional mathematics.",
+    "Original user questions are not recovered for most assistant passages; revised questions are new formulations and original_question remains null.",
+    "Truncated formula fragments remain preserved in raw receipts; missing hypotheses are not invented as historical content.",
+    "Undated file hits and files created in2026 were excluded from2024 historical attribution.",
+    "Failed Gmail/files searches do not establish that no corresponding mathematics existed."
+  ],
+  "exclusions": "Applied forecasts, products, cosmology/chemistry/battery claims and unsupported security/advice claims are not developed as mathematical conclusions. Arithmetic, algebraic and analytic content is retained.",
+  "attribution_note": "A denotes assistant-authored recovered mathematics; a USER_FACT retrieval wrapper does not override an explicit A timestamp.",
+  "major_repairs": [
+    "Power-parameter decimal claims numerically false; explicit actual values supplied.",
+    "Signed power map is invertible; the distinct unsigned logistic correction is not globally injective.",
+    "Irrational frequency does not guarantee a closed angular curve; topology requires a specified space.",
+    "Nonlinear support-function correction fails constant-width preservation.",
+    "Fractional derivative, Toeplitz positivity, Hardy cancellation and modular group specified.",
+    "Finite zero/spectral statistics and arbitrary trace deformations do not prove RH, BSD or a new moment product."
+  ]
+}

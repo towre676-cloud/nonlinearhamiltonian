@@ -1,0 +1,321 @@
+{
+  "reviewer": "Independent chapter10 author /root/dmodules_integrability_qft",
+  "month": "2026-02",
+  "status": "approved",
+  "scope": {
+    "entries_reviewed": 35,
+    "ids": [
+      "Y26-02-001",
+      "Y26-02-002",
+      "Y26-02-003",
+      "Y26-02-004",
+      "Y26-02-005",
+      "Y26-02-006",
+      "Y26-02-007",
+      "Y26-02-008",
+      "Y26-02-009",
+      "Y26-02-010",
+      "Y26-02-011",
+      "Y26-02-012",
+      "Y26-02-013",
+      "Y26-02-014",
+      "Y26-02-015",
+      "Y26-02-016",
+      "Y26-02-017",
+      "Y26-02-018",
+      "Y26-02-019",
+      "Y26-02-020",
+      "Y26-02-021",
+      "Y26-02-022",
+      "Y26-02-023",
+      "Y26-02-024",
+      "Y26-02-025",
+      "Y26-02-026",
+      "Y26-02-027",
+      "Y26-02-028",
+      "Y26-02-029",
+      "Y26-02-030",
+      "Y26-02-031",
+      "Y26-02-032",
+      "Y26-02-033",
+      "Y26-02-034",
+      "Y26-02-035"
+    ],
+    "proof_reading": "All listed definitions, theorem statements, proofs, worked examples and limits were read directly, including January034 added during the review and all ten root January catalog entries901–910.",
+    "source_audit": "Every source excerpt was checked as an exact substring of its actual receipt record; parsed U/A dates and roles match; month and nullable original-prompt fields checked.",
+    "finite_verifiers": [
+      "verify.py:35/35 passed"
+    ],
+    "limits": "Existing executable certificates were replayed. This review does not certify missing historical datasets, hidden Lean projects, analytic claims explicitly left conditional, or reference URLs beyond the mathematical scope read."
+  },
+  "proof_focus": [
+    "Hypergeometric and weighted subset survival, exact random barcode law, linear gluing and ultrametric/carry distinction.",
+    "Rounding witness, elliptic Ext/Serre duality, bounded t-structure cutoffs, exponential period convergence.",
+    "Hash/holonomy path-domain distinction, homometric power-spectrum collision and anisotropic homothety/indicial signs.",
+    "Doubling-tower lim1=Z2/Z proof including telescoping and exact recursive injectivity; contraction versus observation-boundary counterexample.",
+    "Empirical Fisher/Hessian distinction, integer Smith basis certificate, damping sampling convention, coupler elimination and Mathieu q2 sign/analytic continuation.",
+    "Path-induction contractibility, packing strictness, statistical zero-event bound, nonlinear pushforward variance, resolvent convexity conditions.",
+    "Genus-two counts/reciprocal polynomial, Swan filtration accounting, transfer matrices, suffix-deficit recursion, annuity assumptions, prefix entropy and quadratic Wasserstein proximal minimizer."
+  ],
+  "issues": [
+    {
+      "severity": "medium",
+      "id": "Y26-02-011",
+      "status": "resolved",
+      "description": "The previous unconditional noninjectivity statement did not specify permitted transport histories; the given U,V have injective product encoding on their positive-word monoid.",
+      "fix": "Author now explicitly allows reverse-edge/backtracking histories for this claim and exhibits UU^-1 versus empty. The updated entry makes no noninjectivity claim for the restricted positive-word monoid.",
+      "resolution_review": "Corrected result.statement, proof and original.math were inspected, and the updated35-check verifier passes."
+    }
+  ],
+  "remaining_blockers": [],
+  "source_results": [
+    {
+      "id": "Y26-02-001",
+      "status": "passed",
+      "receipt": "root_receipts.json record 0",
+      "date": "2026-02-03",
+      "evidence": "A"
+    },
+    {
+      "id": "Y26-02-002",
+      "status": "passed",
+      "receipt": "root_receipts.json record 0",
+      "date": "2026-02-03",
+      "evidence": "A"
+    },
+    {
+      "id": "Y26-02-003",
+      "status": "passed",
+      "receipt": "root_receipts.json record 0",
+      "date": "2026-02-03",
+      "evidence": "A"
+    },
+    {
+      "id": "Y26-02-004",
+      "status": "passed",
+      "receipt": "root_receipts.json record 0",
+      "date": "2026-02-06",
+      "evidence": "A"
+    },
+    {
+      "id": "Y26-02-005",
+      "status": "passed",
+      "receipt": "root_details_2.json record 0",
+      "date": "2026-02-20",
+      "evidence": "A"
+    },
+    {
+      "id": "Y26-02-006",
+      "status": "passed",
+      "receipt": "root_receipts.json record 0",
+      "date": "2026-02-23",
+      "evidence": "A"
+    },
+    {
+      "id": "Y26-02-007",
+      "status": "passed",
+      "receipt": "root_receipts.json record 0",
+      "date": "2026-02-17",
+      "evidence": "A"
+    },
+    {
+      "id": "Y26-02-008",
+      "status": "passed",
+      "receipt": "root_receipts.json record 0",
+      "date": "2026-02-17",
+      "evidence": "A"
+    },
+    {
+      "id": "Y26-02-009",
+      "status": "passed",
+      "receipt": "root_receipts.json record 0",
+      "date": "2026-02-16",
+      "evidence": "A"
+    },
+    {
+      "id": "Y26-02-010",
+      "status": "passed",
+      "receipt": "root_receipts.json record 0",
+      "date": "2026-02-08",
+      "evidence": "U"
+    },
+    {
+      "id": "Y26-02-011",
+      "status": "passed",
+      "receipt": "root_receipts.json record 0",
+      "date": "2026-02-14",
+      "evidence": "A"
+    },
+    {
+      "id": "Y26-02-012",
+      "status": "passed",
+      "receipt": "root_receipts.json record 0",
+      "date": "2026-02-11",
+      "evidence": "A"
+    },
+    {
+      "id": "Y26-02-013",
+      "status": "passed",
+      "receipt": "root_receipts.json record 0",
+      "date": "2026-02-12",
+      "evidence": "A"
+    },
+    {
+      "id": "Y26-02-014",
+      "status": "passed",
+      "receipt": "root_receipts.json record 0",
+      "date": "2026-02-13",
+      "evidence": "A"
+    },
+    {
+      "id": "Y26-02-015",
+      "status": "passed",
+      "receipt": "root_details_3.json record 0",
+      "date": "2026-02-26",
+      "evidence": "A"
+    },
+    {
+      "id": "Y26-02-016",
+      "status": "passed",
+      "receipt": "root_details_3.json record 0",
+      "date": "2026-02-28",
+      "evidence": "A"
+    },
+    {
+      "id": "Y26-02-017",
+      "status": "passed",
+      "receipt": "root_receipts.json record 0",
+      "date": "2026-02-03",
+      "evidence": "A"
+    },
+    {
+      "id": "Y26-02-018",
+      "status": "passed",
+      "receipt": "root_details_2.json record 0",
+      "date": "2026-02-20",
+      "evidence": "A"
+    },
+    {
+      "id": "Y26-02-019",
+      "status": "passed",
+      "receipt": "root_receipts.json record 0",
+      "date": "2026-02-19",
+      "evidence": "A"
+    },
+    {
+      "id": "Y26-02-020",
+      "status": "passed",
+      "receipt": "root_receipts.json record 0",
+      "date": "2026-02-20",
+      "evidence": "A"
+    },
+    {
+      "id": "Y26-02-021",
+      "status": "passed",
+      "receipt": "root_receipts.json record 0",
+      "date": "2026-02-20",
+      "evidence": "A"
+    },
+    {
+      "id": "Y26-02-022",
+      "status": "passed",
+      "receipt": "root_receipts.json record 0",
+      "date": "2026-02-20",
+      "evidence": "A"
+    },
+    {
+      "id": "Y26-02-023",
+      "status": "passed",
+      "receipt": "root_receipts.json record 0",
+      "date": "2026-02-24",
+      "evidence": "U"
+    },
+    {
+      "id": "Y26-02-024",
+      "status": "passed",
+      "receipt": "root_receipts.json record 0",
+      "date": "2026-02-08",
+      "evidence": "A"
+    },
+    {
+      "id": "Y26-02-025",
+      "status": "passed",
+      "receipt": "root_final_sweep.json record 0",
+      "date": "2026-02-02",
+      "evidence": "A"
+    },
+    {
+      "id": "Y26-02-026",
+      "status": "passed",
+      "receipt": "root_final_sweep.json record 0",
+      "date": "2026-02-02",
+      "evidence": "A"
+    },
+    {
+      "id": "Y26-02-027",
+      "status": "passed",
+      "receipt": "root_final_sweep.json record 0",
+      "date": "2026-02-07",
+      "evidence": "A"
+    },
+    {
+      "id": "Y26-02-028",
+      "status": "passed",
+      "receipt": "root_final_sweep.json record 0",
+      "date": "2026-02-04",
+      "evidence": "A"
+    },
+    {
+      "id": "Y26-02-029",
+      "status": "passed",
+      "receipt": "root_final_sweep.json record 0",
+      "date": "2026-02-04",
+      "evidence": "A"
+    },
+    {
+      "id": "Y26-02-030",
+      "status": "passed",
+      "receipt": "root_final_sweep.json record 0",
+      "date": "2026-02-12",
+      "evidence": "A"
+    },
+    {
+      "id": "Y26-02-031",
+      "status": "passed",
+      "receipt": "root_final_sweep.json record 0",
+      "date": "2026-02-10",
+      "evidence": "A"
+    },
+    {
+      "id": "Y26-02-032",
+      "status": "passed",
+      "receipt": "root_final_sweep.json record 0",
+      "date": "2026-02-04",
+      "evidence": "A"
+    },
+    {
+      "id": "Y26-02-033",
+      "status": "passed",
+      "receipt": "root_final_sweep.json record 0",
+      "date": "2026-02-10",
+      "evidence": "A"
+    },
+    {
+      "id": "Y26-02-034",
+      "status": "passed",
+      "receipt": "root_details_2.json record 0",
+      "date": "2026-02-21",
+      "evidence": "A"
+    },
+    {
+      "id": "Y26-02-035",
+      "status": "passed",
+      "receipt": "root_details_3.json record 0",
+      "date": "2026-02-26",
+      "evidence": "A"
+    }
+  ],
+  "snapshot_sha256": {
+    "entries.json": "9403d31ac1f9a9eb1993e179e55cab2602f14237024bf4ccb6376bcb600718fe"
+  }
+}

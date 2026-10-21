@@ -1,0 +1,172 @@
+{
+  "checks": [
+    {
+      "id": "Y25-12-000",
+      "name": "Schema and attribution",
+      "status": "pass",
+      "detail": "27 complete entries with source/date/author matching and no invented verbatim prompts."
+    },
+    {
+      "id": "Y25-12-001",
+      "name": "Stirling-Bernoulli matrix",
+      "status": "pass",
+      "detail": "All corrected rows and example moments exact; zero column and negative fourth moment certified."
+    },
+    {
+      "id": "Y25-12-002",
+      "name": "Bernoulli inverse and product",
+      "status": "pass",
+      "detail": "Bernoulli differential inverse returns x^3 under averaging; Blissard product begins 1-t."
+    },
+    {
+      "id": "Y25-12-003",
+      "name": "Weighted column norm",
+      "status": "pass",
+      "detail": "Weighted-column theorem attains the finite norm7/4 on e0; infinite geometric tail is2."
+    },
+    {
+      "id": "Y25-12-004",
+      "name": "FIR moment constraints",
+      "status": "pass",
+      "detail": "Third difference annihilates x^2 and maps x^3 to6."
+    },
+    {
+      "id": "Y25-12-005",
+      "name": "Composition coefficients",
+      "status": "pass",
+      "detail": "Exact composition expansion has degrees3through6, demonstrating increasing bandwidth."
+    },
+    {
+      "id": "Y25-12-006",
+      "name": "Logistic bifurcation arithmetic",
+      "status": "pass",
+      "detail": "Two-cycle multiplier4/25 at r=3.2; fixed-point boundary multiplier -1 at r=3."
+    },
+    {
+      "id": "Y25-12-007",
+      "name": "Euler-Maruyama variance",
+      "status": "pass",
+      "detail": "Discrete OU stationary variance2epsilon/3 satisfies the exact variance recurrence."
+    },
+    {
+      "id": "Y25-12-008",
+      "name": "Gramian action",
+      "status": "pass",
+      "detail": "OU Gramian and minimum action agree with both equivalent formulas."
+    },
+    {
+      "id": "Y25-12-009",
+      "name": "Fenchel duality",
+      "status": "pass",
+      "detail": "Fenchel maximizing momenta produce the stated hinge-squared Lagrangian."
+    },
+    {
+      "id": "Y25-12-010",
+      "name": "Metric and LC normalization",
+      "status": "pass",
+      "detail": "Straight-vs-detour norm lengths and LC angular/ordinary frequencies checked."
+    },
+    {
+      "id": "Y25-12-011",
+      "name": "Barrier inversion",
+      "status": "pass",
+      "detail": "Exact exponential-law inversion at the worked probability; logarithm argument is a rate ratio."
+    },
+    {
+      "id": "Y25-12-012",
+      "name": "Abel-Liouville distinction",
+      "status": "pass",
+      "detail": "Stable/unstable symmetric models share trace -0.035 but have opposite determinant signs."
+    },
+    {
+      "id": "Y25-12-013",
+      "name": "Remainder orbit orders",
+      "status": "pass",
+      "detail": "Exact decimal orders: {7: 6, 17: 16, 19: 18, 23: 22, 29: 28, 47: 46, 59: 58, 61: 60, 97: 96, 109: 108, 113: 112}"
+    },
+    {
+      "id": "Y25-12-014",
+      "name": "Softmax Fisher normalization",
+      "status": "pass",
+      "detail": "Uniform entropy log97 and Fisher null-direction coefficient p-mp^2=0."
+    },
+    {
+      "id": "Y25-12-015",
+      "name": "Tube proximal model",
+      "status": "pass",
+      "detail": "Diagonal proximal minimizer and discarded-gradient projection checked exactly."
+    },
+    {
+      "id": "Y25-12-016",
+      "name": "Quantization domain and sensitivity",
+      "status": "pass",
+      "detail": "Nearest quantization bound and centered LayerNorm perturbation bound checked."
+    },
+    {
+      "id": "Y25-12-017",
+      "name": "Pitchfork and fold barriers",
+      "status": "pass",
+      "detail": "Exact symmetric barrier1 and saddle-node barrier32/3 at kappa4."
+    },
+    {
+      "id": "Y25-12-018",
+      "name": "Original oscillator minimality",
+      "status": "pass",
+      "detail": "Exact nonzero Hankel8 determinant, zero Hankel9 and order-eight derivative recurrence."
+    },
+    {
+      "id": "Y25-12-019",
+      "name": "Original oscillator exact windings",
+      "status": "pass",
+      "detail": "Independently rebuilt Laurent polynomials; strict integer Rouche recursion gives disk counts6,2 and windings-2,-6 without unit roots; exact Bezout identities prove margins3/35 and1/26."
+    },
+    {
+      "id": "Y25-12-020",
+      "name": "Capped monoid exhaustive check",
+      "status": "pass",
+      "detail": "All216associativity triples in the six-element capped product, identity and two idempotents."
+    },
+    {
+      "id": "Y25-12-021",
+      "name": "Two-point geometric inequality",
+      "status": "pass",
+      "detail": "Exact unit-vector disorder inequality including antipodal directions; normalized constant weight has Jr=1."
+    },
+    {
+      "id": "Y25-12-022",
+      "name": "Coercivity shear counterexample",
+      "status": "pass",
+      "detail": "Every collinear vorticity pair has zero misalignment while shear gradient energy4pi^3 is positive."
+    },
+    {
+      "id": "Y25-12-023",
+      "name": "Conditional-proof dependency",
+      "status": "pass",
+      "detail": "Conditional implication has a countermodel to unconditional G; hard-coded Jordan residual is square-zero."
+    },
+    {
+      "id": "Y25-12-024",
+      "name": "Weighted rank counterexample",
+      "status": "pass",
+      "detail": "Hadamard rank changes0to1 under the claimed coordinate rule; one-sparse ambiguity is exact."
+    },
+    {
+      "id": "Y25-12-025",
+      "name": "Portal spectral projection",
+      "status": "pass",
+      "detail": "Orthogonal mode coefficient pairing gives13 and kills the specified excluded modes."
+    },
+    {
+      "id": "Y25-12-026",
+      "name": "Greedy deflation tails",
+      "status": "pass",
+      "detail": "Exact finite tails lie under2^(1-n); tail formula and trace-class limit are proved in text."
+    },
+    {
+      "id": "Y25-12-027",
+      "name": "OU cumulant hierarchy",
+      "status": "pass",
+      "detail": "Stationary OU cumulants satisfy mean3,varianceepsilon/2; changing forcing leaves drift eigenvalue-1."
+    }
+  ]
+}

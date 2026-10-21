@@ -1,0 +1,209 @@
+{
+  "month": "2026-03",
+  "entry_count": 27,
+  "entries": 27,
+  "check_count": 27,
+  "checks_passed": 27,
+  "status": "complete with explicit retrieval gaps",
+  "evidence_counts": {
+    "U": 4,
+    "A": 23
+  },
+  "source_receipts": [
+    "root_details_4.json",
+    "root_final_sweep.json",
+    "root_receipts.json"
+  ],
+  "retrieval_record_count": 3,
+  "date_range": [
+    "2026-03-01T02:25:36Z",
+    "2026-03-29T20:33:43Z"
+  ],
+  "original_questions_recovered": 0,
+  "provenance": "Every source_excerpt is a literal line in the actual raw returned result at its file/record locator; original.question is newly revised; original_question remains null. Retrieval author tags are preserved.",
+  "development_word_count": 7652,
+  "entry_word_count_range": [
+    215,
+    367
+  ],
+  "coverage": [
+    {
+      "id": "Y26-03-001",
+      "title": "A semigroup contraction is exactly a generator inequality in the same metric",
+      "date": "2026-03-01T02:25:36Z",
+      "evidence": "U"
+    },
+    {
+      "id": "Y26-03-002",
+      "title": "The Lyapunov Gramian certifies stability and exposes nonnormal amplification",
+      "date": "2026-03-03T02:18:28Z",
+      "evidence": "A"
+    },
+    {
+      "id": "Y26-03-003",
+      "title": "A resolvent measures gain; it does not determine arbitrary parameter curvature",
+      "date": "2026-03-03T02:23:49Z",
+      "evidence": "A"
+    },
+    {
+      "id": "Y26-03-004",
+      "title": "Discrete stability has its own Gramian and a unit-circle resolvent",
+      "date": "2026-03-03T02:23:49Z",
+      "evidence": "A"
+    },
+    {
+      "id": "Y26-03-005",
+      "title": "A vanishing gap produces inverse time scales only for the modes it controls",
+      "date": "2026-03-01T20:47:09Z",
+      "evidence": "U"
+    },
+    {
+      "id": "Y26-03-006",
+      "title": "Hypergraph matching bounds must distinguish disjointness from induced tensor restrictions",
+      "date": "2026-03-06T20:42:57Z",
+      "evidence": "A"
+    },
+    {
+      "id": "Y26-03-007",
+      "title": "A proposed concentration inequality yields a necessary numerical threshold",
+      "date": "2026-03-06T20:42:57Z",
+      "evidence": "A"
+    },
+    {
+      "id": "Y26-03-008",
+      "title": "The logarithmic-cosine integral has an exact evaluation on its convergence strip",
+      "date": "2026-03-08T22:57:42Z",
+      "evidence": "A"
+    },
+    {
+      "id": "Y26-03-009",
+      "title": "A two-parameter exponent collapses along explicit level curves",
+      "date": "2026-03-08T23:01:30Z",
+      "evidence": "A"
+    },
+    {
+      "id": "Y26-03-010",
+      "title": "The fixed-point flip reduces to one explicit scalar equation",
+      "date": "2026-03-28T17:48:44Z",
+      "evidence": "A"
+    },
+    {
+      "id": "Y26-03-011",
+      "title": "A normalized analytic germ has coordinate-dependent jets and invariantly stated derivatives",
+      "date": "2026-03-17T01:23:03Z",
+      "evidence": "A"
+    },
+    {
+      "id": "Y26-03-012",
+      "title": "A short recurrence is testable at the first coefficient it did not fit",
+      "date": "2026-03-17T22:30:35Z",
+      "evidence": "A"
+    },
+    {
+      "id": "Y26-03-013",
+      "title": "A bounded-degree differential relation becomes a finite linear algebra problem",
+      "date": "2026-03-17T22:37:28Z",
+      "evidence": "U"
+    },
+    {
+      "id": "Y26-03-014",
+      "title": "An exponential–rational master equation has a conditional transcendence obstruction",
+      "date": "2026-03-14T20:03:09Z",
+      "evidence": "A"
+    },
+    {
+      "id": "Y26-03-015",
+      "title": "A Lambert-W rewriting needs a branch condition and adds no missing equation",
+      "date": "2026-03-15T00:58:50Z",
+      "evidence": "A"
+    },
+    {
+      "id": "Y26-03-016",
+      "title": "Commuting projections give an exact Boolean block decomposition",
+      "date": "2026-03-26T01:31:43Z",
+      "evidence": "A"
+    },
+    {
+      "id": "Y26-03-017",
+      "title": "Local nonsingularity does not imply domain-global uniqueness",
+      "date": "2026-03-28T01:46:08Z",
+      "evidence": "A"
+    },
+    {
+      "id": "Y26-03-018",
+      "title": "A coupled residual energy is uniquely minimized when its Hessian is uniformly positive",
+      "date": "2026-03-27T23:07:13Z",
+      "evidence": "A"
+    },
+    {
+      "id": "Y26-03-019",
+      "title": "Singular-value anisotropy depends on a declared input and output metric",
+      "date": "2026-03-29T20:33:43Z",
+      "evidence": "A"
+    },
+    {
+      "id": "Y26-03-020",
+      "title": "A saturating scale kernel has an exact logarithmic area",
+      "date": "2026-03-29T20:33:43Z",
+      "evidence": "A"
+    },
+    {
+      "id": "Y26-03-021",
+      "title": "Four reported invariants need an injectivity theorem before they identify one singularity",
+      "date": "2026-03-19T11:52:05Z",
+      "evidence": "U"
+    },
+    {
+      "id": "Y26-03-022",
+      "title": "An alignment regression needs a declared sample and a nondegenerate denominator",
+      "date": "2026-03-04T07:18:50Z",
+      "evidence": "A"
+    },
+    {
+      "id": "Y26-03-023",
+      "title": "Gradient descent reaches a flip boundary at twice the inverse top curvature",
+      "date": "2026-03-14T09:19:00Z",
+      "evidence": "A"
+    },
+    {
+      "id": "Y26-03-024",
+      "title": "An exponential kernel family has an explicit transcendental flip candidate",
+      "date": "2026-03-09T03:56:19Z",
+      "evidence": "A"
+    },
+    {
+      "id": "Y26-03-025",
+      "title": "A born two-cycle has square-root branching while the fixed point may remain single-valued",
+      "date": "2026-03-12T03:23:50Z",
+      "evidence": "A"
+    },
+    {
+      "id": "Y26-03-026",
+      "title": "A reflected complex map is an involution; a damped Fourier recurrence has a separate stability test",
+      "date": "2026-03-08T03:49:27Z",
+      "evidence": "A"
+    },
+    {
+      "id": "Y26-03-027",
+      "title": "Fibonacci binomial sums and Pisot contraction have exact algebraic certificates",
+      "date": "2026-03-08T03:49:27Z",
+      "evidence": "A"
+    }
+  ],
+  "source_gaps": [
+    "The exact global uniqueness proof for the logarithmic-cosine flip was not recovered. The scalar reduction and numerical candidate are reproduced, without claiming global zero count or a certified bifurcation.",
+    "The exact defining germ ODE and seventh and higher coefficients were not recovered. The six displayed decimal coefficients are treated as rational input for finite tests, not exact analytic identities.",
+    "The underlying hypergraph/tensor support and concentration definitions were not recovered, so no matrix multiplication exponent is proved.",
+    "Original fMRI/EEG datasets, complete objective and successful run logs were not recovered. Reported measurements are not recreated.",
+    "Truncated mentions of a theta term, nested radicals, Darboux polynomials and a full no-chaos/transcendence program do not supply complete defining formulas or proofs. They are not filled with invented historical mathematics."
+  ],
+  "excluded_nonmathematics": [
+    "Business-model and financial-advice discussion without a separately specified mathematical question."
+  ],
+  "historical_completeness": "Comprehensive for distinct meaningful recovered mathematical clusters. Retrieval is not a complete chat export; an unrecovered passage is not evidence that no mathematics existed.",
+  "verification_scope": "Portable standard-library scripts check exact rational identities, finite ranks, combinatorial counts and selected numerical examples. They do not turn approximations into interval-certified global theorems.",
+  "references": "Relevant primary papers, author notes, official DLMF and author textbooks checked by web retrieval; unrelated default references removed. Elementary complete proofs may have an empty external reference list.",
+  "peer_fixes": [
+    "007 selects the actual same-timestamp concentration-bound source bullet."
+  ]
+}

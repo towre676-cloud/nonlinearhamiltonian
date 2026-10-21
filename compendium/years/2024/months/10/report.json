@@ -1,0 +1,89 @@
+{
+  "month": "2024-10",
+  "status": "developed from all currently recovered month-bounded conversation clusters",
+  "entry_count": 32,
+  "ids": [
+    "Y24-10-001",
+    "Y24-10-002",
+    "Y24-10-003",
+    "Y24-10-004",
+    "Y24-10-005",
+    "Y24-10-006",
+    "Y24-10-007",
+    "Y24-10-008",
+    "Y24-10-009",
+    "Y24-10-010",
+    "Y24-10-011",
+    "Y24-10-012",
+    "Y24-10-013",
+    "Y24-10-014",
+    "Y24-10-015",
+    "Y24-10-016",
+    "Y24-10-017",
+    "Y24-10-018",
+    "Y24-10-019",
+    "Y24-10-020",
+    "Y24-10-021",
+    "Y24-10-022",
+    "Y24-10-023",
+    "Y24-10-024",
+    "Y24-10-025",
+    "Y24-10-026",
+    "Y24-10-027",
+    "Y24-10-028",
+    "Y24-10-029",
+    "Y24-10-030",
+    "Y24-10-031",
+    "Y24-10-032"
+  ],
+  "evidence_counts": {
+    "A": 32
+  },
+  "recovered_dates": [
+    "2024-10-05",
+    "2024-10-07",
+    "2024-10-10",
+    "2024-10-11",
+    "2024-10-13",
+    "2024-10-18",
+    "2024-10-20",
+    "2024-10-22",
+    "2024-10-25",
+    "2024-10-26",
+    "2024-10-27",
+    "2024-10-28"
+  ],
+  "raw_retrieval_query_count": 4,
+  "raw_retrieval_files": [
+    "receipts.json",
+    "root_receipts.json",
+    "root_followups.json",
+    "root_details.json"
+  ],
+  "child_service_errors": "child_retrieval_errors.json; service unavailable in child context, not evidence of missing history",
+  "check_count": 32,
+  "checks_passed": 32,
+  "proof_scope": "Verifiers check the displayed finite calculations and algebraic certificates; manuscript proofs cover stated theorems. Referenced structural results are explicit external inputs.",
+  "development_word_count": 9266,
+  "entry_word_range": [
+    225,
+    353
+  ],
+  "source_gaps": [
+    "Conversation search returns selected excerpts rather than an exhaustive chat export; all currently recovered clusters are represented, but unrecovered chats may contain additional mathematics.",
+    "Original user questions are not recovered for most assistant passages; revised questions are new formulations and original_question remains null.",
+    "Truncated formula fragments remain preserved in raw receipts; missing hypotheses are not invented as historical content.",
+    "Undated file hits and files created in2026 were excluded from2024 historical attribution.",
+    "Failed Gmail/files searches do not establish that no corresponding mathematics existed.",
+    "October7 passage has conflicting U/A attribution between retrievals; conservatively marked A with conflict noted."
+  ],
+  "exclusions": "Applied forecasts, products, cosmology/chemistry/battery claims and unsupported security/advice claims are not developed as mathematical conclusions. Arithmetic, algebraic and analytic content is retained.",
+  "attribution_note": "A denotes assistant-authored recovered mathematics; a USER_FACT retrieval wrapper does not override an explicit A timestamp.",
+  "major_repairs": [
+    "Formal prime-indexed operator needs a common domain and convergence; bounded-interval Weyl count obstructs proposed all-zero spectrum.",
+    "Pointwise μΛ equals negative prime-only weight, not standard von Mangoldt prime-power weight.",
+    "RH-scale error must use li(x); x/logx omits an asymptotically larger second main term.",
+    "LWE coordinate changes, transported discrete logarithms and homomorphism tests do not validate security numbers.",
+    "Perfectoid/prismatic comparisons need objects, coefficient rings, maps and base changes; arbitrary height sums are not Weil heights."
+  ]
+}

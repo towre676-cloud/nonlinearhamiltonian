@@ -1,0 +1,187 @@
+{
+  "status": "passed",
+  "developed_entries": 351,
+  "months_represented": 12,
+  "months_with_recovered_entries": 12,
+  "verifier_programs": 14,
+  "scoped_records": 360,
+  "duplicate_records_omitted": 10,
+  "status_counts": {
+    "passed": 168,
+    "pass": 192
+  },
+  "results": [
+    {
+      "program": "months/01/verify.py",
+      "return_code": 0,
+      "stdout": "25 0",
+      "stderr": ""
+    },
+    {
+      "program": "months/02/verify.py",
+      "return_code": 0,
+      "stdout": "25 0",
+      "stderr": ""
+    },
+    {
+      "program": "months/03/verify.py",
+      "return_code": 0,
+      "stdout": "35/35 passed",
+      "stderr": ""
+    },
+    {
+      "program": "months/04/verify.py",
+      "return_code": 0,
+      "stdout": "28/28 passed",
+      "stderr": ""
+    },
+    {
+      "program": "months/05/verify.py",
+      "return_code": 0,
+      "stdout": "{\"month\": \"2025-05\", \"entries\": 24, \"checks\": 25, \"status\": \"passed\"}",
+      "stderr": ""
+    },
+    {
+      "program": "months/06/verify.py",
+      "return_code": 0,
+      "stdout": "{\"month\": \"2025-06\", \"entries\": 24, \"checks\": 25, \"status\": \"passed\"}",
+      "stderr": ""
+    },
+    {
+      "program": "months/07/verify.py",
+      "return_code": 0,
+      "stdout": "{\"month\": \"2025-07\", \"passed\": 35, \"total\": 35}",
+      "stderr": ""
+    },
+    {
+      "program": "months/08/verify.py",
+      "return_code": 0,
+      "stdout": "{\"status\": \"passed\", \"checks\": 10}\n{\"month\": \"2025-08\", \"passed\": 40, \"total\": 40}",
+      "stderr": ""
+    },
+    {
+      "program": "months/09/verify.py",
+      "return_code": 0,
+      "stdout": "21 / 21 pass",
+      "stderr": ""
+    },
+    {
+      "program": "months/10/verify.py",
+      "return_code": 0,
+      "stdout": "36 / 36 pass",
+      "stderr": ""
+    },
+    {
+      "program": "months/11/verify.py",
+      "return_code": 0,
+      "stdout": "32 / 32",
+      "stderr": ""
+    },
+    {
+      "program": "months/12/verify.py",
+      "return_code": 0,
+      "stdout": "28 / 28",
+      "stderr": ""
+    },
+    {
+      "program": "months/08/independent_early_verify.py",
+      "return_code": 0,
+      "stdout": "{\"status\": \"passed\", \"checks\": 10}",
+      "stderr": ""
+    },
+    {
+      "program": "independent_audit.py",
+      "return_code": 0,
+      "stdout": "{\"status\": \"passed\", \"checks\": 5, \"tangent_winding\": -2, \"w_winding\": -6, \"minimal_realization_dimension\": 8, \"hankel8\": \"3317490507809254951983513600000000\"}",
+      "stderr": ""
+    }
+  ],
+  "reports": [
+    {
+      "report": "months/01/checks.json",
+      "records": 25,
+      "raw_records": 25,
+      "sha256": "0e861d50d2f411292a916fe59ef042aefd1805ac9a7a3b80735fb98a4b6c7529"
+    },
+    {
+      "report": "months/02/checks.json",
+      "records": 25,
+      "raw_records": 25,
+      "sha256": "fb6b245b6d81c67a293956f41935e529b10c0ea5f498c6c983d86efc65944456"
+    },
+    {
+      "report": "months/03/checks.json",
+      "records": 35,
+      "raw_records": 35,
+      "sha256": "a206bc55b02e7214345275af7aba790139f8e083aeb91ab7963540716aaf25ee"
+    },
+    {
+      "report": "months/04/checks.json",
+      "records": 28,
+      "raw_records": 28,
+      "sha256": "83f7e5429c142c82480a6dc4b2d78b63bec44df106e55b7e8c16abae31b05912"
+    },
+    {
+      "report": "months/05/checks.json",
+      "records": 25,
+      "raw_records": 25,
+      "sha256": "c332bbba41205cb9846e1a4aba08f118a241a198213665dacd13a5cade474b20"
+    },
+    {
+      "report": "months/06/checks.json",
+      "records": 25,
+      "raw_records": 25,
+      "sha256": "52b6661aeafcf1182d87402bc870d0bde311e3d0986f18ab55406c7da0991da1"
+    },
+    {
+      "report": "months/07/checks.json",
+      "records": 35,
+      "raw_records": 35,
+      "sha256": "66572528b267c4bbaa172400ab2e8adbbca88ba63ddd5187712a09194a90f525"
+    },
+    {
+      "report": "months/08/checks.json",
+      "records": 40,
+      "raw_records": 40,
+      "sha256": "4487c5917abcad9bb96ccfe5990b5272b4b27ee42062685ca17dbdc60b29eaa5"
+    },
+    {
+      "report": "months/08/early_checks.json",
+      "records": 0,
+      "raw_records": 10,
+      "sha256": "818813d3ce0fd7766a96ae590990162e47f95c9af924cb707ffbd437ff1c82d6"
+    },
+    {
+      "report": "months/09/checks.json",
+      "records": 21,
+      "raw_records": 21,
+      "sha256": "8056e319731e818813a776f712ad5f5a611cc84183c4381f36749d8310252bb8"
+    },
+    {
+      "report": "months/10/checks.json",
+      "records": 36,
+      "raw_records": 36,
+      "sha256": "efa0edec9bcf82b4bb171f6a61813325c79b27de9b3e751c860cc9f6f1d0a8a6"
+    },
+    {
+      "report": "months/11/checks.json",
+      "records": 32,
+      "raw_records": 32,
+      "sha256": "befea32fa8a12b50e7110c907718c73ff8ebd60fa5c6ec4020466058ee686b8f"
+    },
+    {
+      "report": "months/12/checks.json",
+      "records": 28,
+      "raw_records": 28,
+      "sha256": "5fef3847ef797373f29f5ddb53bd13aa3bb1f48fcdf04faf86f9f5c926732783"
+    },
+    {
+      "report": "independent_checks.json",
+      "records": 5,
+      "raw_records": 5,
+      "sha256": "0e0fa5bde192d2538a4d8ed483ffba202569b0c8bf13fc6e42499e92c705666d"
+    }
+  ],
+  "failures": [],
+  "scope": "Finite examples, exact certificates and numerical checks only; written proofs and cited general results have their own stated scope. Retrieval/schema checks are separated in the individual ledger."
+}

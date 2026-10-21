@@ -1,0 +1,1658 @@
+[
+  {
+    "id": "Y25-03-001",
+    "title": "A low-rank approximation has an exact error certificate",
+    "status": "Developed classical result with a checked example; recovered claims corrected where needed",
+    "summary": "The recovered tensor-processing proposal names SVD and rank reduction but gives no measured complexity certificate. The matrix problem has a sharp mathematical answer: singular values determine the best Frobenius error. This supplies a reproducible approximation statement independently of any hardware throughput.",
+    "definitions": [
+      "Let A be an m×n real matrix with singular values s1≥s2≥…≥0. The Frobenius norm squares and sums all entries.",
+      "A rank-k approximation is a matrix B with rank at mostk; arithmetic cost and approximation error are different quantities."
+    ],
+    "result": {
+      "name": "Truncated SVD optimality",
+      "statement": "The minimum of ||A−B||_F² over rank(B)≤k isΣ_(j>k)s_j², attained by retaining the firstk singular terms.",
+      "proof": "LetP be the orthogonal projection onto the column space ofB, with rank at mostk. Decompose A−B=(I−P)A+(PA−B); the two summands have orthogonal column spaces, so its squared norm is at least||(I−P)A||_F²=Tr(AAᵀ)−Tr(PAAᵀ). In an eigenbasis ofAAᵀ the latter trace isΣs_j²p_jj, where0≤p_jj≤1 andΣp_jj≤k. Its maximum is the sum of the k largest squared singular values. This proves the lower bound. TakingB=Σ_(j≤k)s_ju_jv_jᵀ attains it, completing the proof including ties."
+    },
+    "example": {
+      "setup": "Use A=diag(5,3,1).",
+      "calculation": "Its total squared norm is35. The optimal rank-one matrixdiag(5,0,0) has error9+1=10, and rank two has error1. A relative squared error below1/20 requires rank two, since10/35>1/20 but1/35<1/20.",
+      "conclusion": "The retained rank can now be chosen from a declared error target, rather than from a headline reduction factor."
+    },
+    "limits": "The theorem concerns a matrix and the Frobenius norm. A tensor’s chosen unfolding can change the ranks, and a matrix error bound does not directly certify a downstream control or topology decision.",
+    "extension": "For the actual contraction, state dimensions and an operation-count model, bound the propagated contraction error with operator norms, and measure runtime separately.",
+    "references": [
+      {
+        "label": "Eckart–Young, The approximation of one matrix by another of lower rank",
+        "url": "https://doi.org/10.1007/BF02288367"
+      }
+    ],
+    "original": {
+      "date": "2025-03-01T15:38:22Z",
+      "month": "2025-03",
+      "evidence": "A",
+      "field": "Linear algebra",
+      "concept": "A low-rank approximation has an exact error certificate",
+      "origin": "Recovered dated conversation evidence; mathematical development newly written",
+      "question": "What does a rank-k reduction preserve, and which error can be certified before assigning speed claims?",
+      "math": "The minimum of ||A−B||_F² over rank(B)≤k isΣ_(j>k)s_j², attained by retaining the firstk singular terms.",
+      "finish": "Precise result, proof, worked example and explicit limits",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://doi.org/10.1007/BF02288367"
+      ],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c1] A@2025-03-01T15:38:22Z, +1y7m: WRC math: tensor contractions/SVD, persistent homology \\(H^1=\\ker\\partial_1/\\mathrm{im}\\partial_0\\), servo trace/argmax; claimed 500M points/s, 50M TOPS, 2–5ms, rank-\\(k\\) reduction; later proposed TT/HT, Morse filtrations, differentiable surrogates.",
+      "retrieval_receipt": "root_receipts.json record 0",
+      "original_question": null,
+      "attribution_note": "The historical mathematical excerpt is assistant-authored. No original user question is inferred; the revised question and worked development are new. The source_excerpt is a literal retrieved result bullet (including any original truncation), not a reconstructed transcript. It may summarize historical content; no verbatim original question is inferred."
+    }
+  },
+  {
+    "id": "Y25-03-002",
+    "title": "Tensor compression uses isometries, not an inverse of a rectangular map",
+    "status": "Developed classical result with a checked example; recovered claims corrected where needed",
+    "summary": "The recovered MERA expression uses an inverse that may not exist for a dimension-reducing map. An isometric embedding gives a precise compression. It preserves Hermiticity but generally loses an invariant subspace; the loss can be measured by an explicit residual.",
+    "definitions": [
+      "LetZ:C^r→C^d satisfyZ*Z=I_r and letH=H* onC^d. DefineH_eff=Z*HZ andP=ZZ*.",
+      "The discarded coupling isR=(I−P)HZ; it vanishes exactly when the embedded subspace isH-invariant."
+    ],
+    "result": {
+      "name": "Compression and a residual identity",
+      "statement": "H_eff is Hermitian and HZ−ZH_eff=R. IfH_effv=λv with||v||=1, then||(H−λ)Zv||=||Rv||, so a self-adjoint residual bound certifies spectral proximity by||Rv||.",
+      "proof": "Taking adjoints gives(Z*HZ)*=Z*HZ. NextZH_eff=ZZ*HZ=PHZ, and subtracting yieldsR. SinceZ preserves norms, Zv is a unit vector. The eigenvalue equation then gives(H−λ)Zv=Rv. For a HermitianH, diagonalize it and expandZv in its orthonormal eigenbasis: the residual norm squared isΣ|c_j|²(E_j−λ)², at leastdist(λ,σ(H))². Thusdist≤||Rv||. No inverse ofZ is used. WhenR=0 the restriction is genuinely invariant and the compressed eigenvalues are exact eigenvalues; otherwise compression is a variational approximation."
+    },
+    "example": {
+      "setup": "TakeH=diag(0,2) andZ=(1,1)ᵀ/√2, a2×1 isometry.",
+      "calculation": "H_eff=1, whileHZ−ZH_eff=(−1,1)ᵀ/√2 has norm1. The candidate1 is exactly distance1 from the true spectrum{0,2}. Thus a valid Hermitian compression can produce an intermediate value rather than an exact level.",
+      "conclusion": "The example supplies both the correct effective operator and a quantitative certificate of what it loses."
+    },
+    "limits": "An arbitrary tensor-network map need not be isometric, and repeated compressions accumulate errors. No MERA efficiency, emergent metric or arithmetic correspondence follows from this finite example.",
+    "extension": "For a sequence of blocking maps, track each discarded coupling and prove a cumulative bound on the target spectral cluster.",
+    "references": [
+      {
+        "label": "Eckart–Young, The approximation of one matrix by another of lower rank",
+        "url": "https://doi.org/10.1007/BF02288367"
+      },
+      {
+        "label": "Connes, Noncommutative geometry and reality",
+        "url": "https://alainconnes.org/wp-content/uploads/reality.pdf"
+      }
+    ],
+    "original": {
+      "date": "2025-03-01T17:37:28Z",
+      "month": "2025-03",
+      "evidence": "A",
+      "field": "Tensor networks and spectral analysis",
+      "concept": "Tensor compression uses isometries, not an inverse of a rectangular map",
+      "origin": "Recovered dated conversation evidence; mathematical development newly written",
+      "question": "How should an effective operator be defined when a tensor-network coarse map changes dimension?",
+      "math": "H_eff is Hermitian and HZ−ZH_eff=R. IfH_effv=λv with||v||=1, then||(H−λ)Zv||=||Rv||, so a self-adjoint residual bound certifies spectral proximity by||Rv||.",
+      "finish": "Precise result, proof, worked example and explicit limits",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://doi.org/10.1007/BF02288367",
+        "https://alainconnes.org/wp-content/uploads/reality.pdf"
+      ],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c1] A@2025-03-01T17:37:28Z, +1y7m: proposed MERA \\(H_{\\rm eff}=Z^{-1}H_{\\rm Planck}Z\\), quantum embedding \\(|\\psi\\rangle=\\sum c_i|x_i\\rangle\\), \\(ds_{\\rm eff",
+      "retrieval_receipt": "root_receipts.json record 0",
+      "original_question": null,
+      "attribution_note": "The historical mathematical excerpt is assistant-authored. No original user question is inferred; the revised question and worked development are new. The source_excerpt is a literal retrieved result bullet (including any original truncation), not a reconstructed transcript. It may summarize historical content; no verbatim original question is inferred."
+    }
+  },
+  {
+    "id": "Y25-03-003",
+    "title": "Persistent topology starts with a chain complex whose boundary squares to zero",
+    "status": "Developed classical result with a checked example; recovered claims corrected where needed",
+    "summary": "The historical formula mixes upper-index cohomology with lower-index boundary notation. A small filtered triangle gives an exact replacement and distinguishes homology from cohomology before a differentiable surrogate is introduced.",
+    "definitions": [
+      "For chains, ∂k:C_k→C_(k−1), H_k=ker∂k/im∂_(k+1). For cochains, δ^k:C^k→C^(k+1), H^k=kerδ^k/imδ^(k−1).",
+      "Orient edges12,23,31 and the filled face123 consistently. Put all vertices at time0, all edges at time1 and the face at time2."
+    ],
+    "result": {
+      "name": "An exact persistence interval",
+      "statement": "OverQ, degree-one homology of this filtration is zero before1, one-dimensional for1≤t<2, and zero from2 onward. Its single interval is[1,2).",
+      "proof": "The vertex–edge boundary matrix has columns(−1,1,0),(0,−1,1),(1,0,−1). Its rank is2 and its kernel is spanned byc=(1,1,1). The face boundary is exactlyc, so∂1∂2=0. Before edges appear,C1=0. With all edges and no face,H1=ker∂1 is one-dimensional. When the face appears, its boundary fills that kernel, makingH1=0. Each inclusion sends the cycle to the same chain until it becomes a boundary, proving the stated persistence rather than merely counting dimensions. Cohomology gives the dual vector-space result overQ, but uses transposed coboundaries and reversed arrows."
+    },
+    "example": {
+      "setup": "Perturb all assigned cell times by at mostε, while preserving the face-after-boundary rule.",
+      "calculation": "The old sublevel complex at timet is contained in the new one at t+ε, and conversely. Thus there are explicitε-shift maps; their compositions are the original inclusions shifted by2ε. These are deterministic comparisons, not inferred from processing speed.",
+      "conclusion": "A topology computation now has valid indices, an incidence matrix and a finite exact barcode."
+    },
+    "limits": "A smooth surrogate for a rank or argmax need not preserve this barcode. Changing adjacency or thresholding can alter the complex and requires its own comparison theorem.",
+    "extension": "Publish the actual filtration rule and certify cell-time errors. Then prove an interleaving before claiming that a compressed or learned approximation preserves homology.",
+    "references": [
+      {
+        "label": "Cohen-Steiner–Edelsbrunner–Harer, Stability of persistence diagrams",
+        "url": "https://doi.org/10.1007/s00454-006-1276-5"
+      }
+    ],
+    "original": {
+      "date": "2025-03-01T15:38:22Z",
+      "month": "2025-03",
+      "evidence": "A",
+      "field": "Algebraic topology",
+      "concept": "Persistent topology starts with a chain complex whose boundary squares to zero",
+      "origin": "Recovered dated conversation evidence; mathematical development newly written",
+      "question": "Which boundary maps and filtration make the recovered persistent-homology notation correct?",
+      "math": "OverQ, degree-one homology of this filtration is zero before1, one-dimensional for1≤t<2, and zero from2 onward. Its single interval is[1,2).",
+      "finish": "Precise result, proof, worked example and explicit limits",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://doi.org/10.1007/s00454-006-1276-5"
+      ],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c1] A@2025-03-01T15:38:22Z, +1y7m: WRC math: tensor contractions/SVD, persistent homology \\(H^1=\\ker\\partial_1/\\mathrm{im}\\partial_0\\), servo trace/argmax; claimed 500M points/s, 50M TOPS, 2–5ms, rank-\\(k\\) reduction; later proposed TT/HT, Morse filtrations, differentiable surrogates.",
+      "retrieval_receipt": "root_receipts.json record 0",
+      "original_question": null,
+      "attribution_note": "The historical mathematical excerpt is assistant-authored. No original user question is inferred; the revised question and worked development are new. The source_excerpt is a literal retrieved result bullet (including any original truncation), not a reconstructed transcript. It may summarize historical content; no verbatim original question is inferred."
+    }
+  },
+  {
+    "id": "Y25-03-004",
+    "title": "A QUBO and a one-edge QAOA instance can be solved exactly",
+    "status": "Developed classical result with a checked example; recovered claims corrected where needed",
+    "summary": "The recovered hybrid proposal names QUBO, annealing and QAOA without a verified problem instance. A maximum-cut encoding provides an exact classical certificate and a completely solvable one-edge quantum circuit.",
+    "definitions": [
+      "For binaryx_i∈{0,1}, an edge cut indicator isx_i+x_j−2x_ix_j. Minimize its negative to obtain a QUBO.",
+      "For one quantum edge setC=(I−Z1Z2)/2,B=X1+X2 and|ψ〉=e^(−iβB)e^(−iγC)|++〉."
+    ],
+    "result": {
+      "name": "Exact classical and quantum values",
+      "statement": "On a triangle the maximum cut is2, attained by every nonconstant binary labeling. For a single quantum edge,〈C〉=1/2+(1/2)sin(4β)sinγ, reaching1 atβ=π/8,γ=π/2.",
+      "proof": "A triangle has three edges. A constant labeling cuts none; a nonconstant labeling places one vertex on one side and two on the other and cuts exactly the two incident cross edges. Enumeration of eight labels is complete. For the quantum formula, conjugateZ1Z2 by the two X rotations. The resulting terms are cos²(2β)Z1Z2, sin(2β)cos(2β)(Z1Y2+Y1Z2), and sin²(2β)Y1Y2. Conjugating the cross terms by the diagonal cost phase and evaluating in|++〉 yields〈Z1Z2〉=−sin(4β)sinγ; the other contributions vanish. Substitution intoC gives the expression. Direct four-component complex arithmetic independently checks the sign convention."
+    },
+    "example": {
+      "setup": "Take the stated angles on the single edge and compare with the uniform initial state.",
+      "calculation": "The initial cut expectation is1/2. After the circuit the probability is supported on the two cut states01 and10, giving expectation1. On the triangle, the exact optimal negative QUBO energy is−2.",
+      "conclusion": "This is a full small-instance certificate, rather than an unsupported throughput or generic optimization claim."
+    },
+    "limits": "An exact one-edge solution does not imply an advantage on large QUBOs. Encoding constraints may require penalty bounds, and hardware noise and parameter-search cost are separate issues.",
+    "extension": "For a specified finite family, publish the QUBO coefficients, exact lower bounds and circuit expectations, then compare complete computational costs at a fixed approximation guarantee.",
+    "references": [
+      {
+        "label": "Farhi–Goldstone–Gutmann, A quantum approximate optimization algorithm",
+        "url": "https://arxiv.org/abs/1411.4028"
+      }
+    ],
+    "original": {
+      "date": "2025-03-01T15:44:25Z",
+      "month": "2025-03",
+      "evidence": "A",
+      "field": "Discrete optimization",
+      "concept": "A QUBO and a one-edge QAOA instance can be solved exactly",
+      "origin": "Recovered dated conversation evidence; mathematical development newly written",
+      "question": "What exact optimization and quantum expectation are available before asserting a hybrid optimizer advantage?",
+      "math": "On a triangle the maximum cut is2, attained by every nonconstant binary labeling. For a single quantum edge,〈C〉=1/2+(1/2)sin(4β)sinγ, reaching1 atβ=π/8,γ=π/2.",
+      "finish": "Precise result, proof, worked example and explicit limits",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://arxiv.org/abs/1411.4028"
+      ],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c1] A@2025-03-01T15:44:25Z, +1y7m: hybrid QUBO \\(H=\\sum Q_{ij}x_ix_j\\), annealing/QAOA; Poisson event model \\(P(t)=1-e^{-\\lambda t}\\); meta-learning tensor factorization, RL homology filtering, evolutionary servo control; many speed/energy figures were asserted, not demonstrated.",
+      "retrieval_receipt": "root_receipts.json record 0",
+      "original_question": null,
+      "attribution_note": "The historical mathematical excerpt is assistant-authored. No original user question is inferred; the revised question and worked development are new. The source_excerpt is a literal retrieved result bullet (including any original truncation), not a reconstructed transcript. It may summarize historical content; no verbatim original question is inferred."
+    }
+  },
+  {
+    "id": "Y25-03-005",
+    "title": "A Poisson response model gives an identifiable rate, not a latency theorem",
+    "status": "Developed classical result with a checked example; recovered claims corrected where needed",
+    "summary": "The historical response probability is exactly the first-arrival law of a homogeneous Poisson process. It is a mathematical model with strong assumptions: independent stationary increments and a constant rate. A formula alone does not validate the claimed speed of an implementation.",
+    "definitions": [
+      "LetN(t) be a Poisson process of rateλ>0 andT=inf{t:N(t)≥1}.",
+      "Its survival probability isS(t)=P(T>t); the hazard rate ish(t)=−d(logS(t))/dt."
+    ],
+    "result": {
+      "name": "Arrival probability and rate identification",
+      "statement": "P(T≤t)=1−e^(−λt), E[T]=1/λ, andh(t)=λ. Given an exact nontrivial probabilityp at timet>0, the unique compatible rate isλ=−log(1−p)/t.",
+      "proof": "The eventT>t isN(t)=0. The Poisson mass formula givesP(N(t)=0)=e^(−λt), establishing the distribution. The tail integralE[T]=∫₀∞P(T>t)dt equals1/λ. DifferentiatinglogS yields the constant hazard, and solvingS(t)=1−p gives the identification formula. The memoryless identityP(T>s+t|T>s)=S(s+t)/S(s)=S(t) follows immediately. Conversely a claimed model whose conditional waiting probability depends on past waiting time is not this homogeneous arrival law."
+    },
+    "example": {
+      "setup": "Useλ=2 in inverse-time units.",
+      "calculation": "The median solvese^(−2t)=1/2, sot_med=(log2)/2, whereas the mean is1/2. At that median, the probability of at least two events is1−e^(−λt)(1+λt)=(1−log2)/2. First-arrival probability and event count are therefore different observables.",
+      "conclusion": "The model yields exact quantities that can be compared with data only after the event and time unit are defined."
+    },
+    "limits": "Bursting, refractory periods, nonstationary rates and dependent arrivals violate the stated assumptions. None of the historical millisecond or energy numbers is certified by this distributional calculation.",
+    "extension": "Test the constant-hazard prediction on declared time bins; for a nonhomogeneous rateλ(t), replaceλt by the integrated intensity∫₀ᵗλ(s)ds and derive the revised likelihood.",
+    "references": [],
+    "original": {
+      "date": "2025-03-01T15:44:25Z",
+      "month": "2025-03",
+      "evidence": "A",
+      "field": "Probability",
+      "concept": "A Poisson response model gives an identifiable rate, not a latency theorem",
+      "origin": "Recovered dated conversation evidence; mathematical development newly written",
+      "question": "What assumptions justify the recovered event-response formula and how can its rate be checked?",
+      "math": "P(T≤t)=1−e^(−λt), E[T]=1/λ, andh(t)=λ. Given an exact nontrivial probabilityp at timet>0, the unique compatible rate isλ=−log(1−p)/t.",
+      "finish": "Precise result, proof, worked example and explicit limits",
+      "kind": "Revised mathematical treatment",
+      "refs": [],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c1] A@2025-03-01T15:44:25Z, +1y7m: hybrid QUBO \\(H=\\sum Q_{ij}x_ix_j\\), annealing/QAOA; Poisson event model \\(P(t)=1-e^{-\\lambda t}\\); meta-learning tensor factorization, RL homology filtering, evolutionary servo control; many speed/energy figures were asserted, not demonstrated.",
+      "retrieval_receipt": "root_receipts.json record 0",
+      "original_question": null,
+      "attribution_note": "The historical mathematical excerpt is assistant-authored. No original user question is inferred; the revised question and worked development are new. The source_excerpt is a literal retrieved result bullet (including any original truncation), not a reconstructed transcript. It may summarize historical content; no verbatim original question is inferred."
+    }
+  },
+  {
+    "id": "Y25-03-006",
+    "title": "The recovered renormalization series has a conditional convergence theorem",
+    "status": "Developed classical result with a checked example; recovered claims corrected where needed",
+    "summary": "The recovered expression uses the arithmetic choices4 and6 and is called self-dual without a demonstrated transformation law. Its first mathematical task is existence of the limit. Uniform absolute bounds give a clear sufficient theorem and an explicit truncation error.",
+    "definitions": [
+      "Assume|C_n(τ)|≤M n^a uniformly on a domain, |e^(−E_n/T)cos(Ω_nt)|≤1, anda<3.",
+      "WriteB(τ)=1+φ⁻¹Σ_(n≥1)C_n(τ)n^(−6), withφ=(1+√5)/2, and assume|B(τ)|≥δ>0; likewise bound truncated denominators away from0."
+    ],
+    "result": {
+      "name": "A uniform tail estimate",
+      "statement": "The oscillatory series converges uniformly. Its tail afterN is at mostM N^(a−3)/(3−a). The denominator-series tail is at most(M/φ)N^(a−5)/(5−a), and reciprocal errors are bounded by that tail divided by the product of denominator lower bounds.",
+      "proof": "Take absolute values termwise. The first majorant isMΣn^(a−4), convergent becausea−4<−1. The decreasing integral bound givesΣ_(n>N)n^(a−4)≤N^(a−3)/(3−a). The second follows in the same way with exponenta−6. IfB_N is the partial denominator, B_N⁻¹−B⁻¹=(B−B_N)/(B_NB), so lower bounds control inversion. These statements prove a limit; they do not establish modularity, duality, boundedness of unspecified operators or a fixed-point equation. Denominator nonvanishing is indispensable, because convergent denominator sums can still approach zero."
+    },
+    "example": {
+      "setup": "TakeC_n=1,E_n=0,Ω_n=0.",
+      "calculation": "The first series is−η(4)=−(1−2^(1−4))ζ(4)=−7π⁴/720. The denominator is1+ζ(6)/φ>1, so its reciprocal is well-defined. The whole example is an explicit constant, withζ(6)=π⁶/945 and the stated tails.",
+      "conclusion": "The limit and finite error are now justified in a concrete parameter regime. No new theorem follows merely from naming the constant self-dual."
+    },
+    "limits": "The source does not recover usable bounds onC_n,E_n or a domain forτ. The theorem is therefore a newly specified sufficient model, not a validation of all historical instances.",
+    "extension": "Specify the intended dualityτ↦−1/τ and prove the exact transformation of every factor. Then determine whether the expression is invariant, covariant of a weight or neither.",
+    "references": [
+      {
+        "label": "Milne, Modular Functions and Modular Forms",
+        "url": "https://www.jmilne.org/math/CourseNotes/MF.pdf"
+      }
+    ],
+    "original": {
+      "date": "2025-03-09T18:48:28Z",
+      "month": "2025-03",
+      "evidence": "A",
+      "field": "Real and complex analysis",
+      "concept": "The recovered renormalization series has a conditional convergence theorem",
+      "origin": "Recovered dated conversation evidence; mathematical development newly written",
+      "question": "Which explicit coefficient and denominator bounds make this infinite expression well-defined?",
+      "math": "The oscillatory series converges uniformly. Its tail afterN is at mostM N^(a−3)/(3−a). The denominator-series tail is at most(M/φ)N^(a−5)/(5−a), and reciprocal errors are bounded by that tail divided by the product of denominator lower bounds.",
+      "finish": "Precise result, proof, worked example and explicit limits",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://www.jmilne.org/math/CourseNotes/MF.pdf"
+      ],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c6] A@2025-03-09T18:48:28Z, -1y7m: Claimed \\(s=(3+5)/2=4\\), \\(d=(5+7)/2=6\\), and\n\\(R^*=\\lim_{N\\to\\infty}[\\sum_{n=1}^N(-1)^n n^{-s}C_n(\\tau)e^{-E_n/T}\\cos(\\Omega_nt)+(1+\\varphi^{-1}\\sum_{k=1}^NC_k(\\tau)k^{-d})^{-1}]\\); asserted Eisenstein/Poincaré/Maass interpretations and “final proof,” without demonstration.",
+      "retrieval_receipt": "root_receipts.json record 0",
+      "original_question": null,
+      "attribution_note": "The historical mathematical excerpt is assistant-authored. No original user question is inferred; the revised question and worked development are new. The source_excerpt is a literal retrieved result bullet (including any original truncation), not a reconstructed transcript. It may summarize historical content; no verbatim original question is inferred."
+    }
+  },
+  {
+    "id": "Y25-03-007",
+    "title": "An automorphic transformation law comes from reindexing a lattice sum",
+    "status": "Developed classical result with a checked example; recovered claims corrected where needed",
+    "summary": "The historical series was assigned several automorphic interpretations without an explicit action. A classical weight-four lattice sum gives an actual transformation proof. This constructive example isolates the data that a higher-rank replacement would have to provide.",
+    "definitions": [
+      "Forτ in the upper half-plane defineG4(τ)=Σ_((m,n)≠(0,0))(m+nτ)^(−4).",
+      "Letγ=[[a,b],[c,d]]∈SL2(Z) act byγτ=(aτ+b)/(cτ+d)."
+    ],
+    "result": {
+      "name": "Weight-four covariance",
+      "statement": "The series converges absolutely and locally uniformly, is holomorphic, and satisfiesG4(γτ)=(cτ+d)^4G4(τ).",
+      "proof": "On any compact subset of the upper half-plane, |m+nτ| is bounded below by a positive constant times√(m²+n²). The fourth-power reciprocal is summable over the two-dimensional integer lattice, proving local uniform absolute convergence and holomorphy. Nextm+nγτ=[(md+nb)+(mc+na)τ]/(cτ+d). The integer pair(md+nb,mc+na) is a bijective reindexing because its determinant isad−bc=1. Absolute convergence permits rearrangement, producing the claimed factor. The proof depends on the precise lattice and its group action, not on the appearance ofζ-values in a numerical constant."
+    },
+    "example": {
+      "setup": "Check the two generatorsτ↦τ+1 andτ↦−1/τ.",
+      "calculation": "The first uses(m,n)↦(m+n,n) and leavesG4 unchanged. The second uses(m,n)↦(n,−m) and givesG4(−1/τ)=τ⁴G4(τ). Atτ=i this factor is1, consistent with the fixed point; for a hypothetical weight2 sum the corresponding factor would be−1 and would force vanishing at that point if covariance held.",
+      "conclusion": "A transformation law is a proved identity with a defined group action. Merely addingSL3 orSL4 notation does not provide it."
+    },
+    "limits": "This entry establishes anSL2 holomorphic example. Higher-rank Eisenstein series and Maass forms need different parameters, convergence and differential-eigenfunction conditions.",
+    "extension": "For the proposedC_n(τ), give a representation of the relevant group, verify the transformation law and prove analytic continuation separately from convergence.",
+    "references": [
+      {
+        "label": "Milne, Modular Functions and Modular Forms",
+        "url": "https://www.jmilne.org/math/CourseNotes/MF.pdf"
+      }
+    ],
+    "original": {
+      "date": "2025-03-10T01:55:28Z",
+      "month": "2025-03",
+      "evidence": "A",
+      "field": "Modular forms",
+      "concept": "An automorphic transformation law comes from reindexing a lattice sum",
+      "origin": "Recovered dated conversation evidence; mathematical development newly written",
+      "question": "What is a fully defined example of modular covariance, and why do names or convergence exponents not establish it?",
+      "math": "The series converges absolutely and locally uniformly, is holomorphic, and satisfiesG4(γτ)=(cτ+d)^4G4(τ).",
+      "finish": "Precise result, proof, worked example and explicit limits",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://www.jmilne.org/math/CourseNotes/MF.pdf"
+      ],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c6] A@2025-03-10T01:55:28Z, -1y7m: Extended \\(C_n\\) via SL(3,\\(\\mathbb Z\\)) and proposed twistor operator \\(\\mathcal T^*\\), then SL(4,\\(\\mathbb Z\\)) transport \\(\\mathcal",
+      "retrieval_receipt": "root_receipts.json record 0",
+      "original_question": null,
+      "attribution_note": "The historical mathematical excerpt is assistant-authored. No original user question is inferred; the revised question and worked development are new. The source_excerpt is a literal retrieved result bullet (including any original truncation), not a reconstructed transcript. It may summarize historical content; no verbatim original question is inferred."
+    }
+  },
+  {
+    "id": "Y25-03-008",
+    "title": "Spectral thresholds and curvature must survive changes of scale",
+    "status": "Developed classical result with a checked example; recovered claims corrected where needed",
+    "summary": "The recovered passage assigns absolute spectral and curvature thresholds to a model without specifying units or a metric. Scaling gives an exact diagnostic. A standard Ricci-flow solution also shows which part of the flow can be derived rather than inferred from named quantities.",
+    "definitions": [
+      "For a Riemannian metricg, replaceg byc²g withc>0. Laplacian eigenvalues and scalar curvature then scale byc⁻².",
+      "For a roundn-sphereg(t)=r(t)²g_unit, ordinary Ricci flow is∂tg=−2Ric(g)."
+    ],
+    "result": {
+      "name": "Exact scale laws and spherical flow",
+      "statement": "Any fixed numerical cutoff forλ1 orR changes under metric scaling. For the round sphere,r(t)²=r(0)²−2(n−1)t up to its extinction time.",
+      "proof": "In coordinates the inverse metric scales byc⁻², while the constant metric scaling does not change the Levi-Civita connection. The Laplace operator and the contraction defining scalar curvature thus each acquirec⁻². On the unit sphereRic(g_unit)=(n−1)g_unit, andRic(r²g_unit) as a covariant tensor is the same(n−1)g_unit. Substitution into the flow gives(r²)′=−2(n−1). A Lie derivative termL_Xg corresponds, under a suitably matched time-dependent pullback, to changing coordinates; an extraT_ij needs its own symmetry and regularity assumptions. None of these symbols determines an external numerical phase threshold."
+    },
+    "example": {
+      "setup": "On a circle of radiusr, the first positive scalar-Laplacian eigenvalue is1/r² although intrinsic Ricci curvature is identically0.",
+      "calculation": "Changingr from1 to2 movesλ1 from1 to1/4 without changing the topology or the zero Ricci tensor. On a two-sphere of initial radius2, the Ricci-flow formula givesr²=4−2t and extinction att=2.",
+      "conclusion": "Units and normalization must be fixed before thresholds are meaningful. Exact flow equations do not validate the recovered predictive percentages."
+    },
+    "limits": "The derivation is geometric and does not assign any social or intelligence interpretation to curvature. General modified flows require existence theory and a defined tensorT.",
+    "extension": "Use a dimensionless quantity such asλ1·Vol^(2/n), state its hypotheses and test whether it separates explicit geometric examples.",
+    "references": [
+      {
+        "label": "Hamilton, Three-manifolds with positive Ricci curvature",
+        "url": "https://doi.org/10.4310/jdg/1214436922"
+      }
+    ],
+    "original": {
+      "date": "2025-03-14T14:27:39Z",
+      "month": "2025-03",
+      "evidence": "A",
+      "field": "Riemannian geometry",
+      "concept": "Spectral thresholds and curvature must survive changes of scale",
+      "origin": "Recovered dated conversation evidence; mathematical development newly written",
+      "question": "Which geometric statements are invariant, and what does the modified-flow notation actually require?",
+      "math": "Any fixed numerical cutoff forλ1 orR changes under metric scaling. For the round sphere,r(t)²=r(0)²−2(n−1)t up to its extinction time.",
+      "finish": "Precise result, proof, worked example and explicit limits",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://doi.org/10.4310/jdg/1214436922"
+      ],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c2] A@2025-03-14T14:27:39Z, -1y7m: conflict model used Bord(∞,3), \\(g'_{ij}=-2Ric_{ij}+T_{ij}+L_Xg_{ij}\\), spectral thresholds \\(\\lambda_1>2,\\approx1.3\\!-\\!1.5,<1\\), \\(R=-5.9,-5.7\\), intelligence \\(L(s)\\), spectral triples, and entropy values; presented as quantitative claims without demonstrations.",
+      "retrieval_receipt": "root_receipts.json record 0",
+      "original_question": null,
+      "attribution_note": "The historical mathematical excerpt is assistant-authored. No original user question is inferred; the revised question and worked development are new. The source_excerpt is a literal retrieved result bullet (including any original truncation), not a reconstructed transcript. It may summarize historical content; no verbatim original question is inferred."
+    }
+  },
+  {
+    "id": "Y25-03-009",
+    "title": "A categorical surface theory begins with a Frobenius algebra",
+    "status": "Developed classical result with a checked example; recovered claims corrected where needed",
+    "summary": "The recovered cobordism and fair-division notation does not specify objects, morphisms or a functor. A two-dimensional oriented surface theory has a classical algebraic model. Its elementary calculations expose the multiplication, pairing and sewing identities that a gluing claim needs.",
+    "definitions": [
+      "LetA=Q[ε]/(ε²), withunit1 and linear traceτ(1)=0,τ(ε)=1.",
+      "The Frobenius pairing is〈a,b〉=τ(ab). Its nondegeneracy permits a coproduct adjoint to multiplication."
+    ],
+    "result": {
+      "name": "A complete small Frobenius calculation",
+      "statement": "The pairing matrix is[[0,1],[1,0]]. The coproduct isΔ(1)=1⊗ε+ε⊗1,Δ(ε)=ε⊗ε; it is coassociative and satisfies the Frobenius compatibility.",
+      "proof": "The displayed pairing has determinant−1, so it is nondegenerate. The basis dual to(1,ε) is(ε,1), givingΔ(1)=1⊗ε+ε⊗1. Multiplying either tensor factor byε givesΔ(ε)=ε⊗ε. Checking the two basis vectors, both(Δ⊗id)Δ and(id⊗Δ)Δ map1 to1⊗ε⊗ε+ε⊗1⊗ε+ε⊗ε⊗1 andε toε⊗ε⊗ε. The identityΔ(ab)=(a⊗1)Δ(b)=Δ(a)(1⊗b) follows by the same basis check. These are explicit sewing constraints. The theorem identifying commutative Frobenius algebras with oriented2D TQFTs is a cited structural result, not a consequence of assigningBord to an undefined model."
+    },
+    "example": {
+      "setup": "Compute the handle operatorh=μΔ and the first closed-surface valuesτ(h^g1).",
+      "calculation": "h(1)=2ε andh(ε)=0. Hence the sphere value isτ(1)=0, torus valueτ(2ε)=2, and genus-two valueτ(0)=0. These values follow from the chosen trace and are not universal surface invariants independent of the theory.",
+      "conclusion": "An actual algebra and its identities give precise categorical content, while leaving the higher-dimensional proposal open."
+    },
+    "limits": "This is a newly chosen2D model. It neither reconstructs a missing3- or4-category nor proves a theorem about division or conflict.",
+    "extension": "Specify the intended bordism category, generators and relations, then give functorial assignments satisfying every gluing relation before adding numerical observables.",
+    "references": [
+      {
+        "label": "Etingof–Gelaki–Nikshych–Ostrik, Tensor Categories",
+        "url": "https://math.mit.edu/~etingof/egnobookfinal.pdf"
+      }
+    ],
+    "original": {
+      "date": "2025-03-14T16:49:48Z",
+      "month": "2025-03",
+      "evidence": "A",
+      "field": "Algebra and topological field theory",
+      "concept": "A categorical surface theory begins with a Frobenius algebra",
+      "origin": "Recovered dated conversation evidence; mathematical development newly written",
+      "question": "What finite algebraic model provides an actual gluing rule before higher-cobordism analogies are used?",
+      "math": "The pairing matrix is[[0,1],[1,0]]. The coproduct isΔ(1)=1⊗ε+ε⊗1,Δ(ε)=ε⊗ε; it is coassociative and satisfies the Frobenius compatibility.",
+      "finish": "Precise result, proof, worked example and explicit limits",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://math.mit.edu/~etingof/egnobookfinal.pdf"
+      ],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c2] A@2025-03-14T16:49:48Z, -1y7m: fair-division continuation introduced \\(B_{\\rm DC}:\\Sigma_{\\rm undivided}\\to\\Sigma_{\\rm divided",
+      "retrieval_receipt": "root_receipts.json record 0",
+      "original_question": null,
+      "attribution_note": "The historical mathematical excerpt is assistant-authored. No original user question is inferred; the revised question and worked development are new. The source_excerpt is a literal retrieved result bullet (including any original truncation), not a reconstructed transcript. It may summarize historical content; no verbatim original question is inferred."
+    }
+  },
+  {
+    "id": "Y25-03-010",
+    "title": "Connes distance can be computed exactly on two points",
+    "status": "Developed classical result with a checked example; recovered claims corrected where needed",
+    "summary": "The recovered spectral-triple proposal contains a formal commutator expansion but no concrete operator domain. A two-point triple has no domain ambiguity and yields a complete distance calculation. It also shows directly how rescalingD changes the metric.",
+    "definitions": [
+      "RepresentA=C⊕C diagonally onH=C², and letD=[[0,m],[conj(m),0]] withm≠0.",
+      "For the two evaluation statesδ1,δ2, define d(δ1,δ2)=sup{|a−b|:a,b real,||[D,diag(a,b)]||≤1}."
+    ],
+    "result": {
+      "name": "Two-point spectral distance",
+      "statement": "The distance equals1/|m|. Ifm=0 the distance is infinite.",
+      "proof": "The commutator has off-diagonal entriesm(b−a) andconj(m)(a−b). Its adjoint times itself is|m|²(a−b)²I, so its operator norm is|m||a−b|. The constraint is therefore exactly|a−b|≤1/|m|, and equality is attained by a suitable real diagonal element. Ifm=0, every commutator vanishes while|a−b| is unbounded, giving infinite distance. All spectral-triple conditions in this finite setting are immediate: the algebra is represented by bounded operators,D is self-adjoint, and its resolvent is compact becauseH is finite-dimensional. A formal gradient approximation was unnecessary."
+    },
+    "example": {
+      "setup": "Takem=2 and then replaceD by3D.",
+      "calculation": "The distances are1/2 and1/6. The two-point set and its algebra are unchanged, yet the metric changes. Conversely, choosingm purely imaginary with the same modulus leaves the distance unchanged because the operator norm depends only on|m|.",
+      "conclusion": "The operator supplies concrete metric information that is not determined by the algebra’s name alone."
+    },
+    "limits": "This does not create a continuum Dirac operator, a hyperbolic quotient or a motivic structure. Infinite-dimensional spectral triples require domains, bounded commutators and compactness hypotheses.",
+    "extension": "For a finite graph Dirac model, calculate the commutator norm and compare its induced metric with shortest-path distance; do not assume they agree without proof.",
+    "references": [
+      {
+        "label": "Connes, Noncommutative geometry and reality",
+        "url": "https://alainconnes.org/wp-content/uploads/reality.pdf"
+      }
+    ],
+    "original": {
+      "date": "2025-03-13T07:19:49Z",
+      "month": "2025-03",
+      "evidence": "A",
+      "field": "Noncommutative geometry",
+      "concept": "Connes distance can be computed exactly on two points",
+      "origin": "Recovered dated conversation evidence; mathematical development newly written",
+      "question": "What metric follows from an explicitly defined finite spectral triple?",
+      "math": "The distance equals1/|m|. Ifm=0 the distance is infinite.",
+      "finish": "Precise result, proof, worked example and explicit limits",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://alainconnes.org/wp-content/uploads/reality.pdf"
+      ],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c3] A@2025-03-13T07:19:49Z, -1y7m: formalized \\(\\mathcal E_\\infty\\)-coherence with \\(\\mathcal O(n)\\times_{\\Sigma_n}A_{\\rm int}^{\\otimes n}\\to A_{\\rm int}\\); K-theory spectral sequence \\(E_2^{p,q}=H^{p-q}_{mot}(G_{\\rm der},\\mathbb Z(-q))\\Rightarrow K_{-p-q}\\); spectral triple \\((A,L^2(G_{\\rm nc}),\\mathcal D_{\\rm MD})\\), \\([\\mathcal D_{\\rm MD},a]=i\\hbar\\nabla a+O(\\hbar^2)\\), and Connes distance.",
+      "retrieval_receipt": "root_receipts.json record 0",
+      "original_question": null,
+      "attribution_note": "The historical mathematical excerpt is assistant-authored. No original user question is inferred; the revised question and worked development are new. The source_excerpt is a literal retrieved result bullet (including any original truncation), not a reconstructed transcript. It may summarize historical content; no verbatim original question is inferred."
+    }
+  },
+  {
+    "id": "Y25-03-011",
+    "title": "Coherence is an identity of operations, and a spectral page still needs a differential",
+    "status": "Developed classical result with a checked example; recovered claims corrected where needed",
+    "summary": "The historical passage combines higher coherence and a motivic spectral sequence. Two small models make their roles concrete: strict commutative multiplication supplies compatible n-ary operations, while a filtered complex shows that an initial page alone does not determine final cohomology.",
+    "definitions": [
+      "OnA=Q[ε]/(ε²), letm_n(a1,…,an)=a1⋯an. Associativity and commutativity imply substitution and permutation identities.",
+      "LetC⁰=Qv,C¹=Qw withdv=w. Givew filtration0 andv filtration1, using an increasing filtration preserved byd."
+    ],
+    "result": {
+      "name": "Exact coherence and a filtered cancellation",
+      "statement": "The operationsm_n are symmetric and compatible with substitutions. In the filtered complex the associated graded differential is zero, but the next filtration-dropping differential takesv tow and kills both classes; the total complex is acyclic.",
+      "proof": "For the operations, any iterated product obtained by substitutingm_r into one slot ofm_n has exactly the same ordered factors as the single productm_(n+r−1); associativity proves equality, and commutativity removes order dependence. A strict commutative algebra can be viewed through a chosen E∞-operad augmentation to the commutative operad, but a genuinely homotopy-coherent construction must state that operad and its maps. For the complex,d²=0 because there is no degree2 space. On each fixed filtration grade,d has zero same-grade component, so the first graded page has the two classes. The actual differential lowers filtration by1 and induces the next arrow v↦w, an isomorphism. Directly,ker(d:C⁰→C¹)=0 andcokerd=0, confirming acyclicity."
+    },
+    "example": {
+      "setup": "Compare the same filtered vector spaces with the alternative differentiald=0.",
+      "calculation": "The initial graded page remains the same, but final cohomology now has dimension1 in each degree. Thus the two possible totals differ despite equal initial tables.",
+      "conclusion": "Operations, coherence maps and differentials are decisive data. Naming a spectral-sequence target does not supply them."
+    },
+    "limits": "The example does not prove the recovered motivic-to-K-theory spectral sequence for an unspecified derived object. Its existence and indexing require hypotheses that were not recovered.",
+    "extension": "Specify a concrete algebraic variety or ring, its filtration and coefficients. Calculate the first nonzero differential or prove collapse from support rather than treatingE2 as the final answer.",
+    "references": [
+      {
+        "label": "Etingof–Gelaki–Nikshych–Ostrik, Tensor Categories",
+        "url": "https://math.mit.edu/~etingof/egnobookfinal.pdf"
+      }
+    ],
+    "original": {
+      "date": "2025-03-13T07:19:49Z",
+      "month": "2025-03",
+      "evidence": "A",
+      "field": "Homological algebra",
+      "concept": "Coherence is an identity of operations, and a spectral page still needs a differential",
+      "origin": "Recovered dated conversation evidence; mathematical development newly written",
+      "question": "Which algebraic data can be checked in a toy model before claiming an E∞ or spectral-sequence construction?",
+      "math": "The operationsm_n are symmetric and compatible with substitutions. In the filtered complex the associated graded differential is zero, but the next filtration-dropping differential takesv tow and kills both classes; the total complex is acyclic.",
+      "finish": "Precise result, proof, worked example and explicit limits",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://math.mit.edu/~etingof/egnobookfinal.pdf"
+      ],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c3] A@2025-03-13T07:19:49Z, -1y7m: formalized \\(\\mathcal E_\\infty\\)-coherence with \\(\\mathcal O(n)\\times_{\\Sigma_n}A_{\\rm int}^{\\otimes n}\\to A_{\\rm int}\\); K-theory spectral sequence \\(E_2^{p,q}=H^{p-q}_{mot}(G_{\\rm der},\\mathbb Z(-q))\\Rightarrow K_{-p-q}\\); spectral triple \\((A,L^2(G_{\\rm nc}),\\mathcal D_{\\rm MD})\\), \\([\\mathcal D_{\\rm MD},a]=i\\hbar\\nabla a+O(\\hbar^2)\\), and Connes distance.",
+      "retrieval_receipt": "root_receipts.json record 0",
+      "original_question": null,
+      "attribution_note": "The historical mathematical excerpt is assistant-authored. No original user question is inferred; the revised question and worked development are new. The source_excerpt is a literal retrieved result bullet (including any original truncation), not a reconstructed transcript. It may summarize historical content; no verbatim original question is inferred."
+    }
+  },
+  {
+    "id": "Y25-03-012",
+    "title": "Finite modular flow distinguishes the state Hamiltonian from the standard-form generator",
+    "status": "Developed classical result with a checked example; recovered claims corrected where needed",
+    "summary": "The recovered modular expressions are classical, but several operators share the name modular Hamiltonian. A faithful matrix-state model separates the density-matrix logarithm from the standard-form generator on Hilbert–Schmidt operators.",
+    "definitions": [
+      "Letρ be a positive definite density matrix. OnHilbert–Schmidt matricesX, defineΔρ(X)=ρXρ⁻¹ andJ(X)=X*.",
+      "The density Hamiltonian ishρ=−logρ, whereas the standard-form generator isKρ=−logΔρ."
+    ],
+    "result": {
+      "name": "Exact finite-dimensional modular structure",
+      "statement": "For matrix unitsEij in aρ-eigenbasis with eigenvaluespi, ΔρEij=(pi/pj)Eij andKρEij=log(pj/pi)Eij. Modular flow on left observables isσ_tρ(A)=ρ^(it)Aρ^(−it).",
+      "proof": "Left multiplication byρ and right multiplication byρ⁻¹ commute and are positive self-adjoint on Hilbert–Schmidt space. Their action onEij gives the eigenvaluepi/pj. Functional calculus yields the logarithm and imaginary powers, proving every formula. WithΩ=√ρ, the Tomita map initially sendsAΩ toA*Ω. WritingY=A√ρ givesS(Y)=ρ^(−1/2)Y*ρ^(1/2), which isJΔρ^(1/2)Y. AlsoΔρΩ=Ω, soKρΩ=0. By contrastTr(ρhρ) is the generally nonzero von Neumann entropy. Conflating these two expectations would invalidate a first-law calculation."
+    },
+    "example": {
+      "setup": "Takeρ=diag(3/4,1/4).",
+      "calculation": "Δρ has eigenvalues1,3,1/3,1 onE11,E12,E21,E22. Thusσ_tρ(E12)=3^(it)E12 andσ_tρ(E21)=3^(−it)E21. The density Hamiltonian has eigenvalueslog(4/3),log4, whileKρ has0,−log3,+log3,0.",
+      "conclusion": "The finite model realizes Tomita–Takesaki notation exactly and exposes its two distinct logarithms."
+    },
+    "limits": "Infinite von Neumann algebras may have no density matrix or trace. Their modular theory is deeper; this finite derivation does not establish a categorical version or a geometric backreaction equation.",
+    "extension": "For a proposed categorical analogue, identify its algebra, faithful state, Hilbert-space representation and an actual modular operator before asserting covariance or a first law.",
+    "references": [
+      {
+        "label": "Araki, Relative entropy of states of von Neumann algebras",
+        "url": "https://doi.org/10.2977/prims/1195191148"
+      },
+      {
+        "label": "Connes, Noncommutative geometry and reality",
+        "url": "https://alainconnes.org/wp-content/uploads/reality.pdf"
+      }
+    ],
+    "original": {
+      "date": "2025-03-18T01:23:25Z",
+      "month": "2025-03",
+      "evidence": "A",
+      "field": "Operator algebras",
+      "concept": "Finite modular flow distinguishes the state Hamiltonian from the standard-form generator",
+      "origin": "Recovered dated conversation evidence; mathematical development newly written",
+      "question": "What exactly are Δ and K in a finite faithful-state model?",
+      "math": "For matrix unitsEij in aρ-eigenbasis with eigenvaluespi, ΔρEij=(pi/pj)Eij andKρEij=log(pj/pi)Eij. Modular flow on left observables isσ_tρ(A)=ρ^(it)Aρ^(−it).",
+      "finish": "Precise result, proof, worked example and explicit limits",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://doi.org/10.2977/prims/1195191148",
+        "https://alainconnes.org/wp-content/uploads/reality.pdf"
+      ],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c0] A@2025-03-18T01:23:25Z, -1y7m: Mathematical content included nested Wilson loop \\(W^{(n)}[C_1,\\ldots,C_n]=P\\exp(i\\oint_{C_n}\\cdots P\\exp(i\\oint_{C_1}A(k)dk_1)\\cdots dk_n)\\); modular flow \\(\\sigma_t^\\omega(A)=\\Delta^{it}A\\Delta^{-it}\\); \\(K=-\\log\\Delta\\); semiclassical equation \\(G_{\\mu\\nu}+\\Lambda g_{\\mu\\nu}=8\\pi G\\langle T_{\\mu\\nu}\\rangle\\); relative entropy \\(S(\\rho\\|\\sigma)=\\mathrm{Tr}(\\rho\\log\\rho)-\\mathrm{Tr}(\\rho\\log\\sigma)\\); first law \\(\\delta S=\\delta\\langle K\\rangle\\).",
+      "retrieval_receipt": "root_receipts.json record 0",
+      "original_question": null,
+      "attribution_note": "The historical mathematical excerpt is assistant-authored. No original user question is inferred; the revised question and worked development are new. The source_excerpt is a literal retrieved result bullet (including any original truncation), not a reconstructed transcript. It may summarize historical content; no verbatim original question is inferred."
+    }
+  },
+  {
+    "id": "Y25-03-013",
+    "title": "The entropy first law is an exact first derivative at a faithful state",
+    "status": "Developed classical result with a checked example; recovered claims corrected where needed",
+    "summary": "The recovered first-law identity has a precise finite-state meaning. It is a linearized equality at a fixed faithful reference state, not equality of finite entropy changes. Relative entropy records the discrepancy beyond that first derivative.",
+    "definitions": [
+      "Letσ>0 have trace1, letX=X* withTrX=0, andρ(ε)=σ+εX remain positive for smallε.",
+      "SetS(ρ)=−Trρlogρ andhσ=−logσ; relative entropy isD(ρ||σ)=Trρ(logρ−logσ)."
+    ],
+    "result": {
+      "name": "First law and a positive second-order example",
+      "statement": "Atε=0,dS(ρ(ε))/dε=Tr(Xhσ). Exactly, D(ρ||σ)=Tr[(ρ−σ)hσ]−[S(ρ)−S(σ)]. For a diagonal binary perturbation its second-order coefficient is positive.",
+      "proof": "The trace derivative ofTrf(σ+εX) isTrf′(σ)X. In an eigenbasis, the diagonal derivative terms give this expression and off-diagonal first-order contributions have zero trace. Withf(u)=u logu, the entropy derivative is−TrX(logσ+I)=−TrXlogσ becauseTrX=0. Expanding the definition ofD gives the exact finite-change identity. Forσ=diag(p,1−p) andX=diag(1,−1), direct differentiation of the scalar relative entropy givesD′(0)=0 andD″(0)=1/p+1/(1−p)=1/[p(1−p)]>0. Thus finite changes agree only to first order in general."
+    },
+    "example": {
+      "setup": "Takep=3/4 andε=1/20, soρ=diag(4/5,1/5).",
+      "calculation": "The modular-energy change isεlog((1−p)/p)=−(log3)/20. The exact relative entropy is(4/5)log(16/15)+(1/5)log(4/5)>0. Its quadratic approximation is(8/3)ε²=1/150, while the exact finite identity gives the entropy change by subtractingD from the modular-energy change.",
+      "conclusion": "The first law is now a proved derivative with a declared reference operator. Its second-order remainder can be checked explicitly."
+    },
+    "limits": "Faithfulness is essential for a bounded matrix logarithm; support changes can make relative entropy infinite. No Einstein equation or categorical entropy follows solely from this identity.",
+    "extension": "Derive the noncommutative Hessian using the integral representation of the logarithm, and test its positivity on an explicit off-diagonal perturbation.",
+    "references": [
+      {
+        "label": "Araki, Relative entropy of states of von Neumann algebras",
+        "url": "https://doi.org/10.2977/prims/1195191148"
+      }
+    ],
+    "original": {
+      "date": "2025-03-18T01:23:25Z",
+      "month": "2025-03",
+      "evidence": "A",
+      "field": "Matrix analysis and information theory",
+      "concept": "The entropy first law is an exact first derivative at a faithful state",
+      "origin": "Recovered dated conversation evidence; mathematical development newly written",
+      "question": "Which variation makes the recovered first law valid, and what remains at second order?",
+      "math": "Atε=0,dS(ρ(ε))/dε=Tr(Xhσ). Exactly, D(ρ||σ)=Tr[(ρ−σ)hσ]−[S(ρ)−S(σ)]. For a diagonal binary perturbation its second-order coefficient is positive.",
+      "finish": "Precise result, proof, worked example and explicit limits",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://doi.org/10.2977/prims/1195191148"
+      ],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c0] A@2025-03-18T01:23:25Z, -1y7m: Mathematical content included nested Wilson loop \\(W^{(n)}[C_1,\\ldots,C_n]=P\\exp(i\\oint_{C_n}\\cdots P\\exp(i\\oint_{C_1}A(k)dk_1)\\cdots dk_n)\\); modular flow \\(\\sigma_t^\\omega(A)=\\Delta^{it}A\\Delta^{-it}\\); \\(K=-\\log\\Delta\\); semiclassical equation \\(G_{\\mu\\nu}+\\Lambda g_{\\mu\\nu}=8\\pi G\\langle T_{\\mu\\nu}\\rangle\\); relative entropy \\(S(\\rho\\|\\sigma)=\\mathrm{Tr}(\\rho\\log\\rho)-\\mathrm{Tr}(\\rho\\log\\sigma)\\); first law \\(\\delta S=\\delta\\langle K\\rangle\\).",
+      "retrieval_receipt": "root_receipts.json record 0",
+      "original_question": null,
+      "attribution_note": "The historical mathematical excerpt is assistant-authored. No original user question is inferred; the revised question and worked development are new. The source_excerpt is a literal retrieved result bullet (including any original truncation), not a reconstructed transcript. It may summarize historical content; no verbatim original question is inferred."
+    }
+  },
+  {
+    "id": "Y25-03-014",
+    "title": "A modular cocycle obeys a twisted composition law",
+    "status": "Developed classical result with a checked example; recovered claims corrected where needed",
+    "summary": "The retrieved passage requests a modular-cocycle explanation but truncates the actual formula. A faithful finite-state example gives a precise replacement, including the twisted law that distinguishes a cocycle from an ordinary one-parameter group.",
+    "definitions": [
+      "For faithful density matricesρ,σ defineu_t=ρ^(it)σ^(−it). Letασ_t(A)=σ^(it)Aσ^(−it).",
+      "A cocycle forασ satisfiesu_(s+t)=u_s ασ_s(u_t)."
+    ],
+    "result": {
+      "name": "Finite cocycle and intertwining",
+      "statement": "The matricesu_t are unitary, satisfy the stated cocycle law, and obey αρ_t(A)=u_t ασ_t(A)u_t*.",
+      "proof": "Positive functional calculus makesρ^(it) andσ^(it) unitary. Multiplyingu_sασ_s(u_t) givesρ^(is)σ^(−is)σ^(is)ρ^(it)σ^(−it)σ^(−is)=ρ^(i(s+t))σ^(−i(s+t)), exactlyu_(s+t). Notice that commutingρ withσ was never assumed; only powers of the same matrix were combined. For intertwining, the adjacentσ factors cancel in u_t σ^(it)Aσ^(−it)u_t*, leavingρ^(it)Aρ^(−it). Ifρ andσ fail to commute, u_su_t need not equalu_(s+t); replacing the twisted composition by an ordinary group law is therefore an additional unjustified step."
+    },
+    "example": {
+      "setup": "For a transparent commuting example takeρ=diag(3/4,1/4),σ=diag(1/2,1/2).",
+      "calculation": "u_t=diag((3/2)^(it),(1/2)^(it)). Hereασ is trivial, so the cocycle happens to be an ordinary unitary group. Replacingσ by a nontrivially rotated diagonal state retains the twisted identity but generally loses that simplification.",
+      "conclusion": "The exact algebra supplies the transport law and identifies which simplification relies on commutativity."
+    },
+    "limits": "This is the finite faithful-state case of a more general operator-algebraic construction. The historical categorical state space, morphisms and infinite-dimensional domains were not recovered.",
+    "extension": "Use two explicit noncommuting2×2 states, verify the cocycle numerically at several times with residual bounds, and calculate its derivative generator without assuming it is time independent.",
+    "references": [
+      {
+        "label": "Araki, Relative entropy of states of von Neumann algebras",
+        "url": "https://doi.org/10.2977/prims/1195191148"
+      }
+    ],
+    "original": {
+      "date": "2025-03-17T19:01:02Z",
+      "month": "2025-03",
+      "evidence": "A",
+      "field": "Operator algebras",
+      "concept": "A modular cocycle obeys a twisted composition law",
+      "origin": "Recovered dated conversation evidence; mathematical development newly written",
+      "question": "How can a modular cocycle be verified exactly before using it as a transport or geometric flow?",
+      "math": "The matricesu_t are unitary, satisfy the stated cocycle law, and obey αρ_t(A)=u_t ασ_t(A)u_t*.",
+      "finish": "Precise result, proof, worked example and explicit limits",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://doi.org/10.2977/prims/1195191148"
+      ],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c5] A@2025-03-17T19:01:02Z, -584d: source equations included Wetterich RG flow \\(\\Lambda\\,d\\Gamma_\\Lambda/d\\Lambda=\\frac12\\mathrm{Tr}[(\\Gamma_\\Lambda^{(2)}+R_\\Lambda)^{-1}\\dot R_\\Lambda]\\), \\(\\mathrm{SF}_n(D)=\\int_{S^{2n+1}}\\mathrm{ch}_n(\\mathcal F_D)\\), and modular cocycle formula.",
+      "retrieval_receipt": "root_receipts.json record 0",
+      "original_question": null,
+      "attribution_note": "The historical mathematical excerpt is assistant-authored. No original user question is inferred; the revised question and worked development are new. The source_excerpt is a literal retrieved result bullet (including any original truncation), not a reconstructed transcript. It may summarize historical content; no verbatim original question is inferred."
+    }
+  },
+  {
+    "id": "Y25-03-015",
+    "title": "Wilson-loop words need a connection or a well-defined group assignment",
+    "status": "Developed classical result with a checked example; recovered claims corrected where needed",
+    "summary": "The recovered nesting places a holonomy inside another exponential without stating a new connection or its gauge transformation. A graph holonomy is an exact model: edge elements multiply along a loop, and the trace of that word is gauge invariant.",
+    "definitions": [
+      "AssignUij∈SU2 to each oriented edge withUji=Uij⁻¹. Vertex matricesgi act byUij↦giUijgj⁻¹.",
+      "For two based loops with holonomiesU,V, their commutator loop has holonomyUVU⁻¹V⁻¹."
+    ],
+    "result": {
+      "name": "Gauge covariance and an explicit noncommutative loop",
+      "statement": "A based loop product transforms by conjugation at its basepoint, so its trace is invariant. ForU=iσx,V=iσz, the commutator is−I with trace−2, whereas commutingU,V giveI with trace2.",
+      "proof": "Multiply the transformed edge elements in loop order: every adjacentgj⁻¹gj cancels and the endpoints leaveg_base Wg_base⁻¹. Cyclicity of trace proves invariance. In the Pauli exampleσxσz=−σzσx and bothU,V square to−I; thusUV=−VU. Multiplying this relation byU⁻¹V⁻¹ givesUVU⁻¹V⁻¹=−I. This is a genuine nested loop word: the topology specifies concatenation and reversal, and the group law specifies multiplication. It does not require treating a group-valued holonomy as a Lie-algebra-valued1-form under an undefined outer integral."
+    },
+    "example": {
+      "setup": "Take the four-factor commutator and compare an abelianU1 assignment.",
+      "calculation": "TheSU2 trace is−2. EveryU1 pair commutes, so its commutator is1. ForSU2 matricesU=e^(iθσx),V=e^(iφσz), direct multiplication givesTrcomm=2[1−2sin²θsin²φ], recovering both the identity case and the Pauli case.",
+      "conclusion": "A concrete holonomy word has a reproducible gauge-invariant observable. The formula records noncommutativity rather than an unproved higher-categorical effect."
+    },
+    "limits": "Continuum path ordering requires a connection along a path and an ODE; higher holonomy needs higher connection data and coherence. The finite graph proof does not construct those objects.",
+    "extension": "Specify a small2-complex and a crossed module, then formulate surface holonomy with its precise boundary transformation law.",
+    "references": [
+      {
+        "label": "Ben-Zvi–Brochier–Jordan, Integrating quantum groups over surfaces",
+        "url": "https://arxiv.org/abs/1501.04652"
+      }
+    ],
+    "original": {
+      "date": "2025-03-18T01:23:25Z",
+      "month": "2025-03",
+      "evidence": "A",
+      "field": "Gauge theory and matrix algebra",
+      "concept": "Wilson-loop words need a connection or a well-defined group assignment",
+      "origin": "Recovered dated conversation evidence; mathematical development newly written",
+      "question": "What group-valued construction replaces an undefined nested path-ordered integral?",
+      "math": "A based loop product transforms by conjugation at its basepoint, so its trace is invariant. ForU=iσx,V=iσz, the commutator is−I with trace−2, whereas commutingU,V giveI with trace2.",
+      "finish": "Precise result, proof, worked example and explicit limits",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://arxiv.org/abs/1501.04652"
+      ],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c0] A@2025-03-18T01:23:25Z, -1y7m: Mathematical content included nested Wilson loop \\(W^{(n)}[C_1,\\ldots,C_n]=P\\exp(i\\oint_{C_n}\\cdots P\\exp(i\\oint_{C_1}A(k)dk_1)\\cdots dk_n)\\); modular flow \\(\\sigma_t^\\omega(A)=\\Delta^{it}A\\Delta^{-it}\\); \\(K=-\\log\\Delta\\); semiclassical equation \\(G_{\\mu\\nu}+\\Lambda g_{\\mu\\nu}=8\\pi G\\langle T_{\\mu\\nu}\\rangle\\); relative entropy \\(S(\\rho\\|\\sigma)=\\mathrm{Tr}(\\rho\\log\\rho)-\\mathrm{Tr}(\\rho\\log\\sigma)\\); first law \\(\\delta S=\\delta\\langle K\\rangle\\).",
+      "retrieval_receipt": "root_receipts.json record 0",
+      "original_question": null,
+      "attribution_note": "The historical mathematical excerpt is assistant-authored. No original user question is inferred; the revised question and worked development are new. The source_excerpt is a literal retrieved result bullet (including any original truncation), not a reconstructed transcript. It may summarize historical content; no verbatim original question is inferred."
+    }
+  },
+  {
+    "id": "Y25-03-016",
+    "title": "A zero-dimensional Gaussian realizes an exact Wetterich flow",
+    "status": "Developed classical result with a checked example; recovered claims corrected where needed",
+    "summary": "The historical source claims a completed RG toy derivation and a selected vacuum expectation. A Gaussian integral instead gives a fully transparent flow identity. It also shows why stationarity of a running coupling does not by itself fix a nonzero vacuum.",
+    "definitions": [
+      "Letm²>0,R_k≥0 andZ_k(J)=∫_Rexp[−(m²+R_k)x²/2+Jx]dx. PutW_k=logZ_k.",
+      "Defineφ=∂JW_k andΓ_k(φ)=sup_J[Jφ−W_k(J)]−R_kφ²/2."
+    ],
+    "result": {
+      "name": "Exact Gaussian effective-average action",
+      "statement": "Γ_k(φ)=m²φ²/2+(1/2)log(m²+R_k)−(1/2)log(2π), so∂kΓ_k=(1/2)(Γ_k″+R_k)⁻¹∂kR_k. Its unique minimizing field isφ=0 for allk.",
+      "proof": "Complete the square in the integral:Z_k=√(2π/(m²+R_k))exp[J²/(2(m²+R_k))]. Thusφ=J/(m²+R_k) andJ=(m²+R_k)φ. Substitute into the Legendre transform and subtractR_kφ²/2 to obtain the formula. Twoφ derivatives giveΓ_k″=m²; differentiating its additive logarithmic term in k gives the right-hand side exactly. The curvature is positive, so the unique minimizer is0. The quadratic coupling does not run in this free model, yet no nonzero scale or mass ratio is selected from that fact."
+    },
+    "example": {
+      "setup": "Takem²=2 andR_k=k².",
+      "calculation": "The action isφ²+(1/2)log(2+k²)−(1/2)log(2π), and∂kΓ=k/(2+k²). Atk=1 the flow is1/3. Removing the field-independent logarithm would hide this exact flow while leaving the minimizer unchanged; the two questions must be distinguished.",
+      "conclusion": "The regulated integral, transform and flow agree exactly. This is constructive RG mathematics without a claimed hierarchy or vacuum prediction."
+    },
+    "limits": "A quantum field theory needs ultraviolet control, function spaces and a regulator prescription. The scalarGaussian example does not prove the full functional equation in every setting or validate the recoveredmass-ratio claim.",
+    "extension": "Add a positive quartic term and compute certified integral derivatives. Compare the exact Legendre curvature with a declared truncation to measure its approximation error.",
+    "references": [
+      {
+        "label": "Wetterich, Exact evolution equation for the effective potential",
+        "url": "https://arxiv.org/abs/1710.05815"
+      }
+    ],
+    "original": {
+      "date": "2025-03-17T19:01:02Z",
+      "month": "2025-03",
+      "evidence": "A",
+      "field": "Functional analysis and renormalization",
+      "concept": "A zero-dimensional Gaussian realizes an exact Wetterich flow",
+      "origin": "Recovered dated conversation evidence; mathematical development newly written",
+      "question": "What exact regulated model verifies the flow equation, and what does a zero beta function fail to determine?",
+      "math": "Γ_k(φ)=m²φ²/2+(1/2)log(m²+R_k)−(1/2)log(2π), so∂kΓ_k=(1/2)(Γ_k″+R_k)⁻¹∂kR_k. Its unique minimizing field isφ=0 for allk.",
+      "finish": "Precise result, proof, worked example and explicit limits",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://arxiv.org/abs/1710.05815"
+      ],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c5] A@2025-03-17T19:01:02Z, -584d: source equations included Wetterich RG flow \\(\\Lambda\\,d\\Gamma_\\Lambda/d\\Lambda=\\frac12\\mathrm{Tr}[(\\Gamma_\\Lambda^{(2)}+R_\\Lambda)^{-1}\\dot R_\\Lambda]\\), \\(\\mathrm{SF}_n(D)=\\int_{S^{2n+1}}\\mathrm{ch}_n(\\mathcal F_D)\\), and modular cocycle formula.",
+      "retrieval_receipt": "root_receipts.json record 0",
+      "original_question": null,
+      "attribution_note": "The historical mathematical excerpt is assistant-authored. No original user question is inferred; the revised question and worked development are new. The source_excerpt is a literal retrieved result bullet (including any original truncation), not a reconstructed transcript. It may summarize historical content; no verbatim original question is inferred."
+    }
+  },
+  {
+    "id": "Y25-03-017",
+    "title": "Spectral flow counts oriented crossings; odd-dimensional integrals need odd forms",
+    "status": "Developed classical result with a checked example; recovered claims corrected where needed",
+    "summary": "The recovered formula integrates a conventional even Chern-character component over an odd-dimensional sphere. Such an expression needs a specified odd character or transgression. A finite path and a unitary loop give exact examples of the two different constructions.",
+    "definitions": [
+      "For a Hermitian path with invertible endpoints and transversal zero crossings, spectral flow counts negative-to-positive crossings minus positive-to-negative crossings.",
+      "The conventional curvature characterch_n(F) is a2n-form. For a unitary loopU:S¹→U1, the odd degree-one form is(2πi)⁻¹U⁻¹dU."
+    ],
+    "result": {
+      "name": "Two exact integer calculations",
+      "statement": "ForD(t)=diag(t−1/4,t−3/4),0≤t≤1, spectral flow is2. ForU(t)=e^(2πit), the odd-character integral is1.",
+      "proof": "The first diagonal eigenvalue crosses zero att=1/4 and the second att=3/4. Each derivative is+1, so both crossings are positive and the total is2. Endpoints have no zero eigenvalue. For the loop,dU=2πiUdt, hence(2πi)⁻¹U⁻¹dU=dt and its integral over one parameter period is1. This integral is well-typed because its degree equals the dimension. A2n-form cannot be integrated as a top-degree form overS^(2n+1) to yield the claimed invariant without additional data. In infinite-dimensional Fredholm families, spectral-flow/index and odd-Chern formulas are genuine theorems with hypotheses, not consequences of matching notation."
+    },
+    "example": {
+      "setup": "Reverse the finite path or traverse the loop twice.",
+      "calculation": "D(1−t) has two positive-to-negative crossings, giving−2. The loopU(t)=e^(4πit) has winding2. A constant invertible matrix path has spectral flow0, and a constant unitary loop has odd integral0.",
+      "conclusion": "Crossing orientation and differential-form degree make the proposed invariants checkable."
+    },
+    "limits": "The finite-dimensional spectral-flow example does not construct the unspecifiedD-family from the historical framework. No automatic equality between the two examples is asserted.",
+    "extension": "Define a closed Fredholm family and an explicit unitary representative, then state a precise index theorem and verify all compactness and regularity assumptions.",
+    "references": [
+      {
+        "label": "Connes, Noncommutative geometry and reality",
+        "url": "https://alainconnes.org/wp-content/uploads/reality.pdf"
+      }
+    ],
+    "original": {
+      "date": "2025-03-17T19:01:02Z",
+      "month": "2025-03",
+      "evidence": "A",
+      "field": "Topology and spectral theory",
+      "concept": "Spectral flow counts oriented crossings; odd-dimensional integrals need odd forms",
+      "origin": "Recovered dated conversation evidence; mathematical development newly written",
+      "question": "What is a correctly typed small spectral-flow calculation, and which form-degree mismatch must be repaired?",
+      "math": "ForD(t)=diag(t−1/4,t−3/4),0≤t≤1, spectral flow is2. ForU(t)=e^(2πit), the odd-character integral is1.",
+      "finish": "Precise result, proof, worked example and explicit limits",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://alainconnes.org/wp-content/uploads/reality.pdf"
+      ],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c5] A@2025-03-17T19:01:02Z, -584d: source equations included Wetterich RG flow \\(\\Lambda\\,d\\Gamma_\\Lambda/d\\Lambda=\\frac12\\mathrm{Tr}[(\\Gamma_\\Lambda^{(2)}+R_\\Lambda)^{-1}\\dot R_\\Lambda]\\), \\(\\mathrm{SF}_n(D)=\\int_{S^{2n+1}}\\mathrm{ch}_n(\\mathcal F_D)\\), and modular cocycle formula.",
+      "retrieval_receipt": "root_receipts.json record 0",
+      "original_question": null,
+      "attribution_note": "The historical mathematical excerpt is assistant-authored. No original user question is inferred; the revised question and worked development are new. The source_excerpt is a literal retrieved result bullet (including any original truncation), not a reconstructed transcript. It may summarize historical content; no verbatim original question is inferred."
+    }
+  },
+  {
+    "id": "Y25-03-018",
+    "title": "A Maurer–Cartan equation needs graded brackets and a curvature calculation",
+    "status": "Developed classical result with a checked example; recovered claims corrected where needed",
+    "summary": "The historical higher-categorical flow lists a Maurer–Cartan expression without bracket degrees or factorial conventions. A matrix-valued differential-form algebra gives a rigorous degree-one example, where flatness is a concrete commutator condition.",
+    "definitions": [
+      "LetA be a matrix-valued1-form onR². In the differential graded algebra of forms defineF=dA+A∧A=dA+(1/2)[A,A].",
+      "The graded commutator uses the wedge product and matrix multiplication; for degree-oneA the two terms in[A,A] add."
+    ],
+    "result": {
+      "name": "An exact constant-connection flatness criterion",
+      "statement": "ForA=Xdx+Ydy with constant matrices, F=[X,Y]dx∧dy. It is flat exactly whenX andY commute.",
+      "proof": "Constant coefficients give dA=0. ExpandingA∧A removes thedx∧dx anddy∧dy terms; the cross terms areXYdx∧dy+YXdy∧dx=(XY−YX)dx∧dy. Thus the displayed formula is exact. More generally, the derivative and graded commutator satisfy the graded Leibniz and Jacobi identities, which imply the Bianchi identitydF+[A,F]=0. In anL∞ convention one commonly writesΣ_(n≥1)(1/n!)ℓ_n(A,…,A)=0 withℓ_n of degree2−n; a source using other normalization must define it. The symbols themselves do not establish those identities or define a scale-dependent category."
+    },
+    "example": {
+      "setup": "TakeX=[[0,1],[0,0]] andY=[[0,0],[1,0]].",
+      "calculation": "[X,Y]=diag(1,−1), so the connection has nonzero curvature. ReplacingY by2X gives zero curvature. Both examples involve simple constant coefficients, showing that flatness is algebraic compatibility rather than a generic consequence of naming a gauge field.",
+      "conclusion": "The corrected equation has a definite degree, normalization and exact curvature test."
+    },
+    "limits": "This is a differential graded Lie-algebra model, not a construction of the recovered2-crossed module or emergent metric. Those require additional objects and coherence maps.",
+    "extension": "Choose an explicit chain complex andhigher brackets, verify the firstL∞ identities, and test whether a proposed blocking map sendsMaurer–Cartan solutions to solutions.",
+    "references": [
+      {
+        "label": "Etingof–Gelaki–Nikshych–Ostrik, Tensor Categories",
+        "url": "https://math.mit.edu/~etingof/egnobookfinal.pdf"
+      },
+      {
+        "label": "Ben-Zvi–Brochier–Jordan, Integrating quantum groups over surfaces",
+        "url": "https://arxiv.org/abs/1501.04652"
+      }
+    ],
+    "original": {
+      "date": "2025-03-21T06:14:55Z",
+      "month": "2025-03",
+      "evidence": "A",
+      "field": "Differential graded algebra",
+      "concept": "A Maurer–Cartan equation needs graded brackets and a curvature calculation",
+      "origin": "Recovered dated conversation evidence; mathematical development newly written",
+      "question": "What exact flatness equation can be derived before invoking higher brackets?",
+      "math": "ForA=Xdx+Ydy with constant matrices, F=[X,Y]dx∧dy. It is flat exactly whenX andY commute.",
+      "finish": "Precise result, proof, worked example and explicit limits",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://math.mit.edu/~etingof/egnobookfinal.pdf",
+        "https://arxiv.org/abs/1501.04652"
+      ],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c4] A@2025-03-21T06:14:55Z, -579d: Proposed HCRGF \\(\\mathcal R_t:D^b(\\mathcal C_\\Lambda)\\to D^b(\\mathcal C_{\\Lambda e^{-t}})\\), Maurer–Cartan flow \\(d\\mathcal A+\\sum_n\\ell_n(\\mathcal A^{\\otimes n})\\), 2-crossed-module coherence, \\(H^2(BG,U(1))\\), emergent \\(g_{\\mu\\nu}=\\sum_kC_{\\mu\\nu}^{(k)}\\ell_k(B,B)\\), and cohomology-preserving blocking.",
+      "retrieval_receipt": "root_receipts.json record 0",
+      "original_question": null,
+      "attribution_note": "The historical mathematical excerpt is assistant-authored. No original user question is inferred; the revised question and worked development are new. The source_excerpt is a literal retrieved result bullet (including any original truncation), not a reconstructed transcript. It may summarize historical content; no verbatim original question is inferred."
+    }
+  },
+  {
+    "id": "Y25-03-019",
+    "title": "A semidirect product requires an action, even when its factors are familiar",
+    "status": "Developed classical result with a checked example; recovered claims corrected where needed",
+    "summary": "The recovered user topic supplies the factorsSU4 andQ8 but not the action. There are several inequivalent possibilities. A precise construction shows that an inner action lifted by a homomorphism can even be untwisted to a direct product.",
+    "definitions": [
+      "An actionα:Q8→Aut(SU4) defines(g,q)(h,r)=(gα_q(h),qr).",
+      "Ifu:Q8→SU4 is a homomorphism, its inner action isα_q(h)=u_q h u_q⁻¹."
+    ],
+    "result": {
+      "name": "An explicit untwisting theorem",
+      "statement": "For a lifted inner action, F(g,q)=(g u_q,q) is a group isomorphism SU4⋊_αQ8→SU4×Q8. Another valid action uses a homomorphismQ8→C2 followed by complex conjugation onSU4.",
+      "proof": "For the first claim,F((g,q)(h,r))=(g u_q h u_q⁻¹u_(qr),qr)=(g u_q h u_r,qr), usingu_(qr)=u_qu_r. This equalsF(g,q)F(h,r) in the direct product. The inverse is(a,q)↦(a u_q⁻¹,q). To obtain a concreteu, use the standard faithful2-dimensional quaternion matrices inSU2 and embed them asdiag(u_q,I2) inSU4. For the second action, any nontrivial sign character ofQ8 factors through its abelianizationC2×C2. Complex conjugation has order2 and preservesSU4, so composing gives a homomorphism into automorphisms. It acts on the central elementiI4 by inversion, whereas every inner action fixes that center."
+    },
+    "example": {
+      "setup": "Compare the action on the central order-four subgroup.",
+      "calculation": "Under a lifted inner action, iI4 staysiI4 for everyq. Under the conjugation action, aq with negative character sendsiI4 to−iI4. Thus the two presentations carry genuinely different action data before any lattice model is defined.",
+      "conclusion": "The action is part of the group’s definition. A label containing two factors does not choose it."
+    },
+    "limits": "The source identifies a project topic, not a recovered action or validated simulation. No categorical gauge theory, continuum limit or numerical lattice result is inferred.",
+    "extension": "State the intended action and representation, then derive the edge transformation laws and gauge-invariant loop observables for a finite lattice.",
+    "references": [
+      {
+        "label": "Etingof–Gelaki–Nikshych–Ostrik, Tensor Categories",
+        "url": "https://math.mit.edu/~etingof/egnobookfinal.pdf"
+      }
+    ],
+    "original": {
+      "date": "2025-03-21T06:13:18Z",
+      "month": "2025-03",
+      "evidence": "U",
+      "field": "Group theory",
+      "concept": "A semidirect product requires an action, even when its factors are familiar",
+      "origin": "Recovered dated conversation evidence; mathematical development newly written",
+      "question": "What choices are missing from SU4⋉Q8, and which concrete actions produce well-defined groups?",
+      "math": "For a lifted inner action, F(g,q)=(g u_q,q) is a group isomorphism SU4⋊_αQ8→SU4×Q8. Another valid action uses a homomorphismQ8→C2 followed by complex conjugation onSU4.",
+      "finish": "Precise result, proof, worked example and explicit limits",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://math.mit.edu/~etingof/egnobookfinal.pdf"
+      ],
+      "source_excerpt": "- [USER_FACT] [c4] U@2025-03-21T06:13:18Z, -579d: March 2025 project centers on QTES/higher-categorical SU(4)⋉Q8 lattice gauge theory, L=8/L=16 simulations, emergent geometry, categorical RG, entanglement, and AdS/CFT.",
+      "retrieval_receipt": "root_receipts.json record 0",
+      "original_question": null,
+      "attribution_note": "The dated source identifies user-authored material; the revised question and proof are new unless verbatim wording is separately provided. The source_excerpt is a literal retrieved result bullet (including any original truncation), not a reconstructed transcript. It may summarize historical content; no verbatim original question is inferred."
+    }
+  },
+  {
+    "id": "Y25-03-020",
+    "title": "A projective multiplier gives a concrete H² cocycle",
+    "status": "Developed classical result with a checked example; recovered claims corrected where needed",
+    "summary": "The recovered higher-gauge discussion namesH²(BG,U1). A projective representation of a finite group gives a fully calculable example of the relevant cocycle identity. It also exhibits a nontrivial class without claiming a full cohomology classification.",
+    "definitions": [
+      "LetG=F2² with addition. Forv=(a,b), setU_v=X^aZ^b using PauliX,Z, which satisfyZX=−XZ.",
+      "A normalized2-cocycleω satisfiesω(v,w)ω(v+w,u)=ω(w,u)ω(v,w+u) andω(0,v)=ω(v,0)=1."
+    ],
+    "result": {
+      "name": "An explicit nontrivial multiplier",
+      "statement": "U_vU_w=ω(v,w)U_(v+w), whereω((a,b),(c,d))=(−1)^(bc). This is a normalized2-cocycle and is not a coboundary.",
+      "proof": "MoveZ^b pastX^c to obtain the sign(−1)^(bc); exponents add modulo2 becauseX²=Z²=I. The cocycle identity compares exponentsbc+(b+d)e withde+b(c+e), equal modulo2, so associativity is exact. A coboundary on an abelian group has formf(v)f(w)/f(v+w) and is symmetric inv,w. But forv=(1,0),w=(0,1), ω(v,w)=1 andω(w,v)=−1. Hence this cocycle cannot be a coboundary. This elementary obstruction proves a nonzero cohomology class in the specified convention."
+    },
+    "example": {
+      "setup": "Enumerate all triples inG³ and compare the cocycle identity.",
+      "calculation": "There are64 triples, and every one satisfies the identity. The associated central extension with multiplication(z,v)(z′,w)=(zz′ω(v,w),v+w) is associative. Its commutator on the two chosen generators is−1, recording the noncommutativity hidden by the abelian labels.",
+      "conclusion": "The coefficient group, cocycle and identity are all explicit. They give real group-cohomological content."
+    },
+    "limits": "The extension built from these particular Pauli lifts is not automatically the quaternion groupQ8; the squares of lifts and coefficient subgroup matter. The result is not a computation for everyG.",
+    "extension": "For the intended lattice symmetry, write its actual multiplication table and construct cocycles or coboundaries explicitly. Then determine which projective representations realize them.",
+    "references": [
+      {
+        "label": "Etingof–Gelaki–Nikshych–Ostrik, Tensor Categories",
+        "url": "https://math.mit.edu/~etingof/egnobookfinal.pdf"
+      }
+    ],
+    "original": {
+      "date": "2025-03-21T06:14:55Z",
+      "month": "2025-03",
+      "evidence": "A",
+      "field": "Group cohomology",
+      "concept": "A projective multiplier gives a concrete H² cocycle",
+      "origin": "Recovered dated conversation evidence; mathematical development newly written",
+      "question": "What exact cocycle can replace an unspecified group-cohomology decoration?",
+      "math": "U_vU_w=ω(v,w)U_(v+w), whereω((a,b),(c,d))=(−1)^(bc). This is a normalized2-cocycle and is not a coboundary.",
+      "finish": "Precise result, proof, worked example and explicit limits",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://math.mit.edu/~etingof/egnobookfinal.pdf"
+      ],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c4] A@2025-03-21T06:14:55Z, -579d: Proposed HCRGF \\(\\mathcal R_t:D^b(\\mathcal C_\\Lambda)\\to D^b(\\mathcal C_{\\Lambda e^{-t}})\\), Maurer–Cartan flow \\(d\\mathcal A+\\sum_n\\ell_n(\\mathcal A^{\\otimes n})\\), 2-crossed-module coherence, \\(H^2(BG,U(1))\\), emergent \\(g_{\\mu\\nu}=\\sum_kC_{\\mu\\nu}^{(k)}\\ell_k(B,B)\\), and cohomology-preserving blocking.",
+      "retrieval_receipt": "root_receipts.json record 0",
+      "original_question": null,
+      "attribution_note": "The historical mathematical excerpt is assistant-authored. No original user question is inferred; the revised question and worked development are new. The source_excerpt is a literal retrieved result bullet (including any original truncation), not a reconstructed transcript. It may summarize historical content; no verbatim original question is inferred."
+    }
+  },
+  {
+    "id": "Y25-03-021",
+    "title": "Cohomology-preserving blocking requires a chain homotopy certificate",
+    "status": "Developed classical result with a checked example; recovered claims corrected where needed",
+    "summary": "The recovered blocking proposal asserts cohomology preservation. That property can be proved by exhibiting chain maps and a chain homotopy. A subdivided circle gives a complete integer certificate, which also illustrates exactly what arbitrary edge deletion could lose.",
+    "definitions": [
+      "LetC have verticesv0,v1 and oriented edgese0:v0→v1,e1:v1→v0. LetD have one vertexv and one loopa.",
+      "Define r(v0)=r(v1)=v,r(e0)=0,r(e1)=a; define i(v)=v0,i(a)=e0+e1."
+    ],
+    "result": {
+      "name": "An exact chain-homotopy equivalence",
+      "statement": "The mapsr,i commute with boundaries, ri=id_D, andir−id_C=∂h+h∂ for h(v0)=0,h(v1)=−e0,h(C1)=0. Therefore they induce inverse maps on integer homology.",
+      "proof": "The boundary ofe0 isv1−v0 and ofe1 isv0−v1; bothr-boundaries vanish, so r is a chain map. The chaini(a)=e0+e1 has zero boundary, proving the same fori. The identityri is immediate. Onv1, ir−id givesv0−v1=∂(−e0), and onv0 it is zero. One0,e1 the difference is respectively−e0,+e0, equal toh∂ of those edges. This checks the homotopy formula on an integer basis. Ifc is a cycle, (ir−id)c=∂hc is a boundary, so ir acts as identity on homology; together withri=id this proves the claim. Dualizing gives the corresponding cohomology equivalence."
+    },
+    "example": {
+      "setup": "The fine cyclec=e0+e1 is sent toa and returns toc.",
+      "calculation": "Both complexes haveH0≅Z andH1≅Z. In contrast, deletinge1 without adding the coarse loop leaves an interval and destroysH1. Dimension reduction alone is therefore insufficient to preserve the invariant.",
+      "conclusion": "A short exact certificate establishes preservation in a declared model, rather than inferring it from a category label."
+    },
+    "limits": "The maps do not preserve every metric, local observable or dynamical energy. Homology equivalence is a specific algebraic guarantee, not universal information preservation.",
+    "extension": "For the actual tensor blocking, give integer incidence matrices and chain maps, then solve the homotopy equation. If no such maps exist, quantify the cycles lost instead of asserting preservation.",
+    "references": [
+      {
+        "label": "Cohen-Steiner–Edelsbrunner–Harer, Stability of persistence diagrams",
+        "url": "https://doi.org/10.1007/s00454-006-1276-5"
+      }
+    ],
+    "original": {
+      "date": "2025-03-21T06:14:55Z",
+      "month": "2025-03",
+      "evidence": "A",
+      "field": "Algebraic topology",
+      "concept": "Cohomology-preserving blocking requires a chain homotopy certificate",
+      "origin": "Recovered dated conversation evidence; mathematical development newly written",
+      "question": "When does a coarse-graining map really preserve cycle information?",
+      "math": "The mapsr,i commute with boundaries, ri=id_D, andir−id_C=∂h+h∂ for h(v0)=0,h(v1)=−e0,h(C1)=0. Therefore they induce inverse maps on integer homology.",
+      "finish": "Precise result, proof, worked example and explicit limits",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://doi.org/10.1007/s00454-006-1276-5"
+      ],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c4] A@2025-03-21T06:14:55Z, -579d: Proposed HCRGF \\(\\mathcal R_t:D^b(\\mathcal C_\\Lambda)\\to D^b(\\mathcal C_{\\Lambda e^{-t}})\\), Maurer–Cartan flow \\(d\\mathcal A+\\sum_n\\ell_n(\\mathcal A^{\\otimes n})\\), 2-crossed-module coherence, \\(H^2(BG,U(1))\\), emergent \\(g_{\\mu\\nu}=\\sum_kC_{\\mu\\nu}^{(k)}\\ell_k(B,B)\\), and cohomology-preserving blocking.",
+      "retrieval_receipt": "root_receipts.json record 0",
+      "original_question": null,
+      "attribution_note": "The historical mathematical excerpt is assistant-authored. No original user question is inferred; the revised question and worked development are new. The source_excerpt is a literal retrieved result bullet (including any original truncation), not a reconstructed transcript. It may summarize historical content; no verbatim original question is inferred."
+    }
+  },
+  {
+    "id": "Y25-03-022",
+    "title": "A power-law phase-noise spectrum needs cutoffs to have finite variance",
+    "status": "Developed classical result with a checked example; recovered claims corrected where needed",
+    "summary": "The historical phase-noise model is a polynomial in negative powers of frequency. Its integrability is a mathematical issue before any resonance or hardware interpretation. A finite bandwidth gives an exact variance formula and exposes the divergent idealization.",
+    "definitions": [
+      "Use a one-sided spectral-density conventionVarφ=∫₀∞Sφ(f)df. On a declared band[f_L,f_H], assumeSφ≥0.",
+      "The coefficients have the units needed forSφ; negative values require a separate positivity check rather than termwise interpretation."
+    ],
+    "result": {
+      "name": "Finite-band variance and low-frequency divergence",
+      "statement": "For0<f_L<f_H, the variance isΣ_(i≠−1)h_i(f_H^(i+1)−f_L^(i+1))/(i+1)+h_(−1)log(f_H/f_L). A nonzero nonnegativef^(−p) term withp≥1 diverges asf_L→0.",
+      "proof": "The formula is direct integration of each power on a compact positive band. Forp=1 the integral is logarithmic; forp>1 it grows likef_L^(1−p)/(p−1). Therefore an ideal spectrum with such a positive leading low-frequency term cannot be the spectral density of a stationary finite-variance phase process over all frequencies. A flat positive term also diverges at infinite frequency unless a high-frequency cutoff or decay is supplied. These are consequences of finite covariance at zero, not a claim that finite-band models are unusable. Frequency noise or phase increments may admit different generalized-process interpretations."
+    },
+    "example": {
+      "setup": "TakeS(f)=f^(−2) on[1,10] and zero elsewhere.",
+      "calculation": "The variance is1−1/10=9/10. Extending the lower endpoint to1/100 gives100−1/10=999/10, a large change even though the high-frequency endpoint is fixed. TakingS(f)=1/f on[1,10] giveslog10 instead.",
+      "conclusion": "A finite declared band makes the model quantitative. Omitting cutoffs can conceal an infinite variance."
+    },
+    "limits": "The calculation does not validate measured coefficients or predicted oscillator performance. PSD positivity and a chosen one-sided/two-sided convention must precede numerical comparison.",
+    "extension": "Fit coefficients on a declared band with positivity constraints, propagate their intervals through the exact integral, and test whether a stationary phase or an increment model matches the intended observable.",
+    "references": [
+      {
+        "label": "Glauber, The quantum theory of optical coherence",
+        "url": "https://doi.org/10.1103/PhysRev.130.2529"
+      }
+    ],
+    "original": {
+      "date": "2025-03-28T19:56:25Z",
+      "month": "2025-03",
+      "evidence": "A",
+      "field": "Stochastic analysis",
+      "concept": "A power-law phase-noise spectrum needs cutoffs to have finite variance",
+      "origin": "Recovered dated conversation evidence; mathematical development newly written",
+      "question": "When does the recovered spectral-density model define a finite-variance process?",
+      "math": "For0<f_L<f_H, the variance isΣ_(i≠−1)h_i(f_H^(i+1)−f_L^(i+1))/(i+1)+h_(−1)log(f_H/f_L). A nonzero nonnegativef^(−p) term withp≥1 diverges asf_L→0.",
+      "finish": "Precise result, proof, worked example and explicit limits",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://doi.org/10.1103/PhysRev.130.2529"
+      ],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c7] A@2025-03-28T19:56:25Z, -1y6m: assistant proposed phase-noise model \\(S_\\phi(f)=\\sum_{i=-4}^0h_if^i\\); spectral triple \\((\\mathcal A,\\mathcal H,D)\\); generalized Langevin equation; Hirota \\((D_x^2-D_t)\\tau\\cdot\\tau=0\\); Chern–",
+      "retrieval_receipt": "root_receipts.json record 0",
+      "original_question": null,
+      "attribution_note": "The historical mathematical excerpt is assistant-authored. No original user question is inferred; the revised question and worked development are new. The source_excerpt is a literal retrieved result bullet (including any original truncation), not a reconstructed transcript. It may summarize historical content; no verbatim original question is inferred."
+    }
+  },
+  {
+    "id": "Y25-03-023",
+    "title": "Eliminating a hidden variable derives a memory kernel and a source term",
+    "status": "Developed classical result with a checked example; recovered claims corrected where needed",
+    "summary": "The recovered Langevin reference does not specify a kernel or noise law. A two-variable linear system gives an exact reduction. It proves that a memory term and a source depending on the hidden initial condition arise together; dropping the source changes the model.",
+    "definitions": [
+      "Letx′=−ax+by andy′=−cy+dx, withreal coefficients andc>0.",
+      "Initial data arex(0)=x0,y(0)=y0. A memory kernel acts by convolution over pastx."
+    ],
+    "result": {
+      "name": "Exact reduced Volterra equation",
+      "statement": "The observed coordinate satisfies x′(t)=−ax(t)+b e^(−ct)y0+bd∫₀ᵗe^(−c(t−s))x(s)ds. This is equivalent to the full system with the stated initial data.",
+      "proof": "Multiply the second equation bye^(ct) and integrate to obtainy(t)=e^(−ct)y0+d∫₀ᵗe^(−c(t−s))x(s)ds. Substitute into the first equation to get the reduced formula. Conversely, given a solutionx of that Volterra equation, definey by the integral expression; differentiating recoversy′=−cy+dx and thenx′=−ax+by. The initial values also agree. Thus the reduction is exact, with no assumption that the hidden coordinate is random. Ify0 is random, the decaying source inherits its law, and a fluctuation–dissipation identity requires additional equilibrium assumptions rather than following from the elimination alone."
+    },
+    "example": {
+      "setup": "Takea=0,b=1,c=1,d=−1,x0=1,y0=0.",
+      "calculation": "The full matrix has characteristic polynomialλ²+λ+1. Hencex(t)=e^(−t/2)[cos(√3t/2)+(1/√3)sin(√3t/2)]. It obeysx′(0)=0 andx″+x′+x=0. The Volterra form isx′=−∫₀ᵗe^(−(t−s))x(s)ds, which differentiates to that same equation.",
+      "conclusion": "The memory kernel is derived and independently checkable, with its sign fixed by the hidden coupling."
+    },
+    "limits": "This deterministic model is not a stochastic thermostat or a proof of a resonance phenomenon. Infinite reservoirs require convergence and a specified initial-state distribution.",
+    "extension": "For a block matrix or self-adjoint Hamiltonian, repeat the variation-of-constants argument and bound the kernel norm. State the hidden initial condition before interpreting reduced dissipation.",
+    "references": [
+      {
+        "label": "Connes, Noncommutative geometry and reality",
+        "url": "https://alainconnes.org/wp-content/uploads/reality.pdf"
+      }
+    ],
+    "original": {
+      "date": "2025-03-28T19:56:25Z",
+      "month": "2025-03",
+      "evidence": "A",
+      "field": "Linear dynamics",
+      "concept": "Eliminating a hidden variable derives a memory kernel and a source term",
+      "origin": "Recovered dated conversation evidence; mathematical development newly written",
+      "question": "Which terms must appear when a reduced equation is obtained from a larger system?",
+      "math": "The observed coordinate satisfies x′(t)=−ax(t)+b e^(−ct)y0+bd∫₀ᵗe^(−c(t−s))x(s)ds. This is equivalent to the full system with the stated initial data.",
+      "finish": "Precise result, proof, worked example and explicit limits",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://alainconnes.org/wp-content/uploads/reality.pdf"
+      ],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c7] A@2025-03-28T19:56:25Z, -1y6m: assistant proposed phase-noise model \\(S_\\phi(f)=\\sum_{i=-4}^0h_if^i\\); spectral triple \\((\\mathcal A,\\mathcal H,D)\\); generalized Langevin equation; Hirota \\((D_x^2-D_t)\\tau\\cdot\\tau=0\\); Chern–",
+      "retrieval_receipt": "root_receipts.json record 0",
+      "original_question": null,
+      "attribution_note": "The historical mathematical excerpt is assistant-authored. No original user question is inferred; the revised question and worked development are new. The source_excerpt is a literal retrieved result bullet (including any original truncation), not a reconstructed transcript. It may summarize historical content; no verbatim original question is inferred."
+    }
+  },
+  {
+    "id": "Y25-03-024",
+    "title": "The recovered self-bilinear Hirota equation loses its time derivative",
+    "status": "Developed classical result with a checked example; recovered claims corrected where needed",
+    "summary": "The historical assistant writes a self-bilinear equation resembling the heat equation. Hirota derivatives act on two slots, and odd derivatives vanish when both slots are the same. Expanding the definition yields an exact correction and a family of solutions.",
+    "definitions": [
+      "D_x^mf·g=(∂x−∂x′)^mf(x)g(x′)|_(x′=x); defineD_t similarly.",
+      "Assumeτ(x,t)>0 isC² inx andC¹ int, so logτ is defined."
+    ],
+    "result": {
+      "name": "An exact reduction",
+      "statement": "D_tτ·τ=0 andD_x²τ·τ=2(ττ_xx−τ_x²). Therefore(D_x²−D_t)τ·τ=0 is equivalent to(logτ)_xx=0, with solutionsτ=e^(a(t)x+b(t)) locally on a connectedx interval.",
+      "proof": "The first derivative isτ_tτ−ττ_t=0. The second spatial derivative expands toτ_xxτ−2τ_xτ_x+ττ_xx, yielding the formula. Dividing by2τ² gives(logτ)_xx. Integrating twice inx giveslogτ=a(t)x+b(t), with the regularity required for the chosen functions. Thus there is no time-evolution constraint in the displayed self-bilinear equation. A genuine heat equation appears instead from(D_x²−D_t)f·1=f_xx−f_t=0, because the second slot is constant rather than equal tof."
+    },
+    "example": {
+      "setup": "Takeτ=e^(x+t²).",
+      "calculation": "The self-bilinear equation vanishes identically because(logτ)_xx=0. Butτ_xx−τ_t=(1−2t)τ, which is nonzero exceptatt=1/2. The samefunction therefore decisively separates the recovered equation from the ordinary heat equation.",
+      "conclusion": "The bilinear notation is now evaluated correctly, with a constructive solution family and an explicit counterexample to a likely interpretation."
+    },
+    "limits": "Zeros or complex values ofτ need separate local treatment and a logarithm branch; the division argument uses strict positivity. No soliton or integrability theorem follows from this one equation.",
+    "extension": "State the intended nonlinear PDE, choose aτ substitution, and derive its correct even-order self-bilinear form or two-function bilinear system directly.",
+    "references": [
+      {
+        "label": "Ma, Lump solutions via Hirota bilinear forms",
+        "url": "https://doi.org/10.1016/j.jde.2017.10.033"
+      }
+    ],
+    "original": {
+      "date": "2025-03-28T19:56:25Z",
+      "month": "2025-03",
+      "evidence": "A",
+      "field": "Differential equations",
+      "concept": "The recovered self-bilinear Hirota equation loses its time derivative",
+      "origin": "Recovered dated conversation evidence; mathematical development newly written",
+      "question": "What equation does the displayed Hirota expression actually impose?",
+      "math": "D_tτ·τ=0 andD_x²τ·τ=2(ττ_xx−τ_x²). Therefore(D_x²−D_t)τ·τ=0 is equivalent to(logτ)_xx=0, with solutionsτ=e^(a(t)x+b(t)) locally on a connectedx interval.",
+      "finish": "Precise result, proof, worked example and explicit limits",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://doi.org/10.1016/j.jde.2017.10.033"
+      ],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c7] A@2025-03-28T19:56:25Z, -1y6m: assistant proposed phase-noise model \\(S_\\phi(f)=\\sum_{i=-4}^0h_if^i\\); spectral triple \\((\\mathcal A,\\mathcal H,D)\\); generalized Langevin equation; Hirota \\((D_x^2-D_t)\\tau\\cdot\\tau=0\\); Chern–",
+      "retrieval_receipt": "root_receipts.json record 0",
+      "original_question": null,
+      "attribution_note": "The historical mathematical excerpt is assistant-authored. No original user question is inferred; the revised question and worked development are new. The source_excerpt is a literal retrieved result bullet (including any original truncation), not a reconstructed transcript. It may summarize historical content; no verbatim original question is inferred."
+    }
+  },
+  {
+    "id": "Y25-03-025",
+    "title": "Second-order correlations are factorial moments with distinguishable models",
+    "status": "Developed classical result with a checked example; recovered claims corrected where needed",
+    "summary": "The recovered user narrative namesg^(2) without a probability model. The zero-delay count version is a normalized factorial moment. Poisson, fixed-count and geometric distributions yield three exact values, so a measured value must be interpreted through its declared sampling model.",
+    "definitions": [
+      "For a nonnegative integer random variableN with0<EN<∞ and finite second moment, defineg2=E[N(N−1)]/(EN)².",
+      "SinceE[N(N−1)]=VarN+(EN)²−EN, g2=1+(VarN−EN)/(EN)²."
+    ],
+    "result": {
+      "name": "Exact model values",
+      "statement": "A Poisson count hasg2=1; a deterministic countN=n≥1 hasg2=1−1/n; a geometric countP(N=k)=(1−q)q^k,0<q<1, hasg2=2.",
+      "proof": "ForPoissonλ, differentiate its generating functionG(z)=exp[λ(z−1)] twice:EN=G′(1)=λ andE[N(N−1)]=G″(1)=λ². A fixed count has numeratorn(n−1) immediately. For the geometric lawG(z)=(1−q)/(1−qz), givingG′(1)=q/(1−q) andG″(1)=2q²/(1−q)². The ratio is2. These calculations also show why ordinary second moments would give different normalizations: factorial moments remove the self-count contributionEN. Independent binomial thinning with efficiencyη scales first and second factorial moments byη andη², leavingg2 unchanged when the assumptions hold."
+    },
+    "example": {
+      "setup": "UsePoisson mean2, fixed count2 and geometric mean2(q=2/3).",
+      "calculation": "All three haveEN=2, but their factorial second moments are4,2,8 respectively, so theirg2 values are1,1/2,2. Equal mean flux therefore cannot identify the correlation model.",
+      "conclusion": "The statistic distinguishes explicit count laws while remaining independent of an unsupported resonance story."
+    },
+    "limits": "Time-dependentg2(τ), detector dead time, backgrounds and non-independent thinning require their own model. The formulas do not validate a hardware architecture or a nonclassical interpretation from a single number alone.",
+    "extension": "Give the count-window definition and estimate both factorial moments with uncertainty intervals. Test the thinning-invariance prediction before comparing datasets.",
+    "references": [
+      {
+        "label": "Glauber, The quantum theory of optical coherence",
+        "url": "https://doi.org/10.1103/PhysRev.130.2529"
+      }
+    ],
+    "original": {
+      "date": "2025-03-28T19:55:14Z",
+      "month": "2025-03",
+      "evidence": "U",
+      "field": "Probability",
+      "concept": "Second-order correlations are factorial moments with distinguishable models",
+      "origin": "Recovered dated conversation evidence; mathematical development newly written",
+      "question": "What exact statistical quantity can be calculated for the recovered g² topic?",
+      "math": "A Poisson count hasg2=1; a deterministic countN=n≥1 hasg2=1−1/n; a geometric countP(N=k)=(1−q)q^k,0<q<1, hasg2=2.",
+      "finish": "Precise result, proof, worked example and explicit limits",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://doi.org/10.1103/PhysRev.130.2529"
+      ],
+      "source_excerpt": "- [USER_FACT] [c7] U@2025-03-28T19:55:14Z, -1y6m: March 28 project: Wenzel ULN-500-MHz DOCXO 32×32×32 federated vacuum-oracle system; user supplied extensive mathematical/engineering narrative with \\(\\omega_1=2\\pi\\cdot5.74\\) MHz, \\(\\omega_2=2\\pi\\cdot11.48\\) MHz, \\(\\vec\\theta=(\\pi/12,\\pi/12,\\pi/12)\\), factorization homology, resonance algebra, and \\(g^{(2)}\\).",
+      "retrieval_receipt": "root_receipts.json record 0",
+      "original_question": null,
+      "attribution_note": "The dated source identifies user-authored material; the revised question and proof are new unless verbatim wording is separately provided. The source_excerpt is a literal retrieved result bullet (including any original truncation), not a reconstructed transcript. It may summarize historical content; no verbatim original question is inferred."
+    }
+  },
+  {
+    "id": "Y25-03-026",
+    "title": "An energy bound exposes incompatible power and thrust scalings",
+    "status": "Developed classical result with a checked example; recovered claims corrected where needed",
+    "summary": "The recovered source combines a fixed effective speed with power and force projections. Restricting the discussion to its mathematics, kinetic-energy accounting gives a simple necessary inequality. It can reject an inconsistent set of numbers without constructing an engineering model.",
+    "definitions": [
+      "For a mass flowṁ≥0 leaving at speedv>0, momentum flux isF=ṁv and kinetic power isP_kin=(1/2)ṁv².",
+      "Assume the declared available powerP bounds that kinetic power, with no additional energy source hidden in the model."
+    ],
+    "result": {
+      "name": "An exact necessary bound",
+      "statement": "F≤2P/v. At fixedv, a force scalingF=cP^(1+δ) withc>0 andδ>0 cannot satisfy this bound for arbitrarily largeP.",
+      "proof": "Eliminateṁ from the two definitions to obtainP_kin=Fv/2. The assumptionP_kin≤P gives the inequality by division byv/2. For the power law, the ratioFv/(2P)=(cv/2)P^δ grows without bound ifδ>0, so some finiteP violates the energy condition. This is an asymptotic obstruction, not a universal ban on superlinear behavior over a bounded range or on changing exhaust speed. A quantitative proposal must declare howv and efficiency depend onP. The dimensions also agree: watts divided by meters per second are newtons."
+    },
+    "example": {
+      "setup": "TakeP=100000 watts andv=65000 meters per second, as in the recovered numerical combination.",
+      "calculation": "The bound is200000/65000=40/13≈3.076923 newtons. A force of2150newtons at that same speed would require at leastFv/2=69,875,000 watts of kinetic power, about698.75 times the declared100kW. At10kW, the upper bound is4/13newtons≈0.30769.",
+      "conclusion": "The necessary inequality is exact and makes the numerical inconsistency reviewable."
+    },
+    "limits": "The result is conditional on the explicitly stated energy budget and momentum-flux model. It does not evaluate a device, give operational advice or prove a full fluid or electromagnetic model. Additional energy sources would change the hypothesis and must be quantified.",
+    "extension": "Rewrite all claimed scaling laws with dimensionless efficiencyη=P_kin/P≤1 and a declaredv(P), then identify a parameter range where every necessary inequality is satisfied.",
+    "references": [],
+    "original": {
+      "date": "2025-03-24T06:01:49Z",
+      "month": "2025-03",
+      "evidence": "A",
+      "field": "Inequalities and dimensional analysis",
+      "concept": "An energy bound exposes incompatible power and thrust scalings",
+      "origin": "Recovered dated conversation evidence; mathematical development newly written",
+      "question": "Which elementary energy inequality must any claimed fixed-exhaust-speed scaling satisfy?",
+      "math": "F≤2P/v. At fixedv, a force scalingF=cP^(1+δ) withc>0 andδ>0 cannot satisfy this bound for arbitrarily largeP.",
+      "finish": "Precise result, proof, worked example and explicit limits",
+      "kind": "Revised mathematical treatment",
+      "refs": [],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c8] A@2025-03-24T06:01:49Z, -1y7mo: equations used \\(\\dot m=\\rho Av\\), magnetized Bernoulli balance, \\(v_{e,\\mathrm{eff}}=v_1\\sqrt{A_1/A_2}\\), \\(F=\\dot m v_{e,\\mathrm{eff}}\\), \\(V_H=(Bv/ne)d\\), \\(\\mathbf J_H\\times\\mathbf B=\\nabla P_e\\), \\(F\\propto P^{1+\\delta}\\), \\(\\mathrm{Cost}/F\\propto P^{-0.15}\\",
+      "retrieval_receipt": "root_receipts.json record 0",
+      "original_question": null,
+      "attribution_note": "The historical mathematical excerpt is assistant-authored. No original user question is inferred; the revised question and worked development are new. The source_excerpt is a literal retrieved result bullet (including any original truncation), not a reconstructed transcript. It may summarize historical content; no verbatim original question is inferred."
+    }
+  },
+  {
+    "id": "Y25-03-027",
+    "title": "A stabilizer code needs commuting checks and an error model",
+    "status": "Developed classical result with a checked example; recovered claims corrected where needed",
+    "summary": "The recovered HQECC material states stabilizer constraints and numerical errors without a noise model. A three-qubit repetition code gives a complete limited theorem: it corrects one bit flip, while explicitly failing to protect against a general phase error.",
+    "definitions": [
+      "Use commuting checksS1=Z1Z2 andS2=Z2Z3. Their common+1 eigenspace isspan{|000〉,|111〉}.",
+      "Assume independent bit-flip errors with probabilityp on each qubit, followed by ideal syndrome measurement and correction."
+    ],
+    "result": {
+      "name": "Exact syndrome and failure probability",
+      "statement": "The errorsI,X1,X2,X3 have syndromes(+,+),(−,+),(−,−),(+,−), respectively. Majority correction fails with probability3p²−2p³.",
+      "proof": "PauliZ anticommutes withX on the same qubit and commutes on distinct ones. Applying that rule to each check gives the four displayed syndrome pairs, so each single flip can be identified and inverted. The checks act identically on both logical basis vectors and do not measure their superposition coefficients. With two or three independent flips, the syndrome-based single-flip correction instead changes the logical bit. The total probability isC(3,2)p²(1−p)+p³=3p²−2p³. At the subspace level,PE_a*E_bP=δ_abP for the four errors: diagonal products areI and distinct products take the code to an orthogonal syndrome subspace. This is the exact correction condition in this restricted error set."
+    },
+    "example": {
+      "setup": "Takep=1/100.",
+      "calculation": "The failure probability is298/1000000=0.000298. By contrast,Z1 has syndrome(+,+) and acts as a nontrivial logical phase, so it is undetectable by these checks. An unspecified general quantum noise rate cannot be assigned the same failure polynomial.",
+      "conclusion": "Checks, code space and a declared error distribution produce a real finite guarantee. The recovered0.012 is not validated."
+    },
+    "limits": "Measurement faults, correlated errors and phase noise change the result. No large holographic-code or hardware fidelity theorem follows from this small code.",
+    "extension": "Give the actual stabilizer generators and noise channel, verify the fullKnill–Laflamme condition or a recovery bound, and report uncertainty separately from ideal-code probability.",
+    "references": [
+      {
+        "label": "Knill–Laflamme, A Theory of Quantum Error-Correcting Codes",
+        "url": "https://arxiv.org/abs/quant-ph/9604034"
+      }
+    ],
+    "original": {
+      "date": "2025-03-03T01:13:00Z",
+      "month": "2025-03",
+      "evidence": "A",
+      "field": "Quantum information",
+      "concept": "A stabilizer code needs commuting checks and an error model",
+      "origin": "Recovered dated conversation evidence; mathematical development newly written",
+      "question": "Which finite code supplies an actual correction theorem rather than an asserted fidelity?",
+      "math": "The errorsI,X1,X2,X3 have syndromes(+,+),(−,+),(−,−),(+,−), respectively. Majority correction fails with probability3p²−2p³.",
+      "finish": "Precise result, proof, worked example and explicit limits",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://arxiv.org/abs/quant-ph/9604034"
+      ],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c1] A@2025-03-03T01:13:00Z, -1y7m: Mathematical proof framework: \\(S:\\tau\\mapsto-1/\\tau\\), \\(T:\\tau\\mapsto\\tau+1\\); fusion \\(X\\otimes Y\\cong\\bigoplus_ZN_{X,Y}^ZZ\\); stabilizer condition \\(S_i|\\psi\\rangle=|\\psi\\rangle\\); partition function \\(Z_{\\rm HQECC}(M)=\\sum_{[A]}e^{iS[A]}\\); anomaly group \\(H^6_{\\mathrm{Mod}_{\\mathrm{TMF+3}}}(M,U(1))\\).",
+      "retrieval_receipt": "root_coverage.json record 0",
+      "original_question": null,
+      "attribution_note": "The historical mathematical excerpt is assistant-authored. No original user question is inferred; the revised question and worked development are new. The source_excerpt is a literal retrieved result bullet (including any original truncation), not a reconstructed transcript. It may summarize historical content; no verbatim original question is inferred."
+    }
+  },
+  {
+    "id": "Y25-03-028",
+    "title": "Fibonacci fusion has a complete two-dimensional algebraic certificate",
+    "status": "Developed classical result with a checked example; recovered claims corrected where needed",
+    "summary": "The recovered Fibonacci rule has a standard constructive realization. Its fusion matrix and sine-freeS matrix can be verified by elementary algebra. These identities are real evidence for a fusion ring, while the full associator and braiding still require coherence.",
+    "definitions": [
+      "Letφ=(1+√5)/2 and use labels1,τ withτ²=1+τ. The multiplication matrix isNτ=[[0,1],[1,1]].",
+      "SetS=(1/√(1+φ²))[[1,φ],[φ,−1]]."
+    ],
+    "result": {
+      "name": "Exact Fibonacci diagonalization",
+      "statement": "Nτ²=I+Nτ, S²=I andNτ=S diag(φ,−1/φ)S. The ratiosS_(τ,j)/S_(1,j) are exactly these two eigenvalues.",
+      "proof": "The quadratic identity follows by multiplying the integer2×2 matrix. Sinceφ²=φ+1 andφ−1=1/φ, the vectors(1,φ) and(φ,−1) are orthogonal eigenvectors with eigenvaluesφ and−1/φ. Both have squared norm1+φ². Normalizing them givesS and proves its orthogonality and diagonalization. Hence theVerlinde diagonalization recovers the integer multiplication rather than merely fitting a number. The common real Fibonacci associator blockF=[[1/φ,1/√φ],[1/√φ,−1/φ]] is also orthogonal becauseφ⁻²+φ⁻¹=1, but orthogonality of one block is not the wholepentagon theorem."
+    },
+    "example": {
+      "setup": "Compute repeated fusion multiplicities.",
+      "calculation": "τ³=1+2τ andτ⁴=2+3τ, by repeatedly substitutingτ²=1+τ. Thus dimensions grow by Fibonacci recurrences. The positive dimension homomorphismdimτ=φ satisfiesφ²=1+φ exactly.",
+      "conclusion": "The fusion law andS diagonalization are fully checked, with a clear boundary between ring data and categorical realization."
+    },
+    "limits": "The historical phasee^(2πic/7) and fidelity bounds have no demonstrated compatibility with this example. Associativity of a numerical ring does not verify allF/R coherence equations.",
+    "extension": "Fix the classicalF andR symbols and exhaust the nontrivialpentagon andhexagon equations in a declared gauge; then distinguish mathematical consistency from benchmark performance.",
+    "references": [
+      {
+        "label": "Etingof–Gelaki–Nikshych–Ostrik, Tensor Categories",
+        "url": "https://math.mit.edu/~etingof/egnobookfinal.pdf"
+      }
+    ],
+    "original": {
+      "date": "2025-03-04T15:53:49Z",
+      "month": "2025-03",
+      "evidence": "A",
+      "field": "Fusion rings",
+      "concept": "Fibonacci fusion has a complete two-dimensional algebraic certificate",
+      "origin": "Recovered dated conversation evidence; mathematical development newly written",
+      "question": "Which exact fusion and diagonalization data can be proved before claiming complete categorical coherence?",
+      "math": "Nτ²=I+Nτ, S²=I andNτ=S diag(φ,−1/φ)S. The ratiosS_(τ,j)/S_(1,j) are exactly these two eigenvalues.",
+      "finish": "Precise result, proof, worked example and explicit limits",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://math.mit.edu/~etingof/egnobookfinal.pdf"
+      ],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c2] A@2025-03-04T15:53:49Z, -1y7m: HoTT reconstruction: MTC fusion \\(X_i\\otimes X_j=\\sum_kN_{ij}^kX_k\\), Verlinde formula, pentagon/hexagon coherence, stabilizer commutation \\(f g=g f\\), homotopy fibers, categorical loss/gradient flow, path induction, Fibonacci \\(\\tau\\otimes\\tau=1\\oplus\\tau\\), and Qiskit benchmarking.",
+      "retrieval_receipt": "root_coverage.json record 0",
+      "original_question": null,
+      "attribution_note": "The historical mathematical excerpt is assistant-authored. No original user question is inferred; the revised question and worked development are new. The source_excerpt is a literal retrieved result bullet (including any original truncation), not a reconstructed transcript. It may summarize historical content; no verbatim original question is inferred."
+    }
+  },
+  {
+    "id": "Y25-03-029",
+    "title": "A fractal probability measure has a quantitative weak-convergence proof",
+    "status": "Developed classical result with a checked example; recovered claims corrected where needed",
+    "summary": "The retrieved source names fractal convergence but supplies no usable measure construction. A BernoulliCantor measure gives a complete model with a deterministic error bound for test functions. It separates convergence from a verbal appeal to fractal moduli.",
+    "definitions": [
+      "LetB_j be independent fair bits andX=Σ_(j≥1)2B_j/3^j. LetX_n be the firstn terms andμ_n its distribution.",
+      "μ_n is the uniform measure on2^n finiteCantor endpoints; μ is the distribution ofX."
+    ],
+    "result": {
+      "name": "Quantitative weak convergence",
+      "statement": "For everyL-Lipschitz real functionf, |∫fdμ−∫fdμ_n|≤L3^(−n). More generally a continuousf on[0,1] has error at most its modulus of continuity at3^(−n).",
+      "proof": "ConstructX andX_n on the same probability space. Their omitted tail is nonnegative and at mostΣ_(j>n)2/3^j=3^(−n). Therefore|f(X)−f(X_n)|≤L3^(−n), or≤ω_f(3^(−n)) for a continuousf. Taking expectations proves the estimates and weak convergence because the modulus tends0 by uniform continuity. The coupling also supplies aWasserstein-1 bound without requiring density functions; the limiting measure is supported on theCantor set. The theorem has actual sample variables, weights and a topology of convergence."
+    },
+    "example": {
+      "setup": "Takef(x)=x andf(x)=x².",
+      "calculation": "EX=1/2, whileEX_n=(1−3^(−n))/2, so the first-moment error is3^(−n)/2. AlsoVarX=Σ_(j≥1)1/9^j=1/8 andEX²=3/8; finite moments follow by truncating those geometric sums.",
+      "conclusion": "The exact measure construction supports convergence and moment calculations, not an unspecified higher-topos theorem."
+    },
+    "limits": "The historical fractal-measure equations were not recovered fully. This is a newly specified mathematical model, not a reconstructed original proof or a validation of a claimed error rate.",
+    "extension": "For the intended measure, state its maps, weights and metric; construct an explicit coupling or prove tightness plus uniqueness of the limit.",
+    "references": [
+      {
+        "label": "Cohen-Steiner–Edelsbrunner–Harer, Stability of persistence diagrams",
+        "url": "https://doi.org/10.1007/s00454-006-1276-5"
+      }
+    ],
+    "original": {
+      "date": "2025-03-02T01:53:39Z",
+      "month": "2025-03",
+      "evidence": "U",
+      "field": "Probability and fractal geometry",
+      "concept": "A fractal probability measure has a quantitative weak-convergence proof",
+      "origin": "Recovered dated conversation evidence; mathematical development newly written",
+      "question": "What exact convergence theorem can be supplied for a specified fractal-measure sequence?",
+      "math": "For everyL-Lipschitz real functionf, |∫fdμ−∫fdμ_n|≤L3^(−n). More generally a continuousf on[0,1] has error at most its modulus of continuity at3^(−n).",
+      "finish": "Precise result, proof, worked example and explicit limits",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://doi.org/10.1007/s00454-006-1276-5"
+      ],
+      "source_excerpt": "- [USER_CONSTRAINT] [c0] U@2025-03-02T01:53:39Z, -1y7m: requested “full formal proofs”; supplied equations/theorems for \\((\\infty,3)\\)-topos coherence, \\(Z_{\\rm HSF}\\), and fractal-measure convergence.",
+      "retrieval_receipt": "root_coverage.json record 0",
+      "original_question": null,
+      "attribution_note": "The dated source identifies user-authored material; the revised question and proof are new unless verbatim wording is separately provided. The source_excerpt is a literal retrieved result bullet (including any original truncation), not a reconstructed transcript. It may summarize historical content; no verbatim original question is inferred."
+    }
+  },
+  {
+    "id": "Y25-03-030",
+    "title": "A homotopy fiber retains paths that an ordinary preimage discards",
+    "status": "Developed classical result with a checked example; recovered claims corrected where needed",
+    "summary": "The recovered HoTT discussion lists homotopy fibers without a defined map. The inclusion of a base point into the circle gives a simple exact example in which path data radically changes the answer. It is a classical topology model, not a formalization of an unspecified type theory.",
+    "definitions": [
+      "Takef:{*}→S1 withf(*)=1. The ordinary fiber over1 is a single point.",
+      "The homotopy fiber consists of(*,γ), whereγ is a path fromf(*) to1; here it is the based loop spaceΩS1."
+    ],
+    "result": {
+      "name": "An exact component classification",
+      "statement": "π0(ΩS1)≅Z by winding number; each component is contractible. Thus the homotopy fiber has infinitely many components despite the one-point ordinary fiber.",
+      "proof": "Use the coveringp:R→S1,p(t)=e^(2πit). Every based loop has a unique lift starting at0, whose endpoint is an integern becausep sends allintegers to1. That integer is invariant under based homotopy by continuity and the discrete endpoint set. Conversely, two lifted paths with the same endpoints are linearly homotopic inR while fixing endpoints; projection gives a based homotopy. Within a fixedn, the lifted path space is contractible by straight-line contraction to the path t↦nt. This proves both the integer classification and the componentwise contractibility. The ordinary preimage never records these paths."
+    },
+    "example": {
+      "setup": "Compare the constant loop withγ(t)=e^(2πit).",
+      "calculation": "Their lift endpoints are0 and1. Both lie over the same source point, but they are in different homotopy-fiber components. The difference is path information rather than a numerical cardinality attached to the original set.",
+      "conclusion": "A homotopy construction has concrete extra data that must be stated, not inferred from a higher-category label."
+    },
+    "limits": "General homotopy fibers require a topological or∞-categorical model and appropriate equivalences. The example does not prove newHoTT coherence rules or reconstruct a missing categorical map.",
+    "extension": "Specify the actual map and base point, then compute its long exact homotopy sequence or a model of the fiber before assigning an invariant.",
+    "references": [
+      {
+        "label": "Etingof–Gelaki–Nikshych–Ostrik, Tensor Categories",
+        "url": "https://math.mit.edu/~etingof/egnobookfinal.pdf"
+      }
+    ],
+    "original": {
+      "date": "2025-03-04T15:53:49Z",
+      "month": "2025-03",
+      "evidence": "A",
+      "field": "Homotopy theory",
+      "concept": "A homotopy fiber retains paths that an ordinary preimage discards",
+      "origin": "Recovered dated conversation evidence; mathematical development newly written",
+      "question": "What explicit example distinguishes a homotopy fiber from an ordinary set-theoretic fiber?",
+      "math": "π0(ΩS1)≅Z by winding number; each component is contractible. Thus the homotopy fiber has infinitely many components despite the one-point ordinary fiber.",
+      "finish": "Precise result, proof, worked example and explicit limits",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://math.mit.edu/~etingof/egnobookfinal.pdf"
+      ],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c2] A@2025-03-04T15:53:49Z, -1y7m: HoTT reconstruction: MTC fusion \\(X_i\\otimes X_j=\\sum_kN_{ij}^kX_k\\), Verlinde formula, pentagon/hexagon coherence, stabilizer commutation \\(f g=g f\\), homotopy fibers, categorical loss/gradient flow, path induction, Fibonacci \\(\\tau\\otimes\\tau=1\\oplus\\tau\\), and Qiskit benchmarking.",
+      "retrieval_receipt": "root_coverage.json record 0",
+      "original_question": null,
+      "attribution_note": "The historical mathematical excerpt is assistant-authored. No original user question is inferred; the revised question and worked development are new. The source_excerpt is a literal retrieved result bullet (including any original truncation), not a reconstructed transcript. It may summarize historical content; no verbatim original question is inferred."
+    }
+  },
+  {
+    "id": "Y25-03-031",
+    "title": "A projection loss controls only the directions that its matrix sees",
+    "status": "Developed classical result with a checked example; recovered claims corrected where needed",
+    "summary": "The recovered categorical-loss andE8-projection language needs a defined function. A least-squares loss gives a complete matrix theorem: energy decreases, but components in the kernel persist. It therefore does not automatically enforce every desired coherence condition.",
+    "definitions": [
+      "LetL(x)=(1/2)||Wx−y||² for a real matrixW. Gradient flow isx′=−Wᵀ(Wx−y).",
+      "The observable subspace israngeWᵀ; the invisible subspace iskerW, its orthogonal complement."
+    ],
+    "result": {
+      "name": "Exact dissipation and nullspace preservation",
+      "statement": "Along the flow,L′=−||∇L||²≤0. Every kernel component ofx is constant, while positive eigenmodes ofWᵀW decay exponentially toward a least-squares solution.",
+      "proof": "The chain rule givesL′=∇L·x′=−||∇L||². Ifv∈kerW, thenv·x′=−(Wv)·(Wx−y)=0, so the projection onto the kernel is conserved. Diagonalize the symmetric positive semidefinite matrixWᵀW. Relative to any least-squares solutionx*, the error satisfiese′=−WᵀWe; its eigencomponent of eigenvalueλ evolves ase^(−λt). Thus positive modes decay and zero modes persist. Strict convexity and unique convergence occur only whenW has full column rank. A zero loss certifiesWx=y, not an unrelated associator or lattice constraint absent fromW."
+    },
+    "example": {
+      "setup": "TakeW=[1,1] andy=2.",
+      "calculation": "The sumx1+x2 obeyss′=−2(s−2), while the differencex1−x2 isconstant. Fromx(0)=(0,0), both coordinates tend1. From(2,−2), the difference remains4 and the limit is(3,−1); both limits have zero loss.",
+      "conclusion": "The model gives a precise convergence theorem and an exact identifiability limit."
+    },
+    "limits": "The historical loss itself was not recovered. This does not establish anE8 embedding, a categorical training objective or any claimed benchmark.",
+    "extension": "Write the full loss and show that zero loss is equivalent to the intended relations. If it is not, add independent constraints and analyze the resulting Hessian rank.",
+    "references": [
+      {
+        "label": "Eckart–Young, The approximation of one matrix by another of lower rank",
+        "url": "https://doi.org/10.1007/BF02288367"
+      }
+    ],
+    "original": {
+      "date": "2025-03-04T15:56:30Z",
+      "month": "2025-03",
+      "evidence": "A",
+      "field": "Optimization and linear dynamics",
+      "concept": "A projection loss controls only the directions that its matrix sees",
+      "origin": "Recovered dated conversation evidence; mathematical development newly written",
+      "question": "What does a concrete gradient loss prove about convergence and invisible directions?",
+      "math": "Along the flow,L′=−||∇L||²≤0. Every kernel component ofx is constant, while positive eigenmodes ofWᵀW decay exponentially toward a least-squares solution.",
+      "finish": "Precise result, proof, worked example and explicit limits",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://doi.org/10.1007/BF02288367"
+      ],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c2] A@2025-03-04T15:55:21Z, -1y7m; [c2] A@2025-03-04T15:56:30Z, -1y7m: subsequent mathematical passages covered weak 3-category morphisms/adjunctions and coherence loss, then E₈ root-lattice embedding, Cartan matrix, projection loss \\(\\mathcal L_{E_8}\\), gradient flow, and stabilizer constraint \\(ST(X)=T(X)\\).",
+      "retrieval_receipt": "root_coverage.json record 0",
+      "original_question": null,
+      "attribution_note": "The historical mathematical excerpt is assistant-authored. No original user question is inferred; the revised question and worked development are new. The source_excerpt is a literal retrieved result bullet (including any original truncation), not a reconstructed transcript. It may summarize historical content; no verbatim original question is inferred."
+    }
+  },
+  {
+    "id": "Y25-03-032",
+    "title": "A spin-foam face cannot integrate a four-form as its surface action",
+    "status": "Developed classical result with a checked example; recovered claims corrected where needed",
+    "summary": "The recovered expression integratesTr(R∧R) over a face. IfR is a curvature2-form andf is a2-dimensional face, its wedge square has degree4 and is not a surface volume form. A correctly typed four-dimensional calculation gives a constructive replacement.",
+    "definitions": [
+      "A curvatureF is a matrix-valued2-form. Tr(F∧F) is a4-form and pulls back to zero on a smooth2-manifold.",
+      "On the unit4-torus, letω1=dx1∧dx2,ω2=dx3∧dx4 anduse a line-bundle curvatureF=2πi(ω1+ω2)."
+    ],
+    "result": {
+      "name": "An exact degree and characteristic-number calculation",
+      "statement": "The surface pullback ofTr(F∧F) iszero. OnT4, (1/2)∫(F/(2πi))²=1, whereas∫(F/(2πi))²=2.",
+      "proof": "An alternating4-form vanishes on a tangent space of dimension2, because every four tangent vectors are linearly dependent. It therefore cannot supply a nonzero ordinary face integral. OnT4, ω1²=ω2²=0 andω1∧ω2=ω2∧ω1 because both degrees areeven. Hence(ω1+ω2)²=2dx1∧dx2∧dx3∧dx4, whose integral is2. The factor1/2 gives the degree-four Chern-character normalization1. Existence of a line bundle with this integral first-Chern class is classical; the wedge arithmetic and dimension check are explicit. A two-dimensional action could instead use a specified2-form, but that defines a different model."
+    },
+    "example": {
+      "setup": "Compare integration domainsT2 andT4 for the same formal curvature square.",
+      "calculation": "OnT2 its pullback is identicallyzero. OnT4 it has the nonzero integral just computed. The change is not a small normalization correction: it changes which action is even well-defined as a top-degree integral.",
+      "conclusion": "Form degree and domain dimension give an immediate necessary consistency test before a partition integral is proposed."
+    },
+    "limits": "Discrete spin foams can use holonomies and combinatorial weights rather than differential forms, but those weights must be defined separately. No continuum quantum-gravity theory is constructed here.",
+    "extension": "State the cell dimension and local fields, then derive either a typed continuum integral or a gauge-invariant combinatorial face weight.",
+    "references": [
+      {
+        "label": "Connes, Noncommutative geometry and reality",
+        "url": "https://alainconnes.org/wp-content/uploads/reality.pdf"
+      }
+    ],
+    "original": {
+      "date": "2025-03-03T21:07:25Z",
+      "month": "2025-03",
+      "evidence": "A",
+      "field": "Differential geometry",
+      "concept": "A spin-foam face cannot integrate a four-form as its surface action",
+      "origin": "Recovered dated conversation evidence; mathematical development newly written",
+      "question": "Which differential-form degrees make a proposed curvature action meaningful?",
+      "math": "The surface pullback ofTr(F∧F) iszero. OnT4, (1/2)∫(F/(2πi))²=1, whereas∫(F/(2πi))²=2.",
+      "finish": "Precise result, proof, worked example and explicit limits",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://alainconnes.org/wp-content/uploads/reality.pdf"
+      ],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c3] A@2025-03-03T21:07:25Z, -1y7m: Mathematical passages included \\(\\mathbb E_1\\) associativity \\((T_i\\circ T_j)\\circ T_k=T_i\\circ(T_j\\circ T_k)\\); fusion \\(X\\otimes Y\\cong\\bigoplus_ZN_{X,Y}^ZZ\\); spin-foam \\(Z_{\\rm foam}(\\Sigma)=\\int_{\\mathrm{Conf}(\\Sigma)}\\prod_f\\mu_{|f|}(A_f)e^{iS_f}dA\\); \\(S_f=\\int_f\\mathrm{Tr}(R\\wedge R)\\); \\(\\int_ZA_{E_8}=\\mathrm{colim}_{U\\in\\mathrm{Disk}(Z)}A_{E_8}(U)\\); \\(A_{E_8}(U",
+      "retrieval_receipt": "root_coverage.json record 0",
+      "original_question": null,
+      "attribution_note": "The historical mathematical excerpt is assistant-authored. No original user question is inferred; the revised question and worked development are new. The source_excerpt is a literal retrieved result bullet (including any original truncation), not a reconstructed transcript. It may summarize historical content; no verbatim original question is inferred."
+    }
+  },
+  {
+    "id": "Y25-03-033",
+    "title": "The eta factors carry a calculable modular phase",
+    "status": "Developed classical result with a checked example; recovered claims corrected where needed",
+    "summary": "The recovered coefficient contains a product ofDedekind eta functions. Its modular behavior is not neutral: even translationτ↦τ+1 supplies a nontrivial phase unless additional factors compensate. A direct product calculation makes that test exact.",
+    "definitions": [
+      "ForImτ>0, η(τ)=e^(πiτ/12)∏_(m≥1)(1−e^(2πimτ)). The product converges locally uniformly.",
+      "Forintegern≥1, simplify the eta factor toF_n(τ)=η(τ)^(n−1)η(nτ). Treat all other recovered factors asτ-independent for this conditional test."
+    ],
+    "result": {
+      "name": "Exact translation multiplier",
+      "statement": "F_n(τ+1)=e^(πi(2n−1)/12)F_n(τ). In particular it is not translation-invariant for any integern≥1.",
+      "proof": "Translationτ↦τ+1 leaves every factor1−e^(2πimτ) unchanged, while its prefactor multiplies bye^(πi/12). Thusη(τ+1)=e^(πi/12)η(τ), and iteration givesη(nτ+n)=e^(πin/12)η(nτ). Multiplyingn−1 copies of the first factor and one of the second yields the stated phase. For invariance,2n−1 would have to be divisible by24; it is odd, so this is impossible. The absolute values are translation-invariant, but the complex coefficient is not. A full automorphic law under a congruence subgroup additionally involves weight and multiplier-system data."
+    },
+    "example": {
+      "setup": "Taken=2.",
+      "calculation": "F2=η(τ)η(2τ) and its phase ise^(πi/4). Forn=1,F1=η(τ) withphasee^(πi/12). These are exact roots of unity, not numerical discrepancies.",
+      "conclusion": "The coefficient’s modular phase is a checkable condition that an intended invariant must address."
+    },
+    "limits": "IfQ,Qn* orcn depend onτ, their transformations must also be given. The computation does not validate the entire recovered formula or anSL3/SL4 extension.",
+    "extension": "Specify everyτ-dependent factor and prove theS andT transformations with a consistent multiplier before callingCn a modular invariant.",
+    "references": [
+      {
+        "label": "Milne, Modular Functions and Modular Forms",
+        "url": "https://www.jmilne.org/math/CourseNotes/MF.pdf"
+      }
+    ],
+    "original": {
+      "date": "2025-03-07T00:40:57Z",
+      "month": "2025-03",
+      "evidence": "A",
+      "field": "Modular forms",
+      "concept": "The eta factors carry a calculable modular phase",
+      "origin": "Recovered dated conversation evidence; mathematical development newly written",
+      "question": "What transformation property can be checked directly for the recovered coherence coefficient?",
+      "math": "F_n(τ+1)=e^(πi(2n−1)/12)F_n(τ). In particular it is not translation-invariant for any integern≥1.",
+      "finish": "Precise result, proof, worked example and explicit limits",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://www.jmilne.org/math/CourseNotes/MF.pdf"
+      ],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c5] A@2025-03-07T00:40:57Z, -593d: Mathematical UCQF-to-linguistics passage: objects/morphisms in \\(Cat_{Univ}\\); \\(C_n(\\tau)=\\phi^n c_n(Q-Q_n^*)^{n+1}\\eta(\\tau)^n\\eta(n\\tau)/\\eta(\\tau)\\); recursive \\(G_n:Cat_n\\to Cat_{n+1}\\); \\(F_{TQFT},F_{LQG},F_{holo}\\), spectral action, motivic integration, chromatic filtration.",
+      "retrieval_receipt": "root_coverage.json record 0",
+      "original_question": null,
+      "attribution_note": "The historical mathematical excerpt is assistant-authored. No original user question is inferred; the revised question and worked development are new. The source_excerpt is a literal retrieved result bullet (including any original truncation), not a reconstructed transcript. It may summarize historical content; no verbatim original question is inferred."
+    }
+  },
+  {
+    "id": "Y25-03-034",
+    "title": "Circle factorization has an explicit Hochschild chain model",
+    "status": "Developed classical result with a checked example; recovered claims corrected where needed",
+    "summary": "The source writes a disk-indexed colimit without defining the algebraic input. For an associative algebra, the classical circle model isHochschild homology. The dual-number algebra has a small exact resolution that can be worked out completely.",
+    "definitions": [
+      "LetA=C[ε]/(ε²), andA^e=C[x,y]/(x²,y²), acting by left and rightε multiplication.",
+      "Use the periodic free resolution with alternating maps multiplication byu=x−y andv=x+y, followed by the multiplication augmentationA^e→A."
+    ],
+    "result": {
+      "name": "An exact Hochschild calculation",
+      "statement": "HH0(A)=A has dimension2. EveryHH_n(A) forn≥1 has dimension1. After tensoring the resolution withA overA^e, its differentials alternate0 and multiplication by2ε.",
+      "proof": "InA^e the productuv=x²−y² iszero. On the basis1,x,y,xy, multiplication byu has image span(u,xy) and kernel span(v,xy); multiplication byv has the reverse image and kernel. Both have rank2. The augmentation kernel isspan(u,xy), so the complex is exact before tensoring and is a free resolution. Tensoring setsx=y=ε; u becomes0 andv becomes2ε. HenceHH0=A. In odd positive degree the quotient isA/(2εA), one-dimensional. In even positive degree the kernel of2ε multiplication isspanε, again one-dimensional. The circle/factorization identification is a classical structural input; the algebraic chain computation itself is explicit."
+    },
+    "example": {
+      "setup": "Compare degree0 and degree1.",
+      "calculation": "HH0 has basis1,ε. HH1 has the class of1 moduloε, whileHH2 has basisε in a kernel. Equal positive-degree dimensions do not make their cycle and boundary representatives identical.",
+      "conclusion": "A genuine algebra and a chain model turn an abstract integration label into exact computable invariants."
+    },
+    "limits": "The recoveredA_E8 was not defined as anassociative algebra or disk algebra, so this is an illustrative replacement, not a computation of that missing object.",
+    "extension": "Specify the intendedE_n algebra and manifold, then use a justified excision theorem or explicit bar construction to compute its factorization homology.",
+    "references": [
+      {
+        "label": "Ben-Zvi–Brochier–Jordan, Integrating quantum groups over surfaces",
+        "url": "https://arxiv.org/abs/1501.04652"
+      },
+      {
+        "label": "Etingof–Gelaki–Nikshych–Ostrik, Tensor Categories",
+        "url": "https://math.mit.edu/~etingof/egnobookfinal.pdf"
+      }
+    ],
+    "original": {
+      "date": "2025-03-03T21:07:25Z",
+      "month": "2025-03",
+      "evidence": "A",
+      "field": "Homological algebra",
+      "concept": "Circle factorization has an explicit Hochschild chain model",
+      "origin": "Recovered dated conversation evidence; mathematical development newly written",
+      "question": "Which concrete circle calculation gives content to a factorization-homology symbol?",
+      "math": "HH0(A)=A has dimension2. EveryHH_n(A) forn≥1 has dimension1. After tensoring the resolution withA overA^e, its differentials alternate0 and multiplication by2ε.",
+      "finish": "Precise result, proof, worked example and explicit limits",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://arxiv.org/abs/1501.04652",
+        "https://math.mit.edu/~etingof/egnobookfinal.pdf"
+      ],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c3] A@2025-03-03T21:07:25Z, -1y7m: Mathematical passages included \\(\\mathbb E_1\\) associativity \\((T_i\\circ T_j)\\circ T_k=T_i\\circ(T_j\\circ T_k)\\); fusion \\(X\\otimes Y\\cong\\bigoplus_ZN_{X,Y}^ZZ\\); spin-foam \\(Z_{\\rm foam}(\\Sigma)=\\int_{\\mathrm{Conf}(\\Sigma)}\\prod_f\\mu_{|f|}(A_f)e^{iS_f}dA\\); \\(S_f=\\int_f\\mathrm{Tr}(R\\wedge R)\\); \\(\\int_ZA_{E_8}=\\mathrm{colim}_{U\\in\\mathrm{Disk}(Z)}A_{E_8}(U)\\); \\(A_{E_8}(U",
+      "retrieval_receipt": "root_coverage.json record 0",
+      "original_question": null,
+      "attribution_note": "The historical mathematical excerpt is assistant-authored. No original user question is inferred; the revised question and worked development are new. The source_excerpt is a literal retrieved result bullet (including any original truncation), not a reconstructed transcript. It may summarize historical content; no verbatim original question is inferred."
+    }
+  },
+  {
+    "id": "Y25-03-035",
+    "title": "A square-root eigenvalue law determines a spectral dimension",
+    "status": "Developed classical result with a checked example; recovered claims corrected where needed",
+    "summary": "The recovered passage asserts a square-root spectral law without an operator. A diagonal operator gives an exact model and reveals its counting, zeta-convergence and heat-trace consequences. These can be compared with any proposed geometric interpretation independently.",
+    "definitions": [
+      "Onℓ²(N), defineDe_n=√n e_n, withdomain{a:Σn|a_n|²<∞}.",
+      "Its counting function isN_D(Λ)=#{n:√n≤Λ}; the heat trace isΣe^(−t√n),t>0."
+    ],
+    "result": {
+      "name": "Exact count and heat asymptotics",
+      "statement": "D is positive self-adjoint with compact resolvent;N_D(Λ)=floorΛ². Its spectral zeta function isζ(s/2), initially convergent forRe s>2, and its heat trace is2/t²+O(1) ast→0+.",
+      "proof": "The diagonal real operator with the stated square-summability domain is self-adjoint. The resolvent diagonal entries(√n+i)⁻¹ tend0, so finite-rank truncations converge in norm and its resolvent is compact. Counting givesfloorΛ² exactly. The zeta series isΣn^(−s/2), proving its convergence domain. For the heat trace, f(x)=e^(−t√x) is positive decreasing. Integral comparison boundsΣ_(n≥1)f(n) between∫₁∞f(x)dx and∫₀∞f(x)dx, with difference at most1. Substituteu=√x to obtain∫₀∞2u e^(−tu)du=2/t². Thus the stated asymptotic has a controlled bounded remainder."
+    },
+    "example": {
+      "setup": "Apply a constant shiftD+aI witha≥0.",
+      "calculation": "The count becomesfloor(max(Λ−a,0)²) and the heat trace multiplies bye^(−at). The leading2/t² remains unchanged. AnO(n^(−1/2)) perturbation of levels requires its own estimates but cannot be interpreted without specifying the sequence.",
+      "conclusion": "A spectral-growth assertion has definite analytic implications that a candidate operator must match."
+    },
+    "limits": "This diagonal construction does not validate an economic, motivic or categorical interpretation of the recovered source. A fitted finite sequence does not prove an asymptotic law.",
+    "extension": "Define the actual operator, prove compact resolvent and compare its independent counting theorem with the proposed√n law before interpreting a spectral dimension.",
+    "references": [
+      {
+        "label": "Connes, Noncommutative geometry and reality",
+        "url": "https://alainconnes.org/wp-content/uploads/reality.pdf"
+      },
+      {
+        "label": "Milne, Modular Functions and Modular Forms",
+        "url": "https://www.jmilne.org/math/CourseNotes/MF.pdf"
+      }
+    ],
+    "original": {
+      "date": "2025-03-07T00:42:53Z",
+      "month": "2025-03",
+      "evidence": "A",
+      "field": "Spectral asymptotics",
+      "concept": "A square-root eigenvalue law determines a spectral dimension",
+      "origin": "Recovered dated conversation evidence; mathematical development newly written",
+      "question": "What mathematical consequences follow from a declared eigenvalue growth law?",
+      "math": "D is positive self-adjoint with compact resolvent;N_D(Λ)=floorΛ². Its spectral zeta function isζ(s/2), initially convergent forRe s>2, and its heat trace is2/t²+O(1) ast→0+.",
+      "finish": "Precise result, proof, worked example and explicit limits",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://alainconnes.org/wp-content/uploads/reality.pdf",
+        "https://www.jmilne.org/math/CourseNotes/MF.pdf"
+      ],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c5] A@2025-03-07T00:42:53Z, -593d: Mathematical UCQF-to-economics passage: \\(Cat_{Econ}\\), economic morphisms, recursive \\(G_0\\)–\\(G_3\\), coherence operators \\(C_1,C_2,C_3\\), partition function \\(Z(\\partial M)=\\int_M e^{iS(\\rho)}D\\rho\\), spectral law \\(\\lambda_n=n^{1/2}+\\phi f(Q)+O(n^{-1/2})\\), motivic integral.",
+      "retrieval_receipt": "root_coverage.json record 0",
+      "original_question": null,
+      "attribution_note": "The historical mathematical excerpt is assistant-authored. No original user question is inferred; the revised question and worked development are new. The source_excerpt is a literal retrieved result bullet (including any original truncation), not a reconstructed transcript. It may summarize historical content; no verbatim original question is inferred."
+    }
+  }
+]

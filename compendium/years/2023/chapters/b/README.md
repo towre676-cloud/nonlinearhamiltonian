@@ -1,0 +1,11 @@
+# Analysis and arithmetic geometry development
+
+This directory develops entries M019 through M037. Run `python3 verify.py` from any working directory; it uses only Python's standard library and writes `checks.json` beside the script. The finite checks are reproducible and deterministic. `entries.json` is the written mathematical development; `build_entries.py` reproduces that JSON.
+
+The verifier establishes the exact finite examples it checks. It does not mechanically prove general functional analysis, spectral theorems, algebraic geometry, or representation theory. The text includes elementary proofs of the Hardy atom pairing estimate, graph spectral collision, modularity phases, reflecting birth-death spectrum, entropy contraction, formal inversion, the A2 denominator and the triple product normalization. The finite polynomial and matrix calculations check independent instances of those statements.
+
+Hardy–BMO duality's difficult converse, the spectral theorem for a bounded self-adjoint Jacobi operator, arithmetic-quotient and compactification existence, the torsion-free modular-curve area and cusp formulas, Riemann–Roch and Serre duality, adjunction and characteristic-class theorems, the general hook-length theorem, and the Kazhdan–Lusztig recurrence are established background results. Their hypotheses and references are identified in the relevant entries. Matrix enumeration modulo N verifies the numerical indices; obtaining modular-curve genera additionally uses the stated classical quotient theorem.
+
+The Rook–Shrikhande witness is stronger than a floating-point cospectrality claim: both adjacency constructors, exact common-neighbor matrix identities and exhaustive clique checks are included. Heat-trace and diagonal-kernel incompleteness does not imply incompleteness of the full labeled heat kernel; the text states the full-kernel logarithm recovery argument separately.
+
+M022 and M026 include floating values only to display logarithms or limits. Their finite transition, probability, graph and polynomial calculations use exact rational or integer arithmetic. No experimental model, cryptographic hardness claim, or new mathematical-discovery claim is certified by this directory.

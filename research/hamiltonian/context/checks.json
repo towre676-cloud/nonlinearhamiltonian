@@ -1,0 +1,33 @@
+{
+  "status": "passed",
+  "check_count": 5,
+  "checks": [
+    {
+      "name": "C3 sextic and degree8 partner for formal lambda",
+      "status": "passed",
+      "scope": "Full star-product symbolic replay with central spectator parameter; correction gates vanish at every lambda"
+    },
+    {
+      "name": "Quintic obstruction factor",
+      "status": "passed",
+      "scope": "Full star defect, exact rational polynomial identity"
+    },
+    {
+      "name": "Exceptional quintic partner active",
+      "status": "passed",
+      "scope": "One exact instance at lambda=40/7; nonzero Poisson bracket checked separately"
+    },
+    {
+      "name": "Affine symplectic covariance finite calibration",
+      "status": "passed",
+      "scope": "100 polynomial pairs degree<=3 under one affine symplectic transformation; general covariance is a theorem, not inferred from the census"
+    },
+    {
+      "name": "Nonlinear flat-star pullback defect",
+      "status": "passed",
+      "scope": "For Phi(q,p)=(q,p+q²), f=p²,g=p: pullback product defect is exactly -hbar²/2"
+    }
+  ],
+  "scope": "Existing source constructions, freshly replayed. Does not rerun global msolve or Singular classification receipts.",
+  "source_sha256": "59b6376cbc43beb04207be8027853dc0c8f414d0077c0cacbe23dea4ee0aef80"
+}

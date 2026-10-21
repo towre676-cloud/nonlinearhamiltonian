@@ -1,0 +1,177 @@
+[
+  {
+    "id": "S011",
+    "title": "Minimum induced subgraph order and the sharp heat observation margin",
+    "status": "Exact finite classification and analytic margin proved",
+    "summary": "The rook–Shrikhande collision can be pushed beyond merely producing two graphs with the same spectrum. For this pair, every permutation-invariant induced-subgraph count through order three agrees, all eleven four-vertex pattern counts are classified, and a single labeled off-diagonal heat observation has a sharp optimal time and a sharp worst-case error threshold. These are different observation classes and must not be conflated.",
+    "definitions": [
+      "For a finite simple graph G and an unlabeled k-vertex graph H, N_H(G) is the number of k-element subsets of V(G) whose induced graph is isomorphic to H. Dividing by C(|V(G)|,k) gives the distribution obtained by uniform vertex-subset sampling.",
+      "The feature panel through order d is the vector of all N_H(G) for all unlabeled H with at most d vertices. This vector is invariant under relabeling G.",
+      "The two candidate graphs R and S are the sixteen-vertex rook and Shrikhande graphs from M020. Their vertices are assigned the known coordinate labels in Z₄².",
+      "For the separate labeled observation problem, observe y=(exp(−tL))_{uv}+η at t>0, with known u=(0,0), v=(0,2) and adversarial error |η|≤ε."
+    ],
+    "result": {
+      "name": "A feature-class lower bound and an optimal labeled experiment",
+      "statement": "The feature panels through order three coincide for R and S; the order-four panels differ, so four is the minimum distinguishing order within this feature class. Their K₄ counts are eight and zero. For the known labels u,v, the heat-entry difference is d(t)=(e^(−4t)−e^(−8t))/4. It has unique maximum 1/16 at t*=log(2)/4. At that time the candidate observations are 5/64 and 1/64. Uniform identification under the stated bounded-error model is possible exactly when ε<1/32.",
+      "proof": "For any strongly regular graph with parameters (v,k,λ,μ), the number of edges is vk/2 and the triangle count is vkλ/6. Each vertex contributes C(k,2) neighbor pairs; subtracting its kλ/2 neighbor-neighbor edges counts induced three-vertex paths centered there, so their total is v[C(k,2)−kλ/2]. For an edge, the vertices adjacent to neither endpoint number v−2k+λ, giving (vk/2)(v−2k+λ) induced single-edge triples. Subtract these three classes from C(v,3) to obtain the independent triples. With (16,6,2,2), these counts are respectively triangles32, paths144, single-edge triples288 and independent triples96. The vertex, edge, nonedge and empty-set counts also agree. Therefore every function of the specified feature panel of order at most three agrees; no decision rule using only that panel can separate the pair. A four-clique occurs on each row and each column of the rook graph, giving eight. The exhaustive canonical certificate finds none in Shrikhande, proving that order four suffices. It classifies all 1,820 four-subsets in each graph rather than checking only one witness.\n\nFor the heat formula, both adjacency matrices satisfy A²=4I+2J. On the constant vector the heat operator acts by one; on the adjacency eigenvalues +2 and −2 it acts by a=e^(−4t) and b=e^(−8t). Solving for its coefficients in span{I,A,J} gives K_t=((a+b)/2)I+((a−b)/4)A+((1−2a+b)/16)J. The aligned pair is an edge of R and a nonedge of S, so their difference is (a−b)/4. Put x=e^(−4t)∈(0,1): d=x(1−x)/4=1/16−(x−1/2)²/4. This proves the unique maximum and its time without numerical optimization. At x=1/2, the common nonedge value is 1/64 and adding the edge coefficient gives 5/64.\n\nUnder either hypothesis the possible noisy values form a closed interval of radius ε around its candidate value. These intervals are disjoint exactly when 2ε<1/16. The midpoint threshold 3/64 then separates them for every permitted error. At ε=1/32 both hypotheses can produce the midpoint: subtract 1/32 from 5/64 or add 1/32 to 1/64. No deterministic or randomized classifier can guarantee correct identification from that indistinguishable observation. Larger error budgets also contain this ambiguity."
+    },
+    "example": {
+      "setup": "Canonicalize a labeled four-vertex graph by enumerating all twenty-four vertex permutations and taking the smallest six-edge bit mask. First enumerate all sixty-four labeled four-vertex graphs to obtain the complete set of eleven canonical classes; then classify every four-subset of R and S.",
+      "calculation": "The counts in canonical-mask order are empty24/16, one-edge-plus-two-isolates288/336, path-plus-isolate576/480, star0/32, triangle-plus-isolate96/128, two-disjoint-edges216/192, four-path288/384, triangle-with-pendant288/192, four-cycle36/12, diamond0/48 and four-clique8/0, where each pair is rook/Shrikhande. Each column sums to 1,820. These exact distributions are stored in supplement_checks.json. At the optimal heat time the shared diagonal is 25/64, the edge value5/64 and nonedge value1/64; 25/64+6(5/64)+9(1/64)=1 verifies the row-sum normalization.",
+      "conclusion": "The pair is completely indistinguishable by induced pattern counts of orders zero through three, yet every four-vertex class count differs. A labeled heat entry is a different feature and can separate the same aligned candidates with one scalar observation."
+    },
+    "limits": "The minimum-order statement is restricted to the declared induced-subgraph count panels; it is not a universal lower bound on all graph invariants, sensors, computational algorithms or sample counts. The heat threshold assumes exact time control, fixed known vertex correspondence, the two stated candidate graphs and the bounded-error model. It proves neither recovery of an unknown unlabeled graph nor uniform stability of taking a matrix logarithm. An unknown vertex permutation can change which pair is an edge and must be included as a nuisance parameter in a different problem. The continuous optimum t*=log(2)/4 is exact; numerical time selection incurs a separate margin loss.",
+    "extension": "The exact loss from a known mistiming t=t*+h is 1/16−d(t)=(e^(−4h)−1)²/16. If the actual time is observed but the design must tolerate |h|≤δ<t*, the worst same-time gap is [1−(e^(4δ)−1)²]/16, and a threshold adjusted to the observed time works for errors less than half that gap. If the actual time is unobserved, that bound alone is insufficient: each hypothesis ranges over different possible times. Put l=e^(−4δ)/2 and u=e^(4δ)/2. Over that interval, the least rook entry is (1+2u−3u²)/16, while the greatest Shrikhande entry is (1−l)²/16. The uniformly separating interval gap is therefore Δ=[2(u+l)−3u²−l²]/16, when positive, and the admissible bounded error is ε<Δ/2. These extrema follow because the Shrikhande entry decreases in x and the rook entry is concave; the difference of its endpoint values has sign (u−l)[2−3(u+l)]<0. For δ=log(3/2)/4, the exact candidate-set endpoints are 13/256 and 1/36, giving Δ=53/2304 and ε<53/4608. Thus calibrated deviation and an unobserved timing nuisance are genuinely different robustness problems. No version of these bounds establishes uniform unlabeled graph recovery.",
+    "references": [
+      {
+        "label": "Brouwer Shrikhande graph reference and strongly regular parameters",
+        "url": "https://aeb.win.tue.nl/graphs/Shrikhande.html"
+      }
+    ],
+    "certificate": [
+      {
+        "canonical_mask": 0,
+        "name": "empty",
+        "edges": 0,
+        "degrees": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "rook": 24,
+        "shrikhande": 16
+      },
+      {
+        "canonical_mask": 1,
+        "name": "one edge and two isolated vertices",
+        "edges": 1,
+        "degrees": [
+          1,
+          1,
+          0,
+          0
+        ],
+        "rook": 288,
+        "shrikhande": 336
+      },
+      {
+        "canonical_mask": 3,
+        "name": "three-vertex path and isolated vertex",
+        "edges": 2,
+        "degrees": [
+          2,
+          1,
+          1,
+          0
+        ],
+        "rook": 576,
+        "shrikhande": 480
+      },
+      {
+        "canonical_mask": 7,
+        "name": "three-leaf star",
+        "edges": 3,
+        "degrees": [
+          3,
+          1,
+          1,
+          1
+        ],
+        "rook": 0,
+        "shrikhande": 32
+      },
+      {
+        "canonical_mask": 11,
+        "name": "triangle and isolated vertex",
+        "edges": 3,
+        "degrees": [
+          2,
+          2,
+          2,
+          0
+        ],
+        "rook": 96,
+        "shrikhande": 128
+      },
+      {
+        "canonical_mask": 12,
+        "name": "two disjoint edges",
+        "edges": 2,
+        "degrees": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "rook": 216,
+        "shrikhande": 192
+      },
+      {
+        "canonical_mask": 13,
+        "name": "four-vertex path",
+        "edges": 3,
+        "degrees": [
+          2,
+          2,
+          1,
+          1
+        ],
+        "rook": 288,
+        "shrikhande": 384
+      },
+      {
+        "canonical_mask": 15,
+        "name": "triangle with pendant vertex",
+        "edges": 4,
+        "degrees": [
+          3,
+          2,
+          2,
+          1
+        ],
+        "rook": 288,
+        "shrikhande": 192
+      },
+      {
+        "canonical_mask": 30,
+        "name": "four-cycle",
+        "edges": 4,
+        "degrees": [
+          2,
+          2,
+          2,
+          2
+        ],
+        "rook": 36,
+        "shrikhande": 12
+      },
+      {
+        "canonical_mask": 31,
+        "name": "diamond",
+        "edges": 5,
+        "degrees": [
+          3,
+          3,
+          2,
+          2
+        ],
+        "rook": 0,
+        "shrikhande": 48
+      },
+      {
+        "canonical_mask": 63,
+        "name": "four-clique",
+        "edges": 6,
+        "degrees": [
+          3,
+          3,
+          3,
+          3
+        ],
+        "rook": 8,
+        "shrikhande": 0
+      }
+    ]
+  }
+]

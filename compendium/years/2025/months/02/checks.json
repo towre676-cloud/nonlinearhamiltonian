@@ -1,0 +1,189 @@
+{
+  "scope": "Exactfiniteexamplesanddeclarednumericalchecks;nohistoricalforecasts,marketdata,hardwareclaimsorfullgeometricLanglandsresultiscertified.",
+  "checks": [
+    {
+      "id": "Y25-02-001",
+      "name": "c1",
+      "status": "passed",
+      "detail": "Analytic feedbacksolution satisfiesODEatthree times;stablelimit50."
+    },
+    {
+      "id": "Y25-02-002",
+      "name": "c2",
+      "status": "passed",
+      "detail": "Exactinverse andtwo directional multipliers independently matrix-multiplied."
+    },
+    {
+      "id": "Y25-02-003",
+      "name": "c3",
+      "status": "passed",
+      "detail": "ExactKKTcertificate plusstrictconcavity;feasibleallocation5/3,1/3."
+    },
+    {
+      "id": "Y25-02-004",
+      "name": "c4",
+      "status": "passed",
+      "detail": "Seven exactdebt-ratiosteps matchclosedform;opposite primaryflows reverseinitialdirection."
+    },
+    {
+      "id": "Y25-02-005",
+      "name": "c5",
+      "status": "passed",
+      "detail": "ExactpairwiseGini,scaleinvarianceandwhole-representativeceiling verified."
+    },
+    {
+      "id": "Y25-02-006",
+      "name": "c6",
+      "status": "passed",
+      "detail": "Dampedsourceanalytictrajectoryandfinitezero-crossingtime verified."
+    },
+    {
+      "id": "Y25-02-007",
+      "name": "c7",
+      "status": "passed",
+      "detail": "Exactserial/haloupdateequality,meanconservationandunstablealternatingamplification."
+    },
+    {
+      "id": "Y25-02-008",
+      "name": "c8",
+      "status": "passed",
+      "detail": {
+        "stiffness": [
+          [
+            "4/3",
+            "-2/3",
+            "-2/3"
+          ],
+          [
+            "-2/3",
+            "4/3",
+            "-2/3"
+          ],
+          [
+            "-2/3",
+            "-2/3",
+            "4/3"
+          ]
+        ],
+        "rank": 2
+      }
+    },
+    {
+      "id": "Y25-02-009",
+      "name": "c9",
+      "status": "passed",
+      "detail": "Rationallyrescaledweightedatom attainssquaredbound3/4;normalizationscheckedexactly."
+    },
+    {
+      "id": "Y25-02-010",
+      "name": "c10",
+      "status": "passed",
+      "detail": "Exactradialidentityprovedintext;finitevolume-ratiogrowthandtestfunctionRayleighquotientscheckitsconsequences."
+    },
+    {
+      "id": "Y25-02-011",
+      "name": "c11",
+      "status": "passed",
+      "detail": {
+        "Haar_coefficients": [
+          3.0,
+          -2.0,
+          -0.7071067811865475,
+          -0.7071067811865475
+        ],
+        "frame_energy": 14,
+        "orthogonality_tolerance": 1e-14
+      }
+    },
+    {
+      "id": "Y25-02-012",
+      "name": "c12",
+      "status": "passed",
+      "detail": {
+        "uniform_radius": 0.07278954160144187,
+        "excess_risk_bound": 0.14557908320288374,
+        "hypotheses": "independent bounded validationlosses andfixedfamily;notverifiedformarketdata"
+      }
+    },
+    {
+      "id": "Y25-02-013",
+      "name": "c13",
+      "status": "passed",
+      "detail": "All16matrix-unitproductidentitiescertifythewrittenMorita inverse;two-cosetS3actionhastrivial/signcharacters."
+    },
+    {
+      "id": "Y25-02-014",
+      "name": "c14",
+      "status": "passed",
+      "detail": "Jordanmonodromyexactlynonidentity;threeoscillatoryidentityperiodschecked."
+    },
+    {
+      "id": "Y25-02-015",
+      "name": "c15",
+      "status": "passed",
+      "detail": "All24monomialcommutatorsverify[Dκ,X]=I+κs;HH2classificationiscitedbackground."
+    },
+    {
+      "id": "Y25-02-016",
+      "name": "c16",
+      "status": "passed",
+      "detail": "Curvatureintegraldividedby2π equals1 within1e-12;patchtransition/Stokesargumentprovedintext."
+    },
+    {
+      "id": "Y25-02-017",
+      "name": "c17",
+      "status": "passed",
+      "detail": "C4heatfactorizationandscaleddimensionchecked;compact-resolvent/summabilitydistinctionhasexplicitcomparisonproof."
+    },
+    {
+      "id": "Y25-02-018",
+      "name": "c18",
+      "status": "passed",
+      "detail": "Independentproduct-derivativequotientconfirmpoleandregularpartatthreeexactpoints."
+    },
+    {
+      "id": "Y25-02-019",
+      "name": "c19",
+      "status": "passed",
+      "detail": "All16Knill–Laflammeproductscheckedexactly;weight-onephaseerrorisnontriviallogicalZ."
+    },
+    {
+      "id": "Y25-02-020",
+      "name": "c20",
+      "status": "passed",
+      "detail": "Matrixcommutatorsspanexactthree-dimensionaltracelessspace;finitecoverequalizerdimension3."
+    },
+    {
+      "id": "Y25-02-021",
+      "name": "c21",
+      "status": "passed",
+      "detail": "Krausmixtureindependentlymatchesdepolarizingformula;fivestepcontraction1024/3125."
+    },
+    {
+      "id": "Y25-02-022",
+      "name": "c22",
+      "status": "passed",
+      "detail": "Booleanmomentrecursionthroughdegree12hasonlyb2;wordspacehasonevacuumdefectandspecifiedtop-layertruncation."
+    },
+    {
+      "id": "Y25-02-023",
+      "name": "c23",
+      "status": "passed",
+      "detail": "Exactrationaldensity-matrixcollisionforallbasisprobabilitiesandZZ,distinguishedbyXX."
+    },
+    {
+      "id": "Y25-02-024",
+      "name": "c24",
+      "status": "passed",
+      "detail": "All16basistensorlabelsagreealongbothcanonicalpaths;five-edgeerrorbound0.35usesprovedtelescopingestimate."
+    },
+    {
+      "id": "Y25-02-025",
+      "name": "c25",
+      "status": "passed",
+      "detail": "Exactcuspantiderivativearea1/2,sectionlengthratio1/4andverticaldistancelog4."
+    }
+  ],
+  "passed": 25,
+  "failed": 0
+}

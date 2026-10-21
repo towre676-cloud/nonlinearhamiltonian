@@ -1,0 +1,68 @@
+{
+  "reviewer": "arithmetic_and_waves",
+  "month": "2026-08",
+  "status": "approved",
+  "scope": "Read all37current mathematical treatments:25main entries plus12helper catalog entries. Definitions, statements, proofs and examples independently inspected. Original-source review is selective, including actual Aug2assistant descriptor anchor, external-filequiverT/null date and the new Aug17/30source additions.",
+  "verification": [
+    {
+      "script": "catalog_verify.py",
+      "status": "pass",
+      "records": 7
+    },
+    {
+      "script": "catalog2_verify.py",
+      "status": "pass",
+      "checks": 16,
+      "source_excerpt_checks": 6
+    },
+    {
+      "script": "verify.py",
+      "status": "pass",
+      "passed": 25,
+      "failed": 0,
+      "scope": "Main author finite checks independently rerun. General proofs reviewed separately."
+    }
+  ],
+  "issues": [
+    {
+      "severity": "low",
+      "id": "Y26-08-904",
+      "description": "The parameter-balance expression(δ/ρ)^(2/(2ν+1)) requiresρ>0, while a zero source-radius case is possible under the stated norm bound.",
+      "fix": "Assumeρ>0 for parameter tuning or state theρ=0case separately.",
+      "status": "corrected_parameter_balance_explicitly_assumes_rho_positive_independently_reread"
+    },
+    {
+      "severity": "low",
+      "id": "Y26-08-025",
+      "description": "Current retrievedUbullet begins with retrospective-review wording. It also contains actual applied mathematical topics, but an adjacentAline gives a more concrete multilayer/continuity anchor and avoids potential query-echo ambiguity.",
+      "fix": "Use the exactA@2026-08-17T09:15:46Zmultilayer/acousticABCD/P-SVcontinuity bullet fromroot_coverage_1.jsonrecord0andsetevidenceA.",
+      "status": "reanchored_to_actual_assistant_mathematical_bullet_independently_reread"
+    }
+  ],
+  "approved_scopes": [
+    "Diagonal regularization proof has explicit uniform-bias quantifiers and a valid diagonal parameter choice.",
+    "Mild and severe deterministic minimax lower bounds use indistinguishable opposite signals and match upper orders.",
+    "Severe cutoff needs the logarithmic safety margin; naive leading scale counterexample is valid.",
+    "Tikhonov qualification, sharp filter constants and the stipulated two-coordinate example agree.",
+    "Landweber noise norm and all-positive source-exponent bias bound are sound.",
+    "Ignition integral bounds, positive rational series and tail enclosure do not validate the hypothesized physical front law.",
+    "Semantic feasible-set monotonicity and error accounting are valid under full deployment constraints.",
+    "RoPE QK commutation, VO basis changes, allowed SwiGLU gauges and shared-head wreath product are consistent.",
+    "Bellman quotient needs complete continuation equivalence; scalar value equality alone is insufficient.",
+    "Channel erasure counts43680physical states and256bank tuples with correctly unequal fibers.",
+    "Separator dynamic programming and exact min-plus repeated-layer law are correctly bounded.",
+    "Connectivity matrix factorizationM=CC^T overF2and rank2^(k−1), including the weighted greedy representative proof, are valid.",
+    "Descriptor regularity, minimal-index nullity growth, simple eigenvalue derivative and structured contour homotopy are sound.",
+    "Nonnormal Lyapunov constants, controllability/observability Gramian equivalence and danger-information nullspace condition are correct.",
+    "Port-Hamiltonian energy/reset inequality, improper complex Gaussian density and R-inverse metric passive contraction have correct norms and signs.",
+    "The quiver pencil has14surviving path basis elements before a one-dimensional relation, giving13and vector bundleO^12⊕O(1).",
+    "Flatness versus Hochschild jump, finite-order obstruction, pitchfork expansion and skew-pairing wall automorphism are valid within declared hypotheses.",
+    "Pluecker inverse parity lattice, correlated-enclosure logic and cycle harmonic projection are exact.",
+    "Global loop holonomy is correctly separated from two-form curvature; affine ordered-corner model and toric saturation boundaries are explicit.",
+    "New022potential inequalities telescope correctly and the counterexample exposes an invalid local edge.",
+    "New023Fourier convention andJ+εIrank-opening/condition701calculation are consistent.",
+    "New024worst-state phase fidelitycos²(ε/2), threshold and telescoping unitary-product error bound are correct.",
+    "New025power/amplitude dBfactor andT*JTflux test are correct; determinant-one counterexample is valid."
+  ],
+  "limits": "All37mathematical treatments inspected:25main plus12helper catalogs. Author finite verifiers were independently rerun:25main,7rootcatalog records and16catalog2checks. Selected provenance anchors were inspected; full transcripts and historical empirical claims were not independently reconstituted."
+}

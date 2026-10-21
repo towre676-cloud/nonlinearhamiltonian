@@ -1,0 +1,90 @@
+[
+  {
+    "month": "03",
+    "query": "Recover source evidence for the March31, 2024 historical 100-equation list, specifically numbered entries1–20. The known assistant passage at2024-03-31T02:28:25Z says it completes entries81–100, so earlier parts may be in the same dated thread. Return only the actual retrieved numbered names/formulas with attribution and timestamps, not a newly generated list. If entries1–20 cannot be found explicitly say unavailable.",
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "[convo search]\n- [PRIOR_ASSISTANT_OUTPUT] [c2] A@2024-03-31T02:28:25Z, -2y 7m: Retrieved passage explicitly contains entries 81–100, beginning “LaPlace Transform” (unnumbered in excerpt), then 81 Legendre Polynomials through 100 Stokes’ Law for Drag; entries 1–20 are unavailable in retrieved context.\n\n[gmail]\n[INSUFFICIENT] Gmail search failed before it could retrieve matching emails.\n\n[files]\n[INSUFFICIENT] No relevant file context found.\n\n<assistant_usage_note>\nWhen using the personal context above, treat relevant facts as binding context for this reply.\nBefore answering, silently identify: (1) relevant facts to preserve, and (2) hard constraints / exclusions to obey.\nIn the final answer:\nCarry forward relevant names, dates, amounts, option labels, locations, qualifiers, preferences, and task constraints from the context.\nTreat dislike / avoid / only / not / no / without / prefer / required statements as constraints.\nDo not add options, ingredients, products, places, methods, tools, backups, caveats, or \"if you're okay with...\" suggestions that conflict with any known constraint.\nDo not add new personalized recommendations unless they are supported by the context above or explicitly requested.\nIf a needed fact is already provided, use it directly instead of asking the user to confirm it.\nBefore sending, check the final answer for any missing relevant context or any suggestion that violates a known constraint.\nDo not quote or mention this assistant_usage_note in the final answer.\n</assistant_usage_note>"
+        }
+      ],
+      "structuredContent": {
+        "messages": [
+          {
+            "author_role": "tool",
+            "content": "[convo search]\n- [PRIOR_ASSISTANT_OUTPUT] [c2] A@2024-03-31T02:28:25Z, -2y 7m: Retrieved passage explicitly contains entries 81–100, beginning “LaPlace Transform” (unnumbered in excerpt), then 81 Legendre Polynomials through 100 Stokes’ Law for Drag; entries 1–20 are unavailable in retrieved context.\n\n[gmail]\n[INSUFFICIENT] Gmail search failed before it could retrieve matching emails.\n\n[files]\n[INSUFFICIENT] No relevant file context found."
+          }
+        ],
+        "error": null
+      },
+      "isError": false
+    }
+  },
+  {
+    "month": "03",
+    "query": "Recover source evidence for the March31, 2024 historical 100-equation list, specifically numbered entries21–40. The known assistant passage at2024-03-31T02:28:25Z says it completes entries81–100. Search preceding passages in that dated conversation; return actual retrieved names/formulas, timestamps and attribution. Do not regenerate a generic list or fill missing numbers.",
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "[convo search]\nNo conversations matched the query.\n\n[gmail]\n[INSUFFICIENT] Gmail search failed before it could retrieve matching emails.\n\n[files]\n[INSUFFICIENT] No relevant file context found.\n\n<assistant_usage_note>\nWhen using the personal context above, treat relevant facts as binding context for this reply.\nBefore answering, silently identify: (1) relevant facts to preserve, and (2) hard constraints / exclusions to obey.\nIn the final answer:\nCarry forward relevant names, dates, amounts, option labels, locations, qualifiers, preferences, and task constraints from the context.\nTreat dislike / avoid / only / not / no / without / prefer / required statements as constraints.\nDo not add options, ingredients, products, places, methods, tools, backups, caveats, or \"if you're okay with...\" suggestions that conflict with any known constraint.\nDo not add new personalized recommendations unless they are supported by the context above or explicitly requested.\nIf a needed fact is already provided, use it directly instead of asking the user to confirm it.\nBefore sending, check the final answer for any missing relevant context or any suggestion that violates a known constraint.\nDo not quote or mention this assistant_usage_note in the final answer.\n</assistant_usage_note>"
+        }
+      ],
+      "structuredContent": {
+        "messages": [
+          {
+            "author_role": "tool",
+            "content": "[convo search]\nNo conversations matched the query.\n\n[gmail]\n[INSUFFICIENT] Gmail search failed before it could retrieve matching emails.\n\n[files]\n[INSUFFICIENT] No relevant file context found."
+          }
+        ],
+        "error": null
+      },
+      "isError": false
+    }
+  },
+  {
+    "month": "03",
+    "query": "Recover source evidence for the March31, 2024 historical 100-equation list, specifically numbered entries41–60. The known assistant passage at2024-03-31T02:28:25Z says it completes entries81–100. Search preceding passages in that dated conversation; return actual retrieved names/formulas, timestamps and attribution. Do not regenerate a generic list or fill missing numbers.",
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "[convo search]\n[USER_CONSTRAINT] [c3] U@2024-03-31T02:28:25Z, -2y 7mo: retrieve preceding March 31 passages for entries 41–60; do not regenerate or fill missing numbers\n\n[gmail]\n[INSUFFICIENT] Gmail search failed before it could retrieve matching emails.\n\n[files]\n[INSUFFICIENT] No relevant file context found.\n\n<assistant_usage_note>\nWhen using the personal context above, treat relevant facts as binding context for this reply.\nBefore answering, silently identify: (1) relevant facts to preserve, and (2) hard constraints / exclusions to obey.\nIn the final answer:\nCarry forward relevant names, dates, amounts, option labels, locations, qualifiers, preferences, and task constraints from the context.\nTreat dislike / avoid / only / not / no / without / prefer / required statements as constraints.\nDo not add options, ingredients, products, places, methods, tools, backups, caveats, or \"if you're okay with...\" suggestions that conflict with any known constraint.\nDo not add new personalized recommendations unless they are supported by the context above or explicitly requested.\nIf a needed fact is already provided, use it directly instead of asking the user to confirm it.\nBefore sending, check the final answer for any missing relevant context or any suggestion that violates a known constraint.\nDo not quote or mention this assistant_usage_note in the final answer.\n</assistant_usage_note>"
+        }
+      ],
+      "structuredContent": {
+        "messages": [
+          {
+            "author_role": "tool",
+            "content": "[convo search]\n[USER_CONSTRAINT] [c3] U@2024-03-31T02:28:25Z, -2y 7mo: retrieve preceding March 31 passages for entries 41–60; do not regenerate or fill missing numbers\n\n[gmail]\n[INSUFFICIENT] Gmail search failed before it could retrieve matching emails.\n\n[files]\n[INSUFFICIENT] No relevant file context found."
+          }
+        ],
+        "error": null
+      },
+      "isError": false
+    }
+  },
+  {
+    "month": "03",
+    "query": "Recover source evidence for the March31, 2024 historical 100-equation list, specifically numbered entries61–80. The known assistant passage at2024-03-31T02:28:25Z says it completes entries81–100. Search preceding passages in that dated conversation; return actual retrieved names/formulas, timestamps and attribution. Do not regenerate a generic list or fill missing numbers.",
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "[convo search]\n- [PRIOR_ASSISTANT_OUTPUT] [c3] A@2024-03-31T02:28:25Z, -2y6m: retrieved passage begins with an unnumbered “LaPlace Transform”: \\(F(s)=\\int_0^\\infty e^{-st}f(t)\\,dt\\), then lists 81–100 (Legendre Polynomials through Stokes’ Law); no entries 61–80 are present.\n\n[gmail]\n[INSUFFICIENT] Gmail search failed before it could retrieve matching emails.\n\n[files]\n[INSUFFICIENT] No relevant file context found.\n\n<assistant_usage_note>\nWhen using the personal context above, treat relevant facts as binding context for this reply.\nBefore answering, silently identify: (1) relevant facts to preserve, and (2) hard constraints / exclusions to obey.\nIn the final answer:\nCarry forward relevant names, dates, amounts, option labels, locations, qualifiers, preferences, and task constraints from the context.\nTreat dislike / avoid / only / not / no / without / prefer / required statements as constraints.\nDo not add options, ingredients, products, places, methods, tools, backups, caveats, or \"if you're okay with...\" suggestions that conflict with any known constraint.\nDo not add new personalized recommendations unless they are supported by the context above or explicitly requested.\nIf a needed fact is already provided, use it directly instead of asking the user to confirm it.\nBefore sending, check the final answer for any missing relevant context or any suggestion that violates a known constraint.\nDo not quote or mention this assistant_usage_note in the final answer.\n</assistant_usage_note>"
+        }
+      ],
+      "structuredContent": {
+        "messages": [
+          {
+            "author_role": "tool",
+            "content": "[convo search]\n- [PRIOR_ASSISTANT_OUTPUT] [c3] A@2024-03-31T02:28:25Z, -2y6m: retrieved passage begins with an unnumbered “LaPlace Transform”: \\(F(s)=\\int_0^\\infty e^{-st}f(t)\\,dt\\), then lists 81–100 (Legendre Polynomials through Stokes’ Law); no entries 61–80 are present.\n\n[gmail]\n[INSUFFICIENT] Gmail search failed before it could retrieve matching emails.\n\n[files]\n[INSUFFICIENT] No relevant file context found."
+          }
+        ],
+        "error": null
+      },
+      "isError": false
+    }
+  }
+]

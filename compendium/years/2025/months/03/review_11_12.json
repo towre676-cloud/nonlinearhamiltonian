@@ -1,0 +1,48 @@
+{
+  "reviewed": [
+    "../11/entries.json",
+    "../11/verify.py",
+    "../12/entries.json",
+    "../12/verify.py"
+  ],
+  "reviewer": "Independent analysis/geometry subagent",
+  "overall": "Approved; all identified issues resolved. No remaining blocker in selected theorem/proof review.",
+  "checks": [
+    {
+      "id": "Y25-11",
+      "name": "Month verifier",
+      "status": "passed",
+      "detail": "32/32 checks at review time."
+    },
+    {
+      "id": "Y25-12",
+      "name": "Month verifier",
+      "status": "passed",
+      "detail": "28/28 checks at review time."
+    },
+    {
+      "id": "independent_proofs",
+      "name": "Selected mathematical review",
+      "status": "passed",
+      "detail": "Lamé derivative/factorization and4Kdomain; primitiveHumbert discriminant1; scalar Ricci-Laplacian variation; faithfulmatrixmodular model; commutantmultiplicity; actualCatmull–Clark Fourier characteristic; LeviSVD and Hodge/symplectic necessity; Schur complement and squarezeroJordan decomposition; Stirling–Bernoulli singularity; polynomialBernoulli inverse; Freidlin–WentzellGramian/noise factor; free-timegeometric action; Hankelminimality; strictSchur–Rouchérecursion and Laurentpole8; weightedFTC/Jensen withw² factor; vorticitymisalignmentcounterexample; traceclassdeflation."
+    }
+  ],
+  "issues": [
+    {
+      "id": "Y25-12-017",
+      "severity": "medium",
+      "description": "The2π/√(curvatureproduct) Kramers prefactor is described as well-to-saddle. Exactfirsthittingsaddle at an absorbing boundary uses a halfGaussian outerLaplace integral and therefore theπ prefactor. The2π value applies to well-to-well transition or absorption beyond the saddle.",
+      "fix": "State well-to-well/boundary beyond saddle, or halve prefactor for literal saddle hitting. Barrier andnoiseconvention are correct.",
+      "status": "resolved",
+      "resolution": "Corrected text inspected in final entries; author reran28/28 December checks."
+    },
+    {
+      "id": "Y25-12-003",
+      "severity": "low",
+      "description": "The causal weightedcolumn formulaA/(1−qR) andits positivity argument needA≥0 and0≤q<1/R. Without thatrestriction absolute values are needed.",
+      "fix": "Addpositive-envelope hypotheses, or write|A|/(1−|q|R) for|q|R<1.",
+      "status": "resolved",
+      "resolution": "Corrected text inspected in final entries; author reran28/28 December checks."
+    }
+  ]
+}

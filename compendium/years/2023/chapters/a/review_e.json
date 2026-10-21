@@ -1,0 +1,33 @@
+{
+  "reviewer": "arithmetic_and_waves",
+  "chapter": "e",
+  "verifier_status": "22 checks passed under independent replay",
+  "issues": [
+    {
+      "severity": "low",
+      "id": "M091",
+      "description": "The text proves exact linear-stability boundaries and the two-cycle multiplier crossing. It does not separately prove the flip nondegeneracy conditions producing the four-cycle at r2. Calling this a second flip threshold is standard but the present proof scope can be made completely explicit.",
+      "fix": "Add a sentence saying that the algebra certifies the multiplier −1 threshold and stability interval; a full period-four birth statement additionally uses the standard flip nondegeneracy theorem or its explicit verification. Alternatively use the phrase two-cycle linear flip threshold."
+    },
+    {
+      "severity": "low",
+      "id": "M080",
+      "description": "The phrase strict decay away from the endpoint leaves the zero step η=0 implicit. At η=0 no nonzero mode decays.",
+      "fix": "State strict decay on positive-eigenvalue modes for 0<η<2/λ_max, with endpoint and kernel exceptions explicit."
+    }
+  ],
+  "approved_scopes": [
+    "M085: kernel Δ=(I+√3 n·σ)/2 with dΩ/(2π), total measure 2, gives exactly the stated reconstruction and bilinear trace pairing; six-axis weights 1/3 integrate all needed degree-two moments.",
+    "M086: q²⋆p² constant term −1/2 and canonical commutator are correct. The exact 216-triple verifier is scoped as an example check; the commuting three-factor bidifferential proof establishes formal/polynomial associativity generally.",
+    "M090: the affine torus Beltrami coefficient, dilatation and distance are correct; extremal-length optimality is explicitly identified as the classical geometric input.",
+    "M091: x±, multiplier −r²+2r+4, rational isolating bracket and stability interval are correct. No Feigenbaum-limit certification is claimed.",
+    "M095: the syzygy complex proof is exact, including the kernel and injectivity. The cusp strict transform is smooth but remains tangent to the exceptional divisor, so the embedded normal-crossings limitation is correctly retained.",
+    "M096: dual semigroup generators, relation uw=v² and determinant-two to determinant-one fan subdivision are correct. The standard unchanged-support fan properness criterion is applied in the appropriate setting.",
+    "M097 and M098: Hodge examples and primitive mod-three descent are sound; bounded search and general local-global completeness claims are correctly excluded."
+  ],
+  "synthesis_review": {
+    "S003": "Approved. Moment-curve weights a_i=T^(i−1) yield a nonzero polynomial of degree ≤m−1 for every distinct observation pair. There are ≤(m−1)·binom(K,2) excluded real roots in total; any larger finite set of distinct integer candidates contains an admissible T. Lagrange indicators prove exact algebra completeness on finite classes. This is an exact-real existence/candidate bound, not a numerical-conditioning result.",
+    "S005": "Approved. Entrywise positivity range, row/column stochasticity, columnwise Jensen entropy proof, λmax≤2dmax estimate, nonnegative spectrum range and zero-sum contraction bound are correct. The endpoint periodicity example correctly distinguishes positivity from mixing."
+  },
+  "blocking_issues": 0
+}

@@ -1,0 +1,80 @@
+{
+  "reviewed_file": "../11/entries.json",
+  "reviewer": "independent probability, optimization and mathematical-physics review",
+  "scope": [
+    "Y24-11-001 growth/normalization",
+    "Y24-11-002 Fourier damping",
+    "Y24-11-003 positive discretization",
+    "Y24-11-007 KMS/Laplace signs",
+    "Y24-11-012 TL quotient",
+    "Y24-11-014 Hilbert Gaussian/Sazonov scope",
+    "Y24-11-018 Harper",
+    "Y24-11-019 IDS",
+    "Y24-11-020 flow energy",
+    "Y24-11-025 coercivity",
+    "Y24-11-026 RG ODE"
+  ],
+  "issues": [
+    {
+      "severity": "low",
+      "id": "Y24-11-001",
+      "description": "The general growth-bound statement omits sign/domain hypotheses. For arbitrary rates and an even horizon, ordering r does not order (1+r)^n; negative principal also reverses inequalities. Positive historical example rates make the actual worked arithmetic valid.",
+      "fix": "State P≥0, n a nonnegative integer, and r_i≥−1 (or positive growth factors), with weights nonnegative summing to one."
+    },
+    {
+      "severity": "medium",
+      "id": "Y24-11-025",
+      "description": "Provenance mismatch: entry date/topic is Nov30 Lax–Milgram, but original.source_excerpt is a Nov12 water/electrochemistry/RF fragment from root_followups record0, which does not support this topic. Entry26 already quotes the appropriate Nov30 catalogue that contains Lax–Milgram.",
+      "fix": "Replace source_excerpt and retrieval_receipt with the actual Nov30 source passage/record1. Keep original_question null unless direct user wording appears."
+    },
+    {
+      "severity": "low",
+      "id": "Y24-11-009",
+      "description": "The first compact-image proof is valid for any compact space; the optional maximizing-sequence proof additionally assumes sequential compactness, which arbitrary compact spaces need not have.",
+      "fix": "Delete the optional sequence argument or say compact metric space there. This does not invalidate the first proof."
+    },
+    {
+      "severity": "low",
+      "id": "Y24-11-022",
+      "description": "Chern-number arithmetic is correct using a real-valued curvature convention c1=[F/(2π)]. For a unitary line-bundle connection the actual skew-Hermitian curvature is i times this real two-form; the convention is not explicit in the definition.",
+      "fix": "Declare F to be the real curvature form with c1=[F/(2π)], or write the unitary curvature as 2πi(n dx1∧dx2+m dx3∧dx4) and c1=[F/(2πi)]."
+    }
+  ],
+  "approved_scopes": [
+    "Gaussian construction proves almost-sure and L² convergence from trace summability. Identity covariance fails by the strong law. The text correctly does not claim to prove the general Sazonov theorem or identify Cameron–Martin support with sample support.",
+    "TL factorization proof is exact for a declared relation ideal. Rank-one projection example satisfies finite TL3 relations at δ≥1; no unjustified affine-to-finite quotient is asserted, and nonfaithful representations at special parameters are distinguished from diagram-basis independence.",
+    "Harper H has norm at most4 and is self-adjoint. Flux periodicity/reflection and the phase-union energy-reflection identity have the correct signs. The half-flux two-site fiber has eigenvalues ±sqrt(4cos²θ+|1+e^ik|²), touches at θ=π/2,k=π, and phase-union range ±2sqrt2. No irrational spectral type or GUE/RH consequence is imported.",
+    "IDS rational label solution at P/Q=2/5,r=1 is (S,T)=(1,−2), with all solutions (1−2k,−2+5k). Gap existence, unique Hall integer and orientation require extra hypotheses, correctly retained as limits.",
+    "Schrödinger finite-difference quadratic form and Gershgorin intervals are positive under the exact stated ghost boundary condition. The historical negative eigenvalue cannot belong to this matrix; unrelated zeta-zero matching is explicitly unproved.",
+    "KMS boundary sign is correct for α_t(B)=e^(itH)Be^(−itH) and F=ω(Aα_z(B)); Laplace resolvent is (sI+iH)^−1 for Re(s)>0. Infinite unconfined hydrogen Gibbs-trace limitations are properly scoped.",
+    "Fourier damping separates undamped modes and correctly restricts positive forward-Euler steps. Flow energy and Lax–Milgram calculations are valid under smooth periodic / coercive hypotheses respectively. RG flow formula solves the stated truncated ODE on the connected interval of existence containing t=0."
+  ],
+  "independent_exact_checks": [
+    {
+      "name": "growth extremes",
+      "status": "pass",
+      "detail": "459165024/3125 and 714924299/3125"
+    },
+    {
+      "name": "weekly denominator",
+      "status": "pass",
+      "detail": "245/700=7/20=35%; per-year recipient amount 700 and aggregate energy 910000000 match."
+    },
+    {
+      "name": "Diophantine family",
+      "status": "pass",
+      "detail": "For k from −10 to10, 5(1−2k)+2(−2+5k)=1 exactly."
+    },
+    {
+      "name": "Schrodinger form",
+      "status": "pass",
+      "detail": "Endpoint diagonals 100+2/25 with one offdiagonal 1/25; center diagonal 2/25 with two offdiagonals 1/25. Intervals agree with text."
+    },
+    {
+      "name": "Gauss tail",
+      "status": "pass",
+      "detail": "Geometric covariance trace sum 2^−n=1 and tail sum after N is 2^−N. Identity covariance has diverging squared norm by strong law, not merely expectation."
+    }
+  ],
+  "verifier_note": "The November verifier was not yet present at the initial focused review; conclusions above independently audit formulas/proofs rather than treating an absent automated test as evidence."
+}

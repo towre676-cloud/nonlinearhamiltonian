@@ -1,0 +1,1955 @@
+{
+  "reviewer": "analysis_and_arithmetic_geometry",
+  "scope": "All237 entries available at audit snapshot, including15 Marchcatalog entries and37 Decemberentries; months01–12. Raw dated result content was checked against every assigned date and receipt reference. No new personal-context calls.",
+  "entry_count": 237,
+  "monthly_counts": {
+    "01": 0,
+    "02": 3,
+    "03": 22,
+    "04": 23,
+    "05": 13,
+    "06": 24,
+    "07": 15,
+    "08": 14,
+    "09": 28,
+    "10": 32,
+    "11": 26,
+    "12": 37
+  },
+  "evidence_counts": {
+    "A": 184,
+    "U": 51,
+    "T": 2
+  },
+  "status": "approved; all identified provenance mismatches resolved",
+  "issues": [
+    {
+      "id": "Y24-11-025",
+      "issue": "Assigned date absent from cited raw result content.",
+      "date": "2024-11-30",
+      "receipt": "root_followups.json record 0",
+      "status": "resolved",
+      "resolution": "Author corrected source_excerpt and retrieval_receipt in both builder and entries; independent recheck confirms assigned date and topic in corrected raw record."
+    },
+    {
+      "id": "Y24-12-029",
+      "issue": "Assigned date absent from cited raw result content.",
+      "date": "2024-12-26",
+      "receipt": "root_followups.json record 0",
+      "status": "resolved",
+      "correction": "Use12/root_followups.json record1, c9 at2024-12-26T05:40:56Z; excerpt covers Hamiltonian, decoherence, Zeno/topological effects and assistant GHZ elaboration. Replace unrelated Dec13snake/EMexcerpt. Distinguish user topics from assistant GHZ elaboration in attribution note.",
+      "resolution": "Author corrected source_excerpt and retrieval_receipt in both builder and entries; independent recheck confirms assigned date and topic in corrected raw record."
+    }
+  ],
+  "confirmed": [
+    "All referenced receipt filenames and selected record indices resolve. Every non-null assigned date occurs in the cited raw result content. The previously identifiedY24-11-025 andY24-12-029 mismatches were corrected in both builders and entries and independently rechecked.",
+    "All original.month values match their containing month. All historical formulas are markedU,A orT rather than promoted indiscriminately to user authorship.",
+    "The only non-null original_question isY24-09-001: Relationship between α and β. This exact short user fragment is explicitly quoted in Septemberroot_receipts.json. All newly revised questions remain separate fields.",
+    "Y24-06-014 uses actual June6 user topology passages, not the nearby cheese-model passage. Its attribution note correctly distinguishes user questions from assistant-supplied answers.",
+    "Y24-11-002 is datedNov2 despite a broad receipt paragraph beginningNov1: that paragraph explicitly saysc13isNov2, androot_followups.json independently recoversNov2FB-SURD. This is supported, not a date mismatch.",
+    "Marchroot_specifics.json record2 repeats the present retrieval query as a supposed historical user constraint. It is explicitly excluded and no entry cites it. Historical catalog items1–80 remain unavailable; only recovered names from81–100 plus the unnumbered Laplace transform are developed.",
+    "Null date for AprilBrunnian, JuneTonnetz and AugustHardy/BMO appropriately reflects range/topic-level evidence. Shortsource_excerpt fields in July/August are supported by the dated linked raw receipts and are not errors merely because they omit date tags.",
+    "Later2026file material returned by search is excluded as historical support for April2024. Child tool-unavailable errors are not used as historical-gap evidence."
+  ],
+  "limits": "This audit checks declared date/attribution/receipt support and visible topic consistency. Search summaries cannot certify complete historical transcripts, exact unretrieved wording or exhaustive year coverage. New derivations are not treated as recovered historical content.",
+  "rows": [
+    {
+      "id": "Y24-02-001",
+      "date": "2024-02-13T06:01:20Z",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-02-002",
+      "date": "2024-02-25T03:31:43Z",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-02-003",
+      "date": "2024-02-19T01:19:06Z",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-03-001",
+      "date": "2024-03-30",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-03-002",
+      "date": "2024-03-30",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-03-003",
+      "date": "2024-03-31",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-03-004",
+      "date": "2024-03-31",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-03-005",
+      "date": "2024-03-31",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-03-006",
+      "date": "2024-03-31",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-03-007",
+      "date": "2024-03-31",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-03-020",
+      "date": "2024-03-31T02:28:25Z",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-03-021",
+      "date": "2024-03-31T02:28:25Z",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-03-022",
+      "date": "2024-03-31T02:28:25Z",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-03-023",
+      "date": "2024-03-31T02:28:25Z",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-03-024",
+      "date": "2024-03-31T02:28:25Z",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-03-025",
+      "date": "2024-03-31T02:28:25Z",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-03-026",
+      "date": "2024-03-31T02:28:25Z",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-03-027",
+      "date": "2024-03-31T02:28:25Z",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-03-028",
+      "date": "2024-03-31T02:28:25Z",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-03-029",
+      "date": "2024-03-31T02:28:25Z",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-03-030",
+      "date": "2024-03-31T02:28:25Z",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-03-031",
+      "date": "2024-03-31T02:28:25Z",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-03-032",
+      "date": "2024-03-31T02:28:25Z",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-03-033",
+      "date": "2024-03-31T02:28:25Z",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-03-034",
+      "date": "2024-03-31T02:28:25Z",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-04-001",
+      "date": "2024-04-04",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-04-002",
+      "date": "2024-04-04",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-04-003",
+      "date": "2024-04-04",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-04-004",
+      "date": "2024-04-04",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-04-005",
+      "date": "2024-04-04",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-04-006",
+      "date": "2024-04-04",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-04-007",
+      "date": "2024-04-04",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-04-008",
+      "date": "2024-04-07",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-04-009",
+      "date": "2024-04-20",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-04-010",
+      "date": "2024-04-20",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-04-011",
+      "date": "2024-04-20",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-04-012",
+      "date": "2024-04-04",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-04-013",
+      "date": "2024-04-20",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-04-014",
+      "date": "2024-04-20",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-04-015",
+      "date": null,
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": null,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-04-016",
+      "date": "2024-04-20",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-04-017",
+      "date": "2024-04-20",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-04-018",
+      "date": "2024-04-20",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-04-019",
+      "date": "2024-04-20",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-04-020",
+      "date": "2024-04-20",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-04-021",
+      "date": "2024-04-20",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-04-022",
+      "date": "2024-04-20",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-04-023",
+      "date": "2024-04-30",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-05-001",
+      "date": "2024-05-06",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-05-002",
+      "date": "2024-05-06",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-05-003",
+      "date": "2024-05-06",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-05-004",
+      "date": "2024-05-24",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-05-005",
+      "date": "2024-05-24",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-05-006",
+      "date": "2024-05-24",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-05-007",
+      "date": "2024-05-25",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-05-008",
+      "date": "2024-05-25",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-05-009",
+      "date": "2024-05-25",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-05-010",
+      "date": "2024-05-27",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-05-011",
+      "date": "2024-05-27",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-05-012",
+      "date": "2024-05-27",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-05-013",
+      "date": "2024-05-27",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-06-001",
+      "date": "2024-06-02",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-06-002",
+      "date": "2024-06-05",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-06-003",
+      "date": "2024-06-05",
+      "evidence": "U",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-06-004",
+      "date": "2024-06-05",
+      "evidence": "U",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-06-005",
+      "date": "2024-06-05",
+      "evidence": "U",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-06-006",
+      "date": "2024-06-05",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-06-007",
+      "date": "2024-06-05",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-06-008",
+      "date": "2024-06-05",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-06-009",
+      "date": "2024-06-05",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-06-010",
+      "date": "2024-06-05",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-06-011",
+      "date": "2024-06-05",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-06-012",
+      "date": "2024-06-05",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-06-013",
+      "date": "2024-06-05",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-06-014",
+      "date": "2024-06-06",
+      "evidence": "U",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-06-015",
+      "date": "2024-06-06",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-06-016",
+      "date": "2024-06-06",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-06-017",
+      "date": "2024-06-06",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-06-018",
+      "date": null,
+      "evidence": "T",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": null,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-06-019",
+      "date": "2024-06-07",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-06-020",
+      "date": "2024-06-08",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-06-021",
+      "date": "2024-06-07",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-06-022",
+      "date": "2024-06-30",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-06-023",
+      "date": "2024-06-30",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-06-024",
+      "date": "2024-06-30",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-07-001",
+      "date": "2024-07-02",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-07-002",
+      "date": "2024-07-02",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-07-003",
+      "date": "2024-07-02",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-07-004",
+      "date": "2024-07-03",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-07-005",
+      "date": "2024-07-14",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-07-006",
+      "date": "2024-07-14",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-07-007",
+      "date": "2024-07-20",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-07-008",
+      "date": "2024-07-20",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-07-009",
+      "date": "2024-07-21",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-07-010",
+      "date": "2024-07-21",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-07-011",
+      "date": "2024-07-21",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-07-012",
+      "date": "2024-07-21",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-07-013",
+      "date": "2024-07-21",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-07-014",
+      "date": "2024-07-21",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-07-015",
+      "date": "2024-07-21",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-08-001",
+      "date": "2024-08-04",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-08-002",
+      "date": "2024-08-04",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-08-003",
+      "date": "2024-08-05",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-08-004",
+      "date": "2024-08-04",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-08-005",
+      "date": "2024-08-17",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-08-006",
+      "date": "2024-08-17",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-08-007",
+      "date": "2024-08-19",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-08-008",
+      "date": "2024-08-20",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-08-009",
+      "date": "2024-08-20",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-08-010",
+      "date": "2024-08-22",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-08-011",
+      "date": "2024-08-22",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-08-012",
+      "date": "2024-08-25",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-08-013",
+      "date": null,
+      "evidence": "T",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": null,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-08-014",
+      "date": "2024-08-26",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-09-001",
+      "date": "2024-09-20T17:56:10Z",
+      "evidence": "U",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": true
+    },
+    {
+      "id": "Y24-09-002",
+      "date": "2024-09-20T18:19:30Z",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-09-003",
+      "date": "2024-09-20T23:49:35Z",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-09-004",
+      "date": "2024-09-20T23:49:35Z",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-09-005",
+      "date": "2024-09-20T18:19:30Z",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-09-006",
+      "date": "2024-09-20T18:19:30Z",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-09-007",
+      "date": "2024-09-20T18:19:30Z",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-09-008",
+      "date": "2024-09-20T18:19:30Z",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-09-009",
+      "date": "2024-09-20T18:19:30Z",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-09-010",
+      "date": "2024-09-20T18:19:30Z",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-09-011",
+      "date": "2024-09-20T23:54:44Z",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-09-012",
+      "date": "2024-09-08T20:07:59Z",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-09-013",
+      "date": "2024-09-08T20:07:59Z",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-09-014",
+      "date": "2024-09-08T20:07:59Z",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-09-015",
+      "date": "2024-09-10T10:34:37Z",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-09-016",
+      "date": "2024-09-27T23:45:40Z",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-09-017",
+      "date": "2024-09-27T23:45:40Z",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-09-018",
+      "date": "2024-09-29T14:26:48Z",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-09-019",
+      "date": "2024-09-22T20:50:03Z",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-09-020",
+      "date": "2024-09-22T20:50:03Z",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-09-021",
+      "date": "2024-09-20T17:58:47Z",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-09-022",
+      "date": "2024-09-20T17:58:47Z",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-09-023",
+      "date": "2024-09-20T18:05:37Z",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-09-024",
+      "date": "2024-09-20T18:05:37Z",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-09-025",
+      "date": "2024-09-20T18:05:37Z",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-09-026",
+      "date": "2024-09-20T23:48:20Z",
+      "evidence": "U",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-09-027",
+      "date": "2024-09-20T23:49:35Z",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-09-028",
+      "date": "2024-09-20T23:49:35Z",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-10-001",
+      "date": "2024-10-07T03:51:27Z",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-10-002",
+      "date": "2024-10-05T12:33:58Z",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-10-003",
+      "date": "2024-10-05T12:33:58Z",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-10-004",
+      "date": "2024-10-13T04:34:36Z",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-10-005",
+      "date": "2024-10-13T04:34:36Z",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-10-006",
+      "date": "2024-10-13T04:34:36Z",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-10-007",
+      "date": "2024-10-11T13:27:29Z",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-10-008",
+      "date": "2024-10-11T13:27:29Z",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-10-009",
+      "date": "2024-10-20T15:59:22Z",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-10-010",
+      "date": "2024-10-20T15:59:22Z",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-10-011",
+      "date": "2024-10-20T15:59:22Z",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-10-012",
+      "date": "2024-10-22T00:10:37Z",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-10-013",
+      "date": "2024-10-22T00:10:37Z",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-10-014",
+      "date": "2024-10-18T12:28:50Z",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-10-015",
+      "date": "2024-10-25T19:49:16Z",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-10-016",
+      "date": "2024-10-25T19:49:16Z",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-10-017",
+      "date": "2024-10-26T20:12:18Z",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-10-018",
+      "date": "2024-10-25T19:49:16Z",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-10-019",
+      "date": "2024-10-25T19:49:16Z",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-10-020",
+      "date": "2024-10-25T19:49:16Z",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-10-021",
+      "date": "2024-10-28T01:43:15Z",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-10-022",
+      "date": "2024-10-28T01:43:15Z",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-10-023",
+      "date": "2024-10-27T14:58:14Z",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-10-024",
+      "date": "2024-10-27T14:58:14Z",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-10-025",
+      "date": "2024-10-27T14:58:14Z",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-10-026",
+      "date": "2024-10-13T19:38:24Z",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-10-027",
+      "date": "2024-10-13T19:42:21Z",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-10-028",
+      "date": "2024-10-10T13:05:52Z",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-10-029",
+      "date": "2024-10-10T13:05:52Z",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-10-030",
+      "date": "2024-10-10T13:05:52Z",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-10-031",
+      "date": "2024-10-10T13:05:52Z",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-10-032",
+      "date": "2024-10-10T13:05:52Z",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-11-001",
+      "date": "2024-11-01",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-11-002",
+      "date": "2024-11-02",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-11-003",
+      "date": "2024-11-03",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-11-004",
+      "date": "2024-11-01",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-11-005",
+      "date": "2024-11-04",
+      "evidence": "U",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-11-006",
+      "date": "2024-11-04",
+      "evidence": "U",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-11-007",
+      "date": "2024-11-04",
+      "evidence": "U",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-11-008",
+      "date": "2024-11-12",
+      "evidence": "U",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-11-009",
+      "date": "2024-11-15",
+      "evidence": "U",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-11-010",
+      "date": "2024-11-19",
+      "evidence": "U",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-11-011",
+      "date": "2024-11-16",
+      "evidence": "U",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-11-012",
+      "date": "2024-11-15",
+      "evidence": "U",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-11-013",
+      "date": "2024-11-15",
+      "evidence": "U",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-11-014",
+      "date": "2024-11-15",
+      "evidence": "U",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-11-015",
+      "date": "2024-11-15",
+      "evidence": "U",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-11-016",
+      "date": "2024-11-16",
+      "evidence": "U",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-11-017",
+      "date": "2024-11-19",
+      "evidence": "U",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-11-018",
+      "date": "2024-11-20",
+      "evidence": "U",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-11-019",
+      "date": "2024-11-20",
+      "evidence": "U",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-11-020",
+      "date": "2024-11-19",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-11-021",
+      "date": "2024-11-30",
+      "evidence": "U",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-11-022",
+      "date": "2024-11-30",
+      "evidence": "U",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-11-023",
+      "date": "2024-11-30",
+      "evidence": "U",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-11-024",
+      "date": "2024-11-30",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-11-025",
+      "date": "2024-11-30",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-11-026",
+      "date": "2024-11-30",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-12-001",
+      "date": "2024-12-01",
+      "evidence": "U",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-12-002",
+      "date": "2024-12-01",
+      "evidence": "U",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-12-003",
+      "date": "2024-12-01",
+      "evidence": "U",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-12-004",
+      "date": "2024-12-01",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-12-005",
+      "date": "2024-12-01",
+      "evidence": "U",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-12-006",
+      "date": "2024-12-03",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-12-007",
+      "date": "2024-12-03",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-12-008",
+      "date": "2024-12-05",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-12-009",
+      "date": "2024-12-05",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-12-010",
+      "date": "2024-12-12",
+      "evidence": "U",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-12-011",
+      "date": "2024-12-12",
+      "evidence": "U",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-12-012",
+      "date": "2024-12-13",
+      "evidence": "U",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-12-013",
+      "date": "2024-12-13",
+      "evidence": "U",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-12-014",
+      "date": "2024-12-14",
+      "evidence": "U",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-12-015",
+      "date": "2024-12-14",
+      "evidence": "U",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-12-016",
+      "date": "2024-12-15",
+      "evidence": "U",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-12-017",
+      "date": "2024-12-16",
+      "evidence": "U",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-12-018",
+      "date": "2024-12-16",
+      "evidence": "U",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-12-019",
+      "date": "2024-12-17",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-12-020",
+      "date": "2024-12-17",
+      "evidence": "U",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-12-021",
+      "date": "2024-12-17",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-12-022",
+      "date": "2024-12-17",
+      "evidence": "U",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-12-023",
+      "date": "2024-12-17",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-12-024",
+      "date": "2024-12-18",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-12-025",
+      "date": "2024-12-18",
+      "evidence": "U",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-12-026",
+      "date": "2024-12-19",
+      "evidence": "U",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-12-027",
+      "date": "2024-12-18",
+      "evidence": "U",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-12-028",
+      "date": "2024-12-26",
+      "evidence": "U",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-12-029",
+      "date": "2024-12-26",
+      "evidence": "U",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-12-030",
+      "date": "2024-12-26",
+      "evidence": "U",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-12-031",
+      "date": "2024-12-26",
+      "evidence": "U",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-12-032",
+      "date": "2024-12-26",
+      "evidence": "U",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-12-033",
+      "date": "2024-12-26",
+      "evidence": "U",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-12-034",
+      "date": "2024-12-31",
+      "evidence": "U",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-12-035",
+      "date": "2024-12-31",
+      "evidence": "U",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-12-036",
+      "date": "2024-12-17",
+      "evidence": "A",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    },
+    {
+      "id": "Y24-12-037",
+      "date": "2024-12-01",
+      "evidence": "U",
+      "receipt_resolves": true,
+      "assigned_date_in_cited_result": true,
+      "original_question_nonnull": false
+    }
+  ],
+  "issues_resolved": 2,
+  "open_issues": 0
+}

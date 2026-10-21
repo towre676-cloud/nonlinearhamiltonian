@@ -1,0 +1,202 @@
+{
+  "checks": [
+    {
+      "id": "Y26-06-001",
+      "name": "Finite Weyl relation",
+      "status": "pass",
+      "detail": "Three-dimensional clock/shift checked entrywise; determinant theorem proves obstruction."
+    },
+    {
+      "id": "Y26-06-002",
+      "name": "Quadratic polarization",
+      "status": "pass",
+      "detail": "All nine cyclic polarization values, including failure of alternation."
+    },
+    {
+      "id": "Y26-06-003",
+      "name": "Finite Weil phase",
+      "status": "pass",
+      "detail": "Complete3×3 matrices, tolerance1e−14; finite-sum derivation is the proof."
+    },
+    {
+      "id": "Y26-06-004",
+      "name": "CRT projectors and split idempotent",
+      "status": "pass",
+      "detail": "Exact residue and matrix identities."
+    },
+    {
+      "id": "Y26-06-005",
+      "name": "LCU normalization",
+      "status": "pass",
+      "detail": "Exact H²=5I gives input-independent success5/9."
+    },
+    {
+      "id": "Y26-06-006",
+      "name": "Composed instrument completeness",
+      "status": "pass",
+      "detail": "Both outcome branches included in exact Kraus sum."
+    },
+    {
+      "id": "Y26-06-007",
+      "name": "Sector dependence and confidence",
+      "status": "pass",
+      "detail": "Exact union independence case and zero-failure100-trial bound."
+    },
+    {
+      "id": "Y26-06-008",
+      "name": "Weighted path majorant",
+      "status": "pass",
+      "detail": "Exact two-step path weights and geometric tail; total11/100."
+    },
+    {
+      "id": "Y26-06-009",
+      "name": "Cubic arithmetic",
+      "status": "pass",
+      "detail": "Rational-root exclusion, discriminant and real-root bracket."
+    },
+    {
+      "id": "Y26-06-010",
+      "name": "Corner birational identity",
+      "status": "pass",
+      "detail": "Degree-three identity checked at17 exact integer points; correct mapu=(z−1)/z."
+    },
+    {
+      "id": "Y26-06-011",
+      "name": "Regular-shape dilogarithm",
+      "status": "pass",
+      "detail": "100000-term absolutely convergent sum; certified truncation2/N."
+    },
+    {
+      "id": "Y26-06-012",
+      "name": "Logarithmic period",
+      "status": "pass",
+      "detail": "Unit-circle integrand constanti; finite quadrature matches exact analytic period."
+    },
+    {
+      "id": "Y26-06-013",
+      "name": "Fold action difference",
+      "status": "pass",
+      "detail": "Exact saddle values att=1/4."
+    },
+    {
+      "id": "Y26-06-014",
+      "name": "Lattice covolume and minima",
+      "status": "pass",
+      "detail": "Exact covolume and exhaustive short-vector search in a containing box."
+    },
+    {
+      "id": "Y26-06-015",
+      "name": "Zonotope area",
+      "status": "pass",
+      "detail": "Independent polygon shoelace and determinant-sum calculations."
+    },
+    {
+      "id": "Y26-06-016",
+      "name": "Quartic Sylvester discriminant",
+      "status": "pass",
+      "detail": "Independent exact7×7 determinant and depressed-quartic formula."
+    },
+    {
+      "id": "Y26-06-017",
+      "name": "Anharmonic units",
+      "status": "pass",
+      "detail": "Golden exceptional-unit relation; general positive-exponent proof uses coprime ideals."
+    },
+    {
+      "id": "Y26-06-018",
+      "name": "Moyal defect coefficients",
+      "status": "pass",
+      "detail": "Exact falling-factorial coefficients under declared ℏ convention."
+    },
+    {
+      "id": "Y26-06-019",
+      "name": "Corrected infinite-family samples",
+      "status": "pass",
+      "detail": "50exact samples; uniform proof comes from degree≤4and factorization."
+    },
+    {
+      "id": "Y26-06-020",
+      "name": "Genuine fifth-order obstruction",
+      "status": "pass",
+      "detail": "Corrected new replacement example; Moyal value83 atq=p=ℏ=1."
+    },
+    {
+      "id": "Y26-06-021",
+      "name": "Gas-stream mass and covariance",
+      "status": "pass",
+      "detail": "Exact unit-converted throughput and separate-average counterexample."
+    },
+    {
+      "id": "Y26-06-022",
+      "name": "Sine transform and dimension",
+      "status": "pass",
+      "detail": "Full matrices at four conductors; sine-sum argument proves allL."
+    },
+    {
+      "id": "Y26-06-023",
+      "name": "Sign-action cohomology",
+      "status": "pass",
+      "detail": "Exact cocycle/coboundary parity classes; infinite quotient computed in proof."
+    },
+    {
+      "id": "Y26-06-024",
+      "name": "Totient convolution",
+      "status": "pass",
+      "detail": "All divisor-sum identities through100; analytic series argument proves full half-plane."
+    },
+    {
+      "id": "Y26-06-025",
+      "name": "Habiro free-direction spectrum",
+      "status": "pass",
+      "detail": "Three exact orthogonal eigenvectors, eigenvalues0,1,3."
+    },
+    {
+      "id": "Y26-06-026",
+      "name": "Projection cycle count",
+      "status": "pass",
+      "detail": "Exact iteration counts:θπ/3 needs4;θπ/6 needs17,not20."
+    },
+    {
+      "id": "Y26-06-027",
+      "name": "Ordered closure iteration",
+      "status": "pass",
+      "detail": "Exact finite noncommuting closures."
+    },
+    {
+      "id": "Y26-06-028",
+      "name": "Compression arithmetic",
+      "status": "pass",
+      "detail": "Exact source byte gaps and five-symbol lower bound."
+    },
+    {
+      "id": "Y26-06-029",
+      "name": "Footprint commutation",
+      "status": "pass",
+      "detail": "All81states for sufficient condition and read-write counterexample."
+    },
+    {
+      "id": "Y26-06-030",
+      "name": "Tangram area and orientation",
+      "status": "pass",
+      "detail": "Exact area conservation and labeled orientation reversal."
+    },
+    {
+      "id": "Y26-06-031",
+      "name": "Projective symplectic group order",
+      "status": "pass",
+      "detail": "Exact symplectic-basis counting formula; braid-image identification not verified."
+    },
+    {
+      "id": "Y26-06-032",
+      "name": "Quintic Hessian inverse",
+      "status": "pass",
+      "detail": "Independent exact reduced multiplication and5×5 norm determinant."
+    },
+    {
+      "id": "metadata",
+      "name": "Attribution and IDs",
+      "status": "pass",
+      "detail": "No invented literal historical prompt; Tfile evidence may have null dates."
+    }
+  ]
+}

@@ -1,0 +1,271 @@
+[
+  {
+    "id": "Y26-08-801",
+    "title": "Semantic fibers enlarge the feasible optimum only when deployment constraints are preserved",
+    "status": "Proved for the stated exact model; historical large-run claims remain unverified",
+    "summary": "The August source distinguishes semantic equivalence from deployment feasibility and from a hardware model’s accuracy. This is a useful mathematical separation: an equivalence class may be large while only a small subset is admissible, and a proved modeled optimum need not be an observed physical optimum.",
+    "definitions": [
+      "Let π:Θ→F map parameters to their exact represented function. The semantic fiber is E(f)=π⁻¹({f}). Let D⊂Θ encode all declared deployment constraints, and let Y_H(θ) be the feasible implementation choices on a fixed target H.",
+      "Define K(S)=inf{C_H(θ,y):θ∈S,y∈Y_H(θ)}, with inf∅=+∞. A minimum requires attainment, which is automatic for a nonempty finite feasible set but not for an arbitrary continuous fiber."
+    ],
+    "result": {
+      "name": "Feasible-set monotonicity and a certified error decomposition",
+      "statement": "If S⊂T⊂E(f)∩D, then K(T)≤K(S). A returned feasible cost ĉ satisfies ε_search=ĉ−K(T)≥0. If a physical cost z obeys |z−ĉ|≤δ_model+δ_measure, then |z−K(T)|≤ε_search+δ_model+δ_measure.",
+      "proof": "Every feasible pair allowed by S is allowed by T, so taking an infimum over T cannot increase the value. This proof needs inclusion of full parameter–implementation pairs, not merely a parameter transformation that breaks quantization or architecture constraints. For a feasible returned pair, its cost is one member of the set minimized over, hence ĉ≥K(T). Add and subtract ĉ in z−K(T) and use the triangle inequality, obtaining the error bound. Search error can therefore be driven to zero by exhaustive finite enumeration or a matching lower bound, while model discrepancy remains logically independent. If the source uses a nonlinear calibration g from modeled cost to observation, one additionally needs an explicit bound for g rather than identifying its units with C_H."
+    },
+    "example": {
+      "setup": "Use an exact two-parameter semantic model π(a,b)=a+b with target function value one. Declare deployment states S={(1,0)}, T={(1,0),(0,1),(1/2,1/2)} and costs 12,9,10.",
+      "calculation": "K(S)=12 and K(T)=9. Returning the third state costs10, so search regret is1. An observation z=10.4 with total calibrated discrepancy bound0.5 obeys |z−K(T)|=1.4≤1.5. Excluding the cost-nine state by an actual deployment constraint changes the true feasible optimum to10.",
+      "conclusion": "The example demonstrates both exact improvement and the need to keep feasibility and error layers explicit."
+    },
+    "limits": "The large source compiler/routing certificates and physical measurements were not recovered. No reported benchmark optimum or silicon gain is independently validated here.",
+    "extension": "Provide a machine-checkable semantic witness, a complete deployment predicate, a feasible implementation and a matching lower bound; then calibrate model discrepancy on separately measured cases.",
+    "references": [],
+    "original": {
+      "date": "2026-08-28T00:38:04Z",
+      "month": "2026-08",
+      "evidence": "U",
+      "field": "Optimization on equivalence classes",
+      "concept": "Semantic fibers enlarge the feasible optimum only when deployment constraints are preserved",
+      "origin": "Recovered dated August source; revised question, proof and worked model newly authored",
+      "question": "Which exact optimum improves when semantics-preserving choices are added, and how are search and model errors separated?",
+      "math": "If S⊂T⊂E(f)∩D, then K(T)≤K(S). A returned feasible cost ĉ satisfies ε_search=ĉ−K(T)≥0. If a physical cost z obeys |z−ĉ|≤δ_model+δ_measure, then |z−K(T)|≤ε_search+δ_model+δ_measure.",
+      "finish": "Exact result, constructive proof and checked example",
+      "kind": "Revised mathematical treatment",
+      "refs": [],
+      "source_excerpt": "- [USER_FACT] [c8] U@2026-08-28T00:38:04Z, -54d: Objective \\(C_{\\rm eq}^{*}(f,H)=\\min_{x\\in E_{\\rm dep}(f)}\\min_{y\\in Y_H(x)}C_H(x,y)\\); set-inclusion theorem says enlarging feasible states cannot worsen optimum; error layers \\(\\widehat C_M(P)=C_M^*(P)+\\epsilon_{\\rm search}(P)\\) and \\(Z_{\\rm silicon}=g(C_M^*,\\ldots)+\\delta_{\\rm model}+\\eta_{\\rm measure}\\).",
+      "retrieval_receipt": "root_coverage_1.json record 0",
+      "original_question": null,
+      "attribution_note": "Literal retrieved result bullet, not a reconstructed original question. Speaker attribution follows the returned U/A tag. Revised mathematics and examples are new, with missing original certificates identified explicitly."
+    }
+  },
+  {
+    "id": "Y26-08-802",
+    "title": "Transformer gauge identities must respect rotations, nonlinear gates and sharing partitions",
+    "status": "Proved for the stated exact model; historical large-run claims remain unverified",
+    "summary": "The recovered program names transformer gauge orbits and deployment-filtered symmetries. Several exact identities can be proved at module level. Their continuous algebraic freedom must not be confused with byte-exact quantized deployment, and nonlinear gates prevent an unrestricted hidden-basis change.",
+    "definitions": [
+      "For column vectors q,k,v, an attention score without positional rotations is qᵀk; after RoPE it is qᵀR_δk with R_δ orthogonal. The value/output composition is Ov.",
+      "A SwiGLU block is D[SiLU(Gx)⊙Ux], where SiLU acts coordinatewise. A grouped-query pattern consists of g key/value groups, each shared by r query heads. All identities below require consistent changes of corresponding weights and biases."
+    ],
+    "result": {
+      "name": "Exact module gauges and structural permutation group",
+      "statement": "For invertible A and B, q→Aq,k→A⁻ᵀk preserves unrotated scores, and v→Bv,O→OB⁻¹ preserves outputs. RoPE scores are preserved if Aᵀ commutes with every R_δ. SwiGLU allows a common hidden permutation and arbitrary nonzero diagonal rescaling of its linear U branch, compensated in D. Permutations preserving g equal sharing groups form S_r wr S_g=(S_r)^g⋊S_g.",
+      "proof": "The score identity is qᵀAᵀA⁻ᵀk=qᵀk, while the rotated score becomes qᵀAᵀR_δA⁻ᵀk and therefore needs the commutation condition. In one genuine two-dimensional rotation plane with sinδ≠0, solve CR=RC entrywise: the commutant is C=aI+bJ, J=[[0,−1],[1,0]], invertible when a²+b²≠0. Degenerate or repeated frequencies enlarge the commutant and must be treated separately. For values, (OB⁻¹)(Bv)=Ov. A hidden permutation P commutes with coordinatewise SiLU and respects the product: (Pa)⊙(Pb)=P(a⊙b). Scaling only the linear U branch by diagonal Λ scales the hidden product by Λ, canceled by D→DΛ⁻¹; scaling the nonlinear gate arbitrarily is invalid because SiLU is not homogeneous. A sharing-preserving permutation first permutes the g groups, then independently permutes their r query labels, proving the wreath-product decomposition. Arbitrary independent QK gauges across heads sharing one K generally break the sharing constraint."
+    },
+    "example": {
+      "setup": "Take A=2I on one rotation plane, B=diag(2,3), and a two-channel SwiGLU with Λ=diag(2,−1). For g=r=2, count the sharing-preserving permutations.",
+      "calculation": "QK scores and VO products are unchanged by exact multiplication. The SwiGLU linear branch scaling is canceled by output columns, including the negative second factor. The structural permutation group has (2!)²·2!=8 elements, versus4!=24 unrestricted head permutations.",
+      "conclusion": "The model gives exact identities and a precise reason that an architecture-preserving gauge group is smaller than all coordinate transformations."
+    },
+    "limits": "These identities do not certify any source Q4NX byte symmetry, finite-orbit optimum, runtime gain or generic completeness of the automorphism group. Quantization and residual normalization can reduce the admissible subgroup further.",
+    "extension": "For the actual architecture and byte format, intersect the proved semantic gauge with all deployment predicates and construct exact certificates for each retained transformation.",
+    "references": [
+      {
+        "label": "Vaswani et al., Attention Is All You Need",
+        "url": "https://arxiv.org/abs/1706.03762"
+      },
+      {
+        "label": "Su et al., RoFormer",
+        "url": "https://arxiv.org/abs/2104.09864"
+      },
+      {
+        "label": "Shazeer, GLU Variants Improve Transformer",
+        "url": "https://arxiv.org/abs/2002.05202"
+      },
+      {
+        "label": "Ainslie et al., GQA",
+        "url": "https://arxiv.org/abs/2305.13245"
+      }
+    ],
+    "original": {
+      "date": "2026-08-30T16:42:29Z",
+      "month": "2026-08",
+      "evidence": "A",
+      "field": "Exact neural-network symmetries",
+      "concept": "Transformer gauge identities must respect rotations, nonlinear gates and sharing partitions",
+      "origin": "Recovered dated August source; revised question, proof and worked model newly authored",
+      "question": "Which QK, VO and SwiGLU transformations preserve the exact module function, and which subgroup survives RoPE and grouped-query sharing?",
+      "math": "For invertible A and B, q→Aq,k→A⁻ᵀk preserves unrotated scores, and v→Bv,O→OB⁻¹ preserves outputs. RoPE scores are preserved if Aᵀ commutes with every R_δ. SwiGLU allows a common hidden permutation and arbitrary nonzero diagonal rescaling of its linear U branch, compensated in D. Permutations preserving g equal sharing groups form S_r wr S_g=(S_r)^g⋊S_g.",
+      "finish": "Exact result, constructive proof and checked example",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://arxiv.org/abs/1706.03762",
+        "https://arxiv.org/abs/2104.09864",
+        "https://arxiv.org/abs/2002.05202",
+        "https://arxiv.org/abs/2305.13245"
+      ],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c2] A@2026-08-30T16:42:29Z, -52d: PGC v0.1 formalized RoPE commutants, SwiGLU quantization-partition joins, GQA wreath structure, finite orbit optimization; certified 524,288-state optimum 36,758 vs 37,760, gauge regret 1,002 (2.6536%); Bellman quotient sequences included 8→6→3→2→1.",
+      "retrieval_receipt": "root_coverage_1.json record 0",
+      "original_question": null,
+      "attribution_note": "Literal retrieved result bullet, not a reconstructed original question. Speaker attribution follows the returned U/A tag. Revised mathematics and examples are new, with missing original certificates identified explicitly."
+    }
+  },
+  {
+    "id": "Y26-08-803",
+    "title": "Bellman-safe merging compares complete continuation behavior, not one current optimum",
+    "status": "Proved for the stated exact model; historical large-run claims remain unverified",
+    "summary": "The source reports Bellman quotient sequences such as8→6→3→2→1. Counts alone do not show that a quotient is valid. A finite-horizon recursion gives an exact sufficient equivalence, identifies the needed state information and explains when partition counts can legitimately decrease.",
+    "definitions": [
+      "At time t, a state s has a finite legal action set A_t(s), immediate costs c_t(s,a), deterministic successor T_t(s,a), and terminal cost h at time L. Infeasible continuations have cost+∞.",
+      "Define equivalence backward: terminal states are equivalent when h agrees; at time t, states are equivalent when they have identical action labels and, for each action, identical immediate cost and equivalent successors. Keep the minimum accumulated prefix cost for each class."
+    ],
+    "result": {
+      "name": "Continuation-preserving quotient theorem",
+      "statement": "Equivalent states have equal cost for every legal labeled continuation and equal Bellman value. Replacing them by their class and retaining the cheapest prefix preserves the global optimum. On one fixed state set, a refinement splits classes and cannot lower their number.",
+      "proof": "At the terminal stage, continuation cost is the agreed terminal value. Assuming the assertion at t+1, matching action labels, costs and successor classes gives matching cost for an action followed by any tail. Induction proves the full continuation statement and hence equality of its minimum. Two equivalent prefixes differ only in accumulated cost, so every future suffix adds the same amount; discarding the more expensive prefix cannot remove an optimum. For the partition direction, P refines Q precisely when every P-block lies within a Q-block; the induced map from P-blocks onto Q-blocks is surjective, so |P|≥|Q|. A decreasing numerical sequence may instead reflect backward horizons, elimination of unreachable states or deliberate validated merging; its direction is not evidence of a refinement theorem."
+    },
+    "example": {
+      "setup": "At the final decision use states a,b,c with two actions L,R and cost vectors a=(0,10), b=(10,0), c=(0,10). All successors have zero terminal cost.",
+      "calculation": "a and c are equivalent and can merge. State b also has minimum value zero but is not continuation-equivalent: restricting the future to actionL yields cost0 froma and10 fromb. Thus equal scalar Bellman values are insufficient for a quotient required to survive changes in the allowed continuation set.",
+      "conclusion": "The quotient has a constructive correctness invariant rather than only an attractive reduction count."
+    },
+    "limits": "This is a sufficient recursive bisimulation, not a claim that all possible weighted equivalences require identical immediate costs; potential reweighting can yield other exact quotient notions. The source’s actual state graphs were not recovered.",
+    "extension": "Publish each state signature, successor map and class witness, then verify that every merge respects the declared continuation semantics and prefix-cost convention.",
+    "references": [],
+    "original": {
+      "date": "2026-08-30T16:42:29Z",
+      "month": "2026-08",
+      "evidence": "A",
+      "field": "Dynamic-programming quotients",
+      "concept": "Bellman-safe merging compares complete continuation behavior, not one current optimum",
+      "origin": "Recovered dated August source; revised question, proof and worked model newly authored",
+      "question": "Which state equivalence preserves every remaining decision, and in which direction does partition refinement move?",
+      "math": "Equivalent states have equal cost for every legal labeled continuation and equal Bellman value. Replacing them by their class and retaining the cheapest prefix preserves the global optimum. On one fixed state set, a refinement splits classes and cannot lower their number.",
+      "finish": "Exact result, constructive proof and checked example",
+      "kind": "Revised mathematical treatment",
+      "refs": [],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c2] A@2026-08-30T16:42:29Z, -52d: PGC v0.1 formalized RoPE commutants, SwiGLU quantization-partition joins, GQA wreath structure, finite orbit optimization; certified 524,288-state optimum 36,758 vs 37,760, gauge regret 1,002 (2.6536%); Bellman quotient sequences included 8→6→3→2→1.",
+      "retrieval_receipt": "root_coverage_1.json record 0",
+      "original_question": null,
+      "attribution_note": "Literal retrieved result bullet, not a reconstructed original question. Speaker attribution follows the returned U/A tag. Revised mathematics and examples are new, with missing original certificates identified explicitly."
+    }
+  },
+  {
+    "id": "Y26-08-804",
+    "title": "Channel erasure has exactly256 states only when forgotten lane identities are irrelevant",
+    "status": "Proved for the stated exact model; historical large-run claims remain unverified",
+    "summary": "The source reports a dramatic channel-erasure quotient. A simple capacity model reproduces the counts and, more importantly, states the condition that makes erasure exact. The count itself does not validate a cost model or a route implementation.",
+    "definitions": [
+      "Partition sixteen distinct channels into four banks of four lanes. Assign four labeled active objects injectively to physical channels. Erase the lane identity and retain only each object’s bank label.",
+      "Assume costs, all legal future choices and all required constraints depend only on bank labels and occupancy, and that no forgotten channel identity is pinned or externally observed. Each bank has capacity four."
+    ],
+    "result": {
+      "name": "Exact quotient and diagram size",
+      "statement": "There are16·15·14·13=43,680 physical assignments, and every one of4⁴=256 bank tuples is feasible. A tuple with bank occupancies n₁,…,n₄ has fiber size∏_bP(4,n_b). Under the stated invariance, minimizing cost over physical assignments is equivalent to minimizing over bank tuples. The full four-ary depth-four prefix tree has341 nodes.",
+      "proof": "Injection counting gives the physical total. Any four-object bank tuple uses at most four objects in a bank, so its occupants can be assigned distinct lanes; this proves surjectivity of erasure. In each bank, its n_b labeled objects have P(4,n_b) injections into four lanes, and independent banks multiply the choices. If feasibility and cost are constant on each fiber, every physical feasible assignment projects to a quotient state of the same cost and every quotient state has a physical lift; the two infima therefore coincide. If future constraints distinguish two lanes, these hypotheses fail and the quotient must retain that information. The prefix count is1+4+4²+4³+4⁴=(4⁵−1)/3=341. Merging identical suffixes can reduce this diagram, but the tree bound already holds without claiming such merging."
+    },
+    "example": {
+      "setup": "Compare tuples(0,0,0,0) and(0,1,2,3).",
+      "calculation": "The first has fiber sizeP(4,4)=24, while the second has4⁴=256 physical lifts. Summing all256 fiber sizes gives43,680 exactly. Unequal fiber sizes show that the quotient is not automatically a uniform probability model.",
+      "conclusion": "Both reduction counts and the precise lift condition are established in a reproducible finite model."
+    },
+    "limits": "The original routed graph, machine capacities, byte-hop objective and claimed9,765,632 optimum were not recovered. No timing or hardware claim is certified.",
+    "extension": "Attach a lifting algorithm to every quotient transition and prove that capacity, lifetime and future-use constraints depend only on retained state; refine the state wherever this fails.",
+    "references": [],
+    "original": {
+      "date": "2026-08-31T03:50:37Z",
+      "month": "2026-08",
+      "evidence": "A",
+      "field": "Finite quotient counting",
+      "concept": "Channel erasure has exactly256 states only when forgotten lane identities are irrelevant",
+      "origin": "Recovered dated August source; revised question, proof and worked model newly authored",
+      "question": "Which exact physical-assignment model supports P(16,4)=43,680→4⁴=256 and a341-node route diagram bound?",
+      "math": "There are16·15·14·13=43,680 physical assignments, and every one of4⁴=256 bank tuples is feasible. A tuple with bank occupancies n₁,…,n₄ has fiber size∏_bP(4,n_b). Under the stated invariance, minimizing cost over physical assignments is equivalent to minimizing over bank tuples. The full four-ary depth-four prefix tree has341 nodes.",
+      "finish": "Exact result, constructive proof and checked example",
+      "kind": "Revised mathematical treatment",
+      "refs": [],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c5] A@2026-08-31T03:50:37Z, -51d: ORBIT-FDD formalism: \\(D_v=[\\ell_v,r_v]\\), trust regions \\(D_v(\\delta)=[c_v-\\delta,c_v+\\delta]\\cap[0,7]\\); channel-erasure quotient reduces \\(P(16,4)=43{,}680\\) to \\(4^4=256\\); optimum \\(9{,}765{,}632\\) byte-hops vs fixed \\(10{,}543{,}872\\), a \\(7.380970\\%\\) reduction.",
+      "retrieval_receipt": "root_coverage_1.json record 0",
+      "original_question": null,
+      "attribution_note": "Literal retrieved result bullet, not a reconstructed original question. Speaker attribution follows the returned U/A tag. Revised mathematics and examples are new, with missing original certificates identified explicitly."
+    }
+  },
+  {
+    "id": "Y26-08-805",
+    "title": "A frontier state supports exact min-plus transfer when it separates past from future",
+    "status": "Proved for the stated exact model; historical large-run claims remain unverified",
+    "summary": "The source combines fixed-height frontier DP, route occupancy and repeated min-plus transfer. A frontier is mathematically sufficient only when all interaction between processed and unprocessed choices passes through its retained state. A small transfer matrix proves an additive period law exactly.",
+    "definitions": [
+      "Consider a finite constraint-and-cost problem with variables processed in a fixed order, each with at most D values. At a cut retain all assigned variables that occur in a factor involving an unassigned variable, together with any extra resource/connectivity state used by future factors.",
+      "Assume the retained boundary has at most κ variables and all forgotten factors have already been checked and charged exactly once. For a repeated layer let M_ij be the least additional cost of moving from boundary statei to statej, or+∞ if impossible."
+    ],
+    "result": {
+      "name": "Exact separator recursion and repeated-layer transfer",
+      "statement": "For each frontier signature, keeping the minimum accumulated cost preserves the global optimum. There are at most D^κ assignments before auxiliary states. Repeated identical layers satisfy v_(L+1)=v_L⊗M, where (v⊗M)_j=min_i(v_i+M_ij); hence v_L=v₀⊗M^⊗L.",
+      "proof": "Any future factor sees the processed region only through the retained variables and resources. Two partial assignments with the same signature therefore admit exactly the same continuations and add the same future costs. Keeping their cheaper prefix is valid by direct substitution, and induction over the processing order proves the recursion. The D^κ bound counts boundary assignments, not extra partitions or capacities. For repeated layers, concatenate an optimal prefix to each one-layer transition and minimize the intermediate boundary state; this is precisely min-plus multiplication. Associativity follows because both bracketings minimize the same sum over all intermediate indices. An eventual period law is additional structure, not a consequence of observing several values."
+    },
+    "example": {
+      "setup": "Use two boundary states and M=[[+∞,2],[3,+∞]], with v₀=(0,+∞).",
+      "calculation": "M^⊗2=[[5,+∞],[+∞,5]], so M^⊗(L+2)=5+M^⊗L for every L≥0. The minimum terminal cost sequence is d₀=0,d₁=2,d₂=5,d₃=7,d₄=10, and d_(L+2)=d_L+5 exactly. This law follows from an exact matrix identity rather than fitting a short sequence.",
+      "conclusion": "The model supplies a concrete proof of both frontier compression and a repeated-layer recurrence."
+    },
+    "limits": "The source’s lifetime-aware separator values, placement counts and recurrence constants require its actual graph and transition matrix. Auxiliary connectivity can dominate the bare D^κ bound.",
+    "extension": "Publish the frontier extraction and transfer matrix, prove every future interaction crosses its signature and certify any claimed periodic law by min-plus matrix powers or a complete critical-cycle theorem.",
+    "references": [],
+    "original": {
+      "date": "2026-08-31T23:09:26Z",
+      "month": "2026-08",
+      "evidence": "U",
+      "field": "Separator dynamic programming",
+      "concept": "A frontier state supports exact min-plus transfer when it separates past from future",
+      "origin": "Recovered dated August source; revised question, proof and worked model newly authored",
+      "question": "What separator invariant makes frontier optimization exact, and when does a repeated-layer recurrence follow?",
+      "math": "For each frontier signature, keeping the minimum accumulated cost preserves the global optimum. There are at most D^κ assignments before auxiliary states. Repeated identical layers satisfy v_(L+1)=v_L⊗M, where (v⊗M)_j=min_i(v_i+M_ij); hence v_L=v₀⊗M^⊗L.",
+      "finish": "Exact result, constructive proof and checked example",
+      "kind": "Revised mathematical treatment",
+      "refs": [],
+      "source_excerpt": "- [USER_FACT] [c3] U@2026-08-31T23:09:26Z, 1 month 2 weeks: User’s 2026 math program spans fixed-height frontier DP, ORBIT, tropical/min-plus quotients, exact routing, rank connectivity, repeated-layer transfer matrices, and SURD observation design.",
+      "retrieval_receipt": "root_coverage_1.json record 0",
+      "original_question": null,
+      "attribution_note": "Literal retrieved result bullet, not a reconstructed original question. Speaker attribution follows the returned U/A tag. Revised mathematics and examples are new, with missing original certificates identified explicitly."
+    }
+  },
+  {
+    "id": "Y26-08-806",
+    "title": "Connectivity compression4140→128 is an exact rank theorem over the field with two elements",
+    "status": "Proved for the stated exact model; historical large-run claims remain unverified",
+    "summary": "The source reports connectivity compression from4,140 to128. These are not arbitrary empirical counts:4,140 is the eighth Bell number and128 is the exact rank of a standard connectivity matrix over F₂. A greedy weighted row basis preserves the best cost for every connected completion.",
+    "definitions": [
+      "Let Π_k be all set partitions of a k-element boundary. Write p∨q for the least common coarsening and define M_pq=1 when p∨q has one block, zero otherwise, over F₂.",
+      "A cut is a two-coloring with vertex one fixed to colorzero; there are2^(k−1) cuts. Define C_p,c=1 when every block ofp is monochromatic under cutc. A weighted family assigns a finite costw(p) to each available partition."
+    ],
+    "result": {
+      "name": "Exact connectivity rank and weighted representatives",
+      "statement": "M=CCᵀ over F₂ and rank M=2^(k−1). Processing available C-rows in nondecreasing cost and retaining only linearly independent rows yields at most2^(k−1) representatives, preserving min{w(p):p∨q is one block} for every completionq.",
+      "proof": "A cut constant on blocks of bothp andq is constant on each block ofp∨q. If that join hasb blocks, exactly2^(b−1) cuts qualify, odd exactly when b=1. Thus CCᵀ=M over F₂. The one-block partition has C-row equal to the trivial-cut unit vector. Each nontrivial bipartition has row equal to that unit vector plus its own cut unit vector. These rows span all2^(k−1) cut columns, so C has full column rank. Consequently Cᵀ is onto and C is injective, giving rank(CCᵀ)=2^(k−1). For weighted preservation, a discarded row is an F₂-sum of retained rows of no greater weight. If it is compatible withq, pairing that sum withC_q gives one; at least one retained row is also compatible and no more expensive. The reverse inequality follows because representatives are a subfamily. This proves equality of optimal completion costs."
+    },
+    "example": {
+      "setup": "Use k=8, and also enumerate the smaller k=3 case independently.",
+      "calculation": "The restricted-growth recurrence B_(n+1)=Σ_(j=0)^n binomial(n,j)B_j givesB₈=4,140. The cut rank is2⁷=128. For k=3 there are five partitions and four cuts; exact F₂ elimination gives rankfour, and the weighted representative claim can be checked against all five completions.",
+      "conclusion": "The reduction has an exact algebraic certificate and a precisely stated weighted guarantee."
+    },
+    "limits": "The theorem preserves connected-completion minima, not every statistic or arbitrary future predicate. The historical implementation’s actual partitions and costs were not recovered; the theorem does not certify its runtime.",
+    "extension": "For each DP transition, prove that its updated family represents the same completion problem, and store row-reduction/lower-cost witnesses so every discarded state has a replayable certificate.",
+    "references": [
+      {
+        "label": "Bodlaender, Cygan, Kratsch and Nederlof, Solving weighted and counting variants of connectivity problems parameterized by treewidth deterministically in single exponential time",
+        "url": "https://arxiv.org/abs/1211.1505"
+      }
+    ],
+    "original": {
+      "date": "2026-08-31T23:32:35Z",
+      "month": "2026-08",
+      "evidence": "A",
+      "field": "Rank-based connectivity",
+      "concept": "Connectivity compression4140→128 is an exact rank theorem over the field with two elements",
+      "origin": "Recovered dated August source; revised question, proof and worked model newly authored",
+      "question": "Why can weighted partitions of an eight-vertex boundary admit128 representatives, and what completion criterion is preserved?",
+      "math": "M=CCᵀ over F₂ and rank M=2^(k−1). Processing available C-rows in nondecreasing cost and retaining only linearly independent rows yields at most2^(k−1) representatives, preserving min{w(p):p∨q is one block} for every completionq.",
+      "finish": "Exact result, constructive proof and checked example",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://arxiv.org/abs/1211.1505"
+      ],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c3] A@2026-08-31T23:32:35Z, 1 month 2 weeks: Separator atlas found native static \\(\\kappa=15\\), lifetime-aware \\(\\kappa_\\ell=5\\!-\\!7\\); \\(\\omega\\) about 10; broader families include GQA/MQA, FFN, KV-cache, normalization, reductions, MoE.",
+      "retrieval_receipt": "root_coverage_1.json record 0",
+      "original_question": null,
+      "attribution_note": "Literal retrieved result bullet, not a reconstructed original question. Speaker attribution follows the returned U/A tag. Revised mathematics and examples are new, with missing original certificates identified explicitly."
+    }
+  }
+]

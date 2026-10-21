@@ -1,0 +1,166 @@
+{
+  "checks": [
+    {
+      "id": "Y24-11-000",
+      "name": "Schema and dated evidence attribution",
+      "status": "pass",
+      "detail": "26 entries: complete schema; dated attribution matches its selected source line; no invented verbatim original questions."
+    },
+    {
+      "id": "Y24-11-001",
+      "name": "Growth and denominator arithmetic",
+      "status": "pass",
+      "detail": "Exact rational growth bounds, 74500 allocation total, weekly normalization, aggregate/per-recipient factors."
+    },
+    {
+      "id": "Y24-11-002",
+      "name": "Bandwise energy certificate",
+      "status": "pass",
+      "detail": "Exact orthogonal energies 1/4 and 3/4; Euler step h=3/2 produces multiplier -2."
+    },
+    {
+      "id": "Y24-11-003",
+      "name": "Positive finite-difference matrix",
+      "status": "pass",
+      "detail": "Matrix assembled independently; quadratic-form expansion and excluded historical eigenvalues checked exactly."
+    },
+    {
+      "id": "Y24-11-004",
+      "name": "Euler-factor perturbation identity",
+      "status": "pass",
+      "detail": "Exact factor cancellation at s=2, p=2, delta=1/1000."
+    },
+    {
+      "id": "Y24-11-005",
+      "name": "Finite supersymmetry and Fourier transform",
+      "status": "pass",
+      "detail": "Q squared exactly; finite Fourier unitarity and heat supertrace checked."
+    },
+    {
+      "id": "Y24-11-006",
+      "name": "Multiplicity and semisimplicity examples",
+      "status": "pass",
+      "detail": "Determinant h^2(h+2); nonzero square-zero Jordan block exposes kernel/algebraic multiplicity distinction."
+    },
+    {
+      "id": "Y24-11-007",
+      "name": "KMS two-level boundary convention",
+      "status": "pass",
+      "detail": "KMS boundary checked with the stated sign; scalar resolvent factor has positive real Laplace parameter."
+    },
+    {
+      "id": "Y24-11-008",
+      "name": "Wave and charge dimensions",
+      "status": "pass",
+      "detail": "Vacuum wavelength and exact Faraday-current normalization checked."
+    },
+    {
+      "id": "Y24-11-009",
+      "name": "Projection and supremum witnesses",
+      "status": "pass",
+      "detail": "Affine projection witnesses and nonattainment sequence are algebraically explicit; compact-image argument is proved in text."
+    },
+    {
+      "id": "Y24-11-010",
+      "name": "Symmetry reduction matrix certificate",
+      "status": "pass",
+      "detail": "Averaging projection, equivariance and antisymmetric eigenvalue checked exactly."
+    },
+    {
+      "id": "Y24-11-011",
+      "name": "Slice and projection geometry",
+      "status": "pass",
+      "detail": "Slice radii and four-ball volume coefficient verified independently."
+    },
+    {
+      "id": "Y24-11-012",
+      "name": "Temperley-Lieb representation",
+      "status": "pass",
+      "detail": "Both TL triple relations in the explicit delta=2 projection representation."
+    },
+    {
+      "id": "Y24-11-013",
+      "name": "Symbolic homoclinic orbit",
+      "status": "pass",
+      "detail": "Exact homoclinic distance bound for the three-one sequence; 256 length-eight symbolic words."
+    },
+    {
+      "id": "Y24-11-014",
+      "name": "Trace-class covariance tails",
+      "status": "pass",
+      "detail": "Every truncation has exact covariance trace and tail sum; infinite-space support is proved in text, not inferred from samples."
+    },
+    {
+      "id": "Y24-11-015",
+      "name": "Bratteli path arithmetic",
+      "status": "pass",
+      "detail": "Branching dimensions and distinct algebra dimensions computed exactly."
+    },
+    {
+      "id": "Y24-11-016",
+      "name": "Invariant subspace field dependence",
+      "status": "pass",
+      "detail": "The rational matrix has eigenline over C and square -I, hence no real eigenline."
+    },
+    {
+      "id": "Y24-11-017",
+      "name": "Quaternion character-height audit",
+      "status": "pass",
+      "detail": "Quaternion degree-square sum and p=2 height multiset checked exactly."
+    },
+    {
+      "id": "Y24-11-018",
+      "name": "Harper rational fiber",
+      "status": "pass",
+      "detail": "Half-flux Bloch square and the touching zero-energy fiber checked."
+    },
+    {
+      "id": "Y24-11-019",
+      "name": "IDS Diophantine family",
+      "status": "pass",
+      "detail": "All displayed rational gap-label solutions verified, retaining the mod-Q ambiguity."
+    },
+    {
+      "id": "Y24-11-020",
+      "name": "Navier-Stokes shear residual",
+      "status": "pass",
+      "detail": "Exact coefficient residual for the shear solution and its energy balance."
+    },
+    {
+      "id": "Y24-11-021",
+      "name": "Helix frame certificate",
+      "status": "pass",
+      "detail": "Helix curvature/torsion 1/2 checked in the Frenet equation at an explicit frame."
+    },
+    {
+      "id": "Y24-11-022",
+      "name": "Characteristic-form wedge coefficient",
+      "status": "pass",
+      "detail": "Two-form cross-terms have positive sign and yield the characteristic number 12."
+    },
+    {
+      "id": "Y24-11-023",
+      "name": "Twisted-circle eigenfunctions",
+      "status": "pass",
+      "detail": "Both function and derivative boundary phases checked; lowest antiperiodic eigenvalue 1/4."
+    },
+    {
+      "id": "Y24-11-024",
+      "name": "Repetition-code Knill-Laflamme certificate",
+      "status": "pass",
+      "detail": "Four bit-flip syndrome spaces disjoint; phase-error compression has unequal diagonal entries."
+    },
+    {
+      "id": "Y24-11-025",
+      "name": "Weak-PDE example residual",
+      "status": "pass",
+      "detail": "Exact energy integral 1/12 and strong residual -u double-prime=1; counterexample eigenmode proved in text."
+    },
+    {
+      "id": "Y24-11-026",
+      "name": "Quadratic beta-flow certificate",
+      "status": "pass",
+      "detail": "Exact flow, derivative residual and pole location."
+    }
+  ]
+}

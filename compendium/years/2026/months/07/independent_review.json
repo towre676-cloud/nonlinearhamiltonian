@@ -1,0 +1,37 @@
+{
+  "reviewer": "arithmetic_and_waves",
+  "month": "2026-07",
+  "status": "approved",
+  "scope": "Independent read of all31current July definitions, statements, proofs and worked examples, including new030polyhedralGauss–Bonnet and031p-adiccompletion/Hensellifting. Selected provenance reviewed; new030/031source bullets exactly match their actual receipt records and contain the stated historical mathematical topics. This is not a complete transcript-level historical audit.",
+  "issues": [
+    {
+      "severity": "medium",
+      "id": "Y26-07-028",
+      "description": "For arbitrary polynomial leading coefficient a, the Graeffe polynomial is G(y)=(−1)^n a²∏(y−r_i²). The proof includes a² correctly, but the statement gives only the factor(−1)^n relative to a monic root-squared polynomial.",
+      "fix": "Include a² in the statement or explicitly assume the input polynomial is monic.",
+      "status": "corrected_in_builder_and_entries_independently_reread"
+    }
+  ],
+  "verification": {
+    "script": "verify.py",
+    "status": "pass",
+    "passed": 31,
+    "failed": 0,
+    "scope": "Author scoped finite checks independently rerun; not substitutes for all general proofs."
+  },
+  "approved_scopes": [
+    "Lagrange annihilator projectors require both annihilation and nonzero support witnesses.",
+    "Quadratic jet normal form, Hilbert–Burch syzygy proof, socle type and tensor Betti convolution are exact.",
+    "Two-prime rank and membership boundaries are properly one-sided.",
+    "Pauli centralizer uses linear independence; transition quotient correctly usesQ-perp; Schmidt rank sum requires both-side orthogonal blocks.",
+    "Discriminant−23 cubic/plastic-unit relation and eta-product Fricke multiplier are correct.",
+    "Five-vertex graph rigidity proof uses exact edge/triangle counts and a complete small edge-deficit case split.",
+    "Finite Herglotz atoms, phase-level interlacing, positivity boxes and small-alpha critical-point expansions have correct signs and bounds.",
+    "Integer torsion, local-system holonomy, total-complex signs and finite-dimensional dualizability are correctly proved.",
+    "Elliptic good-reduction torsion argument gives rank lower bound only; AG code bound is conditional on the curve and point count.",
+    "Base-twelve arithmetic, Rouche disk counts and fixed-inverse Newton enclosure are exact within stated scope.",
+    "New030Gauss–Bonnet sum follows from triangle-angle sumπand closed-surface incidence3F=2E; tetrahedron defects and subdivision scope are correct without orientability.",
+    "New031geometric p-adic convergence and simple-root digit lifting have correct unit/uniqueness hypotheses;5-adic roots1→16→16→516are compatible and square to6at their moduli."
+  ],
+  "limits": "No original historical empirical counts, volume matches, descent or CI execution claims were promoted into proved theorems by this review."
+}

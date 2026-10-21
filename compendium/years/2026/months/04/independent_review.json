@@ -1,0 +1,98 @@
+{
+  "reviewer": "analysis_and_arithmetic_geometry",
+  "scope_actually_read": "Read every entry title, definitions, result statement, proof, worked example, limits and mathematical reference list. Audited every exact source excerpt against its cited file/record, assigned date and U/A attribution. References were assessed for mathematical relevance; this review does not claim a fresh network availability check of every URL. No source or author files were edited.",
+  "verification_scope": "Independent proof review rather than repeating implementation-mirroring checks. The substantive nested-least-squares correction was verified by exact Fraction arithmetic.",
+  "month": "2026-04",
+  "entry_count": 33,
+  "reviewed_ids": [
+    "Y26-04-001",
+    "Y26-04-002",
+    "Y26-04-003",
+    "Y26-04-004",
+    "Y26-04-005",
+    "Y26-04-006",
+    "Y26-04-007",
+    "Y26-04-008",
+    "Y26-04-009",
+    "Y26-04-010",
+    "Y26-04-011",
+    "Y26-04-012",
+    "Y26-04-013",
+    "Y26-04-014",
+    "Y26-04-015",
+    "Y26-04-016",
+    "Y26-04-017",
+    "Y26-04-018",
+    "Y26-04-019",
+    "Y26-04-020",
+    "Y26-04-021",
+    "Y26-04-022",
+    "Y26-04-023",
+    "Y26-04-024",
+    "Y26-04-025",
+    "Y26-04-026",
+    "Y26-04-027",
+    "Y26-04-028",
+    "Y26-04-029",
+    "Y26-04-030",
+    "Y26-04-031",
+    "Y26-04-032",
+    "Y26-04-033"
+  ],
+  "status": "approved",
+  "findings": [
+    {
+      "id": "Y26-04-013",
+      "severity": "medium",
+      "status": "resolved",
+      "issue": "The three independent nested vectors used as the least-squares sensitivity counterexample cannot all be actual forcing vectors v_k=Y^T W_k r at a stationary solution with nonzero gamma: stationarity enforces sum gamma_k v_k=0. The main conclusion that nesting need not force dimension one is correct, but the example must respect the model.",
+      "resolution_recommended": "Use Y with rows (1,0),(0,1),(1,1), b=(2,3,-6), gamma=(1,1,1), W_k diagonal prefix supports. Then x*=0, H=[[4,1],[1,3]], forcing vectors (2,0),(2,3),(-4,-3), and sensitivities (6,-2)/11,(3,10)/11,(-9,-8)/11 span dimension2. Note the general dependence sum gamma_k D_k=0.",
+      "independent_certificate": {
+        "H_determinant": 11,
+        "forcing_sum": [
+          0,
+          0
+        ],
+        "sensitivity_columns": [
+          [
+            "6/11",
+            "-2/11"
+          ],
+          [
+            "3/11",
+            "10/11"
+          ],
+          [
+            "-9/11",
+            "-8/11"
+          ]
+        ],
+        "first_two_column_determinant": "6/11"
+      },
+      "resolution_confirmed": "Actual stationary least-squares rank2 model replaces unattainable independent forcings. Positive weights, weighted sensitivity relation and rank bound are stated. Exact H D, sumD=0 and nonzero2x2 determinant checked independently."
+    },
+    {
+      "id": "Y26-04-004",
+      "severity": "minor",
+      "status": "resolved",
+      "issue": "The example delta=diag(0,1) is not square-zero if interpreted as a differential endomorphism. It is valid as the only nonzero differential of a two-term complex, but the degree typing should be made explicit when invoking a cochain-map condition.",
+      "resolution_recommended": "Declare delta_Y:Y^0→Y^1 and delta_Z:Z^0→Z^1, with the next differentials zero. Use B^0 and B^1 in delta_Z B^0=B^1 delta_Y, or state explicitly that only an algebraic closed-subspace compatibility operator is intended.",
+      "resolution_confirmed": "Two-term complexes and the degrees of deltaY, deltaZ, B0 and B1 are explicit; next differentials zero; example is now correctly typed."
+    }
+  ],
+  "approved_scopes": [
+    "Exact K3,3 circulation basis, Gaussian monomial probe/Gram moments and spherical Wick normalization.",
+    "Shear commutator, cubic flip iterate, pressure derivative and finite coboundary inverse.",
+    "Analytic triangular invariant graphs with complete nonresonance and the resonant family showing nonuniqueness.",
+    "Cyclic gauge rank, symmetric target cancellation, effective dimension and spectral-color conventions.",
+    "Trace ranges, gap projection K0 factorization and Morita trace scaling with normalized-unit caveats.",
+    "Exact AUROC, pooled-covariance counterexample, convex projection, regression/run diagnostics and conditional constrained minimum.",
+    "Zeta conjugation/layout distinction, DAG path-difference spanning, cochain loop periods, silver-mean frequencies, D4 Galois group and block-resolvent bound.",
+    "Discrete product correction and precisely stated quotient universal property."
+  ],
+  "provenance": {
+    "entries_checked": 33,
+    "exact_excerpt_date_role_mismatches": []
+  },
+  "final_recheck": "Re-read all three revised passages and confirmed corrections in both builder source and entries. All previously requested changes are resolved; no remaining review blocker."
+}

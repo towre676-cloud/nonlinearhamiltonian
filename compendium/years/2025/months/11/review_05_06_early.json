@@ -1,0 +1,35 @@
+{
+  "reviewer": "dmodules_integrability_qft",
+  "status": "pass",
+  "issues": [],
+  "scope": [
+    "All24May entries: proof and finite-example review,especially015uncertainty covariance/exact product term,017hybridEuler-Lagrange/junction law,022thermal energy dimension and pulse bounds,023series/parallel conductivity,and024bonded-layer compatibility.",
+    "All24June entries: proof review,especially001ABC factorization/quality,006delta-form domain,minmax,jumps and perturbation derivative,007fiber-functor reconstruction,008exact reflector versus tensor obstruction,and009-013cohomology grading/comparison/Kunneth/Gysin statements.",
+    "Root early-August10entries:KP traveling-wave/tau factors,Hilbert90F49witness,Kummer/Picard2-torsion ideal,clutching,E2correction,Mellin centralL-value,p-adic precision,Heegnerlocal condition,multiple-testcalibration,and reciprocal compounding."
+  ],
+  "verification": [
+    {
+      "program": "../05/verify.py",
+      "result": "25/25 passed using python -S"
+    },
+    {
+      "program": "../06/verify.py",
+      "result": "25/25 passed using python -S"
+    },
+    {
+      "program": "../08/independent_early_verify.py",
+      "result": "10/10 passed using python -S"
+    }
+  ],
+  "independent_reasoning": [
+    "May015: independence gives E[X²Y²]=(v²+epsilon²)(w²+eta²); cancellation requires covariance and produces the stated exact extra product term.",
+    "May017: fixed-switch variation gives weighted momentum continuity; Cauchy-Schwarz yields the global action1/4 with velocities1/2 and3/2 for the selected two weights.",
+    "June006: the free n+r sine subspace intersected with r evaluation kernels has dimension at leastn,validating the upper minmax bound; endpoint signs and jump2k cot(pi k/2)=-2are consistent.",
+    "June009-013: projective-bundle shifts(2i,i),Betti target degreep,graded tensor signs,codimension Gysin shifts,and good-reduction typed comparison hypotheses agree with the stated classical theorems.",
+    "Early901: Udoubleprime=4k²U-3U²gives speed4k²+3sell²and the tau prefactor2is correct.",
+    "Early903: I²=(2)and impossibilityr²+5s²=2prove a genuine order-two ideal class; fppf rather than etale at2is the necessary Kummer convention.",
+    "Early906: under the declared imaginary-axis Fricke sign,the lower Mellin segment equals epsilon times the upper; termwise integration and coefficient bound give exactly(1+epsilon)sum(a_n/n)e^(-2pi n/sqrtN).",
+    "Early907-908:4is a5-adic unit,so the residual example certifies only precision-level vanishing;2ramifies inQ(i)and splits inQ(sqrt(-7)),matching the classicalHeegnerlocal test."
+  ],
+  "limitations": "This is an independent mathematical/read-only review plus rerun of scoped finite verifiers. It does not certify general deep theorems beyond their stated classical inputs,unrecovered empirical data,or actual Lean compilation."
+}

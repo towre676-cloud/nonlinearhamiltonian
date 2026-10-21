@@ -1,0 +1,350 @@
+{
+  "month": "2026-10",
+  "cutoff": "2026-10-21",
+  "status": "Forty substantial mathematical developments completed from dated October1–21 evidence; exact large-state raw generator theorem is supplied separately by root catalog entries901–902.",
+  "entries": 40,
+  "receipt_files": [
+    {
+      "file": "root_coverage_4.json",
+      "records": 1
+    },
+    {
+      "file": "root_coverage_5.json",
+      "records": 1
+    },
+    {
+      "file": "root_exact_2.json",
+      "records": 1
+    },
+    {
+      "file": "root_exact_3.json",
+      "records": 1
+    },
+    {
+      "file": "root_followups_6.json",
+      "records": 1
+    },
+    {
+      "file": "root_followups_7.json",
+      "records": 1
+    },
+    {
+      "file": "root_receipts.json",
+      "records": 1
+    }
+  ],
+  "retrieved_source_bullets": 122,
+  "unique_source_bullets": 122,
+  "coverage": [
+    {
+      "id": "Y26-10-001",
+      "date": "2026-10-08",
+      "evidence": "T",
+      "topic": "Repeated polynomial roots require multiplicities and a squarefree isolation certificate",
+      "receipt": "root_receipts.json record 0"
+    },
+    {
+      "id": "Y26-10-002",
+      "date": "2026-10-02",
+      "evidence": "U",
+      "topic": "Irreducibility certificates do not by themselves classify rational points",
+      "receipt": "root_receipts.json record 0"
+    },
+    {
+      "id": "Y26-10-003",
+      "date": "2026-10-09",
+      "evidence": "A",
+      "topic": "Prime-stripped factorials have an exact recursive block algorithm",
+      "receipt": "root_coverage_4.json record 0"
+    },
+    {
+      "id": "Y26-10-004",
+      "date": "2026-10-05",
+      "evidence": "A",
+      "topic": "Perfect-power images admit complete valuation parametrizations",
+      "receipt": "root_coverage_4.json record 0"
+    },
+    {
+      "id": "Y26-10-005",
+      "date": "2026-10-04",
+      "evidence": "A",
+      "topic": "Integer lifting turns monomial equations into finite exponent lattices",
+      "receipt": "root_coverage_4.json record 0"
+    },
+    {
+      "id": "Y26-10-006",
+      "date": "2026-10-08",
+      "evidence": "A",
+      "topic": "The negative Pell equation splits into two complete unit orbits",
+      "receipt": "root_coverage_4.json record 0"
+    },
+    {
+      "id": "Y26-10-007",
+      "date": "2026-10-04",
+      "evidence": "A",
+      "topic": "GCD matrices factor through divisor incidence and discrete Green kernels",
+      "receipt": "root_coverage_4.json record 0"
+    },
+    {
+      "id": "Y26-10-008",
+      "date": "2026-10-04",
+      "evidence": "A",
+      "topic": "Superelliptic genus follows from finite and infinite ramification",
+      "receipt": "root_coverage_4.json record 0"
+    },
+    {
+      "id": "Y26-10-009",
+      "date": "2026-10-03",
+      "evidence": "T",
+      "topic": "Cubic norms certify unit transport but not an unreplayed global search",
+      "receipt": "root_coverage_4.json record 0"
+    },
+    {
+      "id": "Y26-10-010",
+      "date": "2026-10-09",
+      "evidence": "A",
+      "topic": "Quadratic elimination needs conjugate and zero-denominator branch checks",
+      "receipt": "root_coverage_4.json record 0"
+    },
+    {
+      "id": "Y26-10-011",
+      "date": "2026-10-06",
+      "evidence": "A",
+      "topic": "Squarefree quotient algebras split exceptional and regular branches by gcd",
+      "receipt": "root_coverage_4.json record 0"
+    },
+    {
+      "id": "Y26-10-012",
+      "date": "2026-10-06",
+      "evidence": "A",
+      "topic": "The wall fluctuation operator has exactly two bound-state levels",
+      "receipt": "root_coverage_4.json record 0"
+    },
+    {
+      "id": "Y26-10-013",
+      "date": "2026-10-09",
+      "evidence": "A",
+      "topic": "Darboux cofactors give a certificate for rational first integrals",
+      "receipt": "root_coverage_4.json record 0"
+    },
+    {
+      "id": "Y26-10-014",
+      "date": "2026-10-14",
+      "evidence": "T",
+      "topic": "Schröder jets are solved degree by degree until a resonance occurs",
+      "receipt": "root_receipts.json record 0"
+    },
+    {
+      "id": "Y26-10-015",
+      "date": "2026-10-12",
+      "evidence": "T",
+      "topic": "Threshold completion counts certify a population and its optimum",
+      "receipt": "root_followups_6.json record 0"
+    },
+    {
+      "id": "Y26-10-016",
+      "date": "2026-10-12",
+      "evidence": "A",
+      "topic": "Completion counts make ranking, inverse ranking and sampling exact",
+      "receipt": "root_followups_6.json record 0"
+    },
+    {
+      "id": "Y26-10-017",
+      "date": "2026-10-12",
+      "evidence": "A",
+      "topic": "Factor elimination preserves counts only when auxiliary fibres are controlled",
+      "receipt": "root_followups_6.json record 0"
+    },
+    {
+      "id": "Y26-10-018",
+      "date": "2026-10-10",
+      "evidence": "A",
+      "topic": "A Hankel witness proves the minimum observable recurrence order",
+      "receipt": "root_coverage_4.json record 0"
+    },
+    {
+      "id": "Y26-10-019",
+      "date": "2026-10-16",
+      "evidence": "A",
+      "topic": "A target is recoverable exactly when it factors through the observation",
+      "receipt": "root_coverage_5.json record 0"
+    },
+    {
+      "id": "Y26-10-020",
+      "date": "2026-10-19",
+      "evidence": "A",
+      "topic": "A moving observation obeys a closed equation exactly when its transport identity holds",
+      "receipt": "root_coverage_5.json record 0"
+    },
+    {
+      "id": "Y26-10-021",
+      "date": "2026-10-09",
+      "evidence": "A",
+      "topic": "Permitted actions determine the correct finite observation quotient",
+      "receipt": "root_coverage_4.json record 0"
+    },
+    {
+      "id": "Y26-10-022",
+      "date": "2026-10-19",
+      "evidence": "A",
+      "topic": "Worst-case experiment design has an exact finite Bellman proof",
+      "receipt": "root_coverage_5.json record 0"
+    },
+    {
+      "id": "Y26-10-023",
+      "date": "2026-10-21",
+      "evidence": "A",
+      "topic": "Shared uncertainty should be optimized jointly in a decision difference",
+      "receipt": "root_coverage_5.json record 0"
+    },
+    {
+      "id": "Y26-10-024",
+      "date": "2026-10-20",
+      "evidence": "A",
+      "topic": "Raw generator observability is an injective coding problem",
+      "receipt": "root_exact_2.json record 0"
+    },
+    {
+      "id": "Y26-10-025",
+      "date": "2026-10-16",
+      "evidence": "A",
+      "topic": "Cancellation controls the condition number of an exact sum",
+      "receipt": "root_coverage_5.json record 0"
+    },
+    {
+      "id": "Y26-10-026",
+      "date": "2026-10-05",
+      "evidence": "T",
+      "topic": "A distance-regular intersection array fixes a conditional exact spectrum",
+      "receipt": "root_coverage_4.json record 0"
+    },
+    {
+      "id": "Y26-10-027",
+      "date": "2026-10-17",
+      "evidence": "A",
+      "topic": "Binary graph censuses can agree while integer-height series separate",
+      "receipt": "root_followups_7.json record 0"
+    },
+    {
+      "id": "Y26-10-028",
+      "date": "2026-10-19",
+      "evidence": "A",
+      "topic": "The centered graph Green matrix gives a sharp constrained energy cost",
+      "receipt": "root_followups_7.json record 0"
+    },
+    {
+      "id": "Y26-10-029",
+      "date": "2026-10-18",
+      "evidence": "A",
+      "topic": "Finite observation cutoffs need a stated algebraic or linear closure theorem",
+      "receipt": "root_followups_7.json record 0"
+    },
+    {
+      "id": "Y26-10-030",
+      "date": "2026-10-16",
+      "evidence": "T",
+      "topic": "Conductor 1680 collapses to eight order30 phases with multiplicity48",
+      "receipt": "root_followups_6.json record 0"
+    },
+    {
+      "id": "Y26-10-031",
+      "date": "2026-10-16",
+      "evidence": "T",
+      "topic": "A 264-fold root filter differs from a degree240 field extension",
+      "receipt": "root_followups_6.json record 0"
+    },
+    {
+      "id": "Y26-10-032",
+      "date": "2026-10-16",
+      "evidence": "A",
+      "topic": "The inverse-central-binomial series is an arcsine square",
+      "receipt": "root_coverage_5.json record 0"
+    },
+    {
+      "id": "Y26-10-033",
+      "date": "2026-10-16",
+      "evidence": "A",
+      "topic": "The order30 cyclotomic kernel has an exact Mellin zero and logarithmic companion",
+      "receipt": "root_coverage_5.json record 0"
+    },
+    {
+      "id": "Y26-10-034",
+      "date": "2026-10-20",
+      "evidence": "A",
+      "topic": "The five-phase logarithmic integral equals 955π³/867 exactly",
+      "receipt": "root_coverage_5.json record 0"
+    },
+    {
+      "id": "Y26-10-035",
+      "date": "2026-10-20",
+      "evidence": "A",
+      "topic": "Determinant twists explain the claimed compact group form but do not prove density",
+      "receipt": "root_exact_3.json record 0"
+    },
+    {
+      "id": "Y26-10-036",
+      "date": "2026-10-09",
+      "evidence": "A",
+      "topic": "The integral Mordell equation y²=x³−2 has a complete elementary proof",
+      "receipt": "root_coverage_4.json record 0"
+    },
+    {
+      "id": "Y26-10-037",
+      "date": "2026-10-06",
+      "evidence": "A",
+      "topic": "Elliptic multiplication fibres are kernel cosets, with halving checked by a quartic",
+      "receipt": "root_coverage_4.json record 0"
+    },
+    {
+      "id": "Y26-10-038",
+      "date": "2026-10-06",
+      "evidence": "A",
+      "topic": "The elliptic logarithmic constant log4 follows from an exact integral split",
+      "receipt": "root_coverage_4.json record 0"
+    },
+    {
+      "id": "Y26-10-039",
+      "date": "2026-10-07",
+      "evidence": "A",
+      "topic": "A sufficiently divisible small integer determinant must vanish",
+      "receipt": "root_coverage_4.json record 0"
+    },
+    {
+      "id": "Y26-10-040",
+      "date": "2026-10-16",
+      "evidence": "A",
+      "topic": "Expected surplus and probability of profit require different dependence assumptions",
+      "receipt": "root_coverage_5.json record 0"
+    }
+  ],
+  "strong_results": [
+    "Global integral Mordell proof y²=x³−2 has exactly(3,±5), via a norm-Euclidean quadratic order and coprime cubes.",
+    "Complete two-orbit negative-Pell parametrization, with exact compact reduction and finite seed exclusion.",
+    "Exact seven-vertex binary-census collision and first height-three separation polynomial; all128 binary assignments and84 weak compositions replayed.",
+    "Conductor1680/30 fibres and48-fold trace bridge;264 power roots versus240 primitive extension conjugates distinguished.",
+    "Exact cyclotomic-kernel Mellin zero and logarithmic companion; full955π³/867 five-phase integral derived by L² Fourier analysis and rational Bernoulli arithmetic.",
+    "Exact wall bound-state spectrum, quotient/gcd branch logic, finite population bijections, Hankel minimality, moving observers and robust experiment-decision recurrences."
+  ],
+  "gaps": [
+    "Complete original conversations were not exported. Every original_question remains null; exact retrieved bullets and their real receipts are preserved.",
+    "The October21 c0 summaries explicitly describing2024 mathematics and broad October14 retrospective/archive labels were not reassigned as original2026 work. The dated October14 synthesis supplies a file-evidence entry on formal jets only, with a newly chosen model and no historical originality claim.",
+    "The104-equation, ClassList6,457-frontier-rank and related Lean/repository claims are not independently replayed without their actual equations, modules and certificates. The cubic norm107 unit identities are checked, while historical global uniqueness and its3631-candidate slab remain unproved here.",
+    "The full Petersen50 coefficient/profit table, DAG,176-leaf instance and benchmark inputs were not recovered; historical total/optimum/compiled-theorem counts remain claims. Exact recurrence, rank/select, gate projection and small optimum examples are independently checked.",
+    "Actual cap/M22 matrices,151-frame scans, CKM bounds, E8 Gram/intertwining matrices and KZ residue/monodromy matrices were not recovered. Their group/spectral consequences are stated conditionally; the KZ density claim is not certified.",
+    "Raw FreeLIP equations are exact, and root separately supplies a fully replayed126-pattern lattice certificate. Accepted/rejected output observability remains unverified because the acceptance rule and historical decoder/checker were not recovered.",
+    "Graph theta-tail/Euler-product singularities require their exact series and analytic assumptions. The linear-height fugacity and quadratic regularization are kept separate; no unprovided arithmetic-singularity theorem is inferred.",
+    "Baker/Matveev, Runge auxiliary bounds, binary-cubic covariant normalizations, broad Langlands/moduli/Weyl labels and positive-geometry Q/canonical-form relations lack enough explicit hypotheses or definitions for an honest reconstructed theorem. No missing polynomial or normalization is invented.",
+    "Reported application measurements, coupled-field numerical masses/lifetimes, alignment-path counts and empirical sensor/model speedups have no raw inputs for independent reproduction and are not promoted to mathematical theorems."
+  ],
+  "verification": {
+    "script": "verify.py",
+    "ledger": "checks.json",
+    "passed": 41,
+    "total": 41,
+    "scope": "Portable standard-library exact finite certificates, symbolic residuals, matrix/polynomial identities, a complete source/cutoff audit, and one explicitly labeled independent AGM numerical convention check. General theorems are proved in the entries; finite samples are not represented as global proofs."
+  },
+  "attribution": "U/A/T distinguishes retrieved user,assistant and file evidence. Revised questions, proofs and examples are newly authored developments of classical mathematics, without a novelty claim.",
+  "word_count_main_fields": 13824,
+  "minimum_entry_main_words": 299,
+  "reference_policy": "Relevant primary papers, author-hosted texts, official mathematical libraries and NIST/Stacks sources checked when used; self-contained elementary entries may have an empty references array. Generic unrelated placeholders were removed."
+}

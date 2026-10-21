@@ -1,0 +1,49 @@
+{
+  "reviewer": "analysis_and_arithmetic_geometry",
+  "status": "no blockers found",
+  "reviews": [
+    {
+      "id": "S007",
+      "status": "approved within stated triangular polynomial family",
+      "method": "Independent algebraic review and portable verifier replay",
+      "checks": [
+        "Minimality follows from extracting q=Uy−by−c0−c1x and a Vandermonde on distinct nonlinear eigenvalues.",
+        "Disjoint nonlinear monomial supports justify dimension3+|Λ| even when λ equals1 or a.",
+        "The fiber shift has the correct sign: h_mu=p_mu/(b−mu).",
+        "Restriction to E is diagonal, so p_b≠0 creates exactly one Jordan chain of length2 and no longer chain.",
+        "The minimal-polynomial formula retains all distinct eigenvalues and adds exactly one b factor in resonance.",
+        "a=0, a=±1 and complex root-of-unity collision groups are treated consistently.",
+        "The coupled invertible map degree-growth counterexample is valid."
+      ],
+      "actionable_issues": []
+    },
+    {
+      "id": "S012",
+      "status": "approved for finite-dimensional PSD quadratic equality programs and the separately solved nonnegative family",
+      "method": "Independent quotient, primal-dual and parameter-stratum derivations; chapter e supplemental verifier replay",
+      "checks": [
+        "P annihilates BN; range(PB|rangeQ)=rangeH gives the exact feasibility condition.",
+        "r*=Q+ B^T P H+ Pz is the unique minimum-energy rangeQ component; residual output lies in BN.",
+        "lambda*=H+Pz is in W-perp and satisfies Qx=B^Tlambda, giving matching primal and dual values.",
+        "Infeasibility ray uses the kerH component of Pz and is an exact separating dual certificate.",
+        "The numerical example H=(5/24)[[1,-1],[-1,1]] and optimum energy3/5 check by direct elimination.",
+        "All t,a inequality branches and multipliers have correct signs, complementarity and feasibility.",
+        "The stated positive-a parameter discontinuity is explained by minimizers escaping to infinity."
+      ],
+      "actionable_issues": []
+    },
+    {
+      "id": "S003",
+      "status": "approved for a finite set and real-valued exact observations",
+      "method": "Independent proof review",
+      "checks": [
+        "Finite union of proper hyperplanes yields a separating linear combination.",
+        "Lagrange interpolation supplies independent class indicators, hence algebra dimensionK.",
+        "The integer trial count is valid: each pair excludes at mostm−1 real roots, so morethan(m−1)K(K−1)/2 distinct integer choices includes a separator.",
+        "m=1 and K=1 boundary cases are consistent.",
+        "This is an exact-data algebra statement and does not establish noisy recovery."
+      ],
+      "actionable_issues": []
+    }
+  ]
+}

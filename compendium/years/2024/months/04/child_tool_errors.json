@@ -1,0 +1,34 @@
+[
+  {
+    "receipt_id": "R04-01",
+    "query": "The user requests a comprehensive mathematics-only reconstruction and development of all their 2024 conversations, month by month, modeled on the completed 2023 mathematical compendium. Search ONLY April 1–April 30, 2024, inclusive. Recover as many distinct mathematical conversations and mathematical concepts as possible, with exact dates and titles if available, original fragments/equations, and explicit user-versus-assistant attribution. Include pure mathematics and substantive mathematical physics, geometry, analysis, information theory, optimization and learning theory; exclude nonmathematical content. Do not infer missing user prompts from assistant replies and do not substitute later file summaries. Say what is incomplete and return surviving fragments even when the month cannot be exhaustively indexed.",
+    "result": {
+      "status": "fulfilled",
+      "value": {
+        "content": [
+          {
+            "type": "text",
+            "text": "Personal context is unavailable for this conversation."
+          }
+        ],
+        "isError": true
+      }
+    }
+  },
+  {
+    "receipt_id": "R04-02",
+    "query": "The user is developing a mathematics-only retrospective of April 2024. Search April 20, 2024 specifically for surviving mathematical exchanges on landscape complexity, perimeter-area ratio, landscape shape index, fractal dimension, landscape division, PCA, t-SNE, intrinsic dimensionality and graph or social-network metrics. Earlier retrieved archive summaries identified an assistant passage that day, but we need actual surviving date-stamped evidence and attribution. Return user text only if directly present. Do not infer personal beliefs or use later undated files.",
+    "result": {
+      "status": "fulfilled",
+      "value": {
+        "content": [
+          {
+            "type": "text",
+            "text": "Personal context is unavailable for this conversation."
+          }
+        ],
+        "isError": true
+      }
+    }
+  }
+]

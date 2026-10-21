@@ -1,0 +1,188 @@
+{
+  "month": "2024-03",
+  "scope": "March 31 assistant-only classical formula catalog supplement",
+  "entry_count": 15,
+  "recovered_named_concepts": 21,
+  "source_date": "2024-03-31T02:28:25Z",
+  "source_receipts": [
+    "root_details.json record 0",
+    "root_specifics.json record 3"
+  ],
+  "evidence": "A",
+  "original_user_questions_recovered": 0,
+  "coverage": "All twenty names numbered 81–100 and the separately recovered unnumbered Laplace transform receive new classical formulations, hypotheses, proofs or explicitly delimited classical inputs, and worked checks. Fifteen coherent grouped entries cover these twenty-one names.",
+  "source_gap": "Items 1–80 were not recovered and are not manufactured. The query-echo response in root_specifics record 2 is excluded entirely; it is not accepted as historical user evidence. Prior 2023 file matches do not establish March 2024 historical content.",
+  "new_work_boundary": "The source receipts mostly name concepts, rather than giving complete original mathematical statements. All expanded identities, hypotheses, derivations, examples and revised questions are editorial developments. The Laplace definition is the only formula in the catalog receipts reproduced explicitly.",
+  "verification": {
+    "script": "catalog_verify.py",
+    "checks_file": "catalog_checks.json",
+    "passing_checks": 27,
+    "scope": "Exact rational polynomial and algebraic examples where possible; separately labeled numerical elementary-function and quadrature checks. Finite checks do not prove topological theorems or historical completeness."
+  },
+  "body_words": {
+    "Y24-03-020": 381,
+    "Y24-03-021": 365,
+    "Y24-03-022": 389,
+    "Y24-03-023": 375,
+    "Y24-03-024": 406,
+    "Y24-03-025": 495,
+    "Y24-03-026": 433,
+    "Y24-03-027": 415,
+    "Y24-03-028": 450,
+    "Y24-03-029": 437,
+    "Y24-03-030": 421,
+    "Y24-03-031": 473,
+    "Y24-03-032": 471,
+    "Y24-03-033": 461,
+    "Y24-03-034": 453
+  },
+  "total_body_words": 6425,
+  "coverage_map": [
+    {
+      "id": "Y24-03-020",
+      "concepts": [
+        "Laplace transform"
+      ],
+      "source_numbers": []
+    },
+    {
+      "id": "Y24-03-021",
+      "concepts": [
+        "Legendre polynomials"
+      ],
+      "source_numbers": [
+        81
+      ]
+    },
+    {
+      "id": "Y24-03-022",
+      "concepts": [
+        "Bessel functions",
+        "Helmholtz equation"
+      ],
+      "source_numbers": [
+        82,
+        83
+      ]
+    },
+    {
+      "id": "Y24-03-023",
+      "concepts": [
+        "Schwarzian derivative"
+      ],
+      "source_numbers": [
+        84
+      ]
+    },
+    {
+      "id": "Y24-03-024",
+      "concepts": [
+        "Euclidean algorithm",
+        "Pell’s equation"
+      ],
+      "source_numbers": [
+        85,
+        94
+      ]
+    },
+    {
+      "id": "Y24-03-025",
+      "concepts": [
+        "Brouwer fixed-point theorem",
+        "Hairy Ball theorem"
+      ],
+      "source_numbers": [
+        86,
+        87
+      ]
+    },
+    {
+      "id": "Y24-03-026",
+      "concepts": [
+        "Cauchy integral formula"
+      ],
+      "source_numbers": [
+        88
+      ]
+    },
+    {
+      "id": "Y24-03-027",
+      "concepts": [
+        "Maxwell–Boltzmann distribution"
+      ],
+      "source_numbers": [
+        89
+      ]
+    },
+    {
+      "id": "Y24-03-028",
+      "concepts": [
+        "Catenary equation"
+      ],
+      "source_numbers": [
+        90
+      ]
+    },
+    {
+      "id": "Y24-03-029",
+      "concepts": [
+        "Navier’s thin-plate equation",
+        "Rayleigh quotient"
+      ],
+      "source_numbers": [
+        91,
+        92
+      ]
+    },
+    {
+      "id": "Y24-03-030",
+      "concepts": [
+        "Laplace tidal equations"
+      ],
+      "source_numbers": [
+        93
+      ]
+    },
+    {
+      "id": "Y24-03-031",
+      "concepts": [
+        "Hamilton’s equations",
+        "Hamilton–Jacobi equation",
+        "Riccati equation"
+      ],
+      "source_numbers": [
+        95,
+        98,
+        99
+      ]
+    },
+    {
+      "id": "Y24-03-032",
+      "concepts": [
+        "Routh–Hurwitz criterion"
+      ],
+      "source_numbers": [
+        96
+      ]
+    },
+    {
+      "id": "Y24-03-033",
+      "concepts": [
+        "Chirp signal"
+      ],
+      "source_numbers": [
+        97
+      ]
+    },
+    {
+      "id": "Y24-03-034",
+      "concepts": [
+        "Stokes’ drag law"
+      ],
+      "source_numbers": [
+        100
+      ]
+    }
+  ],
+  "review_notes": "Brouwer imports Sperner’s lemma; hairy ball imports degree facts; Stokes drag imports the classical exterior velocity solution and derives its stress integral. These inputs are explicit. The cubic Routh–Hurwitz result is proved directly; no general root-count criterion is claimed. Chirp phase-step bounds are not called a band-limiting theorem."
+}

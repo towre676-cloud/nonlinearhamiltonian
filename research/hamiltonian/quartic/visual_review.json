@@ -1,0 +1,32 @@
+{
+  "status": "passed",
+  "pdf_sha256": "d842d7e4d5db50a284ac8bceefd875c3bbfb260b9e11dd73c7acba7b4b811920",
+  "pages_reviewed": {
+    "start": 1,
+    "end": 12
+  },
+  "contact_sheets": [
+    "/workspace/scratch/724ab8464145/moyal_partner_research/tmp/visual/contact-001-012.jpg"
+  ],
+  "full_samples": [
+    "/workspace/scratch/724ab8464145/moyal_partner_research/tmp/visual/full-001.png",
+    "/workspace/scratch/724ab8464145/moyal_partner_research/tmp/visual/full-004.png",
+    "/workspace/scratch/724ab8464145/moyal_partner_research/tmp/visual/full-006.png",
+    "/workspace/scratch/724ab8464145/moyal_partner_research/tmp/visual/full-009.png",
+    "/workspace/scratch/724ab8464145/moyal_partner_research/tmp/visual/full-012.png"
+  ],
+  "method": "Visual inspection of all twelve pages in contact sheet and five full-resolution samples using view_image.",
+  "checks": {
+    "cover_and_hierarchy": "passed",
+    "math_glyphs_and_signs": "passed",
+    "display_formula_bounds": "passed",
+    "text_margins_and_overflow": "passed",
+    "footer_and_page_numbers": "passed",
+    "tables_and_boxes": "passed"
+  },
+  "issues": [],
+  "nonblocking_notes": [
+    "The technical appendix retains some author-supplied inline exponent notation as readable plain text; displayed equations are typeset cleanly.",
+    "A few prose introductions to displayed formulas cross a page boundary; mathematical content remains clear."
+  ]
+}

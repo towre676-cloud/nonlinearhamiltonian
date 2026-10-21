@@ -1,0 +1,84 @@
+{
+  "status": "approved; no remaining integration code blocker found",
+  "reviewer": "analysis_geometry_and_computation",
+  "reviewed_at": "2026-10-21T05:29:20.518299+00:00",
+  "reviewed_files": {
+    "common.py": "f9f1626dc4e4d771892701c4dd949311fc017eca66a71ef2a065ab66c3b2908c",
+    "build_compendium.py": "f95d4efbe4eb35c874d3c89f10ba43f6a980fdf686bb0c4cd91968aab2539e24",
+    "verify_all.py": "63fb3141aac7dc216169c07608874c9fa7ddab97a4940c1f5cd5c83a75c8f8a0",
+    "package_results.py": "383e2233d4bb1fddaa51bdec282e3dc8c111c3db75e0b95b1dd11df854e97e5b",
+    "document_audit.py": "48bfc9cf8d17ab5347a88b7725dbd85c9d993c62ba4f662777dfa40587efd1fd"
+  },
+  "scope": [
+    "Read the five integration scripts and supporting README/Windows launcher/FreeLIP checker/peer replay.",
+    "Read-only load of all current canonical monthly entries and supplements.",
+    "Parsed every current retrieval locator and checked literal source matching against its actual raw returned-result record.",
+    "Compared build-ledger and runner-ledger deduplication and checked the stdlib-only verifier imports and relative filesystem paths."
+  ],
+  "snapshot": {
+    "months": 10,
+    "entries": 347,
+    "month_counts": {
+      "01": 44,
+      "02": 35,
+      "03": 27,
+      "04": 33,
+      "05": 33,
+      "06": 32,
+      "07": 29,
+      "08": 37,
+      "09": 35,
+      "10": 42
+    },
+    "ledger_records": 311,
+    "source_rows_audited": 347,
+    "source_locator_errors": 0,
+    "after_cutoff_dates": 0,
+    "duplicate_entry_ids": 0,
+    "catalog2_ids": [
+      "Y26-08-801",
+      "Y26-08-802",
+      "Y26-08-803",
+      "Y26-08-804",
+      "Y26-08-805",
+      "Y26-08-806"
+    ]
+  },
+  "findings": [
+    {
+      "severity": "blocking",
+      "status": "resolved",
+      "file": "months/08/build_entries.py and common.py integration",
+      "description": "MainAugust originally concatenated both catalogs into entries.json, while common.month_entries loaded each again; common.load raised duplicateY26-08-901.",
+      "resolution": "Augustauthor removed supplemental concatenation; canonicalmain entries plus separately loaded catalogs now have zero duplicate IDs."
+    },
+    {
+      "severity": "medium",
+      "status": "resolved",
+      "file": "verify_all.py and package_results.py",
+      "description": "IndependentFreeLIPpeer checker/report initially omitted from runner and package.",
+      "resolution": "Runner now executes ROOT independent_*.py; peerchecker, itsJSONreport andfreelip_review.json are required package files. Its dictionary-form review checks remain intentionally review-only and are not miscounted as ledger records."
+    },
+    {
+      "severity": "low",
+      "status": "resolved",
+      "file": "README.md",
+      "description": "The verifiers use int.bit_count, so genericPython3 should be specified asPython3.10+ for precise portability requirements.",
+      "resolution": "RootREADME now specifiesPython3.10+; reviewer confirmed the requirement."
+    }
+  ],
+  "passed_checks": [
+    "ExactlyJanuary–October are loaded; October source dates are bounded by2026-10-21.",
+    "catalog2_entries.json is included;catalog2_verify.py matches runner glob andmonthlyJSON/Pythonpackaging.",
+    "All current source filenames with numeric suffixes and recorddigits parse and matchliteral results.",
+    "MainFreeLIPcertificate, builder andchecker packaged; twoall-state/decoder ledger records retained.",
+    "Buildandverification ledgers agree on311 currentdeduplicated records, with no duplicate keys in currentdata.",
+    "All discovered mathematicalreplay imports are fromthe standardlibrary; paths derive from__file__ or runnercwd.",
+    "Windowslauncher setsUTF8 andpreservesexitcode; subprocessrunner usescurrentinterpreter, -S andPYTHONUTF8=1."
+  ],
+  "remaining_release_gates": [
+    "At audit time07/08 verify.py/checks.json/report.json were still pending theirauthors; verify_all correctly refuses to release untilallrequiredmonthlydeliverablesexist.",
+    "Rootfinalbuild, documentaudit, actualrelocated ZIPreplay andcomplete visualreview remain separatefinalsteps."
+  ],
+  "mutation_scope": "Only this auditmetadata file was written. No reviewed source, integration script, entry or PDF was edited by reviewer."
+}

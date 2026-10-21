@@ -1,0 +1,55 @@
+{
+  "status": "proved statements with independent finite checks",
+  "convention": "canonical Weyl--Moyal normalized commutator; hbar-independent polynomial partners; characteristic zero",
+  "engine": "engine.py: sparse Fraction polynomials, direct bidifferential exponential with Gaussian rational coefficients, homogeneous/general finite-span nullspaces, formal repeated actions",
+  "theorems": [
+    {
+      "id": "I01",
+      "title": "Complete favorite partner space",
+      "statement": "E(qp^3)=k[p] direct-sum q k[p] direct-sum q^2 k[q^3p]",
+      "structure": "Preimage of weighted Euler invariant ring k[q^3p] under second q derivative; Hilbert series(1+t)/(1-t)+t^2/(1-t^4)"
+    },
+    {
+      "id": "I02",
+      "title": "Unique maximal dynamic Lie core",
+      "statement": "A=k[p] direct-sum q k[p] is the unique largest Poisson Lie subalgebra of E(qp^3) containing H, and the full all-iterate exact core",
+      "counterexamples": [
+        "q^2 exact but q^4 not exact",
+        "q^2,qp^2 exact but bracket4q^2p not exact"
+      ]
+    },
+    {
+      "id": "I03",
+      "title": "Associative rigidity",
+      "statement": "G^3 in E(qp^3) implies G in k[p]; consequently k[p] is the unique maximal ordinary associative subalgebra contained in E(qp^3)"
+    },
+    {
+      "id": "I04",
+      "title": "All-r second-action defect",
+      "statement": "For C_r=q^(3r+2)p^r, Lstar^2 C_r=(8r+6)(8r+4)q^(3r+2)p^(r+4)+(12r+9)(3r+2)(3r+1)hbar^2 q^(3r)p^(r+2)"
+    },
+    {
+      "id": "I05",
+      "title": "Finite quantum ladder criterion",
+      "statement": "For H=qp^m,m>=2, and s=(c-d)/(m-1) a nonnegative integer, N=s+c: Lstar^(N+1)(q^c p^d)=0 and Lstar^N(q^c p^d)=(-(m-1))^N N! H^(star c), nonzero. Classical formula replaces star power by ordinary power.",
+      "scope": "Sufficient condition; no claim of complete local-nilpotence classification",
+      "proof": "Faithful localized Weyl representation, y=p^(-(m-1)), half-density gauge y^(m/(2(m-1))), polynomial coefficient derivatives."
+    },
+    {
+      "id": "I06",
+      "title": "Favorite finite quantum ladders",
+      "statement": "For C_r, N=4r+3 and c=3r+2, exact nilpotence index is4r+4. Classical and quantum ladders terminate at H^c and H^(star c), respectively.",
+      "example": "exp(tLstar)q^2=q^2(1-2tp^2)^3+9hbar^2t^2p^2(1-2tp^2)"
+    }
+  ],
+  "independent_reviews": {
+    "qF": "Ten full q/p coefficient rectangles, qdegree0..10,pdegree0..8; classification and dynamic escape agree.",
+    "quartics": "Seven quartics, degrees2..16; apolar adjoint, dimensions, Hessian partners and second-action failure all agree."
+  },
+  "checks": {
+    "groups": 7,
+    "exact_assertions": 1144,
+    "status": "passed"
+  },
+  "novelty": "No priority claim. These are proved consequences developed during this investigation; literature comparison belongs to the context branch."
+}

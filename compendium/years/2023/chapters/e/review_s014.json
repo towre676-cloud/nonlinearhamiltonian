@@ -1,0 +1,22 @@
+{
+  "reviewer": "analysis_geometry_and_computation",
+  "id": "S014",
+  "status": "approved",
+  "issues": [],
+  "scope": "Actual theorem, proof, quartic example and mixed eight-site example as saved in jordan_supplemental.json; author verifier and independent checker replayed.",
+  "proof_review": [
+    "Critical roots cannot be physical sites because p has simple roots. Their multiplicities sum exactly to n−1.",
+    "q=1/(w−z_i)−a is analytic with nonzero derivative. Inverse w=z_i+1/(a+q) gives eigenvalue shift exactly q; the off-shell remainder has order m. Taylor coefficients, including the 1/k! convention, therefore satisfy NV_k=V_(k−1).",
+    "Within each chain, applying the highest nilpotent power proves independence. Distinct critical roots map injectively to distinct H_i eigenvalues, none equal to the uniform eigenvalue; the total dimension n proves completeness and exact block lengths.",
+    "For all H_j, the stated Taylor coefficient c_jl=(−d)^(l−1)/A^(l+1) is correct. c_j1≠0 makes its nilpotent part N times an invertible polynomial, yielding the same Jordan flags and block size.",
+    "Hermite interpolation on distinct eigenvalues and all block jets makes every H_j a polynomial in H_i. The minimal polynomial has degree n, giving the Chinese-remainder finite algebra.",
+    "The quartic jets and all Hamiltonians were constructed independently in exact Q(i), with rank4 basis and nilpotent ranks2,1,0.",
+    "For eight sites, E0=37/60, triple eigenvalue−23/60, p′=4x³(2x⁴−17) and the normalized quartic factor are correct. The four remaining critical roots are simple and distinct from zero.",
+    "Final added global operator identity A_j=A_i[I+(z_i−z_j)A_i]⁻¹ is correct on every jet block and uniform vector; denominator eigenvalues are nonzero. The characteristic formula u^n p′(z_i+1/u)/p′(z_i) follows with the stated normalization and has a removable polynomial expansion at u=0."
+  ],
+  "verifiers": [
+    "chapters/f/jordan_verify.py passes four exact check groups, including both fractional-linear identities and closed characteristic formulas",
+    "chapters/e/independent_s014.py independently reconstructs all four quartic Hamiltonians and proves the mixed eight-site characteristic polynomial by exact determinant elimination at nine rational spectral values, rather than the producer’s Newton/trace method. Its generated checks array contains two counted check groups."
+  ],
+  "conclusion": "No mathematical blocker. The arbitrary-site theorem is proved directly; finite certificates illustrate and independently check its nontrivial cases. Scope remains the spin-half one-magnon sector with distinct physical sites."
+}

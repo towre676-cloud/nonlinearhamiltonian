@@ -1,0 +1,386 @@
+{
+  "reviewer": "Independent chapter10 author /root/dmodules_integrability_qft",
+  "month": "2026-01",
+  "status": "approved",
+  "scope": {
+    "entries_reviewed": 44,
+    "ids": [
+      "Y26-01-001",
+      "Y26-01-002",
+      "Y26-01-003",
+      "Y26-01-004",
+      "Y26-01-005",
+      "Y26-01-006",
+      "Y26-01-007",
+      "Y26-01-008",
+      "Y26-01-009",
+      "Y26-01-010",
+      "Y26-01-011",
+      "Y26-01-012",
+      "Y26-01-013",
+      "Y26-01-014",
+      "Y26-01-015",
+      "Y26-01-016",
+      "Y26-01-017",
+      "Y26-01-018",
+      "Y26-01-019",
+      "Y26-01-020",
+      "Y26-01-021",
+      "Y26-01-022",
+      "Y26-01-023",
+      "Y26-01-024",
+      "Y26-01-025",
+      "Y26-01-026",
+      "Y26-01-027",
+      "Y26-01-028",
+      "Y26-01-029",
+      "Y26-01-030",
+      "Y26-01-031",
+      "Y26-01-032",
+      "Y26-01-033",
+      "Y26-01-034",
+      "Y26-01-901",
+      "Y26-01-902",
+      "Y26-01-903",
+      "Y26-01-904",
+      "Y26-01-905",
+      "Y26-01-906",
+      "Y26-01-907",
+      "Y26-01-908",
+      "Y26-01-909",
+      "Y26-01-910"
+    ],
+    "proof_reading": "All listed definitions, theorem statements, proofs, worked examples and limits were read directly, including January034 added during the review and all ten root January catalog entries901–910.",
+    "source_audit": "Every source excerpt was checked as an exact substring of its actual receipt record; parsed U/A dates and roles match; month and nullable original-prompt fields checked.",
+    "finite_verifiers": [
+      "verify.py:34/34 passed",
+      "catalog_verify.py:10/10 passed"
+    ],
+    "limits": "Existing executable certificates were replayed. This review does not certify missing historical datasets, hidden Lean projects, analytic claims explicitly left conditional, or reference URLs beyond the mathematical scope read."
+  },
+  "proof_focus": [
+    "Monoid minimal ideals, observation quotient minimality, cross-term conventions and integral quadratic-form counterexample.",
+    "Reciprocal-maximum Gram determinant and weighted Schur bound; divisor-kernel factorization and arithmetic matvec complexity.",
+    "Airy scaling and discriminant normalization; vorticity-log diffusion signs; amplitude/angular misalignment counterexample; projected-Hessian curvature and clothoid variational constraints.",
+    "KMS sign convention and matrix witness; turning-point exponents; RG antiderivative; entropy/log-Sobolev rate; Frobenius coalescence logarithm.",
+    "Cech two-component overlap, Selmer/Sha exact sequence, CM character cancellation and residual margins.",
+    "Dual-number radical, periodic Ext resolution and explicit matrix Morita equivalence.",
+    "All ten root catalog proofs: Ito/Feynman–Kac conditions, Catalan moments, frozen tangent kernel, spectral distance, unilateral-shift index, Frobenius sewing, supplied Picard–Fuchs recurrence/logarithm, arctangent tail, Borel Stokes sign, triangular dilogarithm connection."
+  ],
+  "issues": [],
+  "remaining_blockers": [],
+  "source_results": [
+    {
+      "id": "Y26-01-001",
+      "status": "passed",
+      "receipt": "root_receipts.json record 0",
+      "date": "2026-01-01",
+      "evidence": "A"
+    },
+    {
+      "id": "Y26-01-002",
+      "status": "passed",
+      "receipt": "root_receipts.json record 0",
+      "date": "2026-01-01",
+      "evidence": "U"
+    },
+    {
+      "id": "Y26-01-003",
+      "status": "passed",
+      "receipt": "root_receipts.json record 0",
+      "date": "2026-01-05",
+      "evidence": "U"
+    },
+    {
+      "id": "Y26-01-004",
+      "status": "passed",
+      "receipt": "root_receipts.json record 0",
+      "date": "2026-01-05",
+      "evidence": "A"
+    },
+    {
+      "id": "Y26-01-005",
+      "status": "passed",
+      "receipt": "root_receipts.json record 0",
+      "date": "2026-01-06",
+      "evidence": "U"
+    },
+    {
+      "id": "Y26-01-006",
+      "status": "passed",
+      "receipt": "root_receipts.json record 0",
+      "date": "2026-01-06",
+      "evidence": "U"
+    },
+    {
+      "id": "Y26-01-007",
+      "status": "passed",
+      "receipt": "root_receipts.json record 0",
+      "date": "2026-01-08",
+      "evidence": "U"
+    },
+    {
+      "id": "Y26-01-008",
+      "status": "passed",
+      "receipt": "root_receipts.json record 0",
+      "date": "2026-01-08",
+      "evidence": "U"
+    },
+    {
+      "id": "Y26-01-009",
+      "status": "passed",
+      "receipt": "root_receipts.json record 0",
+      "date": "2026-01-11",
+      "evidence": "A"
+    },
+    {
+      "id": "Y26-01-010",
+      "status": "passed",
+      "receipt": "root_details_0.json record 0",
+      "date": "2026-01-13",
+      "evidence": "A"
+    },
+    {
+      "id": "Y26-01-011",
+      "status": "passed",
+      "receipt": "root_details_0.json record 0",
+      "date": "2026-01-13",
+      "evidence": "A"
+    },
+    {
+      "id": "Y26-01-012",
+      "status": "passed",
+      "receipt": "root_receipts.json record 0",
+      "date": "2026-01-13",
+      "evidence": "A"
+    },
+    {
+      "id": "Y26-01-013",
+      "status": "passed",
+      "receipt": "root_receipts.json record 0",
+      "date": "2026-01-13",
+      "evidence": "U"
+    },
+    {
+      "id": "Y26-01-014",
+      "status": "passed",
+      "receipt": "root_receipts.json record 0",
+      "date": "2026-01-15",
+      "evidence": "U"
+    },
+    {
+      "id": "Y26-01-015",
+      "status": "passed",
+      "receipt": "root_receipts.json record 0",
+      "date": "2026-01-15",
+      "evidence": "U"
+    },
+    {
+      "id": "Y26-01-016",
+      "status": "passed",
+      "receipt": "root_receipts.json record 0",
+      "date": "2026-01-17",
+      "evidence": "U"
+    },
+    {
+      "id": "Y26-01-017",
+      "status": "passed",
+      "receipt": "root_receipts.json record 0",
+      "date": "2026-01-21",
+      "evidence": "A"
+    },
+    {
+      "id": "Y26-01-018",
+      "status": "passed",
+      "receipt": "root_receipts.json record 0",
+      "date": "2026-01-21",
+      "evidence": "U"
+    },
+    {
+      "id": "Y26-01-019",
+      "status": "passed",
+      "receipt": "root_details_1.json record 0",
+      "date": "2026-01-21",
+      "evidence": "A"
+    },
+    {
+      "id": "Y26-01-020",
+      "status": "passed",
+      "receipt": "root_receipts.json record 0",
+      "date": "2026-01-21",
+      "evidence": "U"
+    },
+    {
+      "id": "Y26-01-021",
+      "status": "passed",
+      "receipt": "root_receipts.json record 0",
+      "date": "2026-01-31",
+      "evidence": "U"
+    },
+    {
+      "id": "Y26-01-022",
+      "status": "passed",
+      "receipt": "root_receipts.json record 0",
+      "date": "2026-01-25",
+      "evidence": "A"
+    },
+    {
+      "id": "Y26-01-023",
+      "status": "passed",
+      "receipt": "root_receipts.json record 0",
+      "date": "2026-01-26",
+      "evidence": "A"
+    },
+    {
+      "id": "Y26-01-024",
+      "status": "passed",
+      "receipt": "root_receipts.json record 0",
+      "date": "2026-01-28",
+      "evidence": "A"
+    },
+    {
+      "id": "Y26-01-025",
+      "status": "passed",
+      "receipt": "root_receipts.json record 0",
+      "date": "2026-01-04",
+      "evidence": "A"
+    },
+    {
+      "id": "Y26-01-026",
+      "status": "passed",
+      "receipt": "root_final_sweep.json record 0",
+      "date": "2026-01-16",
+      "evidence": "A"
+    },
+    {
+      "id": "Y26-01-027",
+      "status": "passed",
+      "receipt": "root_final_sweep.json record 0",
+      "date": "2026-01-18",
+      "evidence": "A"
+    },
+    {
+      "id": "Y26-01-028",
+      "status": "passed",
+      "receipt": "root_final_sweep.json record 0",
+      "date": "2026-01-24",
+      "evidence": "A"
+    },
+    {
+      "id": "Y26-01-029",
+      "status": "passed",
+      "receipt": "root_final_sweep.json record 0",
+      "date": "2026-01-20",
+      "evidence": "A"
+    },
+    {
+      "id": "Y26-01-030",
+      "status": "passed",
+      "receipt": "root_final_sweep.json record 0",
+      "date": "2026-01-30",
+      "evidence": "U"
+    },
+    {
+      "id": "Y26-01-031",
+      "status": "passed",
+      "receipt": "root_final_sweep.json record 0",
+      "date": "2026-01-30",
+      "evidence": "U"
+    },
+    {
+      "id": "Y26-01-032",
+      "status": "passed",
+      "receipt": "root_final_sweep.json record 0",
+      "date": "2026-01-30",
+      "evidence": "U"
+    },
+    {
+      "id": "Y26-01-033",
+      "status": "passed",
+      "receipt": "root_final_sweep.json record 0",
+      "date": "2026-01-30",
+      "evidence": "A"
+    },
+    {
+      "id": "Y26-01-034",
+      "status": "passed",
+      "receipt": "root_receipts.json record 0",
+      "date": "2026-01-05",
+      "evidence": "A"
+    },
+    {
+      "id": "Y26-01-901",
+      "status": "passed",
+      "receipt": "root_final_sweep.json record 0",
+      "date": "2026-01-28",
+      "evidence": "A"
+    },
+    {
+      "id": "Y26-01-902",
+      "status": "passed",
+      "receipt": "root_final_sweep.json record 0",
+      "date": "2026-01-28",
+      "evidence": "A"
+    },
+    {
+      "id": "Y26-01-903",
+      "status": "passed",
+      "receipt": "root_final_sweep.json record 0",
+      "date": "2026-01-28",
+      "evidence": "A"
+    },
+    {
+      "id": "Y26-01-904",
+      "status": "passed",
+      "receipt": "root_final_sweep.json record 0",
+      "date": "2026-01-28",
+      "evidence": "A"
+    },
+    {
+      "id": "Y26-01-905",
+      "status": "passed",
+      "receipt": "root_final_sweep.json record 0",
+      "date": "2026-01-28",
+      "evidence": "A"
+    },
+    {
+      "id": "Y26-01-906",
+      "status": "passed",
+      "receipt": "root_final_sweep.json record 0",
+      "date": "2026-01-28",
+      "evidence": "A"
+    },
+    {
+      "id": "Y26-01-907",
+      "status": "passed",
+      "receipt": "root_final_sweep.json record 0",
+      "date": "2026-01-28",
+      "evidence": "A"
+    },
+    {
+      "id": "Y26-01-908",
+      "status": "passed",
+      "receipt": "root_final_sweep.json record 0",
+      "date": "2026-01-28",
+      "evidence": "A"
+    },
+    {
+      "id": "Y26-01-909",
+      "status": "passed",
+      "receipt": "root_final_sweep.json record 0",
+      "date": "2026-01-29",
+      "evidence": "A"
+    },
+    {
+      "id": "Y26-01-910",
+      "status": "passed",
+      "receipt": "root_final_sweep.json record 0",
+      "date": "2026-01-29",
+      "evidence": "A"
+    }
+  ],
+  "snapshot_sha256": {
+    "entries.json": "5a7ea9ac1dc5264c5dd7591d011c8dd0a3e0c3b7e1123411f4de5987ab6aee63",
+    "catalog_entries.json": "8d0da6f20c47cbeb9bfddf7399b6bddb67c72c073026264c25f56425930405ac"
+  }
+}

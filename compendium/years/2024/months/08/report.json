@@ -1,0 +1,125 @@
+{
+  "month": "2024-08",
+  "entry_count": 14,
+  "check_count": 14,
+  "passed": 14,
+  "evidence_counts": {
+    "U": 0,
+    "A": 13,
+    "T": 1
+  },
+  "dates": [
+    "2024-08-04",
+    "2024-08-05",
+    "2024-08-17",
+    "2024-08-19",
+    "2024-08-20",
+    "2024-08-22",
+    "2024-08-25",
+    "2024-08-26"
+  ],
+  "historical_queries": 4,
+  "retrieval_complete": false,
+  "attribution": "All recovered dated passages are assistant output. No original user-authored mathematical prompt is recovered. Revised questions/proofs/examples are authored now, mostly classical; they are not attributed to the user or asserted as new research.",
+  "source_gaps": [
+    "Retrieval is not a complete transcript export: topics not returned are not recovered, not proved absent.",
+    "Some named frameworks lack definitions, objects, proofs or formulas; those gaps are preserved and replaced only by explicitly chosen classical comparisons.",
+    "Exact user questions and conversation titles were not recovered.",
+    "Hardy H1/BMO appears only in a merged Aug24–25 topic fragment; its entry retains null exact date and T evidence. The targeted later retrieval did not recover its original passage.",
+    "Aug17 deformation/Eisenstein and Aug22 operadic geometric material is overview/analogy, not recovered formulas or user questions.",
+    "Persistence filtrations, actual Dirac operator and an all-zero spectral correspondence were not recovered.",
+    "Historical numerical covariance entries are stipulated inputs only; speculative photon and RHP physical interpretations are not validated."
+  ],
+  "portable_verification": "Run python verify.py in this directory. Only Python standard library is required; paths resolve relative to this file.",
+  "entries": [
+    {
+      "id": "Y24-08-001",
+      "date": "2024-08-04",
+      "evidence": "A",
+      "title": "Diagram distances require diagonal matching and a stated filtration"
+    },
+    {
+      "id": "Y24-08-002",
+      "date": "2024-08-04",
+      "evidence": "A",
+      "title": "A graph Dirac gap is a concrete operator statement"
+    },
+    {
+      "id": "Y24-08-003",
+      "date": "2024-08-05",
+      "evidence": "A",
+      "title": "The stipulated return and covariance example has two arithmetic corrections"
+    },
+    {
+      "id": "Y24-08-004",
+      "date": "2024-08-04",
+      "evidence": "A",
+      "title": "Photon number density times photon energy is energy density"
+    },
+    {
+      "id": "Y24-08-005",
+      "date": "2024-08-17",
+      "evidence": "A",
+      "title": "A tangent deformation can exist while its next lift is obstructed"
+    },
+    {
+      "id": "Y24-08-006",
+      "date": "2024-08-17",
+      "evidence": "A",
+      "title": "A modular-curve quotient has a concrete finite-index calculation"
+    },
+    {
+      "id": "Y24-08-007",
+      "date": "2024-08-19",
+      "evidence": "A",
+      "title": "The Poincaré group is a noncommutative semidirect product"
+    },
+    {
+      "id": "Y24-08-008",
+      "date": "2024-08-20",
+      "evidence": "A",
+      "title": "Finite zero checks and an arbitrary spectral gap cannot prove a Riemann hypothesis"
+    },
+    {
+      "id": "Y24-08-009",
+      "date": "2024-08-20",
+      "evidence": "A",
+      "title": "A finite-field zeta example gives a genuine cohomological counting bridge"
+    },
+    {
+      "id": "Y24-08-010",
+      "date": "2024-08-22",
+      "evidence": "A",
+      "title": "Operadic corrections need actual compositions and an associativity constraint"
+    },
+    {
+      "id": "Y24-08-011",
+      "date": "2024-08-22",
+      "evidence": "A",
+      "title": "Formal, rigid and Berkovich disks are related constructions with different data"
+    },
+    {
+      "id": "Y24-08-012",
+      "date": "2024-08-25",
+      "evidence": "A",
+      "title": "A BV operator generates a concrete odd bracket"
+    },
+    {
+      "id": "Y24-08-013",
+      "date": null,
+      "evidence": "T",
+      "title": "Controlled irregularity needs a norm and a perturbation estimate"
+    },
+    {
+      "id": "Y24-08-014",
+      "date": "2024-08-26",
+      "evidence": "A",
+      "title": "Two power laws are assumptions with testable ratios, not a derived physical theory"
+    }
+  ],
+  "corrections": [
+    "Stipulated weighted mean .173, variance .02898125, standard deviation approximately .1702388; old .16/.23 arithmetic is corrected.",
+    "n hc/lambda is energy density, with angular transport needed for flux.",
+    "First-order deformation may be obstructed; symmetry and finite spectral observations cannot prove RH; BV sign/degree convention fixed."
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "reviewer": "dmodules_integrability_qft",
+  "status": "pass",
+  "pdf_sha256": "45aedac827e99ced08330977ba8dc99cbbdfdca133bbd490aba39e1df31345b2",
+  "actual_pdf_sha256": "45aedac827e99ced08330977ba8dc99cbbdfdca133bbd490aba39e1df31345b2",
+  "coverage": {
+    "start_page": 337,
+    "end_page": 491,
+    "pages_covered": 155,
+    "all_contact_sheets_inspected": true,
+    "contact_sheet_count": 13,
+    "contact_sheets": [
+      "/workspace/scratch/724ab8464145/year_2025/tmp/visual/contact-337-348.jpg",
+      "/workspace/scratch/724ab8464145/year_2025/tmp/visual/contact-349-360.jpg",
+      "/workspace/scratch/724ab8464145/year_2025/tmp/visual/contact-361-372.jpg",
+      "/workspace/scratch/724ab8464145/year_2025/tmp/visual/contact-373-384.jpg",
+      "/workspace/scratch/724ab8464145/year_2025/tmp/visual/contact-385-396.jpg",
+      "/workspace/scratch/724ab8464145/year_2025/tmp/visual/contact-397-408.jpg",
+      "/workspace/scratch/724ab8464145/year_2025/tmp/visual/contact-409-420.jpg",
+      "/workspace/scratch/724ab8464145/year_2025/tmp/visual/contact-421-432.jpg",
+      "/workspace/scratch/724ab8464145/year_2025/tmp/visual/contact-433-444.jpg",
+      "/workspace/scratch/724ab8464145/year_2025/tmp/visual/contact-445-456.jpg",
+      "/workspace/scratch/724ab8464145/year_2025/tmp/visual/contact-457-468.jpg",
+      "/workspace/scratch/724ab8464145/year_2025/tmp/visual/contact-469-480.jpg",
+      "/workspace/scratch/724ab8464145/year_2025/tmp/visual/contact-481-491.jpg"
+    ],
+    "all_requested_full_pages_inspected": true,
+    "requested_full_pages": [
+      337,
+      340,
+      414,
+      488,
+      491
+    ],
+    "requested_full_images": [
+      "/workspace/scratch/724ab8464145/year_2025/tmp/visual/full-337.png",
+      "/workspace/scratch/724ab8464145/year_2025/tmp/visual/full-340.png",
+      "/workspace/scratch/724ab8464145/year_2025/tmp/visual/full-414.png",
+      "/workspace/scratch/724ab8464145/year_2025/tmp/visual/full-488.png",
+      "/workspace/scratch/724ab8464145/year_2025/tmp/visual/full-491.png"
+    ],
+    "additional_full_pages": [
+      390,
+      430,
+      465,
+      466
+    ],
+    "additional_full_images": [
+      "/workspace/scratch/724ab8464145/year_2025/months/11/qa_table-390.png",
+      "/workspace/scratch/724ab8464145/year_2025/months/11/qa_table-430.png",
+      "/workspace/scratch/724ab8464145/year_2025/months/11/qa_illustrations-465.png",
+      "/workspace/scratch/724ab8464145/year_2025/months/11/qa_illustrations-466.png"
+    ]
+  },
+  "issues": [],
+  "observations": [
+    "No visible clipping,overlapping text,unexpected blank pages,unreadable tables,missing-glyph boxes,or content escaping margins in the155-page contact-sheet coverage.",
+    "Full-page samples confirm readable body text,equation boxes,reference labels and URLs,with consistent margins,headers and footers.",
+    "Additional full renders of both month-index tables confirm legible three-column wrapping and intact table borders/content.",
+    "Additional full renders of illustration pages465-466 confirm separated panels,visible axes/ticks/legends,uncropped curves,and captions clear of the plots and page furniture.",
+    "Sparse chapter-end and continuation pages retain meaningful content;no blank-page defect was found."
+  ],
+  "scope": "Read-only visual layout and legibility QA. Contact sheets cover every assigned page;requested full-page samples and four extra full renders check fine detail. This does not claim every formula was reread mathematically during the visual pass.",
+  "pdf_modified": false
+}

@@ -1,0 +1,270 @@
+{
+  "supplement": "S009",
+  "checks": [
+    {
+      "id": "S009",
+      "name": "Rational incidence and cut-flow certificate",
+      "status": "pass",
+      "detail": {
+        "flows": [
+          "1/2",
+          "1/3",
+          "0"
+        ],
+        "frequencies_centered": [
+          "-1/2",
+          "1/6",
+          "1/3",
+          "0"
+        ]
+      }
+    },
+    {
+      "id": "S009",
+      "name": "Exact sine-cosine feasibility",
+      "status": "pass",
+      "detail": {
+        "sines": [
+          "3/5",
+          "5/13",
+          "0"
+        ],
+        "cosines": [
+          "4/5",
+          "12/13",
+          "1"
+        ],
+        "cohesive_sine_bound": "4/5"
+      }
+    },
+    {
+      "id": "S009",
+      "name": "Exact rational node phasors",
+      "status": "pass",
+      "detail": {
+        "phasors": [
+          [
+            "1",
+            "0"
+          ],
+          [
+            "4/5",
+            "3/5"
+          ],
+          [
+            "33/65",
+            "56/65"
+          ],
+          [
+            "4/5",
+            "3/5"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "S009",
+      "name": "Positive tree Hessian certificate",
+      "status": "pass",
+      "detail": {
+        "weights": [
+          "2/3",
+          "4/5",
+          "1/2"
+        ],
+        "principal_cofactors": [
+          "4/15",
+          "4/15",
+          "4/15",
+          "4/15"
+        ],
+        "floating_eigenvalues": [
+          9.437797573931597e-18,
+          0.5503288759607531,
+          0.7308020517076679,
+          2.6522024056649127
+        ],
+        "exact_rate_bounds": [
+          "1/2",
+          "2/3"
+        ]
+      }
+    },
+    {
+      "id": "S009",
+      "name": "Complete eight-branch Morse classification",
+      "status": "pass",
+      "detail": {
+        "branch_count": 8,
+        "index_counts": {
+          "0": 1,
+          "1": 3,
+          "2": 3,
+          "3": 1
+        },
+        "branches": [
+          {
+            "cosine_signs": [
+              -1,
+              -1,
+              -1
+            ],
+            "unstable_index": 3
+          },
+          {
+            "cosine_signs": [
+              -1,
+              -1,
+              1
+            ],
+            "unstable_index": 2
+          },
+          {
+            "cosine_signs": [
+              -1,
+              1,
+              -1
+            ],
+            "unstable_index": 2
+          },
+          {
+            "cosine_signs": [
+              -1,
+              1,
+              1
+            ],
+            "unstable_index": 1
+          },
+          {
+            "cosine_signs": [
+              1,
+              -1,
+              -1
+            ],
+            "unstable_index": 2
+          },
+          {
+            "cosine_signs": [
+              1,
+              -1,
+              1
+            ],
+            "unstable_index": 1
+          },
+          {
+            "cosine_signs": [
+              1,
+              1,
+              -1
+            ],
+            "unstable_index": 1
+          },
+          {
+            "cosine_signs": [
+              1,
+              1,
+              1
+            ],
+            "unstable_index": 0
+          }
+        ],
+        "scope": "Exact phase/flow and congruence identities; floating eigenvalues independently confirm the analytic inertia proof."
+      }
+    },
+    {
+      "id": "S009",
+      "name": "Capacity sensitivity and critical-slowing bounds",
+      "status": "pass",
+      "detail": {
+        "samples": [
+          {
+            "t": "0",
+            "flow_q": "0",
+            "restoring_weight": "1/2",
+            "edge_sensitivity": "2",
+            "lambda2_float": 0.5503288759607531,
+            "lambda2_times_sensitivity": 1.1006577519215062
+          },
+          {
+            "t": "1/2",
+            "flow_q": "2/5",
+            "restoring_weight": "3/10",
+            "edge_sensitivity": "10/3",
+            "lambda2_float": 0.3600837044829335,
+            "lambda2_times_sensitivity": 1.2002790149431117
+          },
+          {
+            "t": "3/4",
+            "flow_q": "12/25",
+            "restoring_weight": "7/50",
+            "edge_sensitivity": "50/7",
+            "lambda2_float": 0.1783345609448683,
+            "lambda2_times_sensitivity": 1.2738182924633448
+          },
+          {
+            "t": "9/10",
+            "flow_q": "90/181",
+            "restoring_weight": "19/362",
+            "edge_sensitivity": "362/19",
+            "lambda2_float": 0.06884057061213941,
+            "lambda2_times_sensitivity": 1.3115940295576036
+          },
+          {
+            "t": "99/100",
+            "flow_q": "9900/19801",
+            "restoring_weight": "199/39602",
+            "edge_sensitivity": "39602/199",
+            "lambda2_float": 0.006689694467547378,
+            "lambda2_times_sensitivity": 1.3312828155970413
+          },
+          {
+            "t": "999/1000",
+            "flow_q": "999000/1998001",
+            "restoring_weight": "1999/3996002",
+            "edge_sensitivity": "3996002/1999",
+            "lambda2_float": 0.0006668980297487975,
+            "lambda2_times_sensitivity": 1.3331294950836687
+          }
+        ],
+        "proof_scope": "The exact Rayleigh certificate and coefficient lower bound prove the stated bounds; the eigenvalue calculation is a separate numerical check."
+      }
+    },
+    {
+      "id": "S009",
+      "name": "Exact relative and center-only observability ranks",
+      "status": "pass",
+      "detail": {
+        "all_edge_rank": 3,
+        "edges_plus_anchor_rank": 4,
+        "center_only_rank": 2,
+        "center_only_unobservable_dimension": 2
+      }
+    },
+    {
+      "id": "S009",
+      "name": "Exact-form nonlinear center blindness replay",
+      "status": "pass",
+      "detail": {
+        "maximum_ODE_residual_float": 1.1102230246251565e-16,
+        "trajectory": "(a(t),0,−a(t),0), a(t)=2 atan(tan(a0/2)e^(−t))",
+        "center_output": "identically zero, equal to the synchronized equilibrium output",
+        "scope": "Residual samples replay the closed-form solution whose all-time identity is proved in text."
+      }
+    },
+    {
+      "id": "S009",
+      "name": "Finite exhaustive cut-flow replay",
+      "status": "pass",
+      "detail": {
+        "labeled_trees_n2_through_n5": 145,
+        "rational_flow_cases": 290,
+        "scope": "Finite independent combinatorial replay; the proof in the text covers arbitrary finite trees."
+      }
+    }
+  ],
+  "summary": {
+    "check_count": 9,
+    "all_passed": true,
+    "method": "Exact Fraction arithmetic for phasors flows Laplacians ranks and congruences; explicitly scoped floating eigenvalue and ODE residual checks."
+  }
+}

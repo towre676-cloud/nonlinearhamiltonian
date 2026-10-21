@@ -1,0 +1,37 @@
+{
+  "month": "2024-03",
+  "item_count": 7,
+  "item_ids": [
+    "Y24-03-001",
+    "Y24-03-002",
+    "Y24-03-003",
+    "Y24-03-004",
+    "Y24-03-005",
+    "Y24-03-006",
+    "Y24-03-007"
+  ],
+  "coverage": "Recovered fragments developed rigorously; not a complete month transcript or exhaustive historical inventory.",
+  "historical_dates": [
+    "2024-03-30",
+    "2024-03-31"
+  ],
+  "receipt_count": 9,
+  "evidence_counts": {
+    "assistant_attributed": 7,
+    "direct_user_text": 0
+  },
+  "gaps": [
+    "No original user prompts recovered for the developed items; all anchored historical evidence is assistant-attributed.",
+    "Tool search cannot certify all conversations in a month. No-match results are retrieval limits, not proof of an empty historical interval.",
+    "Child personal-context unavailable errors are retained separately and are not historical evidence.",
+    "March1–15 yielded no matching evidence in the available root follow-up; this is not a claim of no mathematics during that interval.",
+    "The historical100-equation list is incomplete: only an unnumbered Laplace transform and the20 names numbered81–100 were recovered. Earlier numbered items1–80 were not reconstructed.",
+    "The five-equation framework is recovered as labels, with only two explicit equations available in another passage. New quantum and scalar-score examples are marked as development rather than missing source formulas.",
+    "Exclude root_specifics.json#2 query echo from user evidence. Later2023compendium files are not original March2024transcripts."
+  ],
+  "verification_scope": "Independent finite calculations and explicit examples; background general theorems remain cited mathematical results.",
+  "math_only": true,
+  "separate_catalog_file": "catalog_entries.json (owned by catalog author and aggregated by root)",
+  "separate_catalog_item_count_at_report": 15,
+  "combined_month_item_count": 22
+}

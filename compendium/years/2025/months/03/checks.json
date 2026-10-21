@@ -1,0 +1,215 @@
+{
+  "scope": "Finite certificates complement the manuscript proofs; no historical performance claim is certified.",
+  "checks": [
+    {
+      "id": "Y25-03-001",
+      "name": "SVD error and target rank",
+      "status": "passed",
+      "detail": "Errors10 and1; target1/20 selects rank2."
+    },
+    {
+      "id": "Y25-03-002",
+      "name": "Isometric compression residual",
+      "status": "passed",
+      "detail": "Compressed level1; squared residual1; exact spectrum0,2."
+    },
+    {
+      "id": "Y25-03-003",
+      "name": "Triangle persistence chain matrices",
+      "status": "passed",
+      "detail": "Cycle rank1; face boundary spans it; barcode[1,2)."
+    },
+    {
+      "id": "Y25-03-004",
+      "name": "QUBO exhaustive labels and QAOA state",
+      "status": "passed",
+      "detail": "{'triangle_ground_energy': -2, 'QAOA_one_edge_cost': 0.9999999999999998}"
+    },
+    {
+      "id": "Y25-03-005",
+      "name": "Poisson median/count distinction",
+      "status": "passed",
+      "detail": "Mean1/2; medianlog2/2; second-arrival probability(1−log2)/2."
+    },
+    {
+      "id": "Y25-03-006",
+      "name": "Renormalization-series truncation",
+      "status": "passed",
+      "detail": "{'N': 100, 'error': 4.904568862151848e-09, 'scope': 'stated constant instance and general majorant bound'}"
+    },
+    {
+      "id": "Y25-03-007",
+      "name": "Modular lattice covariance identity",
+      "status": "passed",
+      "detail": "Exact lattice-reindex identity checked for both modular generators over49 pairs."
+    },
+    {
+      "id": "Y25-03-008",
+      "name": "Geometric scaling and spherical flow",
+      "status": "passed",
+      "detail": "Circle gap scales1→1/4; radius2 sphere extinctatt2."
+    },
+    {
+      "id": "Y25-03-009",
+      "name": "Frobenius coproduct and handle",
+      "status": "passed",
+      "detail": "Coproduct coassociative on both dual-number basis elements; handle values0,2,0."
+    },
+    {
+      "id": "Y25-03-010",
+      "name": "Connes two-point norm",
+      "status": "passed",
+      "detail": "Norm constraint attained atdistance1/2; D scaling3 yields1/6."
+    },
+    {
+      "id": "Y25-03-011",
+      "name": "Filtered cancellation",
+      "status": "passed",
+      "detail": "Same-grade differential0, next differentialrank1; total cohomology0 versus zero-differentialdim2."
+    },
+    {
+      "id": "Y25-03-012",
+      "name": "Modular matrix-unit eigenvalues",
+      "status": "passed",
+      "detail": "Δ eigenvalues1,3,1/3,1; Ω fixed; generators distinguished in text."
+    },
+    {
+      "id": "Y25-03-013",
+      "name": "Entropy finite-change identity",
+      "status": "passed",
+      "detail": "{'relative_entropy': 0.007002106647214949, 'modular_energy_change': -0.054930614433405495, 'quadratic': 0.006666666666666667}"
+    },
+    {
+      "id": "Y25-03-014",
+      "name": "Noncommuting modular cocycle",
+      "status": "passed",
+      "detail": "Noncommuting rotated states satisfy twisted cocycle and fail ordinary group law."
+    },
+    {
+      "id": "Y25-03-015",
+      "name": "Wilson commutator loop",
+      "status": "passed",
+      "detail": "Pauli commutator exactly−I; trace−2."
+    },
+    {
+      "id": "Y25-03-016",
+      "name": "Gaussian RG flow",
+      "status": "passed",
+      "detail": "m²2,R=k²,k1: Γ″2 and exact flow1/3; unique minimizer0."
+    },
+    {
+      "id": "Y25-03-017",
+      "name": "Crossing orientations",
+      "status": "passed",
+      "detail": "Two positive crossings; reversepath−2; degree-one loop integral1."
+    },
+    {
+      "id": "Y25-03-018",
+      "name": "Maurer-Cartan constant curvature",
+      "status": "passed",
+      "detail": "[X,Y]=diag1,−1; commuting replacement giveszero."
+    },
+    {
+      "id": "Y25-03-019",
+      "name": "Quaternion lift and semidirect input",
+      "status": "passed",
+      "detail": "All64 quaternion-matrix products close; lifted inner-action untwisting proved algebraically."
+    },
+    {
+      "id": "Y25-03-020",
+      "name": "Projective multiplier identity",
+      "status": "passed",
+      "detail": "All64 cocycle triples exact; asymmetry excludes coboundary."
+    },
+    {
+      "id": "Y25-03-021",
+      "name": "Subdivision blocking homotopy",
+      "status": "passed",
+      "detail": "Integer chain maps and both homotopy equations verified exactly."
+    },
+    {
+      "id": "Y25-03-022",
+      "name": "Noise bandwidth integrals",
+      "status": "passed",
+      "detail": "Exact variances9/10 and999/10; lowcutoff sensitivity."
+    },
+    {
+      "id": "Y25-03-023",
+      "name": "Memory kernel closed solution",
+      "status": "passed",
+      "detail": "Independent Simpson quadrature matches reduced exponential-memory equation att1."
+    },
+    {
+      "id": "Y25-03-024",
+      "name": "Hirota heat-equation counterexample",
+      "status": "passed",
+      "detail": "τ=e^(x+t²) at0: self-bilinear0, heat residual1."
+    },
+    {
+      "id": "Y25-03-025",
+      "name": "Factorial moments",
+      "status": "passed",
+      "detail": "Atmean2: Poisson4,fixed2,geometric8 factorial second moments."
+    },
+    {
+      "id": "Y25-03-026",
+      "name": "Energy-budget arithmetic",
+      "status": "passed",
+      "detail": "Bound40/13N; representative2150N requires698.75 times100kW."
+    },
+    {
+      "id": "Y25-03-027",
+      "name": "Stabilizer syndromes and logical-error polynomial",
+      "status": "passed",
+      "detail": "{'syndromes': [(1, 1), (-1, 1), (-1, -1), (1, -1)], 'failure': '298/1000000'}"
+    },
+    {
+      "id": "Y25-03-028",
+      "name": "Fibonacci fusion diagonalization",
+      "status": "passed",
+      "detail": "Integer fusion identity and S eigenbasis agree; no fullpentagon claimed."
+    },
+    {
+      "id": "Y25-03-029",
+      "name": "Cantor probability moments",
+      "status": "passed",
+      "detail": "Meanlimit1/2, variance1/8, secondmoment3/8; uniformcouplingtail3−n."
+    },
+    {
+      "id": "Y25-03-030",
+      "name": "Loop lift integer endpoints",
+      "status": "passed",
+      "detail": "Distinct lifted paths endat integers−3…3, projecting tobased loops; homotopy proof is intext."
+    },
+    {
+      "id": "Y25-03-031",
+      "name": "Projection-loss null direction",
+      "status": "passed",
+      "detail": "Two zero-losslimits(1,1),(3,−1); kernel difference4 persists."
+    },
+    {
+      "id": "Y25-03-032",
+      "name": "Four-form wedge normalization",
+      "status": "passed",
+      "detail": "Two cross terms in(ω1+ω2)² give2vol; ch2 factor1/2 yields1."
+    },
+    {
+      "id": "Y25-03-033",
+      "name": "Eta translation phase",
+      "status": "passed",
+      "detail": "n2 phasee^(πi/4); odd2n−1 nevermultiple24."
+    },
+    {
+      "id": "Y25-03-034",
+      "name": "Dual-number Hochschild resolution",
+      "status": "passed",
+      "detail": "Ae differentialranks2,compositezero; tensor differential2εrank1 giving HH dimensions2,1,1,…."
+    },
+    {
+      "id": "Y25-03-035",
+      "name": "Square-root spectrum count and heat bound",
+      "status": "passed",
+      "detail": "{'heat_t_point2': 49.53994453661564, 'integral': 50, 'count_at3point5': 12}"
+    }
+  ]
+}

@@ -1,0 +1,188 @@
+{
+  "manifest_files_verified": 171,
+  "standard_site_packages_disabled": true,
+  "replay_exit_code": 0,
+  "summary": {
+    "status": "passed",
+    "developed_entries": 237,
+    "months_represented": 12,
+    "months_with_recovered_entries": 11,
+    "verifier_programs": 15,
+    "scoped_records": 272,
+    "status_counts": {
+      "passed": 141,
+      "pass": 131
+    },
+    "results": [
+      {
+        "program": "months/01/verify.py",
+        "return_code": 0,
+        "stdout": "{\"month\": \"2024-01\", \"checks\": 4, \"status\": \"passed\"}",
+        "stderr": ""
+      },
+      {
+        "program": "months/02/verify.py",
+        "return_code": 0,
+        "stdout": "{\"month\": \"2024-02\", \"checks\": 13, \"status\": \"passed\"}",
+        "stderr": ""
+      },
+      {
+        "program": "months/03/verify.py",
+        "return_code": 0,
+        "stdout": "{\n  \"scope\": \"Finite examples and numerical identities only; no historical transcript completeness or general theorem proof is inferred. Catalog examples have their own verifier.\",\n  \"checks\": [\n    {\n      \"id\": \"Y24-03-001\",\n      \"name\": \"divisor example\",\n      \"status\": \"passed\",\n      \"detail\": \"12 independent bidegree(2,3) monomials and self-intersection12; this does not prove the general Néron–Severi theorem.\"\n    },\n    {\n      \"id\": \"Y24-03-002\",\n      \"name\": \"finite action projection\",\n      \"status\": \"passed\",\n      \"detail\": \"Averaging projection verified on a121-point lattice test; rank-one image/kernel identified algebraically in text.\"\n    },\n    {\n      \"id\": \"Y24-03-003\",\n      \"name\": \"variation counterexample\",\n      \"status\": \"passed\",\n      \"detail\": \"Cancelling directional derivative has nonzero full gradient; oscillator test is positive atT1 and negative atT4.\"\n    },\n    {\n      \"id\": \"Y24-03-004\",\n      \"name\": \"normalized entropy\",\n      \"status\": \"passed\",\n      \"detail\": {\n        \"S1\": -0.024196604838945923,\n        \"rate1\": 0.03595137745191379,\n        \"independent_method\": \"composite Simpson plus central time difference\",\n        \"derivative_tolerance\": 1e-09\n      }\n    },\n    {\n      \"id\": \"Y24-03-005\",\n      \"name\": \"quadrature and residual\",\n      \"status\": \"passed\",\n      \"detail\": \"Tensor Simpson is exactly5/6; nonzero residual minimum certified by nonnegative factorization.\"\n    },\n    {\n      \"id\": \"Y24-03-006\",\n      \"name\": \"unitary state versus projection\",\n      \"status\": \"passed\",\n      \"detail\": \"Full norm conservation and projected Volterra equation independently quadrature-checked at four times.\"\n    },\n    {\n      \"id\": \"Y24-03-007\",\n      \"name\": \"score invariance and collision\",\n      \"status\": \"passed\",\n      \"detail\": \"Exact unit transformation restores ranking; explicit nonzero score-kernel direction verified.\"\n    }\n  ],\n  \"passed\": 7,\n  \"failed\": 0\n}",
+        "stderr": ""
+      },
+      {
+        "program": "months/04/verify.py",
+        "return_code": 0,
+        "stdout": "{\n  \"scope\": \"Finite examples, exact certificates and stated numerical identities only. General existence, convergence, topology and physical applicability are not certified by these checks.\",\n  \"checks\": [\n    {\n      \"id\": \"Y24-04-001\",\n      \"name\": \"clustering\",\n      \"status\": \"passed\",\n      \"detail\": {\n        \"exhaustive_unlabeled_partitions\": 8,\n        \"scatter_certificate\": [\n          [\n            [\n              0,\n              0,\n              0,\n              0\n            ],\n            \"1\",\n            \"0\"\n          ],\n          [\n            [\n              0,\n              0,\n              0,\n              1\n            ],\n            \"2/3\",\n            \"1/3\"\n          ],\n          [\n            [\n              0,\n              0,\n              1,\n              0\n            ],\n            \"2/3\",\n            \"1/3\"\n          ],\n          [\n            [\n              0,\n              0,\n              1,\n              1\n            ],\n            \"0\",\n            \"1\"\n          ],\n          [\n            [\n              0,\n              1,\n              0,\n              0\n            ],\n            \"2/3\",\n            \"1/3\"\n          ],\n          [\n            [\n              0,\n              1,\n              0,\n              1\n            ],\n            \"1\",\n            \"0\"\n          ],\n          [\n            [\n              0,\n              1,\n              1,\n              0\n            ],\n            \"1\",\n            \"0\"\n          ],\n          [\n            [\n              0,\n              1,\n              1,\n              1\n            ],\n            \"2/3\",\n            \"1/3\"\n          ]\n        ]\n      }\n    },\n    {\n      \"id\": \"Y24-04-002\",\n      \"name\": \"potts\",\n      \"status\": \"passed\",\n      \"detail\": [\n        {\n          \"gamma\": \"1/2\",\n          \"minimum\": \"1/2\",\n          \"minimizers\": [\n            [\n              0,\n              0,\n              1,\n              1\n            ]\n          ]\n        },\n        {\n          \"gamma\": \"1\",\n          \"minimum\": \"1\",\n          \"minimizers\": [\n            [\n              0,\n              0,\n              0,\n              0\n            ],\n            [\n              0,\n              0,\n              1,\n              1\n            ]\n          ]\n        },\n        {\n          \"gamma\": \"2\",\n          \"minimum\": \"1\",\n          \"minimizers\": [\n            [\n              0,\n              0,\n              0,\n              0\n            ]\n          ]\n        }\n      ]\n    },\n    {\n      \"id\": \"Y24-04-003\",\n      \"name\": \"regularizers\",\n      \"status\": \"passed\",\n      \"detail\": \"Three distinct exact KKT certificates atz(3,4),λ1; radial output length4.\"\n    },\n    {\n      \"id\": \"Y24-04-004\",\n      \"name\": \"online\",\n      \"status\": \"passed\",\n      \"detail\": {\n        \"impulse_weights\": [\n          \"1/8\",\n          \"1/4\",\n          \"1/2\"\n        ],\n        \"variance\": \"21/64\",\n        \"limiting_variance\": \"1/3\"\n      }\n    },\n    {\n      \"id\": \"Y24-04-005\",\n      \"name\": \"kernels\",\n      \"status\": \"passed\",\n      \"detail\": \"Exact principal minors4,3,8; indefinite counterexample quadratic form−4.\"\n    },\n    {\n      \"id\": \"Y24-04-006\",\n      \"name\": \"bayes\",\n      \"status\": \"passed\",\n      \"detail\": \"Posterior square completion exactly3(θ−1)²+2; singular duplicate covariance leaves variance1.\"\n    },\n    {\n      \"id\": \"Y24-04-007\",\n      \"name\": \"transfer\",\n      \"status\": \"passed\",\n      \"detail\": \"Finite change-of-measure identity exact; unsupported target point cannot have finite source density ratio.\"\n    },\n    {\n      \"id\": \"Y24-04-008\",\n      \"name\": \"ratios\",\n      \"status\": \"passed\",\n      \"detail\": {\n        \"shares\": [\n          \"1130/1379\",\n          \"249/1379\"\n        ],\n        \"separate_ratio\": \"723/13790\",\n        \"lottery_demo\": [\n          \"1/5\",\n          \"19/100\"\n        ],\n        \"historical_denominator\": \"unavailable\"\n      }\n    },\n    {\n      \"id\": \"Y24-04-009\",\n      \"name\": \"geometry\",\n      \"status\": \"passed\",\n      \"detail\": \"Two cells: exterior6, distinct edges7, patch perimeter sum8; shared-edge perimeter formula independently counted.\"\n    },\n    {\n      \"id\": \"Y24-04-010\",\n      \"name\": \"fractal\",\n      \"status\": \"passed\",\n      \"detail\": \"Cantor finite-level2^n covering pieces and3^−n lengths throughn8; raw log ratio changes from3 to2 under two unit scalings. Limit proof is in text.\"\n    },\n    {\n      \"id\": \"Y24-04-011\",\n      \"name\": \"division\",\n      \"status\": \"passed\",\n      \"detail\": {\n        \"D\": \"21/32\",\n        \"merged_D\": \"5/8\",\n        \"effective_count\": \"32/11\"\n      }\n    },\n    {\n      \"id\": \"Y24-04-012\",\n      \"name\": \"pca\",\n      \"status\": \"passed\",\n      \"detail\": \"Exact covarianceI/2 and reconstruction error1/2 for two different rank-one projectors; not a manifold-dimension estimator.\"\n    },\n    {\n      \"id\": \"Y24-04-013\",\n      \"name\": \"spectral\",\n      \"status\": \"passed\",\n      \"detail\": \"Four-dimensional page differential has square zero, rank1 and homology dimension2; zero differential leaves4. Serre existence/convergence is cited background.\"\n    },\n    {\n      \"id\": \"Y24-04-014\",\n      \"name\": \"sheaf\",\n      \"status\": \"passed\",\n      \"detail\": \"Compatible finite-section gluing; wedge determinant11; triangle boundary-square zero. Continuous sheaf proof and Stokes argument remain in text.\"\n    },\n    {\n      \"id\": \"Y24-04-015\",\n      \"name\": \"braid\",\n      \"status\": \"passed\",\n      \"detail\": {\n        \"commutator\": [\n          [\n            13,\n            8\n          ],\n          [\n            8,\n            5\n          ]\n        ],\n        \"deletion_images\": \"all identity\",\n        \"scope\": \"Representation proves nontriviality; strand deletion geometry is justified in text.\"\n      }\n    },\n    {\n      \"id\": \"Y24-04-016\",\n      \"name\": \"elasticity\",\n      \"status\": \"passed\",\n      \"detail\": \"Exact tensor-shear factor and negative dilation-energy counterexample verified.\"\n    },\n    {\n      \"id\": \"Y24-04-017\",\n      \"name\": \"populations\",\n      \"status\": \"passed\",\n      \"detail\": \"SIR conservation and threshold example exact; Lotka–Volterra first-integral derivative zero at three independent rational states.\"\n    },\n    {\n      \"id\": \"Y24-04-018\",\n      \"name\": \"oscillators\",\n      \"status\": \"passed\",\n      \"detail\": \"Exact automatic differentiation and discrete multipliers reproduce all local-stability examples.\"\n    },\n    {\n      \"id\": \"Y24-04-019\",\n      \"name\": \"lorenz\",\n      \"status\": \"passed\",\n      \"detail\": \"Independent exact Jacobian/cubic coefficients at a rational Lorenz equilibrium; classic threshold470/19 and Rössler equilibria verified.\"\n    },\n    {\n      \"id\": \"Y24-04-020\",\n      \"name\": \"reaction\",\n      \"status\": \"passed\",\n      \"detail\": \"Exact AD reaction Jacobian; stable homogeneous determinant1/trace−1/2; spatial determinant−29/10/trace−53/5.\"\n    },\n    {\n      \"id\": \"Y24-04-021\",\n      \"name\": \"gradient\",\n      \"status\": \"passed\",\n      \"detail\": {\n        \"Fourier_rates\": [\n          \"0\",\n          \"3/16\",\n          \"-2\"\n        ],\n        \"AC_dissipation\": -1.9634954084936207,\n        \"CH_dissipation\": -3.5342917352885173,\n        \"scope\": \"Periodic smooth-field energy identities are proved in text; this checks one independent trigonometric example.\"\n      }\n    },\n    {\n      \"id\": \"Y24-04-022\",\n      \"name\": \"kuramoto\",\n      \"status\": \"passed\",\n      \"detail\": \"Exact two-phase solution differentiated numerically; independent three-vertex potential dissipation check.\"\n    },\n    {\n      \"id\": \"Y24-04-023\",\n      \"name\": \"gauge\",\n      \"status\": \"passed\",\n      \"detail\": {\n        \"configurations\": 16,\n        \"gauge_transform_pairs\": 256,\n        \"orbit_sizes\": [\n          8,\n          8\n        ],\n        \"partition_function_beta1\": 9.082682265892903\n      }\n    }\n  ],\n  \"passed\": 23,\n  \"failed\": 0\n}",
+        "stderr": ""
+      },
+      {
+        "program": "months/05/verify.py",
+        "return_code": 0,
+        "stdout": "{\"entries\": 13, \"checks\": 13, \"all_passed\": true}",
+        "stderr": ""
+      },
+      {
+        "program": "months/06/verify.py",
+        "return_code": 0,
+        "stdout": "24/24 checks pass",
+        "stderr": ""
+      },
+      {
+        "program": "months/07/verify.py",
+        "return_code": 0,
+        "stdout": "{\"month\": \"2024-07\", \"passed\": 15, \"total\": 15}",
+        "stderr": ""
+      },
+      {
+        "program": "months/08/verify.py",
+        "return_code": 0,
+        "stdout": "{\"month\": \"2024-08\", \"passed\": 14, \"total\": 14}",
+        "stderr": ""
+      },
+      {
+        "program": "months/09/verify.py",
+        "return_code": 0,
+        "stdout": "28/28 checks passed",
+        "stderr": ""
+      },
+      {
+        "program": "months/10/verify.py",
+        "return_code": 0,
+        "stdout": "32/32 checks passed",
+        "stderr": ""
+      },
+      {
+        "program": "months/11/verify.py",
+        "return_code": 0,
+        "stdout": "27/27 checks passed",
+        "stderr": ""
+      },
+      {
+        "program": "months/12/verify.py",
+        "return_code": 0,
+        "stdout": "38/38 checks passed",
+        "stderr": ""
+      },
+      {
+        "program": "months/03/catalog_verify.py",
+        "return_code": 0,
+        "stdout": "{\"month\": \"2024-03\", \"catalog_entries\": 15, \"checks\": 27, \"status\": \"passed\"}",
+        "stderr": ""
+      },
+      {
+        "program": "verify_figures.py",
+        "return_code": 0,
+        "stdout": "{\"status\": \"passed\", \"checks\": 3}",
+        "stderr": ""
+      },
+      {
+        "program": "independent_audit.py",
+        "return_code": 0,
+        "stdout": "{\"status\": \"passed\", \"checks\": 4}",
+        "stderr": ""
+      }
+    ],
+    "reports": [
+      {
+        "report": "months/01/checks.json",
+        "records": 4,
+        "sha256": "7b2d9cc5d15f79ad0dd3655899f145d6e6c16e2a164fa0168f97143209739fe8"
+      },
+      {
+        "report": "months/02/checks.json",
+        "records": 13,
+        "sha256": "249ae282d7ed26441e2a1f3bea982e7a748cd9897138e69d501cb0a558754091"
+      },
+      {
+        "report": "months/03/catalog_checks.json",
+        "records": 27,
+        "sha256": "3b0ba4cd6e427227bd0e579fd1e4d8ecbaa446ee6a10a8ce8eefe03395da6292"
+      },
+      {
+        "report": "months/03/checks.json",
+        "records": 7,
+        "sha256": "a87943b9d5947858f15056ed51ce0d330e3669d02bf9e1822e84a2f776ce91aa"
+      },
+      {
+        "report": "months/04/checks.json",
+        "records": 23,
+        "sha256": "cc86a50b8e3e8fb0901a63f4a8ae7a68b7227cd05f81666d7cbe349def8238d3"
+      },
+      {
+        "report": "months/05/checks.json",
+        "records": 13,
+        "sha256": "1850d83e50977926794aff9a894d09967e591aa6a531c0bad079ab01dadeaad5"
+      },
+      {
+        "report": "months/06/checks.json",
+        "records": 24,
+        "sha256": "c90f479fa82532a955aeb8edea6cfa7f00ce4bb0b49a77cde95028c652026f00"
+      },
+      {
+        "report": "months/07/checks.json",
+        "records": 15,
+        "sha256": "d10fb269b6412d33a20ea7113cddd9573d360577a6b626281f40b0768a7dd5cc"
+      },
+      {
+        "report": "months/08/checks.json",
+        "records": 14,
+        "sha256": "8b0423c9336c10b4f32c072ccd6d04813417f43016163eab130b28137c03fb4e"
+      },
+      {
+        "report": "months/09/checks.json",
+        "records": 28,
+        "sha256": "7c6162b555eec2a80fba1ab7e1200e72193bb17a78c4747080f7e307b389d402"
+      },
+      {
+        "report": "months/10/checks.json",
+        "records": 32,
+        "sha256": "ec46a9208c499ce85ca78ec82cac882221b127d3171281582fd2e975b808ecec"
+      },
+      {
+        "report": "months/11/checks.json",
+        "records": 27,
+        "sha256": "c369465486c40217931eb2bc907e4da16115b9633a5d8dca325b126c5b013238"
+      },
+      {
+        "report": "months/12/checks.json",
+        "records": 38,
+        "sha256": "9724758a45b78c0a1f35d37e6e2df76125596a5e0443a09a8a0e0f439662b2a8"
+      },
+      {
+        "report": "figure_checks.json",
+        "records": 3,
+        "sha256": "486f943f3f94e8a89d08f36d27032a1dda65589ed230f0bb3c9ba513e1aa05d8"
+      },
+      {
+        "report": "independent_checks.json",
+        "records": 4,
+        "sha256": "b4bc80cc9012acea757e9edd668756cf7b25cc3cf2c2b47d8e8e118ea3f67ee5"
+      }
+    ],
+    "failures": [],
+    "scope": "Finite examples, exact certificates and numerical checks only; written proofs and cited general results have their own stated scope. Retrieval/schema checks are separated in the individual ledger."
+  }
+}

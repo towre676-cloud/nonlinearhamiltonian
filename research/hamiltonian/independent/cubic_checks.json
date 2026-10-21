@@ -1,0 +1,47 @@
+{
+  "status": "passed",
+  "exact_assertions": 420,
+  "scope": "all-degree root-multiplicity theorem in cubic_appendix.md; independent finite direct-star and rank checks",
+  "fixtures": [
+    {
+      "fixture": "three coordinate roots",
+      "degrees_checked": [
+        0,
+        16
+      ],
+      "lower_terms_added": "q²+5q+7p+1"
+    },
+    {
+      "fixture": "double and single",
+      "degrees_checked": [
+        0,
+        16
+      ],
+      "lower_terms_added": "q²+5q+7p+1"
+    },
+    {
+      "fixture": "triple",
+      "degrees_checked": [
+        0,
+        16
+      ],
+      "lower_terms_added": "q²+5q+7p+1"
+    },
+    {
+      "fixture": "three oblique roots",
+      "degrees_checked": [
+        0,
+        16
+      ],
+      "lower_terms_added": "q²+5q+7p+1"
+    },
+    {
+      "fixture": "oblique double",
+      "degrees_checked": [
+        0,
+        16
+      ],
+      "lower_terms_added": "q²+5q+7p+1"
+    }
+  ]
+}

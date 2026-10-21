@@ -1,0 +1,25 @@
+[
+  {
+    "month": "04",
+    "name": "April",
+    "query": "The user asks for a month-by-month, mathematics-only retrospective of their 2024 ChatGPT conversations, with rewritten questions and developed mathematical concepts. Retrieve all available mathematical content from conversations actually dated April 1–30, 2024 (2024-04-01 through 2024-04-30), covering the whole month. Include every distinct mathematical topic, exact source dates and titles if available, user-authored questions/fragments distinguished from assistant-only explanations, formulas, examples, follow-ups, and source identifiers. Do not substitute 2023 or 2025–2026 material. Do not guess subjects from the user's later projects. Include mathematical reasoning in applied discussions when present, but omit nonmathematical material. Mark unavailable original prompts and missing dates clearly. I need the actual historical evidence, not a generic mathematics syllabus or a summary of the current request.",
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "[convo search]\n- [PRIOR_ASSISTANT_OUTPUT] [c10] A@2024-04-04T22:04:27Z, -2y6m: k-clustering framework: \\(\\mathcal O=\\lambda_1\\) inter-cluster \\(-\\lambda_2\\) intra-cluster \\(+\\lambda_3\\) spatial coherence \\(+\\lambda_4\\) mitochondrial synchronization; regularization \\(\\alpha\\|C\\|_1+\\beta\\|M\\|_2\\); \\(C_{\\rm new}=C_{\\rm old}+\\eta(x_{\\rm new}-C_{\\rm old})\\); kernels, PCA, Bayesian uncertainty, fusion, transfer, quantum-inspired optimization.\n- [PRIOR_ASSISTANT_OUTPUT] [c2] A@2024-04-07T12:24:39Z, -2y6m: radiation calculation: \\(^{40}K=2.26\\) mSv/y, \\(^{14}C=0.498\\) mSv/y, total \\(2.758\\) mSv/y; W-boson contribution \\(0.1446\\) mSv/y \\(=5.25\\%\\); isotope shares ~82%/18%.\n- [PRIOR_ASSISTANT_OUTPUT] [c7][c11][c5] A@2024-04-18T21:30:49Z–2024-04-\nDot search unavailable.\n\n[gmail]\n[INSUFFICIENT] Gmail search failed before it could retrieve matching emails.\n\n[files]\n[INSUFFICIENT] No relevant file context found.\n\n<assistant_usage_note>\nWhen using the personal context above, treat relevant facts as binding context for this reply.\nBefore answering, silently identify: (1) relevant facts to preserve, and (2) hard constraints / exclusions to obey.\nIn the final answer:\nCarry forward relevant names, dates, amounts, option labels, locations, qualifiers, preferences, and task constraints from the context.\nTreat dislike / avoid / only / not / no / without / prefer / required statements as constraints.\nDo not add options, ingredients, products, places, methods, tools, backups, caveats, or \"if you're okay with...\" suggestions that conflict with any known constraint.\nDo not add new personalized recommendations unless they are supported by the context above or explicitly requested.\nIf a needed fact is already provided, use it directly instead of asking the user to confirm it.\nBefore sending, check the final answer for any missing relevant context or any suggestion that violates a known constraint.\nDo not quote or mention this assistant_usage_note in the final answer.\n</assistant_usage_note>"
+        }
+      ],
+      "structuredContent": {
+        "messages": [
+          {
+            "author_role": "tool",
+            "content": "[convo search]\n- [PRIOR_ASSISTANT_OUTPUT] [c10] A@2024-04-04T22:04:27Z, -2y6m: k-clustering framework: \\(\\mathcal O=\\lambda_1\\) inter-cluster \\(-\\lambda_2\\) intra-cluster \\(+\\lambda_3\\) spatial coherence \\(+\\lambda_4\\) mitochondrial synchronization; regularization \\(\\alpha\\|C\\|_1+\\beta\\|M\\|_2\\); \\(C_{\\rm new}=C_{\\rm old}+\\eta(x_{\\rm new}-C_{\\rm old})\\); kernels, PCA, Bayesian uncertainty, fusion, transfer, quantum-inspired optimization.\n- [PRIOR_ASSISTANT_OUTPUT] [c2] A@2024-04-07T12:24:39Z, -2y6m: radiation calculation: \\(^{40}K=2.26\\) mSv/y, \\(^{14}C=0.498\\) mSv/y, total \\(2.758\\) mSv/y; W-boson contribution \\(0.1446\\) mSv/y \\(=5.25\\%\\); isotope shares ~82%/18%.\n- [PRIOR_ASSISTANT_OUTPUT] [c7][c11][c5] A@2024-04-18T21:30:49Z–2024-04-\nDot search unavailable.\n\n[gmail]\n[INSUFFICIENT] Gmail search failed before it could retrieve matching emails.\n\n[files]\n[INSUFFICIENT] No relevant file context found."
+          }
+        ],
+        "error": null
+      },
+      "isError": false
+    }
+  }
+]

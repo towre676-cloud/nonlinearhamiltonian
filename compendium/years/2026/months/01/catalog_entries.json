@@ -1,0 +1,416 @@
+[
+  {
+    "id": "Y26-01-901",
+    "title": "Itô correction and a Feynman–Kac model with an exact solution",
+    "status": "Explicit theorem and newly stipulated worked model",
+    "summary": "A broad recovered archive topic is made concrete through the specified mathematical object below. The construction supplies a proof and an exact or analytically evaluated example; it does not assert that missing historical formulas have been recovered.",
+    "definitions": [
+      "Let X solve dX_t=b(X_t)dt+σ(X_t)dW_t and let Lf=bf′+σ²f″/2. Assume enough coefficient regularity for a nonexplosive strong solution and enough smoothness and integrability for the Itô formulas and expectations used below.",
+      "For bounded V, a classical solution u_t+Lu−Vu=0 with terminal value u(T,x)=g(x) is considered. Assume the stopped local martingales are uniformly integrable, or impose bounds that guarantee this."
+    ],
+    "result": {
+      "name": "Itô correction and a Feynman–Kac model with an exact solution",
+      "statement": "u(t,x)=E_x[exp(−∫_t^T V(X_s)ds)g(X_T)] whenever the stated martingale and classical-solution hypotheses hold. In particular, for dX=−κXdt+σdW, κ>0, V=0 and g(x)=x², u(t,x)=e^(−2κτ)x²+σ²(1−e^(−2κτ))/(2κ), τ=T−t.",
+      "proof": "Itô expansion gives df(X_t)=f′(X_t)dX_t+f″(X_t)d[X]_t/2, with d[X]_t=σ(X_t)²dt. Apply the time-dependent formula and the product rule to M_s=exp(−∫_t^s V(X_r)dr)u(s,X_s). Its drift vanishes exactly when the displayed PDE holds. Localization and the stated uniform-integrability condition turn M into a true martingale; evaluating at t and T proves the representation. For the Ornstein–Uhlenbeck example, Itô gives d(X²)=(−2κX²+σ²)dt+2σX dW. Its expected value solves m′=−2κm+σ² with m(0)=x², producing the explicit formula. Direct differentiation of u verifies u_t−κxu_x+σ²u_xx/2=0 and the terminal condition, so probability and PDE agree without a numerical solver."
+    },
+    "example": {
+      "setup": "Take κ=1,σ=√2,x=2 andτ=log2.",
+      "calculation": "The moment is u=4e^(−2log2)+1−e^(−2log2)=7/4. Omitting the Itô correction would incorrectly predict1.",
+      "conclusion": "The additional3/4 is the accumulated noise variance, obtained exactly from the quadratic-variation term."
+    },
+    "limits": "This is a linear diffusion example and a conditional classical Feynman–Kac argument. It does not assert existence of a classical PDE solution under merely measurable coefficients or permit ignoring uniform integrability.",
+    "extension": "Extend the construction to a specified bounded killing potential and prove both existence and uniqueness in a stated growth class, including an explicit stopping/localization estimate.",
+    "references": [],
+    "original": {
+      "date": "2026-01-28",
+      "month": "2026-01",
+      "evidence": "A",
+      "field": "Probability, spectral geometry and differential equations",
+      "concept": "Itô correction and a Feynman–Kac model with an exact solution",
+      "origin": "Recovered January28–29 assistant-attributed mathematical archive topic; new explicit development.",
+      "question": "Which second-order term converts noisy trajectories into a backward differential equation, and can one check it on a complete example?",
+      "math": "u(t,x)=E_x[exp(−∫_t^T V(X_s)ds)g(X_T)] whenever the stated martingale and classical-solution hypotheses hold. In particular, for dX=−κXdt+σdW, κ>0, V=0 and g(x)=x², u(t,x)=e^(−2κτ)x²+σ²(1−e^(−2κτ))/(2κ), τ=T−t.",
+      "finish": "Proof, worked example and scoped extension",
+      "kind": "Revised mathematical treatment",
+      "refs": [],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c0] A@2026-01-28T23:15:08Z, -8mo: Middle-layer equations: Itô \\(df=\\partial_t fdt+\\partial_xf\\,dX_t+\\frac12\\partial_x^2f\\,d[X]_t\\); Feynman–Kac; GUE density; semicircle \\(\\rho(\\lambda)=\\frac1{2\\pi}\\sqrt{4-\\lambda^2}\\); Tracy–Widom/Painlevé II; NTK; Connes distance; Atiyah–Singer; Chern–Simons/TQFT.",
+      "retrieval_receipt": "root_final_sweep.json record 0",
+      "original_question": null,
+      "attribution_note": "The source is a dated topic summary, not a verbatim user prompt. This example is newly chosen. A named general field is not treated as an already proved historical theorem."
+    }
+  },
+  {
+    "id": "Y26-01-902",
+    "title": "The semicircle law has exact Catalan moments before any random-matrix limit",
+    "status": "Explicit theorem and newly stipulated worked model",
+    "summary": "A broad recovered archive topic is made concrete through the specified mathematical object below. The construction supplies a proof and an exact or analytically evaluated example; it does not assert that missing historical formulas have been recovered.",
+    "definitions": [
+      "Define the probability density ρ(x)=√(4−x²)/(2π) on[−2,2], zero outside. Let m_j=∫x^jρ(x)dx.",
+      "For |z|>2 let G(z)=∫ρ(x)/(z−x)dx. Choose the branch of√(z²−4) that behaves like z at infinity."
+    ],
+    "result": {
+      "name": "The semicircle law has exact Catalan moments before any random-matrix limit",
+      "statement": "m_{2k}=(1/(k+1))binom(2k,k), m_{2k+1}=0, and G(z)=(z−√(z²−4))/2. Consequently G²−zG+1=0 and G(z)∼1/z.",
+      "proof": "Symmetry gives the odd moments. Substitute x=2√t on the positive half of the even-moment integral. One gets m_{2k}=2^(2k+1)B(k+1/2,3/2)/π. Using Γ(3/2)=√π/2 and Γ(k+1/2)=(2k)!√π/(4^k k!) reduces this to the Catalan number. In particular m_0=1, so normalization is proved rather than assumed. For |z|>2, expand1/(z−x) geometrically and interchange with the integral by uniform absolute convergence. Thus G(z)=Σ_{k≥0}C_k z^(−2k−1). The Catalan generating function C(t)=1+tC(t)², obtained either from the binomial formula or the quadratic binomial expansion, gives the asserted expression and quadratic equation. Analytic continuation determines G off the spectral interval with the chosen branch. These calculations establish properties of the measure; convergence of GUE empirical spectra to this measure is a further probabilistic theorem with an ensemble normalization and limiting argument."
+    },
+    "example": {
+      "setup": "Compute the first five nonzero moments and a resolvent value.",
+      "calculation": "The moments are1,1,2,5,14. Atz=3, G(3)=(3−√5)/2 and satisfies G²−3G+1=0.",
+      "conclusion": "The measure has variance1 and fourth moment2. A standard Gaussian instead has fourth moment3, so the two laws are distinguished by an exact observable."
+    },
+    "limits": "No finite-size Tracy–Widom law, random-matrix universality or convergence rate follows from the density calculation. Those archived labels remain separate questions.",
+    "extension": "Specify the Hermitian ensemble entry variance, prove convergence of its trace moments to these Catalan numbers, and bound the nonplanar-pairing error at each fixed moment order.",
+    "references": [],
+    "original": {
+      "date": "2026-01-28",
+      "month": "2026-01",
+      "evidence": "A",
+      "field": "Probability, spectral geometry and differential equations",
+      "concept": "The semicircle law has exact Catalan moments before any random-matrix limit",
+      "origin": "Recovered January28–29 assistant-attributed mathematical archive topic; new explicit development.",
+      "question": "What does the stated semicircle density itself imply, independently of an unproved claim about a matrix ensemble?",
+      "math": "m_{2k}=(1/(k+1))binom(2k,k), m_{2k+1}=0, and G(z)=(z−√(z²−4))/2. Consequently G²−zG+1=0 and G(z)∼1/z.",
+      "finish": "Proof, worked example and scoped extension",
+      "kind": "Revised mathematical treatment",
+      "refs": [],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c0] A@2026-01-28T23:15:08Z, -8mo: Middle-layer equations: Itô \\(df=\\partial_t fdt+\\partial_xf\\,dX_t+\\frac12\\partial_x^2f\\,d[X]_t\\); Feynman–Kac; GUE density; semicircle \\(\\rho(\\lambda)=\\frac1{2\\pi}\\sqrt{4-\\lambda^2}\\); Tracy–Widom/Painlevé II; NTK; Connes distance; Atiyah–Singer; Chern–Simons/TQFT.",
+      "retrieval_receipt": "root_final_sweep.json record 0",
+      "original_question": null,
+      "attribution_note": "The source is a dated topic summary, not a verbatim user prompt. This example is newly chosen. A named general field is not treated as an already proved historical theorem."
+    }
+  },
+  {
+    "id": "Y26-01-903",
+    "title": "A frozen tangent kernel gives an exact learning dynamics with a visible nullspace",
+    "status": "Explicit theorem and newly stipulated worked model",
+    "summary": "A broad recovered archive topic is made concrete through the specified mathematical object below. The construction supplies a proof and an exact or analytically evaluated example; it does not assert that missing historical formulas have been recovered.",
+    "definitions": [
+      "For n training observations let f(θ)=Φθ∈R^n, with fixed matrix Φ, and use loss(1/2)||f−y||². Gradient flow is θ′=−Φᵀ(Φθ−y). Put K=ΦΦᵀ.",
+      "For a differentiable nonlinear model, K(θ)=J(θ)J(θ)ᵀ is its empirical tangent kernel. The fixed-matrix model is exact; replacing K(θ_t) by K(θ_0) in a nonlinear network requires an approximation theorem."
+    ],
+    "result": {
+      "name": "A frozen tangent kernel gives an exact learning dynamics with a visible nullspace",
+      "statement": "The training residual r=f−y satisfies r′=−Kr and r(t)=e^(−tK)r(0). Its component in ker K remains constant. Its component in the positive spectral subspace decays at least as e^(−λ_min^+t), where λ_min^+ is the smallest positive eigenvalue.",
+      "proof": "Differentiate f along gradient flow to get f′=−ΦΦᵀ(f−y). Diagonalize the symmetric positive-semidefinite K orthogonally. Each spectral coordinate solves r_j′=−λ_jr_j, hence r_j(t)=e^(−λ_jt)r_j(0). A zero eigenvalue preserves its coordinate, while positive coordinates decay. This proves the formula and rate, and also yields loss derivative −rᵀKr≤0. For a nonlinear model the chain rule still gives f′=−K(θ_t)(f−y), but the constant-coefficient exponential solution is unavailable unless the kernel is constant or an additional commutation/approximation argument is supplied. Small training error in either model also says nothing by itself about unseen inputs. That question needs a distribution, target class and a generalization theorem."
+    },
+    "example": {
+      "setup": "Use Φ=(1,1)ᵀ, so K=[[1,1],[1,1]], and start θ=0.",
+      "calculation": "For y=(1,1), predictions equal(1−e^(−2t))(1,1) and loss is e^(−4t). For y=(1,−1), the target lies in ker K, θ′=0 and loss stays1.",
+      "conclusion": "The same nonnegative kernel perfectly fits one target direction and completely misses the other. Rank and spectrum determine this finite training conclusion."
+    },
+    "limits": "The model is an exact finite linear feature model. It does not prove a finite-width nonlinear network stays in its tangent regime or has improved out-of-sample performance.",
+    "extension": "Assume a quantitative bound ||K(θ_t)−K_0||≤ε on a time interval and derive a variation-of-constants residual bound relative to the frozen model, with explicit dependence on the positive spectral gap.",
+    "references": [
+      {
+        "label": "Jacot, Gabriel and Hongler, Neural Tangent Kernel: Convergence and Generalization in Neural Networks",
+        "url": "https://arxiv.org/abs/1806.07572"
+      }
+    ],
+    "original": {
+      "date": "2026-01-28",
+      "month": "2026-01",
+      "evidence": "A",
+      "field": "Probability, spectral geometry and differential equations",
+      "concept": "A frozen tangent kernel gives an exact learning dynamics with a visible nullspace",
+      "origin": "Recovered January28–29 assistant-attributed mathematical archive topic; new explicit development.",
+      "question": "What does a tangent-kernel model actually guarantee, and which labels can it never learn?",
+      "math": "The training residual r=f−y satisfies r′=−Kr and r(t)=e^(−tK)r(0). Its component in ker K remains constant. Its component in the positive spectral subspace decays at least as e^(−λ_min^+t), where λ_min^+ is the smallest positive eigenvalue.",
+      "finish": "Proof, worked example and scoped extension",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://arxiv.org/abs/1806.07572"
+      ],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c0] A@2026-01-28T23:15:08Z, -8mo: Middle-layer equations: Itô \\(df=\\partial_t fdt+\\partial_xf\\,dX_t+\\frac12\\partial_x^2f\\,d[X]_t\\); Feynman–Kac; GUE density; semicircle \\(\\rho(\\lambda)=\\frac1{2\\pi}\\sqrt{4-\\lambda^2}\\); Tracy–Widom/Painlevé II; NTK; Connes distance; Atiyah–Singer; Chern–Simons/TQFT.",
+      "retrieval_receipt": "root_final_sweep.json record 0",
+      "original_question": null,
+      "attribution_note": "The source is a dated topic summary, not a verbatim user prompt. This example is newly chosen. A named general field is not treated as an already proved historical theorem."
+    }
+  },
+  {
+    "id": "Y26-01-904",
+    "title": "A two-point spectral distance can be computed from the commutator norm",
+    "status": "Explicit theorem and newly stipulated worked model",
+    "summary": "A broad recovered archive topic is made concrete through the specified mathematical object below. The construction supplies a proof and an exact or analytically evaluated example; it does not assert that missing historical formulas have been recovered.",
+    "definitions": [
+      "Represent A=C² on H=C² by diagonal matrices diag(a_1,a_2). Let D=[[0,m],[conj(m),0]] with m≠0.",
+      "For the two evaluation states δ_i, define d(δ_1,δ_2)=sup{|a_1−a_2|:a=a*,||[D,a]||≤1}. This is the distance formula in this explicitly specified finite model."
+    ],
+    "result": {
+      "name": "A two-point spectral distance can be computed from the commutator norm",
+      "statement": "d(δ_1,δ_2)=1/|m|. If m=0, the two states have infinite distance under the same supremum.",
+      "proof": "For self-adjoint a, the commutator is [[0,m(a_2−a_1)],[conj(m)(a_1−a_2),0]]. Its adjoint times itself is |m|²|a_1−a_2|²I, so its operator norm is |m||a_1−a_2|. The Lipschitz constraint is therefore precisely |a_1−a_2|≤1/|m|. This upper bound is attained by a_1=0 and a_2=1/|m|, proving the distance. If m=0 the constraint imposes no restriction on the difference, so the supremum diverges. The calculation shows exactly where a geometry enters: in the specified operator D and its interaction with the representation. An algebra alone does not determine a metric; changing |m| continuously changes the distance while leaving the algebra and its two states unchanged."
+    },
+    "example": {
+      "setup": "Compare two operator choices on the same algebra.",
+      "calculation": "For m=2 the distance is1/2; for m=1/3 it is3. For m=0 it is infinite.",
+      "conclusion": "The distance formula is an exact finite optimization, with both an upper bound and an attaining observable."
+    },
+    "limits": "This model does not establish an emergent geometry for an unspecified learned representation, or replace the analytic hypotheses of an infinite spectral triple.",
+    "extension": "Use three points and a specified weighted off-diagonal D. Compute the exact commutator-norm unit ball and compare the resulting state distances with shortest-path distances on the same weighted graph.",
+    "references": [],
+    "original": {
+      "date": "2026-01-28",
+      "month": "2026-01",
+      "evidence": "A",
+      "field": "Probability, spectral geometry and differential equations",
+      "concept": "A two-point spectral distance can be computed from the commutator norm",
+      "origin": "Recovered January28–29 assistant-attributed mathematical archive topic; new explicit development.",
+      "question": "How does a specified Dirac-type operator turn algebraic observables into a distance?",
+      "math": "d(δ_1,δ_2)=1/|m|. If m=0, the two states have infinite distance under the same supremum.",
+      "finish": "Proof, worked example and scoped extension",
+      "kind": "Revised mathematical treatment",
+      "refs": [],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c0] A@2026-01-28T23:15:08Z, -8mo: Middle-layer equations: Itô \\(df=\\partial_t fdt+\\partial_xf\\,dX_t+\\frac12\\partial_x^2f\\,d[X]_t\\); Feynman–Kac; GUE density; semicircle \\(\\rho(\\lambda)=\\frac1{2\\pi}\\sqrt{4-\\lambda^2}\\); Tracy–Widom/Painlevé II; NTK; Connes distance; Atiyah–Singer; Chern–Simons/TQFT.",
+      "retrieval_receipt": "root_final_sweep.json record 0",
+      "original_question": null,
+      "attribution_note": "The source is a dated topic summary, not a verbatim user prompt. This example is newly chosen. A named general field is not treated as an already proved historical theorem."
+    }
+  },
+  {
+    "id": "Y26-01-905",
+    "title": "An index counts a kernel–cokernel defect in an explicit infinite model",
+    "status": "Explicit theorem and newly stipulated worked model",
+    "summary": "A broad recovered archive topic is made concrete through the specified mathematical object below. The construction supplies a proof and an exact or analytically evaluated example; it does not assert that missing historical formulas have been recovered.",
+    "definitions": [
+      "Let H=ℓ²(N_0) with orthonormal basis e_0,e_1,…, and let S be the unilateral shift Se_j=e_{j+1}. A bounded Fredholm operator has closed range and finite-dimensional kernel and cokernel.",
+      "Its index is ind T=dim ker T−dim(H/ran T). The adjoint satisfies S*e_0=0 and S*e_{j+1}=e_j."
+    ],
+    "result": {
+      "name": "An index counts a kernel–cokernel defect in an explicit infinite model",
+      "statement": "S is Fredholm with index−1, S* has index1, and for every k≥1, ind(S^k)=−k. In particular a finite-dimensional square matrix cannot reproduce this nonzero index.",
+      "proof": "S preserves norm, so its kernel is zero and its range is the closed hyperplane of sequences with zeroth coordinate zero. Its cokernel is spanned by e_0, giving index−1. For S*, the range is all H and the kernel is span(e_0), giving index1. The kth shift has range equal to the closed subspace whose first k coordinates vanish and has no kernel, proving index−k. For a linear endomorphism T of an n-dimensional space, rank-nullity gives dim kerT=n−rankT and dim cokerT=n−rankT, so its index is zero. Truncating an infinite shift to an n-by-n matrix therefore introduces an extra kernel or boundary effect that exactly cancels the infinite cokernel defect. This is a concrete reason that a finite spectral computation requires a separate theorem before being identified with a geometric or analytic index."
+    },
+    "example": {
+      "setup": "Take S² and compare its n=4 truncation.",
+      "calculation": "The infinite operator has kernel0 and cokernel span(e_0,e_1), so index−2. The four-by-four shift by two has kernel span(e_2,e_3) and cokernel span(e_0,e_1), so index0.",
+      "conclusion": "Both defects are explicitly visible; they cannot be merged into one unspecified numerical invariant."
+    },
+    "limits": "This entry computes a Fredholm index. It does not prove the Atiyah–Singer formula or identify the index of an unspecified elliptic differential operator.",
+    "extension": "Specify a Toeplitz operator with a nonvanishing Laurent-polynomial symbol and prove its index from the symbol winding, beginning with z^k and a controlled factorization.",
+    "references": [],
+    "original": {
+      "date": "2026-01-28",
+      "month": "2026-01",
+      "evidence": "A",
+      "field": "Probability, spectral geometry and differential equations",
+      "concept": "An index counts a kernel–cokernel defect in an explicit infinite model",
+      "origin": "Recovered January28–29 assistant-attributed mathematical archive topic; new explicit development.",
+      "question": "What can an index theorem be expected to measure before one invokes any geometric formula?",
+      "math": "S is Fredholm with index−1, S* has index1, and for every k≥1, ind(S^k)=−k. In particular a finite-dimensional square matrix cannot reproduce this nonzero index.",
+      "finish": "Proof, worked example and scoped extension",
+      "kind": "Revised mathematical treatment",
+      "refs": [],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c0] A@2026-01-28T23:15:08Z, -8mo: Middle-layer equations: Itô \\(df=\\partial_t fdt+\\partial_xf\\,dX_t+\\frac12\\partial_x^2f\\,d[X]_t\\); Feynman–Kac; GUE density; semicircle \\(\\rho(\\lambda)=\\frac1{2\\pi}\\sqrt{4-\\lambda^2}\\); Tracy–Widom/Painlevé II; NTK; Connes distance; Atiyah–Singer; Chern–Simons/TQFT.",
+      "retrieval_receipt": "root_final_sweep.json record 0",
+      "original_question": null,
+      "attribution_note": "The source is a dated topic summary, not a verbatim user prompt. This example is newly chosen. A named general field is not treated as an already proved historical theorem."
+    }
+  },
+  {
+    "id": "Y26-01-906",
+    "title": "Two-dimensional sewing has a concrete Frobenius-algebra model",
+    "status": "Explicit theorem and newly stipulated worked model",
+    "summary": "A broad recovered archive topic is made concrete through the specified mathematical object below. The construction supplies a proof and an exact or analytically evaluated example; it does not assert that missing historical formulas have been recovered.",
+    "definitions": [
+      "Let A=Q^r have idempotent basis e_i, with e_ie_j=δ_ije_i and unit1=Σe_i. Choose nonzero rational weights w_i and counit ε(e_i)=w_i.",
+      "The pairing is⟨a,b⟩=ε(ab). Its matrix is diag(w_i), hence it is nondegenerate. Define Δ(e_i)=w_i^(−1)e_i⊗e_i and handle operator H=μΔ."
+    ],
+    "result": {
+      "name": "Two-dimensional sewing has a concrete Frobenius-algebra model",
+      "statement": "These maps satisfy associativity, coassociativity, the counit laws and the Frobenius compatibility Δ(ab)=(a⊗1)Δ(b)=(1⊗b)Δ(a). The associated connected closed genus-g scalar is Z_g=ε(H^g1)=Σ_iw_i^(1−g).",
+      "proof": "All identities can be checked on the idempotent basis. Multiplication is diagonal, and each coproduct has support only on e_i⊗e_i, so the two iterated coproducts both send e_i to w_i^(−2)e_i⊗e_i⊗e_i. Applying ε to either output factor of Δ returns e_i. The Frobenius identity vanishes for i≠j and equals w_i^(−1)e_i⊗e_i for i=j. Finally H(e_i)=w_i^(−1)e_i, so applying g handles to the unit and then ε gives the stated sum. These are the algebraic sewing identities behind this two-dimensional example. The general equivalence between oriented two-dimensional TQFTs and commutative Frobenius algebras is a separate structural theorem; the explicit calculations here instantiate its algebraic side rather than prove the classification."
+    },
+    "example": {
+      "setup": "Set r=2 and weights(w_1,w_2)=(1,2).",
+      "calculation": "The sphere scalar is3, the torus scalar is2, and genus2 gives3/2. H is diag(1,1/2). Every map and each gluing identity is defined over Q.",
+      "conclusion": "This produces exact topological sewing data instead of an analogy based only on the name TQFT."
+    },
+    "limits": "This is a two-dimensional commutative Frobenius model. It is not a Chern–Simons theory, a modular tensor category or a claim about quantum gravity.",
+    "extension": "Replace the diagonal algebra by Q[x]/(x²), choose ε(1)=0,ε(x)=1, and compute its coproduct, nilpotent handle operator and closed-surface values. Compare the two sewing theories through their algebra invariants.",
+    "references": [
+      {
+        "label": "Lowell Abrams, Two-dimensional topological quantum field theories and Frobenius algebras",
+        "url": "https://www.math.umd.edu/~jmr/AbramsTQFT.pdf"
+      }
+    ],
+    "original": {
+      "date": "2026-01-28",
+      "month": "2026-01",
+      "evidence": "A",
+      "field": "Probability, spectral geometry and differential equations",
+      "concept": "Two-dimensional sewing has a concrete Frobenius-algebra model",
+      "origin": "Recovered January28–29 assistant-attributed mathematical archive topic; new explicit development.",
+      "question": "Can topological-field-theory language be grounded in exact multiplication, pairing and gluing calculations?",
+      "math": "These maps satisfy associativity, coassociativity, the counit laws and the Frobenius compatibility Δ(ab)=(a⊗1)Δ(b)=(1⊗b)Δ(a). The associated connected closed genus-g scalar is Z_g=ε(H^g1)=Σ_iw_i^(1−g).",
+      "finish": "Proof, worked example and scoped extension",
+      "kind": "Revised mathematical treatment",
+      "refs": [
+        "https://www.math.umd.edu/~jmr/AbramsTQFT.pdf"
+      ],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c0] A@2026-01-28T23:15:08Z, -8mo: Middle-layer equations: Itô \\(df=\\partial_t fdt+\\partial_xf\\,dX_t+\\frac12\\partial_x^2f\\,d[X]_t\\); Feynman–Kac; GUE density; semicircle \\(\\rho(\\lambda)=\\frac1{2\\pi}\\sqrt{4-\\lambda^2}\\); Tracy–Widom/Painlevé II; NTK; Connes distance; Atiyah–Singer; Chern–Simons/TQFT.",
+      "retrieval_receipt": "root_final_sweep.json record 0",
+      "original_question": null,
+      "attribution_note": "The source is a dated topic summary, not a verbatim user prompt. This example is newly chosen. A named general field is not treated as an already proved historical theorem."
+    }
+  },
+  {
+    "id": "Y26-01-907",
+    "title": "The recovered Picard–Fuchs operator has a checkable Frobenius recurrence",
+    "status": "Explicit theorem and newly stipulated worked model",
+    "summary": "A broad recovered archive topic is made concrete through the specified mathematical object below. The construction supplies a proof and an exact or analytically evaluated example; it does not assert that missing historical formulas have been recovered.",
+    "definitions": [
+      "Fix ε∈C and consider u(1−u)y″+[1−(3+2ε)u]y′+ε(ε+1)y/4=0 near u=0.",
+      "Normalize the analytic solution y_1(0)=1. Set a+b=2+2ε and ab=−ε(ε+1)/4; the equation is a Gauss hypergeometric equation with c=1."
+    ],
+    "result": {
+      "name": "The recovered Picard–Fuchs operator has a checkable Frobenius recurrence",
+      "statement": "The unique normalized analytic solution has c_0=1 and c_{n+1}=[n(n+2+2ε)−ε(ε+1)/4]c_n/(n+1)². Its radius of convergence is at least1. A second local solution is y_2=y_1 logu plus an analytic germ, giving a nontrivial unipotent local monodromy in this normalized basis.",
+      "proof": "Insert Σc_nu^n and compare coefficients of u^n. The coefficient of c_{n+1} is(n+1)² and the remaining term gives the recurrence. Its ratio has limit1 unless the series terminates, proving convergence for |u|<1. Since y_1(0)=1, it is nonzero on a sufficiently small disk. Dividing the ODE by u(1−u), the coefficient of y′ is P(u)=1/u−(2+2ε)/(1−u). Reduction of order therefore supplies y_2=y_1∫[u^(−1)(1−u)^(−2−2ε)/y_1²]du. The integrand is1/u times a holomorphic function with value1 at zero, so its primitive is logu plus a holomorphic germ. A positive loop around zero sends y_2 to y_2+2πiy_1 and fixes y_1. Thus repeated Frobenius exponent0 has been strengthened to an actual local logarithm with its normalization proved, without presuming a global period interpretation."
+    },
+    "example": {
+      "setup": "Set ε=1.",
+      "calculation": "The first coefficients are c_0=1,c_1=−1/2,c_2=−9/16,c_3=−23/32. The local monodromy fixes y_1 and adds2πiy_1 to y_2.",
+      "conclusion": "The recurrence and logarithmic companion follow directly from the recovered operator, even though a geometric family whose periods it governs was not recovered."
+    },
+    "limits": "An operator label does not identify a unique algebraic family, motive, integral cycle or arithmetic monodromy group. Those geometric data remain unspecified.",
+    "extension": "Recover a concrete family and differential form, derive this operator by reduction of exact forms, then identify the integral period lattice and connection matrices between0,1 and infinity.",
+    "references": [],
+    "original": {
+      "date": "2026-01-28",
+      "month": "2026-01",
+      "evidence": "A",
+      "field": "Probability, spectral geometry and differential equations",
+      "concept": "The recovered Picard–Fuchs operator has a checkable Frobenius recurrence",
+      "origin": "Recovered January28–29 assistant-attributed mathematical archive topic; new explicit development.",
+      "question": "What local analytic and monodromy information follows from the actual displayed second-order operator?",
+      "math": "The unique normalized analytic solution has c_0=1 and c_{n+1}=[n(n+2+2ε)−ε(ε+1)/4]c_n/(n+1)². Its radius of convergence is at least1. A second local solution is y_2=y_1 logu plus an analytic germ, giving a nontrivial unipotent local monodromy in this normalized basis.",
+      "finish": "Proof, worked example and scoped extension",
+      "kind": "Revised mathematical treatment",
+      "refs": [],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c3] A@2026-01-28T16:21:39Z, -8mo: analyzed Picard–Fuchs operator \\(p_2=u(1-u),p_1=1-(3+2\\epsilon)u,p_0=\\epsilon(\\epsilon+1)/4\\): \\(u=0\\) repeated exponent \\(0\\); \\(u=1\\) exponents \\(-2\\epsilon-1,0\\) with resonance; \\(u=\\infty\\) ex",
+      "retrieval_receipt": "root_final_sweep.json record 0",
+      "original_question": null,
+      "attribution_note": "The source is a dated topic summary, not a verbatim user prompt. This example is newly chosen. A named general field is not treated as an already proved historical theorem."
+    }
+  },
+  {
+    "id": "Y26-01-908",
+    "title": "A certified arctangent acceleration follows from a geometric expansion",
+    "status": "Explicit theorem and newly stipulated worked model",
+    "summary": "A broad recovered archive topic is made concrete through the specified mathematical object below. The construction supplies a proof and an exact or analytically evaluated example; it does not assert that missing historical formulas have been recovered.",
+    "definitions": [
+      "Use I=∫_0^1dx/(1+x²)=π/4 and the identity1/(1+x²)=(1/2)/(1−(1−x²)/2). Let J_k=∫_0^1(1−x²)^kdx.",
+      "All geometric expansion terms are nonnegative and their ratio is at most1/2 on[0,1], so uniform convergence justifies termwise integration."
+    ],
+    "result": {
+      "name": "A certified arctangent acceleration follows from a geometric expansion",
+      "statement": "π/4=Σ_{k≥0}2^(k−1)(k!)²/(2k+1)!. The truncation after k=0,…,N−1 has positive error at most2^(−N). The terms satisfy t_{k+1}/t_k=(k+1)/(2k+3).",
+      "proof": "Expand the denominator geometrically and integrate to get I=ΣJ_k/2^(k+1). To evaluate J_k, integrate the derivative of x(1−x²)^(k+1), whose boundary values vanish. This gives J_{k+1}=2(k+1)∫x²(1−x²)^kdx=2(k+1)(J_k−J_{k+1}), so J_{k+1}=2(k+1)J_k/(2k+3). Starting with J_0=1 yields J_k=2^(2k)(k!)²/(2k+1)!. Substitution gives the series and its term recurrence. The geometric remainder under the integral is [((1−x²)/2)^N]/(1+x²), which is between0 and2^(−N). Integrating over a unit interval proves the error bound. This supplies an identity, a recurrence certificate and a stopping criterion, rather than a floating agreement with π."
+    },
+    "example": {
+      "setup": "Use N=20.",
+      "calculation": "The rational partial sum S_20 satisfies0<π−4S_20≤2^(−18). In comparison, the alternating arctangent series after20 terms only has its elementary error bound4/41.",
+      "conclusion": "The acceleration has an exponentially decreasing certified error, derived without assuming cancellation in a floating sum."
+    },
+    "limits": "The result is one explicit acceleration motivated by the recovered Kerala/summation-by-parts topic. It is not a recovered historical Kerala formula or a proof that every proposed Ore/WZ identity is valid.",
+    "extension": "Build a general certificate from a rational integral with a uniformly bounded geometric ratio and optimize its splitting point to minimize a rigorously bounded arithmetic cost.",
+    "references": [],
+    "original": {
+      "date": "2026-01-28",
+      "month": "2026-01",
+      "evidence": "A",
+      "field": "Probability, spectral geometry and differential equations",
+      "concept": "A certified arctangent acceleration follows from a geometric expansion",
+      "origin": "Recovered January28–29 assistant-attributed mathematical archive topic; new explicit development.",
+      "question": "Can a series-acceleration proposal be converted into an exact identity with an elementary error bound?",
+      "math": "π/4=Σ_{k≥0}2^(k−1)(k!)²/(2k+1)!. The truncation after k=0,…,N−1 has positive error at most2^(−N). The terms satisfy t_{k+1}/t_k=(k+1)/(2k+3).",
+      "finish": "Proof, worked example and scoped extension",
+      "kind": "Revised mathematical treatment",
+      "refs": [],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c3] A@2026-01-28T03:26:01Z, -8mo: connected Kerala series acceleration to summation by parts, Euler–Maclaurin, and WZ telescoping; later extended to Ore \\(\\Sigma\\Delta\\)-modules, q-differences/basic hypergeometric series, and IBP–renormalization.",
+      "retrieval_receipt": "root_final_sweep.json record 0",
+      "original_question": null,
+      "attribution_note": "The source is a dated topic summary, not a verbatim user prompt. This example is newly chosen. A named general field is not treated as an already proved historical theorem."
+    }
+  },
+  {
+    "id": "Y26-01-909",
+    "title": "A factorial series has a fully visible Borel singularity and Stokes jump",
+    "status": "Explicit theorem and newly stipulated worked model",
+    "summary": "A broad recovered archive topic is made concrete through the specified mathematical object below. The construction supplies a proof and an exact or analytically evaluated example; it does not assert that missing historical formulas have been recovered.",
+    "definitions": [
+      "Consider the formal series F(z)=Σ_{n≥0}n!z^(n+1), which has radius zero by the ratio test. Its formal Borel transform is B(t)=Σt^n=1/(1−t).",
+      "For positive real z, define lateral Laplace integrals F_±(z)=∫_{γ_±}e^(−t/z)/(1−t)dt, where γ_± follows the positive ray and bypasses t=1 above or below. Endpoint decay and the simple indentation define the limits."
+    ],
+    "result": {
+      "name": "A factorial series has a fully visible Borel singularity and Stokes jump",
+      "statement": "The lateral sums have the same factorial asymptotic expansion and satisfy z²F′−F=−z. With the stated above-minus-below contour convention, F_+−F_−=2πie^(−1/z). Every difference of two solutions of the ODE is Ce^(−1/z).",
+      "proof": "For the positive-ray asymptotics, split each fixed bypass contour at0<a<1. The local part admits the geometric expansion with its integral remainder; the remaining contour has real part bounded away from zero and contributes an exponentially small term asz↓0. The formal ODE follows by differentiating the series: z²F′=F−z. For the Laplace integrals it follows by differentiation and integration by parts, with endpoints controlled by exponential decay and the matched contour bypass. Their difference is a closed clockwise contour around the pole. The residue of e^(−t/z)/(1−t) is−e^(−1/z), so clockwise residue evaluation gives2πie^(−1/z). The homogeneous ODE is H′=H/z², whose solutions are Ce^(−1/z), agreeing with the contour calculation. Along the negative ray write z=−a,a>0 and obtain F(−a)=−∫_0^∞e^(−u/a)/(1+u)du. Expanding1/(1+u) through degree N−1 with its exact remainder shows that the error after N factorial terms has magnitude at most N!a^(N+1). This proves an asymptotic statement even though the infinite power series diverges at every nonzero z."
+    },
+    "example": {
+      "setup": "Take a=1/10 on the nonsingular negative ray and N=5.",
+      "calculation": "The remainder magnitude is at most5!(1/10)^6=0.00012. Across the positive Stokes ray the lateral ambiguity is exactly2πie^(−10).",
+      "conclusion": "The divergent series is useful to finite order, and its missing exponentially small datum is made explicit by the Borel pole."
+    },
+    "limits": "This is a solvable one-pole model. It does not determine any Stokes constant for an unspecified Feynman amplitude, knot state integral or motivic period.",
+    "extension": "Replace1/(1−t) by a specified rational Borel transform with several poles and derive all lateral jumps and an optimal truncation estimate uniformly on closed sectors avoiding their rays.",
+    "references": [],
+    "original": {
+      "date": "2026-01-29",
+      "month": "2026-01",
+      "evidence": "A",
+      "field": "Probability, spectral geometry and differential equations",
+      "concept": "A factorial series has a fully visible Borel singularity and Stokes jump",
+      "origin": "Recovered January28–29 assistant-attributed mathematical archive topic; new explicit development.",
+      "question": "What does resurgence mean in a model where the divergent coefficients, Borel pole and exponentially small ambiguity can all be written down?",
+      "math": "The lateral sums have the same factorial asymptotic expansion and satisfy z²F′−F=−z. With the stated above-minus-below contour convention, F_+−F_−=2πie^(−1/z). Every difference of two solutions of the ODE is Ce^(−1/z).",
+      "finish": "Proof, worked example and scoped extension",
+      "kind": "Revised mathematical treatment",
+      "refs": [],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c0] A@2026-01-29T00:15:44Z, -8mo: Additional transcendental topics: periods/Picard–Fuchs and Gauss–Manin connection; multiple zeta values/KZ connection and Drinfeld associator; resurgence, Borel singularities and Stokes constants; motivic Galois invariants; renormalization/QFT amplitudes.",
+      "retrieval_receipt": "root_final_sweep.json record 0",
+      "original_question": null,
+      "attribution_note": "The source is a dated topic summary, not a verbatim user prompt. This example is newly chosen. A named general field is not treated as an already proved historical theorem."
+    }
+  },
+  {
+    "id": "Y26-01-910",
+    "title": "A triangular regular-singular connection encodes a dilogarithm period",
+    "status": "Explicit theorem and newly stipulated worked model",
+    "summary": "A broad recovered archive topic is made concrete through the specified mathematical object below. The construction supplies a proof and an exact or analytically evaluated example; it does not assert that missing historical formulas have been recovered.",
+    "definitions": [
+      "Let E_ij denote the three-by-three matrix unit. Set A=E_12,B=E_23 and consider y′=[A/z+B/(1−z)]y on0<z<1, with the analytic solution y(0)=(0,0,1).",
+      "Define Li₂(z)=Σ_{n≥1}z^n/n² for|z|<1. The matrices do not commute: [A,B]=E_13. This is a specified triangular regular-singular system, not a recovered full Drinfeld associator."
+    ],
+    "result": {
+      "name": "A triangular regular-singular connection encodes a dilogarithm period",
+      "statement": "The solution is y(z)=(Li₂(z),−log(1−z),1). Its finite endpoint first coordinate is Li₂(1)=ζ(2)=π²/6, obtained from the ordered integral∫_0^1[∫_0^z dt/(1−t)]dz/z.",
+      "proof": "The third coordinate is constant. The second therefore integrates to−log(1−z). Dividing it byz gives the derivative of the first coordinate, and termwise integration of the absolutely convergent logarithmic series produces Li₂(z). Monotone convergence atz=1 givesΣ1/n²; convergence also follows directly from the integral test. For completeness, the periodic Bernoulli polynomial B₂(x)=x²−x+1/6 has mean zero and, by two integrations by parts, nonzero Fourier coefficients1/(2π²n²). Their absolute convergence gives B₂(0)=Σ_{n≥1}1/(π²n²), provingζ(2)=π²/6. The ordered integral corresponds to first applying the B-channel and then the A-channel; their product AB=E_13 is nonzero while BA=0. Thus ordering has an exact algebraic effect. Higher iterated integrals can encode multiple-zeta values, but a general associator requires tangential-basepoint regularization and all of its compatibility identities, none of which is supplied by this one finite example."
+    },
+    "example": {
+      "setup": "Truncate Li₂(1) afterN terms, and inspect the two channel products.",
+      "calculation": "The remainder lies between1/(N+1) and1/N. AB=E_13 andBA=0. AtN=100 the rational sum gives a rigorous interval of width1/10100 containingπ²/6.",
+      "conclusion": "The endpoint period, a noncommuting channel order and an explicit error bound coexist in a complete small model."
+    },
+    "limits": "The vector solution has a divergent second coordinate at1 but a finite first coordinate. It does not define a full matrix holonomy from0to1 without the appropriate endpoint normalization, or prove general MZV independence.",
+    "extension": "Construct a longer nilpotent matrix chain for a specified convergent word in dz/z and dz/(1−z), then derive its endpoint multiple-zeta value and demonstrate the shuffle identity by decomposing a product integration region.",
+    "references": [],
+    "original": {
+      "date": "2026-01-29",
+      "month": "2026-01",
+      "evidence": "A",
+      "field": "Probability, spectral geometry and differential equations",
+      "concept": "A triangular regular-singular connection encodes a dilogarithm period",
+      "origin": "Recovered January28–29 assistant-attributed mathematical archive topic; new explicit development.",
+      "question": "How does an iterated integral become an entry of a specified differential system, rather than merely an analogy with a KZ connection?",
+      "math": "The solution is y(z)=(Li₂(z),−log(1−z),1). Its finite endpoint first coordinate is Li₂(1)=ζ(2)=π²/6, obtained from the ordered integral∫_0^1[∫_0^z dt/(1−t)]dz/z.",
+      "finish": "Proof, worked example and scoped extension",
+      "kind": "Revised mathematical treatment",
+      "refs": [],
+      "source_excerpt": "- [PRIOR_ASSISTANT_OUTPUT] [c0] A@2026-01-29T00:15:44Z, -8mo: Additional transcendental topics: periods/Picard–Fuchs and Gauss–Manin connection; multiple zeta values/KZ connection and Drinfeld associator; resurgence, Borel singularities and Stokes constants; motivic Galois invariants; renormalization/QFT amplitudes.",
+      "retrieval_receipt": "root_final_sweep.json record 0",
+      "original_question": null,
+      "attribution_note": "The source is a dated topic summary, not a verbatim user prompt. This example is newly chosen. A named general field is not treated as an already proved historical theorem."
+    }
+  }
+]

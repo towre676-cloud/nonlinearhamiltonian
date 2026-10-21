@@ -1,0 +1,196 @@
+{
+  "month": "2025-05",
+  "status": "passed",
+  "count": 25,
+  "checks": [
+    {
+      "id": "Y25-05-001",
+      "name": "Gaussian-derivative moments and Fourier normalization",
+      "status": "passed",
+      "detail": {
+        "moments": [
+          1.6323489529561984e-18,
+          2.5628575588628922e-19
+        ],
+        "fourier_at_one": 0.6065306597126335,
+        "scope": "Numerical quadrature checks accompany the integration-by-parts proof; discrete frame completeness is not tested."
+      }
+    },
+    {
+      "id": "Y25-05-002",
+      "name": "Independent disk flux and circulation",
+      "status": "passed",
+      "detail": "Curl is constant one; the separately parameterized boundary dot product is two on [0,2π]."
+    },
+    {
+      "id": "Y25-05-003",
+      "name": "Exact quartic and fifth-power counterexamples",
+      "status": "passed",
+      "detail": "All power equalities, primitive gcd and totient factorization use integer/rational arithmetic."
+    },
+    {
+      "id": "Y25-05-004",
+      "name": "Complete 4³ Fourier spectrum against matrix",
+      "status": "passed",
+      "detail": {
+        "sites": 64,
+        "maximum_complex_mode_residual": 1.4761326794181718e-14,
+        "kernel_dimension": 1,
+        "gap": 2,
+        "scope": "Every Fourier mode is checked for this finite grid; the written proof covers general p."
+      }
+    },
+    {
+      "id": "Y25-05-005",
+      "name": "Exact Galerkin projection and energy example",
+      "status": "passed",
+      "detail": "Idempotence, energy self-adjointness, error energy and untouched complement verified independently."
+    },
+    {
+      "id": "Y25-05-006",
+      "name": "Functional-calculus interpolation and Newton residuals",
+      "status": "passed",
+      "detail": "Two scalar interpolation values and two exact rational Newton steps, including residual certificates."
+    },
+    {
+      "id": "Y25-05-007",
+      "name": "Pure GHZ and W entropy cancellation",
+      "status": "passed",
+      "detail": {
+        "GHZ_single_entropy": 1.0,
+        "W_single_entropy": 0.9182958340544896,
+        "scope": "Reduced eigenvalues and Schmidt-complement equalities are given in the proof; I3=0 is an all-pure-three-party theorem, not an empirical transition."
+      }
+    },
+    {
+      "id": "Y25-05-008",
+      "name": "Exact triangle Hodge matrices",
+      "status": "passed",
+      "detail": "Unfilled Δ1=3I−J and filled Δ1=3I; harmonic dimensions one and zero."
+    },
+    {
+      "id": "Y25-05-009",
+      "name": "Tropical necessary condition and lost unit information",
+      "status": "passed",
+      "detail": "Exact 3-adic valuations for two solutions and an equal-valuation nonsolution."
+    },
+    {
+      "id": "Y25-05-010",
+      "name": "Exact valuation-shell integral and tail",
+      "status": "passed",
+      "detail": "p=3,s=2 gives9/13 with exact geometric truncation remainder."
+    },
+    {
+      "id": "Y25-05-011",
+      "name": "Dual-number free resolution certificate",
+      "status": "passed",
+      "detail": "Multiplication by ε has equal one-dimensional kernel and image; after tensoring with k all differentials vanish. The periodic proof covers all Tor degrees."
+    },
+    {
+      "id": "Y25-05-012",
+      "name": "Ratio denominator and duty-capacity distinction",
+      "status": "passed",
+      "detail": {
+        "implied_input_kWh": "59615/143",
+        "capacity_factor": "1/4",
+        "duty_fraction": "1/2",
+        "scope": "Stipulated arithmetic, not a measured EROI."
+      }
+    },
+    {
+      "id": "Y25-05-013",
+      "name": "Exact group/phase geometry",
+      "status": "passed",
+      "detail": "N=5,k=3,m=4 yieldsω=3 and perpendicular velocity vectors."
+    },
+    {
+      "id": "Y25-05-014",
+      "name": "Tolerance counterexample and transitive chains",
+      "status": "passed",
+      "detail": "Exact failure of transitivity and a finite tolerance chain from zero to ten."
+    },
+    {
+      "id": "Y25-05-015",
+      "name": "Independent product variance and repeated-variable cancellation",
+      "status": "passed",
+      "detail": "Exact outcome enumeration gives variance3 versus first-order variance2; X−X is identically zero."
+    },
+    {
+      "id": "Y25-05-016",
+      "name": "Finite contextual gluing and zero divisors",
+      "status": "passed",
+      "detail": "Compatible restrictions glue uniquely; pointwise context functions form a product ring, not a field."
+    },
+    {
+      "id": "Y25-05-017",
+      "name": "Exact hybrid variational optimum",
+      "status": "passed",
+      "detail": "Endpoint, weighted momentum and objective agree with the Cauchy–Schwarz global lower bound."
+    },
+    {
+      "id": "Y25-05-018",
+      "name": "Actual recovered arithmetic graph polynomial",
+      "status": "passed",
+      "detail": "L(L²−L+I/6)=0 and nullity one; coprime set modulo6 is{1,5}."
+    },
+    {
+      "id": "Y25-05-019",
+      "name": "Finite spectral-zeta values and gamma moments",
+      "status": "passed",
+      "detail": "Positive spectrum{1,3} has ζ(1)=4/3,ζ(2)=10/9. Integral divergence of λ^(−α) near0 is proved in the entry, not numerically extrapolated."
+    },
+    {
+      "id": "Y25-05-020",
+      "name": "Exact divisor convolution and inversion through120",
+      "status": "passed",
+      "detail": "μ*τ=1 verified at every integer through120; the all-n proof is algebraic associativity and μ*1=ε."
+    },
+    {
+      "id": "Y25-05-021",
+      "name": "Declared PAC–Bayes numerical certificate",
+      "status": "passed",
+      "detail": {
+        "penalty": 0.2094439727056968,
+        "loss_bound": 0.3094439727056968,
+        "scope": "A finite arithmetic check under the entry’s iid bounded-loss and fixed-parameter hypotheses; not validation of reported R²."
+      }
+    },
+    {
+      "id": "Y25-05-022",
+      "name": "Thermal energy geometry and pulse enclosure",
+      "status": "passed",
+      "detail": {
+        "step_response": 0.00024996875260396845,
+        "lower_bound": "7999/32000000",
+        "upper_bound": "1/4000",
+        "scope": "Declared lumped model; no performance validation."
+      }
+    },
+    {
+      "id": "Y25-05-023",
+      "name": "Exact series versus parallel conductivity",
+      "status": "passed",
+      "detail": {
+        "parallel": "7043/25",
+        "series": "4000/491",
+        "scope": "Second conductivity1 is an explicitly constructed example, not a material measurement."
+      }
+    },
+    {
+      "id": "Y25-05-024",
+      "name": "Compatible-layer stress and specific-mass discrepancy",
+      "status": "passed",
+      "detail": {
+        "constructed_stress_Pa": "100000000",
+        "specific_mass_ratio": "11/10",
+        "scope": "The historical274.5MPa lacks sufficient inputs and is not certified."
+      }
+    },
+    {
+      "id": "MONTH-2025-05",
+      "name": "Attribution and source boundary",
+      "status": "passed",
+      "detail": "24 entries; all original prompts null. May4 external context is T. New models and cited classical inputs are separated from source claims."
+    }
+  ]
+}

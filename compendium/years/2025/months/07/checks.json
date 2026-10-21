@@ -1,0 +1,216 @@
+{
+  "month": "2025-07",
+  "checks": [
+    {
+      "id": "Y25-07-001",
+      "name": "Cusp triangle boundary",
+      "status": "pass",
+      "detail": "All 64 triples checked; universal presentation is proved algebraically in text."
+    },
+    {
+      "id": "Y25-07-002",
+      "name": "Finite-field count and Euler recurrence",
+      "status": "pass",
+      "detail": "Exact F5 point enumeration and prime-power recurrence; Frobenius power sum distinguished."
+    },
+    {
+      "id": "Y25-07-003",
+      "name": "Weierstrass discriminant",
+      "status": "pass",
+      "detail": "Exact integral invariants of y²=x³−x; no conductor-at-two certification claimed."
+    },
+    {
+      "id": "Y25-07-004",
+      "name": "Selmer rank-bound bookkeeping",
+      "status": "pass",
+      "detail": "Stipulated s=4,t=1 gives rank≤3. General Kummer/Selmer exactness is proved in text, not inferred from this finite group check."
+    },
+    {
+      "id": "Y25-07-005",
+      "name": "Height Gram and subgroup index",
+      "status": "pass",
+      "detail": "Positive minors plus exact integer-vector replay and index-square regulator conversion."
+    },
+    {
+      "id": "Y25-07-006",
+      "name": "Quaternion 2-adic primitive obstruction",
+      "status": "pass",
+      "detail": "All 4096 primitive residue quadruples checked; odd-prime Hilbert formula and ABHN retain sourced theorem scope."
+    },
+    {
+      "id": "Y25-07-007",
+      "name": "Primal-dual exact optimum",
+      "status": "pass",
+      "detail": "Feasible primal (3,0), dual1, matching value3."
+    },
+    {
+      "id": "Y25-07-008",
+      "name": "Vector-clock joins",
+      "status": "pass",
+      "detail": "Exact three-replica merge, associativity example and duplicate idempotence."
+    },
+    {
+      "id": "Y25-07-009",
+      "name": "Posterior moments and simulation bound",
+      "status": "pass",
+      "detail": "Beta moments and declared Hoeffding sample-size arithmetic; no empirical reliability inference."
+    },
+    {
+      "id": "Y25-07-010",
+      "name": "Riccati root and cost",
+      "status": "pass",
+      "detail": "Exact-form stabilizing root, quadratic residual and integrated optimal cost."
+    },
+    {
+      "id": "Y25-07-011",
+      "name": "Mean-zero conformal area variation",
+      "status": "pass",
+      "detail": "Area density derivative −2f sums to zero for a mean-zero test; full metric variation proved in text."
+    },
+    {
+      "id": "Y25-07-012",
+      "name": "Heat Fourier energy identity",
+      "status": "pass",
+      "detail": "At μ=1,λ=2,κ=1, the three energy derivative terms sum to −12π times the decay factor."
+    },
+    {
+      "id": "Y25-07-013",
+      "name": "Dual-number extension structure",
+      "status": "pass",
+      "detail": "Nilpotent action ranks distinguish nonsplit R from split k⊕k; free resolution proves Ext dimension in text."
+    },
+    {
+      "id": "Y25-07-014",
+      "name": "Ribbon modulus",
+      "status": "pass",
+      "detail": "Recovered scalar coefficient gives modulus1/4 at t=1, not the separate 2^−s target1/2."
+    },
+    {
+      "id": "Y25-07-015",
+      "name": "Finite Weyl relation",
+      "status": "pass",
+      "detail": "ZX=−XZ at N=2 and X²=I; finite additive CCR impossible by trace proof."
+    },
+    {
+      "id": "Y25-07-016",
+      "name": "E8 root count and Delta coefficients",
+      "status": "pass",
+      "detail": "Independent finite product expansion and coordinate root count."
+    },
+    {
+      "id": "Y25-07-017",
+      "name": "Finite stuffle identity",
+      "status": "pass",
+      "detail": "N=2 identity in exact rationals; all-orders limit has an absolute-convergence proof."
+    },
+    {
+      "id": "Y25-07-018",
+      "name": "Two-point distance norm",
+      "status": "pass",
+      "detail": "At m=2 and coordinate difference1/2, the commutator singular values are exactly1."
+    },
+    {
+      "id": "Y25-07-019",
+      "name": "sl2 character decomposition",
+      "status": "pass",
+      "detail": "χ2χ1=χ3+χ1 with exact Laurent multiplicities."
+    },
+    {
+      "id": "Y25-07-020",
+      "name": "Ternary local obstruction",
+      "status": "pass",
+      "detail": "All 343 mod7 triples and 343 integer square-completion samples checked. Descent proof supplies infinite nonrepresentation family."
+    },
+    {
+      "id": "Y25-07-021",
+      "name": "Cyclic decimal and corrected fractions",
+      "status": "pass",
+      "detail": "Exact period and both rational corrections."
+    },
+    {
+      "id": "Y25-07-022",
+      "name": "Ray-class arithmetic ingredients",
+      "status": "pass",
+      "detail": "Minkowski bound, norm obstructions, norm−6 relation and residue-unit surjection; class-group proof is stated in full."
+    },
+    {
+      "id": "Y25-07-023",
+      "name": "Biquadratic discriminant audit",
+      "status": "pass",
+      "detail": "Hilbert candidate relative discriminant norm1 versus K(i) norm4; real-place distinction in proof."
+    },
+    {
+      "id": "Y25-07-024",
+      "name": "Quartic and rational ray audit",
+      "status": "pass",
+      "detail": "φ136=64 and irreducible quadratic factors mod17; degree/normal-closure proof in text."
+    },
+    {
+      "id": "Y25-07-025",
+      "name": "Quadratic series recurrence",
+      "status": "pass",
+      "detail": "Denominator multiplication verifies exact rational generating function."
+    },
+    {
+      "id": "Y25-07-026",
+      "name": "Shadow weight and local differential coefficient",
+      "status": "pass",
+      "detail": "ξ3/2 target weight1/2; local y^−1/2 coefficient−1/2. Domain divergence proved by term growth."
+    },
+    {
+      "id": "Y25-07-027",
+      "name": "A2 and D4 root counts",
+      "status": "pass",
+      "detail": "Root enumeration and D4 Schur-complement determinant."
+    },
+    {
+      "id": "Y25-07-028",
+      "name": "Density residuals and interpolation ambiguity",
+      "status": "pass",
+      "detail": "Residuals reject close fit; vanishing cubic demonstrates nonunique beta interpolation."
+    },
+    {
+      "id": "Y25-07-029",
+      "name": "Quartic irreducibility obstructions",
+      "status": "pass",
+      "detail": "No rational roots; the only possible monic quadratic constant patterns contradict cubic/linear coefficients."
+    },
+    {
+      "id": "Y25-07-030",
+      "name": "Empty two-CNF complex",
+      "status": "pass",
+      "detail": "Four-cycle avoidance complex has β1=1, refuting universal contractibility."
+    },
+    {
+      "id": "Y25-07-031",
+      "name": "Inclusion can kill homology",
+      "status": "pass",
+      "detail": "Triangle boundary H1 has dimension1; filling adds rank-one boundary, making target H1 zero."
+    },
+    {
+      "id": "Y25-07-032",
+      "name": "Transport curvatures",
+      "status": "pass",
+      "detail": "K2 transport cost1; K3 shared half-mass gives cost1/2, with lower bound proved in text."
+    },
+    {
+      "id": "Y25-07-033",
+      "name": "Bounded union-closed audit",
+      "status": "pass",
+      "detail": "All 256 families on three labels examined; all nontrivial union-closed families satisfy the half-frequency assertion. This is bounded evidence only."
+    },
+    {
+      "id": "Y25-07-034",
+      "name": "Bernoulli exact coefficient",
+      "status": "pass",
+      "detail": "Bernoulli recurrence executed exactly through degree12."
+    },
+    {
+      "id": "Y25-07-035",
+      "name": "Mackey finite character",
+      "status": "pass",
+      "detail": "Three-coset action has one fixed coset under the transposition; orbit splitting and stabilizers proved explicitly."
+    }
+  ],
+  "scope": "Finite examples, exact algebra and bounded enumerations. General arithmetic/geometric theorems retain their stated proof and source scope."
+}

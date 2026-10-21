@@ -1,0 +1,173 @@
+{
+  "scope": "Finite arithmetic/model certificates; external structural theorems and unrecovered claims remain explicitly bounded in the entries.",
+  "checks": [
+    {
+      "id": "Y25-04-001",
+      "name": "Cyclotomic units and automorphism orders",
+      "status": "passed",
+      "detail": "{'units': 384, 'maximum_order': 12, 'real_degree': 192, 'order_distribution': {1: 1, 2: 31, 3: 2, 4: 96, 6: 62, 12: 192}}"
+    },
+    {
+      "id": "Y25-04-002",
+      "name": "Finite determinant example",
+      "status": "passed",
+      "detail": "Degree2 polynomial example exact; impossible finite384 identity proved by infinitely manyxi zeros."
+    },
+    {
+      "id": "Y25-04-003",
+      "name": "Full sine orthogonality and truncation failure",
+      "status": "passed",
+      "detail": "{'all_integer_parity_orthogonality_pairs': 703921, 'full_first_row_norm_squared': 1.0, 'truncated_first_row_norm_squared': 0.41597100105461765, 'm4_S_square': 'I3'}"
+    },
+    {
+      "id": "Y25-04-004",
+      "name": "Dimension-mass contradiction and entropy inputs",
+      "status": "passed",
+      "detail": "{'D384_numerical': 12490309.42498878, 'rigorous_elementary_lower_bound': 1960, 'm4_collision_probability': '3/8'}"
+    },
+    {
+      "id": "Y25-04-005",
+      "name": "Integer fusion-ring recurrence",
+      "status": "passed",
+      "detail": "Five-label exact fusionN1²=I+N2,N2²=I+N2+N4,N4²=I."
+    },
+    {
+      "id": "Y25-04-006",
+      "name": "Müger-center finite bicharacter",
+      "status": "passed",
+      "detail": "Allbicharacter rows orthogonal; transparent subgroup only00."
+    },
+    {
+      "id": "Y25-04-007",
+      "name": "Z2 quantum-double labels",
+      "status": "passed",
+      "detail": "Fourflux/charge labels, twists1,1,1,−1; dimension4."
+    },
+    {
+      "id": "Y25-04-008",
+      "name": "Lagrangian algebra multiplication certificate",
+      "status": "passed",
+      "detail": "Frobenius pairingdiag1,1; exact separable idempotents; Lagrangian dimension2²=4."
+    },
+    {
+      "id": "Y25-04-009",
+      "name": "Exact Brieskorn Jacobian bases",
+      "status": "passed",
+      "detail": "{'Jacobian_basis_dimensions': [44, 33560], 'scope': 'Milnor topological identification cited separately'}"
+    },
+    {
+      "id": "Y25-04-010",
+      "name": "Link torsion determinant arithmetic",
+      "status": "passed",
+      "detail": "{'Alexander_minus1_values': ['5', '41'], 'H1_groups': ['Z/5', 'Z/41'], 'scope': 'branched-cover theorem stated external input'}"
+    },
+    {
+      "id": "Y25-04-011",
+      "name": "Top-form quotient exactness counterexample",
+      "status": "passed",
+      "detail": "dxdy=d(xdy); xdxdy=d(x²dy/2); adding all exacttopforms kills bothJacobianbasis elements."
+    },
+    {
+      "id": "Y25-04-012",
+      "name": "Logarithmic-derivative example",
+      "status": "passed",
+      "detail": "Atpoints1,2 valueslog2,log2/3; Omegas2,2^(1/3)."
+    },
+    {
+      "id": "Y25-04-013",
+      "name": "Certified golden dilogarithm series",
+      "status": "passed",
+      "detail": "{'Li2_inverse_phi': '0.7553956195317414693865200287560823535149635906119404683272767983419038', 'Li2_inverse_phi_squared': '0.4264088061620961820920369954268773156711736104334205042789220630582079', 'positive_series_tail_bound': '6.383626595397051458298144994087949841194086417986919132832734322865665E-47', 'scope': '70-digitDecimal; Machinpi and exactfunctional formulas'}"
+    },
+    {
+      "id": "Y25-04-014",
+      "name": "Hyperbolic volume exact formula",
+      "status": "passed",
+      "detail": "{'small_radius_ratio': 8.000480013254442, 'R3_ratio': 415.73799533820153}"
+    },
+    {
+      "id": "Y25-04-015",
+      "name": "Canceled atom pairing normalization",
+      "status": "passed",
+      "detail": "Twoequal-volumeatomhalves givepairing1,BMO1; Lipschitzlocalbound2LR0."
+    },
+    {
+      "id": "Y25-04-016",
+      "name": "Hyperbolic Poincaré coefficient",
+      "status": "passed",
+      "detail": "Completed-square lower-bound coefficient exact in dimensions2–10; metric scale stated."
+    },
+    {
+      "id": "Y25-04-017",
+      "name": "Harper matrix and magnetic translation",
+      "status": "passed",
+      "detail": "Half-fluxH²=8I; rationalclock/shiftrelation checkedq5,p2."
+    },
+    {
+      "id": "Y25-04-018",
+      "name": "Complete Diophantine residue classification",
+      "status": "passed",
+      "detail": "Exactinverse41mod840 and5mod12; all840labelresiduespermuted; gapexistence notclaimed."
+    },
+    {
+      "id": "Y25-04-019",
+      "name": "Overlapping Cantor contraction",
+      "status": "passed",
+      "detail": "Twoimagesoverlap andcover[0,1]; similarityexponent>1,actualdimension1."
+    },
+    {
+      "id": "Y25-04-020",
+      "name": "Golden update multipliers",
+      "status": "passed",
+      "detail": "λ1multiplierphi>1; λ−1multiplierr²<1; exactclassification inproof."
+    },
+    {
+      "id": "Y25-04-021",
+      "name": "Finite coherence inequality examples",
+      "status": "passed",
+      "detail": "Smoothedcoherence0 versus1 despiteallpointwisenonzeroratios1."
+    },
+    {
+      "id": "Y25-04-022",
+      "name": "Homotopy pushout cycle count",
+      "status": "passed",
+      "detail": "Doublemappingcylinder has2edges,2vertices,beta1=1; ordinarypushoutpointbeta1=0."
+    },
+    {
+      "id": "Y25-04-023",
+      "name": "Formal-group height examples",
+      "status": "passed",
+      "detail": "Binomialp-seriesreduces tox^p forfourprimes; additivep-series0."
+    },
+    {
+      "id": "Y25-04-024",
+      "name": "Dimension rank and invariant test",
+      "status": "passed",
+      "detail": "Dimensionmatrixrank3; Plancklength exponents produceexactdimensionL."
+    },
+    {
+      "id": "Y25-04-025",
+      "name": "Doubled-frequency observable",
+      "status": "passed",
+      "detail": "Exact2-levelHeisenbergformula numericallyevaluatedwithsigncheck."
+    },
+    {
+      "id": "Y25-04-026",
+      "name": "Canonical Bogoliubov coefficients",
+      "status": "passed",
+      "detail": "Commutator1 andvacuumoccupation9/16 atrlog2."
+    },
+    {
+      "id": "Y25-04-027",
+      "name": "Parametric oscillator monodromy",
+      "status": "passed",
+      "detail": "Exactmonodromydiag−1/2,−2,det1; growthrate4log2/(3pi)."
+    },
+    {
+      "id": "Y25-04-028",
+      "name": "Exact E8 root enumeration",
+      "status": "passed",
+      "detail": "{'distinct_roots': 240, 'rank': 8, 'squared_length': 2, 'Lie_dimension_with_root_space_theorem': 248}"
+    }
+  ]
+}

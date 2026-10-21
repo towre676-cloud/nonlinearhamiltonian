@@ -1,0 +1,66 @@
+{
+  "status": "passed",
+  "checks": [
+    {
+      "id": "Y26-10-901",
+      "name": "All126 exact raw-state lattice certificates",
+      "status": "passed",
+      "scope": "All states moduloM, proved by integer-lattice membership, determinant equality and exact dual bounds; no enumeration of2^107states is required.",
+      "details": {
+        "patterns": 126,
+        "maximum_dual_bound_exact": "59762387137465627635627395045544/162259276829213363391578010288127",
+        "uniform_strict_bound": "3/8",
+        "decoder_fixture_states": [
+          0,
+          1,
+          1234567890123456789,
+          54086425609737787797192670096042,
+          162259276829213363391578010288126
+        ],
+        "decoder_pattern_fixtures": 630
+      }
+    },
+    {
+      "id": "Y26-10-902",
+      "name": "Exact raw-output decoder and error correction fixtures",
+      "status": "passed",
+      "scope": "The distance and length-optimality statements have a separate all-state proof. These are exact replay examples of the certified decoder; no accepted-output theorem is checked.",
+      "details": {
+        "state": 1234567890123456789,
+        "raw9": [
+          32080149,
+          6472916,
+          4155101,
+          36023302,
+          22668381,
+          31496267,
+          4775970,
+          42143025,
+          44446764
+        ],
+        "one_error7": [
+          32080149,
+          6472916,
+          4167446,
+          36023302,
+          22668381,
+          31496267,
+          4775970
+        ],
+        "two_errors9": [
+          32080149,
+          6527237,
+          4155101,
+          36023302,
+          22668381,
+          31496267,
+          4775970,
+          42241790,
+          44446764
+        ],
+        "decoded": 1234567890123456789,
+        "cardinality_inequality": "(2^26)^4 <2^107\u22121\u2264(2^26)^5"
+      }
+    }
+  ]
+}

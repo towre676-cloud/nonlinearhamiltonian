@@ -1,0 +1,243 @@
+from pathlib import Path
+import json
+
+OUT=Path(__file__).resolve().parent
+entries=[]
+def E(id,title,status,summary,definitions,statement,proof,setup,calculation,conclusion,limits,extension,refs=()):
+    entries.append(dict(id=id,title=title,status=status,summary=summary,definitions=definitions,result=dict(name=title,statement=statement,proof=proof),example=dict(setup=setup,calculation=calculation,conclusion=conclusion),limits=limits,extension=extension,references=[dict(label=a,url=b) for a,b in refs]))
+
+E('M038','A finite Peter–Weyl calculation with an exact truncation error','Classical framework with worked cases proved here',
+ 'The useful question is which observables are retained by a representation cutoff. An expansion becomes operational once the group, normalized Haar measure and error norm are fixed. Both the circle and a noncommutative compact group admit short examples with an exactly known discarded component.',
+ ['On U(1), write z=eⁱθ and use normalized measure dθ/(2π). The irreducible characters are zⁿ, n∈Z.', 'On SU(2), conjugacy classes have eigenvalues eⁱθ,e⁻ⁱθ, θ∈[0,π]. For class functions, normalized Haar integration is (2/π)∫₀^π f(θ)sin²θ dθ.'],
+ 'For f(θ)=3+2cosθ−sin2θ on U(1), projection to frequencies |n|≤1 has squared L² error 1/2. On SU(2), the square of the defining character decomposes as χ₁/₂²=χ₀+χ₁, and retaining only χ₀ has squared error 1.',
+ 'Orthogonality follows from integrating eⁱ(n−m)θ: the integral is zero unless n=m. Here the Fourier coefficients are c₀=3, c₁=c₋₁=1, c₂=i/2 and c₋₂=−i/2. The discarded orthogonal terms therefore contribute |i/2|²+|−i/2|²=1/2. For SU(2), χ₁/₂=2cosθ and χ₁=4cos²θ−1. Direct integration with the stated Haar density gives ∫χ₁=0 and ∫χ₁²=1, proving both the decomposition and the error claim without appealing to numerical fitting.',
+ 'Take the SU(2) class observable f(U)=(Tr U)². This is a function of the group element, not merely an arbitrary two-by-two mixing matrix.',
+ 'The tensor product of two defining representations has characters χ₁/₂². Its invariant antisymmetric line gives χ₀=1; its symmetric three-dimensional summand gives χ₁. Thus f=1+χ₁, ∫f=1, ∫|f|²=2. Projection to constants has residual χ₁ with norm one, while retaining the spin-one character makes the residual exactly zero.',
+ 'A small representation cutoff can have a completely explicit observable loss. The calculation also shows why the group measure and the choice of function matter.',
+ 'This proves finite examples, not the full Peter–Weyl completeness theorem or a universal truncation rate. General noncentral functions require matrix coefficients rather than characters alone.',
+ 'For a chosen smoothness norm on a compact group, derive a representation-tail estimate using eigenvalues of its Casimir operator; compare that estimate with the exact finite examples.',
+ [('Eckhard Meinrenken Lie groups and Lie algebras compact-group representation background','https://www.math.toronto.edu/mein/teaching/LectureNotes/lie.pdf')])
+
+E('M039','Rephasing invariance and a sharp three-flavor CP bound','Classical formula with an explicit sharpness derivation',
+ 'Complex entries are not themselves physical phase invariants: row and column conventions can change them. A four-entry product cancels those conventions, and in three dimensions its imaginary part admits a sharp elementary bound.',
+ ['Let U be a three-by-three unitary mixing matrix. Row and column rephasings act by Uαi↦eⁱrα Uαi eⁱci.', 'For distinct rows and columns, define Jαβij=Im(Uαi Uβj U*αj U*βi). The sign depends on the ordered indices.'],
+ 'Each Jαβij is invariant under these rephasings. In the usual three-angle one-Dirac-phase parameterization, |J|≤1/(6√3), with equality attained by the normalized three-by-three discrete Fourier matrix.',
+ 'The phases in the four factors cancel pairwise: rα+rβ−rα−rβ and ci+cj−cj−ci both vanish. In the standard parameterization, J=c₁₂s₁₂c₂₃s₂₃c₁₃²s₁₃sinδ. The first two sine-cosine pairs have absolute value at most 1/2. With t=s₁₃∈[0,1], the remaining factor t(1−t²) has derivative 1−3t² and maximum 2/(3√3). Multiplication gives the bound. The Fourier example below attains it, so the bound is sharp rather than merely convenient.',
+ 'Set ω=exp(2πi/3) and Uab=ωᵃᵇ/√3 for a,b=0,1,2.',
+ 'Geometric-series cancellation verifies U†U=I. The ordered quartet U₀₀U₁₁U*₀₁U*₁₀ equals ω/9, whose imaginary part is √3/18=1/(6√3). Complex conjugation changes its sign. In vacuum, an oscillation amplitude can be written Aαβ=Σi Uβi U*αi e⁻ⁱφi. Squaring shows directly that P(U)−P(U*)=4Σi>j Im(Zij)sin(φi−φj), where Zij=UβiU*αiU*βjUαj.',
+ 'A nonzero invariant is a mathematically meaningful obstruction to making the relevant matrix real by phase conventions; actual probability asymmetries also require nontrivial propagation phases.',
+ 'The calculation assumes the stated unitary three-flavor framework and says nothing about the experimentally fitted value of δ. Degenerate masses and inaccessible channels can suppress an observable asymmetry despite a formal matrix invariant. Column rephasings here concern oscillation equivalence; a Majorana mass term need not permit the same field rephasings in the full theory.',
+ 'Use the invariant quartets to certify equality or inequivalence of numerically supplied mixing matrices under row and column rephasing, with rigorous tolerances.',
+ [('Particle Data Group neutrino mixing review','https://pdg.lbl.gov/2024/reviews/rpp2024-rev-neutrino-mixing.pdf')])
+
+E('M040','A complete small persistence calculation','Finite homology and barcode computed exactly',
+ 'Topology becomes a calculation only after a space and a filtration are specified. Three vertices provide a minimal example in which components merge, a loop is born and a filling destroys it. Every rank can be checked over the two-element field.',
+ ['Let K₀ contain vertices 0,1,2; add edge 01 at time 1, edge 12 at time 2, edge 20 at time 3 and face 012 at time 4.', 'Use homology over F₂. For a finite chain complex, βk=dim Ck−rank ∂k−rank ∂k₊₁.'],
+ 'Across times 0,1,2,3,4, the pairs (β₀,β₁) are (3,0),(2,0),(1,0),(1,1),(1,0). The persistent barcode is H₀:[0,1),[0,2),[0,∞), and H₁:[3,4).',
+ 'The first two added edges each join different components and increase rank ∂₁ by one, from zero to two. The third edge has boundary equal to the sum of the first two boundaries, so rank ∂₁ stays two while dim C₁ becomes three; one cycle is born. The face boundary is 01+12+20, which is precisely the unique nonzero cycle up to scalar. Its addition raises rank ∂₂ from zero to one and kills H₁. The component survival convention can select any representative among equally old vertices, but the interval multiset does not depend on that tie-breaking.',
+ 'Compare the boundary of a triangle with the filled triangle on the same three vertices.',
+ 'Both spaces have β₀=1. The boundary has C₂=0 and β₁=3−2=1. The filled triangle has one face with nonzero boundary and β₁=3−2−1=0. At time 4, the loop has not shrunk by geometric deformation; it becomes a boundary because the available chain complex changed.',
+ 'A Betti count is an invariant of the constructed space, while a barcode additionally records when a class appears and disappears in the chosen filtration.',
+ 'Different constructions from the same observations can yield different filtrations. Equal Betti numbers do not imply homeomorphism or homotopy equivalence. No universal data-to-topology interpretation is supplied by this example.',
+ 'Perturb edge and face entry times and verify which persistence intervals remain long; then compare this explicit behavior with an appropriate stability theorem.',
+ [('Allen Hatcher Algebraic Topology homology chapters','https://pi.math.cornell.edu/~hatcher/AT/ATchapters.html')])
+
+E('M041','A two-level Berry holonomy with a gauge check','Classical holonomy evaluated explicitly',
+ 'The geometric object is an eigenline over a parameter loop. Choosing an eigenvector gives a connection formula, but the final phase must survive a change of that choice. A latitude on the Bloch sphere makes the distinction fully visible.',
+ ['Take H=n·σ with n=(sinθ cosφ,sinθ sinφ,cosθ), fixed θ∈(0,π), and φ from 0 to 2π.', 'Choose the normalized positive-energy eigenvector v(φ)=(cos(θ/2),eⁱφ sin(θ/2)). Define Aφ=i⟨v,∂φv⟩ and γ=∮Aφdφ modulo 2π.'],
+ 'The positive eigenline has γ=−π(1−cosθ). Under a periodic eigenvector gauge change, exp(iγ) is unchanged. At θ=π/3 the holonomy is −i; at the equator it is −1.',
+ 'Differentiation gives ⟨v,∂φv⟩=i sin²(θ/2), hence Aφ=−sin²(θ/2). Integrating yields −2πsin²(θ/2)=−π(1−cosθ). If v′=eⁱχ(φ)v, then A′=A−χ′. A single-valued gauge around the loop has χ(2π)−χ(0) an integer multiple of 2π, so exp(iγ′)=exp(iγ). This is a direct calculation of holonomy, independently of any physical interpretation of an adiabatic protocol.',
+ 'Sample the latitude θ=π/3 at N equally spaced phases, with the final point identified with the first.',
+ 'Form the normalized cyclic product Πk⟨v(φk₊₁),v(φk)⟩/|⟨v(φk₊₁),v(φk)⟩|. Its phase tends to γ as N grows; reversing the overlap order conjugates the answer. Multiplying each sampled eigenvector by an arbitrary phase leaves the closed product unchanged because consecutive phase factors telescope. The verification program checks both convergence and exact cancellation of sampled gauge factors.',
+ 'The loop phase is meaningful even though individual eigenvector phases and connection values are convention dependent.',
+ 'The Hamiltonian stays gapped on this unit sphere. A loop crossing a degeneracy does not admit this isolated-eigenline calculation, and adiabatic dynamical error requires a separate gap-and-speed estimate.',
+ 'Replace the eigenline by a degenerate eigenspace and study the resulting matrix-valued parallel transport; retain projectors and overlap matrices rather than scalar phases.',
+ [('Michael Berry Quantal phase factors accompanying adiabatic changes','https://doi.org/10.1098/rspa.1984.0023')])
+
+E('M042','Crossing symmetry and an exactly opened spectral gap','Two-by-two spectral theorem proved directly',
+ 'A level crossing and an avoided crossing can be separated by a single parameter that either preserves or couples two invariant sectors. This gives an exact test of what a proposed symmetry protects.',
+ ['Let H(t,ε)=[[t,ε],[ε,−t]] with real t and ε.', 'Write r=√(t²+ε²). For r>0, set P±=(I±H/r)/2.'],
+ 'The eigenvalues are ±r, the gap is 2r, and its minimum over t is 2|ε|. At ε=0, the diagonal sectors are uncoupled and the levels meet at t=0; ε≠0 removes that crossing.',
+ 'Direct multiplication gives H²=(t²+ε²)I. Therefore its minimal polynomial divides λ²−r² and, for r>0, P±²=P±, P+P−=0, P++P−=I and HP±=±rP±. The spectral gap formula follows. For ε=0, H commutes with σz, so each coordinate axis is an invariant symmetry sector. The εσx perturbation does not commute with σz and permits those sectors to mix. Thus protection is a statement about an operator relation, not a verbal appeal to symmetry.',
+ 'Set ε=1/5 and let t run through −1,0,1.',
+ 'The gaps are 2√26/5, 2/5, 2√26/5. The trace remains zero and the determinant is −(t²+1/25), so an eigenvalue cannot pass through zero at any real t. At ε=0, the determinant at t=0 vanishes and both eigenvalues coincide. The projector formulas explicitly cease to apply at that degenerate point because r=0.',
+ 'A perturbation that changes a commutation relation can open a gap whose size is computed without approximation.',
+ 'This static spectral calculation does not determine transition probabilities during a time sweep. Those depend on a time law, an initial state and the dynamical equation; replacing the minimum gap by a guessed transition rate is unjustified.',
+ 'For a larger Hermitian matrix with a known symmetry decomposition, classify which perturbation blocks couple crossing sectors and bound the resulting gaps.',
+ [('Berry phase and degeneracy background','https://doi.org/10.1098/rspa.1984.0023')])
+
+E('M043','A Moore spectrum as a precise chromatic example','Elementary cofiber consequence with general theory bounded explicitly',
+ 'Chromatic height refers to detection by homology theories at a fixed prime. It can already distinguish the sphere from a simple torsion object. This has no mathematical dependence on optical colors or on periodic measurements in an unrelated model.',
+ ['Fix a prime p. Let M(p) be the cofiber of multiplication by p on the sphere spectrum: S→S→M(p).', 'Use K(0)=HQ. For n≥1, Morava K-theory has coefficient graded field K(n)*=F_p[v_n,v_n⁻¹], with |v_n|=2(pⁿ−1). A finite p-local spectrum has type t when K(n)* vanishes for n<t and is nonzero at n=t.'],
+ 'The p-local sphere has type zero, while M(p) has type one. For each n≥1, the long exact sequence gives a short exact sequence 0→K(n)_q→K(n)_qM(p)→K(n)_(q−1)→0.',
+ 'For rational homology, multiplication by p is invertible, so the cofiber has zero rational homology. For K(n), n≥1, multiplication by p is zero because the coefficients have characteristic p. The cofiber long exact sequence therefore has zero connecting multiplication maps on both sides, yielding the displayed short exact sequence. It in particular contains a nonzero injected copy of K(n)*. Thus the first nonvanishing height is one. As a graded vector space over the coefficient graded field, the sequence can be split, though there is no need to claim a canonical splitting.',
+ 'Compare S, the cofiber of the identity map on S, and M(p).',
+ 'The identity cofiber is contractible and is detected by none of these theories. The sphere has nonzero rational homology and hence height zero. M(p) loses rational information but retains positive-height information. This is an actual consequence of the maps defining the objects, rather than a pattern assigned from a plot.',
+ 'The example illustrates why a prime, a spectrum and a chosen detection theory must precede a claim about chromatic periodicity.',
+ 'No computation of the stable homotopy groups of spheres or proof of the periodicity theorem is supplied here. Existence and powers of self-maps at a given height are deeper statements and are not inferred from the coefficient period alone.',
+ 'Construct a specified finite type-two example from a known self-map and verify its K(0) and K(1) acyclicity using the relevant cofiber sequences and hypotheses.',
+ [('Jacob Lurie Chromatic Homotopy Theory course','https://people.math.harvard.edu/~lurie/252x.html')])
+
+E('M044','A conservative positive diffusion stencil with a sharp local condition','Discrete conservation positivity and energy estimate proved',
+ 'A numerical update should preserve the quantities its PDE is meant to preserve. On a periodic grid, the standard heat stencil admits exact mass, positivity and squared-norm statements before any simulation is run.',
+ ['Let N≥3 periodic grid values be indexed modulo N. Set F_r(x)i=r x_(i−1)+(1−2r)x_i+r x_(i+1).', 'For heat diffusion, r=DΔt/Δx², D≥0. The grid mass is Σi x_i; the squared discrete norm is Σi x_i².'],
+ 'For every r, the update preserves mass. It maps every nonnegative grid to a nonnegative grid exactly when 0≤r≤1/2. In that range it also contracts the squared norm.',
+ 'Summing the update cyclically makes each old value appear with coefficient r+(1−2r)+r=1, proving mass conservation. Nonnegative coefficients prove positivity. Conversely, a single nonzero grid basis vector detects a negative off-diagonal coefficient when r<0 or a negative central coefficient when r>1/2. For 0≤r≤1/2, convexity of z² gives F_r(x)i²≤r x_(i−1)²+(1−2r)x_i²+r x_(i+1)². Summing proves contraction. This proof is finite and exact, requiring no floating-point time stepping.',
+ 'Take N=5, r=1/4 and initial grid (1,0,0,0,0).',
+ 'One step gives (1/2,1/4,0,0,1/4), preserving mass one and reducing the squared norm from one to 3/8. At r=3/4 the same initial condition produces a central value −1/2, immediately disproving positivity. Fourier modes e^(2πiki/N) have amplification factors 1−4r sin²(πk/N), providing a second independent stability calculation.',
+ 'The update is a well-defined averaging operator in the positive range. A nonlinear reaction term must be analyzed separately rather than multiplied into the diffusion formula without checking these properties.',
+ 'For odd N the sharp spectral ℓ² stability threshold can differ from the positivity threshold, so those two notions should not be conflated. Boundary conditions, variable diffusivity and reactions change the proof obligations.',
+ 'Write variable-diffusivity terms as edge flux differences so mass conservation still telescopes, then derive nodewise time-step restrictions for positivity.',
+ [])
+
+E('M045','Reflection equivariance as an operator identity','Exact symmetry criterion proved for a stencil family',
+ 'Symbols for identity and reflection are meaningful only after their action on states has been defined. Commutation makes the claimed symmetry testable and exposes the effect of asymmetric coefficients or boundaries.',
+ ['On a periodic N-grid, define (Rx)i=x_(−i mod N), so R²=I. Let S be the cyclic shift.', 'Consider F=aS⁻¹+bI+cS, and a pointwise reaction G(x)i=g(x_i). Reflection equivariance means F(Rx)=RF(x) for every x.'],
+ 'For N≥3, the three-point linear stencil commutes with reflection exactly when a=c. Any pointwise reaction using the same scalar function at every node commutes with reflection and every grid permutation.',
+ 'The identity RSR=S⁻¹ follows by applying both sides to an indexed coordinate. Conjugation gives RFR=aS+bI+cS⁻¹. For N≥3 the two shifts are distinct and linearly independent from each other in this coefficient comparison, so RFR=F exactly when a=c. For the nonlinear term, G(Rx)i=g(x_(−i))=(RG(x))i, proving equivariance directly. Consequently the composition of reflection-equivariant diffusion and reaction updates remains equivariant, whereas an asymmetric advection component generally does not.',
+ 'Use N=5 and compare F=(1/4)S⁻¹+(1/2)I+(1/4)S with A=(1/3)S⁻¹+(2/3)S.',
+ 'On the basis vector at node zero, the symmetric stencil produces equal mass at the two neighboring nodes, so reflection leaves the output unchanged. The asymmetric stencil produces unequal neighboring weights and its reflected output differs. This single vector is a complete counterexample to the universal commutation claim. A spatially varying reaction g_i can fail similarly even when each g_i is smooth.',
+ 'Equivariance is a property of a typed update and group action. Writing an identity morphism or reflection symbol as an unexplained multiplicative factor does not supply it.',
+ 'The periodic reflection used here is not automatically a symmetry of a grid with unequal endpoint conditions or asymmetric geometry. A symmetry of equations also need not be a symmetry of a particular initial condition.',
+ 'Compute the commutant of a chosen finite symmetry group and parameterize all linear updates that preserve it; then impose positivity and conservation as additional linear constraints.',
+ [])
+
+E('M046','Affine coordinate changes and time evolution are different operations','Composition and transformed velocity derived',
+ 'An affine transformation changes a description of points; an evolution law describes a path. Their interaction is simple for constant frames and adds extra terms for moving frames. Mixing these roles can create a fictitious physical conclusion.',
+ ['An affine map is T(x)=Mx+b. It is a coordinate isomorphism when M is invertible.', 'A path x(t) has velocity ẋ(t). A time-dependent frame is y(t)=M(t)x(t)+b(t).'],
+ 'Affine composition satisfies (M₂,b₂)∘(M₁,b₁)=(M₂M₁,M₂b₁+b₂). Under a moving frame, ẏ=Mẋ+Ṁx+ḃ, and ÿ=Mẍ+2Ṁẋ+M̈x+b̈.',
+ 'Substitute x into the second affine map and collect terms to obtain the composition law. Differentiate the frame relation using the product rule once and twice. The Ṁ and M̈ terms vanish only for a fixed linear frame; ḃ and b̈ vanish only for a fixed translation. Thus even a stationary world point may have nonzero coordinate velocity in a rotating or translating frame. This is a change in the description of motion, not a newly derived external force.',
+ 'Let R be rotation by 90 degrees in the plane and T translation by (1,0). Also take a free path x(t)=x₀+vt.',
+ 'RT sends the origin to (0,1), whereas TR sends it to (1,0), exhibiting noncommutativity. In a constant affine frame, the free path becomes y(t)=Mx₀+b+(Mv)t, still affine in time. For a rotating frame M(t)=R(ωt), a stationary x=(1,0) is described by y=(cosωt,sinωt), with acceleration −ω²y. The derivative terms account for that coordinate acceleration exactly.',
+ 'The same geometric transformation may be used in a dynamical model, but its time dependence and reference-frame meaning must be stated.',
+ 'An arbitrary invertible linear map need not preserve Euclidean lengths or kinetic-energy expressions. Those require transforming the metric as well. Singular affine maps are projections rather than reversible coordinate changes.',
+ 'Carry a covariance or noise metric through the same coordinate change and verify which estimation errors are invariant; this prevents apparent gains caused solely by rescaling.',
+ [])
+
+E('M047','Mutual information detects dependence rather than a causal channel','Finite identities and data processing proved',
+ 'A dependence measure needs a joint distribution. Its nonzero value does not distinguish direct interaction from a shared source, while its change under a specified noisy channel can be calculated exactly.',
+ ['For finite variables, I(X;Y)=Σx,y pxy log₂(pxy/(pxpy)); terms with zero mass contribute zero.', 'Let h₂(ε)=−εlog₂ε−(1−ε)log₂(1−ε). A binary symmetric channel flips an input bit independently with probability ε.'],
+ 'For a fair bit X and Y=X⊕E with E independent Bernoulli(ε), I(X;Y)=1−h₂(ε). For a Markov chain X→Y→Z, I(X;Z)≤I(X;Y). A common cause can give positive mutual information with no direct arrow between X and Y.',
+ 'The channel output is fair, so H(Y)=1, while conditioning on X leaves exactly the flip uncertainty H(Y|X)=h₂(ε). The entropy identity yields the formula. For data processing, expand the same quantity two ways: I(X;Y,Z)=I(X;Y)+I(X;Z|Y)=I(X;Z)+I(X;Y|Z). The Markov property makes the first conditional term zero and nonnegativity of conditional mutual information makes the second nonnegative.',
+ 'Cascade two independent binary symmetric channels with flip probability 0.1, and compare with X=Z, Y=Z for a fair common cause Z.',
+ 'Two flips cancel, so the cascade error is 2ε(1−ε)=0.18. Thus information drops from 1−h₂(0.1)≈0.531004 bits to 1−h₂(0.18)≈0.319923 bits. In the common-cause example X and Y coincide, giving I=1 bit, although no direct causal channel X→Y has been specified. The identical joint table can arise from different causal descriptions.',
+ 'Information is a precisely calculable statistical quantity; assigning a mechanism requires additional assumptions or interventions.',
+ 'Plug-in estimates from finite samples are biased, and continuous differential entropies need separate treatment. The examples do not establish that a positive empirical estimate is significant or causally interpretable.',
+ 'Construct a sampling protocol and a null distribution for a chosen estimator, then quantify how much dependence remains after conditioning on measured common causes.',
+ [('Claude Shannon A Mathematical Theory of Communication','https://www.princeton.edu/~wbialek/rome/refs/shannon_48.pdf')])
+
+E('M048','One measurement can miss coherence that another detects','Born-effect bounds and a two-observable example proved',
+ 'The same numerical overlap can represent different things depending on normalization and the measurement rule. An explicit qubit calculation shows why observable choice is also an identifiability choice.',
+ ['A density matrix satisfies ρ≥0 and Trρ=1. A binary measurement effect satisfies 0≤E≤I, with probability p=Tr(ρE).', 'For a normalized pure state ψ and rank-one effect |φ⟩⟨φ| with normalized φ, the probability is |⟨φ,ψ⟩|².'],
+ 'Every valid effect gives 0≤Tr(ρE)≤1. The pure state ψ=(√3/2,1/2) and the mixed state diag(3/4,1/4) have identical probabilities in the coordinate-basis measurement but are separated by the plus-state effect.',
+ 'Diagonalize ρ=Σk wk|vk⟩⟨vk| with wk≥0 and Σwk=1. Then Tr(ρE)=Σwk⟨vk,Evk⟩ is a convex combination of numbers in [0,1], proving the bound. The pure density matrix is [[3/4,√3/4],[√3/4,1/4]], whereas the mixed matrix removes the off-diagonal terms. A diagonal effect only pairs with diagonal entries, so it cannot distinguish these states.',
+ 'Take E₀=diag(1,0) and E₊=(1/2)[[1,1],[1,1]].',
+ 'Both states give p(E₀)=3/4. The pure state gives p(E₊)=|(√3/2+1/2)/√2|²=(2+√3)/4≈0.933013, while the mixed state gives 1/2. The probability gap √3/4 is exactly the contribution from coherence in this basis. If an unnormalized vector is used instead, multiplying it by two multiplies an unnormalized squared overlap by four and can exceed one.',
+ 'A restricted observation panel defines equivalence classes of states. Adding a suitable observable can split those classes even when additional repeated measurements of the original observable cannot.',
+ 'A finite number of samples does not reveal these probabilities exactly. State discrimination, tomography and experimental error require separate statistical analysis; the example supplies the underlying mathematical separation only.',
+ 'For a finite candidate set of density matrices, find the smallest allowed family of effects that separates them with a declared minimum probability gap.',
+ [])
+
+E('M049','An observable timescale that saturates the energy–time bound','Mandelstam–Tamm observable inequality derived',
+ 'A time in an uncertainty relation must be defined operationally. For time-independent observables in a unitarily evolving state, the ratio between standard deviation and expectation-change rate yields a valid timescale. It is different from an arbitrary elapsed duration.',
+ ['Let H and A be self-adjoint on a common suitable domain, with no explicit time dependence in A. Write ΔA²=⟨A²⟩−⟨A⟩² and likewise ΔH.', 'Where d⟨A⟩/dt≠0, define τ_A=ΔA/|d⟨A⟩/dt|.'],
+ 'Under the usual finite-variance and domain assumptions, ΔH τ_A≥ℏ/2. A two-level precession example attains equality wherever the chosen observable has nonzero expectation derivative.',
+ 'The Robertson inequality gives ΔHΔA≥|⟨[H,A]⟩|/2. The Heisenberg expectation equation gives d⟨A⟩/dt=(i/ℏ)⟨[H,A]⟩. Substitute the latter into the former and divide by the nonzero derivative magnitude to obtain the result. No self-adjoint time operator was introduced, and nothing in this derivation permits replacing τ_A by an arbitrary measurement duration.',
+ 'Set H=(ℏω/2)σz, ω>0, initial ψ=(1,1)/√2 and A=σx.',
+ 'Unitary evolution gives ⟨A⟩=cosωt. Since A²=I, ΔA=|sinωt|, while |d⟨A⟩/dt|=ω|sinωt| and ΔH=ℏω/2. Whenever sinωt≠0, τ_A=1/ω and ΔHτ_A=ℏ/2. At the isolated zeros the ratio is 0/0 and is not defined by the formula; its limiting value exists. The state first becomes orthogonal to its initial state at π/ω, a separate timescale with a different constant.',
+ 'The inequality is exact once its time quantity and assumptions are specified. Saturation can be checked by elementary two-by-two dynamics.',
+ 'Unbounded operators require domain care. Open-system evolution, explicitly time-dependent observables or generators, and orthogonalization bounds need distinct statements rather than an unqualified ΔEΔt formula.',
+ 'Derive a bound for the specific state-distinguishability target being used, and compare observable-change time, fidelity speed and orthogonalization time on the same model.',
+ [('Albeverio and Motovilov Quantum speed limits for time evolution of a system subspace','https://arxiv.org/abs/2011.02778')])
+
+E('M050','Modularity from lattice reindexing and a diagnostic zero','Classical Eisenstein construction with explicit coefficient checks',
+ 'A q-series is not modular merely because it is written with q. The transformation law can be proved for an actual lattice sum, while low-order coefficients and forced special values provide useful checks of the implementation.',
+ ['For Imτ>0 define G₄(τ)=Σ(m,n)≠(0,0)(m+nτ)⁻⁴, an absolutely convergent lattice sum.', 'Normalize E₄=G₄/(2ζ(4)). Its Fourier expansion is E₄=1+240Σn≥1σ₃(n)qⁿ, q=exp(2πiτ). Also E₆=1−504Σn≥1σ₅(n)qⁿ.'],
+ 'G₄((aτ+b)/(cτ+d))=(cτ+d)⁴G₄(τ) for matrices in SL₂(Z). E₄ begins 1+240q+2160q²+6720q³+17520q⁴. The weight-six transformation law forces E₆(i)=0.',
+ 'In a term of the transformed lattice sum, m+n(aτ+b)/(cτ+d)=[(md+nb)+(mc+na)τ]/(cτ+d). The integer map (m,n)↦(md+nb,mc+na) is a bijection because its determinant is ad−bc=1. Absolute convergence permits reindexing, proving weight four. The stated Fourier expansion supplies its holomorphic behavior at the cusp; coefficients follow by summing divisor cubes: σ₃(1),…,σ₃(4)=1,9,28,73. For E₆, the substitution τ↦−1/τ fixes i and multiplies its value by i⁶=−1, so its value must vanish.',
+ 'Evaluate a truncated E₆ series at τ=i, where q=e⁻²π is small, and compare with the exact forced zero.',
+ 'The first terms use divisor fifth-power sums. Partial sums approach zero rapidly, and an explicit geometric-polynomial tail bound can certify the residual. The verification program checks these coefficients and the numerical special-value residual. A truncated series agreeing at one point still does not prove its global modularity; the reindexing argument or a theorem supplies that part.',
+ 'Transformation, holomorphy, cusp conditions and coefficients perform different jobs. The lattice construction connects them without treating notation as a theorem.',
+ 'Only the full modular group and these holomorphic even-weight examples are treated. Multiplier systems, congruence subgroups, weakly holomorphic forms and nonholomorphic completions require additional definitions.',
+ 'For a chosen weight and subgroup, compare a computed q-series with a known basis using a proved coefficient bound such as a suitable Sturm bound, with all hypotheses stated.',
+ [('J S Milne Modular Functions and Modular Forms','https://www.jmilne.org/math/CourseNotes/MF.pdf')])
+
+E('M051','A classical abelian Chern–Simons calculation with its global boundary','Small-gauge invariance and a torus action evaluated',
+ 'The Chern–Simons integrand needs a geometric setting before it becomes an action. A globally defined abelian connection one-form on a closed manifold gives a tractable case in which gauge variation and an actual integral can be derived directly.',
+ ['Let M be a closed oriented three-manifold and A a globally defined real one-form representing a connection on a trivial U(1) bundle.', 'Choose S_k(A)=(k/(4π))∫M A∧dA. A small gauge change is A↦A+dχ with χ a globally defined real scalar.'],
+ 'For this setting S_k is invariant under small gauge changes. Its first variation is δS_k=(k/(2π))∫δA∧dA. On the unit-period three-torus, A=a cos(2πz)dx+b sin(2πz)dy has S_k=−kab/2 for orientation dx∧dy∧dz.',
+ 'The gauge variation is (k/(4π))∫dχ∧dA=(k/(4π))∫d(χdA), which vanishes on a closed manifold by Stokes. For the first variation, expand the action to first order. Integration by parts makes the two terms δA∧dA and A∧dδA equal after integration, giving the factor two. For the torus example, differentiating A and expanding the wedge product yields A∧dA=−2πab(cos²(2πz)+sin²(2πz))dx∧dy∧dz; its integral is −2πab.',
+ 'Take a=b=1 and k=2 on the unit three-torus.',
+ 'The classical action is −1. The form is globally periodic and smooth, but dA is nonzero, so it is not a stationary flat connection when k≠0. Varying a or b changes the action continuously. Thus even in this elementary example, quantization of a coupling level must not be confused with a claim that every classical action value is an integer.',
+ 'The calculation supplies an actual well-defined action and variation in a restricted setting, while identifying exactly where stronger global statements would enter.',
+ 'Nontrivial bundles and large gauge transformations require a globally consistent definition beyond a single one-form integral. Level quantization depends on the group, normalization, and often spin data; it is not proved by the small-gauge calculation.',
+ 'Construct the exponentiated action using differential cohomology or a four-dimensional extension for a stated class of bundles, and track the required integrality condition.',
+ [('Edward Witten Quantum field theory and the Jones polynomial','https://doi.org/10.1007/BF01217730')])
+
+E('M052','Explicit genus-one modular data with the anomaly retained','Torus relations and fusion calculation verified; full functor not reconstructed',
+ 'A modular functor contains gluing and labeling data for many surfaces; it cannot be specified by an unexplained arrow from a vector-space category to SL₂(Z) representations. Nevertheless, one important piece can be calculated completely: the torus matrices of the two-label semion theory, corresponding to SU(2) level one.',
+ ['Use labels 0 and 1 and torus space V(T²)=C². Set S=(1/√2)[[1,1],[1,−1]] and T₀=diag(1,i).', 'A projective mapping-class action may acquire scalar phases. Let T=exp(−iπ/12)T₀ to incorporate the standard central-charge-one phase in this example.'],
+ 'S²=I and (ST₀)³=exp(iπ/4)I; after the stated scalar adjustment, (ST)³=I. The Verlinde expression using this S gives fusion 1×1=0. Conditional on the modular-functor gluing dimension formula, the unpunctured genus-g dimension is 2ᵍ.',
+ 'Multiply the displayed two-by-two matrices to check the relations. Replacing T₀ by its scalar multiple changes the cube by e⁻ⁱπ/⁴ and cancels the projective scalar. For the fusion coefficient, N_ab^c=Σx S_ax S_bx conjugate(S_cx)/S_0x. Substitution gives N_11^0=1 and N_11^1=0. The genus dimension formula is Σx(S_0x)^(2−2g); both entries equal 1/√2, yielding 2·(1/√2)^(2−2g)=2ᵍ. This last deduction explicitly uses the gluing theorem rather than deriving all its axioms from S and T.',
+ 'At genus one the dimension is two, at genus two it is four. Compare T₀ with the adjusted T in a relation check.',
+ 'Ignoring the scalar phase produces a nontrivial residue exp(iπ/4) in the cubic relation; it is a meaningful anomaly convention, not a numerical error. The verifier computes both relations and the full two-label fusion table to numerical precision with exact expected integers.',
+ 'A small consistent torus example is available now, but consistency of torus matrices alone is not a construction of a modular functor on all labeled surfaces.',
+ 'No claim is made that arbitrary matrices satisfying these relations extend to a modular tensor category or a full gluing theory. General levels, punctures and anomaly extensions require additional data.',
+ 'Write the genus-zero associativity and braiding data for the chosen two-label theory, verify their coherence relations and then reconstruct gluing maps explicitly.',
+ [('Andersen and Ueno Modular functors are determined by their genus zero data','https://arxiv.org/abs/math/0611087')])
+
+E('M053','Two-oscillator locking with stable and unstable branches','Exact phase reduction solved',
+ 'The missing time derivative in the old formula changes its mathematical type. Once the dynamics is restored, the smallest nontrivial network has a sharp synchronization threshold and an explicit stability classification.',
+ ['Take θ̇₁=ω₁+Ksin(θ₂−θ₁) and θ̇₂=ω₂+Ksin(θ₁−θ₂), with K>0.', 'Let δ=θ₁−θ₂ and φ=(θ₁+θ₂)/2. Phases are taken modulo 2π.'],
+ 'The equations reduce to δ̇=Δω−2Ksinδ and φ̇=(ω₁+ω₂)/2. If |Δω|<2K there are two equilibrium phase differences: the branch with cosδ>0 is asymptotically stable, while the other is unstable. At equality they merge into a nonhyperbolic threshold.',
+ 'Subtract and add the two original equations; the sine terms cancel in the mean and reinforce in the difference. A locked difference requires sinδ=Δω/(2K), which has two solutions per period in the strict interior. The scalar linearization is −2Kcosδ. Negative derivative gives local asymptotic stability and positive derivative gives instability. At |Δω|=2K the derivative vanishes; a Taylor expansion gives a quadratic leading term and shows that the threshold equilibrium is not the same robust exponentially attracting situation as an interior stable branch.',
+ 'Let K=1 and Δω=1.',
+ 'The stable difference is δ*=π/6 and the unstable one is 5π/6, with linearized rates −√3 and +√3. The common locked frequency is (ω₁+ω₂)/2. If instead Δω=3, then δ̇=3−2sinδ≥1, so the unwrapped phase difference increases forever and no phase lock is possible. A common shift θi↦θi+α changes neither difference dynamics nor locking.',
+ 'Synchronization here means a constant relative phase, not necessarily identical phases or a zero absolute frequency.',
+ 'Larger heterogeneous networks need not have the same threshold. Finite-size locking, mean-field coherence transitions and noisy synchronization are different problems. At the boundary the absence of exponential stability must be recorded.',
+ 'For a specified graph and frequency vector, solve the phase-balance equations modulo common shifts and certify the Jacobian on the quotient space.',
+ [('Daffertshofer and van Wijk On the influence of amplitude on connectivity between phases','https://pmc.ncbi.nlm.nih.gov/articles/PMC3139941/')])
+
+E('M054','Invariant gates and an exact identifiability obstruction in conductance ODEs','ODE invariance and a passive reduction proved',
+ 'The mathematical value of a conductance model comes from a typed ODE and an observation protocol. Two simple calculations already separate a well-defined state domain from what a voltage trace can identify.',
+ ['A gate q satisfies q̇=α(V)(1−q)−β(V)q, with nonnegative locally Lipschitz rates.', 'With gates frozen, write C V̇=I−Σj gj(V−Ej), C>0 and gj≥0. Define G=Σgj and B=ΣgjEj.'],
+ 'The gate interval [0,1] is forward invariant. For constant voltage, q approaches α/(α+β) with time constant 1/(α+β), when α+β>0. The frozen-gate voltage depends on conductances only through G and B; three conductances are generally not separately identifiable from that passive protocol.',
+ 'At q=0 the vector field is α≥0, and at q=1 it is −β≤0, so uniqueness prevents crossing outward through either boundary. With constant rates, solve q̇=α−(α+β)q directly. For the voltage reduction, C V̇=I+B−GV gives V∞=(I+B)/G and V(t)=V∞+(V₀−V∞)e⁻ᴳᵗ/ᶜ for G>0. Any conductance perturbation δg satisfying Σδgj=0 and ΣEjδgj=0 leaves the entire voltage trace unchanged when it remains nonnegative.',
+ 'Use reversal values E=(0,1,2), conductances g=(2,2,2), and perturbation δg=(1,−2,1).',
+ 'For every sufficiently small λ, g+λδg stays positive. Both aggregate quantities remain G=6 and B=6, so identical C,I,V₀ produce exactly the same V(t) despite different channel conductances. Independently, α=0.2 and β=0.3 give q∞=0.4 and time constant 2 in the chosen time units. These are direct solutions, not fitted physiological claims.',
+ 'State-domain validity and parameter identifiability are distinct mathematical requirements. A model may satisfy the first while failing the second under a limited observation protocol.',
+ 'The frozen-gate reduction is not a proof that the full nonlinear Hodgkin–Huxley model is unidentifiable under every experiment. Voltage dependence, varied inputs and additional observations can break this obstruction.',
+ 'Specify a voltage-clamp or current-clamp input family, derive sensitivity equations and determine whether the added protocols remove the null directions demonstrated here.',
+ [('Hodgkin and Huxley original quantitative conductance model','https://pmc.ncbi.nlm.nih.gov/articles/PMC1392413/')])
+
+E('M055','Decision thresholds and genuine strategic equilibria','Finite models solved explicitly',
+ 'An uncertain state of nature does not automatically supply a second strategic player. The distinction can be made concrete by solving a one-agent decision and a separately defined coordination game.',
+ ['In a decision model, nature selects state S with prior p and T with prior 1−p. Action B has payoffs M and −c, while action N has zero in either state, with M,c>0.', 'In a two-player coordination game, each chooses B or N. Payoffs are (2,2) at (B,B), (1,1) at (N,N), and (0,0) at mismatched choices.'],
+ 'In the decision problem B is optimal exactly when p≥c/(M+c), with indifference at equality. In the coordination game both (B,B) and (N,N) are Nash equilibria; there is also a mixed equilibrium where each chooses B with probability 1/3.',
+ 'Expected utility of B is pM−(1−p)c=p(M+c)−c, while N gives zero, yielding the threshold. In the game, a player facing B obtains 2 by B and 0 by N; facing N, the player obtains 1 by N and 0 by B. Thus both coordinated profiles resist unilateral deviation. If the opponent chooses B with probability q, the expected payoff from B is 2q and from N is 1−q. Equality gives q=1/3; this mutual indifference verifies the mixed equilibrium.',
+ 'Choose M=9 and c=1 in the decision model.',
+ 'The action threshold is p=0.1. At p=0.05, B has expected payoff −0.5 and N is better; at p=0.2, B has expected payoff 1 and is better. No opponent changes strategy in this calculation. In the game, the mixed-equilibrium payoff is 2/3, lower than either coordinated pure payoff; these outcomes depend on the explicitly chosen bimatrix, not on the decision table.',
+ 'The word equilibrium becomes meaningful only after strategic actors and their payoff dependence are specified.',
+ 'These are illustrative finite-utility mathematical models and do not validate any metaphysical premise or uniquely prescribe behavior. A zero-sum interpretation would require yet another payoff structure.',
+ 'Add explicit private information or a perturbation of payoffs and determine whether the equilibrium set or the decision threshold changes continuously.',
+ [('John Nash Equilibrium points in n-person games','https://pmc.ncbi.nlm.nih.gov/articles/PMC1063129/')])
+
+E('M056','Infinite utilities through controlled finite limits','Limit-order obstruction exhibited',
+ 'Replacing very large payoffs by infinity can destroy the expectation being optimized. Finite truncations reveal when a conclusion is robust and when it depends on the order in which utility scales and probabilities approach their limits.',
+ ['Take two states with probabilities p and 1−p. For truncation M>0, action A has payoffs (M,−M), action B has (−M,M) and action C has (0,0).', 'Expected utilities are UA=M(2p−1), UB=−UA and UC=0. Every finite model is well defined.'],
+ 'At fixed p≠1/2 the better of A and B is determined by the sign of 2p−1. At p=1/2 all three actions tie for every M. But sequences of priors with the same limiting value 1/2 can produce opposite strict preferences that persist as M→∞.',
+ 'Choose p_M=1/2+a/M for fixed a and sufficiently large M so the prior is valid. Then UA=M(2a/M)=2a and UB=−2a. If a>0, A strictly wins; if a<0, B strictly wins; if a=0, all tie. All these priors converge to 1/2. Hence the limiting prior alone does not determine the limiting decision problem. Directly assigning payoffs +∞ and −∞ with both states of positive probability would require subtracting two infinite contributions, leaving an undefined expectation rather than a usable optimization objective.',
+ 'For M=100 take priors 0.51,0.49 and 0.50.',
+ 'The respective expected payoffs of A are 2,−2 and 0, while B has the opposite values. Repeating with M=1000 and priors 0.501,0.499,0.500 gives exactly the same three outcomes. This is an exact algebraic example of a nonuniform limiting operation. The earlier finite wager threshold c/(M+c) instead tends to zero at fixed c, but that conclusion depends on its asymmetric payoff structure.',
+ 'A claim involving infinite utilities needs a declared finite approximation, probability assumptions and a limit argument; otherwise an asserted optimum may not exist as a defined mathematical object.',
+ 'This example shows sensitivity of one family of limits, not that every model with unbounded utility is inconsistent. Extended-valued expectations are legitimate when their positive and negative parts are not simultaneously infinite.',
+ 'Specify a utility function and a class of probability measures under which expectations are well defined, then use uniform-integrability conditions to justify exchanging limits and optimization.',
+ [])
+
+assert [e['id'] for e in entries]==[f'M{i:03}' for i in range(38,57)]
+for e in entries:
+    words=sum(len(str(v).split()) for k,v in e.items() if k!='references')
+    e['word_count_approx']=words
+    assert words>=250,(e['id'],words)
+(OUT/'entries.json').write_text(json.dumps(entries,ensure_ascii=False,indent=2))
+print(json.dumps({'entries':len(entries),'approx_words':sum(e['word_count_approx'] for e in entries)}))

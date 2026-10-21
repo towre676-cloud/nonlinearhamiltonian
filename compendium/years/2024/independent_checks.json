@@ -1,0 +1,58 @@
+{
+  "checks": [
+    {
+      "id": "June quartic",
+      "name": "Independent exact splitting-algebra and automorphism calculation",
+      "status": "passed",
+      "detail": {
+        "field_basis": [
+          "1",
+          "sqrt(2)",
+          "i",
+          "i sqrt(2)"
+        ],
+        "exact_roots": 4,
+        "distinct_sign_automorphisms": 4,
+        "scope": "Algebraic certificate for the explicit example; written text proves the field degree."
+      }
+    },
+    {
+      "id": "December P30",
+      "name": "Independent sparse-polynomial obstruction",
+      "status": "passed",
+      "detail": {
+        "clearing_power": "t^24 with t=sqrt(pi)",
+        "polynomial_degree": 24,
+        "leading_coefficient": "-55258058551342376475736699591118191821521067032535079608372404779149413277716173425636721497",
+        "nonzero_terms": 13,
+        "scope": "The polynomial is nonzero exactly. Its nonvanishing at sqrt(pi) uses the written transcendence argument, not a finite numerical check."
+      }
+    },
+    {
+      "id": "December P30",
+      "name": "Independent rational separation for the entire interval 3<pi<4",
+      "status": "passed",
+      "detail": {
+        "rhs_lower_minus_lhs_upper": "362461272477449523209486582788627624913211782678775507505255600494976757671917425510453851798076/6561",
+        "strict_positive": true,
+        "bound": "0<x<A/9, 0<y<33B/243; RHS>=b-|a|A/9; LHS<y_upper^2+x_upper*y_upper",
+        "scope": "Exact rational inequalities reject the displayed candidate for every parameter pi in (3,4), independently of the polynomial proof."
+      }
+    },
+    {
+      "id": "December Jordan family",
+      "name": "Exact rational eigenvectors and Gram singular-value ratios",
+      "status": "passed",
+      "detail": {
+        "rational_cases": 5,
+        "eigenvalues": "±q where epsilon=q²",
+        "basis_Gram_eigenvalues": [
+          "2",
+          "2 epsilon"
+        ],
+        "condition_number_squared": "1/epsilon",
+        "scope": "Exact finite samples of the symbolic family shown in the illustration."
+      }
+    }
+  ]
+}

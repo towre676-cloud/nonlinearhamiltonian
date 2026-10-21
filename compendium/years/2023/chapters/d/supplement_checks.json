@@ -1,0 +1,2369 @@
+{
+  "id": "S008",
+  "model": {
+    "covariance": "I_6",
+    "channels": [
+      {
+        "id": "A",
+        "cost": 6,
+        "covers": [
+          1,
+          3,
+          5
+        ]
+      },
+      {
+        "id": "B",
+        "cost": 7,
+        "covers": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "id": "C",
+        "cost": 6,
+        "covers": [
+          4
+        ]
+      },
+      {
+        "id": "D",
+        "cost": 6,
+        "covers": [
+          2,
+          3,
+          5,
+          6
+        ]
+      },
+      {
+        "id": "E",
+        "cost": 7,
+        "covers": [
+          2,
+          4,
+          5,
+          6
+        ]
+      },
+      {
+        "id": "F",
+        "cost": 4,
+        "covers": [
+          1,
+          6
+        ]
+      }
+    ],
+    "fault_centers": [
+      [
+        2,
+        2,
+        0,
+        0,
+        0,
+        2
+      ],
+      [
+        0,
+        2,
+        0,
+        2,
+        2,
+        0
+      ],
+      [
+        2,
+        2,
+        0,
+        2,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        2,
+        0,
+        2,
+        0
+      ],
+      [
+        2,
+        0,
+        0,
+        2,
+        2,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        2,
+        2,
+        2
+      ]
+    ],
+    "uncertainty": "For each center, all e∈R^6 with ||e||₂≤1",
+    "target_noncentrality": 1,
+    "exact_energy_threshold": 4,
+    "criterion": "Each declared fault center must retain worst-case noncentrality at least1."
+  },
+  "checks": [
+    {
+      "id": "S008",
+      "name": "All coordinate panels exhaustively enumerated",
+      "status": "pass",
+      "detail": "Every subset of six channels occurs once; empty and full panels are retained."
+    },
+    {
+      "id": "S008",
+      "name": "Unique exact optimum",
+      "status": "pass",
+      "detail": "The unique minimum-cost feasible panel is A,E, cost13; selected energies are (4,4,4,4,8,4)."
+    },
+    {
+      "id": "S008",
+      "name": "Every cheaper panel has a failed target",
+      "status": "pass",
+      "detail": "An exhaustive lower-cost exclusion is included as the complete 64-row certificate."
+    },
+    {
+      "id": "S008",
+      "name": "Optimal energies and robust margins",
+      "status": "pass",
+      "detail": "ε=1 and target τ=1 reduce exact robust feasibility to energy≥(1+√1)²=4. Five optimum targets have worst-case1; target5 has worst-case9−4√2."
+    },
+    {
+      "id": "S008",
+      "name": "No single channel is cost-dominated",
+      "status": "pass",
+      "detail": "No other single channel covers a superset of its declared targets at an equal or lower cost."
+    },
+    {
+      "id": "S008",
+      "name": "Every declared target constraint is necessary",
+      "status": "pass",
+      "detail": "For every target there is a panel satisfying all other targets and failing exactly that target; six witnesses are included."
+    },
+    {
+      "id": "S008",
+      "name": "Every channel appears in an inclusion-minimal feasible panel",
+      "status": "pass",
+      "detail": "The complete inclusion-minimal panel list is included; no channel was added solely to reach the six-channel count."
+    },
+    {
+      "id": "S008",
+      "name": "Declared greedy heuristic replay",
+      "status": "pass",
+      "detail": "The ratio-maximizing heuristic uniquely chooses D (2/3), then F (1/4), then C (1/6), yielding cost16. There are no maximizing ties on this path."
+    },
+    {
+      "id": "S008",
+      "name": "Strict finite greedy gap",
+      "status": "pass",
+      "detail": "Greedy has cost16 versus exact cost13: additive gap3 and ratio16/13 for this constructed declared family only."
+    },
+    {
+      "id": "S008",
+      "name": "Robust lower bounds are attained",
+      "status": "pass",
+      "detail": "Five integer perturbations and one exact quadratic-surd perturbation of norm1 attain the stated robust bounds. Each attainer is represented exactly in the certificate."
+    },
+    {
+      "id": "S008",
+      "name": "Withheld-direction exact blindness",
+      "status": "pass",
+      "detail": "The withheld shift2e_D has zero selected mean in A,E, so its observation law equals the null law exactly. Full and greedy panels retain center noncentrality4 and worst-case1 at ε=1."
+    },
+    {
+      "id": "S008",
+      "name": "Projection identity",
+      "status": "pass",
+      "detail": "The optimum projection is diag(1,0,0,0,1,0), idempotent with rank2. It has a four-dimensional nullspace, as rank-nullity requires."
+    }
+  ],
+  "check_count": 12,
+  "all_passed": true,
+  "optimum": {
+    "cost": 13,
+    "unique": true,
+    "panel": {
+      "mask": 17,
+      "channels": [
+        "A",
+        "E"
+      ],
+      "cost": 13,
+      "energies": [
+        4,
+        4,
+        4,
+        4,
+        8,
+        4
+      ],
+      "covered": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "feasible": true
+    }
+  },
+  "feasible_panel_count": 34,
+  "greedy": {
+    "channels": [
+      "C",
+      "D",
+      "F"
+    ],
+    "cost": 16,
+    "energies": [
+      4,
+      4,
+      4,
+      4,
+      4,
+      8
+    ],
+    "trace": [
+      {
+        "before": [],
+        "choice": "D",
+        "newly_satisfied": [
+          2,
+          3,
+          5,
+          6
+        ],
+        "gain_per_cost": "2/3",
+        "candidates": [
+          {
+            "channel": "D",
+            "ratio": "2/3",
+            "newly_satisfied": [
+              2,
+              3,
+              5,
+              6
+            ]
+          },
+          {
+            "channel": "E",
+            "ratio": "4/7",
+            "newly_satisfied": [
+              2,
+              4,
+              5,
+              6
+            ]
+          },
+          {
+            "channel": "A",
+            "ratio": "1/2",
+            "newly_satisfied": [
+              1,
+              3,
+              5
+            ]
+          },
+          {
+            "channel": "F",
+            "ratio": "1/2",
+            "newly_satisfied": [
+              1,
+              6
+            ]
+          },
+          {
+            "channel": "B",
+            "ratio": "3/7",
+            "newly_satisfied": [
+              1,
+              2,
+              3
+            ]
+          },
+          {
+            "channel": "C",
+            "ratio": "1/6",
+            "newly_satisfied": [
+              4
+            ]
+          }
+        ]
+      },
+      {
+        "before": [
+          "D"
+        ],
+        "choice": "F",
+        "newly_satisfied": [
+          1
+        ],
+        "gain_per_cost": "1/4",
+        "candidates": [
+          {
+            "channel": "F",
+            "ratio": "1/4",
+            "newly_satisfied": [
+              1
+            ]
+          },
+          {
+            "channel": "A",
+            "ratio": "1/6",
+            "newly_satisfied": [
+              1
+            ]
+          },
+          {
+            "channel": "C",
+            "ratio": "1/6",
+            "newly_satisfied": [
+              4
+            ]
+          },
+          {
+            "channel": "B",
+            "ratio": "1/7",
+            "newly_satisfied": [
+              1
+            ]
+          },
+          {
+            "channel": "E",
+            "ratio": "1/7",
+            "newly_satisfied": [
+              4
+            ]
+          }
+        ]
+      },
+      {
+        "before": [
+          "D",
+          "F"
+        ],
+        "choice": "C",
+        "newly_satisfied": [
+          4
+        ],
+        "gain_per_cost": "1/6",
+        "candidates": [
+          {
+            "channel": "C",
+            "ratio": "1/6",
+            "newly_satisfied": [
+              4
+            ]
+          },
+          {
+            "channel": "E",
+            "ratio": "1/7",
+            "newly_satisfied": [
+              4
+            ]
+          },
+          {
+            "channel": "A",
+            "ratio": "0",
+            "newly_satisfied": []
+          },
+          {
+            "channel": "B",
+            "ratio": "0",
+            "newly_satisfied": []
+          }
+        ]
+      }
+    ]
+  },
+  "target_nonredundancy_witnesses": [
+    {
+      "omitted_target": 1,
+      "panel": [
+        "C",
+        "D",
+        "E"
+      ],
+      "covered": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "omitted_target": 2,
+      "panel": [
+        "A",
+        "C",
+        "F"
+      ],
+      "covered": [
+        1,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "omitted_target": 3,
+      "panel": [
+        "C",
+        "E",
+        "F"
+      ],
+      "covered": [
+        1,
+        2,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "omitted_target": 4,
+      "panel": [
+        "A",
+        "B",
+        "D",
+        "F"
+      ],
+      "covered": [
+        1,
+        2,
+        3,
+        5,
+        6
+      ]
+    },
+    {
+      "omitted_target": 5,
+      "panel": [
+        "B",
+        "C",
+        "F"
+      ],
+      "covered": [
+        1,
+        2,
+        3,
+        4,
+        6
+      ]
+    },
+    {
+      "omitted_target": 6,
+      "panel": [
+        "A",
+        "B",
+        "C"
+      ],
+      "covered": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    }
+  ],
+  "inclusion_minimal_feasible_panels": [
+    {
+      "mask": 13,
+      "channels": [
+        "A",
+        "C",
+        "D"
+      ],
+      "cost": 18,
+      "energies": [
+        4,
+        4,
+        8,
+        4,
+        8,
+        4
+      ],
+      "covered": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "feasible": true
+    },
+    {
+      "mask": 14,
+      "channels": [
+        "B",
+        "C",
+        "D"
+      ],
+      "cost": 19,
+      "energies": [
+        4,
+        8,
+        8,
+        4,
+        4,
+        4
+      ],
+      "covered": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "feasible": true
+    },
+    {
+      "mask": 17,
+      "channels": [
+        "A",
+        "E"
+      ],
+      "cost": 13,
+      "energies": [
+        4,
+        4,
+        4,
+        4,
+        8,
+        4
+      ],
+      "covered": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "feasible": true
+    },
+    {
+      "mask": 18,
+      "channels": [
+        "B",
+        "E"
+      ],
+      "cost": 14,
+      "energies": [
+        4,
+        8,
+        4,
+        4,
+        4,
+        4
+      ],
+      "covered": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "feasible": true
+    },
+    {
+      "mask": 39,
+      "channels": [
+        "A",
+        "B",
+        "C",
+        "F"
+      ],
+      "cost": 23,
+      "energies": [
+        12,
+        4,
+        8,
+        4,
+        4,
+        4
+      ],
+      "covered": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "feasible": true
+    },
+    {
+      "mask": 44,
+      "channels": [
+        "C",
+        "D",
+        "F"
+      ],
+      "cost": 16,
+      "energies": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        8
+      ],
+      "covered": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "feasible": true
+    },
+    {
+      "mask": 56,
+      "channels": [
+        "D",
+        "E",
+        "F"
+      ],
+      "cost": 17,
+      "energies": [
+        4,
+        8,
+        4,
+        4,
+        8,
+        12
+      ],
+      "covered": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "feasible": true
+    }
+  ],
+  "robust_attainers": [
+    {
+      "fault": 1,
+      "active_coordinates": [
+        "A"
+      ],
+      "perturbation_nonzero_value": "-1/sqrt(1)",
+      "perturbation_norm_squared": 1,
+      "attained_noncentrality": {
+        "rational_part": 5,
+        "sqrt_coefficient": -4,
+        "radicand": 1
+      }
+    },
+    {
+      "fault": 2,
+      "active_coordinates": [
+        "E"
+      ],
+      "perturbation_nonzero_value": "-1/sqrt(1)",
+      "perturbation_norm_squared": 1,
+      "attained_noncentrality": {
+        "rational_part": 5,
+        "sqrt_coefficient": -4,
+        "radicand": 1
+      }
+    },
+    {
+      "fault": 3,
+      "active_coordinates": [
+        "A"
+      ],
+      "perturbation_nonzero_value": "-1/sqrt(1)",
+      "perturbation_norm_squared": 1,
+      "attained_noncentrality": {
+        "rational_part": 5,
+        "sqrt_coefficient": -4,
+        "radicand": 1
+      }
+    },
+    {
+      "fault": 4,
+      "active_coordinates": [
+        "E"
+      ],
+      "perturbation_nonzero_value": "-1/sqrt(1)",
+      "perturbation_norm_squared": 1,
+      "attained_noncentrality": {
+        "rational_part": 5,
+        "sqrt_coefficient": -4,
+        "radicand": 1
+      }
+    },
+    {
+      "fault": 5,
+      "active_coordinates": [
+        "A",
+        "E"
+      ],
+      "perturbation_nonzero_value": "-1/sqrt(2)",
+      "perturbation_norm_squared": 1,
+      "attained_noncentrality": {
+        "rational_part": 9,
+        "sqrt_coefficient": -4,
+        "radicand": 2
+      }
+    },
+    {
+      "fault": 6,
+      "active_coordinates": [
+        "E"
+      ],
+      "perturbation_nonzero_value": "-1/sqrt(1)",
+      "perturbation_norm_squared": 1,
+      "attained_noncentrality": {
+        "rational_part": 5,
+        "sqrt_coefficient": -4,
+        "radicand": 1
+      }
+    }
+  ],
+  "withheld": {
+    "center": [
+      0,
+      0,
+      0,
+      2,
+      0,
+      0
+    ],
+    "optimal_panel_noncentrality": 0,
+    "full_noncentrality": 4,
+    "greedy_noncentrality": 4,
+    "interpretation": "Same observation distribution as the null for the optimal finite-family panel."
+  },
+  "exhaustive_certificate": [
+    {
+      "mask": 0,
+      "channels": [],
+      "cost": 0,
+      "energies": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "covered": [],
+      "feasible": false
+    },
+    {
+      "mask": 1,
+      "channels": [
+        "A"
+      ],
+      "cost": 6,
+      "energies": [
+        4,
+        0,
+        4,
+        0,
+        4,
+        0
+      ],
+      "covered": [
+        1,
+        3,
+        5
+      ],
+      "feasible": false
+    },
+    {
+      "mask": 2,
+      "channels": [
+        "B"
+      ],
+      "cost": 7,
+      "energies": [
+        4,
+        4,
+        4,
+        0,
+        0,
+        0
+      ],
+      "covered": [
+        1,
+        2,
+        3
+      ],
+      "feasible": false
+    },
+    {
+      "mask": 3,
+      "channels": [
+        "A",
+        "B"
+      ],
+      "cost": 13,
+      "energies": [
+        8,
+        4,
+        8,
+        0,
+        4,
+        0
+      ],
+      "covered": [
+        1,
+        2,
+        3,
+        5
+      ],
+      "feasible": false
+    },
+    {
+      "mask": 4,
+      "channels": [
+        "C"
+      ],
+      "cost": 6,
+      "energies": [
+        0,
+        0,
+        0,
+        4,
+        0,
+        0
+      ],
+      "covered": [
+        4
+      ],
+      "feasible": false
+    },
+    {
+      "mask": 5,
+      "channels": [
+        "A",
+        "C"
+      ],
+      "cost": 12,
+      "energies": [
+        4,
+        0,
+        4,
+        4,
+        4,
+        0
+      ],
+      "covered": [
+        1,
+        3,
+        4,
+        5
+      ],
+      "feasible": false
+    },
+    {
+      "mask": 6,
+      "channels": [
+        "B",
+        "C"
+      ],
+      "cost": 13,
+      "energies": [
+        4,
+        4,
+        4,
+        4,
+        0,
+        0
+      ],
+      "covered": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "feasible": false
+    },
+    {
+      "mask": 7,
+      "channels": [
+        "A",
+        "B",
+        "C"
+      ],
+      "cost": 19,
+      "energies": [
+        8,
+        4,
+        8,
+        4,
+        4,
+        0
+      ],
+      "covered": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "feasible": false
+    },
+    {
+      "mask": 8,
+      "channels": [
+        "D"
+      ],
+      "cost": 6,
+      "energies": [
+        0,
+        4,
+        4,
+        0,
+        4,
+        4
+      ],
+      "covered": [
+        2,
+        3,
+        5,
+        6
+      ],
+      "feasible": false
+    },
+    {
+      "mask": 9,
+      "channels": [
+        "A",
+        "D"
+      ],
+      "cost": 12,
+      "energies": [
+        4,
+        4,
+        8,
+        0,
+        8,
+        4
+      ],
+      "covered": [
+        1,
+        2,
+        3,
+        5,
+        6
+      ],
+      "feasible": false
+    },
+    {
+      "mask": 10,
+      "channels": [
+        "B",
+        "D"
+      ],
+      "cost": 13,
+      "energies": [
+        4,
+        8,
+        8,
+        0,
+        4,
+        4
+      ],
+      "covered": [
+        1,
+        2,
+        3,
+        5,
+        6
+      ],
+      "feasible": false
+    },
+    {
+      "mask": 11,
+      "channels": [
+        "A",
+        "B",
+        "D"
+      ],
+      "cost": 19,
+      "energies": [
+        8,
+        8,
+        12,
+        0,
+        8,
+        4
+      ],
+      "covered": [
+        1,
+        2,
+        3,
+        5,
+        6
+      ],
+      "feasible": false
+    },
+    {
+      "mask": 12,
+      "channels": [
+        "C",
+        "D"
+      ],
+      "cost": 12,
+      "energies": [
+        0,
+        4,
+        4,
+        4,
+        4,
+        4
+      ],
+      "covered": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "feasible": false
+    },
+    {
+      "mask": 13,
+      "channels": [
+        "A",
+        "C",
+        "D"
+      ],
+      "cost": 18,
+      "energies": [
+        4,
+        4,
+        8,
+        4,
+        8,
+        4
+      ],
+      "covered": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "feasible": true
+    },
+    {
+      "mask": 14,
+      "channels": [
+        "B",
+        "C",
+        "D"
+      ],
+      "cost": 19,
+      "energies": [
+        4,
+        8,
+        8,
+        4,
+        4,
+        4
+      ],
+      "covered": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "feasible": true
+    },
+    {
+      "mask": 15,
+      "channels": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "cost": 25,
+      "energies": [
+        8,
+        8,
+        12,
+        4,
+        8,
+        4
+      ],
+      "covered": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "feasible": true
+    },
+    {
+      "mask": 16,
+      "channels": [
+        "E"
+      ],
+      "cost": 7,
+      "energies": [
+        0,
+        4,
+        0,
+        4,
+        4,
+        4
+      ],
+      "covered": [
+        2,
+        4,
+        5,
+        6
+      ],
+      "feasible": false
+    },
+    {
+      "mask": 17,
+      "channels": [
+        "A",
+        "E"
+      ],
+      "cost": 13,
+      "energies": [
+        4,
+        4,
+        4,
+        4,
+        8,
+        4
+      ],
+      "covered": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "feasible": true
+    },
+    {
+      "mask": 18,
+      "channels": [
+        "B",
+        "E"
+      ],
+      "cost": 14,
+      "energies": [
+        4,
+        8,
+        4,
+        4,
+        4,
+        4
+      ],
+      "covered": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "feasible": true
+    },
+    {
+      "mask": 19,
+      "channels": [
+        "A",
+        "B",
+        "E"
+      ],
+      "cost": 20,
+      "energies": [
+        8,
+        8,
+        8,
+        4,
+        8,
+        4
+      ],
+      "covered": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "feasible": true
+    },
+    {
+      "mask": 20,
+      "channels": [
+        "C",
+        "E"
+      ],
+      "cost": 13,
+      "energies": [
+        0,
+        4,
+        0,
+        8,
+        4,
+        4
+      ],
+      "covered": [
+        2,
+        4,
+        5,
+        6
+      ],
+      "feasible": false
+    },
+    {
+      "mask": 21,
+      "channels": [
+        "A",
+        "C",
+        "E"
+      ],
+      "cost": 19,
+      "energies": [
+        4,
+        4,
+        4,
+        8,
+        8,
+        4
+      ],
+      "covered": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "feasible": true
+    },
+    {
+      "mask": 22,
+      "channels": [
+        "B",
+        "C",
+        "E"
+      ],
+      "cost": 20,
+      "energies": [
+        4,
+        8,
+        4,
+        8,
+        4,
+        4
+      ],
+      "covered": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "feasible": true
+    },
+    {
+      "mask": 23,
+      "channels": [
+        "A",
+        "B",
+        "C",
+        "E"
+      ],
+      "cost": 26,
+      "energies": [
+        8,
+        8,
+        8,
+        8,
+        8,
+        4
+      ],
+      "covered": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "feasible": true
+    },
+    {
+      "mask": 24,
+      "channels": [
+        "D",
+        "E"
+      ],
+      "cost": 13,
+      "energies": [
+        0,
+        8,
+        4,
+        4,
+        8,
+        8
+      ],
+      "covered": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "feasible": false
+    },
+    {
+      "mask": 25,
+      "channels": [
+        "A",
+        "D",
+        "E"
+      ],
+      "cost": 19,
+      "energies": [
+        4,
+        8,
+        8,
+        4,
+        12,
+        8
+      ],
+      "covered": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "feasible": true
+    },
+    {
+      "mask": 26,
+      "channels": [
+        "B",
+        "D",
+        "E"
+      ],
+      "cost": 20,
+      "energies": [
+        4,
+        12,
+        8,
+        4,
+        8,
+        8
+      ],
+      "covered": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "feasible": true
+    },
+    {
+      "mask": 27,
+      "channels": [
+        "A",
+        "B",
+        "D",
+        "E"
+      ],
+      "cost": 26,
+      "energies": [
+        8,
+        12,
+        12,
+        4,
+        12,
+        8
+      ],
+      "covered": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "feasible": true
+    },
+    {
+      "mask": 28,
+      "channels": [
+        "C",
+        "D",
+        "E"
+      ],
+      "cost": 19,
+      "energies": [
+        0,
+        8,
+        4,
+        8,
+        8,
+        8
+      ],
+      "covered": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "feasible": false
+    },
+    {
+      "mask": 29,
+      "channels": [
+        "A",
+        "C",
+        "D",
+        "E"
+      ],
+      "cost": 25,
+      "energies": [
+        4,
+        8,
+        8,
+        8,
+        12,
+        8
+      ],
+      "covered": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "feasible": true
+    },
+    {
+      "mask": 30,
+      "channels": [
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "cost": 26,
+      "energies": [
+        4,
+        12,
+        8,
+        8,
+        8,
+        8
+      ],
+      "covered": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "feasible": true
+    },
+    {
+      "mask": 31,
+      "channels": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "cost": 32,
+      "energies": [
+        8,
+        12,
+        12,
+        8,
+        12,
+        8
+      ],
+      "covered": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "feasible": true
+    },
+    {
+      "mask": 32,
+      "channels": [
+        "F"
+      ],
+      "cost": 4,
+      "energies": [
+        4,
+        0,
+        0,
+        0,
+        0,
+        4
+      ],
+      "covered": [
+        1,
+        6
+      ],
+      "feasible": false
+    },
+    {
+      "mask": 33,
+      "channels": [
+        "A",
+        "F"
+      ],
+      "cost": 10,
+      "energies": [
+        8,
+        0,
+        4,
+        0,
+        4,
+        4
+      ],
+      "covered": [
+        1,
+        3,
+        5,
+        6
+      ],
+      "feasible": false
+    },
+    {
+      "mask": 34,
+      "channels": [
+        "B",
+        "F"
+      ],
+      "cost": 11,
+      "energies": [
+        8,
+        4,
+        4,
+        0,
+        0,
+        4
+      ],
+      "covered": [
+        1,
+        2,
+        3,
+        6
+      ],
+      "feasible": false
+    },
+    {
+      "mask": 35,
+      "channels": [
+        "A",
+        "B",
+        "F"
+      ],
+      "cost": 17,
+      "energies": [
+        12,
+        4,
+        8,
+        0,
+        4,
+        4
+      ],
+      "covered": [
+        1,
+        2,
+        3,
+        5,
+        6
+      ],
+      "feasible": false
+    },
+    {
+      "mask": 36,
+      "channels": [
+        "C",
+        "F"
+      ],
+      "cost": 10,
+      "energies": [
+        4,
+        0,
+        0,
+        4,
+        0,
+        4
+      ],
+      "covered": [
+        1,
+        4,
+        6
+      ],
+      "feasible": false
+    },
+    {
+      "mask": 37,
+      "channels": [
+        "A",
+        "C",
+        "F"
+      ],
+      "cost": 16,
+      "energies": [
+        8,
+        0,
+        4,
+        4,
+        4,
+        4
+      ],
+      "covered": [
+        1,
+        3,
+        4,
+        5,
+        6
+      ],
+      "feasible": false
+    },
+    {
+      "mask": 38,
+      "channels": [
+        "B",
+        "C",
+        "F"
+      ],
+      "cost": 17,
+      "energies": [
+        8,
+        4,
+        4,
+        4,
+        0,
+        4
+      ],
+      "covered": [
+        1,
+        2,
+        3,
+        4,
+        6
+      ],
+      "feasible": false
+    },
+    {
+      "mask": 39,
+      "channels": [
+        "A",
+        "B",
+        "C",
+        "F"
+      ],
+      "cost": 23,
+      "energies": [
+        12,
+        4,
+        8,
+        4,
+        4,
+        4
+      ],
+      "covered": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "feasible": true
+    },
+    {
+      "mask": 40,
+      "channels": [
+        "D",
+        "F"
+      ],
+      "cost": 10,
+      "energies": [
+        4,
+        4,
+        4,
+        0,
+        4,
+        8
+      ],
+      "covered": [
+        1,
+        2,
+        3,
+        5,
+        6
+      ],
+      "feasible": false
+    },
+    {
+      "mask": 41,
+      "channels": [
+        "A",
+        "D",
+        "F"
+      ],
+      "cost": 16,
+      "energies": [
+        8,
+        4,
+        8,
+        0,
+        8,
+        8
+      ],
+      "covered": [
+        1,
+        2,
+        3,
+        5,
+        6
+      ],
+      "feasible": false
+    },
+    {
+      "mask": 42,
+      "channels": [
+        "B",
+        "D",
+        "F"
+      ],
+      "cost": 17,
+      "energies": [
+        8,
+        8,
+        8,
+        0,
+        4,
+        8
+      ],
+      "covered": [
+        1,
+        2,
+        3,
+        5,
+        6
+      ],
+      "feasible": false
+    },
+    {
+      "mask": 43,
+      "channels": [
+        "A",
+        "B",
+        "D",
+        "F"
+      ],
+      "cost": 23,
+      "energies": [
+        12,
+        8,
+        12,
+        0,
+        8,
+        8
+      ],
+      "covered": [
+        1,
+        2,
+        3,
+        5,
+        6
+      ],
+      "feasible": false
+    },
+    {
+      "mask": 44,
+      "channels": [
+        "C",
+        "D",
+        "F"
+      ],
+      "cost": 16,
+      "energies": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        8
+      ],
+      "covered": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "feasible": true
+    },
+    {
+      "mask": 45,
+      "channels": [
+        "A",
+        "C",
+        "D",
+        "F"
+      ],
+      "cost": 22,
+      "energies": [
+        8,
+        4,
+        8,
+        4,
+        8,
+        8
+      ],
+      "covered": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "feasible": true
+    },
+    {
+      "mask": 46,
+      "channels": [
+        "B",
+        "C",
+        "D",
+        "F"
+      ],
+      "cost": 23,
+      "energies": [
+        8,
+        8,
+        8,
+        4,
+        4,
+        8
+      ],
+      "covered": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "feasible": true
+    },
+    {
+      "mask": 47,
+      "channels": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "F"
+      ],
+      "cost": 29,
+      "energies": [
+        12,
+        8,
+        12,
+        4,
+        8,
+        8
+      ],
+      "covered": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "feasible": true
+    },
+    {
+      "mask": 48,
+      "channels": [
+        "E",
+        "F"
+      ],
+      "cost": 11,
+      "energies": [
+        4,
+        4,
+        0,
+        4,
+        4,
+        8
+      ],
+      "covered": [
+        1,
+        2,
+        4,
+        5,
+        6
+      ],
+      "feasible": false
+    },
+    {
+      "mask": 49,
+      "channels": [
+        "A",
+        "E",
+        "F"
+      ],
+      "cost": 17,
+      "energies": [
+        8,
+        4,
+        4,
+        4,
+        8,
+        8
+      ],
+      "covered": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "feasible": true
+    },
+    {
+      "mask": 50,
+      "channels": [
+        "B",
+        "E",
+        "F"
+      ],
+      "cost": 18,
+      "energies": [
+        8,
+        8,
+        4,
+        4,
+        4,
+        8
+      ],
+      "covered": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "feasible": true
+    },
+    {
+      "mask": 51,
+      "channels": [
+        "A",
+        "B",
+        "E",
+        "F"
+      ],
+      "cost": 24,
+      "energies": [
+        12,
+        8,
+        8,
+        4,
+        8,
+        8
+      ],
+      "covered": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "feasible": true
+    },
+    {
+      "mask": 52,
+      "channels": [
+        "C",
+        "E",
+        "F"
+      ],
+      "cost": 17,
+      "energies": [
+        4,
+        4,
+        0,
+        8,
+        4,
+        8
+      ],
+      "covered": [
+        1,
+        2,
+        4,
+        5,
+        6
+      ],
+      "feasible": false
+    },
+    {
+      "mask": 53,
+      "channels": [
+        "A",
+        "C",
+        "E",
+        "F"
+      ],
+      "cost": 23,
+      "energies": [
+        8,
+        4,
+        4,
+        8,
+        8,
+        8
+      ],
+      "covered": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "feasible": true
+    },
+    {
+      "mask": 54,
+      "channels": [
+        "B",
+        "C",
+        "E",
+        "F"
+      ],
+      "cost": 24,
+      "energies": [
+        8,
+        8,
+        4,
+        8,
+        4,
+        8
+      ],
+      "covered": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "feasible": true
+    },
+    {
+      "mask": 55,
+      "channels": [
+        "A",
+        "B",
+        "C",
+        "E",
+        "F"
+      ],
+      "cost": 30,
+      "energies": [
+        12,
+        8,
+        8,
+        8,
+        8,
+        8
+      ],
+      "covered": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "feasible": true
+    },
+    {
+      "mask": 56,
+      "channels": [
+        "D",
+        "E",
+        "F"
+      ],
+      "cost": 17,
+      "energies": [
+        4,
+        8,
+        4,
+        4,
+        8,
+        12
+      ],
+      "covered": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "feasible": true
+    },
+    {
+      "mask": 57,
+      "channels": [
+        "A",
+        "D",
+        "E",
+        "F"
+      ],
+      "cost": 23,
+      "energies": [
+        8,
+        8,
+        8,
+        4,
+        12,
+        12
+      ],
+      "covered": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "feasible": true
+    },
+    {
+      "mask": 58,
+      "channels": [
+        "B",
+        "D",
+        "E",
+        "F"
+      ],
+      "cost": 24,
+      "energies": [
+        8,
+        12,
+        8,
+        4,
+        8,
+        12
+      ],
+      "covered": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "feasible": true
+    },
+    {
+      "mask": 59,
+      "channels": [
+        "A",
+        "B",
+        "D",
+        "E",
+        "F"
+      ],
+      "cost": 30,
+      "energies": [
+        12,
+        12,
+        12,
+        4,
+        12,
+        12
+      ],
+      "covered": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "feasible": true
+    },
+    {
+      "mask": 60,
+      "channels": [
+        "C",
+        "D",
+        "E",
+        "F"
+      ],
+      "cost": 23,
+      "energies": [
+        4,
+        8,
+        4,
+        8,
+        8,
+        12
+      ],
+      "covered": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "feasible": true
+    },
+    {
+      "mask": 61,
+      "channels": [
+        "A",
+        "C",
+        "D",
+        "E",
+        "F"
+      ],
+      "cost": 29,
+      "energies": [
+        8,
+        8,
+        8,
+        8,
+        12,
+        12
+      ],
+      "covered": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "feasible": true
+    },
+    {
+      "mask": 62,
+      "channels": [
+        "B",
+        "C",
+        "D",
+        "E",
+        "F"
+      ],
+      "cost": 30,
+      "energies": [
+        8,
+        12,
+        8,
+        8,
+        8,
+        12
+      ],
+      "covered": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "feasible": true
+    },
+    {
+      "mask": 63,
+      "channels": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F"
+      ],
+      "cost": 36,
+      "energies": [
+        12,
+        12,
+        12,
+        8,
+        12,
+        12
+      ],
+      "covered": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "feasible": true
+    }
+  ],
+  "scope": "A deterministic constructed finite Gaussian mean-shift design, with all64 coordinate panels checked exactly. Noncentrality threshold is the declared objective; no empirical or universal detector claim."
+}
