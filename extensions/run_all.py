@@ -21,6 +21,7 @@ SUITES = [
     ('O2 noise-aware panels', 'observer', 'test_panels'),
     ('O3 adaptive Bellman', 'observer', 'test_adaptive'),
     ('W1 Weyl discovery and kernels', 'hamiltonian', 'test_weyl_discovery'),
+    ('W2 six-parameter top reduction', 'hamiltonian', 'test_top_reduction'),
     ('S0 contraction seed', 'structure', 'test_contraction_seed'),
     ('S1 obstruction interface', 'structure', 'test_obstruction'),
     ('S2 DGLA lifting', 'structure', 'test_dgla'),
@@ -49,7 +50,7 @@ def main():
     a = ap.parse_args()
     report = {'status': 'passed', 'suites': [], 'seeds': [], 'results': []}
     for name, sub, mod in SUITES:
-        if a.quick and mod == 'test_weyl_discovery':
+        if a.quick and mod in ('test_weyl_discovery', 'test_top_reduction'):
             report['suites'].append({'name': name, 'status': 'skipped (quick)'})
             continue
         code, out, sec = run(['-m', 'unittest', mod], HERE / sub)

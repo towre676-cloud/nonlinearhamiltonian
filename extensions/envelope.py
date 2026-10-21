@@ -63,6 +63,12 @@ def _weyl_kernel(model, payload):
     return _load('hamiltonian/check_weyl_kernel.py', 'mx_check_weyl_kernel').check(payload)
 
 
+def _top_reduction(model, payload):
+    if model is not None and model != payload.get('hamiltonian'):
+        raise ValueError('envelope model is not the certified Hamiltonian')
+    return _load('hamiltonian/check_top_reduction.py', 'mx_check_top_reduction').check(payload)
+
+
 def _noise_panel(model, payload):
     return _load('observer/check_panel.py', 'mx_check_panel').check(payload, model)
 
@@ -88,6 +94,7 @@ KINDS = {
     'observer-closure': ('format', 'observer-closure-v2', _observer),
     'weyl-invariant-kernel': ('schema', 'weyl-invariant-kernel-v1', _weyl),
     'weyl-polynomial-kernel': ('format', 'weyl-kernel-v1', _weyl_kernel),
+    'weyl-top-reduction': ('format', 'weyl-top-reduction-v1', _top_reduction),
     'rational-contraction': ('schema', 'rational-contraction-v1', _contraction),
     'noise-panel-selection': ('format', 'noise-panel-v1', _noise_panel),
     'pell-orbit-reduction': ('format', 'pell-orbits-v1', _pell),

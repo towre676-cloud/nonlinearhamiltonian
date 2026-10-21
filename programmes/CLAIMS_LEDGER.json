@@ -45,7 +45,7 @@
   {
    "id": "P001",
    "status": "target",
-   "claim": "Remaining open targets: full six-parameter quadratic perturbation family of qp^3; homogeneous quartic dynamic-core moduli; integer Smith/torsion backend; SDP search for invariant metrics; noisy/continuous adaptive experiments; fundamental-unit and maximal-order arithmetic adapters.",
+   "claim": "Remaining open targets: homogeneous quartic dynamic-core moduli; integer Smith/torsion backend; SDP search for invariant metrics; noisy/continuous adaptive experiments; fundamental-unit and maximal-order arithmetic adapters.",
    "support": "TASKS.json",
    "scope": "Unfinished tasks, not current capabilities."
   },
@@ -111,6 +111,13 @@
    "claim": "Complete supplied-unit orbit classification for x^2-Dy^2=N with exact modular cycles and filtered height counts.",
    "support": "extensions/arithmetic/pell.py; extensions/arithmetic/check_pell.py",
    "scope": "Declared order Z[sqrt D], supplied (possibly nonfundamental) unit; completeness rests on the reduction proof in OBSTRUCTIONS_AND_ARITHMETIC.md."
+  },
+  {
+   "id": "W2-6",
+   "status": "theorem_with_certificates",
+   "claim": "For all rational a,b,c,d,e,f: D_inf(qp^3+aq^2+bqp+cp^2+dq+ep+f) = Q[p]+qQ[p] if a=0 and span{1,H} if a!=0. Proved by the top-weight reduction lemma (weight (3,1)), which embeds gr D_inf(H) into D_inf(H_w).",
+   "support": "programmes/DYNAMIC_CORE_RESULTS.md#3b; extensions/hamiltonian/check_top_reduction.py; results/hamiltonian/six_*.json",
+   "scope": "One canonical pair over Q; the lemma itself applies to any polynomial H and positive weight; instance certificates replay the lemma hypotheses exactly."
   }
  ],
  "rule": "Passing finite tests does not upgrade a target or an unproved general statement to a theorem.",

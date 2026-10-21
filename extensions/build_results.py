@@ -116,6 +116,23 @@ def hamiltonians(skip_slow):
             'full dynamic exact core in all polynomial degrees', ['D16-F03', 'D06-F02'], PRODUCER, verify=False), s1 + s2)
 
 
+SIX_PARAMETER = [('six_a1_b2_c3_e1', '1', '2', '3', '0', '1', '0'), ('six_a_minus2_b_half_d5', '-2', '1/2', '0', '5', '0', '0'),
+                 ('six_a0_b2_c3_d1_e1', '0', '2', '3', '1', '1', '0'), ('six_a0_c_minus1_e7_f4', '0', '0', '-1', '0', '7', '4')]
+
+
+def top_reductions():
+    import top_reduction as TR
+    for name, *coef in SIX_PARAMETER:
+        a, b, c, d, e, f = (WG.F(x) for x in coef)
+        H = WG.W.tidy({(1, 3): WG.F(1), (2, 0): a, (1, 1): b, (0, 2): c, (1, 0): d, (0, 1): e, (0, 0): f})
+        (meta, cert), s = timed(TR.reduce, H, (3, 1))
+        write('hamiltonian', name, envelope.make(
+            'weyl-top-reduction', cert['hamiltonian'], cert,
+            ['weight (3,1); top part qp^3 + a q^2', 'top-weight reduction lemma (DYNAMIC_CORE_RESULTS.md 3b)',
+             'coefficients in Q'],
+            'full dynamic exact core in all polynomial degrees', ['D16-F03', 'D06-F02'], PRODUCER, verify=False), s)
+
+
 def structure():
     tri = json.loads((HERE / 'structure/triangle.json').read_text())
     for name, b in (('triangle_primitive', [1, 2, -3]), ('triangle_obstruction', [1, 2, -2])):
@@ -156,21 +173,20 @@ def arithmetic():
             ['D01-F04', '2024:Y24-03-024'], PRODUCER, verify=False), s)
 
 
+SECTIONS = {'observer': lambda a: observers(), 'structure': lambda a: structure(), 'arithmetic': lambda a: arithmetic(),
+            'hamiltonian': lambda a: hamiltonians(a.skip_slow), 'top': lambda a: top_reductions()}
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument('--skip-slow', action='store_true')
+    ap.add_argument('--only', nargs='*', choices=sorted(SECTIONS), help='regenerate only these sections')
     a = ap.parse_args()
-    observers()
-    structure()
-    arithmetic()
-    hamiltonians(a.skip_slow)
-    old = {}
+    for name in (a.only or SECTIONS):
+        SECTIONS[name](a)
     idx_path = OUT / 'RECEIPTS.json'
-    if a.skip_slow and idx_path.exists():
-        old = {r['file']: r for r in json.loads(idx_path.read_text())['results']}
-    merged = {r['file']: r for r in index}
-    for f, r in old.items():
-        merged.setdefault(f, r)
+    old = {r['file']: r for r in json.loads(idx_path.read_text())['results']} if idx_path.exists() else {}
+    merged = {**old, **{r['file']: r for r in index}}
     idx_path.write_text(json.dumps({'schema': 'machinery-results-v1', 'results': [merged[k] for k in sorted(merged)]},
                                    indent=1) + '\n')
     print(json.dumps({'status': 'written', 'results': len(merged)}))

@@ -13,8 +13,7 @@ This directory imports the 2026-10-21 handoff programme documents and records wh
 
 ## Next steps
 
-1. The six-parameter quadratic perturbation family of `qp³`. After normalization the `qp` coefficient is a continuous modulus, so it needs a parametric (comprehensive) Weyl Gröbner computation or a structural argument.
-2. Homogeneous quartic dynamic-core moduli. `q⁴+p⁴` exceeds the default discovery budget. Possible routes are better pair criteria, signature-based completion, or an external backend such as Macaulay2 WeylAlgebras whose output is replayed by `weyl_receipts.py`.
-3. An integer Smith-form backend for torsion. Rational answers stay rational.
-4. Rational SDP search for invariant metrics. The exact checker already exists.
-5. Fundamental-unit and maximal-order adapters for the Pell compiler.
+1. Homogeneous quartic dynamic-core moduli. `q⁴+p⁴` exceeds the default discovery budget. Possible routes are better pair criteria, signature-based completion, or an external backend such as Macaulay2 WeylAlgebras whose output is replayed by `weyl_receipts.py`.
+2. An integer Smith-form backend for torsion. Rational answers stay rational.
+3. Rational SDP search for invariant metrics. The exact checker already exists.
+4. Fundamental-unit and maximal-order adapters for the Pell compiler.

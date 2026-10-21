@@ -89,7 +89,7 @@
   },
   {
    "id": "W2",
-   "status": "done_two_parameter_family",
+   "status": "done",
    "title": "quadratic-perturbation dynamic-core strata",
    "depends_on": [
     "W1"
@@ -169,7 +169,7 @@
   }
  ],
  "notes": {
-  "W2": "qp^3+alpha q^2+beta p^2 classified for all rational parameters; the six-parameter quadratic family and homogeneous quartic moduli remain open targets.",
+  "W2": "Full six-parameter quadratic perturbation family of qp^3 classified (DYNAMIC_CORE_RESULTS.md 3b).",
   "results": "results/RECEIPTS.json indexes every enveloped certificate with its replay command."
  }
 }
