@@ -1,0 +1,180 @@
+#!/usr/bin/env python3
+"""Regenerate results/: enveloped certificates for every milestone, plus RECEIPTS.json.
+
+Each result is produced by the relevant compiler, wrapped in a machinery-envelope-v1
+object (envelope.make replays it with the independent checker) and written to
+results/<area>/<name>.json, gzipped deterministically when larger than 1 MB. The index
+records the exact replay command, the file hash and the checker summary.
+
+Usage: python3 -B extensions/build_results.py [--skip-slow]
+"""
+from __future__ import annotations
+import argparse
+import gzip
+import hashlib
+import json
+import sys
+import time
+from pathlib import Path
+
+HERE = Path(__file__).resolve().parent
+ROOT = HERE.parent
+OUT = ROOT / 'results'
+for sub in ('', 'observer', 'hamiltonian', 'structure', 'arithmetic'):
+    sys.path.insert(0, str(HERE / sub))
+import envelope                              # noqa: E402
+import observer as OBS                       # noqa: E402
+import panels as PAN                         # noqa: E402
+import adaptive as ADA                       # noqa: E402
+import weyl_groebner as WG                   # noqa: E402
+import weyl_kernel as WK                     # noqa: E402
+import contraction_seed as CS                # noqa: E402
+import obstruction as OB                     # noqa: E402
+import dgla as DG                            # noqa: E402
+import pell as PE                            # noqa: E402
+
+PRODUCER = 'towre676-cloud/nonlinearhamiltonian extensions (exact rational, Python standard library)'
+index = []
+
+
+def write(area, name, env, seconds):
+    raw = json.dumps(env, indent=1, ensure_ascii=False).encode('utf-8') + b'\n'
+    path = OUT / area / (name + '.json')
+    if len(raw) > 1_000_000:
+        path = path.with_suffix('.json.gz')
+        raw = gzip.compress(raw, compresslevel=9, mtime=0)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_bytes(raw)
+    res = envelope.check(env)['checker_result']
+    rel = path.relative_to(ROOT).as_posix()
+    index.append({'file': rel, 'sha256': hashlib.sha256(raw).hexdigest(), 'witness_kind': env['witness_kind'],
+                  'replay': f'python3 -B extensions/envelope.py check {rel}', 'producer_seconds': round(seconds, 2),
+                  'summary': {k: v for k, v in res.items() if k not in ('scope', 'nodes', 'names')}})
+    print(rel, env['witness_kind'], 'passed', flush=True)
+
+
+def timed(fn, *a, **k):
+    t = time.time()
+    r = fn(*a, **k)
+    return r, time.time() - t
+
+
+def observers():
+    m = json.loads((HERE / 'observer/observation_example.json').read_text())
+    cert, s = timed(OBS.compile_model, m)
+    write('observer', 'feed_example', envelope.make(
+        'observer-closure', m, cert, ['finite known rational actions', 'linear state summaries',
+                                      'static initial panel measured once'],
+        'all action words and all initial states of the encoded model', ['D15-F01', 'D14-F01'], PRODUCER, verify=False), s)
+    eye = [[1, 0], [0, 1]]
+    ill = {'dimension': 2, 'sensors': [{'name': 'x', 'row': [1, 0], 'cost': 1}, {'name': 'y/1000', 'row': [0, '1/1000'], 'cost': 1}],
+           'noise': eye, 'targets': {'mode': 'explicit', 'matrices': [[[0, 1]]]}, 'contract': 'per_target',
+           'gamma_squared': str(999 ** 2)}
+    corr = {'dimension': 2, 'sensors': [{'name': 'x_a', 'row': [1, 0], 'cost': 1}, {'name': 'x_b', 'row': [1, 0], 'cost': 1},
+                                        {'name': 'y', 'row': [0, 1], 'cost': 3}],
+            'noise': [[1, '1/2', 0], ['1/2', 1, 0], [0, 0, 1]],
+            'targets': {'mode': 'finite_horizon', 'actions': {'feed': [[1, 0], [1, 1]]}, 'target': [[0, 1]], 'horizon': 1},
+            'contract': 'per_target', 'gamma_squared': '2'}
+    for name, m in (('rank_perfect_ill_conditioned', ill), ('correlated_finite_horizon', corr)):
+        (cert, _), s = timed(PAN.solve, m)
+        write('observer', name, envelope.make(
+            'noise-panel-selection', m, cert, ['deterministic ellipsoidal noise with declared joint matrix',
+                                               'initial static panel', 'worst case over all initial states',
+                                               'tie policy one_optimum'],
+            'exact optimum (or infeasibility) over all subsets of the finite menu', ['D15-F01', 'D15-F03', 'D12-F04'],
+            PRODUCER, verify=False), s)
+    tt = {'states': ['a', 'b', 'c'], 'labels': {'a': 0, 'b': 1, 'c': 1},
+          'tests': [{'name': 't1', 'cost': 1, 'outcomes': {'a': 0, 'b': 1, 'c': 1}},
+                    {'name': 't2', 'cost': 2, 'outcomes': {'a': 1, 'b': 0, 'c': 1}},
+                    {'name': 't4', 'cost': 4, 'outcomes': {'a': 0, 'b': 1, 'c': 2}}]}
+    cert, s = timed(ADA.solve, tt)
+    cert.pop('result')
+    write('observer', 'target_only_decision', envelope.make(
+        'adaptive-experiment', tt, cert, ['deterministic finite test table', 'positive exact costs'],
+        'exact minimum worst-case cost over adaptive policies', ['D15-F04'], PRODUCER, verify=False), s)
+
+
+HAMILTONIANS = [
+    ('q3', 'q^3', False), ('qp3', 'q*p^3', False), ('qp3_plus_q2', 'q*p^3+q^2', False),
+    ('qp3_plus_p2', 'q*p^3+p^2', False), ('qp3_plus_q2_plus_p2', 'q*p^3+q^2+p^2', True),
+    ('q3p3', 'q^3*p^3', False), ('q2p2', 'q^2*p^2', False), ('q2p3', 'q^2*p^3', False), ('p3_plus_q2', 'p^3+q^2', False),
+]
+
+
+def hamiltonians(skip_slow):
+    for name, h, slow in HAMILTONIANS:
+        if slow and skip_slow:
+            continue
+        H = WG.parse_poly(h)
+        (meta, receipt), s1 = timed(WG.discover, H, max_steps=400000, max_generators=100)
+        (kmeta, kobj), s2 = timed(WK.classify, receipt)
+        model = receipt['hamiltonian']
+        write('hamiltonian', name, envelope.make(
+            'weyl-polynomial-kernel', model, kobj,
+            ['flat Weyl-Moyal convention, one canonical pair', 'D = {H,.}, C_k = T_k(H,.) for odd k >= 3',
+             'coefficients in Q'],
+            'full dynamic exact core in all polynomial degrees', ['D16-F03', 'D06-F02'], PRODUCER, verify=False), s1 + s2)
+
+
+def structure():
+    tri = json.loads((HERE / 'structure/triangle.json').read_text())
+    for name, b in (('triangle_primitive', [1, 2, -3]), ('triangle_obstruction', [1, 2, -2])):
+        ans, s = timed(OB.solve, tri, 1, b)
+        write('structure', name, envelope.make(
+            'rational-obstruction-answer', tri, ans, ['finite cochain complex over Q'],
+            'rational cohomology only; no integral torsion statement', ['D05-F03', 'D05-F01'], PRODUCER, verify=False), s)
+    toy = {'schema': 'dgla-v1', 'field': 'Q',
+           'basis': [{'degree': 1, 'name': 'e1'}, {'degree': 1, 'name': 'e2'}, {'degree': 2, 'name': 'f'}],
+           'differential': [[0, 0, 0]] * 3, 'bracket': [[0, 1, [[2, 1]]]]}
+    heis = DG.lie_deformation_dgla(3, {(0, 1): {2: 1}})
+    cases = [('dgla_toy_obstructed', toy, [1, 1, 0], 3),
+             ('heisenberg_order2_obstruction', heis, DG.two_cochain(3, {(0, 1): {0: 1}, (0, 2): {1: 1}}, heis), 3),
+             ('heisenberg_order3_jet_obstruction', heis, DG.two_cochain(3, {(0, 1): {1: 1}, (1, 2): {2: 1}}, heis), 4),
+             ('heisenberg_lift_order4', heis, DG.two_cochain(3, {(0, 2): {2: 1}}, heis), 4)]
+    for name, m, x1, order in cases:
+        cert, s = timed(DG.lift, m, [str(c) for c in x1], order)
+        cert.pop('result')
+        write('structure', name, envelope.make(
+            'dgla-lifting', m, cert, ['finite DGLA over Q given by structure constants', 'truncation as declared'],
+            'formal Maurer-Cartan lifting to the declared order; no convergence or moduli claim',
+            ['D04-F03', 'D16-F06'], PRODUCER, verify=False), s)
+
+
+def arithmetic():
+    fx = json.loads((HERE / 'structure/arithmetic_future_fixtures.json').read_text())['cases']
+    models = [{'D': c['D'], 'N': c['N'], 'unit': c['unit'], 'height': c['height_bound'],
+               'filter': {'modulus': 3, 'accept': [[x, 0] for x in range(3)]}} for c in fx]
+    models.append({'D': 2, 'N': -7, 'unit': [17, 12], 'height': 10 ** 30})
+    for m in models:
+        cert, s = timed(PE.compile_model, m)
+        cert.pop('result')
+        name = f"pell_D{m['D']}_N{m['N']}_unit{m['unit'][0]}_{m['unit'][1]}".replace('-', 'm')
+        write('arithmetic', name, envelope.make(
+            'pell-orbit-reduction', m, cert, ['declared order Z[sqrt D], integer coordinates',
+                                              'supplied unit, not necessarily fundamental'],
+            'complete orbit classification under the supplied unit; exact filtered height counts',
+            ['D01-F04', '2024:Y24-03-024'], PRODUCER, verify=False), s)
+
+
+def main():
+    ap = argparse.ArgumentParser(description=__doc__)
+    ap.add_argument('--skip-slow', action='store_true')
+    a = ap.parse_args()
+    observers()
+    structure()
+    arithmetic()
+    hamiltonians(a.skip_slow)
+    old = {}
+    idx_path = OUT / 'RECEIPTS.json'
+    if a.skip_slow and idx_path.exists():
+        old = {r['file']: r for r in json.loads(idx_path.read_text())['results']}
+    merged = {r['file']: r for r in index}
+    for f, r in old.items():
+        merged.setdefault(f, r)
+    idx_path.write_text(json.dumps({'schema': 'machinery-results-v1', 'results': [merged[k] for k in sorted(merged)]},
+                                   indent=1) + '\n')
+    print(json.dumps({'status': 'written', 'results': len(merged)}))
+
+
+if __name__ == '__main__':
+    main()

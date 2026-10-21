@@ -1,0 +1,91 @@
+{
+ "schema": "machinery-envelope-v1",
+ "witness_kind": "noise-panel-selection",
+ "coefficient_domain": "Q",
+ "model": {
+  "dimension": 2,
+  "sensors": [
+   {
+    "name": "x",
+    "row": [
+     1,
+     0
+    ],
+    "cost": 1
+   },
+   {
+    "name": "y/1000",
+    "row": [
+     0,
+     "1/1000"
+    ],
+    "cost": 1
+   }
+  ],
+  "noise": [
+   [
+    1,
+    0
+   ],
+   [
+    0,
+    1
+   ]
+  ],
+  "targets": {
+   "mode": "explicit",
+   "matrices": [
+    [
+     [
+      0,
+      1
+     ]
+    ]
+   ]
+  },
+  "contract": "per_target",
+  "gamma_squared": "998001"
+ },
+ "model_sha256": "fca80553c56b3e8fc575c82bde6ed709d41db18b696344c8e87d21425bb72f06",
+ "payload": {
+  "format": "noise-panel-v1",
+  "coefficient_domain": "Q",
+  "model_sha256": "fca80553c56b3e8fc575c82bde6ed709d41db18b696344c8e87d21425bb72f06",
+  "tie_policy": "one_optimum",
+  "tree": {
+   "include": [],
+   "exclude": [],
+   "kind": "infeasible",
+   "target": 0,
+   "vector": [
+    "0",
+    "1"
+   ],
+   "rinv": [
+    [
+     "1",
+     "0"
+    ],
+    [
+     "0",
+     "1"
+    ]
+   ]
+  },
+  "status": "infeasible"
+ },
+ "payload_sha256": "242a00efde58595d250e70b428f3471fce17ef8702f6ba81497d4bdb36adcc94",
+ "hypotheses": [
+  "deterministic ellipsoidal noise with declared joint matrix",
+  "initial static panel",
+  "worst case over all initial states",
+  "tie policy one_optimum"
+ ],
+ "scope": "exact optimum (or infeasibility) over all subsets of the finite menu",
+ "source_ids": [
+  "D15-F01",
+  "D15-F03",
+  "D12-F04"
+ ],
+ "producer": "towre676-cloud/nonlinearhamiltonian extensions (exact rational, Python standard library)"
+}

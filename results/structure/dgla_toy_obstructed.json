@@ -1,0 +1,83 @@
+{
+ "schema": "machinery-envelope-v1",
+ "witness_kind": "dgla-lifting",
+ "coefficient_domain": "Q",
+ "model": {
+  "schema": "dgla-v1",
+  "field": "Q",
+  "basis": [
+   {
+    "degree": 1,
+    "name": "e1"
+   },
+   {
+    "degree": 1,
+    "name": "e2"
+   },
+   {
+    "degree": 2,
+    "name": "f"
+   }
+  ],
+  "differential": [
+   [
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    0
+   ]
+  ],
+  "bracket": [
+   [
+    0,
+    1,
+    [
+     [
+      2,
+      1
+     ]
+    ]
+   ]
+  ]
+ },
+ "model_sha256": "aa2adcac665a4350495c679839a7f9e0c108fbf6817543cedd376304455bb9ea",
+ "payload": {
+  "format": "dgla-lift-v1",
+  "coefficient_domain": "Q",
+  "model_sha256": "aa2adcac665a4350495c679839a7f9e0c108fbf6817543cedd376304455bb9ea",
+  "status": "obstructed",
+  "jet": [
+   [
+    "1",
+    "1",
+    "0"
+   ]
+  ],
+  "functional": [
+   "0",
+   "0",
+   "1"
+  ],
+  "order": 2
+ },
+ "payload_sha256": "67a515bd46e8364d5b83b079e5a983eb6e83c30150a51aff19a73a9d8b39b12b",
+ "hypotheses": [
+  "finite DGLA over Q given by structure constants",
+  "truncation as declared"
+ ],
+ "scope": "formal Maurer-Cartan lifting to the declared order; no convergence or moduli claim",
+ "source_ids": [
+  "D04-F03",
+  "D16-F06"
+ ],
+ "producer": "towre676-cloud/nonlinearhamiltonian extensions (exact rational, Python standard library)"
+}

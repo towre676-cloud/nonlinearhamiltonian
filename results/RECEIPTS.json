@@ -1,0 +1,390 @@
+{
+ "schema": "machinery-results-v1",
+ "results": [
+  {
+   "file": "results/arithmetic/pell_D2_N1_unit3_2.json",
+   "sha256": "66c2536d08252f71b5f197d5363bb78517f553f5a073e86fbfdb0c8ffec655d3",
+   "witness_kind": "pell-orbit-reduction",
+   "replay": "python3 -B extensions/envelope.py check results/arithmetic/pell_D2_N1_unit3_2.json",
+   "producer_seconds": 0.0,
+   "summary": {
+    "status": "passed",
+    "complete": true,
+    "seeds": [
+     [
+      1,
+      0
+     ]
+    ]
+   }
+  },
+  {
+   "file": "results/arithmetic/pell_D2_Nm7_unit17_12.json",
+   "sha256": "0e0882cab7bd2f4b41617878c2f4fc42947896077a8b1c092c52836d7feef83f",
+   "witness_kind": "pell-orbit-reduction",
+   "replay": "python3 -B extensions/envelope.py check results/arithmetic/pell_D2_Nm7_unit17_12.json",
+   "producer_seconds": 0.0,
+   "summary": {
+    "status": "passed",
+    "complete": true,
+    "seeds": [
+     [
+      1,
+      2
+     ],
+     [
+      5,
+      4
+     ],
+     [
+      11,
+      8
+     ],
+     [
+      31,
+      22
+     ]
+    ]
+   }
+  },
+  {
+   "file": "results/arithmetic/pell_D2_Nm7_unit3_2.json",
+   "sha256": "58af9cc48a07300c06b86dc7a74d6d2cf50bc73c4c74e82efe1aea751ef42c22",
+   "witness_kind": "pell-orbit-reduction",
+   "replay": "python3 -B extensions/envelope.py check results/arithmetic/pell_D2_Nm7_unit3_2.json",
+   "producer_seconds": 0.0,
+   "summary": {
+    "status": "passed",
+    "complete": true,
+    "seeds": [
+     [
+      1,
+      2
+     ],
+     [
+      5,
+      4
+     ]
+    ]
+   }
+  },
+  {
+   "file": "results/arithmetic/pell_D3_Nm2_unit2_1.json",
+   "sha256": "b399f2f7cf9b3770f017823d9521be78f70a4135c3b1352080627bffcc27cfe6",
+   "witness_kind": "pell-orbit-reduction",
+   "replay": "python3 -B extensions/envelope.py check results/arithmetic/pell_D3_Nm2_unit2_1.json",
+   "producer_seconds": 0.0,
+   "summary": {
+    "status": "passed",
+    "complete": true,
+    "seeds": [
+     [
+      1,
+      1
+     ]
+    ]
+   }
+  },
+  {
+   "file": "results/arithmetic/pell_D5_Nm4_unit9_4.json",
+   "sha256": "ab409765e0a9ac0f8222a82bfd282f0d224892983d35408950ed5eae7308c8ea",
+   "witness_kind": "pell-orbit-reduction",
+   "replay": "python3 -B extensions/envelope.py check results/arithmetic/pell_D5_Nm4_unit9_4.json",
+   "producer_seconds": 0.0,
+   "summary": {
+    "status": "passed",
+    "complete": true,
+    "seeds": [
+     [
+      1,
+      1
+     ],
+     [
+      4,
+      2
+     ],
+     [
+      11,
+      5
+     ]
+    ]
+   }
+  },
+  {
+   "file": "results/hamiltonian/p3_plus_q2.json",
+   "sha256": "81d544b5ad07acdd81207e1fa2fb26a6af789a3806535391d213f121fcc551e7",
+   "witness_kind": "weyl-polynomial-kernel",
+   "replay": "python3 -B extensions/envelope.py check results/hamiltonian/p3_plus_q2.json",
+   "producer_seconds": 0.37,
+   "summary": {
+    "status": "passed",
+    "kind": "finite_support",
+    "dimension": 2,
+    "kernel": [
+     "1",
+     "p^3 + q^2"
+    ]
+   }
+  },
+  {
+   "file": "results/hamiltonian/q2p2.json",
+   "sha256": "27891d689f15bb1f120cc0dc9f94e8959bfe5572a9b4b2483bcb7b49a739b300",
+   "witness_kind": "weyl-polynomial-kernel",
+   "replay": "python3 -B extensions/envelope.py check results/hamiltonian/q2p2.json",
+   "producer_seconds": 0.05,
+   "summary": {
+    "status": "passed",
+    "kind": "monomial_span",
+    "kernel": [
+     "q^0*p^0*Q[q^1*p^1]"
+    ],
+    "dimension": "infinite"
+   }
+  },
+  {
+   "file": "results/hamiltonian/q2p3.json",
+   "sha256": "6d156ab553bfd2e0553630585cbe83af263ebf07789904a853d3a60d6f1ee11a",
+   "witness_kind": "weyl-polynomial-kernel",
+   "replay": "python3 -B extensions/envelope.py check results/hamiltonian/q2p3.json",
+   "producer_seconds": 0.66,
+   "summary": {
+    "status": "passed",
+    "kind": "monomial_span",
+    "kernel": [
+     "q^0*p^0",
+     "q^1*p^1",
+     "q^2*p^3"
+    ],
+    "dimension": 3
+   }
+  },
+  {
+   "file": "results/hamiltonian/q3.json",
+   "sha256": "ad5d4e33ca8d0b9dfb40a59421e6ad6835b160cbb8714c148cab466804ef5a39",
+   "witness_kind": "weyl-polynomial-kernel",
+   "replay": "python3 -B extensions/envelope.py check results/hamiltonian/q3.json",
+   "producer_seconds": 0.0,
+   "summary": {
+    "status": "passed",
+    "kind": "monomial_span",
+    "kernel": [
+     "p^0*Q[q]",
+     "p^1*Q[q]",
+     "p^2*Q[q]"
+    ],
+    "dimension": "infinite"
+   }
+  },
+  {
+   "file": "results/hamiltonian/q3p3.json",
+   "sha256": "0dcfde7d3f049402198fd5ec3a426011b5b7ff733963d1ba39f7dd92bd329643",
+   "witness_kind": "weyl-polynomial-kernel",
+   "replay": "python3 -B extensions/envelope.py check results/hamiltonian/q3p3.json",
+   "producer_seconds": 1.25,
+   "summary": {
+    "status": "passed",
+    "kind": "monomial_span",
+    "kernel": [
+     "q^0*p^0*Q[q^1*p^1]"
+    ],
+    "dimension": "infinite"
+   }
+  },
+  {
+   "file": "results/hamiltonian/qp3.json",
+   "sha256": "35d808b42d0ee44d54dd3347fdd556a2d1f7b3e0f19371b562d57f4583a8ed91",
+   "witness_kind": "weyl-polynomial-kernel",
+   "replay": "python3 -B extensions/envelope.py check results/hamiltonian/qp3.json",
+   "producer_seconds": 0.0,
+   "summary": {
+    "status": "passed",
+    "kind": "monomial_span",
+    "kernel": [
+     "q^0*Q[p]",
+     "q^1*Q[p]"
+    ],
+    "dimension": "infinite"
+   }
+  },
+  {
+   "file": "results/hamiltonian/qp3_plus_p2.json",
+   "sha256": "e4542034edbb319e0c62cf27c74f3400e81ef8b9867a095f39c29c2a557eadf3",
+   "witness_kind": "weyl-polynomial-kernel",
+   "replay": "python3 -B extensions/envelope.py check results/hamiltonian/qp3_plus_p2.json",
+   "producer_seconds": 0.02,
+   "summary": {
+    "status": "passed",
+    "kind": "monomial_span",
+    "kernel": [
+     "q^0*Q[p]",
+     "q^1*Q[p]"
+    ],
+    "dimension": "infinite"
+   }
+  },
+  {
+   "file": "results/hamiltonian/qp3_plus_q2.json",
+   "sha256": "63178c67289d8207358cd0e4f173bf4629e4440776b5ee297afe0eaf3ee9265b",
+   "witness_kind": "weyl-polynomial-kernel",
+   "replay": "python3 -B extensions/envelope.py check results/hamiltonian/qp3_plus_q2.json",
+   "producer_seconds": 12.92,
+   "summary": {
+    "status": "passed",
+    "kind": "finite_support",
+    "dimension": 2,
+    "kernel": [
+     "1",
+     "q*p^3 + q^2"
+    ]
+   }
+  },
+  {
+   "file": "results/hamiltonian/qp3_plus_q2_plus_p2.json.gz",
+   "sha256": "ef885cfa7dc83a780d0b420d6daf7c33c7b6039ad0714876199838f7905587c3",
+   "witness_kind": "weyl-polynomial-kernel",
+   "replay": "python3 -B extensions/envelope.py check results/hamiltonian/qp3_plus_q2_plus_p2.json.gz",
+   "producer_seconds": 215.25,
+   "summary": {
+    "status": "passed",
+    "kind": "degree_bound",
+    "dimension": 2,
+    "kernel": [
+     "1",
+     "q*p^3 + q^2 + p^2"
+    ],
+    "weight": [
+     1,
+     1
+    ],
+    "bound": 4
+   }
+  },
+  {
+   "file": "results/observer/correlated_finite_horizon.json",
+   "sha256": "699536a1e7b200a122eb19da58618aa898530a9efef9b1fb18af0a9f92aa3bef",
+   "witness_kind": "noise-panel-selection",
+   "replay": "python3 -B extensions/envelope.py check results/observer/correlated_finite_horizon.json",
+   "producer_seconds": 0.0,
+   "summary": {
+    "status": "passed",
+    "claim": "optimal",
+    "cost": "4",
+    "sensors": [
+     0,
+     2
+    ]
+   }
+  },
+  {
+   "file": "results/observer/feed_example.json",
+   "sha256": "b5f2ec9316e938f4f03928120aeb15286074019385633fa16bea3738b4f403c9",
+   "witness_kind": "observer-closure",
+   "replay": "python3 -B extensions/envelope.py check results/observer/feed_example.json",
+   "producer_seconds": 0.0,
+   "summary": {
+    "status": "passed",
+    "format": "observer-closure-v2",
+    "minimal_linear_state_dimension": 2,
+    "panel": "impossible",
+    "input_bound": true
+   }
+  },
+  {
+   "file": "results/observer/rank_perfect_ill_conditioned.json",
+   "sha256": "ba2840ed06fe9b1a48d5a53a716509dfd54514c27d5696dbc9b8719c0ab719a7",
+   "witness_kind": "noise-panel-selection",
+   "replay": "python3 -B extensions/envelope.py check results/observer/rank_perfect_ill_conditioned.json",
+   "producer_seconds": 0.0,
+   "summary": {
+    "status": "passed",
+    "claim": "infeasible"
+   }
+  },
+  {
+   "file": "results/observer/target_only_decision.json",
+   "sha256": "7e392deab033497f612c44a4b7aa5a4e7a028b3366a6072870d8b44b4d0e540a",
+   "witness_kind": "adaptive-experiment",
+   "replay": "python3 -B extensions/envelope.py check results/observer/target_only_decision.json",
+   "producer_seconds": 0.0,
+   "summary": {
+    "status": "passed",
+    "claim": "optimal",
+    "worst_case_cost": "1",
+    "table_entries": 6
+   }
+  },
+  {
+   "file": "results/structure/dgla_toy_obstructed.json",
+   "sha256": "87383705994f7b896011343c737c4e321464e527e8cc15bfef7ba8da0ce34550",
+   "witness_kind": "dgla-lifting",
+   "replay": "python3 -B extensions/envelope.py check results/structure/dgla_toy_obstructed.json",
+   "producer_seconds": 0.0,
+   "summary": {
+    "status": "passed",
+    "claim": "obstructed",
+    "order": 2,
+    "intrinsic": true
+   }
+  },
+  {
+   "file": "results/structure/heisenberg_lift_order4.json",
+   "sha256": "3adb557ca11313caaecfc9fde8f34390b23fc84c52dfb93e6f211a6860e43045",
+   "witness_kind": "dgla-lifting",
+   "replay": "python3 -B extensions/envelope.py check results/structure/heisenberg_lift_order4.json",
+   "producer_seconds": 3.36,
+   "summary": {
+    "status": "passed",
+    "claim": "lifted",
+    "order": 4
+   }
+  },
+  {
+   "file": "results/structure/heisenberg_order2_obstruction.json",
+   "sha256": "aaa660e5b0c09bc7dc72f9edae5c4b8b80fa1083fc4ff2adb4c629438f3e8bad",
+   "witness_kind": "dgla-lifting",
+   "replay": "python3 -B extensions/envelope.py check results/structure/heisenberg_order2_obstruction.json",
+   "producer_seconds": 3.31,
+   "summary": {
+    "status": "passed",
+    "claim": "obstructed",
+    "order": 2,
+    "intrinsic": true
+   }
+  },
+  {
+   "file": "results/structure/heisenberg_order3_jet_obstruction.json",
+   "sha256": "282a180e5de9be3bc51cc8a309d617da5bff275d6e4c9e5ccb2d73dd54e6f4a0",
+   "witness_kind": "dgla-lifting",
+   "replay": "python3 -B extensions/envelope.py check results/structure/heisenberg_order3_jet_obstruction.json",
+   "producer_seconds": 4.0,
+   "summary": {
+    "status": "passed",
+    "claim": "obstructed",
+    "order": 3,
+    "intrinsic": false
+   }
+  },
+  {
+   "file": "results/structure/triangle_obstruction.json",
+   "sha256": "1e5a57673cbfa04ac7bceab245236108864c96621a2cdcbcfebef38c41c286d9",
+   "witness_kind": "rational-obstruction-answer",
+   "replay": "python3 -B extensions/envelope.py check results/structure/triangle_obstruction.json",
+   "producer_seconds": 0.0,
+   "summary": {
+    "status": "passed",
+    "answer": "obstructed"
+   }
+  },
+  {
+   "file": "results/structure/triangle_primitive.json",
+   "sha256": "4a47fa4d090c36a2bdcec77b246f30422aaa68418b5f1be3a3cc3f3d05ad1a64",
+   "witness_kind": "rational-obstruction-answer",
+   "replay": "python3 -B extensions/envelope.py check results/structure/triangle_primitive.json",
+   "producer_seconds": 0.0,
+   "summary": {
+    "status": "passed",
+    "answer": "solved"
+   }
+  }
+ ]
+}

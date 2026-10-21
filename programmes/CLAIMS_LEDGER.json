@@ -1,54 +1,118 @@
 {
-  "claims": [
-    {
-      "id": "B001",
-      "status": "existing_result",
-      "claim": "Static exact-partner classifications in the report\u2019s declared cubic, homogeneous quartic, qF(p) and monomial scopes.",
-      "support": "research/hamiltonian/output/Nonlinear_Hamiltonian_Partners.md",
-      "scope": "Retained proofs and scoped replay; no blanket novelty claim."
-    },
-    {
-      "id": "N001",
-      "status": "proved_abstract_reduction_in_handoff",
-      "claim": "Iterated correction left ideals stabilize in the Weyl algebra; a finite right-D-stable presentation with both containments defines the full polynomial dynamic core.",
-      "support": "programmes/HAMILTONIAN_CORES.md",
-      "scope": "Characteristic-zero exact operator identities; finite PDE presentation, not a completed solution classification."
-    },
-    {
-      "id": "N002",
-      "status": "derived_corollary",
-      "claim": "For H=qp^3+lambda q^2, the dynamic core is Q[p]+qQ[p] at lambda=0 and span{1,H} for nonzero rational lambda.",
-      "support": "programmes/HAMILTONIAN_CORES.md",
-      "scope": "Derived by algebraic scalar extension, affine-symplectic scaling and descent from retained cases; no priority claim."
-    },
-    {
-      "id": "E001",
-      "status": "seed_implemented",
-      "claim": "Minimal rational target-word observer with provenance, intertwining and sensor factorization or hidden-state witness.",
-      "support": "extensions/observer/README.md",
-      "scope": "Finite known rational actions; all future words; linear state summaries; no general noisy/adaptive optimizer."
-    },
-    {
-      "id": "E002",
-      "status": "seed_implemented",
-      "claim": "Exact normally ordered Weyl arithmetic and independent three-identity receipt replay.",
-      "support": "extensions/hamiltonian/weyl_receipts.py",
-      "scope": "Rational coefficients; no Groebner discovery backend shipped."
-    },
-    {
-      "id": "E003",
-      "status": "seed_implemented",
-      "claim": "Construct and independently check finite Q-complex contractions; return a primitive or separating obstruction witness.",
-      "support": "extensions/structure/README.md",
-      "scope": "Finite rational complexes; no integral torsion or arbitrary DGLA/sheaf input adapter shipped."
-    },
-    {
-      "id": "P001",
-      "status": "target",
-      "claim": "Certified robust sensor optimization, Weyl discovery/parameter strata, finite DGLA lifting and supplied-unit arithmetic engines.",
-      "support": "TASKS.json",
-      "scope": "Unfinished tasks, not current capabilities."
-    }
-  ],
-  "rule": "Passing finite tests does not upgrade a target or an unproved general statement to a theorem."
+ "claims": [
+  {
+   "id": "B001",
+   "status": "existing_result",
+   "claim": "Static exact-partner classifications in the report’s declared cubic, homogeneous quartic, qF(p) and monomial scopes.",
+   "support": "research/hamiltonian/output/Nonlinear_Hamiltonian_Partners.md",
+   "scope": "Retained proofs and scoped replay; no blanket novelty claim."
+  },
+  {
+   "id": "N001",
+   "status": "proved_abstract_reduction_in_handoff",
+   "claim": "Iterated correction left ideals stabilize in the Weyl algebra; a finite right-D-stable presentation with both containments defines the full polynomial dynamic core.",
+   "support": "programmes/HAMILTONIAN_CORES.md",
+   "scope": "Characteristic-zero exact operator identities; finite PDE presentation, not a completed solution classification."
+  },
+  {
+   "id": "N002",
+   "status": "derived_corollary",
+   "claim": "For H=qp^3+lambda q^2, the dynamic core is Q[p]+qQ[p] at lambda=0 and span{1,H} for nonzero rational lambda.",
+   "support": "programmes/HAMILTONIAN_CORES.md",
+   "scope": "Derived by algebraic scalar extension, affine-symplectic scaling and descent from retained cases; no priority claim."
+  },
+  {
+   "id": "E001",
+   "status": "implemented_v2",
+   "claim": "Minimal rational target-word observer with provenance, intertwining and sensor factorization or hidden-state witness.",
+   "support": "extensions/observer/observer.py; extensions/observer/check_observer.py; programmes/MACHINERY_MILESTONES.md#o1",
+   "scope": "Finite known rational actions; all future words; linear state summaries; no general noisy/adaptive optimizer."
+  },
+  {
+   "id": "E002",
+   "status": "seed_implemented",
+   "claim": "Exact normally ordered Weyl arithmetic and independent three-identity receipt replay.",
+   "support": "extensions/hamiltonian/weyl_receipts.py",
+   "scope": "Rational coefficients; replay checker for receipts produced by extensions/hamiltonian/weyl_groebner.py (W1)."
+  },
+  {
+   "id": "E003",
+   "status": "implemented_api",
+   "claim": "Construct and independently check finite Q-complex contractions; return a primitive or separating obstruction witness.",
+   "support": "extensions/structure/obstruction.py (S1 answers) over the seed contraction",
+   "scope": "Finite rational complexes; no integral torsion or arbitrary DGLA/sheaf input adapter shipped."
+  },
+  {
+   "id": "P001",
+   "status": "target",
+   "claim": "Remaining open targets: full six-parameter quadratic perturbation family of qp^3; homogeneous quartic dynamic-core moduli; integer Smith/torsion backend; SDP search for invariant metrics; noisy/continuous adaptive experiments; fundamental-unit and maximal-order arithmetic adapters.",
+   "support": "TASKS.json",
+   "scope": "Unfinished tasks, not current capabilities."
+  },
+  {
+   "id": "C0",
+   "status": "implemented",
+   "claim": "Typed machinery-envelope-v1 objects bind certificates to model/payload hashes, domain Q, hypotheses, scope and atlas source ids, and dispatch to independent checkers; swapped witness kinds and unknown domains are rejected.",
+   "support": "extensions/envelope.py; extensions/test_envelope.py",
+   "scope": "Registry of nine witness kinds; Q only."
+  },
+  {
+   "id": "W1",
+   "status": "implemented_with_certificates",
+   "claim": "Fixed-H left Groebner closure of the iterated correction ideal exporting replayable correction-containment, provenance and right-D closure receipts; budget exhaustion returns unknown.",
+   "support": "extensions/hamiltonian/weyl_groebner.py; programmes/DYNAMIC_CORE_RESULTS.md#1",
+   "scope": "One canonical pair over Q; termination is guaranteed by Noetherianity, not by a complexity bound; q^4+p^4 exceeds the default budget."
+  },
+  {
+   "id": "W1-K",
+   "status": "proved_certificate_method",
+   "claim": "Support certificates (monomial span, finite support, weighted degree bound) determine the polynomial common kernel of a receipt ideal in all degrees.",
+   "support": "extensions/hamiltonian/check_weyl_kernel.py; programmes/DYNAMIC_CORE_RESULTS.md#2",
+   "scope": "Applies when the stated monomial-action / top-symbol hypotheses hold; otherwise the producer reports unclassified."
+  },
+  {
+   "id": "W1-R",
+   "status": "certified_computation",
+   "claim": "All-degree dynamic cores: q^3 -> Q[q]+pQ[q]+p^2Q[q]; qp^3 and qp^3+p^2 -> Q[p]+qQ[p]; qp^3+q^2, qp^3+q^2+p^2, p^3+q^2 -> span{1,H}; q^3p^3 and q^2p^2 -> Q[qp]; q^2p^3 -> span{1,qp,q^2p^3}; I_inf(qp^3) is strictly inside W2 dq^2 and I_inf(q^3p^3) = W2(q dq - p dp).",
+   "support": "results/hamiltonian/*.json; results/RECEIPTS.json",
+   "scope": "Exact certificates over Q; q^3, qp^3, qp^3+q^2 are calibrations of retained or derived results; no literature-priority claim."
+  },
+  {
+   "id": "W2",
+   "status": "theorem_with_certificates",
+   "claim": "For all rational alpha, beta: D_inf(qp^3+alpha q^2+beta p^2) = Q[p]+qQ[p] if alpha=0 and span{1,H} if alpha!=0; the static partner space is constant on the whole family.",
+   "support": "programmes/DYNAMIC_CORE_RESULTS.md#3; results/hamiltonian/qp3*.json",
+   "scope": "Two-parameter family; GL2 covariance of transvectants, normal forms over Qbar and descent; the six-parameter family remains open. Reproduces N002 as beta=0."
+  },
+  {
+   "id": "O2",
+   "status": "implemented_with_certificates",
+   "claim": "Exact minimum-cost static sensor panel under a declared ellipsoidal (correlated) noise matrix and amplification cap, with PSD/negative-witness branch-and-bound certificates and incomplete-with-bound outputs; invariant-metric certificates for all-time bounds (sufficient only).",
+   "support": "extensions/observer/panels.py; extensions/observer/check_panel.py",
+   "scope": "Finite menus, deterministic noise sets, initial static panels, tie policy one_optimum; worst-case search is exponential."
+  },
+  {
+   "id": "O3",
+   "status": "implemented_with_certificates",
+   "claim": "Exact worst-case optimal adaptive decision trees for deterministic finite test tables with Bellman lower-bound tables, or an unresolvable pair.",
+   "support": "extensions/observer/adaptive.py; extensions/observer/check_adaptive.py",
+   "scope": "At most 12 states; deterministic outcomes only."
+  },
+  {
+   "id": "S2",
+   "status": "implemented_with_certificates",
+   "claim": "Order-by-order Maurer-Cartan lifting in finite DGLAs over Q via the contraction, with explicit corrections or obstruction functionals; Chevalley-Eilenberg/Nijenhuis-Richardson generator for Lie deformations; order-2 obstructions are intrinsic to the first-order class.",
+   "support": "extensions/structure/dgla.py; extensions/structure/check_dgla.py",
+   "scope": "Formal truncated lifting; higher-order witnesses are relative to the declared jet; no convergence or moduli claim."
+  },
+  {
+   "id": "A1",
+   "status": "implemented_with_certificates",
+   "claim": "Complete supplied-unit orbit classification for x^2-Dy^2=N with exact modular cycles and filtered height counts.",
+   "support": "extensions/arithmetic/pell.py; extensions/arithmetic/check_pell.py",
+   "scope": "Declared order Z[sqrt D], supplied (possibly nonfundamental) unit; completeness rests on the reduction proof in OBSTRUCTIONS_AND_ARITHMETIC.md."
+  }
+ ],
+ "rule": "Passing finite tests does not upgrade a target or an unproved general statement to a theorem.",
+ "updated": "2026-10-21"
 }

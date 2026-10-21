@@ -1,0 +1,174 @@
+{
+ "schema": "machinery-envelope-v1",
+ "witness_kind": "observer-closure",
+ "coefficient_domain": "Q",
+ "model": {
+  "dimension": 2,
+  "actions": {
+   "keep": [
+    [
+     1,
+     0
+    ],
+    [
+     0,
+     1
+    ]
+   ],
+   "feed": [
+    [
+     1,
+     0
+    ],
+    [
+     1,
+     1
+    ]
+   ]
+  },
+  "target": [
+   [
+    0,
+    1
+   ]
+  ],
+  "observation": [
+   [
+    0,
+    1
+   ]
+  ]
+ },
+ "model_sha256": "54356efca5b3bb01c25741000a102041e3fa66d15056d9fb3cd7d25ec81bb327",
+ "payload": {
+  "format": "observer-closure-v2",
+  "coefficient_domain": "Q",
+  "word_convention": "chronological: [a1,...,ak] acts by A_ak...A_a1",
+  "model": {
+   "dimension": 2,
+   "actions": {
+    "feed": [
+     [
+      "1",
+      "0"
+     ],
+     [
+      "1",
+      "1"
+     ]
+    ],
+    "keep": [
+     [
+      "1",
+      "0"
+     ],
+     [
+      "0",
+      "1"
+     ]
+    ]
+   },
+   "target": [
+    [
+     "0",
+     "1"
+    ]
+   ],
+   "observation": [
+    [
+     "0",
+     "1"
+    ]
+   ]
+  },
+  "model_sha256": "435ce5f6d3040cacd352c839da864ef59c958dc04c71c8e6e576aa6576291614",
+  "rank": 2,
+  "basis": [
+   [
+    "0",
+    "1"
+   ],
+   [
+    "1",
+    "1"
+   ]
+  ],
+  "basis_words": [
+   {
+    "target_row": 0,
+    "word": []
+   },
+   {
+    "target_row": 0,
+    "word": [
+     "feed"
+    ]
+   }
+  ],
+  "quotient_actions": {
+   "feed": [
+    [
+     "0",
+     "1"
+    ],
+    [
+     "-1",
+     "2"
+    ]
+   ],
+   "keep": [
+    [
+     "1",
+     "0"
+    ],
+    [
+     "0",
+     "1"
+    ]
+   ]
+  },
+  "target_factor": [
+   [
+    "1",
+    "0"
+   ]
+  ],
+  "diagnostics": {
+   "closure_dimensions": [
+    1,
+    2
+   ],
+   "stabilization_bound": 1,
+   "note": "diagnostic only; the proof objects are the identities above"
+  },
+  "theorem": "z = Q x evolves by z -> B_a z and reproduces G A_w x for every word w and every x; every linear summary R with that property satisfies rank R >= rank Q.",
+  "panel": {
+   "status": "impossible",
+   "invisible_state": [
+    "1",
+    "0"
+   ],
+   "lost_basis_row": 1,
+   "lost_target_word": {
+    "target_row": 0,
+    "word": [
+     "feed"
+    ]
+   },
+   "output_difference": "1",
+   "meaning": "initial states x and x+v give identical panel readings but differ in target row target_row after the chronological word"
+  }
+ },
+ "payload_sha256": "e0a0a08bf4fe99c122b5897b7622f6d09d757b1d5742283256ae6d17a2c54a5e",
+ "hypotheses": [
+  "finite known rational actions",
+  "linear state summaries",
+  "static initial panel measured once"
+ ],
+ "scope": "all action words and all initial states of the encoded model",
+ "source_ids": [
+  "D15-F01",
+  "D14-F01"
+ ],
+ "producer": "towre676-cloud/nonlinearhamiltonian extensions (exact rational, Python standard library)"
+}

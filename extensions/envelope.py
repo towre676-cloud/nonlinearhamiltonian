@@ -13,6 +13,7 @@ Commands:
 """
 from __future__ import annotations
 import argparse
+import gzip
 import hashlib
 import importlib.util
 import json
@@ -70,6 +71,14 @@ def _pell(model, payload):
     return _load('arithmetic/check_pell.py', 'mx_check_pell').check(payload, model)
 
 
+def _adaptive(model, payload):
+    return _load('observer/check_adaptive.py', 'mx_check_adaptive').check(payload, model)
+
+
+def _obstruction_answer(model, payload):
+    return _load('structure/obstruction.py', 'mx_obstruction').check_answer(model, payload)
+
+
 def _dgla(model, payload):
     return _load('structure/check_dgla.py', 'mx_check_dgla').check(payload, model)
 
@@ -83,6 +92,8 @@ KINDS = {
     'noise-panel-selection': ('format', 'noise-panel-v1', _noise_panel),
     'pell-orbit-reduction': ('format', 'pell-orbits-v1', _pell),
     'dgla-lifting': ('format', 'dgla-lift-v1', _dgla),
+    'adaptive-experiment': ('format', 'adaptive-tree-v1', _adaptive),
+    'rational-obstruction-answer': ('schema', 'rational-obstruction-answer-v1', _obstruction_answer),
 }
 
 REQUIRED = ('schema', 'witness_kind', 'coefficient_domain', 'model', 'model_sha256', 'payload',
@@ -95,11 +106,12 @@ def atlas_ids():
     return frozenset([r['uid'] for r in a['corpus'] + a['supplementary']] + [f['id'] for f in a['families']])
 
 
-def make(kind, model, payload, hypotheses, scope, source_ids, producer):
+def make(kind, model, payload, hypotheses, scope, source_ids, producer, verify=True):
     env = {'schema': SCHEMA, 'witness_kind': kind, 'coefficient_domain': 'Q', 'model': model,
            'model_sha256': sha(model), 'payload': payload, 'payload_sha256': sha(payload),
            'hypotheses': list(hypotheses), 'scope': scope, 'source_ids': list(source_ids), 'producer': producer}
-    check(env)
+    if verify:
+        check(env)
     return env
 
 
@@ -133,6 +145,12 @@ def check(env):
             'scope': env['scope'], 'hypotheses': env['hypotheses'], 'source_ids': env['source_ids']}
 
 
+def load(path):
+    path = Path(path)
+    raw = gzip.decompress(path.read_bytes()) if path.suffix == '.gz' else path.read_bytes()
+    return json.loads(raw.decode('utf-8'))
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     sub = ap.add_subparsers(dest='cmd', required=True)
@@ -144,7 +162,7 @@ def main():
         print(json.dumps({k: f'{v[0]}={v[1]}' for k, v in KINDS.items()}, indent=2))
         return
     try:
-        print(json.dumps(check(json.loads(a.envelope.read_text())), indent=2, ensure_ascii=False))
+        print(json.dumps(check(load(a.envelope)), indent=2, ensure_ascii=False))
     except (ValueError, KeyError, TypeError, IndexError, ZeroDivisionError, FileNotFoundError) as e:
         print(json.dumps({'status': 'rejected', 'reason': str(e)}))
         sys.exit(2)
