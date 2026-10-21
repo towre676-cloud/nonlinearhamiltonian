@@ -45,7 +45,7 @@
   {
    "id": "P001",
    "status": "target",
-   "claim": "Remaining open targets: homogeneous quartic dynamic-core moduli for all parameters; maximal-order Pell adapter; noisy/continuous adaptive experiments.",
+   "claim": "Remaining open targets: homogeneous quartic dynamic-core moduli for all parameters; maximal-order fundamental units; noisy/continuous adaptive experiments.",
    "support": "TASKS.json",
    "scope": "Unfinished tasks, not current capabilities."
   },
@@ -129,9 +129,9 @@
   {
    "id": "A2",
    "status": "implemented_with_certificates",
-   "claim": "Certified fundamental unit and smallest norm-one unit of Z[sqrt D] via the Legendre convergent criterion; Pell orbits under the full norm-one unit group.",
+   "claim": "Certified fundamental unit and smallest norm-one unit of Z[sqrt D] via the Legendre convergent criterion; Pell orbits under the full norm-one unit group. Maximal-order orbits (D = 1 mod 4) with supplied units are also supported.",
    "support": "extensions/arithmetic/units.py; extensions/arithmetic/check_units.py",
-   "scope": "Order Z[sqrt D]; the maximal order is not treated."
+   "scope": "Fundamental units certified for Z[sqrt D]; maximal-order units must be supplied."
   },
   {
    "id": "O2b",

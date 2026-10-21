@@ -22,34 +22,35 @@ sys.path.insert(0, str(HERE))
 import check_pell as C  # noqa: E402
 
 
-def mat_pow(D, a, b, j):
-    """eps^j as (u, v) with eps^j = u + v sqrt D, by binary powering."""
-    ru, rv, bu, bv = 1, 0, a, b
+def mat_pow(D, a, b, j, s=1):
+    """eps^j = (u + v sqrt D)/s for eps = (a + b sqrt D)/s, by binary powering in the order."""
+    mul = lambda x, y: ((x[0] * y[0] + D * x[1] * y[1]) // s, (x[0] * y[1] + x[1] * y[0]) // s)
+    r, base = (s, 0), (a, b)
     while j:
         if j & 1:
-            ru, rv = ru * bu + D * rv * bv, ru * bv + rv * bu
-        bu, bv = bu * bu + D * bv * bv, 2 * bu * bv
+            r = mul(r, base)
+        base = mul(base, base)
         j >>= 1
-    return ru, rv
+    return r
 
 
-def orbit_point(D, seed, a, b, j):
-    u, v = mat_pow(D, a, b, j)
+def orbit_point(D, seed, a, b, j, s=1):
+    u, v = mat_pow(D, a, b, j, s)
     x, y = seed
-    return x * u + D * y * v, x * v + y * u
+    return (x * u + D * y * v) // s, (x * v + y * u) // s
 
 
-def last_index(D, seed, a, b, Y):
+def last_index(D, seed, a, b, Y, s=1):
     """Largest j >= 0 with y_j <= Y (y_j strictly increasing for j >= 1 on this branch), or -1."""
-    if orbit_point(D, seed, a, b, 0)[1] > Y:
+    if orbit_point(D, seed, a, b, 0, s)[1] > Y:
         return -1
     hi = 1
-    while orbit_point(D, seed, a, b, hi)[1] <= Y:
+    while orbit_point(D, seed, a, b, hi, s)[1] <= Y:
         hi *= 2
     lo = hi // 2                      # y_lo <= Y < y_hi
     while hi - lo > 1:
         mid = (lo + hi) // 2
-        if orbit_point(D, seed, a, b, mid)[1] <= Y:
+        if orbit_point(D, seed, a, b, mid, s)[1] <= Y:
             lo = mid
         else:
             hi = mid
@@ -64,11 +65,11 @@ def compile_model(model, max_states=10 ** 6, max_window=10 ** 7):
         if unit_cert is None:
             return {'status': 'unknown', 'reason': 'fundamental unit search budget exhausted'}
         unit_cert.pop('result')
-    D, N, a, b = C.read(model, {'unit_certificate': unit_cert} if unit_cert else None)
+    D, N, a, b, s = C.read(model, {'unit_certificate': unit_cert} if unit_cert else None)
     bound = b * b * N if N > 0 else a * a * (-N) // D + 1
     if bound > max_window ** 2:
         return {'status': 'unknown', 'reason': 'seed window exceeds the declared budget'}
-    seeds, end = C.window(D, N, a, b)
+    seeds, end = C.window(D, N, a, b, s)
     cert = {'format': C.FORMAT, 'model_sha256': C.digest(model), 'order': 'Z[sqrt D], integer coordinates',
             'unit_identity': f'{a}^2 - {D}*{b}^2 = 1',
             'seed_bound': ('y^2 < b^2 N, x > 0, y >= 0' if N > 0 else 'D y^2 < a^2 |N|, x >= 0, y > 0'),
@@ -79,20 +80,23 @@ def compile_model(model, max_states=10 ** 6, max_window=10 ** 7):
     if flt:
         q = flt['modulus']
         cert['cycles'] = []
+        if s == 2 and q % 2 == 0:
+            raise ValueError('maximal-order filters need an odd modulus')
+        h = pow(s, -1, q) if q > 1 else 0
         for x, y in seeds:
-            st, s = [], [x % q, y % q]
-            while not st or s != st[0]:
-                st.append(s)
+            st, z = [], [x % q, y % q]
+            while not st or z != st[0]:
+                st.append(z)
                 if len(st) > max_states:
                     return {'status': 'unknown', 'reason': 'modular state budget exhausted'}
-                s = [(a * s[0] + D * b * s[1]) % q, (b * s[0] + a * s[1]) % q]
+                z = [(a * z[0] + D * b * z[1]) * h % q, (b * z[0] + a * z[1]) * h % q]
             cert['cycles'].append({'states': st, 'period': len(st),
                                    'accepted_indices': [k for k, z in enumerate(st) if C.accepted(z, flt)]})
     Y = model.get('height')
     if Y is not None:
         total = acc = 0
         for i, seed in enumerate(seeds):
-            M = last_index(D, seed, a, b, Y)
+            M = last_index(D, seed, a, b, Y, s)
             total += M + 1
             if flt:
                 P, J = cert['cycles'][i]['period'], cert['cycles'][i]['accepted_indices']

@@ -73,6 +73,36 @@ class Oracle(unittest.TestCase):
             self.assertEqual(cert['height_count']['accepted'], len(acc), (D, N, a, b))
 
 
+class MaximalOrder(unittest.TestCase):
+    UNITS = {5: (3, 1), 13: (11, 3), 21: (5, 1), 17: (66, 16), 29: (27, 5)}   # (a + b sqrt D)/2, norm one
+
+    def test_random_maximal_order_models_match_bruteforce(self):
+        rng = random.Random(55)
+        for trial in range(40):
+            D = rng.choice(sorted(self.UNITS))
+            a, b = self.UNITS[D]
+            self.assertEqual(a * a - D * b * b, 4)
+            N = rng.choice([n for n in range(-30, 31) if n])
+            Y = rng.choice([100, 2000])
+            q = rng.choice([3, 5, 7])
+            flt = {'modulus': q, 'accept': sorted([rng.randrange(q), rng.randrange(q)] for _ in range(3))}
+            cert = P.compile_model({'D': D, 'N': N, 'order': 'maximal', 'unit': [a, b], 'height': Y, 'filter': flt})
+            pts = [(isqrt(4 * N + D * y * y), y) for y in range(Y + 1)
+                   if 4 * N + D * y * y >= 0 and isqrt(4 * N + D * y * y) ** 2 == 4 * N + D * y * y
+                   and (isqrt(4 * N + D * y * y) - y) % 2 == 0]
+            acc = [p for p in pts if [p[0] % q, p[1] % q] in flt['accept']]
+            self.assertEqual(cert['height_count']['nonnegative_branch'], len(pts), (D, N))
+            self.assertEqual(cert['height_count']['accepted'], len(acc), (D, N))
+
+    def test_maximal_order_rejections(self):
+        for m in ({'D': 7, 'N': 1, 'order': 'maximal', 'unit': [16, 6]},           # D != 1 mod 4
+                  {'D': 5, 'N': 1, 'order': 'maximal', 'unit': [9, 4]},            # wrong norm for the order
+                  {'D': 5, 'N': 1, 'order': 'maximal', 'unit': 'fundamental'},
+                  {'D': 5, 'N': 1, 'order': 'maximal', 'unit': [3, 1], 'filter': {'modulus': 4, 'accept': []}}):
+            with self.assertRaises(ValueError):
+                P.compile_model(m)
+
+
 class Rejections(unittest.TestCase):
     def test_invalid_models(self):
         for m in ({'D': 4, 'N': 1, 'unit': [3, 1]}, {'D': -2, 'N': 1, 'unit': [3, 2]}, {'D': 2, 'N': 0, 'unit': [3, 2]},

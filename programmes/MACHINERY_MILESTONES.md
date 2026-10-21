@@ -138,7 +138,15 @@ The standing `×2` example is solvable over **Q**, but over **Z** it is obstruct
 - `D = 991` is the classical 30-digit example.
 - The proper power `17 + 12√2` is rejected as fundamental.
 
-**Not treated.** The maximal order `Z[(1+√D)/2]`, which arises when `D ≡ 1 (mod 4)`.
+**Maximal order.** For `D ≡ 1 (mod 4)` a Pell model may declare `"order": "maximal"`.
+
+- Elements are `(x + y√D)/2` with `x ≡ y (mod 2)`. The norm equation becomes `x² − Dy² = 4N`, and the supplied unit `(a + b√D)/2` has `a² − Db² = 4`.
+- The reduction argument is unchanged, so the seed window has the same form: `y² < b²N` for `N > 0` and `Dy² < a²|N|` for `N < 0`.
+- Unit steps divide by 2 exactly, and modular filters require an odd modulus.
+
+Forty random maximal-order models match brute force. For `D = 5`, `N = −1` the solutions are the odd-index Fibonacci pairs.
+
+**Not certified.** Fundamental units of the maximal order. Legendre's bound needs `x/y + √D > 8` there, which fails for small `D`.
 
 ## O2b: rational invariant-metric search
 

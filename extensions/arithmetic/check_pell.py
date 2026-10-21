@@ -30,7 +30,17 @@ def digest(model):
 
 
 def read(model, cert=None):
+    """Returns D, N, a, b, s. For the maximal order (s = 2) elements are (X + Y sqrt D)/2 with
+    X = Y mod 2, the norm equation is X^2 - D Y^2 = 4N and the unit (a + b sqrt D)/2 has
+    a^2 - D b^2 = 4; otherwise s = 1 and everything is in Z[sqrt D]."""
     D, N = model['D'], model['N']
+    s = {'Z[sqrt D]': 1, 'maximal': 2}.get(model.get('order', 'Z[sqrt D]'))
+    if s is None:
+        raise ValueError('order must be Z[sqrt D] or maximal')
+    if s == 2 and (type(D) is not int or D % 4 != 1):
+        raise ValueError('the maximal order differs from Z[sqrt D] only for D = 1 mod 4')
+    if s == 2 and model['unit'] == 'fundamental':
+        raise ValueError('fundamental units are certified for Z[sqrt D] only; supply a unit of the maximal order')
     if model['unit'] == 'fundamental':
         # The orbit unit is the certified smallest norm-one unit of Z[sqrt D].
         if cert is None or 'unit_certificate' not in cert:
@@ -47,18 +57,24 @@ def read(model, cert=None):
         raise ValueError('D must be a positive nonsquare')
     if N == 0:
         raise ValueError('N must be nonzero')
-    if a <= 0 or b <= 0 or a * a - D * b * b != 1:
-        raise ValueError('supplied unit must satisfy a, b > 0 and a^2 - D b^2 = 1')
-    return D, N, a, b
+    if a <= 0 or b <= 0 or a * a - D * b * b != s * s or (a - b) % s:
+        raise ValueError('supplied unit must satisfy a, b > 0 and a^2 - D b^2 = s^2 (a = b mod 2 for the maximal order)')
+    return D, N, a, b, s
 
 
-def window(D, N, a, b):
+def step(D, a, b, s, x, y):
+    return (a * x + D * b * y) // s, (b * x + a * y) // s
+
+
+def window(D, N, a, b, s=1):
+    """Seeds: N > 0: x > 0, y >= 0, y^2 < b^2 N; N < 0: x >= 0, y > 0, D y^2 < a^2 |N|;
+    x^2 - D y^2 = s^2 N and x = y mod s."""
     seeds = []
     y = 0 if N > 0 else 1
     while (y * y < b * b * N) if N > 0 else (D * y * y < a * a * (-N)):
-        s = N + D * y * y
-        if s >= 0 and isqrt(s) ** 2 == s and (N < 0 or isqrt(s) > 0):
-            seeds.append([isqrt(s), y])
+        t = s * s * N + D * y * y
+        if t >= 0 and isqrt(t) ** 2 == t and (N < 0 or isqrt(t) > 0) and (isqrt(t) - y) % s == 0:
+            seeds.append([isqrt(t), y])
         y += 1
     return seeds, y
 
@@ -72,17 +88,17 @@ def accepted(state, flt):
 def check(cert, model):
     if cert.get('format') != FORMAT or cert.get('model_sha256') != digest(model):
         raise ValueError('not a pell-orbits-v1 certificate for this model')
-    D, N, a, b = read(model, cert)
-    seeds, end = window(D, N, a, b)
+    D, N, a, b, s = read(model, cert)
+    seeds, end = window(D, N, a, b, s)
     if cert['seeds'] != seeds or cert['window_end_exclusive'] != end:
         raise ValueError('seed list differs from the exact window enumeration')
     for x, y in seeds:
-        if x * x - D * y * y != N:
+        if x * x - D * y * y != s * s * N:
             raise ValueError('seed has the wrong norm')
     flt = model.get('filter')
     if flt:
         q = flt['modulus']
-        if type(q) is not int or q < 1 or any(len(r) != 2 or not all(type(v) is int and 0 <= v < q for v in r)
+        if type(q) is not int or q < 1 or (s == 2 and q % 2 == 0) or any(len(r) != 2 or not all(type(v) is int and 0 <= v < q for v in r)
                                               for r in flt['accept']):
             raise ValueError('malformed modular filter')
         if len(cert['cycles']) != len(seeds):
@@ -93,7 +109,8 @@ def check(cert, model):
                 raise ValueError('cycle must start at the seed state and have distinct states')
             for k in range(len(st)):
                 u, v = st[k]
-                nxt = [(a * u + D * b * v) % q, (b * u + a * v) % q]
+                h = pow(s, -1, q) if q > 1 else 0
+                nxt = [(a * u + D * b * v) * h % q, (b * u + a * v) * h % q]
                 if nxt != st[(k + 1) % len(st)]:
                     raise ValueError('cycle does not follow the unit map')
             if cyc['accepted_indices'] != [k for k, s in enumerate(st) if accepted(s, flt)]:
@@ -105,18 +122,19 @@ def check(cert, model):
             while y <= Y:
                 total += 1
                 acc += bool(flt) and accepted((x, y), flt)
-                x, y = a * x + D * b * y, b * x + a * y
+                x, y = step(D, a, b, s, x, y)
         if cert['height_count'] != {'height': Y, 'nonnegative_branch': total,
                                     'accepted': acc if flt else None}:
             raise ValueError('height counts are wrong')
     full = model['unit'] == 'fundamental'
-    return {'status': 'passed', 'complete': True, 'seeds': seeds, 'unit': [a, b],
+    order = 'the maximal order Z[(1+sqrt D)/2], elements (x + y sqrt D)/2' if s == 2 else 'Z[sqrt D]'
+    return {'status': 'passed', 'complete': True, 'seeds': seeds, 'unit': [a, b], 'order': order,
             'scope': ('every integer solution is +/- seed * eps^j (j in Z), eps the certified smallest norm-one '
                       'unit, so the seeds are exactly the orbits under the full norm-one unit group of Z[sqrt D]'
                       if full else
                       'every integer solution is +/- seed * eps^j (j in Z) for the supplied unit; the '
                       'nonnegative branch is seed * eps^j, j >= 0; no claim about fundamental units')
-                     + '; the maximal order is not treated'}
+                     + ('' if s == 2 else '; the maximal order is not treated')}
 
 
 def main():
