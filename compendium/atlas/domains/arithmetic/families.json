@@ -1,0 +1,1506 @@
+[
+  {
+    "id": "D01-F01",
+    "domain_id": "D01",
+    "title": "Arithmetic types, completions and certified p-adic precision",
+    "central_question": "Which arithmetic statements survive a change of scalar domain, and what can a finite p-adic calculation actually certify?",
+    "synopsis": "An arithmetic expression includes its scalar ring, topology and precision. The rational field, a p-adic completion, a residue ring and a formal power-series ring support different operations. A unital homomorphism between characteristic zero and characteristic p would send the nonzero integer p both to an invertible element and to zero, an immediate obstruction when the source is a field. Completion instead preserves rational identities while changing which sequences converge. These distinctions turn the early request to separate meanings of Q into a practical specification for every later lifting algorithm. The useful output is a compatible sequence of exact congruences accompanied by derivative and residual valuations. Such a sequence proves an existence statement only with a convergence argument; a zero residue at one precision cannot certify an exact zero. Perfectoid and prismatic language extends this discipline, but carries additional structural hypotheses rather than merely renaming small errors.",
+    "definitions": [
+      "For nonzero rational x, v_p(x) is its prime-p exponent and |x|_p=p^(−v_p(x)); Q_p is the metric completion and Z_p its unit ball.",
+      "A simple root modulo p is an integer a with f(a)≡0 mod p and f′(a) not divisible by p. A precision-N representative specifies a coset modulo p^N.",
+      "For a nonzero integral series F=Σa_nT^n, μ(F)=min v_p(a_n), and λ(F) is the first index attaining that minimum. Infinite tails must be controlled before certifying these minima."
+    ],
+    "theorem": {
+      "statement": "If f∈Z_p[X] and a_n is a root modulo p^n with unit derivative, there is exactly one a_(n+1)=a_n+t p^n modulo p^(n+1) reducing to a_n. The compatible sequence converges to the unique root of f in a_1+pZ_p.",
+      "proof": "Taylor expansion modulo p^(n+1) gives f(a_n+t p^n)≡f(a_n)+t p^n f′(a_n), since all terms of order two are divisible by p^(2n). Dividing by p^n gives one linear equation for t modulo p. The derivative is a unit, so t is unique. Successive representatives differ by an element of p^nZ_p and hence form a Cauchy sequence. Completeness supplies a limit a; continuity of polynomial evaluation gives f(a)=0. If b is a second root in the same residue class, factor f(a)−f(b)=(a−b)g(a,b). The reduction of g is the nonzero derivative at a_1, so g is a unit and a=b. Newton's update a−f(a)/f′(a) accelerates the same argument: an initial residual valuation at least n becomes at least 2n when the derivative is a unit. An exact vanishing claim requires this theorem or a separate identity, whereas finite arithmetic alone establishes only congruences."
+    },
+    "worked_example": {
+      "setup": "Lift the residue 3 of X²−2 modulo 7, then compare a filtered Frobenius residual at two precisions.",
+      "calculation": "At modulus 7, 3²−2=7 and f′(3)=6 is a unit. Writing a_2=3+7t gives 1+6t≡0 mod 7, hence t=1 and a_2=10. Then f(10)=98=2·49; 2+20t≡0 mod 7 gives t=2, so a_3=108 and 108²−2=34·343. Separately, for φ=diag(1,5), Fil¹=span(e₂), the integral quotient residual R(x,y)=π((5φ−I)(x,y)) is 4x. At (25,1) it is 100: invisible modulo 25, nonzero modulo 125. This second calculation certifies failure of exact membership once sufficient precision is supplied.",
+      "meaning": "The root computation supplies certified digits of a genuine 7-adic algebraic number; the residual example explains why a temporary zero display cannot replace a proof."
+    },
+    "source_uids": [
+      "2023:M001",
+      "2023:M002",
+      "2024:Y24-10-023",
+      "2024:Y24-10-024",
+      "2025:Y25-05-010",
+      "2025:Y25-08-907",
+      "2025:Y25-09-010",
+      "2025:Y25-10-003",
+      "2026:Y26-02-033",
+      "2026:Y26-07-031",
+      "2026:Y26-09-013"
+    ],
+    "anchor_uids": [
+      "2023:M001",
+      "2023:M002",
+      "2025:Y25-08-907",
+      "2025:Y25-09-010",
+      "2025:Y25-10-003",
+      "2026:Y26-07-031",
+      "2026:Y26-09-013"
+    ],
+    "progression": [
+      {
+        "year": 2023,
+        "evidence_uids": [
+          "2023:M001",
+          "2023:M002"
+        ],
+        "narrative": "The 2023 treatments supply the scalar distinctions and simple-root lifting foundation; this synthesis uses their explicit hypotheses rather than attributing a later precision calculus to the original exchanges."
+      },
+      {
+        "year": 2024,
+        "evidence_uids": [
+          "2024:Y24-10-023",
+          "2024:Y24-10-024"
+        ],
+        "narrative": "Perfectoid fields and prisms introduce completeness, Frobenius and structured pairs. Their appearance broadens the objects, while the elementary lifting theorem remains a separate local result."
+      },
+      {
+        "year": 2025,
+        "evidence_uids": [
+          "2025:Y25-08-907",
+          "2025:Y25-09-010",
+          "2025:Y25-10-003"
+        ],
+        "narrative": "Filtered Frobenius and power-series invariants expose the distinction between a finite residue and an exact infinite object. Newton lifting gives a positive certificate when its derivative assumptions hold."
+      },
+      {
+        "year": 2026,
+        "evidence_uids": [
+          "2026:Y26-07-031",
+          "2026:Y26-09-013"
+        ],
+        "narrative": "The later completion and quintic examples return to concrete compatible lifts. Their exact residue-and-derivative checks support a reusable verification contract, without claiming global factorization or rational roots."
+      }
+    ],
+    "connections": [
+      {
+        "target_domain": "D14",
+        "relation": "Exact certification",
+        "mathematical_bridge": "A verifier checks f(a_N)≡0 mod p^N and invertibility of f′(a_N), while the written convergence proof upgrades the certificate to existence.",
+        "scope": "Finite checking and the infinite theorem have distinct responsibilities."
+      },
+      {
+        "target_domain": "D02",
+        "relation": "Comparison and lifting data",
+        "mathematical_bridge": "A crystalline or filtered calculation must name its base, lattice and filtration before a p-adic residual is meaningful.",
+        "scope": "The elementary residual example is not a proof of a general p-adic Hodge comparison theorem."
+      }
+    ],
+    "capabilities": [
+      "C01",
+      "C03",
+      "C08",
+      "C15"
+    ],
+    "interactive_contract": {
+      "lab_ids": [],
+      "inputs": "Prime p, integer polynomial f, initial residue, requested precision N; optional exact filtered matrices.",
+      "outputs": "A table of compatible roots, derivative-unit checks and residual valuations; a precision-aware membership verdict.",
+      "validation": "Replay each modular root and reduction step exactly; distinguish zero modulo p^N from an identically zero obstruction.",
+      "status": "Mathematical recipe; no general solver implemented"
+    },
+    "limits": "Simple-root lifting does not cover a vanishing derivative without stronger hypotheses. Truncated series cannot reveal unseen unit coefficients. Perfectoid and prismatic constructions require their full structural definitions; a numerical resemblance to a weight or height supplies none of them.",
+    "open_questions": [
+      "For a singular residue, what extra valuation inequalities guarantee a lift, and can an exact counterexample show why the simple-root contract fails?",
+      "Can a proposed filtered calculation provide a certified lower bound on input precision sufficient to distinguish nonvanishing from an unresolved zero residue?"
+    ],
+    "references": [
+      {
+        "label": "NIST DLMF q calculus",
+        "url": "https://dlmf.nist.gov/17.2"
+      },
+      {
+        "label": "Keith Conrad p-adic course materials",
+        "url": "https://kconrad.math.uconn.edu/math3094f16/"
+      },
+      {
+        "label": "Keith Conrad Hensel’s Lemma",
+        "url": "https://kconrad.math.uconn.edu/blurbs/gradnumthy/hensel.pdf"
+      },
+      {
+        "label": "Milne, Class Field Theory, local fields and valuations",
+        "url": "https://www.jmilne.org/math/CourseNotes/cft.html"
+      },
+      {
+        "label": "Coates Schneider Sujatha Modules over Iwasawa algebras",
+        "url": "https://arxiv.org/abs/math/0110342"
+      },
+      {
+        "label": "Milne Algebraic Number Theory",
+        "url": "https://www.jmilne.org/math/CourseNotes/ANT.pdf"
+      }
+    ]
+  },
+  {
+    "id": "D01-F02",
+    "domain_id": "D01",
+    "title": "Divisor incidence, valuations and constructive integer parametrization",
+    "central_question": "How can multiplicative arithmetic become a finite lattice calculation with a complete certificate?",
+    "synopsis": "Prime factorization converts multiplication into addition of exponent vectors. Divisibility becomes a coordinate order, gcd and lcm become coordinate minimum and maximum, and a monomial equation becomes an integer linear system at every prime. This does more than simplify computation: it states exactly which sign cases, valuation bounds and prime supports a complete answer must cover. Divisor incidence then transports scalar arithmetic identities into matrix factorizations. The same identity n=Σ_(d|n)φ(d) controls a positive gcd kernel, its determinant, and a sieve implementation. Thus arithmetic, combinatorics and finite-dimensional energy geometry meet through a declared transform, not merely because they share the word prime. The family includes factorial valuations and prime-stripped block products: one computes the p-power removed, the other computes the remaining unit, and their recombination reconstructs the original factorial exactly.",
+    "definitions": [
+      "For n=∏p_i^a_i, a divisor corresponds to exponents 0≤b_i≤a_i. Its divisor lattice is the product of chains C_(a_i+1).",
+      "Dirichlet convolution is (f*g)(n)=Σ_(d|n)f(d)g(n/d). The incidence matrix E has E_(i,d)=1 when d divides i, and zero otherwise.",
+      "Legendre’s formula gives v_p(n!)=Σ_(j≥1)⌊n/p^j⌋. The stripped unit U_p(n)=n!/p^v_p(n!) is an integer not divisible by p."
+    ],
+    "theorem": {
+      "statement": "For G_(i,j)=gcd(i,j), 1≤i,j≤N, one has G=E diag(φ(1),…,φ(N))Eᵀ. Consequently G is positive definite and det G=∏_(d=1)^Nφ(d). Moreover positive solutions of x²y³=2²⁰3¹² are exactly x=2^(10−3r)3^(6−3s), y=2^(2r)3^(2s), with 0≤r≤3 and 0≤s≤2.",
+      "proof": "The (i,j) entry of the displayed matrix product is Σ_(d|i,d|j)φ(d)=Σ_(d|gcd(i,j))φ(d)=gcd(i,j). The identity Σ_(d|m)φ(d)=m follows by grouping 1,…,m according to gcd with m. E is lower triangular with diagonal one; every φ(d)>0, giving positive definiteness and the determinant. For the monomial equation, a prime outside {2,3} has 2v_p(x)+3v_p(y)=0, forcing both exponents zero. At p=2, nonnegative integral solutions to 2a+3b=20 require b=2r and a=10−3r, with r=0,1,2,3. At p=3 the same argument gives b=2s and a=6−3s, with s=0,1,2. Independent choices prove both existence and completeness of the twelve solutions. A bounded search would show existence of examples but would not establish that no extra prime or exponent pattern occurs."
+    },
+    "worked_example": {
+      "setup": "Factor the 4×4 gcd matrix, count a divisor lattice, and recover a stripped factorial.",
+      "calculation": "For N=4 the diagonal weights are (1,1,2,2), so det G=4. The row for i=4 in E is (1,1,0,1), explaining gcd(4,2)=φ(1)+φ(2)=2. For n=72=2³3², the rank polynomial is (1+t+t²+t³)(1+t+t²), whose coefficients are 1,2,3,3,2,1; its value at one is 12 and its degree is five. For 10!, v_3=3+1=4, so U_3(10)=3628800/81=44800. The recursion U_3(10)=(1·2·4·5·7·8·10)U_3(3), with U_3(3)=2, reproduces 44800.",
+      "meaning": "A positive kernel, a complete Diophantine parametrization and an efficient arithmetic block algorithm arise from distinct but compatible uses of divisor structure."
+    },
+    "source_uids": [
+      "2023:M081",
+      "2024:Y24-10-028",
+      "2025:Y25-05-020",
+      "2025:Y25-06-004",
+      "2026:Y26-01-006",
+      "2026:Y26-05-019",
+      "2026:Y26-05-020",
+      "2026:Y26-06-004",
+      "2026:Y26-10-003",
+      "2026:Y26-10-004",
+      "2026:Y26-10-005",
+      "2026:Y26-10-007"
+    ],
+    "anchor_uids": [
+      "2025:Y25-05-020",
+      "2025:Y25-06-004",
+      "2026:Y26-01-006",
+      "2026:Y26-05-020",
+      "2026:Y26-10-003",
+      "2026:Y26-10-005",
+      "2026:Y26-10-007"
+    ],
+    "progression": [
+      {
+        "year": 2023,
+        "evidence_uids": [
+          "2023:M081"
+        ],
+        "narrative": "Exact exponent manipulation is the early foundation. It supplies arithmetic scale control, without implying that later divisor kernels were already formulated."
+      },
+      {
+        "year": 2024,
+        "evidence_uids": [
+          "2024:Y24-10-028"
+        ],
+        "narrative": "The exponent-tower treatment makes parse structure explicit. The same expression discipline is needed before converting a multiplicative constraint into an exponent equation."
+      },
+      {
+        "year": 2025,
+        "evidence_uids": [
+          "2025:Y25-05-020",
+          "2025:Y25-06-004"
+        ],
+        "narrative": "Divisor convolution and factorial valuations provide the algebraic and computational components separately, each with an exact domain and proof."
+      },
+      {
+        "year": 2026,
+        "evidence_uids": [
+          "2026:Y26-05-019",
+          "2026:Y26-05-020",
+          "2026:Y26-10-003",
+          "2026:Y26-10-004",
+          "2026:Y26-10-005",
+          "2026:Y26-10-007"
+        ],
+        "narrative": "Species, lattice order, kernel factorizations and full valuation parametrizations make the shared exponent structure particularly explicit in the later treatments."
+      }
+    ],
+    "connections": [
+      {
+        "target_domain": "D13",
+        "relation": "Incidence and lattice structure",
+        "mathematical_bridge": "The divisor poset is a product of chains; its zeta matrix is E and its Möbius inverse supplies arithmetic inversion.",
+        "scope": "This finite poset statement does not identify arbitrary compatibility graphs with complete arithmetic solution sets."
+      },
+      {
+        "target_domain": "D12",
+        "relation": "Energy certificates",
+        "mathematical_bridge": "G=EWEᵀ with W positive gives an exact quadratic energy and strict convexity on the declared finite coordinates.",
+        "scope": "Optimization follows from this factorization, not from prime support alone."
+      },
+      {
+        "target_domain": "D14",
+        "relation": "Complete finite search",
+        "mathematical_bridge": "Nonnegative valuation bounds prove that enumeration of the exponent rectangle is exhaustive.",
+        "scope": "Integer sign and zero cases require separate checks when the original equation permits them."
+      }
+    ],
+    "capabilities": [
+      "C01",
+      "C02",
+      "C03",
+      "C04",
+      "C15"
+    ],
+    "interactive_contract": {
+      "lab_ids": [],
+      "inputs": "A factored integer, exponent matrix, target valuations and sign domain; or an integer kernel cutoff N.",
+      "outputs": "Exact exponent solutions, divisor-rank counts, incidence factors and determinant certificates.",
+      "validation": "Reconstruct each integer, substitute into the original equation, and prove prime-support and valuation bounds before enumerating.",
+      "status": "Mathematical recipe; no general solver implemented"
+    },
+    "limits": "Factorization is an input cost, and exact arithmetic operation counts are not bit-complexity bounds. Real or complex solutions of a monomial equation do not inherit the integer valuation classification. A positive matrix constructed from divisors does not automatically encode an arithmetic L-function.",
+    "open_questions": [
+      "For a general nonnegative exponent matrix, which finite target supports produce a bounded polytope of integer valuation vectors?",
+      "Can the O(N log N) divisor-kernel action be paired with a bit-complexity bound and an exact sparse factorization certificate?"
+    ],
+    "references": [
+      {
+        "label": "NIST DLMF Dirichlet series",
+        "url": "https://dlmf.nist.gov/27.4"
+      },
+      {
+        "label": "MIT number-theory lecture notes",
+        "url": "https://ocw.mit.edu/courses/18-781-theory-of-numbers-spring-2012/pages/lecture-notes/"
+      },
+      {
+        "label": "MIT elementary number theory notes",
+        "url": "https://math.mit.edu/~dav/finalCheatSheet.pdf"
+      },
+      {
+        "label": "Henry J. S. Smith, On the Value of a Certain Arithmetical Determinant",
+        "url": "https://doi.org/10.1112/plms/s1-7.1.208"
+      },
+      {
+        "label": "J. S. Milne, Algebraic Number Theory",
+        "url": "https://www.jmilne.org/math/CourseNotes/ANT.pdf"
+      },
+      {
+        "label": "NIST DLMF: arithmetic functions",
+        "url": "https://dlmf.nist.gov/27.2"
+      }
+    ]
+  },
+  {
+    "id": "D01-F03",
+    "domain_id": "D01",
+    "title": "Cyclotomic degrees, Galois fibres and trace transport",
+    "central_question": "What exact structure follows from conductor 1680, and which additional certificates are needed to connect it to another representation?",
+    "synopsis": "The number 384 becomes mathematically productive when assigned a specific role: it is the degree of Q(ζ₁₆₈₀), not the order of a primitive root, the largest Galois-element order, a Lie algebra dimension or a category rank. Distinguishing those meanings allows a much stronger construction. The subgroup corresponding to Q(ζ₃₀) produces uniform fibres of size 48; trace transport is then a theorem of the field tower and can be checked through finite residue classes. This organizes a recurring numerical framework into an auditable arithmetic object. The same discipline applies to trace orthogonality: a coefficient p, rather than p+1, follows from which residue sums are actually being taken. Any proposed passage to an integral E₈ lattice must exhibit a basis matrix, its Gram form and an intertwining equation. Equal degree or a handful of coincident traces cannot supply those maps.",
+    "definitions": [
+      "For N≥1, ζ_N=exp(2πi/N); Gal(Q(ζ_N)/Q) identifies with U_N=(Z/NZ)× by σ_a(ζ_N)=ζ_N^a.",
+      "The Ramanujan sum c_N(n)=Σ_(a∈U_N)ζ_N^(an) is an integer and equals Σ_(d|gcd(N,n))d μ(N/d).",
+      "For L⊆K and x∈L, Tr_(K/Q)(x)=[K:L]Tr_(L/Q)(x). Relative trace is a linear map, not a choice of an integral basis."
+    ],
+    "theorem": {
+      "statement": "Let K=Q(ζ₁₆₈₀), L=Q(ζ₃₀), and η=ζ₁₆₈₀^56. Then [K:Q]=384, [L:Q]=8, [K:L]=48; reduction U₁₆₈₀→U₃₀ is onto with every fibre of size 48. Hence Tr_(K/Q)(η^n)=48c₃₀(n). The Galois group of K is C₄²×C₂³×C₃ and has exponent 12.",
+      "proof": "Since 1680=16·3·5·7, the totient product is 8·2·4·6=384; φ(30)=1·2·4=8. The order of ζ₁₆₈₀^56 is 1680/gcd(1680,56)=30, giving L⊆K and the tower degree. A class coprime to 30 can be extended to a unit modulo 1680 by prescribing a compatible odd residue modulo 16 and a nonzero residue modulo 7; CRT proves surjectivity. A surjective finite-group homomorphism has fibres equal to kernel cosets, all of size 384/8. Summing η^(an) across these fibres proves the trace formula. For the group structure CRT gives U₁₆×U₃×U₅×U₇≅(C₄×C₂)×C₂×C₄×C₆, and C₆≅C₂×C₃. The least common multiple of these cyclic orders is 12, so the group cannot be cyclic of order 384. These conclusions use classical cyclotomic irreducibility as a structural input; the residue enumeration independently verifies the finite arithmetic."
+    },
+    "worked_example": {
+      "setup": "Count the fibres and compute four exact traces without floating-point roots of unity.",
+      "calculation": "Enumerating 0≤a<1680 with gcd(a,1680)=1 gives 384 residues. Reducing modulo 30 produces precisely 1,7,11,13,17,19,23,29, each 48 times. Inclusion–exclusion gives c₃₀(1)=−1, c₃₀(2)=1, c₃₀(15)=−8 and c₃₀(30)=8. The associated K-traces are −48,48,−384,384. Complex conjugation is the nontrivial involution a↦−a, so its fixed maximal real subfield has degree 192. This is distinct from the extension degree 48 and the number of target phases eight.",
+      "meaning": "The arithmetic framework now supports a real interactive finite model: every displayed multiplicity is an exact residue count and every displayed trace has an integer formula."
+    },
+    "source_uids": [
+      "2025:Y25-04-001",
+      "2025:Y25-05-003",
+      "2025:Y25-07-016",
+      "2025:Y25-10-016",
+      "2025:Y25-10-026",
+      "2026:Y26-01-016",
+      "2026:Y26-10-030",
+      "2025:Y25-07-021",
+      "2025:Y25-12-013"
+    ],
+    "anchor_uids": [
+      "2025:Y25-04-001",
+      "2025:Y25-05-003",
+      "2025:Y25-10-026",
+      "2026:Y26-01-016",
+      "2026:Y26-10-030"
+    ],
+    "progression": [
+      {
+        "year": 2025,
+        "evidence_uids": [
+          "2025:Y25-04-001",
+          "2025:Y25-05-003",
+          "2025:Y25-10-026"
+        ],
+        "narrative": "The explicit user conductor framework supports the degree and Galois computation; the fourth-power counterexample and corrected trace coefficient delimit what that arithmetic can imply."
+      },
+      {
+        "year": 2026,
+        "evidence_uids": [
+          "2026:Y26-01-016",
+          "2026:Y26-10-030"
+        ],
+        "narrative": "The later treatments correct the totient to 384 and derive the concrete conductor-30 field tower. The uniform phase fibres are the strongest exact transport statement supported by these entries."
+      }
+    ],
+    "connections": [
+      {
+        "target_domain": "D03",
+        "relation": "Representation comparison",
+        "mathematical_bridge": "A matrix C on one lattice and D on another are intertwined only after an explicit B satisfies CB=BD; then C^nB=BD^n follows by induction.",
+        "scope": "Trace coincidences give necessary diagnostics, not an integral lattice isomorphism."
+      },
+      {
+        "target_domain": "D16",
+        "relation": "Finite phase models",
+        "mathematical_bridge": "The primitive phase pushforward is an exact finite distribution with uniform multiplicity 48.",
+        "scope": "It does not determine a fusion category, quantum dimension or Hamiltonian."
+      },
+      {
+        "target_domain": "D14",
+        "relation": "Certificate design",
+        "mathematical_bridge": "CRT enumeration, group-element orders and integer Ramanujan sums give independent finite checks.",
+        "scope": "The field-degree interpretation still cites cyclotomic irreducibility."
+      }
+    ],
+    "capabilities": [
+      "C01",
+      "C02",
+      "C03",
+      "C04",
+      "C10",
+      "C15"
+    ],
+    "interactive_contract": {
+      "lab_ids": [
+        "L07"
+      ],
+      "inputs": "Select a supported divisor m of 1680; the default target is m=30.",
+      "outputs": "All reduced unit classes, their fibre sizes, source and target counts, and a uniformity verdict. The trace identities are explained in the family and replayed by verify.py; the current lab has no trace-exponent control.",
+      "validation": "Enumerate every gcd-one residue modulo 1680; compare target counts with 384/φ(m). At m=30 assert eight fibres of size 48.",
+      "status": "Implemented residue-fibre worked model; trace controls are a specified extension"
+    },
+    "limits": "This is a worked conductor pair, not a universal cyclotomic-field or integral-representation solver. No missing E₈ matrices are reconstructed from dimensions. The sources do not supply arithmetic continuity back to 2023, so this family’s chronology begins with the supported 2025 conductor treatment.",
+    "open_questions": [
+      "Can the proposed integral map provide explicit integer matrices B,A,G,C,D with BᵀAB=G and CB=BD, and can its index be certified?",
+      "For a general divisor M of N, can the interface expose the CRT proof of surjectivity alongside the uniform reduction fibres, while retaining exceptional small-conductor conventions?"
+    ],
+    "references": [
+      {
+        "label": "Milne, Algebraic Number Theory",
+        "url": "https://www.jmilne.org/math/CourseNotes/ANT.pdf"
+      },
+      {
+        "label": "Elkies, On A⁴+B⁴+C⁴=D⁴",
+        "url": "https://doi.org/10.1090/S0025-5718-1988-0930224-9"
+      },
+      {
+        "label": "Elkies mathematical publications",
+        "url": "https://people.math.harvard.edu/~elkies/math_pubs.html"
+      },
+      {
+        "label": "Milne Fields and Galois Theory",
+        "url": "https://www.jmilne.org/math/CourseNotes/FT.pdf"
+      },
+      {
+        "label": "Lawrence C. Washington, Introduction to Cyclotomic Fields",
+        "url": "https://doi.org/10.1007/978-1-4612-1934-7"
+      },
+      {
+        "label": "NIST DLMF: Ramanujan sums and finite Fourier series",
+        "url": "https://dlmf.nist.gov/27.10"
+      }
+    ]
+  },
+  {
+    "id": "D01-F04",
+    "domain_id": "D01",
+    "title": "Quadratic units, complete Pell orbits and congruence populations",
+    "central_question": "When does a recurrence describe every integer solution, and how do finite congruence filters change an infinite population?",
+    "synopsis": "A norm-preserving recurrence generates solutions immediately; proving that it generates all of them is the substantive step. The D=2 Pell equation has an elementary descent to the identity, while the negative equation x²−2y²=−7 requires two distinct canonical seeds. A compact reduction interval makes the seed count finite and proves uniqueness. This exposes an important difference between a finite list, an infinite parametrized family, and a complete classification. Once completeness is established, modular arithmetic is useful again: the unit recurrence is invertible modulo every q, so its state orbit is genuinely periodic. Counting accepted index classes gives an exact density within the orbit and a logarithmic coefficient in a height-bounded population. The same quadratic-unit mechanism explains Fibonacci matrix eigenvalues, but geometric length normalizations must still be declared separately.",
+    "definitions": [
+      "In Z[√2], conjugation sends x+y√2 to x−y√2 and the norm is x²−2y². The norm-one unit ε=3+2√2 has inverse 3−2√2.",
+      "Multiplication by ε sends (x,y) to (3x+4y,2x+3y), an integral matrix of determinant one.",
+      "A canonical seed is a norm solution reduced to a specified half-open interval under multiplication by ε. A modular filter is a predicate on the full residue state, not solely on a visually selected coordinate."
+    ],
+    "theorem": {
+      "statement": "Every solution x,y≥0 of x²−2y²=1 is ε^j for a unique j≥0. Every solution of x²−2y²=−7 with y>0 belongs uniquely to (1+2√2)ε^j or (5+4√2)ε^j, j∈Z. For the positive Pell orbit, a modulo-q predicate accepting w positions in its period P yields a population (w/P)log N/log ε+O(1) under y≤N.",
+      "proof": "For norm one and y>0, y≥2 and √2<x/y≤3/2. The inverse step gives x′=3x−4y>0 and 0≤y′=3y−2x<y; iteration reaches (1,0), proving coverage. For norm −7, α=x+y√2 is positive whenever y>0. Multiply by a unique power of ε to put β in [√7,ε√7). Since β̄=−7/β, its coordinates satisfy x_β=(β−7/β)/2≥0 and y_β=(β+7/β)/(2√2), which lies below 3√(7/2)<6. Thus y_β∈{2,3,4,5}; the required squares 2y_β²−7 are 1,11,25,43. Exactly two seeds remain. The interval is half-open, so seed and exponent are unique. For the positive orbit, conjugation gives y_j=(ε^j−ε^(−j))/(2√2), hence j≤log N/log ε+O(1). The determinant-one recurrence permutes a finite modular state set, so its orbit has no transient tail. A periodic acceptance pattern with w of P positions contributes w/P of the indices, up to a bounded endpoint error."
+    },
+    "worked_example": {
+      "setup": "Generate the two negative-norm seeds, then apply an even-index filter to the positive-norm orbit.",
+      "calculation": "The first seed (1,2) maps to (11,8), and 11²−2·8²=−7. The second (5,4) maps to (31,22), also of norm −7. The inverse sends (11,8) back to (1,2). The positive norm-one sequence begins (3,2),(17,12),(99,70),(577,408). Modulo 3 its full states (x,y) are (1,0),(0,2),(2,0),(0,1), followed by (1,0); the period is four. The condition y≡0 mod 3 accepts precisely the even indices, so the filtered count has coefficient 1/(2log ε).",
+      "meaning": "Completeness rests on descent and seed reduction; finite modular enumeration then safely determines the accepted fraction of that already complete family."
+    },
+    "source_uids": [
+      "2024:Y24-03-024",
+      "2026:Y26-05-005",
+      "2026:Y26-09-029",
+      "2026:Y26-10-006"
+    ],
+    "anchor_uids": [
+      "2024:Y24-03-024",
+      "2026:Y26-05-005",
+      "2026:Y26-09-029",
+      "2026:Y26-10-006"
+    ],
+    "progression": [
+      {
+        "year": 2024,
+        "evidence_uids": [
+          "2024:Y24-03-024"
+        ],
+        "narrative": "The recovered catalog name is developed into an elementary complete D=2 Pell example, with a proof explicitly authored for the annual treatment rather than claimed as recovered historical wording."
+      },
+      {
+        "year": 2026,
+        "evidence_uids": [
+          "2026:Y26-05-005",
+          "2026:Y26-09-029",
+          "2026:Y26-10-006"
+        ],
+        "narrative": "The later treatments connect quadratic units to matrix decay, periodic filters and logarithmic populations, then make the multiple-seed issue explicit through the negative-norm equation. No intervening 2025 Pell source is invented."
+      }
+    ],
+    "connections": [
+      {
+        "target_domain": "D09",
+        "relation": "Discrete exact dynamics",
+        "mathematical_bridge": "The recurrence is an invertible integer map preserving a quadratic invariant; its finite reductions are permutation dynamics.",
+        "scope": "Modular periodicity does not by itself prove completeness over the integers."
+      },
+      {
+        "target_domain": "D08",
+        "relation": "Growth and counting",
+        "mathematical_bridge": "An exact conjugate formula turns exponential orbit growth into logarithmic population growth.",
+        "scope": "The O(1) counting remainder is tied to this orbit model, not to arbitrary Diophantine families."
+      },
+      {
+        "target_domain": "D14",
+        "relation": "Global certificates",
+        "mathematical_bridge": "A compact seed bound plus exact square testing proves that every unit orbit is represented.",
+        "scope": "A finite search without a derived reduction bound is not a global theorem."
+      }
+    ],
+    "capabilities": [
+      "C01",
+      "C02",
+      "C03",
+      "C04",
+      "C07"
+    ],
+    "interactive_contract": {
+      "lab_ids": [
+        "L10"
+      ],
+      "inputs": "Choose negative-norm seed (1,2) or (5,4), then an integer unit power from −20 to 20.",
+      "outputs": "Exact transported coordinates, signed step and norm −7. Positive-Pell sequences and modular acceptance periods are proved in the family and replayed by verify.py; they are not current lab controls.",
+      "validation": "Compute with arbitrary-precision integers and assert x²−2y²=−7 after each displayed transport. The accompanying half-open seed interval proves completeness.",
+      "status": "Implemented two-seed negative-Pell worked model; positive-orbit and congruence-filter controls are specified extensions"
+    },
+    "limits": "The lab covers these D=2 equations. A different discriminant or norm can have more seeds, a different unit group and nontrivial sign conventions. Floating-point logarithms may display growth but are not used to certify integer membership. No unsupplied global shift-uniqueness theorem follows from the population calculation.",
+    "open_questions": [
+      "For each additional quadratic core, can all seeds be bounded and enumerated with a proof of descent coverage before attaching any congruence filter?",
+      "Can an exact interval method decide a height cutoff without rounding error when ε^j lies close to the chosen bound?"
+    ],
+    "references": [
+      {
+        "label": "MIT number theory notes: Euclidean algorithm and Brahmagupta–Pell",
+        "url": "https://ocw.mit.edu/courses/18-781-theory-of-numbers-spring-2012/pages/lecture-notes/"
+      },
+      {
+        "label": "J. S. Milne, Algebraic Number Theory",
+        "url": "https://www.jmilne.org/math/CourseNotes/ANT.pdf"
+      },
+      {
+        "label": "Conrad Pell equations, author notes",
+        "url": "https://kconrad.math.uconn.edu/blurbs/ugradnumthy/pelleqn1.pdf"
+      },
+      {
+        "label": "Lenstra: solving the Pell equation",
+        "url": "https://www.ams.org/notices/200202/fea-lenstra.pdf"
+      }
+    ]
+  },
+  {
+    "id": "D01-F05",
+    "domain_id": "D01",
+    "title": "Number fields, norm forms and arithmetic obstructions",
+    "central_question": "Which field, ideal and lattice data are sufficient to turn a norm identity into a complete arithmetic statement?",
+    "synopsis": "A defining polynomial is the beginning of a number-field calculation. Irreducibility, the polynomial-order index, ramification, unit structure and the actual sublattice representing the original equation each impose additional requirements. The squarefree discriminants −23 and −283 give unusually clean maximal-order certificates, while nonabelian Galois closure supplies a decisive obstruction to cyclotomic containment. The class-field examples add a second kind of obstruction: an extension with the right degree can still ramify at finite or real places. Finally, the 2026 norm forms show why unit transport alone need not classify a two-variable equation. Multiplication preserves a cubic norm surface, but often leaves the binary plane that encoded the original problem. Retaining the embedding lattice makes this loss visible and turns a plausible reduction into a mathematically correct one.",
+    "definitions": [
+      "For an algebraic integer α, the discriminant of Z[α] equals the field discriminant times [O_K:Z[α]]². A squarefree polynomial discriminant therefore forces index one.",
+      "The field norm N_(K/Q)(x) is the determinant of multiplication by x on K. In a specified integral order, norm ±1 implies a unit of that order.",
+      "A binary cubic equation can embed in a norm equation only together with a rank-two lattice condition; the full norm surface has an extra coordinate. An exceptional unit is an algebraic integer z for which both z and 1−z are units."
+    ],
+    "theorem": {
+      "statement": "For f(T)=T³−T+1, irreducibility and discriminant −23 imply S₃ Galois closure and exclude every root from every cyclotomic field. Separately, in the order Z[z] with z³=−4, N(a+bz+cz²)=a³−4b³+16c³+12abc; norm-one transport need not preserve c=0.",
+      "proof": "The only possible rational roots of the monic cubic are ±1, neither of which is a root. Its discriminant is −4(−1)³−27=−23, not a rational square. An irreducible cubic has transitive Galois group A₃ or S₃; the discriminant-square criterion excludes A₃. Every subfield of a finite abelian Galois extension is itself Galois because every subgroup is normal. A nonnormal cubic with S₃ closure therefore cannot be contained in a cyclotomic field. For the norm formula, multiplication by a+bz+cz² in basis (1,z,z²) has matrix [[a,−4c,−4b],[b,a,−4c],[c,b,a]]. Its determinant is the displayed form, giving an exact integral certificate without approximate roots. The unit ε=1−z−z² has norm one. Multiplying the binary element −1−3z by ε gives −13−2z+4z². Both have norm 107, but the latter has nonzero third coordinate. Consequently unit-orbit completeness in the ambient order, even if independently proved, would still require an exact return-to-plane test to solve u³+4v³=107."
+    },
+    "worked_example": {
+      "setup": "Contrast a correct unramified class-field candidate with a wrong one, then retain a Thue lattice.",
+      "calculation": "For K=Q(√10), the quadratic discriminant is 40 and the class number is two. The biquadratic L=Q(√2,√5) has discriminant 8·5·40=1600=40², so its relative discriminant has norm one; L is totally real, giving no real-place ramification. The alternative K(i) has discriminant 40·(−4)·(−40)=6400 and relative norm four, so it is ramified. For H(u,v)=−3u³+9uv²−2v³ and β³−27β−18=0, determinant expansion gives N(−3u−βv)=9H(u,v). The relevant lattice is −3Z+Zβ, not every norm element of the field.",
+      "meaning": "Degree, discriminant, class-field identification and binary-lattice membership answer different questions and require distinct certificates."
+    },
+    "source_uids": [
+      "2024:Y24-10-011",
+      "2024:Y24-12-018",
+      "2025:Y25-07-022",
+      "2025:Y25-07-023",
+      "2025:Y25-08-903",
+      "2025:Y25-08-902",
+      "2026:Y26-02-029",
+      "2026:Y26-05-027",
+      "2026:Y26-06-009",
+      "2026:Y26-06-016",
+      "2026:Y26-06-017",
+      "2026:Y26-07-009",
+      "2026:Y26-09-030",
+      "2026:Y26-10-009",
+      "2026:Y26-10-036"
+    ],
+    "anchor_uids": [
+      "2025:Y25-07-022",
+      "2025:Y25-07-023",
+      "2026:Y26-06-009",
+      "2026:Y26-06-016",
+      "2026:Y26-09-030",
+      "2026:Y26-10-009",
+      "2026:Y26-10-036"
+    ],
+    "progression": [
+      {
+        "year": 2024,
+        "evidence_uids": [
+          "2024:Y24-10-011",
+          "2024:Y24-12-018"
+        ],
+        "narrative": "Quadratic splitting in Q(i) supplies a small exact local-to-global model and illustrates how local factors depend on prime ideals rather than solely rational primes."
+      },
+      {
+        "year": 2025,
+        "evidence_uids": [
+          "2025:Y25-07-022",
+          "2025:Y25-07-023",
+          "2025:Y25-08-903",
+          "2025:Y25-08-902"
+        ],
+        "narrative": "Ray classes, nonprincipal ideals, ramification tests and finite-field descent make several independent meanings of arithmetic obstruction concrete."
+      },
+      {
+        "year": 2026,
+        "evidence_uids": [
+          "2026:Y26-06-009",
+          "2026:Y26-06-016",
+          "2026:Y26-06-017",
+          "2026:Y26-09-030",
+          "2026:Y26-10-009",
+          "2026:Y26-10-036"
+        ],
+        "narrative": "The later sources expose nonabelian field obstructions, exceptional-unit symmetries and binary norm-plane restrictions. The Mordell equation adds a genuinely complete proof using a norm-Euclidean quadratic ring."
+      }
+    ],
+    "connections": [
+      {
+        "target_domain": "D02",
+        "relation": "Birational coordinates and divisors",
+        "mathematical_bridge": "The corner cubic is related by an explicit Möbius substitution, and its rational function has divisor 3[1]−2[0]−[∞].",
+        "scope": "Matching discriminants alone does not identify coordinates or embeddings."
+      },
+      {
+        "target_domain": "D03",
+        "relation": "Galois representation obstruction",
+        "mathematical_bridge": "The S₃ closure distinguishes a cubic field from subfields of abelian cyclotomic extensions.",
+        "scope": "A common numerical degree gives no representation equivalence."
+      },
+      {
+        "target_domain": "D14",
+        "relation": "Completeness conditions",
+        "mathematical_bridge": "An exact multiplication matrix certifies a norm identity; unit bases and lattice-return constraints are additional obligations for exhaustive solving.",
+        "scope": "No unreplayed global unit search is promoted to a theorem."
+      }
+    ],
+    "capabilities": [
+      "C01",
+      "C03",
+      "C04",
+      "C10",
+      "C15"
+    ],
+    "interactive_contract": {
+      "lab_ids": [],
+      "inputs": "Defining polynomial, specified order basis, element coordinates, candidate unit and the original embedding lattice.",
+      "outputs": "Exact multiplication determinant, norm-preservation certificate, discriminant diagnostics and lattice-membership checks.",
+      "validation": "Expand determinants over integers; verify substitutions both ways; distinguish polynomial from field discriminants and unit transport from exhaustive orbit coverage.",
+      "status": "Mathematical recipe; no general solver implemented"
+    },
+    "limits": "A norm-one element is a unit of the chosen order, but a displayed unit pair need not generate the full unit group. Ramification and class-field assertions use stated classical inputs. No uniqueness of a field from a small discriminant or a polynomial list is claimed.",
+    "open_questions": [
+      "Can a proven complete unit basis and finite residue classes be combined with an exact lattice-return argument for the recovered Thue forms?",
+      "Which explicitly declared exceptional-unit height bounds would turn a proposed field-uniqueness statement into a finite, complete classification?"
+    ],
+    "references": [
+      {
+        "label": "Milne, Algebraic Number Theory",
+        "url": "https://www.jmilne.org/math/CourseNotes/ANT.pdf"
+      },
+      {
+        "label": "Milne, Class Field Theory",
+        "url": "https://www.jmilne.org/math/CourseNotes/CFT.pdf"
+      },
+      {
+        "label": "J. S. Milne, Fields and Galois Theory",
+        "url": "https://www.jmilne.org/math/CourseNotes/FT.pdf"
+      },
+      {
+        "label": "Mathlib: algebra norm as a determinant",
+        "url": "https://leanprover-community.github.io/mathlib4_docs/Mathlib/RingTheory/Norm/Basic.html"
+      },
+      {
+        "label": "MIT algebraic number theory course notes",
+        "url": "https://math.mit.edu/~drew/18.785/"
+      },
+      {
+        "label": "The Stacks Project, Kummer theory",
+        "url": "https://stacks.math.columbia.edu/tag/03PK"
+      }
+    ]
+  },
+  {
+    "id": "D01-F06",
+    "domain_id": "D01",
+    "title": "Modular forms, Hecke relations and arithmetic local factors",
+    "central_question": "Which identities genuinely characterize modular arithmetic, rather than an arbitrary prime-indexed statistic?",
+    "synopsis": "A modular-form assertion includes the group, weight, character, normalization and transformation law. Once those are fixed, dimensions, Hecke recurrences and Euler factors become exact algebraic constraints. The number 24 enters the logarithmic derivative of Dedekind eta through a specific product normalization; it is not interchangeable with a root count or an abstract dimension. Similarly, a genuine Frobenius trace is tied to a point count and determinant p. Its symmetric square has three eigenvalue products, not a guessed two-factor denominator. This family places q-expansion calculations beside local arithmetic while retaining the distinction between an Eisenstein series, a cusp eigenform and an elliptic-curve L-function. Modular symbols supply a boundary algebra that can later support periods, but their elementary relations alone do not execute a modular-symbol algorithm or establish modularity.",
+    "definitions": [
+      "For the full modular group over C, the graded ring of holomorphic modular forms is C[E₄,E₆], with weights 4 and 6. Δ=(E₄³−E₆²)/1728 has weight 12.",
+      "For weight k, a normalized Hecke eigenform satisfies a_(p²)=a_p²−p^(k−1), with suitable unramified and normalization hypotheses.",
+      "For an elliptic local factor, α+β=a_p and αβ=p. The symmetric square eigenvalues are α²,p,β²."
+    ],
+    "theorem": {
+      "statement": "The weight-38 full-level modular-form space has basis E₄⁸E₆, E₄⁵E₆³, E₄²E₆⁵ and dimension three; its cusp subspace is ΔM₂₆ of dimension two. For elliptic eigenvalues α,β, the symmetric-square denominator is 1−(a_p²−p)t+p(a_p²−p)t²−p³t³.",
+      "proof": "A monomial E₄^aE₆^b has weight 4a+6b. Solving 4a+6b=38 in nonnegative integers gives b=1,3,5 and a=8,5,2. Polynomial independence in C[E₄,E₆] proves that these monomials form a basis. Multiplication by the nonzero Δ identifies cusp forms of weight 38 with weight-26 forms, whose equation 4a+6b=26 has solutions (a,b)=(5,1),(2,3). The structural description of the modular-form ring and its cusp ideal are classical inputs, while the dimension calculation is elementary. For the symmetric square, α²+β²=(α+β)²−2αβ=a_p²−2p. Adding the middle eigenvalue p gives sum a_p²−p. The sum of pairwise products is p(α²+β²)+p²=p(a_p²−p), and the triple product is p³. Expanding the three linear factors gives the stated polynomial. The determinant p is essential: substituting an unrelated prime-power ratio destroys this derivation."
+    },
+    "worked_example": {
+      "setup": "Check an Eisenstein Hecke relation and an elliptic symmetric-square factor.",
+      "calculation": "The normalized nonconstant coefficients of E₄ are σ₃(n). At p=2, σ₃(2)=9 and σ₃(4)=73=9²−2³. The constant coefficient of E₄ is also compatible with T₂E₄=9E₄ under the stated weight-four convention. For p=2 and a_p=−2, the symmetric-square denominator becomes 1−2t+4t²−8t³. For eta, its defining product gives q d(log η)/dq=1/24−Σ_(n≥1)σ₁(n)q^n=E₂/24. The translation phase of an eta quotient must still be tested; a q-series with appealing coefficients is not automatically invariant under τ↦τ+1.",
+      "meaning": "Small exact coefficient tests make the hypotheses auditable, while the theorem of transformation or modularity remains a separate structural obligation."
+    },
+    "source_uids": [
+      "2024:Y24-06-008",
+      "2024:Y24-09-025",
+      "2024:Y24-12-020",
+      "2025:Y25-03-033",
+      "2025:Y25-07-001",
+      "2025:Y25-07-016",
+      "2025:Y25-08-908",
+      "2025:Y25-09-007",
+      "2025:Y25-09-006",
+      "2025:Y25-11-012"
+    ],
+    "anchor_uids": [
+      "2024:Y24-06-008",
+      "2024:Y24-09-025",
+      "2024:Y24-12-020",
+      "2025:Y25-03-033",
+      "2025:Y25-07-001",
+      "2025:Y25-09-007",
+      "2025:Y25-11-012"
+    ],
+    "progression": [
+      {
+        "year": 2024,
+        "evidence_uids": [
+          "2024:Y24-06-008",
+          "2024:Y24-09-025",
+          "2024:Y24-12-020"
+        ],
+        "narrative": "The exact Hecke formula, full-level weight-38 dimension and eta normalization make distinct modular invariants calculable."
+      },
+      {
+        "year": 2025,
+        "evidence_uids": [
+          "2025:Y25-03-033",
+          "2025:Y25-07-001",
+          "2025:Y25-09-007",
+          "2025:Y25-11-012"
+        ],
+        "narrative": "Transformation phases, modular-symbol boundaries and local eigenvalue products impose additional consistency tests. The later Hecke critique explains why an arbitrary prime-index statistic cannot be substituted for those invariants."
+      }
+    ],
+    "connections": [
+      {
+        "target_domain": "D02",
+        "relation": "Elliptic local arithmetic",
+        "mathematical_bridge": "A point-count trace fixes a_p and determinant p, supplying the exact local quadratic factor that feeds the symmetric square.",
+        "scope": "A local factor alone does not prove modularity, analytic rank or BSD."
+      },
+      {
+        "target_domain": "D04",
+        "relation": "Boundary algebra",
+        "mathematical_bridge": "The modular-symbol relation {a,b}+{b,c}={a,c} is realized by [b]−[a], a degree-zero cusp boundary.",
+        "scope": "The elementary relation is a precursor to relative homology and periods, not the whole theory."
+      },
+      {
+        "target_domain": "D07",
+        "relation": "Generating functions",
+        "mathematical_bridge": "Eta logarithmic derivatives and Eisenstein Dirichlet series connect products to coefficient convolutions in their convergence domains.",
+        "scope": "Analytic continuation and modular transformation require their own theorems."
+      }
+    ],
+    "capabilities": [
+      "C01",
+      "C03",
+      "C04",
+      "C09",
+      "C15"
+    ],
+    "interactive_contract": {
+      "lab_ids": [],
+      "inputs": "Declared group and weight, exact q-expansion coefficients, good prime p and genuine local trace a_p.",
+      "outputs": "Dimension and monomial checks, Hecke coefficient residuals, eta phases and local symmetric-square factors.",
+      "validation": "Check transformation conventions and coefficient normalization before applying recurrences; distinguish finite coefficient consistency from a universal modularity proof.",
+      "status": "Mathematical recipe; no general solver implemented"
+    },
+    "limits": "The sources do not support a full four-year continuous modular-form project. This family records the supported 2024–2025 treatments. Full-level ring formulas cannot be applied unchanged to arbitrary level or character. A finite q-expansion match requires a proved comparison bound before it identifies two forms.",
+    "open_questions": [
+      "For a proposed eta quotient, do its translation and inversion laws produce a genuine modular form on a declared subgroup with a declared multiplier?",
+      "Can each proposed arithmetic statistic pass the exact p² Hecke recurrence and a finite certified comparison bound after all normalization choices are stated?"
+    ],
+    "references": [
+      {
+        "label": "Milne Modular Functions and Modular Forms",
+        "url": "https://www.jmilne.org/math/CourseNotes/MF.pdf"
+      },
+      {
+        "label": "NIST DLMF eta definitions",
+        "url": "https://dlmf.nist.gov/23.15"
+      },
+      {
+        "label": "NIST DLMF modular transformations",
+        "url": "https://dlmf.nist.gov/23.18"
+      },
+      {
+        "label": "Milne, Elliptic Curves",
+        "url": "https://www.jmilne.org/math/Books/EC2.pdf"
+      },
+      {
+        "label": "Deligne Formes modulaires et représentations l-adiques",
+        "url": "https://www.numdam.org/item/SB_1968-1969__11__139_0/"
+      },
+      {
+        "label": "NIST DLMF divisor sums",
+        "url": "https://dlmf.nist.gov/27.4"
+      }
+    ]
+  },
+  {
+    "id": "D01-F07",
+    "domain_id": "D01",
+    "title": "Euler products, prime sums and the analytic burden of identification",
+    "central_question": "How do multiplicative identities become analytic formulas without losing signs, prime powers, convergence or main terms?",
+    "synopsis": "The divisor algebra gives formal identities; absolute convergence permits their interpretation as analytic functions. This transition is where several recovered proposals needed repair. Pointwise μΛ is a negative prime indicator weighted by logarithm, while convolution μ*log equals the positive prime-power function Λ. A prime-ideal sum changes again when norms and splitting types enter. An Euler product in Re(s)>1 is nonvanishing there, but this fact does not settle zeros after analytic continuation. Likewise π(x) and x/log x are not interchangeable at square-root error scale: the omitted x/log²x term is much larger. The family organizes these issues around exact operation and domain. Spectral determinants, sampled zeta layouts and prime oscillatory tones can be valid mathematical objects while their proposed identification with arithmetic zeros remains an additional, explicitly missing theorem.",
+    "definitions": [
+      "The von Mangoldt function Λ(n) is log p when n=p^k, k≥1, and zero otherwise. The Möbius function μ vanishes on integers with a squared prime factor.",
+      "A Dirichlet series is absolutely convergent where Σ|a_n|n^(−σ) is finite; only in a justified domain may one freely multiply, rearrange or differentiate the relevant series.",
+      "The arithmetic prime sums θ(x)=Σ_(p≤x)log p and ψ(x)=Σ_(p^k≤x)log p differ by prime-power contributions. A spectral zeta requires its own operator, eigenvalue domain and summability."
+    ],
+    "theorem": {
+      "statement": "The exact convolution identity μ*log=Λ gives −ζ′(s)/ζ(s)=ΣΛ(n)n^(−s) for Re(s)>1. Also Σφ(n)n^(−s)=ζ(s−1)/ζ(s) for Re(s)>2, and for real σ>2 its tail after N is at most N^(2−σ)/(σ−2).",
+      "proof": "For n=∏p_i^a_i, log n=Σ_(d|n)Λ(d), since the prime powers dividing n contribute Σ_i a_i log p_i. Convolution with μ, using μ*1=ε, gives μ*log=Λ. Absolute convergence in σ>1 justifies differentiating the Euler product and summing its geometric prime-power expansions. By contrast μ(n)Λ(n) is −log p at n=p and zero elsewhere, because μ(p^k)=0 for k≥2; its sum is −θ(x), not ψ(x). For the totient identity, n=Σ_(d|n)φ(d) means id=1*φ. Multiplication of absolutely convergent Dirichlet series in σ>2 gives ζ(s−1)=ζ(s)Σφ(n)n^(−s); the Euler product ensures ζ(s)≠0 there. Since 0≤φ(n)≤n, the remaining tail is bounded by Σ_(n>N)n^(1−σ)≤∫_N^∞x^(1−σ)dx. This explicitly states both the stronger half-plane required by φ(n) and an error certificate for truncation."
+    },
+    "worked_example": {
+      "setup": "Compare the two operations at n=12 and bound a real totient series.",
+      "calculation": "The divisors of 12 with nonzero μ are 1,2,3,6. Thus (μ*log)(12)=log 12−log 6−log 4+log 2=0, agreeing with Λ(12)=0. At n=8 the convolution is log 8−log 4=log 2, while μ(8)Λ(8)=0. At n=3 the latter product is −log 3. For σ=4 and N=100, the totient tail is at most 100^(−2)/2=1/20000. This is a deterministic truncation error, not an empirical convergence observation or a zero-location theorem.",
+      "meaning": "A single symbol change between multiplication and convolution changes the arithmetic object; a single half-plane change can invalidate an analytic manipulation."
+    },
+    "source_uids": [
+      "2024:Y24-08-009",
+      "2024:Y24-08-008",
+      "2024:Y24-09-018",
+      "2024:Y24-10-009",
+      "2024:Y24-10-010",
+      "2024:Y24-10-011",
+      "2024:Y24-10-013",
+      "2024:Y24-11-004",
+      "2025:Y25-05-010",
+      "2025:Y25-05-020",
+      "2025:Y25-07-017",
+      "2025:Y25-10-022",
+      "2026:Y26-04-026",
+      "2026:Y26-06-024",
+      "2026:Y26-10-033"
+    ],
+    "anchor_uids": [
+      "2024:Y24-09-018",
+      "2024:Y24-10-009",
+      "2024:Y24-10-010",
+      "2024:Y24-10-013",
+      "2024:Y24-11-004",
+      "2025:Y25-10-022",
+      "2026:Y26-06-024"
+    ],
+    "progression": [
+      {
+        "year": 2024,
+        "evidence_uids": [
+          "2024:Y24-09-018",
+          "2024:Y24-10-009",
+          "2024:Y24-10-010",
+          "2024:Y24-10-013",
+          "2024:Y24-11-004"
+        ],
+        "narrative": "The strongest supported early thread is operation and analytic-domain repair: signs, convolution, prime powers, Euler tails and the correct prime-counting main term."
+      },
+      {
+        "year": 2025,
+        "evidence_uids": [
+          "2025:Y25-05-010",
+          "2025:Y25-05-020",
+          "2025:Y25-07-017",
+          "2025:Y25-10-022"
+        ],
+        "narrative": "Valuation-shell integrals and divisor convolution give exact analytic models. Prime oscillatory sums retain valid finite calculus without gaining a zero correspondence merely from their construction."
+      },
+      {
+        "year": 2026,
+        "evidence_uids": [
+          "2026:Y26-04-026",
+          "2026:Y26-06-024",
+          "2026:Y26-10-033"
+        ],
+        "narrative": "The later sources distinguish sampled layouts from invariants and give a totient-series tail on its correct domain. The cyclotomic Mellin kernel supplies an exact special identity, not a universal spectral realization."
+      }
+    ],
+    "connections": [
+      {
+        "target_domain": "D07",
+        "relation": "Transform and convergence",
+        "mathematical_bridge": "Mellin transforms, logarithmic derivatives and Euler products connect coefficient algebra to analytic functions once a common absolute-convergence domain is proved.",
+        "scope": "Continuation outside that domain needs a separate theorem."
+      },
+      {
+        "target_domain": "D14",
+        "relation": "Arithmetic correspondence burden",
+        "mathematical_bridge": "A claimed spectral realization must state an operator, domain, determinant regularization and an equality to the normalized L-function.",
+        "scope": "Finite spectral data or finitely many zero checks cannot supply that global equality."
+      },
+      {
+        "target_domain": "D11",
+        "relation": "Sampling and invariance",
+        "mathematical_bridge": "A bijective zeta sampling layout preserves the sampled multiset but may change adjacency statistics.",
+        "scope": "A visualization statistic must specify its dependence on ordering and truncation."
+      }
+    ],
+    "capabilities": [
+      "C01",
+      "C03",
+      "C08",
+      "C09"
+    ],
+    "interactive_contract": {
+      "lab_ids": [],
+      "inputs": "Cutoff N, real σ in the declared half-plane, explicit arithmetic coefficient function and operation type.",
+      "outputs": "Finite sums, rigorous tail bounds, prime-power contributions and a table distinguishing pointwise from convolution operations.",
+      "validation": "Check exact divisor identities first; attach analytic domain and explicit tail before reporting a limit.",
+      "status": "Mathematical recipe; no general solver implemented"
+    },
+    "limits": "The worked integer checks certify arithmetic identities, while the convergence proof supplies infinite validity. No Riemann hypothesis, BSD conclusion or arithmetic-spectral identification is inferred. Floating-point samples on a line do not certify unsampled zeros or a global distribution.",
+    "open_questions": [
+      "Can every proposed spectral equality state its exact normalization, analytic domain and continuation theorem, rather than only matching selected terms?",
+      "For a chosen arithmetic transform, what explicit tail bound is strong enough to support the claimed precision uniformly across its parameter region?"
+    ],
+    "references": [
+      {
+        "label": "NIST DLMF, Euler products and Dirichlet series",
+        "url": "https://dlmf.nist.gov/27.4"
+      },
+      {
+        "label": "J. S. Milne, Algebraic Number Theory",
+        "url": "https://www.jmilne.org/math/CourseNotes/ANT.pdf"
+      },
+      {
+        "label": "NIST DLMF, Asymptotic formulas for primes",
+        "url": "https://dlmf.nist.gov/27.12"
+      },
+      {
+        "label": "NIST DLMF Euler products",
+        "url": "https://dlmf.nist.gov/25.2"
+      },
+      {
+        "label": "NIST DLMF Riemann zeta zeros",
+        "url": "https://dlmf.nist.gov/25.10"
+      },
+      {
+        "label": "Igusa, theory of local zeta functions",
+        "url": "https://doi.org/10.1090/amsip/014"
+      }
+    ]
+  },
+  {
+    "id": "D02-F01",
+    "domain_id": "D02",
+    "title": "Algebraic maps, singularities and the choice of smooth model",
+    "central_question": "Which geometric information is preserved by a parametrization, a birational coordinate change or a normalization?",
+    "synopsis": "An equation is not yet a complete specification of the geometric object being studied. An affine curve may be singular, its normalization smooth, and its projective closure may acquire additional points at infinity. A parametrization can be injective and still lose differential information. Conversely, an explicit rational change of coordinate can identify function fields even when the displayed equations look unrelated. This family builds a hierarchy of certificates: substitution proves that a map lands on the curve; an inverse on a dense open proves birationality; an integral-closure argument proves normalization; Jacobian or local-ring calculations detect singularities; ramification on the smooth compact model determines genus. Cross-ratio symmetry supplies a finite quotient of ordered configurations, but singular special values and ramification must be handled before treating a parameter as a moduli coordinate.",
+    "definitions": [
+      "A normalization replaces an integral curve by the curve whose coordinate ring is integrally closed in its function field. A birational map is an isomorphism of function fields, not necessarily an everywhere-defined isomorphism.",
+      "For a plane curve F=0 in characteristic zero, a point with F=F_x=F_y=0 is singular. Local intersection multiplicity measures the length of the corresponding local quotient when finite.",
+      "For squarefree P of degree m and d≥2, the superelliptic curve means the smooth projective normalization of y^d=P(x), with δ=gcd(d,m) points over infinity."
+    ],
+    "theorem": {
+      "statement": "The cusp y²=x³ is normalized by t↦(t²,t³), and its intersection multiplicity with y=0 at the origin is three. For squarefree P of degree m, the smooth projective model of y^d=P(x) has genus g=((d−1)(m−1)−gcd(d,m)+1)/2.",
+      "proof": "The ring A=C[t²,t³] has fraction field C(t), since t=t³/t², and t is integral over A because it satisfies T²−t²=0. C[t] is integrally closed and finite over A, so it is the normalization. The cusp is singular at the origin because the two partial derivatives of y²−x³ vanish there; the parametrization derivative is also zero there, explaining why injectivity does not imply an immersion. Quotienting the local equation by y gives C[x]_(x)/(x³), whose length is three. In the blowup chart y=ux, the total equation is x²(u²−x)=0 and the strict transform u²−x=0 is smooth. For the superelliptic genus, each of the m simple finite zeros has ramification index d, contributing d−1. At infinity there are δ points, each of index d/δ, contributing d−δ in total. Riemann–Hurwitz gives 2g−2=−2d+m(d−1)+(d−δ). Rearrangement yields the stated formula. Both the squarefree assumption and the use of the smooth compact normalization are essential."
+    },
+    "worked_example": {
+      "setup": "Compare a cusp, two compact superelliptic models and an exact corner-coordinate substitution.",
+      "calculation": "For y²=x³−x, d=2,m=3,δ=1 gives genus one. For y³=x⁴−1, d=3,m=4,δ=1 gives genus three; its compact surface therefore has Euler characteristic −4. The rational function R(z)=(1−z)³/z² on P¹ has divisor 3[1]−2[0]−[∞]. Setting u=(z−1)/z transforms R(z)=1 into u³−u+1=0, with inverse z=1/(1−u). The equation excludes z=0,1 and u=0,1, so the denominators introduce no missing or extraneous solutions. A matching discriminant would not have proved this coordinate identification; the forward and inverse substitutions do.",
+      "meaning": "Each model supports a different valid question: singular local structure, smooth genus, ordered branch data or arithmetic field identity. The chosen object must remain explicit throughout."
+    },
+    "source_uids": [
+      "2023:M098",
+      "2023:M102",
+      "2024:Y24-06-004",
+      "2024:Y24-10-019",
+      "2025:Y25-04-009",
+      "2025:Y25-09-011",
+      "2026:Y26-05-031",
+      "2026:Y26-06-010",
+      "2026:Y26-06-017",
+      "2026:Y26-10-008"
+    ],
+    "anchor_uids": [
+      "2023:M098",
+      "2023:M102",
+      "2024:Y24-10-019",
+      "2025:Y25-04-009",
+      "2025:Y25-09-011",
+      "2026:Y26-05-031",
+      "2026:Y26-06-010",
+      "2026:Y26-10-008"
+    ],
+    "progression": [
+      {
+        "year": 2023,
+        "evidence_uids": [
+          "2023:M098",
+          "2023:M102"
+        ],
+        "narrative": "Rational parametrization and the ordered cross-ratio provide early concrete maps with domains and exceptional points already visible."
+      },
+      {
+        "year": 2024,
+        "evidence_uids": [
+          "2024:Y24-06-004",
+          "2024:Y24-10-019"
+        ],
+        "narrative": "Rational-coordinate and cusp treatments separate set-theoretic parametrization, ambient dimension and differential regularity."
+      },
+      {
+        "year": 2025,
+        "evidence_uids": [
+          "2025:Y25-04-009",
+          "2025:Y25-09-011"
+        ],
+        "narrative": "Jacobian algebras quantify isolated hypersurface singularities, while the Legendre j-map makes finite cross-ratio collisions explicit. These are related geometric tools rather than a claimed single historical construction."
+      },
+      {
+        "year": 2026,
+        "evidence_uids": [
+          "2026:Y26-05-031",
+          "2026:Y26-06-010",
+          "2026:Y26-10-008"
+        ],
+        "narrative": "The later cusp blowup, birational corner coordinate and superelliptic ramification calculations supply increasingly complete map-and-model certificates."
+      }
+    ],
+    "connections": [
+      {
+        "target_domain": "D06",
+        "relation": "Branch monodromy and curvature",
+        "mathematical_bridge": "A simple branch point has local coordinate x−a=t^d, and analytic continuation multiplies y by exp(2πi/d); Gauss–Bonnet converts the compact genus to total curvature.",
+        "scope": "Local covering monodromy is distinct from an arbitrary connection holonomy."
+      },
+      {
+        "target_domain": "D01",
+        "relation": "Exceptional units and fields",
+        "mathematical_bridge": "The Möbius corner substitution identifies the cubic fields, while the divisor of R records zeros and poles exactly.",
+        "scope": "Neither an approximate root match nor a common discriminant supplies the rational map."
+      },
+      {
+        "target_domain": "D14",
+        "relation": "Map verification",
+        "mathematical_bridge": "Substitution, inverse-domain checks, Jacobian rank and local quotient length form complementary certificates.",
+        "scope": "A finite sample of mapped points proves none of the universal map properties."
+      }
+    ],
+    "capabilities": [
+      "C01",
+      "C03",
+      "C04",
+      "C10",
+      "C13"
+    ],
+    "interactive_contract": {
+      "lab_ids": [],
+      "inputs": "An explicit polynomial curve, a rational map with denominators, and a declared affine, normalized or compact model.",
+      "outputs": "Exact substitution identities, excluded loci, singular points, local intersection length and genus under verified squarefree hypotheses.",
+      "validation": "Verify forward and inverse maps on their stated domains; count ramification at infinity as well as at finite roots.",
+      "status": "Mathematical recipe; no general solver implemented"
+    },
+    "limits": "The genus formula does not apply unchanged to repeated roots, positive characteristic dividing d or an unreduced affine equation. A normalization is not automatically an embedding, and a blowup chart does not by itself prove global resolution. General singularity classification requires more than a handful of invariants.",
+    "open_questions": [
+      "For a proposed parameter family, where do repeated roots or denominator poles change the normalization and branch profile?",
+      "Can every claimed moduli identification exhibit its exact finite symmetry group and distinguish generic fibres from special ramified fibres?"
+    ],
+    "references": [
+      {
+        "label": "NIST Digital Library of Mathematical Functions",
+        "url": "https://dlmf.nist.gov/"
+      },
+      {
+        "label": "Milnor, Singular Points of Complex Hypersurfaces",
+        "url": "https://www.jstor.org/stable/j.ctt1bd6kvv"
+      },
+      {
+        "label": "Milne Elliptic Curves, author text",
+        "url": "https://www.jmilne.org/math/Books/EC2.html"
+      },
+      {
+        "label": "The Stacks Project, computing intersection multiplicities",
+        "url": "https://stacks.math.columbia.edu/tag/0B01"
+      },
+      {
+        "label": "J. S. Milne, Fields and Galois Theory",
+        "url": "https://www.jmilne.org/math/CourseNotes/FT.pdf"
+      },
+      {
+        "label": "Don Zagier, The Dilogarithm Function",
+        "url": "https://www.maths.dur.ac.uk/users/herbert.gangl/zagier_dilog.pdf"
+      }
+    ]
+  },
+  {
+    "id": "D02-F02",
+    "domain_id": "D02",
+    "title": "Elliptic arithmetic: local counts, global points and height lattices",
+    "central_question": "How far can exact local and group-law certificates take us toward rational rank, and where do descent and global conjectures enter?",
+    "synopsis": "Elliptic arithmetic joins several structures whose numerical outputs must not be conflated. A point count over a finite field gives a Frobenius trace. A rational group-law calculation gives an exact point and its multiples. Good reduction can rule out rational torsion, producing a rank lower bound from one nonzero point. A height pairing then certifies independence and measures the covolume of a chosen subgroup, while a Selmer computation can give an upper bound with an additional Tate–Shafarevich contribution. Each is valuable on its own. The most coherent cross-year example is E:y²+y=x³−x, of discriminant 37: exact finite counts in 2024 recur as group and rank certificates in 2026. That continuity supports a reusable arithmetic laboratory recipe, while the stronger assertions of exact rank, BSD or complete integral points need separate proofs.",
+    "definitions": [
+      "For a good prime p, a_p=p+1−#E(F_p) and the local polynomial is 1−a_p t+pt². Good reduction means the discriminant is nonzero modulo p.",
+      "For E:y²+y=x³−x, negation is (x,y)↦(x,−y−1). Rational points form an abelian group with identity O.",
+      "The canonical height pairing is positive definite on E(Q) modulo torsion. A Gram determinant for a subgroup of index I is I² times the full-lattice regulator."
+    ],
+    "theorem": {
+      "statement": "For E:y²+y=x³−x, the rational torsion subgroup is trivial and P=(0,0) has infinite order, so rank E(Q)≥1. The exact point counts #E(F₅)=8 and #E(F₇)=9 suffice, provided the prime-to-p restriction on torsion reduction is respected.",
+      "proof": "The discriminant is 37, so both primes are good. Suppose there is a rational torsion point of prime order ℓ. If ℓ≠5, injection of ℓ-torsion under reduction at 5 forces ℓ|8 and thus ℓ=2. Reduction at 7 then forces 2|9, impossible. If ℓ=5, reduction at 7 instead forces 5|9, also impossible. Every nontrivial finite abelian torsion group contains an element of prime order, so all rational torsion is excluded. The point (0,0) is nonzero and lies on E, hence has infinite order. This proves a rank lower bound without computing an L-function. For heights, bilinearity gives G′=MᵀGM under a generator-coordinate matrix M and therefore det G′=(det M)²det G. A positive Gram determinant proves independence of the displayed points but says nothing about saturation unless the index is certified. The exact Selmer sequence adds the separate quotient Sha[n] to E(Q)/nE(Q); a Selmer cardinality is therefore not automatically a count of visible rational generators."
+    },
+    "worked_example": {
+      "setup": "Count the two finite reductions and verify exact rational multiples.",
+      "calculation": "Enumerating y²+y=x³−x over F₅ gives seven affine points plus O, while over F₇ it gives eight affine points plus O. At P=(0,0), the tangent slope is (3x²−1)/(2y+1)=−1, yielding 2P=(1,0). The line through P and 2P has slope zero, yielding 3P=(−1,−1). Exact addition gives 7P=(−5/9,8/27), where both sides of the equation are 280/729. Independently, for a short Weierstrass curve y²=x³+ax+b, clearing the denominator in the doubling formula gives a quartic condition on the x-coordinate of a half-point; every candidate must still satisfy the original curve and group equation.",
+      "meaning": "The finite reductions establish the global non-torsion result through a stated theorem; the visible multiples verify the arithmetic implementation but are not themselves the proof of infinite order."
+    },
+    "source_uids": [
+      "2024:Y24-05-005",
+      "2024:Y24-09-012",
+      "2024:Y24-09-013",
+      "2024:Y24-09-014",
+      "2024:Y24-10-021",
+      "2024:Y24-11-006",
+      "2024:Y24-12-024",
+      "2024:Y24-12-025",
+      "2024:Y24-12-026",
+      "2025:Y25-07-003",
+      "2025:Y25-07-005",
+      "2025:Y25-09-006",
+      "2025:Y25-09-011",
+      "2025:Y25-10-007",
+      "2025:Y25-10-008",
+      "2025:Y25-11-009",
+      "2026:Y26-01-031",
+      "2026:Y26-01-032",
+      "2026:Y26-02-028",
+      "2026:Y26-07-025",
+      "2026:Y26-10-037"
+    ],
+    "anchor_uids": [
+      "2024:Y24-09-012",
+      "2024:Y24-09-013",
+      "2024:Y24-12-025",
+      "2025:Y25-07-003",
+      "2025:Y25-07-005",
+      "2025:Y25-10-007",
+      "2026:Y26-07-025",
+      "2026:Y26-10-037"
+    ],
+    "progression": [
+      {
+        "year": 2024,
+        "evidence_uids": [
+          "2024:Y24-05-005",
+          "2024:Y24-09-012",
+          "2024:Y24-09-013",
+          "2024:Y24-12-025"
+        ],
+        "narrative": "Finite-field zeta factors, the discriminant-37 counts, a non-torsion proof and height-lattice interpretation establish four distinct arithmetic certificates."
+      },
+      {
+        "year": 2025,
+        "evidence_uids": [
+          "2025:Y25-07-003",
+          "2025:Y25-07-005",
+          "2025:Y25-09-006",
+          "2025:Y25-10-007",
+          "2025:Y25-10-008"
+        ],
+        "narrative": "Weierstrass invariants, true local traces, independence and Selmer bounds sharpen the distinction between a displayed subgroup and the full arithmetic object."
+      },
+      {
+        "year": 2026,
+        "evidence_uids": [
+          "2026:Y26-01-031",
+          "2026:Y26-01-032",
+          "2026:Y26-02-028",
+          "2026:Y26-07-025",
+          "2026:Y26-10-037"
+        ],
+        "narrative": "The later sources make hidden torsors, CM local traces, higher-genus Frobenius reconstruction and multiplication fibres explicit. The same discriminant-37 curve supplies a supported return to the earlier rank lower bound."
+      }
+    ],
+    "connections": [
+      {
+        "target_domain": "D01",
+        "relation": "Local arithmetic and Euler products",
+        "mathematical_bridge": "Finite counts determine a_p and the determinant p, supplying local factors and the input to Hecke and symmetric-square identities.",
+        "scope": "A list of factors does not alone prove analytic continuation or BSD."
+      },
+      {
+        "target_domain": "D05",
+        "relation": "Torsors and descent",
+        "mathematical_bridge": "The exact Selmer sequence separates E(Q)/nE(Q) from Sha[n].",
+        "scope": "A cohomological upper bound is not automatically a constructive list of rational points."
+      },
+      {
+        "target_domain": "D12",
+        "relation": "Lattice geometry",
+        "mathematical_bridge": "A positive height Gram matrix certifies independence and supports metric optimization on the free quotient.",
+        "scope": "Torsion is collapsed, and index or saturation must be certified before claiming the full regulator."
+      }
+    ],
+    "capabilities": [
+      "C01",
+      "C02",
+      "C03",
+      "C04",
+      "C13"
+    ],
+    "interactive_contract": {
+      "lab_ids": [],
+      "inputs": "Exact Weierstrass coefficients, a good prime, rational points and optional certified height-pairing data.",
+      "outputs": "Point counts, Frobenius traces, exact group-law residuals, torsion exclusions and basis-dependent Gram determinants.",
+      "validation": "Count every finite-field point including infinity; check good reduction; respect prime-to-p injection; substitute every rational output exactly.",
+      "status": "Mathematical recipe; no general solver implemented"
+    },
+    "limits": "No general elliptic solver or certified height engine is implemented here. The rank-one lower bound is not an upper bound, and an analytic determinant analogy is not BSD. Halving quartics yield candidates requiring sign and exceptional-case checks. Genus-two counts require their own Frobenius degree and cannot use an elliptic quadratic factor.",
+    "open_questions": [
+      "Can a documented descent give an independent upper bound matching the exhibited non-torsion subgroup, with saturation certified?",
+      "For multiplication fibres, can the field of definition, rational torsion kernel and all exceptional doubling cases be incorporated into a complete exact candidate procedure?"
+    ],
+    "references": [
+      {
+        "label": "LMFDB 37.a1 record (access challenge encountered; calculations below are independent)",
+        "url": "https://www.lmfdb.org/EllipticCurve/Q/37/a/1"
+      },
+      {
+        "label": "J. S. Milne, Elliptic Curves",
+        "url": "https://www.jmilne.org/math/Books/EC2.pdf"
+      },
+      {
+        "label": "MIT elliptic curves notes",
+        "url": "https://math.mit.edu/~drew/18.783/"
+      },
+      {
+        "label": "Bernstein and Lange: explicit Weierstrass formulas",
+        "url": "https://www.hyperelliptic.org/EFD/g1p/auto-shortw.html"
+      },
+      {
+        "label": "J S Milne Lectures on Etale Cohomology",
+        "url": "https://www.jmilne.org/math/CourseNotes/LEC210.pdf"
+      },
+      {
+        "label": "Harris–Shepherd-Barron–Taylor, A family of Calabi–Yau varieties and potential automorphy",
+        "url": "https://annals.math.princeton.edu/2010/171-2/p04"
+      }
+    ]
+  },
+  {
+    "id": "D02-F03",
+    "domain_id": "D02",
+    "title": "Divisors, compactification and projective positivity",
+    "central_question": "What separate certificates establish a smooth quotient, a well-behaved boundary, positivity and an actual projective embedding?",
+    "synopsis": "The early arithmetic-geometry material becomes coherent when organized around distinct geometric properties. Neatness removes finite stabilizer phenomena in an open arithmetic quotient. A compactification adds boundary strata. Regular cones make local toric charts smooth. A positive canonical or log-canonical divisor controls a birational growth property. A sufficiently positive line bundle supplies sections that define an embedding. None of these steps is interchangeable with the others. Modular curves make this hierarchy unusually explicit: X(3) is a smooth genus-zero compact curve, while its four-punctured interior is hyperbolic and of log-general type. Divisor intersection on P¹×P¹ then gives a second exact arena for positivity and invariant classes. The family’s strongest result is a curve embedding criterion whose proof states exactly why enough sections separate both points and tangent directions.",
+    "definitions": [
+      "For a smooth compact curve X of genus g, deg K_X=2g−2; with c reduced boundary points D, deg(K_X+D)=2g−2+c.",
+      "A line bundle L is very ample when its complete linear system gives a closed projective embedding. On a smooth curve, separation of every length-two subscheme is the relevant section criterion.",
+      "A two-dimensional toric cone with primitive generators u,v is regular when |det(u,v)|=1. Smoothness is local lattice regularity; projectivity additionally requires a compatible support function."
+    ],
+    "theorem": {
+      "statement": "For a smooth projective curve of genus g and a line bundle L of degree d≥2g+1, h⁰(L)=d+1−g and the complete linear system embeds X into P^(d−g). On the principal modular curve X(3), deg K=−2 while deg(K+D)=2; at level seven these degrees are four and 28.",
+      "proof": "For any length-two subscheme Z, Serre duality gives H¹(L(−Z)) dual to H⁰(K_X⊗L⁻¹(Z)). Its degree is 2g−2−d+2≤−1, so it has no nonzero section. The restriction sequence therefore makes H⁰(L)→H⁰(L|_Z) surjective. Distinct points and doubled points give point separation and tangent separation; the length-one version also gives base-point freeness. The standard embedding criterion then proves very ampleness. Vanishing of H¹(L), followed by Riemann–Roch, yields h⁰(L)=d+1−g. For a torsion-free effective modular group of index μ and c cusps, Gauss–Bonnet gives 2g−2+c=μ/6. Principal level N has c=μ/N. At N=3, μ=12,c=4,g=0; at N=7, μ=168,c=24,g=3. The degree formulas then distinguish ordinary from logarithmic general type. These arguments use the declared smooth projective curve and classical modular-curve inputs; they do not algebraize an arbitrary analytic space."
+    },
+    "worked_example": {
+      "setup": "Compare a toric boundary chart, a divisor lattice and two projective embeddings.",
+      "calculation": "The cone generated by (1,0),(1,2) has determinant two and a singular toric chart. Adding (1,1) gives determinant-one adjacent cones, producing a smooth local toric modification. On P¹×P¹, classes (a,b) have intersection pairing (a,b)·(c,d)=ad+bc and self-intersection 2ab; for a,b≥0, h⁰(O(a,b))=(a+1)(b+1). Swapping the factors fixes the line a=b in the real divisor space. For g=1,d=3, the embedding theorem gives three sections and a plane cubic. For g=3,d=7, it gives five sections and an embedding into P⁴.",
+      "meaning": "Boundary regularity, divisor intersections and sections now have computable meanings rather than being treated as interchangeable claims of geometric richness."
+    },
+    "source_uids": [
+      "2023:M027",
+      "2023:M028",
+      "2023:M029",
+      "2023:M030",
+      "2023:M031",
+      "2023:M096",
+      "2024:Y24-03-001",
+      "2024:Y24-03-002",
+      "2024:Y24-08-006",
+      "2025:Y25-02-025",
+      "2025:Y25-11-009"
+    ],
+    "anchor_uids": [
+      "2023:M027",
+      "2023:M028",
+      "2023:M029",
+      "2023:M030",
+      "2023:M031",
+      "2023:M096",
+      "2024:Y24-03-001",
+      "2024:Y24-08-006"
+    ],
+    "progression": [
+      {
+        "year": 2023,
+        "evidence_uids": [
+          "2023:M027",
+          "2023:M028",
+          "2023:M029",
+          "2023:M030",
+          "2023:M031",
+          "2023:M096"
+        ],
+        "narrative": "The foundational cluster already separates arithmetic quotient smoothness, compactification charts, canonical positivity, embedding sections and adjunction dimensions. The atlas links these explicit treatments without upgrading their higher-dimensional scope."
+      },
+      {
+        "year": 2024,
+        "evidence_uids": [
+          "2024:Y24-03-001",
+          "2024:Y24-03-002",
+          "2024:Y24-08-006"
+        ],
+        "narrative": "Picard and Néron–Severi calculations, invariant divisor classes and a finite-index modular quotient give complementary algebraic descriptions of the same questions of class, quotient and positivity."
+      },
+      {
+        "year": 2025,
+        "evidence_uids": [
+          "2025:Y25-02-025",
+          "2025:Y25-11-009"
+        ],
+        "narrative": "The cusp area example makes finite volume distinct from compactness, while the product abelian-surface locus fixes a specific moduli discriminant. Neither is claimed as a general compactification theorem."
+      }
+    ],
+    "connections": [
+      {
+        "target_domain": "D06",
+        "relation": "Quotient geometry",
+        "mathematical_bridge": "Hyperbolic area and cusp widths determine genus in the modular-curve case; q=exp(2πiτ/N) fills each puncture.",
+        "scope": "Finite area does not imply compactness, and neatness does not choose a higher-dimensional smooth fan."
+      },
+      {
+        "target_domain": "D03",
+        "relation": "Invariant divisor spaces",
+        "mathematical_bridge": "Averaging a finite group action projects the real Picard class space to its invariants; factor swap leaves (1,1).",
+        "scope": "Fixed-space linear algebra does not classify the whole Picard group or its torsion."
+      },
+      {
+        "target_domain": "D13",
+        "relation": "Fan combinatorics",
+        "mathematical_bridge": "Determinants of adjacent primitive rays certify regularity of a two-dimensional subdivision.",
+        "scope": "Global projectivity and arithmetic admissibility remain additional conditions."
+      }
+    ],
+    "capabilities": [
+      "C01",
+      "C03",
+      "C04",
+      "C10",
+      "C13"
+    ],
+    "interactive_contract": {
+      "lab_ids": [],
+      "inputs": "Genus g, degree d, boundary count c; or lattice rays and a specified divisor-class basis.",
+      "outputs": "Canonical and log-canonical degrees, section counts, projective target dimension, intersection values and cone determinants.",
+      "validation": "Check smoothness assumptions, integral lattice primitiveness, cohomology-vanishing hypotheses and exact effective quotient indices.",
+      "status": "Mathematical recipe; no general solver implemented"
+    },
+    "limits": "The degree criterion is sufficient, not necessary. A projective curve is an input to its proof, so the theorem cannot establish algebraization from scratch. A local toric subdivision is not a proof of a global arithmetic compactification. Higher-dimensional general type needs explicit boundary and ramification contributions.",
+    "open_questions": [
+      "For a specified higher-dimensional arithmetic quotient, what canonical-divisor formula and admissible fan give simultaneous smoothness, projectivity and a proved positivity bound?",
+      "Can an intended analytic compactification exhibit a concrete ample bundle and enough sections to verify its claimed algebraization and embedding?"
+    ],
+    "references": [
+      {
+        "label": "J S Milne Introduction to Shimura Varieties",
+        "url": "https://www.jmilne.org/math/articles/2005aX.pdf"
+      },
+      {
+        "label": "J S Milne Toroidal Compactification of Shimura Varieties",
+        "url": "https://www.jmilne.org/math/articles/1990aT.pdf"
+      },
+      {
+        "label": "Stacks project algebraic curves",
+        "url": "https://stacks.math.columbia.edu/download/curves.pdf"
+      },
+      {
+        "label": "Stacks project very ample line bundles on curves",
+        "url": "https://stacks.math.columbia.edu/tag/0H2V"
+      },
+      {
+        "label": "Ravi Vakil Foundations of Algebraic Geometry adjunction",
+        "url": "https://math.stanford.edu/~vakil/216blog/FOAGjul2724public.pdf"
+      },
+      {
+        "label": "Eisenbud and Harris 3264 and All That",
+        "url": "https://dash.harvard.edu/bitstreams/7312037e-7c66-6bd4-e053-0100007fdf3b/download"
+      }
+    ]
+  },
+  {
+    "id": "D02-F04",
+    "domain_id": "D02",
+    "title": "Cohomological realizations, Hodge filtrations and comparison types",
+    "central_question": "Which information survives a realization, and what additional structure is required before two cohomology theories can be compared?",
+    "synopsis": "Cohomology provides several forms of organized information: dimensions, graded pieces, mixed structures, integral torsion, Frobenius action and functorial maps. A numerical realization may preserve addition and multiplication while forgetting almost everything else. This is why an Euler characteristic can be zero for a nontrivial elliptic curve, and why multiplying it by Shannon entropy cannot automatically become a positive complexity index. The same caution governs comparison theorems: a characteristic-p variety has no complex analytic space until appropriate characteristic-zero data have been supplied, and a motivic chain index is not a singular cohomology degree. A finite monodromy model makes the loss of information especially concrete. Rational ranks can remain unchanged while integer coinvariants gain torsion; the nilpotent operator determines a weight filtration but not an entire limiting mixed Hodge structure.",
+    "definitions": [
+      "The Grothendieck ring of complex varieties imposes [X]=[Z]+[X minus Z] for closed Z and multiplication by Cartesian product. A motivic realization is a declared ring homomorphism out of that ring.",
+      "Compact-support Euler characteristic is χ_c(X)=Σ_i(−1)^i dim H_c^i(X); it is additive but need not be positive or separating.",
+      "A monodromy weight filtration centered at one obeys N(W_k)⊆W_(k−2) and N^j:Gr_(1+j)^W→Gr_(1−j)^W isomorphically. A Hodge filtration and polarization are extra data."
+    ],
+    "theorem": {
+      "statement": "For V=Qe₁⊕Qe₂ and N(e₂)=e₁,N(e₁)=0, the centered weight filtration is W_k=0 for k<0, W₀=W₁=Qe₁ and W_k=V for k≥2. For integral monodromy M_n=I+nN, n>0, the coinvariants are Z⊕Z/nZ, although all these rational models have the same ranks.",
+      "proof": "The image and kernel of N are both Qe₁. The proposed filtration lowers by two under N, and its only nonzero graded pieces are Gr₀ and Gr₂, both one-dimensional. N maps the class of e₂ to the class of e₁, an isomorphism, while all higher required isomorphisms concern zero spaces. Thus the defining conditions are satisfied. On the integer lattice, (M_n−I)Z²=nZe₁, so the quotient is generated freely by e₂ and by e₁ modulo n. Tensoring with Q removes the latter torsion. For realization loss, the scissor relation A¹={0}⊔G_m gives [G_m]=L−1. Compact-support cohomology of G_m has one copy of the coefficient field in degrees one and two, so its Euler characteristic is zero despite nonzero cohomology. A projective genus-g curve has Betti numbers (1,2g,1) and Euler characteristic 2−2g. Therefore χ_c(X)H(p) can vanish or be negative for a positive entropy H(p). Additivity alone gives no positivity or faithful geometric encoding."
+    },
+    "worked_example": {
+      "setup": "Test comparison types on P¹ and exhibit a failure of an unrestricted motivic–Betti isomorphism.",
+      "calculation": "P¹ over F₅ has six points and its standard smooth lift has cohomological ranks (1,0,1). Frobenius acts by 1 in degree zero and 5 on the hyperplane class in degree two, giving trace count 1+5=6; over F₂₅ it gives 1+25=26. This is a useful consistency test, not a proof of the general comparison theorem. At Spec C, the weight-one motivic group H^{1,1}=C× is nonzero, whereas singular H¹ of a point vanishes. Even after tensoring with C the source is nonzero, since log|·| maps C× onto R and R⊗_Z C maps nontrivially to C. The universal isomorphism claim therefore fails at a point.",
+      "meaning": "Small examples discriminate a valid comparison with explicit coefficients and hypotheses from a false formula that merely passes a rank coincidence."
+    },
+    "source_uids": [
+      "2023:M097",
+      "2024:Y24-07-011",
+      "2024:Y24-08-009",
+      "2024:Y24-10-024",
+      "2025:Y25-01-001",
+      "2025:Y25-01-019",
+      "2025:Y25-06-010",
+      "2025:Y25-06-013",
+      "2025:Y25-08-907",
+      "2024:Y24-07-012"
+    ],
+    "anchor_uids": [
+      "2023:M097",
+      "2024:Y24-07-011",
+      "2024:Y24-08-009",
+      "2025:Y25-01-001",
+      "2025:Y25-01-019",
+      "2025:Y25-06-010",
+      "2025:Y25-06-013"
+    ],
+    "progression": [
+      {
+        "year": 2023,
+        "evidence_uids": [
+          "2023:M097"
+        ],
+        "narrative": "The early Hodge treatment supplies concrete Betti and Hodge-number constraints for curves and P¹×P¹, making geometric compatibility a prerequisite for proposed tables."
+      },
+      {
+        "year": 2024,
+        "evidence_uids": [
+          "2024:Y24-07-011",
+          "2024:Y24-08-009",
+          "2024:Y24-10-024"
+        ],
+        "narrative": "Motivic scalars, finite-field trace counts and prismatic structure introduce distinct realization targets. Their codomains and additional data must be kept visible."
+      },
+      {
+        "year": 2025,
+        "evidence_uids": [
+          "2025:Y25-01-001",
+          "2025:Y25-01-019",
+          "2025:Y25-06-010",
+          "2025:Y25-06-013",
+          "2025:Y25-08-907"
+        ],
+        "narrative": "Monodromy, localization, a point counterexample and typed étale–crystalline statements sharpen the information-loss and comparison questions. No unsupported 2026 continuation is added."
+      }
+    ],
+    "connections": [
+      {
+        "target_domain": "D04",
+        "relation": "Exact and derived structures",
+        "mathematical_bridge": "Localization and compact-support cohomology explain a subtraction in a Grothendieck group without implying a direct-sum decomposition of actual objects.",
+        "scope": "Equality of virtual classes is weaker than an isomorphism of complexes or mixed Hodge structures."
+      },
+      {
+        "target_domain": "D01",
+        "relation": "Integral and p-adic precision",
+        "mathematical_bridge": "The integer coinvariant torsion and filtered Frobenius residual retain information erased by rational ranks or insufficient digits.",
+        "scope": "Rational comparison cannot by itself recover integral torsion."
+      },
+      {
+        "target_domain": "D11",
+        "relation": "Information functionals",
+        "mathematical_bridge": "A scalar geometric realization can be multiplied by entropy only after a codomain is fixed and desired positivity and sensitivity are tested.",
+        "scope": "The resulting authored functional is not an intrinsic nonnegative complexity measure."
+      }
+    ],
+    "capabilities": [
+      "C01",
+      "C03",
+      "C04",
+      "C10",
+      "C15"
+    ],
+    "interactive_contract": {
+      "lab_ids": [],
+      "inputs": "Exact nilpotent matrix and integer lattice; or a variety, cohomology theory, coefficient ring, base and proposed comparison degree.",
+      "outputs": "Weight graded dimensions, integer coinvariants, Euler realizations and explicit type checks for comparison formulas.",
+      "validation": "Verify N-action on each graded piece; preserve torsion before tensoring; test proposed universal comparisons on a point and projective line.",
+      "status": "Mathematical recipe; no general solver implemented"
+    },
+    "limits": "The finite matrix model is not a general degeneration or mixed-Hodge solver. A limiting Hodge filtration, polarization, geometric origin and admissibility remain extra requirements. Étale–crystalline comparison uses stated lifting or period-ring hypotheses; numerical agreement of a cellular test object is insufficient.",
+    "open_questions": [
+      "Can a proposed comparison specify an actual functor and a correctly graded natural map before asking whether it is an isomorphism?",
+      "Which integral or filtered invariants must a proposed geometric complexity measure retain to distinguish objects with identical Euler characteristic?"
+    ],
+    "references": [
+      {
+        "label": "Stacks Project varieties and cohomology background",
+        "url": "https://stacks.math.columbia.edu/"
+      },
+      {
+        "label": "Deligne Théorie de Hodge II",
+        "url": "https://www.numdam.org/item/PMIHES_1971__40__5_0/"
+      },
+      {
+        "label": "Pierre Deligne Théorie de Hodge II",
+        "url": "https://doi.org/10.1007/BF02684692"
+      },
+      {
+        "label": "Stacks Project Grothendieck groups of varieties",
+        "url": "https://stacks.math.columbia.edu"
+      },
+      {
+        "label": "Mark Goresky Lecture notes on sheaves and perverse sheaves",
+        "url": "https://arxiv.org/abs/2105.12045"
+      },
+      {
+        "label": "Mazza, Voevodsky and Weibel, motivic cohomology",
+        "url": "https://sites.math.rutgers.edu/~weibel/motiviclectures.html"
+      }
+    ]
+  }
+]

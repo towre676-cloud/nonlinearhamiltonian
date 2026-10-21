@@ -1,0 +1,46 @@
+{
+  "reviewer": "analysis_dynamics_atlas",
+  "pdf_sha256": "4b255bc807380a2900c3d311bc58327265d215448a0a1557f72629674710878b",
+  "pdf_pages": 249,
+  "pages": {
+    "start": 85,
+    "end": 168,
+    "count": 84
+  },
+  "sheets": [
+    "/workspace/scratch/724ab8464145/mathematics_atlas_2023_2026/tmp/visual/contact-085-096.jpg",
+    "/workspace/scratch/724ab8464145/mathematics_atlas_2023_2026/tmp/visual/contact-097-108.jpg",
+    "/workspace/scratch/724ab8464145/mathematics_atlas_2023_2026/tmp/visual/contact-109-120.jpg",
+    "/workspace/scratch/724ab8464145/mathematics_atlas_2023_2026/tmp/visual/contact-121-132.jpg",
+    "/workspace/scratch/724ab8464145/mathematics_atlas_2023_2026/tmp/visual/contact-133-144.jpg",
+    "/workspace/scratch/724ab8464145/mathematics_atlas_2023_2026/tmp/visual/contact-145-156.jpg",
+    "/workspace/scratch/724ab8464145/mathematics_atlas_2023_2026/tmp/visual/contact-157-168.jpg"
+  ],
+  "samples": [
+    "/workspace/scratch/724ab8464145/mathematics_atlas_2023_2026/tmp/visual/full-085.png",
+    "/workspace/scratch/724ab8464145/mathematics_atlas_2023_2026/tmp/visual/full-088.png",
+    "/workspace/scratch/724ab8464145/mathematics_atlas_2023_2026/tmp/visual/full-126.png",
+    "/workspace/scratch/724ab8464145/mathematics_atlas_2023_2026/tmp/visual/full-165.png",
+    "/workspace/scratch/724ab8464145/mathematics_atlas_2023_2026/tmp/visual/full-168.png",
+    "/workspace/scratch/724ab8464145/mathematics_atlas_2023_2026/tmp/visual/analysis-bracket-082.png"
+  ],
+  "status": "passed",
+  "observations": [
+    "All seven current contact sheets reviewed, covering pages85–168. Consistent margins, section hierarchy, footers and page numbers. No clipping, overlapping prose/tables or accidental blank pages observed.",
+    "Five current designated full-resolution samples (85,88,126,165,168), plus a fresh current-PDF render of page82, reviewed. Body and inline mathematics are legible. Inner-product brackets render correctly in definitions and theorem on page82.",
+    "Compressed reference lines remain readable in the full samples. Former reference-only tail pages111 and165 are resolved in the current pagination; those page numbers now hold substantive domain content.",
+    "Short interactive-contract blocks remain visually grouped; core objects and frontier material have coherent section hierarchy."
+  ],
+  "resolved_issues": [
+    {
+      "description": "Missing inner-product bracket glyphs resolved.",
+      "verified_page": 82
+    },
+    {
+      "description": "Old frontier-only and reference-only sparse tails resolved in current pagination.",
+      "verification": "Seven current contact sheets and designated full samples."
+    }
+  ],
+  "issues": [],
+  "limitations": "This review applies to the final 249-page PDF hash stated above. Contact sheets inspect all assigned page geometry; detailed glyph review covers the six named full-resolution samples. Inline expressions retain plain mathematical notation rather than full display-math typesetting."
+}

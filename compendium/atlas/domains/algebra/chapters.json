@@ -1,0 +1,48 @@
+[
+  {
+    "domain_id": "D03",
+    "title": "Algebra and representation theory: structures, actions and exact certificates",
+    "organizing_question": "What algebraic structure is specified, and which exact maps or identities justify the invariant being claimed?",
+    "overview": "Algebra provides the atlas with a language for separating a structure from its numerical shadow. A carrier with a multiplication law is more information than a cardinality; a representation is more information than a dimension; a spectral decomposition is more information than an eigenvalue list. Across the source years, the strongest developments begin when the multiplication, action, field and equivalence relation become explicit. The six families in this domain organise those developments around operations, linear certificates, symmetry, bracket structure, finite local models and operator states.\n\nTyped operations come first because they determine which equations even make sense. Transporting a field through a bijection produces a valid isomorphic field, while merely changing notation or mixing transported and ordinary operations does not. Capped counters create finite monoids with an absorbing top layer and a minimal multiplication ideal; they do not automatically create a vector-space nullspace. Ring quotients, maximal ideals and squarefree branch decompositions then show how discarded information is certified by an actual homomorphism. The finite cases are useful because every product and every ideal condition can be replayed.\n\nLinear structure supplies a second layer of certificates. Rank needs both upper and lower witnesses, singular values need declared metrics, and projectors need their idempotent and annihilation equations. A squarefree annihilating polynomial yields a decomposition only after checking the polynomial identity, and every advertised spectral point still needs nonzero support. These distinctions connect algebra to observation and stability throughout the atlas. They also prevent exact rational rank, integral torsion and floating effective rank from being treated as the same quantity.\n\nSymmetry becomes productive through actual actions. Finite averaging gives invariant projectors; orbit counts give stabilizers; characters and branching specify which modules occur. The B₄ action over F₃ has a complete Hamming-weight classification, while a signed-permutation invariant quadratic form must be scalar. Neither result forces an empirical dataset rank or a unique frequency ratio on a multiplicity space. Exceptional symmetry is retained at its honest level: the E₈ root accounting and 120+128 decomposition are exact, but an exceptional bracket needs equivariant maps and Jacobi beyond a dimension count. Octonions sharpen this lesson by providing a nonassociative product with a sharp, convention-sensitive defect theorem.\n\nFinite local and path algebras add the geometry of relations. The four-dimensional jet algebra needs cubic closure; its symmetric Hilbert function coexists with a two-dimensional socle. The rank-thirteen quiver pencil has a global path-bundle proof of flatness, while its full Hochschild profile remains another calculation. Finally, faithful finite operator states supply modular flow and KMS identities in a setting where all formulas can be derived directly. These finite models connect outward to categories, geometry, quantum theory and inference through explicit maps. The domain therefore aims at inspectable structure and proof, with larger classification and infinite analytic problems stated as precise frontiers rather than inferred from familiar names.",
+    "core_objects": [
+      "Typed multiplication laws and quotients",
+      "Matrices, metrics and projectors",
+      "Group actions, characters and intertwiners",
+      "Octonion and graded brackets; exceptional roots",
+      "Finite local and quiver algebras",
+      "Faithful finite operator states"
+    ],
+    "concept_order": [
+      "D03-F01",
+      "D03-F02",
+      "D03-F03",
+      "D03-F04",
+      "D03-F05",
+      "D03-F06"
+    ],
+    "open_frontier": "Recover the actual multiplication, representation and cochain matrices behind the larger historical objects; then test completeness of invariants, exceptional bracket identities and parameter-stratified derived invariants."
+  },
+  {
+    "domain_id": "D16",
+    "title": "Quantum, deformation and integrable structures: finite models with explicit boundaries",
+    "organizing_question": "Which state, product, coherence equation or spectral model is actually implemented, and what finite certificate proves its claimed behaviour?",
+    "overview": "This domain brings together quantum states and channels, finite noncommutative systems, deformation quantization, braid and fusion data, integrability and formal obstruction theory. Their common feature is that an appealing symbolic relation becomes useful only after its model class and normalization are fixed. The six families supply explicit finite examples and derive their identities, while distinguishing mathematical structure from physical realization, asymptotic convergence and general classification.\n\nQuantum states make the atlas-wide observation problem especially concrete. The Bell state and its dephased mixture agree on all diagonal observations and both one-qubit marginals, but an off-diagonal correlation separates them. This gives a complete finite collision and a constructive additional measurement. Kraus formulas then supply the correct transformation standard: complete positivity is preserved with arbitrary ancillas, and the completeness equation preserves total probability. Instruments retain every measurement branch, so a conditional normalized success state cannot conceal its success probability. Error correction similarly depends on the specified error list, as the repetition code's exact bit-flip correction coexists with quantum distance one.\n\nFinite Weyl systems identify what can hold exactly in finite dimension. Trace forbids the canonical additive commutator, and determinants force a multiplicative commutation phase to be a root of unity. Clock and shift matrices then generate a full finite matrix algebra. Binary symplectic kernels compute Pauli symmetries, while finite quadratic forms and Gauss sums retain the central phase in a projective modular relation. These calculations distinguish finite rational models from irrational operator algebras and distinguish alternating commutation forms from symmetric quadratic polarizations.\n\nPolynomial Moyal calculus supplies the most direct implemented interaction. Its formal star product has exact finite falling-factorial coefficients for monomials. Degree bounds determine which odd corrections can survive, so the exact degree-four family and a genuine fifth-order obstruction are compatible. The new bounded sextic monomial atlas exhausts a declared 784-pair universe and exposes four cases missed by the cubic test. Its complete bounded scope is valuable precisely because general polynomial cancellations and unbounded higher degree remain separate questions.\n\nBraid and fusion examples then make coherence visible. An algebraic Hecke matrix needs no unitarity, a fusion ring needs no associator, and an associator needs pentagon and hexagon equations. The four-object pointed model provides complete finite data and proofs, while Temperley–Lieb Gram forms test positivity independently. Integrable models provide another bridge between descriptions: a finite XXX matrix agrees with regular Bethe roots when the infinite-root state is included, and a two-site Gaudin eigenvector matches a scalar differential potential. KdV tau-functions illustrate nonlinear interaction through a verified exponential coefficient identity.\n\nFinally, obstruction theory explains why first-order success is insufficient. A characteristic-two character cannot lift, a free rank-two family has jumping Hochschild cohomology and an order-twelve equation can fail at order thirteen. These are exact worked models, not negative verdicts about unrecovered larger objects. The domain's interactive capacities are therefore bounded and auditable: compute, classify within a stated finite universe, inspect a witness and identify the next unresolved equation.",
+    "core_objects": [
+      "Density matrices, effects, Kraus maps and instruments",
+      "Clock–shift operators and binary symplectic supports",
+      "Polynomial Moyal coefficients",
+      "Fusion labels and F/R/S coherence data",
+      "Finite integrable Hamiltonians and tau-functions",
+      "Formal parameter rings and obstruction equations"
+    ],
+    "concept_order": [
+      "D16-F01",
+      "D16-F02",
+      "D16-F03",
+      "D16-F04",
+      "D16-F05",
+      "D16-F06"
+    ],
+    "open_frontier": "Extend the bounded monomial Moyal classification to arbitrary polynomial coefficient varieties; recover full anyon and monodromy matrices; prove all-order or completeness statements only with their actual obstruction or spectral data."
+  }
+]

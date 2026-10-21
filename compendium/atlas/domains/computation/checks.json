@@ -1,0 +1,172 @@
+{
+  "status": "passed",
+  "checks": [
+    {
+      "id": "D13-F01",
+      "name": "Completion count, rank/unrank and threshold optimum",
+      "status": "passed",
+      "scope": "Complete three-project finite population.",
+      "details": {
+        "population": 5,
+        "unique_optimum": 7,
+        "inverse_pairs": 5
+      }
+    },
+    {
+      "id": "D13-F02",
+      "name": "Complete census collision and Green cost",
+      "status": "passed",
+      "scope": "All 128 binary assignments; all total-height-three compositions; rational Green inverse.",
+      "details": {
+        "binary_assignments": 128,
+        "height3_compositions": 84,
+        "separation_at_half": "11025/262144",
+        "P3_Green_diagonal": [
+          "1/5",
+          "2/15",
+          "1/5"
+        ]
+      }
+    },
+    {
+      "id": "D13-F03",
+      "name": "Cycle ranks and vertex-call optimum",
+      "status": "passed",
+      "scope": "Exact diamond and K3,3 incidence ranks; exhaustive K4,7 cover census.",
+      "details": {
+        "diamond_cycle_dimension": 1,
+        "K33_cycle_dimension": 4,
+        "K47_minimum_calls": 4
+      }
+    },
+    {
+      "id": "D13-F04",
+      "name": "Unique-extension, channel fibres and min-plus separator",
+      "status": "passed",
+      "scope": "Complete finite gate and bank quotient; all 16 path assignments.",
+      "details": {
+        "gate_assignments": 4,
+        "quotient_states": 256,
+        "physical_states": 43680,
+        "path_final_messages": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "id": "D14-F01",
+      "name": "TTL future distinction and stable observation quotient",
+      "status": "passed",
+      "scope": "Complete three-state and four-state deterministic machines.",
+      "details": {
+        "TTL_classes": 3,
+        "cycle_classes": 2,
+        "distinguishing_word": [
+          "tick",
+          "read"
+        ]
+      }
+    },
+    {
+      "id": "D14-F02",
+      "name": "Hankel determinant and min-plus gap",
+      "status": "passed",
+      "scope": "Exact rational realization example; prefix check corroborates the symbolic intertwiner/Cayley–Hamilton proof.",
+      "details": {
+        "Hankel_determinant": 4,
+        "tested_recurrence_steps": 27,
+        "tropical_gap": 4
+      }
+    },
+    {
+      "id": "D14-F03",
+      "name": "Certificate-type distinctions",
+      "status": "passed",
+      "scope": "All 81 F3^4 evaluations; exact primal-dual pair; formal Bezout identity.",
+      "details": {
+        "finite_evaluations": 81,
+        "LP_optimum": 3,
+        "nonzero_formal_polynomial": "x^3-x"
+      }
+    },
+    {
+      "id": "D14-F04",
+      "name": "All126 raw-state lattice certificates and exact decoding",
+      "status": "passed",
+      "scope": "Universal collision exclusion follows from exact basis membership/index/dual bounds; fixtures separately check decoding. No accepted-output claim.",
+      "details": {
+        "lattice_patterns": 126,
+        "independent_Bareiss_determinants": 126,
+        "decoder_fixtures": 630,
+        "error_correction_fixtures": 2,
+        "maximum_dual_bound": "59762387137465627635627395045544/162259276829213363391578010288127",
+        "small_state_population": 31
+      }
+    },
+    {
+      "id": "D15-F01",
+      "name": "Target factorization and dynamic-closure counterexample",
+      "status": "passed",
+      "scope": "Exact rational matrices; nonlinear z^2 example is a direct symbolic fibre argument.",
+      "details": {
+        "recoverable_target": [
+          1,
+          2,
+          1
+        ],
+        "recovery_norm_squared": 2,
+        "full_state_identifiable": false,
+        "present_observation_closed": false
+      }
+    },
+    {
+      "id": "D15-F02",
+      "name": "Compatible Lyapunov metric and exact Gramian",
+      "status": "passed",
+      "scope": "Declared two-state matrices; descriptor eigenvalue 1/epsilon is derived directly from its diagonal pencil.",
+      "details": {
+        "P_determinant": "5/4",
+        "Euclidean_energy_derivative_at_11": 4,
+        "Gramian_determinant": "1/72",
+        "descriptor_spurious_root_at_epsilon_001": 100
+      }
+    },
+    {
+      "id": "D15-F03",
+      "name": "Cutoff safety and spectral filter arithmetic",
+      "status": "passed",
+      "scope": "Concrete mild/severe examples; exact rational four-step Landweber and Tikhonov filters. Universal/minimax scope is proved in text.",
+      "details": {
+        "mild_bound_exact": "201/10100",
+        "severe_safe_cutoff": 95,
+        "naive_noise_amplification": 1,
+        "Landweber_residual": "81/256",
+        "Landweber_filter": "175/128"
+      }
+    },
+    {
+      "id": "D15-F04",
+      "name": "Cheapest exact experiments and correlated target support",
+      "status": "passed",
+      "scope": "Complete finite three-state test menu; target-only variant and exact ellipsoid quadratic form.",
+      "details": {
+        "full_state_worst_cost": 3,
+        "target_only_cost": 1,
+        "sum_target_variance_at_rho_half": 3
+      }
+    },
+    {
+      "id": "coverage",
+      "name": "All initial domain entries reviewed",
+      "status": "passed",
+      "scope": "Every initial D13–D15 primary UID is retained in the review ledger, including explicit outgoing moves.",
+      "details": {
+        "initial_primary_entries": 148,
+        "reviewed_entries": 159,
+        "families": 12
+      }
+    }
+  ],
+  "scope": "Exact finite worked models plus replay of the actual all-state raw-generator certificate. Other global statements retain their written proofs and hypotheses; no absent historical instance is claimed checked."
+}

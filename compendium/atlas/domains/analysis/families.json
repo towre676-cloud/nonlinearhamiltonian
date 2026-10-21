@@ -1,0 +1,1841 @@
+[
+  {
+    "id": "D07-F01",
+    "domain_id": "D07",
+    "title": "Transforms, frames and cancellation in a declared norm",
+    "central_question": "When do coefficients preserve information, and how does the chosen measure control a reconstruction error?",
+    "synopsis": "The recurring analytical object is a map from functions or vectors to coefficients. Fourier, Haar, wavelet, shearlet and character systems make different geometries visible, but every useful reconstruction statement has an ambient space, a normalization and a completeness hypothesis. The early Bessel–Parseval and Hardy–BMO questions already distinguish coefficient energy from the energy of the original object. Later sampling, weighted atoms and coherence questions add perturbations and observation loss. These are constructive ingredients for an analysis workflow: first identify which subspace the coefficients see, then calculate its norm identity or frame bounds, and finally account for noise and discarded directions. A finite example is valuable because every coefficient and residual can be inspected exactly. It does not automatically establish a continuous transform theorem or a global sampling theorem.",
+    "definitions": [
+      "In a real or complex Hilbert space H, an orthonormal family (e_j) satisfies ⟨e_i,e_j⟩=δ_ij. Its finite projection is P_m x=Σ_{j≤m}⟨x,e_j⟩e_j.",
+      "A frame satisfies A||x||²≤Σ_j|⟨x,f_j⟩|²≤B||x||² with 0<A≤B<∞. A vanishing lower bound exposes invisible directions.",
+      "An atom supported in a set B cancels in the pairing measure μ when ∫_B a dμ=0; using cancellation in a different measure changes the argument."
+    ],
+    "theorem": {
+      "statement": "For a finite orthonormal family, ||x||²=Σ|⟨x,e_j⟩|²+||x−P_mx||². For a finite analysis matrix T with lower frame bound A, any two candidates obey ||x−y||≤A^(−1/2)||Tx−Ty||. If each is consistent with observations to error ε, their distance is at most 2ε/√A.",
+      "proof": "The projection residual r=x−P_mx is orthogonal to every e_j, because taking its inner product with e_k subtracts exactly the kth coefficient. Thus P_mx and r are orthogonal. Expanding ||P_mx+r||² removes the cross term, and orthonormality evaluates the projection norm as the sum of coefficient squares. This proves the identity and Bessel inequality without a completeness assumption. For a countable family, monotone convergence of the nonnegative partial sums gives the inequality; equality for every x additionally requires dense closed span. For the frame assertion apply its lower inequality to x−y and take square roots. If ||Tx−b||≤ε and ||Ty−b||≤ε, the triangle inequality bounds ||T(x−y)|| by 2ε. The conclusion is about measurement residual in the declared norm: a good residual has no such implication if A=0. Cancellation follows a parallel mechanism. Writing b_B for the μ-average, ∫ab dμ=∫a(b−b_B)dμ, so an atom bounded by 1/μ(B) pairs at most with the mean oscillation of b. This elementary estimate is the finite or single-atom part of Hardy–BMO duality; the complete representation theorem has additional content."
+    },
+    "worked_example": {
+      "setup": "Use the orthonormal Haar basis of R⁴: h₀=(1,1,1,1)/2, h₁=(1,1,−1,−1)/2, h₂=(1,−1,0,0)/√2 and h₃=(0,0,1,−1)/√2, applied to x=(1,2,3,4).",
+      "calculation": "The coefficients are 5, −2, −1/√2 and −1/√2. Their squared sum is 25+4+1/2+1/2=30=1²+2²+3²+4². Keeping only h₀,h₁ gives the block-average reconstruction (3/2,3/2,7/2,7/2); its residual has squared norm one, exactly the energy of the omitted detail coefficients.",
+      "meaning": "This calculation makes approximation loss measurable before any interpretation of the four entries. A prime-gap vector, image row or sensor trace uses the same finite identity, while the statistical meaning of its coefficients requires separate assumptions."
+    },
+    "source_uids": [
+      "2023:M019",
+      "2023:M066",
+      "2023:M067",
+      "2023:M084",
+      "2024:Y24-08-013",
+      "2024:Y24-09-023",
+      "2024:Y24-10-014",
+      "2025:Y25-02-009",
+      "2025:Y25-02-011",
+      "2025:Y25-04-015",
+      "2025:Y25-04-021",
+      "2025:Y25-05-001",
+      "2025:Y25-08-011",
+      "2025:Y25-08-013",
+      "2025:Y25-09-008",
+      "2025:Y25-10-020",
+      "2025:Y25-11-020",
+      "2025:Y25-12-025",
+      "2026:Y26-02-012",
+      "2026:Y26-08-023"
+    ],
+    "anchor_uids": [
+      "2023:M019",
+      "2023:M066",
+      "2023:M067",
+      "2023:M084",
+      "2024:Y24-10-014",
+      "2025:Y25-02-009",
+      "2025:Y25-02-011",
+      "2025:Y25-09-008"
+    ],
+    "progression": [
+      {
+        "year": 2023,
+        "evidence_uids": [
+          "2023:M019",
+          "2023:M066",
+          "2023:M067",
+          "2023:M084"
+        ],
+        "narrative": "The source topics establish cancellation, equality conditions and the distinction between directional and complete information."
+      },
+      {
+        "year": 2024,
+        "evidence_uids": [
+          "2024:Y24-09-023",
+          "2024:Y24-10-014"
+        ],
+        "narrative": "Atomic estimates and a finite Haar decomposition turn those distinctions into inspectable calculations."
+      },
+      {
+        "year": 2025,
+        "evidence_uids": [
+          "2025:Y25-02-009",
+          "2025:Y25-02-011",
+          "2025:Y25-09-008"
+        ],
+        "narrative": "Weighted measures, coordinate changes and interpolation make the observation model explicit."
+      },
+      {
+        "year": 2026,
+        "evidence_uids": [
+          "2026:Y26-02-012",
+          "2026:Y26-08-023"
+        ],
+        "narrative": "Power-spectrum ambiguity and Fourier modal rank show exactly which coefficient summaries lose information."
+      }
+    ],
+    "connections": [
+      {
+        "target_domain": "D11",
+        "relation": "Observation loss",
+        "mathematical_bridge": "An analysis map induces a kernel or equivalence class of indistinguishable signals.",
+        "scope": "A norm identity alone supplies neither statistical identifiability nor a noise distribution."
+      },
+      {
+        "target_domain": "D15",
+        "relation": "Stable reconstruction",
+        "mathematical_bridge": "A lower frame bound is a finite observability inequality.",
+        "scope": "L04 uses its own singular-value cutoff model, not a universal inverse for arbitrary frames."
+      },
+      {
+        "target_domain": "D13",
+        "relation": "Discrete harmonic analysis",
+        "mathematical_bridge": "Finite character orthogonality and circulant diagonalization implement exact coefficient maps.",
+        "scope": "The finite formulas do not prove a continuous wavelet or shearlet theorem."
+      }
+    ],
+    "capabilities": [
+      "C01",
+      "C03",
+      "C05",
+      "C08",
+      "C09"
+    ],
+    "interactive_contract": {
+      "lab_ids": [
+        "L04"
+      ],
+      "inputs": "L04 selects diagonal singular values k^(−p) or exp(−ck), smoothness r and decay p/c in [0.5,3], noise exponent L in [4,14], and integer cutoff N in [1,60]. The severe lab fixes β=1.",
+      "outputs": "Floating evaluations of the proved bias bound (N+1)^(−r), noise bound δ/σ_N, their sum, a 60-cutoff comparison curve and a suggested cutoff. This is an upper envelope, not measured reconstruction error.",
+      "validation": "The lab engine is replayed on declared diagonal examples; the family verifier separately checks its Haar or diffusion-stencil model. Bounds follow from the proofs rather than sampled plots.",
+      "status": "Implemented diagonal cutoff worked model linked by an analysis/approximation bridge. Haar, general frames and PDE discretization remain documented recipes; the lab does not implement them."
+    },
+    "limits": "Completeness, a positive lower frame bound and a matched measure cannot be inferred from a visually plausible transform. FFT differentiation differentiates the trigonometric interpolant; aliasing and unknown high frequencies remain outside that certificate.",
+    "open_questions": [
+      "Which observation subspaces retain the task-relevant quantity with the largest provable lower bound?",
+      "Can local weighted atoms be assembled with uniform constants on the specified noncompact geometry?"
+    ],
+    "references": [
+      {
+        "label": "University of Bonn Hardy and BMO notes",
+        "url": "https://www.math.uni-bonn.de/ag/ana/WiSe1415/V4B5_hardy.pdf"
+      },
+      {
+        "label": "MIT OpenCourseWare Functional Analysis Hilbert spaces",
+        "url": "https://ocw.mit.edu/courses/18-102-introduction-to-functional-analysis-spring-2021/"
+      },
+      {
+        "label": "Kutyniok, Lemvig and Lim, Shearlets and Optimally Sparse Approximations",
+        "url": "https://arxiv.org/abs/1106.1325"
+      },
+      {
+        "label": "I. Daubechies, Orthonormal bases of compactly supported wavelets",
+        "url": "https://doi.org/10.1002/cpa.3160410705"
+      },
+      {
+        "label": "Coifman and Weiss Extensions of Hardy spaces and their use in analysis",
+        "url": "https://www.degruyterbrill.com/document/doi/10.1515/9781400827268.295/html"
+      }
+    ]
+  },
+  {
+    "id": "D07-F02",
+    "domain_id": "D07",
+    "title": "Analytic domains, contour certificates and positive spectral functions",
+    "central_question": "What information is certified by local analytic data, and which global conclusions require a domain or positivity theorem?",
+    "synopsis": "Analytic reasoning becomes especially effective when its domain is part of the input. Cauchy integrals extract coefficients only when the disk and singularity assumptions hold. Logarithmic derivatives locate zeros and poles locally but also carry branch and continuation data. A contour argument counts zeros with multiplicity; it need not show that two counted zeros coincide. The 2026 phase and positive-atom discussions add a useful constructive class: a rational function built from positive real atoms has a fixed imaginary sign and strictly ordered real zeros. That model connects coefficient extraction, monotonicity and spectral measures without making any claim about an unspecified zeta operator. It also provides a small exact laboratory in which poles, residues, roots and signs can all be checked.",
+    "definitions": [
+      "A holomorphic function is complex differentiable on an open set. Cauchy extraction on |z−a|=r requires holomorphy on a neighborhood of the closed disk.",
+      "A Herglotz function maps the upper half-plane into itself. For distinct real t_j and positive μ_j, M(z)=Σ_j μ_j/(t_j−z) is a rational example.",
+      "The argument principle counts zeros minus poles inside a contour that avoids both; the count includes multiplicity."
+    ],
+    "theorem": {
+      "statement": "For t₁<⋯<t_m and μ_j>0, M(z)=Σ μ_j/(t_j−z) is Herglotz. On every interval (t_j,t_{j+1}) it is strictly increasing from −∞ to +∞ and therefore has exactly one simple zero. Its poles are simple with residues −μ_j.",
+      "proof": "Write z=x+iy with y>0. The imaginary part of 1/(t−z) is y/((t−x)²+y²)>0; positive weighted summation proves the half-plane property. For real x away from the poles, M′(x)=Σ μ_j/(t_j−x)²>0. Immediately to the right of t_j its own term tends to −∞, and immediately to the left of t_{j+1} that pole contributes +∞. Continuity and the intermediate value theorem give a zero, strict monotonicity gives uniqueness, and a positive derivative at that zero makes it simple. Multiplying the jth term by z−t_j and taking the limit gives residue −μ_j. Outside the extreme poles all denominators have the same sign, so no further real zero occurs. The argument proves the entire finite interlacing structure without plotting a dense scatter of points. A difference of two such functions does not preserve positive weights and has to be reanalyzed. Separately, the contour integral f^(n)(a)=n!/(2πi)∮f(z)/(z−a)^(n+1)dz follows by the convergent Taylor expansion on a smaller disk and termwise integration; its size bound is n!M/r^n. These two exact mechanisms explain why sign, locality and the contour hypothesis should travel with any calculated residue or root count."
+    },
+    "worked_example": {
+      "setup": "Take M(z)=1/(−1−z)+2/(2−z), with atoms of masses one and two at −1 and 2.",
+      "calculation": "Combining terms gives M(z)=−3z/[(-1−z)(2−z)]. The unique real zero between the poles is zero, M′(0)=1+2/4=3/2, and the residues are −1 and −2. The reciprocal slope at the zero is 2/3. By comparison, p(z)=z²−1 has contour count two on |z|=2 but two distinct simple roots; its count does not certify a double root.",
+      "meaning": "The atom model supplies an exact positive spectral function and a root certificate. A phase formula may reproduce its local masses only after the chosen A/B convention and derivative sign are fixed."
+    },
+    "source_uids": [
+      "2023:M079",
+      "2023:M114",
+      "2024:Y24-03-026",
+      "2024:Y24-08-008",
+      "2024:Y24-09-001",
+      "2024:Y24-09-002",
+      "2024:Y24-09-005",
+      "2024:Y24-09-006",
+      "2024:Y24-09-028",
+      "2025:Y25-02-018",
+      "2025:Y25-04-002",
+      "2025:Y25-04-012",
+      "2025:Y25-09-009",
+      "2025:Y25-11-003",
+      "2026:Y26-03-011",
+      "2026:Y26-06-012",
+      "2026:Y26-07-016",
+      "2026:Y26-07-017",
+      "2026:Y26-07-018",
+      "2026:Y26-07-019"
+    ],
+    "anchor_uids": [
+      "2024:Y24-03-026",
+      "2024:Y24-08-008",
+      "2025:Y25-04-012",
+      "2025:Y25-09-009",
+      "2026:Y26-06-012",
+      "2026:Y26-07-016",
+      "2026:Y26-07-017",
+      "2026:Y26-07-019"
+    ],
+    "progression": [
+      {
+        "year": 2023,
+        "evidence_uids": [
+          "2023:M079",
+          "2023:M114"
+        ],
+        "narrative": "The chain-rule and level-set topics supply local derivative control, including the failure of threshold coordinates at a vanishing derivative."
+      },
+      {
+        "year": 2024,
+        "evidence_uids": [
+          "2024:Y24-03-026",
+          "2024:Y24-08-008"
+        ],
+        "narrative": "Coefficient extraction and the distinction between finite checks and a global zero theorem sharpen analytic hypotheses."
+      },
+      {
+        "year": 2025,
+        "evidence_uids": [
+          "2025:Y25-02-018",
+          "2025:Y25-04-012",
+          "2025:Y25-09-009"
+        ],
+        "narrative": "Logarithmic poles and contour multiplicity become explicit local certificates."
+      },
+      {
+        "year": 2026,
+        "evidence_uids": [
+          "2026:Y26-06-012",
+          "2026:Y26-07-016",
+          "2026:Y26-07-017",
+          "2026:Y26-07-019"
+        ],
+        "narrative": "Branch periods, positive atoms, monotone phases and critical-point limits connect local calculations to global continuation data."
+      }
+    ],
+    "connections": [
+      {
+        "target_domain": "D05",
+        "relation": "Local-to-global obstruction",
+        "mathematical_bridge": "A closed logarithmic differential can have a nonzero loop period.",
+        "scope": "Local curl zero does not remove monodromy or establish a single global primitive."
+      },
+      {
+        "target_domain": "D15",
+        "relation": "Root continuation",
+        "mathematical_bridge": "A simple-root slope bounds local sensitivity through implicit differentiation.",
+        "scope": "A continuation certificate needs a covering or remainder bound along the whole parameter path."
+      },
+      {
+        "target_domain": "D01",
+        "relation": "Special L-functions",
+        "mathematical_bridge": "A logarithmic derivative records local order of vanishing and leading coefficients.",
+        "scope": "The rational Herglotz proof is not a proof of a Riemann hypothesis."
+      }
+    ],
+    "capabilities": [
+      "C01",
+      "C03",
+      "C08",
+      "C09",
+      "C10",
+      "C11"
+    ],
+    "interactive_contract": {
+      "lab_ids": [],
+      "inputs": "A fully specified finite model, its domain, norm, parameter range and requested tolerance; exact arithmetic where available.",
+      "outputs": "Declared invariants, computed model quantities, residual or truncation bound, and a statement of the model assumptions.",
+      "validation": "The companion stdlib verifier checks the stated worked model. Annual entry verifiers remain the checks for their respective treatments.",
+      "status": "Documented recipe and reproducible worked example; no general-purpose solver is claimed."
+    },
+    "limits": "The finite positive-atom theorem requires distinct real poles and strictly positive masses. Limits of such functions need convergence hypotheses. Formal positivity of a kernel and pointwise positivity do not imply positive definiteness.",
+    "open_questions": [
+      "Which proposed spectral quotients have a proved Herglotz normalization?",
+      "Can every claimed positivity region be covered by interval or derivative bounds rather than sampled points?"
+    ],
+    "references": [
+      {
+        "label": "MIT Jeremy Orloff, Cauchy integral formula notes",
+        "url": "https://ocw.mit.edu/courses/18-04-complex-variables-with-applications-spring-2018/b1a90df19f643b974555bbbb93138a48_MIT18_04S18_topic4.pdf"
+      },
+      {
+        "label": "NIST DLMF Riemann Zeta Zeros",
+        "url": "https://dlmf.nist.gov/25.10"
+      },
+      {
+        "label": "NIST DLMF, Polylogarithms",
+        "url": "https://dlmf.nist.gov/25.12"
+      },
+      {
+        "label": "Baranov et al., Spectral synthesis in de Branges spaces",
+        "url": "https://arxiv.org/abs/1309.6915"
+      }
+    ]
+  },
+  {
+    "id": "D07-F03",
+    "domain_id": "D07",
+    "title": "Exact integrals, special functions and normalized periods",
+    "central_question": "How can an integral be reduced to an exact constant while keeping convergence, branch and normalization information visible?",
+    "synopsis": "The archive contains a sustained exact-integration strand: elementary logarithmic moments, sine quotients, Catalan and dilogarithm values, theta and modular transformations, Mellin central values, elliptic logarithms and a final finite-phase integral. These belong together as calculational methods rather than as one claimed transcendence theory. A useful reduction identifies an integration domain, a convergent expansion, the interchange theorem and a final finite or controlled infinite expression. The resulting number can then be checked independently by rational recurrences, symmetry or tail enclosures. The elementary Mellin moment below is a central reusable example. It supplies factorial weights exactly and explains why positive geometric expansions turn certain logarithmic integrals into zeta sums. More elaborate modular and elliptic examples retain additional transformation and branch information that this elementary calculation does not replace.",
+    "definitions": [
+      "For a>0 and integer m≥0, the Mellin logarithmic moment is J_m(a)=∫₀¹x^(a−1)(−log x)^m dx.",
+      "An exact special-function identity includes its parameter region and branch convention. A numerical agreement at one parameter is a check, not the identity itself.",
+      "A period representation here means a specified convergent integral or analytic continuation; no algebraic independence claim follows from that name."
+    ],
+    "theorem": {
+      "statement": "For real a>0 and integer m≥0, J_m(a)=m!/a^(m+1). For m≥1, ∫₀¹(−log x)^m/(1−x) dx=m!ζ(m+1). Truncating the latter positive series after n=N leaves a tail between zero and (m!/m)N^(−m).",
+      "proof": "Set x=e^(−t). Then dx=−e^(−t)dt and x^(a−1)dx=−e^(−at)dt, so the first integral becomes ∫₀∞e^(−at)t^m dt. The substitution u=at factors out a^(−m−1). Integration by parts gives Γ(m+1)=mΓ(m), starting from Γ(1)=1; the boundary terms vanish because an exponential dominates any fixed power. This proves the first formula and convergence at both endpoints. For 0<x<1, 1/(1−x)=Σ_{k≥0}x^k. All summands multiplied by (−log x)^m are nonnegative, so monotone convergence justifies exchanging integral and sum without an unproved uniform bound near x=1. Each resulting moment is m!/(k+1)^(m+1). The series converges exactly for m≥1 in the nonnegative-integer range. The tail is m!Σ_{n>N}n^(−m−1), at most m!∫_N∞t^(−m−1)dt=(m!/m)N^(−m). The m=0 integral diverges logarithmically, showing why the endpoint restriction is mathematical content. Complex a or a noninteger logarithmic exponent can be handled only after choosing powers and checking a new convergence region. This proof is deliberately transparent enough that its finite partial sums and error bounds can be reproduced with rational arithmetic."
+    },
+    "worked_example": {
+      "setup": "Compute J₃(2) and the integral K=∫₀¹(−log x)/(1−x) dx.",
+      "calculation": "J₃(2)=3!/2⁴=3/8 exactly. For K, the first four rational summands give 1+1/4+1/9+1/16=205/144. The remaining positive tail is at most 1/4, hence 205/144<K<241/144. Euler’s separately established ζ(2)=π²/6 identifies the exact constant, while the rational enclosure already checks the reduction without using that evaluation.",
+      "meaning": "This is a reproducible reduction with an explicit stopping rule. The same workflow is appropriate for the archive’s accelerated arctangent, product-variable and finite-phase identities, with their own expansions and convergence arguments."
+    },
+    "source_uids": [
+      "2023:M014",
+      "2023:M034",
+      "2023:M050",
+      "2024:Y24-09-018",
+      "2025:Y25-03-007",
+      "2025:Y25-04-013",
+      "2025:Y25-07-026",
+      "2025:Y25-08-012",
+      "2025:Y25-08-905",
+      "2025:Y25-08-906",
+      "2025:Y25-09-017",
+      "2025:Y25-10-013",
+      "2025:Y25-10-023",
+      "2025:Y25-10-024",
+      "2025:Y25-10-025",
+      "2025:Y25-10-030",
+      "2025:Y25-10-036",
+      "2025:Y25-11-001",
+      "2025:Y25-11-002",
+      "2025:Y25-11-010",
+      "2026:Y26-01-908",
+      "2026:Y26-02-009",
+      "2026:Y26-03-008",
+      "2026:Y26-03-020",
+      "2026:Y26-07-010",
+      "2026:Y26-10-034",
+      "2026:Y26-10-038"
+    ],
+    "anchor_uids": [
+      "2023:M014",
+      "2023:M034",
+      "2023:M050",
+      "2025:Y25-04-013",
+      "2025:Y25-08-906",
+      "2025:Y25-10-036",
+      "2026:Y26-10-038",
+      "2026:Y26-10-034"
+    ],
+    "progression": [
+      {
+        "year": 2023,
+        "evidence_uids": [
+          "2023:M014",
+          "2023:M034",
+          "2023:M050"
+        ],
+        "narrative": "The q-derivative, affine denominator identity and modular lattice reindexing make normalization and convergence part of the calculation."
+      },
+      {
+        "year": 2024,
+        "evidence_uids": [
+          "2024:Y24-03-026",
+          "2024:Y24-09-018"
+        ],
+        "narrative": "Cauchy extraction and Euler-product tails establish complementary local and infinite-product controls."
+      },
+      {
+        "year": 2025,
+        "evidence_uids": [
+          "2025:Y25-04-013",
+          "2025:Y25-08-906",
+          "2025:Y25-10-036",
+          "2025:Y25-10-024"
+        ],
+        "narrative": "Dilogarithms, Mellin splitting and product-variable integration yield independently checkable exact constants."
+      },
+      {
+        "year": 2026,
+        "evidence_uids": [
+          "2026:Y26-01-908",
+          "2026:Y26-03-008",
+          "2026:Y26-10-038",
+          "2026:Y26-10-034"
+        ],
+        "narrative": "Acceleration, a logarithmic-cosine convergence strip, an elliptic log constant and finite Bernoulli sums extend the same disciplined workflow."
+      }
+    ],
+    "connections": [
+      {
+        "target_domain": "D01",
+        "relation": "Arithmetic transforms",
+        "mathematical_bridge": "Mellin transforms, theta series and Euler products relate analytic formulas to arithmetic coefficients.",
+        "scope": "A convergent formula does not establish transcendence or algebraic independence."
+      },
+      {
+        "target_domain": "D02",
+        "relation": "Period equations",
+        "mathematical_bridge": "Parameter-dependent integrals can satisfy Picard–Fuchs equations.",
+        "scope": "The operator and boundary cycle must be supplied; an isolated exact value does not recover them."
+      },
+      {
+        "target_domain": "D14",
+        "relation": "Exact certification",
+        "mathematical_bridge": "Rational partial sums and monotone tail bounds create independently reproducible enclosures.",
+        "scope": "Quadrature or symbolic simplification without endpoint control is insufficient."
+      }
+    ],
+    "capabilities": [
+      "C01",
+      "C03",
+      "C08",
+      "C09",
+      "C10"
+    ],
+    "interactive_contract": {
+      "lab_ids": [],
+      "inputs": "A fully specified finite model, its domain, norm, parameter range and requested tolerance; exact arithmetic where available.",
+      "outputs": "Declared invariants, computed model quantities, residual or truncation bound, and a statement of the model assumptions.",
+      "validation": "The companion stdlib verifier checks the stated worked model. Annual entry verifiers remain the checks for their respective treatments.",
+      "status": "Documented recipe and reproducible worked example; no general-purpose solver is claimed."
+    },
+    "limits": "Different definitions of K, Fourier transforms, q-parameters and logarithm branches alter constants. Each member treatment retains its own conventions. The elementary theorem is not a common proof of every special-function identity in this family.",
+    "open_questions": [
+      "Which exact identities admit rational enclosures whose cost can be predicted before calculation?",
+      "How can branch and cycle metadata be carried automatically through parameter differentiation?"
+    ],
+    "references": [
+      {
+        "label": "NIST DLMF q derivatives",
+        "url": "https://dlmf.nist.gov/17.2#iv"
+      },
+      {
+        "label": "NIST DLMF Gudermannian",
+        "url": "https://dlmf.nist.gov/4.23#viii"
+      },
+      {
+        "label": "NIST DLMF Jacobi triple product",
+        "url": "https://dlmf.nist.gov/17.8"
+      },
+      {
+        "label": "J S Milne Modular Functions and Modular Forms",
+        "url": "https://www.jmilne.org/math/CourseNotes/MF.pdf"
+      },
+      {
+        "label": "NIST DLMF, Polylogarithms",
+        "url": "https://dlmf.nist.gov/25.12"
+      }
+    ]
+  },
+  {
+    "id": "D07-F04",
+    "domain_id": "D07",
+    "title": "Self-adjoint spectra, heat traces and spectral dimension",
+    "central_question": "What does a spectrum actually determine, and which operator-domain and multiplicity data are needed before using it?",
+    "synopsis": "The spectral strand moves from concrete Jacobi and Toeplitz matrices to unbounded operators, residual estimates, heat traces, zeta transforms and spectral dimensions. Its organizing object is not a free-standing list of eigenvalues but an operator with a domain and a functional calculus. Self-adjointness makes a residual meaningful as distance to the spectrum; nonnormal matrices behave differently. Multiplicities change counting functions and commutants even when a list of distinct eigenvalues looks unchanged. Fixed-time trace class is also distinct from short-time heat asymptotics. A diagonal Hilbert-space model makes all these distinctions constructive and supplies a precise bridge between counting growth, heat decay and a zeta convergence half-plane. It is an exact model, not a proposed identification with zeros of a number-theoretic function.",
+    "definitions": [
+      "On ℓ²(N), define Ae_n=n²e_n with domain D(A)={x:Σn⁴|x_n|²<∞}. This domain makes A self-adjoint and nonnegative.",
+      "The counting function with multiplicity is N_A(Λ)=#{n:n²≤Λ}. The heat operator H_t=e^(−tA) has diagonal entries e^(−tn²).",
+      "The spectral zeta series is ζ_A(s)=Σn^(−2s), initially defined where it converges absolutely."
+    ],
+    "theorem": {
+      "statement": "For the specified A, N_A(Λ)=⌊√Λ⌋ for Λ≥1, H_t is trace class for every t>0, and √t Tr(H_t)→√π/2 as t↓0. The defining zeta series converges absolutely exactly when Re s>1/2. Its positive heat trace obeys ∫₁∞e^(−tx²)dx≤Σ_{n≥1}e^(−tn²)≤∫₀∞e^(−tx²)dx.",
+      "proof": "Coordinatewise multiplication by a real sequence is self-adjoint on its maximal square-summability domain; equivalently the adjoint condition forces the same weighted square sum. Its resolvent at −1 has diagonal entries 1/(n²+1), and finite coordinate truncations converge in operator norm because the remaining supremum tends to zero. Thus the resolvent is compact. The counting identity is immediate from n²≤Λ. For t>0, the diagonal entries of H_t are positive and summable by the integral test, so its trace equals their sum. The function x↦e^(−tx²) decreases on [0,∞); rectangle comparison gives the two integral bounds. Their difference is at most ∫₀¹1 dx=1. Multiplying by √t and substituting u=√t x makes both bounds tend to ∫₀∞e^(−u²)du=√π/2. This proves the leading heat asymptotic without asserting an unproved full expansion. Finally the absolute zeta series is Σn^(−2Re s), and the p-series test gives precisely Re s>1/2. Repeating every eigenvalue n times would instead give N(Λ) of order Λ and heat growth of order t^(−1), so multiplicity changes the inferred dimension. The proof exposes where positivity, compactness and the actual counting law enter."
+    },
+    "worked_example": {
+      "setup": "At t=1, retain n=1,2 in the heat trace.",
+      "calculation": "The partial trace is e^(−1)+e^(−4). Its omitted tail is Σ_{n≥3}e^(−n²), bounded above by ∫₂∞e^(−x²)dx≤e^(−4)/4, using x/2≥1 for x≥2. The true leading exponent at small t is t^(−1/2), while for every fixed t the omitted tail tends to zero as the coordinate cutoff grows.",
+      "meaning": "A certified finite approximation and a dimension limit answer different questions. Their order of quantifiers must be specified when both a time parameter and a spectral cutoff vary."
+    },
+    "source_uids": [
+      "2023:M024",
+      "2024:Y24-09-016",
+      "2024:Y24-09-021",
+      "2024:Y24-09-022",
+      "2024:Y24-10-001",
+      "2024:Y24-10-002",
+      "2024:Y24-10-005",
+      "2024:Y24-10-007",
+      "2024:Y24-10-029",
+      "2024:Y24-11-007",
+      "2024:Y24-11-023",
+      "2025:Y25-02-010",
+      "2025:Y25-02-017",
+      "2025:Y25-03-035",
+      "2025:Y25-05-019",
+      "2025:Y25-08-029",
+      "2025:Y25-11-007",
+      "2025:Y25-11-019",
+      "2026:Y26-01-905",
+      "2026:Y26-03-003",
+      "2026:Y26-03-005",
+      "2026:Y26-04-031",
+      "2026:Y26-05-015",
+      "2026:Y26-08-010",
+      "2026:Y26-09-034",
+      "2026:Y26-10-012"
+    ],
+    "anchor_uids": [
+      "2023:M024",
+      "2024:Y24-09-021",
+      "2024:Y24-09-016",
+      "2024:Y24-10-001",
+      "2025:Y25-02-017",
+      "2025:Y25-03-035",
+      "2025:Y25-11-019",
+      "2026:Y26-05-015"
+    ],
+    "progression": [
+      {
+        "year": 2023,
+        "evidence_uids": [
+          "2023:M024",
+          "2023:M066"
+        ],
+        "narrative": "Jacobi orthogonality and Parseval supply concrete spectral measures and completeness questions."
+      },
+      {
+        "year": 2024,
+        "evidence_uids": [
+          "2024:Y24-09-021",
+          "2024:Y24-09-016",
+          "2024:Y24-10-001",
+          "2024:Y24-10-002"
+        ],
+        "narrative": "Toeplitz laws, residual bounds, operator domains and Weyl growth constrain proposed spectral models."
+      },
+      {
+        "year": 2025,
+        "evidence_uids": [
+          "2025:Y25-02-017",
+          "2025:Y25-03-035",
+          "2025:Y25-10-010",
+          "2025:Y25-11-019"
+        ],
+        "narrative": "Heat dimension, Mellin residues and multiplicity separate several formerly conflated spectral invariants."
+      },
+      {
+        "year": 2026,
+        "evidence_uids": [
+          "2026:Y26-03-005",
+          "2026:Y26-05-015",
+          "2026:Y26-09-034"
+        ],
+        "narrative": "Spectral measure near zero, fixed-time trace tails and a confining Bessel operator make limiting and boundary data explicit."
+      }
+    ],
+    "connections": [
+      {
+        "target_domain": "D08",
+        "relation": "Evolution",
+        "mathematical_bridge": "The semigroup e^(−tA) solves the linear heat equation in the spectral representation.",
+        "scope": "A spectral gap controls only the modes to which the chosen observable couples."
+      },
+      {
+        "target_domain": "D01",
+        "relation": "Spectral proposals",
+        "mathematical_bridge": "Counting asymptotics can disprove an equality of spectral multisets.",
+        "scope": "Matching a few eigenvalues or a functional symmetry cannot establish a global spectral identity."
+      },
+      {
+        "target_domain": "D16",
+        "relation": "Operator observables",
+        "mathematical_bridge": "Multiplicity controls the commutant and the available invariant subspaces.",
+        "scope": "A scalar spectrum alone does not specify a quantum observable algebra."
+      }
+    ],
+    "capabilities": [
+      "C01",
+      "C03",
+      "C08",
+      "C09"
+    ],
+    "interactive_contract": {
+      "lab_ids": [],
+      "inputs": "A fully specified finite model, its domain, norm, parameter range and requested tolerance; exact arithmetic where available.",
+      "outputs": "Declared invariants, computed model quantities, residual or truncation bound, and a statement of the model assumptions.",
+      "validation": "The companion stdlib verifier checks the stated worked model. Annual entry verifiers remain the checks for their respective treatments.",
+      "status": "Documented recipe and reproducible worked example; no general-purpose solver is claimed."
+    },
+    "limits": "The diagonal model omits continuous spectrum, nonself-adjoint pseudospectra and singular perturbations of the domain. Mellin residues need a justified continuation and are not automatically integer-valued indices.",
+    "open_questions": [
+      "Which source spectral proposals survive a direct counting-function comparison?",
+      "Can joint time–cutoff bounds be made uniform for the particular observable and perturbation class?"
+    ],
+    "references": [
+      {
+        "label": "NIST DLMF continuous q-Hermite polynomials",
+        "url": "https://dlmf.nist.gov/18.28#vi"
+      },
+      {
+        "label": "NIST Digital Library of Mathematical Functions",
+        "url": "https://dlmf.nist.gov/"
+      },
+      {
+        "label": "NIST DLMF, Zeros of the Riemann zeta function",
+        "url": "https://dlmf.nist.gov/25.10"
+      },
+      {
+        "label": "Alain Connes Noncommutative Geometry",
+        "url": "https://alainconnes.org/wp-content/uploads/book94bigpdf.pdf"
+      },
+      {
+        "label": "Connes, Noncommutative geometry and reality",
+        "url": "https://alainconnes.org/wp-content/uploads/reality.pdf"
+      }
+    ]
+  },
+  {
+    "id": "D08-F01",
+    "domain_id": "D08",
+    "title": "Evolution equations through conservation and energy",
+    "central_question": "Which quantities are transported, conserved or dissipated by the stated evolution law and boundary conditions?",
+    "synopsis": "Heat, nonlinear waves, reaction–diffusion and gradient flows recur across the four years. The useful common language is an evolution equation accompanied by a balance law. A conserved mass and a decreasing energy are different statements: a reaction term can destroy the first, and changing the metric of a gradient flow changes the second. Spatial boundary conditions determine whether integration by parts closes the calculation. The simplest periodic heat equation supplies a complete constructive model with a solution formula, a conserved mean and a quantitative decay estimate for every nonconstant Fourier mode. The nonlinear wave and Cahn–Hilliard members then show how the same workflow changes with the equation. An explicit profile must be substituted into that equation, rather than recognized by its shape.",
+    "definitions": [
+      "On the circle x∈[0,2π], let u_t=κu_xx with κ>0 and periodic boundary conditions. Its spatial mean is ū=(2π)^(−1)∫u dx.",
+      "The fluctuation energy is E(t)=½∫|u−ū|²dx. For sufficiently regular u, integration by parts has no boundary contribution.",
+      "A gradient flow is defined by both an energy functional and a metric or mobility operator; L² and H^(−1) gradient flows need not conserve the same quantities."
+    ],
+    "theorem": {
+      "statement": "Periodic heat flow conserves the mean and satisfies E′=−κ∫|u_x|²dx≤−2κE. Consequently ||u(t)−ū||₂≤e^(−κt)||u(0)−ū||₂. For a Fourier mode cos(nx), the decay rate is exactly κn².",
+      "proof": "Integrating the PDE over one period yields d∫u/dt=κ[u_x]₀^(2π)=0, so the mean is constant. Differentiating E and integrating by parts gives E′=κ∫(u−ū)u_xx dx=−κ∫u_x²dx for a real solution; the complex case uses the real part. Expand the mean-zero fluctuation in Fourier modes. Parseval gives ∫|u_x|²=2πΣ_{n≠0}n²|û_n|²≥2πΣ_{n≠0}|û_n|²=2E. This Poincaré inequality yields E′≤−2κE; multiplying by e^(2κt) and integrating proves the stated norm estimate. Each Fourier coefficient solves û_n′=−κn²û_n, giving the exact mode formula and a spectral construction of the solution. For rough L² data, approximate by finite Fourier sums, apply the same inequality, and pass to the L² limit. This argument also exhibits its boundary dependence. For Cahn–Hilliard, u_t=Δμ with μ=δE/δu, the analogous calculation gives E′=−∫|∇μ|² and a conserved mean. For the L² flow u_t=−μ it instead gives E′=−∫μ², usually with no mass conservation. Naming an energy without specifying the mobility would miss this distinction."
+    },
+    "worked_example": {
+      "setup": "Let κ=1/2 and u(x,0)=3+2cos x−cos2x.",
+      "calculation": "The exact solution is u(x,t)=3+2e^(−t/2)cos x−e^(−2t)cos2x. Its mean is three and E(t)=π[2e^(−t)+(1/2)e^(−4t)]. Direct differentiation gives E′=−π[2e^(−t)+2e^(−4t)], matching −κ∫|u_x|². The n=1 term makes the asymptotic norm decay rate exactly 1/2.",
+      "meaning": "The balance law is an independent diagnostic for simulation. A purported time step or additional coupling that violates the claimed mean or energy behavior requires a new model and a new proof."
+    },
+    "source_uids": [
+      "2023:M009",
+      "2024:Y24-03-022",
+      "2024:Y24-03-029",
+      "2024:Y24-03-030",
+      "2024:Y24-04-020",
+      "2024:Y24-04-021",
+      "2024:Y24-05-007",
+      "2024:Y24-07-010",
+      "2024:Y24-11-025",
+      "2025:Y25-03-024",
+      "2025:Y25-07-012",
+      "2025:Y25-09-021",
+      "2025:Y25-10-028",
+      "2025:Y25-11-005",
+      "2025:Y25-11-011",
+      "2025:Y25-11-013",
+      "2025:Y25-11-031",
+      "2026:Y26-01-010",
+      "2026:Y26-01-028",
+      "2026:Y26-07-013",
+      "2026:Y26-08-906"
+    ],
+    "anchor_uids": [
+      "2023:M009",
+      "2024:Y24-04-020",
+      "2024:Y24-04-021",
+      "2024:Y24-07-010",
+      "2025:Y25-07-012",
+      "2025:Y25-10-028",
+      "2025:Y25-09-021",
+      "2026:Y26-01-028"
+    ],
+    "progression": [
+      {
+        "year": 2023,
+        "evidence_uids": [
+          "2023:M009",
+          "2023:M044"
+        ],
+        "narrative": "An exact travelling wave and a positive heat stencil begin the equation-by-equation verification strand."
+      },
+      {
+        "year": 2024,
+        "evidence_uids": [
+          "2024:Y24-03-030",
+          "2024:Y24-04-020",
+          "2024:Y24-04-021",
+          "2024:Y24-07-010"
+        ],
+        "narrative": "Rotating waves, diffusion-driven instability and coupled diffusion distinguish balance laws from spectral stability."
+      },
+      {
+        "year": 2025,
+        "evidence_uids": [
+          "2025:Y25-07-012",
+          "2025:Y25-09-021",
+          "2025:Y25-10-028",
+          "2025:Y25-11-031"
+        ],
+        "narrative": "Fixed geometry, exact solitons and conservative smoothing make boundary and convolution assumptions explicit."
+      },
+      {
+        "year": 2026,
+        "evidence_uids": [
+          "2026:Y26-01-010",
+          "2026:Y26-01-028",
+          "2026:Y26-07-013",
+          "2026:Y26-08-906"
+        ],
+        "narrative": "Vorticity, circle diffusion, parametrices and ignition front questions expose where local identities need further global analysis."
+      }
+    ],
+    "connections": [
+      {
+        "target_domain": "D07",
+        "relation": "Spectral evolution",
+        "mathematical_bridge": "Fourier diagonalization turns the heat equation into scalar decay laws.",
+        "scope": "A nonlinear reaction or variable geometry couples those modes and changes the certificate."
+      },
+      {
+        "target_domain": "D09",
+        "relation": "Stability versus invariants",
+        "mathematical_bridge": "Energy dissipation and mode stability provide separate dynamical conclusions.",
+        "scope": "Volume contraction or a decreasing energy alone is not a chaos certificate."
+      },
+      {
+        "target_domain": "D15",
+        "relation": "Model validation",
+        "mathematical_bridge": "Conservation defects provide computable residual diagnostics.",
+        "scope": "Small residual needs a stability estimate before it gives a trajectory-error bound."
+      }
+    ],
+    "capabilities": [
+      "C01",
+      "C03",
+      "C07",
+      "C08",
+      "C09"
+    ],
+    "interactive_contract": {
+      "lab_ids": [],
+      "inputs": "A fully specified finite model, its domain, norm, parameter range and requested tolerance; exact arithmetic where available.",
+      "outputs": "Declared invariants, computed model quantities, residual or truncation bound, and a statement of the model assumptions.",
+      "validation": "The companion stdlib verifier checks the stated worked model. Annual entry verifiers remain the checks for their respective treatments.",
+      "status": "Documented recipe and reproducible worked example; no general-purpose solver is claimed."
+    },
+    "limits": "The proved norm estimate uses a periodic fixed geometry and constant positive diffusivity. Moving domains, weak solutions, nonlinear advection and boundaries require their own regularity or flux arguments. The ignition integral is proved separately from its conditional front-speed law.",
+    "open_questions": [
+      "Which conservative discretizations retain the stated nonlinear energy inequality?",
+      "What uniform estimates justify a front law or vorticity criterion beyond its local formal identity?"
+    ],
+    "references": [
+      {
+        "label": "Alan Turing The Chemical Basis of Morphogenesis",
+        "url": "https://doi.org/10.1098/rstb.1952.0012"
+      },
+      {
+        "label": "John Cahn and John Hilliard Free Energy of a Nonuniform System",
+        "url": "https://doi.org/10.1063/1.1744102"
+      },
+      {
+        "label": "Swift and Hohenberg Hydrodynamic fluctuations at the convective instability",
+        "url": "https://doi.org/10.1103/PhysRevA.15.319"
+      },
+      {
+        "label": "Hirota Exact solution of the Korteweg–de Vries equation for multiple collisions of solitons",
+        "url": "https://doi.org/10.1103/PhysRevLett.27.1192"
+      },
+      {
+        "label": "Leonard Gross, Logarithmic Sobolev Inequalities",
+        "url": "https://doi.org/10.2307/1970986"
+      }
+    ]
+  },
+  {
+    "id": "D08-F02",
+    "domain_id": "D08",
+    "title": "Discretization, truncation and controlled approximation",
+    "central_question": "Which finite approximation preserves the model’s invariants, and what bound connects it to the intended continuous object?",
+    "synopsis": "Approximation becomes usable when its error sources are separated and bounded. The archive includes positive diffusion stencils, CFL conditions, distributed halo exchange, lattice anisotropy, FFT differentiation, Newton error and inverse cutoffs. They share a need to distinguish consistency from stability and implementation correctness. A correct communication pattern cannot repair an unstable time step; a stable matrix cannot recover frequencies never observed. The periodic heat stencil below has sharp positivity conditions, exact mass conservation and an explicit Fourier symbol. It is therefore a fully inspectable worked model. Its continuum error additionally needs smoothness and a consistency estimate. The inverse-cutoff lab L04 uses a different, explicitly declared observation model: bias decreases with cutoff while noise amplification increases. The common capability is selecting a finite scale under a proved error budget, not one universal algorithm.",
+    "definitions": [
+      "For N≥3 with indices modulo N, define (T_r u)_j=ru_(j−1)+(1−2r)u_j+ru_(j+1), r=κΔt/(Δx)².",
+      "Positivity means T_r maps every coordinatewise nonnegative vector to a nonnegative vector. Fixed-grid identities use the sum-of-squares norm; continuum error rates use the normalized norm (N^(−1)Σ|u_j|²)^(1/2).",
+      "Consistency compares the discrete equation with a sufficiently smooth exact solution; it is distinct from finite-dimensional conservation and positivity."
+    ],
+    "theorem": {
+      "statement": "T_r preserves Σu_j for every r. It preserves nonnegativity exactly for 0≤r≤1/2. In that range it contracts the discrete ℓ² norm, with Fourier amplification 1−4r sin²(πk/N). For a smooth heat solution, the forward-Euler centered-space residual is O(Δt+Δx²) on a fixed bounded time interval with bounded derivatives.",
+      "proof": "Cyclic summation makes each old value appear with coefficient r+(1−2r)+r=1, proving mass conservation. If all three coefficients are nonnegative, every new coordinate is a convex combination. Conversely a coordinate basis vector detects a negative off-diagonal coefficient when r<0 or a negative central coefficient when r>1/2, proving the sharp positivity condition. Convexity of z↦|z|² then gives |(T_ru)_j|²≤r|u_(j−1)|²+(1−2r)|u_j|²+r|u_(j+1)|². Sum over j to get contraction. Substituting the discrete character e^(2πikj/N) gives the amplification symbol r e^(−2πik/N)+(1−2r)+r e^(2πik/N)=1−4r sin²(πk/N), an independent spectral check. Finally Taylor expansion yields [u(t+Δt)−u(t)]/Δt=u_t+O(Δt), and [u(x+Δx)−2u(x)+u(x−Δx)]/Δx²=u_xx+O(Δx²). The heat equation cancels the leading terms. In the stable range, summing the resulting one-step defects gives a global fixed-time error of the same order under the stated smoothness in the normalized grid norm, with a uniform bound on the sampled consistency defect. A reaction term or boundary update changes these steps and must be analyzed separately."
+    },
+    "worked_example": {
+      "setup": "Use N=5, r=1/4 and u=(1,0,0,0,0).",
+      "calculation": "The next vector is (1/2,1/4,0,0,1/4). Its mass remains one, and its squared norm falls from one to 1/4+1/16+1/16=3/8. At r=3/4 the same central value becomes −1/2, disproving positivity immediately. For a separate cutoff recipe with bound B(N)+δS(N), a valid choice must drive both terms to zero; specifying only N→∞ is insufficient.",
+      "meaning": "The finite stencil certificate is exact and independent of a continuum limit. The cutoff lab exposes the parallel bias–amplification tradeoff with its own supplied singular values and source-class assumptions."
+    },
+    "source_uids": [
+      "2023:M044",
+      "2024:Y24-03-005",
+      "2025:Y25-02-007",
+      "2025:Y25-05-006",
+      "2025:Y25-08-026",
+      "2025:Y25-09-008",
+      "2026:Y26-07-013",
+      "2026:Y26-07-018",
+      "2026:Y26-08-901",
+      "2026:Y26-08-903"
+    ],
+    "anchor_uids": [
+      "2023:M044",
+      "2025:Y25-02-007",
+      "2025:Y25-05-006",
+      "2025:Y25-08-026",
+      "2025:Y25-09-008",
+      "2026:Y26-08-901",
+      "2026:Y26-08-903"
+    ],
+    "progression": [
+      {
+        "year": 2023,
+        "evidence_uids": [
+          "2023:M044"
+        ],
+        "narrative": "A finite positive stencil supplies exact conservation and a sharp local step restriction."
+      },
+      {
+        "year": 2024,
+        "evidence_uids": [
+          "2024:Y24-03-005",
+          "2024:Y24-09-016"
+        ],
+        "narrative": "Optimization residuals and spectral residuals show why an approximation needs the correct certification theorem."
+      },
+      {
+        "year": 2025,
+        "evidence_uids": [
+          "2025:Y25-02-007",
+          "2025:Y25-05-006",
+          "2025:Y25-08-026",
+          "2025:Y25-09-008"
+        ],
+        "narrative": "CFL, communication, lattice dispersion and interpolation separate the numerical and implementation layers."
+      },
+      {
+        "year": 2026,
+        "evidence_uids": [
+          "2026:Y26-07-013",
+          "2026:Y26-07-018",
+          "2026:Y26-08-901",
+          "2026:Y26-08-903"
+        ],
+        "narrative": "Parametrices, covering bounds and regularization quantifiers supply explicit remainder and noise controls."
+      }
+    ],
+    "connections": [
+      {
+        "target_domain": "D15",
+        "relation": "Regularization",
+        "mathematical_bridge": "A cutoff balances source-class bias against inverse noise amplification.",
+        "scope": "L04 is a worked cutoff model and does not instantiate every PDE discretization in this family."
+      },
+      {
+        "target_domain": "D14",
+        "relation": "Execution correctness",
+        "mathematical_bridge": "An exact stencil or halo ownership test checks the implemented finite map.",
+        "scope": "Communication correctness is independent of the CFL condition."
+      },
+      {
+        "target_domain": "D07",
+        "relation": "Spectral symbols",
+        "mathematical_bridge": "Discrete Fourier symbols quantify dispersion and directional anisotropy.",
+        "scope": "A low-wave-number expansion must include its valid wave-number range and remainder."
+      }
+    ],
+    "capabilities": [
+      "C01",
+      "C03",
+      "C07",
+      "C08",
+      "C09"
+    ],
+    "interactive_contract": {
+      "lab_ids": [
+        "L04"
+      ],
+      "inputs": "L04 selects diagonal singular values k^(−p) or exp(−ck), smoothness r and decay p/c in [0.5,3], noise exponent L in [4,14], and integer cutoff N in [1,60]. The severe lab fixes β=1.",
+      "outputs": "Floating evaluations of the proved bias bound (N+1)^(−r), noise bound δ/σ_N, their sum, a 60-cutoff comparison curve and a suggested cutoff. This is an upper envelope, not measured reconstruction error.",
+      "validation": "The lab engine is replayed on declared diagonal examples; the family verifier separately checks its Haar or diffusion-stencil model. Bounds follow from the proofs rather than sampled plots.",
+      "status": "Implemented diagonal cutoff worked model linked by an analysis/approximation bridge. Haar, general frames and PDE discretization remain documented recipes; the lab does not implement them."
+    },
+    "limits": "For odd N the sharp ℓ² spectral stability threshold can exceed the positivity threshold; the two notions are not equivalent. The O estimate requires bounded derivatives, a fixed time interval and consistent initial data, not arbitrary nonsmooth inputs.",
+    "open_questions": [
+      "Can positivity, accuracy and a nonlinear energy law be retained simultaneously at a useful step size?",
+      "Which logarithmic safety margin is sufficient for a specific severely ill-posed observation operator?"
+    ],
+    "references": [
+      {
+        "label": "Randall LeVeque Finite Volume Methods for Hyperbolic Problems",
+        "url": "https://doi.org/10.1017/CBO9780511791253"
+      },
+      {
+        "label": "NIST DLMF rational approximation",
+        "url": "https://dlmf.nist.gov/3.11"
+      },
+      {
+        "label": "MIT numerical analysis Newton method",
+        "url": "https://ocw.mit.edu/courses/18-335j-introduction-to-numerical-methods-spring-2019/"
+      },
+      {
+        "label": "Lloyd Trefethen Spectral Methods in MATLAB, author resources",
+        "url": "https://people.maths.ox.ac.uk/trefethen/spectral.html"
+      },
+      {
+        "label": "Christian Clason, Regularization of Inverse Problems (author lecture notes)",
+        "url": "https://arxiv.org/abs/2001.00617"
+      }
+    ]
+  },
+  {
+    "id": "D08-F03",
+    "domain_id": "D08",
+    "title": "Regular-singular equations, normalized bases and monodromy",
+    "central_question": "How should a parameter-dependent local basis be chosen so logarithms, resonances and continuation data remain meaningful?",
+    "synopsis": "Frobenius and Picard–Fuchs questions recur in scalar connections, elliptic periods, gauge changes and Hill equations. A differential equation is not determined by an evocative period name: its coefficients, singularities, normalization and initial or cycle data must be supplied. Once the operator is known, coefficient recurrence and a Wronskian provide concrete local information. When exponents collide, a raw basis can appear singular even if the solution space varies regularly. The divided-difference model below makes the logarithm appear explicitly and proves which pole is removable. It also exhibits nontrivial unipotent monodromy with eigenvalues equal to one, explaining why those eigenvalues do not imply trivial continuation. General Fuchsian systems require additional resonance compatibility conditions; the model is a constructive baseline rather than a replacement for the missing operator.",
+    "definitions": [
+      "For t>0 let θ=t d/dt and L_ε=θ(θ+ε). Its indicial exponents are 0 and −ε.",
+      "For ε≠0 define g_ε(t)=(t^(−ε)−1)/ε. A branch of log t must be fixed for complex continuation.",
+      "A fundamental pair of scalar solutions has nonzero Wronskian. Monodromy records how a chosen basis changes after analytic continuation around a singular point."
+    ],
+    "theorem": {
+      "statement": "g_ε extends analytically in ε to g₀=−log t. The pair (1,g_ε) remains independent with Wronskian −t^(−ε−1). Writing g_ε=Σ_{r≥0}ε^r g_r yields g_r=(−1)^(r+1)(log t)^(r+1)/(r+1)!, θ²g₀=0 and θ²g_r=−θg_(r−1) for r≥1.",
+      "proof": "Choose a simply connected punctured domain and one analytic logarithm. Then t^(−ε)=exp(−ε log t) is entire in ε for each fixed t. Its exponential Taylor expansion shows that the numerator vanishes to first order at ε=0, so division removes the apparent pole and gives the stated coefficients. Both 1 and t^(−ε) solve L_εf=0, hence so does their divided difference. Direct differentiation gives g_ε′=−t^(−ε−1), never zero on the chosen domain; the Wronskian therefore has a finite nonzero limit −1/t. This proves independence even when the original pair (1,t^(−ε)) coalesces. Substituting the ε-series into (θ²+εθ)g=0 and equating coefficients gives the triangular hierarchy. It can also be checked directly using θ(log t)^k=k(log t)^(k−1). After a positive loop around zero, log t gains 2πi, so the limiting second solution −log t gains −2πi times the first. In the basis (1,−log t), continuation is represented by a nonidentity unipotent matrix, although both of its eigenvalues are one. The construction distinguishes a removable basis pole from genuine singular boundary data. For an actual Picard–Fuchs operator, its Frobenius recurrence and resonance equations must still be derived from that operator, rather than imported from this Euler example."
+    },
+    "worked_example": {
+      "setup": "Take t=e² and ε=1/10, and compare the exact divided difference with its first three ε terms.",
+      "calculation": "g_(1/10)(e²)=10(e^(−1/5)−1)≈−1.812692469. The first three terms give −2+1/5−1/75=−136/75≈−1.813333333. Taylor’s theorem for e^(−1/5) bounds the absolute error after those three terms by 10(1/5)^4/4!=1/1500. The actual error is approximately 0.000640864 and lies within that bound.",
+      "meaning": "The regularized basis, its differential equation, its Wronskian and its continuation law can all be inspected. A symbolic basis with an explicit 1/ε should not be labeled a genuinely singular solution before this test."
+    },
+    "source_uids": [
+      "2024:Y24-03-020",
+      "2024:Y24-03-022",
+      "2025:Y25-02-014",
+      "2025:Y25-07-014",
+      "2025:Y25-08-016",
+      "2025:Y25-10-012",
+      "2025:Y25-11-008",
+      "2026:Y26-01-024",
+      "2026:Y26-01-907",
+      "2026:Y26-01-910",
+      "2026:Y26-02-019",
+      "2026:Y26-02-020",
+      "2026:Y26-02-021"
+    ],
+    "anchor_uids": [
+      "2025:Y25-02-014",
+      "2025:Y25-07-014",
+      "2025:Y25-08-016",
+      "2025:Y25-10-012",
+      "2026:Y26-01-024",
+      "2026:Y26-01-907",
+      "2026:Y26-01-910",
+      "2026:Y26-02-020"
+    ],
+    "progression": [
+      {
+        "year": 2024,
+        "evidence_uids": [
+          "2024:Y24-03-020",
+          "2024:Y24-03-022"
+        ],
+        "narrative": "Laplace and Bessel equations establish the need for a stated operator and its boundary or initial conditions."
+      },
+      {
+        "year": 2025,
+        "evidence_uids": [
+          "2025:Y25-02-014",
+          "2025:Y25-07-014",
+          "2025:Y25-08-016",
+          "2025:Y25-10-012"
+        ],
+        "narrative": "Monodromy identity, scalar gauge changes and value–derivative matching distinguish bases from solutions."
+      },
+      {
+        "year": 2026,
+        "evidence_uids": [
+          "2026:Y26-01-024",
+          "2026:Y26-01-907",
+          "2026:Y26-01-910",
+          "2026:Y26-02-020"
+        ],
+        "narrative": "Colliding exponents, an explicit recovered recurrence and triangular period systems make logarithmic and extra-harmonic terms computable."
+      }
+    ],
+    "connections": [
+      {
+        "target_domain": "D02",
+        "relation": "Gauss–Manin and periods",
+        "mathematical_bridge": "Period bases satisfy parameter-dependent differential systems with connection matrices.",
+        "scope": "A basis comparison needs values and derivatives or a full fundamental matrix at a regular point."
+      },
+      {
+        "target_domain": "D05",
+        "relation": "Continuation",
+        "mathematical_bridge": "Monodromy is transport around a loop in a punctured domain.",
+        "scope": "Eigenvalues one do not establish identity monodromy; a nilpotent part may remain."
+      },
+      {
+        "target_domain": "D16",
+        "relation": "Integrable spectral equations",
+        "mathematical_bridge": "Hill and Lamé equations relate mode spectra to monodromy.",
+        "scope": "A Hill coefficient with extra harmonics cannot simply be called Mathieu."
+      }
+    ],
+    "capabilities": [
+      "C01",
+      "C03",
+      "C08",
+      "C09",
+      "C10",
+      "C11"
+    ],
+    "interactive_contract": {
+      "lab_ids": [],
+      "inputs": "A fully specified finite model, its domain, norm, parameter range and requested tolerance; exact arithmetic where available.",
+      "outputs": "Declared invariants, computed model quantities, residual or truncation bound, and a statement of the model assumptions.",
+      "validation": "The companion stdlib verifier checks the stated worked model. Annual entry verifiers remain the checks for their respective treatments.",
+      "status": "Documented recipe and reproducible worked example; no general-purpose solver is claimed."
+    },
+    "limits": "General resonant families may have compatibility obstructions or genuine parameter singularities. This model does not identify a historical elliptic integral whose differential operator or cycle data were absent.",
+    "open_questions": [
+      "For the supplied operator, which resonance equations force logarithms and which allow an analytic basis?",
+      "Can basis normalization and numerical continuation be certified uniformly near coalescing exponents?"
+    ],
+    "references": [
+      {
+        "label": "Edward Frenkel Langlands Correspondence for Loop Groups",
+        "url": "https://doi.org/10.1017/CBO9780511543371"
+      },
+      {
+        "label": "Zhou, Hodge-theoretic mirror symmetry for the quintic",
+        "url": "https://sites.math.northwestern.edu/~byzhou01/MS_quintic_E.pdf"
+      },
+      {
+        "label": "Isidro et al Picard–Fuchs equations for Seiberg–Witten models",
+        "url": "https://arxiv.org/abs/hep-th/9703186"
+      },
+      {
+        "label": "NIST DLMF, Fuchs–Frobenius Theory",
+        "url": "https://dlmf.nist.gov/2.7"
+      },
+      {
+        "label": "NIST DLMF, Hill’s Equation",
+        "url": "https://dlmf.nist.gov/28.29"
+      }
+    ]
+  },
+  {
+    "id": "D08-F04",
+    "domain_id": "D08",
+    "title": "Asymptotic expansions, singular scales and exponentially small data",
+    "central_question": "What does a finite asymptotic expansion determine, and how can its remainder and missing exponential contribution be made explicit?",
+    "synopsis": "The asymptotic strand includes renormalization flows, spectral gaps, elliptic logarithms, cubic folds, Mathieu perturbation, and a factorial Borel model. Its common requirement is to state the small parameter, the approach sector and the uniformity of a remainder. A formal series can be useful while diverging everywhere; convergence and asymptotic accuracy are distinct. Conversely, a few perturbative coefficients cannot determine a global continuation, a Stokes constant or a nonlinear front law. The one-pole Borel example makes the distinction fully constructive. Its coefficients, exact integral, finite error bound and exponentially small solution ambiguity are all explicit. The cubic fold supplies a complementary algebraic scale: coalescing critical points produce a three-halves action difference and a two-thirds transition parameter. Each model has its own hypotheses and should not be promoted to a universal description by analogy.",
+    "definitions": [
+      "The formal series F(z)=Σ_{n≥0}n!z^(n+1) has zero radius of convergence. Its Borel transform is B(t)=Σt^n=1/(1−t) near t=0.",
+      "For a>0 define the nonsingular negative-ray sum F(−a)=−∫₀∞e^(−u/a)/(1+u)du.",
+      "An asymptotic expansion controls the error after each fixed finite truncation as a parameter tends to a limit; it need not converge when infinitely many terms are added."
+    ],
+    "theorem": {
+      "statement": "For every a>0 and N≥1, |F(−a)−Σ_{n=0}^{N−1}n!(−a)^(n+1)|≤N!a^(N+1). The corresponding Laplace sums solve z²F′−F=−z. Any two solutions differ by Ce^(−1/z); with above-minus-below bypasses of the positive Borel pole, the lateral difference is 2πi e^(−1/z).",
+      "proof": "The exact finite geometric identity gives 1/(1+u)=Σ_{n=0}^{N−1}(−u)^n+(−u)^N/(1+u). Integrate against −e^(−u/a). The nth term evaluates to (−1)^(n+1)n!a^(n+1) by the Mellin moment. The absolute remainder is bounded by ∫₀∞e^(−u/a)u^Ndu=N!a^(N+1), since 1/(1+u)≤1. This proves a genuine finite-order error estimate on the negative ray even though the coefficient ratio makes the infinite power series divergent for every nonzero argument. Differentiation under the convergent integral, or integration by parts in its Laplace form, gives the inhomogeneous equation. Subtracting two solutions gives H′=H/z², hence H=Ce^(−1/z), which is smaller than every power as z↓0 on the positive ray. To compare the two lateral integrals, their difference closes clockwise around t=1. The residue of e^(−t/z)/(1−t) is −e^(−1/z), giving +2πi e^(−1/z) in that convention. The exponential ambiguity is therefore visible without guessing it from several factorial coefficients. A complete sectorial asymptotic proof must keep the bypass and decay contour fixed in a compatible sector; the explicit negative-ray bound is the directly verified remainder used here."
+    },
+    "worked_example": {
+      "setup": "Use a=1/10 and N=5. Separately consider Φ(x;t)=x³/3−tx for t>0.",
+      "calculation": "The Borel-model truncation is −1/10+1/100−2/1000+6/10000−24/100000=−11455/125000=−0.09164, with error at most 120/10⁶=0.00012. The fold saddles are x_±=±√t and Φ(x_−;t)−Φ(x_+;t)=4t^(3/2)/3. Scaling x=h^(1/3)y in Φ/h yields y³/3−(t/h^(2/3))y, so the nontrivial transition occurs at t of order h^(2/3).",
+      "meaning": "These examples attach a bound or exact scaling identity to an asymptotic statement. They do not identify the Stokes data or thimbles of an unspecified amplitude."
+    },
+    "source_uids": [
+      "2023:M113",
+      "2023:M114",
+      "2024:Y24-09-011",
+      "2024:Y24-12-036",
+      "2025:Y25-03-006",
+      "2025:Y25-08-027",
+      "2025:Y25-10-001",
+      "2025:Y25-10-010",
+      "2026:Y26-01-019",
+      "2026:Y26-01-909",
+      "2026:Y26-02-009",
+      "2026:Y26-02-021",
+      "2026:Y26-03-005",
+      "2026:Y26-06-013",
+      "2026:Y26-10-038"
+    ],
+    "anchor_uids": [
+      "2023:M113",
+      "2025:Y25-03-006",
+      "2025:Y25-08-027",
+      "2025:Y25-10-001",
+      "2026:Y26-01-909",
+      "2026:Y26-02-021",
+      "2026:Y26-06-013",
+      "2026:Y26-10-038"
+    ],
+    "progression": [
+      {
+        "year": 2023,
+        "evidence_uids": [
+          "2023:M113",
+          "2023:M114"
+        ],
+        "narrative": "Exact flow coordinates and singular threshold coordinates expose where a limiting parameter becomes nonuniform."
+      },
+      {
+        "year": 2024,
+        "evidence_uids": [
+          "2024:Y24-09-011",
+          "2024:Y24-12-036"
+        ],
+        "narrative": "Fractional memory and logarithmic running require explicit derivative and scale conventions."
+      },
+      {
+        "year": 2025,
+        "evidence_uids": [
+          "2025:Y25-03-006",
+          "2025:Y25-08-027",
+          "2025:Y25-10-001"
+        ],
+        "narrative": "Conditional series convergence, Riccati wall times and two-loop logarithms provide concrete control of singular behavior."
+      },
+      {
+        "year": 2026,
+        "evidence_uids": [
+          "2026:Y26-01-909",
+          "2026:Y26-02-021",
+          "2026:Y26-06-013",
+          "2026:Y26-10-038"
+        ],
+        "narrative": "Factorial remainders, discriminant perturbation, fold scaling and the elliptic log constant distinguish several asymptotic mechanisms."
+      }
+    ],
+    "connections": [
+      {
+        "target_domain": "D07",
+        "relation": "Mellin and Laplace transforms",
+        "mathematical_bridge": "Factorial coefficients are Laplace moments, and logarithmic constants can be isolated by an exact integral split.",
+        "scope": "An integral identity must specify its sector and branch."
+      },
+      {
+        "target_domain": "D09",
+        "relation": "Critical scaling",
+        "mathematical_bridge": "A cubic fold gives an exact action difference and degeneration of the Hessian.",
+        "scope": "A local fold normal form does not determine global attractors or transition rates."
+      },
+      {
+        "target_domain": "D14",
+        "relation": "Certified truncation",
+        "mathematical_bridge": "The explicit remainder supplies a stopping rule for a divergent expansion.",
+        "scope": "More terms can increase the error once the least term has been passed."
+      }
+    ],
+    "capabilities": [
+      "C01",
+      "C03",
+      "C08",
+      "C09",
+      "C11"
+    ],
+    "interactive_contract": {
+      "lab_ids": [],
+      "inputs": "A fully specified finite model, its domain, norm, parameter range and requested tolerance; exact arithmetic where available.",
+      "outputs": "Declared invariants, computed model quantities, residual or truncation bound, and a statement of the model assumptions.",
+      "validation": "The companion stdlib verifier checks the stated worked model. Annual entry verifiers remain the checks for their respective treatments.",
+      "status": "Documented recipe and reproducible worked example; no general-purpose solver is claimed."
+    },
+    "limits": "The factorial theorem is a stipulated one-pole model. The printed fold scale concerns that cubic phase. Uniform multi-parameter asymptotics, resonance denominators and global contour topology need further estimates.",
+    "open_questions": [
+      "Can the expansion be truncated near its least term with a uniform computable sectorial bound?",
+      "Which global contour and boundary data select the exponentially small constant in the intended application?"
+    ],
+    "references": [
+      {
+        "label": "Beisert Quantum Field Theory II notes renormalization sections",
+        "url": "https://people.phys.ethz.ch/~nbeisert/lectures/QFT2-17FS-Notes.pdf"
+      },
+      {
+        "label": "Milne, Modular Functions and Modular Forms",
+        "url": "https://www.jmilne.org/math/CourseNotes/MF.pdf"
+      },
+      {
+        "label": "NIST DLMF logarithms",
+        "url": "https://dlmf.nist.gov/4.2"
+      },
+      {
+        "label": "NIST DLMF, Small-q Expansions for Noninteger Mathieu Order",
+        "url": "https://dlmf.nist.gov/28.15"
+      },
+      {
+        "label": "NIST DLMF, Mathieu Characteristic Equation",
+        "url": "https://dlmf.nist.gov/28.2"
+      }
+    ]
+  },
+  {
+    "id": "D09-F01",
+    "domain_id": "D09",
+    "title": "Stability in the right metric, including transient and hybrid behavior",
+    "central_question": "Which norm or storage function certifies decay when eigenvalues, Euclidean growth and switching tell different stories?",
+    "synopsis": "The stability strand is unusually consistent across the years: feedback can be asymptotically stable and still amplify an initial perturbation, a spectral gap depends on the modes actually observed, and changing metrics can reveal coercivity absent in the Euclidean symmetric part. A positive quadratic Lyapunov function supplies a constructive certificate. Its matrix also quantifies the cost of a coordinate change, forcing, switching and resets. These are capabilities with distinct inputs: an eigenvalue calculation, a transient-gain calculation and a hybrid dwell-time bound are related but answer different questions. The two-dimensional triangular model below is deliberately small enough to solve exactly. It proves decay in one metric while displaying temporary growth in another, giving a positive explanation for the archive’s repeated cautions about nonnormality.",
+    "definitions": [
+      "For P=Pᵀ>0, define V(x)=xᵀPx and ||x||_P=√V(x). A Hurwitz matrix has all eigenvalues with negative real part.",
+      "A quadratic Lyapunov certificate is AᵀP+PA≤−2αP for α>0. It implies ||e^(tA)x||_P≤e^(−αt)||x||_P.",
+      "For hybrid switching, a metric jump ratio ρ≥1 bounds V_after≤ρV_before; an average dwell-time bound controls how often this cost can be incurred."
+    ],
+    "theorem": {
+      "statement": "For A=[[-1,3],[0,−1]] and P=[[1/2,3/4],[3/4,11/4]], P>0 and AᵀP+PA=−I. Since P≤3I, ||e^(tA)x||_P≤e^(−t/6)||x||_P. Nevertheless the Euclidean squared norm has positive derivative at x=(1,1).",
+      "proof": "The leading principal entry of P is 1/2 and det P=11/8−9/16=13/16>0, so the two-by-two Sylvester criterion proves positive definiteness. Direct multiplication gives AᵀP+PA=−I. Along x′=Ax, V′=xᵀ(AᵀP+PA)x=−||x||₂². The matrix 3I−P has positive first entry 5/2 and determinant (5/2)(1/4)−9/16=1/16>0, so P≤3I. Therefore ||x||₂²≥V/3 and V′≤−V/3. Integration and square roots give the rate 1/6 in the P norm. In contrast, at x=(1,1), Ax=(2,−1), so d||x||₂²/dt=2xᵀAx=2>0. The eigenvalues of A are both −1; their location does not prohibit this initial Euclidean amplification. Because A=−I+3N with N²=0, its exact exponential is e^(−t)(I+3tN), explicitly displaying the polynomial transient. If continuous segments obey V′≤−2αV and jumps cost at most ρ, then V(t)≤ρ^N(t)e^(−2αt)V(0). Under N(t)≤N₀+t/τ, this becomes ρ^N₀ exp[−2(α−logρ/(2τ))t]V(0). Thus switching consumes a precise logarithmic decay budget rather than preserving stability merely because each mode is stable."
+    },
+    "worked_example": {
+      "setup": "Use x₀=(0,1) for the continuous model, and compare two rank-one orthogonal projections whose lines meet at angle θ.",
+      "calculation": "The exact trajectory is x(t)=e^(−t)(3t,1). At t=1 its Euclidean norm is √10/e>1 although it eventually tends to zero. For projections P₀ onto (1,0) and Q onto (cosθ,sinθ), P₀QP₀=cos²θ P₀. Thus a cycle restricted to im P₀ contracts by cos²θ, while ||[P₀,Q]||=|sinθ cosθ|. These are different quantities, even though both depend on the same angle.",
+      "meaning": "The Lyapunov example has a globally valid certificate for its linear flow. The L05 projection component provides another exact model of convergence and noncommutation, without identifying either number as a universal holonomy invariant."
+    },
+    "source_uids": [
+      "2023:M053",
+      "2023:M054",
+      "2023:M058",
+      "2023:M107",
+      "2024:Y24-03-032",
+      "2024:Y24-04-018",
+      "2024:Y24-05-011",
+      "2024:Y24-11-002",
+      "2025:Y25-04-020",
+      "2025:Y25-04-027",
+      "2025:Y25-06-015",
+      "2025:Y25-08-029",
+      "2025:Y25-10-032",
+      "2025:Y25-11-023",
+      "2025:Y25-12-012",
+      "2026:Y26-01-007",
+      "2026:Y26-01-011",
+      "2026:Y26-02-019",
+      "2026:Y26-03-002",
+      "2026:Y26-03-004",
+      "2026:Y26-03-023",
+      "2026:Y26-05-011",
+      "2026:Y26-05-026",
+      "2026:Y26-06-026",
+      "2026:Y26-08-005",
+      "2026:Y26-08-008",
+      "2026:Y26-08-010"
+    ],
+    "anchor_uids": [
+      "2023:M058",
+      "2024:Y24-03-032",
+      "2025:Y25-04-027",
+      "2026:Y26-03-002",
+      "2026:Y26-03-004",
+      "2026:Y26-05-011",
+      "2026:Y26-05-026",
+      "2026:Y26-06-026"
+    ],
+    "progression": [
+      {
+        "year": 2023,
+        "evidence_uids": [
+          "2023:M053",
+          "2023:M058",
+          "2023:M107"
+        ],
+        "narrative": "Locking branches, triangular feedback and a dissipative nonlinear example separate local attraction from amplification and identifiability."
+      },
+      {
+        "year": 2024,
+        "evidence_uids": [
+          "2024:Y24-03-032",
+          "2024:Y24-05-011",
+          "2024:Y24-11-002"
+        ],
+        "narrative": "Polynomial stability boundaries and frequency filtering supply concrete norm-dependent tests."
+      },
+      {
+        "year": 2025,
+        "evidence_uids": [
+          "2025:Y25-04-020",
+          "2025:Y25-04-027",
+          "2025:Y25-10-032",
+          "2025:Y25-12-012"
+        ],
+        "narrative": "Multiplicative updates, parametric switching, damping conventions and volume contraction refine what is actually controlled."
+      },
+      {
+        "year": 2026,
+        "evidence_uids": [
+          "2026:Y26-03-002",
+          "2026:Y26-03-004",
+          "2026:Y26-05-011",
+          "2026:Y26-05-026"
+        ],
+        "narrative": "Continuous and discrete Gramians, adapted metrics and hybrid budgets form a coherent certificate toolkit."
+      }
+    ],
+    "connections": [
+      {
+        "target_domain": "D15",
+        "relation": "Control and observability",
+        "mathematical_bridge": "Lyapunov and observability Gramians solve different matrix equations with related energy meanings.",
+        "scope": "A decay certificate does not imply that every state coordinate is measured."
+      },
+      {
+        "target_domain": "D06",
+        "relation": "Projection geometry",
+        "mathematical_bridge": "Principal angles determine a two-line projection contraction.",
+        "scope": "L05 separately labels transport or holonomy quantities and the projection model."
+      },
+      {
+        "target_domain": "D12",
+        "relation": "Robust margins",
+        "mathematical_bridge": "A metric perturbation bound δ<α retains a decay rate at least α−δ.",
+        "scope": "The norm and uncertainty set must be stated before calling a margin robust."
+      }
+    ],
+    "capabilities": [
+      "C01",
+      "C03",
+      "C07",
+      "C08",
+      "C09",
+      "C13"
+    ],
+    "interactive_contract": {
+      "lab_ids": [
+        "L05"
+      ],
+      "inputs": "L05 has a shear-loop mode with integer a,b in [−3,3] and a projection mode with line angle 5–85 degrees. The displayed projection iteration target is ε=0.01.",
+      "outputs": "For shears: UVU^(−1)V^(−1), its entries and determinant. For projections: cos²θ, |sin(2θ)|/2, the number of cycles reaching ε and the residual bound.",
+      "validation": "Integer shears use exactly represented small integer operations; projection trigonometry is floating arithmetic. The companion verifier checks the distinct contraction 9/25 and commutator norm 12/25 for cosθ=3/5; engine replay checks the implemented formulas.",
+      "status": "Two implemented explicit 2×2 worked models. General Lyapunov synthesis, switching simulation and geometric holonomy remain mathematical recipes, not lab solvers."
+    },
+    "limits": "The exact matrix certificate is global for its stated linear model. A Jacobian certificate for a nonlinear system is usually local unless its inequality holds throughout a forward-invariant region. Common storage, reset inequalities and switching bounds are additional hybrid hypotheses.",
+    "open_questions": [
+      "Which common or multiple storage functions certify the complete switching architecture?",
+      "How large is the physically relevant transient gain in the observation norm rather than only the state norm?"
+    ],
+    "references": [
+      {
+        "label": "Boyd and Vandenberghe Introduction to Applied Linear Algebra",
+        "url": "https://stanford.edu/~boyd/vmls/"
+      },
+      {
+        "label": "Boyd and coauthors Linear Matrix Inequalities in System and Control Theory",
+        "url": "https://web.stanford.edu/~boyd/lmibook/index.html"
+      },
+      {
+        "label": "MIT Dynamics and Control II, Routh–Hurwitz lecture",
+        "url": "https://ocw.mit.edu/courses/2-004-dynamics-and-control-ii-spring-2008/resources/lecture_25/"
+      },
+      {
+        "label": "MIT Routh–Hurwitz course notes",
+        "url": "https://sites.mit.edu/meche2004/news/routh-hurwitz-stability-criterion/"
+      },
+      {
+        "label": "Moore, Quantum theory of the electromagnetic field in a variable-length one-dimensional cavity",
+        "url": "https://doi.org/10.1063/1.1665432"
+      }
+    ]
+  },
+  {
+    "id": "D09-F02",
+    "domain_id": "D09",
+    "title": "Local bifurcation, exact cycles and the boundary of chaos claims",
+    "central_question": "Which changes of stability can be derived from a return map, and what additional work separates a local bifurcation from global chaos?",
+    "synopsis": "The dynamics archive repeatedly returns to logistic period doubling, oscillator locking, pitchfork regulation, scalar flip equations and return-map jets. These are best organized around a local map or flow, its invariant branches and its multipliers. A nonlinearity is not itself chaos, a symbolic analogy is not a conjugacy, and a local germ is not a global attractor. The logistic family offers an unusually complete positive example: the first fixed-point instability, the born two-cycle and its entire linear-stability interval follow from exact algebra. Later 2026 questions enrich this with explicit transcendental flip candidates, square-root branching and cubic coefficients of the second iterate. Those mechanisms can be compared once the local coordinates and nondegeneracy conditions are stated.",
+    "definitions": [
+      "Let f_r(x)=rx(1−x), r>0. A point has exact period two when f_r²(x)=x and f_r(x)≠x.",
+      "The multiplier of a k-cycle is the product of derivatives along it. Absolute multiplier less than one proves local attraction; equality is a boundary case requiring higher-order analysis.",
+      "A local flip occurs when a fixed-point multiplier crosses −1 transversely with an appropriate nonzero nonlinear coefficient."
+    ],
+    "theorem": {
+      "statement": "The nonzero logistic fixed point is stable for 1<r<3. For r>3 its genuine two-cycle has points x_±=[r+1±√((r−3)(r+1))]/(2r) and multiplier m₂=−r²+2r+4. It is linearly attracting exactly for 3<r<1+√6.",
+      "proof": "Solving f_r(x)=x gives zero and x*=1−1/r. At x*, f_r′(x*)=r(1−2+2/r)=2−r, whose absolute value is less than one exactly when 1<r<3. To locate period-two points, expand f_r²(x)−x and divide by the known fixed-point factors. The remaining equation is r²x²−r(r+1)x+(r+1)=0. Its discriminant is r²(r−3)(r+1), giving the displayed distinct real roots for r>3. Their sum is (r+1)/r and product is (r+1)/r². Consequently f_r′(x_+)f_r′(x_-)=r²[1−2(x_++x_-)+4x_+x_-]=−r²+2r+4. For r>3 this polynomial decreases strictly, starts at +1 at r=3 and reaches −1 at r=1+√6. Hence |m₂|<1 precisely on the stated interval. At the first endpoint the two-cycle merges with the fixed branch; at the second, its multiplier reaches the next flip boundary. This calculation establishes neither every later doubling nor Feigenbaum universality. A complementary jet calculation explains why higher terms matter: if R(s)=−s+as²+bs³+O(s⁴), direct composition gives R²(s)=s−2(a²+b)s³+O(s⁴); the quadratic term cancels and the sign or vanishing of a²+b is relevant. A multiplier of −1 alone omits that information."
+    },
+    "worked_example": {
+      "setup": "Take r=16/5. Also compare the regulator m↦tanh(am) near a=1.",
+      "calculation": "The logistic two-cycle is (21±√21)/32, and its multiplier is 4/25. It is therefore locally attracting. For the regulator, tanh(am)=am−a³m³/3+O(m⁵); a nonzero fixed point satisfies m²=3(a−1)/a³+O((a−1)²) as a↓1. This square-root branch is a pitchfork mechanism, distinct from the logistic two-cycle despite a shared critical-scaling vocabulary.",
+      "meaning": "Exact branch formulas make hypotheses testable. They provide a foundation for a numerical bifurcation diagram, while the diagram itself cannot certify an infinite cascade or a global chaotic invariant set."
+    },
+    "source_uids": [
+      "2023:M091",
+      "2023:M092",
+      "2023:M107",
+      "2024:Y24-04-018",
+      "2024:Y24-04-019",
+      "2024:Y24-11-013",
+      "2025:Y25-09-015",
+      "2025:Y25-12-006",
+      "2025:Y25-12-017",
+      "2026:Y26-03-010",
+      "2026:Y26-03-011",
+      "2026:Y26-03-023",
+      "2026:Y26-03-024",
+      "2026:Y26-03-025",
+      "2026:Y26-04-006",
+      "2026:Y26-07-019",
+      "2026:Y26-08-013",
+      "2026:Y26-10-014"
+    ],
+    "anchor_uids": [
+      "2023:M091",
+      "2024:Y24-04-018",
+      "2024:Y24-04-019",
+      "2025:Y25-12-006",
+      "2026:Y26-03-025",
+      "2026:Y26-03-023",
+      "2026:Y26-04-006",
+      "2026:Y26-08-013"
+    ],
+    "progression": [
+      {
+        "year": 2023,
+        "evidence_uids": [
+          "2023:M053",
+          "2023:M091",
+          "2023:M092",
+          "2023:M107"
+        ],
+        "narrative": "Locking, logistic algebra and volume contraction distinguish several dynamical mechanisms."
+      },
+      {
+        "year": 2024,
+        "evidence_uids": [
+          "2024:Y24-04-018",
+          "2024:Y24-04-019",
+          "2024:Y24-11-013"
+        ],
+        "narrative": "Fixed-point criteria and a homoclinic horseshoe question separate local tests from global symbolic conclusions."
+      },
+      {
+        "year": 2025,
+        "evidence_uids": [
+          "2025:Y25-09-015",
+          "2025:Y25-12-006",
+          "2025:Y25-12-017"
+        ],
+        "narrative": "An interval map, repeated exact logistic algebra and a noisy pitchfork provide explicitly stated models."
+      },
+      {
+        "year": 2026,
+        "evidence_uids": [
+          "2026:Y26-03-010",
+          "2026:Y26-03-024",
+          "2026:Y26-03-025",
+          "2026:Y26-04-006"
+        ],
+        "narrative": "Scalar flip equations, branched cycles and second-iterate jets sharpen the local computation."
+      }
+    ],
+    "connections": [
+      {
+        "target_domain": "D02",
+        "relation": "Branched families",
+        "mathematical_bridge": "A born two-cycle can be exchanged by continuation around a square-root branch point.",
+        "scope": "This local permutation does not force the fixed branch itself to be multivalued."
+      },
+      {
+        "target_domain": "D12",
+        "relation": "Iterative optimization",
+        "mathematical_bridge": "Gradient descent on a quadratic reaches multiplier −1 at step 2/λ_max.",
+        "scope": "At the endpoint the top mode alternates instead of converging."
+      },
+      {
+        "target_domain": "D16",
+        "relation": "Renormalization proposals",
+        "mathematical_bridge": "A return-map rescaling can be defined on an explicit function space.",
+        "scope": "Writing a conjugation formula does not establish Feigenbaum-class universality."
+      }
+    ],
+    "capabilities": [
+      "C01",
+      "C03",
+      "C07",
+      "C11",
+      "C13"
+    ],
+    "interactive_contract": {
+      "lab_ids": [],
+      "inputs": "A fully specified finite model, its domain, norm, parameter range and requested tolerance; exact arithmetic where available.",
+      "outputs": "Declared invariants, computed model quantities, residual or truncation bound, and a statement of the model assumptions.",
+      "validation": "The companion stdlib verifier checks the stated worked model. Annual entry verifiers remain the checks for their respective treatments.",
+      "status": "Documented recipe and reproducible worked example; no general-purpose solver is claimed."
+    },
+    "limits": "All stated nonlinear stability conclusions are local unless a global invariant region and basin argument are supplied. Chaotic horseshoes, positive entropy and universality require different theorems from the first two logistic thresholds.",
+    "open_questions": [
+      "What basin of attraction can be certified for the explicit nonpolynomial flip model?",
+      "Which nondegeneracy and compactness hypotheses hold for a proposed renormalization operator?"
+    ],
+    "references": [
+      {
+        "label": "Yuri Kuznetsov, Elements of Applied Bifurcation Theory, flip theorem",
+        "url": "https://www.ma.imperial.ac.uk/~dturaev/kuznetsov.pdf"
+      },
+      {
+        "label": "MIT Nonlinear Dynamics and Chaos",
+        "url": "https://ocw.mit.edu/courses/18-353j-nonlinear-dynamics-and-chaos-fall-2012/"
+      },
+      {
+        "label": "Edward Lorenz Deterministic Nonperiodic Flow",
+        "url": "https://doi.org/10.1175/1520-0469(1963)020%3C0130:DNF%3E2.0.CO;2"
+      },
+      {
+        "label": "Otto Rössler An equation for continuous chaos",
+        "url": "https://doi.org/10.1016/0375-9601(76)90101-8"
+      },
+      {
+        "label": "Lanford, computer-assisted Feigenbaum proof",
+        "url": "https://doi.org/10.1090/S0273-0979-1982-15008-9"
+      }
+    ]
+  },
+  {
+    "id": "D09-F03",
+    "domain_id": "D09",
+    "title": "Mechanics, dimensional modeling and invariant flow coordinates",
+    "central_question": "Which quantities and scaling laws survive a change of coordinates, units or time parameter?",
+    "synopsis": "The modeling strand includes mechanics, population and asset recurrences, conductance gates, mass balances and renormalization flows. Its common discipline is to identify state variables, units, conserved quantities and the meaning of the time parameter before interpreting a formula. Dimensional consistency narrows possible equations but does not determine numerical coefficients, boundary conditions or a physical mechanism. Hamiltonian mechanics supplies a precise constructive invariant: energy conservation. A simple turning point then exhibits two different exponents for physical time and abbreviated action. Their difference is caused by the measure being integrated, not a contradiction. The RG examples use the same chain-rule discipline to distinguish an invariant linearization exponent from coordinate-dependent higher coefficients. These are typed bridges between calculations, rather than a claim that every model in the family describes the same physics.",
+    "definitions": [
+      "For a unit-mass one-dimensional Hamiltonian H(q,p)=p²/2+V(q), Hamilton’s equations are q′=p and p′=−V′(q).",
+      "At energy E, a simple turning point q* has E−V(q)≈F(q*−q) with F>0 on the allowed side.",
+      "A scalar autonomous flow g′=β(g) transforms under h=φ(g), φ′≠0, to β_h(h)=φ′(g)β(g). The meaning of the time variable remains part of this definition."
+    ],
+    "theorem": {
+      "statement": "For the stated Hamiltonian, H is conserved. If V(q)=E−F(q*−q) exactly on q≤q*, then with δ=q*−q the remaining travel time is T(δ)=√(2/F)δ^(1/2), while the action length is S(δ)=(2/3)√(2F)δ^(3/2). At any scalar-flow fixed point, dβ_h/dh=β′(g*) under a smooth invertible state-coordinate change.",
+      "proof": "Energy conservation is a direct chain-rule calculation: H′=V′(q)q′+pp′=V′p−pV′=0. On the increasing branch p=√[2(E−V(q))]=√(2Fδ). Physical travel time integrates dq/p, so T(δ)=∫₀^δ(2Fs)^(−1/2)ds=√(2/F)√δ. The abbreviated action integrates p dq, giving S(δ)=∫₀^δ√(2Fs)ds=(2/3)√(2F)δ^(3/2). The two powers therefore concern different observables. For a smooth potential with a nonzero turning derivative, Taylor’s theorem produces these leading terms with controlled local remainders; a degenerate turning point has different exponents. For the scalar coordinate calculation, differentiate β_h=φ′β with respect to h using d/dh=(φ′)^(−1)d/dg. The result is β′+(φ″/φ′)β. At a fixed point β(g*)=0, the second term vanishes and the linearized exponent is unchanged. This conclusion uses a state-coordinate change with φ′ nonzero and the same time. A rescaling of time multiplies the rate and must not be silently included. Exact flow integration makes the same point: for g′=bg², 1/g(t)=1/g₀−bt on every interval avoiding its pole. The finite-time wall is a property of that stated flow, not a physically meaningful singularity without an identified scale convention."
+    },
+    "worked_example": {
+      "setup": "Let F=2 in the turning-point model, and separately let g′=g² with g₀=1/4.",
+      "calculation": "The travel time from distance δ to the turn is √δ, whereas the action is (4/3)δ^(3/2). The exact flow is g(t)=1/(4−t) for t<4. Replacing g by h=2g changes the beta function to h′=h²/2, but the same solution and wall time remain. At a nonzero fixed point of a flow with β(g)=−εg+bg², the derivative is ε, and the state-coordinate argument preserves that number.",
+      "meaning": "Each formula carries its own dimensions and clock. A mass balance similarly needs an actual volume, molar conversion and yield; an area alone cannot recover an amount."
+    },
+    "source_uids": [
+      "2023:M006",
+      "2023:M064",
+      "2023:M070",
+      "2023:M077",
+      "2023:M113",
+      "2023:M114",
+      "2024:Y24-02-001",
+      "2024:Y24-03-003",
+      "2024:Y24-03-034",
+      "2024:Y24-04-017",
+      "2024:Y24-08-004",
+      "2024:Y24-11-008",
+      "2024:Y24-11-020",
+      "2024:Y24-11-026",
+      "2024:Y24-12-009",
+      "2024:Y24-12-036",
+      "2025:Y25-02-004",
+      "2025:Y25-02-006",
+      "2025:Y25-03-016",
+      "2025:Y25-03-026",
+      "2025:Y25-04-024",
+      "2025:Y25-06-015",
+      "2025:Y25-06-021",
+      "2025:Y25-08-027",
+      "2025:Y25-10-001",
+      "2025:Y25-10-035",
+      "2026:Y26-01-017",
+      "2026:Y26-01-019",
+      "2026:Y26-01-022",
+      "2026:Y26-03-020",
+      "2026:Y26-05-016",
+      "2026:Y26-05-018",
+      "2026:Y26-06-021",
+      "2026:Y26-08-025",
+      "2026:Y26-10-013"
+    ],
+    "anchor_uids": [
+      "2023:M064",
+      "2023:M070",
+      "2023:M113",
+      "2024:Y24-02-001",
+      "2024:Y24-04-017",
+      "2025:Y25-10-001",
+      "2026:Y26-01-017",
+      "2026:Y26-05-016"
+    ],
+    "progression": [
+      {
+        "year": 2023,
+        "evidence_uids": [
+          "2023:M064",
+          "2023:M070",
+          "2023:M077",
+          "2023:M113"
+        ],
+        "narrative": "Logarithmic crossing time, dimensional checks and exact scalar RG establish quantitative modeling conventions."
+      },
+      {
+        "year": 2024,
+        "evidence_uids": [
+          "2024:Y24-02-001",
+          "2024:Y24-03-034",
+          "2024:Y24-04-017",
+          "2024:Y24-08-004"
+        ],
+        "narrative": "Missing geometric depth, drag coefficients, population first integrals and radiation flux distinguish units from a complete law."
+      },
+      {
+        "year": 2025,
+        "evidence_uids": [
+          "2025:Y25-03-026",
+          "2025:Y25-04-024",
+          "2025:Y25-06-015",
+          "2025:Y25-10-001"
+        ],
+        "narrative": "Energy bounds, dimensionful predictions and two-loop flow coordinates make mechanism and convention explicit."
+      },
+      {
+        "year": 2026,
+        "evidence_uids": [
+          "2026:Y26-01-017",
+          "2026:Y26-05-016",
+          "2026:Y26-05-018",
+          "2026:Y26-06-021"
+        ],
+        "narrative": "Turning-point exponents, an exact pendulum separatrix and stoichiometric balances consolidate invariant-based modeling."
+      }
+    ],
+    "connections": [
+      {
+        "target_domain": "D06",
+        "relation": "Hamiltonian geometry",
+        "mathematical_bridge": "The symplectic convention generates conservation through the Poisson bracket.",
+        "scope": "The mechanical state space and symplectic form must be specified before transporting the argument."
+      },
+      {
+        "target_domain": "D08",
+        "relation": "Singular flow integration",
+        "mathematical_bridge": "Separating dg/β(g) supplies exact first integrals and identifies logarithmic terms.",
+        "scope": "A local expansion or coordinate pole need not be a global physical singularity."
+      },
+      {
+        "target_domain": "D11",
+        "relation": "Model identifiability",
+        "mathematical_bridge": "A dimensionally valid equation can still leave a volume, yield or parameter combination unidentified.",
+        "scope": "Units do not supply missing measurements or select dimensionless numerical constants."
+      }
+    ],
+    "capabilities": [
+      "C01",
+      "C03",
+      "C07",
+      "C08",
+      "C13"
+    ],
+    "interactive_contract": {
+      "lab_ids": [],
+      "inputs": "A fully specified finite model, its domain, norm, parameter range and requested tolerance; exact arithmetic where available.",
+      "outputs": "Declared invariants, computed model quantities, residual or truncation bound, and a statement of the model assumptions.",
+      "validation": "The companion stdlib verifier checks the stated worked model. Annual entry verifiers remain the checks for their respective treatments.",
+      "status": "Documented recipe and reproducible worked example; no general-purpose solver is claimed."
+    },
+    "limits": "The turning-point theorem assumes a simple nondegenerate turn and the stated mass normalization. Time-dependent forcing breaks this energy conservation unless its work is included. Phenomenological recurrences retain their stipulated interpretation and are not validated by algebra alone.",
+    "open_questions": [
+      "Which measured invariant distinguishes alternative physically dimensionally consistent laws?",
+      "How do degenerate turning points and state-dependent time changes alter the observable exponents?"
+    ],
+    "references": [
+      {
+        "label": "Sean Carroll General Relativity lecture notes",
+        "url": "https://www.preposterousuniverse.com/wp-content/uploads/2015/08/grtinypdf.pdf"
+      },
+      {
+        "label": "Beisert Quantum Field Theory II notes renormalization sections",
+        "url": "https://people.phys.ethz.ch/~nbeisert/lectures/QFT2-17FS-Notes.pdf"
+      },
+      {
+        "label": "NIST SI Units Volume",
+        "url": "https://www.nist.gov/pml/owm/si-units-volume"
+      },
+      {
+        "label": "NIST Guide to the SI conversion factors",
+        "url": "https://www.nist.gov/pml/special-publication-811/nist-guide-si-appendix-b-conversion-factors/nist-guide-si-appendix-b9"
+      },
+      {
+        "label": "NIST Chemistry WebBook iron molecular weight",
+        "url": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C7439896"
+      }
+    ]
+  },
+  {
+    "id": "D09-F04",
+    "domain_id": "D09",
+    "title": "Memory, recurrence and the information needed for a closed evolution",
+    "central_question": "When does a reduced state determine its own future, and what exact memory or symbolic data repair a failure of closure?",
+    "synopsis": "A final dynamics strand connects hidden-variable elimination, damped recurrences, rotations, substitutions, cellular automata and path-dependent accumulators. The shared question is what information must be retained for a well-defined next state. Eliminating a hidden coordinate usually creates a memory kernel and an initial-state source. Forgetting either can turn an exact reduction into a different equation. Symbolic models pose the discrete analogue: an observed label may not encode the phase or history needed for the future. At the same time, deterministic aperiodicity can be highly structured. A rotation coding has exact balance, and a dense quasiperiodic orbit can have zero entropy. The family therefore organizes recurrence by a declared state, observation and equivalence relation rather than grouping every irregular-looking sequence under chaos.",
+    "definitions": [
+      "Consider x′=−ax+by and y′=cx−dy with constants a,b,c,d and given (x₀,y₀). A closed scalar evolution in x alone must determine x′ from retained data.",
+      "The memory convolution (K*x)(t)=∫₀ᵗK(t−s)x(s)ds retains past x values. The source be^(−dt)y₀ carries the hidden initial condition.",
+      "A mechanical word is w_n=⌊(n+1)α+ρ⌋−⌊nα+ρ⌋ for 0<α<1. It codes a rotation with an explicitly retained phase."
+    ],
+    "theorem": {
+      "statement": "Eliminating y gives exactly x′(t)=−ax(t)+be^(−dt)y₀+bc∫₀ᵗe^(−d(t−s))x(s)ds. For a=d=b=c=1 and (x₀,y₀)=(1,0), x(t)=(1+e^(−2t))/2. Moreover every length-m block of the mechanical word has either ⌊mα⌋ or ⌈mα⌉ ones.",
+      "proof": "Multiply the y-equation by e^(dt). Its derivative is c e^(dt)x(t); integrate from zero to t and divide by e^(dt) to obtain y(t)=e^(−dt)y₀+c∫₀ᵗe^(−d(t−s))x(s)ds. Substitution into the x-equation proves the exact Volterra equation and shows why the initial source cannot be omitted. In the stated symmetric example, s=x+y satisfies s′=0 and r=x−y satisfies r′=−2r. With s₀=r₀=1, x=(s+r)/2=(1+e^(−2t))/2 and y=(1−e^(−2t))/2. Dropping the memory would give e^(−t), which has the wrong long-time limit. This is an exact closure failure, not an approximation estimate. For the mechanical word, sum from n=j to j+m−1: the floors telescope to ⌊(j+m)α+ρ⌋−⌊jα+ρ⌋. Writing jα+ρ as integer plus θ∈[0,1) gives ⌊mα+θ⌋, which is either floor or ceiling of mα. Any two length-m blocks therefore differ in their number of ones by at most one. Dividing the prefix count by m yields limiting frequency α. If α is irrational, a periodic binary word would have rational frequency, so the word is aperiodic. These two examples demonstrate distinct constructive repairs: keep a memory term for the continuous reduction, or keep the rotation phase for the symbolic coding. Neither irregular recurrence nor aperiodicity alone proves positive entropy or unpredictability."
+    },
+    "worked_example": {
+      "setup": "Compare the exact continuous reduction at t=log2 with a mechanical word of slope α=(√5−1)/2 and ρ=0.",
+      "calculation": "At t=log2, x=(1+1/4)/2=5/8, while the memory-free approximation is 1/2. The mechanical word begins 0,1,0,1,1,0,1,0; its first eight symbols contain ⌊8α⌋=4 ones. Every block of eight contains four or five ones. The compact floor formula supplies all finite blocks without asserting an independent random-symbol model.",
+      "meaning": "The archive’s symbolic Perron models, substitutions and relative periodic cellular automata can be compared through their declared coding maps and retained state. They are not automatically interchangeable realizations of the same process."
+    },
+    "source_uids": [
+      "2023:M003",
+      "2023:M107",
+      "2024:Y24-03-006",
+      "2024:Y24-07-001",
+      "2024:Y24-09-011",
+      "2024:Y24-10-012",
+      "2025:Y25-03-023",
+      "2025:Y25-08-004",
+      "2025:Y25-08-010",
+      "2025:Y25-10-033",
+      "2025:Y25-11-016",
+      "2025:Y25-11-023",
+      "2026:Y26-02-019",
+      "2026:Y26-02-030",
+      "2026:Y26-02-031",
+      "2026:Y26-03-026",
+      "2026:Y26-04-029",
+      "2026:Y26-05-006",
+      "2026:Y26-09-001"
+    ],
+    "anchor_uids": [
+      "2024:Y24-07-001",
+      "2024:Y24-09-011",
+      "2025:Y25-03-023",
+      "2025:Y25-08-004",
+      "2025:Y25-08-010",
+      "2025:Y25-11-016",
+      "2026:Y26-02-019",
+      "2026:Y26-05-006"
+    ],
+    "progression": [
+      {
+        "year": 2023,
+        "evidence_uids": [
+          "2023:M003",
+          "2023:M107"
+        ],
+        "narrative": "Affine p-adic iteration and an unidentifiable nonlinear observation already distinguish a state trajectory from its measured image."
+      },
+      {
+        "year": 2024,
+        "evidence_uids": [
+          "2024:Y24-07-001",
+          "2024:Y24-09-011"
+        ],
+        "narrative": "Transported invariant measures and Caputo memory make the evolution structure explicit."
+      },
+      {
+        "year": 2025,
+        "evidence_uids": [
+          "2025:Y25-03-023",
+          "2025:Y25-08-004",
+          "2025:Y25-08-010",
+          "2025:Y25-11-016"
+        ],
+        "narrative": "Hidden kernels, Markov measures, relative periodicity and quasiperiodic recurrence provide several exact model classes."
+      },
+      {
+        "year": 2026,
+        "evidence_uids": [
+          "2026:Y26-02-031",
+          "2026:Y26-02-019",
+          "2026:Y26-04-029",
+          "2026:Y26-05-006"
+        ],
+        "narrative": "Path-dependent accumulators, damped memory, substitution frequencies and balanced words develop constructive finite descriptions."
+      }
+    ],
+    "connections": [
+      {
+        "target_domain": "D15",
+        "relation": "Sufficient state",
+        "mathematical_bridge": "An observation determines a closed target evolution only when indistinguishable states have indistinguishable futures.",
+        "scope": "State reconstruction and target reconstruction can have different minimal dimensions."
+      },
+      {
+        "target_domain": "D13",
+        "relation": "Symbolic counting",
+        "mathematical_bridge": "Transfer matrices and substitution incidence matrices count admissible words and frequencies.",
+        "scope": "A symbolic coding must be proved faithful before its entropy is attributed to a physical flow."
+      },
+      {
+        "target_domain": "D10",
+        "relation": "Stochastic descriptions",
+        "mathematical_bridge": "A specified Perron transition matrix defines a Markov measure.",
+        "scope": "A deterministic balanced word is not an independent Bernoulli sample merely because it has a frequency."
+      }
+    ],
+    "capabilities": [
+      "C01",
+      "C03",
+      "C04",
+      "C07",
+      "C09",
+      "C15"
+    ],
+    "interactive_contract": {
+      "lab_ids": [],
+      "inputs": "A fully specified finite model, its domain, norm, parameter range and requested tolerance; exact arithmetic where available.",
+      "outputs": "Declared invariants, computed model quantities, residual or truncation bound, and a statement of the model assumptions.",
+      "validation": "The companion stdlib verifier checks the stated worked model. Annual entry verifiers remain the checks for their respective treatments.",
+      "status": "Documented recipe and reproducible worked example; no general-purpose solver is claimed."
+    },
+    "limits": "The memory formula is exact for the stated linear system. A Markovian approximation needs an additional scale-separation error bound. The balance proof establishes frequency and aperiodicity for irrational slope, not a blanket entropy theorem for all symbolic systems.",
+    "open_questions": [
+      "What is the smallest retained statistic that closes the specific target evolution?",
+      "Can the hidden-state memory be approximated by finitely many modes with a uniform trajectory-error bound?"
+    ],
+    "references": [
+      {
+        "label": "Mainardi–Gorenflo, On Mittag-Leffler-type functions in fractional evolution processes",
+        "url": "https://arxiv.org/abs/0706.3866"
+      },
+      {
+        "label": "Connes, Noncommutative geometry and reality",
+        "url": "https://alainconnes.org/wp-content/uploads/reality.pdf"
+      },
+      {
+        "label": "Walters, An Introduction to Ergodic Theory",
+        "url": "https://doi.org/10.1007/978-1-4612-5775-2"
+      },
+      {
+        "label": "NIST DLMF, Floquet Theory",
+        "url": "https://dlmf.nist.gov/28.29"
+      },
+      {
+        "label": "Berstel and Pocchiola, A Geometric Proof of the Enumeration Formula for Sturmian Words",
+        "url": "https://doi.org/10.1142/S0218196793000238"
+      }
+    ]
+  }
+]

@@ -1,0 +1,24 @@
+{
+  "reviewer": "arithmetic_geometry_atlas",
+  "reviewed": ["domains/probability/families.json", "data/bridges.json:B06", "labs/engine.js:L07", "labs/engine.js:L10"],
+  "status": "No substantive mathematical error found in reviewed counting, probability, decision or arithmetic results",
+  "confirmed": [
+    "Weighted fixed-cardinality face inclusion and cycle expected Euler characteristic 46/35",
+    "Beta(4,2) predictive pair probability 10/21 and marginal covariance 2/63",
+    "OU variance and integrated-driver process covariance determinant 4/3 at horizon two",
+    "KL contraction, quotient Fisher geometry and binary symmetric channel cascade",
+    "Paired exact sign test and AUROC 7/8",
+    "Singular quadratic-program nullspace alternatives and exact SDP zero-gap certificate",
+    "Projected descent coefficient 1/eta-L/2 and min-plus/Pareto fixtures",
+    "Shared-variable robust-margin cancellation",
+    "B06 negative-Pell half-open seed interval, x<8 and y<6 bounds",
+    "L07 equal reduction fibres for all supported divisor controls",
+    "L10 signed exact integer transport of the two negative-Pell seeds"
+  ],
+  "clarifications_sent_to_root": [
+    {"location": "D12-F02 worked example", "finding": "State a>=0 and eta>0 for the quadratic Wasserstein contraction factor 1/(1+eta*a).", "severity": "minor hypothesis clarity"},
+    {"location": "engine L07", "finding": "Optional direct-call guard: require a positive integer divisor; m=0 currently bypasses the remainder condition through NaN.", "severity": "optional robustness; supported UI inputs are valid"},
+    {"location": "engine L10", "finding": "Optional direct-call guards: require the two supported seeds and an integer step, so the explanation's fixed norm -7 applies to every accepted call.", "severity": "optional robustness; supported UI inputs are valid"}
+  ],
+  "own_contract_correction": "D01-F03 and D01-F04 now describe implemented fibre and negative-orbit controls exactly. Trace formulas, positive-Pell sequences and modular-filter periods are written/verifier fixtures or specified extensions, not claimed interactive outputs."
+}

@@ -1,0 +1,197 @@
+{
+  "status": "pass",
+  "verifier": "verify.py",
+  "stdlib_only": true,
+  "family_count": 12,
+  "reviewed_source_count": 184,
+  "checks": [
+    {
+      "family_id": "D03-F01",
+      "name": "C₂ × capped counter: complete multiplication and ideal check",
+      "status": "pass",
+      "method": "exact finite arithmetic",
+      "details": {
+        "elements": 6,
+        "associative_triples": 216,
+        "nonempty_two_sided_ideals": 3,
+        "minimal_ideal": [
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            2
+          ]
+        ]
+      }
+    },
+    {
+      "family_id": "D03-F02",
+      "name": "Boolean decomposition, supported spectrum and independent rank bounds",
+      "status": "pass",
+      "method": "exact finite arithmetic",
+      "details": {
+        "blocks": 4,
+        "supported_eigenvalues": [
+          -1,
+          0,
+          1,
+          2
+        ],
+        "rational_rank": 2,
+        "mod_7_rank": 2
+      }
+    },
+    {
+      "family_id": "D03-F03",
+      "name": "B₄ action on F₃⁴: full orbit reconstruction",
+      "status": "pass",
+      "method": "exact finite arithmetic",
+      "details": {
+        "vectors": 81,
+        "group_elements": 384,
+        "orbit_sizes_by_weight": [
+          1,
+          8,
+          24,
+          32,
+          16
+        ]
+      }
+    },
+    {
+      "family_id": "D03-F04",
+      "name": "Octonion convention and E₈ root-system finite certificate",
+      "status": "pass",
+      "method": "exact finite arithmetic",
+      "details": {
+        "basis_associator_triples": 512,
+        "roots": 240,
+        "reflection_pairs": 57600,
+        "squared_length": 2,
+        "exceptional_bracket_constructed": false
+      }
+    },
+    {
+      "family_id": "D03-F05",
+      "name": "Jet socle and complete pre-relation quiver path count",
+      "status": "pass",
+      "method": "exact finite arithmetic",
+      "details": {
+        "jet_basis": 4,
+        "socle_dimension": 2,
+        "quiver_paths_before_relation": 14,
+        "fibre_dimension_after_nonzero_relation": 13
+      }
+    },
+    {
+      "family_id": "D03-F06",
+      "name": "Finite Gibbs KMS boundary on a spanning basis",
+      "status": "pass",
+      "method": "exact finite arithmetic",
+      "details": {
+        "matrix_unit_pairs": 16,
+        "populations": [
+          "3/4",
+          "1/4"
+        ],
+        "thermal_ratio": "1/3",
+        "modular_ratios": [
+          "1",
+          "3",
+          "1/3",
+          "1"
+        ]
+      }
+    },
+    {
+      "family_id": "D16-F01",
+      "name": "Coherence collision, dephasing and complete branch probabilities",
+      "status": "pass",
+      "method": "exact finite arithmetic",
+      "details": {
+        "dephasing_q": "1/3",
+        "XX_Bell": 1,
+        "XX_mixture": 0,
+        "KL_error_pairs": 16,
+        "quantum_distance": 1
+      }
+    },
+    {
+      "family_id": "D16-F02",
+      "name": "Exact root-of-unity pair and symplectic support kernel",
+      "status": "pass",
+      "method": "exact finite arithmetic",
+      "details": {
+        "conductor": 4,
+        "Weyl_relation": "UV=iVU",
+        "Pauli_centralizer_labels": 4,
+        "binary_dimension": 2,
+        "full_operator_commutant_claimed": false
+      }
+    },
+    {
+      "family_id": "D16-F03",
+      "name": "Complete bounded sextic monomial atlas with independent star replay",
+      "status": "pass",
+      "method": "exact finite arithmetic",
+      "details": {
+        "monomials": 28,
+        "ordered_pairs": 784,
+        "exact": 504,
+        "defect": 280,
+        "cubic_blind_defects": 4,
+        "homogeneous_sextic_exact": 15,
+        "uniform_family_samples": 40,
+        "sample_checks_not_uniform_proof": true
+      }
+    },
+    {
+      "family_id": "D16-F04",
+      "name": "Finite pointed coherence, exact Verlinde and rational braid matrices",
+      "status": "pass",
+      "method": "exact finite arithmetic",
+      "details": {
+        "hexagon_triples": 64,
+        "Verlinde_triples": 64,
+        "pointed_rank": 4,
+        "Hecke_q": "1/2",
+        "braid_matrix_dimension": 8,
+        "unitarity_claimed": false
+      }
+    },
+    {
+      "family_id": "D16-F05",
+      "name": "XXX full one-magnon basis and KdV tau exponential residuals",
+      "status": "pass",
+      "method": "exact finite arithmetic",
+      "details": {
+        "XXX_sector_dimension": 4,
+        "energies": [
+          0,
+          2,
+          2,
+          4
+        ],
+        "rational_soliton_parameter_pairs": 3,
+        "arbitrary_Bethe_completeness_claimed": false
+      }
+    },
+    {
+      "family_id": "D16-F06",
+      "name": "Obstructed character lift and flat dual-number comparison",
+      "status": "pass",
+      "method": "exact finite arithmetic",
+      "details": {
+        "characteristic": 2,
+        "second_order_lift_candidates": 2,
+        "lifts": 0,
+        "flat_basis_rank": 2,
+        "positive_HH_dimension_special_fibre": 1,
+        "order_12_implies_all_orders": false
+      }
+    }
+  ],
+  "scope": "Finite exact model certificates. Statements proved symbolically in the prose are not inferred solely from tested samples. Missing historical objects are not reconstructed."
+}

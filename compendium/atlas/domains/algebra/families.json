@@ -1,0 +1,1611 @@
+[
+  {
+    "id": "D03-F01",
+    "domain_id": "D03",
+    "title": "Typed operations, quotients and finite algebraic structure",
+    "central_question": "Which operations, equations and equivalences actually determine an algebra, and which information survives quotienting?",
+    "synopsis": "The algebraic backbone of the collection is the move from a named collection of symbols to a multiplication law whose identities can be proved. A field, a monoid, a ring and a partial resource algebra have different admissible operations. Their quotients therefore require different compatibility conditions. The useful revised question is not whether a construction looks algebraic, but whether its carrier, operations, units, domains of definition and notion of equality have all been specified. This viewpoint makes the number-system comparisons, transported operations, finite maximal ideals, capped trace monoids and squarefree branch decomposition parts of one coherent programme.\n\nTransport of structure is the first constructive tool. Given a bijection, pulling all operations back creates an isomorphic object, so associativity and distributivity are inherited by proof. This gives a complete model of a coordinate deformation while explaining why it supplies no new intrinsic field invariant. Quotients then remove information in a controlled way: a ring congruence is determined by a two-sided ideal; a monoid quotient requires a multiplication-compatible equivalence; a partial algebra needs its composability relation retained. Approximate numerical closeness cannot silently serve as any of these equalities.\n\nFinite models make the distinction executable. Enumerating ideals of a finite ring can produce maximal ideals and field quotients. Capping an additive counter produces an absorbing top layer, but does not turn its semigroup kernel into a linear nullspace. The latter distinction matters throughout the atlas: a minimal two-sided ideal, a kernel of a homomorphism and a vector-space kernel answer different questions. Algebra becomes useful for interactive reconstruction precisely when the requested invariant is named before its computation.",
+    "definitions": [
+      "For a unital ring R, a quotient R/I is defined by a two-sided ideal I; multiplication of classes is [a][b]=[ab].",
+      "For a finite monoid S, K(S) denotes its unique minimal nonempty two-sided ideal. It is not a matrix nullspace.",
+      "For k≥1, L_k={0,…,k} has operation a⊕b=min(a+b,k); k is absorbing.",
+      "For a bijection φ:X→Y, transported multiplication is x⋆y=φ⁻¹(φ(x)φ(y)), with all other required operations transported likewise."
+    ],
+    "theorem": {
+      "statement": "For a finite monoid S and positive integers k_1,…,k_r, K(S×∏L_{k_i})=K(S)×{(k_1,…,k_r)}. Thus adding saturated counters preserves the cardinality of the minimal ideal, although it enlarges the monoid.",
+      "proof": "Let P=S×∏L_{k_i}. The displayed product J is a nonempty two-sided ideal: multiplication preserves K(S), while every capped coordinate remains at its maximum. Let I be any nonempty two-sided ideal of P and choose (s,a)∈I. Multiplication by (1,k_1,…,k_r) puts (s,k_1,…,k_r) in I. The set of x∈S for which (x,k_1,…,k_r)∈I is a nonempty ideal of S. It contains K(S), hence I contains J. Therefore J is the unique minimal ideal. For completeness, existence and uniqueness of K(S) in a finite monoid follow by choosing a minimal nonempty ideal and observing that the product of any two nonempty ideals is nonempty and lies in their intersection. Minimality then forces the two chosen minimal ideals to agree. This proof concerns multiplication ideals only; no vector-space structure is used."
+    },
+    "worked_example": {
+      "setup": "Take S=C₂={1,g}, g²=1, and one counter L₂. Also compare the finite commutative ring Z/12Z.",
+      "calculation": "The six monoid elements are (1,0),(g,0),(1,1),(g,1),(1,2),(g,2). Their product is (g^a,i)(g^b,j)=(g^{a+b mod2},min(i+j,2)). Exactly (1,0) and (1,2) are idempotent. The minimal ideal is {(1,2),(g,2)}, a copy of C₂. Exhaustive multiplication proves associativity on all 216 triples and finds no smaller nonempty ideal. In Z/12Z the maximal ideals are (2)={0,2,4,6,8,10} and (3)={0,3,6,9}; their quotients have two and three elements. These outputs distinguish minimal monoid ideals from maximal ring ideals rather than relying on the shared word ideal.",
+      "meaning": "A small exact multiplication table can certify an invariant of the declared model. It cannot identify an unnamed historical transition object with that model without a multiplication-preserving map."
+    },
+    "source_uids": [
+      "2024:Y24-06-001",
+      "2024:Y24-09-003",
+      "2024:Y24-10-015",
+      "2024:Y24-10-016",
+      "2025:Y25-05-014",
+      "2025:Y25-09-013",
+      "2025:Y25-12-020",
+      "2026:Y26-01-001",
+      "2026:Y26-05-007",
+      "2026:Y26-10-011"
+    ],
+    "anchor_uids": [
+      "2024:Y24-06-001",
+      "2024:Y24-09-003",
+      "2025:Y25-12-020",
+      "2026:Y26-01-001",
+      "2026:Y26-05-007",
+      "2026:Y26-10-011"
+    ],
+    "progression": [
+      {
+        "year": 2024,
+        "evidence_uids": [
+          "2024:Y24-06-001",
+          "2024:Y24-09-003",
+          "2024:Y24-10-015",
+          "2024:Y24-10-016"
+        ],
+        "narrative": "Number systems and transported operations supply the operation-first theme; the historical topics do not themselves establish a new field."
+      },
+      {
+        "year": 2025,
+        "evidence_uids": [
+          "2025:Y25-12-020",
+          "2025:Y25-05-014",
+          "2025:Y25-09-013"
+        ],
+        "narrative": "The capped monoid and partial-share models sharpen which products are total and which equalities are legitimate."
+      },
+      {
+        "year": 2026,
+        "evidence_uids": [
+          "2026:Y26-01-001",
+          "2026:Y26-05-007",
+          "2026:Y26-10-011"
+        ],
+        "narrative": "Saturation, finite maximal ideals and quotient branch splitting give finite certificates of retained or discarded structure."
+      }
+    ],
+    "connections": [
+      {
+        "target_domain": "D14",
+        "relation": "Semantic quotients",
+        "mathematical_bridge": "A transition congruence must preserve all future outputs before a machine quotient represents behaviour.",
+        "scope": "A multiplication table alone does not establish observational equivalence."
+      },
+      {
+        "target_domain": "D01",
+        "relation": "Chinese remainder decomposition",
+        "mathematical_bridge": "Coprime factors and Bézout identities construct orthogonal idempotents and branch inverses.",
+        "scope": "Repeated factors require local or primary methods."
+      },
+      {
+        "target_domain": "D04",
+        "relation": "Universal quotient property",
+        "mathematical_bridge": "A homomorphism killing relations factors uniquely through their generated ideal.",
+        "scope": "The category and type of ideal must be declared."
+      }
+    ],
+    "capabilities": [
+      "C01",
+      "C02",
+      "C03",
+      "C04",
+      "C15"
+    ],
+    "interactive_contract": {
+      "lab_ids": [],
+      "inputs": "Finite multiplication table, distinguished identity, chosen capped-counter sizes or finite ring table.",
+      "outputs": "Associativity certificate, units, idempotents, relevant ideals and explicit quotient map.",
+      "validation": "Exhaustive finite products; ideal closure; no conflation of ring, semigroup and linear kernels.",
+      "status": "Worked mathematical recipe; no dedicated general algebra user interface is implemented."
+    },
+    "limits": "No unspecified M29 table is reconstructed. Transport is an isomorphism construction. Enumeration scales exponentially, and finite maximal-ideal search proves no algorithmic result for arbitrary infinite rings.",
+    "open_questions": [
+      "Given a recovered finite transition table, which multiplication congruence is also complete for its actual observations?",
+      "For a squarefree polynomial quotient, which sign or arithmetic admissibility conditions survive the algebraic product decomposition?"
+    ],
+    "references": [
+      {
+        "label": "Etingof et al., Introduction to Representation Theory",
+        "url": "https://math.mit.edu/~etingof/reprbook.pdf"
+      }
+    ],
+    "refs": [
+      {
+        "label": "Etingof et al., Introduction to Representation Theory",
+        "url": "https://math.mit.edu/~etingof/reprbook.pdf"
+      }
+    ]
+  },
+  {
+    "id": "D03-F02",
+    "domain_id": "D03",
+    "title": "Exact matrix structure, metrics and spectral certificates",
+    "central_question": "Which finite identities certify rank, spectrum and decomposition, and which metric is each certificate using?",
+    "synopsis": "Linear algebra is a common language across the source years, but a useful synthesis must preserve the question encoded by each matrix. Rank counts independent directions, singular values quantify amplification after metrics are fixed, Jordan structure measures nilpotent mixing, and a projector certifies a subspace only through its defining identities. A large Frobenius norm, a symmetry label and an eigenvalue list cannot replace one another. The revised framework starts with a domain, codomain and scalar field, then attaches the appropriate certificate.\n\nThe exact approach is particularly effective when a numerical claim can be reduced to polynomial identities. A verified factorization A=UV supplies a rank upper bound; a nonzero minor supplies a lower bound. Reduction modulo a prime can certify that a rational minor is nonzero, while a rank drop modulo that prime can arise from arithmetic cancellation. A spectral polynomial p(T)=0 gives projectors only when its roots are distinct; actual nonzero support witnesses are still needed to certify that every advertised eigenvalue occurs. These are constructive, inspectable statements rather than a generic reliance on diagonalization software.\n\nMetrics are part of this structure. A diagonalizable matrix with real spectrum can be self-adjoint in a suitable positive metric without being symmetric in the original coordinates. Conversely a nontrivial Jordan block cannot be made self-adjoint by a positive metric, because an isometric change to ordinary Euclidean coordinates would make it diagonalizable. The same rule governs anisotropy and whitening: coordinate changes preserve metric singular values only when both source and target metrics transform. This family supplies algebraic certificates which the inverse, control and statistical chapters can then use with their own observation and error models.",
+    "definitions": [
+      "A rank certificate pairs an exact rank-r factorization with a nonzero r×r minor.",
+      "A positive metric η defines ⟨x,y⟩_η=x*ηy; η-self-adjointness is A*η=ηA.",
+      "For commuting idempotents P_i, define E_ε=∏_i P_i^{ε_i}(I−P_i)^{1−ε_i}, ε∈{0,1}^m.",
+      "For a squarefree polynomial p(t)=∏_{λ∈S}(t−λ), Lagrange polynomials e_λ(t)=∏_{μ≠λ}(t−μ)/(λ−μ) define spectral projectors when p(T)=0."
+    ],
+    "theorem": {
+      "statement": "If P_1,…,P_m are commuting idempotents on a finite-dimensional vector space, the E_ε are pairwise annihilating idempotents summing to I, and im(E_ε) is the simultaneous eigenspace P_i v=ε_i v. Hence the nonzero blocks give an exact direct-sum decomposition.",
+      "proof": "All factors in E_ε commute, and each factor is idempotent, so E_ε²=E_ε. If ε≠δ, some index i has one product containing P_i and the other containing I−P_i. Their product is zero, proving E_εE_δ=0. Expanding ∏_i(P_i+(I−P_i)) gives Σ_εE_ε=I. Multiplication by P_i gives P_iE_ε=ε_iE_ε. Conversely, if v satisfies all simultaneous eigenvalue equations, every factor of E_ε acts as identity on v, so E_εv=v. Thus its image is exactly that eigenspace. Any v equals ΣE_εv; applying each projector to a supposed zero sum proves directness. The proof requires commutativity: arbitrary idempotents can have incompatible images and the product construction can fail even to be idempotent."
+    },
+    "worked_example": {
+      "setup": "Use P=diag(1,1,0,0), Q=diag(1,0,1,0), and T=2P−Q.",
+      "calculation": "The Boolean blocks E_11,E_10,E_01,E_00 are the four coordinate projections. T has respective eigenvalues 1,2,−1,0, so p(T)=T(T−I)(T−2I)(T+I)=0. Every block is nonzero, witnessed by its coordinate basis vector. A separate rank example is A=[[1,2,3],[2,4,6],[0,1,1]]: its factorization into its first two independent columns times coefficient rows gives rank at most two, while the minor on rows 1,3 and columns 1,2 equals one. It remains nonzero modulo every prime. In contrast, [[2]] has rational rank one and rank zero modulo two; modular rank loss is not a rational vanishing certificate.",
+      "meaning": "The examples provide independent upper and lower witnesses. The eigenvalue list is supported by actual vectors, and no conditioning statement is inferred from exact rank alone."
+    },
+    "source_uids": [
+      "2023:M059",
+      "2023:M068",
+      "2023:M083",
+      "2023:M088",
+      "2024:Y24-12-005",
+      "2025:Y25-01-006",
+      "2025:Y25-08-005",
+      "2025:Y25-09-019",
+      "2025:Y25-10-002",
+      "2025:Y25-11-014",
+      "2025:Y25-11-024",
+      "2025:Y25-12-001",
+      "2025:Y25-12-005",
+      "2026:Y26-03-016",
+      "2026:Y26-03-019",
+      "2026:Y26-07-001",
+      "2026:Y26-09-009"
+    ],
+    "anchor_uids": [
+      "2023:M059",
+      "2023:M068",
+      "2023:M083",
+      "2025:Y25-01-006",
+      "2025:Y25-09-019",
+      "2026:Y26-03-016",
+      "2026:Y26-07-001",
+      "2026:Y26-09-009"
+    ],
+    "progression": [
+      {
+        "year": 2023,
+        "evidence_uids": [
+          "2023:M059",
+          "2023:M068",
+          "2023:M083",
+          "2023:M088"
+        ],
+        "narrative": "Norm, block-energy and rank distinctions establish the finite matrix vocabulary."
+      },
+      {
+        "year": 2024,
+        "evidence_uids": [
+          "2024:Y24-12-005"
+        ],
+        "narrative": "Jordan nullities separate generalized eigenspaces from a bare list of eigenvalues."
+      },
+      {
+        "year": 2025,
+        "evidence_uids": [
+          "2025:Y25-01-006",
+          "2025:Y25-09-019",
+          "2025:Y25-08-005",
+          "2025:Y25-10-002",
+          "2025:Y25-11-014",
+          "2025:Y25-11-024",
+          "2025:Y25-12-001",
+          "2025:Y25-12-005"
+        ],
+        "narrative": "Positive metrics, modular minors, Perron projections and nilpotent mixing identify the hypotheses behind spectral claims."
+      },
+      {
+        "year": 2026,
+        "evidence_uids": [
+          "2026:Y26-03-016",
+          "2026:Y26-07-001",
+          "2026:Y26-09-009",
+          "2026:Y26-03-019"
+        ],
+        "narrative": "Boolean blocks, annihilating polynomials and integer intertwiner kernels provide exact reconstruction certificates."
+      }
+    ],
+    "connections": [
+      {
+        "target_domain": "D15",
+        "relation": "Observability and inverse stability",
+        "mathematical_bridge": "A matrix kernel becomes an invisible state direction only after a specific observation map is declared.",
+        "scope": "Exact rank gives no noise margin without singular values."
+      },
+      {
+        "target_domain": "D11",
+        "relation": "Whitening and covariance",
+        "mathematical_bridge": "W*ΣW=I is a metric normalization, distinct from an invariance equation P*ΣP=Σ.",
+        "scope": "A singular covariance can be whitened only on its range."
+      },
+      {
+        "target_domain": "D13",
+        "relation": "Graph spectra",
+        "mathematical_bridge": "A characteristic polynomial or equitable quotient can certify a conditional spectrum.",
+        "scope": "A spectrum alone does not construct the graph."
+      }
+    ],
+    "capabilities": [
+      "C01",
+      "C03",
+      "C04",
+      "C05",
+      "C09",
+      "C13"
+    ],
+    "interactive_contract": {
+      "lab_ids": [
+        "L01",
+        "L04"
+      ],
+      "inputs": "Exact matrix, field, input/output metrics and proposed projectors or factors.",
+      "outputs": "Rank bounds, exact residuals, Boolean blocks, spectral support and metric-aware singular directions.",
+      "validation": "Check products over rationals; use only certified prime reductions; report exact identity separately from numerical conditioning.",
+      "status": "Related worked-model labs expose rank and singular-value effects; the general matrix recipe is documented."
+    },
+    "limits": "Finite exact identities do not settle infinite operator domains or asymptotic boundedness. Rational rank, integral torsion and floating-point effective rank remain different invariants.",
+    "open_questions": [
+      "Which nonzero projector witnesses suffice to make a proposed finite spectral rigidity theorem independently replayable?",
+      "For a family of varying metrics, can the smallest retained singular value be bounded uniformly on the declared parameter domain?"
+    ],
+    "references": [
+      {
+        "label": "Etingof et al., Introduction to Representation Theory",
+        "url": "https://math.mit.edu/~etingof/reprbook.pdf"
+      }
+    ],
+    "refs": [
+      {
+        "label": "Etingof et al., Introduction to Representation Theory",
+        "url": "https://math.mit.edu/~etingof/reprbook.pdf"
+      }
+    ]
+  },
+  {
+    "id": "D03-F03",
+    "domain_id": "D03",
+    "title": "Symmetry as an action, representation and orbit calculation",
+    "central_question": "What does a specified symmetry force, and which numerical features remain free after imposing it?",
+    "synopsis": "A symmetry label becomes mathematical information only after a group acts on a stated space. The collection repeatedly returns to Weyl groups, permutation characters, signed permutations, crystals and branching. These topics connect through invariant subspaces and orbit decompositions, not through shared large integers. The useful question is what the actual action fixes, which representations occur, and what independent parameters survive in the commuting algebra.\n\nThe elementary averaging projector is the organising construction. It turns a finite group action into an exact invariant subspace over a field where the group order is invertible. Character traces then measure multiplicities, and orbit splitting gives concrete restrictions and induced representations. Low-rank Weyl calculations provide a more structured version: a signed orbit sum becomes a polynomial identity after fixing the root coordinates and normalization. The A₂ denominator can be expanded completely; a nonconstant Kazhdan–Lusztig polynomial requires its actual Bruhat interval and Hecke convention. Neither object is a universal score of computational complexity.\n\nThe signed-permutation examples are especially useful because they expose the limit of a symmetry inference. Over F₃, sign changes interchange the two nonzero entries, so the B₄ orbits are exactly the five Hamming-weight classes. Over the reals, invariance of a symmetric matrix under all independent sign changes kills off-diagonal entries, and permutation invariance makes its diagonal entries equal. This forces a scalar matrix on that irreducible coordinate representation, but two copies of a representation still admit independent scalar blocks and hence arbitrary positive frequency ratios. Symmetry narrows a model class; it need not pick a numerical constant, an empirical rank or a physical scale.",
+    "definitions": [
+      "A representation is a homomorphism ρ:G→GL(V); its invariants are V^G={v:ρ(g)v=v for all g}.",
+      "The character χ_V(g)=trρ(g) records the trace of the actual action, not just dimV=χ_V(1).",
+      "The signed permutation group B_n=C₂^n⋊S_n changes coordinate signs and permutes coordinates.",
+      "A Weyl denominator is an alternating group-algebra sum; its signs and root lattice are part of the input."
+    ],
+    "theorem": {
+      "statement": "If G is finite and |G| is invertible in k, R=|G|⁻¹Σ_gρ(g) is an idempotent with image V^G. For the B_n action on F₃^n, the orbits are indexed by Hamming weight j and have sizes 2^j binom(n,j).",
+      "proof": "For h∈G, ρ(h)R=|G|⁻¹Σ_gρ(hg)=R because left multiplication permutes G. Hence every vector in imR is invariant. If v is invariant then Rv=v, so imR=V^G and R²=R. The division hypothesis is essential; in characteristic dividing |G| this formula is unavailable and invariant functors need not be exact. For the orbit claim, every group element preserves the number of nonzero coordinates. Conversely, two vectors of equal weight can first have their supports matched by a coordinate permutation, then have their entries matched by sign changes, since F₃\\{0}={1,−1}. Thus weight is a complete orbit invariant. Choose the support in binom(n,j) ways and independently choose each nonzero sign in 2^j ways. This proves both completeness and the sizes without enumerating all group elements."
+    },
+    "worked_example": {
+      "setup": "Enumerate B₄ orbits on F₃⁴, and compare a symmetry constraint on a real 5×5 quadratic form.",
+      "calculation": "The orbit sizes are 1,8,24,32,16 and sum to 81. Their stabilizer sizes are 384,48,16,12,24, giving orbit×stabilizer=384 in each case. For a symmetric real κ invariant under every coordinate sign flip, choose the flip of coordinate i; its conjugation reverses every off-diagonal entry in row or column i, forcing those entries to zero. Conjugation by coordinate permutations then forces all diagonal entries equal. Thus κ=cI. On V⊕V, however, K=diag(a²I,b²I) commutes with ρ(g)⊕ρ(g) for every a,b>0. Its two oscillation frequencies have freely chosen ratio b/a, so no particular ratio follows from equivariance alone.",
+      "meaning": "An orbit computation can be complete at a stated finite level while a proposed exceptional-group action remains unconstructed. Large familiar orders are consistency constraints, not replacements for matrices or relations."
+    },
+    "source_uids": [
+      "2023:M033",
+      "2023:M036",
+      "2023:M038",
+      "2023:M045",
+      "2024:Y24-09-024",
+      "2024:Y24-11-015",
+      "2024:Y24-11-010",
+      "2024:Y24-11-017",
+      "2024:Y24-12-019",
+      "2024:Y24-12-030",
+      "2024:Y24-12-031",
+      "2025:Y25-01-007",
+      "2025:Y25-03-019",
+      "2025:Y25-06-023",
+      "2025:Y25-07-035",
+      "2025:Y25-07-019",
+      "2025:Y25-08-019",
+      "2025:Y25-08-015",
+      "2025:Y25-10-031",
+      "2026:Y26-03-021",
+      "2026:Y26-09-009"
+    ],
+    "anchor_uids": [
+      "2023:M033",
+      "2023:M036",
+      "2023:M038",
+      "2024:Y24-12-019",
+      "2025:Y25-06-023",
+      "2025:Y25-07-035",
+      "2025:Y25-07-019",
+      "2026:Y26-09-009"
+    ],
+    "progression": [
+      {
+        "year": 2023,
+        "evidence_uids": [
+          "2023:M033",
+          "2023:M036",
+          "2023:M038",
+          "2023:M045"
+        ],
+        "narrative": "Weyl denominators, Hecke polynomials and compact-group cutoffs turn symmetry into finite calculations."
+      },
+      {
+        "year": 2024,
+        "evidence_uids": [
+          "2024:Y24-12-019",
+          "2024:Y24-09-024",
+          "2024:Y24-11-010",
+          "2024:Y24-11-015",
+          "2024:Y24-11-017",
+          "2024:Y24-12-030",
+          "2024:Y24-12-031"
+        ],
+        "narrative": "Character tables, branching diagrams and invariant averaging add actual representation-theoretic maps."
+      },
+      {
+        "year": 2025,
+        "evidence_uids": [
+          "2025:Y25-06-023",
+          "2025:Y25-07-035",
+          "2025:Y25-07-019",
+          "2025:Y25-01-007",
+          "2025:Y25-08-019",
+          "2025:Y25-08-015",
+          "2025:Y25-10-031"
+        ],
+        "narrative": "Signed-permutation orbits, Mackey splitting and rank-one crystals separate group actions from speculative numerical identifications."
+      },
+      {
+        "year": 2026,
+        "evidence_uids": [
+          "2026:Y26-09-009",
+          "2026:Y26-03-021"
+        ],
+        "narrative": "Intertwiner kernels and completeness of invariant maps frame exactly what an action can reconstruct."
+      }
+    ],
+    "connections": [
+      {
+        "target_domain": "D13",
+        "relation": "Orbit enumeration",
+        "mathematical_bridge": "Hamming-weight orbit counts and stabilizers are finite counting certificates.",
+        "scope": "The count does not identify unrelated datasets."
+      },
+      {
+        "target_domain": "D07",
+        "relation": "Harmonic decomposition",
+        "mathematical_bridge": "Character orthogonality yields exact observable projection loss in compact-group examples.",
+        "scope": "Noncentral functions need matrix coefficients, not characters alone."
+      },
+      {
+        "target_domain": "D01",
+        "relation": "Galois actions",
+        "mathematical_bridge": "A splitting-field group acts on roots and preserves field operations.",
+        "scope": "An automorphism is not an evolution in physical time."
+      }
+    ],
+    "capabilities": [
+      "C01",
+      "C02",
+      "C03",
+      "C04",
+      "C09",
+      "C15"
+    ],
+    "interactive_contract": {
+      "lab_ids": [
+        "L02"
+      ],
+      "inputs": "Generators with explicit matrices or permutations, scalar field, proposed invariant and representation space.",
+      "outputs": "Orbits, stabilizers, invariant projector, character traces and intertwiner kernels.",
+      "validation": "Verify generator relations and the actual action; compare independent orbit counts or kernel certificates.",
+      "status": "The finite-counting lab illustrates enumeration; the representation-specific calculations are worked recipes."
+    },
+    "limits": "This family does not construct Monster moonshine, every KL polynomial, an E₈ crystal or a faithful W(E₈) action on F₃⁴. Equality of coefficients or dimensions requires a separately defined representation before it gains that meaning.",
+    "open_questions": [
+      "Which invariant map is injective on the declared orbit space, rather than merely locally independent?",
+      "For a proposed exceptional symmetry, can its generator matrices and exact intertwiner ranks be supplied over a stated field?"
+    ],
+    "references": [
+      {
+        "label": "Etingof et al., Introduction to Representation Theory",
+        "url": "https://math.mit.edu/~etingof/reprbook.pdf"
+      },
+      {
+        "label": "MIT Lie groups and Lie algebras notes",
+        "url": "https://ocw.mit.edu/courses/18-745-lie-groups-and-lie-algebras-i-fall-2020/lists/lecture-notes/"
+      }
+    ],
+    "refs": [
+      {
+        "label": "Etingof et al., Introduction to Representation Theory",
+        "url": "https://math.mit.edu/~etingof/reprbook.pdf"
+      },
+      {
+        "label": "MIT Lie groups and Lie algebras notes",
+        "url": "https://ocw.mit.edu/courses/18-745-lie-groups-and-lie-algebras-i-fall-2020/lists/lecture-notes/"
+      }
+    ]
+  },
+  {
+    "id": "D03-F04",
+    "domain_id": "D03",
+    "title": "Lie brackets, octonion associators and exceptional weight structure",
+    "central_question": "Which identities survive a nonassociative or graded product, and what additional data turn exceptional dimensions into a Lie algebra?",
+    "synopsis": "This family joins two recurring themes: bracket consistency and exceptional symmetry. The starting point is a declared multiplication convention. Associative multiplication produces a commutator satisfying Jacobi; graded associative multiplication produces the super-Jacobi identity with parity signs. Octonionic multiplication is alternative rather than associative, so its commutator carries a nonzero Jacobiator. These are different algebraic structures, each with identities that can be derived and tested exactly.\n\nThe octonion model is especially productive because it turns regrouping into a measurable defect. Under a fixed Cayley–Dickson convention, the triple e₁,e₂,e₄ has associator 2e₇. Norm multiplicativity then yields a sharp universal bound for every triple, with a complete equality criterion. This gives a rigorous invariant of the multiplication, while preventing an illicit reassociation of three unrelated factors. The same discipline applies to superalgebras: in gl(1|1), the bracket of the two odd off-diagonal matrix units is an anticommutator and equals the identity, not an ordinary commutator.\n\nExceptional Lie algebras enter at the representation level. The decomposition so₁₆⊕S⁺ has dimension 120+128=248, and its D₈ roots together with the half-spin weights form the 240-element E₈ root set. That is a substantial and checkable weight calculation. It is still distinct from constructing the bracket: the so₁₆ action on S⁺ and an equivariant map Λ²S⁺→so₁₆ must be specified with a normalization satisfying spinor Jacobi. The magic-square dimension arithmetic likewise organises candidate structures without replacing their multiplication. This synthesis keeps the genuine exceptional mathematics while making its missing construction obligations visible.",
+    "definitions": [
+      "Use quaternion units ij=k, jk=i, ki=j and octonion product (a,b)(c,d)=(ac−conj(d)b, da+b conj(c)).",
+      "The associator is [a,b,c]=(ab)c−a(bc); the octonion norm is multiplicative.",
+      "For homogeneous parity |X|∈{0,1}, [X,Y]_s=XY−(−1)^{|X||Y|}YX.",
+      "The E₈ root set is {±e_i±e_j:i<j} together with {(±1/2,…,±1/2):an even number of minus signs}."
+    ],
+    "theorem": {
+      "statement": "For real octonions, ||(ab)c−a(bc)||≤2||a||||b||||c||. For nonzero norm product, equality holds exactly when (ab)c=−a(bc), and the constant two is sharp. Independently, the displayed E₈ root set has 240 vectors of squared length two.",
+      "proof": "Write u=(ab)c and v=a(bc). Multiplicativity gives ||u||=||v||=n=||a||||b||||c||. Hence ||u−v||≤||u||+||v||=2n. If n>0, equality in the triangle inequality requires u and −v to have the same direction; equal norms make this exactly u=−v. The declared multiplication gives e₁e₂=e₃, e₃e₄=e₇, e₂e₄=e₆ and e₁e₆=−e₇, proving sharpness. For the root count, choosing two positions among eight and two independent signs gives 4·binom(8,2)=112 integer roots. Of the 2⁸ half-integral sign vectors exactly half have even parity: flipping one chosen sign pairs the two parity classes. Thus there are 128 such roots and 240 total. Each integer root has norm squared 1+1=2; each half-integral vector has 8/4=2. No Jacobi identity for an exceptional Lie bracket is implied by this count."
+    },
+    "worked_example": {
+      "setup": "Compare a maximally nonassociative triple, an associative quaternion triple, and a small superalgebra.",
+      "calculation": "For (e₁,e₂,e₄), the two groupings are e₇ and −e₇, so the defect is two. For (e₁,e₂,e₃), both groupings equal −1, so the defect is zero. In gl(1|1), Q₊=E₁₂ and Q₋=E₂₁ are odd. Their superbracket is E₁₁+E₂₂=I, while Q₊²=Q₋²=0. Taking N=E₁₁ gives [N,Q₊]_s=Q₊ and [N,Q₋]_s=−Q₋. Expanding associative triple products with parity signs proves super-Jacobi. A finite exact verifier can check the octonion basis associators and all E₈ root lengths without asserting that either computation constructs a physical model.",
+      "meaning": "Convention-sensitive multiplication and root enumeration are complete finite tasks. A dimension match remains a consistency check until the actual bracket maps are present."
+    },
+    "source_uids": [
+      "2023:M007",
+      "2023:M008",
+      "2024:Y24-05-004",
+      "2024:Y24-06-002",
+      "2024:Y24-06-013",
+      "2024:Y24-08-007",
+      "2024:Y24-08-012",
+      "2024:Y24-09-026",
+      "2024:Y24-11-005",
+      "2024:Y24-12-015",
+      "2025:Y25-01-020",
+      "2025:Y25-08-002",
+      "2026:Y26-07-014"
+    ],
+    "anchor_uids": [
+      "2023:M007",
+      "2023:M008",
+      "2024:Y24-05-004",
+      "2024:Y24-09-026",
+      "2025:Y25-01-020",
+      "2026:Y26-07-014"
+    ],
+    "progression": [
+      {
+        "year": 2023,
+        "evidence_uids": [
+          "2023:M007",
+          "2023:M008"
+        ],
+        "narrative": "The octonion multiplication convention and sharp defect bound make nonassociativity quantitative."
+      },
+      {
+        "year": 2024,
+        "evidence_uids": [
+          "2024:Y24-05-004",
+          "2024:Y24-09-026",
+          "2024:Y24-06-002",
+          "2024:Y24-06-013",
+          "2024:Y24-08-007",
+          "2024:Y24-08-012",
+          "2024:Y24-11-005",
+          "2024:Y24-12-015"
+        ],
+        "narrative": "Superbrackets, Virasoro central terms and magic-square dimensions introduce graded and exceptional structure with explicit hypotheses."
+      },
+      {
+        "year": 2025,
+        "evidence_uids": [
+          "2025:Y25-01-020",
+          "2025:Y25-08-002"
+        ],
+        "narrative": "The Jacobiator and infinitesimal SO(3) commutator distinguish bracket identities from informal rotation analogies."
+      },
+      {
+        "year": 2026,
+        "evidence_uids": [
+          "2026:Y26-07-014"
+        ],
+        "narrative": "The 120+128 decomposition provides exact E₈ weight accounting while leaving bracket construction separate."
+      }
+    ],
+    "connections": [
+      {
+        "target_domain": "D06",
+        "relation": "Infinitesimal geometry",
+        "mathematical_bridge": "Matrix rotation generators satisfy [J_x,J_y]=J_z and encode second-order commutation defects.",
+        "scope": "A bracket does not by itself specify a connection or PDE."
+      },
+      {
+        "target_domain": "D16",
+        "relation": "Deformation and quantization",
+        "mathematical_bridge": "Associators and Jacobi identities are algebraic consistency conditions for proposed deformed products.",
+        "scope": "Ordinary associative matrices cannot faithfully realise a nonassociative product while preserving all multiplications."
+      },
+      {
+        "target_domain": "D04",
+        "relation": "Graded differentials",
+        "mathematical_bridge": "A square-zero differential needs a graded bracket and its compatibility law.",
+        "scope": "An odd symbol alone does not give a differential graded algebra."
+      }
+    ],
+    "capabilities": [
+      "C01",
+      "C02",
+      "C03",
+      "C04",
+      "C11",
+      "C15"
+    ],
+    "interactive_contract": {
+      "lab_ids": [],
+      "inputs": "Declared octonion table or graded multiplication, norm and parity assignments; explicit root lattice.",
+      "outputs": "Associators, defect bounds, bracket residuals, root counts and weight norms.",
+      "validation": "Exact basis multiplication; polarization when extending finite identity checks; root parity and norm checks.",
+      "status": "Worked finite multiplication and root-enumeration recipes; no exceptional Lie-algebra constructor is implemented."
+    },
+    "limits": "The octonion defect theorem does not classify every zero-associator orbit. Root counts do not prove anomaly cancellation, physical field content or a full E₈ bracket. Real forms and normalization must accompany any further comparison.",
+    "open_questions": [
+      "Can an explicit normalized map Λ²S⁺→so₁₆ be supplied and its spinor Jacobi identity verified in a chosen basis?",
+      "Which automorphism orbits of unit octonion triples attain each fixed associator norm?"
+    ],
+    "references": [
+      {
+        "label": "Baez, The Octonions",
+        "url": "https://arxiv.org/abs/math/0105155"
+      },
+      {
+        "label": "MIT Lie groups and Lie algebras",
+        "url": "https://ocw.mit.edu/courses/18-745-lie-groups-and-lie-algebras-i-fall-2020/"
+      }
+    ],
+    "refs": [
+      {
+        "label": "Baez, The Octonions",
+        "url": "https://arxiv.org/abs/math/0105155"
+      },
+      {
+        "label": "MIT Lie groups and Lie algebras",
+        "url": "https://ocw.mit.edu/courses/18-745-lie-groups-and-lie-algebras-i-fall-2020/"
+      }
+    ]
+  },
+  {
+    "id": "D03-F05",
+    "domain_id": "D03",
+    "title": "Local algebras, jets, path bases and structural flatness",
+    "central_question": "How do relations determine a finite algebra, and which properties remain constant when those relations vary?",
+    "synopsis": "The local and quiver examples supply a concrete algebraic laboratory for the atlas. A finite Hilbert function is not determined by a few initial coefficients; it comes from the whole ideal. A constant vector-space dimension is not determined by a reported cochain profile; it comes from a basis or a locally free presentation. A symmetric Hilbert function is not enough to prove Gorenstein duality; the socle and multiplication pairing must be inspected. These distinctions turn several ambitious geometric discussions into tractable structural calculations.\n\nThe first model begins with two quadrics. An invertible change of coordinates converts them into u² and uv, revealing an infinite tail of powers of v. Adding cubic closure kills v³ and produces the intended four-dimensional algebra. Its basis gives the Hilbert function, radical powers and socle directly. The second model starts with a finite quiver and a square-zero loop. Path enumeration gives fourteen independent paths, and one projective relation removes exactly one dimension because its source and target prevent further left or right multiplication. The resulting rank thirteen is therefore uniform for a structural reason, not a sampling pattern.\n\nThese models also connect finite algebras to representation categories. Dual numbers and their matrix rings have different raw dimensions but equivalent module categories; radical layers and Ext groups retain structure that a state count misses. Conversely, a flat family can change Hochschild cohomology even while its basis size stays fixed. The family is organised so that basis certificates come first, module invariants second and deformation claims third. This ordering makes it possible to build interactive normal-form explorers without advertising an unimplemented general Gröbner, quiver-deformation or moduli solver.",
+    "definitions": [
+      "For a graded algebra A, H_A(d)=dim_k A_d is its Hilbert function.",
+      "For a local Artinian algebra with maximal ideal m, soc(A)={a:ma=0}; a one-dimensional socle is required for the usual commutative Artinian Gorenstein condition.",
+      "A quiver path algebra has vertices as orthogonal idempotents and directed paths as a basis before imposing relations.",
+      "A finite algebra family is flat when its underlying module is locally free in the finite presentations used here; constant fibre dimension alone is not a general flatness proof."
+    ],
+    "theorem": {
+      "statement": "Over any field, k[u,v]/(u²,uv,v³) has basis 1,u,v,v², Hilbert function (1,2,1), maximal ideal cube zero and socle span{u,v²}. The two quadratic relations alone give Hilbert function (1,2,1,1,…).",
+      "proof": "The monomial ideal (u²,uv) kills exactly monomials divisible by u² or uv. Its surviving monomials are 1,u,v,v²,v³,…, so it has one surviving monomial in every degree at least two. Adding v³ kills all powers of v of degree at least three and leaves precisely 1,u,v,v². Their independence follows because a monomial ideal contains a polynomial exactly when each of its monomials belongs to the ideal. The maximal ideal is span{u,v,v²}; its square is span{v²} and its cube is zero. For a=a₀+a₁u+a₂v+a₃v², multiplication by u gives a₀u and multiplication by v gives a₀v+a₂v². Both vanish precisely when a₀=a₂=0. Hence the socle is span{u,v²}, of dimension two, and the algebra is not Gorenstein despite its symmetric Hilbert function. The coordinate change u=a−λb,v=b is invertible for every λ and turns (a²−λ²b²,ab−λb²) into (u²,uv), including in characteristic two."
+    },
+    "worked_example": {
+      "setup": "Compare the jet algebra with the projective quiver pencil having arrows α:0→1, γ:1→1, β,β′:1→2 and relations γ²=0, uβγα−vβα=0.",
+      "calculation": "Before the projective relation, count three vertex paths, four arrows, five length-two paths and two length-three paths, for fourteen total. The two paths βγα and βα both run from source 0 to sink 2. Thus the nonzero relation line generates exactly a one-dimensional two-sided ideal for every [u:v]∈P¹, and every fibre has dimension thirteen. Globally this is a nowhere-zero O(−1) subbundle in a trivial rank-two path summand; its quotient is O(1). The full path bundle is therefore O¹²⊕O(1), a locally free rank-thirteen module. The local chart bases change, but flatness has an explicit bundle certificate.",
+      "meaning": "Basis size, socle type and flatness are separately proved invariants. None determines the full Hochschild profile or a claimed high-order Kuranishi calculation."
+    },
+    "source_uids": [
+      "2023:M095",
+      "2025:Y25-03-034",
+      "2025:Y25-10-015",
+      "2026:Y26-01-034",
+      "2026:Y26-07-002",
+      "2026:Y26-07-004",
+      "2026:Y26-08-012",
+      "2026:Y26-09-014",
+      "2026:Y26-08-011"
+    ],
+    "anchor_uids": [
+      "2023:M095",
+      "2026:Y26-01-034",
+      "2026:Y26-07-002",
+      "2026:Y26-07-004",
+      "2026:Y26-08-011",
+      "2026:Y26-08-012"
+    ],
+    "progression": [
+      {
+        "year": 2023,
+        "evidence_uids": [
+          "2023:M095"
+        ],
+        "narrative": "The explicit syzygy resolution makes relations among generators distinguishable from geometric blowups."
+      },
+      {
+        "year": 2025,
+        "evidence_uids": [
+          "2025:Y25-03-034",
+          "2025:Y25-10-015"
+        ],
+        "narrative": "Dual-number Hochschild and Tor models add derived invariants to finite multiplication data."
+      },
+      {
+        "year": 2026,
+        "evidence_uids": [
+          "2026:Y26-01-034",
+          "2026:Y26-07-002",
+          "2026:Y26-07-004",
+          "2026:Y26-08-011",
+          "2026:Y26-08-012",
+          "2026:Y26-09-014"
+        ],
+        "narrative": "Cubic closure, socle calculations and a projective path-basis proof supply complete local algebra certificates; flatness is kept separate from cohomology constancy."
+      }
+    ],
+    "connections": [
+      {
+        "target_domain": "D04",
+        "relation": "Resolutions and derived invariants",
+        "mathematical_bridge": "Free resolutions turn relations into Tor, Ext and Hochschild calculations.",
+        "scope": "A module resolution is not a resolution of a geometric singularity."
+      },
+      {
+        "target_domain": "D02",
+        "relation": "Finite jets and flat families",
+        "mathematical_bridge": "Coordinate changes and locally free presentations identify actual fibres of algebraic families.",
+        "scope": "Higher global moduli claims require actual maps and compatibility data."
+      },
+      {
+        "target_domain": "D16",
+        "relation": "Obstructions",
+        "mathematical_bridge": "HH² may describe infinitesimal changes while higher equations govern extension.",
+        "scope": "Constant dimension does not imply cohomology constancy or unobstructedness."
+      }
+    ],
+    "capabilities": [
+      "C01",
+      "C02",
+      "C03",
+      "C04",
+      "C11",
+      "C15"
+    ],
+    "interactive_contract": {
+      "lab_ids": [],
+      "inputs": "Polynomial or path generators, coefficient field, relations and optional parameter chart.",
+      "outputs": "Standard basis, multiplication table, radical layers, socle and fibre dimension certificate.",
+      "validation": "Reduce every product; prove basis spanning and independence; retain transition functions for a global flatness claim.",
+      "status": "Worked normal-form and path-basis recipe; no general quiver-cohomology interface is implemented."
+    },
+    "limits": "The historical quiver cochain profile and order-twelve deformation packet are not reconstructed by the path count. The tensor extension with Betti numbers (1,4,5,2) is an authored comparison, not an identification with an unseen original packet.",
+    "open_questions": [
+      "For the actual rank-thirteen pencil, what are the exact ranks of the Hochschild differentials on each parameter stratum?",
+      "Which additional relations, if any, make the intended jet algebra Gorenstein without changing the required Hilbert function?"
+    ],
+    "references": [
+      {
+        "label": "Stacks Project, Locally free sheaves",
+        "url": "https://stacks.math.columbia.edu/tag/01C5"
+      },
+      {
+        "label": "Etingof et al., Introduction to Representation Theory",
+        "url": "https://math.mit.edu/~etingof/reprbook.pdf"
+      }
+    ],
+    "refs": [
+      {
+        "label": "Stacks Project, Locally free sheaves",
+        "url": "https://stacks.math.columbia.edu/tag/01C5"
+      },
+      {
+        "label": "Etingof et al., Introduction to Representation Theory",
+        "url": "https://math.mit.edu/~etingof/reprbook.pdf"
+      }
+    ]
+  },
+  {
+    "id": "D03-F06",
+    "domain_id": "D03",
+    "title": "Finite operator algebras, modular flow and equilibrium",
+    "central_question": "What do a faithful state and its dynamics determine exactly in a finite algebra?",
+    "synopsis": "The operator-algebra discussions become most transparent when the algebra, state and representation are separated. In M_d(C), a faithful state is given by a positive density matrix ρ. It defines expectations on observables, an inner-product geometry on matrix space and a modular flow. A thermal Hamiltonian H defines another flow through conjugation. A Gibbs state links the two with a temperature-dependent rescaling and sign, but the state Hamiltonian −logρ is not the same object as the standard-form modular generator acting on matrices.\n\nThis distinction is one of the strongest connections across the later years. On the Hilbert space of Hilbert–Schmidt matrices, left multiplication represents the observable algebra and right multiplication represents its commutant. The modular operator is Δ=L_ρR_{ρ⁻¹}. Its eigenvalues on matrix units are ratios p_i/p_j, so its generator has spectral gaps rather than the original energy levels. A second faithful state produces a unitary relative cocycle with a twisted multiplication law. These are exact finite models of powerful general constructions, with all domains automatic and every formula inspectable.\n\nEquilibrium also requires a declared dynamics convention. With α_t(A)=e^{itH}Ae^{−itH}, the Gibbs state satisfies φ(Aα_{iβ}(B))=φ(BA). The boundary identity follows from cyclicity of trace and extends to all matrices because finite-dimensional imaginary-time conjugation is entire. This offers a meaningful interactive calculation: change populations, inspect modular frequencies and test the KMS relation. It does not turn a fitted ratio q=e^{−βE} into a deformed quantum group, or establish infinite type-III modular inclusions, holographic identities or geometric field equations.",
+    "definitions": [
+      "A faithful density matrix is ρ>0 with trρ=1, defining φ(A)=tr(ρA).",
+      "On Hilbert–Schmidt matrix space, L_A(X)=AX and R_A(X)=XA.",
+      "The finite modular operator is Δρ(X)=ρXρ⁻¹; J(X)=X* is antiunitary.",
+      "For α_t(A)=e^{itH}Ae^{−itH}, the KMS convention here is φ(Aα_{iβ}(B))=φ(BA)."
+    ],
+    "theorem": {
+      "statement": "For Ω=ρ^{1/2}, the Tomita map S(AΩ)=A*Ω satisfies S=JΔρ^{1/2}. If ρ=Z⁻¹e^{−βH}, φ is α-invariant and obeys the stated KMS identity. The modular generator −logΔρ has eigenvalues log(p_j/p_i) on E_ij.",
+      "proof": "Every matrix X can be written Aρ^{1/2} because ρ is invertible. Therefore S(X)=(Xρ^{−1/2})*ρ^{1/2}=ρ^{−1/2}X*ρ^{1/2}. Meanwhile Δρ^{1/2}X=ρ^{1/2}Xρ^{−1/2}; applying J gives exactly the same expression. In a ρ-eigenbasis, ΔρE_ij=(p_i/p_j)E_ij, yielding the generator formula by finite functional calculus. For KMS, α_{iβ}(B)=e^{−βH}Be^{βH}. Multiply φ(Aα_{iβ}B) by Z and cyclically move the final e^{βH} to the front: tr(e^{−βH}Ae^{−βH}Be^{βH})=tr(Ae^{−βH}B)=tr(e^{−βH}BA). Division by Z proves the identity. Since ρ commutes with e^{itH}, cyclicity also proves φ(α_tA)=φ(A). Positivity and normalization follow directly from ρ≥0 and trρ=1."
+    },
+    "worked_example": {
+      "setup": "Take ρ=diag(3/4,1/4), with βE=log3 for H=diag(0,E), and use A=E₀₁,B=E₁₀.",
+      "calculation": "The modular operator multiplies E₀₁ by three and E₁₀ by one third, fixing both diagonal matrix units. Its generator therefore has eigenvalues 0,0,−log3,+log3 on matrix space. The state Hamiltonian −logρ instead has just the two values log(4/3),log4 on the original two-dimensional space. At imaginary thermal time, α_{iβ}(B)=B/3. Hence φ(Aα_{iβ}B)=(1/3)(3/4)=1/4=φ(BA). Matrix-unit multiplication checks the same identity for a basis of every A,B. The zero modular frequencies form the diagonal commutant of ρ; degeneracy of populations enlarges that fixed algebra.",
+      "meaning": "An operator state supplies a complete finite equilibrium model, including its faithful-state hypothesis and normalization. Reparametrizing a population ratio changes no multiplication law."
+    },
+    "source_uids": [
+      "2023:M103",
+      "2025:Y25-03-014",
+      "2025:Y25-03-012",
+      "2025:Y25-07-018",
+      "2025:Y25-11-018",
+      "2026:Y26-01-015",
+      "2026:Y26-01-026",
+      "2026:Y26-04-018"
+    ],
+    "anchor_uids": [
+      "2023:M103",
+      "2025:Y25-03-012",
+      "2025:Y25-03-014",
+      "2025:Y25-11-018",
+      "2026:Y26-01-015",
+      "2026:Y26-04-018"
+    ],
+    "progression": [
+      {
+        "year": 2023,
+        "evidence_uids": [
+          "2023:M103"
+        ],
+        "narrative": "The Heisenberg local algebra supplies an early operator-and-state theme, although its full Fock space is infinite."
+      },
+      {
+        "year": 2025,
+        "evidence_uids": [
+          "2025:Y25-03-012",
+          "2025:Y25-03-014",
+          "2025:Y25-11-018",
+          "2025:Y25-07-018"
+        ],
+        "narrative": "Finite modular flow, relative cocycles and Tomita factorization provide exact faithful-state models."
+      },
+      {
+        "year": 2026,
+        "evidence_uids": [
+          "2026:Y26-01-015",
+          "2026:Y26-04-018",
+          "2026:Y26-01-026"
+        ],
+        "narrative": "The Gibbs/KMS calculation and trace-range examples distinguish equilibrium data from algebra deformation and infinite inductive limits."
+      }
+    ],
+    "connections": [
+      {
+        "target_domain": "D16",
+        "relation": "Quantum dynamics",
+        "mathematical_bridge": "Gibbs states, completely positive channels and modular flow use the same finite observable algebra.",
+        "scope": "A channel need not preserve a given Gibbs state or its modular flow."
+      },
+      {
+        "target_domain": "D10",
+        "relation": "Classical equilibrium",
+        "mathematical_bridge": "For a commutative diagonal algebra the state is an ordinary finite probability distribution.",
+        "scope": "Noncommutative ordering remains visible outside that subalgebra."
+      },
+      {
+        "target_domain": "D07",
+        "relation": "Spectral functional calculus",
+        "mathematical_bridge": "Logarithms and imaginary powers of positive matrices are defined by the spectral theorem.",
+        "scope": "Infinite-dimensional domains and trace-class hypotheses need separate treatment."
+      }
+    ],
+    "capabilities": [
+      "C01",
+      "C03",
+      "C07",
+      "C09",
+      "C15"
+    ],
+    "interactive_contract": {
+      "lab_ids": [],
+      "inputs": "Positive definite density matrix, Hamiltonian, inverse temperature and observable matrices.",
+      "outputs": "Modular ratios, fixed algebra, KMS boundary residual and faithful-state diagnostics.",
+      "validation": "Check trace one, strict positivity and the chosen dynamics sign; verify basis identities exactly for rational population ratios.",
+      "status": "Worked two-level recipe; no general infinite operator-algebra or thermal simulator is implemented."
+    },
+    "limits": "The standard form is finite and faithful. Singular states need support reduction; infinite von Neumann algebras can have no density matrix or trace. The finite derivation does not prove type-III, DHR, JLMS or entanglement-to-geometry claims.",
+    "open_questions": [
+      "For a declared channel, when does it preserve both the Gibbs state and its modular eigenspace decomposition?",
+      "Which trace-range and ordered K₀ data are available for a specified inductive-limit algebra, beyond finite matrix approximations?"
+    ],
+    "references": [
+      {
+        "label": "Bratteli and Robinson, Operator Algebras and Quantum Statistical Mechanics 2",
+        "url": "https://doi.org/10.1007/978-3-662-09044-1"
+      }
+    ],
+    "refs": [
+      {
+        "label": "Bratteli and Robinson, Operator Algebras and Quantum Statistical Mechanics 2",
+        "url": "https://doi.org/10.1007/978-3-662-09044-1"
+      }
+    ]
+  },
+  {
+    "id": "D16-F01",
+    "domain_id": "D16",
+    "title": "Quantum states, coherence, channels and complete instruments",
+    "central_question": "Which observations distinguish states, and which transformations preserve their physical probability structure?",
+    "synopsis": "The quantum information strand is best organised around a state, an observation map and an allowed transformation. A density matrix carries both populations and coherences; a measurement sees only selected linear functionals of that matrix. A channel must preserve positivity even when the system is coupled to an arbitrary ancilla, which is stronger than preserving trace or ordinary positivity. An instrument additionally records the classical measurement branch. These distinctions connect the early coherence example to later dephasing, error correction, leakage and sequential postselection discussions.\n\nThe Bell state and its fully dephased mixture are an especially clear organising pair. Computational-basis probabilities, diagonal parity and both one-qubit marginals agree exactly, while an off-diagonal correlation separates them. This is a complete finite instance of observation-relative identifiability, linking quantum tomography to the atlas-wide question of what a target can be reconstructed from. It does not imply that all measurements are blind; it identifies one observation algebra and an explicit additional observable that resolves its collision.\n\nThe transformation side is equally constructive. Kraus operators certify complete positivity by turning the channel tensored with any ancilla into a sum of positive conjugations. Their completeness equation certifies total probability. Dephasing changes only selected coherences, amplitude damping transfers populations and depolarisation contracts every traceless component. Error correction requires an actual error family: the three-qubit repetition code corrects single bit flips but has a weight-one logical phase error, hence quantum distance one. Sequential instruments force the success probability to remain visible through every branch. Normalizing a successful state is legitimate conditional probability, but cannot convert a rare success into an unconditional implementation guarantee.",
+    "definitions": [
+      "A density matrix ρ is positive semidefinite with trρ=1; an effect satisfies 0≤E≤I and has probability trρE.",
+      "A Kraus channel is E(ρ)=Σ_rK_rρK_r*, with Σ_rK_r*K_r=I.",
+      "An instrument has branches I_a(ρ)=Σ_rK_arρK_ar*; only their sum is required to preserve trace.",
+      "Knill–Laflamme correction for code projector P requires PE_a*E_bP=c_abP for the specified error family."
+    ],
+    "theorem": {
+      "statement": "For Bell state ρ_B=|Φ⁺⟩⟨Φ⁺| and mixture ρ_M=(|00⟩⟨00|+|11⟩⟨11|)/2, all diagonal observations and both one-qubit marginals agree, but tr(ρ_B XX)=1 and tr(ρ_M XX)=0. Their trace distance is 1/2. Sequential complete instruments preserve total probability after summing all branches.",
+      "proof": "The difference D=ρ_B−ρ_M=(|00⟩⟨11|+|11⟩⟨00|)/2 has zero diagonal, so tr(DE)=0 for every diagonal E. Partial trace removes the off-diagonal tensor terms, proving marginal equality. XX exchanges 00 and 11, so tr(DXX)=1. On their two-dimensional span D has eigenvalues ±1/2 and vanishes elsewhere; ||D||₁/2=1/2. For sequential instruments, let first-stage Kraus operators be K_ar and second-stage ones L_bs|a with Σ_arK_ar*K_ar=I and Σ_bsL_bs|a*L_bs|a=I for each a. The composed operators are L_bs|aK_ar. Summing their adjoint products yields Σ_arK_ar*(Σ_bsL_bs|a*L_bs|a)K_ar=I. The same Kraus form proves complete positivity. This algebra establishes the unconditional map; a selected branch has trace equal to its actual success probability."
+    },
+    "worked_example": {
+      "setup": "Apply dephasing to the first qubit of a Bell pair, with rational coherence parameter q=1/3.",
+      "calculation": "The channel is E_q(ρ)=((1+q)/2)ρ+((1−q)/2)ZρZ. It produces Bell populations 1/2,1/2 and cross terms q/2. Hence the reduced states remain I/2, ZZ stays one and XX becomes 1/3. Its Kraus squared weights are 2/3 and 1/3, nonnegative and summing to one. The dephased state has eigenvalues (1±q)/2=2/3,1/3 on the Bell subspace, so it is positive. At q=0 it equals ρ_M; at q=1 it equals ρ_B. An independent repetition-code check gives PE_a*E_bP=δ_abP for {I,X₁,X₂,X₃}, while PZ₁P=diag(1,−1) on the code, demonstrating the exact boundary of the protection claim.",
+      "meaning": "Coherence, entanglement, observation and protection each have explicit witnesses. Their connection is mathematical rather than an inference from a gate or code name."
+    },
+    "source_uids": [
+      "2023:M048",
+      "2023:M049",
+      "2023:M063",
+      "2023:M085",
+      "2024:Y24-06-023",
+      "2024:Y24-11-024",
+      "2024:Y24-12-037",
+      "2024:Y24-12-029",
+      "2024:Y24-12-035",
+      "2025:Y25-01-024",
+      "2025:Y25-01-003",
+      "2025:Y25-02-019",
+      "2025:Y25-02-021",
+      "2025:Y25-02-023",
+      "2026:Y26-05-024",
+      "2026:Y26-06-006",
+      "2026:Y26-06-005",
+      "2026:Y26-07-008"
+    ],
+    "anchor_uids": [
+      "2023:M048",
+      "2023:M063",
+      "2024:Y24-06-023",
+      "2024:Y24-12-037",
+      "2025:Y25-02-019",
+      "2025:Y25-02-023",
+      "2026:Y26-06-006",
+      "2026:Y26-07-008"
+    ],
+    "progression": [
+      {
+        "year": 2023,
+        "evidence_uids": [
+          "2023:M048",
+          "2023:M063",
+          "2023:M049",
+          "2023:M085"
+        ],
+        "narrative": "Measurement-dependent coherence and physical open-system dynamics establish state and channel definitions."
+      },
+      {
+        "year": 2024,
+        "evidence_uids": [
+          "2024:Y24-06-023",
+          "2024:Y24-12-037",
+          "2024:Y24-12-029",
+          "2024:Y24-12-035",
+          "2024:Y24-11-024"
+        ],
+        "narrative": "Two-qubit dephasing, GHZ coherence, Stinespring dilation and stabilizer models develop observation and protection examples."
+      },
+      {
+        "year": 2025,
+        "evidence_uids": [
+          "2025:Y25-02-019",
+          "2025:Y25-02-023",
+          "2025:Y25-01-024",
+          "2025:Y25-02-021",
+          "2025:Y25-01-003"
+        ],
+        "narrative": "Exact correction conditions, mixing laws and parity collisions expose the error model and missing observations."
+      },
+      {
+        "year": 2026,
+        "evidence_uids": [
+          "2026:Y26-06-006",
+          "2026:Y26-07-008",
+          "2026:Y26-05-024",
+          "2026:Y26-06-005"
+        ],
+        "narrative": "Sequential instruments and orthogonal Schmidt blocks keep branch probabilities and sector hypotheses explicit."
+      }
+    ],
+    "connections": [
+      {
+        "target_domain": "D15",
+        "relation": "Observation-relative reconstruction",
+        "mathematical_bridge": "A state difference is invisible exactly when it lies in the kernel of all measured effects.",
+        "scope": "A classical observability lab supplies an analogy; its matrices are not quantum tomography data."
+      },
+      {
+        "target_domain": "D11",
+        "relation": "Tomographic uncertainty",
+        "mathematical_bridge": "Finite samples estimate probabilities; exact state separation does not provide sample complexity.",
+        "scope": "Noise and measurement allocation need a declared statistical model."
+      },
+      {
+        "target_domain": "D05",
+        "relation": "Stabilizer homology",
+        "mathematical_bridge": "Toric-code logical loops are cycles modulo boundaries.",
+        "scope": "The code distance theorem assumes the specified periodic lattice and local Pauli errors."
+      }
+    ],
+    "capabilities": [
+      "C01",
+      "C03",
+      "C05",
+      "C07",
+      "C12",
+      "C14",
+      "C15"
+    ],
+    "interactive_contract": {
+      "lab_ids": [
+        "L01",
+        "L09"
+      ],
+      "inputs": "State matrix, effects, Kraus branches, code projector and explicit error list.",
+      "outputs": "Probabilities, remaining coherence, branch success weights and exact correction residuals.",
+      "validation": "Check positivity or Kraus construction, completeness, normalization and every declared error pair.",
+      "status": "Linked labs illustrate observability and homology; quantum states and instruments are worked mathematical models."
+    },
+    "limits": "This is finite-dimensional mathematics, not a hardware threshold or a leakage-free anyon implementation. Negative dephasing time need not define a channel. Postselection costs and unobserved branches cannot be discarded.",
+    "open_questions": [
+      "What minimal added effects make the actual proposed observation map injective on its admissible state family?",
+      "For an actual leakage instrument, what is the total success probability after all conditional stages and recovery branches?"
+    ],
+    "references": [
+      {
+        "label": "Knill and Laflamme, Theory of quantum error-correcting codes",
+        "url": "https://arxiv.org/abs/quant-ph/9604034"
+      },
+      {
+        "label": "Lindblad, On the generators of quantum dynamical semigroups",
+        "url": "https://doi.org/10.1007/BF01608499"
+      }
+    ],
+    "refs": [
+      {
+        "label": "Knill and Laflamme, Theory of quantum error-correcting codes",
+        "url": "https://arxiv.org/abs/quant-ph/9604034"
+      },
+      {
+        "label": "Lindblad, On the generators of quantum dynamical semigroups",
+        "url": "https://doi.org/10.1007/BF01608499"
+      }
+    ]
+  },
+  {
+    "id": "D16-F02",
+    "domain_id": "D16",
+    "title": "Finite Weyl systems, symplectic Pauli geometry and projective phases",
+    "central_question": "What finite operator relations can hold exactly, and how are their commutation and central phases certified?",
+    "synopsis": "Finite quantum algebra has a precise boundary. The canonical relation [Q,P]=iℏI cannot hold for finite matrices when ℏ≠0, because the trace of a commutator is zero. Clock and shift operators provide a consistent finite replacement, with multiplicative relation UV=qVU. Taking determinants forces q to be a root of unity, so a rational phase is an exact existence condition, whereas an irrational phase cannot have an exact finite invertible representation. Rational approximation changes the algebraic parameter; it does not remove this obstruction.\n\nThe finite models connect naturally to symplectic geometry. Pauli operators modulo scalar phase are labelled by binary vectors, and their commutation sign is an alternating bilinear form. Centralizers of a specified nonzero support become exact symplectic kernels. Sector transition counts are images of another pairing map and therefore require its actual kernel, not a superficially similar quotient. These finite linear maps are a constructive common core of symmetry reduction, stabilizer codes and operator selection rules.\n\nFourier and Gauss operators add projective phases. A quadratic refinement produces a symmetric polar form, while Pauli commutation uses an alternating form. At odd order these cannot be identified indiscriminately. The finite Weil relation (ST)³=γC records a Gauss phase γ that must be computed rather than normalized away without explanation. For the order-three example γ=i. This family therefore keeps three distinct certificates together: trace and determinant obstructions; exact finite operator bases; and central phases in group relations. It does not promote one finite matrix pair into categorical coherence or an infinite irrational rotation algebra.",
+    "definitions": [
+      "For q of order L, Ue_j=q^je_j and Ve_j=e_{j+1 mod L} form a clock–shift pair.",
+      "For n qubits, Pauli labels v=(x,z)∈F₂^{2n} have symplectic form ω(v,w)=x·z′+z·x′.",
+      "For nonzero Pauli support S of H, its Pauli centralizer labels are span(S)^⊥.",
+      "A finite quadratic form Q has polar form b_Q(x,y)=Q(x+y)−Q(x)−Q(y); the associated Gauss sum is γ=|A|⁻¹/²Σ_x exp(2πiQ(x))."
+    ],
+    "theorem": {
+      "statement": "Finite invertible matrices U,V satisfying UV=qVU in dimension d force q^d=1. If q has order L, the displayed L-dimensional clock–shift pair exists and generates M_L(C). For H=Σ_{s∈S}h_sP(s), with distinct labels and nonzero h_s, P(v) commutes with H exactly when ω(v,s)=0 for every s∈S.",
+      "proof": "Taking determinants in UV=qVU yields detU detV=q^d detV detU, and invertibility permits cancellation. Conversely the stated pair satisfies UV e_j=q^{j+1}e_{j+1}=qVUe_j, including wraparound. U has distinct eigenvalues; Lagrange interpolation in U gives every coordinate projection E_jj. Multiplying by powers of V then gives all matrix units, proving full generation and scalar commutant. For Pauli operators, XZ=−ZX gives P(v)P(s)=(−1)^ω(v,s)P(s)P(v). Vanishing pairings imply commutation term by term. Conversely, in the commutator the anticommuting terms are nonzero multiples of distinct Pauli basis elements labelled v+s. They cannot cancel, so every pairing must vanish. Nondegeneracy of ω then gives kernel dimension 2n−rank_F₂(S). This counts Pauli labels, not the full vector-space dimension of the operator commutant."
+    },
+    "worked_example": {
+      "setup": "Take n=2 and H=Z₁+Z₂. Compare the finite pair at order three and the order-three Gauss phase.",
+      "calculation": "For H, the two support equations force x₁=x₂=0 while z₁,z₂ remain free. The four Pauli symmetries are I,Z₁,Z₂,Z₁Z₂ modulo phase. The full operator commutant is larger because the zero eigenvalue is degenerate, so the binary dimension two must not be called its complex matrix dimension. For a primitive cube root ζ, the nine products U^aV^b are trace-orthogonal: a nontrivial shift has zero trace and 1+ζ+ζ²=0. Thus they form a basis of M₃(C). For Q(x)=x²/3 on Z/3, γ=(1+2ζ)/√3=i, and the finite Fourier/Gauss matrices obey S²=C, (ST)³=iC. The phase is part of the exact relation.",
+      "meaning": "The finite system has a complete algebraic identity and an explicit symplectic label geometry. Projective phases and representation dimensions remain separate invariants."
+    },
+    "source_uids": [
+      "2024:Y24-12-027",
+      "2025:Y25-04-017",
+      "2025:Y25-04-026",
+      "2025:Y25-07-015",
+      "2026:Y26-05-009",
+      "2026:Y26-06-002",
+      "2026:Y26-06-003",
+      "2026:Y26-06-001",
+      "2026:Y26-06-004",
+      "2026:Y26-07-006",
+      "2026:Y26-07-007"
+    ],
+    "anchor_uids": [
+      "2025:Y25-07-015",
+      "2025:Y25-04-017",
+      "2026:Y26-06-001",
+      "2026:Y26-06-002",
+      "2026:Y26-06-003",
+      "2026:Y26-07-006",
+      "2026:Y26-07-007",
+      "2026:Y26-05-009"
+    ],
+    "progression": [
+      {
+        "year": 2025,
+        "evidence_uids": [
+          "2025:Y25-07-015",
+          "2025:Y25-04-017",
+          "2025:Y25-04-026"
+        ],
+        "narrative": "Finite canonical-commutator impossibility, Harper matrices and Bogoliubov constraints establish exact operator boundaries."
+      },
+      {
+        "year": 2026,
+        "evidence_uids": [
+          "2026:Y26-06-001",
+          "2026:Y26-06-002",
+          "2026:Y26-06-003",
+          "2026:Y26-07-006",
+          "2026:Y26-07-007",
+          "2026:Y26-05-009",
+          "2026:Y26-06-004"
+        ],
+        "narrative": "Root-of-unity Weyl pairs, Gauss phases and symplectic centralizers give constructive finite replacements and sector calculations."
+      }
+    ],
+    "connections": [
+      {
+        "target_domain": "D06",
+        "relation": "Symplectic forms",
+        "mathematical_bridge": "Pauli commutation is an alternating finite-field pairing.",
+        "scope": "A quadratic polar form is symmetric; odd-order and characteristic-two conventions differ."
+      },
+      {
+        "target_domain": "D01",
+        "relation": "Cyclotomic phases",
+        "mathematical_bridge": "Root-of-unity order constrains dimensions and exact arithmetic fields.",
+        "scope": "No irrational finite representation follows from rational approximants."
+      },
+      {
+        "target_domain": "D03",
+        "relation": "Representation and commutants",
+        "mathematical_bridge": "Generating every matrix unit proves irreducibility and scalar commutant.",
+        "scope": "A Hamiltonian centralizer may be larger than the joint clock–shift commutant."
+      }
+    ],
+    "capabilities": [
+      "C01",
+      "C02",
+      "C03",
+      "C04",
+      "C09",
+      "C15"
+    ],
+    "interactive_contract": {
+      "lab_ids": [
+        "L07"
+      ],
+      "inputs": "Conductor L, invertible clock/shift matrices or a reduced nonzero Pauli support table.",
+      "outputs": "Commutation phase, generated basis, symplectic kernel, sector image and explicit central scalar.",
+      "validation": "Check root order, remove cancelled support terms and distinguish exact root-of-unity arithmetic from floating phases.",
+      "status": "The cyclotomic lab illustrates exact finite fibres; Weyl and Pauli calculations remain documented recipes."
+    },
+    "limits": "No finite CCR representation or irrational exact pair is claimed. A Pauli centralizer is not the full operator commutant. Finite Weil operators do not supply arbitrary F/R coherence data.",
+    "open_questions": [
+      "Given the original Hamiltonian support, which claimed sector quotient is the actual kernel of its transition map?",
+      "Which scalar rephasing or metaplectic lift turns a specified projective modular action into a genuine representation?"
+    ],
+    "references": [
+      {
+        "label": "Strömberg, Weil representations associated to finite quadratic modules",
+        "url": "https://arxiv.org/abs/1108.0202"
+      }
+    ],
+    "refs": [
+      {
+        "label": "Strömberg, Weil representations associated to finite quadratic modules",
+        "url": "https://arxiv.org/abs/1108.0202"
+      }
+    ]
+  },
+  {
+    "id": "D16-F03",
+    "domain_id": "D16",
+    "title": "Polynomial Moyal exactness and the complete bounded sextic monomial atlas",
+    "central_question": "Exactly when does a polynomial Moyal bracket equal its Poisson bracket, and when does a vanished cubic correction hide a fifth-order defect?",
+    "synopsis": "The Moyal strand has a particularly strong cross-year synthesis because it begins with a formal product and ends with a finite coefficient classification. Fixing the Weyl convention makes every polynomial calculation exact. Antisymmetry removes the even bidifferential orders, while division by iℏ leaves only even powers ℏ^{k−1}. A different power convention cannot be mixed with these coefficients. For monomials, falling factorials turn differentiation into an integer formula; exactness is then the simultaneous vanishing of every active higher odd coefficient.\n\nTwo apparently conflicting source ideas become compatible after the degree bound is respected. The family (qp³,q^{3r+2}p^r) has vanishing cubic correction, and all fifth or higher derivatives of the first input vanish because its total degree is four. It is therefore an infinite exact family. Higher-degree pairs can genuinely hide a fifth-order obstruction. The pair (qp⁵,q⁵p³) gives a nonzero ℏ⁴ term despite S₃=0. The atlas adds a smaller witness entirely inside degree six and an exhaustive bounded monomial classification.\n\nThis added sextic result is a present synthesis, not a claim about what an earlier conversation proved. Among the twenty-eight monomials of total degree at most six, 504 of 784 ordered pairs are exact and 280 have a defect; four are invisible to the cubic test alone. Among the seven monomials of exactly degree six, fifteen of forty-nine ordered pairs are exact. These statements are complete for the declared finite monomial universe. Arbitrary linear combinations can cancel coefficients across different monomial pairs, so this enumeration is not a classification of all sextic polynomial pairs. At degree seven and above, S₇ and further terms become possible and must be retained.",
+    "definitions": [
+      "Set f⋆g=f exp[(iℏ/2)(←∂_q→∂_p−←∂_p→∂_q)]g and [f,g]_M=(f⋆g−g⋆f)/(iℏ).",
+      "For f=q^ap^b,g=q^cp^d, define S_k=Σ_{r=0}^k(−1)^r binom(k,r)(a)_{k−r}(b)_r(c)_r(d)_{k−r}, with falling factorials zero beyond the exponent.",
+      "The order-k term has coefficient (−1)^{(k−1)/2}ℏ^{k−1}S_k/(2^{k−1}k!) for odd k and output q^{a+c−k}p^{b+d−k}.",
+      "A bounded sextic monomial universe means nonnegative exponents with a+b≤6 and c+d≤6; it does not mean arbitrary sextic polynomial coefficients."
+    ],
+    "theorem": {
+      "statement": "For monomials of total degrees at most six, Poisson=Moyal if and only if S₃=S₅=0. The exhaustive universe has 504 exact and 280 defective ordered pairs; four defective pairs have S₃=0. For every r≥1, [qp³,q^{3r+2}p^r]_M=−(8r+6)q^{3r+2}p^{r+2}.",
+      "proof": "Expand the exponential and binomially expand its two commuting left-right derivative operators. Differentiating monomials gives the displayed falling-factorial sum. Swapping f and g changes the order-k bidifferential by (−1)^k, so even orders cancel and odd orders double. Division by iℏ gives the stated coefficient. Each input receives exactly k derivatives, so k exceeds neither total degree; with both degrees at most six, only k=1,3,5 survive. Distinct formal ℏ powers force S₃=S₅=0 separately. Enumerating all nonnegative a+b≤6 gives 28 inputs and 784 ordered pairs; the attached verifier evaluates both coefficients with exact integers and independently recomputes the antisymmetric star expansion. For the infinite family set c=3r+2. Only two terms of S₃ survive and give 6c(c−1)[3r−(c−2)]=0. Orders k≥5 vanish by degree four. The Poisson coefficient is r−3(3r+2)=−8r−6, proving the family uniformly rather than by sampling."
+    },
+    "worked_example": {
+      "setup": "Use the newly stipulated sextic pair f=qp⁵, g=q⁴p², and compare the recovered exact family at r=1.",
+      "calculation": "For a=1, odd coefficients factor as S_k=(b)_{k−1}(c)_{k−1}[kd−(b−k+1)(c−k+1)]. At b=5,c=4,d=2, S₃=(5)₂(4)₂[6−3·2]=0. At k=5, S₅=(5)₄(4)₄[10−1·0]=120·24·10=28800, giving coefficient 28800/(16·120)=15. The exact bracket is −18q⁴p⁶+15ℏ⁴p². The four cubic-blind ordered exponent pairs are (1,5;4,2),(2,4;5,1) and their reversals. In contrast (qp³,q⁵p) has bracket −14q⁵p³ with no correction. The higher-degree source replacement (qp⁵,q⁵p³) has S₅=201600 and coefficient 105, so it gives −22q⁵p⁷+105ℏ⁴qp³.",
+      "meaning": "Exactness is a finite coefficient statement with a declared universe. The cubic term is sufficient under a genuine degree-four bound, but not throughout degree six."
+    },
+    "source_uids": [
+      "2023:M086",
+      "2025:Y25-02-015",
+      "2026:Y26-06-018",
+      "2026:Y26-06-019",
+      "2026:Y26-06-020"
+    ],
+    "anchor_uids": [
+      "2023:M086",
+      "2026:Y26-06-018",
+      "2026:Y26-06-019",
+      "2026:Y26-06-020"
+    ],
+    "progression": [
+      {
+        "year": 2023,
+        "evidence_uids": [
+          "2023:M086"
+        ],
+        "narrative": "Formal polynomial star multiplication establishes the convention and the classical-limit question."
+      },
+      {
+        "year": 2025,
+        "evidence_uids": [
+          "2025:Y25-02-015"
+        ],
+        "narrative": "The reflection-deformed polynomial representation is a related exact deformation calculation, not evidence that the later Moyal classification was already proved."
+      },
+      {
+        "year": 2026,
+        "evidence_uids": [
+          "2026:Y26-06-018",
+          "2026:Y26-06-019",
+          "2026:Y26-06-020"
+        ],
+        "narrative": "The retrieved coefficient formula and family claim motivate corrected higher-order tests; the bounded sextic enumeration and smaller witness are newly authored atlas calculations."
+      }
+    ],
+    "connections": [
+      {
+        "target_domain": "D03",
+        "relation": "Exact polynomial algebra",
+        "mathematical_bridge": "Falling factorials and coefficient dictionaries reduce a formal identity to rational arithmetic.",
+        "scope": "A numerical sample does not prove a polynomial identity."
+      },
+      {
+        "target_domain": "D06",
+        "relation": "Poisson geometry",
+        "mathematical_bridge": "The first bidifferential is the canonical Poisson bracket.",
+        "scope": "Changing coordinates requires the appropriate transformed product; the flat formula cannot be copied blindly."
+      },
+      {
+        "target_domain": "D14",
+        "relation": "Finite certification",
+        "mathematical_bridge": "An exhaustive degree bound makes a finite enumeration complete.",
+        "scope": "Completeness is lost if the exponent bound or polynomial model class is enlarged."
+      }
+    ],
+    "capabilities": [
+      "C01",
+      "C02",
+      "C03",
+      "C04",
+      "C11"
+    ],
+    "interactive_contract": {
+      "lab_ids": [
+        "L06"
+      ],
+      "inputs": "Four nonnegative monomial exponents and a declared ℏ convention; optional bounded degree for enumeration.",
+      "outputs": "Poisson term, active higher coefficients, exactness verdict and first defect order.",
+      "validation": "Exact integer falling factorials and rational normalization; independently compare the direct star expansion; retain all active odd orders.",
+      "status": "Implemented bounded monomial worked-model lab, with exact coefficient certificates; not a general quantum computer algebra system."
+    },
+    "limits": "The bounded classification covers monomial pairs only. General sextic polynomial pairs require coefficient equations allowing cross-pair cancellation. No complete unrestricted high-degree classification, convergence theorem for arbitrary smooth functions, or new historical attribution is claimed.",
+    "open_questions": [
+      "What are the irreducible components of the coefficient variety of arbitrary homogeneous sextic polynomial pairs satisfying S₃=S₅=0?",
+      "For degree bounds above six, which families cancel S₃ and S₅ while retaining a first S₇ obstruction?"
+    ],
+    "references": [
+      {
+        "label": "Curtright and Zachos, Quantum Mechanics in Phase Space",
+        "url": "https://arxiv.org/abs/1104.5269"
+      }
+    ],
+    "refs": [
+      {
+        "label": "Curtright and Zachos, Quantum Mechanics in Phase Space",
+        "url": "https://arxiv.org/abs/1104.5269"
+      }
+    ]
+  },
+  {
+    "id": "D16-F04",
+    "domain_id": "D16",
+    "title": "Braid representations, fusion rules and complete finite coherence data",
+    "central_question": "Which explicit relations turn braid or fusion numbers into a consistent algebraic or categorical structure?",
+    "synopsis": "The braid and fusion discussions form a hierarchy of increasingly structured data. A braid representation requires matrices satisfying the braid relations. A Hecke relation imposes an additional quadratic quotient. A fusion ring records integer multiplication coefficients and a dimension homomorphism. A braided fusion category also requires associators and braidings satisfying pentagon and hexagon equations; a unitary realization requires positivity. A larger object count or a familiar exceptional dimension does not skip any of these stages.\n\nTwo finite models organise the hierarchy. The fundamental Hecke braid matrix provides a Laurent-polynomial Yang–Baxter calculation, with a simple rational specialization that is visibly nonunitary. The pointed four-object model supplies complete F,R,S data: labels add in F₂², the associator is one and a bilinear sign supplies the braiding. Every coherence equation reduces to a finite bilinearity identity, and character orthogonality gives modular nondegeneracy and Verlinde multiplication. This is a fully specified categorical example, whereas diagonalizing the Fibonacci fusion matrix alone certifies its ring data and dimensions but not every categorical coherence equation.\n\nTemperley–Lieb provides a useful bridge between algebraic relations and positive quantum models. Rank-one projections satisfy the finite TL relations at a declared parameter; a trace then needs a separate positive Gram form. Already at two strands, |δ|<1 produces a negative value on x*x. Passing this small test does not prove positivity throughout an infinite tower. Similarly, a normalized bracket gives a conventioned trefoil Jones polynomial without becoming a complete knot invariant. The synthesis preserves these genuinely constructive models while making each change of mathematical type explicit.",
+    "definitions": [
+      "The Hecke braid matrix sends 00↦q00, 11↦q11, 01↦10, 10↦01+(q−q⁻¹)10.",
+      "A fusion ring has a distinguished simple basis with nonnegative integer structure constants and a unit; it does not specify associators.",
+      "For A=F₂², use fusion a⊗b=a+b, F=1, R(a,b)=(−1)^{a₁b₂}, twist q(a)=R(a,a), and S_ab=R(a,b)R(b,a)/2.",
+      "The TL₂ algebra has e²=δe, e*=e, tr1=1 and tre=1/δ for real nonzero δ."
+    ],
+    "theorem": {
+      "statement": "The pointed data above satisfy pentagon and hexagon, and S is real orthogonal with S²=I. Its Verlinde coefficients equal one exactly when c=a+b. Separately the TL₂ trace form is positive semidefinite exactly when |δ|≥1.",
+      "proof": "Since every associator equals one, each pentagon product is one. Each hexagon reduces to R(a,b+c)=R(a,b)R(a,c) or R(a+b,c)=R(a,c)R(b,c), which follows from bilinearity of a₁b₂ over F₂. Double braiding is B(a,b)=(−1)^{a₁b₂+a₂b₁}. For nonzero a, choose b supported in the complementary coordinate to get B(a,b)=−1, so the pairing is nondegenerate. Orthogonality follows from Σ_xB(a+c,x)=4δ_ac: if a+c is nonzero, pairing x with x+x₀ reverses the sign. Thus S²=I. The Verlinde sum is (1/4)Σ_xB(a+b+c,x), giving the group-addition fusion law. For TL₂ write x=a+be. Expanding x*x and using e²=δe gives tr(x*x)=|a|²+2Re(conj(a)b)/δ+|b|². Its Gram matrix has eigenvalues 1±1/δ; both are nonnegative exactly when |δ|≥1. These proofs establish different, explicitly stated pieces of structure."
+    },
+    "worked_example": {
+      "setup": "Order the pointed labels 00,10,01,11, and compare a TL parameter that passes with one that fails.",
+      "calculation": "The twist values are 1,1,1,−1. The S matrix is half of [[1,1,1,1],[1,1,−1,−1],[1,−1,1,−1],[1,−1,−1,1]]. All dimensions are one and the global squared dimension is four. Every fusion triple can be checked exactly using binary addition. For Fibonacci fusion, Nτ=[[0,1],[1,1]] obeys Nτ²=I+Nτ and has positive dimension φ; this ring identity is independently complete without claiming a pentagon proof from one orthogonal F block. At δ=2, the TL₂ Gram eigenvalues are 3/2 and 1/2. At δ=1/2, x=1−e has trace norm-square −2, excluding a positive Hilbert-space realization with that trace.",
+      "meaning": "The finite pointed model has complete coherence data; the surrounding examples demonstrate exactly which smaller certificates are insufficient for a larger categorical claim."
+    },
+    "source_uids": [
+      "2024:Y24-06-010",
+      "2024:Y24-06-011",
+      "2024:Y24-11-012",
+      "2024:Y24-04-015",
+      "2025:Y25-03-028",
+      "2025:Y25-04-004",
+      "2025:Y25-04-006",
+      "2025:Y25-04-007",
+      "2025:Y25-04-005",
+      "2025:Y25-04-008",
+      "2025:Y25-08-003",
+      "2025:Y25-10-018",
+      "2026:Y26-10-035"
+    ],
+    "anchor_uids": [
+      "2024:Y24-06-010",
+      "2024:Y24-11-012",
+      "2025:Y25-03-028",
+      "2025:Y25-04-006",
+      "2025:Y25-08-003",
+      "2025:Y25-10-018"
+    ],
+    "progression": [
+      {
+        "year": 2024,
+        "evidence_uids": [
+          "2024:Y24-06-010",
+          "2024:Y24-11-012",
+          "2024:Y24-04-015",
+          "2024:Y24-06-011"
+        ],
+        "narrative": "Braid deletion, Hecke matrices, TL quotient relations and a trefoil bracket give explicit algebraic tests."
+      },
+      {
+        "year": 2025,
+        "evidence_uids": [
+          "2025:Y25-03-028",
+          "2025:Y25-04-006",
+          "2025:Y25-08-003",
+          "2025:Y25-10-018",
+          "2025:Y25-04-005",
+          "2025:Y25-04-004",
+          "2025:Y25-04-007",
+          "2025:Y25-04-008"
+        ],
+        "narrative": "Fibonacci rings, pointed modular data and trace positivity separate fusion, coherence and unitarity."
+      },
+      {
+        "year": 2026,
+        "evidence_uids": [
+          "2026:Y26-10-035"
+        ],
+        "narrative": "The conditional compact-group determinant twist supplies central arithmetic consequences while the asserted density step remains unproved without its actual matrices."
+      }
+    ],
+    "connections": [
+      {
+        "target_domain": "D04",
+        "relation": "Monoidal coherence",
+        "mathematical_bridge": "Associators and braidings must satisfy pentagon and hexagon; universal relations determine factorization through quotients.",
+        "scope": "General higher categorical constructions are outside the finite model."
+      },
+      {
+        "target_domain": "D05",
+        "relation": "Braids and knots",
+        "mathematical_bridge": "A braid representation and normalized trace can produce knot invariants.",
+        "scope": "Equal polynomials are not generally isotopy certificates."
+      },
+      {
+        "target_domain": "D03",
+        "relation": "Representations and positivity",
+        "mathematical_bridge": "Hecke matrices and trace Gram forms supply different certificates.",
+        "scope": "An algebraic braid matrix need not be a unitary quantum gate."
+      }
+    ],
+    "capabilities": [
+      "C01",
+      "C02",
+      "C03",
+      "C04",
+      "C10",
+      "C15"
+    ],
+    "interactive_contract": {
+      "lab_ids": [],
+      "inputs": "Fusion labels, F and R data, trace normalization and explicit braid matrices.",
+      "outputs": "Coherence residuals, transparent subgroup, S orthogonality, fusion coefficients and positivity tests.",
+      "validation": "Check every finite pentagon/hexagon instance or a symbolic bilinearity proof; check Gram positivity separately.",
+      "status": "Complete four-object worked recipe; no arbitrary anyon, large-category or monodromy-density constructor is implemented."
+    },
+    "limits": "The four-object model does not construct a proposed rank-384 or E₈ category. Orthogonality of one Fibonacci block is not all pentagon equations. The claimed SU(5) density requires recovered matrices, a unitarizing form and exclusion of proper closed subgroups.",
+    "open_questions": [
+      "For the actual proposed anyon encoding, are all F/R blocks and leakage sectors available for a complete coherence and instrument audit?",
+      "Which explicit subgroup argument establishes the closure of a recovered braid representation after its determinant twist?"
+    ],
+    "references": [
+      {
+        "label": "Etingof–Gelaki–Nikshych–Ostrik, Tensor Categories",
+        "url": "https://math.mit.edu/~etingof/egnobookfinal.pdf"
+      },
+      {
+        "label": "Müger, On the structure of modular categories",
+        "url": "https://doi.org/10.1112/S0024611503014187"
+      }
+    ],
+    "refs": [
+      {
+        "label": "Etingof–Gelaki–Nikshych–Ostrik, Tensor Categories",
+        "url": "https://math.mit.edu/~etingof/egnobookfinal.pdf"
+      },
+      {
+        "label": "Müger, On the structure of modular categories",
+        "url": "https://doi.org/10.1112/S0024611503014187"
+      }
+    ]
+  },
+  {
+    "id": "D16-F05",
+    "domain_id": "D16",
+    "title": "Integrable models as finite spectral and tau-function bridges",
+    "central_question": "How can an integrability claim be anchored simultaneously in an explicit operator and a verified scalar equation?",
+    "synopsis": "The integrable strand contains two complementary constructive bridges. A finite quantum spin chain can be diagonalized directly and compared with its Bethe parameterization. A classical nonlinear wave can be built from a tau-function whose bilinear identity fixes its interaction coefficient. In both cases a normalization connects descriptions that would otherwise remain a slogan. The bridge is useful because each side supplies an independent exact residual.\n\nThe four-site XXX chain has a one-magnon sector where the Hamiltonian becomes the cycle Laplacian. Fourier modes diagonalize it, and the finite regular Bethe roots reproduce all nonuniform modes. The uniform mode is present as an infinite-root limit, exposing why a list of finite roots need not be complete. The two-site Gaudin model offers a different spectral-to-differential bridge: a Bethe root supplies a singlet eigenvector and a Miura potential in which the apparent pole cancels exactly. The eigenvalues appear as residues at the physical marked points. This is a complete small calculation, rather than a proof of arbitrary Bethe completeness or a global automorphic correspondence.\n\nThe tau-function side similarly distinguishes interaction from superposition. For KdV, two independent one-soliton exponentials need a mixed exponential term, and its coefficient is forced by the Hirota polynomial. Positivity of the coefficients makes the real tau-function nonsingular. The same construction gives phase shifts and mass by asymptotics and boundary values of logτ. A y-independent solution embeds in the chosen KP equation, but transverse stability and general two-dimensional interactions are additional problems. The unifying capacity is not a universal solver: it is the ability to compare a finite spectral model, a scalar differential operator or a finite exponential identity under explicitly matched conventions.",
+    "definitions": [
+      "In the periodic XXX one-magnon sector, H|j⟩=2|j⟩−|j−1⟩−|j+1⟩ with indices modulo N.",
+      "For the two-site sl₂ Gaudin model at z₁=0,z₂=1, Ω=h⊗h/2+e⊗f+f⊗e, H₁=−Ω,H₂=Ω.",
+      "For k₁>k₂>0, η_i=k_ix−k_i³t+δ_i and τ=1+e^{η₁}+e^{η₂}+A e^{η₁+η₂}, A=((k₁−k₂)/(k₁+k₂))².",
+      "Use u=2∂_x²logτ and the KdV convention u_t+6uu_x+u_xxx=0."
+    ],
+    "theorem": {
+      "statement": "For N=4, the one-magnon XXX sector has eigenvalues 0,2,2,4, with finite regular Bethe roots 1/2,0,−1/2 for the nonzero modes. The stated KdV tau-function satisfies (D_xD_t+D_x⁴)τ·τ=0; A is forced by the mixed exponential coefficient.",
+      "proof": "For a plane wave with p=2πm/N, substitution into the cycle difference gives E=2−2cos p. With N=4 this is 0,2,4,2. The one-root Bethe relation is ((λ+i/2)/(λ−i/2))⁴=1, so λ=(1/2)cot(p/2), giving 1/2,0,−1/2; p=0 is the infinite limit. For KdV use P(k,ω)=kω+k⁴. Each individual exponent obeys P(k_i,−k_i³)=0. The only new mixed condition is A·P(k₁+k₂,−k₁³−k₂³)+P(k₁−k₂,−k₁³+k₂³)=0. The two polynomial values are 3k₁k₂(k₁+k₂)² and −3k₁k₂(k₁−k₂)², which force A. The remaining exponential coefficients reduce to these equations. Dividing the bilinear identity by τ² and differentiating gives KdV. Since all four tau coefficients are positive, τ>0 on real x,t, so this solution has no real tau zeros."
+    },
+    "worked_example": {
+      "setup": "Use the integer cycle Hamiltonian at N=4 and the two-site Gaudin Bethe root w=1/2.",
+      "calculation": "The vectors (1,1,1,1),(1,0,−1,0),(0,1,0,−1),(1,−1,1,−1) have exact eigenvalues 0,2,2,4 and form a basis. For Gaudin, w⁻¹|↓↑⟩+(w−1)⁻¹|↑↓⟩=2|↓↑⟩−2|↑↓⟩ is a singlet with Ω eigenvalue −3/2. Thus H₁,H₂ have values 3/2,−3/2. With u(x)=1/(2x)+1/(2(x−1))−1/(x−1/2), direct rational simplification gives u²−u′=3/[4x²(x−1)²]. The x=1/2 pole disappears because the Bethe equation 1/w+1/(w−1)=0 cancels its residue. This gives a scalar-oper certificate tied to the same eigenvector.",
+      "meaning": "Independent operator and scalar identities are a strong finite bridge. Their scope is the stated sector, solution family and marked-point normalization."
+    },
+    "source_uids": [
+      "2023:M009",
+      "2023:M011",
+      "2023:M012",
+      "2023:M087",
+      "2023:M104",
+      "2023:M105"
+    ],
+    "anchor_uids": [
+      "2023:M011",
+      "2023:M012",
+      "2023:M104",
+      "2023:M105"
+    ],
+    "progression": [
+      {
+        "year": 2023,
+        "evidence_uids": [
+          "2023:M011",
+          "2023:M012",
+          "2023:M104",
+          "2023:M105",
+          "2023:M009",
+          "2023:M087"
+        ],
+        "narrative": "KdV/KP tau-functions, XXX roots and Gaudin scalar equations form the directly evidenced integrability cluster. Their proofs in the annual source volumes are later expositions of these classical models."
+      }
+    ],
+    "connections": [
+      {
+        "target_domain": "D08",
+        "relation": "Nonlinear differential equations",
+        "mathematical_bridge": "A finite exponential coefficient identity produces an exact nonlinear PDE solution.",
+        "scope": "Transverse stability and general scattering need further analytic work."
+      },
+      {
+        "target_domain": "D03",
+        "relation": "Representation decomposition",
+        "mathematical_bridge": "The sl₂ singlet/triplet splitting diagonalizes the two-site invariant interaction.",
+        "scope": "A small decomposition does not establish arbitrary-site Bethe completeness."
+      },
+      {
+        "target_domain": "D07",
+        "relation": "Spectral evolution",
+        "mathematical_bridge": "Self-adjoint mode decompositions give norm-preserving fractional evolution.",
+        "scope": "Boundary conventions determine which fractional operator is meant."
+      }
+    ],
+    "capabilities": [
+      "C01",
+      "C03",
+      "C07",
+      "C09",
+      "C15"
+    ],
+    "interactive_contract": {
+      "lab_ids": [],
+      "inputs": "Finite Hamiltonian and sector, Bethe normalization, marked points or positive tau parameters.",
+      "outputs": "Eigenvector residuals, scalar-potential identity and bilinear exponential coefficients.",
+      "validation": "Check independent matrix products and polynomial/rational identities; include infinite or singular-root limits explicitly.",
+      "status": "Exact worked spectral and tau-function recipes; no general Bethe, KP or scalar-oper solver is implemented."
+    },
+    "limits": "No arbitrary-sector Bethe completeness, full Gaudin theorem or all-KP classification is proved. Coincident soliton parameters and singular roots require their own limiting treatment. The source years do not evidence a continuous year-by-year integrability project.",
+    "open_questions": [
+      "Can the next recovered finite magnetization sector be diagonalized with every singular or infinite Bethe state accounted for?",
+      "For a specified higher-site Gaudin system, which exact eigenvectors certify all joint eigenvalues and apparent-pole cancellations?"
+    ],
+    "references": [
+      {
+        "label": "Faddeev, How Algebraic Bethe Ansatz works for integrable model",
+        "url": "https://arxiv.org/abs/hep-th/9605187"
+      },
+      {
+        "label": "Frenkel, Gaudin model and opers",
+        "url": "https://arxiv.org/abs/math/0407524"
+      },
+      {
+        "label": "Biondini and Chakravarty, Soliton solutions of the KP II equation",
+        "url": "https://arxiv.org/abs/nlin/0511068"
+      }
+    ],
+    "refs": [
+      {
+        "label": "Faddeev, How Algebraic Bethe Ansatz works for integrable model",
+        "url": "https://arxiv.org/abs/hep-th/9605187"
+      },
+      {
+        "label": "Frenkel, Gaudin model and opers",
+        "url": "https://arxiv.org/abs/math/0407524"
+      },
+      {
+        "label": "Biondini and Chakravarty, Soliton solutions of the KP II equation",
+        "url": "https://arxiv.org/abs/nlin/0511068"
+      }
+    ]
+  },
+  {
+    "id": "D16-F06",
+    "domain_id": "D16",
+    "title": "Deformations, obstruction equations and Poisson transport",
+    "central_question": "When does a first-order algebraic change extend to a genuine family, and which structural invariants can still jump?",
+    "synopsis": "Deformation is a family of equations, not an adjective attached to a new notation. Its data include a coefficient ring, an object, an equivalence relation and a compatibility equation at every order. In associative algebra, the first-order equation is a Hochschild cocycle condition. In a differential graded Lie model it becomes a Maurer–Cartan equation, with a second-order cohomology class measuring obstruction. Neither a tangent vector nor a long finite truncation proves an all-order extension without a theorem controlling the remaining equations.\n\nThree small models make the distinctions explicit. A characteristic-two character of C₂ has a nontrivial tangent direction that cannot lift one order further. A dual-number multiplication can be deformed to x²=t as a free rank-two algebra, yet its positive-degree Hochschild cohomology jumps at the special fibre. A reflection-deformed derivative on polynomials supplies an exact represented relation [Dκ,X]=I+κs for every parameter; its proof uses the monomial action rather than an unsupported universal classification. These are constructive examples of obstruction, flatness with changing derived invariants, and a genuinely defined deformation law.\n\nPoisson wall transport adds a geometric version. A skew lattice pairing gives an automorphism x^m↦x^m f(x^γ)^{B(γ,m)}. Skew symmetry and B(γ,γ)=0 ensure the distinguished monomial is fixed and make the inverse and bracket compatibility work. Replacing the pairing by an arbitrary matrix loses the proof. The same principle links back to Moyal exactness: each higher equation must actually vanish, and its degree or filtration bound determines whether a finite check is complete. The atlas presents finite obstruction calculations with exact coefficient rings and reports the boundary between formal existence, finite truncation, convergence and physical interpretation.",
+    "definitions": [
+      "A first-order associative deformation is m_t=m+tφ modulo t², with multiplication unit and equivalence under basis changes specified.",
+      "Its cocycle equation is aφ(b,c)−φ(ab,c)+φ(a,bc)−φ(a,b)c=0.",
+      "For a differential graded Lie algebra in characteristic zero, α satisfies dα+[α,α]/2=0; coefficients at each order give extension equations.",
+      "A flat rank-two family A_t=k[x]/(x²−t) is free on 1,x over its parameter ring; assume characteristic different from two for the stated Hochschild comparison."
+    ],
+    "theorem": {
+      "statement": "Over a characteristic-two field, the C₂-character tangent u=1+ε modulo ε² satisfies u²=1 but cannot lift to u=1+η+bη² modulo η³. Over an algebraically closed field of characteristic different from two, A_t=k[x]/(x²−t) has HH^n=0 for t≠0 and n>0, while at t=0 every positive-degree HH^n has dimension one.",
+      "proof": "In characteristic two, (1+ε)²=1 because 2ε=ε²=0. For a prospective lift, (1+η+bη²)²=1+η² modulo η³: doubled terms vanish and the η² coefficient cannot be changed by b. Thus the tangent relation has an unavoidable next-order obstruction. For the flat algebra family, division by the monic polynomial leaves a unique representative a+bx, proving freeness of rank two. At t≠0, choose a²=t; x−a and x+a are coprime, so Chinese remainders give A_t≅k×k, a separable algebra with no positive-degree Hochschild cohomology. At t=0 the standard two-periodic bimodule resolution has maps x⊗1−1⊗x and x⊗1+1⊗x. Applying Hom over A^e gives alternating maps zero and multiplication by 2x. In positive degrees the kernels or cokernels have dimension one: ker(2x)=kx and A/(2x)=k. Thus flatness of the underlying module does not force derived-invariant constancy."
+    },
+    "worked_example": {
+      "setup": "Compare a finite-order formal solution, a polynomial deformation and its special fibre.",
+      "calculation": "The scalar equation s¹³=0 is satisfied by s=ε modulo ε¹³, so it passes all coefficients through order twelve. The same leading direction fails modulo ε¹⁴ because its ε¹³ coefficient is one; no higher correction changes that leading term. This gives a precise finite-truncation boundary. For the reflection model Dκx^n=[n+(κ/2)(1−(−1)^n)]x^{n−1}. Subtracting XDκ from DκX gives coefficient 1+κ on even n and 1−κ on odd n, exactly I+κs. At the dual-number fibre x²=0, D(x)=x is a nonzero derivation; it represents the HH¹ direction that disappears in the split generic fibre.",
+      "meaning": "One model can be fully verified at each claimed level without carrying unrelated historical quiver or Galois conclusions. Extension and flatness are distinct mathematical outputs."
+    },
+    "source_uids": [
+      "2023:M111",
+      "2024:Y24-08-005",
+      "2024:Y24-08-010",
+      "2025:Y25-02-015",
+      "2025:Y25-03-018",
+      "2026:Y26-05-029",
+      "2026:Y26-08-014",
+      "2026:Y26-08-012",
+      "2026:Y26-08-011"
+    ],
+    "anchor_uids": [
+      "2024:Y24-08-005",
+      "2024:Y24-08-010",
+      "2025:Y25-02-015",
+      "2026:Y26-05-029",
+      "2026:Y26-08-012",
+      "2026:Y26-08-014"
+    ],
+    "progression": [
+      {
+        "year": 2024,
+        "evidence_uids": [
+          "2024:Y24-08-005",
+          "2024:Y24-08-010"
+        ],
+        "narrative": "A finite character obstruction and first-order associativity introduce the coefficient-ring and cocycle viewpoint."
+      },
+      {
+        "year": 2025,
+        "evidence_uids": [
+          "2025:Y25-02-015",
+          "2025:Y25-03-018"
+        ],
+        "narrative": "The reflection-deformed polynomial representation provides an all-parameter exact relation, while a Maurer–Cartan model specifies curvature."
+      },
+      {
+        "year": 2026,
+        "evidence_uids": [
+          "2026:Y26-05-029",
+          "2026:Y26-08-012",
+          "2026:Y26-08-014",
+          "2026:Y26-08-011"
+        ],
+        "narrative": "Second-order obstruction classes, jumping Hochschild cohomology and Poisson wall maps make extension, flatness and transport separately testable."
+      }
+    ],
+    "connections": [
+      {
+        "target_domain": "D04",
+        "relation": "Derived obstruction classes",
+        "mathematical_bridge": "The coefficient of t² in Maurer–Cartan is a cocycle whose class in H² must vanish.",
+        "scope": "An L∞ structure has further brackets and higher-order conditions."
+      },
+      {
+        "target_domain": "D02",
+        "relation": "Flat algebraic families",
+        "mathematical_bridge": "A locally free module can have jumping cohomology under specialization.",
+        "scope": "A basis dimension does not compute a quiver Kuranishi space."
+      },
+      {
+        "target_domain": "D06",
+        "relation": "Poisson wall automorphisms",
+        "mathematical_bridge": "Skew pairings make the monomial transport bracket-preserving and invertible.",
+        "scope": "A non-skew source matrix needs a different definition or proof."
+      }
+    ],
+    "capabilities": [
+      "C01",
+      "C03",
+      "C10",
+      "C11",
+      "C15"
+    ],
+    "interactive_contract": {
+      "lab_ids": [
+        "L06"
+      ],
+      "inputs": "Multiplication table or graded bracket, coefficient ring, truncation order and specified equivalences.",
+      "outputs": "Order-by-order equations, exact obstruction class or failed coefficient, flat basis and jump locus in the worked family.",
+      "validation": "Expand coefficients exactly, verify cocycle and boundary conditions, retain characteristic assumptions and prove any all-order closure.",
+      "status": "The Moyal lab implements a related finite deformation test; the obstruction and wall-transport examples are exact recipes."
+    },
+    "limits": "No recovered order-twelve packet is silently extended to all orders. The dual-number comparison does not compute the actual quiver Hochschild profile. Formal existence does not establish convergence or a physical deformation.",
+    "open_questions": [
+      "For the recovered quiver family, what actual cochain representatives and higher obstruction equations determine its Kuranishi locus?",
+      "Which degree, nilpotence or cohomological vanishing theorem turns a proposed finite-order deformation check into an all-order certificate?"
+    ],
+    "references": [
+      {
+        "label": "Mazur, Deforming Galois Representations",
+        "url": "https://bpb-us-e1.wpmucdn.com/sites.harvard.edu/dist/a/189/files/2023/01/Deforming-Galois-Representations.pdf"
+      },
+      {
+        "label": "Ames, Cagliero and Tirao, Hochschild cohomology of truncated quiver algebras",
+        "url": "https://arxiv.org/abs/math/0603056"
+      }
+    ],
+    "refs": [
+      {
+        "label": "Mazur, Deforming Galois Representations",
+        "url": "https://bpb-us-e1.wpmucdn.com/sites.harvard.edu/dist/a/189/files/2023/01/Deforming-Galois-Representations.pdf"
+      },
+      {
+        "label": "Ames, Cagliero and Tirao, Hochschild cohomology of truncated quiver algebras",
+        "url": "https://arxiv.org/abs/math/0603056"
+      }
+    ]
+  }
+]

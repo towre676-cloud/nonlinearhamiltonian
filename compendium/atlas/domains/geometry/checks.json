@@ -1,0 +1,173 @@
+{
+  "status": "pass",
+  "check_count": 17,
+  "scope": "Exact finite supporting models and source-structure checks. Infinite and smooth statements also require the written proofs and hypotheses.",
+  "checks": [
+    {
+      "id": "G01-pushout",
+      "family_ids": [
+        "D04-F01"
+      ],
+      "status": "pass",
+      "arithmetic": "exact rational/integer or finite combinatorial",
+      "evidence": "Relation is killed by a surjective quotient; the compatible functional factors with value 17."
+    },
+    {
+      "id": "G02-adjunction-model",
+      "family_ids": [
+        "D04-F01"
+      ],
+      "status": "pass",
+      "arithmetic": "exact rational/integer or finite combinatorial",
+      "evidence": "Tensor–Hom routes agree on the worked bilinear form; finite coevaluation reconstructs the vector."
+    },
+    {
+      "id": "G03-total-signs",
+      "family_ids": [
+        "D04-F02"
+      ],
+      "status": "pass",
+      "arithmetic": "exact rational/integer or finite combinatorial",
+      "evidence": "Signed totalization is acyclic; the unsigned square is exactly 2 over Q."
+    },
+    {
+      "id": "G04-chain-contraction",
+      "family_ids": [
+        "D04-F02"
+      ],
+      "status": "pass",
+      "arithmetic": "exact rational/integer or finite combinatorial",
+      "evidence": "Contraction identities hold for exact parameter choices; the exceptional parameter makes the pair noncontractible."
+    },
+    {
+      "id": "G05-derived-dualnumbers",
+      "family_ids": [
+        "D04-F03"
+      ],
+      "status": "pass",
+      "arithmetic": "exact rational/integer or finite combinatorial",
+      "evidence": "The periodic free-resolution differential has equal kernel/image and becomes zero on k; section constraints contradict."
+    },
+    {
+      "id": "G06-obstruction-class",
+      "family_ids": [
+        "D04-F03"
+      ],
+      "status": "pass",
+      "arithmetic": "exact rational/integer or finite combinatorial",
+      "evidence": "Double-point lift condition is a^2=0; the finite Maurer–Cartan defect is canceled by an explicit boundary."
+    },
+    {
+      "id": "G07-filtration-extension",
+      "family_ids": [
+        "D04-F04"
+      ],
+      "status": "pass",
+      "arithmetic": "exact rational/integer or finite combinatorial",
+      "evidence": "Equal initial graded dimensions allow different differentials; common Z/2 layers conceal distinct element orders."
+    },
+    {
+      "id": "G08-limit-telescoping",
+      "family_ids": [
+        "D04-F04"
+      ],
+      "status": "pass",
+      "arithmetic": "exact rational/integer or finite combinatorial",
+      "evidence": "Exact finite telescoping and 2-adic divisibility support the written lim^1 proof; no finite test certifies an infinite tower."
+    },
+    {
+      "id": "G09-homology-and-torsion",
+      "family_ids": [
+        "D05-F01",
+        "D04-F02"
+      ],
+      "status": "pass",
+      "arithmetic": "exact rational/integer or finite combinatorial",
+      "evidence": "Triangle boundary/filling have the stated Betti vectors; the RP2 cellular differential has exact torsion order two."
+    },
+    {
+      "id": "G10-persistence",
+      "family_ids": [
+        "D05-F02"
+      ],
+      "status": "pass",
+      "arithmetic": "exact rational/integer or finite combinatorial",
+      "evidence": "All partial diagram matchings give bottleneck 3/10; finite bar ranks and the random square lifetime 1/5 agree."
+    },
+    {
+      "id": "G11-gluing-local-system",
+      "family_ids": [
+        "D05-F03"
+      ],
+      "status": "pass",
+      "arithmetic": "exact rational/integer or finite combinatorial",
+      "evidence": "Čech rank, exact triangle potentials and both holonomy-controlled local-system ranks are verified over Q."
+    },
+    {
+      "id": "G12-projective-cocycle",
+      "family_ids": [
+        "D05-F04"
+      ],
+      "status": "pass",
+      "arithmetic": "exact rational/integer or finite combinatorial",
+      "evidence": "All 64 cocycle identities pass; asymmetric coordinate multiplier cannot be an abelian coboundary; normalized torus model gives 12."
+    },
+    {
+      "id": "G13-metric-models",
+      "family_ids": [
+        "D06-F01"
+      ],
+      "status": "pass",
+      "arithmetic": "exact rational/integer or finite combinatorial",
+      "evidence": "The declared K2/K3 transport plans, scaling powers and all triples in a finite prefix ultrametric pass."
+    },
+    {
+      "id": "G14-symplectic-models",
+      "family_ids": [
+        "D06-F02"
+      ],
+      "status": "pass",
+      "arithmetic": "exact rational/integer or finite combinatorial",
+      "evidence": "The momentum-level form has precisely the cyclic-coordinate kernel; the quotient, oscillator rotation and cotangent chart identities pass."
+    },
+    {
+      "id": "G15-exact-holonomy",
+      "family_ids": [
+        "D06-F03",
+        "D05-F03"
+      ],
+      "status": "pass",
+      "arithmetic": "exact rational/integer or finite combinatorial",
+      "evidence": "The full two-variable shear commutator is verified coefficient by coefficient; conjugate holonomies retain trace and determinant."
+    },
+    {
+      "id": "G16-curvature-energy",
+      "family_ids": [
+        "D06-F04"
+      ],
+      "status": "pass",
+      "arithmetic": "exact rational/integer or finite combinatorial",
+      "evidence": "The full quadratic objective gap is 4a²/3; frame cross products and scale-independent round-sphere energy coefficients pass."
+    },
+    {
+      "id": "G17-source-coverage",
+      "family_ids": [
+        "D04-F01",
+        "D04-F02",
+        "D04-F03",
+        "D04-F04",
+        "D05-F01",
+        "D05-F02",
+        "D05-F03",
+        "D05-F04",
+        "D06-F01",
+        "D06-F02",
+        "D06-F03",
+        "D06-F04"
+      ],
+      "status": "pass",
+      "arithmetic": "exact rational/integer or finite combinatorial",
+      "evidence": "All 137 initial primary entries reviewed; every source ID and progression year exists; family and chapter depth contracts pass."
+    }
+  ]
+}

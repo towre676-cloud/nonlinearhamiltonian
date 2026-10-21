@@ -1,0 +1,420 @@
+{
+  "domains": [
+    {
+      "id": "D01",
+      "title": "Arithmetic and number fields",
+      "owner": "arithmetic",
+      "patterns": [
+        "number theory",
+        "arithmetic",
+        "diophantine",
+        "pell",
+        "prime",
+        "cyclotomic",
+        "padic",
+        "p-adic",
+        "number field",
+        "totient",
+        "divisor",
+        "class field",
+        "selmer",
+        "mordell",
+        "thue",
+        "ramification",
+        "zeta"
+      ]
+    },
+    {
+      "id": "D02",
+      "title": "Algebraic and arithmetic geometry",
+      "owner": "arithmetic",
+      "patterns": [
+        "algebraic geometry",
+        "arithmetic geometry",
+        "scheme",
+        "variet",
+        "motivic",
+        "motive",
+        "elliptic curve",
+        "genus",
+        "algebraic curve",
+        "singularit",
+        "intersection",
+        "hodge",
+        "picard",
+        "moduli"
+      ]
+    },
+    {
+      "id": "D03",
+      "title": "Algebra and representation theory",
+      "owner": "algebra",
+      "patterns": [
+        "algebra",
+        "representation",
+        "monoid",
+        "semigroup",
+        "group theory",
+        "lie group",
+        "lie algebra",
+        "octonion",
+        "quaternion",
+        "quiver",
+        "module",
+        "galois",
+        "invariant theory"
+      ]
+    },
+    {
+      "id": "D04",
+      "title": "Categories and homological methods",
+      "owner": "geometry",
+      "patterns": [
+        "category",
+        "categorical",
+        "functor",
+        "derived",
+        "perverse",
+        "sheaf",
+        "homological",
+        "ext",
+        "spectral sequence",
+        "chain complex",
+        "exact sequence",
+        "morita",
+        "adjunction"
+      ]
+    },
+    {
+      "id": "D05",
+      "title": "Topology, cohomology and gluing",
+      "owner": "geometry",
+      "patterns": [
+        "topology",
+        "topological",
+        "cohomology",
+        "homology",
+        "homotopy",
+        "cech",
+        "cocycle",
+        "obstruction",
+        "gluing",
+        "nerve",
+        "persistence",
+        "simplicial",
+        "winding"
+      ]
+    },
+    {
+      "id": "D06",
+      "title": "Differential and symplectic geometry",
+      "owner": "geometry",
+      "patterns": [
+        "differential geometry",
+        "symplectic",
+        "contact",
+        "geodesic",
+        "riemannian",
+        "finsler",
+        "curvature",
+        "manifold",
+        "jacobi",
+        "metric geometry",
+        "moment map",
+        "holonomy",
+        "connection",
+        "parallel transport"
+      ]
+    },
+    {
+      "id": "D07",
+      "title": "Analysis, transforms and special functions",
+      "owner": "analysis",
+      "patterns": [
+        "analysis",
+        "analytic",
+        "fourier",
+        "laplace",
+        "integral",
+        "special function",
+        "hypergeometric",
+        "bessel",
+        "airy",
+        "gamma",
+        "elliptic integral",
+        "transform",
+        "orthogonal polynom",
+        "functional",
+        "hilbert space",
+        "hardy",
+        "bmo"
+      ]
+    },
+    {
+      "id": "D08",
+      "title": "Differential equations and asymptotics",
+      "owner": "analysis",
+      "patterns": [
+        "differential equation",
+        "pde",
+        "partial differential",
+        "semigroup",
+        "vorticity",
+        "navier",
+        "stokes",
+        "diffusion",
+        "reaction",
+        "heat equation",
+        "asymptotic",
+        "resurgence",
+        "borel",
+        "frobenius",
+        "hill",
+        "mathieu",
+        "resolvent"
+      ]
+    },
+    {
+      "id": "D09",
+      "title": "Dynamics, mechanics and mathematical modeling",
+      "owner": "analysis",
+      "patterns": [
+        "dynamics",
+        "dynamical",
+        "mechanics",
+        "renormalization",
+        "bifurcation",
+        "logistic",
+        "hamiltonian",
+        "oscillator",
+        "dimensional",
+        "units",
+        "mass balance",
+        "differential law",
+        "trajectory",
+        "stability"
+      ]
+    },
+    {
+      "id": "D10",
+      "title": "Probability and stochastic processes",
+      "owner": "probability",
+      "patterns": [
+        "probability",
+        "probabilistic",
+        "stochastic",
+        "brownian",
+        "martingale",
+        "ito",
+        "feynman",
+        "random variable",
+        "random walk",
+        "central limit",
+        "hypergeometric sampling",
+        "random matrix",
+        "distribution",
+        "variance"
+      ]
+    },
+    {
+      "id": "D11",
+      "title": "Information, statistics and inference",
+      "owner": "probability",
+      "patterns": [
+        "information",
+        "statistic",
+        "inference",
+        "entropy",
+        "fisher",
+        "covariance",
+        "regression",
+        "likelihood",
+        "bayes",
+        "estimat",
+        "sampling",
+        "signal",
+        "noise",
+        "measurement",
+        "correlation",
+        "fidelity"
+      ]
+    },
+    {
+      "id": "D12",
+      "title": "Optimization and decision theory",
+      "owner": "probability",
+      "patterns": [
+        "optimization",
+        "optimisation",
+        "decision",
+        "convex",
+        "duality",
+        "primal",
+        "dual bound",
+        "semidefinite",
+        "variational",
+        "knapsack",
+        "optimal",
+        "linear program",
+        "polytope",
+        "pareto",
+        "cost"
+      ]
+    },
+    {
+      "id": "D13",
+      "title": "Combinatorics and graph mathematics",
+      "owner": "computation",
+      "patterns": [
+        "combinator",
+        "graph",
+        "enumeration",
+        "counting",
+        "partition",
+        "lattice geometry",
+        "design theory",
+        "incidence",
+        "fibonacci",
+        "matching",
+        "finite geometry",
+        "corners",
+        "routing"
+      ]
+    },
+    {
+      "id": "D14",
+      "title": "Logic, computation and exact certification",
+      "owner": "computation",
+      "patterns": [
+        "computation",
+        "logic",
+        "algorithm",
+        "automata",
+        "automaton",
+        "compiler",
+        "certificate",
+        "proof",
+        "boolean",
+        "bdd",
+        "hash",
+        "machine",
+        "coding",
+        "decoder",
+        "hankel",
+        "formal language",
+        "semantics",
+        "free monoid"
+      ]
+    },
+    {
+      "id": "D15",
+      "title": "Control, observability and inverse problems",
+      "owner": "computation",
+      "patterns": [
+        "control",
+        "observability",
+        "observable",
+        "inverse problem",
+        "regularization",
+        "gramian",
+        "kalman",
+        "descriptor",
+        "lyapunov",
+        "reconstruction",
+        "target",
+        "sensor",
+        "filter",
+        "stabilization",
+        "contraction",
+        "identifiab"
+      ]
+    },
+    {
+      "id": "D16",
+      "title": "Quantum, deformation and integrable structures",
+      "owner": "algebra",
+      "patterns": [
+        "quantum",
+        "deformation",
+        "moyal",
+        "poisson",
+        "integrab",
+        "anyon",
+        "braid",
+        "pauli",
+        "weyl",
+        "boson",
+        "qft",
+        "tqft",
+        "yang",
+        "fusion",
+        "kms",
+        "schrodinger",
+        "spectral triple",
+        "chern"
+      ]
+    }
+  ],
+  "capabilities": [
+    {
+      "id": "C01",
+      "title": "Calculate exactly"
+    },
+    {
+      "id": "C02",
+      "title": "Enumerate and count"
+    },
+    {
+      "id": "C03",
+      "title": "Certify a result"
+    },
+    {
+      "id": "C04",
+      "title": "Classify and quotient"
+    },
+    {
+      "id": "C05",
+      "title": "Reconstruct a target"
+    },
+    {
+      "id": "C06",
+      "title": "Optimize and decide"
+    },
+    {
+      "id": "C07",
+      "title": "Evolve or simulate"
+    },
+    {
+      "id": "C08",
+      "title": "Approximate with error bounds"
+    },
+    {
+      "id": "C09",
+      "title": "Analyze spectra and transforms"
+    },
+    {
+      "id": "C10",
+      "title": "Transport and glue"
+    },
+    {
+      "id": "C11",
+      "title": "Deform and bifurcate"
+    },
+    {
+      "id": "C12",
+      "title": "Quantify uncertainty"
+    },
+    {
+      "id": "C13",
+      "title": "Inspect geometry"
+    },
+    {
+      "id": "C14",
+      "title": "Design an experiment"
+    },
+    {
+      "id": "C15",
+      "title": "Compose mathematical structures"
+    }
+  ]
+}

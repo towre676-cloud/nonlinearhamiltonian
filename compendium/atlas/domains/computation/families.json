@@ -1,0 +1,1466 @@
+[
+  {
+    "id": "D13-F01",
+    "domain_id": "D13",
+    "title": "Exact populations: products, recurrences and reversible addresses",
+    "central_question": "How can a finite combinatorial population be counted, optimized and indexed without confusing objects with their statistics?",
+    "synopsis": "The recurring constructive idea is to make an object contribute exactly once to a finite sum. A partition contributes a monomial through its part multiplicities; a tableau contributes through the position of its largest entry; a project selection contributes through one factor for every labeled project. These constructions give independent descriptions of the same population rather than a fit to its reported size. They also explain why equal weights do not merge labeled selections and why a terminal in a reduced decision diagram can represent many assignments. Once completion counts are available, enumeration becomes an address system: the same integers support counting, conditional queries, exact uniform sampling, and an optimum proved by a threshold population of size one. The mathematical advance is the unification of these operations under a single disjoint decomposition. It does not require trusting an optimizer or assuming that a compact diagram has already retained every multiplicity.",
+    "definitions": [
+      "A completion count C(q) is the number of feasible objects extending a prefix q; it counts original objects, unless a quotient population has explicitly been chosen.",
+      "For labeled binary choices with nonnegative vector weights w_i and capacity b, C(i,b) counts feasible assignments of coordinates i,…,n−1.",
+      "The generating polynomial ∏_i(1+z^{w_i}t^{p_i}) records vector weight and integer profit with multiplicity; a coefficient counts choices, not distinct numerical sums.",
+      "A species a_1≥a_2≥…≥0 corresponds bijectively to differences d_j=a_j−a_{j+1}; its least representative is ∏_j P_j^{d_j}, where P_j is the jth primorial."
+    ],
+    "theorem": {
+      "statement": "For nonnegative weights, C(i,b)=C(i+1,b)+C(i+1,b−w_i), with C(i,b)=0 if a capacity coordinate is negative and C(n,b)=1 otherwise. These counts yield inverse bijections rank:Ω→{0,…,|Ω|−1} and unrank. A feasible object of profit v is the unique maximizer if the count of feasible objects with profit at least v equals one.",
+      "proof": "Split each population according to its next bit. The two pieces are disjoint and correspond exactly to the smaller residual capacities, proving the recurrence by induction. If the entire suffix fits, every remaining bit is free and contributes 2^{n−i}; an omitted block of g coordinates therefore contributes a factor 2^g. In lexicographic order the zero branch occupies an initial address interval of length C(q0); the one branch occupies the next interval. Unranking compares an address with C(q0), subtracting that count in the one branch; ranking performs the inverse additions. Induction down the tree proves a bijection, including empty branches. A uniform address consequently induces a uniform object. Finally a singleton threshold population includes the supplied feasible witness, excludes every higher-profit object and excludes every competing equal-profit object. This proves optimum and uniqueness together."
+    },
+    "worked_example": {
+      "setup": "Use three distinct projects with weights (2,3,4), capacity 5 and profits (3,4,5). Also compare a small partition problem.",
+      "calculation": "The feasible words in zero-before-one order are 000,001,010,100,110. Their profits are 0,5,4,3,7, so addresses 0,…,4 enumerate the complete population and 110 is uniquely optimal. The prefix 1 has two completions. Three unbiased random bits can sample an address by rejecting 5,6,7; direct reduction modulo 5 instead gives probabilities (2,2,2,1,1)/8. Independently, for species with least representative at most 12, the inequality 2^{d_1}6^{d_2}≤12 gives representatives 1,2,4,6,8,12. A partition dynamic program gives p(5)=7, while corner removal gives five standard tableaux of shape (3,2). These different integers count different declared objects.",
+      "meaning": "An exact count is useful infrastructure: it supports reversible inspection, unbiased sampling and optimality witnesses while preserving which population was actually counted."
+    },
+    "source_uids": [
+      "2023:M035",
+      "2023:M075",
+      "2024:Y24-07-008",
+      "2026:Y26-03-027",
+      "2026:Y26-05-021",
+      "2026:Y26-10-015",
+      "2026:Y26-10-016",
+      "2025:Y25-01-010"
+    ],
+    "anchor_uids": [
+      "2023:M035",
+      "2024:Y24-07-008",
+      "2026:Y26-05-021",
+      "2026:Y26-10-015",
+      "2026:Y26-10-016"
+    ],
+    "progression": [
+      {
+        "year": 2023,
+        "evidence_uids": [
+          "2023:M035",
+          "2023:M075"
+        ],
+        "narrative": "Tableaux and set partitions establish the need to declare the population and distinguish a counting statistic from an energy."
+      },
+      {
+        "year": 2024,
+        "evidence_uids": [
+          "2024:Y24-07-008"
+        ],
+        "narrative": "Formal products become exact finite coefficient recurrences; the classical pentagonal identity is the stated input, not something established by finite tests."
+      },
+      {
+        "year": 2026,
+        "evidence_uids": [
+          "2026:Y26-03-027",
+          "2026:Y26-05-021",
+          "2026:Y26-10-015",
+          "2026:Y26-10-016"
+        ],
+        "narrative": "Fibonacci decompositions, primorial species and project populations supply several realizations of disjoint recursion. The October treatments add threshold certificates and reversible addresses. This retrospective organization does not date the present proof to earlier conversations."
+      }
+    ],
+    "connections": [
+      {
+        "target_domain": "D01",
+        "relation": "Prime factorizations encode partition species",
+        "mathematical_bridge": "a_i=Σ_{j≥i}d_j changes ∏p_i^{a_i} into ∏P_j^{d_j}.",
+        "scope": "This is an exact bijection; its sharp asymptotic prefactor requires further analysis."
+      },
+      {
+        "target_domain": "D12",
+        "relation": "Optimization is a threshold census",
+        "mathematical_bridge": "Count {x feasible:profit(x)≥v} and check a witness at v.",
+        "scope": "A particular large historical coefficient table must still be supplied."
+      },
+      {
+        "target_domain": "D14",
+        "relation": "A completion oracle is an address interpreter",
+        "mathematical_bridge": "The identities C(q)=C(q0)+C(q1) certify rank/unrank semantics.",
+        "scope": "Implementation correctness includes skipped-variable multiplicity and integer bounds."
+      }
+    ],
+    "capabilities": [
+      "C01",
+      "C02",
+      "C03",
+      "C06"
+    ],
+    "interactive_contract": {
+      "lab_ids": [
+        "L02"
+      ],
+      "inputs": "Small labeled weights, capacities, profits and an address or bit word.",
+      "outputs": "L02: exact six-item population, optimum multiplicity and object at an integer address. General rank/unrank and completion queries are the checked recipe.",
+      "validation": "Exhaustive enumeration independently checks completion counts and both inverse identities on every small feasible word.",
+      "status": "Implemented small finite lab; general population and historical large instance remain separate."
+    },
+    "limits": "The Petersen total 702,508,860,122,761, optimum 16,537 and uniqueness are historical source claims. The fifty input rows, full 9,190,151-node DAG and complete formal bridge were unavailable in the annual source; this family does not claim their replay. Exact uniformity assumes a uniform integer source. A deterministic seed supplies reproducibility alone.",
+    "open_questions": [
+      "Which separator or variable order minimizes intermediate state while preserving the exact count?",
+      "Can the full historical Petersen table, DAG and proof dependencies be recovered and checked independently?"
+    ],
+    "references": [
+      {
+        "label": "NIST DLMF, unrestricted partitions",
+        "url": "https://dlmf.nist.gov/27.14"
+      },
+      {
+        "label": "Bryant, Graph-Based Algorithms for Boolean Function Manipulation",
+        "url": "https://doi.org/10.1184/r1/6605990"
+      }
+    ]
+  },
+  {
+    "id": "D13-F02",
+    "domain_id": "D13",
+    "title": "Graph observations: spectra, cut censuses and stronger energy probes",
+    "central_question": "Which graph features survive an observation, and what extra measurement separates a known collision?",
+    "synopsis": "The graph thread develops from a warning about incomplete spectral observations into an exact hierarchy of finite invariants. A graph can be encoded by its adjacency matrix, its Laplacian, a heat operator, a heat trace, diagonal heat signatures, binary cut statistics or integer-height energy coefficients. These are different observation maps. Equality at one level need not imply equality at a richer level, and a numerical agreement at several parameters does not prove equality of a polynomial invariant. The productive method is to construct a full exact collision, identify the discarded correlations, then design a stronger finite observation. Incidence identities provide a parallel constructive route: singular values of a point-line incidence matrix determine the spectrum of its bipartite Levi graph. The centered Green matrix adds a variational capacity, translating a graph operator into an exact energy required to force one coordinate while maintaining zero mean.",
+    "definitions": [
+      "For a simple graph G, L=D−A and E_G(h)=hᵀLh=Σ_{uv∈E}(h_u−h_v)^2.",
+      "The binary census records all pairs (Σh_i,E_G(h)) for h∈{0,1}^V; on binary heights E_G is a cut boundary size.",
+      "The formal integer-height series F_G(x,q)=Σ_{h∈Z_≥0^V}x^{Σh_i}q^{E_G(h)} has finitely many terms at every fixed x-degree.",
+      "For λ>0 and Π=I−11ᵀ/n, the centered Green matrix K=Π(λI+L)^{-1}Π is the inverse of λI+L on 1⊥."
+    ],
+    "theorem": {
+      "statement": "The explicit seven-vertex graphs G and H below have identical complete binary size-energy censuses but different integer-height series: [x³](F_G−F_H)=q³(1−q)(1−q³)²(1−q⁴)². Separately, for any graph with n≥2, min{vᵀ(λI+L)v:1ᵀv=0,v_i=a}=a²/K_ii.",
+      "proof": "For the collision, enumerate every one of the 128 binary subsets and store its size and cut size as an integer histogram. For total height R enumerate all weak compositions of R into seven coordinates, recording energy. Exact subtraction at R=0,1,2 is zero; at R=3 its coefficient polynomial factors as stated. This finite computation is a proof certificate for these explicit graphs. For the variational theorem, QK=Π on 1⊥. Thus v_i=(Ke_i)ᵀQv and Cauchy–Schwarz in the positive Q-inner product gives a²≤K_ii vᵀQv. Equality holds at v=aKe_i/K_ii; its mean is zero and its ith component is a. The inverse is positive on 1⊥, so K_ii>0. This proves both the sharp bound and its unique minimizer."
+    },
+    "worked_example": {
+      "setup": "Use G={(0,3),(0,4),(0,6),(1,2),(1,3),(2,3),(2,4),(3,5)} and H={(0,1),(0,4),(0,6),(1,5),(1,6),(2,6),(3,6),(4,5)}. For a second model use the path P₃ and λ=2.",
+      "calculation": "The census collision is exact over all binary assignments. At q=1/2, the first height separation equals (1/8)(1/2)(7/8)^2(15/16)^2=11025/262144. Support-three terms already cancel because they are binary; support-one terms cancel through the degree census, so the discrepancy comes from support two. For P₃, exact inversion gives diag K=(1/5,2/15,1/5). Forcing an endpoint to a under zero mean therefore costs 5a², while forcing the center costs 15a²/2. As a separate incidence example, the Fano matrix satisfies BBᵀ=2I+J, giving Heawood adjacency eigenvalues ±3 and ±√2, with the latter each sixfold.",
+      "meaning": "The same graph can support exact reconstruction obstructions, new distinguishing observations and sharp constrained energy calculations; each conclusion is tied to a particular observation map."
+    },
+    "source_uids": [
+      "2023:M020",
+      "2024:Y24-10-020",
+      "2025:Y25-05-018",
+      "2025:Y25-08-023",
+      "2025:Y25-08-024",
+      "2025:Y25-11-021",
+      "2026:Y26-01-014",
+      "2026:Y26-07-011",
+      "2026:Y26-10-026",
+      "2026:Y26-10-027",
+      "2026:Y26-10-028"
+    ],
+    "anchor_uids": [
+      "2023:M020",
+      "2025:Y25-08-023",
+      "2025:Y25-08-024",
+      "2025:Y25-11-021",
+      "2026:Y26-07-011",
+      "2026:Y26-10-027",
+      "2026:Y26-10-028"
+    ],
+    "progression": [
+      {
+        "year": 2023,
+        "evidence_uids": [
+          "2023:M020"
+        ],
+        "narrative": "Rook and Shrikhande graphs supply a complete heat-signature collision, while the full labeled heat operator retains enough information to recover its Laplacian."
+      },
+      {
+        "year": 2024,
+        "evidence_uids": [
+          "2024:Y24-10-020"
+        ],
+        "narrative": "A weighted Laplacian is specified through its actual edge weights and positive energy."
+      },
+      {
+        "year": 2025,
+        "evidence_uids": [
+          "2025:Y25-08-023",
+          "2025:Y25-08-024",
+          "2025:Y25-11-021"
+        ],
+        "narrative": "Incidence blocks and conjugate algebraic spectra explain exact graph zeta moments without arithmetic-zero analogies."
+      },
+      {
+        "year": 2026,
+        "evidence_uids": [
+          "2026:Y26-07-011",
+          "2026:Y26-10-027",
+          "2026:Y26-10-028"
+        ],
+        "narrative": "Finite reconstruction, an explicit binary-census collision and sharp Green costs turn invariant comparison into exact finite tasks."
+      }
+    ],
+    "connections": [
+      {
+        "target_domain": "D15",
+        "relation": "Graph comparison is an observability problem",
+        "mathematical_bridge": "An invariant I is a many-to-one observation; a collision is a pair in one fibre.",
+        "scope": "A stronger separating coefficient is proved for this pair, not universal graph reconstruction."
+      },
+      {
+        "target_domain": "D07",
+        "relation": "Spectral transforms compress operator information",
+        "mathematical_bridge": "tr exp(−tL) retains eigenvalues; the full symmetric heat matrix permits L=−log K_t/t.",
+        "scope": "Exact identifiability does not imply stable numerical inversion."
+      },
+      {
+        "target_domain": "D12",
+        "relation": "Green kernels solve constrained quadratic optimization",
+        "mathematical_bridge": "Evaluation is represented by Ke_i in the Q-inner product.",
+        "scope": "Real quadratic minimization does not settle integer-height asymptotics."
+      }
+    ],
+    "capabilities": [
+      "C01",
+      "C02",
+      "C03",
+      "C05",
+      "C09",
+      "C13"
+    ],
+    "interactive_contract": {
+      "lab_ids": [
+        "L03"
+      ],
+      "inputs": "The fixed pair of seven-vertex graphs, height cutoff and q.",
+      "outputs": "Exact census tables and a distinguishing height coefficient.",
+      "validation": "All 128 subsets and all weak compositions at the declared height are enumerated with integer energy; the q=1/2 value is rational.",
+      "status": "Implemented finite graph-energy lab; Green and incidence constructions are mathematical recipes."
+    },
+    "limits": "Finite spectral moments need not determine a graph. The five-vertex uniqueness theorem uses its finite simple-graph scope; it is not a universal inverse spectral theorem. A distance-regular intersection array yields a conditional spectrum only if the graph and relation matrices satisfy the declared axioms. No unspecified Euler product, singularity or graph-to-knot correspondence is inferred.",
+    "open_questions": [
+      "Which additional low-height coefficients distinguish all graphs in a bounded vertex class?",
+      "Can an incidence or resolvent representation give a short structural explanation of the particular seven-vertex collision?"
+    ],
+    "references": [
+      {
+        "label": "Hatcher, Algebraic Topology: graph incidence foundations",
+        "url": "https://pi.math.cornell.edu/~hatcher/AT/AT.pdf"
+      }
+    ]
+  },
+  {
+    "id": "D13-F03",
+    "domain_id": "D13",
+    "title": "Incidence kernels, path differences and primal–dual graph witnesses",
+    "central_question": "How do local incidence constraints produce global cycles, and when does a short witness prove an optimal graph action count?",
+    "synopsis": "Incidence is the common finite language for conservation, cycle spaces, graph gauge classes and many covering arguments. An oriented edge is sent to the difference of its endpoint vertices; cancellation at internal vertices explains why a path has only source and sink boundary. Subtracting two paths therefore produces a circulation. The converse requires hypotheses: in a finite source-to-sink directed acyclic graph with every edge covered by a path, these differences span the entire real circulation space. Acyclic direction does not erase undirected cycles; a diamond already has a one-dimensional incidence kernel. The complementary optimization theme is that an admissible construction establishes an upper bound, while a matching or other dual witness establishes a lower bound. A support size or observed action count has no optimality meaning until the permitted action is stated. This family makes that action model and its certificate visible.",
+    "definitions": [
+      "For an oriented graph with n vertices, m edges and c connected components, B is the vertex-by-edge matrix having −1 at a tail and +1 at a head.",
+      "The circulation space is ker B. Over any field its dimension is m−n+c; over the integers a spanning forest gives a fundamental cycle basis.",
+      "A vertex-call covers every edge incident to the chosen vertex. A matching consists of edges with disjoint endpoints, so any one vertex-call covers at most one matching edge.",
+      "For a graph regarded as a one-dimensional complex, H_1=ker B because there are no two-cells. Adding filled faces changes the quotient by their boundaries."
+    ],
+    "theorem": {
+      "statement": "The incidence rank is n−c, hence the circulation dimension is m−n+c. On a finite directed acyclic s-to-t graph with every edge on an s-to-t path, ker B is spanned over R by χ(p)−χ(p₀). In the vertex-call model on K_{a,b}, the exact minimum call count is min(a,b).",
+      "proof": "On each connected component, incidence columns sum to zero and hence rank is at most n_component−1. A spanning tree contributes independent columns: remove a leaf and inspect its unique incident coefficient, inductively forcing every coefficient to zero. Summing components proves the rank formula. Every path difference has zero boundary. For the converse sum covering path indicators to obtain a strictly positive feasible flow f. For z∈ker B, both f and f+εz are nonnegative for small enough ε. A finite DAG permits a decomposition of each into nonnegative s-to-t path flows: follow positive flow, use conservation internally, and subtract the least path-edge value. At least one edge is removed at each stage. Their source divergence is the same, so subtracting the decompositions gives a combination of path differences. Finally assume a≤b. An a-edge matching demands at least a vertex-calls, and all a left vertices cover every edge. Matching lower bound and cover upper bound meet."
+    },
+    "worked_example": {
+      "setup": "Use the diamond with edges (sa,at,sb,bt), then K_{3,3} and the call model K_{4,7}.",
+      "calculation": "The diamond has four vertices and four edges, so ker B is one-dimensional, generated by (1,1,−1,−1), the difference of its two directed paths. It is a DAG even though this undirected cycle survives. For K_{3,3}, m−n+1=9−6+1=4; a spanning tree and each of its four non-tree edges produce an integral fundamental cycle. For K_{4,7}, 28 edges are covered by four left-vertex calls. A four-edge matching proves that three calls cannot suffice. If a call instead selected one edge, the answer would be 28, demonstrating why action semantics changes the optimization problem.",
+      "meaning": "Global invariants become replayable through integer matrices, explicit cycles and matching witnesses; pictures alone do not establish homology or cost."
+    },
+    "source_uids": [
+      "2024:Y24-10-032",
+      "2026:Y26-04-001",
+      "2026:Y26-04-027",
+      "2026:Y26-05-008",
+      "2026:Y26-05-025",
+      "2026:Y26-03-006",
+      "2026:Y26-08-019",
+      "2026:Y26-08-021",
+      "2026:Y26-09-011",
+      "2026:Y26-07-030",
+      "2025:Y25-08-028",
+      "2026:Y26-06-008",
+      "2024:Y24-12-004"
+    ],
+    "anchor_uids": [
+      "2024:Y24-10-032",
+      "2026:Y26-04-001",
+      "2026:Y26-04-027",
+      "2026:Y26-05-008",
+      "2026:Y26-05-025",
+      "2026:Y26-09-011"
+    ],
+    "progression": [
+      {
+        "year": 2024,
+        "evidence_uids": [
+          "2024:Y24-10-032"
+        ],
+        "narrative": "Discrete differential identities are stated as actual incidence compositions and conservation laws."
+      },
+      {
+        "year": 2025,
+        "evidence_uids": [
+          "2025:Y25-08-028"
+        ],
+        "narrative": "Edge-count constraints provide elementary but decisive consistency checks before a fitted graph label is interpreted."
+      },
+      {
+        "year": 2026,
+        "evidence_uids": [
+          "2026:Y26-04-001",
+          "2026:Y26-04-027",
+          "2026:Y26-05-025",
+          "2026:Y26-09-011"
+        ],
+        "narrative": "Explicit cycle bases, DAG path differences and matching witnesses supply constructive certificates for the refined graph questions."
+      }
+    ],
+    "connections": [
+      {
+        "target_domain": "D05",
+        "relation": "Graph cycles are a first homology calculation",
+        "mathematical_bridge": "H_1=ker B/im ∂₂; an unfilled graph has ∂₂=0.",
+        "scope": "A drawing or a directed orientation does not determine whether faces are filled."
+      },
+      {
+        "target_domain": "D12",
+        "relation": "Optimal calls require matching lower bounds",
+        "mathematical_bridge": "Disjoint required edges constrain every admissible cover.",
+        "scope": "The exact K_{a,b} theorem does not reconstruct the historical 81-call semantics."
+      },
+      {
+        "target_domain": "D03",
+        "relation": "Integral lattices refine rational kernels",
+        "mathematical_bridge": "A rational span records dimension but can miss a finite saturation index.",
+        "scope": "A toric lattice certificate needs the actual integer matrix, not its rank alone."
+      }
+    ],
+    "capabilities": [
+      "C01",
+      "C02",
+      "C03",
+      "C06",
+      "C10"
+    ],
+    "interactive_contract": {
+      "lab_ids": [
+        "L09"
+      ],
+      "inputs": "Small oriented graph or simplicial complex and its declared filled faces.",
+      "outputs": "Boundary matrices, ranks, cycle representatives and homology dimensions.",
+      "validation": "Check B∂₂=0 and exact ranks; the standalone verifier checks diamond circulation and the four-versus-seven call certificate.",
+      "status": "Small homology lab implemented; graph cover and integral lattice tasks are mathematical recipes."
+    },
+    "limits": "Hypergraph ordinary matchings differ from induced matchings or tensor restrictions. The corner count 3,840 uses V×V with V=F₂⁴ and does not establish an extremal β₄=137 claim. The historical incidence fibres and call rules were missing. Z₂ gauge count 2^{m−n+c} applies to graph edge labels under vertex gauge action; added constraints can change it.",
+    "open_questions": [
+      "Which integer cycles, rather than only real cycle coordinates, are preserved by a proposed graph quotient?",
+      "Can the omitted historical call semantics be recovered to produce a matching or LP dual witness for its claimed optimum?"
+    ],
+    "references": [
+      {
+        "label": "Hatcher, Algebraic Topology",
+        "url": "https://pi.math.cornell.edu/~hatcher/AT/AT.pdf"
+      },
+      {
+        "label": "Boyd and Vandenberghe, Convex Optimization",
+        "url": "https://web.stanford.edu/~boyd/cvxbook/"
+      }
+    ]
+  },
+  {
+    "id": "D13-F04",
+    "domain_id": "D13",
+    "title": "Separators, semiring elimination and multiplicity-preserving quotients",
+    "central_question": "What boundary state is sufficient to compose local computations without changing a count or optimum?",
+    "synopsis": "A large combinatorial computation is often tractable because a separator carries only the information that the unprocessed part can still observe. The mathematics is distributivity plus a correct boundary state, rather than a promise that every graph is sparse. Sum–product elimination computes counts or partition sums; min–plus elimination computes minimum additive costs. Both depend on the same factor scopes, but they answer different questions and require different identities. An auxiliary gate with a unique extension preserves the number of original objects; an arbitrary satisfiability-preserving encoding may not. A channel quotient is legitimate only if forgotten lane identities cannot affect future feasibility or cost. These are not independent implementation details: they specify the exact relation between a compact state and the population or value it represents. The useful design process proves a local elimination identity, proves the quotient lift condition and retains enough separator data to make every future continuation well defined.",
+    "definitions": [
+      "A factor model over a commutative semiring has Z=⊕_x ⊗_j f_j(x_scope(j)). Ordinary nonnegative integers give counting; min–plus uses min as addition and numerical + as multiplication.",
+      "Eliminating a variable v produces a new factor on its surviving neighboring scope: g(y)=⊕_v ⊗_{j:v∈scope(j)}f_j.",
+      "A separator state stores the values or equivalence classes through which processed and unprocessed factors can interact. Its adequacy is a statement about every compatible continuation.",
+      "For a relation F(x,a), the auxiliary fibre m(x)=#{a:F(x,a)} measures whether projecting auxiliaries preserves a count."
+    ],
+    "theorem": {
+      "statement": "Finite semiring elimination preserves Z by distributivity, in any elimination order. Over counting integers, an encoding preserves #P exactly when its satisfying auxiliary fibre is one over each x∈P and zero otherwise. If a quotient map is surjective onto feasible quotient states and feasibility and objective are constant on its fibres, the original and quotient optimum values are equal.",
+      "proof": "Separate the factors involving v from the others. The independent factors can be taken outside ⊕_v, and the remaining expression is g by definition. Repetition proves exact elimination; changing order changes intermediate scopes but not the final algebraic value. Over integers, the number of satisfying pairs is Σ_x m(x), so unique extension gives #F=#P; mere existential equivalence does not control m(x). For optimization, every original object projects to a quotient object with equal cost, so the quotient infimum is no larger. Every feasible quotient object has a feasible lift with that cost, proving the reverse inequality. Future operations descend only when they preserve fibres as well, which is a stronger requirement than preserving the present objective."
+    },
+    "worked_example": {
+      "setup": "Introduce a=x₁ XOR x₂, then erase lane identities from four labeled objects injected into sixteen channels arranged as four banks of four.",
+      "calculation": "The XOR gate has one auxiliary extension for each of four original inputs; adding a=1 leaves exactly 01 and 10. An unconstrained auxiliary would double the count to eight. In the channel model there are 16·15·14·13=43,680 physical assignments and 4^4=256 bank tuples. A tuple with bank occupancies n_b has ∏_b P(4,n_b) lifts. The all-in-one-bank tuple has 24 lifts; the four-distinct-banks tuple has 256. Summing all fibre sizes returns 43,680. The full quotient prefix tree has 1+4+16+64+256=341 nodes. Thus uniform quotient sampling is not uniform physical sampling. On a binary path, a min–plus message m_{i+1}(t)=min_s[m_i(s)+φ_i(s,t)] retains the boundary bit; collapsing two boundary bits is legal only when all future costs agree after the collapse.",
+      "meaning": "The separator is a mathematical interface: exact elimination, optimization and quotient sampling each require the interface to retain the information relevant to that task."
+    },
+    "source_uids": [
+      "2026:Y26-08-804",
+      "2026:Y26-09-006",
+      "2026:Y26-09-007",
+      "2026:Y26-10-015",
+      "2026:Y26-10-016",
+      "2026:Y26-10-017",
+      "2024:Y24-11-015"
+    ],
+    "anchor_uids": [
+      "2026:Y26-08-804",
+      "2026:Y26-09-006",
+      "2026:Y26-10-015",
+      "2026:Y26-10-017"
+    ],
+    "progression": [
+      {
+        "year": 2024,
+        "evidence_uids": [
+          "2024:Y24-11-015"
+        ],
+        "narrative": "Branching diagrams provide exact path counts when their vertices and edge multiplicities are declared."
+      },
+      {
+        "year": 2026,
+        "evidence_uids": [
+          "2026:Y26-08-804",
+          "2026:Y26-09-006",
+          "2026:Y26-10-015",
+          "2026:Y26-10-017"
+        ],
+        "narrative": "Channel erasure, retained continuation costs and unique-extension factor projection give distinct precise sufficient conditions for compact computation. Their retrospective synthesis supplies the separator interpretation."
+      }
+    ],
+    "connections": [
+      {
+        "target_domain": "D14",
+        "relation": "Continuation semantics defines legal state merging",
+        "mathematical_bridge": "Boundary states may merge only when every permitted continuation has the same observations and residual costs.",
+        "scope": "State count alone proves neither congruence nor speedup."
+      },
+      {
+        "target_domain": "D12",
+        "relation": "Min–plus elimination is exact optimization",
+        "mathematical_bridge": "Replace sum by min and product by additive cost, respecting infinities and feasible fibres.",
+        "scope": "A broad historical tropic label is not automatically a defined min–plus operator."
+      },
+      {
+        "target_domain": "D10",
+        "relation": "A quotient changes counting measure",
+        "mathematical_bridge": "Physical probability pushes forward with fibre multiplicities.",
+        "scope": "Uniformity on 256 quotient states does not mean uniformity on 43,680 assignments."
+      }
+    ],
+    "capabilities": [
+      "C01",
+      "C02",
+      "C03",
+      "C04",
+      "C06",
+      "C15"
+    ],
+    "interactive_contract": {
+      "lab_ids": [
+        "L02"
+      ],
+      "inputs": "Finite factor tables or a declared original-to-quotient map.",
+      "outputs": "Eliminated factors, original/quotient counts, minimum values and fibre multiplicities.",
+      "validation": "Standalone exact gate, channel-fibre and min–plus path checks; L02 exercises the related completion-count interface.",
+      "status": "Mathematical recipe with independently verified finite examples; no general factor-graph solver in the atlas."
+    },
+    "limits": "Intermediate factor size depends on elimination width; distributivity does not imply polynomial complexity. Semiring choice changes the output. Auxiliary existential projection preserves satisfiability more weakly than counts. The original routing graph, byte-hop objective and claimed 9,765,632 optimum were not recovered, so neither those values nor timing claims are certified here.",
+    "open_questions": [
+      "What is the smallest boundary equivalence that preserves every future constraint and cost in a supplied routing instance?",
+      "Can quotient-aware weighted sampling preserve the original physical counting measure without reconstructing every lift?"
+    ],
+    "references": [
+      {
+        "label": "Bryant, Graph-Based Algorithms for Boolean Function Manipulation",
+        "url": "https://doi.org/10.1184/r1/6605990"
+      },
+      {
+        "label": "Gaubert and Plus, Max-plus linear algebra",
+        "url": "https://doi.org/10.1007/BFb0023465"
+      }
+    ]
+  },
+  {
+    "id": "D14-F01",
+    "domain_id": "D14",
+    "title": "Future equivalence, bisimulation and executable quotient states",
+    "central_question": "When can two internal states be merged while preserving every permitted future observation?",
+    "synopsis": "The correct state of a computation is relative to its observer and action alphabet. Two memories that currently print the same value may behave differently after a tick, reset, allocation or later query. Future equivalence compares every such continuation. In a finite deterministic machine, its apparently infinite definition has a finite certificate: iterative partition refinement stops at a stable partition, and stability implies agreement for every word. Weighted futures require immediate costs as well as visible outputs to descend. Bisimulation supplies a useful transition-level proof principle but must be stated for the actual operational semantics. The resulting quotient is an executable machine, not merely a partition of a log. This family is the central bridge between semantic state reduction, target-relative observations and efficient separator states. It explains both why some reductions are exact and why a dramatic reduction in state count alone establishes no behavioral equivalence.",
+    "definitions": [
+      "A deterministic observation machine has finite states S, actions A, transitions δ_a:S→S and output o:S→O. A word acts in its given order.",
+      "Future equivalence is s∼t iff o(δ_w(s))=o(δ_w(t)) for every finite word w, including the empty word.",
+      "Depth-r equivalence checks words of length at most r. Refinement maps a state to its present output together with the current classes of all its successors.",
+      "With additive action costs, C_s(aw)=c(s,a)+C_{δ_a(s)}(w). A cost-preserving quotient must preserve these immediate costs and all successor classes."
+    ],
+    "theorem": {
+      "statement": "Future equivalence is the coarsest equivalence respecting outputs and every action transition. Finite partition refinement computes it and has at most |S|−1 strict refinements. Once two successive partitions agree, the stable partition checks all word lengths. Equality of all accumulated continuation costs similarly defines a right congruence for deterministic weighted machines.",
+      "proof": "If s and t have equal futures, then their present outputs agree. For every action a and every word w, the output after aw agrees; hence δ_a(s)∼δ_a(t), making the quotient transition independent of representatives. Conversely, any output-preserving transition congruence preserves the output after every word by induction, so it refines future equivalence. Starting from output classes, the next refinement checks exactly one more leading action by the same induction. A stable partition therefore preserves transitions and already equals the full relation. Every strict refinement increases the number of nonempty blocks, giving the finite bound. For additive costs, compare one-letter words first to obtain c(s,a)=c(t,a), then subtract this finite common value from the equality for aw to obtain future equality at the successors. This subtraction argument needs finite deterministic costs; nondeterministic min–plus machines require their own semantics."
+    },
+    "worked_example": {
+      "setup": "Use a TTL counter with states 0,1,2. Tick sends positive values down by one and leaves zero fixed. Read costs one at zero and zero otherwise, then resets the counter to two.",
+      "calculation": "States 1 and 2 have identical one-step costs for read and tick, but tick-read costs one from 1 and zero from 2. Present-output merging therefore loses a future distinction. Refinement retaining both action-cost vectors and successor classes separates all three states. In a separate four-state cycle δ(s)=s+1 mod 4 with output s mod 2, the exact quotient has two classes {0,2} and {1,3}, swapped by the action. Changing only the output to the indicator of state 3 makes every state distinguishable within three actions. Thus the same transition graph has different minimal observable quotients for different observers.",
+      "meaning": "A quotient certificate combines a declared alphabet, output map and closure proof. A finite logged prefix is evidence only within a proved completeness bound."
+    },
+    "source_uids": [
+      "2025:Y25-09-014",
+      "2026:Y26-01-003",
+      "2026:Y26-01-029",
+      "2026:Y26-02-014",
+      "2026:Y26-08-804",
+      "2026:Y26-09-006",
+      "2026:Y26-10-021",
+      "2026:Y26-10-029"
+    ],
+    "anchor_uids": [
+      "2025:Y25-09-014",
+      "2026:Y26-01-003",
+      "2026:Y26-09-006",
+      "2026:Y26-10-021",
+      "2026:Y26-10-029"
+    ],
+    "progression": [
+      {
+        "year": 2025,
+        "evidence_uids": [
+          "2025:Y25-09-014"
+        ],
+        "narrative": "The bisimulation thread is reconstructed using a finite labeled transition relation; absent garbage-collection operational semantics are not inferred."
+      },
+      {
+        "year": 2026,
+        "evidence_uids": [
+          "2026:Y26-01-003",
+          "2026:Y26-09-006",
+          "2026:Y26-10-021",
+          "2026:Y26-10-029"
+        ],
+        "narrative": "The conversation topics sharpen from semantic quotients to additive future costs, action-dependent refinement and explicit finite closure hypotheses. The chapter unifies these as one observer-relative construction."
+      }
+    ],
+    "connections": [
+      {
+        "target_domain": "D15",
+        "relation": "Hidden fibres require dynamic closure",
+        "mathematical_bridge": "Linear closure HA=TH is the linear counterpart of δ_a preserving quotient classes.",
+        "scope": "Present target recovery alone is weaker than a predictive quotient."
+      },
+      {
+        "target_domain": "D13",
+        "relation": "Separator states summarize all future interactions",
+        "mathematical_bridge": "Equivalence of continuations licenses message-state merging.",
+        "scope": "The relevant continuation alphabet must include every later legal choice."
+      },
+      {
+        "target_domain": "D03",
+        "relation": "Quotient maps are algebraic actions",
+        "mathematical_bridge": "A right congruence lets the free action monoid act on the quotient.",
+        "scope": "A log-fold monoid action or projection does not by itself supply this observation equivalence."
+      }
+    ],
+    "capabilities": [
+      "C03",
+      "C04",
+      "C05",
+      "C07",
+      "C15"
+    ],
+    "interactive_contract": {
+      "lab_ids": [
+        "L01"
+      ],
+      "inputs": "Recipe: finite states, action tables, outputs and costs. Related L01 lab: a fixed four-dimensional state, six rational probes and two targets.",
+      "outputs": "Recipe: stable future classes and distinguishing words. L01: exact observation ranks and cheapest static probe panels.",
+      "validation": "Exact refinement is compared with all words up to the proved finite stabilization bound; the standalone verifier checks the TTL and four-cycle examples.",
+      "status": "Finite transition refinement is a mathematical recipe checked by verify.py. L01 implements the related fixed linear observation/probe model, not an action-table editor."
+    },
+    "limits": "Changing the action alphabet can split previously valid classes. Trace equivalence and bisimulation are distinct for nondeterministic systems. Infinite-state refinement may not terminate. A broad tropic name is not sufficient to specify weighted, min–plus or nonlinear transition semantics. No unprovided TTL machine table or benchmark quotient count is reproduced.",
+    "open_questions": [
+      "Which shortest action word distinguishes each inequivalent pair in a supplied implementation?",
+      "Can a proposed abstraction provide a transition-respecting lift or simulation relation for all operations, including resets and allocation?"
+    ],
+    "references": [
+      {
+        "label": "Rutten, Universal Coalgebra: A Theory of Systems",
+        "url": "https://doi.org/10.1016/S0304-3975(00)00056-6"
+      },
+      {
+        "label": "Eilenberg, Automata, Languages, and Machines",
+        "url": "https://www.sciencedirect.com/book/9780122340017/automata-languages-and-machines"
+      }
+    ]
+  },
+  {
+    "id": "D14-F02",
+    "domain_id": "D14",
+    "title": "Hankel witnesses and minimal observable memory",
+    "central_question": "How can an exact realization and an independent lower bound prove the smallest recurrence or register dimension?",
+    "synopsis": "State reduction has two logically different tasks. A proposed smaller machine must reproduce every output, and every still smaller machine must be ruled out within a declared encoding class. For linear systems these tasks meet through intertwiners and Hankel rank. A matrix identity transports the entire dynamics, while a nonzero finite minor prevents a lower-dimensional realization. This is stronger than fitting a recurrence to a prefix and more informative than quoting the dimension of the original state. Reachable and observable modes must be considered jointly: the zero-initial input-output order lives on the reachable space modulo its invisible part. A scalar universal output recurrence differs from a recurrence for one initial state, and multiple-output recurrence degree need not equal state dimension. In the min–plus setting a two-by-two response table provides a separate additive-register obstruction; ordinary field rank must not be imported into that semiring without justification.",
+    "definitions": [
+      "A linear sequence realization is y_n=cA^n b over Q. Its Hankel matrix has entries H_{ij}=y_{i+j}.",
+      "A reduction R with RA=GR, Rb=β and c=dR is an intertwining certificate for y_n=dG^nβ at every n.",
+      "The reachable space is span{A^k im B}; the invisible space is ⋂_{k≥0}ker(CA^k). The minimal zero-initial driven state is R/(R∩N).",
+      "A finite min–plus rank-one table has entries M_{ij}=u_i+v_j. Such a table has equal diagonal and off-diagonal sums on every two-by-two submatrix."
+    ],
+    "theorem": {
+      "statement": "An r-state linear realization has Hankel rank at most r. An order-r forward recurrence has the same rank bound. Therefore an r-state realization together with a nonzero r-by-r Hankel minor proves exact minimal state dimension and recurrence order r. For scalar universal outputs on an observable quotient, the universal recurrence is the quotient operator’s minimal polynomial; its degree equals that observable quotient dimension.",
+      "proof": "The intertwiner identity gives RA^n=G^nR by induction, and the input/output identities yield equality of every sequence term. Any finite Hankel block factors as rows cA^i times columns A^jb through the realization state space, so its rank cannot exceed the state dimension. A recurrence of order s expresses every later Hankel column as a fixed combination of the preceding s, giving the same lower bound. Conversely Cayley–Hamilton supplies a recurrence of order at most r for an r-state realization. For universal observation recurrences, N is A-invariant because CA^k(Av)=CA^{k+1}v. A polynomial p annihilates every future output exactly when p(A)V⊆N, or p(A_bar)=0. In the scalar observable case a lower-degree polynomial would make all observation rows dependent on fewer initial rows, contradicting observability."
+    },
+    "worked_example": {
+      "setup": "Take A=diag(1,2,3,4,5,6), b=(1,1,1,0,0,0)^T and c=b^T. Also test the stipulated min–plus table [[0,2],[2,0]].",
+      "calculation": "Projection onto the first three coordinates gives y_n=1+2^n+3^n, beginning 3,6,14,36,98. The leading three-by-three Hankel determinant is 4, the squared Vandermonde determinant on 1,2,3. The recurrence y_{n+3}=6y_{n+2}−11y_{n+1}+6y_n is globally certified and has exact order three. For the min–plus table the diagonal sum is 0 and the other sum is 4, excluding a one-register additive factorization. A two-register factorization through the tropical identity gives a matching upper bound. This last obstruction concerns that specified linear min–plus encoding class, not arbitrary nonlinear memory.",
+      "meaning": "A finite witness proves an infinite-time minimality claim only because a global realization identity supplies the model class and upper bound."
+    },
+    "source_uids": [
+      "2023:M016",
+      "2023:M017",
+      "2026:Y26-03-012",
+      "2026:Y26-09-007",
+      "2026:Y26-10-018",
+      "2026:Y26-10-029"
+    ],
+    "anchor_uids": [
+      "2023:M016",
+      "2023:M017",
+      "2026:Y26-03-012",
+      "2026:Y26-09-007",
+      "2026:Y26-10-018"
+    ],
+    "progression": [
+      {
+        "year": 2023,
+        "evidence_uids": [
+          "2023:M016",
+          "2023:M017"
+        ],
+        "narrative": "The annual source separates universal observable recurrences from individual traces and identifies the reachable–observable intersection quotient."
+      },
+      {
+        "year": 2026,
+        "evidence_uids": [
+          "2026:Y26-03-012",
+          "2026:Y26-09-007",
+          "2026:Y26-10-018"
+        ],
+        "narrative": "Unfitted coefficients test a proposed recurrence; explicit minor witnesses later certify minimality in ordinary linear and stipulated min–plus models."
+      }
+    ],
+    "connections": [
+      {
+        "target_domain": "D15",
+        "relation": "Minimal realizations discard different kinds of hidden state",
+        "mathematical_bridge": "Reachability restricts the driven state and observation then takes a quotient.",
+        "scope": "A stable transfer function can hide an unstable internal canceled mode."
+      },
+      {
+        "target_domain": "D03",
+        "relation": "Intertwining makes dynamics descend",
+        "mathematical_bridge": "RA=GR is a representation morphism.",
+        "scope": "Exact matrix identities differ from approximate singular-value truncation."
+      },
+      {
+        "target_domain": "D13",
+        "relation": "Hankel lower bounds complement compact state counts",
+        "mathematical_bridge": "A finite response minor can force retained boundary dimension.",
+        "scope": "Semiring-specific lower bounds need a declared rank notion."
+      }
+    ],
+    "capabilities": [
+      "C01",
+      "C03",
+      "C04",
+      "C05",
+      "C09"
+    ],
+    "interactive_contract": {
+      "lab_ids": [
+        "L01"
+      ],
+      "inputs": "Recipe: rational realization matrices or an explicit response table. L01 accepts selections from its fixed six-probe menu.",
+      "outputs": "Recipe: intertwiner, Hankel witness and recurrence; L01 illustrates target-relative observation ranks.",
+      "validation": "The standalone verifier checks the determinant four, recurrence over a long exact prefix and the nonzero tropical gap; the global proof is the intertwiner argument.",
+      "status": "Mathematical recipe with checked exact examples; L01 illustrates the related quotient principle."
+    },
+    "limits": "Finite-prefix rank can underestimate later behavior without a proven finite-dimensional model. Approximate numerical rank does not establish exact recurrence order. Multiple-output universal polynomial degree may be smaller than observable dimension: A=C=I has degree one in any dimension. The historical determinant-four tropical matrix was not recovered; the two-by-two example is newly stipulated.",
+    "open_questions": [
+      "Can an explicit intertwiner and matching exact minor be recovered for each claimed large state reduction?",
+      "How does noise alter a useful approximate realization guarantee when exact equivalence is no longer appropriate?"
+    ],
+    "references": [
+      {
+        "label": "Balle et al., Canonical forms for weighted automata",
+        "url": "https://arxiv.org/abs/1501.06841"
+      },
+      {
+        "label": "Gaubert and Plus, Max-plus linear algebra",
+        "url": "https://doi.org/10.1007/BFb0023465"
+      }
+    ]
+  },
+  {
+    "id": "D14-F03",
+    "domain_id": "D14",
+    "title": "Typed proof certificates and the boundary between examples and completeness",
+    "central_question": "What exact claim does each certificate establish, and which dependencies remain outside its proof boundary?",
+    "synopsis": "The archive repeatedly reaches the same useful discipline from different directions: separate a search procedure from a small exact checker, and state the checker’s theorem with its quantifiers and input type. A feasible point proves existence; a primal–dual equality proves optimality; a rank minor plus factorization proves rank; a Bézout identity proves inconsistency; a complete Gröbner replay proves an ideal basis. These witnesses are not interchangeable. Nor does checking many examples establish a universal identity unless a degree bound or other completeness theorem reduces the universal statement to those examples. This family turns that discipline into a reusable proof interface. It begins with truth tables and bound variables, continues through arithmetic and floating-point envelopes, and reaches exact algebraic and finite-state certificates. The goal is constructive: make a solver’s useful discoveries portable across a trust boundary while exposing the precise assumptions on which the conclusion rests.",
+    "definitions": [
+      "A certificate is data c for an explicitly specified predicate Check(input,c). Soundness proves Check⇒Claim; completeness, if needed, proves every true claim has an admissible certificate.",
+      "A witness establishes ∃x P(x); a complete census establishes both listed⇒valid and valid⇒listed. These are distinct quantifier directions.",
+      "A polynomial over F_q reduced to degree below q in every variable is a different object from an arbitrary formal polynomial or a polynomial function modulo x_i^q−x_i.",
+      "A proof dependency record states the encoded instance, arithmetic domain, theorem hypotheses, checker implementation and any external mathematical theorem used."
+    ],
+    "theorem": {
+      "statement": "If f∈F_q[x_1,…,x_n] has degree <q in each variable and vanishes on all q^n points, then f is the zero formal polynomial. Without this degree condition exhaustive functional agreement need not prove formal polynomial equality. Separately, exact primal and dual feasible points with equal objectives certify an LP optimum by weak duality.",
+      "proof": "For the polynomial theorem, induct on n. A one-variable nonzero polynomial of degree <q cannot have q roots. Write f as a polynomial in the last variable. At every fixed earlier tuple all q evaluations vanish, so every coefficient evaluates to zero. Each coefficient retains the coordinate degree bounds, and induction makes all coefficient polynomials zero. Without the bound, x_1^q−x_1 vanishes everywhere but has nonzero coefficient dictionary. For LP minimization Ax=b,x≥0 and dual maximization bᵀy with Aᵀy≤c, every feasible pair satisfies bᵀy=yᵀAx≤cᵀx. Equality therefore sandwiches the optimum. The proof uses feasibility, not closeness of objective values. A floating candidate can guide search, but exact rational feasibility or a rigorous residual enclosure must justify the final theorem."
+    },
+    "worked_example": {
+      "setup": "Compare polynomial functions over F₃⁴ and certify min{x+2y:x+y=3,x,y≥0}.",
+      "calculation": "There are 81 assignments. The identity (x_1+x_2)^3=x_1^3+x_2^3 is true formally in characteristic three by coefficient cancellation. The expression x_1^3−x_1 vanishes at all 81 assignments but is not the zero formal polynomial, so an evaluator alone confuses two types. For the linear program, the primal point (3,0) has value 3, and dual scalar λ=1 satisfies λ≤1 and λ≤2 with dual value 3. This exact pair proves the optimum. As a different certificate, 1=y·x−(xy−1) proves that x=0 and xy−1=0 have no common solution over a field; it does not certify a census of a different polynomial system.",
+      "meaning": "Certificate types make the conclusion and its omitted obligations inspectable, enabling exact replay of useful solver output without trusting the solver’s search strategy."
+    },
+    "source_uids": [
+      "2023:M001",
+      "2023:M005",
+      "2023:M032",
+      "2024:Y24-10-026",
+      "2024:Y24-10-027",
+      "2024:Y24-11-016",
+      "2025:Y25-06-024",
+      "2025:Y25-07-007",
+      "2025:Y25-09-016",
+      "2025:Y25-09-020",
+      "2025:Y25-09-012",
+      "2025:Y25-12-023",
+      "2026:Y26-01-002",
+      "2026:Y26-02-010",
+      "2026:Y26-02-011",
+      "2026:Y26-05-001",
+      "2026:Y26-05-030",
+      "2026:Y26-06-029",
+      "2026:Y26-07-005",
+      "2026:Y26-08-020",
+      "2026:Y26-09-032",
+      "2026:Y26-10-001",
+      "2026:Y26-10-002",
+      "2026:Y26-10-016",
+      "2024:Y24-04-005",
+      "2024:Y24-05-003",
+      "2024:Y24-06-016",
+      "2023:M100",
+      "2025:Y25-06-011",
+      "2026:Y26-06-011",
+      "2026:Y26-06-032",
+      "2026:Y26-07-012"
+    ],
+    "anchor_uids": [
+      "2024:Y24-10-026",
+      "2024:Y24-10-027",
+      "2025:Y25-06-024",
+      "2025:Y25-07-007",
+      "2025:Y25-12-023",
+      "2026:Y26-05-030",
+      "2026:Y26-09-032"
+    ],
+    "progression": [
+      {
+        "year": 2023,
+        "evidence_uids": [
+          "2023:M001",
+          "2023:M005",
+          "2023:M032"
+        ],
+        "narrative": "Object types and efficient public inverses prevent a shared letter or complicated notation from becoming a hardness theorem."
+      },
+      {
+        "year": 2024,
+        "evidence_uids": [
+          "2024:Y24-10-026",
+          "2024:Y24-10-027",
+          "2024:Y24-11-016"
+        ],
+        "narrative": "Truth tables, quantifier order and encoded complexity inputs make the logical claim explicit."
+      },
+      {
+        "year": 2025,
+        "evidence_uids": [
+          "2025:Y25-06-024",
+          "2025:Y25-07-007",
+          "2025:Y25-12-023"
+        ],
+        "narrative": "Finite tests gain force from degree bounds and exact certificate pairs; unproved dependencies remain conditional."
+      },
+      {
+        "year": 2026,
+        "evidence_uids": [
+          "2026:Y26-05-030",
+          "2026:Y26-07-005",
+          "2026:Y26-09-032"
+        ],
+        "narrative": "Ideal identities, rational membership and complete-census obligations refine the distinction between sound witnesses and universal closure."
+      }
+    ],
+    "connections": [
+      {
+        "target_domain": "D03",
+        "relation": "Algebraic identities are compact certificates",
+        "mathematical_bridge": "Bézout combinations, ideal reductions and nonzero minors are checked in a declared exact ring.",
+        "scope": "A finite-prime test need not prove rational membership or integral saturation."
+      },
+      {
+        "target_domain": "D12",
+        "relation": "Optimality is a two-sided certificate",
+        "mathematical_bridge": "Primal feasibility supplies an upper bound and dual feasibility a lower bound for minimization.",
+        "scope": "The historical optimization instance must be encoded and linked to its checker."
+      },
+      {
+        "target_domain": "D04",
+        "relation": "Proofs compose only when endpoints and hypotheses match",
+        "mathematical_bridge": "A dependency chain is valid after every antecedent is independently proved.",
+        "scope": "A diagram of proposed lemmas is not closure of the final theorem."
+      }
+    ],
+    "capabilities": [
+      "C01",
+      "C03",
+      "C06",
+      "C15"
+    ],
+    "interactive_contract": {
+      "lab_ids": [
+        "L02"
+      ],
+      "inputs": "Typed finite statements, exact witnesses and explicit domains or completeness bounds.",
+      "outputs": "Checked truth tables, polynomial identities, feasibility and certificate conclusions with dependencies.",
+      "validation": "Standalone checker exhausts the 81-point counterexample, verifies exact LP equality and the Bézout identity; L02 checks the rank/unrank certificate interface.",
+      "status": "Certificate recipes and finite checks; no general theorem prover or complete SMT replacement is implemented."
+    },
+    "limits": "Formal proof claims require an actual proof term or complete trusted replay, not a label such as Lean bridge. Two-prime agreement, fitted residuals and public recursion consistency each establish narrower statements. Hardness requires an input distribution, adversary model and reduction; constructing a lattice encoding alone does not produce an efficient decoder. Sequential work and cryptographic provenance are not inferred from an algebraic identity.",
+    "open_questions": [
+      "Can every historical claim be assigned a certificate type and a complete list of unchecked premises?",
+      "Which solver outputs admit small exact certificates whose checking cost is substantially lower than search?"
+    ],
+    "references": [
+      {
+        "label": "SMT-LIB, official integer arithmetic theory",
+        "url": "https://smt-lib.org/theories-Ints.shtml"
+      },
+      {
+        "label": "Boyd and Vandenberghe, Convex Optimization",
+        "url": "https://web.stanford.edu/~boyd/cvxbook/"
+      },
+      {
+        "label": "MIT OpenCourseWare, Algebra I",
+        "url": "https://ocw.mit.edu/courses/18-701-algebra-i-fall-2010/"
+      }
+    ]
+  },
+  {
+    "id": "D14-F04",
+    "domain_id": "D14",
+    "title": "Coding and raw-state recovery by exact lattice certificates",
+    "central_question": "When do finitely many output words determine a hidden state, and how does that injectivity become optimal error correction?",
+    "synopsis": "The coding thread begins with concrete binary codes whose distance can be independently enumerated and culminates in a universal certificate for a specified 107-bit raw generator. It is important to separate three achievements. Alphabet capacity gives a necessary observation count. A short-vector exclusion proves injectivity for every state, rather than only tested fixtures. Finally a distance argument converts injectivity of every five-position projection into optimal correction of corrupted words. The large proof has a compact trusted core: integer lattice membership, an exact determinant and rational inverse-column bounds. A basis reduction algorithm may discover useful matrices, but the checker does not trust that search. This makes the raw-state theorem a strong example of portable exact certification. The accepted-output sequence has hidden rejected steps and remains a different observation model; its earlier threshold claim cannot inherit the raw theorem.",
+    "definitions": [
+      "Set M=2^107−1, A=3^121 mod M, b=2^26, x_{i+1}=Ax_i mod M and y_i=x_i mod b, with 0≤x_i<M.",
+      "For five known positions p_0<…<p_4 in {0,…,8}, let g_j=p_j−p_0 and Λ_p={d∈Z^5:d_j≡A^{g_j}d_0 mod M}. Set D=floor((M−1)/b)=2^81−1.",
+      "The raw trajectory code C_n consists of the first n output words of every state. Hamming distance counts changed words, even when many bits in a word are changed.",
+      "A supplied row basis B_p is certified by lattice row membership, |det B_p|=M^4, and DΣ_i|(B_p^{-1})_{ij}|<3/8 for every column j."
+    ],
+    "theorem": {
+      "statement": "For every five-position subset of the first nine raw steps, the selected words uniquely determine the initial state. Four words cannot determine every state. For 5≤n≤9 the raw trajectory code has minimum distance exactly n−4. Thus seven words correct one arbitrary word error and nine correct two, and these lengths are optimal for any code representing all M states over this alphabet.",
+      "proof": "The map d↦(d_j−A^{g_j}d_0)_{j=1}^4 onto (Z/MZ)^4 has kernel Λ_p, so the lattice index is M^4. Membership and matching determinant establish that the supplied rows span the whole lattice. If two states produce the same selected words, their selected state differences are bd_j with |d_j|≤D. Since b is invertible modulo M, d∈Λ_p, hence d=cB_p for integer c. The dual bound gives |c_j|≤DΣ_i|(B_p^{-1})_{ij}|<1, forcing c=0 and then equality of the initial states because A is invertible. Four words are impossible by b^4<M−1. Distinct length-n codewords agree in at most four positions, so d_min≥n−4. Puncturing d_min−1 positions is injective, giving M≤b^{n−d_min+1}; since M>b^4, d_min≤n−4. Disjoint radius-t Hamming balls require d_min>2t. Puncturing 2t positions then gives n≥5+2t, proving optimal lengths."
+    },
+    "worked_example": {
+      "setup": "Use the actual 126 supplied five-position bases. For decoding a received exact five-word vector, express selected states as y_j+bz_j with 0≤z_j≤D.",
+      "calculation": "The congruences define an affine lattice z∈v+Λ_p. Applying B_p^{-1} to the bounded z-box places each integer coefficient in an exact rational interval of width below 3/8. Each contains at most one integer. Exact endpoint rounding therefore yields at most one candidate; re-encoding verifies every state bound and observation. The annual certificate checks all 126 bases, and 630 designated decoder fixtures include states 0,1,1234567890123456789,floor(M/3),M−1. For one or two corruptions, enumerate five-position subsets, decode candidates, re-encode and retain a state within the allowed word radius. The distance theorem proves uniqueness. The small analogue M=31,A=3,b=8 has 8,24,31 distinct one-, two-, three-word outputs and independently illustrates why capacity and actual injectivity are separate.",
+      "meaning": "The universal theorem rests on exact lattice checks; fixtures separately exercise decoder code. This is observability and error correction for a specified deterministic raw recurrence, not a claim of cryptographic unpredictability."
+    },
+    "source_uids": [
+      "2023:M037",
+      "2024:Y24-07-003",
+      "2026:Y26-05-028",
+      "2026:Y26-07-026",
+      "2026:Y26-10-024",
+      "2026:Y26-10-901",
+      "2026:Y26-10-902"
+    ],
+    "anchor_uids": [
+      "2023:M037",
+      "2024:Y24-07-003",
+      "2026:Y26-05-028",
+      "2026:Y26-10-024",
+      "2026:Y26-10-901",
+      "2026:Y26-10-902"
+    ],
+    "progression": [
+      {
+        "year": 2023,
+        "evidence_uids": [
+          "2023:M037"
+        ],
+        "narrative": "A fully specified [15,7,5] BCH code establishes two-error correction through exact generator and weight enumeration."
+      },
+      {
+        "year": 2024,
+        "evidence_uids": [
+          "2024:Y24-07-003"
+        ],
+        "narrative": "Functorial relabeling is separated from Hamming-distance preservation."
+      },
+      {
+        "year": 2026,
+        "evidence_uids": [
+          "2026:Y26-05-028",
+          "2026:Y26-07-026",
+          "2026:Y26-10-024",
+          "2026:Y26-10-901",
+          "2026:Y26-10-902"
+        ],
+        "narrative": "Parity-map and algebraic-geometric code bounds precede the October raw-generator lattice certificate. The supplemental entries contain the actual all-state theorem, whereas accepted-output claims retain an unresolved observation rule."
+      }
+    ],
+    "connections": [
+      {
+        "target_domain": "D15",
+        "relation": "Raw words are finite-state observations",
+        "mathematical_bridge": "Injectivity of a multi-time observation map gives exact state recovery.",
+        "scope": "Unknown rejection times change that map and invalidate direct transfer of the theorem."
+      },
+      {
+        "target_domain": "D01",
+        "relation": "Congruences become a lattice exclusion",
+        "mathematical_bridge": "The modular recurrence and output residue produce a bounded integer-lattice problem.",
+        "scope": "A short lattice vector need not by itself be a realizable collision."
+      },
+      {
+        "target_domain": "D12",
+        "relation": "Code lengths have matching lower bounds",
+        "mathematical_bridge": "Puncturing compares all-state population with remaining alphabet capacity.",
+        "scope": "Optimal information length does not assert optimal decoder running time."
+      }
+    ],
+    "capabilities": [
+      "C01",
+      "C03",
+      "C05",
+      "C12"
+    ],
+    "interactive_contract": {
+      "lab_ids": [],
+      "inputs": "Known raw positions and words, plus supplied exact lattice bases.",
+      "outputs": "Certified state or no compatible state; unique radius-one or radius-two decoder when appropriate.",
+      "validation": "The annual source bundle contains the exact all-126-basis checker and independent review. This domain verifier replays all 126 basis checks and 630 decoder fixtures, repeats all determinants with an independent Bareiss calculation, and checks a small exhaustive analogue.",
+      "status": "Actual large all-state certificate in the included 2026 source bundle; no live FreeLIP browser lab."
+    },
+    "limits": "The raw-output theorem assumes the stated recurrence, output convention and known positions. No recovered acceptance/rejection rule supports the previous six-accepted-output claim. A designed distance lower bound for an algebraic-geometric code is not an exhibited minimum-weight codeword or efficient decoder. Structural transport can preserve composition while changing Hamming distance.",
+    "open_questions": [
+      "Can the historical acceptance rule and its hidden-step semantics be recovered for a separate theorem?",
+      "Can the all-state lattice proof be translated into a formal proof assistant while retaining its explicit determinant and rounding bounds?"
+    ],
+    "references": [
+      {
+        "label": "SageMath, BCH code reference",
+        "url": "https://doc.sagemath.org/html/en/reference/coding/sage/coding/bch_code.html"
+      },
+      {
+        "label": "Brouwer, Riemann–Roch and algebraic geometry codes",
+        "url": "https://aeb.win.tue.nl/2WF02/rr.pdf"
+      }
+    ]
+  },
+  {
+    "id": "D15-F01",
+    "domain_id": "D15",
+    "title": "Target-relative observation: fibres, factorization and dynamic closure",
+    "central_question": "Which hidden directions matter for the requested target, and when can the observation itself evolve as a closed state?",
+    "synopsis": "The strongest common thread in the later archive is that full-state recovery is often unnecessary. An observation can leave a large invisible fibre while still determining a particular target exactly. The right question asks whether the target is constant on those fibres. In finite-dimensional linear algebra this becomes a kernel inclusion, a factorization and a sharp stability inequality. This also separates three levels frequently merged in informal discussions: present target identifiability, stable noisy recovery and closed predictive dynamics. Present factorization G=LH does not imply that Hx can predict its own future; closure requires the invisible space to be invariant under the state dynamics. In nonlinear models a derivative test is only local and can miss second-order target variation along a hidden fibre. These distinctions guide sensor design constructively: retain or measure directions that change the target, then verify the closure or robustness property actually required by the task.",
+    "definitions": [
+      "For state x∈V, observation H:V→W and target G:V→Z, a fibre is {x:Hx=y}. The target is identifiable if Hx=Hx′ implies Gx=Gx′.",
+      "The invisible space of a linear observation is ker H. Target-relative observability is ker H⊆ker G, not necessarily ker H={0}.",
+      "For dynamics x′=Ax, observation closure means there is T with HA=TH. A moving observation B(t) closes when B′+BA=TB.",
+      "For Euclidean finite-dimensional spaces, the minimum-norm recovery on im H is L₀=GH†; its extension can vanish on the orthogonal complement of im H."
+    ],
+    "theorem": {
+      "statement": "The following are equivalent: G is identifiable from H; ker H⊆ker G; G=LH for some linear L; and GᵀG≼λHᵀH for some finite λ≥0. The smallest such λ is the squared minimum recovery norm. Separately, HA=TH exists exactly when ker H is A-invariant.",
+      "proof": "Identifiability applied to x∈ker H and x′=0 gives the kernel inclusion. Conversely, equal observations differ by a vector in ker H, so their targets agree. Define L(Hx)=Gx on im H; the inclusion makes this independent of the chosen representative and gives linearity. Extend L to W. Factorization gives ||Gx||≤||L||||Hx|| and hence the quadratic inequality. Conversely the inequality forces Gx=0 whenever Hx=0. The least possible norm is the supremum of ||Gx||/||Hx|| over nonzero observed vectors, exactly the least square-root constant in the inequality; the zero extension attains it in finite dimensions. For closure, HA must vanish on ker H, which is equivalent to A(ker H)⊆ker H. Apply the same factorization construction with target HA. In moving coordinates differentiate Bx and obtain (B′+BA)x; this is a new target to which the criterion applies."
+    },
+    "worked_example": {
+      "setup": "Observe Hx=(x₁+x₂,x₂+x₃) and request Gx=x₁+2x₂+x₃. Then compare a nonlinear target at a tangent point.",
+      "calculation": "The observation kernel is span((1,−1,1)); G annihilates it, so Gx=y₁+y₂ is exactly recoverable even though x is not. The minimum recovery norm is √2 because H is onto R² and L=(1,1). Requesting x₁ instead fails: x and x+(1,−1,1) have the same observation and different first coordinates. For H(x,z)=x and nonlinear target g(x,z)=z², the hidden derivative ∂_z g vanishes at z=0, yet g changes along that same observation fibre. Thus a zero directional derivative at one point is not finite-amplitude identifiability. In periodic velocity reconstruction, divergence and curl similarly leave a constant harmonic mean invisible unless it is separately observed.",
+      "meaning": "A target can be recovered with fewer channels than a whole state, but stable recovery, future prediction and nonlinear global identifiability each need their own theorem."
+    },
+    "source_uids": [
+      "2023:M016",
+      "2023:M017",
+      "2023:M082",
+      "2024:Y24-07-015",
+      "2025:Y25-06-018",
+      "2025:Y25-12-024",
+      "2026:Y26-02-014",
+      "2026:Y26-03-009",
+      "2026:Y26-04-012",
+      "2026:Y26-05-010",
+      "2026:Y26-09-024",
+      "2026:Y26-09-019",
+      "2026:Y26-09-025",
+      "2026:Y26-09-018",
+      "2026:Y26-10-019",
+      "2026:Y26-10-010"
+    ],
+    "anchor_uids": [
+      "2023:M016",
+      "2024:Y24-07-015",
+      "2026:Y26-05-010",
+      "2026:Y26-09-024",
+      "2026:Y26-09-019",
+      "2026:Y26-09-018",
+      "2026:Y26-10-019"
+    ],
+    "progression": [
+      {
+        "year": 2023,
+        "evidence_uids": [
+          "2023:M016",
+          "2023:M017",
+          "2023:M082"
+        ],
+        "narrative": "Observable recurrence and parameter-response questions already require distinguishing hidden state, hidden dynamics and fitted parameters."
+      },
+      {
+        "year": 2024,
+        "evidence_uids": [
+          "2024:Y24-07-015"
+        ],
+        "narrative": "Spatial averaging can erase a diffusion parameter exactly; the observation, rather than merely the equation, controls identifiability."
+      },
+      {
+        "year": 2025,
+        "evidence_uids": [
+          "2025:Y25-06-018",
+          "2025:Y25-12-024"
+        ],
+        "narrative": "Sampling aliasing and coordinate-dependent weighted rank expose two different observation-model obligations."
+      },
+      {
+        "year": 2026,
+        "evidence_uids": [
+          "2026:Y26-02-014",
+          "2026:Y26-05-010",
+          "2026:Y26-09-018",
+          "2026:Y26-09-019",
+          "2026:Y26-10-019"
+        ],
+        "narrative": "The later topics make fibre factorization explicit, add noise constants and distinguish tangent tests from finite-amplitude target variation."
+      }
+    ],
+    "connections": [
+      {
+        "target_domain": "D14",
+        "relation": "Linear factorization is the analogue of semantic quotienting",
+        "mathematical_bridge": "A quotient permits exact prediction only if transitions respect its fibres.",
+        "scope": "A current-output merge can fail under a later action."
+      },
+      {
+        "target_domain": "D11",
+        "relation": "Noise amplification is target-specific",
+        "mathematical_bridge": "The recovery norm bounds ||Lη||, while hidden conditional variation can create an additional irreducible floor.",
+        "scope": "A deterministic bound and a probabilistic confidence statement use different assumptions."
+      },
+      {
+        "target_domain": "D06",
+        "relation": "Moving coordinate observations acquire a derivative term",
+        "mathematical_bridge": "d(Bx)/dt=(B′+BA)x yields the moving closure equation.",
+        "scope": "A mere relabeling cannot discard B′ or change a rank invariant without its transformation law."
+      }
+    ],
+    "capabilities": [
+      "C03",
+      "C04",
+      "C05",
+      "C08",
+      "C14"
+    ],
+    "interactive_contract": {
+      "lab_ids": [
+        "L01"
+      ],
+      "inputs": "Recipe: rational H,G and optionally A. L01 uses four-dimensional state, six fixed probes and a choice of sum or pair target.",
+      "outputs": "Recipe: L or an invisible counterexample and closure checks. L01: exact rank test and cheapest static probe panels.",
+      "validation": "Exact kernel and factorization identities are checked; the standalone verifier supplies both the recoverable target and failing target and checks a closure counterexample.",
+      "status": "Small quotient/probe lab implemented; nonlinear fibres and field reconstruction are mathematical recipes."
+    },
+    "limits": "In infinite-dimensional Hilbert spaces kernel inclusion alone need not give bounded recovery without a range/majorization condition. Local Jacobian rank does not prove a nonlinear target constant on entire fibres. Fifteen coefficients in an affine wind model require a full-rank observation design, not just fifteen arbitrarily repeated readings. Exact optimization on development data does not prove sensor reduction or out-of-sample accuracy.",
+    "open_questions": [
+      "For a supplied target, what is the smallest additional observation subspace that removes all target-relevant hidden directions?",
+      "When can local differential factorization be integrated into a global fibre-constant target on a restricted nonlinear state manifold?"
+    ],
+    "references": [
+      {
+        "label": "Douglas, On majorization, factorization, and range inclusion",
+        "url": "https://doi.org/10.1090/S0002-9939-1966-0203464-1"
+      }
+    ]
+  },
+  {
+    "id": "D15-F02",
+    "domain_id": "D15",
+    "title": "Control energies, compatible metrics and constrained descriptor dynamics",
+    "central_question": "How can a declared system carry a complete stability, reachability or optimal-control certificate?",
+    "synopsis": "Control claims become concrete only after the plant, allowed inputs, output and state domain are specified. A positive Lyapunov matrix proves decay in one chosen metric; stable eigenvalues alone need not make Euclidean energy decrease at every instant. Finite-horizon Gramians quantify reachability and observation without requiring asymptotic stability. Riccati equations certify quadratic control values through completion of squares, including the terminal condition. Descriptor systems add algebraic constraints: a singular mass matrix can encode a regular constrained evolution, and replacing it by an invertible approximation can introduce a wholly new unstable mode. The common constructive capacity is to certify the property of the actual model with exact matrix identities. It is not enough to import a gain, a condition number or a contraction claim from a nearby surrogate. Norm bounds and dynamics must refer to the same metric and the same invariant domain.",
+    "definitions": [
+      "For x′=Ax, V(x)=xᵀPx with P≻0 is a quadratic energy. AᵀP+PA≼−Q, Q≻0, gives a quantitative decay estimate.",
+      "For x′=Ax+Bu, W_c(T)=∫_0^T e^{At}BBᵀe^{Aᵀt}dt; the observation Gramian is W_o(T)=∫_0^T e^{Aᵀt}CᵀCe^{At}dt.",
+      "A descriptor system E x′=Ax has regular pencil when det(sE−A) is not identically zero. Consistent initial states must satisfy its algebraic constraints.",
+      "For scalar x′=u and cost ∫(x²+u²)dt, a value coefficient P solves a Riccati equation; the admissible horizon and terminal value are part of its definition."
+    ],
+    "theorem": {
+      "statement": "If P≻0 and AᵀP+PA=−Q with Q≻0, then V(t)≤e^{−λ_min(Q)t/λ_max(P)}V(0). For any T>0, W_c(T)≻0 iff [B,AB,…,A^{n−1}B] has rank n; the analogous observation statement holds. For x′=u on [0,T] with zero terminal cost, P(t)=tanh(T−t) gives the optimal feedback u=−P(t)x and value P(0)x(0)².",
+      "proof": "Differentiate V to get V′=−xᵀQx≤−[λ_min(Q)/λ_max(P)]V and integrate. For the Gramian, vᵀW_cv=∫||Bᵀe^{Aᵀt}v||²dt. It vanishes exactly when this analytic function is zero on the interval, equivalently Bᵀ(Aᵀ)^kv=0 for every k. Cayley–Hamilton reduces this to k<n, proving the rank equivalence and the dual observation result. For the Riccati model, P′=P²−1 and P(T)=0. Along any admissible control, x²+u²+d(Px²)/dt=(u+Px)². Integration gives cost=P(0)x(0)²+∫(u+Px)²dt because the terminal term vanishes. The proposed feedback makes the square zero and therefore attains the exact lower bound."
+    },
+    "worked_example": {
+      "setup": "Use the nonnormal stable matrix A=[[-1,4],[0,−1]], then the constrained pencil E=diag(1,0), A_d=diag(−1,1).",
+      "calculation": "At x=(1,1), d||x||²/dt=4>0 although both eigenvalues are −1. The exact positive matrix P=[[1/2,1],[1,9/2]] has determinant 5/4 and satisfies AᵀP+PA=−I. It supplies a valid metric certificate without denying transient Euclidean growth. For the descriptor pencil det(sE−A_d)=−(s+1), so its only finite eigenvalue is −1 and consistent solutions obey x₂=0. Replacing E by E+εI produces a new second eigenvalue 1/ε. This unstable mode belongs to the altered model. For A=diag(−1,−2),B=(1,1)^T, the controllability determinant is −1, and the infinite-horizon Gramian [[1/2,1/3],[1/3,1/4]] has determinant 1/72.",
+      "meaning": "Exact energy and rank identities reveal which property is proved and which apparent instability or stability belongs only to a changed model."
+    },
+    "source_uids": [
+      "2023:M069",
+      "2024:Y24-07-005",
+      "2025:Y25-07-010",
+      "2025:Y25-09-001",
+      "2025:Y25-11-027",
+      "2025:Y25-11-030",
+      "2025:Y25-12-008",
+      "2026:Y26-03-001",
+      "2026:Y26-03-002",
+      "2026:Y26-08-001",
+      "2026:Y26-08-002",
+      "2026:Y26-08-003",
+      "2026:Y26-08-005",
+      "2026:Y26-08-006",
+      "2025:Y25-09-002"
+    ],
+    "anchor_uids": [
+      "2023:M069",
+      "2025:Y25-07-010",
+      "2025:Y25-11-030",
+      "2025:Y25-12-008",
+      "2026:Y26-08-001",
+      "2026:Y26-08-006"
+    ],
+    "progression": [
+      {
+        "year": 2023,
+        "evidence_uids": [
+          "2023:M069"
+        ],
+        "narrative": "The source distinguishes sufficient decay in a correct metric from the false claim that every stable system decreases Euclidean energy."
+      },
+      {
+        "year": 2024,
+        "evidence_uids": [
+          "2024:Y24-07-005"
+        ],
+        "narrative": "PID questions acquire an actual plant and characteristic-polynomial stability calculation."
+      },
+      {
+        "year": 2025,
+        "evidence_uids": [
+          "2025:Y25-07-010",
+          "2025:Y25-11-030",
+          "2025:Y25-12-008"
+        ],
+        "narrative": "Scalar LQR and Riccati examples provide complete value proofs; linear action becomes a Gramian control-energy problem."
+      },
+      {
+        "year": 2026,
+        "evidence_uids": [
+          "2026:Y26-03-001",
+          "2026:Y26-08-001",
+          "2026:Y26-08-002",
+          "2026:Y26-08-006"
+        ],
+        "narrative": "Metric-compatible semigroup statements and descriptor pencil examples distinguish dynamics, constraints, minimal indices and observations."
+      }
+    ],
+    "connections": [
+      {
+        "target_domain": "D09",
+        "relation": "Stability depends on dynamics and metric",
+        "mathematical_bridge": "A Hurwitz matrix admits a suitable quadratic certificate but can exhibit nonnormal transient amplification.",
+        "scope": "A decay theorem in one norm does not transfer unchanged to every norm."
+      },
+      {
+        "target_domain": "D12",
+        "relation": "Riccati feedback attains a global lower bound",
+        "mathematical_bridge": "Completion of squares certifies the value and the minimizer.",
+        "scope": "Terminal and admissibility conditions cannot be omitted."
+      },
+      {
+        "target_domain": "D03",
+        "relation": "Matrix pencils encode constraints and hidden indices",
+        "mathematical_bridge": "Polynomial nullspaces and finite eigenvalue sensitivities have different algebraic certificates.",
+        "scope": "A singular E need not make the pencil singular; simple-eigenvalue formulas need nonzero normalization."
+      }
+    ],
+    "capabilities": [
+      "C01",
+      "C03",
+      "C05",
+      "C06",
+      "C07",
+      "C08"
+    ],
+    "interactive_contract": {
+      "lab_ids": [],
+      "inputs": "Declared A,B,C or descriptor E,A; positive metric and horizon.",
+      "outputs": "Exact Lyapunov identities, rank conditions, Gramian energy or Riccati value; descriptor consistency checks.",
+      "validation": "Standalone rational matrix verification checks P, transient growth, Gramian determinant and descriptor roots; the Riccati square identity is derived analytically.",
+      "status": "Mathematical recipes with exact finite checks; no general control simulator is implemented."
+    },
+    "limits": "Stability of a transfer function need not imply internal stability in canceled modes. A singular-vector projection is an iteration limit only under appropriate spectral hypotheses. A descriptor intervention gradient assumes a simple eigenvalue and nonzero left-right normalization. Historical benchmark margins, gains and speedups require the unrecovered system and measurements.",
+    "open_questions": [
+      "Can a claimed contraction product be checked in one compatible norm on every component’s actual invariant domain?",
+      "Which descriptor regularizations preserve the consistent constrained dynamics instead of creating spurious modes?"
+    ],
+    "references": [
+      {
+        "label": "Boyd, Linear quadratic Lyapunov theory",
+        "url": "https://web.stanford.edu/class/ee363/lectures/lq-lyap.pdf"
+      },
+      {
+        "label": "Berger and Trenn, The quasi-Kronecker form for matrix pencils",
+        "url": "https://stephantrenn.net/wp-content/uploads/2017/09/BergTren12.pdf"
+      }
+    ]
+  },
+  {
+    "id": "D15-F03",
+    "domain_id": "D15",
+    "title": "Regularized inverse problems: bias, noise and certified stopping",
+    "central_question": "How should finite resolution be chosen when inversion amplifies measurement error?",
+    "synopsis": "Inverse problems make a precise tradeoff visible: a richer inverse reduces approximation bias but amplifies noise. A source class says which signals are admissible; a deterministic noise ball says which data can be trusted. The archive’s strongest late analytic development derives matching upper and lower recovery rates for concrete diagonal models rather than asserting convergence from a suggestive cutoff formula. Mild singular-value decay gives a power-law rate, severe decay gives a logarithmic rate, and the latter requires a lower-order safety margin. Tikhonov and Landweber express the same controlled approximation through different spectral filters. The constructive payoff is a parameter or stopping rule with a declared worst-case bound. A rate is not just a fitted slope: an indistinguishable pair shows that no recovery map can uniformly do better on the stated signal class.",
+    "definitions": [
+      "Observe y^δ=Ax+η in Hilbert norm with ||η||≤δ and x in a source class M. A linear reconstruction R has bias B_M(R)=sup_{x∈M}||(RA−I)x||.",
+      "For diagonal Ae_k=σ_ke_k, spectral cutoff R_N retains k≤N and divides those coordinates by σ_k.",
+      "Use the ellipsoid M_r={x:Σk^{2r}|x_k|²≤1}. Mild decay is σ_k=k^{−p}; severe decay is σ_k=e^{−ck^β}, with all parameters positive.",
+      "Tikhonov R_α=(A* A+αI)^{-1}A* and Landweber early stopping are bounded spectral filters approximating the unbounded inverse."
+    ],
+    "theorem": {
+      "statement": "For any bounded R, the worst-case error is at most B_M(R)+δ||R||. Mild cutoff N=floor(δ^{−1/(p+r)}) has minimax order δ^{r/(p+r)}. Severe cutoff with L=log(1/δ) and N=floor(((L−(r/β)log L)/c)^{1/β}) has minimax order L^{−r/β} for sufficiently large L. Merely requiring N∼(L/c)^{1/β} does not guarantee convergence.",
+      "proof": "Decompose Ry^δ−x=(RA−I)x+Rη and use the triangle inequality. On M_r the cutoff bias is (N+1)^{−r}; its noise norm is δ/σ_N. For polynomial singular values, balance N^{−r} with δN^p to obtain the power-law upper bound. Choose K of order δ^{−1/(p+r)} and x_±=±K^{−r}e_K. Both signals lie in the ellipsoid and have ||Ax_±||≤δ after a harmless integer adjustment, so the same datum zero is admissible for both. Any estimator must err by at least K^{−r} on one, proving the matching order. For severe decay, the stated safety margin gives δe^{cN^β}≤L^{−r/β} while N^{−r} has the same order. A K of order (L/c)^{1/β} gives the analogous two-point lower bound. But with c=β=1,δ=e^{−j},N=j, the leading asymptotic cutoff holds and noise amplification equals one; convergence fails."
+    },
+    "worked_example": {
+      "setup": "Compare mild p=r=1 at δ=10^{-4} with severe c=β=r=1 at δ=e^{-100}. Then inspect two alternative filters.",
+      "calculation": "Mild cutoff N=100 gives error ≤1/101+1/100<0.02, while the indistinguishable signals ±e_100/100 force worst-case error ≥0.01. Severe safe cutoff gives N=95 and bound 1/96+e^{−5}<0.01716; N=100 instead has noise bound one. Under x=(A*A)^νw, ||w||≤ρ and 0<ν≤1, Tikhonov gives bias ≤ρc_να^ν and noise ≤δ/(2√α), where c_ν=ν^ν(1−ν)^{1−ν} and c_1=1. Balancing gives rate δ^{2ν/(2ν+1)} with the corresponding ρ scaling. For Landweber with 0<ω≤||A||^{-2}, m steps give bias ≤ρ(ν/(eωm))^ν and noise ≤δ√(ωm). More iterations can therefore worsen the total guarantee after the bias-noise balance.",
+      "meaning": "The admissible class, operator spectrum and noise model jointly determine useful resolution; a cutoff or iteration count has no universal meaning on its own."
+    },
+    "source_uids": [
+      "2024:Y24-11-002",
+      "2025:Y25-08-021",
+      "2026:Y26-02-016",
+      "2026:Y26-07-020",
+      "2026:Y26-07-029",
+      "2026:Y26-08-901",
+      "2026:Y26-08-902",
+      "2026:Y26-08-903",
+      "2026:Y26-08-904",
+      "2026:Y26-08-905",
+      "2026:Y26-10-025",
+      "2025:Y25-12-004",
+      "2026:Y26-08-004"
+    ],
+    "anchor_uids": [
+      "2026:Y26-08-901",
+      "2026:Y26-08-902",
+      "2026:Y26-08-903",
+      "2026:Y26-08-904",
+      "2026:Y26-08-905"
+    ],
+    "progression": [
+      {
+        "year": 2024,
+        "evidence_uids": [
+          "2024:Y24-11-002"
+        ],
+        "narrative": "A filter is tied to an actual frequency response and stability certificate."
+      },
+      {
+        "year": 2025,
+        "evidence_uids": [
+          "2025:Y25-08-021"
+        ],
+        "narrative": "ISTA and conjugate gradients are assigned different objective, stopping and convergence contracts."
+      },
+      {
+        "year": 2026,
+        "evidence_uids": [
+          "2026:Y26-07-020",
+          "2026:Y26-08-901",
+          "2026:Y26-08-902",
+          "2026:Y26-08-903",
+          "2026:Y26-08-904",
+          "2026:Y26-08-905"
+        ],
+        "narrative": "Moment inversion emphasizes model order and conditioning; the supplemental August treatments make cutoff quantifiers, minimax lower bounds, qualification and early stopping explicit. Their dates refer to source topics rather than proof discovery."
+      }
+    ],
+    "connections": [
+      {
+        "target_domain": "D07",
+        "relation": "Spectral calculus supplies reconstruction filters",
+        "mathematical_bridge": "The norms sup σ/(σ²+α) and residual sup λ^ν α/(λ+α) give explicit Tikhonov constants.",
+        "scope": "The stated simple qualification proof uses 0<ν≤1."
+      },
+      {
+        "target_domain": "D11",
+        "relation": "Indistinguishable data impose error floors",
+        "mathematical_bridge": "Opposite source signals and admissible noise produce the same datum.",
+        "scope": "This deterministic minimax argument does not assume a Bayesian prior."
+      },
+      {
+        "target_domain": "D12",
+        "relation": "Parameter choice balances competing errors",
+        "mathematical_bridge": "Minimize a proved bias-plus-noise envelope over cutoff, α or iteration count.",
+        "scope": "Oracle source smoothness or noise bounds must be known or estimated under new assumptions."
+      }
+    ],
+    "capabilities": [
+      "C03",
+      "C05",
+      "C08",
+      "C09",
+      "C12"
+    ],
+    "interactive_contract": {
+      "lab_ids": [
+        "L04"
+      ],
+      "inputs": "Positive decay and smoothness parameters, noise level and cutoff.",
+      "outputs": "Bias, noise amplification, total envelope and admissible cutoff comparisons.",
+      "validation": "Closed-form bounds are checked against exact finite diagonal models; the severe counterexample is exposed explicitly.",
+      "status": "Implemented cutoff lab; Tikhonov and Landweber are documented mathematical recipes."
+    },
+    "limits": "Theorems assume the declared source class and norm-bounded noise. Arbitrary smoothness does not transfer through Tikhonov beyond its qualification without additional treatment. Tuning formulas using ρ assume ρ>0; if ρ=0 the source is known zero. A local Newton enclosure requires its own domain, inverse-Jacobian and contraction checks. Small numerical residuals alone neither establish a root count nor certify inversion.",
+    "open_questions": [
+      "Can a data-dependent parameter choice achieve the same guarantees without knowing source smoothness?",
+      "Which non-diagonal observation models admit computable upper bounds and matching indistinguishable-pair lower bounds?"
+    ],
+    "references": [
+      {
+        "label": "Clason, Regularization of Inverse Problems, author lecture notes",
+        "url": "https://arxiv.org/abs/2001.00617"
+      }
+    ]
+  },
+  {
+    "id": "D15-F04",
+    "domain_id": "D15",
+    "title": "Cheapest distinguishing experiments and uncertainty-aware decisions",
+    "central_question": "Which next observation resolves the target at minimum guaranteed cost, and when does additional data remain irrelevant?",
+    "synopsis": "Observation and decision become a single constructive problem when the remaining states and available tests are finite and explicit. A test splits the current feasible set into outcome fibres. A target is resolved when it is constant on the surviving set, even if the full hidden state remains unknown. Positive test costs lead to an exact worst-case Bellman recurrence with matching lower and upper proofs. This is a rigorous version of choosing the cheapest distinguishing experiment, and it complements linear target-factorization: one asks which extra measurement destroys the harmful ambiguity. Correlated uncertainty adds a geometric version. An ellipsoid has exact target extrema, while a hidden-target conditional variance can remain positive even with noiseless recorded channels. More readings do not automatically remove uncertainty if they repeat the same direction or measure variables unrelated to the target’s hidden component. The archive’s decision examples become strongest when their uncertainty sets and terminal target criterion are stated together.",
+    "definitions": [
+      "Let S be a finite feasible state set, τ:S→T a target, and e a deterministic experiment of positive cost c_e with outcome e(s). Its outcome fibre is S_{e,y}={s∈S:e(s)=y}.",
+      "A terminal set is one on which τ is constant. A useful test has every nonempty outcome fibre a proper subset of the current nonterminal set.",
+      "For correlated uncertainty E={μ+Σ^{1/2}z:||z||≤r}, Σ is positive definite and a linear target is aᵀx.",
+      "Worst-case decision cost, expected cost under a prior and statistical information gain are different objectives."
+    ],
+    "theorem": {
+      "statement": "If the available tests separate every pair of states having different target values, the least worst-case cost is V(S)=0 on terminal sets and otherwise V(S)=min_e[c_e+max_{y:S_{e,y}≠∅}V(S_{e,y})], over useful tests. For the ellipsoid E, the exact linear-target range is aᵀμ±r√(aᵀΣa).",
+      "proof": "Any decision tree chooses a first test e. An adversary can return the outcome whose remaining subtree has largest optimal cost, so every tree costs at least c_e+max_yV(S_{e,y}). Minimizing gives the lower bound. Conversely attach optimal subtrees to a minimizing test. Every nonempty fibre is smaller, so induction on |S| constructs a tree attaining that same value. Pairwise target separation guarantees that a nonterminal set has a splitting test; otherwise two different target values could never be distinguished. Positive cost lets us discard useless first tests. This proves existence and exact optimality. For the ellipsoid write aᵀx=aᵀμ+(Σ^{1/2}a)ᵀz. Cauchy–Schwarz gives the stated extrema, attained at z=±rΣ^{1/2}a/√(aᵀΣa) when a≠0. Correlation is retained through the quadratic form rather than discarded in independent coordinate bars."
+    },
+    "worked_example": {
+      "setup": "Identify one of states a,b,c. Test e₁ costs one and isolates a; test e₂ costs two and isolates b; a direct three-way test costs four. Separately use μ=0,Σ=[[1,ρ],[ρ,1]], target x₁+x₂.",
+      "calculation": "Testing e₁ first costs one if the answer is a and otherwise requires e₂, for worst-case cost three. Starting with e₂ also has worst-case cost three, while the direct test costs four. Neither cheaper one-test partition resolves every state, so the Bellman lower bound matches three. If the target merely distinguishes a from {b,c}, e₁ alone costs one; state identification was an unnecessarily demanding task. For the ellipsoid target, the exact range is ±r√(2+2ρ). Thus positive and negative correlations have opposite effects on the sum, and treating the axes independently can conceal this difference. In the linear observation model Hx=(x₁,x₂), target x₃ remains unobservable regardless of how often the first two coordinates are read.",
+      "meaning": "An experiment is valuable relative to the target and the current uncertainty set. The optimal policy comes with a lower-bound argument, not just an appealing test order."
+    },
+    "source_uids": [
+      "2023:M082",
+      "2025:Y25-06-018",
+      "2026:Y26-04-012",
+      "2026:Y26-08-016",
+      "2026:Y26-09-020",
+      "2026:Y26-09-021",
+      "2026:Y26-09-022",
+      "2026:Y26-09-024",
+      "2026:Y26-10-019",
+      "2026:Y26-10-022"
+    ],
+    "anchor_uids": [
+      "2026:Y26-08-016",
+      "2026:Y26-09-020",
+      "2026:Y26-09-022",
+      "2026:Y26-09-024",
+      "2026:Y26-10-019",
+      "2026:Y26-10-022"
+    ],
+    "progression": [
+      {
+        "year": 2023,
+        "evidence_uids": [
+          "2023:M082"
+        ],
+        "narrative": "Competing response laws and identifiable parameters establish that an experiment needs a model whose alternatives it can distinguish."
+      },
+      {
+        "year": 2025,
+        "evidence_uids": [
+          "2025:Y25-06-018"
+        ],
+        "narrative": "Finite sensor aliasing gives exact examples of measurements that do not separate candidate states."
+      },
+      {
+        "year": 2026,
+        "evidence_uids": [
+          "2026:Y26-08-016",
+          "2026:Y26-09-020",
+          "2026:Y26-09-021",
+          "2026:Y26-09-022",
+          "2026:Y26-10-022"
+        ],
+        "narrative": "Joint enclosures, correlated target ranges and conditional error floors enrich the uncertainty model; October adds an exact finite worst-case adaptive policy theorem."
+      }
+    ],
+    "connections": [
+      {
+        "target_domain": "D12",
+        "relation": "Observation choice is an optimization problem",
+        "mathematical_bridge": "Bellman recursion couples test costs with worst-case remaining fibres.",
+        "scope": "An expected-cost objective under a prior requires a different recurrence."
+      },
+      {
+        "target_domain": "D11",
+        "relation": "Recorded variables can leave a target error floor",
+        "mathematical_bridge": "Conditional target variance quantifies uncertainty surviving an observation σ-algebra.",
+        "scope": "The finite deterministic test theorem does not assume a statistical distribution."
+      },
+      {
+        "target_domain": "D14",
+        "relation": "A distinguishing word is an adaptive experiment",
+        "mathematical_bridge": "Future-equivalence counterexamples identify experiments that split otherwise merged states.",
+        "scope": "Allowed actions and their costs must match the actual implementation."
+      }
+    ],
+    "capabilities": [
+      "C03",
+      "C05",
+      "C06",
+      "C12",
+      "C14"
+    ],
+    "interactive_contract": {
+      "lab_ids": [
+        "L01",
+        "L08"
+      ],
+      "inputs": "Recipe: finite states, targets and costly tests. L01 uses a fixed linear probe menu; L08 uses one shared-uncertainty model.",
+      "outputs": "Recipe: exact adaptive decision policy. L01 outputs cheapest static panels; L08 outputs exact interval decision margins.",
+      "validation": "Standalone Bellman enumeration checks the three-state optimum and target-only variant; ellipsoid support values use exact quadratic forms when rational.",
+      "status": "L01 implements static cheapest linear probe panels and L08 shared scalar uncertainty. Adaptive Bellman design is a checked recipe, not an implemented decision-tree editor."
+    },
+    "limits": "The finite theorem assumes deterministic tests and a complete state/test table. Noisy outcomes require posterior feasible sets and a robust terminal condition. Repeated samples of the same deficient geometry do not create new linear rank. A development-set optimum does not establish future prediction performance, causal benefit or hardware savings. Historical panel timings need their original datasets and evaluation protocol.",
+    "open_questions": [
+      "Which targets can be resolved without identifying the complete state in a supplied experiment menu?",
+      "How does one preserve a computable lower bound when observations are noisy, costs depend on history or uncertainty sets are continuous?"
+    ],
+    "references": [
+      {
+        "label": "Boyd and Vandenberghe, Convex Optimization",
+        "url": "https://web.stanford.edu/~boyd/cvxbook/"
+      },
+      {
+        "label": "Douglas, On majorization, factorization, and range inclusion",
+        "url": "https://doi.org/10.1090/S0002-9939-1966-0203464-1"
+      }
+    ]
+  }
+]

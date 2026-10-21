@@ -1,0 +1,66 @@
+[
+  {
+    "domain_id": "D13",
+    "title": "Combinatorics and graph mathematics",
+    "organizing_question": "What exact information must be retained to count, distinguish or compose finite structures?",
+    "core_objects": [
+      "Labeled finite populations",
+      "Generating functions and completion recurrences",
+      "Incidence and Laplacian matrices",
+      "Cycle and cut spaces",
+      "Factor scopes and separator states",
+      "Multiplicity-bearing quotient fibres"
+    ],
+    "concept_order": [
+      "D13-F01",
+      "D13-F03",
+      "D13-F02",
+      "D13-F04"
+    ],
+    "open_frontier": "Recover original large-instance tables and proof dependencies; characterize the distinguishing strength of bounded-height graph observations; build minimal boundary quotients that preserve counts as well as values.",
+    "overview": "This domain supplies exact finite objects on which the atlas’s more abstract ideas can be tested. Its organizing operation is a disjoint decomposition: remove the largest tableau entry, choose the next binary project coordinate, separate a graph along a boundary or decompose a path flow. Such a decomposition is useful only if its pieces represent the declared original objects exactly once. Generating products and completion recurrences make those multiplicities explicit. The resulting counts then support a stronger interface: reversible addresses, exact sampling, conditional populations and a unique optimum proved by a singleton threshold census. This is why population definitions and skipped-coordinate factors belong in the mathematics rather than being deferred to implementation.\n\nGraphs contribute a complementary lesson about observations. An adjacency matrix contains more than its eigenvalues, and a full heat operator contains more than its trace or diagonal. The 2023 rook–Shrikhande collision demonstrates an exact loss of structure. The 2026 seven-vertex pair refines the issue: the entire binary size-cut census agrees, while one integer-height coefficient separates the graphs. This is a model for constructive research throughout the report. First prove the collision at the weaker observation; then identify a richer observable and calculate a finite separating witness. It gives a defensible improvement without claiming that the stronger invariant solves every graph-isomorphism problem.\n\nIncidence matrices link this graph thread to topology and optimization. Their rank yields cycle dimension, and spanning forests produce explicit integer cycle bases. The finite DAG path-difference theorem explains which conservation directions can be expressed as differences of admissible routes. Directed acyclicity does not remove undirected circulation: the diamond is the smallest useful reminder. At the optimization boundary, a matching witnesses a necessary number of vertex calls and a cover supplies a sufficient number. The two meet in a complete proof only after the permitted action is fixed. Unrecovered historical call rules and extremal point lists therefore remain concrete retrieval obligations.\n\nThe final family turns these principles into composition. Sum–product and min–plus elimination preserve different semiring values through distributivity. A compact separator stores exactly the interaction that future factors can observe. Erasing a physical lane or adding an auxiliary gate is safe only under a corresponding fibre theorem. Equal optimum values can coexist with unequal counting measures, as the 43,680 physical channel assignments and 256 bank tuples show. The interactive capacities follow directly: L02 exposes counts and addresses, L03 inspects a complete graph-invariant collision, and L09 computes boundaries and homology on small declared complexes. These are bounded, inspectable mathematical models. The general elimination, large Petersen optimization and unrecovered routing benchmarks remain recipes or source claims until their actual instances and complete certificates are supplied."
+  },
+  {
+    "domain_id": "D14",
+    "title": "Logic, computation and exact certification",
+    "organizing_question": "Which semantics and finite witnesses justify a global computational claim?",
+    "core_objects": [
+      "Action alphabets and deterministic transition systems",
+      "Future equivalence and right congruences",
+      "Reachable–observable realizations",
+      "Hankel matrices and semiring response tables",
+      "Typed witnesses and dependency records",
+      "Error-correcting trajectory codes"
+    ],
+    "concept_order": [
+      "D14-F01",
+      "D14-F02",
+      "D14-F03",
+      "D14-F04"
+    ],
+    "open_frontier": "Formalize supplied exact certificates without losing their input semantics; recover operational tables and missing completeness proofs; quantify approximate state reduction separately from exact equivalence.",
+    "overview": "The computation domain joins three questions that must remain distinct: what behavior a machine is intended to preserve, what smaller representation reproduces it, and what certificate establishes that conclusion. The observable state is relative to a declared action alphabet. Present outputs do not determine it. Future equivalence compares outputs after every allowed continuation, and the finite refinement theorem makes that infinite-looking condition executable on a supplied finite transition table. Additive costs enlarge the semantics and must descend with transitions. This explains why a state quotient can be exact for one observer and fail when a reset, query or pinned physical identity is added.\n\nLinear realization gives the parallel quantitative theory of memory. An intertwining identity proves that a smaller state reproduces every time step, while a nonzero Hankel minor proves that no still smaller linear state suffices. The distinction between the reachable subspace and the invisible subspace matters: their intersection quotient determines zero-initial driven order. A recurrence for one observed trajectory, a universal scalar observation recurrence and a multi-output state dimension are different mathematical objects. The min–plus two-by-two gap illustrates the same upper-bound/lower-bound strategy in another algebra, with its scope explicitly limited to additive register factorization.\n\nThe certificate family supplies a common proof interface across the archive. Truth tables require a finite domain; quantifiers specify whether a witness is uniform; a polynomial function and a formal polynomial need not coincide; a feasible point is not an optimum; an exact witness is not a complete census. A small checker can validate useful discoveries made by an untrusted search procedure, but its conclusion depends on its declared certificate type. A Bézout identity, a rank factorization and a primal–dual pair establish different propositions. Historical proof diagrams, public recursion identities and two-prime checks retain their narrower meanings unless the missing completeness or dependency arguments are supplied.\n\nThe raw-generator theorem is a substantial instance where those obligations are actually met. The annual 2026 bundle contains all 126 integer lattice bases and exact determinant and inverse-column checks. They exclude every collision for any five known positions among nine raw steps, not merely the fixture states. A puncturing argument then proves exact distance n−4 and length-optimal one- and two-word correction. The decoder fixtures separately exercise the implementation. Accepted/rejected sequences have unknown hidden step counts and remain outside that theorem. This distinction should not obscure the genuine strength of the raw certificate.\n\nThe atlas’s interactive interface reflects this proof architecture. L01 makes a fixed linear quotient test and cheapest static probe panels inspectable; the finite-machine refinement and adaptive policies are checked recipes. L02 exposes a complete small census and address selection, while its completion-count and inverse-ranking theorems are proved separately. The broader exact certificates remain replayable source computations and mathematical recipes, rather than a claimed general theorem prover or universal SMT replacement. Their unification is a disciplined route from behavior to reduction to proof, with every change of model or quantifier visible."
+  },
+  {
+    "domain_id": "D15",
+    "title": "Control, observability and inverse problems",
+    "organizing_question": "What can be recovered or controlled from declared observations, at what cost and with what guarantee?",
+    "core_objects": [
+      "Observation fibres and target maps",
+      "Kernel inclusions and recovery operators",
+      "Invariant invisible subspaces",
+      "Lyapunov metrics and Gramians",
+      "Descriptor pencils and Riccati values",
+      "Spectral filters and source classes",
+      "Adaptive experiment trees"
+    ],
+    "concept_order": [
+      "D15-F01",
+      "D15-F02",
+      "D15-F03",
+      "D15-F04"
+    ],
+    "open_frontier": "Extend finite fibre certificates to supplied nonlinear or noisy models; derive robust experiment policies with computable lower bounds; select regularization from data without unproved source assumptions.",
+    "overview": "The central object in this domain is a requested target seen through an observation. Full-state reconstruction is only one possible target and often demands unnecessary measurements. In finite dimensions, exact target recovery is equivalent to a kernel inclusion and a factorization G=LH. The minimum recovery norm quantifies the amplification of bounded measurement error. A violating invisible vector is an equally useful certificate: it proves that two states have the same data and different targets. The late WIND and observation-geometry topics sharpen this perspective, while the earlier recurrence questions already show its algebraic roots.\n\nPresent recovery, prediction and nonlinear identifiability are successive obligations. A present factorization does not make the observation a closed dynamical state; HA=TH additionally requires the invisible kernel to be invariant. Moving observation coordinates acquire B′. A vanishing hidden directional derivative at one point does not establish target constancy on an entire nonlinear fibre. Counting the coefficients of a local wind ansatz does not guarantee a full-rank beam design. These distinctions organize practical sensing questions into exact mathematical tasks instead of letting one rank statistic carry all of their meaning.\n\nControl introduces the dual constructive problem: choose inputs that change the state or target with a certified cost. Gramians characterize finite-horizon reachability and observability without assuming asymptotic stability. Lyapunov identities establish decay in a compatible metric, including nonnormal examples whose Euclidean energy grows transiently. Completion of squares gives full scalar Riccati value proofs with terminal conditions. Descriptor pencils show why the actual constrained model matters: singular E can encode a regular problem, while adding εI can create an unstable artificial mode. These examples make matrix identities useful certificates of behavior, not merely computational diagnostics.\n\nInverse problems replace exact inversion by controlled approximation. The diagonal models expose the bias-noise split and matching indistinguishable-pair lower bounds. Polynomially decaying singular values give a power rate; exponentially decaying values require a logarithmic rate and an explicit safety margin. Tikhonov’s parameter and Landweber’s stopping time are two ways to choose the same compromise. The guarantee always names a source class and noise model. Neither a tiny residual nor a leading-order cutoff equivalence supplies those assumptions.\n\nFinally, the experiment-design family asks what information should be purchased next. A finite Bellman theorem gives a policy and its matching worst-case lower bound when tests are deterministic and targets explicit. Correlated ellipsoids and hidden conditional variation explain why some extra observations are useful while repeated deficient directions remain irrelevant. L01 combines a fixed linear quotient test with cheapest static probe panels, L04 explores cutoff envelopes, and L08 retains shared uncertainty in robust decisions. These labs demonstrate exact bounded capacities. General nonlinear reconstruction, continuous noisy adaptive design and historical sensor-performance claims require their own supplied models, data and validation arguments."
+  }
+]

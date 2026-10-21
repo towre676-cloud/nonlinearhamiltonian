@@ -1,0 +1,46 @@
+[
+  {
+    "domain_id": "D01",
+    "title": "Arithmetic and number fields",
+    "organizing_question": "How can an exact arithmetic construction retain its scalar domain, local data and completeness certificate as it is transported into a larger mathematical framework?",
+    "core_objects": [
+      "Integer valuation vectors and divisor incidence",
+      "p-adic fields, residue systems and integral series",
+      "Quadratic units and complete Pell orbits",
+      "Cyclotomic fields and finite Galois fibres",
+      "Ideal classes, norm lattices and ramification",
+      "Modular coefficients, local factors and convergent Dirichlet series"
+    ],
+    "concept_order": [
+      "D01-F01",
+      "D01-F02",
+      "D01-F03",
+      "D01-F04",
+      "D01-F05",
+      "D01-F06",
+      "D01-F07"
+    ],
+    "overview": "The strongest arithmetic thread across the recovered treatments is the replacement of suggestive numerical association with a declared object and a certificate. A number such as 384 becomes useful after it is assigned to the degree of a cyclotomic field. A recurrence becomes a classification after descent proves every solution lies in its seed orbits. A polynomial becomes an arithmetic field description after irreducibility, discriminant and ramification are checked. A residue becomes a root certificate after compatibility, a unit derivative and completeness supply the infinite conclusion. These transitions are the organizing structure of this chapter.\n\nThe entry point is scalar type. The 2023 distinction between Q, Q_p and characteristic-p series rings prevents invalid maps before any calculation begins. The same issue returns in finite-precision Frobenius tests and formal-series invariants: zero modulo p^N can hide a nonzero obstruction, and an unknown tail can hide the first unit coefficient. The p-adic family therefore couples exact digits with a proof about the completed object. Valuation arithmetic then gives the complementary integer picture. Prime exponents turn monomial constraints into affine integer lattices, divisor order into a product of chains, and factorials into a p-power part plus a stripped unit. The gcd-matrix factorization demonstrates how such arithmetic can legitimately create an energy form through an explicit incidence map.\n\nTwo families support implemented finite interactive models. The conductor-1680 model enumerates 384 units, reduces them to eight primitive order-30 classes and verifies 48 points in every fibre. The tower formula then gives exact trace transport. The Pell model generates positive and negative norm orbits, displays inverse steps and computes periodic congruence acceptance. Its written seed reduction is essential: enumeration explains a finite modular period, while descent proves global coverage. Both labs are worked models with exact inputs and outputs, rather than general arithmetic-solving services.\n\nNumber fields provide the main obstruction language. The S₃ closure of the discriminant-minus-23 cubic forbids cyclotomic containment. The Q(√10) examples distinguish a genuine unramified class-field candidate from an extension of the right degree with the wrong ramification. Cubic norm formulas preserve the lattice defining the original binary equation, showing exactly why a unit action can leave the solution plane. The completely proved Mordell example y²=x³−2 illustrates the stronger standard: a norm-Euclidean ring and coprimality argument can deliver a global finite answer, whereas an ambient unit identity alone cannot.\n\nThe final two families connect this arithmetic to analytic and modular structure. Modular forms require a group, weight and normalization before dimensions and Hecke relations make sense. Euler products require a convergence half-plane before coefficient algebra becomes analysis. Pointwise μΛ, convolution μ*log, prime counting and prime-power counting remain different objects. These distinctions make cross-domain bridges more productive because each bridge names its actual map. The chapter does not force a chronological storyline where sources are absent: the conductor thread is supported in 2025–2026, the explicit Pell thread in 2024 and 2026, and the modular thread primarily in 2024–2025. The common framework is a new synthesis of those supported mathematical treatments.",
+    "open_frontier": "The most valuable extensions would certify complete unit bases and lattice-return conditions for the norm examples, extend seed proofs to additional Pell cores, and provide explicit integral intertwiners for the proposed conductor-to-lattice bridge. Each is a precise missing theorem or certificate rather than an unspecified generalization."
+  },
+  {
+    "domain_id": "D02",
+    "title": "Algebraic and arithmetic geometry",
+    "organizing_question": "Which geometric model, maps and comparison data make a claim about arithmetic, singularities or cohomology precise enough to prove?",
+    "core_objects": [
+      "Affine curves, normalizations and projective models",
+      "Divisors, line bundles and spaces of sections",
+      "Modular curves, cusps and toric boundary charts",
+      "Elliptic groups, Frobenius factors and height lattices",
+      "Cohomological realizations and monodromy filtrations"
+    ],
+    "concept_order": [
+      "D02-F01",
+      "D02-F03",
+      "D02-F02",
+      "D02-F04"
+    ],
+    "overview": "This domain is organized by the object to which a statement applies. An affine equation, its singular curve, the normalized function-field model and the smooth compact curve answer different questions. A point count, a rational group, a divisor class and a cohomology realization likewise retain different information. The best revision of the earlier questions is to specify that object first, then ask for a map or invariant with hypotheses that can be checked. This replaces a broad request for additional geometric structure with a sequence of concrete mathematical tasks.\n\nThe curve family begins with maps. Rational parametrization includes an exceptional point and an inverse domain. The cusp map t↦(t²,t³) is injective but has zero derivative at the origin; its normalization ring and local intersection multiplicity expose what a set-theoretic description misses. The 2026 corner cubic adds an exact birational coordinate change, while the superelliptic family computes genus only after finite and infinite ramification are counted on the smooth compact normalization. These examples provide reusable questions for any proposed parameter map: where is it defined, where does rank drop, what happens at infinity, and which inverse identity is actually proved?\n\nDivisors and positivity organize the 2023 arithmetic-quotient cluster. Neatness addresses stabilizers in the open quotient; the cusp coordinate fills a puncture; a regular fan addresses local boundary smoothness; the canonical or log-canonical divisor addresses growth of sections; a very ample line bundle addresses an embedding. The modular curves X(3) and X(7) make ordinary and logarithmic general type visibly different. Riemann–Roch and Serre duality then give a precise degree threshold for a curve embedding. Picard calculations on P¹×P¹ and invariant divisor subspaces provide finite exact models of the same language. Higher-dimensional claims remain bounded by the actual compactification and positivity data supplied.\n\nElliptic arithmetic is the strongest local-to-global example. The discriminant-37 curve recurs in the 2024 and 2026 treatments with exact finite counts and rational group computations. Two good reductions exclude every possible rational torsion prime; the nonzero point then proves a rank lower bound. Heights turn independence into a Gram certificate, but a subgroup regulator differs by an index square from the full regulator. Selmer groups add hidden torsors and therefore supply information different from an explicit generator list. The interactive capacity here is specified as a recipe for exact point and group checks; no general certified rank or integral-point engine is claimed.\n\nThe cohomological family supplies a general caution about forgetting structure. An Euler realization can erase nonzero groups or take negative values. Rational monodromy ranks can erase integral torsion. A nilpotent operator determines a weight filtration but does not by itself produce a limiting mixed Hodge structure. Étale, crystalline, de Rham and Betti comparisons require compatible bases, coefficients and geometric hypotheses; a false universal motivic–Betti isomorphism already fails at a point. These are constructive constraints: they tell a future interface which fields and degrees to require and which counterexamples to expose. Together the four families form an atlas of models, maps and information loss, with each purported cross-domain identification stated as a theorem still requiring its own certificate.",
+    "open_frontier": "The next substantial work would supply explicit global compactification data in a fixed higher-dimensional example, certified descent and saturation for the elliptic subgroup, and correctly graded functorial comparison maps. A numerical invariant can assist those tasks but cannot replace the relevant geometry or cohomology."
+  }
+]

@@ -1,0 +1,64 @@
+{
+  "reviewer": "analysis_dynamics_atlas",
+  "targets": [
+    "domains/computation/families.json:D15-F01",
+    "domains/computation/families.json:D15-F02",
+    "domains/computation/families.json:D15-F03",
+    "domains/computation/families.json:D15-F04",
+    "data/bridges.json:B03",
+    "labs/engine.js:L04",
+    "labs/engine.js:L05",
+    "labs/contracts.json:L04",
+    "labs/contracts.json:L05"
+  ],
+  "status": "no_blocking_mathematical_errors_found",
+  "theorem_review": [
+    "Finite-dimensional kernel inclusion, factorization, quadratic majorization and observation closure agree. The infinite-dimensional limitation is correctly retained.",
+    "Lyapunov decay exponent, finite-horizon Gramian rank proof and scalar Riccati completion of squares are correct under the stated hypotheses. Descriptor regularization example correctly distinguishes the altered model.",
+    "Polynomial and severe diagonal cutoff rates and matching indistinguishable-pair lower bounds are correct; severe logarithmic correction has the required r/β coefficient. Tikhonov qualification and Landweber spectral bounds match their stated source condition.",
+    "Finite deterministic-test Bellman recursion and correlated-ellipsoid support formula are correct."
+  ],
+  "engine_replays": [
+    {
+      "model": "L04 mild p=r=1, delta=1e-4,N=100",
+      "total_bound": 0.01990099009900989
+    },
+    {
+      "model": "L04 severe c=r=1,delta=e^-100,N=95",
+      "total_bound": 0.017154613665752133
+    },
+    {
+      "model": "L04 severe c=r=1,delta=e^-100,N=100",
+      "total_bound": 1.00990099009901
+    },
+    {
+      "model": "L05 projection cos(theta)=0.6",
+      "contraction": 0.36,
+      "commutator_norm": 0.48,
+      "iterations_for_0.01": 5,
+      "residual": 0.0060466176
+    },
+    {
+      "model": "L05 shear a=2,b=1",
+      "commutator": [
+        [
+          7,
+          -4
+        ],
+        [
+          2,
+          -1
+        ]
+      ],
+      "determinant": 1
+    }
+  ],
+  "finding": {
+    "severity": "wording",
+    "location": "B03",
+    "before": "invisible directions obstruct existence",
+    "suggestion": "invisible directions obstruct well-defined target recovery",
+    "reason": "Distinguish existence of a recovery factorization from existence of a compatible state."
+  },
+  "scope": "Proof review and declared finite-model formula replay, not a global certification of every historical inverse problem or control claim."
+}

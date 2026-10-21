@@ -1,0 +1,72 @@
+{
+  "status": "passed",
+  "scope": "Bibliography extraction, source linkage, canonical-URL preservation and reading-route identifier checks; not a proof audit or live availability test.",
+  "statistics": {
+    "main_treatments": 1051,
+    "supplementary_treatments": 14,
+    "all_treatments": 1065,
+    "families": 71,
+    "domains": 16,
+    "reference_documents": 616,
+    "exact_original_urls": 618,
+    "source_treatments_with_references": 858,
+    "source_treatments_without_references": 207,
+    "family_citations": 286,
+    "hamiltonian_context_records": 6,
+    "authored_reading_documents": 6,
+    "reading_routes": 8,
+    "research_queue_items": 24,
+    "non_url_historical_tokens": 117
+  },
+  "source_counts_by_year": {
+    "2023": 128,
+    "2024": 237,
+    "2025": 351,
+    "2026": 349
+  },
+  "checks": [
+    {
+      "name": "All 1,065 source UIDs represented exactly once",
+      "status": "passed"
+    },
+    {
+      "name": "Every source/family/route identifier resolves in retained atlas",
+      "status": "passed"
+    },
+    {
+      "name": "Every exact URL belongs to its conservatively canonicalized record",
+      "status": "passed"
+    },
+    {
+      "name": "All annual reference lists and six Hamiltonian context records included",
+      "status": "passed"
+    },
+    {
+      "name": "External references are linked, not redistributed",
+      "status": "passed"
+    },
+    {
+      "name": "All relative Markdown file targets exist in the repository",
+      "status": "passed"
+    }
+  ],
+  "repository_link_template": "../compendium/readable/years/{year}/{source_id}.md and ../compendium/readable/domains/{domain_id}.md",
+  "count_reconciliation": {
+    "developed_treatment_reference_use_rows": 997,
+    "original_historical_reference_url_occurrences": 698,
+    "all_usage_kinds": {
+      "source_treatment": 1695,
+      "annual_reference_list": 672,
+      "atlas_family": 306,
+      "hamiltonian_context": 7
+    },
+    "exact_original_urls": 618,
+    "canonical_document_identities": 616,
+    "explanation": "tables/references.csv contains 997 developed treatment citation-use rows. These differ from unique URLs/documents, and this bibliography also includes original historical references, family references, annual lists and Hamiltonian context. source_uid_count deduplicates each treatment within each document."
+  },
+  "relative_link_audit": {
+    "links_checked": 8358,
+    "missing_count": 0,
+    "missing_targets": []
+  }
+}

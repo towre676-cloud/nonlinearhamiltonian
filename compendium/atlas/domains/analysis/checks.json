@@ -1,0 +1,196 @@
+{
+  "agent": "analysis_dynamics_atlas",
+  "status": "passed",
+  "checks": [
+    {
+      "name": "D07-F01 Haar energy",
+      "status": "passed",
+      "kind": "exact finite model",
+      "scope": "Exact coefficients, reconstruction and omitted energy for the printed four-vector.",
+      "detail": {
+        "total_energy": 30,
+        "discarded_energy": 1,
+        "reconstruction": [
+          "3/2",
+          "3/2",
+          "7/2",
+          "7/2"
+        ]
+      }
+    },
+    {
+      "name": "D07-F02 atomic function",
+      "status": "passed",
+      "kind": "exact rational plus numerical samples",
+      "scope": "Exact rational zero/slope and numerical half-plane sign at fifteen test points; the proof supplies the general sign.",
+      "detail": {
+        "zero": 0,
+        "slope": "3/2",
+        "residues": [
+          -1,
+          -2
+        ],
+        "half_plane_checks": 15
+      }
+    },
+    {
+      "name": "D07-F03 Mellin moments",
+      "status": "passed",
+      "kind": "exact finite model",
+      "scope": "Exact worked moment and rational integral enclosure; ζ(2) comparison is numerical.",
+      "detail": {
+        "moment": "3/8",
+        "zeta_lower": "205/144",
+        "zeta_upper": "241/144"
+      }
+    },
+    {
+      "name": "D07-F04 heat trace",
+      "status": "passed",
+      "kind": "numerical model check",
+      "scope": "Numerical finite-sum checks of the proved integral bounds and printed tail enclosure; no numerical proof of an asymptotic limit.",
+      "detail": {
+        "traces": [
+          [
+            1,
+            0.3863186024133261
+          ],
+          [
+            0.1,
+            2.302495608198964
+          ],
+          [
+            0.01,
+            8.36226925452758
+          ],
+          [
+            0.001,
+            27.524956081989643
+          ]
+        ],
+        "printed_tail_bound": 0.004578909722183545
+      }
+    },
+    {
+      "name": "D08-F01 periodic heat",
+      "status": "passed",
+      "kind": "numerical model check",
+      "scope": "Printed two-mode solution and its energy identity at four times.",
+      "detail": {
+        "mean": 3,
+        "mode_rates": [
+          0.5,
+          2
+        ],
+        "energy_identity_samples": 4
+      }
+    },
+    {
+      "name": "D08-F02 positive stencil",
+      "status": "passed",
+      "kind": "exact finite model",
+      "scope": "Exact five-node update, conservation, norm loss and two positivity counterexamples.",
+      "detail": {
+        "step": [
+          "1/2",
+          "1/4",
+          "0",
+          "0",
+          "1/4"
+        ],
+        "mass": 1,
+        "energy": "3/8",
+        "negative_counterexamples": 2
+      }
+    },
+    {
+      "name": "D08-F03 regularized basis",
+      "status": "passed",
+      "kind": "exact jets plus numerical example",
+      "scope": "Exact coefficient hierarchy through ε⁸ and numerical divided-difference remainder check.",
+      "detail": {
+        "hierarchy_orders": 8,
+        "exact_value": -1.8126924692201816,
+        "approximation": "-136/75",
+        "error_bound": "1/1500"
+      }
+    },
+    {
+      "name": "D08-F04 factorial expansion",
+      "status": "passed",
+      "kind": "numerical quadrature plus exact coefficients",
+      "scope": "Negative-ray worked truncation with independent numerical integral and exact formal ODE coefficient recurrence.",
+      "detail": {
+        "quadrature": -0.09156333393980022,
+        "truncation": -0.09164,
+        "proved_bound": 0.00012000000000000004,
+        "tail_beyond_40_at_most": 4.248354255291589e-19,
+        "note": "Simpson value is a numerical cross-check; the geometric identity proves the bound. Stokes contour orientation is proved in text, not tested here."
+      }
+    },
+    {
+      "name": "D09-F01 metric stability",
+      "status": "passed",
+      "kind": "exact finite model",
+      "scope": "Exact Lyapunov identity, rate comparison, Euclidean amplification and two-line projection quantities.",
+      "detail": {
+        "P_determinant": "13/16",
+        "threeI_minus_P_determinant": "1/16",
+        "transient_norm_at_one": 1.1633369384516796,
+        "projection_factor": "9/25",
+        "commutator_norm": "12/25"
+      }
+    },
+    {
+      "name": "D09-F02 logistic cycle",
+      "status": "passed",
+      "kind": "exact finite model",
+      "scope": "Exact factorization at r=16/5, multiplier and numerical cycle exchange.",
+      "detail": {
+        "multiplier": "4/25",
+        "cycle": [
+          0.51304450953263,
+          0.79945549046737
+        ],
+        "factorization": "exact degree-four polynomial identity"
+      }
+    },
+    {
+      "name": "D09-F03 mechanics and clock",
+      "status": "passed",
+      "kind": "exact values plus numerical identity",
+      "scope": "Printed exact linear-potential observables and scalar RG trajectory.",
+      "detail": {
+        "travel_time": "1/2",
+        "action": "1/6",
+        "RG_wall_time": 4,
+        "ODE_samples": 4
+      }
+    },
+    {
+      "name": "D09-F04 exact memory and rotation coding",
+      "status": "passed",
+      "kind": "exact combinatorial plus numerical continuous model",
+      "scope": "Exact irrational floor arithmetic for 1024 symbols and 128 block lengths; numerical linear-flow and convolution identities.",
+      "detail": {
+        "x_at_log2": "5/8",
+        "memory_free_value": "1/2",
+        "balance_lengths_checked": 128,
+        "word_length": 1024,
+        "word_arithmetic": "exact integer square roots"
+      }
+    },
+    {
+      "name": "Source and coverage integrity",
+      "status": "passed",
+      "kind": "metadata",
+      "scope": "Identifier validity and complete routing of the 259 initial source records; this is structural QA, not theorem validation.",
+      "detail": {
+        "classified_sources": 259,
+        "families": 12,
+        "anchor_and_progression_links": "valid"
+      }
+    }
+  ],
+  "scope": "Twelve stated worked models plus source integrity. Proofs in families.json carry the general mathematical claims. No check claims to validate the entire historical corpus or an unspecified operator."
+}

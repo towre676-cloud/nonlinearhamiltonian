@@ -1,0 +1,251 @@
+{
+  "status": "pass",
+  "engine_sha256": "f5a29031f39922d4320f12fafb5367826b924150978f9d39042115b7da391f4e",
+  "case_count": 1513,
+  "passed_count": 1513,
+  "cases_by_lab": {
+    "L01": 128,
+    "L02": 1120,
+    "L03": 12,
+    "L04": 18,
+    "L05": 52,
+    "L06": 27,
+    "L07": 44,
+    "L08": 19,
+    "L09": 4,
+    "L10": 89
+  },
+  "rejections_by_lab": {
+    "L06": 4,
+    "L07": 4,
+    "L08": 2,
+    "L10": 3
+  },
+  "floating_tolerance": 2e-12,
+  "exact_arithmetic": "Python integers and fractions; polynomial and finite counting identities",
+  "independent_methods": [
+    "Gram principal minors rather than engine row elimination",
+    "Bivariate generating polynomial and address inversion",
+    "Factored graph-energy difference and stars-and-bars",
+    "Rational inverse-problem bounds at selected exponential inputs",
+    "Closed shear commutator and exact special-angle factors",
+    "Two known Moyal witnesses and an exact cancellation family",
+    "CRT quotient-group fibre cardinalities for all 40 divisors",
+    "Joint-corner evaluation before marginal extrema",
+    "Connected graph cycle rank and disk topology",
+    "Binomial unit powers rather than Pell recurrence"
+  ],
+  "representative_expected_fixtures": {
+    "L01": {
+      "inputs": {
+        "mask": 0,
+        "target": "sum"
+      },
+      "expected": {
+        "rank": 0,
+        "joinedRank": 1,
+        "identifies": false,
+        "cost": 0,
+        "bestCost": 4,
+        "bestMasks": [
+          4
+        ]
+      },
+      "basis": "Gram principal-minor row-space certificate"
+    },
+    "L02": {
+      "inputs": {
+        "budget": 0,
+        "rank": 0,
+        "mask": 0
+      },
+      "expected": {
+        "feasibleCount": 1,
+        "optimalValue": 0,
+        "optimalMasks": [
+          0
+        ],
+        "rank": 0,
+        "selected": {
+          "mask": 0,
+          "weight": 0,
+          "value": 0
+        },
+        "queryRank": 0,
+        "queryMask": 0
+      },
+      "basis": "Generating polynomial plus rank-mask inversion"
+    },
+    "L03": {
+      "inputs": {
+        "total": 3,
+        "q": 1.0
+      },
+      "expected": {
+        "value": 0.0
+      },
+      "basis": "Exact factored difference at q=1"
+    },
+    "L04": {
+      "inputs": {
+        "mode": "mild",
+        "r": 1,
+        "power": 2,
+        "L": 2.772588722239781,
+        "N": 1
+      },
+      "expected": {
+        "delta": 0.0625,
+        "selected": {
+          "n": 1,
+          "bias": 0.5,
+          "noise": 0.0625,
+          "total": 0.5625
+        }
+      },
+      "basis": "Closed rational bias-plus-noise bound"
+    },
+    "L05": {
+      "inputs": {
+        "a": -3,
+        "b": -3
+      },
+      "expected": {
+        "commutator": [
+          [
+            91,
+            27
+          ],
+          [
+            -27,
+            -8
+          ]
+        ],
+        "determinant": 1
+      },
+      "basis": "Closed shear commutator polynomial"
+    },
+    "L06": {
+      "inputs": {
+        "a": 3,
+        "b": 0,
+        "c": 0,
+        "d": 3
+      },
+      "expected": {
+        "terms": [
+          {
+            "order": 1,
+            "hbar": 0,
+            "q": 2,
+            "p": 2,
+            "S": "9",
+            "coefficient": "9"
+          },
+          {
+            "order": 3,
+            "hbar": 2,
+            "q": 0,
+            "p": 0,
+            "S": "36",
+            "coefficient": "-3/2"
+          }
+        ],
+        "exact": false,
+        "thirdOrderZero": false
+      },
+      "basis": "q³,p³: bracket 9q²p²−3hbar²/2"
+    },
+    "L07": {
+      "inputs": {
+        "modulus": 1
+      },
+      "expected": {
+        "conductor": 1680,
+        "targetModulus": 1,
+        "sourceUnits": 384,
+        "targetUnits": 1,
+        "fibreSize": 384,
+        "uniform": true,
+        "fibres": {
+          "0": 384
+        }
+      },
+      "basis": "CRT quotient-group uniform fibres for every divisor"
+    },
+    "L08": {
+      "inputs": {
+        "common": 0,
+        "lo": 1.75,
+        "hi": 2.25
+      },
+      "expected": {
+        "difference": [
+          1.75,
+          2.25
+        ],
+        "A": [
+          1.75,
+          2.25
+        ],
+        "B": [
+          0.0,
+          0.0
+        ],
+        "AAlwaysLarger": true,
+        "BAlwaysLarger": false,
+        "intervalsOverlap": false
+      },
+      "basis": "Joint-state cancellation and exact corner extrema"
+    },
+    "L09": {
+      "inputs": {
+        "mode": "triangle",
+        "filled": false
+      },
+      "expected": {
+        "vertices": 3,
+        "edges": 3,
+        "faces": 0,
+        "beta0": 1,
+        "beta1": 1,
+        "beta2": 0,
+        "boundaryRanks": [
+          2,
+          0
+        ],
+        "boundarySquaredZero": true
+      },
+      "basis": "Topological cycle rank and disk homology"
+    },
+    "L10": {
+      "inputs": {
+        "seed": "1,2",
+        "n": -20
+      },
+      "expected": {
+        "x": "-1871005539329951",
+        "y": "1323000704497802",
+        "norm": "-7",
+        "step": -20
+      },
+      "basis": "Independent binomial unit-power coordinates"
+    }
+  },
+  "graph_mass_three_exact_coefficients": {
+    "3": 1,
+    "11": -3,
+    "6": -2,
+    "10": 3,
+    "9": 1,
+    "13": -2,
+    "17": 1,
+    "4": -1,
+    "8": 2,
+    "12": -1,
+    "15": 2,
+    "18": -1
+  },
+  "failures": [],
+  "scope": "These tests certify finite worked-model outputs. They do not prove the global source theorems or implement general solvers."
+}
