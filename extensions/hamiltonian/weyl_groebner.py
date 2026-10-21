@@ -206,10 +206,7 @@ class Engine:
 
     def complete(self, pairs):
         while pairs:
-            # Normal selection strategy: the pair with the smallest lcm of leading monomials.
-            best = min(range(len(pairs)), key=lambda t: key(lcm(lead(self.basis[pairs[t][0]][0])[0],
-                                                                lead(self.basis[pairs[t][1]][0])[0])))
-            i, j = pairs.pop(best)
+            i, j = pairs.pop(0)
             (f, fc), (g, gc) = self.basis[i], self.basis[j]
             fm, _ = lead(f)
             gm, _ = lead(g)

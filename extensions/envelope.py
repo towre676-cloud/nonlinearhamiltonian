@@ -56,6 +56,12 @@ def _contraction(model, payload):
     return _load('structure/check_contraction.py', 'mx_check_contraction').verify(model, payload)
 
 
+def _weyl_kernel(model, payload):
+    if model is not None and model != payload['receipt'].get('hamiltonian'):
+        raise ValueError('envelope model is not the receipt Hamiltonian')
+    return _load('hamiltonian/check_weyl_kernel.py', 'mx_check_weyl_kernel').check(payload)
+
+
 def _noise_panel(model, payload):
     return _load('observer/check_panel.py', 'mx_check_panel').check(payload, model)
 
@@ -72,6 +78,7 @@ def _dgla(model, payload):
 KINDS = {
     'observer-closure': ('format', 'observer-closure-v2', _observer),
     'weyl-invariant-kernel': ('schema', 'weyl-invariant-kernel-v1', _weyl),
+    'weyl-polynomial-kernel': ('format', 'weyl-kernel-v1', _weyl_kernel),
     'rational-contraction': ('schema', 'rational-contraction-v1', _contraction),
     'noise-panel-selection': ('format', 'noise-panel-v1', _noise_panel),
     'pell-orbit-reduction': ('format', 'pell-orbits-v1', _pell),

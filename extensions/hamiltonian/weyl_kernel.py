@@ -363,11 +363,11 @@ def classify(receipt, max_degree=6):
     mono = [(i, K.shift_and_psi(op)) for i, op in enumerate(P)]
     mono = [(i, sp[1]) for i, sp in mono if sp]
     if not mono:
-        return {'status': 'unclassified', 'reason': 'no monomial-acting generator'}, None
+        return degree_bound_route(receipt, P, max_degree, 'no monomial-acting generator')
     idx, psis = [i for i, _ in mono], [p for _, p in mono]
     found = find_support(psis, max_degree)
     if not found:
-        return {'status': 'unclassified', 'reason': 'no support certificate within degree budget'}, None
+        return degree_bound_route(receipt, P, max_degree, 'no support certificate within degree budget')
     obj = _support_object(receipt, idx, found)
     # Let the checker's own recomputation of the zero set fill in the claim fields.
     la, lb, pts = K.zero_set(found[2], found[4], found[5])
@@ -398,11 +398,57 @@ def classify(receipt, max_degree=6):
         claim.update(kind='finite_support', basis=[W.dump_terms(g) for g in basis],
                      basis_display=[show_poly(g) for g in basis])
     else:
-        return {'status': 'unclassified', 'reason': 'support has infinite families but some generator is not '
-                'monomial-acting', 'support_families': claim}, None
+        return degree_bound_route(receipt, P, max_degree, 'support has infinite families but some generator '
+                                  'is not monomial-acting')
     obj['claim'] = claim
     result = K.check(obj)
     return {**result, 'status': 'classified'}, obj
+
+
+WEIGHTS = [(1, 1), (1, 2), (2, 1), (1, 3), (3, 1), (2, 3), (3, 2), (1, 4), (4, 1), (3, 4), (4, 3), (1, 5), (5, 1)]
+
+
+def finite_points(found):
+    const, lins, phis, lam, U, V = found
+    la, lb, pts = K.zero_set(phis, U, V)
+    fam = [K.linear_zero_set(*t) for t in lins]
+    if la or lb or any(k != 'points' for k, *_ in fam):
+        return None
+    return sorted(set(pts) | {x for _, *d in fam for x in d[0]})
+
+
+def degree_bound_route(receipt, P, max_degree, why):
+    """Weighted top-symbol degree bound, then an exact finite kernel computation."""
+    for w in WEIGHTS:
+        mono = [(i, K.shift_and_psi(K.top_symbol(op, w))) for i, op in enumerate(P)]
+        mono = [(i, sp[1]) for i, sp in mono if sp]
+        if not mono:
+            continue
+        found = find_support([p for _, p in mono], max_degree)
+        pts = found and finite_points(found)
+        if not pts:
+            continue
+        N = max(w[0] * a + w[1] * b for a, b in pts)
+        window = [(a, b) for a in range(N // w[0] + 1) for b in range((N - w[0] * a) // w[1] + 1)]
+        images = []
+        for a, b in window:
+            img = {}
+            for gi, op in enumerate(P):
+                for e, c in W.act(op, {(a, b): F(1)}).items():
+                    img[(gi, e)] = c
+            images.append(img)
+        keys = sorted({k for img in images for k in img})
+        M = [[img.get(k, F(0)) for img in images] for k in keys]
+        null = L.null_basis(M, len(window)) if M else L.eye(len(window))
+        basis = [W.tidy({window[i]: v[i] for i in range(len(window))}) for v in null]
+        obj = _support_object(receipt, [i for i, _ in mono], found)
+        obj['support']['weight'] = list(w)
+        obj['claim'] = {'kind': 'degree_bound', 'vertical_lines': [], 'horizontal_lines': [], 'progressions': [],
+                        'points': [list(x) for x in pts], 'bound': N,
+                        'basis': [W.dump_terms(g) for g in basis], 'basis_display': [show_poly(g) for g in basis]}
+        result = K.check(obj)
+        return {**result, 'status': 'classified'}, obj
+    return {'status': 'unclassified', 'reason': why + '; no weighted degree bound found'}, None
 
 
 def main():

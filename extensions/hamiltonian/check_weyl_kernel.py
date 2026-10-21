@@ -21,7 +21,13 @@ Claims accepted:
   'monomial_span'  every generator is monomial-acting; kernel = span of monomials in Z.
   'finite_support' Z (from the declared monomial subset) is finite; kernel is computed
                    by exact linear algebra on span(Z) against ALL generators.
-Anything else is rejected; the checker never infers a classification from a window.
+  'degree_bound'   with a positive weight w, the top weighted symbols sigma_w(P_i) of the
+                   declared generators are monomial-acting with finite common zero set Z.
+                   For any solution G with top component G_top, P_i G = 0 forces
+                   sigma_w(P_i) G_top = 0, so deg_w G <= N = max over Z of w.z; the kernel
+                   is then computed exactly on all monomials of w-degree <= N.
+Anything else is rejected; the checker never infers a classification from a window
+whose completeness it has not derived itself.
 Usage: check_weyl_kernel.py KERNEL.json
 """
 from __future__ import annotations
@@ -73,6 +79,13 @@ def shift_and_psi(op):
     for (a, b, c, d), v in op.items():
         psi = padd(psi, pmul(falling(0, c), falling(1, d)), v)
     return shifts.pop(), psi
+
+
+def top_symbol(op, w):
+    """Terms of op with maximal weighted shift w.(a'-c, b'-d); w has positive integer entries."""
+    shift = lambda k: w[0] * (k[0] - k[2]) + w[1] * (k[1] - k[3])
+    top = max(shift(k) for k in op)
+    return {k: v for k, v in op.items() if shift(k) == top}
 
 
 def read_poly2(rows):
@@ -195,11 +208,16 @@ def check(obj):
     idx = sup['monomial_generators']
     if not idx or len(set(idx)) != len(idx) or any(type(i) is not int or not 0 <= i < len(P) for i in idx):
         raise ValueError('invalid monomial generator subset')
+    w = sup.get('weight')
+    if w is not None and (len(w) != 2 or any(type(x) is not int or x < 1 for x in w)):
+        raise ValueError('weight must be two positive integers')
     psis = []
     for i in idx:
-        sp = shift_and_psi(P[i])
+        # Without a weight the generator itself must be monomial-acting; with a weight w
+        # only its top weighted symbol is used (degree-bound route).
+        sp = shift_and_psi(P[i] if w is None else top_symbol(P[i], w))
         if sp is None:
-            raise ValueError(f'generator {i} is not monomial-acting')
+            raise ValueError(f'generator {i} (or its top symbol) is not monomial-acting')
         psis.append(sp[1])
     # Common factor g = constant * prod(linear factors); psi_i = g * phi_i.
     cf = sup['common_factor']
@@ -250,6 +268,18 @@ def check(obj):
                 [list(x) for x in claim['points']]]
     if declared != [la, lb, [[list(b), list(s)] for b, s in prog], [list(x) for x in pts]]:
         raise ValueError('declared zero set differs from the recomputed one')
+    if claim['kind'] == 'degree_bound':
+        # Top symbols: P_i G = 0 forces sigma_w(P_i) G_top = 0, so supp(G_top) lies in the finite
+        # set Z and deg_w G <= N. The kernel is then computed exactly in w-degree <= N.
+        if w is None or la or lb or prog:
+            raise ValueError('degree_bound needs a weight and a finite top zero set')
+        N = max((w[0] * a + w[1] * b for a, b in pts), default=0)
+        if claim['bound'] != N:
+            raise ValueError('declared weighted degree bound is wrong')
+        window = [(a, b) for a in range(N // w[0] + 1) for b in range((N - w[0] * a) // w[1] + 1)]
+        return _finite_kernel(P, window, claim, 'degree_bound', {'weight': w, 'bound': N})
+    if w is not None:
+        raise ValueError('a weighted support certificate only supports degree_bound claims')
     if claim['kind'] == 'monomial_span':
         if sorted(idx) != list(range(len(P))):
             raise ValueError('monomial_span needs every generator to be monomial-acting')
@@ -261,7 +291,11 @@ def check(obj):
                 'scope': 'all polynomial degrees; full dynamic core by the replayed operator receipt'}
     if claim['kind'] != 'finite_support' or la or lb or prog:
         raise ValueError('finite_support needs a finite zero set')
-    # Kernel inside span(points): exact rank of the stacked action of every generator.
+    return _finite_kernel(P, pts, claim, 'finite_support', {})
+
+
+def _finite_kernel(P, pts, claim, kind, extra):
+    """Exact kernel of all generators inside span(pts); compare with the declared basis."""
     images = []
     for a, b in pts:
         img = {}
@@ -275,14 +309,14 @@ def check(obj):
     basis = [W.read_terms(g, 2) for g in claim['basis']]
     if len(basis) != nullity:
         raise ValueError(f'declared kernel basis has {len(basis)} elements; the kernel has dimension {nullity}')
-    allowed = set(pts)
+    allowed = set(map(tuple, pts))
     for g in basis:
         if not set(g) <= allowed or any(W.act(op, g) for op in P):
             raise ValueError('declared basis element is not in the kernel')
-    if _rank([[g.get(m, F(0)) for m in pts] for g in basis], len(pts)) != len(basis):
+    cols = sorted(allowed)
+    if _rank([[g.get(m, F(0)) for m in cols] for g in basis], len(cols)) != len(basis):
         raise ValueError('declared kernel basis is dependent')
-    return {'status': 'passed', 'kind': 'finite_support', 'dimension': nullity,
-            'kernel': claim['basis_display'],
+    return {'status': 'passed', 'kind': kind, 'dimension': nullity, 'kernel': claim['basis_display'], **extra,
             'scope': 'all polynomial degrees; full dynamic core by the replayed operator receipt'}
 
 
