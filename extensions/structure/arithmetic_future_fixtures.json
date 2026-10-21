@@ -1,0 +1,417 @@
+{
+  "status": "finite fixture comparisons passed",
+  "scope": "Exact unit recurrences independently compared with bounded integer-square enumeration. Completeness for all heights rests on the separate seed-reduction proof.",
+  "cases": [
+    {
+      "D": 2,
+      "N": -7,
+      "unit": [
+        3,
+        2
+      ],
+      "branch": "x>=0; y>=0 if N>0 and y>0 if N<0",
+      "seeds": [
+        [
+          1,
+          2
+        ],
+        [
+          5,
+          4
+        ]
+      ],
+      "height_bound": 1000,
+      "all_points_under_bound": [
+        [
+          1,
+          2
+        ],
+        [
+          5,
+          4
+        ],
+        [
+          11,
+          8
+        ],
+        [
+          31,
+          22
+        ],
+        [
+          65,
+          46
+        ],
+        [
+          181,
+          128
+        ],
+        [
+          379,
+          268
+        ],
+        [
+          1055,
+          746
+        ]
+      ],
+      "population": 8,
+      "y_divisible_by_3_population": 0,
+      "full_state_cycles_mod_3": [
+        {
+          "seed": [
+            1,
+            2
+          ],
+          "modulus": 3,
+          "states": [
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              1,
+              1
+            ]
+          ],
+          "accepted_indices": [],
+          "period": 4
+        },
+        {
+          "seed": [
+            5,
+            4
+          ],
+          "modulus": 3,
+          "states": [
+            [
+              2,
+              1
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              2
+            ]
+          ],
+          "accepted_indices": [],
+          "period": 4
+        }
+      ]
+    },
+    {
+      "D": 2,
+      "N": 1,
+      "unit": [
+        3,
+        2
+      ],
+      "branch": "x>=0; y>=0 if N>0 and y>0 if N<0",
+      "seeds": [
+        [
+          1,
+          0
+        ]
+      ],
+      "height_bound": 1000,
+      "all_points_under_bound": [
+        [
+          1,
+          0
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          17,
+          12
+        ],
+        [
+          99,
+          70
+        ],
+        [
+          577,
+          408
+        ]
+      ],
+      "population": 5,
+      "y_divisible_by_3_population": 3,
+      "full_state_cycles_mod_3": [
+        {
+          "seed": [
+            1,
+            0
+          ],
+          "modulus": 3,
+          "states": [
+            [
+              1,
+              0
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              0,
+              1
+            ]
+          ],
+          "accepted_indices": [
+            0,
+            2
+          ],
+          "period": 4
+        }
+      ]
+    },
+    {
+      "D": 3,
+      "N": -2,
+      "unit": [
+        2,
+        1
+      ],
+      "branch": "x>=0; y>=0 if N>0 and y>0 if N<0",
+      "seeds": [
+        [
+          1,
+          1
+        ]
+      ],
+      "height_bound": 1000,
+      "all_points_under_bound": [
+        [
+          1,
+          1
+        ],
+        [
+          5,
+          3
+        ],
+        [
+          19,
+          11
+        ],
+        [
+          71,
+          41
+        ],
+        [
+          265,
+          153
+        ],
+        [
+          989,
+          571
+        ]
+      ],
+      "population": 6,
+      "y_divisible_by_3_population": 2,
+      "full_state_cycles_mod_3": [
+        {
+          "seed": [
+            1,
+            1
+          ],
+          "modulus": 3,
+          "states": [
+            [
+              1,
+              1
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              2,
+              1
+            ]
+          ],
+          "accepted_indices": [
+            1,
+            4
+          ],
+          "period": 6
+        }
+      ]
+    },
+    {
+      "D": 5,
+      "N": -4,
+      "unit": [
+        9,
+        4
+      ],
+      "branch": "x>=0; y>=0 if N>0 and y>0 if N<0",
+      "seeds": [
+        [
+          1,
+          1
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          11,
+          5
+        ]
+      ],
+      "height_bound": 1000,
+      "all_points_under_bound": [
+        [
+          1,
+          1
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          11,
+          5
+        ],
+        [
+          29,
+          13
+        ],
+        [
+          76,
+          34
+        ],
+        [
+          199,
+          89
+        ],
+        [
+          521,
+          233
+        ],
+        [
+          1364,
+          610
+        ]
+      ],
+      "population": 8,
+      "y_divisible_by_3_population": 0,
+      "full_state_cycles_mod_3": [
+        {
+          "seed": [
+            1,
+            1
+          ],
+          "modulus": 3,
+          "states": [
+            [
+              1,
+              1
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              1,
+              2
+            ]
+          ],
+          "accepted_indices": [],
+          "period": 4
+        },
+        {
+          "seed": [
+            4,
+            2
+          ],
+          "modulus": 3,
+          "states": [
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              2,
+              2
+            ]
+          ],
+          "accepted_indices": [],
+          "period": 4
+        },
+        {
+          "seed": [
+            11,
+            5
+          ],
+          "modulus": 3,
+          "states": [
+            [
+              2,
+              2
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              2,
+              1
+            ]
+          ],
+          "accepted_indices": [],
+          "period": 4
+        }
+      ]
+    }
+  ]
+}

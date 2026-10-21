@@ -1,0 +1,112 @@
+{
+  "format": "observer-closure-v1",
+  "model": {
+    "dimension": 2,
+    "actions": {
+      "feed": [
+        [
+          "1",
+          "0"
+        ],
+        [
+          "1",
+          "1"
+        ]
+      ],
+      "keep": [
+        [
+          "1",
+          "0"
+        ],
+        [
+          "0",
+          "1"
+        ]
+      ]
+    },
+    "target": [
+      [
+        "0",
+        "1"
+      ]
+    ],
+    "observation": [
+      [
+        "0",
+        "1"
+      ]
+    ]
+  },
+  "model_sha256": "435ce5f6d3040cacd352c839da864ef59c958dc04c71c8e6e576aa6576291614",
+  "basis": [
+    [
+      "0",
+      "1"
+    ],
+    [
+      "1",
+      "1"
+    ]
+  ],
+  "basis_words": [
+    {
+      "target_row": 0,
+      "word": []
+    },
+    {
+      "target_row": 0,
+      "word": [
+        "feed"
+      ]
+    }
+  ],
+  "quotient_actions": {
+    "feed": [
+      [
+        "0",
+        "1"
+      ],
+      [
+        "-1",
+        "2"
+      ]
+    ],
+    "keep": [
+      [
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "1"
+      ]
+    ]
+  },
+  "target_factor": [
+    [
+      "1",
+      "0"
+    ]
+  ],
+  "diagnostics": {
+    "basis_dimensions": [
+      1,
+      2
+    ],
+    "proof_source": "exact identities and word provenance; not sampled trajectories"
+  },
+  "panel": {
+    "status": "impossible",
+    "invisible_state": [
+      "1",
+      "0"
+    ],
+    "lost_basis_row": 1,
+    "lost_target_word": {
+      "target_row": 0,
+      "word": [
+        "feed"
+      ]
+    }
+  }
+}

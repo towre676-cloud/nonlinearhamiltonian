@@ -1,0 +1,54 @@
+{
+  "claims": [
+    {
+      "id": "B001",
+      "status": "existing_result",
+      "claim": "Static exact-partner classifications in the report\u2019s declared cubic, homogeneous quartic, qF(p) and monomial scopes.",
+      "support": "research/hamiltonian/output/Nonlinear_Hamiltonian_Partners.md",
+      "scope": "Retained proofs and scoped replay; no blanket novelty claim."
+    },
+    {
+      "id": "N001",
+      "status": "proved_abstract_reduction_in_handoff",
+      "claim": "Iterated correction left ideals stabilize in the Weyl algebra; a finite right-D-stable presentation with both containments defines the full polynomial dynamic core.",
+      "support": "programmes/HAMILTONIAN_CORES.md",
+      "scope": "Characteristic-zero exact operator identities; finite PDE presentation, not a completed solution classification."
+    },
+    {
+      "id": "N002",
+      "status": "derived_corollary",
+      "claim": "For H=qp^3+lambda q^2, the dynamic core is Q[p]+qQ[p] at lambda=0 and span{1,H} for nonzero rational lambda.",
+      "support": "programmes/HAMILTONIAN_CORES.md",
+      "scope": "Derived by algebraic scalar extension, affine-symplectic scaling and descent from retained cases; no priority claim."
+    },
+    {
+      "id": "E001",
+      "status": "seed_implemented",
+      "claim": "Minimal rational target-word observer with provenance, intertwining and sensor factorization or hidden-state witness.",
+      "support": "extensions/observer/README.md",
+      "scope": "Finite known rational actions; all future words; linear state summaries; no general noisy/adaptive optimizer."
+    },
+    {
+      "id": "E002",
+      "status": "seed_implemented",
+      "claim": "Exact normally ordered Weyl arithmetic and independent three-identity receipt replay.",
+      "support": "extensions/hamiltonian/weyl_receipts.py",
+      "scope": "Rational coefficients; no Groebner discovery backend shipped."
+    },
+    {
+      "id": "E003",
+      "status": "seed_implemented",
+      "claim": "Construct and independently check finite Q-complex contractions; return a primitive or separating obstruction witness.",
+      "support": "extensions/structure/README.md",
+      "scope": "Finite rational complexes; no integral torsion or arbitrary DGLA/sheaf input adapter shipped."
+    },
+    {
+      "id": "P001",
+      "status": "target",
+      "claim": "Certified robust sensor optimization, Weyl discovery/parameter strata, finite DGLA lifting and supplied-unit arithmetic engines.",
+      "support": "TASKS.json",
+      "scope": "Unfinished tasks, not current capabilities."
+    }
+  ],
+  "rule": "Passing finite tests does not upgrade a target or an unproved general statement to a theorem."
+}

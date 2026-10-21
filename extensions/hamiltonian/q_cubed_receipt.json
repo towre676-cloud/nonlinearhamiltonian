@@ -1,0 +1,71 @@
+{
+  "schema": "weyl-invariant-kernel-v1",
+  "field": "Q",
+  "hamiltonian": [
+    [
+      3,
+      0,
+      "1"
+    ]
+  ],
+  "generators": [
+    [
+      [
+        0,
+        0,
+        0,
+        3,
+        "1"
+      ]
+    ]
+  ],
+  "correction_containment": {
+    "3": [
+      {
+        "generator": 0,
+        "left_multiplier": [
+          [
+            0,
+            0,
+            0,
+            0,
+            "6"
+          ]
+        ]
+      }
+    ]
+  },
+  "provenance": [
+    [
+      {
+        "gate_order": 3,
+        "iterate": 0,
+        "left_multiplier": [
+          [
+            0,
+            0,
+            0,
+            0,
+            "1/6"
+          ]
+        ]
+      }
+    ]
+  ],
+  "closure": [
+    [
+      {
+        "generator": 0,
+        "left_multiplier": [
+          [
+            2,
+            0,
+            0,
+            1,
+            "3"
+          ]
+        ]
+      }
+    ]
+  ]
+}

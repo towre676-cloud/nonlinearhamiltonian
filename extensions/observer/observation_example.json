@@ -1,0 +1,9 @@
+{
+  "dimension": 2,
+  "actions": {
+    "keep": [[1, 0], [0, 1]],
+    "feed": [[1, 0], [1, 1]]
+  },
+  "target": [[0, 1]],
+  "observation": [[0, 1]]
+}

@@ -1,0 +1,27 @@
+{
+  "status": "passed",
+  "python_dependencies": "standard library only",
+  "test_groups": 6,
+  "deterministic_generated_complexes": 40,
+  "cli_cases": [
+    "build",
+    "standalone checker",
+    "primitive",
+    "nonzero obstruction"
+  ],
+  "field": "Q",
+  "arithmetic_fixture_cases": 4,
+  "arithmetic_bounded_comparisons": "unit recurrence versus independent integer square enumeration",
+  "negative_tests": [
+    "invalid d squared",
+    "non-cocycle",
+    "forged homotopy",
+    "coefficient field Z rejected"
+  ],
+  "limitations": [
+    "No integral torsion engine",
+    "No cellular sheaf adapter",
+    "No DGLA solver",
+    "No all-order analytic convergence claim"
+  ]
+}
