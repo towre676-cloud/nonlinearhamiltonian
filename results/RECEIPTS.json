@@ -2,8 +2,96 @@
  "schema": "machinery-results-v1",
  "results": [
   {
+   "file": "results/arithmetic/fundamental_unit_D2.json",
+   "sha256": "99e7941da43de1ac5d33396d8debec2401cbb1d73978de01f458a21fdb0ee0d0",
+   "witness_kind": "fundamental-unit",
+   "replay": "python3 -B extensions/envelope.py check results/arithmetic/fundamental_unit_D2.json",
+   "producer_seconds": 0.0,
+   "summary": {
+    "status": "passed",
+    "D": 2,
+    "fundamental_unit": [
+     1,
+     1
+    ],
+    "norm": -1,
+    "norm_one_unit": [
+     3,
+     2
+    ],
+    "negative_pell_solvable": true
+   }
+  },
+  {
+   "file": "results/arithmetic/fundamental_unit_D61.json",
+   "sha256": "667976bb28cfc57dbc80cbffb16a83ff1f169c675e27e4975606e5b3a013042e",
+   "witness_kind": "fundamental-unit",
+   "replay": "python3 -B extensions/envelope.py check results/arithmetic/fundamental_unit_D61.json",
+   "producer_seconds": 0.0,
+   "summary": {
+    "status": "passed",
+    "D": 61,
+    "fundamental_unit": [
+     29718,
+     3805
+    ],
+    "norm": -1,
+    "norm_one_unit": [
+     1766319049,
+     226153980
+    ],
+    "negative_pell_solvable": true
+   }
+  },
+  {
+   "file": "results/arithmetic/fundamental_unit_D991.json",
+   "sha256": "f8111d492442222769dcb939f791b9ac40767efa9dc6371a709b6e143e082dd1",
+   "witness_kind": "fundamental-unit",
+   "replay": "python3 -B extensions/envelope.py check results/arithmetic/fundamental_unit_D991.json",
+   "producer_seconds": 0.0,
+   "summary": {
+    "status": "passed",
+    "D": 991,
+    "fundamental_unit": [
+     379516400906811930638014896080,
+     12055735790331359447442538767
+    ],
+    "norm": 1,
+    "norm_one_unit": [
+     379516400906811930638014896080,
+     12055735790331359447442538767
+    ],
+    "negative_pell_solvable": false
+   }
+  },
+  {
+   "file": "results/arithmetic/pell_D13_Nm3_unitfundamental.json",
+   "sha256": "720ebabaa160955a55f8d49923b066b515c071fd5dbb7bd1aae2ae9e0103e68a",
+   "witness_kind": "pell-orbit-reduction",
+   "replay": "python3 -B extensions/envelope.py check results/arithmetic/pell_D13_Nm3_unitfundamental.json",
+   "producer_seconds": 0.0,
+   "summary": {
+    "status": "passed",
+    "complete": true,
+    "seeds": [
+     [
+      7,
+      2
+     ],
+     [
+      137,
+      38
+     ]
+    ],
+    "unit": [
+     649,
+     180
+    ]
+   }
+  },
+  {
    "file": "results/arithmetic/pell_D2_N1_unit3_2.json",
-   "sha256": "66c2536d08252f71b5f197d5363bb78517f553f5a073e86fbfdb0c8ffec655d3",
+   "sha256": "9b18635a7e9a946924121cb44508ffb91b76c9fd4795c69dd0e28a98a013f6b0",
    "witness_kind": "pell-orbit-reduction",
    "replay": "python3 -B extensions/envelope.py check results/arithmetic/pell_D2_N1_unit3_2.json",
    "producer_seconds": 0.0,
@@ -15,12 +103,16 @@
       1,
       0
      ]
+    ],
+    "unit": [
+     3,
+     2
     ]
    }
   },
   {
    "file": "results/arithmetic/pell_D2_Nm7_unit17_12.json",
-   "sha256": "0e0882cab7bd2f4b41617878c2f4fc42947896077a8b1c092c52836d7feef83f",
+   "sha256": "f69477d97f61513ee7b88a576e9a898b794191ad04c578860838e58c505c30d9",
    "witness_kind": "pell-orbit-reduction",
    "replay": "python3 -B extensions/envelope.py check results/arithmetic/pell_D2_Nm7_unit17_12.json",
    "producer_seconds": 0.0,
@@ -44,12 +136,16 @@
       31,
       22
      ]
+    ],
+    "unit": [
+     17,
+     12
     ]
    }
   },
   {
    "file": "results/arithmetic/pell_D2_Nm7_unit3_2.json",
-   "sha256": "58af9cc48a07300c06b86dc7a74d6d2cf50bc73c4c74e82efe1aea751ef42c22",
+   "sha256": "a2e5898b520aa6317e5a49c622f85beb7fd6d0ada6e97166bbc43231c071b435",
    "witness_kind": "pell-orbit-reduction",
    "replay": "python3 -B extensions/envelope.py check results/arithmetic/pell_D2_Nm7_unit3_2.json",
    "producer_seconds": 0.0,
@@ -65,12 +161,16 @@
       5,
       4
      ]
+    ],
+    "unit": [
+     3,
+     2
     ]
    }
   },
   {
    "file": "results/arithmetic/pell_D3_Nm2_unit2_1.json",
-   "sha256": "b399f2f7cf9b3770f017823d9521be78f70a4135c3b1352080627bffcc27cfe6",
+   "sha256": "9ecf306d28597c9ec02e5e89a75b0d0b56d9b9a106dca97136ea759d68e926a4",
    "witness_kind": "pell-orbit-reduction",
    "replay": "python3 -B extensions/envelope.py check results/arithmetic/pell_D3_Nm2_unit2_1.json",
    "producer_seconds": 0.0,
@@ -82,12 +182,16 @@
       1,
       1
      ]
+    ],
+    "unit": [
+     2,
+     1
     ]
    }
   },
   {
    "file": "results/arithmetic/pell_D5_Nm4_unit9_4.json",
-   "sha256": "ab409765e0a9ac0f8222a82bfd282f0d224892983d35408950ed5eae7308c8ea",
+   "sha256": "8232c03ac41ad44febb4b4d9d9b2888c88e54b29c74240c685fd52a12266d250",
    "witness_kind": "pell-orbit-reduction",
    "replay": "python3 -B extensions/envelope.py check results/arithmetic/pell_D5_Nm4_unit9_4.json",
    "producer_seconds": 0.0,
@@ -107,6 +211,10 @@
       11,
       5
      ]
+    ],
+    "unit": [
+     9,
+     4
     ]
    }
   },
@@ -456,6 +564,98 @@
     "claim": "obstructed",
     "order": 3,
     "intrinsic": false
+   }
+  },
+  {
+   "file": "results/structure/klein_bottle_torsion_witness.json",
+   "sha256": "8d1188cd0e4eed5bc86918a00ddc34473252b280653ff54521a230dd5880cbd2",
+   "witness_kind": "integer-cohomology",
+   "replay": "python3 -B extensions/envelope.py check results/structure/klein_bottle_torsion_witness.json",
+   "producer_seconds": 0.0,
+   "summary": {
+    "status": "passed",
+    "cohomology": [
+     {
+      "degree": 0,
+      "rank": 1,
+      "torsion": []
+     },
+     {
+      "degree": 1,
+      "rank": 1,
+      "torsion": []
+     },
+     {
+      "degree": 2,
+      "rank": 0,
+      "torsion": [
+       2
+      ]
+     }
+    ],
+    "answers": [
+     "torsion",
+     "exact"
+    ]
+   }
+  },
+  {
+   "file": "results/structure/rp2_integral_cohomology.json",
+   "sha256": "749fae2e1e2a8620d6c087bf3e9db233c012fef200d0951f93247f23d1ec453d",
+   "witness_kind": "integer-cohomology",
+   "replay": "python3 -B extensions/envelope.py check results/structure/rp2_integral_cohomology.json",
+   "producer_seconds": 0.0,
+   "summary": {
+    "status": "passed",
+    "cohomology": [
+     {
+      "degree": 0,
+      "rank": 1,
+      "torsion": []
+     },
+     {
+      "degree": 1,
+      "rank": 0,
+      "torsion": []
+     },
+     {
+      "degree": 2,
+      "rank": 0,
+      "torsion": [
+       2
+      ]
+     }
+    ],
+    "answers": [
+     "torsion"
+    ]
+   }
+  },
+  {
+   "file": "results/structure/times_two_rational_vs_integral.json",
+   "sha256": "55954708628dcb3ef870f1f1ee22178400d15f9d24cbf1340dd911738d9d1c15",
+   "witness_kind": "integer-cohomology",
+   "replay": "python3 -B extensions/envelope.py check results/structure/times_two_rational_vs_integral.json",
+   "producer_seconds": 0.0,
+   "summary": {
+    "status": "passed",
+    "cohomology": [
+     {
+      "degree": 0,
+      "rank": 0,
+      "torsion": []
+     },
+     {
+      "degree": 1,
+      "rank": 0,
+      "torsion": [
+       2
+      ]
+     }
+    ],
+    "answers": [
+     "torsion"
+    ]
    }
   },
   {

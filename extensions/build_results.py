@@ -162,10 +162,12 @@ def arithmetic():
     models = [{'D': c['D'], 'N': c['N'], 'unit': c['unit'], 'height': c['height_bound'],
                'filter': {'modulus': 3, 'accept': [[x, 0] for x in range(3)]}} for c in fx]
     models.append({'D': 2, 'N': -7, 'unit': [17, 12], 'height': 10 ** 30})
+    models.append({'D': 13, 'N': -3, 'unit': 'fundamental', 'height': 10 ** 40})
     for m in models:
         cert, s = timed(PE.compile_model, m)
         cert.pop('result')
-        name = f"pell_D{m['D']}_N{m['N']}_unit{m['unit'][0]}_{m['unit'][1]}".replace('-', 'm')
+        u = 'fundamental' if m['unit'] == 'fundamental' else f"{m['unit'][0]}_{m['unit'][1]}"
+        name = f"pell_D{m['D']}_N{m['N']}_unit{u}".replace('-', 'm')
         write('arithmetic', name, envelope.make(
             'pell-orbit-reduction', m, cert, ['declared order Z[sqrt D], integer coordinates',
                                               'supplied unit, not necessarily fundamental'],
@@ -173,8 +175,31 @@ def arithmetic():
             ['D01-F04', '2024:Y24-03-024'], PRODUCER, verify=False), s)
 
 
+def integer_and_units():
+    import smith as SM
+    import units as UN
+    for name, m, cocycles in (
+            ('rp2_integral_cohomology', {'field': 'Z', 'dimensions': [1, 1, 1], 'differentials': [[[0]], [[2]]]}, [(2, [1])]),
+            ('klein_bottle_torsion_witness', {'field': 'Z', 'dimensions': [1, 2, 1], 'differentials': [[[0], [0]], [[2, 0]]]},
+             [(2, [1]), (2, [2])]),
+            ('times_two_rational_vs_integral', {'field': 'Z', 'dimensions': [1, 1], 'differentials': [[[2]]]}, [(1, [1])])):
+        cert, s = timed(SM.build, m, cocycles)
+        cert.pop('result')
+        write('structure', name, envelope.make(
+            'integer-cohomology', m, cert, ['finite cochain complex over Z'],
+            'integral cohomology (rank and torsion) with integer coboundary decisions', ['D05-F01', 'D05-F03'],
+            PRODUCER, verify=False), s)
+    for D in (2, 61, 991):
+        (cert, model), s = timed(UN.fundamental, D)
+        cert.pop('result')
+        write('arithmetic', f'fundamental_unit_D{D}', envelope.make(
+            'fundamental-unit', model, cert, ['order Z[sqrt D]', 'Legendre convergent criterion'],
+            'unit group of Z[sqrt D]; not the maximal order', ['D01-F04'], PRODUCER, verify=False), s)
+
+
 SECTIONS = {'observer': lambda a: observers(), 'structure': lambda a: structure(), 'arithmetic': lambda a: arithmetic(),
-            'hamiltonian': lambda a: hamiltonians(a.skip_slow), 'top': lambda a: top_reductions()}
+            'hamiltonian': lambda a: hamiltonians(a.skip_slow), 'top': lambda a: top_reductions(),
+            'integer': lambda a: integer_and_units()}
 
 
 def main():

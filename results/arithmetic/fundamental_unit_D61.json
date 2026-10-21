@@ -1,0 +1,31 @@
+{
+ "schema": "machinery-envelope-v1",
+ "witness_kind": "fundamental-unit",
+ "coefficient_domain": "Z",
+ "model": {
+  "D": 61
+ },
+ "model_sha256": "698231756b1af7ce9ca35a691b649fb74eafc8085ae55905407be550472eea77",
+ "payload": {
+  "format": "fundamental-unit-v1",
+  "model_sha256": "698231756b1af7ce9ca35a691b649fb74eafc8085ae55905407be550472eea77",
+  "unit": [
+   29718,
+   3805
+  ],
+  "norm_one_unit": [
+   1766319049,
+   226153980
+  ]
+ },
+ "payload_sha256": "8c2a05132e303dfa48104558638d7aef214255bcadd9469850d7d2ff57ae7fe1",
+ "hypotheses": [
+  "order Z[sqrt D]",
+  "Legendre convergent criterion"
+ ],
+ "scope": "unit group of Z[sqrt D]; not the maximal order",
+ "source_ids": [
+  "D01-F04"
+ ],
+ "producer": "towre676-cloud/nonlinearhamiltonian extensions (exact rational, Python standard library)"
+}

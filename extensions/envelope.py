@@ -69,6 +69,14 @@ def _top_reduction(model, payload):
     return _load('hamiltonian/check_top_reduction.py', 'mx_check_top_reduction').check(payload)
 
 
+def _smith(model, payload):
+    return _load('structure/check_smith.py', 'mx_check_smith').check(payload, model)
+
+
+def _units(model, payload):
+    return _load('arithmetic/check_units.py', 'mx_check_units').check(payload, model)
+
+
 def _noise_panel(model, payload):
     return _load('observer/check_panel.py', 'mx_check_panel').check(payload, model)
 
@@ -96,12 +104,17 @@ KINDS = {
     'weyl-polynomial-kernel': ('format', 'weyl-kernel-v1', _weyl_kernel),
     'weyl-top-reduction': ('format', 'weyl-top-reduction-v1', _top_reduction),
     'rational-contraction': ('schema', 'rational-contraction-v1', _contraction),
+    'integer-cohomology': ('format', 'integer-smith-v1', _smith),
+    'fundamental-unit': ('format', 'fundamental-unit-v1', _units),
     'noise-panel-selection': ('format', 'noise-panel-v1', _noise_panel),
     'pell-orbit-reduction': ('format', 'pell-orbits-v1', _pell),
     'dgla-lifting': ('format', 'dgla-lift-v1', _dgla),
     'adaptive-experiment': ('format', 'adaptive-tree-v1', _adaptive),
     'rational-obstruction-answer': ('schema', 'rational-obstruction-answer-v1', _obstruction_answer),
 }
+
+# Witness kinds whose checkers work over Z; every other kind is a Q checker.
+DOMAINS = {'integer-cohomology': 'Z', 'fundamental-unit': 'Z', 'pell-orbit-reduction': 'Z'}
 
 REQUIRED = ('schema', 'witness_kind', 'coefficient_domain', 'model', 'model_sha256', 'payload',
             'payload_sha256', 'hypotheses', 'scope', 'source_ids', 'producer')
@@ -114,7 +127,7 @@ def atlas_ids():
 
 
 def make(kind, model, payload, hypotheses, scope, source_ids, producer, verify=True):
-    env = {'schema': SCHEMA, 'witness_kind': kind, 'coefficient_domain': 'Q', 'model': model,
+    env = {'schema': SCHEMA, 'witness_kind': kind, 'coefficient_domain': DOMAINS.get(kind, 'Q'), 'model': model,
            'model_sha256': sha(model), 'payload': payload, 'payload_sha256': sha(payload),
            'hypotheses': list(hypotheses), 'scope': scope, 'source_ids': list(source_ids), 'producer': producer}
     if verify:
@@ -126,8 +139,9 @@ def check(env):
     missing = [k for k in REQUIRED if k not in env]
     if missing or env['schema'] != SCHEMA:
         raise ValueError('not a machinery-envelope-v1 object; missing ' + ', '.join(missing))
-    if env['coefficient_domain'] != 'Q':
-        raise ValueError('coefficient domain ' + repr(env['coefficient_domain']) + ' has no registered checker')
+    if env['coefficient_domain'] != DOMAINS.get(env.get('witness_kind'), 'Q'):
+        raise ValueError('coefficient domain ' + repr(env['coefficient_domain']) + ' has no registered checker '
+                         'for this witness kind')
     kind = env['witness_kind']
     if kind not in KINDS:
         raise ValueError('unknown witness kind ' + repr(kind))
@@ -136,7 +150,7 @@ def check(env):
     if not isinstance(payload, dict) or payload.get(field) != value:
         raise ValueError(f'payload is not a {kind} witness (expected {field}={value})')
     for f in ('field', 'coefficient_domain'):
-        if f in payload and payload[f] != 'Q':
+        if f in payload and payload[f] != env['coefficient_domain']:
             raise ValueError('payload coefficient domain disagrees with envelope')
     if sha(env['model']) != env['model_sha256'] or sha(payload) != env['payload_sha256']:
         raise ValueError('model or payload hash mismatch')

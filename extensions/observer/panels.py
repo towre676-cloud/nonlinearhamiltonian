@@ -165,6 +165,60 @@ def metric(model, observer_cert, S, panel):
     return cert
 
 
+def metric_search(model, observer_cert, panel, max_len=12, max_semigroup=200):
+    """Search rational invariant metrics; every candidate is accepted only by the exact checker.
+
+    Candidates: (1) if the quotient actions generate a finite semigroup (closure found
+    within the budget), S = sum over all its elements g of g^T C^T C g, including the
+    identity; then B_a^T S B_a is a sub-sum of S. (2) truncated weighted word sums
+    S_L = sum_{|w| <= L} B_w^T M B_w with M = C^T C + eps I, which satisfy the contraction
+    inequalities once the level-(L+1) tail is dominated by M (contractive families).
+    Returns (cert, how) or (None, 'no_certificate'): absence is never reported as instability.
+    """
+    r = observer_cert['rank']
+    Bs = [L.mat(B, r, r) for _, B in sorted(observer_cert['quotient_actions'].items())]
+    Cm = L.mat(observer_cert['target_factor'], r)
+    CtC = L.mul(L.transpose(Cm, r), Cm, r)
+    I = L.eye(r)
+    key = lambda M: tuple(tuple(row) for row in M)
+    # (1) finite semigroup closure (with the identity)
+    elems, frontier, finite = {key(I): I}, [I], True
+    while frontier:
+        nxt = []
+        for g in frontier:
+            for B in Bs:
+                h = L.mul(g, B, r)
+                if key(h) not in elems:
+                    elems[key(h)] = h
+                    nxt.append(h)
+        frontier = nxt
+        if len(elems) > max_semigroup:
+            finite = False
+            break
+    candidates = []
+    if finite:
+        S = L.zeros(r, r)
+        for g in elems.values():
+            S = L.add(S, L.mul(L.mul(L.transpose(g, r), CtC), g, r))
+        candidates.append((S, f'finite semigroup average over {len(elems)} elements'))
+    for eps in (F(0), F(1, 100), F(1)):
+        M = L.add(CtC, L.scale(I, eps))
+        S, level = M, [I]
+        for length in range(1, max_len + 1):
+            level = [L.mul(g, B, r) for g in level for B in Bs]
+            if len(level) > 4096:
+                break
+            for g in level:
+                S = L.add(S, L.mul(L.mul(L.transpose(g, r), M), g, r))
+            candidates.append((S, f'truncated word sum, length {length}, eps {eps}'))
+    for S, how in candidates:
+        cert = metric(model, observer_cert, L.strs(S), panel)
+        if cert:
+            cert['search'] = how
+            return cert, how
+    return None, 'no_certificate'
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     sub = ap.add_subparsers(dest='cmd', required=True)

@@ -57,7 +57,14 @@ def last_index(D, seed, a, b, Y):
 
 
 def compile_model(model, max_states=10 ** 6, max_window=10 ** 7):
-    D, N, a, b = C.read(model)
+    unit_cert = None
+    if model.get('unit') == 'fundamental':
+        import units
+        unit_cert, _ = units.fundamental(model['D'])
+        if unit_cert is None:
+            return {'status': 'unknown', 'reason': 'fundamental unit search budget exhausted'}
+        unit_cert.pop('result')
+    D, N, a, b = C.read(model, {'unit_certificate': unit_cert} if unit_cert else None)
     bound = b * b * N if N > 0 else a * a * (-N) // D + 1
     if bound > max_window ** 2:
         return {'status': 'unknown', 'reason': 'seed window exceeds the declared budget'}
@@ -66,6 +73,8 @@ def compile_model(model, max_states=10 ** 6, max_window=10 ** 7):
             'unit_identity': f'{a}^2 - {D}*{b}^2 = 1',
             'seed_bound': ('y^2 < b^2 N, x > 0, y >= 0' if N > 0 else 'D y^2 < a^2 |N|, x >= 0, y > 0'),
             'seeds': seeds, 'window_end_exclusive': end}
+    if unit_cert:
+        cert['unit_certificate'] = unit_cert
     flt = model.get('filter')
     if flt:
         q = flt['modulus']

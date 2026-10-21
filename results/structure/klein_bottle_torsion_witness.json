@@ -1,0 +1,157 @@
+{
+ "schema": "machinery-envelope-v1",
+ "witness_kind": "integer-cohomology",
+ "coefficient_domain": "Z",
+ "model": {
+  "field": "Z",
+  "dimensions": [
+   1,
+   2,
+   1
+  ],
+  "differentials": [
+   [
+    [
+     0
+    ],
+    [
+     0
+    ]
+   ],
+   [
+    [
+     2,
+     0
+    ]
+   ]
+  ]
+ },
+ "model_sha256": "6b2f5b850ffaf67a9e0d0e4b97e1aa3c74252d7e230e1aa862c1f7d5055d1c33",
+ "payload": {
+  "format": "integer-smith-v1",
+  "model_sha256": "6b2f5b850ffaf67a9e0d0e4b97e1aa3c74252d7e230e1aa862c1f7d5055d1c33",
+  "smith": [
+   {
+    "P": [
+     [
+      1,
+      0
+     ],
+     [
+      0,
+      1
+     ]
+    ],
+    "Pinv": [
+     [
+      1,
+      0
+     ],
+     [
+      0,
+      1
+     ]
+    ],
+    "Q": [
+     [
+      1
+     ]
+    ],
+    "Qinv": [
+     [
+      1
+     ]
+    ],
+    "invariants": []
+   },
+   {
+    "P": [
+     [
+      1
+     ]
+    ],
+    "Pinv": [
+     [
+      1
+     ]
+    ],
+    "Q": [
+     [
+      1,
+      0
+     ],
+     [
+      0,
+      1
+     ]
+    ],
+    "Qinv": [
+     [
+      1,
+      0
+     ],
+     [
+      0,
+      1
+     ]
+    ],
+    "invariants": [
+     2
+    ]
+   }
+  ],
+  "cohomology": [
+   {
+    "degree": 0,
+    "rank": 1,
+    "torsion": []
+   },
+   {
+    "degree": 1,
+    "rank": 1,
+    "torsion": []
+   },
+   {
+    "degree": 2,
+    "rank": 0,
+    "torsion": [
+     2
+    ]
+   }
+  ],
+  "answers": [
+   {
+    "degree": 2,
+    "cocycle": [
+     1
+    ],
+    "status": "torsion",
+    "modulus": 2,
+    "functional": [
+     1
+    ]
+   },
+   {
+    "degree": 2,
+    "cocycle": [
+     2
+    ],
+    "status": "exact",
+    "primitive": [
+     1,
+     0
+    ]
+   }
+  ]
+ },
+ "payload_sha256": "546dc4f4b5f7decb87f4e54f265bf297d721e7b94b854287c63ff41f66cb86ed",
+ "hypotheses": [
+  "finite cochain complex over Z"
+ ],
+ "scope": "integral cohomology (rank and torsion) with integer coboundary decisions",
+ "source_ids": [
+  "D05-F01",
+  "D05-F03"
+ ],
+ "producer": "towre676-cloud/nonlinearhamiltonian extensions (exact rational, Python standard library)"
+}

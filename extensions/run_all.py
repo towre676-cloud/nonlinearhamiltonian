@@ -25,7 +25,9 @@ SUITES = [
     ('S0 contraction seed', 'structure', 'test_contraction_seed'),
     ('S1 obstruction interface', 'structure', 'test_obstruction'),
     ('S2 DGLA lifting', 'structure', 'test_dgla'),
+    ('S3 integer Smith cohomology', 'structure', 'test_smith'),
     ('A1 Pell orbits', 'arithmetic', 'test_pell'),
+    ('A2 fundamental units', 'arithmetic', 'test_units'),
     ('C0 envelopes', '.', 'test_envelope'),
 ]
 SEEDS = [

@@ -29,9 +29,18 @@ def digest(model):
     return hashlib.sha256(json.dumps(model, sort_keys=True, separators=(',', ':')).encode()).hexdigest()
 
 
-def read(model):
+def read(model, cert=None):
     D, N = model['D'], model['N']
-    a, b = model['unit']
+    if model['unit'] == 'fundamental':
+        # The orbit unit is the certified smallest norm-one unit of Z[sqrt D].
+        if cert is None or 'unit_certificate' not in cert:
+            raise ValueError('a fundamental-unit model needs an embedded unit certificate')
+        import check_units
+        uc = cert['unit_certificate']
+        check_units.check(uc, {'D': D})
+        a, b = uc['norm_one_unit']
+    else:
+        a, b = model['unit']
     if any(type(v) is not int for v in (D, N, a, b)):
         raise ValueError('D, N and the unit must be integers')
     if D <= 0 or isqrt(D) ** 2 == D:
@@ -63,7 +72,7 @@ def accepted(state, flt):
 def check(cert, model):
     if cert.get('format') != FORMAT or cert.get('model_sha256') != digest(model):
         raise ValueError('not a pell-orbits-v1 certificate for this model')
-    D, N, a, b = read(model)
+    D, N, a, b = read(model, cert)
     seeds, end = window(D, N, a, b)
     if cert['seeds'] != seeds or cert['window_end_exclusive'] != end:
         raise ValueError('seed list differs from the exact window enumeration')
@@ -100,10 +109,14 @@ def check(cert, model):
         if cert['height_count'] != {'height': Y, 'nonnegative_branch': total,
                                     'accepted': acc if flt else None}:
             raise ValueError('height counts are wrong')
-    return {'status': 'passed', 'complete': True, 'seeds': seeds,
-            'scope': 'every integer solution is +/- seed * eps^j (j in Z) for the supplied unit; the '
-                     'nonnegative branch is seed * eps^j, j >= 0; no claim about fundamental units or '
-                     'the maximal order'}
+    full = model['unit'] == 'fundamental'
+    return {'status': 'passed', 'complete': True, 'seeds': seeds, 'unit': [a, b],
+            'scope': ('every integer solution is +/- seed * eps^j (j in Z), eps the certified smallest norm-one '
+                      'unit, so the seeds are exactly the orbits under the full norm-one unit group of Z[sqrt D]'
+                      if full else
+                      'every integer solution is +/- seed * eps^j (j in Z) for the supplied unit; the '
+                      'nonnegative branch is seed * eps^j, j >= 0; no claim about fundamental units')
+                     + '; the maximal order is not treated'}
 
 
 def main():

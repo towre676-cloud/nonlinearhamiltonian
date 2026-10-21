@@ -101,3 +101,57 @@ The nonnegative branch is `j ≥ 0`.
 - Invalid `D`, `N` and units are rejected, and state and window budgets return `unknown`.
 
 **Not claimed.** Fundamental units and the maximal order.
+
+## S3: integral cohomology and integer coboundary decisions, `integer-smith-v1`
+
+**Certificate.** For each differential `d_k` the certificate records integer matrices `P`, `P⁻¹`, `Q` and `Q⁻¹`. The checker verifies `PP⁻¹ = I` and `QQ⁻¹ = I`, so both transforms are unimodular. It also verifies `P d_k Q = diag(s_1, …, s_r, 0, …)` with `s_1 | s_2 | ⋯`.
+
+**What the checker derives.** Without any elimination of its own, it reads off `H^k(C;Z) = Z^{n_k − r_k − r_{k−1}} ⊕ ⨁_{s_i>1} Z/s_i`, taking the `s_i` from `d_{k−1}`.
+
+**Answers for an integer cocycle `b`.** One of three:
+
+- an integer primitive `u`;
+- a rational obstruction functional;
+- a torsion functional `f` with `f d ≡ 0 (mod m)` and `f b ≢ 0 (mod m)`. This is a `Z/m`-valued cochain functional that vanishes on all coboundaries, so `b` is not an integral coboundary even when it is a rational one.
+
+**Checks.**
+
+- The classical example `[[2,4,4],[−6,6,12],[10,−4,−16]]` gives invariant factors `2|6|12`.
+- `RP²`, the torus and the Klein bottle give the expected cohomology.
+- On 120 random matrices the invariant factors match the determinantal-divisor oracle.
+- On 120 random cocycles, the rational/integral classification matches an exact rank oracle.
+
+The standing `×2` example is solvable over **Q**, but over **Z** it is obstructed with modulus 2. This closes the torsion boundary that S1 deliberately left open.
+
+## A2: fundamental units, `fundamental-unit-v1`
+
+**Method.** Any unit `x + y√D > 1` of norm `±1` satisfies `|x/y − √D| < 1/(2y²)`, because `x/y + √D ≥ 1 + √2`. By Legendre's criterion `x/y` is then a convergent of `√D`.
+
+**Certificate.** The checker recomputes the convergents exactly. It verifies that the declared `ε₀` is the first convergent of norm `±1` and `ε₁` the first of norm `+1`. Hence every unit of `Z[√D]` is `±ε₀^j`, and every norm-one unit is `±ε₁^j`.
+
+**Integration with A1.** A Pell model may declare `"unit": "fundamental"`. The orbit compiler then embeds the unit certificate, and the checker upgrades the scope to orbits under the full norm-one unit group.
+
+**Checks.**
+
+- Brute force agrees for every nonsquare `D < 120` whose solutions are small.
+- `D = 61` gives `29718 + 3805√61` of norm `−1`.
+- `D = 991` is the classical 30-digit example.
+- The proper power `17 + 12√2` is rejected as fundamental.
+
+**Not treated.** The maximal order `Z[(1+√D)/2]`, which arises when `D ≡ 1 (mod 4)`.
+
+## O2b: rational invariant-metric search
+
+**Candidates.** `panels.metric_search` tries two kinds of candidate `S`:
+
+- the finite-semigroup average `Σ_g gᵀCᵀCg`, used when the quotient actions generate a finite semigroup within the budget;
+- truncated weighted word sums `Σ_{|w|≤L} B_wᵀ(CᵀC + εI)B_w`, which suit contractive families.
+
+**Acceptance.** Each candidate is accepted only by the exact `invariant-metric-v1` checker. Failure is reported as `no_certificate`.
+
+**Checks.**
+
+- A dihedral group is found.
+- A contractive non-commuting pair is found.
+- A shear gets `no_certificate`.
+- So does a pair whose actions each have spectral radius 1/2 but whose product is unstable.

@@ -104,6 +104,34 @@ class Metric(unittest.TestCase):
         self.assertIsNone(panels.metric(m, observer.compile_model(shear), [[1, 0], [0, 1]], [0, 1]))
 
 
+class MetricSearch(unittest.TestCase):
+    def setUp(self):
+        self.m = model([([1, 0], 1), ([0, 1], 1)], EYE2, {'mode': 'explicit', 'matrices': [[[1, 0]]]}, 100)
+
+    def test_finite_group_found(self):
+        obs = observer.compile_model({'dimension': 2, 'actions': {'r': [[0, -1], [1, 0]], 's': [[1, 0], [0, -1]]},
+                                      'target': [[1, 0]]})
+        cert, how = panels.metric_search(self.m, obs, [0, 1])
+        self.assertTrue(how.startswith('finite semigroup'))
+        self.assertEqual(check_panel.check_metric(cert, self.m)['claim'], 'all_time_bound_sufficient')
+
+    def test_contractive_family_found(self):
+        obs = observer.compile_model({'dimension': 2, 'actions': {'a': [['1/2', '1/2'], [0, '1/2']],
+                                                                  'b': [['1/3', 0], ['1/3', '1/3']]},
+                                      'target': [[1, 0]]})
+        cert, how = panels.metric_search(self.m, obs, [0, 1])
+        self.assertIsNotNone(cert, how)
+        self.assertEqual(check_panel.check_metric(cert, self.m)['status'], 'passed')
+
+    def test_unbounded_and_jointly_unstable_give_no_certificate(self):
+        shear = observer.compile_model({'dimension': 2, 'actions': {'s': [[1, 1], [0, 1]]}, 'target': [[1, 0]]})
+        self.assertEqual(panels.metric_search(self.m, shear, [0, 1]), (None, 'no_certificate'))
+        # Each action is nilpotent-plus-1/2 (spectral radius 1/2), yet their product has an eigenvalue > 1.
+        pair = observer.compile_model({'dimension': 2, 'actions': {'a': [['1/2', 2], [0, '1/2']], 'b': [['1/2', 0], [2, '1/2']]},
+                                       'target': [[1, 0]]})
+        self.assertEqual(panels.metric_search(self.m, pair, [0, 1], max_len=6)[1], 'no_certificate')
+
+
 class Forgeries(unittest.TestCase):
     def setUp(self):
         sensors = [([1, 0], 3), ([0, 1], 2), ([1, 1], 1), ([0, '1/10'], 1)]

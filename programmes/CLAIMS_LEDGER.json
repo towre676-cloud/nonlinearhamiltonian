@@ -45,7 +45,7 @@
   {
    "id": "P001",
    "status": "target",
-   "claim": "Remaining open targets: homogeneous quartic dynamic-core moduli; integer Smith/torsion backend; SDP search for invariant metrics; noisy/continuous adaptive experiments; fundamental-unit and maximal-order arithmetic adapters.",
+   "claim": "Remaining open targets: homogeneous quartic dynamic-core moduli for all parameters; maximal-order Pell adapter; noisy/continuous adaptive experiments.",
    "support": "TASKS.json",
    "scope": "Unfinished tasks, not current capabilities."
   },
@@ -118,6 +118,27 @@
    "claim": "For all rational a,b,c,d,e,f: D_inf(qp^3+aq^2+bqp+cp^2+dq+ep+f) = Q[p]+qQ[p] if a=0 and span{1,H} if a!=0. Proved by the top-weight reduction lemma (weight (3,1)), which embeds gr D_inf(H) into D_inf(H_w).",
    "support": "programmes/DYNAMIC_CORE_RESULTS.md#3b; extensions/hamiltonian/check_top_reduction.py; results/hamiltonian/six_*.json",
    "scope": "One canonical pair over Q; the lemma itself applies to any polynomial H and positive weight; instance certificates replay the lemma hypotheses exactly."
+  },
+  {
+   "id": "S3",
+   "status": "implemented_with_certificates",
+   "claim": "Integral cohomology of finite integer cochain complexes via certified Smith forms, with integer primitives or rational / mod-m torsion obstruction functionals.",
+   "support": "extensions/structure/smith.py; extensions/structure/check_smith.py",
+   "scope": "Finite complexes over Z; size budget returns unknown."
+  },
+  {
+   "id": "A2",
+   "status": "implemented_with_certificates",
+   "claim": "Certified fundamental unit and smallest norm-one unit of Z[sqrt D] via the Legendre convergent criterion; Pell orbits under the full norm-one unit group.",
+   "support": "extensions/arithmetic/units.py; extensions/arithmetic/check_units.py",
+   "scope": "Order Z[sqrt D]; the maximal order is not treated."
+  },
+  {
+   "id": "O2b",
+   "status": "implemented",
+   "claim": "Rational invariant-metric search (finite-semigroup averages, truncated weighted word sums) with exact acceptance; failure reported as no_certificate.",
+   "support": "extensions/observer/panels.py metric_search",
+   "scope": "Sufficient certificates only; no SDP solver."
   }
  ],
  "rule": "Passing finite tests does not upgrade a target or an unproved general statement to a theorem.",
