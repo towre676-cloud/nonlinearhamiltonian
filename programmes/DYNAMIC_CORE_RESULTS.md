@@ -502,6 +502,37 @@ Then `D∞(H) = span{1, H}`.
 
 **What remains open.** Every remaining case has a transverse top `F` with `deg φ ≤ 1`, or `F ∈ K[G]` (near), or `φ` a perfect power (pure), and, for near tops, no unequal Newton-polygon vertex; Theorems Q and Q′ cover the parts of this with a single `m²` term. In random perturbations this is the typical situation. The polygon is then a single edge from the top vertex to `m^A` or `m^Aℓ`. The missing ingredient is a finiteness theorem for these quasi-homogeneous edge polynomials. The binomial `ℓ^{d−1}m + m²` of Theorem Q is the first instance, and its proof by casework in the weight grading suggests the general method.
 
+### 6.7 Near tops (complete): edge finiteness from the top vertex
+
+**Theorem NE.** If `H_d = cℓ^{d−1}m` and `H` is not affine in `m`, then `D∞(H) = span{1, H}`.
+
+*Proof.*
+1. *First edge.* In coordinates `(m, ℓ)`, decrease `t` in the weights `w_t = (1, t)` from 1. The top vertex `mℓ^{d−1}` is first tied by monomials of `m`-exponent at least 2; monomials of `m`-exponent at most 1 lie strictly inside. This gives the first Newton-polygon edge
+   `E = mℓ^{d−1} + Σ_{s≥1} e_s m^{1+sa}ℓ^{d−1−sb}`,
+   with step `(a, −b)`, `b > a ≥ 1` coprime, because the total degree drops along the edge.
+2. *Reduction.* By the top-weight lemma for the edge weight, `gr D∞(H)` embeds in `D∞(E)`. Once `D∞(E)` is finite-dimensional, Lemma F gives `span{1, H}`.
+3. *The top end.* Let `G` be a weight-homogeneous element of `D∞(E)` of large degree. By Theorem M its top is `gℓ^N` (type α) or `gmℓ^{N−1}` (type β), and its monomials lie on a line of step `(a, −b)`. Let `t` be the first step with `e_t ≠ 0`. The `T₃` recurrence clears the coefficients between steps 0 and `t`. The step-`t` components of `T₃(E, G)` and `T₃(E, {E, G})` are then linear in `(y, e_tg)`, where `y` is the step-`t` coefficient:
+   - **[E1] type α:** the determinant is `N a²t²(d−2)(d−1)(at−1)²(at+1)·C_α`. Here `C_α` is cubic in `N` with leading coefficient `3(at(d−1) + bt + 2d − 4) > 0`.
+   - **[E2] type β:** the determinant is `a²t²(d−N)(d−2)(d−1)(at+1)²·C_β`. The `N³` coefficient of `C_β` is `−3(at−1)(at(d−1) + bt + 2d − 4)`. For `at = 1` the determinant is `36(d−N)(b−1)(d−2)(d−1)·C′_β`, where the `N²` coefficient of `C′_β` is `−(b+d−1)`.
+   - **[E3] type α with `a = t = 1`,** the only degenerate case: the first perturbation `m²ℓ^{d−1−b}` is invisible at first order, exactly as in the `m²` families. At step 2 the components of `T₃(E, D^rG)`, `r = 0..3`, are linear in `(y₂, e₁y₁, e₂g, e₁²g)`. The 4×4 determinant is
+     `10368 N²(b−1)³(d−2)²(d−1)(N+d−2)(b+d−1)(b+d−1−N)·Q`,
+     where `Q` is quartic in `N` with leading coefficient `−[2b³ + b²(7d−8) + 2b(4d−5)(d−1) + (d−1)²(3d−4)] < 0`. Hence `e₁²g = 0`, and so `g = 0`.
+4. *Conclusion.* In every case `g = 0`, which contradicts the choice of the top. So the homogeneous elements of `D∞(E)` have bounded degree, and `D∞(E)` is finite-dimensional. ∎
+
+**What the sextic certificate revealed.** The mechanism is local at the top vertex of the first edge. First order fails only for perturbations of transverse degree 2; second order succeeds there; no case analysis of the far end is needed. The far-end analysis (`mᴬℓ`, `mᴬ`, `(mℓ)^c`) gives the same finiteness for most edges, but it is not needed.
+
+**Certificate.** `check_near_edges.py` (`near-edge-v1`; `results/hamiltonian/near_edge_theorem.json`) recomputes all four determinants with its own polynomial arithmetic in the symbols `(N, d, a, b, t)`. It verifies the stated factorizations by exact division, checks the leading coefficients, and validates the gate and bracket conventions against `weyl_receipts`. `check_two_root.py` now reports every non-affine near top as proved (route `NE`). Theorems Q and T for near tops become special cases. Random near-top Hamiltonians agree with direct computation.
+
+**Pure tops: status of the same method.** For a pure top `ℓᵈ` the core of the top vertex is `W`, so a weight-homogeneous element starts with one of three types: `ℓᴺ`, `mℓ^{N−1}` or `m²ℓ^{N−2}`. The first-order top-end determinants were computed symbolically. Let `u = at` be the `m`-degree of the first perturbation on the first edge.
+- All three types close for `u ≥ 4`. For type 0 the factor is `(u−3)(u−2)²(u−1)²`; for type 2 the leading coefficient is `−(u−2)(u−3)`.
+- The low cases `u ∈ {1, 2, 3}` need second-order analysis, as `u = 1` did for near tops.
+
+Two further gaps remain:
+- **Finiteness does not yet give span{1, H}.** For pure tops, `D_{ℓᵈ}` lowers the `m`-degree of tops instead of making them grow, so Lemma F does not transfer.
+- **An affine first edge gives no finiteness.** When the first edge from `ℓᵈ` is `ℓᵈ + cmℓʲ`, finiteness must come from the next edge, a near-type edge from `mℓʲ`. The argument above gives finiteness there.
+
+These three points are the remaining work for pure tops.
+
 ### 6.4 The decision procedure and what remains open
 
 `check_two_root.py` (`two-root-perturbation-v1`) decides, for any rational `H` with a two-root top:
@@ -515,12 +546,13 @@ The tests generate random members of every route and random affine changes of co
 
 **Conjecture (two-root tops).** Let `H_d` be pure, near or balanced, and suppose `H` has none of the structures of Theorem P⁺. Then `D∞(H) = span{1, H}`.
 
-Theorem B (§6.5) proves it for every balanced top. Theorems Q, Q′, T and N (§§6.3 and 6.6) prove it for the `m²` families, for transverse tops `m^sφ(ℓ)` with `deg φ ≥ 2` outside the exceptions of Theorem T, and for near tops with an unequal Newton-polygon vertex. What remains open is described at the end of §6.6. The conjecture is supported by every computed case, including random perturbations with cubic terms.
+Theorem B (§6.5) proves it for every balanced top, and Theorem NE (§6.7) proves it for every near top. For pure tops it is proved for the `m²` family (Theorem Q′) and for the transverse-top criterion of Theorem T. What remains open is pure tops outside these criteria. The conjecture is supported by every computed case, including random perturbations with cubic terms.
 
 With §5 this gives a complete statement of when **active** exact dynamics survives a lower-order perturbation, conditional only on the conjecture above:
 - three or more roots in the top: never (proved);
 - unequal top: a single active quadratic `G`, exactly in the normal form of Theorem U (proved);
-- pure or near top: an infinite active sector exactly in the affine or strip structures of Theorem P⁺ (proved);
+- near top: an infinite active sector exactly when `H` is affine in `m` (proved, Theorems P⁺ and NE);
+- pure top: an infinite active sector in the affine or strip structures of Theorem P⁺ (proved), and none otherwise (proved in part, conjectural for the rest);
 - balanced top: never (proved, Theorem B).
 
 ## 4. Commands

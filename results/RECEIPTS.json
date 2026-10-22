@@ -304,7 +304,7 @@
    "sha256": "034f692ee1eb42de332fe7957aa7194bee70cfcb96ef1ed10bf44b30d43a545a",
    "witness_kind": "weyl-polynomial-kernel",
    "replay": "python3 -B extensions/envelope.py check results/hamiltonian/binomial_q4_plus_p2.json",
-   "producer_seconds": 0.88,
+   "producer_seconds": 0.86,
    "summary": {
     "status": "passed",
     "kind": "finite_support",
@@ -336,7 +336,7 @@
    "sha256": "6c0ecb1b7d225ebf9101fc9baf33f047fbdea4f02681b9ae45afd92ac16ca930",
    "witness_kind": "weyl-polynomial-kernel",
    "replay": "python3 -B extensions/envelope.py check results/hamiltonian/binomial_qp2_plus_q2.json",
-   "producer_seconds": 0.47,
+   "producer_seconds": 0.46,
    "summary": {
     "status": "passed",
     "kind": "degree_bound",
@@ -357,7 +357,7 @@
    "sha256": "6e43ecd75520985638548c2bd09ff853fc9ffeebf2e0e133a43378c664ba9a69",
    "witness_kind": "weyl-polynomial-kernel",
    "replay": "python3 -B extensions/envelope.py check results/hamiltonian/binomial_qp4_plus_q2.json.gz",
-   "producer_seconds": 87.49,
+   "producer_seconds": 88.75,
    "summary": {
     "status": "passed",
     "kind": "finite_support",
@@ -386,6 +386,25 @@
     ],
     "theorem": "for H = q^a p^b, a >= b, a + b >= 3: D_inf = (+)_{j<=2} p^j Q[q] (b = 0), Q[q] + pQ[q] (b = 1), Q[qp] (a = b), span{1, qp, H} (a > b >= 2)",
     "active_part": "p Q[q] + p^2 Q[q] (b = 0); D_inf / span{1, H} (b = 1); 0 (a = b); Q qp (a > b >= 2)"
+   }
+  },
+  {
+   "file": "results/hamiltonian/near_edge_theorem.json",
+   "sha256": "1d8d97a8664aace21e72224db1585fa1c4c0d47101add73788b4b77c764dd8ec",
+   "witness_kind": "near-edge",
+   "replay": "python3 -B extensions/envelope.py check results/hamiltonian/near_edge_theorem.json",
+   "producer_seconds": 0.54,
+   "summary": {
+    "status": "passed",
+    "identities": [
+     "E1",
+     "E2",
+     "E2_at1",
+     "E3",
+     "E4"
+    ],
+    "grid_points": 150,
+    "theorem": "every polynomial with top c l^(d-1) m that is not affine in m has D_inf = span{1, H}"
    }
   },
   {
@@ -1108,8 +1127,24 @@
    }
   },
   {
+   "file": "results/hamiltonian/tworoot_near_edge.json",
+   "sha256": "91fd67d7b55f2c6a68d3920315bc28e9c4b8b62d21347301d1f517255120f177",
+   "witness_kind": "two-root-perturbation",
+   "replay": "python3 -B extensions/envelope.py check results/hamiltonian/tworoot_near_edge.json",
+   "producer_seconds": 0.0,
+   "summary": {
+    "status": "passed",
+    "degree": 5,
+    "top": "near",
+    "route": "NE",
+    "proved": true,
+    "core": "span{1, H}",
+    "active_part": "0"
+   }
+  },
+  {
    "file": "results/hamiltonian/tworoot_near_q2_family.json",
-   "sha256": "b57dcf37ebe01f835e076d52b376770edb136ac5422c9f95c3e5391a50685beb",
+   "sha256": "f6fe03d04a99b764208927893cbdac9d8a4c7fa56fc14fe2005caaaf70d8c972",
    "witness_kind": "two-root-perturbation",
    "replay": "python3 -B extensions/envelope.py check results/hamiltonian/tworoot_near_q2_family.json",
    "producer_seconds": 0.0,
@@ -1117,7 +1152,7 @@
     "status": "passed",
     "degree": 5,
     "top": "near",
-    "route": "Q",
+    "route": "NE",
     "proved": true,
     "core": "span{1, H}",
     "active_part": "0"

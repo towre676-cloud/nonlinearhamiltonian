@@ -64,6 +64,14 @@ def samples(rng):
     return out + more
 
 
+class NearEdges(unittest.TestCase):
+    def test_identities(self):
+        import check_near_edges as NE
+        self.assertEqual(NE.check()['status'], 'passed')
+        with self.assertRaises(ValueError):
+            NE.check({'format': NE.FORMAT, 'identities': ['E1']})
+
+
 class Balanced(unittest.TestCase):
     def test_identities(self):
         import check_balanced as CB
@@ -89,9 +97,10 @@ class Balanced(unittest.TestCase):
 
 class TransverseAndVertex(unittest.TestCase):
     def test_routes_T_and_N_against_direct_computation(self):
-        cases = {'T': [{(1, 4): F(1), (2, 2): F(1), (2, 1): F(1)}, {(1, 5): F(1), (2, 3): F(1)},
-                       {(0, 6): F(1), (2, 3): F(1), (2, 1): F(1), (1, 1): F(1)}],
-                 'N': [{(1, 5): F(1), (3, 2): F(1), (4, 0): F(1)}]}
+        cases = {'T': [{(0, 6): F(1), (2, 3): F(1), (2, 1): F(1), (1, 1): F(1)}],
+                 'NE': [{(1, 4): F(1), (2, 2): F(1), (2, 1): F(1)}, {(1, 5): F(1), (3, 2): F(1), (4, 0): F(1)},
+                        {(1, 4): F(1), (2, 2): F(1), (3, 0): F(1)}, {(1, 6): F(1), (2, 3): F(1), (3, 0): F(1)},
+                        {(1, 4): F(1), (2, 2): F(-2), (3, 0): F(1), (0, 2): F(1)}]}
         for route, Hs in cases.items():
             for H in Hs:
                 H = W.tidy(H)
@@ -113,7 +122,7 @@ class Decision(unittest.TestCase):
             got = filtered_dim(H, N, 8)
             self.assertEqual(got, predicted(res['core'], d, N), (H, res))
             seen.add(res['route'])
-        for r in ('U', 'Q', "Q'", 'B', 'P+ near', 'P+ pure W', 'P+ pure V', 'P+ balanced'):
+        for r in ('U', 'NE', "Q'", 'B', 'P+ near', 'P+ pure W', 'P+ pure V', 'P+ balanced'):
             self.assertIn(r, seen)
 
     def test_forgeries(self):

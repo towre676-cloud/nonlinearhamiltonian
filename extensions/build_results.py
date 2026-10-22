@@ -282,6 +282,7 @@ TWO_ROOT_EXAMPLES = [
     ('tworoot_unequal_generic', {(3, 2): 1, (0, 1): 1}),
     ('tworoot_near_affine', {(1, 4): 1, (1, 2): 3, (0, 3): -1, (0, 1): 1}),
     ('tworoot_near_q2_family', {(1, 4): 1, (2, 0): 2, (1, 2): 1, (0, 3): 5}),
+    ('tworoot_near_edge', {(1, 4): 1, (2, 2): -2, (3, 0): 1, (0, 2): 1}),
     ('tworoot_pure_strip', {(4, 0): 1, (2, 0): 1, (1, 1): 3, (0, 1): -1}),
     ('tworoot_pure_p2_family', {(5, 0): 1, (0, 2): 1, (1, 1): 2, (3, 0): -1}),
     ('tworoot_balanced_KG', {(2, 2): 1, (2, 1): 2, (2, 0): 1, (1, 1): 3, (1, 0): 3}),
@@ -292,6 +293,12 @@ TWO_ROOT_EXAMPLES = [
 def two_root():
     import check_two_root as TRC
     import check_balanced as CBL
+    import check_near_edges as CNE
+    cert, s0 = timed(lambda: {'format': CNE.FORMAT, 'identities': sorted(CNE.check()['identities'])})
+    write('hamiltonian', 'near_edge_theorem', envelope.make(
+        'near-edge', {'family': 'c l^(d-1) m + lower-order terms'}, cert,
+        ['characteristic zero', 'first Newton-polygon edge; top-end determinants; Lemma F'],
+        'D_inf = span{1, H} unless H is affine in m', ['D16-F03', 'D06-F02'], PRODUCER, verify=False), s0)
     cert, s0 = timed(lambda: {'format': CBL.FORMAT, 'identities': sorted(CBL.check()['identities'])})
     write('hamiltonian', 'balanced_top_theorem', envelope.make(
         'balanced-top', {'family': 'c Q^mu + lower-order terms'}, cert,

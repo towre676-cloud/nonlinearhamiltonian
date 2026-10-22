@@ -54,7 +54,7 @@
    "status": "implemented",
    "claim": "Typed machinery-envelope-v1 objects bind certificates to model/payload hashes, domain Q, hypotheses, scope and atlas source ids, and dispatch to independent checkers; swapped witness kinds and unknown domains are rejected.",
    "support": "extensions/envelope.py; extensions/test_envelope.py",
-   "scope": "Registry of twenty witness kinds; domains Q and Z."
+   "scope": "Registry of twenty-one witness kinds; domains Q and Z."
   },
   {
    "id": "W1",
@@ -260,11 +260,18 @@
    "scope": "Finiteness via Theorems U and B applied to the transverse top or via a vertex monomial; Lemma F (finite core implies span{1,H}) for near tops; explicit affine analysis for pure tops."
   },
   {
+   "id": "W6-f",
+   "status": "proved_with_certificate",
+   "claim": "Near tops: every polynomial whose top part is c l^(d-1) m and which is not affine in m has D_inf(H) = span{1,H}.",
+   "support": "programmes/DYNAMIC_CORE_RESULTS.md#6.7; extensions/hamiltonian/check_near_edges.py; results/hamiltonian/near_edge_theorem.json",
+   "scope": "All degrees. First Newton-polygon edge; top-end analysis with first-order determinants [E1], [E2] and a second-order 4x4 determinant [E3] for the m^2-adjacent case; Lemma F."
+  },
+  {
    "id": "P003",
    "status": "conjecture",
-   "claim": "Two-root conjecture: pure or near tops with lower-order terms outside the structures of W6-b have D_inf(H) = span{1,H}.",
+   "claim": "Two-root conjecture (remaining part): pure tops c l^d with lower-order terms outside the structures of W6-b have D_inf(H) = span{1,H}.",
    "support": "programmes/DYNAMIC_CORE_RESULTS.md#6.4; extensions/hamiltonian/test_two_root.py",
-   "scope": "Proved for balanced tops (W6-d), the m^2 families (W6-c) and the transverse-top and vertex criteria (W6-e); open for near and pure tops whose transverse top m^s phi(l) has deg phi <= 1, lies in K[G] (near) or has phi a perfect power (pure), and (near) whose Newton polygon has no unequal vertex, outside W6-c; supported by every computed case."
+   "scope": "Proved for balanced tops (W6-d), near tops (W6-f), the pure m^2 family (W6-c) and the pure transverse-top criterion (W6-e); open for the remaining pure tops; supported by every computed case."
   },
   {
    "id": "P002",

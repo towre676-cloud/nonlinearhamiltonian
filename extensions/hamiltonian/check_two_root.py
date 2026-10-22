@@ -13,9 +13,8 @@ roots over Qbar, the checker recomputes the top type and applies the proved crit
                                             span{1, H} if H = f(l) + m g(l) + gamma m^2, gamma != 0,
                                             deg g < d/2 (Theorem Q') or the transverse top is finite
                                             (Theorem T); otherwise conjectural.
-  near     H_d = c l^(d-1) m                V if d_v^2 H = 0; span{1, H} if d_v^2 H is a nonzero
-                                            constant (Theorem Q) or the transverse top is finite
-                                            (Theorem T); otherwise conjectural.
+  near     H_d = c l^(d-1) m                V if d_v^2 H = 0; span{1, H} otherwise (Theorem NE,
+                                            check_near_edges.py).                   (complete)
   balanced H_d = c Q^mu, Q a quadratic form  K[G] with G = Q(x - x0) if the translation killing
                                             H_(d-1) puts H into K[Q]; otherwise span{1, H} (Theorem B,
                                             check_balanced.py).                     (complete)
@@ -250,15 +249,9 @@ def classify(H):
         out['top'] = 'near'
         if not d2:
             out.update(route='P+ near', proved=True, core='K[l] + m K[l]', active_part='infinite')
-        elif degree(d2) == 0:
-            out.update(route='Q', proved=True, core='span{1, H}', active_part='0')
-        elif transverse_finite(H, l)[0]:
-            out.update(route='T', proved=True, core='span{1, H}', active_part='0')
-        elif unequal_vertex(H, l)[0]:
-            out.update(route='N', proved=True, core='span{1, H}', active_part='0')
         else:
-            out.update(route='near, conjectural', proved=False, core='span{1, H} (conjectured)',
-                       active_part='0 (conjectured)')
+            # Theorem NE (check_near_edges.py): every near top that is not affine in m
+            out.update(route='NE', proved=True, core='span{1, H}', active_part='0')
         return out
     out['top'] = 'pure'                                       # H_d = c l^d
     high = {k: c for k, c in H.items() if sum(k) >= 3}
