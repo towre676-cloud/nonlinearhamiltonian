@@ -24,7 +24,7 @@
   },
   {
    "file": "results/arithmetic/fundamental_unit_D61.json",
-   "sha256": "667976bb28cfc57dbc80cbffb16a83ff1f169c675e27e4975606e5b3a013042e",
+   "sha256": "20bdaed6c5fc19cba7dd64c19ba625dfe4ec9e7cd6973a5cf7ef6732c4aa6777",
    "witness_kind": "fundamental-unit",
    "replay": "python3 -B extensions/envelope.py check results/arithmetic/fundamental_unit_D61.json",
    "producer_seconds": 0.0,
@@ -40,7 +40,16 @@
      1766319049,
      226153980
     ],
-    "negative_pell_solvable": true
+    "negative_pell_solvable": true,
+    "maximal_order_unit_half_coordinates": [
+     39,
+     5
+    ],
+    "maximal_order_norm": -1,
+    "maximal_order_norm_one_unit": [
+     1523,
+     195
+    ]
    }
   },
   {
@@ -66,7 +75,7 @@
   },
   {
    "file": "results/arithmetic/pell_D13_Nm3_unitfundamental.json",
-   "sha256": "720ebabaa160955a55f8d49923b066b515c071fd5dbb7bd1aae2ae9e0103e68a",
+   "sha256": "83a4523eded4934df0a886146c77d3bcd8fa8553b43c5531e145859e8d1dce78",
    "witness_kind": "pell-orbit-reduction",
    "replay": "python3 -B extensions/envelope.py check results/arithmetic/pell_D13_Nm3_unitfundamental.json",
    "producer_seconds": 0.0,
@@ -86,7 +95,8 @@
     "unit": [
      649,
      180
-    ]
+    ],
+    "order": "Z[sqrt D]"
    }
   },
   {
@@ -107,7 +117,8 @@
     "unit": [
      3,
      2
-    ]
+    ],
+    "order": "Z[sqrt D]"
    }
   },
   {
@@ -140,7 +151,8 @@
     "unit": [
      17,
      12
-    ]
+    ],
+    "order": "Z[sqrt D]"
    }
   },
   {
@@ -165,7 +177,8 @@
     "unit": [
      3,
      2
-    ]
+    ],
+    "order": "Z[sqrt D]"
    }
   },
   {
@@ -186,7 +199,8 @@
     "unit": [
      2,
      1
-    ]
+    ],
+    "order": "Z[sqrt D]"
    }
   },
   {
@@ -215,7 +229,8 @@
     "unit": [
      9,
      4
-    ]
+    ],
+    "order": "Z[sqrt D]"
    }
   },
   {

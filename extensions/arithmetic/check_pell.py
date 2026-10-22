@@ -22,6 +22,9 @@ import sys
 from math import isqrt
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import check_units  # noqa: E402  (certified fundamental units, used by 'unit': 'fundamental' models)
+
 FORMAT = 'pell-orbits-v1'
 
 
@@ -43,7 +46,6 @@ def read(model, cert=None):
         # The orbit unit is the certified smallest norm-one unit of Z[sqrt D].
         if cert is None or 'unit_certificate' not in cert:
             raise ValueError('a fundamental-unit model needs an embedded unit certificate')
-        import check_units
         uc = cert['unit_certificate']
         res = check_units.check(uc, {'D': D})
         a, b = res['maximal_order_norm_one_unit'] if s == 2 else res['norm_one_unit']

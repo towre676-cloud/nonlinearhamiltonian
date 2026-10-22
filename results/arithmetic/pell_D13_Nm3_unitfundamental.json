@@ -36,7 +36,13 @@
    "norm_one_unit": [
     649,
     180
-   ]
+   ],
+   "maximal_order": {
+    "cube_root": [
+     3,
+     1
+    ]
+   }
   },
   "height_count": {
    "height": 10000000000000000000000000000000000000000,
@@ -45,7 +51,7 @@
   },
   "status": "complete"
  },
- "payload_sha256": "a35bbfa00852bf834b14f258d26530797f69ea35e1169c4ab7f4270de215b8ea",
+ "payload_sha256": "673d292f81825d274f2f6f079a29cf26186a6588f2c66554785e84f4b5e40014",
  "hypotheses": [
   "declared order Z[sqrt D], integer coordinates",
   "supplied unit, not necessarily fundamental"
