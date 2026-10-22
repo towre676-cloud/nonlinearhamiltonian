@@ -285,11 +285,18 @@ TWO_ROOT_EXAMPLES = [
     ('tworoot_pure_strip', {(4, 0): 1, (2, 0): 1, (1, 1): 3, (0, 1): -1}),
     ('tworoot_pure_p2_family', {(5, 0): 1, (0, 2): 1, (1, 1): 2, (3, 0): -1}),
     ('tworoot_balanced_KG', {(2, 2): 1, (2, 1): 2, (2, 0): 1, (1, 1): 3, (1, 0): 3}),
+    ('tworoot_balanced_box', {(3, 3): 1, (2, 1): 1, (1, 1): -2}),
 ]
 
 
 def two_root():
     import check_two_root as TRC
+    import check_balanced as CBL
+    cert, s0 = timed(lambda: {'format': CBL.FORMAT, 'identities': sorted(CBL.check()['identities'])})
+    write('hamiltonian', 'balanced_top_theorem', envelope.make(
+        'balanced-top', {'family': 'c Q^mu + lower-order terms'}, cert,
+        ['characteristic zero', 'weight induction on off-diagonal parts with T_3 and the top of {H, G}'],
+        'D_inf = K[G] if H in K[G], else span{1, H}', ['D16-F03', 'D06-F02'], PRODUCER, verify=False), s0)
     for name, h in BINOMIALS:
         H = WG.parse_poly(h)
         (meta, receipt), s1 = timed(WG.discover, H, max_steps=400000, max_generators=100)

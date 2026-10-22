@@ -234,6 +234,24 @@
    }
   },
   {
+   "file": "results/hamiltonian/balanced_top_theorem.json",
+   "sha256": "566d7037094d99893f0da42ef6be4594a305a554d3c13a245d4a1812d0b322ae",
+   "witness_kind": "balanced-top",
+   "replay": "python3 -B extensions/envelope.py check results/hamiltonian/balanced_top_theorem.json",
+   "producer_seconds": 0.01,
+   "summary": {
+    "status": "passed",
+    "identities": [
+     "B1",
+     "B2",
+     "B3",
+     "B4"
+    ],
+    "grid_points": 108,
+    "theorem": "balanced top c Q^mu with lower-order terms: D_inf = K[G] if H in K[G] for a quadratic G, else span{1, H}"
+   }
+  },
+  {
    "file": "results/hamiltonian/binary_static_d5.json",
    "sha256": "cc6974e0406a71c29aa3a5a076f25a1b6d733d8d1b5d1a62c9432a6faa3e72dc",
    "witness_kind": "binary-static",
@@ -286,7 +304,7 @@
    "sha256": "034f692ee1eb42de332fe7957aa7194bee70cfcb96ef1ed10bf44b30d43a545a",
    "witness_kind": "weyl-polynomial-kernel",
    "replay": "python3 -B extensions/envelope.py check results/hamiltonian/binomial_q4_plus_p2.json",
-   "producer_seconds": 0.81,
+   "producer_seconds": 0.96,
    "summary": {
     "status": "passed",
     "kind": "finite_support",
@@ -302,7 +320,7 @@
    "sha256": "75bc78fabd0135381c86404e9ca102128eface5cfa3c64770b0e0f7b4dd9f4fe",
    "witness_kind": "weyl-polynomial-kernel",
    "replay": "python3 -B extensions/envelope.py check results/hamiltonian/binomial_q5_plus_p2.json",
-   "producer_seconds": 5.52,
+   "producer_seconds": 5.56,
    "summary": {
     "status": "passed",
     "kind": "finite_support",
@@ -318,7 +336,7 @@
    "sha256": "6c0ecb1b7d225ebf9101fc9baf33f047fbdea4f02681b9ae45afd92ac16ca930",
    "witness_kind": "weyl-polynomial-kernel",
    "replay": "python3 -B extensions/envelope.py check results/hamiltonian/binomial_qp2_plus_q2.json",
-   "producer_seconds": 0.53,
+   "producer_seconds": 0.47,
    "summary": {
     "status": "passed",
     "kind": "degree_bound",
@@ -339,7 +357,7 @@
    "sha256": "6e43ecd75520985638548c2bd09ff853fc9ffeebf2e0e133a43378c664ba9a69",
    "witness_kind": "weyl-polynomial-kernel",
    "replay": "python3 -B extensions/envelope.py check results/hamiltonian/binomial_qp4_plus_q2.json.gz",
-   "producer_seconds": 88.21,
+   "producer_seconds": 89.14,
    "summary": {
     "status": "passed",
     "kind": "finite_support",
@@ -1055,6 +1073,22 @@
      "1,1": "1"
     },
     "active_part": "0 (all stationary)"
+   }
+  },
+  {
+   "file": "results/hamiltonian/tworoot_balanced_box.json",
+   "sha256": "daf564b37234c6d7833e52ca8a10797129e3d55108d14ef4034e2107d542ea22",
+   "witness_kind": "two-root-perturbation",
+   "replay": "python3 -B extensions/envelope.py check results/hamiltonian/tworoot_balanced_box.json",
+   "producer_seconds": 0.0,
+   "summary": {
+    "status": "passed",
+    "degree": 6,
+    "top": "balanced",
+    "route": "B",
+    "proved": true,
+    "core": "span{1, H}",
+    "active_part": "0"
    }
   },
   {

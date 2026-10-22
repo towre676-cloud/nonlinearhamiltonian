@@ -109,6 +109,10 @@ def _two_root(model, payload):
     return _load('hamiltonian/check_two_root.py', 'mx_check_two_root').check(payload)
 
 
+def _balanced(model, payload):
+    return _load('hamiltonian/check_balanced.py', 'mx_check_balanced').check(payload)
+
+
 def _quartic_uniform(model, payload):
     if model != {'family': payload.get('family')}:
         raise ValueError('envelope model must name the certified family')
@@ -148,6 +152,7 @@ KINDS = {
     'root-rigidity': ('format', 'root-rigidity-v1', _root_rigidity),
     'simple-root-rigidity': ('format', 'simple-root-rigidity-v1', _simple_root),
     'two-root-perturbation': ('format', 'two-root-perturbation-v1', _two_root),
+    'balanced-top': ('format', 'balanced-top-v1', _balanced),
     'rational-contraction': ('schema', 'rational-contraction-v1', _contraction),
     'integer-cohomology': ('format', 'integer-smith-v1', _smith),
     'fundamental-unit': ('format', 'fundamental-unit-v1', _units),

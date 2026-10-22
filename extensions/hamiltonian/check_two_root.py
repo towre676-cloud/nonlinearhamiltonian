@@ -15,7 +15,8 @@ roots over Qbar, the checker recomputes the top type and applies the proved crit
   near     H_d = c l^(d-1) m                V if d_v^2 H = 0; span{1, H} if d_v^2 H is a nonzero
                                             constant (Theorem Q); otherwise conjectural.
   balanced H_d = c Q^mu, Q a quadratic form  K[G] with G = Q(x - x0) if the translation killing
-                                            H_(d-1) puts H into K[Q]; otherwise conjectural span{1, H}.
+                                            H_(d-1) puts H into K[Q]; otherwise span{1, H} (Theorem B,
+                                            check_balanced.py).                     (complete)
 Here v is the direction annihilated by l (d_v l = 0).
 
 Usage: check_two_root.py CERT.json
@@ -213,8 +214,7 @@ def classify(H):
                 out.update(route='P+ balanced', proved=True, core='K[G]', G=ser(G),
                            active_part='0 (all stationary)')
                 return out
-        out.update(route='balanced, conjectural', proved=False, core='span{1, H} (conjectured)',
-                   active_part='0 (conjectured)')
+        out.update(route='B', proved=True, core='span{1, H}', active_part='0')
         return out
     if len(lins) == 2 and min(f[1] for f in lins) >= 2:     # unequal
         (l, a), (m, b) = sorted(lins, key=lambda f: -f[1])

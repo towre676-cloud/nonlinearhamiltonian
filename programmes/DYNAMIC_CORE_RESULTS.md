@@ -446,6 +446,24 @@ Write `ℓ, m` for the root forms of `H_d`, or a root form and a complementary f
 - `qp⁴+q²` and `q⁵+p²`, cross-checks of the general arguments;
 - `p³+q²` (d = 3, Q′), retained.
 
+### 6.5 Balanced tops (complete)
+
+**Theorem B.** Let `H_d = cQ^μ` with `Q` a nondegenerate quadratic form and `d = 2μ ≥ 4`. Then `D∞(H) = K[G]` if `H ∈ K[G]` for a quadratic `G` with leading part `Q`, and `D∞(H) = span{1, H}` otherwise.
+
+*Proof.*
+1. *Setup.* Work over Q̄ with `H_d = (qp)^μ`. If `D∞(H) ≠ span{1, H}`, there is `G ∈ D∞(H)` with top `(qp)^s`, `1 ≤ s < μ`; subtract multiples of `H` to arrange this. Translate `H` so that `H_{d−1}` has no `q^μp^{μ−1}` and no `q^{μ−1}p^μ` term. This is possible because a translation adds `μ(qp)^{μ−1}(x₀p + y₀q)`.
+2. *Weights.* Give `H_{d−k}` and `G_{2s−k}` weight `k`. A monomial `q^xp^y` is *diagonal* if `x = y`. Diagonal forms Poisson-commute and have zero odd transvectants with each other.
+3. *Induction on the weight.* Assume the off-diagonal parts vanish below weight `k`. Then only `(H_d, Y)` and `(X, (qp)^s)` contribute at weight `k`, where `X` and `Y` are the off-diagonal parts of `H_{d−k}` and `G_{2s−k}`.
+   - *The bracket.* `{H, G}` has nothing below weight `k`, so its weight-`k` component is its top and must be diagonal. But that component is off-diagonal, since `ad_{qp}` acts diagonally on monomials. So it vanishes, which gives `Y = (s/μ)(qp)^{s−μ}X` monomial by monomial.
+   - *The gate.* The `T₃` equation then multiplies each off-diagonal monomial of `X` by `Ω = s(s−μ)(x−y)·R`, where, with `u = x−y` and `k = 2μ−(x+y)`,
+     `R = A(s+μ) − (3/2)(u² + k² + 2k − 4)`,  `A = u² + 3k − 4`.
+4. *Nonvanishing.* The index conditions give `s, μ ≥ (k+|u|)/2`. With `a = |u|`,
+   `2A(k+a) − 3(u² + k² + 2k − 4) = (a−1)(2a−1)(a+1) + (k−1)(2a² + 6a + 3k − 11) > 0` unless `a = k = 1`.
+   So `R ≠ 0`, except on the two translation monomials, which step 1 removed. Hence `X = 0` at every weight.
+5. *Conclusion.* After the translation, `H ∈ K[qp]`. ∎
+
+Only the gate `T₃` and the top of one bracket are used. The argument does not depend on Newton polygons, so it covers the "box" perturbations `i, j ≤ μ` that the weight method of §6.3 could not reach. The checker `check_balanced.py` (`balanced-top-v1`; `results/hamiltonian/balanced_top_theorem.json`) verifies the factorization of `Ω`, the positivity identity and the antisymmetry exactly. It also checks the `T₃` convention against `weyl_receipts` on a grid. `check_two_root.py` now reports balanced tops outside `K[G]` as proved (route `B`).
+
 ### 6.4 The decision procedure and what remains open
 
 `check_two_root.py` (`two-root-perturbation-v1`) decides, for any rational `H` with a two-root top:
@@ -459,17 +477,13 @@ The tests generate random members of every route and random affine changes of co
 
 **Conjecture (two-root tops).** Let `H_d` be pure, near or balanced, and suppose `H` has none of the structures of Theorem P⁺. Then `D∞(H) = span{1, H}`.
 
-Theorems Q and Q′ prove this for the `m²` families. The rest is open:
-- pure and near tops whose non-affine part is not a single `m²` term;
-- every balanced top outside `K[G]`.
-
-For balanced tops, perturbations inside the box `i, j ≤ d/2` create no Newton-polygon edge, so the weight method gives no information. The conjecture is supported by every computed case, including random perturbations with cubic terms.
+Theorem B (§6.5) proves it for every balanced top, and Theorems Q and Q′ prove it for the `m²` families. What remains open is pure and near tops whose non-affine part is not a single `m²` term. The conjecture is supported by every computed case, including random perturbations with cubic terms.
 
 With §5 this gives a complete statement of when **active** exact dynamics survives a lower-order perturbation, conditional only on the conjecture above:
 - three or more roots in the top: never (proved);
 - unequal top: a single active quadratic `G`, exactly in the normal form of Theorem U (proved);
 - pure or near top: an infinite active sector exactly in the affine or strip structures of Theorem P⁺ (proved);
-- balanced top: never (proved for `K[G]`, conjectural otherwise).
+- balanced top: never (proved, Theorem B).
 
 ## 4. Commands
 

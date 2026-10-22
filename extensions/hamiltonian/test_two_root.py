@@ -64,6 +64,29 @@ def samples(rng):
     return out + more
 
 
+class Balanced(unittest.TestCase):
+    def test_identities(self):
+        import check_balanced as CB
+        self.assertEqual(CB.check()['status'], 'passed')
+        with self.assertRaises(ValueError):
+            CB.check({'format': CB.FORMAT, 'identities': ['B1']})
+
+    def test_box_and_edge_perturbations(self):
+        """Balanced tops with perturbations inside the box i, j <= mu (no Newton-polygon edge),
+        on an edge, and translated K[G] members, against direct computation."""
+        rng = random.Random(12)
+        cases = [{(2, 2): F(1), (1, 0): F(1)}, {(2, 2): F(1), (2, 0): F(1)}, {(2, 2): F(1), (2, 1): F(1), (1, 1): F(1)},
+                 {(3, 3): F(1), (2, 1): F(1)}, {(3, 3): F(1), (2, 2): F(1), (1, 1): F(-2), (1, 0): F(1)},
+                 {(2, 2): F(1), (3, 0): F(1)}, TR.shift({(2, 2): F(1), (1, 1): F(3)}, 1, -2),
+                 TR.add(TR.shift({(2, 2): F(1), (1, 1): F(3)}, 1, -2), {(0, 1): F(1)})]
+        for H in cases:
+            H = W.tidy(H)
+            res = TR.classify(H)
+            d = res['degree']
+            self.assertTrue(res['proved'])
+            self.assertEqual(filtered_dim(H, d + 2, 8), predicted(res['core'], d, d + 2), (H, res))
+
+
 class Decision(unittest.TestCase):
     def test_against_direct_computation(self):
         rng = random.Random(7)
@@ -76,7 +99,7 @@ class Decision(unittest.TestCase):
             got = filtered_dim(H, N, 8)
             self.assertEqual(got, predicted(res['core'], d, N), (H, res))
             seen.add(res['route'])
-        for r in ('U', 'Q', "Q'", 'P+ near', 'P+ pure W', 'P+ pure V', 'P+ balanced'):
+        for r in ('U', 'Q', "Q'", 'B', 'P+ near', 'P+ pure W', 'P+ pure V', 'P+ balanced'):
             self.assertIn(r, seen)
 
     def test_forgeries(self):
