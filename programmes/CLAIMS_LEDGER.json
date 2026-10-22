@@ -45,7 +45,7 @@
   {
    "id": "P001",
    "status": "target",
-   "claim": "Remaining open targets: probabilistic or continuous noise models for adaptive experiments; dynamic cores of higher-degree homogeneous Hamiltonians (quintic, sextic) beyond the retained archived scope.",
+   "claim": "Remaining open targets: probabilistic or continuous noise models for adaptive experiments; dynamic cores of homogeneous Hamiltonians of degree >= 7 and of inhomogeneous quintic/sextic families.",
    "support": "TASKS.json",
    "scope": "Unfinished tasks, not current capabilities."
   },
@@ -54,7 +54,7 @@
    "status": "implemented",
    "claim": "Typed machinery-envelope-v1 objects bind certificates to model/payload hashes, domain Q, hypotheses, scope and atlas source ids, and dispatch to independent checkers; swapped witness kinds and unknown domains are rejected.",
    "support": "extensions/envelope.py; extensions/test_envelope.py",
-   "scope": "Registry of nine witness kinds; Q only."
+   "scope": "Registry of fifteen witness kinds; domains Q and Z."
   },
   {
    "id": "W1",
@@ -167,8 +167,29 @@
    "claim": "D_inf(H) = span{1,H} in all degrees for every binary quartic with distinct roots (over Q or any field of characteristic zero).",
    "support": "programmes/DYNAMIC_CORE_RESULTS.md#3c; extensions/hamiltonian/check_quartic_uniform.py; results/hamiltonian/quartic_all_degrees_theorem.json",
    "scope": "All degrees; parity splitting, top-coefficient elimination with resultants in l valid for n >= 8, per-degree certificate for n <= 12. With W3-a this classifies every homogeneous quartic."
+  },
+  {
+   "id": "W4-a",
+   "status": "certified_new_computation",
+   "claim": "Monomial root classes of quintics and sextics: D_inf(q^5) and D_inf(q^6) = (+)_{j<=2} p^j Q[q]; D_inf(q^4 p) and D_inf(q^5 p) = Q[q] + pQ[q]; D_inf(q^4 p^2) = span{1, qp, q^4 p^2} (with q^2 p^3 and q^3 p^3 already certified).",
+   "support": "results/hamiltonian/quintic_q5.json, quintic_q4p.json, sextic_q6.json, sextic_q5p.json, sextic_q4p2.json (weyl-kernel-v1)",
+   "scope": "All polynomial degrees; monomial-span support certificates over Q."
+  },
+  {
+   "id": "W4-b",
+   "status": "certified_new_computation",
+   "claim": "Static finiteness at a simple root: for a binary form H of degree d in {5,6} with a simple root, E_n(H) = {G : T_3(H,G) = T_5(H,G) = 0} vanishes for all n >= N0 (N0 = 10 for d = 5, 17 for d = 6) unless H has type (d-1,1) or (d-2,1,1).",
+   "support": "extensions/hamiltonian/check_binary_static.py; results/hamiltonian/binary_static_d5.json, binary_static_d6.json.gz",
+   "scope": "Characteristic zero, algebraically closed; local normal form, static top lemma, re-derived top equations, elimination trees of explicit polynomial identities over Q[n] (searched with sympy, replayed with exact arithmetic)."
+  },
+  {
+   "id": "W4-c",
+   "status": "proved_with_certificates",
+   "claim": "Classification of D_inf(H) for every nonzero binary quintic or sextic over a field of characteristic zero: (+)_{j<=2} m^j K[l] for c l^d; K[l] + mK[l] for c l^(d-1) m; span{1, lm, H} for c l^(d-2) m^2; K[Q] for sextics c Q^3; span{1, H} for every form with at least three distinct roots.",
+   "support": "programmes/DYNAMIC_CORE_RESULTS.md#3d; W4-a, W4-b; top-weight lemma (W2); centralizer and sl2 lemmas",
+   "scope": "All degrees; routes A (monomial classes), B (root of multiplicity 2 or d-2 with the top-weight lemma), C (types (1^5), (1^6), (3,1,1,1): static finiteness and a chain argument). With W3 this covers every binary form of degree <= 6. No novelty claim."
   }
  ],
  "rule": "Passing finite tests does not upgrade a target or an unproved general statement to a theorem.",
- "updated": "2026-10-21"
+ "updated": "2026-10-22"
 }

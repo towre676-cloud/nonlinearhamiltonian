@@ -1,0 +1,237 @@
+{
+ "schema": "machinery-envelope-v1",
+ "witness_kind": "weyl-polynomial-kernel",
+ "coefficient_domain": "Q",
+ "model": [
+  [
+   5,
+   0,
+   "1"
+  ]
+ ],
+ "model_sha256": "17ea9a40114e0786d17fb65184daaab07af16cb3726e2e3e405333bd11559480",
+ "payload": {
+  "format": "weyl-kernel-v1",
+  "coefficient_domain": "Q",
+  "receipt": {
+   "schema": "weyl-invariant-kernel-v1",
+   "field": "Q",
+   "hamiltonian": [
+    [
+     5,
+     0,
+     "1"
+    ]
+   ],
+   "generators": [
+    [
+     [
+      2,
+      0,
+      0,
+      3,
+      "1"
+     ]
+    ],
+    [
+     [
+      0,
+      0,
+      0,
+      5,
+      "1"
+     ]
+    ]
+   ],
+   "correction_containment": {
+    "3": [
+     {
+      "generator": 0,
+      "left_multiplier": [
+       [
+        0,
+        0,
+        0,
+        0,
+        "60"
+       ]
+      ]
+     }
+    ],
+    "5": [
+     {
+      "generator": 1,
+      "left_multiplier": [
+       [
+        0,
+        0,
+        0,
+        0,
+        "120"
+       ]
+      ]
+     }
+    ]
+   },
+   "provenance": [
+    [
+     {
+      "gate_order": 3,
+      "iterate": 0,
+      "left_multiplier": [
+       [
+        0,
+        0,
+        0,
+        0,
+        "1/60"
+       ]
+      ]
+     }
+    ],
+    [
+     {
+      "gate_order": 5,
+      "iterate": 0,
+      "left_multiplier": [
+       [
+        0,
+        0,
+        0,
+        0,
+        "1/120"
+       ]
+      ]
+     }
+    ]
+   ],
+   "closure": [
+    [
+     {
+      "generator": 0,
+      "left_multiplier": [
+       [
+        4,
+        0,
+        0,
+        1,
+        "5"
+       ]
+      ]
+     }
+    ],
+    [
+     {
+      "generator": 0,
+      "left_multiplier": [
+       [
+        2,
+        0,
+        0,
+        3,
+        "5"
+       ]
+      ]
+     }
+    ]
+   ]
+  },
+  "support": {
+   "monomial_generators": [
+    0,
+    1
+   ],
+   "common_factor": {
+    "constant": "1",
+    "linear_factors": [
+     [
+      "0",
+      "1",
+      "0"
+     ],
+     [
+      "0",
+      "1",
+      "-1"
+     ],
+     [
+      "0",
+      "1",
+      "-2"
+     ]
+    ]
+   },
+   "cofactors": [
+    [
+     [
+      0,
+      0,
+      "1"
+     ]
+    ],
+    [
+     [
+      0,
+      0,
+      "12"
+     ],
+     [
+      0,
+      1,
+      "-7"
+     ],
+     [
+      0,
+      2,
+      "1"
+     ]
+    ]
+   ],
+   "multipliers": [
+    [
+     [
+      0,
+      0,
+      "1"
+     ]
+    ],
+    []
+   ],
+   "U": [
+    [
+     0,
+     "1"
+    ]
+   ],
+   "V": [
+    [
+     0,
+     "1"
+    ]
+   ]
+  },
+  "claim": {
+   "vertical_lines": [],
+   "horizontal_lines": [
+    0,
+    1,
+    2
+   ],
+   "progressions": [],
+   "points": [],
+   "kind": "monomial_span"
+  }
+ },
+ "payload_sha256": "e7dd11dbc4d041a5e4a090ed026b6687459c54c5cde0db27c3166cde7591c376",
+ "hypotheses": [
+  "flat Weyl-Moyal convention, one canonical pair",
+  "D = {H,.}, C_k = T_k(H,.) for odd k >= 3",
+  "coefficients in Q"
+ ],
+ "scope": "full dynamic exact core in all polynomial degrees (monomial root class of the quintic/sextic classification)",
+ "source_ids": [
+  "D16-F03",
+  "D06-F02"
+ ],
+ "producer": "towre676-cloud/nonlinearhamiltonian extensions (exact rational, Python standard library)"
+}

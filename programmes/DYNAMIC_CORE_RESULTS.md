@@ -187,6 +187,75 @@ The tests compare the symbolic top equations with direct computation of `T₃∘
 
 This reproduces the theorem for `n ≡ 0 (mod 4)` and `n ≡ 2 (mod 4)` (since `D` is injective into degree `n+2`), for `k ≥ 7`. `extensions/hamiltonian/covariant_route.py` reproduces every ingredient of this route. The certified theorem relies on the monomial route above.
 
+## 3d. Homogeneous quintics and sextics
+
+**Theorem (W4).** Let `H` be a nonzero binary form of degree `d ∈ {5, 6}` over a field `K` of characteristic zero, for example `K = Q`. Write `ℓ, m` for independent linear forms and `Q₂` for a nondegenerate quadratic form. Then:
+
+| root type | form of `H` | `D∞(H)` |
+|---|---|---|
+| `(d)` | `cℓ^d` | `⊕_{j≤2} m^j K[ℓ]` |
+| `(d−1, 1)` | `cℓ^{d−1}m` | `K[ℓ] ⊕ m·K[ℓ]` |
+| `(d−2, 2)` | `cℓ^{d−2}m²` | `span{1, ℓm, H}` |
+| `(3, 3)`, sextics only | `cQ₂³` | `K[Q₂]` |
+| every other type (at least three distinct roots) | | `span{1, H}` |
+
+For a rational `H`, the forms `ℓ`, `m` and `Q₂` in the table can be taken rational. In the first three rows the roots have different multiplicities, so each root is Galois-stable. In the fourth row `Q₂` is defined up to a scalar by `H`. With the quartic theorems of §3c, this classifies the dynamic core of every binary form of degree at most 6.
+
+The proof uses three routes. Every type falls under exactly one of them.
+
+**Route A: monomial classes.** The first four rows are single `GL₂(K̄)` classes. The all-degree certificates `quintic_q5`, `quintic_q4p`, `q2p3`, `sextic_q6`, `sextic_q5p`, `sextic_q4p2` and `q3p3` (`weyl-kernel-v1`, monomial span) give the cores of the representatives. The cores transport by covariance and descend as in §3.
+
+**Route B: a root of multiplicity 2 or `d − 2`.** This covers quintic types `(3,1,1)`, `(2,2,1)`, `(2,1,1,1)` and sextic types `(4,1,1)`, `(3,2,1)`, `(2,2,2)`, `(2,2,1,1)`, `(2,1,1,1,1)`. Each has at least three distinct roots.
+
+1. Move the root to `(1:0)`. On forms of one degree, the weight `(2,1)` orders monomials by their `q`-exponent. The top part of `H` is then `q^{d−μ}p^μ` with `μ ∈ {2, d−2}`.
+2. By the top-weight lemma (§3b), the leading monomial of every `G ∈ D∞(H)` lies in `D∞(q^{d−2}p²)`, up to the swap `q ↔ p`. That core is `span{1, qp, q^{d−2}p²}` (Route A).
+3. Hence `D∞(H)_n = 0` for `n ∉ {0, 2, d}`, and `D∞(H)_d = K·H`.
+4. For `G ∈ D∞(H)_2`, `{H, G} ∈ D∞(H)_d = K·H`.
+   - If `{H, G} = 0`, then `G` lies in the centralizer (lemma below), which has no quadratic elements because `H` has at least three distinct roots.
+   - `{H, G} = cH` with `c ≠ 0` is impossible by the sl₂ lemma.
+5. So `D∞(H) = span{1, H}`.
+
+**Route C: types `(1⁵)`, `(1⁶)` and `(3,1,1,1)`.** These have a simple root and no root of multiplicity `≥ d − 2`.
+
+1. *Static finiteness.* The certificates `binary_static_d5` and `binary_static_d6` (`binary-static-v1`) prove the following. If `H` of degree `d` has a simple root and `E_n(H) = {G : T₃(H,G) = T₅(H,G) = 0} ≠ 0` for some `n ≥ N₀`, then `H` has type `(d−1, 1)` or `(d−2, 1, 1)`. The bound is `N₀ = 10` for `d = 5` and `N₀ = 17` for `d = 6`. Since `D∞(H)_n ⊆ E_n(H)`, it follows that `D∞(H)_n = 0` for `n ≥ N₀`.
+2. *Chain argument.* Let `G ∈ D∞(H)_n`. Then `D^rG ∈ D∞(H)_{n + r(d−2)}`, which vanishes for large `r`. Take `r` minimal with `D^rG = 0`. If `r ≥ 1`, then `F = D^{r−1}G` is a nonzero element of `ker D ∩ D∞(H)`.
+   - Because `H` is not a proper power, `ker D = K[H]`.
+   - `H^j ∉ D∞(H)` for `j ≥ 2`. At a simple root, the top part of `H^j` is `(q^{d−1}p)^j`, and `p^j` with `j ≥ 2` does not occur in `D∞(q^{d−1}p) = K[q] ⊕ pK[q]`.
+   - So `F` is a constant or `cH`. A constant forces `n = 0`. If `F = cH` with `r ≥ 2`, then `D^{r−2}G` is a quadratic with `{H, D^{r−2}G} = cH`, `c ≠ 0`, which the sl₂ lemma excludes.
+   - Hence `G ∈ span{1, H}`.
+
+**Lemma (centralizer).** Write `H = aR^g` with `R` not a proper power. Then `{H, G} = 0` implies `G ∈ K[R]`.
+
+*Proof.* For homogeneous `G` of degree `k`, the degree-0 function `f = G^d/H^k` satisfies `{H, f} = 0`, so `∇f ∥ ∇H`. Euler's relation gives `x·∇f = 0` and `x·∇H = dH ≠ 0`, so `∇f = 0` and `G^d = cH^k`. Unique factorization then gives `G ∝ R^s`, because the multiplicities of `R` have gcd 1. ∎
+
+**Lemma (sl₂).** If `H` has at least three distinct roots, no quadratic `G` satisfies `{H, G} = cH` with `c ≠ 0`.
+
+*Proof.* Quadratic forms span `sl₂` under the bracket, and `ad G` acts on `V_d` as that element.
+- A nilpotent element acts nilpotently, so it has no eigenvalue `c ≠ 0`. Hence `G` is semisimple.
+- Then `G = λℓm` over `K̄`, and `ad(ℓm)` multiplies `ℓ^a m^b` by a nonzero multiple of `a − b`.
+- Its eigenvectors with a given eigenvalue are therefore single monomials `ℓ^a m^{d−a}`, which have at most two distinct roots. ∎
+
+**The static certificate (`binary-static-v1`; checker `check_binary_static.py`).**
+
+1. *Normal form.* Move the simple root to `(1:0)` and normalize by the stabilizer. This gives `H = q^{d−1}p + Σ_{j≥3} h_j q^{d−j}p^j`, and the residual torus acts by `h_j ↦ λ^{j−1}h_j`.
+2. *Static top lemma.* The static space of `q^{d−1}p` in degree `n ≥ N₀` is `span{qⁿ, q^{n−1}p}`. The checker re-derives the two gate-coefficient factorizations, `(b)₂[db − 2d + 6 − 3n]` and `(b)₄[(d−5)(b−4) − 5(n−b)]`, and their common zeros. So every nonzero `G ∈ E_n(H)` has `(g₀, g₁) ≠ 0`.
+3. *Top equations.* The `T₃` equations determine `g₂, g₃, …` from `(g₀, g₁)`, with denominators that are polynomials in `n`. The `T₅` equations at output indices `0..R−1` (`R = 4` for quintics, `R = 6` for sextics) then give a matrix `M(n, h)` of size `R × 2`.
+4. *Cases.* A kernel vector of `M(n, h)` has `g₁ = 0`, or `g₀ = 0`, or, after the torus, `g₀ = g₁`. In the first two cases the first nonzero `h_j` is normalized to 1. Each case is a polynomial system over `Q[n]`.
+5. *Elimination trees.* For each system the certificate gives a tree of explicit identities:
+   - derived polynomials as combinations of known ones;
+   - factorizations `c(n)·∏q_i^{m_i}`, with `c(n) ≠ 0` for `n ≥ N₀`, that branch on `q_i = 0`;
+   - leaves that are either a polynomial in `n` with no integer root `≥ N₀`, or identities `c_j(n)·J_j = Σ(multipliers)·(known)`.
+6. *The locus `J = 0`.* The common zero locus of `J` (three generators for sextics, two for quintics) is `h = 0` (type `(d−1,1)`) together with the type-`(d−2,1,1)` points. The checker verifies this in `Q[a]/(a² − α)`, with `α = −1/6` and `−1/10`.
+
+The trees were searched for with sympy, which the producer `binary_static.py` uses and nothing else does. The checker uses only exact integer and rational arithmetic, and it re-derives `M(n, h)` independently. The two certificates have 52 and 181 steps.
+
+The type `(4,1,1)` genuinely has a nonzero static space in every degree, which is why it appears in the conclusion. Its dynamic core is still finite, by Route B. For `(3,1,1,1)` the static space is nonzero in degree 12 (`E₁₂ ≠ 0`), which is below the sextic bound `N₀ = 17`. The chain argument needs nothing in degrees below `N₀`.
+
+**Tests** (`test_binary_static.py`):
+- the stored certificates pass, and eight forgeries are rejected;
+- the evaluated top matrix agrees with direct static spaces computed from the gates;
+- for one representative of every quintic and sextic root type, the direct dimensions of `{G : C_kD^rG = 0, r ≤ 3}` in degrees 1–12 equal the classified core. This last test is a consistency check, not part of the proof.
+
 ## 4. Commands
 
 ```bash

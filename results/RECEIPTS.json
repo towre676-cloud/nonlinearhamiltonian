@@ -234,6 +234,54 @@
    }
   },
   {
+   "file": "results/hamiltonian/binary_static_d5.json",
+   "sha256": "cc6974e0406a71c29aa3a5a076f25a1b6d733d8d1b5d1a62c9432a6faa3e72dc",
+   "witness_kind": "binary-static",
+   "replay": "python3 -B extensions/envelope.py check results/hamiltonian/binary_static_d5.json",
+   "producer_seconds": 2.25,
+   "summary": {
+    "status": "passed",
+    "degree": 5,
+    "N0": 10,
+    "rows": 4,
+    "top_static_space": "span{q^n, q^(n-1) p} for n >= 3",
+    "exceptional_degrees": [
+     2
+    ],
+    "J_zero_locus": "h = 0 (type (4,1)) or type (3,1,1) with P one of its simple roots",
+    "alpha": "-1/6",
+    "steps": 52,
+    "contradictions": 10,
+    "targets": 2,
+    "theorem": "for every binary form H of degree 5 with a simple root and every n >= 10: E_n(H) != 0 only if H has type (4,1) or (3,1,1)"
+   }
+  },
+  {
+   "file": "results/hamiltonian/binary_static_d6.json.gz",
+   "sha256": "1de10350f40f04e7ce31b8638105b219730386c2837c1d0d4614353ad5f88e5b",
+   "witness_kind": "binary-static",
+   "replay": "python3 -B extensions/envelope.py check results/hamiltonian/binary_static_d6.json.gz",
+   "producer_seconds": 29.26,
+   "summary": {
+    "status": "passed",
+    "degree": 6,
+    "N0": 17,
+    "rows": 6,
+    "top_static_space": "span{q^n, q^(n-1) p} for n >= 3",
+    "exceptional_degrees": [
+     1,
+     2,
+     4
+    ],
+    "J_zero_locus": "h = 0 (type (5,1)) or type (4,1,1) with P one of its simple roots",
+    "alpha": "-1/10",
+    "steps": 181,
+    "contradictions": 31,
+    "targets": 2,
+    "theorem": "for every binary form H of degree 6 with a simple root and every n >= 17: E_n(H) != 0 only if H has type (5,1) or (4,1,1)"
+   }
+  },
+  {
    "file": "results/hamiltonian/p3_plus_q2.json",
    "sha256": "81d544b5ad07acdd81207e1fa2fb26a6af789a3806535391d213f121fcc551e7",
    "witness_kind": "weyl-polynomial-kernel",
@@ -536,6 +584,89 @@
    "sha256": "dbf4654f1a3abf30871593404acd26402a3b540d3251036774b06e4467b8dfb2",
    "witness_kind": "weyl-polynomial-kernel",
    "replay": "python3 -B extensions/envelope.py check results/hamiltonian/quartic_q4.json",
+   "producer_seconds": 0.0,
+   "summary": {
+    "status": "passed",
+    "kind": "monomial_span",
+    "kernel": [
+     "p^0*Q[q]",
+     "p^1*Q[q]",
+     "p^2*Q[q]"
+    ],
+    "dimension": "infinite"
+   }
+  },
+  {
+   "file": "results/hamiltonian/quintic_q4p.json",
+   "sha256": "153a8afc2f55549d58f77f6bd98c26cbf641f5ae6ed7db92ab6b797b1b3e5de1",
+   "witness_kind": "weyl-polynomial-kernel",
+   "replay": "python3 -B extensions/envelope.py check results/hamiltonian/quintic_q4p.json",
+   "producer_seconds": 0.03,
+   "summary": {
+    "status": "passed",
+    "kind": "monomial_span",
+    "kernel": [
+     "p^0*Q[q]",
+     "p^1*Q[q]"
+    ],
+    "dimension": "infinite"
+   }
+  },
+  {
+   "file": "results/hamiltonian/quintic_q5.json",
+   "sha256": "704883b35b99c0e78946fcdea816f6f8e08c96792c898ab288a662bac05131ba",
+   "witness_kind": "weyl-polynomial-kernel",
+   "replay": "python3 -B extensions/envelope.py check results/hamiltonian/quintic_q5.json",
+   "producer_seconds": 0.0,
+   "summary": {
+    "status": "passed",
+    "kind": "monomial_span",
+    "kernel": [
+     "p^0*Q[q]",
+     "p^1*Q[q]",
+     "p^2*Q[q]"
+    ],
+    "dimension": "infinite"
+   }
+  },
+  {
+   "file": "results/hamiltonian/sextic_q4p2.json",
+   "sha256": "c38f292ca4069cd6a080e57c60d0570b7e91fafe71a7ebc3dce268877309a94e",
+   "witness_kind": "weyl-polynomial-kernel",
+   "replay": "python3 -B extensions/envelope.py check results/hamiltonian/sextic_q4p2.json",
+   "producer_seconds": 1.72,
+   "summary": {
+    "status": "passed",
+    "kind": "monomial_span",
+    "kernel": [
+     "q^0*p^0",
+     "q^1*p^1",
+     "q^4*p^2"
+    ],
+    "dimension": 3
+   }
+  },
+  {
+   "file": "results/hamiltonian/sextic_q5p.json",
+   "sha256": "be134e389570ec0c2a854d19057ecf94b1746ea7098ea3ce7f9832c79e37f91f",
+   "witness_kind": "weyl-polynomial-kernel",
+   "replay": "python3 -B extensions/envelope.py check results/hamiltonian/sextic_q5p.json",
+   "producer_seconds": 0.06,
+   "summary": {
+    "status": "passed",
+    "kind": "monomial_span",
+    "kernel": [
+     "p^0*Q[q]",
+     "p^1*Q[q]"
+    ],
+    "dimension": "infinite"
+   }
+  },
+  {
+   "file": "results/hamiltonian/sextic_q6.json",
+   "sha256": "38b4a27fda8e1c8b8657c04fff8a9aa2a7dbf92fb7b24478ba3316aa7746a843",
+   "witness_kind": "weyl-polynomial-kernel",
+   "replay": "python3 -B extensions/envelope.py check results/hamiltonian/sextic_q6.json",
    "producer_seconds": 0.0,
    "summary": {
     "status": "passed",

@@ -209,9 +209,39 @@ def quartic_theorem():
         PRODUCER, verify=False), s)
 
 
+BINARY_MONOMIALS = [('quintic_q5', 'q^5'), ('quintic_q4p', 'q^4*p'), ('sextic_q6', 'q^6'), ('sextic_q5p', 'q^5*p'),
+                    ('sextic_q4p2', 'q^4*p^2')]
+
+
+def binary_forms():
+    """Quintic and sextic classification: monomial cores and static finiteness at a simple root.
+    The static producer uses sympy (only here); the checkers use the standard library."""
+    import binary_static as BS
+    for name, h in BINARY_MONOMIALS:
+        H = WG.parse_poly(h)
+        (meta, receipt), s1 = timed(WG.discover, H, max_steps=400000, max_generators=100)
+        (kmeta, kobj), s2 = timed(WK.classify, receipt)
+        write('hamiltonian', name, envelope.make(
+            'weyl-polynomial-kernel', receipt['hamiltonian'], kobj,
+            ['flat Weyl-Moyal convention, one canonical pair', 'D = {H,.}, C_k = T_k(H,.) for odd k >= 3',
+             'coefficients in Q'],
+            'full dynamic exact core in all polynomial degrees (monomial root class of the quintic/sextic '
+            'classification)', ['D16-F03', 'D06-F02'], PRODUCER, verify=False), s1 + s2)
+    for d in (5, 6):
+        cert, s = timed(BS.build, d)
+        cert.pop('result')
+        write('hamiltonian', f'binary_static_d{d}', envelope.make(
+            'binary-static', {'degree': d}, cert,
+            [f'binary forms of degree {d} over an algebraically closed field of characteristic zero with a simple root',
+             'local normal form at the simple root; static top lemma for q^(d-1) p'],
+            f'E_n(H) = 0 for n >= N0 unless H has type ({d - 1},1) or ({d - 2},1,1)', ['D16-F03', 'D06-F02'],
+            PRODUCER + '; elimination trees searched with sympy', verify=False), s)
+
+
 SECTIONS = {'observer': lambda a: observers(), 'structure': lambda a: structure(), 'arithmetic': lambda a: arithmetic(),
             'hamiltonian': lambda a: hamiltonians(a.skip_slow), 'top': lambda a: top_reductions(),
-            'integer': lambda a: integer_and_units(), 'quartic': lambda a: quartic_theorem()}
+            'integer': lambda a: integer_and_units(), 'quartic': lambda a: quartic_theorem(),
+            'binary': lambda a: binary_forms()}
 
 
 def main():

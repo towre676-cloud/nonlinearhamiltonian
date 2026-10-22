@@ -83,6 +83,12 @@ def _quartic_rigidity(model, payload):
     return _load('hamiltonian/check_quartic_rigidity.py', 'mx_check_quartic_rigidity').check(payload)
 
 
+def _binary_static(model, payload):
+    if model is not None and model != {'degree': payload.get('degree')}:
+        raise ValueError('envelope model is not the certified degree')
+    return _load('hamiltonian/check_binary_static.py', 'mx_check_binary_static').check(payload)
+
+
 def _quartic_uniform(model, payload):
     if model != {'family': payload.get('family')}:
         raise ValueError('envelope model must name the certified family')
@@ -117,6 +123,7 @@ KINDS = {
     'weyl-top-reduction': ('format', 'weyl-top-reduction-v1', _top_reduction),
     'quartic-rigidity': ('format', 'quartic-rigidity-v1', _quartic_rigidity),
     'quartic-uniform': ('format', 'quartic-uniform-v1', _quartic_uniform),
+    'binary-static': ('format', 'binary-static-v1', _binary_static),
     'rational-contraction': ('schema', 'rational-contraction-v1', _contraction),
     'integer-cohomology': ('format', 'integer-smith-v1', _smith),
     'fundamental-unit': ('format', 'fundamental-unit-v1', _units),

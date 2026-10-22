@@ -166,6 +166,22 @@
     "Archive strictly below 30000000 bytes",
     "Coherent tested commits and clear remaining frontiers"
    ]
+  },
+  {
+   "id": "W4",
+   "status": "done",
+   "title": "quintic and sextic dynamic-core classification",
+   "depends_on": [
+    "W1",
+    "W2"
+   ],
+   "objective": "Classify D_inf(H) for every binary quintic and sextic over a field of characteristic zero.",
+   "acceptance": [
+    "Monomial classes certified in all degrees",
+    "Root types with a root of multiplicity 2 or d-2 reduced by the top-weight lemma",
+    "Static finiteness at a simple root certified by an independent checker with exact arithmetic",
+    "Chain argument documented; representatives of every root type cross-checked directly"
+   ]
   }
  ],
  "notes": {
