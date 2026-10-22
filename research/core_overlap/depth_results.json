@@ -1,0 +1,24 @@
+{
+  "status": "passed",
+  "format": "analytic-qF-three-equation-v1",
+  "sector_operator_comparisons": 1400,
+  "exact_sharpness_examples": {
+    "first_derivation_necessary": "-48",
+    "initial_third_gate_necessary": "48*p^3",
+    "fifth_gate_necessary": "-548352/625*p^-7",
+    "seventh_gate_necessary_for_static_space": "-1940889600/117649*p^-7",
+    "second_derivation_necessary_with_additive_potential": "63/8*p^(-9/2)"
+  },
+  "symbolic_parameter_identity": "passed",
+  "parameter_grid": {
+    "c_min": 5,
+    "c_max": 10004,
+    "count": 10000
+  },
+  "pole_leading_coefficient_comparisons": 4000,
+  "scope": "A[q], real-analytic F,V on a connected interval; proofs localize where F double-prime is nonzero and treat the affine case separately",
+  "claim": "D_infinity(qF)=ker C3 intersect ker(C3 D) intersect ker C5",
+  "gamma_polygamma_refinement": "ker C3 intersect ker(C3 D)=A direct-sum qA",
+  "additive_potential_refinement": "D_infinity(qF+V)=ker C3 intersect ker C5 intersect ker(C3 D) intersect ker(C3 D^2)",
+  "limits": "The all-degree conclusion uses the supplied proof, not the finite grid."
+}

@@ -13,6 +13,6 @@ This directory imports the 2026-10-21 handoff programme documents and records wh
 
 ## Next steps
 
-1. The two-root conjecture of `DYNAMIC_CORE_RESULTS.md` §6.4: pure and near tops whose non-affine part is not a single `m²` term, and balanced tops outside `K[G]` (box perturbations give no Newton-polygon edge). A literature review before any positioning claim.
+1. Classify the remaining pure perturbations after the P003 counterexamples and the new PP/QC/SC/SS families. Balanced total tops and near tops are proved; the former blanket pure-top conjecture is false. See `research/core_overlap/README.md`. A literature review remains necessary before any priority claim.
 2. Probabilistic or continuous noise for adaptive experiments. This needs posterior semantics and a different termination theorem.
 3. Performance. The Weyl Gröbner backend uses `Fraction` arithmetic without a chain criterion.

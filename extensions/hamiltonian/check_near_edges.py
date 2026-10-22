@@ -10,13 +10,14 @@ Proof (checked identities [E1]..[E4]).
     first joined, as t decreases from 1, by monomials of m-exponent >= 2: the first edge
     E = m l^(d-1) + sum_{s>=1} e_s m^(1+sa) l^(d-1-sb), with b > a >= 1 coprime (total degree
     drops along the edge). By the top-weight lemma for w_t on the edge, gr D_inf(H) embeds
-    in D_inf(E); it suffices to show D_inf(E) is finite-dimensional, and Lemma F
+    in D_inf(E); d=3 is already the certified Theorem Q. For d>=4 it suffices
+    to show D_inf(E) is finite-dimensional, and Lemma F
     (DYNAMIC_CORE_RESULTS.md section 6.6) then gives span{1, H}.
  2. D_inf(E) is graded by the edge weight; a homogeneous element G has total-degree top in
     V = K[l] + m K[l] (monomial theorem), i.e. starts with g l^N (type alpha) or
     g m l^(N-1) (type beta), and its monomials lie on a line of step (a, -b). Let t be the
-    first step with e_t != 0. For large N the T_3 recurrence forces the coefficients of G
-    strictly between steps 0 and t to vanish, and the step-t components of T_3(E, G) and
+    first step with e_t != 0. Since all intermediate edge coefficients vanish,
+    intermediate G terms cannot contribute at step t; the step-t components of T_3(E, G) and
     T_3(E, {E, G}) are linear in (y, e_t g), y the step-t coefficient of G:
     [E1] type alpha: determinant
          N a^2 t^2 (d-2)(d-1)(at-1)^2 (at+1) C_alpha,  C_alpha cubic in N with leading

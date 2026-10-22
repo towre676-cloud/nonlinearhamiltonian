@@ -45,7 +45,7 @@
   {
    "id": "P001",
    "status": "target",
-   "claim": "Remaining open targets: probabilistic or continuous noise models for adaptive experiments; the two-root conjecture P003; literature positioning.",
+   "claim": "Remaining targets: probabilistic or continuous noise models; classify unresolved pure and near perturbations after the P003 counterexamples; literature positioning.",
    "support": "TASKS.json",
    "scope": "Unfinished tasks, not current capabilities."
   },
@@ -268,10 +268,10 @@
   },
   {
    "id": "P003",
-   "status": "conjecture",
-   "claim": "Two-root conjecture (remaining part): pure tops c l^d with lower-order terms outside the structures of W6-b have D_inf(H) = span{1,H}.",
-   "support": "programmes/DYNAMIC_CORE_RESULTS.md#6.4; extensions/hamiltonian/test_two_root.py",
-   "scope": "Proved for balanced tops (W6-d), near tops (W6-f), the pure m^2 family (W6-c) and the pure transverse-top criterion (W6-e); open for the remaining pure tops; supported by every computed case."
+   "status": "disproved_as_stated",
+   "claim": "The former pure/near collapse conjecture is false: H=q(qp+q^3)^2 has core span{1,H,qp+q^3}, and H=(p+q^2)^2 has an infinite core with active observables.",
+   "support": "research/core_overlap/pure_perfect_power.md; research/core_overlap/pure_quadratic_composition.md",
+   "scope": "Pure-top counterexamples and complete PP/QC/SC/SS scopes; remaining pure cases unclassified. Near tops are classified by W6-f (Theorem NE)."
   },
   {
    "id": "P002",
@@ -279,6 +279,69 @@
    "claim": "Root-rigidity theorem: every homogeneous binary form of degree d >= 3 with at least three distinct roots has D_inf(H) = span{1,H}; hence A(H) = 0.",
    "support": "programmes/DYNAMIC_CORE_RESULTS.md#5",
    "scope": "All degrees, characteristic zero: Theorem SR (simple root) and Theorem R1 (no simple root). Previously a conjecture."
+  },
+  {
+   "id": "W7-PP",
+   "status": "proved_with_independent_internal_review",
+   "claim": "Pure total tops with transverse alpha*m^s*(l+gamma)^r, r,s>=2,r!=s: s>=3 collapses to span{1,H}; s=2 has exactly the explicit nonlinear-shear 3D active family, otherwise collapses.",
+   "support": "research/core_overlap/pure_perfect_power.md; research/core_overlap/pure_transverse.py",
+   "scope": "All polynomial degrees; characteristic zero; exact recognizer PP. Historical priority unestablished."
+  },
+  {
+   "id": "W7-QC",
+   "status": "proved_with_independent_internal_review",
+   "claim": "For Q=p+bq^2+cq+d, b!=0, H=P(Q)+epsilon*q: degree P=2 gives K[Q]+span{q,qQ,q^2}; degree P>=3 gives K[Q]+Kq. Nonzero epsilon makes K[Q] an infinite active exact sector.",
+   "support": "research/core_overlap/pure_quadratic_composition.md; research/core_overlap/pure_quadratic_composition.py",
+   "scope": "All polynomial degrees; characteristic zero; recognizer QC transports by affine GL2 maps. Historical priority unestablished."
+  },
+  {
+   "id": "W7-SC",
+   "status": "proved_with_independent_internal_review",
+   "claim": "For J=qp+u(q), u third derivative nonzero, D_inf(P(J)) is the p-degree<=2 strip for degree P=1, stationary span{1,J,J^2} for degree P=2, and span{1,H} for degree P>=3.",
+   "support": "research/core_overlap/audit_balanced_transverse.md; research/core_overlap/audit_composition_recognize.py",
+   "scope": "All polynomial degrees; characteristic zero; SC is a sufficient exact composition recognizer, not an exhaustive recognizer of all balanced transverse exceptions. Historical priority unestablished."
+  },
+  {
+   "id": "W7-FD",
+   "status": "proved_with_independent_internal_review",
+   "claim": "For all real-analytic F,V on connected I and finite-q-degree observables: D_inf(qF)=ker C3 intersect ker(C3D) intersect ker C5; D_inf(qF+V)=ker C3 intersect ker C5 intersect ker(C3D) intersect ker(C3D^2). Bounds are sharp.",
+   "support": "research/core_overlap/depth_finite_determination.md; research/core_overlap/depth_verify.py",
+   "scope": "Analytic algebra A[q]; includes zeros of F second derivative; not arbitrary smooth functions or infinite q series. Historical priority unestablished."
+  },
+  {
+   "id": "W7-FP",
+   "status": "proved_with_independent_internal_review",
+   "claim": "For rational nonlinear F, meromorphic F with a genuine finite pole under stated continuation hypotheses, or F=log Gamma, and arbitrary analytic V: D_inf(qF+V)=ker C3 intersect ker(C3D)=A+qA. Includes every polygamma.",
+   "support": "research/core_overlap/analytic_bridge.md; research/core_overlap/depth_finite_determination.md",
+   "scope": "Analytic coefficients on connected nonsingular intervals; meromorphic continuation or logarithmic singularity hypotheses stated explicitly. Historical priority unestablished."
+  },
+  {
+   "id": "W7-AC",
+   "status": "proved_with_independent_internal_review",
+   "claim": "For p>0,F=a*p^(-1/4)+b*p,a!=0, D_inf(qF)=A+qA+R*q^3*p^(-3/4); the cubic is an active eigenpartner when b!=0, eigenvalue -15b/4. All-depth third-gate false positives exist at higher fractional sectors.",
+   "support": "research/core_overlap/analytic_bridge.md; research/core_overlap/analytic_bridge_check.py",
+   "scope": "Finite q degree, real analytic coefficients on p>0; algebraic rather than rational F. Historical priority unestablished."
+  },
+  {
+   "id": "W7-CS",
+   "status": "proved_with_independent_internal_review",
+   "claim": "Quantum and classical canonical shear pullbacks agree on transverse-degree<=2 polynomials; the cubic obstruction is -hbar^2*w second derivative/4. This transports the new finite 3D exact sector; nonlinear covariance is not asserted generally.",
+   "support": "research/core_overlap/canonical_bridge.md; research/core_overlap/canonical_verify.py",
+   "scope": "Formal Weyl algebra / finite polynomial calculations; mature quantum-canonical background, no new operation claimed. Historical priority unestablished."
+  },
+  {
+   "id": "W7-SS",
+   "status": "proved_with_independent_internal_review",
+   "claim": "For Q=p+u(q), degree u>=3, H=AQ^2+BQ+C+epsilon*q,A!=0, the core is exactly span{1,q,Q,q^2,qQ,Q^2}; C3 at depths 0,1,2 determines it and depth two is sharp.",
+   "support": "research/core_overlap/analytic_shear_square.md; research/core_overlap/analytic_shear_square.py",
+   "scope": "All polynomial degrees, characteristic zero, exact SS recognizer, affine GL2 transport. Historical priority unestablished."
+  },
+  {
+   "id": "W7-OC",
+   "status": "verified_application_of_existing_observer_method",
+   "claim": "The SS sector has Jordan blocks (3,2,1) at zero forcing and (5,1) otherwise. Target derivative closures q/q^2/joint have dimensions 2/3/5 versus 3/5/6; 27 existing observer certificates replay exactly.",
+   "support": "research/core_overlap/audit_sector_dynamics.md; research/core_overlap/audit_sector_dynamics.py",
+   "scope": "Rational A,B,epsilon with A!=0; exact observable-sector closure. Existing observer machinery, no general sensing or priority claim."
   }
  ],
  "rule": "Passing finite tests does not upgrade a target or an unproved general statement to a theorem.",

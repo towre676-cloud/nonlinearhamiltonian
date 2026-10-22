@@ -12,7 +12,8 @@ roots over Qbar, the checker recomputes the top type and applies the proved crit
                                             V = K[l] + m K[l] if d_v^2 H = 0;
                                             span{1, H} if H = f(l) + m g(l) + gamma m^2, gamma != 0,
                                             deg g < d/2 (Theorem Q') or the transverse top is finite
-                                            (Theorem T); otherwise conjectural.
+                                            (Theorem T); PP/QC/SC/SS recognize additional finite
+                                            and infinite pure-top cores; otherwise unclassified.
   near     H_d = c l^(d-1) m                V if d_v^2 H = 0; span{1, H} otherwise (Theorem NE,
                                             check_near_edges.py).                   (complete)
   balanced H_d = c Q^mu, Q a quadratic form  K[G] with G = Q(x - x0) if the translation killing
@@ -264,8 +265,76 @@ def classify(H):
     elif transverse_finite(H, l)[0] and transverse_pure_ok(H, l):
         out.update(route='T', proved=True, core='span{1, H}', active_part='0')
     else:
-        out.update(route='pure, conjectural', proved=False, core='span{1, H} (conjectured)',
-                   active_part='0 (conjectured)')
+        pp = pure_additional_routes(H, l)
+        if pp is not None:
+            out.update(pp)
+        else:
+            out.update(route='pure, unresolved', proved=False, core='unclassified',
+                       active_part='unclassified (the former blanket conjecture is false)')
+    return out
+
+
+def pure_additional_routes(H, l):
+    """Theorems PP, QC and SC in root coordinates, with affine GL2 transport.
+
+    The all-degree classification and exact recognizer live together in the
+    research package. No finite-degree dimension computation is used here.
+    """
+    import importlib.util
+    root = Path(__file__).resolve().parents[2] / 'research/core_overlap'
+    # The modules share exact polynomial utilities; keep this package first
+    # while importing, regardless of the caller's current working directory.
+    if str(root) not in sys.path:
+        sys.path.insert(0, str(root))
+    def load(name):
+        key = '_core_overlap_' + name
+        if key not in sys.modules:
+            spec = importlib.util.spec_from_file_location(key, root / (name + '.py'))
+            module = importlib.util.module_from_spec(spec)
+            spec.loader.exec_module(module)
+            sys.modules[key] = module
+        return sys.modules[key]
+    Ht = coords(H, l)
+    m = lin(0, 1) if l.get((1, 0), F(0)) else lin(1, 0)
+    ss = load('analytic_shear_square').recognize(Ht)
+    if ss is not None:
+        Q = comp({(int(i), int(j)): F(c) for (i, j), c in ss['Q'].items()}, l, m)
+        return {'route': 'SS', 'proved': True,
+                'core': 'span{1, l, Q, l^2, lQ, Q^2}', 'dimension': 6,
+                'active_part': 'finite nonzero', 'Q': ser(Q), 'l': ser(l),
+                'root_coordinate_witness': {k: str(ss[k]) for k in ('A', 'B', 'epsilon', 'constant')}}
+    qc = load('pure_quadratic_composition').classify(Ht)
+    if qc is not None:
+        Qt = {(i, j): F(c) for i, j, c in qc['Q']}
+        Q = comp(Qt, l, m)
+        core = ('K[Q] + span{l, lQ, l^2}' if qc['degree_P'] == 2
+                else 'K[Q] + K*l')
+        return {'route': 'QC', 'proved': True, 'core': core,
+                'active_part': qc['active_part'], 'Q': ser(Q), 'l': ser(l),
+                'degree_composition': qc['degree_P'],
+                'root_coordinate_witness': {k: qc[k] for k in ('P', 'epsilon')}}
+    sc = load('audit_composition_recognize').recognize(Ht)
+    if sc is not None:
+        Jt = {tuple(map(int, k.split(','))): F(c) for k, c in sc['J'].items()}
+        J = comp(Jt, l, m)
+        result = {'route': 'SC', 'proved': True,
+                  'core': 'span{1, H, G}' if sc['J_is_core'] else 'span{1, H}',
+                  'active_part': sc['active_part'], 'composition_generator': ser(J),
+                  'composition_generator_is_core': sc['J_is_core'],
+                  'composition_coefficients': sc['composition_coefficients']}
+        if sc['J_is_core']:
+            result.update(G=ser(J), generator_degree=degree(J))
+        return result
+    result = load('pure_transverse').classify(Ht)
+    if result is None:
+        return None
+    out = {'route': 'PP', 'proved': True, 'core': 'span{1, H}', 'active_part': '0',
+           'transverse': {k: result[k] for k in ('r', 's', 'gamma', 'dimension', 'reason')}}
+    if result['dimension'] == 3:
+        Gt = {(i, j): F(c) for i, j, c in result['J']}
+        G = comp(Gt, l, m)
+        out.update(core='span{1, H, G}', G=ser(G), generator_degree=degree(G),
+                   active_part='K G modulo stationary span{1,H}')
     return out
 
 

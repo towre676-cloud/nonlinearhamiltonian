@@ -43,6 +43,15 @@ Every lab states its inputs, arithmetic and limits. Exact integer or rational an
 
 ## The Hamiltonian research note
 
+The [22 October overlap study](research/core_overlap/README.md) disproves the
+blanket pure-top conjecture in the extension programme and classifies new
+finite and infinite exact sectors. It includes the quartic
+`H=(p+q²)²` with active exact observables, complete nonlinear-composition
+families, and sharp finite
+stopping rules for analytic and polygamma Hamiltonians. The proofs,
+independent exact checkers, and a [research PDF](research/core_overlap/output/pdf/Exact_Core_Overlap_Research.pdf)
+state their scopes and leave historical priority open.
+
 The [Hamiltonian package](research/hamiltonian/) studies, for a fixed polynomial Hamiltonian $H$, those $\hbar$-independent polynomial observables $G$ for which
 
 $$

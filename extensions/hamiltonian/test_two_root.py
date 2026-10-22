@@ -21,6 +21,13 @@ def predicted(core, d, N):
         return 1 + (N >= d)
     if core == 'K[G]':
         return N // 2 + 1
+    if core == 'K[Q] + span{l, lQ, l^2}':
+        return N // 2 + 1 + (N >= 1) + (N >= 2) + (N >= 3)
+    if core == 'K[Q] + K*l':
+        return N // 2 + 1 + (N >= 1)
+    if core == 'span{1, l, Q, l^2, lQ, Q^2}':
+        n = d // 2
+        return 1 + (N >= 1) + (N >= n) + (N >= 2) + (N >= n+1) + (N >= 2*n)
     if core.startswith('K[l] + m K[l]'):
         return sum(min(2, n + 1) for n in range(N + 1))
     if core.startswith('(+)_{j<=2}'):
@@ -110,6 +117,47 @@ class TransverseAndVertex(unittest.TestCase):
                 self.assertEqual(filtered_dim(H, d + 1, 8), predicted(res['core'], d, d + 1), H)
 
 
+class PureCompositionRegressions(unittest.TestCase):
+    def test_counterexamples_and_distinct_composition_routes(self):
+        q, p = {(1, 0): F(1)}, {(0, 1): F(1)}
+        Q = TR.add(p, TR.power(q, 2))
+        J = TR.add(TR.mul(q, p), TR.power(q, 3))
+        R = TR.add(p, TR.power(q, 3))
+        cases = [('QC', TR.power(Q, 2)),
+                 ('QC', TR.add(TR.power(Q, 3), q)),
+                 ('PP', TR.mul(q, TR.power(J, 2))),
+                 ('SC', TR.power(J, 2)), ('SC', TR.power(J, 3)),
+                 ('SS', TR.add(TR.power(R, 2), q))]
+        for route, H in cases:
+            for Ht in (H, linmap(H, 1, 1, 0, 1, F(1, 2), F(-2, 3))):
+                result = TR.classify(Ht)
+                self.assertEqual(result['route'], route)
+                self.assertTrue(result['proved'])
+                TR.check(TR.certify(Ht))
+                if 'G' in result:
+                    G = {tuple(map(int, k.split(','))): F(v) for k, v in result['G'].items()}
+                    for gate in W.gates(Ht).values():
+                        self.assertEqual(W.act(gate, G), {})
+                    self.assertTrue(TR.in_span(W.act(W.derivation(Ht), G),
+                                              [{(0, 0): F(1)}, Ht, G]))
+                if result.get('composition_generator_is_core') is False:
+                    G = {tuple(map(int, k.split(','))): F(v)
+                         for k, v in result['composition_generator'].items()}
+                    self.assertNotEqual(W.act(W.gate(Ht, 3), G), {})
+        self.assertEqual(filtered_dim(TR.power(Q, 2), 5, 4), 6)
+        self.assertEqual(filtered_dim(TR.mul(q, TR.power(J, 2)), 8, 4), 3)
+
+    def test_unknown_and_forged_claims(self):
+        result = TR.classify({(6, 0): F(1), (2, 2): F(1)})
+        self.assertFalse(result['proved'])
+        self.assertEqual(result['core'], 'unclassified')
+        H = {(4, 0): F(1), (2, 1): F(2), (0, 2): F(1)}
+        cert = TR.certify(H)
+        cert['claim']['core'] = 'span{1, H}'
+        with self.assertRaises(ValueError):
+            TR.check(cert)
+
+
 class Decision(unittest.TestCase):
     def test_against_direct_computation(self):
         rng = random.Random(7)
@@ -120,7 +168,12 @@ class Decision(unittest.TestCase):
             d = res['degree']
             N = d + 1
             got = filtered_dim(H, N, 8)
-            self.assertEqual(got, predicted(res['core'], d, N), (H, res))
+            if res['proved']:
+                self.assertEqual(got, predicted(res['core'], d, N), (H, res))
+            else:
+                # A sampled dimension cannot classify an unresolved all-degree
+                # core. The old blanket pure-top conjecture has counterexamples.
+                self.assertGreaterEqual(got, 1 + (N >= d), (H, res))
             seen.add(res['route'])
         for r in ('U', 'NE', "Q'", 'B', 'P+ near', 'P+ pure W', 'P+ pure V', 'P+ balanced'):
             self.assertIn(r, seen)

@@ -1,0 +1,17 @@
+{
+  "schema": "protected-canonical-transport-v1",
+  "status": "passed",
+  "arithmetic": "exact rational polynomial arithmetic; standard library",
+  "seed": 736019,
+  "checks": {
+    "shear_protection": 30,
+    "sharp_cubic": 5,
+    "quantum_bracket_covariance": 18,
+    "pure_top_families": 32,
+    "pure_family_gate_checks": 48,
+    "pure_family_iterates": 160,
+    "qF_square_cubic": 12,
+    "qF_hbar2_general": 84
+  },
+  "limits": "These finite checks independently replay identities and fixtures. The all-degree claims use the proofs in canonical_bridge.md; historical priority and arbitrary nonlinear covariance are not claimed."
+}

@@ -1,0 +1,23 @@
+id,name,formula,proof,scope
+CO01,Active pure-top counterexample,J=qp+q^3; H=q J^2; D_H J=H,pure_perfect_power.md,"polynomial, original flat Weyl coordinates"
+CO02,Complete unequal perfect-power family,H=t^(r-2)(a2 J^2+a1 J+a0)+beta J+delta; J=tp+u(t),pure_perfect_power.md,"pure total top, r>=3, deg u>=3, a2!=0"
+CO03,Finite-core exact evolution,D J=(r-2)(H-beta J-delta),pure_perfect_power.md,root coordinates; affine determinant rescales D
+CO04,Parabolic infinite family,Q=p+bq^2+cq+d; H=P(Q)+epsilon q,pure_quadratic_composition.md,b!=0
+CO05,Quadratic composition core,"D_inf(H)=K[Q]+span{q,qQ,q^2}",pure_quadratic_composition.md,degree P=2
+CO06,Higher composition core,D_inf(H)=K[Q]+K q,pure_quadratic_composition.md,degree P>=3
+CO07,Nonlinear shear composition obstruction,"T3(F(J),G(J))=q^3 uthird(Fprime Gthird-Fthird Gprime)",audit_balanced_transverse.md,"J=qp+u(q), polynomial"
+CO08,Transverse finite-degree obstruction,mu s(s-mu)(s+mu-3) q^(mu+s-1) uthird,audit_balanced_transverse.md,"first transverse deficit, mu>=2"
+CO09,Analytic finite stopping,D_inf(qF)=ker C3 intersect ker C3D intersect ker C5,depth_finite_determination.md,"all real-analytic F, finite q degree"
+CO10,Potential finite stopping,D_inf(qF+V)=ker C3 intersect ker C5 intersect ker C3D intersect ker C3D^2,depth_finite_determination.md,"all real-analytic F,V, finite q degree"
+CO11,Polygamma one-step stopping,D_inf(qF+V)=ker C3 intersect ker C3D=A+qA,analytic_bridge.md,"polygamma, log-Gamma, stated meromorphic/log singularity classes"
+CO12,Cubic persistence scalar,K3=F Fthird/(3 Fsecond)-3 Fprime,depth_finite_determination.md,Fsecond nowhere zero for displayed quotient
+CO13,Explicit algebraic active family,F=a p^(-1/4)+b p; G=q^3 p^(-3/4); D G=-(15b/4)G,analytic_bridge.md,"p>0,a!=0"
+CO14,Third-gate false positive,c>=4; r=(2-c)/(c+1); H=q p^r+bqp; G=(q p^r)^c,analytic_bridge.md,every iterated C3 passes but C5 fails
+CO15,Protected canonical shear,S_w=sigma_w exp(-hbar^2 wsecond partial_p^3/24+...),canonical_bridge.md,quantum equals classical pullback for transverse degree<=2
+CO16,Sharp shear cubic correction,S_w(p^3)=(p+w)^3-hbar^2 wsecond/4,canonical_bridge.md,polynomial shear
+CO17,Sharp second-depth witness,H=q p^(-1/4)+p^(7/4); G=q^3 p^(-3/4)-(21/25)q^2 p^(5/4),depth_finite_determination.md,"C3D^2G=(63/8)p^(-9/2), earlier required tests vanish"
+CO18,Nonlinear-square anomaly,"T3(H,H^2)=12 F Fprime Fsecond",canonical_bridge.md,"H=qF, square is ordinary product"
+CO19,Six-dimensional nonlinear square core,"D_inf(A Q^2+BQ+C+epsilon q)=span{1,q,Q,q^2,qQ,Q^2}",analytic_shear_square.md,"Q=p+u(q), degree u>=3,A!=0"
+CO20,Sharp third-gate depth-two test,D_inf(H)=intersection_(r=0..2) ker(C3 D^r),analytic_shear_square.md,same SS family; q^3 requires depth two
+CO21,Exact closed evolution,Q(t)=Q+epsilon t; q(t)=q-(2A Q+B)t-A epsilon t^2,audit_sector_dynamics.md,Hamiltonian observable derivation convention; SS family
+CO22,Target closure rank transition,"Krylov dims (q,q^2,joint)=(2,3,5) if epsilon=0; (3,5,6) otherwise",audit_sector_dynamics.md,"A!=0, 6D exact sector, independently replayed observer certificates"

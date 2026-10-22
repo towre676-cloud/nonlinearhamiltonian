@@ -1,0 +1,121 @@
+{
+  "all_degree_proof": "analytic_bridge.md; no finite-box extrapolation",
+  "asymptotic_coefficient_checks": 3081,
+  "cubic_selection_checks": 351,
+  "explicit_family_checks": 171,
+  "finite_box_checks": [
+    {
+      "expected_strip_dimension": 16,
+      "function_index": 0,
+      "input_monomials": 48,
+      "kernel_dimension": 16,
+      "output_coordinates": 55,
+      "output_projection": false,
+      "potential_index": 0
+    },
+    {
+      "expected_strip_dimension": 16,
+      "function_index": 0,
+      "input_monomials": 48,
+      "kernel_dimension": 16,
+      "output_coordinates": 126,
+      "output_projection": false,
+      "potential_index": 1
+    },
+    {
+      "expected_strip_dimension": 16,
+      "function_index": 1,
+      "input_monomials": 48,
+      "kernel_dimension": 16,
+      "output_coordinates": 60,
+      "output_projection": false,
+      "potential_index": 0
+    },
+    {
+      "expected_strip_dimension": 16,
+      "function_index": 1,
+      "input_monomials": 48,
+      "kernel_dimension": 16,
+      "output_coordinates": 126,
+      "output_projection": false,
+      "potential_index": 1
+    },
+    {
+      "expected_strip_dimension": 16,
+      "function_index": 2,
+      "input_monomials": 48,
+      "kernel_dimension": 16,
+      "output_coordinates": 58,
+      "output_projection": false,
+      "potential_index": 0
+    },
+    {
+      "expected_strip_dimension": 16,
+      "function_index": 2,
+      "input_monomials": 48,
+      "kernel_dimension": 16,
+      "output_coordinates": 126,
+      "output_projection": false,
+      "potential_index": 1
+    },
+    {
+      "expected_strip_dimension": 16,
+      "function_index": 3,
+      "input_monomials": 48,
+      "kernel_dimension": 16,
+      "output_coordinates": 56,
+      "output_projection": false,
+      "potential_index": 0
+    },
+    {
+      "expected_strip_dimension": 16,
+      "function_index": 3,
+      "input_monomials": 48,
+      "kernel_dimension": 16,
+      "output_coordinates": 127,
+      "output_projection": false,
+      "potential_index": 1
+    },
+    {
+      "expected_strip_dimension": 16,
+      "function_index": 4,
+      "input_monomials": 48,
+      "kernel_dimension": 16,
+      "output_coordinates": 121,
+      "output_projection": false,
+      "potential_index": 0
+    },
+    {
+      "expected_strip_dimension": 16,
+      "function_index": 4,
+      "input_monomials": 48,
+      "kernel_dimension": 16,
+      "output_coordinates": 154,
+      "output_projection": false,
+      "potential_index": 1
+    },
+    {
+      "expected_strip_dimension": 16,
+      "function_index": 5,
+      "input_monomials": 48,
+      "kernel_dimension": 16,
+      "output_coordinates": 103,
+      "output_projection": false,
+      "potential_index": 0
+    },
+    {
+      "expected_strip_dimension": 16,
+      "function_index": 5,
+      "input_monomials": 48,
+      "kernel_dimension": 16,
+      "output_coordinates": 141,
+      "output_projection": false,
+      "potential_index": 1
+    }
+  ],
+  "format": "analytic-polynomial-bridge-v1",
+  "highest_sector_checks": 264,
+  "obstruction_numerator_checks": 85,
+  "passed": true,
+  "third_gate_insufficiency_checks": 119
+}

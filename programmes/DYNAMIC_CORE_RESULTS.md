@@ -451,7 +451,7 @@ Write `ℓ, m` for the root forms of `H_d`, or a root form and a complementary f
 **Theorem B.** Let `H_d = cQ^μ` with `Q` a nondegenerate quadratic form and `d = 2μ ≥ 4`. Then `D∞(H) = K[G]` if `H ∈ K[G]` for a quadratic `G` with leading part `Q`, and `D∞(H) = span{1, H}` otherwise.
 
 *Proof.*
-1. *Setup.* Work over Q̄ with `H_d = (qp)^μ`. If `D∞(H) ≠ span{1, H}`, there is `G ∈ D∞(H)` with top `(qp)^s`, `1 ≤ s < μ`; subtract multiples of `H` to arrange this. Translate `H` so that `H_{d−1}` has no `q^μp^{μ−1}` and no `q^{μ−1}p^μ` term. This is possible because a translation adds `μ(qp)^{μ−1}(x₀p + y₀q)`.
+1. *Setup.* Work over Q̄ with `H_d = (qp)^μ`. If `D∞(H) ≠ span{1, H}`, there is `G ∈ D∞(H)` with top `(qp)^s`, `s ≥ 1`, `s ≠ μ`; if `s = μ`, subtract its leading multiple of `H` and descend in total degree. No upper bound on `s` is needed. Translate `H` so that `H_{d−1}` has no `q^μp^{μ−1}` and no `q^{μ−1}p^μ` term. This is possible because a translation adds `μ(qp)^{μ−1}(x₀p + y₀q)`.
 2. *Weights.* Give `H_{d−k}` and `G_{2s−k}` weight `k`. A monomial `q^xp^y` is *diagonal* if `x = y`. Diagonal forms Poisson-commute and have zero odd transvectants with each other.
 3. *Induction on the weight.* Assume the off-diagonal parts vanish below weight `k`. Then only `(H_d, Y)` and `(X, (qp)^s)` contribute at weight `k`, where `X` and `Y` are the off-diagonal parts of `H_{d−k}` and `G_{2s−k}`.
    - *The bracket.* `{H, G}` has nothing below weight `k`, so its weight-`k` component is its top and must be diagonal. But that component is off-diagonal, since `ad_{qp}` acts diagonally on monomials. So it vanishes, which gives `Y = (s/μ)(qp)^{s−μ}X` monomial by monomial.
@@ -468,7 +468,7 @@ Only the gate `T₃` and the top of one bracket are used. The argument does not 
 
 Use coordinates `(ℓ, m)`, and write `H = Σ_c m^c h_c(ℓ)`. Let `s` be the `m`-degree of `H`, and call `F = m^sφ(ℓ)` the *transverse top*. Outside Theorem P⁺, `s ≥ 2`.
 
-**Lemma F (near tops).** If `H_d = cℓ^{d−1}m` and `D∞(H)` is finite-dimensional, then `D∞(H) = span{1, H}` unless `H` is affine in `m`.
+**Lemma F (near tops, d ≥ 4).** If `H_d = cℓ^{d−1}m` and `D∞(H)` is finite-dimensional, then `D∞(H) = span{1, H}` unless `H` is affine in `m`.
 
 *Proof.*
 1. Tops lie in `V`, and `D_{H_d}` maps the top monomials `ℓ^N ↦ Nℓ^{N+d−2}` and `mℓ^{N−1} ↦ (N−d)mℓ^{N+d−3}`.
@@ -492,7 +492,7 @@ Then `D∞(H) = span{1, H}`.
    - The `m`-tops of core elements are therefore constants or multiples of `F`. After subtracting `cH`, a core element `u` lies in `K[ℓ]`.
    - Then `{H, u} ∈ D∞(H) ⊆ KH ⊕ K[ℓ]`. Its `m^s` part vanishes, so the `H`-coefficient is 0. Its `m^{s−1}` part `±sφu'm^{s−1}` must then vanish, so `u' = 0`. ∎
 
-*Pure tops with `φ` a perfect power, `deg φ ≥ 2`, are not covered.* There `D∞(F)` contains the `m`-homogeneous quadratic `m(ℓ+γ)`, and the reduction above does not exclude core elements `u(ℓ) + κm(ℓ+γ)` with `κ ≠ 0`. A complete treatment needs the next `m`-degree components of `H`.
+*The excluded pure perfect-power cases have additional structures.* Theorem PP below classifies the unequal transverse powers completely and includes a three-dimensional active counterfamily. The balanced transverse powers include the composition family SC. The restrictions in Theorem T are essential.
 
 **Theorem N (near tops, unequal vertex).** If the Newton polygon of `H` in `(m, ℓ)` has a vertex `m^iℓ^j` with `i, j ≥ 2` and `i ≠ j`, strictly between the total-degree direction and the `m`-degree direction, then `D∞(H) = span{1, H}`.
 
@@ -500,18 +500,18 @@ Then `D∞(H) = span{1, H}`.
 
 `check_two_root.py` applies T and N, with exact Newton-polygon vertices (routes `T`, `N`). The tests compare both routes with direct computation.
 
-**What remains open.** Every remaining case has a transverse top `F` with `deg φ ≤ 1`, or `F ∈ K[G]` (near), or `φ` a perfect power (pure), and, for near tops, no unequal Newton-polygon vertex; Theorems Q and Q′ cover the parts of this with a single `m²` term. In random perturbations this is the typical situation. The polygon is then a single edge from the top vertex to `m^A` or `m^Aℓ`. The missing ingredient is a finiteness theorem for these quasi-homogeneous edge polynomials. The binomial `ℓ^{d−1}m + m²` of Theorem Q is the first instance, and its proof by casework in the weight grading suggests the general method.
+**Remaining edge questions.** Cases with `deg φ ≤ 1` include infinite-core exceptions: `H=P(m+bℓ²+cℓ)+εℓ`, `b ≠ 0`, has an infinite exact tower (Theorem QC below). Therefore no unrestricted edge-polynomial finiteness theorem is possible. The edge classification must first separate these composition families. The near-top edge question remains separate; Theorems Q and Q′ remain valid in their stated scopes.
 
 ### 6.7 Near tops (complete): edge finiteness from the top vertex
 
-**Theorem NE.** If `H_d = cℓ^{d−1}m` and `H` is not affine in `m`, then `D∞(H) = span{1, H}`.
+**Theorem NE.** If `H_d = cℓ^{d−1}m` and `H` is not affine in `m`, then `D∞(H) = span{1, H}`. For `d=3`, this is already Theorem Q: the non-affine lower part has a nonzero constant m² coefficient. The edge proof below uses Lemma F for `d ≥ 4`.
 
 *Proof.*
 1. *First edge.* In coordinates `(m, ℓ)`, decrease `t` in the weights `w_t = (1, t)` from 1. The top vertex `mℓ^{d−1}` is first tied by monomials of `m`-exponent at least 2; monomials of `m`-exponent at most 1 lie strictly inside. This gives the first Newton-polygon edge
    `E = mℓ^{d−1} + Σ_{s≥1} e_s m^{1+sa}ℓ^{d−1−sb}`,
    with step `(a, −b)`, `b > a ≥ 1` coprime, because the total degree drops along the edge.
 2. *Reduction.* By the top-weight lemma for the edge weight, `gr D∞(H)` embeds in `D∞(E)`. Once `D∞(E)` is finite-dimensional, Lemma F gives `span{1, H}`.
-3. *The top end.* Let `G` be a weight-homogeneous element of `D∞(E)` of large degree. By Theorem M its top is `gℓ^N` (type α) or `gmℓ^{N−1}` (type β), and its monomials lie on a line of step `(a, −b)`. Let `t` be the first step with `e_t ≠ 0`. The `T₃` recurrence clears the coefficients between steps 0 and `t`. The step-`t` components of `T₃(E, G)` and `T₃(E, {E, G})` are then linear in `(y, e_tg)`, where `y` is the step-`t` coefficient:
+3. *The top end.* Let `G` be a weight-homogeneous element of `D∞(E)` of large degree. By Theorem M its top is `gℓ^N` (type α) or `gmℓ^{N−1}` (type β), and its monomials lie on a line of step `(a, −b)`. Let `t` be the first step with `e_t ≠ 0`. Because `e₁,...,e_(t−1)` vanish, intermediate coefficients of G cannot contribute to step t in either T₃ or T₃D. Only its step-zero and step-t coefficients enter; no assertion that all intermediate coefficients vanish is needed. The step-`t` components of `T₃(E, G)` and `T₃(E, {E, G})` are then linear in `(y, e_tg)`, where `y` is the step-`t` coefficient:
    - **[E1] type α:** the determinant is `N a²t²(d−2)(d−1)(at−1)²(at+1)·C_α`. Here `C_α` is cubic in `N` with leading coefficient `3(at(d−1) + bt + 2d − 4) > 0`.
    - **[E2] type β:** the determinant is `a²t²(d−N)(d−2)(d−1)(at+1)²·C_β`. The `N³` coefficient of `C_β` is `−3(at−1)(at(d−1) + bt + 2d − 4)`. For `at = 1` the determinant is `36(d−N)(b−1)(d−2)(d−1)·C′_β`, where the `N²` coefficient of `C′_β` is `−(b+d−1)`.
    - **[E3] type α with `a = t = 1`,** the only degenerate case: the first perturbation `m²ℓ^{d−1−b}` is invisible at first order, exactly as in the `m²` families. At step 2 the components of `T₃(E, D^rG)`, `r = 0..3`, are linear in `(y₂, e₁y₁, e₂g, e₁²g)`. The 4×4 determinant is
@@ -531,9 +531,39 @@ Two further gaps remain:
 - **Finiteness does not yet give span{1, H}.** For pure tops, `D_{ℓᵈ}` lowers the `m`-degree of tops instead of making them grow, so Lemma F does not transfer.
 - **An affine first edge gives no finiteness.** When the first edge from `ℓᵈ` is `ℓᵈ + cmℓʲ`, finiteness must come from the next edge, a near-type edge from `mℓʲ`. The argument above gives finiteness there.
 
-These three points are the remaining work for pure tops.
+These are limitations of that edge method. The PP, QC, SC and SS families below show that pure finite cores need not have dimension two, and some first-edge composition families have infinite cores.
 
-### 6.4 The decision procedure and what remains open
+### 6.8 Unequal perfect-power transverse tops (complete)
+
+**Theorem PP.** Suppose the total top is `cℓ^d` and the transverse top is `αm^s(ℓ+γ)^r`, with `r,s ≥ 2` and `r ≠ s`. If `s ≥ 3`, the core is `span{1,H}`. If `s=2`, the core is also `span{1,H}` except precisely for
+
+`J=tm+u(t)`, `H=t^(r−2)(a₂J²+a₁J+a₀)+βJ+δ`, `t=ℓ+γ`, `a₂ ≠ 0`, `deg u ≥ 3`.
+
+In that family the core is `span{1,H,J}`, and in root coordinates `{H,J}=(r−2)(H−βJ−δ)`. The affine determinant rescales the bracket in original coordinates. This is an active one-dimensional quotient of the core by its stationary part.
+
+The proof and exact coefficient recognizer are in `research/core_overlap/pure_perfect_power.md` and `pure_transverse.py`. The transverse core of the unequal monomial bounds the whole core by three dimensions. A putative third generator has the form `J=tm+u(t)`. Its third gate is `−u'''∂m³H`, excluding every `s ≥ 3`; for `s=2`, exact Lie closure integrates to the displayed family. No degree cutoff is used. The basic example `H=q(qp+q³)²`, `J=qp+q³` satisfies `{H,J}=H` and disproves the original P003.
+
+### 6.9 Two nonlinear composition families (complete in their scopes)
+
+**Theorem QC.** Let `Q=m+bℓ²+cℓ+d`, `b ≠ 0`, and `H=P(Q)+εℓ`. For `deg P=2`, the full core is `K[Q]+span{ℓ,ℓQ,ℓ²}`; for `deg P ≥ 3`, it is `K[Q]+Kℓ`. For `deg P ≤ 1`, H is quadratic and all polynomials are exact. If `ε ≠ 0`, the tower `K[Q]` is active. The quartic `H=(p+q²)²` is already a counterexample to pure-top collapse.
+
+**Theorem SC.** Let `J=ℓm+u(ℓ)`, `u''' ≠ 0`, and `H=P(J)`. If `deg P=1`, the core is the strip of m-degree at most two. If `deg P=2`, it is the stationary span `span{1,J,J²}`. If `deg P ≥ 3`, it is `span{1,H}`. The key gate obstruction is `μs(s−μ)(s+μ−3)ℓ^(μ+s−1)u'''`, after one bracket determines the first transverse correction. These are balanced transverse powers with pure total tops; Theorem B on balanced total tops is unaffected.
+
+**Theorem SS.** Let `Q=m+u(ℓ)`, `deg u ≥ 3`, and `H=AQ²+BQ+C+εℓ`, `A ≠ 0`. Then `D∞(H)=span{1,ℓ,Q,ℓ²,ℓQ,Q²}` has dimension six. Exactly the third gate at depths zero, one and two determines this core; depth two is sharp. The proof uses total degree in `(ℓ,Q)` and the transformed operators, with every flat-Weyl assertion checked in the original coordinates. See `research/core_overlap/analytic_shear_square.md`.
+
+Proofs and exact recognizers are `research/core_overlap/pure_quadratic_composition.*`, `audit_balanced_transverse.md`, and `audit_composition_recognize.py`. Recognizer failure means unclassified, not collapse. The protected shear explanation is in `canonical_bridge.md`; arbitrary nonlinear covariance of flat Weyl exactness is not assumed.
+
+### 6.10 The analytic and polygamma overlap
+
+For analytic coefficients on a connected interval and finite degree in q, put `Ck=T_k(H,·)`, `D={H,·}`. The all-degree finite stopping rules proved in `research/core_overlap/depth_finite_determination.md` are
+
+`D∞(qF)=ker C3 ∩ ker(C3D) ∩ ker C5`,
+
+`D∞(qF+V)=ker C3 ∩ ker C5 ∩ ker(C3D) ∩ ker(C3D²)`.
+
+The conditions are sharp in the stated analytic classes. For every polygamma F and also log-Gamma, an arbitrary analytic V still gives `D∞(qF+V)=ker C3 ∩ ker(C3D)=A+qA`. Pole/logarithm obstructions exclude every higher top-q sector at once. Conversely `F=a p^(−1/4)+bp` has the active cubic `q³p^(−3/4)`, with eigenvalue `−15b/4`. Analytic coefficient hypotheses are essential: all iterated C3 tests can miss a C5 obstruction. See `analytic_bridge.md` for proofs, explicit sharpness families, and independent exact checks.
+
+### 6.11 The decision procedure and what remains open
 
 `check_two_root.py` (`two-root-perturbation-v1`) decides, for any rational `H` with a two-root top:
 - it recomputes the top type from a verified square-free decomposition;
@@ -544,16 +574,9 @@ Enveloped examples are `results/hamiltonian/tworoot_*.json` and `binomial_*.json
 
 The tests generate random members of every route and random affine changes of coordinates (degrees 3–5 in the suite; degrees 3–6 at depth 10 in a longer run). Each is compared with direct dimensions of `{G : deg G ≤ d+1, C_kD^rG = 0, r ≤ 8}`. Depth matters: with three gates the qp³+q² family shows spurious extra elements, and one Q′ instance needs depth 8.
 
-**Conjecture (two-root tops).** Let `H_d` be pure, near or balanced, and suppose `H` has none of the structures of Theorem P⁺. Then `D∞(H) = span{1, H}`.
+**Original conjecture P003: false as stated.** The proposed collapse of every pure/near/balanced top outside Theorem P⁺ is disproved by PP, QC, SS, and the quadratic part of SC. The near-top restriction is proved by Theorem NE. Balanced total tops are still classified by Theorem B. Pure tops now have additional finite active, finite stationary, and infinite active families, so no complete blanket classification is claimed.
 
-Theorem B (§6.5) proves it for every balanced top, and Theorem NE (§6.7) proves it for every near top. For pure tops it is proved for the `m²` family (Theorem Q′) and for the transverse-top criterion of Theorem T. What remains open is pure tops outside these criteria. The conjecture is supported by every computed case, including random perturbations with cubic terms.
-
-With §5 this gives a complete statement of when **active** exact dynamics survives a lower-order perturbation, conditional only on the conjecture above:
-- three or more roots in the top: never (proved);
-- unequal top: a single active quadratic `G`, exactly in the normal form of Theorem U (proved);
-- near top: an infinite active sector exactly when `H` is affine in `m` (proved, Theorems P⁺ and NE);
-- pure top: an infinite active sector in the affine or strip structures of Theorem P⁺ (proved), and none otherwise (proved in part, conjectural for the rest);
-- balanced top: never (proved, Theorem B).
+The decision procedure applies the exact PP, QC, SC and SS recognizers after the retained routes. Unresolved pure cases are labeled `unclassified`; finite matrix tests do not reinstate the former conjecture. Existing stored certificates retain their hypotheses and are replayed separately. The research package's independent review records the proof checks and the small setup repair in Theorem B (`s ≥ 1, s ≠ μ` suffices; no `s<μ` assumption is needed).
 
 ## 4. Commands
 
