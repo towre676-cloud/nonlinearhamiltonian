@@ -45,7 +45,7 @@
   {
    "id": "P001",
    "status": "target",
-   "claim": "Remaining open targets: homogeneous quartic dynamic-core moduli for all parameters; maximal-order fundamental units; noisy/continuous adaptive experiments.",
+   "claim": "Remaining open targets: a uniform-in-degree proof that D_inf(H) = span{1,H} for every binary quartic with distinct roots (per-degree theorem and two all-degree points certified); probabilistic or continuous noise models for adaptive experiments.",
    "support": "TASKS.json",
    "scope": "Unfinished tasks, not current capabilities."
   },
@@ -129,9 +129,9 @@
   {
    "id": "A2",
    "status": "implemented_with_certificates",
-   "claim": "Certified fundamental unit and smallest norm-one unit of Z[sqrt D] via the Legendre convergent criterion; Pell orbits under the full norm-one unit group. Maximal-order orbits (D = 1 mod 4) with supplied units are also supported.",
+   "claim": "Certified fundamental units of Z[sqrt D] (Legendre convergent criterion) and of Z[(1+sqrt D)/2] for D = 1 mod 4 (index-3 cube-root argument); Pell orbits under the full norm-one unit group of either order.",
    "support": "extensions/arithmetic/units.py; extensions/arithmetic/check_units.py",
-   "scope": "Fundamental units certified for Z[sqrt D]; maximal-order units must be supplied."
+   "scope": "Real quadratic orders Z[sqrt D] and Z[(1+sqrt D)/2]; maximality of the latter needs D squarefree."
   },
   {
    "id": "O2b",

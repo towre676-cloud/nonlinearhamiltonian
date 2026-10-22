@@ -45,6 +45,55 @@ def convergents(D):
         yield p, q
 
 
+def icbrt(n):
+    """Floor of the real cube root of an integer, exactly."""
+    if n < 0:
+        return -icbrt(-n) - (0 if icbrt(-n) ** 3 == -n else 1)
+    x = int(round(n ** (1 / 3))) if n < 2 ** 1000 else 1 << (n.bit_length() // 3 + 1)
+    while x ** 3 > n:
+        x -= 1
+    while (x + 1) ** 3 <= n:
+        x += 1
+    return x
+
+
+def maximal(cert, D, eps, nrm):
+    """Order O = Z[(1+sqrt D)/2], D = 1 mod 4 (the maximal order when D is squarefree): every unit cubed lies in Z[sqrt D] (the unit
+    group of (O/2O) has order 1 or 3), so the fundamental unit eta satisfies eta = eps or
+    eta^3 = eps. A cube root (u + v sqrt D)/2 has trace u, a root of t^3 - 3 nu t - 2a = 0 with
+    nu = N(eps); the checker either verifies eta^3 = eps exactly or shows that this cubic has
+    no integer root (it has a single real root, located strictly between consecutive integers)."""
+    a, b = eps
+    m = cert['maximal_order']
+    if m['cube_root'] is None:
+        nu = nrm
+        f = lambda t: t ** 3 - 3 * nu * t - 2 * a
+        t0 = icbrt(2 * a)
+        # With nu = -1 the cubic is increasing; with nu = +1 and a >= 2 its local maximum
+        # (at t = -1) is 2 - 2a < 0. Either way it has exactly one real root.
+        if nu == 1 and a < 2:
+            raise ValueError('cannot certify the absence of a cube root')
+        root = next((t for t in range(t0 - 2, t0 + 3) if f(t) == 0), None)
+        if root is None:
+            if next((t for t in range(t0 - 2, t0 + 3) if f(t) < 0 < f(t + 1)), None) is None:
+                raise ValueError('cannot locate the real root of the trace cubic')
+        else:
+            # integral trace u: a cube root would need v^2 = (u^2 - 4 nu)/D integral, square, u = v mod 2
+            v2, r = divmod(root * root - 4 * nu, D)
+            if not r and v2 >= 0 and isqrt(v2) ** 2 == v2 and (root - isqrt(v2)) % 2 == 0:
+                raise ValueError('a cube root exists but was not declared')
+        return {'maximal_unit': [2 * a, 2 * b], 'maximal_unit_is_integral': True}
+    u, v = m['cube_root']
+    if (u - v) % 2 or u * u - D * v * v != 4 * nrm or u < 1 or v < 1:
+        raise ValueError('declared cube root is not a unit of the maximal order with the right norm')
+    x, y = u, v                         # (x + y sqrt D)/2 = eta^k, start k = 1
+    for _ in range(2):
+        x, y = (x * u + D * y * v) // 2, (x * v + y * u) // 2
+    if [x, y] != [2 * a, 2 * b]:
+        raise ValueError('declared cube root does not cube to eps')
+    return {'maximal_unit': [u, v], 'maximal_unit_is_integral': False}
+
+
 def check(cert, model, max_steps=10 ** 6):
     if cert.get('format') != FORMAT or cert.get('model_sha256') != digest(model):
         raise ValueError('not a fundamental-unit-v1 certificate for this model')
@@ -68,9 +117,22 @@ def check(cert, model, max_steps=10 ** 6):
     if first != [a, b] or first_plus != [a1, b1]:
         raise ValueError('declared units are not the first convergents of norm +-1 / +1')
     norm = a * a - D * b * b
-    return {'status': 'passed', 'D': D, 'fundamental_unit': [a, b], 'norm': norm,
-            'norm_one_unit': [a1, b1], 'negative_pell_solvable': norm == -1,
-            'scope': 'unit group of the order Z[sqrt D] (not the maximal order when D = 1 mod 4)'}
+    out = {'status': 'passed', 'D': D, 'fundamental_unit': [a, b], 'norm': norm,
+           'norm_one_unit': [a1, b1], 'negative_pell_solvable': norm == -1,
+           'scope': 'unit group of the order Z[sqrt D]'}
+    if 'maximal_order' in cert:
+        if D % 4 != 1:
+            raise ValueError('maximal-order data only for D = 1 mod 4')
+        mx = maximal(cert, D, [a, b], norm)
+        u, v = mx['maximal_unit']
+        nm = (u * u - D * v * v) // 4
+        # smallest norm-one unit of the maximal order, in half-coordinates
+        one = [u, v] if nm == 1 else [(u * u + D * v * v) // 2, u * v]
+        out.update(maximal_order_unit_half_coordinates=[u, v], maximal_order_norm=nm,
+                   maximal_order_norm_one_unit=one,
+                   scope='unit groups of Z[sqrt D] and of Z[(1+sqrt D)/2] (the maximal order when D is '
+                         'squarefree)')
+    return out
 
 
 def main():

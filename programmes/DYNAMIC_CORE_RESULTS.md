@@ -109,7 +109,52 @@ This contains the §3 theorem (`b = d = e = f = 0`) and the corollary N002. The 
 - The tests certify 16 random members of the family. They cross-check each one with the baseline star engine and refuse the wrong weight `(1,1)`, under which the line core of `qp³` is not preserved by the `q²` term.
 - Two direct Gröbner certificates with `a = 0`, `qp³ + qp + p² + q + p` and `qp³ + 2qp − p² + 3q`, independently give `Q[p] ⊕ qQ[p]`.
 
-**Still open.** Homogeneous quartics, where the top part is the whole Hamiltonian, so the lemma gives nothing new. `q⁴ + p⁴` exceeds the default generator budget, and the backend reports `unknown`.
+## 3c. Homogeneous quartics
+
+For a homogeneous `H`, the operators `D` and `C_k` are homogeneous, so `D∞(H)` is graded by degree. Both the static exactness condition and the dynamic core are `GL₂`-covariant, with `T_k(F∘g, G∘g) = det(g)^k T_k(F,G)∘g`. Over Q̄ the root types are:
+
+- `(4)`, `(3,1)`, `(2,2)` and `(2,1,1)`, each a single class;
+- distinct roots, where `H` is equivalent to a multiple of `H_λ = q⁴ + λq²p² + p⁴` with `λ² ≠ 4`.
+
+**All-degree certificates** (`weyl-kernel-v1`; files under `results/hamiltonian/`):
+
+| type | representative | `D∞(H)` |
+|---|---|---|
+| (4) | `q⁴` | `Q[q] ⊕ pQ[q] ⊕ p²Q[q]`, which equals `E(q⁴)` |
+| (3,1) | `q³p` | `Q[q] ⊕ pQ[q]`. The exceptional static monomials `q^c p^{3c+2}` drop out. |
+| (2,2) | `q²p²` | `Q[qp]` |
+| (2,1,1) | `q³p + q²p²` | `span{1, H}` |
+| distinct, `λ = 0` | `q⁴ + p⁴` | `span{1, H}` |
+| distinct, `λ = 1` | `q⁴ + q²p² + p⁴` | `span{1, H}`, from 22 generators and 23 minutes of discovery |
+
+**Theorem (degenerate root types).** Each of the root types `(4)`, `(3,1)`, `(2,2)` and `(2,1,1)` is a single `GL₂(Q̄)` class. The certificates above therefore classify `D∞(H)` for **every** rational quartic of that type, by transport through Q̄ and descent: the core is a common kernel of rational operators, so it commutes with field extension. In each case:
+
+- type `(4)`, `H = cL⁴`: `D∞ = ⊕_{j≤2} M^j Q[L]`, with `M` any complementary linear form;
+- type `(3,1)`, `H = cL³M`: `D∞ = Q[L] ⊕ M·Q[L]`;
+- type `(2,2)`, `H = cQ²` with `Q` a nondegenerate binary quadratic: `D∞ = Q[Q]`;
+- type `(2,1,1)`: `D∞ = span{1, H}`.
+
+**Per-degree theorem for all distinct-root quartics.** Let `S^R_n(λ) = {G ∈ V_n : C₃D^rG = 0 for r ≤ R}`, which contains `D∞(H_λ)_n`. For each degree `n` the certificate `quartic-rigidity-v1` (checker `check_quartic_rigidity.py`) records:
+
+- several maximal minors of the defining matrix, as exact polynomials in `λ`;
+- the factorization of their gcd;
+- the exact rank of the matrix over `Q[x]/(f)` for every factor `f`.
+
+The checker recomputes all of these with its own determinant, interpolation and number-field code. As a result, for **every** `λ ∈ Q̄` and every certified degree:
+
+- `D∞(H)_n = 0` for `n ∉ {0, 4}`, and `D∞(H)_4 = Q̄·H`, for every quartic `H` over Q̄ with distinct roots;
+- the only exceptional factor is `λ² − 4`, the square stratum, where the extra kernel is the genuine core `Q̄[q² ± p²]` in even degrees;
+- the equianharmonic class `λ² = −12` (j = 0, rational form `q⁴ + qp³`) is not exceptional, but it needs depth `R = 3` in degree 1 and `R = 2` in degree 3. There, linear forms survive two further actions of `D` and cubics survive one. Every other degree needs only `R = 1`.
+
+The certified range of degrees is given in §3d.
+
+**Conjecture.** For every binary quartic with distinct roots, `D∞(H) = span{1, H}`. By the per-degree theorem this is equivalent to the vanishing of `S^1_n` for all `n ≥ 5` (with `R ≤ 3` in low degree). Evidence:
+
+- the per-degree theorem through the certified range, uniformly in `λ ∈ Q̄`;
+- the all-degree certificates at `λ = 0` and `λ = 1`;
+- the theorem for the adjacent stratum `(2,1,1)`.
+
+A uniform-in-`n` proof is not supplied. One natural route is the `SL₂` decomposition `T₃(H, T₁(H,·)) = α_n T₄(H²,·) + β_n T₂(Δ_H,·) + γ_n i(H)`, combined with the explicit description of `E_n`.
 
 ## 4. Commands
 

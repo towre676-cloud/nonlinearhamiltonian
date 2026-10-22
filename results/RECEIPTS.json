@@ -368,6 +368,97 @@
    }
   },
   {
+   "file": "results/hamiltonian/quartic_211_q3p_plus_q2p2.json.gz",
+   "sha256": "65db40b6248c30d7bccee4d3e4af4b7f68d39541123017d7d8edef16464948bb",
+   "witness_kind": "weyl-polynomial-kernel",
+   "replay": "python3 -B extensions/envelope.py check results/hamiltonian/quartic_211_q3p_plus_q2p2.json.gz",
+   "producer_seconds": 0.0,
+   "summary": {
+    "status": "passed",
+    "kind": "degree_bound",
+    "dimension": 2,
+    "kernel": [
+     "1",
+     "q^3*p + q^2*p^2"
+    ],
+    "weight": [
+     2,
+     1
+    ],
+    "bound": 7
+   }
+  },
+  {
+   "file": "results/hamiltonian/quartic_lambda0_q4_plus_p4.json",
+   "sha256": "21c1c5b36173bcb70a7b482ed76f50407b38bbcef1a1dcc6d9a9ea7abe984e6e",
+   "witness_kind": "weyl-polynomial-kernel",
+   "replay": "python3 -B extensions/envelope.py check results/hamiltonian/quartic_lambda0_q4_plus_p4.json",
+   "producer_seconds": 0.0,
+   "summary": {
+    "status": "passed",
+    "kind": "finite_support",
+    "dimension": 2,
+    "kernel": [
+     "1",
+     "q^4 + p^4"
+    ]
+   }
+  },
+  {
+   "file": "results/hamiltonian/quartic_lambda1.json.gz",
+   "sha256": "c5cd79b66bbdcb087ae71b55bed432b386469f5d42693ed0790273dcd9357983",
+   "witness_kind": "weyl-polynomial-kernel",
+   "replay": "python3 -B extensions/envelope.py check results/hamiltonian/quartic_lambda1.json.gz",
+   "producer_seconds": 0.0,
+   "summary": {
+    "status": "passed",
+    "kind": "degree_bound",
+    "dimension": 2,
+    "kernel": [
+     "1",
+     "q^4 + q^2*p^2 + p^4"
+    ],
+    "weight": [
+     1,
+     2
+    ],
+    "bound": 8
+   }
+  },
+  {
+   "file": "results/hamiltonian/quartic_q3p.json",
+   "sha256": "52eaf813ef4d9330394459e0b276914590e54e7dd5d819f5765f0cc1074b67f9",
+   "witness_kind": "weyl-polynomial-kernel",
+   "replay": "python3 -B extensions/envelope.py check results/hamiltonian/quartic_q3p.json",
+   "producer_seconds": 0.0,
+   "summary": {
+    "status": "passed",
+    "kind": "monomial_span",
+    "kernel": [
+     "p^0*Q[q]",
+     "p^1*Q[q]"
+    ],
+    "dimension": "infinite"
+   }
+  },
+  {
+   "file": "results/hamiltonian/quartic_q4.json",
+   "sha256": "dbf4654f1a3abf30871593404acd26402a3b540d3251036774b06e4467b8dfb2",
+   "witness_kind": "weyl-polynomial-kernel",
+   "replay": "python3 -B extensions/envelope.py check results/hamiltonian/quartic_q4.json",
+   "producer_seconds": 0.0,
+   "summary": {
+    "status": "passed",
+    "kind": "monomial_span",
+    "kernel": [
+     "p^0*Q[q]",
+     "p^1*Q[q]",
+     "p^2*Q[q]"
+    ],
+    "dimension": "infinite"
+   }
+  },
+  {
    "file": "results/hamiltonian/six_a0_b2_c3_d1_e1.json",
    "sha256": "f4b3447a201b9ddfd65b9c6639b23ac192b0fd2a8b9d097494df657aaee97300",
    "witness_kind": "weyl-top-reduction",

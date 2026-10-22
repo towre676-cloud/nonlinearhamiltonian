@@ -154,7 +154,12 @@ The standing `×2` example is solvable over **Q**, but over **Z** it is obstruct
 
 Forty random maximal-order models match brute force. For `D = 5`, `N = −1` the solutions are the odd-index Fibonacci pairs.
 
-**Not certified.** Fundamental units of the maximal order. Legendre's bound needs `x/y + √D > 8` there, which fails for small `D`.
+**Fundamental units of `O = Z[(1+√D)/2]`** (the maximal order when `D` is squarefree).
+
+- *Index argument.* `(O/2O)^×` has order 1 or 3, so `η³ ∈ Z + 2O = Z[√D]` for every unit `η`. The fundamental unit of `O` is therefore either `ε`, the certified fundamental unit of `Z[√D]`, or an exact cube root of `ε`.
+- *Checker.* It either verifies `η³ = ε` exactly in half-coordinates, or proves that no cube root exists. A cube root would have trace `u` with `u³ − 3νu − 2a = 0`. That cubic has a single real root. Either the root lies strictly between consecutive integers, or it is an integer `u` for which `(u² − 4ν)/D` is not an integral square of the right parity. The non-squarefree case `D = 189` is the standing example of the second alternative.
+- *Tests.* Brute force agrees for 72 values `D ≡ 1 (mod 4)`.
+- *Pell integration.* Pell models with `"order": "maximal"` may use `"unit": "fundamental"`.
 
 ## O2b: rational invariant-metric search
 

@@ -39,16 +39,14 @@ def read(model, cert=None):
         raise ValueError('order must be Z[sqrt D] or maximal')
     if s == 2 and (type(D) is not int or D % 4 != 1):
         raise ValueError('the maximal order differs from Z[sqrt D] only for D = 1 mod 4')
-    if s == 2 and model['unit'] == 'fundamental':
-        raise ValueError('fundamental units are certified for Z[sqrt D] only; supply a unit of the maximal order')
     if model['unit'] == 'fundamental':
         # The orbit unit is the certified smallest norm-one unit of Z[sqrt D].
         if cert is None or 'unit_certificate' not in cert:
             raise ValueError('a fundamental-unit model needs an embedded unit certificate')
         import check_units
         uc = cert['unit_certificate']
-        check_units.check(uc, {'D': D})
-        a, b = uc['norm_one_unit']
+        res = check_units.check(uc, {'D': D})
+        a, b = res['maximal_order_norm_one_unit'] if s == 2 else res['norm_one_unit']
     else:
         a, b = model['unit']
     if any(type(v) is not int for v in (D, N, a, b)):
@@ -127,7 +125,8 @@ def check(cert, model):
                                     'accepted': acc if flt else None}:
             raise ValueError('height counts are wrong')
     full = model['unit'] == 'fundamental'
-    order = 'the maximal order Z[(1+sqrt D)/2], elements (x + y sqrt D)/2' if s == 2 else 'Z[sqrt D]'
+    order = ('Z[(1+sqrt D)/2] (maximal when D is squarefree), elements (x + y sqrt D)/2' if s == 2
+             else 'Z[sqrt D]')
     return {'status': 'passed', 'complete': True, 'seeds': seeds, 'unit': [a, b], 'order': order,
             'scope': ('every integer solution is +/- seed * eps^j (j in Z), eps the certified smallest norm-one '
                       'unit, so the seeds are exactly the orbits under the full norm-one unit group of Z[sqrt D]'

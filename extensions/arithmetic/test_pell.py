@@ -94,10 +94,14 @@ class MaximalOrder(unittest.TestCase):
             self.assertEqual(cert['height_count']['nonnegative_branch'], len(pts), (D, N))
             self.assertEqual(cert['height_count']['accepted'], len(acc), (D, N))
 
+    def test_maximal_order_fundamental_unit(self):
+        cert = P.compile_model({'D': 5, 'N': -1, 'order': 'maximal', 'unit': 'fundamental', 'height': 1000})
+        self.assertEqual((cert['seeds'], cert['result']['unit']), ([[1, 1]], [3, 1]))
+        self.assertEqual(cert['height_count']['nonnegative_branch'], 8)
+
     def test_maximal_order_rejections(self):
         for m in ({'D': 7, 'N': 1, 'order': 'maximal', 'unit': [16, 6]},           # D != 1 mod 4
                   {'D': 5, 'N': 1, 'order': 'maximal', 'unit': [9, 4]},            # wrong norm for the order
-                  {'D': 5, 'N': 1, 'order': 'maximal', 'unit': 'fundamental'},
                   {'D': 5, 'N': 1, 'order': 'maximal', 'unit': [3, 1], 'filter': {'modulus': 4, 'accept': []}}):
             with self.assertRaises(ValueError):
                 P.compile_model(m)

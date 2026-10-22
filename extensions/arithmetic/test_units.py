@@ -44,6 +44,31 @@ class Units(unittest.TestCase):
         self.assertEqual(U.fundamental(61)[0]['norm_one_unit'], [1766319049, 226153980])
         self.assertEqual(U.fundamental(991)[0]['norm_one_unit'][0], 379516400906811930638014896080)
 
+    def test_maximal_order_units_match_bruteforce(self):
+        for D in range(5, 400, 4):
+            if isqrt(D) ** 2 == D:
+                continue
+            cert, _ = U.fundamental(D)
+            if cert['norm_one_unit'][1] > 10 ** 5:
+                continue
+            v = 1
+            while not any(D * v * v + s > 0 and isqrt(D * v * v + s) ** 2 == D * v * v + s
+                          and (isqrt(D * v * v + s) - v) % 2 == 0 for s in (-4, 4)):
+                v += 1
+            self.assertEqual(cert['result']['maximal_order_unit_half_coordinates'][1], v, D)
+        # 189 = 9 * 21: the trace cubic has the integer root 5, but v^2 = 21/189 is not integral.
+        self.assertEqual(U.fundamental(189)[0]['maximal_order'], {'cube_root': None})
+
+    def test_maximal_order_forgeries(self):
+        cert, model = U.fundamental(5)
+        cert.pop('result')
+        bad = copy.deepcopy(cert); bad['maximal_order'] = {'cube_root': None}
+        with self.assertRaises(ValueError):
+            C.check(bad, model)                       # (1 + sqrt 5)/2 cubes to 2 + sqrt 5
+        bad = copy.deepcopy(cert); bad['maximal_order'] = {'cube_root': [3, 1]}
+        with self.assertRaises(ValueError):
+            C.check(bad, model)
+
     def test_forgeries(self):
         cert, model = U.fundamental(2)
         cert.pop('result')

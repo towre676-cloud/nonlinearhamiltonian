@@ -1,0 +1,670 @@
+{
+ "schema": "machinery-envelope-v1",
+ "witness_kind": "weyl-polynomial-kernel",
+ "coefficient_domain": "Q",
+ "model": [
+  [
+   3,
+   1,
+   "1"
+  ]
+ ],
+ "model_sha256": "76567198334bab099e16f08aa48da5910a7697f50c83622a4b54932fd15c9dfd",
+ "payload": {
+  "format": "weyl-kernel-v1",
+  "coefficient_domain": "Q",
+  "receipt": {
+   "schema": "weyl-invariant-kernel-v1",
+   "field": "Q",
+   "hamiltonian": [
+    [
+     3,
+     1,
+     "1"
+    ]
+   ],
+   "generators": [
+    [
+     [
+      0,
+      1,
+      0,
+      3,
+      "-1/3"
+     ],
+     [
+      1,
+      0,
+      1,
+      2,
+      "1"
+     ]
+    ],
+    [
+     [
+      2,
+      0,
+      0,
+      2,
+      "9/4"
+     ],
+     [
+      2,
+      1,
+      0,
+      3,
+      "1"
+     ]
+    ],
+    [
+     [
+      1,
+      0,
+      0,
+      2,
+      "27/2"
+     ],
+     [
+      1,
+      1,
+      0,
+      3,
+      "37/4"
+     ],
+     [
+      1,
+      2,
+      0,
+      4,
+      "1"
+     ]
+    ],
+    [
+     [
+      0,
+      0,
+      0,
+      2,
+      "81/2"
+     ],
+     [
+      0,
+      1,
+      0,
+      3,
+      "101/2"
+     ],
+     [
+      0,
+      2,
+      0,
+      4,
+      "57/4"
+     ],
+     [
+      0,
+      3,
+      0,
+      5,
+      "1"
+     ]
+    ]
+   ],
+   "correction_containment": {
+    "3": [
+     {
+      "generator": 0,
+      "left_multiplier": [
+       [
+        0,
+        0,
+        0,
+        0,
+        "-18"
+       ]
+      ]
+     }
+    ]
+   },
+   "provenance": [
+    [
+     {
+      "gate_order": 3,
+      "iterate": 0,
+      "left_multiplier": [
+       [
+        0,
+        0,
+        0,
+        0,
+        "-1/18"
+       ]
+      ]
+     }
+    ],
+    [
+     {
+      "gate_order": 3,
+      "iterate": 0,
+      "left_multiplier": [
+       [
+        2,
+        0,
+        0,
+        0,
+        "1/24"
+       ],
+       [
+        2,
+        1,
+        0,
+        1,
+        "1/32"
+       ],
+       [
+        3,
+        0,
+        1,
+        0,
+        "-1/96"
+       ]
+      ]
+     },
+     {
+      "gate_order": 3,
+      "iterate": 1,
+      "left_multiplier": [
+       [
+        0,
+        0,
+        0,
+        0,
+        "-1/96"
+       ]
+      ]
+     }
+    ],
+    [
+     {
+      "gate_order": 3,
+      "iterate": 0,
+      "left_multiplier": [
+       [
+        1,
+        0,
+        0,
+        0,
+        "5/8"
+       ],
+       [
+        1,
+        1,
+        0,
+        1,
+        "17/48"
+       ],
+       [
+        2,
+        0,
+        1,
+        0,
+        "1/32"
+       ],
+       [
+        2,
+        1,
+        1,
+        1,
+        "3/32"
+       ],
+       [
+        3,
+        0,
+        2,
+        0,
+        "-1/32"
+       ]
+      ]
+     },
+     {
+      "gate_order": 3,
+      "iterate": 1,
+      "left_multiplier": [
+       [
+        0,
+        0,
+        1,
+        0,
+        "-1/32"
+       ]
+      ]
+     }
+    ],
+    [
+     {
+      "gate_order": 3,
+      "iterate": 0,
+      "left_multiplier": [
+       [
+        0,
+        0,
+        0,
+        0,
+        "33/8"
+       ],
+       [
+        0,
+        1,
+        0,
+        1,
+        "125/48"
+       ],
+       [
+        0,
+        2,
+        0,
+        2,
+        "1/6"
+       ],
+       [
+        1,
+        0,
+        1,
+        0,
+        "33/16"
+       ],
+       [
+        1,
+        1,
+        1,
+        1,
+        "13/8"
+       ],
+       [
+        2,
+        0,
+        2,
+        0,
+        "-3/16"
+       ],
+       [
+        2,
+        1,
+        2,
+        1,
+        "9/32"
+       ],
+       [
+        3,
+        0,
+        3,
+        0,
+        "-3/32"
+       ]
+      ]
+     },
+     {
+      "gate_order": 3,
+      "iterate": 1,
+      "left_multiplier": [
+       [
+        0,
+        0,
+        2,
+        0,
+        "-3/32"
+       ]
+      ]
+     }
+    ]
+   ],
+   "closure": [
+    [
+     {
+      "generator": 0,
+      "left_multiplier": [
+       [
+        2,
+        0,
+        0,
+        0,
+        "4"
+       ],
+       [
+        2,
+        1,
+        0,
+        1,
+        "3"
+       ],
+       [
+        3,
+        0,
+        1,
+        0,
+        "-1"
+       ]
+      ]
+     },
+     {
+      "generator": 1,
+      "left_multiplier": [
+       [
+        0,
+        0,
+        0,
+        0,
+        "16/3"
+       ]
+      ]
+     }
+    ],
+    [
+     {
+      "generator": 0,
+      "left_multiplier": [
+       [
+        4,
+        0,
+        0,
+        0,
+        "-9/4"
+       ],
+       [
+        4,
+        1,
+        0,
+        1,
+        "-1"
+       ]
+      ]
+     },
+     {
+      "generator": 1,
+      "left_multiplier": [
+       [
+        2,
+        0,
+        0,
+        0,
+        "6"
+       ],
+       [
+        2,
+        1,
+        0,
+        1,
+        "8/3"
+       ]
+      ]
+     }
+    ],
+    [
+     {
+      "generator": 0,
+      "left_multiplier": [
+       [
+        3,
+        0,
+        0,
+        0,
+        "-27/2"
+       ],
+       [
+        3,
+        1,
+        0,
+        1,
+        "-37/4"
+       ],
+       [
+        3,
+        2,
+        0,
+        2,
+        "-1"
+       ]
+      ]
+     },
+     {
+      "generator": 1,
+      "left_multiplier": [
+       [
+        1,
+        0,
+        0,
+        0,
+        "36"
+       ],
+       [
+        1,
+        1,
+        0,
+        1,
+        "74/3"
+       ],
+       [
+        1,
+        2,
+        0,
+        2,
+        "8/3"
+       ]
+      ]
+     }
+    ],
+    [
+     {
+      "generator": 0,
+      "left_multiplier": [
+       [
+        2,
+        0,
+        0,
+        0,
+        "-81/2"
+       ],
+       [
+        2,
+        1,
+        0,
+        1,
+        "-101/2"
+       ],
+       [
+        2,
+        2,
+        0,
+        2,
+        "-57/4"
+       ],
+       [
+        2,
+        3,
+        0,
+        3,
+        "-1"
+       ]
+      ]
+     },
+     {
+      "generator": 1,
+      "left_multiplier": [
+       [
+        0,
+        0,
+        0,
+        0,
+        "108"
+       ],
+       [
+        0,
+        1,
+        0,
+        1,
+        "404/3"
+       ],
+       [
+        0,
+        2,
+        0,
+        2,
+        "38"
+       ],
+       [
+        0,
+        3,
+        0,
+        3,
+        "8/3"
+       ]
+      ]
+     }
+    ]
+   ]
+  },
+  "support": {
+   "monomial_generators": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "common_factor": {
+    "constant": "1",
+    "linear_factors": [
+     [
+      "0",
+      "1",
+      "0"
+     ],
+     [
+      "0",
+      "1",
+      "-1"
+     ]
+    ]
+   },
+   "cofactors": [
+    [
+     [
+      0,
+      0,
+      "2/3"
+     ],
+     [
+      0,
+      1,
+      "-1/3"
+     ],
+     [
+      1,
+      0,
+      "1"
+     ]
+    ],
+    [
+     [
+      0,
+      0,
+      "1/4"
+     ],
+     [
+      0,
+      1,
+      "1"
+     ]
+    ],
+    [
+     [
+      0,
+      0,
+      "1"
+     ],
+     [
+      0,
+      1,
+      "17/4"
+     ],
+     [
+      0,
+      2,
+      "1"
+     ]
+    ],
+    [
+     [
+      0,
+      0,
+      "1"
+     ],
+     [
+      0,
+      1,
+      "21/4"
+     ],
+     [
+      0,
+      2,
+      "21/4"
+     ],
+     [
+      0,
+      3,
+      "1"
+     ]
+    ]
+   ],
+   "multipliers": [
+    [],
+    [
+     [
+      0,
+      0,
+      "1"
+     ]
+    ],
+    [],
+    []
+   ],
+   "U": [
+    [
+     0,
+     "1"
+    ]
+   ],
+   "V": [
+    [
+     0,
+     "1/4"
+    ],
+    [
+     1,
+     "1"
+    ]
+   ]
+  },
+  "claim": {
+   "vertical_lines": [],
+   "horizontal_lines": [
+    0,
+    1
+   ],
+   "progressions": [],
+   "points": [],
+   "kind": "monomial_span"
+  }
+ },
+ "payload_sha256": "866b4149ce143d35dcbf1d082bd9e43294954ba06fc3bc317eb711f5eda3782e",
+ "hypotheses": [
+  "flat Weyl-Moyal convention, one canonical pair",
+  "D = {H,.}, C_k = T_k(H,.) for odd k >= 3",
+  "coefficients in Q"
+ ],
+ "scope": "full dynamic exact core in all polynomial degrees",
+ "source_ids": [
+  "D16-F03",
+  "D06-F02"
+ ],
+ "producer": "towre676-cloud/nonlinearhamiltonian extensions (exact rational, Python standard library)"
+}
