@@ -52,6 +52,18 @@ stopping rules for analytic and polygamma Hamiltonians. The proofs,
 independent exact checkers, and a [research PDF](research/core_overlap/output/pdf/Exact_Core_Overlap_Research.pdf)
 state their scopes and leave historical priority open.
 
+The continuation completes the higher shear-composition case, classifies
+exact nonlinear oscillator sectors and their sharp stopping depths, and
+classifies the analytic potentials preserving the fractional cubic.
+Every polynomial Hamiltonian `A*p^2+B(q)*p+C(q)` with nonzero constant A
+is now classified, including infinite and finite sectors and sharp
+third-gate stopping depths up to seven. Exact all-degree bounds and
+parameter-polynomial certificates establish the remaining branches.
+The oscillator deformation
+also separates first-order from second-order lifting obstructions in all
+observable degrees. See the [research overview](research/core_overlap/README.md)
+and its portable, standard-library replay bundle.
+
 The [Hamiltonian package](research/hamiltonian/) studies, for a fixed polynomial Hamiltonian $H$, those $\hbar$-independent polynomial observables $G$ for which
 
 $$

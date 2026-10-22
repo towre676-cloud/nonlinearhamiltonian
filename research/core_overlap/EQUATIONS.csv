@@ -21,3 +21,26 @@ CO19,Six-dimensional nonlinear square core,"D_inf(A Q^2+BQ+C+epsilon q)=span{1,q
 CO20,Sharp third-gate depth-two test,D_inf(H)=intersection_(r=0..2) ker(C3 D^r),analytic_shear_square.md,same SS family; q^3 requires depth two
 CO21,Exact closed evolution,Q(t)=Q+epsilon t; q(t)=q-(2A Q+B)t-A epsilon t^2,audit_sector_dynamics.md,Hamiltonian observable derivation convention; SS family
 CO22,Target closure rank transition,"Krylov dims (q,q^2,joint)=(2,3,5) if epsilon=0; (3,5,6) otherwise",audit_sector_dynamics.md,"A!=0, 6D exact sector, independently replayed observer certificates"
+CO23,Higher shear composition closure,"D_inf(P(Q)+epsilon*q)=ker C3 intersect ker C3D=span{1,H}",shear_composition_complete.md,Q=p+u(q); degree u>=3; degree P>=3
+CO24,Composition resonance factor,c(c+mu-3)((m-2)(c-mu)-3(mu-1)a),shear_composition_complete.md,"Top monomial q^a Q^c; m,mu>=3"
+CO25,Exact nonlinear oscillator,Dq=-(2A Q+B); DQ=kappa*q+epsilon,shear_oscillator.md,Six-dimensional exact quadratic sector; A!=0
+CO26,Oscillator spectral polynomial,chi(z)=z^2(z^2+2A*kappa)(z^2+8A*kappa),shear_oscillator.md,kappa!=0; minimal polynomial removes one z factor
+CO27,Quadratic-shear delayed cubic,G=3*kappa*q^2*Q+4A*Q^3; C3D^3G=-1728A^3*b*kappa^2,shear_oscillator.md,Q=p+bq^2; unshifted oscillator; earlier third-gate tests vanish
+CO28,Complete constant quadratic momentum,"D_inf(AQ^2+V)=quadratic sector if degV<=2; span{1,H} otherwise",quadratic_frontier.md,degree u>=3; every polynomial V
+CO29,Universal six-dimensional depth-two space,"intersection_(r=0..2) ker(C3D^r)=span{1,H,q,Q,q^2,qQ}",quadratic_frontier.md,Same QF scope; no input degree cutoff
+CO30,Sharp cubic-potential depth six,C3D^6q=-960A^5*u_second*(V_third)^2,quadratic_frontier.md,degree V=3; all earlier tests vanish
+CO31,Sharp higher-potential depth four,C3D^4q=96A^4*u_second*V_fourth,quadratic_frontier.md,degree V>=4; all earlier tests vanish
+CO32,Complete cubic-preserving potentials,V=c0+a*p^(-1/4)+b*p^(3/4)+c*p^(5/2),analytic_potential_classification.md,H=q*p^(-1/4)+V; analytic positive interval
+CO33,Stationary corrected cubic,D_inf(H)=A+qA+R*(H-c0)^3,analytic_potential_classification.md,Exactly the four-mode AP potential family
+CO34,Potential compatibility Euler operator,p^4 V4+3p^3 V3-(15/16)p^2 V2-(15/32)p V1=0,analytic_potential_classification.md,"All analytic V; indicial roots 0,-1/4,3/4,5/2"
+CO35,General active cubic lifting,hprime=g Vthird/Fsecond; F hprime-(2Fprime+lambda)h=3g Vprime,analytic_potential_classification.md,K3=lambda; Fsecond nowhere zero; stated chart restrictions
+CO36,Formal lifting obstruction,ob_n=[-sum_(i=1..n) L_i G_(n-i)] in coker L0,deformation_obstructions.md,Declared finite stopping family; higher obstructions relative to jet unless proved independent
+CO37,Delayed cubic deformation,"G_t=Q^3+(3/4)t*q^2*Q; L_t G_t=(0,0,0,-432t^2)",deformation_obstructions.md,H_t=Q^2+t*q^2/2; Q=p+q^2
+CO38,Higher tower first-order dual obstruction,ell_n(-L1 Q^n)=12n(n-1)(n-2),deformation_obstructions.md,n>=4; functional annihilates L0 of every polynomial correction
+CO39,All-degree liftable-space transition,dim Lift_1=7; dim Lift_2=dim Lift_formal=6,deformation_obstructions.md,Polynomial corrections without common degree bound
+CO40,Complete graded torsion,coker M3=K[t]/(t^2); coker Mn=K[t]^(3n-9)+K[t]/(t),deformation_obstructions.md,n>=4; specified homogeneous full-output presentation
+CO41,Quadratic-shear cubic normalization,H_lambda=(p+q^2)^2+q^3+lambda*q,quadratic_shear_residual.md,Every quadratic shear and cubic residual; rational affine GL normalization
+CO42,Universal cubic minor,det M14=-2489071056189074244411853807879968522240000000,quadratic_shear_residual.md,Parameter degree<=32; 33 exact evaluations prove identity; all-degree input bound already proved
+CO43,Affine-shear sharp fifth-depth witness,C3D^5q=96A^4*V_third*V_fourth,affine_shear_potentials.md,degree V>=4; all earlier third gates vanish
+CO44,Affine-shear sharp seventh-depth witness,C3D^7q=-960A^5*(V_third)^3,affine_shear_potentials.md,degree V=3; all earlier third gates vanish
+CO45,Complete constant-quadratic phase diagram,u=B/(2A); V=C-B^2/(4A); core determined by degree u and degree V,constant_quadratic_classification.md,"All A p^2+B(q)p+C(q), nonzero constant A; all polynomial degrees"

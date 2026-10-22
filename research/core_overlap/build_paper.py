@@ -7,10 +7,16 @@ import subprocess
 
 ROOT = Path(__file__).resolve().parent
 CHAPTERS = ['README.md', 'pure_perfect_power.md', 'pure_quadratic_composition.md',
-            'analytic_shear_square.md', 'audit_sector_dynamics.md',
+            'analytic_shear_square.md', 'shear_composition_complete.md',
+            'shear_oscillator.md', 'constant_quadratic_classification.md',
+            'quadratic_frontier.md', 'quadratic_shear_residual.md',
+            'affine_shear_potentials.md',
+            'deformation_obstructions.md', 'audit_sector_dynamics.md',
             'audit_balanced_transverse.md', 'depth_finite_determination.md',
-            'analytic_bridge.md', 'canonical_bridge.md', 'audit_balanced.md',
-            'review_assessment.md', 'review_near_followup.md', 'SOURCES.md']
+            'analytic_bridge.md', 'analytic_potential_classification.md',
+            'canonical_bridge.md', 'audit_balanced.md',
+            'review_assessment.md', 'review_near_followup.md',
+            'extension_proof_review.md', 'SOURCES.md']
 
 
 def main():
@@ -18,8 +24,8 @@ def main():
     parser.add_argument('--pdf', action='store_true')
     args = parser.parse_args()
     front = '''---
-title: "Exact Sectors Beyond the Pure-Top Conjecture"
-subtitle: "Nonlinear composition, protected canonical transport and sharp analytic stopping rules"
+title: "Exact Nonlinear Sectors"
+subtitle: "Composition classifications, oscillator cores, analytic potentials and deformation obstructions"
 author: "Nonlinear Hamiltonian research programme"
 date: "22 October 2026 - internally reviewed research draft"
 fontsize: 10pt

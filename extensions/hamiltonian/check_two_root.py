@@ -12,7 +12,7 @@ roots over Qbar, the checker recomputes the top type and applies the proved crit
                                             V = K[l] + m K[l] if d_v^2 H = 0;
                                             span{1, H} if H = f(l) + m g(l) + gamma m^2, gamma != 0,
                                             deg g < d/2 (Theorem Q') or the transverse top is finite
-                                            (Theorem T); PP/QC/SC/SS recognize additional finite
+                                            (Theorem T); PP/QC/SC/SS/SO/SCP/QF/QR recognize additional finite
                                             and infinite pure-top cores; otherwise unclassified.
   near     H_d = c l^(d-1) m                V if d_v^2 H = 0; span{1, H} otherwise (Theorem NE,
                                             check_near_edges.py).                   (complete)
@@ -275,7 +275,7 @@ def classify(H):
 
 
 def pure_additional_routes(H, l):
-    """Theorems PP, QC and SC in root coordinates, with affine GL2 transport.
+    """Exact pure-top routes in root coordinates, with affine GL2 transport.
 
     The all-degree classification and exact recognizer live together in the
     research package. No finite-degree dimension computation is used here.
@@ -294,6 +294,10 @@ def pure_additional_routes(H, l):
             spec.loader.exec_module(module)
             sys.modules[key] = module
         return sys.modules[key]
+    def integer_poly(P):
+        # Analytic checkers use Fraction exponents internally; these routes
+        # have already certified nonnegative integral polynomial exponents.
+        return {(int(i), int(j)): F(c) for (i, j), c in P.items()}
     Ht = coords(H, l)
     m = lin(0, 1) if l.get((1, 0), F(0)) else lin(1, 0)
     ss = load('analytic_shear_square').recognize(Ht)
@@ -303,6 +307,16 @@ def pure_additional_routes(H, l):
                 'core': 'span{1, l, Q, l^2, lQ, Q^2}', 'dimension': 6,
                 'active_part': 'finite nonzero', 'Q': ser(Q), 'l': ser(l),
                 'root_coordinate_witness': {k: str(ss[k]) for k in ('A', 'B', 'epsilon', 'constant')}}
+    so = load('shear_oscillator').recognize(Ht)
+    if so is not None:
+        Q = comp(integer_poly(so['Q']), l, m)
+        return {'route': 'SO', 'proved': True,
+                'core': 'span{1, l, Q, l^2, lQ, Q^2}', 'dimension': 6,
+                'active_part': 'finite nonzero', 'Q': ser(Q), 'l': ser(l),
+                'third_gate_depth': so['third_gate_depth'],
+                'basis': [ser(comp(integer_poly(f), l, m)) for f in so['basis']],
+                'root_coordinate_witness': {k: str(so[k]) for k in
+                                            ('A', 'B', 'kappa', 'epsilon', 'constant')}}
     qc = load('pure_quadratic_composition').classify(Ht)
     if qc is not None:
         Qt = {(i, j): F(c) for i, j, c in qc['Q']}
@@ -313,6 +327,35 @@ def pure_additional_routes(H, l):
                 'active_part': qc['active_part'], 'Q': ser(Q), 'l': ser(l),
                 'degree_composition': qc['degree_P'],
                 'root_coordinate_witness': {k: qc[k] for k in ('P', 'epsilon')}}
+    scp = load('shear_composition_complete').recognize(Ht)
+    if scp is not None:
+        return {'route': 'SCP', 'proved': True, 'core': 'span{1, H}',
+                'dimension': 2, 'active_part': '0', 'third_gate_depth': 1,
+                'degree_shear': scp['degree_u'],
+                'degree_composition': scp['degree_P'],
+                'composition_generator': ser(comp(integer_poly(scp['Q']), l, m))}
+    qf = load('quadratic_frontier').classify(Ht)
+    if qf is not None:
+        basis = [{(i, j): F(c) for i, j, c in f} for f in qf['basis']]
+        return {'route': 'QF', 'proved': True,
+                'core': ('span{1, H}' if qf['dimension'] == 2 else
+                         'span{1, l, Q, l^2, lQ, Q^2}'),
+                'dimension': qf['dimension'],
+                'active_part': '0' if qf['dimension'] == 2 else 'finite nonzero',
+                'basis': [ser(comp(f, l, m)) for f in basis],
+                'third_gate_depth': qf['third_gate_depth'],
+                'root_weight': qf['weight'],
+                'weighted_degree_bound': qf['weighted_degree_bound'],
+                'weighted_certificate': qf['certificate']}
+    qr = load('quadratic_shear_residual').classify(Ht)
+    if qr is not None:
+        return {'route': 'QR', 'proved': True, 'core': 'span{1, H}',
+                'dimension': 2, 'active_part': '0',
+                'third_gate_depth': qr['third_gate_depth'],
+                'root_coordinate_witness': {k: qr[k] for k in
+                                            ('A', 'u', 'V', 'proof')},
+                **({'normalization': qr['normalization']} if
+                   'normalization' in qr else {})}
     sc = load('audit_composition_recognize').recognize(Ht)
     if sc is not None:
         Jt = {tuple(map(int, k.split(','))): F(c) for k, c in sc['J'].items()}

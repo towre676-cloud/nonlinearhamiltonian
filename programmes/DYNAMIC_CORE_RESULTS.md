@@ -578,6 +578,86 @@ The tests generate random members of every route and random affine changes of co
 
 The decision procedure applies the exact PP, QC, SC and SS recognizers after the retained routes. Unresolved pure cases are labeled `unclassified`; finite matrix tests do not reinstate the former conjecture. Existing stored certificates retain their hypotheses and are replayed separately. The research package's independent review records the proof checks and the small setup repair in Theorem B (`s ≥ 1, s ≠ μ` suffices; no `s<μ` assumption is needed).
 
+### 6.12 Higher shear compositions: the missing case
+
+**Theorem SCP.** Let `Q=p+u(q)`, `deg u>=3`, and `H=P(Q)+epsilon*q`,
+`deg P>=3`, over a characteristic-zero field. Then
+`D_inf(H)=ker C3 intersect ker(C3D)=span{1,H}`.
+The top third-gate coefficient on `q^a Q^c` is proportional to
+`c(c+mu-3)*((m-2)*(c-mu)-3*(mu-1)*a)`. One bracket removes every
+nonconstant resonant monomial except the top of H. Descent proves the
+all-degree statement. The proof, exact recognizer and operator checks are
+`research/core_overlap/shear_composition_complete.*`.
+
+### 6.13 Nonlinear oscillator cores and a sharp depth transition
+
+**Theorem SO.** Set `Q=p+u(q)` and
+`H=A*Q^2+B*Q+C+kappa*q^2/2+epsilon*q`, `A!=0`.
+For `deg u>=3`, the core is precisely the six-dimensional quadratic
+sector in `(q,Q)`, determined sharply by `C3` at depths zero through two.
+For `deg u=2` and `kappa!=0`, the same sector is the full core and depth
+three is sharp. Quadratic shear with `kappa=0` remains the infinite QC
+family. In the unshifted quadratic-shear case, the cubic
+`G=3*kappa*q^2*Q+4*A*Q^3` passes the first three tests and has
+`C3D^3G=-1728*A^3*b*kappa^2` for `u=b*q^2`.
+The sector evolution satisfies `q''=-2*A*kappa*q-2*A*epsilon`.
+See `research/core_overlap/shear_oscillator.*`.
+
+### 6.14 Complete constant quadratic momentum with a higher shear
+
+**Theorem QF.** Let `H=A*(p+u(q))^2+V(q)`, `A!=0`, `deg u=m>=3`,
+and let V be any polynomial. If `deg V<=2`, the core is the six-dimensional
+quadratic sector in `(q,Q)`, `Q=p+u(q)`. Otherwise it is `span{1,H}`.
+The sharp third-gate depths are two for `deg V<=2`, six for cubic V,
+and four for `deg V>=4`. The initially excluded weighted boundary
+`deg V=2m` is therefore classified as well.
+
+For a putative top `g(q)*Q^N`, `N>=3`, the leading equations of C3
+and C3D force `3a=(N-2)(m-2)` and `3(a-1)=(N-1)(m-2)`, with
+`a=deg g`; their difference is impossible. Thus the first two tests
+already force degree at most two in Q. The next test gives
+`G in span{1,H,q,Q,q^2,qQ}`. Invariance eliminates all four extra
+directions for nonlinear V. The exact q witness first fails at depth
+four with `C3D^4q=96*A^4*u''*V''''` for degree V at least four,
+and at depth six with `C3D^6q=-960*A^5*u''*(V''')^2` for cubic V.
+
+For `deg V<2m`, the independent weighted certificate method remains
+available: the `(1,m)` top is `A*(p+alpha*q^m)^2`; SS and the graded
+injection give core dimension at most six and weight at most `2m`.
+Exact invariant-kernel elimination in `3m+3` monomials, retaining full
+outputs, therefore computes the full core under these hypotheses.
+Proof and exact certificates are in `research/core_overlap/quadratic_frontier.*`.
+
+### 6.15 Complete potentials for the fractional cubic
+
+**Theorem AP.** On `p>0`, let `A=C^omega((0,infinity),R)` and
+`H=q*p^(-1/4)+V(p)` with analytic V and finite-q-degree observables.
+The core exceeds `W=A+qA` exactly when
+`V=c0+a*p^(-1/4)+b*p^(3/4)+c*p^(5/2)`.
+In that case it is `W+R*(H-c0)^3`; otherwise it is W.
+The potential condition is equivalent to the Euler differential equation
+`p^4 V''''+3p^3 V'''-(15/16)p^2 V''-(15/32)p V'=0`.
+For general exceptional F with `K3=lambda` and `r^3=F''!=0`, a surviving
+cubic `q^3*r+q^2*h` modulo W is characterized by
+`h'=V'''*r/F''` and `F*h'-(2F'+lambda)*h=3V'*r`.
+See `research/core_overlap/analytic_potential_classification.*`.
+
+### 6.16 An all-degree deformation obstruction hierarchy
+
+**Theorem DO.** For `H_t=(p+q^2)^2+t*q^2/2`, the initial polynomial
+observables admitting exact formal lifts through order one form the
+seven-dimensional span of the quadratic sector V and `Q^3`, `Q=p+q^2`.
+Through order two the liftable initial space is exactly V (dimension six),
+and V lifts to every order. All `Q^n`, `n>=4`, fail already at first order.
+The cubic lift `Q^3+(3/4)t*q^2*Q` passes first order, but its
+third-depth gate has second-order constant coefficient `-432`.
+The corresponding dual coefficient functional annihilates every possible
+second-order correction and every change of first-order lift.
+This supplies a genuine lifting obstruction class; no new Nijenhuis or
+Haantjes torsion operation is claimed.
+Proof and exact obstruction certificates are in
+`research/core_overlap/deformation_obstructions.*`.
+
 ## 4. Commands
 
 ```bash
@@ -589,3 +669,42 @@ python3 -B -m unittest test_weyl_discovery      # from extensions/hamiltonian
 ```
 
 Measured on the development container: `qp³+q²+p²` takes about 80 s for discovery and about 2 min for classification, most of it replaying the 13-generator receipt. The other rows take seconds.
+
+
+Theorem DO also classifies the graded torsion of the explicitly declared
+four-depth gate-matrix cokernel over `K[t]`: degree three contributes
+`K[t]/(t^2)`, and each degree at least four contributes `K[t]/(t)`.
+For degree n at least four its free cokernel rank is `3n-9`.
+These module invariant factors are proved in all degrees; the displayed
+Smith transformations and minors are independently replayed examples.
+
+
+### 6.17 Complete constant quadratic-momentum classification
+
+**Theorem CQ.** Every polynomial Hamiltonian
+`H=A*p^2+B(q)*p+C(q)` with nonzero constant A has the following complete
+classification. Put `u=B/(2A)`, `Q=p+u`, and `V=C-B^2/(4A)`.
+For affine u, quadratic-or-lower V makes H quadratic and the core the
+full polynomial ring; otherwise the core is `span{1,H}`, with sharp
+third-gate depth seven for cubic V and five for higher V (AFP).
+For degree u two, residual degree at most one gives the infinite QC
+core, degree two gives the six-dimensional SO core sharply at depth
+three, and nonlinear V gives `span{1,H}` sharply at depth six for cubic
+V and four for higher V (QR). For degree u at least three, QF gives the
+six-dimensional core sharply at depth two for quadratic-or-lower V,
+and the two-dimensional core sharply at depth six or four otherwise.
+
+The difficult QR cubic branch reduces by rational affine GL changes to
+`(p+q^2)^2+q^3+lambda*q`. A first-deficit argument bounds every depth-two
+candidate to weight at most six, a 16-dimensional polynomial space.
+A selected 14 by 14 minor of the full-output depth-six matrix has a
+nonzero constant determinant. Its parameter degree is at most 32; 33
+exact rational determinant evaluations prove the identity for every
+lambda. This is exact interpolation after a proved all-degree bound,
+not inference from sampled ranks. Variable A(q) remains open beyond
+retained PP and other explicitly proved routes.
+
+The full phase diagram, unified classifier and proof dependencies are
+`research/core_overlap/constant_quadratic_classification.*`; the new
+branch proofs are `quadratic_shear_residual.*` and
+`affine_shear_potentials.*`.

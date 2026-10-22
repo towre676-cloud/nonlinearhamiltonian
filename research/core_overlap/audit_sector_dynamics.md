@@ -76,8 +76,8 @@ dimension. These are minimal closure dimensions, not a claim about every
 possible sensing model or noisy measurement design.
 
 `audit_sector_dynamics.py` checks the matrix, closed forms, ranks and target
-dimensions exactly. It also feeds the transposed matrix into the existing
-`extensions/observer/observation_closure_reference.py` compiler and replays
+dimensions exactly. It also feeds the transposed matrix into the retained
+observer compiler and replays
 its independent `observer-closure-v1` certificate checker. Transposition is
 essential: that backend acts on target rows and the state consists of basis
 observable values. This is an application of the existing closure machinery,

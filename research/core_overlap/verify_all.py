@@ -17,6 +17,11 @@ HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[1]
 CHECKERS = ['audit_balanced.py', 'pure_transverse.py', 'pure_quadratic_composition.py',
             'analytic_shear_square.py', 'audit_sector_dynamics.py',
+            'shear_composition_complete.py', 'shear_oscillator.py',
+            'analytic_potential_classification.py', 'quadratic_frontier.py',
+            'quadratic_shear_residual.py', 'affine_shear_potentials.py',
+            'constant_quadratic_classification.py',
+            'deformation_obstructions.py', 'extension_proof_review.py',
             'audit_balanced_transverse.py', 'audit_composition_recognize.py',
             'depth_verify.py', 'analytic_bridge_check.py', 'canonical_verify.py',
             'review_checks.py', 'integration_verify.py', 'pure_tests.py']
@@ -36,7 +41,7 @@ def main():
                         ignore=shutil.ignore_patterns('__pycache__'))
         for checker in CHECKERS:
             tick = time.monotonic()
-            result = subprocess.run([sys.executable, '-B',
+            result = subprocess.run([sys.executable, '-B', '-S',
                                      str(target/'research/core_overlap'/checker)],
                                     cwd=target, capture_output=True, text=True)
             row = {'checker': checker, 'status': 'passed' if result.returncode == 0 else 'failed',
@@ -45,7 +50,7 @@ def main():
                 row['output'] = (result.stdout+result.stderr)[-5000:]
             rows.append(row)
         tick = time.monotonic()
-        result = subprocess.run([sys.executable, '-B', '-m', 'unittest', 'test_two_root'],
+        result = subprocess.run([sys.executable, '-B', '-S', '-m', 'unittest', 'test_two_root'],
                                 cwd=target/'extensions/hamiltonian', capture_output=True, text=True)
         rows.append({'checker': 'integrated two-root regression suite',
                      'status': 'passed' if result.returncode == 0 else 'failed',
@@ -54,6 +59,7 @@ def main():
     result = {'status': 'passed' if all(r['status']=='passed' for r in rows) else 'failed',
               'initial_review_commit': 'e91e14da9d59e799ad9ed0331f59b2b500e478e8',
               'base_commit': '268d553eb6a4434afeaf5fcb4689a6294e5ab688',
+              'extension_base_commit': '4050dbfc484641c2ce8a8ab9a272e91ca4934f55',
               'seconds': round(time.monotonic()-started, 3), 'checks': rows,
               'scope': 'Exact independent identities and finite sanity checks; universal claims rest on written proofs and internal review, historical priority unestablished.'}
     if args.output:

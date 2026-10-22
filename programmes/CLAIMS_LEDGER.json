@@ -3,7 +3,7 @@
   {
    "id": "B001",
    "status": "existing_result",
-   "claim": "Static exact-partner classifications in the report’s declared cubic, homogeneous quartic, qF(p) and monomial scopes.",
+   "claim": "Static exact-partner classifications in the report\u2019s declared cubic, homogeneous quartic, qF(p) and monomial scopes.",
    "support": "research/hamiltonian/output/Nonlinear_Hamiltonian_Partners.md",
    "scope": "Retained proofs and scoped replay; no blanket novelty claim."
   },
@@ -342,6 +342,69 @@
    "claim": "The SS sector has Jordan blocks (3,2,1) at zero forcing and (5,1) otherwise. Target derivative closures q/q^2/joint have dimensions 2/3/5 versus 3/5/6; 27 existing observer certificates replay exactly.",
    "support": "research/core_overlap/audit_sector_dynamics.md; research/core_overlap/audit_sector_dynamics.py",
    "scope": "Rational A,B,epsilon with A!=0; exact observable-sector closure. Existing observer machinery, no general sensing or priority claim."
+  },
+  {
+   "id": "W8-SCP",
+   "status": "proved_with_independent_internal_review",
+   "claim": "For Q=p+u(q), deg u>=3 and H=P(Q)+epsilon*q, deg P>=3: the full core is span{1,H}, characterized exactly by C3 and C3D. Both tests are necessary.",
+   "support": "research/core_overlap/shear_composition_complete.md; research/core_overlap/shear_composition_complete.py; research/core_overlap/extension_proof_review.md",
+   "scope": "All polynomial degrees; characteristic zero; exact recognizer and leading-coefficient proof. Historical priority unestablished."
+  },
+  {
+   "id": "W8-SO",
+   "status": "proved_with_independent_internal_review",
+   "claim": "For H=AQ^2+BQ+C+kappa*q^2/2+epsilon*q: degree u>=3 gives full six-dimensional core and sharp depth two; degree u=2 with kappa nonzero gives the same core and sharp depth three.",
+   "support": "research/core_overlap/shear_oscillator.md; research/core_overlap/shear_oscillator.py; research/core_overlap/extension_proof_review.md",
+   "scope": "Original flat Weyl structure; exact finite closed dynamics, spectral and observer certificates; quadratic shear with zero kappa remains QC. Historical priority unestablished."
+  },
+  {
+   "id": "W8-QF",
+   "status": "proved_with_independent_internal_review",
+   "claim": "Every H=A(p+u(q))^2+V(q), A nonzero, deg u>=3, polynomial V: full core has dimension six for deg V<=2 and equals span{1,H} otherwise. Sharp third-gate depths are 2,6,4 for deg V<=2,=3,>=4.",
+   "support": "research/core_overlap/quadratic_frontier.md; research/core_overlap/quadratic_frontier.py; research/core_overlap/extension_proof_review.md",
+   "scope": "All polynomial degrees and every residual potential degree including the resonant boundary; exact rank and closure certificates in a proved six-dimensional upper space. Historical priority unestablished."
+  },
+  {
+   "id": "W8-AP",
+   "status": "proved_with_independent_internal_review",
+   "claim": "For H=q*p^(-1/4)+V(p), analytic V on a positive connected interval, an extra cubic exists exactly for V=c0+a*p^(-1/4)+b*p^(3/4)+c*p^(5/2); the full core is then the affine strip plus R*(H-c0)^3, otherwise the strip.",
+   "support": "research/core_overlap/analytic_potential_classification.md; research/core_overlap/analytic_potential_classification.py; research/core_overlap/extension_proof_review.md",
+   "scope": "All finite q degrees; complete Euler-ODE proof. General active-profile compatibility is global only when its analytic solution extends; four-dimensional potential spaces are asserted only on regular charts. Historical priority unestablished."
+  },
+  {
+   "id": "W8-DO",
+   "status": "proved_with_independent_internal_review",
+   "claim": "For H_t=(p+q^2)^2+t*q^2/2: first-order liftable initial observables have dimension seven; second-order and formal liftables have dimension six. Cubic Smith factor t^2 records the delayed obstruction.",
+   "support": "research/core_overlap/deformation_obstructions.md; research/core_overlap/deformation_obstructions.py; research/core_overlap/extension_proof_review.md",
+   "scope": "Corrections may be arbitrary polynomials with no fixed degree cutoff; explicit dual all-degree obstructions and parameter polynomial Smith certificates. Historical priority unestablished."
+  },
+  {
+   "id": "W8-GT",
+   "status": "proved_with_independent_internal_review",
+   "claim": "The declared homogeneous four-depth observation cokernel has K[t]/(t^2) in grade three and K[t]^(3n-9) plus K[t]/(t) in every grade n>=4.",
+   "support": "research/core_overlap/deformation_obstructions.md; research/core_overlap/deformation_obstructions.py; research/core_overlap/extension_proof_review.md",
+   "scope": "Complete graded module classification over characteristic-zero fields for the stated full-output presentation. Algebraic torsion is standard; no new geometric torsion tensor or historical priority asserted. Historical priority unestablished."
+  },
+  {
+   "id": "W8-QR",
+   "status": "proved_with_independent_internal_review",
+   "claim": "For H=A(p+u(q))^2+V(q), degree u=2 and degree V>=3, the full core is span{1,H}, with sharp third-gate depth six for cubic V and four for higher-degree V.",
+   "support": "research/core_overlap/quadratic_shear_residual.md; research/core_overlap/quadratic_shear_residual.py; research/core_overlap/extension_proof_review.md",
+   "scope": "All polynomial degrees and every cubic normalization parameter; exact degree-32 determinant identity certified at 33 distinct rational points after a proved all-degree weight bound. Historical priority unestablished."
+  },
+  {
+   "id": "W8-AFP",
+   "status": "proved_with_independent_internal_review",
+   "claim": "For affine u and H=A(p+u)^2+V, quadratic V gives the full polynomial ring; degree V>=3 gives span{1,H}, with sharp third-gate depth seven for cubic V and five for higher V.",
+   "support": "research/core_overlap/affine_shear_potentials.md; research/core_overlap/affine_shear_potentials.py; research/core_overlap/extension_proof_review.md",
+   "scope": "All polynomial degrees; affine canonical transport; constant nonzero A; no degree cutoff. Historical priority unestablished."
+  },
+  {
+   "id": "W8-CQ",
+   "status": "proved_with_independent_internal_review",
+   "claim": "Every H=A p^2+B(q)p+C(q), A nonzero constant, is classified by the degrees of u=B/(2A) and V=C-B^2/(4A): full ring, infinite QC tower, six-dimensional quadratic sector, or span{1,H}.",
+   "support": "research/core_overlap/constant_quadratic_classification.md; research/core_overlap/constant_quadratic_classification.py; research/core_overlap/extension_proof_review.md",
+   "scope": "Complete polynomial coefficient class over characteristic-zero fields. Variable A(q) remains outside this theorem. All nontrivial branches have sharp third-gate stopping depths. Historical priority unestablished."
   }
  ],
  "rule": "Passing finite tests does not upgrade a target or an unproved general statement to a theorem.",

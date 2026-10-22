@@ -118,6 +118,73 @@ class TransverseAndVertex(unittest.TestCase):
 
 
 class PureCompositionRegressions(unittest.TestCase):
+    def test_new_shear_oscillator_and_weighted_routes(self):
+        q, p = {(1, 0): F(1)}, {(0, 1): F(1)}
+        quadratic = TR.add(p, TR.power(q, 2))
+        cubic = TR.add(p, TR.power(q, 3))
+        cases = [
+            ('SCP', TR.add(TR.power(cubic, 3), q), 2),
+            ('SO', TR.add(TR.power(quadratic, 2), TR.power(q, 2)), 6),
+            ('SO', TR.add(TR.power(cubic, 2), TR.sc(TR.power(q, 2), -2), q), 6),
+            ('QF', TR.add(TR.power(cubic, 2), TR.power(q, 3)), 2),
+            ('QF', TR.add(TR.power(cubic, 2), TR.power(q, 5)), 2),
+            ('QR', TR.add(TR.power(quadratic, 2), TR.power(q, 3)), 2),
+            ('QR', TR.add(TR.power(quadratic, 2), TR.power(q, 4)), 2),
+        ]
+        for route, H, dim in cases:
+            for Ht in (H, linmap(H, 1, 1, 0, 1, F(1, 2), F(-2, 3))):
+                result = TR.classify(Ht)
+                self.assertEqual(result['route'], route)
+                self.assertTrue(result['proved'])
+                self.assertEqual(result['dimension'], dim)
+                cert = TR.certify(Ht)
+                TR.check(cert)
+                bad = copy.deepcopy(cert)
+                bad['claim']['core'] = 'K[Q]'
+                with self.assertRaises(ValueError):
+                    TR.check(bad)
+                if 'basis' in result:
+                    basis = [{tuple(map(int, k.split(','))): F(c)
+                              for k, c in f.items()} for f in result['basis']]
+                    self.assertEqual(len(basis), dim)
+                    for f in basis:
+                        self.assertTrue(all(not W.act(gate, f)
+                                            for gate in W.gates(Ht).values()))
+                        self.assertTrue(TR.in_span(W.act(W.derivation(Ht), f), basis))
+        # Actual full-output filtered kernels provide an independent regression.
+        for _, H, dim in cases[:3]:
+            n = TR.degree(H)
+            self.assertEqual(filtered_dim(H, n, 4), dim)
+
+    def test_resonant_weight_boundary_and_sharp_depths(self):
+        q, p = {(1, 0): F(1)}, {(0, 1): F(1)}
+        Q = TR.add(p, TR.power(q, 3))
+        H = TR.add(TR.power(Q, 2), TR.power(q, 6))
+        result = TR.classify(H)
+        self.assertTrue(result['proved'])
+        self.assertEqual(result['route'], 'QF')
+        self.assertEqual(result['core'], 'span{1, H}')
+        for n, depth in ((3, 6), (4, 4), (6, 4)):
+            H = TR.add(TR.power(Q, 2), TR.power(q, n))
+            result = TR.classify(H)
+            self.assertEqual(result['third_gate_depth'], depth)
+            D, gate = W.derivation(H), W.gate(H, 3)
+            witness = q
+            for r in range(depth + 1):
+                failure = W.act(gate, witness)
+                self.assertEqual(bool(failure), r == depth)
+                witness = W.act(D, witness)
+        for n, depth in ((3, 6), (4, 4)):
+            Q = TR.add(p, TR.power(q, 2))
+            H = TR.add(TR.power(Q, 2), TR.power(q, n))
+            result = TR.classify(H)
+            self.assertEqual(result['route'], 'QR')
+            self.assertEqual(result['third_gate_depth'], depth)
+            witness = q
+            for r in range(depth + 1):
+                self.assertEqual(bool(W.act(W.gate(H, 3), witness)), r == depth)
+                witness = W.act(W.derivation(H), witness)
+
     def test_counterexamples_and_distinct_composition_routes(self):
         q, p = {(1, 0): F(1)}, {(0, 1): F(1)}
         Q = TR.add(p, TR.power(q, 2))

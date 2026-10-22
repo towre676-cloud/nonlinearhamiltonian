@@ -215,7 +215,28 @@
     "P003 disproved; unequal perfect-power pure transverse tops classified (PP)",
     "New infinite parabolic and finite shear-composition cores recognized (QC, SC, SS)",
     "Classify remaining pure perturbations with corrected structural exceptions (open)",
-    "Near tops complete (Theorem NE, commit 268d553; integrated proof clarifications)"
+    "Near tops complete (Theorem NE, commit 268d553; integrated proof clarifications)",
+    "Complete higher-shear compositions and oscillator phase boundary (W8-SCP, W8-SO)",
+    "Complete constant quadratic momentum with higher shear, every residual potential degree (W8-QF)",
+    "Every nonzero constant quadratic-momentum coefficient classified (CQ); variable coefficient remains open"
+   ]
+  },
+  {
+   "id": "W8",
+   "status": "completed_scoped_theorems",
+   "title": "exact nonlinear sectors and deformation obstructions",
+   "depends_on": [
+    "W6"
+   ],
+   "objective": "Unify nonlinear shear classifications, prove sharp depth transitions, solve cubic-preserving potentials and classify the quartic deformation torsion.",
+   "acceptance": [
+    "SCP composition theorem with exact two-test certificate",
+    "SO oscillator theorem with sharp depths two and three, exact spectra and observer replays",
+    "QF constant quadratic momentum classification with sharp depths two, six and four",
+    "QR and AFP close every remaining constant-quadratic-momentum branch; unified CQ classifier",
+    "AP all-analytic additive-potential classification and regular-chart active criterion",
+    "DO all-degree lifting hierarchy and full graded Smith torsion classification",
+    "Independent proof review, portable replay and publication integrity checks"
    ]
   }
  ],

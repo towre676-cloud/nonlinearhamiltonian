@@ -1,4 +1,4 @@
-# Exact sectors beyond the pure-top conjecture
+# Exact nonlinear sectors: classification and deformation
 
 Research overlap with `claude/adoring-ritchie-1hq1kw`, inspected at
 `e91e14da9d59e799ad9ed0331f59b2b500e478e8` on 22 October 2026.
@@ -52,6 +52,73 @@ Claude's near-top completion in commit `268d553` is incorporated on the
 review branch. The edge theorem and the new pure exceptions have distinct
 scopes. Independent review supplied two proof clarifications, without
 changing the theorem or its determinant certificates.
+
+## Classification and deformation continuation
+
+The continuation starts from the published review tree at `4050dbf`.
+
+It now classifies **every** polynomial Hamiltonian
+`H=A*p^2+B(q)*p+C(q)` with nonzero constant A. Complete the square with
+`Q=p+B(q)/(2A)` and `V=C-B(q)^2/(4A)`; the degrees of the shear and
+residual potential determine the full core. The complete phase diagram
+and unified exact classifier are `constant_quadratic_classification.*`.
+The possible answers are the full polynomial ring, the infinite QC
+tower, the six-dimensional quadratic sector, and `span{1,H}`.
+The sharp third-gate depths reach seven; variable coefficients of p^2
+remain outside this completed class.
+
+For `Q=p+u(q)`, `deg u>=3`, and `H=P(Q)+epsilon*q`, `deg P>=3`, the
+missing composition case has core exactly `span{1,H}`. The two equations
+`C3G=C3DG=0` already determine that core. Together with QC and SS this
+completes the main nonlinear shear-composition phase diagram.
+
+Adding a quadratic restoring potential produces exact nonlinear oscillators.
+For nonzero `A` and `deg u>=3`, the core
+remains the six-dimensional quadratic sector in `(q,Q)`, with sharp
+third-gate depth two. For a quadratic shear and `kappa!=0`, the same core
+has sharp depth three. At `kappa=0` a quadratic shear instead has the
+infinite QC core. Thus a quartic polynomial Hamiltonian exhibits an exact
+infinite-to-six transition, and the closed sector can carry oscillatory
+rather than merely polynomial-in-time dynamics.
+
+The whole constant-quadratic-momentum higher-shear family is classified:
+for `H=A(p+u(q))^2+V(q)`, `deg u=m>=3`, and arbitrary polynomial V,
+the core is six-dimensional if `deg V<=2` and is `span{1,H}` otherwise.
+The sharp third-gate stopping depths are respectively two, six when
+`deg V=3`, and four when `deg V>=4`. A direct leading-transverse-degree
+argument removes the initially excluded resonant boundary `deg V=2m`.
+For the subfamily `deg V<2m`, the weighted bound remains a useful
+independent certificate method: every core observable has `(1,m)` weight
+at most `2m`, and exact elimination in `3m+3` ambient monomials computes
+the core without any unproved numerical cutoff.
+
+![Theorem QF: exact all-degree dimensions of the spaces passing third-gate depths zero through R. The curves start at R=2, where the proved upper space has dimension six; they are not dimensions extrapolated from a finite input box.](output/figures/Sharp_Depth_Transitions.png)
+
+For analytic `H=q*p^(-1/4)+V(p)` on `p>0`, an additional cubic exists
+exactly when `V=c0+a*p^(-1/4)+b*p^(3/4)+c*p^(5/2)`. Its full core is then
+`A+qA+R*(H-c0)^3`; otherwise it is the affine strip. The proof solves a
+fourth-order Euler compatibility equation, rather than searching a list
+of powers. A general regular-chart compatibility system also describes
+which potentials preserve a cubic for exceptional `F` with constant `K3`.
+
+For `H_t=(p+q^2)^2+t*q^2/2`, the deformation obstruction hierarchy is
+nontrivial in all degrees: at order zero the core is infinite, the space
+of initial observables liftable through first order has dimension seven,
+and through second order has dimension six. The cubic lifts once but is
+obstructed at the next order; every higher power is obstructed already at
+first order. The six-dimensional quadratic sector persists to all orders.
+The full graded torsion of the declared gate-matrix cokernel is one
+`K[t]/(t^2)` summand in degree three and one `K[t]/(t)` summand in every
+degree at least four. This is literal module torsion and an explicit
+deformation obstruction, not a newly named geometric torsion tensor.
+
+Proofs and checkers are in `shear_composition_complete.*`,
+`shear_oscillator.*`, `quadratic_frontier.*`,
+`analytic_potential_classification.*`, and `deformation_obstructions.*`.
+The independent review is `extension_proof_review.md`. Universal claims
+rest on the written proofs; exact finite checks and certificates replay
+those claims within their declared hypotheses. Historical priority remains
+unestablished.
 
 ## Other proved overlaps
 
@@ -118,7 +185,3 @@ Claude's subsequent commit `268d553` completes the near-top question; its
 edge theorem is integrated with two proof clarifications recorded in the
 follow-up review. Recognition of the new composition families is sufficient for
 their routes; it is not claimed to recognize every possible exception.
-
-No Nijenhuis, Haantjes, or Moyal operation is claimed to be newly invented.
-The useful research claims here are the fixed-H sector classifications,
-their explicit counterfamilies, and the finite stopping theorems.

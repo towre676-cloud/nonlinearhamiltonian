@@ -1,6 +1,6 @@
 ---
-title: "Exact Sectors Beyond the Pure-Top Conjecture"
-subtitle: "Nonlinear composition, protected canonical transport and sharp analytic stopping rules"
+title: "Exact Nonlinear Sectors"
+subtitle: "Composition classifications, oscillator cores, analytic potentials and deformation obstructions"
 author: "Nonlinear Hamiltonian research programme"
 date: "22 October 2026 - internally reviewed research draft"
 fontsize: 10pt
@@ -10,7 +10,7 @@ urlcolor: NavyBlue
 toc-depth: 1
 ---
 
-# Exact sectors beyond the pure-top conjecture
+# Exact nonlinear sectors: classification and deformation
 
 Research overlap with `claude/adoring-ritchie-1hq1kw`, inspected at
 `e91e14d` on 22 October 2026.
@@ -64,6 +64,73 @@ Claude's near-top completion in commit `268d553` is incorporated on the
 review branch. The edge theorem and the new pure exceptions have distinct
 scopes. Independent review supplied two proof clarifications, without
 changing the theorem or its determinant certificates.
+
+## Classification and deformation continuation
+
+The continuation starts from the published review tree at `4050dbf`.
+
+It now classifies **every** polynomial Hamiltonian
+`H=A*p^2+B(q)*p+C(q)` with nonzero constant A. Complete the square with
+`Q=p+B(q)/(2A)` and `V=C-B(q)^2/(4A)`; the degrees of the shear and
+residual potential determine the full core. The complete phase diagram
+and unified exact classifier are `constant_quadratic_classification.*`.
+The possible answers are the full polynomial ring, the infinite QC
+tower, the six-dimensional quadratic sector, and `span{1,H}`.
+The sharp third-gate depths reach seven; variable coefficients of p^2
+remain outside this completed class.
+
+For `Q=p+u(q)`, `deg u>=3`, and `H=P(Q)+epsilon*q`, `deg P>=3`, the
+missing composition case has core exactly `span{1,H}`. The two equations
+`C3G=C3DG=0` already determine that core. Together with QC and SS this
+completes the main nonlinear shear-composition phase diagram.
+
+Adding a quadratic restoring potential produces exact nonlinear oscillators.
+For nonzero `A` and `deg u>=3`, the core
+remains the six-dimensional quadratic sector in `(q,Q)`, with sharp
+third-gate depth two. For a quadratic shear and `kappa!=0`, the same core
+has sharp depth three. At `kappa=0` a quadratic shear instead has the
+infinite QC core. Thus a quartic polynomial Hamiltonian exhibits an exact
+infinite-to-six transition, and the closed sector can carry oscillatory
+rather than merely polynomial-in-time dynamics.
+
+The whole constant-quadratic-momentum higher-shear family is classified:
+for `H=A(p+u(q))^2+V(q)`, `deg u=m>=3`, and arbitrary polynomial V,
+the core is six-dimensional if `deg V<=2` and is `span{1,H}` otherwise.
+The sharp third-gate stopping depths are respectively two, six when
+`deg V=3`, and four when `deg V>=4`. A direct leading-transverse-degree
+argument removes the initially excluded resonant boundary `deg V=2m`.
+For the subfamily `deg V<2m`, the weighted bound remains a useful
+independent certificate method: every core observable has `(1,m)` weight
+at most `2m`, and exact elimination in `3m+3` ambient monomials computes
+the core without any unproved numerical cutoff.
+
+![Theorem QF: exact all-degree dimensions of the spaces passing third-gate depths zero through R. The curves start at R=2, where the proved upper space has dimension six; they are not dimensions extrapolated from a finite input box.](output/figures/Sharp_Depth_Transitions.png)
+
+For analytic `H=q*p^(-1/4)+V(p)` on `p>0`, an additional cubic exists
+exactly when `V=c0+a*p^(-1/4)+b*p^(3/4)+c*p^(5/2)`. Its full core is then
+`A+qA+R*(H-c0)^3`; otherwise it is the affine strip. The proof solves a
+fourth-order Euler compatibility equation, rather than searching a list
+of powers. A general regular-chart compatibility system also describes
+which potentials preserve a cubic for exceptional `F` with constant `K3`.
+
+For `H_t=(p+q^2)^2+t*q^2/2`, the deformation obstruction hierarchy is
+nontrivial in all degrees: at order zero the core is infinite, the space
+of initial observables liftable through first order has dimension seven,
+and through second order has dimension six. The cubic lifts once but is
+obstructed at the next order; every higher power is obstructed already at
+first order. The six-dimensional quadratic sector persists to all orders.
+The full graded torsion of the declared gate-matrix cokernel is one
+`K[t]/(t^2)` summand in degree three and one `K[t]/(t)` summand in every
+degree at least four. This is literal module torsion and an explicit
+deformation obstruction, not a newly named geometric torsion tensor.
+
+Proofs and checkers are in `shear_composition_complete.*`,
+`shear_oscillator.*`, `quadratic_frontier.*`,
+`analytic_potential_classification.*`, and `deformation_obstructions.*`.
+The independent review is `extension_proof_review.md`. Universal claims
+rest on the written proofs; exact finite checks and certificates replay
+those claims within their declared hypotheses. Historical priority remains
+unestablished.
 
 ## Other proved overlaps
 
@@ -130,10 +197,6 @@ Claude's subsequent commit `268d553` completes the near-top question; its
 edge theorem is integrated with two proof clarifications recorded in the
 follow-up review. Recognition of the new composition families is sufficient for
 their routes; it is not claimed to recognize every possible exception.
-
-No Nijenhuis, Haantjes, or Moyal operation is claimed to be newly invented.
-The useful research claims here are the fixed-H sector classifications,
-their explicit counterfamilies, and the finite stopping theorems.
 
 \clearpage
 
@@ -620,6 +683,1545 @@ explicit correction to the pure-top collapse conjecture.
 
 \clearpage
 
+# Completing the polynomial shear-composition phase diagram
+
+All statements use one canonical pair, the original flat Weyl product in
+`(q,p)`, and the convention `{H,G}=H_q G_p-H_p G_q`. The coefficient field
+`K` has characteristic zero. The dynamic core consists of polynomials `G`
+such that every odd transvectant `T_k(H,D^rG)`, `k>=3`, `r>=0`, vanishes,
+where `D={H,.}`. No covariance under a nonlinear canonical substitution is
+assumed. Historical priority is not established.
+
+## The missing composition quadrant
+
+**Theorem SCP.** Let
+
+\[
+Q=p+u(q),\qquad H=P(Q)+\varepsilon q,\qquad
+m=\deg u\ge3,\quad \mu=\deg P\ge3.
+\]
+
+Then, in all polynomial degrees,
+
+\[
+\boxed{\mathcal D_\infty(H)
+=\ker C_3\cap\ker(C_3D)
+=\operatorname{span}_K\{1,H\}.}                         \tag{SCP1}
+\]
+
+Both tests in the middle expression are necessary for every allowed
+choice of parameters. Thus one bracket step is a sharp uniform stopping
+depth when using the third gate.
+
+### Exact transformed operators
+
+Use the polynomial algebra isomorphism `(q,p)->(q,Q)` only to express the
+original operators. Derivatives below keep `Q` fixed. Chain rule gives
+
+\[
+D=\varepsilon\partial_Q-P'(Q)\partial_q,
+\]
+
+\[
+\boxed{C_3=
+u'''(P'\partial_Q^3-P'''\partial_Q)
+-3u''(P''\partial_q\partial_Q^2+P'''\partial_q\partial_Q)
+-P'''\partial_q^3.}                                    \tag{SCP2}
+\]
+
+Here the derivatives of `P` are evaluated at `Q`; those of `u` are
+evaluated at `q`. To derive (SCP2), substitute
+`partial_q(old)=partial_q(new)+u' partial_Q` and
+`partial_p(old)=partial_Q` into the alternating third transvectant.
+Terms containing `u'` cancel. In particular the derivative of `u'` in
+the cubic power of the old `q` derivative contributes the term
+`-u'''P''' partial_Q`; it must not be omitted. The linear forcing has
+no third gate.
+
+### All-degree proof and the absence of cancellation
+
+Filter `K[q,Q]` by ordinary total degree. Write
+`u=alpha q^m+lower` and `P=rho Q^mu+lower`, with `alpha rho != 0`.
+The top derivation is
+
+\[
+D_0=-\rho\mu Q^{\mu-1}\partial_q,
+\qquad\text{degree shift }\mu-2.
+\]
+
+The top third gate `C_0` consists of the first four terms in (SCP2),
+using the leading monomials of `u` and `P`. Its degree shift is
+`m+mu-7`. The omitted term `-P''' partial_q^3` has shift `mu-6`,
+strictly smaller by `m-1`; all other omitted coefficient terms are
+also lower. A negative gate shift, possible when `m=mu=3`, causes no
+problem: lower input components still have strictly lower output degree.
+
+For `c>=1`, direct differentiation gives
+
+\[
+\boxed{C_0(q^aQ^c)=\alpha\rho\mu m(m-1)
+c(c+\mu-3)\big[(m-2)(c-\mu)-3(\mu-1)a\big]
+q^{a+m-3}Q^{c+\mu-4}.}                                \tag{SCP3}
+\]
+
+For `c=0`, the image is zero directly. Distinct input monomials with
+nonzero images have distinct output monomials, since the exponent
+shift is fixed. Consequently no linear combination can cancel a
+nonzero coefficient in (SCP3).
+
+Suppose `G` passes `C_3` and `C_3D`, and let `G_N` be its highest
+homogeneous component. Extracting the highest possible output degree
+in the two equations gives
+
+\[
+C_0G_N=0,\qquad C_0D_0G_N=0.                           \tag{SCP4}
+\]
+
+The first equation permits only monomials with `c=0`, or with
+
+\[
+(m-2)(c-\mu)=3(\mu-1)a.                               \tag{SCP5}
+\]
+
+In the latter case `c>=mu`. Consider the second equation monomial by
+monomial. Its nonzero images again have one fixed exponent shift,
+now `(m-4,2mu-5)`, so they cannot cancel each other.
+
+If `c=0,a>=1`, applying `D_0` gives a nonzero multiple of
+`q^{a-1}Q^{mu-1}`. The last bracket in (SCP3) becomes
+`-(m-2)-3(mu-1)(a-1)`, a strictly negative integer. The other
+factors are nonzero. Such a monomial therefore fails (SCP4).
+
+If (SCP5) holds and `a>=1`, applying `D_0` changes `(a,c)` to
+`(a-1,c+mu-1)`. The last bracket changes from zero to
+`(mu-1)(m+1)`, again nonzero. Such a monomial also fails (SCP4).
+
+Only `1` and `Q^mu` remain in the joint top kernel. Thus a
+nonconstant `G` has `N=mu` and `G_N=lambda Q^mu`. Subtract
+`(lambda/rho)H`, which passes both tests by odd antisymmetry and
+`DH=0`. The remainder has degree below `mu`, so the same argument
+forces it to be constant. This proves that the two-test kernel is
+`span{1,H}`. Every odd gate kills this span, which is stationary
+under `D`; therefore it is also the full dynamic core. This proves
+(SCP1) without a numerical degree bound.
+
+### Sharp necessity of each test
+
+The two witnesses work for every `u,P,epsilon` in the theorem:
+
+\[
+C_3q=0,\qquad
+C_3Dq=u'''(P'''P''-P'P'''')\ne0;                        \tag{SCP6}
+\]
+
+\[
+C_3Q=-u'''P'''\ne0,\qquad C_3DQ=0.                    \tag{SCP7}
+\]
+
+For (SCP6), the polynomial in parentheses has degree `2mu-5` and
+leading coefficient `2rho^2 mu^2(mu-1)(mu-2)`, which is nonzero in
+characteristic zero. For (SCP7), `DQ=epsilon` is constant. Thus
+neither of the two tests may be discarded, and depth zero is
+insufficient throughout the stated family.
+
+## Exact recognition and the completed scope
+
+For an input polynomial of `p` degree `mu>=3`, its leading `p`
+coefficient must be a nonzero constant `rho`. If `B(q)` is its
+`p^(mu-1)` coefficient, the normalization `u(0)=0` fixes
+
+\[
+u(q)=\frac{B(q)-B(0)}{\mu\rho}.
+\]
+
+Substitute `p=Q-u(q)` into `H`. Recognition succeeds exactly when
+`deg u>=3` and the result is a polynomial in `Q` plus `epsilon q`.
+This is a finite exact identity test; no bounded partner ansatz is
+fitted. A failed recognition is outside this route, rather than a
+certificate of collapse.
+
+Together with the retained results this closes the composition
+family `H=P(p+u(q))+epsilon q` for every polynomial `u` of degree at
+least two. Quadratic `u` is Theorem QC in
+`pure_quadratic_composition.md`. For `deg u>=3`, quadratic `P` is
+Theorem SS in `analytic_shear_square.md`; degree at least three is
+(SCP1). If `deg P=1`, the Hamiltonian has the form `a p+v(q)`:
+when `deg v>=3`, Theorem P+ gives the strip of `p` degree at most
+two; when `deg v<=2`, every polynomial is exact. A constant `P`
+also gives a Hamiltonian of degree at most one, hence the whole
+polynomial ring. These elementary low-degree cases are referenced
+for completeness and are not new claims of this note.
+
+`shear_composition_complete.py` supplies the rational-coefficient
+recognizer, transformed operators, a symbolic four-parameter factor
+identity, direct original-coordinate and independent PBW checks,
+uniform sharpness witnesses, and full-output finite kernel checks.
+The proof above supplies the all-degree result. The accompanying
+JSON records the exact replay and its stated finite scope.
+
+\clearpage
+
+# Oscillator forcing in polynomial shear coordinates
+
+All brackets and gates below use the fixed flat Weyl convention in the
+original coordinates `(q,p)`. The substitution `Q=p+u(q)` is used to
+rewrite differential operators, not to assume nonlinear covariance.
+The coefficient field has characteristic zero.
+
+## Complete oscillator sector
+
+Let
+
+\[
+ Q=p+u(q),\qquad
+ H=AQ^2+BQ+C+\frac{\kappa}{2}q^2+\epsilon q,\qquad A\ne0.
+\]
+
+**Theorem SO.** If `deg u>=3`, then for every `kappa,B,C,epsilon`,
+
+\[
+ \mathcal D_\infty(H)=
+ \ker C_3\cap\ker(C_3D)\cap\ker(C_3D^2)
+ =\operatorname{span}\{1,q,Q,q^2,qQ,Q^2\}.             \tag{SO1}
+\]
+
+The depth two is sharp for every allowed parameter choice. If
+`u=bq^2+cq+d`, `b!=0`, and `kappa!=0`, then instead
+
+\[
+ \mathcal D_\infty(H)=\bigcap_{r=0}^3\ker(C_3D^r)
+ =\operatorname{span}\{1,q,Q,q^2,qQ,Q^2\},             \tag{SO2}
+\]
+
+and depth three is sharp. The quadratic-shear case `kappa=0` is the
+previously classified infinite QC family and is excluded from (SO2).
+Neither statement classifies nonpolynomial observables.
+
+## Exact operators and the lower bound
+
+Direct chain-rule expansion in `(q,Q)` gives
+
+\[
+ D=(\kappa q+\epsilon)\partial_Q-(2AQ+B)\partial_q,
+ \qquad
+ C_3=(2AQ+B)u'''\partial_Q^3-6Au''\partial_q\partial_Q^2.
+                                                               \tag{SO3}
+\]
+
+The quadratic `q` potential changes the derivation but no higher gate.
+The space in (SO1) is invariant under `D`, and `C3` kills it. Every
+higher odd gate vanishes on it in the original coordinates: both `H`
+and each sector element have `p` degree at most two, whereas order at
+least five requires their combined `p` differentiation order to be at
+least five. This proves inclusion in the full core.
+
+## Completeness and sharp depth when degree u is at least three
+
+Put `m=deg u>=3` and give both `q,Q` degree one. The leading derivation
+is `D0=kappa*q*partial_Q-2A*Q*partial_q`, of degree shift zero. The
+leading gate `C0` has shift `m-5`; its action on a monomial `q^a Q^c`
+is, up to a fixed nonzero scalar,
+
+\[
+ c(c-1)[(m-2)(c-2)-3a]q^{a+m-3}Q^{c-2}.              \tag{SO4}
+\]
+
+Distinct nonzero images have distinct exponents. The negative gate
+shift for `m=3,4` is harmless: every lower input degree still produces
+a strictly lower output degree, and all nonzero monomial outputs have
+nonnegative exponents.
+
+Suppose a polynomial passes the three tests and has homogeneous top
+`G_N`, `N>2`. Its top must satisfy `C0 D0^r G_N=0`, `r=0,1,2`.
+Equation (SO4) leaves only the monomials `q^N`, `q^(N-1)Q`, and
+possibly a single resonance `q^(N-c)Q^c`, where
+
+\[
+ c=\frac{3N+2m-4}{m+1}.                              \tag{SO5}
+\]
+
+If that resonance is integral, `3<=c<=N-1`. Under `D0` its
+`Q^(c+1)` monomial comes from the `-2AQ partial_q` part; its subsequent
+`C0` image has `Q` exponent `c-1` and a nonzero coefficient, which
+cannot be canceled by either other candidate.
+The resonance coefficient therefore vanishes. The term originating in
+the `Q^2` monomial of `D0(q^(N-1)Q)` next forces the coefficient of
+`q^(N-1)Q` to vanish. Finally `D0^2(q^N)` has a `Q^2` monomial with
+nonzero `C0` image, with bracket factor
+`-3(N-2)` and derivation factor `4A^2N(N-1)`. This excludes the final
+candidate. Thus every polynomial in the three-test kernel has degree
+at most two in `(q,Q)`, proving (SO1).
+
+Sharpness has the same witness even with oscillator forcing:
+
+\[
+ C_3q^3=C_3Dq^3=0,\qquad
+ C_3D^2q^3=-288A^3u''\ne0.                           \tag{SO6}
+\]
+
+Indeed `D^2q^3=6q(2AQ+B)^2-6Aq^2(kappa q+epsilon)`; the additional
+`q^3` term is killed by `C3`.
+
+## Quadratic shear: four cubic derivatives are generated
+
+For `u=bq^2+cq+d`, `b!=0`, the gate is the constant-coefficient
+operator `C3=-12Ab*partial_q*partial_Q^2`. For `kappa!=0` use the affine
+centering `x=q+epsilon/kappa`, `y=Q+B/(2A)`, so
+`D=kappa*x*partial_y-2A*y*partial_x`.
+Write `X=partial_x`, `Y=partial_y`, and start with `E0=XY^2`.
+Successive right commutators `E_(r+1)=E_r D-D E_r` are
+
+\[
+\begin{aligned}
+ E_0&=XY^2,\\
+ E_1&=\kappa Y^3-4AX^2Y,\\
+ E_2&=8A^2X^3-14A\kappa XY^2,\\
+ E_3&=80A^2\kappa X^2Y-14A\kappa^2Y^3.
+\end{aligned}                                                   \tag{SO7}
+\]
+
+Their coefficient matrix in `X^3,X^2Y,XY^2,Y^3` has determinant
+`192A^4 kappa^2`, hence spans all constant-coefficient cubic
+derivatives. If `C3D^rG=0`, `r=0..3`, then each `E_rG=0` by the
+binomial commutator identity. Every third partial derivative of `G`
+therefore vanishes, so `G` has degree at most two. This proves (SO2).
+
+For every `B,epsilon`, the centered witness
+`G=3kappa*x^2*y+4A*y^3` passes depths zero, one and two, but
+
+\[
+ C_3D^3G=-1728A^3b\kappa^2\ne0.                     \tag{SO8}
+\]
+
+For `B=epsilon=0`, this is `G=3kappa q^2Q+4AQ^3`.
+
+## Exact finite dynamics
+
+In the ordered basis `(1,q,Q,q^2,qQ,Q^2)`, columns of the following
+matrix are the coefficients of the images under `D`:
+
+\[
+ M=\begin{pmatrix}
+ 0&-B&\epsilon&0&0&0\\
+ 0&0&\kappa&-2B&\epsilon&0\\
+ 0&-2A&0&0&-B&2\epsilon\\
+ 0&0&0&0&\kappa&0\\
+ 0&0&0&-4A&0&2\kappa\\
+ 0&0&0&0&-2A&0
+ \end{pmatrix}.                                               \tag{SO9}
+\]
+
+Put `omega^2=2A*kappa` and define entire formal functions
+`C(t)=sum_j (-omega^2)^j t^(2j)/(2j)!`,
+`S(t)=sum_j (-omega^2)^j t^(2j+1)/(2j+1)!`, and
+`T(t)=sum_j (-omega^2)^j t^(2j+2)/(2j+2)!`.
+Thus `C'=-omega^2 S`, `S'=C`, `T'=S`, and `C+omega^2 T=1`.
+The exact closed flow, uniformly including `kappa=0`, is
+
+\[
+\begin{aligned}
+ q(t)&=C(t)q-S(t)(2AQ+B)-2A\epsilon T(t),\\
+ Q(t)&=C(t)Q+S(t)(\kappa q+\epsilon)-\kappa B T(t).
+\end{aligned}                                                   \tag{SO10}
+\]
+
+The remaining four basis flows are `1,q(t)^2,q(t)Q(t),Q(t)^2`.
+When `2A*kappa>0` these are oscillator trigonometric functions; when
+negative they are hyperbolic functions; when zero they reduce to the
+previous polynomial shear-square flow. These are algebraic/formal
+Hamiltonian identities, not claims about global operator domains or
+experimental performance.
+
+## Spectrum and minimal dynamics for nonzero oscillator strength
+
+For `kappa!=0`, put `w=2A*kappa` and work over the algebraic closure.
+The characteristic and minimal polynomials of (SO9) are exactly
+
+\[
+ \chi_M(z)=z^2(z^2+w)(z^2+4w),\qquad
+ m_M(z)=z(z^2+w)(z^2+4w).                            \tag{SO11}
+\]
+
+In particular the six-dimensional sector is semisimple, with zero
+eigenvalue of multiplicity two and the other eigenvalues
+`r,-r,2r,-2r`, where `r^2=-w`. This is a genuine oscillatory or
+hyperbolic extension of the earlier nilpotent shear-square motion.
+
+For a direct proof, center `x=q+epsilon/kappa`, `y=Q+B/(2A)` and set
+`L_+=y-r*x/(2A)`, `L_-=y+r*x/(2A)`. Then
+`D L_+=r L_+`, `D L_-=-r L_-`. The basis
+`1,L_+,L_-,L_+^2,L_+L_-,L_-^2` diagonalizes the action. The five
+distinct eigenvalues prove the stated minimal polynomial, and the
+two independent zero eigenvectors prove the multiplicity. An exact
+matrix certificate independently checks (SO11), the polynomial matrix
+identity `M^5+5w M^3+4w^2 M=0`, linear independence of
+`I,M,...,M^4`, and `rank M=4`.
+
+The retained exact observer compiler and independent checker also replay
+the derivative-closure contracts for the original targets `q`, `q^2`,
+and their joint pair, using this six-element coefficient basis. In the
+checked fixtures their minimal dimensions are `2,3,5` when `epsilon=0`
+and `3,5,6` otherwise. These are exact finite-model target ranks,
+not a statement about noisy measurements, sensor cost, or a general
+physical observation model. The contracts concern the original targets;
+recentering a target can change its constant component and its closure.
+
+## Recognition and verification
+
+`shear_oscillator.py` recognizes this family directly from rational
+coefficients of `H(q,p)`, normalizing `u(0)=0`. It extracts the constant
+coefficient of `p^2`, recovers `u` from the nonconstant `p` coefficient,
+and requires the remaining residual to be quadratic in `q`. The
+recognizer rejects negative or fractional exponents and inexact
+floating-point input before any polynomial normalization. The
+quadratic-shear zero-oscillator case is returned as unrecognized here
+and belongs to the retained QC route.
+
+The checker compares both transformed operators with independent
+original-coordinate differentiation, checks every protected basis gate,
+verifies the sharp witnesses including centered nonzero `B,epsilon`,
+and computes finite kernels while retaining every output coefficient.
+It also checks the commutator span and the matrix/closed-flow formal
+Taylor coefficients, characteristic/minimal polynomials, and retained
+observer certificates exactly. Those finite calculations corroborate the
+identities; the preceding proofs establish all polynomial degrees.
+
+\clearpage
+
+# Complete constant-quadratic momentum classification
+
+Fix one canonical pair over a characteristic-zero field and the original
+flat Weyl convention. Let
+
+\[
+\begin{aligned}
+H&=A p^2+B(q)p+C(q),\qquad A\ne0\text{ constant},\\
+u&=\frac{B(q)}{2A},\qquad Q=p+u(q),\qquad
+V=C(q)-\frac{B(q)^2}{4A}.
+\end{aligned}
+\]
+
+Thus `H=AQ^2+V` exactly. The constant term of `u` is retained in this
+normalization. Put `m=deg u`, `n=deg V`, and use degree `-1` for the
+zero polynomial. Write `D={H,.}`, `C3=T3(H,.)`, and
+
+\[
+ K_r(H)=\bigcap_{j=0}^r\ker(C_3D^j)
+ \quad\text{inside }K[q,p].
+\]
+
+**Theorem CQ.** The following alternatives exhaust every such polynomial
+Hamiltonian. In every row the displayed core equals `K_r(H)` for the
+displayed depth, and every positive depth is sharp.
+
+Write \(V_2=\operatorname{span}\{1,q,Q,q^2,qQ,Q^2\}\) and
+\(T_2=K[Q]+\operatorname{span}\{q,qQ,q^2\}\).
+
+| Shear degree | Residual degree | Full core | Dimension | Sharp depth |
+|---|---|---|---|---|
+| \(m\le1\) | \(n\le2\) | \(K[q,p]\) | infinite | \(0\) |
+| \(m\le1\) | \(n=3\) | \(\operatorname{span}\{1,H\}\) | \(2\) | \(7\) |
+| \(m\le1\) | \(n\ge4\) | \(\operatorname{span}\{1,H\}\) | \(2\) | \(5\) |
+| \(m=2\) | \(n\le1\) | \(T_2\) | infinite | \(2\) |
+| \(m=2\) | \(n=2\) | \(V_2\) | \(6\) | \(3\) |
+| \(m\ge3\) | \(n\le2\) | \(V_2\) | \(6\) | \(2\) |
+| \(m\ge2\) | \(n=3\) | \(\operatorname{span}\{1,H\}\) | \(2\) | \(6\) |
+| \(m\ge2\) | \(n\ge4\) | \(\operatorname{span}\{1,H\}\) | \(2\) | \(4\) |
+
+This is a complete classification in the constant-leading-coefficient
+quadratic momentum scope, including Hamiltonians whose top need not be
+pure. A variable coefficient of `p^2`, higher momentum degree, analytic
+nonpolynomial observables, and more canonical pairs remain outside it.
+No statement depends on sampled stabilization or a finite degree cutoff.
+
+## Proof and dependencies
+
+Completion of the square is an exact polynomial identity and does not
+assert nonlinear covariance of the flat Weyl product. Each non-affine
+shear branch instead uses its independently differentiated operators in
+the original coordinates.
+
+For `m<=1`, the shear is affine symplectic. If `n<=2`, `H` is quadratic,
+so every higher odd gate vanishes. For nonlinear residuals, the complete
+affine-shear potential theorem in `affine_shear_potentials.md` gives
+dimension two and the respective sharp depths seven and five.
+
+For `m=2,n<=1`, this is exactly the retained parabolic quadratic
+composition theorem QC, with composition polynomial `P(z)=Az^2` and
+linear forcing `V(q)`. Its proof gives the third-gate depths zero
+through two as a complete criterion. The witness `q^3` passes depths
+zero and one and fails at depth two by `-288A^3u''`.
+Explicitly, with \(L=\partial_q\partial_Q^2\), the two successive
+commutators with \(D=-2AQ\partial_q+V'\partial_Q\) are
+\(-4A\partial_q^2\partial_Q\) and \(8A^2\partial_q^3\).
+Their common polynomial kernel is exactly \(T_2\), since \(V'\) is
+constant in this row. This also proves the uniform depth claim directly.
+
+For `m=2,n=2` and `m>=3,n<=2`, the oscillator theorem in
+`shear_oscillator.md` gives the six-dimensional sector. For `m=2`,
+the coefficient `kappa=V''` is nonzero and the sharp depth is three.
+For `m>=3`, the sharp depth is two, including zero oscillator strength.
+
+For `m>=3,n>=3`, the all-degree six-dimensional upper reduction and
+full-output invariant-kernel proof in `quadratic_frontier.md` give
+`span{1,H}`, with sharp depth six for cubic residuals and four for
+higher residuals. For `m=2,n>=3`, the complete nonlinear-residual
+quadratic-shear theorem in `quadratic_shear_residual.md` gives the same
+answer and depths. Its cubic case has a parameter-polynomial minor
+certificate valid for every residual parameter, rather than just
+sampled parameter values. These alternatives exhaust the integer
+degree pairs and prove the table.
+
+For each finite row the code also gives an exact basis in the original
+coordinates and its Hamiltonian derivation matrix. The two-dimensional
+cores are stationary. The six-dimensional cores carry the already
+proved exact oscillator, hyperbolic, or nilpotent dynamics. In the
+infinite QC row, linear forcing makes the polynomial tower active.
+
+## Exact classifier and replay contract
+
+`constant_quadratic_classification.py` accepts rational coefficients
+directly as a sparse polynomial dictionary, or via its CLI as JSON rows
+`[q_exponent,p_exponent,"rational coefficient"]`. Exponents must be
+nonnegative integers. Floating-point coefficients or exponents,
+fractional or negative powers, variable `p^2` coefficients, and higher
+momentum degree are rejected before normalization.
+
+The returned `CQ` record includes the case, core, dimension, normalized
+`Q,V,A`, both degrees, exact finite basis where applicable, derivation
+matrix, sharp third-gate depth, linked proof, and finite stopping
+equality. This is a finite exact theorem-application record, even when
+the classified core is infinite-dimensional; it is not a claim that
+the returned finite matrix represents every polynomial observable.
+`check_certificate` independently recovers the normal form and checks
+the branch metadata and finite-basis gate identities. The all-degree
+upper bound remains the stated written proof dependency.
+
+The optional `--with-certificate` delegates to the existing QF, QR,
+SO, QC, or affine-shear branch machinery for additional receipts where
+available. The standard-library self-test covers every row, uses exact
+original-coordinate gates and brackets, checks finite-basis closure and
+sharp witnesses, and rejects altered theorem applications and invalid
+scope inputs.
+
+Example commands, from the repository root:
+
+```sh
+python3 -B research/core_overlap/constant_quadratic_classification.py
+python3 -B research/core_overlap/constant_quadratic_classification.py --classify H.json
+python3 -B research/core_overlap/constant_quadratic_classification.py --classify H.json --with-certificate
+python3 -B research/core_overlap/constant_quadratic_classification.py --check-certificate application.json
+```
+
+The result organizes the component fixed-Hamiltonian classifications;
+it does not claim to introduce completion of the square, nonlinear
+canonical transformations, or the established general quantization
+obstruction. Historical priority of the exact complete scope and sharp
+depth table remains unestablished.
+
+\clearpage
+
+# Complete constant-quadratic higher-shear classification and sharp depths
+
+Work over a characteristic-zero field with the original flat Weyl–Moyal
+product in the canonical variables `(q,p)`. Let
+
+\[
+Q=p+u(q),\qquad H=AQ^2+V(q),\qquad A\ne0,
+\qquad m=\deg u\ge3,
+\]
+
+where `V` is **any polynomial**, with no degree restriction relative to
+`u`. Put `D={H,·}` and `C3=T3(H,·)`.
+
+**Theorem QF.** The full polynomial dynamic core is
+
+\[
+\boxed{\mathcal D_\infty(H)=
+\begin{cases}
+\operatorname{span}\{1,q,Q,q^2,qQ,Q^2\},&\deg V\le2,\\
+\operatorname{span}\{1,H\},&\deg V\ge3.
+\end{cases}}                                                    \tag{QF1}
+\]
+
+The maximum necessary third-gate depth is exactly
+
+\[
+\boxed{R(H)=
+\begin{cases}
+2,&\deg V\le2,\\
+6,&\deg V=3,\\
+4,&\deg V\ge4,
+\end{cases}
+\quad
+\mathcal D_\infty(H)=\bigcap_{r=0}^{R(H)}\ker(C_3D^r).}      \tag{QF2}
+\]
+
+Each bound is sharp for **every** Hamiltonian in its stratum. In
+particular, no higher odd gate is needed for this entire polynomial
+family. The result includes the degree-resonant boundary `deg V=2m`;
+there is no exceptional locus at that degree.
+
+Completing the square shows that this class is exactly the polynomial
+Hamiltonians `A p^2+B(q)p+C(q)` with `A` nonzero constant and
+`deg B>=3`. Take `u=B/(2A)` and `V=C-B^2/(4A)`. No division by a
+nonconstant polynomial or nonlinear covariance of the flat Moyal product
+is assumed. Quadratic shears `deg u=2` and nonconstant coefficients of
+`p^2` remain outside this theorem.
+
+## A two-equation bound in all momentum degrees
+
+In the original canonical coordinates,
+
+\[
+C_3=H_{qqq}\partial_p^3-3H_{qqp}\partial_q\partial_p^2,
+\quad H_{qqp}=2Au'',
+\quad H_{qqq}=2Au'''p+\bigl(Au^2+V\bigr)'''.              \tag{QF3}
+\]
+
+Suppose `G` has top momentum term `g(q)p^N`, with `N>=3` and
+`g!=0`. The coefficient of `p^(N-2)` in `C3G` is
+
+\[
+2A(N)_2\bigl((N-2)u'''g-3u''g'\bigr).                    \tag{QF4}
+\]
+
+All omitted terms have strictly smaller momentum degree: the constant
+part of `H_qqq` lowers it by three, and lower momentum terms of `G`
+cannot contribute to this coefficient. If `a=deg g`, vanishing implies
+
+\[
+3a=(N-2)(m-2)>0.                                         \tag{QF5}
+\]
+
+Thus `a>=1`, so `DG` has nonzero leading term
+`-2Ag'(q)p^(N+1)`. Applying (QF4) to this leading term, the condition
+`C3DG=0` would imply
+
+\[
+3(a-1)=(N-1)(m-2).                                       \tag{QF6}
+\]
+
+Subtracting (QF5) from (QF6) gives `-3=m-2`, contradicting `m>=3`.
+This proves that the common kernel of `C3` and `C3D` has momentum
+degree at most two, in **all** polynomial degrees, independently of
+`V`. For momentum degree two, (QF4) specializes to `-12Au''g'`,
+so the coefficient of `p^2` must be constant. This proof uses polynomial
+leading degrees, not any finite numerical cutoff.
+
+## The exact six-dimensional depth-two space
+
+In the independent polynomial variables `(q,Q)`, the exact operators are
+
+\[
+D=-2AQ\partial_q+V'\partial_Q,
+\qquad
+C_3=(2AQ u'''+V''')\partial_Q^3
+             -6Au''\partial_q\partial_Q^2.                \tag{QF7}
+\]
+
+Take an element passing depths zero, one, and two. By the preceding
+argument, write
+
+\[
+G=cQ^2+b(q)Q+f(q),\qquad c\in K.
+\]
+
+The coefficient of `Q^2` in `DG` is `-2Ab'`. Since `DG` has
+momentum degree at most two, its third gate is simply `-12Au''`
+times the derivative of that coefficient. The condition `C3DG=0`
+therefore gives `b''=0`, so `b=alpha q+beta`.
+
+The coefficient of `Q` in `DG` is `-2Af'+2cV'`. Applying `C3` to
+`D^2G` consequently gives the final condition
+
+\[
+f'''=(c/A)V'''.
+\]
+
+Integrating within the polynomial ring proves the inclusion in
+
+\[
+S_H=\operatorname{span}\{1,H,q,Q,q^2,qQ\}.                \tag{QF8}
+\]
+
+Conversely, direct use of (QF7) shows every displayed basis vector passes
+the first three tests. For example the two derivatives of `qQ` have
+momentum degrees two and one, respectively, with constant quadratic
+coefficient at the first step; `H` is stationary. The six basis vectors
+are independent because only `H` has a nonzero `Q^2` term. Thus
+
+\[
+\boxed{\ker C_3\cap\ker(C_3D)\cap\ker(C_3D^2)=S_H.}        \tag{QF9}
+\]
+
+For any `R>=2`, the space passing depths zero through `R` is exactly
+
+\[
+S_H\cap D^{-1}S_H\cap\cdots\cap D^{-(R-2)}S_H,            \tag{QF10}
+\]
+
+because membership of `D^jG` in `S_H` is precisely the block of
+three gate tests at depths `j,j+1,j+2`.
+
+## Nonlinear residual potentials force collapse
+
+Write an arbitrary element of `S_H` as a Hamiltonian multiple and a
+constant plus
+
+\[
+G=(\alpha q+\beta)Q+a q^2+bq.
+\]
+
+Its derivative, modulo the already included Hamiltonian multiple, is
+
+\[
+DG=-2\alpha H-2A(2aq+b)Q+
+ \bigl(2\alpha V+(\alpha q+\beta)V'\bigr).                 \tag{QF11}
+\]
+
+It belongs to `S_H` exactly when the last parenthesis is quadratic in
+`q`. If `n=deg V>=3`, its leading coefficient is
+`alpha(n+2)V_n`, so `alpha=0`.
+
+If `n>=4`, the remaining degree `n-1` coefficient is `beta nV_n`,
+so `beta=0`. After one preimage step only `1,H,q,q^2` remain. Their
+derivatives have `qQ,Q` coefficients `-4Aa,-2Ab`; the next preimage
+step forces `a=b=0`. Equation (QF10) therefore gives depth four.
+
+If `n=3`, one preimage step forces `alpha=0`. The next forces `a=0`,
+since the `qQ` coefficient of (QF11) is `-4Aa`. The third forces
+`beta=0`, since the `q^2` coefficient of (QF11) is `3 beta V_3`.
+The fourth forces `b=0`, since its `Q` coefficient is `-2Ab`.
+The successive dimensions are `6,5,4,3,2`; (QF10) gives depth six.
+In either case only `1,H` remain. They always belong to the full core.
+
+If `deg V<=2`, `S_H` is the quadratic polynomial sector in `(q,Q)`
+and is invariant under `D`. It is killed by every odd gate: the third
+by (QF7), all orders at least five because both `H` and every member
+have original momentum degree at most two. Thus depth two already gives
+the full six-dimensional core. This proves (QF1) and sufficiency in
+(QF2).
+
+## Sharp witnesses and exact failure formulas
+
+For `deg V<=2`, the cubic `q^3` passes depths zero and one but
+
+\[
+C_3D^2q^3=-288A^3u''\ne0.                                \tag{QF12}
+\]
+
+For every potential, `q` passes depths zero through three and
+
+\[
+C_3D^4q=96A^4u''V''''.                                   \tag{QF13}
+\]
+
+This is nonzero exactly when `deg V>=4`, proving sharp depth four.
+For cubic potentials, `q` passes depths zero through five and
+
+\[
+C_3D^6q=-960A^5u''(V''')^2\ne0.                           \tag{QF14}
+\]
+
+Thus depth six is necessary for every cubic residual potential, even
+though the full core has dimension only two. These identities are in the
+original flat Moyal structure; the transformed variables merely shorten
+the polynomial calculation.
+
+## Exact decision and independently replayable certificates
+
+The closed classification already decides every input in scope. The code
+also computes and certifies the answer by rational linear algebra inside
+the proved six-dimensional upper space `S_H`. Start with that space
+(which passes depths zero through two by QF9) and iterate
+
+\[
+K_{j+1}=\{G\in K_j:DG\in K_j\}.                            \tag{QF15}
+\]
+
+Every polynomial output is retained, including all terms outside `S_H`.
+A strict step decreases dimension. At equality the space is `D` invariant
+and killed by all gates, hence contained in the dynamic core. Conversely,
+(QF9) places the full core in `S_H`, and invariance places it in every
+stage. Thus the stabilized space equals the all-degree core.
+
+The certificate records each stage basis, the original Hamiltonian,
+recovered completion of square, final basis, exact derivation closure
+matrix, and sharp depth. The checker independently recovers the initial
+six-dimensional space, checks its three gate tests, and replays the rank
+of `[D K_j | -K_j]` at every descent. Its nullity is the entire preimage
+dimension. Membership and derivative membership are verified by augmented
+ranks; the final closure identities certify the lower inclusion. The
+checker uses the separate PBW engine and its own fraction elimination,
+not the producer's Gaussian elimination. The universal upper bound rests
+on (QF4)–(QF9), never numerical stabilization.
+
+\clearpage
+
+# Quadratic shears with nonlinear residual potentials: the remaining constant-quadratic stratum
+
+Let `Q=p+u(q)`, `deg u=2`, and let
+
+\[
+H=AQ^2+V(q),\qquad A\ne0,
+\qquad V\in K[q],\quad\deg V\ge3,
+\]
+
+over a characteristic-zero field, using the original flat Weyl–Moyal
+product in `(q,p)`.
+
+**Theorem QR.** The full polynomial dynamic core is
+
+\[
+\boxed{\mathcal D_\infty(H)=\operatorname{span}\{1,H\}.}     \tag{QR1}
+\]
+
+Only the third gate is needed, with the sharp depths
+
+\[
+\boxed{\mathcal D_\infty(H)=
+\bigcap_{r=0}^{R}\ker(C_3D^r),\qquad
+R=\begin{cases}6,&\deg V=3,\\4,&\deg V\ge4.\end{cases}}    \tag{QR2}
+\]
+
+These are all-degree results, not extrapolations from bounded polynomial
+spaces. Together with QC and the oscillator theorem, QR completes every
+constant-quadratic Hamiltonian `A p^2+B(q)p+C(q)` with `deg B=2`.
+Together with QF, all such Hamiltonians with `deg B>=2` are classified.
+
+## Residual degree at least four
+
+In the independent polynomial variables `(q,Q)`, the exact operators are
+
+\[
+D=-2AQ\partial_q+V'\partial_Q,\qquad
+C_3=V'''\partial_Q^3-6Au''\partial_q\partial_Q^2,            \tag{QR3}
+\]
+
+where `u''` is a nonzero constant. Suppose a polynomial `G` has top
+`Q` term `g(q)Q^N`, with `N>=3`. The coefficient of `Q^(N-2)`
+in `C3G=0` forces `g'=0`. Let `h(q)` be the coefficient of
+`Q^(N-1)`. The next coefficient then gives
+
+\[
+h'=\frac{N V'''g}{6Au''}.
+\]
+
+The leading `Q^N` coefficient of `DG` is `-2Ah'`, which is nonzero.
+The leading equation `C3DG=0` forces its derivative to vanish, giving
+`V''''g=0`. This is impossible when `deg V>=4`. Thus the joint
+kernel of `C3,C3D` has `Q` degree at most two. Its quadratic coefficient
+is constant because `u''!=0`.
+
+The depth-two kernel is the six-dimensional space `S_H` defined in (QF8).
+The proof of (QF9) applies verbatim. Its two successive `D` preimages
+remove first `qQ,Q` and then `q^2,q`, since `deg V>=4`.
+This proves (QR1) and depth-four sufficiency in this stratum. The exact
+identity
+
+\[
+C_3D^4q=96A^4u''V''''\ne0,
+\qquad C_3D^rq=0\quad(0\le r\le3)                       \tag{QR4}
+\]
+
+proves sharpness.
+
+## Cubic residual: rational normalization
+
+Write `u=bq^2+cq+d`, `b!=0`, and
+`V=vq^3+v_2q^2+v_1q+v_0`, `v!=0`. Translate
+`q=x-v_2/(3v)` to remove the quadratic term of `V`, and use an affine
+shear in `p` to remove the resulting linear and constant terms of `u`.
+These are affine canonical transformations, so the flat Moyal gates are
+covariant. Up to a constant the resulting Hamiltonian is
+
+\[
+A(p+bq^2)^2+vq^3+eq,
+\qquad e=v_1-v_2^2/(3v).
+\]
+
+Now substitute `q=sx,p=ty`, with
+
+\[
+s=\frac{v}{Ab^2},\qquad t=bs^2,
+\]
+
+and divide the Hamiltonian by `At^2`. The normalized form is
+
+\[
+\boxed{H_\lambda=(p+q^2)^2+q^3+\lambda q,
+\qquad \lambda=\frac{eA^2b^4}{v^3}.}                     \tag{QR5}
+\]
+
+All scales are nonzero elements of the coefficient field. The retained
+`GL2` covariance of transvectants, together with nonzero Hamiltonian
+rescaling and constant shifts, preserves every vanishing gate condition
+and its bracket depth. Thus no algebraic extension or parameter exclusion
+is hidden in this reduction.
+
+In `(q,Q)` coordinates the normalized operators are
+
+\[
+D=-2Q\partial_q+(3q^2+\lambda)\partial_Q,
+\qquad C_3=6\partial_Q^3-12\partial_q\partial_Q^2.           \tag{QR6}
+\]
+
+## An all-degree bound for the depth-two kernel
+
+Give `q,Q` weights `1,2`, respectively. The top operators are
+
+\[
+D_0=-2Q\partial_q\quad(\text{shift }1),\qquad
+C_0=-12\partial_q\partial_Q^2\quad(\text{shift }-5).
+\]
+
+Their joint kernel through depth two is
+
+\[
+K[Q]+\operatorname{span}\{q,qQ,q^2\}.                     \tag{QR7}
+\]
+
+Indeed, `C0 D0^r` sends each `q^aQ^c` to one monomial with coefficient
+proportional to `(a)_(r+1)(c+r)_2`. At `r=0,1,2` these conditions leave
+exactly the displayed monomials, and distinct inputs have distinct images
+for each fixed `r`.
+
+Consequently, a polynomial passing `C3D^r` for `r=0,1,2` and having
+weighted degree greater than six would have top `c Q^N`, `N>=4`.
+Normalize `c=1`. Let `G1` be its component of weight `2N-1`.
+The gate component of weight `2N-6` is
+
+\[
+C_0G_1+6\partial_Q^3Q^N=0.
+\]
+
+Since `C0` is monomially injective on all monomials with positive
+`q` degree and `Q` degree at least two, this forces
+
+\[
+G_1=\frac N2qQ^{N-1}+\beta q^{2N-1}+\gamma q^{2N-3}Q.      \tag{QR8}
+\]
+
+In particular, the correction `q^3Q^(N-2)` is forbidden when `N>=4`.
+The term `lambda partial_Q` has shift `-2`, so it does not enter
+this first-deficit calculation.
+
+The top nonzero component of `DG` has weight `2N`, and is
+
+\[
+-NQ^N-2(2N-1)\beta q^{2N-2}Q
+-2(2N-3)\gamma q^{2N-4}Q^2+3Nq^2Q^{N-1}.
+\]
+
+Applying `C0`, the final term contributes
+
+\[
+-72N(N-1)(N-2)qQ^{N-3}.
+\]
+
+It cannot cancel: the first two terms have zero gate, and the third
+produces a monomial of `Q` degree zero, whereas `N-3>=1`.
+This contradicts `C3DG=0`. Therefore the full depth-two kernel has
+weight at most six, in all polynomial degrees.
+
+The finite ambient space is consequently
+
+\[
+B_6=\operatorname{span}\{q^iQ^j:i+2j\le6\},\qquad\dim B_6=16.
+                                                                    \tag{QR9}
+\]
+
+This is a proved bound. The exceptional cubic `N=3` is intentionally
+retained and is handled by the exact finite certificate below.
+
+## Exact parameter-polynomial rank certificate
+
+Inside `B6`, form the full-output matrix of `C3D^r`, `r=0..6`.
+Delete the columns `1,Q^2`; the remaining fourteen columns are
+
+\[
+\{q^iQ^j:i+2j\le6\}\setminus\{1,Q^2\}.
+\]
+
+Select the fourteen rows `(r,i,j)` recorded in the certificate:
+
+\[
+\begin{gathered}
+(0,0,0),(0,1,0),(1,0,0),(1,1,0),(1,2,0),\\
+(2,0,0),(2,1,0),(2,2,0),(2,3,0),\\
+(3,0,0),(3,1,0),(4,0,0),(5,0,0),(6,0,0).
+\end{gathered}
+\]
+
+Here `(i,j)` is the output monomial exponent pair in `(q,Q)`.
+Their minor determinant is the nonzero constant polynomial
+
+\[
+-2489071056189074244411853807879968522240000000.           \tag{QR10}
+\]
+
+The independent standard-library checker verifies this as an **exact
+polynomial identity**. Since `D=D_a+lambda partial_Q` and `C3` is
+independent of `lambda`, every depth-`r` matrix entry has parameter
+degree at most `r`. The determinant therefore has degree at most the
+sum of its row depths, namely `32`. The checker recomputes the minor
+and its exact rational determinant at the thirty-three distinct integers
+`0..32`, obtaining the stated constant each time. A polynomial of degree
+at most `32` with thirty-three roots is zero. This proves (QR10) for
+every parameter, rather than inferring universality from sampled ranks.
+All outputs are retained; none are projected into `B6`.
+
+The full matrix therefore has rank at least fourteen for every `lambda`.
+Its sixteen-dimensional domain contains the independent kernel vectors
+`1,H_lambda`, so the rank is exactly fourteen and its kernel exactly
+their span. Together with the proved bound (QR9), this establishes the
+all-degree core and depth-six sufficiency.
+
+## Sharp cubic depth and verification scope
+
+For every cubic `V`, direct exact differentiation gives
+
+\[
+C_3D^rq=0\quad(0\le r\le5),\qquad
+C_3D^6q=-960A^5u''(V''')^2\ne0.                           \tag{QR11}
+\]
+
+Thus depth six is necessary for every Hamiltonian in the cubic stratum,
+including all lower coefficients. The code checks QR3 against the separate
+original-coordinate PBW engine, and verifies QR4 and QR11 on eighteen
+rational fixtures, including shifted shears, negative and rational
+coefficients, general cubic potentials, and higher residual degrees.
+It rejects corrupted minors, constants, parameter degree bounds, and
+insufficient interpolation populations.
+
+The theorem is about the fixed original flat Weyl product. It does not
+claim arbitrary nonlinear covariance or historical priority. The finite
+matrix is used only after an all-degree bound has been proved, and its
+parameter universality is an exact bounded-degree polynomial identity.
+
+\clearpage
+
+# Affine shears with arbitrary polynomial potential
+
+Use the fixed original flat Weyl product and the sign convention
+`D={H,.}=H_q partial_p-H_p partial_q`. The coefficient field `K` has
+characteristic zero. Put `C_3=T_3(H,.)` and let `R_r` be the joint
+kernel of `C_3D^j`, `0<=j<=r`, on the full polynomial ring. No finite
+observable degree is imposed in the statements below.
+
+**Theorem AFP.** Let
+
+\[
+Q=p+u(q),\qquad \deg u\le1,\qquad
+H=AQ^2+V(q),\qquad A\ne0,
+\]
+
+where a zero `u` is also allowed. If `deg V<=2`, the original
+Hamiltonian is quadratic and its dynamic core is all of `K[q,p]`.
+If `deg V=3`, then
+
+\[
+\boxed{\mathcal D_\infty(H)=R_7=\operatorname{span}_K\{1,H\}.}
+                                                               \tag{AFP1}
+\]
+
+If `deg V>=4`, then
+
+\[
+\boxed{\mathcal D_\infty(H)=R_5=\operatorname{span}_K\{1,H\}.}
+                                                               \tag{AFP2}
+\]
+
+The displayed third-gate stopping depths are sharp for every
+Hamiltonian in their respective strata. This is a classification
+within the stated affine-shear family; historical priority is not
+established.
+
+## Exact strip reduction
+
+The affine symplectic substitution `(q,p)->(q,Q)` gives exactly
+
+\[
+D=-2AQ\partial_q+V'(q)\partial_Q,
+\qquad C_3=V'''(q)\partial_Q^3.                         \tag{AFP3}
+\]
+
+The same identities also follow by direct differentiation in the
+original variables. Suppose `deg V>=3`, so `V'''` is a nonzero
+polynomial. Since `K[q,Q]` has no zero divisors, `C_3G=0` forces
+
+\[
+G=c(q)Q^2+b(q)Q+f(q).
+\]
+
+The next equations can be read successively from the cubic
+coefficient in `Q`. First,
+
+\[
+C_3DG=-12A V'''c',
+\]
+
+so `c` is constant. Under this condition,
+
+\[
+C_3D^2G=24A^2 V'''b'',
+\]
+
+so `b` is affine. Under these two conditions,
+
+\[
+C_3D^3G=48A^2V'''(cV'''-Af''').                        \tag{AFP4}
+\]
+
+Therefore `f=(c/A)V+f_2`, where `deg f_2<=2`. Conversely each
+polynomial of this form passes the four tests through depth three.
+Thus the entire all-degree intermediate space is
+
+\[
+R_3=S=\operatorname{span}_K\{1,H,q,Q,q^2,qQ\}.          \tag{AFP5}
+\]
+
+This is an exact infinite-ring calculation, rather than a degree
+bound inferred from a matrix.
+
+## Exact invariant-preimage calculation
+
+The nested kernels obey
+`R_(r+1)={G in R_r : DG in R_r}`. Indeed, requiring `DG` to lie in
+`R_r` adds precisely the equations at depths `1,...,r+1` to the
+depth-zero equation. The required brackets on the nonstationary
+generators of `S` are
+
+\[
+\begin{aligned}
+Dq&=-2AQ,& DQ&=V',\\
+Dq^2&=-4AqQ,& D(qQ)&=-2H+W(q),\qquad W=2V+qV'.
+\end{aligned}                                               \tag{AFP6}
+\]
+
+The purely `q`-dependent polynomials in `S` are exactly
+`span{1,q,q^2}`. A polynomial cannot use a nonzero multiple of `H`
+to represent a pure `q` function, since that would leave a nonzero
+`Q^2` coefficient.
+
+If `n=deg V>=4`, then `deg W=n` and `deg V'=n-1>=3`.
+Their leading degrees are distinct, so no nontrivial linear
+combination of `W` and `V'` can lie in `span{1,q,q^2}`. Equation
+(AFP6) therefore gives
+
+\[
+R_4=\operatorname{span}\{1,H,q,q^2\},\qquad
+R_5=\operatorname{span}\{1,H\}.                         \tag{AFP7}
+\]
+
+In the second step the independent outputs `Q` and `qQ` exclude
+`q` and `q^2` respectively.
+
+If `n=3`, `W` has degree three while `V'` is a genuine quadratic.
+The successive exact spaces are instead
+
+\[
+\begin{aligned}
+R_4&=\operatorname{span}\{1,H,q,Q,q^2\},\\
+R_5&=\operatorname{span}\{1,H,q,Q\},\\
+R_6&=\operatorname{span}\{1,H,q\},\\
+R_7&=\operatorname{span}\{1,H\}.
+\end{aligned}                                               \tag{AFP8}
+\]
+
+The first step excludes `qQ` by its uncancellable cubic output.
+The next excludes `q^2` by its `qQ` output, then `Q` by its
+quadratic output, then `q` by its `Q` output. The surviving span
+is stationary and every odd gate kills it by antisymmetry.
+Consequently it is exactly the full dynamic core, proving
+(AFP1)--(AFP2). Higher gates are not needed for either stopping
+rule.
+
+## Uniform sharpness
+
+For `deg V>=4`, direct iteration gives
+
+\[
+C_3D^jq=0\quad(0\le j<5),\qquad
+C_3D^5q=96A^4 V'''V''''\ne0.                           \tag{AFP9}
+\]
+
+The first four iterates have `Q` degree at most two; the cubic
+coefficient in the fifth is `16A^4 V''''`. Both derivatives in
+(AFP9) are nonzero polynomials, so their product is nonzero.
+
+For a cubic potential, write `k=V'''`, a nonzero constant. The
+same witness survives two more steps:
+
+\[
+C_3D^jq=0\quad(0\le j<7),\qquad
+C_3D^7q=-960A^5k^3\ne0.                                \tag{AFP10}
+\]
+
+For clarity, the fifth iterate is
+`-8A^3[(V'')^2+3kV']Q`; the sixth has quadratic coefficient
+`80A^4 k V''`; the seventh therefore has cubic coefficient
+`-160A^5 k^2`. Applying `C_3=k partial_Q^3` proves the constant
+in (AFP10). Thus the claimed stopping depths are necessary for
+every allowed potential, including arbitrary lower coefficients.
+
+## Recognition and replay
+
+For an input polynomial `H=A p^2+B(q)p+C(q)` with constant
+`A!=0`, completing the square uniquely gives
+`u=B/(2A)` and `V=C-Au^2`. The AFP recognizer succeeds precisely
+when `deg u<=1`. It then returns the entire ring when `deg V<=2`,
+or `span{1,H}` with sharp depth seven or five in the two higher
+strata. Inputs outside the route return no classification.
+
+`affine_shear_potentials.py` checks original-coordinate operators,
+all conditional strip identities, the all-parameter witness
+constants, exact intermediate kernel dimensions, and recognition
+boundaries using standard-library rational arithmetic. Finite
+matrices retain every output coordinate; the proof above establishes
+the claims in all polynomial degrees. The replay receipt is
+`affine_shear_potentials_results.json`.
+
+\clearpage
+
+# Deformation obstructions and a genuine torsion module of exact observables
+
+This note supplies an obstruction theory with an explicit all-degree
+calibration. It uses the fixed original flat Weyl product. It does not
+define a new Nijenhuis or Haantjes tensor. The cokernel and Smith module
+below are ordinary algebraic constructions; their application to lifting
+exact Hamiltonian sectors is the claim being developed here. Historical
+priority is not established.
+
+## Finite stopping operators and lifting classes
+
+Let `P` be an observable vector space over a characteristic-zero field
+`K`, let `t` be a formal parameter, and let `H_t` be a family. Suppose a
+proved finite stopping rule identifies exact persistence in this family
+with the kernel of
+
+\[
+ L_t:P[[t]]\longrightarrow Y[[t]],\qquad
+ L_t=\sum_{i\ge0}t^iL_i.                                      \tag{DO1}
+\]
+
+The target `Y` is a finite direct sum of full polynomial output spaces,
+one for each retained gate and Hamiltonian depth. Outputs are not
+projected into the candidate input space. If the stopping theorem is
+only known over `K(t)`, its extension to `P[[t]]` must be justified; it
+must not be inferred merely from pointwise numerical stabilization.
+
+Given `G_0,...,G_(n-1)` with `L_t sum_(j<n)t^jG_j=0 mod t^n`, put
+
+\[
+ b_n=-\sum_{i=1}^nL_iG_{n-i},\qquad
+ \operatorname{ob}_n=[b_n]\in\operatorname{coker}L_0.             \tag{DO2}
+\]
+
+The jet extends through order `n` exactly when `ob_n=0`: its only new
+equation is `L_0G_n=b_n`. A solution `G_n` is a primitive for this
+linear equation; a functional `ell` with `ell L_0=0` and `ell(b_n)!=0`
+is an independently checkable obstruction. At orders above one the
+class is generally relative to the preceding jet. Independence from
+lower-jet choices requires a separate argument, supplied below in the
+calibration. No differential with square zero is asserted or needed.
+
+The construction has an elementary naturality law. Under invertible
+formal source and target changes `T_t,S_t`, replace
+`L_t` by `L'_t=S_tL_tT_t^(-1)` and the lower jet by the corresponding
+jet of `T_tG_t`. Then `ob_n` maps to `S_0 ob_n` in the naturally
+identified cokernel. Indeed, multiplying a residual starting in order
+`n` by `S_t` changes its leading coefficient by `S_0`; truncating the
+transformed source jet changes that coefficient only by `L'_0` of a
+source correction. Thus solvability and a nonzero obstruction are
+independent of bases. Affine symplectic coordinate changes in the
+original flat Weyl convention are admissible source/output changes.
+Arbitrary nonlinear substitutions with the flat product retained are
+not automatically admissible.
+
+In a finite polynomial parameter problem, `L_t` becomes a matrix over
+`K[t]`. Its cokernel can have actual module torsion. Smith factors then
+measure delayed formal lifting failure. This is stronger than recording
+only the dimension of a specialized kernel. A finite input restriction
+alone never establishes an all-degree obstruction; the coefficient
+functionals in the next theorem do.
+
+## A complete lifting theorem at the quartic oscillator boundary
+
+Put
+
+\[
+ Q=p+q^2,\qquad H_t=Q^2+\frac t2q^2,
+ \qquad V=\operatorname{span}_K\{1,q,Q,q^2,qQ,Q^2\}.             \tag{DO3}
+\]
+
+Here the letter `V` denotes the six-dimensional observable space, not
+an additive potential. In the polynomial coordinate ring `K[q,Q]`,
+
+\[
+ D_t=-2Q\partial_q+tq\partial_Q=D_0+tD_1,
+ \qquad C_3=-12\partial_q\partial_Q^2=:C.                      \tag{DO4}
+\]
+
+These are exact rewritings of the original-coordinate operators, not a
+replacement of the original flat Moyal product. The Hamiltonian has
+degree four in `(q,p)`, so all odd gates above `C3` vanish identically.
+Use
+
+\[
+ L_tG=(CG,CD_tG,CD_t^2G,CD_t^3G).                             \tag{DO5}
+\]
+
+For this family the oscillator theorem gives a uniform depth-three
+stopping rule. At `t=0` the sharper depth-two rule follows directly
+from the monomial computation below. The proof here also establishes
+the lifting assertions without assuming a formal extension of a
+pointwise stopping theorem: necessity uses only (DO5), first-order
+sufficiency uses the explicit derivative identity in (DO9), and every
+surviving second-order initial element has a constant exact lift in `V`.
+
+**Theorem DO.** At `t=0`,
+
+\[
+ \mathcal D_\infty(H_0)=K[Q]+\operatorname{span}_K\{q,qQ,q^2\}.
+                                                                    \tag{DO6}
+\]
+
+Consider any `G_0` in this initial core. Corrections at each order are
+allowed to be arbitrary polynomials, with no common degree bound.
+
+* A first-order exact jet `G_0+tG_1` exists precisely when
+  `G_0 in V+KQ^3`, a seven-dimensional space.
+* A second-order exact jet `G_0+tG_1+t^2G_2` exists precisely when
+  `G_0 in V`.
+* A full formal exact lift exists precisely when `G_0 in V`; a constant
+  lift already works there.
+
+The extra cubic passes the first lifting step but has a choice-independent
+second-order obstruction. The homogeneous cubic gate matrix has Smith
+invariant factors `1,1,1,t^2`, so its cokernel is `K[t]/(t^2)`.
+
+### Initial core and the protected exact lifts
+
+For every monomial,
+
+\[
+ CD_0^r(q^aQ^c)
+ =-12(-2)^r(a)_r(a-r)(c+r)_2
+      q^{a-r-1}Q^{c+r-2}.                                  \tag{DO7}
+\]
+
+A term with a zero coefficient is omitted before interpreting its
+exponents. For fixed `r`, nonzero monomial images are distinct.
+The simultaneous kernel for `r=0,1,2` is exactly (DO6): `a=0` permits
+every `Q^c`; with `a>0`, the only survivors are `q,qQ,q^2`.
+This proves (DO6) directly, including all input degrees. Each polynomial
+in `V` has total degree at most two in `(q,Q)`, is killed by `C`, and
+`D_t` preserves that total degree. Therefore `V` consists of exact
+observables for every `t` and supplies constant formal lifts.
+
+### First-order obstructions in every higher tower degree
+
+It suffices to start with `G_0=f(Q)`, since the remaining protected
+directions have constant lifts. The static first-order condition is
+`CG_1=0`, whence
+
+\[
+ G_1=a(q)+Qb(q)+g(Q).
+\]
+
+The coefficient of `t` in `CD_t(G_0+tG_1)` is
+
+\[
+ 48b''(q)-12f'''(Q).                                      \tag{DO8}
+\]
+
+This vanishes only when `f'''` is constant. Thus `deg f<=3`, without
+any degree restriction on the correction `G_1`. Conversely, the cubic
+has the first-order lift
+
+\[
+ \widehat G_t=Q^3+\frac34tq^2Q,
+ \qquad D_t\widehat G_t=\frac34t^2q^3,
+ \qquad L_t\widehat G_t=(0,0,0,-432t^2).                    \tag{DO9}
+\]
+
+The derivative identity proves that every further iterate has order
+at least two in `t`, so this is a first-order jet for the complete
+dynamic-core definition, not just for the four retained tests. This
+proves the seven-dimensional first-order statement. For an
+explicit dual certificate, if `n>=4` define on four polynomial outputs
+
+\[
+ \ell_n(y)= [Q^{n-3}]y_1+
+       \frac{2(n-1)}{n-3}[qQ^{n-4}]y_0.                   \tag{DO10}
+\]
+
+For every polynomial `X`, `ell_n(L_0X)=0`. Only the input monomial
+`q^2Q^(n-2)` can contribute to either extracted coefficient; its two
+coefficients are `48(n-1)(n-2)` and `-24(n-2)(n-3)`, which cancel.
+For the first-order target of `Q^n`, however,
+
+\[
+ \ell_n(-L_1Q^n)=12n(n-1)(n-2)\ne0.                      \tag{DO11}
+\]
+
+The functional is valid on the entire polynomial output space. It is
+not a certificate derived from a truncated kernel search.
+
+### The cubic fails at second order, independently of the first lift
+
+Every first correction to `Q^3` is
+`G_1=(3/4)q^2Q+Z`, where `Z in ker L_0`, hence `Z` lies in (DO6).
+The coefficient of `t` in `CD_t^3Z` is zero for every such `Z`.
+It vanishes on `V` because all of `V` is protected. For `Z=f(Q)`, the
+only potentially nonzero term is `CD_0^2D_1f`, and
+`D_0^2(qf')=0`. This proves independence from the first-lift choice.
+
+By (DO9), the third-depth output has residual `-432t^2`. On the other
+hand `CD_0^3X` is divisible by `Q` for every polynomial `X`: applying
+`D_0^3` introduces `Q^3`, and `C` removes at most two `Q` factors.
+Consequently constant-coefficient extraction in the third-depth
+output annihilates `L_0X`, but evaluates the residual to `-432`.
+No polynomial second correction can remove it. Multiplying by the
+initial cubic coefficient proves the second-order assertion for all
+initial observables. The protected constant lifts then prove the full
+formal statement.
+
+### An exact Smith certificate for the delayed cubic obstruction
+
+On homogeneous cubics, the full output at each depth is a constant in
+`q,Q`; thus no output is discarded. In the source basis
+`(q^3,q^2Q,qQ^2,Q^3)`, (DO5) is
+
+\[
+ M(t)=\begin{pmatrix}
+ 0&0&-24&0\\
+ 0&96&0&-72t\\
+ -576&0&336t&0\\
+ 0&-1920t&0&1008t^2
+ \end{pmatrix}.                                          \tag{DO12}
+\]
+
+Let `x=(x_a,x_b,x_c,x_d)` be source coordinates and let `y=Mx`.
+Invertible polynomial target operations give
+
+\[
+ \left(-\frac{y_0}{24},
+ -\frac{y_2+14ty_0}{576},
+ \frac{y_1}{96},
+ -\frac{y_3+20ty_1}{432}\right)
+ =\left(x_c,x_a,x_b-\frac34tx_d,t^2x_d\right).             \tag{DO13}
+\]
+
+The source change `(x_c,x_a,x_b-(3/4)tx_d,x_d)` is also invertible over
+`K[t]`. Hence (DO13) is the Smith form `diag(1,1,1,t^2)`. The checker
+stores both transformation matrices and both polynomial inverses,
+then replays all matrix products and recomputes `M` from the gate
+operators. It also rejects an edited matrix. The literal module
+torsion records the two-stage failure of the extra cubic; it is not a
+claim that the existing notion of algebraic torsion is new.
+
+## The entire graded torsion module
+
+The cubic is the only degree with a delayed second-order obstruction.
+The observation map also gives a complete infinite graded module
+classification. Let `P_n=K[q,Q]_n` be the homogeneous degree-`n` space.
+For `n>=3`, use the explicitly declared presentation
+
+\[
+ M_n(t):K[t]\otimes P_n\longrightarrow
+       \big(K[t]\otimes P_{n-3}\big)^4,
+ \qquad G\longmapsto (CG,CD_tG,CD_t^2G,CD_t^3G).             \tag{DO14}
+\]
+
+Each target summand retains every monomial of output degree `n-3`.
+The target is assigned grade `n`; this compensates for the operator's
+degree shift. Source degrees at most two have zero target and do not
+contribute to the cokernel under this convention.
+
+**Corollary GT.** Over any characteristic-zero field `K`,
+
+\[
+ \operatorname{coker}M_3\cong K[t]/(t^2),\qquad
+ \operatorname{coker}M_n\cong
+ K[t]^{3n-9}\oplus K[t]/(t)\quad(n\ge4).                    \tag{DO15}
+\]
+
+Consequently, for the graded direct-sum map in (DO14),
+
+\[
+ \boxed{\operatorname{Tor}_{K[t]}\operatorname{coker}L
+  \cong \big(K[t]/(t^2)\big)_{\mathrm{grade}\ 3}
+       \oplus\bigoplus_{n\ge4}
+                 \big(K[t]/(t)\big)_{\mathrm{grade}\ n}.}    \tag{DO16}
+\]
+
+**Proof.** The cubic case is the explicit Smith certificate. For
+`n>=4`, (DO7) shows `ker M_n(0)=KQ^n`, so the rank at zero is `n`.
+For any nonzero scalar `t`, including over an algebraic closure, the
+static kernel in degree `n` has basis
+`q^n,q^(n-1)Q,Q^n`. The next gate sends the latter two elements to
+
+\[
+ CD_t(q^{n-1}Q)=48(n-1)(n-2)q^{n-3},\qquad
+ CD_t(Q^n)=-12tn(n-1)(n-2)Q^{n-3}.                           \tag{DO17}
+\]
+
+Their outputs are independent because `n>=4`. Their coefficients
+must therefore vanish. The remaining direction is removed by
+
+\[
+ CD_t^2(q^n)=-96n(n-1)(n-2)q^{n-3}\ne0.                    \tag{DO18}
+\]
+
+Thus `M_n(t)` has full column rank `n+1` at every nonzero parameter.
+Smith normal form over the PID `K[t]` exists. Every nonunit invariant
+factor can have roots only at zero, since any other root over the
+algebraic closure would produce a rank drop there. The rank drop at
+zero is exactly one, hence the invariant factors consist of `n`
+units and a single `t^e`, up to units, with `e>=1`.
+
+If `e>=2`, the Smith source change would give a polynomial first-order
+lift of a nonzero vector spanning `ker M_n(0)=KQ^n`: choose the last
+Smith coordinate constant and the unit coordinates zero. Its residual
+would be divisible by `t^2`. But (DO10)--(DO11) exclude such a lift.
+Therefore `e=1`. The free cokernel rank is the number of target rows
+minus columns, `4(n-2)-(n+1)=3n-9`. This proves (DO15) and taking the
+graded direct sum proves (DO16).
+
+This is a classification of ordinary algebraic torsion for the
+specified finite-depth observation presentation. Its free summands
+depend on the declared target. Invertible source and target changes
+preserve its Smith factors; no invariance under undeclared changes
+of the gate presentation or nonlinear flat-product substitution is
+asserted. The all-degree lifting theorem above is independent of a
+candidate degree cutoff and independently confirms the two distinct
+obstruction orders represented in (DO16).
+
+## Verification and boundary
+
+Run `python3 -B research/core_overlap/deformation_obstructions.py`.
+The checker uses exact standard-library rational polynomial arithmetic
+in `(q,Q,t)`, checks the Smith certificates without elimination, verifies
+the universal-order symbolic identities and finite calibrations, and
+compares 400 original-chart gate/iterate calculations using the separate
+sparse transvectant engine. All polynomial outputs are retained.
+In degrees four through nine it constructs and replays rectangular
+Smith certificates with polynomial inverses; complete certificates for
+degrees four and six are retained in the receipt. The proof above,
+rather than these finitely many matrices, establishes (DO16).
+
+The proof establishes the all-degree assertions. Neither the finite
+calibrations nor the cubic Smith matrix alone proves absence of
+higher-degree corrections; that follows from (DO8), (DO10), and the
+divisibility argument. The construction concerns formal exact
+observables, not convergence of a formal lift, Hilbert-space operator
+domains, or a new geometric tensor.
+
+\clearpage
+
 # Exact observable closure inside the six-dimensional shear-square core
 
 Take Theorem SS with `Q=p+u(q)`, `deg(u)>=3`, and
@@ -700,8 +2302,8 @@ dimension. These are minimal closure dimensions, not a claim about every
 possible sensing model or noisy measurement design.
 
 `audit_sector_dynamics.py` checks the matrix, closed forms, ranks and target
-dimensions exactly. It also feeds the transposed matrix into the existing
-`extensions/observer/observation_closure_reference.py` compiler and replays
+dimensions exactly. It also feeds the transposed matrix into the retained
+observer compiler and replays
 its independent `observer-closure-v1` certificate checker. Transposition is
 essential: that backend acts on target rows and the state consists of basis
 observable values. This is an application of the existing closure machinery,
@@ -1593,6 +3195,302 @@ theorem and explicit family here still require a focused priority check.
 
 \clearpage
 
+# Exact classification of cubic-preserving analytic potentials
+
+This note advances the finite stopping theorems in
+`depth_finite_determination.md` to an explicit classification of the additive
+potential for the algebraic cubic boundary. It uses the original affine
+coordinates, the flat Weyl–Moyal gates, real-analytic coefficients and finite
+degree in `q`. No external-priority claim is made.
+
+Let `I` be a connected open subinterval of `(0,infinity)`, let
+`A=C^omega(I,R)`, and put
+
+\[
+ H=q p^{-1/4}+V(p),\qquad D=\{H,\cdot\},\qquad
+ W=A\oplus qA,
+\]
+
+where `V` is arbitrary in `A` and
+`{H,G}=H_qG_p-H_pG_q`. The dynamic core consists of the elements `G` for
+which every `T_j(H,D^rG)` vanishes, for odd `j>=3` and every `r>=0`.
+
+## The complete potential theorem
+
+**Theorem AP.** Exactly one of the following alternatives holds.
+
+If there are real constants `c0,a,b,c` with
+
+\[
+ \boxed{V(p)=c_0+a p^{-1/4}+b p^{3/4}+c p^{5/2},}       \tag{AP1}
+\]
+
+then
+
+\[
+ \boxed{\mathcal D_\infty(H)
+   =W\oplus\mathbb R\,(H-c_0)^3.}                     \tag{AP2}
+\]
+
+For every other analytic potential, `D_infty(H)=W`. These are equalities
+in all finite `q` degrees, including when `I=(0,infinity)`. The extra
+generator in (AP2) is stationary. The four constants in (AP1) are unique.
+
+The constant shift must be removed before cubing. In general `H^3` is
+not a valid replacement for `(H-c0)^3`: their difference contains
+`3c0(H-c0)^2`, whose quadratic `q` coefficient need not lie in `W` or in
+the core.
+
+In fact the family (AP1) obeys the exact diagnostic
+`T3(H,H^3)=-(45/16)c0 p^(-15/4)`, so a nonzero constant shift makes
+the unshifted cube fail already at its static third gate.
+
+### Highest-degree exclusion
+
+The strip `W` is invariant under `D` and killed by every odd gate of
+order at least three. Suppose that a core element has `q` degree `n>=2`
+and highest coefficient `q^n g(p)`, with `g` nonzero. At the highest
+output degree the potential contributes nothing, so `T3(H,G)=0` forces
+
+\[
+ 3F''g'-(n-2)F'''g=0,\qquad F=p^{-1/4}.
+\]
+
+Consequently `g` is a nonzero constant multiple of
+`p^{-3(n-2)/4}`. The highest coefficient of `DG` is `K_n g`, where
+
+\[
+ K_n=\frac{n-2}{3}\frac{FF'''}{F''}-nF'
+     =\frac{3-n}{2}p^{-5/4}.                            \tag{AP3}
+\]
+
+The equation `T3(H,DG)=0` then forces `K_n'=0`, which is possible only
+for `n=3`. In particular there is no core element of `q` degree two,
+and every core element has degree at most three. This excludes all
+higher degrees directly, without invoking a degree cutoff, a numerical
+kernel, or a fifth-gate completeness theorem.
+
+Normalize the cubic coefficient to `g=p^{-3/4}`. Modulo `W`, any
+additional core element must therefore have the form
+
+\[
+ G=q^3p^{-3/4}+q^2h(p).                                 \tag{AP4}
+\]
+
+Two normalized candidates differ by a core element of degree at most
+two and hence by an element of `W`. Thus the quotient of the core by
+`W` has dimension at most one.
+
+### Necessary and sufficient compatibility equations
+
+Direct third-order differentiation gives
+
+\[
+ T_3(H,G)=6F''h'-6V'''p^{-3/4}.
+\]
+
+The cubic coefficient of `DG` is zero, and its quadratic coefficient is
+
+\[
+ Fh'-2F'h-3V'p^{-3/4}.
+\]
+
+Because the core is invariant under `D` and has no degree-two element
+outside `W`, a persistent cubic necessarily satisfies
+
+\[
+ \boxed{h'=\frac{16}{5}p^{3/2}V''',\qquad
+       ph'+\frac12h=3p^{1/2}V'.}                        \tag{AP5}
+\]
+
+Conversely, these equations imply `T3(H,G)=0` and `DG in W`. Every
+higher odd gate on `G` vanishes because the combined `q` degree of
+`H` and `G` is four. The invariance and exactness of `W` therefore
+prove that `G` belongs to the full dynamic core. Thus (AP5) is
+necessary and sufficient, including for arbitrary analytic `V`.
+
+### Solving the compatibility equation for every analytic potential
+
+The second equation of (AP5), followed by the first, gives
+
+\[
+ h=6p^{1/2}V'-\frac{32}{5}p^{5/2}V'''.                 \tag{AP6}
+\]
+
+Differentiating (AP6) and substituting back into the first equation
+shows that (AP5) is equivalent to
+
+\[
+ \boxed{p^4V''''+3p^3V'''-\frac{15}{16}p^2V''
+                       -\frac{15}{32}pV'=0.}           \tag{AP7}
+\]
+
+This is a regular linear Euler equation on every interval `I` under
+consideration. With `x=log p`, its indicial polynomial is
+
+\[
+ \nu(\nu-1)(\nu-2)(\nu-3)
+ +3\nu(\nu-1)(\nu-2)-\frac{15}{16}\nu(\nu-1)
+ -\frac{15}{32}\nu
+ =\frac{\nu(4\nu+1)(4\nu-3)(2\nu-5)}{32}.            \tag{AP8}
+\]
+
+The four roots are distinct. The complete real-analytic solution
+space is consequently the four-dimensional space in (AP1), not merely
+the span of a collection of tested monomials. Standard uniqueness for
+the regular fourth-order equation extends the local solution throughout
+the connected interval.
+
+The constant is recovered intrinsically by
+
+\[
+ c_0=\frac{32}{15}
+       \left(p^3V'''-\frac{15}{16}pV'+\frac{15}{32}V\right),            \tag{AP9}
+\]
+
+which is constant exactly when (AP7) holds. Equivalently `v=V-c0`
+satisfies the third-order equation
+
+\[
+ v'''-\frac{15}{16}p^{-2}v'
+                      +\frac{15}{32}p^{-3}v=0.         \tag{AP10}
+\]
+
+The subtraction of `c0` in this last equation is essential. Substitution
+in (AP6) now gives
+
+\[
+ h=3\left(a p^{-3/4}+b p^{1/4}+c p^2\right)
+   =3p^{-1/2}(V-c_0).                                  \tag{AP11}
+\]
+
+The cubic and quadratic `q` coefficients of `(H-c0)^3` are exactly
+those in (AP4) and (AP11). Its difference from `G` is in `W`, and it is
+stationary because it is a power of `H-c0`. This proves (AP2), including
+the completeness of both alternatives.
+
+## General cubic-preserving potentials on a regular analytic chart
+
+**Proposition GC.** Let `F,V` be real analytic on a connected interval,
+assume `F''` is nowhere zero, and set
+
+\[
+ K_3=\frac{FF'''}{3F''}-3F'=\lambda\in\mathbb R.
+\]
+
+Choose any nonzero analytic solution `g` of
+`g'/g=F'''/(3F'')`; for example a nonzero constant multiple of the
+real cube root of `F''`. For
+
+\[
+ H=qF+V,\qquad G=q^3g+q^2h+w,\quad w\in W,
+\]
+
+membership of `G` in the full dynamic core is equivalent to
+
+\[
+ \boxed{h'=L_V:=\frac{gV'''}{F''},\qquad
+ Fh'-(2F'+\lambda)h=3gV'.}                              \tag{GC1}
+\]
+
+The proof is the same leading-coefficient computation as above.
+The first equation says `C3 G=0`. The top coefficient of `DG` is
+`lambda g`; therefore the second says `DG-lambda G in W`. This is
+sufficient for every iterate and every gate. For necessity,
+`DG-lambda G` is a core element of degree at most two. Every such
+element is in `W`: a quadratic coefficient is constant by its third
+gate, and the next third gate gives its nonzero multiple of
+`(F'')^2` unless that constant vanishes. Thus (GC1) is also necessary.
+No claim about core elements of higher degree is needed in this
+proposition.
+
+Write `B=2F'+lambda`. On a **regular chart** where `F B` is nowhere
+zero, (GC1) is a regular fourth-order linear equation for `V`:
+
+\[
+ \left(\frac{F L_V-3gV'}{B}\right)'=L_V.              \tag{GC2}
+\]
+
+It has a four-dimensional space of real-analytic solutions, and `h` is
+uniquely reconstructed from `V`. An equivalent denominator-cleared
+expression is obtained by setting
+
+\[
+ M=BF'',\qquad Z=g(FV'''-3F''V'):
+ \qquad MZ'-M'Z-B^2F''gV'''=0.                         \tag{GC3}
+\]
+
+The coefficient of `V''''` in (GC3) is `B F'' F g`, which is nonzero
+under the stated chart assumptions. The compatibility system (GC1)
+remains meaningful at a zero of `F` or `B`, but the elimination and
+four-dimensional regular-chart assertion are not asserted across such
+zeros. Analytic continuation and matching there require a separate
+argument.
+
+## An active extension with a complete conditional classification
+
+For
+
+\[
+ F=a_*p^{-1/4}+b_*p,\qquad a_*\ne0,
+\]
+
+one may choose `g=p^{-3/4}` and
+
+\[
+ \lambda=-\frac{15b_*}{4},\qquad
+ K_n=\frac{a_*(3-n)}2p^{-5/4}
+                     -\frac{b_*(7n-6)}4.               \tag{AC1}
+\]
+
+The same highest-degree argument forces every core element outside
+`W` to have degree three, and the quotient by `W` still has dimension
+at most one. Hence the full core is `W` unless there is a global
+analytic solution `h` of (GC1), in which case it is
+
+\[
+ W\oplus\mathbb R(q^3p^{-3/4}+q^2h).
+\]
+
+On every connected regular chart
+`F(2F'+lambda)!=0`, exactly a four-dimensional linear space of
+potentials admits this additional cubic. This follows from the regular
+fourth-order equation (GC2); a closed form or a global classification
+across its singular charts is not claimed here. When `b_*!=0`, the
+extra quotient is active, with eigenvalue `-15b_*/4`. For the explicit
+translation potentials `V=tF+c0`, a representative is
+`(q+t)^3p^{-3/4}`, and it is an exact eigenvector with that eigenvalue.
+
+## Exact verification and a rejected potential
+
+`analytic_potential_classification.py` is a standalone standard-library
+checker. It implements mixed derivatives and transvectants independently
+using rational coefficients, fractional `p` exponents, and formal
+coefficient parameters. The generic Hamiltonian in (AP1), its shifted
+cube and the compatibility identities are checked coefficient by
+coefficient for all parameter values. The indicial factorization and
+(AC1) are identities in a formal degree variable, not sampled degrees.
+The active translated cubic is checked with formal parameters as well.
+
+The rejected potential `V=p^(7/4)` gives a nonzero (AP7) coefficient
+`-21/8`. Its published depth-two sharpness witness
+
+\[
+ H=qp^{-1/4}+p^{7/4},\qquad
+ G=q^3p^{-3/4}-\frac{21}{25}q^2p^{5/4}
+\]
+
+passes `C3`, `C5` and `C3 D` but fails at
+`C3 D^2 G=(63/8)p^(-9/2)`. This confirms that the failure is a genuine
+compatibility obstruction rather than a missed static gate.
+
+Run `python3 -B research/core_overlap/analytic_potential_classification.py`.
+Use `--output PATH` to retain the JSON receipt. The proof above
+establishes the all-analytic and all-degree statements; the checker
+independently verifies the exact identities used in that proof.
+
+\clearpage
+
 # Protected nonlinear canonical transport of exact dynamic sectors
 
 This note explains why a nonlinear canonical change can preserve a particular
@@ -2293,6 +4191,470 @@ With these clarifications, no conceptual blocker was found in the
 near-top completion. This bounded review checked the proof mechanism
 and replayed its symbolic identities; it does not establish historical
 priority or replace external mathematical review.
+
+\clearpage
+
+# Independent review of the structural extensions
+
+This review concerns the new polynomial shear, oscillator, analytic-potential,
+quadratic-frontier and deformation results developed after the first overlap
+package. The review checks the all-degree arguments separately from their
+finite calibrations. All polynomial statements are in characteristic zero and
+retain the original flat Weyl–Moyal product in the original affine coordinates.
+The analytic statements concern finite degree in `q` with real-analytic
+coefficients on a connected positive interval. Historical priority and external
+peer review are not established.
+
+## Shear-composition closure
+
+For `Q=p+u(q)`, `m=deg u>=3`, `H=P(Q)+epsilon*q`, and `mu=deg P>=3`,
+the ordinary chain rule gives the transformed third gate
+
+\[
+ C_3=u'''(P'\partial_Q^3-P'''\partial_Q)
+ -3u''(P''\partial_q\partial_Q^2+P'''\partial_q\partial_Q)
+ -P'''\partial_q^3.
+\]
+
+The derivatives on the right keep `Q` fixed. This is an operator identity for
+the original affine gate, not an assertion that nonlinear substitution
+preserves the flat Moyal product. Under total degree in `(q,Q)`, the first
+two groups have top shift `m+mu-7`; the last has shift `mu-6`, lower by
+`m-1>0`. Lower terms of `P,u` have smaller shifts. The top derivation is
+`D0=-mu*p_mu*Q^(mu-1)*partial_q`, of shift `mu-2`.
+
+The top gate sends each monomial `q^a Q^c` to one monomial, with coefficient
+proportional to
+
+\[
+ c(c+\mu-3)R(a,c),\qquad
+ R(a,c)=(m-2)(c-\mu)-3(\mu-1)a.
+\]
+
+The nonzero output shift is independent of the input exponents, so distinct
+inputs cannot cancel. For `a,c>0`, the second test replaces `R` by
+`R+(mu-1)(m+1)`, and these cannot both be zero. For `c=0,a>=1`, its
+second-test bracket is `-(m-2)-3(mu-1)(a-1)<0`. For `a=0,c>0`, the
+first test leaves only `c=mu`. Consequently the simultaneous top kernel
+contains only `1,Q^mu`. Subtract a leading multiple of `H`, which itself
+passes both tests, and descend in total degree. This proves the claimed
+all-degree equality with `span{1,H}`. Negative operator shifts at small
+`m,mu` cause no exception: every nonzero actual output has nonnegative
+monomial exponents.
+
+The two tests are uniformly indispensable in this family. `Q` fails `C3`
+but has `DQ=epsilon`, hence passes `C3D`. Conversely `q` passes `C3`,
+while `C3Dq=u'''(P'''P''-P'P'''')` is nonzero: its leading coefficient in
+`Q` is `2*p_mu^2*mu^2*(mu-1)*(mu-2)`. These arguments do not depend on a
+finite parameter sample.
+
+## Oscillator maximality and the two depth bounds
+
+For
+
+\[
+ H=AQ^2+BQ+C+\frac\kappa2q^2+\epsilon q,
+\]
+
+with `A!=0`, the transformed operators are
+
+\[
+ D=-(2AQ+B)\partial_q+(\kappa q+\epsilon)\partial_Q,
+ \qquad C_3=(2AQ+B)u'''\partial_Q^3
+                  -6Au''\partial_q\partial_Q^2.
+\]
+
+The degree-at-most-two space in `(q,Q)` is invariant under `D` and killed
+by every gate: for orders at least five, the total available `p` degree
+of `H` and an element of the space is at most four. This proves the
+six-dimensional lower bound directly in the original convention.
+
+For `m>=3`, let `u_m=alpha*q^m` and use total degree in `(q,Q)`.
+The top gate on `q^aQ^c` is proportional to
+
+\[
+ c(c-1)[(m-2)(c-2)-3a],
+\]
+
+with fixed exponent shift. In homogeneous degree `N>=3`, its kernel
+contains `q^N`, `q^(N-1)Q`, and at most one resonance with `c>=3,a>=1`.
+The top derivation is `D0=-2AQ partial_q+kappa*q partial_Q`. The resonance's
+`-2AQ partial_q` contribution has the unique highest `Q` exponent in
+`C0D0` of any remaining candidate, so it cannot cancel. Its coefficient
+is nonzero because the resonance bracket changes by `m+1`. Remove it.
+Then `C0D0` removes `q^(N-1)Q`; finally `C0D0^2` removes `q^N`.
+This proves depth two suffices, even when `kappa!=0`; one cannot simply
+reuse the original SS proof with its monomial derivation without this
+extra no-cancellation argument. The cubic `q^3` proves sharpness for
+all these parameters:
+
+\[
+ C_3q^3=C_3Dq^3=0,\qquad C_3D^2q^3=-288A^3u''\ne0.
+\]
+
+For quadratic `u=bq^2+cq+d`, `b!=0`, and `kappa!=0`, the gate is the
+constant-coefficient operator `-12Ab partial_q partial_Q^2`. In homogeneous
+degree `N>=3`, its kernel has the three monomials `q^N,q^(N-1)Q,Q^N`.
+At `N>=4`, `C3D0` maps the latter two to distinct monomials and removes
+them; `C3D0^2` removes the first. At `N=3` there is a resonance requiring
+one further step. Lower affine terms `B,epsilon` have smaller shifts,
+so the same leading argument proves the degree bound for arbitrary
+`B,epsilon`, rather than only for a centered sample.
+
+For `B=epsilon=0`, the explicit witness
+
+\[
+ G=Q^3+\frac{3\kappa}{4A}q^2Q
+\]
+
+passes the first three depth tests and has
+
+\[
+ C_3D^3G=-432A^2b\kappa^2\ne0.
+\]
+
+Equivalently multiply by `4A` to obtain the advertised
+`-1728A^3b*kappa^2`. This proves the depth-three bound is sharp across
+the quadratic-shear oscillator class. The unforced case `kappa=0` must
+remain on its retained infinite-core QC route; it cannot be assigned
+six dimensions. Affine shears are quadratic Hamiltonians and likewise
+lie outside this nonlinear oscillator theorem.
+
+The closed equations `Dq=-(2AQ+B)`, `DQ=kappa*q+epsilon` give
+`D^2q=-2A*kappa*q-2A*epsilon`. Oscillatory terminology is justified for
+real parameters only when `2A*kappa>0`. Exact sector closure itself
+is algebraic and does not require a sign, analytic convergence, or a
+self-adjoint realization of a quantum operator.
+
+The spectral extension is also consistent with the exact quadratic-sector
+representation. For `kappa!=0`, set `omega^2=2A*kappa`; affine centering
+removes `B,epsilon`. Over an algebraic closure choose `r^2=-omega^2`.
+The linear forms `Lplus=y-r*x/(2A)` and `Lminus=y+r*x/(2A)` have
+derivation eigenvalues `r,-r`. Their quadratic products give eigenvalues
+`2r,0,-2r`, while the constant has eigenvalue zero. Thus the
+characteristic polynomial is `z^2(z^2+omega^2)(z^2+4omega^2)` and the
+minimal polynomial is `z(z^2+omega^2)(z^2+4omega^2)`. This conclusion
+uses `A*kappa!=0`; the nilpotent zero-oscillator case has its retained
+separate Jordan description. Observer certificates establish only their
+explicit finite models and target contracts.
+
+## Analytic exceptional potentials
+
+Let `F''` be nowhere zero, `r^3=F''`, and
+`FF'''/(3F'')-3F'=lambda` constant. Modulo the invariant strip
+`W=A+qA`, an extra cubic can be normalized as `q^3r+q^2h`.
+Direct third-gate and derivation expansions yield exactly
+
+\[
+ h'=\frac{V'''r}{F''},\qquad
+ Fh'-(2F'+\lambda)h=3V'r.
+\]
+
+The second condition says that `DG-lambda*G` is in `W`; together they
+are sufficient for every future gate test. Necessity uses the retained
+analytic finite-determination theorem: any additional element has degree
+three, its cubic coefficient is unique up to scalar, and a degree-two
+residual cannot persist. This is a regular-chart criterion, not a
+claim of global classification for arbitrary `F` through zeros of its
+second derivative or singularities.
+
+For `F=p^(-1/4)`, normalize the cubic coefficient to `p^(-3/4)`.
+Eliminating `h` gives
+
+\[
+ p^4V''''+3p^3V'''-\frac{15}{16}p^2V''
+                    -\frac{15}{32}pV'=0.
+\]
+
+The logarithmic variable `x=log p` turns this into a constant-coefficient
+fourth-order ODE. Its distinct indicial roots are
+`0,-1/4,3/4,5/2`, so all real-analytic solutions on any connected
+positive interval are precisely
+
+\[
+ V=c_0+a p^{-1/4}+b p^{3/4}+c p^{5/2}.
+\]
+
+This proves completeness in the analytic function space, not merely
+among tested power ansatzes. For these potentials the proposed cubic
+representative has the same `q^3,q^2` coefficients as `(H-c0)^3`;
+their difference is in `W`. Thus the additional generator can be taken
+stationary. The harmless constant in the Hamiltonian must be removed
+before cubing: `H^3-(H-c0)^3` generally contains a forbidden `q^2` term.
+If `V` fails the ODE, the compatibility system has no extra generator,
+so the retained quotient bound proves the full core is exactly `W`.
+
+## Complete constant-quadratic-momentum classification
+
+For constant nonzero `A`, write `H=A(p+u(q))^2+V(q)`, with
+`m=deg u>=3` and now **arbitrary polynomial** `V`. The initial
+weighted-top argument gives a finite bound when `deg V<2m`, but the
+following direct leading-transverse-degree argument removes that
+restriction completely, including the former degree-resonant boundary.
+
+In `(q,Q)`, the exact third gate is
+
+\[
+ C_3=(2AQ u'''+V''')\partial_Q^3
+                       -6Au''\partial_q\partial_Q^2.
+\]
+
+If a polynomial `G` in `ker C3 intersect ker(C3D)` has highest
+`Q` degree `N>=3` and coefficient `g(q)` of degree `a`, the leading
+`Q^(N-2)` coefficient in its third gate is
+
+\[
+2A(N)_2\big((N-2)u'''g-3u''g'\big).
+\]
+
+The `V'''` term lowers `Q` degree by three and cannot affect it.
+Comparing leading `q` coefficients gives `3a=(N-2)(m-2)>0`, so
+`g'` is nonzero. The highest `Q` coefficient of `DG` is then
+`-2Ag' Q^(N+1)`. Applying its third-gate condition gives
+`3(a-1)=(N-1)(m-2)`. Subtracting the two identities forces
+`-3=m-2`, impossible for `m>=3`. Thus `G` has `Q` degree at most
+two. At degree two the leading gate is `-12Au''g'`, which forces
+its quadratic coefficient to be constant.
+
+The next two finite tests give the remaining coefficient constraints.
+For `G=cQ^2+b(q)Q+f(q)`,
+
+\[
+ C_3DG=24A^2u''b'',\qquad
+ C_3D^2G=48A^2u''(cV'''-Af''')\quad\text{when }b''=0.
+\]
+
+Consequently every polynomial passing depths zero through two lies in
+`span{1,H,q,Q,q^2,qQ}`. This is an all-degree candidate theorem,
+not a bound inferred from a finite matrix.
+
+Modulo a Hamiltonian multiple and constant, write
+`G=(alpha*q+beta)Q+a*q^2+b*q`. Its derivative, after subtracting
+`-2alpha H`, has pure-`q` part
+
+\[
+R=2\alpha V+(\alpha q+\beta)V'.
+\]
+
+Passing the next depth forces `R` to have degree at most two. If
+`n=deg V>=4`, its highest two coefficients force `alpha=beta=0`.
+One further depth forces `a=b=0`. If `n=3`, successive depths first
+force `alpha=0`, then `a=0`, then `beta=0`, and finally `b=0`.
+The nesting fact used here is exact: if `G` passes depths zero through
+`R`, then `DG` passes depths zero through `R-1`. Thus the complete
+constant-quadratic-momentum classification is six dimensions for
+`deg V<=2`, and exactly `span{1,H}` otherwise. The sharp uniform
+third-gate depths are respectively `2`, `6` for cubic `V`, and `4`
+for `deg V>=4`.
+
+These depths have universal witnesses. For quadratic or lower `V`,
+`q^3` has `C3D^2q^3=-288A^3u''` and passes the previous depths.
+For degree at least four, `q` passes depths zero through three, but
+
+\[
+ C_3D^4q=96A^4u''V''''\ne0.
+\]
+
+For cubic `V`, writing `w=V'''!=0`, the same `q` passes depths zero
+through five, while
+
+\[
+ C_3D^6q=-960A^5u''w^2\ne0.
+\]
+
+The first four derivatives of `q` are
+`-2AQ`, `-2AV'`, `4A^2QV''`, and
+`4A^2(V'V''-2AQ^2V''')`. In the cubic case the last expression has
+quadratic `Q` coefficient `c=-8A^3w` and pure-`q` coefficient with
+third derivative `12A^2w^2`, giving exactly the stated depth-six
+value from the preceding general coefficient identity.
+
+There is no remaining resonant boundary in `deg V`. Variable leading
+momentum coefficients and analytic nonpolynomial residual potentials remain
+distinct scopes. Quadratic and affine shears are resolved by the supplements
+reviewed next.
+The certificate procedure can start from the proof-backed finite
+candidate space above and retain full outputs. A stable subspace that
+is invariant under `D` and killed by every gate is exactly the core;
+no arbitrary polynomial degree box is needed.
+
+## Quadratic shears and the exact cubic parameter certificate
+
+For `deg u=2`, `u''` is a nonzero constant and
+`C3=V''' partial_Q^3-6Au'' partial_q partial_Q^2`. If `deg V>=4`,
+a hypothetical highest term `g(q)Q^N`, `N>=3`, first has `g` constant.
+Its next coefficient `h(q)Q^(N-1)` must satisfy
+`h'=N V'''g/(6Au'')`. The top coefficient of `DG` is then
+`-N V'''g/(3u'')` in degree `N`; applying its third gate would force
+`V''''g=0`. This contradiction reduces the joint depth-one kernel
+to degree at most two with constant quadratic coefficient. All subsequent
+QF coefficient steps and its sharp depth-four witness remain valid.
+
+For cubic `V`, translating `q` and making an affine momentum shear first
+reduces to `A(p+bq^2)^2+v q^3+e q`, modulo a constant. The nonzero
+rational scales `s=v/(Ab^2)` and `t=bs^2`, followed by division by
+`At^2`, give `(p+q^2)^2+q^3+lambda q`, where
+`lambda=eA^2b^4/v^3`. The retained `GL2` covariance, not merely
+symplectic covariance, is used for these final independent scales.
+Vanishing conditions and bracket depth survive all these transformations.
+
+In the normalized `(q,Q)` variables, weights `(1,2)` give leading
+operators `D0=-2Q partial_q` and `C0=-12 partial_q partial_Q^2`.
+Their common kernel through depth two is the retained unforced QC core.
+Thus a candidate of weight above six has top `Q^N`, `N>=4`. The
+first-deficit static gate uniquely forces the next component to be
+
+\[
+\frac N2qQ^{N-1}+\beta q^{2N-1}+\gamma q^{2N-3}Q.
+\]
+
+The next derivation has a top contribution `3Nq^2Q^(N-1)`, whose
+leading gate is `-72N(N-1)(N-2)qQ^(N-3)`. Other permitted terms
+have zero gate or output with `Q` degree zero. Since `N>=4`, they
+cannot cancel that nonzero contribution. Hence every depth-two candidate
+has weight at most six, giving the sixteen-dimensional full candidate
+space before any finite matrix is used.
+
+The fourteen-row minor has the nonzero constant determinant specified in (QR10). Its row depths
+sum to `32`. Each depth-`r` entry has parameter degree at most `r`
+because `D=Da+lambda partial_Q` and `C3` is parameter independent.
+Consequently thirty-three exact rational agreements prove the constant
+polynomial identity for every `lambda`. The independent review checker
+recomputes all thirty-three determinants using its own polynomial and
+fraction arithmetic and obtains the same constant. This is a rigorous
+interpolation certificate with a proved degree bound, not a numerical
+rank extrapolation. Full rank fourteen together with independent kernel
+vectors `1,H` gives exactly their span. The universal depth-six witness
+is the same `q` and formula `-960A^5u''(V''')^2` as in QF.
+
+This closes every quadratic shear with nonlinear polynomial potential.
+Together with retained QC and the oscillator theorem, all quadratic-shear
+residual degrees are classified. The characteristic-zero assumption
+justifies both the rational normalization and the polynomial root count.
+
+## Affine shears and the remaining constant-quadratic branch
+
+For affine `u`, the change to `(q,Q)` is affine canonical. The exact
+third gate is `C3=V''' partial_Q^3`. If `deg V<=2`, the Hamiltonian
+is quadratic and every polynomial is exact. Otherwise its static kernel
+has `Q` degree at most two, so write `G=c(q)Q^2+b(q)Q+f(q)`.
+Successive third-gate equations are
+
+\[
+ C_3DG=-12AV'''c',\qquad
+ C_3D^2G=24A^2V'''b'',\qquad
+ C_3D^3G=48A^2V'''(cV'''-Af'''),
+\]
+
+with each later identity conditional on the preceding vanishings.
+They force `c` constant, `b` affine, and `f'''=(c/A)V'''`.
+Thus the depth-three space is exactly `span{1,H,q,Q,q^2,qQ}`.
+The same exact preimage chain used in QF then gives depth five for
+potentials of degree at least four and depth seven for cubics, always
+with full core `span{1,H}`. The sharp witness `q` has
+
+\[
+ C_3D^5q=96A^4V'''V''''\quad(\deg V\ge4),\qquad
+ C_3D^7q=-960A^5(V''')^3\quad(\deg V=3),
+\]
+
+and passes all preceding depths. The review checker independently
+verifies these formulas for constant and genuinely affine shears, with
+nontrivial rational kinetic coefficient and lower potential terms.
+
+The three completed-square cases `deg u<=1`, `deg u=2` and `deg u>=3`
+therefore exhaust every Hamiltonian `A p^2+B(q)p+C(q)` with nonzero
+constant `A`. This completeness is a consequence of the proved routes;
+it does not extend to a nonconstant leading momentum coefficient.
+
+## First- and second-order deformation obstructions
+
+Fix `Q=p+q^2` and `H_t=Q^2+t*q^2/2`. In fixed `(q,Q)` coordinates,
+
+\[
+ C=-12\partial_q\partial_Q^2,\quad
+ D_t=D_0+tD_1=-2Q\partial_q+tq\partial_Q.
+\]
+
+The depth-zero-through-three operator vector `L_t` is uniform for this
+family, including its exceptional fiber. A polynomial jet is required
+to satisfy the coefficients of these exact operators modulo its stated
+power of `t`; no observable-degree truncation is part of the definition.
+
+Modulo the six-dimensional exact quadratic space, a zeroth-order
+candidate is `f(Q)`. A first-order correction `X` must satisfy `CX=0`,
+hence has form `a(q)+Qb(q)+g(Q)`. The coefficient of `t` in `CD_t`
+is
+
+\[
+48b''(q)-12f'''(Q)=0.
+\]
+
+Its two sides depend on independent variables, so `f'''` must be
+constant. This excludes every higher power and every nontrivial linear
+combination of powers of degree at least four without a degree cutoff.
+The only additional first-order direction is `Q^3`, which lifts as
+`Q^3+(3/4)tq^2Q`.
+
+For this lift, direct differentiation gives
+
+\[
+ D_tG=\tfrac34t^2q^3,\quad
+ D_t^2G=-\tfrac92t^2q^2Q,\quad
+ C D_t^3G=-432t^2.
+\]
+
+The constant-extraction functional in the third depth component
+annihilates `L0 X` for every polynomial `X`, because `CD0^3X` is
+divisible by `Q`. Any other first-order lift differs by an element of
+the retained unforced QC core. The first variation of the third-depth
+component vanishes on that entire core: it vanishes on the quadratic
+sector for all `t`, and `D0^2D1f(Q)=0`. Hence no choice of first-order
+lift changes the second-order obstruction. First-order liftable
+zeroth-order observables form exactly a seven-dimensional space;
+second-order liftable observables form exactly the six-dimensional
+quadratic sector, which lifts to every order.
+
+This is a genuine obstruction to deforming an exact observable sector.
+Smith invariant factors of a finite presentation encode it, but no new
+geometric torsion, general deformation theory, or novelty of Smith
+normal form is claimed.
+
+The graded extension is also sound. On homogeneous input degree `n>=4`,
+the four outputs have degree `n-3`, so the matrix has `n+1` columns
+and `4(n-2)` rows. At `t=0` its kernel is exactly the line `K Q^n`,
+so its rank is `n`. At every nonzero parameter over the algebraic
+closure, the oscillator theorem makes it injective in this degree.
+Therefore all Smith factors except one are units, and the last is a
+power `t^e`; a different nonunit factor would have a nonzero root
+where rank dropped. Invertible polynomial Smith source/target changes
+identify the exceptional initial line with that last factor. An
+exponent `e>=2` would supply a first-order lift of its nonzero initial
+direction, contrary to the all-degree obstruction above. Hence `e=1`.
+For degree three the explicitly certified exponent is two. This proves
+
+\[
+\operatorname{Tor}\operatorname{coker}L_t
+\cong (K[t]/(t^2))_{\text{degree }3}
+\oplus\bigoplus_{n\ge4}(K[t]/(t))_{\text{degree }n}.
+\]
+
+The free cokernel rank in each degree `n>=4` is
+`4(n-2)-(n+1)=3n-9`. The target must be the full direct sum of four
+homogeneous output spaces; this calculation would be invalid if a
+bounded matrix silently omitted output monomials.
+
+## Independent arithmetic calibration and limits
+
+`extension_proof_review.py` implements its own sparse rational arithmetic
+and direct original-coordinate mixed derivatives. It imports none of
+the new producers. It checks the transformed composition operator,
+full-output joint kernels, lower affine oscillator parameters, both
+sharp-depth witnesses, the Euler indicial factorization, allowed mixed
+potentials and a rejected potential. It additionally checks the sharp quadratic-frontier depths at cubic, quartic, resonant and supercritical potential degrees, and the formal cubic lift residual coefficient by coefficient in the parameter. It also independently replays the quadratic-shear cubic minor at all thirty-three required parameter values and checks the affine-shear sharp-depth formulas. The receipts record finite
+calibrations only. The universal claims above depend on their written
+filtration, ODE and obstruction proofs. A recognizer failure is not a
+certificate of collapse, and a failed optional search is not a theorem.
 
 \clearpage
 
