@@ -45,7 +45,7 @@
   {
    "id": "P001",
    "status": "target",
-   "claim": "Remaining open targets: a uniform-in-degree proof that D_inf(H) = span{1,H} for every binary quartic with distinct roots (per-degree theorem and two all-degree points certified); probabilistic or continuous noise models for adaptive experiments.",
+   "claim": "Remaining open targets: probabilistic or continuous noise models for adaptive experiments; dynamic cores of higher-degree homogeneous Hamiltonians (quintic, sextic) beyond the retained archived scope.",
    "support": "TASKS.json",
    "scope": "Unfinished tasks, not current capabilities."
   },
@@ -151,7 +151,7 @@
    "id": "W3-b",
    "status": "certified_per_degree_theorem",
    "claim": "For every binary quartic H over Qbar with distinct roots and every certified degree n: D_inf(H)_n = 0 for n not in {0,4} and D_inf(H)_4 = Qbar H; the only exceptional factor of the family q^4 + l q^2 p^2 + p^4 is l^2 - 4.",
-   "support": "extensions/hamiltonian/quartic_rigidity.py; check_quartic_rigidity.py; results/hamiltonian/quartic_rigidity.json",
+   "support": "extensions/hamiltonian/quartic_rigidity.py; check_quartic_rigidity.py (embedded in results/hamiltonian/quartic_all_degrees_theorem.json)",
    "scope": "Finitely many degrees (see the certificate); depth R <= 3; not a uniform-in-degree theorem."
   },
   {
@@ -162,11 +162,11 @@
    "scope": "Exact all-degree certificates over Q."
   },
   {
-   "id": "W3-conj",
-   "status": "conjecture",
-   "claim": "D_inf(H) = span{1,H} for every binary quartic with distinct roots.",
-   "support": "W3-b, W3-c",
-   "scope": "Open; evidence only."
+   "id": "W3-d",
+   "status": "theorem_with_certificates",
+   "claim": "D_inf(H) = span{1,H} in all degrees for every binary quartic with distinct roots (over Q or any field of characteristic zero).",
+   "support": "programmes/DYNAMIC_CORE_RESULTS.md#3c; extensions/hamiltonian/check_quartic_uniform.py; results/hamiltonian/quartic_all_degrees_theorem.json",
+   "scope": "All degrees; parity splitting, top-coefficient elimination with resultants in l valid for n >= 8, per-degree certificate for n <= 12. With W3-a this classifies every homogeneous quartic."
   }
  ],
  "rule": "Passing finite tests does not upgrade a target or an unproved general statement to a theorem.",

@@ -13,10 +13,6 @@ This directory imports the 2026-10-21 handoff programme documents and records wh
 
 ## Next steps
 
-1. A uniform-in-degree proof that `D∞(H) = span{1,H}` for every binary quartic with distinct roots. What is already certified:
-   - the per-degree theorem, for all `λ ∈ Q̄` and every degree in the certified range;
-   - all-degree certificates at `λ = 0` and `λ = 1`.
-
-   One candidate route is the `SL₂` decomposition of `T₃(H, T₁(H,·))` into transvectants with `H²`, the Hessian and the invariant.
-2. Probabilistic or continuous noise for adaptive experiments. This needs posterior semantics and a different termination theorem. Deterministic and set-valued adversarial noise are done.
-3. Performance. The Weyl Gröbner backend uses `Fraction` arithmetic without a chain criterion. Distinct-root quartics with generic `λ` take about 20 minutes each.
+1. Dynamic cores of higher-degree homogeneous Hamiltonians, starting with quintics and sextics. The quartic argument (parity splitting, a static recurrence solved from the top, top-coefficient elimination with resultants in the moduli) is a template, but the moduli space has more parameters.
+2. Probabilistic or continuous noise for adaptive experiments. This needs posterior semantics and a different termination theorem.
+3. Performance. The Weyl Gröbner backend uses `Fraction` arithmetic without a chain criterion.

@@ -23,6 +23,7 @@ SUITES = [
     ('W1 Weyl discovery and kernels', 'hamiltonian', 'test_weyl_discovery'),
     ('W2 six-parameter top reduction', 'hamiltonian', 'test_top_reduction'),
     ('W3 quartic per-degree rigidity', 'hamiltonian', 'test_quartic_rigidity'),
+    ('W3 quartic all-degree theorem', 'hamiltonian', 'test_quartic_uniform'),
     ('S0 contraction seed', 'structure', 'test_contraction_seed'),
     ('S1 obstruction interface', 'structure', 'test_obstruction'),
     ('S2 DGLA lifting', 'structure', 'test_dgla'),
@@ -37,6 +38,7 @@ SEEDS = [
      ['extensions/hamiltonian/weyl_receipts.py', '--self-test', '--existing-engine',
       'research/hamiltonian/independent/engine.py', '--check', 'extensions/hamiltonian/q_cubed_receipt.json']),
     ('seed counterexamples', ['extensions/counterexamples.py']),
+    ('quartic covariant route (supplementary)', ['extensions/hamiltonian/covariant_route.py']),
 ]
 
 
@@ -53,7 +55,7 @@ def main():
     a = ap.parse_args()
     report = {'status': 'passed', 'suites': [], 'seeds': [], 'results': []}
     for name, sub, mod in SUITES:
-        if a.quick and mod in ('test_weyl_discovery', 'test_top_reduction'):
+        if a.quick and mod in ('test_weyl_discovery', 'test_top_reduction', 'test_quartic_uniform'):
             report['suites'].append({'name': name, 'status': 'skipped (quick)'})
             continue
         code, out, sec = run(['-m', 'unittest', mod], HERE / sub)

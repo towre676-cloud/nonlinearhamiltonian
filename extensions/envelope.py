@@ -83,6 +83,12 @@ def _quartic_rigidity(model, payload):
     return _load('hamiltonian/check_quartic_rigidity.py', 'mx_check_quartic_rigidity').check(payload)
 
 
+def _quartic_uniform(model, payload):
+    if model != {'family': payload.get('family')}:
+        raise ValueError('envelope model must name the certified family')
+    return _load('hamiltonian/check_quartic_uniform.py', 'mx_check_quartic_uniform').check(payload)
+
+
 def _noise_panel(model, payload):
     return _load('observer/check_panel.py', 'mx_check_panel').check(payload, model)
 
@@ -110,6 +116,7 @@ KINDS = {
     'weyl-polynomial-kernel': ('format', 'weyl-kernel-v1', _weyl_kernel),
     'weyl-top-reduction': ('format', 'weyl-top-reduction-v1', _top_reduction),
     'quartic-rigidity': ('format', 'quartic-rigidity-v1', _quartic_rigidity),
+    'quartic-uniform': ('format', 'quartic-uniform-v1', _quartic_uniform),
     'rational-contraction': ('schema', 'rational-contraction-v1', _contraction),
     'integer-cohomology': ('format', 'integer-smith-v1', _smith),
     'fundamental-unit': ('format', 'fundamental-unit-v1', _units),

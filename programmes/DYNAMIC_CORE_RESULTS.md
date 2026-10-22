@@ -126,6 +126,7 @@ For a homogeneous `H`, the operators `D` and `C_k` are homogeneous, so `D∞(H)`
 | (2,1,1) | `q³p + q²p²` | `span{1, H}` |
 | distinct, `λ = 0` | `q⁴ + p⁴` | `span{1, H}` |
 | distinct, `λ = 1` | `q⁴ + q²p² + p⁴` | `span{1, H}`, from 22 generators and 23 minutes of discovery |
+| distinct, `λ = −1` | `q⁴ − q²p² + p⁴` | `span{1, H}`, from 22 generators |
 
 **Theorem (degenerate root types).** Each of the root types `(4)`, `(3,1)`, `(2,2)` and `(2,1,1)` is a single `GL₂(Q̄)` class. The certificates above therefore classify `D∞(H)` for **every** rational quartic of that type, by transport through Q̄ and descent: the core is a common kernel of rational operators, so it commutes with field extension. In each case:
 
@@ -146,15 +147,45 @@ The checker recomputes all of these with its own determinant, interpolation and 
 - the only exceptional factor is `λ² − 4`, the square stratum, where the extra kernel is the genuine core `Q̄[q² ± p²]` in even degrees;
 - the equianharmonic class `λ² = −12` (j = 0, rational form `q⁴ + qp³`) is not exceptional, but it needs depth `R = 3` in degree 1 and `R = 2` in degree 3. There, linear forms survive two further actions of `D` and cubics survive one. Every other degree needs only `R = 1`.
 
-The certified range of degrees is given in §3d.
+The per-degree certificate in `results/` covers degrees 1–12.
 
-**Conjecture.** For every binary quartic with distinct roots, `D∞(H) = span{1, H}`. By the per-degree theorem this is equivalent to the vanishing of `S^1_n` for all `n ≥ 5` (with `R ≤ 3` in low degree). Evidence:
+**Theorem (distinct roots, all degrees).** Let `H` be a binary quartic with four distinct roots, over Q or over any field of characteristic zero. Then `D∞(H) = span{1, H}`.
 
-- the per-degree theorem through the certified range, uniformly in `λ ∈ Q̄`;
-- the all-degree certificates at `λ = 0` and `λ = 1`;
-- the theorem for the adjacent stratum `(2,1,1)`.
+Together with the theorem for degenerate root types, this classifies the dynamic core of **every** nonzero homogeneous quartic.
 
-A uniform-in-`n` proof is not supplied. One natural route is the `SL₂` decomposition `T₃(H, T₁(H,·)) = α_n T₄(H²,·) + β_n T₂(Δ_H,·) + γ_n i(H)`, combined with the explicit description of `E_n`.
+*Proof.* Work over Q̄ with `H = c·H_λ`, `λ² ≠ 4`. Since `D∞(H)_n ⊆ S^1_n`, it suffices to show `S^1_n = 0` for all `n ≥ 8`; the per-degree theorem handles `n ≤ 12`.
+
+Write `G = Σ_t h_t q^{n−t}p^t ∈ V_n`. Then:
+
+1. *Parity splitting.* `T₃(H_λ,·)` moves the index `t` by `−3`, `−1` or `+1`, and `D = {H_λ,·}` moves it by `−1`, `+1` or `+3`. Both moves are odd, so `S^1_n` splits into the two parity classes of `t`.
+2. *Static recurrence.* The equation `T₃(H_λ, G) = 0` at output index `t` reads, exactly,
+   `24(t+3)(t+2)(t+1) h_{t+3} + 12λ(n−1−t)(t+1)(n−2−2t) h_{t+1} − 24(n+1−t)(n−t)(n−1−t) h_{t−1} = 0`.
+   Its leading coefficient never vanishes. So every `h_t` is determined by `h_0` and `h_2` in the class of `q^n`, and by `h_1` in the other class.
+3. *Top equations.* `DG` has coefficients `d_s = 4(s+1)h_{s+1} + 2λ(2s−2−n)h_{s−1} − 4(n−s+3)h_{s−3}`. The top equations of `T₃(H_λ, DG) = 0` (output indices `t ≤ 4`) are linear in the free top coefficients, with coefficients polynomial in `(n, λ)`. They use only `h_t` with `t ≤ 8` and `d_s` with `s ≤ 7`, so they are exact for every `n ≥ 8`.
+4. *Odd class.* The coefficients `c₁(n,λ)` and `c₃(n,λ)` of `h_1` in the equations at `t = 1` and `t = 3` have formal resultant `R₁(n) = Res_λ(c₁, c₃)`, a nonzero polynomial of degree 17. Its integer roots are `−1, 0, 1, 2, 3`, with multiplicity. Deflating them leaves a quadratic with no integer roots inside its Fujiwara bound. A nonzero formal resultant excludes a common factor even where a leading coefficient vanishes, so for `n ≥ 4` and every `λ`, `h_1 = 0`.
+5. *Other class.* The 2×2 minors `m₀₁` and `m₀₂` of the system in `(h_0, h_2)`, from the equations at `t = 0, 2, 4`, are both divisible by `λ² − 4`. The resultant `R₂(n)` of the quotients has degree 32 and integer roots `−6, −1, 0, 1, 2, 3, 4` only. So for `n ≥ 5` and `λ² ≠ 4`, `h_0 = h_2 = 0`.
+6. *Conclusion.* By step 2, every coefficient then vanishes, so `G = 0`. Hence `D∞(H)_n = 0` for all `n ∉ {0, 4}` and `D∞(H)_4 = Q̄·H`. The result descends to Q because the core is a common kernel of rational operators. ∎
+
+The equation for `λ = 2` vanishes identically in `n`. That is the square stratum, whose genuine core `Q̄[q² ± p²]` is excluded by hypothesis.
+
+**Certificate.** The certificate `quartic-uniform-v1` (checker `check_quartic_uniform.py`; file `results/hamiltonian/quartic_all_degrees_theorem.json`) checks every step.
+
+- It re-derives the top equations with its own polynomial arithmetic.
+- It recomputes both resultants by interpolation at the Sylvester degree bounds (19 and 34).
+- It verifies the divisibility by `λ² − 4` and determines all integer roots exactly.
+- It enforces the validity bound `n ≥ 8`.
+- It replays the embedded per-degree certificate for degrees 1–12.
+
+The tests compare the symbolic top equations with direct computation of `T₃∘D` on binary forms for `8 ≤ n ≤ 20` at random `λ`, and reject six forged certificates.
+
+**A second, independent proof in degrees `4k`.** This route uses classical invariant theory instead of monomials.
+
+- Let `f = H`, `Δ` its Hessian and `T = {f, Δ}`. Every covariant of the quartic is a polynomial in `f`, `Δ`, `T` and the invariants. The syzygy is `T² = −(16/9)Δ³ + I f²Δ + J f³`.
+- A dimension count shows that `E_{4k}` consists exactly of the forms `Φ(f, Δ)` that solve `T₃(f, Φ) = 0`.
+- The two operators involved have the closed forms `T₃(f, f^aΔ^b) = T·[−⅓a(a−1)(4a+1+6b) f^{a−2}Δ^b + (3/16)b(b−1)(2b−1) I f^aΔ^{b−2} + (3/8)b(b−1)(b−2) J f^{a+1}Δ^{b−3}]`, together with the companion formula for `T₃(f, T·f^aΔ^b)`. Its 17 covariant constants were determined by an exact, overdetermined fit.
+- Writing `ψ₀`, `ψ₁` for the coefficients of `Δ^k` and `fΔ^{k−1}` in `Φ`, the two top equations are triangular. The coefficient `c₀₀ = −I k²(4k+1)/2` forces `ψ₀ = 0`, and then `c₁₁ ∝ I(k−1)(72k³ − 34k² − k + 3)` forces `ψ₁ = 0`. When `I = 0`, the corresponding `J`-coefficients take over.
+
+This reproduces the theorem for `n ≡ 0 (mod 4)` and `n ≡ 2 (mod 4)` (since `D` is injective into degree `n+2`), for `k ≥ 7`. `extensions/hamiltonian/covariant_route.py` reproduces every ingredient of this route. The certified theorem relies on the monomial route above.
 
 ## 4. Commands
 

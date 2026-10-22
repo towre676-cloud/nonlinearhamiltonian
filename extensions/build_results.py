@@ -197,9 +197,21 @@ def integer_and_units():
             'unit group of Z[sqrt D]; not the maximal order', ['D01-F04'], PRODUCER, verify=False), s)
 
 
+def quartic_theorem():
+    import quartic_uniform as QU
+    cert, s = timed(QU.build, 12)
+    cert.pop('result')
+    write('hamiltonian', 'quartic_all_degrees_theorem', envelope.make(
+        'quartic-uniform', {'family': cert['family']}, cert,
+        ['binary quartics with four distinct roots, normal form q^4 + l q^2 p^2 + p^4 over Qbar',
+         'GL2 covariance of the transvectants; D_inf graded for homogeneous H'],
+        'D_inf(H) = span{1, H} in all degrees for every quartic with distinct roots', ['D16-F03', 'D06-F02'],
+        PRODUCER, verify=False), s)
+
+
 SECTIONS = {'observer': lambda a: observers(), 'structure': lambda a: structure(), 'arithmetic': lambda a: arithmetic(),
             'hamiltonian': lambda a: hamiltonians(a.skip_slow), 'top': lambda a: top_reductions(),
-            'integer': lambda a: integer_and_units()}
+            'integer': lambda a: integer_and_units(), 'quartic': lambda a: quartic_theorem()}
 
 
 def main():
