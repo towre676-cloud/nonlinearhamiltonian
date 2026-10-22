@@ -28,6 +28,15 @@ def predicted(core, d, N):
     raise ValueError(core)
 
 
+def predicted_res(res, N):
+    if res['core'].startswith('open'):         # cubic phase: only the lower bound is known
+        return None
+    if 'degrees' in res:                       # triangular families: span recorded by detect
+        import check_triangular as CT
+        return CT.core_dim(res, N)
+    return predicted(res['core'], res['degree'], N)
+
+
 def linmap(H, a, b, c, e, x0, y0):
     """H(a q + b p + x0, c q + e p + y0)."""
     return TR.comp(TR.tidy(H), {(1, 0): F(a), (0, 1): F(b), (0, 0): F(x0)},
@@ -110,6 +119,73 @@ class TransverseAndVertex(unittest.TestCase):
                 self.assertEqual(filtered_dim(H, d + 1, 8), predicted(res['core'], d, d + 1), H)
 
 
+def tri_samples(rng):
+    """members of K1, K2, K3 (DYNAMIC_CORE_RESULTS.md section 6.8) and near misses."""
+    import check_triangular as CT
+    out = []
+    w2 = {2: F(1), 1: F(rng.randint(-1, 1))}
+    out.append(CT.tri({(0, 3): F(1), (0, 1): F(-2), (1, 0): F(1)}, w2))            # K1, active tower
+    out.append(CT.tri({(0, 3): F(1), (0, 0): F(1)}, w2))                           # K1, stationary tower
+    out.append(CT.tri({(0, 2): F(1), (1, 0): F(rng.randint(-2, 2))}, w2))           # K1 + K2
+    out.append(CT.tri({(0, 2): F(1), (2, 0): F(1)}, w2))                           # K2, e = 2
+    out.append(CT.tri({(0, 2): F(2), (1, 1): F(1), (1, 0): F(-1)}, {3: F(1)}))     # K2, e = 3
+    out.append(CT.tri({(0, 2): F(1), (2, 0): F(1)}, {4: F(1), 1: F(1)}))           # K2, e = 4
+    out.append({(1, 2): F(1), (3, 1): F(2), (5, 0): F(1), (1, 0): F(1)})           # K3, k = 1
+    out.append({(1, 2): F(1), (0, 2): F(1), (3, 1): F(2), (2, 1): F(2), (5, 0): F(1), (4, 0): F(1)})
+    out.append({(3, 2): F(1), (5, 1): F(2), (7, 0): F(1), (1, 0): F(1)})           # K3, k = 3, r = Q
+    out.append({(2, 2): F(1), (3, 1): F(4), (4, 1): F(2), (4, 0): F(4), (5, 0): F(4), (6, 0): F(1)})
+    out.append(CT.tri({(0, 4): F(1), (1, 1): F(-1), (1, 0): F(1)}, w2))            # K1'
+    out.append(CT.tri({(0, 3): F(1), (1, 1): F(1)}, w2))                           # K1', P H in the core
+    # near misses: conjectured span{1, H}, or open (cubic phase)
+    out.append(CT.tri({(0, 3): F(1)}, {3: F(1)}))                                  # cubic in P, e = 3
+    out.append(CT.tri({(0, 3): F(1), (2, 0): F(1)}, w2))                           # Q^2 breaks K1
+    out.append(CT.tri({(0, 2): F(1), (3, 0): F(1)}, {3: F(1)}))                    # cubic r breaks K2
+    out.append({(1, 2): F(1), (3, 1): F(2), (5, 0): F(1), (2, 0): F(1)})           # r = Q^2 breaks K3
+    out.append({(2, 2): F(1), (4, 1): F(2), (6, 0): F(1), (1, 0): F(1)})           # k = 2 needs r const
+    return out
+
+
+class Triangular(unittest.TestCase):
+    def test_identities(self):
+        import check_triangular as CT
+        self.assertEqual(CT.check()['status'], 'passed')
+        with self.assertRaises(ValueError):
+            CT.check({'format': CT.FORMAT, 'identities': ['X1']})
+
+    def test_families_against_direct_computation(self):
+        rng = random.Random(4)
+        seen = set()
+        Hs = tri_samples(rng)
+        Hs += [linmap(H, 1, 0, 1, 1, rng.randint(-2, 2), rng.randint(-2, 2)) for H in Hs[:: 4]]
+        Hs += [linmap(H, 1, 1, 0, 1, rng.randint(-1, 1), rng.randint(-1, 1)) for H in Hs[1:10:4]]
+        for H in Hs:
+            H = W.tidy(H)
+            res = TR.classify(H)
+            d = res['degree']
+            N = d + 2
+            want = predicted_res(res, N)
+            if want is not None:
+                self.assertEqual(filtered_dim(H, N, 8), want, (H, res))
+            seen.add(res['route'])
+        for r in ('K1', "K1'", 'K2', 'K1+K2', 'K3', 'pure, conjectural', 'pure, cubic phase'):
+            self.assertIn(r, seen)
+
+    def test_certificates_and_forgeries(self):
+        import check_triangular as CT
+        H = W.tidy({(6, 0): 1, (3, 1): 2, (0, 2): 1})                  # (q^3 + p)^2
+        cert = CT.certify(H)
+        self.assertEqual(cert['result']['verified_dimension'], 6)
+        for mut in (lambda c: c['generators'].append({'2,1': '1'}),
+                    lambda c: c['generators'][3].update({'0,1': '2'}),
+                    lambda c: c.update(family='K3'),
+                    lambda c: c['hamiltonian'].update({'3,0': '1'})):
+            bad = copy.deepcopy(cert)
+            bad.pop('result')
+            mut(bad)
+            with self.assertRaises(ValueError):
+                CT.check(bad)
+
+
 class Decision(unittest.TestCase):
     def test_against_direct_computation(self):
         rng = random.Random(7)
@@ -119,8 +195,11 @@ class Decision(unittest.TestCase):
             res = TR.classify(H)
             d = res['degree']
             N = d + 1
-            got = filtered_dim(H, N, 8)
-            self.assertEqual(got, predicted(res['core'], d, N), (H, res))
+            got, want = filtered_dim(H, N, 8), predicted_res(res, N)
+            if want is None:
+                self.assertGreaterEqual(got, 1 + (N >= d), (H, res))
+            else:
+                self.assertEqual(got, want, (H, res))
             seen.add(res['route'])
         for r in ('U', 'NE', "Q'", 'B', 'P+ near', 'P+ pure W', 'P+ pure V', 'P+ balanced'):
             self.assertIn(r, seen)

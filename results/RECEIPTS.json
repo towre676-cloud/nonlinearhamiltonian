@@ -320,7 +320,7 @@
    "sha256": "75bc78fabd0135381c86404e9ca102128eface5cfa3c64770b0e0f7b4dd9f4fe",
    "witness_kind": "weyl-polynomial-kernel",
    "replay": "python3 -B extensions/envelope.py check results/hamiltonian/binomial_q5_plus_p2.json",
-   "producer_seconds": 5.43,
+   "producer_seconds": 5.31,
    "summary": {
     "status": "passed",
     "kind": "finite_support",
@@ -336,7 +336,7 @@
    "sha256": "6c0ecb1b7d225ebf9101fc9baf33f047fbdea4f02681b9ae45afd92ac16ca930",
    "witness_kind": "weyl-polynomial-kernel",
    "replay": "python3 -B extensions/envelope.py check results/hamiltonian/binomial_qp2_plus_q2.json",
-   "producer_seconds": 0.46,
+   "producer_seconds": 0.57,
    "summary": {
     "status": "passed",
     "kind": "degree_bound",
@@ -357,7 +357,7 @@
    "sha256": "6e43ecd75520985638548c2bd09ff853fc9ffeebf2e0e133a43378c664ba9a69",
    "witness_kind": "weyl-polynomial-kernel",
    "replay": "python3 -B extensions/envelope.py check results/hamiltonian/binomial_qp4_plus_q2.json.gz",
-   "producer_seconds": 88.75,
+   "producer_seconds": 85.47,
    "summary": {
     "status": "passed",
     "kind": "finite_support",
@@ -393,7 +393,7 @@
    "sha256": "1d8d97a8664aace21e72224db1585fa1c4c0d47101add73788b4b77c764dd8ec",
    "witness_kind": "near-edge",
    "replay": "python3 -B extensions/envelope.py check results/hamiltonian/near_edge_theorem.json",
-   "producer_seconds": 0.54,
+   "producer_seconds": 0.49,
    "summary": {
     "status": "passed",
     "identities": [
@@ -1075,6 +1075,94 @@
    }
   },
   {
+   "file": "results/hamiltonian/triangular_K1K2_q2p_squared.json",
+   "sha256": "e2c2e83c928e74c1a679a1558c643837533d349b4df084c5e2daea3030f07470",
+   "witness_kind": "triangular-pure",
+   "replay": "python3 -B extensions/envelope.py check results/hamiltonian/triangular_K1K2_q2p_squared.json",
+   "producer_seconds": 0.01,
+   "summary": {
+    "status": "passed",
+    "family": "K1+K2",
+    "core": "K[P] + tau*K[Q,P]_{<=2}",
+    "verified_dimension": 10,
+    "claim": "contained in D_inf(H) (exact)"
+   }
+  },
+  {
+   "file": "results/hamiltonian/triangular_K1_q2p_cubed_plus_q.json",
+   "sha256": "8bb748b7eb6c1dfbe76821c3f5826174d3bd410e0b341fa3298e8b89ade718b4",
+   "witness_kind": "triangular-pure",
+   "replay": "python3 -B extensions/envelope.py check results/hamiltonian/triangular_K1_q2p_cubed_plus_q.json",
+   "producer_seconds": 0.01,
+   "summary": {
+    "status": "passed",
+    "family": "K1",
+    "core": "K[P] + K Q",
+    "verified_dimension": 8,
+    "claim": "contained in D_inf(H) (exact)"
+   }
+  },
+  {
+   "file": "results/hamiltonian/triangular_K2_q3p_squared.json",
+   "sha256": "61dec9eb99a6bc2405bfdc8d8f064f775c2c92d00219353f7ae8e3cdf6c7b9f6",
+   "witness_kind": "triangular-pure",
+   "replay": "python3 -B extensions/envelope.py check results/hamiltonian/triangular_K2_q3p_squared.json",
+   "producer_seconds": 0.0,
+   "summary": {
+    "status": "passed",
+    "family": "K2",
+    "core": "tau*K[Q,P]_{<=2}",
+    "verified_dimension": 6,
+    "claim": "contained in D_inf(H) (exact)"
+   }
+  },
+  {
+   "file": "results/hamiltonian/triangular_K3_cubic_twist.json",
+   "sha256": "56029d5e58aa0685177f0bec4a17b4f49d38b9f4ff1f795824e3f9c01359d342",
+   "witness_kind": "triangular-pure",
+   "replay": "python3 -B extensions/envelope.py check results/hamiltonian/triangular_K3_cubic_twist.json",
+   "producer_seconds": 0.0,
+   "summary": {
+    "status": "passed",
+    "family": "K3",
+    "core": "span{1, G, H}",
+    "verified_dimension": 3,
+    "claim": "contained in D_inf(H) (exact)"
+   }
+  },
+  {
+   "file": "results/hamiltonian/triangular_K3_linear_twist.json",
+   "sha256": "428c09dc28e59bb3382e38249b5969ac0132219f18641af9df1bb69140ddb3c4",
+   "witness_kind": "triangular-pure",
+   "replay": "python3 -B extensions/envelope.py check results/hamiltonian/triangular_K3_linear_twist.json",
+   "producer_seconds": 0.0,
+   "summary": {
+    "status": "passed",
+    "family": "K3",
+    "core": "span{1, Q, G, H}",
+    "verified_dimension": 4,
+    "claim": "contained in D_inf(H) (exact)"
+   }
+  },
+  {
+   "file": "results/hamiltonian/triangular_theorem.json",
+   "sha256": "9c1e3df602718c08f3f07cdb8805ea9c7a0f3fa17c48dde8d2c95160462cdcb7",
+   "witness_kind": "triangular-pure",
+   "replay": "python3 -B extensions/envelope.py check results/hamiltonian/triangular_theorem.json",
+   "producer_seconds": 1.52,
+   "summary": {
+    "status": "passed",
+    "identities": [
+     "K1",
+     "K1'",
+     "K2",
+     "K3",
+     "X1"
+    ],
+    "theorem": "triangular transvectant formula; containments K1, K2, K3"
+   }
+  },
+  {
    "file": "results/hamiltonian/tworoot_balanced_KG.json",
    "sha256": "4b68544d4d17a7469f18e99d6dfa9bc8dcf03c69d27b096aeb550035800206d9",
    "witness_kind": "two-root-perturbation",
@@ -1188,6 +1276,58 @@
     "proved": true,
     "core": "(+)_{j<=2} m^j K[l]",
     "active_part": "infinite"
+   }
+  },
+  {
+   "file": "results/hamiltonian/tworoot_pure_triangular_K2.json",
+   "sha256": "310c206493fc778fbf334e68931c6a88191af4d77b346670cf4cd8db798a871f",
+   "witness_kind": "two-root-perturbation",
+   "replay": "python3 -B extensions/envelope.py check results/hamiltonian/tworoot_pure_triangular_K2.json",
+   "producer_seconds": 0.0,
+   "summary": {
+    "status": "passed",
+    "degree": 6,
+    "top": "pure",
+    "route": "K2",
+    "proved": false,
+    "core": "tau*K[Q,P]_{<=2}",
+    "contains_proved": true,
+    "generators": [
+     {
+      "0,0": "1"
+     },
+     {
+      "1,0": "1"
+     },
+     {
+      "2,0": "1"
+     },
+     {
+      "0,1": "1",
+      "3,0": "1"
+     },
+     {
+      "1,1": "1",
+      "4,0": "1"
+     },
+     {
+      "0,2": "1",
+      "3,1": "2",
+      "6,0": "1"
+     }
+    ],
+    "degrees": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     6
+    ],
+    "active_part": "nonzero (contains an active element)",
+    "w": {
+     "3": "1"
+    }
    }
   },
   {
