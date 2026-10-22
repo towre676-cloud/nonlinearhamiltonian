@@ -1,7 +1,9 @@
 # Handoff: exact nonlinear sectors and deformation obstructions
 
 The continuation is based on published review commit `4050dbf`, which preserves
-Claude's complete near-top theorem at `268d553`. The retained sealed compendium
+Claude's complete near-top theorem at `268d553`. Its later triangular-family
+update `fbc52d01` is also integrated; the review branch retains the stronger
+full-core routes before the new containment recognizers. The retained sealed compendium
 and Hamiltonian baselines are unchanged. Historical priority remains unestablished.
 
 ## Closed questions in this package
@@ -65,6 +67,22 @@ core does not imply dimension two. Nonlinear canonical changes require the
 protected-sector argument or explicit transformed gates; canonical brackets
 alone do not preserve the original flat Moyal product.
 
+The new triangular update isolates two sharper algebraic targets. K1' has
+`H=F(P)+lambda*q+mu*q*P`, `P=p+w(q)`, `deg w=2`, `mu!=0`; its contained
+sector has dimension four, five or six, but its upper bound remains open.
+K3 with linear transverse coefficient supplies a separate four-dimensional
+contained sector outside CQ. Higher cubic-phase couplings such as
+`P^4+q*P^2` form a third frontier. K1, recognized constant-quadratic K2,
+and higher K3 overlap QC/CQ/PP/SC and already have full equalities here.
+
+Claude's P004 collapse claim outside its triangular list is also false as
+stated: `J=qp+q^3`, `H=q*J^2+J` is covered by PP with full core
+`span{1,H,J}` but is outside that list. Its transverse coefficient is `q^3`
+and its p coefficient `2q^5+q` violates the K3 divisibility condition.
+The triangular receipts continue to assert containments only. In their
+K3 bracket formula remove the extra scalar c multiplying `(k-2)(H-r)`;
+at k=2 with constant remainder the sector is stationary.
+
 The next analytic target is global extension of active cubic-preserving potentials
 across singular regular-chart boundaries, and explicit normal forms for exceptional
 F. The first integral `F F''-5(F')^2-3lambda F'=C` supplies a quadrature route.
@@ -75,7 +93,7 @@ algebraic singularity boundary.
 ## Reproduction
 
 Run `python3 -B research/core_overlap/verify_all.py` from the repository root.
-Each new checker emits JSON and documents its optional receipt-output argument. The five theorem notes and
+Each new checker emits JSON and documents its optional receipt-output argument. The theorem notes and
 `extension_proof_review.md` state the complete hypotheses; the exact checkers
 supplement their all-degree proofs. The portable bundle includes extensions and
 all sources needed for its standard-library replay. Retained annual archives

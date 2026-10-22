@@ -45,9 +45,9 @@
   {
    "id": "P001",
    "status": "target",
-   "claim": "Remaining targets: probabilistic or continuous noise models; classify unresolved pure and near perturbations after the P003 counterexamples; literature positioning.",
+   "claim": "Remaining targets: probabilistic or continuous noise models; variable-quadratic-coefficient and higher-momentum pure perturbations outside the proved routes, including K1-prime, linear-transverse K3 and higher cubic-phase couplings; literature positioning.",
    "support": "TASKS.json",
-   "scope": "Unfinished tasks, not current capabilities."
+   "scope": "Unfinished tasks, not current capabilities. Near and balanced tops and every nonzero constant quadratic-momentum coefficient are already classified; both P003 and the narrower P004 are refuted as stated."
   },
   {
    "id": "C0",
@@ -267,11 +267,26 @@
    "scope": "All degrees. First Newton-polygon edge; top-end analysis with first-order determinants [E1], [E2] and a second-order 4x4 determinant [E3] for the m^2-adjacent case; Lemma F."
   },
   {
+   "id": "W6-g",
+   "status": "proved_with_certificate",
+   "claim": "Triangular structures for pure tops: with P = p + w(q), Theorem X (triangular transvectant formula) and the containments K1 (deg w = 2, H = F(P) + lam q: K[P] + Kq), K1' (deg w = 2, H = F(P) + lam q + mu qP, mu != 0, deg F>=3 with its P^(deg F-1) coefficient normalized to zero: span{1, P, P^2, H}, plus q if deg F = 3, plus PH if also lam = 0), K2 (H = h(q, P), h quadratic: the pullback of all quadratics) and K3 (H = c Q^(k-2) G^2 + r, G = Qm + v, r restricted: span{1, G, H}, plus Q if k = 1) in D_inf(H).",
+   "support": "programmes/DYNAMIC_CORE_RESULTS.md#6.18; extensions/hamiltonian/check_triangular.py; results/hamiltonian/triangular_theorem.json",
+   "scope": "The triangular formula and stated containments are proved in all polynomial degrees; triangular-pure-v1 receipts certify containment only. Equality is now proved in K1 and K1+K2 by QC, the constant-quadratic K2 branches by CQ, and pure K3 with k>=2 by PP/SC. K1-prime and pure K3 k=1 upper bounds remain open. K3 k=2 is stationary; its bracket formula has no extra scalar c. Historical priority unestablished."
+  },
+  {
    "id": "P003",
    "status": "disproved_as_stated",
-   "claim": "The former pure/near collapse conjecture is false: H=q(qp+q^3)^2 has core span{1,H,qp+q^3}, and H=(p+q^2)^2 has an infinite core with active observables.",
-   "support": "research/core_overlap/pure_perfect_power.md; research/core_overlap/pure_quadratic_composition.md",
-   "scope": "Pure-top counterexamples and complete PP/QC/SC/SS scopes; remaining pure cases unclassified. Near tops are classified by W6-f (Theorem NE)."
+   "claim": "The former pure/near collapse conjecture is false: H=q(qp+q^3)^2 has the three-dimensional PP core; H=(p+q^2)^2 has an infinite QC core; Claude's H=(p+q^3)^2 has the six-dimensional SS core.",
+   "support": "research/core_overlap/pure_perfect_power.md; research/core_overlap/pure_quadratic_composition.md; research/core_overlap/analytic_shear_square.md; extensions/hamiltonian/check_triangular.py",
+   "scope": "Pure-top counterexamples and complete PP/QC/SC/SS/CQ scopes; remaining pure cases unclassified. Balanced total tops and near tops are classified by W6-d and W6-f. P004 is also refuted by the PP extension recorded separately."
+  },
+  {
+   "id": "P004",
+   "status": "refuted_as_stated",
+   "claim": "Claude's corrected pure-top collapse conjecture is also false: H=q(qp+q^3)^2+(qp+q^3) lies outside P+, K1, K1-prime, K2, K3 and the cubic-phase case under every affine chart, but PP proves D_inf(H)=span{1,H,qp+q^3}.",
+   "original_statement": "For a pure total top, outside P+, the triangular families K1/K1-prime/K2/K3 and the cubic-phase case, the core is span{1,H}; inside the families equality with the listed spans was conjectured.",
+   "support": "programmes/DYNAMIC_CORE_RESULTS.md#6.18; research/core_overlap/pure_perfect_power.md; research/core_overlap/pure_transverse.py; extensions/hamiltonian/check_triangular.py",
+   "scope": "Degree-seven exact counterexample. The p^2 coefficient q^3 has a triple root, while the p coefficient 2q^5+q has order one there; K3 with k=3 requires order at least two, an obstruction invariant under the allowable affine transverse shifts. Remaining K1-prime, linear-transverse K3 and higher cubic-phase cases remain unclassified; no replacement blanket conjecture is asserted."
   },
   {
    "id": "P002",

@@ -1,125 +1,131 @@
 {
   "status": "passed",
   "initial_review_commit": "e91e14da9d59e799ad9ed0331f59b2b500e478e8",
-  "base_commit": "268d553eb6a4434afeaf5fcb4689a6294e5ab688",
+  "base_commit": "fbc52d01cb47e413ac63763bde6666b8138a7448",
   "extension_base_commit": "4050dbfc484641c2ce8a8ab9a272e91ca4934f55",
-  "seconds": 94.064,
+  "seconds": 126.9,
   "checks": [
     {
       "checker": "audit_balanced.py",
       "status": "passed",
-      "seconds": 0.363
+      "seconds": 0.357
     },
     {
       "checker": "pure_transverse.py",
       "status": "passed",
-      "seconds": 0.328
+      "seconds": 0.402
     },
     {
       "checker": "pure_quadratic_composition.py",
       "status": "passed",
-      "seconds": 2.815
+      "seconds": 3.015
     },
     {
       "checker": "analytic_shear_square.py",
       "status": "passed",
-      "seconds": 0.971
+      "seconds": 1.028
     },
     {
       "checker": "audit_sector_dynamics.py",
       "status": "passed",
-      "seconds": 0.138
+      "seconds": 0.144
     },
     {
       "checker": "shear_composition_complete.py",
       "status": "passed",
-      "seconds": 1.316
+      "seconds": 1.823
     },
     {
       "checker": "shear_oscillator.py",
       "status": "passed",
-      "seconds": 1.899
+      "seconds": 2.446
     },
     {
       "checker": "analytic_potential_classification.py",
       "status": "passed",
-      "seconds": 0.042
+      "seconds": 0.051
     },
     {
       "checker": "quadratic_frontier.py",
       "status": "passed",
-      "seconds": 0.684
+      "seconds": 0.789
     },
     {
       "checker": "quadratic_shear_residual.py",
       "status": "passed",
-      "seconds": 0.277
+      "seconds": 0.286
     },
     {
       "checker": "affine_shear_potentials.py",
       "status": "passed",
-      "seconds": 0.662
+      "seconds": 0.712
     },
     {
       "checker": "constant_quadratic_classification.py",
       "status": "passed",
-      "seconds": 0.404
+      "seconds": 0.55
     },
     {
       "checker": "deformation_obstructions.py",
       "status": "passed",
-      "seconds": 0.442
+      "seconds": 0.531
     },
     {
       "checker": "extension_proof_review.py",
       "status": "passed",
-      "seconds": 1.301
+      "seconds": 1.421
     },
     {
       "checker": "audit_balanced_transverse.py",
       "status": "passed",
-      "seconds": 0.505
+      "seconds": 0.493
     },
     {
       "checker": "audit_composition_recognize.py",
       "status": "passed",
-      "seconds": 0.166
+      "seconds": 0.163
     },
     {
       "checker": "depth_verify.py",
       "status": "passed",
-      "seconds": 0.553
+      "seconds": 0.57
     },
     {
       "checker": "analytic_bridge_check.py",
       "status": "passed",
-      "seconds": 0.54
+      "seconds": 0.603
     },
     {
       "checker": "canonical_verify.py",
       "status": "passed",
-      "seconds": 0.474
+      "seconds": 0.654
     },
     {
       "checker": "review_checks.py",
       "status": "passed",
-      "seconds": 7.87
+      "seconds": 10.737
     },
     {
       "checker": "integration_verify.py",
       "status": "passed",
-      "seconds": 5.276
+      "seconds": 7.052
     },
     {
       "checker": "pure_tests.py",
       "status": "passed",
-      "seconds": 27.803
+      "seconds": 30.643
+    },
+    {
+      "checker": "retained triangular identities",
+      "status": "passed",
+      "seconds": 1.578,
+      "summary": "{\n \"status\": \"passed\",\n \"identities\": [\n  \"K1\",\n  \"K1'\",\n  \"K2\",\n  \"K3\",\n  \"X1\"\n ],\n \"theorem\": \"triangular transvectant formula; containments K1, K2, K3\"\n}\n"
     },
     {
       "checker": "integrated two-root regression suite",
       "status": "passed",
-      "seconds": 39.219,
-      "summary": "..........\n----------------------------------------------------------------------\nRan 10 tests in 39.151s\n\nOK\n"
+      "seconds": 60.84,
+      "summary": ".............\n----------------------------------------------------------------------\nRan 13 tests in 60.757s\n\nOK\n"
     }
   ],
   "scope": "Exact independent identities and finite sanity checks; universal claims rest on written proofs and internal review, historical priority unestablished."

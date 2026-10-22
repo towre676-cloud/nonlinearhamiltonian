@@ -1,0 +1,49 @@
+{
+ "schema": "machinery-envelope-v1",
+ "witness_kind": "triangular-pure",
+ "coefficient_domain": "Q",
+ "model": {
+  "1,0": "1",
+  "3,2": "1",
+  "5,1": "2",
+  "7,0": "1"
+ },
+ "model_sha256": "344d068e66a9c15895299df36774d81e1ae1bac48dd7832cf67c8096c88cd290",
+ "payload": {
+  "format": "triangular-pure-v1",
+  "hamiltonian": {
+   "1,0": "1",
+   "3,2": "1",
+   "5,1": "2",
+   "7,0": "1"
+  },
+  "family": "K3",
+  "core": "span{1, G, H}",
+  "generators": [
+   {
+    "0,0": "1"
+   },
+   {
+    "1,1": "1",
+    "3,0": "1"
+   },
+   {
+    "1,0": "1",
+    "3,2": "1",
+    "5,1": "2",
+    "7,0": "1"
+   }
+  ]
+ },
+ "payload_sha256": "2caa7a0ceda8825bb389b2e2f2216e3aea90b28fd24fe5166c970e36a301490d",
+ "hypotheses": [
+  "characteristic zero",
+  "exact check: the generators span a D-invariant space killed by every gate"
+ ],
+ "scope": "explicit elements of D_inf(H) beyond span{1, H} (counterexample to P003 as stated)",
+ "source_ids": [
+  "D16-F03",
+  "D06-F02"
+ ],
+ "producer": "towre676-cloud/nonlinearhamiltonian extensions (exact rational, Python standard library)"
+}

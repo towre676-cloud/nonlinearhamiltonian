@@ -218,7 +218,11 @@
     "Near tops complete (Theorem NE, commit 268d553; integrated proof clarifications)",
     "Complete higher-shear compositions and oscillator phase boundary (W8-SCP, W8-SO)",
     "Complete constant quadratic momentum with higher shear, every residual potential degree (W8-QF)",
-    "Every nonzero constant quadratic-momentum coefficient classified (CQ); variable coefficient remains open"
+    "Every nonzero constant quadratic-momentum coefficient classified (CQ); variable coefficient remains open",
+    "Claude fbc52d01 triangular formula and K1/K1-prime/K2/K3 containment certificates retained (W6-g)",
+    "K1/K1+K2 equality upgraded by QC; constant-quadratic K2 by CQ; pure K3 k>=2 by PP/SC",
+    "P004 also refuted by the beta*J PP extension; no new blanket pure-top conjecture asserted",
+    "Open: K1-prime upper bounds, linear-transverse K3 (k=1), variable quadratic coefficients and higher cubic-phase couplings"
    ]
   },
   {
@@ -244,6 +248,7 @@
   "W2": "Full six-parameter quadratic perturbation family of qp^3 classified (DYNAMIC_CORE_RESULTS.md 3b).",
   "results": "results/RECEIPTS.json indexes every enveloped certificate with its replay command.",
   "W3": "Homogeneous quartic dynamic cores fully classified: degenerate root types by certificates, distinct roots by the all-degree theorem (quartic-uniform-v1).",
-  "added": "S3 integer Smith cohomology, A2 fundamental units (both quadratic orders), O2b metric search, O3 set-valued noise."
+  "added": "S3 integer Smith cohomology, A2 fundamental units (both quadratic orders), O2b metric search, O3 set-valued noise.",
+  "Claude_triangular": "Commit fbc52d01cb47e413ac63763bde6666b8138a7448 integrated with its exact containment receipts. The merged proofs upgrade the identified subfamilies, correct the K3 bracket scalar and stationary k=2 case, and refute P004 by an already proved PP family."
  }
 }

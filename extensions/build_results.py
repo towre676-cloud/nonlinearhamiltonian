@@ -287,6 +287,14 @@ TWO_ROOT_EXAMPLES = [
     ('tworoot_pure_p2_family', {(5, 0): 1, (0, 2): 1, (1, 1): 2, (3, 0): -1}),
     ('tworoot_balanced_KG', {(2, 2): 1, (2, 1): 2, (2, 0): 1, (1, 1): 3, (1, 0): 3}),
     ('tworoot_balanced_box', {(3, 3): 1, (2, 1): 1, (1, 1): -2}),
+    ('tworoot_pure_triangular_K2', {(6, 0): 1, (3, 1): 2, (0, 2): 1}),
+]
+TRIANGULAR_EXAMPLES = [
+    ('triangular_K1_q2p_cubed_plus_q', {(6, 0): 1, (4, 1): 3, (2, 2): 3, (0, 3): 1, (1, 0): 1}),
+    ('triangular_K2_q3p_squared', {(6, 0): 1, (3, 1): 2, (0, 2): 1}),
+    ('triangular_K1K2_q2p_squared', {(4, 0): 1, (2, 1): 2, (0, 2): 1}),
+    ('triangular_K3_linear_twist', {(1, 2): 1, (3, 1): 2, (5, 0): 1, (1, 0): 1}),
+    ('triangular_K3_cubic_twist', {(3, 2): 1, (5, 1): 2, (7, 0): 1, (1, 0): 1}),
 ]
 
 
@@ -299,6 +307,21 @@ def two_root():
         'near-edge', {'family': 'c l^(d-1) m + lower-order terms'}, cert,
         ['characteristic zero', 'first Newton-polygon edge; top-end determinants; Lemma F'],
         'D_inf = span{1, H} unless H is affine in m', ['D16-F03', 'D06-F02'], PRODUCER, verify=False), s0)
+    import check_triangular as CTR
+    cert, s0 = timed(lambda: {'format': CTR.FORMAT, 'identities': sorted(CTR.check()['identities'])})
+    write('hamiltonian', 'triangular_theorem', envelope.make(
+        'triangular-pure', {'family': 'pure tops in triangular coordinates (q, p + w(q))'}, cert,
+        ['characteristic zero', 'triangular transvectant formula (Theorem X)'],
+        'containments K1, K2, K3 in D_inf(H); refutes P003 as stated', ['D16-F03', 'D06-F02'], PRODUCER,
+        verify=False), s0)
+    for name, h in TRIANGULAR_EXAMPLES:
+        c, s = timed(CTR.certify, {k: WG.F(v) for k, v in h.items()})
+        c.pop('result')
+        write('hamiltonian', name, envelope.make(
+            'triangular-pure', c['hamiltonian'], c,
+            ['characteristic zero', 'exact check: the generators span a D-invariant space killed by every gate'],
+            'explicit elements of D_inf(H) beyond span{1, H} (counterexample to P003 as stated)',
+            ['D16-F03', 'D06-F02'], PRODUCER, verify=False), s)
     cert, s0 = timed(lambda: {'format': CBL.FORMAT, 'identities': sorted(CBL.check()['identities'])})
     write('hamiltonian', 'balanced_top_theorem', envelope.make(
         'balanced-top', {'family': 'c Q^mu + lower-order terms'}, cert,

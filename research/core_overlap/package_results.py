@@ -50,6 +50,7 @@ def main():
         if line:
             entries.add(line.split('  ', 1)[1])
     entries.update(p.relative_to(ROOT).as_posix() for p in selected)
+    entries.update(p.relative_to(ROOT).as_posix() for p in files_below(ROOT/'results'))
     entries.update([archive.relative_to(ROOT).as_posix(), checksum.relative_to(ROOT).as_posix()])
     entries.discard('MANIFEST.sha256')
     (ROOT/'MANIFEST.sha256').write_text(''.join(

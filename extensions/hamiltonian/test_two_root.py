@@ -224,6 +224,145 @@ class PureCompositionRegressions(unittest.TestCase):
         with self.assertRaises(ValueError):
             TR.check(cert)
 
+def tri_samples(rng):
+    """members of K1, K2, K3 (DYNAMIC_CORE_RESULTS.md section 6.8) and near misses."""
+    import check_triangular as CT
+    out = []
+    w2 = {2: F(1), 1: F(rng.randint(-1, 1))}
+    out.append(CT.tri({(0, 3): F(1), (0, 1): F(-2), (1, 0): F(1)}, w2))            # K1, active tower
+    out.append(CT.tri({(0, 3): F(1), (0, 0): F(1)}, w2))                           # K1, stationary tower
+    out.append(CT.tri({(0, 2): F(1), (1, 0): F(rng.randint(-2, 2))}, w2))           # K1 + K2
+    out.append(CT.tri({(0, 2): F(1), (2, 0): F(1)}, w2))                           # K2, e = 2
+    out.append(CT.tri({(0, 2): F(2), (1, 1): F(1), (1, 0): F(-1)}, {3: F(1)}))     # K2, e = 3
+    out.append(CT.tri({(0, 2): F(1), (2, 0): F(1)}, {4: F(1), 1: F(1)}))           # K2, e = 4
+    out.append({(1, 2): F(1), (3, 1): F(2), (5, 0): F(1), (1, 0): F(1)})           # K3, k = 1
+    out.append({(1, 2): F(1), (0, 2): F(1), (3, 1): F(2), (2, 1): F(2), (5, 0): F(1), (4, 0): F(1)})
+    out.append({(3, 2): F(1), (5, 1): F(2), (7, 0): F(1), (1, 0): F(1)})           # K3, k = 3, r = Q
+    out.append({(2, 2): F(1), (3, 1): F(4), (4, 1): F(2), (4, 0): F(4), (5, 0): F(4), (6, 0): F(1)})
+    out.append(CT.tri({(0, 4): F(1), (1, 1): F(-1), (1, 0): F(1)}, w2))            # K1'
+    out.append(CT.tri({(0, 3): F(1), (1, 1): F(1)}, w2))                           # K1', P H in the core
+    # Near misses remain outside these containment recognizers.
+    out.append(CT.tri({(0, 3): F(1)}, {3: F(1)}))                                  # cubic in P, e = 3
+    out.append(CT.tri({(0, 3): F(1), (2, 0): F(1)}, w2))                           # Q^2 breaks K1
+    out.append(CT.tri({(0, 2): F(1), (3, 0): F(1)}, {3: F(1)}))                    # cubic r breaks K2
+    out.append({(1, 2): F(1), (3, 1): F(2), (5, 0): F(1), (2, 0): F(1)})           # r = Q^2 breaks K3
+    out.append({(2, 2): F(1), (4, 1): F(2), (6, 0): F(1), (1, 0): F(1)})           # k = 2 needs r const
+    return out
+
+
+class Triangular(unittest.TestCase):
+    def test_identities(self):
+        import check_triangular as CT
+        self.assertEqual(CT.check()['status'], 'passed')
+        with self.assertRaises(ValueError):
+            CT.check({'format': CT.FORMAT, 'identities': ['X1']})
+
+    def test_families_against_direct_computation(self):
+        """Containment detection is independent of the stronger core routes.
+
+        Direct filtered kernels are finite calibrations only. For an
+        unproved full core they certify a lower bound, never equality.
+        """
+        import check_triangular as CT
+        rng = random.Random(4)
+        base = tri_samples(rng)
+        Hs = base + [linmap(H, 1, 0, 1, 1, rng.randint(-2, 2), rng.randint(-2, 2))
+                     for H in base[::4]]
+        Hs += [linmap(H, 1, 1, 0, 1, rng.randint(-1, 1), rng.randint(-1, 1))
+               for H in base[1:10:4]]
+        seen = set()
+        # Six modest finite calibrations; all cases and affine images still
+        # receive exact all-output gate and invariant-span checks below.
+        finite_cases = {0, 2, 4, 6, 8, 11}
+        for index, H in enumerate(Hs):
+            H = W.tidy(H)
+            result = TR.classify(H)
+            try:
+                containment = CT.detect_pure(H)
+            except ValueError:
+                containment = None
+            if containment is not None:
+                seen.add(containment['family'])
+                self.assertTrue(CT.span_ok(H, containment['gens']), (H, containment))
+                cert = CT.certify(H)
+                self.assertEqual(CT.check(cert)['claim'], 'contained in D_inf(H) (exact)')
+                if not result['proved']:
+                    self.assertEqual(result['core'], 'unclassified')
+                    self.assertTrue(result['contains_proved'])
+                    self.assertEqual(result['core_contains'], containment['core'])
+                    self.assertIn(result['route'], ("K1'", 'K3'))
+            elif not result['proved']:
+                self.assertEqual(result['core'], 'unclassified')
+            if index in finite_cases:
+                degree = result['degree']
+                bound = min(degree + 2, 8)
+                actual = filtered_dim(H, bound, 8)
+                if result['proved']:
+                    self.assertEqual(actual, predicted(result['core'], degree, bound),
+                                     (H, result, bound))
+                elif containment is not None:
+                    self.assertGreaterEqual(actual, CT.core_dim(containment, bound),
+                                            (H, containment, bound))
+                else:
+                    self.assertGreaterEqual(actual, 1 + (bound >= degree))
+        for family in ('K1', "K1'", 'K2', 'K1+K2', 'K3'):
+            self.assertIn(family, seen)
+        for H in base[12:]:
+            with self.assertRaises(ValueError):
+                CT.detect_pure(H)
+
+    def test_certificates_and_forgeries(self):
+        import check_triangular as CT
+        H = W.tidy({(6, 0): 1, (3, 1): 2, (0, 2): 1})
+        cert = CT.certify(H)
+        self.assertEqual(cert['result']['verified_dimension'], 6)
+        # D(q)=-F'(P) must fit the certified tower for every degree F.
+        high = CT.tri({(0, 8): F(1), (1, 0): F(1)}, {2: F(1)})
+        high_cert = CT.certify(high)
+        self.assertEqual(high_cert['result']['family'], 'K1')
+        self.assertEqual(high_cert['result']['verified_dimension'], 9)
+        for mut in (lambda c: c['generators'].append({'2,1': '1'}),
+                    lambda c: c['generators'][3].update({'0,1': '2'}),
+                    lambda c: c.update(family='K3'),
+                    lambda c: c['hamiltonian'].update({'3,0': '1'})):
+            bad = copy.deepcopy(cert)
+            bad.pop('result')
+            mut(bad)
+            with self.assertRaises(ValueError):
+                CT.check(bad)
+
+        q, p = {(1, 0): F(1)}, {(0, 1): F(1)}
+        root = TR.add(q, {(0, 0): F(-2)})
+        G = TR.add(TR.mul(root, p), TR.power(q, 3), q)
+        residual = TR.add({(0, 0): F(7)}, TR.sc(root, -2))
+        scale = F(2, 3)
+        twisted = TR.add(TR.sc(TR.mul(root, TR.power(G, 2)), scale), residual)
+        expected = TR.add(twisted, TR.sc(residual, -1),
+                          TR.mul(root, W.pder(residual, 1, 0)))
+        self.assertEqual(W.act(W.derivation(twisted), G), expected)
+        self.assertEqual(CT.check(CT.certify(twisted))['family'], 'K3')
+
+        # K3 at k=2 can be stationary; containment does not imply activity.
+        J = TR.add(TR.mul(q, p), TR.power(q, 3))
+        stationary = TR.add(TR.sc(TR.power(J, 2), scale), {(0, 0): F(5)})
+        result = TR.classify(stationary)
+        self.assertTrue(result['proved'])
+        self.assertEqual(result['route'], 'SC')
+        for g in ({(0, 0): F(1)}, J, stationary):
+            self.assertEqual(W.act(W.derivation(stationary), g), {})
+        self.assertTrue(CT.span_ok(stationary, [{(0, 0): F(1)}, J, stationary]))
+
+        # The former outside-list conjecture P004 misses this proved PP
+        # exception. A detector miss must not reinstate a collapse claim.
+        outside_list = TR.add(TR.mul(q, TR.power(J, 2)), J)
+        for member in (outside_list, linmap(outside_list, 1, 1, 0, 1, F(1, 2), -1)):
+            result = TR.classify(member)
+            self.assertTrue(result['proved'])
+            self.assertEqual(result['route'], 'PP')
+            with self.assertRaises(ValueError):
+                CT.detect_pure(member)
+        self.assertTrue(CT.span_ok(outside_list, [{(0, 0): F(1)}, J, outside_list]))
+
 
 class Decision(unittest.TestCase):
     def test_against_direct_computation(self):

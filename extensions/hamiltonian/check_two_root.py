@@ -269,8 +269,20 @@ def classify(H):
         if pp is not None:
             out.update(pp)
         else:
+            import check_triangular as CT
+            tri = CT.detect(H, l)
             out.update(route='pure, unresolved', proved=False, core='unclassified',
                        active_part='unclassified (the former blanket conjecture is false)')
+            if tri is not None:
+                out.update(route=tri['family'], contains_proved=True,
+                           core_contains=tri['core'],
+                           generators=[ser(g) for g in tri['gens']],
+                           containment_degrees=tri['degrees'])
+                for key in ('tower_step', 'tower_from', 'G', 'w'):
+                    if key in tri:
+                        out[key] = tri[key]
+            elif CT.cubic_phase(H, l):
+                out['route'] = 'pure, cubic phase'
     return out
 
 

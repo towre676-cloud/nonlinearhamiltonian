@@ -50,6 +50,14 @@ def main():
                 row['output'] = (result.stdout+result.stderr)[-5000:]
             rows.append(row)
         tick = time.monotonic()
+        result = subprocess.run([sys.executable, '-B', '-S',
+                                 str(target/'extensions/hamiltonian/check_triangular.py')],
+                                cwd=target, capture_output=True, text=True)
+        rows.append({'checker': 'retained triangular identities',
+                     'status': 'passed' if result.returncode == 0 else 'failed',
+                     'seconds': round(time.monotonic()-tick, 3),
+                     'summary': (result.stdout+result.stderr)[-3000:]})
+        tick = time.monotonic()
         result = subprocess.run([sys.executable, '-B', '-S', '-m', 'unittest', 'test_two_root'],
                                 cwd=target/'extensions/hamiltonian', capture_output=True, text=True)
         rows.append({'checker': 'integrated two-root regression suite',
@@ -58,7 +66,7 @@ def main():
                      'summary': (result.stdout+result.stderr)[-3000:]})
     result = {'status': 'passed' if all(r['status']=='passed' for r in rows) else 'failed',
               'initial_review_commit': 'e91e14da9d59e799ad9ed0331f59b2b500e478e8',
-              'base_commit': '268d553eb6a4434afeaf5fcb4689a6294e5ab688',
+              'base_commit': 'fbc52d01cb47e413ac63763bde6666b8138a7448',
               'extension_base_commit': '4050dbfc484641c2ce8a8ab9a272e91ca4934f55',
               'seconds': round(time.monotonic()-started, 3), 'checks': rows,
               'scope': 'Exact independent identities and finite sanity checks; universal claims rest on written proofs and internal review, historical priority unestablished.'}

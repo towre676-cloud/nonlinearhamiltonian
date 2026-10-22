@@ -576,7 +576,7 @@ The tests generate random members of every route and random affine changes of co
 
 **Original conjecture P003: false as stated.** The proposed collapse of every pure/near/balanced top outside Theorem P⁺ is disproved by PP, QC, SS, and the quadratic part of SC. The near-top restriction is proved by Theorem NE. Balanced total tops are still classified by Theorem B. Pure tops now have additional finite active, finite stationary, and infinite active families, so no complete blanket classification is claimed.
 
-The decision procedure applies the exact PP, QC, SC and SS recognizers after the retained routes. Unresolved pure cases are labeled `unclassified`; finite matrix tests do not reinstate the former conjecture. Existing stored certificates retain their hypotheses and are replayed separately. The research package's independent review records the proof checks and the small setup repair in Theorem B (`s ≥ 1, s ≠ μ` suffices; no `s<μ` assumption is needed).
+The decision procedure applies the exact PP, QC, SC, SS, SCP and CQ recognizers after the retained routes. Claude's triangular-pure-v1 receipts are retained as containment certificates; §6.18 records which are upgraded by the independent complete-core proofs. Unresolved pure cases are labeled `unclassified`; finite matrix tests do not reinstate P003 or the subsequently refuted P004. Existing stored certificates retain their hypotheses and are replayed separately. The research package's independent review records the proof checks and the small setup repair in Theorem B (`s ≥ 1, s ≠ μ` suffices; no `s<μ` assumption is needed).
 
 ### 6.12 Higher shear compositions: the missing case
 
@@ -708,3 +708,127 @@ The full phase diagram, unified classifier and proof dependencies are
 `research/core_overlap/constant_quadratic_classification.*`; the new
 branch proofs are `quadratic_shear_residual.*` and
 `affine_shear_potentials.*`.
+
+
+### 6.18 Claude's triangular families: retained containments and complete-core overlap
+
+Claude commit `fbc52d01cb47e413ac63763bde6666b8138a7448` independently
+found the six-dimensional sector of `H=(p+q^3)^2`, introduced a general
+triangular transvectant formula, and supplied exact invariant-span
+certificates for the families below. Its formula and containment receipts
+are retained. The full-core results of §§6.8–6.17 upgrade the overlapping
+cases; the additional coupled families remain explicitly distinguished.
+The quartic `H=(p+q^2)^2` in QC is a smaller pure-top counterexample.
+
+**Theorem X (triangular transvectant formula).** Write
+`tau(q,p)=(q,p+w(q))` and `f_tilde=f composed with tau`. With independent
+coordinates `(Q_1,P_1),(Q_2,P_2)`,
+
+`sum_k t^k/k! T_k(h_tilde,g_tilde) composed with tau^(-1)`
+
+is the diagonal evaluation of
+
+`exp(t(partial_Q1 partial_P2-partial_P1 partial_Q2) + sum_(j>=2) t^j w^(j)(Q)/j! (partial_P1 partial_P2^j+(-1)^j partial_P1^j partial_P2)) h(1)g(2)`.
+
+The coefficients `w^(j)(Q)` are frozen, not differentiated. To prove
+this, test on `h=exp(delta Q+alpha P)`, `g=exp(gamma Q+beta P)`.
+The transvectant generating series shifts the original coordinates to
+`q+t beta` and `q-t alpha`. Its exponent is
+`t(delta beta-gamma alpha)+alpha[w(q+t beta)-w(q)]+beta[w(q-t alpha)-w(q)]`;
+the linear terms in w cancel. The two bilinear differential operators
+agree on all exponentials, hence on polynomials. For quadratic w the
+correction is the single even term
+`c t^2 partial_P1 partial_P2(partial_P1+partial_P2)`, `c=w''/2`.
+This is an explicit differential identity, not a claim of flat-product
+covariance under arbitrary nonlinear canonical maps.
+
+**Theorem K (the retained containments).** Put `P=p+w(q)`, `Q=q`.
+
+- **K1.** If `deg w=2` and `H=F(P)+lambda Q`, then
+  `K[P]+KQ` lies in the core. The even triangular correction kills every
+  odd gate on two functions of P; Q is linear, and
+  `{H,P^n}=lambda*n*P^(n-1)`, `{H,Q}=-F'(P)`.
+- **K1′.** If `deg w=2`, `H=F(P)+lambda Q+mu QP`, `mu!=0`,
+  `deg F>=3`, and the `P^(deg F-1)` coefficient of F is normalized to
+  zero, then `span{1,P,P^2,H}` lies in the core. For degree F three it
+  also contains Q, and for degree three with `lambda=0` it also contains
+  PH. The exact triangular checker verifies the full invariant spans;
+  its tensor-grid identity for PH has the stated coefficient-degree
+  bound. These are containments, not complete-core theorems here.
+- **K2.** For arbitrary polynomial w and a quadratic h,
+  `H=h(Q,P)` has the pullback of the six-dimensional quadratic sector
+  inside the core. In the triangular formula every odd correction
+  differentiates one quadratic factor at least three times, and
+  Poisson brackets of quadratics remain quadratic. If h has no `P^2`
+  term, its full core is instead handled by the affine-in-momentum
+  positive structures; a six-dimensional containment need not be full.
+- **K3.** Let `Q=l-gamma`, `G=Qm+v(l)`, `k>=1`, and suppose
+  `H=c Q^(k-2) G^2+r` is polynomial. For `k>=2` require
+  `r in span{1,Q^(k-2)}`; for `k=1` allow rational r with `Qr` of
+  degree at most two. The core contains `span{1,G,H}` for `k>=2`,
+  and `span{1,Q,G,H}` for `k=1`. Higher gates vanish because G is
+  affine in m and H has m degree two. In canonical root coordinates
+  the correct closure identities are
+  `{H,G}=(k-2)(H-r)+Qr'` and `{H,Q}=-2c Q^(k-1)G`.
+  There is no extra factor c multiplying `H-r`. For
+  `r=a0+a1 Q^(k-2)`, the first bracket is `(k-2)(H-a0)`.
+  Affine root coordinates rescale brackets by their determinant.
+
+The exact `triangular-pure-v1` certificates in
+`results/hamiltonian/triangular_*.json` prove the displayed invariant
+spans are gate-killed. `check_triangular.py` recomputes the gates and
+brackets and checks independence; its certificate claim remains
+containment. It does not turn a finite-degree matrix comparison into
+an all-degree upper bound.
+
+**Complete-core compatibility.** In the pure-total-top setting the
+following stronger conclusions now follow from the independent proofs:
+
+| Retained family | Full conclusion and proof |
+|---|---|
+| K1, degree F at least three | Exact `K[P]+KQ`, by QC. |
+| K1+K2 | Exact `K[P]+span{Q,QP,Q^2}`, by quadratic-composition QC. |
+| K2 with nonzero `P^2` coefficient | Complete the square, absorbing the affine `QP` and P terms into w. CQ gives the exact six-dimensional core except in its quadratic-shear affine-residual QC tower case. |
+| K3, k at least three | Exact `span{1,G,H}`, by PP with transverse exponents `(r,s)=(k,2)`. PP includes additional linear-in-G terms absent from K3. |
+| K3, k equal to two | Exact stationary `span{1,G,G^2}`, by SC. Contrary to an unqualified active-part claim, this K3 branch has no active core. |
+| K3, k equal to one | Four-dimensional containment retained; upper bound remains open. The momentum-square coefficient is variable, so CQ does not apply. |
+| K1′ | Stated containments retained; upper bounds remain open. The `QP` coupling is outside QC and SCP. |
+
+For K3's pure-top applications the nonlinear v has degree at least
+three. That hypothesis is essential when invoking SC at k two;
+quadratic G may instead support an infinite stationary tower.
+
+**P004 is also false as stated.** Claude's corrected conjecture proposed
+collapse outside P+, K1, K1′, K2, K3 and the cubic-phase case, and equality
+with its proposed family spans inside them. The outside-families
+assertion already has the exact PP counterexample
+
+`J=qp+q^3`, `H=qJ^2+J`, `D_inf(H)=span{1,H,J}`, `{H,J}=H-J`.
+
+Its total top is the pure seventh power `q^7`. Its transverse `p^2`
+coefficient is `q^3`, and its p coefficient is `2q^5+q`, which has
+vanishing order one at the triple root of the `p^2` coefficient.
+K3 would have to use k three there, requiring the p coefficient to be
+divisible by `q^2`. An affine transverse shift changes that coefficient
+only by an affine multiple of `q^3`, so it cannot remove the order-one
+obstruction. The unique pure top forces every admissible root coordinate
+to be a scaled and translated q; thus this exclusion holds in every
+affine chart. The variable transverse coefficient excludes K1, K2 and
+the constant-transverse cubic-phase case, momentum degree two excludes
+K1′, and the nonzero p-square term excludes P+. Hence this example lies
+outside every excluded family, yet its proved core has dimension three.
+No replacement blanket pure-top conjecture is asserted.
+
+**Remaining fronts.** The complete constant-quadratic class is settled
+by CQ. The open overlaps exposed by Claude's work are K1′, the
+linear-transverse K3 branch, general variable quadratic-momentum
+coefficients, and higher cubic-phase couplings beyond the proved routes.
+The cubic-phase label means constant transverse top and a completed
+quadratic w; it is not itself a classification. For example
+`P=p+q^2`, `H=P^2(P^2+q)`, `J=P(P^2+q)` has
+`{H,J}=-H` and zero odd gates on J, so `span{1,H,J}` is an exact
+containment. Its full upper bound is not claimed. Likewise the finite
+search verdict for `(p+q^2)^3+q^2` does not become a theorem merely from
+agreeing low-degree ranks. Literature priority remains open for the
+specific complete-core classifications; general quantum-canonical
+transformation machinery is established background.

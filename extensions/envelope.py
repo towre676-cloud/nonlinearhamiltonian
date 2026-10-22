@@ -117,6 +117,12 @@ def _near_edges(model, payload):
     return _load('hamiltonian/check_near_edges.py', 'mx_check_near_edges').check(payload)
 
 
+def _triangular(model, payload):
+    if 'hamiltonian' in payload and model is not None and model != payload.get('hamiltonian'):
+        raise ValueError('envelope model is not the certified Hamiltonian')
+    return _load('hamiltonian/check_triangular.py', 'mx_check_triangular').check(payload)
+
+
 def _quartic_uniform(model, payload):
     if model != {'family': payload.get('family')}:
         raise ValueError('envelope model must name the certified family')
@@ -158,6 +164,7 @@ KINDS = {
     'two-root-perturbation': ('format', 'two-root-perturbation-v1', _two_root),
     'balanced-top': ('format', 'balanced-top-v1', _balanced),
     'near-edge': ('format', 'near-edge-v1', _near_edges),
+    'triangular-pure': ('format', 'triangular-pure-v1', _triangular),
     'rational-contraction': ('schema', 'rational-contraction-v1', _contraction),
     'integer-cohomology': ('format', 'integer-smith-v1', _smith),
     'fundamental-unit': ('format', 'fundamental-unit-v1', _units),
