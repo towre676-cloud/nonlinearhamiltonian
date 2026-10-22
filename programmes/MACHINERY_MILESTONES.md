@@ -53,7 +53,15 @@ The Hamiltonian milestones W1 and W2 have their own note, `DYNAMIC_CORE_RESULTS.
 
 **Checks.** Target-only decisions cost `1` where full identification costs `3`, which is the seed fixture. Eighty random tables agree with explicit enumeration of every decision tree.
 
-**Not transferred.** Noisy or continuous outcomes are not covered.
+**Set-valued (adversarial) noise.** A model may declare `"noise": "set_valued"`. Each test then returns, at a state, any element of a declared finite set.
+
+- After observing `y` the feasible set is `S_y = {s : y possible at s}`. A test is admissible only if every possible observation strictly shrinks the feasible set.
+- Optimality certificates are as before.
+- A feasible set whose value is infinite carries a witness subset `W` with two labels on which every test has a common observation. Answering that observation forever defeats every policy. The checker verifies each such witness before treating the value as infinite.
+
+Eighty random set-valued tables agree with an independent minimax oracle. Noise on `t1` raises the seed fixture's cost from 3 to 4.
+
+**Not transferred.** Probabilistic and continuous noise, which need posterior semantics and a different termination theorem.
 
 ## S1: finite rational obstruction compiler, `rational-obstruction-answer-v1`
 

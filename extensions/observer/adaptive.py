@@ -23,12 +23,7 @@ import check_adaptive as C  # noqa: E402
 def solve(model):
     states, labels, tests = C.read(model)
     cert = {'format': C.FORMAT, 'model_sha256': C.digest(model)}
-    for i, s in enumerate(states):
-        for t in states[i + 1:]:
-            if labels[s] != labels[t] and all(str(o[s]) == str(o[t]) for _, o in tests):
-                cert.update(status='unresolvable', pair=[s, t])
-                cert['result'] = C.check(cert, model)
-                return cert
+    INF = None
 
     @lru_cache(None)
     def V(T):
@@ -37,12 +32,33 @@ def solve(model):
         best = None
         for e, (c, o) in enumerate(tests):
             fib = C.fibres(T, o)
-            if len(fib) < 2:
+            if not C.useful(T, fib):
                 continue
-            val = c + max(V(tuple(f))[0] for f in fib.values())
+            vals = [V(tuple(f))[0] for f in fib.values()]
+            if any(v is INF for v in vals):
+                continue
+            val = c + max(vals)
             if best is None or val < best[0]:
                 best = (val, e)
-        return best
+        return best if best else (INF, None)
+
+    def witness(T):
+        """A reachable set without admissible tests whose labels differ."""
+        if V(T)[0] is not INF:
+            return None
+        for c, o in tests:
+            fib = C.fibres(T, o)
+            if C.useful(T, fib):
+                for f in fib.values():
+                    w = witness(tuple(f))
+                    if w:
+                        return w
+        return list(T)
+    root0 = tuple(sorted(states))
+    if V(root0)[0] is INF:
+        cert.update(status='unresolvable', witness_set=witness(root0))
+        cert['result'] = C.check(cert, model)
+        return cert
 
     def tree(T):
         val, e = V(T)
@@ -53,20 +69,24 @@ def solve(model):
                 'children': {y: tree(tuple(f)) for y, f in fib.items()}}
     root = tuple(sorted(states))
     t = tree(root)
-    table = {}
+    table, witnesses = {}, {}
     stack = [root]
     while stack:                       # close the table under all splitting fibres
         T = stack.pop()
         k = C.key(T)
         if k in table:
             continue
+        if V(T)[0] is INF:
+            table[k] = 'inf'
+            witnesses[k] = witness(T)
+            continue
         table[k] = str(V(T)[0])
         if V(T)[1] is not None:
             for _, o in tests:
                 fib = C.fibres(T, o)
-                if len(fib) > 1:
+                if C.useful(T, fib):
                     stack += [tuple(f) for f in fib.values()]
-    cert.update(status='optimal', value=str(V(root)[0]), tree=t, lower_bounds=table)
+    cert.update(status='optimal', value=str(V(root)[0]), tree=t, lower_bounds=table, infinite_witnesses=witnesses)
     cert['result'] = C.check(cert, model)
     return cert
 

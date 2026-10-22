@@ -56,7 +56,7 @@ class Fixtures(unittest.TestCase):
 
     def test_unresolved_pair(self):
         r = A.solve(model({'a': 0, 'b': 1, 'c': 1}, [('t', 1, {'a': 0, 'b': 0, 'c': 1})]))
-        self.assertEqual((r['status'], r['pair']), ('unresolvable', ['a', 'b']))
+        self.assertEqual((r['status'], r['witness_set']), ('unresolvable', ['a', 'b']))
 
     def test_single_state_and_constant_labels(self):
         self.assertEqual(A.solve(model({'a': 0}, []))['value'], '0')
@@ -81,6 +81,59 @@ class Oracle(unittest.TestCase):
                 self.assertEqual(F(r['value']), b, trial)
 
 
+def brute_set(m):
+    """Oracle for set-valued outcomes: explicit minimax over feasible sets (separate code)."""
+    states, labels, tests = C.read(m)
+    import functools
+
+    @functools.lru_cache(None)
+    def val(T):
+        if len({labels[s] for s in T}) == 1:
+            return F(0)
+        best = None
+        for c, o in tests:
+            ys = {y for s in T for y in o[s]}
+            kids = [tuple(s for s in T if y in o[s]) for y in ys]
+            if any(len(k) == len(T) for k in kids):
+                continue
+            sub = [val(k) for k in kids]
+            if None in sub:
+                continue
+            v = c + max(sub)
+            best = v if best is None or v < best else best
+        return best
+    return val(tuple(sorted(states)))
+
+
+class SetValued(unittest.TestCase):
+    def test_noise_raises_cost_and_matches_oracle(self):
+        clean = model({'a': 0, 'b': 1, 'c': 2}, SEED_TESTS)
+        noisy = dict(clean, noise='set_valued',
+                     tests=[{'name': n, 'cost': c, 'outcomes': {s: [v] for s, v in o.items()}} for n, c, o in SEED_TESTS])
+        noisy['tests'][0]['outcomes']['a'] = [0, 1]          # t1 may misreport a as 1
+        self.assertEqual(A.solve(noisy)['value'], str(brute_set(noisy)))
+        self.assertGreater(F(A.solve(noisy)['value']), F(A.solve(clean)['value']))
+
+    def test_random_set_valued_tables(self):
+        rng = random.Random(8)
+        kinds = {'optimal': 0, 'unresolvable': 0}
+        for trial in range(80):
+            n = rng.randint(1, 5)
+            names = [chr(97 + i) for i in range(n)]
+            m = {'states': names, 'labels': {s: rng.randint(0, 2) for s in names}, 'noise': 'set_valued',
+                 'tests': [{'name': f't{k}', 'cost': rng.choice([1, 2, '3/2']),
+                            'outcomes': {s: rng.sample([0, 1, 2], rng.randint(1, 2)) for s in names}}
+                           for k in range(rng.randint(1, 4))]}
+            r = A.solve(m)
+            b = brute_set(m)
+            kinds[r['status']] += 1
+            if r['status'] == 'unresolvable':
+                self.assertIsNone(b, trial)
+            else:
+                self.assertEqual(F(r['value']), b, trial)
+        self.assertGreater(min(kinds.values()), 5)
+
+
 class Forgeries(unittest.TestCase):
     def test_mutations(self):
         m = model({'a': 0, 'b': 1, 'c': 2}, SEED_TESTS)
@@ -89,7 +142,7 @@ class Forgeries(unittest.TestCase):
                        lambda c: c['lower_bounds'].update({'a|b|c': '4'}),
                        lambda c: c['lower_bounds'].pop('b|c'),
                        lambda c: c['tree'].update(test=2),
-                       lambda c: c.update(status='unresolvable', pair=['a', 'b'])):
+                       lambda c: c.update(status='unresolvable', witness_set=['a', 'b'])):
             bad = copy.deepcopy(cert)
             mutate(bad)
             with self.assertRaises((ValueError, KeyError)):

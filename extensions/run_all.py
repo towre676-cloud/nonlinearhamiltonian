@@ -22,6 +22,7 @@ SUITES = [
     ('O3 adaptive Bellman', 'observer', 'test_adaptive'),
     ('W1 Weyl discovery and kernels', 'hamiltonian', 'test_weyl_discovery'),
     ('W2 six-parameter top reduction', 'hamiltonian', 'test_top_reduction'),
+    ('W3 quartic per-degree rigidity', 'hamiltonian', 'test_quartic_rigidity'),
     ('S0 contraction seed', 'structure', 'test_contraction_seed'),
     ('S1 obstruction interface', 'structure', 'test_obstruction'),
     ('S2 DGLA lifting', 'structure', 'test_dgla'),
