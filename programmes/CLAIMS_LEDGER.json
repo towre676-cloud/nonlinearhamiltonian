@@ -139,6 +139,34 @@
    "claim": "Rational invariant-metric search (finite-semigroup averages, truncated weighted word sums) with exact acceptance; failure reported as no_certificate.",
    "support": "extensions/observer/panels.py metric_search",
    "scope": "Sufficient certificates only; no SDP solver."
+  },
+  {
+   "id": "W3-a",
+   "status": "theorem_with_certificates",
+   "claim": "Homogeneous quartics of root types (4), (3,1), (2,2), (2,1,1) over Q: D_inf = (+)_{j<=2} M^j Q[L], Q[L] + M Q[L], Q[Q], span{1,H} respectively.",
+   "support": "programmes/DYNAMIC_CORE_RESULTS.md#3c; results/hamiltonian/quartic_*.json, q2p2.json",
+   "scope": "Each type is a single GL2(Qbar) class; transport and descent via GL2 covariance of the transvectants."
+  },
+  {
+   "id": "W3-b",
+   "status": "certified_per_degree_theorem",
+   "claim": "For every binary quartic H over Qbar with distinct roots and every certified degree n: D_inf(H)_n = 0 for n not in {0,4} and D_inf(H)_4 = Qbar H; the only exceptional factor of the family q^4 + l q^2 p^2 + p^4 is l^2 - 4.",
+   "support": "extensions/hamiltonian/quartic_rigidity.py; check_quartic_rigidity.py; results/hamiltonian/quartic_rigidity.json",
+   "scope": "Finitely many degrees (see the certificate); depth R <= 3; not a uniform-in-degree theorem."
+  },
+  {
+   "id": "W3-c",
+   "status": "certified_computation",
+   "claim": "D_inf(q^4+p^4) = span{1,H} and D_inf(q^4+q^2p^2+p^4) = span{1,H} in all degrees.",
+   "support": "results/hamiltonian/quartic_lambda0_q4_plus_p4.json, quartic_lambda1.json.gz",
+   "scope": "Exact all-degree certificates over Q."
+  },
+  {
+   "id": "W3-conj",
+   "status": "conjecture",
+   "claim": "D_inf(H) = span{1,H} for every binary quartic with distinct roots.",
+   "support": "W3-b, W3-c",
+   "scope": "Open; evidence only."
   }
  ],
  "rule": "Passing finite tests does not upgrade a target or an unproved general statement to a theorem.",
