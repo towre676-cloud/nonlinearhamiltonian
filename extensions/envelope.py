@@ -99,6 +99,10 @@ def _root_rigidity(model, payload):
     return _load('hamiltonian/check_root_rigidity.py', 'mx_check_root_rigidity').check(payload)
 
 
+def _simple_root(model, payload):
+    return _load('hamiltonian/check_simple_root.py', 'mx_check_simple_root').check(payload)
+
+
 def _quartic_uniform(model, payload):
     if model != {'family': payload.get('family')}:
         raise ValueError('envelope model must name the certified family')
@@ -136,6 +140,7 @@ KINDS = {
     'binary-static': ('format', 'binary-static-v1', _binary_static),
     'monomial-theorem': ('format', 'monomial-theorem-v1', _monomial_theorem),
     'root-rigidity': ('format', 'root-rigidity-v1', _root_rigidity),
+    'simple-root-rigidity': ('format', 'simple-root-rigidity-v1', _simple_root),
     'rational-contraction': ('schema', 'rational-contraction-v1', _contraction),
     'integer-cohomology': ('format', 'integer-smith-v1', _smith),
     'fundamental-unit': ('format', 'fundamental-unit-v1', _units),

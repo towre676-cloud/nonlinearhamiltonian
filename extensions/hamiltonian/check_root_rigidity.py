@@ -6,12 +6,10 @@ lambda over Qbar, the checker verifies a declared square-free decomposition of H
 lambda, and applies the proved routes of DYNAMIC_CORE_RESULTS.md section 5:
 
   two distinct roots or fewer   monomial theorem (check_monomial_theorem.py) + GL2 transport
-  >= 3 roots, some multiplicity mu with 2 <= mu <= d-2, mu != d/2      Theorem R1
-  >= 3 roots, d odd >= 5 (then H_d is square-free)                      Theorem R2
-  >= 3 roots, d = 3 (square-free cubic)                                  Theorem R3
-  d = 4: (2,1,1) and (1^4)                                               W3 (section 3c)
-  d = 6: (3,1,1,1) and (1^6)                                             W4 (section 3d)
-  otherwise (d even >= 8, types (1^d) and (d/2, 1^(d/2)))               open
+  >= 3 roots and a simple root                                           Theorem SR (check_simple_root.py)
+  >= 3 roots, no simple root (then some multiplicity mu in [2, d-2],
+     mu != d/2, exists)                                                  Theorem R1
+Every form with at least three distinct roots falls under SR or R1 (section 5.5).
 
 When H_d has at least three distinct roots and a route applies, D_inf(H_d) = span{1, H_d},
 and the perturbation corollary gives D_inf(H) = span{1, H} for the full H = H_d + P,
@@ -117,18 +115,13 @@ def dehom(Hd, d):
 
 
 def route(lam, d):
-    roots = len(lam)
-    if roots <= 2:
+    if len(lam) <= 2:
         return 'monomial'
+    if 1 in lam:
+        return 'SR'
     if any(2 <= m <= d - 2 and 2 * m != d for m in lam):
         return 'R1'
-    if d % 2 == 1:
-        return 'R2' if d >= 5 else 'R3'
-    if d == 4:
-        return 'W3'
-    if d == 6:
-        return 'W4'
-    return 'open'
+    raise ValueError('a form with three roots, no simple root and no admissible multiplicity cannot exist')
 
 
 def monomial_core(lam, d):
@@ -176,10 +169,7 @@ def check(cert):
     rt = route(lam, d)
     homogeneous = all(sum(k) == d for k in H)
     out = {'status': 'passed', 'degree': d, 'root_type': lam, 'route': rt, 'homogeneous': homogeneous}
-    if rt == 'open':
-        out['core'] = 'not determined (open stratum: even degree >= 8, type (1^d) or (d/2, 1^(d/2)))'
-        out['active_part'] = 'unknown'
-    elif rt == 'monomial':
+    if rt == 'monomial':
         if homogeneous:
             out['core'] = monomial_core(lam, d)
             out['active_part'] = ('nonzero' if not (len(lam) == 2 and lam[0] == lam[1]) else '0 (all stationary)')

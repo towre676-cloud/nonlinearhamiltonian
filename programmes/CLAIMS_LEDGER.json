@@ -45,7 +45,7 @@
   {
    "id": "P001",
    "status": "target",
-   "claim": "Remaining open targets: probabilistic or continuous noise models for adaptive experiments; root rigidity for even degree d >= 8 in the strata (1^d) and (d/2, 1^(d/2)); effective stopping rules for general H; inhomogeneous Hamiltonians whose top part has at most two roots.",
+   "claim": "Remaining open targets: probabilistic or continuous noise models for adaptive experiments; inhomogeneous Hamiltonians whose top part has at most two roots; effective stopping rules for general inhomogeneous H; literature positioning.",
    "support": "TASKS.json",
    "scope": "Unfinished tasks, not current capabilities."
   },
@@ -54,7 +54,7 @@
    "status": "implemented",
    "claim": "Typed machinery-envelope-v1 objects bind certificates to model/payload hashes, domain Q, hypotheses, scope and atlas source ids, and dispatch to independent checkers; swapped witness kinds and unknown domains are rejected.",
    "support": "extensions/envelope.py; extensions/test_envelope.py",
-   "scope": "Registry of seventeen witness kinds; domains Q and Z."
+   "scope": "Registry of eighteen witness kinds; domains Q and Z."
   },
   {
    "id": "W1",
@@ -208,7 +208,7 @@
    "status": "proved",
    "claim": "Root rigidity D_inf(H) = span{1,H} (so A(H) = 0) holds for every homogeneous H with >= 3 distinct roots that has a root of multiplicity mu in [2, d-2], mu != d/2 (R1), for every squarefree H of odd degree (R2 for d >= 5 via the apolar kernel of T_d, E_n = 0 for n >= (d-1)(d-2)+3; R3 for cubics), hence in every odd degree.",
    "support": "programmes/DYNAMIC_CORE_RESULTS.md#5.2; tests in extensions/hamiltonian/test_root_rigidity.py",
-   "scope": "Characteristic zero. With W3, W4 the conjecture is open only for even d >= 8 in types (1^d) and (d/2,1^(d/2)); degrees 7 and 8 cross-checked directly for every root type with no counterexample."
+   "scope": "Characteristic zero. With W3, W4 superseded in scope by W5-e (all degrees)."
   },
   {
    "id": "W5-d",
@@ -218,11 +218,18 @@
    "scope": "Top-weight lemma with weight (1,1); root type via verified square-free decomposition; open strata reported as open."
   },
   {
+   "id": "W5-e",
+   "status": "proved_with_certificate",
+   "claim": "Simple-root rigidity: if H of degree d >= 3 has a simple root and is not c l^(d-1) m, then {G in V_n : T_3(H,G) = T_3(H,{H,G}) = 0} = 0 for n >= N0(d); with R1 this proves the root-rigidity theorem in all degrees.",
+   "support": "programmes/DYNAMIC_CORE_RESULTS.md#5.5; extensions/hamiltonian/check_simple_root.py; results/hamiltonian/simple_root_rigidity.json",
+   "scope": "Weight induction with closed-form determinants Delta_0, Delta_1 in (n, d, j), validated against direct operator arithmetic on a grid; N0(d) finite for every d and tabulated for d <= 40."
+  },
+  {
    "id": "P002",
-   "status": "conjecture",
-   "claim": "Root-rigidity conjecture: every homogeneous binary form of degree d >= 3 with at least three distinct roots has D_inf(H) = span{1,H}.",
+   "status": "proved_with_certificates",
+   "claim": "Root-rigidity theorem: every homogeneous binary form of degree d >= 3 with at least three distinct roots has D_inf(H) = span{1,H}; hence A(H) = 0.",
    "support": "programmes/DYNAMIC_CORE_RESULTS.md#5",
-   "scope": "Proved for all odd d and for all even d outside (1^d), (d/2,1^(d/2)) with d >= 8; evidence only in those strata."
+   "scope": "All degrees, characteristic zero: Theorem SR (simple root) and Theorem R1 (no simple root). Previously a conjecture."
   }
  ],
  "rule": "Passing finite tests does not upgrade a target or an unproved general statement to a theorem.",

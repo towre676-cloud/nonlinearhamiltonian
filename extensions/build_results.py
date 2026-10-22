@@ -242,7 +242,7 @@ RIGIDITY_EXAMPLES = [
     ('rigidity_septic_squarefree_perturbed', {(7, 0): 1, (0, 7): 1, (1, 6): -1, (3, 2): 5, (2, 1): -3, (0, 1): 1}),
     ('rigidity_octic_4211_perturbed', {(4, 4): 1, (3, 5): -1, (2, 6): -1, (1, 7): 1, (5, 1): 2, (0, 2): 1}),
     ('rigidity_sextic_3111_perturbed', {(5, 1): 1, (3, 3): -1, (2, 2): 7, (1, 0): 1}),
-    ('rigidity_octic_squarefree_open', {(8, 0): 1, (0, 8): 1, (4, 4): 3}),
+    ('rigidity_octic_squarefree', {(8, 0): 1, (0, 8): 1, (4, 4): 3}),
     ('rigidity_q5p3_monomial', {(5, 3): 1}),
 ]
 
@@ -255,6 +255,14 @@ def rigidity():
         'monomial-theorem', {'family': 'q^a p^b, a >= b, a + b >= 3'}, cert,
         ['characteristic zero', 'ray analysis of the T_3 gate along D-orbits of monomials'],
         'D_inf(q^a p^b) in all degrees for all exponents', ['D16-F03', 'D06-F02'], PRODUCER, verify=False), s)
+    import check_simple_root as SRC
+    cert, s = timed(SRC.build, 40)
+    cert.pop('result')
+    write('hamiltonian', 'simple_root_rigidity', envelope.make(
+        'simple-root-rigidity', {'family': 'binary forms with a simple root, every degree d >= 3'}, cert,
+        ['characteristic zero', 'weight induction at a simple root with T_3 and one bracket'],
+        'S_n(H) = 0 for n >= N0(d) unless H = c l^(d-1) m; N0 tabulated for d <= 40', ['D16-F03', 'D06-F02'],
+        PRODUCER, verify=False), s)
     for name, h in RIGIDITY_EXAMPLES:
         H = {k: WG.F(v) for k, v in h.items()}
         c, s = timed(RR.certify, H)

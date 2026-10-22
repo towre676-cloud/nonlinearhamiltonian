@@ -107,13 +107,23 @@ class Routing(unittest.TestCase):
             self.assertEqual(res['root_type'], sorted(lam, reverse=True))
 
     def test_routes(self):
-        self.assertEqual(RR.route([1] * 7, 7), 'R2')
-        self.assertEqual(RR.route([4, 1, 1, 1, 1], 8), 'open')
-        self.assertEqual(RR.route([1] * 8, 8), 'open')
-        self.assertEqual(RR.route([4, 2, 1, 1], 8), 'R1')
-        self.assertEqual(RR.route([3, 1, 1, 1], 6), 'W4')
-        self.assertEqual(RR.route([2, 1, 1], 4), 'W3')
-        self.assertEqual(RR.route([1, 1, 1], 3), 'R3')
+        self.assertEqual(RR.route([1] * 7, 7), 'SR')
+        self.assertEqual(RR.route([4, 1, 1, 1, 1], 8), 'SR')
+        self.assertEqual(RR.route([1] * 8, 8), 'SR')
+        self.assertEqual(RR.route([4, 2, 2], 8), 'R1')
+        self.assertEqual(RR.route([2, 2, 2, 2], 8), 'R1')
+        self.assertEqual(RR.route([3, 3], 6), 'monomial')
+        # every partition with >= 3 parts routes somewhere, in every degree up to 16
+        def parts(n, mx):
+            if n == 0:
+                yield []
+                return
+            for k in range(min(n, mx), 0, -1):
+                for rest in parts(n - k, k):
+                    yield [k] + rest
+        for d in range(3, 17):
+            for lam in parts(d, d):
+                self.assertIn(RR.route(lam, d), ('monomial', 'SR', 'R1'))
 
     def test_forgeries(self):
         H = random_form(random.Random(1), [2, 1, 1, 1])
@@ -142,6 +152,41 @@ class Perturbation(unittest.TestCase):
             res = RR.certify(H)['result']
             self.assertEqual(res['core'], 'span{1, H}')
             self.assertEqual(filtered_dim(H, d + 2, 2), 2, lam)
+
+
+class SimpleRoot(unittest.TestCase):
+    def test_certificate_and_forgeries(self):
+        import json, check_simple_root as SR
+        path = HERE.parent.parent / 'results' / 'hamiltonian' / 'simple_root_rigidity.json'
+        cert = json.loads(path.read_text())['payload']
+        self.assertEqual(SR.check(cert)['status'], 'passed')
+        for mut in (lambda c: c['K0'][0].__setitem__(1, '5'), lambda c: c['N0'].__setitem__('8', 12),
+                    lambda c: c.update(format='x')):
+            bad = copy.deepcopy(cert)
+            mut(bad)
+            with self.assertRaises((ValueError, KeyError)):
+                SR.check(bad)
+
+    def test_one_gate_one_bracket_beyond_N0(self):
+        """S_n = {T_3(H,G) = T_3(H,{H,G}) = 0} vanishes for n >= N0(d), directly computed."""
+        def S(H, ns):
+            Dop, C3, out = W.derivation(H), W.gate(H, 3), []
+            for nn in ns:
+                cols = []
+                for a in range(nn + 1):
+                    g, img = {(a, nn - a): F(1)}, {}
+                    for e, c in W.act(C3, g).items():
+                        img[(0, e)] = c
+                    for e, c in W.act(C3, W.act(Dop, g)).items():
+                        img[(1, e)] = c
+                    cols.append(img)
+                keys = sorted({k for c in cols for k in c})
+                Mx = [[c.get(k, F(0)) for c in cols] for k in keys]
+                out.append(nn + 1 - L.rank(Mx, nn + 1))
+            return out
+        for mult, n0 in (({0: 4, 'inf': 1, 1: 1}, 11), ({0: 4, 'inf': 1, 1: 1, -1: 1, 2: 1}, 19),
+                         ({0: 1, 'inf': 1, 1: 1, -1: 1, 2: 1, -2: 1, 3: 1, F(1, 2): 1}, 19)):
+            self.assertEqual(S(T.form(mult), range(n0, n0 + 3)), [0, 0, 0])
 
 
 class OddSquarefree(unittest.TestCase):

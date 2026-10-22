@@ -262,7 +262,7 @@ The type `(4,1,1)` genuinely has a nonzero static space in every degree, which i
 
 **Conjecture (root rigidity).** If a homogeneous binary form `H` of degree `d ≥ 3` over a field of characteristic zero has at least three distinct roots, then `D∞(H) = span{1, H}`. In that case `𝒜(H) = 0`.
 
-The results below prove the conjecture for every odd degree. For even degree they prove it in every stratum except the types `(1^d)` and `(d/2, 1^{d/2})` with `d ≥ 8`.
+**The conjecture is proved in every degree** (§5.5, Main Theorem). R1, R2 and R3 cover the odd degrees. Theorem SR covers every form with a simple root, in all degrees. With R1, that is every form with at least three distinct roots.
 
 ### 5.1 The monomial theorem (all exponents)
 
@@ -309,14 +309,51 @@ The *sl₂ lemma* and the *centralizer lemma* of §3d hold in every degree.
 
 *Proof.* Here `E_n = span{L_iⁿ}`, which is three-dimensional, so static finiteness fails and one step of `D` is used instead. For `G = Σc_iL_iⁿ`, `DG = nΣc_iL_iⁿM_i` with `∂_{v_i}H = L_iM_i` and `M_i(v_i) ≠ 0`. If `DG ∈ E_{n+1} = span{L_i^{n+1}}`, independence of the spaces `L_iⁿV₁` (`n ≥ 4`) forces `c_iM_i ∝ L_i`, hence `c_i = 0`. So `D∞(H)_n = 0` for `n ≥ 4`, and the chain argument concludes. ∎
 
-**Coverage.**
-- *Odd `d`.* A form with at least three roots either has a root of multiplicity in `[2, d−2]` or is squarefree. So R1, R2 and R3 prove the conjecture **for every odd degree**. Degree 7 is now fully classified.
-- *Even `d`.* The forms not covered by R1 have all multiplicities in `{1, d/2}`, that is types `(1^d)` and `(d/2, 1^{d/2})`.
-  - `d = 4`: these are §3c, where `(2,1,1)` was certified individually.
-  - `d = 6`: these are §3d, Route C.
-  - **Open: even `d ≥ 8`, types `(1^d)` and `(d/2, 1^{d/2})`.** In degree 8 these are `(1⁸)` and `(4,1,1,1,1)`.
+**Coverage before §5.5.**
+- *Odd `d`.* R1, R2 and R3 together cover every odd degree.
+- *Even `d`.* R1 leaves the types `(1^d)` and `(d/2, 1^{d/2})`. Degrees 4 and 6 were handled in §§3c and 3d. §5.5 closes the remaining cases in every degree.
 
-**Evidence in degrees 7 and 8.** For one representative of every root type, and for two random squarefree forms, the direct dimensions of `{G : C_kD^rG = 0, r ≤ 3}` were computed in degrees 1–16 (`d = 7`) and 1–18 (`d = 8`). They agree exactly with the predicted cores, including `(1⁸)` and `(4,1,1,1,1)`. No counterexample appeared. This is evidence, not proof. The sextic proof of static finiteness at a simple root (§3d) needed an elimination tree in four local coefficients. The degree-independent mechanism for even degree, which would replace that tree, has not been identified. In odd degree it is the apolar kernel of `T_d`.
+### 5.5 Simple-root rigidity and the complete classification
+
+**What the sextic certificate shows.**
+- *Leading-order degeneracy.* The second entry of each row of the static top matrix has the same monomial support as the first entry of the previous row. To leading order in `n` the two are proportional (ratio `≈ 5n²`), so the static system is degenerate at leading order. The rank information sits in subleading terms, which is why the elimination tree needed 181 steps.
+- *The exceptional locus.* The tree's multiple-root leaves are the type-`(d−2,1,1)` points. There the static space is genuinely nonzero in every degree, while the dynamic core is finite.
+- *The fix.* One application of `D` removes that locus. With the dynamic equation `T₃(H, {H, G}) = 0` added, the local system becomes **triangular in a weight grading**, and the elimination collapses to two determinants with closed forms in `(n, d, j)`.
+
+**Theorem SR.** Let `H` be a form of degree `d ≥ 3` with a simple root, not of the form `cℓ^{d−1}m`. Then `S_n(H) = {G ∈ V_n : T₃(H, G) = 0, T₃(H, {H, G}) = 0}` is zero for all `n ≥ N₀(d)`. In particular `D∞(H)_n = 0` for `n ≥ N₀(d)`.
+
+*Proof.*
+1. *Normal form.* Move the simple root to `(1:0)`, scale, and shear: `H = q^{d−1}p + Σ_{j≥3} h_j q^{d−j}p^j`.
+2. *Top.* By the monomial theorem (`b = 1`), `C₃` with at most one bracket kills no monomial `q^cp^e` with `e ≥ 2`. So `G = Σ g_t q^{n−t}p^t` has `(g₀, g₁) ≠ 0`.
+3. *Weights.* Give `h_j` weight `j−1` and `g_t` weight `t`. The equations at output index `τ` are weighted homogeneous of weight `τ + 2`.
+4. *Induction on `j`.* Assume `h₃ = … = h_{j−1} = 0`. Then the `T₃` recurrence gives `g₂ = … = g_{j−2} = 0`. The equations of weight `j−1` (and `j`) are linear in the unknowns `y = g_{j−1}`, `z = g_j` and `h_j`:
+   - if `g₀ ≠ 0`, the pair (`T₃(H,G)`, `T₃(H,DG)`) in the unknowns `(y, h_jg₀)` has determinant `Δ₀ = −jn(d−2)(d−1)(j−2)²(j−1)²(d+n−3)·K₀`;
+   - if `g₀ = 0`, the pair in `(z, h_jg₁)` has determinant `Δ₁ = −j²(d−2)(d−1)(d−n)(j−2)(j−1)²(d+n−3)·K₁`.
+5. *Nonvanishing.* `K₀` and `K₁` are quadratics in `n` with leading coefficients `±3(dj + d − 4) ≠ 0`. So for `n ≥ N₀(d)` both determinants are nonzero, which forces `h_j = 0`.
+6. *Conclusion.* By induction every `h_j = 0`, so `H = q^{d−1}p`, which is excluded. ∎
+
+**Certificate.** The checker `check_simple_root.py` (`simple-root-rigidity-v1`; `results/hamiltonian/simple_root_rigidity.json`) does the following.
+- It derives the four equations symbolically in `(n, d, j)` with its own polynomial arithmetic.
+- It proves that no other contribution reaches the same output index for any integer `j ≥ 3`.
+- It validates all 1000 coefficient values against direct operator arithmetic (`weyl_receipts`) on a product grid larger than the degrees.
+- It verifies both factorizations and the leading coefficients of `K₀` and `K₁`.
+- It tabulates `N₀(d)` exactly for `d ≤ 40`: `N₀ = 4, 5, 8, 11, 14, 19, 24, 29` for `d = 3, …, 10`, and `N₀(40) = 509`. The growth is roughly `d²/3`.
+
+Direct computation confirms that `S_n(H) = 0` beyond `N₀(d)`, in fact everywhere except degrees 2 and `d`. The tested forms are `(4,1,1)` and `(1⁶)` in degree 6, and `(4,1,1,1,1)` and `(1⁸)` in degree 8.
+
+**Main Theorem (root rigidity, all degrees).** Let `H` be a homogeneous binary form of degree `d ≥ 3` over a field of characteristic zero.
+- If `H` has at least three distinct roots, then `D∞(H) = span{1, H}` and `𝒜(H) = 0`. No nonstationary polynomial observable evolves exactly under repeated Weyl–Moyal and classical evolution.
+- If `H` has at most two distinct roots, `D∞(H)` is the monomial-class core of §5.1, and `𝒜(H) ≠ 0` unless `H` is a balanced power.
+
+*Proof of the first part.*
+- *If `H` has a simple root:* Theorem SR gives `D∞(H)_n = 0` for `n ≥ N₀(d)`. The chain argument of §3d then concludes: `H` is not a proper power, `H^j ∉ D∞` by the top-weight lemma at the simple root, and the sl₂ lemma excludes quadratics.
+- *If `H` has no simple root:* every multiplicity is at least 2. With at least three roots, every multiplicity is at most `d − 4`, and not all can equal `d/2`. So some root has multiplicity `μ ∈ [2, d−2]` with `μ ≠ d/2`, and Theorem R1 applies. ∎
+
+With Corollary P this gives `D∞(H) = span{1, H}` for **every** polynomial Hamiltonian whose top homogeneous part has at least three distinct roots. `check_root_rigidity.py` now routes every such `H` to SR or R1. No open stratum remains.
+
+*A second route for `(d/2, 1^{d/2})`, recorded but not certified.* At the root of multiplicity `μ = d/2`, the top-weight lemma leaves a single coefficient `g₀`. The `T₃` and `T₅` equations then give `h_jg₀Φ_j(m) = 0` inductively, with `n = 2m` and
+`Φ_j = −8jm(j−1)(j+1)(m−1)(m−μ)(2m+2μ−7)·Q(j,m,μ) / (T₃ recurrence coefficient)`.
+The coefficients of `m³` and `m²` in `Q` vanish together only for `μ = 2` (or `μ = ½`).
 
 ### 5.3 Perturbation corollary
 
@@ -330,7 +367,7 @@ Combined with §§3c, 3d and 5.2, this covers every Hamiltonian whose top homoge
 - Given a rational `H`, the certificate declares a square-free decomposition of `H_d(x, 1)`. The checker verifies the product, square-freeness and coprimality.
 - It derives the root type over Q̄, including the root at `(1:0)`.
 - It selects the route (monomial, R1, R2, R3, W3, W4 or open) and reports the core and the active part.
-- Five examples are enveloped under `results/hamiltonian/rigidity_*.json`. One of them is an open squarefree octic, which the checker reports as open rather than guessing.
+- Five examples are enveloped under `results/hamiltonian/rigidity_*.json`, including a squarefree octic, now covered by SR.
 - The tests recover root types of random forms and reject forged decompositions. They also check that random lower-order perturbations of proved tops leave exactly `span{1, H}` in the direct computation.
 
 ### 5.4 Scope and positioning
@@ -340,7 +377,7 @@ The question here is different from theorems that ask when exactness holds for *
 On effective finite determination:
 - For monomials, Theorem M gives an explicit stopping rule: `C₃` and depth 3.
 - For R1–R3, the proofs give explicit static or one-step bounds. Examples are `n ≥ (d−1)(d−2) + 3` for R2 and `n ≥ 4` with one `D`-step for R3; below these bounds the chain argument applies.
-- A general decision procedure with a proved stopping rule for arbitrary `H` remains open. Operator-ideal certificates (§1) and classifications of polynomial solutions remain distinct claims.
+- For homogeneous `H` the classification is now a decision procedure: compute the root type. Theorem SR also gives a stopping rule, one gate and one bracket beyond `N₀(d)`. A general decision procedure for arbitrary inhomogeneous `H` (top part with at most two roots) remains open. Operator-ideal certificates (§1) and classifications of polynomial solutions remain distinct claims.
 
 ## 4. Commands
 

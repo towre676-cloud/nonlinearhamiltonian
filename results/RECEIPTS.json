@@ -286,7 +286,7 @@
    "sha256": "773f6cdebc33086458c81b274e90a86444c641372cc1246626d1d8b34f45c9af",
    "witness_kind": "monomial-theorem",
    "replay": "python3 -B extensions/envelope.py check results/hamiltonian/monomial_theorem.json",
-   "producer_seconds": 0.02,
+   "producer_seconds": 0.03,
    "summary": {
     "status": "passed",
     "identities": [
@@ -664,7 +664,7 @@
      1,
      1
     ],
-    "route": "R1",
+    "route": "SR",
     "homogeneous": false,
     "core": "span{1, H}",
     "active_part": "0: no nonstationary observable is exact under repeated evolution",
@@ -672,10 +672,10 @@
    }
   },
   {
-   "file": "results/hamiltonian/rigidity_octic_squarefree_open.json",
+   "file": "results/hamiltonian/rigidity_octic_squarefree.json",
    "sha256": "a754d6d9d6976aa955a76e2fb2f60404bce238eb64b4c38e8aee437df46c33d2",
    "witness_kind": "root-rigidity",
-   "replay": "python3 -B extensions/envelope.py check results/hamiltonian/rigidity_octic_squarefree_open.json",
+   "replay": "python3 -B extensions/envelope.py check results/hamiltonian/rigidity_octic_squarefree.json",
    "producer_seconds": 0.0,
    "summary": {
     "status": "passed",
@@ -690,10 +690,10 @@
      1,
      1
     ],
-    "route": "open",
+    "route": "SR",
     "homogeneous": true,
-    "core": "not determined (open stratum: even degree >= 8, type (1^d) or (d/2, 1^(d/2)))",
-    "active_part": "unknown"
+    "core": "span{1, H}",
+    "active_part": "0: no nonstationary observable is exact under repeated evolution"
    }
   },
   {
@@ -733,7 +733,7 @@
      1,
      1
     ],
-    "route": "R2",
+    "route": "SR",
     "homogeneous": false,
     "core": "span{1, H}",
     "active_part": "0: no nonstationary observable is exact under repeated evolution",
@@ -755,7 +755,7 @@
      1,
      1
     ],
-    "route": "W4",
+    "route": "SR",
     "homogeneous": false,
     "core": "span{1, H}",
     "active_part": "0: no nonstationary observable is exact under repeated evolution",
@@ -810,6 +810,68 @@
      "p^2*Q[q]"
     ],
     "dimension": "infinite"
+   }
+  },
+  {
+   "file": "results/hamiltonian/simple_root_rigidity.json",
+   "sha256": "2b3c89184ff0efca749cc5a884afd4a9afccbc7a23c0df8e0e782b8ae3af1277",
+   "witness_kind": "simple-root-rigidity",
+   "replay": "python3 -B extensions/envelope.py check results/hamiltonian/simple_root_rigidity.json",
+   "producer_seconds": 92.38,
+   "summary": {
+    "status": "passed",
+    "N0": {
+     "3": 4,
+     "4": 5,
+     "5": 8,
+     "6": 11,
+     "7": 14,
+     "8": 19,
+     "9": 24,
+     "10": 29,
+     "11": 36,
+     "12": 43,
+     "13": 50,
+     "14": 59,
+     "15": 68,
+     "16": 77,
+     "17": 88,
+     "18": 99,
+     "19": 110,
+     "20": 123,
+     "21": 136,
+     "22": 149,
+     "23": 164,
+     "24": 179,
+     "25": 194,
+     "26": 211,
+     "27": 228,
+     "28": 245,
+     "29": 264,
+     "30": 283,
+     "31": 302,
+     "32": 323,
+     "33": 344,
+     "34": 365,
+     "35": 388,
+     "36": 411,
+     "37": 434,
+     "38": 459,
+     "39": 484,
+     "40": 509
+    },
+    "grid": [
+     5,
+     5,
+     5
+    ],
+    "degrees": [
+     4,
+     4,
+     4
+    ],
+    "coefficients_checked": 1000,
+    "theorem": "for every binary form H of degree d >= 3 with a simple root, not c l^(d-1) m: {G in V_n : T_3(H,G) = T_3(H,{H,G}) = 0} = 0 for n >= N0(d); N0(d) is finite for every d because K0, K1 have nonzero leading coefficient"
    }
   },
   {
