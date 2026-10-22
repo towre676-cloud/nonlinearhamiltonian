@@ -13,6 +13,6 @@ This directory imports the 2026-10-21 handoff programme documents and records wh
 
 ## Next steps
 
-1. Pure tops (`DYNAMIC_CORE_RESULTS.md` §6.8). The original two-root conjecture is false for pure tops; balanced and near tops are proved. What remains is the corrected conjecture P004: upper bounds for the cores of the triangular families K1, K1′, K2 and K3; `span{1, H}` outside them for transverse tops that are constant, linear or a perfect power; and the classification of the cubic-phase case. A literature review is still needed before any positioning claim.
+1. Pure tops (`DYNAMIC_CORE_RESULTS.md` §6.8). The original two-root conjecture is false for pure tops; balanced and near tops are proved. What remains is the corrected conjecture P004: upper bounds for the cores of the triangular families K1, K1′, K2 and K3; `span{1, H}` outside them for transverse tops that are constant, linear or a perfect power; and, in the cubic-phase case (§6.9), the containment in `τ*V` and the non-affine sector. A literature review is still needed before any positioning claim.
 2. Probabilistic or continuous noise for adaptive experiments. This needs posterior semantics and a different termination theorem.
 3. Performance. The Weyl Gröbner backend uses `Fraction` arithmetic without a chain criterion.

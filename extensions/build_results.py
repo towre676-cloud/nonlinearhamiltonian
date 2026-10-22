@@ -295,6 +295,7 @@ TRIANGULAR_EXAMPLES = [
     ('triangular_K1K2_q2p_squared', {(4, 0): 1, (2, 1): 2, (0, 2): 1}),
     ('triangular_K3_linear_twist', {(1, 2): 1, (3, 1): 2, (5, 0): 1, (1, 0): 1}),
     ('triangular_K3_cubic_twist', {(3, 2): 1, (5, 1): 2, (7, 0): 1, (1, 0): 1}),
+    ('triangular_K4_double_root', {(0, 4): 1, (2, 3): 4, (4, 2): 6, (6, 1): 4, (8, 0): 1, (1, 2): 1, (3, 1): 2, (5, 0): 1}),
 ]
 
 
@@ -314,6 +315,13 @@ def two_root():
         ['characteristic zero', 'triangular transvectant formula (Theorem X)'],
         'containments K1, K2, K3 in D_inf(H); refutes P003 as stated', ['D16-F03', 'D06-F02'], PRODUCER,
         verify=False), s0)
+    import check_cubic_phase as CCP
+    cert, s0 = timed(lambda: {'format': CCP.FORMAT, 'identities': sorted(CCP.check()['identities'])})
+    write('hamiltonian', 'cubic_phase_theorem', envelope.make(
+        'cubic-phase', {'family': 'pure tops in the cubic phase (q, p + w(q)), deg w = 2'}, cert,
+        ['characteristic zero', 'gauge form exp(c t^2 d_P^3 / 3) of the triangular gates'],
+        'affine criterion, Lemma W, family K4, D_inf restricted to tau*(K[P] + Q K[P])', ['D16-F03', 'D06-F02'],
+        PRODUCER, verify=False), s0)
     for name, h in TRIANGULAR_EXAMPLES:
         c, s = timed(CTR.certify, {k: WG.F(v) for k, v in h.items()})
         c.pop('result')

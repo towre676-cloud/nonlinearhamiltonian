@@ -54,7 +54,7 @@
    "status": "implemented",
    "claim": "Typed machinery-envelope-v1 objects bind certificates to model/payload hashes, domain Q, hypotheses, scope and atlas source ids, and dispatch to independent checkers; swapped witness kinds and unknown domains are rejected.",
    "support": "extensions/envelope.py; extensions/test_envelope.py",
-   "scope": "Registry of twenty-two witness kinds; domains Q and Z."
+   "scope": "Registry of twenty-three witness kinds; domains Q and Z."
   },
   {
    "id": "W1",
@@ -274,6 +274,13 @@
    "scope": "Containments only, all degrees. Equality with these spans is conjecture P004, verified by direct computation up to degree d + 2 (deeper for six cases). In K1 with lam != 0 the active part is infinite-dimensional."
   },
   {
+   "id": "W6-h",
+   "status": "proved_with_certificate",
+   "claim": "Cubic phase (constant transverse top, completed power w of degree 2): (G) the gates are the flat gates conjugated by exp(s d_P^3), s = c t^2/3; (A0) for Hamiltonian and observable affine in Q, exactness is Delta(S_s h, S_s g) = 0, whose Witt part is the Gelfand-Fuchs cocycle density 3(b' beta''' - b''' beta'); (W) deg b >= 3 leaves only span{1,H} affine in Q; (K4) h = A(P-r)^3(P-r') + O((P-r)^2) + mu Q (P-r)(P-r') has span{1, G, H} in its core, G = A(P-r)^3 + c2(P-r) + mu Q(P-r); (A) the complete table of D_inf restricted to tau*(K[P] + Q K[P]).",
+   "support": "programmes/DYNAMIC_CORE_RESULTS.md#6.9; extensions/hamiltonian/check_cubic_phase.py; results/hamiltonian/cubic_phase_theorem.json",
+   "scope": "All degrees for G, A0, W, K4 and the restricted table A. That D_inf lies inside tau*(K[P] + Q K[P]) in the affine sector is verified to degree 11, not proved; non-affine cubic-phase Hamiltonians are open."
+  },
+  {
    "id": "P003",
    "status": "refuted_as_stated",
    "claim": "Two-root conjecture (remaining part), as stated: pure tops c l^d with lower-order terms outside the structures of W6-b have D_inf(H) = span{1,H}. FALSE: H = (q^3 + p)^2 has span{1, q, q^2, P, qP, P^2} (P = p + q^3) inside D_inf(H).",
@@ -283,9 +290,9 @@
   {
    "id": "P004",
    "status": "conjecture",
-   "claim": "Pure tops (corrected): if H_d = c l^d, H lies outside Theorem P+, outside the triangular families K1, K1', K2, K3 of W6-g after an affine change of coordinates, and outside the cubic-phase case (constant transverse top and completed power w of degree 2), then D_inf(H) = span{1,H}; inside the families D_inf(H) is the span listed in DYNAMIC_CORE_RESULTS.md section 6.8.",
+   "claim": "Pure tops (corrected): if H_d = c l^d, H lies outside Theorem P+, outside the triangular families K1, K1', K2, K3 of W6-g and K4 of W6-h after an affine change of coordinates, and outside the non-affine cubic-phase case (constant transverse top, completed power w of degree 2, h not affine in Q), then D_inf(H) = span{1,H}; inside the families D_inf(H) is the span listed in DYNAMIC_CORE_RESULTS.md section 6.8.",
    "support": "programmes/DYNAMIC_CORE_RESULTS.md#6.8; extensions/hamiltonian/test_two_root.py",
-   "scope": "Proved where Q' or T applies (W6-c, W6-e); open for transverse tops that are constant, linear or a perfect power outside the families, and for the upper bounds inside them. The cubic-phase case is excluded: its families are not exhaustive (P^2 (P^2 + Q), P = p + q^2, has a third core element). Supported by about 330 random pure tops of degree 4-8 and a 110-case structured grid."
+   "scope": "Proved where Q' or T applies (W6-c, W6-e); open for transverse tops that are constant, linear or a perfect power outside the families, and for the upper bounds inside them. The non-affine cubic-phase case is excluded and open; the affine cubic-phase sector is classified inside tau*(K[P] + Q K[P]) (W6-h), and the former exception P^2(P^2 + Q) is K4. Supported by about 330 random pure tops of degree 4-8 and a 110-case structured grid."
   },
   {
    "id": "P002",

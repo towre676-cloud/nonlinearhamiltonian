@@ -304,7 +304,7 @@
    "sha256": "034f692ee1eb42de332fe7957aa7194bee70cfcb96ef1ed10bf44b30d43a545a",
    "witness_kind": "weyl-polynomial-kernel",
    "replay": "python3 -B extensions/envelope.py check results/hamiltonian/binomial_q4_plus_p2.json",
-   "producer_seconds": 0.86,
+   "producer_seconds": 0.79,
    "summary": {
     "status": "passed",
     "kind": "finite_support",
@@ -336,7 +336,7 @@
    "sha256": "6c0ecb1b7d225ebf9101fc9baf33f047fbdea4f02681b9ae45afd92ac16ca930",
    "witness_kind": "weyl-polynomial-kernel",
    "replay": "python3 -B extensions/envelope.py check results/hamiltonian/binomial_qp2_plus_q2.json",
-   "producer_seconds": 0.57,
+   "producer_seconds": 0.43,
    "summary": {
     "status": "passed",
     "kind": "degree_bound",
@@ -357,7 +357,7 @@
    "sha256": "6e43ecd75520985638548c2bd09ff853fc9ffeebf2e0e133a43378c664ba9a69",
    "witness_kind": "weyl-polynomial-kernel",
    "replay": "python3 -B extensions/envelope.py check results/hamiltonian/binomial_qp4_plus_q2.json.gz",
-   "producer_seconds": 85.47,
+   "producer_seconds": 84.05,
    "summary": {
     "status": "passed",
     "kind": "finite_support",
@@ -366,6 +366,25 @@
      "1",
      "q*p^4 + q^2"
     ]
+   }
+  },
+  {
+   "file": "results/hamiltonian/cubic_phase_theorem.json",
+   "sha256": "534faca9032f74b9272de092d65c355c2dc8d88007d83890d8f5d58726148376",
+   "witness_kind": "cubic-phase",
+   "replay": "python3 -B extensions/envelope.py check results/hamiltonian/cubic_phase_theorem.json",
+   "producer_seconds": 77.11,
+   "summary": {
+    "status": "passed",
+    "identities": [
+     "A",
+     "G1",
+     "G2",
+     "G3",
+     "K4",
+     "W"
+    ],
+    "theorem": "cubic-phase gauge form; affine-sector criterion with the Witt cocycle; Lemma W; family K4; Theorem A instances"
    }
   },
   {
@@ -393,7 +412,7 @@
    "sha256": "1d8d97a8664aace21e72224db1585fa1c4c0d47101add73788b4b77c764dd8ec",
    "witness_kind": "near-edge",
    "replay": "python3 -B extensions/envelope.py check results/hamiltonian/near_edge_theorem.json",
-   "producer_seconds": 0.49,
+   "producer_seconds": 0.53,
    "summary": {
     "status": "passed",
     "identities": [
@@ -1145,11 +1164,25 @@
    }
   },
   {
+   "file": "results/hamiltonian/triangular_K4_double_root.json",
+   "sha256": "ecdad8114e89e11edce4ed6f4081c7bd699f9a9ed3321d5c1286cd7997250fcb",
+   "witness_kind": "triangular-pure",
+   "replay": "python3 -B extensions/envelope.py check results/hamiltonian/triangular_K4_double_root.json",
+   "producer_seconds": 0.01,
+   "summary": {
+    "status": "passed",
+    "family": "K4",
+    "core": "span{1, G, H}",
+    "verified_dimension": 3,
+    "claim": "contained in D_inf(H) (exact)"
+   }
+  },
+  {
    "file": "results/hamiltonian/triangular_theorem.json",
    "sha256": "9c1e3df602718c08f3f07cdb8805ea9c7a0f3fa17c48dde8d2c95160462cdcb7",
    "witness_kind": "triangular-pure",
    "replay": "python3 -B extensions/envelope.py check results/hamiltonian/triangular_theorem.json",
-   "producer_seconds": 1.52,
+   "producer_seconds": 1.49,
    "summary": {
     "status": "passed",
     "identities": [

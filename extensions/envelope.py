@@ -123,6 +123,10 @@ def _triangular(model, payload):
     return _load('hamiltonian/check_triangular.py', 'mx_check_triangular').check(payload)
 
 
+def _cubic_phase(model, payload):
+    return _load('hamiltonian/check_cubic_phase.py', 'mx_check_cubic_phase').check(payload)
+
+
 def _quartic_uniform(model, payload):
     if model != {'family': payload.get('family')}:
         raise ValueError('envelope model must name the certified family')
@@ -165,6 +169,7 @@ KINDS = {
     'balanced-top': ('format', 'balanced-top-v1', _balanced),
     'near-edge': ('format', 'near-edge-v1', _near_edges),
     'triangular-pure': ('format', 'triangular-pure-v1', _triangular),
+    'cubic-phase': ('format', 'cubic-phase-v1', _cubic_phase),
     'rational-contraction': ('schema', 'rational-contraction-v1', _contraction),
     'integer-cohomology': ('format', 'integer-smith-v1', _smith),
     'fundamental-unit': ('format', 'fundamental-unit-v1', _units),

@@ -12,13 +12,15 @@ roots over Qbar, the checker recomputes the top type and applies the proved crit
                                             V = K[l] + m K[l] if d_v^2 H = 0;
                                             span{1, H} if H = f(l) + m g(l) + gamma m^2, gamma != 0,
                                             deg g < d/2 (Theorem Q') or the transverse top is finite
-                                            (Theorem T); the triangular families K1, K1', K2, K3
+                                            (Theorem T); the triangular families K1, K1', K2, K3, K4
                                             (check_triangular.py) have a larger core, of which
                                             the stated span is proved to be contained in D_inf;
                                             when the transverse top is constant and the
-                                            completed power has degree 2 (cubic phase) the
-                                            core is open; otherwise span{1, H} is conjectural
-                                            (P004).
+                                            completed power has degree 2 (cubic phase) and h
+                                            is affine in Q, span{1, H} is proved inside
+                                            tau*(K[P] + Q K[P]) (check_cubic_phase.py); other
+                                            cubic-phase cores are open; otherwise span{1, H}
+                                            is conjectural (P004).
   near     H_d = c l^(d-1) m                V if d_v^2 H = 0; span{1, H} otherwise (Theorem NE,
                                             check_near_edges.py).                   (complete)
   balanced H_d = c Q^mu, Q a quadratic form  K[G] with G = Q(x - x0) if the translation killing
@@ -279,9 +281,13 @@ def classify(H):
             for key in ('tower_step', 'tower_from', 'G', 'w'):
                 if key in tri:
                     out[key] = tri[key]
-        elif CT.cubic_phase(H, l):
+        elif CT.cubic_phase(H, l) == 'general':
             out.update(route='pure, cubic phase', proved=False, core='open (at least span{1, H})',
                        active_part='open')
+        elif CT.cubic_phase(H, l) == 'affine':                # Theorem A, check_cubic_phase.py
+            out.update(route='pure, cubic phase affine', proved=False,
+                       core='span{1, H} (proved within tau*(K[P] + Q K[P]); conjectured)',
+                       active_part='0 (conjectured)')
         else:
             out.update(route='pure, conjectural', proved=False, core='span{1, H} (conjectured)',
                        active_part='0 (conjectured)')

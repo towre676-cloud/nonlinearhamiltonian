@@ -586,14 +586,14 @@ The element `G = (ℓ−γ)m + v` is the quadratic-like element anticipated in �
 | K3, `k = 1` | `span{1, Q, G, H}` | `q(p+q²)²+q`: 4 = 4 up to degree 11 |
 | K3, `k ≥ 2` | `span{1, G, H}` | `q³(p+q²)²+q`: 3 = 3 up to degree 11 |
 
-**The cubic-phase case is richer.** Suppose the transverse top is constant and the completed power `w` has degree 2. Then `τ` is implemented by the cubic phase `exp(icq̂³/ħ)`. By Theorem X the gates in `(Q, P)` are the flat gates deformed by the single even term `ct²∂_{P₁}∂_{P₂}(∂_{P₁}+∂_{P₂})`. In this case the families above are not exhaustive. For example, `H = P²(P² + Q)` with `P = p + q²` has
+**The cubic-phase case is richer.** Suppose the transverse top is constant and the completed power `w` has degree 2. Then `τ` is implemented by the cubic phase `exp(icq̂³/ħ)`. By Theorem X the gates in `(Q, P)` are the flat gates deformed by the single even term `ct²∂_{P₁}∂_{P₂}(∂_{P₁}+∂_{P₂})`. In this case the families above are not exhaustive. (§6.9 develops this case. It gives a gauge form, a Witt-cocycle obstruction and the family K4, and it classifies the sector affine in `Q` inside `τ*V`.) For example, `H = P²(P² + Q)` with `P = p + q²` has
 `D∞(H) ⊇ span{1, P(P² + Q), H}`
 by direct computation up to degree 11. Classifying this case is a separate problem: the core is the largest `D`-invariant subspace killed by the deformed gates, and the flat cores of `h` in `(Q, P)` are the natural candidates. In the random searches the generic cubic-phase Hamiltonian still has core `span{1, H}`, e.g. `(q²+p)³ + q²`.
 
 **Conjecture P004 (pure tops, corrected).** Let `H_d = cℓᵈ`. Suppose:
 - `H` lies outside the structures of Theorem P⁺;
 - after an affine change of coordinates, `H` lies outside K1, K1′, K2 and K3;
-- `H` is not in the cubic-phase case.
+- `H` is not in the cubic-phase case, unless `h` is affine in `Q` and outside K4 (§6.9).
 
 Then `D∞(H) = span{1, H}`. In the families, `D∞(H)` is the span in the table above.
 
@@ -616,6 +616,99 @@ Then `D∞(H) = span{1, H}`. In the families, `D∞(H)` is the span in the table
 - **[K1], [K1′], [K2], [K3]** The families on random grids. Each check is exact: the stated span is `D`-invariant and killed by every gate. For K1 the tower is truncated at `P⁶`.
 
 `detect` recognises the families for any pure top. It works in the root coordinates `(ℓ, m)`, reads the transverse top and completes the square or `s`-th power. `certify` records explicit generators, and `check` re-verifies them exactly: they must be independent, `D`-invariant, killed by every gate, and more than two. The enveloped counterexamples are `results/hamiltonian/triangular_*.json`. `check_two_root.py` reports these Hamiltonians on routes `K1`, `K1'`, `K2`, `K1+K2` and `K3`. For these routes the stated span is proved to lie in the core, and equality is marked conjectural. Other cubic-phase Hamiltonians go to the route `pure, cubic phase`, whose core is reported as open. The tests compare every route, including random affine images, with direct computation up to degree `d + 2` at depth 8.
+
+### 6.9 The cubic phase: gauge form, a Witt-cocycle obstruction and the affine sector
+
+Suppose the transverse top is constant and the completed power `w` has degree 2. Write `c = w″/2`, `P = p + w(q)` and `Q = q`. In this case the correction in Theorem X has a single term. That term is a coboundary, because `xy(x+y) = ((x+y)³ − x³ − y³)/3`.
+
+**Theorem G (gauge form).** Let `S_s = exp(s∂_P³)` and `s = ct²/3`. Then
+`Σ_k (tᵏ/k!) T_k(h̃, g̃)∘τ⁻¹ = S_s[ Σ_a (tᵃ/a!) T^flat_a(S_{−s}h, S_{−s}g) ]`,
+where `T^flat` are the flat transvectants in `(Q, P)`.
+
+*Proof.* By the identity above, `exp(ct²∂_{P₁}∂_{P₂}(∂_{P₁}+∂_{P₂}))` on the diagonal equals `S_s∘mult∘(S_{−s}⊗S_{−s})`. The flat operator has constant coefficients and commutes with this. ∎
+
+So the cubic phase is the flat problem, conjugated by the `ħ`-dependent operator `exp(cħ²∂_P³/3)`; here `t` plays the role of `ħ`. `S_s` is even in `t`. Hence `G` is killed by every gate of `H̃` exactly when, as series in `t`,
+`flat-odd(S_{−s}h, S_{−s}g) = t·S_{−s}{h, g}`.
+
+**Theorem A₀ (affine criterion).** Let `h = a(P) + Qb(P)` and `g = α(P) + Qβ(P)` be affine in `Q`. Their flat odd part is `t{·,·}`. Therefore `T_k(h̃, g̃) = 0` for all odd `k ≥ 3` if and only if `S_s{S_{−s}h, S_{−s}g} = {h, g}` for all `s`. This is in turn equivalent to `Δ(S_sh, S_sg) = 0` for all `s`, where `Δ(X, Y) = ∂³{X, Y} − {∂³X, Y} − {X, ∂³Y}`.
+
+On functions affine in `Q` the bracket is
+`{X, Y} = (bα′ − a′β) + Q(bβ′ − b′β)`.
+This is the Witt algebra of vector fields `b∂_P` acting on functions. In these terms
+- `Δ_Witt = 3(b′β‴ − b‴β′)`;
+- `Δ_fun = 3(b′α‴ + b″α″ − a‴β′ − a″β″)`.
+
+`Δ_Witt` is the density of the Gelfand–Fuchs cocycle. The obstruction to exactness in the cubic phase is therefore the failure of `∂³` to be a derivation of the Witt algebra. On `sl₂ = span{1, P, P²}` that failure vanishes. For `b, β ∈ sl₂` the all-order condition reduces to two conditions:
+- `b′α″ − β′a″ ∈ K`;
+- `deg(b″α − β″a) ≤ 4`.
+
+**Lemma W (Witt obstruction).** If `deg b ≥ 3`, every element of `D∞(H̃)` that is affine in `Q` lies in `span{1, H̃}`.
+
+*Proof.*
+1. `Δ_Witt = 0` gives `b′β″ − b″β′ = κ`. So `β′ = b′(λ + κ∫b′⁻²)`, which is a polynomial only for `κ = 0`, because `b′⁻²` decays faster than `1/P`.
+2. So `β′ = λb′`. Subtract `λh`.
+3. Then `Δ_fun = 3(b′α″)′ = 0` forces `b′α″ ∈ K`, hence `α″ = 0`, and `g ∈ span{1, P, Q}`.
+4. `{H, P} = b` and `{H, Q} = −a′ − Qb′` leave that span. ∎
+
+**Theorem K4 (twisted quartic).** Let `b = μ(P−r)(P−r′)` and
+`a = A(P−r)³(P−r′) + c₂(P−r)² + c₁(P−r) + c₀`, with `Aμ ≠ 0`, and `h = a + Qb`. Then
+`G = A(P−r)³ + c₂(P−r) + μQ(P−r)`
+satisfies `{H, G} = −μ(H + (r′−r)G) + const`, and `span{1, G, H} ⊆ D∞(H̃)`.
+
+In the normal form, where `a` has no `P³` term, the condition is `r′ = −3r`:
+`h = AP⁴ + (degree ≤ 2 in P) + μQ(P−r)(P+3r)`.
+The case `r = 0` is `P²(P² + Q)`, the exception of §6.8.
+
+*Proof.* Centre at `r`.
+- `b` and `β = μ(P−r)` lie in `sl₂`, so `Δ_Witt = 0`.
+- `b′α″ − β′a″ = −2μc₂` is constant.
+- `S_s` adds only terms of degree at most 1 in `P`, and `Δ` vanishes on them.
+- The bracket is a direct computation. ∎
+
+**Theorem A (the affine sector inside `τ*V`, `V = K[P] + QK[P]`).** Let `h = a + Qb` with `deg a = f ≥ 3`. Then `D∞(H̃) ∩ τ*V` is as follows.
+
+| `b` | `D∞(H̃) ∩ τ*V` |
+|---|---|
+| constant | `K[P] + KQ` (K1) |
+| linear, root `r` | `span{1, P, P², H}`; plus `Q` if `f = 3`; plus `(P−r)H` if `f = 3` and `a = A(P−r)³ + O(P−r)`; in the normal form this means `r = 0` (K1′) |
+| quadratic | `span{1, G, H}` if K4 holds, otherwise `span{1, H}` |
+| degree ≥ 3 | `span{1, H}` (Lemma W) |
+
+*Proof.*
+1. *`b` constant.* The first-order condition `(a″β′)′ = 0` gives `β′ = 0`. Every `α + β₀Q` passes, and `K[P] + KQ` is `D`-invariant.
+2. *`b ∈ sl₂` nonconstant.* Then `β ∈ sl₂`, and the two conditions above apply.
+   - Elements with `β = 0` are the constants when `b` is quadratic, and `span{1, P, P²}` when `b` is linear.
+   - The `Witt` projection of `D∞ ∩ τ*V` is an `ad_b`-invariant subspace of `sl₂` that contains `b`. The invariant subspaces are solved one by one.
+3. *`b` linear, root 0.*
+   - For `β = 1`: `Pα′ + α − a′ ∈ span{1, P, P²}`, so `f = 3`.
+   - For `β = P²`: `Pα′ − α − a′P²` has `Pⁱ⁺¹`-coefficient `i(i−3)aᵢ/(i+1)`. So `a₂ = a₄ = 0`, and hence `f = 3`.
+4. *`b = P²`.* After subtracting `h`, `β` is linear, and `deg α ≤ 4`.
+   - If `B = span{P², P}`, closure gives `α = (a − a₀ − a₁P)/P + x₀`. The first condition then becomes `Pα̃″ − 2α̃′ ∈ K`, which forces `a ∈ span{1, P, P², P⁴}`.
+   - `B = sl₂` would need `f = 2`.
+5. *Distinct roots, normalized to `b = P² − 1`.* The invariant subspaces are spanned by `b` and the eigenvectors `(P∓1)²` of `ad_b`.
+   - The eigen-element equation is the ODE `bα′ − 2α = a′(P−1)² + const`. Its polynomial solutions, together with the two conditions above, give `f = 4` and `a₃ = −2a₄`. This is K4 with `r = 1`, `r′ = −1`; the computation was done exactly for `f = 3, 4, 5`, and the second condition rules out `f > 5`.
+   - Both eigenvectors at once are incompatible.
+6. *`deg b ≥ 3`.* This is Lemma W. ∎
+
+*Open part.* It remains to show that `D∞(H̃) ⊆ τ*V` in the affine sector, i.e. that no core element has `Q`-degree 2 or more. Direct computation at depth 10 up to degree 11 confirms this for:
+- K4 with `r = 0` and with `r = 1`;
+- K1′ with `f = 4`;
+- an affine non-K4 Hamiltonian.
+
+A random search of 60 affine cubic-phase Hamiltonians of degree 8–10 agrees with the table, with no counterexample: K1 10, K1′ 13, K4 4, and `span{1, H}` 33. Cubic-phase Hamiltonians that are not affine in `Q`, such as `P³ + Q²`, remain open.
+
+**Certificate.** `check_cubic_phase.py` (`cubic-phase-v1`; `results/hamiltonian/cubic_phase_theorem.json`) checks:
+- **[G1]** Theorem G against Theorem X;
+- **[G2]** the `Δ` formulas on the monomial basis up to degree 8;
+- **[G3]** Theorem A₀ against `weyl_receipts`;
+- **[W]** Lemma W on instances;
+- **[K4]** the general K4 family on random `r`, `r′`, `w`;
+- **[A]** the Theorem A table on instances. Here `D∞ ∩ τ*V` is computed directly.
+
+`check_two_root.py` uses the following routes:
+- `K4` for the new family;
+- `pure, cubic phase affine` for the rest of the affine sector, reported as `span{1, H}`, proved inside `τ*V` and conjectured in full;
+- `pure, cubic phase` for non-affine cubic-phase Hamiltonians, whose core is open.
 
 ### 6.4 The decision procedure and what remains open
 
@@ -641,7 +734,7 @@ With §5 this gives a statement of when **active** exact dynamics survives a low
 - pure top:
   - an infinite active sector in the affine or strip structures of Theorem P⁺ (proved);
   - an infinite active sector also in the triangular family K1 with `λ ≠ 0`, e.g. `(q² + p)³ + q` (proved, §6.8);
-  - a nonzero finite active part in K1′, K2 and K3 (containment proved);
+  - a nonzero finite active part in K1′, K2, K3 and K4 (containment proved);
   - none otherwise (proved for Q′ and T, conjectural for the rest, P004), except that the cubic-phase case is open;
 - balanced top: never (proved, Theorem B).
 

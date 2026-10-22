@@ -136,6 +136,9 @@ def tri_samples(rng):
     out.append({(2, 2): F(1), (3, 1): F(4), (4, 1): F(2), (4, 0): F(4), (5, 0): F(4), (6, 0): F(1)})
     out.append(CT.tri({(0, 4): F(1), (1, 1): F(-1), (1, 0): F(1)}, w2))            # K1'
     out.append(CT.tri({(0, 3): F(1), (1, 1): F(1)}, w2))                           # K1', P H in the core
+    out.append(CT.tri({(0, 4): F(1), (1, 2): F(1)}, w2))                           # K4, double root
+    out.append(CT.tri({(0, 4): F(1), (0, 1): F(-1), (1, 2): F(1), (1, 1): F(2), (1, 0): F(-3)}, w2))  # K4, r' = -3r
+    out.append(CT.tri({(0, 4): F(1), (1, 2): F(1), (1, 0): F(-1)}, w2))            # affine cubic phase, not K4
     # near misses: conjectured span{1, H}, or open (cubic phase)
     out.append(CT.tri({(0, 3): F(1)}, {3: F(1)}))                                  # cubic in P, e = 3
     out.append(CT.tri({(0, 3): F(1), (2, 0): F(1)}, w2))                           # Q^2 breaks K1
@@ -148,7 +151,11 @@ def tri_samples(rng):
 class Triangular(unittest.TestCase):
     def test_identities(self):
         import check_triangular as CT
+        import check_cubic_phase as CP
         self.assertEqual(CT.check()['status'], 'passed')
+        self.assertEqual(CP.check()['status'], 'passed')
+        with self.assertRaises(ValueError):
+            CP.check({'format': CP.FORMAT, 'identities': ['G1']})
         with self.assertRaises(ValueError):
             CT.check({'format': CT.FORMAT, 'identities': ['X1']})
 
@@ -167,7 +174,8 @@ class Triangular(unittest.TestCase):
             if want is not None:
                 self.assertEqual(filtered_dim(H, N, 8), want, (H, res))
             seen.add(res['route'])
-        for r in ('K1', "K1'", 'K2', 'K1+K2', 'K3', 'pure, conjectural', 'pure, cubic phase'):
+        for r in ('K1', "K1'", 'K2', 'K1+K2', 'K3', 'K4', 'pure, conjectural', 'pure, cubic phase',
+                  'pure, cubic phase affine'):
             self.assertIn(r, seen)
 
     def test_certificates_and_forgeries(self):

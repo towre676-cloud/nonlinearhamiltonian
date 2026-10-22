@@ -36,6 +36,8 @@ Theorem K (containments; P = p + w(q), Q = q, all exact):
      which vanishes on H (m-degree 2). {H, G} = (k-2) c (H - r) + Q r' and {H, Q} = -2 c Q^(k-1) G
      close the span under the conditions on r.                             [K3: grid]
 
+K4 (deg w = 2, normal form H = A P^4 + (deg <= 2 in P) + mu Q (P - r)(P + 3r)): span{1, G, H} with
+     G = A (P - r)^3 + c2 (P - r) + mu Q (P - r); proof and checks in check_cubic_phase.py.
 K1' (deg w = 2, H = F(P) + lam Q + mu Q P, mu != 0): span{1, P, P^2, H}, together with Q if
      deg F = 3, and with P H if moreover lam = 0, lies in D_inf(H).
      Proof: Theorem X with deg w = 2; the factor Q P absorbs one d_Q and one d_P, so every odd
@@ -336,6 +338,25 @@ def _upow(a, n):
     return out
 
 
+def _k4(h):
+    """For h = a(P) + Q b(P) in normal form (no P^3): if deg a = 4 and b = mu (P - r)(P + 3r), return
+    G = A (P - r)^3 + c2 (P - r) + mu Q (P - r), c2 the (P - r)^2 coefficient of a; else None."""
+    a = {j: c for (i, j), c in h.items() if i == 0}
+    b = {j: c for (i, j), c in h.items() if i == 1}
+    if not a or max(a) != 4 or a.get(3) or not b or max(b) != 2:
+        return None
+    mu, nu = b[2], b.get(1, F(0))
+    r = nu / (2 * mu)
+    if b.get(0, F(0)) != -3 * mu * r * r:
+        return None
+    c2 = sum(c * comb(j, 2) * r ** (j - 2) for j, c in a.items() if j >= 2)
+    lin = {1: F(1), 0: -r}
+    G = TR.add({(0, j): a[4] * c for j, c in _upow(lin, 3).items()},
+               {(0, j): c2 * c for j, c in lin.items()},
+               {(1, j): mu * c for j, c in lin.items()})
+    return G
+
+
 def detect(H, l):
     """Recognise K1, K2, K3 for a pure top with root form l. Returns None or a dict with the
     family, the generators (polynomials in q, p) and the conjectured core."""
@@ -366,6 +387,10 @@ def detect(H, l):
             out = {'family': 'K1', 'core': 'K[P] + K Q', 'gens': [{(0, 0): F(1)}, {(1, 0): F(1)}] +
                    [tri({(0, n): F(1)}, w) for n in range(1, NMAX + 1)],
                    'degrees': [0, 1], 'tower_step': 2, 'tower_from': 1}
+        elif e == 2 and s == 4 and all(i <= 1 for (i, j) in h) and _k4(h) is not None:
+            # K4 (check_cubic_phase.py): h = A P^4 + (deg <= 2) + mu Q (P - r)(P + 3r)
+            gens = [{(0, 0): F(1)}, tri(_k4(h), w), Ht]
+            out = {'family': 'K4', 'core': 'span{1, G, H}', 'gens': gens, 'degrees': [0, 6, TR.degree(Ht)]}
         elif e == 2 and all(i == 0 or (i, j) in ((1, 0), (1, 1)) for (i, j) in h):
             # K1': h = F(P) + lam Q + mu Q P with mu != 0 (s >= 3, so P^(s-1) is absent)
             lam = h.get((1, 0), F(0))
@@ -415,7 +440,8 @@ def detect(H, l):
 
 
 def cubic_phase(H, l):
-    """True when the transverse top is constant and the completed power w has degree 2: the
+    """'affine' or 'general' when the transverse top is constant and the completed power w has degree 2
+    (h affine in Q or not), else False. In this case the
     triangular map is then the cubic phase exp(i c q^3 / hbar), where the families are not known
     to be exhaustive (e.g. (q^2 + p)^4 + q (q^2 + p)^2 has a third core element)."""
     Ht = TR.coords(H, l)
@@ -424,7 +450,10 @@ def cubic_phase(H, l):
     if max(phi) != 0:
         return False
     w = {i: c for (i, j), c in Ht.items() if j == s - 1}
-    return bool(w) and max(w) == 2
+    if not (w and max(w) == 2):
+        return False
+    h = untri(Ht, _usc(w, 1 / (s * phi[0])))
+    return 'affine' if all(i <= 1 for (i, j) in h) else 'general'
 
 
 def core_dim(res, N):
@@ -441,7 +470,7 @@ def core_dim(res, N):
 def certify(H):
     H = TR.tidy(H)
     res = TR.classify(H)
-    if res.get('route') not in ('K1', "K1'", 'K2', 'K1+K2', 'K3'):
+    if res.get('route') not in ('K1', "K1'", 'K2', 'K1+K2', 'K3', 'K4'):
         raise ValueError('not a triangular family')
     cert = {'format': FORMAT, 'hamiltonian': TR.ser(H), 'family': res['route'], 'core': res['core'],
             'generators': res['generators']}
