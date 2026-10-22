@@ -256,6 +256,92 @@ The type `(4,1,1)` genuinely has a nonzero static space in every degree, which i
 - the evaluated top matrix agrees with direct static spaces computed from the gates;
 - for one representative of every quintic and sextic root type, the direct dimensions of `{G : C_kD^rG = 0, r ≤ 3}` in degrees 1–12 equal the classified core. This last test is a consistency check, not part of the proof.
 
+## 5. Arbitrary degree: monomials, root rigidity and active dynamics
+
+**Active part.** Define `𝒜(H) = D∞(H) / (D∞(H) ∩ ker ad_H)`. It counts the observables that actually evolve while staying quantum–classical exact at every iteration. The stationary ones are quotiented out. An infinite core can be entirely stationary (`K[qp]` for `q^kp^k`). A two-dimensional core `span{1, H}` has `𝒜 = 0`.
+
+**Conjecture (root rigidity).** If a homogeneous binary form `H` of degree `d ≥ 3` over a field of characteristic zero has at least three distinct roots, then `D∞(H) = span{1, H}`. In that case `𝒜(H) = 0`.
+
+The results below prove the conjecture for every odd degree. For even degree they prove it in every stratum except the types `(1^d)` and `(d/2, 1^{d/2})` with `d ≥ 8`.
+
+### 5.1 The monomial theorem (all exponents)
+
+**Theorem M.** Let `H = q^a p^b` with `a ≥ b`, `d = a + b ≥ 3`. Then:
+
+| case | `D∞(H)` | `𝒜(H)` |
+|---|---|---|
+| `b = 0` | `Q[q] ⊕ pQ[q] ⊕ p²Q[q]` | `pQ[q] ⊕ p²Q[q]` |
+| `b = 1` | `Q[q] ⊕ pQ[q]` | `D∞ / span{1, H}`, infinite |
+| `a = b ≥ 2` | `Q[qp]` | 0 |
+| `a > b ≥ 2` | `span{1, qp, H}` | `Q·qp` (`{H, qp} = (a−b)H`) |
+
+*Proof.*
+1. *Support.* `D` and every gate `C_k` map a monomial to a multiple of a monomial by a fixed shift. So `D∞(H)` is spanned by the monomials it contains. The monomial `q^c p^e` lies in `D∞(H)` exactly when the gate coefficients `ψ_k` vanish at every point `(c + r(a−1), e + r(b−1))` of its D-ray. The ray runs up to the first `r` with `δ_r = (ae − bc) + r(b − a) = 0`, or forever if there is none.
+2. *Only `T₃` is needed.* Along a ray, `ψ₃` is a cubic in `r` with leading coefficient `(a−1)(b−1)(a−b)(a+b−2)` and `r²`-coefficient `−3(a−1)(b−1)(a+b−2)(ae − a − bc + b)`. On the power line, `ψ₃(λa, λb) = −2abλ(a−b)(λ−1)(λ(a+b) + a + b − 3)`. For `b ≤ 1` the gate factors as `a(a−1)y(y−1)[(a−2)(y−2) − 3x]` (`b = 1`) or `(a)₃(y)₃` (`b = 0`).
+3. *Case `a > b ≥ 2`.* At most three points of any ray pass `T₃`, so the ray ends after at most three points. Its endpoint lies on the power line and must be 1 or `H`. This leaves exactly 1, `qp` and `H`.
+4. *Other cases.* They follow from the same factorizations (`check_monomial_theorem.py` docstring, steps M1–M3). ∎
+
+The proof also gives an effective stopping rule: `D∞(q^ap^b) = {G : C₃D^rG = 0, r = 0, …, 3}`. The checker `check_monomial_theorem.py` (`monomial-theorem-v1`; `results/hamiltonian/monomial_theorem.json`) verifies the identities in the symbols `a, b, c, e, r, λ` with exact arithmetic. The tests compare the predicted cores with direct dimensions for every `q^ap^b` with `3 ≤ d ≤ 9`, in degrees up to 12. This theorem replaces the per-monomial Gröbner certificates of §§2, 3c and 3d as the logical foundation, though those certificates remain as independent cross-checks.
+
+**Corollary (one or two root directions, all degrees).** Transport by `GL₂(K̄)` gives the core of every homogeneous `H` of degree `d ≥ 3` with at most two distinct roots: `cℓ^d`, `cℓ^{d−1}m`, `cQ₂^{d/2}` (balanced) and `cℓ^am^b` with `a ≠ b`, `a, b ≥ 2`. **Active exact dynamics exists (`𝒜(H) ≠ 0`) for such `H` exactly when `H` is not a balanced power.** It is infinite-dimensional for `cℓ^d` and `cℓ^{d−1}m`, and one-dimensional (spanned by `ℓm`) for unequal powers.
+
+### 5.2 Rigidity theorems
+
+The *sl₂ lemma* and the *centralizer lemma* of §3d hold in every degree.
+
+**Theorem R1 (intermediate multiplicity).** If `H` has at least three distinct roots and some root of multiplicity `μ` with `2 ≤ μ ≤ d − 2` and `μ ≠ d/2`, then `D∞(H) = span{1, H}`.
+
+*Proof.* Move that root to `(1:0)`. The top part for the weight `(2,1)` is `q^{d−μ}p^μ`, an unequal power with both exponents at least 2. By Theorem M its core is `span{1, qp, q^{d−μ}p^μ}`. The top-weight lemma and the two lemmas then conclude as in Route B of §3d. ∎
+
+**Theorem R2 (odd degree, squarefree).** If `d ≥ 5` is odd and `H` is squarefree, then `D∞(H) = span{1, H}`. Moreover `E_n(H) = {G : T₃(H,G) = T_d(H,G) = 0} = 0` for `n ≥ (d−1)(d−2) + 3`.
+
+*Proof.*
+1. *`T_d` is a gate.* Since `d` is odd, `T_d` is a gate, and `T_d(H, G) = d!·H(∂_p, −∂_q)G`. Its kernel on `V_n` is the span of the powers `L_iⁿ` of the linear factors of `H`, because `H(∂)` is surjective, being dual to multiplication by `H`.
+2. *`T₃` on those powers.* `T₃(H, Σc_iL_iⁿ) = (n)₃ Σ c_i τ_i L_i^{n−3}`, where `τ_i = ∂_{v_i}³H` and `v_i` is the root of `L_i`. Here `τ_i ≠ 0`, because `τ_i` vanishes only at roots of multiplicity at least `d − 2 ≥ 3`.
+3. *Independence.* The spaces `L_i^N V_{d−3}` are independent once `N ≥ (d−1)(d−2)`, by apolarity and a dimension count. So `c_iτ_i = 0`, hence `c_i = 0`.
+4. *Chain argument* (§3d, Route C):
+   - `ker D = K[H]`;
+   - `H^j ∉ D∞` for `j ≥ 2`, by the top-weight lemma at a simple root and Theorem M with `b = 1`;
+   - the sl₂ lemma excludes quadratics.
+   ∎
+
+**Theorem R3 (squarefree cubic).** `D∞(H) = span{1, H}`.
+
+*Proof.* Here `E_n = span{L_iⁿ}`, which is three-dimensional, so static finiteness fails and one step of `D` is used instead. For `G = Σc_iL_iⁿ`, `DG = nΣc_iL_iⁿM_i` with `∂_{v_i}H = L_iM_i` and `M_i(v_i) ≠ 0`. If `DG ∈ E_{n+1} = span{L_i^{n+1}}`, independence of the spaces `L_iⁿV₁` (`n ≥ 4`) forces `c_iM_i ∝ L_i`, hence `c_i = 0`. So `D∞(H)_n = 0` for `n ≥ 4`, and the chain argument concludes. ∎
+
+**Coverage.**
+- *Odd `d`.* A form with at least three roots either has a root of multiplicity in `[2, d−2]` or is squarefree. So R1, R2 and R3 prove the conjecture **for every odd degree**. Degree 7 is now fully classified.
+- *Even `d`.* The forms not covered by R1 have all multiplicities in `{1, d/2}`, that is types `(1^d)` and `(d/2, 1^{d/2})`.
+  - `d = 4`: these are §3c, where `(2,1,1)` was certified individually.
+  - `d = 6`: these are §3d, Route C.
+  - **Open: even `d ≥ 8`, types `(1^d)` and `(d/2, 1^{d/2})`.** In degree 8 these are `(1⁸)` and `(4,1,1,1,1)`.
+
+**Evidence in degrees 7 and 8.** For one representative of every root type, and for two random squarefree forms, the direct dimensions of `{G : C_kD^rG = 0, r ≤ 3}` were computed in degrees 1–16 (`d = 7`) and 1–18 (`d = 8`). They agree exactly with the predicted cores, including `(1⁸)` and `(4,1,1,1,1)`. No counterexample appeared. This is evidence, not proof. The sextic proof of static finiteness at a simple root (§3d) needed an elimination tree in four local coefficients. The degree-independent mechanism for even degree, which would replace that tree, has not been identified. In odd degree it is the apolar kernel of `T_d`.
+
+### 5.3 Perturbation corollary
+
+**Corollary P.** Let `H = H_d + P` with `deg P < d`. If `D∞(H_d) = span{1, H_d}`, then `D∞(H) = span{1, H}`.
+
+*Proof.* Use the weight `(1,1)` in the top-weight lemma. The top part of any `G ∈ D∞(H)` lies in `span{1, H_d}`, so `G` has degree 0 or `d`. In degree `d`, `G − cH ∈ D∞(H)` has lower degree, so it is a constant. ∎
+
+Combined with §§3c, 3d and 5.2, this covers every Hamiltonian whose top homogeneous part has at least three distinct roots and lies in a proved stratum. That includes perturbations that change the one-step exactness space, since lower terms of degree at least 3 change the gates.
+
+**Executable coverage (`root-rigidity-v1`; checker `check_root_rigidity.py`).**
+- Given a rational `H`, the certificate declares a square-free decomposition of `H_d(x, 1)`. The checker verifies the product, square-freeness and coprimality.
+- It derives the root type over Q̄, including the root at `(1:0)`.
+- It selects the route (monomial, R1, R2, R3, W3, W4 or open) and reports the core and the active part.
+- Five examples are enveloped under `results/hamiltonian/rigidity_*.json`. One of them is an open squarefree octic, which the checker reports as open rather than guessing.
+- The tests recover root types of random forms and reject forged decompositions. They also check that random lower-order perturbations of proved tops leave exactly `span{1, H}` in the direct computation.
+
+### 5.4 Scope and positioning
+
+The question here is different from theorems that ask when exactness holds for *every* observable, which force `H` to be quadratic. Here `H` is a fixed nonlinear Hamiltonian, and the object is its maximal polynomial sector of exact repeated evolution. Any priority claim would need a focused literature review. None is made.
+
+On effective finite determination:
+- For monomials, Theorem M gives an explicit stopping rule: `C₃` and depth 3.
+- For R1–R3, the proofs give explicit static or one-step bounds. Examples are `n ≥ (d−1)(d−2) + 3` for R2 and `n ≥ 4` with one `D`-step for R3; below these bounds the chain argument applies.
+- A general decision procedure with a proved stopping rule for arbitrary `H` remains open. Operator-ideal certificates (§1) and classifications of polynomial solutions remain distinct claims.
+
 ## 4. Commands
 
 ```bash

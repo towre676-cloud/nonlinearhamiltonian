@@ -238,10 +238,39 @@ def binary_forms():
             PRODUCER + '; elimination trees searched with sympy', verify=False), s)
 
 
+RIGIDITY_EXAMPLES = [
+    ('rigidity_septic_squarefree_perturbed', {(7, 0): 1, (0, 7): 1, (1, 6): -1, (3, 2): 5, (2, 1): -3, (0, 1): 1}),
+    ('rigidity_octic_4211_perturbed', {(4, 4): 1, (3, 5): -1, (2, 6): -1, (1, 7): 1, (5, 1): 2, (0, 2): 1}),
+    ('rigidity_sextic_3111_perturbed', {(5, 1): 1, (3, 3): -1, (2, 2): 7, (1, 0): 1}),
+    ('rigidity_octic_squarefree_open', {(8, 0): 1, (0, 8): 1, (4, 4): 3}),
+    ('rigidity_q5p3_monomial', {(5, 3): 1}),
+]
+
+
+def rigidity():
+    import check_monomial_theorem as MT
+    import check_root_rigidity as RR
+    cert, s = timed(lambda: {'format': MT.FORMAT, 'identities': sorted(MT.identities())})
+    write('hamiltonian', 'monomial_theorem', envelope.make(
+        'monomial-theorem', {'family': 'q^a p^b, a >= b, a + b >= 3'}, cert,
+        ['characteristic zero', 'ray analysis of the T_3 gate along D-orbits of monomials'],
+        'D_inf(q^a p^b) in all degrees for all exponents', ['D16-F03', 'D06-F02'], PRODUCER, verify=False), s)
+    for name, h in RIGIDITY_EXAMPLES:
+        H = {k: WG.F(v) for k, v in h.items()}
+        c, s = timed(RR.certify, H)
+        c.pop('result')
+        write('hamiltonian', name, envelope.make(
+            'root-rigidity', c['hamiltonian'], c,
+            ['root type of the top homogeneous part over Qbar via a verified square-free decomposition',
+             'routes of DYNAMIC_CORE_RESULTS.md section 5'],
+            'D_inf(H) when a proved route applies; otherwise reported open', ['D16-F03', 'D06-F02'], PRODUCER,
+            verify=False), s)
+
+
 SECTIONS = {'observer': lambda a: observers(), 'structure': lambda a: structure(), 'arithmetic': lambda a: arithmetic(),
             'hamiltonian': lambda a: hamiltonians(a.skip_slow), 'top': lambda a: top_reductions(),
             'integer': lambda a: integer_and_units(), 'quartic': lambda a: quartic_theorem(),
-            'binary': lambda a: binary_forms()}
+            'binary': lambda a: binary_forms(), 'rigidity': lambda a: rigidity()}
 
 
 def main():

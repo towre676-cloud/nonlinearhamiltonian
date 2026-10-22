@@ -45,7 +45,7 @@
   {
    "id": "P001",
    "status": "target",
-   "claim": "Remaining open targets: probabilistic or continuous noise models for adaptive experiments; dynamic cores of homogeneous Hamiltonians of degree >= 7 and of inhomogeneous quintic/sextic families.",
+   "claim": "Remaining open targets: probabilistic or continuous noise models for adaptive experiments; root rigidity for even degree d >= 8 in the strata (1^d) and (d/2, 1^(d/2)); effective stopping rules for general H; inhomogeneous Hamiltonians whose top part has at most two roots.",
    "support": "TASKS.json",
    "scope": "Unfinished tasks, not current capabilities."
   },
@@ -54,7 +54,7 @@
    "status": "implemented",
    "claim": "Typed machinery-envelope-v1 objects bind certificates to model/payload hashes, domain Q, hypotheses, scope and atlas source ids, and dispatch to independent checkers; swapped witness kinds and unknown domains are rejected.",
    "support": "extensions/envelope.py; extensions/test_envelope.py",
-   "scope": "Registry of fifteen witness kinds; domains Q and Z."
+   "scope": "Registry of seventeen witness kinds; domains Q and Z."
   },
   {
    "id": "W1",
@@ -188,6 +188,41 @@
    "claim": "Classification of D_inf(H) for every nonzero binary quintic or sextic over a field of characteristic zero: (+)_{j<=2} m^j K[l] for c l^d; K[l] + mK[l] for c l^(d-1) m; span{1, lm, H} for c l^(d-2) m^2; K[Q] for sextics c Q^3; span{1, H} for every form with at least three distinct roots.",
    "support": "programmes/DYNAMIC_CORE_RESULTS.md#3d; W4-a, W4-b; top-weight lemma (W2); centralizer and sl2 lemmas",
    "scope": "All degrees; routes A (monomial classes), B (root of multiplicity 2 or d-2 with the top-weight lemma), C (types (1^5), (1^6), (3,1,1,1): static finiteness and a chain argument). With W3 this covers every binary form of degree <= 6. No novelty claim."
+  },
+  {
+   "id": "W5-a",
+   "status": "proved_with_certificate",
+   "claim": "Monomial theorem: for H = q^a p^b (a >= b, a+b >= 3), D_inf = (+)_{j<=2} p^j Q[q] (b=0), Q[q]+pQ[q] (b=1), Q[qp] (a=b), span{1,qp,H} (a>b>=2); moreover D_inf(q^a p^b) = {G : C_3 D^r G = 0, r <= 3}.",
+   "support": "programmes/DYNAMIC_CORE_RESULTS.md#5.1; extensions/hamiltonian/check_monomial_theorem.py; results/hamiltonian/monomial_theorem.json",
+   "scope": "All exponents; ray analysis of the T_3 gate; symbolic identities checked exactly."
+  },
+  {
+   "id": "W5-b",
+   "status": "proved",
+   "claim": "Every homogeneous H of degree d >= 3 with at most two distinct roots has the monomial-class core; active exact dynamics (A(H) != 0) exists for such H exactly when H is not a balanced power c Q^(d/2).",
+   "support": "programmes/DYNAMIC_CORE_RESULTS.md#5.1",
+   "scope": "GL2 transport of W5-a; A(H) = D_inf / (D_inf cap ker ad_H)."
+  },
+  {
+   "id": "W5-c",
+   "status": "proved",
+   "claim": "Root rigidity D_inf(H) = span{1,H} (so A(H) = 0) holds for every homogeneous H with >= 3 distinct roots that has a root of multiplicity mu in [2, d-2], mu != d/2 (R1), for every squarefree H of odd degree (R2 for d >= 5 via the apolar kernel of T_d, E_n = 0 for n >= (d-1)(d-2)+3; R3 for cubics), hence in every odd degree.",
+   "support": "programmes/DYNAMIC_CORE_RESULTS.md#5.2; tests in extensions/hamiltonian/test_root_rigidity.py",
+   "scope": "Characteristic zero. With W3, W4 the conjecture is open only for even d >= 8 in types (1^d) and (d/2,1^(d/2)); degrees 7 and 8 cross-checked directly for every root type with no counterexample."
+  },
+  {
+   "id": "W5-d",
+   "status": "proved_with_executable_coverage",
+   "claim": "Perturbation corollary: if D_inf(H_d) = span{1,H_d} then D_inf(H_d + P) = span{1, H_d + P} for every P of lower degree.",
+   "support": "programmes/DYNAMIC_CORE_RESULTS.md#5.3; extensions/hamiltonian/check_root_rigidity.py; results/hamiltonian/rigidity_*.json",
+   "scope": "Top-weight lemma with weight (1,1); root type via verified square-free decomposition; open strata reported as open."
+  },
+  {
+   "id": "P002",
+   "status": "conjecture",
+   "claim": "Root-rigidity conjecture: every homogeneous binary form of degree d >= 3 with at least three distinct roots has D_inf(H) = span{1,H}.",
+   "support": "programmes/DYNAMIC_CORE_RESULTS.md#5",
+   "scope": "Proved for all odd d and for all even d outside (1^d), (d/2,1^(d/2)) with d >= 8; evidence only in those strata."
   }
  ],
  "rule": "Passing finite tests does not upgrade a target or an unproved general statement to a theorem.",

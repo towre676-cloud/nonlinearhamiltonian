@@ -182,6 +182,21 @@
     "Static finiteness at a simple root certified by an independent checker with exact arithmetic",
     "Chain argument documented; representatives of every root type cross-checked directly"
    ]
+  },
+  {
+   "id": "W5",
+   "status": "in_progress",
+   "title": "arbitrary-degree root rigidity and active exact dynamics",
+   "depends_on": [
+    "W4"
+   ],
+   "objective": "Prove or break: every homogeneous H with >= 3 distinct roots has D_inf(H) = span{1,H}; classify one- and two-root forms in all degrees; extend to perturbations.",
+   "acceptance": [
+    "Monomial theorem in all exponents with an exact checker (done)",
+    "Rigidity for intermediate multiplicities and odd squarefree forms (done)",
+    "Perturbation corollary with executable coverage (done)",
+    "Even d >= 8, strata (1^d) and (d/2,1^(d/2)) (open)"
+   ]
   }
  ],
  "notes": {

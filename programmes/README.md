@@ -8,11 +8,11 @@ This directory imports the 2026-10-21 handoff programme documents and records wh
 | `TASKS.json` | The ordered tasks with their current status. |
 | `CLAIMS_LEDGER.json` | Claims by status: retained results, implemented engines, certified computations, theorems and open targets. |
 | `MACHINERY_MILESTONES.md` | C0, O1–O3 (including set-valued noise and metric search), S1–S3 (including integral Smith cohomology), A1–A2 (Pell orbits and units of both quadratic orders): theorems, certificates, retained counterexamples and scope. |
-| `DYNAMIC_CORE_RESULTS.md` | W1–W4: the discovery backend, all-degree kernel certificates, certified cores, the six-parameter `qp³` theorem, the top-weight reduction lemma, homogeneous quartics, and the classification of quintic and sextic dynamic cores. |
+| `DYNAMIC_CORE_RESULTS.md` | W1–W4: the discovery backend, all-degree kernel certificates, certified cores, the six-parameter `qp³` theorem, the top-weight reduction lemma, homogeneous quartics, the classification of quintic and sextic dynamic cores, and arbitrary-degree results (monomial theorem, root rigidity in odd degree and most even strata, active part, perturbation corollary). |
 | `EXTENSION_CHECKS.json` | The handoff's seed check list, kept as it was. `../extensions/run_all.py` supersedes it. |
 
 ## Next steps
 
-1. Dynamic cores of homogeneous Hamiltonians of degree 7 and higher. The quintic/sextic argument (§3d of `DYNAMIC_CORE_RESULTS.md`) generalizes in outline: monomial classes, the top-weight lemma at roots of intermediate multiplicity, and static finiteness at a simple root followed by a chain argument. For degree `d ≥ 7`, however, the top cores at roots of multiplicity between 3 and `d − 3` still have to be computed, and the local static systems involve more variables.
+1. Root rigidity in even degree `d ≥ 8` for the two remaining strata, `(1^d)` and `(d/2, 1^{d/2})` (`DYNAMIC_CORE_RESULTS.md` §5.2). Degrees 7 and 8 show no counterexample. The missing ingredient is a degree-independent replacement for the odd-degree apolar kernel of `T_d`; the sextic elimination tree may contain the recurring local identity. Effective stopping rules for general `H` remain open.
 2. Probabilistic or continuous noise for adaptive experiments. This needs posterior semantics and a different termination theorem.
 3. Performance. The Weyl Gröbner backend uses `Fraction` arithmetic without a chain criterion.

@@ -282,6 +282,26 @@
    }
   },
   {
+   "file": "results/hamiltonian/monomial_theorem.json",
+   "sha256": "773f6cdebc33086458c81b274e90a86444c641372cc1246626d1d8b34f45c9af",
+   "witness_kind": "monomial-theorem",
+   "replay": "python3 -B extensions/envelope.py check results/hamiltonian/monomial_theorem.json",
+   "producer_seconds": 0.02,
+   "summary": {
+    "status": "passed",
+    "identities": [
+     "I1",
+     "I1_balanced",
+     "I2",
+     "I3",
+     "I4",
+     "I5"
+    ],
+    "theorem": "for H = q^a p^b, a >= b, a + b >= 3: D_inf = (+)_{j<=2} p^j Q[q] (b = 0), Q[q] + pQ[q] (b = 1), Q[qp] (a = b), span{1, qp, H} (a > b >= 2)",
+    "active_part": "p Q[q] + p^2 Q[q] (b = 0); D_inf / span{1, H} (b = 1); 0 (a = b); Q qp (a > b >= 2)"
+   }
+  },
+  {
    "file": "results/hamiltonian/p3_plus_q2.json",
    "sha256": "81d544b5ad07acdd81207e1fa2fb26a6af789a3806535391d213f121fcc551e7",
    "witness_kind": "weyl-polynomial-kernel",
@@ -627,6 +647,119 @@
      "p^2*Q[q]"
     ],
     "dimension": "infinite"
+   }
+  },
+  {
+   "file": "results/hamiltonian/rigidity_octic_4211_perturbed.json",
+   "sha256": "c5397ca81d19e45272709e077ab5cc35561b0bc422988ded0bfd82bc6cb581df",
+   "witness_kind": "root-rigidity",
+   "replay": "python3 -B extensions/envelope.py check results/hamiltonian/rigidity_octic_4211_perturbed.json",
+   "producer_seconds": 0.0,
+   "summary": {
+    "status": "passed",
+    "degree": 8,
+    "root_type": [
+     4,
+     2,
+     1,
+     1
+    ],
+    "route": "R1",
+    "homogeneous": false,
+    "core": "span{1, H}",
+    "active_part": "0: no nonstationary observable is exact under repeated evolution",
+    "via": "perturbation corollary: D_inf(H_d) = span{1, H_d} and deg(H - H_d) < d"
+   }
+  },
+  {
+   "file": "results/hamiltonian/rigidity_octic_squarefree_open.json",
+   "sha256": "a754d6d9d6976aa955a76e2fb2f60404bce238eb64b4c38e8aee437df46c33d2",
+   "witness_kind": "root-rigidity",
+   "replay": "python3 -B extensions/envelope.py check results/hamiltonian/rigidity_octic_squarefree_open.json",
+   "producer_seconds": 0.0,
+   "summary": {
+    "status": "passed",
+    "degree": 8,
+    "root_type": [
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    "route": "open",
+    "homogeneous": true,
+    "core": "not determined (open stratum: even degree >= 8, type (1^d) or (d/2, 1^(d/2)))",
+    "active_part": "unknown"
+   }
+  },
+  {
+   "file": "results/hamiltonian/rigidity_q5p3_monomial.json",
+   "sha256": "2e92a77934700024da50ed0d9a662f5eaf5171ddf708f5c46660bc1c08cd7d35",
+   "witness_kind": "root-rigidity",
+   "replay": "python3 -B extensions/envelope.py check results/hamiltonian/rigidity_q5p3_monomial.json",
+   "producer_seconds": 0.0,
+   "summary": {
+    "status": "passed",
+    "degree": 8,
+    "root_type": [
+     5,
+     3
+    ],
+    "route": "monomial",
+    "homogeneous": true,
+    "core": "span{1, LM, H}  (H = c L^a M^b)",
+    "active_part": "nonzero"
+   }
+  },
+  {
+   "file": "results/hamiltonian/rigidity_septic_squarefree_perturbed.json",
+   "sha256": "6bc7989a7bf5f0b89facbf5640f557611d1a20923ff8a26b5dd3c62cd7e756ae",
+   "witness_kind": "root-rigidity",
+   "replay": "python3 -B extensions/envelope.py check results/hamiltonian/rigidity_septic_squarefree_perturbed.json",
+   "producer_seconds": 0.0,
+   "summary": {
+    "status": "passed",
+    "degree": 7,
+    "root_type": [
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    "route": "R2",
+    "homogeneous": false,
+    "core": "span{1, H}",
+    "active_part": "0: no nonstationary observable is exact under repeated evolution",
+    "via": "perturbation corollary: D_inf(H_d) = span{1, H_d} and deg(H - H_d) < d"
+   }
+  },
+  {
+   "file": "results/hamiltonian/rigidity_sextic_3111_perturbed.json",
+   "sha256": "23a6dd858aa9afbf87d37c94f0ee02fffaea7db9b942b6b6788b19aad2dec0ed",
+   "witness_kind": "root-rigidity",
+   "replay": "python3 -B extensions/envelope.py check results/hamiltonian/rigidity_sextic_3111_perturbed.json",
+   "producer_seconds": 0.0,
+   "summary": {
+    "status": "passed",
+    "degree": 6,
+    "root_type": [
+     3,
+     1,
+     1,
+     1
+    ],
+    "route": "W4",
+    "homogeneous": false,
+    "core": "span{1, H}",
+    "active_part": "0: no nonstationary observable is exact under repeated evolution",
+    "via": "perturbation corollary: D_inf(H_d) = span{1, H_d} and deg(H - H_d) < d"
    }
   },
   {
