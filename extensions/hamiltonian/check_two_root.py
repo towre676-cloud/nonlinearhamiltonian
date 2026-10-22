@@ -11,9 +11,11 @@ roots over Qbar, the checker recomputes the top type and applies the proved crit
   pure     H_d = c l^d                      W = (+)_{j<=2} m^j K[l] if d_v H_(>=3) = 0 and d_v^2 H_2 = 0;
                                             V = K[l] + m K[l] if d_v^2 H = 0;
                                             span{1, H} if H = f(l) + m g(l) + gamma m^2, gamma != 0,
-                                            deg g < d/2 (Theorem Q'); otherwise conjectural.
+                                            deg g < d/2 (Theorem Q') or the transverse top is finite
+                                            (Theorem T); otherwise conjectural.
   near     H_d = c l^(d-1) m                V if d_v^2 H = 0; span{1, H} if d_v^2 H is a nonzero
-                                            constant (Theorem Q); otherwise conjectural.
+                                            constant (Theorem Q) or the transverse top is finite
+                                            (Theorem T); otherwise conjectural.
   balanced H_d = c Q^mu, Q a quadratic form  K[G] with G = Q(x - x0) if the translation killing
                                             H_(d-1) puts H into K[Q]; otherwise span{1, H} (Theorem B,
                                             check_balanced.py).                     (complete)
@@ -250,6 +252,10 @@ def classify(H):
             out.update(route='P+ near', proved=True, core='K[l] + m K[l]', active_part='infinite')
         elif degree(d2) == 0:
             out.update(route='Q', proved=True, core='span{1, H}', active_part='0')
+        elif transverse_finite(H, l)[0]:
+            out.update(route='T', proved=True, core='span{1, H}', active_part='0')
+        elif unequal_vertex(H, l)[0]:
+            out.update(route='N', proved=True, core='span{1, H}', active_part='0')
         else:
             out.update(route='near, conjectural', proved=False, core='span{1, H} (conjectured)',
                        active_part='0 (conjectured)')
@@ -262,10 +268,85 @@ def classify(H):
         out.update(route='P+ pure V', proved=True, core='K[l] + m K[l]', active_part='infinite')
     elif degree(d2) == 0 and qprime(H, l, d):
         out.update(route="Q'", proved=True, core='span{1, H}', active_part='0')
+    elif transverse_finite(H, l)[0] and transverse_pure_ok(H, l):
+        out.update(route='T', proved=True, core='span{1, H}', active_part='0')
     else:
         out.update(route='pure, conjectural', proved=False, core='span{1, H} (conjectured)',
                    active_part='0 (conjectured)')
     return out
+
+
+def coords(H, l):
+    """H in coordinates X = l, Y = m (m = p if l involves q, else q): dict (i, j) -> X^i Y^j."""
+    a, b = l.get((1, 0), F(0)), l.get((0, 1), F(0))
+    if a != 0:
+        q_, p_ = {(1, 0): 1 / a, (0, 1): -b / a}, {(0, 1): F(1)}
+    else:
+        q_, p_ = {(0, 1): F(1)}, {(1, 0): 1 / b}
+    return comp(H, q_, p_)
+
+
+def transverse_finite(H, l):
+    """Theorem T: the part of maximal m-degree s >= 2 is F = m^s phi(l) with deg phi >= 2 and F not of
+    the form c (m (l + gamma))^s. Returns (applies, description)."""
+    Ht = coords(H, l)
+    s_ = max(j for i, j in Ht)
+    if s_ < 2:
+        return False, 'affine'
+    phi = {i: c for (i, j), c in Ht.items() if j == s_}
+    e = max(phi)
+    if e < 2:
+        return False, f'transverse top m^{s_} times a polynomial of degree {e}'
+    if e == s_:
+        gam = phi.get(e - 1, F(0)) / (e * phi[e])
+        if all(phi.get(i, F(0)) == phi[e] * comb(e, i) * gam ** (e - i) for i in range(e + 1)):
+            return False, 'transverse top in K[G]'
+    return True, f'transverse top m^{s_} phi(l), deg phi = {e}'
+
+
+def transverse_pure_ok(H, l):
+    """Pure tops need in addition that phi is not a perfect power c (l + gamma)^e: otherwise D_inf(F)
+    contains the m-homogeneous quadratic m (l + gamma) and the reduction to K[l] fails."""
+    Ht = coords(H, l)
+    s_ = max(j for i, j in Ht)
+    phi = {i: c for (i, j), c in Ht.items() if j == s_}
+    e = max(phi)
+    gam = phi.get(e - 1, F(0)) / (e * phi[e])
+    return not all(phi.get(i, F(0)) == phi[e] * comb(e, i) * gam ** (e - i) for i in range(e + 1))
+
+
+def hull_vertices(Ht):
+    """Monomials (m-exp, l-exp) of Ht (keys (i, j) for X^i Y^j, X = l, Y = m) that are the unique
+    maximiser of m-exp + t * l-exp for some t in the open interval (0, 1): the Newton-polygon
+    vertices strictly between the total-degree direction (t = 1) and the m-degree direction (t = 0).
+    Exact: for each candidate the admissible t form an interval cut out by linear inequalities."""
+    pts = sorted({(j, i) for (i, j) in Ht})
+    out = set()
+    for v in pts:
+        lo, hi = F(0), F(1)                       # open interval (lo, hi)
+        ok = True
+        for p in pts:
+            if p == v:
+                continue
+            a, b = F(v[0] - p[0]), F(v[1] - p[1])  # need a + t b > 0
+            if b > 0:
+                lo = max(lo, -a / b)
+            elif b < 0:
+                hi = min(hi, -a / b)
+            elif a <= 0:
+                ok = False
+                break
+        if ok and lo < hi:
+            out.add(v)
+    return out
+
+
+def unequal_vertex(H, l):
+    Ht = coords(H, l)
+    for mm, ll in hull_vertices(Ht):
+        if mm >= 2 and ll >= 2 and mm != ll:
+            return True, (mm, ll)
+    return False, None
 
 
 def qprime(H, l, d):

@@ -304,7 +304,7 @@
    "sha256": "034f692ee1eb42de332fe7957aa7194bee70cfcb96ef1ed10bf44b30d43a545a",
    "witness_kind": "weyl-polynomial-kernel",
    "replay": "python3 -B extensions/envelope.py check results/hamiltonian/binomial_q4_plus_p2.json",
-   "producer_seconds": 0.96,
+   "producer_seconds": 0.88,
    "summary": {
     "status": "passed",
     "kind": "finite_support",
@@ -320,7 +320,7 @@
    "sha256": "75bc78fabd0135381c86404e9ca102128eface5cfa3c64770b0e0f7b4dd9f4fe",
    "witness_kind": "weyl-polynomial-kernel",
    "replay": "python3 -B extensions/envelope.py check results/hamiltonian/binomial_q5_plus_p2.json",
-   "producer_seconds": 5.56,
+   "producer_seconds": 5.43,
    "summary": {
     "status": "passed",
     "kind": "finite_support",
@@ -357,7 +357,7 @@
    "sha256": "6e43ecd75520985638548c2bd09ff853fc9ffeebf2e0e133a43378c664ba9a69",
    "witness_kind": "weyl-polynomial-kernel",
    "replay": "python3 -B extensions/envelope.py check results/hamiltonian/binomial_qp4_plus_q2.json.gz",
-   "producer_seconds": 89.14,
+   "producer_seconds": 87.49,
    "summary": {
     "status": "passed",
     "kind": "finite_support",

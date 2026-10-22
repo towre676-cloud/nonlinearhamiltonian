@@ -464,6 +464,44 @@ Write `ℓ, m` for the root forms of `H_d`, or a root form and a complementary f
 
 Only the gate `T₃` and the top of one bracket are used. The argument does not depend on Newton polygons, so it covers the "box" perturbations `i, j ≤ μ` that the weight method of §6.3 could not reach. The checker `check_balanced.py` (`balanced-top-v1`; `results/hamiltonian/balanced_top_theorem.json`) verifies the factorization of `Ω`, the positivity identity and the antisymmetry exactly. It also checks the `T₃` convention against `weyl_receipts` on a grid. `check_two_root.py` now reports balanced tops outside `K[G]` as proved (route `B`).
 
+### 6.6 Near and pure tops: finiteness reductions (partial)
+
+Use coordinates `(ℓ, m)`, and write `H = Σ_c m^c h_c(ℓ)`. Let `s` be the `m`-degree of `H`, and call `F = m^sφ(ℓ)` the *transverse top*. Outside Theorem P⁺, `s ≥ 2`.
+
+**Lemma F (near tops).** If `H_d = cℓ^{d−1}m` and `D∞(H)` is finite-dimensional, then `D∞(H) = span{1, H}` unless `H` is affine in `m`.
+
+*Proof.*
+1. Tops lie in `V`, and `D_{H_d}` maps the top monomials `ℓ^N ↦ Nℓ^{N+d−2}` and `mℓ^{N−1} ↦ (N−d)mℓ^{N+d−3}`.
+2. An element whose top has an `ℓ^N` part (`N ≥ 1`), or an `mℓ^{N−1}` part with `N ∉ {2, d}`, therefore generates elements of unbounded degree. So a finite core lies in `span{1, H, G₂}` with `G₂ = ℓm + (linear)`.
+3. `G₂ ∈ D∞(H)` forces `{H, G₂} ∈ span{1, H, G₂}`. As in Theorem U, after a translation `H` becomes a weight vector of `ad_{ℓm}` modulo `span{1, ℓm}`. For the near top this means `H = ℓ^{d−1}m + cℓ^{d−2} + γℓm + δ`, which is affine in `m`. ∎
+
+**Theorem T (transverse top).** Suppose `deg φ ≥ 2` and:
+- for a near top, `F ∉ K[G]`, i.e. `F` is not of the form `c(m(ℓ+γ))^s`;
+- for a pure top, `φ` is not a perfect power `c(ℓ+γ)^{deg φ}`.
+
+Then `D∞(H) = span{1, H}`.
+
+*Proof.*
+1. *Finiteness.* For the `m`-degree filtration, `m`-tops of core elements lie in `D∞(F)`.
+   - If `deg φ ≠ s`, then `F` has an unequal top and `dim D∞(F) ≤ 3` by Theorem U.
+   - If `deg φ = s`, then `D∞(F) = span{1, F}` by Theorem B.
+   Either way `D∞(H)` is finite-dimensional.
+2. *Near tops.* Lemma F concludes.
+3. *Pure tops.*
+   - The translation normalizing `F` moves only `ℓ`. So `D∞(F)` contains a quadratic exactly when `φ` is a perfect power, and that quadratic is `m(ℓ+γ)`. Under the hypothesis, `D∞(F) = span{1, F}`.
+   - The `m`-tops of core elements are therefore constants or multiples of `F`. After subtracting `cH`, a core element `u` lies in `K[ℓ]`.
+   - Then `{H, u} ∈ D∞(H) ⊆ KH ⊕ K[ℓ]`. Its `m^s` part vanishes, so the `H`-coefficient is 0. Its `m^{s−1}` part `±sφu'm^{s−1}` must then vanish, so `u' = 0`. ∎
+
+*Pure tops with `φ` a perfect power, `deg φ ≥ 2`, are not covered.* There `D∞(F)` contains the `m`-homogeneous quadratic `m(ℓ+γ)`, and the reduction above does not exclude core elements `u(ℓ) + κm(ℓ+γ)` with `κ ≠ 0`. A complete treatment needs the next `m`-degree components of `H`.
+
+**Theorem N (near tops, unequal vertex).** If the Newton polygon of `H` in `(m, ℓ)` has a vertex `m^iℓ^j` with `i, j ≥ 2` and `i ≠ j`, strictly between the total-degree direction and the `m`-degree direction, then `D∞(H) = span{1, H}`.
+
+*Proof.* For the weight that singles out this vertex, the top part is an unequal monomial, whose core has dimension 3 (Theorem M). So `D∞(H)` is finite, and Lemma F concludes. ∎
+
+`check_two_root.py` applies T and N, with exact Newton-polygon vertices (routes `T`, `N`). The tests compare both routes with direct computation.
+
+**What remains open.** Every remaining case has a transverse top `F` with `deg φ ≤ 1`, or `F ∈ K[G]` (near), or `φ` a perfect power (pure), and, for near tops, no unequal Newton-polygon vertex; Theorems Q and Q′ cover the parts of this with a single `m²` term. In random perturbations this is the typical situation. The polygon is then a single edge from the top vertex to `m^A` or `m^Aℓ`. The missing ingredient is a finiteness theorem for these quasi-homogeneous edge polynomials. The binomial `ℓ^{d−1}m + m²` of Theorem Q is the first instance, and its proof by casework in the weight grading suggests the general method.
+
 ### 6.4 The decision procedure and what remains open
 
 `check_two_root.py` (`two-root-perturbation-v1`) decides, for any rational `H` with a two-root top:
@@ -477,7 +515,7 @@ The tests generate random members of every route and random affine changes of co
 
 **Conjecture (two-root tops).** Let `H_d` be pure, near or balanced, and suppose `H` has none of the structures of Theorem P⁺. Then `D∞(H) = span{1, H}`.
 
-Theorem B (§6.5) proves it for every balanced top, and Theorems Q and Q′ prove it for the `m²` families. What remains open is pure and near tops whose non-affine part is not a single `m²` term. The conjecture is supported by every computed case, including random perturbations with cubic terms.
+Theorem B (§6.5) proves it for every balanced top. Theorems Q, Q′, T and N (§§6.3 and 6.6) prove it for the `m²` families, for transverse tops `m^sφ(ℓ)` with `deg φ ≥ 2` outside the exceptions of Theorem T, and for near tops with an unequal Newton-polygon vertex. What remains open is described at the end of §6.6. The conjecture is supported by every computed case, including random perturbations with cubic terms.
 
 With §5 this gives a complete statement of when **active** exact dynamics survives a lower-order perturbation, conditional only on the conjecture above:
 - three or more roots in the top: never (proved);

@@ -87,6 +87,20 @@ class Balanced(unittest.TestCase):
             self.assertEqual(filtered_dim(H, d + 2, 8), predicted(res['core'], d, d + 2), (H, res))
 
 
+class TransverseAndVertex(unittest.TestCase):
+    def test_routes_T_and_N_against_direct_computation(self):
+        cases = {'T': [{(1, 4): F(1), (2, 2): F(1), (2, 1): F(1)}, {(1, 5): F(1), (2, 3): F(1)},
+                       {(0, 6): F(1), (2, 3): F(1), (2, 1): F(1), (1, 1): F(1)}],
+                 'N': [{(1, 5): F(1), (3, 2): F(1), (4, 0): F(1)}]}
+        for route, Hs in cases.items():
+            for H in Hs:
+                H = W.tidy(H)
+                res = TR.classify(H)
+                self.assertEqual(res['route'], route, H)
+                d = res['degree']
+                self.assertEqual(filtered_dim(H, d + 1, 8), predicted(res['core'], d, d + 1), H)
+
+
 class Decision(unittest.TestCase):
     def test_against_direct_computation(self):
         rng = random.Random(7)

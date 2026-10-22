@@ -253,11 +253,18 @@
    "scope": "All degrees; translation normalisation, weight induction on off-diagonal parts using T_3 and the top of {H,G}; closed-form factor R with an explicit positivity identity."
   },
   {
+   "id": "W6-e",
+   "status": "proved",
+   "claim": "Near and pure tops: if the transverse top m^s phi(l) (s >= 2) has deg phi >= 2 and is not c (m(l+gamma))^s (near), resp. phi is not a perfect power c (l+gamma)^e (pure), then D_inf(H) = span{1,H} (Theorem T); for near tops the same holds when the Newton polygon has an unequal vertex (Theorem N).",
+   "support": "programmes/DYNAMIC_CORE_RESULTS.md#6.6; extensions/hamiltonian/check_two_root.py; extensions/hamiltonian/test_two_root.py",
+   "scope": "Finiteness via Theorems U and B applied to the transverse top or via a vertex monomial; Lemma F (finite core implies span{1,H}) for near tops; explicit affine analysis for pure tops."
+  },
+  {
    "id": "P003",
    "status": "conjecture",
    "claim": "Two-root conjecture: pure or near tops with lower-order terms outside the structures of W6-b have D_inf(H) = span{1,H}.",
    "support": "programmes/DYNAMIC_CORE_RESULTS.md#6.4; extensions/hamiltonian/test_two_root.py",
-   "scope": "Proved for balanced tops (W6-d) and the m^2 families (W6-c); open for the remaining pure and near perturbations; supported by every computed case."
+   "scope": "Proved for balanced tops (W6-d), the m^2 families (W6-c) and the transverse-top and vertex criteria (W6-e); open for near and pure tops whose transverse top m^s phi(l) has deg phi <= 1, lies in K[G] (near) or has phi a perfect power (pure), and (near) whose Newton polygon has no unequal vertex, outside W6-c; supported by every computed case."
   },
   {
    "id": "P002",
