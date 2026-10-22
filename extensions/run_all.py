@@ -26,6 +26,7 @@ SUITES = [
     ('W3 quartic all-degree theorem', 'hamiltonian', 'test_quartic_uniform'),
     ('W4 quintic and sextic classification', 'hamiltonian', 'test_binary_static'),
     ('W5 arbitrary-degree rigidity', 'hamiltonian', 'test_root_rigidity'),
+    ('W6 two-root tops with perturbations', 'hamiltonian', 'test_two_root'),
     ('S0 contraction seed', 'structure', 'test_contraction_seed'),
     ('S1 obstruction interface', 'structure', 'test_obstruction'),
     ('S2 DGLA lifting', 'structure', 'test_dgla'),

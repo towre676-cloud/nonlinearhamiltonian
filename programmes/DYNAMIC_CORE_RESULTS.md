@@ -379,6 +379,98 @@ On effective finite determination:
 - For R1–R3, the proofs give explicit static or one-step bounds. Examples are `n ≥ (d−1)(d−2) + 3` for R2 and `n ≥ 4` with one `D`-step for R3; below these bounds the chain argument applies.
 - For homogeneous `H` the classification is now a decision procedure: compute the root type. Theorem SR also gives a stopping rule, one gate and one bracket beyond `N₀(d)`. A general decision procedure for arbitrary inhomogeneous `H` (top part with at most two roots) remains open. Operator-ideal certificates (§1) and classifications of polynomial solutions remain distinct claims.
 
+## 6. Inhomogeneous Hamiltonians whose top part has at most two roots
+
+Let `H = H_d + P` with `deg P < d`, where the top homogeneous part `H_d` has at most two distinct roots over Q̄. After §5, these are the only Hamiltonians whose core is not yet determined by the top part alone.
+
+Two facts are used throughout:
+- `D∞` is covariant under affine maps. Translations commute with the constant-coefficient operators `D` and `T_k`, and `GL₂` acts as in §3.
+- The gates `C_k`, `k ≥ 3`, see only `H_{≥3}`. Quadratic and linear terms enter only through `D`.
+
+Write `ℓ, m` for the root forms of `H_d`, or a root form and a complementary form, and let `v` be the direction with `∂_vℓ = 0`. Four top types occur:
+- **pure:** `cℓ^d`;
+- **near:** `cℓ^{d−1}m`;
+- **balanced:** `cQ^{d/2}`;
+- **unequal:** `cℓ^am^b` with `a > b ≥ 2`.
+
+### 6.1 Unequal tops (complete)
+
+**Theorem U.** Let `H_d = cℓ^am^b` with `a > b ≥ 2`. Let `τ` be the unique translation with `(H∘τ)_{d−1} = 0`.
+- If `H∘τ ∈ ℓ^{a−b}K[ℓm] + Kℓm + K`, then `D∞(H) = span{1, H, G}` with `G = (ℓm)∘τ^{−1}`, and `𝒜(H) = K·G`.
+- Otherwise `D∞(H) = span{1, H}`.
+
+*Proof.*
+1. *Three dimensions at most.* For the weight `(1,1)` the top part is `H_d`, whose core is `span{1, ℓm, H_d}` (Theorem M). So `dim D∞(H) ≤ 3`, and a third element must be a quadratic `G = ℓm + (linear) + c`.
+2. *When the quadratic survives.* `span{1, H, G}` is killed by every gate: `G` has degree 2 and `T_k(H, H) = 0` for odd `k`. So `G ∈ D∞(H)` exactly when `{H, G} ∈ span{1, H, G}`.
+3. *Normal form.* Translate so that `G = ℓm`, and use coordinates with `ℓ = q`, `m = p`. Then `ad_{qp}` multiplies `q^ip^j` by `i − j`. The condition says every monomial of `H` has `i − j = a − b`, unless it is `qp` or a constant. Such monomials of degree `d − 1` would need `2i = 2a − 1`, which is impossible, so the translation is the one that kills `H_{d−1}`. ∎
+
+### 6.2 Positive structures (pure, near, balanced)
+
+**Theorem P⁺.**
+1. **Strip `W`.** For a pure top, if `∂_vH_{≥3} = 0` and `∂_v²H₂ = 0`, i.e. `H ∈ K[ℓ] + Kℓm + Km`, then `D∞(H) = W = ⊕_{j≤2} m^jK[ℓ]`.
+2. **Affine strip `V`.** For a pure top outside case 1, or for a near top: if `∂_v²H = 0`, i.e. `H` is affine in `m`, then `D∞(H) = V = K[ℓ] ⊕ mK[ℓ]`.
+3. **Stationary tower.** For a balanced top, if `H ∈ K[G]` for a quadratic `G` with leading part `Q`, then `D∞(H) = K[G]`, and every element is stationary.
+
+*Proof.*
+- *Containment `V ⊆ D∞(H)`.* In coordinates `(ℓ, m)`, a term of `T_k(H, G)` pairs `∂_m^aH` with `∂_m^bG`, where `a + b = k ≥ 3`, so it vanishes for `H, G` affine in `m`. Also `{H, V} ⊆ V`.
+- *Containment `W ⊆ D∞(H)`.* `T_k(f(ℓ), G) ∝ f^{(k)}(ℓ)∂_m^kG = 0` on `W`. The brackets with `K[ℓ]`, `ℓ²`, `ℓm` and linear forms do not raise the `m`-degree.
+- *Containment `K[G] ⊆ D∞(H)`.* After a translation `G = Q ≅ qp`, and `T_k((qp)^a, (qp)^c) ∝ ψ_k(c, c) = 0` by the antisymmetry of §5.1.
+- *Equality in cases 1 and 3.* The top cores are `W` and `K[qp]` (Theorem M), and the line-core argument of §3b applies.
+- *Equality in case 2.* Use the `m`-degree filtration. The `m`-top of `H` is `m·g(ℓ)` with `deg g ≥ 2`; outside case 1, `deg g ≤ 1` would put a pure top into case 1. The core of `m·g(ℓ)` is graded by `m`-degree, and its homogeneous elements `m^ku(ℓ)` have top `m^kℓ^{deg u}`. By Theorem M (near type) this forces `k ≤ 1`. So every element of `D∞(H)` has `m`-degree at most 1. ∎
+
+### 6.3 The `m²`-perturbation families
+
+**Theorem Q (near tops, all `d ≥ 3`).** Let `H_d = cℓ^{d−1}m`. If `∂_v²H` is a nonzero constant, i.e. `H = cℓ^{d−1}m + αm² + (terms affine in m)` with `α ≠ 0`, then `D∞(H) = span{1, H}`.
+
+**Theorem Q′ (pure tops, all `d ≥ 3`).** Let `H_d = cℓ^d`. If `H = f(ℓ) + m·g(ℓ) + γm²` with `γ ≠ 0` and `deg g < d/2`, then `D∞(H) = span{1, H}`.
+
+*Reduction.* For the weight `(d−1, 1)` on `(m, ℓ)` (Theorem Q), respectively `(2, d)` on `(ℓ, m)` (Theorem Q′), the top part is a binomial: `ℓ^{d−1}m + αm²`, respectively `ℓ^d + γm²`. The torus scales both binomials to `qp^{d−1} + q²` and `q^d + p²`. By the finite-top consequence of the top-weight lemma, it suffices to show that each binomial has core `span{1, F}`.
+
+*`F = q^d + p²`, all `d ≥ 3`.*
+1. The static space of `q^d` is `W`. Write `D₁ = {q^d, ·}` and `D₂ = {p², ·} : q^ip^j ↦ −2iq^{i−1}p^{j+1}`.
+2. For `u ∈ D∞(F)`:
+   - `Du ∈ W` forces the `p²`-part of `u` to be a multiple of `p²`;
+   - applying the same to `Du` forces the `p`-part into `span{p, qp}`;
+   - applying it once more forces the `p⁰`-part into `span{1, q, q²} + Kq^d`, with the `q^d` coefficient equal to the `p²` coefficient.
+3. So `u ∈ KF + (degree ≤ 2)`. One or two more applications of `D` kill the quadratic part: compare the coefficients of `q^d` and `p²`, which must agree in multiples of `F`, giving `(d+2)b = 0`. For `d = 3` this takes four steps. ∎
+
+*`F = qp^{d−1} + q²`, `d ≥ 5`.*
+1. *Static space.* The gates are those of `qp^{d−1}`. Their kernel is `V ⊕ Kq² ⊕ Kq³p^{(d−3)/3}`, where the last term is present only if `3 | d`. The checks of `T₃` and `T₅` exclude every monomial with `q`-exponent at least 4.
+2. *Weight grading.* `F` is homogeneous for the weight `(d−1, 1)`, so `D∞(F)` is spanned by weight-homogeneous elements. In weight `W` the candidates are `x p^W + y qp^{W−d+1} + z q² + t q³p^c`.
+3. *First constraints.* Requiring `DG` and `D²G` to stay in the static space forces `t = 0`, `y = 0` outside the weights `d−1, d, 2d−2`, and `y = z` in weight `2d−2`.
+4. *Exceptional weights.* The remaining weights `1, 2, d−1, d, 2d−2` reduce to each other along the `D`-chain and end in `G ∈ span{1, F}`. ∎
+
+*Certificates for small `d`.* The binomials not covered by these arguments, and two cross-checks, are certified with the Gröbner engine. Each gives core `span{1, F}`:
+- `qp²+q²` (d = 3) and `q⁴+p²`;
+- `qp³+q²` (d = 4), already in W2;
+- `qp⁴+q²` and `q⁵+p²`, cross-checks of the general arguments;
+- `p³+q²` (d = 3, Q′), retained.
+
+### 6.4 The decision procedure and what remains open
+
+`check_two_root.py` (`two-root-perturbation-v1`) decides, for any rational `H` with a two-root top:
+- it recomputes the top type from a verified square-free decomposition;
+- it solves for the translation `τ` exactly and tests the normal forms;
+- it reports the core, the active part, and whether the answer is proved (Theorems U, P⁺, Q, Q′) or conjectural.
+
+Enveloped examples are `results/hamiltonian/tworoot_*.json` and `binomial_*.json`.
+
+The tests generate random members of every route and random affine changes of coordinates (degrees 3–5 in the suite; degrees 3–6 at depth 10 in a longer run). Each is compared with direct dimensions of `{G : deg G ≤ d+1, C_kD^rG = 0, r ≤ 8}`. Depth matters: with three gates the qp³+q² family shows spurious extra elements, and one Q′ instance needs depth 8.
+
+**Conjecture (two-root tops).** Let `H_d` be pure, near or balanced, and suppose `H` has none of the structures of Theorem P⁺. Then `D∞(H) = span{1, H}`.
+
+Theorems Q and Q′ prove this for the `m²` families. The rest is open:
+- pure and near tops whose non-affine part is not a single `m²` term;
+- every balanced top outside `K[G]`.
+
+For balanced tops, perturbations inside the box `i, j ≤ d/2` create no Newton-polygon edge, so the weight method gives no information. The conjecture is supported by every computed case, including random perturbations with cubic terms.
+
+With §5 this gives a complete statement of when **active** exact dynamics survives a lower-order perturbation, conditional only on the conjecture above:
+- three or more roots in the top: never (proved);
+- unequal top: a single active quadratic `G`, exactly in the normal form of Theorem U (proved);
+- pure or near top: an infinite active sector exactly in the affine or strip structures of Theorem P⁺ (proved);
+- balanced top: never (proved for `K[G]`, conjectural otherwise).
+
 ## 4. Commands
 
 ```bash

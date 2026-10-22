@@ -275,10 +275,46 @@ def rigidity():
             verify=False), s)
 
 
+BINOMIALS = [('binomial_qp2_plus_q2', 'q*p^2+q^2'), ('binomial_qp4_plus_q2', 'q*p^4+q^2'),
+             ('binomial_q4_plus_p2', 'q^4+p^2'), ('binomial_q5_plus_p2', 'q^5+p^2')]
+TWO_ROOT_EXAMPLES = [
+    ('tworoot_unequal_normal_form', {(3, 2): 1, (2, 1): 1, (1, 0): 2, (1, 1): -1}),
+    ('tworoot_unequal_generic', {(3, 2): 1, (0, 1): 1}),
+    ('tworoot_near_affine', {(1, 4): 1, (1, 2): 3, (0, 3): -1, (0, 1): 1}),
+    ('tworoot_near_q2_family', {(1, 4): 1, (2, 0): 2, (1, 2): 1, (0, 3): 5}),
+    ('tworoot_pure_strip', {(4, 0): 1, (2, 0): 1, (1, 1): 3, (0, 1): -1}),
+    ('tworoot_pure_p2_family', {(5, 0): 1, (0, 2): 1, (1, 1): 2, (3, 0): -1}),
+    ('tworoot_balanced_KG', {(2, 2): 1, (2, 1): 2, (2, 0): 1, (1, 1): 3, (1, 0): 3}),
+]
+
+
+def two_root():
+    import check_two_root as TRC
+    for name, h in BINOMIALS:
+        H = WG.parse_poly(h)
+        (meta, receipt), s1 = timed(WG.discover, H, max_steps=400000, max_generators=100)
+        (kmeta, kobj), s2 = timed(WK.classify, receipt)
+        write('hamiltonian', name, envelope.make(
+            'weyl-polynomial-kernel', receipt['hamiltonian'], kobj,
+            ['flat Weyl-Moyal convention, one canonical pair', 'D = {H,.}, C_k = T_k(H,.) for odd k >= 3',
+             'coefficients in Q'],
+            'full dynamic exact core in all polynomial degrees (binomial top of DYNAMIC_CORE_RESULTS.md section 6)',
+            ['D16-F03', 'D06-F02'], PRODUCER, verify=False), s1 + s2)
+    for name, h in TWO_ROOT_EXAMPLES:
+        c, s = timed(TRC.certify, {k: WG.F(v) for k, v in h.items()})
+        c.pop('result')
+        write('hamiltonian', name, envelope.make(
+            'two-root-perturbation', c['hamiltonian'], c,
+            ['top homogeneous part with at most two roots', 'criteria of DYNAMIC_CORE_RESULTS.md section 6'],
+            'D_inf(H) when a proved criterion applies; otherwise reported as conjectural', ['D16-F03', 'D06-F02'],
+            PRODUCER, verify=False), s)
+
+
 SECTIONS = {'observer': lambda a: observers(), 'structure': lambda a: structure(), 'arithmetic': lambda a: arithmetic(),
             'hamiltonian': lambda a: hamiltonians(a.skip_slow), 'top': lambda a: top_reductions(),
             'integer': lambda a: integer_and_units(), 'quartic': lambda a: quartic_theorem(),
-            'binary': lambda a: binary_forms(), 'rigidity': lambda a: rigidity()}
+            'binary': lambda a: binary_forms(), 'rigidity': lambda a: rigidity(),
+            'tworoot': lambda a: two_root()}
 
 
 def main():

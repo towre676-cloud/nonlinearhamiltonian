@@ -197,6 +197,22 @@
     "Perturbation corollary with executable coverage (done)",
     "Even d >= 8, strata (1^d) and (d/2,1^(d/2)) (done: Theorem SR)"
    ]
+  },
+  {
+   "id": "W6",
+   "status": "in_progress",
+   "title": "inhomogeneous Hamiltonians with two-root tops",
+   "depends_on": [
+    "W5"
+   ],
+   "objective": "Classify D_inf(H_d + P) when H_d has at most two roots.",
+   "acceptance": [
+    "Unequal tops complete (done)",
+    "Positive structures for pure, near, balanced (done)",
+    "m^2 families for near and pure tops (done)",
+    "Executable decision procedure with proved/conjectural labels (done)",
+    "Remaining pure/near perturbations and balanced tops outside K[G] (open: conjecture P003)"
+   ]
   }
  ],
  "notes": {
