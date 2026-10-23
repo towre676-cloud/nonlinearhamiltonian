@@ -386,7 +386,8 @@ def detect(H, l):
         elif e == 2 and tower:
             out = {'family': 'K1', 'core': 'K[P] + K Q', 'gens': [{(0, 0): F(1)}, {(1, 0): F(1)}] +
                    [tri({(0, n): F(1)}, w) for n in range(1, NMAX + 1)],
-                   'degrees': [0, 1], 'tower_step': 2, 'tower_from': 1}
+                   'degrees': [0, 1], 'tower_step': 2, 'tower_from': 1,
+                   'proved': True}                      # equality: Theorem A + Lemma C (check_gauge.py)
         elif e == 2 and s == 4 and all(i <= 1 for (i, j) in h) and _k4(h) is not None:
             # K4 (check_cubic_phase.py): h = A P^4 + (deg <= 2) + mu Q (P - r)(P + 3r)
             gens = [{(0, 0): F(1)}, tri(_k4(h), w), Ht]
@@ -454,6 +455,72 @@ def cubic_phase(H, l):
         return False
     h = untri(Ht, _usc(w, 1 / (s * phi[0])))
     return 'affine' if all(i <= 1 for (i, j) in h) else 'general'
+
+
+def affine_data(H, l):
+    """For a constant transverse top: (deg w, deg_P a, deg_P b) of the normal form h = a + Q b when h is
+    affine in Q (deg b = -1 for b = 0); else None."""
+    Ht = TR.coords(H, l)
+    s = max(j for _, j in Ht)
+    phi = {i: c for (i, j), c in Ht.items() if j == s}
+    if max(phi) != 0:
+        return None
+    w = _usc({i: c for (i, j), c in Ht.items() if j == s - 1}, 1 / (s * phi[0]))
+    if not w:
+        return None
+    h = untri(Ht, w)
+    if any(i > 1 for (i, j) in h):
+        return None
+    bdeg = max((j for (i, j) in h if i == 1), default=-1)
+    return max(w), s, bdeg
+
+
+def first_edge(H, l):
+    """(e, s, alpha, edge) for a constant transverse top: e = deg w, s = deg_P h, alpha the slope of the
+    first Newton edge of h from P^s (min (s - j)/i over monomials Q^i P^j with i >= 1), edge = those
+    monomials; None if the transverse top is not constant or h has no Q-dependence."""
+    Ht = TR.coords(H, l)
+    s = max(j for _, j in Ht)
+    phi = {i: c for (i, j), c in Ht.items() if j == s}
+    if max(phi) != 0:
+        return None
+    w = _usc({i: c for (i, j), c in Ht.items() if j == s - 1}, 1 / (s * phi[0]))
+    h = untri(Ht, w)
+    qm = [(i, j) for (i, j) in h if i >= 1]
+    if not qm:
+        return None
+    alpha = min(F(s - j, i) for (i, j) in qm)
+    return (max(w) if w else -1), s, alpha, sorted(m for m in qm if F(s - m[1], m[0]) == alpha)
+
+
+def na_applies(H, l):
+    """Theorem NA (check_gauge.py): binomial first edge P^s + c Q^d with d >= 2 (s >= 3) or d >= 3 (s = 2),
+    slope s/d above the threshold."""
+    fe = first_edge(H, l)
+    if fe is None:
+        return False
+    e, s, alpha, edge = fe
+    if e < 2 or s < 2 or len(edge) != 1 or edge[0][1] != 0 or edge[0][0] < (2 if s >= 3 else 3):
+        return False
+    return alpha > (F(1, 2) if e == 2 else F(1, e))
+
+
+def higher_shear(H, l):
+    """Constant transverse top, completed power w of degree >= 3 and h affine in Q with deg_P h >= 3:
+    'const' if the Q-coefficient b is constant (D_inf = span{1, H}: Theorem AE + Lemma C), 'affine'
+    otherwise (span{1, H} proved inside tau*(K[P] + Q K[P])); else None."""
+    Ht = TR.coords(H, l)
+    s = max(j for _, j in Ht)
+    phi = {i: c for (i, j), c in Ht.items() if j == s}
+    if max(phi) != 0 or s < 3:
+        return None
+    w = _usc({i: c for (i, j), c in Ht.items() if j == s - 1}, 1 / (s * phi[0]))
+    if not w or max(w) < 3:
+        return None
+    h = untri(Ht, w)
+    if any(i > 1 for (i, j) in h):
+        return None
+    return 'const' if all(j == 0 for (i, j) in h if i == 1) else 'affine'
 
 
 def core_dim(res, N):

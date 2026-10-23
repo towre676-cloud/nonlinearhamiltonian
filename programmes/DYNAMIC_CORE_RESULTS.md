@@ -578,7 +578,7 @@ The element `G = (ℓ−γ)m + v` is the quadratic-like element anticipated in �
 
 | family | conjectured `D∞(H)` | direct check |
 |---|---|---|
-| K1, `deg F ≥ 3` | `K[P] + KQ` | `(q²+p)³+q`: 8 = 8 up to degree 12 |
+| K1, `deg F ≥ 3` | `K[P] + KQ` (proved, §6.10) | `(q²+p)³+q`: 8 = 8 up to degree 12 |
 | K1 ∩ K2 (`e = 2`, `h = cP² + λQ + μ`) | `K[P] + τ*K[Q,P]_{≤2}` | `(q²+p)²`: 9 = 9 up to degree 11 |
 | K1′, `deg F ≥ 4` | `span{1, P, P², H}` | `(q²+p)⁴ − q(q²+p)`, with or without `+ q`: 4 = 4 up to degree 11 |
 | K1′, `deg F = 3` | `span{1, Q, P, P², H}`, plus `PH` if `λ = 0` | `(q²+p)³ + q(q²+p)`: 6 = 6 up to degree 12 |
@@ -690,7 +690,7 @@ The case `r = 0` is `P²(P² + Q)`, the exception of §6.8.
    - Both eigenvectors at once are incompatible.
 6. *`deg b ≥ 3`.* This is Lemma W. ∎
 
-*Open part.* It remains to show that `D∞(H̃) ⊆ τ*V` in the affine sector, i.e. that no core element has `Q`-degree 2 or more. Direct computation at depth 10 up to degree 11 confirms this for:
+*Open part (largely closed in §6.10: Lemmas C and C2 prove the containment except for linear `b` with `f = 3`).* It remains to show that `D∞(H̃) ⊆ τ*V` in the affine sector, i.e. that no core element has `Q`-degree 2 or more. Direct computation at depth 10 up to degree 11 confirms this for:
 - K4 with `r = 0` and with `r = 1`;
 - K1′ with `f = 4`;
 - an affine non-K4 Hamiltonian.
@@ -709,6 +709,209 @@ A random search of 60 affine cubic-phase Hamiltonians of degree 8–10 agrees wi
 - `K4` for the new family;
 - `pure, cubic phase affine` for the rest of the affine sector, reported as `span{1, H}`, proved inside `τ*V` and conjectured in full;
 - `pure, cubic phase` for non-affine cubic-phase Hamiltonians, whose core is open.
+
+### 6.10 Gauge form for every shear: why quadratic shears are special
+
+§6.9 treated quadratic shears. The same mechanism works for every shear `w`, and it explains the phase diagram of triangular cores.
+
+**Theorem GG (gauge form, every `w`).** Let
+`S_t = exp( Σ_{n≥1} t^{2n} w^{(2n)}(Q) ∂_P^{2n+1}/(2n+1)! )`.
+This is a `P`-differential operator whose coefficients depend on `Q`. Then
+`Σ_k (tᵏ/k!) T_k(h̃, g̃)∘τ⁻¹ = S_t ∘ M^flat_t ∘ (S_t⁻¹ ⊗ S_t⁻¹)`.
+
+*Proof.* Conjugation by `exp(iU(q̂)/ħ)`, with `U′ = w`, multiplies the Weyl kernel `K(x, y)` by `exp(i(U(x) − U(y))/ħ)`. Expanding about the midpoint, the linear term is the shift `p ↦ p + w(q)`. The odd higher terms give `S_t`, with `t` in place of `ħ`. Conjugation is an algebra automorphism, so the pulled-back product is the gauge transform of the flat one. ∎ `check_gauge.py` [GG] verifies the identity exactly against Theorem X for `deg w ≤ 6` and `k ≤ 7`.
+
+Three consequences:
+- **Exactness is flat exactness up to gauge, for every shear.** `G ∈ D∞(H̃)` if and only if, for every `r`, `flat-odd(S_t⁻¹h, S_t⁻¹g_r) = t·S_t⁻¹{h, g_r}`, where `g_r = D^r g`.
+- **What singles out the quadratic shear.** `S_t` always exists. It has constant coefficients exactly when `deg w ≤ 2`, and then it maps `K[P]` to itself, which keeps the infinite towers of K1. For `deg w ≥ 3` its coefficients `w″(Q), w⁽⁴⁾(Q), …` depend on `Q`. The gauge then moves functions of `P` off `K[P]`, so the towers break.
+- **What survives every shear.** `S_t` fixes every function of `P`-degree at most 2. This is the mechanism behind K2.
+
+**Third-gate formula.** The `t³` coefficient of Theorem GG is
+`T₃(h̃, g̃)∘τ⁻¹ = T₃^flat(h, g) + w″·Δ(h, g) + w‴·Λ(h, g)`,
+where `Δ(h, g) = ∂³{h, g} − {∂³h, g} − {h, ∂³g}` and `Λ(h, g) = h_P g_PPP − h_PPP g_P`.
+- The `w″Δ` term is a coboundary. It is removable exactly when `w″` is constant, which is Theorem G.
+- The `w‴Λ` term is antisymmetric. It is the genuine remainder that higher shears add.
+
+`check_gauge.py` [T3] verifies the formula exactly.
+
+**Theorem AE (higher shears, affine sector).** Let `deg w ≥ 3` and `h = a(P) + Qb(P)` with `deg a ≥ 3` and `deg b < deg a`. Then the part of `D∞(H̃)` affine in `Q` is `span{1, H̃}`.
+
+*Proof.* Only `T₃` is used, at depth at most 2.
+1. For `g = α + Qβ` the flat term vanishes. So `T₃ = ω(Δ_f + QΔ_W) + ω′(L₀ + QL₁ + Q²L₂)`, where `ω = w″` has degree `m ≥ 1` and
+   - `L₀ = a′α‴ − a‴α′`;
+   - `L₁ = a′β‴ + b′α‴ − a‴β′ − b‴α′`;
+   - `L₂ = Δ_W/3`.
+2. Compare coefficients of powers of `Q`.
+   - The top power gives `Δ_W = 0`.
+   - The next powers give `Δ_f + mL₁ = 0` and `L₀ = 0`, centring `Q` at the root of `ω` when `ω` is a perfect power. Otherwise they also give `L₁ = Δ_f = 0`.
+3. `L₀ = 0` forces `α = λa + const`, by a Wronskian argument that needs `deg a′ ≥ 2`. Subtract `λh`.
+4. In the generic branch, `L₁ = 0` gives `β = μa + c`. Then `Δ_W = 0` and `Δ_f = 0` force `μ = 0`.
+5. In the perfect-power branch, `β′` solves `ma′β‴ − 3a″β″ − (3+m)a‴β′ = 0`. With `Δ_W = 0` and the closure under `D`, this forces `β` to be constant.
+6. Finally `{H, Q} = −a′ − Qb′` leaves `span{1, Q, H}`. ∎
+
+**Lemma C (Q-degree containment, constant `b`).** If `h = a(P) + λQ` with `deg a ≥ 3` and `deg w ≥ 2`, every element of `D∞(H̃)` has `Q`-degree at most 1 in `(Q, P)`.
+
+*Proof.* Suppose `g` has `Q`-degree `j ≥ 2`, with top coefficient `γ(P)`. Let `m = deg w″`.
+1. The flat part of `T₃` lowers the `Q`-degree by at least 2. So the coefficient of `Q^{j+m−1}` in `T₃` gives
+   `ma′γ‴ − 3ja″γ″ − (3j+m)a‴γ′ = 0`.
+2. *Case `m = 0`.* This reads `(a″γ′)′ = 0`, so `γ` is constant. The next coefficient makes the second coefficient `γ₁` constant as well. The `Q^{j−1}` coefficient of `{H, g}` is then `−ja′γ`, which must also be constant. So `γ = 0`.
+3. *Case `m ≥ 1`.* Nonzero polynomial solutions `γ′` all have one degree `d*(j)`. This is the positive root of `md² − (m + 3j(f−2))d − (3j+m)(f−2)(f−3)`, and it increases with `j`.
+   - The closure `{H, g}` produces a level-`(j−1)` top coefficient. Its degree is `d*(j) + f − 1`, or `f − 2` when `γ` is constant. Neither equals `d*(j−1)`, because `d*(j−1) ≠ f − 2`: substituting `d = f − 2` leaves the residual `−3(j−1)(f−2)(2f−5) ≠ 0`.
+   - When `λ ≠ 0`, `γ′` and `γ″` would both solve the same equation, so `γ` is constant and the same argument applies. ∎
+
+**Lemma C2 (containment for other `b`).** Let `Γ_j` be the space of `Q^j`-coefficients of core elements of `Q`-degree at most `j`. Two facts hold:
+- `Γ_j` is invariant under `L_j: γ ↦ bγ′ − jb′γ`, the part of `D` that preserves `Q`-degree.
+- By the top coefficient of `T₃`, `Γ_j` lies in the polynomial solutions of
+  `(3+m)b′γ‴ + 3(1−j)b″γ″ − (3j+m)b‴γ′ = 0`.
+
+For `j ≥ 2` these force `Γ_j = 0` in the following cases.
+- **`b` quadratic.** Write `b = μ(u² − δ)` with `u = P − p₀`. The solutions are `span{1, u, u^{N}}`, where `N = j + 1` in the cubic phase and `N = 3(j−1)/(3+m) + 2` in general. `L_j u^N` has leading coefficient `(N − 2j)μ ≠ 0`. In addition `L_j1 = −2jμu` and `L_ju = μ((1−2j)u² − δ)`. No nonzero subspace survives.
+- **`deg b = n ≥ 3`.** The polynomial solutions are at most one-dimensional, `γ′ ∝ b′^k` with `k = (3j+m)/(3+m)`, since the other indicial exponent at infinity is `2 − n < 0`. `L_j` raises the degree of `∫b′^k`, because `(n−1)k + 1 − jn ≠ 0` for `j ≥ 2`. And `L_j1 = −jb′`.
+- **`b` linear, cubic phase, `f = deg a ≥ 4`.**
+  - The tops are `u^k` with `k ≤ 2`, and they are eigenvectors of `L_j`.
+  - The ladder `(D − μ(k−j))g` excludes `k = 0` and `k = 2`.
+  - For `k = 1`, the `Q^{j−2}` equation requires `e^{sX}[(e^{−sX}a′)(e^{−sX}γ₁)] − a′γ₁` to be linear in `s`. Here `X = ∂_P³` and `γ₁ = (j/μ)a + (quadratic)`. But its `s²` coefficient has leading term `(j/μ)a_f²·9f²(f−3)(f−2)(f−1)²(2f−5)·P^{2f−7}`, which is nonzero for `f ≥ 4`.
+
+Consequences:
+- **Exact cores now proved.**
+  - K4 is exact: `D∞ = span{1, G, H}`.
+  - K1′ is exact for `deg a ≥ 4`: `D∞ = span{1, P, P², H}`.
+  - Every other cubic-phase Hamiltonian affine in `Q` has `D∞ = span{1, H}`.
+  - Higher shears affine in `Q` with `deg b ≠ 1` have `D∞ = span{1, H}`.
+- **Still open.** The case `b` linear remains for `f = 3` in the cubic phase (the 6-dimensional K1′ sector) and for higher shears.
+  - For the cubic case `f = 3`, a symbolic elimination with `j` as a formal parameter finds no element of `Q`-degree `j ≥ 2`. It used the gates `T₃`, `T₅` at depth 2 on the top four `Q`-levels, for every top `u^k`, generic `(r, a₁)` and the special values `(0,0), (0,1), (1,0), (1,−3), (1/2, 2)`. This is computation, not a proof.
+
+**Corollary K1c (now proved).** Let `deg F ≥ 3`.
+- For `deg w = 2`: `D∞(F(P) + λq) = K[P] + Kq` exactly. This is K1, now with equality, by Theorem A and Lemma C.
+- For `deg w ≥ 3`: `D∞(F(P) + λq) = span{1, H}`, by Theorem AE and Lemma C.
+
+The second statement is the shear-composition collapse that a parallel line of work derived by a leading-operator argument. The proof here is independent, through the gauge form.
+
+`check_two_root.py` uses three routes here:
+- `K1` is now marked proved.
+- The new route `RS` is a proved `span{1, H}`.
+- `RS` also covers higher shears affine in `Q` with `deg b ≥ 2` (Lemma C2).
+- `higher shear affine` covers linear `b`. It reports `span{1, H}`, proved for elements affine in `Q` and conjectured in full.
+- K4 and K1′ with `deg a ≥ 4` are now proved routes, and `pure, cubic phase affine` is proved too.
+
+**The sl₂ picture of the cubic-phase exceptions.** Let `R = Q + κ(P−r)²` be quadratic. Then `{σR, τR} = (στ′ − σ′τ)R`. So `sl₂·R = {σR : σ ∈ span{1, P, P²}}` is a copy of `sl₂` (Witt bracket), and the Witt obstruction `Δ_Witt` vanishes on it. The exceptional affine cores of Theorem A are exactly built from it.
+
+| family | Hamiltonian | core |
+|---|---|---|
+| K1′, special case | `H = μ(P−r)R + c`, `deg c ≤ 1`, `f = 3` | `sl₂·R ⊕ sl₂·1` (dimension 6) |
+| K4 | `H = μ(P−r)(P−r′)R + c`, `deg c ≤ 2` | `span{1, (P−r)R, H}` |
+
+K4's condition `a ≡ A(P−r)³(P−r′) mod deg ≤ 2` says exactly that `H ≡ bR` modulo functions of `P` of degree at most 2, with `b(r) = 0`.
+
+In the affine sector of the cubic phase, exceptional exact dynamics is therefore an `sl₂` acting on a quadratic. The quadratic is the part the gauge cannot see, and `sl₂` is the part on which the Witt obstruction vanishes.
+
+**Certificate.** `check_gauge.py` (`gauge-shear-v1`; `results/hamiltonian/gauge_shear_theorem.json`) checks:
+- **[GG]**, **[T3]**: the two identities above;
+- **[AE]**: Theorem AE on instances;
+- **[K1c]**: the K1 core dimensions for `deg w = 2`, and `span{1, H}` for `deg w = 3`, by direct computation;
+- **[C2]**: the `s²`-coefficient identity at `f = 4, …, 16`. That coefficient is a polynomial in `f` of degree at most 8, so this proves it. Also checked are full core dimensions for K4, quadratic `b`, `deg b = 3`, K1′ with `f = 4`, and a higher shear with quadratic `b`.
+
+### 6.11 The shear phase diagram
+
+Take a pure top with constant transverse top, written in its triangular normal form `H = h(q, p + w(q))`. Suppose `h = a(P) + Qb(P)` is affine in `Q`, with `deg a = f ≥ 3` and `deg b < f`. Sections 6.2 and 6.8–6.10 then determine `D∞(H)` completely as a function of the degree of the shear and of `b`. The table shows how each additional degree of shear removes one layer of exact dynamics.
+
+| shear | `b` constant | `b` linear | `b` quadratic | `deg b ≥ 3` |
+|---|---|---|---|---|
+| `deg w ≤ 1` (flat) | `W = ⊕_{j≤2} Q^jK[P]` | `V = K[P] + QK[P]` | `V` | `V` |
+| `deg w = 2` (cubic phase) | `K[P] + KQ` (K1) | `span{1, P, P², H}` (K1′, `f ≥ 4`); for `f = 3`, `sl₂`-type cores of dimension 5 or 6 | `span{1, (P−r)R, H}` if K4, else `span{1, H}` | `span{1, H}` |
+| `deg w ≥ 3` | `span{1, H}` | `span{1, H}` inside `τ*V` (conjectured in full) | `span{1, H}` | `span{1, H}` |
+
+Every entry is proved except two:
+- the `f = 3` cubic-phase entry, where containment in `τ*V` is supported by symbolic-`j` elimination;
+- the linear-`b` entry for higher shears.
+
+The sources are as follows.
+- Row 1 is Theorem P⁺ with the roles of the variables exchanged: `τ` is affine, and `h` is affine in `Q` with a pure `P`-top.
+- Row 2 is Theorem A together with Lemmas C and C2.
+- Row 3 is Theorem AE together with Lemmas C and C2.
+
+**Reading the diagram through the gauge.** The three rows are three behaviours of the gauge operator `S_t` of Theorem GG.
+- **Flat.** `S_t = 1`. The flat strip structures survive, including elements of `Q`-degree 2.
+- **Cubic phase.** `S_t = exp(ct²∂_P³/3)` has constant coefficients. It preserves `K[P]` but conjugates the flat bracket by a Witt-type defect. So towers in `P` survive (K1). The `Q`-direction keeps only the `sl₂` remnants on which the Gelfand–Fuchs density vanishes (K1′, K4, the `sl₂·R` picture).
+- **Higher shears.** `S_t` has `Q`-dependent coefficients `w″(Q), w⁽⁴⁾(Q), …`. The antisymmetric remainder `w‴Λ` of the third gate then removes everything except the constants and `H`.
+
+The quadratic-in-`P` structures of K2 sit outside this table, since `h` is not affine in `Q` there. They survive every shear because `S_t` fixes functions of `P`-degree at most 2.
+
+**Certificate depth.** All the upper bounds in rows 2 and 3 use only the third gate `C₃`.
+- Theorem AE applies it to an element and to its first bracket.
+- Lemmas C and C2 apply it to an element and to finitely many of its brackets, at most `deg_P γ + 2` of them.
+
+So in these rows a finite set of conditions `C₃D^r`, with `r` bounded in terms of the degrees of `h`, already cuts out the core. The lower bounds, i.e. the containments, are exact invariant-span certificates.
+
+### 6.12 Non-affine normal forms: binomial edges collapse
+
+The non-affine sector is the case where `h` has `Q`-degree at least 2 in its triangular normal form. It is controlled by the first Newton edge of `h` from the vertex `P^s`.
+
+**Theorem NA.** Let `deg w = e ≥ 2` and let `h` have `P`-degree `s ≥ 2`. Assume:
+- the first edge of the Newton polygon of `h` from `P^s` (coordinates: `Q`-exponent `i`, `P`-exponent `j`) contains exactly one other monomial, `cQ^d`, where `d ≥ 2` if `s ≥ 3` and `d ≥ 3` if `s = 2`;
+- its slope `α = s/d` satisfies `α > 1/2` when `e = 2`, or `α > 1/e` when `e ≥ 3`.
+
+Then `D∞(H) = span{1, H}`.
+
+*Proof.* Weight `Q` by `α` and `P` by 1.
+1. *Which part of the gate dominates.* In Theorem X, the flat factor `A` lowers the weight by `α + 1` per power of `t`. The corrections lower it by less exactly when `α > 1/2` (for `e = 2`), respectively when `αe > 1`. So the top of `T₃` is `w″Δ + w‴Λ` for the monomial shear `w = Q^e`, and the top of `H` is `E = P^s + cQ^d`.
+2. *The top gate is diagonal.* The `Q^d` term contributes nothing, and on monomials
+   `C₃^top(Q^iP^j) = e(e−1)s·j(j+s−3)·[(e−2)(j−s) − 3(s−1)i]·Q^{i+e−3}P^{j+s−4}`.
+   For `e = 2` this reads `−6s(s−1)·i·j(j+s−3)·Q^{i−1}P^{j+s−4}`.
+3. *Its kernel.* The kernel is spanned by monomials:
+   - for `e = 2`: `K[P] ⊕ K[Q]`;
+   - for `e ≥ 3`: `K[Q]`, `P^s`, and `Q^iP^{s+3(s−1)i/(e−2)}`.
+4. *Closure under `D`.* We have `{E, Q^iP^j} = djQ^{i+d−1}P^{j−1} − siQ^{i−1}P^{j+s−1}`. Every kernel monomial other than 1 and the pair `P^s, Q^d` has an image outside the kernel that no other monomial can cancel. So the top core is `span{1, E}`.
+5. *Conclusion.* The top-weight lemma gives `dim D∞(H) ≤ 2`. ∎
+
+*The case `s = 2`.* Here the kernel of `C₃^top` also contains the monomials `Q^iP`. Their images `dQ^{i+d−1} − 2iQ^{i−1}P²` leave the kernel for `i ≥ 2`, and no other monomial can cancel them. For `e ≥ 3` the monomials `Q^iP^{2+3i/(e−2)}` with `i ≥ 1` are eliminated the same way. The remaining chains are followed to the end:
+- `P → Q^{d−1}`;
+- `Q → P`;
+- `Q² → QP → dQ^d − 2P²`.
+
+None of them closes for `d ≥ 3`. ∎
+
+**The `m`-degree-2 tops with constant transverse top are now classified, except on one edge.** These are `H = c(p + w(q))² + r(q)`.
+
+| condition | `D∞(H)` | source |
+|---|---|---|
+| `deg w < deg r / 2` | `span{1, H}` | Q′ |
+| `deg r ≤ 2` | contains the six quadratics in `(q, P)` | K2; equality conjectural |
+| `3 ≤ deg r < 2 deg w` | `span{1, H}` | NA |
+| `deg r = 2 deg w` | open | — |
+
+The open case `deg r = 2 deg w` is the edge `P² + cQ^{2e}`, where flat and correction terms tie. All computed cases there give `span{1, H}`.
+
+Examples:
+- `(q² + p)³ + q²` and `(q² + p)⁴ + q³ + (q² + p)` collapse to `span{1, H}`. Both were previously reported as open cubic-phase cases.
+- `(q³ + p)³ + q²` collapses as well.
+- The quartic `(q² + p)² + q³` collapses, as does `(q³ + p)² + q⁴`.
+
+**General edges.** The same top problem with a non-binomial first edge was solved weight by weight up to weight 14 (cubic phase) and 12 (`e = 3, 4`). In every case it gave `span{1, E}`. The cases tried were `P³ + Q²P`, `P⁴ + QP² + Q²`, `P⁴ + Q²P` and `P³ + Q³`.
+
+*Conjecture.* Every first edge with slope above the threshold that contains a monomial of `Q`-degree at least 2 has top core `span{1, E}`.
+
+What remains below the threshold, or for edges whose only `Q`-terms are linear in `Q`, needs the next edge. The latter is exactly where K1′ and K4 live.
+
+**Certificate depth across the families.** Direct computation in degrees up to `d + 1` shows that the third gate alone (`K = 3`) cuts out every core listed. The number of brackets needed is:
+- `R = 1` for K1, K1′, K4 and RS;
+- `R = 2` for K2, K1+K2, K3 and non-family affine cubic-phase Hamiltonians.
+
+For the quadratic-shear oscillator `(q² + p)² + κq²/2` with `κ ≠ 0`, `R = 3` is needed up to degree 8, while `κ = 0` keeps the infinite tower. For the cubic shear `(q³ + p)² + q²/2`, `R = 2` suffices. This agrees with the depth jump found in the parallel line of work.
+
+`check_gauge.py` [NA] verifies the monomial formula on a grid of `(e, s, d, i, j)`, and checks three instances by direct computation. `check_two_root.py` reports these Hamiltonians on the proved route `NA`.
+
+### 6.13 Context (literature check, preliminary)
+
+A first literature check located the following. No priority is claimed for any statement in §§6.8–6.12, and a careful reading of the primary sources is still pending.
+
+- **All observables versus one sector.** D. Robert, *When Poisson and Moyal brackets are equal?* (arXiv:2207.08798), shows the following. If the Moyal and Poisson brackets of `H` agree with every Schwartz observable, then `H` is a polynomial of degree at most 2. `D∞(H)` asks a different question with different quantifiers: what is the largest observable sector with exact agreement along the whole Hamiltonian flow, for a fixed nonlinear `H`. Robert's theorem is the statement that this sector is everything only when `H` is quadratic.
+- **Nonlinear canonical transformations in Weyl quantization.** Weyl quantization has a restricted covariance under some nonlinear canonical transformations; see arXiv:quant-ph/0011076 and arXiv:quant-ph/0605236. Transforming the star product to new coordinates makes observables transform classically (Błaszak–Domański, arXiv:1208.2835). A coordinate change in the Moyal product was worked out to third order in arXiv:hep-th/0007072.
+
+  Theorem GG is an explicit closed form of this phenomenon for triangular maps `(q, p) ↦ (q, p + w(q))`. The gauge operator is `S_t = exp(Σ t^{2n}w^{(2n)}(Q)∂_P^{2n+1}/(2n+1)!)`. What the present work uses it for is new relative to the sources checked: reading off exact sectors, the constant-coefficient criterion `deg w ≤ 2`, and the third-gate formula.
+- **The Gelfand–Fuchs cocycle.** The cocycle on vector fields of the line is classical; for background see e.g. arXiv:math/0502372. Its density appears in §6.9 as the Witt part of the cubic-phase obstruction. The search found no source that connects it to exactness of Moyal evolution.
+
+These references come from a first search. Before any external positioning they need to be read in full, especially quant-ph/0605236 and hep-th/0007072.
 
 ### 6.4 The decision procedure and what remains open
 

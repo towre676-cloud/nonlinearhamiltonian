@@ -139,6 +139,12 @@ def tri_samples(rng):
     out.append(CT.tri({(0, 4): F(1), (1, 2): F(1)}, w2))                           # K4, double root
     out.append(CT.tri({(0, 4): F(1), (0, 1): F(-1), (1, 2): F(1), (1, 1): F(2), (1, 0): F(-3)}, w2))  # K4, r' = -3r
     out.append(CT.tri({(0, 4): F(1), (1, 2): F(1), (1, 0): F(-1)}, w2))            # affine cubic phase, not K4
+    out.append(CT.tri({(0, 3): F(1), (1, 0): F(1)}, {3: F(1)}))                   # RS: higher shear, b constant
+    out.append(CT.tri({(0, 3): F(1), (1, 1): F(1)}, {3: F(1), 1: F(1)}))           # higher shear affine
+    out.append(CT.tri({(0, 3): F(1), (2, 0): F(1)}, w2))                           # NA, cubic phase
+    out.append(CT.tri({(0, 3): F(1), (2, 0): F(1), (1, 1): F(1)}, {3: F(1)}))      # NA, higher shear
+    out.append(CT.tri({(0, 3): F(1), (2, 1): F(1)}, w2))                           # cubic phase, non-binomial edge: open
+    out.append(CT.tri({(0, 2): F(1), (3, 0): F(1)}, w2))                           # NA, m-degree 2: (p+q^2)^2 + q^3
     # near misses: conjectured span{1, H}, or open (cubic phase)
     out.append(CT.tri({(0, 3): F(1)}, {3: F(1)}))                                  # cubic in P, e = 3
     out.append(CT.tri({(0, 3): F(1), (2, 0): F(1)}, w2))                           # Q^2 breaks K1
@@ -154,6 +160,8 @@ class Triangular(unittest.TestCase):
         import check_cubic_phase as CP
         self.assertEqual(CT.check()['status'], 'passed')
         self.assertEqual(CP.check()['status'], 'passed')
+        import check_gauge as CG
+        self.assertEqual(CG.check()['status'], 'passed')
         with self.assertRaises(ValueError):
             CP.check({'format': CP.FORMAT, 'identities': ['G1']})
         with self.assertRaises(ValueError):
@@ -174,8 +182,8 @@ class Triangular(unittest.TestCase):
             if want is not None:
                 self.assertEqual(filtered_dim(H, N, 8), want, (H, res))
             seen.add(res['route'])
-        for r in ('K1', "K1'", 'K2', 'K1+K2', 'K3', 'K4', 'pure, conjectural', 'pure, cubic phase',
-                  'pure, cubic phase affine'):
+        for r in ('K1', "K1'", 'K2', 'K1+K2', 'K3', 'K4', 'RS', 'NA', 'pure, conjectural',
+                  'pure, cubic phase', 'pure, cubic phase affine'):
             self.assertIn(r, seen)
 
     def test_certificates_and_forgeries(self):

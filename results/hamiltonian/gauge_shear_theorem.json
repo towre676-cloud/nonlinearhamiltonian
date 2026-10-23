@@ -1,0 +1,31 @@
+{
+ "schema": "machinery-envelope-v1",
+ "witness_kind": "gauge-shear",
+ "coefficient_domain": "Q",
+ "model": {
+  "family": "pure tops in triangular coordinates (q, p + w(q)), every w"
+ },
+ "model_sha256": "c8c987adc9b265673e6ae38115aef0088c41cae91b32974fe362ae0ee448574e",
+ "payload": {
+  "format": "gauge-shear-v1",
+  "identities": [
+   "AE",
+   "C2",
+   "GG",
+   "K1c",
+   "NA",
+   "T3"
+  ]
+ },
+ "payload_sha256": "32ea1fcac49dce794623ede5156d536c20b168d2d9d634fe98c1f069012f32fb",
+ "hypotheses": [
+  "characteristic zero",
+  "gauge form S_t o flat o (S_t^-1 x S_t^-1) of the triangular gates"
+ ],
+ "scope": "third-gate formula, higher-shear affine rigidity, Q-degree containment, K1 exact",
+ "source_ids": [
+  "D16-F03",
+  "D06-F02"
+ ],
+ "producer": "towre676-cloud/nonlinearhamiltonian extensions (exact rational, Python standard library)"
+}

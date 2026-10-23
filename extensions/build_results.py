@@ -322,6 +322,13 @@ def two_root():
         ['characteristic zero', 'gauge form exp(c t^2 d_P^3 / 3) of the triangular gates'],
         'affine criterion, Lemma W, family K4, D_inf restricted to tau*(K[P] + Q K[P])', ['D16-F03', 'D06-F02'],
         PRODUCER, verify=False), s0)
+    import check_gauge as CGS
+    cert, s0 = timed(lambda: {'format': CGS.FORMAT, 'identities': sorted(CGS.check()['identities'])})
+    write('hamiltonian', 'gauge_shear_theorem', envelope.make(
+        'gauge-shear', {'family': 'pure tops in triangular coordinates (q, p + w(q)), every w'}, cert,
+        ['characteristic zero', 'gauge form S_t o flat o (S_t^-1 x S_t^-1) of the triangular gates'],
+        'third-gate formula, higher-shear affine rigidity, Q-degree containment, K1 exact', ['D16-F03', 'D06-F02'],
+        PRODUCER, verify=False), s0)
     for name, h in TRIANGULAR_EXAMPLES:
         c, s = timed(CTR.certify, {k: WG.F(v) for k, v in h.items()})
         c.pop('result')

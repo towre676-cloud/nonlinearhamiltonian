@@ -20,7 +20,12 @@ roots over Qbar, the checker recomputes the top type and applies the proved crit
                                             is affine in Q, span{1, H} is proved inside
                                             tau*(K[P] + Q K[P]) (check_cubic_phase.py); other
                                             cubic-phase cores are open; otherwise span{1, H}
-                                            is conjectural (P004).
+                                            is conjectural (P004). Higher shears (deg w >= 3) with h
+                                            affine in Q: span{1, H} proved when the Q-coefficient is
+                                            constant (route RS, check_gauge.py) and proved inside
+                                            tau*(K[P] + Q K[P]) otherwise. Non-affine h whose first
+                                            Newton edge is a binomial P^s + c Q^d with a steep enough
+                                            slope: span{1, H} (route NA, check_gauge.py).
   near     H_d = c l^(d-1) m                V if d_v^2 H = 0; span{1, H} otherwise (Theorem NE,
                                             check_near_edges.py).                   (complete)
   balanced H_d = c Q^mu, Q a quadratic form  K[G] with G = Q(x - x0) if the translation killing
@@ -275,19 +280,30 @@ def classify(H):
         import check_triangular as CT                         # section 6.8: triangular families
         tri = CT.detect(H, l)
         if tri is not None:
-            out.update(route=tri['family'], proved=False, core=tri['core'], contains_proved=True,
+            ad = CT.affine_data(H, l)
+            exact = tri.get('proved', False) or tri['family'] == 'K4' or (
+                tri['family'] == "K1'" and ad is not None and ad[1] >= 4)          # check_gauge.py, Lemma C2
+            out.update(route=tri['family'], proved=exact, core=tri['core'], contains_proved=True,
                        generators=[ser(g) for g in tri['gens']], degrees=tri['degrees'],
                        active_part='nonzero (contains an active element)')
             for key in ('tower_step', 'tower_from', 'G', 'w'):
                 if key in tri:
                     out[key] = tri[key]
+        elif CT.na_applies(H, l):                             # check_gauge.py: Theorem NA
+            out.update(route='NA', proved=True, core='span{1, H}', active_part='0')
+        elif CT.higher_shear(H, l) == 'const':                # check_gauge.py: Theorem AE + Lemma C
+            out.update(route='RS', proved=True, core='span{1, H}', active_part='0')
+        elif CT.higher_shear(H, l) == 'affine' and CT.affine_data(H, l)[2] >= 2:   # AE + Lemma C2
+            out.update(route='RS', proved=True, core='span{1, H}', active_part='0')
+        elif CT.higher_shear(H, l) == 'affine':
+            out.update(route='higher shear affine', proved=False,
+                       core='span{1, H} (proved within tau*(K[P] + Q K[P]); conjectured)',
+                       active_part='0 (conjectured)')
         elif CT.cubic_phase(H, l) == 'general':
             out.update(route='pure, cubic phase', proved=False, core='open (at least span{1, H})',
                        active_part='open')
-        elif CT.cubic_phase(H, l) == 'affine':                # Theorem A, check_cubic_phase.py
-            out.update(route='pure, cubic phase affine', proved=False,
-                       core='span{1, H} (proved within tau*(K[P] + Q K[P]); conjectured)',
-                       active_part='0 (conjectured)')
+        elif CT.cubic_phase(H, l) == 'affine':                # Theorem A + Lemma C2 (deg b >= 2 here)
+            out.update(route='pure, cubic phase affine', proved=True, core='span{1, H}', active_part='0')
         else:
             out.update(route='pure, conjectural', proved=False, core='span{1, H} (conjectured)',
                        active_part='0 (conjectured)')

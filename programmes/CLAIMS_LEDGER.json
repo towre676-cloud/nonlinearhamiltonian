@@ -54,7 +54,7 @@
    "status": "implemented",
    "claim": "Typed machinery-envelope-v1 objects bind certificates to model/payload hashes, domain Q, hypotheses, scope and atlas source ids, and dispatch to independent checkers; swapped witness kinds and unknown domains are rejected.",
    "support": "extensions/envelope.py; extensions/test_envelope.py",
-   "scope": "Registry of twenty-three witness kinds; domains Q and Z."
+   "scope": "Registry of twenty-four witness kinds; domains Q and Z."
   },
   {
    "id": "W1",
@@ -271,7 +271,7 @@
    "status": "proved_with_certificate",
    "claim": "Triangular structures for pure tops: with P = p + w(q), Theorem X (triangular transvectant formula) and the containments K1 (deg w = 2, H = F(P) + lam q: K[P] + Kq), K1' (deg w = 2, H = F(P) + lam q + mu qP, mu != 0: span{1, P, P^2, H}, plus q if deg F = 3, plus PH if also lam = 0), K2 (H = h(q, P), h quadratic: the pullback of all quadratics) and K3 (H = c Q^(k-2) G^2 + r, G = Qm + v, r restricted: span{1, G, H}, plus Q if k = 1) in D_inf(H).",
    "support": "programmes/DYNAMIC_CORE_RESULTS.md#6.8; extensions/hamiltonian/check_triangular.py; results/hamiltonian/triangular_theorem.json",
-   "scope": "Containments only, all degrees. Equality with these spans is conjecture P004, verified by direct computation up to degree d + 2 (deeper for six cases). In K1 with lam != 0 the active part is infinite-dimensional."
+   "scope": "Containments, all degrees; K1 equality proved in W6-i. Equality with these spans is conjecture P004, verified by direct computation up to degree d + 2 (deeper for six cases). In K1 with lam != 0 the active part is infinite-dimensional."
   },
   {
    "id": "W6-h",
@@ -279,6 +279,13 @@
    "claim": "Cubic phase (constant transverse top, completed power w of degree 2): (G) the gates are the flat gates conjugated by exp(s d_P^3), s = c t^2/3; (A0) for Hamiltonian and observable affine in Q, exactness is Delta(S_s h, S_s g) = 0, whose Witt part is the Gelfand-Fuchs cocycle density 3(b' beta''' - b''' beta'); (W) deg b >= 3 leaves only span{1,H} affine in Q; (K4) h = A(P-r)^3(P-r') + O((P-r)^2) + mu Q (P-r)(P-r') has span{1, G, H} in its core, G = A(P-r)^3 + c2(P-r) + mu Q(P-r); (A) the complete table of D_inf restricted to tau*(K[P] + Q K[P]).",
    "support": "programmes/DYNAMIC_CORE_RESULTS.md#6.9; extensions/hamiltonian/check_cubic_phase.py; results/hamiltonian/cubic_phase_theorem.json",
    "scope": "All degrees for G, A0, W, K4 and the restricted table A. That D_inf lies inside tau*(K[P] + Q K[P]) in the affine sector is verified to degree 11, not proved; non-affine cubic-phase Hamiltonians are open."
+  },
+  {
+   "id": "W6-i",
+   "status": "proved_with_certificate",
+   "claim": "Every shear: (GG) the triangular gates equal S_t o flat o (S_t^-1 x S_t^-1) with S_t = exp(sum t^(2n) w^(2n)(Q) d_P^(2n+1)/(2n+1)!); constant coefficients iff deg w <= 2. (T3) T_3 = T3_flat + w'' Delta + w''' Lambda. (AE) deg w >= 3, h = a + Q b, deg a >= 3: the core restricted to tau*(K[P] + Q K[P]) is span{1,H}. (C) b constant: every core element has Q-degree <= 1. Hence K1 is exact (D_inf = K[P] + Kq for deg w = 2) and F(P) + lam q has D_inf = span{1,H} for deg w >= 3, deg F >= 3. (C2) The same containment holds for b quadratic or of degree >= 3 (every shear) and for b linear with deg a >= 4 (cubic phase); so K4 and K1' (deg a >= 4) are exact, the other cubic-phase affine Hamiltonians and the higher-shear affine Hamiltonians with deg b != 1 have D_inf = span{1,H}. (NA) Non-affine normal forms whose first Newton edge from P^s is a binomial P^s + c Q^d (s >= 3, d >= 2; or s = 2, d >= 3), with slope s/d > 1/2 (deg w = 2) or > 1/deg w (deg w >= 3), have D_inf = span{1,H}.",
+   "support": "programmes/DYNAMIC_CORE_RESULTS.md#6.10; extensions/hamiltonian/check_gauge.py; results/hamiltonian/gauge_shear_theorem.json",
+   "scope": "All degrees. Open: b linear with deg a = 3 in the cubic phase (the six-dimensional K1' sector; a symbolic-j elimination supports containment) and b linear for higher shears. The deg w >= 3, constant-b collapse was also derived independently in a parallel line of work."
   },
   {
    "id": "P003",
@@ -292,7 +299,7 @@
    "status": "conjecture",
    "claim": "Pure tops (corrected): if H_d = c l^d, H lies outside Theorem P+, outside the triangular families K1, K1', K2, K3 of W6-g and K4 of W6-h after an affine change of coordinates, and outside the non-affine cubic-phase case (constant transverse top, completed power w of degree 2, h not affine in Q), then D_inf(H) = span{1,H}; inside the families D_inf(H) is the span listed in DYNAMIC_CORE_RESULTS.md section 6.8.",
    "support": "programmes/DYNAMIC_CORE_RESULTS.md#6.8; extensions/hamiltonian/test_two_root.py",
-   "scope": "Proved where Q' or T applies (W6-c, W6-e); open for transverse tops that are constant, linear or a perfect power outside the families, and for the upper bounds inside them. The non-affine cubic-phase case is excluded and open; the affine cubic-phase sector is classified inside tau*(K[P] + Q K[P]) (W6-h), and the former exception P^2(P^2 + Q) is K4. Supported by about 330 random pure tops of degree 4-8 and a 110-case structured grid."
+   "scope": "Proved where Q' or T applies (W6-c, W6-e); open for transverse tops that are constant, linear or a perfect power outside the families, and for the upper bounds inside them. The non-affine cubic-phase case is excluded and open; the affine cubic-phase sector is classified inside tau*(K[P] + Q K[P]) (W6-h), and the former exception P^2(P^2 + Q) is K4. Supported by about 330 random pure tops of degree 4-8 and a 110-case structured grid. Since W6-i the affine part of the cubic phase and of higher shears is proved except for linear Q-coefficient b."
   },
   {
    "id": "P002",
