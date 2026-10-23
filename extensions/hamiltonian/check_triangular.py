@@ -379,10 +379,11 @@ def detect(H, l):
             if e == 2 and tower:
                 out = {'family': 'K1+K2', 'core': 'K[P] + tau*K[Q,P]_{<=2}',
                        'gens': quad + [tri({(0, n): F(1)}, w) for n in range(3, NMAX + 1)],
-                       'degrees': [0, 1, 2, 2, 3, 4], 'tower_step': 2, 'tower_from': 3}
+                       'degrees': [0, 1, 2, 2, 3, 4], 'tower_step': 2, 'tower_from': 3,
+                       'proved': True}                  # equality: check_gauge.py, Theorem K2U
             else:
                 out = {'family': 'K2', 'core': 'tau*K[Q,P]_{<=2}', 'gens': quad,
-                       'degrees': sorted([0, 1, 2, e, e + 1, 2 * e])}
+                       'degrees': sorted([0, 1, 2, e, e + 1, 2 * e]), 'proved': True}   # Theorem K2U
         elif e == 2 and tower:
             out = {'family': 'K1', 'core': 'K[P] + K Q', 'gens': [{(0, 0): F(1)}, {(1, 0): F(1)}] +
                    [tri({(0, n): F(1)}, w) for n in range(1, NMAX + 1)],
@@ -404,7 +405,7 @@ def detect(H, l):
                     gens.append(TR.mul(tri({(0, 1): F(1)}, w), Ht))
                     core = 'span{1, Q, P, P^2, H, P H}'
             d = TR.degree(Ht)
-            out = {'family': "K1'", 'core': core, 'gens': gens,
+            out = {'family': "K1'", 'core': core, 'gens': gens, 'proved': True,    # Lemma C2; K1P for s = 3
                    'degrees': sorted([0, 2, 4, d] + ([1] if s == 3 else []) + ([d + 2] if len(gens) == 6 else []))}
         if out:
             out['w'] = {str(i): str(c) for i, c in sorted(w.items())}

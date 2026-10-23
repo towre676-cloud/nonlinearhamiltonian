@@ -277,6 +277,9 @@ def classify(H):
         out.update(route="Q'", proved=True, core='span{1, H}', active_part='0')
     elif transverse_finite(H, l)[0] and transverse_pure_ok(H, l):
         out.update(route='T', proved=True, core='span{1, H}', active_part='0')
+    elif transverse_finite(H, l)[0] and max(j for _, j in coords(H, l)) >= 3:
+        # perfect-power transverse top l^k, 2 <= k != s, s >= 3: check_gauge.py, Theorem TP
+        out.update(route='TP', proved=True, core='span{1, H}', active_part='0')
     else:
         import check_triangular as CT                         # section 6.8: triangular families
         tri = CT.detect(H, l)
@@ -294,12 +297,8 @@ def classify(H):
             out.update(route=CT.edge_route(H, l), proved=True, core='span{1, H}', active_part='0')
         elif CT.higher_shear(H, l) == 'const':                # check_gauge.py: Theorem AE + Lemma C
             out.update(route='RS', proved=True, core='span{1, H}', active_part='0')
-        elif CT.higher_shear(H, l) == 'affine' and CT.affine_data(H, l)[2] >= 2:   # AE + Lemma C2
+        elif CT.higher_shear(H, l) == 'affine':      # AE + Lemma C2 (deg b >= 2); Theorem LB (deg b = 1)
             out.update(route='RS', proved=True, core='span{1, H}', active_part='0')
-        elif CT.higher_shear(H, l) == 'affine':
-            out.update(route='higher shear affine', proved=False,
-                       core='span{1, H} (proved within tau*(K[P] + Q K[P]); conjectured)',
-                       active_part='0 (conjectured)')
         elif CT.cubic_phase(H, l) == 'general':
             out.update(route='pure, cubic phase', proved=False, core='open (at least span{1, H})',
                        active_part='open')

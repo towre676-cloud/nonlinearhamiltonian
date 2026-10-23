@@ -851,9 +851,137 @@ def grid_NV32():
     return True
 
 
+def topgate(E, g, e, m):
+    """closed-form top gate of order m (Theorem NE (1)) for the monomial shear of degree e."""
+    a, b = dP(E, m), dP(g, m)
+    if e == 2:
+        return pb(a, b)
+    return TR.add(TR.mul({(1, 0): F(3)}, pb(a, b)),
+                  TR.sc(TR.add(TR.mul(a, dP(b)), TR.sc(TR.mul(dP(a), b), -1)), F(m * (e - 2))))
+
+
+def top_core(E, wq, e, nmax):
+    """[(weight, dim)] of the top core of E (Q of weight wq, P of weight 1): the largest {E, .}-invariant
+    space of weight-homogeneous g on which every top gate of order m has P-degree < m."""
+    dE = max(j for _, j in E)
+    out = []
+    for n in range(nmax + 1):
+        mons = [(j, n - wq * j) for j in range(n // wq + 1)]
+        cols = []
+        for mm in mons:
+            img = {}
+            for m in range(1, dE + 2):
+                for (i, j), v in topgate(E, {mm: F(1)}, e, m).items():
+                    if j >= m:
+                        img[(m, i, j)] = v
+            cols.append(img)
+        keys = sorted({k for c in cols for k in c})
+        M = [[c.get(k, F(0)) for c in cols] for k in keys]
+        V = L.null_basis(M, len(mons)) if M else [[F(int(a == b)) for a in range(len(mons))] for b in range(len(mons))]
+        while V:                                  # largest D0-invariant subspace
+            imgs = [pb(E, TR.tidy({mons[a]: v[a] for a in range(len(mons))})) for v in V]
+            nv = len(V)
+            rk = sorted({k for g in imgs for k in g} | set(mons))
+            A = [[im.get(k, F(0)) for im in imgs] + [-(V[b][mons.index(k)] if k in mons else F(0)) for b in range(nv)]
+                 for k in rk]
+            sol = L.null_basis(A, 2 * nv)
+            W2 = [[sum(z[b] * V[b][a] for b in range(nv)) for a in range(len(mons))] for z in sol]
+            r = L.rank(W2, len(mons)) if W2 else 0
+            if r == nv:
+                break
+            V = [list(v) for v in L.rref(W2, len(mons))[0][:r]] if r else []
+        if V:
+            out.append((n, len(V)))
+    return out
+
+
+def _pow(f, n):
+    out = {(0, 0): F(1)}
+    for _ in range(n):
+        out = TR.mul(out, f)
+    return out
+
+
+def grid_K2U(seed=41):
+    """K2 and K1+K2 upper bounds: for h = alpha P^2 + r(Q), deg r <= 2,
+    T_3 = -6 alpha w'' g_PPQ + 2 alpha w''' P g_PPP."""
+    rng = random.Random(seed)
+    for _ in range(12):
+        al = F(rng.choice([1, -2, 3]))
+        h = TR.tidy({(0, 2): al, (2, 0): F(rng.randint(-2, 2)), (1, 0): F(rng.randint(-2, 2)), (0, 0): F(1)})
+        w = {e: F(rng.randint(-2, 2)) for e in range(rng.randint(2, 6) + 1)}
+        g = CT.rand_poly(rng, rng.randint(2, 6))
+        om, om1 = CT.U(CT.uderiv(w, 2)), CT.U(CT.uderiv(w, 3))
+        want = TR.add(TR.mul(TR.sc(om, -6 * al), W.pder(g, 1, 2)),
+                      TR.mul(TR.sc(om1, 2 * al), TR.mul({(0, 1): F(1)}, W.pder(g, 0, 3))))
+        if third(h, g, w) != want:
+            return False
+    for H, N, want in [(CT.tri({(0, 2): F(1), (2, 0): F(1)}, {3: F(1)}), 9, 6),
+                       (CT.tri({(0, 2): F(1), (2, 0): F(-1), (1, 0): F(2)}, {2: F(1)}), 8, 6)]:
+        if full_dim(TR.tidy(H), N) != want:
+            return False
+    return True
+
+
+def grid_LB():
+    """linear b, higher shears: E = P^f + Q P with e >= 3."""
+    for f in range(3, 8):
+        E = {(0, f): F(1), (1, 1): F(1)}
+        R = {(1, 0): F(1), (0, f - 1): F(1)}
+        for e in range(3, 7):
+            for i in range(4):
+                for r in range(9):
+                    want = TR.tidy({(i + 1, r - 2): F((e + 1) * r * (r - 1)) if r >= 2 else F(0),
+                                    (i, r + f - 3): F(f * r * ((e - 2) * (r - f) - 3 * (f - 1) * i))})
+                    if topgate(E, {(i, r): F(1)}, e, 1) != want:
+                        return False
+        for r in range(6):
+            for j in range(5):
+                g = TR.mul({(0, r): F(1)}, _pow(R, j))
+                if pb(E, g) != TR.sc(g, F(r - j)):
+                    return False
+    for f, e in [(3, 3), (4, 3), (3, 4), (5, 5)]:
+        if top_core({(0, f): F(1), (1, 1): F(1)}, f - 1, e, 2 * f + 3) != [(0, 1), (f, 1)]:
+            return False
+    for h, w, N in [({(0, 3): F(1), (1, 1): F(1)}, {3: F(1), 1: F(1)}, 9),
+                    ({(0, 3): F(2), (1, 1): F(-1), (1, 0): F(1), (0, 1): F(1)}, {3: F(1)}, 9)]:
+        if full_dim(TR.tidy(CT.tri(h, w)), N) != 2:
+            return False
+    return True
+
+
+def grid_K1P(seed=43):
+    """K1 prime with f = 3: the top core of a P^3 + mu Q P (cubic phase) is span{1, P, Q, P^2, E, P E}, and
+    P H leaves the core exactly when lam != 0."""
+    for a, mu in [(1, 1), (2, -3)]:
+        if top_core({(0, 3): F(a), (1, 1): F(mu)}, 2, 2, 16) != [(0, 1), (1, 1), (2, 2), (3, 1), (4, 1)]:
+            return False
+    rng = random.Random(seed)
+    for _ in range(6):
+        a, b, lam, mu = (F(rng.choice([1, -1, 2, 3])) for _ in range(4))
+        h = {(0, 3): a, (0, 1): b, (1, 0): lam, (1, 1): mu}
+        w = {2: F(1), 1: F(rng.randint(-2, 2))}
+        Ph = TR.mul({(0, 1): F(1)}, h)
+        if third(h, Ph, w) != {(0, 0): -36 * a * lam} or third(h, {(0, 3): F(1)}, w) != {(0, 0): 36 * mu}:
+            return False
+        g = TR.add(Ph, {(0, 3): a * lam / mu})
+        if third(h, g, w) or third(h, pb(h, g), w) != {(0, 0): 72 * a * lam * mu}:
+            return False
+    return True
+
+
+def grid_TP():
+    """perfect-power transverse tops phi = l^k, 2 <= k != s, s >= 3 (coordinates (l, m) = (q, p))."""
+    for H, N in [({(2, 3): F(1), (6, 0): F(1)}, 8), ({(3, 4): F(1), (8, 0): F(1), (1, 2): F(2), (0, 1): F(1)}, 9),
+                 ({(4, 3): F(1), (8, 0): F(-1), (3, 2): F(1), (2, 0): F(1)}, 9)]:
+        if full_dim(TR.tidy(H), N) != 2:
+            return False
+    return True
+
+
 def identities():
     return {'GG': grid_GG(), 'T3': grid_T3(), 'AE': grid_AE(), 'K1c': grid_K1c(), 'C2': grid_C2(),
-            'NA': grid_NA(), 'TG': grid_TG(), 'GE': grid_GE(), 'BE': grid_BE(), 'NT': grid_NT(), 'NV': grid_NV(), 'NV32': grid_NV32()}
+            'NA': grid_NA(), 'TG': grid_TG(), 'GE': grid_GE(), 'BE': grid_BE(), 'NT': grid_NT(), 'NV': grid_NV(), 'NV32': grid_NV32(), 'K2U': grid_K2U(), 'LB': grid_LB(), 'K1P': grid_K1P(), 'TP': grid_TP()}
 
 
 def check(cert=None):

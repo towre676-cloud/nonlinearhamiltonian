@@ -1009,6 +1009,70 @@ For the quadratic-shear oscillator `(q² + p)² + κq²/2` with `κ ≠ 0`, `R =
 
 `check_two_root.py` reports these Hamiltonians on the proved routes `NA`, `NE`, `NB`, `NT` and `NV`.
 
+### 6.14 Upper bounds: K2, K1+K2, K1′ with `f = 3`, linear `b`, perfect-power transverse tops
+
+All four results below use the same device. Some grading makes `D` weight-preserving to leading order, with top part `D₀`. The top components of core elements of weight `n` form a `D₀`-invariant space `V_n`. The leading part of `T₃` (or of the top gates) cuts this space down. When `D₀` is diagonalizable with simple spectrum, `V_n` is spanned by the eigenvectors it contains, and those can be tested one at a time.
+
+**Theorem K2U (K2 and K1+K2 are exact).** Let `h = αP² + γQ² + λQ + c` with `α ≠ 0`, in the normal form (no `P`-linear terms), and `deg w = e ≥ 2`.
+- If `e ≥ 3`, or `e = 2` and `γ ≠ 0`, then `D∞(H) = τ*K[Q, P]_{≤2}` (dimension 6).
+- If `e = 2` and `γ = 0` (K1+K2), then `D∞(H) = K[P] + τ*K[Q, P]_{≤2}`.
+
+*Proof.*
+1. *The third gate.* Since `h` is quadratic, `T₃^flat(h, ·) = 0`. The third-gate formula gives `T₃ = −6αw''·g_{PPQ} + 2αw'''·P·g_{PPP}`.
+2. *Top components.* Grade by total degree in `(Q, P)`. The top part of `D` is `D₀ = 2αP∂_Q − 2γQ∂_P`, which preserves degree. For `u = ∂_P²g_n`, the leading part of `T₃` says `3Q∂_Qu = (e−2)P∂_Pu`, so `u` is supported on monomials `QᵃPᵇ` with `3a = (e−2)b`. For `e = 2` the condition is `∂_Qu = 0`.
+3. *`e ≥ 3`.*
+   - If `γ ≠ 0`, `D₀` is diagonal on `z^a z̄^b` with `z = P + i√γ Q`, with simple spectrum.
+   - If `γ = 0`, `D₀` is nilpotent, and its kernel in degree `n` is `KPⁿ`.
+   - Either way `V_n ≠ 0` would contain a vector whose `∂_P²` has `P^{n−2}`-coefficient `n(n−1) ≠ 0`. That monomial violates `3a = (e−2)b` unless `n = 2`. So core elements have degree `≤ 2`.
+4. *`e = 2`.* The condition is `∂_P²g_n ∈ K[P]`, i.e. `g_n ∈ span{Pⁿ, Q^{n−1}P, Qⁿ}`.
+   - For `γ ≠ 0`, no `z^a z̄^b` lies in this span when `n ≥ 3`. Its `QP^{n−1}` coefficient is `i√γ(a−b)` and its `Q²P^{n−2}` coefficient is `−γ((a−b)² − n)/2`.
+   - For `γ = 0`, `D₀ = 2αP∂_Q` pushes `Q^{n−1}P` and `Qⁿ` onto `Q^{n−2}P²`, so `V_n ⊆ KPⁿ`. With the containment of §6.8 this gives equality. ∎
+
+**Theorem LB (linear `b`, higher shears).** Let `deg w = e ≥ 3` and `h = a(P) + Q·b(P)` with `deg a = f ≥ 3` and `b` linear. Then `D∞(H) = span{1, H}`.
+
+*Proof.*
+1. *Grading.* Give `Q` weight `f − 1` and `P` weight 1. The top of `h` is `E = a_fPᶠ + μQP` (normalize `a_f = μ = 1`). The slope `f − 1` lies above the threshold, so the top gates are the closed forms of Theorem NE (1). Here `s − 1 − α = 0`, so `D₀ = {E, ·}` preserves weight.
+2. *Eigenvectors.* With `R = Q + P^{f−1}` we have `E = PR`, `{E, P} = P` and `{E, R} = −R`. Hence `D₀(PʳRʲ) = (r − j)PʳRʲ`. The weight-`n` space has the basis `φⱼ = P^{rⱼ}Rʲ` with `rⱼ = n − (f−1)j`, and the eigenvalues `n − fj` are distinct. So `V_n` is spanned by some of the `φⱼ`.
+3. *The order-1 top gate.* On a monomial,
+   `C₁(QⁱPʳ) = (e+1)r(r−1)Q^{i+1}P^{r−2} + f·r[(e−2)(r−f) − 3(f−1)i]QⁱP^{r+f−3}`,
+   and `C₁(g)` must have `P`-degree 0.
+   - For `φⱼ` the output `P^{n+f−3}` comes only from the term `Pⁿ`, with coefficient `f·n(e−2)(n−f)`. This forces `n ∈ {0, f}`.
+   - The output `Q^{j+1}P^{rⱼ−2}` comes only from the leading term. This forces `rⱼ ≤ 2`.
+   - Together these leave only `φ₀ = 1` (`n = 0`) and `φ₁ = PR = E` (`n = f`). So the top core is `span{1, E}`. ∎
+
+With Theorem AE and Lemma C2 this completes the higher-shear affine sector: `D∞(H) = span{1, H}` for every `b`.
+
+**Theorem K1P (K1′ with `f = 3`).** Let `deg w = 2` and `h = aP³ + bP + λQ + μQP` with `aμ ≠ 0`. Then `D∞(H) = span{1, Q, P, P², H}`, together with `PH` exactly when `λ = 0`.
+
+*Proof.*
+1. *The top core.* Give `Q` weight 2 and `P` weight 1, so `E = aP³ + μQP`. The cubic-phase top gates require that `{E^{(m)}, g^{(m)}}` has `P`-degree `< m`.
+   - `m = 2` leaves, in weight `n`, only `Pⁿ` and monomials `QʲPʳ` with `r ≤ 3`.
+   - `m = 1`: `μg_{PP} − 6aP·g_{PQ} ∈ K[Q]`. This kills `Pⁿ` for `n ≥ 6`. It leaves at most `Q^{n/2}` for even `n ≥ 6` and nothing for odd `n ≥ 7`.
+   - `D₀`-invariance removes `Q^{n/2}`, because its image contains `Q^{n/2−1}P²`.
+   - For `n = 5` the single candidate is not a `D₀`-eigenvector, so it is removed too.
+   - In weights `≤ 4` what survives is `1, P, P², Q, E, PE`. So `dim D∞(H) ≤ 6`.
+2. *The element `PH`.* Modulo the five known core elements, a core element of weight 4 is `c·PH + κP³`. The twisted third gate gives:
+   - `T₃(PH) = −36aλ` and `T₃(P³) = 36μ`, which forces `κ = aλc/μ`;
+   - then `T₃(D(cPH + κP³)) = 72aλμ·c`.
+
+   So for `λ ≠ 0` we get `c = 0`. For `λ = 0`, `PH` is in the core by §6.8. ∎
+
+**Theorem TP (perfect-power transverse tops, `s ≥ 3`).** Let `H` be a pure top with `m`-degree `s ≥ 3` and transverse top `φ = c(ℓ+γ)ᵏ`, where `2 ≤ k ≠ s`. Then `D∞(H) = span{1, H}`.
+
+*Proof.* Put `Q = ℓ + γ`.
+1. *`m`-tops.* In the `m`-degree filtration the top is the monomial `QᵏMˢ` (writing `M = m`). By Theorem M its core is `span{1, QM, QᵏMˢ}`. So, after subtracting a multiple of `H`, a core element is `g = κQm + u(Q)`.
+2. *Gates.* For `j ≥ 3`, `T_j(H, g) = ±∂_m^jH·u^{(j)}`. With `j = 3 ≤ s` this forces `deg u ≤ 2`.
+3. *Total degree.* The pure top `H_d = cQ^d` has `d > k + s`. The degree-`d` part of `Dg` is `cdκQ^d`. Its `m^s`-part fixes the `H`-coefficient of `Dg` as `κ(k−s)`. Comparing gives `κ(d − k + s) = 0`, so `κ = 0`.
+4. *Conclusion.* Then `Dg = −H_m·u'` has `m^{s−1}`-coefficient `−sQᵏu'`. Since `s − 1 ≥ 2` this must vanish, so `u' = 0`. ∎
+
+`check_gauge.py` covers these as follows:
+- **[K2U]** the reduced third gate on random instances, and two full cores;
+- **[LB]** the monomial formula for `C₁` and the eigenvector identity on grids, the top core computed for four `(f, e)`, and two full cores;
+- **[K1P]** the top cores up to weight 16 for two `(a, μ)`, and the `PH` obstruction values on random instances;
+- **[TP]** three full cores.
+
+`check_two_root.py` now reports K2, K1+K2 and K1′ as proved, sends higher-shear Hamiltonians with linear `b` to the proved route `RS`, and perfect-power transverse tops with `s ≥ 3` and `k ≠ s` to the proved route `TP`.
+
 ### 6.13 Context (literature check, preliminary)
 
 A first literature check located the following. No priority is claimed for any statement in §§6.8–6.12, and a careful reading of the primary sources is still pending.
