@@ -49,7 +49,9 @@ Detection (detect) puts a pure-top H in coordinates (l, m), reads the m-degree s
 transverse top phi, and recognises the families; certify() records explicit generators, and
 check() re-verifies exactly that their span is D-invariant and killed by every gate (for K1 the
 tower K[P] is truncated at P^NMAX; K1 itself proves the full tower). Equality of the cores with
-these spans is verified by direct computation in the tests (conjecture P004 of the ledger).
+these spans is proved for K1, K1', K2, K1+K2, K4 and K3 with k >= 3 (check_gauge.py) and verified
+by direct computation in the tests otherwise (conjecture P005 of the ledger). K3 includes the term
+beta G for k >= 3 (H = c Q^(k-2) G^2 + beta G + r).
 
 Usage: check_triangular.py [CERT.json]
 """
@@ -414,19 +416,31 @@ def detect(H, l):
         Qu = {1: F(1), 0: -gam}
         if phi != _usc(_upow(Qu, k), c0):
             return None
-        v = _udiv(col(1), _usc(_upow(Qu, k - 1), 2 * c0))
+        c1 = col(1)
+        beta = F(0)
+        if k >= 3:          # extended K3: H = c Q^(k-2) G^2 + beta G + r (check_gauge.py, Theorem TP)
+            cq = _udiv(c1, Qu) if c1 else {}
+            if cq is None:
+                return None
+            beta = sum((c * gam ** e for e, c in cq.items()), F(0))
+            c1 = _uadd(c1, _usc(Qu, -beta))
+        v = _udiv(c1, _usc(_upow(Qu, k - 1), 2 * c0)) if c1 else {}
         if v is None:
             return None
         h0 = col(0)
         Gx = TR.add({(1, 1): F(1), (0, 1): -gam}, U(v))
         if k >= 2:
-            r = _uadd(h0, _usc(_umul(_upow(Qu, k - 2), _umul(v, v)), -c0))
+            r = _uadd(h0, _usc(_umul(_upow(Qu, k - 2), _umul(v, v)), -c0), _usc(v, -beta))
             basis = [{0: F(1)}, _upow(Qu, k - 2)]
             rows = [[b.get(e, F(0)) for b in basis] + [r.get(e, F(0))] for e in set(r) | {0, k - 2}]
             if L.rank([x[:-1] for x in rows], 2) != L.rank(rows, 3):
                 return None
             gens = [{(0, 0): F(1)}, Gx, Ht]
             out = {'family': 'K3', 'core': 'span{1, G, H}', 'gens': gens}
+            if k >= 3:
+                out['proved'] = True                       # check_gauge.py, Theorem TP (s = 2)
+                if beta:
+                    out['beta'] = str(beta)
         else:
             Qr = _uadd(_umul(Qu, h0), _usc(_umul(v, v), -c0))
             if Qr and max(Qr) > 2:

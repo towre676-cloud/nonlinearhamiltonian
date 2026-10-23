@@ -18,10 +18,10 @@
   "claim": {
    "route": "K2",
    "core": "tau*K[Q,P]_{<=2}",
-   "proved": false
+   "proved": true
   }
  },
- "payload_sha256": "8105d61b4e744e2074ab67e97b859e86c339ffb7944abd85c29a6822e2d298bc",
+ "payload_sha256": "04fb7b3933388fdcb4382e0af6f9631dd59c908f4de5635edd2c63e9d58feb08",
  "hypotheses": [
   "top homogeneous part with at most two roots",
   "criteria of DYNAMIC_CORE_RESULTS.md section 6"

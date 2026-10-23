@@ -136,6 +136,17 @@ f1, f2 of fixed sign); type 0 at level 4 by the T3 D g / T3 D^2 g eliminant, fre
 (negative at N = 1, positive for N >= 2). So every flat-lower-terms pure top (deg w <= 1, s >= 3) collapses.
                                                                                   [NV32: rows, eliminants, signs, instances]
 
+Upper bounds (section 6.14). K2U: for h = alpha P^2 + gamma Q^2 + lam Q + c the third gate is
+-6 alpha w'' g_PPQ + 2 alpha w''' P g_PPP; with the degree-preserving top part of D this confines the core to
+total degree <= 2 (K[P] + quadratics for deg w = 2, gamma = 0).                       [K2U: identity, instances]
+LB (higher shears, b linear): the top core of E = P^f + Q P (Q of weight f - 1) is span{1, E}: D0 = {E, .} has the
+eigenvectors P^r (Q + P^(f-1))^j with distinct eigenvalues r - j, and the order-1 top gate kills all but 1 and E.
+                                                                       [LB: C1 formula, eigenvectors, instances]
+K1P (cubic phase, f = 3): the top core of a P^3 + mu Q P is span{1, P, Q, P^2, E, P E}; P H is in the core iff
+lam = 0.                                                                   [K1P: top cores, obstruction values]
+TP (transverse top l^k, 2 <= k != s): span{1, H} for s >= 3; for s = 2 span{1, H} or, on the extended K3
+H = c Q^(k-2) G^2 + beta G + r, span{1, G, H}.                         [TP: instances, extended K3 identities]
+
 Corollary K1c. (i) deg w = 2, H = F(P) + lambda Q, deg F >= 3: D_inf(H~) = K[P] + K Q exactly.
 (ii) deg w >= 3, H = F(P) + lambda Q, deg F >= 3: D_inf(H~) = span{1, H~}.     [K1c: instances]
 
@@ -973,10 +984,32 @@ def grid_K1P(seed=43):
 def grid_TP():
     """perfect-power transverse tops phi = l^k, 2 <= k != s, s >= 3 (coordinates (l, m) = (q, p))."""
     for H, N in [({(2, 3): F(1), (6, 0): F(1)}, 8), ({(3, 4): F(1), (8, 0): F(1), (1, 2): F(2), (0, 1): F(1)}, 9),
-                 ({(4, 3): F(1), (8, 0): F(-1), (3, 2): F(1), (2, 0): F(1)}, 9)]:
+                 ({(4, 3): F(1), (8, 0): F(-1), (3, 2): F(1), (2, 0): F(1)}, 9),
+                 ({(3, 2): F(1), (8, 0): F(1), (1, 1): F(1)}, 9),                          # s = 2, k = 3
+                 ({(3, 2): F(1), (5, 1): F(2), (7, 0): F(1), (1, 1): F(1), (1, 0): F(1)}, 8)]:   # near the K3 family
         if full_dim(TR.tidy(H), N) != 2:
             return False
-    return True
+    # s = 2, k >= 3: the extended family K3, H = c Q^(k-2) G^2 + beta G + r, r in span{1, Q^(k-2)}:
+    # {H, G} = (k-2) H - (k-2) beta G + (Q r' - (k-2) r), so span{1, G, H} is D-invariant and gate-free.
+    rng = random.Random(47)
+    for _ in range(6):
+        k = rng.randint(3, 5)
+        v = {(i, 0): F(rng.randint(-2, 2)) for i in range(rng.randint(3, 4) + 1)}
+        v[(max(i for i, _ in v), 0)] = F(1)
+        G = TR.tidy(TR.add({(1, 1): F(1)}, v))
+        c, beta = F(rng.choice([1, 2, -1])), F(rng.choice([1, -2, 3]))
+        r = TR.tidy({(0, 0): F(rng.randint(-2, 2)), (k - 2, 0): F(rng.randint(-2, 2))})
+        H = TR.tidy(TR.add(TR.sc(TR.mul({(k - 2, 0): F(1)}, TR.mul(G, G)), c), TR.sc(G, beta), r))
+        rhs = TR.add(TR.sc(H, F(k - 2)), TR.sc(G, -(k - 2) * beta),
+                     TR.mul({(1, 0): F(1)}, W.pder(r, 1, 0)), TR.sc(r, F(2 - k)))
+        if pb(H, G) != TR.tidy(rhs) or not CT.span_ok(H, [{(0, 0): F(1)}, G, H]):
+            return False
+        res = TR.classify(H)
+        if res['route'] != 'K3' or not res['proved']:
+            return False
+    H = TR.tidy(TR.add(TR.mul({(1, 0): F(1)}, TR.mul({(1, 1): F(1), (3, 0): F(1)}, {(1, 1): F(1), (3, 0): F(1)})),
+                       {(1, 1): F(1), (3, 0): F(1), (0, 0): F(1)}))             # Q (Qm + Q^3)^2 + (Qm + Q^3) + 1
+    return full_dim(H, 9) == 3
 
 
 def identities():
@@ -998,7 +1031,9 @@ def check(cert=None):
                        'Q-degree containment (b constant, quadratic, degree >= 3; b linear with f >= 4 in the '
                        'cubic phase); K1, K1\' (f >= 4) and K4 exact; '
                        'non-affine binomial edges collapse (Theorem NA), general first edges (NE), the boundary edge (NB), '
-                       'threshold edges with deg w >= 3 (NT), edges below the threshold and flat lower terms (NV)'}
+                       'threshold edges with deg w >= 3 (NT), edges below the threshold and flat lower terms (NV); '
+                       'K2 and K1+K2 exact (K2U), linear b for higher shears (LB), K1\' with f = 3 (K1P), '
+                       'perfect-power transverse tops and the extended K3 (TP)'}
 
 
 def main():

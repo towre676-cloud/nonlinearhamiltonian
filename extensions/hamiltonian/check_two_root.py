@@ -20,13 +20,12 @@ roots over Qbar, the checker recomputes the top type and applies the proved crit
                                             is affine in Q, span{1, H} is proved inside
                                             tau*(K[P] + Q K[P]) (check_cubic_phase.py); other
                                             cubic-phase cores are open; otherwise span{1, H}
-                                            is conjectural (P004). Higher shears (deg w >= 3) with h
-                                            affine in Q: span{1, H} proved when the Q-coefficient is
-                                            constant (route RS, check_gauge.py) and proved inside
-                                            tau*(K[P] + Q K[P]) otherwise. Non-affine h whose first
-                                            Newton edge is steep enough (NA binomial, NE general,
-                                            NB the boundary edge P^2 + c Q^(2e)): span{1, H}
-                                            (check_gauge.py).
+                                            is conjectural (P005). Higher shears (deg w >= 3) with h
+                                            affine in Q: span{1, H} (route RS, check_gauge.py:
+                                            Theorems AE, LB). Non-affine h: first edges above, at
+                                            or below the threshold and flat lower terms (NA, NE,
+                                            NB, NT, NV): span{1, H}. Perfect-power transverse tops
+                                            l^k, 2 <= k != s: span{1, H} or the extended K3 (TP).
   near     H_d = c l^(d-1) m                V if d_v^2 H = 0; span{1, H} otherwise (Theorem NE,
                                             check_near_edges.py).                   (complete)
   balanced H_d = c Q^mu, Q a quadratic form  K[G] with G = Q(x - x0) if the translation killing
@@ -277,8 +276,8 @@ def classify(H):
         out.update(route="Q'", proved=True, core='span{1, H}', active_part='0')
     elif transverse_finite(H, l)[0] and transverse_pure_ok(H, l):
         out.update(route='T', proved=True, core='span{1, H}', active_part='0')
-    elif transverse_finite(H, l)[0] and max(j for _, j in coords(H, l)) >= 3:
-        # perfect-power transverse top l^k, 2 <= k != s, s >= 3: check_gauge.py, Theorem TP
+    elif transverse_finite(H, l)[0] and tp_applies(H, l):
+        # perfect-power transverse top l^k, 2 <= k != s, outside K3: check_gauge.py, Theorem TP
         out.update(route='TP', proved=True, core='span{1, H}', active_part='0')
     else:
         import check_triangular as CT                         # section 6.8: triangular families
@@ -347,6 +346,18 @@ def transverse_pure_ok(H, l):
     e = max(phi)
     gam = phi.get(e - 1, F(0)) / (e * phi[e])
     return not all(phi.get(i, F(0)) == phi[e] * comb(e, i) * gam ** (e - i) for i in range(e + 1))
+
+
+def tp_applies(H, l):
+    """Theorem TP: perfect-power transverse top of degree k >= 2 with k != s, and for s = 2 outside the
+    (extended) family K3."""
+    Ht = coords(H, l)
+    s_ = max(j for i, j in Ht)
+    k = max(i for i, j in Ht if j == s_)
+    if s_ >= 3:
+        return k >= 2 and k != s_
+    import check_triangular as CT
+    return s_ == 2 and k >= 3 and CT.detect(H, l) is None
 
 
 def hull_vertices(Ht):

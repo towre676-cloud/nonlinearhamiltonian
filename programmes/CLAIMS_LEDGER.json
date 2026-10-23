@@ -269,9 +269,16 @@
   {
    "id": "W6-g",
    "status": "proved_with_certificate",
-   "claim": "Triangular structures for pure tops: with P = p + w(q), Theorem X (triangular transvectant formula) and the containments K1 (deg w = 2, H = F(P) + lam q: K[P] + Kq), K1' (deg w = 2, H = F(P) + lam q + mu qP, mu != 0: span{1, P, P^2, H}, plus q if deg F = 3, plus PH if also lam = 0), K2 (H = h(q, P), h quadratic: the pullback of all quadratics) and K3 (H = c Q^(k-2) G^2 + r, G = Qm + v, r restricted: span{1, G, H}, plus Q if k = 1) in D_inf(H).",
+   "claim": "Triangular structures for pure tops: with P = p + w(q), Theorem X (triangular transvectant formula) and the containments K1 (deg w = 2, H = F(P) + lam q: K[P] + Kq), K1' (deg w = 2, H = F(P) + lam q + mu qP, mu != 0: span{1, P, P^2, H}, plus q if deg F = 3, plus PH if also lam = 0), K2 (H = h(q, P), h quadratic: the pullback of all quadratics) and K3 (H = c Q^(k-2) G^2 + beta G + r, G = Qm + v, r restricted, beta = 0 unless k >= 3: span{1, G, H}, plus Q if k = 1) in D_inf(H).",
    "support": "programmes/DYNAMIC_CORE_RESULTS.md#6.8; extensions/hamiltonian/check_triangular.py; results/hamiltonian/triangular_theorem.json",
-   "scope": "Containments, all degrees; K1 equality proved in W6-i. Equality with these spans is conjecture P004, verified by direct computation up to degree d + 2 (deeper for six cases). In K1 with lam != 0 the active part is infinite-dimensional."
+   "scope": "Containments, all degrees; K1 equality proved in W6-i. Equality is proved for K1 (W6-i) and for K1', K2, K1+K2 and K3 with k >= 3 (W6-j); for K3 with k <= 2 it is conjecture P005, verified by direct computation up to degree d + 2 (deeper for six cases). In K1 with lam != 0 the active part is infinite-dimensional."
+  },
+  {
+   "id": "W6-j",
+   "status": "proved_with_certificate",
+   "claim": "Upper bounds. (K2U) K2 and K1+K2 are exact: for h = alpha P^2 + gamma Q^2 + lam Q + c the leading part of T_3 and the top part of D confine core elements to total degree <= 2 (respectively K[P] + quadratics for deg w = 2, gamma = 0). (LB) Higher shears with linear b: D_inf = span{1,H} (the top core of P^f + QP is span{1, E}: eigenvectors P^r (Q + P^(f-1))^j of D_0 and the order-1 top gate). (K1P) K1' with f = 3: D_inf = span{1, Q, P, P^2, H}, plus PH exactly when lam = 0. (TP) Perfect-power transverse tops l^k with 2 <= k != s: D_inf = span{1,H} for s >= 3; for s = 2 (k >= 3) the core is span{1,H} unless H = c Q^(k-2) G^2 + beta G + r with r in span{1, Q^(k-2)} (extended K3), where it is span{1, G, H}.",
+   "support": "programmes/DYNAMIC_CORE_RESULTS.md#6.14; extensions/hamiltonian/check_gauge.py; results/hamiltonian/gauge_shear_theorem.json",
+   "scope": "All degrees. Open: transverse tops l^k with k = 1 or k = s, and the K3 upper bound for k <= 2."
   },
   {
    "id": "W6-h",
@@ -296,10 +303,17 @@
   },
   {
    "id": "P004",
-   "status": "conjecture",
+   "status": "refuted_as_stated",
    "claim": "Pure tops (corrected): if H_d = c l^d, H lies outside Theorem P+, outside the triangular families K1, K1', K2, K3 of W6-g and K4 of W6-h after an affine change of coordinates, and outside the non-affine cubic-phase case (constant transverse top, completed power w of degree 2, h not affine in Q), then D_inf(H) = span{1,H}; inside the families D_inf(H) is the span listed in DYNAMIC_CORE_RESULTS.md section 6.8.",
    "support": "programmes/DYNAMIC_CORE_RESULTS.md#6.8; extensions/hamiltonian/test_two_root.py",
-   "scope": "Proved: Q', T, the affine shear phase diagram except linear b (W6-h, W6-i), every non-affine first edge above the slope threshold, every threshold edge with deg w >= 3, every edge below the threshold, every flat-lower-terms top and the m-degree-2 range deg r >= 3 (NA, NE, NT, NV, NB); for s >= 3 and deg w != 2 every non-affine normal form is covered. Open: linear b, linear or perfect-power transverse tops outside K3, and upper bounds for K2, K3, K1' (deg a = 3). Supported by random searches, structured grids and weight-by-weight top-problem solutions."
+   "scope": "Refuted as stated: H = Q (Qm + Q^3)^2 + (Qm + Q^3) + 1 (Q = l, m complementary) is a pure top outside K1, K1', K2, K3, K4 whose core contains G = Qm + Q^3 (dimension 3). The K3 family needs the extra term beta G for k >= 3; the corrected statement is P005. Before the refutation the proved part was: Proved: Q', T, the affine shear phase diagram except linear b (W6-h, W6-i), every non-affine first edge above the slope threshold, every threshold edge with deg w >= 3, every edge below the threshold, every flat-lower-terms top and the m-degree-2 range deg r >= 3 (NA, NE, NT, NV, NB); for s >= 3 and deg w != 2 every non-affine normal form is covered. Open: linear b, linear or perfect-power transverse tops outside K3, and upper bounds for K2, K3, K1' (deg a = 3). Supported by random searches, structured grids and weight-by-weight top-problem solutions."
+  },
+  {
+   "id": "P005",
+   "status": "conjecture",
+   "claim": "Pure tops (corrected again): if H_d = c l^d, H lies outside Theorem P+, outside K1, K1', K2, K4 and the extended K3 (H = c Q^(k-2) G^2 + beta G + r, beta = 0 for k <= 2) after an affine change of coordinates, and outside the non-affine cubic-phase case, then D_inf(H) = span{1,H}; inside the families D_inf(H) is the listed span.",
+   "support": "programmes/DYNAMIC_CORE_RESULTS.md#6.14; extensions/hamiltonian/test_two_root.py",
+   "scope": "Proved: everything with constant transverse top outside the cubic phase (affine sector, every first edge, flat lower terms, m-degree 2), K1, K1', K2, K1+K2, K4 exact; transverse tops of degree >= 2 that are not perfect powers (T) and perfect powers l^k with 2 <= k != s (TP, including K3 for k >= 3). Open: transverse tops l^k with k = 1 (linear) or k = s, which includes the K3 upper bound for k <= 2. Supported by random searches."
   },
   {
    "id": "P002",

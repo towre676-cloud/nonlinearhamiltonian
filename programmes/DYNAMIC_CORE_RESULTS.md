@@ -559,12 +559,12 @@ The flat part is the usual one. The **correction** `Φ` collects the terms `j �
   - For `PH`, take `H = P³ + aP + b + μQP`. Then `T_k(H, PH)` is bilinear, so it has degree at most 2 in each of `μ`, `a` and `b`. It depends on `w` only through `c = w″/2`, also with degree at most 2. The checker verifies the identity on a 3⁴ tensor grid, which proves it for all values. ∎
 - **K2** (any `w`). If `H = h(Q, P)` with `h` quadratic, then `τ*K[Q, P]_{≤2} = span{1, Q, Q², P, QP, P²} ⊆ D∞(H)`.
   - *Proof.* In the coefficient of `tᵏ`, `k ≥ 3`, every term of Theorem X has total derivative order at least `k + 1 ≥ 4`. Split over two quadratics, some factor is differentiated three times; this includes the order-4 term `t³(∂_{P₁}∂_{P₂}³ − ∂_{P₁}³∂_{P₂})`. Brackets of quadratics are quadratic. ∎
-- **K3** (twisted squares, `m`-degree 2). Let `Q = ℓ − γ`, `G = Qm + v(ℓ)` with `v` any polynomial, and `k ≥ 1`. Suppose `H = cQ^{k−2}G² + r` is a polynomial, where:
+- **K3** (twisted squares, `m`-degree 2). Let `Q = ℓ − γ`, `G = Qm + v(ℓ)` with `v` any polynomial, and `k ≥ 1`. Suppose `H = cQ^{k−2}G² + βG + r` is a polynomial (with `β = 0` when `k ≤ 2`, where the term can be absorbed into `v`; the term `βG` was found in §6.14), where:
   - for `k ≥ 2`, `r ∈ span{1, Q^{k−2}}`;
   - for `k = 1`, `r` is rational with `Qr` of degree at most 2.
 
   Then `span{1, G, H} ⊆ D∞(H)` (for `k ≥ 2`), respectively `span{1, Q, G, H} ⊆ D∞(H)` (for `k = 1`).
-  - *Proof.* `G` is affine in `m` with a linear `m`-coefficient. Hence `T_j(G, f) = v⁽ʲ⁾∂_mʲf` for `j ≥ 3`, which vanishes on `H` because `H` has `m`-degree 2. The brackets `{H, G} = (k−2)c(H − r) + Qr′` and `{H, Q} = −2cQ^{k−1}G` close the span under the conditions on `r`. ∎
+  - *Proof.* `G` is affine in `m` with a linear `m`-coefficient. Hence `T_j(G, f) = v⁽ʲ⁾∂_mʲf` for `j ≥ 3`, which vanishes on `H` because `H` has `m`-degree 2. The brackets `{H, G} = (k−2)(H − βG − r) + Qr′` and `{H, Q} = −2cQ^{k−1}G` close the span under the conditions on `r`. ∎
 
 The transverse tops of these families are exactly the cases that Theorem T leaves out:
 - K1, K1′ and K2 have `φ` constant. K2 has `deg w = d/2`, the boundary that Q′ excludes; K1 and K1′ have `deg w = 2`.
@@ -596,6 +596,8 @@ by direct computation up to degree 11. Classifying this case is a separate probl
 - `H` is not in the cubic-phase case, unless `h` is affine in `Q` and outside K4 (§6.9).
 
 Then `D∞(H) = span{1, H}`. In the families, `D∞(H)` is the span in the table above.
+
+**P004 is false as stated (§6.14).** The family K3 needs one more term when `k ≥ 3`. `H = Q(Qm + Q³)² + (Qm + Q³) + 1` (with `Q = ℓ`) is a pure top outside K1, K1′, K2, K3 and K4, yet its core contains `G = Qm + Q³`. The core has dimension 3. The extended family is `H = cQ^{k−2}G² + βG + r` with `r ∈ span{1, Q^{k−2}}`. For `k ≤ 2` the term `βG` can be absorbed into `v`. Theorem TP shows that for `m`-degree 2 and `k ≥ 3` the extended family is exactly where the core exceeds `span{1, H}`. The corrected statement is **Conjecture P005**: P004 with K3 replaced by the extended family.
 
 *Evidence.*
 - *Random searches.* About 330 random pure tops of degree 4–8 were drawn: triangular normal forms with `m`-degree 2, 3 and 4, transverse tops `φ ∈ {1, ℓ, ℓ², ℓ³, ℓ+1}`, and random lower terms. Every Hamiltonian with a core larger than `span{1, H}` lies in K1, K1′, K2 or K3, with the predicted dimension. K1′ was found when these samples were rechecked.
@@ -1009,7 +1011,7 @@ For the quadratic-shear oscillator `(q² + p)² + κq²/2` with `κ ≠ 0`, `R =
 
 `check_two_root.py` reports these Hamiltonians on the proved routes `NA`, `NE`, `NB`, `NT` and `NV`.
 
-### 6.14 Upper bounds: K2, K1+K2, K1′ with `f = 3`, linear `b`, perfect-power transverse tops
+### 6.14 Upper bounds: K2, K1+K2, K1′ with `f = 3`, linear `b`, perfect-power transverse tops; P004 refuted as stated
 
 All four results below use the same device. Some grading makes `D` weight-preserving to leading order, with top part `D₀`. The top components of core elements of weight `n` form a `D₀`-invariant space `V_n`. The leading part of `T₃` (or of the top gates) cuts this space down. When `D₀` is diagonalizable with simple spectrum, `V_n` is spanned by the eigenvectors it contains, and those can be tested one at a time.
 
@@ -1057,21 +1059,34 @@ With Theorem AE and Lemma C2 this completes the higher-shear affine sector: `D�
 
    So for `λ ≠ 0` we get `c = 0`. For `λ = 0`, `PH` is in the core by §6.8. ∎
 
-**Theorem TP (perfect-power transverse tops, `s ≥ 3`).** Let `H` be a pure top with `m`-degree `s ≥ 3` and transverse top `φ = c(ℓ+γ)ᵏ`, where `2 ≤ k ≠ s`. Then `D∞(H) = span{1, H}`.
+**Theorem TP (perfect-power transverse tops).** Let `H` be a pure top with `m`-degree `s ≥ 2` and transverse top `φ = c(ℓ+γ)ᵏ`, where `2 ≤ k ≠ s`.
+- If `s ≥ 3`, then `D∞(H) = span{1, H}`.
+- If `s = 2` (so `k ≥ 3`), then `D∞(H) = span{1, H}` unless `H = cQ^{k−2}G² + βG + r` with `G = Qm + v` and `r ∈ span{1, Q^{k−2}}`, in which case `D∞(H) = span{1, G, H}`.
 
 *Proof.* Put `Q = ℓ + γ`.
 1. *`m`-tops.* In the `m`-degree filtration the top is the monomial `QᵏMˢ` (writing `M = m`). By Theorem M its core is `span{1, QM, QᵏMˢ}`. So, after subtracting a multiple of `H`, a core element is `g = κQm + u(Q)`.
 2. *Gates.* For `j ≥ 3`, `T_j(H, g) = ±∂_m^jH·u^{(j)}`. With `j = 3 ≤ s` this forces `deg u ≤ 2`.
 3. *Total degree.* The pure top `H_d = cQ^d` has `d > k + s`. The degree-`d` part of `Dg` is `cdκQ^d`. Its `m^s`-part fixes the `H`-coefficient of `Dg` as `κ(k−s)`. Comparing gives `κ(d − k + s) = 0`, so `κ = 0`.
-4. *Conclusion.* Then `Dg = −H_m·u'` has `m^{s−1}`-coefficient `−sQᵏu'`. Since `s − 1 ≥ 2` this must vanish, so `u' = 0`. ∎
+4. *Conclusion.* Then `Dg = −H_m·u'` has `m^{s−1}`-coefficient `−sQᵏu'`. Since `s − 1 ≥ 2` this must vanish, so `u' = 0`.
+
+*The case `s = 2`.* Here the gates do not bound `u`, so step 2 gives nothing.
+1. *At most three dimensions.* Core elements of the form `u(Q)` have `m`-top `u`, so `u` is constant. Two elements `κQm + u` with `κ = 1` differ by a constant. So the core lies in `span{1, H, G}` for a single `G = Qm + v`.
+2. *When `G` is in the core.* Exactly when `{H, G} = (k−2)H + κ₁G + c₀`.
+   - Write `H = Q^{k−2}G² + b₁m + r`. The `m`-coefficient gives `Qb₁' − (k−1)b₁ = κ₁Q`. So `b₁ = −κ₁Q/(k−2) + CQ^{k−1}`; the `CQ^{k−1}` part is absorbed into `v`. Hence `b₁m = βQm = β(G − v)`.
+   - The constant term then gives `Qr' − (k−2)r = c₀`, i.e. `r ∈ span{1, Q^{k−2}}`.
+3. *Conversely,* `{H, G} = (k−2)H − (k−2)βG + (Qr' − (k−2)r)` for such `H`. Since `G` is affine in `m` with a linear coefficient, its gates vanish on the `m`-quadratic `H`. ∎
 
 `check_gauge.py` covers these as follows:
 - **[K2U]** the reduced third gate on random instances, and two full cores;
 - **[LB]** the monomial formula for `C₁` and the eigenvector identity on grids, the top core computed for four `(f, e)`, and two full cores;
 - **[K1P]** the top cores up to weight 16 for two `(a, μ)`, and the `PH` obstruction values on random instances;
-- **[TP]** three full cores.
+- **[TP]** five full cores, among them a case near the extended K3. On random members of the extended K3 it checks the bracket identity, invariance of `span{1, G, H}` with vanishing gates, and the classifier route. It also computes the full core of the counterexample to P004 (dimension 3).
 
-`check_two_root.py` now reports K2, K1+K2 and K1′ as proved, sends higher-shear Hamiltonians with linear `b` to the proved route `RS`, and perfect-power transverse tops with `s ≥ 3` and `k ≠ s` to the proved route `TP`.
+`check_two_root.py` now:
+- reports K2, K1+K2 and K1′ as proved;
+- detects the extended K3 and reports it as proved for `k ≥ 3`;
+- sends higher-shear Hamiltonians with linear `b` to the proved route `RS`;
+- sends perfect-power transverse tops with `2 ≤ k ≠ s` (outside K3) to the proved route `TP`.
 
 ### 6.13 Context (literature check, preliminary)
 
@@ -1092,9 +1107,9 @@ These references come from a first search. Before any external positioning they 
 - it solves for the translation `τ` exactly and tests the normal forms;
 - it reports the core, the active part, and whether the answer is proved or conjectural. The proved routes are:
   - Theorems U, P⁺, Q, Q′, B, NE and T;
-  - K1, K1′ (`deg a ≥ 4`) and K4;
-  - RS, NA and the affine cubic phase (§§6.9–6.12);
-- for the other triangular families (K1′ with `deg a = 3`, K2, K3) it reports a span that is proved to lie in the core, with equality marked conjectural.
+  - K1, K1′, K2, K1+K2, K4, and K3 with `k ≥ 3` (§6.14);
+  - RS, NA, NE, NB, NT, NV, TP and the affine cubic phase (§§6.9–6.14);
+- for K3 with `k ≤ 2` it reports a span that is proved to lie in the core, with equality marked conjectural.
 
 Enveloped examples are `results/hamiltonian/tworoot_*.json` and `binomial_*.json`.
 
@@ -1103,31 +1118,32 @@ The tests generate random members of every route and random affine changes of co
 **Conjecture (two-root tops), status.** As originally stated, the conjecture says: let `H_d` be pure, near or balanced, and suppose `H` has none of the structures of Theorem P⁺; then `D∞(H) = span{1, H}`.
 - **Balanced tops:** true, by Theorem B (§6.5).
 - **Near tops:** true, by Theorem NE (§6.7).
-- **Pure tops:** false. The counterexample `(q³ + p)²` and the triangular families K1, K1′, K2, K3 are in §6.8, and the corrected pure-top statement is Conjecture P004 there.
+- **Pure tops:** false. The counterexample `(q³ + p)²` and the triangular families K1, K1′, K2, K3 are in §6.8. The corrected statement P004 is in turn false as stated, because of the extended K3 (§6.14). The current statement is Conjecture P005.
 
 **Where the pure-top classification stands.** Write the top in coordinates `(ℓ, m)`. Let `s` be the `m`-degree and `φ` the transverse top. When `φ` is constant, write `h` and `w` for the triangular normal form.
 
 Proved:
 - `s ≤ 1` (Theorem P⁺).
 - `deg φ ≥ 2` and not a perfect power (Theorem T).
-- `φ` constant, with `h` affine in `Q`: the whole shear phase diagram of §6.11, except linear `b` (the 6-dimensional K1′ sector for `f = 3`, and higher shears).
+- `φ = c(ℓ+γ)ᵏ` with `2 ≤ k ≠ s` (Theorem TP). For `s = 2` this includes the exact core of the extended K3 with `k ≥ 3`.
+- `φ` constant, with `h` affine in `Q`: the whole shear phase diagram of §6.11, including linear `b` (Theorems K1P and LB).
+- K2 and K1+K2 are exact (Theorem K2U).
 - `φ` constant, with `h` non-affine: every first edge above the slope threshold (Theorems NA and NE), every edge at the threshold for `deg w ≥ 3` (Theorem NT), every edge below the threshold and every flat-lower-terms top (Theorem NV), and the whole `m`-degree-2 range `deg r ≥ 3` (Theorems NA and NB).
-  For `s ≥ 3` this covers every non-affine normal form unless `deg w = 2`. A non-affine `h` has `s − 1 − α > 0` automatically, and every slope is above, at or below the threshold. Inside the cubic phase (`deg w = 2`), which P004 excludes, the cases left are threshold edges and first edges whose `Q`-terms are all linear in `Q`.
+  For `s ≥ 3` this covers every non-affine normal form unless `deg w = 2`. A non-affine `h` has `s − 1 − α > 0` automatically, and every slope is above, at or below the threshold. Inside the cubic phase (`deg w = 2`), which P004 and P005 exclude, the cases left are threshold edges and first edges whose `Q`-terms are all linear in `Q`.
 - `s = 2` with `deg w < deg r/2` (Theorem Q′).
 
 Open, but supported by direct computation and top-problem solutions:
-- threshold edges in the cubic phase `deg w = 2` (§6.12, after Theorem NT);
-- `φ` linear or a perfect power outside K3;
-- the upper bounds for K2, K3 and K1′ with `f = 3`.
+- threshold edges in the cubic phase `deg w = 2` (§6.12, after Theorem NT; outside P005);
+- transverse tops `φ = c(ℓ+γ)ᵏ` with `k = 1` (linear `φ`) or `k = s`. This includes the K3 upper bound for `k ≤ 2`. Here the top monomial `QᵏMˢ` has an infinite core (Theorem M), so the argument of Theorem TP does not apply.
 
-With §5 this gives a statement of when **active** exact dynamics survives a lower-order perturbation. It is conditional on Conjecture P004 in the open regions just listed:
+With §5 this gives a statement of when **active** exact dynamics survives a lower-order perturbation. It is conditional on Conjecture P005 in the open regions just listed:
 - three or more roots in the top: never (proved);
 - unequal top: a single active quadratic `G`, exactly in the normal form of Theorem U (proved);
 - near top: an infinite active sector exactly when `H` is affine in `m` (proved, Theorems P⁺ and NE);
 - pure top:
   - an infinite active sector in the affine or strip structures of Theorem P⁺ (proved);
   - an infinite active sector also in the triangular family K1 with `λ ≠ 0`, e.g. `(q² + p)³ + q` (proved, §6.8);
-  - a nonzero finite active part in K1′, K2, K3 and K4 (K4 and K1′ with `deg a ≥ 4` exact, the others containment);
+  - a nonzero finite active part in K1′, K2, K3 and K4 (exact except K3 with `k ≤ 2`, where it is a containment);
   - none otherwise (proved for Q′, T, RS, NA and the affine cubic phase; conjectural in the open regions);
 - balanced top: never (proved, Theorem B).
 
