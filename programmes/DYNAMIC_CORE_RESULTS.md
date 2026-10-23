@@ -880,7 +880,13 @@ None of them closes for `d ≥ 3`. ∎
 | `3 ≤ deg r < 2 deg w` | `span{1, H}` | NA |
 | `deg r = 2 deg w` | open | — |
 
-The open case `deg r = 2 deg w` is the edge `P² + cQ^{2e}`, where flat and correction terms tie. All computed cases there give `span{1, H}`.
+The open case `deg r = 2 deg w` is the edge `P² + cQ^{2e}`, where flat and correction terms tie.
+- On monomials the top gate splits into two parts. The first is a diagonal part, `e(e−1)j(j−1)[2(e−2)(j−2) − 6i]·Q^{i+e−3}P^{j−2}`, with the same free monomials as NA. The second is a shift part, `c(2e)(2e−1)(2e−2)·j(j−1)(j−2)·Q^{i+2e−3}P^{j−3}`.
+- So the kernel is no longer spanned by monomials, but the `P`-top of every kernel element is one of the NA free monomials.
+- The top problem, solved weight by weight up to weight 7 for `e = 2, 3` and `c ∈ {1, −1, 2, −1/4}`, gives `span{1, E}` in every case.
+- Full cores computed directly, e.g. `(q²+p)² + q⁴` and `(q³+p)² + q⁶`, are `span{1, H}`.
+
+The general proof is the remaining step.
 
 Examples:
 - `(q² + p)³ + q²` and `(q² + p)⁴ + q³ + (q² + p)` collapse to `span{1, H}`. Both were previously reported as open cubic-phase cases.
@@ -918,8 +924,11 @@ These references come from a first search. Before any external positioning they 
 `check_two_root.py` (`two-root-perturbation-v1`) decides, for any rational `H` with a two-root top:
 - it recomputes the top type from a verified square-free decomposition;
 - it solves for the translation `τ` exactly and tests the normal forms;
-- it reports the core, the active part, and whether the answer is proved (Theorems U, P⁺, Q, Q′, B, NE, T) or conjectural;
-- for the triangular families of §6.8 it reports a span that is proved to lie in the core, with equality marked conjectural.
+- it reports the core, the active part, and whether the answer is proved or conjectural. The proved routes are:
+  - Theorems U, P⁺, Q, Q′, B, NE and T;
+  - K1, K1′ (`deg a ≥ 4`) and K4;
+  - RS, NA and the affine cubic phase (§§6.9–6.12);
+- for the other triangular families (K1′ with `deg a = 3`, K2, K3) it reports a span that is proved to lie in the core, with equality marked conjectural.
 
 Enveloped examples are `results/hamiltonian/tworoot_*.json` and `binomial_*.json`.
 
@@ -930,15 +939,32 @@ The tests generate random members of every route and random affine changes of co
 - **Near tops:** true, by Theorem NE (§6.7).
 - **Pure tops:** false. The counterexample `(q³ + p)²` and the triangular families K1, K1′, K2, K3 are in §6.8, and the corrected pure-top statement is Conjecture P004 there.
 
-With §5 this gives a statement of when **active** exact dynamics survives a lower-order perturbation. It is conditional on Conjecture P004, and leaves the cubic-phase case open:
+**Where the pure-top classification stands.** Write the top in coordinates `(ℓ, m)`. Let `s` be the `m`-degree and `φ` the transverse top. When `φ` is constant, write `h` and `w` for the triangular normal form.
+
+Proved:
+- `s ≤ 1` (Theorem P⁺).
+- `deg φ ≥ 2` and not a perfect power (Theorem T).
+- `φ` constant, with `h` affine in `Q`: the whole shear phase diagram of §6.11, except linear `b` (the 6-dimensional K1′ sector for `f = 3`, and higher shears).
+- `φ` constant, with `h` non-affine: binomial first edges above the slope threshold (Theorem NA). This includes the `m`-degree-2 range `3 ≤ deg r < 2 deg w`.
+- `s = 2` with `deg w < deg r/2` (Theorem Q′).
+
+Open, but supported by direct computation and top-problem solutions:
+- non-binomial first edges;
+- edges below the threshold;
+- the boundary edge `P² + cQ^{2e}`;
+- `φ` linear or a perfect power outside K3;
+- `φ` constant with `deg w ≤ 1` and `s ≥ 3` (flat lower terms);
+- the upper bounds for K2, K3 and K1′ with `f = 3`.
+
+With §5 this gives a statement of when **active** exact dynamics survives a lower-order perturbation. It is conditional on Conjecture P004 in the open regions just listed:
 - three or more roots in the top: never (proved);
 - unequal top: a single active quadratic `G`, exactly in the normal form of Theorem U (proved);
 - near top: an infinite active sector exactly when `H` is affine in `m` (proved, Theorems P⁺ and NE);
 - pure top:
   - an infinite active sector in the affine or strip structures of Theorem P⁺ (proved);
   - an infinite active sector also in the triangular family K1 with `λ ≠ 0`, e.g. `(q² + p)³ + q` (proved, §6.8);
-  - a nonzero finite active part in K1′, K2, K3 and K4 (containment proved);
-  - none otherwise (proved for Q′ and T, conjectural for the rest, P004), except that the cubic-phase case is open;
+  - a nonzero finite active part in K1′, K2, K3 and K4 (K4 and K1′ with `deg a ≥ 4` exact, the others containment);
+  - none otherwise (proved for Q′, T, RS, NA and the affine cubic phase; conjectural in the open regions);
 - balanced top: never (proved, Theorem B).
 
 ## 4. Commands

@@ -299,7 +299,7 @@
    "status": "conjecture",
    "claim": "Pure tops (corrected): if H_d = c l^d, H lies outside Theorem P+, outside the triangular families K1, K1', K2, K3 of W6-g and K4 of W6-h after an affine change of coordinates, and outside the non-affine cubic-phase case (constant transverse top, completed power w of degree 2, h not affine in Q), then D_inf(H) = span{1,H}; inside the families D_inf(H) is the span listed in DYNAMIC_CORE_RESULTS.md section 6.8.",
    "support": "programmes/DYNAMIC_CORE_RESULTS.md#6.8; extensions/hamiltonian/test_two_root.py",
-   "scope": "Proved where Q' or T applies (W6-c, W6-e); open for transverse tops that are constant, linear or a perfect power outside the families, and for the upper bounds inside them. The non-affine cubic-phase case is excluded and open; the affine cubic-phase sector is classified inside tau*(K[P] + Q K[P]) (W6-h), and the former exception P^2(P^2 + Q) is K4. Supported by about 330 random pure tops of degree 4-8 and a 110-case structured grid. Since W6-i the affine part of the cubic phase and of higher shears is proved except for linear Q-coefficient b."
+   "scope": "Proved: Q', T, the affine shear phase diagram except linear b (W6-h, W6-i), non-affine binomial edges above threshold (NA). Open: non-binomial or sub-threshold edges, the boundary edge P^2 + c Q^(2 deg w), linear or perfect-power transverse tops outside K3, flat lower terms with s >= 3, and upper bounds for K2, K3, K1' (deg a = 3). Supported by random searches, structured grids and weight-by-weight top-problem solutions."
   },
   {
    "id": "P002",
