@@ -505,6 +505,25 @@ def na_applies(H, l):
     return alpha > (F(1, 2) if e == 2 else F(1, e))
 
 
+def edge_route(H, l):
+    """'NA' (binomial edge), 'NE' (general first edge) or 'NB' (boundary edge P^2 + c Q^(2e)) when the
+    corresponding theorem of check_gauge.py applies; else None."""
+    fe = first_edge(H, l)
+    if fe is None:
+        return None
+    e, s, alpha, edge = fe
+    if e < 2:
+        return None
+    thr = F(1, 2) if e == 2 else F(1, e)
+    if na_applies(H, l):
+        return 'NA'
+    if s == 2 and edge == [(2 * e, 0)] and alpha == F(1, e):
+        return 'NB'
+    if s >= 3 and alpha > thr and alpha < s - 1 and (e >= 3 or any(i >= 2 for i, _ in edge)):
+        return 'NE'
+    return None
+
+
 def higher_shear(H, l):
     """Constant transverse top, completed power w of degree >= 3 and h affine in Q with deg_P h >= 3:
     'const' if the Q-coefficient b is constant (D_inf = span{1, H}: Theorem AE + Lemma C), 'affine'

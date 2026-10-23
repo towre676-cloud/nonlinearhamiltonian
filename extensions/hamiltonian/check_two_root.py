@@ -24,8 +24,9 @@ roots over Qbar, the checker recomputes the top type and applies the proved crit
                                             affine in Q: span{1, H} proved when the Q-coefficient is
                                             constant (route RS, check_gauge.py) and proved inside
                                             tau*(K[P] + Q K[P]) otherwise. Non-affine h whose first
-                                            Newton edge is a binomial P^s + c Q^d with a steep enough
-                                            slope: span{1, H} (route NA, check_gauge.py).
+                                            Newton edge is steep enough (NA binomial, NE general,
+                                            NB the boundary edge P^2 + c Q^(2e)): span{1, H}
+                                            (check_gauge.py).
   near     H_d = c l^(d-1) m                V if d_v^2 H = 0; span{1, H} otherwise (Theorem NE,
                                             check_near_edges.py).                   (complete)
   balanced H_d = c Q^mu, Q a quadratic form  K[G] with G = Q(x - x0) if the translation killing
@@ -289,8 +290,8 @@ def classify(H):
             for key in ('tower_step', 'tower_from', 'G', 'w'):
                 if key in tri:
                     out[key] = tri[key]
-        elif CT.na_applies(H, l):                             # check_gauge.py: Theorem NA
-            out.update(route='NA', proved=True, core='span{1, H}', active_part='0')
+        elif CT.edge_route(H, l):                             # check_gauge.py: Theorems NA, NE, NB
+            out.update(route=CT.edge_route(H, l), proved=True, core='span{1, H}', active_part='0')
         elif CT.higher_shear(H, l) == 'const':                # check_gauge.py: Theorem AE + Lemma C
             out.update(route='RS', proved=True, core='span{1, H}', active_part='0')
         elif CT.higher_shear(H, l) == 'affine' and CT.affine_data(H, l)[2] >= 2:   # AE + Lemma C2

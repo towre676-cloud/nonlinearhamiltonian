@@ -320,7 +320,7 @@
    "sha256": "75bc78fabd0135381c86404e9ca102128eface5cfa3c64770b0e0f7b4dd9f4fe",
    "witness_kind": "weyl-polynomial-kernel",
    "replay": "python3 -B extensions/envelope.py check results/hamiltonian/binomial_q5_plus_p2.json",
-   "producer_seconds": 6.1,
+   "producer_seconds": 5.86,
    "summary": {
     "status": "passed",
     "kind": "finite_support",
@@ -336,7 +336,7 @@
    "sha256": "6c0ecb1b7d225ebf9101fc9baf33f047fbdea4f02681b9ae45afd92ac16ca930",
    "witness_kind": "weyl-polynomial-kernel",
    "replay": "python3 -B extensions/envelope.py check results/hamiltonian/binomial_qp2_plus_q2.json",
-   "producer_seconds": 0.55,
+   "producer_seconds": 0.5,
    "summary": {
     "status": "passed",
     "kind": "degree_bound",
@@ -357,7 +357,7 @@
    "sha256": "6e43ecd75520985638548c2bd09ff853fc9ffeebf2e0e133a43378c664ba9a69",
    "witness_kind": "weyl-polynomial-kernel",
    "replay": "python3 -B extensions/envelope.py check results/hamiltonian/binomial_qp4_plus_q2.json.gz",
-   "producer_seconds": 97.14,
+   "producer_seconds": 95.27,
    "summary": {
     "status": "passed",
     "kind": "finite_support",
@@ -373,7 +373,7 @@
    "sha256": "534faca9032f74b9272de092d65c355c2dc8d88007d83890d8f5d58726148376",
    "witness_kind": "cubic-phase",
    "replay": "python3 -B extensions/envelope.py check results/hamiltonian/cubic_phase_theorem.json",
-   "producer_seconds": 91.94,
+   "producer_seconds": 89.37,
    "summary": {
     "status": "passed",
     "identities": [
@@ -389,21 +389,24 @@
   },
   {
    "file": "results/hamiltonian/gauge_shear_theorem.json",
-   "sha256": "8a4a29f121153412d9158d0243bf1a71170e5d15e9daaf961e383af5048bc42c",
+   "sha256": "7d867133e893bd249efa86965973fc4d80bc51b00d72d7b2827a0a5d070ae876",
    "witness_kind": "gauge-shear",
    "replay": "python3 -B extensions/envelope.py check results/hamiltonian/gauge_shear_theorem.json",
-   "producer_seconds": 222.5,
+   "producer_seconds": 232.09,
    "summary": {
     "status": "passed",
     "identities": [
      "AE",
+     "BE",
      "C2",
+     "GE",
      "GG",
      "K1c",
      "NA",
-     "T3"
+     "T3",
+     "TG"
     ],
-    "theorem": "gauge form for every shear; third-gate formula; higher-shear affine rigidity; Q-degree containment (b constant, quadratic, degree >= 3; b linear with f >= 4 in the cubic phase); K1, K1' (f >= 4) and K4 exact; non-affine binomial edges collapse (Theorem NA)"
+    "theorem": "gauge form for every shear; third-gate formula; higher-shear affine rigidity; Q-degree containment (b constant, quadratic, degree >= 3; b linear with f >= 4 in the cubic phase); K1, K1' (f >= 4) and K4 exact; non-affine binomial edges collapse (Theorem NA), general first edges (NE) and the boundary edge (NB)"
    }
   },
   {
@@ -431,7 +434,7 @@
    "sha256": "1d8d97a8664aace21e72224db1585fa1c4c0d47101add73788b4b77c764dd8ec",
    "witness_kind": "near-edge",
    "replay": "python3 -B extensions/envelope.py check results/hamiltonian/near_edge_theorem.json",
-   "producer_seconds": 0.64,
+   "producer_seconds": 0.55,
    "summary": {
     "status": "passed",
     "identities": [
@@ -1145,7 +1148,7 @@
    "sha256": "61dec9eb99a6bc2405bfdc8d8f064f775c2c92d00219353f7ae8e3cdf6c7b9f6",
    "witness_kind": "triangular-pure",
    "replay": "python3 -B extensions/envelope.py check results/hamiltonian/triangular_K2_q3p_squared.json",
-   "producer_seconds": 0.01,
+   "producer_seconds": 0.0,
    "summary": {
     "status": "passed",
     "family": "K2",
@@ -1201,7 +1204,7 @@
    "sha256": "9c1e3df602718c08f3f07cdb8805ea9c7a0f3fa17c48dde8d2c95160462cdcb7",
    "witness_kind": "triangular-pure",
    "replay": "python3 -B extensions/envelope.py check results/hamiltonian/triangular_theorem.json",
-   "producer_seconds": 1.81,
+   "producer_seconds": 1.73,
    "summary": {
     "status": "passed",
     "identities": [

@@ -10,14 +10,17 @@
   "format": "gauge-shear-v1",
   "identities": [
    "AE",
+   "BE",
    "C2",
+   "GE",
    "GG",
    "K1c",
    "NA",
-   "T3"
+   "T3",
+   "TG"
   ]
  },
- "payload_sha256": "32ea1fcac49dce794623ede5156d536c20b168d2d9d634fe98c1f069012f32fb",
+ "payload_sha256": "a5709d414f7ed5491f9ab0f5c77ad355af493fc24af9730fb5d07748dccccf84",
  "hypotheses": [
   "characteristic zero",
   "gauge form S_t o flat o (S_t^-1 x S_t^-1) of the triangular gates"

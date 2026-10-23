@@ -80,6 +80,36 @@ lemma gives dim D_inf(H~) <= 2. For s = 2 (d >= 3) the kernel also contains Q^i 
 d Q^(i+d-1) - 2i Q^(i-1) P^2 leave the kernel for i >= 2, and the remaining chains
 (P -> Q^(d-1), Q -> P, Q^2 -> QP -> d Q^d - 2P^2) are followed to the end.        [NA: formula, instances]
 
+Theorem NE (general first edges). Let s >= 3, let the first edge E of h from P^s have slope alpha above
+the threshold (alpha > 1/2 for e = 2, alpha e > 1 for e >= 3) and kappa = s - 1 - alpha > 0, and for e = 2 let E
+contain a monomial of Q-exponent >= 2. Then D_inf(H~) = span{1, H~}.
+Proof. (1) Top gates in closed form. On the diagonal B^m(a (x) b) = d^m(a^(m) b^(m)) and
+(d2 - d1) B^m(a (x) b) = d^m(a^(m) b^(m+1) - a^(m+1) b^(m)) (d = d_P). Hence the top gates vanish on g
+iff for every m >= 1
+    e = 2:  {E^(m), g^(m)} has P-degree < m;
+    e >= 3: 3Q {E^(m), g^(m)} + m(e-2)(E^(m) g^(m+1) - E^(m+1) g^(m)) has P-degree < m.
+(2) Finiteness. The normal form has no P^(s-1) term, so E^(s-1) = s! c0 P. At m = s - 1 this bounds the
+Q-dependent monomials of a top-core element by P-degree 2s - 3 (e = 2), respectively excludes every
+monomial of P-degree >= 2s - 2 except along one ray, which D then excludes (e >= 3). Tracking the
+P-top of D g and D^2 g (it is -s i Q^(i-1) P^(j+s-1), uncancelled) kills all weights >= 3s - 2 (e = 2;
+here a monomial of Q-exponent >= 2 in E removes the pure P-part), respectively > 2s - 3 (e >= 3).
+(3) The top core V is finite-dimensional and D raises the weight by kappa > 0, so D is nilpotent on V.
+ker D is the Poisson centralizer K[G] of E (E = c G^k); the m = 1 condition on G^m gives
+(k - m) k m G^(k+m-3) G_P {G, G_P} (e = 2), respectively (k - m) k m G^(k+m-3) G_P [3Q{G, G_P} - (e-2) G_P^2],
+of positive P-degree for m not in {0, k}. A longer chain would need g of weight alpha + 1 with
+{E, g} = lambda E, lambda != 0: the eigen-equations force alpha in Z and E = P^m (P^alpha + k Q)^a, g = P (P^alpha + k Q)
+(excluded by the m = 1 condition), or alpha = 1 with g quadratic (excluded by the Q^0 part of the m = 1
+condition, since E has no Q P^(s-1) term). So V = span{1, E}.                [TG, GE: identities, instances]
+
+Theorem NB (boundary edge). If s = 2 and h = c0 P^2 + c Q^(2e) + lower with deg w = e >= 2 (slope 1/e), then
+D_inf(H~) = span{1, H~}. At this slope all terms of Theorem X are top: the top problem is the flat core of
+F = (p + q^e)^2 + c q^(2e). T_3 is the first-order equation [2(e-2)p + 4g(2e-1)q^e] u_p = 6 q u_q for u = g_pp
+(g = 1 + c), so u = q^a L^nu with L = 2p + 2g q^e, nu = 3(W - 2e)/(4e - 2), a = nu(e - 2)/3. T_5 then needs
+(nu - 2)(e - 4) = 5a and (nu - 2) K(e) = 0 with K(e) = (2e)_5 - 2(e)_5 - 10 e (e)_4 = 20 e^2 (e-1)^2 (e-2), leaving
+nu in {0, 1} for e >= 3; closure under D removes everything except 1 and F. For e = 2 every nu passes
+(L is a quadratic-shear coordinate); D removes all weights >= 6, and weights <= 7 are solved exactly
+(maximal minors vanish only at c = 0).                                       [BE: identity, instances]
+
 Corollary K1c. (i) deg w = 2, H = F(P) + lambda Q, deg F >= 3: D_inf(H~) = K[P] + K Q exactly.
 (ii) deg w >= 3, H = F(P) + lambda Q, deg F >= 3: D_inf(H~) = span{1, H~}.     [K1c: instances]
 
@@ -90,7 +120,7 @@ import json
 import random
 import sys
 from fractions import Fraction as F
-from math import factorial
+from math import comb, factorial
 from pathlib import Path
 
 sys.path[:0] = [str(Path(__file__).resolve().parent), str(Path(__file__).resolve().parent.parent)]
@@ -267,9 +297,98 @@ def grid_NA():
     return True
 
 
+def dP(u, n=1):
+    return W.pder(u, 0, n) if n else u
+
+
+def pb(f, g):
+    return W.act(W.derivation(f), g)
+
+
+def B_pow(a, b, m, twist=False):
+    """[(d2 - d1)?] B^m (a (x) b) on the diagonal, from the expansion B^m = sum_i C(m,i) d1^(m+i) d2^(2m-i)."""
+    out = {}
+    for i in range(m + 1):
+        c = F(comb(m, i))
+        x, y = dP(a, m + i), dP(b, 2 * m - i)
+        if not twist:
+            out = TR.add(out, TR.sc(TR.mul(x, y), c))
+        else:
+            out = TR.add(out, TR.sc(TR.mul(x, dP(y)), c), TR.sc(TR.mul(dP(x), y), -c))
+    return out
+
+
+def grid_TG(seed=29):
+    rng = random.Random(seed)
+    for _ in range(12):
+        a, b = CT.rand_poly(rng, rng.randint(2, 7)), CT.rand_poly(rng, rng.randint(2, 7))
+        for m in (1, 2, 3):
+            if B_pow(a, b, m) != dP(TR.mul(dP(a, m), dP(b, m)), m):
+                return False
+            if B_pow(a, b, m, True) != dP(TR.add(TR.mul(dP(a, m), dP(b, m + 1)), TR.sc(TR.mul(dP(a, m + 1), dP(b, m)), -1)), m):
+                return False
+            # cubic-phase top gate A B^m (E (x) g) = d^m {E^(m), g^(m)}
+            lhs = TR.add(B_pow(W.pder(a, 1, 0), dP(b), m), TR.sc(B_pow(dP(a), W.pder(b, 1, 0), m), -1))
+            if lhs != dP(pb(dP(a, m), dP(b, m)), m):
+                return False
+    return True
+
+
+def grid_GE():
+    cases = [({(0, 3): F(1), (2, 1): F(1)}, {2: F(1)}, 7),                  # cubic, edge P^3 + Q^2 P
+             ({(0, 4): F(1), (1, 2): F(1), (2, 0): F(1)}, {2: F(1)}, 8),    # cubic, edge P^4 + Q P^2 + Q^2
+             ({(0, 3): F(1), (2, 1): F(1), (2, 0): F(1)}, {3: F(1)}, 9)]    # e = 3, edge P^3 + Q^2 P
+    for h, w, N in cases:
+        H = TR.tidy(CT.tri(h, w))
+        if full_dim(H, N) != 1 + (N >= TR.degree(H)):
+            return False
+    return True
+
+
+def ff_(x, k):
+    out = 1
+    for i in range(k):
+        out *= (x - i)
+    return out
+
+
+def flat_core_dims(Fh, e, Wmax, R=5):
+    D, gates = W.derivation(Fh), {k: W.gate(Fh, k) for k in (3, 5, 7, 9)}
+    out = []
+    for Wt in range(Wmax + 1):
+        mons = [(Wt - e * j, j) for j in range(Wt // e + 1)]
+        cols = []
+        for mm in mons:
+            g, img = {mm: F(1)}, {}
+            for r in range(R + 1):
+                for k, C in gates.items():
+                    for ee, v in W.act(C, g).items():
+                        img[(r, k, ee)] = v
+                g = W.act(D, g)
+            cols.append(img)
+        keys = sorted({k for c in cols for k in c})
+        M = [[c.get(k, F(0)) for c in cols] for k in keys]
+        dm = len(mons) - (L.rank(M, len(mons)) if M else 0)
+        if dm:
+            out.append((Wt, dm))
+    return out
+
+
+def grid_BE():
+    # K(e) is a polynomial of degree 5 in e: 9 values determine it
+    for e in range(2, 11):
+        if ff_(2 * e, 5) - 2 * ff_(e, 5) - 10 * e * ff_(e, 4) != 20 * e * e * (e - 1) ** 2 * (e - 2):
+            return False
+    for e, c, Wmax in [(2, F(1), 9), (2, F(-3), 9), (2, F(1, 2), 9), (3, F(1), 14), (4, F(-2), 18)]:
+        Fh = TR.tidy({(0, 2): F(1), (e, 1): F(2), (2 * e, 0): 1 + c})
+        if flat_core_dims(Fh, e, Wmax) != [(0, 1), (2 * e, 1)]:
+            return False
+    return True
+
+
 def identities():
     return {'GG': grid_GG(), 'T3': grid_T3(), 'AE': grid_AE(), 'K1c': grid_K1c(), 'C2': grid_C2(),
-            'NA': grid_NA()}
+            'NA': grid_NA(), 'TG': grid_TG(), 'GE': grid_GE(), 'BE': grid_BE()}
 
 
 def check(cert=None):
@@ -285,7 +404,7 @@ def check(cert=None):
             'theorem': 'gauge form for every shear; third-gate formula; higher-shear affine rigidity; '
                        'Q-degree containment (b constant, quadratic, degree >= 3; b linear with f >= 4 in the '
                        'cubic phase); K1, K1\' (f >= 4) and K4 exact; '
-                       'non-affine binomial edges collapse (Theorem NA)'}
+                       'non-affine binomial edges collapse (Theorem NA), general first edges (NE) and the boundary edge (NB)'}
 
 
 def main():

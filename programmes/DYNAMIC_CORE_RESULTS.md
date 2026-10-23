@@ -871,33 +871,69 @@ Then `D∞(H) = span{1, H}`.
 
 None of them closes for `d ≥ 3`. ∎
 
-**The `m`-degree-2 tops with constant transverse top are now classified, except on one edge.** These are `H = c(p + w(q))² + r(q)`.
+**The `m`-degree-2 tops with constant transverse top are now classified, apart from the upper bound for K2.** These are `H = c(p + w(q))² + r(q)`.
 
 | condition | `D∞(H)` | source |
 |---|---|---|
 | `deg w < deg r / 2` | `span{1, H}` | Q′ |
 | `deg r ≤ 2` | contains the six quadratics in `(q, P)` | K2; equality conjectural |
 | `3 ≤ deg r < 2 deg w` | `span{1, H}` | NA |
-| `deg r = 2 deg w` | open | — |
+| `deg r = 2 deg w` | `span{1, H}` | NB |
 
-The open case `deg r = 2 deg w` is the edge `P² + cQ^{2e}`, where flat and correction terms tie.
+The case `deg r = 2 deg w` is the edge `P² + cQ^{2e}`, where flat and correction terms tie. It is now proved: Theorem NB. The remarks below record how it was first approached.
 - On monomials the top gate splits into two parts. The first is a diagonal part, `e(e−1)j(j−1)[2(e−2)(j−2) − 6i]·Q^{i+e−3}P^{j−2}`, with the same free monomials as NA. The second is a shift part, `c(2e)(2e−1)(2e−2)·j(j−1)(j−2)·Q^{i+2e−3}P^{j−3}`.
 - So the kernel is no longer spanned by monomials, but the `P`-top of every kernel element is one of the NA free monomials.
 - The top problem, solved weight by weight up to weight 7 for `e = 2, 3` and `c ∈ {1, −1, 2, −1/4}`, gives `span{1, E}` in every case.
 - Full cores computed directly, e.g. `(q²+p)² + q⁴` and `(q³+p)² + q⁶`, are `span{1, H}`.
 
-The general proof is the remaining step.
+The general proof is Theorem NB.
 
 Examples:
 - `(q² + p)³ + q²` and `(q² + p)⁴ + q³ + (q² + p)` collapse to `span{1, H}`. Both were previously reported as open cubic-phase cases.
 - `(q³ + p)³ + q²` collapses as well.
 - The quartic `(q² + p)² + q³` collapses, as does `(q³ + p)² + q⁴`.
 
-**General edges.** The same top problem with a non-binomial first edge was solved weight by weight up to weight 14 (cubic phase) and 12 (`e = 3, 4`). In every case it gave `span{1, E}`. The cases tried were `P³ + Q²P`, `P⁴ + QP² + Q²`, `P⁴ + Q²P` and `P³ + Q³`.
+**Theorem NE (general first edges).** Let `s ≥ 3`, and let the first edge `E` of `h` from `P^s` satisfy two conditions:
+- its slope is above the threshold (`α > 1/2` for `e = 2`, `αe > 1` for `e ≥ 3`);
+- `κ = s − 1 − α > 0`.
 
-*Conjecture.* Every first edge with slope above the threshold that contains a monomial of `Q`-degree at least 2 has top core `span{1, E}`.
+For `e = 2` assume also that `E` contains a monomial of `Q`-exponent at least 2. Then `D∞(H) = span{1, H}`.
 
-What remains below the threshold, or for edges whose only `Q`-terms are linear in `Q`, needs the next edge. The latter is exactly where K1′ and K4 live.
+*Proof.*
+1. *The top gates in closed form.* On the diagonal two identities hold, where `d = ∂_P`:
+   - `B^m(a⊗b) = d^m(a^{(m)}b^{(m)})`;
+   - `(∂₂ − ∂₁)B^m(a⊗b) = d^m(a^{(m)}b^{(m+1)} − a^{(m+1)}b^{(m)})`.
+
+   With the gauge form, the top gates vanish on `g` exactly when, for every `m ≥ 1`:
+   - (`e = 2`) `{E^{(m)}, g^{(m)}}` has `P`-degree less than `m`;
+   - (`e ≥ 3`) `3Q{E^{(m)}, g^{(m)}} + m(e−2)(E^{(m)}g^{(m+1)} − E^{(m+1)}g^{(m)})` has `P`-degree less than `m`.
+
+   For `e = 2` this is the statement that `exp(s∂_P³)` intertwines the bracket on the top core.
+2. *Finiteness.* The normal form has no `P^{s−1}` term, so `E^{(s−1)} = s!c₀P`. The condition at `m = s − 1` then does the following:
+   - for `e = 2`, it bounds the `P`-degree of the `Q`-dependent monomials of a top-core element by `2s − 3`;
+   - for `e ≥ 3`, it excludes every monomial of `P`-degree at least `2s − 2` outside one ray, and `D` excludes the ray.
+
+   The `P`-top of `Dg` is `−s·i·Q^{i−1}P^{j+s−1}`, and nothing cancels it. Following `Dg` and `D²g` kills all weights `≥ 3s − 2` for `e = 2`, and all weights `> 2s − 3` for `e ≥ 3`. For `e = 2` the monomial of `Q`-exponent at least 2 in `E` is what removes pure powers of `P`.
+3. *Nilpotency.* So the top core `V` is finite-dimensional. `D` raises the weight by `κ > 0`, hence is nilpotent on `V`.
+4. *The kernel of `D`.* `ker D` is the Poisson centralizer `K[G]` of `E`, where `E = cG^k`. The `m = 1` condition on `G^m` produces `(k−m)km·G^{k+m−3}G_P{G, G_P}`. For `e ≥ 3` it is `(k−m)km·G^{k+m−3}G_P[3Q{G, G_P} − (e−2)G_P²]`. Both have positive `P`-degree for `m ∉ {0, k}`.
+5. *No longer chains.* A chain of length at least 2 would need `g` of weight `α + 1` with `{E, g} = λE`, `λ ≠ 0`. Solving the eigen-equations monomial by monomial leaves two possibilities:
+   - `α ∈ Z`, `E = P^m(P^α + κ′Q)^a` and `g = P(P^α + κ′Q)`. These are excluded by the `m = 1` condition: in the variables `(R, P)` with `R = P^α + κ′Q` it is a sum of at most three terms, which cannot equal a power of `R − P^α`. For `e ≥ 3` its `Q⁰`-part is proportional to `α − (s−1) ≠ 0`.
+   - `α = 1` with `g` quadratic. This is excluded by the `Q⁰`-part of the `m = 1` condition, because `E` has no `QP^{s−1}` term.
+
+   So `V = span{1, E}`. ∎
+
+The extra hypothesis for `e = 2` is necessary. First edges whose only `Q`-terms are linear in `Q` are exactly where the exceptional cores K1′ and K4 live.
+
+**Theorem NB (the boundary edge).** Let `s = 2` and `h = c₀P² + cQ^{2e} + (lower)` with `deg w = e ≥ 2`, so that the slope is `1/e`. Then `D∞(H) = span{1, H}`.
+
+*Proof.*
+1. *Reduction to a flat problem.* At slope `1/e` every term of Theorem X is top. The top problem is therefore the flat core of `F = (p + q^e)² + cq^{2e}`, which is quasi-homogeneous for the weights `(1, e)`.
+2. *The third gate.* For `u = g_pp`, `T₃` is the first-order equation `[2(e−2)p + 4γ(2e−1)q^e]u_p = 6q·u_q`, where `γ = 1 + c`. So `u = q^aL^ν`, with `L = 2p + 2γq^e`, `ν = 3(W − 2e)/(4e−2)` and `a = ν(e−2)/3`.
+3. *The fifth gate.* `T₅` requires `(ν−2)(e−4) = 5a` and `(ν−2)K(e) = 0`, where `K(e) = (2e)₅ − 2(e)₅ − 10e(e)₄ = 20e²(e−1)²(e−2)`. For `e ≥ 3` only `ν ∈ {0, 1}` survive.
+4. *Closure under `D`, for `e ≥ 3`.* Every remaining candidate is eliminated except 1 and `F`. This uses `β² − 4γ = −4c ≠ 0`.
+5. *The case `e = 2`.* Here every `ν` survives, because `L` is itself a quadratic-shear coordinate. But `D(L^n) = −8cn·qpL^{n−1}` has `p`-degree `n`, so `D` removes all weights `≥ 6`. The weights up to 7 were solved exactly in `c`: the maximal minors vanish only at `c = 0`. ∎
+
+Together with Q′, K2 and NA, this settles the `m`-degree-2 tops with constant transverse top, apart from the upper bound for K2.
 
 **Certificate depth across the families.** Direct computation in degrees up to `d + 1` shows that the third gate alone (`K = 3`) cuts out every core listed. The number of brackets needed is:
 - `R = 1` for K1, K1′, K4 and RS;
@@ -905,7 +941,13 @@ What remains below the threshold, or for edges whose only `Q`-terms are linear i
 
 For the quadratic-shear oscillator `(q² + p)² + κq²/2` with `κ ≠ 0`, `R = 3` is needed up to degree 8, while `κ = 0` keeps the infinite tower. For the cubic shear `(q³ + p)² + q²/2`, `R = 2` suffices. This agrees with the depth jump found in the parallel line of work.
 
-`check_gauge.py` [NA] verifies the monomial formula on a grid of `(e, s, d, i, j)`, and checks three instances by direct computation. `check_two_root.py` reports these Hamiltonians on the proved route `NA`.
+`check_gauge.py` covers these theorems as follows:
+- **[NA]** the monomial formula on a grid of `(e, s, d, i, j)`, plus three instances computed directly;
+- **[TG]** the two diagonal identities and the closed form of the cubic-phase top gates, on random polynomials;
+- **[GE]** non-binomial edges (cubic phase and `e = 3`), whose full cores are computed directly;
+- **[BE]** the identity for `K(e)`, verified at 9 values of `e`, plus boundary flat cores for `e = 2, 3, 4` and several `c`.
+
+`check_two_root.py` reports these Hamiltonians on the proved routes `NA`, `NE` and `NB`.
 
 ### 6.13 Context (literature check, preliminary)
 
@@ -945,13 +987,11 @@ Proved:
 - `s ≤ 1` (Theorem P⁺).
 - `deg φ ≥ 2` and not a perfect power (Theorem T).
 - `φ` constant, with `h` affine in `Q`: the whole shear phase diagram of §6.11, except linear `b` (the 6-dimensional K1′ sector for `f = 3`, and higher shears).
-- `φ` constant, with `h` non-affine: binomial first edges above the slope threshold (Theorem NA). This includes the `m`-degree-2 range `3 ≤ deg r < 2 deg w`.
+- `φ` constant, with `h` non-affine: every first edge above the slope threshold (Theorems NA and NE), and the whole `m`-degree-2 range `deg r ≥ 3` (Theorems NA and NB).
 - `s = 2` with `deg w < deg r/2` (Theorem Q′).
 
 Open, but supported by direct computation and top-problem solutions:
-- non-binomial first edges;
-- edges below the threshold;
-- the boundary edge `P² + cQ^{2e}`;
+- first edges at or below the slope threshold (for `s ≥ 3`);
 - `φ` linear or a perfect power outside K3;
 - `φ` constant with `deg w ≤ 1` and `s ≥ 3` (flat lower terms);
 - the upper bounds for K2, K3 and K1′ with `f = 3`.

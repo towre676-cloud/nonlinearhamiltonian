@@ -13,6 +13,6 @@ This directory imports the 2026-10-21 handoff programme documents and records wh
 
 ## Next steps
 
-1. Pure tops (`DYNAMIC_CORE_RESULTS.md` §§6.8–6.13). The original two-root conjecture is false for pure tops; balanced and near tops are proved. The gauge form of the triangular gates (§6.10) settles the affine shear phase diagram and non-affine binomial edges. What remains of Conjecture P004 is listed at the end of §6.4: non-binomial and boundary edges, linear `b`, linear or perfect-power transverse tops, and upper bounds for K2, K3 and K1′ (`deg a = 3`). A careful literature review (§6.13) is still needed before any positioning claim.
+1. Pure tops (`DYNAMIC_CORE_RESULTS.md` §§6.8–6.13). The original two-root conjecture is false for pure tops; balanced and near tops are proved. The gauge form of the triangular gates (§6.10) settles the affine shear phase diagram, every non-affine first edge above the slope threshold and the boundary edge. What remains of Conjecture P004 is listed at the end of §6.4: edges at or below the threshold, linear `b`, linear or perfect-power transverse tops, and upper bounds for K2, K3 and K1′ (`deg a = 3`). A careful literature review (§6.13) is still needed before any positioning claim.
 2. Probabilistic or continuous noise for adaptive experiments. This needs posterior semantics and a different termination theorem.
 3. Performance. The Weyl Gröbner backend uses `Fraction` arithmetic without a chain criterion.
