@@ -12,15 +12,8 @@ roots over Qbar, the checker recomputes the top type and applies the proved crit
                                             V = K[l] + m K[l] if d_v^2 H = 0;
                                             span{1, H} if H = f(l) + m g(l) + gamma m^2, gamma != 0,
                                             deg g < d/2 (Theorem Q') or the transverse top is finite
-                                            (Theorem T); the triangular families K1, K1', K2, K3, K4
-                                            (check_triangular.py) have a larger core, of which
-                                            the stated span is proved to be contained in D_inf;
-                                            when the transverse top is constant and the
-                                            completed power has degree 2 (cubic phase) and h
-                                            is affine in Q, span{1, H} is proved inside
-                                            tau*(K[P] + Q K[P]) (check_cubic_phase.py); other
-                                            cubic-phase cores are open; otherwise span{1, H}
-                                            is conjectural (P004).
+                                            (Theorem T); PP/QC/SC/SS/SO/SCP/QF/QR recognize additional finite
+                                            and infinite pure-top cores; otherwise unclassified.
   near     H_d = c l^(d-1) m                V if d_v^2 H = 0; span{1, H} otherwise (Theorem NE,
                                             check_near_edges.py).                   (complete)
   balanced H_d = c Q^mu, Q a quadratic form  K[G] with G = Q(x - x0) if the translation killing
@@ -272,25 +265,153 @@ def classify(H):
     elif transverse_finite(H, l)[0] and transverse_pure_ok(H, l):
         out.update(route='T', proved=True, core='span{1, H}', active_part='0')
     else:
-        import check_triangular as CT                         # section 6.8: triangular families
-        tri = CT.detect(H, l)
-        if tri is not None:
-            out.update(route=tri['family'], proved=False, core=tri['core'], contains_proved=True,
-                       generators=[ser(g) for g in tri['gens']], degrees=tri['degrees'],
-                       active_part='nonzero (contains an active element)')
-            for key in ('tower_step', 'tower_from', 'G', 'w'):
-                if key in tri:
-                    out[key] = tri[key]
-        elif CT.cubic_phase(H, l) == 'general':
-            out.update(route='pure, cubic phase', proved=False, core='open (at least span{1, H})',
-                       active_part='open')
-        elif CT.cubic_phase(H, l) == 'affine':                # Theorem A, check_cubic_phase.py
-            out.update(route='pure, cubic phase affine', proved=False,
-                       core='span{1, H} (proved within tau*(K[P] + Q K[P]); conjectured)',
-                       active_part='0 (conjectured)')
+        pp = pure_additional_routes(H, l)
+        if pp is not None:
+            out.update(pp)
         else:
-            out.update(route='pure, conjectural', proved=False, core='span{1, H} (conjectured)',
-                       active_part='0 (conjectured)')
+            import check_triangular as CT
+            tri = CT.detect(H, l)
+            out.update(route='pure, unresolved', proved=False, core='unclassified',
+                       active_part='unclassified (the former blanket conjecture is false)')
+            if tri is not None:
+                out.update(route=tri['family'], contains_proved=True,
+                           core_contains=tri['core'],
+                           generators=[ser(g) for g in tri['gens']],
+                           containment_degrees=tri['degrees'])
+                for key in ('tower_step', 'tower_from', 'G', 'w'):
+                    if key in tri:
+                        out[key] = tri[key]
+            elif CT.cubic_phase(H, l):
+                out['route'] = 'pure, cubic phase'
+                out['cubic_phase_chart'] = CT.cubic_phase(H, l)
+    return out
+
+
+def pure_additional_routes(H, l):
+    """Exact pure-top routes in root coordinates, with affine GL2 transport.
+
+    The all-degree classification and exact recognizer live together in the
+    research package. No finite-degree dimension computation is used here.
+    """
+    import importlib.util
+    root = Path(__file__).resolve().parents[2] / 'research/core_overlap'
+    # The modules share exact polynomial utilities; keep this package first
+    # while importing, regardless of the caller's current working directory.
+    if str(root) not in sys.path:
+        sys.path.insert(0, str(root))
+    def load(name):
+        key = '_core_overlap_' + name
+        if key not in sys.modules:
+            spec = importlib.util.spec_from_file_location(key, root / (name + '.py'))
+            module = importlib.util.module_from_spec(spec)
+            spec.loader.exec_module(module)
+            sys.modules[key] = module
+        return sys.modules[key]
+    def integer_poly(P):
+        # Analytic checkers use Fraction exponents internally; these routes
+        # have already certified nonnegative integral polynomial exponents.
+        return {(int(i), int(j)): F(c) for (i, j), c in P.items()}
+    Ht = coords(H, l)
+    m = lin(0, 1) if l.get((1, 0), F(0)) else lin(1, 0)
+    ss = load('analytic_shear_square').recognize(Ht)
+    if ss is not None:
+        Q = comp({(int(i), int(j)): F(c) for (i, j), c in ss['Q'].items()}, l, m)
+        return {'route': 'SS', 'proved': True,
+                'core': 'span{1, l, Q, l^2, lQ, Q^2}', 'dimension': 6,
+                'active_part': 'finite nonzero', 'Q': ser(Q), 'l': ser(l),
+                'root_coordinate_witness': {k: str(ss[k]) for k in ('A', 'B', 'epsilon', 'constant')}}
+    so = load('shear_oscillator').recognize(Ht)
+    if so is not None:
+        Q = comp(integer_poly(so['Q']), l, m)
+        return {'route': 'SO', 'proved': True,
+                'core': 'span{1, l, Q, l^2, lQ, Q^2}', 'dimension': 6,
+                'active_part': 'finite nonzero', 'Q': ser(Q), 'l': ser(l),
+                'third_gate_depth': so['third_gate_depth'],
+                'basis': [ser(comp(integer_poly(f), l, m)) for f in so['basis']],
+                'root_coordinate_witness': {k: str(so[k]) for k in
+                                            ('A', 'B', 'kappa', 'epsilon', 'constant')}}
+    qc = load('pure_quadratic_composition').classify(Ht)
+    if qc is not None:
+        Qt = {(i, j): F(c) for i, j, c in qc['Q']}
+        Q = comp(Qt, l, m)
+        core = ('K[Q] + span{l, lQ, l^2}' if qc['degree_P'] == 2
+                else 'K[Q] + K*l')
+        return {'route': 'QC', 'proved': True, 'core': core,
+                'active_part': qc['active_part'], 'Q': ser(Q), 'l': ser(l),
+                'degree_composition': qc['degree_P'],
+                'root_coordinate_witness': {k: qc[k] for k in ('P', 'epsilon')}}
+    scp = load('shear_composition_complete').recognize(Ht)
+    if scp is not None:
+        return {'route': 'SCP', 'proved': True, 'core': 'span{1, H}',
+                'dimension': 2, 'active_part': '0', 'third_gate_depth': 1,
+                'degree_shear': scp['degree_u'],
+                'degree_composition': scp['degree_P'],
+                'composition_generator': ser(comp(integer_poly(scp['Q']), l, m))}
+    qf = load('quadratic_frontier').classify(Ht)
+    if qf is not None:
+        basis = [{(i, j): F(c) for i, j, c in f} for f in qf['basis']]
+        return {'route': 'QF', 'proved': True,
+                'core': ('span{1, H}' if qf['dimension'] == 2 else
+                         'span{1, l, Q, l^2, lQ, Q^2}'),
+                'dimension': qf['dimension'],
+                'active_part': '0' if qf['dimension'] == 2 else 'finite nonzero',
+                'basis': [ser(comp(f, l, m)) for f in basis],
+                'third_gate_depth': qf['third_gate_depth'],
+                'root_weight': qf['weight'],
+                'weighted_degree_bound': qf['weighted_degree_bound'],
+                'weighted_certificate': qf['certificate']}
+    qr = load('quadratic_shear_residual').classify(Ht)
+    if qr is not None:
+        return {'route': 'QR', 'proved': True, 'core': 'span{1, H}',
+                'dimension': 2, 'active_part': '0',
+                'third_gate_depth': qr['third_gate_depth'],
+                'root_coordinate_witness': {k: qr[k] for k in
+                                            ('A', 'u', 'V', 'proof')},
+                **({'normalization': qr['normalization']} if
+                   'normalization' in qr else {})}
+    sc = load('audit_composition_recognize').recognize(Ht)
+    if sc is not None:
+        Jt = {tuple(map(int, k.split(','))): F(c) for k, c in sc['J'].items()}
+        J = comp(Jt, l, m)
+        result = {'route': 'SC', 'proved': True,
+                  'core': 'span{1, H, G}' if sc['J_is_core'] else 'span{1, H}',
+                  'active_part': sc['active_part'], 'composition_generator': ser(J),
+                  'composition_generator_is_core': sc['J_is_core'],
+                  'composition_coefficients': sc['composition_coefficients']}
+        if sc['J_is_core']:
+            result.update(G=ser(J), generator_degree=degree(J))
+        return result
+    result = load('pure_transverse').classify(Ht)
+    if result is None:
+        hr = load('higher_restoring').recognize(Ht)
+        if hr is not None:
+            return {'route': 'HR', 'proved': True, 'core': 'span{1, H}',
+                    'dimension': 2, 'active_part': '0', 'third_gate_depth': 3,
+                    'degree_composition': hr['degree_composition'],
+                    'root_coordinate_witness': {k: str(hr[k]) for k in ('c', 'lambda', 'epsilon')},
+                    'basis': [ser({(0, 0): F(1)}), ser(H)]}
+        cp = load('cubic_phase_classification').recognize(Ht)
+        if cp is not None:
+            out = {'route': 'CP', 'proved': True, 'core': cp['core'],
+                   'dimension': cp['dimension'], 'case': cp['case'],
+                   'active_part': '0' if cp['dimension'] == 2 else 'see exact derivation action',
+                   'root_coordinate_witness': {'w': {str(i): str(c) for i, c in cp['w'].items()},
+                                               'degree_a': cp['degree_a'], 'degree_b': cp['degree_b']}}
+            if 'basis' in cp:
+                out['basis'] = [ser(comp(integer_poly(g), l, m)) for g in cp['basis']]
+            for key in ('third_gate_depth', 'third_gate_depth_bound',
+                        'stopping_bound_sharp', 'third_gate_weight_shifts'):
+                if key in cp:
+                    out[key] = cp[key]
+            return out
+        return None
+    out = {'route': 'PP', 'proved': True, 'core': 'span{1, H}', 'active_part': '0',
+           'transverse': {k: result[k] for k in ('r', 's', 'gamma', 'dimension', 'reason')}}
+    if result['dimension'] == 3:
+        Gt = {(i, j): F(c) for i, j, c in result['J']}
+        G = comp(Gt, l, m)
+        out.update(core='span{1, H, G}', G=ser(G), generator_degree=degree(G),
+                   active_part='K G modulo stationary span{1,H}')
     return out
 
 

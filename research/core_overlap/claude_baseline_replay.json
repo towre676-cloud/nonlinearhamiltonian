@@ -1,0 +1,471 @@
+{
+ "status": "passed",
+ "suites": [
+  {
+   "name": "O1 observer v2",
+   "status": "passed",
+   "seconds": 0.4,
+   "summary": "Ran 11 tests in 0.310s OK"
+  },
+  {
+   "name": "O2 noise-aware panels",
+   "status": "passed",
+   "seconds": 2.3,
+   "summary": "Ran 12 tests in 2.277s OK"
+  },
+  {
+   "name": "O3 adaptive Bellman",
+   "status": "passed",
+   "seconds": 0.1,
+   "summary": "Ran 7 tests in 0.021s OK"
+  },
+  {
+   "name": "W1 Weyl discovery and kernels",
+   "status": "passed",
+   "seconds": 54.5,
+   "summary": "Ran 10 tests in 54.462s OK"
+  },
+  {
+   "name": "W2 six-parameter top reduction",
+   "status": "passed",
+   "seconds": 107.9,
+   "summary": "Ran 3 tests in 107.863s OK"
+  },
+  {
+   "name": "W3 quartic per-degree rigidity",
+   "status": "passed",
+   "seconds": 7.0,
+   "summary": "Ran 5 tests in 6.956s OK"
+  },
+  {
+   "name": "W3 quartic all-degree theorem",
+   "status": "passed",
+   "seconds": 21.0,
+   "summary": "Ran 3 tests in 20.962s OK"
+  },
+  {
+   "name": "W4 quintic and sextic classification",
+   "status": "passed",
+   "seconds": 3.4,
+   "summary": "Ran 4 tests in 3.325s OK"
+  },
+  {
+   "name": "W5 arbitrary-degree rigidity",
+   "status": "passed",
+   "seconds": 53.0,
+   "summary": "Ran 11 tests in 52.969s OK"
+  },
+  {
+   "name": "W6 two-root tops with perturbations",
+   "status": "passed",
+   "seconds": 34.8,
+   "summary": "Ran 5 tests in 34.743s OK"
+  },
+  {
+   "name": "S0 contraction seed",
+   "status": "passed",
+   "seconds": 0.1,
+   "summary": "Ran 6 tests in 0.044s OK"
+  },
+  {
+   "name": "S1 obstruction interface",
+   "status": "passed",
+   "seconds": 0.3,
+   "summary": "Ran 6 tests in 0.211s OK"
+  },
+  {
+   "name": "S2 DGLA lifting",
+   "status": "passed",
+   "seconds": 15.7,
+   "summary": "Ran 7 tests in 15.600s OK"
+  },
+  {
+   "name": "S3 integer Smith cohomology",
+   "status": "passed",
+   "seconds": 0.1,
+   "summary": "Ran 6 tests in 0.020s OK"
+  },
+  {
+   "name": "A1 Pell orbits",
+   "status": "passed",
+   "seconds": 0.5,
+   "summary": "Ran 10 tests in 0.477s OK"
+  },
+  {
+   "name": "A2 fundamental units",
+   "status": "passed",
+   "seconds": 0.2,
+   "summary": "Ran 6 tests in 0.102s OK"
+  },
+  {
+   "name": "C0 envelopes",
+   "status": "passed",
+   "seconds": 0.2,
+   "summary": "Ran 2 tests in 0.096s OK"
+  }
+ ],
+ "seeds": [
+  {
+   "name": "seed observer reference (26 checks)",
+   "status": "passed",
+   "seconds": 0.0
+  },
+  {
+   "name": "seed Weyl receipts vs baseline star engine",
+   "status": "passed",
+   "seconds": 0.2
+  },
+  {
+   "name": "seed counterexamples",
+   "status": "passed",
+   "seconds": 0.0
+  },
+  {
+   "name": "quartic covariant route (supplementary)",
+   "status": "passed",
+   "seconds": 0.5
+  }
+ ],
+ "results": [
+  {
+   "file": "results/arithmetic/fundamental_unit_D2.json",
+   "status": "passed",
+   "seconds": 0.1
+  },
+  {
+   "file": "results/arithmetic/fundamental_unit_D61.json",
+   "status": "passed",
+   "seconds": 0.1
+  },
+  {
+   "file": "results/arithmetic/fundamental_unit_D991.json",
+   "status": "passed",
+   "seconds": 0.1
+  },
+  {
+   "file": "results/arithmetic/pell_D13_Nm3_unitfundamental.json",
+   "status": "passed",
+   "seconds": 0.1
+  },
+  {
+   "file": "results/arithmetic/pell_D2_N1_unit3_2.json",
+   "status": "passed",
+   "seconds": 0.1
+  },
+  {
+   "file": "results/arithmetic/pell_D2_Nm7_unit17_12.json",
+   "status": "passed",
+   "seconds": 0.1
+  },
+  {
+   "file": "results/arithmetic/pell_D2_Nm7_unit3_2.json",
+   "status": "passed",
+   "seconds": 0.1
+  },
+  {
+   "file": "results/arithmetic/pell_D3_Nm2_unit2_1.json",
+   "status": "passed",
+   "seconds": 0.1
+  },
+  {
+   "file": "results/arithmetic/pell_D5_Nm4_unit9_4.json",
+   "status": "passed",
+   "seconds": 0.1
+  },
+  {
+   "file": "results/hamiltonian/balanced_top_theorem.json",
+   "status": "passed",
+   "seconds": 0.1
+  },
+  {
+   "file": "results/hamiltonian/binary_static_d5.json",
+   "status": "passed",
+   "seconds": 0.2
+  },
+  {
+   "file": "results/hamiltonian/binary_static_d6.json.gz",
+   "status": "passed",
+   "seconds": 1.4
+  },
+  {
+   "file": "results/hamiltonian/binomial_q4_plus_p2.json",
+   "status": "passed",
+   "seconds": 0.4
+  },
+  {
+   "file": "results/hamiltonian/binomial_q5_plus_p2.json",
+   "status": "passed",
+   "seconds": 1.6
+  },
+  {
+   "file": "results/hamiltonian/binomial_qp2_plus_q2.json",
+   "status": "passed",
+   "seconds": 0.2
+  },
+  {
+   "file": "results/hamiltonian/binomial_qp4_plus_q2.json.gz",
+   "status": "passed",
+   "seconds": 24.4
+  },
+  {
+   "file": "results/hamiltonian/monomial_theorem.json",
+   "status": "passed",
+   "seconds": 0.1
+  },
+  {
+   "file": "results/hamiltonian/p3_plus_q2.json",
+   "status": "passed",
+   "seconds": 0.2
+  },
+  {
+   "file": "results/hamiltonian/q2p2.json",
+   "status": "passed",
+   "seconds": 0.1
+  },
+  {
+   "file": "results/hamiltonian/q2p3.json",
+   "status": "passed",
+   "seconds": 0.2
+  },
+  {
+   "file": "results/hamiltonian/q3.json",
+   "status": "passed",
+   "seconds": 0.1
+  },
+  {
+   "file": "results/hamiltonian/q3p3.json",
+   "status": "passed",
+   "seconds": 0.1
+  },
+  {
+   "file": "results/hamiltonian/qp3.json",
+   "status": "passed",
+   "seconds": 0.1
+  },
+  {
+   "file": "results/hamiltonian/qp3_plus_p2.json",
+   "status": "passed",
+   "seconds": 0.1
+  },
+  {
+   "file": "results/hamiltonian/qp3_plus_q2.json",
+   "status": "passed",
+   "seconds": 3.3
+  },
+  {
+   "file": "results/hamiltonian/qp3_plus_q2_plus_p2.json.gz",
+   "status": "passed",
+   "seconds": 60.8
+  },
+  {
+   "file": "results/hamiltonian/quartic_211_q3p_plus_q2p2.json.gz",
+   "status": "passed",
+   "seconds": 10.4
+  },
+  {
+   "file": "results/hamiltonian/quartic_all_degrees_theorem.json",
+   "status": "passed",
+   "seconds": 47.2
+  },
+  {
+   "file": "results/hamiltonian/quartic_lambda0_q4_plus_p4.json",
+   "status": "passed",
+   "seconds": 0.5
+  },
+  {
+   "file": "results/hamiltonian/quartic_lambda1.json.gz",
+   "status": "passed",
+   "seconds": 13.3
+  },
+  {
+   "file": "results/hamiltonian/quartic_q3p.json",
+   "status": "passed",
+   "seconds": 0.1
+  },
+  {
+   "file": "results/hamiltonian/quartic_q4.json",
+   "status": "passed",
+   "seconds": 0.1
+  },
+  {
+   "file": "results/hamiltonian/quintic_q4p.json",
+   "status": "passed",
+   "seconds": 0.1
+  },
+  {
+   "file": "results/hamiltonian/quintic_q5.json",
+   "status": "passed",
+   "seconds": 0.1
+  },
+  {
+   "file": "results/hamiltonian/rigidity_octic_4211_perturbed.json",
+   "status": "passed",
+   "seconds": 0.1
+  },
+  {
+   "file": "results/hamiltonian/rigidity_octic_squarefree.json",
+   "status": "passed",
+   "seconds": 0.1
+  },
+  {
+   "file": "results/hamiltonian/rigidity_q5p3_monomial.json",
+   "status": "passed",
+   "seconds": 0.1
+  },
+  {
+   "file": "results/hamiltonian/rigidity_septic_squarefree_perturbed.json",
+   "status": "passed",
+   "seconds": 0.1
+  },
+  {
+   "file": "results/hamiltonian/rigidity_sextic_3111_perturbed.json",
+   "status": "passed",
+   "seconds": 0.1
+  },
+  {
+   "file": "results/hamiltonian/sextic_q4p2.json",
+   "status": "passed",
+   "seconds": 0.3
+  },
+  {
+   "file": "results/hamiltonian/sextic_q5p.json",
+   "status": "passed",
+   "seconds": 0.1
+  },
+  {
+   "file": "results/hamiltonian/sextic_q6.json",
+   "status": "passed",
+   "seconds": 0.1
+  },
+  {
+   "file": "results/hamiltonian/simple_root_rigidity.json",
+   "status": "passed",
+   "seconds": 25.0
+  },
+  {
+   "file": "results/hamiltonian/six_a0_b2_c3_d1_e1.json",
+   "status": "passed",
+   "seconds": 0.1
+  },
+  {
+   "file": "results/hamiltonian/six_a0_c_minus1_e7_f4.json",
+   "status": "passed",
+   "seconds": 0.2
+  },
+  {
+   "file": "results/hamiltonian/six_a1_b2_c3_e1.json",
+   "status": "passed",
+   "seconds": 5.0
+  },
+  {
+   "file": "results/hamiltonian/six_a_minus2_b_half_d5.json",
+   "status": "passed",
+   "seconds": 3.7
+  },
+  {
+   "file": "results/hamiltonian/tworoot_balanced_KG.json",
+   "status": "passed",
+   "seconds": 0.1
+  },
+  {
+   "file": "results/hamiltonian/tworoot_balanced_box.json",
+   "status": "passed",
+   "seconds": 0.1
+  },
+  {
+   "file": "results/hamiltonian/tworoot_near_affine.json",
+   "status": "passed",
+   "seconds": 0.1
+  },
+  {
+   "file": "results/hamiltonian/tworoot_near_q2_family.json",
+   "status": "passed",
+   "seconds": 0.1
+  },
+  {
+   "file": "results/hamiltonian/tworoot_pure_p2_family.json",
+   "status": "passed",
+   "seconds": 0.1
+  },
+  {
+   "file": "results/hamiltonian/tworoot_pure_strip.json",
+   "status": "passed",
+   "seconds": 0.1
+  },
+  {
+   "file": "results/hamiltonian/tworoot_unequal_generic.json",
+   "status": "passed",
+   "seconds": 0.1
+  },
+  {
+   "file": "results/hamiltonian/tworoot_unequal_normal_form.json",
+   "status": "passed",
+   "seconds": 0.1
+  },
+  {
+   "file": "results/observer/correlated_finite_horizon.json",
+   "status": "passed",
+   "seconds": 0.1
+  },
+  {
+   "file": "results/observer/feed_example.json",
+   "status": "passed",
+   "seconds": 0.1
+  },
+  {
+   "file": "results/observer/rank_perfect_ill_conditioned.json",
+   "status": "passed",
+   "seconds": 0.1
+  },
+  {
+   "file": "results/observer/target_only_decision.json",
+   "status": "passed",
+   "seconds": 0.1
+  },
+  {
+   "file": "results/structure/dgla_toy_obstructed.json",
+   "status": "passed",
+   "seconds": 0.1
+  },
+  {
+   "file": "results/structure/heisenberg_lift_order4.json",
+   "status": "passed",
+   "seconds": 2.0
+  },
+  {
+   "file": "results/structure/heisenberg_order2_obstruction.json",
+   "status": "passed",
+   "seconds": 2.0
+  },
+  {
+   "file": "results/structure/heisenberg_order3_jet_obstruction.json",
+   "status": "passed",
+   "seconds": 2.0
+  },
+  {
+   "file": "results/structure/klein_bottle_torsion_witness.json",
+   "status": "passed",
+   "seconds": 0.1
+  },
+  {
+   "file": "results/structure/rp2_integral_cohomology.json",
+   "status": "passed",
+   "seconds": 0.1
+  },
+  {
+   "file": "results/structure/times_two_rational_vs_integral.json",
+   "status": "passed",
+   "seconds": 0.1
+  },
+  {
+   "file": "results/structure/triangle_obstruction.json",
+   "status": "passed",
+   "seconds": 0.1
+  },
+  {
+   "file": "results/structure/triangle_primitive.json",
+   "status": "passed",
+   "seconds": 0.1
+  }
+ ]
+}

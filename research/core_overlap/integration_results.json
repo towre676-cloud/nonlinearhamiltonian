@@ -1,0 +1,62 @@
+{
+  "status": "passed",
+  "counts": {
+    "coefficient_box_families": 3888,
+    "broken_closure_perturbations": 3888,
+    "affine_transports": 42,
+    "direct_gate_replays": 147,
+    "direct_closure_replays": 42
+  },
+  "basic_counterexample": {
+    "H": [
+      [
+        3,
+        2,
+        "1"
+      ],
+      [
+        5,
+        1,
+        "2"
+      ],
+      [
+        7,
+        0,
+        "1"
+      ]
+    ],
+    "G": [
+      [
+        1,
+        1,
+        "1"
+      ],
+      [
+        3,
+        0,
+        "1"
+      ]
+    ],
+    "decision": {
+      "degree": 7,
+      "top": "pure",
+      "route": "PP",
+      "proved": true,
+      "core": "span{1, H, G}",
+      "active_part": "K G modulo stationary span{1,H}",
+      "transverse": {
+        "r": 3,
+        "s": 2,
+        "gamma": "0",
+        "dimension": 3,
+        "reason": "exact polynomial closure and every odd gate verified"
+      },
+      "G": {
+        "1,1": "1",
+        "3,0": "1"
+      },
+      "generator_degree": 3
+    }
+  },
+  "scope": "Exact declared coefficient box and rational affine transports; all-degree classification rests on the written proof."
+}

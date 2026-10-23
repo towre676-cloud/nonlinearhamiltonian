@@ -1,0 +1,193 @@
+{
+  "active_extension_scope": "GC1 globally; four-dimensional potential space on regular charts only",
+  "all_degree_proof": "analytic_potential_classification.md, Theorem AP",
+  "arithmetic": "rational coefficients; fractional p powers; formal coefficient parameters",
+  "check_count": 28,
+  "checks": [
+    {
+      "all_coefficients_zero": true,
+      "left_terms": 0,
+      "name": "generic_shifted_cube_stationary",
+      "right_terms": 0
+    },
+    {
+      "all_coefficients_zero": true,
+      "left_terms": 0,
+      "name": "generic_shifted_cube_T3",
+      "right_terms": 0
+    },
+    {
+      "all_coefficients_zero": true,
+      "left_terms": 0,
+      "name": "generic_shifted_cube_T5",
+      "right_terms": 0
+    },
+    {
+      "all_coefficients_zero": true,
+      "left_terms": 0,
+      "name": "generic_shifted_cube_T7",
+      "right_terms": 0
+    },
+    {
+      "all_coefficients_zero": true,
+      "left_terms": 0,
+      "name": "generic_shifted_cube_T9",
+      "right_terms": 0
+    },
+    {
+      "all_coefficients_zero": true,
+      "left_terms": 0,
+      "name": "generic_cubic_candidate_T3",
+      "right_terms": 0
+    },
+    {
+      "all_coefficients_checked": true,
+      "derivative_q_degree": 1,
+      "name": "generic_candidate_derivative_and_cube_difference_in_strip"
+    },
+    {
+      "all_coefficients_zero": true,
+      "left_terms": 0,
+      "name": "generic_compatibility_equation_1",
+      "right_terms": 0
+    },
+    {
+      "all_coefficients_zero": true,
+      "left_terms": 0,
+      "name": "generic_compatibility_equation_2",
+      "right_terms": 0
+    },
+    {
+      "all_coefficients_zero": true,
+      "left_terms": 0,
+      "name": "generic_potential_Euler_equation",
+      "right_terms": 0
+    },
+    {
+      "all_coefficients_zero": true,
+      "left_terms": 1,
+      "name": "generic_constant_offset_recovered",
+      "right_terms": 1
+    },
+    {
+      "all_coefficients_zero": true,
+      "left_terms": 3,
+      "name": "generic_h_reconstruction",
+      "right_terms": 3
+    },
+    {
+      "all_coefficients_zero": true,
+      "left_terms": 0,
+      "name": "generic_cleared_compatibility_operator",
+      "right_terms": 0
+    },
+    {
+      "all_coefficients_zero": true,
+      "left_terms": 4,
+      "name": "formal_indicial_factorization",
+      "right_terms": 4
+    },
+    {
+      "all_coefficients_zero": true,
+      "left_terms": 4,
+      "name": "all_sector_degrees_active_Kn_identity",
+      "right_terms": 4
+    },
+    {
+      "all_coefficients_zero": true,
+      "left_terms": 1,
+      "name": "active_cubic_coefficient_eigenidentity",
+      "right_terms": 1
+    },
+    {
+      "all_coefficients_zero": true,
+      "left_terms": 4,
+      "name": "active_translated_cubic_eigenidentity",
+      "right_terms": 4
+    },
+    {
+      "all_coefficients_zero": true,
+      "left_terms": 0,
+      "name": "active_translated_cubic_T3",
+      "right_terms": 0
+    },
+    {
+      "all_coefficients_zero": true,
+      "left_terms": 0,
+      "name": "active_translated_compatibility_1",
+      "right_terms": 0
+    },
+    {
+      "all_coefficients_zero": true,
+      "left_terms": 0,
+      "name": "active_translated_compatibility_2",
+      "right_terms": 0
+    },
+    {
+      "all_coefficients_zero": true,
+      "left_terms": 0,
+      "name": "active_translated_cleared_ODE",
+      "right_terms": 0
+    },
+    {
+      "all_coefficients_zero": true,
+      "left_terms": 1,
+      "name": "rejected_potential_Euler_residual",
+      "right_terms": 1
+    },
+    {
+      "all_coefficients_zero": true,
+      "left_terms": 0,
+      "name": "rejected_depth_two_initial_C3",
+      "right_terms": 0
+    },
+    {
+      "all_coefficients_zero": true,
+      "left_terms": 0,
+      "name": "rejected_depth_two_initial_C5",
+      "right_terms": 0
+    },
+    {
+      "all_coefficients_zero": true,
+      "left_terms": 0,
+      "name": "rejected_depth_two_first_C3",
+      "right_terms": 0
+    },
+    {
+      "all_coefficients_zero": true,
+      "left_terms": 1,
+      "name": "rejected_depth_two_second_C3_nonzero",
+      "right_terms": 1
+    },
+    {
+      "all_coefficients_zero": true,
+      "left_terms": 1,
+      "name": "unshifted_cube_constant_offset_gate_formula",
+      "right_terms": 1
+    },
+    {
+      "name": "unshifted_cube_rejected_with_formal_constant_offset",
+      "nonzero_gate_terms": 1,
+      "passed": true
+    }
+  ],
+  "compatible_potential_exponents": [
+    "0",
+    "-1/4",
+    "3/4",
+    "5/2"
+  ],
+  "formal_parameters": [
+    "a",
+    "b",
+    "c",
+    "c0",
+    "f_a",
+    "f_b",
+    "n"
+  ],
+  "format": "analytic-cubic-potential-classification-v1",
+  "generic_shifted_cube_term_count": 20,
+  "historical_priority": "unassessed",
+  "passed": true
+}

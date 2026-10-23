@@ -1,0 +1,150 @@
+{
+  "all_degree_proof": "affine_shear_potentials.md, Theorem AFP",
+  "checks": {
+    "conditional_strip_identities": 18,
+    "direct_derivation_checks": 240,
+    "direct_gate_checks": 240,
+    "independent_pbw_operator_checks": 24,
+    "quadratic_full_ring_checks": 36,
+    "recognition_acceptances": 48,
+    "recognition_rejections": 144,
+    "sharp_witness_checks": 240
+  },
+  "finite_box_kernels": [
+    {
+      "degree_V": 3,
+      "degree_bound_in_q_Q": 4,
+      "full_output_coordinates": 19,
+      "input_monomials": 15,
+      "kernel_dimension": 6,
+      "output_projection": false,
+      "third_gate_depth": 3
+    },
+    {
+      "degree_V": 3,
+      "degree_bound_in_q_Q": 4,
+      "full_output_coordinates": 27,
+      "input_monomials": 15,
+      "kernel_dimension": 5,
+      "output_projection": false,
+      "third_gate_depth": 4
+    },
+    {
+      "degree_V": 3,
+      "degree_bound_in_q_Q": 4,
+      "full_output_coordinates": 37,
+      "input_monomials": 15,
+      "kernel_dimension": 4,
+      "output_projection": false,
+      "third_gate_depth": 5
+    },
+    {
+      "degree_V": 3,
+      "degree_bound_in_q_Q": 4,
+      "full_output_coordinates": 49,
+      "input_monomials": 15,
+      "kernel_dimension": 3,
+      "output_projection": false,
+      "third_gate_depth": 6
+    },
+    {
+      "degree_V": 3,
+      "degree_bound_in_q_Q": 4,
+      "full_output_coordinates": 63,
+      "input_monomials": 15,
+      "kernel_dimension": 2,
+      "output_projection": false,
+      "third_gate_depth": 7
+    },
+    {
+      "degree_V": 3,
+      "degree_bound_in_q_Q": 2,
+      "full_output_coordinates": 11,
+      "input_monomials": 6,
+      "kernel_dimension": 1,
+      "output_projection": false,
+      "third_gate_depth": 7
+    },
+    {
+      "degree_V": 4,
+      "degree_bound_in_q_Q": 5,
+      "full_output_coordinates": 43,
+      "input_monomials": 21,
+      "kernel_dimension": 6,
+      "output_projection": false,
+      "third_gate_depth": 3
+    },
+    {
+      "degree_V": 4,
+      "degree_bound_in_q_Q": 5,
+      "full_output_coordinates": 64,
+      "input_monomials": 21,
+      "kernel_dimension": 4,
+      "output_projection": false,
+      "third_gate_depth": 4
+    },
+    {
+      "degree_V": 4,
+      "degree_bound_in_q_Q": 5,
+      "full_output_coordinates": 89,
+      "input_monomials": 21,
+      "kernel_dimension": 2,
+      "output_projection": false,
+      "third_gate_depth": 5
+    },
+    {
+      "degree_V": 4,
+      "degree_bound_in_q_Q": 2,
+      "full_output_coordinates": 8,
+      "input_monomials": 6,
+      "kernel_dimension": 1,
+      "output_projection": false,
+      "third_gate_depth": 5
+    },
+    {
+      "degree_V": 5,
+      "degree_bound_in_q_Q": 6,
+      "full_output_coordinates": 119,
+      "input_monomials": 28,
+      "kernel_dimension": 6,
+      "output_projection": false,
+      "third_gate_depth": 3
+    },
+    {
+      "degree_V": 5,
+      "degree_bound_in_q_Q": 6,
+      "full_output_coordinates": 172,
+      "input_monomials": 28,
+      "kernel_dimension": 4,
+      "output_projection": false,
+      "third_gate_depth": 4
+    },
+    {
+      "degree_V": 5,
+      "degree_bound_in_q_Q": 6,
+      "full_output_coordinates": 237,
+      "input_monomials": 28,
+      "kernel_dimension": 2,
+      "output_projection": false,
+      "third_gate_depth": 5
+    },
+    {
+      "degree_V": 5,
+      "degree_bound_in_q_Q": 2,
+      "full_output_coordinates": 23,
+      "input_monomials": 6,
+      "kernel_dimension": 1,
+      "output_projection": false,
+      "third_gate_depth": 5
+    }
+  ],
+  "format": "affine-shear-potentials-v1",
+  "limits": "Finite matrices supplement the all-degree proof; rejected inputs are unclassified by this route. No historical-priority claim.",
+  "passed": true,
+  "phase_depths": {
+    "degree_V<=2": "all gates identically zero",
+    "degree_V=3": 7,
+    "degree_V>=4": 5
+  },
+  "scope": "H=A(p+u(q))^2+V(q), A!=0, degu<=1, polynomialV"
+}

@@ -1,0 +1,26 @@
+{
+  "format": "cubic-affine-complete-v1",
+  "status": "passed",
+  "checks": {
+    "formal_factor_terms": 10,
+    "operator_checks": 36,
+    "top_Q_checks": 36,
+    "leading_degree_obstructions": 55,
+    "classified_instances": 35,
+    "full_basis_gate_and_closure_checks": 104,
+    "forgery_rejections": 6,
+    "invalid_input_rejections": 5,
+    "sl2_exclusion_checks": 12,
+    "low_density_constraint_checks": 12,
+    "sharp_depth_checks": 15,
+    "proved_static_space_rank_checks": 26
+  },
+  "theorems": [
+    "all-degree Q-affine containment for deg b>=2",
+    "full span{1,H} for deg b>=3, arbitrary a",
+    "complete quadratic-b core classification in every density degree",
+    "four-dimensional low-density quadratic-b branch",
+    "K4 necessity without bounded symbolic casework"
+  ],
+  "scope": "Exact rational checks supplement written all-degree proofs over characteristic-zero fields; historical priority unestablished."
+}

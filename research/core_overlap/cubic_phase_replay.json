@@ -1,0 +1,179 @@
+{
+  "status": "passed",
+  "initial_review_commit": "e91e14da9d59e799ad9ed0331f59b2b500e478e8",
+  "base_commit": "35d39be4add03444b49b03fda5324c8fe83a040f",
+  "review_branch_base_commit": "e6ef82d15f63b6addfe380362da539dca9cdde39",
+  "extension_base_commit": "4050dbfc484641c2ce8a8ab9a272e91ca4934f55",
+  "seconds": 214.367,
+  "checks": [
+    {
+      "checker": "cubic_affine_completeness.py",
+      "status": "passed",
+      "seconds": 1.174
+    },
+    {
+      "checker": "cubic_phase_audit.py",
+      "status": "passed",
+      "seconds": 1.156
+    },
+    {
+      "checker": "cubic_phase_classification.py",
+      "status": "passed",
+      "seconds": 0.402
+    },
+    {
+      "checker": "higher_restoring.py",
+      "status": "passed",
+      "seconds": 3.183
+    },
+    {
+      "checker": "cubic_restoring.py",
+      "status": "passed",
+      "seconds": 0.841
+    },
+    {
+      "checker": "cubic_deformation.py",
+      "status": "passed",
+      "seconds": 12.188
+    },
+    {
+      "checker": "restoring_deformation.py",
+      "status": "passed",
+      "seconds": 4.732
+    },
+    {
+      "checker": "phase_independent_review.py",
+      "status": "passed",
+      "seconds": 0.867
+    },
+    {
+      "checker": "audit_balanced.py",
+      "status": "passed",
+      "seconds": 0.328
+    },
+    {
+      "checker": "pure_transverse.py",
+      "status": "passed",
+      "seconds": 0.298
+    },
+    {
+      "checker": "pure_quadratic_composition.py",
+      "status": "passed",
+      "seconds": 2.943
+    },
+    {
+      "checker": "analytic_shear_square.py",
+      "status": "passed",
+      "seconds": 1.071
+    },
+    {
+      "checker": "audit_sector_dynamics.py",
+      "status": "passed",
+      "seconds": 0.145
+    },
+    {
+      "checker": "shear_composition_complete.py",
+      "status": "passed",
+      "seconds": 1.312
+    },
+    {
+      "checker": "shear_oscillator.py",
+      "status": "passed",
+      "seconds": 1.834
+    },
+    {
+      "checker": "analytic_potential_classification.py",
+      "status": "passed",
+      "seconds": 0.043
+    },
+    {
+      "checker": "quadratic_frontier.py",
+      "status": "passed",
+      "seconds": 0.715
+    },
+    {
+      "checker": "quadratic_shear_residual.py",
+      "status": "passed",
+      "seconds": 0.274
+    },
+    {
+      "checker": "affine_shear_potentials.py",
+      "status": "passed",
+      "seconds": 0.604
+    },
+    {
+      "checker": "constant_quadratic_classification.py",
+      "status": "passed",
+      "seconds": 0.419
+    },
+    {
+      "checker": "deformation_obstructions.py",
+      "status": "passed",
+      "seconds": 0.543
+    },
+    {
+      "checker": "extension_proof_review.py",
+      "status": "passed",
+      "seconds": 1.313
+    },
+    {
+      "checker": "audit_balanced_transverse.py",
+      "status": "passed",
+      "seconds": 0.53
+    },
+    {
+      "checker": "audit_composition_recognize.py",
+      "status": "passed",
+      "seconds": 0.162
+    },
+    {
+      "checker": "depth_verify.py",
+      "status": "passed",
+      "seconds": 0.515
+    },
+    {
+      "checker": "analytic_bridge_check.py",
+      "status": "passed",
+      "seconds": 0.591
+    },
+    {
+      "checker": "canonical_verify.py",
+      "status": "passed",
+      "seconds": 0.589
+    },
+    {
+      "checker": "review_checks.py",
+      "status": "passed",
+      "seconds": 8.592
+    },
+    {
+      "checker": "integration_verify.py",
+      "status": "passed",
+      "seconds": 5.71
+    },
+    {
+      "checker": "pure_tests.py",
+      "status": "passed",
+      "seconds": 28.374
+    },
+    {
+      "checker": "retained triangular identities",
+      "status": "passed",
+      "seconds": 1.386,
+      "summary": "{\n \"status\": \"passed\",\n \"identities\": [\n  \"K1\",\n  \"K1'\",\n  \"K2\",\n  \"K3\",\n  \"X1\"\n ],\n \"theorem\": \"triangular transvectant formula; containments K1, K2, K3\"\n}\n"
+    },
+    {
+      "checker": "retained cubic gauge identities",
+      "status": "passed",
+      "seconds": 70.126,
+      "summary": "{\n \"status\": \"passed\",\n \"identities\": [\n  \"A\",\n  \"G1\",\n  \"G2\",\n  \"G3\",\n  \"K4\",\n  \"W\"\n ],\n \"theorem\": \"cubic-phase gauge form; affine-sector criterion with the Witt cocycle; Lemma W; family K4; Theorem A instances\"\n}\n"
+    },
+    {
+      "checker": "integrated two-root regression suite",
+      "status": "passed",
+      "seconds": 61.396,
+      "summary": "................\n----------------------------------------------------------------------\nRan 16 tests in 61.327s\n\nOK\n"
+    }
+  ],
+  "scope": "Exact independent identities and finite sanity checks; universal claims rest on written proofs and internal review, historical priority unestablished."
+}

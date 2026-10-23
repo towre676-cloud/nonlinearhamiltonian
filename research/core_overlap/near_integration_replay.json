@@ -1,0 +1,85 @@
+{
+  "status": "passed",
+  "base_commit": "268d553eb6a4434afeaf5fcb4689a6294e5ab688",
+  "two_root_regression": "8 tests passed after integration",
+  "certificates": [
+    {
+      "file": "results/hamiltonian/near_edge_theorem.json",
+      "result": {
+        "status": "passed",
+        "witness_kind": "near-edge",
+        "checker_result": {
+          "status": "passed",
+          "identities": [
+            "E1",
+            "E2",
+            "E2_at1",
+            "E3",
+            "E4"
+          ],
+          "grid_points": 150,
+          "theorem": "every polynomial with top c l^(d-1) m that is not affine in m has D_inf = span{1, H}"
+        },
+        "scope": "D_inf = span{1, H} unless H is affine in m",
+        "hypotheses": [
+          "characteristic zero",
+          "first Newton-polygon edge; top-end determinants; Lemma F"
+        ],
+        "source_ids": [
+          "D16-F03",
+          "D06-F02"
+        ]
+      }
+    },
+    {
+      "file": "results/hamiltonian/tworoot_near_edge.json",
+      "result": {
+        "status": "passed",
+        "witness_kind": "two-root-perturbation",
+        "checker_result": {
+          "status": "passed",
+          "degree": 5,
+          "top": "near",
+          "route": "NE",
+          "proved": true,
+          "core": "span{1, H}",
+          "active_part": "0"
+        },
+        "scope": "D_inf(H) when a proved criterion applies; otherwise reported as conjectural",
+        "hypotheses": [
+          "top homogeneous part with at most two roots",
+          "criteria of DYNAMIC_CORE_RESULTS.md section 6"
+        ],
+        "source_ids": [
+          "D16-F03",
+          "D06-F02"
+        ]
+      }
+    },
+    {
+      "file": "results/hamiltonian/tworoot_near_q2_family.json",
+      "result": {
+        "status": "passed",
+        "witness_kind": "two-root-perturbation",
+        "checker_result": {
+          "status": "passed",
+          "degree": 5,
+          "top": "near",
+          "route": "NE",
+          "proved": true,
+          "core": "span{1, H}",
+          "active_part": "0"
+        },
+        "scope": "D_inf(H) when a proved criterion applies; otherwise reported as conjectural",
+        "hypotheses": [
+          "top homogeneous part with at most two roots",
+          "criteria of DYNAMIC_CORE_RESULTS.md section 6"
+        ],
+        "source_ids": [
+          "D16-F03",
+          "D06-F02"
+        ]
+      }
+    }
+  ]
+}

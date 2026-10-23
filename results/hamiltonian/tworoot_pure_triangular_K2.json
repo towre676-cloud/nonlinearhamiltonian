@@ -16,17 +16,17 @@
    "6,0": "1"
   },
   "claim": {
-   "route": "K2",
-   "core": "tau*K[Q,P]_{<=2}",
-   "proved": false
+   "route": "SS",
+   "core": "span{1, l, Q, l^2, lQ, Q^2}",
+   "proved": true
   }
  },
- "payload_sha256": "8105d61b4e744e2074ab67e97b859e86c339ffb7944abd85c29a6822e2d298bc",
+ "payload_sha256": "7a4275e8a73f92c36bd55f4567c4b6f9cf6eb30d1206a331ca5ad1008169771f",
  "hypotheses": [
   "top homogeneous part with at most two roots",
   "criteria of DYNAMIC_CORE_RESULTS.md section 6"
  ],
- "scope": "D_inf(H) when a proved criterion applies; otherwise reported as conjectural",
+ "scope": "D_inf(H) when a proved criterion applies; unresolved equality is explicitly unclassified",
  "source_ids": [
   "D16-F03",
   "D06-F02"

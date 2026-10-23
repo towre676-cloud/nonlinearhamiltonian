@@ -1,0 +1,69 @@
+{
+  "status": "passed",
+  "schema": "independent-core-overlap-review-v1",
+  "depth": {
+    "formal_laurent_identities": 3,
+    "positive_sector_specializations": 9996,
+    "reason": "The residual differentiated identity cannot vanish on an interval with B' B'' != 0."
+  },
+  "pure": {
+    "parameterized_polynomial_fixtures": 120,
+    "direct_odd_gate_checks": 2760,
+    "direct_bracket_depth": 5
+  },
+  "finite_example_corroboration": [
+    {
+      "degree_bound": 7,
+      "columns": 36,
+      "rank_mod_1000003": 33,
+      "nullity": 3,
+      "maximum_bracket_depth": 4
+    },
+    {
+      "degree_bound": 9,
+      "columns": 55,
+      "rank_mod_1000003": 52,
+      "nullity": 3,
+      "maximum_bracket_depth": 4
+    }
+  ],
+  "composition_families": {
+    "balanced_transverse_leading_gate_cases": 90,
+    "parabolic_change_of_variable_cases": 48,
+    "parabolic_sector_odd_gate_checks": 262,
+    "parabolic_repeated_bracket_depth": 2
+  },
+  "additive_potential_depth_sharpness": {
+    "first_three_conditions": "zero",
+    "second_iterate_third_gate": "63/8 p^(-9/2)",
+    "reason": "The second bracket depth is indispensable with an arbitrary analytic potential."
+  },
+  "shear_square": {
+    "original_vs_transformed_operator_cases": 60,
+    "sector_odd_gate_checks": 464,
+    "bracket_depth": 2,
+    "uniform_depth_two_scalar_cases": 18760,
+    "sharp_q_cubed_fixtures": 20,
+    "supplementary_modular_ranks": [
+      {
+        "transformed_degree_bound": 4,
+        "columns": 15,
+        "rank_mod_1000003": 9,
+        "nullity": 6
+      },
+      {
+        "transformed_degree_bound": 6,
+        "columns": 28,
+        "rank_mod_1000003": 22,
+        "nullity": 6
+      },
+      {
+        "transformed_degree_bound": 8,
+        "columns": 45,
+        "rank_mod_1000003": 39,
+        "nullity": 6
+      }
+    ]
+  },
+  "limits": "Finite matrices corroborate examples only. The all-degree claims rely on the explicit proofs, not on extrapolation or literature priority."
+}

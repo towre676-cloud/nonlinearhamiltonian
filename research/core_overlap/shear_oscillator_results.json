@@ -1,0 +1,809 @@
+{
+  "all_degree_proof": "shear_oscillator.md, Theorem SO",
+  "closed_flow_basis_coefficients_checked": 1404,
+  "commutator_span_checks": 6,
+  "fixtures": [
+    {
+      "A": "1",
+      "B": "0",
+      "closed_flow_basis_coefficients_checked": 78,
+      "degree_bound_in_q_Q": 6,
+      "degree_u": 2,
+      "epsilon": "0",
+      "formal_flow_order": 12,
+      "full_output_coordinates": 40,
+      "input_monomials": 28,
+      "kappa": "1",
+      "kernel_dimension": 6,
+      "matrix_columns_checked": 6,
+      "observer_certificates_replayed": 3,
+      "output_projection": false,
+      "spectral_certificate": {
+        "characteristic_polynomial_coefficients_descending": [
+          "1",
+          "0",
+          "10",
+          "0",
+          "16",
+          "0",
+          "0"
+        ],
+        "matrix_powers_I_through_M4_rank": 5,
+        "minimal_polynomial_coefficients_descending": [
+          "1",
+          "0",
+          "10",
+          "0",
+          "16",
+          "0"
+        ],
+        "minimal_polynomial_matrix_identity": true,
+        "omega_squared": "2",
+        "semisimple_over_algebraic_closure": true,
+        "zero_eigenspace_dimension": 2
+      },
+      "target_contract": "original q; original q^2; joint original (q,q^2), coefficient-linear derivative closure",
+      "target_dimensions": [
+        2,
+        3,
+        5
+      ],
+      "third_gate_depth": 3,
+      "u_index": 0
+    },
+    {
+      "A": "2",
+      "B": "3",
+      "closed_flow_basis_coefficients_checked": 78,
+      "degree_bound_in_q_Q": 6,
+      "degree_u": 2,
+      "epsilon": "5",
+      "formal_flow_order": 12,
+      "full_output_coordinates": 40,
+      "input_monomials": 28,
+      "kappa": "-2",
+      "kernel_dimension": 6,
+      "matrix_columns_checked": 6,
+      "observer_certificates_replayed": 3,
+      "output_projection": false,
+      "spectral_certificate": {
+        "characteristic_polynomial_coefficients_descending": [
+          "1",
+          "0",
+          "-40",
+          "0",
+          "256",
+          "0",
+          "0"
+        ],
+        "matrix_powers_I_through_M4_rank": 5,
+        "minimal_polynomial_coefficients_descending": [
+          "1",
+          "0",
+          "-40",
+          "0",
+          "256",
+          "0"
+        ],
+        "minimal_polynomial_matrix_identity": true,
+        "omega_squared": "-8",
+        "semisimple_over_algebraic_closure": true,
+        "zero_eigenspace_dimension": 2
+      },
+      "target_contract": "original q; original q^2; joint original (q,q^2), coefficient-linear derivative closure",
+      "target_dimensions": [
+        3,
+        5,
+        6
+      ],
+      "third_gate_depth": 3,
+      "u_index": 0
+    },
+    {
+      "A": "-1",
+      "B": "-2",
+      "closed_flow_basis_coefficients_checked": 78,
+      "degree_bound_in_q_Q": 6,
+      "degree_u": 2,
+      "epsilon": "-3",
+      "formal_flow_order": 12,
+      "full_output_coordinates": 40,
+      "input_monomials": 28,
+      "kappa": "3/2",
+      "kernel_dimension": 6,
+      "matrix_columns_checked": 6,
+      "observer_certificates_replayed": 3,
+      "output_projection": false,
+      "spectral_certificate": {
+        "characteristic_polynomial_coefficients_descending": [
+          "1",
+          "0",
+          "-15",
+          "0",
+          "36",
+          "0",
+          "0"
+        ],
+        "matrix_powers_I_through_M4_rank": 5,
+        "minimal_polynomial_coefficients_descending": [
+          "1",
+          "0",
+          "-15",
+          "0",
+          "36",
+          "0"
+        ],
+        "minimal_polynomial_matrix_identity": true,
+        "omega_squared": "-3",
+        "semisimple_over_algebraic_closure": true,
+        "zero_eigenspace_dimension": 2
+      },
+      "target_contract": "original q; original q^2; joint original (q,q^2), coefficient-linear derivative closure",
+      "target_dimensions": [
+        3,
+        5,
+        6
+      ],
+      "third_gate_depth": 3,
+      "u_index": 0
+    },
+    {
+      "A": "1",
+      "B": "0",
+      "closed_flow_basis_coefficients_checked": 78,
+      "degree_bound_in_q_Q": 6,
+      "degree_u": 2,
+      "epsilon": "0",
+      "formal_flow_order": 12,
+      "full_output_coordinates": 40,
+      "input_monomials": 28,
+      "kappa": "1",
+      "kernel_dimension": 6,
+      "matrix_columns_checked": 6,
+      "observer_certificates_replayed": 3,
+      "output_projection": false,
+      "spectral_certificate": {
+        "characteristic_polynomial_coefficients_descending": [
+          "1",
+          "0",
+          "10",
+          "0",
+          "16",
+          "0",
+          "0"
+        ],
+        "matrix_powers_I_through_M4_rank": 5,
+        "minimal_polynomial_coefficients_descending": [
+          "1",
+          "0",
+          "10",
+          "0",
+          "16",
+          "0"
+        ],
+        "minimal_polynomial_matrix_identity": true,
+        "omega_squared": "2",
+        "semisimple_over_algebraic_closure": true,
+        "zero_eigenspace_dimension": 2
+      },
+      "target_contract": "original q; original q^2; joint original (q,q^2), coefficient-linear derivative closure",
+      "target_dimensions": [
+        2,
+        3,
+        5
+      ],
+      "third_gate_depth": 3,
+      "u_index": 1
+    },
+    {
+      "A": "2",
+      "B": "3",
+      "closed_flow_basis_coefficients_checked": 78,
+      "degree_bound_in_q_Q": 6,
+      "degree_u": 2,
+      "epsilon": "5",
+      "formal_flow_order": 12,
+      "full_output_coordinates": 40,
+      "input_monomials": 28,
+      "kappa": "-2",
+      "kernel_dimension": 6,
+      "matrix_columns_checked": 6,
+      "observer_certificates_replayed": 3,
+      "output_projection": false,
+      "spectral_certificate": {
+        "characteristic_polynomial_coefficients_descending": [
+          "1",
+          "0",
+          "-40",
+          "0",
+          "256",
+          "0",
+          "0"
+        ],
+        "matrix_powers_I_through_M4_rank": 5,
+        "minimal_polynomial_coefficients_descending": [
+          "1",
+          "0",
+          "-40",
+          "0",
+          "256",
+          "0"
+        ],
+        "minimal_polynomial_matrix_identity": true,
+        "omega_squared": "-8",
+        "semisimple_over_algebraic_closure": true,
+        "zero_eigenspace_dimension": 2
+      },
+      "target_contract": "original q; original q^2; joint original (q,q^2), coefficient-linear derivative closure",
+      "target_dimensions": [
+        3,
+        5,
+        6
+      ],
+      "third_gate_depth": 3,
+      "u_index": 1
+    },
+    {
+      "A": "-1",
+      "B": "-2",
+      "closed_flow_basis_coefficients_checked": 78,
+      "degree_bound_in_q_Q": 6,
+      "degree_u": 2,
+      "epsilon": "-3",
+      "formal_flow_order": 12,
+      "full_output_coordinates": 40,
+      "input_monomials": 28,
+      "kappa": "3/2",
+      "kernel_dimension": 6,
+      "matrix_columns_checked": 6,
+      "observer_certificates_replayed": 3,
+      "output_projection": false,
+      "spectral_certificate": {
+        "characteristic_polynomial_coefficients_descending": [
+          "1",
+          "0",
+          "-15",
+          "0",
+          "36",
+          "0",
+          "0"
+        ],
+        "matrix_powers_I_through_M4_rank": 5,
+        "minimal_polynomial_coefficients_descending": [
+          "1",
+          "0",
+          "-15",
+          "0",
+          "36",
+          "0"
+        ],
+        "minimal_polynomial_matrix_identity": true,
+        "omega_squared": "-3",
+        "semisimple_over_algebraic_closure": true,
+        "zero_eigenspace_dimension": 2
+      },
+      "target_contract": "original q; original q^2; joint original (q,q^2), coefficient-linear derivative closure",
+      "target_dimensions": [
+        3,
+        5,
+        6
+      ],
+      "third_gate_depth": 3,
+      "u_index": 1
+    },
+    {
+      "A": "1",
+      "B": "0",
+      "closed_flow_basis_coefficients_checked": 78,
+      "degree_bound_in_q_Q": 6,
+      "degree_u": 3,
+      "epsilon": "0",
+      "formal_flow_order": 12,
+      "full_output_coordinates": 39,
+      "input_monomials": 28,
+      "kappa": "1",
+      "kernel_dimension": 6,
+      "matrix_columns_checked": 6,
+      "observer_certificates_replayed": 3,
+      "output_projection": false,
+      "spectral_certificate": {
+        "characteristic_polynomial_coefficients_descending": [
+          "1",
+          "0",
+          "10",
+          "0",
+          "16",
+          "0",
+          "0"
+        ],
+        "matrix_powers_I_through_M4_rank": 5,
+        "minimal_polynomial_coefficients_descending": [
+          "1",
+          "0",
+          "10",
+          "0",
+          "16",
+          "0"
+        ],
+        "minimal_polynomial_matrix_identity": true,
+        "omega_squared": "2",
+        "semisimple_over_algebraic_closure": true,
+        "zero_eigenspace_dimension": 2
+      },
+      "target_contract": "original q; original q^2; joint original (q,q^2), coefficient-linear derivative closure",
+      "target_dimensions": [
+        2,
+        3,
+        5
+      ],
+      "third_gate_depth": 2,
+      "u_index": 2
+    },
+    {
+      "A": "2",
+      "B": "3",
+      "closed_flow_basis_coefficients_checked": 78,
+      "degree_bound_in_q_Q": 6,
+      "degree_u": 3,
+      "epsilon": "5",
+      "formal_flow_order": 12,
+      "full_output_coordinates": 42,
+      "input_monomials": 28,
+      "kappa": "-2",
+      "kernel_dimension": 6,
+      "matrix_columns_checked": 6,
+      "observer_certificates_replayed": 3,
+      "output_projection": false,
+      "spectral_certificate": {
+        "characteristic_polynomial_coefficients_descending": [
+          "1",
+          "0",
+          "-40",
+          "0",
+          "256",
+          "0",
+          "0"
+        ],
+        "matrix_powers_I_through_M4_rank": 5,
+        "minimal_polynomial_coefficients_descending": [
+          "1",
+          "0",
+          "-40",
+          "0",
+          "256",
+          "0"
+        ],
+        "minimal_polynomial_matrix_identity": true,
+        "omega_squared": "-8",
+        "semisimple_over_algebraic_closure": true,
+        "zero_eigenspace_dimension": 2
+      },
+      "target_contract": "original q; original q^2; joint original (q,q^2), coefficient-linear derivative closure",
+      "target_dimensions": [
+        3,
+        5,
+        6
+      ],
+      "third_gate_depth": 2,
+      "u_index": 2
+    },
+    {
+      "A": "-1",
+      "B": "-2",
+      "closed_flow_basis_coefficients_checked": 78,
+      "degree_bound_in_q_Q": 6,
+      "degree_u": 3,
+      "epsilon": "-3",
+      "formal_flow_order": 12,
+      "full_output_coordinates": 42,
+      "input_monomials": 28,
+      "kappa": "3/2",
+      "kernel_dimension": 6,
+      "matrix_columns_checked": 6,
+      "observer_certificates_replayed": 3,
+      "output_projection": false,
+      "spectral_certificate": {
+        "characteristic_polynomial_coefficients_descending": [
+          "1",
+          "0",
+          "-15",
+          "0",
+          "36",
+          "0",
+          "0"
+        ],
+        "matrix_powers_I_through_M4_rank": 5,
+        "minimal_polynomial_coefficients_descending": [
+          "1",
+          "0",
+          "-15",
+          "0",
+          "36",
+          "0"
+        ],
+        "minimal_polynomial_matrix_identity": true,
+        "omega_squared": "-3",
+        "semisimple_over_algebraic_closure": true,
+        "zero_eigenspace_dimension": 2
+      },
+      "target_contract": "original q; original q^2; joint original (q,q^2), coefficient-linear derivative closure",
+      "target_dimensions": [
+        3,
+        5,
+        6
+      ],
+      "third_gate_depth": 2,
+      "u_index": 2
+    },
+    {
+      "A": "3/2",
+      "B": "-5/2",
+      "closed_flow_basis_coefficients_checked": 78,
+      "degree_bound_in_q_Q": 6,
+      "degree_u": 3,
+      "epsilon": "7/3",
+      "formal_flow_order": 12,
+      "full_output_coordinates": 42,
+      "input_monomials": 28,
+      "kappa": "0",
+      "kernel_dimension": 6,
+      "matrix_columns_checked": 6,
+      "observer_certificates_replayed": 3,
+      "output_projection": false,
+      "target_contract": "original q; original q^2; joint original (q,q^2), coefficient-linear derivative closure",
+      "target_dimensions": [
+        3,
+        5,
+        6
+      ],
+      "third_gate_depth": 2,
+      "u_index": 2
+    },
+    {
+      "A": "1",
+      "B": "0",
+      "closed_flow_basis_coefficients_checked": 78,
+      "degree_bound_in_q_Q": 6,
+      "degree_u": 4,
+      "epsilon": "0",
+      "formal_flow_order": 12,
+      "full_output_coordinates": 57,
+      "input_monomials": 28,
+      "kappa": "1",
+      "kernel_dimension": 6,
+      "matrix_columns_checked": 6,
+      "observer_certificates_replayed": 3,
+      "output_projection": false,
+      "spectral_certificate": {
+        "characteristic_polynomial_coefficients_descending": [
+          "1",
+          "0",
+          "10",
+          "0",
+          "16",
+          "0",
+          "0"
+        ],
+        "matrix_powers_I_through_M4_rank": 5,
+        "minimal_polynomial_coefficients_descending": [
+          "1",
+          "0",
+          "10",
+          "0",
+          "16",
+          "0"
+        ],
+        "minimal_polynomial_matrix_identity": true,
+        "omega_squared": "2",
+        "semisimple_over_algebraic_closure": true,
+        "zero_eigenspace_dimension": 2
+      },
+      "target_contract": "original q; original q^2; joint original (q,q^2), coefficient-linear derivative closure",
+      "target_dimensions": [
+        2,
+        3,
+        5
+      ],
+      "third_gate_depth": 2,
+      "u_index": 3
+    },
+    {
+      "A": "2",
+      "B": "3",
+      "closed_flow_basis_coefficients_checked": 78,
+      "degree_bound_in_q_Q": 6,
+      "degree_u": 4,
+      "epsilon": "5",
+      "formal_flow_order": 12,
+      "full_output_coordinates": 57,
+      "input_monomials": 28,
+      "kappa": "-2",
+      "kernel_dimension": 6,
+      "matrix_columns_checked": 6,
+      "observer_certificates_replayed": 3,
+      "output_projection": false,
+      "spectral_certificate": {
+        "characteristic_polynomial_coefficients_descending": [
+          "1",
+          "0",
+          "-40",
+          "0",
+          "256",
+          "0",
+          "0"
+        ],
+        "matrix_powers_I_through_M4_rank": 5,
+        "minimal_polynomial_coefficients_descending": [
+          "1",
+          "0",
+          "-40",
+          "0",
+          "256",
+          "0"
+        ],
+        "minimal_polynomial_matrix_identity": true,
+        "omega_squared": "-8",
+        "semisimple_over_algebraic_closure": true,
+        "zero_eigenspace_dimension": 2
+      },
+      "target_contract": "original q; original q^2; joint original (q,q^2), coefficient-linear derivative closure",
+      "target_dimensions": [
+        3,
+        5,
+        6
+      ],
+      "third_gate_depth": 2,
+      "u_index": 3
+    },
+    {
+      "A": "-1",
+      "B": "-2",
+      "closed_flow_basis_coefficients_checked": 78,
+      "degree_bound_in_q_Q": 6,
+      "degree_u": 4,
+      "epsilon": "-3",
+      "formal_flow_order": 12,
+      "full_output_coordinates": 57,
+      "input_monomials": 28,
+      "kappa": "3/2",
+      "kernel_dimension": 6,
+      "matrix_columns_checked": 6,
+      "observer_certificates_replayed": 3,
+      "output_projection": false,
+      "spectral_certificate": {
+        "characteristic_polynomial_coefficients_descending": [
+          "1",
+          "0",
+          "-15",
+          "0",
+          "36",
+          "0",
+          "0"
+        ],
+        "matrix_powers_I_through_M4_rank": 5,
+        "minimal_polynomial_coefficients_descending": [
+          "1",
+          "0",
+          "-15",
+          "0",
+          "36",
+          "0"
+        ],
+        "minimal_polynomial_matrix_identity": true,
+        "omega_squared": "-3",
+        "semisimple_over_algebraic_closure": true,
+        "zero_eigenspace_dimension": 2
+      },
+      "target_contract": "original q; original q^2; joint original (q,q^2), coefficient-linear derivative closure",
+      "target_dimensions": [
+        3,
+        5,
+        6
+      ],
+      "third_gate_depth": 2,
+      "u_index": 3
+    },
+    {
+      "A": "3/2",
+      "B": "-5/2",
+      "closed_flow_basis_coefficients_checked": 78,
+      "degree_bound_in_q_Q": 6,
+      "degree_u": 4,
+      "epsilon": "7/3",
+      "formal_flow_order": 12,
+      "full_output_coordinates": 57,
+      "input_monomials": 28,
+      "kappa": "0",
+      "kernel_dimension": 6,
+      "matrix_columns_checked": 6,
+      "observer_certificates_replayed": 3,
+      "output_projection": false,
+      "target_contract": "original q; original q^2; joint original (q,q^2), coefficient-linear derivative closure",
+      "target_dimensions": [
+        3,
+        5,
+        6
+      ],
+      "third_gate_depth": 2,
+      "u_index": 3
+    },
+    {
+      "A": "1",
+      "B": "0",
+      "closed_flow_basis_coefficients_checked": 78,
+      "degree_bound_in_q_Q": 6,
+      "degree_u": 5,
+      "epsilon": "0",
+      "formal_flow_order": 12,
+      "full_output_coordinates": 63,
+      "input_monomials": 28,
+      "kappa": "1",
+      "kernel_dimension": 6,
+      "matrix_columns_checked": 6,
+      "observer_certificates_replayed": 3,
+      "output_projection": false,
+      "spectral_certificate": {
+        "characteristic_polynomial_coefficients_descending": [
+          "1",
+          "0",
+          "10",
+          "0",
+          "16",
+          "0",
+          "0"
+        ],
+        "matrix_powers_I_through_M4_rank": 5,
+        "minimal_polynomial_coefficients_descending": [
+          "1",
+          "0",
+          "10",
+          "0",
+          "16",
+          "0"
+        ],
+        "minimal_polynomial_matrix_identity": true,
+        "omega_squared": "2",
+        "semisimple_over_algebraic_closure": true,
+        "zero_eigenspace_dimension": 2
+      },
+      "target_contract": "original q; original q^2; joint original (q,q^2), coefficient-linear derivative closure",
+      "target_dimensions": [
+        2,
+        3,
+        5
+      ],
+      "third_gate_depth": 2,
+      "u_index": 4
+    },
+    {
+      "A": "2",
+      "B": "3",
+      "closed_flow_basis_coefficients_checked": 78,
+      "degree_bound_in_q_Q": 6,
+      "degree_u": 5,
+      "epsilon": "5",
+      "formal_flow_order": 12,
+      "full_output_coordinates": 66,
+      "input_monomials": 28,
+      "kappa": "-2",
+      "kernel_dimension": 6,
+      "matrix_columns_checked": 6,
+      "observer_certificates_replayed": 3,
+      "output_projection": false,
+      "spectral_certificate": {
+        "characteristic_polynomial_coefficients_descending": [
+          "1",
+          "0",
+          "-40",
+          "0",
+          "256",
+          "0",
+          "0"
+        ],
+        "matrix_powers_I_through_M4_rank": 5,
+        "minimal_polynomial_coefficients_descending": [
+          "1",
+          "0",
+          "-40",
+          "0",
+          "256",
+          "0"
+        ],
+        "minimal_polynomial_matrix_identity": true,
+        "omega_squared": "-8",
+        "semisimple_over_algebraic_closure": true,
+        "zero_eigenspace_dimension": 2
+      },
+      "target_contract": "original q; original q^2; joint original (q,q^2), coefficient-linear derivative closure",
+      "target_dimensions": [
+        3,
+        5,
+        6
+      ],
+      "third_gate_depth": 2,
+      "u_index": 4
+    },
+    {
+      "A": "-1",
+      "B": "-2",
+      "closed_flow_basis_coefficients_checked": 78,
+      "degree_bound_in_q_Q": 6,
+      "degree_u": 5,
+      "epsilon": "-3",
+      "formal_flow_order": 12,
+      "full_output_coordinates": 66,
+      "input_monomials": 28,
+      "kappa": "3/2",
+      "kernel_dimension": 6,
+      "matrix_columns_checked": 6,
+      "observer_certificates_replayed": 3,
+      "output_projection": false,
+      "spectral_certificate": {
+        "characteristic_polynomial_coefficients_descending": [
+          "1",
+          "0",
+          "-15",
+          "0",
+          "36",
+          "0",
+          "0"
+        ],
+        "matrix_powers_I_through_M4_rank": 5,
+        "minimal_polynomial_coefficients_descending": [
+          "1",
+          "0",
+          "-15",
+          "0",
+          "36",
+          "0"
+        ],
+        "minimal_polynomial_matrix_identity": true,
+        "omega_squared": "-3",
+        "semisimple_over_algebraic_closure": true,
+        "zero_eigenspace_dimension": 2
+      },
+      "target_contract": "original q; original q^2; joint original (q,q^2), coefficient-linear derivative closure",
+      "target_dimensions": [
+        3,
+        5,
+        6
+      ],
+      "third_gate_depth": 2,
+      "u_index": 4
+    },
+    {
+      "A": "3/2",
+      "B": "-5/2",
+      "closed_flow_basis_coefficients_checked": 78,
+      "degree_bound_in_q_Q": 6,
+      "degree_u": 5,
+      "epsilon": "7/3",
+      "formal_flow_order": 12,
+      "full_output_coordinates": 66,
+      "input_monomials": 28,
+      "kappa": "0",
+      "kernel_dimension": 6,
+      "matrix_columns_checked": 6,
+      "observer_certificates_replayed": 3,
+      "output_projection": false,
+      "target_contract": "original q; original q^2; joint original (q,q^2), coefficient-linear derivative closure",
+      "target_dimensions": [
+        3,
+        5,
+        6
+      ],
+      "third_gate_depth": 2,
+      "u_index": 4
+    }
+  ],
+  "format": "shear-oscillator-core-v1",
+  "observer_certificates_replayed": 54,
+  "passed": true,
+  "protected_basis_checks": 108,
+  "quadratic_shear_kappa_zero": "deferred to retained QC infinite family",
+  "recognizer_checks": 182,
+  "sharp_depth_checks": 60,
+  "spectral_certificates_checked": 15,
+  "transformed_derivation_checks": 450,
+  "transformed_third_gate_checks": 450
+}

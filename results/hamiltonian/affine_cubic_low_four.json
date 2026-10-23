@@ -1,0 +1,92 @@
+{
+ "schema": "machinery-envelope-v1",
+ "witness_kind": "affine-cubic-phase-complete",
+ "coefficient_domain": "Q",
+ "model": {
+  "0,1": "2",
+  "1,0": "4/3",
+  "1,2": "1",
+  "2,0": "2",
+  "2,1": "4/3",
+  "3,0": "4/9",
+  "3,1": "2",
+  "4,0": "4/3",
+  "5,0": "1"
+ },
+ "model_sha256": "f7a4b085a7669476ef4a550a334f8a87186621e3ce3a2149e0ff87690969392e",
+ "payload": {
+  "format": "affine-cubic-phase-complete-v1",
+  "hamiltonian": {
+   "0,1": "2",
+   "1,0": "4/3",
+   "1,2": "1",
+   "2,0": "2",
+   "2,1": "4/3",
+   "3,0": "4/9",
+   "3,1": "2",
+   "4,0": "4/3",
+   "5,0": "1"
+  },
+  "claim": {
+   "format": "cubic-affine-complete-v1",
+   "degree_a": 1,
+   "degree_b": 2,
+   "dimension": 4,
+   "case": "quadratic coefficient with low density",
+   "proved": true,
+   "basis": [
+    {
+     "0,0": "1"
+    },
+    {
+     "1,0": "1"
+    },
+    {
+     "1,1": "1",
+     "2,0": "2/3",
+     "3,0": "1"
+    },
+    {
+     "0,1": "2",
+     "1,0": "4/3",
+     "1,2": "1",
+     "2,0": "2",
+     "2,1": "4/3",
+     "3,0": "4/9",
+     "3,1": "2",
+     "4,0": "4/3",
+     "5,0": "1"
+    }
+   ],
+   "third_gate_depth_for_Q_degree_bound": 2,
+   "third_gate_depth": 2,
+   "finite_stopping_equality": "intersection of ker(C3 D^r) through the declared depth",
+   "proof": "cubic_affine_completeness.md",
+   "shift_Q": "0",
+   "core": "span{declared basis}",
+   "route": "CP",
+   "w": {
+    "2": "1",
+    "1": "2/3"
+   },
+   "h": {
+    "0,1": "2",
+    "1,2": "1"
+   },
+   "c": "1",
+   "chart_proof": "cubic_phase_classification.md"
+  }
+ },
+ "payload_sha256": "d6f507dd2ce45e17b94c0b207855ece905114bdfe6a76cc4970c98898d672aca",
+ "hypotheses": [
+  "characteristic zero",
+  "original flat Weyl product",
+  "exact reconstructed quadratic shear and affine-Q Hamiltonian"
+ ],
+ "scope": "full polynomial dynamic core, with no observable-degree cutoff",
+ "source_ids": [
+  "D16-F03",
+  "D06-F02"
+ ],
+ "producer": "towre676-cloud/nonlinearhamiltonian extensions (exact rational, Python standard library)"
+}

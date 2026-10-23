@@ -1,0 +1,252 @@
+{
+ "status": "passed",
+ "scope": "The six retained mathematical suite runs; final publication-integrity audit is separate.",
+ "replay": [
+  {
+   "suite": "annual:2023",
+   "return_code": 0,
+   "command": [
+    "python3",
+    "-B",
+    "-X",
+    "utf8",
+    "-S",
+    "verify_all.py"
+   ],
+   "result": {
+    "status": "passed",
+    "developed_entries": 114,
+    "verifier_programs": 16,
+    "scoped_records": 174,
+    "status_counts": {
+     "passed": 111,
+     "pass": 62,
+     "proof-only": 1
+    },
+    "failures": []
+   },
+   "stdout": null,
+   "stderr": ""
+  },
+  {
+   "suite": "annual:2024",
+   "return_code": 0,
+   "command": [
+    "python3",
+    "-B",
+    "-X",
+    "utf8",
+    "-S",
+    "verify_all.py"
+   ],
+   "result": {
+    "status": "passed",
+    "developed_entries": 237,
+    "verifier_programs": 15,
+    "scoped_records": 272,
+    "status_counts": {
+     "passed": 141,
+     "pass": 131
+    },
+    "failures": []
+   },
+   "stdout": null,
+   "stderr": ""
+  },
+  {
+   "suite": "annual:2025",
+   "return_code": 0,
+   "command": [
+    "python3",
+    "-B",
+    "-X",
+    "utf8",
+    "-S",
+    "verify_all.py"
+   ],
+   "result": {
+    "status": "passed",
+    "developed_entries": 351,
+    "verifier_programs": 14,
+    "scoped_records": 360,
+    "status_counts": {
+     "passed": 168,
+     "pass": 192
+    },
+    "failures": []
+   },
+   "stdout": null,
+   "stderr": ""
+  },
+  {
+   "suite": "annual:2026",
+   "return_code": 0,
+   "command": [
+    "python3",
+    "-B",
+    "-X",
+    "utf8",
+    "-S",
+    "verify_all.py"
+   ],
+   "result": {
+    "status": "passed",
+    "developed_entries": 349,
+    "verifier_programs": 16,
+    "scoped_records": 367,
+    "status_counts": {
+     "passed": 209,
+     "pass": 158
+    },
+    "failures": []
+   },
+   "stdout": null,
+   "stderr": ""
+  },
+  {
+   "suite": "atlas:integration-domains-labs",
+   "return_code": 0,
+   "command": [
+    "python3",
+    "-B",
+    "-X",
+    "utf8",
+    "-S",
+    "verify_all.py",
+    "--skip-annual"
+   ],
+   "result": {
+    "status": "passed",
+    "main_treatments": 1051,
+    "supplementary_treatments": 14,
+    "concept_families": 71,
+    "domains": 16,
+    "source_payloads_unchanged": true,
+    "annual_suites_replayed": false,
+    "records": [
+     {
+      "label": "domain:arithmetic",
+      "return_code": 0,
+      "stdout": "{\n  \"status\": \"pass\",\n  \"check_count\": 19,\n  \"families\": 11,\n  \"reviewed_entries\": 176\n}",
+      "stderr": ""
+     },
+     {
+      "label": "domain:algebra",
+      "return_code": 0,
+      "stdout": "{\"status\": \"pass\", \"checks\": 12, \"families\": 12, \"reviewed_sources\": 184}",
+      "stderr": ""
+     },
+     {
+      "label": "domain:geometry",
+      "return_code": 0,
+      "stdout": "{\"status\": \"pass\", \"check_count\": 17}",
+      "stderr": ""
+     },
+     {
+      "label": "domain:analysis",
+      "return_code": 0,
+      "stdout": "{\n  \"agent\": \"analysis_dynamics_atlas\",\n  \"status\": \"passed\",\n  \"checks\": [\n    {\n      \"name\": \"D07-F01 Haar energy\",\n      \"status\": \"passed\",\n      \"kind\": \"exact finite model\",\n      \"scope\": \"Exact coefficients, reconstruction and omitted energy for the printed four-vector.\",\n      \"detail\": {\n        \"total_energy\": 30,\n        \"discarded_energy\": 1,\n        \"reconstruction\": [\n          \"3/2\",\n          \"3/2\",\n          \"7/2\",\n          \"7/2\"\n        ]\n      }\n    },\n    {\n      \"name\": \"D07-F02 atomic function\",\n      \"status\": \"passed\",\n      \"kind\": \"exact rational plus numerical samples\",\n      \"scope\": \"Exact rational zero/slope and numerical half-plane sign at fifteen test points; the proof supplies the general sign.\",\n      \"detail\": {\n        \"zero\": 0,\n        \"slope\": \"3/2\",\n        \"residues\": [\n          -1,\n          -2\n        ],\n        \"half_plane_checks\": 15\n      }\n    },\n    {\n      \"name\": \"D07-F03 Mellin moments\",\n      \"status\": \"passed\",\n      \"kind\": \"exact finite model\",\n      \"scope\": \"Exact worked moment and rational integral enclosure; \u03b6(2) comparison is numerical.\",\n      \"detail\": {\n        \"moment\": \"3/8\",\n        \"zeta_lower\": \"205/144\",\n        \"zeta_upper\": \"241/144\"\n      }\n    },\n    {\n      \"name\": \"D07-F04 heat trace\",\n      \"status\": \"passed\",\n      \"kind\": \"numerical model check\",\n      \"scope\": \"Numerical finite-sum checks of the proved integral bounds and printed tail enclosure; no numerical proof of an asymptotic limit.\",\n      \"detail\": {\n        \"traces\": [\n          [\n            1,\n            0.3863186024133261\n          ],\n          [\n            0.1,\n            2.302495608198964\n          ],\n          [\n            0.01,\n            8.36226925452758\n          ],\n          [\n            0.001,\n            27.524956081989643\n          ]\n        ],\n        \"printed_tail_bound\": 0.004578909722183545\n      }\n    },\n    {\n      \"name\": \"D08-F01 periodic heat\",\n      \"status\": \"passed\",\n      \"kind\": \"numerical model check\",\n      \"scope\": \"Printed two-mode solution and its energy identity at four times.\",\n      \"detail\": {\n        \"mean\": 3,\n        \"mode_rates\": [\n          0.5,\n          2\n        ],\n        \"energy_identity_samples\": 4\n      }\n    },\n    {\n      \"name\": \"D08-F02 positive stencil\",\n      \"status\": \"passed\",\n      \"kind\": \"exact finite model\",\n      \"scope\": \"Exact five-node update, conservation, norm loss and two positivity counterexamples.\",\n      \"detail\": {\n        \"step\": [\n          \"1/2\",\n          \"1/4\",\n          \"0\",\n          \"0\",\n          \"1/4\"\n        ],\n        \"mass\": 1,\n        \"energy\": \"3/8\",\n        \"negative_counterexamples\": 2\n      }\n    },\n    {\n      \"name\": \"D08-F03 regularized basis\",\n      \"status\": \"passed\",\n      \"kind\": \"exact jets plus numerical example\",\n      \"scope\": \"Exact coefficient hierarchy through \u03b5\u2078 and numerical divided-difference remainder check.\",\n      \"detail\": {\n        \"hierarchy_orders\": 8,\n        \"exact_value\": -1.8126924692201816,\n        \"approximation\": \"-136/75\",\n        \"error_bound\": \"1/1500\"\n      }\n    },\n    {\n      \"name\": \"D08-F04 factorial expansion\",\n      \"status\": \"passed\",\n      \"kind\": \"numerical quadrature plus exact coefficients\",\n      \"scope\": \"Negative-ray worked truncation with independent numerical integral and exact formal ODE coefficient recurrence.\",\n      \"detail\": {\n        \"quadrature\": -0.09156333393980022,\n        \"truncation\": -0.09164,\n        \"proved_bound\": 0.00012000000000000004,\n        \"tail_beyond_40_at_most\": 4.248354255291589e-19,\n        \"note\": \"Simpson value is a numerical cross-check; the geometric identity proves the bound. Stokes contour orientation is proved in text, not tested here.\"\n      }\n    },\n    {\n      \"name\": \"D09-F01 metric stability\",\n      \"status\": \"passed\",\n      \"kind\": \"exact finite model\",\n      \"scope\": \"Exact Lyapunov identity, rate comparison, Euclidean amplification and two-line projection quantities.\",\n      \"detail\": {\n        \"P_determinant\": \"13/16\",\n        \"threeI_minus_P_determinant\": \"1/16\",\n        \"transient_norm_at_one\": 1.1633369384516796,\n        \"projection_factor\": \"9/25\",\n        \"commutator_norm\": \"12/25\"\n      }\n    },\n    {\n      \"name\": \"D09-F02 logistic cycle\",\n      \"status\": \"passed\",\n      \"kind\": \"exact finite model\",\n      \"scope\": \"Exact factorization at r=16/5, multiplier and numerical cycle exchange.\",\n      \"detail\": {\n        \"multiplier\": \"4/25\",\n        \"cycle\": [\n          0.51304450953263,\n          0.79945549046737\n        ],\n        \"factorization\": \"exact degree-four polynomial identity\"\n      }\n    },\n    {\n      \"name\": \"D09-F03 mechanics and clock\",\n      \"status\": \"passed\",\n      \"kind\": \"exact values plus numerical identity\",\n      \"scope\": \"Printed exact linear-potential observables and scalar RG trajectory.\",\n      \"detail\": {\n        \"travel_time\": \"1/2\",\n        \"action\": \"1/6\",\n        \"RG_wall_time\": 4,\n        \"ODE_samples\": 4\n      }\n    },\n    {\n      \"name\": \"D09-F04 exact memory and rotation coding\",\n      \"status\": \"passed\",\n      \"kind\": \"exact combinatorial plus numerical continuous model\",\n      \"scope\": \"Exact irrational floor arithmetic for 1024 symbols and 128 block lengths; numerical linear-flow and convolution identities.\",\n      \"detail\": {\n        \"x_at_log2\": \"5/8\",\n        \"memory_free_value\": \"1/2\",\n        \"balance_lengths_checked\": 128,\n        \"word_length\": 1024,\n        \"word_arithmetic\": \"exact integer square roots\"\n      }\n    },\n    {\n      \"name\": \"Source and coverage integrity\",\n      \"status\": \"passed\",\n      \"kind\": \"metadata\",\n      \"scope\": \"Identifier validity and complete routing of the 259 initial source records; this is structural QA, not theorem validation.\",\n      \"detail\": {\n        \"classified_sources\": 259,\n        \"families\": 12,\n        \"anchor_and_progression_links\": \"valid\"\n      }\n    }\n  ],\n  \"scope\": \"Twelve stated worked models plus source integrity. Proofs in families.json carry the general mathematical claims. No check claims to validate the entire historical corpus or an unspecified operator.\"\n}",
+      "stderr": ""
+     },
+     {
+      "label": "domain:probability",
+      "return_code": 0,
+      "stdout": "{\"checks\": 24, \"passed\": 24, \"output\": \"/tmp/atlas-verification-n6f5f00w/domains/probability/checks.json\"}",
+      "stderr": ""
+     },
+     {
+      "label": "domain:computation",
+      "return_code": 0,
+      "stdout": "{\"status\": \"passed\", \"checks\": 13, \"families\": 12, \"initial_entries\": 148, \"FreeLIP_patterns\": 126}",
+      "stderr": ""
+     },
+     {
+      "label": "independent browser-engine fixtures",
+      "return_code": 0,
+      "stdout": "{\n  \"status\": \"pass\",\n  \"case_count\": 1513,\n  \"passed_count\": 1513,\n  \"cases_by_lab\": {\n    \"L01\": 128,\n    \"L02\": 1120,\n    \"L03\": 12,\n    \"L04\": 18,\n    \"L05\": 52,\n    \"L06\": 27,\n    \"L07\": 44,\n    \"L08\": 19,\n    \"L09\": 4,\n    \"L10\": 89\n  },\n  \"rejections_by_lab\": {\n    \"L06\": 4,\n    \"L07\": 4,\n    \"L08\": 2,\n    \"L10\": 3\n  },\n  \"failures\": []\n}",
+      "stderr": ""
+     },
+     {
+      "label": "engine regression checks",
+      "return_code": 0,
+      "stdout": "{\"status\":\"passed\",\"checks\":457}",
+      "stderr": ""
+     }
+    ],
+    "failures": []
+   },
+   "stdout": null,
+   "stderr": ""
+  },
+  {
+   "suite": "Hamiltonian:newest-delivered-bundle",
+   "return_code": 0,
+   "command": [
+    "python3",
+    "-B",
+    "-X",
+    "utf8",
+    "-S",
+    "verify_all.py"
+   ],
+   "result": {
+    "status": "passed",
+    "arithmetic": "exact rational/integer; standard library",
+    "suites": [
+     {
+      "suite": "quartic",
+      "return_code": 0,
+      "stdout": "{\"status\": \"passed\", \"check_count\": 20, \"apolar_basis_triples\": 5005, \"hessian_interpolation_points\": 1024}",
+      "stderr": ""
+     },
+     {
+      "suite": "structural",
+      "return_code": 0,
+      "stdout": "{\"status\": \"passed\", \"checks\": 8, \"classified_kernel_cases\": 90, \"cubic_kernel_cases\": 80}",
+      "stderr": ""
+     },
+     {
+      "suite": "monomial",
+      "return_code": 0,
+      "stdout": "{\"status\": \"passed\", \"checks\": 132, \"balanced_grid_cases\": 75615, \"unequal_grid_cases\": 204655}",
+      "stderr": ""
+     },
+     {
+      "suite": "independent",
+      "return_code": 0,
+      "stdout": "{\"status\": \"passed\", \"check_groups\": 7, \"exact_assertions\": 1144}",
+      "stderr": ""
+     },
+     {
+      "suite": "context",
+      "return_code": 0,
+      "stdout": "{\"status\": \"passed\", \"checks\": 5}",
+      "stderr": ""
+     },
+     {
+      "suite": "cubic factorization",
+      "return_code": 0,
+      "stdout": "{\"status\": \"passed\", \"exact_assertions\": 420}",
+      "stderr": ""
+     },
+     {
+      "suite": "user CLI integration",
+      "return_code": 0,
+      "stdout": "{\"status\": \"passed\", \"check_count\": 19, \"checks\": [{\"name\": \"Exact parser rational coefficients\", \"status\": \"passed\"}, {\"name\": \"Rejects unsupported expression __import__('os').system('x')\", \"status\": \"passed\"}, {\"name\": \"Rejects unsupported expression q/p\", \"status\": \"passed\"}, {\"name\": \"Rejects unsupported expression q**(-1)\", \"status\": \"passed\"}, {\"name\": \"Rejects unsupported expression unknown\", \"status\": \"passed\"}, {\"name\": \"Rejects unsupported expression 1/0\", \"status\": \"passed\"}, {\"name\": \"Zero numerator\", \"status\": \"passed\"}, {\"name\": \"Monomial finite all-degree example\", \"status\": \"passed\"}, {\"name\": \"Univariate exact space\", \"status\": \"passed\"}, {\"name\": \"Coordinate exchange explicit\", \"status\": \"passed\"}, {\"name\": \"Balanced active dimensions\", \"status\": \"passed\"}, {\"name\": \"Sextic exceptional partner\", \"status\": \"passed\"}, {\"name\": \"Higher monomial partner\", \"status\": \"passed\"}, {\"name\": \"Perturbed core full-space invariance\", \"status\": \"passed\"}, {\"name\": \"Homogeneous quartic kernel degree2\", \"status\": \"passed\"}, {\"name\": \"Homogeneous quartic kernel degree3\", \"status\": \"passed\"}, {\"name\": \"Homogeneous quartic kernel degree4\", \"status\": \"passed\"}, {\"name\": \"Homogeneous quartic kernel degree6\", \"status\": \"passed\"}, {\"name\": \"Homogeneous quartic kernel degree10\", \"status\": \"passed\"}]}",
+      "stderr": ""
+     }
+    ],
+    "failures": [],
+    "scope": "Named finite checks accompany all-degree proofs; this is not a formal proof-kernel certification or a new replay of archived global msolve receipts."
+   },
+   "stdout": null,
+   "stderr": ""
+  }
+ ],
+ "source_counts": {
+  "main_treatments": 1051,
+  "supplementary_treatments": 14,
+  "source_bodies": 1065,
+  "annual_volumes": 4
+ }
+}

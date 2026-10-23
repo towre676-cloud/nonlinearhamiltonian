@@ -43,6 +43,41 @@ Every lab states its inputs, arithmetic and limits. Exact integer or rational an
 
 ## The Hamiltonian research note
 
+The [22 October overlap study](research/core_overlap/README.md) disproves the
+blanket pure-top conjecture in the extension programme and classifies new
+finite and infinite exact sectors. It includes the quartic
+`H=(p+q²)²` with active exact observables, complete nonlinear-composition
+families, and sharp finite
+stopping rules for analytic and polygamma Hamiltonians. The proofs,
+independent exact checkers, and a [research PDF](research/core_overlap/output/pdf/Exact_Core_Overlap_Research.pdf)
+state their scopes and leave historical priority open.
+
+The continuation completes the higher shear-composition case, classifies
+exact nonlinear oscillator sectors and their sharp stopping depths, and
+classifies the analytic potentials preserving the fractional cubic.
+Every polynomial Hamiltonian `A*p^2+B(q)*p+C(q)` with nonzero constant A
+is now classified, including infinite and finite sectors and sharp
+third-gate stopping depths up to seven. Exact all-degree bounds and
+parameter-polynomial certificates establish the remaining branches.
+The oscillator deformation
+also separates first-order from second-order lifting obstructions in all
+observable degrees. See the [research overview](research/core_overlap/README.md)
+and its portable, standard-library replay bundle.
+
+The cubic-phase continuation completes every affine Hamiltonian
+`H=a(P)+q*b(P)`, `P=p+w(q)`, degree w two, including K1-prime and K4
+upper bounds and a four-dimensional low-degree boundary. For every
+polynomial F of degree at least three, adding a nonzero quadratic
+restoring force to F(P) leaves exactly span{1,H}, sharply at third-gate
+depth three. The associated formal deformation has three first-order
+liftable initial observables and two second-order/formal ones; its
+uniform finite-weight Smith law records one delayed t² obstruction.
+General non-affine cubic-phase Hamiltonians remain open beyond the stated
+classes. The [complete affine table](research/core_overlap/cubic_phase_classification.md)
+and [restoring deformation theorem](research/core_overlap/restoring_deformation.md)
+state the hypotheses and all-degree proofs.
+
+
 The [Hamiltonian package](research/hamiltonian/) studies, for a fixed polynomial Hamiltonian $H$, those $\hbar$-independent polynomial observables $G$ for which
 
 $$

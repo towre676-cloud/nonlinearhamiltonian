@@ -1,0 +1,16 @@
+{
+  "format": "cubic-phase-independent-review-v1",
+  "status": "passed",
+  "checks": {
+    "original_coordinate_affine_third_gate": 30,
+    "highest_Q_leading_factor": 432,
+    "quadratic_coupling_finite_stopping_coefficients": 9,
+    "linear_coupling_diagonal_leading_coefficients": 75,
+    "linear_finite_stopping_weight_support": 4,
+    "linear_finite_stopping_vandermonde_coordinates": 12,
+    "full_output_linear_coupling_spans": 12,
+    "restoring_gate_and_sharp_depth_instances": 10,
+    "compatibility_defect_total_derivative": 81
+  },
+  "scope": "Independent direct mixed derivatives and proof-coefficient replay; finite examples supplement all-degree proofs. Historical priority unestablished."
+}

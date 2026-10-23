@@ -1,0 +1,23 @@
+{
+  "format": "affine-cubic-phase-complete-v1",
+  "status": "passed",
+  "checks": {
+    "classified_instances": 26,
+    "finite_basis_gate_and_closure_checks": 70,
+    "ambiguous_completion_charts": 8,
+    "forgery_rejections": 3,
+    "invalid_input_rejections": 5
+  },
+  "cases": [
+    "K1-prime full core",
+    "K4 full core",
+    "QC nonlinear composition",
+    "QC quadratic composition",
+    "nonlinear vector-field coefficient",
+    "positive three-strip",
+    "quadratic affine chart",
+    "quadratic coefficient with low density",
+    "quadratic original Hamiltonian"
+  ],
+  "scope": "Full affine-Q cubic-phase classification; exact rational chart recognition; all-degree proofs in the three cited notes."
+}

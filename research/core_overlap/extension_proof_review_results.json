@@ -1,0 +1,138 @@
+{
+  "status": "passed",
+  "format": "core-extension-independent-audit-v1",
+  "direct_operator_comparisons": 84,
+  "composition_joint_kernel_dimensions": [
+    {
+      "m": 3,
+      "mu": 3,
+      "bound": 3,
+      "dimension": 2
+    },
+    {
+      "m": 3,
+      "mu": 4,
+      "bound": 4,
+      "dimension": 2
+    },
+    {
+      "m": 4,
+      "mu": 3,
+      "bound": 3,
+      "dimension": 2
+    }
+  ],
+  "oscillator_joint_kernel_dimensions": [
+    {
+      "m": 2,
+      "kappa": 3,
+      "depth": 3,
+      "bound": 4,
+      "dimension": 6
+    },
+    {
+      "m": 3,
+      "kappa": 0,
+      "depth": 2,
+      "bound": 4,
+      "dimension": 6
+    },
+    {
+      "m": 3,
+      "kappa": -2,
+      "depth": 2,
+      "bound": 4,
+      "dimension": 6
+    },
+    {
+      "m": 4,
+      "kappa": 3,
+      "depth": 2,
+      "bound": 4,
+      "dimension": 6
+    }
+  ],
+  "quadratic_shear_depth_two_dimension": 7,
+  "quadratic_shear_depth_three_dimension": 6,
+  "quartic_resonance_witness": "C3 D^3 G = -1728 A^3 b kappa^2",
+  "analytic_potential_cases": 5,
+  "quadratic_frontier_sharp_depths": [
+    {
+      "shear_degree": 2,
+      "potential_degree": 3,
+      "sharp_depth": 6
+    },
+    {
+      "shear_degree": 2,
+      "potential_degree": 4,
+      "sharp_depth": 4
+    },
+    {
+      "shear_degree": 3,
+      "potential_degree": 3,
+      "sharp_depth": 6
+    },
+    {
+      "shear_degree": 4,
+      "potential_degree": 3,
+      "sharp_depth": 6
+    },
+    {
+      "shear_degree": 3,
+      "potential_degree": 4,
+      "sharp_depth": 4
+    },
+    {
+      "shear_degree": 3,
+      "potential_degree": 6,
+      "sharp_depth": 4
+    },
+    {
+      "shear_degree": 3,
+      "potential_degree": 8,
+      "sharp_depth": 4
+    }
+  ],
+  "affine_shear_sharp_depths": [
+    {
+      "shear_degree": 0,
+      "potential_degree": 3,
+      "sharp_depth": 7
+    },
+    {
+      "shear_degree": 0,
+      "potential_degree": 4,
+      "sharp_depth": 5
+    },
+    {
+      "shear_degree": 0,
+      "potential_degree": 6,
+      "sharp_depth": 5
+    },
+    {
+      "shear_degree": 1,
+      "potential_degree": 3,
+      "sharp_depth": 7
+    },
+    {
+      "shear_degree": 1,
+      "potential_degree": 4,
+      "sharp_depth": 5
+    },
+    {
+      "shear_degree": 1,
+      "potential_degree": 6,
+      "sharp_depth": 5
+    }
+  ],
+  "quadratic_shear_cubic_minor": {
+    "size": 14,
+    "parameter_degree_bound": 32,
+    "exact_evaluations": 33,
+    "constant_determinant": "-2489071056189074244411853807879968522240000000"
+  },
+  "formal_cubic_lift_residual": "C3 D_t^3 (Q^3+3tq^2Q/4) = -432t^2",
+  "euler_indicial_identity": "nu(4nu+1)(4nu-3)(2nu-5)/32",
+  "constant_shift_warning": "(H-c0)^3 is exact; H^3 generally is not",
+  "scope": "Independent exact finite calibrations; universal conclusions rest on the reviewed proofs."
+}

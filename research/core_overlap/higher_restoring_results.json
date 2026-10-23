@@ -1,0 +1,99 @@
+{
+  "all_degree_proof": "higher_restoring.md, Theorem HR",
+  "checks": {
+    "direct_original_derivation_checks": 120,
+    "direct_original_gate_checks": 120,
+    "highest_q_coefficient_checks": 70,
+    "independent_pbw_checks": 10,
+    "leading_nonvanishing_checks": 10,
+    "recognition_acceptances": 10,
+    "recognition_rejections": 39,
+    "scalar_ode_checks": 10,
+    "sharp_depth_checks": 70
+  },
+  "complete_core": "span{1,H}",
+  "finite_full_output_kernels": [
+    {
+      "degree_bound_q_P": 3,
+      "full_output_coordinates": 8,
+      "input_monomials": 10,
+      "kernel_dimension": 4,
+      "output_projection": false,
+      "third_gate_depth": 1
+    },
+    {
+      "degree_bound_q_P": 3,
+      "full_output_coordinates": 15,
+      "input_monomials": 10,
+      "kernel_dimension": 3,
+      "output_projection": false,
+      "third_gate_depth": 2
+    },
+    {
+      "degree_bound_q_P": 3,
+      "full_output_coordinates": 23,
+      "input_monomials": 10,
+      "kernel_dimension": 2,
+      "output_projection": false,
+      "third_gate_depth": 3
+    },
+    {
+      "degree_bound_q_P": 4,
+      "full_output_coordinates": 24,
+      "input_monomials": 15,
+      "kernel_dimension": 4,
+      "output_projection": false,
+      "third_gate_depth": 1
+    },
+    {
+      "degree_bound_q_P": 4,
+      "full_output_coordinates": 46,
+      "input_monomials": 15,
+      "kernel_dimension": 3,
+      "output_projection": false,
+      "third_gate_depth": 2
+    },
+    {
+      "degree_bound_q_P": 4,
+      "full_output_coordinates": 74,
+      "input_monomials": 15,
+      "kernel_dimension": 2,
+      "output_projection": false,
+      "third_gate_depth": 3
+    },
+    {
+      "degree_bound_q_P": 6,
+      "full_output_coordinates": 66,
+      "input_monomials": 28,
+      "kernel_dimension": 4,
+      "output_projection": false,
+      "third_gate_depth": 1
+    },
+    {
+      "degree_bound_q_P": 6,
+      "full_output_coordinates": 128,
+      "input_monomials": 28,
+      "kernel_dimension": 3,
+      "output_projection": false,
+      "third_gate_depth": 2
+    },
+    {
+      "degree_bound_q_P": 6,
+      "full_output_coordinates": 210,
+      "input_monomials": 28,
+      "kernel_dimension": 2,
+      "output_projection": false,
+      "third_gate_depth": 3
+    }
+  ],
+  "format": "higher-restoring-v1",
+  "intermediate_kernel_dimensions": {
+    "1": 4,
+    "2": 3,
+    "3": 2
+  },
+  "limits": "Other shear degrees, lambda=0 and quadratic compositions follow separate theorems. Finite boxes supplement the all-degree highest-q proof; historical priority unestablished.",
+  "passed": true,
+  "scope": "Quadratic w with nonzero leading coefficient; H=F(p+w(q))+lambda*q^2+epsilon*q+C, deg F>=3, lambda!=0",
+  "sharp_third_gate_depth": 3
+}

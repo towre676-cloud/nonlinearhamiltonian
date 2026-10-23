@@ -234,6 +234,84 @@
    }
   },
   {
+   "file": "results/hamiltonian/affine_cubic_K1prime_five.json",
+   "sha256": "930c17658725ef18a86a949fe096d356447bb3518986030ece0062add9cadb62",
+   "witness_kind": "affine-cubic-phase-complete",
+   "replay": "python3 -B extensions/envelope.py check results/hamiltonian/affine_cubic_K1prime_five.json",
+   "producer_seconds": 0.0,
+   "summary": {
+    "status": "passed",
+    "dimension": 5,
+    "case": "K1-prime full core",
+    "claim": "full polynomial dynamic core"
+   }
+  },
+  {
+   "file": "results/hamiltonian/affine_cubic_K1prime_four.json",
+   "sha256": "7aa34902d7d049f57817b9c2bd014b9ba4133e522a219fd43fea12e045aafb9d",
+   "witness_kind": "affine-cubic-phase-complete",
+   "replay": "python3 -B extensions/envelope.py check results/hamiltonian/affine_cubic_K1prime_four.json",
+   "producer_seconds": 0.0,
+   "summary": {
+    "status": "passed",
+    "dimension": 4,
+    "case": "K1-prime full core",
+    "claim": "full polynomial dynamic core"
+   }
+  },
+  {
+   "file": "results/hamiltonian/affine_cubic_K1prime_six.json",
+   "sha256": "5a2a8d462da7cd1cc5800f121689bc5cf6da6ddcfd4af465f7a8adf7d71e6673",
+   "witness_kind": "affine-cubic-phase-complete",
+   "replay": "python3 -B extensions/envelope.py check results/hamiltonian/affine_cubic_K1prime_six.json",
+   "producer_seconds": 0.0,
+   "summary": {
+    "status": "passed",
+    "dimension": 6,
+    "case": "K1-prime full core",
+    "claim": "full polynomial dynamic core"
+   }
+  },
+  {
+   "file": "results/hamiltonian/affine_cubic_K4_full.json",
+   "sha256": "46723eac2aeebc8fd2d2be483256e29faba6e0bc412b0a1c522aac71495a4d88",
+   "witness_kind": "affine-cubic-phase-complete",
+   "replay": "python3 -B extensions/envelope.py check results/hamiltonian/affine_cubic_K4_full.json",
+   "producer_seconds": 0.0,
+   "summary": {
+    "status": "passed",
+    "dimension": 3,
+    "case": "K4 full core",
+    "claim": "full polynomial dynamic core"
+   }
+  },
+  {
+   "file": "results/hamiltonian/affine_cubic_hidden_chart.json",
+   "sha256": "c449c268e43a3685ee1534df7aa7414160574f067429b4b9085b6b04d44e8485",
+   "witness_kind": "affine-cubic-phase-complete",
+   "replay": "python3 -B extensions/envelope.py check results/hamiltonian/affine_cubic_hidden_chart.json",
+   "producer_seconds": 0.0,
+   "summary": {
+    "status": "passed",
+    "dimension": 2,
+    "case": "nonlinear vector-field coefficient",
+    "claim": "full polynomial dynamic core"
+   }
+  },
+  {
+   "file": "results/hamiltonian/affine_cubic_low_four.json",
+   "sha256": "2ed676774754ff62288bff10991ed30e0f0688172a2f5d301027fd80a304057d",
+   "witness_kind": "affine-cubic-phase-complete",
+   "replay": "python3 -B extensions/envelope.py check results/hamiltonian/affine_cubic_low_four.json",
+   "producer_seconds": 0.0,
+   "summary": {
+    "status": "passed",
+    "dimension": 4,
+    "case": "quadratic coefficient with low density",
+    "claim": "full polynomial dynamic core"
+   }
+  },
+  {
    "file": "results/hamiltonian/balanced_top_theorem.json",
    "sha256": "566d7037094d99893f0da42ef6be4594a305a554d3c13a245d4a1812d0b322ae",
    "witness_kind": "balanced-top",
@@ -775,6 +853,105 @@
    }
   },
   {
+   "file": "results/hamiltonian/restoring_composition_degree_3.json",
+   "sha256": "bbb01c666737b462230d8fd6df325e992a19c71b0ca63d2cb6dd4fe2af4423b2",
+   "witness_kind": "two-root-perturbation",
+   "replay": "python3 -B extensions/envelope.py check results/hamiltonian/restoring_composition_degree_3.json",
+   "producer_seconds": 0.01,
+   "summary": {
+    "status": "passed",
+    "degree": 6,
+    "top": "pure",
+    "route": "HR",
+    "proved": true,
+    "core": "span{1, H}",
+    "dimension": 2,
+    "active_part": "0",
+    "third_gate_depth": 3,
+    "degree_composition": 3,
+    "root_coordinate_witness": {
+     "c": "-2/3",
+     "lambda": "3/5",
+     "epsilon": "7"
+    },
+    "basis": [
+     {
+      "0,0": "1"
+     },
+     {
+      "0,1": "-2",
+      "0,3": "1",
+      "1,0": "33/5",
+      "1,2": "3/5",
+      "2,0": "29/15",
+      "2,1": "3/25",
+      "2,2": "-2",
+      "3,0": "1/125",
+      "3,1": "-4/5",
+      "4,0": "-2/25",
+      "4,1": "4/3",
+      "5,0": "4/15",
+      "6,0": "-8/27"
+     }
+    ]
+   }
+  },
+  {
+   "file": "results/hamiltonian/restoring_composition_degree_5.json",
+   "sha256": "0b41cc1250f9fc9199d171f2c26807a303cd0200546a9e230192256936426107",
+   "witness_kind": "two-root-perturbation",
+   "replay": "python3 -B extensions/envelope.py check results/hamiltonian/restoring_composition_degree_5.json",
+   "producer_seconds": 0.01,
+   "summary": {
+    "status": "passed",
+    "degree": 10,
+    "top": "pure",
+    "route": "HR",
+    "proved": true,
+    "core": "span{1, H}",
+    "dimension": 2,
+    "active_part": "0",
+    "third_gate_depth": 3,
+    "degree_composition": 5,
+    "root_coordinate_witness": {
+     "c": "-2/3",
+     "lambda": "3/5",
+     "epsilon": "7"
+    },
+    "basis": [
+     {
+      "0,0": "1"
+     },
+     {
+      "0,1": "-2",
+      "0,5": "1",
+      "1,0": "33/5",
+      "1,4": "1",
+      "2,0": "29/15",
+      "2,3": "2/5",
+      "2,4": "-10/3",
+      "3,2": "2/25",
+      "3,3": "-8/3",
+      "4,1": "1/125",
+      "4,2": "-4/5",
+      "4,3": "40/9",
+      "5,0": "1/3125",
+      "5,1": "-8/75",
+      "5,2": "8/3",
+      "6,0": "-2/375",
+      "6,1": "8/15",
+      "6,2": "-80/27",
+      "7,0": "8/225",
+      "7,1": "-32/27",
+      "8,0": "-16/135",
+      "8,1": "80/81",
+      "9,0": "16/81",
+      "10,0": "-32/243"
+     }
+    ]
+   }
+  },
+  {
    "file": "results/hamiltonian/rigidity_octic_4211_perturbed.json",
    "sha256": "c5397ca81d19e45272709e077ab5cc35561b0bc422988ded0bfd82bc6cb581df",
    "witness_kind": "root-rigidity",
@@ -1313,7 +1490,7 @@
   },
   {
    "file": "results/hamiltonian/tworoot_pure_triangular_K2.json",
-   "sha256": "310c206493fc778fbf334e68931c6a88191af4d77b346670cf4cd8db798a871f",
+   "sha256": "f15a7ab97735d546273505c9633e38788cec9be95cee84a025a0c988fd12428a",
    "witness_kind": "two-root-perturbation",
    "replay": "python3 -B extensions/envelope.py check results/hamiltonian/tworoot_pure_triangular_K2.json",
    "producer_seconds": 0.0,
@@ -1321,45 +1498,23 @@
     "status": "passed",
     "degree": 6,
     "top": "pure",
-    "route": "K2",
-    "proved": false,
-    "core": "tau*K[Q,P]_{<=2}",
-    "contains_proved": true,
-    "generators": [
-     {
-      "0,0": "1"
-     },
-     {
-      "1,0": "1"
-     },
-     {
-      "2,0": "1"
-     },
-     {
-      "0,1": "1",
-      "3,0": "1"
-     },
-     {
-      "1,1": "1",
-      "4,0": "1"
-     },
-     {
-      "0,2": "1",
-      "3,1": "2",
-      "6,0": "1"
-     }
-    ],
-    "degrees": [
-     0,
-     1,
-     2,
-     3,
-     4,
-     6
-    ],
-    "active_part": "nonzero (contains an active element)",
-    "w": {
-     "3": "1"
+    "route": "SS",
+    "proved": true,
+    "core": "span{1, l, Q, l^2, lQ, Q^2}",
+    "dimension": 6,
+    "active_part": "finite nonzero",
+    "Q": {
+     "0,1": "1",
+     "3,0": "1"
+    },
+    "l": {
+     "1,0": "1"
+    },
+    "root_coordinate_witness": {
+     "A": "1",
+     "B": "0",
+     "epsilon": "0",
+     "constant": "0"
     }
    }
   },

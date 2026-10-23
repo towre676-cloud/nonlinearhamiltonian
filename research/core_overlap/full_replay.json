@@ -1,0 +1,80 @@
+{
+  "status": "passed",
+  "initial_review_commit": "e91e14da9d59e799ad9ed0331f59b2b500e478e8",
+  "base_commit": "268d553eb6a4434afeaf5fcb4689a6294e5ab688",
+  "seconds": 85.703,
+  "checks": [
+    {
+      "checker": "audit_balanced.py",
+      "status": "passed",
+      "seconds": 0.33
+    },
+    {
+      "checker": "pure_transverse.py",
+      "status": "passed",
+      "seconds": 0.318
+    },
+    {
+      "checker": "pure_quadratic_composition.py",
+      "status": "passed",
+      "seconds": 2.761
+    },
+    {
+      "checker": "analytic_shear_square.py",
+      "status": "passed",
+      "seconds": 1.056
+    },
+    {
+      "checker": "audit_sector_dynamics.py",
+      "status": "passed",
+      "seconds": 0.147
+    },
+    {
+      "checker": "audit_balanced_transverse.py",
+      "status": "passed",
+      "seconds": 0.566
+    },
+    {
+      "checker": "audit_composition_recognize.py",
+      "status": "passed",
+      "seconds": 0.169
+    },
+    {
+      "checker": "depth_verify.py",
+      "status": "passed",
+      "seconds": 0.552
+    },
+    {
+      "checker": "analytic_bridge_check.py",
+      "status": "passed",
+      "seconds": 0.582
+    },
+    {
+      "checker": "canonical_verify.py",
+      "status": "passed",
+      "seconds": 0.483
+    },
+    {
+      "checker": "review_checks.py",
+      "status": "passed",
+      "seconds": 8.377
+    },
+    {
+      "checker": "integration_verify.py",
+      "status": "passed",
+      "seconds": 5.038
+    },
+    {
+      "checker": "pure_tests.py",
+      "status": "passed",
+      "seconds": 28.414
+    },
+    {
+      "checker": "integrated two-root regression suite",
+      "status": "passed",
+      "seconds": 36.904,
+      "summary": "........\n----------------------------------------------------------------------\nRan 8 tests in 36.839s\n\nOK\n"
+    }
+  ],
+  "scope": "Exact independent identities and finite sanity checks; universal claims rest on written proofs and internal review, historical priority unestablished."
+}
