@@ -544,6 +544,8 @@ def edge_route(H, l):
         return 'NE'
     if s >= 3 and alpha == F(1, e):                 # e = 2: the cubic-phase case of Theorem NT (identity CT)
         return 'NT'
+    if e == 2 and s >= 5 and edge == [(1, s - alpha)] and 2 * (s - alpha) >= s + 1 and alpha >= 2:
+        return 'NQ'                                 # cubic phase, Q-linear first edge (identity NQ)
     return None
 
 

@@ -13,19 +13,19 @@ roots over Qbar, the checker recomputes the top type and applies the proved crit
                                             span{1, H} if H = f(l) + m g(l) + gamma m^2, gamma != 0,
                                             deg g < d/2 (Theorem Q') or the transverse top is finite
                                             (Theorem T); the triangular families K1, K1', K2, K3, K4
-                                            (check_triangular.py) have a larger core, of which
-                                            the stated span is proved to be contained in D_inf;
+                                            (check_triangular.py) have the stated larger cores
+                                            (exact, check_gauge.py);
                                             when the transverse top is constant and the
                                             completed power has degree 2 (cubic phase) and h
                                             is affine in Q, span{1, H} is proved inside
                                             tau*(K[P] + Q K[P]) (check_cubic_phase.py); other
-                                            cubic-phase cores are open; otherwise span{1, H}
-                                            is conjectural (P005). Higher shears (deg w >= 3) with h
+                                            cubic-phase tops: NE, NV, NT (e = 2), NQ
+                                            (check_gauge.py). Higher shears (deg w >= 3) with h
                                             affine in Q: span{1, H} (route RS, check_gauge.py:
                                             Theorems AE, LB). Non-affine h: first edges above, at
                                             or below the threshold and flat lower terms (NA, NE,
                                             NB, NT, NV): span{1, H}. Perfect-power transverse tops
-                                            l^k, 2 <= k != s: span{1, H} or the extended K3 (TP).
+                                            l^k: span{1, H} or the extended K3 (TP, TE). (complete)
   near     H_d = c l^(d-1) m                V if d_v^2 H = 0; span{1, H} otherwise (Theorem NE,
                                             check_near_edges.py).                   (complete)
   balanced H_d = c Q^mu, Q a quadratic form  K[G] with G = Q(x - x0) if the translation killing

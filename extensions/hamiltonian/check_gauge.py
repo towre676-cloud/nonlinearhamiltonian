@@ -153,6 +153,9 @@ argument and nonzero leading N-coefficients; s = 2 leaves exactly K3.        [TE
 NT for deg w = 2 (cubic-phase threshold): twisted top problem exp(tA + t^2 B), weights (1, 2); the vertex forces the
 coefficients below the first deviation level k0 to vanish, and level k0 (levels 2-3 when k0 = 2) forces the top
 coefficient to vanish.                                                   [CT: twisted rows, minors, instances]
+NQ (cubic phase, first edge P^s + mu Q P^r linear in Q, which forces (s+1)/2 <= r <= s-2): only the top P^N survives
+the vertex; at level s - r the top gates C_1, C_2 give a determinant mu s (s-1) r N (N-1)(N-s+r)(s-r-1)(N-s), and
+N = 1, s - r are removed through D; s = 5, 6 are computed directly.      [NQ: equations, determinant, top cores]
 
 Corollary K1c. (i) deg w = 2, H = F(P) + lambda Q, deg F >= 3: D_inf(H~) = K[P] + K Q exactly.
 (ii) deg w >= 3, H = F(P) + lambda Q, deg F >= 3: D_inf(H~) = span{1, H~}.     [K1c: instances]
@@ -1386,10 +1389,38 @@ def grid_CT():
             return False
     return True
 
+def grid_NQ():
+    """cubic phase, first edge E = P^s + mu Q P^r linear in Q ((s+1)/2 <= r <= s-2): the top core is span{1, E}.
+    At level alpha = s - r each top gate C_m gives one equation
+    -(s)_m (s-m) (N-alpha)_m x1 + mu (r)_m (N)_m (N-m) x0 = 0 (when r + N - 2m - 1 >= m)."""
+    for s_ in range(5, 10):
+        for r in range((s_ + 2) // 2, s_ - 1):
+            al = s_ - r
+            for N_ in range(al, al + 8):
+                for m in range(1, r + 1):
+                    a = topgate({(0, s_): F(1)}, {(1, N_ - al): F(1)}, 2, m)
+                    b = topgate({(1, r): F(1)}, {(0, N_): F(1)}, 2, m)
+                    mon = (0, r + N_ - 2 * m - 1)
+                    if a != TR.tidy({mon: F(-ff_(s_, m) * (s_ - m) * ff_(N_ - al, m))}) or \
+                            b != TR.tidy({mon: F(ff_(r, m) * ff_(N_, m) * (N_ - m))}):
+                        return False
+    # the (m = 1, m = 2) determinant: mu s (s-1) r N (N-1) (N - alpha) (s - r - 1) (N - s)   (r in the b-slot)
+    N, r, s = ZN, ZB, ZS
+    al = s - r
+    a1, b1 = -s * (s - 1) * (N - al), r * N * (N - 1)
+    a2, b2 = -s * (s - 1) * (s - 2) * (N - al) * (N - al - 1), r * (r - 1) * N * (N - 1) * (N - 2)
+    if a1 * b2 - a2 * b1 != s * (s - 1) * r * N * (N - 1) * (N - al) * (s - r - 1) * (N - s):
+        return False
+    # small s (s = 5, 6) and two more cases: the top core computed directly
+    for s_, r_ in [(5, 3), (6, 4), (7, 4), (8, 5)]:
+        if top_core({(0, s_): F(1), (1, r_): F(1)}, s_ - r_, 2, 3 * s_ + 2) != [(0, 1), (s_, 1)]:
+            return False
+    return True
+
 
 def identities():
     return {'GG': grid_GG(), 'T3': grid_T3(), 'AE': grid_AE(), 'K1c': grid_K1c(), 'C2': grid_C2(),
-            'NA': grid_NA(), 'TG': grid_TG(), 'GE': grid_GE(), 'BE': grid_BE(), 'NT': grid_NT(), 'NV': grid_NV(), 'NV32': grid_NV32(), 'K2U': grid_K2U(), 'LB': grid_LB(), 'K1P': grid_K1P(), 'TP': grid_TP(), 'TE': grid_TE(), 'CT': grid_CT()}
+            'NA': grid_NA(), 'TG': grid_TG(), 'GE': grid_GE(), 'BE': grid_BE(), 'NT': grid_NT(), 'NV': grid_NV(), 'NV32': grid_NV32(), 'K2U': grid_K2U(), 'LB': grid_LB(), 'K1P': grid_K1P(), 'TP': grid_TP(), 'TE': grid_TE(), 'CT': grid_CT(), 'NQ': grid_NQ()}
 
 
 def check(cert=None):
@@ -1408,7 +1439,7 @@ def check(cert=None):
                        'non-affine binomial edges collapse (Theorem NA), general first edges (NE), the boundary edge (NB), '
                        'threshold edges with deg w >= 3 (NT), edges below the threshold and flat lower terms (NV); '
                        'K2 and K1+K2 exact (K2U), linear b for higher shears (LB), K1\' with f = 3 (K1P), '
-                       'perfect-power transverse tops and the extended K3 (TP), transverse tops l^k with k in {1, s} (TE), cubic-phase threshold edges (CT)'}
+                       'perfect-power transverse tops and the extended K3 (TP), transverse tops l^k with k in {1, s} (TE), cubic-phase threshold edges (CT) and Q-linear first edges (NQ)'}
 
 
 def main():

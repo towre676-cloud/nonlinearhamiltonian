@@ -956,6 +956,20 @@ Together with Q′, K2 and NA, this settles the `m`-degree-2 tops with constant 
 
 Only `T₃`, `T₅` and depth `R ≤ 2` are used.
 
+**Theorem NQ (cubic phase, `Q`-linear first edges).** Let `deg w = 2`, `s ≥ 5`, and let the first edge of `h` from `Pˢ` be the single monomial `μQP^r` with `(s+1)/2 ≤ r ≤ s − 2`. This is exactly the case NE leaves out when `h` is not affine in `Q`: a non-affine `h` forces `r ≥ (s+1)/2`. Then `D∞(H) = span{1, H}`.
+
+*Proof.* Give `Q` weight `α = s − r ≥ 2` and `P` weight 1, so `E = Pˢ + μQP^r` and `D` raises the weight by `r − 1 > 0`. The top gates are the cubic-phase closed forms: `{E^{(m)}, g^{(m)}}` must have `P`-degree `< m`.
+1. *Tops.* For the vertex `Pˢ`, a top `QⁱPⁿ` with `i ≥ 1` and `n ≥ 1` already fails at `m = 1`, since `s ≥ 5`. The tops `Qⁱ` pass the gates, but `D` sends them to tops `Q^{i−1}P^{s−1}`, which fail or are type 0. So only type-0 tops `x₀Pᴺ` remain.
+2. *Level `α`.* Each `C_m` gives the single equation
+   `−(s)_m(s−m)(N−α)_m·x₁ + μ(r)_m(N)_m(N−m)·x₀ = 0`,
+   in force when `r + N − 2m − 1 ≥ m`.
+3. *The determinant.* For `m = 1, 2` it is `μ·s(s−1)·r·N(N−1)(N−α)(s−r−1)(N−s)`.
+   - For `s ≥ 7` both equations are available whenever `x₁` exists. When it does not (`N < α`), the `m = 1` equation alone gives `x₀ = 0`.
+   - `N = α` gives `x₀ = 0` from `m = 1`.
+   - `N = 1` (the element `P`) dies because `D P = μP^r`.
+   - `s = 5, 6` are computed directly.
+4. *Conclusion.* The top core is `span{1, E}`. ∎
+
 **Theorem NT, the case `e = 2` (cubic-phase threshold edges).** For `deg w = 2`, `s ≥ 3` and a first edge at slope exactly `1/2`, again `D∞(H) = span{1, H}`.
 
 *Proof.* Work in `(Q, P)`.
@@ -1019,6 +1033,7 @@ For the quadratic-shear oscillator `(q² + p)² + κq²/2` with `κ ≠ 0`, `R =
   - the closed-form level-`K` rows, compared with the gates on a box in `(B, K, s, N)`;
   - the four minors, as exact polynomial identities in `(N, B, s, K)`;
   - flat cores of four weighted forms, including `p⁴ − q⁴p²` and one with an intermediate lattice step;
+- **[NQ]** the level-`α` equations against the top gates on a grid, the determinant identity, and the top cores for `(s, r) = (5, 3), (6, 4), (7, 4), (8, 5)`;
 - **[CT]** the cubic-phase threshold case, using a symbolic twisted monomial calculus with `k₀` as a polynomial variable. It checks the level-2 and induction coefficients, the symbolic level-`k₀` minor, the type-1 and type-2 minors, and the `k₀ = 2` determinant with its positivity certificates. It also computes three full cores;
 - **[NT]** five parts:
   - the closed-form step-1 rows, compared with the gates on a `9 × 7 × 7` box in `(b, s, N)`;
@@ -1126,7 +1141,7 @@ So K3 is exact for every `k`.
 - The affine cubic phase: K1, K1′ (Theorem K1P for `f = 3`), K4 and Lemma C2.
 - `deg φ ≥ 1`: Theorems T, TP and TE.
 
-What remains open is the non-affine cubic phase with a `Q`-linear first edge. Cubic-phase threshold edges are covered by Theorem NT (case `e = 2`).
+The non-affine cubic phase, which P005 excludes, is settled as well: `D∞(H) = span{1, H}` there (Theorems NE, NV, NT with `e = 2`, NQ). **So every pure top is classified.** `D∞(H) = span{1, H}` except for the strips of Theorem P⁺ and the families K1, K1′, K2, K1+K2, K3 and K4, whose cores are the exact spans listed in §6.8.
 
 - **[TE]** The checker computes the level-`K` rows itself, as exact polynomials in `(N, B, s, K)`, using a monomial calculus with polynomial exponents. Against these it checks:
   - the proportionality of the rows with `r ≥ 1`;
@@ -1170,8 +1185,7 @@ These references come from a first search. Before any external positioning they 
 - it reports the core, the active part, and whether the answer is proved or conjectural. The proved routes are:
   - Theorems U, P⁺, Q, Q′, B, NE and T;
   - K1, K1′, K2, K1+K2, K3 and K4 (§6.14);
-  - RS, NA, NE, NB, NT, NV, TP, TE and the affine cubic phase (§§6.9–6.14);
-- the non-affine cubic phase is reported as open.
+  - RS, NA, NE, NB, NT, NV, NQ, TP, TE and the affine cubic phase (§§6.9–6.14).
 
 Enveloped examples are `results/hamiltonian/tworoot_*.json` and `binomial_*.json`.
 
@@ -1191,15 +1205,15 @@ Proved:
 - `φ` constant, with `h` affine in `Q`: the whole shear phase diagram of §6.11, including linear `b` (Theorems K1P and LB).
 - K2 and K1+K2 are exact (Theorem K2U).
 - `φ` constant, with `h` non-affine: every first edge above the slope threshold (Theorems NA and NE), every edge at the threshold for `deg w ≥ 3` (Theorem NT), every edge below the threshold and every flat-lower-terms top (Theorem NV), and the whole `m`-degree-2 range `deg r ≥ 3` (Theorems NA and NB).
-  For `s ≥ 3` this covers every non-affine normal form, except, in the cubic phase, first edges whose `Q`-terms are all linear in `Q`. A non-affine `h` has `s − 1 − α > 0` automatically, and every slope is above, at or below the threshold. The cubic-phase threshold is the case `e = 2` of Theorem NT.
+  For `s ≥ 3` this covers every non-affine normal form. A non-affine `h` has `s − 1 − α > 0` automatically, and every slope is above, at or below the threshold. The cubic-phase threshold is the case `e = 2` of Theorem NT, and cubic-phase first edges that are linear in `Q` are Theorem NQ.
 - `s = 2` with `deg w < deg r/2` (Theorem Q′).
 
 Open, but supported by direct computation and top-problem solutions:
-- only the non-affine cubic phase with a `Q`-linear first edge: `deg w = 2`, `h` not affine in `Q`, and first edge `Pˢ + μQP^r` (which forces `r ≥ (s+1)/2`). P005 excludes it. Its top core is the large affine-type core (K1, K1′, K4), so a second-order analysis is needed. Direct computation gives `span{1, H}` in the cases sampled (`s = 5`).
+- nothing. The non-affine cubic phase is also settled: Theorems NE, NV, NT (`e = 2`) and NQ.
 
-**Conjecture P005 is therefore proved** (§6.14, Corollary after Theorem TE).
+**Conjecture P005 is therefore proved, and so is its cubic-phase complement** (§6.14, Corollary after Theorem TE; Theorems NT with `e = 2` and NQ). The pure-top classification is complete.
 
-With §5 this gives a statement of when **active** exact dynamics survives a lower-order perturbation. Only the non-affine cubic phase is left open:
+With §5 this gives an unconditional statement of when **active** exact dynamics survives a lower-order perturbation of a two-root top:
 - three or more roots in the top: never (proved);
 - unequal top: a single active quadratic `G`, exactly in the normal form of Theorem U (proved);
 - near top: an infinite active sector exactly when `H` is affine in `m` (proved, Theorems P⁺ and NE);
