@@ -935,6 +935,49 @@ The extra hypothesis for `e = 2` is necessary. First edges whose only `Q`-terms 
 
 Together with Q′, K2 and NA, this settles the `m`-degree-2 tops with constant transverse top, apart from the upper bound for K2.
 
+**Theorem NT (threshold edges, `e ≥ 3`).** Let `s ≥ 3` and `deg w = e ≥ 3`, and let the first edge of `h` from `P^s` have slope exactly `1/e`. Then `D∞(H) = span{1, H}`.
+
+*Proof.*
+1. *Reduction to a flat problem.* Give `q` weight 1 and `p` weight `e`. The edge is `E = Σ_k e_k Q^{ek}P^{s−k}`, and the top of `H` is `F = E(p + w_e q^e, q^e) = Σ_k c_k q^{ek}p^{s−k}`. The flat gates are homogeneous, so by the top-weight lemma it suffices to show that the flat core of `F` is `span{1, F}`. The normal form has no `P^{s−1}` term, so `c₀ = e₀` and `c₁ = s·w_e·e₀ ≠ 0`.
+2. *Top end.* Take a weight-homogeneous core element `g = Σ_j x_j q^{i+ej}p^{N−j}` with `0 ≤ i < e`, and order the outputs by `p`-degree. The leading output of `T₃(F, g)` is `−(s)₃(i)₃ x₀`, so a top term with `q`-exponent `≥ 3` is impossible. It therefore suffices to show `x₀ = 0` whenever `(i, N) ∉ {(0, 0), (0, s)}`. Once `x₀ = 0`, the next term has `q`-exponent `≥ e ≥ 3` and dies too. For `(i, N) = (0, s)`, subtract `x₀F` first.
+3. *Step 1.* At the next `p`-degree, each of `T₃g`, `T₃Dg`, `T₃D²g` and `T₅g` gives one linear equation in `(x₁, c₁x₀)`, with closed-form coefficients. The relevant 2×2 minors, with `b = e`, are:
+   - type `i = 0`, pair `(T₃g, T₃Dg)`: `b²Ns²(s−N)(b−3)(b−2)²(b−1)²(s−2)(s−1)(N+s−3)`;
+   - type `i = 1`, pair `(T₃Dg, T₃D²g)`: a nonzero constant times `(N−1)(N+s−1)(N+2s−4)`. At `N = 1` the pair `(T₃g, T₃D²g)` takes over; its factor `(2−b)N + bs + s − 3` equals `(b+1)(s−1)` there;
+   - type `i = 2`, pairs `(T₃g, T₃D²g)` and `(T₃Dg, T₃D²g)`: nonzero constants times cubics `f₁₃(N)` and `f₂₃(N)`. Their resultant is `4(b−3)(b+1)(s−2)(s−1)³B(b, s)`, and `B(4+x, 3+y)` has only positive coefficients. The `x₁`-entry of `T₃D²g` is nonzero for `b ≥ 3`, so the two cubics cannot vanish together.
+
+   For `e ≥ 4`, some minor is nonzero at every `N`, so `c₁x₀ = 0`.
+4. *The case `e = 3`.*
+   - Types 1 and 2 still close at step 1. The minors are `288s²(s−2)(s−1)²(3N² + 3(s−3)N − (s−2))` and `2880s⁴(s−2)(s−1)²(3N² + 9Ns − 15N + 6s² − 19s + 14)`. The first factor is negative at `N = 0` and positive for `N ≥ 1`; the second is positive.
+   - Type 0 needs step 2. `T₃g` gives `x₁ = λx₀` with `λ = N(N−1)(N−2)/((s)₃)`. The step-2 rows of `T₃Dg` and `T₃D²g` then eliminate `x₂` and the coefficient `c₂/c₁²` together, leaving
+     `25920·N s⁴(s−N)(s−1)²(s−2)(N+s−3)·(3N² + 6(s−3)N − 10(s−2))·x₀ = 0`.
+     The last factor is `5 − 4s < 0` at `N = 1` and is positive for `N ≥ 2`. ∎
+
+Only `T₃`, `T₅` and depth `R ≤ 2` are used.
+
+*The case `e = 2`* is the cubic phase, which Conjecture P004 excludes. It is not closed by these steps:
+- Type 2 closes at step 1, with minor `−576s²(s−2)(s−1)³(N+s−2)`.
+- Type 1 closes at step 2 for `N ≥ 1`. The eliminant `N(N+s−3)(N+2s−4)(8N²s − 11N² + 8Ns² − 33Ns + 28N − 2s² + 7s − 5)` is nonzero there. At `N = 0` (that is, `g = q`) it fails exactly when `c₂/c₁² = (s−1)/(2s)`, i.e. when `E` has no `Q⁴P^{s−2}` term.
+- Type 0 at step 3 has a one-dimensional kernel in the extended unknowns `(x₀, c₂x₀, c₃x₀, x₁, c₂x₁, x₂, x₃)`. That kernel is consistent precisely at the binomial point `(c₂, c₃)/c₁^{2,3} = (C(s,2)/s², C(s,3)/s³)`, with `g = (p + q²/s)^N`.
+
+These `e = 2` computations were done in scratch with exact symbolic algebra and are not yet in a checker. So for `e = 2` the obstruction lives exactly where `F` agrees with `(p + q²/s)^s` to the order examined. A proof needs a first-deviation argument at the first nonzero `e_k` (`k ≥ 2`). Direct computation finds `span{1, F}` in every sampled case.
+
+**Theorem NV (vertex-adjacent rigidity).** Let `F` be weight-homogeneous with vertex `p^s` (`s ≥ 3`) and vertex-adjacent monomial `c·q^B p^{s−K}` with `c ≠ 0`, `B ≥ 4` and `K ≥ 1`; every other monomial has lower `p`-degree. Then the flat core of `F` is `span{1, F}`.
+
+*Proof.* Take `g` and its top coefficient `x₀` as in the proof of Theorem NT.
+1. *Level `K`.* Only two products contribute at output level `K` (the `p`-degree `K` below the top): `p^s ⊗ x₁q^{i+B}p^{N−K}` and `cq^Bp^{s−K} ⊗ x₀q^ip^N`. Intermediate terms of `g` meet no monomial of `F` there. So each `T₃D^rg` gives a linear equation in `(x₁, c·x₀)` with closed-form coefficients.
+2. *The minors.* Each of the following pairs has a minor whose factors do not involve `K`:
+   - type 0, pair `(T₃g, T₃Dg)`: `N(s−N)(N+s−3)` times `(B−3)` and nonzero factors;
+   - type 1, pair `(T₃Dg, T₃D²g)`: `(N−1)(N+s−1)(N+2s−4)`. At `N = 1` the pair `(T₃g, T₃D²g)` gives `(B+K)(s−1)(s−2)`;
+   - type 2, pair `(T₃D²g, T₃D³g)`: `(N+s−2)(N+2s−2)(N+3s−5)`.
+3. *Conclusion.* Therefore `x₀ = 0` unless `(i, N) ∈ {(0, 0), (0, s)}`. The next surviving term of `g` either has `q`-exponent `≥ 3` and dies, or is again of type 1 or 2, and the argument repeats. ∎
+
+**Corollary (edges below the threshold; flat lower terms).** Let `s ≥ 3`.
+- If the first edge of the normal form `h` from `P^s` has slope `K/B < 1/e` with `e = deg w ≥ 2`, then `D∞(H) = span{1, H}`. The shear terms then have lower weight, so the top problem is the flat core of the edge. The normal form has `K ≥ 2`, so `B > eK ≥ 4` automatically.
+- If `deg w ≤ 1`, the shear is affine-symplectic and the flat gates are invariant. Hence `D∞(H) = span{1, H}` whenever the vertex-adjacent `Q`-exponent `B` of the first edge is at least 4.
+
+With `K = 1`, Theorem NV re-proves NT for `e ≥ 4`, using depth 3 in place of the resultant argument. Theorem NV uses only `T₃` and depth `R ≤ 3`.
+
+
 **Certificate depth across the families.** Direct computation in degrees up to `d + 1` shows that the third gate alone (`K = 3`) cuts out every core listed. The number of brackets needed is:
 - `R = 1` for K1, K1′, K4 and RS;
 - `R = 2` for K2, K1+K2, K3 and non-family affine cubic-phase Hamiltonians.
@@ -945,9 +988,19 @@ For the quadratic-shear oscillator `(q² + p)² + κq²/2` with `κ ≠ 0`, `R =
 - **[NA]** the monomial formula on a grid of `(e, s, d, i, j)`, plus three instances computed directly;
 - **[TG]** the two diagonal identities and the closed form of the cubic-phase top gates, on random polynomials;
 - **[GE]** non-binomial edges (cubic phase and `e = 3`), whose full cores are computed directly;
-- **[BE]** the identity for `K(e)`, verified at 9 values of `e`, plus boundary flat cores for `e = 2, 3, 4` and several `c`.
+- **[BE]** the identity for `K(e)`, verified at 9 values of `e`, plus boundary flat cores for `e = 2, 3, 4` and several `c`;
+- **[NV]** three parts:
+  - the closed-form level-`K` rows, compared with the gates on a box in `(B, K, s, N)`;
+  - the four minors, as exact polynomial identities in `(N, B, s, K)`;
+  - flat cores of four weighted forms, including `p⁴ − q⁴p²` and one with an intermediate lattice step;
+- **[NT]** five parts:
+  - the closed-form step-1 rows, compared with the gates on a `9 × 7 × 7` box in `(b, s, N)`;
+  - the `e = 3` step-2 rows, on a box in `(N, s)` at two values of `c`;
+  - every minor and the `e = 3` eliminant, as exact polynomial identities in `(N, b, s)` or `(N, s, c)`;
+  - the resultant identity, on a `13 × 19` box (enough for its degrees), and positivity of `B(4+x, 3+y)`;
+  - flat cores of threshold forms for `e = 3, 4, 5`.
 
-`check_two_root.py` reports these Hamiltonians on the proved routes `NA`, `NE` and `NB`.
+`check_two_root.py` reports these Hamiltonians on the proved routes `NA`, `NE`, `NB`, `NT` and `NV`.
 
 ### 6.13 Context (literature check, preliminary)
 
@@ -987,13 +1040,13 @@ Proved:
 - `s ≤ 1` (Theorem P⁺).
 - `deg φ ≥ 2` and not a perfect power (Theorem T).
 - `φ` constant, with `h` affine in `Q`: the whole shear phase diagram of §6.11, except linear `b` (the 6-dimensional K1′ sector for `f = 3`, and higher shears).
-- `φ` constant, with `h` non-affine: every first edge above the slope threshold (Theorems NA and NE), and the whole `m`-degree-2 range `deg r ≥ 3` (Theorems NA and NB).
+- `φ` constant, with `h` non-affine: every first edge above the slope threshold (Theorems NA and NE), every edge at the threshold for `deg w ≥ 3` (Theorem NT), every edge below the threshold (Theorem NV), and the whole `m`-degree-2 range `deg r ≥ 3` (Theorems NA and NB).
 - `s = 2` with `deg w < deg r/2` (Theorem Q′).
 
 Open, but supported by direct computation and top-problem solutions:
-- first edges at or below the slope threshold (for `s ≥ 3`);
+- threshold edges in the cubic phase `deg w = 2` (§6.12, after Theorem NT);
 - `φ` linear or a perfect power outside K3;
-- `φ` constant with `deg w ≤ 1` and `s ≥ 3` (flat lower terms);
+- `φ` constant with `deg w ≤ 1` and `s ≥ 3` (flat lower terms), when the vertex-adjacent `Q`-exponent of the first edge is at most 3 (Theorem NV covers `≥ 4`);
 - the upper bounds for K2, K3 and K1′ with `f = 3`.
 
 With §5 this gives a statement of when **active** exact dynamics survives a lower-order perturbation. It is conditional on Conjecture P004 in the open regions just listed:

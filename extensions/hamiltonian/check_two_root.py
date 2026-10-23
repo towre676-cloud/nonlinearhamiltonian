@@ -290,7 +290,7 @@ def classify(H):
             for key in ('tower_step', 'tower_from', 'G', 'w'):
                 if key in tri:
                     out[key] = tri[key]
-        elif CT.edge_route(H, l):                             # check_gauge.py: Theorems NA, NE, NB
+        elif CT.edge_route(H, l):                             # check_gauge.py: Theorems NA, NE, NB, NT, NV
             out.update(route=CT.edge_route(H, l), proved=True, core='span{1, H}', active_part='0')
         elif CT.higher_shear(H, l) == 'const':                # check_gauge.py: Theorem AE + Lemma C
             out.update(route='RS', proved=True, core='span{1, H}', active_part='0')

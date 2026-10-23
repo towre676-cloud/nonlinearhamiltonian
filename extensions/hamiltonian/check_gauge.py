@@ -110,6 +110,27 @@ nu in {0, 1} for e >= 3; closure under D removes everything except 1 and F. For 
 (L is a quadratic-shear coordinate); D removes all weights >= 6, and weights <= 7 are solved exactly
 (maximal minors vanish only at c = 0).                                       [BE: identity, instances]
 
+Theorem NT (threshold edges, e >= 3). If s >= 3, deg w = e >= 3 and the first edge E of h from P^s has slope exactly
+1/e, then D_inf(H~) = span{1, H~}. With weights (1, e) the top problem is the flat core of the weighted binary form
+F = E(p + w_e q^e, q^e) = sum_k c_k q^(ek) p^(s-k), and c1 = s w_e c0 != 0 (normal form). For weight-homogeneous
+g = sum_j x_j q^(i+ej) p^(N-j) the leading output of T_3 is -(s)_3 (i)_3 x0, so i <= 2, and once x0 = 0 the next
+term (q-exponent >= e >= 3) dies as well; it suffices that x0 = 0 unless (i, N) in {(0, 0), (0, s)}. At the next
+p-degree T3 g, T3 D g, T3 D^2 g, T5 g are linear in (x1, c1 x0) with closed-form rows (nt_rows); their 2x2 minors
+(i = 0: a multiple of N(s - N)(N + s - 3)(b-3); i = 1: (N-1)(N+s-1)(N+2s-4) and N(N+s-3)((2-b)N+bs+s-3); i = 2:
+two cubics with resultant 4(b-3)(b+1)(s-2)(s-1)^3 B(b, s), B(4+x, 3+y) > 0 coefficientwise) leave no N for b >= 4.
+For e = 3 types 1, 2 close at step 1 and type 0 at step 2: after x1 = lambda x0, the T3 D g / T3 D^2 g pair removes
+x2 and c2 together, leaving N(s-N)(N+s-3)(3N^2 + 6(s-3)N - 10(s-2)) x0 = 0.          [NT: rows, minors, resultant, instances]
+
+Theorem NV (vertex-adjacent rigidity). Let F be weight-homogeneous with vertex p^s (s >= 3) and vertex-adjacent
+monomial c q^B p^(s-K), c != 0, B >= 4, K >= 1 (every other monomial of lower p-degree). Then the flat core of F is
+span{1, F}. At output level K only p^s (x) x1 q^(i+B) p^(N-K) and c q^B p^(s-K) (x) x0 q^i p^N contribute, so each of
+T3 D^r g gives a row in (x1, c x0) (nv_rows); the minors are K-free: i = 0, (T3g, T3Dg): N(s-N)(N+s-3)(B-3)...;
+i = 1, (T3Dg, T3D^2g): (N-1)(N+s-1)(N+2s-4)(B-3)..., and at N = 1 (T3g, T3D^2g): (B+K)(s-1)(s-2)...;
+i = 2, (T3D^2g, T3D^3g): (N+s-2)(N+2s-2)(N+3s-5)(B-3).... So x0 = 0 unless (i, N) in {(0, 0), (0, s)}; the next
+term either dies (q-exponent >= 3) or is again of type 1 or 2. Consequences (top-weight lemma): every first edge
+below the slope threshold (there K >= 2 by the normal form, so B > eK >= 4) and, for deg w <= 1, every first edge
+with B >= 4 gives D_inf(H~) = span{1, H~}. With K = 1 this re-proves NT for e >= 4.        [NV: rows, minors, instances]
+
 Corollary K1c. (i) deg w = 2, H = F(P) + lambda Q, deg F >= 3: D_inf(H~) = K[P] + K Q exactly.
 (ii) deg w >= 3, H = F(P) + lambda Q, deg F >= 3: D_inf(H~) = span{1, H~}.     [K1c: instances]
 
@@ -386,9 +407,361 @@ def grid_BE():
     return True
 
 
+class Pz:
+    """Integer polynomials in (N, b, s, K), exponent 4-tuples -> int; enough algebra for exact identities."""
+    def __init__(self, d=None):
+        self.d = {k: v for k, v in (d or {}).items() if v}
+
+    @staticmethod
+    def of(x):
+        return x if isinstance(x, Pz) else Pz({(0, 0, 0, 0): x})
+
+    def __add__(self, o):
+        o, d = Pz.of(o), dict(self.d)
+        for k, v in o.d.items():
+            d[k] = d.get(k, 0) + v
+        return Pz(d)
+    __radd__ = __add__
+
+    def __neg__(self):
+        return Pz({k: -v for k, v in self.d.items()})
+
+    def __sub__(self, o):
+        return self + (-Pz.of(o))
+
+    def __rsub__(self, o):
+        return Pz.of(o) - self
+
+    def __mul__(self, o):
+        o, d = Pz.of(o), {}
+        for k, v in self.d.items():
+            for l, w in o.d.items():
+                m = tuple(u + v for u, v in zip(k, l))
+                d[m] = d.get(m, 0) + v * w
+        return Pz(d)
+    __rmul__ = __mul__
+
+    def __pow__(self, n):
+        out = Pz.of(1)
+        for _ in range(n):
+            out = out * self
+        return out
+
+    def __eq__(self, o):
+        return self.d == Pz.of(o).d
+
+    def deg(self, i):
+        return max((k[i] for k in self.d), default=0)
+
+    def coeffs_in(self, i):
+        """coefficients of powers of variable i, as polynomials in the others."""
+        out = {}
+        for k, v in self.d.items():
+            kk = list(k)
+            e, kk[i] = kk[i], 0
+            out.setdefault(e, {})[tuple(kk)] = v
+        return {e: Pz(d) for e, d in out.items()}
+
+    def at(self, N=0, b=0, s=0, K=0):
+        return sum(v * N ** k[0] * b ** k[1] * s ** k[2] * K ** k[3] for k, v in self.d.items())
+
+
+ZN, ZB, ZS, ZK = (Pz({tuple(int(i == j) for j in range(4)): 1}) for i in range(4))
+
+
+def nt_rows(i, N, b, s):
+    """Step-1 top-end rows (coefficient of x1, coefficient of c1 x0) of T3 g, T3 D g, T3 D^2 g, T5 g for the flat
+    form F = p^s + c1 q^b p^(s-1) + ... and g = x0 q^i p^N + x1 q^(i+b) p^(N-1) + ... (closed forms, Theorem NT)."""
+    k = b * (s - 2) * (s - 1)
+    if i == 0:
+        return {'T3g': (-s * k * (b - 2) * (b - 1), N * b * (N - 2) * (N - 1) * (b - 2) * (b - 1)),
+                'T3Dg': (s ** 2 * k * (b - 3) * (b - 2) * (b - 1), -N * s * k * (b - 3) * (b - 2) * (b - 1)),
+                'T3DDg': (-s ** 3 * k * (b - 4) * (b - 3) * (b - 2) * (b - 1), N * s ** 2 * k * (b - 4) * (b - 3) * (b - 2) * (b - 1)),
+                'T5g': (-s * k * (b - 4) * (b - 3) * (b - 2) * (b - 1) * (s - 4) * (s - 3),
+                        N * b * (N - 4) * (N - 3) * (N - 2) * (N - 1) * (b - 4) * (b - 3) * (b - 2) * (b - 1))}
+    if i == 1:
+        return {'T3g': (-s * k * (b - 1) * (b + 1), -N * b * (N - 1) * (b - 1) * (-N * b + 2 * N + 2 * b + 3 * s - 7)),
+                'T3Dg': (s ** 2 * k * (b - 2) * (b - 1) * (b + 1),
+                         -b * s * (b - 2) * (b - 1) * (N ** 3 + 3 * N ** 2 * s - 6 * N ** 2 + N * b * s ** 2 - 3 * N * b * s + 2 * N * b
+                                                       + 3 * N * s ** 2 - 12 * N * s + 11 * N - 2 * s ** 2 + 6 * s - 4)),
+                'T3DDg': (-s ** 3 * k * (b - 3) * (b - 2) * (b - 1) * (b + 1), N * s ** 2 * k * (b - 3) * (b - 2) * (b - 1) * (b + 1)),
+                'T5g': (-s * k * (b - 3) * (b - 2) * (b - 1) * (b + 1) * (s - 4) * (s - 3),
+                        -N * b * (N - 3) * (N - 2) * (N - 1) * (b - 3) * (b - 2) * (b - 1) * (-N * b + 4 * N + 4 * b + 5 * s - 21))}
+    return {'T3g': (-s * k * (b + 1) * (b + 2),
+                    N * b * (N ** 2 * b ** 2 - 3 * N ** 2 * b + 2 * N ** 2 - 3 * N * b ** 2 - 6 * N * b * s + 15 * N * b + 6 * N * s
+                             - 12 * N + 2 * b ** 2 + 6 * b * s - 12 * b + 6 * s ** 2 - 24 * s + 22)),
+            'T3Dg': (s ** 2 * k * (b - 1) * (b + 1) * (b + 2),
+                     b * s * (b - 1) * (-2 * N ** 3 * b + 4 * N ** 3 - 6 * N ** 2 * b * s + 12 * N ** 2 * b + 18 * N ** 2 * s - 30 * N ** 2
+                                        - N * b ** 2 * s ** 2 + 3 * N * b ** 2 * s - 2 * N * b ** 2 - 7 * N * b * s ** 2 + 27 * N * b * s
+                                        - 24 * N * b + 24 * N * s ** 2 - 78 * N * s + 62 * N + 4 * b * s ** 2 - 12 * b * s + 8 * b
+                                        + 12 * s ** 3 - 56 * s ** 2 + 84 * s - 40)),
+            'T3DDg': (-s ** 3 * k * (b - 2) * (b - 1) * (b + 1) * (b + 2),
+                      b * s ** 2 * (b - 2) * (b - 1) * (2 * N ** 3 + 12 * N ** 2 * s - 18 * N ** 2 + N * b ** 2 * s ** 2 - 3 * N * b ** 2 * s
+                                                        + 2 * N * b ** 2 + 3 * N * b * s ** 2 - 9 * N * b * s + 6 * N * b + 24 * N * s ** 2
+                                                        - 72 * N * s + 52 * N + 12 * s ** 3 - 56 * s ** 2 + 84 * s - 40)),
+            'T5g': (-s * k * (b - 2) * (b - 1) * (b + 1) * (b + 2) * (s - 4) * (s - 3),
+                    N * b * (N - 2) * (N - 1) * (b - 2) * (b - 1) * (N ** 2 * b ** 2 - 7 * N ** 2 * b + 12 * N ** 2 - 7 * N * b ** 2
+                                                                     - 10 * N * b * s + 59 * N * b + 30 * N * s - 114 * N + 12 * b ** 2
+                                                                     + 30 * b * s - 114 * b + 20 * s ** 2 - 150 * s + 274))}
+
+
+def nt_direct(i, N, b, s):
+    """the same rows computed with weyl_receipts on F = p^s + q^b p^(s-1) (c1 = 1) and single monomials of g."""
+    Fh = {(0, s): F(1), (b, s - 1): F(1)}
+    D, C3, C5 = W.derivation(Fh), W.gate(Fh, 3), W.gate(Fh, 5)
+    wt = i + b * N
+    ops = {'T3g': (lambda g: W.act(C3, g), s + N - 4, b * s - 3 * (b + 1)),
+           'T3Dg': (lambda g: W.act(C3, W.act(D, g)), 2 * s + N - 5, 2 * b * s - 4 * (b + 1)),
+           'T3DDg': (lambda g: W.act(C3, W.act(D, W.act(D, g))), 3 * s + N - 6, 3 * b * s - 5 * (b + 1)),
+           'T5g': (lambda g: W.act(C5, g), s + N - 6, b * s - 5 * (b + 1))}
+    out = {}
+    for name, (op, pe, dw) in ops.items():
+        mon = (wt + dw - b * pe, pe)
+        out[name] = (op({(i + b, N - 1): F(1)}).get(mon, 0), op({(i, N): F(1)}).get(mon, 0))
+    return out
+
+
+def nt_rows30(N, s, c):
+    """e = 3, top type 0: (x0, x1, x2) coefficients of the step-1 row of T3 g and the step-2 rows of T3 D g and
+    T3 D^2 g, for F = p^s + q^3 p^(s-1) + c q^6 p^(s-2) and g = x0 p^N + x1 q^3 p^(N-1) + x2 q^6 p^(N-2)."""
+    k = (s - 2) * (s - 1)
+    return {'T3g1': (6 * N * (N - 2) * (N - 1), -6 * s * k, 0),
+            'T3Dg2': (-18 * N * (-N ** 3 + 3 * N ** 2 * s + 3 * N ** 2 + 6 * N * s ** 2 - 15 * N * s - 2 * N + 20 * c * s ** 3
+                                 - 60 * c * s ** 2 + 40 * c * s + 2 * s ** 3 - 12 * s ** 2 + 16 * s),
+                      18 * s * (-N ** 3 + 3 * N ** 2 * s + 3 * N ** 2 - 4 * N * s ** 2 + 15 * N * s - 22 * N + 12 * s ** 3
+                                - 42 * s ** 2 + 36 * s), 360 * s ** 2 * k),
+            'T3DDg2': (36 * N * s * (-N ** 3 - 3 * N ** 2 * s + 9 * N ** 2 - 6 * N * s ** 2 + 33 * N * s - 38 * N + 20 * c * s ** 3
+                                     - 60 * c * s ** 2 + 40 * c * s + 2 * s ** 3 + 8 * s ** 2 - 44 * s + 40),
+                       -36 * s ** 2 * (-N ** 3 - 3 * N ** 2 * s + 9 * N ** 2 - 16 * N * s ** 2 + 63 * N * s - 58 * N + 12 * s ** 3
+                                       - 22 * s ** 2 - 24 * s + 40), -720 * s ** 3 * k)}
+
+
+def nt_direct2(N, s, c, b=3, i=0):
+    """the rows of nt_rows30 from weyl_receipts."""
+    Fh = TR.tidy({(0, s): F(1), (b, s - 1): F(1), (2 * b, s - 2): F(c)})
+    D, C3 = W.derivation(Fh), W.gate(Fh, 3)
+    wt = i + b * N
+    ops = {'T3g1': (lambda g: W.act(C3, g), s + N - 4, b * s - 3 * (b + 1)),
+           'T3Dg2': (lambda g: W.act(C3, W.act(D, g)), 2 * s + N - 6, 2 * b * s - 4 * (b + 1)),
+           'T3DDg2': (lambda g: W.act(C3, W.act(D, W.act(D, g))), 3 * s + N - 7, 3 * b * s - 5 * (b + 1))}
+    out = {}
+    for name, (op, pe, dw) in ops.items():
+        mon = (wt + dw - b * pe, pe)
+        out[name] = tuple(op({(i + b * j, N - j): F(1)}).get(mon, 0) for j in range(3))
+    return out
+
+
+def minor(r, a, c):
+    return r[a][0] * r[c][1] - r[a][1] * r[c][0]
+
+
+def sylvester_det(f, g):
+    """resultant of two polynomials given as coefficient lists (highest first), exact Fractions."""
+    m, n = len(f) - 1, len(g) - 1
+    M = [[F(0)] * (m + n) for _ in range(m + n)]
+    for r in range(n):
+        for j, x in enumerate(f):
+            M[r][r + j] = F(x)
+    for r in range(m):
+        for j, x in enumerate(g):
+            M[n + r][r + j] = F(x)
+    det, M = F(1), [row[:] for row in M]
+    for c in range(m + n):
+        piv = next((r for r in range(c, m + n) if M[r][c]), None)
+        if piv is None:
+            return F(0)
+        if piv != c:
+            M[c], M[piv], det = M[piv], M[c], -det
+        det *= M[c][c]
+        for r in range(c + 1, m + n):
+            if M[r][c]:
+                t = M[r][c] / M[c][c]
+                M[r] = [x - t * y for x, y in zip(M[r], M[c])]
+    return det
+
+
+def nt_big(b, s):
+    return (6*b**7*s**3 - 23*b**7*s**2 + 26*b**7*s - 8*b**7 + 36*b**6*s**4 - 216*b**6*s**3 + 488*b**6*s**2 - 440*b**6*s
+            + 116*b**6 - 36*b**5*s**4 + 480*b**5*s**3 - 1451*b**5*s**2 + 1388*b**5*s - 272*b**5 - 144*b**4*s**4
+            - 228*b**4*s**3 + 1942*b**4*s**2 - 1804*b**4*s - 176*b**4 + 252*b**3*s**4 + 126*b**3*s**3 - 2104*b**3*s**2
+            + 982*b**3*s + 1664*b**3 - 108*b**2*s**4 - 636*b**2*s**3 + 2392*b**2*s**2 + 20*b**2*s - 2900*b**2
+            + 684*b*s**3 - 1824*b*s**2 - 228*b*s + 2280*b - 216*s**3 + 576*s**2 + 72*s - 720)
+
+
+def grid_NT():
+    N, b, s = ZN, ZB, ZS
+    # (a) the closed-form rows agree with the gates; they have degree <= 6 in each variable, checked on a 7^3 box
+    for i in (0, 1, 2):
+        for bb in range(2, 11):
+            for ss in range(3, 10):
+                for NN in range(1, 8):
+                    cf, dr = nt_rows(i, NN, bb, ss), nt_direct(i, NN, bb, ss)
+                    if any(F(cf[k][0]) != dr[k][0] or F(cf[k][1]) != dr[k][1] for k in cf):
+                        return False
+    # (a') e = 3, top type 0, steps 1-2: degree <= 5 in N and s, linear in c
+    for NN in range(2, 9):
+        for ss in range(3, 10):
+            for cc in (0, 1):
+                cf, dr = nt_rows30(NN, ss, cc), nt_direct2(NN, ss, cc)
+                if any(F(x) != y for k in cf for x, y in zip(cf[k], dr[k])):
+                    return False
+    # x1 = lambda x0 from T3g1 (lambda = N(N-1)(N-2)/(s(s-1)(s-2))); the T3 D g / T3 D^2 g pair then gives a
+    # c-free equation for x0
+    r3 = nt_rows30(N, s, ZB)            # c carried in the b-slot
+    A = {k: s * (s - 1) * (s - 2) * r3[k][0] + N * (N - 1) * (N - 2) * r3[k][1] for k in ('T3Dg2', 'T3DDg2')}
+    m30 = A['T3Dg2'] * r3['T3DDg2'][2] - A['T3DDg2'] * r3['T3Dg2'][2]
+    if m30 != 25920 * N * s ** 4 * (s - N) * (s - 1) ** 2 * (s - 2) * (N + s - 3) * (3 * N ** 2 + 6 * N * s - 18 * N - 10 * s + 20):
+        return False
+    # (b) the minors, exactly
+    k0 = b ** 2 * (b - 2) * (b - 1) * (s - 2) * (s - 1)
+    r0, r1, r2 = (nt_rows(i, N, b, s) for i in (0, 1, 2))
+    if minor(r0, 'T3g', 'T3Dg') != k0 * N * s ** 2 * (s - N) * (b - 3) * (b - 2) * (b - 1) * (N + s - 3):
+        return False
+    if minor(r1, 'T3Dg', 'T3DDg') != -k0 * s ** 4 * (N - 1) * (b - 3) * (b - 2) * (b - 1) * (b + 1) * (N + s - 1) * (N + 2 * s - 4):
+        return False
+    if minor(r1, 'T3g', 'T3DDg') != -k0 * N * s ** 3 * (b - 3) * (b - 1) * (b + 1) * (N + s - 3) * (-N * b + 2 * N + b * s + s - 3):
+        return False
+    # e = 3, top types 1 and 2: step 1 suffices
+    r31, r32 = nt_rows(1, N, 3, s), nt_rows(2, N, 3, s)
+    if minor(r31, 'T3g', 'T3Dg') != 288 * s ** 2 * (s - 2) * (s - 1) ** 2 * (3 * N ** 2 + 3 * N * s - 9 * N - s + 2):
+        return False
+    if minor(r32, 'T3Dg', 'T3DDg') != 2880 * s ** 4 * (s - 2) * (s - 1) ** 2 * (3 * N ** 2 + 9 * N * s - 15 * N + 6 * s ** 2 - 19 * s + 14):
+        return False
+    f13 = (-N**3*b**2 + 3*N**3*b + 3*N**2*b**2 + 6*N**2*b*s - 15*N**2*b + 6*N**2*s - 6*N**2 + N*b**2*s**2 - 3*N*b**2*s
+           + 3*N*b*s**2 - 15*N*b*s + 18*N*b + 18*N*s**2 - 48*N*s + 30*N + 12*s**3 - 56*s**2 + 84*s - 40)
+    f23 = (-N**3*b + 3*N**3 - 3*N**2*b*s + 6*N**2*b + 15*N**2*s - 24*N**2 - 2*N*b*s**2 + 9*N*b*s - 9*N*b + 24*N*s**2
+           - 75*N*s + 57*N + 2*b*s**2 - 6*b*s + 4*b + 12*s**3 - 56*s**2 + 84*s - 40)
+    k2 = b ** 2 * (b - 2) * (b - 1) * (b + 1) * (b + 2) * (s - 2) * (s - 1)
+    if minor(r2, 'T3g', 'T3DDg') != -k2 * s ** 3 * f13 or minor(r2, 'T3Dg', 'T3DDg') != 2 * k2 * s ** 4 * (b - 1) * f23:
+        return False
+    # (c) Res_N(f13, f23) = 4 (b-3)(b+1)(s-2)(s-1)^3 big(b, s): degree <= 12 in b and <= 18 in s, checked on that box
+    c13, c23 = f13.coeffs_in(0), f23.coeffs_in(0)
+    for bb in range(13):
+        for ss in range(19):
+            lhs = sylvester_det([c13.get(e, Pz()).at(b=bb, s=ss) for e in (3, 2, 1, 0)],
+                                [c23.get(e, Pz()).at(b=bb, s=ss) for e in (3, 2, 1, 0)])
+            if lhs != 4 * (bb - 3) * (bb + 1) * (ss - 2) * (ss - 1) ** 3 * nt_big(bb, ss):
+                return False
+    # (d) big(4 + x, 3 + y) has positive coefficients (x, y >= 0)
+    sh = nt_big(4 + b, 3 + s)
+    if any(v <= 0 for v in sh.d.values()):
+        return False
+    # (e) instances: threshold forms F = E(p + q^e, q^e) with E = P^s + sum_{k>=2} c_k Q^(ek) P^(s-k)
+    for e, cs, Wmax in [(4, [1, 0, 0, 0], 18), (4, [1, 0, 2, -1], 18), (5, [1, 0, -1, 3], 21), (4, [1, 0, 1, 0, -2], 22),
+                         (3, [1, 0, 0, 0], 14), (3, [1, 0, 2, -1], 14), (3, [1, 0, -1, 0, 3], 17)]:
+        sd, Fh = len(cs) - 1, {}
+        for kk, c in enumerate(cs):
+            for t in range(sd - kk + 1):
+                if c:
+                    m = (e * kk + e * (sd - kk - t), t)
+                    Fh[m] = Fh.get(m, F(0)) + c * comb(sd - kk, t)
+        if flat_core_dims(TR.tidy(Fh), e, Wmax, R=4) != [(0, 1), (e * sd, 1)]:
+            return False
+    return True
+
+
+def nv_rows(i, N, B, K, s):
+    """Theorem NV: level-K rows (coefficient of x1, coefficient of c x0) for F = p^s + c q^B p^(s-K) + ... and
+    g = x0 q^i p^N + x1 q^(i+B) p^(N-K) + ...; only the pairs used in the proof."""
+    k = B * (s - 2) * (s - 1)
+    if i == 0:
+        return {'T3g': (-s * k * (B - 2) * (B - 1), N * B * (N - 2) * (N - 1) * (B - 2) * (B - 1)),
+                'T3Dg': (s ** 2 * k * (B - 3) * (B - 2) * (B - 1), -N * s * k * (B - 3) * (B - 2) * (B - 1))}
+    if i == 1:
+        return {'T3g': (-s * k * (B - 1) * (B + 1), -B * N * (B - 1) * (N - 1) * (-B * N + 2 * B - 3 * K + 2 * N + 3 * s - 4)),
+                'T3Dg': (s ** 2 * k * (B - 2) * (B - 1) * (B + 1),
+                         -B * s * (B - 2) * (B - 1) * (B * N * s ** 2 - 3 * B * N * s + 2 * B * N + K * s ** 2 - 3 * K * s + 2 * K
+                                                       + N ** 3 + 3 * N ** 2 * s - 6 * N ** 2 + 3 * N * s ** 2 - 12 * N * s + 11 * N
+                                                       - 3 * s ** 2 + 9 * s - 6)),
+                'T3DDg': (-s ** 3 * k * (B - 3) * (B - 2) * (B - 1) * (B + 1), s ** 2 * k * (B - 3) * (B - 2) * (B - 1) * (B * N + K + N - 1))}
+    return {'T3DDg': (-s ** 3 * k * (B - 2) * (B - 1) * (B + 1) * (B + 2),
+                      B * s ** 2 * (B - 2) * (B - 1) * (B ** 2 * N * s ** 2 - 3 * B ** 2 * N * s + 2 * B ** 2 * N + 2 * B * K * s ** 2
+                                                        - 6 * B * K * s + 4 * B * K + 3 * B * N * s ** 2 - 9 * B * N * s + 6 * B * N
+                                                        - 2 * B * s ** 2 + 6 * B * s - 4 * B + 4 * K * s ** 2 - 12 * K * s + 8 * K
+                                                        + 2 * N ** 3 + 12 * N ** 2 * s - 18 * N ** 2 + 24 * N * s ** 2 - 72 * N * s
+                                                        + 52 * N + 12 * s ** 3 - 60 * s ** 2 + 96 * s - 48)),
+            'T3D3g': (s ** 4 * k * (B - 3) * (B - 2) * (B - 1) * (B + 1) * (B + 2),
+                      -s ** 3 * k * (B - 3) * (B - 2) * (B - 1) * (B + 2) * (B * N + 2 * K + N - 2))}
+
+
+def nv_direct(i, N, B, K, s):
+    """the rows of nv_rows from weyl_receipts, with c = 1."""
+    Fh = {(0, s): F(1), (B, s - K): F(1)}
+    D, C3 = W.derivation(Fh), W.gate(Fh, 3)
+    out = {}
+    for name in nv_rows(i, 0, B, K, s):
+        r = {'T3g': 0, 'T3Dg': 1, 'T3DDg': 2, 'T3D3g': 3}[name]
+
+        def op(g):
+            for _ in range(r):
+                g = W.act(D, g)
+            return W.act(C3, g)
+        mon = (i + B - r - 3, N - K + r * (s - 1) + s - 3)
+        out[name] = (op({(i + B, N - K): F(1)}).get(mon, 0), op({(i, N): F(1)}).get(mon, 0))
+    return out
+
+
+def grid_NV():
+    N, B, s, K = ZN, ZB, ZS, ZK
+    # (a) closed-form rows against the gates: degree <= 5 in B, s, N and <= 2 in K
+    for i in (0, 1, 2):
+        for BB in range(4, 10):
+            for KK in range(1, 4):
+                for ss in range(3, 9):
+                    for NN in range(KK, KK + 6):
+                        cf, dr = nv_rows(i, NN, BB, KK, ss), nv_direct(i, NN, BB, KK, ss)
+                        if any(F(cf[k][0]) != dr[k][0] or F(cf[k][1]) != dr[k][1] for k in cf):
+                            return False
+    # (b) the minors
+    k0 = B ** 2 * (B - 2) * (B - 1) * (s - 2) * (s - 1)
+    r0, r1, r2 = (nv_rows(i, N, B, K, s) for i in (0, 1, 2))
+    if minor(r0, 'T3g', 'T3Dg') != k0 * N * s ** 2 * (s - N) * (B - 3) * (B - 2) * (B - 1) * (N + s - 3):
+        return False
+    if minor(r1, 'T3Dg', 'T3DDg') != -k0 * s ** 4 * (N - 1) * (B - 3) * (B - 2) * (B - 1) * (B + 1) * (N + s - 1) * (N + 2 * s - 4):
+        return False
+    m1, sub = minor(r1, 'T3g', 'T3DDg'), Pz()
+    for kk, v in m1.d.items():                       # N = 1
+        sub = sub + Pz({(0,) + kk[1:]: v})
+    if sub != -k0 * s ** 3 * (B - 3) * (B - 1) * (B + 1) * (B + K) * (s - 1) * (s - 2):
+        return False
+    if minor(r2, 'T3DDg', 'T3D3g') != -2 * k0 * s ** 6 * (B - 3) * (B - 2) * (B - 1) * (B + 1) * (B + 2) * (N + s - 2) * (N + 2 * s - 2) * (N + 3 * s - 5):
+        return False
+    # (c) instances: flat cores of weighted forms with vertex p^s and adjacent monomial q^B p^(s-K), B >= 4
+    for Fh, (a, b), Wmax in [({(0, 3): F(1), (5, 1): F(1)}, (2, 5), 20), ({(0, 4): F(1), (7, 2): F(2), (14, 0): F(-1)}, (2, 7), 30),
+                             ({(0, 3): F(1), (4, 1): F(1), (6, 0): F(3)}, (1, 2), 16), ({(0, 4): F(1), (4, 2): F(-1)}, (1, 2), 14)]:
+        if flat_core_dims_w(Fh, a, b, Wmax) != [(0, 1), (max(i * a + j * b for i, j in Fh), 1)]:
+            return False
+    return True
+
+
+def flat_core_dims_w(Fh, a, b, Wmax, R=4):
+    """flat core dimensions by weight, q of weight a and p of weight b."""
+    D, gates = W.derivation(Fh), {k: W.gate(Fh, k) for k in (3, 5, 7)}
+    out = []
+    for Wt in range(Wmax + 1):
+        mons = [(i, (Wt - a * i) // b) for i in range(Wt // a + 1) if (Wt - a * i) % b == 0]
+        if not mons:
+            continue
+        cols = []
+        for mm in mons:
+            g, img = {mm: F(1)}, {}
+            for r in range(R + 1):
+                for kk, C in gates.items():
+                    for ee, v in W.act(C, g).items():
+                        img[(r, kk, ee)] = v
+                g = W.act(D, g)
+            cols.append(img)
+        keys = sorted({kk for c in cols for kk in c})
+        M = [[c.get(kk, F(0)) for c in cols] for kk in keys]
+        dm = len(mons) - (L.rank(M, len(mons)) if M else 0)
+        if dm:
+            out.append((Wt, dm))
+    return out
+
+
 def identities():
     return {'GG': grid_GG(), 'T3': grid_T3(), 'AE': grid_AE(), 'K1c': grid_K1c(), 'C2': grid_C2(),
-            'NA': grid_NA(), 'TG': grid_TG(), 'GE': grid_GE(), 'BE': grid_BE()}
+            'NA': grid_NA(), 'TG': grid_TG(), 'GE': grid_GE(), 'BE': grid_BE(), 'NT': grid_NT(), 'NV': grid_NV()}
 
 
 def check(cert=None):
@@ -404,7 +777,8 @@ def check(cert=None):
             'theorem': 'gauge form for every shear; third-gate formula; higher-shear affine rigidity; '
                        'Q-degree containment (b constant, quadratic, degree >= 3; b linear with f >= 4 in the '
                        'cubic phase); K1, K1\' (f >= 4) and K4 exact; '
-                       'non-affine binomial edges collapse (Theorem NA), general first edges (NE) and the boundary edge (NB)'}
+                       'non-affine binomial edges collapse (Theorem NA), general first edges (NE), the boundary edge (NB), '
+                       'threshold edges with deg w >= 3 (NT) and edges below the threshold (NV)'}
 
 
 def main():

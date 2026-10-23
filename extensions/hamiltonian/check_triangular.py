@@ -506,12 +506,15 @@ def na_applies(H, l):
 
 
 def edge_route(H, l):
-    """'NA' (binomial edge), 'NE' (general first edge) or 'NB' (boundary edge P^2 + c Q^(2e)) when the
-    corresponding theorem of check_gauge.py applies; else None."""
+    """'NA' (binomial edge), 'NE' (general first edge), 'NB' (boundary edge P^2 + c Q^(2e)) 'NT' (threshold
+    edge, s >= 3, e >= 3) or 'NV' (edge below the threshold, or any edge when deg w <= 1, with s >= 3 and
+    vertex-adjacent Q-exponent >= 4) when the corresponding theorem of check_gauge.py applies; else None."""
     fe = first_edge(H, l)
     if fe is None:
         return None
     e, s, alpha, edge = fe
+    if s >= 3 and min(i for i, _ in edge) >= 4 and (e < 2 or alpha < (F(1, 2) if e == 2 else F(1, e))):
+        return 'NV'
     if e < 2:
         return None
     thr = F(1, 2) if e == 2 else F(1, e)
@@ -521,6 +524,8 @@ def edge_route(H, l):
         return 'NB'
     if s >= 3 and alpha > thr and alpha < s - 1 and (e >= 3 or any(i >= 2 for i, _ in edge)):
         return 'NE'
+    if s >= 3 and e >= 3 and alpha == F(1, e):
+        return 'NT'
     return None
 
 
