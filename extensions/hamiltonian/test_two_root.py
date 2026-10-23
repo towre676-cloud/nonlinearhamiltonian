@@ -35,6 +35,21 @@ def predicted(core, d, N):
     raise ValueError(core)
 
 
+def predicted_result(result, N):
+    """Exact filtration of a supplied independent finite core basis."""
+    if 'basis' in result:
+        import qlinalg as L
+        basis = [{tuple(map(int, key.split(','))): F(value)
+                  for key, value in g.items()} for g in result['basis']]
+        high = sorted({monomial for g in basis for monomial in g
+                       if sum(monomial) > N})
+        rows = [[g.get(monomial, F(0)) for g in basis] for monomial in high]
+        return len(basis)-L.rank(rows, len(basis))
+    if result['core'].startswith('span{1, H, G}'):
+        return 1+(N >= result.get('generator_degree', 2))+(N >= result['degree'])
+    return predicted(result['core'], result['degree'], N)
+
+
 def linmap(H, a, b, c, e, x0, y0):
     """H(a q + b p + x0, c q + e p + y0)."""
     return TR.comp(TR.tidy(H), {(1, 0): F(a), (0, 1): F(b), (0, 0): F(x0)},
@@ -99,7 +114,7 @@ class Balanced(unittest.TestCase):
             res = TR.classify(H)
             d = res['degree']
             self.assertTrue(res['proved'])
-            self.assertEqual(filtered_dim(H, d + 2, 8), predicted(res['core'], d, d + 2), (H, res))
+            self.assertEqual(filtered_dim(H, d + 2, 8), predicted_result(res, d + 2), (H, res))
 
 
 class TransverseAndVertex(unittest.TestCase):
@@ -114,7 +129,7 @@ class TransverseAndVertex(unittest.TestCase):
                 res = TR.classify(H)
                 self.assertEqual(res['route'], route, H)
                 d = res['degree']
-                self.assertEqual(filtered_dim(H, d + 1, 8), predicted(res['core'], d, d + 1), H)
+                self.assertEqual(filtered_dim(H, d + 1, 8), predicted_result(res, d + 1), H)
 
 
 class PureCompositionRegressions(unittest.TestCase):
@@ -298,7 +313,7 @@ class Triangular(unittest.TestCase):
                 bound = min(degree + 2, 8)
                 actual = filtered_dim(H, bound, 8)
                 if result['proved']:
-                    self.assertEqual(actual, predicted(result['core'], degree, bound),
+                    self.assertEqual(actual, predicted_result(result, bound),
                                      (H, result, bound))
                 elif containment is not None:
                     self.assertGreaterEqual(actual, CT.core_dim(containment, bound),
@@ -364,6 +379,58 @@ class Triangular(unittest.TestCase):
         self.assertTrue(CT.span_ok(outside_list, [{(0, 0): F(1)}, J, outside_list]))
 
 
+class CubicPhaseCompletion(unittest.TestCase):
+    def test_complete_affine_routes_and_covariance(self):
+        import check_triangular as CT
+        fixtures = [({(1, 2): F(1)}, 4),
+                    ({(0, 4): F(1), (1, 2): F(1)}, 3),
+                    ({(0, 4): F(1), (1, 2): F(1), (1, 1): F(2), (1, 0): F(-3)}, 3),
+                    ({(0, 4): F(1), (1, 2): F(1), (1, 0): F(-1)}, 2),
+                    ({(0, 4): F(1), (1, 1): F(1)}, 4),
+                    ({(0, 3): F(1), (0, 2): F(1), (1, 1): F(1)}, 5),
+                    ({(0, 3): F(1), (1, 1): F(1)}, 6),
+                    ({(0, 4): F(1), (1, 3): F(2)}, 2)]
+        for h, dimension in fixtures:
+            H = CT.tri(h, {2: F(1), 1: F(2, 3), 0: F(-1, 5)})
+            for member in (H, linmap(H, 1, 1, 0, 1, F(1, 2), -1)):
+                result = TR.classify(member)
+                self.assertTrue(result['proved'], result)
+                self.assertEqual(result['dimension'], dimension, result)
+                self.assertEqual(result['route'], 'CP', result)
+                basis = [{tuple(map(int, key.split(','))): F(value)
+                          for key, value in g.items()} for g in result['basis']]
+                self.assertTrue(CT.span_ok(member, basis))
+                TR.check(TR.certify(member))
+
+    def test_arbitrary_restoring_compositions(self):
+        import check_triangular as CT
+        for degree in (3, 4, 6):
+            h = {(0, degree): F(2), (0, degree-1): F(-1),
+                 (0, 0): F(3), (2, 0): F(-2, 5), (1, 0): F(7)}
+            H = CT.tri(h, {2: F(-2, 3), 1: F(1, 5)})
+            for member in (H, linmap(H, 1, 1, 0, 1, 1, -2)):
+                result = TR.classify(member)
+                self.assertTrue(result['proved'])
+                self.assertEqual(result['route'], 'HR')
+                self.assertEqual(result['dimension'], 2)
+                self.assertEqual(result['third_gate_depth'], 3)
+                TR.check(TR.certify(member))
+
+    def test_chart_and_full_core_forgery(self):
+        sys.path.insert(0, str(HERE.parents[1]/'research/core_overlap'))
+        import cubic_phase_classification as CP
+        import check_triangular as CT
+        H = CT.tri({(0, 4): F(1), (1, 3): F(2)}, {2: F(1), 1: F(2, 3)})
+        cert = CP.certify(H)
+        self.assertEqual(CP.check(cert)['dimension'], 2)
+        for mutate in (lambda x: x['claim'].update(dimension=3),
+                       lambda x: x['claim']['w'].update({'1': '0'})):
+            bad = copy.deepcopy(cert)
+            mutate(bad)
+            with self.assertRaises(ValueError):
+                CP.check(bad)
+
+
 class Decision(unittest.TestCase):
     def test_against_direct_computation(self):
         rng = random.Random(7)
@@ -375,7 +442,7 @@ class Decision(unittest.TestCase):
             N = d + 1
             got = filtered_dim(H, N, 8)
             if res['proved']:
-                self.assertEqual(got, predicted(res['core'], d, N), (H, res))
+                self.assertEqual(got, predicted_result(res, N), (H, res))
             else:
                 # A sampled dimension cannot classify an unresolved all-degree
                 # core. The old blanket pure-top conjecture has counterexamples.

@@ -13,6 +13,6 @@ This directory imports the 2026-10-21 handoff programme documents and records wh
 
 ## Next steps
 
-1. Classify the remaining pure perturbations, especially K1′, the linear-transverse K3 family, variable quadratic-momentum coefficients and higher cubic-phase couplings (§6.18). Balanced and near tops and every nonzero constant quadratic-momentum coefficient are proved. Both P003 and Claude's corrected P004 are false as stated; the latter is refuted by the already proved PP extension with a nonzero linear term in its extra generator. QC/CQ/PP/SC upgrade the overlapping triangular containments to full equalities. See `research/core_overlap/README.md`; historical priority still requires specialist review.
+1. Classify genuine non-affine cubic-phase Hamiltonians beyond the proved restoring family and general variable quadratic-momentum coefficients beyond CQ/PP/SC/CP. The full affine cubic-phase sector, K1-prime, K4 and arbitrary nonlinear compositions with a quadratic restoring force are now proved (CP/HR). Both P003 and P004 remain false as stated. See `research/core_overlap/CLAUDE_HANDOFF.md` for the next targets; historical priority remains open.
 2. Probabilistic or continuous noise for adaptive experiments. This needs posterior semantics and a different termination theorem.
 3. Performance. The Weyl Gröbner backend uses `Fraction` arithmetic without a chain criterion.

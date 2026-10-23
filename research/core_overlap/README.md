@@ -1,10 +1,50 @@
-# Exact nonlinear sectors: classification and deformation
+# Exact nonlinear sectors: cubic-phase classification and deformation
 
-Research overlap with `claude/adoring-ritchie-1hq1kw`, inspected at
-`e91e14da9d59e799ad9ed0331f59b2b500e478e8` on 22 October 2026.
+Research overlap with `claude/adoring-ritchie-1hq1kw`, incorporating
+its cubic-phase work at `35d39be4` and the earlier reviewed integration
+at `e6ef82d`, on 22 October 2026.
 All results use one canonical pair and the compendium's fixed flat Weyl
 convention. Written proofs were reviewed independently inside this research
 session; historical priority and external peer review remain open.
+
+## Cubic-phase completion
+
+The continuation through Claude commit `35d39be4` closes the full affine
+cubic-phase sector: `P=p+w(q)`, degree w two, `H=a(P)+q*b(P)`.
+Theorem CP classifies every such polynomial Hamiltonian, including all
+lower-degree boundaries. For degree a at least three, constant b gives
+the infinite QC tower; linear b gives exactly the K1-prime spaces of
+dimension four, five or six; quadratic b gives exactly K4's three-dimensional
+space or `span{1,H}`; and degree b at least three gives `span{1,H}`.
+Quadratic b with degree a at most two has a full four-dimensional core.
+The full table and exact rational chart recognizer are
+`cubic_phase_classification.*`. K1-prime and K4 upper bounds are proved.
+
+The nonlinear restoring theorem is also complete: for EVERY polynomial
+F of degree at least three and `lambda!=0`,
+
+`H=F(p+w(q))+lambda*q^2+epsilon*q+C`
+
+has full core `span{1,H}`. Intersections of the third-gate tests through depths one, two and three
+have dimensions four, three and two, with explicit all-degree proofs and
+sharp witnesses. At zero restoring force the core is instead the infinite
+QC tower, sharply at depth one. See `higher_restoring.*`.
+
+The cubic calibration `H_t=(p+q^2)^3+t*q^2` has first-order liftable
+initial space `span{1,P,P^3}` and second-order/formal initial space
+`span{1,P^3}`. Its delayed P obstruction is `864*t^2`.
+The full uniform finite-weight Smith law is in `cubic_deformation.*`;
+`restoring_deformation.*` proves the same three-to-two lifting hierarchy
+for EVERY polynomial F of degree at least three, with the uniform Smith
+law for every declared weight bound N at least twice the degree of F.
+The independent review uses its own Fraction engine and imports no
+project mathematical producer.
+
+Claude's formal gauge theorem is retained with its parameter convention
+explicit. Its vector-field defect is a total derivative and its full
+operator defect a coboundary; no nontrivial scalar Gelfand-Fuchs class
+is claimed. P003 and P004 remain refuted as stated. General non-affine
+cubic-phase Hamiltonians beyond these proved classes remain open.
 
 ## The consequential finding
 

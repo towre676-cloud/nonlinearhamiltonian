@@ -1,8 +1,8 @@
 # Handoff: exact nonlinear sectors and deformation obstructions
 
 The continuation is based on published review commit `4050dbf`, which preserves
-Claude's complete near-top theorem at `268d553`. Its later triangular-family
-update `fbc52d01` is also integrated; the review branch retains the stronger
+Claude's complete near-top theorem at `268d553`. Its later triangular and cubic-phase
+updates `fbc52d01` and `35d39be4` are also integrated; the review branch retains the stronger
 full-core routes before the new containment recognizers. The retained sealed compendium
 and Hamiltonian baselines are unchanged. Historical priority remains unestablished.
 
@@ -67,13 +67,23 @@ core does not imply dimension two. Nonlinear canonical changes require the
 protected-sector argument or explicit transformed gates; canonical brackets
 alone do not preserve the original flat Moyal product.
 
-The new triangular update isolates two sharper algebraic targets. K1' has
-`H=F(P)+lambda*q+mu*q*P`, `P=p+w(q)`, `deg w=2`, `mu!=0`; its contained
-sector has dimension four, five or six, but its upper bound remains open.
-K3 with linear transverse coefficient supplies a separate four-dimensional
-contained sector outside CQ. Higher cubic-phase couplings such as
-`P^4+q*P^2` form a third frontier. K1, recognized constant-quadratic K2,
-and higher K3 overlap QC/CQ/PP/SC and already have full equalities here.
+The affine cubic-phase sector is now COMPLETE. Do not repeat its upper
+bounds: CP unifies AC (degree b>=2), CPL (linear b), QC, CQ and positive
+low-degree boundaries. K1-prime has full dimension four/five/six; K4 has
+full dimension three; quadratic b with degree a<=2 has full dimension four.
+The recognizer recovers the ambiguous affine part of a quadratic shear
+from an exact directional-Hessian gcd; canonical completion alone can miss it.
+
+The non-affine family `F(P)+lambda*q^2+epsilon*q+C`, every deg F>=3,
+is closed by HR: infinite QC at lambda0, span1H at nonzero lambda,
+with sharp third-gate depths one and three. RD/RT classify the universal
+lifting hierarchy: first-order initial space span1,P,F and second/formal
+span1,F, with one delayed t² Smith factor at every eligible finite weight.
+
+The remaining cubic-phase targets have genuine higher Q coupling beyond
+the affine and restoring classes. General variable quadratic-momentum
+coefficients remain open beyond CQ, PP, SC and CP's low-density branch.
+For example `P^3+Q^3` is outside HR, while `P^3+Q^2` is now proved.
 
 Claude's P004 collapse claim outside its triangular list is also false as
 stated: `J=qp+q^3`, `H=q*J^2+J` is covered by PP with full core

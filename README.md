@@ -64,6 +64,20 @@ also separates first-order from second-order lifting obstructions in all
 observable degrees. See the [research overview](research/core_overlap/README.md)
 and its portable, standard-library replay bundle.
 
+The cubic-phase continuation completes every affine Hamiltonian
+`H=a(P)+q*b(P)`, `P=p+w(q)`, degree w two, including K1-prime and K4
+upper bounds and a four-dimensional low-degree boundary. For every
+polynomial F of degree at least three, adding a nonzero quadratic
+restoring force to F(P) leaves exactly span{1,H}, sharply at third-gate
+depth three. The associated formal deformation has three first-order
+liftable initial observables and two second-order/formal ones; its
+uniform finite-weight Smith law records one delayed t² obstruction.
+General non-affine cubic-phase Hamiltonians remain open beyond the stated
+classes. The [complete affine table](research/core_overlap/cubic_phase_classification.md)
+and [restoring deformation theorem](research/core_overlap/restoring_deformation.md)
+state the hypotheses and all-degree proofs.
+
+
 The [Hamiltonian package](research/hamiltonian/) studies, for a fixed polynomial Hamiltonian $H$, those $\hbar$-independent polynomial observables $G$ for which
 
 $$

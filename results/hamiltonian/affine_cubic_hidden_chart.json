@@ -1,0 +1,101 @@
+{
+ "schema": "machinery-envelope-v1",
+ "witness_kind": "affine-cubic-phase-complete",
+ "coefficient_domain": "Q",
+ "model": {
+  "0,4": "1",
+  "1,3": "14/3",
+  "2,2": "20/3",
+  "2,3": "4",
+  "3,1": "104/27",
+  "3,2": "14",
+  "4,0": "64/81",
+  "4,1": "40/3",
+  "4,2": "6",
+  "5,0": "104/27",
+  "5,1": "14",
+  "6,0": "20/3",
+  "6,1": "4",
+  "7,0": "14/3",
+  "8,0": "1"
+ },
+ "model_sha256": "b56ed1278362866c08d1398049ce71765e0561c891c44ef66665e674a043d353",
+ "payload": {
+  "format": "affine-cubic-phase-complete-v1",
+  "hamiltonian": {
+   "0,4": "1",
+   "1,3": "14/3",
+   "2,2": "20/3",
+   "2,3": "4",
+   "3,1": "104/27",
+   "3,2": "14",
+   "4,0": "64/81",
+   "4,1": "40/3",
+   "4,2": "6",
+   "5,0": "104/27",
+   "5,1": "14",
+   "6,0": "20/3",
+   "6,1": "4",
+   "7,0": "14/3",
+   "8,0": "1"
+  },
+  "claim": {
+   "format": "cubic-affine-complete-v1",
+   "degree_a": 4,
+   "degree_b": 3,
+   "dimension": 2,
+   "case": "nonlinear vector-field coefficient",
+   "proved": true,
+   "basis": [
+    {
+     "0,0": "1"
+    },
+    {
+     "0,4": "1",
+     "1,3": "14/3",
+     "2,2": "20/3",
+     "2,3": "4",
+     "3,1": "104/27",
+     "3,2": "14",
+     "4,0": "64/81",
+     "4,1": "40/3",
+     "4,2": "6",
+     "5,0": "104/27",
+     "5,1": "14",
+     "6,0": "20/3",
+     "6,1": "4",
+     "7,0": "14/3",
+     "8,0": "1"
+    }
+   ],
+   "third_gate_depth_for_Q_degree_bound": 1,
+   "third_gate_depth": 1,
+   "finite_stopping_equality": "intersection of ker(C3 D^r) through the declared depth",
+   "proof": "cubic_affine_completeness.md",
+   "core": "span{1,H}",
+   "route": "CP",
+   "w": {
+    "2": "1",
+    "1": "2/3"
+   },
+   "h": {
+    "0,4": "1",
+    "1,3": "2"
+   },
+   "c": "1",
+   "chart_proof": "cubic_phase_classification.md"
+  }
+ },
+ "payload_sha256": "a0cdc287754fec07dd29e348754850b3e910d371c68834e9f77a96ca5cb9c9c8",
+ "hypotheses": [
+  "characteristic zero",
+  "original flat Weyl product",
+  "exact reconstructed quadratic shear and affine-Q Hamiltonian"
+ ],
+ "scope": "full polynomial dynamic core, with no observable-degree cutoff",
+ "source_ids": [
+  "D16-F03",
+  "D06-F02"
+ ],
+ "producer": "towre676-cloud/nonlinearhamiltonian extensions (exact rational, Python standard library)"
+}

@@ -283,6 +283,7 @@ def classify(H):
                         out[key] = tri[key]
             elif CT.cubic_phase(H, l):
                 out['route'] = 'pure, cubic phase'
+                out['cubic_phase_chart'] = CT.cubic_phase(H, l)
     return out
 
 
@@ -382,6 +383,27 @@ def pure_additional_routes(H, l):
         return result
     result = load('pure_transverse').classify(Ht)
     if result is None:
+        hr = load('higher_restoring').recognize(Ht)
+        if hr is not None:
+            return {'route': 'HR', 'proved': True, 'core': 'span{1, H}',
+                    'dimension': 2, 'active_part': '0', 'third_gate_depth': 3,
+                    'degree_composition': hr['degree_composition'],
+                    'root_coordinate_witness': {k: str(hr[k]) for k in ('c', 'lambda', 'epsilon')},
+                    'basis': [ser({(0, 0): F(1)}), ser(H)]}
+        cp = load('cubic_phase_classification').recognize(Ht)
+        if cp is not None:
+            out = {'route': 'CP', 'proved': True, 'core': cp['core'],
+                   'dimension': cp['dimension'], 'case': cp['case'],
+                   'active_part': '0' if cp['dimension'] == 2 else 'see exact derivation action',
+                   'root_coordinate_witness': {'w': {str(i): str(c) for i, c in cp['w'].items()},
+                                               'degree_a': cp['degree_a'], 'degree_b': cp['degree_b']}}
+            if 'basis' in cp:
+                out['basis'] = [ser(comp(integer_poly(g), l, m)) for g in cp['basis']]
+            for key in ('third_gate_depth', 'third_gate_depth_bound',
+                        'stopping_bound_sharp', 'third_gate_weight_shifts'):
+                if key in cp:
+                    out[key] = cp[key]
+            return out
         return None
     out = {'route': 'PP', 'proved': True, 'core': 'span{1, H}', 'active_part': '0',
            'transverse': {k: result[k] for k in ('r', 's', 'gamma', 'dimension', 'reason')}}

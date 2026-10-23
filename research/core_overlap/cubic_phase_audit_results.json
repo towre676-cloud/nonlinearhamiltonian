@@ -1,0 +1,146 @@
+{
+  "status": "passed",
+  "format": "cubic-phase-linear-completeness-v1",
+  "checks": {
+    "original_gate_identities": 24,
+    "diagonal_operator_and_derivation_identities": 25,
+    "leading_coefficient_obstructions": 252,
+    "weight_kernel_cross_checks": [
+      {
+        "degree_A": 2,
+        "source_total_degree_bound_in_P_J": 7,
+        "maximal_invariant_kernel_dimension": 6,
+        "full_output_retained": true
+      },
+      {
+        "degree_A": 2,
+        "source_total_degree_bound_in_P_J": 7,
+        "maximal_invariant_kernel_dimension": 5,
+        "full_output_retained": true
+      },
+      {
+        "degree_A": 3,
+        "source_total_degree_bound_in_P_J": 7,
+        "maximal_invariant_kernel_dimension": 4,
+        "full_output_retained": true
+      },
+      {
+        "degree_A": 4,
+        "source_total_degree_bound_in_P_J": 7,
+        "maximal_invariant_kernel_dimension": 4,
+        "full_output_retained": true
+      }
+    ],
+    "finite_stopping_support": [
+      {
+        "degree_A": 2,
+        "weight_shifts": [
+          -3,
+          -1,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "proved_depth_upper_bound": 7,
+        "sharpness_claimed": false
+      },
+      {
+        "degree_A": 3,
+        "weight_shifts": [
+          -3,
+          1,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "proved_depth_upper_bound": 8,
+        "sharpness_claimed": false
+      },
+      {
+        "degree_A": 4,
+        "weight_shifts": [
+          -3,
+          1,
+          2,
+          4,
+          5,
+          6,
+          7,
+          9,
+          10,
+          11,
+          12
+        ],
+        "proved_depth_upper_bound": 10,
+        "sharpness_claimed": false
+      },
+      {
+        "degree_A": 5,
+        "weight_shifts": [
+          -3,
+          2,
+          3,
+          5,
+          6,
+          7,
+          8,
+          9,
+          12,
+          13,
+          14,
+          15
+        ],
+        "proved_depth_upper_bound": 11,
+        "sharpness_claimed": false
+      },
+      {
+        "degree_A": 6,
+        "weight_shifts": [
+          -3,
+          3,
+          4,
+          6,
+          7,
+          9,
+          10,
+          11,
+          15,
+          16,
+          17,
+          18
+        ],
+        "proved_depth_upper_bound": 11,
+        "sharpness_claimed": false
+      },
+      {
+        "degree_A": 7,
+        "weight_shifts": [
+          -3,
+          4,
+          5,
+          7,
+          8,
+          11,
+          12,
+          13,
+          18,
+          19,
+          20,
+          21
+        ],
+        "proved_depth_upper_bound": 11,
+        "sharpness_claimed": false
+      }
+    ],
+    "classifier_and_all_odd_gate_instances": 12
+  },
+  "scope": "Theorem CPL proves all polynomial degrees. Finite exact checks supplement the written semisimple and leading-degree argument; no degree cutoff supports the universal claim.",
+  "naming_audit": "The derivation defect Delta is a coboundary of partial_P^3. Its displayed vector-field component is a total derivative, not the nontrivial scalar Virasoro cocycle."
+}

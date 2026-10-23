@@ -1,0 +1,31 @@
+{
+ "schema": "machinery-envelope-v1",
+ "witness_kind": "cubic-phase",
+ "coefficient_domain": "Q",
+ "model": {
+  "family": "pure tops in the cubic phase (q, p + w(q)), deg w = 2"
+ },
+ "model_sha256": "a6bb6215831c3cabe5f07b552ede2a74cfd664ed62275298f693db6a3416854b",
+ "payload": {
+  "format": "cubic-phase-v1",
+  "identities": [
+   "A",
+   "G1",
+   "G2",
+   "G3",
+   "K4",
+   "W"
+  ]
+ },
+ "payload_sha256": "9039fb856b201acd7ee825571a691bf44e86450e086e5fbe437536a810983507",
+ "hypotheses": [
+  "characteristic zero",
+  "gauge form exp(c t^2 d_P^3 / 3) of the triangular gates"
+ ],
+ "scope": "affine criterion, Lemma W, family K4, D_inf restricted to tau*(K[P] + Q K[P])",
+ "source_ids": [
+  "D16-F03",
+  "D06-F02"
+ ],
+ "producer": "towre676-cloud/nonlinearhamiltonian extensions (exact rational, Python standard library)"
+}

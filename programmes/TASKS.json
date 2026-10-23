@@ -222,7 +222,9 @@
     "Claude fbc52d01 triangular formula and K1/K1-prime/K2/K3 containment certificates retained (W6-g)",
     "K1/K1+K2 equality upgraded by QC; constant-quadratic K2 by CQ; pure K3 k>=2 by PP/SC",
     "P004 also refuted by the beta*J PP extension; no new blanket pure-top conjecture asserted",
-    "Open: K1-prime upper bounds, linear-transverse K3 (k=1), variable quadratic coefficients and higher cubic-phase couplings"
+    "Open: general variable quadratic coefficients and genuine non-affine cubic-phase couplings beyond CP/HR",
+    "Full affine cubic-phase upper bounds closed by AC/CPL/CP, including K1-prime and K4",
+    "Arbitrary nonlinear compositions plus quadratic restoring force closed by HR; universal lifting hierarchy and finite-weight torsion closed by RD/RT"
    ]
   },
   {
@@ -241,6 +243,23 @@
     "AP all-analytic additive-potential classification and regular-chart active criterion",
     "DO all-degree lifting hierarchy and full graded Smith torsion classification",
     "Independent proof review, portable replay and publication integrity checks"
+   ]
+  },
+  {
+   "id": "W9",
+   "status": "completed_scoped_theorems",
+   "title": "complete affine cubic phase and universal restoring torsion",
+   "depends_on": [
+    "W6",
+    "W8"
+   ],
+   "objective": "Close affine-Q completeness and classify nonlinear composition restoring deformations in all polynomial degrees.",
+   "acceptance": [
+    "AC and CPL full upper bounds with exact stopping rules",
+    "CP unifies every affine chart including low-degree boundaries and exact rational recovery",
+    "HR arbitrary polynomial composition plus quadratic potential, sharp depth3",
+    "RD/RT universal first/second/formal lifting and all eligible finite-weight Smith laws",
+    "Independent Fraction-engine proof audit, retained/full extension replay, portable archive and updated monograph"
    ]
   }
  ],

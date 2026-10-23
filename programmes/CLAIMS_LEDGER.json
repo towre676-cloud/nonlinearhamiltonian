@@ -45,7 +45,7 @@
   {
    "id": "P001",
    "status": "target",
-   "claim": "Remaining targets: probabilistic or continuous noise models; variable-quadratic-coefficient and higher-momentum pure perturbations outside the proved routes, including K1-prime, linear-transverse K3 and higher cubic-phase couplings; literature positioning.",
+   "claim": "Remaining targets: genuine non-affine cubic-phase Hamiltonians outside HR and other proved routes; general variable quadratic-momentum coefficients; analytic singular-chart matching; continuous-noise models; literature positioning.",
    "support": "TASKS.json",
    "scope": "Unfinished tasks, not current capabilities. Near and balanced tops and every nonzero constant quadratic-momentum coefficient are already classified; both P003 and the narrower P004 are refuted as stated."
   },
@@ -271,7 +271,7 @@
    "status": "proved_with_certificate",
    "claim": "Triangular structures for pure tops: with P = p + w(q), Theorem X (triangular transvectant formula) and the containments K1 (deg w = 2, H = F(P) + lam q: K[P] + Kq), K1' (deg w = 2, H = F(P) + lam q + mu qP, mu != 0, deg F>=3 with its P^(deg F-1) coefficient normalized to zero: span{1, P, P^2, H}, plus q if deg F = 3, plus PH if also lam = 0), K2 (H = h(q, P), h quadratic: the pullback of all quadratics) and K3 (H = c Q^(k-2) G^2 + r, G = Qm + v, r restricted: span{1, G, H}, plus Q if k = 1) in D_inf(H).",
    "support": "programmes/DYNAMIC_CORE_RESULTS.md#6.18; extensions/hamiltonian/check_triangular.py; results/hamiltonian/triangular_theorem.json",
-   "scope": "The triangular formula and stated containments are proved in all polynomial degrees; triangular-pure-v1 receipts certify containment only. Equality is now proved in K1 and K1+K2 by QC, the constant-quadratic K2 branches by CQ, and pure K3 with k>=2 by PP/SC. K1-prime and pure K3 k=1 upper bounds remain open. K3 k=2 is stationary; its bracket formula has no extra scalar c. Historical priority unestablished."
+   "scope": "Retained all-degree triangular formula and containment certificates. QC/CQ/PP/SC give earlier full equalities; CP/CPL now complete K1-prime and K4 and the quadratic-shear low-density portion of K3 k=1. General K3 k=1 outside those scopes remains open. K3 k=2 is stationary; its bracket formula has no extra scalar c. Historical priority unestablished."
   },
   {
    "id": "P003",
@@ -420,6 +420,55 @@
    "claim": "Every H=A p^2+B(q)p+C(q), A nonzero constant, is classified by the degrees of u=B/(2A) and V=C-B^2/(4A): full ring, infinite QC tower, six-dimensional quadratic sector, or span{1,H}.",
    "support": "research/core_overlap/constant_quadratic_classification.md; research/core_overlap/constant_quadratic_classification.py; research/core_overlap/extension_proof_review.md",
    "scope": "Complete polynomial coefficient class over characteristic-zero fields. Variable A(q) remains outside this theorem. All nontrivial branches have sharp third-gate stopping depths. Historical priority unestablished."
+  },
+  {
+   "id": "W6-h",
+   "status": "proved_with_certificate",
+   "claim": "Cubic phase (constant transverse top, completed power w of degree 2): (G) the gates are the flat gates conjugated by exp(s d_P^3), s = c t^2/3; (A0) for Hamiltonian and observable affine in Q, exactness is Delta(S_s h, S_s g) = 0, whose vector-field compatibility defect is 3(b' beta''' - b''' beta'); (W) deg b >= 3 leaves only span{1,H} affine in Q; (K4) h = A(P-r)^3(P-r') + O((P-r)^2) + mu Q (P-r)(P-r') has span{1, G, H} in its core, G = A(P-r)^3 + c2(P-r) + mu Q(P-r); (A) the complete table of D_inf restricted to tau*(K[P] + Q K[P]).",
+   "support": "programmes/DYNAMIC_CORE_RESULTS.md#6.19; extensions/hamiltonian/check_cubic_phase.py; results/hamiltonian/cubic_phase_theorem.json",
+   "scope": "All degrees for G, A0, W, K4 and the restricted table A. That D_inf lies inside tau*(K[P] + Q K[P]) in the affine sector is verified to degree 11, not proved; non-affine cubic-phase Hamiltonians are open. The defect is a coboundary and its vector-field expression a total derivative; no nontrivial scalar central-extension class is claimed. The formerly open affine-Q containment and full table are now proved by W9-CP, with lower-degree boundaries added. HR closes every nonlinear composition plus a quadratic restoring potential."
+  },
+  {
+   "id": "W9-AC",
+   "status": "proved_with_independent_internal_review",
+   "claim": "Every affine cubic-phase H=a(P)+Qb(P) with deg b>=2 has every core observable affine in Q. Degree b>=3 gives span1H sharply at C3 depth1; quadratic b gives full K4/low-density/two-dimensional classification at uniform depth2.",
+   "support": "research/core_overlap/cubic_affine_completeness.md; research/core_overlap/cubic_affine_completeness.py",
+   "scope": "All polynomial degrees; quadratic b bound sharp over the family; no bounded Sympy casework. Characteristic zero; fixed original flat Weyl structure; external peer review and historical priority remain open."
+  },
+  {
+   "id": "W9-CPL",
+   "status": "proved_with_independent_internal_review",
+   "claim": "The full linear-coupling cubic-phase core has dimension4/5/6 with exact basis1,P,P\u00b2,H, adding Q for cubic a and (P-r)H exactly when a is cubic and a_second(r)=0.",
+   "support": "research/core_overlap/cubic_phase_audit.md; research/core_overlap/cubic_phase_audit.py",
+   "scope": "All polynomial degrees, deg a>=3, b=mu(P-r), mu!=0. D-eigenvector proof; exact finite weight-shift stopping bound, general sharpness not claimed. Characteristic zero; fixed original flat Weyl structure; external peer review and historical priority remain open."
+  },
+  {
+   "id": "W9-CP",
+   "status": "proved_with_independent_internal_review",
+   "claim": "Complete full-core classification of EVERY H=a(P)+Qb(P) in a supplied quadratic-shear chart, including all low-degree boundaries; exact rational chart recovery by common directional-Hessian equations.",
+   "support": "research/core_overlap/cubic_phase_classification.md; research/core_overlap/cubic_phase_classification.py",
+   "scope": "Full ring, infinite QC or three-strip, or finite dimensions2/3/4/5/6. A recognizer miss is unclassified. Pure P-independent affine inputs are covered by the supplied-chart API and existing quadratic route. Characteristic zero; fixed original flat Weyl structure; external peer review and historical priority remain open."
+  },
+  {
+   "id": "W9-HR",
+   "status": "proved_with_independent_internal_review",
+   "claim": "For every polynomial F degree>=3 and quadratic shear P, H=F(P)+lambda*Q\u00b2+epsilon*Q+C with lambda!=0 has full core span1H, with exact C3 kernel dimensions4,3,2 at depths1,2,3.",
+   "support": "research/core_overlap/higher_restoring.md; research/core_overlap/higher_restoring.py; research/core_overlap/cubic_restoring.md",
+   "scope": "All polynomial degrees and every residual linear/constant term; third-gate depth3 is sharp. At lambda0, QC infinite core has sharp depth1. Characteristic zero; fixed original flat Weyl structure; external peer review and historical priority remain open."
+  },
+  {
+   "id": "W9-CD",
+   "status": "proved_with_independent_internal_review",
+   "claim": "Cubic restoring calibration H_t=P\u00b3+tQ\u00b2 has Lift1=span1,P,P\u00b3, Lift2=Liftformal=span1,P\u00b3, with choice-independent second-order residual864t\u00b2 for P.",
+   "support": "research/core_overlap/cubic_deformation.md; research/core_overlap/cubic_deformation.py",
+   "scope": "Arbitrary polynomial corrections with no common degree bound; exact finite-weight Smith certificates and BCH calibration. Characteristic zero; fixed original flat Weyl structure; external peer review and historical priority remain open."
+  },
+  {
+   "id": "W9-RD",
+   "status": "proved_with_independent_internal_review",
+   "claim": "For every F degree>=3, H_t=F(P)+tQ\u00b2 has first-order liftable initial space span1,P,F and second-order/formal space span1,F. For every weight bound N>=2degF, Tor coker M_N=K[t]/t\u00b2 plus floor(N/2)-1 copies K[t]/t.",
+   "support": "research/core_overlap/restoring_deformation.md; research/core_overlap/restoring_deformation.py",
+   "scope": "All-degree necessity and explicit full-gate sufficiency. M_N is the declared C3-only depth3 full-output finite-source presentation. No infinite-matrix Smith claim; ordinary algebraic torsion, historical priority unestablished. Characteristic zero; fixed original flat Weyl structure; external peer review and historical priority remain open."
   }
  ],
  "rule": "Passing finite tests does not upgrade a target or an unproved general statement to a theorem.",

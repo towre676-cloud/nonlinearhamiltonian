@@ -6,7 +6,11 @@ import re
 import subprocess
 
 ROOT = Path(__file__).resolve().parent
-CHAPTERS = ['README.md', 'pure_perfect_power.md', 'pure_quadratic_composition.md',
+CHAPTERS = ['README.md', 'cubic_phase_classification.md',
+            'cubic_affine_completeness.md', 'cubic_phase_audit.md',
+            'higher_restoring.md', 'restoring_deformation.md',
+            'cubic_deformation.md', 'cubic_restoring.md',
+            'phase_independent_review.md', 'pure_perfect_power.md', 'pure_quadratic_composition.md',
             'analytic_shear_square.md', 'shear_composition_complete.md',
             'shear_oscillator.md', 'constant_quadratic_classification.md',
             'quadratic_frontier.md', 'quadratic_shear_residual.md',
@@ -25,7 +29,7 @@ def main():
     args = parser.parse_args()
     front = '''---
 title: "Exact Nonlinear Sectors"
-subtitle: "Composition classifications, oscillator cores, analytic potentials and deformation obstructions"
+subtitle: "Complete affine cubic-phase cores, restoring transitions and deformation torsion"
 author: "Nonlinear Hamiltonian research programme"
 date: "22 October 2026 - internally reviewed research draft"
 fontsize: 10pt
@@ -39,6 +43,8 @@ toc-depth: 1
     parts = [front]
     for index, name in enumerate(CHAPTERS):
         text = (ROOT / name).read_text()
+        if name == 'cubic_phase_audit.md':
+            text = text.split('## Exact replay and limits')[0].rstrip()+'\n'
         if name == 'canonical_bridge.md':
             text = text.split('The companion `canonical_verify.py`')[0].rstrip()+'\n'
         if name == 'depth_finite_determination.md':

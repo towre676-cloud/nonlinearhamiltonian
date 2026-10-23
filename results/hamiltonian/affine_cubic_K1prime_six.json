@@ -1,0 +1,134 @@
+{
+ "schema": "machinery-envelope-v1",
+ "witness_kind": "affine-cubic-phase-complete",
+ "coefficient_domain": "Q",
+ "model": {
+  "0,3": "1",
+  "1,1": "1",
+  "1,2": "2",
+  "2,0": "2/3",
+  "2,1": "4/3",
+  "2,2": "3",
+  "3,0": "35/27",
+  "3,1": "4",
+  "4,0": "4/3",
+  "4,1": "3",
+  "5,0": "2",
+  "6,0": "1"
+ },
+ "model_sha256": "a9288c36996515205c704ab7d27b2825d8fa31cbbb822396b08bfaa5d103efa4",
+ "payload": {
+  "format": "affine-cubic-phase-complete-v1",
+  "hamiltonian": {
+   "0,3": "1",
+   "1,1": "1",
+   "1,2": "2",
+   "2,0": "2/3",
+   "2,1": "4/3",
+   "2,2": "3",
+   "3,0": "35/27",
+   "3,1": "4",
+   "4,0": "4/3",
+   "4,1": "3",
+   "5,0": "2",
+   "6,0": "1"
+  },
+  "claim": {
+   "route": "CP",
+   "proved": true,
+   "dimension": 6,
+   "degree_a": 3,
+   "root": "0",
+   "mu": "1",
+   "Q_degree_bound": 1,
+   "basis": [
+    {
+     "0,0": "1"
+    },
+    {
+     "0,1": "1",
+     "1,0": "2/3",
+     "2,0": "1"
+    },
+    {
+     "0,2": "1",
+     "1,1": "4/3",
+     "2,0": "4/9",
+     "2,1": "2",
+     "3,0": "4/3",
+     "4,0": "1"
+    },
+    {
+     "0,3": "1",
+     "1,1": "1",
+     "1,2": "2",
+     "2,0": "2/3",
+     "2,1": "4/3",
+     "2,2": "3",
+     "3,0": "35/27",
+     "3,1": "4",
+     "4,0": "4/3",
+     "4,1": "3",
+     "5,0": "2",
+     "6,0": "1"
+    },
+    {
+     "1,0": "1"
+    },
+    {
+     "0,4": "1",
+     "1,2": "1",
+     "1,3": "8/3",
+     "2,1": "4/3",
+     "2,2": "8/3",
+     "2,3": "4",
+     "3,0": "4/9",
+     "3,1": "86/27",
+     "3,2": "8",
+     "4,0": "124/81",
+     "4,1": "16/3",
+     "4,2": "6",
+     "5,0": "59/27",
+     "5,1": "8",
+     "6,0": "8/3",
+     "6,1": "4",
+     "7,0": "8/3",
+     "8,0": "1"
+    }
+   ],
+   "third_gate_depth_bound": 2,
+   "third_gate_weight_shifts": [
+    -3,
+    3,
+    6
+   ],
+   "stopping_bound_sharp": false,
+   "proof": "cubic_phase_audit.md, Theorem CPL",
+   "case": "K1-prime full core",
+   "core": "span{declared basis}",
+   "degree_b": 1,
+   "w": {
+    "2": "1",
+    "1": "2/3"
+   },
+   "h": {
+    "0,3": "1",
+    "1,1": "1"
+   },
+   "c": "1",
+   "chart_proof": "cubic_phase_classification.md"
+  }
+ },
+ "payload_sha256": "0eaffda7470cacfd09878384da49178daa4122e4b0bf4d1c9dd8f990b03c3d99",
+ "hypotheses": [
+  "characteristic zero",
+  "original flat Weyl product",
+  "exact reconstructed quadratic shear and affine-Q Hamiltonian"
+ ],
+ "scope": "full polynomial dynamic core, with no observable-degree cutoff",
+ "source_ids": [
+  "D16-F03",
+  "D06-F02"
+ ],
+ "producer": "towre676-cloud/nonlinearhamiltonian extensions (exact rational, Python standard library)"
+}

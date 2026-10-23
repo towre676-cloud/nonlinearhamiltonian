@@ -1,0 +1,78 @@
+{
+ "schema": "machinery-envelope-v1",
+ "witness_kind": "two-root-perturbation",
+ "coefficient_domain": "Q",
+ "model": {
+  "0,1": "-2",
+  "0,5": "1",
+  "1,0": "33/5",
+  "1,4": "1",
+  "2,0": "29/15",
+  "2,3": "2/5",
+  "2,4": "-10/3",
+  "3,2": "2/25",
+  "3,3": "-8/3",
+  "4,1": "1/125",
+  "4,2": "-4/5",
+  "4,3": "40/9",
+  "5,0": "1/3125",
+  "5,1": "-8/75",
+  "5,2": "8/3",
+  "6,0": "-2/375",
+  "6,1": "8/15",
+  "6,2": "-80/27",
+  "7,0": "8/225",
+  "7,1": "-32/27",
+  "8,0": "-16/135",
+  "8,1": "80/81",
+  "9,0": "16/81",
+  "10,0": "-32/243"
+ },
+ "model_sha256": "9a6d9ec1364c6714504d56fac06deb0fdd94ae13497b35f6de7ee64973720033",
+ "payload": {
+  "format": "two-root-perturbation-v1",
+  "hamiltonian": {
+   "0,1": "-2",
+   "0,5": "1",
+   "1,0": "33/5",
+   "1,4": "1",
+   "2,0": "29/15",
+   "2,3": "2/5",
+   "2,4": "-10/3",
+   "3,2": "2/25",
+   "3,3": "-8/3",
+   "4,1": "1/125",
+   "4,2": "-4/5",
+   "4,3": "40/9",
+   "5,0": "1/3125",
+   "5,1": "-8/75",
+   "5,2": "8/3",
+   "6,0": "-2/375",
+   "6,1": "8/15",
+   "6,2": "-80/27",
+   "7,0": "8/225",
+   "7,1": "-32/27",
+   "8,0": "-16/135",
+   "8,1": "80/81",
+   "9,0": "16/81",
+   "10,0": "-32/243"
+  },
+  "claim": {
+   "route": "HR",
+   "core": "span{1, H}",
+   "proved": true
+  }
+ },
+ "payload_sha256": "c7dfbcd9b9aa196f913e209d8054f4cf30de9723f31b955d280b914d53c820d3",
+ "hypotheses": [
+  "characteristic zero",
+  "quadratic shear with nonzero leading coefficient",
+  "composition degree at least three and nonzero quadratic restoring coefficient"
+ ],
+ "scope": "full core span{1,H}; sharp third-gate depth three by Theorem HR",
+ "source_ids": [
+  "D16-F03",
+  "D06-F02"
+ ],
+ "producer": "towre676-cloud/nonlinearhamiltonian extensions (exact rational, Python standard library)"
+}

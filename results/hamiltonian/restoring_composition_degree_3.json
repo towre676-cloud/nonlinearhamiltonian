@@ -1,0 +1,56 @@
+{
+ "schema": "machinery-envelope-v1",
+ "witness_kind": "two-root-perturbation",
+ "coefficient_domain": "Q",
+ "model": {
+  "0,1": "-2",
+  "0,3": "1",
+  "1,0": "33/5",
+  "1,2": "3/5",
+  "2,0": "29/15",
+  "2,1": "3/25",
+  "2,2": "-2",
+  "3,0": "1/125",
+  "3,1": "-4/5",
+  "4,0": "-2/25",
+  "4,1": "4/3",
+  "5,0": "4/15",
+  "6,0": "-8/27"
+ },
+ "model_sha256": "cc37f56593a6d783ae3289f3bc0bce8f63a76843c8455b9408030f032292a3f3",
+ "payload": {
+  "format": "two-root-perturbation-v1",
+  "hamiltonian": {
+   "0,1": "-2",
+   "0,3": "1",
+   "1,0": "33/5",
+   "1,2": "3/5",
+   "2,0": "29/15",
+   "2,1": "3/25",
+   "2,2": "-2",
+   "3,0": "1/125",
+   "3,1": "-4/5",
+   "4,0": "-2/25",
+   "4,1": "4/3",
+   "5,0": "4/15",
+   "6,0": "-8/27"
+  },
+  "claim": {
+   "route": "HR",
+   "core": "span{1, H}",
+   "proved": true
+  }
+ },
+ "payload_sha256": "a5305a05daa6c08da0c84296e384424702c76a13191a29c975c28c89df74a2a0",
+ "hypotheses": [
+  "characteristic zero",
+  "quadratic shear with nonzero leading coefficient",
+  "composition degree at least three and nonzero quadratic restoring coefficient"
+ ],
+ "scope": "full core span{1,H}; sharp third-gate depth three by Theorem HR",
+ "source_ids": [
+  "D16-F03",
+  "D06-F02"
+ ],
+ "producer": "towre676-cloud/nonlinearhamiltonian extensions (exact rational, Python standard library)"
+}

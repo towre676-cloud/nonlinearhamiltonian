@@ -295,6 +295,7 @@ TRIANGULAR_EXAMPLES = [
     ('triangular_K1K2_q2p_squared', {(4, 0): 1, (2, 1): 2, (0, 2): 1}),
     ('triangular_K3_linear_twist', {(1, 2): 1, (3, 1): 2, (5, 0): 1, (1, 0): 1}),
     ('triangular_K3_cubic_twist', {(3, 2): 1, (5, 1): 2, (7, 0): 1, (1, 0): 1}),
+    ('triangular_K4_double_root', {(0, 4): 1, (2, 3): 4, (4, 2): 6, (6, 1): 4, (8, 0): 1, (1, 2): 1, (3, 1): 2, (5, 0): 1}),
 ]
 
 
@@ -314,6 +315,13 @@ def two_root():
         ['characteristic zero', 'triangular transvectant formula (Theorem X)'],
         'containments K1, K2, K3 in D_inf(H); refutes P003 as stated', ['D16-F03', 'D06-F02'], PRODUCER,
         verify=False), s0)
+    import check_cubic_phase as CCP
+    cert, s0 = timed(lambda: {'format': CCP.FORMAT, 'identities': sorted(CCP.check()['identities'])})
+    write('hamiltonian', 'cubic_phase_theorem', envelope.make(
+        'cubic-phase', {'family': 'pure tops in the cubic phase (q, p + w(q)), deg w = 2'}, cert,
+        ['characteristic zero', 'gauge form exp(c t^2 d_P^3 / 3) of the triangular gates'],
+        'affine criterion, Lemma W, family K4, D_inf restricted to tau*(K[P] + Q K[P])', ['D16-F03', 'D06-F02'],
+        PRODUCER, verify=False), s0)
     for name, h in TRIANGULAR_EXAMPLES:
         c, s = timed(CTR.certify, {k: WG.F(v) for k, v in h.items()})
         c.pop('result')
@@ -347,11 +355,47 @@ def two_root():
             PRODUCER, verify=False), s)
 
 
+def cubic_phase_completion():
+    sys.path.insert(0, str(ROOT/'research/core_overlap'))
+    import cubic_phase_classification as CP
+    import check_triangular as CT
+    import check_two_root as TR
+    examples = [
+        ('affine_cubic_K4_full', {(0, 4): WG.F(1), (1, 2): WG.F(1)}),
+        ('affine_cubic_K1prime_six', {(0, 3): WG.F(1), (1, 1): WG.F(1)}),
+        ('affine_cubic_K1prime_five', {(0, 3): WG.F(1), (0, 2): WG.F(1), (1, 1): WG.F(1)}),
+        ('affine_cubic_K1prime_four', {(0, 4): WG.F(1), (1, 1): WG.F(1)}),
+        ('affine_cubic_low_four', {(1, 2): WG.F(1), (0, 1): WG.F(2)}),
+        ('affine_cubic_hidden_chart', {(0, 4): WG.F(1), (1, 3): WG.F(2)}),
+    ]
+    for name, h in examples:
+        H = CT.tri(h, {2: WG.F(1), 1: WG.F(2, 3)})
+        cert, seconds = timed(CP.certify, H)
+        write('hamiltonian', name, envelope.make(
+            'affine-cubic-phase-complete', cert['hamiltonian'], cert,
+            ['characteristic zero', 'original flat Weyl product',
+             'exact reconstructed quadratic shear and affine-Q Hamiltonian'],
+            'full polynomial dynamic core, with no observable-degree cutoff',
+            ['D16-F03', 'D06-F02'], PRODUCER, verify=False), seconds)
+    for degree in (3, 5):
+        H = CT.tri({(0, degree): WG.F(1), (0, 1): WG.F(-2),
+                    (2, 0): WG.F(3, 5), (1, 0): WG.F(7)},
+                   {2: WG.F(-2, 3), 1: WG.F(1, 5)})
+        cert, seconds = timed(TR.certify, H)
+        cert.pop('result')
+        write('hamiltonian', 'restoring_composition_degree_'+str(degree), envelope.make(
+            'two-root-perturbation', cert['hamiltonian'], cert,
+            ['characteristic zero', 'quadratic shear with nonzero leading coefficient',
+             'composition degree at least three and nonzero quadratic restoring coefficient'],
+            'full core span{1,H}; sharp third-gate depth three by Theorem HR',
+            ['D16-F03', 'D06-F02'], PRODUCER, verify=False), seconds)
+
+
 SECTIONS = {'observer': lambda a: observers(), 'structure': lambda a: structure(), 'arithmetic': lambda a: arithmetic(),
             'hamiltonian': lambda a: hamiltonians(a.skip_slow), 'top': lambda a: top_reductions(),
             'integer': lambda a: integer_and_units(), 'quartic': lambda a: quartic_theorem(),
             'binary': lambda a: binary_forms(), 'rigidity': lambda a: rigidity(),
-            'tworoot': lambda a: two_root()}
+            'tworoot': lambda a: two_root(), 'phase': lambda a: cubic_phase_completion()}
 
 
 def main():

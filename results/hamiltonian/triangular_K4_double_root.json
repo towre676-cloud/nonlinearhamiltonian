@@ -1,0 +1,65 @@
+{
+ "schema": "machinery-envelope-v1",
+ "witness_kind": "triangular-pure",
+ "coefficient_domain": "Q",
+ "model": {
+  "0,4": "1",
+  "1,2": "1",
+  "2,3": "4",
+  "3,1": "2",
+  "4,2": "6",
+  "5,0": "1",
+  "6,1": "4",
+  "8,0": "1"
+ },
+ "model_sha256": "8dbb4d6a5926a754eec9462b46ecc805f6f2d1bbb6432dd0ba6138c1a3668995",
+ "payload": {
+  "format": "triangular-pure-v1",
+  "hamiltonian": {
+   "0,4": "1",
+   "1,2": "1",
+   "2,3": "4",
+   "3,1": "2",
+   "4,2": "6",
+   "5,0": "1",
+   "6,1": "4",
+   "8,0": "1"
+  },
+  "family": "K4",
+  "core": "span{1, G, H}",
+  "generators": [
+   {
+    "0,0": "1"
+   },
+   {
+    "0,3": "1",
+    "1,1": "1",
+    "2,2": "3",
+    "3,0": "1",
+    "4,1": "3",
+    "6,0": "1"
+   },
+   {
+    "0,4": "1",
+    "1,2": "1",
+    "2,3": "4",
+    "3,1": "2",
+    "4,2": "6",
+    "5,0": "1",
+    "6,1": "4",
+    "8,0": "1"
+   }
+  ]
+ },
+ "payload_sha256": "246abd8471b6ab6f19ebf1e607b1b1d232d85004554e7895becf4b3759e10585",
+ "hypotheses": [
+  "characteristic zero",
+  "exact check: the generators span a D-invariant space killed by every gate"
+ ],
+ "scope": "explicit elements of D_inf(H) beyond span{1, H} (counterexample to P003 as stated)",
+ "source_ids": [
+  "D16-F03",
+  "D06-F02"
+ ],
+ "producer": "towre676-cloud/nonlinearhamiltonian extensions (exact rational, Python standard library)"
+}

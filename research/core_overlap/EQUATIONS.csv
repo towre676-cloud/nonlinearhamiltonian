@@ -44,3 +44,23 @@ CO42,Universal cubic minor,det M14=-24890710561890742444118538078799685222400000
 CO43,Affine-shear sharp fifth-depth witness,C3D^5q=96A^4*V_third*V_fourth,affine_shear_potentials.md,degree V>=4; all earlier third gates vanish
 CO44,Affine-shear sharp seventh-depth witness,C3D^7q=-960A^5*(V_third)^3,affine_shear_potentials.md,degree V=3; all earlier third gates vanish
 CO45,Complete constant-quadratic phase diagram,u=B/(2A); V=C-B^2/(4A); core determined by degree u and degree V,constant_quadratic_classification.md,"All A p^2+B(q)p+C(q), nonzero constant A; all polynomial degrees"
+CO46,Highest-Q affine gate,M_N=b_prime*dP^3+(1-N)b_second*dP^2-N*b_third*dP,cubic_affine_completeness.md,All polynomial degrees; quadratic shear nonzero
+CO47,Highest-degree obstruction,m*n*(n+m-3)*(n-1-N*(m-1)),cubic_affine_completeness.md,Coefficient of leading M_N P^n; proves absence of Q degree>=2
+CO48,Complete nonlinear affine coefficient,"deg b>=3 => core=span{1,H}; third-gate depth1",cubic_affine_completeness.md,Every polynomial a; all-degree sharp depth one
+CO49,Complete K4 coefficient test,r=(b1/b2-a3/a4)/2; b(r)=0,cubic_affine_completeness.md,Quadratic b and quartic a; full core dimension three exactly when test passes
+CO50,Four-dimensional low-density core,"X=Q+a2/b2; core=span{1,X,XP,H}",cubic_affine_completeness.md,Quadratic b and degree a<=2; full polynomial core
+CO51,Linear-coupling spectral coordinates,J=Q+(a-a0)/P; D=P*dP-J*dJ,cubic_phase_audit.md,After root centering and scaling; deg a>=3
+CO52,Full K1-prime core,"basis=1,P,P^2,H; add Q if deg a=3; add (P-r)H if a_second(r)=0",cubic_phase_audit.md,All-degree completeness; finite weight-shift stopping bound
+CO53,Exact affine chart recovery,(dQ-alpha*dP)^2 h0=0,cubic_phase_classification.md,Common gcd of quadratic slope equations; exact rational reconstruction
+CO54,General restoring core,"H=F(P)+lambda*Q^2+epsilon*Q+C => core=span{1,H}",higher_restoring.md,Every deg F>=3; lambda nonzero; quadratic shear
+CO55,Restoring kernel sequence,"S1=span{1,Q,P,H}; S2=span{1,P,H}; S3=span{1,H}",higher_restoring.md,Full polynomial ring; sharp third-gate depth three
+CO56,Restoring sharp witnesses,C3D^2Q=12c*lambda*(F_second*F_third)_prime; C3D^3P=24c*lambda^2*(F_second*F_third)_prime,higher_restoring.md,Both nonzero for every polynomial F of degree>=3
+CO57,Cubic lifting hierarchy,"Lift1=span{1,P,P^3}; Lift2=Liftformal=span{1,P^3}",cubic_deformation.md,Arbitrary polynomial corrections with no common degree bound
+CO58,Cubic delayed obstruction,C3D_t^3P=864*t^2,cubic_deformation.md,Choice-independent second-order failure after compatibility equations
+CO59,Cubic finite-weight Smith law,Tor coker M_N=K[t]/t^2 + (K[t]/t)^(floor(N/2)-1),cubic_deformation.md,Declared full-output source weight<=N; N>=6
+CO60,Compatibility defect boundary,b_prime*beta_third-b_third*beta_prime=(b_prime*beta_second-b_second*beta_prime)_prime,cubic_phase_audit.md,Total derivative; full defect coboundary; no new scalar central-extension class
+CO61,Universal lifting hierarchy,"Lift1=span{1,P,F}; Lift2=Liftformal=span{1,F}",restoring_deformation.md,Every polynomial F degree>=3; arbitrary polynomial corrections at each order
+CO62,Universal delayed obstruction,C3D_t^3P=24c*t^2*(F_second*F_third)_prime,restoring_deformation.md,Choice-independent after the coupled lower-depth compatibility conditions
+CO63,Universal finite-weight Smith law,Tor coker M_N=K[t]/t^2 + (K[t]/t)^(floor(N/2)-1),restoring_deformation.md,C3-only depth3 presentation; EVERY N>=2degF; quadratic shear coefficient nonzero
+CO64,Injective correction-control identity,"[C3,D0]=12c*F_second*(F_third+F_second*dP)*dQ^2",restoring_deformation.md,Polynomial injectivity excludes arbitrary high-degree corrections
+CO65,Linear-coupling finite stopping,R=number_of_weight_shifts(C3)-1 <=3(deg a-1)+1,cubic_phase_audit.md,All-degree Vandermonde bound; general sharpness not asserted

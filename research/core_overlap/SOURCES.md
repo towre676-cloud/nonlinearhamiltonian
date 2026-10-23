@@ -52,3 +52,19 @@ operator domains, convergence of a star series for arbitrary smooth
 functions, spectral predictions, and experimental realizability are outside
 the claims. Finite-q-degree analytic observables have finitely many gates
 against H=qF+V, so no infinite gate summation is used there.
+
+
+## Cubic-phase background and scope
+
+Domański and Błaszak, *On local equivalence of star-products on Poisson manifolds*,
+[arXiv:1305.4026](https://arxiv.org/abs/1305.4026), and Błaszak and Domański,
+*Canonical transformations in quantum mechanics*,
+[arXiv:1208.2835](https://arxiv.org/abs/1208.2835), supply established
+star-product-equivalence and quantum-canonical background. They are not
+used as proof of the specific full-core classification theorems here.
+Ovsienko and Roger, [arXiv:math/9812074](https://arxiv.org/abs/math/9812074),
+equation (9.2), gives the conventional scalar Gelfand-Fuchs integral.
+Our displayed vector-field defect integrates to zero under periodic or
+compact-support boundary conditions; the independent review states the
+precise distinction. Historical priority of the new scoped classifications
+remains unestablished.
