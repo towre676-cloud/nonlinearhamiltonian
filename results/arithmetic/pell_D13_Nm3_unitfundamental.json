@@ -1,0 +1,65 @@
+{
+ "schema": "machinery-envelope-v1",
+ "witness_kind": "pell-orbit-reduction",
+ "coefficient_domain": "Z",
+ "model": {
+  "D": 13,
+  "N": -3,
+  "unit": "fundamental",
+  "height": 10000000000000000000000000000000000000000
+ },
+ "model_sha256": "62c00f303529d169c712ddc1f3a9407cdda65905804861e95f0f54428f1d3e02",
+ "payload": {
+  "format": "pell-orbits-v1",
+  "model_sha256": "62c00f303529d169c712ddc1f3a9407cdda65905804861e95f0f54428f1d3e02",
+  "order": "Z[sqrt D], integer coordinates",
+  "unit_identity": "649^2 - 13*180^2 = 1",
+  "seed_bound": "D y^2 < a^2 |N|, x >= 0, y > 0",
+  "seeds": [
+   [
+    7,
+    2
+   ],
+   [
+    137,
+    38
+   ]
+  ],
+  "window_end_exclusive": 312,
+  "unit_certificate": {
+   "format": "fundamental-unit-v1",
+   "model_sha256": "cbc6e5cb3c6e08cde02a7110fa1472c1a06c51488820ea196159ff12fbf9f1dd",
+   "unit": [
+    18,
+    5
+   ],
+   "norm_one_unit": [
+    649,
+    180
+   ],
+   "maximal_order": {
+    "cube_root": [
+     3,
+     1
+    ]
+   }
+  },
+  "height_count": {
+   "height": 10000000000000000000000000000000000000000,
+   "nonnegative_branch": 26,
+   "accepted": null
+  },
+  "status": "complete"
+ },
+ "payload_sha256": "673d292f81825d274f2f6f079a29cf26186a6588f2c66554785e84f4b5e40014",
+ "hypotheses": [
+  "declared order Z[sqrt D], integer coordinates",
+  "supplied unit, not necessarily fundamental"
+ ],
+ "scope": "complete orbit classification under the supplied unit; exact filtered height counts",
+ "source_ids": [
+  "D01-F04",
+  "2024:Y24-03-024"
+ ],
+ "producer": "towre676-cloud/nonlinearhamiltonian extensions (exact rational, Python standard library)"
+}

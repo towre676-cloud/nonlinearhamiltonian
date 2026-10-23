@@ -1,0 +1,139 @@
+{
+ "schema": "machinery-envelope-v1",
+ "witness_kind": "pell-orbit-reduction",
+ "coefficient_domain": "Z",
+ "model": {
+  "D": 5,
+  "N": -4,
+  "unit": [
+   9,
+   4
+  ],
+  "height": 1000,
+  "filter": {
+   "modulus": 3,
+   "accept": [
+    [
+     0,
+     0
+    ],
+    [
+     1,
+     0
+    ],
+    [
+     2,
+     0
+    ]
+   ]
+  }
+ },
+ "model_sha256": "0da774dbb02a6ca5d19ec51918fd1ec2400e9cfc248d19401d79e0ee61d1c0ed",
+ "payload": {
+  "format": "pell-orbits-v1",
+  "model_sha256": "0da774dbb02a6ca5d19ec51918fd1ec2400e9cfc248d19401d79e0ee61d1c0ed",
+  "order": "Z[sqrt D], integer coordinates",
+  "unit_identity": "9^2 - 5*4^2 = 1",
+  "seed_bound": "D y^2 < a^2 |N|, x >= 0, y > 0",
+  "seeds": [
+   [
+    1,
+    1
+   ],
+   [
+    4,
+    2
+   ],
+   [
+    11,
+    5
+   ]
+  ],
+  "window_end_exclusive": 9,
+  "cycles": [
+   {
+    "states": [
+     [
+      1,
+      1
+     ],
+     [
+      2,
+      1
+     ],
+     [
+      2,
+      2
+     ],
+     [
+      1,
+      2
+     ]
+    ],
+    "period": 4,
+    "accepted_indices": []
+   },
+   {
+    "states": [
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      1
+     ],
+     [
+      2,
+      1
+     ],
+     [
+      2,
+      2
+     ]
+    ],
+    "period": 4,
+    "accepted_indices": []
+   },
+   {
+    "states": [
+     [
+      2,
+      2
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      1
+     ],
+     [
+      2,
+      1
+     ]
+    ],
+    "period": 4,
+    "accepted_indices": []
+   }
+  ],
+  "height_count": {
+   "height": 1000,
+   "nonnegative_branch": 8,
+   "accepted": 0
+  },
+  "status": "complete"
+ },
+ "payload_sha256": "b050922e372aa8cd23b6fe52cf1de07e7cb3e28a855a646781f158611c5233da",
+ "hypotheses": [
+  "declared order Z[sqrt D], integer coordinates",
+  "supplied unit, not necessarily fundamental"
+ ],
+ "scope": "complete orbit classification under the supplied unit; exact filtered height counts",
+ "source_ids": [
+  "D01-F04",
+  "2024:Y24-03-024"
+ ],
+ "producer": "towre676-cloud/nonlinearhamiltonian extensions (exact rational, Python standard library)"
+}

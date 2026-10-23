@@ -1,0 +1,328 @@
+{
+ "claims": [
+  {
+   "id": "B001",
+   "status": "existing_result",
+   "claim": "Static exact-partner classifications in the report’s declared cubic, homogeneous quartic, qF(p) and monomial scopes.",
+   "support": "research/hamiltonian/output/Nonlinear_Hamiltonian_Partners.md",
+   "scope": "Retained proofs and scoped replay; no blanket novelty claim."
+  },
+  {
+   "id": "N001",
+   "status": "proved_abstract_reduction_in_handoff",
+   "claim": "Iterated correction left ideals stabilize in the Weyl algebra; a finite right-D-stable presentation with both containments defines the full polynomial dynamic core.",
+   "support": "programmes/HAMILTONIAN_CORES.md",
+   "scope": "Characteristic-zero exact operator identities; finite PDE presentation, not a completed solution classification."
+  },
+  {
+   "id": "N002",
+   "status": "derived_corollary",
+   "claim": "For H=qp^3+lambda q^2, the dynamic core is Q[p]+qQ[p] at lambda=0 and span{1,H} for nonzero rational lambda.",
+   "support": "programmes/HAMILTONIAN_CORES.md",
+   "scope": "Derived by algebraic scalar extension, affine-symplectic scaling and descent from retained cases; no priority claim."
+  },
+  {
+   "id": "E001",
+   "status": "implemented_v2",
+   "claim": "Minimal rational target-word observer with provenance, intertwining and sensor factorization or hidden-state witness.",
+   "support": "extensions/observer/observer.py; extensions/observer/check_observer.py; programmes/MACHINERY_MILESTONES.md#o1",
+   "scope": "Finite known rational actions; all future words; linear state summaries; no general noisy/adaptive optimizer."
+  },
+  {
+   "id": "E002",
+   "status": "seed_implemented",
+   "claim": "Exact normally ordered Weyl arithmetic and independent three-identity receipt replay.",
+   "support": "extensions/hamiltonian/weyl_receipts.py",
+   "scope": "Rational coefficients; replay checker for receipts produced by extensions/hamiltonian/weyl_groebner.py (W1)."
+  },
+  {
+   "id": "E003",
+   "status": "implemented_api",
+   "claim": "Construct and independently check finite Q-complex contractions; return a primitive or separating obstruction witness.",
+   "support": "extensions/structure/obstruction.py (S1 answers) over the seed contraction",
+   "scope": "Finite rational complexes; no integral torsion or arbitrary DGLA/sheaf input adapter shipped."
+  },
+  {
+   "id": "P001",
+   "status": "target",
+   "claim": "Remaining open targets: probabilistic or continuous noise models for adaptive experiments; the corrected pure-top conjecture P004 (P003 refuted); literature positioning.",
+   "support": "TASKS.json",
+   "scope": "Unfinished tasks, not current capabilities."
+  },
+  {
+   "id": "C0",
+   "status": "implemented",
+   "claim": "Typed machinery-envelope-v1 objects bind certificates to model/payload hashes, domain Q, hypotheses, scope and atlas source ids, and dispatch to independent checkers; swapped witness kinds and unknown domains are rejected.",
+   "support": "extensions/envelope.py; extensions/test_envelope.py",
+   "scope": "Registry of twenty-four witness kinds; domains Q and Z."
+  },
+  {
+   "id": "W1",
+   "status": "implemented_with_certificates",
+   "claim": "Fixed-H left Groebner closure of the iterated correction ideal exporting replayable correction-containment, provenance and right-D closure receipts; budget exhaustion returns unknown.",
+   "support": "extensions/hamiltonian/weyl_groebner.py; programmes/DYNAMIC_CORE_RESULTS.md#1",
+   "scope": "One canonical pair over Q; termination is guaranteed by Noetherianity, not by a complexity bound; q^4+p^4 exceeds the default budget."
+  },
+  {
+   "id": "W1-K",
+   "status": "proved_certificate_method",
+   "claim": "Support certificates (monomial span, finite support, weighted degree bound) determine the polynomial common kernel of a receipt ideal in all degrees.",
+   "support": "extensions/hamiltonian/check_weyl_kernel.py; programmes/DYNAMIC_CORE_RESULTS.md#2",
+   "scope": "Applies when the stated monomial-action / top-symbol hypotheses hold; otherwise the producer reports unclassified."
+  },
+  {
+   "id": "W1-R",
+   "status": "certified_computation",
+   "claim": "All-degree dynamic cores: q^3 -> Q[q]+pQ[q]+p^2Q[q]; qp^3 and qp^3+p^2 -> Q[p]+qQ[p]; qp^3+q^2, qp^3+q^2+p^2, p^3+q^2 -> span{1,H}; q^3p^3 and q^2p^2 -> Q[qp]; q^2p^3 -> span{1,qp,q^2p^3}; I_inf(qp^3) is strictly inside W2 dq^2 and I_inf(q^3p^3) = W2(q dq - p dp).",
+   "support": "results/hamiltonian/*.json; results/RECEIPTS.json",
+   "scope": "Exact certificates over Q; q^3, qp^3, qp^3+q^2 are calibrations of retained or derived results; no literature-priority claim."
+  },
+  {
+   "id": "W2",
+   "status": "theorem_with_certificates",
+   "claim": "For all rational alpha, beta: D_inf(qp^3+alpha q^2+beta p^2) = Q[p]+qQ[p] if alpha=0 and span{1,H} if alpha!=0; the static partner space is constant on the whole family.",
+   "support": "programmes/DYNAMIC_CORE_RESULTS.md#3; results/hamiltonian/qp3*.json",
+   "scope": "Two-parameter family; GL2 covariance of transvectants, normal forms over Qbar and descent; the six-parameter family remains open. Reproduces N002 as beta=0."
+  },
+  {
+   "id": "O2",
+   "status": "implemented_with_certificates",
+   "claim": "Exact minimum-cost static sensor panel under a declared ellipsoidal (correlated) noise matrix and amplification cap, with PSD/negative-witness branch-and-bound certificates and incomplete-with-bound outputs; invariant-metric certificates for all-time bounds (sufficient only).",
+   "support": "extensions/observer/panels.py; extensions/observer/check_panel.py",
+   "scope": "Finite menus, deterministic noise sets, initial static panels, tie policy one_optimum; worst-case search is exponential."
+  },
+  {
+   "id": "O3",
+   "status": "implemented_with_certificates",
+   "claim": "Exact worst-case optimal adaptive decision trees for deterministic finite test tables with Bellman lower-bound tables, or an unresolvable pair.",
+   "support": "extensions/observer/adaptive.py; extensions/observer/check_adaptive.py",
+   "scope": "At most 12 states; deterministic outcomes only."
+  },
+  {
+   "id": "S2",
+   "status": "implemented_with_certificates",
+   "claim": "Order-by-order Maurer-Cartan lifting in finite DGLAs over Q via the contraction, with explicit corrections or obstruction functionals; Chevalley-Eilenberg/Nijenhuis-Richardson generator for Lie deformations; order-2 obstructions are intrinsic to the first-order class.",
+   "support": "extensions/structure/dgla.py; extensions/structure/check_dgla.py",
+   "scope": "Formal truncated lifting; higher-order witnesses are relative to the declared jet; no convergence or moduli claim."
+  },
+  {
+   "id": "A1",
+   "status": "implemented_with_certificates",
+   "claim": "Complete supplied-unit orbit classification for x^2-Dy^2=N with exact modular cycles and filtered height counts.",
+   "support": "extensions/arithmetic/pell.py; extensions/arithmetic/check_pell.py",
+   "scope": "Declared order Z[sqrt D], supplied (possibly nonfundamental) unit; completeness rests on the reduction proof in OBSTRUCTIONS_AND_ARITHMETIC.md."
+  },
+  {
+   "id": "W2-6",
+   "status": "theorem_with_certificates",
+   "claim": "For all rational a,b,c,d,e,f: D_inf(qp^3+aq^2+bqp+cp^2+dq+ep+f) = Q[p]+qQ[p] if a=0 and span{1,H} if a!=0. Proved by the top-weight reduction lemma (weight (3,1)), which embeds gr D_inf(H) into D_inf(H_w).",
+   "support": "programmes/DYNAMIC_CORE_RESULTS.md#3b; extensions/hamiltonian/check_top_reduction.py; results/hamiltonian/six_*.json",
+   "scope": "One canonical pair over Q; the lemma itself applies to any polynomial H and positive weight; instance certificates replay the lemma hypotheses exactly."
+  },
+  {
+   "id": "S3",
+   "status": "implemented_with_certificates",
+   "claim": "Integral cohomology of finite integer cochain complexes via certified Smith forms, with integer primitives or rational / mod-m torsion obstruction functionals.",
+   "support": "extensions/structure/smith.py; extensions/structure/check_smith.py",
+   "scope": "Finite complexes over Z; size budget returns unknown."
+  },
+  {
+   "id": "A2",
+   "status": "implemented_with_certificates",
+   "claim": "Certified fundamental units of Z[sqrt D] (Legendre convergent criterion) and of Z[(1+sqrt D)/2] for D = 1 mod 4 (index-3 cube-root argument); Pell orbits under the full norm-one unit group of either order.",
+   "support": "extensions/arithmetic/units.py; extensions/arithmetic/check_units.py",
+   "scope": "Real quadratic orders Z[sqrt D] and Z[(1+sqrt D)/2]; maximality of the latter needs D squarefree."
+  },
+  {
+   "id": "O2b",
+   "status": "implemented",
+   "claim": "Rational invariant-metric search (finite-semigroup averages, truncated weighted word sums) with exact acceptance; failure reported as no_certificate.",
+   "support": "extensions/observer/panels.py metric_search",
+   "scope": "Sufficient certificates only; no SDP solver."
+  },
+  {
+   "id": "W3-a",
+   "status": "theorem_with_certificates",
+   "claim": "Homogeneous quartics of root types (4), (3,1), (2,2), (2,1,1) over Q: D_inf = (+)_{j<=2} M^j Q[L], Q[L] + M Q[L], Q[Q], span{1,H} respectively.",
+   "support": "programmes/DYNAMIC_CORE_RESULTS.md#3c; results/hamiltonian/quartic_*.json, q2p2.json",
+   "scope": "Each type is a single GL2(Qbar) class; transport and descent via GL2 covariance of the transvectants."
+  },
+  {
+   "id": "W3-b",
+   "status": "certified_per_degree_theorem",
+   "claim": "For every binary quartic H over Qbar with distinct roots and every certified degree n: D_inf(H)_n = 0 for n not in {0,4} and D_inf(H)_4 = Qbar H; the only exceptional factor of the family q^4 + l q^2 p^2 + p^4 is l^2 - 4.",
+   "support": "extensions/hamiltonian/quartic_rigidity.py; check_quartic_rigidity.py (embedded in results/hamiltonian/quartic_all_degrees_theorem.json)",
+   "scope": "Finitely many degrees (see the certificate); depth R <= 3; not a uniform-in-degree theorem."
+  },
+  {
+   "id": "W3-c",
+   "status": "certified_computation",
+   "claim": "D_inf(q^4+p^4) = span{1,H} and D_inf(q^4+q^2p^2+p^4) = span{1,H} in all degrees.",
+   "support": "results/hamiltonian/quartic_lambda0_q4_plus_p4.json, quartic_lambda1.json.gz",
+   "scope": "Exact all-degree certificates over Q."
+  },
+  {
+   "id": "W3-d",
+   "status": "theorem_with_certificates",
+   "claim": "D_inf(H) = span{1,H} in all degrees for every binary quartic with distinct roots (over Q or any field of characteristic zero).",
+   "support": "programmes/DYNAMIC_CORE_RESULTS.md#3c; extensions/hamiltonian/check_quartic_uniform.py; results/hamiltonian/quartic_all_degrees_theorem.json",
+   "scope": "All degrees; parity splitting, top-coefficient elimination with resultants in l valid for n >= 8, per-degree certificate for n <= 12. With W3-a this classifies every homogeneous quartic."
+  },
+  {
+   "id": "W4-a",
+   "status": "certified_new_computation",
+   "claim": "Monomial root classes of quintics and sextics: D_inf(q^5) and D_inf(q^6) = (+)_{j<=2} p^j Q[q]; D_inf(q^4 p) and D_inf(q^5 p) = Q[q] + pQ[q]; D_inf(q^4 p^2) = span{1, qp, q^4 p^2} (with q^2 p^3 and q^3 p^3 already certified).",
+   "support": "results/hamiltonian/quintic_q5.json, quintic_q4p.json, sextic_q6.json, sextic_q5p.json, sextic_q4p2.json (weyl-kernel-v1)",
+   "scope": "All polynomial degrees; monomial-span support certificates over Q."
+  },
+  {
+   "id": "W4-b",
+   "status": "certified_new_computation",
+   "claim": "Static finiteness at a simple root: for a binary form H of degree d in {5,6} with a simple root, E_n(H) = {G : T_3(H,G) = T_5(H,G) = 0} vanishes for all n >= N0 (N0 = 10 for d = 5, 17 for d = 6) unless H has type (d-1,1) or (d-2,1,1).",
+   "support": "extensions/hamiltonian/check_binary_static.py; results/hamiltonian/binary_static_d5.json, binary_static_d6.json.gz",
+   "scope": "Characteristic zero, algebraically closed; local normal form, static top lemma, re-derived top equations, elimination trees of explicit polynomial identities over Q[n] (searched with sympy, replayed with exact arithmetic)."
+  },
+  {
+   "id": "W4-c",
+   "status": "proved_with_certificates",
+   "claim": "Classification of D_inf(H) for every nonzero binary quintic or sextic over a field of characteristic zero: (+)_{j<=2} m^j K[l] for c l^d; K[l] + mK[l] for c l^(d-1) m; span{1, lm, H} for c l^(d-2) m^2; K[Q] for sextics c Q^3; span{1, H} for every form with at least three distinct roots.",
+   "support": "programmes/DYNAMIC_CORE_RESULTS.md#3d; W4-a, W4-b; top-weight lemma (W2); centralizer and sl2 lemmas",
+   "scope": "All degrees; routes A (monomial classes), B (root of multiplicity 2 or d-2 with the top-weight lemma), C (types (1^5), (1^6), (3,1,1,1): static finiteness and a chain argument). With W3 this covers every binary form of degree <= 6. No novelty claim."
+  },
+  {
+   "id": "W5-a",
+   "status": "proved_with_certificate",
+   "claim": "Monomial theorem: for H = q^a p^b (a >= b, a+b >= 3), D_inf = (+)_{j<=2} p^j Q[q] (b=0), Q[q]+pQ[q] (b=1), Q[qp] (a=b), span{1,qp,H} (a>b>=2); moreover D_inf(q^a p^b) = {G : C_3 D^r G = 0, r <= 3}.",
+   "support": "programmes/DYNAMIC_CORE_RESULTS.md#5.1; extensions/hamiltonian/check_monomial_theorem.py; results/hamiltonian/monomial_theorem.json",
+   "scope": "All exponents; ray analysis of the T_3 gate; symbolic identities checked exactly."
+  },
+  {
+   "id": "W5-b",
+   "status": "proved",
+   "claim": "Every homogeneous H of degree d >= 3 with at most two distinct roots has the monomial-class core; active exact dynamics (A(H) != 0) exists for such H exactly when H is not a balanced power c Q^(d/2).",
+   "support": "programmes/DYNAMIC_CORE_RESULTS.md#5.1",
+   "scope": "GL2 transport of W5-a; A(H) = D_inf / (D_inf cap ker ad_H)."
+  },
+  {
+   "id": "W5-c",
+   "status": "proved",
+   "claim": "Root rigidity D_inf(H) = span{1,H} (so A(H) = 0) holds for every homogeneous H with >= 3 distinct roots that has a root of multiplicity mu in [2, d-2], mu != d/2 (R1), for every squarefree H of odd degree (R2 for d >= 5 via the apolar kernel of T_d, E_n = 0 for n >= (d-1)(d-2)+3; R3 for cubics), hence in every odd degree.",
+   "support": "programmes/DYNAMIC_CORE_RESULTS.md#5.2; tests in extensions/hamiltonian/test_root_rigidity.py",
+   "scope": "Characteristic zero. With W3, W4 superseded in scope by W5-e (all degrees)."
+  },
+  {
+   "id": "W5-d",
+   "status": "proved_with_executable_coverage",
+   "claim": "Perturbation corollary: if D_inf(H_d) = span{1,H_d} then D_inf(H_d + P) = span{1, H_d + P} for every P of lower degree.",
+   "support": "programmes/DYNAMIC_CORE_RESULTS.md#5.3; extensions/hamiltonian/check_root_rigidity.py; results/hamiltonian/rigidity_*.json",
+   "scope": "Top-weight lemma with weight (1,1); root type via verified square-free decomposition; open strata reported as open."
+  },
+  {
+   "id": "W5-e",
+   "status": "proved_with_certificate",
+   "claim": "Simple-root rigidity: if H of degree d >= 3 has a simple root and is not c l^(d-1) m, then {G in V_n : T_3(H,G) = T_3(H,{H,G}) = 0} = 0 for n >= N0(d); with R1 this proves the root-rigidity theorem in all degrees.",
+   "support": "programmes/DYNAMIC_CORE_RESULTS.md#5.5; extensions/hamiltonian/check_simple_root.py; results/hamiltonian/simple_root_rigidity.json",
+   "scope": "Weight induction with closed-form determinants Delta_0, Delta_1 in (n, d, j), validated against direct operator arithmetic on a grid; N0(d) finite for every d and tabulated for d <= 40."
+  },
+  {
+   "id": "W6-a",
+   "status": "proved_with_executable_decision",
+   "claim": "Unequal two-root tops: for H with top c l^a m^b (a > b >= 2) and any lower-order terms, D_inf(H) = span{1,H,G} with G = (lm) translated back if the translation killing H_(d-1) puts H into l^(a-b) K[lm] + K lm + K, and span{1,H} otherwise.",
+   "support": "programmes/DYNAMIC_CORE_RESULTS.md#6.1; extensions/hamiltonian/check_two_root.py",
+   "scope": "All degrees; characteristic zero."
+  },
+  {
+   "id": "W6-b",
+   "status": "proved_with_executable_decision",
+   "claim": "Positive structures: pure top with H in K[l] + K lm + K m gives D_inf = (+)_{j<=2} m^j K[l]; pure (otherwise) or near top with H affine in m gives K[l] + m K[l]; balanced top with H in K[G] (G quadratic) gives K[G].",
+   "support": "programmes/DYNAMIC_CORE_RESULTS.md#6.2",
+   "scope": "All degrees; line-core argument and the m-degree filtration."
+  },
+  {
+   "id": "W6-c",
+   "status": "proved_with_certificates",
+   "claim": "m^2-perturbation families: near top + alpha m^2 + terms affine in m (alpha != 0), and pure top f(l) + m g(l) + gamma m^2 (gamma != 0, deg g < d/2), have D_inf = span{1,H}, all d >= 3.",
+   "support": "programmes/DYNAMIC_CORE_RESULTS.md#6.3; results/hamiltonian/binomial_*.json, qp3_plus_q2.json, p3_plus_q2.json",
+   "scope": "Weight reduction to the binomials qp^(d-1)+q^2 and q^d+p^2; hand proofs (d >= 5, resp. all d) and engine certificates for small d. Generalizes the six-parameter theorem W2 to all degrees."
+  },
+  {
+   "id": "W6-d",
+   "status": "proved_with_certificate",
+   "claim": "Balanced tops: for H = c Q^mu + lower-order terms (d = 2 mu >= 4), D_inf(H) = K[G] if H lies in K[G] for a quadratic G with leading part Q, and span{1,H} otherwise.",
+   "support": "programmes/DYNAMIC_CORE_RESULTS.md#6.5; extensions/hamiltonian/check_balanced.py; results/hamiltonian/balanced_top_theorem.json",
+   "scope": "All degrees; translation normalisation, weight induction on off-diagonal parts using T_3 and the top of {H,G}; closed-form factor R with an explicit positivity identity."
+  },
+  {
+   "id": "W6-e",
+   "status": "proved",
+   "claim": "Near and pure tops: if the transverse top m^s phi(l) (s >= 2) has deg phi >= 2 and is not c (m(l+gamma))^s (near), resp. phi is not a perfect power c (l+gamma)^e (pure), then D_inf(H) = span{1,H} (Theorem T); for near tops the same holds when the Newton polygon has an unequal vertex (Theorem N).",
+   "support": "programmes/DYNAMIC_CORE_RESULTS.md#6.6; extensions/hamiltonian/check_two_root.py; extensions/hamiltonian/test_two_root.py",
+   "scope": "Finiteness via Theorems U and B applied to the transverse top or via a vertex monomial; Lemma F (finite core implies span{1,H}) for near tops; explicit affine analysis for pure tops."
+  },
+  {
+   "id": "W6-f",
+   "status": "proved_with_certificate",
+   "claim": "Near tops: every polynomial whose top part is c l^(d-1) m and which is not affine in m has D_inf(H) = span{1,H}.",
+   "support": "programmes/DYNAMIC_CORE_RESULTS.md#6.7; extensions/hamiltonian/check_near_edges.py; results/hamiltonian/near_edge_theorem.json",
+   "scope": "All degrees. First Newton-polygon edge; top-end analysis with first-order determinants [E1], [E2] and a second-order 4x4 determinant [E3] for the m^2-adjacent case; Lemma F."
+  },
+  {
+   "id": "W6-g",
+   "status": "proved_with_certificate",
+   "claim": "Triangular structures for pure tops: with P = p + w(q), Theorem X (triangular transvectant formula) and the containments K1 (deg w = 2, H = F(P) + lam q: K[P] + Kq), K1' (deg w = 2, H = F(P) + lam q + mu qP, mu != 0: span{1, P, P^2, H}, plus q if deg F = 3, plus PH if also lam = 0), K2 (H = h(q, P), h quadratic: the pullback of all quadratics) and K3 (H = c Q^(k-2) G^2 + beta G + r, G = Qm + v, r restricted, beta = 0 unless k >= 3: span{1, G, H}, plus Q if k = 1) in D_inf(H).",
+   "support": "programmes/DYNAMIC_CORE_RESULTS.md#6.8; extensions/hamiltonian/check_triangular.py; results/hamiltonian/triangular_theorem.json",
+   "scope": "Containments, all degrees; K1 equality proved in W6-i. Equality is proved for all families (W6-i, W6-j), verified by direct computation up to degree d + 2 (deeper for six cases). In K1 with lam != 0 the active part is infinite-dimensional."
+  },
+  {
+   "id": "W6-j",
+   "status": "proved_with_certificate",
+   "claim": "Upper bounds. (K2U) K2 and K1+K2 are exact: for h = alpha P^2 + gamma Q^2 + lam Q + c the leading part of T_3 and the top part of D confine core elements to total degree <= 2 (respectively K[P] + quadratics for deg w = 2, gamma = 0). (LB) Higher shears with linear b: D_inf = span{1,H} (the top core of P^f + QP is span{1, E}: eigenvectors P^r (Q + P^(f-1))^j of D_0 and the order-1 top gate). (K1P) K1' with f = 3: D_inf = span{1, Q, P, P^2, H}, plus PH exactly when lam = 0. (TP) Perfect-power transverse tops l^k with 2 <= k != s: D_inf = span{1,H} for s >= 3; for s = 2 (k >= 3) the core is span{1,H} unless H = c Q^(k-2) G^2 + beta G + r with r in span{1, Q^(k-2)} (extended K3), where it is span{1, G, H}. (TE) Transverse tops l^k with k = 1 or k = s: span{1,H} for s >= 3, and span{1,H} or the K3 span for s = 2 (first-edge reduction; level-K rows of the vertices Q m^s and (Qm)^s, a chain argument for k = 1 and an elimination with a positivity certificate for k = s). Hence K3 is exact for every k.",
+   "support": "programmes/DYNAMIC_CORE_RESULTS.md#6.14; extensions/hamiltonian/check_gauge.py; results/hamiltonian/gauge_shear_theorem.json; extensions/hamiltonian/transverse_edge.json",
+   "scope": "All degrees. With W6-g/h/i this proves P005 and the cubic-phase complement: the pure-top classification is complete."
+  },
+  {
+   "id": "W6-h",
+   "status": "proved_with_certificate",
+   "claim": "Cubic phase (constant transverse top, completed power w of degree 2): (G) the gates are the flat gates conjugated by exp(s d_P^3), s = c t^2/3; (A0) for Hamiltonian and observable affine in Q, exactness is Delta(S_s h, S_s g) = 0, whose Witt part is the Gelfand-Fuchs cocycle density 3(b' beta''' - b''' beta'); (W) deg b >= 3 leaves only span{1,H} affine in Q; (K4) h = A(P-r)^3(P-r') + O((P-r)^2) + mu Q (P-r)(P-r') has span{1, G, H} in its core, G = A(P-r)^3 + c2(P-r) + mu Q(P-r); (A) the complete table of D_inf restricted to tau*(K[P] + Q K[P]).",
+   "support": "programmes/DYNAMIC_CORE_RESULTS.md#6.9; extensions/hamiltonian/check_cubic_phase.py; results/hamiltonian/cubic_phase_theorem.json",
+   "scope": "All degrees for G, A0, W, K4 and the restricted table A. That D_inf lies inside tau*(K[P] + Q K[P]) in the affine sector is verified to degree 11, not proved; non-affine cubic-phase Hamiltonians are open."
+  },
+  {
+   "id": "W6-i",
+   "status": "proved_with_certificate",
+   "claim": "Every shear: (GG) the triangular gates equal S_t o flat o (S_t^-1 x S_t^-1) with S_t = exp(sum t^(2n) w^(2n)(Q) d_P^(2n+1)/(2n+1)!); constant coefficients iff deg w <= 2. (T3) T_3 = T3_flat + w'' Delta + w''' Lambda. (AE) deg w >= 3, h = a + Q b, deg a >= 3: the core restricted to tau*(K[P] + Q K[P]) is span{1,H}. (C) b constant: every core element has Q-degree <= 1. Hence K1 is exact (D_inf = K[P] + Kq for deg w = 2) and F(P) + lam q has D_inf = span{1,H} for deg w >= 3, deg F >= 3. (C2) The same containment holds for b quadratic or of degree >= 3 (every shear) and for b linear with deg a >= 4 (cubic phase); so K4 and K1' (deg a >= 4) are exact, the other cubic-phase affine Hamiltonians and the higher-shear affine Hamiltonians with deg b != 1 have D_inf = span{1,H}. (NA) Non-affine normal forms whose first Newton edge from P^s is a binomial P^s + c Q^d (s >= 3, d >= 2; or s = 2, d >= 3), with slope s/d > 1/2 (deg w = 2) or > 1/deg w (deg w >= 3), have D_inf = span{1,H}. (NE) More generally every first edge from P^s (s >= 3) above the slope threshold with s - 1 - slope > 0 (and, for deg w = 2, a monomial of Q-exponent >= 2) gives span{1,H}: closed-form top gates, finiteness, nilpotency, the centralizer K[G] and exclusion of Euler partners. (NB) The boundary edge P^2 + c Q^(2 deg w) gives span{1,H}. (NT) A first edge from P^s (s >= 3) at exactly the slope threshold 1/deg w gives span{1,H}; for deg w = 2 (cubic phase) the proof runs in twisted coordinates: below the first deviation level k0 the vertex forces the intermediate coefficients to vanish, and level k0 (with levels 2-3 for k0 = 2) forces the top coefficient to vanish: the top problem is the flat core of a weighted binary form F with nonzero first perturbation, and closed-form top-end minors (step 1 for deg w >= 4 and for top types 1, 2 when deg w = 3; a c-free step-2 eliminant for type 0 when deg w = 3) force the top coefficient to vanish. (NV) If a weight-homogeneous F has vertex p^s (s >= 3) and vertex-adjacent monomial c q^B p^(s-K) with c != 0, B >= 4, its flat core is span{1,F} (K-free minors of T3 D^r g, r <= 3); hence every first edge below the slope threshold, and for deg w <= 1 every first edge with B >= 4, gives span{1,H}. The remaining flat case B = 3 (which forces K = 2) closes at the second level by a c-free eliminant, so every flat-lower-terms pure top (deg w <= 1, s >= 3) has D_inf = span{1,H}. (NQ) In the cubic phase, a first edge P^s + mu Q P^r linear in Q with (s+1)/2 <= r <= s-2 (the only Q-linear first edge of a non-affine h) gives span{1,H}: only type-0 tops survive the vertex and the order-1, 2 top gates at level s - r have determinant mu s (s-1) r N (N-1)(N-s+r)(s-r-1)(N-s).",
+   "support": "programmes/DYNAMIC_CORE_RESULTS.md#6.10; extensions/hamiltonian/check_gauge.py; results/hamiltonian/gauge_shear_theorem.json",
+   "scope": "All degrees. Open: b linear with deg a = 3 in the cubic phase (the six-dimensional K1' sector; a symbolic-j elimination supports containment) and b linear for higher shears. The deg w >= 3, constant-b collapse was also derived independently in a parallel line of work."
+  },
+  {
+   "id": "P003",
+   "status": "refuted_as_stated",
+   "claim": "Two-root conjecture (remaining part), as stated: pure tops c l^d with lower-order terms outside the structures of W6-b have D_inf(H) = span{1,H}. FALSE: H = (q^3 + p)^2 has span{1, q, q^2, P, qP, P^2} (P = p + q^3) inside D_inf(H).",
+   "support": "programmes/DYNAMIC_CORE_RESULTS.md#6.8; extensions/hamiltonian/check_triangular.py; results/hamiltonian/triangular_*.json",
+   "scope": "Refuted by exact certificates (invariant spans killed by every gate). The true statement for balanced and near tops is proved (W6-d, W6-f); the corrected pure-top statement is P004."
+  },
+  {
+   "id": "P004",
+   "status": "refuted_as_stated",
+   "claim": "Pure tops (corrected): if H_d = c l^d, H lies outside Theorem P+, outside the triangular families K1, K1', K2, K3 of W6-g and K4 of W6-h after an affine change of coordinates, and outside the non-affine cubic-phase case (constant transverse top, completed power w of degree 2, h not affine in Q), then D_inf(H) = span{1,H}; inside the families D_inf(H) is the span listed in DYNAMIC_CORE_RESULTS.md section 6.8.",
+   "support": "programmes/DYNAMIC_CORE_RESULTS.md#6.8; extensions/hamiltonian/test_two_root.py",
+   "scope": "Refuted as stated: H = Q (Qm + Q^3)^2 + (Qm + Q^3) + 1 (Q = l, m complementary) is a pure top outside K1, K1', K2, K3, K4 whose core contains G = Qm + Q^3 (dimension 3). The K3 family needs the extra term beta G for k >= 3; the corrected statement is P005. Before the refutation the proved part was: Proved: Q', T, the affine shear phase diagram except linear b (W6-h, W6-i), every non-affine first edge above the slope threshold, every threshold edge with deg w >= 3, every edge below the threshold, every flat-lower-terms top and the m-degree-2 range deg r >= 3 (NA, NE, NT, NV, NB); for s >= 3 and deg w != 2 every non-affine normal form is covered. Open: linear b, linear or perfect-power transverse tops outside K3, and upper bounds for K2, K3, K1' (deg a = 3). Supported by random searches, structured grids and weight-by-weight top-problem solutions."
+  },
+  {
+   "id": "P005",
+   "status": "proved_with_certificates",
+   "claim": "Pure tops (corrected again): if H_d = c l^d, H lies outside Theorem P+, outside K1, K1', K2, K4 and the extended K3 (H = c Q^(k-2) G^2 + beta G + r, beta = 0 for k <= 2) after an affine change of coordinates, and outside the non-affine cubic-phase case, then D_inf(H) = span{1,H}; inside the families D_inf(H) is the listed span.",
+   "support": "programmes/DYNAMIC_CORE_RESULTS.md#6.14; extensions/hamiltonian/test_two_root.py",
+   "scope": "Proved, together with the excluded cubic phase (NE, NV, NT with deg w = 2, NQ): every pure top has D_inf = span{1,H} except the strips of Theorem P+ and the families K1, K1', K2, K1+K2, K3 (extended), K4, whose cores are exactly the listed spans. Support: s <= 1 (P+); constant transverse top (NA, NE, NB, NT, NV, NQ, Q', K2U, AE, LB, C, C2, K1P, K4); transverse tops of degree >= 1 (T, TP, TE)."
+  },
+  {
+   "id": "P002",
+   "status": "proved_with_certificates",
+   "claim": "Root-rigidity theorem: every homogeneous binary form of degree d >= 3 with at least three distinct roots has D_inf(H) = span{1,H}; hence A(H) = 0.",
+   "support": "programmes/DYNAMIC_CORE_RESULTS.md#5",
+   "scope": "All degrees, characteristic zero: Theorem SR (simple root) and Theorem R1 (no simple root). Previously a conjecture."
+  }
+ ],
+ "rule": "Passing finite tests does not upgrade a target or an unproved general statement to a theorem.",
+ "updated": "2026-10-22"
+}

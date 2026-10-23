@@ -1,0 +1,37 @@
+{
+ "schema": "machinery-envelope-v1",
+ "witness_kind": "two-root-perturbation",
+ "coefficient_domain": "Q",
+ "model": {
+  "0,1": "1",
+  "0,3": "-1",
+  "1,2": "3",
+  "1,4": "1"
+ },
+ "model_sha256": "fb5183c2c5fb8911de439d96550d0870c7dd46cb17cf6fc2ccbddd4d0a20c39c",
+ "payload": {
+  "format": "two-root-perturbation-v1",
+  "hamiltonian": {
+   "0,1": "1",
+   "0,3": "-1",
+   "1,2": "3",
+   "1,4": "1"
+  },
+  "claim": {
+   "route": "P+ near",
+   "core": "K[l] + m K[l]",
+   "proved": true
+  }
+ },
+ "payload_sha256": "c93ffff87fe160badeae8388fe1c80bf0e2b13e3a564c822f5f6a3db8dbabca4",
+ "hypotheses": [
+  "top homogeneous part with at most two roots",
+  "criteria of DYNAMIC_CORE_RESULTS.md section 6"
+ ],
+ "scope": "D_inf(H) when a proved criterion applies; otherwise reported as conjectural",
+ "source_ids": [
+  "D16-F03",
+  "D06-F02"
+ ],
+ "producer": "towre676-cloud/nonlinearhamiltonian extensions (exact rational, Python standard library)"
+}

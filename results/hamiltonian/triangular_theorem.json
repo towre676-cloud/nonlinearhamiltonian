@@ -1,0 +1,30 @@
+{
+ "schema": "machinery-envelope-v1",
+ "witness_kind": "triangular-pure",
+ "coefficient_domain": "Q",
+ "model": {
+  "family": "pure tops in triangular coordinates (q, p + w(q))"
+ },
+ "model_sha256": "45b6116688a42ed027abc2334bcf1ae694a1978aff008894b5c389da7e65716d",
+ "payload": {
+  "format": "triangular-pure-v1",
+  "identities": [
+   "K1",
+   "K1'",
+   "K2",
+   "K3",
+   "X1"
+  ]
+ },
+ "payload_sha256": "f5a16149ee608bf516246f0b746799e2fddacb597956e3cb54d8ab2b5b9b3ec2",
+ "hypotheses": [
+  "characteristic zero",
+  "triangular transvectant formula (Theorem X)"
+ ],
+ "scope": "containments K1, K2, K3 in D_inf(H); refutes P003 as stated",
+ "source_ids": [
+  "D16-F03",
+  "D06-F02"
+ ],
+ "producer": "towre676-cloud/nonlinearhamiltonian extensions (exact rational, Python standard library)"
+}

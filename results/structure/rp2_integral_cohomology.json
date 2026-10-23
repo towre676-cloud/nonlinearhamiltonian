@@ -1,0 +1,122 @@
+{
+ "schema": "machinery-envelope-v1",
+ "witness_kind": "integer-cohomology",
+ "coefficient_domain": "Z",
+ "model": {
+  "field": "Z",
+  "dimensions": [
+   1,
+   1,
+   1
+  ],
+  "differentials": [
+   [
+    [
+     0
+    ]
+   ],
+   [
+    [
+     2
+    ]
+   ]
+  ]
+ },
+ "model_sha256": "47089c1e8bed7e851d107cc84616f2a638de53f4dc34aa2722ad55c432e42438",
+ "payload": {
+  "format": "integer-smith-v1",
+  "model_sha256": "47089c1e8bed7e851d107cc84616f2a638de53f4dc34aa2722ad55c432e42438",
+  "smith": [
+   {
+    "P": [
+     [
+      1
+     ]
+    ],
+    "Pinv": [
+     [
+      1
+     ]
+    ],
+    "Q": [
+     [
+      1
+     ]
+    ],
+    "Qinv": [
+     [
+      1
+     ]
+    ],
+    "invariants": []
+   },
+   {
+    "P": [
+     [
+      1
+     ]
+    ],
+    "Pinv": [
+     [
+      1
+     ]
+    ],
+    "Q": [
+     [
+      1
+     ]
+    ],
+    "Qinv": [
+     [
+      1
+     ]
+    ],
+    "invariants": [
+     2
+    ]
+   }
+  ],
+  "cohomology": [
+   {
+    "degree": 0,
+    "rank": 1,
+    "torsion": []
+   },
+   {
+    "degree": 1,
+    "rank": 0,
+    "torsion": []
+   },
+   {
+    "degree": 2,
+    "rank": 0,
+    "torsion": [
+     2
+    ]
+   }
+  ],
+  "answers": [
+   {
+    "degree": 2,
+    "cocycle": [
+     1
+    ],
+    "status": "torsion",
+    "modulus": 2,
+    "functional": [
+     1
+    ]
+   }
+  ]
+ },
+ "payload_sha256": "628eb6d5764d9983c8d9ef7235c7401e32f91c54064a717fb2cb263e5b7eab57",
+ "hypotheses": [
+  "finite cochain complex over Z"
+ ],
+ "scope": "integral cohomology (rank and torsion) with integer coboundary decisions",
+ "source_ids": [
+  "D05-F01",
+  "D05-F03"
+ ],
+ "producer": "towre676-cloud/nonlinearhamiltonian extensions (exact rational, Python standard library)"
+}

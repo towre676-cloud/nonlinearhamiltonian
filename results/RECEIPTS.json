@@ -1,0 +1,1653 @@
+{
+ "schema": "machinery-results-v1",
+ "results": [
+  {
+   "file": "results/arithmetic/fundamental_unit_D2.json",
+   "sha256": "99e7941da43de1ac5d33396d8debec2401cbb1d73978de01f458a21fdb0ee0d0",
+   "witness_kind": "fundamental-unit",
+   "replay": "python3 -B extensions/envelope.py check results/arithmetic/fundamental_unit_D2.json",
+   "producer_seconds": 0.0,
+   "summary": {
+    "status": "passed",
+    "D": 2,
+    "fundamental_unit": [
+     1,
+     1
+    ],
+    "norm": -1,
+    "norm_one_unit": [
+     3,
+     2
+    ],
+    "negative_pell_solvable": true
+   }
+  },
+  {
+   "file": "results/arithmetic/fundamental_unit_D61.json",
+   "sha256": "20bdaed6c5fc19cba7dd64c19ba625dfe4ec9e7cd6973a5cf7ef6732c4aa6777",
+   "witness_kind": "fundamental-unit",
+   "replay": "python3 -B extensions/envelope.py check results/arithmetic/fundamental_unit_D61.json",
+   "producer_seconds": 0.0,
+   "summary": {
+    "status": "passed",
+    "D": 61,
+    "fundamental_unit": [
+     29718,
+     3805
+    ],
+    "norm": -1,
+    "norm_one_unit": [
+     1766319049,
+     226153980
+    ],
+    "negative_pell_solvable": true,
+    "maximal_order_unit_half_coordinates": [
+     39,
+     5
+    ],
+    "maximal_order_norm": -1,
+    "maximal_order_norm_one_unit": [
+     1523,
+     195
+    ]
+   }
+  },
+  {
+   "file": "results/arithmetic/fundamental_unit_D991.json",
+   "sha256": "f8111d492442222769dcb939f791b9ac40767efa9dc6371a709b6e143e082dd1",
+   "witness_kind": "fundamental-unit",
+   "replay": "python3 -B extensions/envelope.py check results/arithmetic/fundamental_unit_D991.json",
+   "producer_seconds": 0.0,
+   "summary": {
+    "status": "passed",
+    "D": 991,
+    "fundamental_unit": [
+     379516400906811930638014896080,
+     12055735790331359447442538767
+    ],
+    "norm": 1,
+    "norm_one_unit": [
+     379516400906811930638014896080,
+     12055735790331359447442538767
+    ],
+    "negative_pell_solvable": false
+   }
+  },
+  {
+   "file": "results/arithmetic/pell_D13_Nm3_unitfundamental.json",
+   "sha256": "83a4523eded4934df0a886146c77d3bcd8fa8553b43c5531e145859e8d1dce78",
+   "witness_kind": "pell-orbit-reduction",
+   "replay": "python3 -B extensions/envelope.py check results/arithmetic/pell_D13_Nm3_unitfundamental.json",
+   "producer_seconds": 0.0,
+   "summary": {
+    "status": "passed",
+    "complete": true,
+    "seeds": [
+     [
+      7,
+      2
+     ],
+     [
+      137,
+      38
+     ]
+    ],
+    "unit": [
+     649,
+     180
+    ],
+    "order": "Z[sqrt D]"
+   }
+  },
+  {
+   "file": "results/arithmetic/pell_D2_N1_unit3_2.json",
+   "sha256": "9b18635a7e9a946924121cb44508ffb91b76c9fd4795c69dd0e28a98a013f6b0",
+   "witness_kind": "pell-orbit-reduction",
+   "replay": "python3 -B extensions/envelope.py check results/arithmetic/pell_D2_N1_unit3_2.json",
+   "producer_seconds": 0.0,
+   "summary": {
+    "status": "passed",
+    "complete": true,
+    "seeds": [
+     [
+      1,
+      0
+     ]
+    ],
+    "unit": [
+     3,
+     2
+    ],
+    "order": "Z[sqrt D]"
+   }
+  },
+  {
+   "file": "results/arithmetic/pell_D2_Nm7_unit17_12.json",
+   "sha256": "f69477d97f61513ee7b88a576e9a898b794191ad04c578860838e58c505c30d9",
+   "witness_kind": "pell-orbit-reduction",
+   "replay": "python3 -B extensions/envelope.py check results/arithmetic/pell_D2_Nm7_unit17_12.json",
+   "producer_seconds": 0.0,
+   "summary": {
+    "status": "passed",
+    "complete": true,
+    "seeds": [
+     [
+      1,
+      2
+     ],
+     [
+      5,
+      4
+     ],
+     [
+      11,
+      8
+     ],
+     [
+      31,
+      22
+     ]
+    ],
+    "unit": [
+     17,
+     12
+    ],
+    "order": "Z[sqrt D]"
+   }
+  },
+  {
+   "file": "results/arithmetic/pell_D2_Nm7_unit3_2.json",
+   "sha256": "a2e5898b520aa6317e5a49c622f85beb7fd6d0ada6e97166bbc43231c071b435",
+   "witness_kind": "pell-orbit-reduction",
+   "replay": "python3 -B extensions/envelope.py check results/arithmetic/pell_D2_Nm7_unit3_2.json",
+   "producer_seconds": 0.0,
+   "summary": {
+    "status": "passed",
+    "complete": true,
+    "seeds": [
+     [
+      1,
+      2
+     ],
+     [
+      5,
+      4
+     ]
+    ],
+    "unit": [
+     3,
+     2
+    ],
+    "order": "Z[sqrt D]"
+   }
+  },
+  {
+   "file": "results/arithmetic/pell_D3_Nm2_unit2_1.json",
+   "sha256": "9ecf306d28597c9ec02e5e89a75b0d0b56d9b9a106dca97136ea759d68e926a4",
+   "witness_kind": "pell-orbit-reduction",
+   "replay": "python3 -B extensions/envelope.py check results/arithmetic/pell_D3_Nm2_unit2_1.json",
+   "producer_seconds": 0.0,
+   "summary": {
+    "status": "passed",
+    "complete": true,
+    "seeds": [
+     [
+      1,
+      1
+     ]
+    ],
+    "unit": [
+     2,
+     1
+    ],
+    "order": "Z[sqrt D]"
+   }
+  },
+  {
+   "file": "results/arithmetic/pell_D5_Nm4_unit9_4.json",
+   "sha256": "8232c03ac41ad44febb4b4d9d9b2888c88e54b29c74240c685fd52a12266d250",
+   "witness_kind": "pell-orbit-reduction",
+   "replay": "python3 -B extensions/envelope.py check results/arithmetic/pell_D5_Nm4_unit9_4.json",
+   "producer_seconds": 0.0,
+   "summary": {
+    "status": "passed",
+    "complete": true,
+    "seeds": [
+     [
+      1,
+      1
+     ],
+     [
+      4,
+      2
+     ],
+     [
+      11,
+      5
+     ]
+    ],
+    "unit": [
+     9,
+     4
+    ],
+    "order": "Z[sqrt D]"
+   }
+  },
+  {
+   "file": "results/hamiltonian/balanced_top_theorem.json",
+   "sha256": "566d7037094d99893f0da42ef6be4594a305a554d3c13a245d4a1812d0b322ae",
+   "witness_kind": "balanced-top",
+   "replay": "python3 -B extensions/envelope.py check results/hamiltonian/balanced_top_theorem.json",
+   "producer_seconds": 0.02,
+   "summary": {
+    "status": "passed",
+    "identities": [
+     "B1",
+     "B2",
+     "B3",
+     "B4"
+    ],
+    "grid_points": 108,
+    "theorem": "balanced top c Q^mu with lower-order terms: D_inf = K[G] if H in K[G] for a quadratic G, else span{1, H}"
+   }
+  },
+  {
+   "file": "results/hamiltonian/binary_static_d5.json",
+   "sha256": "cc6974e0406a71c29aa3a5a076f25a1b6d733d8d1b5d1a62c9432a6faa3e72dc",
+   "witness_kind": "binary-static",
+   "replay": "python3 -B extensions/envelope.py check results/hamiltonian/binary_static_d5.json",
+   "producer_seconds": 2.96,
+   "summary": {
+    "status": "passed",
+    "degree": 5,
+    "N0": 10,
+    "rows": 4,
+    "top_static_space": "span{q^n, q^(n-1) p} for n >= 3",
+    "exceptional_degrees": [
+     2
+    ],
+    "J_zero_locus": "h = 0 (type (4,1)) or type (3,1,1) with P one of its simple roots",
+    "alpha": "-1/6",
+    "steps": 52,
+    "contradictions": 10,
+    "targets": 2,
+    "theorem": "for every binary form H of degree 5 with a simple root and every n >= 10: E_n(H) != 0 only if H has type (4,1) or (3,1,1)"
+   }
+  },
+  {
+   "file": "results/hamiltonian/binary_static_d6.json.gz",
+   "sha256": "1de10350f40f04e7ce31b8638105b219730386c2837c1d0d4614353ad5f88e5b",
+   "witness_kind": "binary-static",
+   "replay": "python3 -B extensions/envelope.py check results/hamiltonian/binary_static_d6.json.gz",
+   "producer_seconds": 39.78,
+   "summary": {
+    "status": "passed",
+    "degree": 6,
+    "N0": 17,
+    "rows": 6,
+    "top_static_space": "span{q^n, q^(n-1) p} for n >= 3",
+    "exceptional_degrees": [
+     1,
+     2,
+     4
+    ],
+    "J_zero_locus": "h = 0 (type (5,1)) or type (4,1,1) with P one of its simple roots",
+    "alpha": "-1/10",
+    "steps": 181,
+    "contradictions": 31,
+    "targets": 2,
+    "theorem": "for every binary form H of degree 6 with a simple root and every n >= 17: E_n(H) != 0 only if H has type (5,1) or (4,1,1)"
+   }
+  },
+  {
+   "file": "results/hamiltonian/binomial_q4_plus_p2.json",
+   "sha256": "034f692ee1eb42de332fe7957aa7194bee70cfcb96ef1ed10bf44b30d43a545a",
+   "witness_kind": "weyl-polynomial-kernel",
+   "replay": "python3 -B extensions/envelope.py check results/hamiltonian/binomial_q4_plus_p2.json",
+   "producer_seconds": 1.26,
+   "summary": {
+    "status": "passed",
+    "kind": "finite_support",
+    "dimension": 2,
+    "kernel": [
+     "1",
+     "q^4 + p^2"
+    ]
+   }
+  },
+  {
+   "file": "results/hamiltonian/binomial_q5_plus_p2.json",
+   "sha256": "75bc78fabd0135381c86404e9ca102128eface5cfa3c64770b0e0f7b4dd9f4fe",
+   "witness_kind": "weyl-polynomial-kernel",
+   "replay": "python3 -B extensions/envelope.py check results/hamiltonian/binomial_q5_plus_p2.json",
+   "producer_seconds": 8.95,
+   "summary": {
+    "status": "passed",
+    "kind": "finite_support",
+    "dimension": 2,
+    "kernel": [
+     "1",
+     "q^5 + p^2"
+    ]
+   }
+  },
+  {
+   "file": "results/hamiltonian/binomial_qp2_plus_q2.json",
+   "sha256": "6c0ecb1b7d225ebf9101fc9baf33f047fbdea4f02681b9ae45afd92ac16ca930",
+   "witness_kind": "weyl-polynomial-kernel",
+   "replay": "python3 -B extensions/envelope.py check results/hamiltonian/binomial_qp2_plus_q2.json",
+   "producer_seconds": 0.67,
+   "summary": {
+    "status": "passed",
+    "kind": "degree_bound",
+    "dimension": 2,
+    "kernel": [
+     "1",
+     "q*p^2 + q^2"
+    ],
+    "weight": [
+     1,
+     1
+    ],
+    "bound": 3
+   }
+  },
+  {
+   "file": "results/hamiltonian/binomial_qp4_plus_q2.json.gz",
+   "sha256": "6e43ecd75520985638548c2bd09ff853fc9ffeebf2e0e133a43378c664ba9a69",
+   "witness_kind": "weyl-polynomial-kernel",
+   "replay": "python3 -B extensions/envelope.py check results/hamiltonian/binomial_qp4_plus_q2.json.gz",
+   "producer_seconds": 137.65,
+   "summary": {
+    "status": "passed",
+    "kind": "finite_support",
+    "dimension": 2,
+    "kernel": [
+     "1",
+     "q*p^4 + q^2"
+    ]
+   }
+  },
+  {
+   "file": "results/hamiltonian/cubic_phase_theorem.json",
+   "sha256": "534faca9032f74b9272de092d65c355c2dc8d88007d83890d8f5d58726148376",
+   "witness_kind": "cubic-phase",
+   "replay": "python3 -B extensions/envelope.py check results/hamiltonian/cubic_phase_theorem.json",
+   "producer_seconds": 127.25,
+   "summary": {
+    "status": "passed",
+    "identities": [
+     "A",
+     "G1",
+     "G2",
+     "G3",
+     "K4",
+     "W"
+    ],
+    "theorem": "cubic-phase gauge form; affine-sector criterion with the Witt cocycle; Lemma W; family K4; Theorem A instances"
+   }
+  },
+  {
+   "file": "results/hamiltonian/gauge_shear_theorem.json",
+   "sha256": "2758e97491b016faf4d4d2a1a93a6ddab2bebf6f8ea386fab447a805a94eedcc",
+   "witness_kind": "gauge-shear",
+   "replay": "python3 -B extensions/envelope.py check results/hamiltonian/gauge_shear_theorem.json",
+   "producer_seconds": 495.26,
+   "summary": {
+    "status": "passed",
+    "identities": [
+     "AE",
+     "BE",
+     "C2",
+     "CT",
+     "GE",
+     "GG",
+     "K1P",
+     "K1c",
+     "K2U",
+     "LB",
+     "NA",
+     "NQ",
+     "NT",
+     "NV",
+     "NV32",
+     "T3",
+     "TE",
+     "TG",
+     "TP"
+    ],
+    "theorem": "gauge form for every shear; third-gate formula; higher-shear affine rigidity; Q-degree containment (b constant, quadratic, degree >= 3; b linear with f >= 4 in the cubic phase); K1, K1' (f >= 4) and K4 exact; non-affine binomial edges collapse (Theorem NA), general first edges (NE), the boundary edge (NB), threshold edges with deg w >= 3 (NT), edges below the threshold and flat lower terms (NV); K2 and K1+K2 exact (K2U), linear b for higher shears (LB), K1' with f = 3 (K1P), perfect-power transverse tops and the extended K3 (TP), transverse tops l^k with k in {1, s} (TE), cubic-phase threshold edges (CT) and Q-linear first edges (NQ)"
+   }
+  },
+  {
+   "file": "results/hamiltonian/monomial_theorem.json",
+   "sha256": "773f6cdebc33086458c81b274e90a86444c641372cc1246626d1d8b34f45c9af",
+   "witness_kind": "monomial-theorem",
+   "replay": "python3 -B extensions/envelope.py check results/hamiltonian/monomial_theorem.json",
+   "producer_seconds": 0.03,
+   "summary": {
+    "status": "passed",
+    "identities": [
+     "I1",
+     "I1_balanced",
+     "I2",
+     "I3",
+     "I4",
+     "I5"
+    ],
+    "theorem": "for H = q^a p^b, a >= b, a + b >= 3: D_inf = (+)_{j<=2} p^j Q[q] (b = 0), Q[q] + pQ[q] (b = 1), Q[qp] (a = b), span{1, qp, H} (a > b >= 2)",
+    "active_part": "p Q[q] + p^2 Q[q] (b = 0); D_inf / span{1, H} (b = 1); 0 (a = b); Q qp (a > b >= 2)"
+   }
+  },
+  {
+   "file": "results/hamiltonian/near_edge_theorem.json",
+   "sha256": "1d8d97a8664aace21e72224db1585fa1c4c0d47101add73788b4b77c764dd8ec",
+   "witness_kind": "near-edge",
+   "replay": "python3 -B extensions/envelope.py check results/hamiltonian/near_edge_theorem.json",
+   "producer_seconds": 0.66,
+   "summary": {
+    "status": "passed",
+    "identities": [
+     "E1",
+     "E2",
+     "E2_at1",
+     "E3",
+     "E4"
+    ],
+    "grid_points": 150,
+    "theorem": "every polynomial with top c l^(d-1) m that is not affine in m has D_inf = span{1, H}"
+   }
+  },
+  {
+   "file": "results/hamiltonian/p3_plus_q2.json",
+   "sha256": "81d544b5ad07acdd81207e1fa2fb26a6af789a3806535391d213f121fcc551e7",
+   "witness_kind": "weyl-polynomial-kernel",
+   "replay": "python3 -B extensions/envelope.py check results/hamiltonian/p3_plus_q2.json",
+   "producer_seconds": 0.57,
+   "summary": {
+    "status": "passed",
+    "kind": "finite_support",
+    "dimension": 2,
+    "kernel": [
+     "1",
+     "p^3 + q^2"
+    ]
+   }
+  },
+  {
+   "file": "results/hamiltonian/q2p2.json",
+   "sha256": "27891d689f15bb1f120cc0dc9f94e8959bfe5572a9b4b2483bcb7b49a739b300",
+   "witness_kind": "weyl-polynomial-kernel",
+   "replay": "python3 -B extensions/envelope.py check results/hamiltonian/q2p2.json",
+   "producer_seconds": 0.08,
+   "summary": {
+    "status": "passed",
+    "kind": "monomial_span",
+    "kernel": [
+     "q^0*p^0*Q[q^1*p^1]"
+    ],
+    "dimension": "infinite"
+   }
+  },
+  {
+   "file": "results/hamiltonian/q2p3.json",
+   "sha256": "6d156ab553bfd2e0553630585cbe83af263ebf07789904a853d3a60d6f1ee11a",
+   "witness_kind": "weyl-polynomial-kernel",
+   "replay": "python3 -B extensions/envelope.py check results/hamiltonian/q2p3.json",
+   "producer_seconds": 1.03,
+   "summary": {
+    "status": "passed",
+    "kind": "monomial_span",
+    "kernel": [
+     "q^0*p^0",
+     "q^1*p^1",
+     "q^2*p^3"
+    ],
+    "dimension": 3
+   }
+  },
+  {
+   "file": "results/hamiltonian/q3.json",
+   "sha256": "ad5d4e33ca8d0b9dfb40a59421e6ad6835b160cbb8714c148cab466804ef5a39",
+   "witness_kind": "weyl-polynomial-kernel",
+   "replay": "python3 -B extensions/envelope.py check results/hamiltonian/q3.json",
+   "producer_seconds": 0.0,
+   "summary": {
+    "status": "passed",
+    "kind": "monomial_span",
+    "kernel": [
+     "p^0*Q[q]",
+     "p^1*Q[q]",
+     "p^2*Q[q]"
+    ],
+    "dimension": "infinite"
+   }
+  },
+  {
+   "file": "results/hamiltonian/q3p3.json",
+   "sha256": "0dcfde7d3f049402198fd5ec3a426011b5b7ff733963d1ba39f7dd92bd329643",
+   "witness_kind": "weyl-polynomial-kernel",
+   "replay": "python3 -B extensions/envelope.py check results/hamiltonian/q3p3.json",
+   "producer_seconds": 2.01,
+   "summary": {
+    "status": "passed",
+    "kind": "monomial_span",
+    "kernel": [
+     "q^0*p^0*Q[q^1*p^1]"
+    ],
+    "dimension": "infinite"
+   }
+  },
+  {
+   "file": "results/hamiltonian/qp3.json",
+   "sha256": "35d808b42d0ee44d54dd3347fdd556a2d1f7b3e0f19371b562d57f4583a8ed91",
+   "witness_kind": "weyl-polynomial-kernel",
+   "replay": "python3 -B extensions/envelope.py check results/hamiltonian/qp3.json",
+   "producer_seconds": 0.01,
+   "summary": {
+    "status": "passed",
+    "kind": "monomial_span",
+    "kernel": [
+     "q^0*Q[p]",
+     "q^1*Q[p]"
+    ],
+    "dimension": "infinite"
+   }
+  },
+  {
+   "file": "results/hamiltonian/qp3_plus_p2.json",
+   "sha256": "e4542034edbb319e0c62cf27c74f3400e81ef8b9867a095f39c29c2a557eadf3",
+   "witness_kind": "weyl-polynomial-kernel",
+   "replay": "python3 -B extensions/envelope.py check results/hamiltonian/qp3_plus_p2.json",
+   "producer_seconds": 0.03,
+   "summary": {
+    "status": "passed",
+    "kind": "monomial_span",
+    "kernel": [
+     "q^0*Q[p]",
+     "q^1*Q[p]"
+    ],
+    "dimension": "infinite"
+   }
+  },
+  {
+   "file": "results/hamiltonian/qp3_plus_q2.json",
+   "sha256": "63178c67289d8207358cd0e4f173bf4629e4440776b5ee297afe0eaf3ee9265b",
+   "witness_kind": "weyl-polynomial-kernel",
+   "replay": "python3 -B extensions/envelope.py check results/hamiltonian/qp3_plus_q2.json",
+   "producer_seconds": 21.58,
+   "summary": {
+    "status": "passed",
+    "kind": "finite_support",
+    "dimension": 2,
+    "kernel": [
+     "1",
+     "q*p^3 + q^2"
+    ]
+   }
+  },
+  {
+   "file": "results/hamiltonian/qp3_plus_q2_plus_p2.json.gz",
+   "sha256": "ef885cfa7dc83a780d0b420d6daf7c33c7b6039ad0714876199838f7905587c3",
+   "witness_kind": "weyl-polynomial-kernel",
+   "replay": "python3 -B extensions/envelope.py check results/hamiltonian/qp3_plus_q2_plus_p2.json.gz",
+   "producer_seconds": 328.71,
+   "summary": {
+    "status": "passed",
+    "kind": "degree_bound",
+    "dimension": 2,
+    "kernel": [
+     "1",
+     "q*p^3 + q^2 + p^2"
+    ],
+    "weight": [
+     1,
+     1
+    ],
+    "bound": 4
+   }
+  },
+  {
+   "file": "results/hamiltonian/quartic_211_q3p_plus_q2p2.json.gz",
+   "sha256": "65db40b6248c30d7bccee4d3e4af4b7f68d39541123017d7d8edef16464948bb",
+   "witness_kind": "weyl-polynomial-kernel",
+   "replay": "python3 -B extensions/envelope.py check results/hamiltonian/quartic_211_q3p_plus_q2p2.json.gz",
+   "producer_seconds": 0.0,
+   "summary": {
+    "status": "passed",
+    "kind": "degree_bound",
+    "dimension": 2,
+    "kernel": [
+     "1",
+     "q^3*p + q^2*p^2"
+    ],
+    "weight": [
+     2,
+     1
+    ],
+    "bound": 7
+   }
+  },
+  {
+   "file": "results/hamiltonian/quartic_all_degrees_theorem.json",
+   "sha256": "d4d56c5d421ba4fbde00d767f862860009c9261a10c035e6ace59c21475e8ad5",
+   "witness_kind": "quartic-uniform",
+   "replay": "python3 -B extensions/envelope.py check results/hamiltonian/quartic_all_degrees_theorem.json",
+   "producer_seconds": 146.3,
+   "summary": {
+    "status": "passed",
+    "theorem": "D_inf(H) = span{1, H} for every binary quartic with distinct roots",
+    "threshold": 8,
+    "R1_integer_roots": [
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     1,
+     2,
+     2,
+     3,
+     3
+    ],
+    "R2_integer_roots": [
+     -6,
+     -6,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     1,
+     1,
+     2,
+     2,
+     3,
+     3,
+     4,
+     4,
+     4,
+     4,
+     4
+    ],
+    "small_degrees_certified": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12
+    ]
+   }
+  },
+  {
+   "file": "results/hamiltonian/quartic_lambda0_q4_plus_p4.json",
+   "sha256": "21c1c5b36173bcb70a7b482ed76f50407b38bbcef1a1dcc6d9a9ea7abe984e6e",
+   "witness_kind": "weyl-polynomial-kernel",
+   "replay": "python3 -B extensions/envelope.py check results/hamiltonian/quartic_lambda0_q4_plus_p4.json",
+   "producer_seconds": 0.0,
+   "summary": {
+    "status": "passed",
+    "kind": "finite_support",
+    "dimension": 2,
+    "kernel": [
+     "1",
+     "q^4 + p^4"
+    ]
+   }
+  },
+  {
+   "file": "results/hamiltonian/quartic_lambda1.json.gz",
+   "sha256": "c5cd79b66bbdcb087ae71b55bed432b386469f5d42693ed0790273dcd9357983",
+   "witness_kind": "weyl-polynomial-kernel",
+   "replay": "python3 -B extensions/envelope.py check results/hamiltonian/quartic_lambda1.json.gz",
+   "producer_seconds": 0.0,
+   "summary": {
+    "status": "passed",
+    "kind": "degree_bound",
+    "dimension": 2,
+    "kernel": [
+     "1",
+     "q^4 + q^2*p^2 + p^4"
+    ],
+    "weight": [
+     1,
+     2
+    ],
+    "bound": 8
+   }
+  },
+  {
+   "file": "results/hamiltonian/quartic_q3p.json",
+   "sha256": "52eaf813ef4d9330394459e0b276914590e54e7dd5d819f5765f0cc1074b67f9",
+   "witness_kind": "weyl-polynomial-kernel",
+   "replay": "python3 -B extensions/envelope.py check results/hamiltonian/quartic_q3p.json",
+   "producer_seconds": 0.0,
+   "summary": {
+    "status": "passed",
+    "kind": "monomial_span",
+    "kernel": [
+     "p^0*Q[q]",
+     "p^1*Q[q]"
+    ],
+    "dimension": "infinite"
+   }
+  },
+  {
+   "file": "results/hamiltonian/quartic_q4.json",
+   "sha256": "dbf4654f1a3abf30871593404acd26402a3b540d3251036774b06e4467b8dfb2",
+   "witness_kind": "weyl-polynomial-kernel",
+   "replay": "python3 -B extensions/envelope.py check results/hamiltonian/quartic_q4.json",
+   "producer_seconds": 0.0,
+   "summary": {
+    "status": "passed",
+    "kind": "monomial_span",
+    "kernel": [
+     "p^0*Q[q]",
+     "p^1*Q[q]",
+     "p^2*Q[q]"
+    ],
+    "dimension": "infinite"
+   }
+  },
+  {
+   "file": "results/hamiltonian/quintic_q4p.json",
+   "sha256": "153a8afc2f55549d58f77f6bd98c26cbf641f5ae6ed7db92ab6b797b1b3e5de1",
+   "witness_kind": "weyl-polynomial-kernel",
+   "replay": "python3 -B extensions/envelope.py check results/hamiltonian/quintic_q4p.json",
+   "producer_seconds": 0.04,
+   "summary": {
+    "status": "passed",
+    "kind": "monomial_span",
+    "kernel": [
+     "p^0*Q[q]",
+     "p^1*Q[q]"
+    ],
+    "dimension": "infinite"
+   }
+  },
+  {
+   "file": "results/hamiltonian/quintic_q5.json",
+   "sha256": "704883b35b99c0e78946fcdea816f6f8e08c96792c898ab288a662bac05131ba",
+   "witness_kind": "weyl-polynomial-kernel",
+   "replay": "python3 -B extensions/envelope.py check results/hamiltonian/quintic_q5.json",
+   "producer_seconds": 0.0,
+   "summary": {
+    "status": "passed",
+    "kind": "monomial_span",
+    "kernel": [
+     "p^0*Q[q]",
+     "p^1*Q[q]",
+     "p^2*Q[q]"
+    ],
+    "dimension": "infinite"
+   }
+  },
+  {
+   "file": "results/hamiltonian/rigidity_octic_4211_perturbed.json",
+   "sha256": "c5397ca81d19e45272709e077ab5cc35561b0bc422988ded0bfd82bc6cb581df",
+   "witness_kind": "root-rigidity",
+   "replay": "python3 -B extensions/envelope.py check results/hamiltonian/rigidity_octic_4211_perturbed.json",
+   "producer_seconds": 0.0,
+   "summary": {
+    "status": "passed",
+    "degree": 8,
+    "root_type": [
+     4,
+     2,
+     1,
+     1
+    ],
+    "route": "SR",
+    "homogeneous": false,
+    "core": "span{1, H}",
+    "active_part": "0: no nonstationary observable is exact under repeated evolution",
+    "via": "perturbation corollary: D_inf(H_d) = span{1, H_d} and deg(H - H_d) < d"
+   }
+  },
+  {
+   "file": "results/hamiltonian/rigidity_octic_squarefree.json",
+   "sha256": "a754d6d9d6976aa955a76e2fb2f60404bce238eb64b4c38e8aee437df46c33d2",
+   "witness_kind": "root-rigidity",
+   "replay": "python3 -B extensions/envelope.py check results/hamiltonian/rigidity_octic_squarefree.json",
+   "producer_seconds": 0.0,
+   "summary": {
+    "status": "passed",
+    "degree": 8,
+    "root_type": [
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    "route": "SR",
+    "homogeneous": true,
+    "core": "span{1, H}",
+    "active_part": "0: no nonstationary observable is exact under repeated evolution"
+   }
+  },
+  {
+   "file": "results/hamiltonian/rigidity_q5p3_monomial.json",
+   "sha256": "2e92a77934700024da50ed0d9a662f5eaf5171ddf708f5c46660bc1c08cd7d35",
+   "witness_kind": "root-rigidity",
+   "replay": "python3 -B extensions/envelope.py check results/hamiltonian/rigidity_q5p3_monomial.json",
+   "producer_seconds": 0.0,
+   "summary": {
+    "status": "passed",
+    "degree": 8,
+    "root_type": [
+     5,
+     3
+    ],
+    "route": "monomial",
+    "homogeneous": true,
+    "core": "span{1, LM, H}  (H = c L^a M^b)",
+    "active_part": "nonzero"
+   }
+  },
+  {
+   "file": "results/hamiltonian/rigidity_septic_squarefree_perturbed.json",
+   "sha256": "6bc7989a7bf5f0b89facbf5640f557611d1a20923ff8a26b5dd3c62cd7e756ae",
+   "witness_kind": "root-rigidity",
+   "replay": "python3 -B extensions/envelope.py check results/hamiltonian/rigidity_septic_squarefree_perturbed.json",
+   "producer_seconds": 0.0,
+   "summary": {
+    "status": "passed",
+    "degree": 7,
+    "root_type": [
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    "route": "SR",
+    "homogeneous": false,
+    "core": "span{1, H}",
+    "active_part": "0: no nonstationary observable is exact under repeated evolution",
+    "via": "perturbation corollary: D_inf(H_d) = span{1, H_d} and deg(H - H_d) < d"
+   }
+  },
+  {
+   "file": "results/hamiltonian/rigidity_sextic_3111_perturbed.json",
+   "sha256": "23a6dd858aa9afbf87d37c94f0ee02fffaea7db9b942b6b6788b19aad2dec0ed",
+   "witness_kind": "root-rigidity",
+   "replay": "python3 -B extensions/envelope.py check results/hamiltonian/rigidity_sextic_3111_perturbed.json",
+   "producer_seconds": 0.0,
+   "summary": {
+    "status": "passed",
+    "degree": 6,
+    "root_type": [
+     3,
+     1,
+     1,
+     1
+    ],
+    "route": "SR",
+    "homogeneous": false,
+    "core": "span{1, H}",
+    "active_part": "0: no nonstationary observable is exact under repeated evolution",
+    "via": "perturbation corollary: D_inf(H_d) = span{1, H_d} and deg(H - H_d) < d"
+   }
+  },
+  {
+   "file": "results/hamiltonian/sextic_q4p2.json",
+   "sha256": "c38f292ca4069cd6a080e57c60d0570b7e91fafe71a7ebc3dce268877309a94e",
+   "witness_kind": "weyl-polynomial-kernel",
+   "replay": "python3 -B extensions/envelope.py check results/hamiltonian/sextic_q4p2.json",
+   "producer_seconds": 2.12,
+   "summary": {
+    "status": "passed",
+    "kind": "monomial_span",
+    "kernel": [
+     "q^0*p^0",
+     "q^1*p^1",
+     "q^4*p^2"
+    ],
+    "dimension": 3
+   }
+  },
+  {
+   "file": "results/hamiltonian/sextic_q5p.json",
+   "sha256": "be134e389570ec0c2a854d19057ecf94b1746ea7098ea3ce7f9832c79e37f91f",
+   "witness_kind": "weyl-polynomial-kernel",
+   "replay": "python3 -B extensions/envelope.py check results/hamiltonian/sextic_q5p.json",
+   "producer_seconds": 0.08,
+   "summary": {
+    "status": "passed",
+    "kind": "monomial_span",
+    "kernel": [
+     "p^0*Q[q]",
+     "p^1*Q[q]"
+    ],
+    "dimension": "infinite"
+   }
+  },
+  {
+   "file": "results/hamiltonian/sextic_q6.json",
+   "sha256": "38b4a27fda8e1c8b8657c04fff8a9aa2a7dbf92fb7b24478ba3316aa7746a843",
+   "witness_kind": "weyl-polynomial-kernel",
+   "replay": "python3 -B extensions/envelope.py check results/hamiltonian/sextic_q6.json",
+   "producer_seconds": 0.0,
+   "summary": {
+    "status": "passed",
+    "kind": "monomial_span",
+    "kernel": [
+     "p^0*Q[q]",
+     "p^1*Q[q]",
+     "p^2*Q[q]"
+    ],
+    "dimension": "infinite"
+   }
+  },
+  {
+   "file": "results/hamiltonian/simple_root_rigidity.json",
+   "sha256": "2b3c89184ff0efca749cc5a884afd4a9afccbc7a23c0df8e0e782b8ae3af1277",
+   "witness_kind": "simple-root-rigidity",
+   "replay": "python3 -B extensions/envelope.py check results/hamiltonian/simple_root_rigidity.json",
+   "producer_seconds": 128.26,
+   "summary": {
+    "status": "passed",
+    "N0": {
+     "3": 4,
+     "4": 5,
+     "5": 8,
+     "6": 11,
+     "7": 14,
+     "8": 19,
+     "9": 24,
+     "10": 29,
+     "11": 36,
+     "12": 43,
+     "13": 50,
+     "14": 59,
+     "15": 68,
+     "16": 77,
+     "17": 88,
+     "18": 99,
+     "19": 110,
+     "20": 123,
+     "21": 136,
+     "22": 149,
+     "23": 164,
+     "24": 179,
+     "25": 194,
+     "26": 211,
+     "27": 228,
+     "28": 245,
+     "29": 264,
+     "30": 283,
+     "31": 302,
+     "32": 323,
+     "33": 344,
+     "34": 365,
+     "35": 388,
+     "36": 411,
+     "37": 434,
+     "38": 459,
+     "39": 484,
+     "40": 509
+    },
+    "grid": [
+     5,
+     5,
+     5
+    ],
+    "degrees": [
+     4,
+     4,
+     4
+    ],
+    "coefficients_checked": 1000,
+    "theorem": "for every binary form H of degree d >= 3 with a simple root, not c l^(d-1) m: {G in V_n : T_3(H,G) = T_3(H,{H,G}) = 0} = 0 for n >= N0(d); N0(d) is finite for every d because K0, K1 have nonzero leading coefficient"
+   }
+  },
+  {
+   "file": "results/hamiltonian/six_a0_b2_c3_d1_e1.json",
+   "sha256": "f4b3447a201b9ddfd65b9c6639b23ac192b0fd2a8b9d097494df657aaee97300",
+   "witness_kind": "weyl-top-reduction",
+   "replay": "python3 -B extensions/envelope.py check results/hamiltonian/six_a0_b2_c3_d1_e1.json",
+   "producer_seconds": 0.01,
+   "summary": {
+    "status": "passed",
+    "claim": "lines",
+    "core": [
+     "q^0*Q[p]",
+     "q^1*Q[p]"
+    ],
+    "weight": [
+     3,
+     1
+    ]
+   }
+  },
+  {
+   "file": "results/hamiltonian/six_a0_c_minus1_e7_f4.json",
+   "sha256": "63e1ae106745b3792124da135e798301854cde3ee3a4698cd216f0b72f60bb84",
+   "witness_kind": "weyl-top-reduction",
+   "replay": "python3 -B extensions/envelope.py check results/hamiltonian/six_a0_c_minus1_e7_f4.json",
+   "producer_seconds": 0.0,
+   "summary": {
+    "status": "passed",
+    "claim": "lines",
+    "core": [
+     "q^0*Q[p]",
+     "q^1*Q[p]"
+    ],
+    "weight": [
+     3,
+     1
+    ]
+   }
+  },
+  {
+   "file": "results/hamiltonian/six_a1_b2_c3_e1.json",
+   "sha256": "22856d95c459ec905344c1129cb9f2bbe9176bf6185cef2c46a7c38c04f555e3",
+   "witness_kind": "weyl-top-reduction",
+   "replay": "python3 -B extensions/envelope.py check results/hamiltonian/six_a1_b2_c3_e1.json",
+   "producer_seconds": 29.51,
+   "summary": {
+    "status": "passed",
+    "claim": "finite",
+    "core": "span{1, H}",
+    "weight": [
+     3,
+     1
+    ],
+    "top_part": [
+     [
+      1,
+      3,
+      "1"
+     ],
+     [
+      2,
+      0,
+      "1"
+     ]
+    ]
+   }
+  },
+  {
+   "file": "results/hamiltonian/six_a_minus2_b_half_d5.json",
+   "sha256": "6b1413ead18dd6dd9b655a130f86c5ea449812aea821b51dae9baa35e1b75e04",
+   "witness_kind": "weyl-top-reduction",
+   "replay": "python3 -B extensions/envelope.py check results/hamiltonian/six_a_minus2_b_half_d5.json",
+   "producer_seconds": 27.79,
+   "summary": {
+    "status": "passed",
+    "claim": "finite",
+    "core": "span{1, H}",
+    "weight": [
+     3,
+     1
+    ],
+    "top_part": [
+     [
+      1,
+      3,
+      "1"
+     ],
+     [
+      2,
+      0,
+      "-2"
+     ]
+    ]
+   }
+  },
+  {
+   "file": "results/hamiltonian/triangular_K1K2_q2p_squared.json",
+   "sha256": "e2c2e83c928e74c1a679a1558c643837533d349b4df084c5e2daea3030f07470",
+   "witness_kind": "triangular-pure",
+   "replay": "python3 -B extensions/envelope.py check results/hamiltonian/triangular_K1K2_q2p_squared.json",
+   "producer_seconds": 0.02,
+   "summary": {
+    "status": "passed",
+    "family": "K1+K2",
+    "core": "K[P] + tau*K[Q,P]_{<=2}",
+    "verified_dimension": 10,
+    "claim": "contained in D_inf(H) (exact)"
+   }
+  },
+  {
+   "file": "results/hamiltonian/triangular_K1_q2p_cubed_plus_q.json",
+   "sha256": "8bb748b7eb6c1dfbe76821c3f5826174d3bd410e0b341fa3298e8b89ade718b4",
+   "witness_kind": "triangular-pure",
+   "replay": "python3 -B extensions/envelope.py check results/hamiltonian/triangular_K1_q2p_cubed_plus_q.json",
+   "producer_seconds": 0.02,
+   "summary": {
+    "status": "passed",
+    "family": "K1",
+    "core": "K[P] + K Q",
+    "verified_dimension": 8,
+    "claim": "contained in D_inf(H) (exact)"
+   }
+  },
+  {
+   "file": "results/hamiltonian/triangular_K2_q3p_squared.json",
+   "sha256": "61dec9eb99a6bc2405bfdc8d8f064f775c2c92d00219353f7ae8e3cdf6c7b9f6",
+   "witness_kind": "triangular-pure",
+   "replay": "python3 -B extensions/envelope.py check results/hamiltonian/triangular_K2_q3p_squared.json",
+   "producer_seconds": 0.01,
+   "summary": {
+    "status": "passed",
+    "family": "K2",
+    "core": "tau*K[Q,P]_{<=2}",
+    "verified_dimension": 6,
+    "claim": "contained in D_inf(H) (exact)"
+   }
+  },
+  {
+   "file": "results/hamiltonian/triangular_K3_cubic_twist.json",
+   "sha256": "56029d5e58aa0685177f0bec4a17b4f49d38b9f4ff1f795824e3f9c01359d342",
+   "witness_kind": "triangular-pure",
+   "replay": "python3 -B extensions/envelope.py check results/hamiltonian/triangular_K3_cubic_twist.json",
+   "producer_seconds": 0.01,
+   "summary": {
+    "status": "passed",
+    "family": "K3",
+    "core": "span{1, G, H}",
+    "verified_dimension": 3,
+    "claim": "contained in D_inf(H) (exact)"
+   }
+  },
+  {
+   "file": "results/hamiltonian/triangular_K3_linear_twist.json",
+   "sha256": "428c09dc28e59bb3382e38249b5969ac0132219f18641af9df1bb69140ddb3c4",
+   "witness_kind": "triangular-pure",
+   "replay": "python3 -B extensions/envelope.py check results/hamiltonian/triangular_K3_linear_twist.json",
+   "producer_seconds": 0.0,
+   "summary": {
+    "status": "passed",
+    "family": "K3",
+    "core": "span{1, Q, G, H}",
+    "verified_dimension": 4,
+    "claim": "contained in D_inf(H) (exact)"
+   }
+  },
+  {
+   "file": "results/hamiltonian/triangular_K4_double_root.json",
+   "sha256": "ecdad8114e89e11edce4ed6f4081c7bd699f9a9ed3321d5c1286cd7997250fcb",
+   "witness_kind": "triangular-pure",
+   "replay": "python3 -B extensions/envelope.py check results/hamiltonian/triangular_K4_double_root.json",
+   "producer_seconds": 0.01,
+   "summary": {
+    "status": "passed",
+    "family": "K4",
+    "core": "span{1, G, H}",
+    "verified_dimension": 3,
+    "claim": "contained in D_inf(H) (exact)"
+   }
+  },
+  {
+   "file": "results/hamiltonian/triangular_theorem.json",
+   "sha256": "9c1e3df602718c08f3f07cdb8805ea9c7a0f3fa17c48dde8d2c95160462cdcb7",
+   "witness_kind": "triangular-pure",
+   "replay": "python3 -B extensions/envelope.py check results/hamiltonian/triangular_theorem.json",
+   "producer_seconds": 2.5,
+   "summary": {
+    "status": "passed",
+    "identities": [
+     "K1",
+     "K1'",
+     "K2",
+     "K3",
+     "X1"
+    ],
+    "theorem": "triangular transvectant formula; containments K1, K2, K3"
+   }
+  },
+  {
+   "file": "results/hamiltonian/tworoot_balanced_KG.json",
+   "sha256": "4b68544d4d17a7469f18e99d6dfa9bc8dcf03c69d27b096aeb550035800206d9",
+   "witness_kind": "two-root-perturbation",
+   "replay": "python3 -B extensions/envelope.py check results/hamiltonian/tworoot_balanced_KG.json",
+   "producer_seconds": 0.0,
+   "summary": {
+    "status": "passed",
+    "degree": 4,
+    "top": "balanced",
+    "route": "P+ balanced",
+    "proved": true,
+    "core": "K[G]",
+    "G": {
+     "1,0": "1",
+     "1,1": "1"
+    },
+    "active_part": "0 (all stationary)"
+   }
+  },
+  {
+   "file": "results/hamiltonian/tworoot_balanced_box.json",
+   "sha256": "daf564b37234c6d7833e52ca8a10797129e3d55108d14ef4034e2107d542ea22",
+   "witness_kind": "two-root-perturbation",
+   "replay": "python3 -B extensions/envelope.py check results/hamiltonian/tworoot_balanced_box.json",
+   "producer_seconds": 0.0,
+   "summary": {
+    "status": "passed",
+    "degree": 6,
+    "top": "balanced",
+    "route": "B",
+    "proved": true,
+    "core": "span{1, H}",
+    "active_part": "0"
+   }
+  },
+  {
+   "file": "results/hamiltonian/tworoot_near_affine.json",
+   "sha256": "a896b5d319ebd81f901727a1b8b32db9b008711198cdd8a6cd095f386e64a2d9",
+   "witness_kind": "two-root-perturbation",
+   "replay": "python3 -B extensions/envelope.py check results/hamiltonian/tworoot_near_affine.json",
+   "producer_seconds": 0.0,
+   "summary": {
+    "status": "passed",
+    "degree": 5,
+    "top": "near",
+    "route": "P+ near",
+    "proved": true,
+    "core": "K[l] + m K[l]",
+    "active_part": "infinite"
+   }
+  },
+  {
+   "file": "results/hamiltonian/tworoot_near_edge.json",
+   "sha256": "91fd67d7b55f2c6a68d3920315bc28e9c4b8b62d21347301d1f517255120f177",
+   "witness_kind": "two-root-perturbation",
+   "replay": "python3 -B extensions/envelope.py check results/hamiltonian/tworoot_near_edge.json",
+   "producer_seconds": 0.0,
+   "summary": {
+    "status": "passed",
+    "degree": 5,
+    "top": "near",
+    "route": "NE",
+    "proved": true,
+    "core": "span{1, H}",
+    "active_part": "0"
+   }
+  },
+  {
+   "file": "results/hamiltonian/tworoot_near_q2_family.json",
+   "sha256": "f6fe03d04a99b764208927893cbdac9d8a4c7fa56fc14fe2005caaaf70d8c972",
+   "witness_kind": "two-root-perturbation",
+   "replay": "python3 -B extensions/envelope.py check results/hamiltonian/tworoot_near_q2_family.json",
+   "producer_seconds": 0.0,
+   "summary": {
+    "status": "passed",
+    "degree": 5,
+    "top": "near",
+    "route": "NE",
+    "proved": true,
+    "core": "span{1, H}",
+    "active_part": "0"
+   }
+  },
+  {
+   "file": "results/hamiltonian/tworoot_pure_p2_family.json",
+   "sha256": "dd40bba20cf998ed70bcbb36460fbd27fe2af638b29a2abb0901ad0017d5dc87",
+   "witness_kind": "two-root-perturbation",
+   "replay": "python3 -B extensions/envelope.py check results/hamiltonian/tworoot_pure_p2_family.json",
+   "producer_seconds": 0.0,
+   "summary": {
+    "status": "passed",
+    "degree": 5,
+    "top": "pure",
+    "route": "Q'",
+    "proved": true,
+    "core": "span{1, H}",
+    "active_part": "0"
+   }
+  },
+  {
+   "file": "results/hamiltonian/tworoot_pure_strip.json",
+   "sha256": "e0582f400d23d6e40618d9323d6d046d41f9340de643be5fea4baf9259c6ec5f",
+   "witness_kind": "two-root-perturbation",
+   "replay": "python3 -B extensions/envelope.py check results/hamiltonian/tworoot_pure_strip.json",
+   "producer_seconds": 0.0,
+   "summary": {
+    "status": "passed",
+    "degree": 4,
+    "top": "pure",
+    "route": "P+ pure W",
+    "proved": true,
+    "core": "(+)_{j<=2} m^j K[l]",
+    "active_part": "infinite"
+   }
+  },
+  {
+   "file": "results/hamiltonian/tworoot_pure_triangular_K2.json",
+   "sha256": "8e8819970056698c77eb76404bb2459ba569ccbcc08e486330ef592954fc293d",
+   "witness_kind": "two-root-perturbation",
+   "replay": "python3 -B extensions/envelope.py check results/hamiltonian/tworoot_pure_triangular_K2.json",
+   "producer_seconds": 0.0,
+   "summary": {
+    "status": "passed",
+    "degree": 6,
+    "top": "pure",
+    "route": "K2",
+    "proved": true,
+    "core": "tau*K[Q,P]_{<=2}",
+    "contains_proved": true,
+    "generators": [
+     {
+      "0,0": "1"
+     },
+     {
+      "1,0": "1"
+     },
+     {
+      "2,0": "1"
+     },
+     {
+      "0,1": "1",
+      "3,0": "1"
+     },
+     {
+      "1,1": "1",
+      "4,0": "1"
+     },
+     {
+      "0,2": "1",
+      "3,1": "2",
+      "6,0": "1"
+     }
+    ],
+    "degrees": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     6
+    ],
+    "active_part": "nonzero (contains an active element)",
+    "w": {
+     "3": "1"
+    }
+   }
+  },
+  {
+   "file": "results/hamiltonian/tworoot_unequal_generic.json",
+   "sha256": "1c3f828bba98a83b261bbdd1108dd45fc50a18624db6a49b56831dc661fa4106",
+   "witness_kind": "two-root-perturbation",
+   "replay": "python3 -B extensions/envelope.py check results/hamiltonian/tworoot_unequal_generic.json",
+   "producer_seconds": 0.0,
+   "summary": {
+    "status": "passed",
+    "degree": 5,
+    "top": "unequal (3,2)",
+    "route": "U",
+    "proved": true,
+    "core": "span{1, H}",
+    "active_part": "0"
+   }
+  },
+  {
+   "file": "results/hamiltonian/tworoot_unequal_normal_form.json",
+   "sha256": "c1196bce7848878e7ea9a7e40c10f4994e0e28e34ee2620ed6c936ef95393d23",
+   "witness_kind": "two-root-perturbation",
+   "replay": "python3 -B extensions/envelope.py check results/hamiltonian/tworoot_unequal_normal_form.json",
+   "producer_seconds": 0.0,
+   "summary": {
+    "status": "passed",
+    "degree": 5,
+    "top": "unequal (3,2)",
+    "route": "U",
+    "proved": true,
+    "core": "span{1, H, G}",
+    "G": {
+     "1,1": "1"
+    },
+    "active_part": "K G ({H, G} = (a-b) H mod span{1, G})"
+   }
+  },
+  {
+   "file": "results/observer/correlated_finite_horizon.json",
+   "sha256": "699536a1e7b200a122eb19da58618aa898530a9efef9b1fb18af0a9f92aa3bef",
+   "witness_kind": "noise-panel-selection",
+   "replay": "python3 -B extensions/envelope.py check results/observer/correlated_finite_horizon.json",
+   "producer_seconds": 0.0,
+   "summary": {
+    "status": "passed",
+    "claim": "optimal",
+    "cost": "4",
+    "sensors": [
+     0,
+     2
+    ]
+   }
+  },
+  {
+   "file": "results/observer/feed_example.json",
+   "sha256": "b5f2ec9316e938f4f03928120aeb15286074019385633fa16bea3738b4f403c9",
+   "witness_kind": "observer-closure",
+   "replay": "python3 -B extensions/envelope.py check results/observer/feed_example.json",
+   "producer_seconds": 0.0,
+   "summary": {
+    "status": "passed",
+    "format": "observer-closure-v2",
+    "minimal_linear_state_dimension": 2,
+    "panel": "impossible",
+    "input_bound": true
+   }
+  },
+  {
+   "file": "results/observer/rank_perfect_ill_conditioned.json",
+   "sha256": "ba2840ed06fe9b1a48d5a53a716509dfd54514c27d5696dbc9b8719c0ab719a7",
+   "witness_kind": "noise-panel-selection",
+   "replay": "python3 -B extensions/envelope.py check results/observer/rank_perfect_ill_conditioned.json",
+   "producer_seconds": 0.0,
+   "summary": {
+    "status": "passed",
+    "claim": "infeasible"
+   }
+  },
+  {
+   "file": "results/observer/target_only_decision.json",
+   "sha256": "7e392deab033497f612c44a4b7aa5a4e7a028b3366a6072870d8b44b4d0e540a",
+   "witness_kind": "adaptive-experiment",
+   "replay": "python3 -B extensions/envelope.py check results/observer/target_only_decision.json",
+   "producer_seconds": 0.0,
+   "summary": {
+    "status": "passed",
+    "claim": "optimal",
+    "worst_case_cost": "1",
+    "table_entries": 6
+   }
+  },
+  {
+   "file": "results/structure/dgla_toy_obstructed.json",
+   "sha256": "87383705994f7b896011343c737c4e321464e527e8cc15bfef7ba8da0ce34550",
+   "witness_kind": "dgla-lifting",
+   "replay": "python3 -B extensions/envelope.py check results/structure/dgla_toy_obstructed.json",
+   "producer_seconds": 0.0,
+   "summary": {
+    "status": "passed",
+    "claim": "obstructed",
+    "order": 2,
+    "intrinsic": true
+   }
+  },
+  {
+   "file": "results/structure/heisenberg_lift_order4.json",
+   "sha256": "3adb557ca11313caaecfc9fde8f34390b23fc84c52dfb93e6f211a6860e43045",
+   "witness_kind": "dgla-lifting",
+   "replay": "python3 -B extensions/envelope.py check results/structure/heisenberg_lift_order4.json",
+   "producer_seconds": 6.02,
+   "summary": {
+    "status": "passed",
+    "claim": "lifted",
+    "order": 4
+   }
+  },
+  {
+   "file": "results/structure/heisenberg_order2_obstruction.json",
+   "sha256": "aaa660e5b0c09bc7dc72f9edae5c4b8b80fa1083fc4ff2adb4c629438f3e8bad",
+   "witness_kind": "dgla-lifting",
+   "replay": "python3 -B extensions/envelope.py check results/structure/heisenberg_order2_obstruction.json",
+   "producer_seconds": 6.08,
+   "summary": {
+    "status": "passed",
+    "claim": "obstructed",
+    "order": 2,
+    "intrinsic": true
+   }
+  },
+  {
+   "file": "results/structure/heisenberg_order3_jet_obstruction.json",
+   "sha256": "282a180e5de9be3bc51cc8a309d617da5bff275d6e4c9e5ccb2d73dd54e6f4a0",
+   "witness_kind": "dgla-lifting",
+   "replay": "python3 -B extensions/envelope.py check results/structure/heisenberg_order3_jet_obstruction.json",
+   "producer_seconds": 5.83,
+   "summary": {
+    "status": "passed",
+    "claim": "obstructed",
+    "order": 3,
+    "intrinsic": false
+   }
+  },
+  {
+   "file": "results/structure/klein_bottle_torsion_witness.json",
+   "sha256": "8d1188cd0e4eed5bc86918a00ddc34473252b280653ff54521a230dd5880cbd2",
+   "witness_kind": "integer-cohomology",
+   "replay": "python3 -B extensions/envelope.py check results/structure/klein_bottle_torsion_witness.json",
+   "producer_seconds": 0.0,
+   "summary": {
+    "status": "passed",
+    "cohomology": [
+     {
+      "degree": 0,
+      "rank": 1,
+      "torsion": []
+     },
+     {
+      "degree": 1,
+      "rank": 1,
+      "torsion": []
+     },
+     {
+      "degree": 2,
+      "rank": 0,
+      "torsion": [
+       2
+      ]
+     }
+    ],
+    "answers": [
+     "torsion",
+     "exact"
+    ]
+   }
+  },
+  {
+   "file": "results/structure/rp2_integral_cohomology.json",
+   "sha256": "749fae2e1e2a8620d6c087bf3e9db233c012fef200d0951f93247f23d1ec453d",
+   "witness_kind": "integer-cohomology",
+   "replay": "python3 -B extensions/envelope.py check results/structure/rp2_integral_cohomology.json",
+   "producer_seconds": 0.0,
+   "summary": {
+    "status": "passed",
+    "cohomology": [
+     {
+      "degree": 0,
+      "rank": 1,
+      "torsion": []
+     },
+     {
+      "degree": 1,
+      "rank": 0,
+      "torsion": []
+     },
+     {
+      "degree": 2,
+      "rank": 0,
+      "torsion": [
+       2
+      ]
+     }
+    ],
+    "answers": [
+     "torsion"
+    ]
+   }
+  },
+  {
+   "file": "results/structure/times_two_rational_vs_integral.json",
+   "sha256": "55954708628dcb3ef870f1f1ee22178400d15f9d24cbf1340dd911738d9d1c15",
+   "witness_kind": "integer-cohomology",
+   "replay": "python3 -B extensions/envelope.py check results/structure/times_two_rational_vs_integral.json",
+   "producer_seconds": 0.0,
+   "summary": {
+    "status": "passed",
+    "cohomology": [
+     {
+      "degree": 0,
+      "rank": 0,
+      "torsion": []
+     },
+     {
+      "degree": 1,
+      "rank": 0,
+      "torsion": [
+       2
+      ]
+     }
+    ],
+    "answers": [
+     "torsion"
+    ]
+   }
+  },
+  {
+   "file": "results/structure/triangle_obstruction.json",
+   "sha256": "1e5a57673cbfa04ac7bceab245236108864c96621a2cdcbcfebef38c41c286d9",
+   "witness_kind": "rational-obstruction-answer",
+   "replay": "python3 -B extensions/envelope.py check results/structure/triangle_obstruction.json",
+   "producer_seconds": 0.0,
+   "summary": {
+    "status": "passed",
+    "answer": "obstructed"
+   }
+  },
+  {
+   "file": "results/structure/triangle_primitive.json",
+   "sha256": "4a47fa4d090c36a2bdcec77b246f30422aaa68418b5f1be3a3cc3f3d05ad1a64",
+   "witness_kind": "rational-obstruction-answer",
+   "replay": "python3 -B extensions/envelope.py check results/structure/triangle_primitive.json",
+   "producer_seconds": 0.0,
+   "summary": {
+    "status": "passed",
+    "answer": "solved"
+   }
+  }
+ ]
+}

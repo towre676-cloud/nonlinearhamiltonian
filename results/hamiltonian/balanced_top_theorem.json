@@ -1,0 +1,29 @@
+{
+ "schema": "machinery-envelope-v1",
+ "witness_kind": "balanced-top",
+ "coefficient_domain": "Q",
+ "model": {
+  "family": "c Q^mu + lower-order terms"
+ },
+ "model_sha256": "fe25c8f64947cf95115e0d731da15784b0c47491ee032fa5b21e16cf85ecc993",
+ "payload": {
+  "format": "balanced-top-v1",
+  "identities": [
+   "B1",
+   "B2",
+   "B3",
+   "B4"
+  ]
+ },
+ "payload_sha256": "333de0827e0cf729c35c0ec46f58ab7f99f6d2c8f6fe64b4cc69aaa8281fe369",
+ "hypotheses": [
+  "characteristic zero",
+  "weight induction on off-diagonal parts with T_3 and the top of {H, G}"
+ ],
+ "scope": "D_inf = K[G] if H in K[G], else span{1, H}",
+ "source_ids": [
+  "D16-F03",
+  "D06-F02"
+ ],
+ "producer": "towre676-cloud/nonlinearhamiltonian extensions (exact rational, Python standard library)"
+}

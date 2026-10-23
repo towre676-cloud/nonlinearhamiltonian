@@ -1,0 +1,45 @@
+{
+  "commands": [
+    {
+      "name": "observer closure and independent certificate checks",
+      "args": [
+        "extensions/observer/observation_closure_reference.py",
+        "verify"
+      ]
+    },
+    {
+      "name": "observer example bound to original model",
+      "args": [
+        "extensions/observer/observation_closure_reference.py",
+        "check",
+        "extensions/observer/observation_example_certificate.json",
+        "--input",
+        "extensions/observer/observation_example.json"
+      ]
+    },
+    {
+      "name": "Weyl arithmetic, false receipts and independent star comparisons",
+      "args": [
+        "extensions/hamiltonian/weyl_receipts.py",
+        "--self-test",
+        "--existing-engine",
+        "research/hamiltonian/independent/engine.py",
+        "--check",
+        "extensions/hamiltonian/q_cubed_receipt.json"
+      ]
+    },
+    {
+      "name": "finite rational contraction constructor and independent checker",
+      "args": [
+        "extensions/structure/run_checks.py"
+      ]
+    },
+    {
+      "name": "higher-correction and dynamic-closure counterexamples",
+      "args": [
+        "extensions/counterexamples.py"
+      ]
+    }
+  ],
+  "scope": "Seed implementations and exact fixtures, not completion of the proposed roadmap."
+}

@@ -1,0 +1,227 @@
+{
+ "priority_order": [
+  "C0",
+  "O1",
+  "W1",
+  "O2",
+  "S1",
+  "W2",
+  "S2",
+  "O3",
+  "A1",
+  "R1"
+ ],
+ "tasks": [
+  {
+   "id": "C0",
+   "status": "done",
+   "title": "source integrity and typed claim envelopes",
+   "depends_on": [],
+   "objective": "Keep the baseline immutable; standardize a small envelope with schema, coefficient domain, source hashes, witness kind, hypotheses and scope. Dispatch to the existing independent checkers.",
+   "acceptance": [
+    "Full verify_handoff.py passes",
+    "Wrong coefficient/witness types rejected",
+    "Each new result linked to source IDs and actual receipts"
+   ]
+  },
+  {
+   "id": "O1",
+   "status": "done",
+   "title": "general minimal target observer API",
+   "depends_on": [
+    "C0"
+   ],
+   "objective": "Extend the rational word-closure seed into a documented versioned model/certificate API. Preserve QA_a=B_aQ, G=CQ and basis-word provenance; retain a hidden-state/action witness on failure.",
+   "acceptance": [
+    "All 26 seed cases retained",
+    "Independent checker never invokes compiler",
+    "Zero target, noncommuting actions and redundant sensors handled",
+    "Minimality theorem stated for linear summaries, all words and all initial states"
+   ]
+  },
+  {
+   "id": "W1",
+   "status": "done",
+   "title": "fixed-H Weyl discovery adapter and all-degree receipts",
+   "depends_on": [
+    "C0"
+   ],
+   "objective": "Use a declared exact left-Groebner backend over Q to close the correction ideal under right multiplication by D. Export both ideal containments and right-D closure for replay in the bundled PBW checker.",
+   "acceptance": [
+    "All higher odd gates included",
+    "Every generator has iterated-gate provenance",
+    "Every right-D product has an exact expansion",
+    "Budget exhaustion returns unknown",
+    "Cubic q^3 and original qF/core examples calibrated",
+    "No polynomial-solution classification inferred solely from finite ideal generators"
+   ]
+  },
+  {
+   "id": "O2",
+   "status": "done",
+   "title": "certified noise-aware minimum sensor panel",
+   "depends_on": [
+    "O1"
+   ],
+   "objective": "For finite rational sensor menus and finite-horizon target words, minimize exact cost subject to the declared squared amplification cap. Check T^T T <= gamma^2 H^T R^-1 H with PSD or negative-quadratic witnesses.",
+   "acceptance": [
+    "Correlated noise retained as principal blocks",
+    "Independent exhaustive oracle for small menus",
+    "Complete branch coverage or explicit unfinished bound",
+    "Rank-perfect ill-conditioned counterexample retained",
+    "All-time metric certificates labeled sufficient, not necessary"
+   ]
+  },
+  {
+   "id": "S1",
+   "status": "done",
+   "title": "finite rational obstruction compiler API",
+   "depends_on": [
+    "C0"
+   ],
+   "objective": "Promote the contraction seed into a stable arbitrary finite Q-complex interface with exact solution/obstruction/invalid-model outputs and bounded-resource metadata.",
+   "acceptance": [
+    "d^2=0 and all contraction identities checked",
+    "Primitive and separating-functional outputs independently replay",
+    "Forty generated complexes plus adversarial fixtures retained",
+    "field=Z rejected until a genuine integer adapter exists"
+   ]
+  },
+  {
+   "id": "W2",
+   "status": "done",
+   "title": "quadratic-perturbation dynamic-core strata",
+   "depends_on": [
+    "W1"
+   ],
+   "objective": "Start with qp^3+a q^2+b p^2, then the general quadratic perturbation family. Classify declared parameter branches with exact operator receipts and explicit polynomial solution descriptions.",
+   "acceptance": [
+    "Known lambda=0/nonzero collapse reproduced as a corollary",
+    "All divisions and exceptional loci recorded",
+    "Parameter coverage proved, not sampled",
+    "Affine-symplectic equivalence and Hamiltonian rescaling declared",
+    "Static partner space distinguished from dynamic core"
+   ]
+  },
+  {
+   "id": "S2",
+   "status": "done",
+   "title": "finite DGLA deformation lifting",
+   "depends_on": [
+    "S1"
+   ],
+   "objective": "Supply graded bracket structure constants, verify graded Jacobi and differential compatibility, then lift Maurer-Cartan equations order by order using the contraction.",
+   "acceptance": [
+    "Nonzero H^2 class proves an obstruction at its declared order",
+    "Vanishing class yields an explicit primitive correction",
+    "Gauge/complement choices retained",
+    "No claim about convergence or an unspecified nonlinear moduli space"
+   ]
+  },
+  {
+   "id": "O3",
+   "status": "done",
+   "title": "finite adaptive experiment Bellman certificates",
+   "depends_on": [
+    "O1"
+   ],
+   "objective": "Implement the separate deterministic finite-state test-table model with target labels, positive test costs and complete worst-case decision-tree optimality receipts.",
+   "acceptance": [
+    "At most ten-state exhaustive oracle first",
+    "Strict split/termination conditions checked",
+    "Upper policy and Bellman lower bounds both replay",
+    "No transfer to noisy continuous outcomes without new semantics"
+   ]
+  },
+  {
+   "id": "A1",
+   "status": "done",
+   "title": "supplied-unit arithmetic orbit compiler",
+   "depends_on": [
+    "C0"
+   ],
+   "objective": "Implement the proved seed-window reduction for x^2-Dy^2=N under a supplied positive integral norm-one unit, then exact modular orbit filters and declared finite height counts.",
+   "acceptance": [
+    "Both signs of N supported",
+    "Nonfundamental supplied units allowed with generated-orbit scope",
+    "Exact integer bounds and square tests only",
+    "Four provided arithmetic fixtures plus independent bounded comparisons",
+    "Global completeness uses the reduction proof"
+   ]
+  },
+  {
+   "id": "R1",
+   "status": "in_progress",
+   "title": "release and equation-table integration",
+   "depends_on": [
+    "O2",
+    "W1",
+    "S1"
+   ],
+   "objective": "Integrate completed capabilities into the actual source repository, update the mathematical capability and claim tables, provide exact CLI examples, then build a clean compact handoff release.",
+   "acceptance": [
+    "New claims carry their domain and scope",
+    "Native source suites and changed extension checks pass",
+    "Final ZIP extracted and hash-verified",
+    "Archive strictly below 30000000 bytes",
+    "Coherent tested commits and clear remaining frontiers"
+   ]
+  },
+  {
+   "id": "W4",
+   "status": "done",
+   "title": "quintic and sextic dynamic-core classification",
+   "depends_on": [
+    "W1",
+    "W2"
+   ],
+   "objective": "Classify D_inf(H) for every binary quintic and sextic over a field of characteristic zero.",
+   "acceptance": [
+    "Monomial classes certified in all degrees",
+    "Root types with a root of multiplicity 2 or d-2 reduced by the top-weight lemma",
+    "Static finiteness at a simple root certified by an independent checker with exact arithmetic",
+    "Chain argument documented; representatives of every root type cross-checked directly"
+   ]
+  },
+  {
+   "id": "W5",
+   "status": "done",
+   "title": "arbitrary-degree root rigidity and active exact dynamics",
+   "depends_on": [
+    "W4"
+   ],
+   "objective": "Prove or break: every homogeneous H with >= 3 distinct roots has D_inf(H) = span{1,H}; classify one- and two-root forms in all degrees; extend to perturbations.",
+   "acceptance": [
+    "Monomial theorem in all exponents with an exact checker (done)",
+    "Rigidity for intermediate multiplicities and odd squarefree forms (done)",
+    "Perturbation corollary with executable coverage (done)",
+    "Even d >= 8, strata (1^d) and (d/2,1^(d/2)) (done: Theorem SR)"
+   ]
+  },
+  {
+   "id": "W6",
+   "status": "in_progress",
+   "title": "inhomogeneous Hamiltonians with two-root tops",
+   "depends_on": [
+    "W5"
+   ],
+   "objective": "Classify D_inf(H_d + P) when H_d has at most two roots.",
+   "acceptance": [
+    "Unequal tops complete (done)",
+    "Positive structures for pure, near, balanced (done)",
+    "m^2 families for near and pure tops (done)",
+    "Executable decision procedure with proved/conjectural labels (done)",
+    "Balanced tops complete (done, Theorem B)",
+    "Near tops complete (done, Theorem NE)",
+    "Pure tops: P003 refuted; triangular families K1, K1', K2, K3 found and their containments proved (done)",
+    "Pure tops: P004 refuted as stated (extended K3); P005 proved: every pure top outside the non-affine cubic phase is span{1,H} or an exact family span (W6-g..j: NA, NE, NB, NT, NV, K2U, LB, K1P, TP, TE); cubic phase done (NT with e = 2, NQ): the pure-top classification is complete"
+   ]
+  }
+ ],
+ "notes": {
+  "W2": "Full six-parameter quadratic perturbation family of qp^3 classified (DYNAMIC_CORE_RESULTS.md 3b).",
+  "results": "results/RECEIPTS.json indexes every enveloped certificate with its replay command.",
+  "W3": "Homogeneous quartic dynamic cores fully classified: degenerate root types by certificates, distinct roots by the all-degree theorem (quartic-uniform-v1).",
+  "added": "S3 integer Smith cohomology, A2 fundamental units (both quadratic orders), O2b metric search, O3 set-valued noise."
+ }
+}

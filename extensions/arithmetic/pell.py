@@ -1,0 +1,128 @@
+#!/usr/bin/env python3
+"""Supplied-unit orbit compiler for x^2 - D y^2 = N (A1 producer, pell-orbits-v1).
+
+Seeds come from the proved reduction window (see check_pell.py); modular filters are
+full-state cycles of the unit map mod q (a permutation, det = 1, so no transient tail);
+height populations use the closed residue-count formula with an exact M(Y) found by
+exponential bracketing and binary search on the orbit index (integer comparisons only).
+The certificate is replayed by check_pell.py, which recounts by direct iteration.
+
+Model: {"D": 2, "N": -7, "unit": [3, 2], "filter": {"modulus": 3, "accept": [[x, y], ...]},
+        "height": 1000}            (filter and height optional)
+Usage: pell.py MODEL.json [--output CERT.json] [--max-states N] [--max-window N]
+"""
+from __future__ import annotations
+import argparse
+import json
+import sys
+from pathlib import Path
+
+HERE = Path(__file__).resolve().parent
+sys.path.insert(0, str(HERE))
+import check_pell as C  # noqa: E402
+
+
+def mat_pow(D, a, b, j, s=1):
+    """eps^j = (u + v sqrt D)/s for eps = (a + b sqrt D)/s, by binary powering in the order."""
+    mul = lambda x, y: ((x[0] * y[0] + D * x[1] * y[1]) // s, (x[0] * y[1] + x[1] * y[0]) // s)
+    r, base = (s, 0), (a, b)
+    while j:
+        if j & 1:
+            r = mul(r, base)
+        base = mul(base, base)
+        j >>= 1
+    return r
+
+
+def orbit_point(D, seed, a, b, j, s=1):
+    u, v = mat_pow(D, a, b, j, s)
+    x, y = seed
+    return (x * u + D * y * v) // s, (x * v + y * u) // s
+
+
+def last_index(D, seed, a, b, Y, s=1):
+    """Largest j >= 0 with y_j <= Y (y_j strictly increasing for j >= 1 on this branch), or -1."""
+    if orbit_point(D, seed, a, b, 0, s)[1] > Y:
+        return -1
+    hi = 1
+    while orbit_point(D, seed, a, b, hi, s)[1] <= Y:
+        hi *= 2
+    lo = hi // 2                      # y_lo <= Y < y_hi
+    while hi - lo > 1:
+        mid = (lo + hi) // 2
+        if orbit_point(D, seed, a, b, mid, s)[1] <= Y:
+            lo = mid
+        else:
+            hi = mid
+    return lo
+
+
+def compile_model(model, max_states=10 ** 6, max_window=10 ** 7):
+    unit_cert = None
+    if model.get('unit') == 'fundamental':
+        import units
+        unit_cert, _ = units.fundamental(model['D'])
+        if unit_cert is None:
+            return {'status': 'unknown', 'reason': 'fundamental unit search budget exhausted'}
+        unit_cert.pop('result')
+    D, N, a, b, s = C.read(model, {'unit_certificate': unit_cert} if unit_cert else None)
+    bound = b * b * N if N > 0 else a * a * (-N) // D + 1
+    if bound > max_window ** 2:
+        return {'status': 'unknown', 'reason': 'seed window exceeds the declared budget'}
+    seeds, end = C.window(D, N, a, b, s)
+    cert = {'format': C.FORMAT, 'model_sha256': C.digest(model), 'order': 'Z[sqrt D], integer coordinates',
+            'unit_identity': f'{a}^2 - {D}*{b}^2 = 1',
+            'seed_bound': ('y^2 < b^2 N, x > 0, y >= 0' if N > 0 else 'D y^2 < a^2 |N|, x >= 0, y > 0'),
+            'seeds': seeds, 'window_end_exclusive': end}
+    if unit_cert:
+        cert['unit_certificate'] = unit_cert
+    flt = model.get('filter')
+    if flt:
+        q = flt['modulus']
+        cert['cycles'] = []
+        if s == 2 and q % 2 == 0:
+            raise ValueError('maximal-order filters need an odd modulus')
+        h = pow(s, -1, q) if q > 1 else 0
+        for x, y in seeds:
+            st, z = [], [x % q, y % q]
+            while not st or z != st[0]:
+                st.append(z)
+                if len(st) > max_states:
+                    return {'status': 'unknown', 'reason': 'modular state budget exhausted'}
+                z = [(a * z[0] + D * b * z[1]) * h % q, (b * z[0] + a * z[1]) * h % q]
+            cert['cycles'].append({'states': st, 'period': len(st),
+                                   'accepted_indices': [k for k, z in enumerate(st) if C.accepted(z, flt)]})
+    Y = model.get('height')
+    if Y is not None:
+        total = acc = 0
+        for i, seed in enumerate(seeds):
+            M = last_index(D, seed, a, b, Y, s)
+            total += M + 1
+            if flt:
+                P, J = cert['cycles'][i]['period'], cert['cycles'][i]['accepted_indices']
+                acc += sum(1 + (M - r) // P for r in J if r <= M)
+        cert['height_count'] = {'height': Y, 'nonnegative_branch': total, 'accepted': acc if flt else None}
+    cert['status'] = 'complete'
+    cert['result'] = C.check(cert, model)
+    return cert
+
+
+def main():
+    ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap.add_argument('model', type=Path)
+    ap.add_argument('--output', type=Path)
+    ap.add_argument('--max-states', type=int, default=10 ** 6)
+    ap.add_argument('--max-window', type=int, default=10 ** 7)
+    a = ap.parse_args()
+    try:
+        cert = compile_model(json.loads(a.model.read_text()), a.max_states, a.max_window)
+    except (ValueError, KeyError, TypeError) as e:
+        print(json.dumps({'status': 'invalid_model', 'reason': str(e)}))
+        sys.exit(2)
+    if a.output and cert.get('status') == 'complete':
+        a.output.write_text(json.dumps(cert, indent=1) + '\n')
+    print(json.dumps({k: cert[k] for k in cert if k in ('status', 'seeds', 'height_count', 'reason')}, indent=2))
+
+
+if __name__ == '__main__':
+    main()

@@ -1,0 +1,44 @@
+{
+ "schema": "machinery-envelope-v1",
+ "witness_kind": "root-rigidity",
+ "coefficient_domain": "Q",
+ "model": {
+  "0,8": "1",
+  "4,4": "3",
+  "8,0": "1"
+ },
+ "model_sha256": "aaef94e400d3c5e88d417754228fbc6fbdde345ddba2b9c459bb4f29ce8dad2b",
+ "payload": {
+  "format": "root-rigidity-v1",
+  "hamiltonian": {
+   "0,8": "1",
+   "4,4": "3",
+   "8,0": "1"
+  },
+  "leading": "1",
+  "squarefree": [
+   [
+    "1",
+    "0",
+    "0",
+    "0",
+    "3",
+    "0",
+    "0",
+    "0",
+    "1"
+   ]
+  ]
+ },
+ "payload_sha256": "2b47fc0fdaeeaf7bd71a5ac31edea89cc41732dbefdbe31fbd6c0711f60d31aa",
+ "hypotheses": [
+  "root type of the top homogeneous part over Qbar via a verified square-free decomposition",
+  "routes of DYNAMIC_CORE_RESULTS.md section 5"
+ ],
+ "scope": "D_inf(H) when a proved route applies; otherwise reported open",
+ "source_ids": [
+  "D16-F03",
+  "D06-F02"
+ ],
+ "producer": "towre676-cloud/nonlinearhamiltonian extensions (exact rational, Python standard library)"
+}

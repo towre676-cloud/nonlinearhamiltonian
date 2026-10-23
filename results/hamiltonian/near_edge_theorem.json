@@ -1,0 +1,30 @@
+{
+ "schema": "machinery-envelope-v1",
+ "witness_kind": "near-edge",
+ "coefficient_domain": "Q",
+ "model": {
+  "family": "c l^(d-1) m + lower-order terms"
+ },
+ "model_sha256": "c7f3635c94d7c3e97e810da54b96d1416f2368d563c37a982b987af7a4c87f07",
+ "payload": {
+  "format": "near-edge-v1",
+  "identities": [
+   "E1",
+   "E2",
+   "E2_at1",
+   "E3",
+   "E4"
+  ]
+ },
+ "payload_sha256": "7b2d580d872781d3bde5864878de21b301bd908fb280c21d1f070a7e5eecbde0",
+ "hypotheses": [
+  "characteristic zero",
+  "first Newton-polygon edge; top-end determinants; Lemma F"
+ ],
+ "scope": "D_inf = span{1, H} unless H is affine in m",
+ "source_ids": [
+  "D16-F03",
+  "D06-F02"
+ ],
+ "producer": "towre676-cloud/nonlinearhamiltonian extensions (exact rational, Python standard library)"
+}

@@ -1,0 +1,13 @@
+{
+  "self_test": {
+    "status": "passed",
+    "pbw_commutation_checks": 4,
+    "composition_action_cases": 200,
+    "gate_definition_cases": 120,
+    "hamiltonian_derivation_cases": 40,
+    "valid_all_degree_receipts": 2,
+    "false_operator_receipts_rejected": 3,
+    "existing_direct_star_engine_cases": 40,
+    "implemented": "Exact operator arithmetic and receipt replay only; no Groebner discovery backend."
+  }
+}

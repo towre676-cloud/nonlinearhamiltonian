@@ -1,0 +1,31 @@
+{
+ "schema": "machinery-envelope-v1",
+ "witness_kind": "monomial-theorem",
+ "coefficient_domain": "Q",
+ "model": {
+  "family": "q^a p^b, a >= b, a + b >= 3"
+ },
+ "model_sha256": "f18a897c6354902e66d79ae8c642d2d63eade590ba843f64bd80286a4a8cd715",
+ "payload": {
+  "format": "monomial-theorem-v1",
+  "identities": [
+   "I1",
+   "I1_balanced",
+   "I2",
+   "I3",
+   "I4",
+   "I5"
+  ]
+ },
+ "payload_sha256": "3cdd0fdffd016cba5b6a4ae4abcff23d1e796c1f4b3488e346f0fddd6982cda9",
+ "hypotheses": [
+  "characteristic zero",
+  "ray analysis of the T_3 gate along D-orbits of monomials"
+ ],
+ "scope": "D_inf(q^a p^b) in all degrees for all exponents",
+ "source_ids": [
+  "D16-F03",
+  "D06-F02"
+ ],
+ "producer": "towre676-cloud/nonlinearhamiltonian extensions (exact rational, Python standard library)"
+}

@@ -1,0 +1,378 @@
+{
+ "schema": "machinery-envelope-v1",
+ "witness_kind": "noise-panel-selection",
+ "coefficient_domain": "Q",
+ "model": {
+  "dimension": 2,
+  "sensors": [
+   {
+    "name": "x_a",
+    "row": [
+     1,
+     0
+    ],
+    "cost": 1
+   },
+   {
+    "name": "x_b",
+    "row": [
+     1,
+     0
+    ],
+    "cost": 1
+   },
+   {
+    "name": "y",
+    "row": [
+     0,
+     1
+    ],
+    "cost": 3
+   }
+  ],
+  "noise": [
+   [
+    1,
+    "1/2",
+    0
+   ],
+   [
+    "1/2",
+    1,
+    0
+   ],
+   [
+    0,
+    0,
+    1
+   ]
+  ],
+  "targets": {
+   "mode": "finite_horizon",
+   "actions": {
+    "feed": [
+     [
+      1,
+      0
+     ],
+     [
+      1,
+      1
+     ]
+    ]
+   },
+   "target": [
+    [
+     0,
+     1
+    ]
+   ],
+   "horizon": 1
+  },
+  "contract": "per_target",
+  "gamma_squared": "2"
+ },
+ "model_sha256": "acb1f4b2292decfa567d7c661b941c7ef89807d45589accedaaaac5b6111a403",
+ "payload": {
+  "format": "noise-panel-v1",
+  "coefficient_domain": "Q",
+  "model_sha256": "acb1f4b2292decfa567d7c661b941c7ef89807d45589accedaaaac5b6111a403",
+  "tie_policy": "one_optimum",
+  "tree": {
+   "include": [],
+   "exclude": [],
+   "kind": "branch",
+   "sensor": 0,
+   "children": [
+    {
+     "include": [
+      0
+     ],
+     "exclude": [],
+     "kind": "branch",
+     "sensor": 1,
+     "children": [
+      {
+       "include": [
+        0,
+        1
+       ],
+       "exclude": [],
+       "kind": "branch",
+       "sensor": 2,
+       "children": [
+        {
+         "include": [
+          0,
+          1,
+          2
+         ],
+         "exclude": [],
+         "kind": "feasible",
+         "ldl": [
+          {
+           "L": [
+            [
+             "1",
+             "0"
+            ],
+            [
+             "0",
+             "1"
+            ]
+           ],
+           "d": [
+            "8/3",
+            "1"
+           ]
+          },
+          {
+           "L": [
+            [
+             "1",
+             "0"
+            ],
+            [
+             "-3/5",
+             "1"
+            ]
+           ],
+           "d": [
+            "5/3",
+            "2/5"
+           ]
+          }
+         ],
+         "rinv": [
+          [
+           "4/3",
+           "-2/3",
+           "0"
+          ],
+          [
+           "-2/3",
+           "4/3",
+           "0"
+          ],
+          [
+           "0",
+           "0",
+           "1"
+          ]
+         ]
+        },
+        {
+         "include": [
+          0,
+          1
+         ],
+         "exclude": [
+          2
+         ],
+         "kind": "infeasible",
+         "target": 0,
+         "vector": [
+          "0",
+          "1"
+         ],
+         "rinv": [
+          [
+           "4/3",
+           "-2/3"
+          ],
+          [
+           "-2/3",
+           "4/3"
+          ]
+         ]
+        }
+       ]
+      },
+      {
+       "include": [
+        0
+       ],
+       "exclude": [
+        1
+       ],
+       "kind": "branch",
+       "sensor": 2,
+       "children": [
+        {
+         "include": [
+          0,
+          2
+         ],
+         "exclude": [
+          1
+         ],
+         "kind": "feasible",
+         "ldl": [
+          {
+           "L": [
+            [
+             "1",
+             "0"
+            ],
+            [
+             "0",
+             "1"
+            ]
+           ],
+           "d": [
+            "2",
+            "1"
+           ]
+          },
+          {
+           "L": [
+            [
+             "1",
+             "0"
+            ],
+            [
+             "-1",
+             "1"
+            ]
+           ],
+           "d": [
+            "1",
+            "0"
+           ]
+          }
+         ],
+         "rinv": [
+          [
+           "1",
+           "0"
+          ],
+          [
+           "0",
+           "1"
+          ]
+         ]
+        },
+        {
+         "include": [
+          0
+         ],
+         "exclude": [
+          1,
+          2
+         ],
+         "kind": "infeasible",
+         "target": 0,
+         "vector": [
+          "0",
+          "1"
+         ],
+         "rinv": [
+          [
+           "1"
+          ]
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "include": [],
+     "exclude": [
+      0
+     ],
+     "kind": "branch",
+     "sensor": 1,
+     "children": [
+      {
+       "include": [
+        1
+       ],
+       "exclude": [
+        0
+       ],
+       "kind": "branch",
+       "sensor": 2,
+       "children": [
+        {
+         "include": [
+          1,
+          2
+         ],
+         "exclude": [
+          0
+         ],
+         "kind": "cost"
+        },
+        {
+         "include": [
+          1
+         ],
+         "exclude": [
+          0,
+          2
+         ],
+         "kind": "infeasible",
+         "target": 0,
+         "vector": [
+          "0",
+          "1"
+         ],
+         "rinv": [
+          [
+           "1"
+          ]
+         ]
+        }
+       ]
+      },
+      {
+       "include": [],
+       "exclude": [
+        0,
+        1
+       ],
+       "kind": "infeasible",
+       "target": 1,
+       "vector": [
+        "1",
+        "0"
+       ],
+       "rinv": [
+        [
+         "1"
+        ]
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  "optimum": {
+   "sensors": [
+    0,
+    2
+   ],
+   "cost": "4",
+   "names": [
+    "x_a",
+    "y"
+   ]
+  },
+  "status": "optimal"
+ },
+ "payload_sha256": "8d0403ea9695b54c07ad04f92fac06f6cf80365f7c72c9e4a64b0fe883b199a6",
+ "hypotheses": [
+  "deterministic ellipsoidal noise with declared joint matrix",
+  "initial static panel",
+  "worst case over all initial states",
+  "tie policy one_optimum"
+ ],
+ "scope": "exact optimum (or infeasibility) over all subsets of the finite menu",
+ "source_ids": [
+  "D15-F01",
+  "D15-F03",
+  "D12-F04"
+ ],
+ "producer": "towre676-cloud/nonlinearhamiltonian extensions (exact rational, Python standard library)"
+}

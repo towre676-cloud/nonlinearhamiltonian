@@ -1,0 +1,166 @@
+{
+ "schema": "machinery-envelope-v1",
+ "witness_kind": "weyl-polynomial-kernel",
+ "coefficient_domain": "Q",
+ "model": [
+  [
+   4,
+   0,
+   "1"
+  ]
+ ],
+ "model_sha256": "aeb2cb32fcc2ca7cd621246a7b4a96a89ad2ce61d9068cc9072773b0180957d0",
+ "payload": {
+  "format": "weyl-kernel-v1",
+  "coefficient_domain": "Q",
+  "receipt": {
+   "schema": "weyl-invariant-kernel-v1",
+   "field": "Q",
+   "hamiltonian": [
+    [
+     4,
+     0,
+     "1"
+    ]
+   ],
+   "generators": [
+    [
+     [
+      1,
+      0,
+      0,
+      3,
+      "1"
+     ]
+    ]
+   ],
+   "correction_containment": {
+    "3": [
+     {
+      "generator": 0,
+      "left_multiplier": [
+       [
+        0,
+        0,
+        0,
+        0,
+        "24"
+       ]
+      ]
+     }
+    ]
+   },
+   "provenance": [
+    [
+     {
+      "gate_order": 3,
+      "iterate": 0,
+      "left_multiplier": [
+       [
+        0,
+        0,
+        0,
+        0,
+        "1/24"
+       ]
+      ]
+     }
+    ]
+   ],
+   "closure": [
+    [
+     {
+      "generator": 0,
+      "left_multiplier": [
+       [
+        3,
+        0,
+        0,
+        1,
+        "4"
+       ]
+      ]
+     }
+    ]
+   ]
+  },
+  "support": {
+   "monomial_generators": [
+    0
+   ],
+   "common_factor": {
+    "constant": "1",
+    "linear_factors": [
+     [
+      "0",
+      "1",
+      "0"
+     ],
+     [
+      "0",
+      "1",
+      "-1"
+     ],
+     [
+      "0",
+      "1",
+      "-2"
+     ]
+    ]
+   },
+   "cofactors": [
+    [
+     [
+      0,
+      0,
+      "1"
+     ]
+    ]
+   ],
+   "multipliers": [
+    [
+     [
+      0,
+      0,
+      "1"
+     ]
+    ]
+   ],
+   "U": [
+    [
+     0,
+     "1"
+    ]
+   ],
+   "V": [
+    [
+     0,
+     "1"
+    ]
+   ]
+  },
+  "claim": {
+   "vertical_lines": [],
+   "horizontal_lines": [
+    0,
+    1,
+    2
+   ],
+   "progressions": [],
+   "points": [],
+   "kind": "monomial_span"
+  }
+ },
+ "payload_sha256": "48a63b457e1f0dafee07817b981a59708eebac7dab957cb9709b60e929631724",
+ "hypotheses": [
+  "flat Weyl-Moyal convention, one canonical pair",
+  "D = {H,.}, C_k = T_k(H,.) for odd k >= 3",
+  "coefficients in Q"
+ ],
+ "scope": "full dynamic exact core in all polynomial degrees",
+ "source_ids": [
+  "D16-F03",
+  "D06-F02"
+ ],
+ "producer": "towre676-cloud/nonlinearhamiltonian extensions (exact rational, Python standard library)"
+}

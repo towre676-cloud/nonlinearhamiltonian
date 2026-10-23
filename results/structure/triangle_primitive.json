@@ -1,0 +1,164 @@
+{
+ "schema": "machinery-envelope-v1",
+ "witness_kind": "rational-obstruction-answer",
+ "coefficient_domain": "Q",
+ "model": {
+  "field": "Q",
+  "dimensions": [
+   3,
+   3
+  ],
+  "differentials": [
+   [
+    [
+     -1,
+     1,
+     0
+    ],
+    [
+     0,
+     -1,
+     1
+    ],
+    [
+     1,
+     0,
+     -1
+    ]
+   ]
+  ]
+ },
+ "model_sha256": "ffe0ede7c2680b9d9ff068da5e03dca648f9156464fe950016080ab428be79cc",
+ "payload": {
+  "status": "solved",
+  "primitive": {
+   "rows": 3,
+   "cols": 1,
+   "entries": [
+    [
+     "-3"
+    ],
+    [
+     "-2"
+    ],
+    [
+     "0"
+    ]
+   ]
+  },
+  "schema": "rational-obstruction-answer-v1",
+  "field": "Q",
+  "degree": 1,
+  "cocycle": [
+   "1",
+   "2",
+   "-3"
+  ],
+  "contraction": {
+   "schema": "rational-contraction-v1",
+   "field": "Q",
+   "model_sha256": "ffe0ede7c2680b9d9ff068da5e03dca648f9156464fe950016080ab428be79cc",
+   "cohomology_dimensions": [
+    1,
+    1
+   ],
+   "i": [
+    {
+     "rows": 3,
+     "cols": 1,
+     "entries": [
+      [
+       "1"
+      ],
+      [
+       "1"
+      ],
+      [
+       "1"
+      ]
+     ]
+    },
+    {
+     "rows": 3,
+     "cols": 1,
+     "entries": [
+      [
+       "1"
+      ],
+      [
+       "0"
+      ],
+      [
+       "0"
+      ]
+     ]
+    }
+   ],
+   "p": [
+    {
+     "rows": 1,
+     "cols": 3,
+     "entries": [
+      [
+       "0",
+       "0",
+       "1"
+      ]
+     ]
+    },
+    {
+     "rows": 1,
+     "cols": 3,
+     "entries": [
+      [
+       "1",
+       "1",
+       "1"
+      ]
+     ]
+    }
+   ],
+   "h": [
+    {
+     "rows": 0,
+     "cols": 3,
+     "entries": []
+    },
+    {
+     "rows": 3,
+     "cols": 3,
+     "entries": [
+      [
+       "0",
+       "0",
+       "1"
+      ],
+      [
+       "0",
+       "-1",
+       "0"
+      ],
+      [
+       "0",
+       "0",
+       "0"
+      ]
+     ]
+    }
+   ]
+  },
+  "resources": {
+   "size": 6
+  }
+ },
+ "payload_sha256": "c7d22904e2e402c9eb92212b80ecd8732419d7bb676c9ffbe8c8731533dfee44",
+ "hypotheses": [
+  "finite cochain complex over Q"
+ ],
+ "scope": "rational cohomology only; no integral torsion statement",
+ "source_ids": [
+  "D05-F03",
+  "D05-F01"
+ ],
+ "producer": "towre676-cloud/nonlinearhamiltonian extensions (exact rational, Python standard library)"
+}

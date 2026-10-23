@@ -1,0 +1,98 @@
+{
+ "schema": "machinery-envelope-v1",
+ "witness_kind": "adaptive-experiment",
+ "coefficient_domain": "Q",
+ "model": {
+  "states": [
+   "a",
+   "b",
+   "c"
+  ],
+  "labels": {
+   "a": 0,
+   "b": 1,
+   "c": 1
+  },
+  "tests": [
+   {
+    "name": "t1",
+    "cost": 1,
+    "outcomes": {
+     "a": 0,
+     "b": 1,
+     "c": 1
+    }
+   },
+   {
+    "name": "t2",
+    "cost": 2,
+    "outcomes": {
+     "a": 1,
+     "b": 0,
+     "c": 1
+    }
+   },
+   {
+    "name": "t4",
+    "cost": 4,
+    "outcomes": {
+     "a": 0,
+     "b": 1,
+     "c": 2
+    }
+   }
+  ]
+ },
+ "model_sha256": "00081dabb5d76f6b213fb05d4e556e9acb9fe740af7043a4436346286103d03c",
+ "payload": {
+  "format": "adaptive-tree-v1",
+  "model_sha256": "00081dabb5d76f6b213fb05d4e556e9acb9fe740af7043a4436346286103d03c",
+  "status": "optimal",
+  "value": "1",
+  "tree": {
+   "states": [
+    "a",
+    "b",
+    "c"
+   ],
+   "kind": "test",
+   "test": 0,
+   "name": "t1",
+   "children": {
+    "0": {
+     "states": [
+      "a"
+     ],
+     "kind": "leaf",
+     "label": 0
+    },
+    "1": {
+     "states": [
+      "b",
+      "c"
+     ],
+     "kind": "leaf",
+     "label": 1
+    }
+   }
+  },
+  "lower_bounds": {
+   "a|b|c": "1",
+   "c": "0",
+   "b": "0",
+   "a": "0",
+   "a|c": "1",
+   "b|c": "0"
+  }
+ },
+ "payload_sha256": "db8b21fbae4792ebc39a411994fdb776f6c7a8db614f36b07940156dbb2472e2",
+ "hypotheses": [
+  "deterministic finite test table",
+  "positive exact costs"
+ ],
+ "scope": "exact minimum worst-case cost over adaptive policies",
+ "source_ids": [
+  "D15-F04"
+ ],
+ "producer": "towre676-cloud/nonlinearhamiltonian extensions (exact rational, Python standard library)"
+}
