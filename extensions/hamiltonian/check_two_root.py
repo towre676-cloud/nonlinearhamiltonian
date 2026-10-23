@@ -303,6 +303,8 @@ def classify(H):
                        active_part='open')
         elif CT.cubic_phase(H, l) == 'affine':                # Theorem A + Lemma C2 (deg b >= 2 here)
             out.update(route='pure, cubic phase affine', proved=True, core='span{1, H}', active_part='0')
+        elif te_applies(H, l):                                # check_gauge.py, Theorem TE
+            out.update(route='TE', proved=True, core='span{1, H}', active_part='0')
         else:
             out.update(route='pure, conjectural', proved=False, core='span{1, H} (conjectured)',
                        active_part='0 (conjectured)')
@@ -358,6 +360,18 @@ def tp_applies(H, l):
         return k >= 2 and k != s_
     import check_triangular as CT
     return s_ == 2 and k >= 3 and CT.detect(H, l) is None
+
+
+def te_applies(H, l):
+    """Theorem TE: transverse top c (l + gamma)^k with k = 1 or k = s (s >= 2)."""
+    Ht = coords(H, l)
+    s_ = max(j for i, j in Ht)
+    phi = {i: c for (i, j), c in Ht.items() if j == s_}
+    k = max(phi)
+    if s_ < 2 or k < 1 or (k != 1 and k != s_):
+        return False
+    gam = phi.get(k - 1, F(0)) / (k * phi[k])
+    return all(phi.get(i, F(0)) == phi[k] * comb(k, i) * gam ** (k - i) for i in range(k + 1))
 
 
 def hull_vertices(Ht):

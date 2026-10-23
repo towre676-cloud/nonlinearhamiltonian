@@ -146,6 +146,13 @@ K1P (cubic phase, f = 3): the top core of a P^3 + mu Q P is span{1, P, Q, P^2, E
 lam = 0.                                                                   [K1P: top cores, obstruction values]
 TP (transverse top l^k, 2 <= k != s): span{1, H} for s >= 3; for s = 2 span{1, H} or, on the extended K3
 H = c Q^(k-2) G^2 + beta G + r, span{1, G, H}.                         [TP: instances, extended K3 identities]
+TE (transverse top l^k, k in {1, s}): reduce to the first Newton edge E from Q^k m^s; level-K rows of T_j D^r g in
+(x1, c x0) (computed symbolically here); for k = s the rows with r >= 1 are proportional and the rank drops only on
+X = X5 = X7 = 0, excluded by an elimination (transverse_edge.json) with a positivity certificate; for k = 1 a chain
+argument and nonzero leading N-coefficients; s = 2 leaves exactly K3.        [TE: rows, elimination, instances]
+NT for deg w = 2 (cubic-phase threshold): twisted top problem exp(tA + t^2 B), weights (1, 2); the vertex forces the
+coefficients below the first deviation level k0 to vanish, and level k0 (levels 2-3 when k0 = 2) forces the top
+coefficient to vanish.                                                   [CT: twisted rows, minors, instances]
 
 Corollary K1c. (i) deg w = 2, H = F(P) + lambda Q, deg F >= 3: D_inf(H~) = K[P] + K Q exactly.
 (ii) deg w >= 3, H = F(P) + lambda Q, deg F >= 3: D_inf(H~) = span{1, H~}.     [K1c: instances]
@@ -1011,10 +1018,378 @@ def grid_TP():
                        {(1, 1): F(1), (3, 0): F(1), (0, 0): F(1)}))             # Q (Qm + Q^3)^2 + (Qm + Q^3) + 1
     return full_dim(H, 9) == 3
 
+# ---- Theorem TE: transverse tops l^k with k in {1, s} ----------------------------------------
+
+
+def _ffz(x, n):
+    out = Pz.of(1)
+    for i in range(n):
+        out = out * (x - i)
+    return out
+
+
+def _tcz(k, P, Q, x, z):
+    return sum((_ffz(P, k - l) * _ffz(Q, l) * _ffz(x, l) * _ffz(z, k - l) * ((-1) ** l * comb(k, l)) for l in range(k + 1)), Pz())
+
+
+def te_rows(kv, itop, ntop, ops):
+    """level-K rows (coefficient of x1, coefficient of c x0) of T_k D^r g for the edge with vertex q^kv p^s and
+    adjacent monomial c q^(kv+B) p^(s-K), g = x0 q^itop p^ntop + x1 q^(itop+B) p^(ntop-K) + ...; symbolic in N, B, s, K.
+    Terms are (q-exponent, p-exponent, coefficient, level, which x)."""
+    N, B, s, K = ZN, ZB, ZS, ZK
+    Fm = [(Pz.of(kv) if not isinstance(kv, Pz) else kv, s, Pz.of(1), 0)]
+    Fm.append((Fm[0][0] + B, s - K, Pz.of(1), 1))
+    G = [(itop, ntop, Pz.of(1), 0, 0), (itop + B, ntop - K, Pz.of(1), 1, 1)]
+    chains = [G]
+    for _ in range(max(r for _, r in ops)):
+        nxt = []
+        for (a, b, cf, lf) in Fm:
+            for (x, z, cg, lg, w) in chains[-1]:
+                if lf + lg <= 1:
+                    nxt.append((a + x - 1, b + z - 1, cf * cg * (a * z - b * x), lf + lg, w))
+        chains.append(nxt)
+    out = {}
+    for k, r in ops:
+        x1, cx0 = Pz(), Pz()
+        for (a, b, cf, lf) in Fm:
+            for (x, z, cg, lg, w) in chains[r]:
+                if lf + lg == 1:
+                    v = cf * cg * _tcz(k, a, b, x, z)
+                    if w == 1:
+                        x1 = x1 + v
+                    else:
+                        cx0 = cx0 + v
+        out[(k, r)] = (x1, cx0)
+    return out
+
+
+def _te_data():
+    d = json.loads((Path(__file__).resolve().parent / 'transverse_edge.json').read_text())
+    return d
+
+
+def _pz_from(terms, slots):
+    """terms [[exponents], 'coeff'] over variables mapped to Pz slots (indices into (N, b, s, K))."""
+    out = {}
+    for ex, c in terms:
+        key = [0, 0, 0, 0]
+        for e, sl in zip(ex, slots):
+            key[sl] += e
+        out[tuple(key)] = out.get(tuple(key), 0) + int(c)
+    return Pz(out)
+
+
+def _upoly_mul(a, b):
+    out = [F(0)] * (len(a) + len(b) - 1)
+    for i, x in enumerate(a):
+        for j, y in enumerate(b):
+            out[i + j] += x * y
+    return out
+
+
+def _upoly_add(a, b):
+    n = max(len(a), len(b))
+    return [(a[i] if i < len(a) else 0) + (b[i] if i < len(b) else 0) for i in range(n)]
+
+
+def _upoly_trim(a):
+    a = list(a)
+    while a and a[-1] == 0:
+        a.pop()
+    return a
+
+
+def _upoly_gcd(a, b):
+    a, b = _upoly_trim(a), _upoly_trim(b)
+    while b:
+        r = list(a)
+        while len(r) >= len(b) and r:
+            c = r[-1] / b[-1]
+            sh = len(r) - len(b)
+            for i, y in enumerate(b):
+                r[sh + i] -= c * y
+            r = _upoly_trim(r)
+        a, b = b, r
+    return a
+
+
+def _reduce_ud(P, Mv, sv):
+    """P(N, B, K, s) at N = M - s, s = sv, B = (u - d)/2, K = (u + d)/2, with u^2 -> U(d) = (-6Md + 8M + 3d^2 + 6d - 12)/(2M - 3);
+    returns (polynomial in d times (2M - 3)^e, e), or None if an odd power of u occurs."""
+    Nv = Mv - sv
+    biv = {}                                         # (u-power, d-power) -> coeff
+    for (eN, eB, es, eK), c in P.d.items():
+        base = F(c) * Nv ** eN * sv ** es
+        # ((u - d)/2)^eB ((u + d)/2)^eK
+        for i in range(eB + 1):
+            for j in range(eK + 1):
+                cc = base * comb(eB, i) * comb(eK, j) * (-1) ** (eB - i) / F(2) ** (eB + eK)
+                key = (i + j, eB - i + eK - j)
+                biv[key] = biv.get(key, F(0)) + cc
+    biv = {k: v for k, v in biv.items() if v}
+    if any(k[0] % 2 for k in biv):
+        return None
+    top = max((k[0] // 2 for k in biv), default=0)
+    Unum = [F(8 * Mv - 12), F(-6 * Mv + 6), F(3)]   # numerator of U in powers of d; denominator 2M - 3
+    den = F(2 * Mv - 3)
+    out = [F(0)]
+    for (ue, de), v in biv.items():
+        j = ue // 2
+        term = [F(0)] * de + [v]
+        for _ in range(j):
+            term = _upoly_mul(term, Unum)
+        term = [x * den ** (top - j) for x in term]
+        out = _upoly_add(out, term)
+    return _upoly_trim(out), top
+
+
+def grid_TE():
+    N, B, s, K = ZN, ZB, ZS, ZK
+    dat = _te_data()
+    X = _pz_from(dat['X'], (0, 1, 3, 2))
+    X5 = _pz_from(dat['X5'], (0, 1, 3, 2))
+    X7 = _pz_from(dat['X7'], (0, 1, 3, 2))
+    # --- vertex (q p)^s: rows with r >= 1 are proportional to (-s, N); the T3 scales cannot all vanish
+    R = te_rows(s, N, N, [(3, 0), (5, 0), (7, 0), (3, 1), (3, 2), (3, 3), (5, 1), (5, 2), (5, 3)])
+    for k in (3, 5):
+        for r in (1, 2, 3):
+            if R[(k, r)][0] * N + R[(k, r)][1] * s != Pz():
+                return False
+    Y = {1: -B ** 2 * s + 2 * B ** 2 - 2 * B * K * s - 2 * B * K + 6 * B * N + 9 * B * s - 12 * B - K ** 2 * s + 2 * K ** 2
+            - 6 * K * N - 9 * K * s + 12 * K + 6 * N ** 2 + 18 * N * s - 24 * N + 12 * s ** 2 - 32 * s + 22}
+    Y[2] = Y[1] + 6 * (s - 1) * (B - K + 2 * N + 4 * s - 5)
+    Y[3] = Y[2] + 6 * (s - 1) * (B - K + 2 * N + 6 * s - 7)
+    for r in (1, 2, 3):
+        if R[(3, r)][0] != (-1) ** r * s ** (r + 1) * (s - 1) * (B + K) ** (r + 1) * Y[r]:
+            return False
+    pre = -N * s * (B + K) * (s - N)
+    for k, Xk in ((3, X), (5, X5), (7, X7)):
+        if R[(k, 0)][0] * N + R[(k, 0)][1] * s != pre * Xk:
+            return False
+    # --- elimination: U solves X; X5, X7 reduce to f5, f7; Res_d(f5, f7) = 38400 (2M-3)^4 big(M, s)
+    f5 = _pz_from(dat['f5'], (0, 1, 2))            # (M, d, s) in slots (N, b, s)
+    f7 = _pz_from(dat['f7'], (0, 1, 2))
+    big = _pz_from(dat['big'], (0, 2))
+    ucoef = lambda P, Mv, sv: [sum(F(c) * Mv ** k[0] * sv ** k[2] for k, c in P.d.items() if k[1] == j)
+                               for j in range(P.deg(1) + 1)]
+    for Mv in range(0, 12):                            # the relations have degree <= 9 in M and <= 4 in s
+        for sv in range(0, 7):
+            rx = _reduce_ud(X, Mv, sv)
+            r5, r7 = _reduce_ud(X5, Mv, sv), _reduce_ud(X7, Mv, sv)
+            if rx is None or r5 is None or r7 is None or rx[0]:
+                return False
+            want5 = _upoly_mul([F(0), F(3), F(-3)], ucoef(f5, Mv, sv))
+            want7 = _upoly_mul([x * (2 * Mv - 3) for x in [F(0), F(3), F(-3)]], ucoef(f7, Mv, sv))
+            # normalize the powers of (2M - 3): r5 carries (2M-3)^e5, the relation is stated with (2M-3)^2, (2M-3)^4
+            got5 = [x * F(2 * Mv - 3) ** (2 - r5[1]) for x in r5[0]] if r5[1] <= 2 else None
+            got7 = [x * F(2 * Mv - 3) ** (4 - r7[1]) for x in r7[0]] if r7[1] <= 4 else None
+            if got5 is None or got7 is None or _upoly_trim(got5) != _upoly_trim(want5) or _upoly_trim(got7) != _upoly_trim(want7):
+                return False
+    dM = 4 * f5.deg(0) + 2 * f7.deg(0)
+    dS = 4 * f5.deg(2) + 2 * f7.deg(2)
+    for Mv in range(dM + 1):
+        for sv in range(dS + 1):
+            a, b = ucoef(f5, Mv, sv), ucoef(f7, Mv, sv)       # formal degrees 2 and 4 in d
+            a, b = (a + [F(0)] * 3)[:3], (b + [F(0)] * 5)[:5]
+            lhs = sylvester_det(list(reversed(a)), list(reversed(b)))
+            if lhs != 38400 * (2 * Mv - 3) ** 4 * big.at(N=Mv, s=sv):
+                return False
+    # positivity for s >= 15 (M = N + s >= s + 1)
+    sh = Pz()
+    for k, c in big.d.items():
+        sh = sh + Pz.of(c) * (N + s + 16) ** k[0] * (s + 15) ** k[2]
+    if any(v <= 0 for v in sh.d.values()):
+        return False
+    # 2 <= s <= 14: integer roots M >= s + 1 of big, then common roots of f5, f7 in d
+    admissible = []
+    for sv in range(2, 15):
+        M0 = sv + 1
+        while True:                                     # big(M0 + x, s) > 0 coefficientwise from some M0 on
+            shc = {}
+            for k, c in big.d.items():
+                for i in range(k[0] + 1):
+                    shc[i] = shc.get(i, 0) + c * sv ** k[2] * comb(k[0], i) * M0 ** (k[0] - i)
+            if all(v > 0 for v in shc.values()):
+                break
+            M0 += 1
+        for Mv in range(sv + 1, M0 + 1):
+            if big.at(N=Mv, s=sv) != 0:
+                continue
+            a, b = ucoef(f5, Mv, sv), ucoef(f7, Mv, sv)
+            if not _upoly_trim(a) and not _upoly_trim(b):
+                admissible.append((sv, Mv, 'all d'))
+                continue
+            g = _upoly_gcd(a, b)
+            for dv in range(-200, 0):
+                if g and sum(x * dv ** i for i, x in enumerate(g)) == 0:
+                    Uv = F(-6 * Mv * dv + 8 * Mv + 3 * dv * dv + 6 * dv - 12, 2 * Mv - 3)
+                    uv = int(round(float(Uv) ** 0.5)) if Uv >= 0 else -1
+                    if uv >= 0 and uv * uv == Uv and (uv + dv) % 2 == 0 and (uv + dv) // 2 >= 1 and (uv - dv) // 2 > (uv + dv) // 2:
+                        admissible.append((sv, Mv, dv))
+    if admissible != [(2, 3, 'all d')]:
+        return False
+    # at s = 2, N = 1: X = 3/2 (u^2 - (d - 2)^2) forces u = 2 - d, i.e. K = 1
+    X21 = Pz()
+    for k, c in X.d.items():
+        X21 = X21 + Pz({(0, k[1], 0, k[3]): c * 1 ** k[0] * 2 ** k[2]})
+    if 2 * X21 != 3 * ((B + K) ** 2 - (K - B - 2) ** 2):
+        return False
+    # --- vertex q p^s (phi linear): leading N-coefficients, and the rows at N = 1
+    for itop, lead in ((0, 3 * B ** 2 * s * (B - 1) ** 2 * (B + 1) * (s - 1) * (B * s + K + 2 * s - 2)),
+                       (1, 3 * B ** 2 * s * (B - 1) * (B + 1) ** 2 * (s - 1) * (B * s + K + 2 * s - 2))):
+        Rk = te_rows(1, Pz.of(itop), N, [(3, 0), (3, 1)])
+        m = Rk[(3, 0)][0] * Rk[(3, 1)][1] - Rk[(3, 0)][1] * Rk[(3, 1)][0]
+        cN = m.coeffs_in(0)
+        if cN[max(cN)] != lead:
+            return False
+    R1 = te_rows(1, Pz.of(1), Pz.of(1), [(3, 0), (3, 1), (3, 2), (5, 1), (5, 2)])
+    L = lambda r: B * s - 2 * B + 3 * K - (3 * r + 1) * s + 3 * r - 1
+    if R1[(3, 0)] != (-B * s * (B + 1) * (s - 1) * L(0), Pz()):
+        return False
+    for key in ((3, 1), (3, 2), (5, 1), (5, 2)):
+        if R1[key][0] * (B + K) + R1[key][1] * (B * s + K + s - 1) != Pz():
+            return False
+    if R1[(3, 1)][0] != B * s * (B + 1) * (s - 1) * (B * s + K + s - 1) * L(1) or \
+            R1[(3, 2)][0] != -B * s * (B + 1) * (s - 1) * (B * s + K) * (B * s + K + s - 1) * L(2):
+        return False
+    # --- instances (coordinates (l, m) = (q, p))
+    for H, N_, want in [({(1, 3): F(1), (5, 0): F(1)}, 6, 2), ({(1, 3): F(1), (3, 2): F(1), (6, 0): F(1), (0, 1): F(1)}, 7, 2),
+                        ({(3, 3): F(1), (7, 0): F(1)}, 8, 2), ({(3, 3): F(1), (5, 2): F(2), (8, 0): F(1), (1, 1): F(1)}, 9, 2),
+                        ({(2, 2): F(1), (5, 0): F(1), (0, 1): F(1)}, 7, 2), ({(1, 2): F(1), (4, 0): F(1), (2, 0): F(1)}, 6, 2)]:
+        if full_dim(TR.tidy(H), N_) != want:
+            return False
+    G = {(1, 1): F(1), (3, 0): F(1)}                                                 # K3, k = 2: G^2 + 1
+    if full_dim(TR.tidy(TR.add(TR.mul(G, G), {(0, 0): F(1)})), 8) != 3:
+        return False
+    return True
+
+# ---- Theorem NT for the cubic phase: threshold edges with deg w = 2 ---------------------------
+
+
+def _twops(k):
+    """k! [t^k] exp(t A + t^2 B), A = dQ1 dP2 - dP1 dQ2, B = dP1 dP2^2 + dP1^2 dP2: (coef, a1, b1, a2, b2, v)."""
+    out = {}
+    for v in range(k // 2 + 1):
+        u = k - 2 * v
+        base = factorial(k) // (factorial(u) * factorial(v))
+        for i in range(u + 1):
+            for j in range(v + 1):
+                key = (i, u - i + j + 2 * (v - j), u - i, i + 2 * j + (v - j), v)
+                out[key] = out.get(key, 0) + base * comb(u, i) * (-1) ** (u - i) * comb(v, j)
+    return [(c,) + key for key, c in out.items() if c]
+
+
+def tw_rows(Fm, G, targets, R=3, ks=(3, 5, 7)):
+    """rows of the twisted (cubic-phase) top gates T_k D^r g at the given levels. Fm, G: lists of
+    (q-exponent, p-exponent, coefficient, level, tag) with Pz entries; a level is (units, extra), the extra part
+    counting B-factors. Returns {(r, k, level): {(F-tags, g-tag): coefficient}}."""
+    top = max(targets)
+    keep = lambda lev: lev <= top
+    chains = [[(x, z, c, lev, (), t) for (x, z, c, lev, t) in G]]
+    for _ in range(R):
+        nxt = []
+        for (a, b, cf, lf, tf) in Fm:
+            for (x, z, cg, lg, fts, t) in chains[-1]:
+                lev = (lf[0] + lg[0], lf[1] + lg[1])
+                if keep(lev):
+                    nxt.append((a + x - 1, b + z - 1, cf * cg * (a * z - b * x), lev,
+                                tuple(sorted(fts + ((tf,) if tf else ()))), t))
+        chains.append(nxt)
+    out = {}
+    for r in range(R + 1):
+        for k in ks:
+            for (a, b, cf, lf, tf) in Fm:
+                for (x, z, cg, lg, fts, t) in chains[r]:
+                    for c, a1, b1, a2, b2, v in _twops(k):
+                        lev = (lf[0] + lg[0], lf[1] + lg[1] + v)
+                        if lev in targets:
+                            val = cf * cg * _ffz(a, a1) * _ffz(b, b1) * _ffz(x, a2) * _ffz(z, b2) * c
+                            key = (tuple(sorted(fts + ((tf,) if tf else ()))), t)
+                            d = out.setdefault((r, k, lev), {})
+                            d[key] = d.get(key, Pz()) + val
+    return out
+
+
+def grid_CT():
+    N, s, k0 = ZN, ZS, ZK
+    one = Pz.of(1)
+    vertex = [(Pz(), s, one, (0, 0), None)]
+    col = lambda rows, key, tags: [rows.get(key, {}).get(t, Pz()) for t in tags]
+
+    def det(M):
+        n = len(M)
+        if n == 1:
+            return M[0][0]
+        return sum(((-1) ** j * M[0][j] * det([row[:j] + row[j + 1:] for row in M[1:]]) for j in range(n)), Pz())
+    # (1) vertex only, type 0: the top P^N never contributes; level 2 fixes x1, x2
+    G0 = [(Pz(), N, one, (0, 0), 'x0'), (Pz.of(2), N - 1, one, (0, 1), 'x1'), (Pz.of(4), N - 2, one, (0, 2), 'x2')]
+    R = tw_rows(vertex, G0, {(0, 0), (0, 1), (0, 2)})
+    if any(v != Pz() for d in R.values() for (ft, t), v in d.items() if t == 'x0'):
+        return False
+    A = [col(R, (0, 3, (0, 2)), [((), 'x1'), ((), 'x2')]), col(R, (1, 3, (0, 2)), [((), 'x1'), ((), 'x2')])]
+    if det(A) != 576 * s ** 3 * (s - 2) * (s - 1) ** 3 * (N + s - 3):
+        return False
+    # (2) induction: the flat part of T3 on x_L at its own level is -(s)_3 (2L)_3 (L in the K slot)
+    RL = tw_rows(vertex, [(2 * k0, N - k0, one, (1, 0), 'x')], {(1, 0)}, R=0, ks=(3,))
+    if RL[(0, 3, (1, 0))][((), 'x')] != -s * (s - 1) * (s - 2) * (2 * k0) * (2 * k0 - 1) * (2 * k0 - 2):
+        return False
+    # (3) first deviation at level k0 (symbolic): rows in (x_k0, e x0)
+    Fk = vertex + [(2 * k0, s - k0, one, (1, 0), 'e')]
+    Gk = [(Pz(), N, one, (0, 0), 'x0'), (2 * k0, N - k0, one, (1, 0), 'xk')]
+    Rk = tw_rows(Fk, Gk, {(1, 0)}, R=1, ks=(3,))
+    tags = [((), 'xk'), (('e',), 'x0')]
+    m = det([col(Rk, (0, 3, (1, 0)), tags), col(Rk, (1, 3, (1, 0)), tags)])
+    if m != 16 * N * k0 ** 2 * s ** 2 * (s - N) * (k0 - 1) ** 2 * (2 * k0 - 3) * (2 * k0 - 1) ** 2 * (s - 2) * (s - 1) * (N + s - 3):
+        return False
+    # (4) types 1 and 2 die by level 2 (vertex only)
+    for i, keys, want in ((1, [(0, 3, (0, 1)), (0, 3, (0, 2)), (1, 3, (0, 2))], -25920 * N * s ** 4 * (s - 2) * (s - 1) ** 4 * (N + s - 3) ** 2),
+                          (2, [(0, 3, (0, 1)), (0, 3, (0, 2)), (1, 3, (0, 1))], 69120 * s ** 4 * (s - 2) ** 2 * (s - 1) ** 4 * (N + s - 2))):
+        Gi = [(Pz.of(i), N, one, (0, 0), 'x0'), (Pz.of(i + 2), N - 1, one, (0, 1), 'x1'), (Pz.of(i + 4), N - 2, one, (0, 2), 'x2')]
+        Ri = tw_rows(vertex, Gi, {(0, 1), (0, 2)}, R=1, ks=(3,))
+        if det([col(Ri, key, [((), 'x0'), ((), 'x1'), ((), 'x2')]) for key in keys]) != want:
+            return False
+    # (5) k0 = 2: levels 2 and 3 with E = P^s + e2 Q^4 P^(s-2) + e3 Q^6 P^(s-3); extended unknowns
+    F2 = vertex + [(Pz.of(4), s - 2, one, (0, 2), 'e2'), (Pz.of(6), s - 3, one, (0, 3), 'e3')]
+    G2 = [(Pz(), N, one, (0, 0), 'x0'), (Pz.of(2), N - 1, one, (0, 1), 'x1'), (Pz.of(4), N - 2, one, (0, 2), 'x2'),
+          (Pz.of(6), N - 3, one, (0, 3), 'x3')]
+    R2 = tw_rows(F2, G2, {(0, 2), (0, 3)}, R=3, ks=(3,))
+    ext = [(('e2',), 'x0'), (('e3',), 'x0'), ((), 'x1'), (('e2',), 'x1'), ((), 'x2'), ((), 'x3')]
+    allowed = set(ext) | {((), 'x0')}
+    if any(v != Pz() and t not in allowed for d in R2.values() for t, v in d.items()) or \
+            any(v != Pz() for d in R2.values() for t, v in d.items() if t == ((), 'x0')):
+        return False
+    keys = [(0, 3, (0, 2)), (1, 3, (0, 2)), (0, 3, (0, 3)), (1, 3, (0, 3)), (2, 3, (0, 3)), (3, 3, (0, 3))]
+    q = lambda N, s: 8 * N ** 2 * s - 11 * N ** 2 + 24 * N * s ** 2 - 87 * N * s + 72 * N + 16 * s ** 3 - 94 * s ** 2 + 177 * s - 105
+    m6 = det([col(R2, key, ext) for key in keys])
+    if m6 != -171992678400 * N ** 2 * s ** 10 * (s - N) ** 2 * (s - 2) * (s - 1) ** 4 * (N + s - 3) ** 2 * (N + s - 2) \
+            * (N + 2 * s - 5) * (N + 3 * s - 6) * q(N, s) or not positive_shift(q, 1, 3):
+        return False
+    # type 1 at k0 = 2: unknowns (x0, e2 x0, x1, x2)
+    G21 = [(one, N, one, (0, 0), 'x0'), (Pz.of(3), N - 1, one, (0, 1), 'x1'), (Pz.of(5), N - 2, one, (0, 2), 'x2')]
+    R21 = tw_rows(F2[:2], G21, {(0, 1), (0, 2)}, R=2, ks=(3,))
+    tags1 = [((), 'x0'), (('e2',), 'x0'), ((), 'x1'), ((), 'x2')]
+    kq = lambda N, s: 8 * N ** 2 * s - 11 * N ** 2 + 8 * N * s ** 2 - 33 * N * s + 28 * N - 2 * s ** 2 + 7 * s - 5
+    m4 = det([col(R21, key, tags1) for key in [(0, 3, (0, 1)), (0, 3, (0, 2)), (1, 3, (0, 2)), (2, 3, (0, 2))]])
+    if m4 != 622080 * N * s ** 6 * (s - 2) * (s - 1) ** 4 * (N + s - 3) * (N + 2 * s - 4) * kq(N, s) or not positive_shift(kq, 1, 3):
+        return False
+    # type 2 at k0 = 2: the determinant is linear in the x0-column, and the e2 x0-column contributes 0
+    G22 = [(Pz.of(2), N, one, (0, 0), 'x0'), (Pz.of(4), N - 1, one, (0, 1), 'x1'), (Pz.of(6), N - 2, one, (0, 2), 'x2')]
+    R22 = tw_rows(F2[:2], G22, {(0, 1), (0, 2)}, R=1, ks=(3,))
+    keys2 = [(0, 3, (0, 1)), (0, 3, (0, 2)), (1, 3, (0, 1))]
+    if det([col(R22, key, [((), 'x0'), ((), 'x1'), ((), 'x2')]) for key in keys2]) != \
+            69120 * s ** 4 * (s - 2) ** 2 * (s - 1) ** 4 * (N + s - 2) or \
+            det([col(R22, key, [(('e2',), 'x0'), ((), 'x1'), ((), 'x2')]) for key in keys2]) != Pz():
+        return False
+    # (6) instances
+    for h, N_ in [({(0, 3): F(1), (6, 0): F(1)}, 8), ({(0, 3): F(1), (4, 1): F(1)}, 8), ({(0, 3): F(1), (4, 1): F(2), (6, 0): F(-1), (0, 1): F(1)}, 8)]:
+        if full_dim(TR.tidy(CT.tri(h, {2: F(1)})), N_) != 2:
+            return False
+    return True
+
 
 def identities():
     return {'GG': grid_GG(), 'T3': grid_T3(), 'AE': grid_AE(), 'K1c': grid_K1c(), 'C2': grid_C2(),
-            'NA': grid_NA(), 'TG': grid_TG(), 'GE': grid_GE(), 'BE': grid_BE(), 'NT': grid_NT(), 'NV': grid_NV(), 'NV32': grid_NV32(), 'K2U': grid_K2U(), 'LB': grid_LB(), 'K1P': grid_K1P(), 'TP': grid_TP()}
+            'NA': grid_NA(), 'TG': grid_TG(), 'GE': grid_GE(), 'BE': grid_BE(), 'NT': grid_NT(), 'NV': grid_NV(), 'NV32': grid_NV32(), 'K2U': grid_K2U(), 'LB': grid_LB(), 'K1P': grid_K1P(), 'TP': grid_TP(), 'TE': grid_TE(), 'CT': grid_CT()}
 
 
 def check(cert=None):
@@ -1033,7 +1408,7 @@ def check(cert=None):
                        'non-affine binomial edges collapse (Theorem NA), general first edges (NE), the boundary edge (NB), '
                        'threshold edges with deg w >= 3 (NT), edges below the threshold and flat lower terms (NV); '
                        'K2 and K1+K2 exact (K2U), linear b for higher shears (LB), K1\' with f = 3 (K1P), '
-                       'perfect-power transverse tops and the extended K3 (TP)'}
+                       'perfect-power transverse tops and the extended K3 (TP), transverse tops l^k with k in {1, s} (TE), cubic-phase threshold edges (CT)'}
 
 
 def main():

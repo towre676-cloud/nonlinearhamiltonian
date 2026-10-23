@@ -956,12 +956,29 @@ Together with Q′, K2 and NA, this settles the `m`-degree-2 tops with constant 
 
 Only `T₃`, `T₅` and depth `R ≤ 2` are used.
 
-*The case `e = 2`* is the cubic phase, which Conjecture P004 excludes. It is not closed by these steps:
-- Type 2 closes at step 1, with minor `−576s²(s−2)(s−1)³(N+s−2)`.
-- Type 1 closes at step 2 for `N ≥ 1`. The eliminant `N(N+s−3)(N+2s−4)(8N²s − 11N² + 8Ns² − 33Ns + 28N − 2s² + 7s − 5)` is nonzero there. At `N = 0` (that is, `g = q`) it fails exactly when `c₂/c₁² = (s−1)/(2s)`, i.e. when `E` has no `Q⁴P^{s−2}` term.
-- Type 0 at step 3 has a one-dimensional kernel in the extended unknowns `(x₀, c₂x₀, c₃x₀, x₁, c₂x₁, x₂, x₃)`. That kernel is consistent precisely at the binomial point `(c₂, c₃)/c₁^{2,3} = (C(s,2)/s², C(s,3)/s³)`, with `g = (p + q²/s)^N`.
+**Theorem NT, the case `e = 2` (cubic-phase threshold edges).** For `deg w = 2`, `s ≥ 3` and a first edge at slope exactly `1/2`, again `D∞(H) = span{1, H}`.
 
-These `e = 2` computations were done in scratch with exact symbolic algebra and are not yet in a checker. So for `e = 2` the obstruction lives exactly where `F` agrees with `(p + q²/s)^s` to the order examined. A proof needs a first-deviation argument at the first nonzero `e_k` (`k ≥ 2`). Direct computation finds `span{1, F}` in every sampled case.
+*Proof.* Work in `(Q, P)`.
+1. *The top problem.* The cubic-phase gates `k![tᵏ] exp(tA + t²B)`, with `A = ∂_{Q₁}∂_{P₂} − ∂_{P₁}∂_{Q₂}` and `B = ∂_{P₁}∂_{P₂}² + ∂_{P₁}²∂_{P₂}` (normalized), are homogeneous for the weights `(1, 2)`. So the top problem is the twisted core of the edge `E = Pˢ + Σ_{k ≥ k₀} e_k Q^{2k}P^{s−k}`, where `e_{k₀} ≠ 0` and `k₀ ≥ 2` by the normal form.
+2. *Levels.* The output of `A^uB^v` from `F`-level `ℓ_F` and `g`-level `ℓ_g` sits at level `ℓ_F + ℓ_g + v`.
+3. *The vertex alone.* The twisted vertex core is spanned by `Pⁿ` and `Q`.
+   - The top `Pⁿ` of a type-0 element contributes nothing through the vertex, because an odd gate needs a `Q`-derivative.
+   - At level 2 the rows `T₃g` and `T₃Dg` in `(x₁, x₂)` have minor `576s³(s−2)(s−1)³(N+s−3)`.
+   - At level `L ≥ 3` the coefficient of `x_L` is `−(s)₃(2L)₃ ≠ 0`.
+   - So below the deviation, `x₁ = … = x_{k₀−1} = 0`.
+   - Types 1 and 2 die by level 2. The minors are `−25920·N s⁴(s−2)(s−1)⁴(N+s−3)²` and `69120·s⁴(s−2)²(s−1)⁴(N+s−2)`.
+   - `Q` dies too: `DQ = −E_P` has a type-0 top with `N = s − 1`.
+4. *Level `k₀ ≥ 3`.* The rows `T₃g` and `T₃Dg` in `(x_{k₀}, e·x₀)` have minor
+   `16·N k₀²s²(s−N)(k₀−1)²(2k₀−3)(2k₀−1)²(s−2)(s−1)(N+s−3)`,
+   so `x₀ = 0` unless `N ∈ {0, s}`.
+5. *`k₀ = 2`.* Here levels 2 and 3 are needed, in the extended unknowns `(e₂x₀, e₃x₀, x₁, e₂x₁, x₂, x₃)`.
+   - The six `T₃` rows have the determinant
+     `−171992678400·N²s¹⁰(s−N)²(s−2)(s−1)⁴(N+s−3)²(N+s−2)(N+2s−5)(N+3s−6)·q(N, s)`,
+     where `q = 8N²s − 11N² + 24Ns² − 87Ns + 72N + 16s³ − 94s² + 177s − 105 > 0`.
+   - Type 1 at `k₀ = 2` has the 4×4 minor `622080·N s⁶(s−2)(s−1)⁴(N+s−3)(N+2s−4)` times a positive quadratic.
+   - Type 2 is unaffected by `e₂`. ∎
+
+This also explains the earlier flat computation. There the obstruction at step 3 sat exactly at the binomial point. In the twisted coordinates that point is `e₂ = e₃ = 0`, i.e. `k₀ ≥ 4`, which step 4 above covers.
 
 **Theorem NV (vertex-adjacent rigidity).** Let `F` be weight-homogeneous with vertex `p^s` (`s ≥ 3`) and vertex-adjacent monomial `c·q^B p^{s−K}` with `c ≠ 0`, `B ≥ 4` and `K ≥ 1`; every other monomial has lower `p`-degree. Then the flat core of `F` is `span{1, F}`.
 
@@ -1002,6 +1019,7 @@ For the quadratic-shear oscillator `(q² + p)² + κq²/2` with `κ ≠ 0`, `R =
   - the closed-form level-`K` rows, compared with the gates on a box in `(B, K, s, N)`;
   - the four minors, as exact polynomial identities in `(N, B, s, K)`;
   - flat cores of four weighted forms, including `p⁴ − q⁴p²` and one with an intermediate lattice step;
+- **[CT]** the cubic-phase threshold case, using a symbolic twisted monomial calculus with `k₀` as a polynomial variable. It checks the level-2 and induction coefficients, the symbolic level-`k₀` minor, the type-1 and type-2 minors, and the `k₀ = 2` determinant with its positivity certificates. It also computes three full cores;
 - **[NT]** five parts:
   - the closed-form step-1 rows, compared with the gates on a `9 × 7 × 7` box in `(b, s, N)`;
   - the `e = 3` step-2 rows, on a box in `(N, s)` at two values of `c`;
@@ -1011,7 +1029,7 @@ For the quadratic-shear oscillator `(q² + p)² + κq²/2` with `κ ≠ 0`, `R =
 
 `check_two_root.py` reports these Hamiltonians on the proved routes `NA`, `NE`, `NB`, `NT` and `NV`.
 
-### 6.14 Upper bounds: K2, K1+K2, K1′ with `f = 3`, linear `b`, perfect-power transverse tops; P004 refuted as stated
+### 6.14 Upper bounds and the transverse tops: K2, K1+K2, K1′, K3 exact; linear `b`; P004 refuted, P005 proved
 
 All four results below use the same device. Some grading makes `D` weight-preserving to leading order, with top part `D₀`. The top components of core elements of weight `n` form a `D₀`-invariant space `V_n`. The leading part of `T₃` (or of the top gates) cuts this space down. When `D₀` is diagonalizable with simple spectrum, `V_n` is spanned by the eigenvectors it contains, and those can be tested one at a time.
 
@@ -1076,6 +1094,50 @@ With Theorem AE and Lemma C2 this completes the higher-shear affine sector: `D�
    - The constant term then gives `Qr' − (k−2)r = c₀`, i.e. `r ∈ span{1, Q^{k−2}}`.
 3. *Conversely,* `{H, G} = (k−2)H − (k−2)βG + (Qr' − (k−2)r)` for such `H`. Since `G` is affine in `m` with a linear coefficient, its gates vanish on the `m`-quadratic `H`. ∎
 
+**Theorem TE (transverse tops `(ℓ+γ)ᵏ` with `k = 1` or `k = s`).** Let `H` be a pure top with `m`-degree `s ≥ 2` and transverse top `φ = c(ℓ+γ)ᵏ`, where `k = 1` or `k = s`.
+- If `s ≥ 3`, then `D∞(H) = span{1, H}`.
+- If `s = 2`, then `D∞(H) = span{1, H}` unless `H` is in K3, where it is the K3 span.
+
+So K3 is exact for every `k`.
+
+*Proof.* Put `Q = ℓ + γ`. The top monomial `QᵏMˢ` now has an infinite core (Theorem M), so we pass to the first edge of the Newton polygon.
+1. *Reduction to the first edge.* For weights `(m : 1, Q : t)`, the vertex `V₀ = Qᵏmˢ` is the top for small `t > 0`. The first edge `E` from `V₀` has slope `t₁ = K/B < 1`, where `cQ^{k+B}m^{s−K}` is the adjacent monomial. Since `H_d = cQ^d` with `d > k + s`, we have `B > K ≥ 1`. By the top-weight lemma, `gr D∞(H) ⊆ D∞(E)`.
+2. *Level-`K` rows.* Take a weight-homogeneous `g ∈ D∞(E)`. Its `m`-top `x₀QⁱMᴺ` lies in the vertex core: `i ∈ {0, 1}` for `k = 1`, and `i = N` for `k = s`. At level `K` only `V₀ ⊗ x₁Q^{i+B}m^{N−K}` and `cQ^{k+B}m^{s−K} ⊗ x₀QⁱMᴺ` contribute. So each `T_jDʳg` gives a row in `(x₁, c·x₀)`.
+3. *`k = s`.*
+   - *The rows with `r ≥ 1`.* They are all proportional to `(−s, N)`, with scale factors `Y_r`. The differences `Y₂ − Y₁ = 6(s−1)(B − K + 2N + 4s − 5)` and `Y₃ − Y₂ = 6(s−1)(B − K + 2N + 6s − 7)` cannot vanish together, so some such row is nonzero.
+   - *When the rank drops.* Only if the cross terms `X`, `X₅`, `X₇` of the rows `T₃g`, `T₅g`, `T₇g` with `(−s, N)` all vanish.
+   - *Elimination.* `X = 0` gives `u² = (B+K)² = U(d)` with `d = K − B`. Then `X₅` and `X₇` reduce to `f₅(d)` and `f₇(d)`, and `Res_d(f₅, f₇) = 38400(2M−3)⁴·big(M, s)` with `M = N + s`.
+   - *Ruling out solutions.* `big(M, s) > 0` for `s ≥ 15` and `M ≥ s + 1`. For `2 ≤ s ≤ 14`, the integer roots `M ≥ s + 1` give no admissible `(B, K)`. The one exception is `s = 2, N = 1`. There `f₅ ≡ f₇ ≡ 0`, and `X = (3/2)(u² − (d−2)²)` forces `K = 1`.
+
+   So `x₀ = 0` unless `N ∈ {0, s}`, apart from that single `s = 2` case. Every later term `Q^{N+bj}m^{N−aj}` lies outside `K[Qm]` and dies.
+4. *`k = 1`.*
+   - *The chain argument.* The top part of `D` maps `mᴺ ↦ N·m^{N+s−1}` and `Qmᴺ ↦ (N − s)·Qm^{N+s−1}`. So a surviving top with `N ≥ 1` (type 0), or with `N ∉ {1, s}` (type 1), would produce surviving tops of arbitrarily large `N`. For `s ≥ 3` the type-1 top `Q` (`N = 0`) also continues forever.
+   - *Large `N`.* The leading `N`-coefficient of the `(T₃g, T₃Dg)` minor is `3B²s(B∓1)²(B±1)(s−1)(Bs + K + 2s − 2) ≠ 0`. So large `N` always has rank 2, and those tops do not survive.
+   - *`N = 1` (top `Qm`).* The rows with `r ≥ 1` are proportional to `(Bs + K + s − 1, −(B + K))`, and `T₃g = (−Bs(B+1)(s−1)L₀, 0)` with `L₀ = B(s−2) + 3K − (s+1)`. For `B > K ≥ 1`, `L₀` vanishes only when `s = 2` and `K = 1`.
+5. *Conclusion for `s ≥ 3`.* `D∞(E) = span{1, E}`, so `dim D∞(H) ≤ 2`.
+6. *`s = 2`.*
+   - If `K ≥ 2`, the same argument gives `span{1, H}`.
+   - If `K = 1`, the only extra tops are `Qm`, and `Q` for `k = 1`; a `Q`-element would produce a `Qm`-element through `D`.
+   - A core element with top `Qm` has the form `g = Qm + αm + u(Q)` with `deg u ≤ B`. The `m²`-part of `{H, g}` forces `α = 0`. The closure `{H, g} ∈ span(core)` then reproduces the K3 equations: `H = G² + const` for `k = 2`, and `H = Q⁻¹G² + r` with `deg Qr ≤ 2` for `k = 1`. ∎
+
+**Corollary (P005 holds).** Every pure top outside the non-affine cubic phase has `D∞(H) = span{1, H}`, or the exact span of its family (K1, K1′, K2, K1+K2, K3, K4). The cases:
+- `s ≤ 1`: P⁺.
+- Constant `φ`, outside the cubic phase: §§6.10–6.12 and Theorems K2U, LB.
+- The affine cubic phase: K1, K1′ (Theorem K1P for `f = 3`), K4 and Lemma C2.
+- `deg φ ≥ 1`: Theorems T, TP and TE.
+
+What remains open is the non-affine cubic phase with a `Q`-linear first edge. Cubic-phase threshold edges are covered by Theorem NT (case `e = 2`).
+
+- **[TE]** The checker computes the level-`K` rows itself, as exact polynomials in `(N, B, s, K)`, using a monomial calculus with polynomial exponents. Against these it checks:
+  - the proportionality of the rows with `r ≥ 1`;
+  - the scale identities;
+  - the cross terms `X`, `X₅`, `X₇` (stored in `transverse_edge.json`, compared exactly);
+  - the reductions to `f₅` and `f₇` on a grid larger than their degrees;
+  - the resultant identity on a `37 × 17` grid;
+  - positivity of `big` for `s ≥ 15`, and an exact scan of `2 ≤ s ≤ 14` (only `(s, M) = (2, 3)` survives, where `K = 1` is forced);
+  - for `k = 1`, the leading `N`-coefficients and the rows at `N = 1`;
+  - seven full cores.
+
 `check_gauge.py` covers these as follows:
 - **[K2U]** the reduced third gate on random instances, and two full cores;
 - **[LB]** the monomial formula for `C₁` and the eigenvector identity on grids, the top core computed for four `(f, e)`, and two full cores;
@@ -1107,9 +1169,9 @@ These references come from a first search. Before any external positioning they 
 - it solves for the translation `τ` exactly and tests the normal forms;
 - it reports the core, the active part, and whether the answer is proved or conjectural. The proved routes are:
   - Theorems U, P⁺, Q, Q′, B, NE and T;
-  - K1, K1′, K2, K1+K2, K4, and K3 with `k ≥ 3` (§6.14);
-  - RS, NA, NE, NB, NT, NV, TP and the affine cubic phase (§§6.9–6.14);
-- for K3 with `k ≤ 2` it reports a span that is proved to lie in the core, with equality marked conjectural.
+  - K1, K1′, K2, K1+K2, K3 and K4 (§6.14);
+  - RS, NA, NE, NB, NT, NV, TP, TE and the affine cubic phase (§§6.9–6.14);
+- the non-affine cubic phase is reported as open.
 
 Enveloped examples are `results/hamiltonian/tworoot_*.json` and `binomial_*.json`.
 
@@ -1125,25 +1187,26 @@ The tests generate random members of every route and random affine changes of co
 Proved:
 - `s ≤ 1` (Theorem P⁺).
 - `deg φ ≥ 2` and not a perfect power (Theorem T).
-- `φ = c(ℓ+γ)ᵏ` with `2 ≤ k ≠ s` (Theorem TP). For `s = 2` this includes the exact core of the extended K3 with `k ≥ 3`.
+- `φ = c(ℓ+γ)ᵏ`, any `k ≥ 1`: Theorem TP for `2 ≤ k ≠ s`, Theorem TE for `k ∈ {1, s}`. This includes the exact core of the extended K3.
 - `φ` constant, with `h` affine in `Q`: the whole shear phase diagram of §6.11, including linear `b` (Theorems K1P and LB).
 - K2 and K1+K2 are exact (Theorem K2U).
 - `φ` constant, with `h` non-affine: every first edge above the slope threshold (Theorems NA and NE), every edge at the threshold for `deg w ≥ 3` (Theorem NT), every edge below the threshold and every flat-lower-terms top (Theorem NV), and the whole `m`-degree-2 range `deg r ≥ 3` (Theorems NA and NB).
-  For `s ≥ 3` this covers every non-affine normal form unless `deg w = 2`. A non-affine `h` has `s − 1 − α > 0` automatically, and every slope is above, at or below the threshold. Inside the cubic phase (`deg w = 2`), which P004 and P005 exclude, the cases left are threshold edges and first edges whose `Q`-terms are all linear in `Q`.
+  For `s ≥ 3` this covers every non-affine normal form, except, in the cubic phase, first edges whose `Q`-terms are all linear in `Q`. A non-affine `h` has `s − 1 − α > 0` automatically, and every slope is above, at or below the threshold. The cubic-phase threshold is the case `e = 2` of Theorem NT.
 - `s = 2` with `deg w < deg r/2` (Theorem Q′).
 
 Open, but supported by direct computation and top-problem solutions:
-- threshold edges in the cubic phase `deg w = 2` (§6.12, after Theorem NT; outside P005);
-- transverse tops `φ = c(ℓ+γ)ᵏ` with `k = 1` (linear `φ`) or `k = s`. This includes the K3 upper bound for `k ≤ 2`. Here the top monomial `QᵏMˢ` has an infinite core (Theorem M), so the argument of Theorem TP does not apply.
+- only the non-affine cubic phase with a `Q`-linear first edge: `deg w = 2`, `h` not affine in `Q`, and first edge `Pˢ + μQP^r` (which forces `r ≥ (s+1)/2`). P005 excludes it. Its top core is the large affine-type core (K1, K1′, K4), so a second-order analysis is needed. Direct computation gives `span{1, H}` in the cases sampled (`s = 5`).
 
-With §5 this gives a statement of when **active** exact dynamics survives a lower-order perturbation. It is conditional on Conjecture P005 in the open regions just listed:
+**Conjecture P005 is therefore proved** (§6.14, Corollary after Theorem TE).
+
+With §5 this gives a statement of when **active** exact dynamics survives a lower-order perturbation. Only the non-affine cubic phase is left open:
 - three or more roots in the top: never (proved);
 - unequal top: a single active quadratic `G`, exactly in the normal form of Theorem U (proved);
 - near top: an infinite active sector exactly when `H` is affine in `m` (proved, Theorems P⁺ and NE);
 - pure top:
   - an infinite active sector in the affine or strip structures of Theorem P⁺ (proved);
   - an infinite active sector also in the triangular family K1 with `λ ≠ 0`, e.g. `(q² + p)³ + q` (proved, §6.8);
-  - a nonzero finite active part in K1′, K2, K3 and K4 (exact except K3 with `k ≤ 2`, where it is a containment);
+  - a nonzero finite active part in K1′, K2, K3 and K4 (all exact);
   - none otherwise (proved for Q′, T, RS, NA and the affine cubic phase; conjectural in the open regions);
 - balanced top: never (proved, Theorem B).
 

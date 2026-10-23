@@ -145,7 +145,8 @@ def tri_samples(rng):
     out.append(CT.tri({(0, 3): F(1), (2, 0): F(1), (1, 1): F(1)}, {3: F(1)}))      # NA, higher shear
     out.append(CT.tri({(0, 3): F(1), (2, 1): F(1)}, w2))                           # NE: cubic phase, non-binomial edge
     out.append(CT.tri({(0, 2): F(1), (4, 0): F(1)}, w2))                           # NB: boundary edge (p+q^2)^2 + q^4
-    out.append(CT.tri({(0, 3): F(1), (6, 0): F(1)}, w2))                           # cubic phase, edge slope 1/2: open
+    out.append(CT.tri({(0, 3): F(1), (6, 0): F(1)}, w2))                           # NT: cubic phase, edge slope 1/2
+    out.append(CT.tri({(0, 5): F(1), (1, 3): F(1), (2, 0): F(1)}, w2))             # cubic phase, Q-linear first edge: open
     out.append(CT.tri({(0, 3): F(1), (6, 1): F(1)}, {3: F(1)}))                    # NT: threshold edge, e = 3
     out.append(CT.tri({(0, 3): F(1), (5, 1): F(1), (1, 0): F(1)}, w2))             # NV: below the threshold
     out.append(CT.tri({(0, 5): F(1), (4, 0): F(1)}, {1: F(1)}))                    # NV: flat lower terms, deg w = 1
@@ -190,7 +191,7 @@ class Triangular(unittest.TestCase):
             if want is not None:
                 self.assertEqual(filtered_dim(H, N, 8), want, (H, res))
             seen.add(res['route'])
-        for r in ('K1', "K1'", 'K2', 'K1+K2', 'K3', 'K4', 'RS', 'NA', 'NE', 'NB', 'NT', 'NV', 'TP', 'pure, conjectural',
+        for r in ('K1', "K1'", 'K2', 'K1+K2', 'K3', 'K4', 'RS', 'NA', 'NE', 'NB', 'NT', 'NV', 'TP', 'TE',
                   'pure, cubic phase', 'pure, cubic phase affine'):
             self.assertIn(r, seen)
 

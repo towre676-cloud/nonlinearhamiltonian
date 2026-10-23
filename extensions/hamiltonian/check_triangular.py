@@ -436,9 +436,9 @@ def detect(H, l):
             if L.rank([x[:-1] for x in rows], 2) != L.rank(rows, 3):
                 return None
             gens = [{(0, 0): F(1)}, Gx, Ht]
-            out = {'family': 'K3', 'core': 'span{1, G, H}', 'gens': gens}
+            out = {'family': 'K3', 'core': 'span{1, G, H}', 'gens': gens,
+                   'proved': True}                         # check_gauge.py, Theorems TP (k >= 3) and TE (k = 2)
             if k >= 3:
-                out['proved'] = True                       # check_gauge.py, Theorem TP (s = 2)
                 if beta:
                     out['beta'] = str(beta)
         else:
@@ -446,7 +446,7 @@ def detect(H, l):
             if Qr and max(Qr) > 2:
                 return None
             gens = [{(0, 0): F(1)}, {(1, 0): F(1), (0, 0): -gam}, Gx, Ht]
-            out = {'family': 'K3', 'core': 'span{1, Q, G, H}', 'gens': gens}
+            out = {'family': 'K3', 'core': 'span{1, Q, G, H}', 'gens': gens, 'proved': True}   # Theorem TE
         out['G'] = TR.ser(_to_qp(Gx, l))
         out['degrees'] = sorted(TR.degree(_to_qp(g, l)) for g in out['gens'])
     if out is None:
@@ -522,7 +522,7 @@ def na_applies(H, l):
 
 def edge_route(H, l):
     """'NA' (binomial edge), 'NE' (general first edge), 'NB' (boundary edge P^2 + c Q^(2e)) 'NT' (threshold
-    edge, s >= 3, e >= 3) or 'NV' (s >= 3; an edge below the threshold, or any edge when deg w <= 1, whose
+    edge, s >= 3) or 'NV' (s >= 3; an edge below the threshold, or any edge when deg w <= 1, whose
     vertex-adjacent monomial has Q-exponent >= 4 or is Q^3 P^(s-2)) when the corresponding theorem of check_gauge.py applies; else None."""
     fe = first_edge(H, l)
     if fe is None:
@@ -542,7 +542,7 @@ def edge_route(H, l):
         return 'NB'
     if s >= 3 and alpha > thr and alpha < s - 1 and (e >= 3 or any(i >= 2 for i, _ in edge)):
         return 'NE'
-    if s >= 3 and e >= 3 and alpha == F(1, e):
+    if s >= 3 and alpha == F(1, e):                 # e = 2: the cubic-phase case of Theorem NT (identity CT)
         return 'NT'
     return None
 
