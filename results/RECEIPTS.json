@@ -256,7 +256,7 @@
    "sha256": "cc6974e0406a71c29aa3a5a076f25a1b6d733d8d1b5d1a62c9432a6faa3e72dc",
    "witness_kind": "binary-static",
    "replay": "python3 -B extensions/envelope.py check results/hamiltonian/binary_static_d5.json",
-   "producer_seconds": 1.97,
+   "producer_seconds": 2.06,
    "summary": {
     "status": "passed",
     "degree": 5,
@@ -279,7 +279,7 @@
    "sha256": "1de10350f40f04e7ce31b8638105b219730386c2837c1d0d4614353ad5f88e5b",
    "witness_kind": "binary-static",
    "replay": "python3 -B extensions/envelope.py check results/hamiltonian/binary_static_d6.json.gz",
-   "producer_seconds": 29.36,
+   "producer_seconds": 28.58,
    "summary": {
     "status": "passed",
     "degree": 6,
@@ -304,7 +304,7 @@
    "sha256": "034f692ee1eb42de332fe7957aa7194bee70cfcb96ef1ed10bf44b30d43a545a",
    "witness_kind": "weyl-polynomial-kernel",
    "replay": "python3 -B extensions/envelope.py check results/hamiltonian/binomial_q4_plus_p2.json",
-   "producer_seconds": 0.94,
+   "producer_seconds": 0.93,
    "summary": {
     "status": "passed",
     "kind": "finite_support",
@@ -320,7 +320,7 @@
    "sha256": "75bc78fabd0135381c86404e9ca102128eface5cfa3c64770b0e0f7b4dd9f4fe",
    "witness_kind": "weyl-polynomial-kernel",
    "replay": "python3 -B extensions/envelope.py check results/hamiltonian/binomial_q5_plus_p2.json",
-   "producer_seconds": 5.86,
+   "producer_seconds": 5.75,
    "summary": {
     "status": "passed",
     "kind": "finite_support",
@@ -336,7 +336,7 @@
    "sha256": "6c0ecb1b7d225ebf9101fc9baf33f047fbdea4f02681b9ae45afd92ac16ca930",
    "witness_kind": "weyl-polynomial-kernel",
    "replay": "python3 -B extensions/envelope.py check results/hamiltonian/binomial_qp2_plus_q2.json",
-   "producer_seconds": 0.54,
+   "producer_seconds": 0.55,
    "summary": {
     "status": "passed",
     "kind": "degree_bound",
@@ -357,7 +357,7 @@
    "sha256": "6e43ecd75520985638548c2bd09ff853fc9ffeebf2e0e133a43378c664ba9a69",
    "witness_kind": "weyl-polynomial-kernel",
    "replay": "python3 -B extensions/envelope.py check results/hamiltonian/binomial_qp4_plus_q2.json.gz",
-   "producer_seconds": 97.53,
+   "producer_seconds": 91.7,
    "summary": {
     "status": "passed",
     "kind": "finite_support",
@@ -373,7 +373,7 @@
    "sha256": "534faca9032f74b9272de092d65c355c2dc8d88007d83890d8f5d58726148376",
    "witness_kind": "cubic-phase",
    "replay": "python3 -B extensions/envelope.py check results/hamiltonian/cubic_phase_theorem.json",
-   "producer_seconds": 85.6,
+   "producer_seconds": 82.68,
    "summary": {
     "status": "passed",
     "identities": [
@@ -389,10 +389,10 @@
   },
   {
    "file": "results/hamiltonian/gauge_shear_theorem.json",
-   "sha256": "7ac4e0e1631efd464445aba1a4388031e4665a9fc91e723ba5e4b20540011b66",
+   "sha256": "9d8867ff70e0eff15dbe710ab3e108e2e08f533ab891d919a72df7b00bd72cea",
    "witness_kind": "gauge-shear",
    "replay": "python3 -B extensions/envelope.py check results/hamiltonian/gauge_shear_theorem.json",
-   "producer_seconds": 241.23,
+   "producer_seconds": 241.06,
    "summary": {
     "status": "passed",
     "identities": [
@@ -405,10 +405,11 @@
      "NA",
      "NT",
      "NV",
+     "NV32",
      "T3",
      "TG"
     ],
-    "theorem": "gauge form for every shear; third-gate formula; higher-shear affine rigidity; Q-degree containment (b constant, quadratic, degree >= 3; b linear with f >= 4 in the cubic phase); K1, K1' (f >= 4) and K4 exact; non-affine binomial edges collapse (Theorem NA), general first edges (NE), the boundary edge (NB), threshold edges with deg w >= 3 (NT) and edges below the threshold (NV)"
+    "theorem": "gauge form for every shear; third-gate formula; higher-shear affine rigidity; Q-degree containment (b constant, quadratic, degree >= 3; b linear with f >= 4 in the cubic phase); K1, K1' (f >= 4) and K4 exact; non-affine binomial edges collapse (Theorem NA), general first edges (NE), the boundary edge (NB), threshold edges with deg w >= 3 (NT), edges below the threshold and flat lower terms (NV)"
    }
   },
   {
@@ -436,7 +437,7 @@
    "sha256": "1d8d97a8664aace21e72224db1585fa1c4c0d47101add73788b4b77c764dd8ec",
    "witness_kind": "near-edge",
    "replay": "python3 -B extensions/envelope.py check results/hamiltonian/near_edge_theorem.json",
-   "producer_seconds": 0.54,
+   "producer_seconds": 0.51,
    "summary": {
     "status": "passed",
     "identities": [
@@ -455,7 +456,7 @@
    "sha256": "81d544b5ad07acdd81207e1fa2fb26a6af789a3806535391d213f121fcc551e7",
    "witness_kind": "weyl-polynomial-kernel",
    "replay": "python3 -B extensions/envelope.py check results/hamiltonian/p3_plus_q2.json",
-   "producer_seconds": 0.35,
+   "producer_seconds": 0.36,
    "summary": {
     "status": "passed",
     "kind": "finite_support",
@@ -471,7 +472,7 @@
    "sha256": "27891d689f15bb1f120cc0dc9f94e8959bfe5572a9b4b2483bcb7b49a739b300",
    "witness_kind": "weyl-polynomial-kernel",
    "replay": "python3 -B extensions/envelope.py check results/hamiltonian/q2p2.json",
-   "producer_seconds": 0.05,
+   "producer_seconds": 0.07,
    "summary": {
     "status": "passed",
     "kind": "monomial_span",
@@ -486,7 +487,7 @@
    "sha256": "6d156ab553bfd2e0553630585cbe83af263ebf07789904a853d3a60d6f1ee11a",
    "witness_kind": "weyl-polynomial-kernel",
    "replay": "python3 -B extensions/envelope.py check results/hamiltonian/q2p3.json",
-   "producer_seconds": 0.66,
+   "producer_seconds": 0.71,
    "summary": {
     "status": "passed",
     "kind": "monomial_span",
@@ -520,7 +521,7 @@
    "sha256": "0dcfde7d3f049402198fd5ec3a426011b5b7ff733963d1ba39f7dd92bd329643",
    "witness_kind": "weyl-polynomial-kernel",
    "replay": "python3 -B extensions/envelope.py check results/hamiltonian/q3p3.json",
-   "producer_seconds": 1.32,
+   "producer_seconds": 1.36,
    "summary": {
     "status": "passed",
     "kind": "monomial_span",
@@ -535,7 +536,7 @@
    "sha256": "35d808b42d0ee44d54dd3347fdd556a2d1f7b3e0f19371b562d57f4583a8ed91",
    "witness_kind": "weyl-polynomial-kernel",
    "replay": "python3 -B extensions/envelope.py check results/hamiltonian/qp3.json",
-   "producer_seconds": 0.0,
+   "producer_seconds": 0.01,
    "summary": {
     "status": "passed",
     "kind": "monomial_span",
@@ -551,7 +552,7 @@
    "sha256": "e4542034edbb319e0c62cf27c74f3400e81ef8b9867a095f39c29c2a557eadf3",
    "witness_kind": "weyl-polynomial-kernel",
    "replay": "python3 -B extensions/envelope.py check results/hamiltonian/qp3_plus_p2.json",
-   "producer_seconds": 0.04,
+   "producer_seconds": 0.02,
    "summary": {
     "status": "passed",
     "kind": "monomial_span",
@@ -567,7 +568,7 @@
    "sha256": "63178c67289d8207358cd0e4f173bf4629e4440776b5ee297afe0eaf3ee9265b",
    "witness_kind": "weyl-polynomial-kernel",
    "replay": "python3 -B extensions/envelope.py check results/hamiltonian/qp3_plus_q2.json",
-   "producer_seconds": 13.03,
+   "producer_seconds": 13.84,
    "summary": {
     "status": "passed",
     "kind": "finite_support",
@@ -583,7 +584,7 @@
    "sha256": "ef885cfa7dc83a780d0b420d6daf7c33c7b6039ad0714876199838f7905587c3",
    "witness_kind": "weyl-polynomial-kernel",
    "replay": "python3 -B extensions/envelope.py check results/hamiltonian/qp3_plus_q2_plus_p2.json.gz",
-   "producer_seconds": 222.97,
+   "producer_seconds": 221.11,
    "summary": {
     "status": "passed",
     "kind": "degree_bound",
@@ -625,7 +626,7 @@
    "sha256": "d4d56c5d421ba4fbde00d767f862860009c9261a10c035e6ace59c21475e8ad5",
    "witness_kind": "quartic-uniform",
    "replay": "python3 -B extensions/envelope.py check results/hamiltonian/quartic_all_degrees_theorem.json",
-   "producer_seconds": 97.53,
+   "producer_seconds": 105.87,
    "summary": {
     "status": "passed",
     "theorem": "D_inf(H) = span{1, H} for every binary quartic with distinct roots",
@@ -916,7 +917,7 @@
    "sha256": "c38f292ca4069cd6a080e57c60d0570b7e91fafe71a7ebc3dce268877309a94e",
    "witness_kind": "weyl-polynomial-kernel",
    "replay": "python3 -B extensions/envelope.py check results/hamiltonian/sextic_q4p2.json",
-   "producer_seconds": 1.47,
+   "producer_seconds": 1.41,
    "summary": {
     "status": "passed",
     "kind": "monomial_span",
@@ -966,7 +967,7 @@
    "sha256": "2b3c89184ff0efca749cc5a884afd4a9afccbc7a23c0df8e0e782b8ae3af1277",
    "witness_kind": "simple-root-rigidity",
    "replay": "python3 -B extensions/envelope.py check results/hamiltonian/simple_root_rigidity.json",
-   "producer_seconds": 85.66,
+   "producer_seconds": 87.23,
    "summary": {
     "status": "passed",
     "N0": {
@@ -1066,7 +1067,7 @@
    "sha256": "22856d95c459ec905344c1129cb9f2bbe9176bf6185cef2c46a7c38c04f555e3",
    "witness_kind": "weyl-top-reduction",
    "replay": "python3 -B extensions/envelope.py check results/hamiltonian/six_a1_b2_c3_e1.json",
-   "producer_seconds": 18.67,
+   "producer_seconds": 18.7,
    "summary": {
     "status": "passed",
     "claim": "finite",
@@ -1094,7 +1095,7 @@
    "sha256": "6b1413ead18dd6dd9b655a130f86c5ea449812aea821b51dae9baa35e1b75e04",
    "witness_kind": "weyl-top-reduction",
    "replay": "python3 -B extensions/envelope.py check results/hamiltonian/six_a_minus2_b_half_d5.json",
-   "producer_seconds": 18.66,
+   "producer_seconds": 17.94,
    "summary": {
     "status": "passed",
     "claim": "finite",
@@ -1206,7 +1207,7 @@
    "sha256": "9c1e3df602718c08f3f07cdb8805ea9c7a0f3fa17c48dde8d2c95160462cdcb7",
    "witness_kind": "triangular-pure",
    "replay": "python3 -B extensions/envelope.py check results/hamiltonian/triangular_theorem.json",
-   "producer_seconds": 2.03,
+   "producer_seconds": 1.6,
    "summary": {
     "status": "passed",
     "identities": [
@@ -1494,7 +1495,7 @@
    "sha256": "3adb557ca11313caaecfc9fde8f34390b23fc84c52dfb93e6f211a6860e43045",
    "witness_kind": "dgla-lifting",
    "replay": "python3 -B extensions/envelope.py check results/structure/heisenberg_lift_order4.json",
-   "producer_seconds": 3.83,
+   "producer_seconds": 3.88,
    "summary": {
     "status": "passed",
     "claim": "lifted",
@@ -1506,7 +1507,7 @@
    "sha256": "aaa660e5b0c09bc7dc72f9edae5c4b8b80fa1083fc4ff2adb4c629438f3e8bad",
    "witness_kind": "dgla-lifting",
    "replay": "python3 -B extensions/envelope.py check results/structure/heisenberg_order2_obstruction.json",
-   "producer_seconds": 3.57,
+   "producer_seconds": 3.62,
    "summary": {
     "status": "passed",
     "claim": "obstructed",
@@ -1519,7 +1520,7 @@
    "sha256": "282a180e5de9be3bc51cc8a309d617da5bff275d6e4c9e5ccb2d73dd54e6f4a0",
    "witness_kind": "dgla-lifting",
    "replay": "python3 -B extensions/envelope.py check results/structure/heisenberg_order3_jet_obstruction.json",
-   "producer_seconds": 3.56,
+   "producer_seconds": 4.03,
    "summary": {
     "status": "passed",
     "claim": "obstructed",

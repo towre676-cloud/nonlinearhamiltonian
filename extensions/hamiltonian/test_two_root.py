@@ -149,6 +149,7 @@ def tri_samples(rng):
     out.append(CT.tri({(0, 3): F(1), (6, 1): F(1)}, {3: F(1)}))                    # NT: threshold edge, e = 3
     out.append(CT.tri({(0, 3): F(1), (5, 1): F(1), (1, 0): F(1)}, w2))             # NV: below the threshold
     out.append(CT.tri({(0, 5): F(1), (4, 0): F(1)}, {1: F(1)}))                    # NV: flat lower terms, deg w = 1
+    out.append({(0, 4): F(1), (3, 2): F(1), (6, 0): F(1), (1, 1): F(1)})           # NV: flat lower terms, B = 3, K = 2
     out.append(CT.tri({(0, 2): F(1), (3, 0): F(1)}, w2))                           # NA, m-degree 2: (p+q^2)^2 + q^3
     # near misses: conjectured span{1, H}, or open (cubic phase)
     out.append(CT.tri({(0, 3): F(1)}, {3: F(1)}))                                  # cubic in P, e = 3

@@ -971,9 +971,15 @@ These `e = 2` computations were done in scratch with exact symbolic algebra and 
    - type 2, pair `(T₃D²g, T₃D³g)`: `(N+s−2)(N+2s−2)(N+3s−5)`.
 3. *Conclusion.* Therefore `x₀ = 0` unless `(i, N) ∈ {(0, 0), (0, s)}`. The next surviving term of `g` either has `q`-exponent `≥ 3` and dies, or is again of type 1 or 2, and the argument repeats. ∎
 
+*The case `B = 3`, `K = 2`.* Here `F = p^s + q³p^{s−2} + cq⁶p^{s−4} + …` with lattice step `(3, 2)`.
+- Types 1 and 2 close at level 2. The minors are `−144s²(s−2)(s−1)·f₁` and `−1440s⁴(s−2)(s−1)·f₂`, where
+  - `f₁ = 6N²s − 9N² + 6Ns² − 24Ns + 21N − (s−1)(s−2)` is negative at `N = 0` and positive for `N ≥ 1`;
+  - `f₂ = 6N²s − 9N² + 18Ns² − 54Ns + 39N + 4(s−1)(s−2)(3s−4)` is positive.
+- Type 0 closes at level 4. After `x₁ = λx₀`, the `T₃Dg`/`T₃D²g` pair eliminates `x₂` and `c` together, leaving `12960·N s⁴(s−N)(s−2)(s−1)(N+s−3)·f₀·x₀ = 0`. Here `f₀ = 6N²s − 9N² + 12Ns² − 54Ns + 51N − 16s² + 60s − 50`, which equals `−4(s−1)(s−2)` at `N = 1` and is positive for `N ≥ 2`.
+
 **Corollary (edges below the threshold; flat lower terms).** Let `s ≥ 3`.
 - If the first edge of the normal form `h` from `P^s` has slope `K/B < 1/e` with `e = deg w ≥ 2`, then `D∞(H) = span{1, H}`. The shear terms then have lower weight, so the top problem is the flat core of the edge. The normal form has `K ≥ 2`, so `B > eK ≥ 4` automatically.
-- If `deg w ≤ 1`, the shear is affine-symplectic and the flat gates are invariant. Hence `D∞(H) = span{1, H}` whenever the vertex-adjacent `Q`-exponent `B` of the first edge is at least 4.
+- If `deg w ≤ 1`, the shear is affine-symplectic and the flat gates are invariant. A pure top forces the first-edge slope `K/B < 1`, and the normal form forces `K ≥ 2`. So either `B ≥ 4`, or `(B, K) = (3, 2)`, and both cases give `D∞(H) = span{1, H}`. Every flat-lower-terms pure top therefore collapses.
 
 With `K = 1`, Theorem NV re-proves NT for `e ≥ 4`, using depth 3 in place of the resultant argument. Theorem NV uses only `T₃` and depth `R ≤ 3`.
 
@@ -989,6 +995,7 @@ For the quadratic-shear oscillator `(q² + p)² + κq²/2` with `κ ≠ 0`, `R =
 - **[TG]** the two diagonal identities and the closed form of the cubic-phase top gates, on random polynomials;
 - **[GE]** non-binomial edges (cubic phase and `e = 3`), whose full cores are computed directly;
 - **[BE]** the identity for `K(e)`, verified at 9 values of `e`, plus boundary flat cores for `e = 2, 3, 4` and several `c`;
+- **[NV32]** the `B = 3`, `K = 2` rows against the gates, the three eliminants as exact identities, the sign facts (positivity after shifting), and three flat instances;
 - **[NV]** three parts:
   - the closed-form level-`K` rows, compared with the gates on a box in `(B, K, s, N)`;
   - the four minors, as exact polynomial identities in `(N, B, s, K)`;
@@ -1040,13 +1047,13 @@ Proved:
 - `s ≤ 1` (Theorem P⁺).
 - `deg φ ≥ 2` and not a perfect power (Theorem T).
 - `φ` constant, with `h` affine in `Q`: the whole shear phase diagram of §6.11, except linear `b` (the 6-dimensional K1′ sector for `f = 3`, and higher shears).
-- `φ` constant, with `h` non-affine: every first edge above the slope threshold (Theorems NA and NE), every edge at the threshold for `deg w ≥ 3` (Theorem NT), every edge below the threshold (Theorem NV), and the whole `m`-degree-2 range `deg r ≥ 3` (Theorems NA and NB).
+- `φ` constant, with `h` non-affine: every first edge above the slope threshold (Theorems NA and NE), every edge at the threshold for `deg w ≥ 3` (Theorem NT), every edge below the threshold and every flat-lower-terms top (Theorem NV), and the whole `m`-degree-2 range `deg r ≥ 3` (Theorems NA and NB).
+  For `s ≥ 3` this covers every non-affine normal form unless `deg w = 2`. A non-affine `h` has `s − 1 − α > 0` automatically, and every slope is above, at or below the threshold. Inside the cubic phase (`deg w = 2`), which P004 excludes, the cases left are threshold edges and first edges whose `Q`-terms are all linear in `Q`.
 - `s = 2` with `deg w < deg r/2` (Theorem Q′).
 
 Open, but supported by direct computation and top-problem solutions:
 - threshold edges in the cubic phase `deg w = 2` (§6.12, after Theorem NT);
 - `φ` linear or a perfect power outside K3;
-- `φ` constant with `deg w ≤ 1` and `s ≥ 3` (flat lower terms), when the vertex-adjacent `Q`-exponent of the first edge is at most 3 (Theorem NV covers `≥ 4`);
 - the upper bounds for K2, K3 and K1′ with `f = 3`.
 
 With §5 this gives a statement of when **active** exact dynamics survives a lower-order perturbation. It is conditional on Conjecture P004 in the open regions just listed:

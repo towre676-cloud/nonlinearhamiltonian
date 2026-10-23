@@ -130,6 +130,11 @@ i = 2, (T3D^2g, T3D^3g): (N+s-2)(N+2s-2)(N+3s-5)(B-3).... So x0 = 0 unless (i, N
 term either dies (q-exponent >= 3) or is again of type 1 or 2. Consequences (top-weight lemma): every first edge
 below the slope threshold (there K >= 2 by the normal form, so B > eK >= 4) and, for deg w <= 1, every first edge
 with B >= 4 gives D_inf(H~) = span{1, H~}. With K = 1 this re-proves NT for e >= 4.        [NV: rows, minors, instances]
+Case B = 3, K = 2 (the only other flat-lower-terms case: a pure top forces slope K/B < 1, the normal form K >= 2):
+F = p^s + q^3 p^(s-2) + c q^6 p^(s-4) + ..., lattice step (3, 2). Types 1, 2 close at level 2 (minors with factors
+f1, f2 of fixed sign); type 0 at level 4 by the T3 D g / T3 D^2 g eliminant, free of c, with factor f0
+(negative at N = 1, positive for N >= 2). So every flat-lower-terms pure top (deg w <= 1, s >= 3) collapses.
+                                                                                  [NV32: rows, eliminants, signs, instances]
 
 Corollary K1c. (i) deg w = 2, H = F(P) + lambda Q, deg F >= 3: D_inf(H~) = K[P] + K Q exactly.
 (ii) deg w >= 3, H = F(P) + lambda Q, deg F >= 3: D_inf(H~) = span{1, H~}.     [K1c: instances]
@@ -612,6 +617,13 @@ def grid_NT():
     m30 = A['T3Dg2'] * r3['T3DDg2'][2] - A['T3DDg2'] * r3['T3Dg2'][2]
     if m30 != 25920 * N * s ** 4 * (s - N) * (s - 1) ** 2 * (s - 2) * (N + s - 3) * (3 * N ** 2 + 6 * N * s - 18 * N - 10 * s + 20):
         return False
+    q1 = lambda N, s: 3 * N ** 2 + 3 * N * s - 9 * N - s + 2
+    q2 = lambda N, s: 3 * N ** 2 + 9 * N * s - 15 * N + 6 * s ** 2 - 19 * s + 14
+    q0 = lambda N, s: 3 * N ** 2 + 6 * N * s - 18 * N - 10 * s + 20
+    if not (positive_shift(q1, 1, 3) and positive_shift(q2, 0, 3) and positive_shift(q0, 2, 3)):
+        return False
+    if q1(0, s) != 2 - s or q0(1, s) != 5 - 4 * s:
+        return False
     # (b) the minors, exactly
     k0 = b ** 2 * (b - 2) * (b - 1) * (s - 2) * (s - 1)
     r0, r1, r2 = (nt_rows(i, N, b, s) for i in (0, 1, 2))
@@ -759,9 +771,89 @@ def flat_core_dims_w(Fh, a, b, Wmax, R=4):
     return out
 
 
+def positive_shift(f, n0, s0):
+    """every coefficient of f(n0 + N, s0 + s) is positive, so f > 0 for N >= n0, s >= s0."""
+    return all(v > 0 for v in f(n0 + ZN, s0 + ZS).d.values())
+
+
+def nv32_rows(N, s, c):
+    """B = 3, K = 2: (x0, x1, x2) coefficients for F = p^s + q^3 p^(s-2) + c q^6 p^(s-4) and
+    g = x0 q^i p^N + x1 q^(i+3) p^(N-2) + x2 q^(i+6) p^(N-4); keys (i, row, level/2)."""
+    k = (s - 2) * (s - 1)
+    return {(0, 'T3g', 1): (6 * N * (N - 2) * (N - 1), -6 * s * k, 0),
+            (0, 'T3Dg', 2): (-18 * N * (-N ** 3 + 3 * N ** 2 * s + 6 * N * s ** 2 - 27 * N * s + 19 * N + 20 * c * s ** 3 - 60 * c * s ** 2
+                                        + 40 * c * s + 2 * s ** 3 - 18 * s ** 2 + 46 * s - 30),
+                             18 * s * (-N + 3 * s - 3) * (N ** 2 - 3 * N + 4 * s ** 2 - 12 * s + 10), 360 * s ** 2 * k),
+            (0, 'T3DDg', 2): (36 * N * s * (-N ** 3 - 3 * N ** 2 * s + 9 * N ** 2 - 6 * N * s ** 2 + 27 * N * s - 32 * N + 20 * c * s ** 3
+                                            - 60 * c * s ** 2 + 40 * c * s + 2 * s ** 3 - 2 * s ** 2 - 14 * s + 20),
+                              -36 * s ** 2 * (-N ** 3 - 3 * N ** 2 * s + 9 * N ** 2 - 16 * N * s ** 2 + 57 * N * s - 52 * N + 12 * s ** 3
+                                              - 32 * s ** 2 + 6 * s + 20), -720 * s ** 3 * k),
+            (1, 'T3g', 1): (-6 * N * (N - 1) * (-N + 3 * s - 4), -24 * s * k, 0),
+            (1, 'T3Dg', 1): (-6 * s * (N ** 3 + 3 * N ** 2 * s - 6 * N ** 2 + 6 * N * s ** 2 - 21 * N * s + 17 * N - s ** 2 + 3 * s - 2),
+                             24 * s ** 2 * k, 0),
+            (2, 'T3Dg', 1): (12 * s * (-N ** 3 - 3 * N * s ** 2 + 9 * N * s - 5 * N + 6 * s ** 3 - 29 * s ** 2 + 45 * s - 22), 120 * s ** 2 * k, 0),
+            (2, 'T3DDg', 1): (12 * s ** 2 * (N ** 3 + 6 * N ** 2 * s - 9 * N ** 2 + 21 * N * s ** 2 - 63 * N * s + 44 * N + 6 * s ** 3
+                                             - 23 * s ** 2 + 27 * s - 10), -120 * s ** 3 * k, 0)}
+
+
+def nv32_direct(N, s, c):
+    Fh = TR.tidy({(0, s): F(1), (3, s - 2): F(1), (6, s - 4): F(c)})
+    D, C3 = W.derivation(Fh), W.gate(Fh, 3)
+    out = {}
+    for (i, name, lev) in nv32_rows(0, 3, 0):
+        r = {'T3g': 0, 'T3Dg': 1, 'T3DDg': 2}[name]
+
+        def op(g):
+            for _ in range(r):
+                g = W.act(D, g)
+            return W.act(C3, g)
+        pe = N + r * (s - 1) + s - 3 - 2 * lev
+        wt = 3 * s * (r + 1) + 2 * i + 3 * N - 5 * (r + 3)
+        mon = ((wt - 3 * pe) // 2, pe)
+        out[(i, name, lev)] = tuple(op({(i + 3 * j, N - 2 * j): F(1)}).get(mon, 0) for j in range(3))
+    return out
+
+
+def grid_NV32():
+    """flat lower terms with vertex-adjacent monomial q^3 p^(s-2) (the case B = 3, which forces K = 2)."""
+    for NN in range(4, 11):
+        for ss in range(4, 11):
+            for cc in (0, 1):
+                cf, dr = nv32_rows(NN, ss, cc), nv32_direct(NN, ss, cc)
+                if any(F(x) != y for k in cf for x, y in zip(cf[k], dr[k])):
+                    return False
+    N, s = ZN, ZS
+    r = nv32_rows(N, s, ZB)                                      # c in the b-slot
+    A = {k: s * (s - 1) * (s - 2) * r[(0, k, 2)][0] + N * (N - 1) * (N - 2) * r[(0, k, 2)][1] for k in ('T3Dg', 'T3DDg')}
+    e0 = A['T3Dg'] * r[(0, 'T3DDg', 2)][2] - A['T3DDg'] * r[(0, 'T3Dg', 2)][2]
+    if e0 != 12960 * N * s ** 4 * (s - N) * (s - 2) * (s - 1) * (N + s - 3) * (6 * N ** 2 * s - 9 * N ** 2 + 12 * N * s ** 2 - 54 * N * s
+                                                                               + 51 * N - 16 * s ** 2 + 60 * s - 50):
+        return False
+    m1 = r[(1, 'T3g', 1)][0] * r[(1, 'T3Dg', 1)][1] - r[(1, 'T3g', 1)][1] * r[(1, 'T3Dg', 1)][0]
+    if m1 != -144 * s ** 2 * (s - 2) * (s - 1) * (6 * N ** 2 * s - 9 * N ** 2 + 6 * N * s ** 2 - 24 * N * s + 21 * N - s ** 2 + 3 * s - 2):
+        return False
+    m2 = r[(2, 'T3Dg', 1)][0] * r[(2, 'T3DDg', 1)][1] - r[(2, 'T3Dg', 1)][1] * r[(2, 'T3DDg', 1)][0]
+    if m2 != -1440 * s ** 4 * (s - 2) * (s - 1) * (6 * N ** 2 * s - 9 * N ** 2 + 18 * N * s ** 2 - 54 * N * s + 39 * N
+                                                    + 4 * (s - 1) * (s - 2) * (3 * s - 4)):
+        return False
+    # signs: f0 < 0 at N = 1 and > 0 for N >= 2; f1 < 0 at N = 0 and > 0 for N >= 1; f2 > 0 (all for s >= 3)
+    f0 = lambda N, s: 6 * N ** 2 * s - 9 * N ** 2 + 12 * N * s ** 2 - 54 * N * s + 51 * N - 16 * s ** 2 + 60 * s - 50
+    f1 = lambda N, s: 6 * N ** 2 * s - 9 * N ** 2 + 6 * N * s ** 2 - 24 * N * s + 21 * N - s ** 2 + 3 * s - 2
+    f2 = lambda N, s: 6 * N ** 2 * s - 9 * N ** 2 + 18 * N * s ** 2 - 54 * N * s + 39 * N + 4 * (s - 1) * (s - 2) * (3 * s - 4)
+    if not (positive_shift(f0, 2, 3) and positive_shift(f1, 1, 3) and positive_shift(f2, 0, 3)):
+        return False
+    if f0(1, s) != -4 * (s - 2) * (s - 1) or f1(0, s) != -(s - 2) * (s - 1):
+        return False
+    for Fh, Wmax in [({(0, 4): F(1), (3, 2): F(1)}, 22), ({(0, 4): F(1), (3, 2): F(1), (6, 0): F(-2)}, 22),
+                     ({(0, 5): F(1), (3, 3): F(2), (6, 1): F(1)}, 25)]:
+        if flat_core_dims_w(Fh, 2, 3, Wmax) != [(0, 1), (max(2 * i + 3 * j for i, j in Fh), 1)]:
+            return False
+    return True
+
+
 def identities():
     return {'GG': grid_GG(), 'T3': grid_T3(), 'AE': grid_AE(), 'K1c': grid_K1c(), 'C2': grid_C2(),
-            'NA': grid_NA(), 'TG': grid_TG(), 'GE': grid_GE(), 'BE': grid_BE(), 'NT': grid_NT(), 'NV': grid_NV()}
+            'NA': grid_NA(), 'TG': grid_TG(), 'GE': grid_GE(), 'BE': grid_BE(), 'NT': grid_NT(), 'NV': grid_NV(), 'NV32': grid_NV32()}
 
 
 def check(cert=None):
@@ -778,7 +870,7 @@ def check(cert=None):
                        'Q-degree containment (b constant, quadratic, degree >= 3; b linear with f >= 4 in the '
                        'cubic phase); K1, K1\' (f >= 4) and K4 exact; '
                        'non-affine binomial edges collapse (Theorem NA), general first edges (NE), the boundary edge (NB), '
-                       'threshold edges with deg w >= 3 (NT) and edges below the threshold (NV)'}
+                       'threshold edges with deg w >= 3 (NT), edges below the threshold and flat lower terms (NV)'}
 
 
 def main():
