@@ -1,0 +1,116 @@
+{
+  "created": "2026-09-02T19:43:52.896857+00:00",
+  "modified": "2026-09-02T19:43:53.025821+00:00",
+  "id": 22260794,
+  "conceptrecid": "21940430",
+  "doi": "10.5281/zenodo.22260794",
+  "conceptdoi": "10.5281/zenodo.21940430",
+  "doi_url": "https://doi.org/10.5281/zenodo.22260794",
+  "metadata": {
+    "title": "LINAC26: Four-dimensional phase space tomography from one-dimensional projections",
+    "doi": "10.5281/zenodo.22260794",
+    "publication_date": "2026-09-02",
+    "access_right": "open",
+    "creators": [
+      {
+        "name": "Hoover, Austin",
+        "affiliation": "Oak Ridge National Laboratory",
+        "orcid": "0000-0001-5313-6962"
+      }
+    ],
+    "version": "v02",
+    "resource_type": {
+      "title": "Conference proceeding",
+      "type": "publication",
+      "subtype": "conferenceproceeding"
+    },
+    "meeting": {
+      "title": "33rd Linear Accelerator Conference",
+      "acronym": "LINAC26",
+      "dates": "17-22 August 2026",
+      "place": "Daejeon, South Korea",
+      "url": "https://indico.jacow.org/event/117/"
+    },
+    "license": {
+      "id": "cc-by-4.0"
+    },
+    "relations": {
+      "version": [
+        {
+          "index": 2,
+          "is_last": true,
+          "parent": {
+            "pid_type": "recid",
+            "pid_value": "21940430"
+          }
+        }
+      ]
+    }
+  },
+  "title": "LINAC26: Four-dimensional phase space tomography from one-dimensional projections",
+  "links": {
+    "self": "https://zenodo.org/api/records/22260794",
+    "self_html": "https://zenodo.org/records/22260794",
+    "preview_html": "https://zenodo.org/records/22260794?preview=1",
+    "doi": "https://doi.org/10.5281/zenodo.22260794",
+    "self_doi": "https://doi.org/10.5281/zenodo.22260794",
+    "self_doi_html": "https://zenodo.org/doi/10.5281/zenodo.22260794",
+    "reserve_doi": "https://zenodo.org/api/records/22260794/draft/pids/doi",
+    "parent": "https://zenodo.org/api/records/21940430",
+    "parent_html": "https://zenodo.org/records/21940430",
+    "parent_doi": "https://doi.org/10.5281/zenodo.21940430",
+    "parent_doi_html": "https://zenodo.org/doi/10.5281/zenodo.21940430",
+    "self_iiif_manifest": "https://zenodo.org/api/iiif/record:22260794/manifest",
+    "self_iiif_sequence": "https://zenodo.org/api/iiif/record:22260794/sequence/default",
+    "files": "https://zenodo.org/api/records/22260794/files",
+    "media_files": "https://zenodo.org/api/records/22260794/media-files",
+    "latest": "https://zenodo.org/api/records/22260794/versions/latest",
+    "latest_html": "https://zenodo.org/records/22260794/latest",
+    "versions": "https://zenodo.org/api/records/22260794/versions",
+    "draft": "https://zenodo.org/api/records/22260794/draft",
+    "access_links": "https://zenodo.org/api/records/22260794/access/links",
+    "access_grants": "https://zenodo.org/api/records/22260794/access/grants",
+    "access_users": "https://zenodo.org/api/records/22260794/access/users",
+    "access_request": "https://zenodo.org/api/records/22260794/access/request",
+    "access": "https://zenodo.org/api/records/22260794/access",
+    "communities": "https://zenodo.org/api/records/22260794/communities",
+    "communities-suggestions": "https://zenodo.org/api/records/22260794/communities-suggestions",
+    "request_deletion": "https://zenodo.org/api/records/22260794/request-deletion",
+    "file_modification": "https://zenodo.org/api/records/22260794/file-modification",
+    "quota_increase": "https://zenodo.org/api/records/22260794/quota-increase",
+    "requests": "https://zenodo.org/api/records/22260794/requests"
+  },
+  "updated": "2026-09-02T19:43:53.025821+00:00",
+  "recid": "22260794",
+  "revision": 4,
+  "files": [
+    {
+      "id": "cd97593c-e02b-4bf1-8b14-fce85370eb5c",
+      "key": "linac-2026-tomo-main.zip",
+      "size": 28636580,
+      "checksum": "md5:d498774bab7eb21b02fd78157e6f7a76",
+      "links": {
+        "self": "https://zenodo.org/api/records/22260794/files/linac-2026-tomo-main.zip/content"
+      }
+    }
+  ],
+  "swh": {},
+  "owners": [
+    {
+      "id": "426180"
+    }
+  ],
+  "status": "published",
+  "stats": {
+    "downloads": 25,
+    "unique_downloads": 23,
+    "views": 285,
+    "unique_views": 223,
+    "version_downloads": 15,
+    "version_unique_downloads": 15,
+    "version_unique_views": 120,
+    "version_views": 165
+  },
+  "state": "done",
+  "submitted": true
+}

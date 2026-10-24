@@ -1,0 +1,137 @@
+{
+  "status": "passed",
+  "arithmetic": "Python arbitrary-precision integers, generic sparse-polynomial derivatives/products",
+  "hamiltonian": "q*p**3",
+  "seed_observable": "q",
+  "poisson_convention": "D(f)=H_q*f_p-H_p*f_q",
+  "transvectant_convention": "sum_j (-1)^j binomial(k,j) d_q^(k-j)d_p^j(H) d_q^j d_p^(k-j)(f)",
+  "iterates_tested": "r=0 through 12",
+  "rows": [
+    {
+      "r": 0,
+      "coefficient": "1",
+      "q_degree": 1,
+      "p_degree": 0,
+      "T3_residual": 0,
+      "T5_residual": 0,
+      "recurrence_formula_residual": 0
+    },
+    {
+      "r": 1,
+      "coefficient": "-3",
+      "q_degree": 1,
+      "p_degree": 2,
+      "T3_residual": 0,
+      "T5_residual": 0,
+      "recurrence_formula_residual": 0
+    },
+    {
+      "r": 2,
+      "coefficient": "3",
+      "q_degree": 1,
+      "p_degree": 4,
+      "T3_residual": 0,
+      "T5_residual": 0,
+      "recurrence_formula_residual": 0
+    },
+    {
+      "r": 3,
+      "coefficient": "3",
+      "q_degree": 1,
+      "p_degree": 6,
+      "T3_residual": 0,
+      "T5_residual": 0,
+      "recurrence_formula_residual": 0
+    },
+    {
+      "r": 4,
+      "coefficient": "9",
+      "q_degree": 1,
+      "p_degree": 8,
+      "T3_residual": 0,
+      "T5_residual": 0,
+      "recurrence_formula_residual": 0
+    },
+    {
+      "r": 5,
+      "coefficient": "45",
+      "q_degree": 1,
+      "p_degree": 10,
+      "T3_residual": 0,
+      "T5_residual": 0,
+      "recurrence_formula_residual": 0
+    },
+    {
+      "r": 6,
+      "coefficient": "315",
+      "q_degree": 1,
+      "p_degree": 12,
+      "T3_residual": 0,
+      "T5_residual": 0,
+      "recurrence_formula_residual": 0
+    },
+    {
+      "r": 7,
+      "coefficient": "2835",
+      "q_degree": 1,
+      "p_degree": 14,
+      "T3_residual": 0,
+      "T5_residual": 0,
+      "recurrence_formula_residual": 0
+    },
+    {
+      "r": 8,
+      "coefficient": "31185",
+      "q_degree": 1,
+      "p_degree": 16,
+      "T3_residual": 0,
+      "T5_residual": 0,
+      "recurrence_formula_residual": 0
+    },
+    {
+      "r": 9,
+      "coefficient": "405405",
+      "q_degree": 1,
+      "p_degree": 18,
+      "T3_residual": 0,
+      "T5_residual": 0,
+      "recurrence_formula_residual": 0
+    },
+    {
+      "r": 10,
+      "coefficient": "6081075",
+      "q_degree": 1,
+      "p_degree": 20,
+      "T3_residual": 0,
+      "T5_residual": 0,
+      "recurrence_formula_residual": 0
+    },
+    {
+      "r": 11,
+      "coefficient": "103378275",
+      "q_degree": 1,
+      "p_degree": 22,
+      "T3_residual": 0,
+      "T5_residual": 0,
+      "recurrence_formula_residual": 0
+    },
+    {
+      "r": 12,
+      "coefficient": "1964187225",
+      "q_degree": 1,
+      "p_degree": 24,
+      "T3_residual": 0,
+      "T5_residual": 0,
+      "recurrence_formula_residual": 0
+    }
+  ],
+  "all_degree_proof": {
+    "T3_operator": "18*p*d_q^2*d_p - 6*q*d_q^3",
+    "higher_odd_gates": "All T_k for k>=5 vanish identically since total degree(H)=4.",
+    "recurrence": "D(q*p**m)=(m-3)*q*p**(m+2)",
+    "orbit": "D^r(q)=product_{j=0}^{r-1}(2*j-3)*q*p**(2*r)",
+    "nonzero": "2*j-3 is nonzero for every integer j; distinct p degrees give Q-linear independence.",
+    "conclusion": "q is in the formal polynomial dynamic core, but its polynomial Poisson orbit has infinite dimension."
+  },
+  "scope": "Formal polynomial algebra only. No global operator flow, selfadjointness, expectation complexity or speedup claim."
+}

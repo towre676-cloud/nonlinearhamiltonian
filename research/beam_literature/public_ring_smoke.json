@@ -1,0 +1,44 @@
+{
+  "status": "passed",
+  "scope": "public-lattice feasibility and batching probe only; no tuning gain",
+  "lattice_sha256": "8547502b0a4612a0e145fa6033e5ba98bb13567035fed43cadef760dae385c7b",
+  "source_cell_elements": 121,
+  "source_periodicity": 32,
+  "tracked_ring_elements": 3872,
+  "tracked_ring_periodicity": 1,
+  "ring_energy_eV": 6000000000.0,
+  "ring_circumference_m": 843.9772144741274,
+  "turns": 128,
+  "particles": 64,
+  "repeats": 3,
+  "survivors": 42,
+  "losses": 22,
+  "final_state_max_batch_single_difference": 0.0,
+  "batch_seconds": [
+    6.863199794002867,
+    6.752810801997839,
+    6.821748297996237
+  ],
+  "cached_single_seconds": [
+    7.301812903002428,
+    7.459217505995184,
+    7.387081483000657
+  ],
+  "batching_gain_median": 1.0828721847111358,
+  "warm_initialization_excluded": true,
+  "cold_import_install_and_input_generation_excluded": true,
+  "physics": {
+    "radiation": false,
+    "rf": false,
+    "space_charge": false,
+    "errors": false
+  },
+  "baseline_obligation": "Compare active point selection with optimized batched/adaptive aperture search, not uncached scalar loops.",
+  "versions": {
+    "accelerator-toolbox": "0.9.0",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "h5py": "3.16.0"
+  },
+  "python": "3.12.14"
+}

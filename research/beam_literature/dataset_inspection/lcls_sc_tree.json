@@ -1,0 +1,983 @@
+{
+  "sha": "04b36a9728f0a6e2db4512c1bc60f41442caa1bd",
+  "url": "https://api.github.com/repos/slaclab/lcls-sc-inj-surrogate/git/trees/04b36a9728f0a6e2db4512c1bc60f41442caa1bd",
+  "tree": [
+    {
+      "path": ".gitignore",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0f36fb1bd08d32a4267abcbb6ec6b72f5eb3597d",
+      "size": 1800,
+      "url": "https://api.github.com/repos/slaclab/lcls-sc-inj-surrogate/git/blobs/0f36fb1bd08d32a4267abcbb6ec6b72f5eb3597d"
+    },
+    {
+      "path": "README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ed7566fd5b1db282575acebed2e22233a8cd34a7",
+      "size": 1176,
+      "url": "https://api.github.com/repos/slaclab/lcls-sc-inj-surrogate/git/blobs/ed7566fd5b1db282575acebed2e22233a8cd34a7"
+    },
+    {
+      "path": "binder",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "4c2d6bb5b242d4048c4e095b4cca7afa16d90971",
+      "url": "https://api.github.com/repos/slaclab/lcls-sc-inj-surrogate/git/trees/4c2d6bb5b242d4048c4e095b4cca7afa16d90971"
+    },
+    {
+      "path": "binder/bokehserverextension.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "adcabe33766d7d1637ff5d4524867c4ea75a66ff",
+      "size": 387,
+      "url": "https://api.github.com/repos/slaclab/lcls-sc-inj-surrogate/git/blobs/adcabe33766d7d1637ff5d4524867c4ea75a66ff"
+    },
+    {
+      "path": "binder/environment.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "47af527375c0aedd4aa5b1d7387245b8748c6263",
+      "size": 211,
+      "url": "https://api.github.com/repos/slaclab/lcls-sc-inj-surrogate/git/blobs/47af527375c0aedd4aa5b1d7387245b8748c6263"
+    },
+    {
+      "path": "binder/files",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "785b7a7115c3622cf7361a3513c3b3f248f4aa78",
+      "url": "https://api.github.com/repos/slaclab/lcls-sc-inj-surrogate/git/trees/785b7a7115c3622cf7361a3513c3b3f248f4aa78"
+    },
+    {
+      "path": "binder/files/CNN_081120_Stock_Image.npy",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a07f62e69d27c04c2605b4189fbe8169ab034258",
+      "size": 20128,
+      "url": "https://api.github.com/repos/slaclab/lcls-sc-inj-surrogate/git/blobs/a07f62e69d27c04c2605b4189fbe8169ab034258"
+    },
+    {
+      "path": "binder/files/CNN_081120_SurrogateModel.h5",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ac7a517427bec4e8edb19ae4bdf661bba459c68d",
+      "size": 8746616,
+      "url": "https://api.github.com/repos/slaclab/lcls-sc-inj-surrogate/git/blobs/ac7a517427bec4e8edb19ae4bdf661bba459c68d"
+    },
+    {
+      "path": "binder/files/my_description.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ae4f4d58adc52e9c27f0ccb916e79e9e845f6792",
+      "size": 4969,
+      "url": "https://api.github.com/repos/slaclab/lcls-sc-inj-surrogate/git/blobs/ae4f4d58adc52e9c27f0ccb916e79e9e845f6792"
+    },
+    {
+      "path": "binder/files/surrogate_model_variables.pickle",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cbe63d3ee10607340d535f7fb0487028cad67f67",
+      "size": 24171,
+      "url": "https://api.github.com/repos/slaclab/lcls-sc-inj-surrogate/git/blobs/cbe63d3ee10607340d535f7fb0487028cad67f67"
+    },
+    {
+      "path": "binder/postBuild",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e27fb09f5d4dafdfc7cec0ad802c5dec20de0739",
+      "size": 338,
+      "url": "https://api.github.com/repos/slaclab/lcls-sc-inj-surrogate/git/blobs/e27fb09f5d4dafdfc7cec0ad802c5dec20de0739"
+    },
+    {
+      "path": "binder/start",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3be6b0b10d15bb38abe82cc04abac97ba22d663b",
+      "size": 356,
+      "url": "https://api.github.com/repos/slaclab/lcls-sc-inj-surrogate/git/blobs/3be6b0b10d15bb38abe82cc04abac97ba22d663b"
+    },
+    {
+      "path": "binder/surrogate_model.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "305b48b10d0b0e7b94ae5ca67bcd892d817d716a",
+      "size": 10288,
+      "url": "https://api.github.com/repos/slaclab/lcls-sc-inj-surrogate/git/blobs/305b48b10d0b0e7b94ae5ca67bcd892d817d716a"
+    },
+    {
+      "path": "binder/surrogate_model_client.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "52a21c6d24f28238c2d5d7de3ffd4efea869a084",
+      "size": 3449,
+      "url": "https://api.github.com/repos/slaclab/lcls-sc-inj-surrogate/git/blobs/52a21c6d24f28238c2d5d7de3ffd4efea869a084"
+    },
+    {
+      "path": "binder/surrogate_model_server.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bbe58faa1ad5501b99fe307e938456c1052c3fc3",
+      "size": 933,
+      "url": "https://api.github.com/repos/slaclab/lcls-sc-inj-surrogate/git/blobs/bbe58faa1ad5501b99fe307e938456c1052c3fc3"
+    },
+    {
+      "path": "measurements",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "b9bfb808f4883205cef8ec57851b71fc03142b82",
+      "url": "https://api.github.com/repos/slaclab/lcls-sc-inj-surrogate/git/trees/b9bfb808f4883205cef8ec57851b71fc03142b82"
+    },
+    {
+      "path": "measurements/.gitattributes",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1bccc1fa88e2220dd67a7d9c94e7cc6711b853ef",
+      "size": 41,
+      "url": "https://api.github.com/repos/slaclab/lcls-sc-inj-surrogate/git/blobs/1bccc1fa88e2220dd67a7d9c94e7cc6711b853ef"
+    },
+    {
+      "path": "measurements/Description.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3f96beae232fd1d4039285a79390cef9a8e43167",
+      "size": 1306,
+      "url": "https://api.github.com/repos/slaclab/lcls-sc-inj-surrogate/git/blobs/3f96beae232fd1d4039285a79390cef9a8e43167"
+    },
+    {
+      "path": "measurements/ImageProcessing.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "dc5285413a0f6a1ffc36c961f350aa6425003d20",
+      "size": 18915,
+      "url": "https://api.github.com/repos/slaclab/lcls-sc-inj-surrogate/git/blobs/dc5285413a0f6a1ffc36c961f350aa6425003d20"
+    },
+    {
+      "path": "measurements/VCCProcess-distgen.ipynb",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "10831ad2bf671100075b88a6a23a3a39dc07a749",
+      "size": 5235,
+      "url": "https://api.github.com/repos/slaclab/lcls-sc-inj-surrogate/git/blobs/10831ad2bf671100075b88a6a23a3a39dc07a749"
+    },
+    {
+      "path": "measurements/files",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "523521e25239f49c4fa1de31a21cf54afbdf5d3c",
+      "url": "https://api.github.com/repos/slaclab/lcls-sc-inj-surrogate/git/trees/523521e25239f49c4fa1de31a21cf54afbdf5d3c"
+    },
+    {
+      "path": "measurements/files/ProfMon-CAMR_LGUN_950-2019-11-01-122050.mat",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2f0e2a0fba2271387dda65fac0b2a28840a99abc",
+      "size": 704439,
+      "url": "https://api.github.com/repos/slaclab/lcls-sc-inj-surrogate/git/blobs/2f0e2a0fba2271387dda65fac0b2a28840a99abc"
+    },
+    {
+      "path": "measurements/files/ProfMon-CAMR_LGUN_950-2019-11-01-122150.mat",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f8cd21df5fe69e61ca715a22cf007172e233c53a",
+      "size": 707822,
+      "url": "https://api.github.com/repos/slaclab/lcls-sc-inj-surrogate/git/blobs/f8cd21df5fe69e61ca715a22cf007172e233c53a"
+    },
+    {
+      "path": "measurements/files/file_0.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "13f516849003e29a67c87384f1a240f89e34b29f",
+      "size": 1562500,
+      "url": "https://api.github.com/repos/slaclab/lcls-sc-inj-surrogate/git/blobs/13f516849003e29a67c87384f1a240f89e34b29f"
+    },
+    {
+      "path": "measurements/files/file_0_out.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d0518f86d38e6ece7be07577236f9a2dfe64419a",
+      "size": 1562544,
+      "url": "https://api.github.com/repos/slaclab/lcls-sc-inj-surrogate/git/blobs/d0518f86d38e6ece7be07577236f9a2dfe64419a"
+    },
+    {
+      "path": "measurements/files/file_1.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "11d4f6751633795305cf6d434a7fb037ba9eb3c0",
+      "size": 1562500,
+      "url": "https://api.github.com/repos/slaclab/lcls-sc-inj-surrogate/git/blobs/11d4f6751633795305cf6d434a7fb037ba9eb3c0"
+    },
+    {
+      "path": "measurements/files/file_1_out.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2109b647017b6ec1dcdc62c5ab0b89d617ecfc02",
+      "size": 1562544,
+      "url": "https://api.github.com/repos/slaclab/lcls-sc-inj-surrogate/git/blobs/2109b647017b6ec1dcdc62c5ab0b89d617ecfc02"
+    },
+    {
+      "path": "models",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "67f8c8067d4ab6a2fb6fc27a703f326e791a5eb0",
+      "url": "https://api.github.com/repos/slaclab/lcls-sc-inj-surrogate/git/trees/67f8c8067d4ab6a2fb6fc27a703f326e791a5eb0"
+    },
+    {
+      "path": "models/Image-Image-Training-Hybrid.ipynb",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "931f9784ebaecda54ed7a62a012c7aa0d82cef71",
+      "size": 5045316,
+      "url": "https://api.github.com/repos/slaclab/lcls-sc-inj-surrogate/git/blobs/931f9784ebaecda54ed7a62a012c7aa0d82cef71"
+    },
+    {
+      "path": "models/Image-Image-Training-remove.ipynb",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ea5d569c0e60bbc76378631f819769e80bed4fd8",
+      "size": 4895274,
+      "url": "https://api.github.com/repos/slaclab/lcls-sc-inj-surrogate/git/blobs/ea5d569c0e60bbc76378631f819769e80bed4fd8"
+    },
+    {
+      "path": "models/basicFunctions.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2360ff9c005dc562304b2b4701308d6a0536850b",
+      "size": 13669,
+      "url": "https://api.github.com/repos/slaclab/lcls-sc-inj-surrogate/git/blobs/2360ff9c005dc562304b2b4701308d6a0536850b"
+    },
+    {
+      "path": "models/gunb_eic",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "c2ae57eb8a4a2cd90fb561790d90a364d1a7a93f",
+      "url": "https://api.github.com/repos/slaclab/lcls-sc-inj-surrogate/git/trees/c2ae57eb8a4a2cd90fb561790d90a364d1a7a93f"
+    },
+    {
+      "path": "models/gunb_eic/.ipynb_checkpoints",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "f8e2f570b361a01fcc7b1e6fe3bf1af557235f63",
+      "url": "https://api.github.com/repos/slaclab/lcls-sc-inj-surrogate/git/trees/f8e2f570b361a01fcc7b1e6fe3bf1af557235f63"
+    },
+    {
+      "path": "models/gunb_eic/.ipynb_checkpoints/Description-checkpoint.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f38ebd58fdca339b26ac7f186914e1ea811bb030",
+      "size": 103,
+      "url": "https://api.github.com/repos/slaclab/lcls-sc-inj-surrogate/git/blobs/f38ebd58fdca339b26ac7f186914e1ea811bb030"
+    },
+    {
+      "path": "models/gunb_eic/Description.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f38ebd58fdca339b26ac7f186914e1ea811bb030",
+      "size": 103,
+      "url": "https://api.github.com/repos/slaclab/lcls-sc-inj-surrogate/git/blobs/f38ebd58fdca339b26ac7f186914e1ea811bb030"
+    },
+    {
+      "path": "models/gunb_eic/astra",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "4f27c80e50bfaf91fac7055001b7ff6b1ca8284a",
+      "url": "https://api.github.com/repos/slaclab/lcls-sc-inj-surrogate/git/trees/4f27c80e50bfaf91fac7055001b7ff6b1ca8284a"
+    },
+    {
+      "path": "models/gunb_eic/astra/.ipynb_checkpoints",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "9bad2f034207d5b02dc75f1fcc1244bb329dd45e",
+      "url": "https://api.github.com/repos/slaclab/lcls-sc-inj-surrogate/git/trees/9bad2f034207d5b02dc75f1fcc1244bb329dd45e"
+    },
+    {
+      "path": "models/gunb_eic/astra/.ipynb_checkpoints/Note-checkpoint.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "296ad0a88ab179fdbef8000eccf4498856736281",
+      "size": 123,
+      "url": "https://api.github.com/repos/slaclab/lcls-sc-inj-surrogate/git/blobs/296ad0a88ab179fdbef8000eccf4498856736281"
+    },
+    {
+      "path": "models/gunb_eic/astra/Note.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "296ad0a88ab179fdbef8000eccf4498856736281",
+      "size": 123,
+      "url": "https://api.github.com/repos/slaclab/lcls-sc-inj-surrogate/git/blobs/296ad0a88ab179fdbef8000eccf4498856736281"
+    },
+    {
+      "path": "models/gunb_eic/astra/fieldmaps",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "a26ff2c0fdca61db567ad80627dd89f030ac0d45",
+      "url": "https://api.github.com/repos/slaclab/lcls-sc-inj-surrogate/git/trees/a26ff2c0fdca61db567ad80627dd89f030ac0d45"
+    },
+    {
+      "path": "models/gunb_eic/astra/fieldmaps/187MHz_HighDef_March2010.dat",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0d620f3cd5306b6b8833ad47766dfdbd60c7edda",
+      "size": 3776,
+      "url": "https://api.github.com/repos/slaclab/lcls-sc-inj-surrogate/git/blobs/0d620f3cd5306b6b8833ad47766dfdbd60c7edda"
+    },
+    {
+      "path": "models/gunb_eic/astra/fieldmaps/9cell1300.cav",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "151d5ede77ecca64141778d6b185af1babe9d646",
+      "size": 54759,
+      "url": "https://api.github.com/repos/slaclab/lcls-sc-inj-surrogate/git/blobs/151d5ede77ecca64141778d6b185af1babe9d646"
+    },
+    {
+      "path": "models/gunb_eic/astra/fieldmaps/APEX2cellBuncher.dat",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "85963fbe4bee62977037595b3238c875cd31572d",
+      "size": 20980,
+      "url": "https://api.github.com/repos/slaclab/lcls-sc-inj-surrogate/git/blobs/85963fbe4bee62977037595b3238c875cd31572d"
+    },
+    {
+      "path": "models/gunb_eic/astra/fieldmaps/lcls_gun_2856MHz_Ez0.dat",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b47cc63f6c1475fa8838a75174cf251629e50efd",
+      "size": 68566,
+      "url": "https://api.github.com/repos/slaclab/lcls-sc-inj-surrogate/git/blobs/b47cc63f6c1475fa8838a75174cf251629e50efd"
+    },
+    {
+      "path": "models/gunb_eic/astra/fieldmaps/lcls_gun_solenoid_Bz.dat",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "314305930b12cdbf572de45f3035ddc4f64deac6",
+      "size": 284040,
+      "url": "https://api.github.com/repos/slaclab/lcls-sc-inj-surrogate/git/blobs/314305930b12cdbf572de45f3035ddc4f64deac6"
+    },
+    {
+      "path": "models/gunb_eic/astra/fieldmaps/newSOL.dat",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "761fde4a251eade6dc71ea118ecd5ee5ee2637e5",
+      "size": 322952,
+      "url": "https://api.github.com/repos/slaclab/lcls-sc-inj-surrogate/git/blobs/761fde4a251eade6dc71ea118ecd5ee5ee2637e5"
+    },
+    {
+      "path": "models/gunb_eic/astra/fieldmaps/realbucking.dat",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9e1cc2515632d4b69fc5707952a32ac129c94322",
+      "size": 252500,
+      "url": "https://api.github.com/repos/slaclab/lcls-sc-inj-surrogate/git/blobs/9e1cc2515632d4b69fc5707952a32ac129c94322"
+    },
+    {
+      "path": "models/gunb_eic/astra/models",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "3bf67f8ff1c447b03ec979277e7213c29e784a65",
+      "url": "https://api.github.com/repos/slaclab/lcls-sc-inj-surrogate/git/trees/3bf67f8ff1c447b03ec979277e7213c29e784a65"
+    },
+    {
+      "path": "models/gunb_eic/astra/models/L0B_gaussian_dist",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "51a3eade172682440677aa309f9d702eb91cb17c",
+      "url": "https://api.github.com/repos/slaclab/lcls-sc-inj-surrogate/git/trees/51a3eade172682440677aa309f9d702eb91cb17c"
+    },
+    {
+      "path": "models/gunb_eic/astra/models/L0B_gaussian_dist/L0B_gaussian_dist.in",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8f9b66aeed0061549e933f004b715eee15e92fc0",
+      "size": 3377,
+      "url": "https://api.github.com/repos/slaclab/lcls-sc-inj-surrogate/git/blobs/8f9b66aeed0061549e933f004b715eee15e92fc0"
+    },
+    {
+      "path": "models/gunb_eic/astra/models/L0B_gaussian_dist/gaussian_dist.in",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "880a47edf25c40828330413faf0354ca18a1e08f",
+      "size": 596,
+      "url": "https://api.github.com/repos/slaclab/lcls-sc-inj-surrogate/git/blobs/880a47edf25c40828330413faf0354ca18a1e08f"
+    },
+    {
+      "path": "models/gunb_eic/astra/models/cu_inj",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "089ff9b00a423513bfd631dd4eafc439c993369b",
+      "url": "https://api.github.com/repos/slaclab/lcls-sc-inj-surrogate/git/trees/089ff9b00a423513bfd631dd4eafc439c993369b"
+    },
+    {
+      "path": "models/gunb_eic/astra/models/cu_inj/astra.in",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3ff10ec43ad48af00591aa50d87dfed6ff80b0fd",
+      "size": 1356,
+      "url": "https://api.github.com/repos/slaclab/lcls-sc-inj-surrogate/git/blobs/3ff10ec43ad48af00591aa50d87dfed6ff80b0fd"
+    },
+    {
+      "path": "models/gunb_eic/astra/models/gunb_baseline",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "a9a7c58b7042b208ab7e39f8c9dd08f0c335f94a",
+      "url": "https://api.github.com/repos/slaclab/lcls-sc-inj-surrogate/git/trees/a9a7c58b7042b208ab7e39f8c9dd08f0c335f94a"
+    },
+    {
+      "path": "models/gunb_eic/astra/models/gunb_baseline/baseline100.in",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b50628296e7e0612eaa015df1f1099a6c23d8dae",
+      "size": 3363,
+      "url": "https://api.github.com/repos/slaclab/lcls-sc-inj-surrogate/git/blobs/b50628296e7e0612eaa015df1f1099a6c23d8dae"
+    },
+    {
+      "path": "models/gunb_eic/astra/models/gunb_baseline/dist100.in",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9da16d3f6bda1cc2c306e644fde1e5d053f66858",
+      "size": 540,
+      "url": "https://api.github.com/repos/slaclab/lcls-sc-inj-surrogate/git/blobs/9da16d3f6bda1cc2c306e644fde1e5d053f66858"
+    },
+    {
+      "path": "models/gunb_eic/astra/models/gunb_eic",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "ff719bb04023070ece5ad12048fcb9d29e1cd157",
+      "url": "https://api.github.com/repos/slaclab/lcls-sc-inj-surrogate/git/trees/ff719bb04023070ece5ad12048fcb9d29e1cd157"
+    },
+    {
+      "path": "models/gunb_eic/astra/models/gunb_eic/.ipynb_checkpoints",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "f73ed51c282834419caa75e674f45cc1d8776d3c",
+      "url": "https://api.github.com/repos/slaclab/lcls-sc-inj-surrogate/git/trees/f73ed51c282834419caa75e674f45cc1d8776d3c"
+    },
+    {
+      "path": "models/gunb_eic/astra/models/gunb_eic/.ipynb_checkpoints/astra-checkpoint.in",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "32d58ae84964581c82546abba28515c1ea090e4e",
+      "size": 1641,
+      "url": "https://api.github.com/repos/slaclab/lcls-sc-inj-surrogate/git/blobs/32d58ae84964581c82546abba28515c1ea090e4e"
+    },
+    {
+      "path": "models/gunb_eic/astra/models/gunb_eic/astra.Log.001",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8428a0fa57a34d145c13bf8921bd9068b0624f50",
+      "size": 622030,
+      "url": "https://api.github.com/repos/slaclab/lcls-sc-inj-surrogate/git/blobs/8428a0fa57a34d145c13bf8921bd9068b0624f50"
+    },
+    {
+      "path": "models/gunb_eic/astra/models/gunb_eic/astra.in",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "950d3eafd2e391c60cdf12275f2259270d97b241",
+      "size": 1643,
+      "url": "https://api.github.com/repos/slaclab/lcls-sc-inj-surrogate/git/blobs/950d3eafd2e391c60cdf12275f2259270d97b241"
+    },
+    {
+      "path": "models/gunb_eic/astra/models/gunb_eic/generator.in",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "605f0b6f6886a730daf7709da54836aadf054551",
+      "size": 587,
+      "url": "https://api.github.com/repos/slaclab/lcls-sc-inj-surrogate/git/blobs/605f0b6f6886a730daf7709da54836aadf054551"
+    },
+    {
+      "path": "models/gunb_eic/astra/models/sc_inj",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "89e21030e701536711edb87a104eebfe3e568075",
+      "url": "https://api.github.com/repos/slaclab/lcls-sc-inj-surrogate/git/trees/89e21030e701536711edb87a104eebfe3e568075"
+    },
+    {
+      "path": "models/gunb_eic/astra/models/sc_inj/.ipynb_checkpoints",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "24c4d8737dbc2c26ea30be7e8f4bb6b6fbf3607a",
+      "url": "https://api.github.com/repos/slaclab/lcls-sc-inj-surrogate/git/trees/24c4d8737dbc2c26ea30be7e8f4bb6b6fbf3607a"
+    },
+    {
+      "path": "models/gunb_eic/astra/models/sc_inj/.ipynb_checkpoints/astra-checkpoint.in",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9870d4bc951cfdbdf877e3685552e4b101048c52",
+      "size": 3089,
+      "url": "https://api.github.com/repos/slaclab/lcls-sc-inj-surrogate/git/blobs/9870d4bc951cfdbdf877e3685552e4b101048c52"
+    },
+    {
+      "path": "models/gunb_eic/astra/models/sc_inj/.ipynb_checkpoints/description-checkpoint.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cb9389e105dffaad6d91a1d9148350234ad9b10d",
+      "size": 118,
+      "url": "https://api.github.com/repos/slaclab/lcls-sc-inj-surrogate/git/blobs/cb9389e105dffaad6d91a1d9148350234ad9b10d"
+    },
+    {
+      "path": "models/gunb_eic/astra/models/sc_inj/.ipynb_checkpoints/test-checkpoint.ipynb",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c22e5a1a2712f3cde583ee31c71b3ab83a49fc76",
+      "size": 3834,
+      "url": "https://api.github.com/repos/slaclab/lcls-sc-inj-surrogate/git/blobs/c22e5a1a2712f3cde583ee31c71b3ab83a49fc76"
+    },
+    {
+      "path": "models/gunb_eic/astra/models/sc_inj/astra.in",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9870d4bc951cfdbdf877e3685552e4b101048c52",
+      "size": 3089,
+      "url": "https://api.github.com/repos/slaclab/lcls-sc-inj-surrogate/git/blobs/9870d4bc951cfdbdf877e3685552e4b101048c52"
+    },
+    {
+      "path": "models/gunb_eic/astra/models/sc_inj/description.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cb9389e105dffaad6d91a1d9148350234ad9b10d",
+      "size": 118,
+      "url": "https://api.github.com/repos/slaclab/lcls-sc-inj-surrogate/git/blobs/cb9389e105dffaad6d91a1d9148350234ad9b10d"
+    },
+    {
+      "path": "models/gunb_eic/astra/models/sc_inj/test.ipynb",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a1f4e3bcf4afa3b3beb7c6bf9ae27cedb83410a4",
+      "size": 3834,
+      "url": "https://api.github.com/repos/slaclab/lcls-sc-inj-surrogate/git/blobs/a1f4e3bcf4afa3b3beb7c6bf9ae27cedb83410a4"
+    },
+    {
+      "path": "paper",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "bc5b72905ddf357a2b886fd5a04781b30aae3cec",
+      "url": "https://api.github.com/repos/slaclab/lcls-sc-inj-surrogate/git/trees/bc5b72905ddf357a2b886fd5a04781b30aae3cec"
+    },
+    {
+      "path": "paper/AstraCalibration.ipynb",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "15c8bdcaa2183906c6ab3c860a9b6f98513b5ef5",
+      "size": 638542,
+      "url": "https://api.github.com/repos/slaclab/lcls-sc-inj-surrogate/git/blobs/15c8bdcaa2183906c6ab3c860a9b6f98513b5ef5"
+    },
+    {
+      "path": "paper/AstraParticleInputShapeCompare.ipynb",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d162c23ecd7c4639537cdae5b1bafb95de84392b",
+      "size": 1485961,
+      "url": "https://api.github.com/repos/slaclab/lcls-sc-inj-surrogate/git/blobs/d162c23ecd7c4639537cdae5b1bafb95de84392b"
+    },
+    {
+      "path": "paper/archive",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "d62103269f484ac2f5532ef40c7dce3278d5410c",
+      "url": "https://api.github.com/repos/slaclab/lcls-sc-inj-surrogate/git/trees/d62103269f484ac2f5532ef40c7dce3278d5410c"
+    },
+    {
+      "path": "paper/archive/18MV_4PS_2_Astra_Scan.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bab8e7c9589fa73cabe334b4f0a659b50d6e32ad",
+      "size": 64144,
+      "url": "https://api.github.com/repos/slaclab/lcls-sc-inj-surrogate/git/blobs/bab8e7c9589fa73cabe334b4f0a659b50d6e32ad"
+    },
+    {
+      "path": "paper/archive/18MV_4PS_2solenoid_scan.pickle",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ddd99a9cb358a5bdf20c364c9251ce625b332e5d",
+      "size": 6162,
+      "url": "https://api.github.com/repos/slaclab/lcls-sc-inj-surrogate/git/blobs/ddd99a9cb358a5bdf20c364c9251ce625b332e5d"
+    },
+    {
+      "path": "paper/archive/18MV_85PS_2_Astra_Scan.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5f9ff8835c00fcb879837996f22e56a7f48a140a",
+      "size": 64038,
+      "url": "https://api.github.com/repos/slaclab/lcls-sc-inj-surrogate/git/blobs/5f9ff8835c00fcb879837996f22e56a7f48a140a"
+    },
+    {
+      "path": "paper/archive/18MV_85PS_2_chargescan_Astra_Scan.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d8eef7f72c4d61548d846830dcb5ffb66e92de72",
+      "size": 72694,
+      "url": "https://api.github.com/repos/slaclab/lcls-sc-inj-surrogate/git/blobs/d8eef7f72c4d61548d846830dcb5ffb66e92de72"
+    },
+    {
+      "path": "paper/archive/18MV_85PS_2_chargescansolenoid_scan.pickle",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3726864d9c13bb1a0dada0b933516171af83eac1",
+      "size": 6162,
+      "url": "https://api.github.com/repos/slaclab/lcls-sc-inj-surrogate/git/blobs/3726864d9c13bb1a0dada0b933516171af83eac1"
+    },
+    {
+      "path": "paper/archive/18MV_85PS_2solenoid_scan.pickle",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "69d311b37fe8a444bfbca19e3d3d505d27728058",
+      "size": 6162,
+      "url": "https://api.github.com/repos/slaclab/lcls-sc-inj-surrogate/git/blobs/69d311b37fe8a444bfbca19e3d3d505d27728058"
+    },
+    {
+      "path": "paper/archive/18MV_85PS_radius_scan_Astra_Scan.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ac617083e0ab7cadc64253d4ca1a5b0d5a63c89d",
+      "size": 100276,
+      "url": "https://api.github.com/repos/slaclab/lcls-sc-inj-surrogate/git/blobs/ac617083e0ab7cadc64253d4ca1a5b0d5a63c89d"
+    },
+    {
+      "path": "paper/archive/18MV_85PS_radius_scansolenoid_scan.pickle",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "44ec3b92eb12aa7126e8637b625e1d6a492268dc",
+      "size": 6162,
+      "url": "https://api.github.com/repos/slaclab/lcls-sc-inj-surrogate/git/blobs/44ec3b92eb12aa7126e8637b625e1d6a492268dc"
+    },
+    {
+      "path": "paper/archive/18MV_8PS_2_Astra_Scan.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "49eea796cd0b976e4515f49ac9a90f4a116ea615",
+      "size": 64050,
+      "url": "https://api.github.com/repos/slaclab/lcls-sc-inj-surrogate/git/blobs/49eea796cd0b976e4515f49ac9a90f4a116ea615"
+    },
+    {
+      "path": "paper/archive/18MV_8PS_2solenoid_scan.pickle",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c42e0a1a131de8b6dd1d6ff41cb5b4f7d8ff107d",
+      "size": 6162,
+      "url": "https://api.github.com/repos/slaclab/lcls-sc-inj-surrogate/git/blobs/c42e0a1a131de8b6dd1d6ff41cb5b4f7d8ff107d"
+    },
+    {
+      "path": "paper/archive/18MV_8PS_Astra_Scan.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "13fb7ad52e75e2497a383b396e40a5e656ada8d5",
+      "size": 60670,
+      "url": "https://api.github.com/repos/slaclab/lcls-sc-inj-surrogate/git/blobs/13fb7ad52e75e2497a383b396e40a5e656ada8d5"
+    },
+    {
+      "path": "paper/archive/18MV_8PSsolenoid_scan.pickle",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "32ca156d6f1a414c38e6adc28778092fb7f17731",
+      "size": 2583,
+      "url": "https://api.github.com/repos/slaclab/lcls-sc-inj-surrogate/git/blobs/32ca156d6f1a414c38e6adc28778092fb7f17731"
+    },
+    {
+      "path": "paper/archive/18MV_Astra_Scan.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2c8cfd1d42b54d5f1c3e4cfa859f70b20166e31a",
+      "size": 64698,
+      "url": "https://api.github.com/repos/slaclab/lcls-sc-inj-surrogate/git/blobs/2c8cfd1d42b54d5f1c3e4cfa859f70b20166e31a"
+    },
+    {
+      "path": "paper/figures",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "0e086352cbed45dbd881cc7fa3353880d3f9e97f",
+      "url": "https://api.github.com/repos/slaclab/lcls-sc-inj-surrogate/git/trees/0e086352cbed45dbd881cc7fa3353880d3f9e97f"
+    },
+    {
+      "path": "paper/figures/CIRC_10k.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "15f565b9b0f7957e49873fb6db8a08d60a74d7bf",
+      "size": 194260,
+      "url": "https://api.github.com/repos/slaclab/lcls-sc-inj-surrogate/git/blobs/15f565b9b0f7957e49873fb6db8a08d60a74d7bf"
+    },
+    {
+      "path": "paper/figures/CIRC_1m.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2cdfe66d6ebd76eeb670c35c59fb362c087f4390",
+      "size": 187610,
+      "url": "https://api.github.com/repos/slaclab/lcls-sc-inj-surrogate/git/blobs/2cdfe66d6ebd76eeb670c35c59fb362c087f4390"
+    },
+    {
+      "path": "paper/figures/High_charge_beamsize.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f26b09fc01c4c81ac85f313c431bd7630b0a1f40",
+      "size": 43205,
+      "url": "https://api.github.com/repos/slaclab/lcls-sc-inj-surrogate/git/blobs/f26b09fc01c4c81ac85f313c431bd7630b0a1f40"
+    },
+    {
+      "path": "paper/figures/High_charge_emit.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e0a8971c7abd5571242aaf4775bbaee11ab5f47b",
+      "size": 46931,
+      "url": "https://api.github.com/repos/slaclab/lcls-sc-inj-surrogate/git/blobs/e0a8971c7abd5571242aaf4775bbaee11ab5f47b"
+    },
+    {
+      "path": "paper/figures/Low_charge_beamsize.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e3b4cc64c7d7bc36d8fbc1a2f60ceaad43e5e930",
+      "size": 43049,
+      "url": "https://api.github.com/repos/slaclab/lcls-sc-inj-surrogate/git/blobs/e3b4cc64c7d7bc36d8fbc1a2f60ceaad43e5e930"
+    },
+    {
+      "path": "paper/figures/Low_charge_emit.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "934e1a8306ba93917b7e4ab3eabb54805599f51a",
+      "size": 45499,
+      "url": "https://api.github.com/repos/slaclab/lcls-sc-inj-surrogate/git/blobs/934e1a8306ba93917b7e4ab3eabb54805599f51a"
+    },
+    {
+      "path": "paper/figures/RMAX_10k.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "aaff677906fec6e0f490c5bc6bdd199738fd5a85",
+      "size": 183116,
+      "url": "https://api.github.com/repos/slaclab/lcls-sc-inj-surrogate/git/blobs/aaff677906fec6e0f490c5bc6bdd199738fd5a85"
+    },
+    {
+      "path": "paper/figures/RMAX_1m.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ce4a59cb5fe75d52d30258038fb1f81d0176b6c5",
+      "size": 174349,
+      "url": "https://api.github.com/repos/slaclab/lcls-sc-inj-surrogate/git/blobs/ce4a59cb5fe75d52d30258038fb1f81d0176b6c5"
+    },
+    {
+      "path": "paper/figures/SUPERG_10k.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "563aa944f4b69c81469ffa38803925a910d81a34",
+      "size": 185210,
+      "url": "https://api.github.com/repos/slaclab/lcls-sc-inj-surrogate/git/blobs/563aa944f4b69c81469ffa38803925a910d81a34"
+    },
+    {
+      "path": "paper/figures/SUPERG_1m.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "44288006b81d13291d15e2c492d620d33f9b7bc5",
+      "size": 176346,
+      "url": "https://api.github.com/repos/slaclab/lcls-sc-inj-surrogate/git/blobs/44288006b81d13291d15e2c492d620d33f9b7bc5"
+    },
+    {
+      "path": "paper/figures/VCC_10k.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ecb7f8b0ad7acd4edbe0d3f77ea5fcd0b3adc34d",
+      "size": 194256,
+      "url": "https://api.github.com/repos/slaclab/lcls-sc-inj-surrogate/git/blobs/ecb7f8b0ad7acd4edbe0d3f77ea5fcd0b3adc34d"
+    },
+    {
+      "path": "paper/figures/VCC_1m.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "83b6e5c5b693b0a28481b3df756970ecb60a6d65",
+      "size": 182777,
+      "url": "https://api.github.com/repos/slaclab/lcls-sc-inj-surrogate/git/blobs/83b6e5c5b693b0a28481b3df756970ecb60a6d65"
+    },
+    {
+      "path": "paper/figures/VCC_FILTERED_10k.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b3f2959c450fa48bc3698cf8f67be9936c991131",
+      "size": 199751,
+      "url": "https://api.github.com/repos/slaclab/lcls-sc-inj-surrogate/git/blobs/b3f2959c450fa48bc3698cf8f67be9936c991131"
+    },
+    {
+      "path": "paper/figures/VCC_FILTERED_1m.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "80bd291077b6569e12fc9191f87d3bb800a94adf",
+      "size": 173945,
+      "url": "https://api.github.com/repos/slaclab/lcls-sc-inj-surrogate/git/blobs/80bd291077b6569e12fc9191f87d3bb800a94adf"
+    },
+    {
+      "path": "paper/files",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "a051b5f2807f2aea0789f3bffa4b1dfa7c5fa54b",
+      "url": "https://api.github.com/repos/slaclab/lcls-sc-inj-surrogate/git/trees/a051b5f2807f2aea0789f3bffa4b1dfa7c5fa54b"
+    },
+    {
+      "path": "paper/files/135614-trunc-rmax.yaml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d58fa2eff4365810cbd7cdcee2c957ce8274d125",
+      "size": 395,
+      "url": "https://api.github.com/repos/slaclab/lcls-sc-inj-surrogate/git/blobs/d58fa2eff4365810cbd7cdcee2c957ce8274d125"
+    },
+    {
+      "path": "paper/files/135614_circ.yaml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c0454eb6dc383da6862041a4d244cb414215a80c",
+      "size": 317,
+      "url": "https://api.github.com/repos/slaclab/lcls-sc-inj-surrogate/git/blobs/c0454eb6dc383da6862041a4d244cb414215a80c"
+    },
+    {
+      "path": "paper/files/2019-11-01T00:57:54_laser_in.yaml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a7bf1a49e5941ab51d0f732d16eb8186e422aa26",
+      "size": 373,
+      "url": "https://api.github.com/repos/slaclab/lcls-sc-inj-surrogate/git/blobs/a7bf1a49e5941ab51d0f732d16eb8186e422aa26"
+    },
+    {
+      "path": "paper/files/2019_11_01_005754.yaml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2f5a3edfb053fbae9fce0f3b8ef0b21a04b9cd22",
+      "size": 371,
+      "url": "https://api.github.com/repos/slaclab/lcls-sc-inj-surrogate/git/blobs/2f5a3edfb053fbae9fce0f3b8ef0b21a04b9cd22"
+    },
+    {
+      "path": "paper/files/2019_11_04_135614.yaml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c1906e47049b48ccd53e1dd15e3e18c53e26440c",
+      "size": 427,
+      "url": "https://api.github.com/repos/slaclab/lcls-sc-inj-surrogate/git/blobs/c1906e47049b48ccd53e1dd15e3e18c53e26440c"
+    },
+    {
+      "path": "paper/files/2019_11_04_135614_filt_out.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1d0430d30b06785513765194253170dd15ff231e",
+      "size": 2250040,
+      "url": "https://api.github.com/repos/slaclab/lcls-sc-inj-surrogate/git/blobs/1d0430d30b06785513765194253170dd15ff231e"
+    },
+    {
+      "path": "paper/files/2019_11_04_135614_filt_outfilt_laser_in.yaml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3c5a8f7c4d319010488f99bd9e60697fe2754768",
+      "size": 330,
+      "url": "https://api.github.com/repos/slaclab/lcls-sc-inj-surrogate/git/blobs/3c5a8f7c4d319010488f99bd9e60697fe2754768"
+    },
+    {
+      "path": "paper/files/2019_11_04_135614reg_out.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4baff019da63a0a0a459c65db579fad036def016",
+      "size": 2250040,
+      "url": "https://api.github.com/repos/slaclab/lcls-sc-inj-surrogate/git/blobs/4baff019da63a0a0a459c65db579fad036def016"
+    },
+    {
+      "path": "paper/files/2019_11_04_135614reg_outreg_laser_in.yaml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "528c6c282eb5f113c4d2cbc021d622caca54c36c",
+      "size": 328,
+      "url": "https://api.github.com/repos/slaclab/lcls-sc-inj-surrogate/git/blobs/528c6c282eb5f113c4d2cbc021d622caca54c36c"
+    },
+    {
+      "path": "paper/files/CorrelationPlot-SOLN_GUNB_212_BCTRL-2019-11-01-003233.mat",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "76003bb335ac7623f3637229b5d231c726d9e41c",
+      "size": 5399754,
+      "url": "https://api.github.com/repos/slaclab/lcls-sc-inj-surrogate/git/blobs/76003bb335ac7623f3637229b5d231c726d9e41c"
+    },
+    {
+      "path": "paper/files/VCC_gencircle_out.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1f63dcbd386b5daa4615fd5f3d598d0e5b643055",
+      "size": 2250040,
+      "url": "https://api.github.com/repos/slaclab/lcls-sc-inj-surrogate/git/blobs/1f63dcbd386b5daa4615fd5f3d598d0e5b643055"
+    },
+    {
+      "path": "paper/scanfiles",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "91e2eff2a7dc611ab48249b5846ce13ec0c76f94",
+      "url": "https://api.github.com/repos/slaclab/lcls-sc-inj-surrogate/git/trees/91e2eff2a7dc611ab48249b5846ce13ec0c76f94"
+    },
+    {
+      "path": "paper/scanfiles/4pC_chargescan_Astra_Scan.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "16a2ae11de9df8e9232ce031c54f166c19a68f77",
+      "size": 185878,
+      "url": "https://api.github.com/repos/slaclab/lcls-sc-inj-surrogate/git/blobs/16a2ae11de9df8e9232ce031c54f166c19a68f77"
+    },
+    {
+      "path": "paper/scanfiles/4pC_chargescansolenoid_scan.pickle",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b997de2441343953f8eb424fd943bca4e0c07b96",
+      "size": 9741,
+      "url": "https://api.github.com/repos/slaclab/lcls-sc-inj-surrogate/git/blobs/b997de2441343953f8eb424fd943bca4e0c07b96"
+    },
+    {
+      "path": "paper/scanfiles/4pC_radiiscan_Astra_Scan.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0d2382be4e0becd36606ccbbcf0814cd98609b5f",
+      "size": 129320,
+      "url": "https://api.github.com/repos/slaclab/lcls-sc-inj-surrogate/git/blobs/0d2382be4e0becd36606ccbbcf0814cd98609b5f"
+    },
+    {
+      "path": "paper/scanfiles/4pC_radiiscansolenoid_scan.pickle",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "38428b27c403ccd9b9f8c936e22cc8d6222f54b2",
+      "size": 9741,
+      "url": "https://api.github.com/repos/slaclab/lcls-sc-inj-surrogate/git/blobs/38428b27c403ccd9b9f8c936e22cc8d6222f54b2"
+    },
+    {
+      "path": "paper/scanfiles/charge_scan.pickle",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8fbda375af214f8b5a22ab3c98e726252e8c13f9",
+      "size": 12215,
+      "url": "https://api.github.com/repos/slaclab/lcls-sc-inj-surrogate/git/blobs/8fbda375af214f8b5a22ab3c98e726252e8c13f9"
+    },
+    {
+      "path": "paper/scanfiles/nearwaist_charge_scan.pickle",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "39d839f8ab387d6c65b4dc366274a05906a7389e",
+      "size": 12222,
+      "url": "https://api.github.com/repos/slaclab/lcls-sc-inj-surrogate/git/blobs/39d839f8ab387d6c65b4dc366274a05906a7389e"
+    },
+    {
+      "path": "paper/scanfiles/operationrange_charge_scan.pickle",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e1141605381a57a3ddb8d4341d0cb53283c3ef31",
+      "size": 12222,
+      "url": "https://api.github.com/repos/slaclab/lcls-sc-inj-surrogate/git/blobs/e1141605381a57a3ddb8d4341d0cb53283c3ef31"
+    },
+    {
+      "path": "pv_mapping",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "94a1e10a7e2e17f2e74460905056673820cf24ee",
+      "url": "https://api.github.com/repos/slaclab/lcls-sc-inj-surrogate/git/trees/94a1e10a7e2e17f2e74460905056673820cf24ee"
+    },
+    {
+      "path": "pv_mapping/SC_PV_list.csv",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6572ccb31795f5a6ba6ce07b6703bc0bb9580b10",
+      "size": 586,
+      "url": "https://api.github.com/repos/slaclab/lcls-sc-inj-surrogate/git/blobs/6572ccb31795f5a6ba6ce07b6703bc0bb9580b10"
+    },
+    {
+      "path": "setup.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "663c1d694e8e574e99d7767e2bf05602625c6232",
+      "size": 6524,
+      "url": "https://api.github.com/repos/slaclab/lcls-sc-inj-surrogate/git/blobs/663c1d694e8e574e99d7767e2bf05602625c6232"
+    }
+  ],
+  "truncated": false
+}

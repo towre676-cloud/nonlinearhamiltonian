@@ -1,0 +1,21 @@
+{
+  "status": "passed",
+  "lattice_files_hash_checked": 3,
+  "hmba_cell_elements": 122,
+  "hmba_periodicity": 32,
+  "measured_wire_profile_bytes": 63228,
+  "measured_wire_zip_crc_and_sha256": "passed",
+  "lansce_rf_shape": [
+    100,
+    8
+  ],
+  "lansce_phase_header_shape": [
+    100,
+    48,
+    15,
+    256,
+    256
+  ],
+  "retained_discrepancy": "Published README says 500 examples; both actual arrays declare 100.",
+  "scope": "Small-data ingestion and provenance consistency only; no bulk-array, physics or performance validation."
+}

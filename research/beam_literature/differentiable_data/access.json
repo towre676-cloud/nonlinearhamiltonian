@@ -1,0 +1,62 @@
+{
+  "checked_date": "2026-10-23",
+  "repositories": [
+    {
+      "repository": "desy-ml/cheetah",
+      "default_branch": "master",
+      "public": true,
+      "clone_url": "https://github.com/desy-ml/cheetah.git",
+      "metadata_access_verified": true
+    },
+    {
+      "repository": "Accel-Toolkit/HELIX",
+      "default_branch": "main",
+      "public": true,
+      "clone_url": "https://github.com/Accel-Toolkit/HELIX.git",
+      "metadata_access_verified": true
+    },
+    {
+      "repository": "MSU-Beam-Dynamics/JuTrack.jl",
+      "default_branch": "main",
+      "public": true,
+      "clone_url": "https://github.com/MSU-Beam-Dynamics/JuTrack.jl.git",
+      "metadata_access_verified": true
+    }
+  ],
+  "helix_inspected_tree_sha": "3709ffefce37b8bd097f83540dc25210995551a3",
+  "helix_package_version_read": "1.20.0",
+  "file_reads": [
+    {
+      "repository": "desy-ml/cheetah",
+      "ref": "v0.8.4",
+      "path": "cheetah/accelerator/space_charge_kick.py",
+      "blob_sha": "e1c837c2930223b135c1375febe595270d315153",
+      "source_url": "https://github.com/desy-ml/cheetah/blob/v0.8.4/cheetah/accelerator/space_charge_kick.py"
+    },
+    {
+      "repository": "Accel-Toolkit/HELIX",
+      "ref": "main",
+      "blob_sha": "d4bc9b8050c0536b8fab0611a2784a9e8e755975",
+      "source_url": "https://github.com/Accel-Toolkit/HELIX/blob/main/docs/manual/05_space_charge/06_differentiable.md"
+    },
+    {
+      "repository": "Accel-Toolkit/HELIX",
+      "ref": "main",
+      "blob_sha": "9ee30f615615e42d2c786ddcd111aeaab67b1bfd",
+      "source_url": "https://github.com/Accel-Toolkit/HELIX/blob/main/pyproject.toml"
+    },
+    {
+      "repository": "Accel-Toolkit/HELIX",
+      "ref": "main",
+      "blob_sha": "9fa03dd1beeb3702b9b6bf16fa2c053463ef30c4",
+      "source_url": "https://github.com/Accel-Toolkit/HELIX/blob/main/linac_gen/pic/torch/devices.py"
+    }
+  ],
+  "execution": {
+    "torch_installed": false,
+    "jax_installed": false,
+    "cheetah_installed": false,
+    "external_simulator_executed": false
+  },
+  "limits": "Source access and metadata verified only; no package execution or reproduction of literature performance."
+}

@@ -1,0 +1,108 @@
+[
+  {
+    "requested_record": "17822325",
+    "resolved_record": 17822326,
+    "doi": "10.5281/zenodo.17822326",
+    "title": "Supplemental Materials: The memory scaling of reverse-mode differentiation in particle accelerator simulations with space charge",
+    "license": {
+      "id": "cc-by-4.0"
+    },
+    "access_right": "open",
+    "publication_date": "2025-12-04",
+    "files": [
+      {
+        "key": "cheetah_benchmark_B1.ipynb",
+        "size": 7688,
+        "checksum": "md5:e1e48e9e0460d9f98d8ad1faddb7f70a",
+        "url": "https://zenodo.org/api/records/17822326/files/cheetah_benchmark_B1.ipynb/content"
+      },
+      {
+        "key": "README.md",
+        "size": 4007,
+        "checksum": "md5:041cec95f9fc4ee1118a0d7801cb45a4",
+        "url": "https://zenodo.org/api/records/17822326/files/README.md/content"
+      },
+      {
+        "key": "cheetah_benchmark_B2.ipynb",
+        "size": 6076,
+        "checksum": "md5:2e48af88a635c53d78b86c212c47124c",
+        "url": "https://zenodo.org/api/records/17822326/files/cheetah_benchmark_B2.ipynb/content"
+      },
+      {
+        "key": "cheetah.tar",
+        "size": 11791617,
+        "checksum": "md5:adb8e0083d648a77eb54ceffcb1f9842",
+        "url": "https://zenodo.org/api/records/17822326/files/cheetah.tar/content"
+      },
+      {
+        "key": "generate_memory_plots.py",
+        "size": 5056,
+        "checksum": "md5:ade564fb5a4ef59e0c5c5f61c9f444ac",
+        "url": "https://zenodo.org/api/records/17822326/files/generate_memory_plots.py/content"
+      },
+      {
+        "key": "memory_data.csv",
+        "size": 114611,
+        "checksum": "md5:46119e52da1d688ea46051f17fd80483",
+        "url": "https://zenodo.org/api/records/17822326/files/memory_data.csv/content",
+        "downloaded_sha256": "3f1cf409db2dce5437710093e6c51b1749bd977eff4f11752ca4d0ba16b4fbf9"
+      },
+      {
+        "key": "regression.py",
+        "size": 3015,
+        "checksum": "md5:734a144ed9a6809635c3c92fa1fffa0e",
+        "url": "https://zenodo.org/api/records/17822326/files/regression.py/content"
+      },
+      {
+        "key": "simulation.py",
+        "size": 5622,
+        "checksum": "md5:4ce2fb3cec5fcf454bca0adef14c5635",
+        "url": "https://zenodo.org/api/records/17822326/files/simulation.py/content"
+      },
+      {
+        "key": "analyzed_data.csv",
+        "size": 650,
+        "checksum": "md5:2307f362dd939662f51062d4c512ef1f",
+        "url": "https://zenodo.org/api/records/17822326/files/analyzed_data.csv/content",
+        "downloaded_sha256": "e65be257aaddd7d60900da80315fcd25e0081938fa9f55387da733b62e7ae08d"
+      },
+      {
+        "key": "data_analysis.py",
+        "size": 7981,
+        "checksum": "md5:86033183fbe639c7b4fc866e86e78662",
+        "url": "https://zenodo.org/api/records/17822326/files/data_analysis.py/content"
+      },
+      {
+        "key": "data_collection.py",
+        "size": 620,
+        "checksum": "md5:50ca4b36e971080e863caf5b521f55f2",
+        "url": "https://zenodo.org/api/records/17822326/files/data_collection.py/content"
+      }
+    ]
+  },
+  {
+    "requested_record": "16783369",
+    "resolved_record": 16783369,
+    "doi": "10.5281/zenodo.16783369",
+    "title": "Supplementary Materials: Towards Differentiable Beam Dynamics Modeling in BLAST/ImpactX",
+    "license": {
+      "id": "cc-by-4.0"
+    },
+    "access_right": "open",
+    "publication_date": "2025-08-09",
+    "files": [
+      {
+        "key": "napac25-benchmarks.zip",
+        "size": 5991229,
+        "checksum": "md5:911f9879ac4e21a0616be5b4530e7709",
+        "url": "https://zenodo.org/api/records/16783369/files/napac25-benchmarks.zip/content"
+      },
+      {
+        "key": "impactx-enzyme-envelope.zip",
+        "size": 2562546,
+        "checksum": "md5:780bc82fcac7f0c7df8cd44254fbf8b2",
+        "url": "https://zenodo.org/api/records/16783369/files/impactx-enzyme-envelope.zip/content"
+      }
+    ]
+  }
+]

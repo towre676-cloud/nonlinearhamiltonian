@@ -1,0 +1,145 @@
+{
+  "inspection": "SciPy MAT structural inspection, no simulator import/tracking",
+  "lattice_sha256": "8547502b0a4612a0e145fa6033e5ba98bb13567035fed43cadef760dae385c7b",
+  "unit_cell_elements": 122,
+  "periodicity": 32,
+  "cell_length_m": 26.374287952316926,
+  "full_ring_length_m": 843.9772144741416,
+  "energy_eV": 6000000000.0,
+  "nonlinear_and_cavity_elements": [
+    {
+      "index": 0,
+      "family": "S28d",
+      "class": "RingParam",
+      "length_m": 0.0,
+      "pass_method": "IdentityPass",
+      "periodicity": 32
+    },
+    {
+      "index": 1,
+      "family": "RFC",
+      "class": "RFCavity",
+      "length_m": 0.0,
+      "pass_method": "IdentityPass"
+    },
+    {
+      "index": 22,
+      "family": "SD1A",
+      "class": "Sextupole",
+      "length_m": 0.17989,
+      "pass_method": "StrMPoleSymplectic4Pass",
+      "polynomB": [
+        0.0,
+        0.0,
+        -78.95535579389983
+      ]
+    },
+    {
+      "index": 28,
+      "family": "SF2A",
+      "class": "Sextupole",
+      "length_m": 0.21389,
+      "pass_method": "StrMPoleSymplectic4Pass",
+      "polynomB": [
+        0.0,
+        0.0,
+        77.03724442909913
+      ]
+    },
+    {
+      "index": 32,
+      "family": "OF1B",
+      "class": "Multipole",
+      "length_m": 0.097688,
+      "pass_method": "StrMPoleSymplectic4Pass",
+      "polynomB": [
+        0.0,
+        0.0,
+        0.0,
+        -1450.0
+      ]
+    },
+    {
+      "index": 36,
+      "family": "SD1B",
+      "class": "Sextupole",
+      "length_m": 0.17989,
+      "pass_method": "StrMPoleSymplectic4Pass",
+      "polynomB": [
+        0.0,
+        0.0,
+        -74.18952537661734
+      ]
+    },
+    {
+      "index": 90,
+      "family": "SD1D",
+      "class": "Sextupole",
+      "length_m": 0.17989,
+      "pass_method": "StrMPoleSymplectic4Pass",
+      "polynomB": [
+        0.0,
+        0.0,
+        -74.18952537661734
+      ]
+    },
+    {
+      "index": 94,
+      "family": "OF1D",
+      "class": "Multipole",
+      "length_m": 0.097688,
+      "pass_method": "StrMPoleSymplectic4Pass",
+      "polynomB": [
+        0.0,
+        0.0,
+        0.0,
+        -1450.0
+      ]
+    },
+    {
+      "index": 98,
+      "family": "SF2E",
+      "class": "Sextupole",
+      "length_m": 0.21389,
+      "pass_method": "StrMPoleSymplectic4Pass",
+      "polynomB": [
+        0.0,
+        0.0,
+        77.03724442909913
+      ]
+    },
+    {
+      "index": 104,
+      "family": "SD1E",
+      "class": "Sextupole",
+      "length_m": 0.17989,
+      "pass_method": "StrMPoleSymplectic4Pass",
+      "polynomB": [
+        0.0,
+        0.0,
+        -78.95535579389983
+      ]
+    }
+  ],
+  "families": {
+    "RingParam": [
+      "S28d"
+    ],
+    "RFCavity": [
+      "RFC"
+    ],
+    "Sextupole": [
+      "SD1A",
+      "SD1B",
+      "SD1D",
+      "SD1E",
+      "SF2A",
+      "SF2E"
+    ],
+    "Multipole": [
+      "OF1B",
+      "OF1D"
+    ]
+  },
+  "pyat_initial_import": "blocked until h5py dependency installed; root handling isolated runtime"
+}

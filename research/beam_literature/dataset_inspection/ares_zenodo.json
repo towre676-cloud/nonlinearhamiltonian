@@ -1,0 +1,173 @@
+{
+  "created": "2023-05-26T13:21:06.351939+00:00",
+  "modified": "2023-07-31T00:02:01.285599+00:00",
+  "id": 7853721,
+  "conceptrecid": "7853720",
+  "doi": "10.5281/zenodo.7853721",
+  "conceptdoi": "10.5281/zenodo.7853720",
+  "doi_url": "https://doi.org/10.5281/zenodo.7853721",
+  "metadata": {
+    "title": "Learning to Do or Learning While Doing: Reinforcement Learning and Bayesian Optimisation for Online Continuous Tuning",
+    "doi": "10.5281/zenodo.7853721",
+    "publication_date": "2023-04-24",
+    "description": "<p>Dataset of optimisation runs performed for a study comparing reinforcement learning and Bayesian optimisation for online continuous tuning at the example of a linear particle accelerator tuning task.</p>\n\n<p>&nbsp;</p>\n\n<p><strong>Abstract of the Paper on the Study</strong></p>\n\n<p>Online tuning of real-world plants is a complex optimisation problem that continues to require manual intervention by experienced human operators. Autonomous tuning is a rapidly expanding field of research, where learning-based methods, such as Reinforcement Learning-trained Optimisation (RLO) and Bayesian optimisation (BO), hold great promise for achieving outstanding plant performance and reducing tuning times. Which algorithm to choose in different scenarios, however, remains an open question. Here we present a comparative study at the example of a routine task on a real particle accelerator, showing that RLO generally outperforms BO, but is not always the best choice. Based on the study&rsquo;s results, we provide a clear set of criteria to guide the choice of algorithm for a given tuning task. These can ease the adoption of learning-based autonomous tuning solutions to the operation of complex real-world plants, ultimately improving the availability and pushing the limits of operability of these facilities, thereby enabling scientific and engineering<br>\nadvancements.</p>",
+    "access_right": "open",
+    "creators": [
+      {
+        "name": "Kaiser, Jan",
+        "affiliation": "Deutsches Elektronen-Synchrotron DESY",
+        "orcid": "0000-0003-3445-0678"
+      },
+      {
+        "name": "Xu, Chenran",
+        "affiliation": "Karlsruhe Institute of Technology KIT",
+        "orcid": "0000-0002-5034-2207"
+      },
+      {
+        "name": "Eichler, Annika",
+        "affiliation": "Deutsches Elektronen-Synchrotron DESY",
+        "orcid": "0000-0003-3282-3135"
+      },
+      {
+        "name": "Santamaria Garcia, Andrea",
+        "affiliation": "Karlsruhe Institute of Technology KIT",
+        "orcid": "0000-0002-7498-7640"
+      },
+      {
+        "name": "Stein, Oliver",
+        "affiliation": "Deutsches Elektronen-Synchrotron DESY"
+      },
+      {
+        "name": "Br\u00fcndermann, Erik",
+        "affiliation": "Karlsruhe Institute of Technology KIT"
+      },
+      {
+        "name": "Kuropka, Willi",
+        "affiliation": "Deutsches Elektronen-Synchrotron DESY",
+        "orcid": "0000-0002-8649-7366"
+      },
+      {
+        "name": "Dinter, Hannes",
+        "affiliation": "Deutsches Elektronen-Synchrotron DESY"
+      },
+      {
+        "name": "Mayet, Frank",
+        "affiliation": "Deutsches Elektronen-Synchrotron DESY",
+        "orcid": "0000-0003-3816-0686"
+      },
+      {
+        "name": "Vinatier, Thomas",
+        "affiliation": "Deutsches Elektronen-Synchrotron DESY"
+      },
+      {
+        "name": "Burkart, Florian",
+        "affiliation": "Deutsches Elektronen-Synchrotron DESY",
+        "orcid": "0000-0002-2178-4639"
+      },
+      {
+        "name": "Schlarb, Holger",
+        "affiliation": "Deutsches Elektronen-Synchrotron DESY",
+        "orcid": "0000-0003-4115-5183"
+      }
+    ],
+    "keywords": [
+      "reinforcement learning, Bayesian optimisation, particle accelerator, linac, online continuous tuning"
+    ],
+    "version": "v2023.04.24",
+    "language": "eng",
+    "resource_type": {
+      "title": "Dataset",
+      "type": "dataset"
+    },
+    "license": {
+      "id": "cc-by-4.0"
+    },
+    "relations": {
+      "version": [
+        {
+          "index": 0,
+          "is_last": true,
+          "parent": {
+            "pid_type": "recid",
+            "pid_value": "7853720"
+          }
+        }
+      ]
+    }
+  },
+  "title": "Learning to Do or Learning While Doing: Reinforcement Learning and Bayesian Optimisation for Online Continuous Tuning",
+  "links": {
+    "self": "https://zenodo.org/api/records/7853721",
+    "self_html": "https://zenodo.org/records/7853721",
+    "preview_html": "https://zenodo.org/records/7853721?preview=1",
+    "doi": "https://doi.org/10.5281/zenodo.7853721",
+    "self_doi": "https://doi.org/10.5281/zenodo.7853721",
+    "self_doi_html": "https://zenodo.org/doi/10.5281/zenodo.7853721",
+    "reserve_doi": "https://zenodo.org/api/records/7853721/draft/pids/doi",
+    "parent": "https://zenodo.org/api/records/7853720",
+    "parent_html": "https://zenodo.org/records/7853720",
+    "parent_doi": "https://doi.org/10.5281/zenodo.7853720",
+    "parent_doi_html": "https://zenodo.org/doi/10.5281/zenodo.7853720",
+    "self_iiif_manifest": "https://zenodo.org/api/iiif/record:7853721/manifest",
+    "self_iiif_sequence": "https://zenodo.org/api/iiif/record:7853721/sequence/default",
+    "files": "https://zenodo.org/api/records/7853721/files",
+    "media_files": "https://zenodo.org/api/records/7853721/media-files",
+    "latest": "https://zenodo.org/api/records/7853721/versions/latest",
+    "latest_html": "https://zenodo.org/records/7853721/latest",
+    "versions": "https://zenodo.org/api/records/7853721/versions",
+    "draft": "https://zenodo.org/api/records/7853721/draft",
+    "access_links": "https://zenodo.org/api/records/7853721/access/links",
+    "access_grants": "https://zenodo.org/api/records/7853721/access/grants",
+    "access_users": "https://zenodo.org/api/records/7853721/access/users",
+    "access_request": "https://zenodo.org/api/records/7853721/access/request",
+    "access": "https://zenodo.org/api/records/7853721/access",
+    "communities": "https://zenodo.org/api/records/7853721/communities",
+    "communities-suggestions": "https://zenodo.org/api/records/7853721/communities-suggestions",
+    "request_deletion": "https://zenodo.org/api/records/7853721/request-deletion",
+    "file_modification": "https://zenodo.org/api/records/7853721/file-modification",
+    "quota_increase": "https://zenodo.org/api/records/7853721/quota-increase",
+    "requests": "https://zenodo.org/api/records/7853721/requests"
+  },
+  "updated": "2023-07-31T00:02:01.285599+00:00",
+  "recid": "7853721",
+  "revision": 3,
+  "files": [
+    {
+      "id": "bc3d80da-7bd8-46d7-a42d-15753cefa0f2",
+      "key": "simulation.zip",
+      "size": 5435174684,
+      "checksum": "md5:211d3e042e66b6a24092aab93b7599b6",
+      "links": {
+        "self": "https://zenodo.org/api/records/7853721/files/simulation.zip/content"
+      }
+    },
+    {
+      "id": "0d532644-36a3-438a-87be-747679f77c39",
+      "key": "real.zip",
+      "size": 17201360986,
+      "checksum": "md5:ae0565d0bcaeadecad10523e7bbb3bb2",
+      "links": {
+        "self": "https://zenodo.org/api/records/7853721/files/real.zip/content"
+      }
+    }
+  ],
+  "swh": {},
+  "owners": [
+    {
+      "id": "535595"
+    }
+  ],
+  "status": "published",
+  "stats": {
+    "downloads": 210,
+    "unique_downloads": 191,
+    "views": 275,
+    "unique_views": 247,
+    "version_downloads": 210,
+    "version_unique_downloads": 191,
+    "version_unique_views": 247,
+    "version_views": 275
+  },
+  "state": "done",
+  "submitted": true
+}

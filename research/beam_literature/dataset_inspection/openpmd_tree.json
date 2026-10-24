@@ -1,0 +1,258 @@
+{
+  "sha": "11e1a9d8281044c7e01dea9977291c871273da3f",
+  "url": "https://api.github.com/repos/openPMD/openPMD-example-datasets/git/trees/11e1a9d8281044c7e01dea9977291c871273da3f",
+  "tree": [
+    {
+      "path": ".github",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "d85253867d71bea0cad77d18ffa2824ca5792d3c",
+      "url": "https://api.github.com/repos/openPMD/openPMD-example-datasets/git/trees/d85253867d71bea0cad77d18ffa2824ca5792d3c"
+    },
+    {
+      "path": ".github/workflows",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "45e6311aca5e6169cc316efe44c149d7dcf0df4b",
+      "url": "https://api.github.com/repos/openPMD/openPMD-example-datasets/git/trees/45e6311aca5e6169cc316efe44c149d7dcf0df4b"
+    },
+    {
+      "path": ".github/workflows/ubuntu.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b0263b2ce8b1d91da71057bafb24022cb9d68192",
+      "size": 746,
+      "url": "https://api.github.com/repos/openPMD/openPMD-example-datasets/git/blobs/b0263b2ce8b1d91da71057bafb24022cb9d68192"
+    },
+    {
+      "path": "LICENSE",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "670154e3538863b2d9891fd5483160fbdfc89164",
+      "size": 6555,
+      "url": "https://api.github.com/repos/openPMD/openPMD-example-datasets/git/blobs/670154e3538863b2d9891fd5483160fbdfc89164"
+    },
+    {
+      "path": "README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b909c29ac0af26b82ce2b1c2a1b9826c73f2e0bd",
+      "size": 1618,
+      "url": "https://api.github.com/repos/openPMD/openPMD-example-datasets/git/blobs/b909c29ac0af26b82ce2b1c2a1b9826c73f2e0bd"
+    },
+    {
+      "path": "example-2d.tar.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9683f1831ec4daf8c64ef64520abf33b1680df0a",
+      "size": 18796446,
+      "url": "https://api.github.com/repos/openPMD/openPMD-example-datasets/git/blobs/9683f1831ec4daf8c64ef64520abf33b1680df0a"
+    },
+    {
+      "path": "example-3d-bp4.tar.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "922d4543570b5a4256de2706c3508b0c320f9790",
+      "size": 23934500,
+      "url": "https://api.github.com/repos/openPMD/openPMD-example-datasets/git/blobs/922d4543570b5a4256de2706c3508b0c320f9790"
+    },
+    {
+      "path": "example-3d.tar.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7d01e4d58bd18edda67a0dcc967f6eea39109165",
+      "size": 50298557,
+      "url": "https://api.github.com/repos/openPMD/openPMD-example-datasets/git/blobs/7d01e4d58bd18edda67a0dcc967f6eea39109165"
+    },
+    {
+      "path": "example-femm-3d.h5",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fddd0a849d8f5ffc8ce9cd00fdc3dedd4ff62161",
+      "size": 3561320,
+      "url": "https://api.github.com/repos/openPMD/openPMD-example-datasets/git/blobs/fddd0a849d8f5ffc8ce9cd00fdc3dedd4ff62161"
+    },
+    {
+      "path": "example-femm-thetaMode.h5",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ac9f33e346e0813f8823a2b34251264a3e8701a6",
+      "size": 85560,
+      "url": "https://api.github.com/repos/openPMD/openPMD-example-datasets/git/blobs/ac9f33e346e0813f8823a2b34251264a3e8701a6"
+    },
+    {
+      "path": "example-thetaMode.tar.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "dd4ee5c0d9beeaccae2d1921dbd6f796d8531b05",
+      "size": 10497775,
+      "url": "https://api.github.com/repos/openPMD/openPMD-example-datasets/git/blobs/dd4ee5c0d9beeaccae2d1921dbd6f796d8531b05"
+    },
+    {
+      "path": "legacy_datasets.tar.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c3d4e772fd4ab6ca278837640179ba7cd342f969",
+      "size": 8858128,
+      "url": "https://api.github.com/repos/openPMD/openPMD-example-datasets/git/blobs/c3d4e772fd4ab6ca278837640179ba7cd342f969"
+    },
+    {
+      "path": "scripts",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "8542f9ee5bfd0281df8363f67d567853e03e7fd2",
+      "url": "https://api.github.com/repos/openPMD/openPMD-example-datasets/git/trees/8542f9ee5bfd0281df8363f67d567853e03e7fd2"
+    },
+    {
+      "path": "scripts/femm",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "cfdd4c6f869a1ca743e6ac9e1551734d64a9417c",
+      "url": "https://api.github.com/repos/openPMD/openPMD-example-datasets/git/trees/cfdd4c6f869a1ca743e6ac9e1551734d64a9417c"
+    },
+    {
+      "path": "scripts/femm/Br_rz.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2aabf8b918842efddc1e22f2b3b92e650bb2ff7c",
+      "size": 50792,
+      "url": "https://api.github.com/repos/openPMD/openPMD-example-datasets/git/blobs/2aabf8b918842efddc1e22f2b3b92e650bb2ff7c"
+    },
+    {
+      "path": "scripts/femm/Bx_3d.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "63707fb11fb5f6e12b17b1094e1e983f123eaa7e",
+      "size": 2426118,
+      "url": "https://api.github.com/repos/openPMD/openPMD-example-datasets/git/blobs/63707fb11fb5f6e12b17b1094e1e983f123eaa7e"
+    },
+    {
+      "path": "scripts/femm/By_3d.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "31a974b1824340e2b15d903ac50feb10210090d1",
+      "size": 2426029,
+      "url": "https://api.github.com/repos/openPMD/openPMD-example-datasets/git/blobs/31a974b1824340e2b15d903ac50feb10210090d1"
+    },
+    {
+      "path": "scripts/femm/Bz_3d.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "23e608b01d81c9b507c1b019a03240fcc01a0180",
+      "size": 2276329,
+      "url": "https://api.github.com/repos/openPMD/openPMD-example-datasets/git/blobs/23e608b01d81c9b507c1b019a03240fcc01a0180"
+    },
+    {
+      "path": "scripts/femm/Bz_rz.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "42e77f0fa5c878286748601efd2e9cbf099b5edb",
+      "size": 48372,
+      "url": "https://api.github.com/repos/openPMD/openPMD-example-datasets/git/blobs/42e77f0fa5c878286748601efd2e9cbf099b5edb"
+    },
+    {
+      "path": "scripts/femm/LuaScript_3d.lua",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bf25e9749cca62d94f5f0c1cbb360e0db70545b5",
+      "size": 1419,
+      "url": "https://api.github.com/repos/openPMD/openPMD-example-datasets/git/blobs/bf25e9749cca62d94f5f0c1cbb360e0db70545b5"
+    },
+    {
+      "path": "scripts/femm/LuaScript_rz.lua",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e92160b13a9e64e037612d66fa1d6889f341ec3e",
+      "size": 1165,
+      "url": "https://api.github.com/repos/openPMD/openPMD-example-datasets/git/blobs/e92160b13a9e64e037612d66fa1d6889f341ec3e"
+    },
+    {
+      "path": "scripts/femm/README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e06a02ea55677ca6bbd824c6266c6ddd64ba036b",
+      "size": 756,
+      "url": "https://api.github.com/repos/openPMD/openPMD-example-datasets/git/blobs/e06a02ea55677ca6bbd824c6266c6ddd64ba036b"
+    },
+    {
+      "path": "scripts/femm/mirror.FEM",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4f5d5001f03aaaaa017f1a2588395d08aa7ea63a",
+      "size": 2578,
+      "url": "https://api.github.com/repos/openPMD/openPMD-example-datasets/git/blobs/4f5d5001f03aaaaa017f1a2588395d08aa7ea63a"
+    },
+    {
+      "path": "scripts/femm/openpmd_create_3d.py",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "4019fc0a984c59fe83f208405102930c51d4a66c",
+      "size": 1835,
+      "url": "https://api.github.com/repos/openPMD/openPMD-example-datasets/git/blobs/4019fc0a984c59fe83f208405102930c51d4a66c"
+    },
+    {
+      "path": "scripts/femm/openpmd_create_rz.py",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "f214f277b462dacf483ca37b8c6618133aef9aff",
+      "size": 1842,
+      "url": "https://api.github.com/repos/openPMD/openPMD-example-datasets/git/blobs/f214f277b462dacf483ca37b8c6618133aef9aff"
+    },
+    {
+      "path": "scripts/femm/requirements.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0e256c5a97002a3dccfb58059c346408484fa22a",
+      "size": 41,
+      "url": "https://api.github.com/repos/openPMD/openPMD-example-datasets/git/blobs/0e256c5a97002a3dccfb58059c346408484fa22a"
+    },
+    {
+      "path": "scripts/warp",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "709d1e89f27745bb5c9b4d40172ee5762c37b33b",
+      "url": "https://api.github.com/repos/openPMD/openPMD-example-datasets/git/trees/709d1e89f27745bb5c9b4d40172ee5762c37b33b"
+    },
+    {
+      "path": "scripts/warp/main.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "719a6b4bdaac2c1247e6d183b3311b8678a72961",
+      "size": 1154,
+      "url": "https://api.github.com/repos/openPMD/openPMD-example-datasets/git/blobs/719a6b4bdaac2c1247e6d183b3311b8678a72961"
+    },
+    {
+      "path": "scripts/warp/warp_2d_script.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1dc596f4a81b3a2267fbca7d674e5ae916d5a033",
+      "size": 12337,
+      "url": "https://api.github.com/repos/openPMD/openPMD-example-datasets/git/blobs/1dc596f4a81b3a2267fbca7d674e5ae916d5a033"
+    },
+    {
+      "path": "scripts/warp/warp_3d_script.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c586d5f0b59b131cee71008908d5b0a1319f205c",
+      "size": 12108,
+      "url": "https://api.github.com/repos/openPMD/openPMD-example-datasets/git/blobs/c586d5f0b59b131cee71008908d5b0a1319f205c"
+    },
+    {
+      "path": "scripts/warp/warp_thetaMode_script.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7a571ce6ea842aca41af7a234dc6fdf38eca06be",
+      "size": 12038,
+      "url": "https://api.github.com/repos/openPMD/openPMD-example-datasets/git/blobs/7a571ce6ea842aca41af7a234dc6fdf38eca06be"
+    },
+    {
+      "path": "structure.h5",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b2edd1bc37a801991a9c625bcbd9d96dbd2d1746",
+      "size": 94920,
+      "url": "https://api.github.com/repos/openPMD/openPMD-example-datasets/git/blobs/b2edd1bc37a801991a9c625bcbd9d96dbd2d1746"
+    }
+  ],
+  "truncated": false
+}

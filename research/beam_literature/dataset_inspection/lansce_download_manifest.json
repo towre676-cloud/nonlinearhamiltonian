@@ -1,0 +1,67 @@
+[
+  {
+    "url": "https://zenodo.org/records/10819001/files/README.txt?download=1",
+    "bytes": 719,
+    "sha256": "ee5302a2d825860ba4ffd515a8ec07edb09fe5b703eb183855e6188e5e12ce1e",
+    "license": "CC-BY-4.0",
+    "attribution": "Mahindra Rautela, Alan Williams, Alexander Scheinker, 6D phase space of charged beam in particle accelerator, Zenodo10819001,2024",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "changes": "Raw RFarray/READMEunchanged; only phase-file header was retrieved."
+  },
+  {
+    "url": "https://zenodo.org/records/10819001/files/run9rf.npy?download=1",
+    "bytes": 3328,
+    "sha256": "57859985bbf6956b7d11e8176e6340a8a24e2317dd071025a70502170ac68bce",
+    "license": "CC-BY-4.0",
+    "shape": [
+      100,
+      8
+    ],
+    "dtype": "float32",
+    "finite": true,
+    "min_by_column": [
+      43.10240936279297,
+      207.50250244140625,
+      67.30007934570312,
+      -47.49423599243164,
+      65.50570678710938,
+      63.50147247314453,
+      67.10871124267578,
+      155.5019073486328
+    ],
+    "max_by_column": [
+      44.09840393066406,
+      208.49746704101562,
+      68.27806091308594,
+      -46.520137786865234,
+      66.49008178710938,
+      64.49349975585938,
+      68.09963989257812,
+      156.48883056640625
+    ],
+    "attribution": "Mahindra Rautela, Alan Williams, Alexander Scheinker, 6D phase space of charged beam in particle accelerator, Zenodo10819001,2024",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "changes": "Raw RFarray/READMEunchanged; only phase-file header was retrieved."
+  },
+  {
+    "url": "https://zenodo.org/records/10819001/files/run9ps.npy?download=1",
+    "inspection": "256-byte NPY header only; bulk array not downloaded",
+    "shape": [
+      100,
+      48,
+      15,
+      256,
+      256
+    ],
+    "dtype": "float32",
+    "fortran_order": false,
+    "declared_bytes": 18874368128,
+    "license": "CC-BY-4.0",
+    "readme_claim_examples": 500,
+    "actual_header_examples": 100,
+    "discrepancy": "README claims500 but actual RF array and phase-space header each declare100",
+    "attribution": "Mahindra Rautela, Alan Williams, Alexander Scheinker, 6D phase space of charged beam in particle accelerator, Zenodo10819001,2024",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "changes": "Raw RFarray/READMEunchanged; only phase-file header was retrieved."
+  }
+]

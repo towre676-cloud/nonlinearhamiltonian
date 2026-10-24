@@ -1,0 +1,235 @@
+{
+  "date_utc": "2026-10-23",
+  "scope": "Targeted12asset-group accelerator dataset/benchmark audit; not exhaustive worldwide; no facility access",
+  "recommendation": "Public HMBA independent-particle acceptance for next computation experiment; ARES controller replay plus SNS diagnostic challenge for original collective-beam programme.",
+  "tenfold_status": "Not established by any dataset ingestion in this lane.",
+  "assets": [
+    {
+      "id": "D01",
+      "title": "Public nonlinear storage-ring lattices",
+      "inspection_status": "downloaded_and_inspected",
+      "primary_urls": [
+        "https://github.com/atcollab/at/tree/1ed84a3f1b76a1cb2bd6deb48e26b5a30bb7256c/machine_data",
+        "https://atcollab.github.io/at/p/howto/Installation.html"
+      ],
+      "license": "Apache-2.0",
+      "file_bytes": {
+        "hmba.mat": 9007,
+        "spear3.m": 11710
+      },
+      "boundary": "Independent-particle acceptance; full-ring periodicity must be explicit.",
+      "web_refs": [
+        "turn186view2",
+        "turn191view1"
+      ]
+    },
+    {
+      "id": "D02",
+      "title": "ARES RL-versus-BO",
+      "inspection_status": "primary_metadata_verified_bulk_not_downloaded",
+      "primary_urls": [
+        "https://zenodo.org/records/7853721",
+        "https://github.com/desy-ml/rl-vs-bo",
+        "https://doi.org/10.1038/s41598-024-66263-y"
+      ],
+      "license": "CC-BY-4.0 data; separate code license unverified",
+      "file_bytes": {
+        "simulation.zip": 5435174684,
+        "real.zip": 17201360986
+      },
+      "boundary": "Measured and simulated online-tuning histories; target screen position/size, not full covariance.",
+      "web_refs": [
+        "turn98view1",
+        "turn87view0"
+      ]
+    },
+    {
+      "id": "D03",
+      "title": "RL4AA25 ARES challenge",
+      "inspection_status": "repository_verified_bulk_not_downloaded",
+      "primary_urls": [
+        "https://github.com/RL4AA/rl4aa25-challenge",
+        "https://doi.org/10.5281/zenodo.15120236"
+      ],
+      "license": "GPL-3.0",
+      "file_bytes": {},
+      "boundary": "Tutorial environment and pretrained policy are not a new independent real dataset.",
+      "web_refs": [
+        "turn98view2"
+      ]
+    },
+    {
+      "id": "D04",
+      "title": "SNS4D measured projections and2026 update",
+      "inspection_status": "real_member_downloaded_crc_sha_verified",
+      "primary_urls": [
+        "https://zenodo.org/records/14807780",
+        "https://zenodo.org/records/22260794",
+        "https://doi.org/10.1103/PhysRevAccelBeams.27.122802"
+      ],
+      "license": "CC-BY-4.0",
+      "file_bytes": {
+        "sns-tomo-4d-1d.zip": 44188049,
+        "linac-2026-tomo-main.zip": 28636580
+      },
+      "boundary": "Measured profile/optics archive; different acquisitions and energies must stay distinct.",
+      "web_refs": [
+        "turn133search3",
+        "turn186view0"
+      ]
+    },
+    {
+      "id": "D05",
+      "title": "SNS-BTF5D phase space",
+      "inspection_status": "primary_metadata_verified_bulk_not_downloaded",
+      "primary_urls": [
+        "https://zenodo.org/records/10368144",
+        "https://doi.org/10.1103/PhysRevAccelBeams.26.064202"
+      ],
+      "license": "CC-BY-4.0",
+      "file_bytes": {
+        "sns_btf_5d.zip": 9530907042
+      },
+      "boundary": "Measured2.5MeV H-minus beam; different from accumulated-proton SNS4D.",
+      "web_refs": [
+        "turn78view1"
+      ]
+    },
+    {
+      "id": "D06",
+      "title": "LANL LANSCE6D projections",
+      "inspection_status": "rf_array_and_phase_header_inspected",
+      "primary_urls": [
+        "https://zenodo.org/records/10819001",
+        "https://github.com/mahindrautela/CLARM",
+        "https://doi.org/10.1103/PhysRevE.111.025307"
+      ],
+      "license": "CC-BY-4.0",
+      "file_bytes": {
+        "run9ps.npy": 18874368128,
+        "run9rf.npy": 3328,
+        "README.txt": 719
+      },
+      "boundary": "Actual arrays100examples; READMEclaims500; bulkphase data not validated.",
+      "web_refs": [
+        "turn126view1",
+        "turn116search2"
+      ]
+    },
+    {
+      "id": "D07",
+      "title": "LCLS superconducting injector measurements",
+      "inspection_status": "repository_file_manifest_inspected",
+      "primary_urls": [
+        "https://github.com/slaclab/lcls-sc-inj-surrogate"
+      ],
+      "license": "No explicit repository license verified",
+      "file_bytes": {
+        "ProfMon_20191101_122050.mat": 704439,
+        "ProfMon_20191101_122150.mat": 707822
+      },
+      "boundary": "Small rawMAT examples are measured laser input cameras, not full exit phase space.",
+      "web_refs": [
+        "turn87view1"
+      ]
+    },
+    {
+      "id": "D08",
+      "title": "LCLS copper injector pretrained surrogate",
+      "inspection_status": "repository_file_manifest_inspected",
+      "primary_urls": [
+        "https://github.com/slaclab/lcls_cu_injector_ml_model"
+      ],
+      "license": "No explicit repository license verified",
+      "file_bytes": {
+        "model.pt": 2520381
+      },
+      "boundary": "Pretrained IMPACT-T ordinary competitor; weights availability does not establish training-population availability.",
+      "web_refs": [
+        "turn87view2",
+        "turn90view4"
+      ]
+    },
+    {
+      "id": "D09",
+      "title": "FACET-II start-to-end toolkit",
+      "inspection_status": "official_repository_verified_bulk_not_downloaded",
+      "primary_urls": [
+        "https://github.com/slaclab/FACET2-S2E"
+      ],
+      "license": "BSD-3-Clause",
+      "file_bytes": {},
+      "boundary": "More than2GB Git-LFS beam assets; DAQ reader does not establish open DAQ populations.",
+      "web_refs": [
+        "turn78view3"
+      ]
+    },
+    {
+      "id": "D10",
+      "title": "GPSR example reconstruction data",
+      "inspection_status": "repository_file_manifest_inspected",
+      "primary_urls": [
+        "https://github.com/roussel-ryan/gpsr"
+      ],
+      "license": "No explicit repository license verified",
+      "file_bytes": {
+        "reconstruction_4D.dset": 804045,
+        "reconstruction_6D.dset": 13610370
+      },
+      "boundary": "Standard diagnostic competitor; example pickle/model artifacts not executed.",
+      "web_refs": [
+        "turn98view3"
+      ]
+    },
+    {
+      "id": "D11",
+      "title": "openPMD official examples",
+      "inspection_status": "repository_file_manifest_and_license_inspected",
+      "primary_urls": [
+        "https://github.com/openPMD/openPMD-example-datasets",
+        "https://openpmd-api.readthedocs.io/en/latest/usage/examples.html"
+      ],
+      "license": "CC0-1.0",
+      "file_bytes": {
+        "example-2d.tar.gz": 18796446,
+        "structure.h5": 94920
+      },
+      "boundary": "Synthetic low-resolution interoperability fixtures, not tuning-performance data.",
+      "web_refs": [
+        "turn73search3",
+        "turn73search7"
+      ]
+    },
+    {
+      "id": "D12",
+      "title": "GLOBE beam-field datasets",
+      "inspection_status": "described_in_preprint_download_not_verified",
+      "primary_urls": [
+        "https://arxiv.org/html/2610.14537v1"
+      ],
+      "license": "ArticleCC-BY-NC-SA-4.0; separate code/data license unverified",
+      "file_bytes": {},
+      "boundary": "October2026 promising WarpX datasets; no verified direct downloadable artifact or complete tuning speedup.",
+      "web_refs": [
+        "turn126view0",
+        "turn130view2"
+      ]
+    }
+  ],
+  "exclusions": [
+    {
+      "title": "SwissFEL longitudinal virtual diagnostics",
+      "url": "https://doi.org/10.1063/5.0179712",
+      "availability": "On reasonable request, not verified public download",
+      "web_ref": "turn116search3"
+    },
+    {
+      "title": "Multi-facilityMAXIV/FERMI/SwissFEL virtual diagnostic",
+      "url": "https://www.nature.com/articles/s41598-026-47195-1",
+      "availability": "On reasonable request, not verified public download",
+      "web_ref": "turn126view3"
+    }
+  ],
+  "small_sample_replay": "check_dataset_samples.py",
+  "source_manifests": "dataset_inspection/"
+}

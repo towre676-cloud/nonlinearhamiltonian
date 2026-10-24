@@ -1,0 +1,319 @@
+{
+  "repository": "TimothyHeightman/bosonic-gsim",
+  "pinned_commit": "4eddbc9c838f7164520ae2ed06d1778beacd906a",
+  "source_tree": "2a515fa9603bf1bb6c7c3bdf4109c3fc7854b0bd",
+  "source_manifest": "source_manifest.json",
+  "code_changes": false,
+  "global_installs": false,
+  "started_utc": "2026-10-24T00:10:15Z",
+  "python_executable": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+  "environment_overrides": {
+    "PYTHONPATH": "/workspace/scratch/9c6a3d2e42ab/beam_literature_worknotes/bosonic_gsim_replay/run/src",
+    "MPLBACKEND": "Agg",
+    "MPLCONFIGDIR": "/workspace/scratch/9c6a3d2e42ab/beam_literature_worknotes/bosonic_gsim_replay/matplotlib_cache",
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "VECLIB_MAXIMUM_THREADS": "1",
+    "NUMEXPR_NUM_THREADS": "1"
+  },
+  "replays": [
+    {
+      "experiment": "fig10_nilpotent_phase",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "experiments/fig10_nilpotent_phase/run.py"
+      ],
+      "cwd": "/workspace/scratch/9c6a3d2e42ab/beam_literature_worknotes/bosonic_gsim_replay/run",
+      "wall_seconds": 3.9635636349994456,
+      "returncode": 0,
+      "stdout": "wrote /workspace/scratch/9c6a3d2e42ab/beam_literature_worknotes/bosonic_gsim_replay/run/notes/figures/fig10_nilpotent_phase.pdf and /workspace/scratch/9c6a3d2e42ab/beam_literature_worknotes/bosonic_gsim_replay/run/experiments/fig10_nilpotent_phase/results.json\nsingle-mode module/grid error 2.00e-15; two-mode 1.86e-17\n",
+      "stderr": "",
+      "result": {
+        "environment": {
+          "float_precision": "float64/complex128",
+          "numpy": "2.3.5",
+          "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+          "processor": "x86_64",
+          "python": "3.12.14",
+          "scipy": "1.17.0"
+        },
+        "figure": "fig10_nilpotent_phase.pdf",
+        "scaling": {
+          "entries": [
+            {
+              "algebra_dimension": 2949,
+              "degree": 3,
+              "dense_coefficient_bytes": 115400,
+              "dense_coefficient_count": 14425,
+              "depth": 3,
+              "iterations_per_sample": 35,
+              "median_seconds": 0.000594277457068009,
+              "modes": 24,
+              "q25_seconds": 0.0005933004285907373,
+              "q75_seconds": 0.0005996164715075534,
+              "repeats": 7,
+              "samples_seconds": [
+                0.0005977246286680124,
+                0.0005812138572634597,
+                0.000593090828624554,
+                0.0006120664285845124,
+                0.0005935100285569206,
+                0.000594277457068009,
+                0.0006015083143470942
+              ],
+              "warmups": 2
+            },
+            {
+              "algebra_dimension": 9175,
+              "degree": 3,
+              "dense_coefficient_bytes": 383912,
+              "dense_coefficient_count": 47989,
+              "depth": 3,
+              "iterations_per_sample": 53,
+              "median_seconds": 0.0006777874339879314,
+              "modes": 36,
+              "q25_seconds": 0.0006674163868290565,
+              "q75_seconds": 0.0007054560283338432,
+              "repeats": 7,
+              "samples_seconds": [
+                0.0007170346227281217,
+                0.0006542146980997509,
+                0.0006938774339395646,
+                0.0006578635661324644,
+                0.0006777874339879314,
+                0.0007293640755617745,
+                0.0006769692075256487
+              ],
+              "warmups": 2
+            },
+            {
+              "algebra_dimension": 26287,
+              "degree": 3,
+              "dense_coefficient_bytes": 1146920,
+              "dense_coefficient_count": 143365,
+              "depth": 3,
+              "iterations_per_sample": 21,
+              "median_seconds": 0.0019235244284832983,
+              "modes": 52,
+              "q25_seconds": 0.0019121831189425262,
+              "q75_seconds": 0.0019437698094753571,
+              "repeats": 7,
+              "samples_seconds": [
+                0.0019235244284832983,
+                0.0019071698569903327,
+                0.0018511396663684753,
+                0.0019274994286076566,
+                0.0019171963808947198,
+                0.001960040190343058,
+                0.0019615290951887367
+              ],
+              "warmups": 2
+            },
+            {
+              "algebra_dimension": 67597,
+              "degree": 3,
+              "dense_coefficient_bytes": 3028040,
+              "dense_coefficient_count": 378505,
+              "depth": 3,
+              "iterations_per_sample": 17,
+              "median_seconds": 0.0020730459997567404,
+              "modes": 72,
+              "q25_seconds": 0.002018259705972228,
+              "q75_seconds": 0.002112889323410962,
+              "repeats": 7,
+              "samples_seconds": [
+                0.002099053235296571,
+                0.0021267254115253523,
+                0.002031543176545871,
+                0.002139293588269913,
+                0.0020730459997567404,
+                0.0019651381179060347,
+                0.0020049762353985846
+              ],
+              "warmups": 2
+            },
+            {
+              "algebra_dimension": 156945,
+              "degree": 3,
+              "dense_coefficient_bytes": 7152392,
+              "dense_coefficient_count": 894049,
+              "depth": 3,
+              "iterations_per_sample": 8,
+              "median_seconds": 0.004860757624555845,
+              "modes": 96,
+              "q25_seconds": 0.004670461999921827,
+              "q75_seconds": 0.004867333749643876,
+              "repeats": 7,
+              "samples_seconds": [
+                0.0049423162499806494,
+                0.004860757624555845,
+                0.004590749875205802,
+                0.004864913874371268,
+                0.004666773999815632,
+                0.004674150000028021,
+                0.004869753624916484
+              ],
+              "warmups": 2
+            },
+            {
+              "algebra_dimension": 366273,
+              "degree": 3,
+              "dense_coefficient_bytes": 16909320,
+              "dense_coefficient_count": 2113665,
+              "depth": 3,
+              "iterations_per_sample": 1,
+              "median_seconds": 0.019596344995079562,
+              "modes": 128,
+              "q25_seconds": 0.019496034499752568,
+              "q75_seconds": 0.019625123495643493,
+              "repeats": 7,
+              "samples_seconds": [
+                0.019353351002791896,
+                0.019529755001713056,
+                0.01946231399779208,
+                0.02025840900023468,
+                0.01961926999501884,
+                0.019596344995079562,
+                0.019630976996268146
+              ],
+              "warmups": 2
+            },
+            {
+              "algebra_dimension": 708721,
+              "degree": 3,
+              "dense_coefficient_bytes": 32974088,
+              "dense_coefficient_count": 4121761,
+              "depth": 3,
+              "iterations_per_sample": 1,
+              "median_seconds": 0.030822150998574216,
+              "modes": 160,
+              "q25_seconds": 0.0306129714990675,
+              "q75_seconds": 0.03134004250387079,
+              "repeats": 7,
+              "samples_seconds": [
+                0.030525504997058306,
+                0.03112797900394071,
+                0.03070043800107669,
+                0.030822150998574216,
+                0.033542372002557386,
+                0.03155210600380087,
+                0.029293335996044334
+              ],
+              "warmups": 2
+            }
+          ]
+        },
+        "single_mode": {
+          "final_cumulant": 0.4833225568470616,
+          "grid_values": [
+            -2.220446049250313e-16,
+            0.0030845805209998023,
+            0.017511431566478608,
+            0.005379938041738641,
+            0.056986696805940706,
+            0.1357467654054607,
+            0.07351911379250708,
+            0.25208250610175953,
+            0.48332255684706227
+          ],
+          "max_grid_refinement_gap": 3.1086244689504383e-15,
+          "max_module_grid_error": 1.9984014443252818e-15,
+          "module_values": [
+            0.0,
+            0.0030845805209994692,
+            0.017511431566478164,
+            0.005379938041738086,
+            0.05698669680593915,
+            0.1357467654054587,
+            0.07351911379250686,
+            0.2520825061017591,
+            0.4833225568470616
+          ]
+        },
+        "two_mode": {
+          "final_connected_correlator": -0.002290417374000002,
+          "grid_values": [
+            -1.1209060213233597e-18,
+            -0.0002255007999999924,
+            -0.0006282585999999964,
+            -0.0003658825000000027,
+            -0.0010026553500000022,
+            -0.0015221286779999984,
+            -0.002290417373999983
+          ],
+          "max_grid_refinement_gap": 4.0766001685454967e-17,
+          "max_module_grid_error": 1.8648277366750676e-17,
+          "module_values": [
+            0.0,
+            -0.0002255008000000003,
+            -0.0006282586000000003,
+            -0.00036588250000000005,
+            -0.0010026553500000002,
+            -0.0015221286780000005,
+            -0.002290417374000002
+          ]
+        }
+      },
+      "result_sha256": "5a2f95ed27fd43a579c6110f5424de13d222a3c6b50663fe81b2ca7278918e0b",
+      "acceptance_metrics": {
+        "single_mode.max_module_grid_error": 1.9984014443252818e-15,
+        "single_mode.max_grid_refinement_gap": 3.1086244689504383e-15,
+        "two_mode.max_module_grid_error": 1.8648277366750676e-17,
+        "two_mode.max_grid_refinement_gap": 4.0766001685454967e-17
+      },
+      "numerical_acceptance_passed": true
+    },
+    {
+      "experiment": "fig8_beyond_gaussian",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "experiments/fig8_beyond_gaussian/run.py"
+      ],
+      "cwd": "/workspace/scratch/9c6a3d2e42ab/beam_literature_worknotes/bosonic_gsim_replay/run",
+      "wall_seconds": 0.8192934899998363,
+      "returncode": 0,
+      "stdout": "wrote /workspace/scratch/9c6a3d2e42ab/beam_literature_worknotes/bosonic_gsim_replay/run/notes/figures/fig8_beyond_gaussian.pdf and /workspace/scratch/9c6a3d2e42ab/beam_literature_worknotes/bosonic_gsim_replay/run/experiments/fig8_beyond_gaussian/results.json (random-instance error 5.55e-16)\n",
+      "stderr": "",
+      "result": {
+        "environment": {
+          "float_precision": "float64/complex128",
+          "numpy": "2.3.5",
+          "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+          "processor": "x86_64",
+          "python": "3.12.14",
+          "scipy": "1.17.0"
+        },
+        "figure": "fig8_beyond_gaussian.pdf",
+        "hom_max_analytic_error": 4.440892098500626e-16,
+        "hom_max_fock_error": 1.7938038903913487e-16,
+        "random_interferometer_max_fock_error": 5.551115123125783e-16,
+        "seed": 3,
+        "validation_instances": 12
+      },
+      "result_sha256": "897bced8ee235b7eed22a3b516036d8a48e96e5116425ba77a0950517a748814",
+      "acceptance_metrics": {
+        "hom_max_analytic_error": 4.440892098500626e-16,
+        "hom_max_fock_error": 1.7938038903913487e-16,
+        "random_interferometer_max_fock_error": 5.551115123125783e-16
+      },
+      "numerical_acceptance_passed": true
+    }
+  ],
+  "packages": {
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "matplotlib": "3.10.8",
+    "PyYAML": "6.0.3"
+  },
+  "acceptance_threshold": 1e-12,
+  "all_passed": true,
+  "caveats": [
+    "These replays verify numerical special cases of existing external methods, not a new theorem or speedup.",
+    "No comparison to a project implementation or modern GPU solver was executed.",
+    "Wall times include interpreter imports and plot/result creation, with BLAS-related thread counts fixed to one.",
+    "Only the minimal two-experiment source closure was fetched; full repository tests and largest production runs were not replayed.",
+    "Fig10 uses deterministic fixed coefficient configurations; Fig8 uses seeded random inputs (seed 3).",
+    "Floating-point FFT/Fock agreement is executable evidence, not formal exact-arithmetic certification."
+  ]
+}

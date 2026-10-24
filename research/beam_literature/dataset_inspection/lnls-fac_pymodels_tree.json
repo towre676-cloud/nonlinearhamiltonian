@@ -1,0 +1,415 @@
+{
+  "sha": "1f0142e1231059c084652b5ceafad84467c92ac4",
+  "url": "https://api.github.com/repos/lnls-fac/pymodels/git/trees/1f0142e1231059c084652b5ceafad84467c92ac4",
+  "tree": [
+    {
+      "path": ".gitignore",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6ed85f9ffd8d98133a6fc901e86448a6c38d3645",
+      "size": 800,
+      "url": "https://api.github.com/repos/lnls-fac/pymodels/git/blobs/6ed85f9ffd8d98133a6fc901e86448a6c38d3645"
+    },
+    {
+      "path": "CITATION.cff",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3ad97ebfe32ebfc401e90693a4a178dccdafbf2b",
+      "size": 584,
+      "url": "https://api.github.com/repos/lnls-fac/pymodels/git/blobs/3ad97ebfe32ebfc401e90693a4a178dccdafbf2b"
+    },
+    {
+      "path": "LATTICES-VERSIONS.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a461666d7311ea524d991eff96009b8f8be9d445",
+      "size": 20741,
+      "url": "https://api.github.com/repos/lnls-fac/pymodels/git/blobs/a461666d7311ea524d991eff96009b8f8be9d445"
+    },
+    {
+      "path": "LICENSE",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "649d5cd6b2aee25cc22676f9473c3108e0a7d8e1",
+      "size": 1093,
+      "url": "https://api.github.com/repos/lnls-fac/pymodels/git/blobs/649d5cd6b2aee25cc22676f9473c3108e0a7d8e1"
+    },
+    {
+      "path": "Makefile",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "521ec1cfd57ad3a40dd79cadb06479372b14307c",
+      "size": 473,
+      "url": "https://api.github.com/repos/lnls-fac/pymodels/git/blobs/521ec1cfd57ad3a40dd79cadb06479372b14307c"
+    },
+    {
+      "path": "README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0425fe44637983eb5945dc5dde80395b4c0225ef",
+      "size": 176,
+      "url": "https://api.github.com/repos/lnls-fac/pymodels/git/blobs/0425fe44637983eb5945dc5dde80395b4c0225ef"
+    },
+    {
+      "path": "VERSION",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6245beecd39cdffa0d24aa8ea7f740f45811ae3b",
+      "size": 7,
+      "url": "https://api.github.com/repos/lnls-fac/pymodels/git/blobs/6245beecd39cdffa0d24aa8ea7f740f45811ae3b"
+    },
+    {
+      "path": "doc",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "fbf9cc33721f15e4bc2ca6b4166e7646143c214a",
+      "url": "https://api.github.com/repos/lnls-fac/pymodels/git/trees/fbf9cc33721f15e4bc2ca6b4166e7646143c214a"
+    },
+    {
+      "path": "doc/doxygen",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "475e38cad72db0bc129b9eb1036107a6434bfd8e",
+      "url": "https://api.github.com/repos/lnls-fac/pymodels/git/trees/475e38cad72db0bc129b9eb1036107a6434bfd8e"
+    },
+    {
+      "path": "doc/doxygen/Doxyfile",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "98cf6afc20402447a472eec888a87431524b37cb",
+      "size": 106151,
+      "url": "https://api.github.com/repos/lnls-fac/pymodels/git/blobs/98cf6afc20402447a472eec888a87431524b37cb"
+    },
+    {
+      "path": "doc/doxygen/Mainpage.dox",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d378b82cd126c774c22df5f086eebf30073275ee",
+      "size": 110,
+      "url": "https://api.github.com/repos/lnls-fac/pymodels/git/blobs/d378b82cd126c774c22df5f086eebf30073275ee"
+    },
+    {
+      "path": "doc/doxygen/Makefile",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3897908e83ea991fefbb70a5ed9c4aa71105d0b8",
+      "size": 322,
+      "url": "https://api.github.com/repos/lnls-fac/pymodels/git/blobs/3897908e83ea991fefbb70a5ed9c4aa71105d0b8"
+    },
+    {
+      "path": "pymodels",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "2e017e296858b1c377c268a66a25731411594d96",
+      "url": "https://api.github.com/repos/lnls-fac/pymodels/git/trees/2e017e296858b1c377c268a66a25731411594d96"
+    },
+    {
+      "path": "pymodels/BO_V06_01",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "522d3683d41bf65799482d3e49efc51917d10163",
+      "url": "https://api.github.com/repos/lnls-fac/pymodels/git/trees/522d3683d41bf65799482d3e49efc51917d10163"
+    },
+    {
+      "path": "pymodels/BO_V06_01/__init__.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "49d07ab50c577f55f1673f2d001f0f3bdb0684d0",
+      "size": 608,
+      "url": "https://api.github.com/repos/lnls-fac/pymodels/git/blobs/49d07ab50c577f55f1673f2d001f0f3bdb0684d0"
+    },
+    {
+      "path": "pymodels/BO_V06_01/accelerator.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "044caeddd606b25f109cc8b4d89501115ef84ee1",
+      "size": 1156,
+      "url": "https://api.github.com/repos/lnls-fac/pymodels/git/blobs/044caeddd606b25f109cc8b4d89501115ef84ee1"
+    },
+    {
+      "path": "pymodels/BO_V06_01/families.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a069676bbfa7fcff95a0ee005616c4e281f7b182",
+      "size": 7117,
+      "url": "https://api.github.com/repos/lnls-fac/pymodels/git/blobs/a069676bbfa7fcff95a0ee005616c4e281f7b182"
+    },
+    {
+      "path": "pymodels/BO_V06_01/lattice.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "37a374327cc8bf91527e4555effb7507fbd0e175",
+      "size": 13900,
+      "url": "https://api.github.com/repos/lnls-fac/pymodels/git/blobs/37a374327cc8bf91527e4555effb7507fbd0e175"
+    },
+    {
+      "path": "pymodels/BO_V06_01/segmented_models.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2db22cf6ee37cde260a518ba509e74cd67ef5cab",
+      "size": 24111,
+      "url": "https://api.github.com/repos/lnls-fac/pymodels/git/blobs/2db22cf6ee37cde260a518ba509e74cd67ef5cab"
+    },
+    {
+      "path": "pymodels/LI_V01_01",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "62855decd73bb91357cf29644aed4e3d436a5d21",
+      "url": "https://api.github.com/repos/lnls-fac/pymodels/git/trees/62855decd73bb91357cf29644aed4e3d436a5d21"
+    },
+    {
+      "path": "pymodels/LI_V01_01/__init__.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "10c402cc0a5ad8af9ee3e9bf12267170931793fd",
+      "size": 574,
+      "url": "https://api.github.com/repos/lnls-fac/pymodels/git/blobs/10c402cc0a5ad8af9ee3e9bf12267170931793fd"
+    },
+    {
+      "path": "pymodels/LI_V01_01/accelerator.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3d8f6f4a33cc6b5379afc79e3ed7f19127c45e83",
+      "size": 1210,
+      "url": "https://api.github.com/repos/lnls-fac/pymodels/git/blobs/3d8f6f4a33cc6b5379afc79e3ed7f19127c45e83"
+    },
+    {
+      "path": "pymodels/LI_V01_01/families.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "929b3d9ec7e373b715fcd44395d97cd433a714a0",
+      "size": 6569,
+      "url": "https://api.github.com/repos/lnls-fac/pymodels/git/blobs/929b3d9ec7e373b715fcd44395d97cd433a714a0"
+    },
+    {
+      "path": "pymodels/LI_V01_01/lattice.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "969b87cc0e2a242e4f486e60a4e8a344123a436b",
+      "size": 8852,
+      "url": "https://api.github.com/repos/lnls-fac/pymodels/git/blobs/969b87cc0e2a242e4f486e60a4e8a344123a436b"
+    },
+    {
+      "path": "pymodels/SI_V25_04",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "3f6f22f49fdd9bd21badae935c143af2fbd493b9",
+      "url": "https://api.github.com/repos/lnls-fac/pymodels/git/trees/3f6f22f49fdd9bd21badae935c143af2fbd493b9"
+    },
+    {
+      "path": "pymodels/SI_V25_04/__init__.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e677c5dae98800261f8dfa2c5521dfe60ca5cd15",
+      "size": 713,
+      "url": "https://api.github.com/repos/lnls-fac/pymodels/git/blobs/e677c5dae98800261f8dfa2c5521dfe60ca5cd15"
+    },
+    {
+      "path": "pymodels/SI_V25_04/accelerator.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0feb94bfa783a76b75f80d23c44c52bc0cb913d7",
+      "size": 1200,
+      "url": "https://api.github.com/repos/lnls-fac/pymodels/git/blobs/0feb94bfa783a76b75f80d23c44c52bc0cb913d7"
+    },
+    {
+      "path": "pymodels/SI_V25_04/families.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2887d0b49ed1fda1a605619a1c41e7dc3ce20521",
+      "size": 17427,
+      "url": "https://api.github.com/repos/lnls-fac/pymodels/git/blobs/2887d0b49ed1fda1a605619a1c41e7dc3ce20521"
+    },
+    {
+      "path": "pymodels/SI_V25_04/fitted_models.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a847cb74b55ad821000b7430bc0b0b9548d92b04",
+      "size": 10225,
+      "url": "https://api.github.com/repos/lnls-fac/pymodels/git/blobs/a847cb74b55ad821000b7430bc0b0b9548d92b04"
+    },
+    {
+      "path": "pymodels/SI_V25_04/idmodel.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6767594bd9aa07ecd0dd29000e3cd7c13ac545b6",
+      "size": 2940,
+      "url": "https://api.github.com/repos/lnls-fac/pymodels/git/blobs/6767594bd9aa07ecd0dd29000e3cd7c13ac545b6"
+    },
+    {
+      "path": "pymodels/SI_V25_04/lattice.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4a4e2401bfeec7d3999bc2338c317616e4495034",
+      "size": 42437,
+      "url": "https://api.github.com/repos/lnls-fac/pymodels/git/blobs/4a4e2401bfeec7d3999bc2338c317616e4495034"
+    },
+    {
+      "path": "pymodels/SI_V25_04/segmented_models.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9df27ca1fd9dc609cac783daede29a36cf81308f",
+      "size": 23201,
+      "url": "https://api.github.com/repos/lnls-fac/pymodels/git/blobs/9df27ca1fd9dc609cac783daede29a36cf81308f"
+    },
+    {
+      "path": "pymodels/TB_V04_01",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "015db729457cef47c6dab2d5b4ca9024c7eeeac3",
+      "url": "https://api.github.com/repos/lnls-fac/pymodels/git/trees/015db729457cef47c6dab2d5b4ca9024c7eeeac3"
+    },
+    {
+      "path": "pymodels/TB_V04_01/__init__.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "afaa3d6fe67be0487cf63929981c7c9b76d9fbe2",
+      "size": 435,
+      "url": "https://api.github.com/repos/lnls-fac/pymodels/git/blobs/afaa3d6fe67be0487cf63929981c7c9b76d9fbe2"
+    },
+    {
+      "path": "pymodels/TB_V04_01/accelerator.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8b70b4ca6a40ccb1d9a8274558c756dc92e37f15",
+      "size": 1045,
+      "url": "https://api.github.com/repos/lnls-fac/pymodels/git/blobs/8b70b4ca6a40ccb1d9a8274558c756dc92e37f15"
+    },
+    {
+      "path": "pymodels/TB_V04_01/families.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d41d21a6b60ec4f9581aeeeefe6af1e6b541a78a",
+      "size": 6819,
+      "url": "https://api.github.com/repos/lnls-fac/pymodels/git/blobs/d41d21a6b60ec4f9581aeeeefe6af1e6b541a78a"
+    },
+    {
+      "path": "pymodels/TB_V04_01/lattice.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "732646b32f436d73741597cb574545d5863900e8",
+      "size": 12885,
+      "url": "https://api.github.com/repos/lnls-fac/pymodels/git/blobs/732646b32f436d73741597cb574545d5863900e8"
+    },
+    {
+      "path": "pymodels/TB_V04_01/segmented_models.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3e94d2d9989f00abd46b45be805533aac9903f8f",
+      "size": 7119,
+      "url": "https://api.github.com/repos/lnls-fac/pymodels/git/blobs/3e94d2d9989f00abd46b45be805533aac9903f8f"
+    },
+    {
+      "path": "pymodels/TS_V04_01",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "65d01c82a2e26af09e8cdad32e2f30e5d74ce0e2",
+      "url": "https://api.github.com/repos/lnls-fac/pymodels/git/trees/65d01c82a2e26af09e8cdad32e2f30e5d74ce0e2"
+    },
+    {
+      "path": "pymodels/TS_V04_01/__init__.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "73e5069223db626a8ff09984302502579fc5ce82",
+      "size": 412,
+      "url": "https://api.github.com/repos/lnls-fac/pymodels/git/blobs/73e5069223db626a8ff09984302502579fc5ce82"
+    },
+    {
+      "path": "pymodels/TS_V04_01/accelerator.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f8e2708a308be46fad7e4391cc92fa9dc0d44bb2",
+      "size": 933,
+      "url": "https://api.github.com/repos/lnls-fac/pymodels/git/blobs/f8e2708a308be46fad7e4391cc92fa9dc0d44bb2"
+    },
+    {
+      "path": "pymodels/TS_V04_01/families.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "eb175acb493410983603a2f9224c817cb520948b",
+      "size": 5113,
+      "url": "https://api.github.com/repos/lnls-fac/pymodels/git/blobs/eb175acb493410983603a2f9224c817cb520948b"
+    },
+    {
+      "path": "pymodels/TS_V04_01/lattice.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "049b1504c172cbdc7f76b373dbfb210959cc313c",
+      "size": 9993,
+      "url": "https://api.github.com/repos/lnls-fac/pymodels/git/blobs/049b1504c172cbdc7f76b373dbfb210959cc313c"
+    },
+    {
+      "path": "pymodels/TS_V04_01/segmented_models.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "35b029fb0fbb37388dc5293601db4bf57fafbf8e",
+      "size": 10446,
+      "url": "https://api.github.com/repos/lnls-fac/pymodels/git/blobs/35b029fb0fbb37388dc5293601db4bf57fafbf8e"
+    },
+    {
+      "path": "pymodels/VERSION",
+      "mode": "120000",
+      "type": "blob",
+      "sha": "6ff19de4b804f2eca2b2d72657dd908c216b6537",
+      "size": 10,
+      "url": "https://api.github.com/repos/lnls-fac/pymodels/git/blobs/6ff19de4b804f2eca2b2d72657dd908c216b6537"
+    },
+    {
+      "path": "pymodels/__init__.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c011918ce9db62801a945e20e129659adc7ea860",
+      "size": 283,
+      "url": "https://api.github.com/repos/lnls-fac/pymodels/git/blobs/c011918ce9db62801a945e20e129659adc7ea860"
+    },
+    {
+      "path": "pymodels/coordinate_system.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7ca3279349e7f4ee1274ba979b1fe03afacc2c0f",
+      "size": 686,
+      "url": "https://api.github.com/repos/lnls-fac/pymodels/git/blobs/7ca3279349e7f4ee1274ba979b1fe03afacc2c0f"
+    },
+    {
+      "path": "pymodels/interactive.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2218c04e6a495745e511e7f391a1c9fddbce4995",
+      "size": 412,
+      "url": "https://api.github.com/repos/lnls-fac/pymodels/git/blobs/2218c04e6a495745e511e7f391a1c9fddbce4995"
+    },
+    {
+      "path": "pymodels/version_symbols.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8216889bcc8186c141c49f557643b3567aa7b7f7",
+      "size": 237,
+      "url": "https://api.github.com/repos/lnls-fac/pymodels/git/blobs/8216889bcc8186c141c49f557643b3567aa7b7f7"
+    },
+    {
+      "path": "pyproject.toml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4f584b011677b6097e9b846a008052e4423bd839",
+      "size": 1991,
+      "url": "https://api.github.com/repos/lnls-fac/pymodels/git/blobs/4f584b011677b6097e9b846a008052e4423bd839"
+    },
+    {
+      "path": "requirements.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cf8b583a5baf7a82aacf3feb1b846d0531eee432",
+      "size": 49,
+      "url": "https://api.github.com/repos/lnls-fac/pymodels/git/blobs/cf8b583a5baf7a82aacf3feb1b846d0531eee432"
+    },
+    {
+      "path": "setup.py",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "f72f357345504af6660457a0d2a3e579d1b28abf",
+      "size": 1050,
+      "url": "https://api.github.com/repos/lnls-fac/pymodels/git/blobs/f72f357345504af6660457a0d2a3e579d1b28abf"
+    }
+  ],
+  "truncated": false
+}

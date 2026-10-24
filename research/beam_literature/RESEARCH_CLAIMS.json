@@ -1,0 +1,61 @@
+{
+  "scope": "Literature review, small-data ingestion and a public-ring feasibility probe; no new tenfold result",
+  "claims": [
+    {
+      "id": "REVIEW-PRIOR-ART-001",
+      "status": "source_audited",
+      "statement": "Generic observable lifting, discrepancy-corrected optimization, differentiable tracking and memory closures have substantial established prior art.",
+      "boundary": "This does not decide priority for the separate exact nonlinear-Hamiltonian classifications."
+    },
+    {
+      "id": "REVIEW-BAX-001",
+      "status": "published_result_not_independently_reproduced",
+      "statement": "DAMA-BAX reports about forty times fewer tracking acquisitions including final validation than its NSGA-II comparison.",
+      "boundary": "Not a proven all-in wall-clock gain or tenfold advantage over every modern adaptive comparator; original SSRL-X assets not verified public."
+    },
+    {
+      "id": "REVIEW-PIF-001",
+      "status": "published_result_not_independently_reproduced",
+      "statement": "Free-space PIF reports about twelve-fold propagation savings in a long-time beam example at comparable radius/emittance behavior.",
+      "boundary": "Different discretizations; nonoptimized paper PIC comparator; optimized modern PIC and short-lattice transfer unproved."
+    },
+    {
+      "id": "REVIEW-DATA-001",
+      "status": "executed_ingestion_replay",
+      "statement": "Small licensed assets were downloaded or range-inspected and checked for hashes, numeric shapes, duplicate/conflicting inputs and declared provenance.",
+      "boundary": "No bulk-data, simulator-accuracy, counterfactual controller or facility validation inferred."
+    },
+    {
+      "id": "REVIEW-RING-001",
+      "status": "executed_feasibility_probe",
+      "statement": "The source-bound 32-cell public HMBA ring gives identical individual/batched tracking states for the declared 64-point, 128-turn probe.",
+      "boundary": "Warm single-thread probe, no RF/radiation/space charge/errors; not an acceptance convergence or optimization result."
+    },
+    {
+      "id": "REVIEW-NEXT-001",
+      "status": "prospective_recommendation",
+      "statement": "Adopt multipointBAX on a public ring benchmark, comparing full costs against strong adaptive and surrogate competitors, before attempting a certificate enhancement.",
+      "boundary": "A design brief, not a frozen completed optimizer experiment or a new general algorithm."
+    },
+    {
+      "id": "REVIEW-FIT-001",
+      "status": "proved_formal_algebra_with_finite_exact_replay",
+      "statement": "For H=q*p^3, q belongs to the polynomial dynamic core but its Poisson orbit is infinite-dimensional; exact core membership alone does not imply finite observable closure.",
+      "proof": "CORE_VS_TRACTABILITY.md",
+      "checker": "check_core_vs_tractability.py",
+      "boundary": "Formal polynomial statement only; no global operator-domain, physical simulator, industrial performance or new classification-maximality claim."
+    },
+    {
+      "id": "REVIEW-QUANTUM-REPLAY-001",
+      "status": "executed_third_party_seeded_examples",
+      "statement": "Pinned unchanged bosonic-gsim Fig8 and Fig10 small examples ran successfully; maximum recorded Fock and single-mode phase/grid residuals were 5.56e-16 and 2.00e-15.",
+      "boundary": "Only the distributed small examples; no industrial gain, exhaustive test pass, largest-run reproduction or new algorithm claim."
+    },
+    {
+      "id": "REVIEW-TENFOLD-001",
+      "status": "unproved_target",
+      "statement": "Our own tenfold complete industrial tuning gain over the strongest ordinary workflow remains unestablished.",
+      "boundary": "Literature ratios, inference speed, query counts, solver-only gains and future proposals cannot substitute for that comparison."
+    }
+  ]
+}

@@ -1,0 +1,401 @@
+{
+  "sha": "db4175542fa4872bcf97b1d6bbe59f8eb21721b2",
+  "url": "https://api.github.com/repos/lnls-fac/pyaccel/git/trees/db4175542fa4872bcf97b1d6bbe59f8eb21721b2",
+  "tree": [
+    {
+      "path": ".gitignore",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "18e814dc5d7846b551de1d6b9cabd7e49a810d63",
+      "size": 907,
+      "url": "https://api.github.com/repos/lnls-fac/pyaccel/git/blobs/18e814dc5d7846b551de1d6b9cabd7e49a810d63"
+    },
+    {
+      "path": "CITATION.cff",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "21f21fec8cce5c2f64241779b72e22bc490aeb06",
+      "size": 587,
+      "url": "https://api.github.com/repos/lnls-fac/pyaccel/git/blobs/21f21fec8cce5c2f64241779b72e22bc490aeb06"
+    },
+    {
+      "path": "LICENSE",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "649d5cd6b2aee25cc22676f9473c3108e0a7d8e1",
+      "size": 1093,
+      "url": "https://api.github.com/repos/lnls-fac/pyaccel/git/blobs/649d5cd6b2aee25cc22676f9473c3108e0a7d8e1"
+    },
+    {
+      "path": "Makefile",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "521ec1cfd57ad3a40dd79cadb06479372b14307c",
+      "size": 473,
+      "url": "https://api.github.com/repos/lnls-fac/pyaccel/git/blobs/521ec1cfd57ad3a40dd79cadb06479372b14307c"
+    },
+    {
+      "path": "README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e5bffb6d18e081d3038f5049330c191acf19184b",
+      "size": 217,
+      "url": "https://api.github.com/repos/lnls-fac/pyaccel/git/blobs/e5bffb6d18e081d3038f5049330c191acf19184b"
+    },
+    {
+      "path": "VERSION",
+      "mode": "120000",
+      "type": "blob",
+      "sha": "b90b92ce4a57b3b1eef7ec324445c50e94390500",
+      "size": 15,
+      "url": "https://api.github.com/repos/lnls-fac/pyaccel/git/blobs/b90b92ce4a57b3b1eef7ec324445c50e94390500"
+    },
+    {
+      "path": "doc",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "5d9fac8cede6a269981044b5fa9ff2fb2c1d2d68",
+      "url": "https://api.github.com/repos/lnls-fac/pyaccel/git/trees/5d9fac8cede6a269981044b5fa9ff2fb2c1d2d68"
+    },
+    {
+      "path": "doc/doxygen",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "2d5572139972bb2502045c9bc922d197ec50378b",
+      "url": "https://api.github.com/repos/lnls-fac/pyaccel/git/trees/2d5572139972bb2502045c9bc922d197ec50378b"
+    },
+    {
+      "path": "doc/doxygen/Doxyfile",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4c48ba9ee6addbf2c87fcbde0e7d99ea6c358066",
+      "size": 106098,
+      "url": "https://api.github.com/repos/lnls-fac/pyaccel/git/blobs/4c48ba9ee6addbf2c87fcbde0e7d99ea6c358066"
+    },
+    {
+      "path": "doc/doxygen/Mainpage.dox",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fb34ffd8a7133ec08a66452bbab53bf225c43238",
+      "size": 107,
+      "url": "https://api.github.com/repos/lnls-fac/pyaccel/git/blobs/fb34ffd8a7133ec08a66452bbab53bf225c43238"
+    },
+    {
+      "path": "doc/doxygen/Makefile",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "02b1619762e3c52a47f4cc64c0d788834b379a18",
+      "size": 320,
+      "url": "https://api.github.com/repos/lnls-fac/pyaccel/git/blobs/02b1619762e3c52a47f4cc64c0d788834b379a18"
+    },
+    {
+      "path": "examples",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "b62d45d06675b9e067ddf43c5e4cbcb761ed09b2",
+      "url": "https://api.github.com/repos/lnls-fac/pyaccel/git/trees/b62d45d06675b9e067ddf43c5e4cbcb761ed09b2"
+    },
+    {
+      "path": "examples/create_lattice.ipynb",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "17643baad3e92214d5577fb8209b175357cdc21c",
+      "size": 4460,
+      "url": "https://api.github.com/repos/lnls-fac/pyaccel/git/blobs/17643baad3e92214d5577fb8209b175357cdc21c"
+    },
+    {
+      "path": "examples/plot_twiss.ipynb",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "19b2d2e7271111584cc7ffebdcc7bc88dfcdc70b",
+      "size": 60000,
+      "url": "https://api.github.com/repos/lnls-fac/pyaccel/git/blobs/19b2d2e7271111584cc7ffebdcc7bc88dfcdc70b"
+    },
+    {
+      "path": "examples/tracking.ipynb",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6d4e2952687484d4b325b888fc36c2742fdfd458",
+      "size": 3197,
+      "url": "https://api.github.com/repos/lnls-fac/pyaccel/git/blobs/6d4e2952687484d4b325b888fc36c2742fdfd458"
+    },
+    {
+      "path": "pyaccel.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "954a023620bc0468d5b03cc532eed98e6856b55c",
+      "size": 19537,
+      "url": "https://api.github.com/repos/lnls-fac/pyaccel/git/blobs/954a023620bc0468d5b03cc532eed98e6856b55c"
+    },
+    {
+      "path": "pyaccel",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "71e081c2e744ed6fc9a3861cd550169f9db50c2e",
+      "url": "https://api.github.com/repos/lnls-fac/pyaccel/git/trees/71e081c2e744ed6fc9a3861cd550169f9db50c2e"
+    },
+    {
+      "path": "pyaccel/VERSION",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0b3135213ff2c77e1a1e55d26e1dcb70b5dd7434",
+      "size": 7,
+      "url": "https://api.github.com/repos/lnls-fac/pyaccel/git/blobs/0b3135213ff2c77e1a1e55d26e1dcb70b5dd7434"
+    },
+    {
+      "path": "pyaccel/__init__.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ec100f1764966797ec4e79d5cba6beb49067bcb8",
+      "size": 634,
+      "url": "https://api.github.com/repos/lnls-fac/pyaccel/git/blobs/ec100f1764966797ec4e79d5cba6beb49067bcb8"
+    },
+    {
+      "path": "pyaccel/accelerator.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2729daef318381282095c50778e5192e4945d623",
+      "size": 16052,
+      "url": "https://api.github.com/repos/lnls-fac/pyaccel/git/blobs/2729daef318381282095c50778e5192e4945d623"
+    },
+    {
+      "path": "pyaccel/elements.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1e37150d6070350c5e143710d1158644dddc3412",
+      "size": 26137,
+      "url": "https://api.github.com/repos/lnls-fac/pyaccel/git/blobs/1e37150d6070350c5e143710d1158644dddc3412"
+    },
+    {
+      "path": "pyaccel/graphics.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cfb99c2a48ba30760524fb2dab1c4c104b4ecfc2",
+      "size": 22591,
+      "url": "https://api.github.com/repos/lnls-fac/pyaccel/git/blobs/cfb99c2a48ba30760524fb2dab1c4c104b4ecfc2"
+    },
+    {
+      "path": "pyaccel/intrabeam_scattering.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2ab90d48f28969f9a0df0901e34f34bc63e8e141",
+      "size": 32841,
+      "url": "https://api.github.com/repos/lnls-fac/pyaccel/git/blobs/2ab90d48f28969f9a0df0901e34f34bc63e8e141"
+    },
+    {
+      "path": "pyaccel/lattice.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "31420d1689f1ef865f2c530ad502c1a4518a6a13",
+      "size": 44607,
+      "url": "https://api.github.com/repos/lnls-fac/pyaccel/git/blobs/31420d1689f1ef865f2c530ad502c1a4518a6a13"
+    },
+    {
+      "path": "pyaccel/lifetime.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3004e6e7a323bbf7e0aa33931e5f07cc3279de9c",
+      "size": 35258,
+      "url": "https://api.github.com/repos/lnls-fac/pyaccel/git/blobs/3004e6e7a323bbf7e0aa33931e5f07cc3279de9c"
+    },
+    {
+      "path": "pyaccel/naff.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "45c15cb5776467300fa42ffa84c51638a2de9161",
+      "size": 2165,
+      "url": "https://api.github.com/repos/lnls-fac/pyaccel/git/blobs/45c15cb5776467300fa42ffa84c51638a2de9161"
+    },
+    {
+      "path": "pyaccel/optics",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "d8a4b951dca06717019dea7a5fcd01aaa1d6b066",
+      "url": "https://api.github.com/repos/lnls-fac/pyaccel/git/trees/d8a4b951dca06717019dea7a5fcd01aaa1d6b066"
+    },
+    {
+      "path": "pyaccel/optics/__init__.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1c08bbc90542e7035973e11f16eabb627c5f1df3",
+      "size": 1368,
+      "url": "https://api.github.com/repos/lnls-fac/pyaccel/git/blobs/1c08bbc90542e7035973e11f16eabb627c5f1df3"
+    },
+    {
+      "path": "pyaccel/optics/acceptances.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a4747e59f1195b75df4f1bf982713b2839634f14",
+      "size": 16043,
+      "url": "https://api.github.com/repos/lnls-fac/pyaccel/git/blobs/a4747e59f1195b75df4f1bf982713b2839634f14"
+    },
+    {
+      "path": "pyaccel/optics/beam_envelope.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "84497660aa63ea99f74243b7abe4b95d0590fcfb",
+      "size": 17770,
+      "url": "https://api.github.com/repos/lnls-fac/pyaccel/git/blobs/84497660aa63ea99f74243b7abe4b95d0590fcfb"
+    },
+    {
+      "path": "pyaccel/optics/driving_terms.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "71cf8c828a6463817fbd9184cb76aaf4d0a095f3",
+      "size": 12111,
+      "url": "https://api.github.com/repos/lnls-fac/pyaccel/git/blobs/71cf8c828a6463817fbd9184cb76aaf4d0a095f3"
+    },
+    {
+      "path": "pyaccel/optics/edwards_teng.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5d8f9038ffad53ff47866f8fcf1876381eff91c8",
+      "size": 29455,
+      "url": "https://api.github.com/repos/lnls-fac/pyaccel/git/blobs/5d8f9038ffad53ff47866f8fcf1876381eff91c8"
+    },
+    {
+      "path": "pyaccel/optics/eq_params.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "336de5bc2a93a25a8ff285429425a4e211208b8c",
+      "size": 8559,
+      "url": "https://api.github.com/repos/lnls-fac/pyaccel/git/blobs/336de5bc2a93a25a8ff285429425a4e211208b8c"
+    },
+    {
+      "path": "pyaccel/optics/miscellaneous.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bbb102f1ad22c4365dfadda205eb6ee383eb8e5c",
+      "size": 5127,
+      "url": "https://api.github.com/repos/lnls-fac/pyaccel/git/blobs/bbb102f1ad22c4365dfadda205eb6ee383eb8e5c"
+    },
+    {
+      "path": "pyaccel/optics/rad_integrals.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f3e213bb43636caec88f2cb207d1b216aa38eeda",
+      "size": 11514,
+      "url": "https://api.github.com/repos/lnls-fac/pyaccel/git/blobs/f3e213bb43636caec88f2cb207d1b216aa38eeda"
+    },
+    {
+      "path": "pyaccel/optics/twiss.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a521f826a22120643109a58e974e5b9f1bb1a886",
+      "size": 13798,
+      "url": "https://api.github.com/repos/lnls-fac/pyaccel/git/blobs/a521f826a22120643109a58e974e5b9f1bb1a886"
+    },
+    {
+      "path": "pyaccel/tracking.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ce257b07bea22ad272792fd0ddc7d92a6a7cb7ed",
+      "size": 45543,
+      "url": "https://api.github.com/repos/lnls-fac/pyaccel/git/blobs/ce257b07bea22ad272792fd0ddc7d92a6a7cb7ed"
+    },
+    {
+      "path": "pyaccel/utils.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b4beb01afa3fdf45b80c1fdfb1d83386dd8996ea",
+      "size": 1851,
+      "url": "https://api.github.com/repos/lnls-fac/pyaccel/git/blobs/b4beb01afa3fdf45b80c1fdfb1d83386dd8996ea"
+    },
+    {
+      "path": "pyproject.toml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c399a8638fe437b6edd496ab5d027c160778a324",
+      "size": 2017,
+      "url": "https://api.github.com/repos/lnls-fac/pyaccel/git/blobs/c399a8638fe437b6edd496ab5d027c160778a324"
+    },
+    {
+      "path": "requirements.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6f54cad62b88bc09cd27c869cd63febd6f2eb281",
+      "size": 58,
+      "url": "https://api.github.com/repos/lnls-fac/pyaccel/git/blobs/6f54cad62b88bc09cd27c869cd63febd6f2eb281"
+    },
+    {
+      "path": "setup.py",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "0fc8e6f8724086690b142c53ca595b2b52a1a563",
+      "size": 1173,
+      "url": "https://api.github.com/repos/lnls-fac/pyaccel/git/blobs/0fc8e6f8724086690b142c53ca595b2b52a1a563"
+    },
+    {
+      "path": "test",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "5db999cedb3774e36ec69eba63e3ae39d2d100d5",
+      "url": "https://api.github.com/repos/lnls-fac/pyaccel/git/trees/5db999cedb3774e36ec69eba63e3ae39d2d100d5"
+    },
+    {
+      "path": "test/flatfile.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f9d283339a5bce89dff133d575b0675ff5d9a360",
+      "size": 679,
+      "url": "https://api.github.com/repos/lnls-fac/pyaccel/git/blobs/f9d283339a5bce89dff133d575b0675ff5d9a360"
+    },
+    {
+      "path": "test/models.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4c87a595fcf18b96af640074fa26fd39ff34e58d",
+      "size": 16537,
+      "url": "https://api.github.com/repos/lnls-fac/pyaccel/git/blobs/4c87a595fcf18b96af640074fa26fd39ff34e58d"
+    },
+    {
+      "path": "test/runtests.py",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "f7542b024498b7a7e970ae6e8e7920fdd4e061e0",
+      "size": 476,
+      "url": "https://api.github.com/repos/lnls-fac/pyaccel/git/blobs/f7542b024498b7a7e970ae6e8e7920fdd4e061e0"
+    },
+    {
+      "path": "test/test_accelerator.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6553b3e09af1142b53a2a5ce7bc2c570b32c60a0",
+      "size": 5863,
+      "url": "https://api.github.com/repos/lnls-fac/pyaccel/git/blobs/6553b3e09af1142b53a2a5ce7bc2c570b32c60a0"
+    },
+    {
+      "path": "test/test_elements.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "dc73e407a1f679a5adf785314b10ed46163613e9",
+      "size": 9640,
+      "url": "https://api.github.com/repos/lnls-fac/pyaccel/git/blobs/dc73e407a1f679a5adf785314b10ed46163613e9"
+    },
+    {
+      "path": "test/test_lattice.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "02424add56a769e72ad1b76a9f886cbbbc0780f5",
+      "size": 6811,
+      "url": "https://api.github.com/repos/lnls-fac/pyaccel/git/blobs/02424add56a769e72ad1b76a9f886cbbbc0780f5"
+    },
+    {
+      "path": "test/test_optics.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4c15b746711973133d3111be05a9ef8bf7fba448",
+      "size": 7352,
+      "url": "https://api.github.com/repos/lnls-fac/pyaccel/git/blobs/4c15b746711973133d3111be05a9ef8bf7fba448"
+    },
+    {
+      "path": "test/test_tracking.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "98d91d5eecfd48c14c0d5184c3d9d01d3e52d955",
+      "size": 15695,
+      "url": "https://api.github.com/repos/lnls-fac/pyaccel/git/blobs/98d91d5eecfd48c14c0d5184c3d9d01d3e52d955"
+    }
+  ],
+  "truncated": false
+}

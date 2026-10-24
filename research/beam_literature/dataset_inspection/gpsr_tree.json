@@ -1,0 +1,459 @@
+{
+  "sha": "ff1e8188cb006155802af875c784c76eacd046df",
+  "url": "https://api.github.com/repos/roussel-ryan/gpsr/git/trees/ff1e8188cb006155802af875c784c76eacd046df",
+  "tree": [
+    {
+      "path": ".coverage",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5487c2ca3e64e1705a6fc8cf66069b28dcb57619",
+      "size": 53248,
+      "url": "https://api.github.com/repos/roussel-ryan/gpsr/git/blobs/5487c2ca3e64e1705a6fc8cf66069b28dcb57619"
+    },
+    {
+      "path": ".gitattributes",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "dfe0770424b2a19faf507a501ebfc23be8f54e7b",
+      "size": 66,
+      "url": "https://api.github.com/repos/roussel-ryan/gpsr/git/blobs/dfe0770424b2a19faf507a501ebfc23be8f54e7b"
+    },
+    {
+      "path": ".github",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "fb598bce15888f07489f5b0512dc82895ca87d12",
+      "url": "https://api.github.com/repos/roussel-ryan/gpsr/git/trees/fb598bce15888f07489f5b0512dc82895ca87d12"
+    },
+    {
+      "path": ".github/workflows",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "b7cd5f420e264286fb40de54299b4a80a3ac47da",
+      "url": "https://api.github.com/repos/roussel-ryan/gpsr/git/trees/b7cd5f420e264286fb40de54299b4a80a3ac47da"
+    },
+    {
+      "path": ".github/workflows/lint.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e28f4a665e1c9a9930df3b18875131b5307bfbf8",
+      "size": 1038,
+      "url": "https://api.github.com/repos/roussel-ryan/gpsr/git/blobs/e28f4a665e1c9a9930df3b18875131b5307bfbf8"
+    },
+    {
+      "path": ".github/workflows/pypi_upload.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d26e243e028f507de49e8e768df5abac6209d358",
+      "size": 1922,
+      "url": "https://api.github.com/repos/roussel-ryan/gpsr/git/blobs/d26e243e028f507de49e8e768df5abac6209d358"
+    },
+    {
+      "path": ".github/workflows/test_build.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "071fa00fe69a20249778b665d12c759e761dc498",
+      "size": 468,
+      "url": "https://api.github.com/repos/roussel-ryan/gpsr/git/blobs/071fa00fe69a20249778b665d12c759e761dc498"
+    },
+    {
+      "path": ".github/workflows/tests.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "44a3412674130da00d080cdf9114c02c915cfae7",
+      "size": 1174,
+      "url": "https://api.github.com/repos/roussel-ryan/gpsr/git/blobs/44a3412674130da00d080cdf9114c02c915cfae7"
+    },
+    {
+      "path": ".gitignore",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6bfe5137b88539825f32fb7bbb633cc83f50a955",
+      "size": 196,
+      "url": "https://api.github.com/repos/roussel-ryan/gpsr/git/blobs/6bfe5137b88539825f32fb7bbb633cc83f50a955"
+    },
+    {
+      "path": ".pre-commit-config.yaml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9d4438a21efdb665ea7192d77ddf6d788835ce34",
+      "size": 751,
+      "url": "https://api.github.com/repos/roussel-ryan/gpsr/git/blobs/9d4438a21efdb665ea7192d77ddf6d788835ce34"
+    },
+    {
+      "path": "README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "175ecb4dbe9526b5814d480eaefd3e991f0e43ae",
+      "size": 1072,
+      "url": "https://api.github.com/repos/roussel-ryan/gpsr/git/blobs/175ecb4dbe9526b5814d480eaefd3e991f0e43ae"
+    },
+    {
+      "path": "docs",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "88ba33be0adaca592a4b85b6528c68d3e8445207",
+      "url": "https://api.github.com/repos/roussel-ryan/gpsr/git/trees/88ba33be0adaca592a4b85b6528c68d3e8445207"
+    },
+    {
+      "path": "docs/assets",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "e57165ae5eb9b6a6e618db2db75cf40c32b2dc89",
+      "url": "https://api.github.com/repos/roussel-ryan/gpsr/git/trees/e57165ae5eb9b6a6e618db2db75cf40c32b2dc89"
+    },
+    {
+      "path": "docs/assets/6d_cartoon.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9a9e4b53358c6308e15f32cd43aa3c5e9645d9b7",
+      "size": 341247,
+      "url": "https://api.github.com/repos/roussel-ryan/gpsr/git/blobs/9a9e4b53358c6308e15f32cd43aa3c5e9645d9b7"
+    },
+    {
+      "path": "docs/examples",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "19321244bf4d97f2f4b87526b3dac3100e2aeaf9",
+      "url": "https://api.github.com/repos/roussel-ryan/gpsr/git/trees/19321244bf4d97f2f4b87526b3dac3100e2aeaf9"
+    },
+    {
+      "path": "docs/examples/benchmarking",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "24ddf04e87c8a60c5c58dc9de3b033fe6821aae1",
+      "url": "https://api.github.com/repos/roussel-ryan/gpsr/git/trees/24ddf04e87c8a60c5c58dc9de3b033fe6821aae1"
+    },
+    {
+      "path": "docs/examples/benchmarking/benchmark_reconstruction_4d.ipynb",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0a7b12dd308a36a72cd9effcdf03334691674caf",
+      "size": 548978,
+      "url": "https://api.github.com/repos/roussel-ryan/gpsr/git/blobs/0a7b12dd308a36a72cd9effcdf03334691674caf"
+    },
+    {
+      "path": "docs/examples/benchmarking/benchmark_reconstruction_6d.ipynb",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e9c50aa88e6086e224784d3e38c2b71f91ff89ef",
+      "size": 755330,
+      "url": "https://api.github.com/repos/roussel-ryan/gpsr/git/blobs/e9c50aa88e6086e224784d3e38c2b71f91ff89ef"
+    },
+    {
+      "path": "docs/examples/example_data",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "33fca0f96486993143a24a8e4d4dec8ff30d4add",
+      "url": "https://api.github.com/repos/roussel-ryan/gpsr/git/trees/33fca0f96486993143a24a8e4d4dec8ff30d4add"
+    },
+    {
+      "path": "docs/examples/example_data/example_datasets",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "11a68825e9e59cbcd84775c23a0916213f52f622",
+      "url": "https://api.github.com/repos/roussel-ryan/gpsr/git/trees/11a68825e9e59cbcd84775c23a0916213f52f622"
+    },
+    {
+      "path": "docs/examples/example_data/example_datasets/reconstruction_4D.dset",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d22d1d2ee289d2a07cdc4c10a76426205d29a6f9",
+      "size": 804045,
+      "url": "https://api.github.com/repos/roussel-ryan/gpsr/git/blobs/d22d1d2ee289d2a07cdc4c10a76426205d29a6f9"
+    },
+    {
+      "path": "docs/examples/example_data/example_datasets/reconstruction_6D.dset",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ebfbba20dcb8763480fad7c87f9477c2d8b09879",
+      "size": 13610370,
+      "url": "https://api.github.com/repos/roussel-ryan/gpsr/git/blobs/ebfbba20dcb8763480fad7c87f9477c2d8b09879"
+    },
+    {
+      "path": "docs/examples/example_data/example_distributions",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "561d2cd67af7c20ab7d42e9d31a7451ce51b8602",
+      "url": "https://api.github.com/repos/roussel-ryan/gpsr/git/trees/561d2cd67af7c20ab7d42e9d31a7451ce51b8602"
+    },
+    {
+      "path": "docs/examples/example_data/example_distributions/complex_beam.pt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a1708ee7818c581601285c05e9aeee5908e5815a",
+      "size": 561852,
+      "url": "https://api.github.com/repos/roussel-ryan/gpsr/git/blobs/a1708ee7818c581601285c05e9aeee5908e5815a"
+    },
+    {
+      "path": "docs/examples/example_data/example_distributions/gaussian_beam.pt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bb52cd73c8f2186b3336e28f018cfb1cc79310bd",
+      "size": 363268,
+      "url": "https://api.github.com/repos/roussel-ryan/gpsr/git/blobs/bb52cd73c8f2186b3336e28f018cfb1cc79310bd"
+    },
+    {
+      "path": "docs/examples/example_data_processing.ipynb",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "653341860671b7c7ad8f4154d58d158b68bb91ee",
+      "size": 4139,
+      "url": "https://api.github.com/repos/roussel-ryan/gpsr/git/blobs/653341860671b7c7ad8f4154d58d158b68bb91ee"
+    },
+    {
+      "path": "docs/examples/example_reconstruction_4d.ipynb",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ef283b53f8c7a66e01f460199a9dfc20cf8cece9",
+      "size": 7429,
+      "url": "https://api.github.com/repos/roussel-ryan/gpsr/git/blobs/ef283b53f8c7a66e01f460199a9dfc20cf8cece9"
+    },
+    {
+      "path": "docs/examples/example_reconstruction_4d_ensemble.ipynb",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "06b0ef4c2ce3209e6db2a609d9f3d8af87168ca9",
+      "size": 5709,
+      "url": "https://api.github.com/repos/roussel-ryan/gpsr/git/blobs/06b0ef4c2ce3209e6db2a609d9f3d8af87168ca9"
+    },
+    {
+      "path": "docs/examples/example_reconstruction_4d_flow.ipynb",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "14a110fa1a879db077da335253c84985baa2eb5b",
+      "size": 1224814,
+      "url": "https://api.github.com/repos/roussel-ryan/gpsr/git/blobs/14a110fa1a879db077da335253c84985baa2eb5b"
+    },
+    {
+      "path": "docs/examples/example_reconstruction_6d.ipynb",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f8a6e7e1dd4818a7053452f52dc7dc187409d735",
+      "size": 6131,
+      "url": "https://api.github.com/repos/roussel-ryan/gpsr/git/blobs/f8a6e7e1dd4818a7053452f52dc7dc187409d735"
+    },
+    {
+      "path": "environment.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9a5e03780ec65eae919a47faa4d2b95b9eda188a",
+      "size": 256,
+      "url": "https://api.github.com/repos/roussel-ryan/gpsr/git/blobs/9a5e03780ec65eae919a47faa4d2b95b9eda188a"
+    },
+    {
+      "path": "gpsr",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "d7e7ee180ad0ed4d3c8cd40d3bb7fccf2e2c046a",
+      "url": "https://api.github.com/repos/roussel-ryan/gpsr/git/trees/d7e7ee180ad0ed4d3c8cd40d3bb7fccf2e2c046a"
+    },
+    {
+      "path": "gpsr/__init__.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0,
+      "url": "https://api.github.com/repos/roussel-ryan/gpsr/git/blobs/e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "gpsr/analysis.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ae2d1ea853c82fd46236cdf02d3952295b551982",
+      "size": 3911,
+      "url": "https://api.github.com/repos/roussel-ryan/gpsr/git/blobs/ae2d1ea853c82fd46236cdf02d3952295b551982"
+    },
+    {
+      "path": "gpsr/beams.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "453e3d3a9ccdbb743acb6391846e1ab460d39d16",
+      "size": 10319,
+      "url": "https://api.github.com/repos/roussel-ryan/gpsr/git/blobs/453e3d3a9ccdbb743acb6391846e1ab460d39d16"
+    },
+    {
+      "path": "gpsr/data_processing.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "daa5f7d15526468bf152c6090bf263b87f1235e2",
+      "size": 19457,
+      "url": "https://api.github.com/repos/roussel-ryan/gpsr/git/blobs/daa5f7d15526468bf152c6090bf263b87f1235e2"
+    },
+    {
+      "path": "gpsr/datasets.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9fd657ded11dbc436627803f70af8e73664f1114",
+      "size": 17986,
+      "url": "https://api.github.com/repos/roussel-ryan/gpsr/git/blobs/9fd657ded11dbc436627803f70af8e73664f1114"
+    },
+    {
+      "path": "gpsr/diagnostics.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "308935c18803fc6c02cf2db3129b00b42dd75cd3",
+      "size": 1620,
+      "url": "https://api.github.com/repos/roussel-ryan/gpsr/git/blobs/308935c18803fc6c02cf2db3129b00b42dd75cd3"
+    },
+    {
+      "path": "gpsr/ensemble.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bac2c79d16a410ab626f2249505e85c36adc6fe2",
+      "size": 17132,
+      "url": "https://api.github.com/repos/roussel-ryan/gpsr/git/blobs/bac2c79d16a410ab626f2249505e85c36adc6fe2"
+    },
+    {
+      "path": "gpsr/losses.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a050d7c68fff09794c1562535671b3a41759f41c",
+      "size": 3159,
+      "url": "https://api.github.com/repos/roussel-ryan/gpsr/git/blobs/a050d7c68fff09794c1562535671b3a41759f41c"
+    },
+    {
+      "path": "gpsr/modeling.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9dc2dc00fa3653c5ddcc4586e5ea7fe339c269f3",
+      "size": 10165,
+      "url": "https://api.github.com/repos/roussel-ryan/gpsr/git/blobs/9dc2dc00fa3653c5ddcc4586e5ea7fe339c269f3"
+    },
+    {
+      "path": "gpsr/tests",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "281e31eb38ce0924207d4f8cf1db2be82ee1d062",
+      "url": "https://api.github.com/repos/roussel-ryan/gpsr/git/trees/281e31eb38ce0924207d4f8cf1db2be82ee1d062"
+    },
+    {
+      "path": "gpsr/tests/test_beams.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0315bf46d902b55180c65a5cfed953a352916f31",
+      "size": 2807,
+      "url": "https://api.github.com/repos/roussel-ryan/gpsr/git/blobs/0315bf46d902b55180c65a5cfed953a352916f31"
+    },
+    {
+      "path": "gpsr/tests/test_data_processing.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "72092203e63a7a7463d7cdc17fea639f9f2e43b6",
+      "size": 4734,
+      "url": "https://api.github.com/repos/roussel-ryan/gpsr/git/blobs/72092203e63a7a7463d7cdc17fea639f9f2e43b6"
+    },
+    {
+      "path": "gpsr/tests/test_datasets.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "73f3d7f03dda66bac4eaa365a41a56666759e8ee",
+      "size": 2714,
+      "url": "https://api.github.com/repos/roussel-ryan/gpsr/git/blobs/73f3d7f03dda66bac4eaa365a41a56666759e8ee"
+    },
+    {
+      "path": "gpsr/tests/test_diagnostics.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5fea3f74f6f2adf5e1722aa0349f233e8c2b0538",
+      "size": 2539,
+      "url": "https://api.github.com/repos/roussel-ryan/gpsr/git/blobs/5fea3f74f6f2adf5e1722aa0349f233e8c2b0538"
+    },
+    {
+      "path": "gpsr/tests/test_ensemble.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "486288733fded99ccdae1c95c329c87265f63dfc",
+      "size": 35642,
+      "url": "https://api.github.com/repos/roussel-ryan/gpsr/git/blobs/486288733fded99ccdae1c95c329c87265f63dfc"
+    },
+    {
+      "path": "gpsr/tests/test_modeling.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9d1c3c6f9dbb659fe97d7fc96f04df2b3888b895",
+      "size": 9699,
+      "url": "https://api.github.com/repos/roussel-ryan/gpsr/git/blobs/9d1c3c6f9dbb659fe97d7fc96f04df2b3888b895"
+    },
+    {
+      "path": "gpsr/tests/test_visualization.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a12d9d953bc60d69b0608e1d80d1bf211c776e7f",
+      "size": 554,
+      "url": "https://api.github.com/repos/roussel-ryan/gpsr/git/blobs/a12d9d953bc60d69b0608e1d80d1bf211c776e7f"
+    },
+    {
+      "path": "gpsr/train.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d68cf6286711fc2ef61a65b88e3dc3b5ed17eebc",
+      "size": 6456,
+      "url": "https://api.github.com/repos/roussel-ryan/gpsr/git/blobs/d68cf6286711fc2ef61a65b88e3dc3b5ed17eebc"
+    },
+    {
+      "path": "gpsr/utils.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1391334b159ae62959778079da399a258a99c3a1",
+      "size": 2594,
+      "url": "https://api.github.com/repos/roussel-ryan/gpsr/git/blobs/1391334b159ae62959778079da399a258a99c3a1"
+    },
+    {
+      "path": "gpsr/variational.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9d3fa471fe41e4d75c77332c9b420f53bff12ab2",
+      "size": 893,
+      "url": "https://api.github.com/repos/roussel-ryan/gpsr/git/blobs/9d3fa471fe41e4d75c77332c9b420f53bff12ab2"
+    },
+    {
+      "path": "gpsr/visualization.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "83aa207a22c57ec503d7600853834c9b2f209167",
+      "size": 788,
+      "url": "https://api.github.com/repos/roussel-ryan/gpsr/git/blobs/83aa207a22c57ec503d7600853834c9b2f209167"
+    },
+    {
+      "path": "pyproject.toml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e1b93b78cc9c9ccd332bc48741488daf0f52c075",
+      "size": 1448,
+      "url": "https://api.github.com/repos/roussel-ryan/gpsr/git/blobs/e1b93b78cc9c9ccd332bc48741488daf0f52c075"
+    },
+    {
+      "path": "scripts",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "99bef378a07b64af4aa99f64cd05566550c547a0",
+      "url": "https://api.github.com/repos/roussel-ryan/gpsr/git/trees/99bef378a07b64af4aa99f64cd05566550c547a0"
+    },
+    {
+      "path": "scripts/execute_notebooks.bash",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "46e46bac8c519558a4a74706c6009cb9056eaf8a",
+      "size": 326,
+      "url": "https://api.github.com/repos/roussel-ryan/gpsr/git/blobs/46e46bac8c519558a4a74706c6009cb9056eaf8a"
+    },
+    {
+      "path": "scripts/run_examples.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9261d02d8a31fecf179a326babb7108b8b6b1ebf",
+      "size": 4266,
+      "url": "https://api.github.com/repos/roussel-ryan/gpsr/git/blobs/9261d02d8a31fecf179a326babb7108b8b6b1ebf"
+    },
+    {
+      "path": "scripts/run_tests.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7c2d51cd159de53dee82b1fd3a2b8fea66c2c322",
+      "size": 612,
+      "url": "https://api.github.com/repos/roussel-ryan/gpsr/git/blobs/7c2d51cd159de53dee82b1fd3a2b8fea66c2c322"
+    }
+  ],
+  "truncated": false
+}

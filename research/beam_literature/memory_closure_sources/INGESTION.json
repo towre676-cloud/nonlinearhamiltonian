@@ -1,0 +1,48 @@
+{
+  "repository_commit": "e89c42d43cb72246cdff7627b08a2558df8af5d4",
+  "repository_tree": "e7fd21834aec59d31c177fa1ecd4248bd61c95ae",
+  "license": "BSD-3-Clause",
+  "files": [
+    {
+      "path": "LICENSE",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d2364b2d65d411b6db7a1948c892b5ddc0c9f0a0",
+      "size": 1547,
+      "url": "https://api.github.com/repos/LiyiFeng-Pro/SpAE/git/blobs/d2364b2d65d411b6db7a1948c892b5ddc0c9f0a0",
+      "sha256": "cb0e1ad2d6cc613d7a5d3acf65caf945e6d543e64bf68dbd2979177c2b41515c",
+      "local_bytes_and_git_blob_match_pinned_source": true
+    },
+    {
+      "path": "requirements.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "648884a50a2624a33bde0fecd06d8eb8cb3d2abb",
+      "size": 73,
+      "url": "https://api.github.com/repos/LiyiFeng-Pro/SpAE/git/blobs/648884a50a2624a33bde0fecd06d8eb8cb3d2abb",
+      "sha256": "76330892c25e8a05b831b51712f21437273ef6e3e90859a3715d6248bc7d5a2f",
+      "local_bytes_and_git_blob_match_pinned_source": true
+    },
+    {
+      "path": "two_stream.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9a15414bd24fc3fd4304342496800eb355a29243",
+      "size": 2767,
+      "url": "https://api.github.com/repos/LiyiFeng-Pro/SpAE/git/blobs/9a15414bd24fc3fd4304342496800eb355a29243",
+      "sha256": "2bec9de34b1c28661abdf04f59166b5607ee4c77be9d72e0a5241ab074f3b7f1",
+      "local_bytes_and_git_blob_match_pinned_source": true
+    }
+  ],
+  "configuration_inspection": {
+    "method": "AST literal parse; external code was not executed",
+    "particles": 1000,
+    "training_trajectories": 40,
+    "validation_trajectories": 8,
+    "blind_trajectories": 1,
+    "latent_dimension": 10,
+    "reducer_iteration_budget": 200000,
+    "latent_hnn_iteration_budget": 90000,
+    "physical_model": "1D periodic Gaussian-screened Fourier interaction, not 2D open-boundary quadrupole PIC"
+  }
+}

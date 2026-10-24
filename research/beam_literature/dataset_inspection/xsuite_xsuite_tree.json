@@ -1,0 +1,1842 @@
+{
+  "sha": "01bc01dccc312aa0c93ed9e5b753cdf43a115649",
+  "url": "https://api.github.com/repos/xsuite/xsuite/git/trees/01bc01dccc312aa0c93ed9e5b753cdf43a115649",
+  "tree": [
+    {
+      "path": ".github",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "79a85e8a5b8461d0916a958e32c7fd8b2681d7d9",
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/trees/79a85e8a5b8461d0916a958e32c7fd8b2681d7d9"
+    },
+    {
+      "path": ".github/scripts",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "146490a0de9d4f34a15b51dab0f3bffc9279b719",
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/trees/146490a0de9d4f34a15b51dab0f3bffc9279b719"
+    },
+    {
+      "path": ".github/scripts/check_pypi_versions.sh",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6f5ba7fb1a1208c0ed63c811c81a849d964ccf74",
+      "size": 2855,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/6f5ba7fb1a1208c0ed63c811c81a849d964ccf74"
+    },
+    {
+      "path": ".github/scripts/ci_common.sh",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9c7e2259b6bff1c329ceb256c1f1a04da89ebd3c",
+      "size": 1090,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/9c7e2259b6bff1c329ceb256c1f1a04da89ebd3c"
+    },
+    {
+      "path": ".github/scripts/entrypoint.sh",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ff33680c6c3be21497a99f67bad81a6e08f91c54",
+      "size": 104,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/ff33680c6c3be21497a99f67bad81a6e08f91c54"
+    },
+    {
+      "path": ".github/scripts/generate_summary.sh",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "84a7da7622cad1f397a95818f3c431923e6cfce7",
+      "size": 2247,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/84a7da7622cad1f397a95818f3c431923e6cfce7"
+    },
+    {
+      "path": ".github/scripts/install_branches.sh",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fcb3d99dfc96b45640020ce223efa6511f7bdc74",
+      "size": 2174,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/fcb3d99dfc96b45640020ce223efa6511f7bdc74"
+    },
+    {
+      "path": ".github/scripts/run_tests.sh",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "aab1e48c2ea6c06086df0aced6119948e3f6d5df",
+      "size": 1433,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/aab1e48c2ea6c06086df0aced6119948e3f6d5df"
+    },
+    {
+      "path": ".github/workflows",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "c51ffcfab8597418d1ea966c7479970ed49414e7",
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/trees/c51ffcfab8597418d1ea966c7479970ed49414e7"
+    },
+    {
+      "path": ".github/workflows/check_pypi_versions.yaml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "463a6cdcf0c20e05a98924552c9e5b9003133a86",
+      "size": 2250,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/463a6cdcf0c20e05a98924552c9e5b9003133a86"
+    },
+    {
+      "path": ".github/workflows/cron_test_gh.yaml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7b742b0ee2079189bd6ed02ab36d0a4e8c5955c7",
+      "size": 609,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/7b742b0ee2079189bd6ed02ab36d0a4e8c5955c7"
+    },
+    {
+      "path": ".github/workflows/cron_test_gh_omp.yaml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0441c65befbdbf8b80ac953a24a1d2065ebdc31e",
+      "size": 433,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/0441c65befbdbf8b80ac953a24a1d2065ebdc31e"
+    },
+    {
+      "path": ".github/workflows/cron_test_gpu_cl.yaml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e04e5ed9430a841ee56fd837e671ffde3fa82011",
+      "size": 847,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/e04e5ed9430a841ee56fd837e671ffde3fa82011"
+    },
+    {
+      "path": ".github/workflows/cron_test_gpu_cuda.yaml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "96d1236bb538c19c9e855c6c0fa047c662e18964",
+      "size": 775,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/96d1236bb538c19c9e855c6c0fa047c662e18964"
+    },
+    {
+      "path": ".github/workflows/cron_test_sh_cpu_no_compile.yaml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "26cd22bbf9c40b9c9f39229c128f459718048788",
+      "size": 685,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/26cd22bbf9c40b9c9f39229c128f459718048788"
+    },
+    {
+      "path": ".github/workflows/cron_test_sh_cpu_no_compile_pypi.yaml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "651f495f3563ba7de0df57edb2ab1926786b9c5a",
+      "size": 695,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/651f495f3563ba7de0df57edb2ab1926786b9c5a"
+    },
+    {
+      "path": ".github/workflows/cron_test_sh_cpu_omp.yaml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "abe42d123d5876ec7d9e1c84cbc02a1bfa7c4af4",
+      "size": 682,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/abe42d123d5876ec7d9e1c84cbc02a1bfa7c4af4"
+    },
+    {
+      "path": ".github/workflows/cron_test_sh_cpu_serial.yaml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "64de5d07a5e087849e4cea49e9ffa23f2f9617c9",
+      "size": 677,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/64de5d07a5e087849e4cea49e9ffa23f2f9617c9"
+    },
+    {
+      "path": ".github/workflows/cron_test_sh_xmask.yaml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f7117615a64abe26859fbca96ff055f8b094ca6a",
+      "size": 637,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/f7117615a64abe26859fbca96ff055f8b094ca6a"
+    },
+    {
+      "path": ".github/workflows/cron_test_sh_xwakes_mpi.yaml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c85227d619eea5fd9b0234ec55dd8afeec29259d",
+      "size": 648,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/c85227d619eea5fd9b0234ec55dd8afeec29259d"
+    },
+    {
+      "path": ".github/workflows/manual_test_gh.yaml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f1bb53b3359f5948f99c7847a6dc0ff91b2b24cf",
+      "size": 1887,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/f1bb53b3359f5948f99c7847a6dc0ff91b2b24cf"
+    },
+    {
+      "path": ".github/workflows/manual_test_sh.yaml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f55eed325f91cc979a38e64ea459e03e4d943a4f",
+      "size": 3168,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/f55eed325f91cc979a38e64ea459e03e4d943a4f"
+    },
+    {
+      "path": ".github/workflows/release.yaml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "898c5c23d3bb78d3198c28ed3e0acdc97081bb97",
+      "size": 2204,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/898c5c23d3bb78d3198c28ed3e0acdc97081bb97"
+    },
+    {
+      "path": ".github/workflows/test_gh.yaml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "685089ea59c20fcf72f8a54efa07c846221cabb0",
+      "size": 4187,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/685089ea59c20fcf72f8a54efa07c846221cabb0"
+    },
+    {
+      "path": ".github/workflows/test_sh.yaml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7e5b5a722f8b96dd69f4e810a1e4155310acf693",
+      "size": 8368,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/7e5b5a722f8b96dd69f4e810a1e4155310acf693"
+    },
+    {
+      "path": ".gitignore",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "332a26183812d29195ba908494d59037a5c11d28",
+      "size": 2391,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/332a26183812d29195ba908494d59037a5c11d28"
+    },
+    {
+      "path": ".readthedocs.yaml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "81b1f048a50481b56e9daa14fc48573e62d29318",
+      "size": 969,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/81b1f048a50481b56e9daa14fc48573e62d29318"
+    },
+    {
+      "path": "Dockerfile",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "72f1cc01e1490b1f4918937f8b82b09a81edd2c8",
+      "size": 4974,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/72f1cc01e1490b1f4918937f8b82b09a81edd2c8"
+    },
+    {
+      "path": "LICENSE",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f49a4e16e68b128803cc2dcea614603632b04eac",
+      "size": 11356,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/f49a4e16e68b128803cc2dcea614603632b04eac"
+    },
+    {
+      "path": "MANIFEST.in",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "346766ba1536a05d359d21d6aaf57f24466b8e12",
+      "size": 102,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/346766ba1536a05d359d21d6aaf57f24466b8e12"
+    },
+    {
+      "path": "README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c16ad7c10deb051fd289cbf45f3974e5a9043f4f",
+      "size": 2539,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/c16ad7c10deb051fd289cbf45f3974e5a9043f4f"
+    },
+    {
+      "path": "contributors.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ed9e089193b0ade94912c46e59768d3c5ac40f82",
+      "size": 584,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/ed9e089193b0ade94912c46e59768d3c5ac40f82"
+    },
+    {
+      "path": "docs",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "b6299da75c3003294765704b22386c38cbf599cd",
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/trees/b6299da75c3003294765704b22386c38cbf599cd"
+    },
+    {
+      "path": "docs/.gitignore",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "afea8b3deb1f1a61d4deb39f61b9fcf66bc2fbed",
+      "size": 166,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/afea8b3deb1f1a61d4deb39f61b9fcf66bc2fbed"
+    },
+    {
+      "path": "docs/Makefile",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2f1b111d19e5081e34cff806be05bb666ab8c1d9",
+      "size": 7027,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/2f1b111d19e5081e34cff806be05bb666ab8c1d9"
+    },
+    {
+      "path": "docs/acceleration.rst",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b2374703564948127e76cc15fa186fbb4fc379c8",
+      "size": 493,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/b2374703564948127e76cc15fa186fbb4fc379c8"
+    },
+    {
+      "path": "docs/aperture.rst",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "20a09fbfdd72681b9863dedc7de13e5bfd228902",
+      "size": 13174,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/20a09fbfdd72681b9863dedc7de13e5bfd228902"
+    },
+    {
+      "path": "docs/apireference.rst",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5e5b32fb4ed196dd891bdfe7800752aabd6a9ba5",
+      "size": 34640,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/5e5b32fb4ed196dd891bdfe7800752aabd6a9ba5"
+    },
+    {
+      "path": "docs/autogeneration.rst",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "223d12dab80e7b1f3084d05195ca5cac34e52e5d",
+      "size": 4144,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/223d12dab80e7b1f3084d05195ca5cac34e52e5d"
+    },
+    {
+      "path": "docs/beambeam.rst",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "db6f6703e3d6fe1f010a128bb73c4db9722105f6",
+      "size": 7639,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/db6f6703e3d6fe1f010a128bb73c4db9722105f6"
+    },
+    {
+      "path": "docs/bfield_expansion.rst",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "85e04b76e07a01380d5f4aeda6ce879efbe500dc",
+      "size": 17248,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/85e04b76e07a01380d5f4aeda6ce879efbe500dc"
+    },
+    {
+      "path": "docs/citing.rst",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e75ea27d886795addc981c93562655a9b9b31096",
+      "size": 602,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/e75ea27d886795addc981c93562655a9b9b31096"
+    },
+    {
+      "path": "docs/collective.rst",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "486bf18fef03c1f500571e7b584b574fad2c59f8",
+      "size": 353,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/486bf18fef03c1f500571e7b584b574fad2c59f8"
+    },
+    {
+      "path": "docs/collective_intro.rst",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8018ff283dbf6609ca4a34478a2f362ad867e749",
+      "size": 3882,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/8018ff283dbf6609ca4a34478a2f362ad867e749"
+    },
+    {
+      "path": "docs/collimation.rst",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "86916524d1507061d0e4aafb2ea0e1533bc23284",
+      "size": 29059,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/86916524d1507061d0e4aafb2ea0e1533bc23284"
+    },
+    {
+      "path": "docs/combined_cpu_gpu.rst",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1b8a428d2c857dc3d064c2043925617548bea76f",
+      "size": 1098,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/1b8a428d2c857dc3d064c2043925617548bea76f"
+    },
+    {
+      "path": "docs/community.rst",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6fc5fb79f8d1996d6f05c0bcd22ca8b649f5602a",
+      "size": 772,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/6fc5fb79f8d1996d6f05c0bcd22ca8b649f5602a"
+    },
+    {
+      "path": "docs/conf.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9fa3e08e8d69d54eed01ed0dcc21481bfc4f3b0b",
+      "size": 28434,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/9fa3e08e8d69d54eed01ed0dcc21481bfc4f3b0b"
+    },
+    {
+      "path": "docs/contexts.rst",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "44e4cf826927782281552bf9670a8fae7593bb0f",
+      "size": 1689,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/44e4cf826927782281552bf9670a8fae7593bb0f"
+    },
+    {
+      "path": "docs/contributors_acknowledgements.rst",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "19e3187b0e53e30d480da594d0d7a0888baba329",
+      "size": 2265,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/19e3187b0e53e30d480da594d0d7a0888baba329"
+    },
+    {
+      "path": "docs/dev_guide_xtbe_data_structure.rst",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d0ae18b3f4d4d6c5f7324e61ea89e65c2e7cd97a",
+      "size": 4635,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/d0ae18b3f4d4d6c5f7324e61ea89e65c2e7cd97a"
+    },
+    {
+      "path": "docs/dev_guide_xtbe_internal_record.rst",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b21bca58adbf1ac35860eb5baf0b8598ee21867c",
+      "size": 1007,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/b21bca58adbf1ac35860eb5baf0b8598ee21867c"
+    },
+    {
+      "path": "docs/dev_guide_xtbe_lost_part_codes.rst",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "233244ed728637928da557e74a2e83ad053d45c3",
+      "size": 4680,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/233244ed728637928da557e74a2e83ad053d45c3"
+    },
+    {
+      "path": "docs/dev_guide_xtbe_prebuilt_kernels.rst",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "51ce6aba4e903ca4f5b9c1dc8e619a0d15a82ac8",
+      "size": 4543,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/51ce6aba4e903ca4f5b9c1dc8e619a0d15a82ac8"
+    },
+    {
+      "path": "docs/dev_guide_xtbe_tracking_code.rst",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d9e909cd147f745dbef613c07a808bfd114ff537",
+      "size": 4219,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/d9e909cd147f745dbef613c07a808bfd114ff537"
+    },
+    {
+      "path": "docs/dev_guide_xtrack_beam_elements.rst",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1e44910f4772d17418ab4677140f463d51cab10f",
+      "size": 355,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/1e44910f4772d17418ab4677140f463d51cab10f"
+    },
+    {
+      "path": "docs/developer.rst",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b6f1d93304fbf91887854b7218d7a073852feb8b",
+      "size": 196,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/b6f1d93304fbf91887854b7218d7a073852feb8b"
+    },
+    {
+      "path": "docs/dynamic_aperture.rst",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c8a38dfa08a7682665138e0cd259d6da89c8773d",
+      "size": 367,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/c8a38dfa08a7682665138e0cd259d6da89c8773d"
+    },
+    {
+      "path": "docs/environment.rst",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b1de2cbb886a4c65abcf93dcd9c8fc00d378abaa",
+      "size": 40928,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/b1de2cbb886a4c65abcf93dcd9c8fc00d378abaa"
+    },
+    {
+      "path": "docs/examples",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "fa021392550cf760763dc04804050d25052ba652",
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/trees/fa021392550cf760763dc04804050d25052ba652"
+    },
+    {
+      "path": "docs/examples/aperture_fodo.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e234d911abb6df65e8d5b30d00fb46a74f9ceb89",
+      "size": 10405,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/e234d911abb6df65e8d5b30d00fb46a74f9ceb89"
+    },
+    {
+      "path": "docs/exciter.rst",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "913410edae1a2b3c8ba556db517eb135eefef8a5",
+      "size": 3332,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/913410edae1a2b3c8ba556db517eb135eefef8a5"
+    },
+    {
+      "path": "docs/fast_lattice_changes.rst",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4fe69011cc09a69b03c3e81a88fdcdef1b4082cf",
+      "size": 812,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/4fe69011cc09a69b03c3e81a88fdcdef1b4082cf"
+    },
+    {
+      "path": "docs/figures",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "8340c4c80bed05b07dfed3ecc1ce5e2554bb90f3",
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/trees/8340c4c80bed05b07dfed3ecc1ce5e2554bb90f3"
+    },
+    {
+      "path": "docs/figures/acceleration.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "eea6b5f10117c7387caefe2adb1fdfda279fdf3f",
+      "size": 296224,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/eea6b5f10117c7387caefe2adb1fdfda279fdf3f"
+    },
+    {
+      "path": "docs/figures/aperture_fodo_clearance.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8658600608557d72466ea7c32d93fcf4e8e5b278",
+      "size": 32748,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/8658600608557d72466ea7c32d93fcf4e8e5b278"
+    },
+    {
+      "path": "docs/figures/aperture_fodo_extents.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "66c2c6d4a649d52c8b2d3311013b9358532056d8",
+      "size": 73872,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/66c2c6d4a649d52c8b2d3311013b9358532056d8"
+    },
+    {
+      "path": "docs/figures/aperture_fodo_floor.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "14756f94d989c58b8c4c904effa06a5f78be4603",
+      "size": 36829,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/14756f94d989c58b8c4c904effa06a5f78be4603"
+    },
+    {
+      "path": "docs/figures/aperture_fodo_pipes.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "746241e7cd3e9b7548ff9c9bd2a1031d64cb1df9",
+      "size": 46693,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/746241e7cd3e9b7548ff9c9bd2a1031d64cb1df9"
+    },
+    {
+      "path": "docs/figures/aperture_fodo_pipes_3d.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e82edd9fb35796b463a501ae2121e967220acd1c",
+      "size": 243235,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/e82edd9fb35796b463a501ae2121e967220acd1c"
+    },
+    {
+      "path": "docs/figures/aperture_fodo_profiles.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3370b9ae1a32952a904cbc7aaba2c6e4c61836a2",
+      "size": 63685,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/3370b9ae1a32952a904cbc7aaba2c6e4c61836a2"
+    },
+    {
+      "path": "docs/figures/aperture_fodo_transverse.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ba336f3313813da552833d30a25e4c2ff3c45427",
+      "size": 82721,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/ba336f3313813da552833d30a25e4c2ff3c45427"
+    },
+    {
+      "path": "docs/figures/beam_stats_monitor_beam_profiles.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "112474b669bd09fc8148f470b82bc787833dad50",
+      "size": 35076,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/112474b669bd09fc8148f470b82bc787833dad50"
+    },
+    {
+      "path": "docs/figures/beam_stats_monitor_beam_stats.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c522524e1825f481a6757bc5c1b1b1a8235da937",
+      "size": 131076,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/c522524e1825f481a6757bc5c1b1b1a8235da937"
+    },
+    {
+      "path": "docs/figures/beam_stats_monitor_bunch_by_bunch_stats.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d609f3fdd0961d0f72b300e1be242743aa6493b0",
+      "size": 153630,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/d609f3fdd0961d0f72b300e1be242743aa6493b0"
+    },
+    {
+      "path": "docs/figures/beam_stats_monitor_coasting_beam_stats.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f9b6ef51727629cf4513ed06ef17c417e2cf1a3f",
+      "size": 100530,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/f9b6ef51727629cf4513ed06ef17c417e2cf1a3f"
+    },
+    {
+      "path": "docs/figures/beam_stats_monitor_emittance_and_optics.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "691aa7129f81e2a36b0f4ff4732faab0035a0ca3",
+      "size": 60201,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/691aa7129f81e2a36b0f4ff4732faab0035a0ca3"
+    },
+    {
+      "path": "docs/figures/beam_stats_monitor_slice_by_slice_stats.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6aba6d3c8ab662522c2e0145e519dcbdcca05d86",
+      "size": 136421,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/6aba6d3c8ab662522c2e0145e519dcbdcca05d86"
+    },
+    {
+      "path": "docs/figures/beambeam_sigmapi.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2c7d9bc0e86b013be5b28ca56e7d06db7e2c1fd3",
+      "size": 38807,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/2c7d9bc0e86b013be5b28ca56e7d06db7e2c1fd3"
+    },
+    {
+      "path": "docs/figures/beambeamkick.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a1f9d958b7ec34a0db82a4574b59455fc28caf9d",
+      "size": 19640,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/a1f9d958b7ec34a0db82a4574b59455fc28caf9d"
+    },
+    {
+      "path": "docs/figures/cern_and_chart.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1e4830380d5ce6c9746811c939bc1857ea8ef92d",
+      "size": 469744,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/1e4830380d5ce6c9746811c939bc1857ea8ef92d"
+    },
+    {
+      "path": "docs/figures/chart_logo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "622f6d392299bd272c80aaa2a9cc052b25e5d04b",
+      "size": 115613,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/622f6d392299bd272c80aaa2a9cc052b25e5d04b"
+    },
+    {
+      "path": "docs/figures/collimator_jaws_front_view.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "203d27d9040a49bed4052ac1519bde8b0449e0a0",
+      "size": 42611,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/203d27d9040a49bed4052ac1519bde8b0449e0a0"
+    },
+    {
+      "path": "docs/figures/collimator_jaws_top_view.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d50c7094e592998e5f6e2205690b4c78855f48bf",
+      "size": 29802,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/d50c7094e592998e5f6e2205690b4c78855f48bf"
+    },
+    {
+      "path": "docs/figures/crossing_bump.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "de7584c43bb352a5e22be695512457ea4303398d",
+      "size": 108018,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/de7584c43bb352a5e22be695512457ea4303398d"
+    },
+    {
+      "path": "docs/figures/dynamic_aperture.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b0d692038872e7b22440f0c5fdd8263e1c3c075a",
+      "size": 395863,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/b0d692038872e7b22440f0c5fdd8263e1c3c075a"
+    },
+    {
+      "path": "docs/figures/elena_w_chrom.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ba5f719b1fd3c7bfb5af0d45e165e97decc3f04b",
+      "size": 201057,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/ba5f719b1fd3c7bfb5af0d45e165e97decc3f04b"
+    },
+    {
+      "path": "docs/figures/exciter_signals.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "db248e5091b412d17296dff248db38ba8317ae27",
+      "size": 76009,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/db248e5091b412d17296dff248db38ba8317ae27"
+    },
+    {
+      "path": "docs/figures/footprint_HO2D.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "006740e4d97eea1fafe09d51da60022db587df6b",
+      "size": 64395,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/006740e4d97eea1fafe09d51da60022db587df6b"
+    },
+    {
+      "path": "docs/figures/footprint_bb_no_rescale.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1e186158b66300656f7a8a417add9b829368c29d",
+      "size": 140959,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/1e186158b66300656f7a8a417add9b829368c29d"
+    },
+    {
+      "path": "docs/figures/footprint_bb_with_rescale.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "80be4606d040b694581545704c50807d8592c8ca",
+      "size": 128051,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/80be4606d040b694581545704c50807d8592c8ca"
+    },
+    {
+      "path": "docs/figures/footprint_polar.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "232e2d0ce637d2d1a70a6bfccd86d06de7ecf249",
+      "size": 143371,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/232e2d0ce637d2d1a70a6bfccd86d06de7ecf249"
+    },
+    {
+      "path": "docs/figures/footprint_unif_action.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "04dae38bd7dfa5de7d5244a91e6456b20f59a972",
+      "size": 179030,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/04dae38bd7dfa5de7d5244a91e6456b20f59a972"
+    },
+    {
+      "path": "docs/figures/gaussian.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d59646917f7180579706797b1e2c2ea5b16a3c7c",
+      "size": 179734,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/d59646917f7180579706797b1e2c2ea5b16a3c7c"
+    },
+    {
+      "path": "docs/figures/halfcell.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7e254a66e4ea4506d61849b4e945b15aa8d518b3",
+      "size": 98158,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/7e254a66e4ea4506d61849b4e945b15aa8d518b3"
+    },
+    {
+      "path": "docs/figures/halo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9d1f6325bf21dbda4a8118ef0fbfded12e8ffaf3",
+      "size": 121485,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/9d1f6325bf21dbda4a8118ef0fbfded12e8ffaf3"
+    },
+    {
+      "path": "docs/figures/ibs_sr_steadystate_coupling.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ccdb0c5e3a04be818dc685e19721c86cc7f31281",
+      "size": 239850,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/ccdb0c5e3a04be818dc685e19721c86cc7f31281"
+    },
+    {
+      "path": "docs/figures/ibs_sr_steadystate_excitation.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "75d435908777f80c57e0c4bb9852e1153d31af32",
+      "size": 206793,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/75d435908777f80c57e0c4bb9852e1153d31af32"
+    },
+    {
+      "path": "docs/figures/loss_location_refinement.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "19dc678574f4eee1687c3bf964ce703289093db0",
+      "size": 465172,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/19dc678574f4eee1687c3bf964ce703289093db0"
+    },
+    {
+      "path": "docs/figures/orbit_bump.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e831a1ae1275bf4f875ac9de9378ea9e9300fa10",
+      "size": 70669,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/e831a1ae1275bf4f875ac9de9378ea9e9300fa10"
+    },
+    {
+      "path": "docs/figures/orbit_correction_basic.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bee2942212e2b68eae53bbb95d4abc222f2ad60a",
+      "size": 193256,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/bee2942212e2b68eae53bbb95d4abc222f2ad60a"
+    },
+    {
+      "path": "docs/figures/orbit_correction_custom.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2eb6ed9ec97a6dbfa6e0233d8426a4e1cc94b927",
+      "size": 230029,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/2eb6ed9ec97a6dbfa6e0233d8426a4e1cc94b927"
+    },
+    {
+      "path": "docs/figures/orbit_correction_micado.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "83bf699a55fb9291bed66df34d9d6c4bf5b54595",
+      "size": 187744,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/83bf699a55fb9291bed66df34d9d6c4bf5b54595"
+    },
+    {
+      "path": "docs/figures/orbit_correction_svalues.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0486b1fa2ca400a21e1dbab98476e24e56335313",
+      "size": 54101,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/0486b1fa2ca400a21e1dbab98476e24e56335313"
+    },
+    {
+      "path": "docs/figures/orbit_correction_thread.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5eadc5ffee94ca2b1ea702c767267aa5ca6bb4a6",
+      "size": 215253,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/5eadc5ffee94ca2b1ea702c767267aa5ca6bb4a6"
+    },
+    {
+      "path": "docs/figures/orbit_correction_ti2.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f5bcdfedb3500a53fd1e7a89062f27382929a88d",
+      "size": 156054,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/f5bcdfedb3500a53fd1e7a89062f27382929a88d"
+    },
+    {
+      "path": "docs/figures/pencil.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8fb8da1330bc8142983608a44f13aaded05cca22",
+      "size": 203281,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/8fb8da1330bc8142983608a44f13aaded05cca22"
+    },
+    {
+      "path": "docs/figures/phasespacedistortion.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "07fadf231554cd93e7fffb5f31b150f239771503",
+      "size": 67404,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/07fadf231554cd93e7fffb5f31b150f239771503"
+    },
+    {
+      "path": "docs/figures/radial_steering.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ee5f6d6128584045469effcefde92f00c801e857",
+      "size": 206008,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/ee5f6d6128584045469effcefde92f00c801e857"
+    },
+    {
+      "path": "docs/figures/spin_lep_depolarization_time.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bd70d15c4d07b6246ec020d877fd8192e7c8372e",
+      "size": 104914,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/bd70d15c4d07b6246ec020d877fd8192e7c8372e"
+    },
+    {
+      "path": "docs/figures/spin_lep_with_bumps.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ef48c9411e2d97c2d90520d183015fbd22ea2cad",
+      "size": 127440,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/ef48c9411e2d97c2d90520d183015fbd22ea2cad"
+    },
+    {
+      "path": "docs/figures/splineboris_sls_closed_orbit.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "802ea10b645c5bea4a5cf76eceed1b434f7231eb",
+      "size": 64793,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/802ea10b645c5bea4a5cf76eceed1b434f7231eb"
+    },
+    {
+      "path": "docs/figures/splineboris_undulator_trajectory.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "03b58733e2e2ff584ee86962f176b19d608f2f10",
+      "size": 156227,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/03b58733e2e2ff584ee86962f176b19d608f2f10"
+    },
+    {
+      "path": "docs/figures/stabilitydiagram.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "61ef8d5c10c7d5987262d1992b7dbdb52e1816e0",
+      "size": 38610,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/61ef8d5c10c7d5987262d1992b7dbdb52e1816e0"
+    },
+    {
+      "path": "docs/figures/survey.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "aa3f596b7dd6980d3aed00d7180167cfd620eba4",
+      "size": 36336,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/aa3f596b7dd6980d3aed00d7180167cfd620eba4"
+    },
+    {
+      "path": "docs/figures/survey_element_frames.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8483a6250354d8558e287c2197476d9bb4f3501f",
+      "size": 38842,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/8483a6250354d8558e287c2197476d9bb4f3501f"
+    },
+    {
+      "path": "docs/figures/time_dep_knob_pwlin_tracking.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4af2c9a986cea84efe23bfabd89039f9c0c254d5",
+      "size": 112097,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/4af2c9a986cea84efe23bfabd89039f9c0c254d5"
+    },
+    {
+      "path": "docs/figures/time_dep_knob_pwlin_twiss.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "29381a6e85d89f9526f16fd9c5238f0f8a926802",
+      "size": 153741,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/29381a6e85d89f9526f16fd9c5238f0f8a926802"
+    },
+    {
+      "path": "docs/figures/time_dep_knob_sin_pulse_tracking.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "06194cea3f7f96b54f11b0da67344c1f8d3cb6e8",
+      "size": 109560,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/06194cea3f7f96b54f11b0da67344c1f8d3cb6e8"
+    },
+    {
+      "path": "docs/figures/time_dep_knob_sin_tracking.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2cb4a8171cba29b80dc806e5afa9c06fd414d8e1",
+      "size": 123326,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/2cb4a8171cba29b80dc806e5afa9c06fd414d8e1"
+    },
+    {
+      "path": "docs/figures/time_dep_knob_sin_twiss.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "73a95d0b8ad337409d945e93165f223e3bb6b201",
+      "size": 130156,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/73a95d0b8ad337409d945e93165f223e3bb6b201"
+    },
+    {
+      "path": "docs/figures/twiss.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "be0649e2d1f5cd208cf20fc727039ef55fa4cfbc",
+      "size": 140876,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/be0649e2d1f5cd208cf20fc727039ef55fa4cfbc"
+    },
+    {
+      "path": "docs/figures/twiss_beam_sizes.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6d12a5609689c5172619e4af274a7f869ad94c87",
+      "size": 183220,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/6d12a5609689c5172619e4af274a7f869ad94c87"
+    },
+    {
+      "path": "docs/figures/twiss_periodic.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b0f822aae54e60b6c5759fcca9948a9a9e21a147",
+      "size": 88689,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/b0f822aae54e60b6c5759fcca9948a9a9e21a147"
+    },
+    {
+      "path": "docs/figures/twiss_range.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "29c9d16afaa96d14143cab721d9fcc2072f09167",
+      "size": 136677,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/29c9d16afaa96d14143cab721d9fcc2072f09167"
+    },
+    {
+      "path": "docs/figures/twiss_reverse.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9116d36b2d767ab1b932b38b6904d9c98a0b2dcc",
+      "size": 77880,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/9116d36b2d767ab1b932b38b6904d9c98a0b2dcc"
+    },
+    {
+      "path": "docs/figures/twiss_vs_delta.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "16a6949173aea4fffa8930ad4ad125905c6708c0",
+      "size": 67165,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/16a6949173aea4fffa8930ad4ad125905c6708c0"
+    },
+    {
+      "path": "docs/figures/xcoll_external.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3332653241e81fcbf5986cf123abd02b2e7f307d",
+      "size": 501575,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/3332653241e81fcbf5986cf123abd02b2e7f307d"
+    },
+    {
+      "path": "docs/figures/xsuite_logo_alpha.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fb7a3d89236f985badd572795124fba8d2feded6",
+      "size": 88492,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/fb7a3d89236f985badd572795124fba8d2feded6"
+    },
+    {
+      "path": "docs/footprint.rst",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "99ff21d1da3ece71037a7b817b41a6a6ec28c2d4",
+      "size": 2265,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/99ff21d1da3ece71037a7b817b41a6a6ec28c2d4"
+    },
+    {
+      "path": "docs/freeze_longitudinal.rst",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "515e001df8eb0535354b9945f19ade62a87193f6",
+      "size": 1790,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/515e001df8eb0535354b9945f19ade62a87193f6"
+    },
+    {
+      "path": "docs/full_table_of_contents.rst",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4c972a1791392804fe3aa3ff6a8240b96127d743",
+      "size": 462,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/4c972a1791392804fe3aa3ff6a8240b96127d743"
+    },
+    {
+      "path": "docs/generated_code_snippets",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "d564d0bc3dd917926892c55e3706cc116d5b165e",
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/trees/d564d0bc3dd917926892c55e3706cc116d5b165e"
+    },
+    {
+      "path": "docs/generated_code_snippets/.gitkeep",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/gettingstarted.rst",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f927e615167a87fd80a688eed8073744b3caa5c4",
+      "size": 8666,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/f927e615167a87fd80a688eed8073744b3caa5c4"
+    },
+    {
+      "path": "docs/index.rst",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "426a31cb09e3a1a0a11fc8d41c20b9f784592d84",
+      "size": 2859,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/426a31cb09e3a1a0a11fc8d41c20b9f784592d84"
+    },
+    {
+      "path": "docs/installation.rst",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b3092905aede95b5d15c8667645383aa7bb2dde6",
+      "size": 19282,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/b3092905aede95b5d15c8667645383aa7bb2dde6"
+    },
+    {
+      "path": "docs/intrabeam_scattering.rst",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9fe7027de4a10d4a5695309e5135d990f20fc7a6",
+      "size": 4051,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/9fe7027de4a10d4a5695309e5135d990f20fc7a6"
+    },
+    {
+      "path": "docs/jupyter_tutorials.rst",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fafce6bfae846b7cc973e6ad55d9516fa10ce1ff",
+      "size": 963,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/fafce6bfae846b7cc973e6ad55d9516fa10ce1ff"
+    },
+    {
+      "path": "docs/lattice_model.rst",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ab4ed2a3ddd17ebc9d0634b02eb55d24f6f42979",
+      "size": 4433,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/ab4ed2a3ddd17ebc9d0634b02eb55d24f6f42979"
+    },
+    {
+      "path": "docs/make.bat",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fec43bb8cb972f348a8bf229ea3098ff3bd86d6c",
+      "size": 6709,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/fec43bb8cb972f348a8bf229ea3098ff3bd86d6c"
+    },
+    {
+      "path": "docs/make_package_links.sh",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6eaaa68d2147c9d1391b3b01672f2afe28e345f0",
+      "size": 156,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/6eaaa68d2147c9d1391b3b01672f2afe28e345f0"
+    },
+    {
+      "path": "docs/match.rst",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "020988c0067e9efaf8b0dbf67266019abc609394",
+      "size": 6254,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/020988c0067e9efaf8b0dbf67266019abc609394"
+    },
+    {
+      "path": "docs/method_4d.rst",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6769272183c3008c7b3146d9cc5ec31df89a50b2",
+      "size": 616,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/6769272183c3008c7b3146d9cc5ec31df89a50b2"
+    },
+    {
+      "path": "docs/numericalreproducibility.rst",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ae7b394d0ad37db2a2b70e67a2a154cc7a1b0a2c",
+      "size": 4210,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/ae7b394d0ad37db2a2b70e67a2a154cc7a1b0a2c"
+    },
+    {
+      "path": "docs/optimize_for_tracking.rst",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ca1f8a7988f70893e952e0a01090bcb9560458fa",
+      "size": 445,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/ca1f8a7988f70893e952e0a01090bcb9560458fa"
+    },
+    {
+      "path": "docs/particles_monitor.rst",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1f1ec97a859e35b5392984f25786fd00c9df56a9",
+      "size": 23307,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/1f1ec97a859e35b5392984f25786fd00c9df56a9"
+    },
+    {
+      "path": "docs/particlesmanip.rst",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b4ca525cafc36774b82c94885a2a3fb2403be84e",
+      "size": 9896,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/b4ca525cafc36774b82c94885a2a3fb2403be84e"
+    },
+    {
+      "path": "docs/physics_manual",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "c088c637307113597f368bccf05b3be112322cb4",
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/trees/c088c637307113597f368bccf05b3be112322cb4"
+    },
+    {
+      "path": "docs/physics_manual/Makefile",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "be631c57c3d9cd125f844c23d3513ee03b944cd2",
+      "size": 281,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/be631c57c3d9cd125f844c23d3513ee03b944cd2"
+    },
+    {
+      "path": "docs/physics_manual/aperture.tex",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "28de5289eae5c4c7c21a9a57cfcc8feaedf32211",
+      "size": 34303,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/28de5289eae5c4c7c21a9a57cfcc8feaedf32211"
+    },
+    {
+      "path": "docs/physics_manual/bb6d.tex",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/physics_manual/bbconfig.tex",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/physics_manual/bfield_expansion.tex",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4e6059a6936bcb8d0cc1d93ab4f5974659992db9",
+      "size": 9648,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/4e6059a6936bcb8d0cc1d93ab4f5974659992db9"
+    },
+    {
+      "path": "docs/physics_manual/bibliography.bib",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "853863c20e08b4325e58f4f2fed9a7135e404541",
+      "size": 31258,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/853863c20e08b4325e58f4f2fed9a7135e404541"
+    },
+    {
+      "path": "docs/physics_manual/compile.sh",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "40705ac648b678dd8c5b2689b0f3619b989d6f66",
+      "size": 93,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/40705ac648b678dd8c5b2689b0f3619b989d6f66"
+    },
+    {
+      "path": "docs/physics_manual/figures",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "e013d4699d44b0f7617c8f58b68e211d7677792a",
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/trees/e013d4699d44b0f7617c8f58b68e211d7677792a"
+    },
+    {
+      "path": "docs/physics_manual/figures/align_pitch.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8941c23cfa8cd2b4d4a728e0cd93e9541f28c3a1",
+      "size": 78887,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/8941c23cfa8cd2b4d4a728e0cd93e9541f28c3a1"
+    },
+    {
+      "path": "docs/physics_manual/figures/align_roll.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "309ce300ca3f06c794509b5c8eb5e2e177832deb",
+      "size": 55109,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/309ce300ca3f06c794509b5c8eb5e2e177832deb"
+    },
+    {
+      "path": "docs/physics_manual/figures/align_yaw.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "daca1ecd657a92b84ac43a9059d8eabc7c766f4c",
+      "size": 79002,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/daca1ecd657a92b84ac43a9059d8eabc7c766f4c"
+    },
+    {
+      "path": "docs/physics_manual/figures/b1ip1.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ce953e79888e2b6c379c0238dcb52fd92cd6d1d4",
+      "size": 310545,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/ce953e79888e2b6c379c0238dcb52fd92cd6d1d4"
+    },
+    {
+      "path": "docs/physics_manual/figures/b1ip5.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "825edb7dd0cce55dccb2831d56b01be2842c053d",
+      "size": 298299,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/825edb7dd0cce55dccb2831d56b01be2842c053d"
+    },
+    {
+      "path": "docs/physics_manual/figures/b4ip1.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "11a42cf3a95af41a3d105250f0d0ee4191c414d3",
+      "size": 306208,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/11a42cf3a95af41a3d105250f0d0ee4191c414d3"
+    },
+    {
+      "path": "docs/physics_manual/figures/b4ip5.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0ac7059c11c5e96ea49c51d9d1ef2df3b4b0f2c7",
+      "size": 303009,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/0ac7059c11c5e96ea49c51d9d1ef2df3b4b0f2c7"
+    },
+    {
+      "path": "docs/physics_manual/figures/bend-roll.pdf",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ebf1692db54f72e65a8b8fbe7ac4f4d22144cf71",
+      "size": 62938,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/ebf1692db54f72e65a8b8fbe7ac4f4d22144cf71"
+    },
+    {
+      "path": "docs/physics_manual/figures/bhabha_1.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a5eea40f9fc734a98961255835b856571ca39105",
+      "size": 62776,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/a5eea40f9fc734a98961255835b856571ca39105"
+    },
+    {
+      "path": "docs/physics_manual/figures/bs_1.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3e0bda86cc6bf96cd93729f20fbb1b5fad450a2b",
+      "size": 25697,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/3e0bda86cc6bf96cd93729f20fbb1b5fad450a2b"
+    },
+    {
+      "path": "docs/physics_manual/figures/global_frame.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0bd3e6d5d99d139758a8fae6560ae15d42700885",
+      "size": 234189,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/0bd3e6d5d99d139758a8fae6560ae15d42700885"
+    },
+    {
+      "path": "docs/physics_manual/figures/local_frame.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e5234f0576abd97e35ac9198154849cea67be840",
+      "size": 153605,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/e5234f0576abd97e35ac9198154849cea67be840"
+    },
+    {
+      "path": "docs/physics_manual/figures/rbend.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fdc2340c4fd785a2d5875bf4535aec92c5c0e63a",
+      "size": 174833,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/fdc2340c4fd785a2d5875bf4535aec92c5c0e63a"
+    },
+    {
+      "path": "docs/physics_manual/figures/rbend.pptx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "51d451bc6ae45aeba84975da1ad04723e9d33b09",
+      "size": 41321,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/51d451bc6ae45aeba84975da1ad04723e9d33b09"
+    },
+    {
+      "path": "docs/physics_manual/figures/rbend_edge_definition.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9266fe2663b507a61aa5d108a8089a035dbf568d",
+      "size": 142194,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/9266fe2663b507a61aa5d108a8089a035dbf568d"
+    },
+    {
+      "path": "docs/physics_manual/figures/sbend_edge_definition.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6808bdabf4af7cc85cbe64fc3ea187e4b75f3764",
+      "size": 175624,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/6808bdabf4af7cc85cbe64fc3ea187e4b75f3764"
+    },
+    {
+      "path": "docs/physics_manual/figures/transformations.pptx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7adfc86172da780831c1270d6f6a4a5bdf10ac8c",
+      "size": 220181,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/7adfc86172da780831c1270d6f6a4a5bdf10ac8c"
+    },
+    {
+      "path": "docs/physics_manual/figures/xang_xplane.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d5556b4c17f57f68db2e403ede9247403d1869d1",
+      "size": 234007,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/d5556b4c17f57f68db2e403ede9247403d1869d1"
+    },
+    {
+      "path": "docs/physics_manual/linear_coupling.tex",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "44943d7ded1d904606804cddbfe72c00c46f39fe",
+      "size": 42190,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/44943d7ded1d904606804cddbfe72c00c46f39fe"
+    },
+    {
+      "path": "docs/physics_manual/physics_man.pdf",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "72984c8ed476321ac22d5e4a1dc47ade7d888e23",
+      "size": 2855145,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/72984c8ed476321ac22d5e4a1dc47ade7d888e23"
+    },
+    {
+      "path": "docs/physics_manual/physics_man.tex",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bfcae50f01c707f89a2e8e388f0c01a428a3f4f1",
+      "size": 3702,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/bfcae50f01c707f89a2e8e388f0c01a428a3f4f1"
+    },
+    {
+      "path": "docs/physics_manual/s_dependent_magnetic_fields.tex",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "054e6816f916e0afe42fc639c7833576cdd8d5cc",
+      "size": 15253,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/054e6816f916e0afe42fc639c7833576cdd8d5cc"
+    },
+    {
+      "path": "docs/physics_manual/spatial_boris.tex",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f193028b080ab3a9bd29389988f251d5dea6a523",
+      "size": 43227,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/f193028b080ab3a9bd29389988f251d5dea6a523"
+    },
+    {
+      "path": "docs/physics_manual/splineboris_field_expansion.tex",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "96d038ac0c261d0b68e0d3b44f4379cb74071239",
+      "size": 1721,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/96d038ac0c261d0b68e0d3b44f4379cb74071239"
+    },
+    {
+      "path": "docs/physics_manual/xfields.tex",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "709ab364a75f73161c53c8c8168e6ae3e52e79dc",
+      "size": 205751,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/709ab364a75f73161c53c8c8168e6ae3e52e79dc"
+    },
+    {
+      "path": "docs/physics_manual/xtrack.tex",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7bafa514c53b2e5f908a568a78fc4dbdaf656d4a",
+      "size": 317388,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/7bafa514c53b2e5f908a568a78fc4dbdaf656d4a"
+    },
+    {
+      "path": "docs/physicsguide.rst",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a7e15c965d67416f00d2f787eaab577160323bd4",
+      "size": 352,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/a7e15c965d67416f00d2f787eaab577160323bd4"
+    },
+    {
+      "path": "docs/pipeline.rst",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5c49fae68cb6991ffcd50cc1c76660cbc555dc1e",
+      "size": 2334,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/5c49fae68cb6991ffcd50cc1c76660cbc555dc1e"
+    },
+    {
+      "path": "docs/pyhtinterface.rst",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "17549ffd327f2a0990745078ead100d8efd480d5",
+      "size": 2903,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/17549ffd327f2a0990745078ead100d8efd480d5"
+    },
+    {
+      "path": "docs/s_dependent_magnetic_fields.rst",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ecfbf8b107c493e0b593bc7796f4785664497e6b",
+      "size": 1534,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/ecfbf8b107c493e0b593bc7796f4785664497e6b"
+    },
+    {
+      "path": "docs/spacechargeauto.rst",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ae1bd6c3a9df154530842acefd881e8b0b425ed5",
+      "size": 1386,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/ae1bd6c3a9df154530842acefd881e8b0b425ed5"
+    },
+    {
+      "path": "docs/spin_polarization.rst",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ad2a29b494ffe51eac30058ec5de056df792e2d0",
+      "size": 1788,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/ad2a29b494ffe51eac30058ec5de056df792e2d0"
+    },
+    {
+      "path": "docs/spline_boris.rst",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4a3b8136b7c524e97b6d58aaa00c11450231c3f8",
+      "size": 3531,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/4a3b8136b7c524e97b6d58aaa00c11450231c3f8"
+    },
+    {
+      "path": "docs/survey.rst",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2366ad9731a6658de3f4ec893dc34105286ceb29",
+      "size": 2186,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/2366ad9731a6658de3f4ec893dc34105286ceb29"
+    },
+    {
+      "path": "docs/synchrotron_radiation.rst",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "143d8a5e421231bdca34a89382de92c1de591fbb",
+      "size": 659,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/143d8a5e421231bdca34a89382de92c1de591fbb"
+    },
+    {
+      "path": "docs/tables.rst",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c16e458abebbdfaba67b5913c8f11e6284964d67",
+      "size": 5054,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/c16e458abebbdfaba67b5913c8f11e6284964d67"
+    },
+    {
+      "path": "docs/tapering.rst",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "497a289f782a98770eb09f6a4f4c508fe7a3f962",
+      "size": 566,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/497a289f782a98770eb09f6a4f4c508fe7a3f962"
+    },
+    {
+      "path": "docs/testing.rst",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8f38497a8c109735f115d699b48652d4b3c25b7f",
+      "size": 11961,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/8f38497a8c109735f115d699b48652d4b3c25b7f"
+    },
+    {
+      "path": "docs/time_dependent_knobs.rst",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0af2d1d4a6cf9095d4357496906b561ccbf9fab4",
+      "size": 2623,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/0af2d1d4a6cf9095d4357496906b561ccbf9fab4"
+    },
+    {
+      "path": "docs/touschek.rst",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3a6c0839c8eaaabc55fe0467b441c005fa097283",
+      "size": 2391,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/3a6c0839c8eaaabc55fe0467b441c005fa097283"
+    },
+    {
+      "path": "docs/track.rst",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "22f45c415ac86615766e6fa822433c233a14eb5f",
+      "size": 2777,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/22f45c415ac86615766e6fa822433c233a14eb5f"
+    },
+    {
+      "path": "docs/trajectory_correction.rst",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "17ae07d8f74ecbfb84918391bfa66a0c404a1173",
+      "size": 4567,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/17ae07d8f74ecbfb84918391bfa66a0c404a1173"
+    },
+    {
+      "path": "docs/twiss.rst",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8b352cde1076bddca32be1c1eeac945617e53d75",
+      "size": 5010,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/8b352cde1076bddca32be1c1eeac945617e53d75"
+    },
+    {
+      "path": "docs/twiss_match_symm.rst",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/units.rst",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4ae8e653996d57efece953d9b38b3a7184bef313",
+      "size": 1135,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/4ae8e653996d57efece953d9b38b3a7184bef313"
+    },
+    {
+      "path": "docs/usersguide.rst",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "257ce87a3e081ffbd4f57aa02fd47dedc224db4f",
+      "size": 458,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/257ce87a3e081ffbd4f57aa02fd47dedc224db4f"
+    },
+    {
+      "path": "docs/v020changes.rst",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "92394ec3b8dfed46d3218d62bffb166d0d289c60",
+      "size": 2221,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/92394ec3b8dfed46d3218d62bffb166d0d289c60"
+    },
+    {
+      "path": "docs/wakedefs.rst",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5d5d11b0a7c61089b71c176cf4d1f7eb7d5860f0",
+      "size": 3911,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/5d5d11b0a7c61089b71c176cf4d1f7eb7d5860f0"
+    },
+    {
+      "path": "docs/xmask.rst",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ebe2d5915a7d098aca8df2d31ac5082aeedc8de8",
+      "size": 684,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/ebe2d5915a7d098aca8df2d31ac5082aeedc8de8"
+    },
+    {
+      "path": "docs/xobjexample.rst",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a3e40023395df7a04417afeefd4e2517ff041499",
+      "size": 9382,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/a3e40023395df7a04417afeefd4e2517ff041499"
+    },
+    {
+      "path": "docs/xsuite_data_management.rst",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bc27f608ca13f0e56746e6efac49a5b8ea629a63",
+      "size": 16693,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/bc27f608ca13f0e56746e6efac49a5b8ea629a63"
+    },
+    {
+      "path": "docs/xwakes.rst",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5a3caef08a93248cbedae9cfb76dcc9b6392f2f2",
+      "size": 6198,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/5a3caef08a93248cbedae9cfb76dcc9b6392f2f2"
+    },
+    {
+      "path": "logos",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "30b1f5d6672fcb5510b90e33f5b6d205a0b8bd00",
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/trees/30b1f5d6672fcb5510b90e33f5b6d205a0b8bd00"
+    },
+    {
+      "path": "logos/xsuite_logo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4bbe9a75fa153252670825e259f7baa1ddfcee8b",
+      "size": 56145,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/4bbe9a75fa153252670825e259f7baa1ddfcee8b"
+    },
+    {
+      "path": "logos/xsuite_logo.svg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d333abd99fb11a289602eff384a0d9c69653eaad",
+      "size": 4928,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/d333abd99fb11a289602eff384a0d9c69653eaad"
+    },
+    {
+      "path": "logos/xsuite_logo_square.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "38022c7c46b70d58662252ed3f3f5768f2fb7665",
+      "size": 80840,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/38022c7c46b70d58662252ed3f3f5768f2fb7665"
+    },
+    {
+      "path": "logos/xsuite_logo_square.svg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1b01caf226e04d6d33c7f00e68ea86c2d5271658",
+      "size": 4713,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/1b01caf226e04d6d33c7f00e68ea86c2d5271658"
+    },
+    {
+      "path": "make_changelog.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "497fe9630d8e85e85f5e3673e21a6d2fe7950029",
+      "size": 2351,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/497fe9630d8e85e85f5e3673e21a6d2fe7950029"
+    },
+    {
+      "path": "pyproject.toml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0d5ca7a60bf2c2c8aacad4ec470858924fa49381",
+      "size": 1870,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/0d5ca7a60bf2c2c8aacad4ec470858924fa49381"
+    },
+    {
+      "path": "release.sh",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2b7b8c68c108c8c7f1fb7900dacbfd31f27c39dd",
+      "size": 1597,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/2b7b8c68c108c8c7f1fb7900dacbfd31f27c39dd"
+    },
+    {
+      "path": "requirements.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c89ef27b0bace2f9db855467f262fa2f5229b6b0",
+      "size": 87,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/c89ef27b0bace2f9db855467f262fa2f5229b6b0"
+    },
+    {
+      "path": "run_on_gh.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "dcc58b4351c9188bfa3e760f8d533665d102c0a8",
+      "size": 4852,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/dcc58b4351c9188bfa3e760f8d533665d102c0a8"
+    },
+    {
+      "path": "run_release_tests.sh",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "92377b609570853e2a5dad012efd5aa39574d996",
+      "size": 2432,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/92377b609570853e2a5dad012efd5aa39574d996"
+    },
+    {
+      "path": "run_specific_tests.sh",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f864ee6bf9d4fa3ed2d911d189dd7a14ce98168b",
+      "size": 498,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/f864ee6bf9d4fa3ed2d911d189dd7a14ce98168b"
+    },
+    {
+      "path": "scripts",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "ed16972a19deb53a962185db0868b5efa84fedc6",
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/trees/ed16972a19deb53a962185db0868b5efa84fedc6"
+    },
+    {
+      "path": "scripts/ipac_count_papers.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "93780a569d81affdbe96b7b4a15b70c2abf243f8",
+      "size": 2941,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/93780a569d81affdbe96b7b4a15b70c2abf243f8"
+    },
+    {
+      "path": "setup.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "68e4afc7b62798fb02614c37126cb9ada07eef44",
+      "size": 3292,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/68e4afc7b62798fb02614c37126cb9ada07eef44"
+    },
+    {
+      "path": "xsuite",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "565dec5b093427c6abca8c9e4975d5ae55b51aef",
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/trees/565dec5b093427c6abca8c9e4975d5ae55b51aef"
+    },
+    {
+      "path": "xsuite/__init__.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7d7f64393bc6d4ccefc2cb83b0b41d2e606f50d9",
+      "size": 896,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/7d7f64393bc6d4ccefc2cb83b0b41d2e606f50d9"
+    },
+    {
+      "path": "xsuite/cli.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3a74390282f0710294ba0d98fae1b7c2265c9a8d",
+      "size": 3090,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/3a74390282f0710294ba0d98fae1b7c2265c9a8d"
+    },
+    {
+      "path": "xsuite/kernel_definitions.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0b0b94c0c4cd30f9992013f3d3a1b1d065a8f086",
+      "size": 3278,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/0b0b94c0c4cd30f9992013f3d3a1b1d065a8f086"
+    },
+    {
+      "path": "xsuite/lib",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "9d1dcfdaf1a6857c5f83dc27019c7600e1ffaff8",
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/trees/9d1dcfdaf1a6857c5f83dc27019c7600e1ffaff8"
+    },
+    {
+      "path": "xsuite/lib/__init__.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "xsuite/prebuild_kernels.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2e1f0ec6259fb262b8e720471a22f95e20d737e5",
+      "size": 23356,
+      "url": "https://api.github.com/repos/xsuite/xsuite/git/blobs/2e1f0ec6259fb262b8e720471a22f95e20d737e5"
+    }
+  ],
+  "truncated": false
+}

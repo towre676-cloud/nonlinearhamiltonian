@@ -1,0 +1,316 @@
+{
+  "sha": "fcd68a54aee7f67ba9c761798c65508126f662ab",
+  "url": "https://api.github.com/repos/desy-ml/rl-vs-bo/git/trees/fcd68a54aee7f67ba9c761798c65508126f662ab",
+  "tree": [
+    {
+      "path": ".gitignore",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8f9faac67753c0a8919ef0499c20b4faaab6c77e",
+      "size": 183,
+      "url": "https://api.github.com/repos/desy-ml/rl-vs-bo/git/blobs/8f9faac67753c0a8919ef0499c20b4faaab6c77e"
+    },
+    {
+      "path": "ARESlatticeStage3v1_9.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7dfa462c831cf1984ffe85201992b332d9aea578",
+      "size": 14203,
+      "url": "https://api.github.com/repos/desy-ml/rl-vs-bo/git/blobs/7dfa462c831cf1984ffe85201992b332d9aea578"
+    },
+    {
+      "path": "README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8f5988bc92d07956fb18d5dfcd4eda96d6142886",
+      "size": 6680,
+      "url": "https://api.github.com/repos/desy-ml/rl-vs-bo/git/blobs/8f5988bc92d07956fb18d5dfcd4eda96d6142886"
+    },
+    {
+      "path": "backend.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2c6157a2ead7ae905e457150851cc1f6008051f5",
+      "size": 31897,
+      "url": "https://api.github.com/repos/desy-ml/rl-vs-bo/git/blobs/2c6157a2ead7ae905e457150851cc1f6008051f5"
+    },
+    {
+      "path": "bayesopt.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3ddff4e1f6e6625749e9e09688304a4bef75dcc2",
+      "size": 6610,
+      "url": "https://api.github.com/repos/desy-ml/rl-vs-bo/git/blobs/3ddff4e1f6e6625749e9e09688304a4bef75dcc2"
+    },
+    {
+      "path": "beam2quad_align_train.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f8f762aa8b2de8ca307841eadc3f3f99cb9beaf5",
+      "size": 24681,
+      "url": "https://api.github.com/repos/desy-ml/rl-vs-bo/git/blobs/f8f762aa8b2de8ca307841eadc3f3f99cb9beaf5"
+    },
+    {
+      "path": "ea_bo.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f1480bba57c1cf4354bd70f0b1dbcd559c839f27",
+      "size": 3208,
+      "url": "https://api.github.com/repos/desy-ml/rl-vs-bo/git/blobs/f1480bba57c1cf4354bd70f0b1dbcd559c839f27"
+    },
+    {
+      "path": "ea_optimize.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4c4d5e8ac0e93eb36d99da11596c7b68b1367f14",
+      "size": 9694,
+      "url": "https://api.github.com/repos/desy-ml/rl-vs-bo/git/blobs/4c4d5e8ac0e93eb36d99da11596c7b68b1367f14"
+    },
+    {
+      "path": "ea_rlbo.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "74b951f7072d9f5f56ff14a462e2f2298c636d61",
+      "size": 5730,
+      "url": "https://api.github.com/repos/desy-ml/rl-vs-bo/git/blobs/74b951f7072d9f5f56ff14a462e2f2298c636d61"
+    },
+    {
+      "path": "ea_train.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "41ffa6e01903e69589cbbebe565fb390d3e9e366",
+      "size": 6969,
+      "url": "https://api.github.com/repos/desy-ml/rl-vs-bo/git/blobs/41ffa6e01903e69589cbbebe565fb390d3e9e366"
+    },
+    {
+      "path": "environment.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cc93222c9367ce8175824f2fb5d41087aba67460",
+      "size": 20109,
+      "url": "https://api.github.com/repos/desy-ml/rl-vs-bo/git/blobs/cc93222c9367ce8175824f2fb5d41087aba67460"
+    },
+    {
+      "path": "eval.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9002cacff1e22bf44e0c34c66f0c3d5f0f7abeb4",
+      "size": 47618,
+      "url": "https://api.github.com/repos/desy-ml/rl-vs-bo/git/blobs/9002cacff1e22bf44e0c34c66f0c3d5f0f7abeb4"
+    },
+    {
+      "path": "evaluation",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "3aa21a80fa329094da11c293b25703c6ecde0dd1",
+      "url": "https://api.github.com/repos/desy-ml/rl-vs-bo/git/trees/3aa21a80fa329094da11c293b25703c6ecde0dd1"
+    },
+    {
+      "path": "evaluation/eval_bo_rl_opponent_sim.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "26ff52381c122581376d694bd6024094010b9b73",
+      "size": 2416,
+      "url": "https://api.github.com/repos/desy-ml/rl-vs-bo/git/blobs/26ff52381c122581376d694bd6024094010b9b73"
+    },
+    {
+      "path": "evaluation/eval_bo_rl_opponent_sim_feedback_continuous.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ede72afeb99ee77fc058e58075f3315a13a64cc6",
+      "size": 2710,
+      "url": "https://api.github.com/repos/desy-ml/rl-vs-bo/git/blobs/ede72afeb99ee77fc058e58075f3315a13a64cc6"
+    },
+    {
+      "path": "evaluation/eval_bo_rl_opponent_sim_feedback_instant.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3c8ffaa60a52b6f66f07efd32a26672ea3317eda",
+      "size": 2721,
+      "url": "https://api.github.com/repos/desy-ml/rl-vs-bo/git/blobs/3c8ffaa60a52b6f66f07efd32a26672ea3317eda"
+    },
+    {
+      "path": "evaluation/eval_bo_rl_opponent_sim_magnet_failure.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "daf7cf77c659174410424cd6f110af048d6147f3",
+      "size": 2594,
+      "url": "https://api.github.com/repos/desy-ml/rl-vs-bo/git/blobs/daf7cf77c659174410424cd6f110af048d6147f3"
+    },
+    {
+      "path": "evaluation/eval_bo_rl_opponent_sim_quad_aligned.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "07964bb674155b381f3da992593d1f51b32f1015",
+      "size": 2658,
+      "url": "https://api.github.com/repos/desy-ml/rl-vs-bo/git/blobs/07964bb674155b381f3da992593d1f51b32f1015"
+    },
+    {
+      "path": "evaluation/eval_bo_rl_opponent_sim_target_grid.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cf0249c15cedfbdec256b9bdf0b3a1a9006df737",
+      "size": 3602,
+      "url": "https://api.github.com/repos/desy-ml/rl-vs-bo/git/blobs/cf0249c15cedfbdec256b9bdf0b3a1a9006df737"
+    },
+    {
+      "path": "evaluation/eval_bo_sim.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5f78f2a2a49fca9fd73275b7a374410e60e23e59",
+      "size": 2315,
+      "url": "https://api.github.com/repos/desy-ml/rl-vs-bo/git/blobs/5f78f2a2a49fca9fd73275b7a374410e60e23e59"
+    },
+    {
+      "path": "evaluation/eval_bo_sim_feedback_continuous.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "51f74970d4f0cbf05071454bee2a952a2a6b9ef5",
+      "size": 2596,
+      "url": "https://api.github.com/repos/desy-ml/rl-vs-bo/git/blobs/51f74970d4f0cbf05071454bee2a952a2a6b9ef5"
+    },
+    {
+      "path": "evaluation/eval_bo_sim_feedback_instant.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "736594a81e96aaf247791413c634d8e41cf604fe",
+      "size": 2607,
+      "url": "https://api.github.com/repos/desy-ml/rl-vs-bo/git/blobs/736594a81e96aaf247791413c634d8e41cf604fe"
+    },
+    {
+      "path": "evaluation/eval_bo_sim_magnet_failure.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "96eabfc87164811f9d1b171fc830ddb565b3054c",
+      "size": 2475,
+      "url": "https://api.github.com/repos/desy-ml/rl-vs-bo/git/blobs/96eabfc87164811f9d1b171fc830ddb565b3054c"
+    },
+    {
+      "path": "evaluation/eval_bo_sim_quad_aligned.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b03db698d35735c97426868d703caacf059c45b2",
+      "size": 3197,
+      "url": "https://api.github.com/repos/desy-ml/rl-vs-bo/git/blobs/b03db698d35735c97426868d703caacf059c45b2"
+    },
+    {
+      "path": "evaluation/eval_bo_sim_target_grid.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a0c1ff90c5c04bf8b0d1508475495e46343c7776",
+      "size": 4027,
+      "url": "https://api.github.com/repos/desy-ml/rl-vs-bo/git/blobs/a0c1ff90c5c04bf8b0d1508475495e46343c7776"
+    },
+    {
+      "path": "evaluation/eval_bo_vs_rl.ipynb",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "da450a05df23d7346535c5ad1eed02193e4c2ea0",
+      "size": 21404987,
+      "url": "https://api.github.com/repos/desy-ml/rl-vs-bo/git/blobs/da450a05df23d7346535c5ad1eed02193e4c2ea0"
+    },
+    {
+      "path": "evaluation/eval_random_sim.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8b30ac9859b78dcb2f5ae9b4d82883ee836f485d",
+      "size": 2055,
+      "url": "https://api.github.com/repos/desy-ml/rl-vs-bo/git/blobs/8b30ac9859b78dcb2f5ae9b4d82883ee836f485d"
+    },
+    {
+      "path": "evaluation/eval_random_sim_target_beam.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2dc91bae1a9f3c2180588dddf14f5d04e51c045c",
+      "size": 3256,
+      "url": "https://api.github.com/repos/desy-ml/rl-vs-bo/git/blobs/2dc91bae1a9f3c2180588dddf14f5d04e51c045c"
+    },
+    {
+      "path": "evaluation/eval_rlbo_sim.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c140e539ac983c36d5b690e48fc20c4cd1d96d99",
+      "size": 5131,
+      "url": "https://api.github.com/repos/desy-ml/rl-vs-bo/git/blobs/c140e539ac983c36d5b690e48fc20c4cd1d96d99"
+    },
+    {
+      "path": "figures",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "7c7c6a04413a5c1631fe97557e94e641b5fcc196",
+      "url": "https://api.github.com/repos/desy-ml/rl-vs-bo/git/trees/7c7c6a04413a5c1631fe97557e94e641b5fcc196"
+    },
+    {
+      "path": "figures/ARES_EA_RL_Loop.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "41ca41194a3a698f07d79310b3e4cf75377247eb",
+      "size": 234947,
+      "url": "https://api.github.com/repos/desy-ml/rl-vs-bo/git/blobs/41ca41194a3a698f07d79310b3e4cf75377247eb"
+    },
+    {
+      "path": "figures/ares_ea_photo_annotated.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c4c74cf32d0ef870d10f4f2650d486f08467e1e2",
+      "size": 352962,
+      "url": "https://api.github.com/repos/desy-ml/rl-vs-bo/git/blobs/c4c74cf32d0ef870d10f4f2650d486f08467e1e2"
+    },
+    {
+      "path": "neldermead",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "2b053e827847882fdb470115465bbaa4612fea78",
+      "url": "https://api.github.com/repos/desy-ml/rl-vs-bo/git/trees/2b053e827847882fdb470115465bbaa4612fea78"
+    },
+    {
+      "path": "neldermead/eval_neldermead_sim.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "82534687d125b8073de01e98163ef47f3eadb185",
+      "size": 3564,
+      "url": "https://api.github.com/repos/desy-ml/rl-vs-bo/git/blobs/82534687d125b8073de01e98163ef47f3eadb185"
+    },
+    {
+      "path": "neldermead/find_init_nelder_mead_simplex.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fbe9faea3dbb6817284048e0c71dd9707d8415f3",
+      "size": 7143,
+      "url": "https://api.github.com/repos/desy-ml/rl-vs-bo/git/blobs/fbe9faea3dbb6817284048e0c71dd9707d8415f3"
+    },
+    {
+      "path": "requirements.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d605d84390b22da2172e57a060afe8669c9aa55c",
+      "size": 157,
+      "url": "https://api.github.com/repos/desy-ml/rl-vs-bo/git/blobs/d605d84390b22da2172e57a060afe8669c9aa55c"
+    },
+    {
+      "path": "trial.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "62a32e46db68d215fa2b565d29d7636751a4aa38",
+      "size": 2632,
+      "url": "https://api.github.com/repos/desy-ml/rl-vs-bo/git/blobs/62a32e46db68d215fa2b565d29d7636751a4aa38"
+    },
+    {
+      "path": "trials.yaml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c530986810c5b58e89479190cb6a057c5718140b",
+      "size": 292531,
+      "url": "https://api.github.com/repos/desy-ml/rl-vs-bo/git/blobs/c530986810c5b58e89479190cb6a057c5718140b"
+    },
+    {
+      "path": "utils.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "246653a97368cbbe48250720eac6af137e06ffdb",
+      "size": 33329,
+      "url": "https://api.github.com/repos/desy-ml/rl-vs-bo/git/blobs/246653a97368cbbe48250720eac6af137e06ffdb"
+    }
+  ],
+  "truncated": false
+}

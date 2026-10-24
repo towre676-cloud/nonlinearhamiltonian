@@ -1,0 +1,96 @@
+"""One-dimensional two-stream-instability experiment."""
+
+from learner.experiment import run_cli
+
+CONFIG = {
+    "name": "two_stream_paper",
+    "system": "two_stream",
+    "seed": 12345,
+    "dtype": "float64",
+    "device": "auto",
+    "data": {
+        "particles": 1000,
+        "advances": 1000,
+        "frames": 1001,
+        "dt": 0.01,
+        "train_trajectories": 40,
+        "validation_trajectories": 8,
+        "target_trajectories": 1,
+        "epsilon": 0.001,
+        "base_seed": 12345,
+        "perturb_seed": 123,
+        "h_parameter": 0.25,
+        "modulation_amplitude": 0.1,
+        "modulation_wavenumber": 0.5,
+        "mass": 1.0,
+        "charge": 1.0,
+        "epsilon0": 1.0,
+        "ewald_modes": 60,
+        "ewald_alpha": "7_over_L",
+        "integrator": "velocity_verlet",
+    },
+    "reduction": {
+        "latent_dimension": 10,
+        "methods": ["POD", "COT", "cSVD", "NLP", "SpAE", "WSAE"],
+        "nlp": {"iterations": 80, "learning_rate": 0.8, "symplectic_weight": 1000.0},
+    },
+    "spae": {
+        "layers": 8,
+        "width": 256,
+        "activation": "sigmoid",
+        "iterations": 200000,
+        "learning_rate": 0.0007,
+        "batch_size": 8192,
+        "validation_interval": 500,
+        "patience": 80,
+    },
+    "wsae": {
+        "hidden_layers": [768, 384, 192],
+        "activation": "elu",
+        "iterations": 100000,
+        "learning_rate": 0.0003,
+        "batch_size": 256,
+        "symplectic_batch_size": 32,
+        "alpha": 0.7,
+        "validation_interval": 500,
+        "patience": 80,
+    },
+    "hnn": {
+        "layers": 6,
+        "width": 160,
+        "activation": "tanh",
+        "iterations": 90000,
+        "learning_rate": 0.0003,
+        "batch_size": 4096,
+        "validation_interval": 500,
+        "patience": 80,
+        "integrator": "gauss_legendre_2",
+        "fixed_point_iterations": 5,
+    },
+    "hnn_method_overrides": {
+        "POD": {
+            "normalizer": "symplectic_pair",
+            "layers": 6,
+            "width": 192,
+            "learning_rate": 0.0001,
+            "iterations": 120000,
+            "seed": 123,
+        },
+        "COT": {"normalizer": "symplectic_pair", "seed": 31415},
+        "cSVD": {"normalizer": "symplectic_pair", "seed": 123},
+        "NLP": {"normalizer": "symplectic_pair", "seed": 123},
+        "SpAE": {"normalizer": "symplectic_pair", "seed": 2026},
+        "WSAE": {"normalizer": "global_rms", "seed": 123},
+    },
+    "figures": {
+        "trajectory_methods": ["SpAE"],
+        "triangle_particles": [48, 195, 935, 221, 306, 588],
+        "times": [0, 200, 400, 600, 800, 1000],
+        "error_log_scale": True,
+        "error_metric": "absolute_l2",
+    },
+}
+
+
+if __name__ == "__main__":
+    run_cli(CONFIG)

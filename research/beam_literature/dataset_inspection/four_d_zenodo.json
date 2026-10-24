@@ -1,0 +1,123 @@
+{
+  "created": "2025-02-05T05:17:38.658220+00:00",
+  "modified": "2026-09-22T17:57:03.783355+00:00",
+  "id": 14807780,
+  "conceptrecid": "14009840",
+  "doi": "10.5281/zenodo.14807780",
+  "conceptdoi": "10.5281/zenodo.14009840",
+  "doi_url": "https://doi.org/10.5281/zenodo.14807780",
+  "metadata": {
+    "title": "Four-dimensional phase space tomography from one-dimensional measurements of a hadron beam",
+    "doi": "10.5281/zenodo.14807780",
+    "publication_date": "2025-02-05",
+    "description": "<p>Data and analysis for the paper <a href=\"https://doi.org/10.1103/PhysRevAccelBeams.27.122802\">Four-dimensional phase space tomography from one-dimensional measurements of a hadron beam</a>, published in Physical Review Accelerators and Beams.</p>\n<p>Up-to-date implementation of MENT: https://github.com/austin-hoover/ment</p>\n<p>[2026-09-22] See this repo for updated analysis with newer version of MENT (much faster) and comparison to GPSR: <a href=\"https://zenodo.org/records/22260794\">https://zenodo.org/records/22260794</a>.</p>",
+    "access_right": "open",
+    "creators": [
+      {
+        "name": "Hoover, Austin",
+        "affiliation": "Oak Ridge National Laboratory",
+        "orcid": "0000-0001-5313-6962"
+      }
+    ],
+    "related_identifiers": [
+      {
+        "identifier": "10.1103/PhysRevAccelBeams.27.122802",
+        "relation": "isSupplementTo",
+        "resource_type": "publication",
+        "scheme": "doi"
+      },
+      {
+        "identifier": "https://github.com/austin-hoover/ment",
+        "relation": "requires",
+        "resource_type": "software",
+        "scheme": "url"
+      }
+    ],
+    "version": "1.0",
+    "resource_type": {
+      "title": "Dataset",
+      "type": "dataset"
+    },
+    "license": {
+      "id": "cc-by-4.0"
+    },
+    "relations": {
+      "version": [
+        {
+          "index": 5,
+          "is_last": true,
+          "parent": {
+            "pid_type": "recid",
+            "pid_value": "14009840"
+          }
+        }
+      ]
+    }
+  },
+  "title": "Four-dimensional phase space tomography from one-dimensional measurements of a hadron beam",
+  "links": {
+    "self": "https://zenodo.org/api/records/14807780",
+    "self_html": "https://zenodo.org/records/14807780",
+    "preview_html": "https://zenodo.org/records/14807780?preview=1",
+    "doi": "https://doi.org/10.5281/zenodo.14807780",
+    "self_doi": "https://doi.org/10.5281/zenodo.14807780",
+    "self_doi_html": "https://zenodo.org/doi/10.5281/zenodo.14807780",
+    "reserve_doi": "https://zenodo.org/api/records/14807780/draft/pids/doi",
+    "parent": "https://zenodo.org/api/records/14009840",
+    "parent_html": "https://zenodo.org/records/14009840",
+    "parent_doi": "https://doi.org/10.5281/zenodo.14009840",
+    "parent_doi_html": "https://zenodo.org/doi/10.5281/zenodo.14009840",
+    "self_iiif_manifest": "https://zenodo.org/api/iiif/record:14807780/manifest",
+    "self_iiif_sequence": "https://zenodo.org/api/iiif/record:14807780/sequence/default",
+    "files": "https://zenodo.org/api/records/14807780/files",
+    "media_files": "https://zenodo.org/api/records/14807780/media-files",
+    "latest": "https://zenodo.org/api/records/14807780/versions/latest",
+    "latest_html": "https://zenodo.org/records/14807780/latest",
+    "versions": "https://zenodo.org/api/records/14807780/versions",
+    "draft": "https://zenodo.org/api/records/14807780/draft",
+    "access_links": "https://zenodo.org/api/records/14807780/access/links",
+    "access_grants": "https://zenodo.org/api/records/14807780/access/grants",
+    "access_users": "https://zenodo.org/api/records/14807780/access/users",
+    "access_request": "https://zenodo.org/api/records/14807780/access/request",
+    "access": "https://zenodo.org/api/records/14807780/access",
+    "communities": "https://zenodo.org/api/records/14807780/communities",
+    "communities-suggestions": "https://zenodo.org/api/records/14807780/communities-suggestions",
+    "request_deletion": "https://zenodo.org/api/records/14807780/request-deletion",
+    "file_modification": "https://zenodo.org/api/records/14807780/file-modification",
+    "quota_increase": "https://zenodo.org/api/records/14807780/quota-increase",
+    "requests": "https://zenodo.org/api/records/14807780/requests"
+  },
+  "updated": "2026-09-22T17:57:03.783355+00:00",
+  "recid": "14807780",
+  "revision": 14,
+  "files": [
+    {
+      "id": "d5904345-54c2-4b06-bb76-51892d405ed2",
+      "key": "sns-tomo-4d-1d.zip",
+      "size": 44188049,
+      "checksum": "md5:d354a722c8b1e235630985f77cc24178",
+      "links": {
+        "self": "https://zenodo.org/api/records/14807780/files/sns-tomo-4d-1d.zip/content"
+      }
+    }
+  ],
+  "swh": {},
+  "owners": [
+    {
+      "id": "426180"
+    }
+  ],
+  "status": "published",
+  "stats": {
+    "downloads": 243,
+    "unique_downloads": 240,
+    "views": 516,
+    "unique_views": 473,
+    "version_downloads": 61,
+    "version_unique_downloads": 61,
+    "version_unique_views": 245,
+    "version_views": 265
+  },
+  "state": "done",
+  "submitted": true
+}

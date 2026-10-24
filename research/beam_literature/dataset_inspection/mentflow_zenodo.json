@@ -1,0 +1,127 @@
+{
+  "created": "2025-05-27T16:17:34.953110+00:00",
+  "modified": "2025-05-30T03:22:37.890604+00:00",
+  "id": 15528723,
+  "conceptrecid": "11110801",
+  "doi": "10.5281/zenodo.15528723",
+  "conceptdoi": "10.5281/zenodo.11110801",
+  "doi_url": "https://doi.org/10.5281/zenodo.15528723",
+  "metadata": {
+    "title": "High-dimensional maximum-entropy phase space tomography using normalizing flows",
+    "doi": "10.5281/zenodo.15528723",
+    "publication_date": "2025-05-27",
+    "description": "<p>Source code for the paper <a href=\"https://doi.org/10.1103/PhysRevResearch.6.033163\">High-dimensional maximum-entropy phase space tomography using normalizing flows</a>.</p>",
+    "access_right": "open",
+    "creators": [
+      {
+        "name": "Hoover, Austin",
+        "affiliation": null,
+        "orcid": "0000-0001-5313-6962"
+      }
+    ],
+    "related_identifiers": [
+      {
+        "identifier": "10.1103/PhysRevResearch.6.033163",
+        "relation": "isSupplementTo",
+        "scheme": "doi"
+      }
+    ],
+    "dates": [
+      {
+        "type": "updated",
+        "description": "Fixed package dependencies, included all code/experiments in this repo, and removed trained models. See https://github.com/austin-hoover/ment-flow/pull/1."
+      }
+    ],
+    "version": "0.0.6",
+    "custom": {
+      "code:codeRepository": "https://github.com/austin-hoover/ment-flow"
+    },
+    "resource_type": {
+      "title": "Software",
+      "type": "software"
+    },
+    "license": {
+      "id": "cc-by-4.0"
+    },
+    "relations": {
+      "version": [
+        {
+          "index": 5,
+          "is_last": true,
+          "parent": {
+            "pid_type": "recid",
+            "pid_value": "11110801"
+          }
+        }
+      ]
+    }
+  },
+  "title": "High-dimensional maximum-entropy phase space tomography using normalizing flows",
+  "links": {
+    "self": "https://zenodo.org/api/records/15528723",
+    "self_html": "https://zenodo.org/records/15528723",
+    "preview_html": "https://zenodo.org/records/15528723?preview=1",
+    "doi": "https://doi.org/10.5281/zenodo.15528723",
+    "self_doi": "https://doi.org/10.5281/zenodo.15528723",
+    "self_doi_html": "https://zenodo.org/doi/10.5281/zenodo.15528723",
+    "reserve_doi": "https://zenodo.org/api/records/15528723/draft/pids/doi",
+    "parent": "https://zenodo.org/api/records/11110801",
+    "parent_html": "https://zenodo.org/records/11110801",
+    "parent_doi": "https://doi.org/10.5281/zenodo.11110801",
+    "parent_doi_html": "https://zenodo.org/doi/10.5281/zenodo.11110801",
+    "self_iiif_manifest": "https://zenodo.org/api/iiif/record:15528723/manifest",
+    "self_iiif_sequence": "https://zenodo.org/api/iiif/record:15528723/sequence/default",
+    "files": "https://zenodo.org/api/records/15528723/files",
+    "media_files": "https://zenodo.org/api/records/15528723/media-files",
+    "latest": "https://zenodo.org/api/records/15528723/versions/latest",
+    "latest_html": "https://zenodo.org/records/15528723/latest",
+    "versions": "https://zenodo.org/api/records/15528723/versions",
+    "draft": "https://zenodo.org/api/records/15528723/draft",
+    "access_links": "https://zenodo.org/api/records/15528723/access/links",
+    "access_grants": "https://zenodo.org/api/records/15528723/access/grants",
+    "access_users": "https://zenodo.org/api/records/15528723/access/users",
+    "access_request": "https://zenodo.org/api/records/15528723/access/request",
+    "access": "https://zenodo.org/api/records/15528723/access",
+    "communities": "https://zenodo.org/api/records/15528723/communities",
+    "communities-suggestions": "https://zenodo.org/api/records/15528723/communities-suggestions",
+    "request_deletion": "https://zenodo.org/api/records/15528723/request-deletion",
+    "file_modification": "https://zenodo.org/api/records/15528723/file-modification",
+    "quota_increase": "https://zenodo.org/api/records/15528723/quota-increase",
+    "requests": "https://zenodo.org/api/records/15528723/requests"
+  },
+  "updated": "2025-05-30T03:22:37.890604+00:00",
+  "recid": "15528723",
+  "revision": 12,
+  "files": [
+    {
+      "id": "78b03a97-8507-4062-b991-bc136ef50ba5",
+      "key": "ment-flow.zip",
+      "size": 124579979,
+      "checksum": "md5:5d6048c3a5c920b6ff5ee1dbf412130d",
+      "links": {
+        "self": "https://zenodo.org/api/records/15528723/files/ment-flow.zip/content"
+      }
+    }
+  ],
+  "swh": {
+    "swhid": "swh:1:dir:fe7ea550da060bb6ff86471207190c31838b3d98;origin=https://doi.org/10.5281/zenodo.11110801;visit=swh:1:snp:8c1ae2713c396dccf1e347ffda0078632cee3434;anchor=swh:1:rel:754c1773667f7d7c71b514b5901c48431a83d250;path=ment-flow"
+  },
+  "owners": [
+    {
+      "id": "426180"
+    }
+  ],
+  "status": "published",
+  "stats": {
+    "downloads": 271,
+    "unique_downloads": 266,
+    "views": 773,
+    "unique_views": 732,
+    "version_downloads": 76,
+    "version_unique_downloads": 75,
+    "version_unique_views": 185,
+    "version_views": 200
+  },
+  "state": "done",
+  "submitted": true
+}

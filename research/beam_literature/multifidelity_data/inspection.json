@@ -1,0 +1,852 @@
+{
+  "status": "passed_archive_and_array_consistency",
+  "archive": {
+    "bytes": 248015,
+    "publisher_md5": "e729cb8f0c1a5c6399050a0a23974d3b",
+    "sha256": "83522f2fac3bc5dc0670f44936b8f337601e5a93090ec3e1a4c57d43c0165eb8"
+  },
+  "source": "https://zenodo.org/records/7565882",
+  "license_from_live_record_api": "CC-BY-4.0",
+  "arrays": {
+    "DataSet/Combined/train_obj.npy": {
+      "shape": [
+        2443,
+        3
+      ],
+      "dtype": "float64",
+      "finite": true,
+      "column_min": [
+        0.0,
+        -469.55109518497227,
+        -1000.0
+      ],
+      "column_max": [
+        1464.2742000816438,
+        -0.0019663992028426946,
+        -0.0
+      ]
+    },
+    "DataSet/Combined/train_x.npy": {
+      "shape": [
+        2443,
+        5
+      ],
+      "dtype": "float64",
+      "finite": true,
+      "column_min": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "column_max": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    "DataSet/MultiObjective/train_objMO.npy": {
+      "shape": [
+        1025,
+        3
+      ],
+      "dtype": "float64",
+      "finite": true,
+      "column_min": [
+        0.0,
+        -300.0,
+        -1000.0
+      ],
+      "column_max": [
+        988.6584157818517,
+        -0.05809187571668417,
+        -10.489317697663203
+      ]
+    },
+    "DataSet/MultiObjective/train_xMO.npy": {
+      "shape": [
+        1025,
+        5
+      ],
+      "dtype": "float64",
+      "finite": true,
+      "column_min": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "column_max": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    "DataSet/SingleObjective/Obj1/train_obj1.npy": {
+      "shape": [
+        775,
+        3
+      ],
+      "dtype": "float64",
+      "finite": true,
+      "column_min": [
+        0.0,
+        -354.221071128071,
+        -1000.0
+      ],
+      "column_max": [
+        1328.6164381400422,
+        -0.04277943995452915,
+        -0.0
+      ]
+    },
+    "DataSet/SingleObjective/Obj1/train_x1.npy": {
+      "shape": [
+        775,
+        5
+      ],
+      "dtype": "float64",
+      "finite": true,
+      "column_min": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "column_max": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    "DataSet/SingleObjective/Obj2/train_obj2.npy": {
+      "shape": [
+        620,
+        3
+      ],
+      "dtype": "float64",
+      "finite": true,
+      "column_min": [
+        0.0,
+        -469.55109518497227,
+        -1000.0
+      ],
+      "column_max": [
+        671.2477641737732,
+        -0.0019663992028426946,
+        -0.0
+      ]
+    },
+    "DataSet/SingleObjective/Obj2/train_x2.npy": {
+      "shape": [
+        620,
+        5
+      ],
+      "dtype": "float64",
+      "finite": true,
+      "column_min": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "column_max": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.9356105642196393
+      ]
+    },
+    "DataSet/SingleObjective/Obj2a/train_obj2a.npy": {
+      "shape": [
+        775,
+        3
+      ],
+      "dtype": "float64",
+      "finite": true,
+      "column_min": [
+        0.0,
+        -300.0,
+        -1000.0
+      ],
+      "column_max": [
+        1464.2742000816438,
+        -0.6120374484202102,
+        -0.0
+      ]
+    },
+    "DataSet/SingleObjective/Obj2a/train_x2a.npy": {
+      "shape": [
+        775,
+        5
+      ],
+      "dtype": "float64",
+      "finite": true,
+      "column_min": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "column_max": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.81
+      ]
+    },
+    "DataSet/SingleObjective/Obj2b/train_obj2b.npy": {
+      "shape": [
+        1085,
+        3
+      ],
+      "dtype": "float64",
+      "finite": true,
+      "column_min": [
+        0.0,
+        -333.9306756307957,
+        -1000.0
+      ],
+      "column_max": [
+        821.7564450773367,
+        -0.027751144502758507,
+        -0.0
+      ]
+    },
+    "DataSet/SingleObjective/Obj2b/train_x2b.npy": {
+      "shape": [
+        1085,
+        5
+      ],
+      "dtype": "float64",
+      "finite": true,
+      "column_min": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "column_max": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    "DataSet/SingleObjective/Obj3/train_obj3.npy": {
+      "shape": [
+        435,
+        3
+      ],
+      "dtype": "float64",
+      "finite": true,
+      "column_min": [
+        0.0,
+        -300.0,
+        -1000.0
+      ],
+      "column_max": [
+        627.5145086341995,
+        -0.1007697802241978,
+        -0.0
+      ]
+    },
+    "DataSet/SingleObjective/Obj3/train_x3.npy": {
+      "shape": [
+        435,
+        5
+      ],
+      "dtype": "float64",
+      "finite": true,
+      "column_min": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "column_max": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ]
+    }
+  },
+  "combined": {
+    "rows": 2443,
+    "unique_encoded_inputs": 2286,
+    "unique_input_output_pairs": 2296,
+    "unique_first_four_input_tuples": 2261,
+    "repeated_first_four_input_groups": 54,
+    "groups_with_distinct_fidelity_values": 15,
+    "groups_with_fidelity_spread_at_least_0p05": 12,
+    "conflicting_exact_input_groups": 6,
+    "rows_in_conflicting_exact_input_groups": 16,
+    "conflicts": [
+      {
+        "encoded_input": [
+          1.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "row_indices": [
+          5,
+          313,
+          596
+        ],
+        "objectives": [
+          [
+            332.3182241568258,
+            -226.0277161311924,
+            -59.95543675107791
+          ],
+          [
+            428.92599848293247,
+            -226.098862004187,
+            -62.29934277656372
+          ],
+          [
+            249.2435173836629,
+            -198.00006634797757,
+            -88.03734574053709
+          ]
+        ]
+      },
+      {
+        "encoded_input": [
+          0.0,
+          1.0,
+          1.0,
+          1.0,
+          0.0
+        ],
+        "row_indices": [
+          7,
+          1739,
+          2280
+        ],
+        "objectives": [
+          [
+            73.0899120897931,
+            -59.540246101349965,
+            -11.942797791094462
+          ],
+          [
+            72.46354976795706,
+            -57.7245063328275,
+            -12.875362241472436
+          ],
+          [
+            73.01736228471768,
+            -56.44909510094482,
+            -18.09401819612568
+          ]
+        ]
+      },
+      {
+        "encoded_input": [
+          1.0,
+          1.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        "row_indices": [
+          10,
+          318,
+          1805
+        ],
+        "objectives": [
+          [
+            174.60929785676078,
+            -140.57545754437106,
+            -123.54428914103049
+          ],
+          [
+            236.26826719773103,
+            -152.88414561130986,
+            -68.27669962177005
+          ],
+          [
+            381.0003345656523,
+            -201.06569354196753,
+            -68.81947087995111
+          ]
+        ]
+      },
+      {
+        "encoded_input": [
+          0.0,
+          1.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        "row_indices": [
+          786,
+          2001,
+          2311
+        ],
+        "objectives": [
+          [
+            131.56564369233388,
+            -72.19978688949348,
+            -19.7302439789465
+          ],
+          [
+            131.9828117183419,
+            -71.4414339841862,
+            -21.68127476808939
+          ],
+          [
+            132.8222714912974,
+            -71.72178768627867,
+            -21.01472784401914
+          ]
+        ]
+      },
+      {
+        "encoded_input": [
+          0.6200284585356712,
+          0.9608882842585444,
+          0.8687394093722105,
+          0.817758739925921,
+          0.009527008980512619
+        ],
+        "row_indices": [
+          788,
+          2179
+        ],
+        "objectives": [
+          [
+            147.0128251129036,
+            -39.83852485654779,
+            -77.83381407131856
+          ],
+          [
+            91.85885790086671,
+            -74.56907649871141,
+            -109.07863174238486
+          ]
+        ]
+      },
+      {
+        "encoded_input": [
+          1.0,
+          1.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        "row_indices": [
+          1804,
+          1865
+        ],
+        "objectives": [
+          [
+            275.5136013279484,
+            -243.4859635721644,
+            -55.77650767596852
+          ],
+          [
+            356.36096171729713,
+            -215.91564765477446,
+            -102.67984938809182
+          ]
+        ]
+      }
+    ],
+    "substantive_cross_fidelity_groups": [
+      {
+        "first_four_encoded_inputs": [
+          1.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        "lowest_encoded_fidelity": 0.0,
+        "highest_encoded_fidelity": 1.0,
+        "low_row_indices": [
+          5,
+          313,
+          596
+        ],
+        "high_row_indices": [
+          673
+        ],
+        "mean_low_objectives": [
+          336.8292466744737,
+          -216.70888149445236,
+          -70.09737508939291
+        ],
+        "mean_high_objectives": [
+          664.3868489021104,
+          -106.55099785471268,
+          -83.9064368761194
+        ]
+      },
+      {
+        "first_four_encoded_inputs": [
+          0.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "lowest_encoded_fidelity": 0.0,
+        "highest_encoded_fidelity": 0.6400000000000001,
+        "low_row_indices": [
+          7,
+          1739,
+          2280
+        ],
+        "high_row_indices": [
+          1672
+        ],
+        "mean_low_objectives": [
+          72.85694138082262,
+          -57.90461584504076,
+          -14.304059409564195
+        ],
+        "mean_high_objectives": [
+          0.0,
+          -300.0,
+          -1000.0
+        ]
+      },
+      {
+        "first_four_encoded_inputs": [
+          1.0,
+          1.0,
+          0.0,
+          1.0
+        ],
+        "lowest_encoded_fidelity": 0.0,
+        "highest_encoded_fidelity": 0.6400000000000001,
+        "low_row_indices": [
+          10,
+          318,
+          1805,
+          2148
+        ],
+        "high_row_indices": [
+          1665
+        ],
+        "mean_low_objectives": [
+          256.73928518765484,
+          -177.14287915241454,
+          -78.85821818712299
+        ],
+        "mean_high_objectives": [
+          364.4415038066105,
+          -116.01936481106927,
+          -108.69757416286362
+        ]
+      },
+      {
+        "first_four_encoded_inputs": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "lowest_encoded_fidelity": 0.0,
+        "highest_encoded_fidelity": 0.6400000000000001,
+        "low_row_indices": [
+          12,
+          1935
+        ],
+        "high_row_indices": [
+          1680
+        ],
+        "mean_low_objectives": [
+          0.0,
+          -300.0,
+          -1000.0
+        ],
+        "mean_high_objectives": [
+          0.0,
+          -300.0,
+          -1000.0
+        ]
+      },
+      {
+        "first_four_encoded_inputs": [
+          1.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "lowest_encoded_fidelity": 0.0,
+        "highest_encoded_fidelity": 0.28755043775093836,
+        "low_row_indices": [
+          314,
+          1742
+        ],
+        "high_row_indices": [
+          848
+        ],
+        "mean_low_objectives": [
+          0.0,
+          -300.0,
+          -1000.0
+        ],
+        "mean_high_objectives": [
+          0.0,
+          -300.0,
+          -1000.0
+        ]
+      },
+      {
+        "first_four_encoded_inputs": [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        "lowest_encoded_fidelity": 0.0,
+        "highest_encoded_fidelity": 0.81,
+        "low_row_indices": [
+          316
+        ],
+        "high_row_indices": [
+          2055
+        ],
+        "mean_low_objectives": [
+          0.0,
+          -300.0,
+          -1000.0
+        ],
+        "mean_high_objectives": [
+          0.0,
+          -300.0,
+          -1000.0
+        ]
+      },
+      {
+        "first_four_encoded_inputs": [
+          1.0,
+          1.0,
+          1.0,
+          0.0
+        ],
+        "lowest_encoded_fidelity": 0.0,
+        "highest_encoded_fidelity": 1.0,
+        "low_row_indices": [
+          791,
+          1804,
+          1865
+        ],
+        "high_row_indices": [
+          426
+        ],
+        "mean_low_objectives": [
+          302.8903480088061,
+          -232.74921655478025,
+          -72.9407529643932
+        ],
+        "mean_high_objectives": [
+          513.7093216753635,
+          -173.31559403690682,
+          -93.106091128259
+        ]
+      },
+      {
+        "first_four_encoded_inputs": [
+          0.0,
+          1.0,
+          0.0,
+          1.0
+        ],
+        "lowest_encoded_fidelity": 0.0,
+        "highest_encoded_fidelity": 0.6400000000000001,
+        "low_row_indices": [
+          739,
+          1870,
+          2180
+        ],
+        "high_row_indices": [
+          1681
+        ],
+        "mean_low_objectives": [
+          0.0,
+          -300.0,
+          -1000.0
+        ],
+        "mean_high_objectives": [
+          0.0,
+          -300.0,
+          -1000.0
+        ]
+      },
+      {
+        "first_four_encoded_inputs": [
+          0.0,
+          1.0,
+          1.0,
+          0.0
+        ],
+        "lowest_encoded_fidelity": 0.0,
+        "highest_encoded_fidelity": 0.6400000000000001,
+        "low_row_indices": [
+          786,
+          2001,
+          2311
+        ],
+        "high_row_indices": [
+          1670
+        ],
+        "mean_low_objectives": [
+          132.12357563399107,
+          -71.78766951998612,
+          -20.80874886368501
+        ],
+        "mean_high_objectives": [
+          0.0,
+          -300.0,
+          -1000.0
+        ]
+      },
+      {
+        "first_four_encoded_inputs": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "lowest_encoded_fidelity": 1.913881240532635e-18,
+        "highest_encoded_fidelity": 0.6400000000000001,
+        "low_row_indices": [
+          1867
+        ],
+        "high_row_indices": [
+          1707,
+          1708,
+          1709,
+          1710,
+          1711,
+          1712,
+          1713,
+          1714,
+          1715,
+          1716
+        ],
+        "mean_low_objectives": [
+          189.58130918011463,
+          -232.99188238776009,
+          -55.453408941154265
+        ],
+        "mean_high_objectives": [
+          260.5040525431397,
+          -187.87296846567028,
+          -102.14433943462062
+        ]
+      },
+      {
+        "first_four_encoded_inputs": [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "lowest_encoded_fidelity": 0.0,
+        "highest_encoded_fidelity": 0.6400000000000001,
+        "low_row_indices": [
+          1738,
+          1934,
+          2145,
+          2254
+        ],
+        "high_row_indices": [
+          1660
+        ],
+        "mean_low_objectives": [
+          0.0,
+          -300.0,
+          -1000.0
+        ],
+        "mean_high_objectives": [
+          0.21556600242002194,
+          -259.2228401998185,
+          -48.852054434772526
+        ]
+      },
+      {
+        "first_four_encoded_inputs": [
+          0.0,
+          0.0,
+          1.0,
+          1.0
+        ],
+        "lowest_encoded_fidelity": 0.0,
+        "highest_encoded_fidelity": 0.6400000000000001,
+        "low_row_indices": [
+          2283,
+          2314
+        ],
+        "high_row_indices": [
+          1679
+        ],
+        "mean_low_objectives": [
+          0.0,
+          -300.0,
+          -1000.0
+        ],
+        "mean_high_objectives": [
+          0.0,
+          -300.0,
+          -1000.0
+        ]
+      }
+    ],
+    "paired_charge_increases_at_highest_fidelity": 5,
+    "paired_charge_decreases_at_highest_fidelity": 2,
+    "substantive_paired_groups_all_at_unit_cube_corners": true,
+    "fidelity_histogram": {
+      "edges": [
+        0,
+        0.25,
+        0.5,
+        0.75,
+        1
+      ],
+      "counts": [
+        440,
+        700,
+        656,
+        647
+      ],
+      "exact_zero": 52,
+      "exact_one": 262,
+      "convention": "left-closed bins, final bin includes one"
+    },
+    "zero_charge_penalty_rows": 407,
+    "objective_distance_and_bandwidth_nonpositive": true,
+    "encoded_inputs_are_in_unit_cube": true
+  },
+  "boundaries": [
+    "No raw particle trajectories, per-row elapsed costs, seed IDs, or run IDs occur in the ZIP.",
+    "The record names physical columns, but supplied input numbers are encoded in [0,1]; physical decoding is not embedded.",
+    "Repeated exact encoded inputs have distinct outputs; the cause is not identified by this archive.",
+    "Cross-fidelity correlation is not a uniform physical error certificate.",
+    "This finite adaptively sampled table is not an unrestricted simulation oracle."
+  ]
+}

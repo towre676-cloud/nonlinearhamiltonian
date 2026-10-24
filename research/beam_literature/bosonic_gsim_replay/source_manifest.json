@@ -1,0 +1,133 @@
+{
+  "repository": "TimothyHeightman/bosonic-gsim",
+  "commit": "4eddbc9c838f7164520ae2ed06d1778beacd906a",
+  "tree": "2a515fa9603bf1bb6c7c3bdf4109c3fc7854b0bd",
+  "files": [
+    {
+      "path": "LICENSE",
+      "git_blob_sha": "cd40aefa84cd942001944f4da4e7ee5bef60e6eb",
+      "sha256": "6cd4b3ea49dc68fb4ce15d899947219ce48f740c21db81d6cd44353e34d145fc",
+      "bytes": 11343
+    },
+    {
+      "path": "experiments/__init__.py",
+      "git_blob_sha": "caa76cdc1f4f79f1852bc0df8cb682341fe5b8a7",
+      "sha256": "44ef3e0a99ae17d87e3242f8ac4bc701913c0cb6f354fcc82424ed4a55c6d61f",
+      "bytes": 75
+    },
+    {
+      "path": "experiments/fig10_nilpotent_phase/config.yaml",
+      "git_blob_sha": "5aa4527ee64e0445f17ee40e8ff788af4c126043",
+      "sha256": "0b181d6260001a0afbacb554e0c32041ffa56fcb42d79ea8af90929023fe4ac6",
+      "bytes": 765
+    },
+    {
+      "path": "experiments/fig10_nilpotent_phase/results.json",
+      "git_blob_sha": "6709c3ab5e759e89236af633d0a3299e49dd719c",
+      "sha256": "1b0a6e4873550bd213b03ba4984d0c3bad27152d54356780ad0fc782267b457d",
+      "bytes": 18821
+    },
+    {
+      "path": "experiments/fig10_nilpotent_phase/run.py",
+      "git_blob_sha": "36c8ff9df0cffad324a36810ab3f768e70cccfd8",
+      "sha256": "b6dfeb03b6121976d963582681f53e5a93683eb046c75977647630d3035ee851",
+      "bytes": 10330
+    },
+    {
+      "path": "experiments/fig8_beyond_gaussian/config.yaml",
+      "git_blob_sha": "ccf87285c2b8de246928497565b86e8a7449daa9",
+      "sha256": "a9123c9675abd8f797f4cc97184e602db46a00b090d3db573fbc80858a8b4de1",
+      "bytes": 165
+    },
+    {
+      "path": "experiments/fig8_beyond_gaussian/results.json",
+      "git_blob_sha": "89a78b92d902e92af6fa661090bd9610a69b6c60",
+      "sha256": "e2a7ab13737dce8ab73dde4d8403685173eefd6b4f84635da802fc3dbe860eea",
+      "bytes": 462
+    },
+    {
+      "path": "experiments/fig8_beyond_gaussian/run.py",
+      "git_blob_sha": "0b841974bddbbfa772f26665d5570ad139514684",
+      "sha256": "c8740265b1c89000faa2c20a79cc0f2d9220aaf65fb5265eeb0fce9775479e86",
+      "bytes": 3301
+    },
+    {
+      "path": "pyproject.toml",
+      "git_blob_sha": "c2588460ca9016ac3a236ff88d2bcc2e8aeb39ed",
+      "sha256": "94251bd267dc5d801f905dac3fa13373dc3e7054a0bb42af3a60bf3df7e7f7c8",
+      "bytes": 363
+    },
+    {
+      "path": "src/gbosons/__init__.py",
+      "git_blob_sha": "8f4ffafb64bde4dd97ba06b67e84bdf8d8820572",
+      "sha256": "0d85bbc1ef6569279dd536f02c9ba9618c8318cf5efea465e48324b6e35fab69",
+      "bytes": 753
+    },
+    {
+      "path": "src/gbosons/banded.py",
+      "git_blob_sha": "bcc7ba79c0b52b54844d5c0ead1a2afa9fdc9ebc",
+      "sha256": "d9b8c1ec06ccb35de5a5575116c8e172ae54f973bb5637fd3af8f6968078ad99",
+      "bytes": 5247
+    },
+    {
+      "path": "src/gbosons/benchmarking.py",
+      "git_blob_sha": "61af103d81640e326665b5fc9a95aac85b24f4ec",
+      "sha256": "49fb894da8acc8cf9e8a705d73a6b7c3efe99778a3d55c58be429d2ec1759da5",
+      "bytes": 1731
+    },
+    {
+      "path": "src/gbosons/bounded_n.py",
+      "git_blob_sha": "303d6e3b607125c74d9f927598b764e82d290b35",
+      "sha256": "78255e525271e8f65b0023d37d15e70cd0e273fab1ee2e16ac89ea2f283008c7",
+      "bytes": 9857
+    },
+    {
+      "path": "src/gbosons/core.py",
+      "git_blob_sha": "b94e6b36b3513d4b6154fb1d48b04d0533deea22",
+      "sha256": "737c554ae03dc99c02763b5a14fc11183fb1770449235e441f649fea388407a4",
+      "bytes": 6379
+    },
+    {
+      "path": "src/gbosons/dla_closure.py",
+      "git_blob_sha": "7676bcb26cbf0389c371379cb88eaf5fef07234e",
+      "sha256": "d2a5a8b6a8d3fa64fbcafd2a8c681668c295f6996860c1c0bf63687f4cf2bb2a",
+      "bytes": 5023
+    },
+    {
+      "path": "src/gbosons/fock_ref.py",
+      "git_blob_sha": "0e65c97bce17a59483fb49a4e9cbe34fd276ad3a",
+      "sha256": "da60e2c71cbfa894e821ce20817d6eaad1a14c0aa9c83685ee48bcdd4cb4b2a2",
+      "bytes": 6411
+    },
+    {
+      "path": "src/gbosons/lattices.py",
+      "git_blob_sha": "e05e157a017f611dd5fdd3f20253720a5d2a97e3",
+      "sha256": "5a1a5ed483ef5cdde1260f6180bf4a17689dd06cd8f8faa5558a85aeaf9a2a70",
+      "bytes": 5023
+    },
+    {
+      "path": "src/gbosons/nilpotent_phase.py",
+      "git_blob_sha": "afc0f75298a1e6498da22201b6a89b84bd1dab71",
+      "sha256": "a0a48f9a5193f237dbcd1d80210e1630686f7118cca1d32166563cfec0117c2b",
+      "bytes": 11347
+    },
+    {
+      "path": "src/gbosons/plotting.py",
+      "git_blob_sha": "4ba41ac3075a43c9927f704da811c3046835935d",
+      "sha256": "f5f6324b326c4900b68848e612b68586d7b24db211ae2a64d2e02fe798a608e7",
+      "bytes": 2474
+    },
+    {
+      "path": "src/gbosons/topology.py",
+      "git_blob_sha": "4eb584b9e5dfb00572c1629786dc032504ab2bfa",
+      "sha256": "55295a046f2e3348385d5e1604650fe0941304b797e77caf0f2f274f36b1d195",
+      "bytes": 1631
+    },
+    {
+      "path": "src/gbosons/variational.py",
+      "git_blob_sha": "5fe597ca4620a6ec29d36ddc53f37d4abbfe9202",
+      "sha256": "188cda67d1cd56825b7ddc35056743316679d5dce2db0274ee2fcbd9af1ae98b",
+      "bytes": 10768
+    }
+  ]
+}

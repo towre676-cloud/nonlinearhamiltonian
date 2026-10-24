@@ -1,0 +1,90 @@
+{
+  "status": "passed",
+  "data_and_exact_replays": [
+    {
+      "script": "check_dataset_samples.py",
+      "exit_code": 0,
+      "checker_seconds": 0.2370009790029144,
+      "result": {
+        "status": "passed",
+        "lattice_files_hash_checked": 3,
+        "hmba_cell_elements": 122,
+        "hmba_periodicity": 32,
+        "measured_wire_profile_bytes": 63228,
+        "measured_wire_zip_crc_and_sha256": "passed",
+        "lansce_rf_shape": [
+          100,
+          8
+        ],
+        "lansce_phase_header_shape": [
+          100,
+          48,
+          15,
+          256,
+          256
+        ],
+        "retained_discrepancy": "Published README says 500 examples; both actual arrays declare 100.",
+        "scope": "Small-data ingestion and provenance consistency only; no bulk-array, physics or performance validation."
+      }
+    },
+    {
+      "script": "inspect_multifidelity_data.py",
+      "exit_code": 0,
+      "checker_seconds": 0.1745891219979967,
+      "result": {
+        "rows": 2443,
+        "unique_encoded_inputs": 2286,
+        "conflicting_exact_input_groups": 6,
+        "groups_with_distinct_fidelity_values": 15,
+        "zero_charge_penalty_rows": 407
+      }
+    },
+    {
+      "script": "differentiable_data/replay_memory.py",
+      "exit_code": 0,
+      "checker_seconds": 0.07996550499956356,
+      "result": {
+        "status": "passed_data_ingestion_and_descriptive_fit",
+        "source_version": 17822326,
+        "rows": 609,
+        "model": "total_bytes = intercept + alpha_particle*N + alpha_cell*n_grid**3",
+        "ordinary_least_squares_coefficients": [
+          485537.03365368367,
+          1376.4716200652822,
+          1150.0453961517858
+        ],
+        "relative_residual": 0.005221889194895034,
+        "particle_range": [
+          1000,
+          100000
+        ],
+        "grid_side_range": [
+          8,
+          64
+        ],
+        "scope": "public recorded memory measurements; no simulator execution, optimizer timing or physical certificate"
+      }
+    },
+    {
+      "script": "check_core_vs_tractability.py",
+      "exit_code": 0,
+      "checker_seconds": 0.023670593000133522,
+      "result": {
+        "status": "passed",
+        "iterates": 13,
+        "output": "/workspace/scratch/9c6a3d2e42ab/claude-main/research/beam_literature/core_vs_tractability_exact_replay.json",
+        "last_coefficient": "1964187225"
+      }
+    }
+  ],
+  "method_source_records": 73,
+  "distinct_primary_url_strings": 81,
+  "dataset_asset_groups": 12,
+  "stored_ring_probe_consistency": "passed",
+  "new_ring_tracking_run": false,
+  "quantum_source_files_hash_checked": 21,
+  "stored_quantum_examples_consistency": "passed",
+  "new_quantum_simulation_run": false,
+  "published_speedups_reproduced": false,
+  "scope": "Source/data consistency, a formal polynomial recurrence and stored probe arithmetic; no new tenfold or physics validation."
+}

@@ -1,0 +1,225 @@
+{
+  "sha": "95b052bc98cc8f1afe8a3eec5dca6c518218a696",
+  "url": "https://api.github.com/repos/slaclab/lcls_cu_injector_ml_model/git/trees/95b052bc98cc8f1afe8a3eec5dca6c518218a696",
+  "tree": [
+    {
+      "path": ".gitignore",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "535f099dee4db2eb7d2b9b0827b91f15cbea3dc6",
+      "size": 1859,
+      "url": "https://api.github.com/repos/slaclab/lcls_cu_injector_ml_model/git/blobs/535f099dee4db2eb7d2b9b0827b91f15cbea3dc6"
+    },
+    {
+      "path": "MANIFEST.in",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9213233268c61501262b1146633df2fdf6a7acaa",
+      "size": 123,
+      "url": "https://api.github.com/repos/slaclab/lcls_cu_injector_ml_model/git/blobs/9213233268c61501262b1146633df2fdf6a7acaa"
+    },
+    {
+      "path": "README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3700896b7298ac67ac14d5e7279747c7a75df4f6",
+      "size": 4549,
+      "url": "https://api.github.com/repos/slaclab/lcls_cu_injector_ml_model/git/blobs/3700896b7298ac67ac14d5e7279747c7a75df4f6"
+    },
+    {
+      "path": "docs",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "63fcf801ebc0297fec322367d632c99fce2bb679",
+      "url": "https://api.github.com/repos/slaclab/lcls_cu_injector_ml_model/git/trees/63fcf801ebc0297fec322367d632c99fce2bb679"
+    },
+    {
+      "path": "docs/examples",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "88991d6d7fbea038637c792200124fd717b44146",
+      "url": "https://api.github.com/repos/slaclab/lcls_cu_injector_ml_model/git/trees/88991d6d7fbea038637c792200124fd717b44146"
+    },
+    {
+      "path": "docs/examples/info.ipynb",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f5c2bed296759a85ebc10a073233ac173370d8fe",
+      "size": 15225,
+      "url": "https://api.github.com/repos/slaclab/lcls_cu_injector_ml_model/git/blobs/f5c2bed296759a85ebc10a073233ac173370d8fe"
+    },
+    {
+      "path": "docs/examples/info",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "61386a82b91aaebe9865e5c997b7f2ed092d83ed",
+      "url": "https://api.github.com/repos/slaclab/lcls_cu_injector_ml_model/git/trees/61386a82b91aaebe9865e5c997b7f2ed092d83ed"
+    },
+    {
+      "path": "docs/examples/info/inputs_small.pt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "249f3bc43ae3d50f35a2ed5290fb6e3100f89e4c",
+      "size": 36983,
+      "url": "https://api.github.com/repos/slaclab/lcls_cu_injector_ml_model/git/blobs/249f3bc43ae3d50f35a2ed5290fb6e3100f89e4c"
+    },
+    {
+      "path": "docs/examples/info/model.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a451101ec7a96402aa514db48c8bf38ea2537c81",
+      "size": 2340,
+      "url": "https://api.github.com/repos/slaclab/lcls_cu_injector_ml_model/git/blobs/a451101ec7a96402aa514db48c8bf38ea2537c81"
+    },
+    {
+      "path": "docs/examples/info/normalization.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2b9ae7aefa78d3f2283432afa0adb2ed887dcb16",
+      "size": 1081,
+      "url": "https://api.github.com/repos/slaclab/lcls_cu_injector_ml_model/git/blobs/2b9ae7aefa78d3f2283432afa0adb2ed887dcb16"
+    },
+    {
+      "path": "docs/examples/info/outputs_small.pt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2a7c5f91e12f6de3118ff5579d9155c2fde28a11",
+      "size": 12023,
+      "url": "https://api.github.com/repos/slaclab/lcls_cu_injector_ml_model/git/blobs/2a7c5f91e12f6de3118ff5579d9155c2fde28a11"
+    },
+    {
+      "path": "docs/examples/info/pv_mapping.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4f87bd0ff5cd442016c11a623a56e055400413e0",
+      "size": 4623,
+      "url": "https://api.github.com/repos/slaclab/lcls_cu_injector_ml_model/git/blobs/4f87bd0ff5cd442016c11a623a56e055400413e0"
+    },
+    {
+      "path": "docs/examples/lume_model_epics.ipynb",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d6cd4fda8a292e3730d109095778a58397630dd2",
+      "size": 268375,
+      "url": "https://api.github.com/repos/slaclab/lcls_cu_injector_ml_model/git/blobs/d6cd4fda8a292e3730d109095778a58397630dd2"
+    },
+    {
+      "path": "docs/transformers.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6fcc10e69f0c5acf0b4983f70d9b98fd0324e4d7",
+      "size": 82621,
+      "url": "https://api.github.com/repos/slaclab/lcls_cu_injector_ml_model/git/blobs/6fcc10e69f0c5acf0b4983f70d9b98fd0324e4d7"
+    },
+    {
+      "path": "examples",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "35af6cdde61df09e0a2abfa63ad3a05d59bc8ec7",
+      "url": "https://api.github.com/repos/slaclab/lcls_cu_injector_ml_model/git/trees/35af6cdde61df09e0a2abfa63ad3a05d59bc8ec7"
+    },
+    {
+      "path": "examples/README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "683e9177f6c5d8087c7eabae10639054a5f3e966",
+      "size": 399,
+      "url": "https://api.github.com/repos/slaclab/lcls_cu_injector_ml_model/git/blobs/683e9177f6c5d8087c7eabae10639054a5f3e966"
+    },
+    {
+      "path": "examples/lumetorchmodel_usage_example.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "329cad6b7d5f043ecbe961dc4223bf2bf2d37c8c",
+      "size": 1275,
+      "url": "https://api.github.com/repos/slaclab/lcls_cu_injector_ml_model/git/blobs/329cad6b7d5f043ecbe961dc4223bf2bf2d37c8c"
+    },
+    {
+      "path": "lcls_cu_inj_model",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "59c5f56b44ab690d0cfd105af721ec6ea3f4036f",
+      "url": "https://api.github.com/repos/slaclab/lcls_cu_injector_ml_model/git/trees/59c5f56b44ab690d0cfd105af721ec6ea3f4036f"
+    },
+    {
+      "path": "lcls_cu_inj_model/__init__.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5c4ac0f65c76d8b2f2bedc52038baa5a09b86ec2",
+      "size": 128,
+      "url": "https://api.github.com/repos/slaclab/lcls_cu_injector_ml_model/git/blobs/5c4ac0f65c76d8b2f2bedc52038baa5a09b86ec2"
+    },
+    {
+      "path": "lcls_cu_inj_model/loader.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "da12f07e1aed3c9466cd8325bd38dbc367c5e1c9",
+      "size": 863,
+      "url": "https://api.github.com/repos/slaclab/lcls_cu_injector_ml_model/git/blobs/da12f07e1aed3c9466cd8325bd38dbc367c5e1c9"
+    },
+    {
+      "path": "lcls_cu_inj_model/resources",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "f2dc9feb46cbfae499a06c95a88f74cdc170ebc8",
+      "url": "https://api.github.com/repos/slaclab/lcls_cu_injector_ml_model/git/trees/f2dc9feb46cbfae499a06c95a88f74cdc170ebc8"
+    },
+    {
+      "path": "lcls_cu_inj_model/resources/input_pv_to_sim.pt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d09e4ad43925c257130d1e0f7467a30c2b995335",
+      "size": 1639,
+      "url": "https://api.github.com/repos/slaclab/lcls_cu_injector_ml_model/git/blobs/d09e4ad43925c257130d1e0f7467a30c2b995335"
+    },
+    {
+      "path": "lcls_cu_inj_model/resources/input_sim_to_nn.pt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8d99c5f2480b68742fb208efce0cdb4044d398cb",
+      "size": 2063,
+      "url": "https://api.github.com/repos/slaclab/lcls_cu_injector_ml_model/git/blobs/8d99c5f2480b68742fb208efce0cdb4044d398cb"
+    },
+    {
+      "path": "lcls_cu_inj_model/resources/model.pt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c9ea4a329fb335468c9ff64bfa625ed0109ff538",
+      "size": 2520381,
+      "url": "https://api.github.com/repos/slaclab/lcls_cu_injector_ml_model/git/blobs/c9ea4a329fb335468c9ff64bfa625ed0109ff538"
+    },
+    {
+      "path": "lcls_cu_inj_model/resources/model_config.yaml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bc2ed1a1859782e8b8a3b7a70fddb20900782cd1",
+      "size": 3572,
+      "url": "https://api.github.com/repos/slaclab/lcls_cu_injector_ml_model/git/blobs/bc2ed1a1859782e8b8a3b7a70fddb20900782cd1"
+    },
+    {
+      "path": "lcls_cu_inj_model/resources/output_pv_to_sim.pt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "461ec2256a10a8941d6408a446d95bdb6b0e6fa9",
+      "size": 1575,
+      "url": "https://api.github.com/repos/slaclab/lcls_cu_injector_ml_model/git/blobs/461ec2256a10a8941d6408a446d95bdb6b0e6fa9"
+    },
+    {
+      "path": "lcls_cu_inj_model/resources/output_sim_to_nn.pt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b529907d82522d4397666d133f5de837af83c98d",
+      "size": 1811,
+      "url": "https://api.github.com/repos/slaclab/lcls_cu_injector_ml_model/git/blobs/b529907d82522d4397666d133f5de837af83c98d"
+    },
+    {
+      "path": "pyproject.toml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9fa6ff26d4915e716ab9a068198aba22495abf67",
+      "size": 558,
+      "url": "https://api.github.com/repos/slaclab/lcls_cu_injector_ml_model/git/blobs/9fa6ff26d4915e716ab9a068198aba22495abf67"
+    }
+  ],
+  "truncated": false
+}

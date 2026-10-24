@@ -1,0 +1,904 @@
+{
+  "checked_at_utc": "2026-10-24T00:10:15.329956+00:00",
+  "scope": "Primary method papers, official software/docs and access records. Repeated records are cross-checks, not unique works.",
+  "method_source_records": 73,
+  "distinct_primary_url_strings": 81,
+  "dataset_asset_groups": 12,
+  "literature_timings_independently_reproduced": false,
+  "review_catalog_receipts": [
+    {
+      "catalog": "adaptive_pic_sources.json",
+      "sha256": "e313560ac9bf8e66415608fb14e64346a16584633c6277dc376da4d10387f5cc",
+      "records": 12
+    },
+    {
+      "catalog": "differentiable_sources.json",
+      "sha256": "aabf8a19fc5c48f760d58c531c1d3777f63285fc5da9b9cdacdfbacae4e2e27d",
+      "records": 12
+    },
+    {
+      "catalog": "fast_spacecharge_sources.json",
+      "sha256": "3705563aaf18203c7c8c0cc2fe74fbfb900a0fbd65f836caaf017b41be658738",
+      "records": 16
+    },
+    {
+      "catalog": "memory_closure_sources.json",
+      "sha256": "8418eb33a76dd1be333196e8fc4201e0fc54c01eec95baa441559fed22ce0cbe",
+      "records": 12
+    },
+    {
+      "catalog": "multifidelity_sources.json",
+      "sha256": "0533565d1bfce195cd44c645e82090580fb8fb9e01876fc8c01fb4004e40f9cf",
+      "records": 12
+    },
+    {
+      "catalog": "quantum_fit_sources.json",
+      "sha256": "2f027f79bcea5cb7a14abbaf64222f43d0d82745bcb403c3eb04486514460ec8",
+      "records": 7
+    },
+    {
+      "catalog": "method_fit.md",
+      "sha256": "2234edb9b1fd5698dbfb4f93defae35616f1e6627cb48a1a3685b26b23acfa77",
+      "additional_records": 2,
+      "note": "Other six checked sources overlap existing lanes or internal theorem definition."
+    }
+  ],
+  "sources": [
+    {
+      "review_lane": "adaptive_pic",
+      "lane_id": "A01",
+      "title": "Exact hierarchical particle-mesh algorithms",
+      "primary_urls": [
+        "https://arxiv.org/html/2608.19702v1"
+      ],
+      "year": 2026,
+      "publication_status": "preprint_or_archive_only_unless_stated",
+      "inspection": "full_text"
+    },
+    {
+      "review_lane": "adaptive_pic",
+      "lane_id": "A02",
+      "title": "Entropic VR-PIC",
+      "primary_urls": [
+        "https://arxiv.org/html/2602.15041"
+      ],
+      "year": 2026,
+      "publication_status": "preprint_or_archive_only_unless_stated",
+      "inspection": "full_text"
+    },
+    {
+      "review_lane": "adaptive_pic",
+      "lane_id": "A03",
+      "title": "VRPIC author code",
+      "primary_urls": [
+        "https://github.com/mohsensadr/VRPIC"
+      ],
+      "year": 2026,
+      "publication_status": "author_code_repository",
+      "inspection": "repo_readme_license_inspected"
+    },
+    {
+      "review_lane": "adaptive_pic",
+      "lane_id": "A04",
+      "title": "Neural delta-f PIC",
+      "primary_urls": [
+        "https://arxiv.org/html/2606.30622v2"
+      ],
+      "year": 2026,
+      "publication_status": "preprint_or_archive_only_unless_stated",
+      "inspection": "full_text"
+    },
+    {
+      "review_lane": "adaptive_pic",
+      "lane_id": "A05",
+      "title": "Hierarchical sparse-grid PIC",
+      "primary_urls": [
+        "https://arxiv.org/html/2607.19898v1"
+      ],
+      "year": 2026,
+      "publication_status": "preprint_or_archive_only_unless_stated",
+      "inspection": "full_text"
+    },
+    {
+      "review_lane": "adaptive_pic",
+      "lane_id": "A06",
+      "title": "Adaptive hierarchical sparse-grid PIC",
+      "primary_urls": [
+        "https://arxiv.org/html/2608.16294v1"
+      ],
+      "year": 2026,
+      "publication_status": "preprint_or_archive_only_unless_stated",
+      "inspection": "full_text"
+    },
+    {
+      "review_lane": "adaptive_pic",
+      "lane_id": "A07",
+      "title": "Adaptive sparse-grid filtering",
+      "primary_urls": [
+        "https://www.dora.lib4ri.ch/psi/dload/psi:37917/PDF/Muralikrishnan-2021-Sparse_grid-based_adaptive_noise_reduction-(published_version).pdf"
+      ],
+      "year": 2021,
+      "publication_status": "journal_publication",
+      "inspection": "full_text"
+    },
+    {
+      "review_lane": "adaptive_pic",
+      "lane_id": "A08",
+      "title": "Original sparse-grid PIC",
+      "primary_urls": [
+        "https://arxiv.org/pdf/1607.06516"
+      ],
+      "year": 2017,
+      "publication_status": "journal_publication",
+      "inspection": "full_text"
+    },
+    {
+      "review_lane": "adaptive_pic",
+      "lane_id": "A09",
+      "title": "Sparse-grid PIC reconstruction analysis",
+      "primary_urls": [
+        "https://www.numdam.org/item/10.1051/m2an/2022055.pdf"
+      ],
+      "year": 2022,
+      "publication_status": "journal_publication",
+      "inspection": "full_text"
+    },
+    {
+      "review_lane": "adaptive_pic",
+      "lane_id": "A10",
+      "title": "Nonlinear delta-f intense bunched beams",
+      "primary_urls": [
+        "https://nonneutral.pppl.gov/pdfpapers2007/Qin.Anisotropy.2007.pdf"
+      ],
+      "year": 2007,
+      "publication_status": "journal_publication",
+      "inspection": "full_text"
+    },
+    {
+      "review_lane": "adaptive_pic",
+      "lane_id": "A11",
+      "title": "Linearly transformed particles",
+      "primary_urls": [
+        "https://arxiv.org/html/1211.5047v2"
+      ],
+      "year": 2014,
+      "doi": "10.1016/j.jcp.2014.06.032",
+      "publication_status": "journal_publication",
+      "inspection": "full_text"
+    },
+    {
+      "review_lane": "adaptive_pic",
+      "lane_id": "A12",
+      "title": "Multilevel mean-field particles",
+      "primary_urls": [
+        "https://arxiv.org/abs/1508.02299"
+      ],
+      "year": 2015,
+      "publication_status": "preprint_or_archive_only_unless_stated",
+      "inspection": "abstract_scope_only"
+    },
+    {
+      "review_lane": "differentiable",
+      "lane_id": "D01",
+      "title": "Differentiable self-consistent space-charge simulation for accelerator design",
+      "primary_urls": [
+        "https://arxiv.org/abs/2207.07997"
+      ],
+      "year": 2023,
+      "doi": "10.1103/PhysRevAccelBeams.26.024601"
+    },
+    {
+      "review_lane": "differentiable",
+      "lane_id": "D02",
+      "title": "JuTrack: a Julia package for auto-differentiable accelerator modeling and particle tracking",
+      "primary_urls": [
+        "https://arxiv.org/html/2409.20522v1"
+      ],
+      "year": 2025,
+      "doi": "10.1016/j.cpc.2024.109497"
+    },
+    {
+      "review_lane": "differentiable",
+      "lane_id": "D03",
+      "title": "Differentiable simulations for particle tracking in accelerators",
+      "primary_urls": [
+        "https://arxiv.org/html/2507.08476v1"
+      ],
+      "year": 2025
+    },
+    {
+      "review_lane": "differentiable",
+      "lane_id": "D04",
+      "title": "Cheetah: high-speed differentiable beam dynamics",
+      "primary_urls": [
+        "https://arxiv.org/html/2401.05815v1"
+      ],
+      "year": 2024,
+      "doi": "10.1103/PhysRevAccelBeams.27.054601"
+    },
+    {
+      "review_lane": "differentiable",
+      "lane_id": "D05",
+      "title": "Memory scaling of reverse-mode differentiation with space charge",
+      "primary_urls": [
+        "https://arxiv.org/html/2605.27282v1"
+      ],
+      "year": 2026,
+      "doi": "10.1145/3815572.3815749"
+    },
+    {
+      "review_lane": "differentiable",
+      "lane_id": "D06",
+      "title": "HELIX: hybrid envelope-multiparticle linac code",
+      "primary_urls": [
+        "https://lss.fnal.gov/archive/2026/pub/fermilab-pub-26-0690-pip2.pdf"
+      ],
+      "year": 2026
+    },
+    {
+      "review_lane": "differentiable",
+      "lane_id": "D07",
+      "title": "Towards differentiable beam dynamics modeling in BLAST/ImpactX",
+      "primary_urls": [
+        "https://inspirehep.net/files/f469056931ab4db094eb983c7bd703b9"
+      ],
+      "year": 2025,
+      "doi": "10.18429/JACoW-NAPAC2025-TUP101"
+    },
+    {
+      "review_lane": "differentiable",
+      "lane_id": "D08",
+      "title": "Multi-language auto-differentiation for parallel PIC",
+      "primary_urls": [
+        "https://arxiv.org/html/2511.21839v1"
+      ],
+      "year": 2025
+    },
+    {
+      "review_lane": "differentiable",
+      "lane_id": "D09",
+      "title": "Differentiable cosmological simulation with adjoint method",
+      "primary_urls": [
+        "https://arxiv.org/html/2211.09815v2"
+      ],
+      "year": 2024
+    },
+    {
+      "review_lane": "differentiable",
+      "lane_id": "D10",
+      "title": "Memory-efficient adjoint based on time-reversible dynamical low-rank approximation",
+      "primary_urls": [
+        "https://arxiv.org/pdf/2608.21545"
+      ],
+      "year": 2026
+    },
+    {
+      "review_lane": "differentiable",
+      "lane_id": "D11",
+      "title": "Xsuite official space-charge modes",
+      "primary_urls": [
+        "https://xsuite.readthedocs.io/en/latest/spacechargeauto.html"
+      ],
+      "year": 2026
+    },
+    {
+      "review_lane": "differentiable",
+      "lane_id": "D12",
+      "title": "Towards fully differentiable accelerator modeling / Bmad-X",
+      "primary_urls": [
+        "https://github.com/bmad-sim/Bmad-X"
+      ],
+      "year": 2023,
+      "doi": "10.18429/JACoW-IPAC2023-WEPA065"
+    },
+    {
+      "review_lane": "fast_spacecharge",
+      "lane_id": "S01",
+      "title": "Xsuite space charge documentation and Xfields bi-Gaussian particle kicks",
+      "primary_urls": [
+        "https://xsuite.readthedocs.io/en/latest/spacechargeauto.html",
+        "https://github.com/xsuite/xfields/blob/223b4fa134a1435be9b45ef21ae8903f96c5f685/xfields/beam_elements/spacecharge.py",
+        "https://github.com/xsuite/xfields/blob/223b4fa134a1435be9b45ef21ae8903f96c5f685/xfields/beam_elements/spacecharge_src/spacechargebigaussian.h"
+      ],
+      "implementation": {
+        "repository": "https://github.com/xsuite/xfields",
+        "commit": "223b4fa134a1435be9b45ef21ae8903f96c5f685",
+        "license": "Apache-2.0",
+        "inspection": "documentation and relevant source read; not run"
+      }
+    },
+    {
+      "review_lane": "fast_spacecharge",
+      "lane_id": "S02",
+      "title": "Proton beam dynamics in bare IOTA with intense space-charge",
+      "primary_urls": [
+        "https://arxiv.org/html/2405.19163v2"
+      ],
+      "year": 2024,
+      "inspection": "full primary text; cross-code accuracy boundaries"
+    },
+    {
+      "review_lane": "fast_spacecharge",
+      "lane_id": "S03",
+      "title": "A novel adaptive time stepping variant of the Boris–Buneman integrator for the simulation of particle accelerators with space charge",
+      "primary_urls": [
+        "https://arxiv.org/pdf/1211.3664"
+      ],
+      "year": 2012,
+      "inspection": "primary full text and exact timing tables; OPAL version/license not pinned"
+    },
+    {
+      "review_lane": "fast_spacecharge",
+      "lane_id": "S04",
+      "title": "VR-PIC: An entropic variance-reduction method for particle-in-cell solutions of the Vlasov–Poisson equation",
+      "primary_urls": [
+        "https://arxiv.org/html/2602.15041v1",
+        "https://github.com/mohsensadr/VRPIC"
+      ],
+      "year": 2026,
+      "implementation": {
+        "repository": "https://github.com/mohsensadr/VRPIC",
+        "commit": "337ef255df74867561fd8b28e3749653db8d7ef3",
+        "license": "MIT",
+        "language": "C++/CUDA",
+        "inspection": "paper, README, implementation metadata; not run"
+      }
+    },
+    {
+      "review_lane": "fast_spacecharge",
+      "lane_id": "S05",
+      "title": "A particle-in-Fourier method with semi-discrete energy conservation for non-periodic boundary conditions",
+      "primary_urls": [
+        "https://arxiv.org/html/2403.13911v2",
+        "https://github.com/Nigel-Shen/Free-Space-Particle-In-Fourier"
+      ],
+      "year": 2024,
+      "doi": "10.1016/j.jcp.2024.113390",
+      "implementation": {
+        "repository": "https://github.com/Nigel-Shen/Free-Space-Particle-In-Fourier",
+        "commit": "6f81f7fd90a87833a8a028f8a574fb0a9f47ad02",
+        "license": "MIT",
+        "language": "Python",
+        "inspection": "README and PIC/PIF source read; dependencies locally probed; not run",
+        "dependency_issues": [
+          "finufft missing locally",
+          "tqdm missing locally",
+          "DataFrame.append absent in installed pandas 2.2.3",
+          "README launch filenames mismatch repository"
+        ],
+        "reproduction_scope": "Default source parameters differ from paper Table 1"
+      }
+    },
+    {
+      "review_lane": "fast_spacecharge",
+      "lane_id": "S06",
+      "title": "Symplectic machine learning model for fast simulation of space-charge effects",
+      "primary_urls": [
+        "https://journals.aps.org/prab/pdf/10.1103/bhpv-bcqk",
+        "https://zenodo.org/records/15328235",
+        "https://github.com/MSU-Beam-Dynamics/JuTrack.jl"
+      ],
+      "year": 2025,
+      "doi": "10.1103/bhpv-bcqk",
+      "implementation": {
+        "JuTrack_license": "MIT",
+        "Zenodo_source_headers": "All rights reserved",
+        "inspection": "paper, repository metadata, both deposited source files; not run",
+        "model_weights_and_training_arrays": "not present in inspected two-file Zenodo record"
+      }
+    },
+    {
+      "review_lane": "fast_spacecharge",
+      "lane_id": "S07",
+      "title": "HELIX: a hybrid envelope–multiparticle linac code with differentiable space-charge optimization",
+      "primary_urls": [
+        "https://lss.fnal.gov/archive/2026/pub/fermilab-pub-26-0690-pip2.pdf",
+        "https://github.com/Accel-Toolkit/HELIX"
+      ],
+      "year": 2026,
+      "implementation": {
+        "repository": "https://github.com/Accel-Toolkit/HELIX",
+        "paper_version": "v1.0.11",
+        "license": "GPL-3.0-or-later",
+        "inspection": "paper including scope and verification caveats; not run"
+      }
+    },
+    {
+      "review_lane": "fast_spacecharge",
+      "lane_id": "S08",
+      "title": "Sparse grid-based adaptive noise reduction strategy for particle-in-cell schemes",
+      "primary_urls": [
+        "https://doi.org/10.1016/j.jcpx.2021.100094",
+        "https://arxiv.org/abs/2008.09441",
+        "https://par.nsf.gov/servlets/purl/10289251"
+      ],
+      "year": 2021,
+      "doi": "10.1016/j.jcpx.2021.100094",
+      "inspection": "primary abstracts and indexed algorithm text; direct full-text fetch failed; no numerical speedup promoted"
+    },
+    {
+      "review_lane": "fast_spacecharge",
+      "lane_id": "S09",
+      "title": "Efficient 6D Vlasov simulation using the dynamical low-rank framework Ensign",
+      "primary_urls": [
+        "https://arxiv.org/abs/2110.13481",
+        "https://github.com/leinkemmer/Ensign"
+      ],
+      "year": 2022,
+      "doi": "10.1016/j.cpc.2022.108489",
+      "implementation": {
+        "repository": "https://github.com/leinkemmer/Ensign",
+        "license": "MIT",
+        "inspection": "primary abstract and repository; not run"
+      }
+    },
+    {
+      "review_lane": "fast_spacecharge",
+      "lane_id": "S10",
+      "title": "A conservative low rank tensor method for the Vlasov dynamics",
+      "primary_urls": [
+        "https://arxiv.org/abs/2201.10397"
+      ],
+      "year": 2022,
+      "inspection": "primary abstract containing conservative projection construction"
+    },
+    {
+      "review_lane": "fast_spacecharge",
+      "lane_id": "S11",
+      "title": "Accelerating Particle-in-Cell Kinetic Plasma Simulations via Reduced-Order Modeling of Space-Charge Dynamics using Dynamic Mode Decomposition",
+      "primary_urls": [
+        "https://arxiv.org/html/2303.16286v3"
+      ],
+      "year": 2024,
+      "inspection": "full primary text including complete runtime table"
+    },
+    {
+      "review_lane": "fast_spacecharge",
+      "lane_id": "S12",
+      "title": "A neural delta-f particle-in-cell method: evolving the background with learned backward flows",
+      "primary_urls": [
+        "https://arxiv.org/html/2606.30622v2"
+      ],
+      "year": 2026,
+      "inspection": "full primary text including explicit noncompetitive wall-time statement and underresolved references"
+    },
+    {
+      "review_lane": "fast_spacecharge",
+      "lane_id": "A01",
+      "title": "Implementation of the Integrated Green’s Function Method for 3D Poisson’s Equation in a Large Aspect Ratio Computational Domain",
+      "primary_urls": [
+        "https://www.scirp.org/pdf/jsea2024179_39303327.pdf"
+      ],
+      "year": 2024,
+      "doi": "10.4236/jsea.2024.179039",
+      "inspection": "full primary text and code illustration; no local solver run"
+    },
+    {
+      "review_lane": "fast_spacecharge",
+      "lane_id": "A02",
+      "title": "Tensor-product Poisson solver",
+      "primary_urls": [
+        "https://doi.org/10.1093/ptep/ptaf047"
+      ],
+      "year": 2025,
+      "doi": "10.1093/ptep/ptaf047",
+      "inspection": "primary complexity statements; rejected as automatic FFT improvement"
+    },
+    {
+      "review_lane": "fast_spacecharge",
+      "lane_id": "A03",
+      "title": "Relativistic fast multipole space-charge solver",
+      "primary_urls": [
+        "https://arxiv.org/abs/2302.07567"
+      ],
+      "year": 2023,
+      "doi": "10.1016/j.cpc.2023.108825",
+      "inspection": "primary abstract; hardware denominator caveat"
+    },
+    {
+      "review_lane": "fast_spacecharge",
+      "lane_id": "A04",
+      "title": "ImpactX/WarpX hybrid surrogate beamline modeling",
+      "primary_urls": [
+        "https://arxiv.org/html/2402.17248v2",
+        "https://zenodo.org/records/11063781",
+        "https://zenodo.org/records/11063781/files/Readme%20stage%203.txt?download=1"
+      ],
+      "year": 2024,
+      "doi": "10.1145/3659914.3659937",
+      "data_asset": {
+        "record": "11063781",
+        "version": 3,
+        "archive_bytes_approx": 273800000,
+        "archive_downloaded": false,
+        "inspection": "metadata and readme only",
+        "dependency": "ML utilities referenced in earlier archive versions",
+        "license": "unverified"
+      }
+    },
+    {
+      "review_lane": "memory_closure",
+      "lane_id": "M01",
+      "title": "Koopman Invariant Subspaces and Finite Linear Representations of Nonlinear Dynamical Systems for Control",
+      "primary_urls": [
+        "https://doi.org/10.1371/journal.pone.0150171"
+      ],
+      "year": 2016,
+      "kind": "peer_reviewed_article",
+      "inspection": "primary full HTML"
+    },
+    {
+      "review_lane": "memory_closure",
+      "lane_id": "M02",
+      "title": "Polynomial Jump-Diffusion Models",
+      "primary_urls": [
+        "https://arxiv.org/html/1711.08043v3"
+      ],
+      "year": 2020,
+      "kind": "peer_reviewed_article_preprint_version",
+      "inspection": "primary full HTML, Sections 2 and 4"
+    },
+    {
+      "review_lane": "memory_closure",
+      "lane_id": "M03",
+      "title": "Memory Effects in Irreversible Thermodynamics",
+      "primary_urls": [
+        "https://doi.org/10.1103/PhysRev.124.983"
+      ],
+      "year": 1961,
+      "kind": "peer_reviewed_article",
+      "inspection": "primary abstract only; full text access wall"
+    },
+    {
+      "review_lane": "memory_closure",
+      "lane_id": "M04",
+      "title": "Data-driven model reduction, Wiener projections, and the Koopman-Mori-Zwanzig formalism",
+      "primary_urls": [
+        "https://math.jhu.edu/~feilu/pub/LinLu20.pdf"
+      ],
+      "year": 2021,
+      "kind": "peer_reviewed_article",
+      "inspection": "author-hosted full PDF"
+    },
+    {
+      "review_lane": "memory_closure",
+      "lane_id": "M05",
+      "title": "Adaptive symplectic model order reduction of parametric particle-based Vlasov-Poisson equation",
+      "primary_urls": [
+        "https://arxiv.org/html/2201.05555v3"
+      ],
+      "year": 2023,
+      "kind": "primary_research_preprint_version",
+      "inspection": "primary full HTML, Sections 4, 6, 7"
+    },
+    {
+      "review_lane": "memory_closure",
+      "lane_id": "M06",
+      "title": "Symplectic Model Reduction of Hamiltonian Systems on Nonlinear Manifolds",
+      "primary_urls": [
+        "https://arxiv.org/html/2112.10815v1"
+      ],
+      "year": 2023,
+      "doi": "10.1137/21M1466657",
+      "kind": "peer_reviewed_article_preprint_version",
+      "inspection": "primary full HTML, Theorem 3 and conclusions"
+    },
+    {
+      "review_lane": "memory_closure",
+      "lane_id": "M07",
+      "title": "Conservative closures of the Vlasov-Poisson equations based on symmetrically weighted Hermite spectral expansion",
+      "primary_urls": [
+        "https://kramer.ucsd.edu/img/pubs/J42-Conservative-closures-Vlasov-Poisson-JCP-2025.pdf"
+      ],
+      "year": 2025,
+      "kind": "peer_reviewed_article",
+      "inspection": "author-hosted primary full PDF"
+    },
+    {
+      "review_lane": "memory_closure",
+      "lane_id": "M08",
+      "title": "Machine-learning Closure for Vlasov-Poisson Dynamics in Fourier-Hermite Space",
+      "primary_urls": [
+        "https://arxiv.org/html/2504.13313v2"
+      ],
+      "year": 2025,
+      "kind": "primary_research_preprint_version",
+      "inspection": "primary full HTML, Sections 4.2, 5.3 and Appendix B"
+    },
+    {
+      "review_lane": "memory_closure",
+      "lane_id": "M09",
+      "title": "A Neural Operator Closure for Landau Damping in Electrostatic Plasma",
+      "primary_urls": [
+        "https://arxiv.org/html/2607.29364v1"
+      ],
+      "year": 2026,
+      "kind": "preprint",
+      "inspection": "primary full HTML, methods and discussion"
+    },
+    {
+      "review_lane": "memory_closure",
+      "lane_id": "M10",
+      "title": "Structure-Preserving Dynamical Low-Rank Approximations for Stochastic Vlasov-Poisson Equations",
+      "primary_urls": [
+        "https://arxiv.org/html/2608.00397v2"
+      ],
+      "year": 2026,
+      "kind": "preprint",
+      "inspection": "primary full HTML, Sections 2-4"
+    },
+    {
+      "review_lane": "memory_closure",
+      "lane_id": "M11",
+      "title": "Learning symplectic model reduction based on an approximation theorem of symplectic embeddings",
+      "primary_urls": [
+        "https://arxiv.org/html/2606.04623v2"
+      ],
+      "year": 2026,
+      "kind": "preprint",
+      "inspection": "primary full HTML plus pinned official implementation"
+    },
+    {
+      "review_lane": "memory_closure",
+      "lane_id": "M12",
+      "title": "Latent Residual-Closure Fourier Neural Operator for Robust Multi-Field Solving in Particle-in-Cell Simulations",
+      "primary_urls": [
+        "https://arxiv.org/html/2606.17733v1"
+      ],
+      "year": 2026,
+      "kind": "preprint",
+      "inspection": "primary full HTML, Table 2, data/software availability"
+    },
+    {
+      "review_lane": "multifidelity",
+      "lane_id": "MF01",
+      "title": "Provably Convergent Multifidelity Optimization Algorithm Not Requiring High-Fidelity Derivatives",
+      "primary_urls": [
+        "https://kiwi.oden.utexas.edu/papers/Multifidelity-optimization-March-Willcox.pdf"
+      ],
+      "year": 2012,
+      "doi": "10.2514/1.J051125",
+      "kind": "primary_method_paper"
+    },
+    {
+      "review_lane": "multifidelity",
+      "lane_id": "MF02",
+      "title": "Bayesian Optimization of a Free-Electron Laser",
+      "primary_urls": [
+        "https://arxiv.org/pdf/1909.05963"
+      ],
+      "year": 2020,
+      "doi": "10.1103/PhysRevLett.124.124801",
+      "kind": "primary_facility_experiment"
+    },
+    {
+      "review_lane": "multifidelity",
+      "lane_id": "MF03",
+      "title": "Physics model-informed Gaussian process for online optimization of particle accelerators",
+      "primary_urls": [
+        "https://journals.aps.org/prab/pdf/10.1103/PhysRevAccelBeams.24.072802"
+      ],
+      "year": 2021,
+      "doi": "10.1103/PhysRevAccelBeams.24.072802",
+      "kind": "primary_facility_experiment"
+    },
+    {
+      "review_lane": "multifidelity",
+      "lane_id": "MF04",
+      "title": "Leveraging Prior Mean Models for Faster Bayesian Optimization of Particle Accelerators",
+      "primary_urls": [
+        "https://arxiv.org/pdf/2403.03225"
+      ],
+      "year": 2025,
+      "doi": "10.1038/s41598-025-95297-z",
+      "kind": "primary_facility_experiment"
+    },
+    {
+      "review_lane": "multifidelity",
+      "lane_id": "MF05",
+      "title": "Multi-objective and multi-fidelity Bayesian optimization of laser-plasma acceleration",
+      "primary_urls": [
+        "https://arxiv.org/pdf/2210.03484"
+      ],
+      "year": 2023,
+      "doi": "10.1103/PhysRevResearch.5.013063",
+      "kind": "primary_simulation_experiment"
+    },
+    {
+      "review_lane": "multifidelity",
+      "lane_id": "MF06",
+      "title": "Reference dataset of multi-objective and multi-fidelity optimization in laser-plasma acceleration",
+      "primary_urls": [
+        "https://zenodo.org/records/7565882"
+      ],
+      "year": 2023,
+      "doi": "10.5281/zenodo.7565882",
+      "kind": "primary_public_dataset"
+    },
+    {
+      "review_lane": "multifidelity",
+      "lane_id": "MF07",
+      "title": "Multipoint-BAX: a new approach for efficiently tuning particle accelerator emittance via virtual objectives",
+      "primary_urls": [
+        "https://arxiv.org/pdf/2209.04587"
+      ],
+      "year": 2024,
+      "doi": "10.1088/2632-2153/ad169f",
+      "kind": "primary_method_and_facility_experiment"
+    },
+    {
+      "review_lane": "multifidelity",
+      "lane_id": "MF08",
+      "title": "Efficient dynamic and momentum aperture optimization for lattice design using multipoint Bayesian algorithm execution",
+      "primary_urls": [
+        "https://journals.aps.org/prab/pdf/10.1103/4t6l-7jmg"
+      ],
+      "year": 2026,
+      "doi": "10.1103/4t6l-7jmg",
+      "kind": "primary_simulation_experiment"
+    },
+    {
+      "review_lane": "multifidelity",
+      "lane_id": "MF09",
+      "title": "Practical Bayesian Algorithm Execution via Posterior Sampling",
+      "primary_urls": [
+        "https://arxiv.org/html/2410.20596v1"
+      ],
+      "year": 2024,
+      "kind": "primary_method_paper"
+    },
+    {
+      "review_lane": "multifidelity",
+      "lane_id": "MF10",
+      "title": "PyEmittance: A General Python Package for Particle Beam Emittance Measurements with Adaptive Quadrupole Scans",
+      "primary_urls": [
+        "https://github.com/slaclab/PyEmittance"
+      ],
+      "year": 2022,
+      "doi": "10.18429/JACoW-IPAC2022-TUPOST059",
+      "kind": "official_implementation_and_primary_proceedings"
+    },
+    {
+      "review_lane": "multifidelity",
+      "lane_id": "MF11",
+      "title": "Xopt official implementation and multifidelity tutorial",
+      "primary_urls": [
+        "https://github.com/xopt-org/Xopt"
+      ],
+      "kind": "official_implementation"
+    },
+    {
+      "review_lane": "multifidelity",
+      "lane_id": "MF12",
+      "title": "Leveraging Trust for Joint Multi-Objective and Multi-Fidelity Optimization",
+      "primary_urls": [
+        "https://arxiv.org/abs/2112.13901"
+      ],
+      "year": 2023,
+      "kind": "primary_method_paper_and_author_repository"
+    },
+    {
+      "review_lane": "quantum_fit",
+      "lane_id": "Q1",
+      "title": "Lie-Algebraic Classical Simulation of Bosonic Systems Beyond Gaussian Dynamics",
+      "primary_urls": [
+        "https://arxiv.org/html/2608.17094v1"
+      ],
+      "publication_status": "primary preprint",
+      "inspection": "Abstract; VI.1–VI.3; Appendix I.3; code availability",
+      "authors": [
+        "Adelina Bärligea",
+        "Timothy Heightman",
+        "Jakob S. Kottmann",
+        "Antonio Acín"
+      ],
+      "date": "2026-08-17",
+      "limits": "Preprint; runtime excludes basis construction in some panels; no industrial adoption result"
+    },
+    {
+      "review_lane": "quantum_fit",
+      "lane_id": "Q2",
+      "title": "bosonic-gsim reference implementation",
+      "primary_urls": [
+        "https://github.com/TimothyHeightman/bosonic-gsim"
+      ],
+      "publication_status": "primary code repository",
+      "inspection": "Pinned minimal source subset ingested; Fig8 and Fig10 seeded replays executed unchanged.",
+      "license": "Apache-2.0",
+      "limits": "Two small examples executed; largest production tree and cluster job scripts not distributed; no industrial runtime gain established.",
+      "pinned_commit": "4eddbc9c838f7164520ae2ed06d1778beacd906a"
+    },
+    {
+      "review_lane": "quantum_fit",
+      "lane_id": "Q3",
+      "title": "QuantumCumulants.jl: convergence and validity",
+      "primary_urls": [
+        "https://qojulia.github.io/QuantumCumulants.jl/stable/convergence/"
+      ],
+      "publication_status": "official documentation",
+      "inspection": "source_audited; see fit chapter"
+    },
+    {
+      "review_lane": "quantum_fit",
+      "lane_id": "Q4",
+      "title": "Dynamiqs performance and physics benchmarks",
+      "primary_urls": [
+        "https://www.dynamiqs.org/stable/documentation/basics/performance.html"
+      ],
+      "publication_status": "official documentation and code",
+      "inspection": "source_audited; see fit chapter",
+      "limits": "No family-matched speedup independently run"
+    },
+    {
+      "review_lane": "quantum_fit",
+      "lane_id": "Q5",
+      "title": "Strawberry Fields FockBackend",
+      "primary_urls": [
+        "https://strawberryfields.readthedocs.io/en/latest/code/api/strawberryfields.backends.FockBackend.html"
+      ],
+      "publication_status": "official API documentation",
+      "inspection": "source_audited; see fit chapter"
+    },
+    {
+      "review_lane": "quantum_fit",
+      "lane_id": "Q6",
+      "title": "Fast simulation of bosonic qubits via Gaussian functions in phase space",
+      "primary_urls": [
+        "https://arxiv.org/abs/2103.05530"
+      ],
+      "publication_status": "primary paper",
+      "inspection": "Abstract and code pointer; not full methods",
+      "authors": [
+        "J. Eli Bourassa",
+        "Nicolás Quesada",
+        "Ilan Tzitrin",
+        "Antal Száva",
+        "Theodor Isacsson",
+        "Josh Izaac",
+        "Krishna Kumar Sabapathy",
+        "Guillaume Dauphinais",
+        "Ish Dhand"
+      ],
+      "date": "2021-03-09",
+      "doi": "10.1103/PRXQuantum.2.040315"
+    },
+    {
+      "review_lane": "quantum_fit",
+      "lane_id": "Q7",
+      "title": "Efficient classical computation of expectation values in a class of quantum circuits with an epistemically restricted phase space representation",
+      "primary_urls": [
+        "https://arxiv.org/abs/2106.10881"
+      ],
+      "publication_status": "primary paper",
+      "inspection": "Abstract; no runnable code independently verified",
+      "authors": [
+        "Agung Budiyono",
+        "Hermawan K. Dipojono"
+      ],
+      "date": "2020",
+      "doi": "10.1038/s41598-020-71836-8"
+    },
+    {
+      "review_lane": "method_fit",
+      "lane_id": "MFIT1",
+      "title": "A Readout-Aware Theory of Approximate Heisenberg Propagation",
+      "primary_urls": [
+        "https://arxiv.org/html/2610.26222v1"
+      ],
+      "date": "2026-10-19",
+      "publication_status": "primary preprint",
+      "inspection": "full text; finite-dimensional defect-transfer assumptions inspected"
+    },
+    {
+      "review_lane": "method_fit",
+      "lane_id": "MFIT2",
+      "title": "Strawberry Fields: A Software Platform for Photonic Quantum Computing",
+      "primary_urls": [
+        "https://arxiv.org/abs/1804.03159"
+      ],
+      "date": "2019",
+      "publication_status": "Quantum 3, 129 (2019)",
+      "inspection": "abstract and official software pointer"
+    }
+  ]
+}
