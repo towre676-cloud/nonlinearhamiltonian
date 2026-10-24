@@ -49,5 +49,23 @@ they are not an optimization or industrial speedup. RF, radiation, space charge
 and errors are off. Existing research verification is a separate command under
 `research/beam_integration/replay_all.py` in the full project.
 
+`check_aperture_brackets.py` is the spec's optional checked layer. It is exact
+finite-table arithmetic and needs no simulator. Unknown labels are bracketed by
+their all-zero and all-one completions, for both weighted and origin-connected
+grid objectives. Short-horizon losses decide labels; short-horizon survivals
+stay unknown. Pareto exclusion uses only bracket domination. Run without
+arguments, it brute-forces every claim over all completions of random small
+tables. `--runtime DIR` (Accelerator Toolbox 0.9.0) reruns the staged HMBA
+demonstration stored in `aperture_brackets_hmba.json`.
+
+That run found that before the horizon every lower bound is 0, so brackets
+alone never exclude a candidate. With the nominal sextupoles resolved first,
+the illustrative 1.10 scaling was excluded at 16 turns, using 87048
+particle-turns against 117796 for full resolution. The scalings break the
+chromaticity correction, so this is a checker test, not a tuning result.
+
+`check_emittance_residual.py` checks the rms-emittance kick identity, its
+triangle bound and the 4D Schur-complement form exactly on rational clouds.
+
 The literature performance numbers were source-audited rather than rerun.
 [RESEARCH_CLAIMS.json](RESEARCH_CLAIMS.json) preserves that boundary.

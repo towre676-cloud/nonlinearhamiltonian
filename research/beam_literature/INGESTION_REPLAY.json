@@ -4,7 +4,7 @@
     {
       "script": "check_dataset_samples.py",
       "exit_code": 0,
-      "checker_seconds": 0.2370009790029144,
+      "checker_seconds": 0.3840721480000866,
       "result": {
         "status": "passed",
         "lattice_files_hash_checked": 3,
@@ -30,7 +30,7 @@
     {
       "script": "inspect_multifidelity_data.py",
       "exit_code": 0,
-      "checker_seconds": 0.1745891219979967,
+      "checker_seconds": 0.32605406999982733,
       "result": {
         "rows": 2443,
         "unique_encoded_inputs": 2286,
@@ -42,7 +42,7 @@
     {
       "script": "differentiable_data/replay_memory.py",
       "exit_code": 0,
-      "checker_seconds": 0.07996550499956356,
+      "checker_seconds": 0.11166014699983862,
       "result": {
         "status": "passed_data_ingestion_and_descriptive_fit",
         "source_version": 17822326,
@@ -68,12 +68,39 @@
     {
       "script": "check_core_vs_tractability.py",
       "exit_code": 0,
-      "checker_seconds": 0.023670593000133522,
+      "checker_seconds": 0.03617343700011588,
       "result": {
         "status": "passed",
         "iterates": 13,
-        "output": "/workspace/scratch/9c6a3d2e42ab/claude-main/research/beam_literature/core_vs_tractability_exact_replay.json",
+        "output": "/home/user/nonlinearhamiltonian/research/beam_literature/core_vs_tractability_exact_replay.json",
         "last_coefficient": "1964187225"
+      }
+    },
+    {
+      "script": "check_aperture_brackets.py",
+      "exit_code": 0,
+      "checker_seconds": 0.5986981149999338,
+      "result": {
+        "status": "passed",
+        "completions_checked": 20040,
+        "checks": [
+          "weighted bracket sound and attained",
+          "origin-connected bracket sound and attained",
+          "short-horizon labels never contradict the true label",
+          "Pareto exclusion holds for every completion"
+        ]
+      }
+    },
+    {
+      "script": "check_emittance_residual.py",
+      "exit_code": 0,
+      "checker_seconds": 0.822769949999838,
+      "result": {
+        "status": "passed",
+        "exact_2d_clouds": 399,
+        "exact_4d_schur_clouds": 400,
+        "seed": 1,
+        "trials": 400
       }
     }
   ],
@@ -81,6 +108,7 @@
   "distinct_primary_url_strings": 81,
   "dataset_asset_groups": 12,
   "stored_ring_probe_consistency": "passed",
+  "stored_bracket_demo_consistency": "passed",
   "new_ring_tracking_run": false,
   "quantum_source_files_hash_checked": 21,
   "stored_quantum_examples_consistency": "passed",

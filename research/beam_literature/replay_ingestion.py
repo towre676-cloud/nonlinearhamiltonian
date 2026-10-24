@@ -33,7 +33,8 @@ def main():
     env={**os.environ,'OPENBLAS_NUM_THREADS':'1','OMP_NUM_THREADS':'1','MKL_NUM_THREADS':'1'}
     runs=[]
     for script in ['check_dataset_samples.py','inspect_multifidelity_data.py',
-                   'differentiable_data/replay_memory.py', 'check_core_vs_tractability.py']:
+                   'differentiable_data/replay_memory.py', 'check_core_vs_tractability.py',
+                   'check_aperture_brackets.py', 'check_emittance_residual.py']:
         start=time.perf_counter()
         command=[sys.executable,'-B',str(HERE/script)]
         result=subprocess.run(command,cwd=ROOT,env=env,capture_output=True,text=True)
@@ -52,6 +53,17 @@ def main():
         require(len(ring[label])==3 and all(math.isfinite(t)and t>0 for t in ring[label]),'stored timers')
     ratio=statistics.median(ring['cached_single_seconds'])/statistics.median(ring['batch_seconds'])
     require(abs(ratio-ring['batching_gain_median'])<1e-12,'stored timer arithmetic')
+    from fractions import Fraction
+    brk=json.loads((HERE/'aperture_brackets_hmba.json').read_text())
+    require(brk['lattice_sha256']==ring['lattice_sha256'],'bracket demo source')
+    truth={c:[Fraction(v)for v in vals]for c,vals in brk['resolved_connected_mm2'].items()}
+    for entry in brk['stage_log']:
+        for c,rows in entry['brackets_mm2'].items():
+            require(all(Fraction(lo)<=v<=Fraction(hi)for(lo,hi),v in zip(rows,truth[c])),'stored bracket containment')
+        for a,b in entry['excluded_now'].items():
+            require(all(y>=x for x,y in zip(truth[a],truth[b]))and truth[a]!=truth[b],'stored exclusion')
+    cost=brk['cost']
+    require(cost['checked_workflow']['particle_turns_tracked']<=cost['full_resolution_particle_turns'],'stored bracket cost')
     quantum_dir=HERE/'bosonic_gsim_replay'
     quantum_sources=json.loads((quantum_dir/'source_manifest.json').read_text())
     require(quantum_sources['commit']=='4eddbc9c838f7164520ae2ed06d1778beacd906a','quantum pin')
@@ -80,7 +92,7 @@ def main():
         require(all(math.isfinite(v)and 0<=v<1e-12 for v in metrics),'stored quantum residuals')
     report={'status':'passed','data_and_exact_replays':runs,'method_source_records':len(catalog['sources']),
             'distinct_primary_url_strings':url_count,'dataset_asset_groups':12,
-            'stored_ring_probe_consistency':'passed','new_ring_tracking_run':False,
+            'stored_ring_probe_consistency':'passed','stored_bracket_demo_consistency':'passed','new_ring_tracking_run':False,
             'quantum_source_files_hash_checked':21,'stored_quantum_examples_consistency':'passed',
             'new_quantum_simulation_run':False,
             'published_speedups_reproduced':False,

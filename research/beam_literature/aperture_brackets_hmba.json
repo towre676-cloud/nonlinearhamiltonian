@@ -1,0 +1,290 @@
+{
+  "status": "passed",
+  "scope": "exact finite-table bracket checker on a staged HMBA run; illustrative sextupole scalings that break chromaticity correction; no tuning claim",
+  "lattice_sha256": "8547502b0a4612a0e145fa6033e5ba98bb13567035fed43cadef760dae385c7b",
+  "horizon_turns": 512,
+  "stages": [
+    16,
+    64,
+    256
+  ],
+  "grid": {
+    "x_mm": [
+      -12,
+      12,
+      2
+    ],
+    "y_mm": [
+      0,
+      6,
+      1
+    ],
+    "points": 91,
+    "objective": "area (mm^2) of survivors 4-connected to (0,0)",
+    "deltas": [
+      "0",
+      "1/50"
+    ]
+  },
+  "candidates": {
+    "s1.00": "1",
+    "s0.90": "9/10",
+    "s1.10": "11/10"
+  },
+  "incumbent": "fully resolved first; brackets alone never exclude before the horizon because no survival is decided earlier, so every lower bound is 0",
+  "stage_log": [
+    {
+      "advanced": [
+        "s1.00"
+      ],
+      "to_turns": 512,
+      "brackets_mm2": {
+        "s1.00": [
+          [
+            "114",
+            "114"
+          ],
+          [
+            "32",
+            "32"
+          ]
+        ],
+        "s0.90": [
+          [
+            "0",
+            "182"
+          ],
+          [
+            "0",
+            "182"
+          ]
+        ],
+        "s1.10": [
+          [
+            "0",
+            "182"
+          ],
+          [
+            "0",
+            "182"
+          ]
+        ]
+      },
+      "excluded_now": {},
+      "particle_turns_so_far": 39046
+    },
+    {
+      "advanced": [
+        "s0.90",
+        "s1.10"
+      ],
+      "to_turns": 16,
+      "brackets_mm2": {
+        "s1.00": [
+          [
+            "114",
+            "114"
+          ],
+          [
+            "32",
+            "32"
+          ]
+        ],
+        "s0.90": [
+          [
+            "0",
+            "164"
+          ],
+          [
+            "0",
+            "30"
+          ]
+        ],
+        "s1.10": [
+          [
+            "0",
+            "108"
+          ],
+          [
+            "0",
+            "32"
+          ]
+        ]
+      },
+      "excluded_now": {
+        "s1.10": "s1.00"
+      },
+      "particle_turns_so_far": 42059
+    },
+    {
+      "advanced": [
+        "s0.90"
+      ],
+      "to_turns": 64,
+      "brackets_mm2": {
+        "s1.00": [
+          [
+            "114",
+            "114"
+          ],
+          [
+            "32",
+            "32"
+          ]
+        ],
+        "s0.90": [
+          [
+            "0",
+            "158"
+          ],
+          [
+            "0",
+            "30"
+          ]
+        ],
+        "s1.10": [
+          [
+            "0",
+            "108"
+          ],
+          [
+            "0",
+            "32"
+          ]
+        ]
+      },
+      "excluded_now": {},
+      "particle_turns_so_far": 46639
+    },
+    {
+      "advanced": [
+        "s0.90"
+      ],
+      "to_turns": 256,
+      "brackets_mm2": {
+        "s1.00": [
+          [
+            "114",
+            "114"
+          ],
+          [
+            "32",
+            "32"
+          ]
+        ],
+        "s0.90": [
+          [
+            "0",
+            "150"
+          ],
+          [
+            "0",
+            "30"
+          ]
+        ],
+        "s1.10": [
+          [
+            "0",
+            "108"
+          ],
+          [
+            "0",
+            "32"
+          ]
+        ]
+      },
+      "excluded_now": {},
+      "particle_turns_so_far": 64230
+    },
+    {
+      "advanced": [
+        "s0.90"
+      ],
+      "to_turns": 512,
+      "brackets_mm2": {
+        "s1.00": [
+          [
+            "114",
+            "114"
+          ],
+          [
+            "32",
+            "32"
+          ]
+        ],
+        "s0.90": [
+          [
+            "148",
+            "148"
+          ],
+          [
+            "30",
+            "30"
+          ]
+        ],
+        "s1.10": [
+          [
+            "0",
+            "108"
+          ],
+          [
+            "0",
+            "32"
+          ]
+        ]
+      },
+      "excluded_now": {},
+      "particle_turns_so_far": 87048
+    }
+  ],
+  "resolved_connected_mm2": {
+    "s1.00": [
+      "114",
+      "32"
+    ],
+    "s0.90": [
+      "148",
+      "30"
+    ],
+    "s1.10": [
+      "90",
+      "30"
+    ]
+  },
+  "resolved_unconnected_count_mm2": {
+    "s1.00": [
+      "114",
+      "32"
+    ],
+    "s0.90": [
+      "148",
+      "30"
+    ],
+    "s1.10": [
+      "90",
+      "30"
+    ]
+  },
+  "all_brackets_contain_resolved_values": true,
+  "all_exclusions_confirmed": true,
+  "cost": {
+    "checked_workflow": {
+      "particle_turns_tracked": 87048,
+      "tracking_seconds": 129.75441549699985,
+      "checker_seconds": 0.004443094000180281
+    },
+    "full_resolution_particle_turns": 117796,
+    "full_resolution_tracking_seconds": 175.00129558499998
+  },
+  "physics": {
+    "radiation": false,
+    "rf": false,
+    "space_charge": false,
+    "errors": false
+  },
+  "versions": {
+    "accelerator-toolbox": "0.9.0",
+    "numpy": "2.5.4",
+    "scipy": "1.18.1"
+  }
+}

@@ -52,6 +52,26 @@
       "boundary": "Only the distributed small examples; no industrial gain, exhaustive test pass, largest-run reproduction or new algorithm claim."
     },
     {
+      "id": "REVIEW-CHECKED-001",
+      "status": "proved_elementary_with_exhaustive_finite_replay",
+      "statement": "For nonnegative weights, the weighted and origin-connected finite-grid aperture objectives are monotone in the survival labels, so the all-zero and all-one completions of unknown labels give exact, attained brackets; short-horizon losses decide long-horizon labels while short-horizon survivals stay unknown; lower/upper domination of brackets is a sound Pareto exclusion.",
+      "checker": "check_aperture_brackets.py",
+      "boundary": "Finite-table statements about the declared grid and oracle labels only; no continuous-aperture, convergence, model-confidence or speedup claim."
+    },
+    {
+      "id": "REVIEW-CHECKED-HMBA-001",
+      "status": "executed_illustrative_demo",
+      "statement": "A staged HMBA run (aperture_brackets_hmba.json) applied the checker to three sextupole scalings (0.90, 1.00, 1.10) with a 91-point grid, delta in {0, 0.02} and a 512-turn horizon. Brackets alone excluded nothing before the horizon, since every lower bound is 0; with the nominal setting fully resolved first, the 1.10 scaling was excluded after 16 turns, and 87048 particle-turns were tracked against 117796 for full resolution. Every stage bracket and the exclusion were confirmed against the fully resolved table.",
+      "boundary": "Illustrative candidates that break chromaticity correction, one launch grid, one horizon, no errors/RF/radiation; not a tuning result, not a multipointBAX comparison."
+    },
+    {
+      "id": "REVIEW-EMIT-001",
+      "status": "proved_elementary_with_exact_replay",
+      "statement": "For a centered cloud and thin kick p -> p + hF, (eps+)^2 = eps^2 + 2ha E[ug] + h^2 a E[g^2] with u = p-(b/a)x, g = F-(E[xF]/a)x, |eps+ - eps| <= |h| sqrt(a E[g^2]); in 4D, det Sigma+ = det A det(S + h(Cov(U,G)+Cov(G,U)) + h^2 Cov(G)) with S the Schur complement.",
+      "checker": "check_emittance_residual.py",
+      "boundary": "Standard covariance algebra checked on rational clouds; no envelope-model, space-charge or simulator claim."
+    },
+    {
       "id": "REVIEW-TENFOLD-001",
       "status": "unproved_target",
       "statement": "Our own tenfold complete industrial tuning gain over the strongest ordinary workflow remains unestablished.",
