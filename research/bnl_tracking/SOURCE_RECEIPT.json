@@ -1,0 +1,62 @@
+{
+  "repo": "NSLS2/PyELEGANT",
+  "commit": "11d97113ea7ae05fd0ffe710a88793f2bdc9ed84",
+  "tree": "cef5ab579ae65b8843b63467879cb0134441d34d",
+  "license": "BSD-3-Clause",
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 8333,
+      "sha256": "6c51e45adb56803cdf00d5ed568a3dbc5b2b5450315fe70964e04dd9c8f67bb8",
+      "git_blob_sha": "72cf631b4689baac0790f401c6a5f7b7fe6a4613"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 1538,
+      "sha256": "f4a77e5c746dc535c50793072ee7005679376c19edca1a279c0204e98a5716c7",
+      "git_blob_sha": "c7d8d3846cf934183aadcf89b1b062f1fad39efd"
+    },
+    {
+      "path": "demo/nsls2cb65pm.lte",
+      "bytes": 3190,
+      "sha256": "cbe4cbdc19ddec39e2e999c5337bf7cde93113570fd0639ac1e03007aa8355cb",
+      "git_blob_sha": "476fef20949213c00c535b16691b4d0e5895e384"
+    },
+    {
+      "path": "demo/demo_calc_plot_twiss.ipynb",
+      "bytes": 15950,
+      "sha256": "1412889ed8a066f895bf53680ce5b2616523d1640f6e3d3dbff53c5cac24daf5",
+      "git_blob_sha": "a215cf77cd7e764d281d090de083ddeea690804d"
+    },
+    {
+      "path": "demo/demo_find_aper.ipynb",
+      "bytes": 4201,
+      "sha256": "f0d0c90c63d9313f3df9912ecb039f54b7a1500de51809b2e8d40b975eb61d37",
+      "git_blob_sha": "f582349b6bf8f35ad89f9f38d3457145333eb1b5"
+    },
+    {
+      "path": "demo/20170905_bare.lte",
+      "bytes": 139616,
+      "sha256": "07b5cc39bf0924db3a1ebfdaa7f2595c16a6fde7dd34a0c087546688d848e3e9",
+      "git_blob_sha": "4d1a74389c8e27aa79f89377eed874a6ff286fbb"
+    }
+  ],
+  "loaded_model": {
+    "file": "demo/nsls2cb65pm.lte",
+    "pyat": "0.9.0",
+    "energy_eV": 3000000000.0,
+    "elements": 3030,
+    "periodicity": 1,
+    "circumference_m": 791.9579999999895,
+    "tune_fractional": [
+      0.26608075821385785,
+      0.1881262700297226
+    ],
+    "aperture_elements": 0,
+    "RF_in_selected_USE_RING": false,
+    "radiation_in_selected_USE_RING": false,
+    "integration_fidelity_warning": "LTE N_KICKS=40 is not mapped by PyAT importer; all multipoles default to NumIntSteps=10. Set explicitly and qualify before comparison.",
+    "elegant_K2_to_AT_PolynomB2": "divide by2"
+  },
+  "scope": "Public historical NSLS-II CB demonstrator, not current operational lattice or 2026 two-CB replacement model."
+}

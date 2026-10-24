@@ -1,0 +1,24 @@
+{
+  "scope": "Removed affine linear elements only; not full ct trajectory equivalence or nonlinear-element finiteness.",
+  "coordinates": "SI numeric chart, delta=0, native-surviving element entrance transverse infinity norm<=1, initial ct=0.",
+  "source_bounds": {
+    "normal_quadrupole_coefficient_abs_upper": "26",
+    "curvature_abs_upper": "7/50",
+    "magnet_length_upper": "23/50",
+    "drift_length_upper": "93/20",
+    "sum_absolute_drift_coefficients_upper": "1703/1000",
+    "sum_absolute_kick_coefficients_upper": "881/200",
+    "two_edge_log_norm_upper": "1/100"
+  },
+  "norm_exponent_upper": "1337922387/25000000",
+  "exponent_less_than": 54,
+  "primitive_magnitude_upper_integer": "58149737003040059690390169",
+  "argument": "Each elementary shear has norm <=exp(abs(coefficient)*generator_norm). Submultiplicativity and e<3 give every removed magnet primitive norm <3^54. Drifts have norm<=5.65<3^54. No offset occurs for the selected delta0 model.",
+  "ct_increment_per_removed_element_upper_integer": "6762783827045452685860442944784482340397054903697122",
+  "ct_increment_all_removed_elements_4096_turns_upper_integer": "71466935393391689439313685698740078338967149164702002216960",
+  "ct_total_less_than_power10": 60,
+  "removed_elements_per_turn": 2580,
+  "maximum_turns": 4096,
+  "arithmetic": "Python arbitrary precision integers and Fraction inequalities",
+  "qualification": "Real-arithmetic magnitude bound with enormous overflow margin; not a formal IEEE enclosure. Retained sextupole maps and complete native ct finiteness remain separate conditions."
+}

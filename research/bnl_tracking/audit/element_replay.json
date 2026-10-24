@@ -1,0 +1,550 @@
+{
+  "status": "passed",
+  "points_per_element": 100,
+  "element_cases": 108,
+  "maximum_residual": 6.938893903907228e-18,
+  "compiler_sha256": "dfcc62a9e70623d3b2f3d8d0358163724219e38495465ed68bd2018bcbe6cb91",
+  "rows": [
+    {
+      "family": "DHB",
+      "dp": 0.0,
+      "max_transverse_residual": 8.673617379884035e-19
+    },
+    {
+      "family": "DHSQ1",
+      "dp": 0.0,
+      "max_transverse_residual": 2.168404344971009e-19
+    },
+    {
+      "family": "QH1",
+      "dp": 0.0,
+      "max_transverse_residual": 4.9873299934333204e-18
+    },
+    {
+      "family": "DQH1SQ",
+      "dp": 0.0,
+      "max_transverse_residual": 1.0842021724855044e-19
+    },
+    {
+      "family": "SQH",
+      "dp": 0.0,
+      "max_transverse_residual": 2.168404344971009e-19
+    },
+    {
+      "family": "DSQQH2",
+      "dp": 0.0,
+      "max_transverse_residual": 2.168404344971009e-19
+    },
+    {
+      "family": "QH2",
+      "dp": 0.0,
+      "max_transverse_residual": 1.951563910473908e-18
+    },
+    {
+      "family": "DQS1",
+      "dp": 0.0,
+      "max_transverse_residual": 2.168404344971009e-19
+    },
+    {
+      "family": "DSH3QH3",
+      "dp": 0.0,
+      "max_transverse_residual": 1.0842021724855044e-19
+    },
+    {
+      "family": "QH3",
+      "dp": 0.0,
+      "max_transverse_residual": 1.734723475976807e-18
+    },
+    {
+      "family": "HDD",
+      "dp": 0.0,
+      "max_transverse_residual": 2.168404344971009e-19
+    },
+    {
+      "family": "HBD",
+      "dp": 0.0,
+      "max_transverse_residual": 2.168404344971009e-18
+    },
+    {
+      "family": "DD",
+      "dp": 0.0,
+      "max_transverse_residual": 1.3552527156068805e-20
+    },
+    {
+      "family": "HBF",
+      "dp": 0.0,
+      "max_transverse_residual": 3.0357660829594124e-18
+    },
+    {
+      "family": "BD",
+      "dp": 0.0,
+      "max_transverse_residual": 3.469446951953614e-18
+    },
+    {
+      "family": "BF",
+      "dp": 0.0,
+      "max_transverse_residual": 2.168404344971009e-18
+    },
+    {
+      "family": "BM1",
+      "dp": 0.0,
+      "max_transverse_residual": 1.951563910473908e-18
+    },
+    {
+      "family": "BM2",
+      "dp": 0.0,
+      "max_transverse_residual": 3.903127820947816e-18
+    },
+    {
+      "family": "MDD1",
+      "dp": 0.0,
+      "max_transverse_residual": 2.168404344971009e-19
+    },
+    {
+      "family": "QM1",
+      "dp": 0.0,
+      "max_transverse_residual": 2.6020852139652106e-18
+    },
+    {
+      "family": "MDD2",
+      "dp": 0.0,
+      "max_transverse_residual": 1.0842021724855044e-19
+    },
+    {
+      "family": "MDD3",
+      "dp": 0.0,
+      "max_transverse_residual": 2.168404344971009e-19
+    },
+    {
+      "family": "QM2",
+      "dp": 0.0,
+      "max_transverse_residual": 1.951563910473908e-18
+    },
+    {
+      "family": "MDD4",
+      "dp": 0.0,
+      "max_transverse_residual": 5.421010862427522e-20
+    },
+    {
+      "family": "LBF",
+      "dp": 0.0,
+      "max_transverse_residual": 3.903127820947816e-18
+    },
+    {
+      "family": "LBD",
+      "dp": 0.0,
+      "max_transverse_residual": 1.3010426069826053e-18
+    },
+    {
+      "family": "LDD",
+      "dp": 0.0,
+      "max_transverse_residual": 2.168404344971009e-19
+    },
+    {
+      "family": "QL3",
+      "dp": 0.0,
+      "max_transverse_residual": 8.673617379884035e-19
+    },
+    {
+      "family": "DQL3SL3",
+      "dp": 0.0,
+      "max_transverse_residual": 2.168404344971009e-19
+    },
+    {
+      "family": "DQL2SL3",
+      "dp": 0.0,
+      "max_transverse_residual": 2.168404344971009e-19
+    },
+    {
+      "family": "QL2",
+      "dp": 0.0,
+      "max_transverse_residual": 2.168404344971009e-18
+    },
+    {
+      "family": "DSL2QL2",
+      "dp": 0.0,
+      "max_transverse_residual": 1.0842021724855044e-19
+    },
+    {
+      "family": "DQL1SL2",
+      "dp": 0.0,
+      "max_transverse_residual": 2.168404344971009e-19
+    },
+    {
+      "family": "QL1",
+      "dp": 0.0,
+      "max_transverse_residual": 2.168404344971009e-18
+    },
+    {
+      "family": "DSL1QL1",
+      "dp": 0.0,
+      "max_transverse_residual": 2.168404344971009e-19
+    },
+    {
+      "family": "DLB",
+      "dp": 0.0,
+      "max_transverse_residual": 8.673617379884035e-19
+    },
+    {
+      "family": "DHB",
+      "dp": 0.02,
+      "max_transverse_residual": 1.734723475976807e-18
+    },
+    {
+      "family": "DHSQ1",
+      "dp": 0.02,
+      "max_transverse_residual": 2.168404344971009e-19
+    },
+    {
+      "family": "QH1",
+      "dp": 0.02,
+      "max_transverse_residual": 3.686287386450715e-18
+    },
+    {
+      "family": "DQH1SQ",
+      "dp": 0.02,
+      "max_transverse_residual": 1.0842021724855044e-19
+    },
+    {
+      "family": "SQH",
+      "dp": 0.02,
+      "max_transverse_residual": 1.0842021724855044e-19
+    },
+    {
+      "family": "DSQQH2",
+      "dp": 0.02,
+      "max_transverse_residual": 2.168404344971009e-19
+    },
+    {
+      "family": "QH2",
+      "dp": 0.02,
+      "max_transverse_residual": 2.8189256484623115e-18
+    },
+    {
+      "family": "DQS1",
+      "dp": 0.02,
+      "max_transverse_residual": 1.0842021724855044e-19
+    },
+    {
+      "family": "DSH3QH3",
+      "dp": 0.02,
+      "max_transverse_residual": 1.0842021724855044e-19
+    },
+    {
+      "family": "QH3",
+      "dp": 0.02,
+      "max_transverse_residual": 2.6020852139652106e-18
+    },
+    {
+      "family": "HDD",
+      "dp": 0.02,
+      "max_transverse_residual": 2.168404344971009e-19
+    },
+    {
+      "family": "HBD",
+      "dp": 0.02,
+      "max_transverse_residual": 1.3010426069826053e-18
+    },
+    {
+      "family": "DD",
+      "dp": 0.02,
+      "max_transverse_residual": 1.0842021724855044e-19
+    },
+    {
+      "family": "HBF",
+      "dp": 0.02,
+      "max_transverse_residual": 3.903127820947816e-18
+    },
+    {
+      "family": "BD",
+      "dp": 0.02,
+      "max_transverse_residual": 2.6020852139652106e-18
+    },
+    {
+      "family": "BF",
+      "dp": 0.02,
+      "max_transverse_residual": 5.204170427930421e-18
+    },
+    {
+      "family": "BM1",
+      "dp": 0.02,
+      "max_transverse_residual": 2.3852447794681098e-18
+    },
+    {
+      "family": "BM2",
+      "dp": 0.02,
+      "max_transverse_residual": 2.3852447794681098e-18
+    },
+    {
+      "family": "MDD1",
+      "dp": 0.02,
+      "max_transverse_residual": 4.336808689942018e-19
+    },
+    {
+      "family": "QM1",
+      "dp": 0.02,
+      "max_transverse_residual": 1.3010426069826053e-18
+    },
+    {
+      "family": "MDD2",
+      "dp": 0.02,
+      "max_transverse_residual": 1.0842021724855044e-19
+    },
+    {
+      "family": "MDD3",
+      "dp": 0.02,
+      "max_transverse_residual": 2.168404344971009e-19
+    },
+    {
+      "family": "QM2",
+      "dp": 0.02,
+      "max_transverse_residual": 2.6020852139652106e-18
+    },
+    {
+      "family": "MDD4",
+      "dp": 0.02,
+      "max_transverse_residual": 5.421010862427522e-20
+    },
+    {
+      "family": "LBF",
+      "dp": 0.02,
+      "max_transverse_residual": 6.071532165918825e-18
+    },
+    {
+      "family": "LBD",
+      "dp": 0.02,
+      "max_transverse_residual": 1.3010426069826053e-18
+    },
+    {
+      "family": "LDD",
+      "dp": 0.02,
+      "max_transverse_residual": 2.168404344971009e-19
+    },
+    {
+      "family": "QL3",
+      "dp": 0.02,
+      "max_transverse_residual": 1.734723475976807e-18
+    },
+    {
+      "family": "DQL3SL3",
+      "dp": 0.02,
+      "max_transverse_residual": 1.0842021724855044e-19
+    },
+    {
+      "family": "DQL2SL3",
+      "dp": 0.02,
+      "max_transverse_residual": 2.168404344971009e-19
+    },
+    {
+      "family": "QL2",
+      "dp": 0.02,
+      "max_transverse_residual": 1.951563910473908e-18
+    },
+    {
+      "family": "DSL2QL2",
+      "dp": 0.02,
+      "max_transverse_residual": 2.168404344971009e-19
+    },
+    {
+      "family": "DQL1SL2",
+      "dp": 0.02,
+      "max_transverse_residual": 2.168404344971009e-19
+    },
+    {
+      "family": "QL1",
+      "dp": 0.02,
+      "max_transverse_residual": 1.951563910473908e-18
+    },
+    {
+      "family": "DSL1QL1",
+      "dp": 0.02,
+      "max_transverse_residual": 2.168404344971009e-19
+    },
+    {
+      "family": "DLB",
+      "dp": 0.02,
+      "max_transverse_residual": 4.336808689942018e-19
+    },
+    {
+      "family": "DHB",
+      "dp": -0.03,
+      "max_transverse_residual": 8.673617379884035e-19
+    },
+    {
+      "family": "DHSQ1",
+      "dp": -0.03,
+      "max_transverse_residual": 2.168404344971009e-19
+    },
+    {
+      "family": "QH1",
+      "dp": -0.03,
+      "max_transverse_residual": 1.951563910473908e-18
+    },
+    {
+      "family": "DQH1SQ",
+      "dp": -0.03,
+      "max_transverse_residual": 2.168404344971009e-19
+    },
+    {
+      "family": "SQH",
+      "dp": -0.03,
+      "max_transverse_residual": 2.168404344971009e-19
+    },
+    {
+      "family": "DSQQH2",
+      "dp": -0.03,
+      "max_transverse_residual": 2.168404344971009e-19
+    },
+    {
+      "family": "QH2",
+      "dp": -0.03,
+      "max_transverse_residual": 2.8189256484623115e-18
+    },
+    {
+      "family": "DQS1",
+      "dp": -0.03,
+      "max_transverse_residual": 2.168404344971009e-19
+    },
+    {
+      "family": "DSH3QH3",
+      "dp": -0.03,
+      "max_transverse_residual": 1.0842021724855044e-19
+    },
+    {
+      "family": "QH3",
+      "dp": -0.03,
+      "max_transverse_residual": 2.6020852139652106e-18
+    },
+    {
+      "family": "HDD",
+      "dp": -0.03,
+      "max_transverse_residual": 2.168404344971009e-19
+    },
+    {
+      "family": "HBD",
+      "dp": -0.03,
+      "max_transverse_residual": 1.951563910473908e-18
+    },
+    {
+      "family": "DD",
+      "dp": -0.03,
+      "max_transverse_residual": 5.421010862427522e-20
+    },
+    {
+      "family": "HBF",
+      "dp": -0.03,
+      "max_transverse_residual": 3.469446951953614e-18
+    },
+    {
+      "family": "BD",
+      "dp": -0.03,
+      "max_transverse_residual": 3.686287386450715e-18
+    },
+    {
+      "family": "BF",
+      "dp": -0.03,
+      "max_transverse_residual": 3.469446951953614e-18
+    },
+    {
+      "family": "BM1",
+      "dp": -0.03,
+      "max_transverse_residual": 2.6020852139652106e-18
+    },
+    {
+      "family": "BM2",
+      "dp": -0.03,
+      "max_transverse_residual": 1.3010426069826053e-18
+    },
+    {
+      "family": "MDD1",
+      "dp": -0.03,
+      "max_transverse_residual": 4.336808689942018e-19
+    },
+    {
+      "family": "QM1",
+      "dp": -0.03,
+      "max_transverse_residual": 4.119968255444917e-18
+    },
+    {
+      "family": "MDD2",
+      "dp": -0.03,
+      "max_transverse_residual": 1.0842021724855044e-19
+    },
+    {
+      "family": "MDD3",
+      "dp": -0.03,
+      "max_transverse_residual": 2.168404344971009e-19
+    },
+    {
+      "family": "QM2",
+      "dp": -0.03,
+      "max_transverse_residual": 2.6020852139652106e-18
+    },
+    {
+      "family": "MDD4",
+      "dp": -0.03,
+      "max_transverse_residual": 2.168404344971009e-19
+    },
+    {
+      "family": "LBF",
+      "dp": -0.03,
+      "max_transverse_residual": 6.938893903907228e-18
+    },
+    {
+      "family": "LBD",
+      "dp": -0.03,
+      "max_transverse_residual": 1.734723475976807e-18
+    },
+    {
+      "family": "LDD",
+      "dp": -0.03,
+      "max_transverse_residual": 2.168404344971009e-19
+    },
+    {
+      "family": "QL3",
+      "dp": -0.03,
+      "max_transverse_residual": 1.5178830414797062e-18
+    },
+    {
+      "family": "DQL3SL3",
+      "dp": -0.03,
+      "max_transverse_residual": 1.0842021724855044e-19
+    },
+    {
+      "family": "DQL2SL3",
+      "dp": -0.03,
+      "max_transverse_residual": 2.168404344971009e-19
+    },
+    {
+      "family": "QL2",
+      "dp": -0.03,
+      "max_transverse_residual": 1.734723475976807e-18
+    },
+    {
+      "family": "DSL2QL2",
+      "dp": -0.03,
+      "max_transverse_residual": 1.0842021724855044e-19
+    },
+    {
+      "family": "DQL1SL2",
+      "dp": -0.03,
+      "max_transverse_residual": 2.168404344971009e-19
+    },
+    {
+      "family": "QL1",
+      "dp": -0.03,
+      "max_transverse_residual": 1.5178830414797062e-18
+    },
+    {
+      "family": "DSL1QL1",
+      "dp": -0.03,
+      "max_transverse_residual": 2.168404344971009e-19
+    },
+    {
+      "family": "DLB",
+      "dp": -0.03,
+      "max_transverse_residual": 8.673617379884035e-19
+    }
+  ],
+  "scope": "Independent native element numerical tests; supports affine formula implementation, not rigorous float equivalence or full-ring aperture theorem."
+}

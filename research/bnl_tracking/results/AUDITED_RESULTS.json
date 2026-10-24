@@ -1,0 +1,333 @@
+{
+  "status": "passed",
+  "confirmation_protocol_sha256": "f6fa445bb33603021ed4b867fac14ee1947369c8324fd46f73a048d34dd7533b",
+  "checked_archive_files": 255,
+  "reference_agreement_points": 63,
+  "reference_unresolved_indices": [
+    48
+  ],
+  "confirmation_point_evaluations_including_guard_reruns": 2952,
+  "best_qualified_existing_method": "analytic10",
+  "reference_generation_seconds": 75.00256698300655,
+  "measured_confirmation_campaign_seconds": 164.7728534020207,
+  "amortization_scope": "Reference-only threshold excludes candidate search. Campaign threshold charges all 15 methods and repeats, each setup/warmup and one build; excludes earlier exploration, package/interpreter startup and reporting. Additional distinct equal-cost queries, reusing the qualified configuration; no future qualification or generalization guarantee.",
+  "rows": [
+    {
+      "method": "native2",
+      "qualified": false,
+      "label_error_indices": [
+        17,
+        33,
+        40,
+        50,
+        57,
+        62
+      ],
+      "core_position_max_abs_m": 0.00027550732789175344,
+      "core_momentum_max_abs_normalized": 2.1991943113577983e-05,
+      "median_tracking_with_fallback_seconds": 1.4527352430013707,
+      "construction_and_warmup_seconds": 0.10566829200251959,
+      "plugin_build_seconds": 0.0,
+      "first_workload_seconds": 1.5584035350038903,
+      "fallback_counts": [
+        0,
+        0,
+        0
+      ],
+      "elements": 3030,
+      "gain_vs_best_qualified_existing_first_workload": null,
+      "conditional_reference_only_break_even_new_equal_cost_batches": null,
+      "conditional_confirmation_campaign_break_even_additional_equal_cost_batches": null
+    },
+    {
+      "method": "native4",
+      "qualified": false,
+      "label_error_indices": [
+        33
+      ],
+      "core_position_max_abs_m": 0.0001777075021582218,
+      "core_momentum_max_abs_normalized": 2.259840078303341e-05,
+      "median_tracking_with_fallback_seconds": 2.8965316100002383,
+      "construction_and_warmup_seconds": 0.10927001300296979,
+      "plugin_build_seconds": 0.0,
+      "first_workload_seconds": 3.005801623003208,
+      "fallback_counts": [
+        0,
+        0,
+        0
+      ],
+      "elements": 3030,
+      "gain_vs_best_qualified_existing_first_workload": null,
+      "conditional_reference_only_break_even_new_equal_cost_batches": null,
+      "conditional_confirmation_campaign_break_even_additional_equal_cost_batches": null
+    },
+    {
+      "method": "native10",
+      "qualified": false,
+      "label_error_indices": [
+        33
+      ],
+      "core_position_max_abs_m": 0.00010166332330882851,
+      "core_momentum_max_abs_normalized": 8.061269112524668e-06,
+      "median_tracking_with_fallback_seconds": 6.611079549998976,
+      "construction_and_warmup_seconds": 0.097898639003688,
+      "plugin_build_seconds": 0.0,
+      "first_workload_seconds": 6.708978189002664,
+      "fallback_counts": [
+        0,
+        0,
+        0
+      ],
+      "elements": 3030,
+      "gain_vs_best_qualified_existing_first_workload": null,
+      "conditional_reference_only_break_even_new_equal_cost_batches": null,
+      "conditional_confirmation_campaign_break_even_additional_equal_cost_batches": null
+    },
+    {
+      "method": "native20",
+      "qualified": false,
+      "label_error_indices": [
+        33
+      ],
+      "core_position_max_abs_m": 6.253227084453498e-06,
+      "core_momentum_max_abs_normalized": 5.370160302666617e-07,
+      "median_tracking_with_fallback_seconds": 12.948142638000718,
+      "construction_and_warmup_seconds": 0.12071269500302151,
+      "plugin_build_seconds": 0.0,
+      "first_workload_seconds": 13.06885533300374,
+      "fallback_counts": [
+        0
+      ],
+      "elements": 3030,
+      "gain_vs_best_qualified_existing_first_workload": null,
+      "conditional_reference_only_break_even_new_equal_cost_batches": null,
+      "conditional_confirmation_campaign_break_even_additional_equal_cost_batches": null
+    },
+    {
+      "method": "native40",
+      "qualified": true,
+      "label_error_indices": [],
+      "core_position_max_abs_m": 3.6659355534191716e-07,
+      "core_momentum_max_abs_normalized": 3.165148769515395e-08,
+      "median_tracking_with_fallback_seconds": 25.238835253003344,
+      "construction_and_warmup_seconds": 0.10439281500293873,
+      "plugin_build_seconds": 0.0,
+      "first_workload_seconds": 25.343228068006283,
+      "fallback_counts": [
+        0
+      ],
+      "elements": 3030,
+      "gain_vs_best_qualified_existing_first_workload": 0.10560212261909663,
+      "conditional_reference_only_break_even_new_equal_cost_batches": null,
+      "conditional_confirmation_campaign_break_even_additional_equal_cost_batches": null
+    },
+    {
+      "method": "native80",
+      "qualified": true,
+      "label_error_indices": [],
+      "core_position_max_abs_m": 0.0,
+      "core_momentum_max_abs_normalized": 0.0,
+      "median_tracking_with_fallback_seconds": 49.55040759899566,
+      "construction_and_warmup_seconds": 0.10893131600460038,
+      "plugin_build_seconds": 0.0,
+      "first_workload_seconds": 49.65933891500026,
+      "fallback_counts": [
+        0
+      ],
+      "elements": 3030,
+      "gain_vs_best_qualified_existing_first_workload": 0.05389315960452545,
+      "conditional_reference_only_break_even_new_equal_cost_batches": null,
+      "conditional_confirmation_campaign_break_even_additional_equal_cost_batches": null
+    },
+    {
+      "method": "fused10",
+      "qualified": false,
+      "label_error_indices": [
+        33
+      ],
+      "core_position_max_abs_m": 0.00010166332338286563,
+      "core_momentum_max_abs_normalized": 8.061269109270605e-06,
+      "median_tracking_with_fallback_seconds": 1.5988717599975644,
+      "construction_and_warmup_seconds": 0.26723767199291615,
+      "plugin_build_seconds": 0.12798814599955222,
+      "first_workload_seconds": 1.9940975779900327,
+      "fallback_counts": [
+        26,
+        26,
+        26
+      ],
+      "elements": 631,
+      "gain_vs_best_qualified_existing_first_workload": null,
+      "conditional_reference_only_break_even_new_equal_cost_batches": null,
+      "conditional_confirmation_campaign_break_even_additional_equal_cost_batches": null
+    },
+    {
+      "method": "fused2",
+      "qualified": false,
+      "label_error_indices": [],
+      "core_position_max_abs_m": 0.00010168518109115868,
+      "core_momentum_max_abs_normalized": 8.061450501611697e-06,
+      "median_tracking_with_fallback_seconds": 0.4399124589981511,
+      "construction_and_warmup_seconds": 0.22901301200909074,
+      "plugin_build_seconds": 0.12798814599955222,
+      "first_workload_seconds": 0.7969136170067941,
+      "fallback_counts": [
+        24,
+        24,
+        24
+      ],
+      "elements": 631,
+      "gain_vs_best_qualified_existing_first_workload": null,
+      "conditional_reference_only_break_even_new_equal_cost_batches": null,
+      "conditional_confirmation_campaign_break_even_additional_equal_cost_batches": null
+    },
+    {
+      "method": "fused4",
+      "qualified": false,
+      "label_error_indices": [
+        33
+      ],
+      "core_position_max_abs_m": 0.00010166465723711028,
+      "core_momentum_max_abs_normalized": 8.06128017550741e-06,
+      "median_tracking_with_fallback_seconds": 1.0413285290051135,
+      "construction_and_warmup_seconds": 0.2319967090006685,
+      "plugin_build_seconds": 0.12798814599955222,
+      "first_workload_seconds": 1.4013133840053342,
+      "fallback_counts": [
+        27,
+        27,
+        27
+      ],
+      "elements": 631,
+      "gain_vs_best_qualified_existing_first_workload": null,
+      "conditional_reference_only_break_even_new_equal_cost_batches": null,
+      "conditional_confirmation_campaign_break_even_additional_equal_cost_batches": null
+    },
+    {
+      "method": "analytic10",
+      "qualified": true,
+      "label_error_indices": [],
+      "core_position_max_abs_m": 2.439570357741337e-08,
+      "core_momentum_max_abs_normalized": 2.1097563408792762e-09,
+      "median_tracking_with_fallback_seconds": 2.5732408609983395,
+      "construction_and_warmup_seconds": 0.10305781700299121,
+      "plugin_build_seconds": 0.0,
+      "first_workload_seconds": 2.6762986780013307,
+      "fallback_counts": [
+        0,
+        0,
+        0
+      ],
+      "elements": 3030,
+      "gain_vs_best_qualified_existing_first_workload": 1.0,
+      "conditional_reference_only_break_even_new_equal_cost_batches": null,
+      "conditional_confirmation_campaign_break_even_additional_equal_cost_batches": null
+    },
+    {
+      "method": "analytic2",
+      "qualified": false,
+      "label_error_indices": [
+        33
+      ],
+      "core_position_max_abs_m": 1.147400589335745e-08,
+      "core_momentum_max_abs_normalized": 1.8854028692122096e-09,
+      "median_tracking_with_fallback_seconds": 1.6985965660060174,
+      "construction_and_warmup_seconds": 0.10408180299418746,
+      "plugin_build_seconds": 0.0,
+      "first_workload_seconds": 1.8026783690002048,
+      "fallback_counts": [
+        0,
+        0,
+        0
+      ],
+      "elements": 3030,
+      "gain_vs_best_qualified_existing_first_workload": null,
+      "conditional_reference_only_break_even_new_equal_cost_batches": null,
+      "conditional_confirmation_campaign_break_even_additional_equal_cost_batches": null
+    },
+    {
+      "method": "analytic4",
+      "qualified": false,
+      "label_error_indices": [
+        33
+      ],
+      "core_position_max_abs_m": 2.304312066476349e-08,
+      "core_momentum_max_abs_normalized": 2.0960692336235253e-09,
+      "median_tracking_with_fallback_seconds": 1.9098201859960682,
+      "construction_and_warmup_seconds": 0.10112081899569603,
+      "plugin_build_seconds": 0.0,
+      "first_workload_seconds": 2.010941004991764,
+      "fallback_counts": [
+        0,
+        0,
+        0
+      ],
+      "elements": 3030,
+      "gain_vs_best_qualified_existing_first_workload": null,
+      "conditional_reference_only_break_even_new_equal_cost_batches": null,
+      "conditional_confirmation_campaign_break_even_additional_equal_cost_batches": null
+    },
+    {
+      "method": "fused40_s10",
+      "qualified": true,
+      "label_error_indices": [],
+      "core_position_max_abs_m": 3.666294018407211e-07,
+      "core_momentum_max_abs_normalized": 3.165185637916149e-08,
+      "median_tracking_with_fallback_seconds": 1.855951689001813,
+      "construction_and_warmup_seconds": 0.22064078100811457,
+      "plugin_build_seconds": 0.12798814599955222,
+      "first_workload_seconds": 2.20458061600948,
+      "fallback_counts": [
+        25,
+        25,
+        25
+      ],
+      "elements": 631,
+      "gain_vs_best_qualified_existing_first_workload": 1.2139717906282372,
+      "conditional_reference_only_break_even_new_equal_cost_batches": 105,
+      "conditional_confirmation_campaign_break_even_additional_equal_cost_batches": 230
+    },
+    {
+      "method": "fused40_s2",
+      "qualified": true,
+      "label_error_indices": [],
+      "core_position_max_abs_m": 3.888035757776935e-07,
+      "core_momentum_max_abs_normalized": 3.1876101700840655e-08,
+      "median_tracking_with_fallback_seconds": 1.5500060239937739,
+      "construction_and_warmup_seconds": 0.22880558199540246,
+      "plugin_build_seconds": 0.12798814599955222,
+      "first_workload_seconds": 1.9067997519887285,
+      "fallback_counts": [
+        25,
+        25,
+        25
+      ],
+      "elements": 631,
+      "gain_vs_best_qualified_existing_first_workload": 1.403555184654309,
+      "conditional_reference_only_break_even_new_equal_cost_batches": 74,
+      "conditional_confirmation_campaign_break_even_additional_equal_cost_batches": 161
+    },
+    {
+      "method": "fused40_s4",
+      "qualified": true,
+      "label_error_indices": [],
+      "core_position_max_abs_m": 3.679825201384143e-07,
+      "core_momentum_max_abs_normalized": 3.1665536915617177e-08,
+      "median_tracking_with_fallback_seconds": 1.2578124799983925,
+      "construction_and_warmup_seconds": 0.2790662359984708,
+      "plugin_build_seconds": 0.12798814599955222,
+      "first_workload_seconds": 1.6648668619964155,
+      "fallback_counts": [
+        25,
+        25,
+        25
+      ],
+      "elements": 631,
+      "gain_vs_best_qualified_existing_first_workload": 1.6075151347490109,
+      "conditional_reference_only_break_even_new_equal_cost_batches": 58,
+      "conditional_confirmation_campaign_break_even_additional_equal_cost_batches": 126
+    }
+  ],
+  "industrial_tuning_tenfold_established": false,
+  "scope": "One public historical ideal BNL model, fixed delta0, transverse outputs. Finite empirical gate, not universal or full6D equivalence. Qualification and plugin build are explicit costs."
+}

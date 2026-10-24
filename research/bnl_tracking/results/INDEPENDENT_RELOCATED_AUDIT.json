@@ -1,0 +1,200 @@
+{
+  "status": "passed",
+  "campaigns": [
+    {
+      "campaign": "confirmation",
+      "status": "passed",
+      "methods": [
+        {
+          "method": "native2",
+          "qualified": false,
+          "label_error_indices": [
+            17,
+            33,
+            40,
+            50,
+            57,
+            62
+          ],
+          "core_position_max_abs_m": 0.00027550732789175344,
+          "core_momentum_max_abs_normalized": 2.1991943113577983e-05,
+          "first_workload_seconds": 1.5584035350038903
+        },
+        {
+          "method": "native4",
+          "qualified": false,
+          "label_error_indices": [
+            33
+          ],
+          "core_position_max_abs_m": 0.0001777075021582218,
+          "core_momentum_max_abs_normalized": 2.259840078303341e-05,
+          "first_workload_seconds": 3.005801623003208
+        },
+        {
+          "method": "native10",
+          "qualified": false,
+          "label_error_indices": [
+            33
+          ],
+          "core_position_max_abs_m": 0.00010166332330882851,
+          "core_momentum_max_abs_normalized": 8.061269112524668e-06,
+          "first_workload_seconds": 6.708978189002664
+        },
+        {
+          "method": "native20",
+          "qualified": false,
+          "label_error_indices": [
+            33
+          ],
+          "core_position_max_abs_m": 6.253227084453498e-06,
+          "core_momentum_max_abs_normalized": 5.370160302666617e-07,
+          "first_workload_seconds": 13.06885533300374
+        },
+        {
+          "method": "native40",
+          "qualified": true,
+          "label_error_indices": [],
+          "core_position_max_abs_m": 3.6659355534191716e-07,
+          "core_momentum_max_abs_normalized": 3.165148769515395e-08,
+          "first_workload_seconds": 25.343228068006283
+        },
+        {
+          "method": "native80",
+          "qualified": true,
+          "label_error_indices": [],
+          "core_position_max_abs_m": 0.0,
+          "core_momentum_max_abs_normalized": 0.0,
+          "first_workload_seconds": 49.65933891500026
+        },
+        {
+          "method": "fused10",
+          "qualified": false,
+          "label_error_indices": [
+            33
+          ],
+          "core_position_max_abs_m": 0.00010166332338286563,
+          "core_momentum_max_abs_normalized": 8.061269109270605e-06,
+          "first_workload_seconds": 1.9940975779900327
+        },
+        {
+          "method": "fused2",
+          "qualified": false,
+          "label_error_indices": [],
+          "core_position_max_abs_m": 0.00010168518109115868,
+          "core_momentum_max_abs_normalized": 8.061450501611697e-06,
+          "first_workload_seconds": 0.7969136170067941
+        },
+        {
+          "method": "fused4",
+          "qualified": false,
+          "label_error_indices": [
+            33
+          ],
+          "core_position_max_abs_m": 0.00010166465723711028,
+          "core_momentum_max_abs_normalized": 8.06128017550741e-06,
+          "first_workload_seconds": 1.4013133840053342
+        },
+        {
+          "method": "analytic10",
+          "qualified": true,
+          "label_error_indices": [],
+          "core_position_max_abs_m": 2.439570357741337e-08,
+          "core_momentum_max_abs_normalized": 2.1097563408792762e-09,
+          "first_workload_seconds": 2.6762986780013307
+        },
+        {
+          "method": "analytic2",
+          "qualified": false,
+          "label_error_indices": [
+            33
+          ],
+          "core_position_max_abs_m": 1.147400589335745e-08,
+          "core_momentum_max_abs_normalized": 1.8854028692122096e-09,
+          "first_workload_seconds": 1.8026783690002048
+        },
+        {
+          "method": "analytic4",
+          "qualified": false,
+          "label_error_indices": [
+            33
+          ],
+          "core_position_max_abs_m": 2.304312066476349e-08,
+          "core_momentum_max_abs_normalized": 2.0960692336235253e-09,
+          "first_workload_seconds": 2.010941004991764
+        },
+        {
+          "method": "fused40_s10",
+          "qualified": true,
+          "label_error_indices": [],
+          "core_position_max_abs_m": 3.666294018407211e-07,
+          "core_momentum_max_abs_normalized": 3.165185637916149e-08,
+          "first_workload_seconds": 2.20458061600948
+        },
+        {
+          "method": "fused40_s2",
+          "qualified": true,
+          "label_error_indices": [],
+          "core_position_max_abs_m": 3.888035757776935e-07,
+          "core_momentum_max_abs_normalized": 3.1876101700840655e-08,
+          "first_workload_seconds": 1.9067997519887285
+        },
+        {
+          "method": "fused40_s4",
+          "qualified": true,
+          "label_error_indices": [],
+          "core_position_max_abs_m": 3.679825201384143e-07,
+          "core_momentum_max_abs_normalized": 3.1665536915617177e-08,
+          "first_workload_seconds": 1.6648668619964155
+        }
+      ],
+      "reference_unresolved_indices": [
+        48
+      ]
+    },
+    {
+      "campaign": "backcheck",
+      "status": "passed",
+      "methods": [
+        {
+          "method": "analytic10",
+          "qualified": false,
+          "label_error_indices": [
+            41
+          ],
+          "core_position_max_abs_m": 4.820222528988913e-08,
+          "core_momentum_max_abs_normalized": 4.230082092034747e-09,
+          "first_workload_seconds": 10.139715700002853
+        },
+        {
+          "method": "fused40_s4",
+          "qualified": true,
+          "label_error_indices": [],
+          "core_position_max_abs_m": 7.256692893751733e-07,
+          "core_momentum_max_abs_normalized": 6.345765670865999e-08,
+          "first_workload_seconds": 3.662488674999622
+        }
+      ],
+      "reference_unresolved_indices": []
+    },
+    {
+      "campaign": "post_selection_boundary_diagnostics",
+      "status": "passed",
+      "methods": [
+        {
+          "method": "analytic20",
+          "qualified": true,
+          "first_workload_seconds": 14.135257615009323
+        },
+        {
+          "method": "analytic40",
+          "qualified": true,
+          "first_workload_seconds": 22.84313221499906
+        }
+      ],
+      "point_label_records": 12,
+      "physical_convergence_asserted": false
+    }
+  ],
+  "new_tracking": false,
+  "scope": "Source snapshot, stored numerical-array, gate and cost arithmetic checks. No independent proof of simulator truth or industrial gain."
+}

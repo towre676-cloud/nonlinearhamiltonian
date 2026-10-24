@@ -1,0 +1,21 @@
+{
+  "status": "built",
+  "command": [
+    "gcc",
+    "-shared",
+    "-fPIC",
+    "-O3",
+    "-DPYAT",
+    "-I/opt/codex/runtimes/codex-primary-runtime/dependencies/python/include/python3.12",
+    "-I/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/numpy/_core/include",
+    "-I/workspace/scratch/9c6a3d2e42ab/bnl_acceleration_lab/at_source/accelerator_toolbox-0.9.0/atintegrators",
+    "/workspace/scratch/9c6a3d2e42ab/bnl_acceleration_lab/FixedDeltaBlockPass.c",
+    "-o",
+    "/workspace/scratch/9c6a3d2e42ab/beam_literature_runtime/at/integrators/FixedDeltaBlockPass.cpython-312-x86_64-linux-gnu.so"
+  ],
+  "compiler_stderr": "",
+  "kernel_source_sha256": "8d5f386081e17b0abb0405eea89bf68b8c9e7abe532334824d611d847d2f74d0",
+  "binary_sha256": "464000669aac5d666c896a01d5daea2accc98af1e47afe513b4136ed02aaf117",
+  "binary_path": "/workspace/scratch/9c6a3d2e42ab/beam_literature_runtime/at/integrators/FixedDeltaBlockPass.cpython-312-x86_64-linux-gnu.so",
+  "fast_math": false
+}
