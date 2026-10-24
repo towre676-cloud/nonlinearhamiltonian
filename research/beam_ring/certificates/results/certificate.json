@@ -1,0 +1,143 @@
+{
+  "schema": "finite-grid-survival-certificate-v1",
+  "manifest_sha256": "a427cac252036ddf674bc21548a206d78e8fa21aae37f4df83b9ad456e9d0c25",
+  "events_sha256": "b9447c716ab731818c3ce4bbc89eab3a843bffe9afdd4a642b359214d023db1d",
+  "objectives": [
+    "survival_weight",
+    "origin_connected_weight"
+  ],
+  "rows": [
+    {
+      "design": "A",
+      "horizon": 16,
+      "labels": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        -1
+      ],
+      "survival_weight": {
+        "lower": "5",
+        "upper": "6"
+      },
+      "origin_connected_weight": {
+        "lower": "5",
+        "upper": "6",
+        "known_component": [
+          "0,0",
+          "1,0",
+          "2,0",
+          "0,1",
+          "1,1"
+        ],
+        "possible_component": [
+          "0,0",
+          "1,0",
+          "2,0",
+          "0,1",
+          "1,1",
+          "2,1"
+        ]
+      }
+    },
+    {
+      "design": "A",
+      "horizon": 64,
+      "labels": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        -1
+      ],
+      "survival_weight": {
+        "lower": "5",
+        "upper": "6"
+      },
+      "origin_connected_weight": {
+        "lower": "5",
+        "upper": "6",
+        "known_component": [
+          "0,0",
+          "1,0",
+          "2,0",
+          "0,1",
+          "1,1"
+        ],
+        "possible_component": [
+          "0,0",
+          "1,0",
+          "2,0",
+          "0,1",
+          "1,1",
+          "2,1"
+        ]
+      }
+    },
+    {
+      "design": "B",
+      "horizon": 16,
+      "labels": [
+        1,
+        0,
+        -1,
+        0,
+        -1,
+        1
+      ],
+      "survival_weight": {
+        "lower": "2",
+        "upper": "4"
+      },
+      "origin_connected_weight": {
+        "lower": "1",
+        "upper": "1",
+        "known_component": [
+          "0,0"
+        ],
+        "possible_component": [
+          "0,0"
+        ]
+      }
+    },
+    {
+      "design": "B",
+      "horizon": 64,
+      "labels": [
+        -1,
+        0,
+        -1,
+        0,
+        -1,
+        -1
+      ],
+      "survival_weight": {
+        "lower": "0",
+        "upper": "4"
+      },
+      "origin_connected_weight": {
+        "lower": "0",
+        "upper": "1",
+        "known_component": [],
+        "possible_component": [
+          "0,0"
+        ]
+      }
+    }
+  ],
+  "exclusions": [
+    {
+      "candidate": "B",
+      "dominator": "A",
+      "horizon": 16
+    },
+    {
+      "candidate": "B",
+      "dominator": "A",
+      "horizon": 64
+    }
+  ]
+}

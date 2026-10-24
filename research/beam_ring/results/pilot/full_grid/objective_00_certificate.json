@@ -1,0 +1,4435 @@
+{
+  "manifest": {
+    "schema": "finite-grid-survival-manifest-v1",
+    "cells": [
+      "cell_0000",
+      "cell_0001",
+      "cell_0002",
+      "cell_0003",
+      "cell_0004",
+      "cell_0005",
+      "cell_0006",
+      "cell_0007",
+      "cell_0008",
+      "cell_0009",
+      "cell_0010",
+      "cell_0011",
+      "cell_0012",
+      "cell_0013",
+      "cell_0014",
+      "cell_0015",
+      "cell_0016",
+      "cell_0017",
+      "cell_0018",
+      "cell_0019",
+      "cell_0020",
+      "cell_0021",
+      "cell_0022",
+      "cell_0023",
+      "cell_0024",
+      "cell_0025",
+      "cell_0026",
+      "cell_0027",
+      "cell_0028",
+      "cell_0029",
+      "cell_0030",
+      "cell_0031",
+      "cell_0032",
+      "cell_0033",
+      "cell_0034",
+      "cell_0035",
+      "cell_0036",
+      "cell_0037",
+      "cell_0038",
+      "cell_0039",
+      "cell_0040",
+      "cell_0041",
+      "cell_0042",
+      "cell_0043",
+      "cell_0044"
+    ],
+    "adjacency": {
+      "cell_0000": [
+        "cell_0005",
+        "cell_0001"
+      ],
+      "cell_0001": [
+        "cell_0006",
+        "cell_0000",
+        "cell_0002"
+      ],
+      "cell_0002": [
+        "cell_0007",
+        "cell_0001",
+        "cell_0003"
+      ],
+      "cell_0003": [
+        "cell_0008",
+        "cell_0002",
+        "cell_0004"
+      ],
+      "cell_0004": [
+        "cell_0009",
+        "cell_0003"
+      ],
+      "cell_0005": [
+        "cell_0000",
+        "cell_0010",
+        "cell_0006"
+      ],
+      "cell_0006": [
+        "cell_0001",
+        "cell_0011",
+        "cell_0005",
+        "cell_0007"
+      ],
+      "cell_0007": [
+        "cell_0002",
+        "cell_0012",
+        "cell_0006",
+        "cell_0008"
+      ],
+      "cell_0008": [
+        "cell_0003",
+        "cell_0013",
+        "cell_0007",
+        "cell_0009"
+      ],
+      "cell_0009": [
+        "cell_0004",
+        "cell_0014",
+        "cell_0008"
+      ],
+      "cell_0010": [
+        "cell_0005",
+        "cell_0015",
+        "cell_0011"
+      ],
+      "cell_0011": [
+        "cell_0006",
+        "cell_0016",
+        "cell_0010",
+        "cell_0012"
+      ],
+      "cell_0012": [
+        "cell_0007",
+        "cell_0017",
+        "cell_0011",
+        "cell_0013"
+      ],
+      "cell_0013": [
+        "cell_0008",
+        "cell_0018",
+        "cell_0012",
+        "cell_0014"
+      ],
+      "cell_0014": [
+        "cell_0009",
+        "cell_0019",
+        "cell_0013"
+      ],
+      "cell_0015": [
+        "cell_0010",
+        "cell_0020",
+        "cell_0016"
+      ],
+      "cell_0016": [
+        "cell_0011",
+        "cell_0021",
+        "cell_0015",
+        "cell_0017"
+      ],
+      "cell_0017": [
+        "cell_0012",
+        "cell_0022",
+        "cell_0016",
+        "cell_0018"
+      ],
+      "cell_0018": [
+        "cell_0013",
+        "cell_0023",
+        "cell_0017",
+        "cell_0019"
+      ],
+      "cell_0019": [
+        "cell_0014",
+        "cell_0024",
+        "cell_0018"
+      ],
+      "cell_0020": [
+        "cell_0015",
+        "cell_0025",
+        "cell_0021"
+      ],
+      "cell_0021": [
+        "cell_0016",
+        "cell_0026",
+        "cell_0020",
+        "cell_0022"
+      ],
+      "cell_0022": [
+        "cell_0017",
+        "cell_0027",
+        "cell_0021",
+        "cell_0023"
+      ],
+      "cell_0023": [
+        "cell_0018",
+        "cell_0028",
+        "cell_0022",
+        "cell_0024"
+      ],
+      "cell_0024": [
+        "cell_0019",
+        "cell_0029",
+        "cell_0023"
+      ],
+      "cell_0025": [
+        "cell_0020",
+        "cell_0030",
+        "cell_0026"
+      ],
+      "cell_0026": [
+        "cell_0021",
+        "cell_0031",
+        "cell_0025",
+        "cell_0027"
+      ],
+      "cell_0027": [
+        "cell_0022",
+        "cell_0032",
+        "cell_0026",
+        "cell_0028"
+      ],
+      "cell_0028": [
+        "cell_0023",
+        "cell_0033",
+        "cell_0027",
+        "cell_0029"
+      ],
+      "cell_0029": [
+        "cell_0024",
+        "cell_0034",
+        "cell_0028"
+      ],
+      "cell_0030": [
+        "cell_0025",
+        "cell_0035",
+        "cell_0031"
+      ],
+      "cell_0031": [
+        "cell_0026",
+        "cell_0036",
+        "cell_0030",
+        "cell_0032"
+      ],
+      "cell_0032": [
+        "cell_0027",
+        "cell_0037",
+        "cell_0031",
+        "cell_0033"
+      ],
+      "cell_0033": [
+        "cell_0028",
+        "cell_0038",
+        "cell_0032",
+        "cell_0034"
+      ],
+      "cell_0034": [
+        "cell_0029",
+        "cell_0039",
+        "cell_0033"
+      ],
+      "cell_0035": [
+        "cell_0030",
+        "cell_0040",
+        "cell_0036"
+      ],
+      "cell_0036": [
+        "cell_0031",
+        "cell_0041",
+        "cell_0035",
+        "cell_0037"
+      ],
+      "cell_0037": [
+        "cell_0032",
+        "cell_0042",
+        "cell_0036",
+        "cell_0038"
+      ],
+      "cell_0038": [
+        "cell_0033",
+        "cell_0043",
+        "cell_0037",
+        "cell_0039"
+      ],
+      "cell_0039": [
+        "cell_0034",
+        "cell_0044",
+        "cell_0038"
+      ],
+      "cell_0040": [
+        "cell_0035",
+        "cell_0041"
+      ],
+      "cell_0041": [
+        "cell_0036",
+        "cell_0040",
+        "cell_0042"
+      ],
+      "cell_0042": [
+        "cell_0037",
+        "cell_0041",
+        "cell_0043"
+      ],
+      "cell_0043": [
+        "cell_0038",
+        "cell_0042",
+        "cell_0044"
+      ],
+      "cell_0044": [
+        "cell_0039",
+        "cell_0043"
+      ]
+    },
+    "weights": {
+      "cell_0000": "1",
+      "cell_0001": "1",
+      "cell_0002": "1",
+      "cell_0003": "1",
+      "cell_0004": "1",
+      "cell_0005": "1",
+      "cell_0006": "1",
+      "cell_0007": "1",
+      "cell_0008": "1",
+      "cell_0009": "1",
+      "cell_0010": "1",
+      "cell_0011": "1",
+      "cell_0012": "1",
+      "cell_0013": "1",
+      "cell_0014": "1",
+      "cell_0015": "1",
+      "cell_0016": "1",
+      "cell_0017": "1",
+      "cell_0018": "1",
+      "cell_0019": "1",
+      "cell_0020": "1",
+      "cell_0021": "1",
+      "cell_0022": "1",
+      "cell_0023": "1",
+      "cell_0024": "1",
+      "cell_0025": "1",
+      "cell_0026": "1",
+      "cell_0027": "1",
+      "cell_0028": "1",
+      "cell_0029": "1",
+      "cell_0030": "1",
+      "cell_0031": "1",
+      "cell_0032": "1",
+      "cell_0033": "1",
+      "cell_0034": "1",
+      "cell_0035": "1",
+      "cell_0036": "1",
+      "cell_0037": "1",
+      "cell_0038": "1",
+      "cell_0039": "1",
+      "cell_0040": "1",
+      "cell_0041": "1",
+      "cell_0042": "1",
+      "cell_0043": "1",
+      "cell_0044": "1"
+    },
+    "origin": "cell_0020",
+    "designs": [
+      "design_00",
+      "design_01",
+      "design_02",
+      "design_03",
+      "design_04",
+      "design_05",
+      "design_06",
+      "design_07",
+      "design_08"
+    ],
+    "horizons": [
+      64
+    ],
+    "prefix_semantics": "deterministic-prefix-no-reinjection-v1",
+    "physics": {
+      "protocol_sha256": "159e5be41fa37717d68dac2aa9a6d6eb1c8748f6a094b0a5b73ae728ad92eb50",
+      "stage": "learning",
+      "objective": "entrance_xy_connected_grid",
+      "label_scope": "Observed finite-horizon PyAT labels; not continuum proof."
+    }
+  },
+  "events": [
+    {
+      "design": "design_00",
+      "cell": "cell_0000",
+      "horizon": 64,
+      "label": 0,
+      "source": "341444ca6278b2a5b0f0d4b3847d33948c3a609ed09996fe68fd80d17ead5ab9"
+    },
+    {
+      "design": "design_00",
+      "cell": "cell_0001",
+      "horizon": 64,
+      "label": 0,
+      "source": "0e7208462803089781da9dbdd3ccce543b7e73bbc5fa00cdba8414979b5f2a0f"
+    },
+    {
+      "design": "design_00",
+      "cell": "cell_0002",
+      "horizon": 64,
+      "label": 0,
+      "source": "b6c94b81b53158f2f48de45470f2bd1835d37fc3560f66b112b29f1d5fd3bfa7"
+    },
+    {
+      "design": "design_00",
+      "cell": "cell_0003",
+      "horizon": 64,
+      "label": 0,
+      "source": "755a2cc73c2c2a44bdd82e1ae7960488699106f59db94691e864f1a76849e223"
+    },
+    {
+      "design": "design_00",
+      "cell": "cell_0004",
+      "horizon": 64,
+      "label": 0,
+      "source": "740e9039b40970dbaf9207ac997a3c392e125b4b0c6c87fa83b0b8b758bdbaa9"
+    },
+    {
+      "design": "design_00",
+      "cell": "cell_0005",
+      "horizon": 64,
+      "label": 1,
+      "source": "ffb24ba47cb17ae12bebcc99163754560ed3ef76a8054640c9ea73152604822f"
+    },
+    {
+      "design": "design_00",
+      "cell": "cell_0006",
+      "horizon": 64,
+      "label": 1,
+      "source": "7d1b7173577b4e77a46061fccc40d83beb6e59ca65635d9f7b8f380e29e02095"
+    },
+    {
+      "design": "design_00",
+      "cell": "cell_0007",
+      "horizon": 64,
+      "label": 1,
+      "source": "ce33fb49cca89fad5ef00e66f5f5b6213d81cc465a0181e225db10f89628a979"
+    },
+    {
+      "design": "design_00",
+      "cell": "cell_0008",
+      "horizon": 64,
+      "label": 0,
+      "source": "0dfe5a70b75f6bb022065b640be7fb9fc779955d47fd99ac55e4b16c120e0d04"
+    },
+    {
+      "design": "design_00",
+      "cell": "cell_0009",
+      "horizon": 64,
+      "label": 0,
+      "source": "06f917d3efbd53cceb754457f159e834508de0c8f6a3585f61773a9fbbfb9561"
+    },
+    {
+      "design": "design_00",
+      "cell": "cell_0010",
+      "horizon": 64,
+      "label": 1,
+      "source": "9050f3c4b1514b04f60a5301c1363531969ad199a12a2a6e35da2731f8d8ab2a"
+    },
+    {
+      "design": "design_00",
+      "cell": "cell_0011",
+      "horizon": 64,
+      "label": 1,
+      "source": "2f37bf09af372b79d132c91a4da2a587394f9a907f69c05f2bb72d0c5b7502fe"
+    },
+    {
+      "design": "design_00",
+      "cell": "cell_0012",
+      "horizon": 64,
+      "label": 1,
+      "source": "8d08eae15812cf4116b301e3032ae27822768eeb90b800f631c495b1ec948f8f"
+    },
+    {
+      "design": "design_00",
+      "cell": "cell_0013",
+      "horizon": 64,
+      "label": 1,
+      "source": "0f7826eae0e4a5a9f367cc4488ff18ab969c66e09a43eccf5424d8cbe9716b94"
+    },
+    {
+      "design": "design_00",
+      "cell": "cell_0014",
+      "horizon": 64,
+      "label": 0,
+      "source": "e8305db035e8529aabaed5a6f01066672945f791d6a21182541ef1b30739da0a"
+    },
+    {
+      "design": "design_00",
+      "cell": "cell_0015",
+      "horizon": 64,
+      "label": 1,
+      "source": "960aad6e6d9d772aa3b1bf336312b8b51465c2f137caf7a24052323d73816bd7"
+    },
+    {
+      "design": "design_00",
+      "cell": "cell_0016",
+      "horizon": 64,
+      "label": 1,
+      "source": "c444a8f25e76a6760d4922c6b6ab8269d39e6c556bd1ece4821dc64604c92eb4"
+    },
+    {
+      "design": "design_00",
+      "cell": "cell_0017",
+      "horizon": 64,
+      "label": 1,
+      "source": "587deedd380fe9ac17818cc061b2fa466350b4c8108300ab42d85bfdb499a8b6"
+    },
+    {
+      "design": "design_00",
+      "cell": "cell_0018",
+      "horizon": 64,
+      "label": 1,
+      "source": "c5f2072f9ce6e7281234d3e220b4b52760b2c85d7753b71daf298bfcedd85ae5"
+    },
+    {
+      "design": "design_00",
+      "cell": "cell_0019",
+      "horizon": 64,
+      "label": 0,
+      "source": "4371473341a48047c851915bbc91cf7c1e9bd2b73861f15249dd2e65b0bbe433"
+    },
+    {
+      "design": "design_00",
+      "cell": "cell_0020",
+      "horizon": 64,
+      "label": 1,
+      "source": "4db8508a2f78713e796f19a55c1490c703581c5fa4e681ffb8221f764b935e6e"
+    },
+    {
+      "design": "design_00",
+      "cell": "cell_0021",
+      "horizon": 64,
+      "label": 1,
+      "source": "671651765e11ca1eaff07dd2d26299f92b8e6a849b849ca8067bd5ad078e68e5"
+    },
+    {
+      "design": "design_00",
+      "cell": "cell_0022",
+      "horizon": 64,
+      "label": 1,
+      "source": "9e74e0dbc5b2927c1c10d8ef0f68a21e2e865dc079f6382393a129bf89f9f40b"
+    },
+    {
+      "design": "design_00",
+      "cell": "cell_0023",
+      "horizon": 64,
+      "label": 1,
+      "source": "a4ca729e114b57e4db84927352d87610f8d50cd724e16c0dbda37f803e9390ff"
+    },
+    {
+      "design": "design_00",
+      "cell": "cell_0024",
+      "horizon": 64,
+      "label": 1,
+      "source": "2eb16d345a6ce3f195c33c6f12ed1394f1f840f0f69afc2a1d5653c063310373"
+    },
+    {
+      "design": "design_00",
+      "cell": "cell_0025",
+      "horizon": 64,
+      "label": 1,
+      "source": "aba1ddb73d6faf0c5f924ef68cd68cec9c7e90d81b2e15c538bf8ed51a1bf27d"
+    },
+    {
+      "design": "design_00",
+      "cell": "cell_0026",
+      "horizon": 64,
+      "label": 1,
+      "source": "d7c0a691882b4d6285ee22021d0e7e8d642399c2110f65220103206954ab1ca5"
+    },
+    {
+      "design": "design_00",
+      "cell": "cell_0027",
+      "horizon": 64,
+      "label": 1,
+      "source": "8c31b0f347c0102b0d5cf15a7d68fd6fbf6d69a0284f9b0a7702796e99e84250"
+    },
+    {
+      "design": "design_00",
+      "cell": "cell_0028",
+      "horizon": 64,
+      "label": 1,
+      "source": "b18403ee761f65d5e8de55913e9d31d9556464740f26ec1728fa35af6e910d6d"
+    },
+    {
+      "design": "design_00",
+      "cell": "cell_0029",
+      "horizon": 64,
+      "label": 1,
+      "source": "8d108c2ace4d5f1ebe9221f15ec8f87fb295491920e7948f8de310607bf4211e"
+    },
+    {
+      "design": "design_00",
+      "cell": "cell_0030",
+      "horizon": 64,
+      "label": 1,
+      "source": "7c389199d57abc3db8bcd81d9d5449afe106448290c547f6b151ff4cee77add7"
+    },
+    {
+      "design": "design_00",
+      "cell": "cell_0031",
+      "horizon": 64,
+      "label": 1,
+      "source": "665ac51deaf2c0d76bb9f88cda5aa53dfb51c33b67f94fa890dd42dac6c21e4f"
+    },
+    {
+      "design": "design_00",
+      "cell": "cell_0032",
+      "horizon": 64,
+      "label": 1,
+      "source": "faf9eb5ffd8dda27c904909278c54e6432578acb4c20cea1d11d67cf136af470"
+    },
+    {
+      "design": "design_00",
+      "cell": "cell_0033",
+      "horizon": 64,
+      "label": 1,
+      "source": "906b14a05b1ea9d94552096616eced02f80141555d9a147de9986bf64de48841"
+    },
+    {
+      "design": "design_00",
+      "cell": "cell_0034",
+      "horizon": 64,
+      "label": 0,
+      "source": "e06078b719c85e912fcad3ec0fd3151732959fef4318a12b7675fff6681c50dd"
+    },
+    {
+      "design": "design_00",
+      "cell": "cell_0035",
+      "horizon": 64,
+      "label": 1,
+      "source": "5d60e68a86062719657bd585a108b204633c6fa00c81da7048aa27bae27324f5"
+    },
+    {
+      "design": "design_00",
+      "cell": "cell_0036",
+      "horizon": 64,
+      "label": 1,
+      "source": "67e21cf8125118252ead3398eb466a879cba5e2aee273b92d9cbbc0a00ca9b50"
+    },
+    {
+      "design": "design_00",
+      "cell": "cell_0037",
+      "horizon": 64,
+      "label": 1,
+      "source": "d9e535c4a77402793fcf16e9ca78004f5c03ee5168caf43f2e39c6f7f92029ef"
+    },
+    {
+      "design": "design_00",
+      "cell": "cell_0038",
+      "horizon": 64,
+      "label": 0,
+      "source": "8418c68abd9b3f7d3133092cc10ce7714b3f0118118ff18745d76804e598a8c7"
+    },
+    {
+      "design": "design_00",
+      "cell": "cell_0039",
+      "horizon": 64,
+      "label": 0,
+      "source": "6283a3c7f6c71906e8d73d889c8210d66990bead9f117ac595a522ef43fe0afe"
+    },
+    {
+      "design": "design_00",
+      "cell": "cell_0040",
+      "horizon": 64,
+      "label": 0,
+      "source": "10f37a638f43fe0eb024a7b021c1e7e0947305204832132404616f9b08ea8741"
+    },
+    {
+      "design": "design_00",
+      "cell": "cell_0041",
+      "horizon": 64,
+      "label": 0,
+      "source": "caffe7861e83e70450a05319ce65a2d3c42d07e497a733e2753d678ab00c666d"
+    },
+    {
+      "design": "design_00",
+      "cell": "cell_0042",
+      "horizon": 64,
+      "label": 0,
+      "source": "9cf3649a43623a75e8b732b0cf2c31f6e992cc502e159aecb809a9d69dbd4d97"
+    },
+    {
+      "design": "design_00",
+      "cell": "cell_0043",
+      "horizon": 64,
+      "label": 0,
+      "source": "79632cc3c3a0afa845ffd7c96f2e6ce5f2d07e30271cd1652cdd7ccb8d7fbfa9"
+    },
+    {
+      "design": "design_00",
+      "cell": "cell_0044",
+      "horizon": 64,
+      "label": 0,
+      "source": "9fb08e7dbfb2015386991772f08f3b17cf0e2161d08a39bda50ac629d202bb6f"
+    },
+    {
+      "design": "design_01",
+      "cell": "cell_0000",
+      "horizon": 64,
+      "label": 0,
+      "source": "4b5792ec5b0e3a6d7420c800f0fc3bc065fa010ecd3e2720101a8b4cf86f754f"
+    },
+    {
+      "design": "design_01",
+      "cell": "cell_0001",
+      "horizon": 64,
+      "label": 0,
+      "source": "2da49430be9790d73b516a5bed6641fd0f5df1a0db1b8a1913696018ccf6f156"
+    },
+    {
+      "design": "design_01",
+      "cell": "cell_0002",
+      "horizon": 64,
+      "label": 0,
+      "source": "674b478f7373065aa77813412a91b897cc720e9488bc266e5b8db2dc6a8260ed"
+    },
+    {
+      "design": "design_01",
+      "cell": "cell_0003",
+      "horizon": 64,
+      "label": 0,
+      "source": "34fca38f7270a48e9c451074435457351d4e7a4c2e9456bb7c64e98289bd0d76"
+    },
+    {
+      "design": "design_01",
+      "cell": "cell_0004",
+      "horizon": 64,
+      "label": 0,
+      "source": "55514cc565526077d5035a77e5582481e65fd2acdbdff575be58fcf55d4f6b79"
+    },
+    {
+      "design": "design_01",
+      "cell": "cell_0005",
+      "horizon": 64,
+      "label": 1,
+      "source": "b8ea596fb9aae72622889b5ccec0e36145d8b9348a8941a3363ccc5c4665fb85"
+    },
+    {
+      "design": "design_01",
+      "cell": "cell_0006",
+      "horizon": 64,
+      "label": 1,
+      "source": "7a2492e08c9060749a4122fdc38ed656ddcd3bcb649ffd51263a499eaaa3689d"
+    },
+    {
+      "design": "design_01",
+      "cell": "cell_0007",
+      "horizon": 64,
+      "label": 1,
+      "source": "6a6a00f363daf3cafbd266666f30f9c528c94059711a9f40654eaf75722d595c"
+    },
+    {
+      "design": "design_01",
+      "cell": "cell_0008",
+      "horizon": 64,
+      "label": 0,
+      "source": "f515cad710eaf88dbf3419d867a51f93b230bdecc8e31907d59c04d638d49f48"
+    },
+    {
+      "design": "design_01",
+      "cell": "cell_0009",
+      "horizon": 64,
+      "label": 0,
+      "source": "1f2eecb03cb69a8c85920a9cfc6dfb0e1097c295e39348462e0920ce6048a711"
+    },
+    {
+      "design": "design_01",
+      "cell": "cell_0010",
+      "horizon": 64,
+      "label": 1,
+      "source": "9f25db913c5e16b35a9159c0f78dc7b8d51d8eb98e8baec509db7d78feffde81"
+    },
+    {
+      "design": "design_01",
+      "cell": "cell_0011",
+      "horizon": 64,
+      "label": 1,
+      "source": "85743bb0b2adf04228c24ebd77a94469ccbdd9a010743d6d0bebd749dc7713cb"
+    },
+    {
+      "design": "design_01",
+      "cell": "cell_0012",
+      "horizon": 64,
+      "label": 1,
+      "source": "e4005481d17bf8a7dec2094aeb9af55a2a3532829b366413268632fd1f56782a"
+    },
+    {
+      "design": "design_01",
+      "cell": "cell_0013",
+      "horizon": 64,
+      "label": 1,
+      "source": "8d8d9b9f34c9ae9da4126dafa37a0294112cd6270c06f04c862ab301d7f62447"
+    },
+    {
+      "design": "design_01",
+      "cell": "cell_0014",
+      "horizon": 64,
+      "label": 0,
+      "source": "ad78ade190854df8dfb31ccbf03aa2098d7d60a6c2fe29982b96ea720d518c5f"
+    },
+    {
+      "design": "design_01",
+      "cell": "cell_0015",
+      "horizon": 64,
+      "label": 1,
+      "source": "819ac3e323160b92e7eec1462a57877c5027abab23df0b60baefa9b96d95f43c"
+    },
+    {
+      "design": "design_01",
+      "cell": "cell_0016",
+      "horizon": 64,
+      "label": 1,
+      "source": "1e324c34999a4c785ea6b031a02d70d49cf9febf94e91d5afedcadcafefec5a1"
+    },
+    {
+      "design": "design_01",
+      "cell": "cell_0017",
+      "horizon": 64,
+      "label": 1,
+      "source": "6bf097b821d98115c64d9558c6c8862cfb5247d114c790410d649f23b0921f16"
+    },
+    {
+      "design": "design_01",
+      "cell": "cell_0018",
+      "horizon": 64,
+      "label": 1,
+      "source": "7b3b5628c7c21063c7108eb481a24213dcb99cba2178c69a9396b1831b09fb8f"
+    },
+    {
+      "design": "design_01",
+      "cell": "cell_0019",
+      "horizon": 64,
+      "label": 1,
+      "source": "a0b027e91e589a636d53097fe193c3200ff07e235d026f05eaff22a898e1ca19"
+    },
+    {
+      "design": "design_01",
+      "cell": "cell_0020",
+      "horizon": 64,
+      "label": 1,
+      "source": "7dcc02b8b5fcb69466b8f3f6c06fb2a5f44d2c58ba69e93f26a2c77562773fc8"
+    },
+    {
+      "design": "design_01",
+      "cell": "cell_0021",
+      "horizon": 64,
+      "label": 1,
+      "source": "1d64f92fad4ca9dae21875a9703bed18dc645edd4e2e4d0b56309f4596c03392"
+    },
+    {
+      "design": "design_01",
+      "cell": "cell_0022",
+      "horizon": 64,
+      "label": 1,
+      "source": "6e4144f36beb65b9a66395dea63107b4596683d463606b986ae37fedcfb9360a"
+    },
+    {
+      "design": "design_01",
+      "cell": "cell_0023",
+      "horizon": 64,
+      "label": 1,
+      "source": "e2e683ae42e772d0d12f1c8501a5f9a5edcc0d09b88c77f96e29a68144b1fbca"
+    },
+    {
+      "design": "design_01",
+      "cell": "cell_0024",
+      "horizon": 64,
+      "label": 1,
+      "source": "c1e9e3d5be95c5feaaf7009852d04220dc5d843e8060a9e02748a601d412d88d"
+    },
+    {
+      "design": "design_01",
+      "cell": "cell_0025",
+      "horizon": 64,
+      "label": 1,
+      "source": "5d5cef9e5dc4e01eb9f430d321aedd45a9419ea192ad0cb7acda826627afd7b0"
+    },
+    {
+      "design": "design_01",
+      "cell": "cell_0026",
+      "horizon": 64,
+      "label": 1,
+      "source": "497bfcd5eadb98cbf0810811ccdac9978b259c9836538897fbdc657fad44ff87"
+    },
+    {
+      "design": "design_01",
+      "cell": "cell_0027",
+      "horizon": 64,
+      "label": 1,
+      "source": "3e4d2a37a878982f9c283aeb39c3700c938e57219fb590201379ad684be0658f"
+    },
+    {
+      "design": "design_01",
+      "cell": "cell_0028",
+      "horizon": 64,
+      "label": 1,
+      "source": "e0841029f6c1a08b03238fa28fd7dbef068d2847b0ce143bbb6cebb0f4c36ed2"
+    },
+    {
+      "design": "design_01",
+      "cell": "cell_0029",
+      "horizon": 64,
+      "label": 1,
+      "source": "a3f1bc17cbdec5bdf887271184236f9dbd88b2d16067fb3001f33237f3f50e38"
+    },
+    {
+      "design": "design_01",
+      "cell": "cell_0030",
+      "horizon": 64,
+      "label": 1,
+      "source": "49e96354db54b0aa102d8cd82b8b730b87e9372e91c4a7dcf2a3ea5561320411"
+    },
+    {
+      "design": "design_01",
+      "cell": "cell_0031",
+      "horizon": 64,
+      "label": 1,
+      "source": "6086ef2c5a453bf873fcda1b1c1cfa7190a1e9607cbd94b8d8859c8248717e86"
+    },
+    {
+      "design": "design_01",
+      "cell": "cell_0032",
+      "horizon": 64,
+      "label": 1,
+      "source": "4825f4e7b06f8ad853e43bb6620bc2a1661c54bdbce82586aafeed798598c55b"
+    },
+    {
+      "design": "design_01",
+      "cell": "cell_0033",
+      "horizon": 64,
+      "label": 1,
+      "source": "580813105d264d049cb8895318425c588c8dfaacc91428398e7fbd55e3174503"
+    },
+    {
+      "design": "design_01",
+      "cell": "cell_0034",
+      "horizon": 64,
+      "label": 1,
+      "source": "47280363020bae49c61cfec4542f21d2e3c54b596543c55b4e8b3545f12e883e"
+    },
+    {
+      "design": "design_01",
+      "cell": "cell_0035",
+      "horizon": 64,
+      "label": 1,
+      "source": "8c5bd647f33d5440dc48dabb471a7982458db90b10291a78666544188689f1b1"
+    },
+    {
+      "design": "design_01",
+      "cell": "cell_0036",
+      "horizon": 64,
+      "label": 1,
+      "source": "04b78dcb7718035cdfc6293a915cc7261841b385f983227e4e0e78e95ab0ee10"
+    },
+    {
+      "design": "design_01",
+      "cell": "cell_0037",
+      "horizon": 64,
+      "label": 1,
+      "source": "881b5626c062a16dc094d188665cf87d24e61434ba6cd89d3879240b5a29957b"
+    },
+    {
+      "design": "design_01",
+      "cell": "cell_0038",
+      "horizon": 64,
+      "label": 0,
+      "source": "6474739815564a0544a8b5aaa29286f93f1b7300fab588f33719bb9f2f822bf3"
+    },
+    {
+      "design": "design_01",
+      "cell": "cell_0039",
+      "horizon": 64,
+      "label": 0,
+      "source": "ef79e49ca5504eabe768bf03e25e6f845b939baa1556d5206c602a3e5314853f"
+    },
+    {
+      "design": "design_01",
+      "cell": "cell_0040",
+      "horizon": 64,
+      "label": 0,
+      "source": "939ae9501671121159f3bbd5750268ebd0cb8e3a6c6b2a1bea35b7a972a31b2f"
+    },
+    {
+      "design": "design_01",
+      "cell": "cell_0041",
+      "horizon": 64,
+      "label": 0,
+      "source": "ab34fbb5b8b1201729c5f21e25276f19fe840f2a47b010b5b01f3881f6c0ced5"
+    },
+    {
+      "design": "design_01",
+      "cell": "cell_0042",
+      "horizon": 64,
+      "label": 0,
+      "source": "150e3ce9b35c792dcb0207ff60fcfb5465df62aeead84e8ac18a1041aaa5db6e"
+    },
+    {
+      "design": "design_01",
+      "cell": "cell_0043",
+      "horizon": 64,
+      "label": 0,
+      "source": "d2314bd2e2bf7af0dba3e351a883234830f845f5d9f7a01fe574a7c6361ba5ad"
+    },
+    {
+      "design": "design_01",
+      "cell": "cell_0044",
+      "horizon": 64,
+      "label": 0,
+      "source": "f2346162648ad8480dc7d9ac9916d6ff20ed99a50f088ffab9c206da4c0f0ab9"
+    },
+    {
+      "design": "design_02",
+      "cell": "cell_0000",
+      "horizon": 64,
+      "label": 0,
+      "source": "e9c2c60e080d34604bc9a85dadffab08d4d5b22c75d7e8610bb023b743768ba5"
+    },
+    {
+      "design": "design_02",
+      "cell": "cell_0001",
+      "horizon": 64,
+      "label": 0,
+      "source": "e79fc7f02d6eda86eebbf408717d2d0886a992f74acbbb7590e4aefb1d9c4ca8"
+    },
+    {
+      "design": "design_02",
+      "cell": "cell_0002",
+      "horizon": 64,
+      "label": 0,
+      "source": "3710c95d05f6280e4633b999aa7a69241d9ba23ec7d7210e32ee4d8e5dae383b"
+    },
+    {
+      "design": "design_02",
+      "cell": "cell_0003",
+      "horizon": 64,
+      "label": 0,
+      "source": "a471eac2ba1d14814f1f524ac7eabc3319ab2358a949bc46bddf4a5da138baee"
+    },
+    {
+      "design": "design_02",
+      "cell": "cell_0004",
+      "horizon": 64,
+      "label": 0,
+      "source": "75b15d1c440497d3dd318604e3f495de044b2aa4d861e333f73b9e48aa9d69d3"
+    },
+    {
+      "design": "design_02",
+      "cell": "cell_0005",
+      "horizon": 64,
+      "label": 1,
+      "source": "a4344c3ae4b2ad643a7668986568a5c834f76932b76aa4c88ad3c0fe76dec348"
+    },
+    {
+      "design": "design_02",
+      "cell": "cell_0006",
+      "horizon": 64,
+      "label": 1,
+      "source": "5d45a19da5767b45411e25d896e78b2e877190df145c87a891740d37ad057a8a"
+    },
+    {
+      "design": "design_02",
+      "cell": "cell_0007",
+      "horizon": 64,
+      "label": 1,
+      "source": "645a2d3c00f553b13d304241475fc4dff95ead2b1e0b7c8d4f2dafcffd034d0f"
+    },
+    {
+      "design": "design_02",
+      "cell": "cell_0008",
+      "horizon": 64,
+      "label": 0,
+      "source": "4bcbeec1496076c12a7e029769163f26af661700655d29a312e02baa78d72080"
+    },
+    {
+      "design": "design_02",
+      "cell": "cell_0009",
+      "horizon": 64,
+      "label": 0,
+      "source": "9e848fa56235af5e5fb2c2ccc6b01d43c992a565bb4ffcc076588d183f50c41a"
+    },
+    {
+      "design": "design_02",
+      "cell": "cell_0010",
+      "horizon": 64,
+      "label": 1,
+      "source": "4e915c8a43d7f46b98f47d544d13e8bcb7829fe0a1ae6a5aec381577265fb617"
+    },
+    {
+      "design": "design_02",
+      "cell": "cell_0011",
+      "horizon": 64,
+      "label": 1,
+      "source": "0c1701f36d3f6ed77c45ec74025ff9f8d3ee31362e8a5ae40f9b5c3f22261ce2"
+    },
+    {
+      "design": "design_02",
+      "cell": "cell_0012",
+      "horizon": 64,
+      "label": 1,
+      "source": "b5121a1fb62b128d1f2958749fde8e01405cb7533709472aaafd55068ee7fda5"
+    },
+    {
+      "design": "design_02",
+      "cell": "cell_0013",
+      "horizon": 64,
+      "label": 1,
+      "source": "6db44d59513eb71da2268b5e621a225c2bdb222e907a56d742d16a8af4cc9e3a"
+    },
+    {
+      "design": "design_02",
+      "cell": "cell_0014",
+      "horizon": 64,
+      "label": 0,
+      "source": "9b8d9527d1c7e9bf65b67a2dfa730dcbb200e56143de9a21408bb0f0df737c29"
+    },
+    {
+      "design": "design_02",
+      "cell": "cell_0015",
+      "horizon": 64,
+      "label": 1,
+      "source": "ceaefdd7cc993f6fe986f8959ccf7e64c346a7aac0417e2515875dd4dac6af11"
+    },
+    {
+      "design": "design_02",
+      "cell": "cell_0016",
+      "horizon": 64,
+      "label": 1,
+      "source": "869a4b5e61b7cee7eec95f14abad200ae45c854531c40314fba00b1bf3aae889"
+    },
+    {
+      "design": "design_02",
+      "cell": "cell_0017",
+      "horizon": 64,
+      "label": 1,
+      "source": "146cc319ccc03042a74fa58fa415e22bcf8a082d39d7160ca9e7d3063b6c0723"
+    },
+    {
+      "design": "design_02",
+      "cell": "cell_0018",
+      "horizon": 64,
+      "label": 1,
+      "source": "131099dd3f41e8ecd593e5889245a55cb710b20befd0789dc7071e25c4d2c666"
+    },
+    {
+      "design": "design_02",
+      "cell": "cell_0019",
+      "horizon": 64,
+      "label": 0,
+      "source": "f92407e4f6e6224d8dc2d6869ec0d609553383a70c2c02b6de43cad7bb251a8b"
+    },
+    {
+      "design": "design_02",
+      "cell": "cell_0020",
+      "horizon": 64,
+      "label": 1,
+      "source": "1e3af9449c93ae2042462a0fa015d3eb596a2cb191a36d84e8daf43dde881d29"
+    },
+    {
+      "design": "design_02",
+      "cell": "cell_0021",
+      "horizon": 64,
+      "label": 1,
+      "source": "5d8a053db0c0c2af03397312cec094735142ea48a2248dbc2b77f16f6e71feab"
+    },
+    {
+      "design": "design_02",
+      "cell": "cell_0022",
+      "horizon": 64,
+      "label": 1,
+      "source": "17232b0916d3db8c079594792b5d1a27a41f2b47da99b35891744a8f7b59a61b"
+    },
+    {
+      "design": "design_02",
+      "cell": "cell_0023",
+      "horizon": 64,
+      "label": 1,
+      "source": "102ad3684a5c124c7e0b0292454eb90fda5119686059454386ca8c6671c5206c"
+    },
+    {
+      "design": "design_02",
+      "cell": "cell_0024",
+      "horizon": 64,
+      "label": 1,
+      "source": "e283075d8cf61b44b3028f38c543b1dc8df61abb7a8070bc9057a67d0063599f"
+    },
+    {
+      "design": "design_02",
+      "cell": "cell_0025",
+      "horizon": 64,
+      "label": 1,
+      "source": "28c0b04cfbc8eea353613ccdf13045a0a2bffb9682431925540e2cd6a296e54f"
+    },
+    {
+      "design": "design_02",
+      "cell": "cell_0026",
+      "horizon": 64,
+      "label": 1,
+      "source": "8ccf0f70761c21b61eea08baf208a2b0a830f6e983e8b457501bd914e4c6df8d"
+    },
+    {
+      "design": "design_02",
+      "cell": "cell_0027",
+      "horizon": 64,
+      "label": 1,
+      "source": "1c622f693936d9c947881a036a343afd750cddce41f6323ab1950395e7b6a885"
+    },
+    {
+      "design": "design_02",
+      "cell": "cell_0028",
+      "horizon": 64,
+      "label": 1,
+      "source": "99bc5e5ee08067b7115b1c9e787662b1339022d864f5b54d73404cb09fd95905"
+    },
+    {
+      "design": "design_02",
+      "cell": "cell_0029",
+      "horizon": 64,
+      "label": 1,
+      "source": "e687406f53489ffab27fff0df2a6fcd36dbf7731443e2d51514d6acfc235a8e6"
+    },
+    {
+      "design": "design_02",
+      "cell": "cell_0030",
+      "horizon": 64,
+      "label": 1,
+      "source": "294d6b596861300e01448bee8e45a8ed2fe49245c4c4efb0d8da9a45d7e04a25"
+    },
+    {
+      "design": "design_02",
+      "cell": "cell_0031",
+      "horizon": 64,
+      "label": 1,
+      "source": "226646578c69665768789b5f894d5afb7747ff8621bbae96f3377c45cde4acb9"
+    },
+    {
+      "design": "design_02",
+      "cell": "cell_0032",
+      "horizon": 64,
+      "label": 1,
+      "source": "cfb5e1a8420363d09552265489fed735069be3727b9a28be9da339ffdc96dee8"
+    },
+    {
+      "design": "design_02",
+      "cell": "cell_0033",
+      "horizon": 64,
+      "label": 1,
+      "source": "284ebfb98e5339192897d20a31bf210efe393f1a284545b6f25c2fead77ae97c"
+    },
+    {
+      "design": "design_02",
+      "cell": "cell_0034",
+      "horizon": 64,
+      "label": 0,
+      "source": "5b4083735b9a987b774a0be6bccfaa359299b30c0d316dcdef3a25bc0e8af3ad"
+    },
+    {
+      "design": "design_02",
+      "cell": "cell_0035",
+      "horizon": 64,
+      "label": 1,
+      "source": "cb265e52140af9f37eb0e248978f5994b6d4afb89142b1340b8bcecbce99e75d"
+    },
+    {
+      "design": "design_02",
+      "cell": "cell_0036",
+      "horizon": 64,
+      "label": 1,
+      "source": "bb90c7f4e551d60a9b62fafb55c02c816896e567772d878433d2c01116f8f8f6"
+    },
+    {
+      "design": "design_02",
+      "cell": "cell_0037",
+      "horizon": 64,
+      "label": 1,
+      "source": "6a35a943ec2da14331afae6fdc1dce70c25a4ab407d15fe45d04eae466bb6ce2"
+    },
+    {
+      "design": "design_02",
+      "cell": "cell_0038",
+      "horizon": 64,
+      "label": 1,
+      "source": "aae809a86f5a070ffc96143176465b4d355421b68bb948fafaf32aa6dbeea6f9"
+    },
+    {
+      "design": "design_02",
+      "cell": "cell_0039",
+      "horizon": 64,
+      "label": 0,
+      "source": "10a0dddde55f44f7d0899fca4ed50b9089bc30994f92c2f5effbeb8a8654c1ee"
+    },
+    {
+      "design": "design_02",
+      "cell": "cell_0040",
+      "horizon": 64,
+      "label": 0,
+      "source": "3440e16727bc9df5aa8f4aab3110a4385b32a771642979e915bf147ee53ccb5a"
+    },
+    {
+      "design": "design_02",
+      "cell": "cell_0041",
+      "horizon": 64,
+      "label": 0,
+      "source": "3392c0cc80c6efb8c639c3b258bd19e1b89e6785550a720a5d1278ba45292d37"
+    },
+    {
+      "design": "design_02",
+      "cell": "cell_0042",
+      "horizon": 64,
+      "label": 0,
+      "source": "2ed39654ba18e8413c66d2455a50155915216c0b86eac4fa92abac46ba2bae7e"
+    },
+    {
+      "design": "design_02",
+      "cell": "cell_0043",
+      "horizon": 64,
+      "label": 0,
+      "source": "ccb77b2de5b981af6612fa67deae4bf65c3277dcab8e94985cf766930ba6e852"
+    },
+    {
+      "design": "design_02",
+      "cell": "cell_0044",
+      "horizon": 64,
+      "label": 0,
+      "source": "f55887c835924a2bd4af886edfe7208a86a03582923ccee32db1d42c5faa73dd"
+    },
+    {
+      "design": "design_03",
+      "cell": "cell_0000",
+      "horizon": 64,
+      "label": 0,
+      "source": "7ceec00e596dec44316f19186d873e231e5728241d0c5685f9a536db430e4d1a"
+    },
+    {
+      "design": "design_03",
+      "cell": "cell_0001",
+      "horizon": 64,
+      "label": 0,
+      "source": "384c4752cc6e5abcfda4920cefc12ba15f4c9ad3760e6af3e19678b803a12bd7"
+    },
+    {
+      "design": "design_03",
+      "cell": "cell_0002",
+      "horizon": 64,
+      "label": 0,
+      "source": "e94ddb3401deab03f7f72707323d37564959337e9c1558acc9172250a6f466a2"
+    },
+    {
+      "design": "design_03",
+      "cell": "cell_0003",
+      "horizon": 64,
+      "label": 0,
+      "source": "0a2dfbcc7c0b6e32c09ccbe42ce5d665486aa2cd9347964958d677335beb9553"
+    },
+    {
+      "design": "design_03",
+      "cell": "cell_0004",
+      "horizon": 64,
+      "label": 0,
+      "source": "797c355aa0ebb599fa80a50b8221e78cbe84a5468ba81fcf83b7a370defca71b"
+    },
+    {
+      "design": "design_03",
+      "cell": "cell_0005",
+      "horizon": 64,
+      "label": 1,
+      "source": "12a4243a1df7e5d27ee9c391b4f637a2298d5499dddef706a3cc745831aaf489"
+    },
+    {
+      "design": "design_03",
+      "cell": "cell_0006",
+      "horizon": 64,
+      "label": 1,
+      "source": "f386baa941581007b244f1abe17a4e4c3d287b7f86effa3d8752f1b85bd91042"
+    },
+    {
+      "design": "design_03",
+      "cell": "cell_0007",
+      "horizon": 64,
+      "label": 1,
+      "source": "9b556bbd9ef31f7b9e7e72c6811c9a046ac6ed5e2b5428c247f02f7616f62f47"
+    },
+    {
+      "design": "design_03",
+      "cell": "cell_0008",
+      "horizon": 64,
+      "label": 0,
+      "source": "eef3fbc04f279769a82781e0b54712b48085f6dfb98afccf1436a90c73b2b4da"
+    },
+    {
+      "design": "design_03",
+      "cell": "cell_0009",
+      "horizon": 64,
+      "label": 0,
+      "source": "2e1310771a96d289082573f379521cef484e05d7f01b9b4c53dd4b01f26579f8"
+    },
+    {
+      "design": "design_03",
+      "cell": "cell_0010",
+      "horizon": 64,
+      "label": 1,
+      "source": "1b580a3df955e252cf512a1136f6fc19cc632cd30097427ebf32a7dc4b47caa9"
+    },
+    {
+      "design": "design_03",
+      "cell": "cell_0011",
+      "horizon": 64,
+      "label": 1,
+      "source": "da9ac7c2724b10f566a429390660e7d081b195d7f813f38bada38e5bbeedfcd9"
+    },
+    {
+      "design": "design_03",
+      "cell": "cell_0012",
+      "horizon": 64,
+      "label": 1,
+      "source": "b319c9bbea8b9700bbf359aa05208e43a22c34767ef76d0c9e9ec9b1cff28648"
+    },
+    {
+      "design": "design_03",
+      "cell": "cell_0013",
+      "horizon": 64,
+      "label": 1,
+      "source": "3270e90b963a2f47d1568f7be059ac748053646aac8bbd52de9d84fb3e9a76a5"
+    },
+    {
+      "design": "design_03",
+      "cell": "cell_0014",
+      "horizon": 64,
+      "label": 0,
+      "source": "5ca30329c448884844b21cfbcce6ec5f2e3f7511162e2172f62181daa16f01f8"
+    },
+    {
+      "design": "design_03",
+      "cell": "cell_0015",
+      "horizon": 64,
+      "label": 1,
+      "source": "79899d7c00a6989e2b555b9ac2ccd5b245ec501edf80fff8358cfc78d523d89d"
+    },
+    {
+      "design": "design_03",
+      "cell": "cell_0016",
+      "horizon": 64,
+      "label": 1,
+      "source": "5dd984f8be89a87b042e7727c5b4fec3fc23026241494d39c0d0e0072279609e"
+    },
+    {
+      "design": "design_03",
+      "cell": "cell_0017",
+      "horizon": 64,
+      "label": 1,
+      "source": "04ab33ffcc92774f37b6eb2adf16b5d62a39b760437e3a34b74711565ddcc53d"
+    },
+    {
+      "design": "design_03",
+      "cell": "cell_0018",
+      "horizon": 64,
+      "label": 1,
+      "source": "08a07ac0dc1f57ce2f94b8612538dfc093a112d192d603b3808160391b4826c5"
+    },
+    {
+      "design": "design_03",
+      "cell": "cell_0019",
+      "horizon": 64,
+      "label": 0,
+      "source": "ad9a790423d10c0f75b6625941b1da7d1dd5cc6a27e6f018bcc1e84b5e66adb5"
+    },
+    {
+      "design": "design_03",
+      "cell": "cell_0020",
+      "horizon": 64,
+      "label": 1,
+      "source": "2acb4946dab1578efa4834ea7ea57760f762f0c83053bf782f6cf16e616c7bba"
+    },
+    {
+      "design": "design_03",
+      "cell": "cell_0021",
+      "horizon": 64,
+      "label": 1,
+      "source": "ed4635c56c70b64c4e93154c334b2c2123623690e5c448af77879cc62367fa2d"
+    },
+    {
+      "design": "design_03",
+      "cell": "cell_0022",
+      "horizon": 64,
+      "label": 1,
+      "source": "1d92ac5df7f87cbeb6add02e07f557acfdc07468fa7d5c558bca5408090dd9e6"
+    },
+    {
+      "design": "design_03",
+      "cell": "cell_0023",
+      "horizon": 64,
+      "label": 1,
+      "source": "cbca616e5d1c2c05af4b0ca70bbd772df26940f87322f2270c64b90084d435c9"
+    },
+    {
+      "design": "design_03",
+      "cell": "cell_0024",
+      "horizon": 64,
+      "label": 1,
+      "source": "be35d15113a8642c0e389bb44851600b823e0068ec377b1bdf2461003d24a228"
+    },
+    {
+      "design": "design_03",
+      "cell": "cell_0025",
+      "horizon": 64,
+      "label": 1,
+      "source": "8b84483bba3952809f89192883c3b7ba6a45d123c8f55d653a7ae83893e3a901"
+    },
+    {
+      "design": "design_03",
+      "cell": "cell_0026",
+      "horizon": 64,
+      "label": 1,
+      "source": "d2ef6110ced47f3866856d6000d969949470b05f19f3161a250dfd7b44d04d8b"
+    },
+    {
+      "design": "design_03",
+      "cell": "cell_0027",
+      "horizon": 64,
+      "label": 1,
+      "source": "8e2cebfe15cf5594e80b91009b03b5c8c80e8e2c2a88e77eef8eb879aad3b826"
+    },
+    {
+      "design": "design_03",
+      "cell": "cell_0028",
+      "horizon": 64,
+      "label": 1,
+      "source": "010ea4febc92f5d6c8ea9c2a9db5c1e24ca439e2f5ae837113849c289013a639"
+    },
+    {
+      "design": "design_03",
+      "cell": "cell_0029",
+      "horizon": 64,
+      "label": 1,
+      "source": "b9d4be61c8f3a66c745d57b892c468632b7a34762f65d6672d6e4885ecd05b11"
+    },
+    {
+      "design": "design_03",
+      "cell": "cell_0030",
+      "horizon": 64,
+      "label": 1,
+      "source": "183fc9169393bb02b2c2bd7baa00a5b677d2c734442789b623453a8e71ad8097"
+    },
+    {
+      "design": "design_03",
+      "cell": "cell_0031",
+      "horizon": 64,
+      "label": 1,
+      "source": "1779569270415daf3bf516fd2ecfe16f7b764796fee5c0f44d38a868c034f024"
+    },
+    {
+      "design": "design_03",
+      "cell": "cell_0032",
+      "horizon": 64,
+      "label": 1,
+      "source": "4763d78891d8fb4f598ba322abeb525f66fad6f3540da49ebb71dfa951fc82be"
+    },
+    {
+      "design": "design_03",
+      "cell": "cell_0033",
+      "horizon": 64,
+      "label": 1,
+      "source": "1f4d7655a1d7370ca10c3792a556097df63b53ea057d16798f4e023a222616d4"
+    },
+    {
+      "design": "design_03",
+      "cell": "cell_0034",
+      "horizon": 64,
+      "label": 1,
+      "source": "df37e8415f9df71180e0484004f651c6f15d07cce4294bb52c27dcef5b8cb61e"
+    },
+    {
+      "design": "design_03",
+      "cell": "cell_0035",
+      "horizon": 64,
+      "label": 1,
+      "source": "ea33512c04b5bd4a09aa81a3d5d1a07cd1d3516dfe84a8c446ab173b611da32e"
+    },
+    {
+      "design": "design_03",
+      "cell": "cell_0036",
+      "horizon": 64,
+      "label": 1,
+      "source": "07775498280b32cb41ae89d5d26709a886e71c743a77535f89dcef36fc4472c9"
+    },
+    {
+      "design": "design_03",
+      "cell": "cell_0037",
+      "horizon": 64,
+      "label": 0,
+      "source": "9197e4a8270723a9ae7acebe2ff694229ea5a7209fc4684d9dc1e73e2be21a37"
+    },
+    {
+      "design": "design_03",
+      "cell": "cell_0038",
+      "horizon": 64,
+      "label": 0,
+      "source": "0802a2d811bd09ee6935bae7c6c9e9d37d253de20183a627733102eccc749789"
+    },
+    {
+      "design": "design_03",
+      "cell": "cell_0039",
+      "horizon": 64,
+      "label": 0,
+      "source": "f54c1b1412b9862cc4f47b8b2f812dac1c113ee5751715e0b5de1c175ecec442"
+    },
+    {
+      "design": "design_03",
+      "cell": "cell_0040",
+      "horizon": 64,
+      "label": 0,
+      "source": "c2ff3850d5136296110defcd76919d0869b1aa4094f37f783a12857659c6ba2f"
+    },
+    {
+      "design": "design_03",
+      "cell": "cell_0041",
+      "horizon": 64,
+      "label": 0,
+      "source": "9452ce07378cf450f0ed0328b952dbf3c87bfc0e2ee7dd8bc8e3bb0dc34337c6"
+    },
+    {
+      "design": "design_03",
+      "cell": "cell_0042",
+      "horizon": 64,
+      "label": 0,
+      "source": "1374aa98757023d144d1bd7a645790c5f433cc0d6d8b95c9025803797833820a"
+    },
+    {
+      "design": "design_03",
+      "cell": "cell_0043",
+      "horizon": 64,
+      "label": 0,
+      "source": "5532b1a16791bb3692815ac179d4bed1eca6c94c5254d83ffdff34db99c5e993"
+    },
+    {
+      "design": "design_03",
+      "cell": "cell_0044",
+      "horizon": 64,
+      "label": 0,
+      "source": "4d741626d0f72a8a19b59eb772b6bd1d823833706113f71e56e678eba7bb1331"
+    },
+    {
+      "design": "design_04",
+      "cell": "cell_0000",
+      "horizon": 64,
+      "label": 0,
+      "source": "4560d0dd823187a39e6d864085fc209bd2c9eee02beeca37b35ce22e02e36a37"
+    },
+    {
+      "design": "design_04",
+      "cell": "cell_0001",
+      "horizon": 64,
+      "label": 0,
+      "source": "7be5ddbebe9707cf590a7f480c3910efb33fbb5f7c9b0ee5e238019d327fbbbc"
+    },
+    {
+      "design": "design_04",
+      "cell": "cell_0002",
+      "horizon": 64,
+      "label": 0,
+      "source": "03cc1b4d50ca42a373840f1e7b667fd4eb56d321bcb71dd2b3fb51565676f1ea"
+    },
+    {
+      "design": "design_04",
+      "cell": "cell_0003",
+      "horizon": 64,
+      "label": 0,
+      "source": "a6b58cdbacaafcf46a427a025bb469f40fb07026288b0ec02345c74b847896de"
+    },
+    {
+      "design": "design_04",
+      "cell": "cell_0004",
+      "horizon": 64,
+      "label": 0,
+      "source": "ea3eb0bcfc7c2debe8e238b357da1027a3356b86ddc44d59e7f99b3f24df2e90"
+    },
+    {
+      "design": "design_04",
+      "cell": "cell_0005",
+      "horizon": 64,
+      "label": 1,
+      "source": "55f1f2261c7a6bee00cb56255c09a7fc1e72ae0c5f0dd506eebc803d2ace40da"
+    },
+    {
+      "design": "design_04",
+      "cell": "cell_0006",
+      "horizon": 64,
+      "label": 1,
+      "source": "29868a4f42d42cf0a575c393e9c65f1b1247996a28684cf22c690f1331d414ae"
+    },
+    {
+      "design": "design_04",
+      "cell": "cell_0007",
+      "horizon": 64,
+      "label": 1,
+      "source": "fdfa37e835a0470b735eaf54eb9f18a126b4ce3b4318ff1aa3e283ef26417fa0"
+    },
+    {
+      "design": "design_04",
+      "cell": "cell_0008",
+      "horizon": 64,
+      "label": 0,
+      "source": "04b8a48f838ac0f9e78409c433d2d330fa394b2bfee237393d0a00c14940a8da"
+    },
+    {
+      "design": "design_04",
+      "cell": "cell_0009",
+      "horizon": 64,
+      "label": 0,
+      "source": "14601a295bdd594749b8fadddaf36a6dbb26aa173ceece4a6e58982c5c9825a4"
+    },
+    {
+      "design": "design_04",
+      "cell": "cell_0010",
+      "horizon": 64,
+      "label": 1,
+      "source": "bdf0a99d040ce4c2cb77f8902a355501551f92ab930fb0bdbcb9685604328588"
+    },
+    {
+      "design": "design_04",
+      "cell": "cell_0011",
+      "horizon": 64,
+      "label": 1,
+      "source": "9061a2aab07b37cda730ee4087a7994a1f00489c71ed1a3bdbc829af18a1be7a"
+    },
+    {
+      "design": "design_04",
+      "cell": "cell_0012",
+      "horizon": 64,
+      "label": 1,
+      "source": "2045f0829e9a8b4b6f2fd643ef0792b7ddf39b06778ec9175b687fa6f121325d"
+    },
+    {
+      "design": "design_04",
+      "cell": "cell_0013",
+      "horizon": 64,
+      "label": 1,
+      "source": "a7cdd8a3a6e1118005dc73a8f6f93615ffde848c27c3ee5c8c2590ca29c1ff73"
+    },
+    {
+      "design": "design_04",
+      "cell": "cell_0014",
+      "horizon": 64,
+      "label": 0,
+      "source": "7847fa9ee08591b71f703fcd91a9effc924ed9073230a120bdd652e933205e8a"
+    },
+    {
+      "design": "design_04",
+      "cell": "cell_0015",
+      "horizon": 64,
+      "label": 1,
+      "source": "cd7c87c6acc860ac555810ad874947b1e19e556038265049c1cd743435c17043"
+    },
+    {
+      "design": "design_04",
+      "cell": "cell_0016",
+      "horizon": 64,
+      "label": 1,
+      "source": "79629f16eb04f0456e1be3bdd45eaba08783e9b5c087224abd08ae5c6c8a48ca"
+    },
+    {
+      "design": "design_04",
+      "cell": "cell_0017",
+      "horizon": 64,
+      "label": 1,
+      "source": "254d43044077d36e5bcdd9ab29a82d3e87379fa872209c1f4b56f2664dc18a38"
+    },
+    {
+      "design": "design_04",
+      "cell": "cell_0018",
+      "horizon": 64,
+      "label": 1,
+      "source": "5dce22bd310e7dfc45491cac96241daa6f12b9615d6d8d25e335c8572d1185d1"
+    },
+    {
+      "design": "design_04",
+      "cell": "cell_0019",
+      "horizon": 64,
+      "label": 0,
+      "source": "26b8e3fd253b1a46709d73ac6794ce70a52ff06e9880ab30839f75a32be5b20a"
+    },
+    {
+      "design": "design_04",
+      "cell": "cell_0020",
+      "horizon": 64,
+      "label": 1,
+      "source": "ed206370a7ae89bc3d66509e48adcaf81bd49f7a0566e5a71b3f97ac9d459bb9"
+    },
+    {
+      "design": "design_04",
+      "cell": "cell_0021",
+      "horizon": 64,
+      "label": 1,
+      "source": "4b2c8579acb3ef73008dcd58bdaf69b0270130e0769b86786a66368112237c40"
+    },
+    {
+      "design": "design_04",
+      "cell": "cell_0022",
+      "horizon": 64,
+      "label": 1,
+      "source": "558633d7a6f9fc225a65a32dd724cef129e91412c6c999dd3eb84be65a8103f6"
+    },
+    {
+      "design": "design_04",
+      "cell": "cell_0023",
+      "horizon": 64,
+      "label": 1,
+      "source": "2b50b519261ecff116b9a7630ee28d43412440304ba70e52b92d3a3e785f520f"
+    },
+    {
+      "design": "design_04",
+      "cell": "cell_0024",
+      "horizon": 64,
+      "label": 1,
+      "source": "97fecf8a9269bbbfaa3dc71d927052511c4ba81ac7b7fddfd2ca1490048245d1"
+    },
+    {
+      "design": "design_04",
+      "cell": "cell_0025",
+      "horizon": 64,
+      "label": 1,
+      "source": "b5978a407870e2ab689195b6175ea358cff815ee5ff2c6a89e426939e4a86b9a"
+    },
+    {
+      "design": "design_04",
+      "cell": "cell_0026",
+      "horizon": 64,
+      "label": 1,
+      "source": "fb5921089bc4f2016160b0379b8b0aea5c4fb9163e66f13eedce1d8efe471cdf"
+    },
+    {
+      "design": "design_04",
+      "cell": "cell_0027",
+      "horizon": 64,
+      "label": 1,
+      "source": "2374e61b53d556cae172dcce1b52d6dc07b78001ece064a4b9b69bab7209425d"
+    },
+    {
+      "design": "design_04",
+      "cell": "cell_0028",
+      "horizon": 64,
+      "label": 1,
+      "source": "01a725881460041a93be6f79d868f5fdb22f56bb19243c48a44e29711d8ae6a1"
+    },
+    {
+      "design": "design_04",
+      "cell": "cell_0029",
+      "horizon": 64,
+      "label": 0,
+      "source": "21037cf60487d1ce97c48bfd19943d503b4627368978cb4d4aea31e94d115c70"
+    },
+    {
+      "design": "design_04",
+      "cell": "cell_0030",
+      "horizon": 64,
+      "label": 1,
+      "source": "f5819172a6080eca80f44f0c0d9b9a8eebff6012e88425f8613bde78deb88159"
+    },
+    {
+      "design": "design_04",
+      "cell": "cell_0031",
+      "horizon": 64,
+      "label": 1,
+      "source": "71e615a15778886a398d5333e85e2a7724362c5e1d3b424942f5adbc50185fbc"
+    },
+    {
+      "design": "design_04",
+      "cell": "cell_0032",
+      "horizon": 64,
+      "label": 1,
+      "source": "6c8f9558ae9780b4372dc05e64076d5878d287960b7427e175d4252a1a2a49be"
+    },
+    {
+      "design": "design_04",
+      "cell": "cell_0033",
+      "horizon": 64,
+      "label": 1,
+      "source": "424ec40e62549df6c626a7df8bee6b7bf0f1e3a2ecee2eb0b6ab375cf213fad3"
+    },
+    {
+      "design": "design_04",
+      "cell": "cell_0034",
+      "horizon": 64,
+      "label": 0,
+      "source": "da2800de7135d35c6f5a6871245b586b89e84bc59fdb5a5b76f50bee8d1658d6"
+    },
+    {
+      "design": "design_04",
+      "cell": "cell_0035",
+      "horizon": 64,
+      "label": 1,
+      "source": "d328efe41a4b1b729c5d6c262020185b912e77b3635cb541327517ae1028dcdb"
+    },
+    {
+      "design": "design_04",
+      "cell": "cell_0036",
+      "horizon": 64,
+      "label": 1,
+      "source": "c48b807ebae358be6d5d297356cdb68c4897297ca89750e252dc85fdb6c2ff5a"
+    },
+    {
+      "design": "design_04",
+      "cell": "cell_0037",
+      "horizon": 64,
+      "label": 1,
+      "source": "80853b30b011e5f35a6028c98614fa8ab29fad21111b2c53df349320da7bd6ae"
+    },
+    {
+      "design": "design_04",
+      "cell": "cell_0038",
+      "horizon": 64,
+      "label": 0,
+      "source": "8b619343054377b455c57f75a7c4bd190ab947399950b56a9c3fc50f1593cb8d"
+    },
+    {
+      "design": "design_04",
+      "cell": "cell_0039",
+      "horizon": 64,
+      "label": 0,
+      "source": "281dda571bb11f9f4b8a695e7405d3688ac1dce917f0754fa0a20feb63d57fc5"
+    },
+    {
+      "design": "design_04",
+      "cell": "cell_0040",
+      "horizon": 64,
+      "label": 0,
+      "source": "1c3f5830c3fc68ecc1372e405a1bfe983493d1a4c23ad0249bcbef47c915d3ce"
+    },
+    {
+      "design": "design_04",
+      "cell": "cell_0041",
+      "horizon": 64,
+      "label": 0,
+      "source": "9f34a7d68f9f3d031923122d8bd5c7088bfcbdedee39dfd971966015924bb404"
+    },
+    {
+      "design": "design_04",
+      "cell": "cell_0042",
+      "horizon": 64,
+      "label": 0,
+      "source": "3b78c76dbfba33a7f79398edf16b4fd34d7bb61f002473064cc00638e9cea787"
+    },
+    {
+      "design": "design_04",
+      "cell": "cell_0043",
+      "horizon": 64,
+      "label": 0,
+      "source": "005590a0492281bdf74c93e93c9402666854eaeff311b8b7c9a9062c3e7089b6"
+    },
+    {
+      "design": "design_04",
+      "cell": "cell_0044",
+      "horizon": 64,
+      "label": 0,
+      "source": "458acd2e6d0589accd3331ae1d0e27db4a42c53f9c4206db0919bf992d255528"
+    },
+    {
+      "design": "design_05",
+      "cell": "cell_0000",
+      "horizon": 64,
+      "label": 0,
+      "source": "65879424805ed0a5fdeca4783d5b1e1981e0b4c2d7d4f8a706f25b4321ee8ad0"
+    },
+    {
+      "design": "design_05",
+      "cell": "cell_0001",
+      "horizon": 64,
+      "label": 0,
+      "source": "6daf4c6edb03317516fdf68412c528c3c2776c330898f9da787f446e68604a09"
+    },
+    {
+      "design": "design_05",
+      "cell": "cell_0002",
+      "horizon": 64,
+      "label": 0,
+      "source": "a2ae43ea5ba25c92810d8dd1f3b1ae7c3100ca9deaaa856c8a5a7ccd3d5da450"
+    },
+    {
+      "design": "design_05",
+      "cell": "cell_0003",
+      "horizon": 64,
+      "label": 0,
+      "source": "76541657efc0a875e1d9d08ad8bdac9682207728831cf0cbaca2debddb032e31"
+    },
+    {
+      "design": "design_05",
+      "cell": "cell_0004",
+      "horizon": 64,
+      "label": 0,
+      "source": "65aa111b4ba6a00af3327c7f85830eda75af2d887f951c8b384b1960e024a3e2"
+    },
+    {
+      "design": "design_05",
+      "cell": "cell_0005",
+      "horizon": 64,
+      "label": 1,
+      "source": "b24ee578db95ccc9b0f4ee61ab323e93f1cd8ba7e72f87257a8f63fa9763f7a0"
+    },
+    {
+      "design": "design_05",
+      "cell": "cell_0006",
+      "horizon": 64,
+      "label": 1,
+      "source": "c29128697abac40a0bb883bf25624e4064ff859986c8c71769595df70d00a624"
+    },
+    {
+      "design": "design_05",
+      "cell": "cell_0007",
+      "horizon": 64,
+      "label": 1,
+      "source": "63ae35371db4698f226e199dbb201f3ce67df4bbaed4a3586d60ce2790d81cd1"
+    },
+    {
+      "design": "design_05",
+      "cell": "cell_0008",
+      "horizon": 64,
+      "label": 0,
+      "source": "9869ecd673e7d8fff03b4483a74989f000478e3995c1113b2047dc835d10ad06"
+    },
+    {
+      "design": "design_05",
+      "cell": "cell_0009",
+      "horizon": 64,
+      "label": 0,
+      "source": "bd7a6c774f6ed09c92e41d04d9379db5c1f47fb800318a5f886b024bf2d45edf"
+    },
+    {
+      "design": "design_05",
+      "cell": "cell_0010",
+      "horizon": 64,
+      "label": 1,
+      "source": "a6089ffae8e0a4b7467685570ab664f74291945620d225cabf4af1e5799f9675"
+    },
+    {
+      "design": "design_05",
+      "cell": "cell_0011",
+      "horizon": 64,
+      "label": 1,
+      "source": "1ee7955e7d671a71f518195d936ec1b5bf4caa6363356e881e58d9152367dad7"
+    },
+    {
+      "design": "design_05",
+      "cell": "cell_0012",
+      "horizon": 64,
+      "label": 1,
+      "source": "62ca1418dbda0922241f30182ceea6697f86bf494601475ecae1d3aff2b8e74e"
+    },
+    {
+      "design": "design_05",
+      "cell": "cell_0013",
+      "horizon": 64,
+      "label": 1,
+      "source": "3f94729911ccac0edf76894514189fe5bb048a9bfc5b99b1e57686a9e3e9ae69"
+    },
+    {
+      "design": "design_05",
+      "cell": "cell_0014",
+      "horizon": 64,
+      "label": 0,
+      "source": "a39bb684b156db96b4577091651f6b0610d762e4b9d1a37682491b794d3e9104"
+    },
+    {
+      "design": "design_05",
+      "cell": "cell_0015",
+      "horizon": 64,
+      "label": 1,
+      "source": "5341b8dceb9ffe17c221f4b80c970fc5e2a79e45a2f789f78add54da272e1639"
+    },
+    {
+      "design": "design_05",
+      "cell": "cell_0016",
+      "horizon": 64,
+      "label": 1,
+      "source": "1d25fc562bfdd5a6b8528afb55b823fc7a28f52dcf7f9e27182f1f88b5e8c387"
+    },
+    {
+      "design": "design_05",
+      "cell": "cell_0017",
+      "horizon": 64,
+      "label": 1,
+      "source": "bd399c1216d7ca91a3d9439732a835ff68d61f6b5016fed245e6eeca3efd178b"
+    },
+    {
+      "design": "design_05",
+      "cell": "cell_0018",
+      "horizon": 64,
+      "label": 1,
+      "source": "8805aa6b6ac1512596b915f9f05cf9651a558991d7e8986e6ba7c44634ce86d5"
+    },
+    {
+      "design": "design_05",
+      "cell": "cell_0019",
+      "horizon": 64,
+      "label": 0,
+      "source": "944724f32710eae72b11ae88e22722cf3df4da0ef66387adcdb3f42f2853c7ee"
+    },
+    {
+      "design": "design_05",
+      "cell": "cell_0020",
+      "horizon": 64,
+      "label": 1,
+      "source": "35a2d7fde2aa729b52f50a76a3e6437f934ba781b3d00fc026b7895a9743a3d5"
+    },
+    {
+      "design": "design_05",
+      "cell": "cell_0021",
+      "horizon": 64,
+      "label": 1,
+      "source": "2dbaa0d51f88a856575bfb62b0577012a37bdd280c55aa6fad80159e3673a47f"
+    },
+    {
+      "design": "design_05",
+      "cell": "cell_0022",
+      "horizon": 64,
+      "label": 1,
+      "source": "dc1198c6c6bada9607c893c1e1138460d439e74141426a8ec3a5a18859cbe09d"
+    },
+    {
+      "design": "design_05",
+      "cell": "cell_0023",
+      "horizon": 64,
+      "label": 1,
+      "source": "1925da0e5e4a5945edaf4a7f39cafda0a880c31cad5f3162bb88409419922653"
+    },
+    {
+      "design": "design_05",
+      "cell": "cell_0024",
+      "horizon": 64,
+      "label": 1,
+      "source": "fde5873ba26d475ddd45bfad35acabab87e48f12bde682cbe735c144eb1cf065"
+    },
+    {
+      "design": "design_05",
+      "cell": "cell_0025",
+      "horizon": 64,
+      "label": 1,
+      "source": "512d6c8569f7fb5d4fe56eaa59fad7b41e32693b65793a1d0a7cb9459e88ae04"
+    },
+    {
+      "design": "design_05",
+      "cell": "cell_0026",
+      "horizon": 64,
+      "label": 1,
+      "source": "bda74dd63de055236117c67c1a5758f17f977d535485477d6a044cebbb1bbbae"
+    },
+    {
+      "design": "design_05",
+      "cell": "cell_0027",
+      "horizon": 64,
+      "label": 1,
+      "source": "c4ea584adc1b01a6ba578d6880bfe45141d8544800924b2f47b3a340d2669c80"
+    },
+    {
+      "design": "design_05",
+      "cell": "cell_0028",
+      "horizon": 64,
+      "label": 1,
+      "source": "dfab7bc760a5b21b447d1eee61f95b24c89049836c8f3b91d0fa5e2a03f2d658"
+    },
+    {
+      "design": "design_05",
+      "cell": "cell_0029",
+      "horizon": 64,
+      "label": 1,
+      "source": "6de0c83ce999527fffc4fc763e342b28a6cd38b431535ea1309929a4230e8498"
+    },
+    {
+      "design": "design_05",
+      "cell": "cell_0030",
+      "horizon": 64,
+      "label": 1,
+      "source": "07be2f4f6760ce3c4d53339838f1b3a977f9a75838c22984613a3fcf35215f14"
+    },
+    {
+      "design": "design_05",
+      "cell": "cell_0031",
+      "horizon": 64,
+      "label": 1,
+      "source": "dae0cc384466bb9448e0537a039149bad69994b268449f085b5b1c87be5c6dfb"
+    },
+    {
+      "design": "design_05",
+      "cell": "cell_0032",
+      "horizon": 64,
+      "label": 1,
+      "source": "7cb2a549fe2e5cd542a4030483dbe2f6a0e05db86d9b4595af2d713031ef8633"
+    },
+    {
+      "design": "design_05",
+      "cell": "cell_0033",
+      "horizon": 64,
+      "label": 1,
+      "source": "9fe3c1318d64cf2d39ca11c8f72645c90f88107e2a228ea5f716fdf406d2fe08"
+    },
+    {
+      "design": "design_05",
+      "cell": "cell_0034",
+      "horizon": 64,
+      "label": 0,
+      "source": "01ec0dd4085592da2704a9f57003cf3b3c8f8ecc942c54b6b2bd0cc9f47cd601"
+    },
+    {
+      "design": "design_05",
+      "cell": "cell_0035",
+      "horizon": 64,
+      "label": 1,
+      "source": "8fd5868b9d41cb7a69a2afeba1cf08e1e5a660bea61055964ce5823d0decc4cf"
+    },
+    {
+      "design": "design_05",
+      "cell": "cell_0036",
+      "horizon": 64,
+      "label": 1,
+      "source": "0589e0621b3f33491d20b30ada264a025381a88f0074cec820da18b75d2202b8"
+    },
+    {
+      "design": "design_05",
+      "cell": "cell_0037",
+      "horizon": 64,
+      "label": 0,
+      "source": "2259c3cb5bd609ea5ad901abb5653da17831f9a972566a28204ff4653c510b9f"
+    },
+    {
+      "design": "design_05",
+      "cell": "cell_0038",
+      "horizon": 64,
+      "label": 0,
+      "source": "cf3b3574f7d5ffd96621d19a465c760645ab96d66d7145893f14bd26fd28cabc"
+    },
+    {
+      "design": "design_05",
+      "cell": "cell_0039",
+      "horizon": 64,
+      "label": 0,
+      "source": "805fec1f933eee29bb377c59338aec5832b5dcf0e84ee910891bb73d54828ce6"
+    },
+    {
+      "design": "design_05",
+      "cell": "cell_0040",
+      "horizon": 64,
+      "label": 0,
+      "source": "4013ce1a606dddc6fb17dd2b05fb969310e0dfd464d35ff3d3367eaad1e347fd"
+    },
+    {
+      "design": "design_05",
+      "cell": "cell_0041",
+      "horizon": 64,
+      "label": 0,
+      "source": "e28c62da269d845b086a5f94c4578ea19c73009e13b688eaa7a85b25b79d1733"
+    },
+    {
+      "design": "design_05",
+      "cell": "cell_0042",
+      "horizon": 64,
+      "label": 0,
+      "source": "84fdea9b27e2535a2b93218c0a4eed843fa4555b3e105a5730474541b6d76f15"
+    },
+    {
+      "design": "design_05",
+      "cell": "cell_0043",
+      "horizon": 64,
+      "label": 0,
+      "source": "cd02719548a46ad009b7b848d27edb7e719650a0934dc30c0e985cd7728fd1ee"
+    },
+    {
+      "design": "design_05",
+      "cell": "cell_0044",
+      "horizon": 64,
+      "label": 0,
+      "source": "04a3bfe68acf619900fa9daa0d967bf3c015042b727317ce19a5a3e30bd98c52"
+    },
+    {
+      "design": "design_06",
+      "cell": "cell_0000",
+      "horizon": 64,
+      "label": 0,
+      "source": "09e0b80bdb6f2da72c895a75fada3cca32236e0c4575e8849dfca981525bd798"
+    },
+    {
+      "design": "design_06",
+      "cell": "cell_0001",
+      "horizon": 64,
+      "label": 0,
+      "source": "e79b6eba221681f989709475b854e3a0d3490cae0974091c938b05cebff68ed1"
+    },
+    {
+      "design": "design_06",
+      "cell": "cell_0002",
+      "horizon": 64,
+      "label": 0,
+      "source": "c12bc13b9f914805fb8f63862cf4881157c3a8383e899c96073b4b79b4276e5d"
+    },
+    {
+      "design": "design_06",
+      "cell": "cell_0003",
+      "horizon": 64,
+      "label": 0,
+      "source": "fa77914ab1ed325246d454ca75ffa5c0ac955e4dc85987490909c409ba25fea4"
+    },
+    {
+      "design": "design_06",
+      "cell": "cell_0004",
+      "horizon": 64,
+      "label": 0,
+      "source": "e4272a3e75f2ed96e43cf3dd44a11ca5cbf8979182eab7136296e46ce9c00b23"
+    },
+    {
+      "design": "design_06",
+      "cell": "cell_0005",
+      "horizon": 64,
+      "label": 1,
+      "source": "d66f21ea37eebabbca1fb22f9576a49bfbd958f77b5cda599a8dde7239626165"
+    },
+    {
+      "design": "design_06",
+      "cell": "cell_0006",
+      "horizon": 64,
+      "label": 1,
+      "source": "b5e9beb7fb8e0885fcf10eabcfff95a32187401f4a6a236bbc45c2ebe764759f"
+    },
+    {
+      "design": "design_06",
+      "cell": "cell_0007",
+      "horizon": 64,
+      "label": 1,
+      "source": "9353ad036ed4e615e0c9ec2fe59939d46bcae69077ecb7847ff080bec5fa5c7e"
+    },
+    {
+      "design": "design_06",
+      "cell": "cell_0008",
+      "horizon": 64,
+      "label": 0,
+      "source": "59bce0cfb22be743f80f332f8c3f021b9f6ca34b91b055e60b03088c0ebdb19d"
+    },
+    {
+      "design": "design_06",
+      "cell": "cell_0009",
+      "horizon": 64,
+      "label": 0,
+      "source": "7971809a44e73fdb106bc3a3a1814caad01272281c10c62388b0e2386bf69cc3"
+    },
+    {
+      "design": "design_06",
+      "cell": "cell_0010",
+      "horizon": 64,
+      "label": 1,
+      "source": "63e4a0568def5d431b480e2c20a4315191c7f961d50effa8381759a9705cf4e2"
+    },
+    {
+      "design": "design_06",
+      "cell": "cell_0011",
+      "horizon": 64,
+      "label": 1,
+      "source": "06caf091a1991cc40ff8e9998e2b47f6a41172c597788f1989693d09ed28313c"
+    },
+    {
+      "design": "design_06",
+      "cell": "cell_0012",
+      "horizon": 64,
+      "label": 1,
+      "source": "fe8d9538e9db1fb7051ee608d3fd15421243d0814f52baf25a956e5fd03d4e67"
+    },
+    {
+      "design": "design_06",
+      "cell": "cell_0013",
+      "horizon": 64,
+      "label": 1,
+      "source": "3c5683fbd686c1b4c329dfb35e4b3cafc9e0c7d6ca7a3af71d4b45855a481946"
+    },
+    {
+      "design": "design_06",
+      "cell": "cell_0014",
+      "horizon": 64,
+      "label": 0,
+      "source": "9225d8dc644c65cf21870fecf9ccfa89ecb34d55199c3c47052d670a3e78ed9c"
+    },
+    {
+      "design": "design_06",
+      "cell": "cell_0015",
+      "horizon": 64,
+      "label": 1,
+      "source": "bc14fd93ad1d80a9533c995cadf4f235768e09c9320c66679020130e470667bd"
+    },
+    {
+      "design": "design_06",
+      "cell": "cell_0016",
+      "horizon": 64,
+      "label": 1,
+      "source": "175f3c46b96cdc1a540295445fe7166a3f7e7926cef355e3afc795b02ad2bcdd"
+    },
+    {
+      "design": "design_06",
+      "cell": "cell_0017",
+      "horizon": 64,
+      "label": 1,
+      "source": "614bd719885a7b9145569dcf266a5b81db26686669019d92ca9c5af6f33703c0"
+    },
+    {
+      "design": "design_06",
+      "cell": "cell_0018",
+      "horizon": 64,
+      "label": 1,
+      "source": "11b23a9a22c7594a0fd7480f9a1e40945915b40c04690426e8cc2676c6e98c6c"
+    },
+    {
+      "design": "design_06",
+      "cell": "cell_0019",
+      "horizon": 64,
+      "label": 0,
+      "source": "23005c33a2d3623d06ebe99ab7e0f57fd8d23d421a56d943a3abb5abb805b032"
+    },
+    {
+      "design": "design_06",
+      "cell": "cell_0020",
+      "horizon": 64,
+      "label": 1,
+      "source": "8e62207bebdefff9e5c5aa9724942ecf5466dce5ada7814f260d54df7ec737e8"
+    },
+    {
+      "design": "design_06",
+      "cell": "cell_0021",
+      "horizon": 64,
+      "label": 1,
+      "source": "c9225f614c364f40c64fe9b2b519942d8861683e89667213ad8e1d37e85974eb"
+    },
+    {
+      "design": "design_06",
+      "cell": "cell_0022",
+      "horizon": 64,
+      "label": 1,
+      "source": "2667cef222a93047d7b3e7726a33a72dbb8bc3219ba30deaa2b6bc88eb6a2f21"
+    },
+    {
+      "design": "design_06",
+      "cell": "cell_0023",
+      "horizon": 64,
+      "label": 1,
+      "source": "cb90896247f3fa85cb345956a77cbe538d051dba2f5575665b9e4189b4aa91cc"
+    },
+    {
+      "design": "design_06",
+      "cell": "cell_0024",
+      "horizon": 64,
+      "label": 1,
+      "source": "a75f43f5bf8d2563d7895dbff603a811ba4b2391390c26981000008ddc8cd3a6"
+    },
+    {
+      "design": "design_06",
+      "cell": "cell_0025",
+      "horizon": 64,
+      "label": 1,
+      "source": "57e042b59c7d9b4d7a2dbf90e4db80b23d13111a6abd182328ff400770dfbd79"
+    },
+    {
+      "design": "design_06",
+      "cell": "cell_0026",
+      "horizon": 64,
+      "label": 1,
+      "source": "444e1e8a363f6637d86a1e34971ae3ea8ded6f3edb57e0d3ecf90dd426e6c639"
+    },
+    {
+      "design": "design_06",
+      "cell": "cell_0027",
+      "horizon": 64,
+      "label": 1,
+      "source": "28fd89ba61b67b67e877c422f8be8aef58951c195c666a34128d04394b51f45f"
+    },
+    {
+      "design": "design_06",
+      "cell": "cell_0028",
+      "horizon": 64,
+      "label": 1,
+      "source": "a8004b0d6d558dc313734fdff4b8c35f06b69d7119533c907979853cef7bb8bf"
+    },
+    {
+      "design": "design_06",
+      "cell": "cell_0029",
+      "horizon": 64,
+      "label": 1,
+      "source": "fccb14848436a5ba23bc367762f549f4dac834d0b9b6a59886da79b23e199358"
+    },
+    {
+      "design": "design_06",
+      "cell": "cell_0030",
+      "horizon": 64,
+      "label": 1,
+      "source": "22cd09dc1e386626e46cb207f7e541401a1b664a8e39c3cdf59334cfef060133"
+    },
+    {
+      "design": "design_06",
+      "cell": "cell_0031",
+      "horizon": 64,
+      "label": 1,
+      "source": "bc612627ba56fc6c11ed787a4720e563cca8a43d8e50c138f0b7a26bdeaeb42a"
+    },
+    {
+      "design": "design_06",
+      "cell": "cell_0032",
+      "horizon": 64,
+      "label": 1,
+      "source": "87234fd1126ecaf3093ce1569f380b99301d92399ca43e7360de442c3f0fced9"
+    },
+    {
+      "design": "design_06",
+      "cell": "cell_0033",
+      "horizon": 64,
+      "label": 1,
+      "source": "3bd4accedbb4ff9fb8ab935d05bb1d4ee40ad826dfde9c93d8f282ff447bda4c"
+    },
+    {
+      "design": "design_06",
+      "cell": "cell_0034",
+      "horizon": 64,
+      "label": 0,
+      "source": "85b90330d465e017360ebc6d3fe9662b4fc23c24906f5f5b35c439148acba90b"
+    },
+    {
+      "design": "design_06",
+      "cell": "cell_0035",
+      "horizon": 64,
+      "label": 1,
+      "source": "967921f46ed10783fe397b56fbf1a138550a3d5cb420d0a9be7940739fd25da6"
+    },
+    {
+      "design": "design_06",
+      "cell": "cell_0036",
+      "horizon": 64,
+      "label": 1,
+      "source": "29c7538e2ffb859e9a856fb153f77252b8bf7c4da4b85753f8ae9a5c630eb360"
+    },
+    {
+      "design": "design_06",
+      "cell": "cell_0037",
+      "horizon": 64,
+      "label": 0,
+      "source": "129120dc6c4f6e27f2bcc538620d3d311d623a6c2aaf6388d392589704ba22bd"
+    },
+    {
+      "design": "design_06",
+      "cell": "cell_0038",
+      "horizon": 64,
+      "label": 0,
+      "source": "bcd4b4e8eafa409215a3aaa229fac2fe88ff6d87bde0779de37c3290a855d5db"
+    },
+    {
+      "design": "design_06",
+      "cell": "cell_0039",
+      "horizon": 64,
+      "label": 0,
+      "source": "a5acb3bfd7b86ff0f83f1aa1ba43bacfaebcc6a78867b202219a10b12d78b4d5"
+    },
+    {
+      "design": "design_06",
+      "cell": "cell_0040",
+      "horizon": 64,
+      "label": 0,
+      "source": "0eea6e88ad6dbd34494581adde8451ccbc78007cbedcf7396cdeefa09e7c501f"
+    },
+    {
+      "design": "design_06",
+      "cell": "cell_0041",
+      "horizon": 64,
+      "label": 0,
+      "source": "f90de3dabf3c432fc7a5e7765de5c0b35ac74f167c7973179119014bb0920739"
+    },
+    {
+      "design": "design_06",
+      "cell": "cell_0042",
+      "horizon": 64,
+      "label": 0,
+      "source": "8fc8880e605d1b4b943aebb5700d271e023722e5f251ca691e40926fe0135a71"
+    },
+    {
+      "design": "design_06",
+      "cell": "cell_0043",
+      "horizon": 64,
+      "label": 0,
+      "source": "f86c38a9c31ffd1f6ebe4a4b4fd088c67be00990fff67b17338554a5ccf43b96"
+    },
+    {
+      "design": "design_06",
+      "cell": "cell_0044",
+      "horizon": 64,
+      "label": 0,
+      "source": "57b70b50fb1737c948e63bf0a3970444503d5998ba56fa87e500af1008d15a8f"
+    },
+    {
+      "design": "design_07",
+      "cell": "cell_0000",
+      "horizon": 64,
+      "label": 0,
+      "source": "28c3a5d895d9dbf1037a5f70c06e8d86135bf33350475138fdae8321b8c43afd"
+    },
+    {
+      "design": "design_07",
+      "cell": "cell_0001",
+      "horizon": 64,
+      "label": 0,
+      "source": "03a6baad9d5215e7e6d061c8082c698d749bbccd0d754deaecb1e74ac3ae5a92"
+    },
+    {
+      "design": "design_07",
+      "cell": "cell_0002",
+      "horizon": 64,
+      "label": 0,
+      "source": "b42cca24c0cf0988592a357e9b2796b75a7ff788f3ac9cfbb7a6755a1f5a198d"
+    },
+    {
+      "design": "design_07",
+      "cell": "cell_0003",
+      "horizon": 64,
+      "label": 0,
+      "source": "3def3c28abb2fc7cc1171f287b2969c5d65a0be8348279d36ab9e9aabbc0e2fe"
+    },
+    {
+      "design": "design_07",
+      "cell": "cell_0004",
+      "horizon": 64,
+      "label": 0,
+      "source": "4586d05bfc5deb7e4952d85b58d6c7b8230e8de6beda48ed96f454303e610ee0"
+    },
+    {
+      "design": "design_07",
+      "cell": "cell_0005",
+      "horizon": 64,
+      "label": 1,
+      "source": "f6d0f13c703de2f4578ae65f575fb10a233715459cc41029e09c25efdf8c92b6"
+    },
+    {
+      "design": "design_07",
+      "cell": "cell_0006",
+      "horizon": 64,
+      "label": 1,
+      "source": "61837b2949ef8881d271203c6e211ed70d6b4785c60519cec9a076f660f80d0e"
+    },
+    {
+      "design": "design_07",
+      "cell": "cell_0007",
+      "horizon": 64,
+      "label": 1,
+      "source": "86d0f771a70a3abc014eae18b654c97eaacb9892c3f251190cac738459003a3f"
+    },
+    {
+      "design": "design_07",
+      "cell": "cell_0008",
+      "horizon": 64,
+      "label": 0,
+      "source": "0e7316f6fd14f034abb001abd1e8eb0b009bc24bdbf45a520879d9202ae660b7"
+    },
+    {
+      "design": "design_07",
+      "cell": "cell_0009",
+      "horizon": 64,
+      "label": 0,
+      "source": "3531fcb8e0307e59b28a981bf6f167f84ce8489ed70dc3bfdda914458c54991b"
+    },
+    {
+      "design": "design_07",
+      "cell": "cell_0010",
+      "horizon": 64,
+      "label": 1,
+      "source": "072a5614ef564e1b99d7c18c61e8c4facc6120bbae8fe4010c11885e9b6aecb0"
+    },
+    {
+      "design": "design_07",
+      "cell": "cell_0011",
+      "horizon": 64,
+      "label": 1,
+      "source": "578699bcf9363bd66097f36d902ccabc82cb4a661c37d535f134d4091c2f2222"
+    },
+    {
+      "design": "design_07",
+      "cell": "cell_0012",
+      "horizon": 64,
+      "label": 1,
+      "source": "0469a66dc22c6a08c6b72c505c6a0170feabf4847c17ba1c727eccc15c82c4f0"
+    },
+    {
+      "design": "design_07",
+      "cell": "cell_0013",
+      "horizon": 64,
+      "label": 1,
+      "source": "04c8c0a391e0cafe48c5989989bd149630b582d9882120679cde221c5e9f7a30"
+    },
+    {
+      "design": "design_07",
+      "cell": "cell_0014",
+      "horizon": 64,
+      "label": 0,
+      "source": "2ede7066eb86073eec170d93470ac279d82ef40516819ed23ff4724ad33fa12f"
+    },
+    {
+      "design": "design_07",
+      "cell": "cell_0015",
+      "horizon": 64,
+      "label": 1,
+      "source": "6f47bdeef678eb960a1d187775da7af7c458a9b6c9ade5ef506a2e935f15d294"
+    },
+    {
+      "design": "design_07",
+      "cell": "cell_0016",
+      "horizon": 64,
+      "label": 1,
+      "source": "26d170d4fc3eb4328331a6b9e9064dc52f9b734c13daa38fe72802c81564f3d1"
+    },
+    {
+      "design": "design_07",
+      "cell": "cell_0017",
+      "horizon": 64,
+      "label": 1,
+      "source": "23adf352494950b0529ba008ba63bfc9548afda43e265788270084379e04e85a"
+    },
+    {
+      "design": "design_07",
+      "cell": "cell_0018",
+      "horizon": 64,
+      "label": 1,
+      "source": "71569657738239e0cc85ba3ebc817c94ff95c4e3c75766a1de04ea060b044a40"
+    },
+    {
+      "design": "design_07",
+      "cell": "cell_0019",
+      "horizon": 64,
+      "label": 0,
+      "source": "3277240c6a87749487d3888cc1be82092f9c336987219e2f3e3d36eabec9dc40"
+    },
+    {
+      "design": "design_07",
+      "cell": "cell_0020",
+      "horizon": 64,
+      "label": 1,
+      "source": "8774dd5cd919b5a5fd05f2299613b8d2fc6eed1c687d94197b88e6a01888d229"
+    },
+    {
+      "design": "design_07",
+      "cell": "cell_0021",
+      "horizon": 64,
+      "label": 1,
+      "source": "6b8a49ffcb49012c2004cb6b65598cfbb3ded5c30d38d8c3d64ddba809d1bd75"
+    },
+    {
+      "design": "design_07",
+      "cell": "cell_0022",
+      "horizon": 64,
+      "label": 1,
+      "source": "d90e95b54b74e7b1cdf2ac96acf35c65135470a2dfb0622a4434fccb77c0d05e"
+    },
+    {
+      "design": "design_07",
+      "cell": "cell_0023",
+      "horizon": 64,
+      "label": 1,
+      "source": "06a6d11e5b27517e8a51a4150274032bad2882c45cb1303f1c419322c65c86b6"
+    },
+    {
+      "design": "design_07",
+      "cell": "cell_0024",
+      "horizon": 64,
+      "label": 1,
+      "source": "7c91d103708bbecd841f3d2b94025f06dfe1217de208785acf6cb7975abd8509"
+    },
+    {
+      "design": "design_07",
+      "cell": "cell_0025",
+      "horizon": 64,
+      "label": 1,
+      "source": "cffe2e7dda37e4d9299598f6670317fc6dabf769f4ba63886daecdd2a5d18c8c"
+    },
+    {
+      "design": "design_07",
+      "cell": "cell_0026",
+      "horizon": 64,
+      "label": 1,
+      "source": "e94853bb50e6e01217515dded63c1783860c9046e0d980cbae48020c5594b734"
+    },
+    {
+      "design": "design_07",
+      "cell": "cell_0027",
+      "horizon": 64,
+      "label": 1,
+      "source": "154196771a2e65d126195db9d147635b75b7aa747fc5dcf1ea3acb0e05f0f20d"
+    },
+    {
+      "design": "design_07",
+      "cell": "cell_0028",
+      "horizon": 64,
+      "label": 1,
+      "source": "2118836819ebf76ccdab89ea24d5e47f049ad7bfa0de08d5fe0623b3b64bfa23"
+    },
+    {
+      "design": "design_07",
+      "cell": "cell_0029",
+      "horizon": 64,
+      "label": 1,
+      "source": "a55ad645e81c733800a5b0a28ccb9a6298945df73f0cc3f12b0703131e33318a"
+    },
+    {
+      "design": "design_07",
+      "cell": "cell_0030",
+      "horizon": 64,
+      "label": 1,
+      "source": "d047d68f8b9b42105b4258b0d8148ee21de2f9ba4fd1dac19dc9e77d610b833c"
+    },
+    {
+      "design": "design_07",
+      "cell": "cell_0031",
+      "horizon": 64,
+      "label": 1,
+      "source": "a69bdba13d595660bebca5463416a6d455af32333b5c5ee754a30e0536dad4d0"
+    },
+    {
+      "design": "design_07",
+      "cell": "cell_0032",
+      "horizon": 64,
+      "label": 1,
+      "source": "4c738fe1e3744ab6bdb4c611c96ea045b6afc4c4ce458d06ffa08c1e9e01b687"
+    },
+    {
+      "design": "design_07",
+      "cell": "cell_0033",
+      "horizon": 64,
+      "label": 1,
+      "source": "65c163e6ff4dad99a3c15b4306db21d279222f20fb9d098b3983d8b71b4769d2"
+    },
+    {
+      "design": "design_07",
+      "cell": "cell_0034",
+      "horizon": 64,
+      "label": 0,
+      "source": "96fcd0a5fd1492d80736a0b8a42f1ee9261e80aaae83ccdfe8a56324b29536d3"
+    },
+    {
+      "design": "design_07",
+      "cell": "cell_0035",
+      "horizon": 64,
+      "label": 1,
+      "source": "d1390b48487584905f6f3ed67f6b93d9525aa05e0cda87dcea55b03623710510"
+    },
+    {
+      "design": "design_07",
+      "cell": "cell_0036",
+      "horizon": 64,
+      "label": 1,
+      "source": "c74f0a1a9d80be384d77a755a04b36561f34cd55cc9dc90e1aac8de92f980605"
+    },
+    {
+      "design": "design_07",
+      "cell": "cell_0037",
+      "horizon": 64,
+      "label": 1,
+      "source": "abb452d2c1f413e4ac88920b492dee53480136d32af2b7434f88724dc5ccc24d"
+    },
+    {
+      "design": "design_07",
+      "cell": "cell_0038",
+      "horizon": 64,
+      "label": 0,
+      "source": "a624ff015a02cb99d482c087eaf0515bc17ccf96051417ff0571eee29481ef78"
+    },
+    {
+      "design": "design_07",
+      "cell": "cell_0039",
+      "horizon": 64,
+      "label": 0,
+      "source": "66e39043356e3570458e480a7b3677f7924960950dcd1bd6138c46825690b39f"
+    },
+    {
+      "design": "design_07",
+      "cell": "cell_0040",
+      "horizon": 64,
+      "label": 0,
+      "source": "91bc7549957ada0ed8e6c4e9d3694d11d2d55d5cfe8e7322562d812cdd8a5441"
+    },
+    {
+      "design": "design_07",
+      "cell": "cell_0041",
+      "horizon": 64,
+      "label": 0,
+      "source": "533997ce13eb5b961423ece659448881bb01437ade22ad3dafce9ef6b93ae540"
+    },
+    {
+      "design": "design_07",
+      "cell": "cell_0042",
+      "horizon": 64,
+      "label": 0,
+      "source": "7344560478eb9feae3d53f3b908cdf5f73098dafb7da6d58da83bd483fecbe92"
+    },
+    {
+      "design": "design_07",
+      "cell": "cell_0043",
+      "horizon": 64,
+      "label": 0,
+      "source": "97ddf8600e67799fc17bf7d1728370c348681e74a68c01c39cb861395f5ade16"
+    },
+    {
+      "design": "design_07",
+      "cell": "cell_0044",
+      "horizon": 64,
+      "label": 0,
+      "source": "f9ee09942a27856e4791dfc74022ea99ac0c3aab77e83c1d4403714778180445"
+    },
+    {
+      "design": "design_08",
+      "cell": "cell_0000",
+      "horizon": 64,
+      "label": 0,
+      "source": "71156cf3faf7a84d38b489282dcd5aff5369be2bb87f1adae17197447957eff7"
+    },
+    {
+      "design": "design_08",
+      "cell": "cell_0001",
+      "horizon": 64,
+      "label": 0,
+      "source": "69b41d47def4d18f96c3eb9a02294b387fd1759adde6f48f773085a6ea1cb982"
+    },
+    {
+      "design": "design_08",
+      "cell": "cell_0002",
+      "horizon": 64,
+      "label": 0,
+      "source": "8c5687560b3bb26f195bb264802fbf7ed8c11b6b7cf4a49cf7b74ad1f0c703ac"
+    },
+    {
+      "design": "design_08",
+      "cell": "cell_0003",
+      "horizon": 64,
+      "label": 0,
+      "source": "14386535a43e5e25b26ff581447dd432ee5933f838a1f23e8249eebebf7fc787"
+    },
+    {
+      "design": "design_08",
+      "cell": "cell_0004",
+      "horizon": 64,
+      "label": 0,
+      "source": "4f7f540485b045195eb326f4daa6bbe0adfcd50ed2b10b4b7c1cce7471b0fbaa"
+    },
+    {
+      "design": "design_08",
+      "cell": "cell_0005",
+      "horizon": 64,
+      "label": 1,
+      "source": "4c88ed8a4d9568c70c7b5f4800634a1bd030d117aba5af7d587f03821015fad3"
+    },
+    {
+      "design": "design_08",
+      "cell": "cell_0006",
+      "horizon": 64,
+      "label": 1,
+      "source": "7668de7f21f049a68892677a53046d7abbd88cf257de02f6600285693115a01c"
+    },
+    {
+      "design": "design_08",
+      "cell": "cell_0007",
+      "horizon": 64,
+      "label": 1,
+      "source": "4ddf01376fd3cc4b4a2f20bb9a5af68732137aef1f369a60fba6f1a33d37771e"
+    },
+    {
+      "design": "design_08",
+      "cell": "cell_0008",
+      "horizon": 64,
+      "label": 0,
+      "source": "e08880dd76af9ec65454dca6f2e03d8c3d4ebe55c92829be9c20e187f0cf8f6c"
+    },
+    {
+      "design": "design_08",
+      "cell": "cell_0009",
+      "horizon": 64,
+      "label": 0,
+      "source": "95a16d580ae299616a4c62f0d61c2b8dd7599bab3cff28b12a0ad6ff6ac74846"
+    },
+    {
+      "design": "design_08",
+      "cell": "cell_0010",
+      "horizon": 64,
+      "label": 1,
+      "source": "60ce94cf4886377cdf1dc4544eadf67712d5dd3f4b40f8e495f340071a592bdd"
+    },
+    {
+      "design": "design_08",
+      "cell": "cell_0011",
+      "horizon": 64,
+      "label": 1,
+      "source": "90ee1cfacc2eca479a4a90a5a6e6f509b1478e6e1e57487cc4c31501f0353d4d"
+    },
+    {
+      "design": "design_08",
+      "cell": "cell_0012",
+      "horizon": 64,
+      "label": 1,
+      "source": "64ad4f9caebdad0f3e58ac7b845e4059989de1a103ce69637d325afb5a2c4329"
+    },
+    {
+      "design": "design_08",
+      "cell": "cell_0013",
+      "horizon": 64,
+      "label": 1,
+      "source": "8ef8fa7a7eb22145e29d5a43f5f88f61e70137642bca0006e43e569a9ee373a8"
+    },
+    {
+      "design": "design_08",
+      "cell": "cell_0014",
+      "horizon": 64,
+      "label": 0,
+      "source": "f43a526dd7a2919ecaa87bc8d9c9e35a2eee9b99a69df0cf7855c552de9c4d46"
+    },
+    {
+      "design": "design_08",
+      "cell": "cell_0015",
+      "horizon": 64,
+      "label": 1,
+      "source": "4bb1c9b8ba715fbb0280f981d0b86b9f4c679b9fb800a0130022f1d8755a69b6"
+    },
+    {
+      "design": "design_08",
+      "cell": "cell_0016",
+      "horizon": 64,
+      "label": 1,
+      "source": "bd70b198a3c99ddd7f636f4d6b93652e7c34fe9d08871f6a46c41fd3125d86d1"
+    },
+    {
+      "design": "design_08",
+      "cell": "cell_0017",
+      "horizon": 64,
+      "label": 1,
+      "source": "9d8c43e2686dbb80bf3d8b5bdc91ce721dfb78640917da1f68ed0f702c9421b4"
+    },
+    {
+      "design": "design_08",
+      "cell": "cell_0018",
+      "horizon": 64,
+      "label": 1,
+      "source": "a9af27f550b1c457245ed2a49332046b16a2d6b012d851128b90ba3544ac0def"
+    },
+    {
+      "design": "design_08",
+      "cell": "cell_0019",
+      "horizon": 64,
+      "label": 1,
+      "source": "ff17fb7f98fca12b968bdaeb0a82a1a8f5dd871e3249f9d7a885ae082eb4601c"
+    },
+    {
+      "design": "design_08",
+      "cell": "cell_0020",
+      "horizon": 64,
+      "label": 1,
+      "source": "19eea9c18d885c52b07427ff1083ce219d423f3c9816e6d15f491900b833be19"
+    },
+    {
+      "design": "design_08",
+      "cell": "cell_0021",
+      "horizon": 64,
+      "label": 1,
+      "source": "7ac53de63117385d11fb6c52bf71ac1e12f3910ce20f2bb993b5726dc3065d21"
+    },
+    {
+      "design": "design_08",
+      "cell": "cell_0022",
+      "horizon": 64,
+      "label": 1,
+      "source": "4bd373810011b495db9c68f93e4d47b41f456dab6c09af658d546b3b9bc9d3d1"
+    },
+    {
+      "design": "design_08",
+      "cell": "cell_0023",
+      "horizon": 64,
+      "label": 1,
+      "source": "82d8b639d29ceced6db7074077634709b870d21bc4ef52aaf30a3527d07bfe93"
+    },
+    {
+      "design": "design_08",
+      "cell": "cell_0024",
+      "horizon": 64,
+      "label": 1,
+      "source": "127d256e555d9f41f1f70a5a13fc83693c36d6c6006a861faafe78dd6a777822"
+    },
+    {
+      "design": "design_08",
+      "cell": "cell_0025",
+      "horizon": 64,
+      "label": 1,
+      "source": "5dbd6a6989709e2d17edc63cb6edfb6e63b29c6dff566a627c202e42d6391349"
+    },
+    {
+      "design": "design_08",
+      "cell": "cell_0026",
+      "horizon": 64,
+      "label": 1,
+      "source": "c26cc329b8537bc61f2613510c3b47c3a6688459aafcf33b3c35c759b22d48c2"
+    },
+    {
+      "design": "design_08",
+      "cell": "cell_0027",
+      "horizon": 64,
+      "label": 1,
+      "source": "39e31ca33afd47faf7b0b6e3cef56c8b66de1754002fddf67300621eb3585fff"
+    },
+    {
+      "design": "design_08",
+      "cell": "cell_0028",
+      "horizon": 64,
+      "label": 1,
+      "source": "fff7eda342cd830a5e1cb5676b8fd8614ea69860907b314bf2dbd307828839a1"
+    },
+    {
+      "design": "design_08",
+      "cell": "cell_0029",
+      "horizon": 64,
+      "label": 1,
+      "source": "67df3697dd8c5a734e337254a1bc7d5e01318b5905f1183c73fc58356204648b"
+    },
+    {
+      "design": "design_08",
+      "cell": "cell_0030",
+      "horizon": 64,
+      "label": 1,
+      "source": "d6c023ab756c103042009585bdf40e3ad504fbbd1e3bd56cb8231fc5351c82c6"
+    },
+    {
+      "design": "design_08",
+      "cell": "cell_0031",
+      "horizon": 64,
+      "label": 1,
+      "source": "eaa949a8db0f280956841918804443e57c210179b14324837c935b29a3fb55a1"
+    },
+    {
+      "design": "design_08",
+      "cell": "cell_0032",
+      "horizon": 64,
+      "label": 1,
+      "source": "ba7500fd11db4c048d722b610b8710413204ac175ba1e3d5cb1799fd1605f1e9"
+    },
+    {
+      "design": "design_08",
+      "cell": "cell_0033",
+      "horizon": 64,
+      "label": 1,
+      "source": "d6b82f3241fce97b123ee75390d363641be2eccaf45333cbe97f83cb7940a6dc"
+    },
+    {
+      "design": "design_08",
+      "cell": "cell_0034",
+      "horizon": 64,
+      "label": 1,
+      "source": "8ec3736188c0a0630f03afd233e649c775a22a40cc143e5a07c02a1dbf578f18"
+    },
+    {
+      "design": "design_08",
+      "cell": "cell_0035",
+      "horizon": 64,
+      "label": 1,
+      "source": "11614aae1b5d090d40a5f2a1f094195f4f5d0181dfdd203c8c35122c6dd5bd3f"
+    },
+    {
+      "design": "design_08",
+      "cell": "cell_0036",
+      "horizon": 64,
+      "label": 1,
+      "source": "17515d86ee9cbacd9d617acbd40274c08621c4db3fd492f3ef48dae5ca866c92"
+    },
+    {
+      "design": "design_08",
+      "cell": "cell_0037",
+      "horizon": 64,
+      "label": 1,
+      "source": "84ac63b059ccd51256c3f34c497d21e7d640f592cc6eda8dc67453af7550bcfc"
+    },
+    {
+      "design": "design_08",
+      "cell": "cell_0038",
+      "horizon": 64,
+      "label": 0,
+      "source": "e3f48eb517e89ef2533f48d5781d21d269687799fae617b8b37e87b73e2e3973"
+    },
+    {
+      "design": "design_08",
+      "cell": "cell_0039",
+      "horizon": 64,
+      "label": 0,
+      "source": "7fce5f6099a5934c776988010d94353a13817bf122014ab680447ed37b2e9b0c"
+    },
+    {
+      "design": "design_08",
+      "cell": "cell_0040",
+      "horizon": 64,
+      "label": 0,
+      "source": "917dd89d7d5a81b9b347aba82b10dae4b21e97040f6ff67ece59b12a5174d035"
+    },
+    {
+      "design": "design_08",
+      "cell": "cell_0041",
+      "horizon": 64,
+      "label": 0,
+      "source": "45a680c4af91f5014f1e06359b6266bbec43e69cadf1f02d2f83d006ebfc5f11"
+    },
+    {
+      "design": "design_08",
+      "cell": "cell_0042",
+      "horizon": 64,
+      "label": 0,
+      "source": "7e0e37530e29ce4b47cc394f48243ccd6cbf15c2873a14e5e4ddf290054daed2"
+    },
+    {
+      "design": "design_08",
+      "cell": "cell_0043",
+      "horizon": 64,
+      "label": 0,
+      "source": "3b78869629974514eb08a585edb5815a14663afd517c1fcacda613fa5ffb7931"
+    },
+    {
+      "design": "design_08",
+      "cell": "cell_0044",
+      "horizon": 64,
+      "label": 0,
+      "source": "5cd22646caa8f48297aa932d81be2e7739705562fe742729ef1cc24adea2a516"
+    }
+  ],
+  "certificate": {
+    "schema": "finite-grid-survival-certificate-v1",
+    "manifest_sha256": "c178b6b4b847997781ea2005486e80fae2487286079f52785af2a0a218d8c236",
+    "events_sha256": "a7d3822d573fc69e7dc44c1ce88fa544d17ddf7fba6f78576009fa209e665e62",
+    "objectives": [
+      "survival_weight",
+      "origin_connected_weight"
+    ],
+    "rows": [
+      {
+        "design": "design_00",
+        "horizon": 64,
+        "labels": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          1,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          0,
+          1,
+          1,
+          1,
+          1,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0,
+          1,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "survival_weight": {
+          "lower": "28",
+          "upper": "28"
+        },
+        "origin_connected_weight": {
+          "lower": "28",
+          "upper": "28",
+          "known_component": [
+            "cell_0005",
+            "cell_0006",
+            "cell_0007",
+            "cell_0010",
+            "cell_0011",
+            "cell_0012",
+            "cell_0013",
+            "cell_0015",
+            "cell_0016",
+            "cell_0017",
+            "cell_0018",
+            "cell_0020",
+            "cell_0021",
+            "cell_0022",
+            "cell_0023",
+            "cell_0024",
+            "cell_0025",
+            "cell_0026",
+            "cell_0027",
+            "cell_0028",
+            "cell_0029",
+            "cell_0030",
+            "cell_0031",
+            "cell_0032",
+            "cell_0033",
+            "cell_0035",
+            "cell_0036",
+            "cell_0037"
+          ],
+          "possible_component": [
+            "cell_0005",
+            "cell_0006",
+            "cell_0007",
+            "cell_0010",
+            "cell_0011",
+            "cell_0012",
+            "cell_0013",
+            "cell_0015",
+            "cell_0016",
+            "cell_0017",
+            "cell_0018",
+            "cell_0020",
+            "cell_0021",
+            "cell_0022",
+            "cell_0023",
+            "cell_0024",
+            "cell_0025",
+            "cell_0026",
+            "cell_0027",
+            "cell_0028",
+            "cell_0029",
+            "cell_0030",
+            "cell_0031",
+            "cell_0032",
+            "cell_0033",
+            "cell_0035",
+            "cell_0036",
+            "cell_0037"
+          ]
+        }
+      },
+      {
+        "design": "design_01",
+        "horizon": 64,
+        "labels": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          1,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "survival_weight": {
+          "lower": "30",
+          "upper": "30"
+        },
+        "origin_connected_weight": {
+          "lower": "30",
+          "upper": "30",
+          "known_component": [
+            "cell_0005",
+            "cell_0006",
+            "cell_0007",
+            "cell_0010",
+            "cell_0011",
+            "cell_0012",
+            "cell_0013",
+            "cell_0015",
+            "cell_0016",
+            "cell_0017",
+            "cell_0018",
+            "cell_0019",
+            "cell_0020",
+            "cell_0021",
+            "cell_0022",
+            "cell_0023",
+            "cell_0024",
+            "cell_0025",
+            "cell_0026",
+            "cell_0027",
+            "cell_0028",
+            "cell_0029",
+            "cell_0030",
+            "cell_0031",
+            "cell_0032",
+            "cell_0033",
+            "cell_0034",
+            "cell_0035",
+            "cell_0036",
+            "cell_0037"
+          ],
+          "possible_component": [
+            "cell_0005",
+            "cell_0006",
+            "cell_0007",
+            "cell_0010",
+            "cell_0011",
+            "cell_0012",
+            "cell_0013",
+            "cell_0015",
+            "cell_0016",
+            "cell_0017",
+            "cell_0018",
+            "cell_0019",
+            "cell_0020",
+            "cell_0021",
+            "cell_0022",
+            "cell_0023",
+            "cell_0024",
+            "cell_0025",
+            "cell_0026",
+            "cell_0027",
+            "cell_0028",
+            "cell_0029",
+            "cell_0030",
+            "cell_0031",
+            "cell_0032",
+            "cell_0033",
+            "cell_0034",
+            "cell_0035",
+            "cell_0036",
+            "cell_0037"
+          ]
+        }
+      },
+      {
+        "design": "design_02",
+        "horizon": 64,
+        "labels": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          1,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          0,
+          1,
+          1,
+          1,
+          1,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0,
+          1,
+          1,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "survival_weight": {
+          "lower": "29",
+          "upper": "29"
+        },
+        "origin_connected_weight": {
+          "lower": "29",
+          "upper": "29",
+          "known_component": [
+            "cell_0005",
+            "cell_0006",
+            "cell_0007",
+            "cell_0010",
+            "cell_0011",
+            "cell_0012",
+            "cell_0013",
+            "cell_0015",
+            "cell_0016",
+            "cell_0017",
+            "cell_0018",
+            "cell_0020",
+            "cell_0021",
+            "cell_0022",
+            "cell_0023",
+            "cell_0024",
+            "cell_0025",
+            "cell_0026",
+            "cell_0027",
+            "cell_0028",
+            "cell_0029",
+            "cell_0030",
+            "cell_0031",
+            "cell_0032",
+            "cell_0033",
+            "cell_0035",
+            "cell_0036",
+            "cell_0037",
+            "cell_0038"
+          ],
+          "possible_component": [
+            "cell_0005",
+            "cell_0006",
+            "cell_0007",
+            "cell_0010",
+            "cell_0011",
+            "cell_0012",
+            "cell_0013",
+            "cell_0015",
+            "cell_0016",
+            "cell_0017",
+            "cell_0018",
+            "cell_0020",
+            "cell_0021",
+            "cell_0022",
+            "cell_0023",
+            "cell_0024",
+            "cell_0025",
+            "cell_0026",
+            "cell_0027",
+            "cell_0028",
+            "cell_0029",
+            "cell_0030",
+            "cell_0031",
+            "cell_0032",
+            "cell_0033",
+            "cell_0035",
+            "cell_0036",
+            "cell_0037",
+            "cell_0038"
+          ]
+        }
+      },
+      {
+        "design": "design_03",
+        "horizon": 64,
+        "labels": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          1,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          0,
+          1,
+          1,
+          1,
+          1,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "survival_weight": {
+          "lower": "28",
+          "upper": "28"
+        },
+        "origin_connected_weight": {
+          "lower": "28",
+          "upper": "28",
+          "known_component": [
+            "cell_0005",
+            "cell_0006",
+            "cell_0007",
+            "cell_0010",
+            "cell_0011",
+            "cell_0012",
+            "cell_0013",
+            "cell_0015",
+            "cell_0016",
+            "cell_0017",
+            "cell_0018",
+            "cell_0020",
+            "cell_0021",
+            "cell_0022",
+            "cell_0023",
+            "cell_0024",
+            "cell_0025",
+            "cell_0026",
+            "cell_0027",
+            "cell_0028",
+            "cell_0029",
+            "cell_0030",
+            "cell_0031",
+            "cell_0032",
+            "cell_0033",
+            "cell_0034",
+            "cell_0035",
+            "cell_0036"
+          ],
+          "possible_component": [
+            "cell_0005",
+            "cell_0006",
+            "cell_0007",
+            "cell_0010",
+            "cell_0011",
+            "cell_0012",
+            "cell_0013",
+            "cell_0015",
+            "cell_0016",
+            "cell_0017",
+            "cell_0018",
+            "cell_0020",
+            "cell_0021",
+            "cell_0022",
+            "cell_0023",
+            "cell_0024",
+            "cell_0025",
+            "cell_0026",
+            "cell_0027",
+            "cell_0028",
+            "cell_0029",
+            "cell_0030",
+            "cell_0031",
+            "cell_0032",
+            "cell_0033",
+            "cell_0034",
+            "cell_0035",
+            "cell_0036"
+          ]
+        }
+      },
+      {
+        "design": "design_04",
+        "horizon": 64,
+        "labels": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          1,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          0,
+          1,
+          1,
+          1,
+          1,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0,
+          1,
+          1,
+          1,
+          1,
+          0,
+          1,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "survival_weight": {
+          "lower": "27",
+          "upper": "27"
+        },
+        "origin_connected_weight": {
+          "lower": "27",
+          "upper": "27",
+          "known_component": [
+            "cell_0005",
+            "cell_0006",
+            "cell_0007",
+            "cell_0010",
+            "cell_0011",
+            "cell_0012",
+            "cell_0013",
+            "cell_0015",
+            "cell_0016",
+            "cell_0017",
+            "cell_0018",
+            "cell_0020",
+            "cell_0021",
+            "cell_0022",
+            "cell_0023",
+            "cell_0024",
+            "cell_0025",
+            "cell_0026",
+            "cell_0027",
+            "cell_0028",
+            "cell_0030",
+            "cell_0031",
+            "cell_0032",
+            "cell_0033",
+            "cell_0035",
+            "cell_0036",
+            "cell_0037"
+          ],
+          "possible_component": [
+            "cell_0005",
+            "cell_0006",
+            "cell_0007",
+            "cell_0010",
+            "cell_0011",
+            "cell_0012",
+            "cell_0013",
+            "cell_0015",
+            "cell_0016",
+            "cell_0017",
+            "cell_0018",
+            "cell_0020",
+            "cell_0021",
+            "cell_0022",
+            "cell_0023",
+            "cell_0024",
+            "cell_0025",
+            "cell_0026",
+            "cell_0027",
+            "cell_0028",
+            "cell_0030",
+            "cell_0031",
+            "cell_0032",
+            "cell_0033",
+            "cell_0035",
+            "cell_0036",
+            "cell_0037"
+          ]
+        }
+      },
+      {
+        "design": "design_05",
+        "horizon": 64,
+        "labels": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          1,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          0,
+          1,
+          1,
+          1,
+          1,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "survival_weight": {
+          "lower": "27",
+          "upper": "27"
+        },
+        "origin_connected_weight": {
+          "lower": "27",
+          "upper": "27",
+          "known_component": [
+            "cell_0005",
+            "cell_0006",
+            "cell_0007",
+            "cell_0010",
+            "cell_0011",
+            "cell_0012",
+            "cell_0013",
+            "cell_0015",
+            "cell_0016",
+            "cell_0017",
+            "cell_0018",
+            "cell_0020",
+            "cell_0021",
+            "cell_0022",
+            "cell_0023",
+            "cell_0024",
+            "cell_0025",
+            "cell_0026",
+            "cell_0027",
+            "cell_0028",
+            "cell_0029",
+            "cell_0030",
+            "cell_0031",
+            "cell_0032",
+            "cell_0033",
+            "cell_0035",
+            "cell_0036"
+          ],
+          "possible_component": [
+            "cell_0005",
+            "cell_0006",
+            "cell_0007",
+            "cell_0010",
+            "cell_0011",
+            "cell_0012",
+            "cell_0013",
+            "cell_0015",
+            "cell_0016",
+            "cell_0017",
+            "cell_0018",
+            "cell_0020",
+            "cell_0021",
+            "cell_0022",
+            "cell_0023",
+            "cell_0024",
+            "cell_0025",
+            "cell_0026",
+            "cell_0027",
+            "cell_0028",
+            "cell_0029",
+            "cell_0030",
+            "cell_0031",
+            "cell_0032",
+            "cell_0033",
+            "cell_0035",
+            "cell_0036"
+          ]
+        }
+      },
+      {
+        "design": "design_06",
+        "horizon": 64,
+        "labels": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          1,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          0,
+          1,
+          1,
+          1,
+          1,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "survival_weight": {
+          "lower": "27",
+          "upper": "27"
+        },
+        "origin_connected_weight": {
+          "lower": "27",
+          "upper": "27",
+          "known_component": [
+            "cell_0005",
+            "cell_0006",
+            "cell_0007",
+            "cell_0010",
+            "cell_0011",
+            "cell_0012",
+            "cell_0013",
+            "cell_0015",
+            "cell_0016",
+            "cell_0017",
+            "cell_0018",
+            "cell_0020",
+            "cell_0021",
+            "cell_0022",
+            "cell_0023",
+            "cell_0024",
+            "cell_0025",
+            "cell_0026",
+            "cell_0027",
+            "cell_0028",
+            "cell_0029",
+            "cell_0030",
+            "cell_0031",
+            "cell_0032",
+            "cell_0033",
+            "cell_0035",
+            "cell_0036"
+          ],
+          "possible_component": [
+            "cell_0005",
+            "cell_0006",
+            "cell_0007",
+            "cell_0010",
+            "cell_0011",
+            "cell_0012",
+            "cell_0013",
+            "cell_0015",
+            "cell_0016",
+            "cell_0017",
+            "cell_0018",
+            "cell_0020",
+            "cell_0021",
+            "cell_0022",
+            "cell_0023",
+            "cell_0024",
+            "cell_0025",
+            "cell_0026",
+            "cell_0027",
+            "cell_0028",
+            "cell_0029",
+            "cell_0030",
+            "cell_0031",
+            "cell_0032",
+            "cell_0033",
+            "cell_0035",
+            "cell_0036"
+          ]
+        }
+      },
+      {
+        "design": "design_07",
+        "horizon": 64,
+        "labels": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          1,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          0,
+          1,
+          1,
+          1,
+          1,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0,
+          1,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "survival_weight": {
+          "lower": "28",
+          "upper": "28"
+        },
+        "origin_connected_weight": {
+          "lower": "28",
+          "upper": "28",
+          "known_component": [
+            "cell_0005",
+            "cell_0006",
+            "cell_0007",
+            "cell_0010",
+            "cell_0011",
+            "cell_0012",
+            "cell_0013",
+            "cell_0015",
+            "cell_0016",
+            "cell_0017",
+            "cell_0018",
+            "cell_0020",
+            "cell_0021",
+            "cell_0022",
+            "cell_0023",
+            "cell_0024",
+            "cell_0025",
+            "cell_0026",
+            "cell_0027",
+            "cell_0028",
+            "cell_0029",
+            "cell_0030",
+            "cell_0031",
+            "cell_0032",
+            "cell_0033",
+            "cell_0035",
+            "cell_0036",
+            "cell_0037"
+          ],
+          "possible_component": [
+            "cell_0005",
+            "cell_0006",
+            "cell_0007",
+            "cell_0010",
+            "cell_0011",
+            "cell_0012",
+            "cell_0013",
+            "cell_0015",
+            "cell_0016",
+            "cell_0017",
+            "cell_0018",
+            "cell_0020",
+            "cell_0021",
+            "cell_0022",
+            "cell_0023",
+            "cell_0024",
+            "cell_0025",
+            "cell_0026",
+            "cell_0027",
+            "cell_0028",
+            "cell_0029",
+            "cell_0030",
+            "cell_0031",
+            "cell_0032",
+            "cell_0033",
+            "cell_0035",
+            "cell_0036",
+            "cell_0037"
+          ]
+        }
+      },
+      {
+        "design": "design_08",
+        "horizon": 64,
+        "labels": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          1,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "survival_weight": {
+          "lower": "30",
+          "upper": "30"
+        },
+        "origin_connected_weight": {
+          "lower": "30",
+          "upper": "30",
+          "known_component": [
+            "cell_0005",
+            "cell_0006",
+            "cell_0007",
+            "cell_0010",
+            "cell_0011",
+            "cell_0012",
+            "cell_0013",
+            "cell_0015",
+            "cell_0016",
+            "cell_0017",
+            "cell_0018",
+            "cell_0019",
+            "cell_0020",
+            "cell_0021",
+            "cell_0022",
+            "cell_0023",
+            "cell_0024",
+            "cell_0025",
+            "cell_0026",
+            "cell_0027",
+            "cell_0028",
+            "cell_0029",
+            "cell_0030",
+            "cell_0031",
+            "cell_0032",
+            "cell_0033",
+            "cell_0034",
+            "cell_0035",
+            "cell_0036",
+            "cell_0037"
+          ],
+          "possible_component": [
+            "cell_0005",
+            "cell_0006",
+            "cell_0007",
+            "cell_0010",
+            "cell_0011",
+            "cell_0012",
+            "cell_0013",
+            "cell_0015",
+            "cell_0016",
+            "cell_0017",
+            "cell_0018",
+            "cell_0019",
+            "cell_0020",
+            "cell_0021",
+            "cell_0022",
+            "cell_0023",
+            "cell_0024",
+            "cell_0025",
+            "cell_0026",
+            "cell_0027",
+            "cell_0028",
+            "cell_0029",
+            "cell_0030",
+            "cell_0031",
+            "cell_0032",
+            "cell_0033",
+            "cell_0034",
+            "cell_0035",
+            "cell_0036",
+            "cell_0037"
+          ]
+        }
+      }
+    ],
+    "exclusions": [
+      {
+        "candidate": "design_00",
+        "dominator": "design_01",
+        "horizon": 64
+      },
+      {
+        "candidate": "design_00",
+        "dominator": "design_02",
+        "horizon": 64
+      },
+      {
+        "candidate": "design_00",
+        "dominator": "design_08",
+        "horizon": 64
+      },
+      {
+        "candidate": "design_02",
+        "dominator": "design_01",
+        "horizon": 64
+      },
+      {
+        "candidate": "design_02",
+        "dominator": "design_08",
+        "horizon": 64
+      },
+      {
+        "candidate": "design_03",
+        "dominator": "design_01",
+        "horizon": 64
+      },
+      {
+        "candidate": "design_03",
+        "dominator": "design_02",
+        "horizon": 64
+      },
+      {
+        "candidate": "design_03",
+        "dominator": "design_08",
+        "horizon": 64
+      },
+      {
+        "candidate": "design_04",
+        "dominator": "design_00",
+        "horizon": 64
+      },
+      {
+        "candidate": "design_04",
+        "dominator": "design_01",
+        "horizon": 64
+      },
+      {
+        "candidate": "design_04",
+        "dominator": "design_02",
+        "horizon": 64
+      },
+      {
+        "candidate": "design_04",
+        "dominator": "design_03",
+        "horizon": 64
+      },
+      {
+        "candidate": "design_04",
+        "dominator": "design_07",
+        "horizon": 64
+      },
+      {
+        "candidate": "design_04",
+        "dominator": "design_08",
+        "horizon": 64
+      },
+      {
+        "candidate": "design_05",
+        "dominator": "design_00",
+        "horizon": 64
+      },
+      {
+        "candidate": "design_05",
+        "dominator": "design_01",
+        "horizon": 64
+      },
+      {
+        "candidate": "design_05",
+        "dominator": "design_02",
+        "horizon": 64
+      },
+      {
+        "candidate": "design_05",
+        "dominator": "design_03",
+        "horizon": 64
+      },
+      {
+        "candidate": "design_05",
+        "dominator": "design_07",
+        "horizon": 64
+      },
+      {
+        "candidate": "design_05",
+        "dominator": "design_08",
+        "horizon": 64
+      },
+      {
+        "candidate": "design_06",
+        "dominator": "design_00",
+        "horizon": 64
+      },
+      {
+        "candidate": "design_06",
+        "dominator": "design_01",
+        "horizon": 64
+      },
+      {
+        "candidate": "design_06",
+        "dominator": "design_02",
+        "horizon": 64
+      },
+      {
+        "candidate": "design_06",
+        "dominator": "design_03",
+        "horizon": 64
+      },
+      {
+        "candidate": "design_06",
+        "dominator": "design_07",
+        "horizon": 64
+      },
+      {
+        "candidate": "design_06",
+        "dominator": "design_08",
+        "horizon": 64
+      },
+      {
+        "candidate": "design_07",
+        "dominator": "design_01",
+        "horizon": 64
+      },
+      {
+        "candidate": "design_07",
+        "dominator": "design_02",
+        "horizon": 64
+      },
+      {
+        "candidate": "design_07",
+        "dominator": "design_08",
+        "horizon": 64
+      }
+    ]
+  }
+}

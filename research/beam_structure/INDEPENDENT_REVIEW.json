@@ -1,0 +1,130 @@
+{
+  "status": "passed_scoped_independent_review",
+  "reviewed_utc": "2026-10-24T00:35:43.134678+00:00",
+  "reviewer": "independent child agent; no project files modified",
+  "independent_unit_tests": {
+    "emittance": 14,
+    "adapted_observables": 10,
+    "finite_grid_certificates": 12,
+    "acquisition": 12,
+    "total": 54,
+    "all_passed": true,
+    "oracle": 6
+  },
+  "independent_replays": {
+    "physical_emittance": {
+      "cases": 63,
+      "plane_kicks": 126,
+      "newPICcalls": 0,
+      "status": "passed",
+      "original_reference_source_hashes": "both match"
+    },
+    "adapted_observables": {
+      "dimensions": [
+        25,
+        9
+      ],
+      "action_output_identities": [
+        81,
+        33
+      ],
+      "physical_second_moment_hidden_difference": "-10/9",
+      "finite_word_monomials": [
+        25,
+        81
+      ],
+      "status": "passed"
+    },
+    "ring_pilot": {
+      "status": "passed",
+      "physical_point_evaluations": 2242,
+      "frozen_source_files_verified": 4,
+      "frontier_exhaustive_learning_objectives_equal": true,
+      "validation_scope": "Only selected designs. No global validation optimum/regret is established.",
+      "timing_scope": "Measured workflow excludes install/development and final event/result log serialization; host not dedicated.",
+      "physical_scope": "Checks numerical-label bookkeeping and finite-table implications, not simulator accuracy or continuous stability.",
+      "tenfold_established": false
+    }
+  },
+  "manually_checked_all_degree_arguments": [
+    "V8 common invariance and25-dimensional minimality via spectral projection of physicalp\u00b2 ontoQ4",
+    "c=0 minimalV4 dimension9",
+    "quadrupole control commutator producesunbounded independentP powers",
+    "physicalp\u00b2 addedcontrol extractsQ3dP via ad_C and producesunbounded powers",
+    "positive/negative normalized finite-difference laws have equalV8moments anddifferent futurephysicalsecondmoment",
+    "oneplane centered residualforceidentity andsharpL2radius",
+    "full4D Schurcovariance cancellation doesnot imply projectedemittance invariance",
+    "conditionalwordpredictor adds valid localradii onlyunder explicitper-kickpremises"
+  ],
+  "adversarial_binding_tests": [
+    {
+      "attack": "weight",
+      "recomputed_abstract_certificate_valid": true,
+      "protocol_binding_rejected": true
+    },
+    {
+      "attack": "origin",
+      "recomputed_abstract_certificate_valid": true,
+      "protocol_binding_rejected": true
+    },
+    {
+      "attack": "adjacency",
+      "recomputed_abstract_certificate_valid": true,
+      "protocol_binding_rejected": true
+    },
+    {
+      "attack": "physics",
+      "recomputed_abstract_certificate_valid": true,
+      "protocol_binding_rejected": true
+    }
+  ],
+  "findings_addressed_in_checker": [
+    "Separatepergrid raw/connected exclusions arenot combinedDA/deltaexclusions; newcheckeraggregatesconnectedbounds",
+    "Certificategrid/weights/origin/design/horizon/physics boundtofrozenthresholdprotocol",
+    "Ledgercallpositivecounts, nonnegativefinite timing andstagehorizonchecks"
+  ],
+  "limitations": [
+    "Retrospectivepre-kickcovariances reconstructed algebraically; tinyidentityresidual isnot independentPICphysicsvalidation",
+    "Forcepremise coverageandevolvingresidualbounds remainunproved",
+    "Onlyselecteddesigns have denserlongerhorizonvalidation; noglobalvalidationoptimumorregret",
+    "Offmomentumfinitegridscore saturated at1inall displayedlearning/finalmaps; twoobjectivechallengeeffectivelydegenerate",
+    "MLPmaxiterationconvergencewarnings preserved; nofitconvergenceclaim",
+    "Fourmethod timings areone smallnondedicatedhostpilot, not10xindustrialgain; event/resultserialization excluded",
+    "Finitecertificatehashes bindrecords butdonotattestphysicaltruth",
+    "Historicalcampaign usedthepreservedfrozenoracle; currentAPIhardening wasreviewedafterward anddoesnotretrospectivelychangeexecutedsourceorlabels. Failedsimulationattemptsremainfailedcampaigns unlessanexplicitretryworkflowisdeclared."
+  ],
+  "frozen_campaign_source_sha256": {
+    "oracle.py": "7fbad498e3115102dfef229fe2bc8b3b4bf17dcaa9804340350d5630789bdec2",
+    "run_pilot.py": "643c76a86079041a1c66483392fb99148dcf7c9c7cf735c3110a53c66ed4180c",
+    "acquisition/finite_meanbax.py": "fe556606c05506b62971b8cabb6cde557c32808b54de9ef32974dda0e286e355",
+    "certificates/grid_bounds.py": "ab6d886fb7384e28fea84926cf5a7c07d54cd6669c77ba556be763b97e511999"
+  },
+  "timings_seconds": {
+    "full_grid": 91.78176491199702,
+    "connected_frontier": 94.53509117700014,
+    "uniform_surrogate": 69.58996473899606,
+    "finite_meanbax": 66.45944960599445
+  },
+  "tenfold_established": false,
+  "post_campaign_hardening": {
+    "status": "reviewed_and_six_tests_passed",
+    "historical_executed_source_preserved": true,
+    "valid_historical_campaign_labels_changed": false,
+    "changes": [
+      "Protocol JSON copy detaches original caller mutation",
+      "Protocol schema/lattice/physics/fullring/design/finite6D/gridgraph validation",
+      "Zero-based lostturn strictly below horizon",
+      "Simulator exception elapsed time and attempted batch retained in failed_calls",
+      "Atomic request validation before simulator work and isolated cache returned bycopy",
+      "Control map dimensions and finitecoefficients checked; declaredstrengths match baseline+scale*basis@controls toexplicit1e-10 tolerance",
+      "Query rehash detects directinternalprotocol mutation beforecache ortracking",
+      "Attempted physicalpointledger includesfailed tracking batches"
+    ],
+    "oracle_current_sha256": "2634613c704137f0c366a751b888881306ec1743af4f518aba012e9266d35965",
+    "new_oracle_test_sha256": "5e397d7b36a606c905a5dfb3407df51dee6b542dcb21eef177ebb4b2b97f5b24",
+    "historical_source_snapshot_path": "research/beam_ring/results/pilot/source_snapshot",
+    "new_physical_campaign_required_for_this_review": false,
+    "additional_control_map_rejection_examples": 2,
+    "final_small_delta_review": "passed; sixoracletests rerun, original48 not rerun fordelta"
+  }
+}

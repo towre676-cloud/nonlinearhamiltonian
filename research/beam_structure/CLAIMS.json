@@ -1,0 +1,52 @@
+{
+  "scope": "Specific classical mathematics, executable machinery and a small live numerical pilot; no tenfold claim",
+  "claims": [
+    {
+      "id": "STRUCTURE-EMITTANCE",
+      "status": "established_identity_implemented_exactly",
+      "evidence": "emittance/THEORY.md",
+      "boundary": "Evolving physical force premises remain conditional; retrospective tightening is not speedup."
+    },
+    {
+      "id": "STRUCTURE-MINIMAL25",
+      "status": "proved_all_degree_with_exact_checker",
+      "evidence": "observables/THEOREMS.md \u00a71",
+      "boundary": "Declared prescribed classical generator family; fixed nonzero shear. Zero shear has dimension9."
+    },
+    {
+      "id": "STRUCTURE-CONTROL-OBSTRUCTION",
+      "status": "proved_all_degree_with_exact_checker",
+      "evidence": "observables/THEOREMS.md \u00a72\u20133",
+      "boundary": "Polynomial common closure; does not exclude other representations."
+    },
+    {
+      "id": "STRUCTURE-HIDDEN-CLOUD",
+      "status": "exact_positive_probability_witness",
+      "evidence": "observables/results/missing_information_witness.json",
+      "boundary": "Finite canonical clouds, not validated accelerator distributions."
+    },
+    {
+      "id": "RING-FINITE-BOUNDS",
+      "status": "proved_finite_table_implication",
+      "evidence": "../beam_ring/certificates/README.md",
+      "boundary": "Conditional on supplied observed labels; no continuous stability."
+    },
+    {
+      "id": "RING-PILOT",
+      "status": "executed_numerical_pilot",
+      "evidence": "../beam_ring/results/pilot/verification.json",
+      "boundary": "2242 point evaluations, saturated momentum score, selected-design validation only, MLP warnings retained."
+    },
+    {
+      "id": "RING-ADOPTION",
+      "status": "executed_upstream_smoke_and_method_level_port",
+      "evidence": "../beam_ring/acquisition/README.md",
+      "boundary": "Generic official Engine differs from DAMA MeanBAX; finite-set port is not SSRL-X reproduction."
+    },
+    {
+      "id": "INDUSTRIAL-TENFOLD",
+      "status": "unproved",
+      "boundary": "No matched-quality complete industrial gain established; existing conjecture statuses unchanged."
+    }
+  ]
+}

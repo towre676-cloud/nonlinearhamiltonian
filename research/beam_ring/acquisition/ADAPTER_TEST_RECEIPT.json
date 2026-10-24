@@ -1,0 +1,32 @@
+{
+  "status": "passed",
+  "checked_utc": "2026-10-24T00:26:11.177649+00:00",
+  "unit_tests": 12,
+  "test_command": "OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 python -m unittest discover -s research/beam_ring/acquisition -p test_*.py -v",
+  "framework_smoke": "UPSTREAM_REPLAY.json",
+  "source_files": [
+    {
+      "path": "finite_meanbax.py",
+      "sha256": "fe556606c05506b62971b8cabb6cde557c32808b54de9ef32974dda0e286e355"
+    },
+    {
+      "path": "engine_adapter.py",
+      "sha256": "4870597c529e340a1bbf4150befc318886090e83e11f89fc084264a37c78e098"
+    },
+    {
+      "path": "run_upstream_smoke.py",
+      "sha256": "602be8597479d56c39d9ded03a2fc382f7cb41bcdbffd0950ff7cee945ee46a5"
+    },
+    {
+      "path": "test_acquisition.py",
+      "sha256": "dd7da9e080252b6cbf684f7117980b399b65740794c7c9bce6738cbbe7eb43aa"
+    }
+  ],
+  "versions": {
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "scikit-learn": "1.8.0",
+    "pyyaml": "6.0.3"
+  },
+  "scope": "Behavioral adapter/selection tests and a real upstream framework smoke run, not a physical-performance validation."
+}

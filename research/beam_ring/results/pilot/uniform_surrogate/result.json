@@ -1,0 +1,280 @@
+{
+  "method": "uniform_surrogate",
+  "selected_designs": [
+    4,
+    2
+  ],
+  "estimated_learning_objectives": [
+    [
+      0.4666666666666667,
+      1.0
+    ],
+    [
+      0.4888888888888889,
+      1.0
+    ],
+    [
+      0.6,
+      1.0
+    ],
+    [
+      0.4,
+      1.0
+    ],
+    [
+      0.6222222222222222,
+      1.0
+    ],
+    [
+      0.5333333333333333,
+      1.0
+    ],
+    [
+      0.5111111111111111,
+      1.0
+    ],
+    [
+      0.5333333333333333,
+      1.0
+    ],
+    [
+      0.5777777777777777,
+      1.0
+    ]
+  ],
+  "validated_objectives": [
+    [
+      0.6373626373626373,
+      1.0
+    ],
+    [
+      0.6593406593406593,
+      1.0
+    ]
+  ],
+  "learning_ledger": {
+    "stage": "learning",
+    "turns": 64,
+    "physical_points": 144,
+    "batched_tracking_calls": 24,
+    "construction_seconds": 0.5030377520015463,
+    "tracking_seconds": 9.069024997013912,
+    "completed_particle_turns": 6779,
+    "calls": [
+      {
+        "design": 2,
+        "points": 10,
+        "seconds": 0.7649204089975683,
+        "purpose": "initial_data",
+        "stage": "learning"
+      },
+      {
+        "design": 6,
+        "points": 17,
+        "seconds": 0.9990820640014135,
+        "purpose": "initial_data",
+        "stage": "learning"
+      },
+      {
+        "design": 1,
+        "points": 11,
+        "seconds": 0.6541818870027782,
+        "purpose": "initial_data",
+        "stage": "learning"
+      },
+      {
+        "design": 5,
+        "points": 15,
+        "seconds": 0.7290519249945646,
+        "purpose": "initial_data",
+        "stage": "learning"
+      },
+      {
+        "design": 7,
+        "points": 7,
+        "seconds": 0.42379611599608324,
+        "purpose": "initial_data",
+        "stage": "learning"
+      },
+      {
+        "design": 8,
+        "points": 10,
+        "seconds": 0.7416363800002728,
+        "purpose": "initial_data",
+        "stage": "learning"
+      },
+      {
+        "design": 0,
+        "points": 10,
+        "seconds": 0.4545927159997518,
+        "purpose": "initial_data",
+        "stage": "learning"
+      },
+      {
+        "design": 4,
+        "points": 10,
+        "seconds": 0.6154916249943199,
+        "purpose": "initial_data",
+        "stage": "learning"
+      },
+      {
+        "design": 3,
+        "points": 6,
+        "seconds": 0.21800099000392947,
+        "purpose": "initial_data",
+        "stage": "learning"
+      },
+      {
+        "design": 0,
+        "points": 5,
+        "seconds": 0.34317575500608655,
+        "purpose": "round_1",
+        "stage": "learning"
+      },
+      {
+        "design": 1,
+        "points": 4,
+        "seconds": 0.26893605000077514,
+        "purpose": "round_1",
+        "stage": "learning"
+      },
+      {
+        "design": 8,
+        "points": 2,
+        "seconds": 0.10388077900279313,
+        "purpose": "round_1",
+        "stage": "learning"
+      },
+      {
+        "design": 5,
+        "points": 3,
+        "seconds": 0.26682939000602346,
+        "purpose": "round_1",
+        "stage": "learning"
+      },
+      {
+        "design": 6,
+        "points": 4,
+        "seconds": 0.29459377900639083,
+        "purpose": "round_1",
+        "stage": "learning"
+      },
+      {
+        "design": 7,
+        "points": 3,
+        "seconds": 0.12083307699504076,
+        "purpose": "round_1",
+        "stage": "learning"
+      },
+      {
+        "design": 4,
+        "points": 2,
+        "seconds": 0.1792677459961851,
+        "purpose": "round_1",
+        "stage": "learning"
+      },
+      {
+        "design": 2,
+        "points": 1,
+        "seconds": 0.11027950100105954,
+        "purpose": "round_1",
+        "stage": "learning"
+      },
+      {
+        "design": 1,
+        "points": 3,
+        "seconds": 0.26108328699774574,
+        "purpose": "round_2",
+        "stage": "learning"
+      },
+      {
+        "design": 7,
+        "points": 4,
+        "seconds": 0.2584094449994154,
+        "purpose": "round_2",
+        "stage": "learning"
+      },
+      {
+        "design": 8,
+        "points": 5,
+        "seconds": 0.2893891900021117,
+        "purpose": "round_2",
+        "stage": "learning"
+      },
+      {
+        "design": 3,
+        "points": 4,
+        "seconds": 0.3150516450041323,
+        "purpose": "round_2",
+        "stage": "learning"
+      },
+      {
+        "design": 5,
+        "points": 2,
+        "seconds": 0.11747188300068956,
+        "purpose": "round_2",
+        "stage": "learning"
+      },
+      {
+        "design": 0,
+        "points": 2,
+        "seconds": 0.18835345900151879,
+        "purpose": "round_2",
+        "stage": "learning"
+      },
+      {
+        "design": 4,
+        "points": 4,
+        "seconds": 0.35071589900326217,
+        "purpose": "round_2",
+        "stage": "learning"
+      }
+    ]
+  },
+  "validation_ledger": {
+    "stage": "validation",
+    "turns": 256,
+    "physical_points": 232,
+    "batched_tracking_calls": 2,
+    "construction_seconds": 0.10664656899461988,
+    "tracking_seconds": 54.732334598003945,
+    "completed_particle_turns": 44296,
+    "calls": [
+      {
+        "design": 4,
+        "points": 116,
+        "seconds": 27.351319483001134,
+        "purpose": "independent_final_grid",
+        "stage": "validation"
+      },
+      {
+        "design": 2,
+        "points": 116,
+        "seconds": 27.38101511500281,
+        "purpose": "independent_final_grid",
+        "stage": "validation"
+      }
+    ]
+  },
+  "learning_elapsed_seconds": 10.25282507600059,
+  "certificate_seconds": 0.013958404000732116,
+  "workflow_elapsed_seconds": 65.10753371100145,
+  "charged_protocol_preparation_seconds": 4.482431027994608,
+  "charged_total_seconds": 69.58996473899606,
+  "learning_certificates": [
+    {
+      "objective": 0,
+      "certificate": "objective_00_certificate.json",
+      "checker": "passed",
+      "observed_labels": 105
+    },
+    {
+      "objective": 1,
+      "certificate": "objective_01_certificate.json",
+      "checker": "passed",
+      "observed_labels": 39
+    }
+  ],
+  "selected_utc": "2026-10-24T00:27:45.969597+00:00",
+  "scope": "Live finite-set pilot; elapsed includes training/acquisition/final tracking/checkers, excludes installation and source-code development."
+}

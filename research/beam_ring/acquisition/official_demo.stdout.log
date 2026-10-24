@@ -1,0 +1,60 @@
+============================================================
+Example 01: Basic Single-Oracle Optimization
+============================================================
+
+Minimizing quadratic function: f(x) = sum(x^2)
+Search space: [0, 1]^3
+
+============================================================
+
+Initializing fresh run...
+Generating initial data for quadratic...
+
+=== Loop 0 ===
+Training models...
+Saving model checkpoint at loop 0...
+
+Loop 0 summary:
+  quadratic: 20 evaluations
+
+=== Loop 1 ===
+Proposing new candidates...
+Training models...
+Saving model checkpoint at loop 1...
+
+Loop 1 summary:
+  quadratic: 30 evaluations
+
+=== Loop 2 ===
+Proposing new candidates...
+Training models...
+Saving model checkpoint at loop 2...
+
+Loop 2 summary:
+  quadratic: 40 evaluations
+
+=== Loop 3 ===
+Proposing new candidates...
+Training models...
+Saving model checkpoint at loop 3...
+
+Loop 3 summary:
+  quadratic: 50 evaluations
+
+=== Loop 4 ===
+Proposing new candidates...
+Training models...
+Saving model checkpoint at loop 4...
+
+Loop 4 summary:
+  quadratic: 60 evaluations
+
+=== Optimization completed after 5 loops ===
+
+Final summary:
+  quadratic: 60 total evaluations
+
+============================================================
+Optimization complete!
+Check 'checkpoints_01/' for saved data and models
+============================================================

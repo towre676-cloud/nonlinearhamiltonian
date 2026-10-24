@@ -1,0 +1,4698 @@
+{
+  "status": "passed",
+  "schema": "retrospective-emittance-replay-v1",
+  "input_sha256": "30b4b43537d42e4eb7e5e8849be9b3e6688117294cac72b0cbfa47f07cd1db02",
+  "cases": 63,
+  "plane_kicks": 126,
+  "production_sc_summary": {
+    "gaussian4d": {
+      "cases": 1,
+      "min_radius_reduction_factor": 5.361528801457967,
+      "max_radius_reduction_factor": 5.3997436916628425
+    },
+    "halo_gaussian4d": {
+      "cases": 1,
+      "min_radius_reduction_factor": 2.759935115415878,
+      "max_radius_reduction_factor": 3.3144263012551374
+    },
+    "kv4d": {
+      "cases": 1,
+      "min_radius_reduction_factor": 120.08403264245209,
+      "max_radius_reduction_factor": 136.37854931215116
+    },
+    "waterbag4d": {
+      "cases": 6,
+      "min_radius_reduction_factor": 6.548359833687711,
+      "max_radius_reduction_factor": 12.156061535700829
+    }
+  },
+  "identity_max_relative_residual": 5.674359073676392e-15,
+  "schur_max_relative_residual": 8.542964031892746e-15,
+  "new_particle_solver_calls": 0,
+  "diagnostic_elapsed_seconds": 0.018302167001820635,
+  "scope": "Floating-point retrospective diagnostics at the last sampled PIC kick only; not a continuum or trajectory certificate and not a computational speedup.",
+  "rows": [
+    {
+      "case_id": "waterbag_no_sc__n131072_m64_s64_r20261023_p1.3",
+      "family": "waterbag4d",
+      "role": "production",
+      "split": "development",
+      "space_charge": false,
+      "planes": [
+        {
+          "plane": "x",
+          "position_variance_m2": 4.66996021477299e-07,
+          "unexplained_momentum_variance": 2.1417017371591516e-06,
+          "full_force_variance_per_m2": 0.0,
+          "own_plane_residual_force_variance_per_m2": 0.0,
+          "signed_ug_per_m": 0.0,
+          "emittance_before_m": 1.000083091770051e-06,
+          "emittance_after_m": 1.000083091770051e-06,
+          "emittance_change_m": 0.0,
+          "norm_radius_m": 0.0,
+          "full_force_radius_m": 0.0,
+          "radius_reduction_factor": null,
+          "identity_relative_residual": 0.0,
+          "norm_bound_numerically_satisfied": true
+        },
+        {
+          "plane": "y",
+          "position_variance_m2": 6.538024199411426e-07,
+          "unexplained_momentum_variance": 1.5292596223719645e-06,
+          "full_force_variance_per_m2": 0.0,
+          "own_plane_residual_force_variance_per_m2": 0.0,
+          "signed_ug_per_m": 0.0,
+          "emittance_before_m": 9.99916817452866e-07,
+          "emittance_after_m": 9.99916817452866e-07,
+          "emittance_change_m": 0.0,
+          "norm_radius_m": 0.0,
+          "full_force_radius_m": 0.0,
+          "radius_reduction_factor": null,
+          "identity_relative_residual": 0.0,
+          "norm_bound_numerically_satisfied": true
+        }
+      ],
+      "U": [
+        [
+          2.141701731980732e-06,
+          -2.851692079735119e-11
+        ],
+        [
+          -2.851692079735124e-11,
+          1.5292596093287634e-06
+        ]
+      ],
+      "G": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "C": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "schur_update_relative_residual": 0.0,
+      "joint_gram_scaled_min_eigenvalue": 0.0,
+      "determinant_factorization_relative_residual": 7.163170203377601e-15
+    },
+    {
+      "case_id": "waterbag_weak_sc__n131072_m64_s64_r20261023_p1.3",
+      "family": "waterbag4d",
+      "role": "production",
+      "split": "development",
+      "space_charge": "2D",
+      "planes": [
+        {
+          "plane": "x",
+          "position_variance_m2": 4.254335601604031e-07,
+          "unexplained_momentum_variance": 2.352434964830845e-06,
+          "full_force_variance_per_m2": 4.201906101118364e-07,
+          "own_plane_residual_force_variance_per_m2": 8.394648305958581e-09,
+          "signed_ug_per_m": -4.316120974637755e-10,
+          "emittance_before_m": 1.0004023101401752e-06,
+          "emittance_after_m": 1.0004020991773175e-06,
+          "emittance_change_m": -2.1096285762951025e-13,
+          "norm_radius_m": 6.947204572758759e-11,
+          "full_force_radius_m": 4.915096015948277e-10,
+          "radius_reduction_factor": 7.0749262735421,
+          "identity_relative_residual": 4.035719959411229e-16,
+          "norm_bound_numerically_satisfied": true
+        },
+        {
+          "plane": "y",
+          "position_variance_m2": 6.319376968704906e-07,
+          "unexplained_momentum_variance": 1.5827935910288572e-06,
+          "full_force_variance_per_m2": 4.2000736257963547e-07,
+          "own_plane_residual_force_variance_per_m2": 9.794715628241731e-09,
+          "signed_ug_per_m": -1.3695674843892732e-09,
+          "emittance_before_m": 1.000113461831281e-06,
+          "emittance_after_m": 1.0001124600047777e-06,
+          "emittance_change_m": -1.0018265033350638e-12,
+          "norm_radius_m": 9.1458907403486e-11,
+          "full_force_radius_m": 5.989058356739513e-10,
+          "radius_reduction_factor": 6.548359833687711,
+          "identity_relative_residual": 6.057077179982958e-16,
+          "norm_bound_numerically_satisfied": true
+        }
+      ],
+      "U": [
+        [
+          2.3524349625149656e-06,
+          -6.392782759663656e-11
+        ],
+        [
+          -6.392782759663661e-11,
+          1.5827935819492298e-06
+        ]
+      ],
+      "G": [
+        [
+          8.394647984890425e-09,
+          -1.2102079691627438e-11
+        ],
+        [
+          -1.210207969162743e-11,
+          9.794715480146384e-09
+        ]
+      ],
+      "C": [
+        [
+          -4.316129597605741e-10,
+          -8.750526536357081e-12
+        ],
+        [
+          -4.4711893077980094e-13,
+          -1.3695686439803426e-09
+        ]
+      ],
+      "schur_update_relative_residual": 5.010037027365232e-16,
+      "joint_gram_scaled_min_eigenvalue": 0.9889089027434756,
+      "determinant_factorization_relative_residual": 3.4861515361899953e-15
+    },
+    {
+      "case_id": "waterbag_strong_sc__n131072_m64_s64_r20261023_p1.3",
+      "family": "waterbag4d",
+      "role": "production",
+      "split": "development",
+      "space_charge": "2D",
+      "planes": [
+        {
+          "plane": "x",
+          "position_variance_m2": 7.42512433547003e-07,
+          "unexplained_momentum_variance": 1.3506511274891817e-06,
+          "full_force_variance_per_m2": 2.9782173812933617e-05,
+          "own_plane_residual_force_variance_per_m2": 6.025254941156277e-07,
+          "signed_ug_per_m": 9.662021514603294e-09,
+          "emittance_before_m": 1.001436595868653e-06,
+          "emittance_after_m": 1.0014452257056093e-06,
+          "emittance_change_m": 8.6298369562871e-12,
+          "norm_radius_m": 7.775575461722038e-10,
+          "full_force_radius_m": 5.466672084223464e-09,
+          "radius_reduction_factor": 7.03056913425257,
+          "identity_relative_residual": 6.040977981112902e-16,
+          "norm_bound_numerically_satisfied": true
+        },
+        {
+          "plane": "y",
+          "position_variance_m2": 7.346331387300218e-07,
+          "unexplained_momentum_variance": 1.365861576632988e-06,
+          "full_force_variance_per_m2": 2.9779036648210956e-05,
+          "own_plane_residual_force_variance_per_m2": 6.844744549661248e-07,
+          "signed_ug_per_m": 5.861236508220415e-09,
+          "emittance_before_m": 1.0017021399161673e-06,
+          "emittance_after_m": 1.0017074761484553e-06,
+          "emittance_change_m": 5.336232288072421e-12,
+          "norm_radius_m": 8.243408874141922e-10,
+          "full_force_radius_m": 5.437303075133671e-09,
+          "radius_reduction_factor": 6.595940051195938,
+          "identity_relative_residual": 1.0063025496299271e-15,
+          "norm_bound_numerically_satisfied": true
+        }
+      ],
+      "U": [
+        [
+          1.3506511147628658e-06,
+          1.9934590145093318e-11
+        ],
+        [
+          1.9934590145093343e-11,
+          1.3658615714898345e-06
+        ]
+      ],
+      "G": [
+        [
+          6.025254895438724e-07,
+          4.127025939377021e-10
+        ],
+        [
+          4.1270259393770205e-10,
+          6.844744514482241e-07
+        ]
+      ],
+      "C": [
+        [
+          9.66202914228745e-09,
+          2.4236687446487194e-11
+        ],
+        [
+          -1.377754906476348e-10,
+          5.861240761819976e-09
+        ]
+      ],
+      "schur_update_relative_residual": 1.1349681055360873e-15,
+      "joint_gram_scaled_min_eigenvalue": 0.9892536271609498,
+      "determinant_factorization_relative_residual": 3.650450425321097e-15
+    },
+    {
+      "case_id": "kv_anchor__n131072_m64_s64_r20261023_p1.3",
+      "family": "kv4d",
+      "role": "production",
+      "split": "development",
+      "space_charge": "2D",
+      "planes": [
+        {
+          "plane": "x",
+          "position_variance_m2": 7.377455287270787e-07,
+          "unexplained_momentum_variance": 1.3555255734817825e-06,
+          "full_force_variance_per_m2": 2.939707505352899e-05,
+          "own_plane_residual_force_variance_per_m2": 1.5805636446327527e-09,
+          "signed_ug_per_m": 1.0957962067305402e-10,
+          "emittance_before_m": 1.000016465320144e-06,
+          "emittance_after_m": 1.000016560085165e-06,
+          "emittance_change_m": 9.476502101718671e-14,
+          "norm_radius_m": 3.969650288618016e-11,
+          "full_force_radius_m": 5.413751476382872e-09,
+          "radius_reduction_factor": 136.37854931215116,
+          "identity_relative_residual": 6.058251100127639e-16,
+          "norm_bound_numerically_satisfied": true
+        },
+        {
+          "plane": "y",
+          "position_variance_m2": 7.289279592177744e-07,
+          "unexplained_momentum_variance": 1.3718772404840242e-06,
+          "full_force_variance_per_m2": 2.9396721561610776e-05,
+          "own_plane_residual_force_variance_per_m2": 2.0385828725579956e-09,
+          "signed_ug_per_m": -1.1257777814078964e-10,
+          "emittance_before_m": 9.999998386016528e-07,
+          "emittance_after_m": 9.999997442096975e-07,
+          "emittance_change_m": -9.439195530820568e-14,
+          "norm_radius_m": 4.481252872786837e-11,
+          "full_force_radius_m": 5.381269162548167e-09,
+          "radius_reduction_factor": 120.08403264245209,
+          "identity_relative_residual": 4.038969138497362e-16,
+          "norm_bound_numerically_satisfied": true
+        }
+      ],
+      "U": [
+        [
+          1.3555255729085682e-06,
+          1.6813990016774248e-11
+        ],
+        [
+          1.6813990016774248e-11,
+          1.3718772374462863e-06
+        ]
+      ],
+      "G": [
+        [
+          1.5805558899343122e-09,
+          -1.1529603297627121e-11
+        ],
+        [
+          -1.1529603297627354e-11,
+          2.0385750244352092e-09
+        ]
+      ],
+      "C": [
+        [
+          1.0957751233012128e-10,
+          1.671699700537772e-11
+        ],
+        [
+          -2.9375992077421798e-12,
+          -1.1257289546002277e-10
+        ]
+      ],
+      "schur_update_relative_residual": 4.391958386315137e-16,
+      "joint_gram_scaled_min_eigenvalue": 0.9927468845182624,
+      "determinant_factorization_relative_residual": 6.979270154635679e-15
+    },
+    {
+      "case_id": "gaussian_sc__n131072_m64_s64_r20261023_p1.3",
+      "family": "gaussian4d",
+      "role": "production",
+      "split": "development",
+      "space_charge": "2D",
+      "planes": [
+        {
+          "plane": "x",
+          "position_variance_m2": 7.798873142949606e-07,
+          "unexplained_momentum_variance": 1.5187577799252141e-06,
+          "full_force_variance_per_m2": 2.8221387577299505e-05,
+          "own_plane_residual_force_variance_per_m2": 9.817503766023557e-07,
+          "signed_ug_per_m": 8.282137119131763e-08,
+          "emittance_before_m": 1.088328960402346e-06,
+          "emittance_after_m": 1.0883984268726602e-06,
+          "emittance_change_m": 6.946647031419211e-11,
+          "norm_radius_m": 1.0172072055236437e-09,
+          "full_force_radius_m": 5.4537857294655895e-09,
+          "radius_reduction_factor": 5.361528801457967,
+          "identity_relative_residual": 1.7047652657010883e-16,
+          "norm_bound_numerically_satisfied": true
+        },
+        {
+          "plane": "y",
+          "position_variance_m2": 7.918078663982738e-07,
+          "unexplained_momentum_variance": 1.5209966912567089e-06,
+          "full_force_variance_per_m2": 2.8177651128401398e-05,
+          "own_plane_residual_force_variance_per_m2": 9.664035046463562e-07,
+          "signed_ug_per_m": 1.7946296279410423e-08,
+          "emittance_before_m": 1.0974229562492343e-06,
+          "emittance_after_m": 1.0974384799614093e-06,
+          "emittance_change_m": 1.552371217501367e-11,
+          "norm_radius_m": 1.016909057816617e-09,
+          "full_force_radius_m": 5.491048269940082e-09,
+          "radius_reduction_factor": 5.3997436916628425,
+          "identity_relative_residual": 1.6767952341912677e-16,
+          "norm_bound_numerically_satisfied": true
+        }
+      ],
+      "U": [
+        [
+          1.5187577749528868e-06,
+          2.031011149239776e-10
+        ],
+        [
+          2.031011149239776e-10,
+          1.5209966835282583e-06
+        ]
+      ],
+      "G": [
+        [
+          9.817502992141628e-07,
+          1.2760413594884503e-09
+        ],
+        [
+          1.2760413594884506e-09,
+          9.664034310811924e-07
+        ]
+      ],
+      "C": [
+        [
+          8.282139080762152e-08,
+          -6.838012026344301e-10
+        ],
+        [
+          -5.507026118706732e-10,
+          1.7946320123587788e-08
+        ]
+      ],
+      "schur_update_relative_residual": 2.955317256821051e-16,
+      "joint_gram_scaled_min_eigenvalue": 0.9321402388900732,
+      "determinant_factorization_relative_residual": 3.4764492697405543e-15
+    },
+    {
+      "case_id": "heldout_quad_low__n131072_m64_s64_r20261023_p1.3",
+      "family": "waterbag4d",
+      "role": "production",
+      "split": "heldout_setting",
+      "space_charge": "2D",
+      "planes": [
+        {
+          "plane": "x",
+          "position_variance_m2": 1.1569366615001405e-06,
+          "unexplained_momentum_variance": 8.70052444814984e-07,
+          "full_force_variance_per_m2": 1.660423587125532e-05,
+          "own_plane_residual_force_variance_per_m2": 2.2271209227472903e-07,
+          "signed_ug_per_m": -2.7759876039239336e-09,
+          "emittance_before_m": 1.0032923655815802e-06,
+          "emittance_after_m": 1.003288817826391e-06,
+          "emittance_change_m": -3.5477551892201304e-12,
+          "norm_radius_m": 5.900918985956499e-10,
+          "full_force_radius_m": 5.095152654517661e-09,
+          "radius_reduction_factor": 8.634507043129268,
+          "identity_relative_residual": 2.0062515432012172e-15,
+          "norm_bound_numerically_satisfied": true
+        },
+        {
+          "plane": "y",
+          "position_variance_m2": 1.4721368673440297e-06,
+          "unexplained_momentum_variance": 7.037374689737632e-07,
+          "full_force_variance_per_m2": 1.6611693652321682e-05,
+          "own_plane_residual_force_variance_per_m2": 1.250667496318462e-07,
+          "signed_ug_per_m": -2.567157075081638e-08,
+          "emittance_before_m": 1.0178398071443517e-06,
+          "emittance_after_m": 1.0177967652087818e-06,
+          "emittance_change_m": -4.304193556987236e-11,
+          "norm_radius_m": 4.988132574515219e-10,
+          "full_force_radius_m": 5.748757812504213e-09,
+          "radius_reduction_factor": 11.524869731560646,
+          "identity_relative_residual": 1.9493128026440222e-16,
+          "norm_bound_numerically_satisfied": true
+        }
+      ],
+      "U": [
+        [
+          8.700524387600028e-07,
+          4.126709199211837e-11
+        ],
+        [
+          4.126709199211832e-11,
+          7.037374669167572e-07
+        ]
+      ],
+      "G": [
+        [
+          2.2271208828092125e-07,
+          -1.684670874656925e-10
+        ],
+        [
+          -1.6846708746569244e-10,
+          1.250667465141246e-07
+        ]
+      ],
+      "C": [
+        [
+          -2.7759925214922935e-09,
+          4.8996041541281784e-11
+        ],
+        [
+          -4.0526544820831235e-11,
+          -2.567157328323991e-08
+        ]
+      ],
+      "schur_update_relative_residual": 8.139527164716514e-16,
+      "joint_gram_scaled_min_eigenvalue": 0.9134608775589156,
+      "determinant_factorization_relative_residual": 1.76127308777324e-16
+    },
+    {
+      "case_id": "heldout_quad_high__n131072_m64_s64_r20261023_p1.3",
+      "family": "waterbag4d",
+      "role": "production",
+      "split": "heldout_setting",
+      "space_charge": "2D",
+      "planes": [
+        {
+          "plane": "x",
+          "position_variance_m2": 4.291861034450534e-07,
+          "unexplained_momentum_variance": 2.377654488232104e-06,
+          "full_force_variance_per_m2": 3.103208311201437e-05,
+          "own_plane_residual_force_variance_per_m2": 5.323930276061787e-07,
+          "signed_ug_per_m": 1.2604585245322958e-07,
+          "emittance_before_m": 1.0101763534863502e-06,
+          "emittance_after_m": 1.010238758787599e-06,
+          "emittance_change_m": 6.240530124886007e-11,
+          "norm_radius_m": 5.556892137149668e-10,
+          "full_force_radius_m": 4.242494150765779e-09,
+          "radius_reduction_factor": 7.634652690850876,
+          "identity_relative_residual": 5.936269379478897e-16,
+          "norm_bound_numerically_satisfied": true
+        },
+        {
+          "plane": "y",
+          "position_variance_m2": 1.0393415278561615e-06,
+          "unexplained_momentum_variance": 1.0187205256939384e-06,
+          "full_force_variance_per_m2": 3.104702665532364e-05,
+          "own_plane_residual_force_variance_per_m2": 2.1010395845053774e-07,
+          "signed_ug_per_m": -3.877605851604945e-08,
+          "emittance_before_m": 1.0289793718210155e-06,
+          "emittance_after_m": 1.0289339831077936e-06,
+          "emittance_change_m": -4.5388713221967156e-11,
+          "norm_radius_m": 5.432368460323162e-10,
+          "full_force_radius_m": 6.603620528828873e-09,
+          "radius_reduction_factor": 12.156061535700829,
+          "identity_relative_residual": 3.814670735769568e-16,
+          "norm_bound_numerically_satisfied": true
+        }
+      ],
+      "U": [
+        [
+          2.377654482964492e-06,
+          -6.571604150632091e-11
+        ],
+        [
+          -6.571604150632089e-11,
+          1.0187205249939538e-06
+        ]
+      ],
+      "G": [
+        [
+          5.323930004978345e-07,
+          5.453513620340743e-10
+        ],
+        [
+          5.453513620340744e-10,
+          2.1010393988711953e-07
+        ]
+      ],
+      "C": [
+        [
+          1.260458644029671e-07,
+          -5.628280201689815e-11
+        ],
+        [
+          -8.925179027228437e-12,
+          -3.877605491130762e-08
+        ]
+      ],
+      "schur_update_relative_residual": 8.185672269660442e-16,
+      "joint_gram_scaled_min_eigenvalue": 0.8879386276012556,
+      "determinant_factorization_relative_residual": 3.399874117908827e-15
+    },
+    {
+      "case_id": "heldout_current__n131072_m64_s64_r20261023_p1.3",
+      "family": "waterbag4d",
+      "role": "production",
+      "split": "heldout_current",
+      "space_charge": "2D",
+      "planes": [
+        {
+          "plane": "x",
+          "position_variance_m2": 1.3424449744143498e-06,
+          "unexplained_momentum_variance": 7.689083283917842e-07,
+          "full_force_variance_per_m2": 4.2412786732544745e-05,
+          "own_plane_residual_force_variance_per_m2": 3.324979928321685e-07,
+          "signed_ug_per_m": -2.7238705190323683e-08,
+          "emittance_before_m": 1.0159808665692914e-06,
+          "emittance_after_m": 1.015939322707172e-06,
+          "emittance_change_m": -4.1543862119482064e-11,
+          "norm_radius_m": 7.766685550564272e-10,
+          "full_force_radius_m": 8.77181800772104e-09,
+          "radius_reduction_factor": 11.294158815382634,
+          "identity_relative_residual": 9.782263226508921e-16,
+          "norm_bound_numerically_satisfied": true
+        },
+        {
+          "plane": "y",
+          "position_variance_m2": 1.2824238613232511e-06,
+          "unexplained_momentum_variance": 8.071861570061894e-07,
+          "full_force_variance_per_m2": 4.2408840064507694e-05,
+          "own_plane_residual_force_variance_per_m2": 4.813485965197712e-07,
+          "signed_ug_per_m": -8.256020882833166e-08,
+          "emittance_before_m": 1.0174255689113348e-06,
+          "emittance_after_m": 1.0173049975500914e-06,
+          "emittance_change_m": -1.2057136124344229e-10,
+          "norm_radius_m": 9.13352898936277e-10,
+          "full_force_radius_m": 8.573081525633806e-09,
+          "radius_reduction_factor": 9.386384535066696,
+          "identity_relative_residual": 9.754502129734458e-16,
+          "norm_bound_numerically_satisfied": true
+        }
+      ],
+      "U": [
+        [
+          7.68908321457017e-07,
+          3.5231308029131747e-11
+        ],
+        [
+          3.5231308029131747e-11,
+          8.071861551650871e-07
+        ]
+      ],
+      "G": [
+        [
+          3.3249798022673936e-07,
+          -3.4349023156065806e-10
+        ],
+        [
+          -3.434902315606581e-10,
+          4.813485851791385e-07
+        ]
+      ],
+      "C": [
+        [
+          -2.7238714539961446e-08,
+          3.277443944715118e-10
+        ],
+        [
+          -4.547880089118265e-11,
+          -8.256021339771527e-08
+        ]
+      ],
+      "schur_update_relative_residual": 3.995303747286869e-15,
+      "joint_gram_scaled_min_eigenvalue": 0.8675457873867796,
+      "determinant_factorization_relative_residual": 7.047710908981193e-15
+    },
+    {
+      "case_id": "heldout_halo__n524288_m256_s64_r20261023_p1.3",
+      "family": "halo_gaussian4d",
+      "role": "production",
+      "split": "heldout_distribution",
+      "space_charge": "2D",
+      "planes": [
+        {
+          "plane": "x",
+          "position_variance_m2": 8.953015177737753e-07,
+          "unexplained_momentum_variance": 1.6978507675802905e-06,
+          "full_force_variance_per_m2": 2.6409578052358022e-05,
+          "own_plane_residual_force_variance_per_m2": 2.404056827135502e-06,
+          "signed_ug_per_m": -5.252111970515321e-07,
+          "emittance_before_m": 1.2329186385029645e-06,
+          "emittance_after_m": 1.2324763733383022e-06,
+          "emittance_change_m": -4.4226516466228514e-10,
+          "norm_radius_m": 1.7054931780985833e-09,
+          "full_force_radius_m": 5.652731446101157e-09,
+          "radius_reduction_factor": 3.3144263012551374,
+          "identity_relative_residual": 1.4613836630552177e-15,
+          "norm_bound_numerically_satisfied": true
+        },
+        {
+          "plane": "y",
+          "position_variance_m2": 9.362902801557816e-07,
+          "unexplained_momentum_variance": 1.6757855021916796e-06,
+          "full_force_variance_per_m2": 2.6323969915723256e-05,
+          "own_plane_residual_force_variance_per_m2": 3.4558401143281952e-06,
+          "signed_ug_per_m": -9.050113684444453e-07,
+          "emittance_before_m": 1.2526059545316092e-06,
+          "emittance_after_m": 1.251821054903067e-06,
+          "emittance_change_m": -7.848996285420899e-10,
+          "norm_radius_m": 2.091101144648672e-09,
+          "full_force_radius_m": 5.771303479002208e-09,
+          "radius_reduction_factor": 2.759935115415878,
+          "identity_relative_residual": 3.8612925746281434e-16,
+          "norm_bound_numerically_satisfied": true
+        }
+      ],
+      "U": [
+        [
+          1.6978506531367491e-06,
+          -8.792520144413406e-10
+        ],
+        [
+          -8.792520144413402e-10,
+          1.6757855004347621e-06
+        ]
+      ],
+      "G": [
+        [
+          2.404056179043662e-06,
+          5.115518404989102e-09
+        ],
+        [
+          5.115518404989102e-09,
+          3.4558394693258433e-06
+        ]
+      ],
+      "C": [
+        [
+          -5.252114693930924e-07,
+          1.6578997389514149e-09
+        ],
+        [
+          1.204217739698347e-09,
+          -9.050114021077234e-07
+        ]
+      ],
+      "schur_update_relative_residual": 1.0362001921603626e-15,
+      "joint_gram_scaled_min_eigenvalue": 0.6239147593302117,
+      "determinant_factorization_relative_residual": 3.696444442061513e-15
+    },
+    {
+      "case_id": "heldout_emittance__n131072_m64_s64_r20261023_p1.3",
+      "family": "waterbag4d",
+      "role": "production",
+      "split": "heldout_distribution",
+      "space_charge": "2D",
+      "planes": [
+        {
+          "plane": "x",
+          "position_variance_m2": 8.016978663225277e-07,
+          "unexplained_momentum_variance": 3.6419075102515215e-06,
+          "full_force_variance_per_m2": 2.496544595463202e-05,
+          "own_plane_residual_force_variance_per_m2": 4.7618847069840883e-07,
+          "signed_ug_per_m": 1.239299154927182e-07,
+          "emittance_before_m": 1.7087157400552714e-06,
+          "emittance_after_m": 1.7087834839690855e-06,
+          "emittance_change_m": 6.774391381407548e-11,
+          "norm_radius_m": 7.182700594061471e-10,
+          "full_force_radius_m": 5.200774091632441e-09,
+          "radius_reduction_factor": 7.24069453198752,
+          "identity_relative_residual": 8.299416683137349e-16,
+          "norm_bound_numerically_satisfied": true
+        },
+        {
+          "plane": "y",
+          "position_variance_m2": 9.556306198703685e-07,
+          "unexplained_momentum_variance": 3.040233615788757e-06,
+          "full_force_variance_per_m2": 2.4970039541584227e-05,
+          "own_plane_residual_force_variance_per_m2": 3.862615418047975e-07,
+          "signed_ug_per_m": 2.9165626515041882e-08,
+          "emittance_before_m": 1.7045058916902997e-06,
+          "emittance_after_m": 1.7045250467602137e-06,
+          "emittance_change_m": 1.9155069914021528e-11,
+          "norm_radius_m": 7.062829540394632e-10,
+          "full_force_radius_m": 5.678682727501341e-09,
+          "radius_reduction_factor": 8.040237549303855,
+          "identity_relative_residual": 1.6681875133841678e-15,
+          "norm_bound_numerically_satisfied": true
+        }
+      ],
+      "U": [
+        [
+          3.6419074951040186e-06,
+          -8.13709714219829e-11
+        ],
+        [
+          -8.13709714219828e-11,
+          3.0402336131555144e-06
+        ]
+      ],
+      "G": [
+        [
+          4.7618843135095355e-07,
+          4.540455579692006e-10
+        ],
+        [
+          4.5404555796920043e-10,
+          3.862615047864592e-07
+        ]
+      ],
+      "C": [
+        [
+          1.2392993990614745e-07,
+          -7.151287454272042e-11
+        ],
+        [
+          2.579861770178378e-10,
+          2.916563638815617e-08
+        ]
+      ],
+      "schur_update_relative_residual": 6.437149469753265e-16,
+      "joint_gram_scaled_min_eigenvalue": 0.9058862153051719,
+      "determinant_factorization_relative_residual": 0.0
+    },
+    {
+      "case_id": "waterbag_no_sc__n131072_m128_s64_r20261023_p1.3",
+      "family": "waterbag4d",
+      "role": "convergence",
+      "split": "development",
+      "space_charge": false,
+      "planes": [
+        {
+          "plane": "x",
+          "position_variance_m2": 4.66996021477299e-07,
+          "unexplained_momentum_variance": 2.1417017371591516e-06,
+          "full_force_variance_per_m2": 0.0,
+          "own_plane_residual_force_variance_per_m2": 0.0,
+          "signed_ug_per_m": 0.0,
+          "emittance_before_m": 1.000083091770051e-06,
+          "emittance_after_m": 1.000083091770051e-06,
+          "emittance_change_m": 0.0,
+          "norm_radius_m": 0.0,
+          "full_force_radius_m": 0.0,
+          "radius_reduction_factor": null,
+          "identity_relative_residual": 0.0,
+          "norm_bound_numerically_satisfied": true
+        },
+        {
+          "plane": "y",
+          "position_variance_m2": 6.538024199411426e-07,
+          "unexplained_momentum_variance": 1.5292596223719645e-06,
+          "full_force_variance_per_m2": 0.0,
+          "own_plane_residual_force_variance_per_m2": 0.0,
+          "signed_ug_per_m": 0.0,
+          "emittance_before_m": 9.99916817452866e-07,
+          "emittance_after_m": 9.99916817452866e-07,
+          "emittance_change_m": 0.0,
+          "norm_radius_m": 0.0,
+          "full_force_radius_m": 0.0,
+          "radius_reduction_factor": null,
+          "identity_relative_residual": 0.0,
+          "norm_bound_numerically_satisfied": true
+        }
+      ],
+      "U": [
+        [
+          2.141701731980732e-06,
+          -2.851692079735119e-11
+        ],
+        [
+          -2.851692079735124e-11,
+          1.5292596093287634e-06
+        ]
+      ],
+      "G": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "C": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "schur_update_relative_residual": 0.0,
+      "joint_gram_scaled_min_eigenvalue": 0.0,
+      "determinant_factorization_relative_residual": 7.163170203377601e-15
+    },
+    {
+      "case_id": "waterbag_no_sc__n131072_m64_s128_r20261023_p1.3",
+      "family": "waterbag4d",
+      "role": "convergence",
+      "split": "development",
+      "space_charge": false,
+      "planes": [
+        {
+          "plane": "x",
+          "position_variance_m2": 4.658855673396595e-07,
+          "unexplained_momentum_variance": 2.146806556286902e-06,
+          "full_force_variance_per_m2": 0.0,
+          "own_plane_residual_force_variance_per_m2": 0.0,
+          "signed_ug_per_m": 0.0,
+          "emittance_before_m": 1.0000830917699908e-06,
+          "emittance_after_m": 1.0000830917699908e-06,
+          "emittance_change_m": 0.0,
+          "norm_radius_m": 0.0,
+          "full_force_radius_m": 0.0,
+          "radius_reduction_factor": null,
+          "identity_relative_residual": 0.0,
+          "norm_bound_numerically_satisfied": true
+        },
+        {
+          "plane": "y",
+          "position_variance_m2": 6.573301923471139e-07,
+          "unexplained_momentum_variance": 1.5210523622152136e-06,
+          "full_force_variance_per_m2": 0.0,
+          "own_plane_residual_force_variance_per_m2": 0.0,
+          "signed_ug_per_m": 0.0,
+          "emittance_before_m": 9.999168174528112e-07,
+          "emittance_after_m": 9.999168174528112e-07,
+          "emittance_change_m": 0.0,
+          "norm_radius_m": 0.0,
+          "full_force_radius_m": 0.0,
+          "radius_reduction_factor": null,
+          "identity_relative_residual": 0.0,
+          "norm_bound_numerically_satisfied": true
+        }
+      ],
+      "U": [
+        [
+          2.1468065510781897e-06,
+          -2.81872645572873e-11
+        ],
+        [
+          -2.81872645572873e-11,
+          1.521052349222316e-06
+        ]
+      ],
+      "G": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "C": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "schur_update_relative_residual": 0.0,
+      "joint_gram_scaled_min_eigenvalue": 0.0,
+      "determinant_factorization_relative_residual": 0.0
+    },
+    {
+      "case_id": "waterbag_no_sc__n262144_m64_s64_r20261023_p1.3",
+      "family": "waterbag4d",
+      "role": "convergence",
+      "split": "development",
+      "space_charge": false,
+      "planes": [
+        {
+          "plane": "x",
+          "position_variance_m2": 4.6699233847684613e-07,
+          "unexplained_momentum_variance": 2.141676786217714e-06,
+          "full_force_variance_per_m2": 0.0,
+          "own_plane_residual_force_variance_per_m2": 0.0,
+          "signed_ug_per_m": 0.0,
+          "emittance_before_m": 1.0000733226405885e-06,
+          "emittance_after_m": 1.0000733226405885e-06,
+          "emittance_change_m": 0.0,
+          "norm_radius_m": 0.0,
+          "full_force_radius_m": 0.0,
+          "radius_reduction_factor": null,
+          "identity_relative_residual": 0.0,
+          "norm_bound_numerically_satisfied": true
+        },
+        {
+          "plane": "y",
+          "position_variance_m2": 6.538344985509818e-07,
+          "unexplained_momentum_variance": 1.5292146519562405e-06,
+          "full_force_variance_per_m2": 0.0,
+          "own_plane_residual_force_variance_per_m2": 0.0,
+          "signed_ug_per_m": 0.0,
+          "emittance_before_m": 9.999266448788247e-07,
+          "emittance_after_m": 9.999266448788247e-07,
+          "emittance_change_m": 0.0,
+          "norm_radius_m": 0.0,
+          "full_force_radius_m": 0.0,
+          "radius_reduction_factor": null,
+          "identity_relative_residual": 0.0,
+          "norm_bound_numerically_satisfied": true
+        }
+      ],
+      "U": [
+        [
+          2.141676784406839e-06,
+          -6.306424245115877e-11
+        ],
+        [
+          -6.306424245115877e-11,
+          1.5292146517905371e-06
+        ]
+      ],
+      "G": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "C": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "schur_update_relative_residual": 0.0,
+      "joint_gram_scaled_min_eigenvalue": 0.0,
+      "determinant_factorization_relative_residual": 1.0836589392036705e-14
+    },
+    {
+      "case_id": "waterbag_no_sc__n131072_m64_s64_r20261024_p1.3",
+      "family": "waterbag4d",
+      "role": "convergence",
+      "split": "development",
+      "space_charge": false,
+      "planes": [
+        {
+          "plane": "x",
+          "position_variance_m2": 4.6696714481247604e-07,
+          "unexplained_momentum_variance": 2.1415529779777657e-06,
+          "full_force_variance_per_m2": 0.0,
+          "own_plane_residual_force_variance_per_m2": 0.0,
+          "signed_ug_per_m": 0.0,
+          "emittance_before_m": 1.0000174396433956e-06,
+          "emittance_after_m": 1.0000174396433956e-06,
+          "emittance_change_m": 0.0,
+          "norm_radius_m": 0.0,
+          "full_force_radius_m": 0.0,
+          "radius_reduction_factor": null,
+          "identity_relative_residual": 0.0,
+          "norm_bound_numerically_satisfied": true
+        },
+        {
+          "plane": "y",
+          "position_variance_m2": 6.5395350412445e-07,
+          "unexplained_momentum_variance": 1.529107485090681e-06,
+          "full_force_variance_per_m2": 0.0,
+          "own_plane_residual_force_variance_per_m2": 0.0,
+          "signed_ug_per_m": 0.0,
+          "emittance_before_m": 9.999825988775885e-07,
+          "emittance_after_m": 9.999825988775885e-07,
+          "emittance_change_m": 0.0,
+          "norm_radius_m": 0.0,
+          "full_force_radius_m": 0.0,
+          "radius_reduction_factor": null,
+          "identity_relative_residual": 0.0,
+          "norm_bound_numerically_satisfied": true
+        }
+      ],
+      "U": [
+        [
+          2.1415529171307384e-06,
+          -1.4460867091014585e-10
+        ],
+        [
+          -1.4460867091014564e-10,
+          1.5291074803460446e-06
+        ]
+      ],
+      "G": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "C": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "schur_update_relative_residual": 0.0,
+      "joint_gram_scaled_min_eigenvalue": 0.0,
+      "determinant_factorization_relative_residual": 3.4897487311388033e-15
+    },
+    {
+      "case_id": "waterbag_no_sc__n131072_m64_s64_r20261023_p1.6",
+      "family": "waterbag4d",
+      "role": "convergence",
+      "split": "development",
+      "space_charge": false,
+      "planes": [
+        {
+          "plane": "x",
+          "position_variance_m2": 4.66996021477299e-07,
+          "unexplained_momentum_variance": 2.1417017371591516e-06,
+          "full_force_variance_per_m2": 0.0,
+          "own_plane_residual_force_variance_per_m2": 0.0,
+          "signed_ug_per_m": 0.0,
+          "emittance_before_m": 1.000083091770051e-06,
+          "emittance_after_m": 1.000083091770051e-06,
+          "emittance_change_m": 0.0,
+          "norm_radius_m": 0.0,
+          "full_force_radius_m": 0.0,
+          "radius_reduction_factor": null,
+          "identity_relative_residual": 0.0,
+          "norm_bound_numerically_satisfied": true
+        },
+        {
+          "plane": "y",
+          "position_variance_m2": 6.538024199411426e-07,
+          "unexplained_momentum_variance": 1.5292596223719645e-06,
+          "full_force_variance_per_m2": 0.0,
+          "own_plane_residual_force_variance_per_m2": 0.0,
+          "signed_ug_per_m": 0.0,
+          "emittance_before_m": 9.99916817452866e-07,
+          "emittance_after_m": 9.99916817452866e-07,
+          "emittance_change_m": 0.0,
+          "norm_radius_m": 0.0,
+          "full_force_radius_m": 0.0,
+          "radius_reduction_factor": null,
+          "identity_relative_residual": 0.0,
+          "norm_bound_numerically_satisfied": true
+        }
+      ],
+      "U": [
+        [
+          2.141701731980732e-06,
+          -2.851692079735119e-11
+        ],
+        [
+          -2.851692079735124e-11,
+          1.5292596093287634e-06
+        ]
+      ],
+      "G": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "C": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "schur_update_relative_residual": 0.0,
+      "joint_gram_scaled_min_eigenvalue": 0.0,
+      "determinant_factorization_relative_residual": 7.163170203377601e-15
+    },
+    {
+      "case_id": "waterbag_weak_sc__n131072_m128_s64_r20261023_p1.3",
+      "family": "waterbag4d",
+      "role": "convergence",
+      "split": "development",
+      "space_charge": "2D",
+      "planes": [
+        {
+          "plane": "x",
+          "position_variance_m2": 4.2534628616077824e-07,
+          "unexplained_momentum_variance": 2.3529188811109725e-06,
+          "full_force_variance_per_m2": 4.224124123623907e-07,
+          "own_plane_residual_force_variance_per_m2": 8.389425802863583e-09,
+          "signed_ug_per_m": -4.305873060798253e-10,
+          "emittance_before_m": 1.0004025728266226e-06,
+          "emittance_after_m": 1.0004023624121172e-06,
+          "emittance_change_m": -2.1041450544011676e-13,
+          "norm_radius_m": 6.944330834777916e-11,
+          "full_force_radius_m": 4.92756792681951e-10,
+          "radius_reduction_factor": 7.095813900659438,
+          "identity_relative_residual": 2.0178589200034225e-16,
+          "norm_bound_numerically_satisfied": true
+        },
+        {
+          "plane": "y",
+          "position_variance_m2": 6.318673752170862e-07,
+          "unexplained_momentum_variance": 1.5829668177430954e-06,
+          "full_force_variance_per_m2": 4.223630626712914e-07,
+          "own_plane_residual_force_variance_per_m2": 9.815033569017728e-09,
+          "signed_ug_per_m": -1.366543333489972e-09,
+          "emittance_before_m": 1.0001125377591635e-06,
+          "emittance_after_m": 1.00011153827302e-06,
+          "emittance_change_m": -9.994861434667454e-13,
+          "norm_radius_m": 9.15486242610514e-11,
+          "full_force_radius_m": 6.005496150427882e-10,
+          "radius_reduction_factor": 6.559897758051696,
+          "identity_relative_residual": 1.817126511924226e-15,
+          "norm_bound_numerically_satisfied": true
+        }
+      ],
+      "U": [
+        [
+          2.3529188788226037e-06,
+          -6.416723456961605e-11
+        ],
+        [
+          -6.416723456961595e-11,
+          1.5829668087265211e-06
+        ]
+      ],
+      "G": [
+        [
+          8.389425478352344e-09,
+          -1.2221382701368161e-11
+        ],
+        [
+          -1.2221382701368158e-11,
+          9.815033443130897e-09
+        ]
+      ],
+      "C": [
+        [
+          -4.3058816782329963e-10,
+          6.540618933493347e-12
+        ],
+        [
+          1.0537503016637687e-11,
+          -1.3665443988858955e-09
+        ]
+      ],
+      "schur_update_relative_residual": 7.467210146272256e-16,
+      "joint_gram_scaled_min_eigenvalue": 0.988959337349112,
+      "determinant_factorization_relative_residual": 0.0
+    },
+    {
+      "case_id": "waterbag_weak_sc__n131072_m64_s128_r20261023_p1.3",
+      "family": "waterbag4d",
+      "role": "convergence",
+      "split": "development",
+      "space_charge": "2D",
+      "planes": [
+        {
+          "plane": "x",
+          "position_variance_m2": 4.244620710301689e-07,
+          "unexplained_momentum_variance": 2.3578256851502514e-06,
+          "full_force_variance_per_m2": 4.193518094408307e-07,
+          "own_plane_residual_force_variance_per_m2": 8.379412908120974e-09,
+          "signed_ug_per_m": -4.3681038169543105e-10,
+          "emittance_before_m": 1.0004037052345432e-06,
+          "emittance_after_m": 1.0004035981093735e-06,
+          "emittance_change_m": -1.0712516972901027e-13,
+          "norm_radius_m": 3.466484047897279e-11,
+          "full_force_radius_m": 2.4522891176680474e-10,
+          "radius_reduction_factor": 7.07428357893518,
+          "identity_relative_residual": 4.035708703542762e-16,
+          "norm_bound_numerically_satisfied": true
+        },
+        {
+          "plane": "y",
+          "position_variance_m2": 6.354382937989599e-07,
+          "unexplained_momentum_variance": 1.5740681571036848e-06,
+          "full_force_variance_per_m2": 4.191673477781101e-07,
+          "own_plane_residual_force_variance_per_m2": 9.77758444900168e-09,
+          "signed_ug_per_m": -1.3478821976379216e-09,
+          "emittance_before_m": 1.000111585810923e-06,
+          "emittance_after_m": 1.0001110890774932e-06,
+          "emittance_change_m": -4.967334298405725e-13,
+          "norm_radius_m": 4.581581805568083e-11,
+          "full_force_radius_m": 2.999807454179093e-10,
+          "radius_reduction_factor": 6.547536596494623,
+          "identity_relative_residual": 8.076133205158411e-16,
+          "norm_bound_numerically_satisfied": true
+        }
+      ],
+      "U": [
+        [
+          2.3578256828058382e-06,
+          -6.355782044756804e-11
+        ],
+        [
+          -6.355782044756809e-11,
+          1.574068148040268e-06
+        ]
+      ],
+      "G": [
+        [
+          8.37941258577618e-09,
+          -1.208106710542015e-11
+        ],
+        [
+          -1.208106710542015e-11,
+          9.777584303164576e-09
+        ]
+      ],
+      "C": [
+        [
+          -4.368112510110623e-10,
+          -8.656657973874685e-12
+        ],
+        [
+          -4.119082550595114e-13,
+          -1.3478833473263289e-09
+        ]
+      ],
+      "schur_update_relative_residual": 8.742848065617552e-16,
+      "joint_gram_scaled_min_eigenvalue": 0.989042084922298,
+      "determinant_factorization_relative_residual": 7.155791620035824e-15
+    },
+    {
+      "case_id": "waterbag_weak_sc__n262144_m64_s64_r20261023_p1.3",
+      "family": "waterbag4d",
+      "role": "convergence",
+      "split": "development",
+      "space_charge": "2D",
+      "planes": [
+        {
+          "plane": "x",
+          "position_variance_m2": 4.254306696721501e-07,
+          "unexplained_momentum_variance": 2.3523906906777954e-06,
+          "full_force_variance_per_m2": 4.2016055032589297e-07,
+          "own_plane_residual_force_variance_per_m2": 8.400910664838398e-09,
+          "signed_ug_per_m": -4.443588361831985e-10,
+          "emittance_before_m": 1.0003894975786113e-06,
+          "emittance_after_m": 1.0003892803146703e-06,
+          "emittance_change_m": -2.172639410180909e-13,
+          "norm_radius_m": 6.949771767546762e-11,
+          "full_force_radius_m": 4.914903507075351e-10,
+          "radius_reduction_factor": 7.07203584731573,
+          "identity_relative_residual": 2.0179116678147828e-16,
+          "norm_bound_numerically_satisfied": true
+        },
+        {
+          "plane": "y",
+          "position_variance_m2": 6.319725433978779e-07,
+          "unexplained_momentum_variance": 1.5827367640192607e-06,
+          "full_force_variance_per_m2": 4.199689090686222e-07,
+          "own_plane_residual_force_variance_per_m2": 9.78879720854466e-09,
+          "signed_ug_per_m": -1.3870338556730788e-09,
+          "emittance_before_m": 1.0001230815687536e-06,
+          "emittance_after_m": 1.0001220668636966e-06,
+          "emittance_change_m": -1.0147050569629142e-12,
+          "norm_radius_m": 9.143379221216227e-11,
+          "full_force_radius_m": 5.988949303750651e-10,
+          "radius_reduction_factor": 6.550039278534942,
+          "identity_relative_residual": 1.6151895093067295e-15,
+          "norm_bound_numerically_satisfied": true
+        }
+      ],
+      "U": [
+        [
+          2.3523906884099278e-06,
+          -5.921271509956103e-11
+        ],
+        [
+          -5.921271509956108e-11,
+          1.5827367637309765e-06
+        ]
+      ],
+      "G": [
+        [
+          8.400910645101948e-09,
+          2.3075487899127448e-12
+        ],
+        [
+          2.307548789912747e-12,
+          9.788797202381914e-09
+        ]
+      ],
+      "C": [
+        [
+          -4.443590477484177e-10,
+          2.7931522388211126e-12
+        ],
+        [
+          5.995082117392626e-12,
+          -1.3870338978231323e-09
+        ]
+      ],
+      "schur_update_relative_residual": 7.616612105761715e-16,
+      "joint_gram_scaled_min_eigenvalue": 0.9888521070345526,
+      "determinant_factorization_relative_residual": 1.834828280028521e-16
+    },
+    {
+      "case_id": "waterbag_weak_sc__n131072_m64_s64_r20261024_p1.3",
+      "family": "waterbag4d",
+      "role": "convergence",
+      "split": "development",
+      "space_charge": "2D",
+      "planes": [
+        {
+          "plane": "x",
+          "position_variance_m2": 4.254038559055552e-07,
+          "unexplained_momentum_variance": 2.352272396005828e-06,
+          "full_force_variance_per_m2": 4.2015644065596754e-07,
+          "own_plane_residual_force_variance_per_m2": 8.394017543602026e-09,
+          "signed_ug_per_m": -4.81407673907708e-10,
+          "emittance_before_m": 1.0003328183165233e-06,
+          "emittance_after_m": 1.0003325827362425e-06,
+          "emittance_change_m": -2.3558028078413096e-13,
+          "norm_radius_m": 6.946701040163271e-11,
+          "full_force_radius_m": 4.914724581867117e-10,
+          "radius_reduction_factor": 7.074904409232507,
+          "identity_relative_residual": 2.018140345675645e-16,
+          "norm_bound_numerically_satisfied": true
+        },
+        {
+          "plane": "y",
+          "position_variance_m2": 6.320829731005822e-07,
+          "unexplained_momentum_variance": 1.5826423377737295e-06,
+          "full_force_variance_per_m2": 4.199434032209134e-07,
+          "own_plane_residual_force_variance_per_m2": 9.7830836632559e-09,
+          "signed_ug_per_m": -1.374562298571011e-09,
+          "emittance_before_m": 1.0001806207955018e-06,
+          "emittance_after_m": 1.0001796151314936e-06,
+          "emittance_change_m": -1.005664008125456e-12,
+          "norm_radius_m": 9.141508998986084e-11,
+          "full_force_radius_m": 5.98929064861187e-10,
+          "radius_reduction_factor": 6.551752724059193,
+          "identity_relative_residual": 2.0187545933850389e-16,
+          "norm_bound_numerically_satisfied": true
+        }
+      ],
+      "U": [
+        [
+          2.352272333141894e-06,
+          -1.1517256995001534e-10
+        ],
+        [
+          -1.1517256995001513e-10,
+          1.5826423317853963e-06
+        ]
+      ],
+      "G": [
+        [
+          8.39401648617033e-09,
+          -8.888365891973428e-13
+        ],
+        [
+          -8.888365891973376e-13,
+          9.783082950015301e-09
+        ]
+      ],
+      "C": [
+        [
+          -4.814158270859163e-10,
+          2.9778010809999555e-11
+        ],
+        [
+          2.3225698814333087e-11,
+          -1.3745643652403462e-09
+        ]
+      ],
+      "schur_update_relative_residual": 1.137659471122985e-15,
+      "joint_gram_scaled_min_eigenvalue": 0.9889513083891474,
+      "determinant_factorization_relative_residual": 3.4861677938663158e-15
+    },
+    {
+      "case_id": "waterbag_weak_sc__n131072_m64_s64_r20261023_p1.6",
+      "family": "waterbag4d",
+      "role": "convergence",
+      "split": "development",
+      "space_charge": "2D",
+      "planes": [
+        {
+          "plane": "x",
+          "position_variance_m2": 4.254931217177698e-07,
+          "unexplained_momentum_variance": 2.3521051456973023e-06,
+          "full_force_variance_per_m2": 4.1867568116703346e-07,
+          "own_plane_residual_force_variance_per_m2": 8.399209691143242e-09,
+          "signed_ug_per_m": -4.354598909379614e-10,
+          "emittance_before_m": 1.000402199643311e-06,
+          "emittance_after_m": 1.0004019867497146e-06,
+          "emittance_change_m": -2.1289359638794296e-13,
+          "norm_radius_m": 6.94957818797101e-11,
+          "full_force_radius_m": 4.906571154429393e-10,
+          "radius_reduction_factor": 7.060243113635519,
+          "identity_relative_residual": 0.0,
+          "norm_bound_numerically_satisfied": true
+        },
+        {
+          "plane": "y",
+          "position_variance_m2": 6.319856512105869e-07,
+          "unexplained_momentum_variance": 1.5826740235565282e-06,
+          "full_force_variance_per_m2": 4.1840269814240395e-07,
+          "own_plane_residual_force_variance_per_m2": 9.781575187991466e-09,
+          "signed_ug_per_m": -1.369042538077505e-09,
+          "emittance_before_m": 1.0001136302598077e-06,
+          "emittance_after_m": 1.0001126287374659e-06,
+          "emittance_change_m": -1.0015223418505178e-12,
+          "norm_radius_m": 9.140100464650698e-11,
+          "full_force_radius_m": 5.977833421801516e-10,
+          "radius_reduction_factor": 6.540227259996499,
+          "identity_relative_residual": 2.019025046615259e-15,
+          "norm_bound_numerically_satisfied": true
+        }
+      ],
+      "U": [
+        [
+          2.3521051433749912e-06,
+          -6.331184840433389e-11
+        ],
+        [
+          -6.331184840433373e-11,
+          1.5826740144659266e-06
+        ]
+      ],
+      "G": [
+        [
+          8.399209381631897e-09,
+          -1.1995369653702581e-11
+        ],
+        [
+          -1.1995369653702586e-11,
+          9.781575070809964e-09
+        ]
+      ],
+      "C": [
+        [
+          -4.3546073874774373e-10,
+          -9.001865508360743e-12
+        ],
+        [
+          -3.2522772059098674e-12,
+          -1.3690435701875748e-09
+        ]
+      ],
+      "schur_update_relative_residual": 1.7988742957692707e-15,
+      "joint_gram_scaled_min_eigenvalue": 0.9889034089472986,
+      "determinant_factorization_relative_residual": 3.4861511320055454e-15
+    },
+    {
+      "case_id": "waterbag_strong_sc__n131072_m128_s64_r20261023_p1.3",
+      "family": "waterbag4d",
+      "role": "convergence",
+      "split": "development",
+      "space_charge": "2D",
+      "planes": [
+        {
+          "plane": "x",
+          "position_variance_m2": 7.444928645451814e-07,
+          "unexplained_momentum_variance": 1.3470431118480852e-06,
+          "full_force_variance_per_m2": 2.986303969997379e-05,
+          "own_plane_residual_force_variance_per_m2": 5.996457580316684e-07,
+          "signed_ug_per_m": 9.552767753427503e-09,
+          "emittance_before_m": 1.0014309686671553e-06,
+          "emittance_after_m": 1.0014395257033192e-06,
+          "emittance_change_m": 8.557036163877807e-12,
+          "norm_radius_m": 7.767309565936711e-10,
+          "full_force_radius_m": 5.481384119265326e-09,
+          "radius_reduction_factor": 7.056991964506941,
+          "identity_relative_residual": 2.0136822498305656e-16,
+          "norm_bound_numerically_satisfied": true
+        },
+        {
+          "plane": "y",
+          "position_variance_m2": 7.362118046627961e-07,
+          "unexplained_momentum_variance": 1.3629099949035577e-06,
+          "full_force_variance_per_m2": 2.9862124951100746e-05,
+          "own_plane_residual_force_variance_per_m2": 6.848777734519791e-07,
+          "signed_ug_per_m": 5.8780011760942836e-09,
+          "emittance_before_m": 1.0016937790267593e-06,
+          "emittance_after_m": 1.0016991412947093e-06,
+          "emittance_change_m": 5.3622679499478815e-12,
+          "norm_radius_m": 8.254692238971593e-10,
+          "full_force_radius_m": 5.450730429084141e-09,
+          "radius_reduction_factor": 6.603190368927938,
+          "identity_relative_residual": 1.811374732825909e-15,
+          "norm_bound_numerically_satisfied": true
+        }
+      ],
+      "U": [
+        [
+          1.3470431001000956e-06,
+          1.5858098877865256e-11
+        ],
+        [
+          1.585809887786532e-11,
+          1.36290999022417e-06
+        ]
+      ],
+      "G": [
+        [
+          5.996457540450299e-07,
+          4.266005169612645e-10
+        ],
+        [
+          4.2660051696126444e-10,
+          6.848777701695705e-07
+        ]
+      ],
+      "C": [
+        [
+          9.5527745970302e-09,
+          7.019180840134767e-11
+        ],
+        [
+          -7.323387005585779e-11,
+          5.878005095234415e-09
+        ]
+      ],
+      "schur_update_relative_residual": 1.1746792440439804e-15,
+      "joint_gram_scaled_min_eigenvalue": 0.989341566949163,
+      "determinant_factorization_relative_residual": 0.0
+    },
+    {
+      "case_id": "waterbag_strong_sc__n131072_m64_s128_r20261023_p1.3",
+      "family": "waterbag4d",
+      "role": "convergence",
+      "split": "development",
+      "space_charge": "2D",
+      "planes": [
+        {
+          "plane": "x",
+          "position_variance_m2": 7.407585404909082e-07,
+          "unexplained_momentum_variance": 1.3538881843910795e-06,
+          "full_force_variance_per_m2": 2.9755184128235166e-05,
+          "own_plane_residual_force_variance_per_m2": 6.011449723627886e-07,
+          "signed_ug_per_m": 1.0140128290510276e-08,
+          "emittance_before_m": 1.0014510649339896e-06,
+          "emittance_after_m": 1.001455499705698e-06,
+          "emittance_change_m": 4.4347717084155185e-12,
+          "norm_radius_m": 3.8787421459813083e-10,
+          "full_force_radius_m": 2.7288685779797104e-09,
+          "radius_reduction_factor": 7.035447253968764,
+          "identity_relative_residual": 4.0272360214271297e-16,
+          "norm_bound_numerically_satisfied": true
+        },
+        {
+          "plane": "y",
+          "position_variance_m2": 7.376866918790828e-07,
+          "unexplained_momentum_variance": 1.360195616132517e-06,
+          "full_force_variance_per_m2": 2.9751973919515754e-05,
+          "own_plane_residual_force_variance_per_m2": 6.831634077290358e-07,
+          "signed_ug_per_m": 6.687472164966182e-09,
+          "emittance_before_m": 1.0016976611599067e-06,
+          "emittance_after_m": 1.0017006087404205e-06,
+          "emittance_change_m": 2.9475805138150755e-12,
+          "norm_radius_m": 4.1263041659003634e-10,
+          "full_force_radius_m": 2.723057629106072e-09,
+          "radius_reduction_factor": 6.599265394949135,
+          "identity_relative_residual": 4.025265390371194e-16,
+          "norm_bound_numerically_satisfied": true
+        }
+      ],
+      "U": [
+        [
+          1.3538881716533473e-06,
+          1.954340386623847e-11
+        ],
+        [
+          1.954340386623843e-11,
+          1.3601956110207053e-06
+        ]
+      ],
+      "G": [
+        [
+          6.011449676790013e-07,
+          4.1635939774367914e-10
+        ],
+        [
+          4.1635939774367914e-10,
+          6.831634039493545e-07
+        ]
+      ],
+      "C": [
+        [
+          1.0140136014556288e-08,
+          2.516638008720472e-11
+        ],
+        [
+          -1.3697854876325376e-10,
+          6.6874765605386295e-09
+        ]
+      ],
+      "schur_update_relative_residual": 1.0409327980631534e-15,
+      "joint_gram_scaled_min_eigenvalue": 0.9887212575737498,
+      "determinant_factorization_relative_residual": 0.0
+    },
+    {
+      "case_id": "waterbag_strong_sc__n262144_m64_s64_r20261023_p1.3",
+      "family": "waterbag4d",
+      "role": "convergence",
+      "split": "development",
+      "space_charge": "2D",
+      "planes": [
+        {
+          "plane": "x",
+          "position_variance_m2": 7.425346901582846e-07,
+          "unexplained_momentum_variance": 1.3506137167647475e-06,
+          "full_force_variance_per_m2": 2.978159292692248e-05,
+          "own_plane_residual_force_variance_per_m2": 6.023133074520465e-07,
+          "signed_ug_per_m": 9.717761198179916e-09,
+          "emittance_before_m": 1.0014377353093106e-06,
+          "emittance_after_m": 1.0014464133336276e-06,
+          "emittance_change_m": 8.67802431697278e-12,
+          "norm_radius_m": 7.774322723540409e-10,
+          "full_force_radius_m": 5.4667007012498525e-09,
+          "radius_reduction_factor": 7.031738835200206,
+          "identity_relative_residual": 2.4163854611905594e-15,
+          "norm_bound_numerically_satisfied": true
+        },
+        {
+          "plane": "y",
+          "position_variance_m2": 7.346478135710679e-07,
+          "unexplained_momentum_variance": 1.3658780711973473e-06,
+          "full_force_variance_per_m2": 2.9777329907651317e-05,
+          "own_plane_residual_force_variance_per_m2": 6.846657700424072e-07,
+          "signed_ug_per_m": 5.733828615383943e-09,
+          "emittance_before_m": 1.0017181932109441e-06,
+          "emittance_after_m": 1.0017234209364056e-06,
+          "emittance_change_m": 5.227725461493256e-12,
+          "norm_radius_m": 8.244643182129357e-10,
+          "full_force_radius_m": 5.4372015627401455e-09,
+          "radius_reduction_factor": 6.594829445773383,
+          "identity_relative_residual": 4.025082058134983e-16,
+          "norm_bound_numerically_satisfied": true
+        }
+      ],
+      "U": [
+        [
+          1.350613716128514e-06,
+          1.6849861312430191e-12
+        ],
+        [
+          1.6849861312430191e-12,
+          1.3658780711181752e-06
+        ]
+      ],
+      "G": [
+        [
+          6.02313294661439e-07,
+          -4.597960444760338e-10
+        ],
+        [
+          -4.5979604447603373e-10,
+          6.846657564693819e-07
+        ]
+      ],
+      "C": [
+        [
+          9.71775834549831e-09,
+          3.808213009034083e-11
+        ],
+        [
+          -2.7113659308883015e-11,
+          5.733829652030298e-09
+        ]
+      ],
+      "schur_update_relative_residual": 6.97210694726e-16,
+      "joint_gram_scaled_min_eigenvalue": 0.9891895205941268,
+      "determinant_factorization_relative_residual": 0.0
+    },
+    {
+      "case_id": "waterbag_strong_sc__n131072_m64_s64_r20261024_p1.3",
+      "family": "waterbag4d",
+      "role": "convergence",
+      "split": "development",
+      "space_charge": "2D",
+      "planes": [
+        {
+          "plane": "x",
+          "position_variance_m2": 7.425523036428629e-07,
+          "unexplained_momentum_variance": 1.3503765069209746e-06,
+          "full_force_variance_per_m2": 2.97835444828741e-05,
+          "own_plane_residual_force_variance_per_m2": 6.031630413046096e-07,
+          "signed_ug_per_m": 9.724029644536924e-09,
+          "emittance_before_m": 1.0013616659326305e-06,
+          "emittance_after_m": 1.0013703506514315e-06,
+          "emittance_change_m": 8.684718801002064e-12,
+          "norm_radius_m": 7.77989700586894e-10,
+          "full_force_radius_m": 5.466944650720441e-09,
+          "radius_reduction_factor": 7.0270141707484415,
+          "identity_relative_residual": 2.013960471340434e-15,
+          "norm_bound_numerically_satisfied": true
+        },
+        {
+          "plane": "y",
+          "position_variance_m2": 7.346095459801878e-07,
+          "unexplained_momentum_variance": 1.3661868397731267e-06,
+          "full_force_variance_per_m2": 2.9779259281489647e-05,
+          "own_plane_residual_force_variance_per_m2": 6.853364101484508e-07,
+          "signed_ug_per_m": 5.760830718821395e-09,
+          "emittance_before_m": 1.0018053174593578e-06,
+          "emittance_after_m": 1.0018105678078632e-06,
+          "emittance_change_m": 5.2503485053395014e-12,
+          "norm_radius_m": 8.248465229467036e-10,
+          "full_force_radius_m": 5.43723608966351e-09,
+          "radius_reduction_factor": 6.5918154934318975,
+          "identity_relative_residual": 1.8109718144451137e-15,
+          "norm_bound_numerically_satisfied": true
+        }
+      ],
+      "U": [
+        [
+          1.3503765069209289e-06,
+          -5.5665018266517936e-11
+        ],
+        [
+          -5.5665018266517936e-11,
+          1.3661868213114524e-06
+        ]
+      ],
+      "G": [
+        [
+          6.031627502028417e-07,
+          -1.1255906183997694e-09
+        ],
+        [
+          -1.1255906183997692e-09,
+          6.853361177273274e-07
+        ]
+      ],
+      "C": [
+        [
+          9.724029530573723e-09,
+          -2.8115164974286523e-10
+        ],
+        [
+          -4.217229173776764e-11,
+          5.7609041938744764e-09
+        ]
+      ],
+      "schur_update_relative_residual": 1.3812488293248334e-15,
+      "joint_gram_scaled_min_eigenvalue": 0.9890855628867906,
+      "determinant_factorization_relative_residual": 1.8251224268916463e-16
+    },
+    {
+      "case_id": "waterbag_strong_sc__n131072_m64_s64_r20261023_p1.6",
+      "family": "waterbag4d",
+      "role": "convergence",
+      "split": "development",
+      "space_charge": "2D",
+      "planes": [
+        {
+          "plane": "x",
+          "position_variance_m2": 7.411606273949578e-07,
+          "unexplained_momentum_variance": 1.353118208462152e-06,
+          "full_force_variance_per_m2": 2.972673757071569e-05,
+          "own_plane_residual_force_variance_per_m2": 6.046104678424446e-07,
+          "signed_ug_per_m": 9.715985002954402e-09,
+          "emittance_before_m": 1.0014379363312282e-06,
+          "emittance_after_m": 1.0014465979157754e-06,
+          "emittance_change_m": 8.661584547149404e-12,
+          "norm_radius_m": 7.781923599178448e-10,
+          "full_force_radius_m": 5.456608011070627e-09,
+          "radius_reduction_factor": 7.011901288322454,
+          "identity_relative_residual": 6.040961426089924e-16,
+          "norm_bound_numerically_satisfied": true
+        },
+        {
+          "plane": "y",
+          "position_variance_m2": 7.335553702756029e-07,
+          "unexplained_momentum_variance": 1.3678700075780333e-06,
+          "full_force_variance_per_m2": 2.972229888346342e-05,
+          "own_plane_residual_force_variance_per_m2": 6.843381621841396e-07,
+          "signed_ug_per_m": 5.901229442603016e-09,
+          "emittance_before_m": 1.0017027452781565e-06,
+          "emittance_after_m": 1.0017081076572507e-06,
+          "emittance_change_m": 5.3623790942230884e-12,
+          "norm_radius_m": 8.236539614704617e-10,
+          "full_force_radius_m": 5.428134629052082e-09,
+          "radius_reduction_factor": 6.5903096239120655,
+          "identity_relative_residual": 4.025205123279081e-16,
+          "norm_bound_numerically_satisfied": true
+        }
+      ],
+      "U": [
+        [
+          1.3531181960768853e-06,
+          1.9232837106359624e-11
+        ],
+        [
+          1.9232837106359624e-11,
+          1.367870002730999e-06
+        ]
+      ],
+      "G": [
+        [
+          6.046104619598449e-07,
+          4.4320596708426806e-10
+        ],
+        [
+          4.4320596708426796e-10,
+          6.843381572393408e-07
+        ]
+      ],
+      "C": [
+        [
+          9.71599353861722e-09,
+          3.434254214403245e-11
+        ],
+        [
+          -1.4306168182536196e-10,
+          5.90123433827388e-09
+        ]
+      ],
+      "schur_update_relative_residual": 7.703963988826251e-16,
+      "joint_gram_scaled_min_eigenvalue": 0.989218246767192,
+      "determinant_factorization_relative_residual": 1.8252181193764317e-16
+    },
+    {
+      "case_id": "kv_anchor__n131072_m128_s64_r20261023_p1.3",
+      "family": "kv4d",
+      "role": "convergence",
+      "split": "development",
+      "space_charge": "2D",
+      "planes": [
+        {
+          "plane": "x",
+          "position_variance_m2": 7.393936551712012e-07,
+          "unexplained_momentum_variance": 1.3524992892552039e-06,
+          "full_force_variance_per_m2": 2.9454173680645945e-05,
+          "own_plane_residual_force_variance_per_m2": 4.535684688585244e-10,
+          "signed_ug_per_m": 5.706249266368901e-11,
+          "emittance_before_m": 1.0000146964414358e-06,
+          "emittance_after_m": 1.0000147457151063e-06,
+          "emittance_change_m": 4.927367048789531e-14,
+          "norm_radius_m": 2.1288852313433705e-11,
+          "full_force_radius_m": 5.425056218209012e-09,
+          "radius_reduction_factor": 254.83084472269505,
+          "identity_relative_residual": 1.817481925092669e-15,
+          "norm_bound_numerically_satisfied": true
+        },
+        {
+          "plane": "y",
+          "position_variance_m2": 7.302032947740719e-07,
+          "unexplained_momentum_variance": 1.3694385993366421e-06,
+          "full_force_variance_per_m2": 2.9453980651208516e-05,
+          "own_plane_residual_force_variance_per_m2": 5.115359097881945e-10,
+          "signed_ug_per_m": -1.3534520970333655e-11,
+          "emittance_before_m": 9.999842884897772e-07,
+          "emittance_after_m": 9.999842772530617e-07,
+          "emittance_change_m": -1.1236715573111262e-14,
+          "norm_radius_m": 2.246740525511241e-11,
+          "full_force_radius_m": 5.391217514498968e-09,
+          "radius_reduction_factor": 239.95728270723242,
+          "identity_relative_residual": 6.058642131437353e-16,
+          "norm_bound_numerically_satisfied": true
+        }
+      ],
+      "U": [
+        [
+          1.3524992887621917e-06,
+          2.938150598394668e-11
+        ],
+        [
+          2.938150598394668e-11,
+          1.3694385962473317e-06
+        ]
+      ],
+      "G": [
+        [
+          4.5356090466795815e-10,
+          -2.7235935802685843e-11
+        ],
+        [
+          -2.7235935802685714e-11,
+          5.115291134702644e-10
+        ]
+      ],
+      "C": [
+        [
+          5.706056154376575e-11,
+          3.459709784445063e-12
+        ],
+        [
+          -1.1096892871177287e-10,
+          -1.3529938840573397e-11
+        ]
+      ],
+      "schur_update_relative_residual": 1.9245508354337097e-15,
+      "joint_gram_scaled_min_eigenvalue": 0.9431860955450447,
+      "determinant_factorization_relative_residual": 1.8367136604978255e-16
+    },
+    {
+      "case_id": "kv_anchor__n131072_m64_s128_r20261023_p1.3",
+      "family": "kv4d",
+      "role": "convergence",
+      "split": "development",
+      "space_charge": "2D",
+      "planes": [
+        {
+          "plane": "x",
+          "position_variance_m2": 7.360000223024838e-07,
+          "unexplained_momentum_variance": 1.3587410490186537e-06,
+          "full_force_variance_per_m2": 2.937054266668945e-05,
+          "own_plane_residual_force_variance_per_m2": 1.5768443623314504e-09,
+          "signed_ug_per_m": 1.1047170296935222e-10,
+          "emittance_before_m": 1.0000167210507177e-06,
+          "emittance_after_m": 1.0000167685057672e-06,
+          "emittance_change_m": 4.7455049457284146e-14,
+          "norm_radius_m": 1.980141813010613e-11,
+          "full_force_radius_m": 2.7024512294629143e-09,
+          "radius_reduction_factor": 136.47766092844128,
+          "identity_relative_residual": 2.0194161916138545e-16,
+          "norm_bound_numerically_satisfied": true
+        },
+        {
+          "plane": "y",
+          "position_variance_m2": 7.319894480727771e-07,
+          "unexplained_momentum_variance": 1.3661390089215053e-06,
+          "full_force_variance_per_m2": 2.9370124381819655e-05,
+          "own_plane_residual_force_variance_per_m2": 2.0382963120115177e-09,
+          "signed_ug_per_m": -1.1084249237046113e-10,
+          "emittance_before_m": 9.999996695655168e-07,
+          "emittance_after_m": 9.9999962265751e-07,
+          "emittance_change_m": -4.690800678082711e-14,
+          "norm_radius_m": 2.2451689918645514e-11,
+          "full_force_radius_m": 2.6950589497113293e-09,
+          "radius_reduction_factor": 120.0381334089759,
+          "identity_relative_residual": 8.077941007922805e-16,
+          "norm_bound_numerically_satisfied": true
+        }
+      ],
+      "U": [
+        [
+          1.3587410484385293e-06,
+          1.684377765759501e-11
+        ],
+        [
+          1.684377765759501e-11,
+          1.3661390059151245e-06
+        ]
+      ],
+      "G": [
+        [
+          1.57683647199593e-09,
+          -1.1633851818756126e-11
+        ],
+        [
+          -1.1633851818755955e-11,
+          2.0382884286013387e-09
+        ]
+      ],
+      "C": [
+        [
+          1.104695634861002e-10,
+          1.432186969005363e-11
+        ],
+        [
+          -3.3048148656244303e-12,
+          -1.1083762405876118e-10
+        ]
+      ],
+      "schur_update_relative_residual": 1.3279531316393816e-15,
+      "joint_gram_scaled_min_eigenvalue": 0.9927014894250178,
+      "determinant_factorization_relative_residual": 7.162933916757518e-15
+    },
+    {
+      "case_id": "kv_anchor__n262144_m64_s64_r20261023_p1.3",
+      "family": "kv4d",
+      "role": "convergence",
+      "split": "development",
+      "space_charge": "2D",
+      "planes": [
+        {
+          "plane": "x",
+          "position_variance_m2": 7.377402182596831e-07,
+          "unexplained_momentum_variance": 1.3555480956273046e-06,
+          "full_force_variance_per_m2": 2.9397033699230228e-05,
+          "own_plane_residual_force_variance_per_m2": 1.539845832914939e-09,
+          "signed_ug_per_m": 9.441699173187777e-11,
+          "emittance_before_m": 1.000021173740629e-06,
+          "emittance_after_m": 1.0000212554806824e-06,
+          "emittance_change_m": 8.174005329748043e-14,
+          "norm_radius_m": 3.918170338158126e-11,
+          "full_force_radius_m": 5.413728183732145e-09,
+          "radius_reduction_factor": 138.16980162932524,
+          "identity_relative_residual": 8.077592279600423e-16,
+          "norm_bound_numerically_satisfied": true
+        },
+        {
+          "plane": "y",
+          "position_variance_m2": 7.28937914097125e-07,
+          "unexplained_momentum_variance": 1.3718366219315117e-06,
+          "full_force_variance_per_m2": 2.9396546536624884e-05,
+          "own_plane_residual_force_variance_per_m2": 2.0080763051455366e-09,
+          "signed_ug_per_m": -1.3589883984989207e-10,
+          "emittance_before_m": 9.999918628032946e-07,
+          "emittance_after_m": 9.999917486320665e-07,
+          "emittance_change_m": -1.1417122812382174e-13,
+          "norm_radius_m": 4.44762678683907e-11,
+          "full_force_radius_m": 5.3812898881994415e-09,
+          "radius_reduction_factor": 120.99238866271705,
+          "identity_relative_residual": 6.05855035092812e-16,
+          "norm_bound_numerically_satisfied": true
+        }
+      ],
+      "U": [
+        [
+          1.3555480955142308e-06,
+          -4.057219068083634e-12
+        ],
+        [
+          -4.057219068083634e-12,
+          1.3718366218345332e-06
+        ]
+      ],
+      "G": [
+        [
+          1.5398455588116892e-09,
+          -9.970447522000912e-12
+        ],
+        [
+          -9.970447522000906e-12,
+          2.008075956493223e-09
+        ]
+      ],
+      "C": [
+        [
+          9.441681567777375e-11,
+          4.513922589425402e-12
+        ],
+        [
+          -6.668176483796196e-12,
+          -1.3589865597259175e-10
+        ]
+      ],
+      "schur_update_relative_residual": 1.3175964729560387e-15,
+      "joint_gram_scaled_min_eigenvalue": 0.9934086276834067,
+      "determinant_factorization_relative_residual": 1.8366620363741688e-16
+    },
+    {
+      "case_id": "kv_anchor__n131072_m64_s64_r20261024_p1.3",
+      "family": "kv4d",
+      "role": "convergence",
+      "split": "development",
+      "space_charge": "2D",
+      "planes": [
+        {
+          "plane": "x",
+          "position_variance_m2": 7.377172066203234e-07,
+          "unexplained_momentum_variance": 1.3555636904772095e-06,
+          "full_force_variance_per_m2": 2.9397726975053784e-05,
+          "own_plane_residual_force_variance_per_m2": 1.6021573358877426e-09,
+          "signed_ug_per_m": 9.006097095233426e-11,
+          "emittance_before_m": 1.0000113295032128e-06,
+          "emittance_after_m": 1.0000114075369174e-06,
+          "emittance_change_m": 7.803370457094871e-14,
+          "norm_radius_m": 3.9965983013102075e-11,
+          "full_force_radius_m": 5.413707585515984e-09,
+          "radius_reduction_factor": 135.4578863665434,
+          "identity_relative_residual": 1.211662706087696e-15,
+          "norm_bound_numerically_satisfied": true
+        },
+        {
+          "plane": "y",
+          "position_variance_m2": 7.288979661451197e-07,
+          "unexplained_momentum_variance": 1.3719357716616536e-06,
+          "full_force_variance_per_m2": 2.9397521538622195e-05,
+          "own_plane_residual_force_variance_per_m2": 2.0953282950905477e-09,
+          "signed_ug_per_m": -1.4575227655727022e-10,
+          "emittance_before_m": 1.0000005968227794e-06,
+          "emittance_after_m": 1.0000004743525332e-06,
+          "emittance_change_m": -1.2247024624157375e-13,
+          "norm_radius_m": 4.543100766427226e-11,
+          "full_force_radius_m": 5.381231668936536e-09,
+          "radius_reduction_factor": 118.44843303285194,
+          "identity_relative_residual": 8.077926027279758e-16,
+          "norm_bound_numerically_satisfied": true
+        }
+      ],
+      "U": [
+        [
+          1.3555636904766233e-06,
+          -2.6682945467437637e-11
+        ],
+        [
+          -2.6682945467437598e-11,
+          1.3719357715059673e-06
+        ]
+      ],
+      "G": [
+        [
+          1.6021557547110112e-09,
+          -2.5699219048152776e-12
+        ],
+        [
+          -2.569921904815394e-12,
+          2.095326471425224e-09
+        ]
+      ],
+      "C": [
+        [
+          9.006094048286508e-11,
+          -2.2077119195209442e-11
+        ],
+        [
+          -1.5273511497563698e-11,
+          -1.4575280939859228e-10
+        ]
+      ],
+      "schur_update_relative_residual": 4.910184722148528e-16,
+      "joint_gram_scaled_min_eigenvalue": 0.9967270424552568,
+      "determinant_factorization_relative_residual": 3.48966561835479e-15
+    },
+    {
+      "case_id": "kv_anchor__n131072_m64_s64_r20261023_p1.6",
+      "family": "kv4d",
+      "role": "convergence",
+      "split": "development",
+      "space_charge": "2D",
+      "planes": [
+        {
+          "plane": "x",
+          "position_variance_m2": 7.366302340714621e-07,
+          "unexplained_momentum_variance": 1.3575720301615359e-06,
+          "full_force_variance_per_m2": 2.9359054549001155e-05,
+          "own_plane_residual_force_variance_per_m2": 2.930701078770559e-09,
+          "signed_ug_per_m": 1.7452453740675724e-10,
+          "emittance_before_m": 1.000014301071121e-06,
+          "emittance_after_m": 1.0000144519787476e-06,
+          "emittance_change_m": 1.509076266285349e-13,
+          "norm_radius_m": 5.4013645981588027e-11,
+          "full_force_radius_m": 5.406158376754116e-09,
+          "radius_reduction_factor": 100.08875124995168,
+          "identity_relative_residual": 2.0194255475538226e-16,
+          "norm_bound_numerically_satisfied": true
+        },
+        {
+          "plane": "y",
+          "position_variance_m2": 7.280585982743733e-07,
+          "unexplained_momentum_variance": 1.3735094917722868e-06,
+          "full_force_variance_per_m2": 2.9357766685174057e-05,
+          "own_plane_residual_force_variance_per_m2": 3.7479960739100835e-09,
+          "signed_ug_per_m": -2.682543603075476e-10,
+          "emittance_before_m": 9.999976976454882e-07,
+          "emittance_after_m": 9.999974724468381e-07,
+          "emittance_change_m": -2.251986500534706e-13,
+          "norm_radius_m": 6.072614228243707e-11,
+          "full_force_radius_m": 5.3744946697857975e-09,
+          "radius_reduction_factor": 88.50380524402557,
+          "identity_relative_residual": 8.077972866134889e-16,
+          "norm_bound_numerically_satisfied": true
+        }
+      ],
+      "U": [
+        [
+          1.3575720295038216e-06,
+          8.03900350032953e-12
+        ],
+        [
+          8.03900350032953e-12,
+          1.373509488920437e-06
+        ]
+      ],
+      "G": [
+        [
+          2.9306911766369213e-09,
+          -1.8039569105319375e-12
+        ],
+        [
+          -1.8039569105318212e-12,
+          3.747985798492414e-09
+        ]
+      ],
+      "C": [
+        [
+          1.7452198538796672e-10,
+          2.274694644367097e-11
+        ],
+        [
+          3.418855161164605e-12,
+          -2.6824894699113244e-10
+        ]
+      ],
+      "schur_update_relative_residual": 1.0965119354848569e-16,
+      "joint_gram_scaled_min_eigenvalue": 0.9961087493275782,
+      "determinant_factorization_relative_residual": 0.0
+    },
+    {
+      "case_id": "gaussian_sc__n131072_m128_s64_r20261023_p1.3",
+      "family": "gaussian4d",
+      "role": "convergence",
+      "split": "development",
+      "space_charge": "2D",
+      "planes": [
+        {
+          "plane": "x",
+          "position_variance_m2": 7.842226965431301e-07,
+          "unexplained_momentum_variance": 1.5136900589987143e-06,
+          "full_force_variance_per_m2": 2.8349181023657387e-05,
+          "own_plane_residual_force_variance_per_m2": 9.847847316392406e-07,
+          "signed_ug_per_m": 8.321794803609609e-08,
+          "emittance_before_m": 1.0895274662891713e-06,
+          "emittance_after_m": 1.08959757536448e-06,
+          "emittance_change_m": 7.010907530874474e-11,
+          "norm_radius_m": 1.0216057260732115e-09,
+          "full_force_radius_m": 5.4812918142328046e-09,
+          "radius_reduction_factor": 5.365369118770971,
+          "identity_relative_residual": 3.402029994168147e-16,
+          "norm_bound_numerically_satisfied": true
+        },
+        {
+          "plane": "y",
+          "position_variance_m2": 7.947265717349918e-07,
+          "unexplained_momentum_variance": 1.5216868662059338e-06,
+          "full_force_variance_per_m2": 2.833790946736156e-05,
+          "own_plane_residual_force_variance_per_m2": 9.761985817425335e-07,
+          "signed_ug_per_m": 1.973403045316092e-08,
+          "emittance_before_m": 1.0996931328484343e-06,
+          "emittance_after_m": 1.0997101882827952e-06,
+          "emittance_change_m": 1.7055434360964072e-11,
+          "norm_radius_m": 1.0239315258466354e-09,
+          "full_force_radius_m": 5.516780856313503e-09,
+          "radius_reduction_factor": 5.387841586137282,
+          "identity_relative_residual": 1.6698747648863667e-16,
+          "norm_bound_numerically_satisfied": true
+        }
+      ],
+      "U": [
+        [
+          1.5136900539240552e-06,
+          2.0504103050228132e-10
+        ],
+        [
+          2.0504103050228132e-10,
+          1.5216868584197427e-06
+        ]
+      ],
+      "G": [
+        [
+          9.847846589630683e-07,
+          1.2780862132021526e-09
+        ],
+        [
+          1.2780862132021524e-09,
+          9.76198509236327e-07
+        ]
+      ],
+      "C": [
+        [
+          8.321796724044042e-08,
+          -6.932507168804792e-10
+        ],
+        [
+          -4.866053726877297e-10,
+          1.9734054213363438e-08
+        ]
+      ],
+      "schur_update_relative_residual": 9.358965783961035e-16,
+      "joint_gram_scaled_min_eigenvalue": 0.9318070793500556,
+      "determinant_factorization_relative_residual": 0.0
+    },
+    {
+      "case_id": "gaussian_sc__n131072_m64_s128_r20261023_p1.3",
+      "family": "gaussian4d",
+      "role": "convergence",
+      "split": "development",
+      "space_charge": "2D",
+      "planes": [
+        {
+          "plane": "x",
+          "position_variance_m2": 7.780465662886424e-07,
+          "unexplained_momentum_variance": 1.5226328043016535e-06,
+          "full_force_variance_per_m2": 2.8195893138832e-05,
+          "own_plane_residual_force_variance_per_m2": 9.79379142505069e-07,
+          "signed_ug_per_m": 8.363667400631059e-08,
+          "emittance_before_m": 1.0884297060928403e-06,
+          "emittance_after_m": 1.0884645746075196e-06,
+          "emittance_change_m": 3.486851467930539e-11,
+          "norm_radius_m": 5.073891621994072e-10,
+          "full_force_radius_m": 2.7224423317979013e-09,
+          "radius_reduction_factor": 5.365590230577223,
+          "identity_relative_residual": 1.5341022624311676e-15,
+          "norm_bound_numerically_satisfied": true
+        },
+        {
+          "plane": "y",
+          "position_variance_m2": 7.950312596367595e-07,
+          "unexplained_momentum_variance": 1.5142972919006303e-06,
+          "full_force_variance_per_m2": 2.815164342660253e-05,
+          "own_plane_residual_force_variance_per_m2": 9.65236278901943e-07,
+          "signed_ug_per_m": 1.82938193695461e-08,
+          "emittance_before_m": 1.0972300048049594e-06,
+          "emittance_after_m": 1.0972378275894409e-06,
+          "emittance_change_m": 7.822784481468576e-12,
+          "norm_radius_m": 5.091806448160754e-10,
+          "full_force_radius_m": 2.749836959549916e-09,
+          "radius_reduction_factor": 5.400513526085036,
+          "identity_relative_residual": 1.3419268502831246e-15,
+          "norm_bound_numerically_satisfied": true
+        }
+      ],
+      "U": [
+        [
+          1.5226327993643984e-06,
+          2.0150310201515004e-10
+        ],
+        [
+          2.0150310201514994e-10,
+          1.5142972842800477e-06
+        ]
+      ],
+      "G": [
+        [
+          9.793790644521756e-07,
+          1.2841717551921855e-09
+        ],
+        [
+          1.2841717551921857e-09,
+          9.652362047165036e-07
+        ]
+      ],
+      "C": [
+        [
+          8.363669363707841e-08,
+          -6.845153678535084e-10
+        ],
+        [
+          -5.479275708049163e-10,
+          1.8293843146347075e-08
+        ]
+      ],
+      "schur_update_relative_residual": 7.110554728695363e-16,
+      "joint_gram_scaled_min_eigenvalue": 0.9314769265280507,
+      "determinant_factorization_relative_residual": 1.287788261066036e-16
+    },
+    {
+      "case_id": "gaussian_sc__n262144_m64_s64_r20261023_p1.3",
+      "family": "gaussian4d",
+      "role": "convergence",
+      "split": "development",
+      "space_charge": "2D",
+      "planes": [
+        {
+          "plane": "x",
+          "position_variance_m2": 7.798014794043601e-07,
+          "unexplained_momentum_variance": 1.518729521160457e-06,
+          "full_force_variance_per_m2": 2.8157691070336517e-05,
+          "own_plane_residual_force_variance_per_m2": 9.793099692031864e-07,
+          "signed_ug_per_m": 8.261551654722629e-08,
+          "emittance_before_m": 1.0882589431821816e-06,
+          "emittance_after_m": 1.0883282338284048e-06,
+          "emittance_change_m": 6.929064622323857e-11,
+          "norm_radius_m": 1.0158862372244353e-09,
+          "full_force_radius_m": 5.44732778190572e-09,
+          "radius_reduction_factor": 5.362143498260885,
+          "identity_relative_residual": 6.819940698332787e-16,
+          "norm_bound_numerically_satisfied": true
+        },
+        {
+          "plane": "y",
+          "position_variance_m2": 7.910110975674275e-07,
+          "unexplained_momentum_variance": 1.5219222731767754e-06,
+          "full_force_variance_per_m2": 2.811839334994442e-05,
+          "own_plane_residual_force_variance_per_m2": 9.641728526694739e-07,
+          "signed_ug_per_m": 1.7819022423032642e-08,
+          "emittance_before_m": 1.097204360052345e-06,
+          "emittance_after_m": 1.0972197634818805e-06,
+          "emittance_change_m": 1.540342953556574e-11,
+          "norm_radius_m": 1.0152235873837847e-09,
+          "full_force_radius_m": 5.482510862592036e-09,
+          "radius_reduction_factor": 5.40029893978368,
+          "identity_relative_residual": 3.354927590863983e-16,
+          "norm_bound_numerically_satisfied": true
+        }
+      ],
+      "U": [
+        [
+          1.518729519956249e-06,
+          2.0529523730140276e-11
+        ],
+        [
+          2.0529523730140224e-11,
+          1.521922272668437e-06
+        ]
+      ],
+      "G": [
+        [
+          9.793099582653754e-07,
+          3.560800982845219e-10
+        ],
+        [
+          3.560800982845219e-10,
+          9.64172841621447e-07
+        ]
+      ],
+      "C": [
+        [
+          8.26155201764677e-08,
+          -4.5739765656641806e-10
+        ],
+        [
+          -3.3782355181111347e-10,
+          1.7819024792871586e-08
+        ]
+      ],
+      "schur_update_relative_residual": 2.0681116102833203e-15,
+      "joint_gram_scaled_min_eigenvalue": 0.9322518100225273,
+      "determinant_factorization_relative_residual": 3.607107333370323e-15
+    },
+    {
+      "case_id": "gaussian_sc__n131072_m64_s64_r20261024_p1.3",
+      "family": "gaussian4d",
+      "role": "convergence",
+      "split": "development",
+      "space_charge": "2D",
+      "planes": [
+        {
+          "plane": "x",
+          "position_variance_m2": 7.800239334020743e-07,
+          "unexplained_momentum_variance": 1.5184084506648545e-06,
+          "full_force_variance_per_m2": 2.8212909519867935e-05,
+          "own_plane_residual_force_variance_per_m2": 9.792804610013792e-07,
+          "signed_ug_per_m": 8.343925821952872e-08,
+          "emittance_before_m": 1.088299100522714e-06,
+          "emittance_after_m": 1.0883690946661742e-06,
+          "emittance_change_m": 6.999414346028088e-11,
+          "norm_radius_m": 1.0160158203943914e-09,
+          "full_force_radius_m": 5.453444074235909e-09,
+          "radius_reduction_factor": 5.367479486804665,
+          "identity_relative_residual": 1.7048571558527932e-16,
+          "norm_bound_numerically_satisfied": true
+        },
+        {
+          "plane": "y",
+          "position_variance_m2": 7.913508388145269e-07,
+          "unexplained_momentum_variance": 1.5208647828650507e-06,
+          "full_force_variance_per_m2": 2.8187651729346813e-05,
+          "own_plane_residual_force_variance_per_m2": 9.687992012586541e-07,
+          "signed_ug_per_m": 1.6608907314233335e-08,
+          "emittance_before_m": 1.0970586227015088e-06,
+          "emittance_after_m": 1.0970730223130266e-06,
+          "emittance_change_m": 1.4399611517799488e-11,
+          "norm_radius_m": 1.0178748437134344e-09,
+          "full_force_radius_m": 5.49043739144695e-09,
+          "radius_reduction_factor": 5.394020124730277,
+          "identity_relative_residual": 1.0067475422456291e-15,
+          "norm_bound_numerically_satisfied": true
+        }
+      ],
+      "U": [
+        [
+          1.5184084462903986e-06,
+          -2.1897348682815666e-10
+        ],
+        [
+          -2.1897348682815666e-10,
+          1.5208647785573274e-06
+        ]
+      ],
+      "G": [
+        [
+          9.792804097959065e-07,
+          1.892576706241673e-09
+        ],
+        [
+          1.892576706241673e-09,
+          9.687991460678236e-07
+        ]
+      ],
+      "C": [
+        [
+          8.343924325303253e-08,
+          -1.5530305877126973e-10
+        ],
+        [
+          4.968080672658851e-11,
+          1.6608891895191153e-08
+        ]
+      ],
+      "schur_update_relative_residual": 9.852622118714004e-17,
+      "joint_gram_scaled_min_eigenvalue": 0.9315420507395991,
+      "determinant_factorization_relative_residual": 3.6077995851666706e-15
+    },
+    {
+      "case_id": "gaussian_sc__n131072_m64_s64_r20261023_p1.6",
+      "family": "gaussian4d",
+      "role": "convergence",
+      "split": "development",
+      "space_charge": "2D",
+      "planes": [
+        {
+          "plane": "x",
+          "position_variance_m2": 7.7690404749139e-07,
+          "unexplained_momentum_variance": 1.522247638425057e-06,
+          "full_force_variance_per_m2": 2.8132481375628023e-05,
+          "own_plane_residual_force_variance_per_m2": 9.798840782585329e-07,
+          "signed_ug_per_m": 8.265759290555062e-08,
+          "emittance_before_m": 1.0874926903554963e-06,
+          "emittance_after_m": 1.087561807410334e-06,
+          "emittance_change_m": 6.911705483765389e-11,
+          "norm_radius_m": 1.0142943448427077e-09,
+          "full_force_radius_m": 5.4347637951105126e-09,
+          "radius_reduction_factor": 5.358172233478549,
+          "identity_relative_residual": 2.39034473327898e-15,
+          "norm_bound_numerically_satisfied": true
+        },
+        {
+          "plane": "y",
+          "position_variance_m2": 7.898322355391731e-07,
+          "unexplained_momentum_variance": 1.520578296805715e-06,
+          "full_force_variance_per_m2": 2.8066777202751086e-05,
+          "own_plane_residual_force_variance_per_m2": 9.601770659499024e-07,
+          "signed_ug_per_m": 1.6653250657676843e-08,
+          "emittance_before_m": 1.0959022563524566e-06,
+          "emittance_after_m": 1.0959166764488803e-06,
+          "emittance_change_m": 1.4420096423693792e-11,
+          "norm_radius_m": 1.0123625082832202e-09,
+          "full_force_radius_m": 5.473393378891919e-09,
+          "radius_reduction_factor": 5.406554800388434,
+          "identity_relative_residual": 5.044365914554877e-16,
+          "norm_bound_numerically_satisfied": true
+        }
+      ],
+      "U": [
+        [
+          1.5222476335315664e-06,
+          2.038552796143006e-10
+        ],
+        [
+          2.038552796143006e-10,
+          1.520578289653157e-06
+        ]
+      ],
+      "G": [
+        [
+          9.798839986110592e-07,
+          1.2716208137966303e-09
+        ],
+        [
+          1.2716208137966307e-09,
+          9.601770060928284e-07
+        ]
+      ],
+      "C": [
+        [
+          8.265761264774393e-08,
+          -6.732493047214361e-10
+        ],
+        [
+          -5.536853097351704e-10,
+          1.6653271349007843e-08
+        ]
+      ],
+      "schur_update_relative_residual": 9.07306988878648e-16,
+      "joint_gram_scaled_min_eigenvalue": 0.9322881865632426,
+      "determinant_factorization_relative_residual": 3.6207811959958645e-15
+    },
+    {
+      "case_id": "heldout_quad_low__n131072_m128_s64_r20261023_p1.3",
+      "family": "waterbag4d",
+      "role": "convergence",
+      "split": "heldout_setting",
+      "space_charge": "2D",
+      "planes": [
+        {
+          "plane": "x",
+          "position_variance_m2": 1.160024097725361e-06,
+          "unexplained_momentum_variance": 8.677034830129581e-07,
+          "full_force_variance_per_m2": 1.663733399035007e-05,
+          "own_plane_residual_force_variance_per_m2": 2.2070698923416237e-07,
+          "signed_ug_per_m": -2.774383709226757e-09,
+          "emittance_before_m": 1.00327311833581e-06,
+          "emittance_after_m": 1.003269561634019e-06,
+          "emittance_change_m": -3.5567017909193544e-12,
+          "norm_radius_m": 5.882128534129752e-10,
+          "full_force_radius_m": 5.107029125463107e-09,
+          "radius_reduction_factor": 8.682280735333643,
+          "identity_relative_residual": 4.012657043231238e-16,
+          "norm_bound_numerically_satisfied": true
+        },
+        {
+          "plane": "y",
+          "position_variance_m2": 1.476973977637262e-06,
+          "unexplained_momentum_variance": 7.011598029920067e-07,
+          "full_force_variance_per_m2": 1.663916644114394e-05,
+          "own_plane_residual_force_variance_per_m2": 1.2357640274398432e-07,
+          "signed_ug_per_m": -2.5294725327646556e-08,
+          "emittance_before_m": 1.0176417754713413e-06,
+          "emittance_after_m": 1.0175992180879446e-06,
+          "emittance_change_m": -4.25573833966557e-11,
+          "norm_radius_m": 4.966462468568654e-10,
+          "full_force_radius_m": 5.7629541771581795e-09,
+          "radius_reduction_factor": 11.603740516776876,
+          "identity_relative_residual": 1.9500715435779406e-16,
+          "norm_bound_numerically_satisfied": true
+        }
+      ],
+      "U": [
+        [
+          8.677034777923502e-07,
+          2.5425728274197602e-11
+        ],
+        [
+          2.5425728274197602e-11,
+          7.011598014284838e-07
+        ]
+      ],
+      "G": [
+        [
+          2.2070698562018788e-07,
+          -1.825504597177789e-10
+        ],
+        [
+          -1.8255045971777889e-10,
+          1.2357639873550932e-07
+        ]
+      ],
+      "C": [
+        [
+          -2.774388052854062e-09,
+          4.771516690236893e-11
+        ],
+        [
+          -7.230931551822348e-11,
+          -2.5294727831113418e-08
+        ]
+      ],
+      "schur_update_relative_residual": 1.7189371522869149e-15,
+      "joint_gram_scaled_min_eigenvalue": 0.9140585235937934,
+      "determinant_factorization_relative_residual": 7.048104945316554e-15
+    },
+    {
+      "case_id": "heldout_quad_low__n131072_m64_s128_r20261023_p1.3",
+      "family": "waterbag4d",
+      "role": "convergence",
+      "split": "heldout_setting",
+      "space_charge": "2D",
+      "planes": [
+        {
+          "plane": "x",
+          "position_variance_m2": 1.1547176585879612e-06,
+          "unexplained_momentum_variance": 8.717294768145944e-07,
+          "full_force_variance_per_m2": 1.6599559304256475e-05,
+          "own_plane_residual_force_variance_per_m2": 2.2245639846138097e-07,
+          "signed_ug_per_m": -2.6112198390165444e-09,
+          "emittance_before_m": 1.0032952807570944e-06,
+          "emittance_after_m": 1.0032935771645672e-06,
+          "emittance_change_m": -1.7035925272176872e-12,
+          "norm_radius_m": 2.9459360869986565e-10,
+          "full_force_radius_m": 2.544773588495912e-09,
+          "radius_reduction_factor": 8.638251181778175,
+          "identity_relative_residual": 0.0,
+          "norm_bound_numerically_satisfied": true
+        },
+        {
+          "plane": "y",
+          "position_variance_m2": 1.4754207802405297e-06,
+          "unexplained_momentum_variance": 7.020849072744226e-07,
+          "full_force_variance_per_m2": 1.66069469871269e-05,
+          "own_plane_residual_force_variance_per_m2": 1.2522069066536425e-07,
+          "signed_ug_per_m": -2.5619702182460126e-08,
+          "emittance_before_m": 1.017777314389512e-06,
+          "emittance_after_m": 1.0177557574339461e-06,
+          "emittance_change_m": -2.155695556587535e-11,
+          "norm_radius_m": 2.498382684445041e-10,
+          "full_force_radius_m": 2.8771719225259298e-09,
+          "radius_reduction_factor": 11.516137781610619,
+          "identity_relative_residual": 9.74776095154093e-16,
+          "norm_bound_numerically_satisfied": true
+        }
+      ],
+      "U": [
+        [
+          8.717294707206192e-07,
+          4.1321452212449815e-11
+        ],
+        [
+          4.1321452212449764e-11,
+          7.020849052056276e-07
+        ]
+      ],
+      "G": [
+        [
+          2.224563944872413e-07,
+          -1.6771817759482756e-10
+        ],
+        [
+          -1.6771817759482756e-10,
+          1.2522068759637076e-07
+        ]
+      ],
+      "C": [
+        [
+          -2.61122476022884e-09,
+          4.8417801181179066e-11
+        ],
+        [
+          -4.231080855830037e-11,
+          -2.5619704702203573e-08
+        ]
+      ],
+      "schur_update_relative_residual": 1.0055661584904316e-15,
+      "joint_gram_scaled_min_eigenvalue": 0.9135872829434987,
+      "determinant_factorization_relative_residual": 3.5229582934872277e-15
+    },
+    {
+      "case_id": "heldout_quad_low__n262144_m64_s64_r20261023_p1.3",
+      "family": "waterbag4d",
+      "role": "convergence",
+      "split": "heldout_setting",
+      "space_charge": "2D",
+      "planes": [
+        {
+          "plane": "x",
+          "position_variance_m2": 1.1569639280285902e-06,
+          "unexplained_momentum_variance": 8.700607534645507e-07,
+          "full_force_variance_per_m2": 1.6604286146059527e-05,
+          "own_plane_residual_force_variance_per_m2": 2.226264062601133e-07,
+          "signed_ug_per_m": -2.7084539125941996e-09,
+          "emittance_before_m": 1.0033089788055626e-06,
+          "emittance_after_m": 1.0033055214903177e-06,
+          "emittance_change_m": -3.4573152448512916e-12,
+          "norm_radius_m": 5.899853242335882e-10,
+          "full_force_radius_m": 5.095220408815139e-09,
+          "radius_reduction_factor": 8.636181612540973,
+          "identity_relative_residual": 0.0,
+          "norm_bound_numerically_satisfied": true
+        },
+        {
+          "plane": "y",
+          "position_variance_m2": 1.4720946945639476e-06,
+          "unexplained_momentum_variance": 7.037610977420438e-07,
+          "full_force_variance_per_m2": 1.6611518342382573e-05,
+          "own_plane_residual_force_variance_per_m2": 1.248682549909901e-07,
+          "signed_ug_per_m": -2.5705948107126376e-08,
+          "emittance_before_m": 1.0178423150108089e-06,
+          "emittance_after_m": 1.0177992164188702e-06,
+          "emittance_change_m": -4.309859193865918e-11,
+          "norm_radius_m": 4.984101253983553e-10,
+          "full_force_radius_m": 5.748645134522347e-09,
+          "radius_reduction_factor": 11.533965386292527,
+          "identity_relative_residual": 1.3645122377697505e-15,
+          "norm_bound_numerically_satisfied": true
+        }
+      ],
+      "U": [
+        [
+          8.70060753408561e-07,
+          -3.5982730613190514e-12
+        ],
+        [
+          -3.598273061319103e-12,
+          7.03761096907364e-07
+        ]
+      ],
+      "G": [
+        [
+          2.2262640372329367e-07,
+          -1.103442549427261e-10
+        ],
+        [
+          -1.1034425494272613e-10,
+          1.2486825328069168e-07
+        ]
+      ],
+      "C": [
+        [
+          -2.708454289469651e-09,
+          2.3391515952067138e-11
+        ],
+        [
+          3.656529057379939e-11,
+          -2.5705946912325418e-08
+        ]
+      ],
+      "schur_update_relative_residual": 1.397022048909575e-15,
+      "joint_gram_scaled_min_eigenvalue": 0.9132829803531917,
+      "determinant_factorization_relative_residual": 3.5224121226333597e-15
+    },
+    {
+      "case_id": "heldout_quad_low__n131072_m64_s64_r20261024_p1.3",
+      "family": "waterbag4d",
+      "role": "convergence",
+      "split": "heldout_setting",
+      "space_charge": "2D",
+      "planes": [
+        {
+          "plane": "x",
+          "position_variance_m2": 1.1569508026756218e-06,
+          "unexplained_momentum_variance": 8.699498726881435e-07,
+          "full_force_variance_per_m2": 1.6605509036942448e-05,
+          "own_plane_residual_force_variance_per_m2": 2.231137190931168e-07,
+          "signed_ug_per_m": -2.807578025535885e-09,
+          "emittance_before_m": 1.0032393550365248e-06,
+          "emittance_after_m": 1.0032357650127997e-06,
+          "emittance_change_m": -3.590023725074786e-12,
+          "norm_radius_m": 5.906273382494291e-10,
+          "full_force_radius_m": 5.09537913168556e-09,
+          "radius_reduction_factor": 8.627062788505262,
+          "identity_relative_residual": 8.025854267904718e-16,
+          "norm_bound_numerically_satisfied": true
+        },
+        {
+          "plane": "y",
+          "position_variance_m2": 1.4719638608788232e-06,
+          "unexplained_momentum_variance": 7.038918139002241e-07,
+          "full_force_variance_per_m2": 1.661217797496507e-05,
+          "own_plane_residual_force_variance_per_m2": 1.2491791817922143e-07,
+          "signed_ug_per_m": -2.5620457857620228e-08,
+          "emittance_before_m": 1.017891601315961e-06,
+          "emittance_after_m": 1.0178486524118828e-06,
+          "emittance_change_m": -4.294890407822645e-11,
+          "norm_radius_m": 4.984870773408928e-10,
+          "full_force_radius_m": 5.748503802223229e-09,
+          "radius_reduction_factor": 11.531901354169081,
+          "identity_relative_residual": 9.745572154430834e-16,
+          "norm_bound_numerically_satisfied": true
+        }
+      ],
+      "U": [
+        [
+          8.699498696547923e-07,
+          -8.621600600562914e-11
+        ],
+        [
+          -8.621600600562914e-11,
+          7.038917677790429e-07
+        ]
+      ],
+      "G": [
+        [
+          2.2311368375058576e-07,
+          -2.1145705906421052e-10
+        ],
+        [
+          -2.1145705906421036e-10,
+          1.2491788938754494e-07
+        ]
+      ],
+      "C": [
+        [
+          -2.807567671489841e-09,
+          5.953050470183799e-11
+        ],
+        [
+          1.029043755502611e-10,
+          -2.5620421417175246e-08
+        ]
+      ],
+      "schur_update_relative_residual": 5.095368965683212e-16,
+      "joint_gram_scaled_min_eigenvalue": 0.9135926869043753,
+      "determinant_factorization_relative_residual": 0.0
+    },
+    {
+      "case_id": "heldout_quad_low__n131072_m64_s64_r20261023_p1.6",
+      "family": "waterbag4d",
+      "role": "convergence",
+      "split": "heldout_setting",
+      "space_charge": "2D",
+      "planes": [
+        {
+          "plane": "x",
+          "position_variance_m2": 1.1548272555998548e-06,
+          "unexplained_momentum_variance": 8.7165526925912e-07,
+          "full_force_variance_per_m2": 1.658178699336504e-05,
+          "own_plane_residual_force_variance_per_m2": 2.2415808983265734e-07,
+          "signed_ug_per_m": -2.810691690838512e-09,
+          "emittance_before_m": 1.0033001856013294e-06,
+          "emittance_after_m": 1.0032965990302063e-06,
+          "emittance_change_m": -3.5865711230670546e-12,
+          "norm_radius_m": 5.914644994564068e-10,
+          "full_force_radius_m": 5.087063282093676e-09,
+          "radius_reduction_factor": 8.600792248341207,
+          "identity_relative_residual": 1.404354188077288e-15,
+          "norm_bound_numerically_satisfied": true
+        },
+        {
+          "plane": "y",
+          "position_variance_m2": 1.4688376854461137e-06,
+          "unexplained_momentum_variance": 7.055029049919076e-07,
+          "full_force_variance_per_m2": 1.6592964905052427e-05,
+          "own_plane_residual_force_variance_per_m2": 1.2618001045022582e-07,
+          "signed_ug_per_m": -2.5884969455761367e-08,
+          "emittance_before_m": 1.017973110668363e-06,
+          "emittance_after_m": 1.017929813939741e-06,
+          "emittance_change_m": -4.329672862190775e-11,
+          "norm_radius_m": 5.004666523081606e-10,
+          "full_force_radius_m": 5.73907449613812e-09,
+          "radius_reduction_factor": 11.467446371640172,
+          "identity_relative_residual": 1.3641616178803193e-15,
+          "norm_bound_numerically_satisfied": true
+        }
+      ],
+      "U": [
+        [
+          8.716552631276924e-07,
+          4.230266443209732e-11
+        ],
+        [
+          4.230266443209732e-11,
+          7.05502902843295e-07
+        ]
+      ],
+      "G": [
+        [
+          2.2415808673899824e-07,
+          -1.5342399766294543e-10
+        ],
+        [
+          -1.534239976629455e-10,
+          1.2618000761863873e-07
+        ]
+      ],
+      "C": [
+        [
+          -2.8106960461243786e-09,
+          4.251710148098844e-11
+        ],
+        [
+          -3.597810394861516e-11,
+          -2.5884971922334862e-08
+        ]
+      ],
+      "schur_update_relative_residual": 6.676592077640326e-16,
+      "joint_gram_scaled_min_eigenvalue": 0.9132374376583671,
+      "determinant_factorization_relative_residual": 1.074078479565026e-14
+    },
+    {
+      "case_id": "heldout_quad_high__n131072_m128_s64_r20261023_p1.3",
+      "family": "waterbag4d",
+      "role": "convergence",
+      "split": "heldout_setting",
+      "space_charge": "2D",
+      "planes": [
+        {
+          "plane": "x",
+          "position_variance_m2": 4.301092576878692e-07,
+          "unexplained_momentum_variance": 2.3716597935294073e-06,
+          "full_force_variance_per_m2": 3.117827997873735e-05,
+          "own_plane_residual_force_variance_per_m2": 5.30949679172958e-07,
+          "signed_ug_per_m": 1.2462227208657857e-07,
+          "emittance_before_m": 1.009986551040705e-06,
+          "emittance_after_m": 1.010048397193136e-06,
+          "emittance_change_m": 6.18461524310844e-11,
+          "norm_radius_m": 5.555319459062579e-10,
+          "full_force_radius_m": 4.257046883031895e-09,
+          "radius_reduction_factor": 7.6630100472210145,
+          "identity_relative_residual": 3.959004787692766e-16,
+          "norm_bound_numerically_satisfied": true
+        },
+        {
+          "plane": "y",
+          "position_variance_m2": 1.0385885775485481e-06,
+          "unexplained_momentum_variance": 1.0192533809897618e-06,
+          "full_force_variance_per_m2": 3.1181890632596826e-05,
+          "own_plane_residual_force_variance_per_m2": 2.0561150782940165e-07,
+          "signed_ug_per_m": -3.740751971254499e-08,
+          "emittance_before_m": 1.0288755605629394e-06,
+          "emittance_after_m": 1.028831803106337e-06,
+          "emittance_change_m": -4.3757456602443024e-11,
+          "norm_radius_m": 5.372030150505918e-10,
+          "full_force_radius_m": 6.6155499745146695e-09,
+          "radius_reduction_factor": 12.314804253084175,
+          "identity_relative_residual": 3.0523524465661496e-15,
+          "norm_bound_numerically_satisfied": true
+        }
+      ],
+      "U": [
+        [
+          2.371659789016391e-06,
+          -8.103991589123946e-11
+        ],
+        [
+          -8.103991589123952e-11,
+          1.0192533804411996e-06
+        ]
+      ],
+      "G": [
+        [
+          5.309496583405418e-07,
+          5.876926567705847e-10
+        ],
+        [
+          5.876926567705847e-10,
+          2.056114910725963e-07
+        ]
+      ],
+      "C": [
+        [
+          1.2462228178281544e-07,
+          -9.916437193563135e-11
+        ],
+        [
+          -1.0913126702420465e-10,
+          -3.740751668067187e-08
+        ]
+      ],
+      "schur_update_relative_residual": 9.280046405334256e-16,
+      "joint_gram_scaled_min_eigenvalue": 0.8889101883579534,
+      "determinant_factorization_relative_residual": 1.700919228880033e-16
+    },
+    {
+      "case_id": "heldout_quad_high__n131072_m64_s128_r20261023_p1.3",
+      "family": "waterbag4d",
+      "role": "convergence",
+      "split": "heldout_setting",
+      "space_charge": "2D",
+      "planes": [
+        {
+          "plane": "x",
+          "position_variance_m2": 4.281040559902695e-07,
+          "unexplained_momentum_variance": 2.3838734883010776e-06,
+          "full_force_variance_per_m2": 3.094238247871128e-05,
+          "own_plane_residual_force_variance_per_m2": 5.289442371095989e-07,
+          "signed_ug_per_m": 1.2617262727870483e-07,
+          "emittance_before_m": 1.0102207230646991e-06,
+          "emittance_after_m": 1.0102518390315998e-06,
+          "emittance_change_m": 3.111596690071123e-11,
+          "norm_radius_m": 2.7659388987579995e-10,
+          "full_force_radius_m": 2.1155072216699675e-09,
+          "radius_reduction_factor": 7.648423552016649,
+          "identity_relative_residual": 5.936115660680741e-16,
+          "norm_bound_numerically_satisfied": true
+        },
+        {
+          "plane": "y",
+          "position_variance_m2": 1.0459522819514707e-06,
+          "unexplained_momentum_variance": 1.01211500654886e-06,
+          "full_force_variance_per_m2": 3.0956927757545816e-05,
+          "own_plane_residual_force_variance_per_m2": 2.101392228095298e-07,
+          "signed_ug_per_m": -3.88810381444909e-08,
+          "emittance_before_m": 1.028894552758983e-06,
+          "emittance_after_m": 1.0288716143143686e-06,
+          "emittance_change_m": -2.293844461435674e-11,
+          "norm_radius_m": 2.725037371559823e-10,
+          "full_force_radius_m": 3.3074845838412836e-09,
+          "radius_reduction_factor": 12.137391649598058,
+          "identity_relative_residual": 1.9076498511614632e-16,
+          "norm_bound_numerically_satisfied": true
+        }
+      ],
+      "U": [
+        [
+          2.3838734830789145e-06,
+          -6.593046406114011e-11
+        ],
+        [
+          -6.593046406114013e-11,
+          1.0121150058680285e-06
+        ]
+      ],
+      "G": [
+        [
+          5.289442100511009e-07,
+          5.418802848173177e-10
+        ],
+        [
+          5.418802848173178e-10,
+          2.1013920416180132e-07
+        ]
+      ],
+      "C": [
+        [
+          1.2617263916583477e-07,
+          -5.749773797594257e-11
+        ],
+        [
+          -4.943480772145214e-12,
+          -3.8881034581341774e-08
+        ]
+      ],
+      "schur_update_relative_residual": 1.3208979608562346e-15,
+      "joint_gram_scaled_min_eigenvalue": 0.8876076363442523,
+      "determinant_factorization_relative_residual": 0.0
+    },
+    {
+      "case_id": "heldout_quad_high__n262144_m64_s64_r20261023_p1.3",
+      "family": "waterbag4d",
+      "role": "convergence",
+      "split": "heldout_setting",
+      "space_charge": "2D",
+      "planes": [
+        {
+          "plane": "x",
+          "position_variance_m2": 4.291892572229541e-07,
+          "unexplained_momentum_variance": 2.3776214492173784e-06,
+          "full_force_variance_per_m2": 3.103077615049395e-05,
+          "own_plane_residual_force_variance_per_m2": 5.316822657743658e-07,
+          "signed_ug_per_m": 1.2599010261005688e-07,
+          "emittance_before_m": 1.0101730464365846e-06,
+          "emittance_after_m": 1.0102354246630524e-06,
+          "emittance_change_m": 6.237822646771722e-11,
+          "norm_radius_m": 5.553201986475233e-10,
+          "full_force_radius_m": 4.242420397557096e-09,
+          "radius_reduction_factor": 7.639593171452196,
+          "identity_relative_residual": 5.936308563007074e-16,
+          "norm_bound_numerically_satisfied": true
+        },
+        {
+          "plane": "y",
+          "position_variance_m2": 1.0393675567451497e-06,
+          "unexplained_momentum_variance": 1.018702560957774e-06,
+          "full_force_variance_per_m2": 3.104590292084125e-05,
+          "own_plane_residual_force_variance_per_m2": 2.094744949753723e-07,
+          "signed_ug_per_m": -3.8916561579616175e-08,
+          "emittance_before_m": 1.0289831834547683e-06,
+          "emittance_after_m": 1.0289376283528664e-06,
+          "emittance_change_m": -4.5555101901848376e-11,
+          "norm_radius_m": 5.424292692193994e-10,
+          "full_force_radius_m": 6.603583707384142e-09,
+          "radius_reduction_factor": 12.17409177953698,
+          "identity_relative_residual": 2.2887854847988494e-15,
+          "norm_bound_numerically_satisfied": true
+        }
+      ],
+      "U": [
+        [
+          2.377621447997716e-06,
+          -5.895570660879672e-11
+        ],
+        [
+          -5.895570660879667e-11,
+          1.018702560507139e-06
+        ]
+      ],
+      "G": [
+        [
+          5.316822585763646e-07,
+          1.4443748979673224e-10
+        ],
+        [
+          1.4443748979673216e-10,
+          2.094744926008611e-07
+        ]
+      ],
+      "C": [
+        [
+          1.2599009964709666e-07,
+          5.433968295540648e-11
+        ],
+        [
+          -1.710874679501456e-10,
+          -3.89165626140433e-08
+        ]
+      ],
+      "schur_update_relative_residual": 4.91147492098088e-16,
+      "joint_gram_scaled_min_eigenvalue": 0.8879423834690897,
+      "determinant_factorization_relative_residual": 1.6999355902607755e-16
+    },
+    {
+      "case_id": "heldout_quad_high__n131072_m64_s64_r20261024_p1.3",
+      "family": "waterbag4d",
+      "role": "convergence",
+      "split": "heldout_setting",
+      "space_charge": "2D",
+      "planes": [
+        {
+          "plane": "x",
+          "position_variance_m2": 4.292061572629016e-07,
+          "unexplained_momentum_variance": 2.3774440948197013e-06,
+          "full_force_variance_per_m2": 3.102640050313801e-05,
+          "own_plane_residual_force_variance_per_m2": 5.305427208098687e-07,
+          "signed_ug_per_m": 1.2601979042291523e-07,
+          "emittance_before_m": 1.0101552573960803e-06,
+          "emittance_after_m": 1.0102176535130208e-06,
+          "emittance_change_m": 6.239611694049321e-11,
+          "norm_radius_m": 5.547356970749531e-10,
+          "full_force_radius_m": 4.242204794788923e-09,
+          "radius_reduction_factor": 7.647254029545061,
+          "identity_relative_residual": 3.957678280590437e-16,
+          "norm_bound_numerically_satisfied": true
+        },
+        {
+          "plane": "y",
+          "position_variance_m2": 1.039553909729183e-06,
+          "unexplained_momentum_variance": 1.0186141227298214e-06,
+          "full_force_variance_per_m2": 3.104146750719918e-05,
+          "own_plane_residual_force_variance_per_m2": 2.1004607622401264e-07,
+          "signed_ug_per_m": -3.880449385574092e-08,
+          "emittance_before_m": 1.0290307545399934e-06,
+          "emittance_after_m": 1.0289853253835673e-06,
+          "emittance_change_m": -4.5429156426172676e-11,
+          "norm_radius_m": 5.432175045966098e-10,
+          "full_force_radius_m": 6.603703900320091e-09,
+          "radius_reduction_factor": 12.156647833401397,
+          "identity_relative_residual": 7.62857957687313e-16,
+          "norm_bound_numerically_satisfied": true
+        }
+      ],
+      "U": [
+        [
+          2.3774440849370528e-06,
+          -1.6053103656174804e-10
+        ],
+        [
+          -1.6053103656174804e-10,
+          1.0186141132498016e-06
+        ]
+      ],
+      "G": [
+        [
+          5.305425162034462e-07,
+          5.617034430439855e-10
+        ],
+        [
+          5.617034430439857e-10,
+          2.1004601030588259e-07
+        ]
+      ],
+      "C": [
+        [
+          1.2601974545567417e-07,
+          -1.8235260947082624e-11
+        ],
+        [
+          1.4955027917944528e-11,
+          -3.880451885384821e-08
+        ]
+      ],
+      "schur_update_relative_residual": 1.172116563848844e-15,
+      "joint_gram_scaled_min_eigenvalue": 0.8877593215140057,
+      "determinant_factorization_relative_residual": 1.6998383623216908e-16
+    },
+    {
+      "case_id": "heldout_quad_high__n131072_m64_s64_r20261023_p1.6",
+      "family": "waterbag4d",
+      "role": "convergence",
+      "split": "heldout_setting",
+      "space_charge": "2D",
+      "planes": [
+        {
+          "plane": "x",
+          "position_variance_m2": 4.2855709540867414e-07,
+          "unexplained_momentum_variance": 2.3817559419685178e-06,
+          "full_force_variance_per_m2": 3.0932313623359245e-05,
+          "own_plane_residual_force_variance_per_m2": 5.334227289420337e-07,
+          "signed_ug_per_m": 1.2699291875168303e-07,
+          "emittance_before_m": 1.0103060964194854e-06,
+          "emittance_after_m": 1.010368869540874e-06,
+          "emittance_change_m": 6.277312138867787e-11,
+          "norm_radius_m": 5.558185858767833e-10,
+          "full_force_radius_m": 4.232563758297615e-09,
+          "radius_reduction_factor": 7.615009403870332,
+          "identity_relative_residual": 5.934740585842104e-16,
+          "norm_bound_numerically_satisfied": true
+        },
+        {
+          "plane": "y",
+          "position_variance_m2": 1.039855320525832e-06,
+          "unexplained_momentum_variance": 1.0183391392607378e-06,
+          "full_force_variance_per_m2": 3.095493681694332e-05,
+          "own_plane_residual_force_variance_per_m2": 2.133497440985838e-07,
+          "signed_ug_per_m": -3.967027901880592e-08,
+          "emittance_before_m": 1.0290409962970242e-06,
+          "emittance_after_m": 1.0289945395787772e-06,
+          "emittance_change_m": -4.645671824705263e-11,
+          "norm_radius_m": 5.475521440137991e-10,
+          "full_force_radius_m": 6.595449230625279e-09,
+          "radius_reduction_factor": 12.045335412765848,
+          "identity_relative_residual": 4.386345943251475e-15,
+          "norm_bound_numerically_satisfied": true
+        }
+      ],
+      "U": [
+        [
+          2.38175593631444e-06,
+          -6.216515972175219e-11
+        ],
+        [
+          -6.216515972175213e-11,
+          1.0183391385178526e-06
+        ]
+      ],
+      "G": [
+        [
+          5.334226992745455e-07,
+          5.487181372691063e-10
+        ],
+        [
+          5.48718137269106e-10,
+          2.1334972524638155e-07
+        ]
+      ],
+      "C": [
+        [
+          1.2699293170321998e-07,
+          -4.315565705107215e-11
+        ],
+        [
+          2.806276372744706e-11,
+          -3.9670275276478835e-08
+        ]
+      ],
+      "schur_update_relative_residual": 1.4713610005943912e-15,
+      "joint_gram_scaled_min_eigenvalue": 0.8873018967805576,
+      "determinant_factorization_relative_residual": 7.13704711859699e-15
+    },
+    {
+      "case_id": "heldout_current__n131072_m128_s64_r20261023_p1.3",
+      "family": "waterbag4d",
+      "role": "convergence",
+      "split": "heldout_current",
+      "space_charge": "2D",
+      "planes": [
+        {
+          "plane": "x",
+          "position_variance_m2": 1.3465520482926154e-06,
+          "unexplained_momentum_variance": 7.663038454931545e-07,
+          "full_force_variance_per_m2": 4.2482625914534514e-05,
+          "own_plane_residual_force_variance_per_m2": 3.279878390167074e-07,
+          "signed_ug_per_m": -2.6975290964494243e-08,
+          "emittance_before_m": 1.0158090434541902e-06,
+          "emittance_after_m": 1.015767767340597e-06,
+          "emittance_change_m": -4.1276113593274573e-11,
+          "norm_radius_m": 7.725621103202281e-10,
+          "full_force_radius_m": 8.792456141327949e-09,
+          "radius_reduction_factor": 11.380905203445018,
+          "identity_relative_residual": 4.109940587373273e-15,
+          "norm_bound_numerically_satisfied": true
+        },
+        {
+          "plane": "y",
+          "position_variance_m2": 1.2864237692999532e-06,
+          "unexplained_momentum_variance": 8.045380642517938e-07,
+          "full_force_variance_per_m2": 4.248169995074443e-05,
+          "own_plane_residual_force_variance_per_m2": 4.805700060926484e-07,
+          "signed_ug_per_m": -8.246336729637963e-08,
+          "emittance_before_m": 1.0173381390472294e-06,
+          "emittance_after_m": 1.0172173229102827e-06,
+          "emittance_change_m": -1.2081613694672434e-10,
+          "norm_radius_m": 9.140360405269204e-10,
+          "full_force_radius_m": 8.59381366996107e-09,
+          "radius_reduction_factor": 9.40205122000106,
+          "identity_relative_residual": 2.7317300646264104e-15,
+          "norm_bound_numerically_satisfied": true
+        }
+      ],
+      "U": [
+        [
+          7.663038393524231e-07,
+          2.6963396784189243e-11
+        ],
+        [
+          2.6963396784189295e-11,
+          8.045380623726088e-07
+        ]
+      ],
+      "G": [
+        [
+          3.279878291384601e-07,
+          -3.449881755198176e-10
+        ],
+        [
+          -3.4498817551981793e-10,
+          4.805699962515079e-07
+        ]
+      ],
+      "C": [
+        [
+          -2.6975298752928312e-08,
+          3.59841745155071e-10
+        ],
+        [
+          -1.741675318623772e-11,
+          -8.24633715967659e-08
+        ]
+      ],
+      "schur_update_relative_residual": 9.950579012968446e-16,
+      "joint_gram_scaled_min_eigenvalue": 0.8673764850076527,
+      "determinant_factorization_relative_residual": 0.0
+    },
+    {
+      "case_id": "heldout_current__n131072_m64_s128_r20261023_p1.3",
+      "family": "waterbag4d",
+      "role": "convergence",
+      "split": "heldout_current",
+      "space_charge": "2D",
+      "planes": [
+        {
+          "plane": "x",
+          "position_variance_m2": 1.3391488925706153e-06,
+          "unexplained_momentum_variance": 7.707922963071523e-07,
+          "full_force_variance_per_m2": 4.2398576979186925e-05,
+          "own_plane_residual_force_variance_per_m2": 3.32470309042236e-07,
+          "signed_ug_per_m": -2.706207471981663e-08,
+          "emittance_before_m": 1.0159752211553606e-06,
+          "emittance_after_m": 1.0159545616074866e-06,
+          "emittance_change_m": -2.0659547873911393e-11,
+          "norm_radius_m": 3.878411024955079e-10,
+          "full_force_radius_m": 4.37978749695841e-09,
+          "radius_reduction_factor": 11.292736816127263,
+          "identity_relative_residual": 1.3695320715922714e-15,
+          "norm_bound_numerically_satisfied": true
+        },
+        {
+          "plane": "y",
+          "position_variance_m2": 1.2865847029298828e-06,
+          "unexplained_momentum_variance": 8.04307908032673e-07,
+          "full_force_variance_per_m2": 4.239442282703809e-05,
+          "own_plane_residual_force_variance_per_m2": 4.826656905685322e-07,
+          "signed_ug_per_m": -8.204696830378533e-08,
+          "emittance_before_m": 1.0172562366092293e-06,
+          "emittance_after_m": 1.0171960218108117e-06,
+          "emittance_change_m": -6.021479841759441e-11,
+          "norm_radius_m": 4.5804207357396683e-10,
+          "full_force_radius_m": 4.2927591356186454e-09,
+          "radius_reduction_factor": 9.371975596310435,
+          "identity_relative_residual": 3.90309994623582e-16,
+          "norm_bound_numerically_satisfied": true
+        }
+      ],
+      "U": [
+        [
+          7.707922893176905e-07,
+          3.55438056220543e-11
+        ],
+        [
+          3.554380562205425e-11,
+          8.043079061770406e-07
+        ]
+      ],
+      "G": [
+        [
+          3.3247029654129686e-07,
+          -3.397184299391643e-10
+        ],
+        [
+          -3.3971842993916436e-10,
+          4.826656793721255e-07
+        ]
+      ],
+      "C": [
+        [
+          -2.7062084067272437e-08,
+          3.2699396257773745e-10
+        ],
+        [
+          -4.8225726176266204e-11,
+          -8.204697286190001e-08
+        ]
+      ],
+      "schur_update_relative_residual": 5.542344905797813e-16,
+      "joint_gram_scaled_min_eigenvalue": 0.8683139187673143,
+      "determinant_factorization_relative_residual": 3.439090622493657e-15
+    },
+    {
+      "case_id": "heldout_current__n262144_m64_s64_r20261023_p1.3",
+      "family": "waterbag4d",
+      "role": "convergence",
+      "split": "heldout_current",
+      "space_charge": "2D",
+      "planes": [
+        {
+          "plane": "x",
+          "position_variance_m2": 1.342487467860926e-06,
+          "unexplained_momentum_variance": 7.689127701899674e-07,
+          "full_force_variance_per_m2": 4.241144942013273e-05,
+          "own_plane_residual_force_variance_per_m2": 3.3240492610249846e-07,
+          "signed_ug_per_m": -2.7092778510075596e-08,
+          "emittance_before_m": 1.0159998808357516e-06,
+          "emittance_after_m": 1.0159585605150148e-06,
+          "emittance_change_m": -4.132032073682374e-11,
+          "norm_radius_m": 7.765721424794995e-10,
+          "full_force_radius_m": 8.771818542342806e-09,
+          "radius_reduction_factor": 11.295561690296365,
+          "identity_relative_residual": 2.152017358286698e-15,
+          "norm_bound_numerically_satisfied": true
+        },
+        {
+          "plane": "y",
+          "position_variance_m2": 1.2824111201909571e-06,
+          "unexplained_momentum_variance": 8.071948915165714e-07,
+          "full_force_variance_per_m2": 4.240491084833681e-05,
+          "own_plane_residual_force_variance_per_m2": 4.810825619599857e-07,
+          "signed_ug_per_m": -8.260708289325376e-08,
+          "emittance_before_m": 1.0174260194442567e-06,
+          "emittance_after_m": 1.0173053804165126e-06,
+          "emittance_change_m": -1.206390277441595e-10,
+          "norm_radius_m": 9.130959295119421e-10,
+          "full_force_radius_m": 8.572641778923648e-09,
+          "radius_reduction_factor": 9.388544513067538,
+          "identity_relative_residual": 2.731258177432243e-15,
+          "norm_bound_numerically_satisfied": true
+        }
+      ],
+      "U": [
+        [
+          7.68912770174304e-07,
+          -1.787764416414133e-11
+        ],
+        [
+          -1.787764416414133e-11,
+          8.071948909450427e-07
+        ]
+      ],
+      "G": [
+        [
+          3.324049205418017e-07,
+          -2.2893652278119698e-10
+        ],
+        [
+          -2.28936522781197e-10,
+          4.810825565063607e-07
+        ]
+      ],
+      "C": [
+        [
+          -2.7092778805232697e-08,
+          1.0460752031388917e-10
+        ],
+        [
+          2.561079082942127e-11,
+          -8.260708112778638e-08
+        ]
+      ],
+      "schur_update_relative_residual": 1.9582883086352616e-15,
+      "joint_gram_scaled_min_eigenvalue": 0.8674371882074698,
+      "determinant_factorization_relative_residual": 0.0
+    },
+    {
+      "case_id": "heldout_current__n131072_m64_s64_r20261024_p1.3",
+      "family": "waterbag4d",
+      "role": "convergence",
+      "split": "heldout_current",
+      "space_charge": "2D",
+      "planes": [
+        {
+          "plane": "x",
+          "position_variance_m2": 1.3425429055908558e-06,
+          "unexplained_momentum_variance": 7.687646558818159e-07,
+          "full_force_variance_per_m2": 4.241487185936531e-05,
+          "own_plane_residual_force_variance_per_m2": 3.33222805391126e-07,
+          "signed_ug_per_m": -2.7058600081542045e-08,
+          "emittance_before_m": 1.01592299650275e-06,
+          "emittance_after_m": 1.0158817245872184e-06,
+          "emittance_change_m": -4.127191553154601e-11,
+          "norm_radius_m": 7.775429836029826e-10,
+          "full_force_radius_m": 8.772353581658733e-09,
+          "radius_reduction_factor": 11.282146153527561,
+          "identity_relative_residual": 5.674359073676392e-15,
+          "norm_bound_numerically_satisfied": true
+        },
+        {
+          "plane": "y",
+          "position_variance_m2": 1.282300938978238e-06,
+          "unexplained_momentum_variance": 8.074369076121815e-07,
+          "full_force_variance_per_m2": 4.240899064687985e-05,
+          "own_plane_residual_force_variance_per_m2": 4.810928064755081e-07,
+          "signed_ug_per_m": -8.257795644484216e-08,
+          "emittance_before_m": 1.0175348174862539e-06,
+          "emittance_after_m": 1.0174142444072623e-06,
+          "emittance_change_m": -1.2057307899153097e-10,
+          "norm_radius_m": 9.130664249212111e-10,
+          "full_force_radius_m": 8.572685863719722e-09,
+          "radius_reduction_factor": 9.388896174185206,
+          "identity_relative_residual": 1.9504815279474037e-16,
+          "norm_bound_numerically_satisfied": true
+        }
+      ],
+      "U": [
+        [
+          7.687646522671163e-07,
+          -1.482368671357188e-10
+        ],
+        [
+          -1.482368671357184e-10,
+          8.074368758404957e-07
+        ]
+      ],
+      "G": [
+        [
+          3.3322266061657315e-07,
+          -8.271434958287505e-10
+        ],
+        [
+          -8.271434958287511e-10,
+          4.81092654957665e-07
+        ]
+      ],
+      "C": [
+        [
+          -2.7058577205435247e-08,
+          -7.721668283198266e-12
+        ],
+        [
+          1.3982729306379887e-10,
+          -8.257788706201192e-08
+        ]
+      ],
+      "schur_update_relative_residual": 1.834459275212131e-15,
+      "joint_gram_scaled_min_eigenvalue": 0.8674902977470611,
+      "determinant_factorization_relative_residual": 3.437561427057091e-15
+    },
+    {
+      "case_id": "heldout_current__n131072_m64_s64_r20261023_p1.6",
+      "family": "waterbag4d",
+      "role": "convergence",
+      "split": "heldout_current",
+      "space_charge": "2D",
+      "planes": [
+        {
+          "plane": "x",
+          "position_variance_m2": 1.3396471331558808e-06,
+          "unexplained_momentum_variance": 7.706875130172143e-07,
+          "full_force_variance_per_m2": 4.236487680160064e-05,
+          "own_plane_residual_force_variance_per_m2": 3.357045278365789e-07,
+          "signed_ug_per_m": -2.744577911132902e-08,
+          "emittance_before_m": 1.016095132048444e-06,
+          "emittance_after_m": 1.0160533649010062e-06,
+          "emittance_change_m": -4.1767147437727685e-11,
+          "norm_radius_m": 7.795909169857619e-10,
+          "full_force_radius_m": 8.757721796223653e-09,
+          "radius_reduction_factor": 11.233740164758231,
+          "identity_relative_residual": 3.7164240204640165e-15,
+          "norm_bound_numerically_satisfied": true
+        },
+        {
+          "plane": "y",
+          "position_variance_m2": 1.2796967491152953e-06,
+          "unexplained_momentum_variance": 8.090013842018117e-07,
+          "full_force_variance_per_m2": 4.2359531021760356e-05,
+          "own_plane_residual_force_variance_per_m2": 4.821075166881386e-07,
+          "signed_ug_per_m": -8.258478321528383e-08,
+          "emittance_before_m": 1.0174853519303515e-06,
+          "emittance_after_m": 1.0173650087638555e-06,
+          "emittance_change_m": -1.2034316649597636e-10,
+          "norm_radius_m": 9.131002176142868e-10,
+          "full_force_radius_m": 8.558981083298793e-09,
+          "radius_reduction_factor": 9.373539638027216,
+          "identity_relative_residual": 2.7309396517401367e-15,
+          "norm_bound_numerically_satisfied": true
+        }
+      ],
+      "U": [
+        [
+          7.706875057026579e-07,
+          4.193335631511309e-11
+        ],
+        [
+          4.193335631511309e-11,
+          8.090013821036958e-07
+        ]
+      ],
+      "G": [
+        [
+          3.3570451957721484e-07,
+          -3.1266308236849965e-10
+        ],
+        [
+          -3.126630823684996e-10,
+          4.82107507906284e-07
+        ]
+      ],
+      "C": [
+        [
+          -2.74457868839439e-08,
+          2.8726112774659837e-10
+        ],
+        [
+          -4.951605595863391e-11,
+          -8.258478750775881e-08
+        ]
+      ],
+      "schur_update_relative_residual": 8.542964031892746e-15,
+      "joint_gram_scaled_min_eigenvalue": 0.8677598461349938,
+      "determinant_factorization_relative_residual": 7.045297925552955e-15
+    },
+    {
+      "case_id": "heldout_halo__n524288_m512_s64_r20261023_p1.3",
+      "family": "halo_gaussian4d",
+      "role": "convergence",
+      "split": "heldout_distribution",
+      "space_charge": "2D",
+      "planes": [
+        {
+          "plane": "x",
+          "position_variance_m2": 8.978495407557062e-07,
+          "unexplained_momentum_variance": 1.6987430390723107e-06,
+          "full_force_variance_per_m2": 2.6520995979051352e-05,
+          "own_plane_residual_force_variance_per_m2": 2.408944828426632e-06,
+          "signed_ug_per_m": -5.288030297443503e-07,
+          "emittance_before_m": 1.2349962176027205e-06,
+          "emittance_after_m": 1.2345504056084964e-06,
+          "emittance_change_m": -4.458119942240649e-10,
+          "norm_radius_m": 1.7096537797534756e-09,
+          "full_force_radius_m": 5.6726979396995155e-09,
+          "radius_reduction_factor": 3.3180390128564468,
+          "identity_relative_residual": 2.6481290136834617e-16,
+          "norm_bound_numerically_satisfied": true
+        },
+        {
+          "plane": "y",
+          "position_variance_m2": 9.376702844075303e-07,
+          "unexplained_momentum_variance": 1.6817652405869378e-06,
+          "full_force_variance_per_m2": 2.6499328214621685e-05,
+          "own_plane_residual_force_variance_per_m2": 3.4806681212415834e-06,
+          "signed_ug_per_m": -9.134258130002295e-07,
+          "emittance_before_m": 1.25576323064814e-06,
+          "emittance_after_m": 1.2549718553002977e-06,
+          "emittance_change_m": -7.913753478423457e-10,
+          "norm_radius_m": 2.100145315358325e-09,
+          "full_force_radius_m": 5.7947602215496585e-09,
+          "radius_reduction_factor": 2.759218697474256,
+          "identity_relative_residual": 2.561267091321606e-16,
+          "norm_bound_numerically_satisfied": true
+        }
+      ],
+      "U": [
+        [
+          1.6987429259906865e-06,
+          -8.796988815791214e-10
+        ],
+        [
+          -8.796988815791214e-10,
+          1.6817652389265956e-06
+        ]
+      ],
+      "G": [
+        [
+          2.4089441785448454e-06,
+          5.168696804427575e-09
+        ],
+        [
+          5.168696804427574e-09,
+          3.4806674804606336e-06
+        ]
+      ],
+      "C": [
+        [
+          -5.288033008341653e-07,
+          1.644253969151486e-09
+        ],
+        [
+          1.1915553955968365e-09,
+          -9.134258456179606e-07
+        ]
+      ],
+      "schur_update_relative_residual": 4.433708789743728e-16,
+      "joint_gram_scaled_min_eigenvalue": 0.6224474168198412,
+      "determinant_factorization_relative_residual": 3.360056816266176e-15
+    },
+    {
+      "case_id": "heldout_halo__n524288_m256_s128_r20261023_p1.3",
+      "family": "halo_gaussian4d",
+      "role": "convergence",
+      "split": "heldout_distribution",
+      "space_charge": "2D",
+      "planes": [
+        {
+          "plane": "x",
+          "position_variance_m2": 8.931558135251602e-07,
+          "unexplained_momentum_variance": 1.701414729364955e-06,
+          "full_force_variance_per_m2": 2.6393596278487347e-05,
+          "own_plane_residual_force_variance_per_m2": 2.402823369328015e-06,
+          "signed_ug_per_m": -5.243740867611174e-07,
+          "emittance_before_m": 1.2327321106995004e-06,
+          "emittance_after_m": 1.232511552698679e-06,
+          "emittance_change_m": -2.2055800082146034e-10,
+          "norm_radius_m": 8.515055915302724e-10,
+          "full_force_radius_m": 2.8221225260013093e-09,
+          "radius_reduction_factor": 3.314273627880197,
+          "identity_relative_residual": 1.063146143859555e-15,
+          "norm_bound_numerically_satisfied": true
+        },
+        {
+          "plane": "y",
+          "position_variance_m2": 9.399273240434196e-07,
+          "unexplained_momentum_variance": 1.6661850139104884e-06,
+          "full_force_variance_per_m2": 2.630777848921276e-05,
+          "own_plane_residual_force_variance_per_m2": 3.460265547949414e-06,
+          "signed_ug_per_m": -9.00103969209381e-07,
+          "emittance_before_m": 1.251436303407462e-06,
+          "emittance_after_m": 1.2510437273523167e-06,
+          "emittance_change_m": -3.925760551454376e-10,
+          "norm_radius_m": 1.0482498711878217e-09,
+          "full_force_radius_m": 2.8903616852318797e-09,
+          "radius_reduction_factor": 2.7573212882503615,
+          "identity_relative_residual": 1.2895046127913507e-15,
+          "norm_bound_numerically_satisfied": true
+        }
+      ],
+      "U": [
+        [
+          1.7014146131943389e-06,
+          -8.750891573974537e-10
+        ],
+        [
+          -8.750891573974537e-10,
+          1.6661850120154724e-06
+        ]
+      ],
+      "G": [
+        [
+          2.402822724478278e-06,
+          5.096763643338023e-09
+        ],
+        [
+          5.096763643338023e-09,
+          3.46026490497925e-06
+        ]
+      ],
+      "C": [
+        [
+          -5.243743604627686e-07,
+          1.6516054488534882e-09
+        ],
+        [
+          1.1995877506306674e-09,
+          -9.001040041155342e-07
+        ]
+      ],
+      "schur_update_relative_residual": 8.202254617790148e-16,
+      "joint_gram_scaled_min_eigenvalue": 0.6251179452771818,
+      "determinant_factorization_relative_residual": 1.0650374891936066e-14
+    },
+    {
+      "case_id": "heldout_halo__n1048576_m256_s64_r20261023_p1.3",
+      "family": "halo_gaussian4d",
+      "role": "convergence",
+      "split": "heldout_distribution",
+      "space_charge": "2D",
+      "planes": [
+        {
+          "plane": "x",
+          "position_variance_m2": 8.949246658390598e-07,
+          "unexplained_momentum_variance": 1.6981674542275164e-06,
+          "full_force_variance_per_m2": 2.638814565595803e-05,
+          "own_plane_residual_force_variance_per_m2": 2.401406648403186e-06,
+          "signed_ug_per_m": -5.239747421340112e-07,
+          "emittance_before_m": 1.2327740837287778e-06,
+          "emittance_after_m": 1.2323329954295924e-06,
+          "emittance_change_m": -4.4108829918537645e-10,
+          "norm_radius_m": 1.7041940905281493e-09,
+          "full_force_radius_m": 5.649247953895032e-09,
+          "radius_reduction_factor": 3.314908780222483,
+          "identity_relative_residual": 0.0,
+          "norm_bound_numerically_satisfied": true
+        },
+        {
+          "plane": "y",
+          "position_variance_m2": 9.356405346796007e-07,
+          "unexplained_momentum_variance": 1.6764316907723985e-06,
+          "full_force_variance_per_m2": 2.633133905228529e-05,
+          "own_plane_residual_force_variance_per_m2": 3.4587045565679437e-06,
+          "signed_ug_per_m": -9.047171727479835e-07,
+          "emittance_before_m": 1.2524126490530642e-06,
+          "emittance_after_m": 1.2516284302506828e-06,
+          "emittance_change_m": -7.842188023813794e-10,
+          "norm_radius_m": 2.0912415965932964e-09,
+          "full_force_radius_m": 5.770108085356296e-09,
+          "radius_reduction_factor": 2.759178133581504,
+          "identity_relative_residual": 7.724969240832831e-16,
+          "norm_bound_numerically_satisfied": true
+        }
+      ],
+      "U": [
+        [
+          1.6981673594836236e-06,
+          -6.885481024957581e-10
+        ],
+        [
+          -6.885481024957581e-10,
+          1.6764316896661023e-06
+        ]
+      ],
+      "G": [
+        [
+          2.4014066437926094e-06,
+          4.516400116372133e-10
+        ],
+        [
+          4.516400116372133e-10,
+          3.4587045517670964e-06
+        ]
+      ],
+      "C": [
+        [
+          -5.239747630343425e-07,
+          1.504829597895887e-09
+        ],
+        [
+          6.490909723895338e-10,
+          -9.047171750525772e-07
+        ]
+      ],
+      "schur_update_relative_residual": 7.324946494610555e-16,
+      "joint_gram_scaled_min_eigenvalue": 0.6242799270943616,
+      "determinant_factorization_relative_residual": 0.0
+    },
+    {
+      "case_id": "heldout_halo__n524288_m256_s64_r20261024_p1.3",
+      "family": "halo_gaussian4d",
+      "role": "convergence",
+      "split": "heldout_distribution",
+      "space_charge": "2D",
+      "planes": [
+        {
+          "plane": "x",
+          "position_variance_m2": 8.944709019867026e-07,
+          "unexplained_momentum_variance": 1.6998414025523869e-06,
+          "full_force_variance_per_m2": 2.6463447228201674e-05,
+          "own_plane_residual_force_variance_per_m2": 2.405474956806447e-06,
+          "signed_ug_per_m": -5.247324121580187e-07,
+          "emittance_before_m": 1.2330688028554514e-06,
+          "emittance_after_m": 1.2326274064943424e-06,
+          "emittance_change_m": -4.413963611090491e-10,
+          "norm_radius_m": 1.7052045784305416e-09,
+          "full_force_radius_m": 5.65586817211656e-09,
+          "radius_reduction_factor": 3.316826757128568,
+          "identity_relative_residual": 3.9846211287252377e-16,
+          "norm_bound_numerically_satisfied": true
+        },
+        {
+          "plane": "y",
+          "position_variance_m2": 9.356472945341999e-07,
+          "unexplained_momentum_variance": 1.6747725692792273e-06,
+          "full_force_variance_per_m2": 2.636754463609471e-05,
+          "own_plane_residual_force_variance_per_m2": 3.469500523534132e-06,
+          "signed_ug_per_m": -9.079665856580436e-07,
+          "emittance_before_m": 1.2517972772802313e-06,
+          "emittance_after_m": 1.2510098473095488e-06,
+          "emittance_change_m": -7.874299706824862e-10,
+          "norm_radius_m": 2.0945104105326096e-09,
+          "full_force_radius_m": 5.774094529499957e-09,
+          "radius_reduction_factor": 2.7567752828842096,
+          "identity_relative_residual": 1.2887610253608696e-15,
+          "norm_bound_numerically_satisfied": true
+        }
+      ],
+      "U": [
+        [
+          1.6998411091853733e-06,
+          -1.2033534413151332e-09
+        ],
+        [
+          -1.2033534413151328e-09,
+          1.6747722594063385e-06
+        ]
+      ],
+      "G": [
+        [
+          2.4054740127142066e-06,
+          -3.690571832923126e-09
+        ],
+        [
+          -3.6905718329231265e-09,
+          3.469499645106654e-06
+        ]
+      ],
+      "C": [
+        [
+          -5.247318858828791e-07,
+          1.4008799059191099e-09
+        ],
+        [
+          1.8874186789406517e-09,
+          -9.079660639293161e-07
+        ]
+      ],
+      "schur_update_relative_residual": 8.379945685653362e-16,
+      "joint_gram_scaled_min_eigenvalue": 0.6233318635420162,
+      "determinant_factorization_relative_residual": 3.546142467878144e-15
+    },
+    {
+      "case_id": "heldout_halo__n524288_m256_s64_r20261023_p1.6",
+      "family": "halo_gaussian4d",
+      "role": "convergence",
+      "split": "heldout_distribution",
+      "space_charge": "2D",
+      "planes": [
+        {
+          "plane": "x",
+          "position_variance_m2": 8.935454023607523e-07,
+          "unexplained_momentum_variance": 1.6972594589745495e-06,
+          "full_force_variance_per_m2": 2.6333414502050105e-05,
+          "own_plane_residual_force_variance_per_m2": 2.4008256611448153e-06,
+          "signed_ug_per_m": -5.227331102021623e-07,
+          "emittance_before_m": 1.2314943711523844e-06,
+          "emittance_after_m": 1.23105455235376e-06,
+          "emittance_change_m": -4.398187986244295e-10,
+          "norm_radius_m": 1.7026743201759565e-09,
+          "full_force_radius_m": 5.639035925741988e-09,
+          "radius_reduction_factor": 3.3118699559403955,
+          "identity_relative_residual": 1.3316053662432272e-15,
+          "norm_bound_numerically_satisfied": true
+        },
+        {
+          "plane": "y",
+          "position_variance_m2": 9.353498252387338e-07,
+          "unexplained_momentum_variance": 1.6717484428341773e-06,
+          "full_force_variance_per_m2": 2.6204532023060777e-05,
+          "own_plane_residual_force_variance_per_m2": 3.4390015563977944e-06,
+          "signed_ug_per_m": -8.992782019551669e-07,
+          "emittance_before_m": 1.2504677580202033e-06,
+          "emittance_after_m": 1.249687285304539e-06,
+          "emittance_change_m": -7.804727156642278e-10,
+          "norm_radius_m": 2.0849525828981913e-09,
+          "full_force_radius_m": 5.755303099000909e-09,
+          "radius_reduction_factor": 2.7603999948050335,
+          "identity_relative_residual": 6.457514744422229e-16,
+          "norm_bound_numerically_satisfied": true
+        }
+      ],
+      "U": [
+        [
+          1.6972593436585048e-06,
+          -8.786447554928048e-10
+        ],
+        [
+          -8.786447554928048e-10,
+          1.671748441022091e-06
+        ]
+      ],
+      "G": [
+        [
+          2.4008249997327857e-06,
+          5.082934715338392e-09
+        ],
+        [
+          5.082934715338391e-09,
+          3.4390009164729916e-06
+        ]
+      ],
+      "C": [
+        [
+          -5.227333863749712e-07,
+          1.656537387321128e-09
+        ],
+        [
+          1.2046216885289716e-09,
+          -8.992782360080564e-07
+        ]
+      ],
+      "schur_update_relative_residual": 8.440857257638099e-16,
+      "joint_gram_scaled_min_eigenvalue": 0.6249313988450501,
+      "determinant_factorization_relative_residual": 0.0
+    },
+    {
+      "case_id": "heldout_emittance__n131072_m128_s64_r20261023_p1.3",
+      "family": "waterbag4d",
+      "role": "convergence",
+      "split": "heldout_distribution",
+      "space_charge": "2D",
+      "planes": [
+        {
+          "plane": "x",
+          "position_variance_m2": 8.028599160012434e-07,
+          "unexplained_momentum_variance": 3.6363476513771833e-06,
+          "full_force_variance_per_m2": 2.5073146443298313e-05,
+          "own_plane_residual_force_variance_per_m2": 4.755200963829817e-07,
+          "signed_ug_per_m": 1.2336960501585743e-07,
+          "emittance_before_m": 1.7086479362162366e-06,
+          "emittance_after_m": 1.7087154747522867e-06,
+          "emittance_change_m": 6.753853605008402e-11,
+          "norm_radius_m": 7.182858106612037e-10,
+          "full_force_radius_m": 5.215756020154209e-09,
+          "radius_reduction_factor": 7.26139364406064,
+          "identity_relative_residual": 9.683423578025035e-16,
+          "norm_bound_numerically_satisfied": true
+        },
+        {
+          "plane": "y",
+          "position_variance_m2": 9.56027887436387e-07,
+          "unexplained_momentum_variance": 3.0388951904849793e-06,
+          "full_force_variance_per_m2": 2.5074264208450512e-05,
+          "own_plane_residual_force_variance_per_m2": 3.8471104739786307e-07,
+          "signed_ug_per_m": 2.9280871661689054e-08,
+          "emittance_before_m": 1.704484833930755e-06,
+          "emittance_after_m": 1.7045040717556777e-06,
+          "emittance_change_m": 1.9237824922642232e-11,
+          "norm_radius_m": 7.050104767942753e-10,
+          "full_force_radius_m": 5.691704453112568e-09,
+          "radius_reduction_factor": 8.073219676100543,
+          "identity_relative_residual": 1.8072476173366825e-15,
+          "norm_bound_numerically_satisfied": true
+        }
+      ],
+      "U": [
+        [
+          3.636347636648612e-06,
+          -7.08033663373487e-11
+        ],
+        [
+          -7.080336633734875e-11,
+          3.038895187807593e-06
+        ]
+      ],
+      "G": [
+        [
+          4.755200560250805e-07,
+          4.6075571406272807e-10
+        ],
+        [
+          4.607557140627278e-10,
+          3.8471101161089723e-07
+        ]
+      ],
+      "C": [
+        [
+          1.2336962939646923e-07,
+          -1.8285353426714375e-10
+        ],
+        [
+          2.335373478828743e-10,
+          2.9280881450235573e-08
+        ]
+      ],
+      "schur_update_relative_residual": 8.801309217402256e-16,
+      "joint_gram_scaled_min_eigenvalue": 0.9061727252450522,
+      "determinant_factorization_relative_residual": 1.732363831385935e-16
+    },
+    {
+      "case_id": "heldout_emittance__n131072_m64_s128_r20261023_p1.3",
+      "family": "waterbag4d",
+      "role": "convergence",
+      "split": "heldout_distribution",
+      "space_charge": "2D",
+      "planes": [
+        {
+          "plane": "x",
+          "position_variance_m2": 7.99852186402556e-07,
+          "unexplained_momentum_variance": 3.6505935841097863e-06,
+          "full_force_variance_per_m2": 2.492173965119554e-05,
+          "own_plane_residual_force_variance_per_m2": 4.739439829228766e-07,
+          "signed_ug_per_m": 1.2418876101744613e-07,
+          "emittance_before_m": 1.7087818058246508e-06,
+          "emittance_after_m": 1.7088156314242442e-06,
+          "emittance_change_m": 3.3825599593433615e-11,
+          "norm_radius_m": 3.5787498350654836e-10,
+          "full_force_radius_m": 2.5951174110194255e-09,
+          "radius_reduction_factor": 7.251463585389003,
+          "identity_relative_residual": 4.149552208507217e-16,
+          "norm_bound_numerically_satisfied": true
+        },
+        {
+          "plane": "y",
+          "position_variance_m2": 9.6079172395224e-07,
+          "unexplained_momentum_variance": 3.0239780033812268e-06,
+          "full_force_variance_per_m2": 2.4926127834643517e-05,
+          "own_plane_residual_force_variance_per_m2": 3.8494416133383084e-07,
+          "signed_ug_per_m": 2.9026631189521713e-08,
+          "emittance_before_m": 1.7045272186334555e-06,
+          "emittance_after_m": 1.7045367653567968e-06,
+          "emittance_change_m": 9.546723341260946e-12,
+          "norm_radius_m": 3.534894535664596e-10,
+          "full_force_radius_m": 2.8444938664405637e-09,
+          "radius_reduction_factor": 8.046898819021683,
+          "identity_relative_residual": 8.340822880340337e-16,
+          "norm_bound_numerically_satisfied": true
+        }
+      ],
+      "U": [
+        [
+          3.650593569053103e-06,
+          -8.155387577637429e-11
+        ],
+        [
+          -8.155387577637444e-11,
+          3.0239780008146153e-06
+        ]
+      ],
+      "G": [
+        [
+          4.739439438179946e-07,
+          4.521435712830203e-10
+        ],
+        [
+          4.521435712830207e-10,
+          3.8494412474290876e-07
+        ]
+      ],
+      "C": [
+        [
+          1.2418878528243794e-07,
+          -7.235922370582543e-11
+        ],
+        [
+          2.537648270587122e-10,
+          2.902664088048665e-08
+        ]
+      ],
+      "schur_update_relative_residual": 8.428286016204264e-16,
+      "joint_gram_scaled_min_eigenvalue": 0.9055791596642934,
+      "determinant_factorization_relative_residual": 0.0
+    },
+    {
+      "case_id": "heldout_emittance__n262144_m64_s64_r20261023_p1.3",
+      "family": "waterbag4d",
+      "role": "convergence",
+      "split": "heldout_distribution",
+      "space_charge": "2D",
+      "planes": [
+        {
+          "plane": "x",
+          "position_variance_m2": 8.017150608177082e-07,
+          "unexplained_momentum_variance": 3.641832959726536e-06,
+          "full_force_variance_per_m2": 2.496447925106558e-05,
+          "own_plane_residual_force_variance_per_m2": 4.7552445203760245e-07,
+          "signed_ug_per_m": 1.238453696974064e-07,
+          "emittance_before_m": 1.70871657474114e-06,
+          "emittance_after_m": 1.7087842737518657e-06,
+          "emittance_change_m": 6.769901072559872e-11,
+          "norm_radius_m": 7.177767878045751e-10,
+          "full_force_radius_m": 5.200729170031193e-09,
+          "radius_reduction_factor": 7.245607908188813,
+          "identity_relative_residual": 1.3832348352210825e-16,
+          "norm_bound_numerically_satisfied": true
+        },
+        {
+          "plane": "y",
+          "position_variance_m2": 9.556715041985185e-07,
+          "unexplained_momentum_variance": 3.040153813137816e-06,
+          "full_force_variance_per_m2": 2.496810871414149e-05,
+          "own_plane_residual_force_variance_per_m2": 3.861665179608676e-07,
+          "signed_ug_per_m": 2.9331769772759404e-08,
+          "emittance_before_m": 1.7045199815772999e-06,
+          "emittance_after_m": 1.7045392455596204e-06,
+          "emittance_change_m": 1.9263982320516388e-11,
+          "norm_radius_m": 7.062111789660149e-10,
+          "full_force_radius_m": 5.678584637317857e-09,
+          "radius_reduction_factor": 8.040915814490567,
+          "identity_relative_residual": 8.340798607602161e-16,
+          "norm_bound_numerically_satisfied": true
+        }
+      ],
+      "U": [
+        [
+          3.641832956546587e-06,
+          -4.593976712802122e-11
+        ],
+        [
+          -4.593976712802122e-11,
+          3.0401538129728816e-06
+        ]
+      ],
+      "G": [
+        [
+          4.755244413247702e-07,
+          -1.9817225097837824e-10
+        ],
+        [
+          -1.9817225097837805e-10,
+          3.861665080122115e-07
+        ]
+      ],
+      "C": [
+        [
+          1.238453638607785e-07,
+          -3.715447951815863e-11
+        ],
+        [
+          -1.6418297281566197e-10,
+          2.9331768491791478e-08
+        ]
+      ],
+      "schur_update_relative_residual": 6.312288418070283e-16,
+      "joint_gram_scaled_min_eigenvalue": 0.905889543999683,
+      "determinant_factorization_relative_residual": 3.464306416537092e-15
+    },
+    {
+      "case_id": "heldout_emittance__n131072_m64_s64_r20261024_p1.3",
+      "family": "waterbag4d",
+      "role": "convergence",
+      "split": "heldout_distribution",
+      "space_charge": "2D",
+      "planes": [
+        {
+          "plane": "x",
+          "position_variance_m2": 8.016984978894925e-07,
+          "unexplained_momentum_variance": 3.6416058828547612e-06,
+          "full_force_variance_per_m2": 2.4965444441550036e-05,
+          "own_plane_residual_force_variance_per_m2": 4.7532708304784255e-07,
+          "signed_ug_per_m": 1.241195141372537e-07,
+          "emittance_before_m": 1.7086456526120919e-06,
+          "emittance_after_m": 1.7087135024966708e-06,
+          "emittance_change_m": 6.784988457890606e-11,
+          "norm_radius_m": 7.176204008727801e-10,
+          "full_force_radius_m": 5.2007759825806776e-09,
+          "radius_reduction_factor": 7.2472521353286785,
+          "identity_relative_residual": 0.0,
+          "norm_bound_numerically_satisfied": true
+        },
+        {
+          "plane": "y",
+          "position_variance_m2": 9.5572736262944e-07,
+          "unexplained_momentum_variance": 3.0404474698037113e-06,
+          "full_force_variance_per_m2": 2.496813544614512e-05,
+          "own_plane_residual_force_variance_per_m2": 3.8679675439953033e-07,
+          "signed_ug_per_m": 2.942565383232663e-08,
+          "emittance_before_m": 1.7046521174506114e-06,
+          "emittance_after_m": 1.7046714424940122e-06,
+          "emittance_change_m": 1.9325043400812887e-11,
+          "norm_radius_m": 7.068078792930243e-10,
+          "full_force_radius_m": 5.678753629804706e-09,
+          "radius_reduction_factor": 8.034366616689118,
+          "identity_relative_residual": 4.169752501593613e-16,
+          "norm_bound_numerically_satisfied": true
+        }
+      ],
+      "U": [
+        [
+          3.641605866507715e-06,
+          -1.0762605405648623e-10
+        ],
+        [
+          -1.076260540564854e-10,
+          3.04044746893184e-06
+        ]
+      ],
+      "G": [
+        [
+          4.753268677258874e-07,
+          1.726781563271528e-10
+        ],
+        [
+          1.7267815632715157e-10,
+          3.8679656997763864e-07
+        ]
+      ],
+      "C": [
+        [
+          1.2411945480869608e-07,
+          -3.85818050538404e-10
+        ],
+        [
+          -4.917746427192593e-10,
+          2.942566651269784e-08
+        ]
+      ],
+      "schur_update_relative_residual": 4.551842048632781e-16,
+      "joint_gram_scaled_min_eigenvalue": 0.9056549182936149,
+      "determinant_factorization_relative_residual": 7.101316957871602e-15
+    },
+    {
+      "case_id": "heldout_emittance__n131072_m64_s64_r20261023_p1.6",
+      "family": "waterbag4d",
+      "role": "convergence",
+      "split": "heldout_distribution",
+      "space_charge": "2D",
+      "planes": [
+        {
+          "plane": "x",
+          "position_variance_m2": 8.009045655897939e-07,
+          "unexplained_momentum_variance": 3.645696696020008e-06,
+          "full_force_variance_per_m2": 2.4892047022512957e-05,
+          "own_plane_residual_force_variance_per_m2": 4.767211306714263e-07,
+          "signed_ug_per_m": 1.2432902134305252e-07,
+          "emittance_before_m": 1.708758358750017e-06,
+          "emittance_after_m": 1.708826251563883e-06,
+          "emittance_change_m": 6.789281386610463e-11,
+          "norm_radius_m": 7.183160121245647e-10,
+          "full_force_radius_m": 5.190553271226679e-09,
+          "radius_reduction_factor": 7.226002460775683,
+          "identity_relative_residual": 2.7663337538534736e-16,
+          "norm_bound_numerically_satisfied": true
+        },
+        {
+          "plane": "y",
+          "position_variance_m2": 9.553630465538282e-07,
+          "unexplained_momentum_variance": 3.0411382985467142e-06,
+          "full_force_variance_per_m2": 2.489858795734289e-05,
+          "own_plane_residual_force_variance_per_m2": 3.874200000146846e-07,
+          "signed_ug_per_m": 2.9054053032997383e-08,
+          "emittance_before_m": 1.7045207977291201e-06,
+          "emittance_after_m": 1.7045398750101937e-06,
+          "emittance_change_m": 1.907728107354662e-11,
+          "norm_radius_m": 7.072422536038791e-10,
+          "full_force_radius_m": 5.669758229323181e-09,
+          "radius_reduction_factor": 8.016713085837159,
+          "identity_relative_residual": 1.1121056596589053e-15,
+          "norm_bound_numerically_satisfied": true
+        }
+      ],
+      "U": [
+        [
+          3.645696680755603e-06,
+          -8.11415996532116e-11
+        ],
+        [
+          -8.11415996532117e-11,
+          3.0411382960376603e-06
+        ]
+      ],
+      "G": [
+        [
+          4.7672108913367935e-07,
+          4.5825363520306566e-10
+        ],
+        [
+          4.5825363520306566e-10,
+          3.8741995984024733e-07
+        ]
+      ],
+      "C": [
+        [
+          1.243290465233837e-07,
+          -3.573731632670496e-11
+        ],
+        [
+          2.4100817296304615e-10,
+          2.9054063072902624e-08
+        ]
+      ],
+      "schur_update_relative_residual": 6.432418390510789e-16,
+      "joint_gram_scaled_min_eigenvalue": 0.9056852323320977,
+      "determinant_factorization_relative_residual": 7.1014740898837115e-15
+    },
+    {
+      "case_id": "waterbag_strong_sc__n131072_m32_s64_r20261023_p1.3",
+      "family": "waterbag4d",
+      "role": "convergence",
+      "split": "development",
+      "space_charge": "2D",
+      "planes": [
+        {
+          "plane": "x",
+          "position_variance_m2": 7.34717781452283e-07,
+          "unexplained_momentum_variance": 1.3649825152133776e-06,
+          "full_force_variance_per_m2": 2.945859342758769e-05,
+          "own_plane_residual_force_variance_per_m2": 6.130633231685055e-07,
+          "signed_ug_per_m": 9.924119443402728e-09,
+          "emittance_before_m": 1.001437429547513e-06,
+          "emittance_after_m": 1.0014461975455676e-06,
+          "emittance_change_m": 8.767998054619208e-12,
+          "norm_radius_m": 7.801999253023649e-10,
+          "full_force_radius_m": 5.408280898528038e-09,
+          "radius_reduction_factor": 6.931916708953886,
+          "identity_relative_residual": 6.040966256347347e-16,
+          "norm_bound_numerically_satisfied": true
+        },
+        {
+          "plane": "y",
+          "position_variance_m2": 7.28433199427092e-07,
+          "unexplained_momentum_variance": 1.3774522637772934e-06,
+          "full_force_variance_per_m2": 2.9449100205523226e-05,
+          "own_plane_residual_force_variance_per_m2": 6.829121614369032e-07,
+          "signed_ug_per_m": 6.137689046158698e-09,
+          "emittance_before_m": 1.0016895524868892e-06,
+          "emittance_after_m": 1.0016950766878475e-06,
+          "emittance_change_m": 5.524200958276221e-12,
+          "norm_radius_m": 8.199176786534921e-10,
+          "full_force_radius_m": 5.384232957286408e-09,
+          "radius_reduction_factor": 6.566797005924609,
+          "identity_relative_residual": 1.610123940435746e-15,
+          "norm_bound_numerically_satisfied": true
+        }
+      ],
+      "U": [
+        [
+          1.3649825031981e-06,
+          2.26240708643116e-11
+        ],
+        [
+          2.262407086431167e-11,
+          1.3774522578083336e-06
+        ]
+      ],
+      "G": [
+        [
+          6.130633143330506e-07,
+          4.4634303817652483e-10
+        ],
+        [
+          4.4634303817652473e-10,
+          6.82912156110201e-07
+        ]
+      ],
+      "C": [
+        [
+          9.924129746819918e-09,
+          -6.2829082977561225e-12
+        ],
+        [
+          -1.2095706488899636e-10,
+          6.137694684857028e-09
+        ]
+      ],
+      "schur_update_relative_residual": 2.0399571465608842e-15,
+      "joint_gram_scaled_min_eigenvalue": 0.9891078330723698,
+      "determinant_factorization_relative_residual": 3.650536092888698e-15
+    },
+    {
+      "case_id": "waterbag_strong_sc__n131072_m64_s32_r20261023_p1.3",
+      "family": "waterbag4d",
+      "role": "convergence",
+      "split": "development",
+      "space_charge": "2D",
+      "planes": [
+        {
+          "plane": "x",
+          "position_variance_m2": 7.460370256478389e-07,
+          "unexplained_momentum_variance": 1.3441952007797473e-06,
+          "full_force_variance_per_m2": 2.983548924420585e-05,
+          "own_plane_residual_force_variance_per_m2": 6.052765012263426e-07,
+          "signed_ug_per_m": 8.696523634576549e-09,
+          "emittance_before_m": 1.0014087025185183e-06,
+          "emittance_after_m": 1.0014249843621962e-06,
+          "emittance_change_m": 1.6281843677934307e-11,
+          "norm_radius_m": 1.562356199204808e-09,
+          "full_force_radius_m": 1.0969068033330443e-08,
+          "radius_reduction_factor": 7.020849687743017,
+          "identity_relative_residual": 4.0274814604063067e-16,
+          "norm_bound_numerically_satisfied": true
+        },
+        {
+          "plane": "y",
+          "position_variance_m2": 7.285723721540001e-07,
+          "unexplained_momentum_variance": 1.377255133014547e-06,
+          "full_force_variance_per_m2": 2.983250677408105e-05,
+          "own_plane_residual_force_variance_per_m2": 6.870635461075735e-07,
+          "signed_ug_per_m": 4.188459014431385e-09,
+          "emittance_before_m": 1.0017135515314153e-06,
+          "emittance_after_m": 1.0017219849660792e-06,
+          "emittance_change_m": 8.433434663842319e-12,
+          "norm_radius_m": 1.6449691584861004e-09,
+          "full_force_radius_m": 1.0839373477896234e-08,
+          "radius_reduction_factor": 6.589408331443695,
+          "identity_relative_residual": 6.037640397102707e-16,
+          "norm_bound_numerically_satisfied": true
+        }
+      ],
+      "U": [
+        [
+          1.3441951880772804e-06,
+          2.0732061549050647e-11
+        ],
+        [
+          2.073206154905059e-11,
+          1.377255127810707e-06
+        ]
+      ],
+      "G": [
+        [
+          6.052764970069022e-07,
+          4.051684552247333e-10
+        ],
+        [
+          4.0516845522473334e-10,
+          6.870635430173432e-07
+        ]
+      ],
+      "C": [
+        [
+          8.69653095559412e-09,
+          2.3168853502586164e-11
+        ],
+        [
+          -1.3960378703273196e-10,
+          4.1884630245496316e-09
+        ]
+      ],
+      "schur_update_relative_residual": 8.870924886575805e-16,
+      "joint_gram_scaled_min_eigenvalue": 0.9903274067761532,
+      "determinant_factorization_relative_residual": 3.468042081142678e-15
+    },
+    {
+      "case_id": "waterbag_strong_sc__n65536_m64_s64_r20261023_p1.3",
+      "family": "waterbag4d",
+      "role": "convergence",
+      "split": "development",
+      "space_charge": "2D",
+      "planes": [
+        {
+          "plane": "x",
+          "position_variance_m2": 7.426689220513066e-07,
+          "unexplained_momentum_variance": 1.3507774977118768e-06,
+          "full_force_variance_per_m2": 2.9776917044607726e-05,
+          "own_plane_residual_force_variance_per_m2": 5.989590919008793e-07,
+          "signed_ug_per_m": 9.5301924028996e-09,
+          "emittance_before_m": 1.0015889716629477e-06,
+          "emittance_after_m": 1.0015974865851975e-06,
+          "emittance_change_m": 8.514922249864266e-12,
+          "norm_radius_m": 7.753346045633061e-10,
+          "full_force_radius_m": 5.466765593561284e-09,
+          "radius_reduction_factor": 7.050846900662129,
+          "identity_relative_residual": 1.4091330039590483e-15,
+          "norm_bound_numerically_satisfied": true
+        },
+        {
+          "plane": "y",
+          "position_variance_m2": 7.346090006912516e-07,
+          "unexplained_momentum_variance": 1.365732908821665e-06,
+          "full_force_variance_per_m2": 2.9774501600723844e-05,
+          "own_plane_residual_force_variance_per_m2": 6.835089112340972e-07,
+          "signed_ug_per_m": 5.667188402633499e-09,
+          "emittance_before_m": 1.001638501337004e-06,
+          "emittance_after_m": 1.0016436718126622e-06,
+          "emittance_change_m": 5.170475658247212e-12,
+          "norm_radius_m": 8.23745726755146e-10,
+          "full_force_radius_m": 5.436799714712943e-09,
+          "radius_reduction_factor": 6.600094590025112,
+          "identity_relative_residual": 1.0064307559223586e-15,
+          "norm_bound_numerically_satisfied": true
+        }
+      ],
+      "U": [
+        [
+          1.3507774180771866e-06,
+          1.7839050548924002e-11
+        ],
+        [
+          1.783905054892421e-11,
+          1.365732908432433e-06
+        ]
+      ],
+      "G": [
+        [
+          5.989590068036024e-07,
+          -4.354558826207459e-10
+        ],
+        [
+          -4.35455882620746e-10,
+          6.835088316492836e-07
+        ]
+      ],
+      "C": [
+        [
+          9.5301100822103e-09,
+          5.156685389909706e-10
+        ],
+        [
+          2.1207128822226523e-10,
+          5.667182836942633e-09
+        ]
+      ],
+      "schur_update_relative_residual": 1.4330944138985163e-15,
+      "joint_gram_scaled_min_eigenvalue": 0.9892832029415345,
+      "determinant_factorization_relative_residual": 7.117117309589198e-15
+    }
+  ]
+}

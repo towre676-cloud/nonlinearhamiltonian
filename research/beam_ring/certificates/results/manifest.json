@@ -1,0 +1,61 @@
+{
+  "schema": "finite-grid-survival-manifest-v1",
+  "cells": [
+    "0,0",
+    "1,0",
+    "2,0",
+    "0,1",
+    "1,1",
+    "2,1"
+  ],
+  "adjacency": {
+    "0,0": [
+      "1,0",
+      "0,1"
+    ],
+    "1,0": [
+      "0,0",
+      "2,0",
+      "1,1"
+    ],
+    "2,0": [
+      "1,0",
+      "2,1"
+    ],
+    "0,1": [
+      "1,1",
+      "0,0"
+    ],
+    "1,1": [
+      "0,1",
+      "2,1",
+      "1,0"
+    ],
+    "2,1": [
+      "1,1",
+      "2,0"
+    ]
+  },
+  "weights": {
+    "0,0": "1",
+    "1,0": "1",
+    "2,0": "1",
+    "0,1": "1",
+    "1,1": "1",
+    "2,1": "1"
+  },
+  "origin": "0,0",
+  "designs": [
+    "A",
+    "B"
+  ],
+  "horizons": [
+    16,
+    64
+  ],
+  "prefix_semantics": "deterministic-prefix-no-reinjection-v1",
+  "physics": {
+    "provenance": "synthetic finite-grid example only",
+    "no_physical_oracle_run": true
+  }
+}

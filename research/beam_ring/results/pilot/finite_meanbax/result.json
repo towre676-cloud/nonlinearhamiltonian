@@ -1,0 +1,189 @@
+{
+  "method": "finite_meanbax",
+  "selected_designs": [
+    2,
+    8
+  ],
+  "estimated_learning_objectives": [
+    [
+      0.4666666666666667,
+      1.0
+    ],
+    [
+      0.4444444444444444,
+      1.0
+    ],
+    [
+      0.6888888888888889,
+      1.0
+    ],
+    [
+      0.2,
+      1.0
+    ],
+    [
+      0.5777777777777777,
+      1.0
+    ],
+    [
+      0.4222222222222222,
+      1.0
+    ],
+    [
+      0.37777777777777777,
+      1.0
+    ],
+    [
+      0.6222222222222222,
+      1.0
+    ],
+    [
+      0.6444444444444445,
+      1.0
+    ]
+  ],
+  "validated_objectives": [
+    [
+      0.6593406593406593,
+      1.0
+    ],
+    [
+      0.6043956043956044,
+      1.0
+    ]
+  ],
+  "learning_ledger": {
+    "stage": "learning",
+    "turns": 64,
+    "physical_points": 106,
+    "batched_tracking_calls": 11,
+    "construction_seconds": 0.52074713598995,
+    "tracking_seconds": 6.11489904300106,
+    "completed_particle_turns": 4660,
+    "calls": [
+      {
+        "design": 2,
+        "points": 10,
+        "seconds": 0.7456152219965588,
+        "purpose": "initial_data",
+        "stage": "learning"
+      },
+      {
+        "design": 6,
+        "points": 17,
+        "seconds": 0.996490689998609,
+        "purpose": "initial_data",
+        "stage": "learning"
+      },
+      {
+        "design": 1,
+        "points": 11,
+        "seconds": 0.6669424610008718,
+        "purpose": "initial_data",
+        "stage": "learning"
+      },
+      {
+        "design": 5,
+        "points": 15,
+        "seconds": 0.7607109119999222,
+        "purpose": "initial_data",
+        "stage": "learning"
+      },
+      {
+        "design": 7,
+        "points": 7,
+        "seconds": 0.43516571900545387,
+        "purpose": "initial_data",
+        "stage": "learning"
+      },
+      {
+        "design": 8,
+        "points": 10,
+        "seconds": 0.7820337540033506,
+        "purpose": "initial_data",
+        "stage": "learning"
+      },
+      {
+        "design": 0,
+        "points": 10,
+        "seconds": 0.43902278700261377,
+        "purpose": "initial_data",
+        "stage": "learning"
+      },
+      {
+        "design": 4,
+        "points": 10,
+        "seconds": 0.6269917559984606,
+        "purpose": "initial_data",
+        "stage": "learning"
+      },
+      {
+        "design": 3,
+        "points": 6,
+        "seconds": 0.18374461199709913,
+        "purpose": "initial_data",
+        "stage": "learning"
+      },
+      {
+        "design": 8,
+        "points": 6,
+        "seconds": 0.3425936640051077,
+        "purpose": "round_1",
+        "stage": "learning"
+      },
+      {
+        "design": 8,
+        "points": 4,
+        "seconds": 0.1355874659930123,
+        "purpose": "round_2",
+        "stage": "learning"
+      }
+    ]
+  },
+  "validation_ledger": {
+    "stage": "validation",
+    "turns": 256,
+    "physical_points": 232,
+    "batched_tracking_calls": 2,
+    "construction_seconds": 0.1005070139945019,
+    "tracking_seconds": 55.002322637999896,
+    "completed_particle_turns": 43864,
+    "calls": [
+      {
+        "design": 2,
+        "points": 116,
+        "seconds": 27.935610802000156,
+        "purpose": "independent_final_grid",
+        "stage": "validation"
+      },
+      {
+        "design": 8,
+        "points": 116,
+        "seconds": 27.06671183599974,
+        "purpose": "independent_final_grid",
+        "stage": "validation"
+      }
+    ]
+  },
+  "learning_elapsed_seconds": 6.859171311996761,
+  "certificate_seconds": 0.01344048600003589,
+  "workflow_elapsed_seconds": 61.97701857799984,
+  "charged_protocol_preparation_seconds": 4.482431027994608,
+  "charged_total_seconds": 66.45944960599445,
+  "learning_certificates": [
+    {
+      "objective": 0,
+      "certificate": "objective_00_certificate.json",
+      "checker": "passed",
+      "observed_labels": 77
+    },
+    {
+      "objective": 1,
+      "certificate": "objective_01_certificate.json",
+      "checker": "passed",
+      "observed_labels": 29
+    }
+  ],
+  "selected_utc": "2026-10-24T00:28:47.693071+00:00",
+  "scope": "Live finite-set pilot; elapsed includes training/acquisition/final tracking/checkers, excludes installation and source-code development."
+}

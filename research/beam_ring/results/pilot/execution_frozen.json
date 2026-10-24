@@ -1,0 +1,22 @@
+{
+  "schema": "public-ring-live-pilot-execution-v1",
+  "frozen_utc": "2026-10-24T00:24:38.347518+00:00",
+  "protocol_sha256": "159e5be41fa37717d68dac2aa9a6d6eb1c8748f6a094b0a5b73ae728ad92eb50",
+  "methods": [
+    "full_grid",
+    "connected_frontier",
+    "uniform_surrogate",
+    "finite_meanbax"
+  ],
+  "selection": "Two highest equal-weight sums of normalized grid objectives; index tie-break.",
+  "seed": 20261024,
+  "shared_data": "No cross-method query cache or simulator-label reuse.",
+  "validation_access": "Each optimizer receives only learning launches/horizon; validation after selection.",
+  "scope": "Small finite design-set pilot, no error realizations, no industrial speedup contract.",
+  "sources": {
+    "oracle.py": "7fbad498e3115102dfef229fe2bc8b3b4bf17dcaa9804340350d5630789bdec2",
+    "run_pilot.py": "643c76a86079041a1c66483392fb99148dcf7c9c7cf735c3110a53c66ed4180c",
+    "acquisition/finite_meanbax.py": "fe556606c05506b62971b8cabb6cde557c32808b54de9ef32974dda0e286e355",
+    "certificates/grid_bounds.py": "ab6d886fb7384e28fea84926cf5a7c07d54cd6669c77ba556be763b97e511999"
+  }
+}

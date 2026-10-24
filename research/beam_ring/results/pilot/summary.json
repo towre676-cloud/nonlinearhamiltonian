@@ -1,0 +1,1800 @@
+{
+  "status": "passed",
+  "protocol_sha256": "159e5be41fa37717d68dac2aa9a6d6eb1c8748f6a094b0a5b73ae728ad92eb50",
+  "results": [
+    {
+      "method": "full_grid",
+      "selected_designs": [
+        1,
+        8
+      ],
+      "estimated_learning_objectives": [
+        [
+          0.6222222222222222,
+          1.0
+        ],
+        [
+          0.6666666666666666,
+          1.0
+        ],
+        [
+          0.6444444444444445,
+          1.0
+        ],
+        [
+          0.6222222222222222,
+          1.0
+        ],
+        [
+          0.6,
+          1.0
+        ],
+        [
+          0.6,
+          1.0
+        ],
+        [
+          0.6,
+          1.0
+        ],
+        [
+          0.6222222222222222,
+          1.0
+        ],
+        [
+          0.6666666666666666,
+          1.0
+        ]
+      ],
+      "validated_objectives": [
+        [
+          0.6153846153846154,
+          1.0
+        ],
+        [
+          0.6043956043956044,
+          1.0
+        ]
+      ],
+      "learning_ledger": {
+        "stage": "learning",
+        "turns": 64,
+        "physical_points": 558,
+        "batched_tracking_calls": 9,
+        "construction_seconds": 0.48033779200341087,
+        "tracking_seconds": 33.49164937000023,
+        "completed_particle_turns": 26793,
+        "calls": [
+          {
+            "design": 0,
+            "points": 62,
+            "seconds": 3.786148373001197,
+            "purpose": "exhaustive_learning_grid",
+            "stage": "learning"
+          },
+          {
+            "design": 1,
+            "points": 62,
+            "seconds": 3.878375842999958,
+            "purpose": "exhaustive_learning_grid",
+            "stage": "learning"
+          },
+          {
+            "design": 2,
+            "points": 62,
+            "seconds": 3.7340354650004883,
+            "purpose": "exhaustive_learning_grid",
+            "stage": "learning"
+          },
+          {
+            "design": 3,
+            "points": 62,
+            "seconds": 3.662551269000687,
+            "purpose": "exhaustive_learning_grid",
+            "stage": "learning"
+          },
+          {
+            "design": 4,
+            "points": 62,
+            "seconds": 3.798141097999178,
+            "purpose": "exhaustive_learning_grid",
+            "stage": "learning"
+          },
+          {
+            "design": 5,
+            "points": 62,
+            "seconds": 3.5555118350021075,
+            "purpose": "exhaustive_learning_grid",
+            "stage": "learning"
+          },
+          {
+            "design": 6,
+            "points": 62,
+            "seconds": 3.570715294998081,
+            "purpose": "exhaustive_learning_grid",
+            "stage": "learning"
+          },
+          {
+            "design": 7,
+            "points": 62,
+            "seconds": 3.600672267995833,
+            "purpose": "exhaustive_learning_grid",
+            "stage": "learning"
+          },
+          {
+            "design": 8,
+            "points": 62,
+            "seconds": 3.9054979240027023,
+            "purpose": "exhaustive_learning_grid",
+            "stage": "learning"
+          }
+        ]
+      },
+      "validation_ledger": {
+        "stage": "validation",
+        "turns": 256,
+        "physical_points": 232,
+        "batched_tracking_calls": 2,
+        "construction_seconds": 0.10064275399781764,
+        "tracking_seconds": 53.19366882999748,
+        "completed_particle_turns": 43203,
+        "calls": [
+          {
+            "design": 1,
+            "points": 116,
+            "seconds": 26.515388435000204,
+            "purpose": "independent_final_grid",
+            "stage": "validation"
+          },
+          {
+            "design": 8,
+            "points": 116,
+            "seconds": 26.678280394997273,
+            "purpose": "independent_final_grid",
+            "stage": "validation"
+          }
+        ]
+      },
+      "learning_elapsed_seconds": 33.97581205199822,
+      "certificate_seconds": 0.02756948499882128,
+      "workflow_elapsed_seconds": 87.29933388400241,
+      "charged_protocol_preparation_seconds": 4.482431027994608,
+      "charged_total_seconds": 91.78176491199702,
+      "learning_certificates": [
+        {
+          "objective": 0,
+          "certificate": "objective_00_certificate.json",
+          "checker": "passed",
+          "observed_labels": 405
+        },
+        {
+          "objective": 1,
+          "certificate": "objective_01_certificate.json",
+          "checker": "passed",
+          "observed_labels": 153
+        }
+      ],
+      "selected_utc": "2026-10-24T00:25:12.324166+00:00",
+      "scope": "Live finite-set pilot; elapsed includes training/acquisition/final tracking/checkers, excludes installation and source-code development."
+    },
+    {
+      "method": "connected_frontier",
+      "selected_designs": [
+        1,
+        8
+      ],
+      "estimated_learning_objectives": [
+        [
+          0.6222222222222222,
+          1.0
+        ],
+        [
+          0.6666666666666666,
+          1.0
+        ],
+        [
+          0.6444444444444445,
+          1.0
+        ],
+        [
+          0.6222222222222222,
+          1.0
+        ],
+        [
+          0.6,
+          1.0
+        ],
+        [
+          0.6,
+          1.0
+        ],
+        [
+          0.6,
+          1.0
+        ],
+        [
+          0.6222222222222222,
+          1.0
+        ],
+        [
+          0.6666666666666666,
+          1.0
+        ]
+      ],
+      "validated_objectives": [
+        [
+          0.6153846153846154,
+          1.0
+        ],
+        [
+          0.6043956043956044,
+          1.0
+        ]
+      ],
+      "learning_ledger": {
+        "stage": "learning",
+        "turns": 64,
+        "physical_points": 506,
+        "batched_tracking_calls": 148,
+        "construction_seconds": 0.533275253001193,
+        "tracking_seconds": 36.51048355401872,
+        "completed_particle_turns": 26752,
+        "calls": [
+          {
+            "design": 0,
+            "points": 1,
+            "seconds": 0.09793878700293135,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 0,
+            "points": 3,
+            "seconds": 0.2510166720021516,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 0,
+            "points": 5,
+            "seconds": 0.4025787630016566,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 0,
+            "points": 7,
+            "seconds": 0.5498751889972482,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 0,
+            "points": 9,
+            "seconds": 0.5564710539983935,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 0,
+            "points": 8,
+            "seconds": 0.492126860001008,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 0,
+            "points": 6,
+            "seconds": 0.08423697000398533,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 1,
+            "points": 1,
+            "seconds": 0.09590499499608995,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 1,
+            "points": 3,
+            "seconds": 0.24497729599534068,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 1,
+            "points": 5,
+            "seconds": 0.39598512000520714,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 1,
+            "points": 7,
+            "seconds": 0.5440317460015649,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 1,
+            "points": 9,
+            "seconds": 0.5536119800017332,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 1,
+            "points": 8,
+            "seconds": 0.48381184000027133,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 1,
+            "points": 6,
+            "seconds": 0.13600085800135275,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 1,
+            "points": 1,
+            "seconds": 0.04141590699873632,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 2,
+            "points": 1,
+            "seconds": 0.10193242599780206,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 2,
+            "points": 3,
+            "seconds": 0.27291101499577053,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 2,
+            "points": 5,
+            "seconds": 0.4258154380004271,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 2,
+            "points": 7,
+            "seconds": 0.5743120369952521,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 2,
+            "points": 9,
+            "seconds": 0.5705633609977667,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 2,
+            "points": 8,
+            "seconds": 0.4822219400011818,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 2,
+            "points": 6,
+            "seconds": 0.17430618700018385,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 2,
+            "points": 2,
+            "seconds": 0.03219241700571729,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 3,
+            "points": 1,
+            "seconds": 0.1083421939983964,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 3,
+            "points": 3,
+            "seconds": 0.26567734599666437,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 3,
+            "points": 5,
+            "seconds": 0.4262330820056377,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 3,
+            "points": 7,
+            "seconds": 0.6756054750003386,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 3,
+            "points": 9,
+            "seconds": 0.571277741000813,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 3,
+            "points": 8,
+            "seconds": 0.42562049100524746,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 3,
+            "points": 5,
+            "seconds": 0.2114028559954022,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 3,
+            "points": 1,
+            "seconds": 0.023648712995054666,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 4,
+            "points": 1,
+            "seconds": 0.12110637900332222,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 4,
+            "points": 3,
+            "seconds": 0.3035844359983457,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 4,
+            "points": 5,
+            "seconds": 0.4940722459941753,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 4,
+            "points": 7,
+            "seconds": 0.5920708150006249,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 4,
+            "points": 9,
+            "seconds": 0.572897459998785,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 4,
+            "points": 8,
+            "seconds": 0.4335358339958475,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 4,
+            "points": 6,
+            "seconds": 0.12523033199977363,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 5,
+            "points": 1,
+            "seconds": 0.10027382399857743,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 5,
+            "points": 3,
+            "seconds": 0.25091628799418686,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 5,
+            "points": 5,
+            "seconds": 0.4136146410019137,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 5,
+            "points": 7,
+            "seconds": 0.5799005890003173,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 5,
+            "points": 9,
+            "seconds": 0.5987940179984435,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 5,
+            "points": 8,
+            "seconds": 0.361518720004824,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 5,
+            "points": 5,
+            "seconds": 0.06558229799702531,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 6,
+            "points": 1,
+            "seconds": 0.09978007300378522,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 6,
+            "points": 3,
+            "seconds": 0.25463892400148325,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 6,
+            "points": 5,
+            "seconds": 0.41080155100644333,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 6,
+            "points": 7,
+            "seconds": 0.5635085129979416,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 6,
+            "points": 9,
+            "seconds": 0.557781169001828,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 6,
+            "points": 8,
+            "seconds": 0.35555493199353805,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 6,
+            "points": 5,
+            "seconds": 0.0529911749981693,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 7,
+            "points": 1,
+            "seconds": 0.09716921599465422,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 7,
+            "points": 3,
+            "seconds": 0.2525711010021041,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 7,
+            "points": 5,
+            "seconds": 0.40418663500167895,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 7,
+            "points": 7,
+            "seconds": 0.5924024999985704,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 7,
+            "points": 9,
+            "seconds": 0.589155617999495,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 7,
+            "points": 8,
+            "seconds": 0.42808604700258,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 7,
+            "points": 6,
+            "seconds": 0.06857119299820624,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 8,
+            "points": 1,
+            "seconds": 0.09687331199529581,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 8,
+            "points": 3,
+            "seconds": 0.24752171400177758,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 8,
+            "points": 5,
+            "seconds": 0.4046923239948228,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 8,
+            "points": 7,
+            "seconds": 0.5614407699977164,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 8,
+            "points": 9,
+            "seconds": 0.5603319669971825,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 8,
+            "points": 8,
+            "seconds": 0.49787203400046565,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 8,
+            "points": 6,
+            "seconds": 0.15593371300201397,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 8,
+            "points": 1,
+            "seconds": 0.026596620002237614,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 0,
+            "points": 1,
+            "seconds": 0.10445593899930827,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 0,
+            "points": 2,
+            "seconds": 0.18143614099972183,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 0,
+            "points": 2,
+            "seconds": 0.1784230600023875,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 0,
+            "points": 2,
+            "seconds": 0.17974408199370373,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 0,
+            "points": 2,
+            "seconds": 0.17892838799889432,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 0,
+            "points": 2,
+            "seconds": 0.17823992500052555,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 0,
+            "points": 2,
+            "seconds": 0.1785007470025448,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 0,
+            "points": 2,
+            "seconds": 0.17800062600144884,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 0,
+            "points": 2,
+            "seconds": 0.17985683100414462,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 1,
+            "points": 1,
+            "seconds": 0.1022738350002328,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 1,
+            "points": 2,
+            "seconds": 0.18102686499332776,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 1,
+            "points": 2,
+            "seconds": 0.1775766790015041,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 1,
+            "points": 2,
+            "seconds": 0.1839932869988843,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 1,
+            "points": 2,
+            "seconds": 0.183763553002791,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 1,
+            "points": 2,
+            "seconds": 0.18454432299768087,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 1,
+            "points": 2,
+            "seconds": 0.19028826299472712,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 1,
+            "points": 2,
+            "seconds": 0.1826392750008381,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 1,
+            "points": 2,
+            "seconds": 0.18358706800063374,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 2,
+            "points": 1,
+            "seconds": 0.10387177200027509,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 2,
+            "points": 2,
+            "seconds": 0.18845688600413268,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 2,
+            "points": 2,
+            "seconds": 0.17991232399799628,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 2,
+            "points": 2,
+            "seconds": 0.1807927940026275,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 2,
+            "points": 2,
+            "seconds": 0.1807906720059691,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 2,
+            "points": 2,
+            "seconds": 0.18561296700499952,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 2,
+            "points": 2,
+            "seconds": 0.18097649000264937,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 2,
+            "points": 2,
+            "seconds": 0.18019068000285188,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 2,
+            "points": 2,
+            "seconds": 0.1844501540035708,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 3,
+            "points": 1,
+            "seconds": 0.10160859699681168,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 3,
+            "points": 2,
+            "seconds": 0.1859460970008513,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 3,
+            "points": 2,
+            "seconds": 0.18375561100401683,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 3,
+            "points": 2,
+            "seconds": 0.18137382800341584,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 3,
+            "points": 2,
+            "seconds": 0.17538472899468616,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 3,
+            "points": 2,
+            "seconds": 0.17093030599789927,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 3,
+            "points": 2,
+            "seconds": 0.17439620599907357,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 3,
+            "points": 2,
+            "seconds": 0.17735697900207015,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 3,
+            "points": 2,
+            "seconds": 0.19342344399774447,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 4,
+            "points": 1,
+            "seconds": 0.10266741899977205,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 4,
+            "points": 2,
+            "seconds": 0.18379552099941066,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 4,
+            "points": 2,
+            "seconds": 0.1863572540023597,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 4,
+            "points": 2,
+            "seconds": 0.1846491469987086,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 4,
+            "points": 2,
+            "seconds": 0.18074575899663614,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 4,
+            "points": 2,
+            "seconds": 0.18467516000237083,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 4,
+            "points": 2,
+            "seconds": 0.18042846800381085,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 4,
+            "points": 2,
+            "seconds": 0.17196154299745103,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 4,
+            "points": 2,
+            "seconds": 0.17226618000131566,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 5,
+            "points": 1,
+            "seconds": 0.10348152100050356,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 5,
+            "points": 2,
+            "seconds": 0.20085100400319789,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 5,
+            "points": 2,
+            "seconds": 0.1815715530028683,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 5,
+            "points": 2,
+            "seconds": 0.17943764200026635,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 5,
+            "points": 2,
+            "seconds": 0.1805220289970748,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 5,
+            "points": 2,
+            "seconds": 0.17603349299315596,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 5,
+            "points": 2,
+            "seconds": 0.17771562800044194,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 5,
+            "points": 2,
+            "seconds": 0.17843462599557824,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 5,
+            "points": 2,
+            "seconds": 0.17677134100085823,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 6,
+            "points": 1,
+            "seconds": 0.09858216599968728,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 6,
+            "points": 2,
+            "seconds": 0.191105231999245,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 6,
+            "points": 2,
+            "seconds": 0.17474887700518593,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 6,
+            "points": 2,
+            "seconds": 0.17578918900107965,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 6,
+            "points": 2,
+            "seconds": 0.18160226199688623,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 6,
+            "points": 2,
+            "seconds": 0.177498684002785,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 6,
+            "points": 2,
+            "seconds": 0.17612105700391112,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 6,
+            "points": 2,
+            "seconds": 0.1818415410016314,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 6,
+            "points": 2,
+            "seconds": 0.1785206670028856,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 7,
+            "points": 1,
+            "seconds": 0.10071529699780513,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 7,
+            "points": 2,
+            "seconds": 0.17978257100185147,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 7,
+            "points": 2,
+            "seconds": 0.18112387400469743,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 7,
+            "points": 2,
+            "seconds": 0.17723581899917917,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 7,
+            "points": 2,
+            "seconds": 0.17718913000135217,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 7,
+            "points": 2,
+            "seconds": 0.17837636100011878,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 7,
+            "points": 2,
+            "seconds": 0.1788869669981068,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 7,
+            "points": 2,
+            "seconds": 0.18117515999620082,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 7,
+            "points": 2,
+            "seconds": 0.17669627000577748,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 8,
+            "points": 1,
+            "seconds": 0.10172136700566625,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 8,
+            "points": 2,
+            "seconds": 0.18131455900584115,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 8,
+            "points": 2,
+            "seconds": 0.17977652200352168,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 8,
+            "points": 2,
+            "seconds": 0.18017461899580667,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 8,
+            "points": 2,
+            "seconds": 0.17784378200303763,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 8,
+            "points": 2,
+            "seconds": 0.1795507130009355,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 8,
+            "points": 2,
+            "seconds": 0.19001572699926328,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 8,
+            "points": 2,
+            "seconds": 0.18473048599844333,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          },
+          {
+            "design": 8,
+            "points": 2,
+            "seconds": 0.18588420699961716,
+            "purpose": "connected_frontier",
+            "stage": "learning"
+          }
+        ]
+      },
+      "validation_ledger": {
+        "stage": "validation",
+        "turns": 256,
+        "physical_points": 232,
+        "batched_tracking_calls": 2,
+        "construction_seconds": 0.09940214600646868,
+        "tracking_seconds": 52.85166910599946,
+        "completed_particle_turns": 43203,
+        "calls": [
+          {
+            "design": 1,
+            "points": 116,
+            "seconds": 26.482757502999448,
+            "purpose": "independent_final_grid",
+            "stage": "validation"
+          },
+          {
+            "design": 8,
+            "points": 116,
+            "seconds": 26.368911603000015,
+            "purpose": "independent_final_grid",
+            "stage": "validation"
+          }
+        ]
+      },
+      "learning_elapsed_seconds": 37.076331726006174,
+      "certificate_seconds": 0.023238301000674255,
+      "workflow_elapsed_seconds": 90.05266014900553,
+      "charged_protocol_preparation_seconds": 4.482431027994608,
+      "charged_total_seconds": 94.53509117700014,
+      "learning_certificates": [
+        {
+          "objective": 0,
+          "certificate": "objective_00_certificate.json",
+          "checker": "passed",
+          "observed_labels": 353
+        },
+        {
+          "objective": 1,
+          "certificate": "objective_01_certificate.json",
+          "checker": "passed",
+          "observed_labels": 153
+        }
+      ],
+      "selected_utc": "2026-10-24T00:26:42.729535+00:00",
+      "scope": "Live finite-set pilot; elapsed includes training/acquisition/final tracking/checkers, excludes installation and source-code development."
+    },
+    {
+      "method": "uniform_surrogate",
+      "selected_designs": [
+        4,
+        2
+      ],
+      "estimated_learning_objectives": [
+        [
+          0.4666666666666667,
+          1.0
+        ],
+        [
+          0.4888888888888889,
+          1.0
+        ],
+        [
+          0.6,
+          1.0
+        ],
+        [
+          0.4,
+          1.0
+        ],
+        [
+          0.6222222222222222,
+          1.0
+        ],
+        [
+          0.5333333333333333,
+          1.0
+        ],
+        [
+          0.5111111111111111,
+          1.0
+        ],
+        [
+          0.5333333333333333,
+          1.0
+        ],
+        [
+          0.5777777777777777,
+          1.0
+        ]
+      ],
+      "validated_objectives": [
+        [
+          0.6373626373626373,
+          1.0
+        ],
+        [
+          0.6593406593406593,
+          1.0
+        ]
+      ],
+      "learning_ledger": {
+        "stage": "learning",
+        "turns": 64,
+        "physical_points": 144,
+        "batched_tracking_calls": 24,
+        "construction_seconds": 0.5030377520015463,
+        "tracking_seconds": 9.069024997013912,
+        "completed_particle_turns": 6779,
+        "calls": [
+          {
+            "design": 2,
+            "points": 10,
+            "seconds": 0.7649204089975683,
+            "purpose": "initial_data",
+            "stage": "learning"
+          },
+          {
+            "design": 6,
+            "points": 17,
+            "seconds": 0.9990820640014135,
+            "purpose": "initial_data",
+            "stage": "learning"
+          },
+          {
+            "design": 1,
+            "points": 11,
+            "seconds": 0.6541818870027782,
+            "purpose": "initial_data",
+            "stage": "learning"
+          },
+          {
+            "design": 5,
+            "points": 15,
+            "seconds": 0.7290519249945646,
+            "purpose": "initial_data",
+            "stage": "learning"
+          },
+          {
+            "design": 7,
+            "points": 7,
+            "seconds": 0.42379611599608324,
+            "purpose": "initial_data",
+            "stage": "learning"
+          },
+          {
+            "design": 8,
+            "points": 10,
+            "seconds": 0.7416363800002728,
+            "purpose": "initial_data",
+            "stage": "learning"
+          },
+          {
+            "design": 0,
+            "points": 10,
+            "seconds": 0.4545927159997518,
+            "purpose": "initial_data",
+            "stage": "learning"
+          },
+          {
+            "design": 4,
+            "points": 10,
+            "seconds": 0.6154916249943199,
+            "purpose": "initial_data",
+            "stage": "learning"
+          },
+          {
+            "design": 3,
+            "points": 6,
+            "seconds": 0.21800099000392947,
+            "purpose": "initial_data",
+            "stage": "learning"
+          },
+          {
+            "design": 0,
+            "points": 5,
+            "seconds": 0.34317575500608655,
+            "purpose": "round_1",
+            "stage": "learning"
+          },
+          {
+            "design": 1,
+            "points": 4,
+            "seconds": 0.26893605000077514,
+            "purpose": "round_1",
+            "stage": "learning"
+          },
+          {
+            "design": 8,
+            "points": 2,
+            "seconds": 0.10388077900279313,
+            "purpose": "round_1",
+            "stage": "learning"
+          },
+          {
+            "design": 5,
+            "points": 3,
+            "seconds": 0.26682939000602346,
+            "purpose": "round_1",
+            "stage": "learning"
+          },
+          {
+            "design": 6,
+            "points": 4,
+            "seconds": 0.29459377900639083,
+            "purpose": "round_1",
+            "stage": "learning"
+          },
+          {
+            "design": 7,
+            "points": 3,
+            "seconds": 0.12083307699504076,
+            "purpose": "round_1",
+            "stage": "learning"
+          },
+          {
+            "design": 4,
+            "points": 2,
+            "seconds": 0.1792677459961851,
+            "purpose": "round_1",
+            "stage": "learning"
+          },
+          {
+            "design": 2,
+            "points": 1,
+            "seconds": 0.11027950100105954,
+            "purpose": "round_1",
+            "stage": "learning"
+          },
+          {
+            "design": 1,
+            "points": 3,
+            "seconds": 0.26108328699774574,
+            "purpose": "round_2",
+            "stage": "learning"
+          },
+          {
+            "design": 7,
+            "points": 4,
+            "seconds": 0.2584094449994154,
+            "purpose": "round_2",
+            "stage": "learning"
+          },
+          {
+            "design": 8,
+            "points": 5,
+            "seconds": 0.2893891900021117,
+            "purpose": "round_2",
+            "stage": "learning"
+          },
+          {
+            "design": 3,
+            "points": 4,
+            "seconds": 0.3150516450041323,
+            "purpose": "round_2",
+            "stage": "learning"
+          },
+          {
+            "design": 5,
+            "points": 2,
+            "seconds": 0.11747188300068956,
+            "purpose": "round_2",
+            "stage": "learning"
+          },
+          {
+            "design": 0,
+            "points": 2,
+            "seconds": 0.18835345900151879,
+            "purpose": "round_2",
+            "stage": "learning"
+          },
+          {
+            "design": 4,
+            "points": 4,
+            "seconds": 0.35071589900326217,
+            "purpose": "round_2",
+            "stage": "learning"
+          }
+        ]
+      },
+      "validation_ledger": {
+        "stage": "validation",
+        "turns": 256,
+        "physical_points": 232,
+        "batched_tracking_calls": 2,
+        "construction_seconds": 0.10664656899461988,
+        "tracking_seconds": 54.732334598003945,
+        "completed_particle_turns": 44296,
+        "calls": [
+          {
+            "design": 4,
+            "points": 116,
+            "seconds": 27.351319483001134,
+            "purpose": "independent_final_grid",
+            "stage": "validation"
+          },
+          {
+            "design": 2,
+            "points": 116,
+            "seconds": 27.38101511500281,
+            "purpose": "independent_final_grid",
+            "stage": "validation"
+          }
+        ]
+      },
+      "learning_elapsed_seconds": 10.25282507600059,
+      "certificate_seconds": 0.013958404000732116,
+      "workflow_elapsed_seconds": 65.10753371100145,
+      "charged_protocol_preparation_seconds": 4.482431027994608,
+      "charged_total_seconds": 69.58996473899606,
+      "learning_certificates": [
+        {
+          "objective": 0,
+          "certificate": "objective_00_certificate.json",
+          "checker": "passed",
+          "observed_labels": 105
+        },
+        {
+          "objective": 1,
+          "certificate": "objective_01_certificate.json",
+          "checker": "passed",
+          "observed_labels": 39
+        }
+      ],
+      "selected_utc": "2026-10-24T00:27:45.969597+00:00",
+      "scope": "Live finite-set pilot; elapsed includes training/acquisition/final tracking/checkers, excludes installation and source-code development."
+    },
+    {
+      "method": "finite_meanbax",
+      "selected_designs": [
+        2,
+        8
+      ],
+      "estimated_learning_objectives": [
+        [
+          0.4666666666666667,
+          1.0
+        ],
+        [
+          0.4444444444444444,
+          1.0
+        ],
+        [
+          0.6888888888888889,
+          1.0
+        ],
+        [
+          0.2,
+          1.0
+        ],
+        [
+          0.5777777777777777,
+          1.0
+        ],
+        [
+          0.4222222222222222,
+          1.0
+        ],
+        [
+          0.37777777777777777,
+          1.0
+        ],
+        [
+          0.6222222222222222,
+          1.0
+        ],
+        [
+          0.6444444444444445,
+          1.0
+        ]
+      ],
+      "validated_objectives": [
+        [
+          0.6593406593406593,
+          1.0
+        ],
+        [
+          0.6043956043956044,
+          1.0
+        ]
+      ],
+      "learning_ledger": {
+        "stage": "learning",
+        "turns": 64,
+        "physical_points": 106,
+        "batched_tracking_calls": 11,
+        "construction_seconds": 0.52074713598995,
+        "tracking_seconds": 6.11489904300106,
+        "completed_particle_turns": 4660,
+        "calls": [
+          {
+            "design": 2,
+            "points": 10,
+            "seconds": 0.7456152219965588,
+            "purpose": "initial_data",
+            "stage": "learning"
+          },
+          {
+            "design": 6,
+            "points": 17,
+            "seconds": 0.996490689998609,
+            "purpose": "initial_data",
+            "stage": "learning"
+          },
+          {
+            "design": 1,
+            "points": 11,
+            "seconds": 0.6669424610008718,
+            "purpose": "initial_data",
+            "stage": "learning"
+          },
+          {
+            "design": 5,
+            "points": 15,
+            "seconds": 0.7607109119999222,
+            "purpose": "initial_data",
+            "stage": "learning"
+          },
+          {
+            "design": 7,
+            "points": 7,
+            "seconds": 0.43516571900545387,
+            "purpose": "initial_data",
+            "stage": "learning"
+          },
+          {
+            "design": 8,
+            "points": 10,
+            "seconds": 0.7820337540033506,
+            "purpose": "initial_data",
+            "stage": "learning"
+          },
+          {
+            "design": 0,
+            "points": 10,
+            "seconds": 0.43902278700261377,
+            "purpose": "initial_data",
+            "stage": "learning"
+          },
+          {
+            "design": 4,
+            "points": 10,
+            "seconds": 0.6269917559984606,
+            "purpose": "initial_data",
+            "stage": "learning"
+          },
+          {
+            "design": 3,
+            "points": 6,
+            "seconds": 0.18374461199709913,
+            "purpose": "initial_data",
+            "stage": "learning"
+          },
+          {
+            "design": 8,
+            "points": 6,
+            "seconds": 0.3425936640051077,
+            "purpose": "round_1",
+            "stage": "learning"
+          },
+          {
+            "design": 8,
+            "points": 4,
+            "seconds": 0.1355874659930123,
+            "purpose": "round_2",
+            "stage": "learning"
+          }
+        ]
+      },
+      "validation_ledger": {
+        "stage": "validation",
+        "turns": 256,
+        "physical_points": 232,
+        "batched_tracking_calls": 2,
+        "construction_seconds": 0.1005070139945019,
+        "tracking_seconds": 55.002322637999896,
+        "completed_particle_turns": 43864,
+        "calls": [
+          {
+            "design": 2,
+            "points": 116,
+            "seconds": 27.935610802000156,
+            "purpose": "independent_final_grid",
+            "stage": "validation"
+          },
+          {
+            "design": 8,
+            "points": 116,
+            "seconds": 27.06671183599974,
+            "purpose": "independent_final_grid",
+            "stage": "validation"
+          }
+        ]
+      },
+      "learning_elapsed_seconds": 6.859171311996761,
+      "certificate_seconds": 0.01344048600003589,
+      "workflow_elapsed_seconds": 61.97701857799984,
+      "charged_protocol_preparation_seconds": 4.482431027994608,
+      "charged_total_seconds": 66.45944960599445,
+      "learning_certificates": [
+        {
+          "objective": 0,
+          "certificate": "objective_00_certificate.json",
+          "checker": "passed",
+          "observed_labels": 77
+        },
+        {
+          "objective": 1,
+          "certificate": "objective_01_certificate.json",
+          "checker": "passed",
+          "observed_labels": 29
+        }
+      ],
+      "selected_utc": "2026-10-24T00:28:47.693071+00:00",
+      "scope": "Live finite-set pilot; elapsed includes training/acquisition/final tracking/checkers, excludes installation and source-code development."
+    }
+  ],
+  "tenfold_established": false,
+  "scope": "Small finite design-set pilot, no error realizations, no industrial speedup contract."
+}
