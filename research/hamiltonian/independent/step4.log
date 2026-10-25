@@ -1,0 +1,6 @@
+delta=0: 120 t_3 + Bt(n,t) - 108 P_delta(n) = 0  (identity: True)
+delta=1: 120 t_3 + Bt(n,t) - 108 P_delta(n) = 0  (identity: True)
+delta=2: 120 t_3 + Bt(n,t) - 108 P_delta(n) = 0  (identity: True)
+delta=0: det(n) = -216*n*(n - 6)*(n - 2)*(n - 1)**2*(n + 8), roots = [-8, 0, 1, 2, 6]
+delta=1: det(n) = -54*(n - 8)*(n - 2)**2*(n - 1)**2*(n + 8), roots = [-8, 1, 2, 8]
+wrote step4_results.json

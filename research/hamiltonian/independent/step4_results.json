@@ -1,0 +1,30 @@
+{
+ "identities": {
+  "P_delta_identity_0": true,
+  "P_delta_identity_1": true,
+  "P_delta_identity_2": true
+ },
+ "det": {
+  "0": {
+   "det": "-216*n*(n - 6)*(n - 2)*(n - 1)**2*(n + 8)",
+   "rational_roots": [
+    "-8",
+    "0",
+    "1",
+    "2",
+    "6"
+   ]
+  },
+  "1": {
+   "det": "-54*(n - 8)*(n - 2)**2*(n - 1)**2*(n + 8)",
+   "rational_roots": [
+    "-8",
+    "1",
+    "2",
+    "8"
+   ]
+  }
+ },
+ "A_coeff": "120*(n-K+3)_3",
+ "C_coeff": "-120*(K+3)_3"
+}

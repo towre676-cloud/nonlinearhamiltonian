@@ -1,0 +1,6 @@
+(a) Phi coefficient formula verified: True
+delta=0: det(n) = -216*n*(n - 6)*(n - 2)*(n - 1)**2*(n + 8) / 1
+delta=1: det(n) = -54*(n - 8)*(n - 2)**2*(n - 1)**2*(n + 8) / 1
+(b) top closed forms verified against step2 (n=15..63, both eps): True
+(c) determinant closed forms verified against step2 (all 2-dim chains): True
+wrote step3_results.json

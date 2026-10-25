@@ -1,0 +1,14 @@
+{
+ "phi_formula_verified": true,
+ "top_closed_forms_verified": true,
+ "det_closed_forms_verified": true,
+ "P_delta": {
+  "0": "n*(n - 2)*(n - 1)",
+  "1": "(n - 2)**2*(n - 1)",
+  "2": "(n - 4)*(n - 2)*(n - 1)"
+ },
+ "det_delta_factored": {
+  "0": "-216*n*(n - 6)*(n - 2)*(n - 1)**2*(n + 8)",
+  "1": "-54*(n - 8)*(n - 2)**2*(n - 1)**2*(n + 8)"
+ }
+}
