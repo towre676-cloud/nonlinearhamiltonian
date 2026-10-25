@@ -240,9 +240,11 @@ class PureCompositionRegressions(unittest.TestCase):
         self.assertEqual(filtered_dim(TR.mul(q, TR.power(J, 2)), 8, 4), 3)
 
     def test_unknown_and_forged_claims(self):
-        result = TR.classify({(6, 0): F(1), (2, 2): F(1)})
+        result = TR.classify({(6, 0): F(1), (2, 2): F(1)}, routes='core_overlap')
         self.assertFalse(result['proved'])
         self.assertEqual(result['core'], 'unclassified')
+        result = TR.classify({(6, 0): F(1), (2, 2): F(1)})      # check_gauge line: Theorem TE
+        self.assertEqual((result['route'], result['proved'], result['core']), ('TE', True, 'span{1, H}'))
         H = {(4, 0): F(1), (2, 1): F(2), (0, 2): F(1)}
         cert = TR.certify(H)
         cert['claim']['core'] = 'span{1, H}'
@@ -431,14 +433,13 @@ class Triangular(unittest.TestCase):
         self.assertTrue(CT.span_ok(stationary, [{(0, 0): F(1)}, J, stationary]))
 
         # The former outside-list conjecture P004 misses this proved PP
-        # exception. A detector miss must not reinstate a collapse claim.
+        # exception; it is the extended K3 (beta G term) of the check_gauge line.
         outside_list = TR.add(TR.mul(q, TR.power(J, 2)), J)
         for member in (outside_list, linmap(outside_list, 1, 1, 0, 1, F(1, 2), -1)):
             result = TR.classify(member)
             self.assertTrue(result['proved'])
             self.assertEqual(result['route'], 'PP')
-            with self.assertRaises(ValueError):
-                CT.detect_pure(member)
+            self.assertEqual(CT.detect_pure(member)['family'], 'K3')
         self.assertTrue(CT.span_ok(outside_list, [{(0, 0): F(1)}, J, outside_list]))
 
 

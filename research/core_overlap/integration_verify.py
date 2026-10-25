@@ -65,8 +65,10 @@ def run():
     decision = TR.classify(basic)
     assert decision['generator_degree'] == 3
     assert PP.bracket(basic, generator) == basic
-    # The original conjectural pure-top result is no longer emitted here.
-    assert TR.classify({(6, 0): F(1), (2, 2): F(1)})['proved'] is False
+    # The original conjectural pure-top result is no longer emitted by these
+    # routes; after integration the check_gauge line proves it (Theorem TE).
+    assert TR.classify({(6, 0): F(1), (2, 2): F(1)}, routes='core_overlap')['proved'] is False
+    assert TR.classify({(6, 0): F(1), (2, 2): F(1)})['route'] == 'TE'
     return {'status': 'passed', 'counts': counts,
             'basic_counterexample': {'H': PP.terms(basic), 'G': PP.terms(generator),
                                     'decision': decision},
