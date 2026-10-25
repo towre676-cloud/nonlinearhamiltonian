@@ -1,0 +1,47 @@
+{
+  "scope": "Exact classical polynomial algebra for declared prescribed controls; no physical speedup claim",
+  "claims": [
+    {
+      "id": "OBS-COMMON-MINIMAL-001",
+      "status": "proved_algebraic_with_exact_certificates",
+      "statement": "The requested physical first and second moments generate the complete weighted space2a+b<=8 for fixed nonzero shear, and2a+b<=4 at zero shear, under the three declared independent generators.",
+      "dimensions": {"nonzero_shear": 25, "zero_shear": 9},
+      "proof": "THEOREMS.md section1",
+      "boundary": "Minimal common polynomial space for these outputs and generator set; not every fixed Hamiltonian or general beamline."
+    },
+    {
+      "id": "OBS-CONTROL-OBSTRUCTION-001",
+      "status": "proved_all_degree_with_exact_replays",
+      "statement": "Adding Q**2 forbids any finite common polynomial space containing the outputs; adding physical p**2 has the same consequence when the shear is nonzero.",
+      "proof": "THEOREMS.md sections2and3",
+      "boundary": "Does not exclude nonpolynomial representations, approximate models or exact summaries for a finite word."
+    },
+    {
+      "id": "OBS-POSITIVE-CLOUD-001",
+      "status": "exact_positive_probability_counterexample",
+      "statement": "Two positive finite laws agree on all25 adapted moments but have different future physical second moments and projected squared emittance after the declared added-control word.",
+      "physical_second_moment_difference": "-10/9",
+      "projected_emittance_squared_difference": "-1353815/129654",
+      "certificate": "results/missing_information_witness.json",
+      "boundary": "Formal canonical units; finite clouds, not smooth Vlasov phase-density or measured-beam evidence."
+    },
+    {
+      "id": "OBS-BACKBONE-001",
+      "status": "exact_identity_and_conditional_local_bound",
+      "statement": "Completing the square isolates Delta=d-c**2/(4a); shared-shear and local residual-force bounds are exactly checkable.",
+      "proof": "THEOREMS.md section5",
+      "boundary": "Requires a!=0 for this single-H route and independently valid support bounds; no propagated trajectory enclosure."
+    },
+    {
+      "id": "OBS-FINITE-WORD-001",
+      "status": "executed_exact_pullbacks",
+      "statement": "The saved finite-word examples yield exact sufficient initial monomial summaries of25 and81 terms.",
+      "boundary": "The81-term set is not claimed minimal; no intermediate aperture safety or infinite-horizon guarantee."
+    },
+    {
+      "id": "OBS-INDUSTRIAL-001",
+      "status": "unproved_target",
+      "statement": "Transfer to a self-consistent physical beam predictor and a tenfold end-to-end gain remain unestablished."
+    }
+  ]
+}

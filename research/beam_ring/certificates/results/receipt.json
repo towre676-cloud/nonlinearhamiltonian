@@ -1,0 +1,22 @@
+{
+  "status": "passed",
+  "tests_run": 12,
+  "exhaustive_partial_labelings": 729,
+  "exhaustive_completion_instances": 4096,
+  "synthetic_certificate_check": {
+    "status": "passed",
+    "manifest_sha256": "a427cac252036ddf674bc21548a206d78e8fa21aae37f4df83b9ad456e9d0c25",
+    "events_sha256": "b9447c716ab731818c3ce4bbc89eab3a843bffe9afdd4a642b359214d023db1d",
+    "rows_checked": 4,
+    "strict_pareto_exclusions": 2,
+    "unresolved_table_entries": 8,
+    "scope": "Declared finite graph/weights and supplied deterministic-prefix observations only; no simulator truth or continuous stability proof."
+  },
+  "source_sha256": {
+    "grid_bounds.py": "ab6d886fb7384e28fea84926cf5a7c07d54cd6669c77ba556be763b97e511999",
+    "check_grid_certificate.py": "6fbb4e6908d8d702d65b457c901bc9625859a4307282882ce29c7aae9cceacc3",
+    "test_grid_bounds.py": "2307814edfe71fbb8c256d3622163b791ede43a2acc23bd568f5415a6481e9a5",
+    "run_demo.py": "675ad93f74bcdfeffaf75629eba0141ea3320807d4697c724f549889d81f54fa"
+  },
+  "scope": "Exact finite-table/graph semantics and supplied event consistency; no physical tracking or tenfold result."
+}

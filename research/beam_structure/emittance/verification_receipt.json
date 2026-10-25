@@ -1,0 +1,31 @@
+{
+  "status": "passed",
+  "exact_unittest_cases": 14,
+  "random_scalar_clouds": 240,
+  "random_vector_clouds": 90,
+  "arithmetic": "Python arbitrary precision integers/Fraction",
+  "test_failures": 0,
+  "test_errors": 0,
+  "physical_replay": {
+    "input_sha256": "30b4b43537d42e4eb7e5e8849be9b3e6688117294cac72b0cbfa47f07cd1db02",
+    "cases": 63,
+    "plane_kicks": 126,
+    "scope": "Retrospective numeric diagnostics; no physical enclosure or predictive coverage."
+  },
+  "new_particle_solver_calls": 0,
+  "conditional_predictor_force_premises_verified": false,
+  "industrial_speedup_established": false,
+  "source_sha256": {
+    "README.md": "798d1b4a3f4cf2335c7ac43b83a1ed74e6ffdf7f24f88bc3e395ce6bbbcc360b",
+    "THEORY.md": "be31b80dc63dd06025aa80d2c103eddc83a37648d2563973bd83c3ca0d22d5f9",
+    "exact.py": "a65430b11cc2f5550765e7dd3aaaf5b06171b266424f2d86f4b447e3327c86ca",
+    "physical_diagnostics.py": "a8c0d91ad41e8de238b69b927d438546a18ad8120d07d33c5822b44bd6f8378a",
+    "physical_inputs.json": "30b4b43537d42e4eb7e5e8849be9b3e6688117294cac72b0cbfa47f07cd1db02",
+    "predictor.py": "516e9fd881d41c25aace53dd785a2d1743b262bcbfd0fb7414d2ec448a5dde5d",
+    "prepare_physical_inputs.py": "79efb6086d93ef8f6e4e87e02d214835d6c4dfdf4045ece7386792b06fdf0a2d",
+    "replay.py": "226be9da27b9a25ec00dba38be52391fef49f50efe86f497a2d0f8cae7278590",
+    "review_note.md": "7849628cc5b5d91d790972085b481aab373a24034556ca097ab78a000b85d500",
+    "test_exact.py": "f33c9b0619b8f2fe9832aaaee3e5512f2355ba176311fc7e3af233652f171794",
+    "test_predictor.py": "96009498ebd2d066bc5f2e71c9cc953d73fdd3e39ec74a8fac969499f346af9f"
+  }
+}

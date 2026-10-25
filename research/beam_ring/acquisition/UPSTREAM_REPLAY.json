@@ -1,0 +1,76 @@
+{
+  "status": "passed",
+  "upstream_commit": "82766c7fb22ec675025d6485ce11761cdc7a6056",
+  "upstream_code_changed": false,
+  "source_files_hash_checked": 10,
+  "official_demo": {
+    "returncode": 0,
+    "oracle_evaluations": 60,
+    "wall_seconds": 0.10767954699986149,
+    "algorithm": "upstream GreedySampling with DummyModel"
+  },
+  "finite_table_adapter": {
+    "engine": "unchanged upstream mpbax.core.engine.Engine",
+    "wall_seconds": 0.8338878010035842,
+    "physical_cost": {
+      "phase": "learning",
+      "requested_rows": 14,
+      "successful_physics_rows": 14,
+      "failed_physics_rows": 0,
+      "cache_hits": 0,
+      "physics_seconds": 3.210000431863591e-05
+    },
+    "last_selection": {
+      "reason": "predicted_pareto_boundary",
+      "predicted_objectives": [
+        [
+          0.4444444444444444
+        ],
+        [
+          0.3333333333333333
+        ],
+        [
+          0.4444444444444444
+        ]
+      ],
+      "predicted_pareto_designs": [
+        0,
+        2
+      ],
+      "selected_designs": [
+        0,
+        2
+      ],
+      "candidate_points": 4,
+      "selected_queries": [
+        [
+          0,
+          0,
+          4
+        ],
+        [
+          0,
+          0,
+          5
+        ],
+        [
+          0,
+          2,
+          4
+        ]
+      ],
+      "selection_seconds": 0.00017343999934382737,
+      "scope": "Heuristic acquisition only; predictions never become truth labels."
+    },
+    "model_fit": {
+      "training_seconds": 0.010136611002963036,
+      "rows": 14,
+      "features": 2,
+      "iterations": 84,
+      "warnings": [],
+      "loss": 0.000737195511917508,
+      "implementation": "sklearn MLPRegressor, L-BFGS, clipped regression"
+    }
+  },
+  "scope": "Synthetic framework/protocol integration only; no physical optimizer gain or DAMA-BAX reproduction."
+}

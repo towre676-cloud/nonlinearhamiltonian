@@ -1,0 +1,175 @@
+{
+  "method": "full_grid",
+  "selected_designs": [
+    1,
+    8
+  ],
+  "estimated_learning_objectives": [
+    [
+      0.6222222222222222,
+      1.0
+    ],
+    [
+      0.6666666666666666,
+      1.0
+    ],
+    [
+      0.6444444444444445,
+      1.0
+    ],
+    [
+      0.6222222222222222,
+      1.0
+    ],
+    [
+      0.6,
+      1.0
+    ],
+    [
+      0.6,
+      1.0
+    ],
+    [
+      0.6,
+      1.0
+    ],
+    [
+      0.6222222222222222,
+      1.0
+    ],
+    [
+      0.6666666666666666,
+      1.0
+    ]
+  ],
+  "validated_objectives": [
+    [
+      0.6153846153846154,
+      1.0
+    ],
+    [
+      0.6043956043956044,
+      1.0
+    ]
+  ],
+  "learning_ledger": {
+    "stage": "learning",
+    "turns": 64,
+    "physical_points": 558,
+    "batched_tracking_calls": 9,
+    "construction_seconds": 0.48033779200341087,
+    "tracking_seconds": 33.49164937000023,
+    "completed_particle_turns": 26793,
+    "calls": [
+      {
+        "design": 0,
+        "points": 62,
+        "seconds": 3.786148373001197,
+        "purpose": "exhaustive_learning_grid",
+        "stage": "learning"
+      },
+      {
+        "design": 1,
+        "points": 62,
+        "seconds": 3.878375842999958,
+        "purpose": "exhaustive_learning_grid",
+        "stage": "learning"
+      },
+      {
+        "design": 2,
+        "points": 62,
+        "seconds": 3.7340354650004883,
+        "purpose": "exhaustive_learning_grid",
+        "stage": "learning"
+      },
+      {
+        "design": 3,
+        "points": 62,
+        "seconds": 3.662551269000687,
+        "purpose": "exhaustive_learning_grid",
+        "stage": "learning"
+      },
+      {
+        "design": 4,
+        "points": 62,
+        "seconds": 3.798141097999178,
+        "purpose": "exhaustive_learning_grid",
+        "stage": "learning"
+      },
+      {
+        "design": 5,
+        "points": 62,
+        "seconds": 3.5555118350021075,
+        "purpose": "exhaustive_learning_grid",
+        "stage": "learning"
+      },
+      {
+        "design": 6,
+        "points": 62,
+        "seconds": 3.570715294998081,
+        "purpose": "exhaustive_learning_grid",
+        "stage": "learning"
+      },
+      {
+        "design": 7,
+        "points": 62,
+        "seconds": 3.600672267995833,
+        "purpose": "exhaustive_learning_grid",
+        "stage": "learning"
+      },
+      {
+        "design": 8,
+        "points": 62,
+        "seconds": 3.9054979240027023,
+        "purpose": "exhaustive_learning_grid",
+        "stage": "learning"
+      }
+    ]
+  },
+  "validation_ledger": {
+    "stage": "validation",
+    "turns": 256,
+    "physical_points": 232,
+    "batched_tracking_calls": 2,
+    "construction_seconds": 0.10064275399781764,
+    "tracking_seconds": 53.19366882999748,
+    "completed_particle_turns": 43203,
+    "calls": [
+      {
+        "design": 1,
+        "points": 116,
+        "seconds": 26.515388435000204,
+        "purpose": "independent_final_grid",
+        "stage": "validation"
+      },
+      {
+        "design": 8,
+        "points": 116,
+        "seconds": 26.678280394997273,
+        "purpose": "independent_final_grid",
+        "stage": "validation"
+      }
+    ]
+  },
+  "learning_elapsed_seconds": 33.97581205199822,
+  "certificate_seconds": 0.02756948499882128,
+  "workflow_elapsed_seconds": 87.29933388400241,
+  "charged_protocol_preparation_seconds": 4.482431027994608,
+  "charged_total_seconds": 91.78176491199702,
+  "learning_certificates": [
+    {
+      "objective": 0,
+      "certificate": "objective_00_certificate.json",
+      "checker": "passed",
+      "observed_labels": 405
+    },
+    {
+      "objective": 1,
+      "certificate": "objective_01_certificate.json",
+      "checker": "passed",
+      "observed_labels": 153
+    }
+  ],
+  "selected_utc": "2026-10-24T00:25:12.324166+00:00",
+  "scope": "Live finite-set pilot; elapsed includes training/acquisition/final tracking/checkers, excludes installation and source-code development."
+}

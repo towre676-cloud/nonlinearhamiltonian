@@ -1,0 +1,61 @@
+{
+  "status": "qualified_mathematical_implementation_review_with_explicit_limits",
+  "review_scope": "Selected BNL public CB demonstration model at fixed delta0; exact real-arithmetic transverse map reduction plus empirical floating-point qualification.",
+  "source_sha256": {
+    "compiler.py": "dfcc62a9e70623d3b2f3d8d0358163724219e38495465ed68bd2018bcbe6cb91",
+    "compiler_fused.py": "24ad0d92e7de17be5a689707c0105f7345805e7d5a7d5cc7574aea76b4d914fa",
+    "FixedDeltaBlockPass.c": "8d5f386081e17b0abb0405eea89bf68b8c9e7abe532334824d611d847d2f74d0"
+  },
+  "primary_kernel_sources": [
+    "atintegrators/driftkick.c",
+    "atintegrators/DriftPass.c",
+    "atintegrators/StrMPoleSymplectic4Pass.c",
+    "atintegrators/BndMPoleSymplectic4Pass.c",
+    "atintegrators/atphyslib.c",
+    "atintegrators/Matrix66Pass.c",
+    "atintegrators/AperturePass.c",
+    "pyat/at.c"
+  ],
+  "findings": [
+    {
+      "claim": "Affine fixed-delta transverse map for eligible drifts, pure quadrupoles and MaxOrder1 bends",
+      "status": "verified_against_primary_C_formulas",
+      "detail": "Same fourth-order split constants and actual NumIntSteps are composed. Bend edge methods0,1,2 remain linear at fixed delta; method3 and quad fringes must not be silently collapsed."
+    },
+    {
+      "claim": "Guard boxes preserve skipped native element-end amplitude tests",
+      "status": "valid_in_real_arithmetic_on_declared_boxes",
+      "detail": "Absolute prefix matrix bounds <=0.45 imply native transverse amplitudes<1. Delta fixed0 also meets native cutoff. Current calculations are floating with margin, not outward IEEE interval certificates."
+    },
+    {
+      "claim": "Uncertain guard losses are native reruns",
+      "status": "implementation_review_passed",
+      "detail": "Full initial particle is rerun through native lattice; cost must be charged. Ordinary loss indices are remapped into native namespace before fallback rows replace them."
+    },
+    {
+      "claim": "Removed linear CT increments remain finite over4096turns",
+      "status": "conservative_real_arithmetic_magnitude_argument",
+      "evidence": "ct_bound.json",
+      "detail": "Total removed contribution<1e60, starting from native-surviving element entrance norms<=1. Retained nonlinear CT finiteness and full IEEE proof remain separate."
+    },
+    {
+      "claim": "Independent native element comparison",
+      "status": "executed_passed",
+      "evidence": "element_replay.json",
+      "detail": "108family/delta cases,100points each, maximum transverse residual6.94e-18."
+    },
+    {
+      "claim": "Independent fused C guard/matrix comparison",
+      "status": "executed_passed",
+      "evidence": "fused_element_replay.json",
+      "detail": "100acceptedpoints and3guardrejections checked, residual2.60e-18."
+    }
+  ],
+  "unsupported_generic_inputs": [
+    "MaxOrder0 element carrying nonzero higher coefficients is not handled by the frozen affine helper; selected BNL model uses MaxOrder1.",
+    "Arbitrary retained custom or M66 elements with ct-to-transverse coupling are unsupported even if ring.is_6d is false.",
+    "RF/radiation, changing delta, native apertures not represented by selected source, and full6D trajectory equivalence are outside the reviewed claim."
+  ],
+  "required_performance_boundary": "Floating regrouping changes chaotic boundary trajectories. No speedup or all-point loss-equivalence theorem follows from element-level agreement; use frozen heldout qualification, retain failures, and charge native fallback and construction.",
+  "tenfold_established_by_this_audit": false
+}

@@ -1,0 +1,69 @@
+{
+  "schema": "bnl-review-claims-v1",
+  "scope": "Historical public NSLS2/PyELEGANT CB65pm demonstrator; PyAT0.9 fixed delta0, first four coordinates; no RF/radiation/errors/mechanical apertures/collective effects.",
+  "claims": [
+    {
+      "id": "B001",
+      "status": "mathematical identity in real arithmetic for declared element classes",
+      "statement": "Eligible fixed-delta native drifts, pure quadrupoles and linear-field bends are affine transversely; composing their discrete matrices preserves the selected real-arithmetic map.",
+      "evidence": [
+        "engine/compiler.py",
+        "audit/AUDIT.md",
+        "audit/element_replay.json"
+      ],
+      "limits": "No bitwise IEEE equivalence; longitudinal path not preserved; generic unsupported helper cases documented."
+    },
+    {
+      "id": "B002",
+      "status": "finite independently seeded numerical confirmation",
+      "statement": "fused40_s4 passes the predeclared gate on 63 reference-agreed survival labels, with maximum core position error 0.368 micrometres.",
+      "evidence": [
+        "results/AUDITED_RESULTS.json",
+        "results/recorded_campaigns.zip"
+      ],
+      "limits": "One unresolved label; 40/80 agreement is not physical convergence. Labels vary nonmonotonically in later refinement diagnostics."
+    },
+    {
+      "id": "B003",
+      "status": "measured host-specific benchmark",
+      "statement": "First-workload ratio 1.607515 versus best qualified tested existing analytic10, including plugin build/setup/warmup/fallback.",
+      "evidence": [
+        "results/AUDITED_RESULTS.json"
+      ],
+      "limits": "Package/interpreter startup excluded. One host, finite workload. Full measured confirmation campaign 164.77285 s, earlier exploration additional."
+    },
+    {
+      "id": "B004",
+      "status": "post-selection observation",
+      "statement": "Longer 128-point, 512-turn backcheck passes same finite gate; added analytic20 comparator gives observed 3.8595 ratio.",
+      "evidence": [
+        "results/recorded_campaigns.zip",
+        "results/INDEPENDENT_RELOCATED_AUDIT.json"
+      ],
+      "limits": "Post-selection addendum; comparator one timing, candidate three; no independent replication of this ratio."
+    },
+    {
+      "id": "B005",
+      "status": "not established",
+      "statement": "Tenfold gain over strongest qualified method, end-to-end optimizer gain, operating-machine equivalence, ELEGANT cross-code equivalence, and full 6D replacement are unestablished."
+    },
+    {
+      "id": "B006",
+      "status": "exact-rational bounded-scope argument",
+      "statement": "Removed linear longitudinal increments are bounded in magnitude below 10**60 over 4096 turns under the audited source/entrance assumptions.",
+      "evidence": [
+        "audit/check_ct_bound.py",
+        "audit/ct_bound.json"
+      ],
+      "limits": "Not a retained-nonlinear finiteness proof or complete IEEE certificate."
+    }
+  ],
+  "costs": {
+    "reference_generation_seconds": 75.00256698300655,
+    "confirmation_campaign_seconds": 164.7728534020207,
+    "reference_only_conditional_batches": 58,
+    "confirmation_campaign_conditional_additional_batches": 126,
+    "conditions": "Reference-only threshold excludes candidate search. Campaign threshold charges all 15 methods and repeats, each setup/warmup and one build; excludes earlier exploration, package/interpreter startup and reporting. Additional distinct equal-cost queries, reusing the qualified configuration; no future qualification or generalization guarantee."
+  },
+  "external_contact": false
+}

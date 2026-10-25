@@ -1,0 +1,57 @@
+{
+  "quadrupole": {
+    "closed": false,
+    "input": [
+      {
+        "q": 0,
+        "p": 8,
+        "coefficient": "1"
+      }
+    ],
+    "image": [
+      {
+        "q": 1,
+        "p": 7,
+        "coefficient": "-16"
+      }
+    ],
+    "missing_polynomial": [
+      {
+        "q": 1,
+        "p": 7,
+        "coefficient": "-16"
+      }
+    ],
+    "scope": "Exact failure of this finite module, not by itself a general nonclosure theorem."
+  },
+  "physical_p2": {
+    "closed": false,
+    "input": [
+      {
+        "q": 0,
+        "p": 4,
+        "coefficient": "1"
+      }
+    ],
+    "image": [
+      {
+        "q": 1,
+        "p": 4,
+        "coefficient": "16"
+      },
+      {
+        "q": 3,
+        "p": 3,
+        "coefficient": "-16"
+      }
+    ],
+    "missing_polynomial": [
+      {
+        "q": 3,
+        "p": 3,
+        "coefficient": "-16"
+      }
+    ],
+    "scope": "Exact failure of this finite module, not by itself a general nonclosure theorem."
+  }
+}

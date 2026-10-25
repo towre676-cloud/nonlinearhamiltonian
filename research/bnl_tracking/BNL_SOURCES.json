@@ -1,0 +1,68 @@
+{
+  "checked_on_local_date": "2026-10-23",
+  "timezone": "America/New_York",
+  "sources": [
+    {
+      "id": "BNL-MODEL",
+      "title": "NSLS2/PyELEGANT public source and demonstrator",
+      "url": "https://github.com/NSLS2/PyELEGANT/tree/11d97113ea7ae05fd0ffe710a88793f2bdc9ed84",
+      "type": "official source repository",
+      "inspection": "exact lattice/license/notebook files downloaded and pinned; lattice imported with PyAT"
+    },
+    {
+      "id": "BNL-CB2026",
+      "title": "Design and optimization of the NSLS-II lattice with complex bend replacement",
+      "url": "https://arxiv.org/html/2609.07854v1",
+      "date": "2026-09-07",
+      "type": "BNL author paper",
+      "inspection": "nonlinear optimization, realistic errors and LMA sections"
+    },
+    {
+      "id": "BNL-ERROR2026",
+      "title": "Searching for the Most Harmful Field Errors in the HSR IR Superconducting Magnets",
+      "url": "https://technotes.bnl.gov/Home/ViewTechNote/230151?selectedPageNumber=0",
+      "date": "2026-08-26",
+      "type": "BNL technical-note landing page",
+      "inspection": "abstract only; 37.7MB PDF exceeded web tool limit"
+    },
+    {
+      "id": "BNL-FORWARD",
+      "title": "Using Forward-Reversal Integration to Optimize EIC's e-ring Dynamic Aperture",
+      "url": "https://technotes.bnl.gov/PDF?publicationId=219894",
+      "date": "2020-09-20",
+      "type": "BNL technical note",
+      "inspection": "full short note"
+    },
+    {
+      "id": "BNL-RESEARCH",
+      "title": "NSLS-II accelerator research overview",
+      "url": "https://www.bnl.gov/nsls2/accelerator/research.php",
+      "type": "official BNL webpage",
+      "inspection": "square-matrix and ML-assisted optimization entries"
+    },
+    {
+      "id": "BNL-MODA",
+      "title": "Modern Optimization of Dynamic Aperture workshop",
+      "url": "https://www.bnl.gov/moda26/",
+      "date": "2026-10-19/2026-10-23",
+      "type": "official BNL event",
+      "inspection": "motivations and topics"
+    },
+    {
+      "id": "BNL-INVARIANT",
+      "title": "Approximate invariant analysis for nonlinear beam dynamics",
+      "url": "https://indico.bnl.gov/event/33582/contributions/128136/",
+      "date": "2026-10-21",
+      "type": "BNL-hosted workshop agenda",
+      "inspection": "title and speaker only; no materials yet"
+    },
+    {
+      "id": "BNL-ANDA",
+      "title": "Analytical Dynamic Aperture Calculation Compared to Tracking Results",
+      "url": "https://technotes.bnl.gov/PDF?publicationId=230130",
+      "date": "2026-08-21",
+      "type": "BNL technical note",
+      "inspection": "abstract and results/conclusion; no code replay"
+    }
+  ]
+}

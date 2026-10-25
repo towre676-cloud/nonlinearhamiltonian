@@ -1,0 +1,26 @@
+{
+  "upstream": "https://pypi.org/project/accelerator-toolbox/0.9.0/",
+  "sdist_sha256": "680f16803a8528c32afeb1d4485a935c4d56752034f0400801540739acec3842",
+  "files": [
+    {
+      "path": "atintegrators/atelem.c",
+      "sha256": "3d88e089519a16118d1f5b554ea7a38a00babaf77127372d26c159178ed8f5d1",
+      "bytes": 13466
+    },
+    {
+      "path": "atintegrators/atcommon.h",
+      "sha256": "e07eac44044bfdc43bfc26730ca995eab2aa0f9317c007fe72c55c237085e162",
+      "bytes": 2526
+    },
+    {
+      "path": "atintegrators/attypes.h",
+      "sha256": "139897d642b3457af966089599db10c03d9768244ec887e350f035e00e47448c",
+      "bytes": 541
+    },
+    {
+      "path": "atintegrators/atconstants.h",
+      "sha256": "63fcd2d3ef91483d764f74841ccd4b4bda56d48f4ebded967a0f90246152e098",
+      "bytes": 1199
+    }
+  ]
+}

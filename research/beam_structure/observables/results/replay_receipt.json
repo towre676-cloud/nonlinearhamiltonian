@@ -1,0 +1,48 @@
+{
+  "status": "passed",
+  "arithmetic": "stdlib Fraction; exact rational arithmetic",
+  "families": {
+    "nonzero_shear": {
+      "status": "passed",
+      "dimension": 25,
+      "action_and_output_identities": 81
+    },
+    "zero_shear": {
+      "status": "passed",
+      "dimension": 9,
+      "action_and_output_identities": 33
+    }
+  },
+  "unit_tests": 10,
+  "unit_test_exit_code": 0,
+  "finite_word_monomial_counts": {
+    "closed": 25,
+    "extra_quadrupole": 81
+  },
+  "positive_probability_hidden_readout_difference": "-10/9",
+  "all_degree_results": [
+    "minimal dimension25 for fixed nonzero shear",
+    "minimal dimension9 for zero shear",
+    "quadrupole control infinite common closure",
+    "physical p2 control infinite common closure when shear is nonzero"
+  ],
+  "all_degree_basis": "Explicit proofs in THEOREMS.md; finite replays check implementations.",
+  "source_sha256": {
+    "__init__.py": "be55b3fabec4aedcf5c83aab31281d48ad127205603cb3f2622d2986d463c7a4",
+    "check_observables.py": "6bd7dde8645965524cc08607dfed989b000cef02cad8edade9009fd609e5e3bc",
+    "compiler.py": "eed8ce94c1dd9188e0d2510f30cf59dce635b490bcf1827229faed1d5c912e64",
+    "polynomial.py": "85a3f2e204b296970d5b375fddbb3d40f567969137825b8fdf5a552047ac8b6f",
+    "run_observables.py": "097f0684822b0857d157fbf65f4d0a279bc0ace7b2711222dae9accc15627f15",
+    "test_observables.py": "e9695fd852f8d98403ab7834e23dba91ca7958b25798d3f380fba7a593d89b9d"
+  },
+  "result_sha256": {
+    "backbone_routes.json": "1721594fe815578f099d866ac30c085bbc30e85eec179d5cf6538219eb398275",
+    "control_obstructions.json": "448a363287ab52beb743dde63a6afe326b3f28ba0e473f180992548f891858e1",
+    "finite_word_summaries.json": "f399e24fed944ea0506cbb038f813850fe074729c405170f2fc47d143de7df7b",
+    "missing_information_witness.json": "e5235f07d034a3184744390137cb76352a1ed16e32f1d889b53f49a54657a7cb",
+    "nonzero_shear.json": "44d0e253c11e79ae9893fef95b3b793fdd4ed6b4fd290221b472b6fd24d5d71e",
+    "zero_shear.json": "f701b0841d222658f08a83dee8133a6f68d1b483e98534f38dbfec32a3794fa7"
+  },
+  "tenfold_gain_established": false,
+  "scope": "Prescribed classical polynomial model only. No physical beam-transfer validation, space-charge closure or quantum-exactness inference."
+}

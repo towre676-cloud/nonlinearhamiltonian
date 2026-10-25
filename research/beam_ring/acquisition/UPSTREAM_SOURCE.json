@@ -1,0 +1,67 @@
+{
+  "repository": "SLAC-ML/mpBAX",
+  "commit": "82766c7fb22ec675025d6485ce11761cdc7a6056",
+  "tree": "28fb59254e24081c3cd02cc462a70b7ca769c183",
+  "files": [
+    {
+      "path": "pyproject.toml",
+      "git_blob_sha": "2ab50783ed175dd494e874a6fde4937519834a45",
+      "sha256": "1eb93b37248ff8f034429ffb65b9a6b49615a668fb8302e496372a8429f918df",
+      "bytes": 1411
+    },
+    {
+      "path": "mpbax/__init__.py",
+      "git_blob_sha": "ba448f0a19517b03ead0752dd6b0dbdffa7119ae",
+      "sha256": "600aae8fd60e505bee0326f671cc5ede2c7fa5d1f43c5ccfee21dbf42f0a43cd",
+      "bytes": 198
+    },
+    {
+      "path": "mpbax/core/__init__.py",
+      "git_blob_sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "mpbax/core/algorithm.py",
+      "git_blob_sha": "57fe6896dfbb9be17040eaebd231e1219d68a790",
+      "sha256": "883b01caf7f8ef8f16d46e5478a8ed0d27b90f0488d753e07367b12089ebdcdf",
+      "bytes": 5193
+    },
+    {
+      "path": "mpbax/core/engine.py",
+      "git_blob_sha": "fe62e23c58ab70d0a9f249d34fa631775336c16b",
+      "sha256": "8351fb7e341b8ac4095e240395b302bb580c043baab7c14df912485e046c3b52",
+      "bytes": 28825
+    },
+    {
+      "path": "mpbax/core/model.py",
+      "git_blob_sha": "78f72a8feee8a4ff103b1e02a956bf4d5ed7bc98",
+      "sha256": "7449b67c67a42f7ba8bf5aced67298ce7dbaed06e7247ac7774890ff4bfeb625",
+      "bytes": 7263
+    },
+    {
+      "path": "mpbax/core/evaluator.py",
+      "git_blob_sha": "83c25ea6e2ff700cdf59406b52a4c88c388e79bf",
+      "sha256": "8bae37bb3819739bc5e5f2511014f7c5749d8c08057793ff45a8573d78451ebc",
+      "bytes": 3132
+    },
+    {
+      "path": "mpbax/core/data_handler.py",
+      "git_blob_sha": "7521cf169211384852a35437ac38d99298ef25e1",
+      "sha256": "b7a3f9ee775c137226271d87b7e49317151de62f61bfbc2df1b2db04ea5321b2",
+      "bytes": 4718
+    },
+    {
+      "path": "mpbax/core/checkpoint.py",
+      "git_blob_sha": "7817c315379eaa4c9899362efe223dbe6f8df697",
+      "sha256": "adc965d8ea313847d7fbec786f62d43f9ce9fe2dea2aa4eb6d8c65b8b30d15da",
+      "bytes": 14866
+    },
+    {
+      "path": "examples/01_basic_optimization.py",
+      "git_blob_sha": "224d5b2b415455fae81df1d3db1e0f6eca9764fc",
+      "sha256": "ccc9d6f363a08d07a56ce8e4cb264ef2dd3f1be496f5d5338b9e6c505b40473e",
+      "bytes": 1631
+    }
+  ]
+}

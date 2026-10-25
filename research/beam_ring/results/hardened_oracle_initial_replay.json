@@ -1,0 +1,577 @@
+{
+  "status": "passed",
+  "protocol_sha256": "159e5be41fa37717d68dac2aa9a6d6eb1c8748f6a094b0a5b73ae728ad92eb50",
+  "physical_point_evaluations": 48,
+  "batch_single_labels_and_losses": "identical",
+  "deterministic_prefix_check": "passed",
+  "oracle_source_sha256": "75cbe65b920174c21b7b6b5f48b2850e2168c0d15f15236a3454fcd331b73853",
+  "stages": {
+    "learning": {
+      "batch_ledger": {
+        "stage": "learning",
+        "turns": 64,
+        "physical_points": 12,
+        "batched_tracking_calls": 2,
+        "construction_seconds": 0.10375813100108644,
+        "tracking_seconds": 0.6903925960068591,
+        "completed_particle_turns": 519,
+        "calls": [
+          {
+            "design": 0,
+            "points": 6,
+            "seconds": 0.3425446760011255,
+            "purpose": "oracle_regression_batch",
+            "stage": "learning"
+          },
+          {
+            "design": 1,
+            "points": 6,
+            "seconds": 0.3478479200057336,
+            "purpose": "oracle_regression_batch",
+            "stage": "learning"
+          }
+        ],
+        "failed_calls": []
+      },
+      "single_ledger": {
+        "stage": "learning",
+        "turns": 64,
+        "physical_points": 12,
+        "batched_tracking_calls": 12,
+        "construction_seconds": 0.13120012400031555,
+        "tracking_seconds": 0.9691530270065414,
+        "completed_particle_turns": 519,
+        "calls": [
+          {
+            "design": 0,
+            "points": 1,
+            "seconds": 0.023715115996310487,
+            "purpose": "oracle_regression_single",
+            "stage": "learning"
+          },
+          {
+            "design": 0,
+            "points": 1,
+            "seconds": 0.10209685600420926,
+            "purpose": "oracle_regression_single",
+            "stage": "learning"
+          },
+          {
+            "design": 0,
+            "points": 1,
+            "seconds": 0.023786795005435124,
+            "purpose": "oracle_regression_single",
+            "stage": "learning"
+          },
+          {
+            "design": 0,
+            "points": 1,
+            "seconds": 0.10339827000279911,
+            "purpose": "oracle_regression_single",
+            "stage": "learning"
+          },
+          {
+            "design": 0,
+            "points": 1,
+            "seconds": 0.10124135100340936,
+            "purpose": "oracle_regression_single",
+            "stage": "learning"
+          },
+          {
+            "design": 0,
+            "points": 1,
+            "seconds": 0.10172494799917331,
+            "purpose": "oracle_regression_single",
+            "stage": "learning"
+          },
+          {
+            "design": 1,
+            "points": 1,
+            "seconds": 0.03885929100215435,
+            "purpose": "oracle_regression_single",
+            "stage": "learning"
+          },
+          {
+            "design": 1,
+            "points": 1,
+            "seconds": 0.12614173800102435,
+            "purpose": "oracle_regression_single",
+            "stage": "learning"
+          },
+          {
+            "design": 1,
+            "points": 1,
+            "seconds": 0.029229328996734694,
+            "purpose": "oracle_regression_single",
+            "stage": "learning"
+          },
+          {
+            "design": 1,
+            "points": 1,
+            "seconds": 0.10649636299785925,
+            "purpose": "oracle_regression_single",
+            "stage": "learning"
+          },
+          {
+            "design": 1,
+            "points": 1,
+            "seconds": 0.10697803599759936,
+            "purpose": "oracle_regression_single",
+            "stage": "learning"
+          },
+          {
+            "design": 1,
+            "points": 1,
+            "seconds": 0.10548493399983272,
+            "purpose": "oracle_regression_single",
+            "stage": "learning"
+          }
+        ],
+        "failed_calls": []
+      }
+    },
+    "validation": {
+      "batch_ledger": {
+        "stage": "validation",
+        "turns": 256,
+        "physical_points": 12,
+        "batched_tracking_calls": 2,
+        "construction_seconds": 0.10303578600723995,
+        "tracking_seconds": 2.6413977289994364,
+        "completed_particle_turns": 2055,
+        "calls": [
+          {
+            "design": 0,
+            "points": 6,
+            "seconds": 1.325553252005193,
+            "purpose": "oracle_regression_batch",
+            "stage": "validation"
+          },
+          {
+            "design": 1,
+            "points": 6,
+            "seconds": 1.3158444769942435,
+            "purpose": "oracle_regression_batch",
+            "stage": "validation"
+          }
+        ],
+        "failed_calls": []
+      },
+      "single_ledger": {
+        "stage": "validation",
+        "turns": 256,
+        "physical_points": 12,
+        "batched_tracking_calls": 12,
+        "construction_seconds": 0.10210806699615205,
+        "tracking_seconds": 2.9806895540023106,
+        "completed_particle_turns": 2055,
+        "calls": [
+          {
+            "design": 0,
+            "points": 1,
+            "seconds": 0.03244348499720218,
+            "purpose": "oracle_regression_single",
+            "stage": "validation"
+          },
+          {
+            "design": 0,
+            "points": 1,
+            "seconds": 0.3467809310022858,
+            "purpose": "oracle_regression_single",
+            "stage": "validation"
+          },
+          {
+            "design": 0,
+            "points": 1,
+            "seconds": 0.036484500000369735,
+            "purpose": "oracle_regression_single",
+            "stage": "validation"
+          },
+          {
+            "design": 0,
+            "points": 1,
+            "seconds": 0.3639751899972907,
+            "purpose": "oracle_regression_single",
+            "stage": "validation"
+          },
+          {
+            "design": 0,
+            "points": 1,
+            "seconds": 0.3649594600065029,
+            "purpose": "oracle_regression_single",
+            "stage": "validation"
+          },
+          {
+            "design": 0,
+            "points": 1,
+            "seconds": 0.3599792429959052,
+            "purpose": "oracle_regression_single",
+            "stage": "validation"
+          },
+          {
+            "design": 1,
+            "points": 1,
+            "seconds": 0.0410324969998328,
+            "purpose": "oracle_regression_single",
+            "stage": "validation"
+          },
+          {
+            "design": 1,
+            "points": 1,
+            "seconds": 0.35247823700046865,
+            "purpose": "oracle_regression_single",
+            "stage": "validation"
+          },
+          {
+            "design": 1,
+            "points": 1,
+            "seconds": 0.035090294004476164,
+            "purpose": "oracle_regression_single",
+            "stage": "validation"
+          },
+          {
+            "design": 1,
+            "points": 1,
+            "seconds": 0.3484805959960795,
+            "purpose": "oracle_regression_single",
+            "stage": "validation"
+          },
+          {
+            "design": 1,
+            "points": 1,
+            "seconds": 0.3528135669985204,
+            "purpose": "oracle_regression_single",
+            "stage": "validation"
+          },
+          {
+            "design": 1,
+            "points": 1,
+            "seconds": 0.3461715540033765,
+            "purpose": "oracle_regression_single",
+            "stage": "validation"
+          }
+        ],
+        "failed_calls": []
+      }
+    }
+  },
+  "events": {
+    "learning": [
+      {
+        "objective": 0,
+        "design": 0,
+        "launch": 0,
+        "survived": false,
+        "completed_turns": 0,
+        "loss_element_zero_based": 3723,
+        "survival_fraction": 0.0,
+        "turns": 64,
+        "stage": "learning",
+        "purpose": "oracle_regression_batch",
+        "protocol_sha256": "159e5be41fa37717d68dac2aa9a6d6eb1c8748f6a094b0a5b73ae728ad92eb50"
+      },
+      {
+        "objective": 0,
+        "design": 0,
+        "launch": 20,
+        "survived": true,
+        "completed_turns": 64,
+        "loss_element_zero_based": null,
+        "survival_fraction": 1.0,
+        "turns": 64,
+        "stage": "learning",
+        "purpose": "oracle_regression_batch",
+        "protocol_sha256": "159e5be41fa37717d68dac2aa9a6d6eb1c8748f6a094b0a5b73ae728ad92eb50"
+      },
+      {
+        "objective": 0,
+        "design": 0,
+        "launch": 44,
+        "survived": false,
+        "completed_turns": 0,
+        "loss_element_zero_based": 1015,
+        "survival_fraction": 0.0,
+        "turns": 64,
+        "stage": "learning",
+        "purpose": "oracle_regression_batch",
+        "protocol_sha256": "159e5be41fa37717d68dac2aa9a6d6eb1c8748f6a094b0a5b73ae728ad92eb50"
+      },
+      {
+        "objective": 1,
+        "design": 0,
+        "launch": 0,
+        "survived": true,
+        "completed_turns": 64,
+        "loss_element_zero_based": null,
+        "survival_fraction": 1.0,
+        "turns": 64,
+        "stage": "learning",
+        "purpose": "oracle_regression_batch",
+        "protocol_sha256": "159e5be41fa37717d68dac2aa9a6d6eb1c8748f6a094b0a5b73ae728ad92eb50"
+      },
+      {
+        "objective": 1,
+        "design": 0,
+        "launch": 8,
+        "survived": true,
+        "completed_turns": 64,
+        "loss_element_zero_based": null,
+        "survival_fraction": 1.0,
+        "turns": 64,
+        "stage": "learning",
+        "purpose": "oracle_regression_batch",
+        "protocol_sha256": "159e5be41fa37717d68dac2aa9a6d6eb1c8748f6a094b0a5b73ae728ad92eb50"
+      },
+      {
+        "objective": 1,
+        "design": 0,
+        "launch": 16,
+        "survived": true,
+        "completed_turns": 64,
+        "loss_element_zero_based": null,
+        "survival_fraction": 1.0,
+        "turns": 64,
+        "stage": "learning",
+        "purpose": "oracle_regression_batch",
+        "protocol_sha256": "159e5be41fa37717d68dac2aa9a6d6eb1c8748f6a094b0a5b73ae728ad92eb50"
+      },
+      {
+        "objective": 0,
+        "design": 1,
+        "launch": 0,
+        "survived": false,
+        "completed_turns": 6,
+        "loss_element_zero_based": 3193,
+        "survival_fraction": 0.09375,
+        "turns": 64,
+        "stage": "learning",
+        "purpose": "oracle_regression_batch",
+        "protocol_sha256": "159e5be41fa37717d68dac2aa9a6d6eb1c8748f6a094b0a5b73ae728ad92eb50"
+      },
+      {
+        "objective": 0,
+        "design": 1,
+        "launch": 20,
+        "survived": true,
+        "completed_turns": 64,
+        "loss_element_zero_based": null,
+        "survival_fraction": 1.0,
+        "turns": 64,
+        "stage": "learning",
+        "purpose": "oracle_regression_batch",
+        "protocol_sha256": "159e5be41fa37717d68dac2aa9a6d6eb1c8748f6a094b0a5b73ae728ad92eb50"
+      },
+      {
+        "objective": 0,
+        "design": 1,
+        "launch": 44,
+        "survived": false,
+        "completed_turns": 1,
+        "loss_element_zero_based": 2683,
+        "survival_fraction": 0.015625,
+        "turns": 64,
+        "stage": "learning",
+        "purpose": "oracle_regression_batch",
+        "protocol_sha256": "159e5be41fa37717d68dac2aa9a6d6eb1c8748f6a094b0a5b73ae728ad92eb50"
+      },
+      {
+        "objective": 1,
+        "design": 1,
+        "launch": 0,
+        "survived": true,
+        "completed_turns": 64,
+        "loss_element_zero_based": null,
+        "survival_fraction": 1.0,
+        "turns": 64,
+        "stage": "learning",
+        "purpose": "oracle_regression_batch",
+        "protocol_sha256": "159e5be41fa37717d68dac2aa9a6d6eb1c8748f6a094b0a5b73ae728ad92eb50"
+      },
+      {
+        "objective": 1,
+        "design": 1,
+        "launch": 8,
+        "survived": true,
+        "completed_turns": 64,
+        "loss_element_zero_based": null,
+        "survival_fraction": 1.0,
+        "turns": 64,
+        "stage": "learning",
+        "purpose": "oracle_regression_batch",
+        "protocol_sha256": "159e5be41fa37717d68dac2aa9a6d6eb1c8748f6a094b0a5b73ae728ad92eb50"
+      },
+      {
+        "objective": 1,
+        "design": 1,
+        "launch": 16,
+        "survived": true,
+        "completed_turns": 64,
+        "loss_element_zero_based": null,
+        "survival_fraction": 1.0,
+        "turns": 64,
+        "stage": "learning",
+        "purpose": "oracle_regression_batch",
+        "protocol_sha256": "159e5be41fa37717d68dac2aa9a6d6eb1c8748f6a094b0a5b73ae728ad92eb50"
+      }
+    ],
+    "validation": [
+      {
+        "objective": 0,
+        "design": 0,
+        "launch": 0,
+        "survived": false,
+        "completed_turns": 0,
+        "loss_element_zero_based": 3723,
+        "survival_fraction": 0.0,
+        "turns": 256,
+        "stage": "validation",
+        "purpose": "oracle_regression_batch",
+        "protocol_sha256": "159e5be41fa37717d68dac2aa9a6d6eb1c8748f6a094b0a5b73ae728ad92eb50"
+      },
+      {
+        "objective": 0,
+        "design": 0,
+        "launch": 42,
+        "survived": true,
+        "completed_turns": 256,
+        "loss_element_zero_based": null,
+        "survival_fraction": 1.0,
+        "turns": 256,
+        "stage": "validation",
+        "purpose": "oracle_regression_batch",
+        "protocol_sha256": "159e5be41fa37717d68dac2aa9a6d6eb1c8748f6a094b0a5b73ae728ad92eb50"
+      },
+      {
+        "objective": 0,
+        "design": 0,
+        "launch": 90,
+        "survived": false,
+        "completed_turns": 0,
+        "loss_element_zero_based": 1015,
+        "survival_fraction": 0.0,
+        "turns": 256,
+        "stage": "validation",
+        "purpose": "oracle_regression_batch",
+        "protocol_sha256": "159e5be41fa37717d68dac2aa9a6d6eb1c8748f6a094b0a5b73ae728ad92eb50"
+      },
+      {
+        "objective": 1,
+        "design": 0,
+        "launch": 0,
+        "survived": true,
+        "completed_turns": 256,
+        "loss_element_zero_based": null,
+        "survival_fraction": 1.0,
+        "turns": 256,
+        "stage": "validation",
+        "purpose": "oracle_regression_batch",
+        "protocol_sha256": "159e5be41fa37717d68dac2aa9a6d6eb1c8748f6a094b0a5b73ae728ad92eb50"
+      },
+      {
+        "objective": 1,
+        "design": 0,
+        "launch": 12,
+        "survived": true,
+        "completed_turns": 256,
+        "loss_element_zero_based": null,
+        "survival_fraction": 1.0,
+        "turns": 256,
+        "stage": "validation",
+        "purpose": "oracle_regression_batch",
+        "protocol_sha256": "159e5be41fa37717d68dac2aa9a6d6eb1c8748f6a094b0a5b73ae728ad92eb50"
+      },
+      {
+        "objective": 1,
+        "design": 0,
+        "launch": 24,
+        "survived": true,
+        "completed_turns": 256,
+        "loss_element_zero_based": null,
+        "survival_fraction": 1.0,
+        "turns": 256,
+        "stage": "validation",
+        "purpose": "oracle_regression_batch",
+        "protocol_sha256": "159e5be41fa37717d68dac2aa9a6d6eb1c8748f6a094b0a5b73ae728ad92eb50"
+      },
+      {
+        "objective": 0,
+        "design": 1,
+        "launch": 0,
+        "survived": false,
+        "completed_turns": 6,
+        "loss_element_zero_based": 3193,
+        "survival_fraction": 0.0234375,
+        "turns": 256,
+        "stage": "validation",
+        "purpose": "oracle_regression_batch",
+        "protocol_sha256": "159e5be41fa37717d68dac2aa9a6d6eb1c8748f6a094b0a5b73ae728ad92eb50"
+      },
+      {
+        "objective": 0,
+        "design": 1,
+        "launch": 42,
+        "survived": true,
+        "completed_turns": 256,
+        "loss_element_zero_based": null,
+        "survival_fraction": 1.0,
+        "turns": 256,
+        "stage": "validation",
+        "purpose": "oracle_regression_batch",
+        "protocol_sha256": "159e5be41fa37717d68dac2aa9a6d6eb1c8748f6a094b0a5b73ae728ad92eb50"
+      },
+      {
+        "objective": 0,
+        "design": 1,
+        "launch": 90,
+        "survived": false,
+        "completed_turns": 1,
+        "loss_element_zero_based": 2683,
+        "survival_fraction": 0.00390625,
+        "turns": 256,
+        "stage": "validation",
+        "purpose": "oracle_regression_batch",
+        "protocol_sha256": "159e5be41fa37717d68dac2aa9a6d6eb1c8748f6a094b0a5b73ae728ad92eb50"
+      },
+      {
+        "objective": 1,
+        "design": 1,
+        "launch": 0,
+        "survived": true,
+        "completed_turns": 256,
+        "loss_element_zero_based": null,
+        "survival_fraction": 1.0,
+        "turns": 256,
+        "stage": "validation",
+        "purpose": "oracle_regression_batch",
+        "protocol_sha256": "159e5be41fa37717d68dac2aa9a6d6eb1c8748f6a094b0a5b73ae728ad92eb50"
+      },
+      {
+        "objective": 1,
+        "design": 1,
+        "launch": 12,
+        "survived": true,
+        "completed_turns": 256,
+        "loss_element_zero_based": null,
+        "survival_fraction": 1.0,
+        "turns": 256,
+        "stage": "validation",
+        "purpose": "oracle_regression_batch",
+        "protocol_sha256": "159e5be41fa37717d68dac2aa9a6d6eb1c8748f6a094b0a5b73ae728ad92eb50"
+      },
+      {
+        "objective": 1,
+        "design": 1,
+        "launch": 24,
+        "survived": true,
+        "completed_turns": 256,
+        "loss_element_zero_based": null,
+        "survival_fraction": 1.0,
+        "turns": 256,
+        "stage": "validation",
+        "purpose": "oracle_regression_batch",
+        "protocol_sha256": "159e5be41fa37717d68dac2aa9a6d6eb1c8748f6a094b0a5b73ae728ad92eb50"
+      }
+    ]
+  },
+  "scope": "Selected physical points only; not a universal map equivalence or speedup."
+}

@@ -1,0 +1,100 @@
+{
+  "examples": [
+    {
+      "a": "2",
+      "b": "3",
+      "c": "4",
+      "d": "2",
+      "shear_alpha": "1",
+      "delta": "0",
+      "quadratic": true,
+      "transformed_hamiltonian": [
+        {
+          "q": 0,
+          "p": 2,
+          "coefficient": "2"
+        },
+        {
+          "q": 2,
+          "p": 0,
+          "coefficient": "3"
+        }
+      ],
+      "residual_force": []
+    },
+    {
+      "a": "2",
+      "b": "3",
+      "c": "4",
+      "d": "15/7",
+      "shear_alpha": "1",
+      "delta": "1/7",
+      "quadratic": false,
+      "transformed_hamiltonian": [
+        {
+          "q": 0,
+          "p": 2,
+          "coefficient": "2"
+        },
+        {
+          "q": 2,
+          "p": 0,
+          "coefficient": "3"
+        },
+        {
+          "q": 4,
+          "p": 0,
+          "coefficient": "1/7"
+        }
+      ],
+      "residual_force": [
+        {
+          "q": 3,
+          "p": 0,
+          "coefficient": "-4/7"
+        }
+      ]
+    }
+  ],
+  "shared_route": {
+    "shared_shear_verified": true,
+    "shear_alpha": "1",
+    "routes": [
+      {
+        "a": "2",
+        "b": "3",
+        "remaining_Q4_coefficient": "0"
+      },
+      {
+        "a": "3",
+        "b": "1",
+        "remaining_Q4_coefficient": "1"
+      },
+      {
+        "a": "0",
+        "b": "1",
+        "remaining_Q4_coefficient": "0"
+      }
+    ]
+  },
+  "mismatched_shear": {
+    "shared_shear_verified": false,
+    "failed_generator": 0,
+    "remaining_Q2P_coefficient": "-4",
+    "scope": "This proposed shared shear fails; no claim that every adapted representation fails."
+  },
+  "conditional_p2_defect": [
+    {
+      "q": 3,
+      "p": 1,
+      "coefficient": "-8/7"
+    }
+  ],
+  "conditional_p2_defect_bound": "2/21",
+  "assumed_adapted_rectangle": {
+    "Q_radius": "1/2",
+    "P_radius": "2/3"
+  },
+  "support_enclosure_verified": false,
+  "scope": "Algebraic reduction and a conditional local generator bound; no trajectory enclosure."
+}

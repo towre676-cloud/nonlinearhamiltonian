@@ -1,0 +1,811 @@
+{
+  "manifest": {
+    "schema": "finite-grid-survival-manifest-v1",
+    "cells": [
+      "cell_0000",
+      "cell_0001",
+      "cell_0002",
+      "cell_0003",
+      "cell_0004",
+      "cell_0005",
+      "cell_0006",
+      "cell_0007",
+      "cell_0008",
+      "cell_0009",
+      "cell_0010",
+      "cell_0011",
+      "cell_0012",
+      "cell_0013",
+      "cell_0014",
+      "cell_0015",
+      "cell_0016"
+    ],
+    "adjacency": {
+      "cell_0000": [
+        "cell_0001"
+      ],
+      "cell_0001": [
+        "cell_0000",
+        "cell_0002"
+      ],
+      "cell_0002": [
+        "cell_0001",
+        "cell_0003"
+      ],
+      "cell_0003": [
+        "cell_0002",
+        "cell_0004"
+      ],
+      "cell_0004": [
+        "cell_0003",
+        "cell_0005"
+      ],
+      "cell_0005": [
+        "cell_0004",
+        "cell_0006"
+      ],
+      "cell_0006": [
+        "cell_0005",
+        "cell_0007"
+      ],
+      "cell_0007": [
+        "cell_0006",
+        "cell_0008"
+      ],
+      "cell_0008": [
+        "cell_0007",
+        "cell_0009"
+      ],
+      "cell_0009": [
+        "cell_0008",
+        "cell_0010"
+      ],
+      "cell_0010": [
+        "cell_0009",
+        "cell_0011"
+      ],
+      "cell_0011": [
+        "cell_0010",
+        "cell_0012"
+      ],
+      "cell_0012": [
+        "cell_0011",
+        "cell_0013"
+      ],
+      "cell_0013": [
+        "cell_0012",
+        "cell_0014"
+      ],
+      "cell_0014": [
+        "cell_0013",
+        "cell_0015"
+      ],
+      "cell_0015": [
+        "cell_0014",
+        "cell_0016"
+      ],
+      "cell_0016": [
+        "cell_0015"
+      ]
+    },
+    "weights": {
+      "cell_0000": "1",
+      "cell_0001": "1",
+      "cell_0002": "1",
+      "cell_0003": "1",
+      "cell_0004": "1",
+      "cell_0005": "1",
+      "cell_0006": "1",
+      "cell_0007": "1",
+      "cell_0008": "1",
+      "cell_0009": "1",
+      "cell_0010": "1",
+      "cell_0011": "1",
+      "cell_0012": "1",
+      "cell_0013": "1",
+      "cell_0014": "1",
+      "cell_0015": "1",
+      "cell_0016": "1"
+    },
+    "origin": "cell_0008",
+    "designs": [
+      "design_00",
+      "design_01",
+      "design_02",
+      "design_03",
+      "design_04",
+      "design_05",
+      "design_06",
+      "design_07",
+      "design_08"
+    ],
+    "horizons": [
+      64
+    ],
+    "prefix_semantics": "deterministic-prefix-no-reinjection-v1",
+    "physics": {
+      "protocol_sha256": "159e5be41fa37717d68dac2aa9a6d6eb1c8748f6a094b0a5b73ae728ad92eb50",
+      "stage": "learning",
+      "objective": "entrance_delta_connected_grid",
+      "label_scope": "Observed finite-horizon PyAT labels; not continuum proof."
+    }
+  },
+  "events": [
+    {
+      "design": "design_02",
+      "cell": "cell_0002",
+      "horizon": 64,
+      "label": 1,
+      "source": "f0f1bca9ba2cfa0b2efff5a2213bc27495655223ff87f40d24456441a17b83b8"
+    },
+    {
+      "design": "design_02",
+      "cell": "cell_0015",
+      "horizon": 64,
+      "label": 1,
+      "source": "45d02dd5aacd10905f13d05325b67bcafe24cb04b37ca0165f96f3356105510d"
+    },
+    {
+      "design": "design_06",
+      "cell": "cell_0005",
+      "horizon": 64,
+      "label": 1,
+      "source": "4d4ce1ca4c447558469c9afbcff485f02d8ae84637a594b05863b853b45bed4d"
+    },
+    {
+      "design": "design_06",
+      "cell": "cell_0010",
+      "horizon": 64,
+      "label": 1,
+      "source": "ff0722808e6e39ee1f89870be3c2424da0cb6e4ecc6cdccada2379fadda0dd6c"
+    },
+    {
+      "design": "design_06",
+      "cell": "cell_0001",
+      "horizon": 64,
+      "label": 1,
+      "source": "8468ffe8a09d181edecf62d57fee60635c96ddbba0263a209b2b64d59c816f73"
+    },
+    {
+      "design": "design_06",
+      "cell": "cell_0007",
+      "horizon": 64,
+      "label": 1,
+      "source": "de17b5137f2d636116166218235fab5f8617f7ee8f17561a74c96107064bce98"
+    },
+    {
+      "design": "design_06",
+      "cell": "cell_0011",
+      "horizon": 64,
+      "label": 1,
+      "source": "187e52ade3bc04da9a69bc0b4a13d00812a2f4a637b2ab0b0eda7d6d3c7991d0"
+    },
+    {
+      "design": "design_06",
+      "cell": "cell_0002",
+      "horizon": 64,
+      "label": 1,
+      "source": "8911760e0d79a9f6f8681229c1b1d6b4adbe20b79374f2921eae3e5dcd8b5799"
+    },
+    {
+      "design": "design_01",
+      "cell": "cell_0011",
+      "horizon": 64,
+      "label": 1,
+      "source": "e8dbbc560b29b23c65f6a9ffa8bdc94a011c490c7745fe6127ab5b4086acce97"
+    },
+    {
+      "design": "design_01",
+      "cell": "cell_0004",
+      "horizon": 64,
+      "label": 1,
+      "source": "5b0d497fbd262b2d945de88d76d0919f3fb512f097c716b58bfa9b4bddc26adf"
+    },
+    {
+      "design": "design_01",
+      "cell": "cell_0008",
+      "horizon": 64,
+      "label": 1,
+      "source": "a2e1137781933d16a3aacbfabf42c649ad161ec01c16c96db91b0bc7cd0bcba8"
+    },
+    {
+      "design": "design_01",
+      "cell": "cell_0014",
+      "horizon": 64,
+      "label": 1,
+      "source": "495ca29df413d08b80d1aca08e31edd412828a3cb37c9a1ccb204911328ec6d3"
+    },
+    {
+      "design": "design_05",
+      "cell": "cell_0006",
+      "horizon": 64,
+      "label": 1,
+      "source": "fd448415fcb8f9a045164cd0d54049fa7067c5f29dfa774fc63f797d0a3e874a"
+    },
+    {
+      "design": "design_05",
+      "cell": "cell_0003",
+      "horizon": 64,
+      "label": 1,
+      "source": "2e02b61753c3653ba1d1da6124163e27caafbf907c34e39b24ef8acb56c6590a"
+    },
+    {
+      "design": "design_05",
+      "cell": "cell_0007",
+      "horizon": 64,
+      "label": 1,
+      "source": "2d4172b7c16bda03082ac4b9fa5106e689771c4f84d2f1dc5371ccf417db9b9d"
+    },
+    {
+      "design": "design_05",
+      "cell": "cell_0010",
+      "horizon": 64,
+      "label": 1,
+      "source": "c49241a3d3098853ae149bd2d883d42d7eb0b062af3b5b86ecde98961a819b50"
+    },
+    {
+      "design": "design_05",
+      "cell": "cell_0002",
+      "horizon": 64,
+      "label": 1,
+      "source": "f2480fec3482883e0591f592db37b67ab7a04bb921004b221667ae143ac33b33"
+    },
+    {
+      "design": "design_07",
+      "cell": "cell_0006",
+      "horizon": 64,
+      "label": 1,
+      "source": "c8674e60eb76b707adb7ba0801e3c7fd4ef9d5efa2b999e46f37fa56a7088944"
+    },
+    {
+      "design": "design_07",
+      "cell": "cell_0005",
+      "horizon": 64,
+      "label": 1,
+      "source": "c437c936c20db022fb3e4d4e46e9fba3bdfdb51fe50c85bac245c975a9230f07"
+    },
+    {
+      "design": "design_08",
+      "cell": "cell_0012",
+      "horizon": 64,
+      "label": 1,
+      "source": "76811406f37ca16fbf8064709a3616ad94c636adbb47e720e74fb4e96e1526a2"
+    },
+    {
+      "design": "design_08",
+      "cell": "cell_0007",
+      "horizon": 64,
+      "label": 1,
+      "source": "1637746c119c9954849f53482c74d5d71a56eb1a3ceebfb27cfc3755b5466ddf"
+    },
+    {
+      "design": "design_08",
+      "cell": "cell_0014",
+      "horizon": 64,
+      "label": 1,
+      "source": "be5aadcf79c1295a96dcc5d0a5cec59d435331b7238413d454b747055ca64757"
+    },
+    {
+      "design": "design_08",
+      "cell": "cell_0006",
+      "horizon": 64,
+      "label": 1,
+      "source": "023054d6e55985af151bf078daddc8126c9c621dec9ea40a79a0bd7d27b120fb"
+    },
+    {
+      "design": "design_08",
+      "cell": "cell_0000",
+      "horizon": 64,
+      "label": 1,
+      "source": "6c3e4abdff7d10357557b6f76b9b2fd5239a217fb14765dc23c054cd9f73cf51"
+    },
+    {
+      "design": "design_04",
+      "cell": "cell_0015",
+      "horizon": 64,
+      "label": 1,
+      "source": "20dd0a0892bdeec4d7f59e57f0636004e1b8857f2a586f50186591877fd8f0c0"
+    },
+    {
+      "design": "design_04",
+      "cell": "cell_0013",
+      "horizon": 64,
+      "label": 1,
+      "source": "a1d5d08116ec913c3f955f1facb7be4c0d0da764b290e1bd4ccc85b5657c0b02"
+    },
+    {
+      "design": "design_04",
+      "cell": "cell_0011",
+      "horizon": 64,
+      "label": 1,
+      "source": "4a6443e82b9b0ef5d2267eb37bab92615dac0a6cd742502ae08a6015be7ca3a7"
+    },
+    {
+      "design": "design_03",
+      "cell": "cell_0005",
+      "horizon": 64,
+      "label": 1,
+      "source": "7b80f8b6de1f4021cdb6d6bf9f9ef67cbc066b0c3a1c428c54efd2a3ec152c87"
+    },
+    {
+      "design": "design_03",
+      "cell": "cell_0007",
+      "horizon": 64,
+      "label": 1,
+      "source": "81c6c5b92072cd8685ed6ada99b94a20c1ca5dc9d4b36d3fdabbad2a7bb95a47"
+    }
+  ],
+  "certificate": {
+    "schema": "finite-grid-survival-certificate-v1",
+    "manifest_sha256": "36cb54b287234ff5f664c26f9dfcba5edeccb9004f6f4a1d8ea6a9d10302f43f",
+    "events_sha256": "148d61bcd660cf857ff26354331d0de33c94a47d85ac0ee411a9736389d18714",
+    "objectives": [
+      "survival_weight",
+      "origin_connected_weight"
+    ],
+    "rows": [
+      {
+        "design": "design_00",
+        "horizon": 64,
+        "labels": [
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1
+        ],
+        "survival_weight": {
+          "lower": "0",
+          "upper": "17"
+        },
+        "origin_connected_weight": {
+          "lower": "0",
+          "upper": "17",
+          "known_component": [],
+          "possible_component": [
+            "cell_0000",
+            "cell_0001",
+            "cell_0002",
+            "cell_0003",
+            "cell_0004",
+            "cell_0005",
+            "cell_0006",
+            "cell_0007",
+            "cell_0008",
+            "cell_0009",
+            "cell_0010",
+            "cell_0011",
+            "cell_0012",
+            "cell_0013",
+            "cell_0014",
+            "cell_0015",
+            "cell_0016"
+          ]
+        }
+      },
+      {
+        "design": "design_01",
+        "horizon": 64,
+        "labels": [
+          -1,
+          -1,
+          -1,
+          -1,
+          1,
+          -1,
+          -1,
+          -1,
+          1,
+          -1,
+          -1,
+          1,
+          -1,
+          -1,
+          1,
+          -1,
+          -1
+        ],
+        "survival_weight": {
+          "lower": "4",
+          "upper": "17"
+        },
+        "origin_connected_weight": {
+          "lower": "1",
+          "upper": "17",
+          "known_component": [
+            "cell_0008"
+          ],
+          "possible_component": [
+            "cell_0000",
+            "cell_0001",
+            "cell_0002",
+            "cell_0003",
+            "cell_0004",
+            "cell_0005",
+            "cell_0006",
+            "cell_0007",
+            "cell_0008",
+            "cell_0009",
+            "cell_0010",
+            "cell_0011",
+            "cell_0012",
+            "cell_0013",
+            "cell_0014",
+            "cell_0015",
+            "cell_0016"
+          ]
+        }
+      },
+      {
+        "design": "design_02",
+        "horizon": 64,
+        "labels": [
+          -1,
+          -1,
+          1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          1,
+          -1
+        ],
+        "survival_weight": {
+          "lower": "2",
+          "upper": "17"
+        },
+        "origin_connected_weight": {
+          "lower": "0",
+          "upper": "17",
+          "known_component": [],
+          "possible_component": [
+            "cell_0000",
+            "cell_0001",
+            "cell_0002",
+            "cell_0003",
+            "cell_0004",
+            "cell_0005",
+            "cell_0006",
+            "cell_0007",
+            "cell_0008",
+            "cell_0009",
+            "cell_0010",
+            "cell_0011",
+            "cell_0012",
+            "cell_0013",
+            "cell_0014",
+            "cell_0015",
+            "cell_0016"
+          ]
+        }
+      },
+      {
+        "design": "design_03",
+        "horizon": 64,
+        "labels": [
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          1,
+          -1,
+          1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1
+        ],
+        "survival_weight": {
+          "lower": "2",
+          "upper": "17"
+        },
+        "origin_connected_weight": {
+          "lower": "0",
+          "upper": "17",
+          "known_component": [],
+          "possible_component": [
+            "cell_0000",
+            "cell_0001",
+            "cell_0002",
+            "cell_0003",
+            "cell_0004",
+            "cell_0005",
+            "cell_0006",
+            "cell_0007",
+            "cell_0008",
+            "cell_0009",
+            "cell_0010",
+            "cell_0011",
+            "cell_0012",
+            "cell_0013",
+            "cell_0014",
+            "cell_0015",
+            "cell_0016"
+          ]
+        }
+      },
+      {
+        "design": "design_04",
+        "horizon": 64,
+        "labels": [
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          1,
+          -1,
+          1,
+          -1,
+          1,
+          -1
+        ],
+        "survival_weight": {
+          "lower": "3",
+          "upper": "17"
+        },
+        "origin_connected_weight": {
+          "lower": "0",
+          "upper": "17",
+          "known_component": [],
+          "possible_component": [
+            "cell_0000",
+            "cell_0001",
+            "cell_0002",
+            "cell_0003",
+            "cell_0004",
+            "cell_0005",
+            "cell_0006",
+            "cell_0007",
+            "cell_0008",
+            "cell_0009",
+            "cell_0010",
+            "cell_0011",
+            "cell_0012",
+            "cell_0013",
+            "cell_0014",
+            "cell_0015",
+            "cell_0016"
+          ]
+        }
+      },
+      {
+        "design": "design_05",
+        "horizon": 64,
+        "labels": [
+          -1,
+          -1,
+          1,
+          1,
+          -1,
+          -1,
+          1,
+          1,
+          -1,
+          -1,
+          1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1
+        ],
+        "survival_weight": {
+          "lower": "5",
+          "upper": "17"
+        },
+        "origin_connected_weight": {
+          "lower": "0",
+          "upper": "17",
+          "known_component": [],
+          "possible_component": [
+            "cell_0000",
+            "cell_0001",
+            "cell_0002",
+            "cell_0003",
+            "cell_0004",
+            "cell_0005",
+            "cell_0006",
+            "cell_0007",
+            "cell_0008",
+            "cell_0009",
+            "cell_0010",
+            "cell_0011",
+            "cell_0012",
+            "cell_0013",
+            "cell_0014",
+            "cell_0015",
+            "cell_0016"
+          ]
+        }
+      },
+      {
+        "design": "design_06",
+        "horizon": 64,
+        "labels": [
+          -1,
+          1,
+          1,
+          -1,
+          -1,
+          1,
+          -1,
+          1,
+          -1,
+          -1,
+          1,
+          1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1
+        ],
+        "survival_weight": {
+          "lower": "6",
+          "upper": "17"
+        },
+        "origin_connected_weight": {
+          "lower": "0",
+          "upper": "17",
+          "known_component": [],
+          "possible_component": [
+            "cell_0000",
+            "cell_0001",
+            "cell_0002",
+            "cell_0003",
+            "cell_0004",
+            "cell_0005",
+            "cell_0006",
+            "cell_0007",
+            "cell_0008",
+            "cell_0009",
+            "cell_0010",
+            "cell_0011",
+            "cell_0012",
+            "cell_0013",
+            "cell_0014",
+            "cell_0015",
+            "cell_0016"
+          ]
+        }
+      },
+      {
+        "design": "design_07",
+        "horizon": 64,
+        "labels": [
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          1,
+          1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1
+        ],
+        "survival_weight": {
+          "lower": "2",
+          "upper": "17"
+        },
+        "origin_connected_weight": {
+          "lower": "0",
+          "upper": "17",
+          "known_component": [],
+          "possible_component": [
+            "cell_0000",
+            "cell_0001",
+            "cell_0002",
+            "cell_0003",
+            "cell_0004",
+            "cell_0005",
+            "cell_0006",
+            "cell_0007",
+            "cell_0008",
+            "cell_0009",
+            "cell_0010",
+            "cell_0011",
+            "cell_0012",
+            "cell_0013",
+            "cell_0014",
+            "cell_0015",
+            "cell_0016"
+          ]
+        }
+      },
+      {
+        "design": "design_08",
+        "horizon": 64,
+        "labels": [
+          1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          1,
+          1,
+          -1,
+          -1,
+          -1,
+          -1,
+          1,
+          -1,
+          1,
+          -1,
+          -1
+        ],
+        "survival_weight": {
+          "lower": "5",
+          "upper": "17"
+        },
+        "origin_connected_weight": {
+          "lower": "0",
+          "upper": "17",
+          "known_component": [],
+          "possible_component": [
+            "cell_0000",
+            "cell_0001",
+            "cell_0002",
+            "cell_0003",
+            "cell_0004",
+            "cell_0005",
+            "cell_0006",
+            "cell_0007",
+            "cell_0008",
+            "cell_0009",
+            "cell_0010",
+            "cell_0011",
+            "cell_0012",
+            "cell_0013",
+            "cell_0014",
+            "cell_0015",
+            "cell_0016"
+          ]
+        }
+      }
+    ],
+    "exclusions": []
+  }
+}

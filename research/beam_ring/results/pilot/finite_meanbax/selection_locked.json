@@ -1,0 +1,397 @@
+{
+  "method": "finite_meanbax",
+  "designs": [
+    2,
+    8
+  ],
+  "estimated_objectives": [
+    [
+      0.4666666666666667,
+      1.0
+    ],
+    [
+      0.4444444444444444,
+      1.0
+    ],
+    [
+      0.6888888888888889,
+      1.0
+    ],
+    [
+      0.2,
+      1.0
+    ],
+    [
+      0.5777777777777777,
+      1.0
+    ],
+    [
+      0.4222222222222222,
+      1.0
+    ],
+    [
+      0.37777777777777777,
+      1.0
+    ],
+    [
+      0.6222222222222222,
+      1.0
+    ],
+    [
+      0.6444444444444445,
+      1.0
+    ]
+  ],
+  "selected_utc": "2026-10-24T00:28:47.693071+00:00",
+  "details": [
+    {
+      "iteration": 0,
+      "fit": [
+        {
+          "training_seconds": 0.03243200799624901,
+          "rows": 67,
+          "features": 6,
+          "iterations": 150,
+          "warnings": [
+            "lbfgs failed to converge after 150 iteration(s) (status=1):\nSTOP: TOTAL NO. OF ITERATIONS REACHED LIMIT\n\nIncrease the number of iterations to improve the convergence (max_iter=150).\nYou might also want to scale the data as shown in:\n    https://scikit-learn.org/stable/modules/preprocessing.html"
+          ],
+          "loss": 0.000853092356459725,
+          "implementation": "sklearn MLPRegressor, L-BFGS, clipped regression"
+        },
+        {
+          "training_seconds": 0.03204175199789461,
+          "rows": 29,
+          "features": 5,
+          "iterations": 150,
+          "warnings": [
+            "lbfgs failed to converge after 150 iteration(s) (status=1):\nSTOP: TOTAL NO. OF ITERATIONS REACHED LIMIT\n\nIncrease the number of iterations to improve the convergence (max_iter=150).\nYou might also want to scale the data as shown in:\n    https://scikit-learn.org/stable/modules/preprocessing.html"
+          ],
+          "loss": 4.1651091061647296e-05,
+          "implementation": "sklearn MLPRegressor, L-BFGS, clipped regression"
+        }
+      ],
+      "estimated_objectives": [
+        [
+          0.4444444444444444,
+          1.0
+        ],
+        [
+          0.4666666666666667,
+          1.0
+        ],
+        [
+          0.6444444444444445,
+          1.0
+        ],
+        [
+          0.0,
+          1.0
+        ],
+        [
+          0.5555555555555556,
+          1.0
+        ],
+        [
+          0.4444444444444444,
+          1.0
+        ],
+        [
+          0.37777777777777777,
+          1.0
+        ],
+        [
+          0.5777777777777777,
+          1.0
+        ],
+        [
+          0.6888888888888889,
+          1.0
+        ]
+      ],
+      "selection": {
+        "reason": "predicted_pareto_boundary",
+        "predicted_objectives": [
+          [
+            0.4444444444444444,
+            1.0
+          ],
+          [
+            0.4666666666666667,
+            1.0
+          ],
+          [
+            0.6444444444444445,
+            1.0
+          ],
+          [
+            0.0,
+            1.0
+          ],
+          [
+            0.5555555555555556,
+            1.0
+          ],
+          [
+            0.4444444444444444,
+            1.0
+          ],
+          [
+            0.37777777777777777,
+            1.0
+          ],
+          [
+            0.5777777777777777,
+            1.0
+          ],
+          [
+            0.6888888888888889,
+            1.0
+          ]
+        ],
+        "predicted_pareto_designs": [
+          8
+        ],
+        "selected_designs": [
+          8
+        ],
+        "candidate_points": 6,
+        "selected_queries": [
+          [
+            0,
+            8,
+            9
+          ],
+          [
+            0,
+            8,
+            6
+          ],
+          [
+            0,
+            8,
+            8
+          ],
+          [
+            0,
+            8,
+            34
+          ],
+          [
+            0,
+            8,
+            5
+          ],
+          [
+            0,
+            8,
+            7
+          ]
+        ],
+        "selection_seconds": 0.0003475819976301864,
+        "scope": "Heuristic acquisition only; predictions never become truth labels."
+      }
+    },
+    {
+      "iteration": 1,
+      "fit": [
+        {
+          "training_seconds": 0.0329213430013624,
+          "rows": 73,
+          "features": 6,
+          "iterations": 150,
+          "warnings": [
+            "lbfgs failed to converge after 150 iteration(s) (status=1):\nSTOP: TOTAL NO. OF ITERATIONS REACHED LIMIT\n\nIncrease the number of iterations to improve the convergence (max_iter=150).\nYou might also want to scale the data as shown in:\n    https://scikit-learn.org/stable/modules/preprocessing.html"
+          ],
+          "loss": 0.0007851816425757658,
+          "implementation": "sklearn MLPRegressor, L-BFGS, clipped regression"
+        },
+        {
+          "training_seconds": 0.033116286002041306,
+          "rows": 29,
+          "features": 5,
+          "iterations": 150,
+          "warnings": [
+            "lbfgs failed to converge after 150 iteration(s) (status=1):\nSTOP: TOTAL NO. OF ITERATIONS REACHED LIMIT\n\nIncrease the number of iterations to improve the convergence (max_iter=150).\nYou might also want to scale the data as shown in:\n    https://scikit-learn.org/stable/modules/preprocessing.html"
+          ],
+          "loss": 4.1651091061647296e-05,
+          "implementation": "sklearn MLPRegressor, L-BFGS, clipped regression"
+        }
+      ],
+      "estimated_objectives": [
+        [
+          0.5333333333333333,
+          1.0
+        ],
+        [
+          0.5333333333333333,
+          1.0
+        ],
+        [
+          0.6444444444444445,
+          1.0
+        ],
+        [
+          0.24444444444444444,
+          1.0
+        ],
+        [
+          0.5333333333333333,
+          1.0
+        ],
+        [
+          0.4666666666666667,
+          1.0
+        ],
+        [
+          0.37777777777777777,
+          1.0
+        ],
+        [
+          0.5111111111111111,
+          1.0
+        ],
+        [
+          0.7111111111111111,
+          1.0
+        ]
+      ],
+      "selection": {
+        "reason": "predicted_pareto_boundary",
+        "predicted_objectives": [
+          [
+            0.5333333333333333,
+            1.0
+          ],
+          [
+            0.5333333333333333,
+            1.0
+          ],
+          [
+            0.6444444444444445,
+            1.0
+          ],
+          [
+            0.24444444444444444,
+            1.0
+          ],
+          [
+            0.5333333333333333,
+            1.0
+          ],
+          [
+            0.4666666666666667,
+            1.0
+          ],
+          [
+            0.37777777777777777,
+            1.0
+          ],
+          [
+            0.5111111111111111,
+            1.0
+          ],
+          [
+            0.7111111111111111,
+            1.0
+          ]
+        ],
+        "predicted_pareto_designs": [
+          8
+        ],
+        "selected_designs": [
+          8
+        ],
+        "candidate_points": 4,
+        "selected_queries": [
+          [
+            0,
+            8,
+            38
+          ],
+          [
+            0,
+            8,
+            39
+          ],
+          [
+            0,
+            8,
+            37
+          ],
+          [
+            0,
+            8,
+            41
+          ]
+        ],
+        "selection_seconds": 0.0003798909965553321,
+        "scope": "Heuristic acquisition only; predictions never become truth labels."
+      }
+    },
+    {
+      "iteration": 2,
+      "fit": [
+        {
+          "training_seconds": 0.03513044700230239,
+          "rows": 77,
+          "features": 6,
+          "iterations": 150,
+          "warnings": [
+            "lbfgs failed to converge after 150 iteration(s) (status=1):\nSTOP: TOTAL NO. OF ITERATIONS REACHED LIMIT\n\nIncrease the number of iterations to improve the convergence (max_iter=150).\nYou might also want to scale the data as shown in:\n    https://scikit-learn.org/stable/modules/preprocessing.html"
+          ],
+          "loss": 0.0015705028031573484,
+          "implementation": "sklearn MLPRegressor, L-BFGS, clipped regression"
+        },
+        {
+          "training_seconds": 0.03389865899953293,
+          "rows": 29,
+          "features": 5,
+          "iterations": 150,
+          "warnings": [
+            "lbfgs failed to converge after 150 iteration(s) (status=1):\nSTOP: TOTAL NO. OF ITERATIONS REACHED LIMIT\n\nIncrease the number of iterations to improve the convergence (max_iter=150).\nYou might also want to scale the data as shown in:\n    https://scikit-learn.org/stable/modules/preprocessing.html"
+          ],
+          "loss": 4.1651091061647296e-05,
+          "implementation": "sklearn MLPRegressor, L-BFGS, clipped regression"
+        }
+      ],
+      "estimated_objectives": [
+        [
+          0.4666666666666667,
+          1.0
+        ],
+        [
+          0.4444444444444444,
+          1.0
+        ],
+        [
+          0.6888888888888889,
+          1.0
+        ],
+        [
+          0.2,
+          1.0
+        ],
+        [
+          0.5777777777777777,
+          1.0
+        ],
+        [
+          0.4222222222222222,
+          1.0
+        ],
+        [
+          0.37777777777777777,
+          1.0
+        ],
+        [
+          0.6222222222222222,
+          1.0
+        ],
+        [
+          0.6444444444444445,
+          1.0
+        ]
+      ]
+    }
+  ]
+}
