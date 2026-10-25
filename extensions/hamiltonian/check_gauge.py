@@ -1014,7 +1014,7 @@ def grid_TP():
                      TR.mul({(1, 0): F(1)}, W.pder(r, 1, 0)), TR.sc(r, F(2 - k)))
         if pb(H, G) != TR.tidy(rhs) or not CT.span_ok(H, [{(0, 0): F(1)}, G, H]):
             return False
-        res = TR.classify(H)
+        res = TR.classify(H, routes='gauge')
         if res['route'] != 'K3' or not res['proved']:
             return False
     H = TR.tidy(TR.add(TR.mul({(1, 0): F(1)}, TR.mul({(1, 1): F(1), (3, 0): F(1)}, {(1, 1): F(1), (3, 0): F(1)})),

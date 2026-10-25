@@ -1527,3 +1527,20 @@ With §5 this gives an unconditional statement of when **active** exact dynamics
   - a nonzero finite active part in K1′, K2, K3 and K4 (all exact);
   - none otherwise (proved for Q′, T, RS, NA and the affine cubic phase; conjectural in the open regions);
 - balanced top: never (proved, Theorem B).
+
+### 6.29 Cross-check of the two pure-top classifications
+
+The core-overlap line (PP, QC, SC, SS, SO, SCP, QF, QR, HR, CP; §§6.8–6.22) and the check_gauge line (K1, K1′, K2, K1+K2, extended K3, K4, NA, NE, NB, NT, NV, NQ, RS, TP, TE; §§6.23–6.28) were developed independently. `check_two_root.classify(H, routes='gauge' | 'core_overlap')` runs either one alone. `extensions/hamiltonian/crosscheck_pure_routes.py` compares them on random pure tops. These are triangular normal forms `τ*h(Q, P)` with `deg w ∈ {2, 3}` and random lower terms, transverse powers `q^k(qp + v)^s` and `q^k(p + v)^s`, and affine images.
+
+| run | pure tops | both proved | agree | gauge only | core-overlap only | neither | direct checks (mismatches) |
+|---|---|---|---|---|---|---|---|
+| seed 11 | 2000 | 1185 | 1185 | 815 | 0 | 0 | — |
+| seed 23, `--direct` | 300 | 207 | 207 | 93 | 0 | 0 | 146 (0) |
+
+The direct checks compare every proved prediction of degree ≤ 6 with `dim{G : deg G ≤ d+2, C_kD^rG = 0, r ≤ 8}`.
+
+- **Route correspondence.** QC ↔ K1 and K1+K2. SS, SO ↔ K2. PP, SC ↔ extended K3; both lines found the P004 counterexample `q(qp+q³)² + (qp+q³)` independently. SCP ↔ RS. CP ↔ K1′, K4 and the affine cubic phase.
+- **Where only the gauge line answers.** The core-overlap line leaves these unresolved; it labels them `pure, unresolved` or `pure, cubic phase`. They are mostly the non-affine cubic phase (NE, NT, NA edges) and the transverse tops of Theorem TE.
+- **Never the other way.** The core-overlap line never proves a case the gauge line leaves open.
+
+Agreement on samples is evidence of mutual consistency, not a proof of either line. The suite runs a 150-sample version (`test_two_classifications_agree`).
