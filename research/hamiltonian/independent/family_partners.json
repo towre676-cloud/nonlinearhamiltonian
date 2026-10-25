@@ -1,0 +1,5930 @@
+{
+  "family": "H_a = q^6 + a*q^3*p^3 + p^6",
+  "method": "charge-mod-6 blocked gate system (T_3, T_5), entries affine in a; generic nullspace over Q(a) by exact rational-function Gauss-Jordan; exceptional loci from maximal-minor factors, each tested by exact linear algebra over Q or over Q[t]/(factor)",
+  "degrees": {
+    "0": {
+      "generic_dim": 1,
+      "exceptional": [],
+      "blocks": [
+        {
+          "charge_class_mod_6": 0,
+          "monomials": [
+            [
+              0,
+              0
+            ]
+          ],
+          "rank": 0,
+          "generic_dim": 1,
+          "minor_polynomial_in_a": null
+        }
+      ],
+      "generic_basis": [
+        [
+          {
+            "q": 0,
+            "p": 0,
+            "coefficient": "1"
+          }
+        ]
+      ]
+    },
+    "1": {
+      "generic_dim": 2,
+      "exceptional": [],
+      "blocks": [
+        {
+          "charge_class_mod_6": 1,
+          "monomials": [
+            [
+              1,
+              0
+            ]
+          ],
+          "rank": 0,
+          "generic_dim": 1,
+          "minor_polynomial_in_a": null
+        },
+        {
+          "charge_class_mod_6": 5,
+          "monomials": [
+            [
+              0,
+              1
+            ]
+          ],
+          "rank": 0,
+          "generic_dim": 1,
+          "minor_polynomial_in_a": null
+        }
+      ],
+      "generic_basis": [
+        [
+          {
+            "q": 1,
+            "p": 0,
+            "coefficient": "1"
+          }
+        ],
+        [
+          {
+            "q": 0,
+            "p": 1,
+            "coefficient": "1"
+          }
+        ]
+      ]
+    },
+    "2": {
+      "generic_dim": 3,
+      "exceptional": [],
+      "blocks": [
+        {
+          "charge_class_mod_6": 0,
+          "monomials": [
+            [
+              1,
+              1
+            ]
+          ],
+          "rank": 0,
+          "generic_dim": 1,
+          "minor_polynomial_in_a": null
+        },
+        {
+          "charge_class_mod_6": 2,
+          "monomials": [
+            [
+              2,
+              0
+            ]
+          ],
+          "rank": 0,
+          "generic_dim": 1,
+          "minor_polynomial_in_a": null
+        },
+        {
+          "charge_class_mod_6": 4,
+          "monomials": [
+            [
+              0,
+              2
+            ]
+          ],
+          "rank": 0,
+          "generic_dim": 1,
+          "minor_polynomial_in_a": null
+        }
+      ],
+      "generic_basis": [
+        [
+          {
+            "q": 1,
+            "p": 1,
+            "coefficient": "1"
+          }
+        ],
+        [
+          {
+            "q": 2,
+            "p": 0,
+            "coefficient": "1"
+          }
+        ],
+        [
+          {
+            "q": 0,
+            "p": 2,
+            "coefficient": "1"
+          }
+        ]
+      ]
+    },
+    "3": {
+      "generic_dim": 0,
+      "exceptional": [
+        {
+          "locus": "a = 20",
+          "factor": [
+            "-20",
+            "1"
+          ],
+          "total_dim": 1,
+          "per_block_dims": [
+            0,
+            1,
+            0
+          ]
+        },
+        {
+          "locus": "a = 0",
+          "factor": [
+            "0",
+            "1"
+          ],
+          "total_dim": 2,
+          "per_block_dims": [
+            1,
+            0,
+            1
+          ]
+        },
+        {
+          "locus": "a = -20",
+          "factor": [
+            "20",
+            "1"
+          ],
+          "total_dim": 1,
+          "per_block_dims": [
+            0,
+            1,
+            0
+          ]
+        }
+      ],
+      "blocks": [
+        {
+          "charge_class_mod_6": 1,
+          "monomials": [
+            [
+              2,
+              1
+            ]
+          ],
+          "rank": 1,
+          "generic_dim": 0,
+          "minor_polynomial_in_a": "(108)*a"
+        },
+        {
+          "charge_class_mod_6": 3,
+          "monomials": [
+            [
+              0,
+              3
+            ],
+            [
+              3,
+              0
+            ]
+          ],
+          "rank": 2,
+          "generic_dim": 0,
+          "minor_polynomial_in_a": "518400 + (-1296)*a^2"
+        },
+        {
+          "charge_class_mod_6": 5,
+          "monomials": [
+            [
+              1,
+              2
+            ]
+          ],
+          "rank": 1,
+          "generic_dim": 0,
+          "minor_polynomial_in_a": "(-108)*a"
+        }
+      ],
+      "generic_basis": []
+    },
+    "4": {
+      "generic_dim": 1,
+      "exceptional": [
+        {
+          "locus": "root of (50 + a^2) = 0",
+          "factor": [
+            "50",
+            "0",
+            "1"
+          ],
+          "total_dim": 3,
+          "per_block_dims": [
+            1,
+            1,
+            1
+          ]
+        }
+      ],
+      "blocks": [
+        {
+          "charge_class_mod_6": 0,
+          "monomials": [
+            [
+              2,
+              2
+            ]
+          ],
+          "rank": 0,
+          "generic_dim": 1,
+          "minor_polynomial_in_a": null
+        },
+        {
+          "charge_class_mod_6": 2,
+          "monomials": [
+            [
+              0,
+              4
+            ],
+            [
+              3,
+              1
+            ]
+          ],
+          "rank": 2,
+          "generic_dim": 0,
+          "minor_polynomial_in_a": "2073600 + (41472)*a^2"
+        },
+        {
+          "charge_class_mod_6": 4,
+          "monomials": [
+            [
+              1,
+              3
+            ],
+            [
+              4,
+              0
+            ]
+          ],
+          "rank": 2,
+          "generic_dim": 0,
+          "minor_polynomial_in_a": "2073600 + (41472)*a^2"
+        }
+      ],
+      "generic_basis": [
+        [
+          {
+            "q": 2,
+            "p": 2,
+            "coefficient": "1"
+          }
+        ]
+      ]
+    },
+    "5": {
+      "generic_dim": 0,
+      "exceptional": [
+        {
+          "locus": "a = 40/7",
+          "factor": [
+            "-40/7",
+            "1"
+          ],
+          "total_dim": 1,
+          "per_block_dims": [
+            0,
+            1,
+            0
+          ]
+        },
+        {
+          "locus": "a = -40/7",
+          "factor": [
+            "40/7",
+            "1"
+          ],
+          "total_dim": 1,
+          "per_block_dims": [
+            0,
+            1,
+            0
+          ]
+        }
+      ],
+      "blocks": [
+        {
+          "charge_class_mod_6": 1,
+          "monomials": [
+            [
+              0,
+              5
+            ],
+            [
+              3,
+              2
+            ]
+          ],
+          "rank": 2,
+          "generic_dim": 0,
+          "minor_polynomial_in_a": "5184000 + (103680)*a^2"
+        },
+        {
+          "charge_class_mod_6": 3,
+          "monomials": [
+            [
+              1,
+              4
+            ],
+            [
+              4,
+              1
+            ]
+          ],
+          "rank": 2,
+          "generic_dim": 0,
+          "minor_polynomial_in_a": "8294400 + (-254016)*a^2"
+        },
+        {
+          "charge_class_mod_6": 5,
+          "monomials": [
+            [
+              2,
+              3
+            ],
+            [
+              5,
+              0
+            ]
+          ],
+          "rank": 2,
+          "generic_dim": 0,
+          "minor_polynomial_in_a": "5184000 + (103680)*a^2"
+        }
+      ],
+      "generic_basis": []
+    },
+    "6": {
+      "generic_dim": 1,
+      "exceptional": [],
+      "blocks": [
+        {
+          "charge_class_mod_6": 0,
+          "monomials": [
+            [
+              0,
+              6
+            ],
+            [
+              3,
+              3
+            ],
+            [
+              6,
+              0
+            ]
+          ],
+          "rank": 2,
+          "generic_dim": 1,
+          "minor_polynomial_in_a": "10368000"
+        },
+        {
+          "charge_class_mod_6": 2,
+          "monomials": [
+            [
+              1,
+              5
+            ],
+            [
+              4,
+              2
+            ]
+          ],
+          "rank": 2,
+          "generic_dim": 0,
+          "minor_polynomial_in_a": "20736000 + (-518400)*a^2"
+        },
+        {
+          "charge_class_mod_6": 4,
+          "monomials": [
+            [
+              2,
+              4
+            ],
+            [
+              5,
+              1
+            ]
+          ],
+          "rank": 2,
+          "generic_dim": 0,
+          "minor_polynomial_in_a": "20736000 + (-518400)*a^2"
+        }
+      ],
+      "generic_basis": [
+        [
+          {
+            "q": 0,
+            "p": 6,
+            "coefficient": "1"
+          },
+          {
+            "q": 3,
+            "p": 3,
+            "coefficient": "a"
+          },
+          {
+            "q": 6,
+            "p": 0,
+            "coefficient": "1"
+          }
+        ]
+      ]
+    },
+    "7": {
+      "generic_dim": 0,
+      "exceptional": [],
+      "blocks": [
+        {
+          "charge_class_mod_6": 1,
+          "monomials": [
+            [
+              1,
+              6
+            ],
+            [
+              4,
+              3
+            ],
+            [
+              7,
+              0
+            ]
+          ],
+          "rank": 3,
+          "generic_dim": 0,
+          "minor_polynomial_in_a": "(-68584320000)*a + (612360000)*a^3"
+        },
+        {
+          "charge_class_mod_6": 3,
+          "monomials": [
+            [
+              2,
+              5
+            ],
+            [
+              5,
+              2
+            ]
+          ],
+          "rank": 2,
+          "generic_dim": 0,
+          "minor_polynomial_in_a": "51840000 + (-1587600)*a^2"
+        },
+        {
+          "charge_class_mod_6": 5,
+          "monomials": [
+            [
+              0,
+              7
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              6,
+              1
+            ]
+          ],
+          "rank": 3,
+          "generic_dim": 0,
+          "minor_polynomial_in_a": "(68584320000)*a + (-612360000)*a^3"
+        }
+      ],
+      "generic_basis": []
+    },
+    "8": {
+      "generic_dim": 1,
+      "exceptional": [],
+      "blocks": [
+        {
+          "charge_class_mod_6": 0,
+          "monomials": [
+            [
+              1,
+              7
+            ],
+            [
+              4,
+              4
+            ],
+            [
+              7,
+              1
+            ]
+          ],
+          "rank": 2,
+          "generic_dim": 1,
+          "minor_polynomial_in_a": "72576000"
+        },
+        {
+          "charge_class_mod_6": 2,
+          "monomials": [
+            [
+              2,
+              6
+            ],
+            [
+              5,
+              3
+            ],
+            [
+              8,
+              0
+            ]
+          ],
+          "rank": 3,
+          "generic_dim": 0,
+          "minor_polynomial_in_a": "(-263363788800)*a + (4891041792)*a^3"
+        },
+        {
+          "charge_class_mod_6": 4,
+          "monomials": [
+            [
+              0,
+              8
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              6,
+              2
+            ]
+          ],
+          "rank": 3,
+          "generic_dim": 0,
+          "minor_polynomial_in_a": "(263363788800)*a + (-4891041792)*a^3"
+        }
+      ],
+      "generic_basis": [
+        [
+          {
+            "q": 1,
+            "p": 7,
+            "coefficient": "1"
+          },
+          {
+            "q": 4,
+            "p": 4,
+            "coefficient": "(-7/20)*a"
+          },
+          {
+            "q": 7,
+            "p": 1,
+            "coefficient": "1"
+          }
+        ]
+      ]
+    },
+    "9": {
+      "generic_dim": 0,
+      "exceptional": [],
+      "blocks": [
+        {
+          "charge_class_mod_6": 1,
+          "monomials": [
+            [
+              2,
+              7
+            ],
+            [
+              5,
+              4
+            ],
+            [
+              8,
+              1
+            ]
+          ],
+          "rank": 3,
+          "generic_dim": 0,
+          "minor_polynomial_in_a": "(-109734912000)*a + (-2194698240)*a^3"
+        },
+        {
+          "charge_class_mod_6": 3,
+          "monomials": [
+            [
+              0,
+              9
+            ],
+            [
+              3,
+              6
+            ],
+            [
+              6,
+              3
+            ],
+            [
+              9,
+              0
+            ]
+          ],
+          "rank": 4,
+          "generic_dim": 0,
+          "minor_polynomial_in_a": "1896219279360000 + (-2484047255961600)*a^2 + (45556668186624)*a^4"
+        },
+        {
+          "charge_class_mod_6": 5,
+          "monomials": [
+            [
+              1,
+              8
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              7,
+              2
+            ]
+          ],
+          "rank": 3,
+          "generic_dim": 0,
+          "minor_polynomial_in_a": "(109734912000)*a + (2194698240)*a^3"
+        }
+      ],
+      "generic_basis": []
+    },
+    "10": {
+      "generic_dim": 0,
+      "exceptional": [
+        {
+          "locus": "a = 0",
+          "factor": [
+            "0",
+            "1"
+          ],
+          "total_dim": 1,
+          "per_block_dims": [
+            1,
+            0,
+            0
+          ]
+        }
+      ],
+      "blocks": [
+        {
+          "charge_class_mod_6": 0,
+          "monomials": [
+            [
+              2,
+              8
+            ],
+            [
+              5,
+              5
+            ],
+            [
+              8,
+              2
+            ]
+          ],
+          "rank": 3,
+          "generic_dim": 0,
+          "minor_polynomial_in_a": "(81266540544000)*a"
+        },
+        {
+          "charge_class_mod_6": 2,
+          "monomials": [
+            [
+              0,
+              10
+            ],
+            [
+              3,
+              7
+            ],
+            [
+              6,
+              4
+            ],
+            [
+              9,
+              1
+            ]
+          ],
+          "rank": 4,
+          "generic_dim": 0,
+          "minor_polynomial_in_a": "10835538739200000 + (-1029376180224000)*a^2 + (-24921739100160)*a^4"
+        },
+        {
+          "charge_class_mod_6": 4,
+          "monomials": [
+            [
+              1,
+              9
+            ],
+            [
+              4,
+              6
+            ],
+            [
+              7,
+              3
+            ],
+            [
+              10,
+              0
+            ]
+          ],
+          "rank": 4,
+          "generic_dim": 0,
+          "minor_polynomial_in_a": "10835538739200000 + (-1029376180224000)*a^2 + (-24921739100160)*a^4"
+        }
+      ],
+      "generic_basis": []
+    },
+    "11": {
+      "generic_dim": 0,
+      "exceptional": [],
+      "blocks": [
+        {
+          "charge_class_mod_6": 1,
+          "monomials": [
+            [
+              0,
+              11
+            ],
+            [
+              3,
+              8
+            ],
+            [
+              6,
+              5
+            ],
+            [
+              9,
+              2
+            ]
+          ],
+          "rank": 4,
+          "generic_dim": 0,
+          "minor_polynomial_in_a": "37247164416000000 + (1804159526400000)*a^2 + (-127309644000000)*a^4"
+        },
+        {
+          "charge_class_mod_6": 3,
+          "monomials": [
+            [
+              1,
+              10
+            ],
+            [
+              4,
+              7
+            ],
+            [
+              7,
+              4
+            ],
+            [
+              10,
+              1
+            ]
+          ],
+          "rank": 4,
+          "generic_dim": 0,
+          "minor_polynomial_in_a": "61917364224000000 + (733908211200000)*a^2 + (3410670240000)*a^4"
+        },
+        {
+          "charge_class_mod_6": 5,
+          "monomials": [
+            [
+              2,
+              9
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              8,
+              3
+            ],
+            [
+              11,
+              0
+            ]
+          ],
+          "rank": 4,
+          "generic_dim": 0,
+          "minor_polynomial_in_a": "37247164416000000 + (1804159526400000)*a^2 + (-127309644000000)*a^4"
+        }
+      ],
+      "generic_basis": []
+    },
+    "12": {
+      "generic_dim": 0,
+      "exceptional": [
+        {
+          "locus": "root of (5 + a^2) = 0",
+          "factor": [
+            "5",
+            "0",
+            "1"
+          ],
+          "total_dim": 1,
+          "per_block_dims": [
+            1,
+            0,
+            0
+          ]
+        }
+      ],
+      "blocks": [
+        {
+          "charge_class_mod_6": 0,
+          "monomials": [
+            [
+              0,
+              12
+            ],
+            [
+              3,
+              9
+            ],
+            [
+              6,
+              6
+            ],
+            [
+              9,
+              3
+            ],
+            [
+              12,
+              0
+            ]
+          ],
+          "rank": 5,
+          "generic_dim": 0,
+          "minor_polynomial_in_a": "6230348090730086400000000 + (1246069618146017280000000)*a^2"
+        },
+        {
+          "charge_class_mod_6": 2,
+          "monomials": [
+            [
+              1,
+              11
+            ],
+            [
+              4,
+              8
+            ],
+            [
+              7,
+              5
+            ],
+            [
+              10,
+              2
+            ]
+          ],
+          "rank": 4,
+          "generic_dim": 0,
+          "minor_polynomial_in_a": "-212840939520000000 + (-4256818790400000)*a^2"
+        },
+        {
+          "charge_class_mod_6": 4,
+          "monomials": [
+            [
+              2,
+              10
+            ],
+            [
+              5,
+              7
+            ],
+            [
+              8,
+              4
+            ],
+            [
+              11,
+              1
+            ]
+          ],
+          "rank": 4,
+          "generic_dim": 0,
+          "minor_polynomial_in_a": "212840939520000000 + (4256818790400000)*a^2"
+        }
+      ],
+      "generic_basis": []
+    },
+    "13": {
+      "generic_dim": 0,
+      "exceptional": [],
+      "blocks": [
+        {
+          "charge_class_mod_6": 1,
+          "monomials": [
+            [
+              1,
+              12
+            ],
+            [
+              4,
+              9
+            ],
+            [
+              7,
+              6
+            ],
+            [
+              10,
+              3
+            ],
+            [
+              13,
+              0
+            ]
+          ],
+          "rank": 5,
+          "generic_dim": 0,
+          "minor_polynomial_in_a": "(-5547920443165900800000)*a + (-76955025501978624000)*a^3 + (680067667226787840)*a^5"
+        },
+        {
+          "charge_class_mod_6": 3,
+          "monomials": [
+            [
+              2,
+              11
+            ],
+            [
+              5,
+              8
+            ],
+            [
+              8,
+              5
+            ],
+            [
+              11,
+              2
+            ]
+          ],
+          "rank": 4,
+          "generic_dim": 0,
+          "minor_polynomial_in_a": "731640729600000000 + (2505137858150400)*a^2 + (525493637627904)*a^4"
+        },
+        {
+          "charge_class_mod_6": 5,
+          "monomials": [
+            [
+              0,
+              13
+            ],
+            [
+              3,
+              10
+            ],
+            [
+              6,
+              7
+            ],
+            [
+              9,
+              4
+            ],
+            [
+              12,
+              1
+            ]
+          ],
+          "rank": 5,
+          "generic_dim": 0,
+          "minor_polynomial_in_a": "(5547920443165900800000)*a + (76955025501978624000)*a^3 + (-680067667226787840)*a^5"
+        }
+      ],
+      "generic_basis": []
+    },
+    "14": {
+      "generic_dim": 0,
+      "exceptional": [
+        {
+          "locus": "root of (50 + a^2) = 0",
+          "factor": [
+            "50",
+            "0",
+            "1"
+          ],
+          "total_dim": 1,
+          "per_block_dims": [
+            1,
+            0,
+            0
+          ]
+        }
+      ],
+      "blocks": [
+        {
+          "charge_class_mod_6": 0,
+          "monomials": [
+            [
+              1,
+              13
+            ],
+            [
+              4,
+              10
+            ],
+            [
+              7,
+              7
+            ],
+            [
+              10,
+              4
+            ],
+            [
+              13,
+              1
+            ]
+          ],
+          "rank": 5,
+          "generic_dim": 0,
+          "minor_polynomial_in_a": "124437043230309089280000000 + (2488740864606181785600000)*a^2"
+        },
+        {
+          "charge_class_mod_6": 2,
+          "monomials": [
+            [
+              2,
+              12
+            ],
+            [
+              5,
+              9
+            ],
+            [
+              8,
+              6
+            ],
+            [
+              11,
+              3
+            ],
+            [
+              14,
+              0
+            ]
+          ],
+          "rank": 5,
+          "generic_dim": 0,
+          "minor_polynomial_in_a": "(-27048885381129830400000)*a + (88692351952748544000)*a^3 + (-15132466978970664960)*a^5"
+        },
+        {
+          "charge_class_mod_6": 4,
+          "monomials": [
+            [
+              0,
+              14
+            ],
+            [
+              3,
+              11
+            ],
+            [
+              6,
+              8
+            ],
+            [
+              9,
+              5
+            ],
+            [
+              12,
+              2
+            ]
+          ],
+          "rank": 5,
+          "generic_dim": 0,
+          "minor_polynomial_in_a": "(27048885381129830400000)*a + (-88692351952748544000)*a^3 + (15132466978970664960)*a^5"
+        }
+      ],
+      "generic_basis": []
+    },
+    "15": {
+      "generic_dim": 0,
+      "exceptional": [],
+      "blocks": [
+        {
+          "charge_class_mod_6": 1,
+          "monomials": [
+            [
+              2,
+              13
+            ],
+            [
+              5,
+              10
+            ],
+            [
+              8,
+              7
+            ],
+            [
+              11,
+              4
+            ],
+            [
+              14,
+              1
+            ]
+          ],
+          "rank": 5,
+          "generic_dim": 0,
+          "minor_polynomial_in_a": "(-25539144034192588800000)*a + (119665166340335616000)*a^3 + (-3954056335185116160)*a^5"
+        },
+        {
+          "charge_class_mod_6": 3,
+          "monomials": [
+            [
+              0,
+              15
+            ],
+            [
+              3,
+              12
+            ],
+            [
+              6,
+              9
+            ],
+            [
+              9,
+              6
+            ],
+            [
+              12,
+              3
+            ],
+            [
+              15,
+              0
+            ]
+          ],
+          "rank": 6,
+          "generic_dim": 0,
+          "minor_polynomial_in_a": "203505590406846873600000000 + (-1556340800384862535680000000)*a^2 + (17944218997511226900480000)*a^4 + (-1029357854166342648729600)*a^6"
+        },
+        {
+          "charge_class_mod_6": 5,
+          "monomials": [
+            [
+              1,
+              14
+            ],
+            [
+              4,
+              11
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              10,
+              5
+            ],
+            [
+              13,
+              2
+            ]
+          ],
+          "rank": 5,
+          "generic_dim": 0,
+          "minor_polynomial_in_a": "(25539144034192588800000)*a + (-119665166340335616000)*a^3 + (3954056335185116160)*a^5"
+        }
+      ],
+      "generic_basis": []
+    },
+    "16": {
+      "generic_dim": 0,
+      "exceptional": [],
+      "blocks": [
+        {
+          "charge_class_mod_6": 0,
+          "monomials": [
+            [
+              2,
+              14
+            ],
+            [
+              5,
+              11
+            ],
+            [
+              8,
+              8
+            ],
+            [
+              11,
+              5
+            ],
+            [
+              14,
+              2
+            ]
+          ],
+          "rank": 5,
+          "generic_dim": 0,
+          "minor_polynomial_in_a": "(14759746117419663360000000)*a"
+        },
+        {
+          "charge_class_mod_6": 2,
+          "monomials": [
+            [
+              0,
+              16
+            ],
+            [
+              3,
+              13
+            ],
+            [
+              6,
+              10
+            ],
+            [
+              9,
+              7
+            ],
+            [
+              12,
+              4
+            ],
+            [
+              15,
+              1
+            ]
+          ],
+          "rank": 6,
+          "generic_dim": 0,
+          "minor_polynomial_in_a": "1431248108355846144000000000 + (-2049161955136398950400000000)*a^2 + (24221121833714319360000000)*a^4 + (-670897550791802880000000)*a^6"
+        },
+        {
+          "charge_class_mod_6": 4,
+          "monomials": [
+            [
+              1,
+              15
+            ],
+            [
+              4,
+              12
+            ],
+            [
+              7,
+              9
+            ],
+            [
+              10,
+              6
+            ],
+            [
+              13,
+              3
+            ],
+            [
+              16,
+              0
+            ]
+          ],
+          "rank": 6,
+          "generic_dim": 0,
+          "minor_polynomial_in_a": "1431248108355846144000000000 + (-2049161955136398950400000000)*a^2 + (24221121833714319360000000)*a^4 + (-670897550791802880000000)*a^6"
+        }
+      ],
+      "generic_basis": []
+    },
+    "17": {
+      "generic_dim": 0,
+      "exceptional": [],
+      "blocks": [
+        {
+          "charge_class_mod_6": 1,
+          "monomials": [
+            [
+              0,
+              17
+            ],
+            [
+              3,
+              14
+            ],
+            [
+              6,
+              11
+            ],
+            [
+              9,
+              8
+            ],
+            [
+              12,
+              5
+            ],
+            [
+              15,
+              2
+            ]
+          ],
+          "rank": 6,
+          "generic_dim": 0,
+          "minor_polynomial_in_a": "5974182952288911360000000000 + (-1523416652833672396800000000)*a^2 + (4480637214216683520000000)*a^4 + (746772869036113920000000)*a^6"
+        },
+        {
+          "charge_class_mod_6": 3,
+          "monomials": [
+            [
+              1,
+              16
+            ],
+            [
+              4,
+              13
+            ],
+            [
+              7,
+              10
+            ],
+            [
+              10,
+              7
+            ],
+            [
+              13,
+              4
+            ],
+            [
+              16,
+              1
+            ]
+          ],
+          "rank": 6,
+          "generic_dim": 0,
+          "minor_polynomial_in_a": "10065920762063093760000000000 + (-2657270376174610022400000000)*a^2 + (38447590410761011200000000)*a^4 + (-812510999012966400000000)*a^6"
+        },
+        {
+          "charge_class_mod_6": 5,
+          "monomials": [
+            [
+              2,
+              15
+            ],
+            [
+              5,
+              12
+            ],
+            [
+              8,
+              9
+            ],
+            [
+              11,
+              6
+            ],
+            [
+              14,
+              3
+            ],
+            [
+              17,
+              0
+            ]
+          ],
+          "rank": 6,
+          "generic_dim": 0,
+          "minor_polynomial_in_a": "5974182952288911360000000000 + (-1523416652833672396800000000)*a^2 + (4480637214216683520000000)*a^4 + (746772869036113920000000)*a^6"
+        }
+      ],
+      "generic_basis": []
+    },
+    "18": {
+      "generic_dim": 0,
+      "exceptional": [],
+      "blocks": [
+        {
+          "charge_class_mod_6": 0,
+          "monomials": [
+            [
+              0,
+              18
+            ],
+            [
+              3,
+              15
+            ],
+            [
+              6,
+              12
+            ],
+            [
+              9,
+              9
+            ],
+            [
+              12,
+              6
+            ],
+            [
+              15,
+              3
+            ],
+            [
+              18,
+              0
+            ]
+          ],
+          "rank": 7,
+          "generic_dim": 0,
+          "minor_polynomial_in_a": "13747779868766810212883496960000000000 + (4605506256036881421315971481600000000)*a^2"
+        },
+        {
+          "charge_class_mod_6": 2,
+          "monomials": [
+            [
+              1,
+              17
+            ],
+            [
+              4,
+              14
+            ],
+            [
+              7,
+              11
+            ],
+            [
+              10,
+              8
+            ],
+            [
+              13,
+              5
+            ],
+            [
+              16,
+              2
+            ]
+          ],
+          "rank": 6,
+          "generic_dim": 0,
+          "minor_polynomial_in_a": "42016231752361574400000000000 + (-1502836577318468793139200000)*a^2 + (6722597080377851904000)*a^4 + (937398936887887669493760)*a^6"
+        },
+        {
+          "charge_class_mod_6": 4,
+          "monomials": [
+            [
+              2,
+              16
+            ],
+            [
+              5,
+              13
+            ],
+            [
+              8,
+              10
+            ],
+            [
+              11,
+              7
+            ],
+            [
+              14,
+              4
+            ],
+            [
+              17,
+              1
+            ]
+          ],
+          "rank": 6,
+          "generic_dim": 0,
+          "minor_polynomial_in_a": "42016231752361574400000000000 + (-1502836577318468793139200000)*a^2 + (6722597080377851904000)*a^4 + (937398936887887669493760)*a^6"
+        }
+      ],
+      "generic_basis": []
+    },
+    "19": {
+      "generic_dim": 0,
+      "exceptional": [],
+      "blocks": [
+        {
+          "charge_class_mod_6": 1,
+          "monomials": [
+            [
+              1,
+              18
+            ],
+            [
+              4,
+              15
+            ],
+            [
+              7,
+              12
+            ],
+            [
+              10,
+              9
+            ],
+            [
+              13,
+              6
+            ],
+            [
+              16,
+              3
+            ],
+            [
+              19,
+              0
+            ]
+          ],
+          "rank": 7,
+          "generic_dim": 0,
+          "minor_polynomial_in_a": "(-3964457842201757160591851520000000)*a + (-56117611039804494490121011200000)*a^3 + (3217168240089069838269874176000)*a^5 + (-134202297478914747800762204160)*a^7"
+        },
+        {
+          "charge_class_mod_6": 3,
+          "monomials": [
+            [
+              2,
+              17
+            ],
+            [
+              5,
+              14
+            ],
+            [
+              8,
+              11
+            ],
+            [
+              11,
+              8
+            ],
+            [
+              14,
+              5
+            ],
+            [
+              17,
+              2
+            ]
+          ],
+          "rank": 6,
+          "generic_dim": 0,
+          "minor_polynomial_in_a": "175380253073473536000000000000 + (1750615972996040884224000000)*a^2 + (-32678608839790374051840000)*a^4 + (-452471897922952945766400)*a^6"
+        },
+        {
+          "charge_class_mod_6": 5,
+          "monomials": [
+            [
+              0,
+              19
+            ],
+            [
+              3,
+              16
+            ],
+            [
+              6,
+              13
+            ],
+            [
+              9,
+              10
+            ],
+            [
+              12,
+              7
+            ],
+            [
+              15,
+              4
+            ],
+            [
+              18,
+              1
+            ]
+          ],
+          "rank": 7,
+          "generic_dim": 0,
+          "minor_polynomial_in_a": "(3964457842201757160591851520000000)*a + (56117611039804494490121011200000)*a^3 + (-3217168240089069838269874176000)*a^5 + (134202297478914747800762204160)*a^7"
+        }
+      ],
+      "generic_basis": []
+    },
+    "20": {
+      "generic_dim": 0,
+      "exceptional": [],
+      "blocks": [
+        {
+          "charge_class_mod_6": 0,
+          "monomials": [
+            [
+              1,
+              19
+            ],
+            [
+              4,
+              16
+            ],
+            [
+              7,
+              13
+            ],
+            [
+              10,
+              10
+            ],
+            [
+              13,
+              7
+            ],
+            [
+              16,
+              4
+            ],
+            [
+              19,
+              1
+            ]
+          ],
+          "rank": 7,
+          "generic_dim": 0,
+          "minor_polynomial_in_a": "346676551911292467831499653120000000000 + (28957688453766782607101735731200000000)*a^2"
+        },
+        {
+          "charge_class_mod_6": 2,
+          "monomials": [
+            [
+              2,
+              18
+            ],
+            [
+              5,
+              15
+            ],
+            [
+              8,
+              12
+            ],
+            [
+              11,
+              9
+            ],
+            [
+              14,
+              6
+            ],
+            [
+              17,
+              3
+            ],
+            [
+              20,
+              0
+            ]
+          ],
+          "rank": 7,
+          "generic_dim": 0,
+          "minor_polynomial_in_a": "(-22709345579153109406030233600000000)*a + (-358369569632291543958159360000000)*a^3 + (5293475640803078558365777920000)*a^5 + (67542576035753313502337433600)*a^7"
+        },
+        {
+          "charge_class_mod_6": 4,
+          "monomials": [
+            [
+              0,
+              20
+            ],
+            [
+              3,
+              17
+            ],
+            [
+              6,
+              14
+            ],
+            [
+              9,
+              11
+            ],
+            [
+              12,
+              8
+            ],
+            [
+              15,
+              5
+            ],
+            [
+              18,
+              2
+            ]
+          ],
+          "rank": 7,
+          "generic_dim": 0,
+          "minor_polynomial_in_a": "(22709345579153109406030233600000000)*a + (358369569632291543958159360000000)*a^3 + (-5293475640803078558365777920000)*a^5 + (-67542576035753313502337433600)*a^7"
+        }
+      ],
+      "generic_basis": []
+    },
+    "21": {
+      "generic_dim": 0,
+      "exceptional": [],
+      "blocks": [
+        {
+          "charge_class_mod_6": 1,
+          "monomials": [
+            [
+              2,
+              19
+            ],
+            [
+              5,
+              16
+            ],
+            [
+              8,
+              13
+            ],
+            [
+              11,
+              10
+            ],
+            [
+              14,
+              7
+            ],
+            [
+              17,
+              4
+            ],
+            [
+              20,
+              1
+            ]
+          ],
+          "rank": 7,
+          "generic_dim": 0,
+          "minor_polynomial_in_a": "(29115180617980009512960000000000000)*a + (322346642556207248179200000000000)*a^3 + (-5199139396067858841600000000000)*a^5"
+        },
+        {
+          "charge_class_mod_6": 3,
+          "monomials": [
+            [
+              0,
+              21
+            ],
+            [
+              3,
+              18
+            ],
+            [
+              6,
+              15
+            ],
+            [
+              9,
+              12
+            ],
+            [
+              12,
+              9
+            ],
+            [
+              15,
+              6
+            ],
+            [
+              18,
+              3
+            ],
+            [
+              21,
+              0
+            ]
+          ],
+          "rank": 8,
+          "generic_dim": 0,
+          "minor_polynomial_in_a": "186614170550556071754203136000000000000 + (-4238948433355136626518392832000000000000)*a^2 + (-38382361761612980108132352000000000000)*a^4 + (-368626211931173639159808000000000000)*a^6 + (59507069690866094309376000000000000)*a^8"
+        },
+        {
+          "charge_class_mod_6": 5,
+          "monomials": [
+            [
+              1,
+              20
+            ],
+            [
+              4,
+              17
+            ],
+            [
+              7,
+              14
+            ],
+            [
+              10,
+              11
+            ],
+            [
+              13,
+              8
+            ],
+            [
+              16,
+              5
+            ],
+            [
+              19,
+              2
+            ]
+          ],
+          "rank": 7,
+          "generic_dim": 0,
+          "minor_polynomial_in_a": "(29115180617980009512960000000000000)*a + (322346642556207248179200000000000)*a^3 + (-5199139396067858841600000000000)*a^5"
+        }
+      ]
+    },
+    "22": {
+      "generic_dim": 0,
+      "exceptional": [],
+      "blocks": [
+        {
+          "charge_class_mod_6": 0,
+          "monomials": [
+            [
+              2,
+              20
+            ],
+            [
+              5,
+              17
+            ],
+            [
+              8,
+              14
+            ],
+            [
+              11,
+              11
+            ],
+            [
+              14,
+              8
+            ],
+            [
+              17,
+              5
+            ],
+            [
+              20,
+              2
+            ]
+          ],
+          "rank": 7,
+          "generic_dim": 0,
+          "minor_polynomial_in_a": "(17794217671835934066632294400000000000)*a"
+        },
+        {
+          "charge_class_mod_6": 2,
+          "monomials": [
+            [
+              0,
+              22
+            ],
+            [
+              3,
+              19
+            ],
+            [
+              6,
+              16
+            ],
+            [
+              9,
+              13
+            ],
+            [
+              12,
+              10
+            ],
+            [
+              15,
+              7
+            ],
+            [
+              18,
+              4
+            ],
+            [
+              21,
+              1
+            ]
+          ],
+          "rank": 8,
+          "generic_dim": 0,
+          "minor_polynomial_in_a": "1519680463477055806997790720000000000000 + (-7687383607680975065793429504000000000000)*a^2 + (-16464395246928346630796083200000000000)*a^4 + (-1353031830482307508076544000000000000)*a^6 + (83687760485769491251200000000000000)*a^8"
+        },
+        {
+          "charge_class_mod_6": 4,
+          "monomials": [
+            [
+              1,
+              21
+            ],
+            [
+              4,
+              18
+            ],
+            [
+              7,
+              15
+            ],
+            [
+              10,
+              12
+            ],
+            [
+              13,
+              9
+            ],
+            [
+              16,
+              6
+            ],
+            [
+              19,
+              3
+            ],
+            [
+              22,
+              0
+            ]
+          ],
+          "rank": 8,
+          "generic_dim": 0,
+          "minor_polynomial_in_a": "1519680463477055806997790720000000000000 + (-7687383607680975065793429504000000000000)*a^2 + (-16464395246928346630796083200000000000)*a^4 + (-1353031830482307508076544000000000000)*a^6 + (83687760485769491251200000000000000)*a^8"
+        }
+      ]
+    },
+    "23": {
+      "generic_dim": 0,
+      "exceptional": [],
+      "blocks": [
+        {
+          "charge_class_mod_6": 1,
+          "monomials": [
+            [
+              0,
+              23
+            ],
+            [
+              3,
+              20
+            ],
+            [
+              6,
+              17
+            ],
+            [
+              9,
+              14
+            ],
+            [
+              12,
+              11
+            ],
+            [
+              15,
+              8
+            ],
+            [
+              18,
+              5
+            ],
+            [
+              21,
+              2
+            ]
+          ],
+          "rank": 8,
+          "generic_dim": 0,
+          "minor_polynomial_in_a": "7294805439079036859260600320000000000000 + (-8916842814336135984981098511728640000000)*a^2 + (29333473266858848311680239822438400000)*a^4 + (-1184543686289511716357312092569600000)*a^6 + (20652358061758743005154444571115520)*a^8"
+        },
+        {
+          "charge_class_mod_6": 3,
+          "monomials": [
+            [
+              1,
+              22
+            ],
+            [
+              4,
+              19
+            ],
+            [
+              7,
+              16
+            ],
+            [
+              10,
+              13
+            ],
+            [
+              13,
+              10
+            ],
+            [
+              16,
+              7
+            ],
+            [
+              19,
+              4
+            ],
+            [
+              22,
+              1
+            ]
+          ],
+          "rank": 8,
+          "generic_dim": 0,
+          "minor_polynomial_in_a": "12375419852953699110774374400000000000000 + (-15330775579897190161058462328422400000000)*a^2 + (76501409893238038084139306188800000000)*a^4 + (-5241016215947730797389497658245120000)*a^6 + (192115198370880348120360146372198400)*a^8"
+        },
+        {
+          "charge_class_mod_6": 5,
+          "monomials": [
+            [
+              2,
+              21
+            ],
+            [
+              5,
+              18
+            ],
+            [
+              8,
+              15
+            ],
+            [
+              11,
+              12
+            ],
+            [
+              14,
+              9
+            ],
+            [
+              17,
+              6
+            ],
+            [
+              20,
+              3
+            ],
+            [
+              23,
+              0
+            ]
+          ],
+          "rank": 8,
+          "generic_dim": 0,
+          "minor_polynomial_in_a": "7294805439079036859260600320000000000000 + (-8916842814336135984981098511728640000000)*a^2 + (29333473266858848311680239822438400000)*a^4 + (-1184543686289511716357312092569600000)*a^6 + (20652358061758743005154444571115520)*a^8"
+        }
+      ]
+    },
+    "24": {
+      "generic_dim": 0,
+      "exceptional": [],
+      "blocks": [
+        {
+          "charge_class_mod_6": 0,
+          "monomials": [
+            [
+              0,
+              24
+            ],
+            [
+              3,
+              21
+            ],
+            [
+              6,
+              18
+            ],
+            [
+              9,
+              15
+            ],
+            [
+              12,
+              12
+            ],
+            [
+              15,
+              9
+            ],
+            [
+              18,
+              6
+            ],
+            [
+              21,
+              3
+            ],
+            [
+              24,
+              0
+            ]
+          ],
+          "rank": 9,
+          "generic_dim": 0,
+          "minor_polynomial_in_a": "96571779622504482758619452283153285120000000000000 + (45388736422577106896551142573082044006400000000000)*a^2"
+        },
+        {
+          "charge_class_mod_6": 2,
+          "monomials": [
+            [
+              1,
+              23
+            ],
+            [
+              4,
+              20
+            ],
+            [
+              7,
+              17
+            ],
+            [
+              10,
+              14
+            ],
+            [
+              13,
+              11
+            ],
+            [
+              16,
+              8
+            ],
+            [
+              19,
+              5
+            ],
+            [
+              22,
+              2
+            ]
+          ],
+          "rank": 8,
+          "generic_dim": 0,
+          "minor_polynomial_in_a": "59404777664680647182411366400000000000000 + (-21249319600969553904367018652467200000000)*a^2 + (198168362867621309358954793402368000000)*a^4 + (-6055912431546334920308972731760640000)*a^6 + (110174361532866672286778180134502400)*a^8"
+        },
+        {
+          "charge_class_mod_6": 4,
+          "monomials": [
+            [
+              2,
+              22
+            ],
+            [
+              5,
+              19
+            ],
+            [
+              8,
+              16
+            ],
+            [
+              11,
+              13
+            ],
+            [
+              14,
+              10
+            ],
+            [
+              17,
+              7
+            ],
+            [
+              20,
+              4
+            ],
+            [
+              23,
+              1
+            ]
+          ],
+          "rank": 8,
+          "generic_dim": 0,
+          "minor_polynomial_in_a": "59404777664680647182411366400000000000000 + (-21249319600969553904367018652467200000000)*a^2 + (198168362867621309358954793402368000000)*a^4 + (-6055912431546334920308972731760640000)*a^6 + (110174361532866672286778180134502400)*a^8"
+        }
+      ]
+    },
+    "25": {
+      "generic_dim": 0,
+      "exceptional": [],
+      "blocks": [
+        {
+          "charge_class_mod_6": 1,
+          "monomials": [
+            [
+              1,
+              24
+            ],
+            [
+              4,
+              21
+            ],
+            [
+              7,
+              18
+            ],
+            [
+              10,
+              15
+            ],
+            [
+              13,
+              12
+            ],
+            [
+              16,
+              9
+            ],
+            [
+              19,
+              6
+            ],
+            [
+              22,
+              3
+            ],
+            [
+              25,
+              0
+            ]
+          ],
+          "rank": 9,
+          "generic_dim": 0,
+          "minor_polynomial_in_a": "(-14318837310455092859623616031385190400000000000)*a + (1424832373905930935641660424680636416000000000)*a^3 + (-14366695938865406729938193331278315520000000)*a^5 + (-85461869489035534235377195824237772800000)*a^7 + (17727113946685714349940795378493292544000)*a^9"
+        },
+        {
+          "charge_class_mod_6": 3,
+          "monomials": [
+            [
+              2,
+              23
+            ],
+            [
+              5,
+              20
+            ],
+            [
+              8,
+              17
+            ],
+            [
+              11,
+              14
+            ],
+            [
+              14,
+              11
+            ],
+            [
+              17,
+              8
+            ],
+            [
+              20,
+              5
+            ],
+            [
+              23,
+              2
+            ]
+          ],
+          "rank": 8,
+          "generic_dim": 0,
+          "minor_polynomial_in_a": "285156192785481544120034918400000000000000 + (-28731945207311070998064521438822400000000)*a^2 + (382894925698336786208936637235200000000)*a^4 + (-9064912985928684937029086210949120000)*a^6 + (131530639719563976637817110816358400)*a^8"
+        },
+        {
+          "charge_class_mod_6": 5,
+          "monomials": [
+            [
+              0,
+              25
+            ],
+            [
+              3,
+              22
+            ],
+            [
+              6,
+              19
+            ],
+            [
+              9,
+              16
+            ],
+            [
+              12,
+              13
+            ],
+            [
+              15,
+              10
+            ],
+            [
+              18,
+              7
+            ],
+            [
+              21,
+              4
+            ],
+            [
+              24,
+              1
+            ]
+          ],
+          "rank": 9,
+          "generic_dim": 0,
+          "minor_polynomial_in_a": "(14318837310455092859623616031385190400000000000)*a + (-1424832373905930935641660424680636416000000000)*a^3 + (14366695938865406729938193331278315520000000)*a^5 + (85461869489035534235377195824237772800000)*a^7 + (-17727113946685714349940795378493292544000)*a^9"
+        }
+      ]
+    },
+    "26": {
+      "generic_dim": 0,
+      "exceptional": [],
+      "blocks": [
+        {
+          "charge_class_mod_6": 0,
+          "monomials": [
+            [
+              1,
+              25
+            ],
+            [
+              4,
+              22
+            ],
+            [
+              7,
+              19
+            ],
+            [
+              10,
+              16
+            ],
+            [
+              13,
+              13
+            ],
+            [
+              16,
+              10
+            ],
+            [
+              19,
+              7
+            ],
+            [
+              22,
+              4
+            ],
+            [
+              25,
+              1
+            ]
+          ],
+          "rank": 9,
+          "generic_dim": 0,
+          "minor_polynomial_in_a": "2982083115813503049611519648071680000000000000000000 + (444719351619144150442065756212428800000000000000000)*a^2"
+        },
+        {
+          "charge_class_mod_6": 2,
+          "monomials": [
+            [
+              2,
+              24
+            ],
+            [
+              5,
+              21
+            ],
+            [
+              8,
+              18
+            ],
+            [
+              11,
+              15
+            ],
+            [
+              14,
+              12
+            ],
+            [
+              17,
+              9
+            ],
+            [
+              20,
+              6
+            ],
+            [
+              23,
+              3
+            ],
+            [
+              26,
+              0
+            ]
+          ],
+          "rank": 9,
+          "generic_dim": 0,
+          "minor_polynomial_in_a": "(-92642706781450590096864407715840000000000000000)*a + (1586680018091273791873249129267200000000000000)*a^3 + (-17050930027962476655316115128320000000000000)*a^5 + (-435979132418306597103599616000000000000000)*a^7 + (25617062592581143470538752000000000000000)*a^9"
+        },
+        {
+          "charge_class_mod_6": 4,
+          "monomials": [
+            [
+              0,
+              26
+            ],
+            [
+              3,
+              23
+            ],
+            [
+              6,
+              20
+            ],
+            [
+              9,
+              17
+            ],
+            [
+              12,
+              14
+            ],
+            [
+              15,
+              11
+            ],
+            [
+              18,
+              8
+            ],
+            [
+              21,
+              5
+            ],
+            [
+              24,
+              2
+            ]
+          ],
+          "rank": 9,
+          "generic_dim": 0,
+          "minor_polynomial_in_a": "(92642706781450590096864407715840000000000000000)*a + (-1586680018091273791873249129267200000000000000)*a^3 + (17050930027962476655316115128320000000000000)*a^5 + (435979132418306597103599616000000000000000)*a^7 + (-25617062592581143470538752000000000000000)*a^9"
+        }
+      ]
+    },
+    "27": {
+      "generic_dim": 0,
+      "exceptional": [],
+      "blocks": [
+        {
+          "charge_class_mod_6": 1,
+          "monomials": [
+            [
+              2,
+              25
+            ],
+            [
+              5,
+              22
+            ],
+            [
+              8,
+              19
+            ],
+            [
+              11,
+              16
+            ],
+            [
+              14,
+              13
+            ],
+            [
+              17,
+              10
+            ],
+            [
+              20,
+              7
+            ],
+            [
+              23,
+              4
+            ],
+            [
+              26,
+              1
+            ]
+          ],
+          "rank": 9,
+          "generic_dim": 0,
+          "minor_polynomial_in_a": "(-143484079333054975610859772968960000000000000000)*a + (-1207822274742391685611707432960000000000000000)*a^3 + (38623189815289262967340677120000000000000000)*a^5 + (-2149064087918532576657465600000000000000000)*a^7 + (59244290379297036553339800000000000000000)*a^9"
+        },
+        {
+          "charge_class_mod_6": 3,
+          "monomials": [
+            [
+              0,
+              27
+            ],
+            [
+              3,
+              24
+            ],
+            [
+              6,
+              21
+            ],
+            [
+              9,
+              18
+            ],
+            [
+              12,
+              15
+            ],
+            [
+              15,
+              12
+            ],
+            [
+              18,
+              9
+            ],
+            [
+              21,
+              6
+            ],
+            [
+              24,
+              3
+            ],
+            [
+              27,
+              0
+            ]
+          ],
+          "rank": 10,
+          "generic_dim": 0,
+          "minor_polynomial_in_a": "827677887335966109462824900100096000000000000000000 + (-41559633256714961671424961079085629440000000000000000)*a^2 + (-324008373307603341863284868974510080000000000000000)*a^4 + (6352927056214262117184578443223040000000000000000)*a^6 + (-137189041739790577227742865748480000000000000000)*a^8 + (-3056400630682239013004862444960000000000000000)*a^10"
+        },
+        {
+          "charge_class_mod_6": 5,
+          "monomials": [
+            [
+              1,
+              26
+            ],
+            [
+              4,
+              23
+            ],
+            [
+              7,
+              20
+            ],
+            [
+              10,
+              17
+            ],
+            [
+              13,
+              14
+            ],
+            [
+              16,
+              11
+            ],
+            [
+              19,
+              8
+            ],
+            [
+              22,
+              5
+            ],
+            [
+              25,
+              2
+            ]
+          ],
+          "rank": 9,
+          "generic_dim": 0,
+          "minor_polynomial_in_a": "(143484079333054975610859772968960000000000000000)*a + (1207822274742391685611707432960000000000000000)*a^3 + (-38623189815289262967340677120000000000000000)*a^5 + (2149064087918532576657465600000000000000000)*a^7 + (-59244290379297036553339800000000000000000)*a^9"
+        }
+      ]
+    },
+    "28": {
+      "generic_dim": 0,
+      "exceptional": [],
+      "blocks": [
+        {
+          "charge_class_mod_6": 0,
+          "monomials": [
+            [
+              2,
+              26
+            ],
+            [
+              5,
+              23
+            ],
+            [
+              8,
+              20
+            ],
+            [
+              11,
+              17
+            ],
+            [
+              14,
+              14
+            ],
+            [
+              17,
+              11
+            ],
+            [
+              20,
+              8
+            ],
+            [
+              23,
+              5
+            ],
+            [
+              26,
+              2
+            ]
+          ],
+          "rank": 9,
+          "generic_dim": 0,
+          "minor_polynomial_in_a": "(94659097443179230715668620202790092800000000000000)*a"
+        },
+        {
+          "charge_class_mod_6": 2,
+          "monomials": [
+            [
+              0,
+              28
+            ],
+            [
+              3,
+              25
+            ],
+            [
+              6,
+              22
+            ],
+            [
+              9,
+              19
+            ],
+            [
+              12,
+              16
+            ],
+            [
+              15,
+              13
+            ],
+            [
+              18,
+              10
+            ],
+            [
+              21,
+              7
+            ],
+            [
+              24,
+              4
+            ],
+            [
+              27,
+              1
+            ]
+          ],
+          "rank": 10,
+          "generic_dim": 0,
+          "minor_polynomial_in_a": "7548958480123337859910331720427110400000000000000000 + (-90913049410481313334989761800578950674513920000000000)*a^2 + (-1104661273363880988444838825808366610363187200000000)*a^4 + (21105703185370023289308623642553245346299904000000)*a^6 + (-280876207243340072420320609862297217285488640000)*a^8 + (-8326851033112453856938497311136176505933004800)*a^10"
+        },
+        {
+          "charge_class_mod_6": 4,
+          "monomials": [
+            [
+              1,
+              27
+            ],
+            [
+              4,
+              24
+            ],
+            [
+              7,
+              21
+            ],
+            [
+              10,
+              18
+            ],
+            [
+              13,
+              15
+            ],
+            [
+              16,
+              12
+            ],
+            [
+              19,
+              9
+            ],
+            [
+              22,
+              6
+            ],
+            [
+              25,
+              3
+            ],
+            [
+              28,
+              0
+            ]
+          ],
+          "rank": 10,
+          "generic_dim": 0,
+          "minor_polynomial_in_a": "7548958480123337859910331720427110400000000000000000 + (-90913049410481313334989761800578950674513920000000000)*a^2 + (-1104661273363880988444838825808366610363187200000000)*a^4 + (21105703185370023289308623642553245346299904000000)*a^6 + (-280876207243340072420320609862297217285488640000)*a^8 + (-8326851033112453856938497311136176505933004800)*a^10"
+        }
+      ]
+    },
+    "29": {
+      "generic_dim": 0,
+      "exceptional": [],
+      "blocks": [
+        {
+          "charge_class_mod_6": 1,
+          "monomials": [
+            [
+              0,
+              29
+            ],
+            [
+              3,
+              26
+            ],
+            [
+              6,
+              23
+            ],
+            [
+              9,
+              20
+            ],
+            [
+              12,
+              17
+            ],
+            [
+              15,
+              14
+            ],
+            [
+              18,
+              11
+            ],
+            [
+              21,
+              8
+            ],
+            [
+              24,
+              5
+            ],
+            [
+              27,
+              2
+            ]
+          ],
+          "rank": 10,
+          "generic_dim": 0,
+          "minor_polynomial_in_a": "40417841786886324172765958325770649600000000000000000 + (-128735974702463641240477277300424709452595200000000000)*a^2 + (-1164498319970315743234636651744598641606656000000000)*a^4 + (22624738214829007054103910788553860311941120000000)*a^6 + (-298373744404222213125677270130103559808614400000)*a^8 + (-3606263687666354194202987497269984862666752000)*a^10"
+        },
+        {
+          "charge_class_mod_6": 3,
+          "monomials": [
+            [
+              1,
+              28
+            ],
+            [
+              4,
+              25
+            ],
+            [
+              7,
+              22
+            ],
+            [
+              10,
+              19
+            ],
+            [
+              13,
+              16
+            ],
+            [
+              16,
+              13
+            ],
+            [
+              19,
+              10
+            ],
+            [
+              22,
+              7
+            ],
+            [
+              25,
+              4
+            ],
+            [
+              28,
+              1
+            ]
+          ],
+          "rank": 10,
+          "generic_dim": 0,
+          "minor_polynomial_in_a": "68851391352315204578161924290599976960000000000000000 + (-226696107809926153965455600155886718245928960000000000)*a^2 + (-1959080706295141111815401840770821395369164800000000)*a^4 + (24682986725907489848605411158628449141129216000000)*a^6 + (871408659627072874854087439629321380749639680000)*a^8 + (-60651615158327131649127569791159499392391577600)*a^10"
+        },
+        {
+          "charge_class_mod_6": 5,
+          "monomials": [
+            [
+              2,
+              27
+            ],
+            [
+              5,
+              24
+            ],
+            [
+              8,
+              21
+            ],
+            [
+              11,
+              18
+            ],
+            [
+              14,
+              15
+            ],
+            [
+              17,
+              12
+            ],
+            [
+              20,
+              9
+            ],
+            [
+              23,
+              6
+            ],
+            [
+              26,
+              3
+            ],
+            [
+              29,
+              0
+            ]
+          ],
+          "rank": 10,
+          "generic_dim": 0,
+          "minor_polynomial_in_a": "40417841786886324172765958325770649600000000000000000 + (-128735974702463641240477277300424709452595200000000000)*a^2 + (-1164498319970315743234636651744598641606656000000000)*a^4 + (22624738214829007054103910788553860311941120000000)*a^6 + (-298373744404222213125677270130103559808614400000)*a^8 + (-3606263687666354194202987497269984862666752000)*a^10"
+        }
+      ]
+    },
+    "30": {
+      "generic_dim": 0,
+      "exceptional": [],
+      "blocks": [
+        {
+          "charge_class_mod_6": 0,
+          "monomials": [
+            [
+              0,
+              30
+            ],
+            [
+              3,
+              27
+            ],
+            [
+              6,
+              24
+            ],
+            [
+              9,
+              21
+            ],
+            [
+              12,
+              18
+            ],
+            [
+              15,
+              15
+            ],
+            [
+              18,
+              12
+            ],
+            [
+              21,
+              9
+            ],
+            [
+              24,
+              6
+            ],
+            [
+              27,
+              3
+            ],
+            [
+              30,
+              0
+            ]
+          ],
+          "rank": 11,
+          "generic_dim": 0,
+          "minor_polynomial_in_a": "2004894642896519742512598473557659135655280640000000000000000000 + (1212961258952394444220122076502383777071444787200000000000000000)*a^2"
+        },
+        {
+          "charge_class_mod_6": 2,
+          "monomials": [
+            [
+              1,
+              29
+            ],
+            [
+              4,
+              26
+            ],
+            [
+              7,
+              23
+            ],
+            [
+              10,
+              20
+            ],
+            [
+              13,
+              17
+            ],
+            [
+              16,
+              14
+            ],
+            [
+              19,
+              11
+            ],
+            [
+              22,
+              8
+            ],
+            [
+              25,
+              5
+            ],
+            [
+              28,
+              2
+            ]
+          ],
+          "rank": 10,
+          "generic_dim": 0,
+          "minor_polynomial_in_a": "368636898694321907272903445005247447040000000000000000 + (-409453931878208116457111931098166310176030720000000000)*a^2 + (-1269199194965878611974778457901312295252787200000000)*a^4 + (-4432434076741695710626740629581784558862336000000)*a^6 + (2196882589558746782124284646651289955110748160000)*a^8 + (-83637001667551001480305060820630788977249484800)*a^10"
+        },
+        {
+          "charge_class_mod_6": 4,
+          "monomials": [
+            [
+              2,
+              28
+            ],
+            [
+              5,
+              25
+            ],
+            [
+              8,
+              22
+            ],
+            [
+              11,
+              19
+            ],
+            [
+              14,
+              16
+            ],
+            [
+              17,
+              13
+            ],
+            [
+              20,
+              10
+            ],
+            [
+              23,
+              7
+            ],
+            [
+              26,
+              4
+            ],
+            [
+              29,
+              1
+            ]
+          ],
+          "rank": 10,
+          "generic_dim": 0,
+          "minor_polynomial_in_a": "368636898694321907272903445005247447040000000000000000 + (-409453931878208116457111931098166310176030720000000000)*a^2 + (-1269199194965878611974778457901312295252787200000000)*a^4 + (-4432434076741695710626740629581784558862336000000)*a^6 + (2196882589558746782124284646651289955110748160000)*a^8 + (-83637001667551001480305060820630788977249484800)*a^10"
+        }
+      ]
+    }
+  },
+  "specializations": {
+    "0": {
+      "dims": {
+        "0": 1,
+        "1": 2,
+        "2": 3,
+        "3": 2,
+        "4": 1,
+        "5": 0,
+        "6": 1,
+        "7": 0,
+        "8": 1,
+        "9": 0,
+        "10": 1,
+        "11": 0,
+        "12": 0,
+        "13": 0,
+        "14": 0,
+        "15": 0,
+        "16": 0,
+        "17": 0,
+        "18": 0,
+        "19": 0,
+        "20": 0,
+        "21": 0,
+        "22": 0,
+        "23": 0,
+        "24": 0,
+        "25": 0,
+        "26": 0,
+        "27": 0,
+        "28": 0,
+        "29": 0,
+        "30": 0
+      },
+      "bases": {
+        "0": [
+          [
+            {
+              "q": 0,
+              "p": 0,
+              "coefficient": "1"
+            }
+          ]
+        ],
+        "1": [
+          [
+            {
+              "q": 0,
+              "p": 1,
+              "coefficient": "1"
+            }
+          ],
+          [
+            {
+              "q": 1,
+              "p": 0,
+              "coefficient": "1"
+            }
+          ]
+        ],
+        "2": [
+          [
+            {
+              "q": 0,
+              "p": 2,
+              "coefficient": "1"
+            }
+          ],
+          [
+            {
+              "q": 1,
+              "p": 1,
+              "coefficient": "1"
+            }
+          ],
+          [
+            {
+              "q": 2,
+              "p": 0,
+              "coefficient": "1"
+            }
+          ]
+        ],
+        "3": [
+          [
+            {
+              "q": 1,
+              "p": 2,
+              "coefficient": "1"
+            }
+          ],
+          [
+            {
+              "q": 2,
+              "p": 1,
+              "coefficient": "1"
+            }
+          ]
+        ],
+        "4": [
+          [
+            {
+              "q": 2,
+              "p": 2,
+              "coefficient": "1"
+            }
+          ]
+        ],
+        "6": [
+          [
+            {
+              "q": 0,
+              "p": 6,
+              "coefficient": "1"
+            },
+            {
+              "q": 6,
+              "p": 0,
+              "coefficient": "1"
+            }
+          ]
+        ],
+        "8": [
+          [
+            {
+              "q": 1,
+              "p": 7,
+              "coefficient": "1"
+            },
+            {
+              "q": 7,
+              "p": 1,
+              "coefficient": "1"
+            }
+          ]
+        ],
+        "10": [
+          [
+            {
+              "q": 2,
+              "p": 8,
+              "coefficient": "1"
+            },
+            {
+              "q": 8,
+              "p": 2,
+              "coefficient": "1"
+            }
+          ]
+        ]
+      }
+    },
+    "1/2": {
+      "dims": {
+        "0": 1,
+        "1": 2,
+        "2": 3,
+        "3": 0,
+        "4": 1,
+        "5": 0,
+        "6": 1,
+        "7": 0,
+        "8": 1,
+        "9": 0,
+        "10": 0,
+        "11": 0,
+        "12": 0,
+        "13": 0,
+        "14": 0,
+        "15": 0,
+        "16": 0,
+        "17": 0,
+        "18": 0,
+        "19": 0,
+        "20": 0,
+        "21": 0,
+        "22": 0,
+        "23": 0,
+        "24": 0,
+        "25": 0,
+        "26": 0,
+        "27": 0,
+        "28": 0,
+        "29": 0,
+        "30": 0
+      },
+      "bases": {
+        "0": [
+          [
+            {
+              "q": 0,
+              "p": 0,
+              "coefficient": "1"
+            }
+          ]
+        ],
+        "1": [
+          [
+            {
+              "q": 0,
+              "p": 1,
+              "coefficient": "1"
+            }
+          ],
+          [
+            {
+              "q": 1,
+              "p": 0,
+              "coefficient": "1"
+            }
+          ]
+        ],
+        "2": [
+          [
+            {
+              "q": 0,
+              "p": 2,
+              "coefficient": "1"
+            }
+          ],
+          [
+            {
+              "q": 1,
+              "p": 1,
+              "coefficient": "1"
+            }
+          ],
+          [
+            {
+              "q": 2,
+              "p": 0,
+              "coefficient": "1"
+            }
+          ]
+        ],
+        "4": [
+          [
+            {
+              "q": 2,
+              "p": 2,
+              "coefficient": "1"
+            }
+          ]
+        ],
+        "6": [
+          [
+            {
+              "q": 0,
+              "p": 6,
+              "coefficient": "2"
+            },
+            {
+              "q": 3,
+              "p": 3,
+              "coefficient": "1"
+            },
+            {
+              "q": 6,
+              "p": 0,
+              "coefficient": "2"
+            }
+          ]
+        ],
+        "8": [
+          [
+            {
+              "q": 1,
+              "p": 7,
+              "coefficient": "40"
+            },
+            {
+              "q": 4,
+              "p": 4,
+              "coefficient": "-7"
+            },
+            {
+              "q": 7,
+              "p": 1,
+              "coefficient": "40"
+            }
+          ]
+        ]
+      }
+    },
+    "-1/2": {
+      "dims": {
+        "0": 1,
+        "1": 2,
+        "2": 3,
+        "3": 0,
+        "4": 1,
+        "5": 0,
+        "6": 1,
+        "7": 0,
+        "8": 1,
+        "9": 0,
+        "10": 0,
+        "11": 0,
+        "12": 0,
+        "13": 0,
+        "14": 0,
+        "15": 0,
+        "16": 0,
+        "17": 0,
+        "18": 0,
+        "19": 0,
+        "20": 0,
+        "21": 0,
+        "22": 0,
+        "23": 0,
+        "24": 0,
+        "25": 0,
+        "26": 0,
+        "27": 0,
+        "28": 0,
+        "29": 0,
+        "30": 0
+      },
+      "bases": {
+        "0": [
+          [
+            {
+              "q": 0,
+              "p": 0,
+              "coefficient": "1"
+            }
+          ]
+        ],
+        "1": [
+          [
+            {
+              "q": 0,
+              "p": 1,
+              "coefficient": "1"
+            }
+          ],
+          [
+            {
+              "q": 1,
+              "p": 0,
+              "coefficient": "1"
+            }
+          ]
+        ],
+        "2": [
+          [
+            {
+              "q": 0,
+              "p": 2,
+              "coefficient": "1"
+            }
+          ],
+          [
+            {
+              "q": 1,
+              "p": 1,
+              "coefficient": "1"
+            }
+          ],
+          [
+            {
+              "q": 2,
+              "p": 0,
+              "coefficient": "1"
+            }
+          ]
+        ],
+        "4": [
+          [
+            {
+              "q": 2,
+              "p": 2,
+              "coefficient": "1"
+            }
+          ]
+        ],
+        "6": [
+          [
+            {
+              "q": 0,
+              "p": 6,
+              "coefficient": "2"
+            },
+            {
+              "q": 3,
+              "p": 3,
+              "coefficient": "-1"
+            },
+            {
+              "q": 6,
+              "p": 0,
+              "coefficient": "2"
+            }
+          ]
+        ],
+        "8": [
+          [
+            {
+              "q": 1,
+              "p": 7,
+              "coefficient": "40"
+            },
+            {
+              "q": 4,
+              "p": 4,
+              "coefficient": "7"
+            },
+            {
+              "q": 7,
+              "p": 1,
+              "coefficient": "40"
+            }
+          ]
+        ]
+      }
+    },
+    "1": {
+      "dims": {
+        "0": 1,
+        "1": 2,
+        "2": 3,
+        "3": 0,
+        "4": 1,
+        "5": 0,
+        "6": 1,
+        "7": 0,
+        "8": 1,
+        "9": 0,
+        "10": 0,
+        "11": 0,
+        "12": 0,
+        "13": 0,
+        "14": 0,
+        "15": 0,
+        "16": 0,
+        "17": 0,
+        "18": 0,
+        "19": 0,
+        "20": 0,
+        "21": 0,
+        "22": 0,
+        "23": 0,
+        "24": 0,
+        "25": 0,
+        "26": 0,
+        "27": 0,
+        "28": 0,
+        "29": 0,
+        "30": 0
+      },
+      "bases": {
+        "0": [
+          [
+            {
+              "q": 0,
+              "p": 0,
+              "coefficient": "1"
+            }
+          ]
+        ],
+        "1": [
+          [
+            {
+              "q": 0,
+              "p": 1,
+              "coefficient": "1"
+            }
+          ],
+          [
+            {
+              "q": 1,
+              "p": 0,
+              "coefficient": "1"
+            }
+          ]
+        ],
+        "2": [
+          [
+            {
+              "q": 0,
+              "p": 2,
+              "coefficient": "1"
+            }
+          ],
+          [
+            {
+              "q": 1,
+              "p": 1,
+              "coefficient": "1"
+            }
+          ],
+          [
+            {
+              "q": 2,
+              "p": 0,
+              "coefficient": "1"
+            }
+          ]
+        ],
+        "4": [
+          [
+            {
+              "q": 2,
+              "p": 2,
+              "coefficient": "1"
+            }
+          ]
+        ],
+        "6": [
+          [
+            {
+              "q": 0,
+              "p": 6,
+              "coefficient": "1"
+            },
+            {
+              "q": 3,
+              "p": 3,
+              "coefficient": "1"
+            },
+            {
+              "q": 6,
+              "p": 0,
+              "coefficient": "1"
+            }
+          ]
+        ],
+        "8": [
+          [
+            {
+              "q": 1,
+              "p": 7,
+              "coefficient": "20"
+            },
+            {
+              "q": 4,
+              "p": 4,
+              "coefficient": "-7"
+            },
+            {
+              "q": 7,
+              "p": 1,
+              "coefficient": "20"
+            }
+          ]
+        ]
+      }
+    },
+    "-1": {
+      "dims": {
+        "0": 1,
+        "1": 2,
+        "2": 3,
+        "3": 0,
+        "4": 1,
+        "5": 0,
+        "6": 1,
+        "7": 0,
+        "8": 1,
+        "9": 0,
+        "10": 0,
+        "11": 0,
+        "12": 0,
+        "13": 0,
+        "14": 0,
+        "15": 0,
+        "16": 0,
+        "17": 0,
+        "18": 0,
+        "19": 0,
+        "20": 0,
+        "21": 0,
+        "22": 0,
+        "23": 0,
+        "24": 0,
+        "25": 0,
+        "26": 0,
+        "27": 0,
+        "28": 0,
+        "29": 0,
+        "30": 0
+      },
+      "bases": {
+        "0": [
+          [
+            {
+              "q": 0,
+              "p": 0,
+              "coefficient": "1"
+            }
+          ]
+        ],
+        "1": [
+          [
+            {
+              "q": 0,
+              "p": 1,
+              "coefficient": "1"
+            }
+          ],
+          [
+            {
+              "q": 1,
+              "p": 0,
+              "coefficient": "1"
+            }
+          ]
+        ],
+        "2": [
+          [
+            {
+              "q": 0,
+              "p": 2,
+              "coefficient": "1"
+            }
+          ],
+          [
+            {
+              "q": 1,
+              "p": 1,
+              "coefficient": "1"
+            }
+          ],
+          [
+            {
+              "q": 2,
+              "p": 0,
+              "coefficient": "1"
+            }
+          ]
+        ],
+        "4": [
+          [
+            {
+              "q": 2,
+              "p": 2,
+              "coefficient": "1"
+            }
+          ]
+        ],
+        "6": [
+          [
+            {
+              "q": 0,
+              "p": 6,
+              "coefficient": "1"
+            },
+            {
+              "q": 3,
+              "p": 3,
+              "coefficient": "-1"
+            },
+            {
+              "q": 6,
+              "p": 0,
+              "coefficient": "1"
+            }
+          ]
+        ],
+        "8": [
+          [
+            {
+              "q": 1,
+              "p": 7,
+              "coefficient": "20"
+            },
+            {
+              "q": 4,
+              "p": 4,
+              "coefficient": "7"
+            },
+            {
+              "q": 7,
+              "p": 1,
+              "coefficient": "20"
+            }
+          ]
+        ]
+      }
+    },
+    "2": {
+      "dims": {
+        "0": 1,
+        "1": 2,
+        "2": 3,
+        "3": 0,
+        "4": 1,
+        "5": 0,
+        "6": 1,
+        "7": 0,
+        "8": 1,
+        "9": 0,
+        "10": 0,
+        "11": 0,
+        "12": 0,
+        "13": 0,
+        "14": 0,
+        "15": 0,
+        "16": 0,
+        "17": 0,
+        "18": 0,
+        "19": 0,
+        "20": 0,
+        "21": 0,
+        "22": 0,
+        "23": 0,
+        "24": 0,
+        "25": 0,
+        "26": 0,
+        "27": 0,
+        "28": 0,
+        "29": 0,
+        "30": 0
+      },
+      "bases": {
+        "0": [
+          [
+            {
+              "q": 0,
+              "p": 0,
+              "coefficient": "1"
+            }
+          ]
+        ],
+        "1": [
+          [
+            {
+              "q": 0,
+              "p": 1,
+              "coefficient": "1"
+            }
+          ],
+          [
+            {
+              "q": 1,
+              "p": 0,
+              "coefficient": "1"
+            }
+          ]
+        ],
+        "2": [
+          [
+            {
+              "q": 0,
+              "p": 2,
+              "coefficient": "1"
+            }
+          ],
+          [
+            {
+              "q": 1,
+              "p": 1,
+              "coefficient": "1"
+            }
+          ],
+          [
+            {
+              "q": 2,
+              "p": 0,
+              "coefficient": "1"
+            }
+          ]
+        ],
+        "4": [
+          [
+            {
+              "q": 2,
+              "p": 2,
+              "coefficient": "1"
+            }
+          ]
+        ],
+        "6": [
+          [
+            {
+              "q": 0,
+              "p": 6,
+              "coefficient": "1"
+            },
+            {
+              "q": 3,
+              "p": 3,
+              "coefficient": "2"
+            },
+            {
+              "q": 6,
+              "p": 0,
+              "coefficient": "1"
+            }
+          ]
+        ],
+        "8": [
+          [
+            {
+              "q": 1,
+              "p": 7,
+              "coefficient": "10"
+            },
+            {
+              "q": 4,
+              "p": 4,
+              "coefficient": "-7"
+            },
+            {
+              "q": 7,
+              "p": 1,
+              "coefficient": "10"
+            }
+          ]
+        ]
+      }
+    },
+    "-2": {
+      "dims": {
+        "0": 1,
+        "1": 2,
+        "2": 3,
+        "3": 0,
+        "4": 1,
+        "5": 0,
+        "6": 1,
+        "7": 0,
+        "8": 1,
+        "9": 0,
+        "10": 0,
+        "11": 0,
+        "12": 0,
+        "13": 0,
+        "14": 0,
+        "15": 0,
+        "16": 0,
+        "17": 0,
+        "18": 0,
+        "19": 0,
+        "20": 0,
+        "21": 0,
+        "22": 0,
+        "23": 0,
+        "24": 0,
+        "25": 0,
+        "26": 0,
+        "27": 0,
+        "28": 0,
+        "29": 0,
+        "30": 0
+      },
+      "bases": {
+        "0": [
+          [
+            {
+              "q": 0,
+              "p": 0,
+              "coefficient": "1"
+            }
+          ]
+        ],
+        "1": [
+          [
+            {
+              "q": 0,
+              "p": 1,
+              "coefficient": "1"
+            }
+          ],
+          [
+            {
+              "q": 1,
+              "p": 0,
+              "coefficient": "1"
+            }
+          ]
+        ],
+        "2": [
+          [
+            {
+              "q": 0,
+              "p": 2,
+              "coefficient": "1"
+            }
+          ],
+          [
+            {
+              "q": 1,
+              "p": 1,
+              "coefficient": "1"
+            }
+          ],
+          [
+            {
+              "q": 2,
+              "p": 0,
+              "coefficient": "1"
+            }
+          ]
+        ],
+        "4": [
+          [
+            {
+              "q": 2,
+              "p": 2,
+              "coefficient": "1"
+            }
+          ]
+        ],
+        "6": [
+          [
+            {
+              "q": 0,
+              "p": 6,
+              "coefficient": "1"
+            },
+            {
+              "q": 3,
+              "p": 3,
+              "coefficient": "-2"
+            },
+            {
+              "q": 6,
+              "p": 0,
+              "coefficient": "1"
+            }
+          ]
+        ],
+        "8": [
+          [
+            {
+              "q": 1,
+              "p": 7,
+              "coefficient": "10"
+            },
+            {
+              "q": 4,
+              "p": 4,
+              "coefficient": "7"
+            },
+            {
+              "q": 7,
+              "p": 1,
+              "coefficient": "10"
+            }
+          ]
+        ]
+      }
+    },
+    "3": {
+      "dims": {
+        "0": 1,
+        "1": 2,
+        "2": 3,
+        "3": 0,
+        "4": 1,
+        "5": 0,
+        "6": 1,
+        "7": 0,
+        "8": 1,
+        "9": 0,
+        "10": 0,
+        "11": 0,
+        "12": 0,
+        "13": 0,
+        "14": 0,
+        "15": 0,
+        "16": 0,
+        "17": 0,
+        "18": 0,
+        "19": 0,
+        "20": 0,
+        "21": 0,
+        "22": 0,
+        "23": 0,
+        "24": 0,
+        "25": 0,
+        "26": 0,
+        "27": 0,
+        "28": 0,
+        "29": 0,
+        "30": 0
+      },
+      "bases": {
+        "0": [
+          [
+            {
+              "q": 0,
+              "p": 0,
+              "coefficient": "1"
+            }
+          ]
+        ],
+        "1": [
+          [
+            {
+              "q": 0,
+              "p": 1,
+              "coefficient": "1"
+            }
+          ],
+          [
+            {
+              "q": 1,
+              "p": 0,
+              "coefficient": "1"
+            }
+          ]
+        ],
+        "2": [
+          [
+            {
+              "q": 0,
+              "p": 2,
+              "coefficient": "1"
+            }
+          ],
+          [
+            {
+              "q": 1,
+              "p": 1,
+              "coefficient": "1"
+            }
+          ],
+          [
+            {
+              "q": 2,
+              "p": 0,
+              "coefficient": "1"
+            }
+          ]
+        ],
+        "4": [
+          [
+            {
+              "q": 2,
+              "p": 2,
+              "coefficient": "1"
+            }
+          ]
+        ],
+        "6": [
+          [
+            {
+              "q": 0,
+              "p": 6,
+              "coefficient": "1"
+            },
+            {
+              "q": 3,
+              "p": 3,
+              "coefficient": "3"
+            },
+            {
+              "q": 6,
+              "p": 0,
+              "coefficient": "1"
+            }
+          ]
+        ],
+        "8": [
+          [
+            {
+              "q": 1,
+              "p": 7,
+              "coefficient": "20"
+            },
+            {
+              "q": 4,
+              "p": 4,
+              "coefficient": "-21"
+            },
+            {
+              "q": 7,
+              "p": 1,
+              "coefficient": "20"
+            }
+          ]
+        ]
+      }
+    },
+    "-3": {
+      "dims": {
+        "0": 1,
+        "1": 2,
+        "2": 3,
+        "3": 0,
+        "4": 1,
+        "5": 0,
+        "6": 1,
+        "7": 0,
+        "8": 1,
+        "9": 0,
+        "10": 0,
+        "11": 0,
+        "12": 0,
+        "13": 0,
+        "14": 0,
+        "15": 0,
+        "16": 0,
+        "17": 0,
+        "18": 0,
+        "19": 0,
+        "20": 0,
+        "21": 0,
+        "22": 0,
+        "23": 0,
+        "24": 0,
+        "25": 0,
+        "26": 0,
+        "27": 0,
+        "28": 0,
+        "29": 0,
+        "30": 0
+      },
+      "bases": {
+        "0": [
+          [
+            {
+              "q": 0,
+              "p": 0,
+              "coefficient": "1"
+            }
+          ]
+        ],
+        "1": [
+          [
+            {
+              "q": 0,
+              "p": 1,
+              "coefficient": "1"
+            }
+          ],
+          [
+            {
+              "q": 1,
+              "p": 0,
+              "coefficient": "1"
+            }
+          ]
+        ],
+        "2": [
+          [
+            {
+              "q": 0,
+              "p": 2,
+              "coefficient": "1"
+            }
+          ],
+          [
+            {
+              "q": 1,
+              "p": 1,
+              "coefficient": "1"
+            }
+          ],
+          [
+            {
+              "q": 2,
+              "p": 0,
+              "coefficient": "1"
+            }
+          ]
+        ],
+        "4": [
+          [
+            {
+              "q": 2,
+              "p": 2,
+              "coefficient": "1"
+            }
+          ]
+        ],
+        "6": [
+          [
+            {
+              "q": 0,
+              "p": 6,
+              "coefficient": "1"
+            },
+            {
+              "q": 3,
+              "p": 3,
+              "coefficient": "-3"
+            },
+            {
+              "q": 6,
+              "p": 0,
+              "coefficient": "1"
+            }
+          ]
+        ],
+        "8": [
+          [
+            {
+              "q": 1,
+              "p": 7,
+              "coefficient": "20"
+            },
+            {
+              "q": 4,
+              "p": 4,
+              "coefficient": "21"
+            },
+            {
+              "q": 7,
+              "p": 1,
+              "coefficient": "20"
+            }
+          ]
+        ]
+      }
+    },
+    "3/2": {
+      "dims": {
+        "0": 1,
+        "1": 2,
+        "2": 3,
+        "3": 0,
+        "4": 1,
+        "5": 0,
+        "6": 1,
+        "7": 0,
+        "8": 1,
+        "9": 0,
+        "10": 0,
+        "11": 0,
+        "12": 0,
+        "13": 0,
+        "14": 0,
+        "15": 0,
+        "16": 0,
+        "17": 0,
+        "18": 0,
+        "19": 0,
+        "20": 0,
+        "21": 0,
+        "22": 0,
+        "23": 0,
+        "24": 0,
+        "25": 0,
+        "26": 0,
+        "27": 0,
+        "28": 0,
+        "29": 0,
+        "30": 0
+      },
+      "bases": {
+        "0": [
+          [
+            {
+              "q": 0,
+              "p": 0,
+              "coefficient": "1"
+            }
+          ]
+        ],
+        "1": [
+          [
+            {
+              "q": 0,
+              "p": 1,
+              "coefficient": "1"
+            }
+          ],
+          [
+            {
+              "q": 1,
+              "p": 0,
+              "coefficient": "1"
+            }
+          ]
+        ],
+        "2": [
+          [
+            {
+              "q": 0,
+              "p": 2,
+              "coefficient": "1"
+            }
+          ],
+          [
+            {
+              "q": 1,
+              "p": 1,
+              "coefficient": "1"
+            }
+          ],
+          [
+            {
+              "q": 2,
+              "p": 0,
+              "coefficient": "1"
+            }
+          ]
+        ],
+        "4": [
+          [
+            {
+              "q": 2,
+              "p": 2,
+              "coefficient": "1"
+            }
+          ]
+        ],
+        "6": [
+          [
+            {
+              "q": 0,
+              "p": 6,
+              "coefficient": "2"
+            },
+            {
+              "q": 3,
+              "p": 3,
+              "coefficient": "3"
+            },
+            {
+              "q": 6,
+              "p": 0,
+              "coefficient": "2"
+            }
+          ]
+        ],
+        "8": [
+          [
+            {
+              "q": 1,
+              "p": 7,
+              "coefficient": "40"
+            },
+            {
+              "q": 4,
+              "p": 4,
+              "coefficient": "-21"
+            },
+            {
+              "q": 7,
+              "p": 1,
+              "coefficient": "40"
+            }
+          ]
+        ]
+      }
+    },
+    "-3/2": {
+      "dims": {
+        "0": 1,
+        "1": 2,
+        "2": 3,
+        "3": 0,
+        "4": 1,
+        "5": 0,
+        "6": 1,
+        "7": 0,
+        "8": 1,
+        "9": 0,
+        "10": 0,
+        "11": 0,
+        "12": 0,
+        "13": 0,
+        "14": 0,
+        "15": 0,
+        "16": 0,
+        "17": 0,
+        "18": 0,
+        "19": 0,
+        "20": 0,
+        "21": 0,
+        "22": 0,
+        "23": 0,
+        "24": 0,
+        "25": 0,
+        "26": 0,
+        "27": 0,
+        "28": 0,
+        "29": 0,
+        "30": 0
+      },
+      "bases": {
+        "0": [
+          [
+            {
+              "q": 0,
+              "p": 0,
+              "coefficient": "1"
+            }
+          ]
+        ],
+        "1": [
+          [
+            {
+              "q": 0,
+              "p": 1,
+              "coefficient": "1"
+            }
+          ],
+          [
+            {
+              "q": 1,
+              "p": 0,
+              "coefficient": "1"
+            }
+          ]
+        ],
+        "2": [
+          [
+            {
+              "q": 0,
+              "p": 2,
+              "coefficient": "1"
+            }
+          ],
+          [
+            {
+              "q": 1,
+              "p": 1,
+              "coefficient": "1"
+            }
+          ],
+          [
+            {
+              "q": 2,
+              "p": 0,
+              "coefficient": "1"
+            }
+          ]
+        ],
+        "4": [
+          [
+            {
+              "q": 2,
+              "p": 2,
+              "coefficient": "1"
+            }
+          ]
+        ],
+        "6": [
+          [
+            {
+              "q": 0,
+              "p": 6,
+              "coefficient": "2"
+            },
+            {
+              "q": 3,
+              "p": 3,
+              "coefficient": "-3"
+            },
+            {
+              "q": 6,
+              "p": 0,
+              "coefficient": "2"
+            }
+          ]
+        ],
+        "8": [
+          [
+            {
+              "q": 1,
+              "p": 7,
+              "coefficient": "40"
+            },
+            {
+              "q": 4,
+              "p": 4,
+              "coefficient": "21"
+            },
+            {
+              "q": 7,
+              "p": 1,
+              "coefficient": "40"
+            }
+          ]
+        ]
+      }
+    },
+    "5/2": {
+      "dims": {
+        "0": 1,
+        "1": 2,
+        "2": 3,
+        "3": 0,
+        "4": 1,
+        "5": 0,
+        "6": 1,
+        "7": 0,
+        "8": 1,
+        "9": 0,
+        "10": 0,
+        "11": 0,
+        "12": 0,
+        "13": 0,
+        "14": 0,
+        "15": 0,
+        "16": 0,
+        "17": 0,
+        "18": 0,
+        "19": 0,
+        "20": 0,
+        "21": 0,
+        "22": 0,
+        "23": 0,
+        "24": 0,
+        "25": 0,
+        "26": 0,
+        "27": 0,
+        "28": 0,
+        "29": 0,
+        "30": 0
+      },
+      "bases": {
+        "0": [
+          [
+            {
+              "q": 0,
+              "p": 0,
+              "coefficient": "1"
+            }
+          ]
+        ],
+        "1": [
+          [
+            {
+              "q": 0,
+              "p": 1,
+              "coefficient": "1"
+            }
+          ],
+          [
+            {
+              "q": 1,
+              "p": 0,
+              "coefficient": "1"
+            }
+          ]
+        ],
+        "2": [
+          [
+            {
+              "q": 0,
+              "p": 2,
+              "coefficient": "1"
+            }
+          ],
+          [
+            {
+              "q": 1,
+              "p": 1,
+              "coefficient": "1"
+            }
+          ],
+          [
+            {
+              "q": 2,
+              "p": 0,
+              "coefficient": "1"
+            }
+          ]
+        ],
+        "4": [
+          [
+            {
+              "q": 2,
+              "p": 2,
+              "coefficient": "1"
+            }
+          ]
+        ],
+        "6": [
+          [
+            {
+              "q": 0,
+              "p": 6,
+              "coefficient": "2"
+            },
+            {
+              "q": 3,
+              "p": 3,
+              "coefficient": "5"
+            },
+            {
+              "q": 6,
+              "p": 0,
+              "coefficient": "2"
+            }
+          ]
+        ],
+        "8": [
+          [
+            {
+              "q": 1,
+              "p": 7,
+              "coefficient": "8"
+            },
+            {
+              "q": 4,
+              "p": 4,
+              "coefficient": "-7"
+            },
+            {
+              "q": 7,
+              "p": 1,
+              "coefficient": "8"
+            }
+          ]
+        ]
+      }
+    },
+    "-5/2": {
+      "dims": {
+        "0": 1,
+        "1": 2,
+        "2": 3,
+        "3": 0,
+        "4": 1,
+        "5": 0,
+        "6": 1,
+        "7": 0,
+        "8": 1,
+        "9": 0,
+        "10": 0,
+        "11": 0,
+        "12": 0,
+        "13": 0,
+        "14": 0,
+        "15": 0,
+        "16": 0,
+        "17": 0,
+        "18": 0,
+        "19": 0,
+        "20": 0,
+        "21": 0,
+        "22": 0,
+        "23": 0,
+        "24": 0,
+        "25": 0,
+        "26": 0,
+        "27": 0,
+        "28": 0,
+        "29": 0,
+        "30": 0
+      },
+      "bases": {
+        "0": [
+          [
+            {
+              "q": 0,
+              "p": 0,
+              "coefficient": "1"
+            }
+          ]
+        ],
+        "1": [
+          [
+            {
+              "q": 0,
+              "p": 1,
+              "coefficient": "1"
+            }
+          ],
+          [
+            {
+              "q": 1,
+              "p": 0,
+              "coefficient": "1"
+            }
+          ]
+        ],
+        "2": [
+          [
+            {
+              "q": 0,
+              "p": 2,
+              "coefficient": "1"
+            }
+          ],
+          [
+            {
+              "q": 1,
+              "p": 1,
+              "coefficient": "1"
+            }
+          ],
+          [
+            {
+              "q": 2,
+              "p": 0,
+              "coefficient": "1"
+            }
+          ]
+        ],
+        "4": [
+          [
+            {
+              "q": 2,
+              "p": 2,
+              "coefficient": "1"
+            }
+          ]
+        ],
+        "6": [
+          [
+            {
+              "q": 0,
+              "p": 6,
+              "coefficient": "2"
+            },
+            {
+              "q": 3,
+              "p": 3,
+              "coefficient": "-5"
+            },
+            {
+              "q": 6,
+              "p": 0,
+              "coefficient": "2"
+            }
+          ]
+        ],
+        "8": [
+          [
+            {
+              "q": 1,
+              "p": 7,
+              "coefficient": "8"
+            },
+            {
+              "q": 4,
+              "p": 4,
+              "coefficient": "7"
+            },
+            {
+              "q": 7,
+              "p": 1,
+              "coefficient": "8"
+            }
+          ]
+        ]
+      }
+    },
+    "2/3": {
+      "dims": {
+        "0": 1,
+        "1": 2,
+        "2": 3,
+        "3": 0,
+        "4": 1,
+        "5": 0,
+        "6": 1,
+        "7": 0,
+        "8": 1,
+        "9": 0,
+        "10": 0,
+        "11": 0,
+        "12": 0,
+        "13": 0,
+        "14": 0,
+        "15": 0,
+        "16": 0,
+        "17": 0,
+        "18": 0,
+        "19": 0,
+        "20": 0,
+        "21": 0,
+        "22": 0,
+        "23": 0,
+        "24": 0,
+        "25": 0,
+        "26": 0,
+        "27": 0,
+        "28": 0,
+        "29": 0,
+        "30": 0
+      },
+      "bases": {
+        "0": [
+          [
+            {
+              "q": 0,
+              "p": 0,
+              "coefficient": "1"
+            }
+          ]
+        ],
+        "1": [
+          [
+            {
+              "q": 0,
+              "p": 1,
+              "coefficient": "1"
+            }
+          ],
+          [
+            {
+              "q": 1,
+              "p": 0,
+              "coefficient": "1"
+            }
+          ]
+        ],
+        "2": [
+          [
+            {
+              "q": 0,
+              "p": 2,
+              "coefficient": "1"
+            }
+          ],
+          [
+            {
+              "q": 1,
+              "p": 1,
+              "coefficient": "1"
+            }
+          ],
+          [
+            {
+              "q": 2,
+              "p": 0,
+              "coefficient": "1"
+            }
+          ]
+        ],
+        "4": [
+          [
+            {
+              "q": 2,
+              "p": 2,
+              "coefficient": "1"
+            }
+          ]
+        ],
+        "6": [
+          [
+            {
+              "q": 0,
+              "p": 6,
+              "coefficient": "3"
+            },
+            {
+              "q": 3,
+              "p": 3,
+              "coefficient": "2"
+            },
+            {
+              "q": 6,
+              "p": 0,
+              "coefficient": "3"
+            }
+          ]
+        ],
+        "8": [
+          [
+            {
+              "q": 1,
+              "p": 7,
+              "coefficient": "30"
+            },
+            {
+              "q": 4,
+              "p": 4,
+              "coefficient": "-7"
+            },
+            {
+              "q": 7,
+              "p": 1,
+              "coefficient": "30"
+            }
+          ]
+        ]
+      }
+    },
+    "-2/3": {
+      "dims": {
+        "0": 1,
+        "1": 2,
+        "2": 3,
+        "3": 0,
+        "4": 1,
+        "5": 0,
+        "6": 1,
+        "7": 0,
+        "8": 1,
+        "9": 0,
+        "10": 0,
+        "11": 0,
+        "12": 0,
+        "13": 0,
+        "14": 0,
+        "15": 0,
+        "16": 0,
+        "17": 0,
+        "18": 0,
+        "19": 0,
+        "20": 0,
+        "21": 0,
+        "22": 0,
+        "23": 0,
+        "24": 0,
+        "25": 0,
+        "26": 0,
+        "27": 0,
+        "28": 0,
+        "29": 0,
+        "30": 0
+      },
+      "bases": {
+        "0": [
+          [
+            {
+              "q": 0,
+              "p": 0,
+              "coefficient": "1"
+            }
+          ]
+        ],
+        "1": [
+          [
+            {
+              "q": 0,
+              "p": 1,
+              "coefficient": "1"
+            }
+          ],
+          [
+            {
+              "q": 1,
+              "p": 0,
+              "coefficient": "1"
+            }
+          ]
+        ],
+        "2": [
+          [
+            {
+              "q": 0,
+              "p": 2,
+              "coefficient": "1"
+            }
+          ],
+          [
+            {
+              "q": 1,
+              "p": 1,
+              "coefficient": "1"
+            }
+          ],
+          [
+            {
+              "q": 2,
+              "p": 0,
+              "coefficient": "1"
+            }
+          ]
+        ],
+        "4": [
+          [
+            {
+              "q": 2,
+              "p": 2,
+              "coefficient": "1"
+            }
+          ]
+        ],
+        "6": [
+          [
+            {
+              "q": 0,
+              "p": 6,
+              "coefficient": "3"
+            },
+            {
+              "q": 3,
+              "p": 3,
+              "coefficient": "-2"
+            },
+            {
+              "q": 6,
+              "p": 0,
+              "coefficient": "3"
+            }
+          ]
+        ],
+        "8": [
+          [
+            {
+              "q": 1,
+              "p": 7,
+              "coefficient": "30"
+            },
+            {
+              "q": 4,
+              "p": 4,
+              "coefficient": "7"
+            },
+            {
+              "q": 7,
+              "p": 1,
+              "coefficient": "30"
+            }
+          ]
+        ]
+      }
+    },
+    "1/3": {
+      "dims": {
+        "0": 1,
+        "1": 2,
+        "2": 3,
+        "3": 0,
+        "4": 1,
+        "5": 0,
+        "6": 1,
+        "7": 0,
+        "8": 1,
+        "9": 0,
+        "10": 0,
+        "11": 0,
+        "12": 0,
+        "13": 0,
+        "14": 0,
+        "15": 0,
+        "16": 0,
+        "17": 0,
+        "18": 0,
+        "19": 0,
+        "20": 0,
+        "21": 0,
+        "22": 0,
+        "23": 0,
+        "24": 0,
+        "25": 0,
+        "26": 0,
+        "27": 0,
+        "28": 0,
+        "29": 0,
+        "30": 0
+      },
+      "bases": {
+        "0": [
+          [
+            {
+              "q": 0,
+              "p": 0,
+              "coefficient": "1"
+            }
+          ]
+        ],
+        "1": [
+          [
+            {
+              "q": 0,
+              "p": 1,
+              "coefficient": "1"
+            }
+          ],
+          [
+            {
+              "q": 1,
+              "p": 0,
+              "coefficient": "1"
+            }
+          ]
+        ],
+        "2": [
+          [
+            {
+              "q": 0,
+              "p": 2,
+              "coefficient": "1"
+            }
+          ],
+          [
+            {
+              "q": 1,
+              "p": 1,
+              "coefficient": "1"
+            }
+          ],
+          [
+            {
+              "q": 2,
+              "p": 0,
+              "coefficient": "1"
+            }
+          ]
+        ],
+        "4": [
+          [
+            {
+              "q": 2,
+              "p": 2,
+              "coefficient": "1"
+            }
+          ]
+        ],
+        "6": [
+          [
+            {
+              "q": 0,
+              "p": 6,
+              "coefficient": "3"
+            },
+            {
+              "q": 3,
+              "p": 3,
+              "coefficient": "1"
+            },
+            {
+              "q": 6,
+              "p": 0,
+              "coefficient": "3"
+            }
+          ]
+        ],
+        "8": [
+          [
+            {
+              "q": 1,
+              "p": 7,
+              "coefficient": "60"
+            },
+            {
+              "q": 4,
+              "p": 4,
+              "coefficient": "-7"
+            },
+            {
+              "q": 7,
+              "p": 1,
+              "coefficient": "60"
+            }
+          ]
+        ]
+      }
+    },
+    "-1/3": {
+      "dims": {
+        "0": 1,
+        "1": 2,
+        "2": 3,
+        "3": 0,
+        "4": 1,
+        "5": 0,
+        "6": 1,
+        "7": 0,
+        "8": 1,
+        "9": 0,
+        "10": 0,
+        "11": 0,
+        "12": 0,
+        "13": 0,
+        "14": 0,
+        "15": 0,
+        "16": 0,
+        "17": 0,
+        "18": 0,
+        "19": 0,
+        "20": 0,
+        "21": 0,
+        "22": 0,
+        "23": 0,
+        "24": 0,
+        "25": 0,
+        "26": 0,
+        "27": 0,
+        "28": 0,
+        "29": 0,
+        "30": 0
+      },
+      "bases": {
+        "0": [
+          [
+            {
+              "q": 0,
+              "p": 0,
+              "coefficient": "1"
+            }
+          ]
+        ],
+        "1": [
+          [
+            {
+              "q": 0,
+              "p": 1,
+              "coefficient": "1"
+            }
+          ],
+          [
+            {
+              "q": 1,
+              "p": 0,
+              "coefficient": "1"
+            }
+          ]
+        ],
+        "2": [
+          [
+            {
+              "q": 0,
+              "p": 2,
+              "coefficient": "1"
+            }
+          ],
+          [
+            {
+              "q": 1,
+              "p": 1,
+              "coefficient": "1"
+            }
+          ],
+          [
+            {
+              "q": 2,
+              "p": 0,
+              "coefficient": "1"
+            }
+          ]
+        ],
+        "4": [
+          [
+            {
+              "q": 2,
+              "p": 2,
+              "coefficient": "1"
+            }
+          ]
+        ],
+        "6": [
+          [
+            {
+              "q": 0,
+              "p": 6,
+              "coefficient": "3"
+            },
+            {
+              "q": 3,
+              "p": 3,
+              "coefficient": "-1"
+            },
+            {
+              "q": 6,
+              "p": 0,
+              "coefficient": "3"
+            }
+          ]
+        ],
+        "8": [
+          [
+            {
+              "q": 1,
+              "p": 7,
+              "coefficient": "60"
+            },
+            {
+              "q": 4,
+              "p": 4,
+              "coefficient": "7"
+            },
+            {
+              "q": 7,
+              "p": 1,
+              "coefficient": "60"
+            }
+          ]
+        ]
+      }
+    },
+    "4": {
+      "dims": {
+        "0": 1,
+        "1": 2,
+        "2": 3,
+        "3": 0,
+        "4": 1,
+        "5": 0,
+        "6": 1,
+        "7": 0,
+        "8": 1,
+        "9": 0,
+        "10": 0,
+        "11": 0,
+        "12": 0,
+        "13": 0,
+        "14": 0,
+        "15": 0,
+        "16": 0,
+        "17": 0,
+        "18": 0,
+        "19": 0,
+        "20": 0,
+        "21": 0,
+        "22": 0,
+        "23": 0,
+        "24": 0,
+        "25": 0,
+        "26": 0,
+        "27": 0,
+        "28": 0,
+        "29": 0,
+        "30": 0
+      },
+      "bases": {
+        "0": [
+          [
+            {
+              "q": 0,
+              "p": 0,
+              "coefficient": "1"
+            }
+          ]
+        ],
+        "1": [
+          [
+            {
+              "q": 0,
+              "p": 1,
+              "coefficient": "1"
+            }
+          ],
+          [
+            {
+              "q": 1,
+              "p": 0,
+              "coefficient": "1"
+            }
+          ]
+        ],
+        "2": [
+          [
+            {
+              "q": 0,
+              "p": 2,
+              "coefficient": "1"
+            }
+          ],
+          [
+            {
+              "q": 1,
+              "p": 1,
+              "coefficient": "1"
+            }
+          ],
+          [
+            {
+              "q": 2,
+              "p": 0,
+              "coefficient": "1"
+            }
+          ]
+        ],
+        "4": [
+          [
+            {
+              "q": 2,
+              "p": 2,
+              "coefficient": "1"
+            }
+          ]
+        ],
+        "6": [
+          [
+            {
+              "q": 0,
+              "p": 6,
+              "coefficient": "1"
+            },
+            {
+              "q": 3,
+              "p": 3,
+              "coefficient": "4"
+            },
+            {
+              "q": 6,
+              "p": 0,
+              "coefficient": "1"
+            }
+          ]
+        ],
+        "8": [
+          [
+            {
+              "q": 1,
+              "p": 7,
+              "coefficient": "5"
+            },
+            {
+              "q": 4,
+              "p": 4,
+              "coefficient": "-7"
+            },
+            {
+              "q": 7,
+              "p": 1,
+              "coefficient": "5"
+            }
+          ]
+        ]
+      }
+    },
+    "-4": {
+      "dims": {
+        "0": 1,
+        "1": 2,
+        "2": 3,
+        "3": 0,
+        "4": 1,
+        "5": 0,
+        "6": 1,
+        "7": 0,
+        "8": 1,
+        "9": 0,
+        "10": 0,
+        "11": 0,
+        "12": 0,
+        "13": 0,
+        "14": 0,
+        "15": 0,
+        "16": 0,
+        "17": 0,
+        "18": 0,
+        "19": 0,
+        "20": 0,
+        "21": 0,
+        "22": 0,
+        "23": 0,
+        "24": 0,
+        "25": 0,
+        "26": 0,
+        "27": 0,
+        "28": 0,
+        "29": 0,
+        "30": 0
+      },
+      "bases": {
+        "0": [
+          [
+            {
+              "q": 0,
+              "p": 0,
+              "coefficient": "1"
+            }
+          ]
+        ],
+        "1": [
+          [
+            {
+              "q": 0,
+              "p": 1,
+              "coefficient": "1"
+            }
+          ],
+          [
+            {
+              "q": 1,
+              "p": 0,
+              "coefficient": "1"
+            }
+          ]
+        ],
+        "2": [
+          [
+            {
+              "q": 0,
+              "p": 2,
+              "coefficient": "1"
+            }
+          ],
+          [
+            {
+              "q": 1,
+              "p": 1,
+              "coefficient": "1"
+            }
+          ],
+          [
+            {
+              "q": 2,
+              "p": 0,
+              "coefficient": "1"
+            }
+          ]
+        ],
+        "4": [
+          [
+            {
+              "q": 2,
+              "p": 2,
+              "coefficient": "1"
+            }
+          ]
+        ],
+        "6": [
+          [
+            {
+              "q": 0,
+              "p": 6,
+              "coefficient": "1"
+            },
+            {
+              "q": 3,
+              "p": 3,
+              "coefficient": "-4"
+            },
+            {
+              "q": 6,
+              "p": 0,
+              "coefficient": "1"
+            }
+          ]
+        ],
+        "8": [
+          [
+            {
+              "q": 1,
+              "p": 7,
+              "coefficient": "5"
+            },
+            {
+              "q": 4,
+              "p": 4,
+              "coefficient": "7"
+            },
+            {
+              "q": 7,
+              "p": 1,
+              "coefficient": "5"
+            }
+          ]
+        ]
+      }
+    },
+    "5": {
+      "dims": {
+        "0": 1,
+        "1": 2,
+        "2": 3,
+        "3": 0,
+        "4": 1,
+        "5": 0,
+        "6": 1,
+        "7": 0,
+        "8": 1,
+        "9": 0,
+        "10": 0,
+        "11": 0,
+        "12": 0,
+        "13": 0,
+        "14": 0,
+        "15": 0,
+        "16": 0,
+        "17": 0,
+        "18": 0,
+        "19": 0,
+        "20": 0,
+        "21": 0,
+        "22": 0,
+        "23": 0,
+        "24": 0,
+        "25": 0,
+        "26": 0,
+        "27": 0,
+        "28": 0,
+        "29": 0,
+        "30": 0
+      },
+      "bases": {
+        "0": [
+          [
+            {
+              "q": 0,
+              "p": 0,
+              "coefficient": "1"
+            }
+          ]
+        ],
+        "1": [
+          [
+            {
+              "q": 0,
+              "p": 1,
+              "coefficient": "1"
+            }
+          ],
+          [
+            {
+              "q": 1,
+              "p": 0,
+              "coefficient": "1"
+            }
+          ]
+        ],
+        "2": [
+          [
+            {
+              "q": 0,
+              "p": 2,
+              "coefficient": "1"
+            }
+          ],
+          [
+            {
+              "q": 1,
+              "p": 1,
+              "coefficient": "1"
+            }
+          ],
+          [
+            {
+              "q": 2,
+              "p": 0,
+              "coefficient": "1"
+            }
+          ]
+        ],
+        "4": [
+          [
+            {
+              "q": 2,
+              "p": 2,
+              "coefficient": "1"
+            }
+          ]
+        ],
+        "6": [
+          [
+            {
+              "q": 0,
+              "p": 6,
+              "coefficient": "1"
+            },
+            {
+              "q": 3,
+              "p": 3,
+              "coefficient": "5"
+            },
+            {
+              "q": 6,
+              "p": 0,
+              "coefficient": "1"
+            }
+          ]
+        ],
+        "8": [
+          [
+            {
+              "q": 1,
+              "p": 7,
+              "coefficient": "4"
+            },
+            {
+              "q": 4,
+              "p": 4,
+              "coefficient": "-7"
+            },
+            {
+              "q": 7,
+              "p": 1,
+              "coefficient": "4"
+            }
+          ]
+        ]
+      }
+    },
+    "-5": {
+      "dims": {
+        "0": 1,
+        "1": 2,
+        "2": 3,
+        "3": 0,
+        "4": 1,
+        "5": 0,
+        "6": 1,
+        "7": 0,
+        "8": 1,
+        "9": 0,
+        "10": 0,
+        "11": 0,
+        "12": 0,
+        "13": 0,
+        "14": 0,
+        "15": 0,
+        "16": 0,
+        "17": 0,
+        "18": 0,
+        "19": 0,
+        "20": 0,
+        "21": 0,
+        "22": 0,
+        "23": 0,
+        "24": 0,
+        "25": 0,
+        "26": 0,
+        "27": 0,
+        "28": 0,
+        "29": 0,
+        "30": 0
+      },
+      "bases": {
+        "0": [
+          [
+            {
+              "q": 0,
+              "p": 0,
+              "coefficient": "1"
+            }
+          ]
+        ],
+        "1": [
+          [
+            {
+              "q": 0,
+              "p": 1,
+              "coefficient": "1"
+            }
+          ],
+          [
+            {
+              "q": 1,
+              "p": 0,
+              "coefficient": "1"
+            }
+          ]
+        ],
+        "2": [
+          [
+            {
+              "q": 0,
+              "p": 2,
+              "coefficient": "1"
+            }
+          ],
+          [
+            {
+              "q": 1,
+              "p": 1,
+              "coefficient": "1"
+            }
+          ],
+          [
+            {
+              "q": 2,
+              "p": 0,
+              "coefficient": "1"
+            }
+          ]
+        ],
+        "4": [
+          [
+            {
+              "q": 2,
+              "p": 2,
+              "coefficient": "1"
+            }
+          ]
+        ],
+        "6": [
+          [
+            {
+              "q": 0,
+              "p": 6,
+              "coefficient": "1"
+            },
+            {
+              "q": 3,
+              "p": 3,
+              "coefficient": "-5"
+            },
+            {
+              "q": 6,
+              "p": 0,
+              "coefficient": "1"
+            }
+          ]
+        ],
+        "8": [
+          [
+            {
+              "q": 1,
+              "p": 7,
+              "coefficient": "4"
+            },
+            {
+              "q": 4,
+              "p": 4,
+              "coefficient": "7"
+            },
+            {
+              "q": 7,
+              "p": 1,
+              "coefficient": "4"
+            }
+          ]
+        ]
+      }
+    }
+  },
+  "checks": [
+    "blocked (charge mod 6) dimensions equal unblocked dimensions for every (a, n) in the specialization grid: asserted in code",
+    "generic Q(a) dimension equals the specialized dimension at every non-exceptional rational point of the grid: asserted"
+  ]
+}

@@ -1,0 +1,19 @@
+H_a, a=0: certified dims n=0..16: 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0  all certified: True
+H_a, a=1/2: certified dims n=0..16: 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0  all certified: True
+H_a, a=-1/2: certified dims n=0..16: 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0  all certified: True
+H_a, a=1: certified dims n=0..16: 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0  all certified: True
+H_a, a=-1: certified dims n=0..16: 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0  all certified: True
+H_a, a=2: certified dims n=0..16: 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0  all certified: True
+H_a, a=-2: certified dims n=0..16: 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0  all certified: True
+H_a, a=3: certified dims n=0..16: 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0  all certified: True
+H_a, a=20: certified dims n=0..16: 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0  all certified: True
+q^6: certified dims n=0..16: 1 2 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3  all certified: True
+q^5*p: certified dims n=0..16: 1 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2  all certified: True
+q^4*p^2: certified dims n=0..16: 1 0 1 0 0 0 1 0 0 0 0 0 0 0 0 0 0  all certified: True
+q^3*p^3: certified dims n=0..16: 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1  all certified: True
+q^2*p^4: certified dims n=0..16: 1 0 1 0 0 0 1 0 0 0 0 0 0 0 0 0 0  all certified: True
+q*p^5: certified dims n=0..16: 1 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2  all certified: True
+p^6: certified dims n=0..16: 1 2 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3  all certified: True
+q^6+q^5*p+p^6: certified dims n=0..16: 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0  all certified: True
+q^6+q^4*p^2+p^6: certified dims n=0..16: 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0  all certified: True
+wrote /home/hatch/workspace/research/expansions/sextic_families/family_cores.json
