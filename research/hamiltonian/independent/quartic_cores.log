@@ -1,0 +1,41 @@
+moyal checker: moyal_partner_checker.py
+repo engine:   engine.py
+
+=== H = q^4 ===
+partner dims n=0..12: [1, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+truncated core dims n=0..16: 1 2 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+static formula agrees: True; invariance in range: True
+
+=== H = q^3 p ===
+partner dims n=0..12: [1, 2, 3, 2, 2, 2, 3, 2, 2, 2, 3, 2, 2]
+truncated core dims n=0..16: 1 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
+static formula agrees: True; invariance in range: True
+
+=== H = q p^3 ===
+partner dims n=0..12: [1, 2, 3, 2, 2, 2, 3, 2, 2, 2, 3, 2, 2]
+truncated core dims n=0..16: 1 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
+static formula agrees: True; invariance in range: True
+
+=== H = q^2 p^2 ===
+partner dims n=0..12: [1, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3]
+truncated core dims n=0..16: 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1
+static formula agrees: True; invariance in range: True
+
+=== H = q^4 + p^4 ===
+partner dims n=0..12: [1, 2, 3, 2, 2, 2, 3, 2, 2, 2, 3, 2, 2]
+truncated core dims n=0..16: 1 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0
+static formula agrees: True; invariance in range: True
+
+=== H = q^4 + q^2 p^2 + p^4 ===
+partner dims n=0..12: [1, 2, 3, 2, 2, 2, 3, 2, 2, 2, 3, 2, 2]
+truncated core dims n=0..16: 1 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0
+static formula agrees: True; invariance in range: True
+
+=== H = q p^3 + q^2 (inhomogeneous) ===
+candidate monomials deg <= 8: 45
+K_R dims for R=0..10: [19, 12, 6, 4, 2, 2, 2, 2, 2, 2, 2]
+final basis: ['1', 'qp^3 + q^2']
+
+cross-checks: {'partner_dims_agree_all': True, 'partner_spans_agree_all': True, 'monomial_verdicts_agree_all': True}
+
+wrote quartic_cores.json
