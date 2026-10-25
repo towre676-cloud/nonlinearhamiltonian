@@ -1,0 +1,55 @@
+homogeneous q4 n=2 R=0: sympy=3 main=3 agree=True
+homogeneous q4 n=7 R=1: sympy=3 main=3 agree=True
+homogeneous q4 n=24 R=1: sympy=3 main=3 agree=True
+homogeneous q3p n=6 R=0: sympy=3 main=3 agree=True
+homogeneous q3p n=6 R=1: sympy=2 main=2 agree=True
+homogeneous q3p n=18 R=0: sympy=3 main=3 agree=True
+homogeneous q3p n=18 R=1: sympy=2 main=2 agree=True
+homogeneous q3p n=22 R=1: sympy=2 main=2 agree=True
+homogeneous qp3 n=10 R=0: sympy=3 main=3 agree=True
+homogeneous qp3 n=10 R=1: sympy=2 main=2 agree=True
+homogeneous qp3 n=24 R=1: sympy=2 main=2 agree=True
+homogeneous q2p2 n=9 R=1: sympy=0 main=0 agree=True
+homogeneous q2p2 n=16 R=0: sympy=3 main=3 agree=True
+homogeneous q2p2 n=16 R=1: sympy=1 main=1 agree=True
+homogeneous q4_p4 n=5 R=1: sympy=0 main=0 agree=True
+homogeneous q4_p4 n=6 R=0: sympy=3 main=3 agree=True
+homogeneous q4_p4 n=6 R=1: sympy=0 main=0 agree=True
+homogeneous q4_p4 n=13 R=1: sympy=0 main=0 agree=True
+homogeneous q4_p4 n=24 R=1: sympy=0 main=0 agree=True
+homogeneous q4_q2p2_p4 n=6 R=1: sympy=0 main=0 agree=True
+homogeneous q4_q2p2_p4 n=17 R=1: sympy=0 main=0 agree=True
+homogeneous q4_mq2p2_p4 n=6 R=0: sympy=3 main=3 agree=True
+homogeneous q4_mq2p2_p4 n=6 R=1: sympy=0 main=0 agree=True
+homogeneous q4_mq2p2_p4 n=20 R=1: sympy=0 main=0 agree=True
+equianharmonic_A q^4+qp^3 n=1 R=0: sympy=2 main=2 agree=True
+equianharmonic_A q^4+qp^3 n=1 R=1: sympy=2 main=2 agree=True
+equianharmonic_A q^4+qp^3 n=1 R=2: sympy=2 main=2 agree=True
+equianharmonic_A q^4+qp^3 n=1 R=3: sympy=0 main=0 agree=True
+equianharmonic_A q^4+qp^3 n=3 R=1: sympy=2 main=2 agree=True
+equianharmonic_A q^4+qp^3 n=3 R=2: sympy=0 main=0 agree=True
+equianharmonic_A q^4+qp^3 n=5 R=1: sympy=0 main=0 agree=True
+equianharmonic_A q^4+qp^3 n=8 R=1: sympy=0 main=0 agree=True
+equianharmonic_A q^4+qp^3 n=13 R=1: sympy=0 main=0 agree=True
+equianharmonic_B q^4+lam q^2p^2+p^4 n=1 R=0: sympy=2 main=2 agree=True
+equianharmonic_B q^4+lam q^2p^2+p^4 n=1 R=2: sympy=2 main=2 agree=True
+equianharmonic_B q^4+lam q^2p^2+p^4 n=1 R=3: sympy=0 main=0 agree=True
+equianharmonic_B q^4+lam q^2p^2+p^4 n=3 R=1: sympy=2 main=2 agree=True
+equianharmonic_B q^4+lam q^2p^2+p^4 n=3 R=2: sympy=0 main=0 agree=True
+equianharmonic_B q^4+lam q^2p^2+p^4 n=4 R=1: sympy=1 main=1 agree=True
+equianharmonic_B q^4+lam q^2p^2+p^4 n=6 R=1: sympy=0 main=0 agree=True
+inhomogeneous_deg<=8 qp3_plus_q2 n=8 R=0: sympy=19 main=19 agree=True
+inhomogeneous_deg<=8 qp3_plus_q2 n=8 R=1: sympy=12 main=12 agree=True
+inhomogeneous_deg<=8 qp3_plus_q2 n=8 R=2: sympy=6 main=6 agree=True
+inhomogeneous_deg<=8 qp3_plus_q2 n=8 R=3: sympy=4 main=4 agree=True
+inhomogeneous_deg<=8 qp3_plus_q2 n=8 R=4: sympy=2 main=2 agree=True
+inhomogeneous_deg<=8 qp3_plus_q2 n=8 R=5: sympy=2 main=2 agree=True
+inhomogeneous_deg<=8 q2p2_plus_q2_TEST n=8 R=0: sympy=21 main=21 agree=True
+inhomogeneous_deg<=8 q2p2_plus_q2_TEST n=8 R=1: sympy=3 main=3 agree=True
+inhomogeneous_deg<=8 q2p2_plus_q2_TEST n=8 R=2: sympy=2 main=2 agree=True
+inhomogeneous_deg<=8 q2p2_plus_q2_TEST n=8 R=3: sympy=2 main=2 agree=True
+inhomogeneous_deg<=8 q2p2_plus_q2_TEST n=8 R=4: sympy=2 main=2 agree=True
+inhomogeneous_deg<=8 q2p2_plus_q2_TEST n=8 R=5: sympy=2 main=2 agree=True
+
+ALL AGREE: True  (52 checks, 171.8s)
+wrote /home/hatch/workspace/research/staging_quartic_ext/research/hamiltonian/independent/crosscheck_sympy.json
