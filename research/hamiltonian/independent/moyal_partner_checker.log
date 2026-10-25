@@ -1,0 +1,32 @@
+=== 1. Poisson and corrections for H = q*p^3, G = q^2 ===
+hbar^0: -6*q^2p^2
+correction-free: True
+
+=== 2. Monomial partners of H = q*p^3, G = q^c p^d, c+d <= 6 ===
+  G = q^0 p^1  correction-free
+  G = q^0 p^2  correction-free
+  G = q^0 p^3  correction-free
+  G = q^0 p^4  correction-free
+  G = q^0 p^5  correction-free
+  G = q^0 p^6  correction-free
+  G = q^1 p^0  correction-free
+  G = q^1 p^1  correction-free
+  G = q^1 p^2  correction-free
+  G = q^1 p^3  correction-free
+  G = q^1 p^4  correction-free
+  G = q^1 p^5  correction-free
+  G = q^1 p^6  correction-free
+  G = q^2 p^0  correction-free
+  G = q^5 p^1  correction-free
+
+=== 3. Homogeneous kernel, H = q^4 + p^4, degree 6 ===
+dimension: 3
+  1/5*p^6 + q^4p^2
+  qp^5 + q^5p
+  5*q^2p^4 + q^6
+
+=== 4. Homogeneous kernel, H = q^3, degree 4 (sanity / monomial sector) ===
+dimension: 3
+  q^2p^2
+  q^3p
+  q^4
