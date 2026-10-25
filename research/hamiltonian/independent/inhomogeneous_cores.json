@@ -1,0 +1,863 @@
+{
+  "parameters": {
+    "RMAX": 12
+  },
+  "cases": [
+    {
+      "id": "qp3_plus_half_q2",
+      "H_str": "q p^3 + (1/2) q^2",
+      "t": "1/2",
+      "family_id": "qp3_plus_t_q2",
+      "prediction": "collapse to span{1,H}",
+      "predicted_family": null,
+      "runs": {
+        "8": {
+          "candidate_monomials": 45,
+          "refinement_dims_by_R": [
+            19,
+            12,
+            6,
+            4,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "stabilisation_depth": 4,
+          "final_dim": 2,
+          "final_basis": [
+            "1",
+            "qp^3 + 1/2*q^2"
+          ],
+          "span_1_H_contained_in_final": true,
+          "slice_equals_span_1_H_proved_by_computation": true,
+          "family_check": null
+        }
+      },
+      "engine_verifies_final_basis_iterates_r<=4": true,
+      "moyal_verifies_final_basis_iterates_r<=4": true
+    },
+    {
+      "id": "qp3_plus_q2",
+      "H_str": "q p^3 + q^2",
+      "t": "1",
+      "family_id": "qp3_plus_t_q2",
+      "prediction": "collapse to span{1,H}",
+      "predicted_family": null,
+      "runs": {
+        "8": {
+          "candidate_monomials": 45,
+          "refinement_dims_by_R": [
+            19,
+            12,
+            6,
+            4,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "stabilisation_depth": 4,
+          "final_dim": 2,
+          "final_basis": [
+            "1",
+            "qp^3 + q^2"
+          ],
+          "span_1_H_contained_in_final": true,
+          "slice_equals_span_1_H_proved_by_computation": true,
+          "family_check": null
+        },
+        "10": {
+          "candidate_monomials": 66,
+          "refinement_dims_by_R": [
+            24,
+            14,
+            6,
+            4,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "stabilisation_depth": 4,
+          "final_dim": 2,
+          "final_basis": [
+            "1",
+            "qp^3 + q^2"
+          ],
+          "span_1_H_contained_in_final": true,
+          "slice_equals_span_1_H_proved_by_computation": true,
+          "family_check": null
+        }
+      },
+      "engine_verifies_final_basis_iterates_r<=4": true,
+      "moyal_verifies_final_basis_iterates_r<=4": true
+    },
+    {
+      "id": "qp3_plus_2q2",
+      "H_str": "q p^3 + 2 q^2",
+      "t": "2",
+      "family_id": "qp3_plus_t_q2",
+      "prediction": "collapse to span{1,H}",
+      "predicted_family": null,
+      "runs": {
+        "8": {
+          "candidate_monomials": 45,
+          "refinement_dims_by_R": [
+            19,
+            12,
+            6,
+            4,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "stabilisation_depth": 4,
+          "final_dim": 2,
+          "final_basis": [
+            "1",
+            "qp^3 + 2*q^2"
+          ],
+          "span_1_H_contained_in_final": true,
+          "slice_equals_span_1_H_proved_by_computation": true,
+          "family_check": null
+        }
+      },
+      "engine_verifies_final_basis_iterates_r<=4": true,
+      "moyal_verifies_final_basis_iterates_r<=4": true
+    },
+    {
+      "id": "q3p_plus_half_p2",
+      "H_str": "q^3 p + (1/2) p^2",
+      "t": "1/2",
+      "family_id": "q3p_plus_t_p2",
+      "prediction": "collapse to span{1,H} (mirror of qp3 + t q^2)",
+      "predicted_family": null,
+      "runs": {
+        "8": {
+          "candidate_monomials": 45,
+          "refinement_dims_by_R": [
+            19,
+            12,
+            6,
+            4,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "stabilisation_depth": 4,
+          "final_dim": 2,
+          "final_basis": [
+            "1",
+            "q^3p + 1/2*p^2"
+          ],
+          "span_1_H_contained_in_final": true,
+          "slice_equals_span_1_H_proved_by_computation": true,
+          "family_check": null
+        }
+      },
+      "engine_verifies_final_basis_iterates_r<=4": true,
+      "moyal_verifies_final_basis_iterates_r<=4": true
+    },
+    {
+      "id": "q3p_plus_p2",
+      "H_str": "q^3 p + p^2",
+      "t": "1",
+      "family_id": "q3p_plus_t_p2",
+      "prediction": "collapse to span{1,H} (mirror of qp3 + t q^2)",
+      "predicted_family": null,
+      "runs": {
+        "8": {
+          "candidate_monomials": 45,
+          "refinement_dims_by_R": [
+            19,
+            12,
+            6,
+            4,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "stabilisation_depth": 4,
+          "final_dim": 2,
+          "final_basis": [
+            "1",
+            "q^3p + p^2"
+          ],
+          "span_1_H_contained_in_final": true,
+          "slice_equals_span_1_H_proved_by_computation": true,
+          "family_check": null
+        },
+        "10": {
+          "candidate_monomials": 66,
+          "refinement_dims_by_R": [
+            24,
+            14,
+            6,
+            4,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "stabilisation_depth": 4,
+          "final_dim": 2,
+          "final_basis": [
+            "1",
+            "q^3p + p^2"
+          ],
+          "span_1_H_contained_in_final": true,
+          "slice_equals_span_1_H_proved_by_computation": true,
+          "family_check": null
+        }
+      },
+      "engine_verifies_final_basis_iterates_r<=4": true,
+      "moyal_verifies_final_basis_iterates_r<=4": true
+    },
+    {
+      "id": "q3p_plus_2p2",
+      "H_str": "q^3 p + 2 p^2",
+      "t": "2",
+      "family_id": "q3p_plus_t_p2",
+      "prediction": "collapse to span{1,H} (mirror of qp3 + t q^2)",
+      "predicted_family": null,
+      "runs": {
+        "8": {
+          "candidate_monomials": 45,
+          "refinement_dims_by_R": [
+            19,
+            12,
+            6,
+            4,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "stabilisation_depth": 4,
+          "final_dim": 2,
+          "final_basis": [
+            "1",
+            "q^3p + 2*p^2"
+          ],
+          "span_1_H_contained_in_final": true,
+          "slice_equals_span_1_H_proved_by_computation": true,
+          "family_check": null
+        }
+      },
+      "engine_verifies_final_basis_iterates_r<=4": true,
+      "moyal_verifies_final_basis_iterates_r<=4": true
+    },
+    {
+      "id": "q4_plus_q2",
+      "H_str": "q^4 + q^2",
+      "t": "1",
+      "family_id": "q4_plus_q2",
+      "prediction": "no collapse: slice = strip Q[q]+pQ[q]+p^2Q[q] (Thm P+ case 1, DYNAMIC_CORE_RESULTS.md sec.6.2)",
+      "predicted_family": "strip",
+      "runs": {
+        "8": {
+          "candidate_monomials": 45,
+          "refinement_dims_by_R": [
+            24,
+            24,
+            24,
+            24,
+            24,
+            24,
+            24,
+            24,
+            24,
+            24,
+            24,
+            24,
+            24
+          ],
+          "stabilisation_depth": 0,
+          "final_dim": 24,
+          "final_basis": [
+            "1",
+            "p",
+            "q",
+            "p^2",
+            "qp",
+            "q^2",
+            "qp^2",
+            "q^2p",
+            "q^3",
+            "q^2p^2",
+            "q^3p",
+            "q^4",
+            "q^3p^2",
+            "q^4p",
+            "q^5",
+            "q^4p^2",
+            "q^5p",
+            "q^6",
+            "q^5p^2",
+            "q^6p",
+            "q^7",
+            "q^6p^2",
+            "q^7p",
+            "q^8"
+          ],
+          "span_1_H_contained_in_final": true,
+          "slice_equals_span_1_H_proved_by_computation": false,
+          "family_check": {
+            "family": "strip",
+            "family_truncated_dim": 24,
+            "family_contained_in_final": true,
+            "final_dim_equals_family_dim": true
+          }
+        },
+        "10": {
+          "candidate_monomials": 66,
+          "refinement_dims_by_R": [
+            30,
+            30,
+            30,
+            30,
+            30,
+            30,
+            30,
+            30,
+            30,
+            30,
+            30,
+            30,
+            30
+          ],
+          "stabilisation_depth": 0,
+          "final_dim": 30,
+          "final_basis": [
+            "1",
+            "p",
+            "q",
+            "p^2",
+            "qp",
+            "q^2",
+            "qp^2",
+            "q^2p",
+            "q^3",
+            "q^2p^2",
+            "q^3p",
+            "q^4",
+            "q^3p^2",
+            "q^4p",
+            "q^5",
+            "q^4p^2",
+            "q^5p",
+            "q^6",
+            "q^5p^2",
+            "q^6p",
+            "q^7",
+            "q^6p^2",
+            "q^7p",
+            "q^8",
+            "q^7p^2",
+            "q^8p",
+            "q^9",
+            "q^8p^2",
+            "q^9p",
+            "q^10"
+          ],
+          "span_1_H_contained_in_final": true,
+          "slice_equals_span_1_H_proved_by_computation": false,
+          "family_check": {
+            "family": "strip",
+            "family_truncated_dim": 30,
+            "family_contained_in_final": true,
+            "final_dim_equals_family_dim": true
+          }
+        }
+      },
+      "engine_verifies_final_basis_iterates_r<=4": true,
+      "moyal_verifies_final_basis_iterates_r<=4": true
+    },
+    {
+      "id": "q2p2_plus_qp",
+      "H_str": "q^2 p^2 + q p",
+      "t": "1",
+      "family_id": "q2p2_plus_qp",
+      "prediction": "no collapse: slice = Q[qp] (H in Q[G], G = qp; Thm P+ case 3 / Thm B, sec.6.2/6.5)",
+      "predicted_family": "tower",
+      "runs": {
+        "8": {
+          "candidate_monomials": 45,
+          "refinement_dims_by_R": [
+            21,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5
+          ],
+          "stabilisation_depth": 1,
+          "final_dim": 5,
+          "final_basis": [
+            "1",
+            "qp",
+            "q^2p^2",
+            "q^3p^3",
+            "q^4p^4"
+          ],
+          "span_1_H_contained_in_final": true,
+          "slice_equals_span_1_H_proved_by_computation": false,
+          "family_check": {
+            "family": "tower",
+            "family_truncated_dim": 5,
+            "family_contained_in_final": true,
+            "final_dim_equals_family_dim": true
+          }
+        },
+        "10": {
+          "candidate_monomials": 66,
+          "refinement_dims_by_R": [
+            26,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6
+          ],
+          "stabilisation_depth": 1,
+          "final_dim": 6,
+          "final_basis": [
+            "1",
+            "qp",
+            "q^2p^2",
+            "q^3p^3",
+            "q^4p^4",
+            "q^5p^5"
+          ],
+          "span_1_H_contained_in_final": true,
+          "slice_equals_span_1_H_proved_by_computation": false,
+          "family_check": {
+            "family": "tower",
+            "family_truncated_dim": 6,
+            "family_contained_in_final": true,
+            "final_dim_equals_family_dim": true
+          }
+        }
+      },
+      "engine_verifies_final_basis_iterates_r<=4": true,
+      "moyal_verifies_final_basis_iterates_r<=4": true
+    },
+    {
+      "id": "q2p2_plus_q2_TEST",
+      "H_str": "q^2 p^2 + q^2",
+      "t": "1",
+      "family_id": "q2p2_plus_q2",
+      "prediction": "TEST CASE (not used to formulate the pattern): collapse to span{1,H}, because H is not in Q[G] for any quadratic G with leading part qp (Thm B, sec.6.5)",
+      "predicted_family": null,
+      "runs": {
+        "8": {
+          "candidate_monomials": 45,
+          "refinement_dims_by_R": [
+            21,
+            3,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "stabilisation_depth": 2,
+          "final_dim": 2,
+          "final_basis": [
+            "1",
+            "q^2p^2 + q^2"
+          ],
+          "span_1_H_contained_in_final": true,
+          "slice_equals_span_1_H_proved_by_computation": true,
+          "family_check": null
+        },
+        "10": {
+          "candidate_monomials": 66,
+          "refinement_dims_by_R": [
+            26,
+            3,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "stabilisation_depth": 2,
+          "final_dim": 2,
+          "final_basis": [
+            "1",
+            "q^2p^2 + q^2"
+          ],
+          "span_1_H_contained_in_final": true,
+          "slice_equals_span_1_H_proved_by_computation": true,
+          "family_check": null
+        }
+      },
+      "engine_verifies_final_basis_iterates_r<=4": true,
+      "moyal_verifies_final_basis_iterates_r<=4": true
+    },
+    {
+      "id": "qp3_plus_qp_TEST",
+      "H_str": "q p^3 + q p",
+      "t": "1",
+      "family_id": "qp3_plus_qp",
+      "prediction": "TEST CASE (not used to formulate the pattern): no collapse: slice = Q[p] + q Q[p] (six-parameter family theorem with a = 0, sec.3b)",
+      "predicted_family": "near_strip",
+      "runs": {
+        "8": {
+          "candidate_monomials": 45,
+          "refinement_dims_by_R": [
+            19,
+            17,
+            17,
+            17,
+            17,
+            17,
+            17,
+            17,
+            17,
+            17,
+            17,
+            17,
+            17
+          ],
+          "stabilisation_depth": 1,
+          "final_dim": 17,
+          "final_basis": [
+            "1",
+            "p",
+            "q",
+            "p^2",
+            "qp",
+            "p^3",
+            "qp^2",
+            "p^4",
+            "qp^3",
+            "p^5",
+            "qp^4",
+            "p^6",
+            "qp^5",
+            "p^7",
+            "qp^6",
+            "p^8",
+            "qp^7"
+          ],
+          "span_1_H_contained_in_final": true,
+          "slice_equals_span_1_H_proved_by_computation": false,
+          "family_check": {
+            "family": "near_strip",
+            "family_truncated_dim": 17,
+            "family_contained_in_final": true,
+            "final_dim_equals_family_dim": true
+          }
+        },
+        "10": {
+          "candidate_monomials": 66,
+          "refinement_dims_by_R": [
+            24,
+            21,
+            21,
+            21,
+            21,
+            21,
+            21,
+            21,
+            21,
+            21,
+            21,
+            21,
+            21
+          ],
+          "stabilisation_depth": 1,
+          "final_dim": 21,
+          "final_basis": [
+            "1",
+            "p",
+            "q",
+            "p^2",
+            "qp",
+            "p^3",
+            "qp^2",
+            "p^4",
+            "qp^3",
+            "p^5",
+            "qp^4",
+            "p^6",
+            "qp^5",
+            "p^7",
+            "qp^6",
+            "p^8",
+            "qp^7",
+            "p^9",
+            "qp^8",
+            "p^10",
+            "qp^9"
+          ],
+          "span_1_H_contained_in_final": true,
+          "slice_equals_span_1_H_proved_by_computation": false,
+          "family_check": {
+            "family": "near_strip",
+            "family_truncated_dim": 21,
+            "family_contained_in_final": true,
+            "final_dim_equals_family_dim": true
+          }
+        }
+      },
+      "engine_verifies_final_basis_iterates_r<=4": true,
+      "moyal_verifies_final_basis_iterates_r<=4": true
+    }
+  ],
+  "family_consistency": {
+    "qp3_plus_t_q2": {
+      "sequences_by_t": {
+        "1/2": [
+          19,
+          12,
+          6,
+          4,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "1": [
+          19,
+          12,
+          6,
+          4,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "2": [
+          19,
+          12,
+          6,
+          4,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ]
+      },
+      "all_t_sequences_identical": true
+    },
+    "q3p_plus_t_p2": {
+      "sequences_by_t": {
+        "1/2": [
+          19,
+          12,
+          6,
+          4,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "1": [
+          19,
+          12,
+          6,
+          4,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "2": [
+          19,
+          12,
+          6,
+          4,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ]
+      },
+      "all_t_sequences_identical": true
+    },
+    "q4_plus_q2": {
+      "sequences_by_t": {
+        "1": [
+          24,
+          24,
+          24,
+          24,
+          24,
+          24,
+          24,
+          24,
+          24,
+          24,
+          24,
+          24,
+          24
+        ]
+      },
+      "all_t_sequences_identical": true
+    },
+    "q2p2_plus_qp": {
+      "sequences_by_t": {
+        "1": [
+          21,
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
+          5
+        ]
+      },
+      "all_t_sequences_identical": true
+    },
+    "q2p2_plus_q2": {
+      "sequences_by_t": {
+        "1": [
+          21,
+          3,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ]
+      },
+      "all_t_sequences_identical": true
+    },
+    "qp3_plus_qp": {
+      "sequences_by_t": {
+        "1": [
+          19,
+          17,
+          17,
+          17,
+          17,
+          17,
+          17,
+          17,
+          17,
+          17,
+          17,
+          17,
+          17
+        ]
+      },
+      "all_t_sequences_identical": true
+    },
+    "mirror_qp3_q3p_identical": true
+  }
+}

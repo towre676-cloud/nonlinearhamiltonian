@@ -1,0 +1,167 @@
+moyal checker: /home/hatch/workspace/research/staging_moyal/research/hamiltonian/independent/moyal_partner_checker.py
+repo engine:   /home/hatch/workspace/research/nonlinearhamiltonian/research/hamiltonian/independent/engine.py
+
+=== H = q p^3 + (1/2) q^2 ===
+  N=8: dims R=0..12: [19, 12, 6, 4, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+       stabilisation depth: 4, final dim 2, span{1,H} in final: True, family check: None
+  engine/moyal verify final basis iterates: True/True
+
+=== H = q p^3 + q^2 ===
+  N=8: dims R=0..12: [19, 12, 6, 4, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+       stabilisation depth: 4, final dim 2, span{1,H} in final: True, family check: None
+  N=10: dims R=0..12: [24, 14, 6, 4, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+       stabilisation depth: 4, final dim 2, span{1,H} in final: True, family check: None
+  engine/moyal verify final basis iterates: True/True
+
+=== H = q p^3 + 2 q^2 ===
+  N=8: dims R=0..12: [19, 12, 6, 4, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+       stabilisation depth: 4, final dim 2, span{1,H} in final: True, family check: None
+  engine/moyal verify final basis iterates: True/True
+
+=== H = q^3 p + (1/2) p^2 ===
+  N=8: dims R=0..12: [19, 12, 6, 4, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+       stabilisation depth: 4, final dim 2, span{1,H} in final: True, family check: None
+  engine/moyal verify final basis iterates: True/True
+
+=== H = q^3 p + p^2 ===
+  N=8: dims R=0..12: [19, 12, 6, 4, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+       stabilisation depth: 4, final dim 2, span{1,H} in final: True, family check: None
+  N=10: dims R=0..12: [24, 14, 6, 4, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+       stabilisation depth: 4, final dim 2, span{1,H} in final: True, family check: None
+  engine/moyal verify final basis iterates: True/True
+
+=== H = q^3 p + 2 p^2 ===
+  N=8: dims R=0..12: [19, 12, 6, 4, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+       stabilisation depth: 4, final dim 2, span{1,H} in final: True, family check: None
+  engine/moyal verify final basis iterates: True/True
+
+=== H = q^4 + q^2 ===
+  N=8: dims R=0..12: [24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24]
+       stabilisation depth: 0, final dim 24, span{1,H} in final: True, family check: {'family': 'strip', 'family_truncated_dim': 24, 'family_contained_in_final': True, 'final_dim_equals_family_dim': True}
+  N=10: dims R=0..12: [30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30]
+       stabilisation depth: 0, final dim 30, span{1,H} in final: True, family check: {'family': 'strip', 'family_truncated_dim': 30, 'family_contained_in_final': True, 'final_dim_equals_family_dim': True}
+  engine/moyal verify final basis iterates: True/True
+
+=== H = q^2 p^2 + q p ===
+  N=8: dims R=0..12: [21, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5]
+       stabilisation depth: 1, final dim 5, span{1,H} in final: True, family check: {'family': 'tower', 'family_truncated_dim': 5, 'family_contained_in_final': True, 'final_dim_equals_family_dim': True}
+  N=10: dims R=0..12: [26, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6]
+       stabilisation depth: 1, final dim 6, span{1,H} in final: True, family check: {'family': 'tower', 'family_truncated_dim': 6, 'family_contained_in_final': True, 'final_dim_equals_family_dim': True}
+  engine/moyal verify final basis iterates: True/True
+
+=== H = q^2 p^2 + q^2 ===
+  N=8: dims R=0..12: [21, 3, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+       stabilisation depth: 2, final dim 2, span{1,H} in final: True, family check: None
+  N=10: dims R=0..12: [26, 3, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+       stabilisation depth: 2, final dim 2, span{1,H} in final: True, family check: None
+  engine/moyal verify final basis iterates: True/True
+
+=== H = q p^3 + q p ===
+  N=8: dims R=0..12: [19, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17]
+       stabilisation depth: 1, final dim 17, span{1,H} in final: True, family check: {'family': 'near_strip', 'family_truncated_dim': 17, 'family_contained_in_final': True, 'final_dim_equals_family_dim': True}
+  N=10: dims R=0..12: [24, 21, 21, 21, 21, 21, 21, 21, 21, 21, 21, 21, 21]
+       stabilisation depth: 1, final dim 21, span{1,H} in final: True, family check: {'family': 'near_strip', 'family_truncated_dim': 21, 'family_contained_in_final': True, 'final_dim_equals_family_dim': True}
+  engine/moyal verify final basis iterates: True/True
+
+family consistency: {
+ "qp3_plus_t_q2": {
+  "sequences_by_t": {
+   "1/2": [
+    19,
+    12,
+    6,
+    4,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ],
+   "1": [
+    19,
+    12,
+    6,
+    4,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ],
+   "2": [
+    19,
+    12,
+    6,
+    4,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ]
+  },
+  "all_t_sequences_identical": true
+ },
+ "q3p_plus_t_p2": {
+  "sequences_by_t": {
+   "1/2": [
+    19,
+    12,
+    6,
+    4,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ],
+   "1": [
+    19,
+    12,
+    6,
+    4,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ],
+   "2": [
+    19,
+    12,
+    6,
+    4,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ]
+  },
+  "all_t_seque
+elapsed: 130.8s
+wrote /home/hatch/workspace/research/staging_quartic_ext/research/hamiltonian/independent/inhomogeneous_cores.json

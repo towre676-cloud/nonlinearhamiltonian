@@ -1,0 +1,46 @@
+moyal checker: /home/hatch/workspace/research/staging_moyal/research/hamiltonian/independent/moyal_partner_checker.py
+repo engine:   /home/hatch/workspace/research/nonlinearhamiltonian/research/hamiltonian/independent/engine.py
+weyl_receipts: loaded (repository operator machinery)
+
+=== H = q^4 ===
+truncated core dims n=0..24: 1 2 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+stabilisation depth overall: 0; static formula: True; invariance: True
+
+=== H = q^3 p ===
+truncated core dims n=0..24: 1 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
+stabilisation depth overall: 1; static formula: True; invariance: True
+
+=== H = q p^3 ===
+truncated core dims n=0..24: 1 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
+stabilisation depth overall: 1; static formula: True; invariance: True
+
+=== H = q^2 p^2 ===
+truncated core dims n=0..24: 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1
+stabilisation depth overall: 1; static formula: True; invariance: True
+
+=== H = q^4 + p^4 ===
+truncated core dims n=0..24: 1 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+stabilisation depth overall: 1; static formula: True; invariance: True
+
+=== H = q^4 + q^2 p^2 + p^4 ===
+truncated core dims n=0..24: 1 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+stabilisation depth overall: 1; static formula: True; invariance: True
+
+=== H = q^4 - q^2 p^2 + p^4 ===
+truncated core dims n=0..24: 1 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+stabilisation depth overall: 1; static formula: True; invariance: True
+
+=== Equianharmonic, reading A: H = q^4 + q p^3 over Q ===
+A core dims: 1 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+A min depths n=0..12: [0, 3, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+
+=== Equianharmonic, reading B: H_lambda over Q(sqrt(-3)) ===
+B core dims: 1 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+B min depths n=0..12: [0, 3, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+
+Equianharmonic readings A and B refinement tables identical in every degree <= 24: True
+
+cross-checks: {'partner_dims_agree_all': True, 'partner_spans_agree_all': True, 'monomial_verdicts_agree_all': True, 'weyl_agree': True, 'wave1_agree': 0}
+
+elapsed: 206.7s
+wrote /home/hatch/workspace/research/staging_quartic_ext/research/hamiltonian/independent/quartic_cores_ext.json
