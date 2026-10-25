@@ -1,0 +1,5553 @@
+{
+  "definition": "D_inf(H) = {G : C_k D^r G = 0, all odd k >= 3, all r >= 0}; S^R_n refinement with gates T_3, T_5 (programmes/DYNAMIC_CORE_RESULTS.md)",
+  "parameters": {
+    "NMAX": 16,
+    "RMAX": 12,
+    "R_Q": 2,
+    "R_VERIFY": 10,
+    "PRIMES": [
+      1000003,
+      999983,
+      999979
+    ]
+  },
+  "certification": "dim S^R_n <= (n+1) - max_p rank_p(rows) over the three primes; equality with an exhibited D_inf subspace certifies the degree exactly",
+  "family": [
+    {
+      "name": "H_a, a=0",
+      "H": "p^6 + q^6",
+      "predicted_core": "span{1, H} (repo Theorem W4)",
+      "degrees": {
+        "0": {
+          "predicted_dim": 1,
+          "exact_dims_R0_R1_R2": [
+            1,
+            1
+          ],
+          "upper_bounds_U_R": [
+            1,
+            1
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": [
+            "1"
+          ]
+        },
+        "1": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            2,
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            2,
+            0,
+            0
+          ],
+          "certified_at_R": 1,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "2": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            3,
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            3,
+            0,
+            0
+          ],
+          "certified_at_R": 1,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "3": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            2,
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            2,
+            0,
+            0
+          ],
+          "certified_at_R": 1,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "4": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            1,
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            1,
+            0,
+            0
+          ],
+          "certified_at_R": 1,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "5": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            0,
+            0
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "6": {
+          "predicted_dim": 1,
+          "exact_dims_R0_R1_R2": [
+            1,
+            1
+          ],
+          "upper_bounds_U_R": [
+            1,
+            1
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": [
+            "p^6 + q^6"
+          ]
+        },
+        "7": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            0,
+            0
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "8": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            1,
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            1,
+            0,
+            0
+          ],
+          "certified_at_R": 1,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "9": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            0,
+            0
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "10": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            1,
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            1,
+            0,
+            0
+          ],
+          "certified_at_R": 1,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "11": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            0,
+            0
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "12": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            0,
+            0
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "13": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            0,
+            0
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "14": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            0,
+            0
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "15": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            0,
+            0
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "16": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            0,
+            0
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        }
+      },
+      "all_degrees_certified": true,
+      "exhibits_verified_to_R": 10
+    },
+    {
+      "name": "H_a, a=1/2",
+      "H": "p^6 + (1/2)*q^3p^3 + q^6",
+      "predicted_core": "span{1, H} (repo Theorem W4)",
+      "degrees": {
+        "0": {
+          "predicted_dim": 1,
+          "exact_dims_R0_R1_R2": [
+            1,
+            1
+          ],
+          "upper_bounds_U_R": [
+            1,
+            1
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": [
+            "1"
+          ]
+        },
+        "1": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            2,
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            2,
+            0,
+            0
+          ],
+          "certified_at_R": 1,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "2": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            3,
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            3,
+            0,
+            0
+          ],
+          "certified_at_R": 1,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "3": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            0,
+            0
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "4": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            1,
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            1,
+            0,
+            0
+          ],
+          "certified_at_R": 1,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "5": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            0,
+            0
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "6": {
+          "predicted_dim": 1,
+          "exact_dims_R0_R1_R2": [
+            1,
+            1
+          ],
+          "upper_bounds_U_R": [
+            1,
+            1
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": [
+            "(2)*p^6 + q^3p^3 + (2)*q^6"
+          ]
+        },
+        "7": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            0,
+            0
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "8": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            1,
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            1,
+            0,
+            0
+          ],
+          "certified_at_R": 1,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "9": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            0,
+            0
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "10": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            0,
+            0
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "11": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            0,
+            0
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "12": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            0,
+            0
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "13": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            0,
+            0
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "14": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            0,
+            0
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "15": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            0,
+            0
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "16": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            0,
+            0
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        }
+      },
+      "all_degrees_certified": true,
+      "exhibits_verified_to_R": 10
+    },
+    {
+      "name": "H_a, a=-1/2",
+      "H": "p^6 + (-1/2)*q^3p^3 + q^6",
+      "predicted_core": "span{1, H} (repo Theorem W4)",
+      "degrees": {
+        "0": {
+          "predicted_dim": 1,
+          "exact_dims_R0_R1_R2": [
+            1,
+            1
+          ],
+          "upper_bounds_U_R": [
+            1,
+            1
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": [
+            "1"
+          ]
+        },
+        "1": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            2,
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            2,
+            0,
+            0
+          ],
+          "certified_at_R": 1,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "2": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            3,
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            3,
+            0,
+            0
+          ],
+          "certified_at_R": 1,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "3": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            0,
+            0
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "4": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            1,
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            1,
+            0,
+            0
+          ],
+          "certified_at_R": 1,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "5": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            0,
+            0
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "6": {
+          "predicted_dim": 1,
+          "exact_dims_R0_R1_R2": [
+            1,
+            1
+          ],
+          "upper_bounds_U_R": [
+            1,
+            1
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": [
+            "(2)*p^6 - q^3p^3 + (2)*q^6"
+          ]
+        },
+        "7": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            0,
+            0
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "8": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            1,
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            1,
+            0,
+            0
+          ],
+          "certified_at_R": 1,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "9": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            0,
+            0
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "10": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            0,
+            0
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "11": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            0,
+            0
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "12": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            0,
+            0
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "13": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            0,
+            0
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "14": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            0,
+            0
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "15": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            0,
+            0
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "16": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            0,
+            0
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        }
+      },
+      "all_degrees_certified": true,
+      "exhibits_verified_to_R": 10
+    },
+    {
+      "name": "H_a, a=1",
+      "H": "p^6 + q^3p^3 + q^6",
+      "predicted_core": "span{1, H} (repo Theorem W4)",
+      "degrees": {
+        "0": {
+          "predicted_dim": 1,
+          "exact_dims_R0_R1_R2": [
+            1,
+            1
+          ],
+          "upper_bounds_U_R": [
+            1,
+            1
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": [
+            "1"
+          ]
+        },
+        "1": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            2,
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            2,
+            0,
+            0
+          ],
+          "certified_at_R": 1,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "2": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            3,
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            3,
+            0,
+            0
+          ],
+          "certified_at_R": 1,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "3": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            0,
+            0
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "4": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            1,
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            1,
+            0,
+            0
+          ],
+          "certified_at_R": 1,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "5": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            0,
+            0
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "6": {
+          "predicted_dim": 1,
+          "exact_dims_R0_R1_R2": [
+            1,
+            1
+          ],
+          "upper_bounds_U_R": [
+            1,
+            1
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": [
+            "p^6 + q^3p^3 + q^6"
+          ]
+        },
+        "7": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            0,
+            0
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "8": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            1,
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            1,
+            0,
+            0
+          ],
+          "certified_at_R": 1,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "9": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            0,
+            0
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "10": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            0,
+            0
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "11": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            0,
+            0
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "12": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            0,
+            0
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "13": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            0,
+            0
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "14": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            0,
+            0
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "15": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            0,
+            0
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "16": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            0,
+            0
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        }
+      },
+      "all_degrees_certified": true,
+      "exhibits_verified_to_R": 10
+    },
+    {
+      "name": "H_a, a=-1",
+      "H": "p^6 - q^3p^3 + q^6",
+      "predicted_core": "span{1, H} (repo Theorem W4)",
+      "degrees": {
+        "0": {
+          "predicted_dim": 1,
+          "exact_dims_R0_R1_R2": [
+            1,
+            1
+          ],
+          "upper_bounds_U_R": [
+            1,
+            1
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": [
+            "1"
+          ]
+        },
+        "1": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            2,
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            2,
+            0,
+            0
+          ],
+          "certified_at_R": 1,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "2": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            3,
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            3,
+            0,
+            0
+          ],
+          "certified_at_R": 1,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "3": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            0,
+            0
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "4": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            1,
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            1,
+            0,
+            0
+          ],
+          "certified_at_R": 1,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "5": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            0,
+            0
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "6": {
+          "predicted_dim": 1,
+          "exact_dims_R0_R1_R2": [
+            1,
+            1
+          ],
+          "upper_bounds_U_R": [
+            1,
+            1
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": [
+            "p^6 - q^3p^3 + q^6"
+          ]
+        },
+        "7": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            0,
+            0
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "8": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            1,
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            1,
+            0,
+            0
+          ],
+          "certified_at_R": 1,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "9": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            0,
+            0
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "10": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            0,
+            0
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "11": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            0,
+            0
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "12": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            0,
+            0
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "13": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            0,
+            0
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "14": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            0,
+            0
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "15": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            0,
+            0
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "16": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            0,
+            0
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        }
+      },
+      "all_degrees_certified": true,
+      "exhibits_verified_to_R": 10
+    },
+    {
+      "name": "H_a, a=2",
+      "H": "p^6 + (2)*q^3p^3 + q^6",
+      "predicted_core": "span{1, H} (repo Theorem W4)",
+      "degrees": {
+        "0": {
+          "predicted_dim": 1,
+          "exact_dims_R0_R1_R2": [
+            1,
+            1
+          ],
+          "upper_bounds_U_R": [
+            1,
+            1
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": [
+            "1"
+          ]
+        },
+        "1": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            2,
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            2,
+            0,
+            0
+          ],
+          "certified_at_R": 1,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "2": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            3,
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            3,
+            0,
+            0
+          ],
+          "certified_at_R": 1,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "3": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            0,
+            0
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "4": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            1,
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            1,
+            0,
+            0
+          ],
+          "certified_at_R": 1,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "5": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            0,
+            0
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "6": {
+          "predicted_dim": 1,
+          "exact_dims_R0_R1_R2": [
+            1,
+            1
+          ],
+          "upper_bounds_U_R": [
+            1,
+            1
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": [
+            "p^6 + (2)*q^3p^3 + q^6"
+          ]
+        },
+        "7": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            0,
+            0
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "8": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            1,
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            1,
+            0,
+            0
+          ],
+          "certified_at_R": 1,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "9": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            0,
+            0
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "10": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            0,
+            0
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "11": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            0,
+            0
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "12": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            0,
+            0
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "13": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            0,
+            0
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "14": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            0,
+            0
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "15": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            0,
+            0
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "16": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            0,
+            0
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        }
+      },
+      "all_degrees_certified": true,
+      "exhibits_verified_to_R": 10
+    },
+    {
+      "name": "H_a, a=-2",
+      "H": "p^6 + (-2)*q^3p^3 + q^6",
+      "predicted_core": "span{1, H} (repo Theorem W4)",
+      "degrees": {
+        "0": {
+          "predicted_dim": 1,
+          "exact_dims_R0_R1_R2": [
+            1,
+            1
+          ],
+          "upper_bounds_U_R": [
+            1,
+            1
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": [
+            "1"
+          ]
+        },
+        "1": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            2,
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            2,
+            0,
+            0
+          ],
+          "certified_at_R": 1,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "2": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            3,
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            3,
+            0,
+            0
+          ],
+          "certified_at_R": 1,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "3": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            0,
+            0
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "4": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            1,
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            1,
+            0,
+            0
+          ],
+          "certified_at_R": 1,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "5": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            0,
+            0
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "6": {
+          "predicted_dim": 1,
+          "exact_dims_R0_R1_R2": [
+            1,
+            1
+          ],
+          "upper_bounds_U_R": [
+            1,
+            1
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": [
+            "p^6 + (-2)*q^3p^3 + q^6"
+          ]
+        },
+        "7": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            0,
+            0
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "8": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            1,
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            1,
+            0,
+            0
+          ],
+          "certified_at_R": 1,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "9": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            0,
+            0
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "10": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            0,
+            0
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "11": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            0,
+            0
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "12": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            0,
+            0
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "13": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            0,
+            0
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "14": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            0,
+            0
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "15": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            0,
+            0
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "16": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            0,
+            0
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        }
+      },
+      "all_degrees_certified": true,
+      "exhibits_verified_to_R": 10
+    },
+    {
+      "name": "H_a, a=3",
+      "H": "p^6 + (3)*q^3p^3 + q^6",
+      "predicted_core": "span{1, H} (repo Theorem W4)",
+      "degrees": {
+        "0": {
+          "predicted_dim": 1,
+          "exact_dims_R0_R1_R2": [
+            1,
+            1
+          ],
+          "upper_bounds_U_R": [
+            1,
+            1
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": [
+            "1"
+          ]
+        },
+        "1": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            2,
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            2,
+            0,
+            0
+          ],
+          "certified_at_R": 1,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "2": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            3,
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            3,
+            0,
+            0
+          ],
+          "certified_at_R": 1,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "3": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            0,
+            0
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "4": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            1,
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            1,
+            0,
+            0
+          ],
+          "certified_at_R": 1,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "5": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            0,
+            0
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "6": {
+          "predicted_dim": 1,
+          "exact_dims_R0_R1_R2": [
+            1,
+            1
+          ],
+          "upper_bounds_U_R": [
+            1,
+            1
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": [
+            "p^6 + (3)*q^3p^3 + q^6"
+          ]
+        },
+        "7": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            0,
+            0
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "8": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            1,
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            1,
+            0,
+            0
+          ],
+          "certified_at_R": 1,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "9": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            0,
+            0
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "10": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            0,
+            0
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "11": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            0,
+            0
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "12": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            0,
+            0
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "13": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            0,
+            0
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "14": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            0,
+            0
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "15": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            0,
+            0
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "16": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            0,
+            0
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        }
+      },
+      "all_degrees_certified": true,
+      "exhibits_verified_to_R": 10
+    },
+    {
+      "name": "H_a, a=20",
+      "H": "p^6 + (20)*q^3p^3 + q^6",
+      "predicted_core": "span{1, H} (repo Theorem W4)",
+      "degrees": {
+        "0": {
+          "predicted_dim": 1,
+          "exact_dims_R0_R1_R2": [
+            1,
+            1
+          ],
+          "upper_bounds_U_R": [
+            1,
+            1
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": [
+            "1"
+          ]
+        },
+        "1": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            2,
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            2,
+            0,
+            0
+          ],
+          "certified_at_R": 1,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "2": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            3,
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            3,
+            0,
+            0
+          ],
+          "certified_at_R": 1,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "3": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            1,
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            1,
+            0,
+            0
+          ],
+          "certified_at_R": 1,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "4": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            1,
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            1,
+            0,
+            0
+          ],
+          "certified_at_R": 1,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "5": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            0,
+            0
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "6": {
+          "predicted_dim": 1,
+          "exact_dims_R0_R1_R2": [
+            1,
+            1
+          ],
+          "upper_bounds_U_R": [
+            1,
+            1
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": [
+            "p^6 + (20)*q^3p^3 + q^6"
+          ]
+        },
+        "7": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            0,
+            0
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "8": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            1,
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            1,
+            0,
+            0
+          ],
+          "certified_at_R": 1,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "9": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            0,
+            0
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "10": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            0,
+            0
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "11": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            0,
+            0
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "12": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            0,
+            0
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "13": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            0,
+            0
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "14": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            0,
+            0
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "15": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            0,
+            0
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "16": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            0,
+            0
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        }
+      },
+      "all_degrees_certified": true,
+      "exhibits_verified_to_R": 10
+    }
+  ],
+  "monomials": [
+    {
+      "name": "q^6",
+      "H": "q^6",
+      "predicted_core": "Q[q] + p Q[q] + p^2 Q[q] (repo Theorem M)",
+      "degrees": {
+        "0": {
+          "predicted_dim": 1,
+          "exact_dims_R0_R1_R2": [
+            1,
+            1
+          ],
+          "upper_bounds_U_R": [
+            1,
+            1
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": [
+            "1"
+          ]
+        },
+        "1": {
+          "predicted_dim": 2,
+          "exact_dims_R0_R1_R2": [
+            2,
+            2
+          ],
+          "upper_bounds_U_R": [
+            2,
+            2
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": [
+            "p",
+            "q"
+          ]
+        },
+        "2": {
+          "predicted_dim": 3,
+          "exact_dims_R0_R1_R2": [
+            3,
+            3
+          ],
+          "upper_bounds_U_R": [
+            3,
+            3
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": [
+            "p^2",
+            "qp",
+            "q^2"
+          ]
+        },
+        "3": {
+          "predicted_dim": 3,
+          "exact_dims_R0_R1_R2": [
+            3,
+            3
+          ],
+          "upper_bounds_U_R": [
+            3,
+            3
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": [
+            "qp^2",
+            "q^2p",
+            "q^3"
+          ]
+        },
+        "4": {
+          "predicted_dim": 3,
+          "exact_dims_R0_R1_R2": [
+            3,
+            3
+          ],
+          "upper_bounds_U_R": [
+            3,
+            3
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": [
+            "q^2p^2",
+            "q^3p",
+            "q^4"
+          ]
+        },
+        "5": {
+          "predicted_dim": 3,
+          "exact_dims_R0_R1_R2": [
+            3,
+            3
+          ],
+          "upper_bounds_U_R": [
+            3,
+            3
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": [
+            "q^3p^2",
+            "q^4p",
+            "q^5"
+          ]
+        },
+        "6": {
+          "predicted_dim": 3,
+          "exact_dims_R0_R1_R2": [
+            3,
+            3
+          ],
+          "upper_bounds_U_R": [
+            3,
+            3
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": [
+            "q^4p^2",
+            "q^5p",
+            "q^6"
+          ]
+        },
+        "7": {
+          "predicted_dim": 3,
+          "exact_dims_R0_R1_R2": [
+            3,
+            3
+          ],
+          "upper_bounds_U_R": [
+            3,
+            3
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": [
+            "q^5p^2",
+            "q^6p",
+            "q^7"
+          ]
+        },
+        "8": {
+          "predicted_dim": 3,
+          "exact_dims_R0_R1_R2": [
+            3,
+            3
+          ],
+          "upper_bounds_U_R": [
+            3,
+            3
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": [
+            "q^6p^2",
+            "q^7p",
+            "q^8"
+          ]
+        },
+        "9": {
+          "predicted_dim": 3,
+          "exact_dims_R0_R1_R2": [
+            3,
+            3
+          ],
+          "upper_bounds_U_R": [
+            3,
+            3
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": [
+            "q^7p^2",
+            "q^8p",
+            "q^9"
+          ]
+        },
+        "10": {
+          "predicted_dim": 3,
+          "exact_dims_R0_R1_R2": [
+            3,
+            3
+          ],
+          "upper_bounds_U_R": [
+            3,
+            3
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": [
+            "q^8p^2",
+            "q^9p",
+            "q^10"
+          ]
+        },
+        "11": {
+          "predicted_dim": 3,
+          "exact_dims_R0_R1_R2": [
+            3,
+            3
+          ],
+          "upper_bounds_U_R": [
+            3,
+            3
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": [
+            "q^9p^2",
+            "q^10p",
+            "q^11"
+          ]
+        },
+        "12": {
+          "predicted_dim": 3,
+          "exact_dims_R0_R1_R2": [
+            3,
+            3
+          ],
+          "upper_bounds_U_R": [
+            3,
+            3
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": [
+            "q^10p^2",
+            "q^11p",
+            "q^12"
+          ]
+        },
+        "13": {
+          "predicted_dim": 3,
+          "exact_dims_R0_R1_R2": [
+            3,
+            3
+          ],
+          "upper_bounds_U_R": [
+            3,
+            3
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": [
+            "q^11p^2",
+            "q^12p",
+            "q^13"
+          ]
+        },
+        "14": {
+          "predicted_dim": 3,
+          "exact_dims_R0_R1_R2": [
+            3,
+            3
+          ],
+          "upper_bounds_U_R": [
+            3,
+            3
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": [
+            "q^12p^2",
+            "q^13p",
+            "q^14"
+          ]
+        },
+        "15": {
+          "predicted_dim": 3,
+          "exact_dims_R0_R1_R2": [
+            3,
+            3
+          ],
+          "upper_bounds_U_R": [
+            3,
+            3
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": [
+            "q^13p^2",
+            "q^14p",
+            "q^15"
+          ]
+        },
+        "16": {
+          "predicted_dim": 3,
+          "exact_dims_R0_R1_R2": [
+            3,
+            3
+          ],
+          "upper_bounds_U_R": [
+            3,
+            3
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": [
+            "q^14p^2",
+            "q^15p",
+            "q^16"
+          ]
+        }
+      },
+      "all_degrees_certified": true,
+      "exhibits_verified_to_R": 10
+    },
+    {
+      "name": "q^5*p",
+      "H": "q^5p",
+      "predicted_core": "Q[q] + p Q[q] (repo Theorem M)",
+      "degrees": {
+        "0": {
+          "predicted_dim": 1,
+          "exact_dims_R0_R1_R2": [
+            1,
+            1
+          ],
+          "upper_bounds_U_R": [
+            1,
+            1
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": [
+            "1"
+          ]
+        },
+        "1": {
+          "predicted_dim": 2,
+          "exact_dims_R0_R1_R2": [
+            2,
+            2
+          ],
+          "upper_bounds_U_R": [
+            2,
+            2
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": [
+            "p",
+            "q"
+          ]
+        },
+        "2": {
+          "predicted_dim": 2,
+          "exact_dims_R0_R1_R2": [
+            3,
+            2,
+            2
+          ],
+          "upper_bounds_U_R": [
+            3,
+            2,
+            2
+          ],
+          "certified_at_R": 1,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": [
+            "qp",
+            "q^2"
+          ]
+        },
+        "3": {
+          "predicted_dim": 2,
+          "exact_dims_R0_R1_R2": [
+            2,
+            2
+          ],
+          "upper_bounds_U_R": [
+            2,
+            2
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": [
+            "q^2p",
+            "q^3"
+          ]
+        },
+        "4": {
+          "predicted_dim": 2,
+          "exact_dims_R0_R1_R2": [
+            3,
+            2,
+            2
+          ],
+          "upper_bounds_U_R": [
+            3,
+            2,
+            2
+          ],
+          "certified_at_R": 1,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": [
+            "q^3p",
+            "q^4"
+          ]
+        },
+        "5": {
+          "predicted_dim": 2,
+          "exact_dims_R0_R1_R2": [
+            2,
+            2
+          ],
+          "upper_bounds_U_R": [
+            2,
+            2
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": [
+            "q^4p",
+            "q^5"
+          ]
+        },
+        "6": {
+          "predicted_dim": 2,
+          "exact_dims_R0_R1_R2": [
+            2,
+            2
+          ],
+          "upper_bounds_U_R": [
+            2,
+            2
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": [
+            "q^5p",
+            "q^6"
+          ]
+        },
+        "7": {
+          "predicted_dim": 2,
+          "exact_dims_R0_R1_R2": [
+            2,
+            2
+          ],
+          "upper_bounds_U_R": [
+            2,
+            2
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": [
+            "q^6p",
+            "q^7"
+          ]
+        },
+        "8": {
+          "predicted_dim": 2,
+          "exact_dims_R0_R1_R2": [
+            2,
+            2
+          ],
+          "upper_bounds_U_R": [
+            2,
+            2
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": [
+            "q^7p",
+            "q^8"
+          ]
+        },
+        "9": {
+          "predicted_dim": 2,
+          "exact_dims_R0_R1_R2": [
+            2,
+            2
+          ],
+          "upper_bounds_U_R": [
+            2,
+            2
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": [
+            "q^8p",
+            "q^9"
+          ]
+        },
+        "10": {
+          "predicted_dim": 2,
+          "exact_dims_R0_R1_R2": [
+            2,
+            2
+          ],
+          "upper_bounds_U_R": [
+            2,
+            2
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": [
+            "q^9p",
+            "q^10"
+          ]
+        },
+        "11": {
+          "predicted_dim": 2,
+          "exact_dims_R0_R1_R2": [
+            2,
+            2
+          ],
+          "upper_bounds_U_R": [
+            2,
+            2
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": [
+            "q^10p",
+            "q^11"
+          ]
+        },
+        "12": {
+          "predicted_dim": 2,
+          "exact_dims_R0_R1_R2": [
+            2,
+            2
+          ],
+          "upper_bounds_U_R": [
+            2,
+            2
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": [
+            "q^11p",
+            "q^12"
+          ]
+        },
+        "13": {
+          "predicted_dim": 2,
+          "exact_dims_R0_R1_R2": [
+            2,
+            2
+          ],
+          "upper_bounds_U_R": [
+            2,
+            2
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": [
+            "q^12p",
+            "q^13"
+          ]
+        },
+        "14": {
+          "predicted_dim": 2,
+          "exact_dims_R0_R1_R2": [
+            2,
+            2
+          ],
+          "upper_bounds_U_R": [
+            2,
+            2
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": [
+            "q^13p",
+            "q^14"
+          ]
+        },
+        "15": {
+          "predicted_dim": 2,
+          "exact_dims_R0_R1_R2": [
+            2,
+            2
+          ],
+          "upper_bounds_U_R": [
+            2,
+            2
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": [
+            "q^14p",
+            "q^15"
+          ]
+        },
+        "16": {
+          "predicted_dim": 2,
+          "exact_dims_R0_R1_R2": [
+            2,
+            2
+          ],
+          "upper_bounds_U_R": [
+            2,
+            2
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": [
+            "q^15p",
+            "q^16"
+          ]
+        }
+      },
+      "all_degrees_certified": true,
+      "exhibits_verified_to_R": 10
+    },
+    {
+      "name": "q^4*p^2",
+      "H": "q^4p^2",
+      "predicted_core": "span{1, qp, H} (repo Theorem M)",
+      "degrees": {
+        "0": {
+          "predicted_dim": 1,
+          "exact_dims_R0_R1_R2": [
+            1,
+            1
+          ],
+          "upper_bounds_U_R": [
+            1,
+            1
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": [
+            "1"
+          ]
+        },
+        "1": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            2,
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            2,
+            0,
+            0
+          ],
+          "certified_at_R": 1,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "2": {
+          "predicted_dim": 1,
+          "exact_dims_R0_R1_R2": [
+            3,
+            1,
+            1
+          ],
+          "upper_bounds_U_R": [
+            3,
+            1,
+            1
+          ],
+          "certified_at_R": 1,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": [
+            "qp"
+          ]
+        },
+        "3": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            1,
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            1,
+            0,
+            0
+          ],
+          "certified_at_R": 1,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "4": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            1,
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            1,
+            0,
+            0
+          ],
+          "certified_at_R": 1,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "5": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            1,
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            1,
+            0,
+            0
+          ],
+          "certified_at_R": 1,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "6": {
+          "predicted_dim": 1,
+          "exact_dims_R0_R1_R2": [
+            2,
+            1,
+            1
+          ],
+          "upper_bounds_U_R": [
+            2,
+            1,
+            1
+          ],
+          "certified_at_R": 1,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": [
+            "q^4p^2"
+          ]
+        },
+        "7": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            1,
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            1,
+            0,
+            0
+          ],
+          "certified_at_R": 1,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "8": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            1,
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            1,
+            0,
+            0
+          ],
+          "certified_at_R": 1,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "9": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            1,
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            1,
+            0,
+            0
+          ],
+          "certified_at_R": 1,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "10": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            1,
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            1,
+            0,
+            0
+          ],
+          "certified_at_R": 1,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "11": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            1,
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            1,
+            0,
+            0
+          ],
+          "certified_at_R": 1,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "12": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            1,
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            1,
+            0,
+            0
+          ],
+          "certified_at_R": 1,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "13": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            1,
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            1,
+            0,
+            0
+          ],
+          "certified_at_R": 1,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "14": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            1,
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            1,
+            0,
+            0
+          ],
+          "certified_at_R": 1,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "15": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            1,
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            1,
+            0,
+            0
+          ],
+          "certified_at_R": 1,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "16": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            1,
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            1,
+            0,
+            0
+          ],
+          "certified_at_R": 1,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        }
+      },
+      "all_degrees_certified": true,
+      "exhibits_verified_to_R": 10
+    },
+    {
+      "name": "q^3*p^3",
+      "H": "q^3p^3",
+      "predicted_core": "Q[qp] (repo Theorem M)",
+      "degrees": {
+        "0": {
+          "predicted_dim": 1,
+          "exact_dims_R0_R1_R2": [
+            1,
+            1
+          ],
+          "upper_bounds_U_R": [
+            1,
+            1
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": [
+            "1"
+          ]
+        },
+        "1": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            2,
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            2,
+            0,
+            0
+          ],
+          "certified_at_R": 1,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "2": {
+          "predicted_dim": 1,
+          "exact_dims_R0_R1_R2": [
+            3,
+            1,
+            1
+          ],
+          "upper_bounds_U_R": [
+            3,
+            1,
+            1
+          ],
+          "certified_at_R": 1,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": [
+            "qp"
+          ]
+        },
+        "3": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            0,
+            0
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "4": {
+          "predicted_dim": 1,
+          "exact_dims_R0_R1_R2": [
+            1,
+            1
+          ],
+          "upper_bounds_U_R": [
+            1,
+            1
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": [
+            "q^2p^2"
+          ]
+        },
+        "5": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            0,
+            0
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "6": {
+          "predicted_dim": 1,
+          "exact_dims_R0_R1_R2": [
+            1,
+            1
+          ],
+          "upper_bounds_U_R": [
+            1,
+            1
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": [
+            "q^3p^3"
+          ]
+        },
+        "7": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            0,
+            0
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "8": {
+          "predicted_dim": 1,
+          "exact_dims_R0_R1_R2": [
+            1,
+            1
+          ],
+          "upper_bounds_U_R": [
+            1,
+            1
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": [
+            "q^4p^4"
+          ]
+        },
+        "9": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            0,
+            0
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "10": {
+          "predicted_dim": 1,
+          "exact_dims_R0_R1_R2": [
+            1,
+            1
+          ],
+          "upper_bounds_U_R": [
+            1,
+            1
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": [
+            "q^5p^5"
+          ]
+        },
+        "11": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            0,
+            0
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "12": {
+          "predicted_dim": 1,
+          "exact_dims_R0_R1_R2": [
+            3,
+            1,
+            1
+          ],
+          "upper_bounds_U_R": [
+            3,
+            1,
+            1
+          ],
+          "certified_at_R": 1,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": [
+            "q^6p^6"
+          ]
+        },
+        "13": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            0,
+            0
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "14": {
+          "predicted_dim": 1,
+          "exact_dims_R0_R1_R2": [
+            1,
+            1
+          ],
+          "upper_bounds_U_R": [
+            1,
+            1
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": [
+            "q^7p^7"
+          ]
+        },
+        "15": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            0,
+            0
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "16": {
+          "predicted_dim": 1,
+          "exact_dims_R0_R1_R2": [
+            1,
+            1
+          ],
+          "upper_bounds_U_R": [
+            1,
+            1
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": [
+            "q^8p^8"
+          ]
+        }
+      },
+      "all_degrees_certified": true,
+      "exhibits_verified_to_R": 10
+    },
+    {
+      "name": "q^2*p^4",
+      "H": "q^2p^4",
+      "predicted_core": "span{1, qp, H} (repo Theorem M)",
+      "degrees": {
+        "0": {
+          "predicted_dim": 1,
+          "exact_dims_R0_R1_R2": [
+            1,
+            1
+          ],
+          "upper_bounds_U_R": [
+            1,
+            1
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": [
+            "1"
+          ]
+        },
+        "1": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            2,
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            2,
+            0,
+            0
+          ],
+          "certified_at_R": 1,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "2": {
+          "predicted_dim": 1,
+          "exact_dims_R0_R1_R2": [
+            3,
+            1,
+            1
+          ],
+          "upper_bounds_U_R": [
+            3,
+            1,
+            1
+          ],
+          "certified_at_R": 1,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": [
+            "qp"
+          ]
+        },
+        "3": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            1,
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            1,
+            0,
+            0
+          ],
+          "certified_at_R": 1,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "4": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            1,
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            1,
+            0,
+            0
+          ],
+          "certified_at_R": 1,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "5": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            1,
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            1,
+            0,
+            0
+          ],
+          "certified_at_R": 1,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "6": {
+          "predicted_dim": 1,
+          "exact_dims_R0_R1_R2": [
+            2,
+            1,
+            1
+          ],
+          "upper_bounds_U_R": [
+            2,
+            1,
+            1
+          ],
+          "certified_at_R": 1,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": [
+            "q^2p^4"
+          ]
+        },
+        "7": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            1,
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            1,
+            0,
+            0
+          ],
+          "certified_at_R": 1,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "8": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            1,
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            1,
+            0,
+            0
+          ],
+          "certified_at_R": 1,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "9": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            1,
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            1,
+            0,
+            0
+          ],
+          "certified_at_R": 1,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "10": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            1,
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            1,
+            0,
+            0
+          ],
+          "certified_at_R": 1,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "11": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            1,
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            1,
+            0,
+            0
+          ],
+          "certified_at_R": 1,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "12": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            1,
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            1,
+            0,
+            0
+          ],
+          "certified_at_R": 1,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "13": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            1,
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            1,
+            0,
+            0
+          ],
+          "certified_at_R": 1,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "14": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            1,
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            1,
+            0,
+            0
+          ],
+          "certified_at_R": 1,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "15": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            1,
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            1,
+            0,
+            0
+          ],
+          "certified_at_R": 1,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "16": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            1,
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            1,
+            0,
+            0
+          ],
+          "certified_at_R": 1,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        }
+      },
+      "all_degrees_certified": true,
+      "exhibits_verified_to_R": 10
+    },
+    {
+      "name": "q*p^5",
+      "H": "qp^5",
+      "predicted_core": "Q[p] + q Q[p] (repo Theorem M)",
+      "degrees": {
+        "0": {
+          "predicted_dim": 1,
+          "exact_dims_R0_R1_R2": [
+            1,
+            1
+          ],
+          "upper_bounds_U_R": [
+            1,
+            1
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": [
+            "1"
+          ]
+        },
+        "1": {
+          "predicted_dim": 2,
+          "exact_dims_R0_R1_R2": [
+            2,
+            2
+          ],
+          "upper_bounds_U_R": [
+            2,
+            2
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": [
+            "p",
+            "q"
+          ]
+        },
+        "2": {
+          "predicted_dim": 2,
+          "exact_dims_R0_R1_R2": [
+            3,
+            2,
+            2
+          ],
+          "upper_bounds_U_R": [
+            3,
+            2,
+            2
+          ],
+          "certified_at_R": 1,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": [
+            "p^2",
+            "qp"
+          ]
+        },
+        "3": {
+          "predicted_dim": 2,
+          "exact_dims_R0_R1_R2": [
+            2,
+            2
+          ],
+          "upper_bounds_U_R": [
+            2,
+            2
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": [
+            "p^3",
+            "qp^2"
+          ]
+        },
+        "4": {
+          "predicted_dim": 2,
+          "exact_dims_R0_R1_R2": [
+            3,
+            2,
+            2
+          ],
+          "upper_bounds_U_R": [
+            3,
+            2,
+            2
+          ],
+          "certified_at_R": 1,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": [
+            "p^4",
+            "qp^3"
+          ]
+        },
+        "5": {
+          "predicted_dim": 2,
+          "exact_dims_R0_R1_R2": [
+            2,
+            2
+          ],
+          "upper_bounds_U_R": [
+            2,
+            2
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": [
+            "p^5",
+            "qp^4"
+          ]
+        },
+        "6": {
+          "predicted_dim": 2,
+          "exact_dims_R0_R1_R2": [
+            2,
+            2
+          ],
+          "upper_bounds_U_R": [
+            2,
+            2
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": [
+            "p^6",
+            "qp^5"
+          ]
+        },
+        "7": {
+          "predicted_dim": 2,
+          "exact_dims_R0_R1_R2": [
+            2,
+            2
+          ],
+          "upper_bounds_U_R": [
+            2,
+            2
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": [
+            "p^7",
+            "qp^6"
+          ]
+        },
+        "8": {
+          "predicted_dim": 2,
+          "exact_dims_R0_R1_R2": [
+            2,
+            2
+          ],
+          "upper_bounds_U_R": [
+            2,
+            2
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": [
+            "p^8",
+            "qp^7"
+          ]
+        },
+        "9": {
+          "predicted_dim": 2,
+          "exact_dims_R0_R1_R2": [
+            2,
+            2
+          ],
+          "upper_bounds_U_R": [
+            2,
+            2
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": [
+            "p^9",
+            "qp^8"
+          ]
+        },
+        "10": {
+          "predicted_dim": 2,
+          "exact_dims_R0_R1_R2": [
+            2,
+            2
+          ],
+          "upper_bounds_U_R": [
+            2,
+            2
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": [
+            "p^10",
+            "qp^9"
+          ]
+        },
+        "11": {
+          "predicted_dim": 2,
+          "exact_dims_R0_R1_R2": [
+            2,
+            2
+          ],
+          "upper_bounds_U_R": [
+            2,
+            2
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": [
+            "p^11",
+            "qp^10"
+          ]
+        },
+        "12": {
+          "predicted_dim": 2,
+          "exact_dims_R0_R1_R2": [
+            2,
+            2
+          ],
+          "upper_bounds_U_R": [
+            2,
+            2
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": [
+            "p^12",
+            "qp^11"
+          ]
+        },
+        "13": {
+          "predicted_dim": 2,
+          "exact_dims_R0_R1_R2": [
+            2,
+            2
+          ],
+          "upper_bounds_U_R": [
+            2,
+            2
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": [
+            "p^13",
+            "qp^12"
+          ]
+        },
+        "14": {
+          "predicted_dim": 2,
+          "exact_dims_R0_R1_R2": [
+            2,
+            2
+          ],
+          "upper_bounds_U_R": [
+            2,
+            2
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": [
+            "p^14",
+            "qp^13"
+          ]
+        },
+        "15": {
+          "predicted_dim": 2,
+          "exact_dims_R0_R1_R2": [
+            2,
+            2
+          ],
+          "upper_bounds_U_R": [
+            2,
+            2
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": [
+            "p^15",
+            "qp^14"
+          ]
+        },
+        "16": {
+          "predicted_dim": 2,
+          "exact_dims_R0_R1_R2": [
+            2,
+            2
+          ],
+          "upper_bounds_U_R": [
+            2,
+            2
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": [
+            "p^16",
+            "qp^15"
+          ]
+        }
+      },
+      "all_degrees_certified": true,
+      "exhibits_verified_to_R": 10
+    },
+    {
+      "name": "p^6",
+      "H": "p^6",
+      "predicted_core": "Q[p] + q Q[p] + q^2 Q[p] (repo Theorem M)",
+      "degrees": {
+        "0": {
+          "predicted_dim": 1,
+          "exact_dims_R0_R1_R2": [
+            1,
+            1
+          ],
+          "upper_bounds_U_R": [
+            1,
+            1
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": [
+            "1"
+          ]
+        },
+        "1": {
+          "predicted_dim": 2,
+          "exact_dims_R0_R1_R2": [
+            2,
+            2
+          ],
+          "upper_bounds_U_R": [
+            2,
+            2
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": [
+            "p",
+            "q"
+          ]
+        },
+        "2": {
+          "predicted_dim": 3,
+          "exact_dims_R0_R1_R2": [
+            3,
+            3
+          ],
+          "upper_bounds_U_R": [
+            3,
+            3
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": [
+            "p^2",
+            "qp",
+            "q^2"
+          ]
+        },
+        "3": {
+          "predicted_dim": 3,
+          "exact_dims_R0_R1_R2": [
+            3,
+            3
+          ],
+          "upper_bounds_U_R": [
+            3,
+            3
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": [
+            "p^3",
+            "qp^2",
+            "q^2p"
+          ]
+        },
+        "4": {
+          "predicted_dim": 3,
+          "exact_dims_R0_R1_R2": [
+            3,
+            3
+          ],
+          "upper_bounds_U_R": [
+            3,
+            3
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": [
+            "p^4",
+            "qp^3",
+            "q^2p^2"
+          ]
+        },
+        "5": {
+          "predicted_dim": 3,
+          "exact_dims_R0_R1_R2": [
+            3,
+            3
+          ],
+          "upper_bounds_U_R": [
+            3,
+            3
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": [
+            "p^5",
+            "qp^4",
+            "q^2p^3"
+          ]
+        },
+        "6": {
+          "predicted_dim": 3,
+          "exact_dims_R0_R1_R2": [
+            3,
+            3
+          ],
+          "upper_bounds_U_R": [
+            3,
+            3
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": [
+            "p^6",
+            "qp^5",
+            "q^2p^4"
+          ]
+        },
+        "7": {
+          "predicted_dim": 3,
+          "exact_dims_R0_R1_R2": [
+            3,
+            3
+          ],
+          "upper_bounds_U_R": [
+            3,
+            3
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": [
+            "p^7",
+            "qp^6",
+            "q^2p^5"
+          ]
+        },
+        "8": {
+          "predicted_dim": 3,
+          "exact_dims_R0_R1_R2": [
+            3,
+            3
+          ],
+          "upper_bounds_U_R": [
+            3,
+            3
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": [
+            "p^8",
+            "qp^7",
+            "q^2p^6"
+          ]
+        },
+        "9": {
+          "predicted_dim": 3,
+          "exact_dims_R0_R1_R2": [
+            3,
+            3
+          ],
+          "upper_bounds_U_R": [
+            3,
+            3
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": [
+            "p^9",
+            "qp^8",
+            "q^2p^7"
+          ]
+        },
+        "10": {
+          "predicted_dim": 3,
+          "exact_dims_R0_R1_R2": [
+            3,
+            3
+          ],
+          "upper_bounds_U_R": [
+            3,
+            3
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": [
+            "p^10",
+            "qp^9",
+            "q^2p^8"
+          ]
+        },
+        "11": {
+          "predicted_dim": 3,
+          "exact_dims_R0_R1_R2": [
+            3,
+            3
+          ],
+          "upper_bounds_U_R": [
+            3,
+            3
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": [
+            "p^11",
+            "qp^10",
+            "q^2p^9"
+          ]
+        },
+        "12": {
+          "predicted_dim": 3,
+          "exact_dims_R0_R1_R2": [
+            3,
+            3
+          ],
+          "upper_bounds_U_R": [
+            3,
+            3
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": [
+            "p^12",
+            "qp^11",
+            "q^2p^10"
+          ]
+        },
+        "13": {
+          "predicted_dim": 3,
+          "exact_dims_R0_R1_R2": [
+            3,
+            3
+          ],
+          "upper_bounds_U_R": [
+            3,
+            3
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": [
+            "p^13",
+            "qp^12",
+            "q^2p^11"
+          ]
+        },
+        "14": {
+          "predicted_dim": 3,
+          "exact_dims_R0_R1_R2": [
+            3,
+            3
+          ],
+          "upper_bounds_U_R": [
+            3,
+            3
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": [
+            "p^14",
+            "qp^13",
+            "q^2p^12"
+          ]
+        },
+        "15": {
+          "predicted_dim": 3,
+          "exact_dims_R0_R1_R2": [
+            3,
+            3
+          ],
+          "upper_bounds_U_R": [
+            3,
+            3
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": [
+            "p^15",
+            "qp^14",
+            "q^2p^13"
+          ]
+        },
+        "16": {
+          "predicted_dim": 3,
+          "exact_dims_R0_R1_R2": [
+            3,
+            3
+          ],
+          "upper_bounds_U_R": [
+            3,
+            3
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": [
+            "p^16",
+            "qp^15",
+            "q^2p^14"
+          ]
+        }
+      },
+      "all_degrees_certified": true,
+      "exhibits_verified_to_R": 10
+    }
+  ],
+  "probes": [
+    {
+      "name": "q^6+q^5*p+p^6",
+      "H": "p^6 + q^5p + q^6",
+      "predicted_core": "span{1, H} (repo Theorem W4)",
+      "degrees": {
+        "0": {
+          "predicted_dim": 1,
+          "exact_dims_R0_R1_R2": [
+            1,
+            1
+          ],
+          "upper_bounds_U_R": [
+            1,
+            1
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": [
+            "1"
+          ]
+        },
+        "1": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            2,
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            2,
+            0,
+            0
+          ],
+          "certified_at_R": 1,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "2": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            3,
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            3,
+            0,
+            0
+          ],
+          "certified_at_R": 1,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "3": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            1,
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            1,
+            0,
+            0
+          ],
+          "certified_at_R": 1,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "4": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            1,
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            1,
+            0,
+            0
+          ],
+          "certified_at_R": 1,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "5": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            0,
+            0
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "6": {
+          "predicted_dim": 1,
+          "exact_dims_R0_R1_R2": [
+            1,
+            1
+          ],
+          "upper_bounds_U_R": [
+            1,
+            1
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": [
+            "p^6 + q^5p + q^6"
+          ]
+        },
+        "7": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            0,
+            0
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "8": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            0,
+            0
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "9": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            0,
+            0
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "10": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            0,
+            0
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "11": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            0,
+            0
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "12": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            0,
+            0
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "13": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            0,
+            0
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "14": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            0,
+            0
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "15": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            0,
+            0
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "16": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            0,
+            0
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        }
+      },
+      "all_degrees_certified": true,
+      "exhibits_verified_to_R": 10
+    },
+    {
+      "name": "q^6+q^4*p^2+p^6",
+      "H": "p^6 + q^4p^2 + q^6",
+      "predicted_core": "span{1, H} (repo Theorem W4)",
+      "degrees": {
+        "0": {
+          "predicted_dim": 1,
+          "exact_dims_R0_R1_R2": [
+            1,
+            1
+          ],
+          "upper_bounds_U_R": [
+            1,
+            1
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": [
+            "1"
+          ]
+        },
+        "1": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            2,
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            2,
+            0,
+            0
+          ],
+          "certified_at_R": 1,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "2": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            3,
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            3,
+            0,
+            0
+          ],
+          "certified_at_R": 1,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "3": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            0,
+            0
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "4": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            1,
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            1,
+            0,
+            0
+          ],
+          "certified_at_R": 1,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "5": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            0,
+            0
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "6": {
+          "predicted_dim": 1,
+          "exact_dims_R0_R1_R2": [
+            1,
+            1
+          ],
+          "upper_bounds_U_R": [
+            1,
+            1
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": [
+            "p^6 + q^4p^2 + q^6"
+          ]
+        },
+        "7": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            0,
+            0
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "8": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            0,
+            0
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "9": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            0,
+            0
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "10": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            0,
+            0
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "11": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            0,
+            0
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "12": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            0,
+            0
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "13": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            0,
+            0
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "14": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            0,
+            0
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "15": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            0,
+            0
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        },
+        "16": {
+          "predicted_dim": 0,
+          "exact_dims_R0_R1_R2": [
+            0,
+            0
+          ],
+          "upper_bounds_U_R": [
+            0,
+            0
+          ],
+          "certified_at_R": 0,
+          "exhibits_verified": true,
+          "basis_matches_exhibits": true,
+          "certified": true,
+          "basis_at_certification": []
+        }
+      },
+      "all_degrees_certified": true,
+      "exhibits_verified_to_R": 10
+    }
+  ]
+}
