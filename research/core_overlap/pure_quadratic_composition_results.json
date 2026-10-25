@@ -1,0 +1,73 @@
+{
+  "status": "passed",
+  "checks": {
+    "composition_instances": 12,
+    "chain_rule_gate_checks": 96,
+    "stationary_tower_gate_checks": 270,
+    "invariant_sector_iterate_checks": 108,
+    "recognition_rejections": 12,
+    "independent_filtered_dimensions": 5
+  },
+  "quartic_counterexample": {
+    "H": [
+      [
+        0,
+        2,
+        "1"
+      ],
+      [
+        2,
+        1,
+        "2"
+      ],
+      [
+        4,
+        0,
+        "1"
+      ]
+    ],
+    "Q": [
+      [
+        0,
+        1,
+        "1"
+      ],
+      [
+        2,
+        0,
+        "1"
+      ]
+    ],
+    "result": {
+      "proved": true,
+      "route": "QC",
+      "scope": "parabolic quadratic composition with linear forcing",
+      "degree": 4,
+      "degree_P": 2,
+      "core": "K[Q] + span{q, qQ, q^2}",
+      "Q": [
+        [
+          0,
+          1,
+          "1"
+        ],
+        [
+          2,
+          0,
+          "1"
+        ]
+      ],
+      "P": [
+        [
+          2,
+          "1"
+        ]
+      ],
+      "epsilon": "0",
+      "dimension": "infinite",
+      "active_part": "three-dimensional modulo K[Q]",
+      "proof": "pure_quadratic_composition.md"
+    }
+  },
+  "limits": "All-degree proof supplied separately; no nonlinear Moyal covariance or literature-priority claim."
+}

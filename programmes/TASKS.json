@@ -210,11 +210,58 @@
     "Unequal tops complete (done)",
     "Positive structures for pure, near, balanced (done)",
     "m^2 families for near and pure tops (done)",
-    "Executable decision procedure with proved/conjectural labels (done)",
-    "Balanced tops complete (done, Theorem B)",
-    "Near tops complete (done, Theorem NE)",
-    "Pure tops: P003 refuted; triangular families K1, K1', K2, K3 found and their containments proved (done)",
-    "Pure tops: P004 refuted as stated (extended K3); P005 proved: every pure top outside the non-affine cubic phase is span{1,H} or an exact family span (W6-g..j: NA, NE, NB, NT, NV, K2U, LB, K1P, TP, TE); cubic phase done (NT with e = 2, NQ): the pure-top classification is complete"
+    "Executable decision procedure with proved/conjectural/unclassified labels (done)",
+    "Balanced total tops complete (Theorem B)",
+    "P003 disproved; unequal perfect-power pure transverse tops classified (PP)",
+    "New infinite parabolic and finite shear-composition cores recognized (QC, SC, SS)",
+    "Classify remaining pure perturbations with corrected structural exceptions (open)",
+    "Near tops complete (Theorem NE, commit 268d553; integrated proof clarifications)",
+    "Complete higher-shear compositions and oscillator phase boundary (W8-SCP, W8-SO)",
+    "Complete constant quadratic momentum with higher shear, every residual potential degree (W8-QF)",
+    "Every nonzero constant quadratic-momentum coefficient classified (CQ); variable coefficient remains open",
+    "Claude fbc52d01 triangular formula and K1/K1-prime/K2/K3 containment certificates retained (W6-g)",
+    "K1/K1+K2 equality upgraded by QC; constant-quadratic K2 by CQ; pure K3 k>=2 by PP/SC",
+    "P004 also refuted by the beta*J PP extension; no new blanket pure-top conjecture asserted",
+    "Open: general variable quadratic coefficients and genuine non-affine cubic-phase couplings beyond CP/HR",
+    "Full affine cubic-phase upper bounds closed by AC/CPL/CP, including K1-prime and K4",
+    "Arbitrary nonlinear compositions plus quadratic restoring force closed by HR; universal lifting hierarchy and finite-weight torsion closed by RD/RT",
+    "check_gauge line: P004 refuted as stated (extended K3); P005 proved (W6-g..j: NA, NE, NB, NT, NV, K2U, LB, K1P, TP, TE)",
+    "check_gauge line: non-affine cubic phase closed (NT with e = 2, NQ); reconciling audit with the core-overlap open list pending"
+   ]
+  },
+  {
+   "id": "W8",
+   "status": "completed_scoped_theorems",
+   "title": "exact nonlinear sectors and deformation obstructions",
+   "depends_on": [
+    "W6"
+   ],
+   "objective": "Unify nonlinear shear classifications, prove sharp depth transitions, solve cubic-preserving potentials and classify the quartic deformation torsion.",
+   "acceptance": [
+    "SCP composition theorem with exact two-test certificate",
+    "SO oscillator theorem with sharp depths two and three, exact spectra and observer replays",
+    "QF constant quadratic momentum classification with sharp depths two, six and four",
+    "QR and AFP close every remaining constant-quadratic-momentum branch; unified CQ classifier",
+    "AP all-analytic additive-potential classification and regular-chart active criterion",
+    "DO all-degree lifting hierarchy and full graded Smith torsion classification",
+    "Independent proof review, portable replay and publication integrity checks"
+   ]
+  },
+  {
+   "id": "W9",
+   "status": "completed_scoped_theorems",
+   "title": "complete affine cubic phase and universal restoring torsion",
+   "depends_on": [
+    "W6",
+    "W8"
+   ],
+   "objective": "Close affine-Q completeness and classify nonlinear composition restoring deformations in all polynomial degrees.",
+   "acceptance": [
+    "AC and CPL full upper bounds with exact stopping rules",
+    "CP unifies every affine chart including low-degree boundaries and exact rational recovery",
+    "HR arbitrary polynomial composition plus quadratic potential, sharp depth3",
+    "RD/RT universal first/second/formal lifting and all eligible finite-weight Smith laws",
+    "Independent Fraction-engine proof audit, retained/full extension replay, portable archive and updated monograph"
    ]
   }
  ],
@@ -222,6 +269,7 @@
   "W2": "Full six-parameter quadratic perturbation family of qp^3 classified (DYNAMIC_CORE_RESULTS.md 3b).",
   "results": "results/RECEIPTS.json indexes every enveloped certificate with its replay command.",
   "W3": "Homogeneous quartic dynamic cores fully classified: degenerate root types by certificates, distinct roots by the all-degree theorem (quartic-uniform-v1).",
-  "added": "S3 integer Smith cohomology, A2 fundamental units (both quadratic orders), O2b metric search, O3 set-valued noise."
+  "added": "S3 integer Smith cohomology, A2 fundamental units (both quadratic orders), O2b metric search, O3 set-valued noise.",
+  "Claude_triangular": "Commit fbc52d01cb47e413ac63763bde6666b8138a7448 integrated with its exact containment receipts. The merged proofs upgrade the identified subfamilies, correct the K3 bracket scalar and stationary k=2 case, and refute P004 by an already proved PP family."
  }
 }

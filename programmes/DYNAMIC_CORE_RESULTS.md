@@ -381,7 +381,7 @@ On effective finite determination:
 
 ## 6. Inhomogeneous Hamiltonians whose top part has at most two roots
 
-Let `H = H_d + P` with `deg P < d`, where the top homogeneous part `H_d` has at most two distinct roots over Q̄. After §5, these are the only Hamiltonians whose core is not yet determined by the top part alone. For pure tops, §6.8 shows that lower-order terms can also create structure that only non-affine triangular coordinates reveal.
+Let `H = H_d + P` with `deg P < d`, where the top homogeneous part `H_d` has at most two distinct roots over Q̄. After §5, these are the only Hamiltonians whose core is not yet determined by the top part alone.
 
 Two facts are used throughout:
 - `D∞` is covariant under affine maps. Translations commute with the constant-coefficient operators `D` and `T_k`, and `GL₂` acts as in §3.
@@ -451,7 +451,7 @@ Write `ℓ, m` for the root forms of `H_d`, or a root form and a complementary f
 **Theorem B.** Let `H_d = cQ^μ` with `Q` a nondegenerate quadratic form and `d = 2μ ≥ 4`. Then `D∞(H) = K[G]` if `H ∈ K[G]` for a quadratic `G` with leading part `Q`, and `D∞(H) = span{1, H}` otherwise.
 
 *Proof.*
-1. *Setup.* Work over Q̄ with `H_d = (qp)^μ`. If `D∞(H) ≠ span{1, H}`, there is `G ∈ D∞(H)` with top `(qp)^s`, `1 ≤ s < μ`; subtract multiples of `H` to arrange this. Translate `H` so that `H_{d−1}` has no `q^μp^{μ−1}` and no `q^{μ−1}p^μ` term. This is possible because a translation adds `μ(qp)^{μ−1}(x₀p + y₀q)`.
+1. *Setup.* Work over Q̄ with `H_d = (qp)^μ`. If `D∞(H) ≠ span{1, H}`, there is `G ∈ D∞(H)` with top `(qp)^s`, `s ≥ 1`, `s ≠ μ`; if `s = μ`, subtract its leading multiple of `H` and descend in total degree. No upper bound on `s` is needed. Translate `H` so that `H_{d−1}` has no `q^μp^{μ−1}` and no `q^{μ−1}p^μ` term. This is possible because a translation adds `μ(qp)^{μ−1}(x₀p + y₀q)`.
 2. *Weights.* Give `H_{d−k}` and `G_{2s−k}` weight `k`. A monomial `q^xp^y` is *diagonal* if `x = y`. Diagonal forms Poisson-commute and have zero odd transvectants with each other.
 3. *Induction on the weight.* Assume the off-diagonal parts vanish below weight `k`. Then only `(H_d, Y)` and `(X, (qp)^s)` contribute at weight `k`, where `X` and `Y` are the off-diagonal parts of `H_{d−k}` and `G_{2s−k}`.
    - *The bracket.* `{H, G}` has nothing below weight `k`, so its weight-`k` component is its top and must be diagonal. But that component is off-diagonal, since `ad_{qp}` acts diagonally on monomials. So it vanishes, which gives `Y = (s/μ)(qp)^{s−μ}X` monomial by monomial.
@@ -468,7 +468,7 @@ Only the gate `T₃` and the top of one bracket are used. The argument does not 
 
 Use coordinates `(ℓ, m)`, and write `H = Σ_c m^c h_c(ℓ)`. Let `s` be the `m`-degree of `H`, and call `F = m^sφ(ℓ)` the *transverse top*. Outside Theorem P⁺, `s ≥ 2`.
 
-**Lemma F (near tops).** If `H_d = cℓ^{d−1}m` and `D∞(H)` is finite-dimensional, then `D∞(H) = span{1, H}` unless `H` is affine in `m`.
+**Lemma F (near tops, d ≥ 4).** If `H_d = cℓ^{d−1}m` and `D∞(H)` is finite-dimensional, then `D∞(H) = span{1, H}` unless `H` is affine in `m`.
 
 *Proof.*
 1. Tops lie in `V`, and `D_{H_d}` maps the top monomials `ℓ^N ↦ Nℓ^{N+d−2}` and `mℓ^{N−1} ↦ (N−d)mℓ^{N+d−3}`.
@@ -492,7 +492,7 @@ Then `D∞(H) = span{1, H}`.
    - The `m`-tops of core elements are therefore constants or multiples of `F`. After subtracting `cH`, a core element `u` lies in `K[ℓ]`.
    - Then `{H, u} ∈ D∞(H) ⊆ KH ⊕ K[ℓ]`. Its `m^s` part vanishes, so the `H`-coefficient is 0. Its `m^{s−1}` part `±sφu'm^{s−1}` must then vanish, so `u' = 0`. ∎
 
-*Pure tops with `φ` a perfect power, `deg φ ≥ 2`, are not covered.* There `D∞(F)` contains the `m`-homogeneous quadratic `m(ℓ+γ)`, and the reduction above does not exclude core elements `u(ℓ) + κm(ℓ+γ)` with `κ ≠ 0`. A complete treatment needs the next `m`-degree components of `H`. Such elements do occur: see family K3 in §6.8.
+*The excluded pure perfect-power cases have additional structures.* Theorem PP below classifies the unequal transverse powers completely and includes a three-dimensional active counterfamily. The balanced transverse powers include the composition family SC. The restrictions in Theorem T are essential.
 
 **Theorem N (near tops, unequal vertex).** If the Newton polygon of `H` in `(m, ℓ)` has a vertex `m^iℓ^j` with `i, j ≥ 2` and `i ≠ j`, strictly between the total-degree direction and the `m`-degree direction, then `D∞(H) = span{1, H}`.
 
@@ -500,18 +500,18 @@ Then `D∞(H) = span{1, H}`.
 
 `check_two_root.py` applies T and N, with exact Newton-polygon vertices (routes `T`, `N`). The tests compare both routes with direct computation.
 
-**What remains open.** Every remaining case has a transverse top `F` with `deg φ ≤ 1`, or `F ∈ K[G]` (near), or `φ` a perfect power (pure), and, for near tops, no unequal Newton-polygon vertex; Theorems Q and Q′ cover the parts of this with a single `m²` term. In random perturbations this is the typical situation. The polygon is then a single edge from the top vertex to `m^A` or `m^Aℓ`. The missing ingredient is a finiteness theorem for these quasi-homogeneous edge polynomials. The binomial `ℓ^{d−1}m + m²` of Theorem Q is the first instance, and its proof by casework in the weight grading suggests the general method.
+**Remaining edge questions.** Cases with `deg φ ≤ 1` include infinite-core exceptions: `H=P(m+bℓ²+cℓ)+εℓ`, `b ≠ 0`, has an infinite exact tower (Theorem QC below). Therefore no unrestricted edge-polynomial finiteness theorem is possible. The edge classification must first separate these composition families. The near-top edge question remains separate; Theorems Q and Q′ remain valid in their stated scopes.
 
 ### 6.7 Near tops (complete): edge finiteness from the top vertex
 
-**Theorem NE.** If `H_d = cℓ^{d−1}m` and `H` is not affine in `m`, then `D∞(H) = span{1, H}`.
+**Theorem NE.** If `H_d = cℓ^{d−1}m` and `H` is not affine in `m`, then `D∞(H) = span{1, H}`. For `d=3`, this is already Theorem Q: the non-affine lower part has a nonzero constant m² coefficient. The edge proof below uses Lemma F for `d ≥ 4`.
 
 *Proof.*
 1. *First edge.* In coordinates `(m, ℓ)`, decrease `t` in the weights `w_t = (1, t)` from 1. The top vertex `mℓ^{d−1}` is first tied by monomials of `m`-exponent at least 2; monomials of `m`-exponent at most 1 lie strictly inside. This gives the first Newton-polygon edge
    `E = mℓ^{d−1} + Σ_{s≥1} e_s m^{1+sa}ℓ^{d−1−sb}`,
    with step `(a, −b)`, `b > a ≥ 1` coprime, because the total degree drops along the edge.
 2. *Reduction.* By the top-weight lemma for the edge weight, `gr D∞(H)` embeds in `D∞(E)`. Once `D∞(E)` is finite-dimensional, Lemma F gives `span{1, H}`.
-3. *The top end.* Let `G` be a weight-homogeneous element of `D∞(E)` of large degree. By Theorem M its top is `gℓ^N` (type α) or `gmℓ^{N−1}` (type β), and its monomials lie on a line of step `(a, −b)`. Let `t` be the first step with `e_t ≠ 0`. The `T₃` recurrence clears the coefficients between steps 0 and `t`. The step-`t` components of `T₃(E, G)` and `T₃(E, {E, G})` are then linear in `(y, e_tg)`, where `y` is the step-`t` coefficient:
+3. *The top end.* Let `G` be a weight-homogeneous element of `D∞(E)` of large degree. By Theorem M its top is `gℓ^N` (type α) or `gmℓ^{N−1}` (type β), and its monomials lie on a line of step `(a, −b)`. Let `t` be the first step with `e_t ≠ 0`. Because `e₁,...,e_(t−1)` vanish, intermediate coefficients of G cannot contribute to step t in either T₃ or T₃D. Only its step-zero and step-t coefficients enter; no assertion that all intermediate coefficients vanish is needed. The step-`t` components of `T₃(E, G)` and `T₃(E, {E, G})` are then linear in `(y, e_tg)`, where `y` is the step-`t` coefficient:
    - **[E1] type α:** the determinant is `N a²t²(d−2)(d−1)(at−1)²(at+1)·C_α`. Here `C_α` is cubic in `N` with leading coefficient `3(at(d−1) + bt + 2d − 4) > 0`.
    - **[E2] type β:** the determinant is `a²t²(d−N)(d−2)(d−1)(at+1)²·C_β`. The `N³` coefficient of `C_β` is `−3(at−1)(at(d−1) + bt + 2d − 4)`. For `at = 1` the determinant is `36(d−N)(b−1)(d−2)(d−1)·C′_β`, where the `N²` coefficient of `C′_β` is `−(b+d−1)`.
    - **[E3] type α with `a = t = 1`,** the only degenerate case: the first perturbation `m²ℓ^{d−1−b}` is invisible at first order, exactly as in the `m²` families. At step 2 the components of `T₃(E, D^rG)`, `r = 0..3`, are linear in `(y₂, e₁y₁, e₂g, e₁²g)`. The 4×4 determinant is
@@ -531,95 +531,316 @@ Two further gaps remain:
 - **Finiteness does not yet give span{1, H}.** For pure tops, `D_{ℓᵈ}` lowers the `m`-degree of tops instead of making them grow, so Lemma F does not transfer.
 - **An affine first edge gives no finiteness.** When the first edge from `ℓᵈ` is `ℓᵈ + cmℓʲ`, finiteness must come from the next edge, a near-type edge from `mℓʲ`. The argument above gives finiteness there.
 
-These three points were the remaining work for pure tops. §6.8 shows why they cannot all be closed: the pure-top conjecture is false, and the failures are exactly the triangular families found there.
+These are limitations of that edge method. The PP, QC, SC and SS families below show that pure finite cores need not have dimension two, and some first-edge composition families have infinite cores.
 
-### 6.8 Pure tops: the conjecture is false as stated; triangular structures
+### 6.8 Unequal perfect-power transverse tops (complete)
 
-The pure-top part of the two-root conjecture of §6.4 is **false**. The smallest counterexample is `H = (q³ + p)²`. It is a pure top `q⁶` that lies outside Theorems P⁺, Q′ and T, yet
-`D∞(H) ⊇ span{1, q, q², q³ + p, q(q³ + p), (q³ + p)²}`,
-which has dimension 6. This containment is exact: the span is `D`-invariant and every gate kills it. Direct computation at depth 10 finds exactly this span up to degree 11. The extra elements come from **triangular coordinates** `(Q, P) = (q, p + w(q))`. This map is symplectic but not affine, so the flat gates are not covariant under it, and Theorem P⁺ does not see these structures.
+**Theorem PP.** Suppose the total top is `cℓ^d` and the transverse top is `αm^s(ℓ+γ)^r`, with `r,s ≥ 2` and `r ≠ s`. If `s ≥ 3`, the core is `span{1,H}`. If `s=2`, the core is also `span{1,H}` except precisely for
 
-**Theorem X (triangular transvectant formula).** Write `f̃ = f∘τ` with `τ(q, p) = (q, p + w(q))`. Then
-`Σ_k (tᵏ/k!) T_k(h̃, g̃)∘τ⁻¹ = exp( t(∂_{Q₁}∂_{P₂} − ∂_{P₁}∂_{Q₂}) + Σ_{j≥2} tʲ (w⁽ʲ⁾(Q)/j!)(∂_{P₁}∂_{P₂}ʲ + (−1)ʲ∂_{P₁}ʲ∂_{P₂}) ) h(1)g(2)`
-on the diagonal. The coefficients `w⁽ʲ⁾(Q)` are frozen, i.e. not differentiated.
+`J=tm+u(t)`, `H=t^(r−2)(a₂J²+a₁J+a₀)+βJ+δ`, `t=ℓ+γ`, `a₂ ≠ 0`, `deg u ≥ 3`.
 
-*Proof.*
-1. Take `h = e^{δQ+αP}` and `g = e^{γQ+βP}`. The `p`-derivatives act as `α` and `β`, so `T_k` becomes `(β∂_{q₁} − α∂_{q₂})ᵏ` on the diagonal. This is the `k`-th `t`-derivative along the line `(q + tβ, q − tα)`.
-2. Along that line the exponent is `t(δβ − γα) + α[w(q+tβ) − w(q)] + β[w(q−tα) − w(q)]`, and its `t`-linear `w`-terms cancel.
-3. Both sides are bilinear differential operators that agree on exponentials, so they agree on polynomials. ∎
+In that family the core is `span{1,H,J}`, and in root coordinates `{H,J}=(r−2)(H−βJ−δ)`. The affine determinant rescales the bracket in original coordinates. This is an active one-dimensional quotient of the core by its stationary part.
 
-The flat part is the usual one. The **correction** `Φ` collects the terms `j ≥ 2`. For `deg w = 2` it is `c t²∂_{P₁}∂_{P₂}(∂_{P₁}+∂_{P₂})`, which is even in `t`.
+The proof and exact coefficient recognizer are in `research/core_overlap/pure_perfect_power.md` and `pure_transverse.py`. The transverse core of the unequal monomial bounds the whole core by three dimensions. A putative third generator has the form `J=tm+u(t)`. Its third gate is `−u'''∂m³H`, excluding every `s ≥ 3`; for `s=2`, exact Lie closure integrates to the displayed family. No degree cutoff is used. The basic example `H=q(qp+q³)²`, `J=qp+q³` satisfies `{H,J}=H` and disproves the original P003.
 
-**Theorem K (triangular families; containments proved).** Let `P = p + w(q)` and `Q = q`. Each statement holds up to affine changes of coordinates.
-- **K1** (`deg w = 2`). If `H = F(P) + λQ`, then `K[P] + KQ ⊆ D∞(H)`.
-  - *Proof.* The correction is even in `t`, and the flat part vanishes on `K[P] × K[P]`. So `T_k(F(P), G(P)) = 0` for every odd `k`. `Q` is linear. Finally, `{H, Pⁿ} = λnPⁿ⁻¹` and `{H, Q} = −F′(P)`. ∎
-- **K1′** (`deg w = 2`). If `H = F(P) + λQ + μQP` with `μ ≠ 0` and `deg F ≥ 3`, normalized so that `F` has no `P^{deg F − 1}` term, then `span{1, P, P², H} ⊆ D∞(H)`. If `deg F = 3`, the span also contains `Q`, and if in addition `λ = 0`, it contains `PH`.
-  - *Proof.* The gates of `F(P)` vanish on `K[P]` as in K1, and `Q` is linear. In Theorem X, the factor `QP` absorbs at most one `∂_Q` and one `∂_P`. So every odd term of `T_k(QP, g)`, `k ≥ 3`, with `g ∈ K[P]` is `∂_{Q₁}∂_{P₂}·∂_{P₁}∂_{P₂}²`. It differentiates `g` three times in `P`, and so vanishes for `g ∈ span{1, P, P²}`.
-  - The brackets are `{H, P} = λ + μP` and, for `deg F = 3`, `{H, Q} = −F′(P) − μQ`, which lies in the span.
-  - For `PH`, take `H = P³ + aP + b + μQP`. Then `T_k(H, PH)` is bilinear, so it has degree at most 2 in each of `μ`, `a` and `b`. It depends on `w` only through `c = w″/2`, also with degree at most 2. The checker verifies the identity on a 3⁴ tensor grid, which proves it for all values. ∎
-- **K2** (any `w`). If `H = h(Q, P)` with `h` quadratic, then `τ*K[Q, P]_{≤2} = span{1, Q, Q², P, QP, P²} ⊆ D∞(H)`.
-  - *Proof.* In the coefficient of `tᵏ`, `k ≥ 3`, every term of Theorem X has total derivative order at least `k + 1 ≥ 4`. Split over two quadratics, some factor is differentiated three times; this includes the order-4 term `t³(∂_{P₁}∂_{P₂}³ − ∂_{P₁}³∂_{P₂})`. Brackets of quadratics are quadratic. ∎
-- **K3** (twisted squares, `m`-degree 2). Let `Q = ℓ − γ`, `G = Qm + v(ℓ)` with `v` any polynomial, and `k ≥ 1`. Suppose `H = cQ^{k−2}G² + βG + r` is a polynomial (with `β = 0` when `k ≤ 2`, where the term can be absorbed into `v`; the term `βG` was found in §6.14), where:
-  - for `k ≥ 2`, `r ∈ span{1, Q^{k−2}}`;
-  - for `k = 1`, `r` is rational with `Qr` of degree at most 2.
+### 6.9 Two nonlinear composition families (complete in their scopes)
 
-  Then `span{1, G, H} ⊆ D∞(H)` (for `k ≥ 2`), respectively `span{1, Q, G, H} ⊆ D∞(H)` (for `k = 1`).
-  - *Proof.* `G` is affine in `m` with a linear `m`-coefficient. Hence `T_j(G, f) = v⁽ʲ⁾∂_mʲf` for `j ≥ 3`, which vanishes on `H` because `H` has `m`-degree 2. The brackets `{H, G} = (k−2)(H − βG − r) + Qr′` and `{H, Q} = −2cQ^{k−1}G` close the span under the conditions on `r`. ∎
+**Theorem QC.** Let `Q=m+bℓ²+cℓ+d`, `b ≠ 0`, and `H=P(Q)+εℓ`. For `deg P=2`, the full core is `K[Q]+span{ℓ,ℓQ,ℓ²}`; for `deg P ≥ 3`, it is `K[Q]+Kℓ`. For `deg P ≤ 1`, H is quadratic and all polynomials are exact. If `ε ≠ 0`, the tower `K[Q]` is active. The quartic `H=(p+q²)²` is already a counterexample to pure-top collapse.
 
-The transverse tops of these families are exactly the cases that Theorem T leaves out:
-- K1, K1′ and K2 have `φ` constant. K2 has `deg w = d/2`, the boundary that Q′ excludes; K1 and K1′ have `deg w = 2`.
-- K3 has `φ = c(ℓ−γ)ᵏ`. This is linear (`k = 1`) or a perfect power (`k ≥ 2`).
+**Theorem SC.** Let `J=ℓm+u(ℓ)`, `u''' ≠ 0`, and `H=P(J)`. If `deg P=1`, the core is the strip of m-degree at most two. If `deg P=2`, it is the stationary span `span{1,J,J²}`. If `deg P ≥ 3`, it is `span{1,H}`. The key gate obstruction is `μs(s−μ)(s+μ−3)ℓ^(μ+s−1)u'''`, after one bracket determines the first transverse correction. These are balanced transverse powers with pure total tops; Theorem B on balanced total tops is unaffected.
 
-The element `G = (ℓ−γ)m + v` is the quadratic-like element anticipated in §6.6.
+**Theorem SS.** Let `Q=m+u(ℓ)`, `deg u ≥ 3`, and `H=AQ²+BQ+C+εℓ`, `A ≠ 0`. Then `D∞(H)=span{1,ℓ,Q,ℓ²,ℓQ,Q²}` has dimension six. Exactly the third gate at depths zero, one and two determines this core; depth two is sharp. The proof uses total degree in `(ℓ,Q)` and the transformed operators, with every flat-Weyl assertion checked in the original coordinates. See `research/core_overlap/analytic_shear_square.md`.
 
-**Active dynamics also survives.** In K1 with `λ ≠ 0`, `D` maps `Pⁿ ↦ λnPⁿ⁻¹`, so `𝒜(H)` is infinite-dimensional. Examples are `(q² + p)³ + q` and `(q² + p)³ − 2(q² + p) + q`. So the statement in §6.4 that pure tops have an infinite active sector only in the structures of Theorem P⁺ is false. In K2 and K3 the active part is nonzero but finite: `Q`, `QP` or `G` move under `D`.
+Proofs and exact recognizers are `research/core_overlap/pure_quadratic_composition.*`, `audit_balanced_transverse.md`, and `audit_composition_recognize.py`. Recognizer failure means unclassified, not collapse. The protected shear explanation is in `canonical_bridge.md`; arbitrary nonlinear covariance of flat Weyl exactness is not assumed.
 
-**Conjectured cores.** Write `e = deg w`.
+### 6.10 The analytic and polygamma overlap
 
-| family | conjectured `D∞(H)` | direct check |
-|---|---|---|
-| K1, `deg F ≥ 3` | `K[P] + KQ` (proved, §6.10) | `(q²+p)³+q`: 8 = 8 up to degree 12 |
-| K1 ∩ K2 (`e = 2`, `h = cP² + λQ + μ`) | `K[P] + τ*K[Q,P]_{≤2}` | `(q²+p)²`: 9 = 9 up to degree 11 |
-| K1′, `deg F ≥ 4` | `span{1, P, P², H}` | `(q²+p)⁴ − q(q²+p)`, with or without `+ q`: 4 = 4 up to degree 11 |
-| K1′, `deg F = 3` | `span{1, Q, P, P², H}`, plus `PH` if `λ = 0` | `(q²+p)³ + q(q²+p)`: 6 = 6 up to degree 12 |
-| K2 otherwise | `τ*K[Q,P]_{≤2}` (dimension 6) | `(q³+p)²`: 6 = 6 up to degree 11 |
-| K3, `k = 1` | `span{1, Q, G, H}` | `q(p+q²)²+q`: 4 = 4 up to degree 11 |
-| K3, `k ≥ 2` | `span{1, G, H}` | `q³(p+q²)²+q`: 3 = 3 up to degree 11 |
+For analytic coefficients on a connected interval and finite degree in q, put `Ck=T_k(H,·)`, `D={H,·}`. The all-degree finite stopping rules proved in `research/core_overlap/depth_finite_determination.md` are
 
-**The cubic-phase case is richer.** Suppose the transverse top is constant and the completed power `w` has degree 2. Then `τ` is implemented by the cubic phase `exp(icq̂³/ħ)`. By Theorem X the gates in `(Q, P)` are the flat gates deformed by the single even term `ct²∂_{P₁}∂_{P₂}(∂_{P₁}+∂_{P₂})`. In this case the families above are not exhaustive. (§6.9 develops this case. It gives a gauge form, a Witt-cocycle obstruction and the family K4, and it classifies the sector affine in `Q` inside `τ*V`.) For example, `H = P²(P² + Q)` with `P = p + q²` has
-`D∞(H) ⊇ span{1, P(P² + Q), H}`
-by direct computation up to degree 11. Classifying this case is a separate problem: the core is the largest `D`-invariant subspace killed by the deformed gates, and the flat cores of `h` in `(Q, P)` are the natural candidates. In the random searches the generic cubic-phase Hamiltonian still has core `span{1, H}`, e.g. `(q²+p)³ + q²`.
+`D∞(qF)=ker C3 ∩ ker(C3D) ∩ ker C5`,
 
-**Conjecture P004 (pure tops, corrected).** Let `H_d = cℓᵈ`. Suppose:
-- `H` lies outside the structures of Theorem P⁺;
-- after an affine change of coordinates, `H` lies outside K1, K1′, K2 and K3;
-- `H` is not in the cubic-phase case, unless `h` is affine in `Q` and outside K4 (§6.9).
+`D∞(qF+V)=ker C3 ∩ ker C5 ∩ ker(C3D) ∩ ker(C3D²)`.
 
-Then `D∞(H) = span{1, H}`. In the families, `D∞(H)` is the span in the table above.
+The conditions are sharp in the stated analytic classes. For every polygamma F and also log-Gamma, an arbitrary analytic V still gives `D∞(qF+V)=ker C3 ∩ ker(C3D)=A+qA`. Pole/logarithm obstructions exclude every higher top-q sector at once. Conversely `F=a p^(−1/4)+bp` has the active cubic `q³p^(−3/4)`, with eigenvalue `−15b/4`. Analytic coefficient hypotheses are essential: all iterated C3 tests can miss a C5 obstruction. See `analytic_bridge.md` for proofs, explicit sharpness families, and independent exact checks.
 
-**P004 is false as stated (§6.14).** The family K3 needs one more term when `k ≥ 3`. `H = Q(Qm + Q³)² + (Qm + Q³) + 1` (with `Q = ℓ`) is a pure top outside K1, K1′, K2, K3 and K4, yet its core contains `G = Qm + Q³`. The core has dimension 3. The extended family is `H = cQ^{k−2}G² + βG + r` with `r ∈ span{1, Q^{k−2}}`. For `k ≤ 2` the term `βG` can be absorbed into `v`. Theorem TP shows that for `m`-degree 2 and `k ≥ 3` the extended family is exactly where the core exceeds `span{1, H}`. The corrected statement is **Conjecture P005**: P004 with K3 replaced by the extended family.
+### 6.11 The decision procedure and what remains open
 
-*Evidence.*
-- *Random searches.* About 330 random pure tops of degree 4–8 were drawn: triangular normal forms with `m`-degree 2, 3 and 4, transverse tops `φ ∈ {1, ℓ, ℓ², ℓ³, ℓ+1}`, and random lower terms. Every Hamiltonian with a core larger than `span{1, H}` lies in K1, K1′, K2 or K3, with the predicted dimension. K1′ was found when these samples were rechecked.
-- *Structured grid.* `F ∈ {P³, P³ + P, P⁴}` was combined with up to two of the terms `Q, QP, Q², QP², Q²P, Q³`, for `e = 2` and `e = 3`, giving 110 Hamiltonians. All match, except `P⁴ + QP²` with `e = 2`, the cubic-phase example above.
-- *Near misses.* Each of the following has core `span{1, H}`:
-  - `(q³+p)³`, where K1 needs `e = 2`;
-  - `(q²+p)³ + q²`, which is a cubic-phase case;
-  - `(q³+p)² + q³`;
-  - `q(p+q²)² + q²`;
-  - `q²(p+q²)² + q`.
-- *Proved part of the classification.* Theorem P⁺ gives the strips. For `m`-degree 2 with constant `φ`, Theorem Q′ covers `deg w < d/2`, and K2 sits at `deg w = d/2`. Theorem T gives `span{1, H}` when `φ` has degree at least 2 and is not a perfect power. What remains open:
-- the upper bounds in the families;
-- `span{1, H}` for pure tops with `φ` constant, linear or a perfect power outside the families;
-- the classification of the cubic-phase case.
+`check_two_root.py` (`two-root-perturbation-v1`) decides, for any rational `H` with a two-root top:
+- it recomputes the top type from a verified square-free decomposition;
+- it solves for the translation `τ` exactly and tests the normal forms;
+- it reports the core, the active part, and whether the answer is proved (Theorems U, P⁺, Q, Q′) or conjectural.
 
-**Certificate.** `check_triangular.py` (`triangular-pure-v1`; `results/hamiltonian/triangular_theorem.json`) checks the following:
-- **[X1]** Theorem X against `weyl_receipts` on a grid of random `h`, `g` and `w`, for `k ≤ 7`. With the correction removed the check fails.
-- **[K1], [K1′], [K2], [K3]** The families on random grids. Each check is exact: the stated span is `D`-invariant and killed by every gate. For K1 the tower is truncated at `P⁶`.
+Enveloped examples are `results/hamiltonian/tworoot_*.json` and `binomial_*.json`.
 
-`detect` recognises the families for any pure top. It works in the root coordinates `(ℓ, m)`, reads the transverse top and completes the square or `s`-th power. `certify` records explicit generators, and `check` re-verifies them exactly: they must be independent, `D`-invariant, killed by every gate, and more than two. The enveloped counterexamples are `results/hamiltonian/triangular_*.json`. `check_two_root.py` reports these Hamiltonians on routes `K1`, `K1'`, `K2`, `K1+K2` and `K3`. For these routes the stated span is proved to lie in the core, and equality is marked conjectural. Other cubic-phase Hamiltonians go to the route `pure, cubic phase`, whose core is reported as open. The tests compare every route, including random affine images, with direct computation up to degree `d + 2` at depth 8.
+The tests generate random members of every route and random affine changes of coordinates (degrees 3–5 in the suite; degrees 3–6 at depth 10 in a longer run). Each is compared with direct dimensions of `{G : deg G ≤ d+1, C_kD^rG = 0, r ≤ 8}`. Depth matters: with three gates the qp³+q² family shows spurious extra elements, and one Q′ instance needs depth 8.
 
-### 6.9 The cubic phase: gauge form, a Witt-cocycle obstruction and the affine sector
+**Original conjecture P003: false as stated.** The proposed collapse of every pure/near/balanced top outside Theorem P⁺ is disproved by PP, QC, SS, and the quadratic part of SC. The near-top restriction is proved by Theorem NE. Balanced total tops are still classified by Theorem B. Pure tops now have additional finite active, finite stationary, and infinite active families, so no complete blanket classification is claimed.
+
+The decision procedure applies the exact PP, QC, SC, SS, SCP and CQ recognizers after the retained routes. Claude's triangular-pure-v1 receipts are retained as containment certificates; §6.18 records which are upgraded by the independent complete-core proofs. Unresolved pure cases are labeled `unclassified`; finite matrix tests do not reinstate P003 or the subsequently refuted P004. Existing stored certificates retain their hypotheses and are replayed separately. The research package's independent review records the proof checks and the small setup repair in Theorem B (`s ≥ 1, s ≠ μ` suffices; no `s<μ` assumption is needed).
+
+### 6.12 Higher shear compositions: the missing case
+
+**Theorem SCP.** Let `Q=p+u(q)`, `deg u>=3`, and `H=P(Q)+epsilon*q`,
+`deg P>=3`, over a characteristic-zero field. Then
+`D_inf(H)=ker C3 intersect ker(C3D)=span{1,H}`.
+The top third-gate coefficient on `q^a Q^c` is proportional to
+`c(c+mu-3)*((m-2)*(c-mu)-3*(mu-1)*a)`. One bracket removes every
+nonconstant resonant monomial except the top of H. Descent proves the
+all-degree statement. The proof, exact recognizer and operator checks are
+`research/core_overlap/shear_composition_complete.*`.
+
+### 6.13 Nonlinear oscillator cores and a sharp depth transition
+
+**Theorem SO.** Set `Q=p+u(q)` and
+`H=A*Q^2+B*Q+C+kappa*q^2/2+epsilon*q`, `A!=0`.
+For `deg u>=3`, the core is precisely the six-dimensional quadratic
+sector in `(q,Q)`, determined sharply by `C3` at depths zero through two.
+For `deg u=2` and `kappa!=0`, the same sector is the full core and depth
+three is sharp. Quadratic shear with `kappa=0` remains the infinite QC
+family. In the unshifted quadratic-shear case, the cubic
+`G=3*kappa*q^2*Q+4*A*Q^3` passes the first three tests and has
+`C3D^3G=-1728*A^3*b*kappa^2` for `u=b*q^2`.
+The sector evolution satisfies `q''=-2*A*kappa*q-2*A*epsilon`.
+See `research/core_overlap/shear_oscillator.*`.
+
+### 6.14 Complete constant quadratic momentum with a higher shear
+
+**Theorem QF.** Let `H=A*(p+u(q))^2+V(q)`, `A!=0`, `deg u=m>=3`,
+and let V be any polynomial. If `deg V<=2`, the core is the six-dimensional
+quadratic sector in `(q,Q)`, `Q=p+u(q)`. Otherwise it is `span{1,H}`.
+The sharp third-gate depths are two for `deg V<=2`, six for cubic V,
+and four for `deg V>=4`. The initially excluded weighted boundary
+`deg V=2m` is therefore classified as well.
+
+For a putative top `g(q)*Q^N`, `N>=3`, the leading equations of C3
+and C3D force `3a=(N-2)(m-2)` and `3(a-1)=(N-1)(m-2)`, with
+`a=deg g`; their difference is impossible. Thus the first two tests
+already force degree at most two in Q. The next test gives
+`G in span{1,H,q,Q,q^2,qQ}`. Invariance eliminates all four extra
+directions for nonlinear V. The exact q witness first fails at depth
+four with `C3D^4q=96*A^4*u''*V''''` for degree V at least four,
+and at depth six with `C3D^6q=-960*A^5*u''*(V''')^2` for cubic V.
+
+For `deg V<2m`, the independent weighted certificate method remains
+available: the `(1,m)` top is `A*(p+alpha*q^m)^2`; SS and the graded
+injection give core dimension at most six and weight at most `2m`.
+Exact invariant-kernel elimination in `3m+3` monomials, retaining full
+outputs, therefore computes the full core under these hypotheses.
+Proof and exact certificates are in `research/core_overlap/quadratic_frontier.*`.
+
+### 6.15 Complete potentials for the fractional cubic
+
+**Theorem AP.** On `p>0`, let `A=C^omega((0,infinity),R)` and
+`H=q*p^(-1/4)+V(p)` with analytic V and finite-q-degree observables.
+The core exceeds `W=A+qA` exactly when
+`V=c0+a*p^(-1/4)+b*p^(3/4)+c*p^(5/2)`.
+In that case it is `W+R*(H-c0)^3`; otherwise it is W.
+The potential condition is equivalent to the Euler differential equation
+`p^4 V''''+3p^3 V'''-(15/16)p^2 V''-(15/32)p V'=0`.
+For general exceptional F with `K3=lambda` and `r^3=F''!=0`, a surviving
+cubic `q^3*r+q^2*h` modulo W is characterized by
+`h'=V'''*r/F''` and `F*h'-(2F'+lambda)*h=3V'*r`.
+See `research/core_overlap/analytic_potential_classification.*`.
+
+### 6.16 An all-degree deformation obstruction hierarchy
+
+**Theorem DO.** For `H_t=(p+q^2)^2+t*q^2/2`, the initial polynomial
+observables admitting exact formal lifts through order one form the
+seven-dimensional span of the quadratic sector V and `Q^3`, `Q=p+q^2`.
+Through order two the liftable initial space is exactly V (dimension six),
+and V lifts to every order. All `Q^n`, `n>=4`, fail already at first order.
+The cubic lift `Q^3+(3/4)t*q^2*Q` passes first order, but its
+third-depth gate has second-order constant coefficient `-432`.
+The corresponding dual coefficient functional annihilates every possible
+second-order correction and every change of first-order lift.
+This supplies a genuine lifting obstruction class; no new Nijenhuis or
+Haantjes torsion operation is claimed.
+Proof and exact obstruction certificates are in
+`research/core_overlap/deformation_obstructions.*`.
+
+## 4. Commands
+
+```bash
+python3 -B extensions/hamiltonian/weyl_groebner.py discover "q*p^3+q^2+p^2" --output R.json
+python3 -B extensions/hamiltonian/weyl_kernel.py R.json --output K.json
+python3 -B extensions/hamiltonian/check_weyl_kernel.py K.json
+python3 -B extensions/envelope.py check results/hamiltonian/qp3_plus_q2_plus_p2.json.gz
+python3 -B -m unittest test_weyl_discovery      # from extensions/hamiltonian
+```
+
+Measured on the development container: `qp³+q²+p²` takes about 80 s for discovery and about 2 min for classification, most of it replaying the 13-generator receipt. The other rows take seconds.
+
+
+Theorem DO also classifies the graded torsion of the explicitly declared
+four-depth gate-matrix cokernel over `K[t]`: degree three contributes
+`K[t]/(t^2)`, and each degree at least four contributes `K[t]/(t)`.
+For degree n at least four its free cokernel rank is `3n-9`.
+These module invariant factors are proved in all degrees; the displayed
+Smith transformations and minors are independently replayed examples.
+
+
+### 6.17 Complete constant quadratic-momentum classification
+
+**Theorem CQ.** Every polynomial Hamiltonian
+`H=A*p^2+B(q)*p+C(q)` with nonzero constant A has the following complete
+classification. Put `u=B/(2A)`, `Q=p+u`, and `V=C-B^2/(4A)`.
+For affine u, quadratic-or-lower V makes H quadratic and the core the
+full polynomial ring; otherwise the core is `span{1,H}`, with sharp
+third-gate depth seven for cubic V and five for higher V (AFP).
+For degree u two, residual degree at most one gives the infinite QC
+core, degree two gives the six-dimensional SO core sharply at depth
+three, and nonlinear V gives `span{1,H}` sharply at depth six for cubic
+V and four for higher V (QR). For degree u at least three, QF gives the
+six-dimensional core sharply at depth two for quadratic-or-lower V,
+and the two-dimensional core sharply at depth six or four otherwise.
+
+The difficult QR cubic branch reduces by rational affine GL changes to
+`(p+q^2)^2+q^3+lambda*q`. A first-deficit argument bounds every depth-two
+candidate to weight at most six, a 16-dimensional polynomial space.
+A selected 14 by 14 minor of the full-output depth-six matrix has a
+nonzero constant determinant. Its parameter degree is at most 32; 33
+exact rational determinant evaluations prove the identity for every
+lambda. This is exact interpolation after a proved all-degree bound,
+not inference from sampled ranks. Variable A(q) remains open beyond
+retained PP and other explicitly proved routes.
+
+The full phase diagram, unified classifier and proof dependencies are
+`research/core_overlap/constant_quadratic_classification.*`; the new
+branch proofs are `quadratic_shear_residual.*` and
+`affine_shear_potentials.*`.
+
+
+### 6.18 Claude's triangular families: retained containments and complete-core overlap
+
+Claude commit `fbc52d01cb47e413ac63763bde6666b8138a7448` independently
+found the six-dimensional sector of `H=(p+q^3)^2`, introduced a general
+triangular transvectant formula, and supplied exact invariant-span
+certificates for the families below. Its formula and containment receipts
+are retained. The full-core results of §§6.8–6.17 upgrade the overlapping
+cases; the additional coupled families remain explicitly distinguished.
+The quartic `H=(p+q^2)^2` in QC is a smaller pure-top counterexample.
+
+**Theorem X (triangular transvectant formula).** Write
+`tau(q,p)=(q,p+w(q))` and `f_tilde=f composed with tau`. With independent
+coordinates `(Q_1,P_1),(Q_2,P_2)`,
+
+`sum_k t^k/k! T_k(h_tilde,g_tilde) composed with tau^(-1)`
+
+is the diagonal evaluation of
+
+`exp(t(partial_Q1 partial_P2-partial_P1 partial_Q2) + sum_(j>=2) t^j w^(j)(Q)/j! (partial_P1 partial_P2^j+(-1)^j partial_P1^j partial_P2)) h(1)g(2)`.
+
+The coefficients `w^(j)(Q)` are frozen, not differentiated. To prove
+this, test on `h=exp(delta Q+alpha P)`, `g=exp(gamma Q+beta P)`.
+The transvectant generating series shifts the original coordinates to
+`q+t beta` and `q-t alpha`. Its exponent is
+`t(delta beta-gamma alpha)+alpha[w(q+t beta)-w(q)]+beta[w(q-t alpha)-w(q)]`;
+the linear terms in w cancel. The two bilinear differential operators
+agree on all exponentials, hence on polynomials. For quadratic w the
+correction is the single even term
+`c t^2 partial_P1 partial_P2(partial_P1+partial_P2)`, `c=w''/2`.
+This is an explicit differential identity, not a claim of flat-product
+covariance under arbitrary nonlinear canonical maps.
+
+**Theorem K (the retained containments).** Put `P=p+w(q)`, `Q=q`.
+
+- **K1.** If `deg w=2` and `H=F(P)+lambda Q`, then
+  `K[P]+KQ` lies in the core. The even triangular correction kills every
+  odd gate on two functions of P; Q is linear, and
+  `{H,P^n}=lambda*n*P^(n-1)`, `{H,Q}=-F'(P)`.
+- **K1′.** If `deg w=2`, `H=F(P)+lambda Q+mu QP`, `mu!=0`,
+  `deg F>=3`, and the `P^(deg F-1)` coefficient of F is normalized to
+  zero, then `span{1,P,P^2,H}` lies in the core. For degree F three it
+  also contains Q, and for degree three with `lambda=0` it also contains
+  PH. The exact triangular checker verifies the full invariant spans;
+  its tensor-grid identity for PH has the stated coefficient-degree
+  bound. These are containments, not complete-core theorems here.
+- **K2.** For arbitrary polynomial w and a quadratic h,
+  `H=h(Q,P)` has the pullback of the six-dimensional quadratic sector
+  inside the core. In the triangular formula every odd correction
+  differentiates one quadratic factor at least three times, and
+  Poisson brackets of quadratics remain quadratic. If h has no `P^2`
+  term, its full core is instead handled by the affine-in-momentum
+  positive structures; a six-dimensional containment need not be full.
+- **K3.** Let `Q=l-gamma`, `G=Qm+v(l)`, `k>=1`, and suppose
+  `H=c Q^(k-2) G^2+r` is polynomial. For `k>=2` require
+  `r in span{1,Q^(k-2)}`; for `k=1` allow rational r with `Qr` of
+  degree at most two. The core contains `span{1,G,H}` for `k>=2`,
+  and `span{1,Q,G,H}` for `k=1`. Higher gates vanish because G is
+  affine in m and H has m degree two. In canonical root coordinates
+  the correct closure identities are
+  `{H,G}=(k-2)(H-r)+Qr'` and `{H,Q}=-2c Q^(k-1)G`.
+  There is no extra factor c multiplying `H-r`. For
+  `r=a0+a1 Q^(k-2)`, the first bracket is `(k-2)(H-a0)`.
+  Affine root coordinates rescale brackets by their determinant.
+
+The exact `triangular-pure-v1` certificates in
+`results/hamiltonian/triangular_*.json` prove the displayed invariant
+spans are gate-killed. `check_triangular.py` recomputes the gates and
+brackets and checks independence; its certificate claim remains
+containment. It does not turn a finite-degree matrix comparison into
+an all-degree upper bound.
+
+**Historical complete-core compatibility at fbc52d01.** The continuation in §6.20 now proves K1-prime and K4 upper bounds and the quadratic-shear part of K3 k=1. The general variable-coefficient remainder stays open. In the pure-total-top setting the
+following stronger conclusions now follow from the independent proofs:
+
+| Retained family | Full conclusion and proof |
+|---|---|
+| K1, degree F at least three | Exact `K[P]+KQ`, by QC. |
+| K1+K2 | Exact `K[P]+span{Q,QP,Q^2}`, by quadratic-composition QC. |
+| K2 with nonzero `P^2` coefficient | Complete the square, absorbing the affine `QP` and P terms into w. CQ gives the exact six-dimensional core except in its quadratic-shear affine-residual QC tower case. |
+| K3, k at least three | Exact `span{1,G,H}`, by PP with transverse exponents `(r,s)=(k,2)`. PP includes additional linear-in-G terms absent from K3. |
+| K3, k equal to two | Exact stationary `span{1,G,G^2}`, by SC. Contrary to an unqualified active-part claim, this K3 branch has no active core. |
+| K3, k equal to one | Four-dimensional containment retained; upper bound remains open. The momentum-square coefficient is variable, so CQ does not apply. |
+| K1′ | Stated containments retained; upper bounds remain open. The `QP` coupling is outside QC and SCP. |
+
+For K3's pure-top applications the nonlinear v has degree at least
+three. That hypothesis is essential when invoking SC at k two;
+quadratic G may instead support an infinite stationary tower.
+
+**P004 is also false as stated.** Claude's corrected conjecture proposed
+collapse outside P+, K1, K1′, K2, K3 and the cubic-phase case, and equality
+with its proposed family spans inside them. The outside-families
+assertion already has the exact PP counterexample
+
+`J=qp+q^3`, `H=qJ^2+J`, `D_inf(H)=span{1,H,J}`, `{H,J}=H-J`.
+
+Its total top is the pure seventh power `q^7`. Its transverse `p^2`
+coefficient is `q^3`, and its p coefficient is `2q^5+q`, which has
+vanishing order one at the triple root of the `p^2` coefficient.
+K3 would have to use k three there, requiring the p coefficient to be
+divisible by `q^2`. An affine transverse shift changes that coefficient
+only by an affine multiple of `q^3`, so it cannot remove the order-one
+obstruction. The unique pure top forces every admissible root coordinate
+to be a scaled and translated q; thus this exclusion holds in every
+affine chart. The variable transverse coefficient excludes K1, K2 and
+the constant-transverse cubic-phase case, momentum degree two excludes
+K1′, and the nonzero p-square term excludes P+. Hence this example lies
+outside every excluded family, yet its proved core has dimension three.
+No replacement blanket pure-top conjecture is asserted.
+
+**Historical remaining fronts at fbc52d01 (updated by §§6.20–6.22).** The complete constant-quadratic class is settled
+by CQ. The open overlaps exposed by Claude's work are K1′, the
+linear-transverse K3 branch, general variable quadratic-momentum
+coefficients, and higher cubic-phase couplings beyond the proved routes.
+The cubic-phase label means constant transverse top and a completed
+quadratic w; it is not itself a classification. For example
+`P=p+q^2`, `H=P^2(P^2+q)`, `J=P(P^2+q)` has
+`{H,J}=-H` and zero odd gates on J, so `span{1,H,J}` is an exact
+containment. Its full upper bound is not claimed. Likewise the finite
+search verdict for `(p+q^2)^3+q^2` does not become a theorem merely from
+agreeing low-degree ranks. Literature priority remains open for the
+specific complete-core classifications; general quantum-canonical
+transformation machinery is established background.
+
+**Update (check_gauge.py line, §§6.23–6.28).** The retained K-family containments above
+are upgraded there: K1, K1′, K2, K1+K2, K4 and K3 are exact cores, and K3 needs the extra
+term `βG` for `k ≥ 3` (`H = cQ^{k−2}G² + βG + r`, with `{H, G} = (k−2)(H − βG − r) + Qr′`).
+P004 is false as stated; its corrected form P005 is proved (§6.26). The two pure-top
+classifications are independent; `check_two_root.classify(H, routes=...)` runs either one
+alone, and the test suite compares both against direct computation.
+
+### 6.19 The cubic phase: gauge form, a vector-field compatibility defect and the affine sector
 
 Suppose the transverse top is constant and the completed power `w` has degree 2. Write `c = w″/2`, `P = p + w(q)` and `Q = q`. In this case the correction in Theorem X has a single term. That term is a coboundary, because `xy(x+y) = ((x+y)³ − x³ − y³)/3`.
 
@@ -629,7 +850,7 @@ where `T^flat` are the flat transvectants in `(Q, P)`.
 
 *Proof.* By the identity above, `exp(ct²∂_{P₁}∂_{P₂}(∂_{P₁}+∂_{P₂}))` on the diagonal equals `S_s∘mult∘(S_{−s}⊗S_{−s})`. The flat operator has constant coefficients and commutes with this. ∎
 
-So the cubic phase is the flat problem, conjugated by the `ħ`-dependent operator `exp(cħ²∂_P³/3)`; here `t` plays the role of `ħ`. `S_s` is even in `t`. Hence `G` is killed by every gate of `H̃` exactly when, as series in `t`,
+This is an equivalence in the formal generating parameter t, with `s=ct²/3`. In the standard physical Moyal convention `t=iħ/2`, the corresponding coefficient is `s=-cħ²/12`; the convention must be converted before interpreting t as ħ. `S_s` is even in `t`. Hence `G` is killed by every gate of `H̃` exactly when, as series in `t`,
 `flat-odd(S_{−s}h, S_{−s}g) = t·S_{−s}{h, g}`.
 
 **Theorem A₀ (affine criterion).** Let `h = a(P) + Qb(P)` and `g = α(P) + Qβ(P)` be affine in `Q`. Their flat odd part is `t{·,·}`. Therefore `T_k(h̃, g̃) = 0` for all odd `k ≥ 3` if and only if `S_s{S_{−s}h, S_{−s}g} = {h, g}` for all `s`. This is in turn equivalent to `Δ(S_sh, S_sg) = 0` for all `s`, where `Δ(X, Y) = ∂³{X, Y} − {∂³X, Y} − {X, ∂³Y}`.
@@ -640,7 +861,7 @@ This is the Witt algebra of vector fields `b∂_P` acting on functions. In these
 - `Δ_Witt = 3(b′β‴ − b‴β′)`;
 - `Δ_fun = 3(b′α‴ + b″α″ − a‴β′ − a″β″)`.
 
-`Δ_Witt` is the density of the Gelfand–Fuchs cocycle. The obstruction to exactness in the cubic phase is therefore the failure of `∂³` to be a derivation of the Witt algebra. On `sl₂ = span{1, P, P²}` that failure vanishes. For `b, β ∈ sl₂` the all-order condition reduces to two conditions:
+`Δ_Witt` is an explicit compatibility defect for vector fields. In fact `Δ_Witt/3 = (b′β″−b″β′)′`, so its integral over periodic or compactly supported coefficients vanishes. The full `Δ` is the derivation defect (a coboundary, up to convention) of `∂³`; no nontrivial scalar Gelfand–Fuchs class is established by this formula. The obstruction to exactness here is the failure of `∂³` to be a derivation. On `sl₂ = span{1, P, P²}` that failure vanishes. For `b, β ∈ sl₂` the all-order condition reduces to two conditions:
 - `b′α″ − β′a″ ∈ K`;
 - `deg(b″α − β″a) ≤ 4`.
 
@@ -667,7 +888,7 @@ The case `r = 0` is `P²(P² + Q)`, the exception of §6.8.
 - `S_s` adds only terms of degree at most 1 in `P`, and `Δ` vanishes on them.
 - The bracket is a direct computation. ∎
 
-**Theorem A (the affine sector inside `τ*V`, `V = K[P] + QK[P]`).** Let `h = a + Qb` with `deg a = f ≥ 3`. Then `D∞(H̃) ∩ τ*V` is as follows.
+**Retained restricted Theorem A (the affine sector inside `τ*V`, `V = K[P] + QK[P]`).** Let `h = a + Qb` with `deg a = f ≥ 3`. Then `D∞(H̃) ∩ τ*V` is as follows.
 
 | `b` | `D∞(H̃) ∩ τ*V` |
 |---|---|
@@ -692,12 +913,12 @@ The case `r = 0` is `P²(P² + Q)`, the exception of §6.8.
    - Both eigenvectors at once are incompatible.
 6. *`deg b ≥ 3`.* This is Lemma W. ∎
 
-*Open part (largely closed in §6.10: Lemmas C and C2 prove the containment except for linear `b` with `f = 3`).* It remains to show that `D∞(H̃) ⊆ τ*V` in the affine sector, i.e. that no core element has `Q`-degree 2 or more. Direct computation at depth 10 up to degree 11 confirms this for:
+*Historical open part of Claude commit 35d39be4.* At that checkpoint it remained to show that `D∞(H̃) ⊆ τ*V` in the affine sector, i.e. that no core element has `Q`-degree 2 or more. Direct computation at depth 10 up to degree 11 confirms this for:
 - K4 with `r = 0` and with `r = 1`;
 - K1′ with `f = 4`;
 - an affine non-K4 Hamiltonian.
 
-A random search of 60 affine cubic-phase Hamiltonians of degree 8–10 agrees with the table, with no counterexample: K1 10, K1′ 13, K4 4, and `span{1, H}` 33. Cubic-phase Hamiltonians that are not affine in `Q`, such as `P³ + Q²`, remain open.
+A random search of 60 affine cubic-phase Hamiltonians of degree 8–10 agrees with the table, with no counterexample: K1 10, K1′ 13, K4 4, and `span{1, H}` 33. At that checkpoint non-affine cubic-phase examples such as `P³ + Q²` remained open. Theorem HR (§6.21) now closes this example and every nonlinear composition with a nonzero quadratic restoring potential.
 
 **Certificate.** `check_cubic_phase.py` (`cubic-phase-v1`; `results/hamiltonian/cubic_phase_theorem.json`) checks:
 - **[G1]** Theorem G against Theorem X;
@@ -712,9 +933,92 @@ A random search of 60 affine cubic-phase Hamiltonians of degree 8–10 agrees wi
 - `pure, cubic phase affine` for the rest of the affine sector, reported as `span{1, H}`, proved inside `τ*V` and conjectured in full;
 - `pure, cubic phase` for non-affine cubic-phase Hamiltonians, whose core is open.
 
-### 6.10 Gauge form for every shear: why quadratic shears are special
 
-§6.9 treated quadratic shears. The same mechanism works for every shear `w`, and it explains the phase diagram of triangular cores.
+### 6.20 Complete affine cubic-phase cores
+
+**Theorem CP.** For every quadratic shear `P=p+w(q)`, `c=w_second/2!=0`,
+and every polynomial Hamiltonian `h=a(P)+Qb(P)`, `Q=q`, the full polynomial
+dynamic core is classified in `research/core_overlap/cubic_phase_classification.md`.
+Every observable degree is covered. The former missing affine-Q containment
+is proved independently by the highest-Q method (AC) for degree b at least
+two and by D-eigenpolynomials (CPL) for linear b with degree a at least three.
+
+For degree a at least three: constant b gives the infinite QC core; linear
+b gives exactly the four/five/six-dimensional K1-prime table; quadratic b
+gives precisely K4's three-dimensional core or span1H; and degree b at
+least three gives span1H. Quadratic b with degree a at most two instead
+has the full four-dimensional core span1,X,XP,H, X=Q+a2/b2. The supplied-chart
+classifier also includes the quadratic original, infinite QC and positive
+three-strip boundaries. No low-degree exception is hidden inside an
+affine-Q containment claim.
+
+K4 recognition is the rational coefficient identity
+`r=(b1/b2-a3/a4)/2`, `b(r)=0`, with degree a four. Its necessity proof
+eliminates the prior bounded symbolic enumeration. The exact whole-ring
+third-gate stopping depths are one for degree b at least three and a
+uniform two for quadratic b (sharp over that family). Linear b has the
+proved upper bound `R=number_of_D_weight_shifts(C3)-1`; general sharpness
+is not asserted.
+
+The recognizer recovers a hidden affine part of w by solving the common
+quadratic equations `(partial_Q-alpha*partial_P)^2 h0=0`. Canonical completed
+powers alone need not retain an affine-Q description. Every recovered chart
+is checked by exact reconstruction. New `affine-cubic-phase-complete-v1`
+envelopes assert full equality, while retained triangular receipts keep
+their original containment claims. Proofs and independent checks are
+`cubic_affine_completeness.*`, `cubic_phase_audit.*`,
+`cubic_phase_classification.*`, and `phase_independent_review.*`.
+
+### 6.21 Every nonlinear composition with quadratic restoring force
+
+**Theorem HR.** For every polynomial F of degree at least three, every
+quadratic shear P, and `lambda!=0`,
+
+`H=F(P)+lambda*Q^2+epsilon*Q+C`
+
+has full core span1H. Define `S_R=intersection_(r=0..R) ker(C3D^r)`.
+Then `S1=span1,Q,P,H`, `S2=span1,P,H`, `S3=span1,H`. Depth three is
+sharp for every such Hamiltonian. Explicit nonzero witnesses are
+`C3D²Q=12c*lambda*(F_second*F_third)_prime` and
+`C3D³P=24c*lambda²*(F_second*F_third)_prime`.
+At zero restoring force, the full core is the infinite QC tower K[P]+KQ,
+sharply at depth one. Quadratic F has the distinct retained infinite-to-six
+SO transition. Thus the non-affine example P³+Q² is now completely solved.
+The proof controls arbitrary highest-Q degree before any finite rank
+calibration. See `higher_restoring.*` and the independent cubic calibration
+`cubic_restoring.*`.
+
+### 6.22 Universal lifting hierarchy and its finite-weight torsion
+
+**Theorems RD and RT.** For every polynomial F of degree at least three
+and `H_t=F(P)+tQ²`, first-order liftable initial observables are exactly
+span1,P,F; second-order and formal liftables are exactly span1,F. Polynomial
+corrections may have arbitrary degree at every order. The injective identity
+`[C3,D0]=12c*F_second*(F_third+F_second*partial_P)*partial_Q²` controls all
+possible corrections. The choice-independent delayed P obstruction is
+`24c*t²*(F_second*F_third)_prime`; the cubic calibration is 864t².
+
+For every declared weight bound N at least twice degree F, let M_N have
+source weight(Q)=1, weight(P)=2 at most N and full polynomial outputs
+`(C3D_t^r)_(r=0..3)`. Then
+
+`Tor coker M_N = K[t]/(t²) + (K[t]/t)^(floor(N/2)-1)`.
+
+This formula is proved for every eligible bound using the all-degree lifting
+theorem, not inferred from a Smith-matrix grid. The free cokernel rank
+depends on the declared target. This is ordinary algebraic module torsion;
+no new geometric tensor or nontrivial scalar Gelfand-Fuchs class is claimed.
+See `restoring_deformation.*` and `cubic_deformation.*`.
+
+The remaining cubic-phase problems have genuine higher Q coupling beyond
+the affine and quadratic-restoring theorems. General variable quadratic
+momentum coefficients remain open beyond the explicit CQ/PP/SC/CP scopes.
+P003 and P004 remain refuted as stated; no replacement blanket collapse
+conjecture is asserted. External peer review and historical priority remain open.
+
+### 6.23 Gauge form for every shear: why quadratic shears are special
+
+§6.19 treated quadratic shears. The same mechanism works for every shear `w`, and it explains the phase diagram of triangular cores.
 
 **Theorem GG (gauge form, every `w`).** Let
 `S_t = exp( Σ_{n≥1} t^{2n} w^{(2n)}(Q) ∂_P^{2n+1}/(2n+1)! )`.
@@ -813,7 +1117,7 @@ In the affine sector of the cubic phase, exceptional exact dynamics is therefore
 - **[K1c]**: the K1 core dimensions for `deg w = 2`, and `span{1, H}` for `deg w = 3`, by direct computation;
 - **[C2]**: the `s²`-coefficient identity at `f = 4, …, 16`. That coefficient is a polynomial in `f` of degree at most 8, so this proves it. Also checked are full core dimensions for K4, quadratic `b`, `deg b = 3`, K1′ with `f = 4`, and a higher shear with quadratic `b`.
 
-### 6.11 The shear phase diagram
+### 6.24 The shear phase diagram
 
 Take a pure top with constant transverse top, written in its triangular normal form `H = h(q, p + w(q))`. Suppose `h = a(P) + Qb(P)` is affine in `Q`, with `deg a = f ≥ 3` and `deg b < f`. Sections 6.2 and 6.8–6.10 then determine `D∞(H)` completely as a function of the degree of the shear and of `b`. The table shows how each additional degree of shear removes one layer of exact dynamics.
 
@@ -834,7 +1138,7 @@ The sources are as follows.
 
 **Reading the diagram through the gauge.** The three rows are three behaviours of the gauge operator `S_t` of Theorem GG.
 - **Flat.** `S_t = 1`. The flat strip structures survive, including elements of `Q`-degree 2.
-- **Cubic phase.** `S_t = exp(ct²∂_P³/3)` has constant coefficients. It preserves `K[P]` but conjugates the flat bracket by a Witt-type defect. So towers in `P` survive (K1). The `Q`-direction keeps only the `sl₂` remnants on which the Gelfand–Fuchs density vanishes (K1′, K4, the `sl₂·R` picture).
+- **Cubic phase.** `S_t = exp(ct²∂_P³/3)` has constant coefficients. It preserves `K[P]` but conjugates the flat bracket by a Witt-type defect. So towers in `P` survive (K1). The `Q`-direction keeps only the `sl₂` remnants on which the vector-field compatibility defect of §6.19 vanishes (K1′, K4, the `sl₂·R` picture).
 - **Higher shears.** `S_t` has `Q`-dependent coefficients `w″(Q), w⁽⁴⁾(Q), …`. The antisymmetric remainder `w‴Λ` of the third gate then removes everything except the constants and `H`.
 
 The quadratic-in-`P` structures of K2 sit outside this table, since `h` is not affine in `Q` there. They survive every shear because `S_t` fixes functions of `P`-degree at most 2.
@@ -845,7 +1149,7 @@ The quadratic-in-`P` structures of K2 sit outside this table, since `h` is not a
 
 So in these rows a finite set of conditions `C₃D^r`, with `r` bounded in terms of the degrees of `h`, already cuts out the core. The lower bounds, i.e. the containments, are exact invariant-span certificates.
 
-### 6.12 Non-affine normal forms: binomial edges collapse
+### 6.25 Non-affine normal forms: binomial edges collapse
 
 The non-affine sector is the case where `h` has `Q`-degree at least 2 in its triangular normal form. It is controlled by the first Newton edge of `h` from the vertex `P^s`.
 
@@ -1044,7 +1348,7 @@ For the quadratic-shear oscillator `(q² + p)² + κq²/2` with `κ ≠ 0`, `R =
 
 `check_two_root.py` reports these Hamiltonians on the proved routes `NA`, `NE`, `NB`, `NT` and `NV`.
 
-### 6.14 Upper bounds and the transverse tops: K2, K1+K2, K1′, K3 exact; linear `b`; P004 refuted, P005 proved
+### 6.26 Upper bounds and the transverse tops: K2, K1+K2, K1′, K3 exact; linear `b`; P004 refuted, P005 proved
 
 All four results below use the same device. Some grading makes `D` weight-preserving to leading order, with top part `D₀`. The top components of core elements of weight `n` form a `D₀`-invariant space `V_n`. The leading part of `T₃` (or of the top gates) cuts this space down. When `D₀` is diagonalizable with simple spectrum, `V_n` is spanned by the eigenvectors it contains, and those can be tested one at a time.
 
@@ -1061,7 +1365,7 @@ All four results below use the same device. Some grading makes `D` weight-preser
    - Either way `V_n ≠ 0` would contain a vector whose `∂_P²` has `P^{n−2}`-coefficient `n(n−1) ≠ 0`. That monomial violates `3a = (e−2)b` unless `n = 2`. So core elements have degree `≤ 2`.
 4. *`e = 2`.* The condition is `∂_P²g_n ∈ K[P]`, i.e. `g_n ∈ span{Pⁿ, Q^{n−1}P, Qⁿ}`.
    - For `γ ≠ 0`, no `z^a z̄^b` lies in this span when `n ≥ 3`. Its `QP^{n−1}` coefficient is `i√γ(a−b)` and its `Q²P^{n−2}` coefficient is `−γ((a−b)² − n)/2`.
-   - For `γ = 0`, `D₀ = 2αP∂_Q` pushes `Q^{n−1}P` and `Qⁿ` onto `Q^{n−2}P²`, so `V_n ⊆ KPⁿ`. With the containment of §6.8 this gives equality. ∎
+   - For `γ = 0`, `D₀ = 2αP∂_Q` pushes `Q^{n−1}P` and `Qⁿ` onto `Q^{n−2}P²`, so `V_n ⊆ KPⁿ`. With the containment of §6.18 this gives equality. ∎
 
 **Theorem LB (linear `b`, higher shears).** Let `deg w = e ≥ 3` and `h = a(P) + Q·b(P)` with `deg a = f ≥ 3` and `b` linear. Then `D∞(H) = span{1, H}`.
 
@@ -1090,7 +1394,7 @@ With Theorem AE and Lemma C2 this completes the higher-shear affine sector: `D�
    - `T₃(PH) = −36aλ` and `T₃(P³) = 36μ`, which forces `κ = aλc/μ`;
    - then `T₃(D(cPH + κP³)) = 72aλμ·c`.
 
-   So for `λ ≠ 0` we get `c = 0`. For `λ = 0`, `PH` is in the core by §6.8. ∎
+   So for `λ ≠ 0` we get `c = 0`. For `λ = 0`, `PH` is in the core by §6.18. ∎
 
 **Theorem TP (perfect-power transverse tops).** Let `H` be a pure top with `m`-degree `s ≥ 2` and transverse top `φ = c(ℓ+γ)ᵏ`, where `2 ≤ k ≠ s`.
 - If `s ≥ 3`, then `D∞(H) = span{1, H}`.
@@ -1137,11 +1441,11 @@ So K3 is exact for every `k`.
 
 **Corollary (P005 holds).** Every pure top outside the non-affine cubic phase has `D∞(H) = span{1, H}`, or the exact span of its family (K1, K1′, K2, K1+K2, K3, K4). The cases:
 - `s ≤ 1`: P⁺.
-- Constant `φ`, outside the cubic phase: §§6.10–6.12 and Theorems K2U, LB.
+- Constant `φ`, outside the cubic phase: §§6.23–6.12 and Theorems K2U, LB.
 - The affine cubic phase: K1, K1′ (Theorem K1P for `f = 3`), K4 and Lemma C2.
 - `deg φ ≥ 1`: Theorems T, TP and TE.
 
-The non-affine cubic phase, which P005 excludes, is settled as well: `D∞(H) = span{1, H}` there (Theorems NE, NV, NT with `e = 2`, NQ). **So every pure top is classified.** `D∞(H) = span{1, H}` except for the strips of Theorem P⁺ and the families K1, K1′, K2, K1+K2, K3 and K4, whose cores are the exact spans listed in §6.8.
+The non-affine cubic phase, which P005 excludes, is settled as well: `D∞(H) = span{1, H}` there (Theorems NE, NV, NT with `e = 2`, NQ). **So every pure top is classified.** `D∞(H) = span{1, H}` except for the strips of Theorem P⁺ and the families K1, K1′, K2, K1+K2, K3 and K4, whose cores are the exact spans listed in §6.18.
 
 - **[TE]** The checker computes the level-`K` rows itself, as exact polynomials in `(N, B, s, K)`, using a monomial calculus with polynomial exponents. Against these it checks:
   - the proportionality of the rows with `r ≥ 1`;
@@ -1165,27 +1469,27 @@ The non-affine cubic phase, which P005 excludes, is settled as well: `D∞(H) = 
 - sends higher-shear Hamiltonians with linear `b` to the proved route `RS`;
 - sends perfect-power transverse tops with `2 ≤ k ≠ s` (outside K3) to the proved route `TP`.
 
-### 6.13 Context (literature check, preliminary)
+### 6.27 Context (literature check, preliminary)
 
-A first literature check located the following. No priority is claimed for any statement in §§6.8–6.12, and a careful reading of the primary sources is still pending.
+A first literature check located the following. No priority is claimed for any statement in §§6.18–6.12, and a careful reading of the primary sources is still pending.
 
 - **All observables versus one sector.** D. Robert, *When Poisson and Moyal brackets are equal?* (arXiv:2207.08798), shows the following. If the Moyal and Poisson brackets of `H` agree with every Schwartz observable, then `H` is a polynomial of degree at most 2. `D∞(H)` asks a different question with different quantifiers: what is the largest observable sector with exact agreement along the whole Hamiltonian flow, for a fixed nonlinear `H`. Robert's theorem is the statement that this sector is everything only when `H` is quadratic.
 - **Nonlinear canonical transformations in Weyl quantization.** Weyl quantization has a restricted covariance under some nonlinear canonical transformations; see arXiv:quant-ph/0011076 and arXiv:quant-ph/0605236. Transforming the star product to new coordinates makes observables transform classically (Błaszak–Domański, arXiv:1208.2835). A coordinate change in the Moyal product was worked out to third order in arXiv:hep-th/0007072.
 
   Theorem GG is an explicit closed form of this phenomenon for triangular maps `(q, p) ↦ (q, p + w(q))`. The gauge operator is `S_t = exp(Σ t^{2n}w^{(2n)}(Q)∂_P^{2n+1}/(2n+1)!)`. What the present work uses it for is new relative to the sources checked: reading off exact sectors, the constant-coefficient criterion `deg w ≤ 2`, and the third-gate formula.
-- **The Gelfand–Fuchs cocycle.** The cocycle on vector fields of the line is classical; for background see e.g. arXiv:math/0502372. Its density appears in §6.9 as the Witt part of the cubic-phase obstruction. The search found no source that connects it to exactness of Moyal evolution.
+- **The Gelfand–Fuchs cocycle.** The cocycle on vector fields of the line is classical; for background see e.g. arXiv:math/0502372. An expression of the same shape appears in §6.19 as the Witt part of the cubic-phase obstruction; as §6.19 records, there it is a total derivative, and no nontrivial scalar class is claimed. The search found no source that connects it to exactness of Moyal evolution.
 
 These references come from a first search. Before any external positioning they need to be read in full, especially quant-ph/0605236 and hep-th/0007072.
 
-### 6.4 The decision procedure and what remains open
+### 6.28 The decision procedure and what remains open
 
 `check_two_root.py` (`two-root-perturbation-v1`) decides, for any rational `H` with a two-root top:
 - it recomputes the top type from a verified square-free decomposition;
 - it solves for the translation `τ` exactly and tests the normal forms;
 - it reports the core, the active part, and whether the answer is proved or conjectural. The proved routes are:
   - Theorems U, P⁺, Q, Q′, B, NE and T;
-  - K1, K1′, K2, K1+K2, K3 and K4 (§6.14);
-  - RS, NA, NE, NB, NT, NV, NQ, TP, TE and the affine cubic phase (§§6.9–6.14).
+  - K1, K1′, K2, K1+K2, K3 and K4 (§6.26);
+  - RS, NA, NE, NB, NT, NV, NQ, TP, TE and the affine cubic phase (§§6.19–6.14).
 
 Enveloped examples are `results/hamiltonian/tworoot_*.json` and `binomial_*.json`.
 
@@ -1194,7 +1498,7 @@ The tests generate random members of every route and random affine changes of co
 **Conjecture (two-root tops), status.** As originally stated, the conjecture says: let `H_d` be pure, near or balanced, and suppose `H` has none of the structures of Theorem P⁺; then `D∞(H) = span{1, H}`.
 - **Balanced tops:** true, by Theorem B (§6.5).
 - **Near tops:** true, by Theorem NE (§6.7).
-- **Pure tops:** false. The counterexample `(q³ + p)²` and the triangular families K1, K1′, K2, K3 are in §6.8. The corrected statement P004 is in turn false as stated, because of the extended K3 (§6.14). The current statement is Conjecture P005.
+- **Pure tops:** false. The counterexample `(q³ + p)²` and the triangular families K1, K1′, K2, K3 are in §6.18. The corrected statement P004 is in turn false as stated, because of the extended K3 (§6.26). The current statement is Conjecture P005.
 
 **Where the pure-top classification stands.** Write the top in coordinates `(ℓ, m)`. Let `s` be the `m`-degree and `φ` the transverse top. When `φ` is constant, write `h` and `w` for the triangular normal form.
 
@@ -1202,7 +1506,7 @@ Proved:
 - `s ≤ 1` (Theorem P⁺).
 - `deg φ ≥ 2` and not a perfect power (Theorem T).
 - `φ = c(ℓ+γ)ᵏ`, any `k ≥ 1`: Theorem TP for `2 ≤ k ≠ s`, Theorem TE for `k ∈ {1, s}`. This includes the exact core of the extended K3.
-- `φ` constant, with `h` affine in `Q`: the whole shear phase diagram of §6.11, including linear `b` (Theorems K1P and LB).
+- `φ` constant, with `h` affine in `Q`: the whole shear phase diagram of §6.24, including linear `b` (Theorems K1P and LB).
 - K2 and K1+K2 are exact (Theorem K2U).
 - `φ` constant, with `h` non-affine: every first edge above the slope threshold (Theorems NA and NE), every edge at the threshold for `deg w ≥ 3` (Theorem NT), every edge below the threshold and every flat-lower-terms top (Theorem NV), and the whole `m`-degree-2 range `deg r ≥ 3` (Theorems NA and NB).
   For `s ≥ 3` this covers every non-affine normal form. A non-affine `h` has `s − 1 − α > 0` automatically, and every slope is above, at or below the threshold. The cubic-phase threshold is the case `e = 2` of Theorem NT, and cubic-phase first edges that are linear in `Q` are Theorem NQ.
@@ -1211,7 +1515,7 @@ Proved:
 Open, but supported by direct computation and top-problem solutions:
 - nothing. The non-affine cubic phase is also settled: Theorems NE, NV, NT (`e = 2`) and NQ.
 
-**Conjecture P005 is therefore proved, and so is its cubic-phase complement** (§6.14, Corollary after Theorem TE; Theorems NT with `e = 2` and NQ). The pure-top classification is complete.
+**Conjecture P005 is therefore proved, and so is its cubic-phase complement** (§6.26, Corollary after Theorem TE; Theorems NT with `e = 2` and NQ). The pure-top classification is complete.
 
 With §5 this gives an unconditional statement of when **active** exact dynamics survives a lower-order perturbation of a two-root top:
 - three or more roots in the top: never (proved);
@@ -1219,19 +1523,7 @@ With §5 this gives an unconditional statement of when **active** exact dynamics
 - near top: an infinite active sector exactly when `H` is affine in `m` (proved, Theorems P⁺ and NE);
 - pure top:
   - an infinite active sector in the affine or strip structures of Theorem P⁺ (proved);
-  - an infinite active sector also in the triangular family K1 with `λ ≠ 0`, e.g. `(q² + p)³ + q` (proved, §6.8);
+  - an infinite active sector also in the triangular family K1 with `λ ≠ 0`, e.g. `(q² + p)³ + q` (proved, §6.18);
   - a nonzero finite active part in K1′, K2, K3 and K4 (all exact);
   - none otherwise (proved for Q′, T, RS, NA and the affine cubic phase; conjectural in the open regions);
 - balanced top: never (proved, Theorem B).
-
-## 4. Commands
-
-```bash
-python3 -B extensions/hamiltonian/weyl_groebner.py discover "q*p^3+q^2+p^2" --output R.json
-python3 -B extensions/hamiltonian/weyl_kernel.py R.json --output K.json
-python3 -B extensions/hamiltonian/check_weyl_kernel.py K.json
-python3 -B extensions/envelope.py check results/hamiltonian/qp3_plus_q2_plus_p2.json.gz
-python3 -B -m unittest test_weyl_discovery      # from extensions/hamiltonian
-```
-
-Measured on the development container: `qp³+q²+p²` takes about 80 s for discovery and about 2 min for classification, most of it replaying the 13-generator receipt. The other rows take seconds.

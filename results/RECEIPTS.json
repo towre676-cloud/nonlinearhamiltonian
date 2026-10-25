@@ -234,11 +234,89 @@
    }
   },
   {
+   "file": "results/hamiltonian/affine_cubic_K1prime_five.json",
+   "sha256": "930c17658725ef18a86a949fe096d356447bb3518986030ece0062add9cadb62",
+   "witness_kind": "affine-cubic-phase-complete",
+   "replay": "python3 -B extensions/envelope.py check results/hamiltonian/affine_cubic_K1prime_five.json",
+   "producer_seconds": 0.0,
+   "summary": {
+    "status": "passed",
+    "dimension": 5,
+    "case": "K1-prime full core",
+    "claim": "full polynomial dynamic core"
+   }
+  },
+  {
+   "file": "results/hamiltonian/affine_cubic_K1prime_four.json",
+   "sha256": "7aa34902d7d049f57817b9c2bd014b9ba4133e522a219fd43fea12e045aafb9d",
+   "witness_kind": "affine-cubic-phase-complete",
+   "replay": "python3 -B extensions/envelope.py check results/hamiltonian/affine_cubic_K1prime_four.json",
+   "producer_seconds": 0.0,
+   "summary": {
+    "status": "passed",
+    "dimension": 4,
+    "case": "K1-prime full core",
+    "claim": "full polynomial dynamic core"
+   }
+  },
+  {
+   "file": "results/hamiltonian/affine_cubic_K1prime_six.json",
+   "sha256": "5a2a8d462da7cd1cc5800f121689bc5cf6da6ddcfd4af465f7a8adf7d71e6673",
+   "witness_kind": "affine-cubic-phase-complete",
+   "replay": "python3 -B extensions/envelope.py check results/hamiltonian/affine_cubic_K1prime_six.json",
+   "producer_seconds": 0.0,
+   "summary": {
+    "status": "passed",
+    "dimension": 6,
+    "case": "K1-prime full core",
+    "claim": "full polynomial dynamic core"
+   }
+  },
+  {
+   "file": "results/hamiltonian/affine_cubic_K4_full.json",
+   "sha256": "46723eac2aeebc8fd2d2be483256e29faba6e0bc412b0a1c522aac71495a4d88",
+   "witness_kind": "affine-cubic-phase-complete",
+   "replay": "python3 -B extensions/envelope.py check results/hamiltonian/affine_cubic_K4_full.json",
+   "producer_seconds": 0.0,
+   "summary": {
+    "status": "passed",
+    "dimension": 3,
+    "case": "K4 full core",
+    "claim": "full polynomial dynamic core"
+   }
+  },
+  {
+   "file": "results/hamiltonian/affine_cubic_hidden_chart.json",
+   "sha256": "c449c268e43a3685ee1534df7aa7414160574f067429b4b9085b6b04d44e8485",
+   "witness_kind": "affine-cubic-phase-complete",
+   "replay": "python3 -B extensions/envelope.py check results/hamiltonian/affine_cubic_hidden_chart.json",
+   "producer_seconds": 0.0,
+   "summary": {
+    "status": "passed",
+    "dimension": 2,
+    "case": "nonlinear vector-field coefficient",
+    "claim": "full polynomial dynamic core"
+   }
+  },
+  {
+   "file": "results/hamiltonian/affine_cubic_low_four.json",
+   "sha256": "2ed676774754ff62288bff10991ed30e0f0688172a2f5d301027fd80a304057d",
+   "witness_kind": "affine-cubic-phase-complete",
+   "replay": "python3 -B extensions/envelope.py check results/hamiltonian/affine_cubic_low_four.json",
+   "producer_seconds": 0.0,
+   "summary": {
+    "status": "passed",
+    "dimension": 4,
+    "case": "quadratic coefficient with low density",
+    "claim": "full polynomial dynamic core"
+   }
+  },
+  {
    "file": "results/hamiltonian/balanced_top_theorem.json",
    "sha256": "566d7037094d99893f0da42ef6be4594a305a554d3c13a245d4a1812d0b322ae",
    "witness_kind": "balanced-top",
    "replay": "python3 -B extensions/envelope.py check results/hamiltonian/balanced_top_theorem.json",
-   "producer_seconds": 0.02,
+   "producer_seconds": 0.01,
    "summary": {
     "status": "passed",
     "identities": [
@@ -256,7 +334,7 @@
    "sha256": "cc6974e0406a71c29aa3a5a076f25a1b6d733d8d1b5d1a62c9432a6faa3e72dc",
    "witness_kind": "binary-static",
    "replay": "python3 -B extensions/envelope.py check results/hamiltonian/binary_static_d5.json",
-   "producer_seconds": 2.96,
+   "producer_seconds": 2.25,
    "summary": {
     "status": "passed",
     "degree": 5,
@@ -279,7 +357,7 @@
    "sha256": "1de10350f40f04e7ce31b8638105b219730386c2837c1d0d4614353ad5f88e5b",
    "witness_kind": "binary-static",
    "replay": "python3 -B extensions/envelope.py check results/hamiltonian/binary_static_d6.json.gz",
-   "producer_seconds": 39.78,
+   "producer_seconds": 29.26,
    "summary": {
     "status": "passed",
     "degree": 6,
@@ -304,7 +382,7 @@
    "sha256": "034f692ee1eb42de332fe7957aa7194bee70cfcb96ef1ed10bf44b30d43a545a",
    "witness_kind": "weyl-polynomial-kernel",
    "replay": "python3 -B extensions/envelope.py check results/hamiltonian/binomial_q4_plus_p2.json",
-   "producer_seconds": 1.26,
+   "producer_seconds": 0.79,
    "summary": {
     "status": "passed",
     "kind": "finite_support",
@@ -320,7 +398,7 @@
    "sha256": "75bc78fabd0135381c86404e9ca102128eface5cfa3c64770b0e0f7b4dd9f4fe",
    "witness_kind": "weyl-polynomial-kernel",
    "replay": "python3 -B extensions/envelope.py check results/hamiltonian/binomial_q5_plus_p2.json",
-   "producer_seconds": 8.95,
+   "producer_seconds": 5.31,
    "summary": {
     "status": "passed",
     "kind": "finite_support",
@@ -336,7 +414,7 @@
    "sha256": "6c0ecb1b7d225ebf9101fc9baf33f047fbdea4f02681b9ae45afd92ac16ca930",
    "witness_kind": "weyl-polynomial-kernel",
    "replay": "python3 -B extensions/envelope.py check results/hamiltonian/binomial_qp2_plus_q2.json",
-   "producer_seconds": 0.67,
+   "producer_seconds": 0.43,
    "summary": {
     "status": "passed",
     "kind": "degree_bound",
@@ -357,7 +435,7 @@
    "sha256": "6e43ecd75520985638548c2bd09ff853fc9ffeebf2e0e133a43378c664ba9a69",
    "witness_kind": "weyl-polynomial-kernel",
    "replay": "python3 -B extensions/envelope.py check results/hamiltonian/binomial_qp4_plus_q2.json.gz",
-   "producer_seconds": 137.65,
+   "producer_seconds": 84.05,
    "summary": {
     "status": "passed",
     "kind": "finite_support",
@@ -373,7 +451,7 @@
    "sha256": "534faca9032f74b9272de092d65c355c2dc8d88007d83890d8f5d58726148376",
    "witness_kind": "cubic-phase",
    "replay": "python3 -B extensions/envelope.py check results/hamiltonian/cubic_phase_theorem.json",
-   "producer_seconds": 127.25,
+   "producer_seconds": 77.11,
    "summary": {
     "status": "passed",
     "identities": [
@@ -385,38 +463,6 @@
      "W"
     ],
     "theorem": "cubic-phase gauge form; affine-sector criterion with the Witt cocycle; Lemma W; family K4; Theorem A instances"
-   }
-  },
-  {
-   "file": "results/hamiltonian/gauge_shear_theorem.json",
-   "sha256": "2758e97491b016faf4d4d2a1a93a6ddab2bebf6f8ea386fab447a805a94eedcc",
-   "witness_kind": "gauge-shear",
-   "replay": "python3 -B extensions/envelope.py check results/hamiltonian/gauge_shear_theorem.json",
-   "producer_seconds": 495.26,
-   "summary": {
-    "status": "passed",
-    "identities": [
-     "AE",
-     "BE",
-     "C2",
-     "CT",
-     "GE",
-     "GG",
-     "K1P",
-     "K1c",
-     "K2U",
-     "LB",
-     "NA",
-     "NQ",
-     "NT",
-     "NV",
-     "NV32",
-     "T3",
-     "TE",
-     "TG",
-     "TP"
-    ],
-    "theorem": "gauge form for every shear; third-gate formula; higher-shear affine rigidity; Q-degree containment (b constant, quadratic, degree >= 3; b linear with f >= 4 in the cubic phase); K1, K1' (f >= 4) and K4 exact; non-affine binomial edges collapse (Theorem NA), general first edges (NE), the boundary edge (NB), threshold edges with deg w >= 3 (NT), edges below the threshold and flat lower terms (NV); K2 and K1+K2 exact (K2U), linear b for higher shears (LB), K1' with f = 3 (K1P), perfect-power transverse tops and the extended K3 (TP), transverse tops l^k with k in {1, s} (TE), cubic-phase threshold edges (CT) and Q-linear first edges (NQ)"
    }
   },
   {
@@ -444,7 +490,7 @@
    "sha256": "1d8d97a8664aace21e72224db1585fa1c4c0d47101add73788b4b77c764dd8ec",
    "witness_kind": "near-edge",
    "replay": "python3 -B extensions/envelope.py check results/hamiltonian/near_edge_theorem.json",
-   "producer_seconds": 0.66,
+   "producer_seconds": 0.53,
    "summary": {
     "status": "passed",
     "identities": [
@@ -463,7 +509,7 @@
    "sha256": "81d544b5ad07acdd81207e1fa2fb26a6af789a3806535391d213f121fcc551e7",
    "witness_kind": "weyl-polynomial-kernel",
    "replay": "python3 -B extensions/envelope.py check results/hamiltonian/p3_plus_q2.json",
-   "producer_seconds": 0.57,
+   "producer_seconds": 0.37,
    "summary": {
     "status": "passed",
     "kind": "finite_support",
@@ -479,7 +525,7 @@
    "sha256": "27891d689f15bb1f120cc0dc9f94e8959bfe5572a9b4b2483bcb7b49a739b300",
    "witness_kind": "weyl-polynomial-kernel",
    "replay": "python3 -B extensions/envelope.py check results/hamiltonian/q2p2.json",
-   "producer_seconds": 0.08,
+   "producer_seconds": 0.05,
    "summary": {
     "status": "passed",
     "kind": "monomial_span",
@@ -494,7 +540,7 @@
    "sha256": "6d156ab553bfd2e0553630585cbe83af263ebf07789904a853d3a60d6f1ee11a",
    "witness_kind": "weyl-polynomial-kernel",
    "replay": "python3 -B extensions/envelope.py check results/hamiltonian/q2p3.json",
-   "producer_seconds": 1.03,
+   "producer_seconds": 0.66,
    "summary": {
     "status": "passed",
     "kind": "monomial_span",
@@ -528,7 +574,7 @@
    "sha256": "0dcfde7d3f049402198fd5ec3a426011b5b7ff733963d1ba39f7dd92bd329643",
    "witness_kind": "weyl-polynomial-kernel",
    "replay": "python3 -B extensions/envelope.py check results/hamiltonian/q3p3.json",
-   "producer_seconds": 2.01,
+   "producer_seconds": 1.25,
    "summary": {
     "status": "passed",
     "kind": "monomial_span",
@@ -543,7 +589,7 @@
    "sha256": "35d808b42d0ee44d54dd3347fdd556a2d1f7b3e0f19371b562d57f4583a8ed91",
    "witness_kind": "weyl-polynomial-kernel",
    "replay": "python3 -B extensions/envelope.py check results/hamiltonian/qp3.json",
-   "producer_seconds": 0.01,
+   "producer_seconds": 0.0,
    "summary": {
     "status": "passed",
     "kind": "monomial_span",
@@ -559,7 +605,7 @@
    "sha256": "e4542034edbb319e0c62cf27c74f3400e81ef8b9867a095f39c29c2a557eadf3",
    "witness_kind": "weyl-polynomial-kernel",
    "replay": "python3 -B extensions/envelope.py check results/hamiltonian/qp3_plus_p2.json",
-   "producer_seconds": 0.03,
+   "producer_seconds": 0.02,
    "summary": {
     "status": "passed",
     "kind": "monomial_span",
@@ -575,7 +621,7 @@
    "sha256": "63178c67289d8207358cd0e4f173bf4629e4440776b5ee297afe0eaf3ee9265b",
    "witness_kind": "weyl-polynomial-kernel",
    "replay": "python3 -B extensions/envelope.py check results/hamiltonian/qp3_plus_q2.json",
-   "producer_seconds": 21.58,
+   "producer_seconds": 12.92,
    "summary": {
     "status": "passed",
     "kind": "finite_support",
@@ -591,7 +637,7 @@
    "sha256": "ef885cfa7dc83a780d0b420d6daf7c33c7b6039ad0714876199838f7905587c3",
    "witness_kind": "weyl-polynomial-kernel",
    "replay": "python3 -B extensions/envelope.py check results/hamiltonian/qp3_plus_q2_plus_p2.json.gz",
-   "producer_seconds": 328.71,
+   "producer_seconds": 215.25,
    "summary": {
     "status": "passed",
     "kind": "degree_bound",
@@ -633,7 +679,7 @@
    "sha256": "d4d56c5d421ba4fbde00d767f862860009c9261a10c035e6ace59c21475e8ad5",
    "witness_kind": "quartic-uniform",
    "replay": "python3 -B extensions/envelope.py check results/hamiltonian/quartic_all_degrees_theorem.json",
-   "producer_seconds": 146.3,
+   "producer_seconds": 94.46,
    "summary": {
     "status": "passed",
     "theorem": "D_inf(H) = span{1, H} for every binary quartic with distinct roots",
@@ -778,7 +824,7 @@
    "sha256": "153a8afc2f55549d58f77f6bd98c26cbf641f5ae6ed7db92ab6b797b1b3e5de1",
    "witness_kind": "weyl-polynomial-kernel",
    "replay": "python3 -B extensions/envelope.py check results/hamiltonian/quintic_q4p.json",
-   "producer_seconds": 0.04,
+   "producer_seconds": 0.03,
    "summary": {
     "status": "passed",
     "kind": "monomial_span",
@@ -804,6 +850,105 @@
      "p^2*Q[q]"
     ],
     "dimension": "infinite"
+   }
+  },
+  {
+   "file": "results/hamiltonian/restoring_composition_degree_3.json",
+   "sha256": "bbb01c666737b462230d8fd6df325e992a19c71b0ca63d2cb6dd4fe2af4423b2",
+   "witness_kind": "two-root-perturbation",
+   "replay": "python3 -B extensions/envelope.py check results/hamiltonian/restoring_composition_degree_3.json",
+   "producer_seconds": 0.01,
+   "summary": {
+    "status": "passed",
+    "degree": 6,
+    "top": "pure",
+    "route": "HR",
+    "proved": true,
+    "core": "span{1, H}",
+    "dimension": 2,
+    "active_part": "0",
+    "third_gate_depth": 3,
+    "degree_composition": 3,
+    "root_coordinate_witness": {
+     "c": "-2/3",
+     "lambda": "3/5",
+     "epsilon": "7"
+    },
+    "basis": [
+     {
+      "0,0": "1"
+     },
+     {
+      "0,1": "-2",
+      "0,3": "1",
+      "1,0": "33/5",
+      "1,2": "3/5",
+      "2,0": "29/15",
+      "2,1": "3/25",
+      "2,2": "-2",
+      "3,0": "1/125",
+      "3,1": "-4/5",
+      "4,0": "-2/25",
+      "4,1": "4/3",
+      "5,0": "4/15",
+      "6,0": "-8/27"
+     }
+    ]
+   }
+  },
+  {
+   "file": "results/hamiltonian/restoring_composition_degree_5.json",
+   "sha256": "0b41cc1250f9fc9199d171f2c26807a303cd0200546a9e230192256936426107",
+   "witness_kind": "two-root-perturbation",
+   "replay": "python3 -B extensions/envelope.py check results/hamiltonian/restoring_composition_degree_5.json",
+   "producer_seconds": 0.01,
+   "summary": {
+    "status": "passed",
+    "degree": 10,
+    "top": "pure",
+    "route": "HR",
+    "proved": true,
+    "core": "span{1, H}",
+    "dimension": 2,
+    "active_part": "0",
+    "third_gate_depth": 3,
+    "degree_composition": 5,
+    "root_coordinate_witness": {
+     "c": "-2/3",
+     "lambda": "3/5",
+     "epsilon": "7"
+    },
+    "basis": [
+     {
+      "0,0": "1"
+     },
+     {
+      "0,1": "-2",
+      "0,5": "1",
+      "1,0": "33/5",
+      "1,4": "1",
+      "2,0": "29/15",
+      "2,3": "2/5",
+      "2,4": "-10/3",
+      "3,2": "2/25",
+      "3,3": "-8/3",
+      "4,1": "1/125",
+      "4,2": "-4/5",
+      "4,3": "40/9",
+      "5,0": "1/3125",
+      "5,1": "-8/75",
+      "5,2": "8/3",
+      "6,0": "-2/375",
+      "6,1": "8/15",
+      "6,2": "-80/27",
+      "7,0": "8/225",
+      "7,1": "-32/27",
+      "8,0": "-16/135",
+      "8,1": "80/81",
+      "9,0": "16/81",
+      "10,0": "-32/243"
+     }
+    ]
    }
   },
   {
@@ -924,7 +1069,7 @@
    "sha256": "c38f292ca4069cd6a080e57c60d0570b7e91fafe71a7ebc3dce268877309a94e",
    "witness_kind": "weyl-polynomial-kernel",
    "replay": "python3 -B extensions/envelope.py check results/hamiltonian/sextic_q4p2.json",
-   "producer_seconds": 2.12,
+   "producer_seconds": 1.72,
    "summary": {
     "status": "passed",
     "kind": "monomial_span",
@@ -941,7 +1086,7 @@
    "sha256": "be134e389570ec0c2a854d19057ecf94b1746ea7098ea3ce7f9832c79e37f91f",
    "witness_kind": "weyl-polynomial-kernel",
    "replay": "python3 -B extensions/envelope.py check results/hamiltonian/sextic_q5p.json",
-   "producer_seconds": 0.08,
+   "producer_seconds": 0.06,
    "summary": {
     "status": "passed",
     "kind": "monomial_span",
@@ -974,7 +1119,7 @@
    "sha256": "2b3c89184ff0efca749cc5a884afd4a9afccbc7a23c0df8e0e782b8ae3af1277",
    "witness_kind": "simple-root-rigidity",
    "replay": "python3 -B extensions/envelope.py check results/hamiltonian/simple_root_rigidity.json",
-   "producer_seconds": 128.26,
+   "producer_seconds": 92.38,
    "summary": {
     "status": "passed",
     "N0": {
@@ -1074,7 +1219,7 @@
    "sha256": "22856d95c459ec905344c1129cb9f2bbe9176bf6185cef2c46a7c38c04f555e3",
    "witness_kind": "weyl-top-reduction",
    "replay": "python3 -B extensions/envelope.py check results/hamiltonian/six_a1_b2_c3_e1.json",
-   "producer_seconds": 29.51,
+   "producer_seconds": 17.38,
    "summary": {
     "status": "passed",
     "claim": "finite",
@@ -1102,7 +1247,7 @@
    "sha256": "6b1413ead18dd6dd9b655a130f86c5ea449812aea821b51dae9baa35e1b75e04",
    "witness_kind": "weyl-top-reduction",
    "replay": "python3 -B extensions/envelope.py check results/hamiltonian/six_a_minus2_b_half_d5.json",
-   "producer_seconds": 27.79,
+   "producer_seconds": 16.79,
    "summary": {
     "status": "passed",
     "claim": "finite",
@@ -1130,7 +1275,7 @@
    "sha256": "e2c2e83c928e74c1a679a1558c643837533d349b4df084c5e2daea3030f07470",
    "witness_kind": "triangular-pure",
    "replay": "python3 -B extensions/envelope.py check results/hamiltonian/triangular_K1K2_q2p_squared.json",
-   "producer_seconds": 0.02,
+   "producer_seconds": 0.01,
    "summary": {
     "status": "passed",
     "family": "K1+K2",
@@ -1144,7 +1289,7 @@
    "sha256": "8bb748b7eb6c1dfbe76821c3f5826174d3bd410e0b341fa3298e8b89ade718b4",
    "witness_kind": "triangular-pure",
    "replay": "python3 -B extensions/envelope.py check results/hamiltonian/triangular_K1_q2p_cubed_plus_q.json",
-   "producer_seconds": 0.02,
+   "producer_seconds": 0.01,
    "summary": {
     "status": "passed",
     "family": "K1",
@@ -1158,7 +1303,7 @@
    "sha256": "61dec9eb99a6bc2405bfdc8d8f064f775c2c92d00219353f7ae8e3cdf6c7b9f6",
    "witness_kind": "triangular-pure",
    "replay": "python3 -B extensions/envelope.py check results/hamiltonian/triangular_K2_q3p_squared.json",
-   "producer_seconds": 0.01,
+   "producer_seconds": 0.0,
    "summary": {
     "status": "passed",
     "family": "K2",
@@ -1172,7 +1317,7 @@
    "sha256": "56029d5e58aa0685177f0bec4a17b4f49d38b9f4ff1f795824e3f9c01359d342",
    "witness_kind": "triangular-pure",
    "replay": "python3 -B extensions/envelope.py check results/hamiltonian/triangular_K3_cubic_twist.json",
-   "producer_seconds": 0.01,
+   "producer_seconds": 0.0,
    "summary": {
     "status": "passed",
     "family": "K3",
@@ -1214,7 +1359,7 @@
    "sha256": "9c1e3df602718c08f3f07cdb8805ea9c7a0f3fa17c48dde8d2c95160462cdcb7",
    "witness_kind": "triangular-pure",
    "replay": "python3 -B extensions/envelope.py check results/hamiltonian/triangular_theorem.json",
-   "producer_seconds": 2.5,
+   "producer_seconds": 1.49,
    "summary": {
     "status": "passed",
     "identities": [
@@ -1345,7 +1490,7 @@
   },
   {
    "file": "results/hamiltonian/tworoot_pure_triangular_K2.json",
-   "sha256": "8e8819970056698c77eb76404bb2459ba569ccbcc08e486330ef592954fc293d",
+   "sha256": "f15a7ab97735d546273505c9633e38788cec9be95cee84a025a0c988fd12428a",
    "witness_kind": "two-root-perturbation",
    "replay": "python3 -B extensions/envelope.py check results/hamiltonian/tworoot_pure_triangular_K2.json",
    "producer_seconds": 0.0,
@@ -1353,45 +1498,23 @@
     "status": "passed",
     "degree": 6,
     "top": "pure",
-    "route": "K2",
+    "route": "SS",
     "proved": true,
-    "core": "tau*K[Q,P]_{<=2}",
-    "contains_proved": true,
-    "generators": [
-     {
-      "0,0": "1"
-     },
-     {
-      "1,0": "1"
-     },
-     {
-      "2,0": "1"
-     },
-     {
-      "0,1": "1",
-      "3,0": "1"
-     },
-     {
-      "1,1": "1",
-      "4,0": "1"
-     },
-     {
-      "0,2": "1",
-      "3,1": "2",
-      "6,0": "1"
-     }
-    ],
-    "degrees": [
-     0,
-     1,
-     2,
-     3,
-     4,
-     6
-    ],
-    "active_part": "nonzero (contains an active element)",
-    "w": {
-     "3": "1"
+    "core": "span{1, l, Q, l^2, lQ, Q^2}",
+    "dimension": 6,
+    "active_part": "finite nonzero",
+    "Q": {
+     "0,1": "1",
+     "3,0": "1"
+    },
+    "l": {
+     "1,0": "1"
+    },
+    "root_coordinate_witness": {
+     "A": "1",
+     "B": "0",
+     "epsilon": "0",
+     "constant": "0"
     }
    }
   },
@@ -1502,7 +1625,7 @@
    "sha256": "3adb557ca11313caaecfc9fde8f34390b23fc84c52dfb93e6f211a6860e43045",
    "witness_kind": "dgla-lifting",
    "replay": "python3 -B extensions/envelope.py check results/structure/heisenberg_lift_order4.json",
-   "producer_seconds": 6.02,
+   "producer_seconds": 3.36,
    "summary": {
     "status": "passed",
     "claim": "lifted",
@@ -1514,7 +1637,7 @@
    "sha256": "aaa660e5b0c09bc7dc72f9edae5c4b8b80fa1083fc4ff2adb4c629438f3e8bad",
    "witness_kind": "dgla-lifting",
    "replay": "python3 -B extensions/envelope.py check results/structure/heisenberg_order2_obstruction.json",
-   "producer_seconds": 6.08,
+   "producer_seconds": 3.31,
    "summary": {
     "status": "passed",
     "claim": "obstructed",
@@ -1527,7 +1650,7 @@
    "sha256": "282a180e5de9be3bc51cc8a309d617da5bff275d6e4c9e5ccb2d73dd54e6f4a0",
    "witness_kind": "dgla-lifting",
    "replay": "python3 -B extensions/envelope.py check results/structure/heisenberg_order3_jet_obstruction.json",
-   "producer_seconds": 5.83,
+   "producer_seconds": 4.0,
    "summary": {
     "status": "passed",
     "claim": "obstructed",

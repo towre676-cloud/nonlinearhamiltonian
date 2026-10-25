@@ -129,6 +129,11 @@ def _cubic_phase(model, payload):
 
 def _gauge(model, payload):
     return _load('hamiltonian/check_gauge.py', 'mx_check_gauge').check(payload)
+def _affine_cubic_complete(model, payload):
+    if model != payload.get('hamiltonian'):
+        raise ValueError('envelope model is not the classified Hamiltonian')
+    return _load('../research/core_overlap/cubic_phase_classification.py',
+                 'mx_affine_cubic_complete').check(payload)
 
 
 def _quartic_uniform(model, payload):
@@ -175,6 +180,7 @@ KINDS = {
     'triangular-pure': ('format', 'triangular-pure-v1', _triangular),
     'cubic-phase': ('format', 'cubic-phase-v1', _cubic_phase),
     'gauge-shear': ('format', 'gauge-shear-v1', _gauge),
+    'affine-cubic-phase-complete': ('format', 'affine-cubic-phase-complete-v1', _affine_cubic_complete),
     'rational-contraction': ('schema', 'rational-contraction-v1', _contraction),
     'integer-cohomology': ('format', 'integer-smith-v1', _smith),
     'fundamental-unit': ('format', 'fundamental-unit-v1', _units),

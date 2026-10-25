@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Triangular structures for pure tops (triangular-pure-v1). See DYNAMIC_CORE_RESULTS.md section 6.8.
+"""Triangular structures for pure tops (triangular-pure-v1). See DYNAMIC_CORE_RESULTS.md section 6.18.
 
 Pure tops c l^d contain Hamiltonians that are simple in triangular coordinates
 (Q, P) = (q, p + w(q)): the map is symplectic but not affine, so the flat gates are not
@@ -33,12 +33,11 @@ Theorem K (containments; P = p + w(q), Q = q, all exact):
        Q r of degree <= 2 (k = 1, r = rational, H polynomial).
      Then span{1, G, H} (k >= 2), respectively span{1, Q, G, H} (k = 1), lies in D_inf(H).
      Proof: G is affine in m with linear m-coefficient, so T_j(G, f) = v^(j) d_m^j f for j >= 3,
-     which vanishes on H (m-degree 2). {H, G} = (k-2) c (H - r) + Q r' and {H, Q} = -2 c Q^(k-1) G
+     which vanishes on H (m-degree 2). {H, G} = (k-2) (H - r) + Q r' and {H, Q} = -2 c Q^(k-1) G
      close the span under the conditions on r.                             [K3: grid]
 
-K4 (deg w = 2, normal form H = A P^4 + (deg <= 2 in P) + mu Q (P - r)(P + 3r)): span{1, G, H} with
-     G = A (P - r)^3 + c2 (P - r) + mu Q (P - r); proof and checks in check_cubic_phase.py.
-K1' (deg w = 2, H = F(P) + lam Q + mu Q P, mu != 0): span{1, P, P^2, H}, together with Q if
+K1' (deg w = 2, H = F(P) + lam Q + mu Q P, mu != 0, deg F >= 3,
+     normalized so the P^(deg F-1) coefficient of F is zero): span{1, P, P^2, H}, together with Q if
      deg F = 3, and with P H if moreover lam = 0, lies in D_inf(H).
      Proof: Theorem X with deg w = 2; the factor Q P absorbs one d_Q and one d_P, so every odd
      term of T_k(Q P, g) differentiates g in P three times, and vanishes for g in span{1, P, P^2}.
@@ -48,7 +47,7 @@ K1' (deg w = 2, H = F(P) + lam Q + mu Q P, mu != 0): span{1, P, P^2, H}, togethe
 Detection (detect) puts a pure-top H in coordinates (l, m), reads the m-degree s and the
 transverse top phi, and recognises the families; certify() records explicit generators, and
 check() re-verifies exactly that their span is D-invariant and killed by every gate (for K1 the
-tower K[P] is truncated at P^NMAX; K1 itself proves the full tower). Equality of the cores with
+tower K[P] is truncated at P^max(NMAX, deg F-1); K1 itself proves the full tower). Equality of the cores with
 these spans is proved for K1, K1', K2, K1+K2, K4 and K3 with k >= 3 (check_gauge.py) and verified
 by direct computation in the tests otherwise (conjecture P005 of the ledger). K3 includes the term
 beta G for k >= 3 (H = c Q^(k-2) G^2 + beta G + r).
@@ -359,6 +358,7 @@ def _k4(h):
     return G
 
 
+
 def detect(H, l):
     """Recognise K1, K2, K3 for a pure top with root form l. Returns None or a dict with the
     family, the generators (polynomials in q, p) and the conjectured core."""
@@ -388,13 +388,14 @@ def detect(H, l):
                        'degrees': sorted([0, 1, 2, e, e + 1, 2 * e]), 'proved': True}   # Theorem K2U
         elif e == 2 and tower:
             out = {'family': 'K1', 'core': 'K[P] + K Q', 'gens': [{(0, 0): F(1)}, {(1, 0): F(1)}] +
-                   [tri({(0, n): F(1)}, w) for n in range(1, NMAX + 1)],
+                   [tri({(0, n): F(1)}, w) for n in range(1, max(NMAX, s - 1) + 1)],
                    'degrees': [0, 1], 'tower_step': 2, 'tower_from': 1,
                    'proved': True}                      # equality: Theorem A + Lemma C (check_gauge.py)
         elif e == 2 and s == 4 and all(i <= 1 for (i, j) in h) and _k4(h) is not None:
-            # K4 (check_cubic_phase.py): h = A P^4 + (deg <= 2) + mu Q (P - r)(P + 3r)
-            gens = [{(0, 0): F(1)}, tri(_k4(h), w), Ht]
-            out = {'family': 'K4', 'core': 'span{1, G, H}', 'gens': gens, 'degrees': [0, 6, TR.degree(Ht)]}
+            G = tri(_k4(h), w)
+            gens = [{(0, 0): F(1)}, G, Ht]
+            out = {'family': 'K4', 'core': 'span{1, G, H}', 'gens': gens,
+                   'degrees': [0, TR.degree(G), TR.degree(Ht)]}
         elif e == 2 and all(i == 0 or (i, j) in ((1, 0), (1, 1)) for (i, j) in h):
             # K1': h = F(P) + lam Q + mu Q P with mu != 0 (s >= 3, so P^(s-1) is absent)
             lam = h.get((1, 0), F(0))
@@ -578,13 +579,24 @@ def core_dim(res, N):
 # ---- certificates -------------------------------------------------------------------------
 
 
+def detect_pure(H):
+    """Detect a containment independently of the full-core classifier."""
+    H = TR.tidy(H)
+    d = TR.degree(H)
+    forms = TR.top_forms(TR.part(H, d), d)
+    if d < 3 or len(forms) != 1 or len(forms[0]) != 2 or forms[0][1] != d:
+        raise ValueError('not a pure top of degree at least three')
+    result = detect(H, forms[0][0])
+    if result is None:
+        raise ValueError('not a triangular family')
+    return result
+
+
 def certify(H):
     H = TR.tidy(H)
-    res = TR.classify(H)
-    if res.get('route') not in ('K1', "K1'", 'K2', 'K1+K2', 'K3', 'K4'):
-        raise ValueError('not a triangular family')
-    cert = {'format': FORMAT, 'hamiltonian': TR.ser(H), 'family': res['route'], 'core': res['core'],
-            'generators': res['generators']}
+    res = detect_pure(H)
+    cert = {'format': FORMAT, 'hamiltonian': TR.ser(H), 'family': res['family'], 'core': res['core'],
+            'generators': [TR.ser(g) for g in res['gens']]}
     cert['result'] = check(cert)
     return cert
 
@@ -609,8 +621,8 @@ def check(cert=None):
                 'theorem': 'triangular transvectant formula; containments K1, K2, K3'}
     H = {tuple(map(int, k.split(','))): F(v) for k, v in cert['hamiltonian'].items()}
     gens = [{tuple(map(int, k.split(','))): F(v) for k, v in g.items()} for g in cert['generators']]
-    res = TR.classify(H)
-    if res.get('route') != cert.get('family') or res.get('core') != cert.get('core'):
+    res = detect_pure(H)
+    if res.get('family') != cert.get('family') or res.get('core') != cert.get('core'):
         raise ValueError('declared family differs from the recomputed one')
     if not span_ok(H, gens):
         raise ValueError('generators are not an invariant span killed by the gates')
@@ -619,7 +631,7 @@ def check(cert=None):
         raise ValueError('generators are dependent')
     if rank <= 2:
         raise ValueError('span does not exceed span{1, H}')
-    return {'status': 'passed', 'family': res['route'], 'core': res['core'],
+    return {'status': 'passed', 'family': res['family'], 'core': res['core'],
             'verified_dimension': len(gens), 'claim': 'contained in D_inf(H) (exact)'}
 
 

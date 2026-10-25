@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Gauge form of the triangular gates for every shear (gauge-shear-v1).
-See DYNAMIC_CORE_RESULTS.md section 6.10.
+See DYNAMIC_CORE_RESULTS.md sections 6.23-6.28.
 
 Notation as in check_triangular.py: tau(q, p) = (q, p + w(q)), Q = q, P = p + w(q), and M^tau_t(h, g)
 = sum_k t^k/k! T_k(h~, g~) o tau^-1, M^flat_t(h, g) = sum_a t^a/a! T^flat_a(h, g) in (Q, P).
@@ -136,7 +136,7 @@ f1, f2 of fixed sign); type 0 at level 4 by the T3 D g / T3 D^2 g eliminant, fre
 (negative at N = 1, positive for N >= 2). So every flat-lower-terms pure top (deg w <= 1, s >= 3) collapses.
                                                                                   [NV32: rows, eliminants, signs, instances]
 
-Upper bounds (section 6.14). K2U: for h = alpha P^2 + gamma Q^2 + lam Q + c the third gate is
+Upper bounds (section 6.26). K2U: for h = alpha P^2 + gamma Q^2 + lam Q + c the third gate is
 -6 alpha w'' g_PPQ + 2 alpha w''' P g_PPP; with the degree-preserving top part of D this confines the core to
 total degree <= 2 (K[P] + quadratics for deg w = 2, gamma = 0).                       [K2U: identity, instances]
 LB (higher shears, b linear): the top core of E = P^f + Q P (Q of weight f - 1) is span{1, E}: D0 = {E, .} has the

@@ -1,0 +1,174 @@
+{
+  "all_degree_proof": "shear_composition_complete.md, Theorem SCP",
+  "checks": {
+    "composition_instances": 27,
+    "direct_derivation_checks": 162,
+    "direct_third_gate_checks": 162,
+    "independent_pbw_operator_checks": 20,
+    "leading_monomial_checks": 240,
+    "leading_resonance_checks": 40,
+    "recognition_acceptances": 28,
+    "recognition_rejections": 88,
+    "sharp_test_checks": 162
+  },
+  "finite_box_kernels": [
+    {
+      "degree_P": 3,
+      "degree_bound_in_q_Q": 4,
+      "degree_u": 3,
+      "epsilon": "0",
+      "expected_dimension": 2,
+      "full_output_coordinates": 24,
+      "input_monomials": 15,
+      "kernel_dimension": 2,
+      "output_projection": false,
+      "third_gate_depth": 1
+    },
+    {
+      "degree_P": 3,
+      "degree_bound_in_q_Q": 4,
+      "degree_u": 3,
+      "epsilon": "2",
+      "expected_dimension": 2,
+      "full_output_coordinates": 24,
+      "input_monomials": 15,
+      "kernel_dimension": 2,
+      "output_projection": false,
+      "third_gate_depth": 1
+    },
+    {
+      "degree_P": 3,
+      "degree_bound_in_q_Q": 4,
+      "degree_u": 4,
+      "epsilon": "0",
+      "expected_dimension": 2,
+      "full_output_coordinates": 31,
+      "input_monomials": 15,
+      "kernel_dimension": 2,
+      "output_projection": false,
+      "third_gate_depth": 1
+    },
+    {
+      "degree_P": 3,
+      "degree_bound_in_q_Q": 4,
+      "degree_u": 4,
+      "epsilon": "2",
+      "expected_dimension": 2,
+      "full_output_coordinates": 31,
+      "input_monomials": 15,
+      "kernel_dimension": 2,
+      "output_projection": false,
+      "third_gate_depth": 1
+    },
+    {
+      "degree_P": 4,
+      "degree_bound_in_q_Q": 5,
+      "degree_u": 3,
+      "epsilon": "0",
+      "expected_dimension": 2,
+      "full_output_coordinates": 50,
+      "input_monomials": 21,
+      "kernel_dimension": 2,
+      "output_projection": false,
+      "third_gate_depth": 1
+    },
+    {
+      "degree_P": 4,
+      "degree_bound_in_q_Q": 5,
+      "degree_u": 3,
+      "epsilon": "2",
+      "expected_dimension": 2,
+      "full_output_coordinates": 50,
+      "input_monomials": 21,
+      "kernel_dimension": 2,
+      "output_projection": false,
+      "third_gate_depth": 1
+    },
+    {
+      "degree_P": 4,
+      "degree_bound_in_q_Q": 5,
+      "degree_u": 4,
+      "epsilon": "0",
+      "expected_dimension": 2,
+      "full_output_coordinates": 62,
+      "input_monomials": 21,
+      "kernel_dimension": 2,
+      "output_projection": false,
+      "third_gate_depth": 1
+    },
+    {
+      "degree_P": 4,
+      "degree_bound_in_q_Q": 5,
+      "degree_u": 4,
+      "epsilon": "2",
+      "expected_dimension": 2,
+      "full_output_coordinates": 62,
+      "input_monomials": 21,
+      "kernel_dimension": 2,
+      "output_projection": false,
+      "third_gate_depth": 1
+    },
+    {
+      "degree_P": 5,
+      "degree_bound_in_q_Q": 6,
+      "degree_u": 3,
+      "epsilon": "0",
+      "expected_dimension": 2,
+      "full_output_coordinates": 81,
+      "input_monomials": 28,
+      "kernel_dimension": 2,
+      "output_projection": false,
+      "third_gate_depth": 1
+    },
+    {
+      "degree_P": 5,
+      "degree_bound_in_q_Q": 6,
+      "degree_u": 3,
+      "epsilon": "2",
+      "expected_dimension": 2,
+      "full_output_coordinates": 81,
+      "input_monomials": 28,
+      "kernel_dimension": 2,
+      "output_projection": false,
+      "third_gate_depth": 1
+    },
+    {
+      "degree_P": 5,
+      "degree_bound_in_q_Q": 6,
+      "degree_u": 4,
+      "epsilon": "0",
+      "expected_dimension": 2,
+      "full_output_coordinates": 96,
+      "input_monomials": 28,
+      "kernel_dimension": 2,
+      "output_projection": false,
+      "third_gate_depth": 1
+    },
+    {
+      "degree_P": 5,
+      "degree_bound_in_q_Q": 6,
+      "degree_u": 4,
+      "epsilon": "2",
+      "expected_dimension": 2,
+      "full_output_coordinates": 96,
+      "input_monomials": 28,
+      "kernel_dimension": 2,
+      "output_projection": false,
+      "third_gate_depth": 1
+    }
+  ],
+  "format": "shear-composition-complete-v1",
+  "limits": "Finite boxes supplement the proof; failed recognition is outside scope. No nonlinear flat-Moyal covariance or literature-priority claim.",
+  "passed": true,
+  "scope": "Q=p+u(q), degu>=3; H=P(Q)+epsilon*q, degP>=3",
+  "symbolic_factor_identity": {
+    "expanded_nonzero_terms": 13,
+    "identity": "SCP3",
+    "indeterminates": [
+      "a",
+      "c",
+      "m",
+      "mu"
+    ]
+  }
+}

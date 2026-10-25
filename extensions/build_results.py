@@ -362,11 +362,47 @@ def two_root():
             PRODUCER, verify=False), s)
 
 
+def cubic_phase_completion():
+    sys.path.insert(0, str(ROOT/'research/core_overlap'))
+    import cubic_phase_classification as CP
+    import check_triangular as CT
+    import check_two_root as TR
+    examples = [
+        ('affine_cubic_K4_full', {(0, 4): WG.F(1), (1, 2): WG.F(1)}),
+        ('affine_cubic_K1prime_six', {(0, 3): WG.F(1), (1, 1): WG.F(1)}),
+        ('affine_cubic_K1prime_five', {(0, 3): WG.F(1), (0, 2): WG.F(1), (1, 1): WG.F(1)}),
+        ('affine_cubic_K1prime_four', {(0, 4): WG.F(1), (1, 1): WG.F(1)}),
+        ('affine_cubic_low_four', {(1, 2): WG.F(1), (0, 1): WG.F(2)}),
+        ('affine_cubic_hidden_chart', {(0, 4): WG.F(1), (1, 3): WG.F(2)}),
+    ]
+    for name, h in examples:
+        H = CT.tri(h, {2: WG.F(1), 1: WG.F(2, 3)})
+        cert, seconds = timed(CP.certify, H)
+        write('hamiltonian', name, envelope.make(
+            'affine-cubic-phase-complete', cert['hamiltonian'], cert,
+            ['characteristic zero', 'original flat Weyl product',
+             'exact reconstructed quadratic shear and affine-Q Hamiltonian'],
+            'full polynomial dynamic core, with no observable-degree cutoff',
+            ['D16-F03', 'D06-F02'], PRODUCER, verify=False), seconds)
+    for degree in (3, 5):
+        H = CT.tri({(0, degree): WG.F(1), (0, 1): WG.F(-2),
+                    (2, 0): WG.F(3, 5), (1, 0): WG.F(7)},
+                   {2: WG.F(-2, 3), 1: WG.F(1, 5)})
+        cert, seconds = timed(TR.certify, H)
+        cert.pop('result')
+        write('hamiltonian', 'restoring_composition_degree_'+str(degree), envelope.make(
+            'two-root-perturbation', cert['hamiltonian'], cert,
+            ['characteristic zero', 'quadratic shear with nonzero leading coefficient',
+             'composition degree at least three and nonzero quadratic restoring coefficient'],
+            'full core span{1,H}; sharp third-gate depth three by Theorem HR',
+            ['D16-F03', 'D06-F02'], PRODUCER, verify=False), seconds)
+
+
 SECTIONS = {'observer': lambda a: observers(), 'structure': lambda a: structure(), 'arithmetic': lambda a: arithmetic(),
             'hamiltonian': lambda a: hamiltonians(a.skip_slow), 'top': lambda a: top_reductions(),
             'integer': lambda a: integer_and_units(), 'quartic': lambda a: quartic_theorem(),
             'binary': lambda a: binary_forms(), 'rigidity': lambda a: rigidity(),
-            'tworoot': lambda a: two_root()}
+            'tworoot': lambda a: two_root(), 'phase': lambda a: cubic_phase_completion()}
 
 
 def main():

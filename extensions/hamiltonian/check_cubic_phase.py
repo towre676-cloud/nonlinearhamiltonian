@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""The cubic-phase case of pure tops (cubic-phase-v1). See DYNAMIC_CORE_RESULTS.md section 6.9.
+"""The cubic-phase case of pure tops (cubic-phase-v1). See DYNAMIC_CORE_RESULTS.md section 6.19.
 
 Setting: P = p + w(q) with deg w = 2, c = w''/2, Q = q; tilde = pullback to (q, p). Notation as in
 check_triangular.py (Theorem X).
@@ -20,7 +20,7 @@ flat odd part is t {.,.}, so  T_k(h~, g~) = 0 for all odd k >= 3  iff
 where Delta(X, Y) = d^3{X, Y} - {d^3 X, Y} - {X, d^3 Y} (d = d_P). For X = (a, b), Y = (alpha, beta)
 the bracket is {X, Y} = (b alpha' - a' beta) + Q (b beta' - b' beta) (a vector field b d_P acting on
 functions, the Witt algebra), and                                                        [G2], [G3]
-    Delta_Witt = 3 (b' beta''' - b''' beta')            (Gelfand-Fuchs cocycle density),
+    Delta_Witt = 3 (b' beta''' - b''' beta')            (explicit vector-field compatibility defect; a total derivative),
     Delta_fun  = 3 (b' alpha''' + b'' alpha'' - a''' beta' - a'' beta'').
 
 Lemma W (Witt obstruction). If deg b >= 3, every element of D_inf(H~) affine in Q lies in
@@ -50,7 +50,7 @@ D_inf(H~) restricted to pullbacks of V is:
 Proof (b in sl2): with beta in sl2 the all-order condition is b' alpha'' - beta' a'' in K and
 deg(b'' alpha - beta'' a) <= 4; elements with beta = 0 are constants (b quadratic) or span{1, P, P^2}
 (b linear); the Witt projection is an ad_b-invariant subspace of sl2 containing b, and each
-invariant subspace is solved explicitly (DYNAMIC_CORE_RESULTS.md section 6.9).          [A: grid]
+invariant subspace is solved explicitly (DYNAMIC_CORE_RESULTS.md section 6.19).          [A: grid]
 
 Usage: check_cubic_phase.py [CERT.json]
 """

@@ -1,0 +1,161 @@
+{
+  "status": "passed",
+  "parameter_fixtures": 9,
+  "closed_flow_basis_checks": 54,
+  "observer_certificates_replayed": 27,
+  "fixtures": [
+    {
+      "A": "1",
+      "B": "0",
+      "epsilon": "0",
+      "ranks": [
+        3,
+        1,
+        0,
+        0,
+        0
+      ],
+      "target_dimensions": [
+        2,
+        3,
+        5
+      ]
+    },
+    {
+      "A": "1",
+      "B": "0",
+      "epsilon": "1",
+      "ranks": [
+        4,
+        3,
+        2,
+        1,
+        0
+      ],
+      "target_dimensions": [
+        3,
+        5,
+        6
+      ]
+    },
+    {
+      "A": "1",
+      "B": "0",
+      "epsilon": "-2/3",
+      "ranks": [
+        4,
+        3,
+        2,
+        1,
+        0
+      ],
+      "target_dimensions": [
+        3,
+        5,
+        6
+      ]
+    },
+    {
+      "A": "-2",
+      "B": "3",
+      "epsilon": "0",
+      "ranks": [
+        3,
+        1,
+        0,
+        0,
+        0
+      ],
+      "target_dimensions": [
+        2,
+        3,
+        5
+      ]
+    },
+    {
+      "A": "-2",
+      "B": "3",
+      "epsilon": "1",
+      "ranks": [
+        4,
+        3,
+        2,
+        1,
+        0
+      ],
+      "target_dimensions": [
+        3,
+        5,
+        6
+      ]
+    },
+    {
+      "A": "-2",
+      "B": "3",
+      "epsilon": "-2/3",
+      "ranks": [
+        4,
+        3,
+        2,
+        1,
+        0
+      ],
+      "target_dimensions": [
+        3,
+        5,
+        6
+      ]
+    },
+    {
+      "A": "2/3",
+      "B": "-5/2",
+      "epsilon": "0",
+      "ranks": [
+        3,
+        1,
+        0,
+        0,
+        0
+      ],
+      "target_dimensions": [
+        2,
+        3,
+        5
+      ]
+    },
+    {
+      "A": "2/3",
+      "B": "-5/2",
+      "epsilon": "1",
+      "ranks": [
+        4,
+        3,
+        2,
+        1,
+        0
+      ],
+      "target_dimensions": [
+        3,
+        5,
+        6
+      ]
+    },
+    {
+      "A": "2/3",
+      "B": "-5/2",
+      "epsilon": "-2/3",
+      "ranks": [
+        4,
+        3,
+        2,
+        1,
+        0
+      ],
+      "target_dimensions": [
+        3,
+        5,
+        6
+      ]
+    }
+  ]
+}

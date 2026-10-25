@@ -1,0 +1,66 @@
+id,name,formula,proof,scope
+CO01,Active pure-top counterexample,J=qp+q^3; H=q J^2; D_H J=H,pure_perfect_power.md,"polynomial, original flat Weyl coordinates"
+CO02,Complete unequal perfect-power family,H=t^(r-2)(a2 J^2+a1 J+a0)+beta J+delta; J=tp+u(t),pure_perfect_power.md,"pure total top, r>=3, deg u>=3, a2!=0"
+CO03,Finite-core exact evolution,D J=(r-2)(H-beta J-delta),pure_perfect_power.md,root coordinates; affine determinant rescales D
+CO04,Parabolic infinite family,Q=p+bq^2+cq+d; H=P(Q)+epsilon q,pure_quadratic_composition.md,b!=0
+CO05,Quadratic composition core,"D_inf(H)=K[Q]+span{q,qQ,q^2}",pure_quadratic_composition.md,degree P=2
+CO06,Higher composition core,D_inf(H)=K[Q]+K q,pure_quadratic_composition.md,degree P>=3
+CO07,Nonlinear shear composition obstruction,"T3(F(J),G(J))=q^3 uthird(Fprime Gthird-Fthird Gprime)",audit_balanced_transverse.md,"J=qp+u(q), polynomial"
+CO08,Transverse finite-degree obstruction,mu s(s-mu)(s+mu-3) q^(mu+s-1) uthird,audit_balanced_transverse.md,"first transverse deficit, mu>=2"
+CO09,Analytic finite stopping,D_inf(qF)=ker C3 intersect ker C3D intersect ker C5,depth_finite_determination.md,"all real-analytic F, finite q degree"
+CO10,Potential finite stopping,D_inf(qF+V)=ker C3 intersect ker C5 intersect ker C3D intersect ker C3D^2,depth_finite_determination.md,"all real-analytic F,V, finite q degree"
+CO11,Polygamma one-step stopping,D_inf(qF+V)=ker C3 intersect ker C3D=A+qA,analytic_bridge.md,"polygamma, log-Gamma, stated meromorphic/log singularity classes"
+CO12,Cubic persistence scalar,K3=F Fthird/(3 Fsecond)-3 Fprime,depth_finite_determination.md,Fsecond nowhere zero for displayed quotient
+CO13,Explicit algebraic active family,F=a p^(-1/4)+b p; G=q^3 p^(-3/4); D G=-(15b/4)G,analytic_bridge.md,"p>0,a!=0"
+CO14,Third-gate false positive,c>=4; r=(2-c)/(c+1); H=q p^r+bqp; G=(q p^r)^c,analytic_bridge.md,every iterated C3 passes but C5 fails
+CO15,Protected canonical shear,S_w=sigma_w exp(-hbar^2 wsecond partial_p^3/24+...),canonical_bridge.md,quantum equals classical pullback for transverse degree<=2
+CO16,Sharp shear cubic correction,S_w(p^3)=(p+w)^3-hbar^2 wsecond/4,canonical_bridge.md,polynomial shear
+CO17,Sharp second-depth witness,H=q p^(-1/4)+p^(7/4); G=q^3 p^(-3/4)-(21/25)q^2 p^(5/4),depth_finite_determination.md,"C3D^2G=(63/8)p^(-9/2), earlier required tests vanish"
+CO18,Nonlinear-square anomaly,"T3(H,H^2)=12 F Fprime Fsecond",canonical_bridge.md,"H=qF, square is ordinary product"
+CO19,Six-dimensional nonlinear square core,"D_inf(A Q^2+BQ+C+epsilon q)=span{1,q,Q,q^2,qQ,Q^2}",analytic_shear_square.md,"Q=p+u(q), degree u>=3,A!=0"
+CO20,Sharp third-gate depth-two test,D_inf(H)=intersection_(r=0..2) ker(C3 D^r),analytic_shear_square.md,same SS family; q^3 requires depth two
+CO21,Exact closed evolution,Q(t)=Q+epsilon t; q(t)=q-(2A Q+B)t-A epsilon t^2,audit_sector_dynamics.md,Hamiltonian observable derivation convention; SS family
+CO22,Target closure rank transition,"Krylov dims (q,q^2,joint)=(2,3,5) if epsilon=0; (3,5,6) otherwise",audit_sector_dynamics.md,"A!=0, 6D exact sector, independently replayed observer certificates"
+CO23,Higher shear composition closure,"D_inf(P(Q)+epsilon*q)=ker C3 intersect ker C3D=span{1,H}",shear_composition_complete.md,Q=p+u(q); degree u>=3; degree P>=3
+CO24,Composition resonance factor,c(c+mu-3)((m-2)(c-mu)-3(mu-1)a),shear_composition_complete.md,"Top monomial q^a Q^c; m,mu>=3"
+CO25,Exact nonlinear oscillator,Dq=-(2A Q+B); DQ=kappa*q+epsilon,shear_oscillator.md,Six-dimensional exact quadratic sector; A!=0
+CO26,Oscillator spectral polynomial,chi(z)=z^2(z^2+2A*kappa)(z^2+8A*kappa),shear_oscillator.md,kappa!=0; minimal polynomial removes one z factor
+CO27,Quadratic-shear delayed cubic,G=3*kappa*q^2*Q+4A*Q^3; C3D^3G=-1728A^3*b*kappa^2,shear_oscillator.md,Q=p+bq^2; unshifted oscillator; earlier third-gate tests vanish
+CO28,Complete constant quadratic momentum,"D_inf(AQ^2+V)=quadratic sector if degV<=2; span{1,H} otherwise",quadratic_frontier.md,degree u>=3; every polynomial V
+CO29,Universal six-dimensional depth-two space,"intersection_(r=0..2) ker(C3D^r)=span{1,H,q,Q,q^2,qQ}",quadratic_frontier.md,Same QF scope; no input degree cutoff
+CO30,Sharp cubic-potential depth six,C3D^6q=-960A^5*u_second*(V_third)^2,quadratic_frontier.md,degree V=3; all earlier tests vanish
+CO31,Sharp higher-potential depth four,C3D^4q=96A^4*u_second*V_fourth,quadratic_frontier.md,degree V>=4; all earlier tests vanish
+CO32,Complete cubic-preserving potentials,V=c0+a*p^(-1/4)+b*p^(3/4)+c*p^(5/2),analytic_potential_classification.md,H=q*p^(-1/4)+V; analytic positive interval
+CO33,Stationary corrected cubic,D_inf(H)=A+qA+R*(H-c0)^3,analytic_potential_classification.md,Exactly the four-mode AP potential family
+CO34,Potential compatibility Euler operator,p^4 V4+3p^3 V3-(15/16)p^2 V2-(15/32)p V1=0,analytic_potential_classification.md,"All analytic V; indicial roots 0,-1/4,3/4,5/2"
+CO35,General active cubic lifting,hprime=g Vthird/Fsecond; F hprime-(2Fprime+lambda)h=3g Vprime,analytic_potential_classification.md,K3=lambda; Fsecond nowhere zero; stated chart restrictions
+CO36,Formal lifting obstruction,ob_n=[-sum_(i=1..n) L_i G_(n-i)] in coker L0,deformation_obstructions.md,Declared finite stopping family; higher obstructions relative to jet unless proved independent
+CO37,Delayed cubic deformation,"G_t=Q^3+(3/4)t*q^2*Q; L_t G_t=(0,0,0,-432t^2)",deformation_obstructions.md,H_t=Q^2+t*q^2/2; Q=p+q^2
+CO38,Higher tower first-order dual obstruction,ell_n(-L1 Q^n)=12n(n-1)(n-2),deformation_obstructions.md,n>=4; functional annihilates L0 of every polynomial correction
+CO39,All-degree liftable-space transition,dim Lift_1=7; dim Lift_2=dim Lift_formal=6,deformation_obstructions.md,Polynomial corrections without common degree bound
+CO40,Complete graded torsion,coker M3=K[t]/(t^2); coker Mn=K[t]^(3n-9)+K[t]/(t),deformation_obstructions.md,n>=4; specified homogeneous full-output presentation
+CO41,Quadratic-shear cubic normalization,H_lambda=(p+q^2)^2+q^3+lambda*q,quadratic_shear_residual.md,Every quadratic shear and cubic residual; rational affine GL normalization
+CO42,Universal cubic minor,det M14=-2489071056189074244411853807879968522240000000,quadratic_shear_residual.md,Parameter degree<=32; 33 exact evaluations prove identity; all-degree input bound already proved
+CO43,Affine-shear sharp fifth-depth witness,C3D^5q=96A^4*V_third*V_fourth,affine_shear_potentials.md,degree V>=4; all earlier third gates vanish
+CO44,Affine-shear sharp seventh-depth witness,C3D^7q=-960A^5*(V_third)^3,affine_shear_potentials.md,degree V=3; all earlier third gates vanish
+CO45,Complete constant-quadratic phase diagram,u=B/(2A); V=C-B^2/(4A); core determined by degree u and degree V,constant_quadratic_classification.md,"All A p^2+B(q)p+C(q), nonzero constant A; all polynomial degrees"
+CO46,Highest-Q affine gate,M_N=b_prime*dP^3+(1-N)b_second*dP^2-N*b_third*dP,cubic_affine_completeness.md,All polynomial degrees; quadratic shear nonzero
+CO47,Highest-degree obstruction,m*n*(n+m-3)*(n-1-N*(m-1)),cubic_affine_completeness.md,Coefficient of leading M_N P^n; proves absence of Q degree>=2
+CO48,Complete nonlinear affine coefficient,"deg b>=3 => core=span{1,H}; third-gate depth1",cubic_affine_completeness.md,Every polynomial a; all-degree sharp depth one
+CO49,Complete K4 coefficient test,r=(b1/b2-a3/a4)/2; b(r)=0,cubic_affine_completeness.md,Quadratic b and quartic a; full core dimension three exactly when test passes
+CO50,Four-dimensional low-density core,"X=Q+a2/b2; core=span{1,X,XP,H}",cubic_affine_completeness.md,Quadratic b and degree a<=2; full polynomial core
+CO51,Linear-coupling spectral coordinates,J=Q+(a-a0)/P; D=P*dP-J*dJ,cubic_phase_audit.md,After root centering and scaling; deg a>=3
+CO52,Full K1-prime core,"basis=1,P,P^2,H; add Q if deg a=3; add (P-r)H if a_second(r)=0",cubic_phase_audit.md,All-degree completeness; finite weight-shift stopping bound
+CO53,Exact affine chart recovery,(dQ-alpha*dP)^2 h0=0,cubic_phase_classification.md,Common gcd of quadratic slope equations; exact rational reconstruction
+CO54,General restoring core,"H=F(P)+lambda*Q^2+epsilon*Q+C => core=span{1,H}",higher_restoring.md,Every deg F>=3; lambda nonzero; quadratic shear
+CO55,Restoring kernel sequence,"S1=span{1,Q,P,H}; S2=span{1,P,H}; S3=span{1,H}",higher_restoring.md,Full polynomial ring; sharp third-gate depth three
+CO56,Restoring sharp witnesses,C3D^2Q=12c*lambda*(F_second*F_third)_prime; C3D^3P=24c*lambda^2*(F_second*F_third)_prime,higher_restoring.md,Both nonzero for every polynomial F of degree>=3
+CO57,Cubic lifting hierarchy,"Lift1=span{1,P,P^3}; Lift2=Liftformal=span{1,P^3}",cubic_deformation.md,Arbitrary polynomial corrections with no common degree bound
+CO58,Cubic delayed obstruction,C3D_t^3P=864*t^2,cubic_deformation.md,Choice-independent second-order failure after compatibility equations
+CO59,Cubic finite-weight Smith law,Tor coker M_N=K[t]/t^2 + (K[t]/t)^(floor(N/2)-1),cubic_deformation.md,Declared full-output source weight<=N; N>=6
+CO60,Compatibility defect boundary,b_prime*beta_third-b_third*beta_prime=(b_prime*beta_second-b_second*beta_prime)_prime,cubic_phase_audit.md,Total derivative; full defect coboundary; no new scalar central-extension class
+CO61,Universal lifting hierarchy,"Lift1=span{1,P,F}; Lift2=Liftformal=span{1,F}",restoring_deformation.md,Every polynomial F degree>=3; arbitrary polynomial corrections at each order
+CO62,Universal delayed obstruction,C3D_t^3P=24c*t^2*(F_second*F_third)_prime,restoring_deformation.md,Choice-independent after the coupled lower-depth compatibility conditions
+CO63,Universal finite-weight Smith law,Tor coker M_N=K[t]/t^2 + (K[t]/t)^(floor(N/2)-1),restoring_deformation.md,C3-only depth3 presentation; EVERY N>=2degF; quadratic shear coefficient nonzero
+CO64,Injective correction-control identity,"[C3,D0]=12c*F_second*(F_third+F_second*dP)*dQ^2",restoring_deformation.md,Polynomial injectivity excludes arbitrary high-degree corrections
+CO65,Linear-coupling finite stopping,R=number_of_weight_shifts(C3)-1 <=3(deg a-1)+1,cubic_phase_audit.md,All-degree Vandermonde bound; general sharpness not asserted
