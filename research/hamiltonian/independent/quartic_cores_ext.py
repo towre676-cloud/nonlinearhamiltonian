@@ -539,8 +539,7 @@ def main():
         print(f"weyl_receipts: FAILED to load ({ex})")
 
     wave1 = {}
-    w1_path = (HERE / ".." / ".." / "improvements_next" / "quartic_cores"
-               / "quartic_cores.json")
+    w1_path = HERE / "quartic_cores.json"  # wave-one table, same directory (quartic dynamic-cores change)
     if w1_path.is_file():
         w1 = json.loads(w1_path.read_text())
         wave1 = {c["id"]: c for c in w1["cases"]}

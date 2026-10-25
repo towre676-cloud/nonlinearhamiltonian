@@ -10,7 +10,7 @@
     "moyal_partner_checker": "/home/hatch/workspace/research/staging_moyal/research/hamiltonian/independent/moyal_partner_checker.py",
     "repo_engine": "/home/hatch/workspace/research/nonlinearhamiltonian/research/hamiltonian/independent/engine.py",
     "weyl_receipts": "extensions/hamiltonian/weyl_receipts.py",
-    "wave_one_table": null
+    "wave_one_table": "/home/hatch/workspace/research/staging_quartic/research/hamiltonian/independent/quartic_cores.json"
   },
   "cases": [
     {
@@ -3823,7 +3823,7 @@
     "partner_spans_agree_all": true,
     "monomial_verdicts_agree_all": true,
     "weyl_agree": true,
-    "wave1_agree": 0,
+    "wave1_agree": 102,
     "details": []
   }
 }

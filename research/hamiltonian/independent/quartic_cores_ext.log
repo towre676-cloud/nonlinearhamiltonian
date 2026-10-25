@@ -1,6 +1,7 @@
 moyal checker: /home/hatch/workspace/research/staging_moyal/research/hamiltonian/independent/moyal_partner_checker.py
 repo engine:   /home/hatch/workspace/research/nonlinearhamiltonian/research/hamiltonian/independent/engine.py
 weyl_receipts: loaded (repository operator machinery)
+wave-one table loaded: ['q2p2', 'q3p', 'q4', 'q4_p4', 'q4_q2p2_p4', 'qp3']
 
 === H = q^4 ===
 truncated core dims n=0..24: 1 2 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
@@ -40,7 +41,7 @@ B min depths n=0..12: [0, 3, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1]
 
 Equianharmonic readings A and B refinement tables identical in every degree <= 24: True
 
-cross-checks: {'partner_dims_agree_all': True, 'partner_spans_agree_all': True, 'monomial_verdicts_agree_all': True, 'weyl_agree': True, 'wave1_agree': 0}
+cross-checks: {'partner_dims_agree_all': True, 'partner_spans_agree_all': True, 'monomial_verdicts_agree_all': True, 'weyl_agree': True, 'wave1_agree': 102}
 
-elapsed: 206.7s
+elapsed: 53.5s
 wrote /home/hatch/workspace/research/staging_quartic_ext/research/hamiltonian/independent/quartic_cores_ext.json
