@@ -357,7 +357,7 @@ def load_module(name, candidates):
             return mod, p
     return None, None
 
-REPO = HERE.parents[3]  # repository root, from research/hamiltonian/independent/
+REPO = HERE.parents[2]  # repository root, from research/hamiltonian/independent/
 
 def find_checkers():
     moyal, mp = load_module(
