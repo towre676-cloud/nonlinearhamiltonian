@@ -1,0 +1,42 @@
+{
+  "repository": "https://github.com/towre676-cloud/nonlinearhamiltonian",
+  "commit": "660cf921e2836191aa3233d94094a274e836baa7",
+  "inputs": {
+    "binary_static_d6.json": {
+      "source_path": "results/hamiltonian/binary_static_d6.json.gz",
+      "source_sha256": "1de10350f40f04e7ce31b8638105b219730386c2837c1d0d4614353ad5f88e5b",
+      "transformation": "gzip decompressed; payload extracted from machinery-envelope-v1",
+      "retained_sha256": "79ceb8122f90750f607416dfe91d210235c6c0458e5ca237dba8077b0fe9bab7"
+    },
+    "step4_final_checks.py": {
+      "source_path": "research/hamiltonian/independent/step4_final_checks.py",
+      "source_sha256": "cf27e68d0536eb41695385b6e0695643492e56b9fcd6e5aba426ffedc5eb356a",
+      "transformation": "verbatim",
+      "retained_sha256": "cf27e68d0536eb41695385b6e0695643492e56b9fcd6e5aba426ffedc5eb356a"
+    },
+    "check_binary_static.py": {
+      "source_path": "extensions/hamiltonian/check_binary_static.py",
+      "source_sha256": "756cca58054fcb76a1f116dc3e0b4011f5754da696dfcb8668e788ef7f91c002",
+      "transformation": "verbatim",
+      "retained_sha256": "756cca58054fcb76a1f116dc3e0b4011f5754da696dfcb8668e788ef7f91c002"
+    },
+    "SEXTIC_FAMILIES.md": {
+      "source_path": "research/hamiltonian/independent/SEXTIC_FAMILIES.md",
+      "source_sha256": "1f8af091a658bcffbeecc451cd3bd6c2ca587bb085710d5c77e822a68fcce1bd",
+      "transformation": "verbatim",
+      "retained_sha256": "1f8af091a658bcffbeecc451cd3bd6c2ca587bb085710d5c77e822a68fcce1bd"
+    },
+    "check_monomial_theorem.py": {
+      "source_path": "extensions/hamiltonian/check_monomial_theorem.py",
+      "source_sha256": "6987f4ad4ce808d06f5f38dd36e6c9e4972e31706a1006199cf7b5d4f7d4ff77",
+      "transformation": "verbatim",
+      "retained_sha256": "6987f4ad4ce808d06f5f38dd36e6c9e4972e31706a1006199cf7b5d4f7d4ff77"
+    },
+    "SEXTIC_C2_PROOF.md": {
+      "source_path": "research/hamiltonian/independent/SEXTIC_C2_PROOF.md",
+      "source_sha256": "46deffe4f28b0cd46e4b5d6a8c573f957e345b87deb556f725a1d08f4385bb3c",
+      "transformation": "verbatim",
+      "retained_sha256": "46deffe4f28b0cd46e4b5d6a8c573f957e345b87deb556f725a1d08f4385bb3c"
+    }
+  }
+}

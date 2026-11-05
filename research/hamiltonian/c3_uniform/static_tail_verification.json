@@ -1,0 +1,18 @@
+{
+ "status": "passed",
+ "degree": 6,
+ "N0": 17,
+ "rows": 6,
+ "top_static_space": "span{q^n, q^(n-1) p} for n >= 3",
+ "exceptional_degrees": [
+  1,
+  2,
+  4
+ ],
+ "J_zero_locus": "h = 0 (type (5,1)) or type (4,1,1) with P one of its simple roots",
+ "alpha": "-1/10",
+ "steps": 181,
+ "contradictions": 31,
+ "targets": 2,
+ "theorem": "for every binary form H of degree 6 with a simple root and every n >= 17: E_n(H) != 0 only if H has type (5,1) or (4,1,1)"
+}
