@@ -1,0 +1,24 @@
+{
+  "status": "proved_relative_to_retained_static_tail_theorems",
+  "scope": [
+    "H_a=q^6+a*q^3*p^3+p^6 for every characteristic-zero parameter a",
+    "all seven homogeneous monomial sextics"
+  ],
+  "family_first_refinement": "span{1,H_a}",
+  "family_matrix_blocks": 47,
+  "bezout_minors": 101,
+  "independent_verifier": "literal differentiation and Leibniz determinants",
+  "regression_tests": 7,
+  "regression_result": "passed",
+  "monomial_counterexample_search": {
+    "total_degree_bound": 80,
+    "monomials_tested": 23247,
+    "counterexamples": 0
+  },
+  "formal_proof_assistant": false,
+  "unresolved_cases_within_stated_scope": [],
+  "retained_inputs": [
+    "simple-root static sextic bound n>=17",
+    "merged C2 square-tail theorem"
+  ]
+}
