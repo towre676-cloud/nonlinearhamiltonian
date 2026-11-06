@@ -1,0 +1,24 @@
+{
+  "source_repository": "https://github.com/towre676-cloud/nonlinearhamiltonian",
+  "source_commit": "0fe7f8617f205fbb31517ee74b8ecab07336b8f2",
+  "sympy": "1.14.0",
+  "inputs": {
+    "C3_THEOREM.md": {
+      "source_path": "research/hamiltonian/c3_uniform/C3_THEOREM.md",
+      "sha256": "a5fa051d184a75195e59e6bdb087e13cb231f0e7f8e19239bbd78637d2822459"
+    },
+    "monomial_proof.py": {
+      "source_path": "research/hamiltonian/c3_uniform/monomial_proof.py",
+      "sha256": "183f0a56260a7838834655f73aad8a8df6b08acf49253fe584f2897a32f16663"
+    },
+    "binary_static_d6.json": {
+      "source_path": "research/hamiltonian/c3_uniform/inputs/binary_static_d6.json",
+      "sha256": "79ceb8122f90750f607416dfe91d210235c6c0458e5ca237dba8077b0fe9bab7"
+    },
+    "check_binary_static.py": {
+      "source_path": "research/hamiltonian/c3_uniform/inputs/check_binary_static.py",
+      "sha256": "756cca58054fcb76a1f116dc3e0b4011f5754da696dfcb8668e788ef7f91c002"
+    }
+  },
+  "original_theorem_modified": false
+}

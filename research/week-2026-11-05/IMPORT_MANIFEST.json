@@ -1,0 +1,227 @@
+{
+  "date": "2026-11-05",
+  "kind": "isolated recovered research source import",
+  "verification": "Root-strata replay passed: 16 triple-root blocks, 24 minors, symbolic double-root/counterexample checks and 16 independent squarefree-sample determinant checks. General squarefree classification remains open.",
+  "files": [
+    {
+      "path": ".gitignore",
+      "size": 79,
+      "sha256": "d2d7c672587126f868541efc411708c4e983348b9d83b845228d7fab476c55bb"
+    },
+    {
+      "path": "COMPRESSED_EVIDENCE.json",
+      "size": 399,
+      "sha256": "9810612d9958735ad8fb21475fb87301e92ba06246923a6b8b361bccdd210dc3"
+    },
+    {
+      "path": "RECOVERED_WORKSTREAMS.json",
+      "size": 3,
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    {
+      "path": "quartic-supplement/quartic_supplement/QUARTIC_THEOREMS.md",
+      "size": 9737,
+      "sha256": "145758a09555f09385e3360573acfa994c8b3ae0faf6c3654e49d7d675419d38"
+    },
+    {
+      "path": "quartic-supplement/quartic_supplement/SHA256.json",
+      "size": 1785,
+      "sha256": "ebed8ed182d2f2edcf1512f483f30b4377d17e3e9fea332b2689aa8f8f6d6f7e"
+    },
+    {
+      "path": "quartic-supplement/quartic_supplement/carry_bounds.json",
+      "size": 681,
+      "sha256": "7c364f29ddc8c32500aa86d36321220b89a0761b2c2b2f3f984d4bf6ec7bede5"
+    },
+    {
+      "path": "quartic-supplement/quartic_supplement/carry_bounds.py",
+      "size": 1247,
+      "sha256": "8fca37046c299a509614ab55b91f23aca32e69808319118cc4483e0cd58f8ee4"
+    },
+    {
+      "path": "quartic-supplement/quartic_supplement/certify_profile.py",
+      "size": 1647,
+      "sha256": "2dd8b644d731cf322727feb1d7a99ede2fafbb906b220bb240c79f5dc468f57b"
+    },
+    {
+      "path": "quartic-supplement/quartic_supplement/input/rows14_exact.txt.xz",
+      "size": 1177920,
+      "sha256": "f1e27272de0a88193987a06389d6d2d4bdc5db09bc86eacbb178965db9fd86d4"
+    },
+    {
+      "path": "quartic-supplement/quartic_supplement/input/rows14_p1.txt.pats.xz",
+      "size": 214044,
+      "sha256": "63ecdafcfe22edb3047e011ebf71db65f289949b83054d1aa824f28c8d1fded4"
+    },
+    {
+      "path": "quartic-supplement/quartic_supplement/input/witness15_V14.json",
+      "size": 722,
+      "sha256": "cd6bf6c188c4f4a148e5df350690bf6780795b543be099c1a48c52e660f4ff6e"
+    },
+    {
+      "path": "quartic-supplement/quartic_supplement/input/witness17_V13.json",
+      "size": 801,
+      "sha256": "5f1cb45440923db4035249cb9fb0fba7590004841434822ac6e0e99fdd98ce3c"
+    },
+    {
+      "path": "quartic-supplement/quartic_supplement/local_pole_bounds.json",
+      "size": 17795,
+      "sha256": "deca473712e2831513e1e07972f2acaa2651164758d53508741c685043ef4ccd"
+    },
+    {
+      "path": "quartic-supplement/quartic_supplement/local_pole_bounds.py",
+      "size": 1783,
+      "sha256": "4dbb059e7d0c1a3b959e01a08d1221f1f83ec9c9aa030c0c48742e808ad289f2"
+    },
+    {
+      "path": "quartic-supplement/quartic_supplement/prepare_testdata.py",
+      "size": 201,
+      "sha256": "b78d6b4586aea98df45477871e4fa4349fde8d0e3e2884cd6a5e8ef5405eda52"
+    },
+    {
+      "path": "quartic-supplement/quartic_supplement/quartic_exact.py",
+      "size": 5942,
+      "sha256": "f7b2739734b6d0f064c1bc827bf1ce83ba5da000c831ad8c0e1638c198639675"
+    },
+    {
+      "path": "quartic-supplement/quartic_supplement/quartic_verification.json",
+      "size": 182,
+      "sha256": "5c4ca015e40af64e85e79cd947e3fe7059e79d88b63543ca9b02c2c3a9469fbb"
+    },
+    {
+      "path": "quartic-supplement/quartic_supplement/rational_profile_V14.json",
+      "size": 699,
+      "sha256": "650498d8d9f998145d10254b6f97b47ed341df26c14792fc2c1e7c779f99a7ee"
+    },
+    {
+      "path": "quartic-supplement/quartic_supplement/symbolic_edge.json",
+      "size": 304,
+      "sha256": "4f095817ac128c47c628404cc55d2b59941e6fd7dd785d29e8c7be3e793c43e3"
+    },
+    {
+      "path": "quartic-supplement/quartic_supplement/symbolic_edge.py",
+      "size": 886,
+      "sha256": "7a54a0db4953e9e823fc25fbc45e0614fd0a4b1640deb277e6f08d2941565242"
+    },
+    {
+      "path": "quartic-supplement/quartic_supplement/verify_quartic.py",
+      "size": 1479,
+      "sha256": "89877db99369a78ceccc7787df906fca68c28fe00b495df9dc1afe4c828e5898"
+    },
+    {
+      "path": "quartic-supplement/quartic_supplement/witness17_replay.json",
+      "size": 112,
+      "sha256": "00606632affe4a54540723ce6f62e0588bf8082989cd36ed952a07fb2152c4de"
+    },
+    {
+      "path": "restore_evidence.py",
+      "size": 1016,
+      "sha256": "c0821907656b24714dfc368ec35b22c9edfc2cddbc4fa0c5a5e0d18e2c6abfa2"
+    },
+    {
+      "path": "sextic-root-strata/sextic_c3_strata/PROVENANCE.json",
+      "size": 1012,
+      "sha256": "697d4b4735c057398829366fc1d7dc2e9962e1a730e50ccecce97f447aaa1215"
+    },
+    {
+      "path": "sextic-root-strata/sextic_c3_strata/README.txt",
+      "size": 483,
+      "sha256": "09c25572f1bce40dc5bce11db416ad27f60ad41d129aed32ccb5865462dcba0e"
+    },
+    {
+      "path": "sextic-root-strata/sextic_c3_strata/SEXTIC_STRATA_THEOREM.md",
+      "size": 10229,
+      "sha256": "c349b99dce8dcae606bf1825f61f8480430cb9280771ee918767ab9e6984e504"
+    },
+    {
+      "path": "sextic-root-strata/sextic_c3_strata/SHA256SUMS",
+      "size": 1729,
+      "sha256": "a5cbd23ca36c2658db4805418c8f253201c5cfad86d4d96a4ada8959f9eb70b1"
+    },
+    {
+      "path": "sextic-root-strata/sextic_c3_strata/counterexample.py",
+      "size": 137,
+      "sha256": "f2f179a278c67580f989d074701fdb4925f41e11f89a8c6b8014bd90e781c6ae"
+    },
+    {
+      "path": "sextic-root-strata/sextic_c3_strata/explore.py",
+      "size": 1009,
+      "sha256": "04ec04280b021a6091cf80e6544ad00f6f97715f31b62e087112f891295db464"
+    },
+    {
+      "path": "sextic-root-strata/sextic_c3_strata/independent_replay.log",
+      "size": 182,
+      "sha256": "95d856e6abb896dfc041cf8a9ae5d40caaad5c0a90d8ebbf8936381b79ee681e"
+    },
+    {
+      "path": "sextic-root-strata/sextic_c3_strata/inputs/C3_THEOREM.md",
+      "size": 12616,
+      "sha256": "a5fa051d184a75195e59e6bdb087e13cb231f0e7f8e19239bbd78637d2822459"
+    },
+    {
+      "path": "sextic-root-strata/sextic_c3_strata/inputs/binary_static_d6.json.evidence.gz",
+      "size": 156618,
+      "sha256": "8f81b007da907b0e1a5cb159ac71ba13262e0ef570be121e8690eb71dcaa5c00"
+    },
+    {
+      "path": "sextic-root-strata/sextic_c3_strata/inputs/check_binary_static.py",
+      "size": 19015,
+      "sha256": "756cca58054fcb76a1f116dc3e0b4011f5754da696dfcb8668e788ef7f91c002"
+    },
+    {
+      "path": "sextic-root-strata/sextic_c3_strata/inputs/monomial_certificate.json",
+      "size": 1839,
+      "sha256": "73f53d7f498537eceac88d785a0dfb8dcc20fefa0ef620d8ebe6713b23b978ea"
+    },
+    {
+      "path": "sextic-root-strata/sextic_c3_strata/inputs/monomial_proof.py",
+      "size": 2906,
+      "sha256": "183f0a56260a7838834655f73aad8a8df6b08acf49253fe584f2897a32f16663"
+    },
+    {
+      "path": "sextic-root-strata/sextic_c3_strata/monomial_replay.log",
+      "size": 1279,
+      "sha256": "cf74b3d291942d86a7442d384d5201cf1f6b4d57d609a67f8529c944f23fc26a"
+    },
+    {
+      "path": "sextic-root-strata/sextic_c3_strata/requirements.txt",
+      "size": 14,
+      "sha256": "25f9f1fb1988b230147a1d3092d34e09c069eb7a6c6d6df46b3973b9f2d36efc"
+    },
+    {
+      "path": "sextic-root-strata/sextic_c3_strata/squarefree_sample.json",
+      "size": 5878,
+      "sha256": "9aa27ecb3451084fc76ea744d5db145b785ed263936ea087d00c1536825498ca"
+    },
+    {
+      "path": "sextic-root-strata/sextic_c3_strata/squarefree_sample.py",
+      "size": 614,
+      "sha256": "b80dfc3a95c2bea366b411587e791a7745904ca6a6dc283f5ebd94123da58a06"
+    },
+    {
+      "path": "sextic-root-strata/sextic_c3_strata/static_tail_replay.json",
+      "size": 456,
+      "sha256": "966a1df2a721c4ba4533ac8d02bd556b2735c98fd0e920477e7e4bb2eeb19c37"
+    },
+    {
+      "path": "sextic-root-strata/sextic_c3_strata/triple.py",
+      "size": 1034,
+      "sha256": "d25753e3349c86459fd56ad0aa25ddd546b1fd103d4f52cc9e333e3dc0a072b9"
+    },
+    {
+      "path": "sextic-root-strata/sextic_c3_strata/triple_certificate.json",
+      "size": 53566,
+      "sha256": "4abbf20bc3cf993e174c1191c5fb785ba47bb8ee2340ce937efacbee288e9650"
+    },
+    {
+      "path": "sextic-root-strata/sextic_c3_strata/verification.json",
+      "size": 152,
+      "sha256": "1e2494cc36e8a1fdb157890ea44f69d5c68b810dece977cab86ee8accd14bb3a"
+    },
+    {
+      "path": "sextic-root-strata/sextic_c3_strata/verify.py",
+      "size": 3116,
+      "sha256": "6307254cbda0e6d92927aae9d59d0ec812b5bbd42b7c946bb8a131908974f458"
+    }
+  ]
+}
