@@ -1,0 +1,43 @@
+{
+  "date": "2026-11-05",
+  "base_commit": "0fe7f8617f205fbb31517ee74b8ecab07336b8f2",
+  "source_pr": 9,
+  "source_head": "c477cbb0c8d42dfe03ccee9a8a57dc5c3965f527",
+  "python": "3.12.14",
+  "sympy": "1.14.0",
+  "status": "PASS",
+  "new_tests": {
+    "passed": 4,
+    "seconds": 122.473
+  },
+  "restricted_family_tests": {
+    "passed": 7,
+    "seconds": 39.4
+  },
+  "triple": {
+    "blocks": 16,
+    "minors": 24,
+    "bezout_identities": 16
+  },
+  "squarefree_sample": {
+    "exact_determinants": 16,
+    "universal_classification": false
+  },
+  "inherited_static_tail": {
+    "threshold": 17,
+    "steps": 181,
+    "contradictions": 31,
+    "target_branches": 2
+  },
+  "monomial_regression": {
+    "cases": 23247,
+    "max_total_degree": 80,
+    "all_degree_basis": "symbolic zero-locus exhaustion, not bounded regression"
+  },
+  "producers_byte_identical": true,
+  "counterexample_T3_D2G": "-82944*q**10",
+  "star_engine_hbar2_D2G": "3456*q**10",
+  "fourfold_uniform_minor": 11059200,
+  "github_modified": false,
+  "hosted_ci": "not run; approval required to push"
+}

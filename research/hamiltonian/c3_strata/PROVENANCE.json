@@ -1,0 +1,14 @@
+{
+  "repository": "towre676-cloud/nonlinearhamiltonian",
+  "base_commit": "0fe7f8617f205fbb31517ee74b8ecab07336b8f2",
+  "snapshot_commit": "c477cbb0c8d42dfe03ccee9a8a57dc5c3965f527",
+  "snapshot_path": "research/week-2026-11-05/sextic-root-strata/sextic_c3_strata",
+  "producer_certificates_byte_identical": true,
+  "sha256": {
+    "triple_certificate.json": "4abbf20bc3cf993e174c1191c5fb785ba47bb8ee2340ce937efacbee288e9650",
+    "squarefree_sample.json": "9aa27ecb3451084fc76ea744d5db145b785ed263936ea087d00c1536825498ca",
+    "../c3_uniform/inputs/binary_static_d6.json": "79ceb8122f90750f607416dfe91d210235c6c0458e5ca237dba8077b0fe9bab7",
+    "../c3_uniform/inputs/check_binary_static.py": "756cca58054fcb76a1f116dc3e0b4011f5754da696dfcb8668e788ef7f91c002",
+    "../c3_uniform/monomial_proof.py": "183f0a56260a7838834655f73aad8a8df6b08acf49253fe584f2897a32f16663"
+  }
+}
