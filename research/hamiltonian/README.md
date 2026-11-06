@@ -41,3 +41,7 @@ The browser record checks24 interface conditions across1280px,390px and320px, ze
 The mathematical code is dependency free. Rebuilding typeset HTML/PDF additionally needs Node, Playwright/Chromium, KaTeX0.19.0, markdown-it15.0.3 and markdown-it-texmath1.0.0. Install the three rendering packages under `tmp/render_deps`, install Playwright where Node resolves it, and set `ATLAS_CHROMIUM` to a compatible local Chromium executable. Run `node build_note.js`; `--html-only` preserves the existing PDF. `make_browser_fixtures.py` and `test_browser.js` regenerate the independent browser fixtures and interface checks. These optional rendering dependencies are excluded from the source bundle; the delivered HTML and PDF are already complete.
 
 `MANIFEST.sha256` covers every delivered file except itself. The package builder excludes exploratory SymPy dependencies, caches and temporary renders. Hashes detect accidental changes; they are not mathematical proofs. General higher-degree polynomial Hamiltonians, full-space sextics beyond the existing bounded classification, and quartic dynamic-core stratification remain precise research frontiers.
+
+## Maintained sextic refinement results
+
+The [restricted-family C3 theorem](c3_uniform/C3_THEOREM.md) is retained. The [root-multiplicity extension](c3_strata/SEXTIC_STRATA_THEOREM.md) supplies the rational counterexample to general sextic C3, the repeated-root classification, exact certificates and regression tests. The exceptional squarefree locus remains open.

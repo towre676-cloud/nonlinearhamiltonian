@@ -25,3 +25,7 @@ jobs:
           python -m unittest discover -s . -p test_c3.py -v
           python inputs/check_binary_static.py inputs/binary_static_d6.json
           python inputs/step4_final_checks.py
+      - name: Replay repeated-root classification and rational C3 regression
+        run: |
+          cd research/hamiltonian/c3_strata
+          python -m unittest discover -s . -p test_strata.py -v
