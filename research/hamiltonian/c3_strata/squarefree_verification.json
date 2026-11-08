@@ -1,0 +1,155 @@
+{
+  "status": "PASS",
+  "field": "Q",
+  "degrees": 16,
+  "selected_minors": 185,
+  "derived_identities": 151,
+  "discriminant_power": 1,
+  "records": [
+    {
+      "n": 1,
+      "matrix_rows": 8,
+      "matrix_columns": 2,
+      "pivots": 0,
+      "minor_order": 2,
+      "selected_minors": 21,
+      "derived_identities": 10
+    },
+    {
+      "n": 2,
+      "matrix_rows": 10,
+      "matrix_columns": 3,
+      "pivots": 1,
+      "minor_order": 2,
+      "selected_minors": 15,
+      "derived_identities": 9
+    },
+    {
+      "n": 3,
+      "matrix_rows": 16,
+      "matrix_columns": 4,
+      "pivots": 2,
+      "minor_order": 2,
+      "selected_minors": 10,
+      "derived_identities": 10
+    },
+    {
+      "n": 4,
+      "matrix_rows": 19,
+      "matrix_columns": 5,
+      "pivots": 3,
+      "minor_order": 2,
+      "selected_minors": 15,
+      "derived_identities": 10
+    },
+    {
+      "n": 5,
+      "matrix_rows": 24,
+      "matrix_columns": 6,
+      "pivots": 4,
+      "minor_order": 2,
+      "selected_minors": 10,
+      "derived_identities": 10
+    },
+    {
+      "n": 6,
+      "matrix_rows": 28,
+      "matrix_columns": 7,
+      "pivots": 5,
+      "minor_order": 1,
+      "selected_minors": 4,
+      "derived_identities": 4
+    },
+    {
+      "n": 7,
+      "matrix_rows": 32,
+      "matrix_columns": 8,
+      "pivots": 6,
+      "minor_order": 2,
+      "selected_minors": 10,
+      "derived_identities": 10
+    },
+    {
+      "n": 8,
+      "matrix_rows": 36,
+      "matrix_columns": 9,
+      "pivots": 7,
+      "minor_order": 2,
+      "selected_minors": 15,
+      "derived_identities": 10
+    },
+    {
+      "n": 9,
+      "matrix_rows": 40,
+      "matrix_columns": 10,
+      "pivots": 8,
+      "minor_order": 2,
+      "selected_minors": 10,
+      "derived_identities": 10
+    },
+    {
+      "n": 10,
+      "matrix_rows": 44,
+      "matrix_columns": 11,
+      "pivots": 9,
+      "minor_order": 2,
+      "selected_minors": 10,
+      "derived_identities": 10
+    },
+    {
+      "n": 11,
+      "matrix_rows": 48,
+      "matrix_columns": 12,
+      "pivots": 10,
+      "minor_order": 2,
+      "selected_minors": 10,
+      "derived_identities": 10
+    },
+    {
+      "n": 12,
+      "matrix_rows": 52,
+      "matrix_columns": 13,
+      "pivots": 11,
+      "minor_order": 2,
+      "selected_minors": 10,
+      "derived_identities": 8
+    },
+    {
+      "n": 13,
+      "matrix_rows": 56,
+      "matrix_columns": 14,
+      "pivots": 12,
+      "minor_order": 2,
+      "selected_minors": 10,
+      "derived_identities": 10
+    },
+    {
+      "n": 14,
+      "matrix_rows": 60,
+      "matrix_columns": 15,
+      "pivots": 13,
+      "minor_order": 2,
+      "selected_minors": 15,
+      "derived_identities": 10
+    },
+    {
+      "n": 15,
+      "matrix_rows": 64,
+      "matrix_columns": 16,
+      "pivots": 14,
+      "minor_order": 2,
+      "selected_minors": 10,
+      "derived_identities": 10
+    },
+    {
+      "n": 16,
+      "matrix_rows": 68,
+      "matrix_columns": 17,
+      "pivots": 15,
+      "minor_order": 2,
+      "selected_minors": 10,
+      "derived_identities": 10
+    }
+  ],
+  "scope": "All squarefree sextics in degrees 1..16; all-degree conclusion uses inherited static tail."
+}
