@@ -127,6 +127,8 @@ The mathematical source payloads and generated annual, atlas and Hamiltonian rep
 
 Repository navigation, tables and discussion indexes provide additional routes into the retained material. Classical results, new exposition, explicit computations, conditional conclusions and open extensions keep their individual scopes. The collection makes no blanket claim of novelty or literature priority.
 
-## Uniform sextic C3 theorem
+## Homogeneous binary sextic C3 classification
 
 For every characteristic-zero parameter `a`, the family `H=q^6+a q^3 p^3+p^6` has `S¹(H)=D∞(H)=span{1,H}`. Monomial sextics also satisfy depth-one closure. The [proof and exact parameter-uniform certificates](research/hamiltonian/c3_uniform/C3_THEOREM.md) include their retained static-tail dependencies; general sextics remain outside this claim. Run the three commands in the [replay guide](research/hamiltonian/c3_uniform/README.md). Historical open-C3 statements in older documents are superseded for this stated scope.
+
+The [complete root-multiplicity classification](research/hamiltonian/c3_strata/SEXTIC_STRATA_THEOREM.md) covers nonzero homogeneous binary sextics over characteristic-zero fields. For every squarefree form, $S^1(H)=D_\infty(H)=\operatorname{span}\{1,H\}$. C3 fails precisely at geometric root type $(4,1,1)$, where $S^1$ has dimension three and $S^2=D_\infty=\operatorname{span}\{1,H\}$. The squarefree proof combines exact discriminant identities in degrees 1–16 with the inherited static-tail theorem.
