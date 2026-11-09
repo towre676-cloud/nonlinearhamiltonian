@@ -44,4 +44,4 @@ The mathematical code is dependency free. Rebuilding typeset HTML/PDF additional
 
 ## Maintained sextic refinement results
 
-The [restricted-family C3 theorem](c3_uniform/C3_THEOREM.md) is retained. The [root-multiplicity extension](c3_strata/SEXTIC_STRATA_THEOREM.md) supplies the rational counterexample to general sextic C3, the repeated-root classification, exact certificates and regression tests. The exceptional squarefree locus remains open.
+The [complete root-multiplicity classification](c3_strata/SEXTIC_STRATA_THEOREM.md) covers every nonzero homogeneous binary sextic over a characteristic-zero field. For squarefree forms, S¹ = D∞ = span{1,H}. C3 fails precisely at geometric root type (4,1,1), where S¹ has dimension three and S² = D∞ = span{1,H}. The [squarefree proof](c3_strata/SQUAREFREE_THEOREM.md) combines exact discriminant identities in degrees 1–16 with the inherited static-tail theorem. The [restricted-family C3 theorem](c3_uniform/C3_THEOREM.md) and its replay remain available.
