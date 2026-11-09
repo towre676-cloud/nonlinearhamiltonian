@@ -1,6 +1,6 @@
-# Sextic refinement by root multiplicity: a counterexample and complete repeated-root classification
+# Sextic refinement by root multiplicity: complete classification
 
-November 5, 2026. Maintained integration of the repeated-root extension, alongside the completed restricted-family theorem in `../c3_uniform/C3_THEOREM.md`. All polynomial identities and certificates use characteristic zero and the flat Weyl–Moyal conventions of the source. The statements below are mathematical proofs with computer-assisted finite rank steps, relative to the inherited static-tail and monomial theorems. They are not proof-assistant formalizations.
+November 5, 2026 repeated-root integration; November 8, 2026 squarefree extension. The repeated-root results remain unchanged, alongside the completed restricted-family theorem in `../c3_uniform/C3_THEOREM.md`. All polynomial identities and certificates use characteristic zero and the flat Weyl–Moyal conventions of the source. The statements below are mathematical proofs with computer-assisted finite rank steps, relative to the inherited static-tail and monomial theorems. They are not proof-assistant formalizations.
 
 ## Main result
 
@@ -22,7 +22,7 @@ T_3(H,G)=T_5(H,G)=T_3(H,DG)=T_5(H,DG)=0,
 
 Thus \(G\in S^1(H)\setminus D_\infty(H)\). Over the algebraic closure, H has root pattern (4,1,1). The two simple roots need not be rational: this counterexample itself has rational coefficients and a rational partner.
 
-**Theorem.** For every nonzero homogeneous binary sextic with a repeated geometric root, the classification below holds. In particular C3 holds in every repeated-root stratum except (4,1,1). In that exceptional stratum \(S^2=D_\infty=\operatorname{span}\{1,H\}\), while \(S^1\) has dimension three. Here \(S^r\) imposes both gates after all iterates from zero through r.
+**Theorem.** For every nonzero homogeneous binary sextic over a characteristic-zero field, the classification below holds. C3 holds in every geometric root stratum except (4,1,1). In that exceptional stratum \(S^2=D_\infty=\operatorname{span}\{1,H\}\), while \(S^1\) has dimension three. Here \(S^r\) imposes both gates after all iterates from zero through r. The squarefree row is established by the new exact discriminant certificates in [SQUAREFREE_THEOREM.md](SQUAREFREE_THEOREM.md).
 
 The table gives normal forms over an algebraic closure, up to invertible linear substitution and nonzero scalar multiplication. Write C=span{1,H}.
 
@@ -38,7 +38,7 @@ The table gives normal forms over an algebraic closure, up to invertible linear 
 | (2,2,2) | e.g. q²p²(p−q)² | C | C | new all-degree double-root argument |
 | (2,2,1,1) | e.g. q²p²(p−q)(p−2q) | C | C | new all-degree double-root argument |
 | (2,1,1,1,1) | e.g. q²p(p−q)(p−2q)(p−3q) | C | C | new all-degree double-root argument |
-| (1,1,1,1,1,1) | general squarefree sextic | unresolved in degrees ≤16 | unresolved | inherited tail; one exact sample and generic-open reduction below |
+| (1,1,1,1,1,1) | general squarefree sextic | C | C | 16 exact discriminant-in-ideal certificates + inherited tail |
 
 For a field K that does not split H, interpret the normal-form table after scalar extension and descend the corresponding subspaces. All core conclusions C descend immediately. Kernel computations commute with field extensions degree by degree. No splitting assumption is needed for the rational counterexample. H=0 has the full polynomial ring as every refinement and invariant space.
 
@@ -119,17 +119,23 @@ For each complement Bₙ(t), the recorded row minors dᵢ(t) and rational polyno
 \]
 Hence every complement is injective at every characteristic-zero parameter, including algebraic and transcendental values. The tail then proves S¹=D∞=C in all degrees. `verify.py` independently rebuilds the matrices by literal symbolic differentiation, recomputes each determinant using Bareiss elimination, and checks all Bézout identities. The producer uses falling-factorial coefficient sums and domain-based determinants.
 
-## 5. What remains: the squarefree stratum
+## 5. Squarefree stratum: exact discriminant saturation
 
-The only unclassified geometric multiplicity stratum is (1,1,1,1,1,1). The inherited static theorem gives Eₙ=0 for n≥17 throughout it. The remaining question is finite but multivariate: for n≤16, is ker Mₙ always the core, or can some squarefree forms have an extra survivor? If an extra survivor occurs, its dynamical invariance must be tested; an extra survivor alone does not establish failure of C3.
-
-The exact rational squarefree example
+[SQUAREFREE_THEOREM.md](SQUAREFREE_THEOREM.md) proves S¹=D∞=C for every squarefree sextic. Move a simple root to q=0, normalize its leading coefficient, and shear to obtain
 \[
-H=\prod_{i=1}^{6}(q-ip)
+H=qp^5+a q^3p^3+b q^4p^2+c q^5p+d q^6.
 \]
-has S¹=D∞=C. `squarefree_sample.json` records a nonzero integer maximal minor for every degree complement n=1,…,16. This is a theorem for this specific Hamiltonian, using the inherited tail, and is independently replayed. It is not a uniform squarefree classification.
+This covers every squarefree GL₂ orbit over the algebraic closure. Let Δ be the discriminant of x⁵+ax³+bx²+cx+d; squarefreeness is exactly Δ≠0.
 
-These same 16 minors, viewed as polynomials in seven sextic coefficients on the chart where the q⁶ coefficient is nonzero, prove the result on a nonempty Zariski-open subset of sextic coefficient space. Their product is nonzero because it is nonzero at the displayed example. Intersecting with the nonzero-discriminant locus gives an explicit finite certificate description of a nonempty open squarefree set where S¹=C. This does not exclude exceptional squarefree coefficient loci. The precise remaining obligation is to cover those loci by further minors/identities or exhibit a squarefree exceptional partner and determine its subsequent iterates. No universal claim is made there.
+For n=1,…,16, n−1 triangular pivots with nonzero rational constant diagonal reduce Mₙ to a two-column residual Rₙ. At the even-degree static resonance, a T₃D row supplies the missing constant pivot. No coefficient polynomial is inverted. At n=6 the second residual column is identically zero and corresponds precisely to H.
+
+Let Iₙ be the ideal of 2-by-2 minors of Rₙ for n≠6, and the ideal generated by the first-column entries for n=6. `squarefree_certificate.json` provides exact identities
+\[
+\Delta\in I_n\quad(n=1,\ldots,16),\qquad I_n:\Delta^\infty=(1).
+\]
+The independent literal-differentiation verifier checks 185 selected reduced minors, 151 intermediate polynomial identities and 16 final discriminant identities. These prove full rank of every complement throughout the squarefree locus, including coefficient loci where a previous sample minor vanishes. With the unchanged static-tail theorem for n≥17, this proves the all-degree result. Since D kills 1 and H, all subsequent refinements and the invariant core coincide with C; there is no squarefree exceptional one-step partner.
+
+The original exact sample H=∏ᵢ₌₁⁶(q−ip), its 16 nonzero minors, and their nonempty Zariski-open conclusion remain valid and independently replayed. Those certificates alone never excluded exceptional squarefree loci. The new discriminant identities close that gap rather than extending a generic conclusion by assumption.
 
 ## Reproduction and trust boundary
 
@@ -138,7 +144,10 @@ Run from this directory with Python 3 and SymPy:
 ```
 python triple.py
 python squarefree_sample.py
+python squarefree_certificate.py
+python verify_squarefree.py
 python -m unittest discover -s . -p test_strata.py -v
+python -m unittest discover -s . -p test_squarefree.py -v
 python ../c3_uniform/inputs/check_binary_static.py ../c3_uniform/inputs/binary_static_d6.json
 python ../c3_uniform/monomial_proof.py
 ```
@@ -147,4 +156,4 @@ The producer uses falling-factorial coefficients; the independent verifier uses 
 
 The all-degree degeneration, covariance, root normal forms, monomial zero-locus exhaustion and degree-two elimination are mathematical arguments, supported by exact identities; they are not proof-assistant formalizations. The simple-root tail uses a computer-assisted elimination certificate and its written local-normal-form and top-equation argument in `extensions/hamiltonian/check_binary_static.py` (repository-root path). Its replay verifies threshold 17, 181 steps, 31 contradictions and two target branches; these are symbolic identities with an integer-degree bound, not samples of high degrees. It applies to (3,1,1,1), including boundary parameters t=0,1 of type (3,2,1), and to squarefree forms. It is not applied to (2,2,2), (4,1,1), or the monomial rows: those use degeneration and the monomial theorem. The square-tail C2 theorem for the restricted family is not a new dependency of this extension.
 
-General squarefree exceptional loci, formal verification of the symbolic engines and mathematical reductions, and independent external review remain open. The 16 squarefree sample minors prove a specific example and a nonempty open set, never a complete squarefree classification. No new proof depends on the restricted family's 47 blocks or changes its conclusion.
+The squarefree exceptional-locus problem is resolved by the new characteristic-zero identities. `SQUAREFREE_REPLAY.json` records their local replay and regression checks. Formal verification of the symbolic engines and mathematical reductions, and independent external review, remain open. No new proof depends on the restricted family's 47 blocks or changes its conclusion.

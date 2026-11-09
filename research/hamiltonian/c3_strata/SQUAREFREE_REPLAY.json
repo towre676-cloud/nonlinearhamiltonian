@@ -1,0 +1,92 @@
+{
+  "status": "PASS",
+  "date": "2026-11-08",
+  "upstream_base_commit": "b17ff8568ff81067274e87486ced2a397f2a53e3",
+  "publication_status": "Local review only; no branch, PR, or merge published.",
+  "runtime": {
+    "python": "3.12.14",
+    "sympy": "1.14.0",
+    "optional_python_flint": "0.9.0"
+  },
+  "finite_proof": {
+    "degrees": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16
+    ],
+    "selected_reduced_minors": 185,
+    "intermediate_ideal_identities": 151,
+    "final_discriminant_identities": 16,
+    "discriminant_power": 1,
+    "independent_literal_differentiation_replay": "PASS"
+  },
+  "tests": {
+    "new_focused_tests": 11,
+    "existing_strata_tests": 4,
+    "total_distinct_tests": 15,
+    "optimized_mode_rejection_checks": 2,
+    "status": "PASS",
+    "note": "The first 10 new tests ran together; the subsequently added exact fourfold-witness test passed separately."
+  },
+  "static_tail": {
+    "status": "PASS",
+    "threshold": 17,
+    "steps": 181,
+    "contradictions": 31,
+    "target_branches": 2
+  },
+  "monomial_theorem": {
+    "status": "PASS",
+    "symbolic_all_degree_check": true,
+    "additional_regression_monomials": 23247
+  },
+  "discovery": {
+    "exact_partner_charts": 46,
+    "modular_squarefree_forms": 128,
+    "modular_gate_ranks": 2048,
+    "primes": [
+      101,
+      103
+    ],
+    "modular_rank_defects": 0,
+    "used_for_characteristic_zero_proof": false
+  },
+  "reproducibility": {
+    "second_generation_byte_identical": true,
+    "certificate_sha256": "2faae6b7a3e9d1202fb6e9f9d6f645a37a6f18e865c42a0bb5aa2f065a12462a"
+  },
+  "preserved_original_evidence": {
+    "explore.py": "04ec04280b021a6091cf80e6544ad00f6f97715f31b62e087112f891295db464",
+    "verify.py": "aafb6713168851a148c096826e1dd3afe367a32e8d151613bcd8435aaa23dc27",
+    "test_strata.py": "ecb2f7880c09180357e98ed8a4ccc8884db8a5b546bd1561c5e05fae0cac0949",
+    "triple.py": "d25753e3349c86459fd56ad0aa25ddd546b1fd103d4f52cc9e333e3dc0a072b9",
+    "triple_certificate.json": "4abbf20bc3cf993e174c1191c5fb785ba47bb8ee2340ce937efacbee288e9650",
+    "squarefree_sample.py": "b80dfc3a95c2bea366b411587e791a7745904ca6a6dc283f5ebd94123da58a06",
+    "squarefree_sample.json": "9aa27ecb3451084fc76ea744d5db145b785ed263936ea087d00c1536825498ca",
+    "PROVENANCE.json": "3186fe279c7f0da761ed2b1f009198a889e0a0bf7af6d477245ba21650b0835f",
+    "REPLAY.json": "ac1b0eac340aefe2e412f0802d3b4a4825bdf48255b28a22ee26bcb0266af10f"
+  },
+  "inherited_tail_inputs": {
+    "check_binary_static.py": "756cca58054fcb76a1f116dc3e0b4011f5754da696dfcb8668e788ef7f91c002",
+    "binary_static_d6.json": "79ceb8122f90750f607416dfe91d210235c6c0458e5ca237dba8077b0fe9bab7"
+  },
+  "trust_boundary": [
+    "Exact Python/SymPy polynomial arithmetic",
+    "Written GL2 covariance and simple-root normal form",
+    "Inherited static-tail theorem",
+    "Not proof-assistant formalized or externally reviewed"
+  ]
+}

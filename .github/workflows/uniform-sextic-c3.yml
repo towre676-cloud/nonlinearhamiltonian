@@ -29,3 +29,7 @@ jobs:
         run: |
           cd research/hamiltonian/c3_strata
           python -m unittest discover -s . -p test_strata.py -v
+      - name: Verify squarefree discriminant identities and reject corrupt certificates
+        run: |
+          cd research/hamiltonian/c3_strata
+          python -m unittest discover -s . -p test_squarefree.py -v
