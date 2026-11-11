@@ -18,6 +18,8 @@ import SexticC3.Degree16
 import SexticC3.Core6
 import SexticC3.Exceptional411
 import SexticC3.StaticTail
+import SexticC3.TailRows
+import SexticC3.TailDegreeFactorData
 
 namespace SexticC3
 

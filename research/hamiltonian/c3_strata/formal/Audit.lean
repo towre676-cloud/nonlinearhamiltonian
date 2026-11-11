@@ -102,3 +102,11 @@ audit_axioms SexticC3.StaticTail.reconstructed_fifth_rows
 audit_axioms SexticC3.StaticTail.target_factorization
 audit_axioms SexticC3.StaticTail.delta_zero_of_targets
 audit_axioms SexticC3.StaticTail.pDerivative_monomial
+
+audit_axioms SexticC3.StaticTail.reconstruct_linear
+audit_axioms SexticC3.StaticTail.reconstructed_fifth_row_linear
+audit_axioms SexticC3.StaticTail.exists_nonzero_edge_kernel
+audit_axioms SexticC3.TailDegreeFactors.eval_shift
+audit_axioms SexticC3.TailDegreeFactors.eval_ne_zero
+audit_axioms SexticC3.TailDegreeFactors.factors_positive
+audit_axioms SexticC3.TailDegreeFactors.factors_nonzero

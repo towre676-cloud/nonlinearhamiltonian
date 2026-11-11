@@ -1,93 +1,84 @@
 # Static tail in the normalized simple-root chart
 
-The input is a degree-(n) coefficient vector (g_j) in the basis
-(q^jp^{n-j}). A static kernel vector satisfies the depth-zero rows of
-orders three and five from `SexticC3.Model`. For a sextic with a chosen
-simple root, the written proof sends that root to (q=0), rescales the
-coefficient of (qp^5) to one, and uses (pmapsto p+u q) to remove
-the coefficient of (q^2p^4), which changes by (5u). This is the
-coefficient order in the Lean model. The Python certificate exchanges
-the names of (q,p), so its index (t) is also the distance from
-the simple-root edge. Swapping the variables changes both odd
-transvectants by a sign and preserves the vanishing conditions.
+The input is a degree-$n$ coefficient vector $g_j$ in the basis
+$q^jp^{n-j}$. Static kernel vectors satisfy the depth-zero rows of
+orders three and five from the Lean coefficient model. For a chosen
+simple root, the written proof moves it to $q=0$, rescales the
+coefficient of $qp^5$ to one, and shears $p$ by $u q$ to remove
+the $q^2p^4$ coefficient, which changes by $5u$. The Python
+certificate uses the opposite names for the two variables. Its
+index $t$ still measures distance from the simple-root edge.
+Swapping variables changes the signs of both odd transvectants.
 
 ## Checked by Lean
 
-- The uniform static coefficient operator agrees with the existing
-  sparse rows. In degree (n), for the (qp^5) column contribution
-  at index (j), the pivots are
-  [
-  60j(j-1)(n-2j+2),qquad
-  120j(j-1)(j-2)(j-3)(5n-6j+4).
-  ]
-  Contributions from all other Hamiltonian terms have input index
-  less than (j) in that row. For (2le jle n) and (nge17),
-  if the third-order factor vanishes, (n=2j-2), the fifth-order
-  linear factor becomes (4j-6), and (jge4). Induction proves that
-  a static kernel vector with (g_0=g_1=0) vanishes throughout
-  (0le jle n).
-- For (2le jle9), the third-order pivot alone is nonzero.
-  `reconstruct_eq` proves forward substitution through index nine.
-  `reconstructed_fifth_rows` proves that all six order-five rows
-  at output indices (0,ldots,5) vanish on the reconstruction of
-  a static kernel vector. These rows require indices at most nine.
-- The three target polynomials are (b^2+2a^3/5),
-  (c+3a^2/20), and (d+ab/50). When all vanish, the normalized
-  quintic factors as ((X-r)^4(X+4r)), with (r=0) if (a=0)
-  and (r=-b/(2a)) otherwise. Lean also proves `delta a b c d = 0`
-  directly by substitution in the discriminant from the finite bridge.
-- The dehomogenized polynomial operator for (partial_p) is
-  (nF-XF'). Lean checks its action on each monomial, with
-  (partial_q) represented by the ordinary polynomial derivative.
-  The static row agreement above is with the coefficient model.
+- In the edge column $j$, the order-three and order-five pivots
+  are $60j(j-1)(n-2j+2)$ and
+  $120j(j-1)(j-2)(j-3)(5n-6j+4)$. The other Hamiltonian terms in
+  each row contribute only at input indices below $j$. If the
+  third-order pivot vanishes at $n=2j-2$, then $j\ge4$ for
+  $n\ge17$ and the fifth-order linear factor equals $4j-6$.
+  Thus the first two coefficients determine the whole static kernel vector.
+- The third-order pivot alone is nonzero through index nine.
+  The reconstruction satisfies the six fifth-order equations
+  at output indices zero through five. TailRows proves linearity
+  and constructs the two entries of each row by evaluating the two
+  coordinate vectors. Any nonzero static partner gives a nonzero
+  vector annihilated by all six linear forms.
+- TailDegreeFactors proves that a strictly positive constant
+  and nonnegative higher coefficients after $n=17+m$ imply
+  nonvanishing at every integer $n\ge17$. TailDegreeFactorData
+  checks this condition for all 53 primitive integer representatives
+  extracted from the Python replay. The extraction clears denominators,
+  divides by common integer content, and fixes the leading sign.
+  Lean checks the resulting list using kernel reduction.
+- The targets $b^2+2a^3/5$, $c+3a^2/20$, and $d+ab/50$
+  imply the factorization $(X-r)^4(X+4r)$ and the vanishing of
+  the discriminant used in the finite Lean bridge. Here $r=0$
+  if $a=0$ and $r=-b/(2a)$ otherwise.
+- The dehomogenized operator for the $p$ derivative is $nF-XF'$.
+  Lean checks its action on monomials. The $q$ derivative in this
+  chart is the ordinary polynomial derivative. The static row
+  agreement is with the coefficient model.
 
-The reduction and target results hold over any characteristic-zero
-field in this chart. The row agreement and row split hold over a
-commutative ring. No discriminant hypothesis is needed for the reduction.
+The reduction, degree-factor and target results hold over any
+characteristic-zero field. The uniform static row agreement and
+row split hold over any commutative ring.
 
 ## Remaining obligations
 
-1. Prove the normalized chart change from a geometric simple root and
-   covariance of the actual polynomial gates. Prove the complete
-   iterated differential-operator correspondence with the coefficient
-   rows, including the sign when exchanging the variables.
-2. Express the six reconstructed rows as linear forms in (g_0,g_1).
-   Check their cleared numerators against the six stored pairs
-   ((A_t,B_t)), with the recorded row scale. Derive the torus weights
-   and prove that the nine systems cover all nonzero edge pairs over an
-   algebraically closed field. The mixed system uses (g_0=g_1) after
-   scaling. The other eight use the first nonzero Hamiltonian parameter
-   normalized to one in each single-coordinate system. The parameter
-   origin already satisfies the target equations.
-3. Replay the 181 elimination steps in Lean. A sparse rational
-   polynomial can be rendered as a sum of rational coefficients times
-   powers of ((n,a,b,c,d)). A derived identity is a polynomial linear
-   combination of earlier zeros, a factorization branches by the
-   field zero-product law, and a target leaf cancels a nonzero
-   degree-only factor. Check the identities with ring normalization
-   over an arbitrary characteristic-zero field. The independent Python
-   replay reports 31 contradictions and two target leaves. An exact
-   rational diagnostic found 53 distinct degree-only polynomials up to
-   leading-coefficient normalization, all with nonnegative coefficients
-   after (n=17+m) and strictly positive constant term. This gives a
-   route to proving nonvanishing over the integers before transporting
-   it to the field. The diagnostic and elimination are outside the
-   current Lean proof.
-4. Combine the replay with `delta_zero_of_targets` to exclude a
-   nonzero static vector in the squarefree tail. For the triple-root
-   application, transport the explicit factorization and rule out both
-   permitted multiplicity types. Assemble the geometric, descent and
-   grading results separately for the complete classification.
+1. Prove the normalized chart change from a geometric simple root
+   and covariance of the polynomial gates. Prove the iterated
+   differential-operator correspondence with the coefficient rows.
+2. Match the six proved linear forms to the six stored pairs
+   $(A_t,B_t)$ after clearing denominators and accounting for the
+   recorded row scales. Derive the torus weights and prove that the
+   nine systems cover all nonzero edge pairs over an algebraically
+   closed field. The mixed system normalizes $g_0=g_1$. Each
+   single-coordinate system normalizes the first nonzero Hamiltonian
+   parameter to one. The parameter origin already satisfies the targets.
+3. Replay the 181 elimination steps in Lean. Render each sparse
+   polynomial as a sum of rational coefficients times powers of
+   $(n,a,b,c,d)$. Check the linear combinations and factorizations
+   by ring normalization, use the field zero-product law to branch,
+   and match each degree-only factor to its primitive integer
+   representative with a proved nonzero scale. The independent
+   Python replay reports 31 contradiction leaves and two target leaves.
+4. Combine the replay with discriminant vanishing to exclude nonzero
+   static vectors in the squarefree tail. For the triple-root
+   application, transport the explicit factorization and rule out
+   both permitted multiplicity types. Assemble the geometric,
+   descent, and grading results for the complete classification.
 
 ## Reproduction
 
-From this directory with the pinned Lean toolchain and Mathlib cache:
+From this directory with the pinned Lean and Mathlib dependencies:
 
-```sh
+~~~sh
 lake build SexticC3
 lake env lean Audit.lean
-```
+python generate_tail_degree_factors.py | cmp - SexticC3/TailDegreeFactorData.lean
+~~~
 
-The audit includes fourteen new theorems. The finite generated modules,
-the independent Python checker, and the existing certificate data are
-untouched.
+The finite generated modules, independent Python checker, and existing
+certificate data are untouched.
