@@ -29,8 +29,8 @@ symbolic differentiation, checks the triangular pivots and lift, recomputes
 the discriminant, and replays the intermediate and final identities. The
 translator uses its row expressions as normalization hints. Each hint is
 then an equality that Lean proves from its own coefficient formula. The
-trust boundary includes the JSON parser and the source transcription from
-the pinned byte stream.
+parser and transcriber determine which certificate data are represented. The
+generated identities and kernel bounds are proved from their Lean definitions.
 
 Degree six is the smallest record by number of generators, number of
 intermediate identities, and serialized size. It uses four order-one
@@ -68,15 +68,22 @@ lake build
 lake env lean Audit.lean
 ```
 
+The audit fails if a checked declaration uses any axiom outside
+`propext`, `Classical.choice` and `Quot.sound`. It also checks
+`Degree6.lift1_eq_hCoeff`, which identifies the lift used by the upper bound
+with the Hamiltonian used by the converse.
+
 To regenerate the checked-in Lean statements, install SymPy 1.14.0 and
 run `python generate.py`. Building the Lean project does not run Python.
 
 ## Local verification
 
-Lean 4.19.0 compiled all project modules and `Audit.lean`. The eleven audited
+Lean 4.19.0 compiled all project modules and `Audit.lean`. The twelve audited
 theorems depend only on `propext`, `Classical.choice` and `Quot.sound`.
 The finite gate kernels under a nonzero discriminant are zero in degrees one
-and two and the span of the normalized Hamiltonian in degree six. The
-existing Python verifier independently replayed all sixteen records, and the
+and two and the span of the normalized Hamiltonian in degree six. These conclusions
+refer to coordinates `0` through `n`, the homogeneous partner basis. The
+coefficient model represents vectors by functions `Nat → K` and reads only
+those coordinates. The existing Python verifier independently replayed all sixteen records, and the
 eleven squarefree and four strata tests passed. The generated Lean files
 were byte-identical on regeneration.

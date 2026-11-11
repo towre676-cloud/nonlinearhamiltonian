@@ -1,4 +1,4 @@
-"""Transcribe the two v1 records and emit Lean proof obligations.
+"""Transcribe the v1 records for degrees one, two and six and emit Lean proof obligations.
 
 The independent Python verifier supplies row simplification hints only.
 Lean proves each row hint from Model.rowTerms and checks the recorded identities.

@@ -1,16 +1,29 @@
 import SexticC3
+import Lean.Util.CollectAxioms
 
-#print axioms SexticC3.delta_eq_derivativeMultiplicationDet
+open Lean Elab Command
 
-#print axioms SexticC3.Degree6.recorded_identity
-#print axioms SexticC3.Degree6.discriminant_in_selected_span
-#print axioms SexticC3.Degree6.kernel_bound
-#print axioms SexticC3.Degree6.hamiltonian_kernel
+elab "audit_axioms " decl:ident : command => do
+  let name ← liftCoreM <| Lean.Elab.realizeGlobalConstNoOverloadWithInfo decl
+  let axioms ← Lean.collectAxioms name
+  let allowed := [``propext, ``Classical.choice, ``Quot.sound]
+  let unexpected := axioms.filter fun axiomName => !allowed.contains axiomName
+  unless unexpected.isEmpty do
+    throwError "{name} depends on unexpected axioms: {unexpected}"
+  logInfo m!"{name} depends on axioms: {axioms}"
 
-#print axioms SexticC3.Degree1.recorded_identity
-#print axioms SexticC3.Degree1.discriminant_in_selected_span
-#print axioms SexticC3.Degree1.kernel_bound
+audit_axioms SexticC3.delta_eq_derivativeMultiplicationDet
 
-#print axioms SexticC3.Degree2.recorded_identity
-#print axioms SexticC3.Degree2.discriminant_in_selected_span
-#print axioms SexticC3.Degree2.kernel_bound
+audit_axioms SexticC3.Degree6.recorded_identity
+audit_axioms SexticC3.Degree6.discriminant_in_selected_span
+audit_axioms SexticC3.Degree6.kernel_bound
+audit_axioms SexticC3.Degree6.lift1_eq_hCoeff
+audit_axioms SexticC3.Degree6.hamiltonian_kernel
+
+audit_axioms SexticC3.Degree1.recorded_identity
+audit_axioms SexticC3.Degree1.discriminant_in_selected_span
+audit_axioms SexticC3.Degree1.kernel_bound
+
+audit_axioms SexticC3.Degree2.recorded_identity
+audit_axioms SexticC3.Degree2.discriminant_in_selected_span
+audit_axioms SexticC3.Degree2.kernel_bound
