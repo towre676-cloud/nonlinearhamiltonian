@@ -241,32 +241,6 @@ def _affine_complement(H, L, M):
     return _sixfold_space(L, M, quadratic=degree <= 1)
 
 
-def _quadratic_sixfold_candidate(H, factors, s):
-    L, M = _sixfold_coordinates(factors)
-    a, b = L.get((1, 0), 0), L.get((0, 1), 0)
-    c, d = M.get((1, 0), 0), M.get((0, 1), 0)
-    determinant = a*d - b*c
-    x, y = s.symbols("x y")
-    q, p = (d*x - b*y) / determinant, (a*y - c*x) / determinant
-    transformed = s.Poly(sum(coef*q**i*p**j for (i, j), coef in H.items()), y, x, domain=s.QQ)
-    if transformed.degree(y) != 2:
-        return None
-    coefficients = transformed.as_dict()
-    quadratic = s.Poly.from_dict({(i,): coef for (j, i), coef in coefficients.items() if j == 2}, x)
-    linear = s.Poly.from_dict({(i,): coef for (j, i), coef in coefficients.items() if j == 1}, x)
-    degree = quadratic.degree()
-    if degree not in (2, 3) or linear.degree() > 4:
-        return None
-    u = s.Poly(x + quadratic.nth(degree - 1) / (degree * quadratic.nth(degree)), x)
-    quotient = (linear.diff()*u - (degree - 1)*linear).quo(2*quadratic)
-    v = quotient.integrate()
-
-    def substitute_univariate(poly):
-        return E.add(*(E.scale(E.power(L, i), _fraction(coef))
-                       for (i,), coef in poly.terms() if coef))
-
-    candidate = E.add(E.multiply(substitute_univariate(u), M), substitute_univariate(v))
-    return degree, candidate
 
 
 def _triple_pair_generator(factors):
@@ -334,36 +308,6 @@ def _verify_finite_spaces(H, S1, core):
         raise RuntimeError("The reported finite core is not invariant under the exact Poisson action")
 
 
-def _quadratic_sixfold_report(H, degree, G, report):
-    S1 = core = [dict(_ONE), H]
-    operators = _Operators(H)
-    if not operators.gates_zero(G, 0):
-        raise RuntimeError("The proposed sixfold lift failed its static gates")
-    first = operators.D(G)
-    T3, T5 = operators.T(first, 3), operators.T(first, 5)
-    if T3 or T5:
-        if degree == 2:
-            raise RuntimeError("A weight-six lift must pass the first refinement")
-        report["first_refinement_obstruction"] = {
-            "G": E.serialize(G), "iterate": 1, "DG": E.serialize(first),
-            "T3": E.serialize(T3), "T5": E.serialize(T5),
-        }
-    else:
-        S1 = core = [dict(_ONE), G, H]
-        second = operators.D(first)
-        T3, T5 = operators.T(second, 3), operators.T(second, 5)
-        if T3 or T5:
-            core = [dict(_ONE), H]
-            report["obstruction"] = {"G": E.serialize(G), "iterate": 2,
-                                     "D2G": E.serialize(second),
-                                     "T3": E.serialize(T3), "T5": E.serialize(T5)}
-    _verify_finite_spaces(H, S1, core)
-    report["classification"].update({
-        "method": "sixfold_quadratic_complement",
-        "sufficient_refinement_depth": 2 if report["obstruction"] else 1,
-        "S1": _finite(S1), "S2": _finite(core), "Dinf": _finite(core),
-    })
-    return report
 
 
 def _boundary(method, sympy_version=None):
@@ -387,12 +331,14 @@ def classify_sextic(H, *, schema=1):
     rational sextic (and its constant shifts) is supported.  Nonconstant
     lower terms are supported for the finite-dimensional leading strata
     and for the affine-complement and quadratic-composition subfamilies.
-    Schema 2 additionally supports quadratic sixfold families of weights six and seven.
+    Schema 2 additionally supports every quadratic sixfold complement family.
     Remaining inputs return ``status=unsupported``.
     """
     if type(schema) is not int or schema not in (1, 2):
         raise ValueError("Sextic core schema must be 1 or 2")
-    schema_id = SCHEMA if schema == 1 else "hamiltonian-sextic-core/2"
+    if schema == 2:
+        return classify_sextic_v2(H)
+    schema_id = SCHEMA
     H = _validate(H)
     if not H:
         space = _family([_Q, _P], [_ONE], "All polynomials in Q[q,p]")
@@ -434,11 +380,6 @@ def classify_sextic(H, *, schema=1):
             if space is not None:
                 classification.update({"method": method, "S1": space, "S2": space, "Dinf": space})
                 return report
-            if pattern == (6,) and schema == 2:
-                candidate = _quadratic_sixfold_candidate(H, factors, s)
-                if candidate is not None:
-                    degree, G = candidate
-                    return _quadratic_sixfold_report(H, degree, G, report)
             report["status"] = "unsupported"
             report["unsupported_reason"] = (
                 "Nonconstant lower-degree terms with this infinite-dimensional leading S1 are outside "
@@ -486,5 +427,153 @@ def classify_sextic(H, *, schema=1):
         "Both gates vanish on every S1 basis vector through iterate one",
         "Both gates vanish on every core basis vector through iterate two",
         "The reported core is invariant under the full, unprojected Poisson action",
+    ]
+    return report
+
+
+SCHEMA_V2 = "hamiltonian-sextic-core/2"
+_QUADRATIC_SIXFOLD = "research/hamiltonian/c3_strata/QUADRATIC_SIXFOLD_THEOREM.md"
+_SEPARABLE_SIXFOLD = "research/hamiltonian/c3_strata/SEPARABLE_SIXFOLD_THEOREM.md"
+_WEIGHTED_SEPARABLE = "research/hamiltonian/c3_strata/WEIGHTED_SEPARABLE_THEOREM.md"
+
+
+def _quadratic_sixfold_module():
+    spec = util.spec_from_file_location(
+        "_sextic_core_quadratic_sixfold", Path(__file__).with_name("quadratic_sixfold.py"))
+    module = util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
+
+
+def _separable_sixfold_module():
+    spec = util.spec_from_file_location(
+        "_sextic_core_separable", Path(__file__).with_name("separable_sixfold.py"))
+    module = util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
+
+
+def _weighted_separable_module():
+    spec = util.spec_from_file_location(
+        "_sextic_core_weighted", Path(__file__).with_name("weighted_separable.py"))
+    module = util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
+
+
+def _unknown_stage(index, reason):
+    return {"index": index, "status": "unknown", "space": None, "reason": reason}
+
+
+def _stage(index, space):
+    return {"index": index, "status": "classified", "space": space}
+
+
+def _v2_space(space, L):
+    """Convert a quadratic_sixfold space K[L]*module + span(finite)."""
+    module, finite = space["module_over_K[L]"], space["finite_span"]
+    if not module:
+        return {"kind": "finite_basis", "dimension": len(finite), "basis": finite}
+    answer = {"kind": "polynomial_family" if not finite else "module_plus_finite",
+              "dimension": None, "coefficient_generators": [L], "module_basis": module,
+              "description": "sum of fi(L)*module_basis[i] with arbitrary fi in Q[t]"}
+    if finite:
+        answer["finite_span"] = finite
+        answer["description"] += ", plus the rational span of finite_span"
+    return answer
+
+
+def classify_sextic_v2(H):
+    """Schema-2 classification: explicit stages, one space representation per stage.
+
+    Every input classified by schema 1 is classified here with the same S1,
+    S2 and Dinf.  In addition, sixfold-leading sextics of degree two in a
+    complementary coordinate are classified (QUADRATIC_SIXFOLD_THEOREM.md).
+
+    ``classification.stages`` is a list indexed by refinement depth.  Each
+    entry has ``status`` "classified" with a ``space``, or "unknown" with
+    ``space`` null and a reason; an unknown stage asserts nothing.  A space is
+    a ``finite_basis``, a ``polynomial_family`` (free module over Q[L]), or a
+    ``module_plus_finite`` (such a module plus a finite rational span).
+    ``depth.kind`` is "least" when the first stage equal to the core is known
+    exactly, with a checked ``sharpness_witness``, and "sufficient" otherwise.
+    """
+    first = classify_sextic(H)
+    report = {key: first[key] for key in ("status", "input", "degree", "homogeneous", "leading")}
+    report["schema"] = SCHEMA_V2
+    report["proof_boundary"] = dict(first["proof_boundary"])
+    old = first["classification"]
+    if first["status"] == "classified":
+        depth = old["sufficient_refinement_depth"]
+        report["classification"] = {
+            "family": old["family"], "method": old["method"],
+            "derived_from": SCHEMA,
+            "depth": {"value": depth, "kind": "sufficient"},
+            "stages": [_unknown_stage(0, "S0 is not asserted by the schema-1 theorems"),
+                       _stage(1, old["S1"]), _stage(2, old["S2"])],
+            "Dinf": old["Dinf"],
+            "sharpness_witness": None,
+            "obstruction": first["obstruction"],
+            "quadratic_lift": first["quadratic_lift"],
+        }
+        return report
+
+    second = _quadratic_sixfold_module().classify_quadratic_sixfold(_validate(H))
+    if second["status"] != "classified":
+        third = _separable_sixfold_module().classify_separable_sixfold(_validate(H))
+        if third["status"] == "classified":
+            report["status"] = "classified"
+            report["classification"] = third["classification"]
+            boundary = report["proof_boundary"]
+            boundary["dependencies"] = [_SEPARABLE_SIXFOLD]
+            for key in ("completeness", "per_input_checks"):
+                boundary[key] = third["proof_boundary"][key]
+            return report
+        fourth = _weighted_separable_module().classify_weighted_separable_sixfold(_validate(H))
+        if fourth["status"] == "classified":
+            report["status"] = "classified"
+            report["classification"] = fourth["classification"]
+            boundary = report["proof_boundary"]
+            boundary["dependencies"] = [_SEPARABLE_SIXFOLD, _WEIGHTED_SEPARABLE]
+            for key in ("completeness", "per_input_checks"):
+                boundary[key] = fourth["proof_boundary"][key]
+            return report
+        report["unsupported_reason"] = first["unsupported_reason"]
+        report["classification"] = {"family": old["family"], "method": old["method"],
+                                    "derived_from": SCHEMA, "depth": None, "stages": None,
+                                    "Dinf": None, "sharpness_witness": None,
+                                    "obstruction": None, "quadratic_lift": None}
+        return report
+
+    L = second["L"]
+    stages = []
+    for index in range(second["least_depth"] + 1):
+        space = second["stages"].get(f"S{index}")
+        stages.append(_unknown_stage(index, "S0 is not classified for a nonconstant "
+                                            "coefficient of the squared complement")
+                      if space is None else _stage(index, _v2_space(space, L)))
+    report["status"] = "classified"
+    report["classification"] = {
+        "family": old["family"], "method": "sixfold_quadratic_complement",
+        "derived_from": second["schema"],
+        "regime": second["regime"],
+        "coordinates": {"L": L, "M": second["M"]},
+        "depth": {"value": second["least_depth"], "kind": "least"},
+        "stages": stages,
+        "Dinf": _v2_space(second["Dinf"], L),
+        "sharpness_witness": second["sharpness_witness"],
+        "square_first_integral": second.get("square_first_integral"),
+        "obstruction": None, "quadratic_lift": None,
+    }
+    boundary = report["proof_boundary"]
+    boundary["dependencies"] = list(boundary["dependencies"]) + [_QUADRATIC_SIXFOLD]
+    boundary["completeness"] = (
+        "Theorems A-E of QUADRATIC_SIXFOLD_THEOREM.md. For a nonconstant top coefficient the "
+        "stages are exact kernels inside the weighted box that Theorem D proves contains S1, "
+        "and the core dimension is cross-checked against the closed criterion of Theorem E")
+    boundary["per_input_checks"] = [
+        "The sharpness witness passes both gates through iterate depth-1 and fails at iterate depth",
+        "For a nonconstant top coefficient: stable stage invariant under the Poisson action, "
+        "box computation equal to the Theorem E prediction",
     ]
     return report

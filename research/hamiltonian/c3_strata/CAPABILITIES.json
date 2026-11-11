@@ -1,0 +1,94 @@
+{
+  "schema": "hamiltonian-capabilities/1",
+  "arithmetic": "exact rational arithmetic in the classifier; characteristic-zero fields in the stated theorems",
+  "end_to_end_sextic_classification_formalized": false,
+  "scopes": [
+    {
+      "id": "homogeneous_sextics",
+      "input_scope": "Every nonzero homogeneous rational binary sextic, and constant shifts",
+      "interface": "1 and 2",
+      "output": "Complete S1, S2 and persistent core",
+      "theorem": "SEXTIC_STRATA_THEOREM.md",
+      "assurance": "computer_assisted_all_degree"
+    },
+    {
+      "id": "finite_leading_perturbations",
+      "input_scope": "Arbitrary lower terms for leading root types 4,2; 4,1,1; 3,2,1; 3,1,1,1; 2,2,2; 2,2,1,1; 2,1,1,1,1; 1,1,1,1,1,1",
+      "interface": "1 and 2",
+      "output": "Exact lift, obstruction and core at depth at most two",
+      "theorem": "INHOMOGENEOUS_THEOREM.md",
+      "assurance": "written_all_degree_with_inherited_inputs"
+    },
+    {
+      "id": "sixfold_affine",
+      "input_scope": "Sixfold leading form, affine dependence on a complementary coordinate",
+      "interface": "1 and 2",
+      "output": "Symbolic infinite module and core",
+      "theorem": "INHOMOGENEOUS_THEOREM.md",
+      "assurance": "written_all_degree"
+    },
+    {
+      "id": "fivefold_affine",
+      "input_scope": "Fivefold-leading Hamiltonians affine in a complementary coordinate",
+      "interface": "1 and 2",
+      "output": "Symbolic infinite module and core",
+      "theorem": "INHOMOGENEOUS_THEOREM.md",
+      "assurance": "written_all_degree"
+    },
+    {
+      "id": "quadratic_composition",
+      "input_scope": "Triple-pair leading form and a cubic polynomial in an affine quadratic generator",
+      "interface": "1 and 2",
+      "output": "Polynomial algebra in the recovered generator",
+      "theorem": "INHOMOGENEOUS_THEOREM.md",
+      "assurance": "written_all_degree"
+    },
+    {
+      "id": "sixfold_quadratic",
+      "input_scope": "Every sixfold-leading sextic quadratic in a complementary coordinate",
+      "interface": "2",
+      "output": "All claimed stages, finite core, least depth, sharpness witness; S0 remains unknown for nonconstant top coefficient",
+      "theorem": "QUADRATIC_SIXFOLD_THEOREM.md",
+      "assurance": "written_and_computer_assisted_all_degree"
+    },
+    {
+      "id": "sixfold_separable",
+      "input_scope": "Sixfold-leading sextics affinely equivalent to f(L)+g(M), with deg(g)=3 or 4",
+      "interface": "2",
+      "output": "Complete static space, refinement, core and least depth",
+      "theorem": "SEPARABLE_SIXFOLD_THEOREM.md",
+      "assurance": "written_all_degree"
+    },
+    {
+      "id": "separable_higher_degree",
+      "input_scope": "Rational affine transforms of f(L)+g(M), deg(f)>=5 and deg(g)=3 or 4",
+      "interface": "separable-core",
+      "output": "Complete static space, refinement, core and least depth",
+      "theorem": "SEPARABLE_SIXFOLD_THEOREM.md",
+      "assurance": "written_all_degree"
+    },
+    {
+      "id": "mixed_weighted_perturbations",
+      "input_scope": "H=aL^n+bM^m+R with n>=5,m=3 or4, a*b nonzero, weights(m/gcd(n,m),n/gcd(n,m)), and every term of R strictly below weight n*m/gcd(n,m)",
+      "interface": "weighted-core; sextic schema 2 when n=6",
+      "output": "Complete finite static space and refinements, core span{1,H}, least depth one or two",
+      "theorem": "WEIGHTED_SEPARABLE_THEOREM.md",
+      "assurance": "written_all_degree"
+    },
+    {
+      "id": "squarefree_finite_lean",
+      "input_scope": "Normalized squarefree sextic chart, homogeneous partner degrees 1 through 16",
+      "interface": "Lean",
+      "output": "Under nonzero delta, exact differential first-refinement and persistent-core equivalences in degrees 1 through 16: zero except the Hamiltonian line in degree six",
+      "theorem": "formal/THEOREM_BOUNDARY.md",
+      "assurance": "lean_with_explicit_boundary"
+    }
+  ],
+  "unclassified": [
+    "Unrestricted nonconstant perturbations of the three leading types with infinite first refinement",
+    "General mixed complementary degree >=3 outside the separable families and strict lower-weight cubic/quartic cones",
+    "Static S0 for nonconstant quadratic complementary coefficient",
+    "The complete geometric all-degree C3 theorem in Lean"
+  ],
+  "interpretation": "Theorem support, independent replay, source integrity and Lean formalization are distinct evidence levels. This registry is an index, not a proof."
+}

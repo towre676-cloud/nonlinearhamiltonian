@@ -11,7 +11,7 @@ The 2025 and atlas archives are documented public derivatives: two occurrences o
 | [2025_Mathematics_Source_Bundle.zip](2025_Mathematics_Source_Bundle.zip) | 6,043,505 | `b8586483c403bf7d30b507b03cd0ec942d2f4dd00d3667c023f0fae01e5f4627` |
 | [2026_Mathematics_Source_Bundle.zip](2026_Mathematics_Source_Bundle.zip) | 4,720,680 | `91eeff20da756ba5f80ad9190e0b89850797529ae76a655dccce662cc0a968d7` |
 | Mathematics atlas: [part index](atlas-source-parts/parts.json) and [Python reassembler](reassemble_atlas.py) (`python downloads/reassemble_atlas.py`) | 22,147,097 reassembled | `69e639d10f90a50180dcee289d31f0a405cafb882705f1813a53c3cf56046475` |
-| [Nonlinear_Hamiltonian_Partners_Source_Bundle.zip](Nonlinear_Hamiltonian_Partners_Source_Bundle.zip) | 1,506,828 | `64c59a716caf305bb3400978d8f24428daf02547d50a9ec874c87919d6c4171c` |
+| [Nonlinear_Hamiltonian_Partners_Source_Bundle.zip](Nonlinear_Hamiltonian_Partners_Source_Bundle.zip) | 2,055,523 | `b668459189698bae942d207badcc6469cd5eb951a68de204cdd8ac2b3c2658c5` |
 
 The full atlas archive is delivered in six parts; all six source archives remain recoverable. From the repository root, run `python3 downloads/reassemble_atlas.py` (Windows: `py -3 downloads/reassemble_atlas.py`). This creates `downloads/Mathematics_Atlas_2023_2026_Source_Bundle.zip` after verifying every part and the complete archive, whose SHA-256 is `69e639d10f90a50180dcee289d31f0a405cafb882705f1813a53c3cf56046475`. An existing correct archive is verified and retained.
 

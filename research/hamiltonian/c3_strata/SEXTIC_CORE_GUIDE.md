@@ -56,7 +56,9 @@ condition than initial-bracket agreement alone.
 | Sixfold leading form with \(H=f(L)+b(L)M\) in coordinates adapted to the repeated linear factor | Polynomial family over \(\mathbb Q[L]\) with module basis \(1,M,M^2\) for affine \(b\), and \(1,M\) otherwise |
 | Fivefold-leading Hamiltonians affine in a complementary coordinate | The all-degree module over the multiplicity-five factor |
 | Triple-pair leading forms with a cubic in an affine quadratic generator | The polynomial algebra in that generator |
-| Sixfold-leading Hamiltonians quadratic in a complement, with quadratic coefficient of degree two or three | Finite first space and persistent core with `--schema 2` |
+| Every sixfold-leading Hamiltonian quadratic in a complementary coordinate | Complete core and least depth, mixed infinite/finite refinement stages with `--schema 2`; static S0 is unknown for a nonconstant squared-complement coefficient |
+| Sextics affinely equivalent to f(L)+g(M), with deg(f)=6 and deg(g)=3 or 4 | Complete static space, refinement and core with `--schema 2` |
+| Sixfold sextics with cubic/quartic weighted leading binomial and arbitrary strictly lower-weight mixed terms | Complete static space, all refinements and least depth with `--schema 2` |
 | Other nonconstant perturbations of types (6), (5,1), and (3,3) | An explicit unsupported result |
 | Other nonzero total degree | An input error |
 
@@ -104,7 +106,7 @@ that `S^0` differs from the core for every particular input.
 
 The default schema identifier is `hamiltonian-sextic-core/1`. Pass
 `--schema 2` on the CLI or `schema=2` to `classify_sextic` to opt in to
-`hamiltonian-sextic-core/2`, which adds the quadratic sixfold case.
+`hamiltonian-sextic-core/2`, which adds the complete quadratic-complement and separable cubic/quartic-complement families.
 
 ```sh
 python research/hamiltonian/partner_lab.py sextic-core --schema 2 --H '(q*p+q^3)^2'
@@ -112,10 +114,19 @@ python research/hamiltonian/partner_lab.py sextic-core --schema 2 --H '(q*p+q^3)
 
 This example has a three-dimensional core. For `q^6+q^2*p^2`, the first
 refinement is three-dimensional and the second refinement drops to
-`span{1,H}`, with an exact obstruction in the report. For
-`q^6+(q^3+q)*p^2`, the extra direction fails earlier. The
-`first_refinement_obstruction` field records the failed lift and its
-first-iterate contractions.
+`span{1,H}`. The full quadratic family also includes infinite intermediate
+spaces: `q^6+p^2` has least depth five, while
+`(p+q^3)^2+q^3` has least depth six.
+
+Schema 2 has `classification.stages`, indexed from zero, and
+`classification.depth = {"value": r, "kind": "least" | "sufficient"}`.
+A stage is either `classified` with its exact `space`, or `unknown` with
+`space: null` and a reason. The space kinds are `finite_basis`,
+`polynomial_family`, and `module_plus_finite`. A `module_plus_finite` space
+adds the rational `finite_span` to the stated polynomial module.
+`classification.Dinf` gives the persistent core. A least-depth claim includes
+an exact `sharpness_witness` whose first nonzero defect occurs at that depth.
+Schema 1 still uses the following established fields:
 
 | Field | Meaning |
 | --- | --- |
@@ -130,6 +141,12 @@ first-iterate contractions.
 | `quadratic_lift` | The leading quadratic and its linear correction, or an exact certificate that no correction exists |
 | `obstruction` | A surviving first-refinement observable and its nonzero second-iterate correction, when present |
 | `proof_boundary` | The all-degree theorem dependencies and the exact computational scope |
+
+In schema 2, legacy obstruction and lift records live inside `classification`.
+For the complete quadratic family, its sharpness witness and square first
+integral have their own named fields. Schema 2 supersedes the earlier narrow
+weight-six/weight-seven stage shape from PR #16; the default schema-1
+contract remains unchanged.
 
 A polynomial is an ordered list of records with keys `q`, `p`, and
 `coefficient`. The coefficient is a rational string, such as `"-7/3"`.
@@ -151,14 +168,17 @@ monomial coefficient, so it can be reconstructed directly from the input.
 All equations, including rows outside the certificate, are checked when a
 lift is returned.
 
-An unsupported result retains the exact input and leading-root analysis but
-sets `S1`, `S2`, `Dinf`, and the sufficient depth to `null`. The CLI prints that
-JSON and exits with status 2. Successful classifications exit with status 0.
+An unsupported result retains the exact input and leading-root analysis.
+Schema 1 sets `S1`, `S2`, `Dinf`, and the sufficient depth to `null`.
+Schema 2 sets its depth, stages, core, and witness fields to `null`.
+The CLI prints that JSON and exits with status 2. Successful classifications exit with status 0.
 Malformed input is reported as an argument error with status 2.
 
 ## Python API
 
 The same calculation is available from `sextic_core.classify_sextic(H)`.
+Use `classify_sextic(H, schema=2)` or `classify_sextic_v2(H)` for the complete
+stage interface. Both schema-2 entry points return the same report.
 The input is a mapping from exponent pairs to `fractions.Fraction` or integer
 coefficients, matching the existing sparse engine. For example, from the
 `research/hamiltonian` directory:
@@ -185,9 +205,11 @@ python research/hamiltonian/c3_strata/verify_sextic_core.py
 python -B -X utf8 -S research/hamiltonian/verify_cli.py
 ```
 
-The classifier evaluates explicit odd-transvectant contractions. The
-independent checker uses the maintained defining star-exponential engine to
-check the same observable and its iterates. In these conventions, its
+The schema-1 classifier evaluates explicit odd-transvectant contractions. The
+replay uses the maintained defining star-exponential engine to check the same
+observable and its iterates. Some schema-2 producers, including the quadratic
+helper, also use that engine; their independent supplied-report checker has
+separate scope recognition and space-comparison logic. In these conventions, the
 `hbar^2` coefficient is `-T3/24`, and its `hbar^4` coefficient is `T5/1920`.
 The checks include nonsplit factors, the point at infinity, rational changes
 of coordinates, affine translations, scalar changes, finite-dimensional
@@ -197,10 +219,45 @@ The retained [replay receipt](SEXTIC_CORE_REPLAY.json) records the cases,
 counts, and source digests for the delivered implementation.
 
 These finite checks validate the implementation and witnesses. Completeness
-in unbounded observable degree rests on the
-[homogeneous theorem](SEXTIC_STRATA_THEOREM.md), its inherited monomial and
-static-tail arguments, covariance and rational descent, and the new
-[leading-form proof](INHOMOGENEOUS_THEOREM.md). The output explicitly records
-`formalized: false`: the new theorem and classifier are not an end-to-end
-Lean formalization. The separate finite Lean bridge keeps its own stated
-scope. No literature-priority claim is made.
+in unbounded observable degree rests on the theorem identified for each family.
+The [homogeneous theorem](SEXTIC_STRATA_THEOREM.md) and
+[filtered extension](INHOMOGENEOUS_THEOREM.md) use the inherited monomial,
+static-tail, covariance and descent arguments where stated. The
+[quadratic](QUADRATIC_SIXFOLD_THEOREM.md),
+[separable](SEPARABLE_SIXFOLD_THEOREM.md) and
+[weighted](WEIGHTED_SEPARABLE_THEOREM.md) classifications supply their own
+all-degree arguments; the latter two do not inherit the old static-tail proof.
+The output explicitly records `formalized: false`: the complete classifier
+is not an end-to-end Lean formalization. The separate finite Lean bridge
+keeps its own stated scope. No literature-priority claim is made.
+
+
+## Verify a supplied report
+
+The dedicated checker takes the intended input separately and does not call
+the classifier to establish the report's correctness:
+
+```bash
+python research/hamiltonian/partner_lab.py sextic-core --schema 2 --H 'q^6+p^3' > result.json
+python research/hamiltonian/c3_strata/verify_sextic_report.py result.json --H 'q^6+p^3'
+```
+
+It rejects malformed or omitted claims, validates the exact module structure,
+and reconstructs the theorem's full finite bounding space where applicable.
+The acceptance receipt distinguishes all-degree conclusions conditional on
+written theorems from compiled Lean results. Hashes bind source versions;
+they do not prove a theorem.
+
+The broader separable theorem, valid for potential degree at least five, is
+available independently of the sextic interface:
+
+```bash
+python research/hamiltonian/partner_lab.py separable-core --H 'q^7+p^3+q'
+```
+
+See [the research capabilities](../RESEARCH_CAPABILITIES.md) for examples,
+complete reproduction commands and the remaining classification boundaries.
+
+The `weighted-core --H` command also accepts the mixed lower-weight family
+for potential degrees above six. See [the weighted theorem](WEIGHTED_SEPARABLE_THEOREM.md)
+for its exact cone, complete envelope and all-odd-gate treatment.

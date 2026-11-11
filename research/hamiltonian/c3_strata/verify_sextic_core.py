@@ -23,13 +23,23 @@ if _SPEC is None or _SPEC.loader is None:
     raise RuntimeError("Cannot load the independent star-exponential engine")
 E = importlib.util.module_from_spec(_SPEC)
 _SPEC.loader.exec_module(E)
-_CLASSIFIER_SPEC = importlib.util.spec_from_file_location(
-    "sextic_core_under_replay", HERE.parent / "sextic_core.py"
-)
-if _CLASSIFIER_SPEC is None or _CLASSIFIER_SPEC.loader is None:
-    raise RuntimeError("Cannot load the sextic-core classifier")
-C = importlib.util.module_from_spec(_CLASSIFIER_SPEC)
-_CLASSIFIER_SPEC.loader.exec_module(C)
+class _LazyClassifier:
+    """Fixture generation may load the producer; supplied-report checking does not."""
+    _module = None
+
+    def __getattr__(self, name):
+        if self._module is None:
+            spec = importlib.util.spec_from_file_location(
+                "sextic_core_under_replay", HERE.parent / "sextic_core.py")
+            if spec is None or spec.loader is None:
+                raise RuntimeError("Cannot load the sextic-core classifier")
+            module = importlib.util.module_from_spec(spec)
+            spec.loader.exec_module(module)
+            self._module = module
+        return getattr(self._module, name)
+
+
+C = _LazyClassifier()
 
 
 class VerificationError(RuntimeError):
@@ -310,7 +320,11 @@ def check_lift_certificate(H, lift):
 def check_report(H, report, *, sample_powers=(0, 1, 2)):
     """Check supplied claims; this does not generate a classification."""
     H = {key: F(value) for key, value in H.items() if value}
-    require(report.get("schema") in ("hamiltonian-sextic-core/1", "hamiltonian-sextic-core/2"), "Unexpected classifier schema")
+    if report.get("schema") == "hamiltonian-sextic-core/2":
+        from verify_sextic_core_v2 import check_report_v2
+        check_report_v2(H, report)
+        return report
+    require(report.get("schema") == "hamiltonian-sextic-core/1", "Unexpected classifier schema")
     require(report.get("status") == "classified", "Expected a classified result")
     require(polynomial(report.get("input")) == H, "Input polynomial was not preserved")
     pattern = []
@@ -664,8 +678,16 @@ def verify():
             require(classify_sextic(candidate)["status"] == "unsupported",
                     "Schema 1 changed its quadratic sixfold scope")
             report = check_report(candidate, classify_sextic(candidate, schema=2))
-            check_pattern(report, [6], (first_dimension, core_dimension))
-            checks = [check_bounded_kernel(candidate, report, 6, depth) for depth in (1, 2)]
+            stages = report["classification"]["stages"]
+            stage_at = lambda i: stages[min(i, len(stages)-1)]["space"]
+            require(report["leading"]["geometric_root_pattern"] == [6], "Wrong quadratic family")
+            require(stage_at(1)["dimension"] == first_dimension and
+                    report["classification"]["Dinf"]["dimension"] == core_dimension,
+                    "Wrong quadratic dimensions")
+            # Project only for the separate legacy bounded-kernel comparison;
+            # acceptance above checked the complete schema-2 stage report.
+            projected = {"classification": {"S1": stage_at(1), "S2": stage_at(2)}}
+            checks = [check_bounded_kernel(candidate, projected, 6, depth) for depth in (1, 2)]
             square = affine_substitute({(2, 0): F(1)}, **transform)
             gates_through(candidate, square, 0)
             require(bool(E.defects(candidate, E.poisson(candidate, square))),

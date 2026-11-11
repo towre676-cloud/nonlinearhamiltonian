@@ -6,6 +6,32 @@ The complete results include every cubic Hamiltonian via characteristic-factor m
 
 The note gives full proofs in its overview and appendices. No literature-priority claim is made. The coordinate Lie algebra is classical; Robert's universal-observable theorem and Gotay's quantization classification are respected. The pinned PerfectJet source snapshot records the existing full-space sextic programme through partner degree20 and its archived global solver dependencies. This package does not claim to have rerun msolve or solved the full sextic space in every partner degree.
 
+
+## Maintained classification and proof tools
+
+The [research capabilities and verification guide](RESEARCH_CAPABILITIES.md)
+connects the current theorems, executable classifiers, independent report
+checker and Lean project. The [scope index](c3_strata/CAPABILITIES.json) is
+machine readable. The portable source bundle includes the maintained sextic
+and formal sources as well as the original research note.
+
+```bash
+python partner_lab.py sextic-core --schema 2 --H '(p+q^3)^2+q^3'
+python partner_lab.py sextic-core --schema 2 --H 'q^6+p^3'
+python partner_lab.py separable-core --H 'q^7+p^4+q'
+python partner_lab.py weighted-core --H 'q^8+p^3+q*p'
+python reproduce_sextic.py --list
+```
+
+The complete quadratic-complement classification includes least depths one
+through six and a closed square criterion for the third core direction.
+The separable cubic/quartic-complement theorem supplies complete static
+spaces of dimensions fifteen/twelve and least depths two/one, respectively.
+The mixed weighted extension classifies arbitrary terms strictly below the
+cubic or quartic leading binomial, using a proved finite static envelope.
+The strict report checker binds each result to a separately supplied input
+and verifies complete spaces within the relevant theorem's scope.
+
 ## Read and explore
 
 Open `output/Nonlinear_Hamiltonian_Partners.pdf` for the note. Open `output/Nonlinear_Hamiltonian_Partners.html` in a modern browser for the same note, embedded mathematics fonts, monomial bracket tester, homogeneous-quartic dimension explorer and exact q^2 flow example. The HTML works offline and makes no external network requests. Integer/rational bracket coefficients are exact; decimal evaluation of the displayed flow identity is labeled floating arithmetic. `output/Nonlinear_Hamiltonian_Partners.md` is the combined authoring source.
@@ -60,7 +86,15 @@ The original partner calculus and seven-suite replay are dependency free.
 The sextic classifier and maintained C3 certificate replays use SymPy 1.14.0.
 Rebuilding typeset HTML/PDF additionally needs Node, Playwright/Chromium, KaTeX0.19.0, markdown-it15.0.3 and markdown-it-texmath1.0.0. Install the three rendering packages under `tmp/render_deps`, install Playwright where Node resolves it, and set `ATLAS_CHROMIUM` to a compatible local Chromium executable. Run `node build_note.js`; `--html-only` preserves the existing PDF. `make_browser_fixtures.py` and `test_browser.js` regenerate the independent browser fixtures and interface checks. These optional rendering dependencies are excluded from the source bundle; the delivered HTML and PDF are already complete.
 
-`MANIFEST.sha256` records the original portable package and the maintained classifier additions; the C3 certificate directories retain their separate integrity records. The package builder excludes exploratory dependencies, caches and temporary renders. Hashes detect accidental changes; they are not mathematical proofs. General higher-degree polynomial Hamiltonians, unrestricted one-step sextic partner spaces, and quartic dynamic-core stratification remain precise research frontiers.
+`MANIFEST.sha256` records the original portable package and all maintained
+classifier, C3 and formal sources. The source ZIP preserves the
+`research/hamiltonian/` path required by the proof-dependency checker; see
+[its entry guide](SOURCE_BUNDLE_README.md). The package builder excludes
+toolchain dependencies, caches and temporary renders. Hashes detect accidental
+changes; they are not mathematical proofs. General higher-degree polynomial
+Hamiltonians outside the classified families, unrestricted one-step sextic
+partner spaces, and quartic dynamic-core stratification remain precise
+research frontiers.
 
 ## Maintained sextic refinement results
 
