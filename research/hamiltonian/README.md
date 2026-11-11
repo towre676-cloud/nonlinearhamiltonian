@@ -12,7 +12,7 @@ Open `output/Nonlinear_Hamiltonian_Partners.pdf` for the note. Open `output/Nonl
 
 ## Run exact calculations
 
-Python3.10 or later is sufficient; no third-party Python package is required. From the extracted root:
+Python 3.10 or later is sufficient for the original commands below; they require only the standard library. From this directory:
 
 ```bash
 python3 -B -X utf8 -S partner_lab.py bracket --H "q*p^3" --G "q^2"
@@ -23,6 +23,24 @@ python3 -B -X utf8 -S partner_lab.py core-demo
 ```
 
 The parser accepts q,p, integer and rational coefficients, sums, products and nonnegative integer powers. It does not execute arbitrary Python expressions. `kernel` gives the complete homogeneous partner space in one requested degree, including for an inhomogeneous H; it does not assert a complete arbitrary-degree classification. `monomial` uses a proved all-degree classification, including symbolic infinite axes where needed. `core-demo` checks the full polynomial action on the proved six-dimensional reduction, descending through dimensions6,4,2 and checking invariance without projecting away higher terms.
+
+The `sextic-core` command gives an all-degree refinement and dynamical-core
+classification for every rational homogeneous binary sextic. It also handles
+arbitrary lower-degree perturbations of the eight leading root strata with a
+finite-dimensional first refinement. It uses exact SymPy arithmetic:
+
+```bash
+python -m pip install -r c3_strata/requirements.txt
+python partner_lab.py sextic-core --H "q^6+p^6+q^3+p"
+python partner_lab.py sextic-core --H "q^4*p^2+q^6+q^3"
+python partner_lab.py sextic-core --H "(q^2+p^2)^3"
+```
+
+Run this command without `-S`. The [classifier guide](c3_strata/SEXTIC_CORE_GUIDE.md)
+describes the exact input scope, finite bases, infinite-family output,
+obstruction witnesses, and unsupported cases. The
+[leading-form theorem](c3_strata/INHOMOGENEOUS_THEOREM.md) supplies the all-degree
+argument for the supported inhomogeneous cases.
 
 ## Replay verification
 
@@ -38,9 +56,11 @@ The browser record checks24 interface conditions across1280px,390px and320px, ze
 
 `quartic/`, `structural/`, `monomial/` and `independent/` contain final proofs, findings, verifiers and exact receipts. `monomial/classification.py` is the complete exponent algorithm; `complete_table_2_to_12.json` includes55 complete Hamiltonian classifications. `independent/engine.py` expands the defining star exponential with exact Gaussian rational arithmetic, independently of the closed falling-factorial formula. `context/` contains primary references, the pinned source snapshot and evidential boundaries.
 
-The mathematical code is dependency free. Rebuilding typeset HTML/PDF additionally needs Node, Playwright/Chromium, KaTeX0.19.0, markdown-it15.0.3 and markdown-it-texmath1.0.0. Install the three rendering packages under `tmp/render_deps`, install Playwright where Node resolves it, and set `ATLAS_CHROMIUM` to a compatible local Chromium executable. Run `node build_note.js`; `--html-only` preserves the existing PDF. `make_browser_fixtures.py` and `test_browser.js` regenerate the independent browser fixtures and interface checks. These optional rendering dependencies are excluded from the source bundle; the delivered HTML and PDF are already complete.
+The original partner calculus and seven-suite replay are dependency free.
+The sextic classifier and maintained C3 certificate replays use SymPy 1.14.0.
+Rebuilding typeset HTML/PDF additionally needs Node, Playwright/Chromium, KaTeX0.19.0, markdown-it15.0.3 and markdown-it-texmath1.0.0. Install the three rendering packages under `tmp/render_deps`, install Playwright where Node resolves it, and set `ATLAS_CHROMIUM` to a compatible local Chromium executable. Run `node build_note.js`; `--html-only` preserves the existing PDF. `make_browser_fixtures.py` and `test_browser.js` regenerate the independent browser fixtures and interface checks. These optional rendering dependencies are excluded from the source bundle; the delivered HTML and PDF are already complete.
 
-`MANIFEST.sha256` covers every delivered file except itself. The package builder excludes exploratory SymPy dependencies, caches and temporary renders. Hashes detect accidental changes; they are not mathematical proofs. General higher-degree polynomial Hamiltonians, full-space sextics beyond the existing bounded classification, and quartic dynamic-core stratification remain precise research frontiers.
+`MANIFEST.sha256` records the original portable package and the maintained classifier additions; the C3 certificate directories retain their separate integrity records. The package builder excludes exploratory dependencies, caches and temporary renders. Hashes detect accidental changes; they are not mathematical proofs. General higher-degree polynomial Hamiltonians, unrestricted one-step sextic partner spaces, and quartic dynamic-core stratification remain precise research frontiers.
 
 ## Maintained sextic refinement results
 
