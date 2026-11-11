@@ -33,3 +33,10 @@ jobs:
         run: |
           cd research/hamiltonian/c3_strata
           python -m unittest discover -s . -p test_squarefree.py -v
+      - name: Verify exact sextic classifier and lower-degree perturbations
+        run: |
+          python -m unittest discover -s research/hamiltonian/c3_strata -p test_sextic_core.py -v
+          python research/hamiltonian/c3_strata/verify_sextic_core.py > "$RUNNER_TEMP/sextic-core-replay.json"
+          diff -u research/hamiltonian/c3_strata/SEXTIC_CORE_REPLAY.json "$RUNNER_TEMP/sextic-core-replay.json"
+      - name: Preserve standard-library partner commands
+        run: python -B -X utf8 -S research/hamiltonian/verify_cli.py

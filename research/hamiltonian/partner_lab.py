@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Exact polynomial partner CLI. Python 3.10+, standard library only."""
+"""Exact polynomial partner CLI. The sextic-core command additionally uses SymPy."""
 import argparse,ast,json,sys
 from fractions import Fraction
 from pathlib import Path
@@ -67,9 +67,18 @@ def main():
     p=sub.add_parser('monomial');p.add_argument('--a',type=int,required=True);p.add_argument('--b',type=int,required=True)
     p=sub.add_parser('flow');p.add_argument('--r',type=int,default=0);p.add_argument('--steps',type=int,default=4)
     sub.add_parser('core-demo')
+    p=sub.add_parser('sextic-core',help='complete sextic refinement/core classification in the declared scope (requires SymPy)')
+    p.add_argument('--H',required=True,help='polynomial with rational coefficients in q and p')
     args=ap.parse_args()
     try:
-        if args.command=='core-demo':out=core_demo()
+        if args.command=='sextic-core':
+            try:
+                from sextic_core import classify_sextic
+                out=classify_sextic(parse(args.H))
+            except ImportError as e:
+                if getattr(e,'name',None)!='sympy' and 'requires SymPy' not in str(e):raise
+                ap.error('sextic-core requires SymPy; install c3_strata/requirements.txt and run without -S')
+        elif args.command=='core-demo':out=core_demo()
         elif args.command=='monomial':out=classify(args.a,args.b)
         elif args.command=='bracket':
             H,G=parse(args.H),parse(args.G);out={'H':E.serialize(H),'G':E.serialize(G),'poisson':E.serialize(E.poisson(H,G)),'moyal':E.serialize_series(E.moyal(H,G)),'exact':E.exact_partner(H,G)}
@@ -82,5 +91,6 @@ def main():
             for n in range(args.steps+1):
                 out.append({'action':n,'classical':E.serialize(classical),'quantum':E.serialize_series(quantum),'agree':quantum==({0:classical} if classical else {})});quantum=E.formal_action(H,quantum);classical=E.poisson(H,classical)
         print(json.dumps(out,ensure_ascii=False,indent=2))
+        return 2 if isinstance(out,dict) and out.get('status')=='unsupported' else 0
     except (ValueError,SyntaxError,ZeroDivisionError) as e:ap.error(str(e))
-if __name__=='__main__':main()
+if __name__=='__main__':sys.exit(main())

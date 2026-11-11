@@ -1,0 +1,595 @@
+{
+  "bounded_kernel_checks": 59,
+  "classified_input_checks": 59,
+  "constant_shift_checks": 11,
+  "geometric_strata": [
+    {
+      "bounded_kernels": [
+        {
+          "degree": 2,
+          "dimension": 6,
+          "homogeneous_slice": false,
+          "refinement_depth": 1
+        },
+        {
+          "degree": 2,
+          "dimension": 6,
+          "homogeneous_slice": false,
+          "refinement_depth": 2
+        },
+        {
+          "degree": 6,
+          "dimension": 3,
+          "homogeneous_slice": true,
+          "refinement_depth": 1
+        }
+      ],
+      "case": "sixfold",
+      "root_pattern": [
+        6
+      ]
+    },
+    {
+      "bounded_kernels": [
+        {
+          "degree": 2,
+          "dimension": 5,
+          "homogeneous_slice": false,
+          "refinement_depth": 1
+        },
+        {
+          "degree": 2,
+          "dimension": 5,
+          "homogeneous_slice": false,
+          "refinement_depth": 2
+        },
+        {
+          "degree": 6,
+          "dimension": 2,
+          "homogeneous_slice": true,
+          "refinement_depth": 1
+        }
+      ],
+      "case": "five_one",
+      "root_pattern": [
+        5,
+        1
+      ]
+    },
+    {
+      "bounded_kernels": [
+        {
+          "degree": 2,
+          "dimension": 2,
+          "homogeneous_slice": false,
+          "refinement_depth": 1
+        },
+        {
+          "degree": 2,
+          "dimension": 2,
+          "homogeneous_slice": false,
+          "refinement_depth": 2
+        },
+        {
+          "degree": 6,
+          "dimension": 1,
+          "homogeneous_slice": true,
+          "refinement_depth": 1
+        }
+      ],
+      "case": "four_two",
+      "root_pattern": [
+        4,
+        2
+      ]
+    },
+    {
+      "bounded_kernels": [
+        {
+          "degree": 2,
+          "dimension": 2,
+          "homogeneous_slice": false,
+          "refinement_depth": 1
+        },
+        {
+          "degree": 2,
+          "dimension": 1,
+          "homogeneous_slice": false,
+          "refinement_depth": 2
+        },
+        {
+          "degree": 6,
+          "dimension": 1,
+          "homogeneous_slice": true,
+          "refinement_depth": 1
+        }
+      ],
+      "case": "four_one_one",
+      "root_pattern": [
+        4,
+        1,
+        1
+      ]
+    },
+    {
+      "bounded_kernels": [
+        {
+          "degree": 2,
+          "dimension": 2,
+          "homogeneous_slice": false,
+          "refinement_depth": 1
+        },
+        {
+          "degree": 2,
+          "dimension": 2,
+          "homogeneous_slice": false,
+          "refinement_depth": 2
+        },
+        {
+          "degree": 6,
+          "dimension": 1,
+          "homogeneous_slice": true,
+          "refinement_depth": 1
+        }
+      ],
+      "case": "three_three",
+      "root_pattern": [
+        3,
+        3
+      ]
+    },
+    {
+      "bounded_kernels": [
+        {
+          "degree": 2,
+          "dimension": 1,
+          "homogeneous_slice": false,
+          "refinement_depth": 1
+        },
+        {
+          "degree": 2,
+          "dimension": 1,
+          "homogeneous_slice": false,
+          "refinement_depth": 2
+        },
+        {
+          "degree": 6,
+          "dimension": 1,
+          "homogeneous_slice": true,
+          "refinement_depth": 1
+        }
+      ],
+      "case": "three_two_one",
+      "root_pattern": [
+        3,
+        2,
+        1
+      ]
+    },
+    {
+      "bounded_kernels": [
+        {
+          "degree": 2,
+          "dimension": 1,
+          "homogeneous_slice": false,
+          "refinement_depth": 1
+        },
+        {
+          "degree": 2,
+          "dimension": 1,
+          "homogeneous_slice": false,
+          "refinement_depth": 2
+        },
+        {
+          "degree": 6,
+          "dimension": 1,
+          "homogeneous_slice": true,
+          "refinement_depth": 1
+        }
+      ],
+      "case": "three_one_one_one",
+      "root_pattern": [
+        3,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "bounded_kernels": [
+        {
+          "degree": 2,
+          "dimension": 1,
+          "homogeneous_slice": false,
+          "refinement_depth": 1
+        },
+        {
+          "degree": 2,
+          "dimension": 1,
+          "homogeneous_slice": false,
+          "refinement_depth": 2
+        },
+        {
+          "degree": 6,
+          "dimension": 1,
+          "homogeneous_slice": true,
+          "refinement_depth": 1
+        }
+      ],
+      "case": "two_two_two",
+      "root_pattern": [
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "bounded_kernels": [
+        {
+          "degree": 2,
+          "dimension": 1,
+          "homogeneous_slice": false,
+          "refinement_depth": 1
+        },
+        {
+          "degree": 2,
+          "dimension": 1,
+          "homogeneous_slice": false,
+          "refinement_depth": 2
+        },
+        {
+          "degree": 6,
+          "dimension": 1,
+          "homogeneous_slice": true,
+          "refinement_depth": 1
+        }
+      ],
+      "case": "two_two_one_one",
+      "root_pattern": [
+        2,
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "bounded_kernels": [
+        {
+          "degree": 2,
+          "dimension": 1,
+          "homogeneous_slice": false,
+          "refinement_depth": 1
+        },
+        {
+          "degree": 2,
+          "dimension": 1,
+          "homogeneous_slice": false,
+          "refinement_depth": 2
+        },
+        {
+          "degree": 6,
+          "dimension": 1,
+          "homogeneous_slice": true,
+          "refinement_depth": 1
+        }
+      ],
+      "case": "two_one_one_one_one",
+      "root_pattern": [
+        2,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "bounded_kernels": [
+        {
+          "degree": 2,
+          "dimension": 1,
+          "homogeneous_slice": false,
+          "refinement_depth": 1
+        },
+        {
+          "degree": 2,
+          "dimension": 1,
+          "homogeneous_slice": false,
+          "refinement_depth": 2
+        },
+        {
+          "degree": 6,
+          "dimension": 1,
+          "homogeneous_slice": true,
+          "refinement_depth": 1
+        }
+      ],
+      "case": "squarefree_with_infinity",
+      "root_pattern": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    }
+  ],
+  "inhomogeneous_checks": [
+    {
+      "S1_dimension": 3,
+      "S2_dimension": 2,
+      "bounded_kernels": [
+        {
+          "degree": 2,
+          "dimension": 2,
+          "homogeneous_slice": false,
+          "refinement_depth": 1
+        },
+        {
+          "degree": 2,
+          "dimension": 1,
+          "homogeneous_slice": false,
+          "refinement_depth": 2
+        }
+      ],
+      "case": "exception_plus_q3"
+    },
+    {
+      "S1_dimension": 2,
+      "S2_dimension": 2,
+      "bounded_kernels": [
+        {
+          "degree": 2,
+          "dimension": 1,
+          "homogeneous_slice": false,
+          "refinement_depth": 1
+        },
+        {
+          "degree": 2,
+          "dimension": 1,
+          "homogeneous_slice": false,
+          "refinement_depth": 2
+        }
+      ],
+      "case": "exception_plus_p3"
+    },
+    {
+      "S1_dimension": 3,
+      "S2_dimension": 2,
+      "bounded_kernels": [
+        {
+          "degree": 2,
+          "dimension": 2,
+          "homogeneous_slice": false,
+          "refinement_depth": 1
+        },
+        {
+          "degree": 2,
+          "dimension": 1,
+          "homogeneous_slice": false,
+          "refinement_depth": 2
+        }
+      ],
+      "case": "translated_exception"
+    },
+    {
+      "S1_dimension": 3,
+      "S2_dimension": 2,
+      "bounded_kernels": [
+        {
+          "degree": 2,
+          "dimension": 2,
+          "homogeneous_slice": false,
+          "refinement_depth": 1
+        },
+        {
+          "degree": 2,
+          "dimension": 1,
+          "homogeneous_slice": false,
+          "refinement_depth": 2
+        }
+      ],
+      "case": "four_two_plus_q5"
+    },
+    {
+      "S1_dimension": 3,
+      "S2_dimension": 3,
+      "bounded_kernels": [
+        {
+          "degree": 2,
+          "dimension": 2,
+          "homogeneous_slice": false,
+          "refinement_depth": 1
+        },
+        {
+          "degree": 2,
+          "dimension": 2,
+          "homogeneous_slice": false,
+          "refinement_depth": 2
+        }
+      ],
+      "case": "four_two_plus_qp"
+    },
+    {
+      "S1_dimension": 3,
+      "S2_dimension": 3,
+      "bounded_kernels": [
+        {
+          "degree": 2,
+          "dimension": 2,
+          "homogeneous_slice": false,
+          "refinement_depth": 1
+        },
+        {
+          "degree": 2,
+          "dimension": 2,
+          "homogeneous_slice": false,
+          "refinement_depth": 2
+        }
+      ],
+      "case": "translated_four_two"
+    },
+    {
+      "S1_dimension": 2,
+      "S2_dimension": 2,
+      "bounded_kernels": [
+        {
+          "degree": 2,
+          "dimension": 1,
+          "homogeneous_slice": false,
+          "refinement_depth": 1
+        },
+        {
+          "degree": 2,
+          "dimension": 1,
+          "homogeneous_slice": false,
+          "refinement_depth": 2
+        }
+      ],
+      "case": "squarefree_lower_terms"
+    },
+    {
+      "S1_dimension": 2,
+      "S2_dimension": 2,
+      "bounded_kernels": [
+        {
+          "degree": 2,
+          "dimension": 1,
+          "homogeneous_slice": false,
+          "refinement_depth": 1
+        },
+        {
+          "degree": 2,
+          "dimension": 1,
+          "homogeneous_slice": false,
+          "refinement_depth": 2
+        }
+      ],
+      "case": "three_two_one_lower_terms"
+    },
+    {
+      "S1_dimension": 2,
+      "S2_dimension": 2,
+      "bounded_kernels": [
+        {
+          "degree": 2,
+          "dimension": 1,
+          "homogeneous_slice": false,
+          "refinement_depth": 1
+        },
+        {
+          "degree": 2,
+          "dimension": 1,
+          "homogeneous_slice": false,
+          "refinement_depth": 2
+        }
+      ],
+      "case": "three_one_one_one_lower_terms"
+    },
+    {
+      "S1_dimension": 2,
+      "S2_dimension": 2,
+      "bounded_kernels": [
+        {
+          "degree": 2,
+          "dimension": 1,
+          "homogeneous_slice": false,
+          "refinement_depth": 1
+        },
+        {
+          "degree": 2,
+          "dimension": 1,
+          "homogeneous_slice": false,
+          "refinement_depth": 2
+        }
+      ],
+      "case": "two_two_two_lower_terms"
+    },
+    {
+      "S1_dimension": 2,
+      "S2_dimension": 2,
+      "bounded_kernels": [
+        {
+          "degree": 2,
+          "dimension": 1,
+          "homogeneous_slice": false,
+          "refinement_depth": 1
+        },
+        {
+          "degree": 2,
+          "dimension": 1,
+          "homogeneous_slice": false,
+          "refinement_depth": 2
+        }
+      ],
+      "case": "two_two_one_one_lower_terms"
+    },
+    {
+      "S1_dimension": 2,
+      "S2_dimension": 2,
+      "bounded_kernels": [
+        {
+          "degree": 2,
+          "dimension": 1,
+          "homogeneous_slice": false,
+          "refinement_depth": 1
+        },
+        {
+          "degree": 2,
+          "dimension": 1,
+          "homogeneous_slice": false,
+          "refinement_depth": 2
+        }
+      ],
+      "case": "two_one_one_one_one_lower_terms"
+    }
+  ],
+  "nonsplit_quadratic_cube_check": true,
+  "proof_boundary": {
+    "all_degree_dependencies": "SEXTIC_STRATA_THEOREM.md, inherited monomial/static-tail proofs, and INHOMOGENEOUS_THEOREM.md.",
+    "finite_checks": "Direct defining-star expansion, exact span checks, and bounded kernels only.",
+    "formalization": "This Python replay is not a Lean proof and does not replay the sixteen heavy squarefree certificates."
+  },
+  "rational_GL2_and_scalar_checks": 22,
+  "schema": "hamiltonian-sextic-core-independent-replay/1",
+  "second_iterate_obstruction_checks": 7,
+  "sixfold_infinity_check": true,
+  "source_sha256": {
+    "research/hamiltonian/c3_strata/test_sextic_core.py": "6bf87ae3f6f755b92f7aa020b0da5aa677cd87119feeb1939ff8a5890ff70383",
+    "research/hamiltonian/c3_strata/verify_sextic_core.py": "bddd86e7d598a56bb7146a7d9b625c5e529ffcec57c84552a3cd3cc627bbd414",
+    "research/hamiltonian/independent/engine.py": "feafd49628603915e1b4bdf930efd0f862313ae6f4785b2bab3ca971ad58cbbf",
+    "research/hamiltonian/sextic_core.py": "61d3721e592eb13636ef7a1fecde283997c4591d197e0d399524f26c6b5f7389"
+  },
+  "status": "PASS",
+  "symbolic_family_records": [
+    {
+      "H": "q^6",
+      "derivation": "D(q^n p^j)=6j q^(n+5) p^(j-1)",
+      "family": "q^n p^j, n>=0, 0<=j<=2",
+      "reason": "Every odd contraction of order >=3 needs at least three p derivatives on the partner."
+    },
+    {
+      "H": "q^5 p",
+      "derivation": "D(q^n p^j)=(5j-n)q^(n+4)p^j",
+      "family": "q^n p^j, n>=0, 0<=j<=1",
+      "reason": "The H factor has p degree one; each order>=3 contraction requires at least two p derivatives on the partner."
+    },
+    {
+      "H": "(q p)^3",
+      "derivation": "D((q p)^n)=0",
+      "family": "(q p)^n, n>=0",
+      "reason": "Odd contraction terms cancel in pairs under exchange of q and p; rational quadratic forms descend by covariance."
+    },
+    {
+      "H": "0",
+      "derivation": "D=0 and every star defect is zero",
+      "family": "Q[q,p]"
+    }
+  ],
+  "unsupported_inhomogeneous_patterns": [
+    "sixfold",
+    "five_one",
+    "three_three"
+  ],
+  "zero_ring_check": true
+}

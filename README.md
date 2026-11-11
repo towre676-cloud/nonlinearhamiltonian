@@ -117,7 +117,7 @@ python3 -B -X utf8 -S verify_all.py
 python3 -B -X utf8 -S partner_lab.py bracket --H "q*p^3" --G "q^2"
 ```
 
-Its mathematical classifier and replay suites need only Python's standard library. Optional rebuilding, browser testing and PDF rendering have separate dependencies documented in the package READMEs. A passing finite computation certifies its named calculation; the written proofs support the stated general results. Hash manifests establish byte integrity, not mathematical truth.
+The commands above and the original replay suites need only Python's standard library. The newer `sextic-core` command uses pinned SymPy for exact rational factorization and small linear systems. Optional rebuilding, browser testing and PDF rendering have separate dependencies documented in the package READMEs. A passing finite computation certifies its named calculation; the written proofs support the stated general results. Hash manifests establish byte integrity, not mathematical truth.
 
 ## Source and authorship boundaries
 
@@ -127,8 +127,33 @@ The mathematical source payloads and generated annual, atlas and Hamiltonian rep
 
 Repository navigation, tables and discussion indexes provide additional routes into the retained material. Classical results, new exposition, explicit computations, conditional conclusions and open extensions keep their individual scopes. The collection makes no blanket claim of novelty or literature priority.
 
-## Homogeneous binary sextic C3 classification
+## Binary sextic C3 classification and leading-form extension
 
 For every characteristic-zero parameter `a`, the family `H=q^6+a q^3 p^3+p^6` has `S¹(H)=D∞(H)=span{1,H}`. Monomial sextics also satisfy depth-one closure. The [proof and exact parameter-uniform certificates](research/hamiltonian/c3_uniform/C3_THEOREM.md) include their retained static-tail dependencies; general sextics remain outside this claim. Run the three commands in the [replay guide](research/hamiltonian/c3_uniform/README.md). Historical open-C3 statements in older documents are superseded for this stated scope.
 
 The [complete root-multiplicity classification](research/hamiltonian/c3_strata/SEXTIC_STRATA_THEOREM.md) covers nonzero homogeneous binary sextics over characteristic-zero fields. For every squarefree form, $S^1(H)=D_\infty(H)=\operatorname{span}\{1,H\}$. C3 fails precisely at geometric root type $(4,1,1)$, where $S^1$ has dimension three and $S^2=D_\infty=\operatorname{span}\{1,H\}$. The squarefree proof combines exact discriminant identities in degrees 1–16 with the inherited static-tail theorem.
+
+The [leading-form extension](research/hamiltonian/c3_strata/INHOMOGENEOUS_THEOREM.md)
+classifies $S^1$, $S^2$, and the persistent core after arbitrary lower-degree
+perturbations of all eight sextic leading types with finite-dimensional
+$S^1$. The two types with a fourfold root reduce to a unique possible affine
+correction of a quadratic survivor and an exact second-iterate test. This
+includes both persistence and loss of the extra observable for leading type
+$(4,2)$.
+
+The [exact rational-input classifier](research/hamiltonian/c3_strata/SEXTIC_CORE_GUIDE.md)
+implements all eleven homogeneous types, their constant shifts, and these
+eight inhomogeneous families. It returns exact bases or symbolic infinite
+families, a sufficient stopping depth, and obstruction or lifting certificates
+where needed:
+
+```bash
+python -m pip install -r research/hamiltonian/c3_strata/requirements.txt
+python research/hamiltonian/partner_lab.py sextic-core --H "q^4*p^2+q^3"
+```
+
+The independent replay uses the defining star exponential and separately
+constructed bounded kernels. The all-degree conclusions depend on the written
+theorems; the new extension is not an end-to-end Lean formalization. General
+nonconstant perturbations of leading types $(6)$, $(5,1)$, and $(3,3)$ remain
+outside the classifier's scope.
