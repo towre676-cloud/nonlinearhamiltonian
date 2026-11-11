@@ -683,3 +683,175 @@ that annihilates \(L\) twice. When the second derivative vanishes, the
 first derivative is a nonzero constant multiple of \(b(L)\) if \(b\ne0\),
 and zero otherwise. Its total degree determines which module basis to
 return.
+
+## 11. Fivefold affine dependence and triple-pair quadratic compositions
+
+**Fivefold affine dependence.** Let the leading form be proportional to
+\(L^5M\), with \(L,M\) independent, and suppose \(H=f(L)+b(L)M\). Then
+\(\deg b=5\), and the argument for nonlinear \(b\) in Section 10 uses
+neither the degree of \(f\) nor the bound \(\deg b\le4\). In particular
+the term involving \(f'''\) lies below the leading \(M\)-coefficient
+of the third contraction used there. It proves
+\(S^1=S^2=D_\infty=K[L]+MK[L]\) and \(M^2\in S^0\setminus S^1\).
+The same directional test applies with \(L\) the multiplicity-five factor.
+
+**Triple-pair quadratic composition.** Let \(J=Q+\ell\) with \(Q\)
+a squarefree homogeneous quadratic and \(\ell\) a linear form.
+For any cubic \(F\), put \(H=F(J)\). Then
+\(S^1=S^2=D_\infty=K[J]\).
+To prove inclusion, translate to the unique center of \(J\), using
+the invertible Hessian of \(Q\). Over a splitting extension a linear
+change gives \(J=cxy+d\). Every pair of polynomials in \(xy\) is
+fixed by exchange of \(x,y\). Each odd contraction of the pair is
+negated by the exchange, by covariance, and is itself a polynomial
+in \(xy\): each surviving monomial term loses the same number of
+powers of \(x\) and \(y\). Consequently all odd contractions vanish,
+including the Poisson bracket. These identities descend to \(K\).
+For the upper bound use filtered inclusion (9). The top component of
+a nonconstant \(G\in S^1(H)\) must be a scalar multiple of \(Q^n\),
+by the homogeneous triple-pair theorem. Subtract the same scalar
+multiple of \(J^n\) and induct on total degree.
+
+To detect this family, extract a rational \(Q\) from the two triple
+factors and write \(H_6=aQ^3\). The only possible linear part is
+\(\ell=H_5/(3aQ^2)\), which must be an exact polynomial quotient.
+Then subtract \(aJ^3\) and successively the multiples of \(J^2\)
+and \(J\) forced by their leading coefficients. A constant remainder
+is the exact composition test.
+
+## 12. Quadratic dependence with sixfold leading form and weight six
+
+Use linear coordinates \(x,y\) with leading form \(a x^6\),
+\(a\ne0\). Let
+\[
+H=f(x)+b(x)y+c(x)y^2,\qquad
+\deg f=6,\quad \deg b\le4,\quad \deg c=2.
+\]
+Write \(c_2\) for the leading coefficient of \(c\), put
+\(u=x+c_1/(2c_2)\), and define \(v\), modulo constants, by taking
+\(v'\) to be the Euclidean quotient of \(b'u-b\) by \(2c\).
+Set \(J=uy+v\). Then
+\[
+S^1=\operatorname{span}\{1,H,J\},\qquad S^2=D_\infty.
+\]
+The core is three-dimensional exactly when \(c=c_2u^2\), \(u\mid b\),
+and \(f-b^2/(4c)\) is constant. In that case
+\(J=uy+b/(2c_2u)\) modulo constants and \(H=c_2J^2+\mathrm{const}\).
+In all other cases the core is \(\operatorname{span}\{1,H\}\).
+
+**All-degree upper bound.** Give \(x,y\) weights \(1,2\), respectively.
+The weight-six form is \(h=a x^6+B x^4y+C x^2y^2\) with \(aC\ne0\).
+The weight-six version of the filtered inclusion follows term by term:
+the contraction of order \(k\) removes weight \(3k\), and a
+Poisson step with \(h\) raises weight by three. Thus the top part
+of any first survivor passes both static and first gates for \(h\).
+
+For a weight-homogeneous candidate of top \(y\)-degree \(d\ge1\),
+write its top coefficient as a nonzero multiple of \(x^n\).
+The coefficient of \(y^{d-1}\) in the third contraction is proportional
+to \(d n(n-d)\). Hence \(n=0\) or \(n=d\). In the first case
+\(D_hG\) has top \(y\)-degree \(d+1\) with coefficient proportional
+to \(x\), which fails the same test. The weight is therefore \(3d\).
+A pure \(x^w\) with \(w>0\) also fails after one iterate: the leading
+\(y\)-coefficient in \(D_hx^w\) has exponent \(w+1>1\).
+
+Put \(t=y/x^2\) and write \(G=x^{3d}P(t)\), with \(P\) monic of
+degree \(d\). Write \(A=a+Bt+Ct^2\). The first iterate equals
+\(3x^{3d+3}(2AP'-dA'P)\). Its \(y^{d+1}\) coefficient cancels.
+If it has any positive \(y\)-degree \(j\le d\), its top coefficient
+has exponent \(3d+3-2j>j\), contradicting the static test. Thus
+\(2AP'-dA'P\) is constant.
+
+Write \(p_i=[t^i]P\). For \(d\ge3\), the coefficients of \(t^d\)
+and \(t^{d-1}\) in the iterate give
+\[
+-2C p_{d-1}+dB=0,\qquad
+-4C p_{d-2}+(d-2)B p_{d-1}+2da=0.
+\]
+The \(t^{d-2}\) coefficient of the third contraction after removing
+its overall weight factor is
+\(36(d-1)(d+2)C p_{d-1}-12d(d-1)(d+4)B\).
+Substitution forces \(B=0\). The \(t^{d-3}\) coefficient is then
+\(72(d-2)(d+4)C p_{d-2}+120d(d-1)(d-2)a\).
+Substitution forces \(a=0\), a contradiction.
+For \(d=2\) the positive iterate coefficients give \(P=A/C\).
+For \(d=1\) they give \(P=t+B/(2C)\).
+Consequently subtraction of a scalar multiple of \(H\) leaves
+weight at most three, and any nonconstant survivor at weight three
+is, after scaling, of the form \((x+k)y+v(x)\) with \(\deg v\le3\).
+
+**Lift and core.** Such a candidate passes both static gates.
+Its iterate is \(A_2 y^2+A_1 y+A_0\), with
+\[
+A_2=c'(x+k)-2c,\quad A_1=b'(x+k)-b-2cv',\quad A_0=f'(x+k)-bv'.
+\]
+The coefficient of \(y\) in the third gate on the iterate is
+\(-12c''A_2'\), since \(A_2\) is affine. This forces \(x+k=u\).
+Then the constant term is \(6c'A_1''\), forcing \(A_1\) affine,
+which is exactly the stated division condition. The fifth gate
+vanishes on this iterate by complementary-coordinate degree. This
+proves the claimed first space.
+
+For the second refinement, \(D_HJ\) must belong to the first space.
+Its \(y^2\) coefficient is constant, whereas \(H\) has quadratic
+\(y^2\) coefficient, so the \(H\) component and \(A_2\) vanish.
+This gives \(c=c_2u^2\) and \(A_1\) a scalar multiple of \(u\).
+Evaluation at \(u=0\) gives \(u\mid b\). Writing \(b=u s\)
+now gives \(A_1=u^2(s'-2c_2v')\), so \(A_1=0\) and
+\(v=s/(2c_2)\) up to a constant. The remaining condition is that
+\(u(f-s^2/(4c_2))'\) be constant. It vanishes at \(u=0\), proving
+the asserted criterion. Conversely the displayed square identity
+gives \(D_HJ=0\), so the entire first space persists. In the
+two-dimensional case \(1,H\) are invariant and the second gate
+eliminates \(J\). Finally \(x^2\) passes the static gates but
+\(T_3(H,D_H x^2)=-24c'(xc)''\ne0\). Thus the sufficient depths
+one and two are sharp in their respective cases.
+
+## 13. Quadratic dependence with sixfold leading form and weight seven
+
+Keep the hypotheses and coordinates of Section 12 with \(\deg c=3\).
+Put \(C=[x^3]c\), \(u=x+[x^2]c/(3C)\), and let \(v'\) be the
+Euclidean quotient of \(b'u-2b\) by \(2c\). Define \(J=uy+v\).
+There is a third first-refinement direction exactly when
+\(c=C u^3+c_0\) for a constant \(c_0\) and the remainder of that
+division has degree at most one. In this case
+\(S^1=\operatorname{span}\{1,J,H\}\). Otherwise
+\(S^1=\operatorname{span}\{1,H\}\). In both cases
+\(S^2=D_\infty=\operatorname{span}\{1,H\}\).
+
+**Weighted bound.** The weight-seven leading form is \(h=Cx^3y^2\).
+For a monomial \(x^i y^j\), divide its third-contraction scalar by \(6C\)
+to obtain \(j[(j-1)(j-2)-6i(j-1)+3i(i-1)]\). Its
+fifth-contraction scalar is \(120C i(i-1)j(j-1)(j-2)\). For
+\(j=0,1,2\) the surviving exponents are respectively all \(i\),
+\(i=0,1\), and \(i=0,3\). For \(j\ge3\) the fifth gate
+forces \(i=0\) or \(1\), and the third leaves only \((1,8)\).
+Distinct monomials have distinct output exponents under each
+contraction, so cancellation cannot enlarge this list.
+The Poisson step sends \((i,j)\) to \((i+2,j+1)\) with scalar
+\(C(3j-2i)\). Checking the list leaves exactly \(1,xy,h\)
+at the first refinement. The weighted filtered inclusion of Section 12,
+now with Poisson weight shift four, therefore forces any additional
+first survivor, after subtracting a multiple of \(H\) and scaling,
+to be \((x+k)y+v(x)\).
+
+**Lifting.** With \(A_2,A_1,A_0\) as in Section 12, the third gate
+on the first iterate has linear coefficient
+\(12(c'A_2''-c''A_2')\). Its vanishing forces \(A_2'/c'\)
+constant, and the leading coefficients give \(A_2'=c'\). Thus
+\((x+k)c'-3c\) is constant, which fixes \(x+k=u\) and forces
+\(c=C u^3+c_0\). The constant term of the gate is then
+\(6c'(A_1''-b'')\), yielding the stated affine remainder condition.
+As in Section 12, both static gates on the candidate and the fifth
+gate on its first iterate vanish.
+
+**Second obstruction.** If \(D_HJ\in S^1\), comparing the
+\(y^2\) coefficient forces \(D_HJ-H\in\operatorname{span}\{1,J\}\)
+and \(c_0=0\). Then \(A_1-b\) is proportional to \(u\).
+Evaluating at \(u=0\) forces \(u\mid b\). Writing
+\(b=\sum_{i=1}^4 b_i u^i\), the division gives
+\(v'=(b_3+2b_4u)/(2C)\) and \(A_1-b=-b_1u\).
+The remaining coefficient would require
+\(u f'-f-bv'+b_1v\) to be constant. Its degree-six coefficient is
+\(5[x^6]f\ne0\), a contradiction. Whenever the lift exists the
+second refinement therefore eliminates it.

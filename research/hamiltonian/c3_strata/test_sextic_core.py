@@ -293,6 +293,20 @@ class SexticCoreTests(unittest.TestCase):
                 self.assertEqual(result.returncode, code, result.stderr)
                 self.assertEqual(json.loads(result.stdout)["status"], status)
 
+    def test_quadratic_sixfold_cli_is_opt_in(self):
+        cli = Path(__file__).resolve().parents[1] / "partner_lab.py"
+        for expression, dimension in (("(q*p+q^3)^2", 3), ("q^6+q^2*p^2", 2)):
+            for schema, expected_code in ((1, 2), (2, 0)):
+                with self.subTest(expression=expression, schema=schema):
+                    result = subprocess.run([sys.executable, str(cli), "sextic-core",
+                                             "--H", expression, "--schema", str(schema)],
+                                            capture_output=True, text=True, check=False)
+                    self.assertEqual(result.returncode, expected_code, result.stderr)
+                    report = json.loads(result.stdout)
+                    self.assertEqual(report["schema"], f"hamiltonian-sextic-core/{schema}")
+                    if schema == 2:
+                        self.assertEqual(report["classification"]["Dinf"]["dimension"], dimension)
+
     def test_unsupported_results_do_not_assert_spaces(self):
         for H in ({(6, 0): F(1), (0, 2): F(1)},
                   {(5, 1): F(1), (0, 2): F(1)},
