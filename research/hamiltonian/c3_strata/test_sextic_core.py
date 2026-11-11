@@ -186,6 +186,58 @@ class SexticCoreTests(unittest.TestCase):
         with self.assertRaisesRegex(V.VerificationError, "affine-lift determinant"):
             V.check_report(H, report)
 
+    def test_fourfold_report_requires_lift_and_correct_ranks(self):
+        leading = {(4, 2): F(1), (6, 0): F(1)}
+        hidden = V.C.classify_sextic(leading)
+        hidden["classification"]["S1"] = copy.deepcopy(hidden["classification"]["Dinf"])
+        hidden["classification"]["sufficient_refinement_depth"] = 1
+        hidden["obstruction"] = hidden["quadratic_lift"] = None
+        with self.assertRaisesRegex(V.VerificationError, "requires a quadratic lift"):
+            V.check_report(leading, hidden)
+
+        for lower in ({(2, 0): F(1)}, {(0, 3): F(1)}):
+            H = V.sparse_add(leading, lower)
+            original = V.C.classify_sextic(H)
+            for field in ("rank", "augmented_rank"):
+                report = copy.deepcopy(original)
+                report["quadratic_lift"]["system"][field] = 0
+                with self.subTest(lower=lower, field=field):
+                    with self.assertRaisesRegex(V.VerificationError, field):
+                        V.check_report(H, report)
+
+    def test_nonsplit_fourfold_root_at_infinity_with_rational_affine_change(self):
+        matrix = ((0, F(1, 2)), (F(3, 2), 1))
+        shift, scalar = (F(1, 3), F(-2, 5)), F(-2, 3)
+        H0 = {(4, 2): F(1), (6, 0): F(1), (2, 0): F(2)}
+        H = V.affine_substitute(H0, matrix, shift, scalar)
+        J = V.affine_substitute({(1, 1): F(1)}, matrix, shift)
+        report = V.check_report(H, V.C.classify_sextic(H))
+        self.assertEqual(report["leading"]["geometric_root_pattern"], [4, 1, 1])
+        self.assertEqual(report["leading"]["infinity_multiplicity"], 4)
+        self.assertTrue(report["quadratic_lift"]["linear_correction"])
+        self.assertTrue(V.same_span(V.space_basis(report["classification"]["S1"]),
+                                   [{(0, 0): F(1)}, H, J]))
+        second = V.E.poisson(H, V.E.poisson(H, J))
+        expected = V.affine_substitute({(10, 0): F(-82944)}, matrix, shift,
+                                       scalar**3 * F(-3, 4)**5)
+        self.assertEqual(V.E.scale(V.E.defects(H, second)[2], -24), expected)
+
+    def test_nonsplit_triple_pair_declines_nonconstant_perturbation(self):
+        Q = {(2, 0): F(2), (0, 2): F(3)}
+        H = V.sparse_power(Q, 3)
+        shifted = V.sparse_add(H, {(0, 0): F(1, 7)})
+        report = V.check_report(shifted, V.C.classify_sextic(shifted))
+        for name in ("S1", "S2", "Dinf"):
+            space = report["classification"][name]
+            self.assertTrue(V.same_span([Q], [V.polynomial(
+                space["coefficient_generators"][0])]))
+        perturbed = V.sparse_add(shifted, {(1, 0): F(1, 7)})
+        unsupported = V.C.classify_sextic(perturbed)
+        self.assertEqual(unsupported["status"], "unsupported")
+        self.assertEqual(unsupported["leading"]["geometric_root_pattern"], [3, 3])
+        for name in ("S1", "S2", "Dinf", "sufficient_refinement_depth"):
+            self.assertIsNone(unsupported["classification"][name])
+
     def test_translated_exception_has_affine_lift(self):
         H0 = {(4, 2): F(1), (6, 0): F(1)}
         H = V.affine_substitute(H0, shift=(1, -2))

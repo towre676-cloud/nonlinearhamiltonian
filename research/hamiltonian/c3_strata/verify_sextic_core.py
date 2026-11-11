@@ -260,10 +260,13 @@ def validated_factor_pattern(leading, factors):
 
 def check_lift_certificate(H, lift):
     """Replay the tiny reported linear-system minors through star expansion."""
-    if not lift or "system" not in lift:
-        return
     J2 = polynomial(lift["leading_candidate"])
-    require(total_degree(J2) == 2, "Quadratic lift has no degree-two leading candidate")
+    require(J2 and all(sum(key) == 2 for key in J2),
+            "Quadratic candidate must be nonzero and homogeneous of degree two")
+    leading = {key: value for key, value in H.items() if sum(key) == 6}
+    gates_through(leading, J2, 1)
+    if "system" not in lift:
+        return
     images = []
     for G in (J2, {(1, 0): F(1)}, {(0, 1): F(1)}):
         defects = E.defects(H, E.poisson(H, G))
@@ -278,6 +281,9 @@ def check_lift_certificate(H, lift):
             "Lift linear part is not independently injective")
     present = lift["status"] == "present"
     require(lift["status"] in ("present", "absent"), "Unknown quadratic-lift status")
+    for field, expected in (("rank", 2), ("augmented_rank", 2 if present else 3)):
+        value = lift["system"].get(field)
+        require(type(value) is int and value == expected, f"Incorrect lift system {field}")
     certificate = lift["uniqueness_certificate" if present else "inconsistency_certificate"]
     matrix = []
     seen = set()
@@ -355,8 +361,18 @@ def check_report(H, report, *, sample_powers=(0, 1, 2)):
     require(type(spaces.get("sufficient_refinement_depth")) is int and
             spaces["sufficient_refinement_depth"] == expected_depth,
             "Refinement depth disagrees with the reported spaces and obstruction")
-    check_lift_certificate(H, report.get("quadratic_lift"))
     lift = report.get("quadratic_lift")
+    if pattern in ([4, 2], [4, 1, 1]):
+        require(isinstance(lift, dict), "Fourfold stratum requires a quadratic lift report")
+        perturbed = any(0 < sum(key) < 6 for key in H)
+        require(("system" in lift) == perturbed, "Incorrect affine lift system presence")
+        require(perturbed or lift.get("status") == "present",
+                "A homogeneous fourfold stratum requires a quadratic lift")
+        check_lift_certificate(H, lift)
+        if lift.get("status") == "absent":
+            require(spaces["S1"]["dimension"] == 2, "An absent lift requires dimension two")
+    else:
+        require(lift is None, "Unexpected quadratic lift outside the fourfold strata")
     if lift and lift.get("status") == "present":
         G = sparse_add(polynomial(lift["leading_candidate"]), polynomial(lift["linear_correction"]))
         first = space_basis(spaces["S1"])
