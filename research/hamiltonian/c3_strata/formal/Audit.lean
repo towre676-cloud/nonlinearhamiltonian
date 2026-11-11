@@ -87,3 +87,18 @@ audit_axioms SexticC3.Exceptional411.second_iterate
 audit_axioms SexticC3.Exceptional411.static_gates
 audit_axioms SexticC3.Exceptional411.second_obstruction
 audit_axioms SexticC3.Exceptional411.second_obstruction_nonzero
+
+audit_axioms SexticC3.StaticTail.intCast_falling
+audit_axioms SexticC3.StaticTail.weight_three
+audit_axioms SexticC3.StaticTail.weight_five
+audit_axioms SexticC3.StaticTail.static_pivot
+audit_axioms SexticC3.StaticTail.rowValue_static
+audit_axioms SexticC3.StaticTail.rowValue_top_split
+audit_axioms SexticC3.StaticTail.kernel_zero_of_edge_zero
+audit_axioms SexticC3.StaticTail.certificate_pivot
+audit_axioms SexticC3.StaticTail.certificate_top_equation
+audit_axioms SexticC3.StaticTail.reconstruct_eq
+audit_axioms SexticC3.StaticTail.reconstructed_fifth_rows
+audit_axioms SexticC3.StaticTail.target_factorization
+audit_axioms SexticC3.StaticTail.delta_zero_of_targets
+audit_axioms SexticC3.StaticTail.pDerivative_monomial
