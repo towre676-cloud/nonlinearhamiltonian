@@ -53,7 +53,8 @@ condition than initial-bracket agreement alone.
 | Nonzero homogeneous rational binary sextic | All eleven geometric root patterns |
 | A homogeneous rational sextic plus a constant | All eleven patterns; derivatives and refinement spaces are unchanged |
 | Total degree six with leading type `(4,2)`, `(4,1,1)`, `(3,2,1)`, `(3,1,1,1)`, `(2,2,2)`, `(2,2,1,1)`, `(2,1,1,1,1)`, or `(1,1,1,1,1,1)` | Arbitrary rational terms of degrees zero through five |
-| Leading type `(6)`, `(5,1)`, or `(3,3)` with a nonconstant lower-degree term | An explicit unsupported result; no all-degree space is inferred |
+| Sixfold leading form with \(H=f(L)+b(L)M\) in coordinates adapted to the repeated linear factor | Polynomial family over \(\mathbb Q[L]\) with module basis \(1,M,M^2\) for affine \(b\), and \(1,M\) otherwise |
+| Other nonconstant perturbations of types (6), (5,1), and (3,3) | An explicit unsupported result |
 | Other nonzero total degree | An input error |
 
 The root pattern is geometric: an irreducible rational factor of degree two

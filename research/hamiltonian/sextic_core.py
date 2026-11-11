@@ -213,12 +213,38 @@ def _family(generators, module_basis, description):
             "description": description}
 
 
-def _infinite_space(pattern, factors):
-    if pattern == (6,):
-        L = E.primitive(next(factor for factor, m, degree in factors if m == 6 and degree == 1))
-        M = dict(_Q if L.get((0, 1), 0) else _P)
+def _sixfold_coordinates(factors):
+    L = E.primitive(factors[0][0])
+    M = dict(_Q if L.get((0, 1), 0) else _P)
+    return L, M
+
+
+def _sixfold_space(L, M, *, quadratic):
+    if quadratic:
         return _family([L], [_ONE, M, E.power(M, 2)],
                        "f0(L) + M*f1(L) + M^2*f2(L), with arbitrary fi in Q[t]")
+    return _family([L], [_ONE, M], "f0(L) + M*f1(L), with arbitrary fi in Q[t]")
+
+
+def _sixfold_affine_complement(H, factors):
+    L, M = _sixfold_coordinates(factors)
+    a, b = L.get((1, 0), 0), L.get((0, 1), 0)
+    # The directional derivative along (-b, a) annihilates L and is
+    # a nonzero constant multiple of differentiation in M at fixed L.
+    def transverse_derivative(G):
+        return E.add(E.scale(E.derivative(G, q=1), -b),
+                     E.scale(E.derivative(G, p=1), a))
+
+    coefficient = transverse_derivative(H)
+    if transverse_derivative(coefficient):
+        return None
+    degree = max(map(sum, coefficient), default=-1)
+    return _sixfold_space(L, M, quadratic=degree <= 1)
+
+
+def _infinite_space(pattern, factors):
+    if pattern == (6,):
+        return _sixfold_space(*_sixfold_coordinates(factors), quadratic=True)
     if pattern == (5, 1):
         L = E.primitive(next(factor for factor, m, degree in factors if m == 5 and degree == 1))
         M = E.primitive(next(factor for factor, m, degree in factors if m == 1 and degree == 1))
@@ -270,8 +296,9 @@ def classify_sextic(H):
 
     Nonzero inputs must have total degree exactly six.  Every homogeneous
     rational sextic (and its constant shifts) is supported.  Nonconstant
-    lower terms are supported precisely when the leading homogeneous S1 is
-    finite dimensional.  Other leading strata return ``status=unsupported``.
+    lower terms are supported for the finite-dimensional leading strata
+    and for the sixfold family affine in a complementary coordinate.
+    Remaining inputs return ``status=unsupported``.
     """
     H = _validate(H)
     if not H:
@@ -300,10 +327,16 @@ def classify_sextic(H):
 
     if pattern in _INFINITE_PATTERNS:
         if not constant_shift:
+            if pattern == (6,):
+                space = _sixfold_affine_complement(H, factors)
+                if space is not None:
+                    classification.update({"method": "sixfold_affine_complement",
+                                           "S1": space, "S2": space, "Dinf": space})
+                    return report
             report["status"] = "unsupported"
             report["unsupported_reason"] = (
                 "Nonconstant lower-degree terms with this infinite-dimensional leading S1 are outside "
-                "the proved leading-form extension; no all-degree S1 or core is asserted")
+                "the proved inhomogeneous families; no all-degree S1 or core is asserted")
             classification.update({"sufficient_refinement_depth": None, "S1": None, "S2": None, "Dinf": None})
             return report
         space = _infinite_space(pattern, factors)

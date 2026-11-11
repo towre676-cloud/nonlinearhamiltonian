@@ -17,6 +17,7 @@ class SexticCoreTests(unittest.TestCase):
         self.assertEqual(len(receipt["geometric_strata"]), 11)
         self.assertEqual(receipt["rational_GL2_and_scalar_checks"], 22)
         self.assertEqual(len(receipt["inhomogeneous_checks"]), 12)
+        self.assertEqual(len(receipt["sixfold_affine_checks"]), 10)
         self.assertEqual(receipt["constant_shift_checks"], 11)
         self.assertEqual(len(receipt["unsupported_inhomogeneous_patterns"]), 3)
         self.assertGreaterEqual(receipt["second_iterate_obstruction_checks"], 6)
@@ -268,8 +269,32 @@ class SexticCoreTests(unittest.TestCase):
         J = {(1, 1): F(1)}
         self.assertEqual(V.E.poisson(H, J), {(4, 2): F(2)})
 
+    def test_sixfold_static_cubic_can_fail_first_refinement(self):
+        H = {(6, 0): F(1), (2, 1): F(1)}
+        G = {(0, 3): F(1), (4, 2): F(15)}
+        V.gates_through(H, G, 0)
+        self.assertTrue(V.E.defects(H, V.E.poisson(H, G)))
+
+    def test_sixfold_univariate_perturbation_in_oblique_coordinates(self):
+        L = {(1, 0): F(2), (0, 1): F(3)}
+        H = V.sparse_add(V.sparse_power(L, 6), V.sparse_power(L, 4))
+        report = V.check_report(H, V.C.classify_sextic(H))
+        self.assertEqual(report["classification"]["method"], "sixfold_affine_complement")
+        self.assertEqual(V.check_bounded_kernel(H, report, 4, 1)["dimension"], 12)
+
+    def test_sixfold_cli_scope(self):
+        cli = Path(__file__).resolve().parents[1] / "partner_lab.py"
+        for expression, status, code in (
+                ("p^6+p^3*q", "classified", 0), ("p^6+q^2", "unsupported", 2)):
+            with self.subTest(expression=expression):
+                result = subprocess.run([sys.executable, str(cli), "sextic-core",
+                                         "--H", expression],
+                                        capture_output=True, text=True, check=False)
+                self.assertEqual(result.returncode, code, result.stderr)
+                self.assertEqual(json.loads(result.stdout)["status"], status)
+
     def test_unsupported_results_do_not_assert_spaces(self):
-        for H in ({(6, 0): F(1), (0, 1): F(1)},
+        for H in ({(6, 0): F(1), (0, 2): F(1)},
                   {(5, 1): F(1), (0, 2): F(1)},
                   {(3, 3): F(1), (1, 0): F(1)}):
             report = V.C.classify_sextic(H)
