@@ -573,6 +573,8 @@ def verify():
         obstruction_count += report.get("obstruction") is not None
         if pattern in ([6], [5, 1], [3, 3]):
             changed = sparse_add(H, {(1, 0): F(1), (0, 1): F(1)})
+            if pattern == [6]:
+                changed = sparse_add(changed, {(0, 2): F(1)})
             result = classify_sextic(changed)
             require(result.get("status") == "unsupported", "Unsupported inhomogeneous stratum was classified")
             require(all(result.get("classification", {}).get(field) is None
@@ -580,11 +582,33 @@ def verify():
                     "Unsupported result contains space claims")
             unsupported.append(name)
 
+    sixfold_affine_checks = []
+    for degree in range(5):
+        H0 = {(6, 0): F(1), (3, 0): F(-2), (degree, 1): F(3, 7)}
+        for transformed in (False, True):
+            transform = {"matrix": ((0, F(1, 2)), (F(3, 2), 1)),
+                         "shift": (F(1, 3), F(-2, 5))} if transformed else {}
+            H = affine_substitute(H0, scalar=F(-2, 3), **transform)
+            report = check_report(H, classify_sextic(H), sample_powers=(0, 1, 4))
+            check_pattern(report, [6])
+            require(report["classification"]["method"] == "sixfold_affine_complement",
+                    "Missing sixfold affine-complement classification")
+            checks = [check_bounded_kernel(H, report, 5, depth) for depth in (1, 2)]
+            require(all(check["dimension"] == (15 if degree <= 1 else 11)
+                        for check in checks), "Incorrect sixfold kernel dimension")
+            square = affine_substitute({(0, 2): F(1)}, **transform)
+            gates_through(H, square, 0)
+            require(bool(E.defects(H, E.poisson(H, square))) == (degree >= 2),
+                    "Incorrect first-iterate obstruction for the quadratic direction")
+            sixfold_affine_checks.append({"coefficient_degree": degree,
+                                           "rational_affine_change": transformed,
+                                           "bounded_kernels": checks})
+
     return {
         "schema": "hamiltonian-sextic-core-independent-replay/1",
         "status": "PASS",
-        "classified_input_checks": len(records) + transformed_count + 3 + len(inhomogeneous_records) + constant_shifts,
-        "bounded_kernel_checks": sum(len(row["bounded_kernels"]) for row in records + inhomogeneous_records) + 2,
+        "classified_input_checks": len(records) + transformed_count + 3 + len(inhomogeneous_records) + constant_shifts + len(sixfold_affine_checks),
+        "bounded_kernel_checks": sum(len(row["bounded_kernels"]) for row in records + inhomogeneous_records + sixfold_affine_checks) + 2,
         "geometric_strata": records,
         "rational_GL2_and_scalar_checks": transformed_count,
         "zero_ring_check": True,
@@ -592,6 +616,7 @@ def verify():
         "nonsplit_quadratic_cube_check": True,
         "constant_shift_checks": constant_shifts,
         "inhomogeneous_checks": inhomogeneous_records,
+        "sixfold_affine_checks": sixfold_affine_checks,
         "unsupported_inhomogeneous_patterns": unsupported,
         "second_iterate_obstruction_checks": obstruction_count,
         "source_sha256": {

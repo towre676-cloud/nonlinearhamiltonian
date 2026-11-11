@@ -567,7 +567,8 @@ scope:
 | \((6),(5,1),(3,3)\) | Homogeneous input and addition of constants | Use the symbolic families in Section 7 |
 
 For the last row, arbitrary nonconstant lower-degree perturbations remain
-outside this extension. Corollary 2 still applies, but an
+outside the finite-leading theorem. Section 10 treats a subfamily of type \((6)\).
+Corollary 2 still applies in general, but an
 infinite-dimensional leading space supplies no finite completeness bound
 by itself. A finite search in those cases cannot be reported as the full
 polynomial core.
@@ -626,3 +627,59 @@ implementation of the classifier within this theorem's scope. Such
 replays do not formalize the homogeneous input or the arguments above in
 a proof assistant. The separate Lean bridge retains its own declared
 boundary.
+
+## 10. Sixfold leading form with affine dependence on a complementary coordinate
+
+Let \(H_6=cL^6\) with \(c\ne0\), and let \(M\) be any independent linear
+form. In characteristic zero the unique geometric root is defined over
+the coefficient field. Suppose \(H=f(L)+b(L)M\). Then \(\deg f=6\) and
+\(b=0\) or \(\deg b\le4\).
+
+**Theorem.** If \(b\) is affine, then \(S^0(H)=S^1(H)=D_\infty(H)\)
+is \(K[L]+M K[L]+M^2 K[L]\). If \(2\le\deg b\le4\), then
+\(S^1(H)=D_\infty(H)=K[L]+M K[L]\) and \(M^2\in S^0(H)\setminus S^1(H)\).
+
+**Proof.** By covariance (6), use \(x=L,\ y=M\) as the coordinates and
+compute the gates and Poisson derivation with the standard alternating
+form in \(x,y\). In these coordinates,
+\[
+D_HG=(f'+b'y)G_y-bG_x,\qquad
+T_3(H,G)=(f'''+b'''y)G_{yyy}-3b''G_{xyy}.
+\]
+If \(b\) is affine, \(T_3=f'''G_{yyy}\). Since \(f'''\ne0\), this
+forces \(y\)-degree at most two. On that space \(T_5\) vanishes because
+the two arguments have combined \(y\)-degree at most three.
+The derivation preserves this space.
+
+Suppose \(m=\deg b\ge2\). If \(G\in S^1(H)\) has \(y\)-degree
+\(d\ge2\) and leading \(y\)-coefficient \(g(x)\ne0\), the coefficient
+of \(y^{d-2}\) in \(T_3(H,G)\), divided by \(d(d-1)\), gives
+\[
+(d-2)b'''g-3b''g'=0.
+\]
+Writing \(n=\deg g\), the coefficient of degree \(m+n-3\) gives
+\(3n=(d-2)(m-2)\). Indeed, that coefficient is
+\(((d-2)(m-2)-3n)m(m-1)\) times the leading coefficients of
+\(b\) and \(g\). When \(m+n-3<0\) we have \(m=2,n=0\) and the
+relation holds directly. The coefficient of \(y^d\) in \(D_HG\) is
+\(h=db'g-bg'\). Since \(dm-n>0\), it is nonzero and
+\(\deg h=n+m-1>n\). Applying the same \(T_3\) equation to \(D_HG\)
+would force \(\deg h=n\), a contradiction.
+
+Conversely, \(D_H\) preserves the \(y\)-affine polynomials. Both static
+gates vanish on this space since each term in a gate of order at least
+three requires at least three \(y\)-derivatives across the two arguments.
+Finally \(y^2\) passes both static gates, but
+\(T_3(H,D_H(y^2))=-12(b'')^2\ne0\). This gives the strict drop at
+depth one. The proof uses differentiation and polynomial degrees.
+
+The static kernel in the nonlinear case can contain higher powers of
+\(y\). For example, both static gates vanish for \(H=x^6+x^2y\) and
+\(G=y^3+15x^4y^2\). The theorem gives the first refinement and the core.
+
+Changing the complement rescales \(b\) and changes \(f\) by a polynomial
+in \(L\). The classifier applies the constant directional derivative
+that annihilates \(L\) twice. When the second derivative vanishes, the
+first derivative is a nonzero constant multiple of \(b(L)\) if \(b\ne0\),
+and zero otherwise. Its total degree determines which module basis to
+return.

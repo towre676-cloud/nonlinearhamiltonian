@@ -143,7 +143,9 @@ $(4,2)$.
 
 The [exact rational-input classifier](research/hamiltonian/c3_strata/SEXTIC_CORE_GUIDE.md)
 implements all eleven homogeneous types, their constant shifts, and these
-eight inhomogeneous families. It returns exact bases or symbolic infinite
+eight inhomogeneous strata. It also covers sixfold-leading sextics affine in
+a coordinate complementary to the repeated linear factor. It returns exact
+bases or symbolic infinite
 families, a sufficient stopping depth, and obstruction or lifting certificates
 where needed:
 
@@ -154,6 +156,7 @@ python research/hamiltonian/partner_lab.py sextic-core --H "q^4*p^2+q^3"
 
 The independent replay uses the defining star exponential and separately
 constructed bounded kernels. The all-degree conclusions depend on the written
-theorems; the new extension is not an end-to-end Lean formalization. General
-nonconstant perturbations of leading types $(6)$, $(5,1)$, and $(3,3)$ remain
-outside the classifier's scope.
+theorems; the new extension is not an end-to-end Lean formalization. Nonconstant
+perturbations of leading types $(5,1)$ and $(3,3)$ and sixfold-leading
+inputs of higher degree in the complementary coordinate remain outside the
+classifier's scope.
