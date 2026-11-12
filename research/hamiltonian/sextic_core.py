@@ -226,8 +226,7 @@ def _sixfold_space(L, M, *, quadratic):
     return _family([L], [_ONE, M], "f0(L) + M*f1(L), with arbitrary fi in Q[t]")
 
 
-def _sixfold_affine_complement(H, factors):
-    L, M = _sixfold_coordinates(factors)
+def _affine_complement(H, L, M):
     a, b = L.get((1, 0), 0), L.get((0, 1), 0)
     # The directional derivative along (-b, a) annihilates L and is
     # a nonzero constant multiple of differentiation in M at fixed L.
@@ -242,6 +241,70 @@ def _sixfold_affine_complement(H, factors):
     return _sixfold_space(L, M, quadratic=degree <= 1)
 
 
+def _quadratic_sixfold_candidate(H, factors, s):
+    L, M = _sixfold_coordinates(factors)
+    a, b = L.get((1, 0), 0), L.get((0, 1), 0)
+    c, d = M.get((1, 0), 0), M.get((0, 1), 0)
+    determinant = a*d - b*c
+    x, y = s.symbols("x y")
+    q, p = (d*x - b*y) / determinant, (a*y - c*x) / determinant
+    transformed = s.Poly(sum(coef*q**i*p**j for (i, j), coef in H.items()), y, x, domain=s.QQ)
+    if transformed.degree(y) != 2:
+        return None
+    coefficients = transformed.as_dict()
+    quadratic = s.Poly.from_dict({(i,): coef for (j, i), coef in coefficients.items() if j == 2}, x)
+    linear = s.Poly.from_dict({(i,): coef for (j, i), coef in coefficients.items() if j == 1}, x)
+    degree = quadratic.degree()
+    if degree not in (2, 3) or linear.degree() > 4:
+        return None
+    u = s.Poly(x + quadratic.nth(degree - 1) / (degree * quadratic.nth(degree)), x)
+    quotient = (linear.diff()*u - (degree - 1)*linear).quo(2*quadratic)
+    v = quotient.integrate()
+
+    def substitute_univariate(poly):
+        return E.add(*(E.scale(E.power(L, i), _fraction(coef))
+                       for (i,), coef in poly.terms() if coef))
+
+    candidate = E.add(E.multiply(substitute_univariate(u), M), substitute_univariate(v))
+    return degree, candidate
+
+
+def _triple_pair_generator(factors):
+    Q = dict(_ONE)
+    for factor, multiplicity, _ in factors:
+        if multiplicity != 3:
+            raise RuntimeError("Unexpected rational factor in geometric (3,3) stratum")
+        Q = E.multiply(Q, factor)
+    return E.primitive(Q)
+
+
+def _quadratic_composition(H, H6, factors, s):
+    Q = _triple_pair_generator(factors)
+    q, p = s.symbols("q p")
+
+    def polynomial(G):
+        return s.Poly.from_dict(G, (q, p), domain=s.QQ)
+
+    Q2 = E.power(Q, 2)
+    Q3 = E.multiply(Q2, Q)
+    monomial = next(iter(Q3))
+    a = H6[monomial] / Q3[monomial]
+    H5 = {key: coefficient for key, coefficient in H.items() if sum(key) == 5}
+    linear, remainder = polynomial(H5).div(polynomial(E.scale(Q2, 3*a)))
+    if not remainder.is_zero:
+        return None
+    J = E.add(Q, {key: _fraction(value) for key, value in linear.terms() if value})
+    residual = E.add(H, E.scale(E.power(J, 3), -a))
+    for exponent in (2, 1):
+        power = E.power(J, exponent)
+        key = max(power, key=lambda key: (sum(key), key))
+        coefficient = residual.get(key, 0) / power[key]
+        residual = E.add(residual, E.scale(power, -coefficient))
+    if any(sum(key) for key in residual):
+        return None
+    return _family([J], [_ONE], "f(J), with arbitrary f in Q[t]; J is the rational quadratic generator")
+
+
 def _infinite_space(pattern, factors):
     if pattern == (6,):
         return _sixfold_space(*_sixfold_coordinates(factors), quadratic=True)
@@ -250,13 +313,7 @@ def _infinite_space(pattern, factors):
         M = E.primitive(next(factor for factor, m, degree in factors if m == 1 and degree == 1))
         return _family([L], [_ONE, M], "f0(L) + M*f1(L), with arbitrary fi in Q[t]")
     if pattern == (3, 3):
-        Q = dict(_ONE)
-        for factor, multiplicity, _ in factors:
-            if multiplicity != 3:
-                raise RuntimeError("Unexpected rational factor in geometric (3,3) stratum")
-            Q = E.multiply(Q, factor)
-        Q = E.primitive(Q)
-        return _family([Q], [_ONE], "f(Q), with arbitrary f in Q[t]; Q is the rational quadratic generator")
+        return _family([_triple_pair_generator(factors)], [_ONE], "f(Q), with arbitrary f in Q[t]; Q is the rational quadratic generator")
     raise RuntimeError("Unknown infinite-family stratum")
 
 
@@ -277,6 +334,38 @@ def _verify_finite_spaces(H, S1, core):
         raise RuntimeError("The reported finite core is not invariant under the exact Poisson action")
 
 
+def _quadratic_sixfold_report(H, degree, G, report):
+    S1 = core = [dict(_ONE), H]
+    operators = _Operators(H)
+    if not operators.gates_zero(G, 0):
+        raise RuntimeError("The proposed sixfold lift failed its static gates")
+    first = operators.D(G)
+    T3, T5 = operators.T(first, 3), operators.T(first, 5)
+    if T3 or T5:
+        if degree == 2:
+            raise RuntimeError("A weight-six lift must pass the first refinement")
+        report["first_refinement_obstruction"] = {
+            "G": E.serialize(G), "iterate": 1, "DG": E.serialize(first),
+            "T3": E.serialize(T3), "T5": E.serialize(T5),
+        }
+    else:
+        S1 = core = [dict(_ONE), G, H]
+        second = operators.D(first)
+        T3, T5 = operators.T(second, 3), operators.T(second, 5)
+        if T3 or T5:
+            core = [dict(_ONE), H]
+            report["obstruction"] = {"G": E.serialize(G), "iterate": 2,
+                                     "D2G": E.serialize(second),
+                                     "T3": E.serialize(T3), "T5": E.serialize(T5)}
+    _verify_finite_spaces(H, S1, core)
+    report["classification"].update({
+        "method": "sixfold_quadratic_complement",
+        "sufficient_refinement_depth": 2 if report["obstruction"] else 1,
+        "S1": _finite(S1), "S2": _finite(core), "Dinf": _finite(core),
+    })
+    return report
+
+
 def _boundary(method, sympy_version=None):
     dependencies = [_THEOREM]
     if method == "leading_form":
@@ -291,19 +380,23 @@ def _boundary(method, sympy_version=None):
     }
 
 
-def classify_sextic(H):
+def classify_sextic(H, *, schema=1):
     """Return a JSON-serializable exact classification, or an explicit scope limit.
 
     Nonzero inputs must have total degree exactly six.  Every homogeneous
     rational sextic (and its constant shifts) is supported.  Nonconstant
     lower terms are supported for the finite-dimensional leading strata
-    and for the sixfold family affine in a complementary coordinate.
+    and for the affine-complement and quadratic-composition subfamilies.
+    Schema 2 additionally supports quadratic sixfold families of weights six and seven.
     Remaining inputs return ``status=unsupported``.
     """
+    if type(schema) is not int or schema not in (1, 2):
+        raise ValueError("Sextic core schema must be 1 or 2")
+    schema_id = SCHEMA if schema == 1 else "hamiltonian-sextic-core/2"
     H = _validate(H)
     if not H:
         space = _family([_Q, _P], [_ONE], "All polynomials in Q[q,p]")
-        return {"schema": SCHEMA, "status": "classified", "input": [], "degree": None,
+        return {"schema": schema_id, "status": "classified", "input": [], "degree": None,
                 "homogeneous": True,
                 "leading": {"terms": [], "geometric_root_pattern": [], "dehomogenization": "H6(t,1)",
                             "infinity_point": "[1:0]", "infinity_multiplicity": 0,
@@ -318,7 +411,7 @@ def classify_sextic(H):
     constant_shift = all(sum(key) in (0, 6) for key in H)
     method = "homogeneous" if homogeneous else "constant_shift" if constant_shift else "leading_form"
     pattern, factors, leading = _factor_leading(H6, s)
-    report = {"schema": SCHEMA, "status": "classified", "input": E.serialize(H), "degree": 6,
+    report = {"schema": schema_id, "status": "classified", "input": E.serialize(H), "degree": 6,
               "homogeneous": homogeneous, "leading": leading, "obstruction": None,
               "quadratic_lift": None, "proof_boundary": _boundary(method, s.__version__)}
     family = "multiplicity_" + "_".join(map(str, pattern))
@@ -328,11 +421,24 @@ def classify_sextic(H):
     if pattern in _INFINITE_PATTERNS:
         if not constant_shift:
             if pattern == (6,):
-                space = _sixfold_affine_complement(H, factors)
-                if space is not None:
-                    classification.update({"method": "sixfold_affine_complement",
-                                           "S1": space, "S2": space, "Dinf": space})
-                    return report
+                method = "sixfold_affine_complement"
+                space = _affine_complement(H, *_sixfold_coordinates(factors))
+            elif pattern == (5, 1):
+                method = "fivefold_affine_complement"
+                L = E.primitive(next(factor for factor, m, _ in factors if m == 5))
+                M = E.primitive(next(factor for factor, m, _ in factors if m == 1))
+                space = _affine_complement(H, L, M)
+            else:
+                method = "triple_pair_quadratic_composition"
+                space = _quadratic_composition(H, H6, factors, s)
+            if space is not None:
+                classification.update({"method": method, "S1": space, "S2": space, "Dinf": space})
+                return report
+            if pattern == (6,) and schema == 2:
+                candidate = _quadratic_sixfold_candidate(H, factors, s)
+                if candidate is not None:
+                    degree, G = candidate
+                    return _quadratic_sixfold_report(H, degree, G, report)
             report["status"] = "unsupported"
             report["unsupported_reason"] = (
                 "Nonconstant lower-degree terms with this infinite-dimensional leading S1 are outside "

@@ -69,12 +69,13 @@ def main():
     sub.add_parser('core-demo')
     p=sub.add_parser('sextic-core',help='complete sextic refinement/core classification in the declared scope (requires SymPy)')
     p.add_argument('--H',required=True,help='polynomial with rational coefficients in q and p')
+    p.add_argument('--schema',type=int,choices=(1,2),default=1,help='schema 2 enables quadratic sixfold classification')
     args=ap.parse_args()
     try:
         if args.command=='sextic-core':
             try:
                 from sextic_core import classify_sextic
-                out=classify_sextic(parse(args.H))
+                out=classify_sextic(parse(args.H),schema=args.schema)
             except ImportError as e:
                 if getattr(e,'name',None)!='sympy' and 'requires SymPy' not in str(e):raise
                 ap.error('sextic-core requires SymPy; install c3_strata/requirements.txt and run without -S')

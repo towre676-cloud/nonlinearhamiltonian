@@ -54,6 +54,9 @@ condition than initial-bracket agreement alone.
 | A homogeneous rational sextic plus a constant | All eleven patterns; derivatives and refinement spaces are unchanged |
 | Total degree six with leading type `(4,2)`, `(4,1,1)`, `(3,2,1)`, `(3,1,1,1)`, `(2,2,2)`, `(2,2,1,1)`, `(2,1,1,1,1)`, or `(1,1,1,1,1,1)` | Arbitrary rational terms of degrees zero through five |
 | Sixfold leading form with \(H=f(L)+b(L)M\) in coordinates adapted to the repeated linear factor | Polynomial family over \(\mathbb Q[L]\) with module basis \(1,M,M^2\) for affine \(b\), and \(1,M\) otherwise |
+| Fivefold-leading Hamiltonians affine in a complementary coordinate | The all-degree module over the multiplicity-five factor |
+| Triple-pair leading forms with a cubic in an affine quadratic generator | The polynomial algebra in that generator |
+| Sixfold-leading Hamiltonians quadratic in a complement, with quadratic coefficient of degree two or three | Finite first space and persistent core with `--schema 2` |
 | Other nonconstant perturbations of types (6), (5,1), and (3,3) | An explicit unsupported result |
 | Other nonzero total degree | An input error |
 
@@ -99,7 +102,20 @@ that `S^0` differs from the core for every particular input.
 
 ## JSON result
 
-The schema identifier is `hamiltonian-sextic-core/1`.
+The default schema identifier is `hamiltonian-sextic-core/1`. Pass
+`--schema 2` on the CLI or `schema=2` to `classify_sextic` to opt in to
+`hamiltonian-sextic-core/2`, which adds the quadratic sixfold case.
+
+```sh
+python research/hamiltonian/partner_lab.py sextic-core --schema 2 --H '(q*p+q^3)^2'
+```
+
+This example has a three-dimensional core. For `q^6+q^2*p^2`, the first
+refinement is three-dimensional and the second refinement drops to
+`span{1,H}`, with an exact obstruction in the report. For
+`q^6+(q^3+q)*p^2`, the extra direction fails earlier. The
+`first_refinement_obstruction` field records the failed lift and its
+first-iterate contractions.
 
 | Field | Meaning |
 | --- | --- |
