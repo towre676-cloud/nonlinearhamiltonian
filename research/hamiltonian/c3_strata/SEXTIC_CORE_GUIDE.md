@@ -57,7 +57,8 @@ condition than initial-bracket agreement alone.
 | Fivefold-leading Hamiltonians affine in a complementary coordinate | The all-degree module over the multiplicity-five factor |
 | Triple-pair leading forms with a cubic in an affine quadratic generator | The polynomial algebra in that generator |
 | Sixfold-leading Hamiltonians quadratic in a complement, with quadratic coefficient of degree two or three | Finite first space and persistent core with `--schema 2` |
-| Other nonconstant perturbations of types (6), (5,1), and (3,3) | An explicit unsupported result |
+| All other triple-pair perturbations | Finite first space and two-dimensional persistent core with `--schema 2` |
+| Other nonconstant perturbations outside the selected schema | An explicit unsupported result |
 | Other nonzero total degree | An input error |
 
 The root pattern is geometric: an irreducible rational factor of degree two
@@ -104,7 +105,7 @@ that `S^0` differs from the core for every particular input.
 
 The default schema identifier is `hamiltonian-sextic-core/1`. Pass
 `--schema 2` on the CLI or `schema=2` to `classify_sextic` to opt in to
-`hamiltonian-sextic-core/2`, which adds the quadratic sixfold case.
+`hamiltonian-sextic-core/2`, which adds the quadratic sixfold cases and [arbitrary triple-pair perturbations](TRIPLE_PAIR_PERTURBATIONS.md).
 
 ```sh
 python research/hamiltonian/partner_lab.py sextic-core --schema 2 --H '(q*p+q^3)^2'

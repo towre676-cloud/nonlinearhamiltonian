@@ -39,6 +39,7 @@ _FINITE_TWO_PATTERNS = {
     (2, 1, 1, 1, 1), (1, 1, 1, 1, 1, 1),
 }
 _THEOREM = "research/hamiltonian/c3_strata/SEXTIC_STRATA_THEOREM.md"
+_TRIPLE_PAIR = "research/hamiltonian/c3_strata/TRIPLE_PAIR_PERTURBATIONS.md"
 _EXTENSION = "research/hamiltonian/c3_strata/INHOMOGENEOUS_THEOREM.md"
 
 
@@ -278,7 +279,7 @@ def _triple_pair_generator(factors):
     return E.primitive(Q)
 
 
-def _quadratic_composition(H, H6, factors, s):
+def _triple_pair_center(H, H6, factors, s):
     Q = _triple_pair_generator(factors)
     q, p = s.symbols("q p")
 
@@ -294,14 +295,23 @@ def _quadratic_composition(H, H6, factors, s):
     if not remainder.is_zero:
         return None
     J = E.add(Q, {key: _fraction(value) for key, value in linear.terms() if value})
+    return J, a
+
+
+def _triple_pair_residual(H, J, a):
     residual = E.add(H, E.scale(E.power(J, 3), -a))
     for exponent in (2, 1):
         power = E.power(J, exponent)
         key = max(power, key=lambda key: (sum(key), key))
         coefficient = residual.get(key, 0) / power[key]
         residual = E.add(residual, E.scale(power, -coefficient))
-    if any(sum(key) for key in residual):
+    return residual
+
+
+def _quadratic_composition(centered, residual):
+    if centered is None or any(sum(key) for key in residual):
         return None
+    J, _ = centered
     return _family([J], [_ONE], "f(J), with arbitrary f in Q[t]; J is the rational quadratic generator")
 
 
@@ -366,6 +376,42 @@ def _quadratic_sixfold_report(H, degree, G, report):
     return report
 
 
+
+def _triple_pair_perturbation(H, factors, centered, residual, report):
+    core = [dict(_ONE), H]
+    J = centered[0] if centered is not None else _triple_pair_generator(factors)
+    operators = _Operators(H)
+    first = operators.D(J)
+    T3, T5 = operators.T(first, 3), operators.T(first, 5)
+    first_survives = centered is not None and all(sum(key) <= 2 for key in residual)
+    if first_survives == bool(T3 or T5):
+        raise RuntimeError("Triple-pair quadratic scope test disagrees with the exact gates")
+    if not first_survives:
+        S1 = core
+        report["first_refinement_obstruction"] = {
+            "G": E.serialize(J), "iterate": 1, "DG": E.serialize(first),
+            "T3": E.serialize(T3), "T5": E.serialize(T5),
+        }
+    else:
+        S1 = [dict(_ONE), J, H]
+        second = operators.D(first)
+        T3, T5 = operators.T(second, 3), operators.T(second, 5)
+        if not (T3 or T5):
+            raise RuntimeError("A non-composition triple-pair lift must fail the second refinement")
+        report["obstruction"] = {
+            "G": E.serialize(J), "iterate": 2, "D2G": E.serialize(second),
+            "T3": E.serialize(T3), "T5": E.serialize(T5),
+        }
+    _verify_finite_spaces(H, S1, core)
+    report["proof_boundary"]["dependencies"].append(_TRIPLE_PAIR)
+    report["classification"].update({
+        "method": "triple_pair_perturbation",
+        "sufficient_refinement_depth": 2 if report["obstruction"] else 1,
+        "S1": _finite(S1), "S2": _finite(core), "Dinf": _finite(core),
+    })
+    return report
+
+
 def _boundary(method, sympy_version=None):
     dependencies = [_THEOREM]
     if method == "leading_form":
@@ -387,7 +433,8 @@ def classify_sextic(H, *, schema=1):
     rational sextic (and its constant shifts) is supported.  Nonconstant
     lower terms are supported for the finite-dimensional leading strata
     and for the affine-complement and quadratic-composition subfamilies.
-    Schema 2 additionally supports quadratic sixfold families of weights six and seven.
+    Schema 2 additionally supports all triple-pair perturbations and
+    quadratic sixfold families of weights six and seven.
     Remaining inputs return ``status=unsupported``.
     """
     if type(schema) is not int or schema not in (1, 2):
@@ -430,10 +477,14 @@ def classify_sextic(H, *, schema=1):
                 space = _affine_complement(H, L, M)
             else:
                 method = "triple_pair_quadratic_composition"
-                space = _quadratic_composition(H, H6, factors, s)
+                centered = _triple_pair_center(H, H6, factors, s)
+                residual = _triple_pair_residual(H, *centered) if centered is not None else None
+                space = _quadratic_composition(centered, residual)
             if space is not None:
                 classification.update({"method": method, "S1": space, "S2": space, "Dinf": space})
                 return report
+            if pattern == (3, 3) and schema == 2:
+                return _triple_pair_perturbation(H, factors, centered, residual, report)
             if pattern == (6,) and schema == 2:
                 candidate = _quadratic_sixfold_candidate(H, factors, s)
                 if candidate is not None:

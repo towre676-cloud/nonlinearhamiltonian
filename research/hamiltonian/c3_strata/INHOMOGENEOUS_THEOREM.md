@@ -567,7 +567,8 @@ scope:
 | \((6),(5,1),(3,3)\) | Homogeneous input and addition of constants | Use the symbolic families in Section 7 |
 
 For the last row, arbitrary nonconstant lower-degree perturbations remain
-outside the finite-leading theorem. Section 10 treats a subfamily of type \((6)\).
+outside the finite-leading theorem. Sections 10–13 treat subfamilies, and
+Section 14 gives the full \((3,3)\) classification.
 Corollary 2 still applies in general, but an
 infinite-dimensional leading space supplies no finite completeness bound
 by itself. A finite search in those cases cannot be reported as the full
@@ -855,3 +856,9 @@ The remaining coefficient would require
 \(u f'-f-bv'+b_1v\) to be constant. Its degree-six coefficient is
 \(5[x^6]f\ne0\), a contradiction. Whenever the lift exists the
 second refinement therefore eliminates it.
+
+## 14. Arbitrary triple-pair perturbations
+
+The [triple-pair perturbation theorem](TRIPLE_PAIR_PERTURBATIONS.md)
+classifies all lower-degree terms of a leading quadratic cube and
+includes the composition case of Section 11.
