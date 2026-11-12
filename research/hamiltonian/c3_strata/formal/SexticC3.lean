@@ -20,6 +20,11 @@ import SexticC3.Exceptional411
 import SexticC3.StaticTail
 import SexticC3.TailRows
 import SexticC3.TailDegreeFactorData
+import SexticC3.TailScales
+import SexticC3.TailRawRows
+import SexticC3.TailFirstRow
+import SexticC3.TailEliminationAxes
+import SexticC3.TailTransport
 
 namespace SexticC3
 

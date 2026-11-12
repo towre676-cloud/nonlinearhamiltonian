@@ -9,7 +9,7 @@ permissions:
 jobs:
   lean:
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    timeout-minutes: 120
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -30,6 +30,14 @@ jobs:
           build: true
           use-mathlib-cache: true
           lake-package-directory: research/hamiltonian/c3_strata/formal
-      - name: Reject any theorem dependency outside the standard axiom allowlist
+      - name: Build the all-degree and geometric theorem targets
         working-directory: research/hamiltonian/c3_strata/formal
-        run: lake env lean Audit.lean
+        run: |
+          LEAN_NUM_THREADS=1 lake build +SexticC3.SquarefreeGeometry:olean \
+            +SexticC3.SquarefreePolynomial:olean +SexticC3.TripleRootTail:olean \
+            +SexticC3.ExceptionalDifferential:olean +SexticC3.TailChartAxes:olean
+      - name: Audit the normalized all-degree and geometric theorems
+        working-directory: research/hamiltonian/c3_strata/formal
+        run: |
+          lake env lean Audit.lean
+          lake env lean AuditGeometry.lean

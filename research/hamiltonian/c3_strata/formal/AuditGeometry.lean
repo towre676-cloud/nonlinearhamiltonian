@@ -1,0 +1,62 @@
+import SexticC3.SquarefreeGeometry
+import SexticC3.SquarefreePolynomial
+import SexticC3.TripleRootTail
+import SexticC3.GeometricComposition
+import SexticC3.ExceptionalDifferential
+import SexticC3.GeometricSquarefree
+import SexticC3.PolynomialDescent
+import Lean.Util.CollectAxioms
+open Lean Elab Command
+
+elab "audit_axioms " decl:ident : command => do
+  let name ← liftCoreM <| Lean.Elab.realizeGlobalConstNoOverloadWithInfo decl
+  let axioms ← Lean.collectAxioms name
+  let allowed := [``propext, ``Classical.choice, ``Quot.sound]
+  let unexpected := axioms.filter fun axiomName => !allowed.contains axiomName
+  unless unexpected.isEmpty do
+    throwError "{name} depends on unexpected axioms: {unexpected}"
+  logInfo m!"{name} depends on axioms: {axioms}"
+
+audit_axioms SexticC3.Differential.pderiv_linearSub
+audit_axioms SexticC3.Differential.contraction_linearSub
+audit_axioms SexticC3.Differential.linearSub_injective
+audit_axioms SexticC3.Differential.poisson_iterate_linearSub
+audit_axioms SexticC3.Differential.iterated_gate_linearSub
+audit_axioms SexticC3.Differential.iterated_gate_zero_iff
+audit_axioms SexticC3.Differential.firstRefinement_linearSub_iff
+audit_axioms SexticC3.Differential.persistentCore_linearSub_iff
+audit_axioms SexticC3.Differential.homogeneous_of_isHomogeneous
+audit_axioms SexticC3.Differential.isHomogeneous_linearSub
+audit_axioms SexticC3.Differential.polynomial_bound_of_kernel_bound
+audit_axioms SexticC3.Differential.firstRefinement_iff_persistent_of_kernel_bound
+audit_axioms SexticC3.Differential.firstRefinement_homogeneousComponent
+audit_axioms SexticC3.Differential.firstRefinement_iff_persistent_of_homogeneous
+audit_axioms SexticC3.Differential.polynomial_refinement_of_normalized_chart
+audit_axioms SexticC3.Differential.polynomial_shape_of_normalized_chart
+audit_axioms SexticC3.Differential.normalize_simple_projective_root
+audit_axioms SexticC3.Differential.exists_projective_root
+audit_axioms SexticC3.Differential.simpleProjectiveRoots_linearSub
+audit_axioms SexticC3.Differential.separable_chartQuintic_of_simpleProjectiveRoots
+audit_axioms SexticC3.Differential.map_pderiv
+audit_axioms SexticC3.Differential.map_contraction
+audit_axioms SexticC3.Differential.firstRefinement_map
+audit_axioms SexticC3.Differential.polynomial_shape_descent
+audit_axioms SexticC3.StaticTail.kernel_bound_descent
+audit_axioms SexticC3.StaticTail.rootMultiplicity_ne_three_of_targets
+audit_axioms SexticC3.Differential.exceptional_firstRefinement
+audit_axioms SexticC3.Differential.exceptional_not_persistent
+audit_axioms SexticC3.Differential.geometric_shape_of_separableChartBound
+audit_axioms SexticC3.Differential.firstRefinement_iff_shape_of_separableChartBound
+audit_axioms SexticC3.Differential.exceptional_obstruction_of_chart
+audit_axioms SexticC3.Differential.static_row_eq_coefficient
+audit_axioms SexticC3.Differential.dynamic_row_eq_coefficient
+audit_axioms SexticC3.Differential.isKernel_of_firstRefinement
+audit_axioms SexticC3.Differential.exceptional_second_gate
+audit_axioms SexticC3.StaticTail.delta_ne_zero_of_separable
+audit_axioms SexticC3.StaticTail.normalized_static_tail_of_triple_root
+audit_axioms SexticC3.squarefree_kernel_bound_field
+audit_axioms SexticC3.Differential.tripleRoot_highDegree_zero_of_chart
+audit_axioms SexticC3.Differential.squarefree_polynomial_refinement_of_chart
+audit_axioms SexticC3.Differential.squarefree_firstRefinement_iff_shape
+audit_axioms SexticC3.Differential.squarefree_firstRefinement_iff_core
+audit_axioms SexticC3.Differential.zero_hamiltonian_persistentCore
