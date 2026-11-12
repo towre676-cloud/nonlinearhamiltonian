@@ -65,7 +65,8 @@ def perfectjet_kernel_dimensions(H, degree, max_depth):
         constraints=[lambda g: transvectant(hp, g, 3),
                      lambda g: transvectant(hp, g, 5)],
         max_depth=max_depth)
-    return [row["kernel_dimension"] for row in report["history"]]
+    dims = [row["kernel_dimension"] for row in report["history"]]
+    return dims + [0] * (max_depth + 1 - len(dims))
 
 
 def product(*polys):
