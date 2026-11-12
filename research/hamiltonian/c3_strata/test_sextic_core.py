@@ -307,6 +307,86 @@ class SexticCoreTests(unittest.TestCase):
                     if schema == 2:
                         self.assertEqual(report["classification"]["Dinf"]["dimension"], dimension)
 
+    def test_triple_pair_perturbations_against_star_kernels(self):
+        t = {(1, 1): F(1)}
+        leading = {(3, 3): F(1)}
+        nonsplit = {(2, 0): F(1), (0, 2): F(1)}
+        examples = [
+            (V.sparse_add(leading, {key: F(2)}), 3 if sum(key) <= 2 else 2)
+            for key in ((1, 0), (0, 2), (3, 0), (1, 2), (3, 1), (4, 0), (4, 1), (0, 5))
+        ]
+        shifted_t = V.sparse_add(t, {(1, 0): F(2)})
+        examples.extend([
+            (V.affine_substitute(V.sparse_add(leading, {(2, 0): F(-2), (0, 1): F(3)}),
+                                 ((2, 1), (1, 3)), (F(1, 2), F(-1, 3)), F(-2, 7)), 3),
+            (V.affine_substitute(V.sparse_add(V.sparse_power(nonsplit, 3), {(1, 1): F(2)}),
+                                 shift=(F(1, 2), F(-1, 3))), 3),
+            (V.sparse_add(V.sparse_power(nonsplit, 3), {(1, 2): F(2)}), 2),
+            (V.sparse_add(leading, {(3, 2): F(1), (4, 1): F(1), (0, 1): F(3)}), 2),
+            (V.sparse_add(leading, {(3, 2): F(3)}), 2),
+            (V.sparse_add(V.sparse_power(shifted_t, 3),
+                          V.E.scale(V.sparse_power(shifted_t, 2), 3), {(0, 2): F(-1)}), 3),
+        ])
+        for H, first_dimension in examples:
+            with self.subTest(H=H):
+                report = V.C.classify_sextic(H, schema=2)
+                self.assertEqual(V.C.classify_sextic(H)["status"], "unsupported")
+                self.assertEqual(report["classification"]["method"], "triple_pair_perturbation")
+                self.assertEqual(report["classification"]["S1"]["dimension"], first_dimension)
+                self.assertEqual(report["classification"]["Dinf"]["dimension"], 2)
+                V.check_report(H, report)
+                for depth in (1, 2):
+                    V.check_bounded_kernel(H, report, 8, depth)
+
+    def test_triple_pair_symbolic_gate_coefficients(self):
+        import sympy as s
+
+        x, y, a, b, d = s.symbols("x y a b d")
+        origin = {x: 0, y: 0}
+
+        def gate(order, left, right):
+            return s.expand(sum(
+                (-1)**j * s.binomial(order, j)
+                * left.diff(x, order-j, y, j).subs(origin)
+                * right.diff(x, j, y, order-j).subs(origin)
+                for j in range(order+1)
+            ))
+
+        # Derivatives at (1,1) of the original monomials via translation.
+        radial = (1+x)**3 * (1+y)**3
+        general = (1+x)**a * (1+y)**b
+        third = gate(3, radial, general)
+        fifth = gate(5, radial, general)
+        self.assertEqual(s.expand(third + 6*(a-b)*(a*a-8*a*b-3*a+b*b-3*b+2)), 0)
+        self.assertEqual(s.expand(fifth + 360*a*b*(a-1)*(a-b)*(b-1)), 0)
+        for u in range(6):
+            for v in range(6-u):
+                if u == v:
+                    continue
+                with self.subTest(u=u, v=v):
+                    actual = d*third.subs({a: d+u-3, b: d+v-3})/3 + gate(
+                        3, (1+x)**u * (1+y)**v, (1+x)**d * (1+y)**d,
+                    )
+                    expected = d*(d-3)*(u-v)*(
+                        d*((u-v)**2-3*(u+v)+14)-6*u*v+12*(u+v)-24
+                    )
+                    self.assertEqual(s.expand(actual - expected), 0)
+
+    def test_triple_pair_static_and_refinement_counterexample(self):
+        H = {(3, 3): F(1), (1, 0): F(1)}
+        t = {(1, 1): F(1)}
+        t_squared = {(2, 2): F(1)}
+        V.gates_through(H, t, 1)
+        V.gates_through(H, t_squared, 0)
+        self.assertEqual(V.E.defects(H, V.E.poisson(H, t_squared))[2],
+                         {(2, 1): F(-9)})
+        report = V.C.classify_sextic(H, schema=2)
+        self.assertEqual(V.polynomial(report["obstruction"]["T5"]), {(1, 0): F(12960)})
+        corrupt = copy.deepcopy(report)
+        corrupt["obstruction"]["T5"][0]["coefficient"] = "1"
+        with self.assertRaisesRegex(V.VerificationError, "Incorrect T5 obstruction"):
+            V.check_report(H, corrupt)
+
     def test_unsupported_results_do_not_assert_spaces(self):
         for H in ({(6, 0): F(1), (0, 2): F(1)},
                   {(5, 1): F(1), (0, 2): F(1)},

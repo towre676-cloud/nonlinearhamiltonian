@@ -331,6 +331,12 @@ def check_report(H, report, *, sample_powers=(0, 1, 2)):
         require(pattern == [6] and report["schema"].endswith("/2"),
                 "Quadratic sixfold classification requires schema 2 and a sixfold leading form")
         infinite = False
+    if spaces["method"] == "triple_pair_perturbation":
+        require(pattern == [3, 3] and report["schema"].endswith("/2"),
+                "Triple-pair perturbation classification requires schema 2 and a triple-pair leading form")
+        require(spaces["S1"]["dimension"] in (2, 3) and spaces["Dinf"]["dimension"] == 2,
+                "Incorrect finite dimensions for a triple-pair perturbation")
+        infinite = False
     expected_kind = "polynomial_family" if infinite else "finite_basis"
     for name, depth in (("S1", 1), ("S2", 2), ("Dinf", 2)):
         space = spaces[name]
@@ -382,11 +388,12 @@ def check_report(H, report, *, sample_powers=(0, 1, 2)):
         first = space_basis(spaces["S1"])
         require(span_rank(first + [G]) == len(first), "Reported quadratic lift is missing from S1")
     first_witness = report.get("first_refinement_obstruction")
-    if spaces["method"] == "sixfold_quadratic_complement":
+    obstruction_methods = ("sixfold_quadratic_complement", "triple_pair_perturbation")
+    if spaces["method"] in obstruction_methods:
         require((first_witness is not None) == (spaces["S1"]["dimension"] == 2),
-                "A failed sixfold lift requires a first-refinement witness")
+                "A failed quadratic lift requires a first-refinement witness")
     if first_witness is not None:
-        require(spaces["method"] == "sixfold_quadratic_complement" and first_witness["iterate"] == 1,
+        require(spaces["method"] in obstruction_methods and first_witness["iterate"] == 1,
                 "Unexpected first-refinement witness")
         G = polynomial(first_witness["G"])
         gates_through(H, G, 0)
