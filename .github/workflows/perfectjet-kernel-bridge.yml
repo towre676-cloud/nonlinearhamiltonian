@@ -1,0 +1,36 @@
+name: PerfectJet kernel bridge
+on:
+  pull_request:
+    paths:
+      - 'research/hamiltonian/perfectjet_bridge/**'
+      - '.github/workflows/perfectjet-kernel-bridge.yml'
+  push:
+    paths:
+      - 'research/hamiltonian/perfectjet_bridge/**'
+      - '.github/workflows/perfectjet-kernel-bridge.yml'
+  workflow_dispatch:
+jobs:
+  exact-cross-check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install pinned PerfectJet bridge engine
+        shell: bash
+        run: |
+          PIN="$(cat research/hamiltonian/perfectjet_bridge/PERFECTJET_PIN.txt)"
+          python -m pip install "git+https://github.com/towre676-cloud/PerfectJet.git@${PIN}"
+      - name: Cross-check all homogeneous strata and exceptional family
+        run: python -m unittest discover -s research/hamiltonian/perfectjet_bridge -p 'test_*.py' -v
+      - name: Emit deterministic bridge receipt
+        run: |
+          python research/hamiltonian/perfectjet_bridge/bridge.py --output /tmp/perfectjet-bridge.json
+          python research/hamiltonian/perfectjet_bridge/bridge.py --output /tmp/perfectjet-bridge-2.json
+          diff -u /tmp/perfectjet-bridge.json /tmp/perfectjet-bridge-2.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: nonlinearhamiltonian-perfectjet-bridge
+          path: /tmp/perfectjet-bridge.json
