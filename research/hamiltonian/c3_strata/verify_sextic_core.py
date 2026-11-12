@@ -23,13 +23,23 @@ if _SPEC is None or _SPEC.loader is None:
     raise RuntimeError("Cannot load the independent star-exponential engine")
 E = importlib.util.module_from_spec(_SPEC)
 _SPEC.loader.exec_module(E)
-_CLASSIFIER_SPEC = importlib.util.spec_from_file_location(
-    "sextic_core_under_replay", HERE.parent / "sextic_core.py"
-)
-if _CLASSIFIER_SPEC is None or _CLASSIFIER_SPEC.loader is None:
-    raise RuntimeError("Cannot load the sextic-core classifier")
-C = importlib.util.module_from_spec(_CLASSIFIER_SPEC)
-_CLASSIFIER_SPEC.loader.exec_module(C)
+class _LazyClassifier:
+    """Fixture generation may load the producer; supplied-report checking does not."""
+    _module = None
+
+    def __getattr__(self, name):
+        if self._module is None:
+            spec = importlib.util.spec_from_file_location(
+                "sextic_core_under_replay", HERE.parent / "sextic_core.py")
+            if spec is None or spec.loader is None:
+                raise RuntimeError("Cannot load the sextic-core classifier")
+            module = importlib.util.module_from_spec(spec)
+            spec.loader.exec_module(module)
+            self._module = module
+        return getattr(self._module, name)
+
+
+C = _LazyClassifier()
 
 
 class VerificationError(RuntimeError):
@@ -310,6 +320,10 @@ def check_lift_certificate(H, lift):
 def check_report(H, report, *, sample_powers=(0, 1, 2)):
     """Check supplied claims; this does not generate a classification."""
     H = {key: F(value) for key, value in H.items() if value}
+    if report.get("schema") == "hamiltonian-sextic-core/2":
+        from verify_sextic_core_v2 import check_report_v2
+        check_report_v2(H, report)
+        return report
     require(report.get("schema") == "hamiltonian-sextic-core/1", "Unexpected classifier schema")
     require(report.get("status") == "classified", "Expected a classified result")
     require(polynomial(report.get("input")) == H, "Input polynomial was not preserved")
@@ -327,6 +341,10 @@ def check_report(H, report, *, sample_powers=(0, 1, 2)):
     family = "multiplicity_" + "_".join(map(str, pattern)) if H else "zero"
     require(spaces.get("family") == family, "Classification family disagrees with geometric root pattern")
     infinite = not H or pattern in ([6], [5, 1], [3, 3])
+    if spaces["method"] == "sixfold_quadratic_complement":
+        require(pattern == [6] and report["schema"].endswith("/2"),
+                "Quadratic sixfold classification requires schema 2 and a sixfold leading form")
+        infinite = False
     expected_kind = "polynomial_family" if infinite else "finite_basis"
     for name, depth in (("S1", 1), ("S2", 2), ("Dinf", 2)):
         space = spaces[name]
@@ -377,6 +395,23 @@ def check_report(H, report, *, sample_powers=(0, 1, 2)):
         G = sparse_add(polynomial(lift["leading_candidate"]), polynomial(lift["linear_correction"]))
         first = space_basis(spaces["S1"])
         require(span_rank(first + [G]) == len(first), "Reported quadratic lift is missing from S1")
+    first_witness = report.get("first_refinement_obstruction")
+    if spaces["method"] == "sixfold_quadratic_complement":
+        require((first_witness is not None) == (spaces["S1"]["dimension"] == 2),
+                "A failed sixfold lift requires a first-refinement witness")
+    if first_witness is not None:
+        require(spaces["method"] == "sixfold_quadratic_complement" and first_witness["iterate"] == 1,
+                "Unexpected first-refinement witness")
+        G = polynomial(first_witness["G"])
+        gates_through(H, G, 0)
+        DG = E.poisson(H, G)
+        require(polynomial(first_witness["DG"]) == DG, "Incorrect first classical iterate")
+        defects = E.defects(H, DG)
+        require(bool(defects), "Claimed first obstruction has no star defect")
+        require(polynomial(first_witness["T3"]) == E.scale(defects.get(2, {}), -24),
+                "Incorrect first T3 obstruction")
+        require(polynomial(first_witness["T5"]) == E.scale(defects.get(4, {}), 1920),
+                "Incorrect first T5 obstruction")
     witness = report.get("obstruction")
     if witness is not None:
         G = polynomial(witness["G"])
@@ -573,7 +608,7 @@ def verify():
         obstruction_count += report.get("obstruction") is not None
         if pattern in ([6], [5, 1], [3, 3]):
             changed = sparse_add(H, {(1, 0): F(1), (0, 1): F(1)})
-            if pattern == [6]:
+            if pattern in ([6], [5, 1]):
                 changed = sparse_add(changed, {(0, 2): F(1)})
             result = classify_sextic(changed)
             require(result.get("status") == "unsupported", "Unsupported inhomogeneous stratum was classified")
@@ -604,11 +639,69 @@ def verify():
                                            "rational_affine_change": transformed,
                                            "bounded_kernels": checks})
 
+    further_affine_checks = []
+    for H, pattern, method, dimension in (
+        ({(5, 1): F(1), (3, 1): F(2), (4, 0): F(-1)}, [5, 1],
+         "fivefold_affine_complement", 11),
+        (sparse_add(sparse_power({(1, 1): F(1), (0, 1): F(2)}, 3),
+                    sparse_power({(1, 1): F(1), (0, 1): F(2)}, 2)), [3, 3],
+         "triple_pair_quadratic_composition", 3),
+        (sparse_power({(2, 0): F(1), (0, 2): F(1), (1, 0): F(3)}, 3), [3, 3],
+         "triple_pair_quadratic_composition", 3),
+    ):
+        for transformed in (False, True):
+            candidate = affine_substitute(H, ((0, F(1, 2)), (F(3, 2), 1)),
+                                          shift=(F(1, 3), F(-2, 5)),
+                                          scalar=F(-2, 3)) if transformed else H
+            report = check_report(candidate, classify_sextic(candidate), sample_powers=(0, 1, 4))
+            check_pattern(report, pattern)
+            require(report["classification"]["method"] == method, "Wrong inhomogeneous family")
+            checks = [check_bounded_kernel(candidate, report, 5, depth) for depth in (1, 2)]
+            require(all(check["dimension"] == dimension for check in checks),
+                    "Incorrect inhomogeneous kernel dimension")
+            further_affine_checks.append({"method": method, "rational_affine_change": transformed,
+                                          "bounded_kernels": checks})
+
+    quadratic_sixfold_checks = []
+    Q = {(1, 1): F(1), (0, 1): F(2), (3, 0): F(1)}
+    for H, first_dimension, core_dimension in (
+        (sparse_add(sparse_power(Q, 2), {(0, 0): F(3, 2)}), 3, 3),
+        ({(6, 0): F(1), (2, 2): F(1)}, 3, 2),
+        ({(6, 0): F(1), (2, 2): F(1), (0, 2): F(1), (4, 1): F(2)}, 3, 2),
+        ({(6, 0): F(1), (3, 2): F(1)}, 3, 2),
+        ({(6, 0): F(1), (3, 2): F(1), (1, 2): F(1)}, 2, 2),
+    ):
+        for transformed in (False, True):
+            transform = {"matrix": ((0, F(1, 2)), (F(3, 2), 1)),
+                         "shift": (F(1, 3), F(-2, 5))} if transformed else {}
+            candidate = affine_substitute(H, scalar=F(-2, 3), **transform)
+            require(classify_sextic(candidate)["status"] == "unsupported",
+                    "Schema 1 changed its quadratic sixfold scope")
+            report = check_report(candidate, classify_sextic(candidate, schema=2))
+            stages = report["classification"]["stages"]
+            stage_at = lambda i: stages[min(i, len(stages)-1)]["space"]
+            require(report["leading"]["geometric_root_pattern"] == [6], "Wrong quadratic family")
+            require(stage_at(1)["dimension"] == first_dimension and
+                    report["classification"]["Dinf"]["dimension"] == core_dimension,
+                    "Wrong quadratic dimensions")
+            # Project only for the separate legacy bounded-kernel comparison;
+            # acceptance above checked the complete schema-2 stage report.
+            projected = {"classification": {"S1": stage_at(1), "S2": stage_at(2)}}
+            checks = [check_bounded_kernel(candidate, projected, 6, depth) for depth in (1, 2)]
+            square = affine_substitute({(2, 0): F(1)}, **transform)
+            gates_through(candidate, square, 0)
+            require(bool(E.defects(candidate, E.poisson(candidate, square))),
+                    "Expected a first-iterate quadratic obstruction")
+            quadratic_sixfold_checks.append({"first_dimension": first_dimension,
+                                             "core_dimension": core_dimension,
+                                             "rational_affine_change": transformed,
+                                             "bounded_kernels": checks})
+
     return {
         "schema": "hamiltonian-sextic-core-independent-replay/1",
         "status": "PASS",
-        "classified_input_checks": len(records) + transformed_count + 3 + len(inhomogeneous_records) + constant_shifts + len(sixfold_affine_checks),
-        "bounded_kernel_checks": sum(len(row["bounded_kernels"]) for row in records + inhomogeneous_records + sixfold_affine_checks) + 2,
+        "classified_input_checks": len(records) + transformed_count + 3 + len(inhomogeneous_records) + constant_shifts + len(sixfold_affine_checks) + len(further_affine_checks) + len(quadratic_sixfold_checks),
+        "bounded_kernel_checks": sum(len(row["bounded_kernels"]) for row in records + inhomogeneous_records + sixfold_affine_checks + further_affine_checks + quadratic_sixfold_checks) + 2,
         "geometric_strata": records,
         "rational_GL2_and_scalar_checks": transformed_count,
         "zero_ring_check": True,
@@ -617,6 +710,8 @@ def verify():
         "constant_shift_checks": constant_shifts,
         "inhomogeneous_checks": inhomogeneous_records,
         "sixfold_affine_checks": sixfold_affine_checks,
+        "further_affine_checks": further_affine_checks,
+        "quadratic_sixfold_checks": quadratic_sixfold_checks,
         "unsupported_inhomogeneous_patterns": unsupported,
         "second_iterate_obstruction_checks": obstruction_count,
         "source_sha256": {

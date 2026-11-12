@@ -8,6 +8,21 @@ The collection develops questions into definitions, precise results, proofs or d
 
 For interactive exploration, open the [mathematics atlas](compendium/atlas/output/Mathematics_Atlas_2023_2026.html), or read its [249-page report](compendium/atlas/output/Mathematics_Atlas_2023_2026_Report.pdf). The atlas organizes **1,051 main treatment bodies and 14 supplementary 2023 synthesis bodies** into **16 domains, 71 concept families, six cross-domain bridges and ten working mathematical models**. These are treatment counts, rather than counts of unique conversations or distinct discoveries.
 
+## Active research: exact nonlinear dynamics
+
+The [Hamiltonian research capabilities](research/hamiltonian/RESEARCH_CAPABILITIES.md)
+provide a direct route into the current classifier, all-degree theorems,
+independent report verification and Lean proofs. The maintained sextic
+programme covers all homogeneous root types, arbitrary lower terms in eight
+leading strata, the complete quadratic-complement family, and separable
+cubic/quartic complements. The separate separable classifier also covers
+potential degrees above six. Results include exact spaces, least-depth
+witnesses and explicit unsupported boundaries.
+
+See the [CLI and schema guide](research/hamiltonian/c3_strata/SEXTIC_CORE_GUIDE.md),
+[machine-readable scopes](research/hamiltonian/c3_strata/CAPABILITIES.json),
+and [formal theorem boundary](research/hamiltonian/c3_strata/formal/THEOREM_BOUNDARY.md).
+
 ## Read the collection
 
 | Work | Reading edition | Searchable or interactive edition | Main treatments |
@@ -156,7 +171,7 @@ python research/hamiltonian/partner_lab.py sextic-core --H "q^4*p^2+q^3"
 
 The independent replay uses the defining star exponential and separately
 constructed bounded kernels. The all-degree conclusions depend on the written
-theorems; the new extension is not an end-to-end Lean formalization. Nonconstant
-perturbations of leading types $(5,1)$ and $(3,3)$ and sixfold-leading
-inputs of higher degree in the complementary coordinate remain outside the
-classifier's scope.
+theorems; the new extension is not an end-to-end Lean formalization. Unrestricted nonconstant
+perturbations of leading types $(5,1)$ and $(3,3)$ and unrestricted sixfold-leading
+inputs of higher complementary degree remain outside the classifier scope;
+the complete quadratic and separable cubic/quartic families use schema 2.

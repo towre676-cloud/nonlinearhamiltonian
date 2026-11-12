@@ -1,7 +1,117 @@
 {
-  "bounded_kernel_checks": 79,
-  "classified_input_checks": 69,
+  "bounded_kernel_checks": 111,
+  "classified_input_checks": 85,
   "constant_shift_checks": 11,
+  "further_affine_checks": [
+    {
+      "bounded_kernels": [
+        {
+          "degree": 5,
+          "dimension": 11,
+          "homogeneous_slice": false,
+          "refinement_depth": 1
+        },
+        {
+          "degree": 5,
+          "dimension": 11,
+          "homogeneous_slice": false,
+          "refinement_depth": 2
+        }
+      ],
+      "method": "fivefold_affine_complement",
+      "rational_affine_change": false
+    },
+    {
+      "bounded_kernels": [
+        {
+          "degree": 5,
+          "dimension": 11,
+          "homogeneous_slice": false,
+          "refinement_depth": 1
+        },
+        {
+          "degree": 5,
+          "dimension": 11,
+          "homogeneous_slice": false,
+          "refinement_depth": 2
+        }
+      ],
+      "method": "fivefold_affine_complement",
+      "rational_affine_change": true
+    },
+    {
+      "bounded_kernels": [
+        {
+          "degree": 5,
+          "dimension": 3,
+          "homogeneous_slice": false,
+          "refinement_depth": 1
+        },
+        {
+          "degree": 5,
+          "dimension": 3,
+          "homogeneous_slice": false,
+          "refinement_depth": 2
+        }
+      ],
+      "method": "triple_pair_quadratic_composition",
+      "rational_affine_change": false
+    },
+    {
+      "bounded_kernels": [
+        {
+          "degree": 5,
+          "dimension": 3,
+          "homogeneous_slice": false,
+          "refinement_depth": 1
+        },
+        {
+          "degree": 5,
+          "dimension": 3,
+          "homogeneous_slice": false,
+          "refinement_depth": 2
+        }
+      ],
+      "method": "triple_pair_quadratic_composition",
+      "rational_affine_change": true
+    },
+    {
+      "bounded_kernels": [
+        {
+          "degree": 5,
+          "dimension": 3,
+          "homogeneous_slice": false,
+          "refinement_depth": 1
+        },
+        {
+          "degree": 5,
+          "dimension": 3,
+          "homogeneous_slice": false,
+          "refinement_depth": 2
+        }
+      ],
+      "method": "triple_pair_quadratic_composition",
+      "rational_affine_change": false
+    },
+    {
+      "bounded_kernels": [
+        {
+          "degree": 5,
+          "dimension": 3,
+          "homogeneous_slice": false,
+          "refinement_depth": 1
+        },
+        {
+          "degree": 5,
+          "dimension": 3,
+          "homogeneous_slice": false,
+          "refinement_depth": 2
+        }
+      ],
+      "method": "triple_pair_quadratic_composition",
+      "rational_affine_change": true
+    }
+  ],
   "geometric_strata": [
     {
       "bounded_kernels": [
@@ -550,6 +660,198 @@
     "finite_checks": "Direct defining-star expansion, exact span checks, and bounded kernels only.",
     "formalization": "This Python replay is not a Lean proof and does not replay the sixteen heavy squarefree certificates."
   },
+  "quadratic_sixfold_checks": [
+    {
+      "bounded_kernels": [
+        {
+          "degree": 6,
+          "dimension": 3,
+          "homogeneous_slice": false,
+          "refinement_depth": 1
+        },
+        {
+          "degree": 6,
+          "dimension": 3,
+          "homogeneous_slice": false,
+          "refinement_depth": 2
+        }
+      ],
+      "core_dimension": 3,
+      "first_dimension": 3,
+      "rational_affine_change": false
+    },
+    {
+      "bounded_kernels": [
+        {
+          "degree": 6,
+          "dimension": 3,
+          "homogeneous_slice": false,
+          "refinement_depth": 1
+        },
+        {
+          "degree": 6,
+          "dimension": 3,
+          "homogeneous_slice": false,
+          "refinement_depth": 2
+        }
+      ],
+      "core_dimension": 3,
+      "first_dimension": 3,
+      "rational_affine_change": true
+    },
+    {
+      "bounded_kernels": [
+        {
+          "degree": 6,
+          "dimension": 3,
+          "homogeneous_slice": false,
+          "refinement_depth": 1
+        },
+        {
+          "degree": 6,
+          "dimension": 2,
+          "homogeneous_slice": false,
+          "refinement_depth": 2
+        }
+      ],
+      "core_dimension": 2,
+      "first_dimension": 3,
+      "rational_affine_change": false
+    },
+    {
+      "bounded_kernels": [
+        {
+          "degree": 6,
+          "dimension": 3,
+          "homogeneous_slice": false,
+          "refinement_depth": 1
+        },
+        {
+          "degree": 6,
+          "dimension": 2,
+          "homogeneous_slice": false,
+          "refinement_depth": 2
+        }
+      ],
+      "core_dimension": 2,
+      "first_dimension": 3,
+      "rational_affine_change": true
+    },
+    {
+      "bounded_kernels": [
+        {
+          "degree": 6,
+          "dimension": 3,
+          "homogeneous_slice": false,
+          "refinement_depth": 1
+        },
+        {
+          "degree": 6,
+          "dimension": 2,
+          "homogeneous_slice": false,
+          "refinement_depth": 2
+        }
+      ],
+      "core_dimension": 2,
+      "first_dimension": 3,
+      "rational_affine_change": false
+    },
+    {
+      "bounded_kernels": [
+        {
+          "degree": 6,
+          "dimension": 3,
+          "homogeneous_slice": false,
+          "refinement_depth": 1
+        },
+        {
+          "degree": 6,
+          "dimension": 2,
+          "homogeneous_slice": false,
+          "refinement_depth": 2
+        }
+      ],
+      "core_dimension": 2,
+      "first_dimension": 3,
+      "rational_affine_change": true
+    },
+    {
+      "bounded_kernels": [
+        {
+          "degree": 6,
+          "dimension": 3,
+          "homogeneous_slice": false,
+          "refinement_depth": 1
+        },
+        {
+          "degree": 6,
+          "dimension": 2,
+          "homogeneous_slice": false,
+          "refinement_depth": 2
+        }
+      ],
+      "core_dimension": 2,
+      "first_dimension": 3,
+      "rational_affine_change": false
+    },
+    {
+      "bounded_kernels": [
+        {
+          "degree": 6,
+          "dimension": 3,
+          "homogeneous_slice": false,
+          "refinement_depth": 1
+        },
+        {
+          "degree": 6,
+          "dimension": 2,
+          "homogeneous_slice": false,
+          "refinement_depth": 2
+        }
+      ],
+      "core_dimension": 2,
+      "first_dimension": 3,
+      "rational_affine_change": true
+    },
+    {
+      "bounded_kernels": [
+        {
+          "degree": 6,
+          "dimension": 2,
+          "homogeneous_slice": false,
+          "refinement_depth": 1
+        },
+        {
+          "degree": 6,
+          "dimension": 2,
+          "homogeneous_slice": false,
+          "refinement_depth": 2
+        }
+      ],
+      "core_dimension": 2,
+      "first_dimension": 2,
+      "rational_affine_change": false
+    },
+    {
+      "bounded_kernels": [
+        {
+          "degree": 6,
+          "dimension": 2,
+          "homogeneous_slice": false,
+          "refinement_depth": 1
+        },
+        {
+          "degree": 6,
+          "dimension": 2,
+          "homogeneous_slice": false,
+          "refinement_depth": 2
+        }
+      ],
+      "core_dimension": 2,
+      "first_dimension": 2,
+      "rational_affine_change": true
+    }
+  ],
   "rational_GL2_and_scalar_checks": 22,
   "schema": "hamiltonian-sextic-core-independent-replay/1",
   "second_iterate_obstruction_checks": 7,
@@ -737,10 +1039,10 @@
   ],
   "sixfold_infinity_check": true,
   "source_sha256": {
-    "research/hamiltonian/c3_strata/test_sextic_core.py": "f6d841f7982757ecfe576e5e7323d7ac3bea739254d4c471954c21902f2128fc",
-    "research/hamiltonian/c3_strata/verify_sextic_core.py": "c3b1768b74886121025166a350a9dcc89b6e92898a6bdc76df17bc884fb45588",
+    "research/hamiltonian/c3_strata/test_sextic_core.py": "a76cbd217d54fa7d2b51ba02cc8331e15c7ae788c951eda0033ea58946354ac5",
+    "research/hamiltonian/c3_strata/verify_sextic_core.py": "f50d15047fd6e8939f99f64213c28013ad34e8880642160d0c53b94d9bd4c546",
     "research/hamiltonian/independent/engine.py": "feafd49628603915e1b4bdf930efd0f862313ae6f4785b2bab3ca971ad58cbbf",
-    "research/hamiltonian/sextic_core.py": "c90512d9977c8ab045908b1015fc0e0c15a53aa94d88fa2f9e15524c5a32a2bc"
+    "research/hamiltonian/sextic_core.py": "3a93b1e8b55a502a08aea2bca55cc87e41b2e7e73b19caac4f690920b0dfddec"
   },
   "status": "PASS",
   "symbolic_family_records": [

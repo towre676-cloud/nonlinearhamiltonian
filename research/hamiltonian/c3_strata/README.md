@@ -31,3 +31,24 @@ their historical scopes. The [classifier replay receipt](SEXTIC_CORE_REPLAY.json
 reports its actual bounded checks separately from the written all-degree
 proofs and their inherited dependencies. None of the new Python results is
 an end-to-end Lean theorem.
+
+
+## Complete extension families and report verification
+
+[Quadratic complements](QUADRATIC_SIXFOLD_THEOREM.md) have a complete core
+classification, exact stages and least-depth witnesses. [Separable cubic
+and quartic complements](SEPARABLE_SIXFOLD_THEOREM.md) have complete static
+spaces and sharp depth bounds; their potential-degree theorem extends beyond
+sextics. Both sextic families use the explicit stages of schema 2.
+
+The supplied-report verifier `verify_sextic_report.py` checks a report
+against a separately supplied input. It validates complete polynomial
+modules and reconstructs the finite weighted boxes used in the bounding
+theorems. Its adversarial tests reject omissions and false metadata as well
+as incorrect polynomial identities.
+
+The [Lean development](formal/README.md) has a separate compilation and
+axiom-audit workflow. Its finite and differential semantics remain distinct
+from the complete geometric all-degree theorem. Use
+`python research/hamiltonian/reproduce_sextic.py --list` from the repository
+root to inspect every maintained reproduction suite.

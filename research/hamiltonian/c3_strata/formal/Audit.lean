@@ -1,0 +1,109 @@
+import SexticC3
+import Lean.Util.CollectAxioms
+
+open Lean Elab Command
+
+elab "audit_axioms " decl:ident : command => do
+  let name ← liftCoreM <| Lean.Elab.realizeGlobalConstNoOverloadWithInfo decl
+  let axioms ← Lean.collectAxioms name
+  let allowed := [``propext, ``Classical.choice, ``Quot.sound]
+  let unexpected := axioms.filter fun axiomName => !allowed.contains axiomName
+  unless unexpected.isEmpty do
+    throwError "{name} depends on unexpected axioms: {unexpected}"
+  logInfo m!"{name} depends on axioms: {axioms}"
+
+audit_axioms SexticC3.delta_eq_derivativeMultiplicationDet
+
+audit_axioms SexticC3.Degree6.recorded_identity
+audit_axioms SexticC3.Degree6.discriminant_in_selected_span
+audit_axioms SexticC3.Degree6.kernel_bound
+audit_axioms SexticC3.Degree6.lift1_eq_hCoeff
+audit_axioms SexticC3.Degree6.hamiltonian_kernel
+
+audit_axioms SexticC3.Degree1.recorded_identity
+audit_axioms SexticC3.Degree1.discriminant_in_selected_span
+audit_axioms SexticC3.Degree1.kernel_bound
+
+audit_axioms SexticC3.Degree2.recorded_identity
+audit_axioms SexticC3.Degree2.discriminant_in_selected_span
+audit_axioms SexticC3.Degree2.kernel_bound
+
+audit_axioms SexticC3.Degree3.recorded_identity
+audit_axioms SexticC3.Degree3.discriminant_in_selected_span
+audit_axioms SexticC3.Degree3.kernel_bound
+
+audit_axioms SexticC3.Degree4.recorded_identity
+audit_axioms SexticC3.Degree4.discriminant_in_selected_span
+audit_axioms SexticC3.Degree4.kernel_bound
+
+audit_axioms SexticC3.Degree5.recorded_identity
+audit_axioms SexticC3.Degree5.discriminant_in_selected_span
+audit_axioms SexticC3.Degree5.kernel_bound
+
+audit_axioms SexticC3.Degree7.recorded_identity
+audit_axioms SexticC3.Degree7.discriminant_in_selected_span
+audit_axioms SexticC3.Degree7.kernel_bound
+
+audit_axioms SexticC3.Degree8.recorded_identity
+audit_axioms SexticC3.Degree8.discriminant_in_selected_span
+audit_axioms SexticC3.Degree8.kernel_bound
+
+audit_axioms SexticC3.Degree9.recorded_identity
+audit_axioms SexticC3.Degree9.discriminant_in_selected_span
+audit_axioms SexticC3.Degree9.kernel_bound
+
+audit_axioms SexticC3.Degree10.recorded_identity
+audit_axioms SexticC3.Degree10.discriminant_in_selected_span
+audit_axioms SexticC3.Degree10.kernel_bound
+
+audit_axioms SexticC3.Degree11.recorded_identity
+audit_axioms SexticC3.Degree11.discriminant_in_selected_span
+audit_axioms SexticC3.Degree11.kernel_bound
+
+audit_axioms SexticC3.Degree12.recorded_identity
+audit_axioms SexticC3.Degree12.discriminant_in_selected_span
+audit_axioms SexticC3.Degree12.kernel_bound
+
+audit_axioms SexticC3.Degree13.recorded_identity
+audit_axioms SexticC3.Degree13.discriminant_in_selected_span
+audit_axioms SexticC3.Degree13.kernel_bound
+
+audit_axioms SexticC3.Degree14.recorded_identity
+audit_axioms SexticC3.Degree14.discriminant_in_selected_span
+audit_axioms SexticC3.Degree14.kernel_bound
+
+audit_axioms SexticC3.Degree15.recorded_identity
+audit_axioms SexticC3.Degree15.discriminant_in_selected_span
+audit_axioms SexticC3.Degree15.kernel_bound
+
+audit_axioms SexticC3.Degree16.recorded_identity
+audit_axioms SexticC3.Degree16.discriminant_in_selected_span
+audit_axioms SexticC3.Degree16.kernel_bound
+
+audit_axioms SexticC3.finite_kernel_bound
+
+audit_axioms SexticC3.Exceptional411.first_iterate
+audit_axioms SexticC3.Exceptional411.second_iterate
+audit_axioms SexticC3.Exceptional411.static_gates
+audit_axioms SexticC3.Exceptional411.second_obstruction
+audit_axioms SexticC3.Exceptional411.second_obstruction_nonzero
+
+-- Uniform transport to Mathlib's actual multivariate differential model.
+audit_axioms SexticC3.Differential.iterated_q_mono
+audit_axioms SexticC3.Differential.iterated_p_mono
+audit_axioms SexticC3.Differential.mixed_mono
+audit_axioms SexticC3.Differential.contraction_term_coeff
+audit_axioms SexticC3.Differential.contraction_mono_coeff
+audit_axioms SexticC3.Differential.contraction_mono
+audit_axioms SexticC3.Differential.poisson_mono
+audit_axioms SexticC3.Differential.static_row_eq_coefficient
+audit_axioms SexticC3.Differential.poisson_homogeneous
+audit_axioms SexticC3.Differential.dynamic_row_eq_coefficient
+audit_axioms SexticC3.Differential.row_eq_coefficient
+audit_axioms SexticC3.Differential.isKernel_of_firstRefinement
+audit_axioms SexticC3.Differential.firstRefinement_of_core
+audit_axioms SexticC3.Differential.core_of_stationary
+audit_axioms SexticC3.Differential.persistentCore_multiple
+audit_axioms SexticC3.finite_differential_kernel_bound
+audit_axioms SexticC3.finite_differential_kernel_iff
+audit_axioms SexticC3.finite_differential_core_iff

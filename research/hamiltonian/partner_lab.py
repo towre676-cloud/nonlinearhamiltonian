@@ -69,15 +69,37 @@ def main():
     sub.add_parser('core-demo')
     p=sub.add_parser('sextic-core',help='complete sextic refinement/core classification in the declared scope (requires SymPy)')
     p.add_argument('--H',required=True,help='polynomial with rational coefficients in q and p')
+    p.add_argument('--schema',type=int,choices=(1,2),default=1,help='schema 2 enables full stages and quadratic/separable/weighted sixfold families')
+    p=sub.add_parser('separable-core',help='complete separable polynomial core for potential degree >=5 and cubic/quartic complement')
+    p.add_argument('--H',required=True,help='polynomial with rational coefficients in q and p')
+    p=sub.add_parser('weighted-core',help='complete core for a potential plus cubic/quartic leading complement and strict lower-weight mixed terms')
+    p.add_argument('--H',required=True,help='polynomial with rational coefficients in q and p')
+    p=sub.add_parser('verify-report',help='independently verify a supplied sextic report against a separate input')
+    p.add_argument('report',help='JSON report to verify')
+    p.add_argument('--H',required=True,help='independently supplied Hamiltonian')
+    p.add_argument('--degree',type=int,default=6,help='additional bounded comparison degree, at least six')
+    p.add_argument('--output',help='optional verification receipt path')
     args=ap.parse_args()
     try:
-        if args.command=='sextic-core':
+        if args.command=='verify-report':
+            from c3_strata.verify_sextic_report import main as verify_main
+            flags=[args.report,'--H',args.H,'--degree',str(args.degree)]
+            if args.output:flags+=['--output',args.output]
+            return verify_main(flags)
+        elif args.command in ('sextic-core','separable-core','weighted-core'):
             try:
-                from sextic_core import classify_sextic
-                out=classify_sextic(parse(args.H))
+                if args.command=='sextic-core':
+                    from sextic_core import classify_sextic
+                    out=classify_sextic(parse(args.H),schema=args.schema)
+                elif args.command=='separable-core':
+                    from separable_sixfold import classify_separable
+                    out=classify_separable(parse(args.H))
+                else:
+                    from weighted_separable import classify_weighted_separable
+                    out=classify_weighted_separable(parse(args.H))
             except ImportError as e:
                 if getattr(e,'name',None)!='sympy' and 'requires SymPy' not in str(e):raise
-                ap.error('sextic-core requires SymPy; install c3_strata/requirements.txt and run without -S')
+                ap.error(args.command+' requires SymPy; install c3_strata/requirements.txt and run without -S')
         elif args.command=='core-demo':out=core_demo()
         elif args.command=='monomial':out=classify(args.a,args.b)
         elif args.command=='bracket':
@@ -91,6 +113,6 @@ def main():
             for n in range(args.steps+1):
                 out.append({'action':n,'classical':E.serialize(classical),'quantum':E.serialize_series(quantum),'agree':quantum==({0:classical} if classical else {})});quantum=E.formal_action(H,quantum);classical=E.poisson(H,classical)
         print(json.dumps(out,ensure_ascii=False,indent=2))
-        return 2 if isinstance(out,dict) and out.get('status')=='unsupported' else 0
+        return 2 if isinstance(out,dict) and out.get('status') in ('unsupported','out_of_scope') else 0
     except (ValueError,SyntaxError,ZeroDivisionError) as e:ap.error(str(e))
 if __name__=='__main__':sys.exit(main())

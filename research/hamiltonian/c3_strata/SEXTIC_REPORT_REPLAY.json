@@ -1,0 +1,1176 @@
+{
+  "accepted": [
+    {
+      "case": "sixfold",
+      "checks": {
+        "bounded_kernels": [
+          {
+            "degree": 6,
+            "dimension": 18,
+            "homogeneous_slice": false,
+            "refinement_depth": 1
+          },
+          {
+            "degree": 6,
+            "dimension": 18,
+            "homogeneous_slice": false,
+            "refinement_depth": 2
+          }
+        ],
+        "exact_family_structure": true
+      },
+      "classification_status": "classified",
+      "report_sha256": "245961d7b32152c2544ae40018f1f65ae06e25f1f3e3995299165b5d97a730ab",
+      "schema": "hamiltonian-sextic-core/1"
+    },
+    {
+      "case": "five_one",
+      "checks": {
+        "bounded_kernels": [
+          {
+            "degree": 6,
+            "dimension": 13,
+            "homogeneous_slice": false,
+            "refinement_depth": 1
+          },
+          {
+            "degree": 6,
+            "dimension": 13,
+            "homogeneous_slice": false,
+            "refinement_depth": 2
+          }
+        ],
+        "exact_family_structure": true
+      },
+      "classification_status": "classified",
+      "report_sha256": "1383bbdcfad33072f2304fbe2b2c81148735a28c4c1a2072c10e327cb5b90f70",
+      "schema": "hamiltonian-sextic-core/1"
+    },
+    {
+      "case": "four_two",
+      "checks": {
+        "bounded_kernels": [
+          {
+            "degree": 6,
+            "dimension": 3,
+            "homogeneous_slice": false,
+            "refinement_depth": 1
+          },
+          {
+            "degree": 6,
+            "dimension": 3,
+            "homogeneous_slice": false,
+            "refinement_depth": 2
+          }
+        ],
+        "exact_family_structure": false
+      },
+      "classification_status": "classified",
+      "report_sha256": "e03ae87fb1c7a45ff97e7caa79799b29aaebc9c68123fa256ccb1e10215184b9",
+      "schema": "hamiltonian-sextic-core/1"
+    },
+    {
+      "case": "four_one_one",
+      "checks": {
+        "bounded_kernels": [
+          {
+            "degree": 6,
+            "dimension": 3,
+            "homogeneous_slice": false,
+            "refinement_depth": 1
+          },
+          {
+            "degree": 6,
+            "dimension": 2,
+            "homogeneous_slice": false,
+            "refinement_depth": 2
+          }
+        ],
+        "exact_family_structure": false
+      },
+      "classification_status": "classified",
+      "report_sha256": "02bb82f01d0be9d7ebdce776df85f4eee507dda64d8a81d9c550eb3680d047c1",
+      "schema": "hamiltonian-sextic-core/1"
+    },
+    {
+      "case": "three_three",
+      "checks": {
+        "bounded_kernels": [
+          {
+            "degree": 6,
+            "dimension": 4,
+            "homogeneous_slice": false,
+            "refinement_depth": 1
+          },
+          {
+            "degree": 6,
+            "dimension": 4,
+            "homogeneous_slice": false,
+            "refinement_depth": 2
+          }
+        ],
+        "exact_family_structure": true
+      },
+      "classification_status": "classified",
+      "report_sha256": "79628c7dbe02cc16b823e2bf9b6982c91d7595768bc8077be3c3f049944f6480",
+      "schema": "hamiltonian-sextic-core/1"
+    },
+    {
+      "case": "three_two_one",
+      "checks": {
+        "bounded_kernels": [
+          {
+            "degree": 6,
+            "dimension": 2,
+            "homogeneous_slice": false,
+            "refinement_depth": 1
+          },
+          {
+            "degree": 6,
+            "dimension": 2,
+            "homogeneous_slice": false,
+            "refinement_depth": 2
+          }
+        ],
+        "exact_family_structure": false
+      },
+      "classification_status": "classified",
+      "report_sha256": "5e6d4d80069896ab5ea546d91096916fb6c7c1537fefd29dd711c0d2b36843ed",
+      "schema": "hamiltonian-sextic-core/1"
+    },
+    {
+      "case": "three_one_one_one",
+      "checks": {
+        "bounded_kernels": [
+          {
+            "degree": 6,
+            "dimension": 2,
+            "homogeneous_slice": false,
+            "refinement_depth": 1
+          },
+          {
+            "degree": 6,
+            "dimension": 2,
+            "homogeneous_slice": false,
+            "refinement_depth": 2
+          }
+        ],
+        "exact_family_structure": false
+      },
+      "classification_status": "classified",
+      "report_sha256": "85de935a6e2749798534e1e24fedc9c4645a565dbb621526c940ba64558dabc2",
+      "schema": "hamiltonian-sextic-core/1"
+    },
+    {
+      "case": "two_two_two",
+      "checks": {
+        "bounded_kernels": [
+          {
+            "degree": 6,
+            "dimension": 2,
+            "homogeneous_slice": false,
+            "refinement_depth": 1
+          },
+          {
+            "degree": 6,
+            "dimension": 2,
+            "homogeneous_slice": false,
+            "refinement_depth": 2
+          }
+        ],
+        "exact_family_structure": false
+      },
+      "classification_status": "classified",
+      "report_sha256": "2b757fba21dc92d3b65f253822c60504fbbcf6b7a456dab7581c826f06c795c3",
+      "schema": "hamiltonian-sextic-core/1"
+    },
+    {
+      "case": "two_two_one_one",
+      "checks": {
+        "bounded_kernels": [
+          {
+            "degree": 6,
+            "dimension": 2,
+            "homogeneous_slice": false,
+            "refinement_depth": 1
+          },
+          {
+            "degree": 6,
+            "dimension": 2,
+            "homogeneous_slice": false,
+            "refinement_depth": 2
+          }
+        ],
+        "exact_family_structure": false
+      },
+      "classification_status": "classified",
+      "report_sha256": "50e9fd9bafd2147bb95afcd91e3e20a22252c7fe97fd5fac6e7593a8d31413e7",
+      "schema": "hamiltonian-sextic-core/1"
+    },
+    {
+      "case": "two_one_one_one_one",
+      "checks": {
+        "bounded_kernels": [
+          {
+            "degree": 6,
+            "dimension": 2,
+            "homogeneous_slice": false,
+            "refinement_depth": 1
+          },
+          {
+            "degree": 6,
+            "dimension": 2,
+            "homogeneous_slice": false,
+            "refinement_depth": 2
+          }
+        ],
+        "exact_family_structure": false
+      },
+      "classification_status": "classified",
+      "report_sha256": "2a9a1190cb741f75265c34541edd4e39e20142d021c7c0284a749ee955687d6f",
+      "schema": "hamiltonian-sextic-core/1"
+    },
+    {
+      "case": "squarefree_with_infinity",
+      "checks": {
+        "bounded_kernels": [
+          {
+            "degree": 6,
+            "dimension": 2,
+            "homogeneous_slice": false,
+            "refinement_depth": 1
+          },
+          {
+            "degree": 6,
+            "dimension": 2,
+            "homogeneous_slice": false,
+            "refinement_depth": 2
+          }
+        ],
+        "exact_family_structure": false
+      },
+      "classification_status": "classified",
+      "report_sha256": "772f160a26688f384285b496c6603423d198718a6696606948254f62d1e3254f",
+      "schema": "hamiltonian-sextic-core/1"
+    },
+    {
+      "case": "zero",
+      "checks": {
+        "bounded_kernels": [
+          {
+            "degree": 6,
+            "dimension": 28,
+            "homogeneous_slice": false,
+            "refinement_depth": 1
+          },
+          {
+            "degree": 6,
+            "dimension": 28,
+            "homogeneous_slice": false,
+            "refinement_depth": 2
+          }
+        ],
+        "exact_family_structure": true
+      },
+      "classification_status": "classified",
+      "report_sha256": "cb2d6fc52f24b529e0cc9404a9023a0af63f5669662556f6d814618f345e4221",
+      "schema": "hamiltonian-sextic-core/1"
+    },
+    {
+      "case": "infinite_affine",
+      "checks": {
+        "bounded_kernels": [
+          {
+            "degree": 6,
+            "dimension": 13,
+            "homogeneous_slice": false,
+            "refinement_depth": 1
+          },
+          {
+            "degree": 6,
+            "dimension": 13,
+            "homogeneous_slice": false,
+            "refinement_depth": 2
+          }
+        ],
+        "exact_family_structure": true
+      },
+      "classification_status": "classified",
+      "report_sha256": "b7c9ed166a74c512773b2a2cb1ffc9723d0ab0d5ed6201ace767663fde2d5ce7",
+      "schema": "hamiltonian-sextic-core/1"
+    },
+    {
+      "case": "fivefold_affine",
+      "checks": {
+        "bounded_kernels": [
+          {
+            "degree": 6,
+            "dimension": 13,
+            "homogeneous_slice": false,
+            "refinement_depth": 1
+          },
+          {
+            "degree": 6,
+            "dimension": 13,
+            "homogeneous_slice": false,
+            "refinement_depth": 2
+          }
+        ],
+        "exact_family_structure": true
+      },
+      "classification_status": "classified",
+      "report_sha256": "b6ba9b702d42bba9939bbdf0e93e6c5954bbe92dd92bf652e6c6e46f4bc9bd77",
+      "schema": "hamiltonian-sextic-core/1"
+    },
+    {
+      "case": "nonsplit_composition",
+      "checks": {
+        "bounded_kernels": [
+          {
+            "degree": 6,
+            "dimension": 4,
+            "homogeneous_slice": false,
+            "refinement_depth": 1
+          },
+          {
+            "degree": 6,
+            "dimension": 4,
+            "homogeneous_slice": false,
+            "refinement_depth": 2
+          }
+        ],
+        "exact_family_structure": true
+      },
+      "classification_status": "classified",
+      "report_sha256": "64b3e19e1623569a854f375788f396386200d23df180648f2a9568d2c0ca9434",
+      "schema": "hamiltonian-sextic-core/1"
+    },
+    {
+      "case": "fourfold_lift",
+      "checks": {
+        "bounded_kernels": [
+          {
+            "degree": 6,
+            "dimension": 3,
+            "homogeneous_slice": false,
+            "refinement_depth": 1
+          },
+          {
+            "degree": 6,
+            "dimension": 2,
+            "homogeneous_slice": false,
+            "refinement_depth": 2
+          }
+        ],
+        "exact_family_structure": false
+      },
+      "classification_status": "classified",
+      "report_sha256": "f603cf2d120592e238f647275e5e093891fa68df76ee7cde01eb8fedaf01465b",
+      "schema": "hamiltonian-sextic-core/1"
+    },
+    {
+      "case": "no_fourfold_lift",
+      "checks": {
+        "bounded_kernels": [
+          {
+            "degree": 6,
+            "dimension": 2,
+            "homogeneous_slice": false,
+            "refinement_depth": 1
+          },
+          {
+            "degree": 6,
+            "dimension": 2,
+            "homogeneous_slice": false,
+            "refinement_depth": 2
+          }
+        ],
+        "exact_family_structure": false
+      },
+      "classification_status": "classified",
+      "report_sha256": "8c17115a816f1b97dfcd20c606a13004bc995277e0adef41d019db43e2b99717",
+      "schema": "hamiltonian-sextic-core/1"
+    },
+    {
+      "case": "schema2_adapter",
+      "checks": {
+        "bounded_kernels": [
+          {
+            "degree": 6,
+            "dimension": 3,
+            "homogeneous_slice": false,
+            "refinement_depth": 1
+          },
+          {
+            "degree": 6,
+            "dimension": 2,
+            "homogeneous_slice": false,
+            "refinement_depth": 2
+          }
+        ],
+        "exact_family_structure": false
+      },
+      "classification_status": "classified",
+      "report_sha256": "9fc9a7206f2f5b6db42684c68a90ed091d17da31cfc7f263c56b90a55e732707",
+      "schema": "hamiltonian-sextic-core/2"
+    },
+    {
+      "case": "constant_affine",
+      "checks": {
+        "exact_module_and_finite_quotient_equalities": 6,
+        "total_degree_window": {
+          "degree": 6,
+          "dimensions": [
+            18,
+            14,
+            10,
+            6,
+            4,
+            2
+          ]
+        }
+      },
+      "classification_status": "classified",
+      "report_sha256": "5b82dfc9aae33c6224a0d2c88920d57bf0acc142c5a90cf7869b24a00c289882",
+      "schema": "hamiltonian-sextic-core/2"
+    },
+    {
+      "case": "constant_quadratic_b",
+      "checks": {
+        "exact_module_and_finite_quotient_equalities": 5,
+        "total_degree_window": {
+          "degree": 6,
+          "dimensions": [
+            15,
+            10,
+            6,
+            4,
+            2
+          ]
+        }
+      },
+      "classification_status": "classified",
+      "report_sha256": "62dcecb4ba15498f9450d1e7a651db1f6f6fa0ca65410c21188372e7b980a8f8",
+      "schema": "hamiltonian-sextic-core/2"
+    },
+    {
+      "case": "constant_cubic_potential",
+      "checks": {
+        "exact_module_and_finite_quotient_equalities": 7,
+        "total_degree_window": {
+          "degree": 6,
+          "dimensions": [
+            14,
+            10,
+            6,
+            5,
+            4,
+            3,
+            2
+          ]
+        }
+      },
+      "classification_status": "classified",
+      "report_sha256": "7783d7f364d1b522ceda2c712d923d1fbb7e75e52eeb5db13be6f42c63dee877",
+      "schema": "hamiltonian-sextic-core/2"
+    },
+    {
+      "case": "constant_hidden_quadratic",
+      "checks": {
+        "exact_module_and_finite_quotient_equalities": 3,
+        "total_degree_window": {
+          "degree": 6,
+          "dimensions": [
+            14,
+            10,
+            6
+          ]
+        }
+      },
+      "classification_status": "classified",
+      "report_sha256": "6675d51b9a832f49e25f912fda01beab11021c2fc9f4e0a3f608ccecd1db163b",
+      "schema": "hamiltonian-sextic-core/2"
+    },
+    {
+      "case": "variable_linear",
+      "checks": {
+        "theorem_D_weighted_box": {
+          "L_weight": 2,
+          "M_weight": 5,
+          "bound": 22,
+          "dimensions": [
+            20,
+            6,
+            3,
+            2,
+            2
+          ],
+          "monomials": 34,
+          "output_truncated": false
+        }
+      },
+      "classification_status": "classified",
+      "report_sha256": "ff394667825fa6a0c419cfbbc58b8ce0c1094994524891f48bec23a884ab6b3d",
+      "schema": "hamiltonian-sextic-core/2"
+    },
+    {
+      "case": "variable_linear_high_b",
+      "checks": {
+        "theorem_D_weighted_box": {
+          "L_weight": 1,
+          "M_weight": 3,
+          "bound": 13,
+          "dimensions": [
+            21,
+            5,
+            3,
+            2,
+            2
+          ],
+          "monomials": 40,
+          "output_truncated": false
+        }
+      },
+      "classification_status": "classified",
+      "report_sha256": "5396fe2a6d5365a1ef4abe5de5504a04440b3654d0f2def59cd5830eb193e7ec",
+      "schema": "hamiltonian-sextic-core/2"
+    },
+    {
+      "case": "variable_quadratic",
+      "checks": {
+        "theorem_D_weighted_box": {
+          "L_weight": 2,
+          "M_weight": 4,
+          "bound": 24,
+          "dimensions": [
+            21,
+            3,
+            2,
+            2
+          ],
+          "monomials": 49,
+          "output_truncated": false
+        }
+      },
+      "classification_status": "classified",
+      "report_sha256": "3228ea7caac414ae7c7914803a24f5760fb0d5de7ac05082189002acb2eb6a1f",
+      "schema": "hamiltonian-sextic-core/2"
+    },
+    {
+      "case": "variable_cubic",
+      "checks": {
+        "theorem_D_weighted_box": {
+          "L_weight": 2,
+          "M_weight": 3,
+          "bound": 26,
+          "dimensions": [
+            18,
+            2,
+            2
+          ],
+          "monomials": 70,
+          "output_truncated": false
+        }
+      },
+      "classification_status": "classified",
+      "report_sha256": "d89d10702321d337345e435f9408fba2c337c1308a8a627e4d938d106e53ab4e",
+      "schema": "hamiltonian-sextic-core/2"
+    },
+    {
+      "case": "variable_square",
+      "checks": {
+        "theorem_D_weighted_box": {
+          "L_weight": 2,
+          "M_weight": 4,
+          "bound": 18,
+          "dimensions": [
+            16,
+            3,
+            3
+          ],
+          "monomials": 30,
+          "output_truncated": false
+        }
+      },
+      "classification_status": "classified",
+      "report_sha256": "5681e2cfdfc03ff5d1feabde5068fb6c0cb11546d7e5b2c33b517f51df075b7c",
+      "schema": "hamiltonian-sextic-core/2"
+    },
+    {
+      "case": "unsupported_schema1",
+      "checks": {
+        "supported_family_scope": "independently rejected; no space claimed"
+      },
+      "classification_status": "unsupported",
+      "report_sha256": "410d509c8bfa3955d7454ad225e81e4b9612e017eeb4748ea5c3e039aeec186b",
+      "schema": "hamiltonian-sextic-core/1"
+    },
+    {
+      "case": "unsupported_schema2",
+      "checks": {
+        "supported_family_scope": "independently rejected; no space claimed"
+      },
+      "classification_status": "unsupported",
+      "report_sha256": "7d6a9805627f2f403ad48685bcccd11c1f566ba5bd31650930caf9d434bc3c0f",
+      "schema": "hamiltonian-sextic-core/2"
+    },
+    {
+      "case": "unsupported_complement_five",
+      "checks": {
+        "supported_family_scope": "independently rejected; no space claimed"
+      },
+      "classification_status": "unsupported",
+      "report_sha256": "1b61be0c71cd773d1ee30d079f21eee7a47b5dcbdc0ebd2472b1e6425abeae2a",
+      "schema": "hamiltonian-sextic-core/2"
+    },
+    {
+      "case": "zero_schema2",
+      "checks": {
+        "bounded_kernels": [
+          {
+            "degree": 6,
+            "dimension": 28,
+            "homogeneous_slice": false,
+            "refinement_depth": 1
+          },
+          {
+            "degree": 6,
+            "dimension": 28,
+            "homogeneous_slice": false,
+            "refinement_depth": 2
+          }
+        ],
+        "exact_family_structure": true
+      },
+      "classification_status": "classified",
+      "report_sha256": "9462bf6bb6cbc3d833102a503c81fd3258a321146e970a42eecfb22c5370106d",
+      "schema": "hamiltonian-sextic-core/2"
+    },
+    {
+      "case": "separable_cubic",
+      "checks": {
+        "separable_full_static_box": {
+          "complement_degree": 3,
+          "core_dimension": 2,
+          "least_depth": 2,
+          "potential_degree": 6,
+          "stage_dimensions": [
+            15,
+            4,
+            2
+          ],
+          "static_dimension": 15,
+          "status": "PASS"
+        }
+      },
+      "classification_status": "classified",
+      "report_sha256": "98ec8158e1892b09911b28ef073845223caf0604923d92751b4cf4df8ec5fe54",
+      "schema": "hamiltonian-sextic-core/2"
+    },
+    {
+      "case": "separable_quartic",
+      "checks": {
+        "separable_full_static_box": {
+          "complement_degree": 4,
+          "core_dimension": 2,
+          "least_depth": 1,
+          "potential_degree": 6,
+          "stage_dimensions": [
+            12,
+            2
+          ],
+          "static_dimension": 12,
+          "status": "PASS"
+        }
+      },
+      "classification_status": "classified",
+      "report_sha256": "b093546592212a25968b960c0c99dcca593308fda14ed6eecee6d994fe35d702",
+      "schema": "hamiltonian-sextic-core/2"
+    },
+    {
+      "case": "separable_transformed",
+      "checks": {
+        "separable_full_static_box": {
+          "complement_degree": 3,
+          "core_dimension": 2,
+          "least_depth": 2,
+          "potential_degree": 6,
+          "stage_dimensions": [
+            15,
+            4,
+            2
+          ],
+          "static_dimension": 15,
+          "status": "PASS"
+        }
+      },
+      "classification_status": "classified",
+      "report_sha256": "00a1e9aa90edff56a5685c9eb1eed67f260008930d3db419f003450dc400034d",
+      "schema": "hamiltonian-sextic-core/2"
+    },
+    {
+      "case": "weighted_cubic_four",
+      "checks": {
+        "weighted_full_static_box": {
+          "complement_degree": 3,
+          "core_dimension": 2,
+          "least_depth": 2,
+          "potential_degree": 6,
+          "stage_dimensions": [
+            15,
+            4,
+            2
+          ],
+          "static_bound": 10,
+          "status": "PASS",
+          "weights": [
+            1,
+            2
+          ]
+        }
+      },
+      "classification_status": "classified",
+      "report_sha256": "0d59491b0c58c540c578817984eb4d2afb9facc80f22c5d604e97a158ab7f7f0",
+      "schema": "hamiltonian-sextic-core/2"
+    },
+    {
+      "case": "weighted_cubic_three",
+      "checks": {
+        "weighted_full_static_box": {
+          "complement_degree": 3,
+          "core_dimension": 2,
+          "least_depth": 2,
+          "potential_degree": 6,
+          "stage_dimensions": [
+            15,
+            3,
+            2
+          ],
+          "static_bound": 10,
+          "status": "PASS",
+          "weights": [
+            1,
+            2
+          ]
+        }
+      },
+      "classification_status": "classified",
+      "report_sha256": "58e1f23c596e76907fddd479b02e8aefa3a0cbe5b83e9186b423f67f3c5be7d2",
+      "schema": "hamiltonian-sextic-core/2"
+    },
+    {
+      "case": "weighted_cubic_two",
+      "checks": {
+        "weighted_full_static_box": {
+          "complement_degree": 3,
+          "core_dimension": 2,
+          "least_depth": 1,
+          "potential_degree": 6,
+          "stage_dimensions": [
+            15,
+            2
+          ],
+          "static_bound": 10,
+          "status": "PASS",
+          "weights": [
+            1,
+            2
+          ]
+        }
+      },
+      "classification_status": "classified",
+      "report_sha256": "727f9f0d60344347e3163b9b38d9c85a71a9fd7b53eccef49b700355065ea85f",
+      "schema": "hamiltonian-sextic-core/2"
+    },
+    {
+      "case": "weighted_quartic",
+      "checks": {
+        "weighted_full_static_box": {
+          "complement_degree": 4,
+          "core_dimension": 2,
+          "least_depth": 1,
+          "potential_degree": 6,
+          "stage_dimensions": [
+            9,
+            2
+          ],
+          "static_bound": 16,
+          "status": "PASS",
+          "weights": [
+            2,
+            3
+          ]
+        }
+      },
+      "classification_status": "classified",
+      "report_sha256": "61e9c72139f097c8f359e2ac4a4b36607552c6bd58f770a2aeb6ec7ec42cf7cf",
+      "schema": "hamiltonian-sextic-core/2"
+    },
+    {
+      "case": "weighted_transformed",
+      "checks": {
+        "weighted_full_static_box": {
+          "complement_degree": 3,
+          "core_dimension": 2,
+          "least_depth": 2,
+          "potential_degree": 6,
+          "stage_dimensions": [
+            15,
+            3,
+            2
+          ],
+          "static_bound": 10,
+          "status": "PASS",
+          "weights": [
+            1,
+            2
+          ]
+        }
+      },
+      "classification_status": "classified",
+      "report_sha256": "9e2dfb9c1e4e21bfa55c25960f08c68c41a93dfe52def5e2f49d7037bb3f4a22",
+      "schema": "hamiltonian-sextic-core/2"
+    },
+    {
+      "case": "variable_affine_coordinates",
+      "checks": {
+        "theorem_D_weighted_box": {
+          "L_weight": 2,
+          "M_weight": 4,
+          "bound": 24,
+          "dimensions": [
+            21,
+            3,
+            2,
+            2
+          ],
+          "monomials": 49,
+          "output_truncated": false
+        }
+      },
+      "classification_status": "classified",
+      "report_sha256": "5cf709e28289be4ddd6df4770e416e534a8d91632aad8a86b103fc5acd68a4d6",
+      "schema": "hamiltonian-sextic-core/2"
+    }
+  ],
+  "accepted_report_count": 40,
+  "boundary": "Producer used only to create fixtures; supplied-report verification calls no classifier. All-degree completeness remains conditional on written theorems.",
+  "fixture_source_sha256": {
+    "research/hamiltonian/c3_strata/test_sextic_report.py": "121df7ecce608c097d7105a63c6f93d44dde3ab551fb0df59cb339aeeecfede4",
+    "research/hamiltonian/partner_lab.py": "62daaefcae1213e535b684db4780f8df0a12f1db322f939a55e7ec3296e1fb98",
+    "research/hamiltonian/quadratic_sixfold.py": "340fa860b32a15546c86fd759e61816e780fc9a9f6b1708958d71d8247d1eea3",
+    "research/hamiltonian/separable_sixfold.py": "2febdb7b4ee47310eddd05e05cc8bfa5ac91569749d6cc9de328a95b90e5be81",
+    "research/hamiltonian/sextic_core.py": "3a93b1e8b55a502a08aea2bca55cc87e41b2e7e73b19caac4f690920b0dfddec",
+    "research/hamiltonian/weighted_separable.py": "2bd3045e2658a3d82a606efac3a110267d869414ee050cacd6d09763453685ac"
+  },
+  "rejected": [
+    {
+      "case": "wrong_input",
+      "reason": "Report input does not match the independently supplied Hamiltonian"
+    },
+    {
+      "case": "wrong_degree",
+      "reason": "Incorrect total-degree metadata"
+    },
+    {
+      "case": "boolean_degree",
+      "reason": "Incorrect total-degree metadata"
+    },
+    {
+      "case": "false_homogeneity",
+      "reason": "Incorrect homogeneous metadata"
+    },
+    {
+      "case": "unknown_schema",
+      "reason": "Unknown report schema"
+    },
+    {
+      "case": "suppressed_classification",
+      "reason": "Unsupported reason must appear exactly for unsupported reports"
+    },
+    {
+      "case": "invented_support",
+      "reason": "Unsupported reason must appear exactly for unsupported reports"
+    },
+    {
+      "case": "false_method",
+      "reason": "Method disagrees with the independently recognized theorem family"
+    },
+    {
+      "case": "false_family",
+      "reason": "Incorrect classification family"
+    },
+    {
+      "case": "formalization_overclaim",
+      "reason": "The public classifier is not an end-to-end Lean theorem"
+    },
+    {
+      "case": "missing_theorem_dependencies",
+      "reason": "Missing homogeneous classification dependency"
+    },
+    {
+      "case": "changed_convention",
+      "reason": "The contraction/refinement convention was altered"
+    },
+    {
+      "case": "path_injection",
+      "reason": "Unknown theorem dependency in this verifier version"
+    },
+    {
+      "case": "infinity_convention",
+      "reason": "Incorrect projective-coordinate convention"
+    },
+    {
+      "case": "dehomogenization_convention",
+      "reason": "Incorrect projective-coordinate convention"
+    },
+    {
+      "case": "boolean_infinity",
+      "reason": "Incorrect multiplicity at infinity"
+    },
+    {
+      "case": "factor_scalar",
+      "reason": "Factorization does not reconstruct the leading form"
+    },
+    {
+      "case": "decimal_rational",
+      "reason": "Rational strings must be reduced integer or numerator/denominator form"
+    },
+    {
+      "case": "boolean_exponent",
+      "reason": "Polynomial exponents must be nonnegative integers"
+    },
+    {
+      "case": "negative_exponent",
+      "reason": "Polynomial exponents must be nonnegative integers"
+    },
+    {
+      "case": "float_dimension",
+      "reason": "Only exact JSON values are accepted; floating and nonfinite numbers are forbidden"
+    },
+    {
+      "case": "missing_obstruction",
+      "reason": "A lost S1 direction requires a second-iterate obstruction"
+    },
+    {
+      "case": "false_obstruction",
+      "reason": "Incorrect T3 obstruction polynomial"
+    },
+    {
+      "case": "wrong_lift_column_names",
+      "reason": "Lift columns have the wrong interpretation"
+    },
+    {
+      "case": "boolean_lift_rank",
+      "reason": "Lift ranks and row count must be nonnegative integers"
+    },
+    {
+      "case": "false_lift_determinant",
+      "reason": "Incorrect affine-lift determinant"
+    },
+    {
+      "case": "hidden_nonfinite",
+      "reason": "Only exact JSON values are accepted; floating and nonfinite numbers are forbidden"
+    },
+    {
+      "case": "schema2_empty_stages",
+      "reason": "Missing refinement stages"
+    },
+    {
+      "case": "schema2_stage_bool",
+      "reason": "Stages must be indexed consecutively from zero"
+    },
+    {
+      "case": "schema2_wrong_least_depth",
+      "reason": "Quadratic stages must run through the least stabilization depth"
+    },
+    {
+      "case": "schema2_hide_first_stage",
+      "reason": "Constant-coefficient stages must all be classified"
+    },
+    {
+      "case": "schema2_hide_static_stage",
+      "reason": "Constant-coefficient stages must all be classified"
+    },
+    {
+      "case": "schema2_bad_chart",
+      "reason": "Coordinates must be independent"
+    },
+    {
+      "case": "schema2_fake_regime",
+      "reason": "Incorrect quadratic regime or least depth"
+    },
+    {
+      "case": "schema2_omit_square_integral",
+      "reason": "Three-dimensional variable core requires its square first integral"
+    },
+    {
+      "case": "schema2_wrong_failure",
+      "reason": "Incorrect sharpness-witness depth"
+    },
+    {
+      "case": "schema2_fake_static_status",
+      "reason": "Only the variable-coefficient static space is unknown"
+    },
+    {
+      "case": "adapter_unauthorized_S0",
+      "reason": "Schema-1-derived stage layout is inconsistent"
+    },
+    {
+      "case": "zero_false_degree",
+      "reason": "Incorrect total-degree metadata"
+    },
+    {
+      "case": "zero_fake_factor_scalar",
+      "reason": "Zero must have the empty factorization"
+    },
+    {
+      "case": "separable_false_potential_degree",
+      "reason": "Incorrect degree metadata"
+    },
+    {
+      "case": "separable_bad_determinant",
+      "reason": "Incorrect coordinate determinant"
+    },
+    {
+      "case": "separable_missing_drops",
+      "reason": "Incomplete strict-drop witnesses"
+    },
+    {
+      "case": "separable_legacy_certificate",
+      "reason": "Unexpected legacy separable certificate"
+    },
+    {
+      "case": "separable_hide_static_vector",
+      "reason": "Finite basis has an incorrect dimension or dependent vectors"
+    },
+    {
+      "case": "separable_false_old_dependencies",
+      "reason": "Separable classification depends exactly on its complete static-space theorem"
+    },
+    {
+      "case": "weighted_false_weight",
+      "reason": "Incorrect coordinate weights"
+    },
+    {
+      "case": "weighted_bool_weight",
+      "reason": "Weights, degrees and bounds must be positive integers"
+    },
+    {
+      "case": "weighted_shrunk_static_box",
+      "reason": "Incorrect proved weighted bound"
+    },
+    {
+      "case": "weighted_missing_leading",
+      "reason": "Leading form is not the nonzero weighted binomial"
+    },
+    {
+      "case": "weighted_missing_lower",
+      "reason": "Weighted model does not reconstruct input"
+    },
+    {
+      "case": "weighted_missing_drop",
+      "reason": "Incomplete weighted strict-drop witnesses"
+    },
+    {
+      "case": "weighted_missing_gates",
+      "reason": "sextic odd gates is missing mandatory fields: ['3', '5']"
+    },
+    {
+      "case": "weighted_wrong_gate_alias",
+      "reason": "Inconsistent weighted gate aliases"
+    },
+    {
+      "case": "weighted_suppressed_support",
+      "reason": "Unsupported reason must appear exactly for unsupported reports"
+    },
+    {
+      "case": "weighted_lost_transfer_dependency",
+      "reason": "Weighted classification depends exactly on its static-space and transfer theorems"
+    },
+    {
+      "case": "missing_degree",
+      "reason": "report is missing mandatory fields: ['degree']"
+    },
+    {
+      "case": "missing_homogeneous",
+      "reason": "report is missing mandatory fields: ['homogeneous']"
+    },
+    {
+      "case": "missing_proof_boundary",
+      "reason": "report is missing mandatory fields: ['proof_boundary']"
+    },
+    {
+      "case": "missing_leading",
+      "reason": "report is missing mandatory fields: ['leading']"
+    },
+    {
+      "case": "missing_status",
+      "reason": "report is missing mandatory fields: ['status']"
+    },
+    {
+      "case": "schema2_missing_stages",
+      "reason": "schema-2 classification is missing mandatory fields: ['stages']"
+    },
+    {
+      "case": "schema2_missing_depth",
+      "reason": "schema-2 classification is missing mandatory fields: ['depth']"
+    },
+    {
+      "case": "schema2_missing_sharpness_witness",
+      "reason": "schema-2 classification is missing mandatory fields: ['sharpness_witness']"
+    },
+    {
+      "case": "schema2_missing_coordinates",
+      "reason": "schema-2 classification is missing mandatory fields: ['coordinates']"
+    },
+    {
+      "case": "degree_ten_static_omission",
+      "reason": "Finite complement differs from the exact quotient by the polynomial module"
+    },
+    {
+      "case": "remove_module_direction",
+      "reason": "Empty or zero module generators"
+    },
+    {
+      "case": "proper_submodule",
+      "reason": "Reported module is a proper submodule; its determinant is not a unit"
+    },
+    {
+      "case": "truncate_coefficient_ring",
+      "reason": "Coefficient ring must be exactly Q[L]"
+    },
+    {
+      "case": "ambiguous_schema2_layout",
+      "reason": "schema-2 classification is missing mandatory fields: ['stages']"
+    },
+    {
+      "case": "coherent_suppressed_separable_cubic",
+      "reason": "Classification status suppresses or invents a supported family"
+    },
+    {
+      "case": "coherent_suppressed_weighted_cubic_three",
+      "reason": "Classification status suppresses or invents a supported family"
+    },
+    {
+      "case": "coherent_suppressed_constant_affine",
+      "reason": "Classification status suppresses or invents a supported family"
+    }
+  ],
+  "rejected_corruption_count": 73,
+  "schema": "hamiltonian-sextic-report-adversarial-replay/1",
+  "source_sha256": {
+    "research/hamiltonian/c3_strata/INHOMOGENEOUS_THEOREM.md": "302006c66f1baac6b948cf65454a45ceacf0f6fe4a1de4ab28aa0345003275bc",
+    "research/hamiltonian/c3_strata/QUADRATIC_SIXFOLD_THEOREM.md": "95077294309cf24974af7f5730780b8a8c8f364f8f709d692958862aa8b27497",
+    "research/hamiltonian/c3_strata/SEPARABLE_SIXFOLD_THEOREM.md": "b2470e419b3d18751dfc1218a7e8d4eab8ee91b6340a3ab08c44ba7950db8798",
+    "research/hamiltonian/c3_strata/SEXTIC_STRATA_THEOREM.md": "c1fdec22bcf525b1512a4dd6825cdcee42f24ba6820c57366bfe9739a92a05a9",
+    "research/hamiltonian/c3_strata/WEIGHTED_SEPARABLE_THEOREM.md": "3ea5295e0de1a75e8023b7c031d03b8f3b24605fb1a308de657e4d3c8459bca7",
+    "research/hamiltonian/c3_strata/requirements.txt": "25f9f1fb1988b230147a1d3092d34e09c069eb7a6c6d6df46b3973b9f2d36efc",
+    "research/hamiltonian/c3_strata/verify_separable_sixfold.py": "c107b552bad84bd3e7d9fa7cc41b097e81f7309e587092648aed812bb08ac75e",
+    "research/hamiltonian/c3_strata/verify_sextic_core.py": "f50d15047fd6e8939f99f64213c28013ad34e8880642160d0c53b94d9bd4c546",
+    "research/hamiltonian/c3_strata/verify_sextic_report.py": "ba4a97d929cd9879480ac40a1b85e289cedd108a85b4a8742dee8276af926a58",
+    "research/hamiltonian/c3_strata/verify_weighted_separable.py": "6be32ad103b260323d015b53eed3a0b7c4e04a671c4997a8248708e9cef6592e",
+    "research/hamiltonian/independent/engine.py": "feafd49628603915e1b4bdf930efd0f862313ae6f4785b2bab3ca971ad58cbbf"
+  },
+  "status": "PASS"
+}

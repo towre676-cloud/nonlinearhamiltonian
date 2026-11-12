@@ -1,16 +1,37 @@
+"""Refresh the Hamiltonian manifest and build the portable source bundle."""
+from hashlib import sha256
+import json
 from pathlib import Path
-import hashlib,json,zipfile
-ROOT=Path(__file__).resolve().parent
-out=ROOT/'output/Nonlinear_Hamiltonian_Partners_Source_Bundle.zip'
-rootfiles=['README.md','RESULTS.json','overview.md','partner_lab.py','verify_all.py','verify_cli.py','cli_checks.json','browser_checks.json','document_audit.json','make_browser_fixtures.py','test_browser.js','lab.js','lab_fragment.html','build_note.js','render_review.py','package_results.py']
-files=[ROOT/n for n in rootfiles]
-for folder in ['quartic','structural','monomial','independent','context']:
- for p in (ROOT/folder).rglob('*'):
-  if p.is_file() and p.suffix in ['.py','.md','.json'] and '_deps' not in p.parts and '__pycache__' not in p.parts and p.name!='scan.py':files.append(p)
-files += [ROOT/'output'/('Nonlinear_Hamiltonian_Partners'+ext) for ext in ['.pdf','.html','.md']]
-files=sorted(set(files));assert all(p.is_file() for p in files)
-manifest=''.join(hashlib.sha256(p.read_bytes()).hexdigest()+'  '+p.relative_to(ROOT).as_posix()+'\n' for p in files)
-(ROOT/'MANIFEST.sha256').write_text(manifest)
-with zipfile.ZipFile(out,'w',zipfile.ZIP_DEFLATED,compresslevel=9) as z:
- for p in files+[ROOT/'MANIFEST.sha256']:z.write(p,'Nonlinear_Hamiltonian_Partners/'+p.relative_to(ROOT).as_posix())
-print(json.dumps({'files':len(files)+1,'bytes':out.stat().st_size,'sha256':hashlib.sha256(out.read_bytes()).hexdigest()}))
+from zipfile import ZIP_DEFLATED, ZipFile, ZipInfo
+
+ROOT = Path(__file__).resolve().parent
+MANIFEST = ROOT / "MANIFEST.sha256"
+OUT = ROOT / "output" / "Nonlinear_Hamiltonian_Partners_Source_Bundle.zip"
+PREFIX = "Nonlinear_Hamiltonian_Partners"
+PACKAGE_PATH = "research/hamiltonian"
+
+
+def main():
+    names = sorted(line.split("  ", 1)[1] for line in MANIFEST.read_text().splitlines())
+    if len(set(names)) != len(names):
+        raise ValueError("Hamiltonian manifest contains duplicate paths")
+    files = {name: (ROOT / name).read_bytes() for name in names}
+    files[MANIFEST.name] = "".join(
+        f"{sha256(data).hexdigest()}  {name}\n" for name, data in files.items()
+    ).encode()
+    MANIFEST.write_bytes(files[MANIFEST.name])
+    OUT.parent.mkdir(parents=True, exist_ok=True)
+    members = {f"{PACKAGE_PATH}/{name}": data for name, data in files.items()}
+    members["README.md"] = files["SOURCE_BUNDLE_README.md"]
+    with ZipFile(OUT, "w", ZIP_DEFLATED, compresslevel=9) as bundle:
+        for name, data in sorted(members.items()):
+            member = ZipInfo(f"{PREFIX}/{name}")
+            member.create_system = 3
+            member.external_attr = 0o100644 << 16
+            bundle.writestr(member, data, compress_type=ZIP_DEFLATED, compresslevel=9)
+    print(json.dumps({"files": len(members), "bytes": OUT.stat().st_size,
+                      "sha256": sha256(OUT.read_bytes()).hexdigest()}))
+
+
+if __name__ == "__main__":
+    main()
