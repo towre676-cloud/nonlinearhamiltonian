@@ -539,3 +539,141 @@ def classify_sextic(H, *, schema=1):
         "The reported core is invariant under the full, unprojected Poisson action",
     ]
     return report
+
+
+# ---------------------------------------------------------------------------
+# Schema-2 compatibility layer reconciled from the nonlinear proof platform.
+# This layer wraps the current schema-1 classifier; it does not replace the
+# newer triple-pair core implementation above.
+SCHEMA_V2 = "hamiltonian-sextic-core/2"
+_QUADRATIC_SIXFOLD = "research/hamiltonian/c3_strata/QUADRATIC_SIXFOLD_THEOREM.md"
+_SEPARABLE_SIXFOLD = "research/hamiltonian/c3_strata/SEPARABLE_SIXFOLD_THEOREM.md"
+_WEIGHTED_SEPARABLE = "research/hamiltonian/c3_strata/WEIGHTED_SEPARABLE_THEOREM.md"
+
+
+def _quadratic_sixfold_module():
+    spec = util.spec_from_file_location(
+        "_sextic_core_quadratic_sixfold", Path(__file__).with_name("quadratic_sixfold.py"))
+    module = util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
+
+
+def _separable_sixfold_module():
+    spec = util.spec_from_file_location(
+        "_sextic_core_separable", Path(__file__).with_name("separable_sixfold.py"))
+    module = util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
+
+
+def _weighted_separable_module():
+    spec = util.spec_from_file_location(
+        "_sextic_core_weighted", Path(__file__).with_name("weighted_separable.py"))
+    module = util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
+
+
+def _unknown_stage(index, reason):
+    return {"index": index, "status": "unknown", "space": None, "reason": reason}
+
+
+def _stage(index, space):
+    return {"index": index, "status": "classified", "space": space}
+
+
+def _v2_space(space, L):
+    module, finite = space["module_over_K[L]"], space["finite_span"]
+    if not module:
+        return {"kind": "finite_basis", "dimension": len(finite), "basis": finite}
+    answer = {"kind": "polynomial_family" if not finite else "module_plus_finite",
+              "dimension": None, "coefficient_generators": [L], "module_basis": module,
+              "description": "sum of fi(L)*module_basis[i] with arbitrary fi in Q[t]"}
+    if finite:
+        answer["finite_span"] = finite
+        answer["description"] += ", plus the rational span of finite_span"
+    return answer
+
+
+def classify_sextic_v2(H):
+    """Schema-2 classification layered on the reconciled schema-1 classifier."""
+    first = classify_sextic(H)
+    report = {key: first[key] for key in ("status", "input", "degree", "homogeneous", "leading")}
+    report["schema"] = SCHEMA_V2
+    report["proof_boundary"] = dict(first["proof_boundary"])
+    old = first["classification"]
+    if first["status"] == "classified":
+        depth = old["sufficient_refinement_depth"]
+        report["classification"] = {
+            "family": old["family"], "method": old["method"],
+            "derived_from": SCHEMA,
+            "depth": {"value": depth, "kind": "sufficient"},
+            "stages": [_unknown_stage(0, "S0 is not asserted by the schema-1 theorems"),
+                       _stage(1, old["S1"]), _stage(2, old["S2"])],
+            "Dinf": old["Dinf"],
+            "sharpness_witness": None,
+            "obstruction": first["obstruction"],
+            "quadratic_lift": first["quadratic_lift"],
+        }
+        return report
+
+    second = _quadratic_sixfold_module().classify_quadratic_sixfold(_validate(H))
+    if second["status"] != "classified":
+        third = _separable_sixfold_module().classify_separable_sixfold(_validate(H))
+        if third["status"] == "classified":
+            report["status"] = "classified"
+            report["classification"] = third["classification"]
+            boundary = report["proof_boundary"]
+            boundary["dependencies"] = [_SEPARABLE_SIXFOLD]
+            for key in ("completeness", "per_input_checks"):
+                boundary[key] = third["proof_boundary"][key]
+            return report
+        fourth = _weighted_separable_module().classify_weighted_separable_sixfold(_validate(H))
+        if fourth["status"] == "classified":
+            report["status"] = "classified"
+            report["classification"] = fourth["classification"]
+            boundary = report["proof_boundary"]
+            boundary["dependencies"] = [_SEPARABLE_SIXFOLD, _WEIGHTED_SEPARABLE]
+            for key in ("completeness", "per_input_checks"):
+                boundary[key] = fourth["proof_boundary"][key]
+            return report
+        report["unsupported_reason"] = first["unsupported_reason"]
+        report["classification"] = {"family": old["family"], "method": old["method"],
+                                    "derived_from": SCHEMA, "depth": None, "stages": None,
+                                    "Dinf": None, "sharpness_witness": None,
+                                    "obstruction": None, "quadratic_lift": None}
+        return report
+
+    L = second["L"]
+    stages = []
+    for index in range(second["least_depth"] + 1):
+        space = second["stages"].get(f"S{index}")
+        stages.append(_unknown_stage(index, "S0 is not classified for a nonconstant "
+                                            "coefficient of the squared complement")
+                      if space is None else _stage(index, _v2_space(space, L)))
+    report["status"] = "classified"
+    report["classification"] = {
+        "family": old["family"], "method": "sixfold_quadratic_complement",
+        "derived_from": second["schema"],
+        "regime": second["regime"],
+        "coordinates": {"L": L, "M": second["M"]},
+        "depth": {"value": second["least_depth"], "kind": "least"},
+        "stages": stages,
+        "Dinf": _v2_space(second["Dinf"], L),
+        "sharpness_witness": second["sharpness_witness"],
+        "square_first_integral": second.get("square_first_integral"),
+        "obstruction": None, "quadratic_lift": None,
+    }
+    boundary = report["proof_boundary"]
+    boundary["dependencies"] = list(boundary["dependencies"]) + [_QUADRATIC_SIXFOLD]
+    boundary["completeness"] = (
+        "Theorems A-E of QUADRATIC_SIXFOLD_THEOREM.md. For a nonconstant top coefficient the "
+        "stages are exact kernels inside the weighted box that Theorem D proves contains S1, "
+        "and the core dimension is cross-checked against the closed criterion of Theorem E")
+    boundary["per_input_checks"] = [
+        "The sharpness witness passes both gates through iterate depth-1 and fails at iterate depth",
+        "For a nonconstant top coefficient: stable stage invariant under the Poisson action, "
+        "box computation equal to the Theorem E prediction",
+    ]
+    return report
