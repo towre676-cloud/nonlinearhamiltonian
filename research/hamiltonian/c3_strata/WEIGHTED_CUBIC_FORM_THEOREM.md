@@ -28,6 +28,8 @@ $$S^2(H)=D_\infty(H)=\operatorname{span}\{1,H\},\qquad \dim S^r(H)\le\dim S^r(H_
 
 In particular $S^1(H)=\operatorname{span}\{1,H\}$ whenever $\Delta_w\Gamma_2\ne0$ and $(\alpha,\beta,x)$ is not one of the two weight-4 points. If $\Delta_w=0$, $\Gamma_2\ne0$, then $S^1(H)$ is $\operatorname{span}\{1,q,H\}$ when $T_3(H,H_p)=T_5(H,H_p)=0$ and $\operatorname{span}\{1,H\}$ otherwise.
 
+**Theorem 4 (quadric commutant; proved).** Let $Q=cp+\varphi(q)$ with $c\ne0$ and $\deg\varphi\le2$. Then $T_k(f(Q),g(Q))=0$ for every odd $k$ and all polynomials $f,g$. Consequently $K[Q]\subset D_\infty(H)$ for every $H\in K[Q]$; on the cube locus with $R=0$ this gives $K[q^2+\tfrac{\alpha}{3}p]\subset D_\infty(H_w)$. The statement fails for cubic $\varphi$.
+
 ## Proof of Theorem 1
 
 Because $T_k$ lowers weight by exactly $3k$, the gates of $H_w$ are graded, and the top weighted component of any $G\in S^0(H)$ lies in $S^0(H_w)$. It therefore suffices to bound the weights occurring in $S^0(H_w)$. Write a weight-$d$ polynomial as $G=\sum_{j=0}^{M}g_j\,q^{d-2j}p^j$, $M=\lfloor d/2\rfloor$, and $g_j=0$ outside that range. Direct differentiation with symbolic exponents gives
@@ -64,6 +66,20 @@ By Theorem 1, $S^r(H_w)\subset S^0(H_w)$ is supported in weights $\le12$ and is 
 
 For Theorem 3, let $G\in S^r(H)$ with top weighted component $G_{\rm top}$. The top component of $D_HG$ is $D_{H_w}G_{\rm top}$ when that is nonzero, so by induction $G_{\rm top}\in S^r(H_w)$. Passing to the associated graded space is dimension-preserving, which gives $\dim S^r(H)\le\dim S^r(H_w)$. Since $1$ and $H$ always lie in $D_\infty(H)$ and $\dim S^2(H_w)=2$, the second refinement is $\operatorname{span}\{1,H\}$. On $\Delta_w=0$ a third element of $S^1(H)$ has top component $q$, hence equals $q$ modulo constants, and $q\in S^1(H)$ means exactly that $D_Hq=-H_p$ is static.
 
+## Proof of Theorem 4
+
+It suffices to treat $f=e^{sQ}$, $g=e^{tQ}$ as formal series in $s,t$. Put $h_m(s)=e^{-s\varphi}\partial_q^me^{s\varphi}$, so that $\sum_m h_m(s)z^m/m!=e^{s(\varphi(q+z)-\varphi(q))}$. Since $\partial_p$ acts on $e^{sQ}$ as multiplication by $sc$,
+
+$$T_k(e^{sQ},e^{tQ})=e^{(s+t)Q}\,c^k\sum_{j=0}^{k}(-1)^j\binom kj s^jt^{k-j}\,h_{k-j}(s)\,h_j(t)=:e^{(s+t)Q}P_k,$$
+
+$$\sum_{k\ge0}P_k\frac{u^k}{k!}=\exp\bigl(s[\varphi(q+cut)-\varphi(q)]+t[\varphi(q-cus)-\varphi(q)]\bigr)=\exp\bigl(\tfrac12\varphi''c^2u^2\,st(s+t)\bigr)$$
+
+for quadratic $\varphi$, the terms linear in $u$ cancelling. The right side is even in $u$, so $P_k=0$ for odd $k$. For cubic $\varphi$ the exponent acquires the odd term $\tfrac16\varphi^{(3)}c^3u^3\,st(t^2-s^2)$, and indeed $T_3((p+q^3)^3,(p+q^3)^2)\ne0$.
+
+## A separation principle used above
+
+The step from Theorem 2 to Theorem 3 is not specific to Hamiltonians. Let an observation map $\mathcal O$ on a graded model space be the sum of a part $\mathcal O_0$ homogeneous for the grading and parts of strictly lower degree. Then the leading components of $\ker\mathcal O$ lie in $\ker\mathcal O_0$, so $\dim\ker\mathcal O\le\dim\ker\mathcal O_0$, and if $\ker\mathcal O_0$ is supported in degrees at most $D$ then so is $\ker\mathcal O$. A finite exact certificate for the leading observation family therefore separates the entire lower-order perturbation class, here 12 further parameters, with no additional computation. The same inclusion holds for iterated observations $\mathcal O\circ D^i$ when $D$ is filtered with homogeneous leading part.
+
 ## Evidence classes
 
 | Claim | Status |
@@ -73,22 +89,22 @@ For Theorem 3, let $G\in S^r(H)$ with top weighted component $G_{\rm top}$. The 
 | Theorem 1 as a statement about polynomials | Human proof above; the passage from the gates to rows (F), (T) is computer-checked symbolically but not formalized |
 | Theorem 2 | Exact computer-algebra certificate (`WEIGHTED_CUBIC_FORM_CERTIFICATE.json`, 33 stored minors plus complete minor ideals in the small weights), replayed with Gröbner bases by an independent script; not formalized |
 | Theorem 3 | Human proof from Theorems 1 and 2; spot-checked on random 15-parameter members |
-| $K[q^2+\tfrac{\alpha}{3}p]\subset D_\infty$ on the cube locus | Finite experiment for powers up to 14; only infinite-dimensionality of $S^0$ is proved |
+| Theorem 4 | Human proof above; the vanishing is replayed symbolically for $k=1,3,5,7$ and on explicit powers, including the cubic counterexample |
 
 The existing results serve as regressions and are not new here: at $\alpha=\beta=0$ the engine returns $\dim S^0=15$, $S^1$ of dimension 4 or 3 according to $3xv=w^2$, and $S^2$ of dimension 2.
 
 ## Reuse
 
-`exact_observation.py` is the domain-independent part: exact rank, kernel witnesses, minimum-cost identifying panels with a matroid exchange certificate, and sup-norm error amplification. The Moyal gate matrices are one client. `period_valuation_transfer.py` is a second client with no Hamiltonian content: the prime-valuation matrix of period-fingerprint-lab's fixed-prefix ambiguity theorem. It reproduces the weight-51 terminal collision $(1,1,1,1,1,5,5,12,24)$ against $(2,2,2,2,3,3,12,25)$ as a kernel vector for 2 supported coefficients and returns the cheapest separating observation, the 2-adic valuation at the third coefficient.
+`exact_observation.py` is the domain-independent part: exact rank, kernel witnesses, minimum-cost identifying panels with a matroid exchange certificate, and sup-norm error amplification. The Moyal gate matrices are one client. `period_valuation_transfer.py` is a second client with no Hamiltonian content: the prime-valuation matrix of period-fingerprint-lab's fixed-prefix ambiguity theorem. It reproduces the weight-51 terminal collision $(1,1,1,1,1,5,5,12,24)$ against $(2,2,2,2,3,3,12,25)$ as a kernel vector for 2 supported coefficients and returns the cheapest separating observation, the 2-adic valuation at the third coefficient. A third client is the $7\times7$ reader matrix of Singularity's volume-eight certificate, embedded in the tests: the engine returns determinant 224000 and worst-case gain $133/10$, the stored values, which PerfectJet's `observation_design` also returns. PerfectJet's module optimizes coefficient panels and certifies $\ell_1$ sensor optima; the engine here adds kernel witnesses, minimum-cost panels over arbitrary rational rows and the exchange certificate, and does not replace it.
 
 ## Not claimed
 
-The boundary $x=0$, the cube locus beyond infinite-dimensionality, perturbations of weight 6 or more other than $q^4p$ and $q^2p^2$ (for instance $q^3p^2$, $qp^3$, $p^4$, $q^5p$), and the full 21-parameter family remain open. The two weight-4 points are defined over $\mathbb Q(\sqrt{11377})$ and were located by an exact ideal computation, not examined individually. Theorems 2 and 3 are not formalized in Lean.
+The boundary $x=0$, the full refinement tower on the cube locus beyond Theorem 4, perturbations of weight 6 or more other than $q^4p$ and $q^2p^2$ (for instance $q^3p^2$, $qp^3$, $p^4$, $q^5p$), and the full 21-parameter family remain open. The two weight-4 points are defined over $\mathbb Q(\sqrt{11377})$ and were located by an exact ideal computation, not examined individually. Theorems 2 and 3 are not formalized in Lean.
 
 ## Replay
 
 ~~~sh
-python verify_weighted_cubic_form.py          # 42 checks, writes WEIGHTED_CUBIC_FORM_REPLAY.json
-python -m unittest test_weighted_cubic_form   # 11 tests
+python verify_weighted_cubic_form.py          # 46 checks, writes WEIGHTED_CUBIC_FORM_REPLAY.json
+python -m unittest test_weighted_cubic_form   # 12 tests
 cd formal && lake build SexticC3.WeightedCubicForm && lake env lean AuditWeightedCubicForm.lean
 ~~~
