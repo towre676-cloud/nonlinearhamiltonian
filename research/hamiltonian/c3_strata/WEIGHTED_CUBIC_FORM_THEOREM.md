@@ -112,14 +112,14 @@ $$N(d,j)=\gamma^2\bigl[\tfrac13i(i-1)-(j-1)(j-2)+6i(j-1)\bigr]-24y(i+1)(j-1)=0 .
 
 As a polynomial in $j$, $N$ has degree at most 2 with leading coefficient $\tfrac14(144y-37\gamma^2)$ and linear coefficient $-\tfrac12(d+5)(24y-5\gamma^2)$, which vanish together only for $\gamma=y=0$. So $N$ has at most 2 roots, whereas for $d\ge33$ there are at least 3 admissible indices $j$. Hence $g_j=0$ for $j\ge3$, and the third-gate rows at $j=4,3,2$ then give $y(i+3)(i+2)(i+1)g_{j-2}=0$, so $G=0$. If $\gamma=0$ the fifth gate gives $g_j=0$ for $j\ge5$ and the same descent gives $G=0$ for $d\ge18$. The weights $d\le34$ are settled exactly in the chart $y=1$ over $\mathbb Q[\gamma]$: in each weight and depth the greatest common divisor of maximal minors is a nonzero constant, except for the seven polynomials in the statement, whose roots are confirmed as genuine rank drops at rational representatives of each value of $\gamma^2/y$. The passage to $R\ne0$ is the separation principle. $\qquad\blacksquare$
 
-Status: the tail argument is a human proof whose row formulas and identity for $N$ are replayed symbolically; the finite part is an exact computer-algebra certificate replayed by `verify_quartic_edge.py` (9 checks); nothing in Theorem 5 is formalized in Lean.
+Status: the tail argument is a human proof whose row formulas and identity for $N$ are replayed symbolically; the finite part is an exact computer-algebra certificate replayed by `verify_quartic_edge.py` (9 checks); the elimination identity and the non-vanishing of the obstruction are formalized as `QuarticEdge.row_elimination` and `QuarticEdge.obstruction_coefficients`, with the same three axioms; the theorem itself is not formalized.
 
 ## Evidence classes
 
 | Claim | Status |
 | --- | --- |
 | Rows (F), (T) and the identity behind $B(k)$ | Symbolic identity in $(k,d,\alpha,\beta,x)$ and in symbolic exponents, replayed by `verify_weighted_cubic_form.py` |
-| A nonzero tail forces the cube locus | Formalized: `WeightedCubicForm.tail_collapse` and its three lemmas in `formal/SexticC3/WeightedCubicForm.lean`, axioms `propext`, `Quot.sound`, `Classical.choice` |
+| A nonzero tail forces the cube locus | Formalized: `WeightedCubicForm.tail_collapse` and its three lemmas in `formal/SexticC3/WeightedCubicForm.lean`, axioms `propext`, `Quot.sound`, `Classical.choice`; receipt in `formal/AuditWeightedCubicForm.output.txt` |
 | Theorem 1 as a statement about polynomials | Human proof above; the passage from the gates to rows (F), (T) is computer-checked symbolically but not formalized |
 | Theorem 2 | Exact computer-algebra certificate (`WEIGHTED_CUBIC_FORM_CERTIFICATE.json`, 33 stored minors plus complete minor ideals in the small weights), replayed with Gröbner bases by an independent script; not formalized |
 | Theorem 3 | Human proof from Theorems 1 and 2; spot-checked on random 15-parameter members |

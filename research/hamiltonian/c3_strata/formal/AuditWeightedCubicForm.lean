@@ -11,3 +11,5 @@ audit_axioms WeightedCubicForm.row_four
 audit_axioms WeightedCubicForm.row_five
 audit_axioms WeightedCubicForm.cube_of_brackets
 audit_axioms WeightedCubicForm.tail_collapse
+audit_axioms QuarticEdge.row_elimination
+audit_axioms QuarticEdge.obstruction_coefficients

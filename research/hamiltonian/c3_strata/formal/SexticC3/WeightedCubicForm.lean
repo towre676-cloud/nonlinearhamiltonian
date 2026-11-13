@@ -90,3 +90,41 @@ theorem tail_collapse (α β x d g4 g5 g6 g7 g8 : K) (hα : α ≠ 0)
   exact cube_of_brackets α β x d hα hd3 b4 b5
 
 end WeightedCubicForm
+
+/-!
+# Quartic Newton edge `H = q^6 + γ q^3 p^2 + y p^4`
+
+Weighted-homogeneous `G = Σ g_j q^i p^j` with `2 i + 3 j = d`.  The fifth gate gives
+two-term rows and the third gate three-term rows; eliminating gives the quadratic
+obstruction `N`, which is never the zero polynomial in `j` unless `γ = y = 0`.
+-/
+
+namespace QuarticEdge
+variable {K : Type*} [Field K] [CharZero K]
+
+/-- The obstruction at the monomial `q^i p^j`. -/
+def obstruction (γ y i j : K) : K :=
+  γ ^ 2 * (i * (i - 1) / 3 - (j - 1) * (j - 2) + 6 * i * (j - 1)) - 24 * y * (i + 1) * (j - 1)
+
+/-- Third-gate row at `j` after substituting the fifth-gate rows at `j - 2` and `j`. -/
+theorem row_elimination (γ y i j gm g0 gp : K)
+    (f0 : 6 * j * (j - 1) * g0 = -γ * (i + 3) * (i + 2) * gm)
+    (fp : 6 * (j + 2) * (j + 1) * gp = -γ * i * (i - 1) * g0)
+    (r : 120 * (j + 2) * (j + 1) * j * gp
+        + γ * j * (6 * (j - 1) * (j - 2) - 36 * i * (j - 1) + 18 * i * (i - 1)) * g0
+        - 24 * y * (i + 3) * (i + 2) * (i + 1) * gm = 0) :
+    (i + 3) * (i + 2) * obstruction γ y i j * gm = 0 := by
+  unfold obstruction
+  linear_combination (j - 1) * r - (20 * j * (j - 1)) * fp
+    - (γ * (6 * (j - 1) * (j - 2) - 36 * i * (j - 1) - 2 * i * (i - 1)) / 6) * f0
+
+/-- The leading and linear coefficients of the obstruction in `j` vanish together only at the origin. -/
+theorem obstruction_coefficients (γ y : K) (h1 : 144 * y = 37 * γ ^ 2) (h2 : 24 * y = 5 * γ ^ 2) :
+    γ = 0 ∧ y = 0 := by
+  have hγ2 : γ ^ 2 = 0 := by linear_combination (-1 / 7 : K) * h1 + (6 / 7 : K) * h2
+  have hγ : γ = 0 := by simpa using hγ2
+  refine ⟨hγ, ?_⟩
+  rw [hγ] at h2
+  linear_combination (1 / 24 : K) * h2
+
+end QuarticEdge
