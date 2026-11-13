@@ -17,4 +17,13 @@ X=f+p*(lam*A+a*q+d)+p*p*(lam*B+mu)
 assert T(3,X)==0 and T(5,X)==0
 D=s.expand(s.diff(H,q)*s.diff(X,p)-s.diff(H,p)*s.diff(X,q))
 assert s.simplify(D.coeff(p,3)-2*mu*s.diff(B,q))==0
-print("PASS: exact quadratic static sector and first-refinement obstruction")
+assert s.simplify(T(3,D).coeff(p,2)-24*mu*(2*s.diff(B,q)*s.diff(B,q,3)-3*s.diff(B,q,2)**2))==0
+# A cubic term in D_HG is not, by itself, an obstruction to staticity.
+H=q**6+q*p*p
+X=p*p+s.Rational(12,5)*q**5
+assert T(3,X)==0 and T(5,X)==0
+DX=T(1,X)
+assert DX==2*p**3-12*q**5*p
+assert T(3,DX)==0 and T(5,DX)==0
+assert T(3,T(1,DX))==51840*p*q**3
+print("PASS: exact static sector, nonlinear mu obstruction, affine counterexample")

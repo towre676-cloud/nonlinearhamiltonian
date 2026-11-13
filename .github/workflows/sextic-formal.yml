@@ -41,3 +41,5 @@ jobs:
         run: |
           lake env lean Audit.lean
           lake env lean AuditGeometry.lean
+          lake env lean AuditNonlinearB.lean
+          lake env lean RegressionNonlinearB.lean
