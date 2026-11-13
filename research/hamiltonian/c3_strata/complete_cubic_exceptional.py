@@ -18,7 +18,7 @@ from pathlib import Path
 import sympy as S
 
 from cubic_static_recurrence import (
-    static_basis, hamiltonian, _matrix_for_iterate, stage_dimensions
+    static_basis, hamiltonian, iterate_gate_matrix, stage_dimensions
 )
 from general_sixfold_discovery import Q, P, transvectant
 
@@ -63,8 +63,8 @@ def exact_rank_certificate():
     basis = static_basis(u,v,0,x,check=True)
     if len(basis)!=15 or max(S.Poly(z,Q,P).total_degree() for z in basis)!=9:
         raise ArithmeticError("15-dimensional static basis or total degree bound failed")
-    first = _matrix_for_iterate(H,basis,1)
-    both = first.col_join(_matrix_for_iterate(H,basis,2))
+    first = iterate_gate_matrix(H,basis,1)
+    both = first.col_join(iterate_gate_matrix(H,basis,2))
     first11cols=[i for i in range(15) if i not in (3,12,13,14)]
     first12cols=[i for i in range(15) if i not in (3,12,13)]
     second13cols=[i for i in range(15) if i not in (3,12)]
@@ -118,7 +118,7 @@ def independent_point_replays():
     points=[(0,0,0,1),(0,1,0,1),(0,0,1,1),(0,1,1,1),(1,3,3,1),(2,-3,0,1)]
     rows=[]
     for u,v,w,x in points:
-        dimensions=stage_dimensions(u,v,w,x,max_depth=2)
+        dimensions=stage_dimensions(u,v,w,x,depth=2)
         exceptional=(3*x*v-w*w)==0
         expected=[15,4 if exceptional else 3,2]
         if dimensions!=expected:
