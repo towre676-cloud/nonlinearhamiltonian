@@ -17,7 +17,7 @@ class CompleteCubicExceptionalTests(unittest.TestCase):
         u,v,w,x=S.symbols("u v w x")
         H=Q**6+u*Q**3+v*Q**2*P+w*Q*P**2+x*P**3
         D=lambda G:transvectant(H,G,1)
-        self.assertEqual(S.factor(transvectant(H,D(Q**2),3)),48*(3*v*x-w*w))
+        self.assertEqual(S.expand(transvectant(H,D(Q**2),3)-48*(3*v*x-w*w)),0)
         self.assertEqual(transvectant(H,D(Q**2),5),0)
 
     def test_all_degree_point_ranks(self):
