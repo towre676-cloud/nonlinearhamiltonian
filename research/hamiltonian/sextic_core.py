@@ -40,6 +40,7 @@ _FINITE_TWO_PATTERNS = {
 }
 _THEOREM = "research/hamiltonian/c3_strata/SEXTIC_STRATA_THEOREM.md"
 _TRIPLE_PAIR = "research/hamiltonian/c3_strata/TRIPLE_PAIR_PERTURBATIONS.md"
+_SIXFOLD_CUBIC = "research/hamiltonian/c3_strata/SIXFOLD_CUBIC_COMPLEMENT_THEOREM.md"
 _EXTENSION = "research/hamiltonian/c3_strata/INHOMOGENEOUS_THEOREM.md"
 
 
@@ -270,6 +271,80 @@ def _quadratic_sixfold_candidate(H, factors, s):
     return degree, candidate
 
 
+def _pure_linear_power(Hd, degree, s):
+    """Return (primitive rational linear form, scalar) for Hd = scalar*L^degree."""
+    if not Hd or any(sum(key) != degree for key in Hd):
+        return None
+    t = s.Symbol("t")
+    polynomial = s.Poly(sum(s.Rational(coef.numerator, coef.denominator) * t**a
+                            for (a, _), coef in Hd.items()), t, domain=s.QQ)
+    infinity = degree - int(polynomial.degree())
+    if infinity == degree:
+        L = dict(_P)
+    elif infinity == 0:
+        _, factors = polynomial.factor_list()
+        if len(factors) != 1:
+            return None
+        factor, multiplicity = factors[0]
+        if int(multiplicity) != degree or int(factor.degree()) != 1:
+            return None
+        leading, constant = factor.all_coeffs()
+        L = E.primitive({(1, 0): _fraction(leading), (0, 1): _fraction(constant)})
+    else:
+        return None
+    power = E.power(L, degree)
+    key = next((key for key, value in power.items() if value), None)
+    if key is None or key not in Hd:
+        return None
+    scalar = Hd[key] / power[key]
+    return (L, scalar) if E.scale(power, scalar) == Hd else None
+
+
+def _sixfold_cubic_complement(H, factors, s, report):
+    """All-degree theorem for a*L^6 + b*M^3 + c with independent L,M."""
+    if any(sum(key) not in (0, 3, 6) for key in H):
+        return None
+    H3 = {key: coefficient for key, coefficient in H.items() if sum(key) == 3}
+    cubic = _pure_linear_power(H3, 3, s)
+    if cubic is None:
+        return None
+    M, cubic_scalar = cubic
+    L = E.primitive(factors[0][0])
+    determinant = (L.get((1, 0), 0) * M.get((0, 1), 0)
+                   - L.get((0, 1), 0) * M.get((1, 0), 0))
+    if not determinant:
+        return None
+
+    S1 = [dict(_ONE), L, E.power(L, 2), H]
+    core = [dict(_ONE), H]
+    operators = _Operators(H)
+    _verify_finite_spaces(H, S1, core)
+    D2L = operators.D(operators.D(L))
+    T3, T5 = operators.T(D2L, 3), operators.T(D2L, 5)
+    if not (T3 or T5):
+        raise RuntimeError("Sixfold cubic-complement linear witness must fail at refinement two")
+
+    report["obstruction"] = {
+        "G": E.serialize(L), "iterate": 2, "D2G": E.serialize(D2L),
+        "T3": E.serialize(T3), "T5": E.serialize(T5),
+    }
+    report["sixfold_cubic_complement"] = {
+        "L": E.serialize(L), "M": E.serialize(M),
+        "determinant": str(determinant), "cubic_scalar": str(cubic_scalar),
+    }
+    report["proof_boundary"]["dependencies"].append(_SIXFOLD_CUBIC)
+    report["proof_boundary"]["completeness"] = (
+        "SIXFOLD_CUBIC_COMPLEMENT_THEOREM.md reduces every polynomial static partner "
+        "to an explicit 15-dimensional space and eliminates its noncore directions "
+        "by exact first- and second-refinement coefficient identities.")
+    report["classification"].update({
+        "method": "sixfold_cubic_complement",
+        "sufficient_refinement_depth": 2,
+        "S1": _finite(S1), "S2": _finite(core), "Dinf": _finite(core),
+    })
+    return report
+
+
 def _triple_pair_generator(factors):
     Q = dict(_ONE)
     for factor, multiplicity, _ in factors:
@@ -468,6 +543,9 @@ def classify_sextic(H, *, schema=1):
     if pattern in _INFINITE_PATTERNS:
         if not constant_shift:
             if pattern == (6,):
+                cubic_report = _sixfold_cubic_complement(H, factors, s, report)
+                if cubic_report is not None:
+                    return cubic_report
                 method = "sixfold_affine_complement"
                 space = _affine_complement(H, *_sixfold_coordinates(factors))
             elif pattern == (5, 1):
