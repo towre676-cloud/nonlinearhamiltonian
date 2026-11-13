@@ -1,0 +1,189 @@
+{
+ "checks": [
+  {
+   "name": "T5 row formula, symbolic exponents",
+   "passed": true
+  },
+  {
+   "name": "T3 row formula, symbolic exponents",
+   "passed": true
+  },
+  {
+   "name": "tail identity row_k = (d-2k)(d-2k-2) B(k), symbolic k and d",
+   "passed": true
+  },
+  {
+   "name": "B(5)-B(4) and B(4) force the cube",
+   "passed": true
+  },
+  {
+   "name": "cube is (q^2 + alpha p / 3)^3",
+   "passed": true
+  },
+  {
+   "name": "static weight 3 has constant rank 1",
+   "passed": true
+  },
+  {
+   "name": "static weight 4 has constant rank 1",
+   "passed": true
+  },
+  {
+   "name": "static weight 5 has constant rank 2",
+   "passed": true
+  },
+  {
+   "name": "static weight 6 has constant rank 2",
+   "passed": true
+  },
+  {
+   "name": "static weight 7 has constant rank 3",
+   "passed": true
+  },
+  {
+   "name": "static weight 8 has constant rank 3",
+   "passed": true
+  },
+  {
+   "name": "static weight 9 drops exactly on alpha = 0",
+   "passed": true
+  },
+  {
+   "name": "static weight 10 has constant rank 5",
+   "passed": true
+  },
+  {
+   "name": "static weight 11 has constant rank 6",
+   "passed": true
+  },
+  {
+   "name": "static weight 12 drops exactly on E12 = 0",
+   "passed": true
+  },
+  {
+   "name": "static weight 0 unconstrained",
+   "passed": true
+  },
+  {
+   "name": "static weight 1 unconstrained",
+   "passed": true
+  },
+  {
+   "name": "static weight 2 unconstrained",
+   "passed": true
+  },
+  {
+   "name": "static weight 14 vanishes off the cube",
+   "passed": true
+  },
+  {
+   "name": "first refinement weight 1: Delta_w",
+   "passed": true
+  },
+  {
+   "name": "first refinement weight 2: Gamma_2",
+   "passed": true
+  },
+  {
+   "name": "first refinement weight 4: cube points and two further weighted points",
+   "passed": true
+  },
+  {
+   "name": "weight 2 first-refinement kernel is at most a line off the cube",
+   "passed": true
+  },
+  {
+   "name": "weight 4 first-refinement kernel is at most a line off the cube",
+   "passed": true
+  },
+  {
+   "name": "weight-4 points avoid Delta_w off the cube",
+   "passed": true
+  },
+  {
+   "name": "weight-4 points avoid Gamma_2 off the cube",
+   "passed": true
+  },
+  {
+   "name": "odd transvectants of exp(sQ), exp(tQ) vanish for Q = c p + quadratic(q), k = 1,3,5,7",
+   "passed": true
+  },
+  {
+   "name": "direct check: T_3, T_5 of Q^6 against Q^4, Q^7, and a cubic phi fails",
+   "passed": true
+  },
+  {
+   "name": "minor certificate depth 1 weight 10: contains cube ideal",
+   "passed": true
+  },
+  {
+   "name": "minor certificate depth 1 weight 11: unit ideal",
+   "passed": true
+  },
+  {
+   "name": "minor certificate depth 1 weight 12: contains cube ideal",
+   "passed": true
+  },
+  {
+   "name": "minor certificate depth 1 weight 3: unit ideal",
+   "passed": true
+  },
+  {
+   "name": "minor certificate depth 1 weight 5: unit ideal",
+   "passed": true
+  },
+  {
+   "name": "minor certificate depth 1 weight 6: unit ideal (rank n-1)",
+   "passed": true
+  },
+  {
+   "name": "minor certificate depth 1 weight 7: unit ideal",
+   "passed": true
+  },
+  {
+   "name": "minor certificate depth 1 weight 8: contains cube ideal",
+   "passed": true
+  },
+  {
+   "name": "minor certificate depth 1 weight 9: unit ideal",
+   "passed": true
+  },
+  {
+   "name": "minor certificate depth 2 weight 1: contains cube ideal",
+   "passed": true
+  },
+  {
+   "name": "minor certificate depth 2 weight 2: contains cube ideal",
+   "passed": true
+  },
+  {
+   "name": "minor certificate depth 2 weight 4: contains cube ideal",
+   "passed": true
+  },
+  {
+   "name": "engine dimensions equal Theorem 2 at 47 rational points",
+   "passed": true
+  },
+  {
+   "name": "weights 13..20 carry no static partner off the cube (sample)",
+   "passed": true
+  },
+  {
+   "name": "regression: Delta = 3xv - w^2 jump and second-refinement collapse",
+   "passed": true
+  },
+  {
+   "name": "semicontinuity under all 12 lower-weight terms, and S^2 = span{1,H}",
+   "passed": true
+  },
+  {
+   "name": "q survives the first refinement exactly when T3(H,H_p)=T5(H,H_p)=0 (leading case)",
+   "passed": true
+  },
+  {
+   "name": "cube locus: Q^k is static and invariant for k <= 14 (finite experiment)",
+   "passed": true
+  }
+ ],
+ "failed": []
+}

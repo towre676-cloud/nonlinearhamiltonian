@@ -1,0 +1,38 @@
+name: Weighted cubic form all-degree
+on:
+  pull_request:
+    paths:
+      - 'research/hamiltonian/c3_strata/exact_observation.py'
+      - 'research/hamiltonian/c3_strata/weighted_cubic_form.py'
+      - 'research/hamiltonian/c3_strata/period_valuation_transfer.py'
+      - 'research/hamiltonian/c3_strata/quartic_edge.py'
+      - 'research/hamiltonian/c3_strata/generic_sixfold_stratum.py'
+      - 'research/hamiltonian/c3_strata/verify_generic_sixfold_stratum.py'
+      - 'research/hamiltonian/c3_strata/verify_qp3_stratum.py'
+      - 'research/hamiltonian/c3_strata/verify_quartic_edge.py'
+      - 'research/hamiltonian/c3_strata/verify_weighted_cubic_form.py'
+      - 'research/hamiltonian/c3_strata/test_weighted_cubic_form.py'
+      - 'research/hamiltonian/c3_strata/WEIGHTED_CUBIC_FORM_CERTIFICATE.json'
+      - '.github/workflows/weighted-cubic-form.yml'
+  workflow_dispatch:
+jobs:
+  exact-replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install exact algebra
+        run: python -m pip install sympy==1.14.0
+      - name: Engine, Hamiltonian strata, period transfer
+        run: python -m unittest discover -s research/hamiltonian/c3_strata -p 'test_weighted_cubic_form.py' -v
+      - name: Independent replay of the tail identities and minor certificates
+        run: python research/hamiltonian/c3_strata/verify_weighted_cubic_form.py
+      - name: Independent replay of the quartic Newton edge
+        run: python research/hamiltonian/c3_strata/verify_quartic_edge.py
+      - name: Independent replay of the generic stratum
+        run: python research/hamiltonian/c3_strata/verify_generic_sixfold_stratum.py
+      - name: Independent replay of the q^6 + c q p^3 stratum
+        run: python research/hamiltonian/c3_strata/verify_qp3_stratum.py
