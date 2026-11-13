@@ -1,0 +1,41 @@
+name: sextic-extensions
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  extensions:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install exact algebra dependency
+        run: python -m pip install sympy==1.14.0
+      - name: Run reconciled extension tests
+        run: |
+          python -m unittest discover -s research/hamiltonian/c3_strata -p 'test_quadratic_sixfold.py' -v
+          python -m unittest discover -s research/hamiltonian/c3_strata -p 'test_separable_sixfold.py' -v
+          python -m unittest discover -s research/hamiltonian/c3_strata -p 'test_weighted_separable.py' -v
+      - name: Replay independent exact verifiers
+        run: |
+          python research/hamiltonian/c3_strata/verify_quadratic_sixfold.py > "$RUNNER_TEMP/quadratic-sixfold.json"
+          python research/hamiltonian/c3_strata/verify_separable_sixfold.py > "$RUNNER_TEMP/separable-sixfold.json"
+          python research/hamiltonian/c3_strata/verify_weighted_separable.py > "$RUNNER_TEMP/weighted-separable.json"
+          python research/hamiltonian/c3_strata/verify_sextic_core_v2.py > "$RUNNER_TEMP/sextic-core-v2.json"
+      - name: Retain reproduction evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sextic-extension-reconciliation
+          path: |
+            ${{ runner.temp }}/quadratic-sixfold.json
+            ${{ runner.temp }}/separable-sixfold.json
+            ${{ runner.temp }}/weighted-separable.json
+            ${{ runner.temp }}/sextic-core-v2.json
+          if-no-files-found: error

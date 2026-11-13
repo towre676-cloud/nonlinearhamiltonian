@@ -74,8 +74,8 @@ def main():
     try:
         if args.command=='sextic-core':
             try:
-                from sextic_core import classify_sextic
-                out=classify_sextic(parse(args.H),schema=args.schema)
+                from sextic_core import classify_sextic, classify_sextic_v2
+                out=(classify_sextic_v2(parse(args.H)) if args.schema==2 else classify_sextic(parse(args.H)))
             except ImportError as e:
                 if getattr(e,'name',None)!='sympy' and 'requires SymPy' not in str(e):raise
                 ap.error('sextic-core requires SymPy; install c3_strata/requirements.txt and run without -S')
