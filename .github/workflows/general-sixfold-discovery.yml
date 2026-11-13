@@ -1,0 +1,36 @@
+name: General sixfold exceptional loci
+on:
+  pull_request:
+    paths:
+      - 'research/hamiltonian/c3_strata/general_sixfold_discovery.py'
+      - 'research/hamiltonian/c3_strata/test_general_sixfold_discovery.py'
+      - 'research/hamiltonian/c3_strata/GENERAL_SIXFOLD_DISCOVERY.md'
+      - '.github/workflows/general-sixfold-discovery.yml'
+  push:
+    paths:
+      - 'research/hamiltonian/c3_strata/general_sixfold_discovery.py'
+      - 'research/hamiltonian/c3_strata/test_general_sixfold_discovery.py'
+      - 'research/hamiltonian/c3_strata/GENERAL_SIXFOLD_DISCOVERY.md'
+      - '.github/workflows/general-sixfold-discovery.yml'
+  workflow_dispatch:
+jobs:
+  exact-incidence:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install sympy==1.14.0
+      - name: Exact rank locus and independent Moyal expansion
+        run: python -m unittest discover -s research/hamiltonian/c3_strata -p 'test_general_sixfold_discovery.py' -v
+      - name: Save exact discovery receipt
+        run: |
+          python research/hamiltonian/c3_strata/general_sixfold_discovery.py > /tmp/general-sixfold.json
+          python research/hamiltonian/c3_strata/general_sixfold_discovery.py > /tmp/general-sixfold-replayed.json
+          diff -u /tmp/general-sixfold.json /tmp/general-sixfold-replayed.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: general-sixfold-incidence
+          path: /tmp/general-sixfold.json
