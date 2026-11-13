@@ -91,7 +91,19 @@ The historical experiment column is retained as a regression, not as proof.
 
 ## Not claimed
 
-These results do not assert a complete classification of all 21 parameters. In particular the weighted cubic cube locus with arbitrary lower terms remains outside the finite-tail theorems. The $c_{04}=0\ne c_{32}$ boundary has an infinite static space; the quadratic-sixfold theorem separately supplies finite first-refinement bounds and a core result for its leading form. See the [reconciled coverage table](BINOMIAL_NEWTON_SHARP_THEOREM.md#7-repository-reconciliation-and-remaining-boundaries) for the distinction. The human proofs here have not been externally refereed or fully formalized.
+These results do not assert a complete classification of all 21 parameters.
+The [cube-leading boundary theorem](CUBE_LEADING_BOUNDARY_THEOREM.md) now gives
+a uniform weight-12 first-refinement bound and stopping depth 14 on that
+boundary, apart from one explicitly identified infinite-core family. It also
+classifies the core on the seven-parameter locus $\deg B\le2$, $\deg C\le3$.
+The complete parameter stratification where $b_3$, $c_4$, or $c_5$ is nonzero
+remains open, as does the exact first-refinement jump locus in its Theorem G.
+The $c_{04}=0\ne c_{32}$ boundary has an infinite static space; the
+quadratic-sixfold theorem separately supplies finite first-refinement bounds
+and a core result for its leading form. See the
+[reconciled coverage table](BINOMIAL_NEWTON_SHARP_THEOREM.md#7-repository-reconciliation-and-remaining-boundaries)
+for the distinction. The human proofs here have not been externally refereed
+or fully formalized.
 
 ## Replay
 

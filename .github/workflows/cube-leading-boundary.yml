@@ -1,0 +1,52 @@
+name: Cube-leading boundary
+on:
+  pull_request:
+    paths:
+      - 'research/hamiltonian/c3_strata/exact_observation.py'
+      - 'research/hamiltonian/c3_strata/weighted_cubic_form.py'
+      - 'research/hamiltonian/c3_strata/cube_leading_boundary.py'
+      - 'research/hamiltonian/c3_strata/verify_cube_leading_boundary.py'
+      - 'research/hamiltonian/c3_strata/verify_cube_leading_quadratic_stratum.py'
+      - 'research/hamiltonian/c3_strata/verify_cube_leading_quadratic_short.py'
+      - 'research/hamiltonian/c3_strata/verify_cube_leading_review.py'
+      - 'research/hamiltonian/c3_strata/test_cube_leading_boundary.py'
+      - 'research/hamiltonian/c3_strata/CUBE_LEADING*'
+      - 'research/hamiltonian/c3_strata/BINOMIAL_NEWTON_PERFECTJET_PIN.txt'
+      - '.github/workflows/cube-leading-boundary.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  exact-replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install exact algebra
+        run: python -m pip install sympy==1.14.0
+      - name: Install pinned independent PerfectJet engine
+        shell: bash
+        run: |
+          PIN="$(cat research/hamiltonian/c3_strata/BINOMIAL_NEWTON_PERFECTJET_PIN.txt)"
+          python -m pip install "git+https://github.com/towre676-cloud/PerfectJet.git@${PIN}"
+      - name: Transport, static sector, coupled family
+        run: python -m unittest discover -s research/hamiltonian/c3_strata -p 'test_cube_leading_boundary.py' -v
+      - name: Exact replay of the theorems and rank certificates
+        working-directory: research/hamiltonian/c3_strata
+        run: python verify_cube_leading_boundary.py --require-perfectjet
+      - name: Three-minor Bezout certificate on the quadratic-coefficient stratum
+        working-directory: research/hamiltonian/c3_strata
+        run: python verify_cube_leading_quadratic_short.py
+      - name: Independent PerfectJet iterated-gate rank and kernel certificates
+        working-directory: research/hamiltonian/c3_strata
+        run: python verify_cube_leading_review.py
+      - name: Check retained certificate receipts
+        run: |
+          git diff --exit-code -- \
+            research/hamiltonian/c3_strata/CUBE_LEADING_BOUNDARY_CERTIFICATE.json \
+            research/hamiltonian/c3_strata/CUBE_LEADING_BOUNDARY_REPLAY.json \
+            research/hamiltonian/c3_strata/CUBE_LEADING_QUADRATIC_SHORT_CERTIFICATE.json \
+            research/hamiltonian/c3_strata/CUBE_LEADING_REVIEW_CERTIFICATE.json
