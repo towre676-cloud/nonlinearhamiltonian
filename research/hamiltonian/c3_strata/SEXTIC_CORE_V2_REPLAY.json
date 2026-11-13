@@ -1,0 +1,487 @@
+{
+ "corrupted_reports_rejected": 8,
+ "input_degree": 6,
+ "proof_boundary": {
+  "all_degree_dependencies": "Schema-1 dependencies and QUADRATIC_SIXFOLD_THEOREM.md.",
+  "finite_checks": "Direct defining-star expansion, exact span checks, bounded kernels.",
+  "formalization": "This Python replay is not a Lean proof."
+ },
+ "quadratic_complement_checks": [
+  {
+   "H": "q^6+p^2",
+   "bounded_dimensions": [
+    18,
+    14,
+    10,
+    6,
+    4,
+    2
+   ],
+   "core_dimension": 2,
+   "least_depth": 5,
+   "rational_affine_change": false,
+   "regime": "affine_shift",
+   "square_first_integral": false,
+   "stage_kinds": [
+    "polynomial_family",
+    "module_plus_finite",
+    "module_plus_finite",
+    "finite_basis",
+    "finite_basis",
+    "finite_basis"
+   ]
+  },
+  {
+   "H": "q^6+q+p+p^2",
+   "bounded_dimensions": [
+    18,
+    14,
+    10,
+    6,
+    4,
+    2
+   ],
+   "core_dimension": 2,
+   "least_depth": 5,
+   "rational_affine_change": false,
+   "regime": "affine_shift",
+   "square_first_integral": false,
+   "stage_kinds": [
+    "polynomial_family",
+    "module_plus_finite",
+    "module_plus_finite",
+    "finite_basis",
+    "finite_basis",
+    "finite_basis"
+   ]
+  },
+  {
+   "H": "2*q^6-3*q^5+q^4+5*q^3-q^2+7*q+1+(3*q-2)*p+p^2",
+   "bounded_dimensions": [
+    18,
+    14,
+    10,
+    6,
+    4,
+    2
+   ],
+   "core_dimension": 2,
+   "least_depth": 5,
+   "rational_affine_change": false,
+   "regime": "affine_shift",
+   "square_first_integral": false,
+   "stage_kinds": [
+    "polynomial_family",
+    "module_plus_finite",
+    "module_plus_finite",
+    "finite_basis",
+    "finite_basis",
+    "finite_basis"
+   ]
+  },
+  {
+   "H": "q^6+q^2*p+p^2",
+   "bounded_dimensions": [
+    15,
+    10,
+    6,
+    4,
+    2
+   ],
+   "core_dimension": 2,
+   "least_depth": 4,
+   "rational_affine_change": false,
+   "regime": "generic_nonlinear",
+   "square_first_integral": false,
+   "stage_kinds": [
+    "module_plus_finite",
+    "module_plus_finite",
+    "finite_basis",
+    "finite_basis",
+    "finite_basis"
+   ]
+  },
+  {
+   "H": "2*q^6-3*q^5+q^4+5*q^3-q^2+7*q+1+(3*q^4-q^3+2*q+1)*p+3*p^2",
+   "bounded_dimensions": [
+    14,
+    10,
+    6,
+    4,
+    2
+   ],
+   "core_dimension": 2,
+   "least_depth": 4,
+   "rational_affine_change": false,
+   "regime": "generic_nonlinear",
+   "square_first_integral": false,
+   "stage_kinds": [
+    "module_plus_finite",
+    "module_plus_finite",
+    "finite_basis",
+    "finite_basis",
+    "finite_basis"
+   ]
+  },
+  {
+   "H": "2*q^6-3*q^5+q^4+5*q^3-q^2+7*q+1+(3*q^4-q^3+2*q+1)*p+3*p^2",
+   "bounded_dimensions": [
+    14,
+    10,
+    6,
+    4,
+    2
+   ],
+   "core_dimension": 2,
+   "least_depth": 4,
+   "rational_affine_change": true,
+   "regime": "generic_nonlinear",
+   "square_first_integral": false,
+   "stage_kinds": [
+    "module_plus_finite",
+    "module_plus_finite",
+    "finite_basis",
+    "finite_basis",
+    "finite_basis"
+   ]
+  },
+  {
+   "H": "(p+q^3)^2+q^3",
+   "bounded_dimensions": [
+    14,
+    10,
+    6,
+    5,
+    4,
+    3,
+    2
+   ],
+   "core_dimension": 2,
+   "least_depth": 6,
+   "rational_affine_change": false,
+   "regime": "cubic_potential",
+   "square_first_integral": false,
+   "stage_kinds": [
+    "module_plus_finite",
+    "module_plus_finite",
+    "finite_basis",
+    "finite_basis",
+    "finite_basis",
+    "finite_basis",
+    "finite_basis"
+   ]
+  },
+  {
+   "H": "(p+q^3)^2+q^3",
+   "bounded_dimensions": [
+    14,
+    10,
+    6,
+    5,
+    4,
+    3,
+    2
+   ],
+   "core_dimension": 2,
+   "least_depth": 6,
+   "rational_affine_change": true,
+   "regime": "cubic_potential",
+   "square_first_integral": false,
+   "stage_kinds": [
+    "module_plus_finite",
+    "module_plus_finite",
+    "finite_basis",
+    "finite_basis",
+    "finite_basis",
+    "finite_basis",
+    "finite_basis"
+   ]
+  },
+  {
+   "H": "(p+q^3+q^2-3*q+1)^2+3*q^2-q",
+   "bounded_dimensions": [
+    14,
+    10,
+    6
+   ],
+   "core_dimension": 6,
+   "least_depth": 2,
+   "rational_affine_change": false,
+   "regime": "hidden_quadratic",
+   "square_first_integral": false,
+   "stage_kinds": [
+    "module_plus_finite",
+    "module_plus_finite",
+    "finite_basis"
+   ]
+  },
+  {
+   "H": "(p+q^3)^2",
+   "bounded_dimensions": [
+    14,
+    10,
+    6
+   ],
+   "core_dimension": 6,
+   "least_depth": 2,
+   "rational_affine_change": false,
+   "regime": "hidden_quadratic",
+   "square_first_integral": false,
+   "stage_kinds": [
+    "module_plus_finite",
+    "module_plus_finite",
+    "finite_basis"
+   ]
+  },
+  {
+   "H": "(p+q^3)^2",
+   "bounded_dimensions": [
+    14,
+    10,
+    6
+   ],
+   "core_dimension": 6,
+   "least_depth": 2,
+   "rational_affine_change": true,
+   "regime": "hidden_quadratic",
+   "square_first_integral": false,
+   "stage_kinds": [
+    "module_plus_finite",
+    "module_plus_finite",
+    "finite_basis"
+   ]
+  },
+  {
+   "H": "q^6+q*p^2",
+   "bounded_dimensions": [
+    null,
+    6,
+    3,
+    2
+   ],
+   "core_dimension": 2,
+   "least_depth": 3,
+   "rational_affine_change": false,
+   "regime": "variable_top_coefficient",
+   "square_first_integral": false,
+   "stage_kinds": [
+    null,
+    "finite_basis",
+    "finite_basis",
+    "finite_basis"
+   ]
+  },
+  {
+   "H": "2*q^6-q^5+q^3+7*q+(q-2)*p^2+(q^4-q+1)*p",
+   "bounded_dimensions": [
+    null,
+    5,
+    3,
+    2
+   ],
+   "core_dimension": 2,
+   "least_depth": 3,
+   "rational_affine_change": false,
+   "regime": "variable_top_coefficient",
+   "square_first_integral": false,
+   "stage_kinds": [
+    null,
+    "finite_basis",
+    "finite_basis",
+    "finite_basis"
+   ]
+  },
+  {
+   "H": "2*q^6-q^5+q^3+7*q+(q-2)*p^2+(q^4-q+1)*p",
+   "bounded_dimensions": [
+    null,
+    5,
+    3,
+    2
+   ],
+   "core_dimension": 2,
+   "least_depth": 3,
+   "rational_affine_change": true,
+   "regime": "variable_top_coefficient",
+   "square_first_integral": false,
+   "stage_kinds": [
+    null,
+    "finite_basis",
+    "finite_basis",
+    "finite_basis"
+   ]
+  },
+  {
+   "H": "2*q^6-q^5+q^3+7*q+(q^2-2*q+3)*p^2+(q^4-q+1)*p",
+   "bounded_dimensions": [
+    null,
+    3,
+    2
+   ],
+   "core_dimension": 2,
+   "least_depth": 2,
+   "rational_affine_change": false,
+   "regime": "variable_top_coefficient",
+   "square_first_integral": false,
+   "stage_kinds": [
+    null,
+    "finite_basis",
+    "finite_basis"
+   ]
+  },
+  {
+   "H": "q^6+(q^3+q+1)*p^2",
+   "bounded_dimensions": [
+    null,
+    2
+   ],
+   "core_dimension": 2,
+   "least_depth": 1,
+   "rational_affine_change": false,
+   "regime": "variable_top_coefficient",
+   "square_first_integral": false,
+   "stage_kinds": [
+    null,
+    "finite_basis"
+   ]
+  },
+  {
+   "H": "q^6+q^2*p^2+2*q^4*p",
+   "bounded_dimensions": [
+    null,
+    3
+   ],
+   "core_dimension": 3,
+   "least_depth": 1,
+   "rational_affine_change": false,
+   "regime": "variable_top_coefficient",
+   "square_first_integral": true,
+   "stage_kinds": [
+    null,
+    "finite_basis"
+   ]
+  },
+  {
+   "H": "3*((q-3)*p+2*(q-3)^3+q+2)^2-7",
+   "bounded_dimensions": [
+    null,
+    3
+   ],
+   "core_dimension": 3,
+   "least_depth": 1,
+   "rational_affine_change": false,
+   "regime": "variable_top_coefficient",
+   "square_first_integral": true,
+   "stage_kinds": [
+    null,
+    "finite_basis"
+   ]
+  },
+  {
+   "H": "3*((q-3)*p+2*(q-3)^3+q+2)^2-7",
+   "bounded_dimensions": [
+    null,
+    3
+   ],
+   "core_dimension": 3,
+   "least_depth": 1,
+   "rational_affine_change": true,
+   "regime": "variable_top_coefficient",
+   "square_first_integral": true,
+   "stage_kinds": [
+    null,
+    "finite_basis"
+   ]
+  },
+  {
+   "H": "((q-3)*p+2*(q-3)^3+q+2)^2+p^2",
+   "bounded_dimensions": [
+    null,
+    3,
+    2
+   ],
+   "core_dimension": 2,
+   "least_depth": 2,
+   "rational_affine_change": false,
+   "regime": "variable_top_coefficient",
+   "square_first_integral": false,
+   "stage_kinds": [
+    null,
+    "finite_basis",
+    "finite_basis"
+   ]
+  },
+  {
+   "H": "((q-3)*p+2*(q-3)^3+q+2)^2+p",
+   "bounded_dimensions": [
+    null,
+    3,
+    2
+   ],
+   "core_dimension": 2,
+   "least_depth": 2,
+   "rational_affine_change": false,
+   "regime": "variable_top_coefficient",
+   "square_first_integral": false,
+   "stage_kinds": [
+    null,
+    "finite_basis",
+    "finite_basis"
+   ]
+  },
+  {
+   "H": "((q-3)*p+2*(q-3)^3+q+2)^2+p",
+   "bounded_dimensions": [
+    null,
+    3,
+    2
+   ],
+   "core_dimension": 2,
+   "least_depth": 2,
+   "rational_affine_change": true,
+   "regime": "variable_top_coefficient",
+   "square_first_integral": false,
+   "stage_kinds": [
+    null,
+    "finite_basis",
+    "finite_basis"
+   ]
+  },
+  {
+   "H": "((q-3)*p+2*(q-3)^3+q+2)^2+q^2",
+   "bounded_dimensions": [
+    null,
+    3,
+    2
+   ],
+   "core_dimension": 2,
+   "least_depth": 2,
+   "rational_affine_change": false,
+   "regime": "variable_top_coefficient",
+   "square_first_integral": false,
+   "stage_kinds": [
+    null,
+    "finite_basis",
+    "finite_basis"
+   ]
+  }
+ ],
+ "schema": "hamiltonian-sextic-core-independent-replay/2",
+ "schema_1_derived_checks": 27,
+ "source_sha256": {
+  "research/hamiltonian/c3_strata/verify_quadratic_sixfold.py": "2980355f68e17085edb978d1ca073fcfb1c7e433d366a594997a458f078e8f6e",
+  "research/hamiltonian/c3_strata/verify_sextic_core.py": "d5663e0f9ccfba02ba0a4d8f10f43ec10ec9a241f06917ea0edb65adf93582db",
+  "research/hamiltonian/c3_strata/verify_sextic_core_v2.py": "a65fe72e9a9450569b83cf92d5134463497c0610fab35f88ffbee56adc2b6a5b",
+  "research/hamiltonian/independent/engine.py": "feafd49628603915e1b4bdf930efd0f862313ae6f4785b2bab3ca971ad58cbbf",
+  "research/hamiltonian/partner_lab.py": "767cb2b597134e796ab17289d1f171dae9f6b55e28b6186df5b2ac26a1310ea8",
+  "research/hamiltonian/quadratic_sixfold.py": "340fa860b32a15546c86fd759e61816e780fc9a9f6b1708958d71d8247d1eea3",
+  "research/hamiltonian/sextic_core.py": "e70f0931070d2e70f781d46268f97eb6aa4d6feb8ce42955c5c34762cbf7f2b7"
+ },
+ "status": "PASS",
+ "unsupported_checks": [
+  "q^6+p^5",
+  "q^6+q*p^3+p^2",
+  "q^5*p+p^2",
+  "q^3*p^3+q"
+ ]
+}

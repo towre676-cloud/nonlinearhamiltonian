@@ -1,0 +1,1090 @@
+{
+ "cases": [
+  {
+   "H": [
+    {
+     "coefficient": "1",
+     "p": 2,
+     "q": 0
+    },
+    {
+     "coefficient": "1",
+     "p": 0,
+     "q": 6
+    }
+   ],
+   "bounded_dimensions": [
+    18,
+    14,
+    10,
+    6,
+    4,
+    2,
+    2,
+    2
+   ],
+   "core_dimension": 2,
+   "deg_F": 6,
+   "deg_b": -1,
+   "name": "calibration q^6+p^2",
+   "regime": "affine_shift",
+   "sharp_depth": 5,
+   "sharpness_witness": "q",
+   "static_dimension_beyond_W": null
+  },
+  {
+   "H": [
+    {
+     "coefficient": "1",
+     "p": 0,
+     "q": 0
+    },
+    {
+     "coefficient": "1",
+     "p": 2,
+     "q": 0
+    },
+    {
+     "coefficient": "7",
+     "p": 0,
+     "q": 1
+    },
+    {
+     "coefficient": "-1",
+     "p": 0,
+     "q": 2
+    },
+    {
+     "coefficient": "5",
+     "p": 0,
+     "q": 3
+    },
+    {
+     "coefficient": "1",
+     "p": 0,
+     "q": 4
+    },
+    {
+     "coefficient": "-3",
+     "p": 0,
+     "q": 5
+    },
+    {
+     "coefficient": "2",
+     "p": 0,
+     "q": 6
+    }
+   ],
+   "bounded_dimensions": [
+    18,
+    14,
+    10,
+    6,
+    4,
+    2,
+    2,
+    2
+   ],
+   "core_dimension": 2,
+   "deg_F": 6,
+   "deg_b": -1,
+   "name": "b=0 generic f",
+   "regime": "affine_shift",
+   "sharp_depth": 5,
+   "sharpness_witness": "q",
+   "static_dimension_beyond_W": null
+  },
+  {
+   "H": [
+    {
+     "coefficient": "1",
+     "p": 0,
+     "q": 0
+    },
+    {
+     "coefficient": "-2",
+     "p": 1,
+     "q": 0
+    },
+    {
+     "coefficient": "1",
+     "p": 2,
+     "q": 0
+    },
+    {
+     "coefficient": "7",
+     "p": 0,
+     "q": 1
+    },
+    {
+     "coefficient": "3",
+     "p": 1,
+     "q": 1
+    },
+    {
+     "coefficient": "-1",
+     "p": 0,
+     "q": 2
+    },
+    {
+     "coefficient": "5",
+     "p": 0,
+     "q": 3
+    },
+    {
+     "coefficient": "1",
+     "p": 0,
+     "q": 4
+    },
+    {
+     "coefficient": "-3",
+     "p": 0,
+     "q": 5
+    },
+    {
+     "coefficient": "2",
+     "p": 0,
+     "q": 6
+    }
+   ],
+   "bounded_dimensions": [
+    18,
+    14,
+    10,
+    6,
+    4,
+    2,
+    2,
+    2
+   ],
+   "core_dimension": 2,
+   "deg_F": 6,
+   "deg_b": 1,
+   "name": "b affine",
+   "regime": "affine_shift",
+   "sharp_depth": 5,
+   "sharpness_witness": "q",
+   "static_dimension_beyond_W": null
+  },
+  {
+   "H": [
+    {
+     "coefficient": "1",
+     "p": 2,
+     "q": 0
+    },
+    {
+     "coefficient": "1",
+     "p": 1,
+     "q": 2
+    },
+    {
+     "coefficient": "1",
+     "p": 0,
+     "q": 6
+    }
+   ],
+   "bounded_dimensions": [
+    15,
+    10,
+    6,
+    4,
+    2,
+    2,
+    2,
+    2
+   ],
+   "core_dimension": 2,
+   "deg_F": 6,
+   "deg_b": 2,
+   "name": "holdout q^6+q^2 p+p^2",
+   "regime": "generic_nonlinear",
+   "sharp_depth": 4,
+   "sharpness_witness": "q",
+   "static_dimension_beyond_W": 2
+  },
+  {
+   "H": [
+    {
+     "coefficient": "1",
+     "p": 0,
+     "q": 0
+    },
+    {
+     "coefficient": "3",
+     "p": 1,
+     "q": 0
+    },
+    {
+     "coefficient": "1",
+     "p": 2,
+     "q": 0
+    },
+    {
+     "coefficient": "7",
+     "p": 0,
+     "q": 1
+    },
+    {
+     "coefficient": "1",
+     "p": 1,
+     "q": 1
+    },
+    {
+     "coefficient": "-1",
+     "p": 0,
+     "q": 2
+    },
+    {
+     "coefficient": "-2",
+     "p": 1,
+     "q": 2
+    },
+    {
+     "coefficient": "5",
+     "p": 0,
+     "q": 3
+    },
+    {
+     "coefficient": "1",
+     "p": 0,
+     "q": 4
+    },
+    {
+     "coefficient": "-3",
+     "p": 0,
+     "q": 5
+    },
+    {
+     "coefficient": "2",
+     "p": 0,
+     "q": 6
+    }
+   ],
+   "bounded_dimensions": [
+    15,
+    10,
+    6,
+    4,
+    2,
+    2,
+    2,
+    2
+   ],
+   "core_dimension": 2,
+   "deg_F": 6,
+   "deg_b": 2,
+   "name": "deg b=2 generic",
+   "regime": "generic_nonlinear",
+   "sharp_depth": 4,
+   "sharpness_witness": "q",
+   "static_dimension_beyond_W": 2
+  },
+  {
+   "H": [
+    {
+     "coefficient": "1",
+     "p": 0,
+     "q": 0
+    },
+    {
+     "coefficient": "4",
+     "p": 1,
+     "q": 0
+    },
+    {
+     "coefficient": "1",
+     "p": 2,
+     "q": 0
+    },
+    {
+     "coefficient": "7",
+     "p": 0,
+     "q": 1
+    },
+    {
+     "coefficient": "-1",
+     "p": 0,
+     "q": 2
+    },
+    {
+     "coefficient": "-1",
+     "p": 1,
+     "q": 2
+    },
+    {
+     "coefficient": "5",
+     "p": 0,
+     "q": 3
+    },
+    {
+     "coefficient": "2",
+     "p": 1,
+     "q": 3
+    },
+    {
+     "coefficient": "1",
+     "p": 0,
+     "q": 4
+    },
+    {
+     "coefficient": "-3",
+     "p": 0,
+     "q": 5
+    },
+    {
+     "coefficient": "2",
+     "p": 0,
+     "q": 6
+    }
+   ],
+   "bounded_dimensions": [
+    14,
+    10,
+    6,
+    4,
+    2,
+    2,
+    2,
+    2
+   ],
+   "core_dimension": 2,
+   "deg_F": 6,
+   "deg_b": 3,
+   "name": "deg b=3, N=6",
+   "regime": "generic_nonlinear",
+   "sharp_depth": 4,
+   "sharpness_witness": "q",
+   "static_dimension_beyond_W": 0
+  },
+  {
+   "H": [
+    {
+     "coefficient": "3",
+     "p": 0,
+     "q": 0
+    },
+    {
+     "coefficient": "2",
+     "p": 1,
+     "q": 0
+    },
+    {
+     "coefficient": "1",
+     "p": 2,
+     "q": 0
+    },
+    {
+     "coefficient": "-6",
+     "p": 0,
+     "q": 1
+    },
+    {
+     "coefficient": "-6",
+     "p": 1,
+     "q": 1
+    },
+    {
+     "coefficient": "10",
+     "p": 0,
+     "q": 2
+    },
+    {
+     "coefficient": "2",
+     "p": 1,
+     "q": 2
+    },
+    {
+     "coefficient": "-4",
+     "p": 0,
+     "q": 3
+    },
+    {
+     "coefficient": "2",
+     "p": 1,
+     "q": 3
+    },
+    {
+     "coefficient": "-4",
+     "p": 0,
+     "q": 4
+    },
+    {
+     "coefficient": "5",
+     "p": 0,
+     "q": 5
+    },
+    {
+     "coefficient": "1",
+     "p": 0,
+     "q": 6
+    }
+   ],
+   "bounded_dimensions": [
+    14,
+    10,
+    6,
+    4,
+    2,
+    2,
+    2,
+    2
+   ],
+   "core_dimension": 2,
+   "deg_F": 5,
+   "deg_b": 3,
+   "name": "deg b=3, N=5",
+   "regime": "generic_nonlinear",
+   "sharp_depth": 4,
+   "sharpness_witness": "q",
+   "static_dimension_beyond_W": 0
+  },
+  {
+   "H": [
+    {
+     "coefficient": "1",
+     "p": 0,
+     "q": 0
+    },
+    {
+     "coefficient": "2",
+     "p": 1,
+     "q": 0
+    },
+    {
+     "coefficient": "1",
+     "p": 2,
+     "q": 0
+    },
+    {
+     "coefficient": "-5",
+     "p": 0,
+     "q": 1
+    },
+    {
+     "coefficient": "-6",
+     "p": 1,
+     "q": 1
+    },
+    {
+     "coefficient": "14",
+     "p": 0,
+     "q": 2
+    },
+    {
+     "coefficient": "2",
+     "p": 1,
+     "q": 2
+    },
+    {
+     "coefficient": "-5",
+     "p": 0,
+     "q": 3
+    },
+    {
+     "coefficient": "2",
+     "p": 1,
+     "q": 3
+    },
+    {
+     "coefficient": "-7",
+     "p": 0,
+     "q": 4
+    },
+    {
+     "coefficient": "2",
+     "p": 0,
+     "q": 5
+    },
+    {
+     "coefficient": "1",
+     "p": 0,
+     "q": 6
+    }
+   ],
+   "bounded_dimensions": [
+    14,
+    10,
+    6,
+    4,
+    2,
+    2,
+    2,
+    2
+   ],
+   "core_dimension": 2,
+   "deg_F": 4,
+   "deg_b": 3,
+   "name": "deg b=3, N=4",
+   "regime": "generic_nonlinear",
+   "sharp_depth": 4,
+   "sharpness_witness": "q",
+   "static_dimension_beyond_W": 0
+  },
+  {
+   "H": [
+    {
+     "coefficient": "5",
+     "p": 0,
+     "q": 0
+    },
+    {
+     "coefficient": "2",
+     "p": 1,
+     "q": 0
+    },
+    {
+     "coefficient": "1",
+     "p": 2,
+     "q": 0
+    },
+    {
+     "coefficient": "-1",
+     "p": 0,
+     "q": 1
+    },
+    {
+     "coefficient": "-6",
+     "p": 1,
+     "q": 1
+    },
+    {
+     "coefficient": "12",
+     "p": 0,
+     "q": 2
+    },
+    {
+     "coefficient": "2",
+     "p": 1,
+     "q": 2
+    },
+    {
+     "coefficient": "-6",
+     "p": 0,
+     "q": 3
+    },
+    {
+     "coefficient": "2",
+     "p": 1,
+     "q": 3
+    },
+    {
+     "coefficient": "-5",
+     "p": 0,
+     "q": 4
+    },
+    {
+     "coefficient": "2",
+     "p": 0,
+     "q": 5
+    },
+    {
+     "coefficient": "1",
+     "p": 0,
+     "q": 6
+    }
+   ],
+   "bounded_dimensions": [
+    14,
+    10,
+    6,
+    5,
+    4,
+    3,
+    2,
+    2
+   ],
+   "core_dimension": 2,
+   "deg_F": 3,
+   "deg_b": 3,
+   "name": "deg b=3, N=3",
+   "regime": "cubic_potential",
+   "sharp_depth": 6,
+   "sharpness_witness": "q",
+   "static_dimension_beyond_W": 0
+  },
+  {
+   "H": [
+    {
+     "coefficient": "1",
+     "p": 2,
+     "q": 0
+    },
+    {
+     "coefficient": "1",
+     "p": 0,
+     "q": 3
+    },
+    {
+     "coefficient": "2",
+     "p": 1,
+     "q": 3
+    },
+    {
+     "coefficient": "1",
+     "p": 0,
+     "q": 6
+    }
+   ],
+   "bounded_dimensions": [
+    14,
+    10,
+    6,
+    5,
+    4,
+    3,
+    2,
+    2
+   ],
+   "core_dimension": 2,
+   "deg_F": 3,
+   "deg_b": 3,
+   "name": "(p+q^3)^2+q^3",
+   "regime": "cubic_potential",
+   "sharp_depth": 6,
+   "sharpness_witness": "q",
+   "static_dimension_beyond_W": 0
+  },
+  {
+   "H": [
+    {
+     "coefficient": "1",
+     "p": 0,
+     "q": 0
+    },
+    {
+     "coefficient": "2",
+     "p": 1,
+     "q": 0
+    },
+    {
+     "coefficient": "1",
+     "p": 2,
+     "q": 0
+    },
+    {
+     "coefficient": "-7",
+     "p": 0,
+     "q": 1
+    },
+    {
+     "coefficient": "-6",
+     "p": 1,
+     "q": 1
+    },
+    {
+     "coefficient": "14",
+     "p": 0,
+     "q": 2
+    },
+    {
+     "coefficient": "2",
+     "p": 1,
+     "q": 2
+    },
+    {
+     "coefficient": "-4",
+     "p": 0,
+     "q": 3
+    },
+    {
+     "coefficient": "2",
+     "p": 1,
+     "q": 3
+    },
+    {
+     "coefficient": "-5",
+     "p": 0,
+     "q": 4
+    },
+    {
+     "coefficient": "2",
+     "p": 0,
+     "q": 5
+    },
+    {
+     "coefficient": "1",
+     "p": 0,
+     "q": 6
+    }
+   ],
+   "bounded_dimensions": [
+    14,
+    10,
+    6,
+    6,
+    6,
+    6,
+    6,
+    6
+   ],
+   "core_dimension": 6,
+   "deg_F": 2,
+   "deg_b": 3,
+   "name": "deg b=3, N=2",
+   "regime": "hidden_quadratic",
+   "sharp_depth": 2,
+   "sharpness_witness": "q^3",
+   "static_dimension_beyond_W": 0
+  },
+  {
+   "H": [
+    {
+     "coefficient": "1",
+     "p": 0,
+     "q": 0
+    },
+    {
+     "coefficient": "2",
+     "p": 1,
+     "q": 0
+    },
+    {
+     "coefficient": "1",
+     "p": 2,
+     "q": 0
+    },
+    {
+     "coefficient": "-1",
+     "p": 0,
+     "q": 1
+    },
+    {
+     "coefficient": "-6",
+     "p": 1,
+     "q": 1
+    },
+    {
+     "coefficient": "11",
+     "p": 0,
+     "q": 2
+    },
+    {
+     "coefficient": "2",
+     "p": 1,
+     "q": 2
+    },
+    {
+     "coefficient": "-4",
+     "p": 0,
+     "q": 3
+    },
+    {
+     "coefficient": "2",
+     "p": 1,
+     "q": 3
+    },
+    {
+     "coefficient": "-5",
+     "p": 0,
+     "q": 4
+    },
+    {
+     "coefficient": "2",
+     "p": 0,
+     "q": 5
+    },
+    {
+     "coefficient": "1",
+     "p": 0,
+     "q": 6
+    }
+   ],
+   "bounded_dimensions": [
+    14,
+    10,
+    6,
+    6,
+    6,
+    6,
+    6,
+    6
+   ],
+   "core_dimension": 6,
+   "deg_F": 1,
+   "deg_b": 3,
+   "name": "deg b=3, N=1",
+   "regime": "hidden_quadratic",
+   "sharp_depth": 2,
+   "sharpness_witness": "q^3",
+   "static_dimension_beyond_W": 0
+  },
+  {
+   "H": [
+    {
+     "coefficient": "1",
+     "p": 2,
+     "q": 0
+    },
+    {
+     "coefficient": "2",
+     "p": 1,
+     "q": 3
+    },
+    {
+     "coefficient": "1",
+     "p": 0,
+     "q": 6
+    }
+   ],
+   "bounded_dimensions": [
+    14,
+    10,
+    6,
+    6,
+    6,
+    6,
+    6,
+    6
+   ],
+   "core_dimension": 6,
+   "deg_F": -1,
+   "deg_b": 3,
+   "name": "holdout (p+q^3)^2",
+   "regime": "hidden_quadratic",
+   "sharp_depth": 2,
+   "sharpness_witness": "q^3",
+   "static_dimension_beyond_W": 0
+  },
+  {
+   "H": [
+    {
+     "coefficient": "1",
+     "p": 2,
+     "q": 0
+    },
+    {
+     "coefficient": "1",
+     "p": 1,
+     "q": 4
+    },
+    {
+     "coefficient": "1",
+     "p": 0,
+     "q": 6
+    }
+   ],
+   "bounded_dimensions": [
+    14,
+    10,
+    6,
+    4,
+    2,
+    2,
+    2,
+    2
+   ],
+   "core_dimension": 2,
+   "deg_F": 8,
+   "deg_b": 4,
+   "name": "holdout q^6+q^4 p+p^2",
+   "regime": "generic_nonlinear",
+   "sharp_depth": 4,
+   "sharpness_witness": "q",
+   "static_dimension_beyond_W": 0
+  },
+  {
+   "H": [
+    {
+     "coefficient": "1",
+     "p": 0,
+     "q": 0
+    },
+    {
+     "coefficient": "1",
+     "p": 1,
+     "q": 0
+    },
+    {
+     "coefficient": "1",
+     "p": 2,
+     "q": 0
+    },
+    {
+     "coefficient": "7",
+     "p": 0,
+     "q": 1
+    },
+    {
+     "coefficient": "2",
+     "p": 1,
+     "q": 1
+    },
+    {
+     "coefficient": "-1",
+     "p": 0,
+     "q": 2
+    },
+    {
+     "coefficient": "5",
+     "p": 0,
+     "q": 3
+    },
+    {
+     "coefficient": "-1",
+     "p": 1,
+     "q": 3
+    },
+    {
+     "coefficient": "1",
+     "p": 0,
+     "q": 4
+    },
+    {
+     "coefficient": "3",
+     "p": 1,
+     "q": 4
+    },
+    {
+     "coefficient": "-3",
+     "p": 0,
+     "q": 5
+    },
+    {
+     "coefficient": "2",
+     "p": 0,
+     "q": 6
+    }
+   ],
+   "bounded_dimensions": [
+    14,
+    10,
+    6,
+    4,
+    2,
+    2,
+    2,
+    2
+   ],
+   "core_dimension": 2,
+   "deg_F": 8,
+   "deg_b": 4,
+   "name": "deg b=4 generic",
+   "regime": "generic_nonlinear",
+   "sharp_depth": 4,
+   "sharpness_witness": "q",
+   "static_dimension_beyond_W": 0
+  }
+ ],
+ "claim_boundary": "Kernel comparisons use inputs of total degree <= 6 with untruncated gate outputs, stages 0..7. They are bounded evidence. Witness, invariance and shifted-gate checks are exact polynomial identities.",
+ "depth": 7,
+ "input_degree": 6,
+ "rational_affine_covariance": [
+  {
+   "bounded_dimensions": [
+    18,
+    14,
+    10,
+    6,
+    4,
+    2,
+    2,
+    2
+   ],
+   "case": "b=0 generic f",
+   "determinant": "5",
+   "scalar": "3/2"
+  },
+  {
+   "bounded_dimensions": [
+    15,
+    10,
+    6,
+    4,
+    2,
+    2,
+    2,
+    2
+   ],
+   "case": "deg b=2 generic",
+   "determinant": "5",
+   "scalar": "-2"
+  },
+  {
+   "bounded_dimensions": [
+    14,
+    10,
+    6,
+    5,
+    4,
+    3,
+    2,
+    2
+   ],
+   "case": "deg b=3, N=3",
+   "determinant": "4",
+   "scalar": "2/3"
+  },
+  {
+   "bounded_dimensions": [
+    14,
+    10,
+    6,
+    6,
+    6,
+    6,
+    6,
+    6
+   ],
+   "case": "deg b=3, N=1",
+   "determinant": "2",
+   "scalar": "5"
+  },
+  {
+   "bounded_dimensions": [
+    14,
+    10,
+    6,
+    4,
+    2,
+    2,
+    2,
+    2
+   ],
+   "case": "deg b=4 generic",
+   "determinant": "3",
+   "scalar": "-1/2"
+  }
+ ],
+ "source_sha256": {
+  "research/hamiltonian/c3_strata/verify_quadratic_sixfold.py": "2980355f68e17085edb978d1ca073fcfb1c7e433d366a594997a458f078e8f6e",
+  "research/hamiltonian/c3_strata/verify_sextic_core.py": "d5663e0f9ccfba02ba0a4d8f10f43ec10ec9a241f06917ea0edb65adf93582db",
+  "research/hamiltonian/independent/engine.py": "feafd49628603915e1b4bdf930efd0f862313ae6f4785b2bab3ca971ad58cbbf",
+  "research/hamiltonian/partner_lab.py": "767cb2b597134e796ab17289d1f171dae9f6b55e28b6186df5b2ac26a1310ea8",
+  "research/hamiltonian/sextic_core.py": "e70f0931070d2e70f781d46268f97eb6aa4d6feb8ce42955c5c34762cbf7f2b7"
+ },
+ "static_probes": [
+  {
+   "dimension": 28,
+   "input_degree": 12,
+   "name": "holdout q^6+q^2 p+p^2"
+  },
+  {
+   "dimension": 28,
+   "input_degree": 12,
+   "name": "deg b=2 generic"
+  },
+  {
+   "dimension": 26,
+   "input_degree": 12,
+   "name": "deg b=3, N=6"
+  },
+  {
+   "dimension": 26,
+   "input_degree": 12,
+   "name": "deg b=3, N=3"
+  },
+  {
+   "dimension": 26,
+   "input_degree": 12,
+   "name": "holdout (p+q^3)^2"
+  },
+  {
+   "dimension": 26,
+   "input_degree": 12,
+   "name": "deg b=4 generic"
+  }
+ ],
+ "status": "PASS",
+ "payload_sha256": "2e6aaf89969200c9c0f14793f876677dbeb07fad45af0c11744f00866a79c5be"
+}
