@@ -1,0 +1,37 @@
+name: Complete cubic exceptional variety
+on:
+  pull_request:
+    paths:
+      - 'research/hamiltonian/c3_strata/complete_cubic_exceptional.py'
+      - 'research/hamiltonian/c3_strata/COMPLETE_CUBIC_EXCEPTIONAL_THEOREM.md'
+      - 'research/hamiltonian/c3_strata/test_complete_cubic_exceptional.py'
+      - '.github/workflows/complete-cubic-exceptional.yml'
+  push:
+    paths:
+      - 'research/hamiltonian/c3_strata/complete_cubic_exceptional.py'
+      - 'research/hamiltonian/c3_strata/COMPLETE_CUBIC_EXCEPTIONAL_THEOREM.md'
+      - 'research/hamiltonian/c3_strata/test_complete_cubic_exceptional.py'
+      - '.github/workflows/complete-cubic-exceptional.yml'
+  workflow_dispatch:
+jobs:
+  exact-symbolic:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install exact algebra
+        run: python -m pip install sympy==1.14.0
+      - name: Prove all-degree rank minors and shear covariance
+        run: python -m unittest discover -s research/hamiltonian/c3_strata -p 'test_complete_cubic_exceptional.py' -v
+      - name: Retain independently replayable certificate
+        run: |
+          python research/hamiltonian/c3_strata/complete_cubic_exceptional.py > /tmp/cubic-exceptional.json
+          python research/hamiltonian/c3_strata/complete_cubic_exceptional.py > /tmp/cubic-exceptional-repeat.json
+          diff -u /tmp/cubic-exceptional.json /tmp/cubic-exceptional-repeat.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: all-degree-cubic-exceptional-certificate
+          path: /tmp/cubic-exceptional.json
