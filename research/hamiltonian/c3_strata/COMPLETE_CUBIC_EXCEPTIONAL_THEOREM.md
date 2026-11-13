@@ -102,10 +102,35 @@ T_3(H,D_Hq^2)=48(3xv-w^2)=48\Delta,
 
 independently corroborating the shear.
 
+## Lean verification
+
+[`CubicExceptional`](formal/SexticC3/CubicExceptional.lean) proves the
+displayed defect identity, the equivalence between `q²` surviving the
+first refinement and `Δ = 0`, and the survival of `q`. It also
+proves the normal form and iterated gate transport under the shear, both
+static differential identities, and the resulting bound on p-exponents.
+
+For the determinant step, the exact symbolic replay gives the following
+permutations of the selected minors. These are zero-based positions
+within each extracted minor, in the order used by the verifier. Applying
+both permutations gives lower triangular matrices.
+
+| Minor | Row permutation | Column permutation |
+| --- | --- | --- |
+| 11 | 2, 5, 6, 8, 0, 9, 1, 3, 10, 4, 7 | 0, 3, 1, 7, 8, 4, 5, 9, 2, 6, 10 |
+| 12 | 4, 7, 9, 1, 10, 2, 5, 11, 3, 6, 8, 0 | 2, 0, 6, 10, 3, 7, 8, 1, 4, 5, 9, 11 |
+| 13 | 2, 5, 6, 8, 0, 9, 1, 3, 10, 4, 7, 11, 12 | 0, 3, 1, 7, 8, 4, 5, 9, 2, 6, 10, 11, 12 |
+
+A Lean determinant proof can establish the above-diagonal zeros and
+diagonal entries directly from the static basis and iterated gates, then
+use the triangular determinant theorem and the permutation signs. The
+static basis completeness and these matrix entry identities are still
+external to Lean.
+
 ## Scope
 
 This classifies the entire four-parameter **cubic** lower-order slice with
 \(x\ne0\). General quintic/quartic perturbations, the cubic boundary \(x=0\),
-the full 21-parameter all-degree classification, and Lean formalization are
+the full 21-parameter all-degree classification, and a complete Lean formalization are
 separate open problems. The proof is an exact symbolic argument with
 replayable integer/rational minors, not a bounded empirical search.

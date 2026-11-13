@@ -25,6 +25,7 @@ import SexticC3.TailRawRows
 import SexticC3.TailFirstRow
 import SexticC3.TailEliminationAxes
 import SexticC3.TailTransport
+import SexticC3.CubicExceptional
 
 namespace SexticC3
 
