@@ -76,5 +76,32 @@ class ExistingFamilyOverlap(unittest.TestCase):
         self.assertEqual(M.window_dimensions(h, 12, (0, 1, 2, 3)), [15, 3, 2, 2])
 
 
+class CoreClosure(unittest.TestCase):
+    def test_euler_cramer_identity(self):
+        c = S.Symbol("c")
+        s = S.Function("s")(q, P)
+        for h, (wq, wP), d in ((P**3 + c*q**5, (3, 5), 15), (P**3 + c*q**3*P, (2, 3), 9), (P**3 + c*q**4, (3, 4), 12)):
+            bracket = S.diff(h, q)*S.diff(s, P) - S.diff(h, P)*S.diff(s, q)
+            euler = wq*q*S.diff(s, q) + wP*P*S.diff(s, P)
+            self.assertEqual(S.expand(wq*q*bracket - (d*h*S.diff(s, P) - euler*S.diff(h, P))), 0)
+            self.assertNotEqual(S.resultant(h, S.diff(h, P), P), 0)
+
+    def test_adversarial_loci_have_two_dimensional_core(self):
+        for b, c in (((1, -2, 3, 5), (0, 2, 1, -1, 4, -3)),      # 3 b3 + 5 c5 = 0
+                     ((2, 1, -9, 0), (0, 1, -2, 3, 5, 0)),       # 5 b2 + 9 c4 = 0
+                     ((1, 3, -4, 0), (0, 2, 1, -3, 2, 0))):      # E = 0
+            self.assertEqual(M.window_dimensions(M.reduced_hamiltonian(b, c), 12, (5,)), [2])
+
+    def test_first_refinement_partner(self):
+        gam, b0 = S.symbols("gamma b0")
+        B, C = b0 + q**2, eps*q + lam*q**2 + gam*q**3
+        D, T3, T5 = M.chart_operators(B, C)
+        J = 3*P**2 + 2*q**2 + (2 - 6*lam)*P
+        self.assertEqual((T3(J), T5(J), T5(D(J))), (0, 0, 0))
+        self.assertEqual(S.expand(T3(D(J)) + 1296*gam*q), 0)
+        self.assertEqual(M.window_dimensions(M.reduced_hamiltonian((2, 0, 1, 0), (0, 3, 5, 0, 0, 0)), 12, (1, 2)), [4, 2])
+        self.assertEqual(M.window_dimensions(M.reduced_hamiltonian((2, 0, 1, 0), (0, 3, 5, 7, 0, 0)), 12, (1, 2)), [3, 2])
+
+
 if __name__ == "__main__":
     unittest.main()

@@ -94,10 +94,14 @@ The historical experiment column is retained as a regression, not as proof.
 These results do not assert a complete classification of all 21 parameters.
 The [cube-leading boundary theorem](CUBE_LEADING_BOUNDARY_THEOREM.md) now gives
 a uniform weight-12 first-refinement bound and stopping depth 14 on that
-boundary, apart from one explicitly identified infinite-core family. It also
-classifies the core on the seven-parameter locus $\deg B\le2$, $\deg C\le3$.
-The complete parameter stratification where $b_3$, $c_4$, or $c_5$ is nonzero
-remains open, as does the exact first-refinement jump locus in its Theorem G.
+boundary, apart from one explicitly identified infinite-core family. Its
+Theorem K classifies the persistent core on the entire reduced ten-parameter
+family: it equals $\operatorname{span}\{1,H\}$ exactly when $B,C$ are not both
+affine. Theorem G′ also closes the first-refinement jump locus on
+$b_3=c_4=c_5=0\ne b_2$: it is exactly $c_3=0$.
+The full intermediate-refinement classification and exact stopping depths
+where $b_3$, $c_4$, or $c_5$ is nonzero remain open; the persistent core there
+has no exceptional parameter value.
 The $c_{04}=0\ne c_{32}$ boundary has an infinite static space; the
 quadratic-sixfold theorem separately supplies finite first-refinement bounds
 and a core result for its leading form. See the

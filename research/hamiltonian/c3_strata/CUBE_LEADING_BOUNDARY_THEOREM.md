@@ -267,9 +267,31 @@ parameter value. In this normal form,
 $T_3(H,D^2q)=432(2P+3\gamma q+\lambda)$; its nonzero $P$ coefficient proves
 $q\notin S^2$ at every parameter point. $\square$
 
-[finite] In the normal form $b_1=0$, $b_2=1$: $\dim S^1=3$ at sampled members
-with $c_3\ne0$ and $4$ at sampled members with $c_3=0$; the exact locus where
-$\dim S^1=4$ was not determined.
+**Theorem G′ (first-refinement jump).** In the normal form
+$H=P^3+(q^2+b_0)P+\gamma q^3+\lambda q^2+\epsilon q+c_0$,
+
+$$S^1(H)=\operatorname{span}\{1,q,H\}\ \text{ if }\gamma\ne0,\qquad
+S^1(H)=\operatorname{span}\{1,q,H,J\}\ \text{ if }\gamma=0,\qquad
+J=3P^2+2q^2+(2-6\lambda)P,$$
+
+for every value of $b_0,\lambda,\epsilon,c_0$. Invariantly: on the stratum
+$b_3=c_4=c_5=0$, $b_2\ne0$, $\dim S^1=4$ exactly when $c_3=0$, and 3 otherwise
+(translation and scaling N4 preserve the vanishing of $c_3$).
+
+*Proof.* $T_3(H,J)=T_5(H,J)=T_5(H,D_HJ)=0$ and $T_3(H,D_HJ)=-1296\gamma q$
+[cert, in the chart and directly in the original coordinates], so the stated
+spaces are contained in $S^1$ and their elements are independent. For the
+reverse inclusions, on the 15-dimensional static basis a single $12\times12$
+minor is a nonzero rational multiple of $\gamma$. On $\gamma=0$, a single
+$11\times11$ minor is a nonzero rational constant. These give rank $\ge12$
+and $\ge11$ on the respective loci, uniformly in all remaining parameters.
+The exact rows, columns, determinants and normalizing constants are retained
+in `CUBE_LEADING_CLOSURE_REVIEW_CERTIFICATE.json` and reconstructed by
+`verify_cube_leading_closure_review.py`. They are, respectively, zero-based
+minor 14 of the original rank-12 list and minor 5 of the original rank-11
+list. Thus no Gröbner computation is needed for completeness. The original
+sixteen-minor certificates on each locus, including their Gröbner replay
+`verify_cube_leading_first_refinement.py`, remain available. $\square$
 
 **Corollary (Theorems C, E, G).** On the seven-parameter stratum
 $b_3=c_4=c_5=0$ ($\deg B\le2$, $\deg C\le3$): $D_\infty(H)=\operatorname{span}\{1,H\}$
@@ -288,26 +310,121 @@ $b_2=c_3=0$ and $c_2\ne0$, depth 3 is necessary and sufficient.
 | $\deg B=1$, $\deg C=2$ | sufficient | chain 15, 4, 3, 2; depth 3 needed |
 | $b_3=c_4=c_5=0$: $B,C$ not both affine | equivalent | $D_\infty=\operatorname{span}\{1,H\}$ |
 | $b_3=c_4=c_5=0$, $(b_2,c_3)\ne(0,0)$ | equivalent on the two-dimensional-core locus | depth 2 is necessary and sufficient; the remaining $c_2\ne0$ branch needs depth 3 |
-| $B$, $C$ both affine | equivalent on that stratum, conjectural in general | $D_\infty\ne\operatorname{span}\{1,H\}$ |
+| $B$, $C$ both affine | equivalent, all ten parameters (Theorem K) | $D_\infty\ne\operatorname{span}\{1,H\}$ |
+| $b_3=c_4=c_5=0\ne b_2$: $c_3=0$ | equivalent | $\dim S^1=4$ (otherwise 3) |
 
-## 6. Conjecture and finite evidence
+## 6. Theorem K (core closure) and the complete core classification
 
-**Conjecture F.** $D_\infty(H)=\operatorname{span}\{1,H\}$ for every member of the
-reduced family in which $B$ and $C$ are not both affine.
+**Theorem K.** If at least one of $b_3,c_4,c_5$ is nonzero, then
+$D_\infty(H)=\operatorname{span}\{1,H\}$. There is no exceptional parameter value.
 
-The Corollary of Section 4c proves it when $b_3=c_4=c_5=0$. A complete parameter
-stratification is still open on the union where at least one of $b_3,c_4,c_5$
-is nonzero; Theorem D already covers a nonempty open subset there. [finite] By the uniform tail each
-single-stratum member listed in `CUBE_LEADING_BOUNDARY_REPLAY.json` under
-`survey_finite_evidence` (including $b_3$, $c_4$, $c_5$ alone and the generic point of
-Theorem D) is individually a theorem, $S^4=\operatorname{span}\{1,H\}$ on the exact
-window, but those strata are sampled, not classified. The method of Sections
-4–4c applies verbatim, the tail bound being uniform; the obstacle is only the
-size of the symbolic minors in the remaining parameters, and on the locus
-$3b_3+5c_5\ne0$ the static space has dimension 14 with a parameter-dependent basis.
-There is no remaining unknown degree cutoff or stopping depth on this family:
-the unresolved problem is the explicit parameter classification of the finite
-matrices, including any exceptional loci.
+**Corollary (complete persistent-core classification).** For every member of the
+reduced ten-parameter family,
+$D_\infty(H)=\operatorname{span}\{1,H\}$ **if and only if** $B$ and $C$ are not both
+affine. When both are affine, $H=P^3+(b_0+b_1q)P+c_1q+c_0$ lies in the cubic-phase
+family and $\dim D_\infty\in\{5,6,\infty\}$ (Section 4b, case 3). [proof: Theorem K
+and the Corollary of Section 4c.]
+
+The proof uses no parameter-dependent matrices. It rests on three facts: $D_H$
+is the Poisson bracket of the chart; a finite-dimensional $D_H$-stable space is
+controlled by the leading form of $H$ along the Newton edge through $P^3$; and
+the static recurrences of Theorem A forbid a partner whose leading form is the
+square of that leading form.
+
+**Lemma K1 (chart bracket).** $D_HG=H_qG_P-H_PG_q$ in the chart $(q,P)$, since
+$dq\wedge dp=dq\wedge dP$. For weights $(w_q,w_P)$ the bracket of forms of weights
+$a,b$ is a form of weight $a+b-(w_q+w_P)$. [cert]
+
+**Lemma K2 (Euler–Cramer).** Let $h$ be weighted-homogeneous of weight $d$ and
+$s$ a form of weight $w$. Then
+$w_q\,q\,\{h,s\}=d\,h\,s_P-w\,s\,h_P$. [Lean: `euler_cramer`; cert.]
+*Proof.* Apply the adjugate of $\begin{pmatrix}h_q&h_P\\ s_q&s_P\end{pmatrix}$ to the two
+Euler relations. $\square$
+
+**Lemma K3 (no slice).** Use positive integer weights $w_q,w_P$. Let $h$ be weighted-homogeneous of weight
+$d>w_q+w_P$, squarefree and coprime to $h_P$. Then every form $t$ with
+$D_h^nt=0$ for some $n$ is a scalar multiple of a power of $h$.
+*Proof.* First, $\ker D_h$ on forms: if $\{h,s\}=0$ and $w\ne0$, K2 gives
+$h\mid s\,h_P$, hence $h\mid s$ and $s=hs_1$ with $\{h,s_1\}=0$; induction on the
+weight gives $s=ch^k$. Next suppose $\{h,s\}=c\,h^k$ with $c\ne0$. Then $w\ne0$.
+If $k\ge1$, K2 gives $h\mid w\,s\,h_P$ [Lean: `leading_form_dvd`], so $s=hs_1$ and
+$\{h,s_1\}=c\,h^{k-1}$. Descending to $k=0$ gives a form $s_0$ with
+$\{h,s_0\}=c\ne0$, of weight $w_q+w_P-d<0$, which is absurd. Finally, if
+$D_h^nt=0$ with $n\ge2$ minimal, then $s=D_h^{n-2}t$ satisfies
+$0\ne D_hs\in\ker D_h$, i.e. $\{h,s\}=ch^k$ with $c\ne0$, which was just excluded.
+So $n\le1$. $\square$
+
+[finite cross-check: for the three forms below, $\ker D_h^2=\ker D_h=Kh^k$ on
+every weight up to $4d$.]
+
+**Lemma K4 (leading forms of a stable space).** Let $H=h+(\text{lower weight})$
+with $h$ as in K3, and let $V$ be a finite-dimensional $D_H$-stable space of
+polynomials. Then the leading form of every nonzero element of $V$ is a scalar
+multiple of a power of $h$; in particular
+$\dim V\le\#\{k\ge0:\ ch^k\text{ is the leading form of an element of }V\}$.
+*Proof.* Filter $V$ by weight. By K1, $D_H$ maps weight $\le w$ into weight
+$\le w+\delta$, $\delta=d-w_q-w_P>0$, and induces on the associated graded space,
+which is the space of leading forms of $V$, the map $D_h$. That map raises the
+weight on a finite-dimensional graded space, so it is nilpotent, and K3 applies.
+Equivalently, if $V$ has maximum weight $N$ and $G\in V$ has leading form $g$
+of weight $w$, then $D_h^m g\ne0$ would force $D_H^mG$ to have weight
+$w+m\delta$; for sufficiently large $m$ this exceeds $N$, contradicting stability.
+Two elements with proportional leading forms differ, after scaling, by an
+element of lower weight, which gives the dimension bound. $\square$
+
+*Proof of Theorem K.* Take $V=D_\infty(H)$. It is $D_H$-stable, contains $1$ and
+$H$, and is finite-dimensional with every element of $P$-degree $\le6$: by
+Theorem A when $E\not\equiv0$, and by Theorem B when $E\equiv0$ (then
+$b_3=c_5=0\ne c_4$, so $b_2=-2c_4\ne0$). The Newton edge through $P^3$ is one of
+three.
+
+| case | weights $(w_q,w_P)$ | leading form $h$ | $d$ | $\delta$ |
+|---|---|---|---|---|
+| I: $c_5\ne0$ | $(3,5)$ | $P^3+c_5q^5$ | 15 | 7 |
+| II: $c_5=0\ne b_3$ | $(2,3)$ | $P^3+b_3q^3P$ | 9 | 4 |
+| III: $b_3=c_5=0\ne c_4$ | $(3,4)$ | $P^3+c_4q^4$ | 12 | 5 |
+
+In each case every other monomial of $H$ has smaller weight. The exact
+resultants $\operatorname{Res}_P(h,h_P)$ are, respectively,
+$27c_5^2q^{10}$, $4b_3^3q^9$, and $27c_4^2q^8$. They are nonzero for every
+coefficient allowed in the corresponding case. Since $h$ is monic in $P$,
+it has no nonconstant factor depending only on $q$; the resultants therefore
+show that $h$ is squarefree and coprime to $h_P$ in $K[q,P]$ [cert:
+`verify_cube_leading_closure_review.py`]. By K4 the leading forms of
+$V$ are multiples of $1,h,h^2,\dots$, and $h^k$ has $P$-degree $3k$, so only
+$k\le2$ can occur and $\dim V\le3$, with equality exactly when $V$ contains a
+static $G$ with leading form $h^2$. Write $G=\sum_ka_k(q)P^k$; then $a_6=1$, and
+the recurrences of Theorem A apply.
+
+Case I. $h^2=P^6+2c_5q^5P^3+c_5^2q^{10}$. The $P^4$ equation requires
+$(3b_3+5c_5)a_6=0$. The $P^3$ equation gives the coefficient of $q^5$ in $a_3$ as
+$2(3b_3+10c_5)a_6$ [cert], which must equal $2c_5$. The two conditions force
+$c_5=0$ [Lean: `case_one_obstruction`]. Contradiction.
+
+Case II. $h^2$ again has $P^6$-coefficient 1, so $3b_3+5c_5=0$ with $c_5=0$ forces
+$b_3=0$. Contradiction.
+
+Case III. $h^2=P^6+2c_4q^4P^3+c_4^2q^8$ has weight 24, so
+$a_3=2c_4q^4+(\text{lower})$ and $\deg a_2\le5$ (the monomial $q^6P^2$ has weight
+26). With $b_3=c_5=0$ one has $a_4'=0$ and $a_5'=0$, and the $P^2$ equation
+$a_2'''=-54a_3'-12b_2a_4'+60E_0a_5$ gives the coefficient of $q^6$ in $a_2$ as
+$-\tfrac{18}{5}c_4$ [cert]. Contradiction.
+
+Hence $\dim V=2$. $\square$
+
+*Why the affine family escapes.* For $B,C$ affine with $b_1\ne0$ the edge through
+$P^3$ ends at $qP$, the weights are $(2,1)$, and $\delta=d-w_q-w_P=0$: the induced
+map on leading forms is not nilpotent and K4 does not apply. This is exactly
+the cubic-phase family. The same mechanism gives an alternative, matrix-free
+route to the Corollary of Section 4c wherever the edge through $P^3$ has
+$\delta>0$ and a squarefree leading form; that route was not carried out here and
+the certificate proofs of Sections 4–4c remain the proofs of record there.
+
+[finite cross-check: ten adversarial members, including the loci
+$3b_3+5c_5=0$, $5b_2+9c_4=0$ and $E\equiv0$ where the coefficient count alone
+leaves room, and thirty random members of the three cases, all reach
+$\operatorname{span}\{1,H\}$ by depth 5 on the exact window;
+`CUBE_LEADING_CORE_CLOSURE_REPLAY.json`.]
 
 ## 7. Lean
 
@@ -321,6 +438,15 @@ transport of $T_3,T_5$ to the chart, the reduction $G=g(u)+\tilde G$, and the ra
 certificates of Theorem C; the Lean lemmas are univariate and are linked to the
 bivariate operators only through the [cert] identities of Sections 1–2.
 
+`formal/SexticC3/CubeLeadingCore.lean` (same toolchain; `propext`, `Quot.sound`, and
+`Classical.choice` only for the field lemma; no `sorry`): `euler_cramer`,
+`euler_cramer'`, `leading_form_dvd` (Lemma K2 and the divisibility step of K3, in
+an arbitrary commutative ring with the partial derivatives constrained only by
+the Euler relations), and `case_one_obstruction`. **Not formalised:** Lemma K4
+(the filtration argument), the unique-factorisation step $h\mid s\,h_P\Rightarrow
+h\mid s$, and the static recurrences; Theorem K is a human proof whose identities
+are replayed exactly, not a Lean theorem.
+
 ## 8. Replay
 
 ```
@@ -330,16 +456,20 @@ python verify_cube_leading_quadratic_short.py   # Theorem G: three exact minors 
 python verify_cube_leading_review.py           # independent iterated PerfectJet gates, exact minors and kernels
 # Optional historical 32-minor replay (may take substantially longer):
 # python verify_cube_leading_quadratic_stratum.py
+python verify_cube_leading_core_closure.py     # Theorem K: identities, bounded slice check, adversarial members
+python verify_cube_leading_first_refinement.py # Theorem G': partner J and the rank 12 / rank 11 certificates
+python verify_cube_leading_closure_review.py   # three uniform resultants and the two-minor proof of Theorem G'
 python -m pytest test_cube_leading_boundary.py  # fast unit tests
-cd formal && lake build SexticC3.CubeLeadingGate && lake env lean AuditCubeLeadingGate.lean
+cd formal && lake build SexticC3.CubeLeadingGate SexticC3.CubeLeadingCore && lake env lean AuditCubeLeadingGate.lean && lake env lean AuditCubeLeadingCore.lean
 ```
 
 The cube-leading workflow requires the pinned PerfectJet comparison and checks
-that replay leaves the four active JSON receipts unchanged. The original
+that replay leaves the seven active JSON receipts unchanged. The original
 32-minor receipt remains available with its optional slower replay. The
 `sextic-formal` workflow explicitly builds the new module and compares its
-axiom audit with the retained output. The Lean scope remains the univariate
-lemmas described above, not an end-to-end formalization of the classifications.
+axiom audit with the retained output. The Lean scope comprises the
+degree/resonance lemmas and abstract Euler–Cramer/divisibility identities
+described above, not an end-to-end formalization of the classifications.
 The additional review certificate verifies that all four specialized symbolic
 static bases have polynomial parameter coefficients, and records explicit
 nonzero minors and kernel vectors for twelve matrices built entirely with
