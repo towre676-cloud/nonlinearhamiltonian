@@ -1,13 +1,26 @@
-# Uniform fifth-gate cutoff for affine quadratic-momentum coefficients
+# Complete static classification for affine quadratic-momentum coefficients
 
-Let K be a characteristic-zero field, let h(q)∈K[q] have degree six, and let A(q),B(q)∈K[q] satisfy deg A≤1 and deg B≤1. Put
+Let K be a characteristic-zero field, let h(q)∈K[q] have degree six, and let A(q),B(q)∈K[q] satisfy deg A≤1 and deg B≤1. Put H=h(q)+A(q)p+B(q)p², and define S⁰(H)=ker T₃(H,-)∩ker T₅(H,-).
 
-H=h(q)+A(q)p+B(q)p².
+**Theorem (all polynomial degrees).** Every G∈S⁰(H) has degₚG≤4. Write G=∑_{j=0}⁴ g_j(q)pʲ and B(q)=b₀+b₁q.
 
-**Theorem.** Every polynomial static partner G satisfying T₅(H,G)=0 has degₚ G≤4. In particular S⁰(H) is contained in K[q]⊕pK[q]⊕⋯⊕p⁴K[q]. If B(q)=a+bq, the third gate on this five-row space is
+If b₁≠0, the complete static classification is
 
-T₃(H,G)=h'''(q)∂ₚ³G+6b∂q²∂ₚG.
+- g₀∈K[q] arbitrary;
+- g₃,g₄∈K[q] arbitrary of degree at most one;
+- g₁ and g₂ are the polynomial solutions, unique up to affine summands, of
+  g₁''=−h'''g₃/b₁ and g₂''=−2h'''g₄/b₁.
 
-**Proof.** The terms A(q)p and B(q)p² have total degree at most three, so all of their fifth-order partial derivatives vanish. The only fifth-order derivative of H is ∂q⁵H=h'''''(q), which is a nonzero linear polynomial because deg h=6. Consequently T₅(H,G)=h'''''(q)∂ₚ⁵G. Since K[q,p] is an integral domain and characteristic zero, this vanishes exactly when ∂ₚ⁵G=0, equivalent to degₚG≤4. The only nonzero third derivatives of H are ∂q³H=h''' and ∂q∂p²H=2b. The binomial coefficient 3 in T₃ yields the additional 6b∂q²∂ₚG term.
+Thus S⁰(H) is isomorphic as a K-vector space to K[q]⊕K⁸, with four coefficients in g₃,g₄ and four integration constants. In particular it is infinite-dimensional.
 
-This applies to arbitrary sextic h and affine A,B. It does not classify the static coefficients or refinements, and does not extend unchanged to nonlinear A or B.
+If b₁=0, the complete static classification is G=g₀(q)+p g₁(q)+p²g₂(q) with g₀,g₁,g₂ arbitrary, i.e. S⁰(H)=K[q]⊕pK[q]⊕p²K[q].
+
+**Proof.** The terms A(q)p and B(q)p² have total degree at most three, so their fifth-order partial derivatives vanish. Since h has degree six, T₅(H,G)=h'''''(q)∂ₚ⁵G and h'''''≠0, hence degₚG≤4.
+
+The third gate is T₃(H,G)=h'''(q)∂ₚ³G+6b₁∂q²∂ₚG. Its coefficients at p³,p²,p¹,p⁰ respectively are
+
+24b₁g₄'', 18b₁g₃'', 24h'''g₄+12b₁g₂'', 6h'''g₃+6b₁g₁''.
+
+For b₁≠0, these equations yield exactly the stated solutions, and each polynomial right-hand side has a polynomial double antiderivative in characteristic zero. For b₁=0, h'''≠0 forces g₃=g₄=0, leaving g₀,g₁,g₂ arbitrary. Conversely every displayed solution satisfies both gates.
+
+**Scope.** This classifies the entire static space for affine A,B, not just its momentum-quadratic sector. It does not classify S¹ or the persistent core, nor non-affine B(q). The proof is elementary and all-degree but not yet Lean formalized.
