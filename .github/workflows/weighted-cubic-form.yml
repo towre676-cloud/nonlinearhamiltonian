@@ -8,6 +8,7 @@ on:
       - 'research/hamiltonian/c3_strata/quartic_edge.py'
       - 'research/hamiltonian/c3_strata/generic_sixfold_stratum.py'
       - 'research/hamiltonian/c3_strata/verify_generic_sixfold_stratum.py'
+      - 'research/hamiltonian/c3_strata/verify_qp3_stratum.py'
       - 'research/hamiltonian/c3_strata/verify_quartic_edge.py'
       - 'research/hamiltonian/c3_strata/verify_weighted_cubic_form.py'
       - 'research/hamiltonian/c3_strata/test_weighted_cubic_form.py'
@@ -33,3 +34,5 @@ jobs:
         run: python research/hamiltonian/c3_strata/verify_quartic_edge.py
       - name: Independent replay of the generic stratum
         run: python research/hamiltonian/c3_strata/verify_generic_sixfold_stratum.py
+      - name: Independent replay of the q^6 + c q p^3 stratum
+        run: python research/hamiltonian/c3_strata/verify_qp3_stratum.py

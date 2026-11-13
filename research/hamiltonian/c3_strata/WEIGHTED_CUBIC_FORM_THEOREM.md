@@ -140,6 +140,6 @@ The boundary $x=0$, the full refinement tower on the cube locus beyond Theorem 4
 ~~~sh
 python verify_weighted_cubic_form.py          # 46 checks, writes WEIGHTED_CUBIC_FORM_REPLAY.json
 python verify_quartic_edge.py                 # 9 checks, about 2 minutes
-python -m unittest test_weighted_cubic_form   # 15 tests
+python -m unittest test_weighted_cubic_form   # 16 tests
 cd formal && lake build SexticC3.WeightedCubicForm && lake env lean AuditWeightedCubicForm.lean
 ~~~

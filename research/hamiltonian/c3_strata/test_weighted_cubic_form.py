@@ -121,5 +121,15 @@ class GenericStratum(unittest.TestCase):
         self.assertRaises(ValueError, GS.hamiltonian, 0)
 
 
+class Qp3Stratum(unittest.TestCase):
+    def test_static_basis_and_refinements(self):
+        h = {(6, 0): Fr(1), (1, 3): Fr(5, 3)}
+        basis = [(a, b) for a in range(21) for b in range(6)]
+        self.assertEqual([len(W.gate_system(h, basis, r).witnesses()) for r in (0, 1, 2)], [14, 3, 2])
+        # p^4 alone is not static, q p^4 + (16/c) q^6 p is
+        self.assertTrue(W.transvectant(h, {(0, 4): Fr(1)}, 3))
+        self.assertFalse(W.transvectant(h, {(1, 4): Fr(1), (6, 1): Fr(16) / Fr(5, 3)}, 3))
+
+
 if __name__ == "__main__":
     unittest.main()
