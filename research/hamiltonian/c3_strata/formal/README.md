@@ -1,5 +1,25 @@
 # Lean bridge for squarefree sextic certificates
 
+## Nonlinear quadratic-momentum classification
+
+`SexticC3.NonlinearBClassification` proves the complete all-degree first and
+second refinements and persistent core for
+`H=h(q)+(a0+a1q)p+B(q)p²`, with sextic h and quadratic or cubic B, over every
+characteristic-zero field. It uses the actual `Differential.contraction`
+operators on Mathlib's bivariate polynomial ring.
+
+For cubic B, the exceptional hypersurface is `b2²−3b3b1=0`; the extra centered
+qp direction disappears at the second refinement. The core in both B degrees
+is exactly the constant-energy span. The generic cubic first refinement
+already equals this span. There is no observable-degree assumption.
+
+See [the proof and theorem map](../NONLINEAR_B_QUADRATIC_CUBIC.md). Run
+`lake env lean AuditNonlinearB.lean` for the 73-theorem axiom audit and
+`lake env lean RegressionNonlinearB.lean` for eight focused examples.
+These modules use no added axioms or admitted proofs.
+
+## Squarefree certificate bridge
+
 This is an optional Lean 4.19.0 / Mathlib v4.19.0 project next to the
 maintained Python verifier. The source is the repository's
 `squarefree-sextic-discriminant-v1` certificate at main commit

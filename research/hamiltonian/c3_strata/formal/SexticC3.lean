@@ -1,3 +1,4 @@
+import SexticC3.NonlinearBClassification
 import SexticC3.Discriminant
 import SexticC3.Degree1
 import SexticC3.Degree2
