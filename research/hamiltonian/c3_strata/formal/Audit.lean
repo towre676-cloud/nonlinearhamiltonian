@@ -1,0 +1,169 @@
+import SexticC3
+import SexticC3.TailAllDegrees
+import SexticC3.TailChartAxes
+import Lean.Util.CollectAxioms
+
+open Lean Elab Command
+
+elab "audit_axioms " decl:ident : command => do
+  let name ← liftCoreM <| Lean.Elab.realizeGlobalConstNoOverloadWithInfo decl
+  let axioms ← Lean.collectAxioms name
+  let allowed := [``propext, ``Classical.choice, ``Quot.sound]
+  let unexpected := axioms.filter fun axiomName => !allowed.contains axiomName
+  unless unexpected.isEmpty do
+    throwError "{name} depends on unexpected axioms: {unexpected}"
+  logInfo m!"{name} depends on axioms: {axioms}"
+
+audit_axioms SexticC3.delta_eq_derivativeMultiplicationDet
+
+audit_axioms SexticC3.Degree6.recorded_identity
+audit_axioms SexticC3.Degree6.discriminant_in_selected_span
+audit_axioms SexticC3.Degree6.kernel_bound
+audit_axioms SexticC3.Degree6.lift1_eq_hCoeff
+audit_axioms SexticC3.Degree6.hamiltonian_kernel
+
+audit_axioms SexticC3.Degree1.recorded_identity
+audit_axioms SexticC3.Degree1.discriminant_in_selected_span
+audit_axioms SexticC3.Degree1.kernel_bound
+
+audit_axioms SexticC3.Degree2.recorded_identity
+audit_axioms SexticC3.Degree2.discriminant_in_selected_span
+audit_axioms SexticC3.Degree2.kernel_bound
+
+audit_axioms SexticC3.Degree3.recorded_identity
+audit_axioms SexticC3.Degree3.discriminant_in_selected_span
+audit_axioms SexticC3.Degree3.kernel_bound
+
+audit_axioms SexticC3.Degree4.recorded_identity
+audit_axioms SexticC3.Degree4.discriminant_in_selected_span
+audit_axioms SexticC3.Degree4.kernel_bound
+
+audit_axioms SexticC3.Degree5.recorded_identity
+audit_axioms SexticC3.Degree5.discriminant_in_selected_span
+audit_axioms SexticC3.Degree5.kernel_bound
+
+audit_axioms SexticC3.Degree7.recorded_identity
+audit_axioms SexticC3.Degree7.discriminant_in_selected_span
+audit_axioms SexticC3.Degree7.kernel_bound
+
+audit_axioms SexticC3.Degree8.recorded_identity
+audit_axioms SexticC3.Degree8.discriminant_in_selected_span
+audit_axioms SexticC3.Degree8.kernel_bound
+
+audit_axioms SexticC3.Degree9.recorded_identity
+audit_axioms SexticC3.Degree9.discriminant_in_selected_span
+audit_axioms SexticC3.Degree9.kernel_bound
+
+audit_axioms SexticC3.Degree10.recorded_identity
+audit_axioms SexticC3.Degree10.discriminant_in_selected_span
+audit_axioms SexticC3.Degree10.kernel_bound
+
+audit_axioms SexticC3.Degree11.recorded_identity
+audit_axioms SexticC3.Degree11.discriminant_in_selected_span
+audit_axioms SexticC3.Degree11.kernel_bound
+
+audit_axioms SexticC3.Degree12.recorded_identity
+audit_axioms SexticC3.Degree12.discriminant_in_selected_span
+audit_axioms SexticC3.Degree12.kernel_bound
+
+audit_axioms SexticC3.Degree13.recorded_identity
+audit_axioms SexticC3.Degree13.discriminant_in_selected_span
+audit_axioms SexticC3.Degree13.kernel_bound
+
+audit_axioms SexticC3.Degree14.recorded_identity
+audit_axioms SexticC3.Degree14.discriminant_in_selected_span
+audit_axioms SexticC3.Degree14.kernel_bound
+
+audit_axioms SexticC3.Degree15.recorded_identity
+audit_axioms SexticC3.Degree15.discriminant_in_selected_span
+audit_axioms SexticC3.Degree15.kernel_bound
+
+audit_axioms SexticC3.Degree16.recorded_identity
+audit_axioms SexticC3.Degree16.discriminant_in_selected_span
+audit_axioms SexticC3.Degree16.kernel_bound
+
+audit_axioms SexticC3.finite_kernel_bound
+
+audit_axioms SexticC3.Exceptional411.first_iterate
+audit_axioms SexticC3.Exceptional411.second_iterate
+audit_axioms SexticC3.Exceptional411.static_gates
+audit_axioms SexticC3.Exceptional411.second_obstruction
+audit_axioms SexticC3.Exceptional411.second_obstruction_nonzero
+
+audit_axioms SexticC3.StaticTail.intCast_falling
+audit_axioms SexticC3.StaticTail.weight_three
+audit_axioms SexticC3.StaticTail.weight_five
+audit_axioms SexticC3.StaticTail.static_pivot
+audit_axioms SexticC3.StaticTail.rowValue_static
+audit_axioms SexticC3.StaticTail.rowValue_top_split
+audit_axioms SexticC3.StaticTail.kernel_zero_of_edge_zero
+audit_axioms SexticC3.StaticTail.certificate_pivot
+audit_axioms SexticC3.StaticTail.certificate_top_equation
+audit_axioms SexticC3.StaticTail.reconstruct_eq
+audit_axioms SexticC3.StaticTail.reconstructed_fifth_rows
+audit_axioms SexticC3.StaticTail.target_factorization
+audit_axioms SexticC3.StaticTail.delta_zero_of_targets
+audit_axioms SexticC3.StaticTail.pDerivative_monomial
+
+audit_axioms SexticC3.StaticTail.reconstruct_linear
+audit_axioms SexticC3.StaticTail.reconstructed_fifth_row_linear
+audit_axioms SexticC3.StaticTail.exists_nonzero_edge_kernel
+audit_axioms SexticC3.TailDegreeFactors.eval_shift
+audit_axioms SexticC3.TailDegreeFactors.eval_ne_zero
+audit_axioms SexticC3.TailDegreeFactors.factors_positive
+audit_axioms SexticC3.TailDegreeFactors.factors_nonzero
+
+audit_axioms SexticC3.TailScales.rowScale0
+audit_axioms SexticC3.TailScales.rowScale1
+audit_axioms SexticC3.TailScales.rowScale2
+audit_axioms SexticC3.TailScales.rowScale3
+audit_axioms SexticC3.TailScales.rowScale4
+audit_axioms SexticC3.TailScales.rowScale5
+audit_axioms SexticC3.StaticTail.raw3_0
+audit_axioms SexticC3.StaticTail.raw3_1
+audit_axioms SexticC3.StaticTail.raw3_2
+audit_axioms SexticC3.StaticTail.raw3_3
+audit_axioms SexticC3.StaticTail.raw3_4
+audit_axioms SexticC3.StaticTail.raw3_5
+audit_axioms SexticC3.StaticTail.raw3_6
+audit_axioms SexticC3.StaticTail.raw3_7
+audit_axioms SexticC3.StaticTail.raw5_0
+audit_axioms SexticC3.StaticTail.raw5_1
+audit_axioms SexticC3.StaticTail.raw5_2
+audit_axioms SexticC3.StaticTail.raw5_3
+audit_axioms SexticC3.StaticTail.raw5_4
+audit_axioms SexticC3.StaticTail.raw5_5
+audit_axioms SexticC3.TailElimination.axisA0
+audit_axioms SexticC3.TailElimination.axisA1
+audit_axioms SexticC3.TailElimination.axisA2
+audit_axioms SexticC3.TailElimination.axisA3
+audit_axioms SexticC3.TailElimination.axisB0
+audit_axioms SexticC3.TailElimination.axisB1
+audit_axioms SexticC3.TailElimination.axisB2
+audit_axioms SexticC3.TailElimination.axisB3
+audit_axioms SexticC3.StaticTail.map_hCoeff
+audit_axioms SexticC3.StaticTail.map_rowValue
+audit_axioms SexticC3.StaticTail.map_delta
+audit_axioms SexticC3.StaticTail.stored_row0
+audit_axioms SexticC3.StaticTail.cleared_e0
+audit_axioms SexticC3.StaticTail.cleared_e1
+audit_axioms SexticC3.StaticTail.cleared_e2
+audit_axioms SexticC3.StaticTail.cleared_e3
+audit_axioms SexticC3.StaticTail.cleared_e4
+audit_axioms SexticC3.StaticTail.cleared_e5
+audit_axioms SexticC3.StaticTail.cleared_e6
+audit_axioms SexticC3.StaticTail.cleared_e7
+audit_axioms SexticC3.StaticTail.cleared_e8
+audit_axioms SexticC3.StaticTail.stored_row1
+audit_axioms SexticC3.StaticTail.stored_row2
+audit_axioms SexticC3.StaticTail.stored_row3
+audit_axioms SexticC3.StaticTail.stored_row4
+audit_axioms SexticC3.StaticTail.stored_row5
+audit_axioms SexticC3.StaticTail.stored_rows
+audit_axioms SexticC3.TailElimination.MixedData.identity_9
+audit_axioms SexticC3.TailElimination.mixed
+audit_axioms SexticC3.StaticTail.chart_targets
+audit_axioms SexticC3.StaticTail.normalized_static_tail
+audit_axioms SexticC3.StaticTail.normalized_static_tail_algClosed
+audit_axioms SexticC3.squarefree_kernel_bound
+audit_axioms SexticC3.StaticTail.axis_chart_targets

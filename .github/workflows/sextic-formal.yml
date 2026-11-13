@@ -1,0 +1,43 @@
+name: sextic-formal
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  lean:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install certificate transcription dependency
+        run: python -m pip install sympy==1.14.0
+      - name: Check generated Lean statements against the retained certificate
+        working-directory: research/hamiltonian/c3_strata/formal
+        run: |
+          python generate.py
+          git diff --exit-code -- SexticC3
+          test -z "$(git ls-files --others --exclude-standard -- SexticC3)"
+      - name: Build the pinned Lean and Mathlib project
+        uses: leanprover/lean-action@ba3fdfe5c4476c925da13bf11a005ddb47e47aee
+        with:
+          auto-config: false
+          build: true
+          use-mathlib-cache: true
+          lake-package-directory: research/hamiltonian/c3_strata/formal
+      - name: Build the all-degree and geometric theorem targets
+        working-directory: research/hamiltonian/c3_strata/formal
+        run: |
+          LEAN_NUM_THREADS=1 lake build +SexticC3.SquarefreeGeometry:olean \
+            +SexticC3.SquarefreePolynomial:olean +SexticC3.TripleRootTail:olean \
+            +SexticC3.ExceptionalDifferential:olean +SexticC3.TailChartAxes:olean
+      - name: Audit the normalized all-degree and geometric theorems
+        working-directory: research/hamiltonian/c3_strata/formal
+        run: |
+          lake env lean Audit.lean
+          lake env lean AuditGeometry.lean
