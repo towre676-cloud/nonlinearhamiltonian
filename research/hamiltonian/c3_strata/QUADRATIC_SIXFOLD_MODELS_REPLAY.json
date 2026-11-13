@@ -1,0 +1,526 @@
+{
+ "certified_models": [
+  {
+   "case": "deg c=1, deg b<=3",
+   "dimensions_S1_to_S4": [
+    6,
+    3,
+    2,
+    2
+   ],
+   "larger_box": 40,
+   "least_depth": 3,
+   "model": "q^6+q*p^2",
+   "proved_bound": 22,
+   "weights": [
+    2,
+    5
+   ]
+  },
+  {
+   "case": "deg c=1, deg b=4",
+   "dimensions_S1_to_S4": [
+    5,
+    3,
+    2,
+    2
+   ],
+   "larger_box": 26,
+   "least_depth": 3,
+   "model": "q^4*p+q*p^2",
+   "proved_bound": 13,
+   "weights": [
+    1,
+    3
+   ]
+  },
+  {
+   "case": "deg c=2, deg b<=3",
+   "dimensions_S1_to_S4": [
+    3,
+    2,
+    2,
+    2
+   ],
+   "larger_box": 40,
+   "least_depth": 2,
+   "model": "q^6+q^2*p^2",
+   "proved_bound": 24,
+   "weights": [
+    2,
+    4
+   ]
+  },
+  {
+   "case": "deg c=2, deg b=4, t=1",
+   "dimensions_S1_to_S4": [
+    3,
+    2,
+    2,
+    2
+   ],
+   "larger_box": 36,
+   "least_depth": 2,
+   "model": "q^6+q^4*p+q^2*p^2",
+   "proved_bound": 18,
+   "weights": [
+    2,
+    4
+   ]
+  },
+  {
+   "case": "deg c=3",
+   "dimensions_S1_to_S4": [
+    3,
+    2,
+    2,
+    2
+   ],
+   "larger_box": 40,
+   "least_depth": 2,
+   "model": "q^6+q^3*p^2",
+   "proved_bound": 26,
+   "weights": [
+    2,
+    3
+   ]
+  }
+ ],
+ "claim_boundary": "certified_models are complete for all degrees by Theorem D. classifier_checks compare against kernels on inputs of total degree <= 8 with untruncated gate outputs and are bounded evidence. S^0 with dimension null is not asserted by the classifier for a nonconstant top coefficient.",
+ "classifier_checks": [
+  {
+   "H": "q^6+p^2",
+   "bounded_dimensions": [
+    24,
+    18,
+    12,
+    6,
+    4,
+    2,
+    2
+   ],
+   "core_dimension": 2,
+   "least_depth": 5,
+   "rational_affine_change": false,
+   "regime": "affine_shift"
+  },
+  {
+   "H": "2*q^6-3*q^5+q^4+5*q^3-q^2+7*q+1+(3*q-2)*p+p^2",
+   "bounded_dimensions": [
+    24,
+    18,
+    12,
+    6,
+    4,
+    2,
+    2
+   ],
+   "core_dimension": 2,
+   "least_depth": 5,
+   "rational_affine_change": false,
+   "regime": "affine_shift"
+  },
+  {
+   "H": "q^6+q^2*p+p^2",
+   "bounded_dimensions": [
+    19,
+    12,
+    6,
+    4,
+    2,
+    2
+   ],
+   "core_dimension": 2,
+   "least_depth": 4,
+   "rational_affine_change": false,
+   "regime": "generic_nonlinear"
+  },
+  {
+   "H": "2*q^6-3*q^5+q^4+5*q^3-q^2+7*q+1+(3*q^4-q^3+2*q+1)*p+3*p^2",
+   "bounded_dimensions": [
+    18,
+    12,
+    6,
+    4,
+    2,
+    2
+   ],
+   "core_dimension": 2,
+   "least_depth": 4,
+   "rational_affine_change": false,
+   "regime": "generic_nonlinear"
+  },
+  {
+   "H": "2*q^6-3*q^5+q^4+5*q^3-q^2+7*q+1+(3*q^4-q^3+2*q+1)*p+3*p^2",
+   "bounded_dimensions": [
+    18,
+    12,
+    6,
+    4,
+    2,
+    2
+   ],
+   "core_dimension": 2,
+   "least_depth": 4,
+   "rational_affine_change": true,
+   "regime": "generic_nonlinear"
+  },
+  {
+   "H": "(p+q^3)^2+q^3",
+   "bounded_dimensions": [
+    18,
+    12,
+    6,
+    5,
+    4,
+    3,
+    2,
+    2
+   ],
+   "core_dimension": 2,
+   "least_depth": 6,
+   "rational_affine_change": false,
+   "regime": "cubic_potential"
+  },
+  {
+   "H": "(p+q^3)^2+q^3",
+   "bounded_dimensions": [
+    18,
+    12,
+    6,
+    5,
+    4,
+    3,
+    2,
+    2
+   ],
+   "core_dimension": 2,
+   "least_depth": 6,
+   "rational_affine_change": true,
+   "regime": "cubic_potential"
+  },
+  {
+   "H": "(p+q^3+q^2-3*q+1)^2+3*q^2-q",
+   "bounded_dimensions": [
+    18,
+    12,
+    6,
+    6
+   ],
+   "core_dimension": 6,
+   "least_depth": 2,
+   "rational_affine_change": false,
+   "regime": "hidden_quadratic"
+  },
+  {
+   "H": "(p+q^3)^2",
+   "bounded_dimensions": [
+    18,
+    12,
+    6,
+    6
+   ],
+   "core_dimension": 6,
+   "least_depth": 2,
+   "rational_affine_change": false,
+   "regime": "hidden_quadratic"
+  },
+  {
+   "H": "(p+q^3)^2",
+   "bounded_dimensions": [
+    18,
+    12,
+    6,
+    6
+   ],
+   "core_dimension": 6,
+   "least_depth": 2,
+   "rational_affine_change": true,
+   "regime": "hidden_quadratic"
+  },
+  {
+   "H": "q^6+q*p^2",
+   "bounded_dimensions": [
+    null,
+    6,
+    3,
+    2,
+    2
+   ],
+   "core_dimension": 2,
+   "least_depth": 3,
+   "rational_affine_change": false,
+   "regime": "variable_top_coefficient"
+  },
+  {
+   "H": "2*q^6-q^5+q^3+7*q+(q-2)*p^2+(q^3-q+1)*p",
+   "bounded_dimensions": [
+    null,
+    5,
+    3,
+    2,
+    2
+   ],
+   "core_dimension": 2,
+   "least_depth": 3,
+   "rational_affine_change": false,
+   "regime": "variable_top_coefficient"
+  },
+  {
+   "H": "2*q^6-q^5+q^3+7*q+(q-2)*p^2+(q^3-q+1)*p",
+   "bounded_dimensions": [
+    null,
+    5,
+    3,
+    2,
+    2
+   ],
+   "core_dimension": 2,
+   "least_depth": 3,
+   "rational_affine_change": true,
+   "regime": "variable_top_coefficient"
+  },
+  {
+   "H": "2*q^6-q^5+q^3+7*q+(q-2)*p^2+(q^4-q+1)*p",
+   "bounded_dimensions": [
+    null,
+    5,
+    3,
+    2,
+    2
+   ],
+   "core_dimension": 2,
+   "least_depth": 3,
+   "rational_affine_change": false,
+   "regime": "variable_top_coefficient"
+  },
+  {
+   "H": "2*q^6-q^5+q^3+7*q+(q^2-2*q+3)*p^2+(q^3-q+1)*p",
+   "bounded_dimensions": [
+    null,
+    3,
+    2,
+    2
+   ],
+   "core_dimension": 2,
+   "least_depth": 2,
+   "rational_affine_change": false,
+   "regime": "variable_top_coefficient"
+  },
+  {
+   "H": "2*q^6-q^5+q^3+7*q+(q^2-2*q+3)*p^2+(q^4-q+1)*p",
+   "bounded_dimensions": [
+    null,
+    3,
+    2,
+    2
+   ],
+   "core_dimension": 2,
+   "least_depth": 2,
+   "rational_affine_change": false,
+   "regime": "variable_top_coefficient"
+  },
+  {
+   "H": "2*q^6-q^5+q^3+7*q+(q^2-2*q+3)*p^2+(q^4-q+1)*p",
+   "bounded_dimensions": [
+    null,
+    3,
+    2,
+    2
+   ],
+   "core_dimension": 2,
+   "least_depth": 2,
+   "rational_affine_change": true,
+   "regime": "variable_top_coefficient"
+  },
+  {
+   "H": "q^6+(q^3+q+1)*p^2",
+   "bounded_dimensions": [
+    null,
+    2,
+    2
+   ],
+   "core_dimension": 2,
+   "least_depth": 1,
+   "rational_affine_change": false,
+   "regime": "variable_top_coefficient"
+  },
+  {
+   "H": "2*q^6-q^5+q^3+7*q+(q^3-2*q+3)*p^2+(q^4-q+1)*p",
+   "bounded_dimensions": [
+    null,
+    2,
+    2
+   ],
+   "core_dimension": 2,
+   "least_depth": 1,
+   "rational_affine_change": false,
+   "regime": "variable_top_coefficient"
+  },
+  {
+   "H": "q^6+q^2*p^2+2*q^4*p",
+   "bounded_dimensions": [
+    null,
+    3,
+    3
+   ],
+   "core_dimension": 3,
+   "least_depth": 1,
+   "rational_affine_change": false,
+   "regime": "variable_top_coefficient"
+  },
+  {
+   "H": "q^6+q^2*p^2+2*q^4*p+2*q*p+2*q^3",
+   "bounded_dimensions": [
+    null,
+    3,
+    3
+   ],
+   "core_dimension": 3,
+   "least_depth": 1,
+   "rational_affine_change": false,
+   "regime": "variable_top_coefficient"
+  },
+  {
+   "H": "q^6+q^2*p^2+2*q^4*p+2*q*p+2*q^3",
+   "bounded_dimensions": [
+    null,
+    3,
+    3
+   ],
+   "core_dimension": 3,
+   "least_depth": 1,
+   "rational_affine_change": true,
+   "regime": "variable_top_coefficient"
+  },
+  {
+   "H": "q^6+q^2*p^2+2*q^4*p+q",
+   "bounded_dimensions": [
+    null,
+    3,
+    2,
+    2
+   ],
+   "core_dimension": 2,
+   "least_depth": 2,
+   "rational_affine_change": false,
+   "regime": "variable_top_coefficient"
+  },
+  {
+   "H": "q^6+q^2*p^2+2*q^4*p+p",
+   "bounded_dimensions": [
+    null,
+    3,
+    2,
+    2
+   ],
+   "core_dimension": 2,
+   "least_depth": 2,
+   "rational_affine_change": false,
+   "regime": "variable_top_coefficient"
+  },
+  {
+   "H": "q^6+q^2*p^2-2*q^4*p+q^5",
+   "bounded_dimensions": [
+    null,
+    3,
+    2,
+    2
+   ],
+   "core_dimension": 2,
+   "least_depth": 2,
+   "rational_affine_change": false,
+   "regime": "variable_top_coefficient"
+  },
+  {
+   "H": "3*((q-3)*p+2*(q-3)^3+q+2)^2-7",
+   "bounded_dimensions": [
+    null,
+    3,
+    3
+   ],
+   "core_dimension": 3,
+   "least_depth": 1,
+   "rational_affine_change": false,
+   "regime": "variable_top_coefficient"
+  },
+  {
+   "H": "((q-3)*p+2*(q-3)^3+q+2)^2+p^2",
+   "bounded_dimensions": [
+    null,
+    3,
+    2,
+    2
+   ],
+   "core_dimension": 2,
+   "least_depth": 2,
+   "rational_affine_change": false,
+   "regime": "variable_top_coefficient"
+  },
+  {
+   "H": "((q-3)*p+2*(q-3)^3+q+2)^2+p",
+   "bounded_dimensions": [
+    null,
+    3,
+    2,
+    2
+   ],
+   "core_dimension": 2,
+   "least_depth": 2,
+   "rational_affine_change": false,
+   "regime": "variable_top_coefficient"
+  },
+  {
+   "H": "((q-3)*p+2*(q-3)^3+q+2)^2+q^2",
+   "bounded_dimensions": [
+    null,
+    3,
+    2,
+    2
+   ],
+   "core_dimension": 2,
+   "least_depth": 2,
+   "rational_affine_change": false,
+   "regime": "variable_top_coefficient"
+  },
+  {
+   "H": "((q-3)*p+2*(q-3)^3+q+2)^2+(q-3)*p",
+   "bounded_dimensions": [
+    null,
+    3,
+    2,
+    2
+   ],
+   "core_dimension": 2,
+   "least_depth": 2,
+   "rational_affine_change": false,
+   "regime": "variable_top_coefficient"
+  }
+ ],
+ "discriminant_family": {
+  "S1_exceptional_factor": "1",
+  "S2_exceptional_factor": "(t - 2)*(t + 2)",
+  "generic_dimension_S1": 3,
+  "generic_dimension_S2": 2,
+  "sympy": "1.14.0"
+ },
+ "out_of_scope_checks": [
+  "q^6+p^3",
+  "q^6+q*p",
+  "q^6+p^6+p^2",
+  "q^5*p+p^2",
+  "q^6+q*p^3+p^2",
+  "q^4+p^2"
+ ],
+ "source_sha256": {
+  "research/hamiltonian/c3_strata/verify_quadratic_sixfold.py": "2980355f68e17085edb978d1ca073fcfb1c7e433d366a594997a458f078e8f6e",
+  "research/hamiltonian/c3_strata/verify_quadratic_sixfold_models.py": "46476646fc1f5f48029339f53a7b68a170b131a329b636d8517436a691cf0b8d",
+  "research/hamiltonian/c3_strata/verify_sextic_core.py": "d5663e0f9ccfba02ba0a4d8f10f43ec10ec9a241f06917ea0edb65adf93582db",
+  "research/hamiltonian/independent/engine.py": "feafd49628603915e1b4bdf930efd0f862313ae6f4785b2bab3ca971ad58cbbf",
+  "research/hamiltonian/partner_lab.py": "767cb2b597134e796ab17289d1f171dae9f6b55e28b6186df5b2ac26a1310ea8",
+  "research/hamiltonian/quadratic_sixfold.py": "340fa860b32a15546c86fd759e61816e780fc9a9f6b1708958d71d8247d1eea3",
+  "research/hamiltonian/sextic_core.py": "bb484ab005bc67da3bf8940f275247c4e27f266a82e789e45b0d116d84adc60f"
+ },
+ "status": "PASS",
+ "payload_sha256": "229797367c04ef01dbd4b1fe26d93d880d921473cf49a567d1bcc44885b6cc6c"
+}

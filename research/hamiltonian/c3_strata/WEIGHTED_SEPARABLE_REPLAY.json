@@ -1,0 +1,278 @@
+{
+  "checks": [
+    {
+      "H": "q^5+2*p^3+q*p^2-q^2+3",
+      "complement_degree": 3,
+      "core_dimension": 2,
+      "least_depth": 2,
+      "potential_degree": 5,
+      "stage_dimensions": [
+        15,
+        3,
+        2
+      ],
+      "static_bound": 26,
+      "status": "PASS",
+      "weights": [
+        3,
+        5
+      ]
+    },
+    {
+      "H": "q^6+2*p^3+q*p^2-q^2+3",
+      "complement_degree": 3,
+      "core_dimension": 2,
+      "least_depth": 2,
+      "potential_degree": 6,
+      "stage_dimensions": [
+        15,
+        3,
+        2
+      ],
+      "static_bound": 10,
+      "status": "PASS",
+      "weights": [
+        1,
+        2
+      ]
+    },
+    {
+      "H": "q^7+2*p^3+q*p^2-q^2+3",
+      "complement_degree": 3,
+      "core_dimension": 2,
+      "least_depth": 2,
+      "potential_degree": 7,
+      "stage_dimensions": [
+        15,
+        3,
+        2
+      ],
+      "static_bound": 34,
+      "status": "PASS",
+      "weights": [
+        3,
+        7
+      ]
+    },
+    {
+      "H": "q^8+2*p^3+q*p^2-q^2+3",
+      "complement_degree": 3,
+      "core_dimension": 2,
+      "least_depth": 2,
+      "potential_degree": 8,
+      "stage_dimensions": [
+        15,
+        3,
+        2
+      ],
+      "static_bound": 38,
+      "status": "PASS",
+      "weights": [
+        3,
+        8
+      ]
+    },
+    {
+      "H": "q^5-3*p^4+q*p^3+q^2-p",
+      "complement_degree": 4,
+      "core_dimension": 2,
+      "least_depth": 1,
+      "potential_degree": 5,
+      "stage_dimensions": [
+        11,
+        2
+      ],
+      "static_bound": 28,
+      "status": "PASS",
+      "weights": [
+        4,
+        5
+      ]
+    },
+    {
+      "H": "q^6-3*p^4+q*p^3+q^2-p",
+      "complement_degree": 4,
+      "core_dimension": 2,
+      "least_depth": 1,
+      "potential_degree": 6,
+      "stage_dimensions": [
+        10,
+        2
+      ],
+      "static_bound": 16,
+      "status": "PASS",
+      "weights": [
+        2,
+        3
+      ]
+    },
+    {
+      "H": "q^7-3*p^4+q*p^3+q^2-p",
+      "complement_degree": 4,
+      "core_dimension": 2,
+      "least_depth": 1,
+      "potential_degree": 7,
+      "stage_dimensions": [
+        9,
+        2
+      ],
+      "static_bound": 36,
+      "status": "PASS",
+      "weights": [
+        4,
+        7
+      ]
+    },
+    {
+      "H": "q^8-3*p^4+q*p^3+q^2-p",
+      "complement_degree": 4,
+      "core_dimension": 2,
+      "least_depth": 1,
+      "potential_degree": 8,
+      "stage_dimensions": [
+        9,
+        2
+      ],
+      "static_bound": 10,
+      "status": "PASS",
+      "weights": [
+        1,
+        2
+      ]
+    },
+    {
+      "H": "q^6+p^3+q*p",
+      "complement_degree": 3,
+      "core_dimension": 2,
+      "least_depth": 2,
+      "potential_degree": 6,
+      "stage_dimensions": [
+        15,
+        4,
+        2
+      ],
+      "static_bound": 10,
+      "status": "PASS",
+      "weights": [
+        1,
+        2
+      ]
+    },
+    {
+      "H": "q^6+p^3+q^3*p",
+      "complement_degree": 3,
+      "core_dimension": 2,
+      "least_depth": 1,
+      "potential_degree": 6,
+      "stage_dimensions": [
+        15,
+        2
+      ],
+      "static_bound": 10,
+      "status": "PASS",
+      "weights": [
+        1,
+        2
+      ]
+    },
+    {
+      "H": "q^6+p^4+q^4*p+q^2*p^2",
+      "complement_degree": 4,
+      "core_dimension": 2,
+      "least_depth": 1,
+      "potential_degree": 6,
+      "stage_dimensions": [
+        9,
+        2
+      ],
+      "static_bound": 16,
+      "status": "PASS",
+      "weights": [
+        2,
+        3
+      ]
+    },
+    {
+      "H": "-2/3*((2*q+3*p+1)^6+(q-2*p-3)^3+(2*q+3*p+1)*(q-2*p-3)^2)",
+      "complement_degree": 3,
+      "core_dimension": 2,
+      "least_depth": 2,
+      "potential_degree": 6,
+      "stage_dimensions": [
+        15,
+        3,
+        2
+      ],
+      "static_bound": 10,
+      "status": "PASS",
+      "weights": [
+        1,
+        2
+      ]
+    },
+    {
+      "H": "3/5*((2*q+3*p+1)^6-(q-2*p-3)^4+(2*q+3*p+1)*(q-2*p-3)^3)",
+      "complement_degree": 4,
+      "core_dimension": 2,
+      "least_depth": 1,
+      "potential_degree": 6,
+      "stage_dimensions": [
+        10,
+        2
+      ],
+      "static_bound": 16,
+      "status": "PASS",
+      "weights": [
+        2,
+        3
+      ]
+    },
+    {
+      "H": "p^6+q^3+p*q^2",
+      "complement_degree": 3,
+      "core_dimension": 2,
+      "least_depth": 2,
+      "potential_degree": 6,
+      "stage_dimensions": [
+        15,
+        3,
+        2
+      ],
+      "static_bound": 10,
+      "status": "PASS",
+      "weights": [
+        1,
+        2
+      ]
+    },
+    {
+      "H": "p^6+q^4+p^4*q",
+      "complement_degree": 4,
+      "core_dimension": 2,
+      "least_depth": 1,
+      "potential_degree": 6,
+      "stage_dimensions": [
+        10,
+        2
+      ],
+      "static_bound": 16,
+      "status": "PASS",
+      "weights": [
+        2,
+        3
+      ]
+    }
+  ],
+  "classified_inputs": 15,
+  "schema": "hamiltonian-weighted-separable-replay/1",
+  "sources": {
+    "c3_strata/SEPARABLE_SIXFOLD_THEOREM.md": "b2470e419b3d18751dfc1218a7e8d4eab8ee91b6340a3ab08c44ba7950db8798",
+    "c3_strata/WEIGHTED_SEPARABLE_THEOREM.md": "3ea5295e0de1a75e8023b7c031d03b8f3b24605fb1a308de657e4d3c8459bca7",
+    "c3_strata/verify_separable_sixfold.py": "c107b552bad84bd3e7d9fa7cc41b097e81f7309e587092648aed812bb08ac75e",
+    "c3_strata/verify_weighted_separable.py": "6be32ad103b260323d015b53eed3a0b7c4e04a671c4997a8248708e9cef6592e",
+    "independent/engine.py": "feafd49628603915e1b4bdf930efd0f862313ae6f4785b2bab3ca971ad58cbbf",
+    "separable_sixfold.py": "2febdb7b4ee47310eddd05e05cc8bfa5ac91569749d6cc9de328a95b90e5be81",
+    "weighted_separable.py": "2bd3045e2658a3d82a606efac3a110267d869414ee050cacd6d09763453685ac"
+  },
+  "status": "PASS"
+}
