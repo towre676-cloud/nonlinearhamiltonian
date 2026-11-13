@@ -6,6 +6,26 @@ maintained Python verifier. The source is the repository's
 `f122ebc948ac5ddc296fc805d40fa50f0c565c94`. Its SHA-256 with LF line endings is
 `2faae6b7a3e9d1202fb6e9f9d6f645a37a6f18e865c42a0bb5aa2f065a12462a`.
 
+## Cubic perturbations of a sixfold leading term
+
+`CubicExceptional` represents the inhomogeneous Hamiltonian
+`q^6 + u*q^3 + v*q^2*p + w*q*p^2 + x*p^3` using the same polynomial
+differential operators. It proves `T3(H,D_H(q²)) = 48*(3*x*v - w²)`
+as a constant polynomial and `q² ∈ S¹(H) ↔ 3*x*v - w² = 0`
+over characteristic-zero fields, including the rationals. It also proves
+that `q ∈ S¹(H)` at every parameter value.
+
+For `x ≠ 0`, the module proves the shear normal form and transport of
+the vanishing of each iterated gate under the determinant-one shear.
+The two static-gate identities hold on arbitrary polynomial inputs.
+The fifth gate forces all coefficients with p-exponent at least five to
+vanish, with no total-degree cutoff.
+
+The descending integration argument giving a complete 15-dimensional
+static basis and the three determinant certificates remain external to
+Lean. The full descriptions of `S¹`, `S²` and the persistent core use
+those steps. See [the cubic theorem](../COMPLETE_CUBIC_EXCEPTIONAL_THEOREM.md).
+
 ## What is represented
 
 The certificate encodes each polynomial as a list of exponent vectors in
