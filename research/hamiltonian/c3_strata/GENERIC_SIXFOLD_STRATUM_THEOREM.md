@@ -71,21 +71,27 @@ On $q^m$ the operator $g\mapsto q\,g'''-3j\,g''$ acts by $m(m-1)(m-2-3j)\,q^{m-2
 
 Status: the differential equations and the 14 elements are replayed for symbolic $c$ by `verify_qp3_stratum.py` (10 checks); the refinement dimensions are exact rational linear algebra; the passage to $R\ne0$ rests on the separation principle, a human proof that has not been refereed; nothing here is formalized in Lean.
 
-## The strata below: finite experiments only
+## Newton strata: proved rows and historical experiments
 
-The same weighting argument orders the complement $c_{05}=0$ by the next vertex of the Newton polygon. `newton_strata_experiment.py` counts static partners of each binomial leading form chain by chain through weight 360 and reports exact refinement dimensions on the resulting window. The rows without a theorem reference are finite experiments, not theorems; on each of those strata both gates are again two-term on every link, so the proof template above applies, but the resonance analysis has not been carried out.
+The same weighting argument orders the complement $c_{05}=0$. The two
+binomial rows formerly supported by the degree-360 experiment now have a
+[complete endpoint/resonance proof, sharp support bounds and exact certificates](BINOMIAL_NEWTON_SHARP_THEOREM.md).
+Both have ten static partners and $S^1=D_\infty=\operatorname{span}\{1,H\}$,
+also after arbitrary strictly lower-weight perturbations. Static dimension
+can drop under perturbation; the sharp uniform bounds are 44 and 28.
+The historical experiment column is retained as a regression, not as proof.
 
 | Stratum | Leading form, weights | Static partners found (weights $\le360$) | $\dim S^0,S^1,S^2$ of the leading form | One random member |
 | --- | --- | --- | --- | --- |
-| $c_{05}=0\ne c_{14}$ | $q^6+qp^4$, $(4,5)$ | 10, top weight 44 | 10, 2, 2 | 7, 2, 2 |
-| $c_{05}=c_{14}=0\ne c_{23}$ | $q^6+q^2p^3$, $(3,4)$ | 10, top weight 28 | 10, 2, 2 | 8, 2, 2 |
+| $c_{05}=0\ne c_{14}$ | $q^6+qp^4$, $(4,5)$ | 10, sharp proved top weight 44 | 10, 2, 2 (all degrees) | 7, 2, 2 |
+| $c_{05}=c_{14}=0\ne c_{23}$ | $q^6+q^2p^3$, $(3,4)$ | 10, sharp proved top weight 28 | 10, 2, 2 (all degrees) | 8, 2, 2 |
 | $c_{05}=c_{14}=c_{23}=0\ne c_{04}$ | $q^6+\gamma q^3p^2+yp^4$, $(2,3)$ | Theorem 5 of the weighted cubic-form note | | |
 | then $c_{04}=c_{32}=0\ne c_{13}$ | $q^6+cqp^3$, $(3,5)$ | Theorem 7 above | | |
 | then $c_{13}=0\ne c_{03}$ | $q^6+\alpha q^4p+\beta q^2p^2+xp^3$, $(1,2)$ | Theorems 1 to 3 of the weighted cubic-form note | | |
 
 ## Not claimed
 
-Nothing is proved here on $c_{05}=0$; the table above is experimental. The boundary $c_{04}=0\ne c_{32}$ of the quartic edge has an infinite static tail in the experiments and is open. The human proofs here have not been refereed.
+These results do not assert a complete classification of all 21 parameters. In particular the weighted cubic cube locus with arbitrary lower terms remains outside the finite-tail theorems. The $c_{04}=0\ne c_{32}$ boundary has an infinite static space; the quadratic-sixfold theorem separately supplies finite first-refinement bounds and a core result for its leading form. See the [reconciled coverage table](BINOMIAL_NEWTON_SHARP_THEOREM.md#7-repository-reconciliation-and-remaining-boundaries) for the distinction. The human proofs here have not been externally refereed or fully formalized.
 
 ## Replay
 

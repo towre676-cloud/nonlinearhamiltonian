@@ -1,13 +1,13 @@
 # Perturbation rigidity for the two binomial Newton strata
 
-**Proposed Theorem 10 (characteristic zero; all polynomial degrees).**
+**Theorem 10 (characteristic zero; all polynomial degrees).**
 
 Let \(K\) be a characteristic-zero field. Consider either
 
 1. \(H=q^6+zqp^4+R\), \(z\in K^\times\), with \(\mathrm{wt}(q,p)=(4,5)\) and \(\mathrm{wt}(R)<24\), or
 2. \(H=q^6+bq^2p^3+R\), \(b\in K^\times\), with \(\mathrm{wt}(q,p)=(3,4)\) and \(\mathrm{wt}(R)<18\).
 
-Assume the finite-tail and exact first-refinement classifications of the corresponding weighted leading forms from the merged binomial-strata result (Theorems 8–9): \(S^1(H_0)=K\cdot1+K\cdot H_0\).
+The [complete endpoint analysis and symbolic rank-eight minors](BINOMIAL_NEWTON_SHARP_THEOREM.md) establish the antecedent leading-form classifications (Theorems 8–9): \(S^1(H_0)=K\cdot1+K\cdot H_0\).
 
 Then **for every** lower-weight perturbation \(R\), with no restriction on the number of its coefficients,
 
@@ -15,7 +15,7 @@ Then **for every** lower-weight perturbation \(R\), with no restriction on the n
 S^1(H)=S^2(H)=D_\infty(H)=K\cdot1+K\cdot H.
 \]
 
-Furthermore \(\dim_K S^0(H)\le10\), with all static partners of weighted degree at most 87 and 53, respectively.
+Furthermore \(\dim_K S^0(H)\le10\), with all static partners of weighted degree at most **44 and 28**, respectively. Both sharp uniform bounds are attained at zero perturbation. Static dimension is between 7 and 10 and is generically 7; it need not remain ten.
 
 ## Proof
 
@@ -29,8 +29,13 @@ Conversely \(1,H\in S^r(H)\) for all \(r\ge0\), and \(S^{r+1}(H)\subseteq S^r(H)
 
 The same associated-graded injection \(\mathrm{gr}\,S^0(H)\hookrightarrow S^0(H_0)\) gives the dimension and finite-weight bounds.
 
-## Scope and audit requirements
+## Scope and evidence
 
-The filtered argument is an all-degree mathematical proof **conditional on** the earlier finite-tail and refinement classifications of the two leading forms. It does not make those antecedent results Lean-formal, and it does not cover parameter boundaries \(z=0\) or \(b=0\), nor leading forms with multiple terms at the same Newton weight. The claimed dimensions and bounds therefore inherit the independent-review status of Theorems 8–9.
-
-This theorem upgrades the two binomial leading-form classifications to arbitrary lower-weight perturbations, without asserting a complete classification of every sixfold-leading Hamiltonian.
+The antecedent classifications now have a complete all-exponent chain proof
+and independently replayable exact certificates in
+[BINOMIAL_NEWTON_SHARP_THEOREM.md](BINOMIAL_NEWTON_SHARP_THEOREM.md).
+The transfer above therefore applies unconditionally within the stated
+characteristic-zero hypotheses. It is a human mathematical proof, not an
+end-to-end Lean theorem or an externally refereed result. The boundaries
+z=0 and b=0 require other leading forms; no claim of full 21-parameter
+completeness is made.

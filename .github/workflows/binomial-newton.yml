@@ -3,6 +3,12 @@ on:
   pull_request:
     paths:
       - 'research/hamiltonian/c3_strata/verify_binomial_newton.py'
+      - 'research/hamiltonian/c3_strata/binomial_newton_sharp.py'
+      - 'research/hamiltonian/c3_strata/verify_binomial_newton_sharp.py'
+      - 'research/hamiltonian/c3_strata/BINOMIAL_NEWTON_SHARP*'
+      - 'research/hamiltonian/c3_strata/BINOMIAL_NEWTON_PERFECTJET_PIN.txt'
+      - 'research/hamiltonian/c3_strata/weighted_cubic_form.py'
+      - 'research/hamiltonian/c3_strata/exact_observation.py'
       - 'research/hamiltonian/c3_strata/BINOMIAL_NEWTON_FINITE_TAIL.md'
       - '.github/workflows/binomial-newton.yml'
   workflow_dispatch:
@@ -16,4 +22,11 @@ jobs:
         with:
           python-version: '3.12'
       - run: python -m pip install sympy==1.14.0
+      - name: Install pinned independent PerfectJet engine
+        shell: bash
+        run: |
+          PIN="$(cat research/hamiltonian/c3_strata/BINOMIAL_NEWTON_PERFECTJET_PIN.txt)"
+          python -m pip install "git+https://github.com/towre676-cloud/PerfectJet.git@${PIN}"
+      - name: Replay sharp proof identities and full certificates
+        run: python research/hamiltonian/c3_strata/verify_binomial_newton_sharp.py --perfectjet --check research/hamiltonian/c3_strata/BINOMIAL_NEWTON_SHARP_CERTIFICATE.json
       - run: python research/hamiltonian/c3_strata/verify_binomial_newton.py

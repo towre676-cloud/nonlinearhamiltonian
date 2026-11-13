@@ -31,3 +31,17 @@ their historical scopes. The [classifier replay receipt](SEXTIC_CORE_REPLAY.json
 reports its actual bounded checks separately from the written all-degree
 proofs and their inherited dependencies. None of the new Python results is
 an end-to-end Lean theorem.
+
+## Sharp binomial Newton strata
+
+[The two binomial Newton edges](BINOMIAL_NEWTON_SHARP_THEOREM.md) now have
+complete endpoint/resonance proofs with sharp static-support bounds 44
+and 28, ten explicit static partners each, and symbolic rank-eight minors
+proving first-refinement rigidity. Arbitrary lower-weight perturbations
+preserve that rigidity. Their static dimensions range from 7 to 10; an
+exact finite matrix specifies every exceptional static locus.
+
+`binomial_newton_sharp.classify` gives complete rational static bases within
+these proved windows. Replay `verify_binomial_newton_sharp.py --perfectjet
+--check BINOMIAL_NEWTON_SHARP_CERTIFICATE.json` with the pinned PerfectJet
+revision. The proof and replays are not an end-to-end Lean formalization.
