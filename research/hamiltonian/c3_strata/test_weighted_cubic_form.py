@@ -108,5 +108,18 @@ class QuarticEdge(unittest.TestCase):
         self.assertRaises(ValueError, QE.hamiltonian, 1, 1, {(3, 2): 1})
 
 
+class GenericStratum(unittest.TestCase):
+    def test_leading_form_and_full_family(self):
+        import generic_sixfold_stratum as GS
+        self.assertEqual(GS.dims(GS.hamiltonian(1)), [10, 2, 2])
+        basis, ker = GS.refinement(GS.hamiltonian(Fr(-7, 3)), 0)
+        support = sorted({basis[i] for v in ker for i, c in enumerate(v) if c})
+        self.assertEqual(support, sorted([(a, b) for a in range(3) for b in range(3)] + [(6, 0), (0, 5)]))
+        full = GS.hamiltonian(Fr(2, 3), {m: Fr((3 * m[0] + 5 * m[1]) % 7 - 3, 2) for m in GS.LOWER})
+        d = GS.dims(full)
+        self.assertTrue(d[0] <= 10 and d[1:] == [2, 2])
+        self.assertRaises(ValueError, GS.hamiltonian, 0)
+
+
 if __name__ == "__main__":
     unittest.main()

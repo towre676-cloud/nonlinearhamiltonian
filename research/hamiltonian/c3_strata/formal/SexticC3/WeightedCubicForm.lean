@@ -128,3 +128,36 @@ theorem obstruction_coefficients (γ y : K) (h1 : 144 * y = 37 * γ ^ 2) (h2 : 2
   linear_combination (1 / 24 : K) * h2
 
 end QuarticEdge
+
+/-!
+# Generic stratum `H = q^6 + y p^5 + (any lower-degree terms without p^5)`
+
+Weights `wt q = 5`, `wt p = 6`.  In each weight the monomials form one chain
+`(i, j), (i - 6, j + 5), …`; both gates give a two-term row on each link.
+-/
+
+namespace GenericStratum
+
+/-- A link `(i, j - 5) → (i - 6, j)` carries a nonzero pair only if it is resonant. -/
+theorem link_resonance {K : Type*} [Field K] (y i j c0 c1 : K)
+    (a : 720 * (j * (j - 1) * (j - 2) * (j - 3) * (j - 4)) * c1
+        = 120 * y * (i * (i - 1) * (i - 2) * (i - 3) * (i - 4)) * c0)
+    (b : 120 * (j * (j - 1) * (j - 2)) * c1 = 60 * y * (i * (i - 1) * (i - 2)) * c0) :
+    120 * y * (i * (i - 1) * (i - 2)) * ((i - 3) * (i - 4) - 3 * ((j - 3) * (j - 4))) * c0 = 0 := by
+  linear_combination -a + (6 * ((j - 3) * (j - 4))) * b
+
+/-- Two consecutive links are never both resonant. -/
+theorem no_consecutive_resonance (i j : ℤ) (hi : 6 ≤ i) (hj : 5 ≤ j)
+    (h1 : (i - 3) * (i - 4) = 3 * ((j - 3) * (j - 4)))
+    (h2 : (i - 9) * (i - 10) = 3 * ((j + 2) * (j + 1))) : False := by
+  have h : 12 * i + 30 * j = 108 := by linear_combination h1 - h2
+  omega
+
+/-- The only resonant link that can stand alone is `q^6 → p^5`, the Hamiltonian itself. -/
+theorem isolated_resonance (i j : ℤ) (hi6 : 6 ≤ i) (hi8 : i ≤ 8) (hj0 : 0 ≤ j) (hj2 : j ≤ 2)
+    (h : (i - 3) * (i - 4) = 3 * ((j + 2) * (j + 1))) : i = 6 ∧ j = 0 := by
+  have hi : i = 6 ∨ i = 7 ∨ i = 8 := by omega
+  have hj : j = 0 ∨ j = 1 ∨ j = 2 := by omega
+  rcases hi with rfl | rfl | rfl <;> rcases hj with rfl | rfl | rfl <;> simp_all
+
+end GenericStratum

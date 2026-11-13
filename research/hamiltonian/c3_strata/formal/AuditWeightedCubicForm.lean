@@ -13,3 +13,6 @@ audit_axioms WeightedCubicForm.cube_of_brackets
 audit_axioms WeightedCubicForm.tail_collapse
 audit_axioms QuarticEdge.row_elimination
 audit_axioms QuarticEdge.obstruction_coefficients
+audit_axioms GenericStratum.link_resonance
+audit_axioms GenericStratum.no_consecutive_resonance
+audit_axioms GenericStratum.isolated_resonance

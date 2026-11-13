@@ -133,13 +133,13 @@ The existing results serve as regressions and are not new here: at $\alpha=\beta
 
 ## Not claimed
 
-The boundary $x=0$, the full refinement tower on the cube locus beyond Theorem 4, Hamiltonians whose Newton polygon has more than one edge above the cubic one (for instance $q^6+q^4p+p^4$, or any term $qp^3$, $q^5p$, $p^5$ combined with the above), the boundary $y=0$ of the quartic edge, and the full 21-parameter family remain open. The two weight-4 points are defined over $\mathbb Q(\sqrt{11377})$ and were located by an exact ideal computation, not examined individually. Theorems 2 and 3 are not formalized in Lean.
+The boundary $x=0$, the full refinement tower on the cube locus beyond Theorem 4, Hamiltonians whose Newton polygon has more than one edge above the cubic one (for instance $q^6+q^4p+p^4$, or any term $qp^3$, $q^5p$, $p^5$ combined with the above), the boundary $y=0$ of the quartic edge, and the strata of the 21-parameter family between these edges and the generic stratum $c_{05}\ne0$, which is settled in [GENERIC_SIXFOLD_STRATUM_THEOREM.md](GENERIC_SIXFOLD_STRATUM_THEOREM.md), remain open. The two weight-4 points are defined over $\mathbb Q(\sqrt{11377})$ and were located by an exact ideal computation, not examined individually. Theorems 2 and 3 are not formalized in Lean.
 
 ## Replay
 
 ~~~sh
 python verify_weighted_cubic_form.py          # 46 checks, writes WEIGHTED_CUBIC_FORM_REPLAY.json
 python verify_quartic_edge.py                 # 9 checks, about 2 minutes
-python -m unittest test_weighted_cubic_form   # 14 tests
+python -m unittest test_weighted_cubic_form   # 15 tests
 cd formal && lake build SexticC3.WeightedCubicForm && lake env lean AuditWeightedCubicForm.lean
 ~~~
