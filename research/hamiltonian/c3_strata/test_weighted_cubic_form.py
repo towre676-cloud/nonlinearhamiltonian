@@ -95,5 +95,18 @@ class Sensors(unittest.TestCase):
         EO.verify_certificate(s.certificate())
 
 
+class QuarticEdge(unittest.TestCase):
+    def test_strata(self):
+        import quartic_edge as QE
+        for pt in [(1, 3), (0, 3), (12, 6), (6, -6), (4, Fr(3, 2)), (4, Fr(-3, 5)), (2, Fr(-1, 10)), (2, 1)]:
+            self.assertEqual(QE.dims(*pt), QE.predicted_dims(*pt), pt)
+
+    def test_square_locus_has_no_tail_and_weights_checked(self):
+        import quartic_edge as QE
+        h = QE.hamiltonian(2, 1)
+        self.assertFalse(any(QE.gate_system(h, QE.weight_basis(w), 0).witnesses() for w in range(21, 61) if QE.weight_basis(w)))
+        self.assertRaises(ValueError, QE.hamiltonian, 1, 1, {(3, 2): 1})
+
+
 if __name__ == "__main__":
     unittest.main()

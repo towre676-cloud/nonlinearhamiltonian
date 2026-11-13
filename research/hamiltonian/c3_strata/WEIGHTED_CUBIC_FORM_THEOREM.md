@@ -80,6 +80,40 @@ for quadratic $\varphi$, the terms linear in $u$ cancelling. The right side is e
 
 The step from Theorem 2 to Theorem 3 is not specific to Hamiltonians. Let an observation map $\mathcal O$ on a graded model space be the sum of a part $\mathcal O_0$ homogeneous for the grading and parts of strictly lower degree. Then the leading components of $\ker\mathcal O$ lie in $\ker\mathcal O_0$, so $\dim\ker\mathcal O\le\dim\ker\mathcal O_0$, and if $\ker\mathcal O_0$ is supported in degrees at most $D$ then so is $\ker\mathcal O$. A finite exact certificate for the leading observation family therefore separates the entire lower-order perturbation class, here 12 further parameters, with no additional computation. The same inclusion holds for iterated observations $\mathcal O\circ D^i$ when $D$ is filtered with homogeneous leading part.
 
+## The quartic Newton edge
+
+The same method applies to the other edge of the Newton polygon that carries an interior lattice point. Take weights $\operatorname{wt}q=2$, $\operatorname{wt}p=3$ and
+
+$$H=q^6+\gamma q^3p^2+yp^4+R,\qquad y\ne0,\qquad \operatorname{wt}R<12,\ \deg R\le5 .$$
+
+The leading form $H_e=q^6+\gamma q^3p^2+yp^4$ is the general weighted-homogeneous form of weight 12; the slice $\gamma=0$ is covered by the weighted separable theorem. The invariant of the scaling is $\gamma^2/y$.
+
+**Theorem 5 (proved for every weight; finite part by exact certificates).** Let $y\ne0$. Every static partner of $H$ has weighted degree at most 20, and
+
+$$\dim S^0(H_e)=10+2[\gamma=0]+[3\gamma^2=-80y]+[3\gamma^2=32y]+[\gamma^2=-6y]+[\gamma^2=24y],$$
+
+the extra elements having weights $7$ and $16$, $9$, $11$, $18$, $20$ respectively. The first refinement of $H_e$ is $\operatorname{span}\{1,H_e\}$ unless $\gamma^2=-40y$, where it gains $p$. For every admissible $R$,
+
+$$S^2(H)=D_\infty(H)=\operatorname{span}\{1,H\},\qquad\dim S^r(H)\le\dim S^r(H_e)\ (r=0,1).$$
+
+There is no analogue of the cube locus: on $\gamma^2=4y$, where $H_e=(q^3+\tfrac{\gamma}{2}p^2)^2$, the static space is the generic one, in agreement with Theorem 4, whose hypothesis fails for $q^3+cp^2$.
+
+*Proof.* Write a weight-$d$ polynomial as $\sum_j g_j\,q^{i}p^{j}$ with $i=(d-3j)/2$, $j\equiv d\pmod 2$. With symbolic exponents,
+
+$$T_5(H_e,G)=720\,q\,\partial_p^5G+120\,\gamma\,\partial_q^2\partial_p^3G,\qquad T_3(H_e,G)=(120q^3+6\gamma p^2)G_{ppp}-36\gamma qp\,G_{qpp}+18\gamma q^2G_{qqp}-24yp\,G_{qqq}.$$
+
+For $j\ge3$ the fifth gate gives the two-term row $6(j+2)(j+1)\,g_{j+2}=-\gamma\,i(i-1)\,g_j$, and for $j\ge1$ the third gate gives
+
+$$120(j+2)(j+1)j\,g_{j+2}+\gamma j\bigl[6(j-1)(j-2)-36i(j-1)+18i(i-1)\bigr]g_j-24y(i+3)(i+2)(i+1)\,g_{j-2}=0 .$$
+
+Let $\gamma\ne0$ and let $j_0\in\{3,4\}$ have the parity of $d$. By the two-term rows $g_{j_0}=0$ forces $g_j=0$ for all $j\ge3$, while $g_{j_0}\ne0$ forces $g_j\ne0$ up to the top index. In the second case, substituting the two-term rows at $j-2$ and $j$ into the third-gate row at $j$ gives, for every $j\ge j_0+2$ in the range,
+
+$$N(d,j)=\gamma^2\bigl[\tfrac13i(i-1)-(j-1)(j-2)+6i(j-1)\bigr]-24y(i+1)(j-1)=0 .$$
+
+As a polynomial in $j$, $N$ has degree at most 2 with leading coefficient $\tfrac14(144y-37\gamma^2)$ and linear coefficient $-\tfrac12(d+5)(24y-5\gamma^2)$, which vanish together only for $\gamma=y=0$. So $N$ has at most 2 roots, whereas for $d\ge33$ there are at least 3 admissible indices $j$. Hence $g_j=0$ for $j\ge3$, and the third-gate rows at $j=4,3,2$ then give $y(i+3)(i+2)(i+1)g_{j-2}=0$, so $G=0$. If $\gamma=0$ the fifth gate gives $g_j=0$ for $j\ge5$ and the same descent gives $G=0$ for $d\ge18$. The weights $d\le34$ are settled exactly in the chart $y=1$ over $\mathbb Q[\gamma]$: in each weight and depth the greatest common divisor of maximal minors is a nonzero constant, except for the seven polynomials in the statement, whose roots are confirmed as genuine rank drops at rational representatives of each value of $\gamma^2/y$. The passage to $R\ne0$ is the separation principle. $\qquad\blacksquare$
+
+Status: the tail argument is a human proof whose row formulas and identity for $N$ are replayed symbolically; the finite part is an exact computer-algebra certificate replayed by `verify_quartic_edge.py` (9 checks); nothing in Theorem 5 is formalized in Lean.
+
 ## Evidence classes
 
 | Claim | Status |
@@ -99,12 +133,13 @@ The existing results serve as regressions and are not new here: at $\alpha=\beta
 
 ## Not claimed
 
-The boundary $x=0$, the full refinement tower on the cube locus beyond Theorem 4, perturbations of weight 6 or more other than $q^4p$ and $q^2p^2$ (for instance $q^3p^2$, $qp^3$, $p^4$, $q^5p$), and the full 21-parameter family remain open. The two weight-4 points are defined over $\mathbb Q(\sqrt{11377})$ and were located by an exact ideal computation, not examined individually. Theorems 2 and 3 are not formalized in Lean.
+The boundary $x=0$, the full refinement tower on the cube locus beyond Theorem 4, Hamiltonians whose Newton polygon has more than one edge above the cubic one (for instance $q^6+q^4p+p^4$, or any term $qp^3$, $q^5p$, $p^5$ combined with the above), the boundary $y=0$ of the quartic edge, and the full 21-parameter family remain open. The two weight-4 points are defined over $\mathbb Q(\sqrt{11377})$ and were located by an exact ideal computation, not examined individually. Theorems 2 and 3 are not formalized in Lean.
 
 ## Replay
 
 ~~~sh
 python verify_weighted_cubic_form.py          # 46 checks, writes WEIGHTED_CUBIC_FORM_REPLAY.json
-python -m unittest test_weighted_cubic_form   # 12 tests
+python verify_quartic_edge.py                 # 9 checks, about 2 minutes
+python -m unittest test_weighted_cubic_form   # 14 tests
 cd formal && lake build SexticC3.WeightedCubicForm && lake env lean AuditWeightedCubicForm.lean
 ~~~

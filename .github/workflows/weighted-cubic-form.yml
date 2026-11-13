@@ -5,6 +5,8 @@ on:
       - 'research/hamiltonian/c3_strata/exact_observation.py'
       - 'research/hamiltonian/c3_strata/weighted_cubic_form.py'
       - 'research/hamiltonian/c3_strata/period_valuation_transfer.py'
+      - 'research/hamiltonian/c3_strata/quartic_edge.py'
+      - 'research/hamiltonian/c3_strata/verify_quartic_edge.py'
       - 'research/hamiltonian/c3_strata/verify_weighted_cubic_form.py'
       - 'research/hamiltonian/c3_strata/test_weighted_cubic_form.py'
       - 'research/hamiltonian/c3_strata/WEIGHTED_CUBIC_FORM_CERTIFICATE.json'
@@ -25,3 +27,5 @@ jobs:
         run: python -m unittest discover -s research/hamiltonian/c3_strata -p 'test_weighted_cubic_form.py' -v
       - name: Independent replay of the tail identities and minor certificates
         run: python research/hamiltonian/c3_strata/verify_weighted_cubic_form.py
+      - name: Independent replay of the quartic Newton edge
+        run: python research/hamiltonian/c3_strata/verify_quartic_edge.py
