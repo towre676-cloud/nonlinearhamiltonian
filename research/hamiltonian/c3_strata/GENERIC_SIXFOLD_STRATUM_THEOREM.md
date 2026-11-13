@@ -49,9 +49,21 @@ For the refinements it suffices, by the scaling $q\mapsto q/\mu$, $p\mapsto\mu p
 
 Because every static partner has degree at most 6, `generic_sixfold_stratum.refinement` computes $S^r(H)$ exactly, for all polynomial degrees, for any given member with $c_{05}\ne0$.
 
+## The strata below: finite experiments only
+
+The same weighting argument orders the complement $c_{05}=0$ by the next vertex of the Newton polygon. `newton_strata_experiment.py` counts static partners of each binomial leading form chain by chain through weight 360 and reports exact refinement dimensions on the resulting window. These are finite experiments, not theorems; on each stratum both gates are again two-term on every link, so the proof template above applies, but the resonance analysis has not been carried out.
+
+| Stratum | Leading form, weights | Static partners found (weights $\le360$) | $\dim S^0,S^1,S^2$ of the leading form | One random member |
+| --- | --- | --- | --- | --- |
+| $c_{05}=0\ne c_{14}$ | $q^6+qp^4$, $(4,5)$ | 10, top weight 44 | 10, 2, 2 | 7, 2, 2 |
+| $c_{05}=c_{14}=0\ne c_{23}$ | $q^6+q^2p^3$, $(3,4)$ | 10, top weight 28 | 10, 2, 2 | 8, 2, 2 |
+| $c_{05}=c_{14}=c_{23}=0\ne c_{04}$ | $q^6+\gamma q^3p^2+yp^4$, $(2,3)$ | Theorem 5 of the weighted cubic-form note | | |
+| then $c_{04}=c_{32}=0\ne c_{13}$ | $q^6+qp^3$, $(3,5)$ | 14, top weight 62 | 14, 3, 2 | 11, 2, 2 |
+| then $c_{13}=0\ne c_{03}$ | $q^6+\alpha q^4p+\beta q^2p^2+xp^3$, $(1,2)$ | Theorems 1 to 3 of the weighted cubic-form note | | |
+
 ## Not claimed
 
-Nothing is asserted on $c_{05}=0$. The next strata are ordered by the Newton polygon: $c_{05}=0\ne c_{14}$ has leading vertices $q^6$ and $qp^4$, and so on down to the edges treated in the weighted cubic-form note. The human proofs here have not been refereed.
+Nothing is proved here on $c_{05}=0$; the table above is experimental. The boundary $c_{04}=0\ne c_{32}$ of the quartic edge has an infinite static tail in the experiments and is open. The human proofs here have not been refereed.
 
 ## Replay
 
