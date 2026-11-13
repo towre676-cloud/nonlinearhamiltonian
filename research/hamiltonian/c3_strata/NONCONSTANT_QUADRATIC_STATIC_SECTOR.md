@@ -12,6 +12,6 @@ T₃(H,G)=6(B'g''−A''k')+12p(B'k''−B''k'),   T₅(H,G)=0.
 
 The polynomial identity B'k''−B''k'=0 says (k'/B')'=0 in K(q). Since B' is a nonzero polynomial, k'=λB' and hence k=λB+μ for λ,μ∈K. The other identity becomes B'(g''−λA'')=0, so g=λA+aq+d. Conversely these forms satisfy both gates.
 
-**First-refinement necessary condition.** With G as above, the coefficient of p³ in D_HG is 2μB'. Therefore any G∈S¹(H)∩V₂ necessarily has μ=0. This condition is not sufficient: the third gate of D_HG also needs to vanish. We make no claim about S¹ or D∞ beyond this necessary condition.
+**First refinement.** The coefficient of p³ in D_HG is 2μB'. The full static space can contain p³ terms, so this coefficient can be nonzero for a first-refinement partner. The [affine A,B classification](AFFINE_QUADRATIC_FIFTH_GATE.md) gives an explicit example with μ≠0 and the complete refinement spaces for that family.
 
 This result does not cover B constant, static partners of p-degree ≥3, or the full 21-parameter classification. It is not Lean formalized.

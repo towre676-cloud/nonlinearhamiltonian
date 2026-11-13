@@ -1,0 +1,20 @@
+name: Affine quadratic refinement exact replay
+on:
+  pull_request:
+    paths:
+      - 'research/hamiltonian/c3_strata/verify_affine_quadratic_refinement.py'
+      - 'research/hamiltonian/c3_strata/AFFINE_QUADRATIC_FIFTH_GATE.md'
+      - '.github/workflows/affine-quadratic-refinement.yml'
+  workflow_dispatch:
+jobs:
+  replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install sympy==1.14.0
+      - run: python research/hamiltonian/c3_strata/verify_affine_quadratic_static.py
+      - run: python research/hamiltonian/c3_strata/verify_affine_quadratic_refinement.py
