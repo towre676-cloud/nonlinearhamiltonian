@@ -80,5 +80,20 @@ class Periods(unittest.TestCase):
         self.assertEqual(sum(a * b for a, b in zip(u, range(1, 13))), 0)
 
 
+class Sensors(unittest.TestCase):
+    """Third client: the 7x7 reader matrix of Singularity's volume-eight certificate
+    (independent_checks/height_series/vol8_reader_certificate.json at d18fbb2), embedded verbatim."""
+    PANEL = [2, 6, 8, 18, 22, 28, 30]
+    MATRIX = [[0, 0, 0, 1, -12, 0, 0], [0, 1, -10, 55, -220, 0, 0], [1, -9, 45, -165, 495, 0, 3],
+              [-56, 84, -120, 165, -220, -70, -84], [-8, 9, -10, 11, -12, 14, 18],
+              [0, 0, 0, 0, 0, 5, 6], [0, 0, 0, 0, 0, -1, -1]]
+
+    def test_volume_eight_reader_gain(self):
+        s = EO.ObservationSystem(range(7), [(("coeff", e), 1, r) for e, r in zip(self.PANEL, self.MATRIX)])
+        self.assertEqual(EO.det(self.MATRIX), 224000)
+        self.assertEqual(s.amplification(list(range(7))), Fr(133, 10))
+        EO.verify_certificate(s.certificate())
+
+
 if __name__ == "__main__":
     unittest.main()

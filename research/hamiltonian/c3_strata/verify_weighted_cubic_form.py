@@ -122,6 +122,23 @@ ok("weight 2 first-refinement kernel is at most a line off the cube", all(S.groe
 m2, _ = all_minors(4, 1, 2)
 ok("weight 4 first-refinement kernel is at most a line off the cube", all(S.groebner(m2, al, be, order="lex").contains(t) for t in CUBE))
 
+# the two weight-4 points lie on neither Delta_w nor Gamma_2 (off the cube)
+for nm, extra in (("Delta_w", 3 * al - be ** 2), ("Gamma_2", g2)):
+    ok("weight-4 points avoid %s off the cube" % nm, all(S.groebner(tgt4 + [extra], al, be, order="lex").contains(t) for t in CUBE))
+
+# Theorem 4: quadric commutant.  With h_m(s) = exp(-s phi) d^m/dq^m exp(s phi), phi quadratic,
+# T_k(exp(sQ), exp(tQ)) = exp((s+t)Q) c^k sum_j (-1)^j C(k,j) s^j t^(k-j) h_(k-j)(s) h_j(t), Q = c p + phi(q)
+s_, t_, c_s, a2, a1 = S.symbols("s t c a2 a1")
+phi = a2 * q ** 2 + a1 * q
+hm = lambda m, ss: S.expand(S.simplify(S.diff(S.exp(ss * phi), q, m) / S.exp(ss * phi)))
+quad = True
+for kk in (1, 3, 5, 7):
+    quad &= S.expand(sum((-1) ** jj * comb(kk, jj) * s_ ** jj * t_ ** (kk - jj) * hm(kk - jj, s_) * hm(jj, t_) for jj in range(kk + 1))) == 0
+ok("odd transvectants of exp(sQ), exp(tQ) vanish for Q = c p + quadratic(q), k = 1,3,5,7", quad)
+Qs = 2 * p + 3 * q ** 2 - q
+ok("direct check: T_3, T_5 of Q^6 against Q^4, Q^7, and a cubic phi fails", T(Qs ** 6, Qs ** 4, 3) == 0 and T(Qs ** 6, Qs ** 7, 5) == 0
+   and T(Qs ** 6, Qs ** 7, 3) == 0 and T((p + q ** 3) ** 3, (p + q ** 3) ** 2, 3) != 0)
+
 for key, c in sorted(cert["minor_certificates"].items()):
     rows, cols = mat(c["weight"], c["depth"])
     polys = []
