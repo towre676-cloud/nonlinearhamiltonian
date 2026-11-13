@@ -1,0 +1,6 @@
+import SexticC3.CubeLeadingGate
+
+#print axioms SexticC3.CubeLeading.natDegree_le_of_iterate_derivative
+#print axioms SexticC3.CubeLeading.gate_degree_bound
+#print axioms SexticC3.CubeLeading.static_function_degree_le_six
+#print axioms SexticC3.CubeLeading.top_coefficient_nonresonant
