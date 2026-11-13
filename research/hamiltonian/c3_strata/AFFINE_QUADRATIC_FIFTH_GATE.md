@@ -1,26 +1,35 @@
-# Complete static classification for affine quadratic-momentum coefficients
+# Complete all-degree classification: affine quadratic-momentum sextics
 
-Let K be a characteristic-zero field, let h(q)∈K[q] have degree six, and let A(q),B(q)∈K[q] satisfy deg A≤1 and deg B≤1. Put H=h(q)+A(q)p+B(q)p², and define S⁰(H)=ker T₃(H,-)∩ker T₅(H,-).
+Let K be characteristic zero, h∈K[q] have degree six, A=a₀+a₁q, B=b₀+b₁q with b₁≠0, and H=h(q)+A(q)p+B(q)p². Write D=T₁(H,-), S⁰=ker T₃(H,-)∩ker T₅(H,-), and Sʳ={G∈S⁰ : DⁱG∈S⁰ for 0≤i≤r}.
 
-**Theorem (all polynomial degrees).** Every G∈S⁰(H) has degₚG≤4. Write G=∑_{j=0}⁴ g_j(q)pʲ and B(q)=b₀+b₁q.
+**Theorem.** The static space is infinite-dimensional, with the complete description
 
-If b₁≠0, the complete static classification is
+S⁰={f(q)+p(λA(q)+aq+d)+p²(λB(q)+μ)+p³(u+vq)+p⁴(w+xq) plus polynomial corrections to the p and p² coefficients forced by the cubic gate},
 
-- g₀∈K[q] arbitrary;
-- g₃,g₄∈K[q] arbitrary of degree at most one;
-- g₁ and g₂ are the polynomial solutions, unique up to affine summands, of
-  g₁''=−h'''g₃/b₁ and g₂''=−2h'''g₄/b₁.
+where the complete and unambiguous description of those corrections is given by the equations
 
-Thus S⁰(H) is isomorphic as a K-vector space to K[q]⊕K⁸, with four coefficients in g₃,g₄ and four integration constants. In particular it is infinite-dimensional.
+g₄=w+xq, g₃=u+vq, g₂''=−2h'''g₄/b₁, g₁''=−h'''g₃/b₁, and g₀ arbitrary.
 
-If b₁=0, the complete static classification is G=g₀(q)+p g₁(q)+p²g₂(q) with g₀,g₁,g₂ arbitrary, i.e. S⁰(H)=K[q]⊕pK[q]⊕p²K[q].
+**The complete refinements are**
 
-**Proof.** The terms A(q)p and B(q)p² have total degree at most three, so their fifth-order partial derivatives vanish. Since h has degree six, T₅(H,G)=h'''''(q)∂ₚ⁵G and h'''''≠0, hence degₚG≤4.
+S¹(H)=span_K{1,q,p,qp,H}, dim 5;
+S²(H)=span_K{1,q,H}, dim 3;
+S³(H)=D∞(H)=span_K{1,H}, dim 2.
 
-The third gate is T₃(H,G)=h'''(q)∂ₚ³G+6b₁∂q²∂ₚG. Its coefficients at p³,p²,p¹,p⁰ respectively are
+All claims hold for every sextic h and every affine A,B with b₁≠0, without truncating the observable degree.
 
-24b₁g₄'', 18b₁g₃'', 24h'''g₄+12b₁g₂'', 6h'''g₃+6b₁g₁''.
+## Proof
 
-For b₁≠0, these equations yield exactly the stated solutions, and each polynomial right-hand side has a polynomial double antiderivative in characteristic zero. For b₁=0, h'''≠0 forces g₃=g₄=0, leaving g₀,g₁,g₂ arbitrary. Conversely every displayed solution satisfies both gates.
+Because A p+B p² has total degree at most three, T₅(H,G)=h'''''∂ₚ⁵G. Since h'''''≠0, degₚG≤4. The third gate is T₃(H,G)=h'''∂ₚ³G+6b₁∂q²∂ₚG. Equating its coefficients gives the complete static description above.
 
-**Scope.** This classifies the entire static space for affine A,B, not just its momentum-quadratic sector. It does not classify S¹ or the persistent core, nor non-affine B(q). The proof is elementary and all-degree but not yet Lean formalized.
+For G∈S¹, write the static coefficients as g₄=w+xq, g₃=u+vq, g₂, g₁, g₀. The coefficient of p⁵ in DG is 4b₁g₄−2Bg₄'; since B is nonconstant affine and g₄ affine, its vanishing forces g₄=0. Similarly, the coefficient of p⁴ then forces g₃=0. Thus G=f(q)+p(λA+aq+d)+p²(λB+μ). The coefficient of p³ in DG is 2μb₁, so μ=0. The remaining third-gate condition on DG reduces to (B(f−λh)')''=0. Since B is nonconstant affine and f−λh is polynomial, this forces f−λh to be affine. Hence G=λH+u+vq+p(aq+d), giving S¹ as claimed. Direct substitution proves the converse.
+
+For this general S¹ element, symbolic differentiation gives T₅(H,D²G)=0 and the p⁰ coefficient of T₃(H,D²G) has q⁴ coefficient −15120 a b₁² times the leading coefficient of h. Therefore a=0. With a=0, its q³ coefficient is −4320 d b₁² times the leading coefficient of h. Hence d=0. Conversely every λH+u+vq passes the first two refinements, so S²=span{1,q,H}.
+
+Finally, for G=λH+u+vq, T₃(H,D³G) has q⁴ coefficient 30240 v b₁³ times the leading coefficient of h, forcing v=0. Conversely 1 and H lie in every refinement, proving S³=D∞=span{1,H}.
+
+The coefficient identities have an independently runnable SymPy replay, including arbitrary sextic lower coefficients. This is an all-degree human proof with exact symbolic checks, not a Lean-formalized theorem.
+
+## Boundary and scope
+
+When b₁=0 the static space instead equals K[q]⊕pK[q]⊕p²K[q]; the above refinement theorem does not assert its behavior. When B is nonlinear, fifth-order derivatives of Bp² may contribute, and this argument must be modified. No claim of complete 21-parameter classification is made.
