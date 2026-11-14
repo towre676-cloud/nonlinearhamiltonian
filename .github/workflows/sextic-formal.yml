@@ -21,6 +21,7 @@ jobs:
         working-directory: research/hamiltonian/c3_strata/formal
         run: |
           python generate.py
+          python generate_cube_leading_seven.py
           git diff --exit-code -- SexticC3
           test -z "$(git ls-files --others --exclude-standard -- SexticC3)"
       - name: Build the pinned Lean and Mathlib project
@@ -36,7 +37,7 @@ jobs:
           LEAN_NUM_THREADS=1 lake build +SexticC3.SquarefreeGeometry:olean \
             +SexticC3.SquarefreePolynomial:olean +SexticC3.TripleRootTail:olean \
             +SexticC3.ExceptionalDifferential:olean +SexticC3.TailChartAxes:olean \
-            +SexticC3.CubeLeadingGate:olean +SexticC3.CubeLeadingCore:olean +SexticC3.CubeLeadingNoSlice:olean +SexticC3.CubeLeadingNewton:olean +SexticC3.CubeLeadingFlatCore:olean
+            +SexticC3.CubeLeadingGate:olean +SexticC3.CubeLeadingCore:olean +SexticC3.CubeLeadingNoSlice:olean +SexticC3.CubeLeadingNewton:olean +SexticC3.CubeLeadingFlatCore:olean +SexticC3.CubeLeadingFullCriterion:olean
       - name: Audit the normalized all-degree and geometric theorems
         working-directory: research/hamiltonian/c3_strata/formal
         run: |
@@ -54,3 +55,6 @@ jobs:
           lake env lean AuditCubeLeadingClassification.lean > AuditCubeLeadingClassification.actual.txt
           diff -u AuditCubeLeadingClassification.output.txt AuditCubeLeadingClassification.actual.txt
           lake env lean TestCubeLeadingClassification.lean
+          lake env lean AuditCubeLeadingFullCriterion.lean > AuditCubeLeadingFullCriterion.actual.txt
+          diff -u AuditCubeLeadingFullCriterion.output.txt AuditCubeLeadingFullCriterion.actual.txt
+          lake env lean TestCubeLeadingFullCriterion.lean

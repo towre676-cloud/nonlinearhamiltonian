@@ -1,4 +1,4 @@
-# Polynomial and flat-gate proof of the cube-leading Theorem K
+# Polynomial and flat-gate proof of the full cube-leading core criterion
 
 Theorem K is now an end-to-end Lean theorem for the region where at least one
 of `b3,c4,c5` is nonzero. The exported theorem
@@ -8,9 +8,11 @@ It identifies the persistent kernel of **all odd flat gates of order at least
 three** with `span{1,H}`. Neither finite-dimensionality, a support cutoff,
 static recurrences nor a bivariate classification is assumed.
 
-The joined ten-parameter if-and-only-if classification still needs the older
-seven-parameter cases `b3=c4=c5=0` formalized. The sharp stopping depth and
-exceptional-locus statements of Theorem R also remain outside Lean.
+The full ten-parameter if-and-only-if is now exported as
+`all_flat_core_iff_nonaffine`. It joins Theorem K to direct coefficient
+elimination on the older seven-parameter stratum and proves the affine
+converse using the extra persistent partner `P`. Theorem R's sharp stopping
+depths and full exceptional-locus classification remain outside Lean.
 
 ## Mathematical interface
 
@@ -197,8 +199,74 @@ row-label dependencies; the Lean proof of Theorem K does not use either.
 
 ## Still outside this theorem
 
-- The seven-parameter cases `b3=c4=c5=0`, including the affine-family converse,
-  must be formalized before exporting the full ten-parameter if-and-only-if.
 - Theorem R's sharp refinement depths and temporary exceptional varieties
   still use their exact symbolic rank certificates outside Lean.
 - No independent specialist review is asserted.
+
+## The full ten-parameter criterion
+
+For the Hamiltonian above, the single exported theorem is:
+
+```lean
+all_flat_core_iff_nonaffine (t : HamiltonianParameters K) :
+  (∀ f : Poly K, AllFlatPersistent (shear 1 (hamiltonian t)) f ↔
+    ∃ a b : K, f = C a+C b*shear 1 (hamiltonian t)) ↔ NonAffine t
+```
+
+Here `NonAffine t` says that at least one of `b2,b3,c2,c3,c4,c5` is nonzero,
+exactly the condition that B and C are not both affine. The field is arbitrary
+of characteristic zero. No classification, degree bound, normal form,
+finite-dimensionality, matrix rank, or external certificate checker is a
+hypothesis.
+
+The older stratum is proved directly in the unnormalized coefficients:
+
+1. If `b3=c4=c5=0` and `b2,c3,c2` are not all zero, staticity of `f` and
+   `D_H f` forces momentum degree at most six. This includes the infinite
+   static sector `b2=0, b1+c3=0`. The proof uses the actual highest coefficient
+   and fifth-gate equations, not a finite search window.
+2. The universal third recurrence determines such a static polynomial from
+   its first three q coefficients at each momentum degree. After subtracting
+   its constant and Hamiltonian components, it is exactly a combination of
+   13 explicitly checked static polynomials. Every basis element and the
+   reconstruction theorem are Lean proofs.
+3. Forty exact coefficient rows from actual Hamiltonian iterates give three
+   triangular eliminations. Each pivot is a nonzero rational times a power
+   of the branch's nonzero parameter. The cubic-C branch uses two final rows
+   in the combination `27*A+4*B`, avoiding any auxiliary parameter exclusion.
+
+| Branch | Raw rows | Greatest iterate used | Nonzero pivot parameter |
+|---|---:|---:|---|
+| `b2 ≠ 0` | 13 | 2 | `b2` |
+| `b2=0, c3 ≠ 0` | 14 | 2 | `c3` |
+| `b2=c3=0, c2 ≠ 0` | 13 | 3 | `c2` |
+
+`generate_cube_leading_seven.py` constructs the basis, evaluates the actual
+polynomial bracket and static operators, and emits the coefficient and
+elimination identities. Lean derives every row from its own differential
+recurrences and verifies every elimination identity using field arithmetic.
+The generator is reproducible but is not part of the trusted proof chain.
+The scalar evaluation table is proved equal to the polynomial coefficient
+map, so its use introduces no independent coefficient-array assumption.
+
+When B and C are affine, the actual bracket sends P to `b1*P+c1`.
+Consequently `span{1,P}` is a static invariant space and P is persistent.
+Coefficient comparison proves P is outside `span{1,H}`. The shear transports
+this witness to `p+q²` in the original coordinates. This proves the necessity
+of the non-affine condition as well as its sufficiency.
+
+`AuditCubeLeadingFullCriterion.lean` adds 19 audited declarations, including
+both chart and original-coordinate iff theorems. Its axiom lists contain only
+`propext`, `Classical.choice`, and `Quot.sound`. The new boundary regressions
+cover all three non-affine branches, the infinite-static-sector cutoff, the
+affine converse, and the quadratic-restoring point where a partner survives
+iterates 0, 1 and 2 but fails at iterate 3. These checks do not promote the
+full sharp-refinement classification into a formal theorem.
+
+```sh
+python generate_cube_leading_seven.py
+lake build +SexticC3.CubeLeadingFullCriterion:olean
+lake env lean AuditCubeLeadingFullCriterion.lean > AuditCubeLeadingFullCriterion.actual.txt
+diff -u AuditCubeLeadingFullCriterion.output.txt AuditCubeLeadingFullCriterion.actual.txt
+lake env lean TestCubeLeadingFullCriterion.lean
+```

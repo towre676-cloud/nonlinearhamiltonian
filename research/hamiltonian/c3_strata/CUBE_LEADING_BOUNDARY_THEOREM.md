@@ -464,11 +464,20 @@ The toolchain is Lean 4.19.0 with Mathlib `c44e0c8e`.
 exported theorem, with only `propext`, `Classical.choice`, and `Quot.sound`.
 There is no `sorry`, `admit`, or new axiom.
 
-Still not formalized: the older seven-parameter classification (Theorems C,
-E and G and the affine-family converse), hence the joined ten-parameter
-if-and-only-if; the exact static dimensions and sharp weight bound 12; and
-Theorem R's sharp refinement depths and temporary exceptional varieties.
-The Lean proof of Theorem K uses the sufficient weight bound 20 instead of 12.
+The joined ten-parameter iff is now formalized as
+`all_flat_core_iff_nonaffine`. The older seven-parameter persistent-core
+cases are proved directly in the original coefficients: a first-refinement
+momentum cutoff and static recurrence give an exact 13-coordinate normalized
+basis, and 40 proved coefficient equations give triangular elimination in
+the three non-affine branches. On the affine locus, P is an extra persistent
+partner independent of 1,H. `AuditCubeLeadingFullCriterion.lean` audits 19
+additional declarations with the same three standard axioms. No normalization
+or external rank checker is assumed by the joined theorem.
+
+Still outside the exported Lean classification: the exact static dimensions
+and sharp weight bound 12, and Theorem R's complete sharp refinement depths
+and temporary exceptional varieties. The Lean proof of Theorem K uses the
+sufficient weight bound 20 instead of 12.
 
 ## 8. Replay
 
@@ -488,6 +497,10 @@ cd formal && lake build SexticC3.CubeLeadingNoSlice && lake env lean AuditCubeLe
 # Complete Theorem K:
 lake build +SexticC3.CubeLeadingFlatCore:olean
 lake env lean AuditCubeLeadingClassification.lean
+# Full ten-parameter iff:
+lake build +SexticC3.CubeLeadingFullCriterion:olean
+lake env lean AuditCubeLeadingFullCriterion.lean
+lake env lean TestCubeLeadingFullCriterion.lean
 lake env lean TestCubeLeadingClassification.lean
 ```
 

@@ -20,10 +20,10 @@ On the quadratic-B stratum `b3=c4=c5=0, b2!=0`, the first-refinement jump
 is exactly `c3=0`; its dimensions are respectively four and three, and
 `S2=span{1,H}` throughout. Neither question should be reopened as a conjecture.
 
-Theorem K now has an end-to-end Lean proof for all polynomial degrees and all
-odd flat gates in the original coordinates, when at least one of `b3,c4,c5`
-is nonzero. The full ten-parameter classification still needs its older
-seven-parameter cases formalized. The repository
+The full ten-parameter persistent-core if-and-only-if now has an end-to-end
+Lean proof for all polynomial degrees and all odd flat gates in the original
+coordinates. It joins Theorem K to direct elimination in the older seven
+parameters and an explicit affine counterpartner. The repository
 does not assert external peer review or a full 21-parameter refinement theorem.
 
 ## Priorities 1 and 2: resolved by Theorem R
@@ -53,12 +53,12 @@ point replay of all thirteen certificates and of the ledger is
 its receipt was regenerated with the full PerfectJet verifier, with only the
 manuscript fingerprint changing.
 
-## Priority 3: complete the Lean bridge for Theorem K
+## Priority 3: complete
 
 Build on `formal/SexticC3/CubeLeadingGate.lean` and
 `formal/SexticC3/CubeLeadingCore.lean` rather than restating the conclusion as
-an assumption. The dependency list is below. Items 1–5 and the three new Newton cases
-of item 6 are now complete. The older seven-parameter part of item 6 remains.
+an assumption. All six dependencies below are now complete, including the joined
+ten-parameter if-and-only-if theorem.
 
 1. Weighted leading forms and the positive-increment argument for a
    finite-dimensional `D_H`-stable polynomial space. Formalize nilpotence of
@@ -74,8 +74,8 @@ of item 6 are now complete. The older seven-parameter part of item 6 remains.
 6. A single exported theorem joining the three new Newton cases to the
    established seven-parameter core classification, with an axiom audit.
 
-Success means an end-to-end theorem without `sorry` or an assumed bivariate
-classification. Until then, state exactly which component lemmas are formalized.
+The exported `all_flat_core_iff_nonaffine` is an end-to-end theorem without
+`sorry` or an assumed bivariate classification.
 
 Status. Dependencies 1, 2 and 3 are now proved for actual bivariate polynomials
 in `CubeLeadingPolynomial.lean`, `CubeLeadingCoprime.lean`,
@@ -109,14 +109,21 @@ without a finite-dimensionality or support hypothesis. It applies even on the
 `E=0` part of the new Newton region, using staticity after one bracket iterate.
 Its audit contains only `propext`, `Classical.choice`, and `Quot.sound`.
 
-**Next remaining formalization:** the older cases `b3=c4=c5=0` (Theorems C,
-E and G, plus the affine-family converse), followed by the single joined
-ten-parameter if-and-only-if theorem. These older proofs rely on normalized
-families and exact matrix certificates; their normalization and certificate
-bridges must be proved, not replaced with a classification hypothesis.
-Theorem R's sharp stopping depths and temporary exceptional loci also remain
-outside Lean. The new proof uses a sufficient weight bound 20 and does not
-claim the sharp static bound 12 or exact static dimensions are formalized.
+The older cases `b3=c4=c5=0` are now covered by
+`seven_persistent_core`. Their proof does not require affine normalization:
+a first-refinement momentum cutoff, exact reconstruction from a finite jet,
+and 40 Lean-checked coefficient equations give triangular elimination in
+three branches (`b2≠0`, then `c3≠0`, then `c2≠0`). On the affine locus, P is
+proved persistent and independent of 1,H. The single joined
+`all_flat_core_iff_nonaffine` states the full iff in the original coordinates.
+Its 19-declaration audit uses only `propext`, `Classical.choice`, `Quot.sound`.
+
+**Next remaining formalization:** Theorem R's sharp stopping depths and
+complete temporary exceptional loci. The seven-parameter elimination uses
+iterates through depth 2 or 3, but the exported core theorem does not claim
+all sharp finite-stage dimensions or jump equations have been formalized.
+The new-Newton proof uses a sufficient weight bound 20 and does not claim
+the sharp static bound 12 or exact static dimensions are formalized.
 
 ## Verification and reproducibility
 
@@ -155,5 +162,5 @@ Repository integration and passing computational checks are not substitutes
 for that mathematical review.
 
 The sharp depth theorem and the exceptional-locus classification are complete
-for all three Newton cases (Theorem R). The next increments are the remaining seven-parameter part of Priority 3,
-the sharp-refinement formalization and the independent review described above.
+for all three Newton cases (Theorem R). The next increments are the sharp-refinement formalization and the
+independent specialist review described above.
