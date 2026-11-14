@@ -448,18 +448,29 @@ bivariate operators only through the [cert] identities of Sections 1–2.
 `Classical.choice` only for the field lemma; no `sorry`): `euler_cramer`,
 `euler_cramer'`, `leading_form_dvd` (Lemma K2 and the divisibility step of K3, in
 an arbitrary commutative ring with the partial derivatives constrained only by
-the Euler relations), and `case_one_obstruction`. **Not formalised:** Lemma K4
-(the filtration argument), the unique-factorisation step $h\mid s\,h_P\Rightarrow
-h\mid s$, and the static recurrences; Theorem K is a human proof whose identities
-are replayed exactly, not a Lean theorem.
+the Euler relations), and `case_one_obstruction`. These are the original component lemmas. The later modules below supply the
+polynomial K3/K4 bridge and coprimality; the static recurrences and final
+classification are still not Lean theorems.
 
 `formal/SexticC3/CubeLeadingNoSlice.lean` (same toolchain; `propext`,
 `Classical.choice`, `Quot.sound`; no `sorry`) proves Lemmas K3 and K4 abstractly:
 `kernel_forms`, `no_preimage`, `no_slice`, `leading_forms_of_stable`, for a
 structure `LeadingData` whose fields are the identities satisfied by the
-bracket and the weighted Euler operator. The structure is not yet instantiated
-for $K[q,P]$, so this is a verified abstract argument, not a formal bivariate
-theorem.
+bracket and the weighted Euler operator. Within this file the structure is not instantiated
+for $K[q,P]$, so its results are abstract. The concrete realization follows
+in the modules described next.
+
+The [polynomial bridge](CUBE_LEADING_POLYNOMIAL_BRIDGE.md), in
+`CubeLeadingPolynomial.lean`, `CubeLeadingCoprime.lean`,
+`CubeLeadingFiltration.lean` and `CubeLeadingNewton.lean`, now instantiates
+these operators on `MvPolynomial (Fin 2) K`. It proves the scalar kernel and
+no-preimage statements, concrete K3, all three coprimality claims, and the
+leading-form conclusion of K4 for finite-dimensional stable polynomial spaces.
+Finite weight bounds and top-component bracket compatibility are derived.
+The three Newton cases allow arbitrary strictly lower-weight perturbations.
+The static recurrences, the exclusion of leading form h² with arbitrary lower
+corrections, the final dimension argument and the exported classification
+remain unformalized. Thus Theorem K remains a conventional proof.
 
 ## 8. Replay
 

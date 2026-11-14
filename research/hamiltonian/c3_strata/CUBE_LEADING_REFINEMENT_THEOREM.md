@@ -215,9 +215,10 @@ ledger with PerfectJet gates and SymPy ranks; these are exact point checks of
 the transported operators and of the stored determinants, not a second proof.
 Not done: nothing in this document is formalised
 in Lean; no independent specialist review is asserted. The coverage table in
-`BINOMIAL_NEWTON_SHARP_THEOREM.md` still describes these intermediate refinements
-as open; that manuscript is fingerprinted by a receipt and was deliberately left
-untouched here.
+`BINOMIAL_NEWTON_SHARP_THEOREM.md` now records Theorem R; its retained receipt
+was regenerated with the full independent verifier. The separate polynomial
+K3/K4 formalization is documented in `CUBE_LEADING_POLYNOMIAL_BRIDGE.md` and does
+not formalize the static reduction or the rank-certificate proof of Theorem R.
 
 ## 7. Replay
 

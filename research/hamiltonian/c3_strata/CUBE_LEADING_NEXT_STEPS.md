@@ -47,15 +47,16 @@ one named polynomial, or one of two univariate minors with an explicit Bezout
 identity; `verify_cube_leading_refinement.py` reconstructs all of them. These
 statements should not be reopened as conjectures. The independent PerfectJet
 point replay of all thirteen certificates and of the ledger is
-`verify_cube_leading_refinement_perfectjet.py`. Remaining follow-up for this
-increment: refreshing the coverage table in `BINOMIAL_NEWTON_SHARP_THEOREM.md`
-together with its receipt.
+`verify_cube_leading_refinement_perfectjet.py`. The coverage table in `BINOMIAL_NEWTON_SHARP_THEOREM.md` now includes Theorem R;
+its receipt was regenerated with the full PerfectJet verifier, with only the
+manuscript fingerprint changing.
 
 ## Priority 3: complete the Lean bridge for Theorem K
 
 Build on `formal/SexticC3/CubeLeadingGate.lean` and
 `formal/SexticC3/CubeLeadingCore.lean` rather than restating the conclusion as
-an assumption. The missing dependencies are:
+an assumption. The dependency list is below; items 1–3 are now complete, as detailed after
+the list.
 
 1. Weighted leading forms and the positive-increment argument for a
    finite-dimensional `D_H`-stable polynomial space. Formalize nilpotence of
@@ -74,18 +75,31 @@ an assumption. The missing dependencies are:
 Success means an end-to-end theorem without `sorry` or an assumed bivariate
 classification. Until then, state exactly which component lemmas are formalized.
 
-Status. `formal/SexticC3/CubeLeadingNoSlice.lean` proves dependencies 1 and 3,
-and the divisibility implication of dependency 2, in abstract form: for a
-structure `LeadingData` recording the leading form, the bracket, the weighted
-Euler operator and their identities in a characteristic-zero domain where
-nonzero integers are units and `h` is relatively prime to `h_P`, it proves
-`kernel_forms`, `no_preimage`, `no_slice` (Lemma K3) and
-`leading_forms_of_stable` (Lemma K4, with nilpotence derived for the induced
-leading operation). Still missing, in order: (a) the instance of `LeadingData`
-for the bivariate polynomial ring, i.e. the Leibniz, Euler, weight-shift and
-negative-weight identities for actual partial derivatives; (b) relative
-primality of the three explicit leading forms with their `P`-derivatives;
-(c) dependencies 4, 5 and 6 unchanged. No bivariate statement is formalised yet.
+Status. Dependencies 1, 2 and 3 are now proved for actual bivariate polynomials
+in `CubeLeadingPolynomial.lean`, `CubeLeadingCoprime.lean`,
+`CubeLeadingFiltration.lean` and `CubeLeadingNewton.lean`.
+
+- `LeadingData` is instantiated using Mathlib's partial derivatives on
+  `MvPolynomial (Fin 2) K`, over every characteristic-zero field K.
+- Euler eigenforms are characterized coefficientwise; negative-weight forms
+  vanish and positive variable weights force every weight-zero form to be a
+  scalar. Concrete kernel, no-preimage and no-slice theorems follow.
+- All three explicit leading forms are proved relatively prime to their
+  P-derivatives for every nonzero leading coefficient, including the reducible
+  middle form. These proofs take place in the polynomial UFD, not its fraction
+  field alone.
+- Finite-dimensional polynomial spaces are proved to have a common weight
+  bound. Top-component transport is proved for the actual Poisson bracket.
+  The leading-form conclusion of K4 follows by iterating this identity, without
+  assuming boundedness, abstract leading compatibility, or nilpotence of D_H.
+- `case_one_stable`, `case_two_stable` and `case_three_stable` allow arbitrary
+  strictly lower-weight polynomial perturbations of the three leading forms.
+
+See [the polynomial bridge](CUBE_LEADING_POLYNOMIAL_BRIDGE.md) for exact theorem
+interfaces and the axiom audit. Dependencies 4, 5 and 6 remain: the transported
+flat gates and all-degree static recurrences, exclusion of h² with all lower
+corrections and the dimension argument, and the single full classification
+theorem. Theorem K and Theorem R are not yet end-to-end Lean theorems.
 
 ## Verification and reproducibility
 
