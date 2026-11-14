@@ -135,6 +135,12 @@ kernel dimension is upper semicontinuous on the complement of the excluded famil
 The static bound 12 is attained (Section 4); sharpness of the same upper bound
 for $S^1$ is not claimed.
 
+*Superseded where sharper results exist.* The bounds in the next corollary are
+conservative. [CUBE_LEADING_REFINEMENT_THEOREM.md](CUBE_LEADING_REFINEMENT_THEOREM.md)
+(Theorem R) proves $S^2=\operatorname{span}\{1,H\}$ whenever one of $b_3,c_4,c_5$ is
+nonzero and classifies every first-refinement jump there; with Section 4c this
+gives $S^3=\operatorname{span}\{1,H\}$ whenever $B,C$ are not both affine.
+
 **Corollary (uniform finite stopping rule).** Outside the excluded family,
 $\dim S^1\le15$ and $S^{14}=D_\infty$. Thus the core at every parameter point is
 the kernel of the finite matrix with columns $q^iP^j$, $i+2j\le12$, and rows the

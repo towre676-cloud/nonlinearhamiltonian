@@ -9,6 +9,7 @@ on:
       - 'research/hamiltonian/c3_strata/verify_cube_leading_quadratic_stratum.py'
       - 'research/hamiltonian/c3_strata/verify_cube_leading_quadratic_short.py'
       - 'research/hamiltonian/c3_strata/verify_cube_leading_review.py'
+      - 'research/hamiltonian/c3_strata/verify_cube_leading_refinement.py'
       - 'research/hamiltonian/c3_strata/verify_cube_leading_core_closure.py'
       - 'research/hamiltonian/c3_strata/verify_cube_leading_first_refinement.py'
       - 'research/hamiltonian/c3_strata/verify_cube_leading_closure_review.py'
@@ -55,6 +56,9 @@ jobs:
       - name: Uniform resultants and two-minor first-refinement proof
         working-directory: research/hamiltonian/c3_strata
         run: python verify_cube_leading_closure_review.py
+      - name: Refinement theorem (Theorem R) stored minors, partners and ledger
+        working-directory: research/hamiltonian/c3_strata
+        run: python verify_cube_leading_refinement.py
       - name: Check retained certificate receipts
         run: |
           git diff --exit-code -- \
@@ -64,4 +68,6 @@ jobs:
             research/hamiltonian/c3_strata/CUBE_LEADING_REVIEW_CERTIFICATE.json \
             research/hamiltonian/c3_strata/CUBE_LEADING_CORE_CLOSURE_REPLAY.json \
             research/hamiltonian/c3_strata/CUBE_LEADING_FIRST_REFINEMENT_CERTIFICATE.json \
-            research/hamiltonian/c3_strata/CUBE_LEADING_CLOSURE_REVIEW_CERTIFICATE.json
+            research/hamiltonian/c3_strata/CUBE_LEADING_CLOSURE_REVIEW_CERTIFICATE.json \
+            research/hamiltonian/c3_strata/CUBE_LEADING_REFINEMENT_CERTIFICATE.json \
+            research/hamiltonian/c3_strata/CUBE_LEADING_REFINEMENT_REPLAY.json

@@ -1,0 +1,378 @@
+{
+ "partners": {
+  "q on b3=0": "T3(D^2 q) = P*(864*b2 + 864*c4 + 4320*c5*q) + 432*c2 + 1296*c3*q + 2592*c4*q**2 + 4320*c5*q**3",
+  "Pi on 3b3+10c5=0": "P^2-coefficient of T3(D^2 Pi) = 5184*b3**2",
+  "J2 on c5=0, 4c4=5b3^2": "q P^2-coefficient of T3(D^2 J2) = 1866240*b3**4",
+  "P on b3=c5=0, b2=-2c4": "T3(D^2 P) = P*(2592*c3 + 10368*c4*q) + 864*b1*c4 - 3456*c4**2*q"
+ },
+ "rank_certificates": {
+  "III depth 1, b2 != -2": {
+   "static_dimension": 15,
+   "depth": 1,
+   "rank": 12,
+   "kernel": 3,
+   "claim": "gcd = const*(b2 + 2)"
+  },
+  "III depth 1, b2 = -2": {
+   "static_dimension": 15,
+   "depth": 1,
+   "rank": 11,
+   "kernel": 4,
+   "claim": "nonzero constant"
+  },
+  "III depth 2, b2 != -1": {
+   "static_dimension": 15,
+   "depth": 2,
+   "rank": 13,
+   "kernel": 2,
+   "claim": "gcd = const*(b2 + 1)"
+  },
+  "III depth 2, b2 = -1": {
+   "static_dimension": 15,
+   "depth": 2,
+   "rank": 13,
+   "kernel": 2,
+   "claim": "nonzero constant"
+  },
+  "II depth 1, 4 c4 != 5": {
+   "static_dimension": 14,
+   "depth": 1,
+   "rank": 12,
+   "kernel": 2,
+   "claim": "const*(4*c4 - 5)"
+  },
+  "II depth 1, 4 c4 = 5": {
+   "static_dimension": 14,
+   "depth": 1,
+   "rank": 11,
+   "kernel": 3,
+   "claim": "nonzero constant"
+  },
+  "II depth 2, 4 c4 = 5": {
+   "static_dimension": 14,
+   "depth": 2,
+   "rank": 12,
+   "kernel": 2,
+   "claim": "nonzero constant"
+  },
+  "I depth 1, b3 (3 b3 + 10)(3 b3 + 5) != 0": {
+   "static_dimension": 14,
+   "depth": 1,
+   "rank": 12,
+   "kernel": 2,
+   "claim": "gcd = const*b3*(3*b3 + 10)"
+  },
+  "I depth 1, b3 = 0": {
+   "static_dimension": 14,
+   "depth": 1,
+   "rank": 11,
+   "kernel": 3,
+   "claim": "nonzero constant"
+  },
+  "I depth 2, b3 = 0": {
+   "static_dimension": 14,
+   "depth": 2,
+   "rank": 12,
+   "kernel": 2,
+   "claim": "nonzero constant"
+  },
+  "I depth 1, 3 b3 = -10": {
+   "static_dimension": 14,
+   "depth": 1,
+   "rank": 11,
+   "kernel": 3,
+   "claim": "nonzero constant"
+  },
+  "I depth 2, 3 b3 = -10": {
+   "static_dimension": 14,
+   "depth": 2,
+   "rank": 12,
+   "kernel": 2,
+   "claim": "nonzero constant"
+  },
+  "I depth 1, 3 b3 = -5": {
+   "static_dimension": 15,
+   "depth": 1,
+   "rank": 13,
+   "kernel": 2,
+   "claim": "nonzero constant"
+  }
+ },
+ "ledger": [
+  {
+   "member": "I generic",
+   "b": [
+    2,
+    -1,
+    3,
+    2
+   ],
+   "c": [
+    0,
+    1,
+    -2,
+    4,
+    3,
+    5
+   ],
+   "dims_S0_to_S3": [
+    14,
+    2,
+    2,
+    2
+   ]
+  },
+  {
+   "member": "I, b3 = 0",
+   "b": [
+    2,
+    -1,
+    3,
+    0
+   ],
+   "c": [
+    0,
+    1,
+    -2,
+    4,
+    3,
+    5
+   ],
+   "dims_S0_to_S3": [
+    14,
+    3,
+    2,
+    2
+   ]
+  },
+  {
+   "member": "I, 3b3 + 10c5 = 0",
+   "b": [
+    2,
+    -1,
+    3,
+    10
+   ],
+   "c": [
+    0,
+    1,
+    -2,
+    4,
+    3,
+    -3
+   ],
+   "dims_S0_to_S3": [
+    14,
+    3,
+    2,
+    2
+   ]
+  },
+  {
+   "member": "I, 3b3 + 5c5 = 0",
+   "b": [
+    2,
+    -1,
+    3,
+    5
+   ],
+   "c": [
+    0,
+    1,
+    -2,
+    4,
+    3,
+    -3
+   ],
+   "dims_S0_to_S3": [
+    15,
+    2,
+    2,
+    2
+   ]
+  },
+  {
+   "member": "II generic",
+   "b": [
+    2,
+    -1,
+    3,
+    2
+   ],
+   "c": [
+    0,
+    1,
+    -2,
+    4,
+    3,
+    0
+   ],
+   "dims_S0_to_S3": [
+    14,
+    2,
+    2,
+    2
+   ]
+  },
+  {
+   "member": "II, 4c4 = 5b3^2, b2 = 0",
+   "b": [
+    2,
+    -1,
+    0,
+    2
+   ],
+   "c": [
+    0,
+    1,
+    -2,
+    4,
+    5,
+    0
+   ],
+   "dims_S0_to_S3": [
+    14,
+    3,
+    2,
+    2
+   ]
+  },
+  {
+   "member": "II, 4c4 = 5b3^2, b2 != 0",
+   "b": [
+    2,
+    -1,
+    3,
+    2
+   ],
+   "c": [
+    0,
+    1,
+    -2,
+    4,
+    5,
+    0
+   ],
+   "dims_S0_to_S3": [
+    14,
+    3,
+    2,
+    2
+   ]
+  },
+  {
+   "member": "III generic",
+   "b": [
+    2,
+    -1,
+    3,
+    0
+   ],
+   "c": [
+    0,
+    1,
+    -2,
+    4,
+    3,
+    0
+   ],
+   "dims_S0_to_S3": [
+    15,
+    3,
+    2,
+    2
+   ]
+  },
+  {
+   "member": "III, b2 = -2c4",
+   "b": [
+    2,
+    -1,
+    -6,
+    0
+   ],
+   "c": [
+    0,
+    1,
+    -2,
+    4,
+    3,
+    0
+   ],
+   "dims_S0_to_S3": [
+    15,
+    4,
+    2,
+    2
+   ]
+  },
+  {
+   "member": "III, b2 = -c4",
+   "b": [
+    2,
+    -1,
+    -3,
+    0
+   ],
+   "c": [
+    0,
+    1,
+    -2,
+    4,
+    3,
+    0
+   ],
+   "dims_S0_to_S3": [
+    15,
+    3,
+    2,
+    2
+   ]
+  },
+  {
+   "member": "III, 5b2 + 9c4 = 0",
+   "b": [
+    2,
+    -1,
+    -9,
+    0
+   ],
+   "c": [
+    0,
+    1,
+    -2,
+    4,
+    5,
+    0
+   ],
+   "dims_S0_to_S3": [
+    15,
+    3,
+    2,
+    2
+   ]
+  },
+  {
+   "member": "III, E = 0 (static sector infinite)",
+   "b": [
+    2,
+    3,
+    -4,
+    0
+   ],
+   "c": [
+    0,
+    1,
+    -2,
+    -3,
+    2,
+    0
+   ],
+   "dims_S1_to_S3": [
+    4,
+    2,
+    2
+   ]
+  }
+ ]
+}
