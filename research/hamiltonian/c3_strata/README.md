@@ -45,3 +45,14 @@ exact finite matrix specifies every exceptional static locus.
 these proved windows. Replay `verify_binomial_newton_sharp.py --perfectjet
 --check BINOMIAL_NEWTON_SHARP_CERTIFICATE.json` with the pinned PerfectJet
 revision. The proof and replays are not an end-to-end Lean formalization.
+
+## Cube-leading flat-gate theorem in Lean
+
+[Theorem K's polynomial bridge](CUBE_LEADING_POLYNOMIAL_BRIDGE.md) now ends in
+`all_flat_newton_persistent_core`: for every characteristic-zero field and
+all polynomial degrees, the persistent core is `span{1,H}` when at least one
+of `b3,c4,c5` is nonzero. The proof includes exact nonlinear chart transport,
+all odd flat gates, the static cutoff, the exceptional `E=0` case, and the
+leading-form argument. Its 34-declaration classification audit uses only the
+standard Lean axioms. The older seven-parameter cases and Theorem R's sharp
+refinement classification still have their stated conventional proof scope.

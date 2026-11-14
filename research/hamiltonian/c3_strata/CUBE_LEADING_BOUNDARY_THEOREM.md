@@ -434,43 +434,41 @@ $\operatorname{span}\{1,H\}$ by depth 5 on the exact window;
 
 ## 7. Lean
 
-`formal/SexticC3/CubeLeadingGate.lean` (Lean 4.19.0, Mathlib `c44e0c8e`), axioms
-`propext`, `Classical.choice`, `Quot.sound` only, no `sorry`:
-`natDegree_le_of_iterate_derivative`, `gate_degree_bound`
-($e\ne0$, $\deg(e\,g''')\le d\Rightarrow\deg g\le d+3$, for all $g\in K[X]$),
-`static_function_degree_le_six`, `top_coefficient_nonresonant`. These are the two
-steps of Theorem A that hold for arbitrary degree. **Not formalised:** the
-transport of $T_3,T_5$ to the chart, the reduction $G=g(u)+\tilde G$, and the rank
-certificates of Theorem C; the Lean lemmas are univariate and are linked to the
-bivariate operators only through the [cert] identities of Sections 1–2.
+Theorem K is now formalized end to end, over every characteristic-zero field
+and for arbitrary polynomial partners, in
+`formal/SexticC3/CubeLeadingFlatCore.lean`. The exported theorem
+`all_flat_newton_persistent_core` identifies the persistent kernel of all odd
+original-coordinate flat gates of order at least three with `span{1,H}` when
+one of `b3,c4,c5` is nonzero.
 
-`formal/SexticC3/CubeLeadingCore.lean` (same toolchain; `propext`, `Quot.sound`, and
-`Classical.choice` only for the field lemma; no `sorry`): `euler_cramer`,
-`euler_cramer'`, `leading_form_dvd` (Lemma K2 and the divisibility step of K3, in
-an arbitrary commutative ring with the partial derivatives constrained only by
-the Euler relations), and `case_one_obstruction`. These are the original component lemmas. The later modules below supply the
-polynomial K3/K4 bridge and coprimality; the static recurrences and final
-classification are still not Lean theorems.
+The proof instantiates the homogeneous no-slice and stable-space lemmas for
+actual bivariate polynomials, proves coprimality of the three leading forms,
+derives the static coefficient recurrences, and obtains a six-degree momentum
+cutoff. A weight bound supplies finite-dimensionality. Square leading forms
+are excluded with arbitrary lower corrections, and leading-form cancellation
+gives the space equality. The `E=0` part of case III uses staticity after one
+Hamiltonian iterate rather than assuming a finite static sector.
 
-`formal/SexticC3/CubeLeadingNoSlice.lean` (same toolchain; `propext`,
-`Classical.choice`, `Quot.sound`; no `sorry`) proves Lemmas K3 and K4 abstractly:
-`kernel_forms`, `no_preimage`, `no_slice`, `leading_forms_of_stable`, for a
-structure `LeadingData` whose fields are the identities satisfied by the
-bracket and the weighted Euler operator. Within this file the structure is not instantiated
-for $K[q,P]$, so its results are abstract. The concrete realization follows
-in the modules described next.
+Both chart chain rules and the exact third/fifth flat-gate transport identities
+are proved universally. The original Hamiltonian's total-degree bound proves
+vanishing of all higher contractions. No nonlinear covariance of higher flat
+gates is assumed. The proof uses no static-basis row labels, parameter sampling,
+or stored rank certificates.
 
-The [polynomial bridge](CUBE_LEADING_POLYNOMIAL_BRIDGE.md), in
-`CubeLeadingPolynomial.lean`, `CubeLeadingCoprime.lean`,
-`CubeLeadingFiltration.lean` and `CubeLeadingNewton.lean`, now instantiates
-these operators on `MvPolynomial (Fin 2) K`. It proves the scalar kernel and
-no-preimage statements, concrete K3, all three coprimality claims, and the
-leading-form conclusion of K4 for finite-dimensional stable polynomial spaces.
-Finite weight bounds and top-component bracket compatibility are derived.
-The three Newton cases allow arbitrary strictly lower-weight perturbations.
-The static recurrences, the exclusion of leading form h² with arbitrary lower
-corrections, the final dimension argument and the exported classification
-remain unformalized. Thus Theorem K remains a conventional proof.
+The original component modules `CubeLeadingGate`, `CubeLeadingCore` and
+`CubeLeadingNoSlice` remain available. Their polynomial realization and the
+subsequent nine-module classification chain are described in the
+[polynomial and flat-gate bridge](CUBE_LEADING_POLYNOMIAL_BRIDGE.md).
+The toolchain is Lean 4.19.0 with Mathlib `c44e0c8e`.
+`AuditCubeLeadingClassification.lean` checks 34 declarations, including the
+exported theorem, with only `propext`, `Classical.choice`, and `Quot.sound`.
+There is no `sorry`, `admit`, or new axiom.
+
+Still not formalized: the older seven-parameter classification (Theorems C,
+E and G and the affine-family converse), hence the joined ten-parameter
+if-and-only-if; the exact static dimensions and sharp weight bound 12; and
+Theorem R's sharp refinement depths and temporary exceptional varieties.
+The Lean proof of Theorem K uses the sufficient weight bound 20 instead of 12.
 
 ## 8. Replay
 
@@ -487,6 +485,10 @@ python verify_cube_leading_closure_review.py   # three uniform resultants and th
 python -m pytest test_cube_leading_boundary.py  # fast unit tests
 cd formal && lake build SexticC3.CubeLeadingGate SexticC3.CubeLeadingCore && lake env lean AuditCubeLeadingGate.lean && lake env lean AuditCubeLeadingCore.lean
 cd formal && lake build SexticC3.CubeLeadingNoSlice && lake env lean AuditCubeLeadingNoSlice.lean
+# Complete Theorem K:
+lake build +SexticC3.CubeLeadingFlatCore:olean
+lake env lean AuditCubeLeadingClassification.lean
+lake env lean TestCubeLeadingClassification.lean
 ```
 
 The cube-leading workflow requires the pinned PerfectJet comparison and checks

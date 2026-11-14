@@ -216,9 +216,10 @@ the transported operators and of the stored determinants, not a second proof.
 Not done: nothing in this document is formalised
 in Lean; no independent specialist review is asserted. The coverage table in
 `BINOMIAL_NEWTON_SHARP_THEOREM.md` now records Theorem R; its retained receipt
-was regenerated with the full independent verifier. The separate polynomial
-K3/K4 formalization is documented in `CUBE_LEADING_POLYNOMIAL_BRIDGE.md` and does
-not formalize the static reduction or the rank-certificate proof of Theorem R.
+was regenerated with the full independent verifier. The separate end-to-end Lean proof of Theorem K is documented in
+`CUBE_LEADING_POLYNOMIAL_BRIDGE.md`: it includes the all-degree static cutoff
+and exact original-coordinate gate transport, but does not formalize the
+rank-certificate proof or sharp depths of Theorem R.
 
 ## 7. Replay
 

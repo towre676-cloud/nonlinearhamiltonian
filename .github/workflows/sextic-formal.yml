@@ -36,7 +36,7 @@ jobs:
           LEAN_NUM_THREADS=1 lake build +SexticC3.SquarefreeGeometry:olean \
             +SexticC3.SquarefreePolynomial:olean +SexticC3.TripleRootTail:olean \
             +SexticC3.ExceptionalDifferential:olean +SexticC3.TailChartAxes:olean \
-            +SexticC3.CubeLeadingGate:olean +SexticC3.CubeLeadingCore:olean +SexticC3.CubeLeadingNoSlice:olean +SexticC3.CubeLeadingNewton:olean
+            +SexticC3.CubeLeadingGate:olean +SexticC3.CubeLeadingCore:olean +SexticC3.CubeLeadingNoSlice:olean +SexticC3.CubeLeadingNewton:olean +SexticC3.CubeLeadingFlatCore:olean
       - name: Audit the normalized all-degree and geometric theorems
         working-directory: research/hamiltonian/c3_strata/formal
         run: |
@@ -51,3 +51,6 @@ jobs:
           lake env lean AuditCubeLeadingPolynomial.lean > AuditCubeLeadingPolynomial.actual.txt
           diff -u AuditCubeLeadingPolynomial.output.txt AuditCubeLeadingPolynomial.actual.txt
           lake env lean TestCubeLeadingPolynomial.lean
+          lake env lean AuditCubeLeadingClassification.lean > AuditCubeLeadingClassification.actual.txt
+          diff -u AuditCubeLeadingClassification.output.txt AuditCubeLeadingClassification.actual.txt
+          lake env lean TestCubeLeadingClassification.lean

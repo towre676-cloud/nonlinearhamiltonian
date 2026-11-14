@@ -1,10 +1,16 @@
-# Polynomial K3/K4 bridge for the cube-leading boundary
+# Polynomial and flat-gate proof of the cube-leading Theorem K
 
-The Lean development now proves the no-slice lemma K3 and the leading-form
-conclusion of K4 for actual bivariate polynomials over every characteristic-zero
-field. It also proves the required coprimality for all three Newton leading
-forms. The arbitrary-degree Moyal static reduction and the final core
-classification remain conventional proofs.
+Theorem K is now an end-to-end Lean theorem for the region where at least one
+of `b3,c4,c5` is nonzero. The exported theorem
+`all_flat_newton_persistent_core` quantifies over every characteristic-zero
+field and every polynomial partner, in the original `(q,p)` coordinates.
+It identifies the persistent kernel of **all odd flat gates of order at least
+three** with `span{1,H}`. Neither finite-dimensionality, a support cutoff,
+static recurrences nor a bivariate classification is assumed.
+
+The joined ten-parameter if-and-only-if classification still needs the older
+seven-parameter cases `b3=c4=c5=0` formalized. The sharp stopping depth and
+exceptional-locus statements of Theorem R also remain outside Lean.
 
 ## Mathematical interface
 
@@ -104,12 +110,95 @@ and audits. The coverage table now includes Theorem R; its binomial receipt was
 regenerated with the full PerfectJet verifier, changing only the manuscript's
 source fingerprint.
 
-## Remaining classification dependencies
+## Original-coordinate classification
 
-This closes dependencies 1–3 of Priority 3 in the Theorem K Lean
-plan. It does not formalize the nonlinear transport of the higher flat gates,
-the all-degree static recurrences, exclusion of a static partner with leading
-form `h²` and arbitrary lower corrections, the final dimension argument, or
-the joined ten-parameter classification. Theorem R's symbolic rank-certificate
-proof also remains outside Lean. The PerfectJet point replay retains its stated
-shared-basis and row-label dependencies.
+For ten arbitrary coefficients, `hamiltonian t` is
+
+\[
+H_{\rm chart}=P^3+(b_0+b_1q+b_2q^2+b_3q^3)P+
+ c_0+c_1q+c_2q^2+c_3q^3+c_4q^4+c_5q^5.
+\]
+
+`shear 1` substitutes `P=p+q²`. `flatContraction k` is the unnormalized
+alternating sum of mixed Mathlib partial derivatives with binomial
+coefficients. `AllFlatPersistent H f` requires every odd contraction of order
+at least three to vanish on every iterate of the actual bracket `D_H`.
+
+The final statement is:
+
+```lean
+all_flat_newton_persistent_core (t : HamiltonianParameters K)
+    (hnew : t.b₃ ≠ 0 ∨ t.c₄ ≠ 0 ∨ t.c₅ ≠ 0) (f : Poly K) :
+  AllFlatPersistent (shear 1 (hamiltonian t)) f ↔
+    ∃ a b : K, f = C a + C b * shear 1 (hamiltonian t)
+```
+
+The proof closes dependencies 4 and 5 and the three-case portion of dependency
+6 in the Priority 3 plan:
+
+| Module | Proved contribution |
+|---|---|
+| `CubeLeadingStatic` | Actual third/fifth differential operators and coefficient recurrences at every pair of nonnegative indices. |
+| `CubeLeadingCutoff` | Off `E=0`, every static polynomial has momentum degree at most six; a common `(1,3)` weight bound 20 gives finite-dimensionality through an injective finite coefficient map. |
+| `CubeLeadingSquare` | In each Newton case, no static polynomial has leading form `a*h²`, for any nonzero scalar and arbitrary lower-weight corrections. |
+| `CubeLeadingDimension` | Momentum degree bounds force the leading exponent to be at most two; square exclusion and cancellation of successive leading forms give equality with `span{1,H}`. |
+| `CubeLeadingHamiltonian` | The ten-parameter Hamiltonian, its bracket and staticity; on `b3=c5=0, b2≠0`, simultaneous staticity of `f` and `D_H f` forces momentum degree at most six. This covers the `E=0` part of case III. |
+| `CubeLeadingClassification` | The three-case equality for every stable static subspace containing `1,H`; finite-dimensionality and the cutoff are conclusions of preceding proofs. |
+| `CubeLeadingPersistent` | The persistent core is constructed as an intersection of pulled-back static submodules, proved stable, and identified with `span{1,H}`. |
+| `CubeLeadingTransport` | The nonlinear shear and inverse, both chain rules, bracket transport, and exact universal third/fifth flat-gate identities. |
+| `CubeLeadingFlatCore` | Original-coordinate persistent-core equality; total degree at most six forces all higher flat contractions to vanish, yielding the all-odd-gate theorem. |
+
+The cutoff proof avoids a static basis. If the highest momentum exponent is
+`m≥7`, the fifth recurrence bounds the q-degrees of its top four coefficient
+polynomials. Third-gate coefficients then force `3*b3+10*c5=0` and the
+nonresonance identity, hence `b3=c5=0`. The remaining top equations force
+`b1+c3=2*b2+4*c4=0`, exactly `E=0`. On the relevant part of `E=0`, staticity
+of `D_H f` forces the forbidden top coefficient to vanish because `b2≠0`.
+
+The finite-dimensionality proof uses a convenient weight bound 20, **not**
+the conventional theorem's sharp bound 12 or its exact dimensions 14/15.
+Those stronger static-dimension assertions are not claimed formal here.
+The final core equality does not require them.
+
+The transport formulas are proved for every polynomial partner, not at sampled
+parameter points:
+
+\[
+T_3(H_{\rm original},\operatorname{shear}f)
+ =\operatorname{shear}(-6\,\mathrm{thirdGate}(f)),\qquad
+T_5(H_{\rm original},\operatorname{shear}f)
+ =\operatorname{shear}(-120\,\mathrm{fifthGate}(f)).
+\]
+
+This explicitly accounts for the nonlinear chart. It does not assume nonlinear
+covariance of higher flat contractions.
+
+## Classification verification
+
+`AuditCubeLeadingClassification.lean` audits 34 declarations, including the
+final all-odd-gate theorem. The retained axiom lists contain only `propext`,
+`Classical.choice`, and `Quot.sound`; no `sorry`, `admit`, new axiom or native
+computation oracle is introduced. The six regression assertions cover a
+seventh-degree static solution on `E=0` that fails after one Hamiltonian
+iterate, the theorem at that exceptional point, an extra persistent partner
+on the excluded all-affine family, its independence from `1,H`, and the
+normalization/sign of the third original-coordinate gate.
+
+```sh
+lake build +SexticC3.CubeLeadingFlatCore:olean
+lake env lean AuditCubeLeadingClassification.lean > AuditCubeLeadingClassification.actual.txt
+diff -u AuditCubeLeadingClassification.output.txt AuditCubeLeadingClassification.actual.txt
+lake env lean TestCubeLeadingClassification.lean
+```
+
+The CI workflow retains the earlier audits and adds these commands. The
+independent PerfectJet point replay still has its documented shared-basis and
+row-label dependencies; the Lean proof of Theorem K does not use either.
+
+## Still outside this theorem
+
+- The seven-parameter cases `b3=c4=c5=0`, including the affine-family converse,
+  must be formalized before exporting the full ten-parameter if-and-only-if.
+- Theorem R's sharp refinement depths and temporary exceptional varieties
+  still use their exact symbolic rank certificates outside Lean.
+- No independent specialist review is asserted.
