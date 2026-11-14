@@ -367,7 +367,7 @@ been independently re-proved by this contribution.
 | c04 | q6+gamma q3p2+y p4, (2,3) | Weighted cubic-form Theorem 5: S2=core; S1 may jump. |
 | c32, with c04=0 | q6+gamma q3p2, (2,3) | Quadratic-sixfold Lemma 5/Theorem D contains a finite S1 bound 26 and leading-model dimensions (3,2,2). Separation therefore also gives S2=core for arbitrary strictly lower-weight terms, including qp3 and p3. Infinite S0 is not a finite-tail claim. |
 | c13 | q6+c qp3, (3,5) | Generic-stratum Theorem 7: S2=core; exact S1 survival test. |
-| c03 | q6+alpha q4p+beta q2p2+x p3, (1,2) | Weighted cubic-form Theorems 1–3 cover the complement of 3beta=alpha2, 27x=alpha3. The separate [cube-leading boundary theorem](CUBE_LEADING_BOUNDARY_THEOREM.md), Theorem K, classifies the core on the entire reduced ten-parameter cube locus: core=span{1,H} exactly when B,C are not both affine. Theorem G′ gives the exact first-refinement jump for quadratic B and deg C<=3. Intermediate refinements and exact stopping depths on the remaining higher-coefficient strata are still open. |
+| c03 | q6+alpha q4p+beta q2p2+x p3, (1,2) | Weighted cubic-form Theorems 1–3 cover the complement of 3beta=alpha2, 27x=alpha3. The separate [cube-leading boundary theorem](CUBE_LEADING_BOUNDARY_THEOREM.md), Theorem K, classifies the core on the entire reduced ten-parameter cube locus: core=span{1,H} exactly when B,C are not both affine. Theorem G′ gives the exact first-refinement jump for quadratic B and deg C<=3. [Theorem R](CUBE_LEADING_REFINEMENT_THEOREM.md) gives every first-refinement jump and sharp uniform depth 2 when one of b3, c4, c5 is nonzero; together with the lower stratum the uniform depth is 3 whenever B,C are not both affine. |
 | All p-degree >=3 coefficients zero | h(q)+A(q)p+B(q)p2 | Quadratic-sixfold Theorems A–E give the stated quadratic cases, boxes and square-composition exception; inhomogeneous Section 10 gives the affine cases. A full static-space formula for nonconstant B is not supplied there; the later static-sector note is only an intersection theorem. |
 
 Thus neither the old claim that the c32 core boundary is wholly open nor
@@ -377,9 +377,10 @@ reduction is now proved by the separate cube-leading boundary theorem.
 Theorem K now closes its persistent-core problem for all ten reduced
 parameters, including every member where at least one of b3, c4, c5 is
 nonzero. Theorem G′ closes its quadratic-B first-refinement jump locus:
-c3=0 gives dimension 4, and c3!=0 gives dimension 3. The remaining cube-locus
-questions concern the intermediate spaces and exact stopping depths on the
-higher-coefficient strata, not the ultimate core.
+c3=0 gives dimension 4, and c3!=0 gives dimension 3. Theorem R closes the higher-coefficient intermediate spaces and exact stopping
+depths: S2=span{1,H} throughout that region, with the exact S1 partners and
+jump loci stated there. On the entire reduced family with B,C not both affine,
+S3=span{1,H}; depth 3 is needed exactly when b2=b3=c3=c4=c5=0 and c2!=0.
 Closed-form static loci for the other strata, full refinement towers on
 infinite-static branches, and end-to-end Lean formalization remain separate
 tasks. Nothing here assumes nonlinear coordinate changes preserve the flat

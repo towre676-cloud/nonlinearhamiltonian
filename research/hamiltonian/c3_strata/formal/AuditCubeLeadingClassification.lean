@@ -1,0 +1,36 @@
+import SexticC3.CubeLeadingFlatCore
+
+#print axioms SexticC3.CubeLeading.Polynomial.coeff_pderiv
+#print axioms SexticC3.CubeLeading.Polynomial.fifth_recurrence
+#print axioms SexticC3.CubeLeading.Polynomial.third_recurrence
+#print axioms SexticC3.CubeLeading.Polynomial.high_momentum_forces_symbol_zero
+#print axioms SexticC3.CubeLeading.Polynomial.static_momentum_bound
+#print axioms SexticC3.CubeLeading.Polynomial.static_weight_bound_of_momentum_bound
+#print axioms SexticC3.CubeLeading.Polynomial.finite_dimensional_of_weight_bound
+#print axioms SexticC3.CubeLeading.Polynomial.static_subspace_finite_dimensional
+#print axioms SexticC3.CubeLeading.Polynomial.case_one_no_square_leading
+#print axioms SexticC3.CubeLeading.Polynomial.case_two_no_square_leading
+#print axioms SexticC3.CubeLeading.Polynomial.case_three_no_square_leading
+#print axioms SexticC3.CubeLeading.Polynomial.leading_power_le_two
+#print axioms SexticC3.CubeLeading.Polynomial.space_eq_span_of_two_leading_forms
+#print axioms SexticC3.CubeLeading.Polynomial.static_stable_space_eq_span
+#print axioms SexticC3.CubeLeading.Polynomial.hamiltonian_bracket
+#print axioms SexticC3.CubeLeading.Polynomial.hamiltonian_static
+#print axioms SexticC3.CubeLeading.Polynomial.first_refinement_momentum_bound_on_symbol_zero
+#print axioms SexticC3.CubeLeading.Polynomial.newton_static_stable_eq_span
+#print axioms SexticC3.CubeLeading.Polynomial.persistentCore_static
+#print axioms SexticC3.CubeLeading.Polynomial.persistentCore_stable
+#print axioms SexticC3.CubeLeading.Polynomial.newton_persistent_core
+#print axioms SexticC3.CubeLeading.Polynomial.shear_injective
+#print axioms SexticC3.CubeLeading.Polynomial.pderiv_q_shear
+#print axioms SexticC3.CubeLeading.Polynomial.pderiv_P_shear
+#print axioms SexticC3.CubeLeading.Polynomial.bracket_shear
+#print axioms SexticC3.CubeLeading.Polynomial.flatContraction_shear
+#print axioms SexticC3.CubeLeading.Polynomial.flat_third_gate_transport
+#print axioms SexticC3.CubeLeading.Polynomial.flat_fifth_gate_transport
+#print axioms SexticC3.CubeLeading.Polynomial.persistent_flat_transport
+#print axioms SexticC3.CubeLeading.Polynomial.flat_newton_persistent_core
+#print axioms SexticC3.CubeLeading.Polynomial.original_hamiltonian_total_bound
+#print axioms SexticC3.CubeLeading.Polynomial.higher_flat_gates_zero
+#print axioms SexticC3.CubeLeading.Polynomial.all_flat_persistent_iff
+#print axioms SexticC3.CubeLeading.Polynomial.all_flat_newton_persistent_core

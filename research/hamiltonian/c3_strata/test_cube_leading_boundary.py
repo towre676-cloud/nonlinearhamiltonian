@@ -103,5 +103,41 @@ class CoreClosure(unittest.TestCase):
         self.assertEqual(M.window_dimensions(M.reduced_hamiltonian((2, 0, 1, 0), (0, 3, 5, 7, 0, 0)), 12, (1, 2)), [3, 2])
 
 
+class Refinement(unittest.TestCase):
+    def setUp(self):
+        self.bs, self.cs = S.symbols("b0:4"), S.symbols("c0:6")
+        self.B = sum(self.bs[i]*q**i for i in range(4))
+        self.C = sum(self.cs[i]*q**i for i in range(6))
+
+    def test_universal_partner_identities(self):
+        D, T3, T5 = M.chart_operators(self.B, self.C)
+        a = S.Symbol("alpha")
+        self.assertEqual(S.expand(T3(D(q)) - 36*self.bs[3]), 0)
+        self.assertEqual(S.expand(T3(D(P + a*q)) - (36*a*self.bs[3] - 72*self.bs[2] - 144*self.cs[4]
+                                                   - (216*self.bs[3] + 720*self.cs[5])*q)), 0)
+        self.assertEqual((T5(D(q)), T5(D(P + a*q))), (0, 0))
+
+    def test_quadratic_partner_on_case_two_locus(self):
+        b0, b1, b2, b3 = self.bs
+        c = self.cs
+        z = {c[5]: 0, c[4]: S.Rational(5, 4)*b3**2}
+        D, T3, T5 = M.chart_operators(self.B.subs(z), self.C.subs(z))
+        J2 = (54*b3**2*P**2 + (168*b2*b3**2 + 245*b3**4 - 36*b3**3*q - 108*b3*c[3])*P + 36*b3**3*q**3
+              + (36*b2*b3**2 + 15*b3**4)*q**2
+              + (-216*b1*b3**2 + 264*b2**2*b3 + 1270*b2*b3**3 - 216*b2*c[3] + 1225*b3**5
+                 - 756*b3**2*c[3] + 216*b3*c[2])*q)
+        self.assertEqual((T3(J2), T5(J2), T3(D(J2)), T5(D(J2))), (0, 0, 0, 0))
+
+    def test_jump_loci_at_rational_members(self):
+        for b, c, expected in (((2, -1, 3, 2), (0, 1, -2, 4, 3, 5), [2, 2]),
+                               ((2, -1, 3, 0), (0, 1, -2, 4, 3, 5), [3, 2]),
+                               ((2, -1, 3, 10), (0, 1, -2, 4, 3, -3), [3, 2]),
+                               ((2, -1, 3, 2), (0, 1, -2, 4, 5, 0), [3, 2]),
+                               ((2, -1, 3, 2), (0, 1, -2, 4, 3, 0), [2, 2]),
+                               ((2, -1, -6, 0), (0, 1, -2, 4, 3, 0), [4, 2]),
+                               ((2, -1, 3, 0), (0, 1, -2, 4, 3, 0), [3, 2])):
+            self.assertEqual(M.window_dimensions(M.reduced_hamiltonian(b, c), 12, (1, 2)), expected)
+
+
 if __name__ == "__main__":
     unittest.main()

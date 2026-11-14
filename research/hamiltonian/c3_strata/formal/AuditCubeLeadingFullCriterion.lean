@@ -1,0 +1,21 @@
+import SexticC3.CubeLeadingFullCriterion
+
+#print axioms SexticC3.CubeLeading.Polynomial.seven_first_refinement_momentum_bound
+#print axioms SexticC3.CubeLeading.Polynomial.static_zero_of_initial_jet
+#print axioms SexticC3.CubeLeading.Polynomial.static_eq_of_initial_jet
+#print axioms SexticC3.CubeLeading.Polynomial.coefficients_bracket
+#print axioms SexticC3.CubeLeading.Polynomial.bicoeff_iterated_bracket
+#print axioms SexticC3.CubeLeading.Polynomial.seven_basis_static
+#print axioms SexticC3.CubeLeading.Polynomial.seven_combination_initial
+#print axioms SexticC3.CubeLeading.Polynomial.seven_reconstruct_normalized
+#print axioms SexticC3.CubeLeading.Polynomial.seven_b2_coordinates_zero
+#print axioms SexticC3.CubeLeading.Polynomial.seven_c3_coordinates_zero
+#print axioms SexticC3.CubeLeading.Polynomial.seven_c2_coordinates_zero
+#print axioms SexticC3.CubeLeading.Polynomial.seven_normalized_core_zero
+#print axioms SexticC3.CubeLeading.Polynomial.seven_persistent_core
+#print axioms SexticC3.CubeLeading.Polynomial.affine_momentum_persistent
+#print axioms SexticC3.CubeLeading.Polynomial.momentum_not_in_hamiltonian_span
+#print axioms SexticC3.CubeLeading.Polynomial.nonaffine_persistent_core
+#print axioms SexticC3.CubeLeading.Polynomial.persistent_core_iff_nonaffine
+#print axioms SexticC3.CubeLeading.Polynomial.all_flat_nonaffine_persistent_core
+#print axioms SexticC3.CubeLeading.Polynomial.all_flat_core_iff_nonaffine
