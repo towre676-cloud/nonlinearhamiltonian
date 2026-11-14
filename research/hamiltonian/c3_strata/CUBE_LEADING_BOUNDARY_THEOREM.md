@@ -135,6 +135,12 @@ kernel dimension is upper semicontinuous on the complement of the excluded famil
 The static bound 12 is attained (Section 4); sharpness of the same upper bound
 for $S^1$ is not claimed.
 
+*Superseded where sharper results exist.* The bounds in the next corollary are
+conservative. [CUBE_LEADING_REFINEMENT_THEOREM.md](CUBE_LEADING_REFINEMENT_THEOREM.md)
+(Theorem R) proves $S^2=\operatorname{span}\{1,H\}$ whenever one of $b_3,c_4,c_5$ is
+nonzero and classifies every first-refinement jump there; with Section 4c this
+gives $S^3=\operatorname{span}\{1,H\}$ whenever $B,C$ are not both affine.
+
 **Corollary (uniform finite stopping rule).** Outside the excluded family,
 $\dim S^1\le15$ and $S^{14}=D_\infty$. Thus the core at every parameter point is
 the kernel of the finite matrix with columns $q^iP^j$, $i+2j\le12$, and rows the
@@ -428,24 +434,50 @@ $\operatorname{span}\{1,H\}$ by depth 5 on the exact window;
 
 ## 7. Lean
 
-`formal/SexticC3/CubeLeadingGate.lean` (Lean 4.19.0, Mathlib `c44e0c8e`), axioms
-`propext`, `Classical.choice`, `Quot.sound` only, no `sorry`:
-`natDegree_le_of_iterate_derivative`, `gate_degree_bound`
-($e\ne0$, $\deg(e\,g''')\le d\Rightarrow\deg g\le d+3$, for all $g\in K[X]$),
-`static_function_degree_le_six`, `top_coefficient_nonresonant`. These are the two
-steps of Theorem A that hold for arbitrary degree. **Not formalised:** the
-transport of $T_3,T_5$ to the chart, the reduction $G=g(u)+\tilde G$, and the rank
-certificates of Theorem C; the Lean lemmas are univariate and are linked to the
-bivariate operators only through the [cert] identities of Sections 1–2.
+Theorem K is now formalized end to end, over every characteristic-zero field
+and for arbitrary polynomial partners, in
+`formal/SexticC3/CubeLeadingFlatCore.lean`. The exported theorem
+`all_flat_newton_persistent_core` identifies the persistent kernel of all odd
+original-coordinate flat gates of order at least three with `span{1,H}` when
+one of `b3,c4,c5` is nonzero.
 
-`formal/SexticC3/CubeLeadingCore.lean` (same toolchain; `propext`, `Quot.sound`, and
-`Classical.choice` only for the field lemma; no `sorry`): `euler_cramer`,
-`euler_cramer'`, `leading_form_dvd` (Lemma K2 and the divisibility step of K3, in
-an arbitrary commutative ring with the partial derivatives constrained only by
-the Euler relations), and `case_one_obstruction`. **Not formalised:** Lemma K4
-(the filtration argument), the unique-factorisation step $h\mid s\,h_P\Rightarrow
-h\mid s$, and the static recurrences; Theorem K is a human proof whose identities
-are replayed exactly, not a Lean theorem.
+The proof instantiates the homogeneous no-slice and stable-space lemmas for
+actual bivariate polynomials, proves coprimality of the three leading forms,
+derives the static coefficient recurrences, and obtains a six-degree momentum
+cutoff. A weight bound supplies finite-dimensionality. Square leading forms
+are excluded with arbitrary lower corrections, and leading-form cancellation
+gives the space equality. The `E=0` part of case III uses staticity after one
+Hamiltonian iterate rather than assuming a finite static sector.
+
+Both chart chain rules and the exact third/fifth flat-gate transport identities
+are proved universally. The original Hamiltonian's total-degree bound proves
+vanishing of all higher contractions. No nonlinear covariance of higher flat
+gates is assumed. The proof uses no static-basis row labels, parameter sampling,
+or stored rank certificates.
+
+The original component modules `CubeLeadingGate`, `CubeLeadingCore` and
+`CubeLeadingNoSlice` remain available. Their polynomial realization and the
+subsequent nine-module classification chain are described in the
+[polynomial and flat-gate bridge](CUBE_LEADING_POLYNOMIAL_BRIDGE.md).
+The toolchain is Lean 4.19.0 with Mathlib `c44e0c8e`.
+`AuditCubeLeadingClassification.lean` checks 34 declarations, including the
+exported theorem, with only `propext`, `Classical.choice`, and `Quot.sound`.
+There is no `sorry`, `admit`, or new axiom.
+
+The joined ten-parameter iff is now formalized as
+`all_flat_core_iff_nonaffine`. The older seven-parameter persistent-core
+cases are proved directly in the original coefficients: a first-refinement
+momentum cutoff and static recurrence give an exact 13-coordinate normalized
+basis, and 40 proved coefficient equations give triangular elimination in
+the three non-affine branches. On the affine locus, P is an extra persistent
+partner independent of 1,H. `AuditCubeLeadingFullCriterion.lean` audits 19
+additional declarations with the same three standard axioms. No normalization
+or external rank checker is assumed by the joined theorem.
+
+Still outside the exported Lean classification: the exact static dimensions
+and sharp weight bound 12, and Theorem R's complete sharp refinement depths
+and temporary exceptional varieties. The Lean proof of Theorem K uses the
+sufficient weight bound 20 instead of 12.
 
 ## 8. Replay
 
@@ -461,6 +493,15 @@ python verify_cube_leading_first_refinement.py # Theorem G': partner J and the r
 python verify_cube_leading_closure_review.py   # three uniform resultants and the two-minor proof of Theorem G'
 python -m pytest test_cube_leading_boundary.py  # fast unit tests
 cd formal && lake build SexticC3.CubeLeadingGate SexticC3.CubeLeadingCore && lake env lean AuditCubeLeadingGate.lean && lake env lean AuditCubeLeadingCore.lean
+cd formal && lake build SexticC3.CubeLeadingNoSlice && lake env lean AuditCubeLeadingNoSlice.lean
+# Complete Theorem K:
+lake build +SexticC3.CubeLeadingFlatCore:olean
+lake env lean AuditCubeLeadingClassification.lean
+# Full ten-parameter iff:
+lake build +SexticC3.CubeLeadingFullCriterion:olean
+lake env lean AuditCubeLeadingFullCriterion.lean
+lake env lean TestCubeLeadingFullCriterion.lean
+lake env lean TestCubeLeadingClassification.lean
 ```
 
 The cube-leading workflow requires the pinned PerfectJet comparison and checks

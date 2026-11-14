@@ -20,79 +20,45 @@ On the quadratic-B stratum `b3=c4=c5=0, b2!=0`, the first-refinement jump
 is exactly `c3=0`; its dimensions are respectively four and three, and
 `S2=span{1,H}` throughout. Neither question should be reopened as a conjecture.
 
-Theorem K is a conventional all-degree proof. Its current Lean modules prove
-specified supporting lemmas, not the complete classification. The repository
+The full ten-parameter persistent-core if-and-only-if now has an end-to-end
+Lean proof for all polynomial degrees and all odd flat gates in the original
+coordinates. It joins Theorem K to direct elimination in the older seven
+parameters and an explicit affine counterpartner. The repository
 does not assert external peer review or a full 21-parameter refinement theorem.
 
-## Priority 1: prove the sharp stopping depth
+## Priorities 1 and 2: resolved by Theorem R
 
-Determine the least uniform integer N such that `S^N=span{1,H}` whenever
-one of `b3,c4,c5` is nonzero. The established conservative bounds are N=14
-and N=13 on `3*b3+5*c5!=0`; reaching the core by depth five in sampled
-members is not a uniform theorem.
+[CUBE_LEADING_REFINEMENT_THEOREM.md](CUBE_LEADING_REFINEMENT_THEOREM.md) settles
+both former priorities on the whole region where one of `b3,c4,c5` is nonzero.
 
-Use the three disjoint Newton cases from Theorem K:
+- Sharp stopping depth: `S^2 = span{1,H}` at every parameter value, so the least
+  uniform N is 2, replacing the conservative bounds 14 and 13. Individual
+  members stop at depth 1 exactly off the jump loci of cases I and II.
+- Temporary exceptional loci, with explicit partners: case I, `b3=0` (partner
+  `q`) and `3*b3+10*c5=0` (partner `b3*P+(2*b2+4*c4)*q`); case II,
+  `4*c4=5*b3^2` (an explicit quadratic partner `J2`); case III, `q` always and
+  `P` exactly on `b2+2*c4=0`. `dim S1` is 2 or 3 in cases I and II and 3 or 4
+  in case III; `dim S2` never jumps.
+- The resonance surfaces `3*b3+5*c5=0` and `5*b2+9*c4=0` are not jump loci, and
+  the locus `E=0` behaves like the rest of `b2+2*c4=0`.
+- With the seven-parameter stratum: `S^3 = span{1,H}` whenever `B,C` are not
+  both affine, depth 3 being needed exactly on `b2=b3=c3=c4=c5=0`, `c2!=0`.
 
-| Case | Coefficient conditions | Leading form | Weights `(q,P)` | Weight increment |
-|---|---|---|---|---|
-| I | `c5!=0` | `P^3+c5*q^5` | `(3,5)` | 7 |
-| II | `c5=0, b3!=0` | `P^3+b3*q^3*P` | `(2,3)` | 4 |
-| III | `c5=b3=0, c4!=0` | `P^3+c4*q^4` | `(3,4)` | 5 |
+Every rank bound is a stored minor that is a nonzero constant, a constant times
+one named polynomial, or one of two univariate minors with an explicit Bezout
+identity; `verify_cube_leading_refinement.py` reconstructs all of them. These
+statements should not be reopened as conjectures. The independent PerfectJet
+point replay of all thirteen certificates and of the ledger is
+`verify_cube_leading_refinement_perfectjet.py`. The coverage table in `BINOMIAL_NEWTON_SHARP_THEOREM.md` now includes Theorem R;
+its receipt was regenerated with the full PerfectJet verifier, with only the
+manuscript fingerprint changing.
 
-Begin the detailed calculation in case III, whose leading form is binomial,
-then address cases II and I, including their lower-coefficient resonances.
-All lower coefficients remain arbitrary in each final theorem.
-
-Deliverables:
-
-1. An exact rational example ledger listing complete refinement dimensions
-   through stabilization, with explicit surviving partners and their first
-   nonzero gate. This is discovery evidence only.
-2. A proposed uniform bound with a proof covering every coefficient value in
-   the case. Prefer a recurrence or filtration argument; retain finite-window
-   rank certificates when necessary.
-3. Explicit rational members attaining the proposed bound. An upper bound
-   without a matching example must not be called sharp.
-
-If a proposed depth bound fails, preserve the Hamiltonian, offending partner,
-exact nonzero gate, and corrected dimension sequence as regression data.
-
-## Priority 2: classify the temporary exceptional loci
-
-Determine exactly where `dim S1` and `dim S2` increase in the three cases
-above. The eventual core is already known and has no exceptional parameter
-value there. A first-refinement exception must not be described as a core
-exception.
-
-Use the proved `(q,P)=(1,2)` finite windows: 49 monomials of weight at most
-12, improved to 36 monomials of weight at most 10 on
-`3*b3+5*c5!=0`. Use the finite first-refinement reduction even on the
-infinite-static locus `E=0`; do not replace its infinite static space by an
-unproved finite static basis.
-
-For each claimed stratum, retain:
-
-- Defining polynomial equations and nonvanishing conditions in the original
-  reduced coefficients, including the field assumptions for any normalization.
-- A kernel basis with verified gate identities and a proof that specialization
-  preserves its stated dimension. Record every denominator restriction.
-- Exact complementary rank certificates, using nonzero minors on open strata
-  and unit-ideal or explicit Bezout identities where several minors are needed.
-- Complete coverage of the parameter space, including intersections and boundary
-  cases. A greatest-common-divisor computation alone does not establish a
-  multivariable unit-ideal claim.
-
-Start with the known resonance surfaces `3*b3+5*c5=0` and
-`5*b2+9*c4=0`, and the locus `E=0`, as adversarial test sets. Their occurrence
-in a recurrence is a reason to investigate them, not a proof that a refinement
-dimension jumps there. Account for the derivative-invisible constant `c0`
-without omitting it from the stated all-parameter theorem.
-
-## Priority 3: complete the Lean bridge for Theorem K
+## Priority 3: complete
 
 Build on `formal/SexticC3/CubeLeadingGate.lean` and
 `formal/SexticC3/CubeLeadingCore.lean` rather than restating the conclusion as
-an assumption. The missing dependencies are:
+an assumption. All six dependencies below are now complete, including the joined
+ten-parameter if-and-only-if theorem.
 
 1. Weighted leading forms and the positive-increment argument for a
    finite-dimensional `D_H`-stable polynomial space. Formalize nilpotence of
@@ -108,8 +74,56 @@ an assumption. The missing dependencies are:
 6. A single exported theorem joining the three new Newton cases to the
    established seven-parameter core classification, with an axiom audit.
 
-Success means an end-to-end theorem without `sorry` or an assumed bivariate
-classification. Until then, state exactly which component lemmas are formalized.
+The exported `all_flat_core_iff_nonaffine` is an end-to-end theorem without
+`sorry` or an assumed bivariate classification.
+
+Status. Dependencies 1, 2 and 3 are now proved for actual bivariate polynomials
+in `CubeLeadingPolynomial.lean`, `CubeLeadingCoprime.lean`,
+`CubeLeadingFiltration.lean` and `CubeLeadingNewton.lean`.
+
+- `LeadingData` is instantiated using Mathlib's partial derivatives on
+  `MvPolynomial (Fin 2) K`, over every characteristic-zero field K.
+- Euler eigenforms are characterized coefficientwise; negative-weight forms
+  vanish and positive variable weights force every weight-zero form to be a
+  scalar. Concrete kernel, no-preimage and no-slice theorems follow.
+- All three explicit leading forms are proved relatively prime to their
+  P-derivatives for every nonzero leading coefficient, including the reducible
+  middle form. These proofs take place in the polynomial UFD, not its fraction
+  field alone.
+- Finite-dimensional polynomial spaces are proved to have a common weight
+  bound. Top-component transport is proved for the actual Poisson bracket.
+  The leading-form conclusion of K4 follows by iterating this identity, without
+  assuming boundedness, abstract leading compatibility, or nilpotence of D_H.
+- `case_one_stable`, `case_two_stable` and `case_three_stable` allow arbitrary
+  strictly lower-weight polynomial perturbations of the three leading forms.
+
+See [the polynomial and flat-gate bridge](CUBE_LEADING_POLYNOMIAL_BRIDGE.md)
+for the exact theorem interface and audits. The subsequent nine modules prove
+all-degree static recurrences, the momentum cutoff, finite-dimensionality,
+all three h² exclusions and the final cancellation argument. They construct
+the persistent core, prove the nonlinear chart identities for arbitrary
+partners, and establish vanishing of every flat gate above order six.
+
+The exported `all_flat_newton_persistent_core` therefore proves Theorem K
+without a finite-dimensionality or support hypothesis. It applies even on the
+`E=0` part of the new Newton region, using staticity after one bracket iterate.
+Its audit contains only `propext`, `Classical.choice`, and `Quot.sound`.
+
+The older cases `b3=c4=c5=0` are now covered by
+`seven_persistent_core`. Their proof does not require affine normalization:
+a first-refinement momentum cutoff, exact reconstruction from a finite jet,
+and 40 Lean-checked coefficient equations give triangular elimination in
+three branches (`b2≠0`, then `c3≠0`, then `c2≠0`). On the affine locus, P is
+proved persistent and independent of 1,H. The single joined
+`all_flat_core_iff_nonaffine` states the full iff in the original coordinates.
+Its 19-declaration audit uses only `propext`, `Classical.choice`, `Quot.sound`.
+
+**Next remaining formalization:** Theorem R's sharp stopping depths and
+complete temporary exceptional loci. The seven-parameter elimination uses
+iterates through depth 2 or 3, but the exported core theorem does not claim
+all sharp finite-stage dimensions or jump equations have been formalized.
+The new-Newton proof uses a sufficient weight bound 20 and does not claim
+the sharp static bound 12 or exact static dimensions are formalized.
 
 ## Verification and reproducibility
 
@@ -134,8 +148,8 @@ classification. Until then, state exactly which component lemmas are formalized.
 
 Use the [Newton coverage table](BINOMIAL_NEWTON_SHARP_THEOREM.md#7-repository-reconciliation-and-remaining-boundaries)
 as the current map. The two binomial edges are classified in all degree, with
-their lower-weight perturbations. The cube-leading persistent core is now
-classified, but its remaining intermediate-refinement loci are not. Other
+their lower-weight perturbations. The cube-leading persistent core and its
+intermediate refinements are now classified (Theorems K, G′, R). Other
 branches still have separate static-space and full-tower questions; this plan
 does not promote their leading-model or finite-window statements into stronger
 global results.
@@ -147,7 +161,6 @@ the static recurrence obstruction, and the transport of the higher gates.
 Repository integration and passing computational checks are not substitutes
 for that mathematical review.
 
-The next finished research increment should be a sharp depth theorem for one
-complete Newton case, including a witness attaining the bound and reproducible
-certificates. This gives a concrete result while the larger exceptional-locus
-and formalization programs proceed.
+The sharp depth theorem and the exceptional-locus classification are complete
+for all three Newton cases (Theorem R). The next increments are the sharp-refinement formalization and the
+independent specialist review described above.
