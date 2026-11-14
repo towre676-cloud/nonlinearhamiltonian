@@ -45,10 +45,11 @@ both former priorities on the whole region where one of `b3,c4,c5` is nonzero.
 Every rank bound is a stored minor that is a nonzero constant, a constant times
 one named polynomial, or one of two univariate minors with an explicit Bezout
 identity; `verify_cube_leading_refinement.py` reconstructs all of them. These
-statements should not be reopened as conjectures. Remaining follow-ups for this
-increment: an independent PerfectJet iterated-gate replay of the thirteen
-certificates, and refreshing the coverage table in
-`BINOMIAL_NEWTON_SHARP_THEOREM.md` together with its receipt.
+statements should not be reopened as conjectures. The independent PerfectJet
+point replay of all thirteen certificates and of the ledger is
+`verify_cube_leading_refinement_perfectjet.py`. Remaining follow-up for this
+increment: refreshing the coverage table in `BINOMIAL_NEWTON_SHARP_THEOREM.md`
+together with its receipt.
 
 ## Priority 3: complete the Lean bridge for Theorem K
 
@@ -72,6 +73,19 @@ an assumption. The missing dependencies are:
 
 Success means an end-to-end theorem without `sorry` or an assumed bivariate
 classification. Until then, state exactly which component lemmas are formalized.
+
+Status. `formal/SexticC3/CubeLeadingNoSlice.lean` proves dependencies 1 and 3,
+and the divisibility implication of dependency 2, in abstract form: for a
+structure `LeadingData` recording the leading form, the bracket, the weighted
+Euler operator and their identities in a characteristic-zero domain where
+nonzero integers are units and `h` is relatively prime to `h_P`, it proves
+`kernel_forms`, `no_preimage`, `no_slice` (Lemma K3) and
+`leading_forms_of_stable` (Lemma K4, with nilpotence derived for the induced
+leading operation). Still missing, in order: (a) the instance of `LeadingData`
+for the bivariate polynomial ring, i.e. the Leibniz, Euler, weight-shift and
+negative-weight identities for actual partial derivatives; (b) relative
+primality of the three explicit leading forms with their `P`-derivatives;
+(c) dependencies 4, 5 and 6 unchanged. No bivariate statement is formalised yet.
 
 ## Verification and reproducibility
 

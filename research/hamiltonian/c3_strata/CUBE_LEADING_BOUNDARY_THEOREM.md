@@ -453,6 +453,14 @@ the Euler relations), and `case_one_obstruction`. **Not formalised:** Lemma K4
 h\mid s$, and the static recurrences; Theorem K is a human proof whose identities
 are replayed exactly, not a Lean theorem.
 
+`formal/SexticC3/CubeLeadingNoSlice.lean` (same toolchain; `propext`,
+`Classical.choice`, `Quot.sound`; no `sorry`) proves Lemmas K3 and K4 abstractly:
+`kernel_forms`, `no_preimage`, `no_slice`, `leading_forms_of_stable`, for a
+structure `LeadingData` whose fields are the identities satisfied by the
+bracket and the weighted Euler operator. The structure is not yet instantiated
+for $K[q,P]$, so this is a verified abstract argument, not a formal bivariate
+theorem.
+
 ## 8. Replay
 
 ```
@@ -467,6 +475,7 @@ python verify_cube_leading_first_refinement.py # Theorem G': partner J and the r
 python verify_cube_leading_closure_review.py   # three uniform resultants and the two-minor proof of Theorem G'
 python -m pytest test_cube_leading_boundary.py  # fast unit tests
 cd formal && lake build SexticC3.CubeLeadingGate SexticC3.CubeLeadingCore && lake env lean AuditCubeLeadingGate.lean && lake env lean AuditCubeLeadingCore.lean
+cd formal && lake build SexticC3.CubeLeadingNoSlice && lake env lean AuditCubeLeadingNoSlice.lean
 ```
 
 The cube-leading workflow requires the pinned PerfectJet comparison and checks

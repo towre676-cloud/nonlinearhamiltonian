@@ -207,9 +207,13 @@ on.
 
 Proved: Theorem R and its corollaries, for all ten reduced coefficients on the
 stated region, as human arguments resting on Theorems A and B and on exact
-stored minors. Not done: the new certificates were not cross-checked against
-PerfectJet iterated gates (the ledger uses the repository's flat engine, which
-is independent of the chart operators); nothing in this document is formalised
+stored minors. Independent replay: `verify_cube_leading_refinement_perfectjet.py`
+rebuilds every stored minor at three random rational parameter points from
+PerfectJet iterated gates in the original coordinates $(q,p)$ and compares its
+exact determinant with the stored one (48 evaluations), and recomputes the
+ledger with PerfectJet gates and SymPy ranks; these are exact point checks of
+the transported operators and of the stored determinants, not a second proof.
+Not done: nothing in this document is formalised
 in Lean; no independent specialist review is asserted. The coverage table in
 `BINOMIAL_NEWTON_SHARP_THEOREM.md` still describes these intermediate refinements
 as open; that manuscript is fingerprinted by a receipt and was deliberately left
@@ -220,5 +224,6 @@ untouched here.
 ```
 cd research/hamiltonian/c3_strata
 python verify_cube_leading_refinement.py     # about 1 minute; rewrites CUBE_LEADING_REFINEMENT_REPLAY.json
+PERFECTJET_SRC=/path/to/PerfectJet/src python verify_cube_leading_refinement_perfectjet.py   # about 3 minutes
 python -m pytest test_cube_leading_boundary.py
 ```
