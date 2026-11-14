@@ -59,3 +59,16 @@ and an explicit extra persistent partner on the affine locus. The new
 list only standard Lean axioms. Theorem R's sharp finite-stage dimensions and
 exceptional-locus classification remain supported by the conventional proof
 and exact symbolic certificates, rather than by the exported Lean theorem.
+
+## Global stopping depth for the sixfold-leading family
+
+[The global depth theorem](SIXFOLD_GLOBAL_DEPTH_THEOREM.md) assembles the
+branch theorems of this directory into one statement for all 21 lower
+coefficients: `S^6(H)=D_infinity(H)` for every member, with least depth 6
+exactly on `H=c(p+beta(q))^2+F(q)`, `deg beta=deg F=3`. It gives the complete
+list of loci with least depth 6, 5, 4, 3 and 0, every enlarged or infinite
+core, and closed-form first refinements for `H=f+A p+B p^2` with nonconstant
+`B` and arbitrary `A`. `sixfold_global_depth.classify` returns the branch,
+core dimension and exact least depth of any rational member. The universal
+bound is a reconciliation theorem: it is exactly as strong as the cited branch
+theorems, and it is not Lean-formalized.
