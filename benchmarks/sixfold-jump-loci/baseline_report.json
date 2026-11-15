@@ -1,0 +1,898 @@
+{
+  "validation_thresholds": [
+    0.0033298732564458256,
+    0.0032946887515075142,
+    0.012502088443831697,
+    0.06208217543539611
+  ],
+  "test": {
+    "0": {
+      "overall": {
+        "n": 63,
+        "coverage": 0.2857142857142857,
+        "selective_accuracy": 0.7777777777777778,
+        "correct_fraction": 0.2222222222222222
+      },
+      "c32": {
+        "n": 12,
+        "coverage": 0.3333333333333333,
+        "selective_accuracy": 0.75,
+        "correct_fraction": 0.25,
+        "by_depth": {
+          "1": {
+            "n": 9,
+            "coverage": 0.3333333333333333,
+            "selective_accuracy": 1.0,
+            "correct_fraction": 0.3333333333333333
+          },
+          "2": {
+            "n": 3,
+            "coverage": 0.3333333333333333,
+            "selective_accuracy": 0.0,
+            "correct_fraction": 0.0
+          }
+        },
+        "pairs_by_abs_perturbation": {
+          "1/10": {
+            "pairs": 3,
+            "coverage": 0.3333333333333333,
+            "both_correct_fraction": 0.0,
+            "selective_pair_accuracy": 0.0
+          },
+          "1/1000": {
+            "pairs": 3,
+            "coverage": 0.3333333333333333,
+            "both_correct_fraction": 0.0,
+            "selective_pair_accuracy": 0.0
+          },
+          "1/100000": {
+            "pairs": 3,
+            "coverage": 0.3333333333333333,
+            "both_correct_fraction": 0.0,
+            "selective_pair_accuracy": 0.0
+          }
+        }
+      },
+      "delta": {
+        "n": 12,
+        "coverage": 0.0,
+        "selective_accuracy": null,
+        "correct_fraction": 0.0,
+        "by_depth": {
+          "1": {
+            "n": 9,
+            "coverage": 0.0,
+            "selective_accuracy": null,
+            "correct_fraction": 0.0
+          },
+          "2": {
+            "n": 3,
+            "coverage": 0.0,
+            "selective_accuracy": null,
+            "correct_fraction": 0.0
+          }
+        },
+        "pairs_by_abs_perturbation": {
+          "1/10": {
+            "pairs": 3,
+            "coverage": 0.0,
+            "both_correct_fraction": 0.0,
+            "selective_pair_accuracy": null
+          },
+          "1/1000": {
+            "pairs": 3,
+            "coverage": 0.0,
+            "both_correct_fraction": 0.0,
+            "selective_pair_accuracy": null
+          },
+          "1/100000": {
+            "pairs": 3,
+            "coverage": 0.0,
+            "both_correct_fraction": 0.0,
+            "selective_pair_accuracy": null
+          }
+        }
+      },
+      "depth-six": {
+        "n": 3,
+        "coverage": 1.0,
+        "selective_accuracy": 1.0,
+        "correct_fraction": 1.0,
+        "by_depth": {
+          "6": {
+            "n": 3,
+            "coverage": 1.0,
+            "selective_accuracy": 1.0,
+            "correct_fraction": 1.0
+          }
+        }
+      },
+      "gamma": {
+        "n": 12,
+        "coverage": 0.0,
+        "selective_accuracy": null,
+        "correct_fraction": 0.0,
+        "by_depth": {
+          "1": {
+            "n": 9,
+            "coverage": 0.0,
+            "selective_accuracy": null,
+            "correct_fraction": 0.0
+          },
+          "2": {
+            "n": 3,
+            "coverage": 0.0,
+            "selective_accuracy": null,
+            "correct_fraction": 0.0
+          }
+        },
+        "pairs_by_abs_perturbation": {
+          "1/10": {
+            "pairs": 3,
+            "coverage": 0.0,
+            "both_correct_fraction": 0.0,
+            "selective_pair_accuracy": null
+          },
+          "1/1000": {
+            "pairs": 3,
+            "coverage": 0.0,
+            "both_correct_fraction": 0.0,
+            "selective_pair_accuracy": null
+          },
+          "1/100000": {
+            "pairs": 3,
+            "coverage": 0.0,
+            "both_correct_fraction": 0.0,
+            "selective_pair_accuracy": null
+          }
+        }
+      },
+      "origin": {
+        "n": 12,
+        "coverage": 0.5833333333333334,
+        "selective_accuracy": 0.7142857142857143,
+        "correct_fraction": 0.4166666666666667,
+        "by_depth": {
+          "1": {
+            "n": 9,
+            "coverage": 0.5555555555555556,
+            "selective_accuracy": 1.0,
+            "correct_fraction": 0.5555555555555556
+          },
+          "2": {
+            "n": 3,
+            "coverage": 0.6666666666666666,
+            "selective_accuracy": 0.0,
+            "correct_fraction": 0.0
+          }
+        },
+        "pairs_by_abs_perturbation": {
+          "1/10": {
+            "pairs": 3,
+            "coverage": 0.3333333333333333,
+            "both_correct_fraction": 0.0,
+            "selective_pair_accuracy": 0.0
+          },
+          "1/1000": {
+            "pairs": 3,
+            "coverage": 0.6666666666666666,
+            "both_correct_fraction": 0.0,
+            "selective_pair_accuracy": 0.0
+          },
+          "1/100000": {
+            "pairs": 3,
+            "coverage": 0.6666666666666666,
+            "both_correct_fraction": 0.0,
+            "selective_pair_accuracy": 0.0
+          }
+        }
+      },
+      "quartic": {
+        "n": 12,
+        "coverage": 0.3333333333333333,
+        "selective_accuracy": 0.75,
+        "correct_fraction": 0.25,
+        "by_depth": {
+          "1": {
+            "n": 9,
+            "coverage": 0.3333333333333333,
+            "selective_accuracy": 1.0,
+            "correct_fraction": 0.3333333333333333
+          },
+          "2": {
+            "n": 3,
+            "coverage": 0.3333333333333333,
+            "selective_accuracy": 0.0,
+            "correct_fraction": 0.0
+          }
+        },
+        "pairs_by_abs_perturbation": {
+          "1/10": {
+            "pairs": 3,
+            "coverage": 0.3333333333333333,
+            "both_correct_fraction": 0.0,
+            "selective_pair_accuracy": 0.0
+          },
+          "1/1000": {
+            "pairs": 3,
+            "coverage": 0.3333333333333333,
+            "both_correct_fraction": 0.0,
+            "selective_pair_accuracy": 0.0
+          },
+          "1/100000": {
+            "pairs": 3,
+            "coverage": 0.3333333333333333,
+            "both_correct_fraction": 0.0,
+            "selective_pair_accuracy": 0.0
+          }
+        }
+      }
+    },
+    "1": {
+      "overall": {
+        "n": 63,
+        "coverage": 0.2857142857142857,
+        "selective_accuracy": 0.7777777777777778,
+        "correct_fraction": 0.2222222222222222
+      },
+      "c32": {
+        "n": 12,
+        "coverage": 0.3333333333333333,
+        "selective_accuracy": 0.75,
+        "correct_fraction": 0.25,
+        "by_depth": {
+          "1": {
+            "n": 9,
+            "coverage": 0.3333333333333333,
+            "selective_accuracy": 1.0,
+            "correct_fraction": 0.3333333333333333
+          },
+          "2": {
+            "n": 3,
+            "coverage": 0.3333333333333333,
+            "selective_accuracy": 0.0,
+            "correct_fraction": 0.0
+          }
+        },
+        "pairs_by_abs_perturbation": {
+          "1/10": {
+            "pairs": 3,
+            "coverage": 0.3333333333333333,
+            "both_correct_fraction": 0.0,
+            "selective_pair_accuracy": 0.0
+          },
+          "1/1000": {
+            "pairs": 3,
+            "coverage": 0.3333333333333333,
+            "both_correct_fraction": 0.0,
+            "selective_pair_accuracy": 0.0
+          },
+          "1/100000": {
+            "pairs": 3,
+            "coverage": 0.3333333333333333,
+            "both_correct_fraction": 0.0,
+            "selective_pair_accuracy": 0.0
+          }
+        }
+      },
+      "delta": {
+        "n": 12,
+        "coverage": 0.0,
+        "selective_accuracy": null,
+        "correct_fraction": 0.0,
+        "by_depth": {
+          "1": {
+            "n": 9,
+            "coverage": 0.0,
+            "selective_accuracy": null,
+            "correct_fraction": 0.0
+          },
+          "2": {
+            "n": 3,
+            "coverage": 0.0,
+            "selective_accuracy": null,
+            "correct_fraction": 0.0
+          }
+        },
+        "pairs_by_abs_perturbation": {
+          "1/10": {
+            "pairs": 3,
+            "coverage": 0.0,
+            "both_correct_fraction": 0.0,
+            "selective_pair_accuracy": null
+          },
+          "1/1000": {
+            "pairs": 3,
+            "coverage": 0.0,
+            "both_correct_fraction": 0.0,
+            "selective_pair_accuracy": null
+          },
+          "1/100000": {
+            "pairs": 3,
+            "coverage": 0.0,
+            "both_correct_fraction": 0.0,
+            "selective_pair_accuracy": null
+          }
+        }
+      },
+      "depth-six": {
+        "n": 3,
+        "coverage": 1.0,
+        "selective_accuracy": 1.0,
+        "correct_fraction": 1.0,
+        "by_depth": {
+          "6": {
+            "n": 3,
+            "coverage": 1.0,
+            "selective_accuracy": 1.0,
+            "correct_fraction": 1.0
+          }
+        }
+      },
+      "gamma": {
+        "n": 12,
+        "coverage": 0.0,
+        "selective_accuracy": null,
+        "correct_fraction": 0.0,
+        "by_depth": {
+          "1": {
+            "n": 9,
+            "coverage": 0.0,
+            "selective_accuracy": null,
+            "correct_fraction": 0.0
+          },
+          "2": {
+            "n": 3,
+            "coverage": 0.0,
+            "selective_accuracy": null,
+            "correct_fraction": 0.0
+          }
+        },
+        "pairs_by_abs_perturbation": {
+          "1/10": {
+            "pairs": 3,
+            "coverage": 0.0,
+            "both_correct_fraction": 0.0,
+            "selective_pair_accuracy": null
+          },
+          "1/1000": {
+            "pairs": 3,
+            "coverage": 0.0,
+            "both_correct_fraction": 0.0,
+            "selective_pair_accuracy": null
+          },
+          "1/100000": {
+            "pairs": 3,
+            "coverage": 0.0,
+            "both_correct_fraction": 0.0,
+            "selective_pair_accuracy": null
+          }
+        }
+      },
+      "origin": {
+        "n": 12,
+        "coverage": 0.5833333333333334,
+        "selective_accuracy": 0.7142857142857143,
+        "correct_fraction": 0.4166666666666667,
+        "by_depth": {
+          "1": {
+            "n": 9,
+            "coverage": 0.5555555555555556,
+            "selective_accuracy": 1.0,
+            "correct_fraction": 0.5555555555555556
+          },
+          "2": {
+            "n": 3,
+            "coverage": 0.6666666666666666,
+            "selective_accuracy": 0.0,
+            "correct_fraction": 0.0
+          }
+        },
+        "pairs_by_abs_perturbation": {
+          "1/10": {
+            "pairs": 3,
+            "coverage": 0.3333333333333333,
+            "both_correct_fraction": 0.0,
+            "selective_pair_accuracy": 0.0
+          },
+          "1/1000": {
+            "pairs": 3,
+            "coverage": 0.6666666666666666,
+            "both_correct_fraction": 0.0,
+            "selective_pair_accuracy": 0.0
+          },
+          "1/100000": {
+            "pairs": 3,
+            "coverage": 0.6666666666666666,
+            "both_correct_fraction": 0.0,
+            "selective_pair_accuracy": 0.0
+          }
+        }
+      },
+      "quartic": {
+        "n": 12,
+        "coverage": 0.3333333333333333,
+        "selective_accuracy": 0.75,
+        "correct_fraction": 0.25,
+        "by_depth": {
+          "1": {
+            "n": 9,
+            "coverage": 0.3333333333333333,
+            "selective_accuracy": 1.0,
+            "correct_fraction": 0.3333333333333333
+          },
+          "2": {
+            "n": 3,
+            "coverage": 0.3333333333333333,
+            "selective_accuracy": 0.0,
+            "correct_fraction": 0.0
+          }
+        },
+        "pairs_by_abs_perturbation": {
+          "1/10": {
+            "pairs": 3,
+            "coverage": 0.3333333333333333,
+            "both_correct_fraction": 0.0,
+            "selective_pair_accuracy": 0.0
+          },
+          "1/1000": {
+            "pairs": 3,
+            "coverage": 0.3333333333333333,
+            "both_correct_fraction": 0.0,
+            "selective_pair_accuracy": 0.0
+          },
+          "1/100000": {
+            "pairs": 3,
+            "coverage": 0.3333333333333333,
+            "both_correct_fraction": 0.0,
+            "selective_pair_accuracy": 0.0
+          }
+        }
+      }
+    },
+    "2": {
+      "overall": {
+        "n": 63,
+        "coverage": 0.19047619047619047,
+        "selective_accuracy": 0.75,
+        "correct_fraction": 0.14285714285714285
+      },
+      "c32": {
+        "n": 12,
+        "coverage": 0.3333333333333333,
+        "selective_accuracy": 0.75,
+        "correct_fraction": 0.25,
+        "by_depth": {
+          "1": {
+            "n": 9,
+            "coverage": 0.3333333333333333,
+            "selective_accuracy": 1.0,
+            "correct_fraction": 0.3333333333333333
+          },
+          "2": {
+            "n": 3,
+            "coverage": 0.3333333333333333,
+            "selective_accuracy": 0.0,
+            "correct_fraction": 0.0
+          }
+        },
+        "pairs_by_abs_perturbation": {
+          "1/10": {
+            "pairs": 3,
+            "coverage": 0.3333333333333333,
+            "both_correct_fraction": 0.0,
+            "selective_pair_accuracy": 0.0
+          },
+          "1/1000": {
+            "pairs": 3,
+            "coverage": 0.3333333333333333,
+            "both_correct_fraction": 0.0,
+            "selective_pair_accuracy": 0.0
+          },
+          "1/100000": {
+            "pairs": 3,
+            "coverage": 0.3333333333333333,
+            "both_correct_fraction": 0.0,
+            "selective_pair_accuracy": 0.0
+          }
+        }
+      },
+      "delta": {
+        "n": 12,
+        "coverage": 0.0,
+        "selective_accuracy": null,
+        "correct_fraction": 0.0,
+        "by_depth": {
+          "1": {
+            "n": 9,
+            "coverage": 0.0,
+            "selective_accuracy": null,
+            "correct_fraction": 0.0
+          },
+          "2": {
+            "n": 3,
+            "coverage": 0.0,
+            "selective_accuracy": null,
+            "correct_fraction": 0.0
+          }
+        },
+        "pairs_by_abs_perturbation": {
+          "1/10": {
+            "pairs": 3,
+            "coverage": 0.0,
+            "both_correct_fraction": 0.0,
+            "selective_pair_accuracy": null
+          },
+          "1/1000": {
+            "pairs": 3,
+            "coverage": 0.0,
+            "both_correct_fraction": 0.0,
+            "selective_pair_accuracy": null
+          },
+          "1/100000": {
+            "pairs": 3,
+            "coverage": 0.0,
+            "both_correct_fraction": 0.0,
+            "selective_pair_accuracy": null
+          }
+        }
+      },
+      "depth-six": {
+        "n": 3,
+        "coverage": 1.0,
+        "selective_accuracy": 1.0,
+        "correct_fraction": 1.0,
+        "by_depth": {
+          "6": {
+            "n": 3,
+            "coverage": 1.0,
+            "selective_accuracy": 1.0,
+            "correct_fraction": 1.0
+          }
+        }
+      },
+      "gamma": {
+        "n": 12,
+        "coverage": 0.0,
+        "selective_accuracy": null,
+        "correct_fraction": 0.0,
+        "by_depth": {
+          "1": {
+            "n": 9,
+            "coverage": 0.0,
+            "selective_accuracy": null,
+            "correct_fraction": 0.0
+          },
+          "2": {
+            "n": 3,
+            "coverage": 0.0,
+            "selective_accuracy": null,
+            "correct_fraction": 0.0
+          }
+        },
+        "pairs_by_abs_perturbation": {
+          "1/10": {
+            "pairs": 3,
+            "coverage": 0.0,
+            "both_correct_fraction": 0.0,
+            "selective_pair_accuracy": null
+          },
+          "1/1000": {
+            "pairs": 3,
+            "coverage": 0.0,
+            "both_correct_fraction": 0.0,
+            "selective_pair_accuracy": null
+          },
+          "1/100000": {
+            "pairs": 3,
+            "coverage": 0.0,
+            "both_correct_fraction": 0.0,
+            "selective_pair_accuracy": null
+          }
+        }
+      },
+      "origin": {
+        "n": 12,
+        "coverage": 0.4166666666666667,
+        "selective_accuracy": 0.6,
+        "correct_fraction": 0.25,
+        "by_depth": {
+          "1": {
+            "n": 9,
+            "coverage": 0.3333333333333333,
+            "selective_accuracy": 1.0,
+            "correct_fraction": 0.3333333333333333
+          },
+          "2": {
+            "n": 3,
+            "coverage": 0.6666666666666666,
+            "selective_accuracy": 0.0,
+            "correct_fraction": 0.0
+          }
+        },
+        "pairs_by_abs_perturbation": {
+          "1/10": {
+            "pairs": 3,
+            "coverage": 0.3333333333333333,
+            "both_correct_fraction": 0.0,
+            "selective_pair_accuracy": 0.0
+          },
+          "1/1000": {
+            "pairs": 3,
+            "coverage": 0.3333333333333333,
+            "both_correct_fraction": 0.0,
+            "selective_pair_accuracy": 0.0
+          },
+          "1/100000": {
+            "pairs": 3,
+            "coverage": 0.3333333333333333,
+            "both_correct_fraction": 0.0,
+            "selective_pair_accuracy": 0.0
+          }
+        }
+      },
+      "quartic": {
+        "n": 12,
+        "coverage": 0.0,
+        "selective_accuracy": null,
+        "correct_fraction": 0.0,
+        "by_depth": {
+          "1": {
+            "n": 9,
+            "coverage": 0.0,
+            "selective_accuracy": null,
+            "correct_fraction": 0.0
+          },
+          "2": {
+            "n": 3,
+            "coverage": 0.0,
+            "selective_accuracy": null,
+            "correct_fraction": 0.0
+          }
+        },
+        "pairs_by_abs_perturbation": {
+          "1/10": {
+            "pairs": 3,
+            "coverage": 0.0,
+            "both_correct_fraction": 0.0,
+            "selective_pair_accuracy": null
+          },
+          "1/1000": {
+            "pairs": 3,
+            "coverage": 0.0,
+            "both_correct_fraction": 0.0,
+            "selective_pair_accuracy": null
+          },
+          "1/100000": {
+            "pairs": 3,
+            "coverage": 0.0,
+            "both_correct_fraction": 0.0,
+            "selective_pair_accuracy": null
+          }
+        }
+      }
+    },
+    "3": {
+      "overall": {
+        "n": 63,
+        "coverage": 0.36507936507936506,
+        "selective_accuracy": 0.782608695652174,
+        "correct_fraction": 0.2857142857142857
+      },
+      "c32": {
+        "n": 12,
+        "coverage": 0.75,
+        "selective_accuracy": 0.7777777777777778,
+        "correct_fraction": 0.5833333333333334,
+        "by_depth": {
+          "1": {
+            "n": 9,
+            "coverage": 0.7777777777777778,
+            "selective_accuracy": 1.0,
+            "correct_fraction": 0.7777777777777778
+          },
+          "2": {
+            "n": 3,
+            "coverage": 0.6666666666666666,
+            "selective_accuracy": 0.0,
+            "correct_fraction": 0.0
+          }
+        },
+        "pairs_by_abs_perturbation": {
+          "1/10": {
+            "pairs": 3,
+            "coverage": 0.3333333333333333,
+            "both_correct_fraction": 0.0,
+            "selective_pair_accuracy": 0.0
+          },
+          "1/1000": {
+            "pairs": 3,
+            "coverage": 0.6666666666666666,
+            "both_correct_fraction": 0.0,
+            "selective_pair_accuracy": 0.0
+          },
+          "1/100000": {
+            "pairs": 3,
+            "coverage": 0.6666666666666666,
+            "both_correct_fraction": 0.0,
+            "selective_pair_accuracy": 0.0
+          }
+        }
+      },
+      "delta": {
+        "n": 12,
+        "coverage": 0.5,
+        "selective_accuracy": 0.6666666666666666,
+        "correct_fraction": 0.3333333333333333,
+        "by_depth": {
+          "1": {
+            "n": 9,
+            "coverage": 0.4444444444444444,
+            "selective_accuracy": 1.0,
+            "correct_fraction": 0.4444444444444444
+          },
+          "2": {
+            "n": 3,
+            "coverage": 0.6666666666666666,
+            "selective_accuracy": 0.0,
+            "correct_fraction": 0.0
+          }
+        },
+        "pairs_by_abs_perturbation": {
+          "1/10": {
+            "pairs": 3,
+            "coverage": 0.3333333333333333,
+            "both_correct_fraction": 0.0,
+            "selective_pair_accuracy": 0.0
+          },
+          "1/1000": {
+            "pairs": 3,
+            "coverage": 0.6666666666666666,
+            "both_correct_fraction": 0.0,
+            "selective_pair_accuracy": 0.0
+          },
+          "1/100000": {
+            "pairs": 3,
+            "coverage": 0.3333333333333333,
+            "both_correct_fraction": 0.0,
+            "selective_pair_accuracy": 0.0
+          }
+        }
+      },
+      "depth-six": {
+        "n": 3,
+        "coverage": 1.0,
+        "selective_accuracy": 1.0,
+        "correct_fraction": 1.0,
+        "by_depth": {
+          "6": {
+            "n": 3,
+            "coverage": 1.0,
+            "selective_accuracy": 1.0,
+            "correct_fraction": 1.0
+          }
+        }
+      },
+      "gamma": {
+        "n": 12,
+        "coverage": 0.4166666666666667,
+        "selective_accuracy": 0.8,
+        "correct_fraction": 0.3333333333333333,
+        "by_depth": {
+          "1": {
+            "n": 9,
+            "coverage": 0.4444444444444444,
+            "selective_accuracy": 1.0,
+            "correct_fraction": 0.4444444444444444
+          },
+          "2": {
+            "n": 3,
+            "coverage": 0.3333333333333333,
+            "selective_accuracy": 0.0,
+            "correct_fraction": 0.0
+          }
+        },
+        "pairs_by_abs_perturbation": {
+          "1/10": {
+            "pairs": 3,
+            "coverage": 0.3333333333333333,
+            "both_correct_fraction": 0.0,
+            "selective_pair_accuracy": 0.0
+          },
+          "1/1000": {
+            "pairs": 3,
+            "coverage": 0.3333333333333333,
+            "both_correct_fraction": 0.0,
+            "selective_pair_accuracy": 0.0
+          },
+          "1/100000": {
+            "pairs": 3,
+            "coverage": 0.3333333333333333,
+            "both_correct_fraction": 0.0,
+            "selective_pair_accuracy": 0.0
+          }
+        }
+      },
+      "origin": {
+        "n": 12,
+        "coverage": 0.0,
+        "selective_accuracy": null,
+        "correct_fraction": 0.0,
+        "by_depth": {
+          "1": {
+            "n": 9,
+            "coverage": 0.0,
+            "selective_accuracy": null,
+            "correct_fraction": 0.0
+          },
+          "2": {
+            "n": 3,
+            "coverage": 0.0,
+            "selective_accuracy": null,
+            "correct_fraction": 0.0
+          }
+        },
+        "pairs_by_abs_perturbation": {
+          "1/10": {
+            "pairs": 3,
+            "coverage": 0.0,
+            "both_correct_fraction": 0.0,
+            "selective_pair_accuracy": null
+          },
+          "1/1000": {
+            "pairs": 3,
+            "coverage": 0.0,
+            "both_correct_fraction": 0.0,
+            "selective_pair_accuracy": null
+          },
+          "1/100000": {
+            "pairs": 3,
+            "coverage": 0.0,
+            "both_correct_fraction": 0.0,
+            "selective_pair_accuracy": null
+          }
+        }
+      },
+      "quartic": {
+        "n": 12,
+        "coverage": 0.0,
+        "selective_accuracy": null,
+        "correct_fraction": 0.0,
+        "by_depth": {
+          "1": {
+            "n": 9,
+            "coverage": 0.0,
+            "selective_accuracy": null,
+            "correct_fraction": 0.0
+          },
+          "2": {
+            "n": 3,
+            "coverage": 0.0,
+            "selective_accuracy": null,
+            "correct_fraction": 0.0
+          }
+        },
+        "pairs_by_abs_perturbation": {
+          "1/10": {
+            "pairs": 3,
+            "coverage": 0.0,
+            "both_correct_fraction": 0.0,
+            "selective_pair_accuracy": null
+          },
+          "1/1000": {
+            "pairs": 3,
+            "coverage": 0.0,
+            "both_correct_fraction": 0.0,
+            "selective_pair_accuracy": null
+          },
+          "1/100000": {
+            "pairs": 3,
+            "coverage": 0.0,
+            "both_correct_fraction": 0.0,
+            "selective_pair_accuracy": null
+          }
+        }
+      }
+    }
+  }
+}
