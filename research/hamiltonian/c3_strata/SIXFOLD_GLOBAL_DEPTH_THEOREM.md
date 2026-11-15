@@ -93,10 +93,10 @@ line is the negation of all earlier ones plus one coefficient test.
 | 1 | $c_{05}\ne0$ | $q^6+yp^5$, $(5,6)$ | $\langle1,H\rangle$ | 1 | 1 | generic-stratum Theorem 6 |
 | 2 | $c_{14}\ne0$ | $q^6+zqp^4$, $(4,5)$ | $\langle1,H\rangle$ | 1 | 1 | binomial Newton sharp theorem |
 | 3 | $c_{23}\ne0$ | $q^6+bq^2p^3$, $(3,4)$ | $\langle1,H\rangle$ | 1 | 1 | binomial Newton sharp theorem |
-| 4 | $c_{04}\ne0$ | $q^6+\gamma q^3p^2+yp^4$, $(2,3)$ | $\langle1,H\rangle$ | 2 | 1 or 2, window | weighted cubic-form Theorem 5 |
-| 5 | $c_{32}\ne0$ | $q^6+\gamma q^3p^2$, $(2,3)$ | $\langle1,H\rangle$ | 2 | 1 or 2; closed form if $p$-degree 2 (Theorem N) | quadratic-sixfold Lemmas 4, 5, Theorem D |
+| 4 | $c_{04}\ne0$ | $q^6+\gamma q^3p^2+yp^4$, $(2,3)$ | $\langle1,H\rangle$ | 2 | 1 or 2, closed form (Theorem J) | weighted cubic-form Theorem 5 |
+| 5 | $c_{32}\ne0$ | $q^6+\gamma q^3p^2$, $(2,3)$ | $\langle1,H\rangle$ | 2 | 1 or 2, closed form (Theorems N, J) | quadratic-sixfold Lemmas 4, 5, Theorem D |
 | 6 | $c_{13}\ne0$ | $q^6+cqp^3$, $(3,5)$ | $\langle1,H\rangle$ | 2 | 2 iff $T_3(H,H_p)=T_5(H,H_p)=0$, else 1 | generic-stratum Theorem 7 |
-| 7a | $c_{03}\ne0$, not a cube | $q^6+\alpha q^4p+\beta q^2p^2+xp^3$, $(1,2)$ | $\langle1,H\rangle$ | 2 | 1 or 2, window; closed form off the special loci | weighted cubic-form Theorems 1–3 |
+| 7a | $c_{03}\ne0$, not a cube | $q^6+\alpha q^4p+\beta q^2p^2+xp^3$, $(1,2)$ | $\langle1,H\rangle$ | 2 | 1 or 2, closed form (Theorem J) | weighted cubic-form Theorems 1–3 |
 | 7b | $c_{03}\ne0$, cube, $B,C$ not both affine | $(q^2+\kappa p)^3$ | $\langle1,H\rangle$ | 3 | 1, 2 or 3, closed form | cube-leading Theorems C, E, G, G′, K, R |
 | 7c | $c_{03}\ne0$, cube, $B,C$ affine | $(q^2+\kappa p)^3$ | dim 5, 6 or $\infty$ | 1 | 1 | cubic-phase table; Lemma G2 below |
 | 8 | $p$-degree $\le1$ | — | $K[q]+pK[q]$ $(+p^2K[q])$ | 1 | 0 if $A$ affine, else 1 | inhomogeneous theorem, Section 10 |
@@ -314,16 +314,16 @@ of degree 12, 18 and 26, has stable dimension 8 for $k=1$, $\deg A\le3$; 7 for
 $k=1$, $\deg A=4$; 6, 7 or 8 for $k=2$, $\deg A\le3$; 5 or 6 for $k=2$,
 $\deg A=4$. These are observations.
 
-## 6. What "exact $N(H)$" means on lines 4, 5 and 7a
+## 6. Lines 4, 5 and 7a: closed form
 
-On line 4 every static partner has $(2,3)$-weight $\le20$; on line 7a every
-static partner has $(1,2)$-weight $\le12$; on line 5 every element of $S^1$ has
-$(2,3)$-weight $\le26$. `classify` computes $S^1$ and $S^2$ on those windows by
-exact rational linear algebra, which is complete for all polynomial degrees by
-the cited bounds, and reports 1 or 2. Closed forms on these lines exist only
-for the leading models and for the sub-loci named in the cited theorems
-(for example $\gamma^2=-40y$ on line 4, and $\Delta_w$, $\Gamma_2$ and the two
-weight-4 points on line 7a); the perturbed exceptional loci are open.
+[SIXFOLD_JUMP_LOCI_THEOREM.md](SIXFOLD_JUMP_LOCI_THEOREM.md) (Theorem J) gives
+the first-refinement jump loci on these three lines as coefficient equations
+with explicit partners, for arbitrary lower-weight perturbation: on line 4 the
+graph of five functions over $\gamma^2=-40y$ with partner $p+\tfrac{r_{13}}{4y}q$;
+on line 5 the locus $c_{13}=c_{03}=0$, $b_2^2=3b_3b_1$; on line 7a the four
+partner types with leading weights 1, 2, 2 and 4. `classify` now uses those
+closed forms. The proved finite windows (weight $\le20$, $\le26$, $\le12$)
+remain in the verifier as an independent cross-check.
 
 ## 7. Reconciliation
 
@@ -354,8 +354,9 @@ $\deg B\in\{1,2\}$ and the closed-form first-refinement jump loci on lines 4, 5
 
 ## 8. Not proved here
 
-1. Closed-form exceptional loci for the first refinement under arbitrary
-   lower-weight perturbation on lines 4, 5 (with $p$-degree 3 terms) and 7a.
+1. (Resolved by Theorem J.) Closed-form first-refinement jump loci on lines 4,
+   5 and 7a. Remaining there: a numerical witness for the weight-4 row of line
+   7a, which has no rational member.
 2. The full static space for $\deg B\in\{1,2\}$.
 3. Any Lean formalisation of G1–G3 or Theorem N. The planned next Lean push is
    Theorem R; nothing here changes that.

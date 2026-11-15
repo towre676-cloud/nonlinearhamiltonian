@@ -379,14 +379,19 @@ depth 6, 5, 4, 3 and 0 in closed form. That statement is a reconciliation: it
 is exactly as strong as the row theorems cited above, which have not been
 independently re-proved, and it is not Lean formalized.
 
-**Refinement classification: not complete.** The old claim that the c32 core
-boundary is wholly open is no longer appropriate, and neither is an unqualified
-assertion of complete 21-parameter refinement classification. What remains
-unresolved is: the closed-form first-refinement jump loci under arbitrary
-lower-weight perturbation in the rows c04, c32 (when qp3 or p3 terms are
-present) and c03 off the cube locus, where the choice between least depth 1 and
-2 is at present an exact computation on a proved finite window; and the full
-static spaces for nonconstant quadratic coefficient of degree 1 or 2.
+**First-refinement jump loci: closed form.** The [jump-loci theorem](SIXFOLD_JUMP_LOCI_THEOREM.md)
+(Theorem J) gives, under arbitrary lower-weight perturbation, the exact
+coefficient equations and surviving partners for the first refinement in the
+rows c04, c32 (including qp3 and p3 terms) and c03 off the cube locus, which
+were previously decided by exact computation on a proved finite window. With
+it the least stopping depth of every member is given by explicit conditions.
+
+**Refinement classification: not complete.** An unqualified assertion of
+complete 21-parameter refinement classification is still not appropriate. What
+remains unresolved is: the full static spaces for nonconstant quadratic
+coefficient of degree 1 or 2; coefficient equations for the square-composition
+locus of Theorem E; and a numerical witness for the weight-4 row of Theorem J,
+whose two points have no rational representative.
 
 On the weighted cubic cube locus the arbitrary-degree
 reduction is now proved by the separate cube-leading boundary theorem.

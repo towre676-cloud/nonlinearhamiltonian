@@ -76,5 +76,51 @@ class Engine(unittest.TestCase):
         self.assertEqual(G.chain(G.parse("q^6+(q^3+q)*p^2+q^4*p"), cubic, 2)[1:], [2, 2])
 
 
+class JumpLoci(unittest.TestCase):
+    def survives(self, h, partners):
+        for g in partners:
+            d = G.transvectant(h, g, 1)
+            for obs in (g, d):
+                self.assertFalse(G.transvectant(h, obs, 3) or G.transvectant(h, obs, 5))
+
+    def test_quartic_edge(self):
+        import sixfold_jump_loci as J
+        on = G.parse("q^6+20*q^3*p^2-10*p^4+q^2*p^2+q^5/10+3*p^3-3*q^3*p-3/20*q^2*p+q*p^2+(60-2)/(-240)*q^4")
+        partners = J.quartic_edge_partners(on)
+        self.assertEqual(len(partners), 1)
+        self.survives(on, partners)
+        self.assertEqual(G.chain(on, G.weight_window(2, 3, 20), 2)[1:], [3, 2])
+        off = dict(on)
+        off[(4, 0)] += 1
+        self.assertEqual(J.quartic_edge_partners(off), [])
+        self.assertEqual(G.chain(off, G.weight_window(2, 3, 20), 2)[1:], [2, 2])
+
+    def test_cubic_coefficient(self):
+        import sixfold_jump_loci as J
+        on = G.parse("q^6+((q-2)^3+5)*p^2+(q^4-q^3+2*q)*p+q^5+q")
+        partners = J.cubic_coefficient_partners(on)
+        self.assertEqual(len(partners), 1)
+        self.survives(on, partners)
+        for extra in ("p^3", "q*p^3"):
+            off = G.parse("q^6+((q-2)^3+5)*p^2+(q^4-q^3+2*q)*p+q^5+q+" + extra)
+            self.assertEqual(J.cubic_coefficient_partners(off), [])
+            self.assertEqual(G.chain(off, G.weight_window(2, 3, 26), 2)[1:], [2, 2])
+
+    def test_cubic_form(self):
+        import sixfold_jump_loci as J
+        w = G.weight_window(1, 2, 12)
+        cases = (("q^6+6*q^4*p+6*q^2*p^2+2*p^3+q*p^2+2*q^3*p+q^5", 1),      # Delta_w = 0, 3 x r31 = 2 beta r12
+                 ("q^6+6*q^4*p+6*q^2*p^2+2*p^3+q*p^2+q^3*p", 0),
+                 ("q^6+q^4*p-4*q^2*p^2+p^3", 1),                            # Gamma_2 = 0, R = 0
+                 ("q^6+q^4*p-4*q^2*p^2+p^3+q^4", 0),
+                 ("q^6+p^3+q^2", 2), ("q^6+p^3+q^3*p", 0), ("q^6+p^3+q*p^2", 1))
+        for text, count in cases:
+            h = G.parse(text)
+            partners = J.cubic_form_partners(h)
+            self.assertEqual(len(partners), count, text)
+            self.survives(h, partners)
+            self.assertEqual(G.chain(h, w, 2)[1:], [2 + count, 2], text)
+
+
 if __name__ == "__main__":
     unittest.main()

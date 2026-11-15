@@ -6,10 +6,11 @@
 exhaustive decision chain on its coefficients, and returns the persistent-core
 dimension, the proved upper bound on the least stopping depth, the exact least
 depth, and the theorems used.  Where a closed formula for the exact depth is
-proved it is used; otherwise the exact depth is computed by exact linear
-algebra on a monomial window that the cited theorem proves to contain the
-first refinement (or the whole static space), so the value is exact for all
-polynomial degrees.
+proved it is used: this now covers every branch except the two with
+nonconstant quadratic coefficient of degree 1 or 2, where the core dimension
+on the square locus is still read from a proved finite box.  The jump loci of
+`sixfold_jump_loci` replace the earlier finite-window decisions on the
+branches c04, c32 and c03 off the cube locus.
 
 `chain(h, monomials, max_depth)` is the exact engine: it returns
 dim(S^r intersected with span(monomials)) for r = 0..max_depth.  Gate outputs
@@ -22,6 +23,8 @@ from math import comb, gcd, perm
 
 import sympy as S
 from sympy.polys.matrices import DomainMatrix
+
+import sixfold_jump_loci as J
 
 INF = float("inf")
 P_HIGH = ((0, 5), (1, 4), (2, 3), (0, 4), (3, 2), (1, 3), (0, 3))
@@ -224,13 +227,13 @@ def classify(h):
     if c(2, 3) != 0:
         return done("c23", 1, 1, "binomial Newton sharp theorem")
     if c(0, 4) != 0:
-        depth = _window_depth(h, weight_window(2, 3, 20), 2, 2)
-        return done("c04 quartic edge", 2, depth, "weighted cubic-form Theorem 5 (static weight <= 20)")
+        partners = J.quartic_edge_partners(h)
+        return done("c04 quartic edge", 2, 2 if partners else 1,
+                    "weighted cubic-form Theorem 5; Theorem J", partners=partners)
     if c(3, 2) != 0:
-        dims = chain(h, weight_window(2, 3, 26), 3)
-        assert dims[2] == dims[3] == 2
-        return done("c32", 2, 1 if dims[1] == 2 else 2,
-                    "quadratic-sixfold Lemmas 4, 5 and Theorem D (first refinement in weight <= 26)")
+        partners = J.cubic_coefficient_partners(h)
+        return done("c32", 2, 2 if partners else 1,
+                    "quadratic-sixfold Lemmas 4, 5 and Theorem D; Theorem J", partners=partners)
     if c(1, 3) != 0:
         survives = _gates_vanish(h, _deriv(h, 0, 1))
         return done("c13", 2, 2 if survives else 1, "generic-stratum Theorem 7")
@@ -241,8 +244,9 @@ def classify(h):
             core, depth, source = cube_reduced_depth(rb, rc)
             out["core_dimension"] = core
             return done("c03 cube locus", 3, depth, source, reduced=(rb, rc))
-        depth = _window_depth(h, weight_window(1, 2, 12), 2, 2)
-        return done("c03 off the cube locus", 2, depth, "weighted cubic-form Theorems 1-3 (static weight <= 12)")
+        partners = J.cubic_form_partners(h)
+        return done("c03 off the cube locus", 2, 2 if partners else 1,
+                    "weighted cubic-form Theorems 1-3; Theorem J", partners=partners)
 
     # p-degree at most two:  H = f(q) + A(q) p + B(q) p^2,  deg B <= 2
     f = _poly([c(i, 0) for i in range(6)] + [Fr(1)])

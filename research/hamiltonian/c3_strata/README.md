@@ -72,3 +72,8 @@ core, and closed-form first refinements for `H=f+A p+B p^2` with nonconstant
 core dimension and exact least depth of any rational member. The universal
 bound is a reconciliation theorem: it is exactly as strong as the cited branch
 theorems, and it is not Lean-formalized.
+
+[The jump-loci theorem](SIXFOLD_JUMP_LOCI_THEOREM.md) replaces the remaining
+finite-window decisions of the global depth theorem by coefficient equations
+and explicit first-refinement partners on the three branches `c04`, `c32` and
+`c03` off the cube locus; `sixfold_jump_loci` implements them.
