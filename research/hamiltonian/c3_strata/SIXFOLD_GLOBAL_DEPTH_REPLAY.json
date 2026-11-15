@@ -1,0 +1,249 @@
+{
+ "anchor": "p^2 + 12/5 q^5 lies in S^1 \\ S^2 of q^6 + q p^2; T3(H, D^2 G) = 51840 p q^3",
+ "depth_six_obstructions": {
+  "T3(H, D^6 q)": "-69120*F3^2*c0^5*(beta2 + 3*beta3*q)",
+  "T3(H, D^5 P)": "34560*F3^2*c0^4*(beta2 + 3*beta3*q)"
+ },
+ "nonconstant_quadratic_coefficient": {
+  "k=1": "q, p+phi1, q p+phi2 in S^1 for every A; p^2+phi3 iff A'''=0 (obstruction 36 B' A''' p); q in S^2 \\ S^3",
+  "k=2": "x p + phi in S^1 for every A, x = q - (root of B')",
+  "k=3": "(q-s) p + phi in S^1 iff B' has a double root at s (Delta = b2^2 - 3 b3 b1 = 0)"
+ },
+ "cube_affine": {
+  "cube affine, b1 != 0, c1 != 0": {
+   "rank": 10,
+   "kernel": 5
+  },
+  "cube affine, b1 != 0, c1 = 0": {
+   "rank": 9,
+   "kernel": 6
+  },
+  "cube affine, b1 = 0": {
+   "rank": 7,
+   "kernel": 1
+  }
+ },
+ "named_members": [
+  {
+   "H": "(p+q^3)^2+q^3",
+   "branch": "constant quadratic coefficient, N=3",
+   "depth": 6,
+   "core_dimension": 2
+  },
+  {
+   "H": "3*(p+q^3-q)^2+2*q^3+q",
+   "branch": "constant quadratic coefficient, N=3",
+   "depth": 6,
+   "core_dimension": 2
+  },
+  {
+   "H": "q^6+p^2",
+   "branch": "constant quadratic coefficient, b''=0",
+   "depth": 5,
+   "core_dimension": 2
+  },
+  {
+   "H": "q^6+q*p+p^2+q^5",
+   "branch": "constant quadratic coefficient, b''=0",
+   "depth": 5,
+   "core_dimension": 2
+  },
+  {
+   "H": "(p+q^3)^2+q^5",
+   "branch": "constant quadratic coefficient, N>=4",
+   "depth": 4,
+   "core_dimension": 2
+  },
+  {
+   "H": "(p+q^2)^2+q^6",
+   "branch": "constant quadratic coefficient, N>=4",
+   "depth": 4,
+   "core_dimension": 2
+  },
+  {
+   "H": "p^2+q^4*p+q^6",
+   "branch": "constant quadratic coefficient, N>=4",
+   "depth": 4,
+   "core_dimension": 2
+  },
+  {
+   "H": "(p+q^2)^3+q*(p+q^2)+q^2",
+   "branch": "c03 cube locus",
+   "depth": 3,
+   "core_dimension": 2
+  },
+  {
+   "H": "(p+q^2)^3+q^2",
+   "branch": "c03 cube locus",
+   "depth": 3,
+   "core_dimension": 2
+  },
+  {
+   "H": "q^6+q*p^2",
+   "branch": "linear quadratic coefficient",
+   "depth": 3,
+   "core_dimension": 2
+  },
+  {
+   "H": "q^6+q^4*p+(q+1)*p^2",
+   "branch": "linear quadratic coefficient",
+   "depth": 3,
+   "core_dimension": 2
+  },
+  {
+   "H": "(p+q^3)^2+q^2",
+   "branch": "constant quadratic coefficient, N<=2",
+   "depth": 2,
+   "core_dimension": 6
+  },
+  {
+   "H": "(p+q^3)^2",
+   "branch": "constant quadratic coefficient, N<=2",
+   "depth": 2,
+   "core_dimension": 6
+  },
+  {
+   "H": "q^6+20*q^3*p^2-10*p^4",
+   "branch": "c04 quartic edge",
+   "depth": 2,
+   "core_dimension": 2
+  },
+  {
+   "H": "q^6+q^2*p^2",
+   "branch": "quadratic quadratic coefficient",
+   "depth": 2,
+   "core_dimension": 2
+  },
+  {
+   "H": "q^6+q^3*p^2",
+   "branch": "c32",
+   "depth": 2,
+   "core_dimension": 2
+  },
+  {
+   "H": "q^6+(q^3+q)*p^2",
+   "branch": "c32",
+   "depth": 1,
+   "core_dimension": 2
+  },
+  {
+   "H": "(q*p+q^3)^2",
+   "branch": "quadratic quadratic coefficient",
+   "depth": 1,
+   "core_dimension": 3
+  },
+  {
+   "H": "(q*p+q^3+1)^2-1",
+   "branch": "quadratic quadratic coefficient",
+   "depth": 1,
+   "core_dimension": 3
+  },
+  {
+   "H": "(p+q^2)^3+q*(p+q^2)",
+   "branch": "c03 cube locus",
+   "depth": 1,
+   "core_dimension": 6
+  },
+  {
+   "H": "(p+q^2)^3+q*(p+q^2)+q",
+   "branch": "c03 cube locus",
+   "depth": 1,
+   "core_dimension": 5
+  },
+  {
+   "H": "(p+q^2)^3+q",
+   "branch": "c03 cube locus",
+   "depth": 1,
+   "core_dimension": "infinite"
+  },
+  {
+   "H": "(p+q^2)^3",
+   "branch": "c03 cube locus",
+   "depth": 1,
+   "core_dimension": "infinite"
+  },
+  {
+   "H": "q^6+q^2*p",
+   "branch": "affine in p",
+   "depth": 1,
+   "core_dimension": "infinite"
+  },
+  {
+   "H": "q^6+q*p",
+   "branch": "affine in p",
+   "depth": 0,
+   "core_dimension": "infinite"
+  },
+  {
+   "H": "q^6",
+   "branch": "affine in p",
+   "depth": 0,
+   "core_dimension": "infinite"
+  },
+  {
+   "H": "q^6+p^5",
+   "branch": "c05",
+   "depth": 1,
+   "core_dimension": 2
+  },
+  {
+   "H": "q^6+q*p^4",
+   "branch": "c14",
+   "depth": 1,
+   "core_dimension": 2
+  },
+  {
+   "H": "q^6+q^2*p^3",
+   "branch": "c23",
+   "depth": 1,
+   "core_dimension": 2
+  },
+  {
+   "H": "q^6+p^4",
+   "branch": "c04 quartic edge",
+   "depth": 1,
+   "core_dimension": 2
+  },
+  {
+   "H": "q^6+q*p^3",
+   "branch": "c13",
+   "depth": 2,
+   "core_dimension": 2
+  },
+  {
+   "H": "q^6+p^3",
+   "branch": "c03 off the cube locus",
+   "depth": 2,
+   "core_dimension": 2
+  }
+ ],
+ "sweep": {
+  "members": 617,
+  "tally": {
+   "affine in p | depth 0": 33,
+   "affine in p | depth 1": 32,
+   "c03 cube locus | depth 1": 64,
+   "c03 cube locus | depth 2": 20,
+   "c03 cube locus | depth 3": 2,
+   "c03 off the cube locus | depth 1": 6,
+   "c03 off the cube locus | depth 2": 16,
+   "c04 quartic edge | depth 1": 40,
+   "c04 quartic edge | depth 2": 1,
+   "c05 | depth 1": 113,
+   "c13 | depth 1": 16,
+   "c13 | depth 2": 15,
+   "c14 | depth 1": 54,
+   "c23 | depth 1": 42,
+   "c32 | depth 1": 14,
+   "c32 | depth 2": 17,
+   "constant quadratic coefficient, N<=2 | depth 2": 27,
+   "constant quadratic coefficient, N=3 | depth 6": 19,
+   "constant quadratic coefficient, N>=4 | depth 4": 29,
+   "constant quadratic coefficient, b''=0 | depth 5": 12,
+   "linear quadratic coefficient | depth 3": 21,
+   "quadratic quadratic coefficient | depth 1": 2,
+   "quadratic quadratic coefficient | depth 2": 22
+  }
+ },
+ "perfectjet_cross_check": "4368 transvectant comparisons agree"
+}
