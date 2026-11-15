@@ -3,6 +3,9 @@ on:
   pull_request:
     paths:
       - 'research/hamiltonian/c3_strata/sixfold_global_depth.py'
+      - 'research/hamiltonian/c3_strata/sixfold_jump_loci.py'
+      - 'research/hamiltonian/c3_strata/verify_sixfold_jump_loci.py'
+      - 'research/hamiltonian/c3_strata/SIXFOLD_JUMP*'
       - 'research/hamiltonian/c3_strata/verify_sixfold_global_depth.py'
       - 'research/hamiltonian/c3_strata/test_sixfold_global_depth.py'
       - 'research/hamiltonian/c3_strata/cube_leading_boundary.py'
@@ -35,8 +38,13 @@ jobs:
       - name: Symbolic identities, stored minors, adversarial sweep, PerfectJet cross-check
         working-directory: research/hamiltonian/c3_strata
         run: python verify_sixfold_global_depth.py --perfectjet
+      - name: Closed-form jump loci (Theorem J) identities and window cross-check
+        working-directory: research/hamiltonian/c3_strata
+        run: python verify_sixfold_jump_loci.py
       - name: Check retained receipts
         run: |
           git diff --exit-code -- \
             research/hamiltonian/c3_strata/SIXFOLD_GLOBAL_DEPTH_CERTIFICATE.json \
-            research/hamiltonian/c3_strata/SIXFOLD_GLOBAL_DEPTH_REPLAY.json
+            research/hamiltonian/c3_strata/SIXFOLD_GLOBAL_DEPTH_REPLAY.json \
+            research/hamiltonian/c3_strata/SIXFOLD_JUMP_LOCI_REPLAY.json \
+            research/hamiltonian/c3_strata/SIXFOLD_JUMP_WEIGHT4_SYSTEM.json
