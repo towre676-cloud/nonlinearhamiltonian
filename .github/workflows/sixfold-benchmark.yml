@@ -29,6 +29,10 @@ jobs:
           cmp reference/exact.jsonl data/exact.jsonl
           python evaluate.py data --predictions baseline_predictions.jsonl > rescored.json
           python -c "import json; assert json.load(open('baseline_report.json'))['test'] == json.load(open('rescored.json'))"
+      - name: Replay trajectory identification study
+        env:
+          OPENBLAS_NUM_THREADS: '1'
+        run: python experiment.py data identified
       - uses: actions/upload-artifact@v4
         with:
           name: sixfold-hamiltonian-jump-locus-benchmark

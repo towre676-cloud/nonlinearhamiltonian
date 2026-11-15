@@ -91,6 +91,21 @@ test pairs at each of the four noise levels. Its overall selective accuracy
 is 75–78% at 19–37% coverage. This is a result for this baseline and observation
 protocol. It leaves open what a better estimator can recover.
 
+## Physics-informed identification study
+
+The [identification study](IDENTIFICATION.md) compares local derivative fits,
+weak Hamiltonian regression, branch-aware numerical tests, and selective
+decisions across the published holdout and three observation durations.
+It includes a post-scoring exact-coefficient control and a separate symbolic
+replay of rational candidates inferred from clean tracks.
+
+```sh
+OPENBLAS_NUM_THREADS=1 python experiment.py data identified
+```
+
+The output directory contains the full per-noise, per-stratum and per-offset
+test scores, prediction records, and candidate certificates.
+
 ## Reproduce
 
 Use Python 3.12 with the supplied dependency pins.
