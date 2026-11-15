@@ -1,0 +1,55 @@
+{
+  "seed": 20261115,
+  "published_source_commit": "9695137deed389d619938c02216c4e8daa73ca20",
+  "dependencies": {
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "sympy": "1.14.0"
+  },
+  "models": 252,
+  "groups": 72,
+  "split_counts": {
+    "train": 126,
+    "validation": 63,
+    "test": 63
+  },
+  "noise_sigma": [
+    0.0,
+    1e-05,
+    0.001,
+    0.01
+  ],
+  "initial_states": [
+    [
+      -0.38,
+      -0.31
+    ],
+    [
+      -0.28,
+      0.19
+    ],
+    [
+      -0.08,
+      -0.37
+    ],
+    [
+      0.12,
+      0.33
+    ],
+    [
+      0.31,
+      -0.15
+    ],
+    [
+      0.39,
+      0.26
+    ]
+  ],
+  "max_scaled_energy_drift": 3.4769817892650658e-09,
+  "sha256": {
+    "exact.jsonl": "33818f6824422dbf6574328dcfb32bc4ccf1a7b25692c46160c702bc31d6dc6c",
+    "trajectories_test.npz": "a16d726bddac3e378c161226b0d570cdf69277fc8a0fe2fbca7ed42eae0842dc",
+    "trajectories_train.npz": "50d1cb2e9e14cb5348052ce34451de875d4c8c255a92061d25efd98aa1602e27",
+    "trajectories_validation.npz": "969f8fe376f947b8eaadc2427948c805408742f5d4243d8f13190cb3359c4d2f"
+  }
+}

@@ -1,0 +1,5 @@
+PASS: hashes, pair isolation, exact labels, obstruction certificates and trajectory arrays
+Counter({('quartic', 1): 36, ('delta', 1): 36, ('origin', 1): 36, ('c32', 1): 36, ('gamma', 1): 36, ('c32', 2): 12, ('gamma', 2): 12, ('quartic', 2): 12, ('depth-six', 6): 12, ('origin', 2): 12, ('delta', 2): 12})
+Oracle scorer: all cases and pairs correct.
+Saved baseline predictions rescore to exactly the bundled report.
+Independent regeneration produced byte-identical data and manifest on the pinned environment.
