@@ -1,6 +1,27 @@
-# Mathematics Retrospective and Hamiltonian Research
+# Exact Moyal Dynamics for Nonlinear Hamiltonians
 
-A mathematical reading collection spanning recovered topics from **2023 through 21 October 2026**: four annual volumes, a domain atlas, searchable question tables, executable examples and a focused study of nonlinear Hamiltonians with exact classical–quantum partners.
+**When does a nonlinear Hamiltonian evolve a polynomial observable exactly as classical mechanics predicts?**
+
+For a polynomial Hamiltonian $H$ and an observable $G$ independent of $\hbar$, we study when the flat Weyl–Moyal bracket and the Poisson bracket agree as a formal identity:
+
+$$
+\frac{H\star G-G\star H}{i\hbar}=\{H,G\}.
+$$
+
+The original programme classifies these **exact partners** for cubics, homogeneous quartics, and several families of arbitrary degree. The next question is persistence: which partners still satisfy the identity after repeated classical evolution? The spaces $S^r(H)$ require agreement for iterates zero through $r$. Their intersection $D_\infty(H)$ is the persistent core. The least stopping depth is the first $r$ with $S^r(H)=D_\infty(H)$.
+
+| Start here | What you’ll find |
+|---|---|
+| [Original Moyal research package](research/hamiltonian/README.md) | The 35-page note, offline interactive models, exact Python calculator, and replay instructions |
+| [Homogeneous sextic classification](research/hamiltonian/c3_strata/SEXTIC_STRATA_THEOREM.md) and [leading-form extension](research/hamiltonian/c3_strata/INHOMOGENEOUS_THEOREM.md) | Persistent cores and finite refinements in the stated polynomial families |
+| [Lean formalization](research/hamiltonian/c3_strata/formal/README.md) and [cube-leading bridge](research/hamiltonian/c3_strata/CUBE_LEADING_POLYNOMIAL_BRIDGE.md) | Kernel-checked declarations, their precise scope, and replay commands |
+| [Sixfold global depth](research/hamiltonian/c3_strata/SIXFOLD_GLOBAL_DEPTH_THEOREM.md) and [jump loci](research/hamiltonian/c3_strata/SIXFOLD_JUMP_LOCI_THEOREM.md) | A sharp universal depth of six for the stated 21-parameter family, with explicit conditions for temporary partners on the remaining three branches |
+| [Jump-locus benchmark](benchmarks/sixfold-jump-loci/README.md) | 252 exact Hamiltonians, perturbation pairs, reproducible synthetic trajectories, and paired scoring |
+| [Mathematics retrospective](#read-the-collection) | Four annual volumes and a domain atlas spanning 2023 through 21 October 2026 |
+
+The sixfold proofs use written arguments and exact symbolic certificates. The benchmark supplies exact labels and simulated observations for testing discovery methods. See the formalization guide for the separate scope of Lean verification.
+
+## The mathematics retrospective
 
 The collection develops questions into definitions, precise results, proofs or derivations, worked examples, limitations and further problems. It connects arithmetic, algebra, geometry, topology, analysis, dynamics, probability, inference, optimization, computation and quantum structures through explicit constructions.
 
@@ -156,7 +177,4 @@ python research/hamiltonian/partner_lab.py sextic-core --H "q^4*p^2+q^3"
 
 The independent replay uses the defining star exponential and separately
 constructed bounded kernels. The all-degree conclusions depend on the written
-theorems; the new extension is not an end-to-end Lean formalization. Nonconstant
-perturbations of leading types $(5,1)$ and $(3,3)$ and sixfold-leading
-inputs of higher degree in the complementary coordinate remain outside the
-classifier's scope.
+theorems; the new extension is not an end-to-end Lean formalization. The linked classifier guide describes the scope of that particular command. The separate [sixfold classifier](research/hamiltonian/c3_strata/sixfold_global_depth.py) covers the full sixfold-leading family and gives exact least stopping depths.
