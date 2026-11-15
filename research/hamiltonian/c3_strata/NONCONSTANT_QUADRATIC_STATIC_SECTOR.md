@@ -16,6 +16,6 @@ The polynomial identity B'k''−B''k'=0 says (k'/B')'=0 in K(q). Since B' is a n
 
 A valid necessary condition comes from the coefficient of p² in T₃(H,D_HG): it equals 24μ(2B'B'''−3(B'')²). If deg B=d≥2, the polynomial in parentheses has leading coefficient −d²(d−1)(d+1)b_d²≠0, so μ=0 is necessary in that nonlinear case. It remains insufficient by itself. For affine B the obstruction vanishes identically and μ need not be zero.
 
-For affine A and quadratic or cubic B, the full all-degree refinements are proved in `NONLINEAR_B_QUADRATIC_CUBIC.md`; its proof does not use the former incorrect inference.
+For affine A and quadratic or cubic B, the full all-degree refinements are proved in [`NONLINEAR_B_QUADRATIC_CUBIC.md` at PR #39 revision `ca15caa`](https://github.com/towre676-cloud/nonlinearhamiltonian/blob/ca15caa3204a4aa9c98c8632d88a5d15237a8a2e/research/hamiltonian/c3_strata/NONLINEAR_B_QUADRATIC_CUBIC.md); that document is not yet on main, and its proof does not use the former incorrect inference. For arbitrary A of degree at most 4 and deg B in {1,2,3}, the first refinements are given in [SIXFOLD_GLOBAL_DEPTH_THEOREM.md](SIXFOLD_GLOBAL_DEPTH_THEOREM.md), Theorem N.
 
 This result does not cover B constant, static partners of p-degree ≥3, or the full 21-parameter classification. It is not Lean formalized.

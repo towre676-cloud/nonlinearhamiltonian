@@ -212,10 +212,12 @@ supports of every size with rational coefficients, squares $c(p+\beta)^2+F$
 with and without perturbation, the cube locus in unnormalised coordinates,
 and 32 named members covering every row of both tables). In every case the
 window chain stops exactly at the classifier's $N(H)$, no drop occurs after
-depth 6, and the coefficient test of G2 agrees with $N(H)=6$. A larger offline
-run of 4,611 members (all 1,350 supports of size $\le3$, 2,500 random, and 761
-structured squares) gave the same agreement with no exception; that run is
-not part of the replay. This is evidence for
+depth 6, and the coefficient test of G2 agrees with $N(H)=6$. With
+`--extended` the same check runs on a larger deterministic sample (all 1,350
+supports of size $\le3$, 2,500 random members, and structured squares and cube
+members; 4,037 members in all, recorded in `SIXFOLD_GLOBAL_DEPTH_EXTENDED_SWEEP.json`), with the same outcome. An earlier
+offline run of 4,611 members with a different engine agreed as well but is not
+reproducible from this repository and is not relied on. This is evidence for
 the reconciliation, in particular against a mis-assigned branch; it is not
 part of the proof.
 
@@ -293,13 +295,18 @@ $$S^0(H)=K[q]\ \oplus\ \operatorname{span}\{p,\ qp,\ p^2,\ H\}.$$
 *Proof.* The four elements and $K[q]$ are static by the $p$-degree-two formula
 above ($k=\lambda B+\mu$, $g=\lambda A+aq+e$). Conversely, for
 $H^\sharp=f_6q^6+b_3q^3p^2$ the static space is $K[q]\oplus\langle p,qp,p^2,H^\sharp\rangle$
-by PR #39, Section 2 (the case $A=0$, $B=b_3q^3$). By Lemma 4 at $r=0$ the
-leading form of any static $G$ is in that space. Subtracting elements of
-$K[q]\subset S^0(H)$ one may assume the leading form involves $p$; its weight is
-then one of $3,5,6,12$, and two elements with the same such weight differ, after
-scaling and reduction modulo $K[q]$, by an element of lower weight. So
-$\dim S^0(H)/K[q]\le4$. $\square$ This step, and only this step, depends on
-PR #39, which is not merged.
+by [PR #39, revision `ca15caa`, Section 2](https://github.com/towre676-cloud/nonlinearhamiltonian/blob/ca15caa3204a4aa9c98c8632d88a5d15237a8a2e/research/hamiltonian/c3_strata/NONLINEAR_B_QUADRATIC_CUBIC.md) (the case $A=0$, $B=b_3q^3$). By
+Lemma 4 at $r=0$ the leading form of any static $G$ is in that space.
+Subtracting elements of $K[q]\subset S^0(H)$ one may assume the leading form
+involves $p$; its weight is then one of $3,5,6,12$, and two elements with the
+same such weight differ, after scaling and reduction modulo $K[q]$, by an
+element of lower weight. So $\dim S^0(H)/K[q]\le4$. $\square$
+
+**Dependency.** This cubic-$B$ static-space formula is conditional on that
+revision of PR #39, which is open and unmerged; if its model computation
+changes, this formula must be re-derived. It is the only statement in this
+note with that dependency. Theorems G1–G3 and the first-refinement statements
+of Theorem N do not use it.
 
 For $k\in\{1,2\}$ the full static space is **not** determined here. [sweep] On
 700 random members the complement of $K[q]$ in $S^0$, measured on the windows
@@ -328,17 +335,22 @@ $p$-degree $\le2$. The regression anchor is
 $$H=q^6+qp^2,\qquad G=p^2+\tfrac{12}5q^5:\qquad D_HG=2p^3-12q^5p,\quad G\in S^1\setminus S^2,\quad T_3(H,D_H^2G)=51840\,pq^3$$
 
 [cert]. It is the element $p^2+\varphi_3$ of Theorem N at $k=1$, $A=0$. This
-patch replaces the note by PR #39's corrected text, byte for byte, so that the
-two merge cleanly; its final sentence refers to `NONLINEAR_B_QUADRATIC_CUBIC.md`,
-which exists only on PR #39. Theorem N agrees with PR #39 on its domain
-(affine $A$, $k\in\{2,3\}$) and extends it to every $A$ of degree $\le4$ and to
-$k=1$; it does not duplicate the Lean formalisation there.
+patch replaces the invalid paragraph by PR #39's corrected text and repairs its
+closing reference: the cited document `NONLINEAR_B_QUADRATIC_CUBIC.md` is not on
+main, so the note now links to it at the reviewed PR #39 revision `ca15caa` and
+also points to Theorem N. Because of that one changed sentence the note is no
+longer byte-identical to PR #39's copy; merging PR #39 afterwards will need a
+one-line resolution there. Theorem N agrees with PR #39 on its domain (affine
+$A$, $k\in\{2,3\}$) and extends it to every $A$ of degree $\le4$ and to $k=1$;
+it does not duplicate the Lean formalisation there.
 
-*Stale statements.* The coverage table in `BINOMIAL_NEWTON_SHARP_THEOREM.md`
-still describes the 21-parameter refinement classification as incomplete. With
-G1–G3 the persistent core and the least depth are determined for every member;
-what remains open is listed in Section 8. That manuscript is fingerprinted by a
-receipt and is not edited here.
+*Coverage table.* The audit table in `BINOMIAL_NEWTON_SHARP_THEOREM.md` is
+updated in the same patch and its receipt regenerated. It now separates two
+things: the persistent core and the least stopping depth, which are determined
+for every member of the 21-parameter family (conditionally on the cited branch
+theorems), and the items that remain open, namely the full static spaces for
+$\deg B\in\{1,2\}$ and the closed-form first-refinement jump loci on lines 4, 5
+(with $p$-degree-3 terms) and 7a.
 
 ## 8. Not proved here
 
@@ -355,5 +367,6 @@ receipt and is not edited here.
 cd research/hamiltonian/c3_strata
 python -m unittest test_sixfold_global_depth -v
 python verify_sixfold_global_depth.py --perfectjet     # about 15 seconds; PerfectJet at the pinned commit
+python verify_sixfold_global_depth.py --extended       # larger sweep, a few minutes; writes SIXFOLD_GLOBAL_DEPTH_EXTENDED_SWEEP.json
 python -c "import sixfold_global_depth as G; print(G.classify(G.parse('(p+q^3)^2+q^3')))"
 ```

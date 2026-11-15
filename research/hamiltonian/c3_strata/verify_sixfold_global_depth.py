@@ -8,7 +8,9 @@ exact sweep: for a deterministic sample of members of the 21-parameter family
 it compares the classifier with the chain of S^r on the degree-12 window and
 looks for any drop after depth six.  The sweep is a cross-check and a
 counterexample search, not a proof step.  With --perfectjet a subsample is
-recomputed with PerfectJet's transvectants (cross-check only).
+recomputed with PerfectJet's transvectants (cross-check only).  With --extended
+the sweep runs on a larger deterministic sample and writes its own receipt
+without touching the standard replay file.
 """
 import itertools
 import json
@@ -217,6 +219,13 @@ for text, depth, core in named:
     members.append(G.parse(text))
 report["named_members"] = named_report
 
+if "--extended" in sys.argv:                       # larger deterministic sample, same checks
+    for sup in itertools.combinations(mons, 3):
+        members.append({(6, 0): Fr(1), **{m: Fr(1) for m in sup}})
+    for _ in range(2280):
+        sup = rnd.sample(mons, rnd.choice([2, 3, 4, 5, 6, 8, 12, 20]))
+        members.append({(6, 0): Fr(1), **{m: Fr(rnd.choice([-3, -2, -1, 1, 2, 3]), rnd.choice([1, 1, 2])) for m in sup}})
+
 window = G.degree_window(12)
 tally = {}
 for h in members:
@@ -247,6 +256,15 @@ if "--perfectjet" in sys.argv:
                 assert ours == theirs
                 checked += 1
     report["perfectjet_cross_check"] = "%d transvectant comparisons agree" % checked
+
+if "--extended" in sys.argv:
+    with open("SIXFOLD_GLOBAL_DEPTH_EXTENDED_SWEEP.json", "w") as handle:
+        json.dump(report["sweep"], handle, indent=1)
+        handle.write("\n")
+    for key, value in report["sweep"]["tally"].items():
+        print("%-58s %d" % (key, value))
+    print("sixfold global depth extended sweep: PASS (%d members swept)" % len(members))
+    sys.exit(0)
 
 with open("SIXFOLD_GLOBAL_DEPTH_REPLAY.json", "w") as handle:
     json.dump(report, handle, indent=1)

@@ -368,11 +368,27 @@ been independently re-proved by this contribution.
 | c32, with c04=0 | q6+gamma q3p2, (2,3) | Quadratic-sixfold Lemma 5/Theorem D contains a finite S1 bound 26 and leading-model dimensions (3,2,2). Separation therefore also gives S2=core for arbitrary strictly lower-weight terms, including qp3 and p3. Infinite S0 is not a finite-tail claim. |
 | c13 | q6+c qp3, (3,5) | Generic-stratum Theorem 7: S2=core; exact S1 survival test. |
 | c03 | q6+alpha q4p+beta q2p2+x p3, (1,2) | Weighted cubic-form Theorems 1–3 cover the complement of 3beta=alpha2, 27x=alpha3. The separate [cube-leading boundary theorem](CUBE_LEADING_BOUNDARY_THEOREM.md), Theorem K, classifies the core on the entire reduced ten-parameter cube locus: core=span{1,H} exactly when B,C are not both affine. Theorem G′ gives the exact first-refinement jump for quadratic B and deg C<=3. [Theorem R](CUBE_LEADING_REFINEMENT_THEOREM.md) gives every first-refinement jump and sharp uniform depth 2 when one of b3, c4, c5 is nonzero; together with the lower stratum the uniform depth is 3 whenever B,C are not both affine. |
-| All p-degree >=3 coefficients zero | h(q)+A(q)p+B(q)p2 | Quadratic-sixfold Theorems A–E give the stated quadratic cases, boxes and square-composition exception; inhomogeneous Section 10 gives the affine cases. A full static-space formula for nonconstant B is not supplied there; the later static-sector note is only an intersection theorem. |
+| All p-degree >=3 coefficients zero | h(q)+A(q)p+B(q)p2 | Quadratic-sixfold Theorems A–E give the stated quadratic cases, boxes and square-composition exception; inhomogeneous Section 10 gives the affine cases. For nonconstant B and arbitrary A of degree <=4, [Theorem N](SIXFOLD_GLOBAL_DEPTH_THEOREM.md) gives the first refinement with explicit generators, the stage dimensions and the exceptional loci (deg B=1: least depth always 3; deg B=3: S1 jumps exactly on b2^2=3*b3*b1). The full static space is known for cubic B only, conditionally on the open PR #39; for deg B in {1,2} it is not determined, and the static-sector note is only an intersection theorem. |
 
-Thus neither the old claim that the c32 core boundary is wholly open nor
-an unqualified assertion of complete 21-parameter refinement classification
-is appropriate. On the weighted cubic cube locus the arbitrary-degree
+**Stabilization and core: complete.** The [global depth theorem](SIXFOLD_GLOBAL_DEPTH_THEOREM.md)
+assembles the rows above into one statement for all 21 lower coefficients:
+S6=core for every member, the bound six is sharp, the persistent core is
+determined in every row (including the enlarged and infinite cores), and the
+least stopping depth is determined for every member, with the loci of least
+depth 6, 5, 4, 3 and 0 in closed form. That statement is a reconciliation: it
+is exactly as strong as the row theorems cited above, which have not been
+independently re-proved, and it is not Lean formalized.
+
+**Refinement classification: not complete.** The old claim that the c32 core
+boundary is wholly open is no longer appropriate, and neither is an unqualified
+assertion of complete 21-parameter refinement classification. What remains
+unresolved is: the closed-form first-refinement jump loci under arbitrary
+lower-weight perturbation in the rows c04, c32 (when qp3 or p3 terms are
+present) and c03 off the cube locus, where the choice between least depth 1 and
+2 is at present an exact computation on a proved finite window; and the full
+static spaces for nonconstant quadratic coefficient of degree 1 or 2.
+
+On the weighted cubic cube locus the arbitrary-degree
 reduction is now proved by the separate cube-leading boundary theorem.
 Theorem K now closes its persistent-core problem for all ten reduced
 parameters, including every member where at least one of b3, c4, c5 is
