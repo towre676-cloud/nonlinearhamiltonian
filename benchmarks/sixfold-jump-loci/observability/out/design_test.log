@@ -1,0 +1,8 @@
+90e2c8 {'ratio_Ieff_J7': 168.684, 'ratio_Ieff_J7_unknown_ic': 111.05, 'ratio_known': 1.117}
+3e55e9 {'ratio_Ieff_J7': 42.894, 'ratio_Ieff_J7_unknown_ic': 31.872, 'ratio_known': 1.131}
+1ae54b {'ratio_Ieff_J7': 199.088, 'ratio_Ieff_J7_unknown_ic': 122.937, 'ratio_known': 1.089}
+primary {'ratios': [168.68418308226066, 42.894478387873676, 199.08751890049612], 'geometric_mean': 112.93795749916404, 'success': True}
+A_benchmark 0.0 {'predicted_sd': 0.0026850206832592267, 'empirical_sd': 0.0024137964361351538, 'mean_eps_hat': 7.954106796647109e-05, 'reject_rate': 0.025, 'predicted_reject': 0.04999579029644087}
+A_benchmark 0.01 {'predicted_sd': 0.0026850206832592267, 'empirical_sd': 0.0024204531366456956, 'mean_eps_hat': 0.010078557157778906, 'reject_rate': 0.975, 'predicted_reject': 0.961164825337167}
+B_designed 0.0 {'predicted_sd': 0.00019029422926220948, 'empirical_sd': 0.0001683989925590361, 'mean_eps_hat': -1.8734914650946105e-05, 'reject_rate': 0.025, 'predicted_reject': 0.04999579029644087}
+B_designed 0.01 {'predicted_sd': 0.00019029422926220948, 'empirical_sd': 0.00016847086918058535, 'mean_eps_hat': 0.009981242381683261, 'reject_rate': 1.0, 'predicted_reject': 1.0}

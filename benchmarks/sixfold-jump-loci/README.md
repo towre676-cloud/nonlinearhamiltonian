@@ -106,6 +106,18 @@ OPENBLAS_NUM_THREADS=1 python experiment.py data identified
 The output directory contains the full per-noise, per-stratum and per-offset
 test scores, prediction records, and candidate certificates.
 
+## Observability note
+
+[OBSERVABILITY.md](OBSERVABILITY.md) derives the trajectory sensitivity of the delta locus
+along q³p, an explicit remainder bound, known- and unknown-background discrimination limits,
+a preregistered initial-state design, an abstention rule in place of exact-membership claims, and a
+constrained profile-likelihood estimator confirmed on fresh held-out groups.
+Run `sh observability/run_all.sh` (one minute) and `sh observability/run_estimator.sh` (about 45 minutes).
+For a quick audit of the bundled estimator records, run `python observability/verify_saved.py`;
+`python observability/score.py` independently regenerates their score summary. These quick checks
+do not rerun nonlinear fitting. The full estimator replay resumes existing case records; use a clean
+copy with `observability/out/estimator/calibration.jsonl` and `confirm.jsonl` removed to refit every case.
+
 ## Reproduce
 
 Use Python 3.12 with the supplied dependency pins.

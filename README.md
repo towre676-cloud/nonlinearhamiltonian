@@ -17,6 +17,7 @@ The original programme classifies these **exact partners** for cubics, homogeneo
 | [Lean formalization](research/hamiltonian/c3_strata/formal/README.md) and [cube-leading bridge](research/hamiltonian/c3_strata/CUBE_LEADING_POLYNOMIAL_BRIDGE.md) | Kernel-checked declarations, their precise scope, and replay commands |
 | [Sixfold global depth](research/hamiltonian/c3_strata/SIXFOLD_GLOBAL_DEPTH_THEOREM.md) and [jump loci](research/hamiltonian/c3_strata/SIXFOLD_JUMP_LOCI_THEOREM.md) | A sharp universal depth of six for the stated 21-parameter family, with explicit conditions for temporary partners on the remaining three branches |
 | [Jump-locus benchmark](benchmarks/sixfold-jump-loci/README.md) | 252 exact Hamiltonians, perturbation pairs, reproducible synthetic trajectories, and paired scoring |
+| [Delta-locus observability](benchmarks/sixfold-jump-loci/OBSERVABILITY.md) | Sensitivity analysis and a frozen constrained estimator: redesigned initial states improve complete-pair discrimination from 13/72 to 54/72 on 12 fresh synthetic groups at the tested noise and offset |
 | [Mathematics retrospective](#read-the-collection) | Four annual volumes and a domain atlas spanning 2023 through 21 October 2026 |
 
 The sixfold proofs use written arguments and exact symbolic certificates. The benchmark supplies exact labels and simulated observations for testing discovery methods. See the formalization guide for the separate scope of Lean verification.

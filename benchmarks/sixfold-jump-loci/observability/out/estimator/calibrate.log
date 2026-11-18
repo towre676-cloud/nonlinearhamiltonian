@@ -1,0 +1,22 @@
+calibration.jsonl 1 / 144
+calibration.jsonl 21 / 144
+/home/claude/towre676-cloud/nonlinearhamiltonian/benchmarks/sixfold-jump-loci/observability/fastode.py:15: RuntimeWarning: overflow encountered in power
+  Q = np.stack([np.ones_like(q)] + [q**k for k in range(1, self.maxi+1)], -1)
+/home/claude/towre676-cloud/nonlinearhamiltonian/benchmarks/sixfold-jump-loci/observability/fastode.py:27: RuntimeWarning: overflow encountered in multiply
+  return Q[:, ii]*P[:, jj]*(fa*fb*ok)
+/home/claude/towre676-cloud/nonlinearhamiltonian/benchmarks/sixfold-jump-loci/observability/fastode.py:32: RuntimeWarning: invalid value encountered in matmul
+  dy = np.stack([Hp@c, -(Hq@c)], -1)
+/home/claude/towre676-cloud/nonlinearhamiltonian/benchmarks/sixfold-jump-loci/observability/fastode.py:37: RuntimeWarning: overflow encountered in matmul
+  return dy, A@Z + G, A@Phi
+/home/claude/towre676-cloud/nonlinearhamiltonian/benchmarks/sixfold-jump-loci/observability/fastode.py:37: RuntimeWarning: invalid value encountered in add
+  return dy, A@Z + G, A@Phi
+calibration.jsonl 41 / 144
+calibration.jsonl 61 / 144
+calibration.jsonl 81 / 144
+/home/claude/towre676-cloud/nonlinearhamiltonian/benchmarks/sixfold-jump-loci/observability/fastode.py:16: RuntimeWarning: overflow encountered in power
+  P = np.stack([np.ones_like(p)] + [p**k for k in range(1, self.maxj+1)], -1)
+/home/claude/towre676-cloud/nonlinearhamiltonian/benchmarks/sixfold-jump-loci/observability/fastode.py:37: RuntimeWarning: invalid value encountered in matmul
+  return dy, A@Z + G, A@Phi
+calibration.jsonl 101 / 144
+calibration.jsonl 121 / 144
+calibration.jsonl 141 / 144
