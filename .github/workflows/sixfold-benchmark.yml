@@ -1,5 +1,10 @@
 name: Sixfold benchmark
 on:
+  push:
+    branches: [main]
+    paths:
+      - 'benchmarks/sixfold-jump-loci/**'
+      - '.github/workflows/sixfold-benchmark.yml'
   pull_request:
     paths:
       - 'benchmarks/sixfold-jump-loci/**'
@@ -33,6 +38,15 @@ jobs:
         env:
           OPENBLAS_NUM_THREADS: '1'
         run: python experiment.py data identified
+      - name: Replay observability calculations and audit saved estimator fits
+        env:
+          OPENBLAS_NUM_THREADS: '1'
+        run: |
+          python observability/verify_saved.py
+          sh observability/run_all.sh
+          cp observability/out/estimator/score.json /tmp/sixfold-saved-score.json
+          python observability/score.py
+          cmp /tmp/sixfold-saved-score.json observability/out/estimator/score.json
       - uses: actions/upload-artifact@v4
         with:
           name: sixfold-hamiltonian-jump-locus-benchmark
