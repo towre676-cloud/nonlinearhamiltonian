@@ -40,7 +40,7 @@ def bound(h, margin=0.05, eps_max=0.1, n=4000):
 
 if __name__ == '__main__':
     G = load_delta(); g = '1ae54b'; key = [k for k in G if k.startswith(g)][0]; d = G[key]
-    Ctot, per = bound(d['h0'])
+    Ctot, per = bound(d['h0'], eps_max=0.5)   # box condition checked through |eps| = 0.5
     sig, s = signals(d['h0']); mu0 = trajectories(d['h0'])
     rows = []
     for e in EPS:
@@ -48,5 +48,5 @@ if __name__ == '__main__':
         R = float(np.linalg.norm((trajectories(h1) - mu0).reshape(-1) - float(de)*s))
         rows.append(dict(eps=e, actual_remainder=R, bound=e**2*Ctot, linear_norm=e*sig['known']))
     res = dict(group=key, C_total=Ctot, s_norm=sig['known'], per_ic=[{k: v for k, v in o.items() if k != 'C'} for o in per],
-               eps_rows=rows, eps_linear_10pct=0.1*sig['known']/Ctot)
+               eps_rows=rows, eps_linear_10pct=0.1*sig['known']/Ctot, box_condition_checked_through=0.5)
     json.dump(res, open(HERE/'out'/'remainder.json','w'), indent=1); print(json.dumps(res, indent=1))

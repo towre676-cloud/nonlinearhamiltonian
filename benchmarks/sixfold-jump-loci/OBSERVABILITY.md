@@ -2,7 +2,8 @@
 
 Benchmark base: this directory as published (exact catalog `reference/exact.jsonl`, theorem source
 `sources/SIXFOLD_JUMP_LOCI_THEOREM.md`, row J7, weight 1). Code and outputs are in `observability/`;
-`observability/run_all.sh` regenerates every number below in about one minute. The published split,
+`observability/run_all.sh` replays the sensitivity and design calculations in about one minute;
+the estimator and diagnostic replay commands appear in sections 7 and 8. The published split,
 benchmark data, and scoring are untouched.
 
 Epistemic labels. **[proved]** means a complete argument given here or in Theorem J.
@@ -50,22 +51,21 @@ $\dot e=Df(x_0)e+r+\varepsilon(g(x_\varepsilon)-g(x_0))$ with $|r|\le\tfrac12B_2
 the convex box, and Grönwall again. $\square$
 
 **Worked constants [analytic, constants uncertified].** For test group `1ae54b`, $m=0.05$, the six boxes give
-$L_1\le3.18$, $B_2\le14.4$, $M_g\le0.215$, $L_g\le1.22$, $C_{\rm tot}=0.0310$, and $\|s\|=0.1540$. The bound is
-checked for $|\varepsilon|\le0.1$. The algebraic 10% relative-error threshold is
-$0.1\|s\|/C_{\rm tot}=0.50$, but the orbit-box condition has only been checked through $0.1$;
-the reported constants therefore support the 10% comparison only on that checked range, subject
-to the numerical-enclosure qualification above. The actual remainders from the benchmark's own exact near-miss
+$L_1\le3.18$, $B_2\le14.4$, $M_g\le0.215$, $L_g\le1.22$, $C_{\rm tot}=0.0310$, and $\|s\|=0.1540$. The orbit-box condition
+$|\varepsilon|D(T)\le m$ was checked through $|\varepsilon|=0.5$ (largest value of $|\varepsilon|D(T)$ over the six boxes
+$0.0261\le0.05$; it holds through 0.6 and fails by 1.0), so the bound applies on $|\varepsilon|\le0.5$, and on that
+range the remainder is at most 10% of $|\varepsilon|\|s\|$ for $|\varepsilon|\le0.1\|s\|/C_{\rm tot}\approx0.4965$ (use $0.496$ as a conservative rounded threshold). The actual remainders from the benchmark's own exact near-miss
 tracks are $2.41\times10^{-5},\ 2.41\times10^{-9},\ 2.40\times10^{-13}$ at $\varepsilon=10^{-1},10^{-3},10^{-5}$, about
 $13\times$ below the bound, and across all 12 groups the relative linearisation error at $\varepsilon=0.1$ is at
 most $2.0\times10^{-3}$ [numerical].
 
 **Proposition 2 (vanishing signal) [proved].** With $x\ne0$, $z\equiv0$ on a time interval iff the initial
 state is an equilibrium of $H_0$ on $\{q=0\}$. Indeed $z\equiv0$ forces $g(x_0(t))\equiv0$, i.e. $q\equiv0$, so
-$H_p(0,p(t))=c_{01}+2c_{02}p+3xp^2\equiv0$, which forces $p$ constant. Since $z(t)=t\,g(x_0(0))+O(t^2)$ and
-$\|g\|=|q|^2\sqrt{q^2+9p^2}$, a small nonzero initial $q$ suppresses the coefficient
-of the leading $t$ term; it does not change its time order to $t^2$. The benchmark state
-$(-0.08,-0.37)$ is of this weak kind. The proposition concerns continuous-time vanishing of $z$;
-it makes no additional claim about reflection symmetries or vanishing at a finite sample set.
+$H_p(0,p(t))=c_{01}+2c_{02}p+3xp^2\equiv0$, which forces $p$ constant. For every initial state $z(t)=t\,g(q_0,p_0)+O(t^2)$, with
+$\|g(q,p)\|=|q|^2\sqrt{q^2+9p^2}$. A small $q_0\ne0$ therefore suppresses the leading coefficient by the factor
+$q_0^2$ without changing the leading order in $t$; only at $q_0=0$ exactly does the $t$ term vanish. The
+benchmark state $(-0.08,-0.37)$ has a suppressed coefficient of this kind. Whether some symmetry of a
+particular $H_0$ can make $s$ vanish at the sample times for a non-equilibrium state is not analysed here.
 
 ## 3. Known background: the discrimination limit
 
@@ -112,8 +112,10 @@ the curvature of the locus image.
 oracle and the estimators is, to first order, an information gap: the oracle uses the background, and in the
 linearised experiment no test that does not know it exceeds about 63% at $\varepsilon=10^{-3}$ under the
 published initial states [local]. The
-genuine estimator gap is at $\varepsilon=10^{-1}$, where even the plug-in route predicts essentially perfect
-discrimination at $\sigma=10^{-5}$ while the guarded rule completed no delta pair. Why the benchmark
+large-offset selective-coverage gap is at $\varepsilon=10^{-1}$: even the plug-in route predicts essentially perfect
+discrimination at $\sigma=10^{-5}$ while the guarded selective rule completed no delta pair.
+Section 8 shows that its forced decisions already separated all three original large-offset pairs;
+abstention on the on-locus members caused the selective loss. Why the benchmark
 initial states are so poor is visible in the least-squares mimic of $s$ by the tangent: the cosine between
 $s$ and $\operatorname{span}(JT)$ is 0.9997, 0.9974, 0.9994 on the three test groups, and the mimic is
 dominated by the pure-potential directions $q^5,q^4,q^3,q^2$ [numerical]. One might guess that the $p$-parity of the Hamiltonian terms ($q^3p$ odd, the mimicking potential terms even)
@@ -155,27 +157,25 @@ $\bigl|P_{H_0}(\delta=2)-P_{H_\varepsilon}(\delta=2)\bigr|\le\operatorname{TV}=2
 2\Phi\bigl((|\varepsilon|\|s\|+\varepsilon^2C_{\rm tot})/2\sigma\bigr)-1\to0$ as $\varepsilon\to0$. Hence no rule
 answers "depth 2" with probability at least $\gamma$ on the locus while keeping that answer's probability
 below $\gamma-\eta$ on every depth-one alternative, for any $\eta>0$. This holds even with the background
-known; with it unknown, $|\varepsilon|\|s_\perp\|$ is the corresponding first-order distance after
+known; with it unknown, $|\varepsilon|\|s_\perp\|$ is the first-order distance after
 projecting out the locus tangent, not an exact nonlinear distance. The depth-one set is
 dense at every locus point along $q^3p$, so finite noisy data cannot certify exact membership, and a
 nearby rational polynomial passing a residual test certifies only itself.
 
 **A usable replacement.** Estimate the obstruction coefficient $c=12g_2$ (here $36\varepsilon$) with standard
-error $\mathrm{se}=12\cdot3x\,\sigma/\|s_\perp\|$ from the constrained fit, and answer in three ways. Answer
-"depth 1" when the $1-\alpha$ interval for $c$ excludes 0; this errs on the locus with probability at most
-$\alpha$. Answer "$|c|<\eta$" when the interval lies in $(-\eta,\eta)$; this errs with
-probability at most $\alpha$ whenever $|c|\ge\eta$. Otherwise abstain. Never answer "exactly depth 2". In the
+error $\mathrm{se}=12\cdot3x\,\sigma/\|s_\perp\|$ from the constrained fit, write $z=z_{1-\alpha/2}$, and answer in
+three ways, with this priority. Answer "depth 1" when the interval $\hat c\pm z\,\mathrm{se}$ excludes 0; on the
+locus this happens with probability exactly $\alpha$ in the Gaussian model. Otherwise answer "$|c|<\eta$"
+when the interval lies in $(-\eta,\eta)$; when $|c|\ge\eta$ this answer requires $\hat c$ to fall more than
+$z\,\mathrm{se}$ short of $c$ on the side of 0, which has probability at most $\alpha/2$. Otherwise abstain. Never
+answer "exactly depth 2". In the
 known-background case these error rates are exact up to the explicit $\varepsilon^2C_{\rm tot}$ shift of the
-mean [proved]; with unknown background they hold to first order [local]. The smallest $\eta$ at which the
-"$|c|<\eta$" answer is reached with probability $1-\beta$ on the locus is
-$(z_{1-\alpha/2}+z_{1-\beta/2})\,\mathrm{se}$ for interval containment alone: at $c=0$,
-$P(\mathrm{CI}\subset(-\eta,\eta))=2\Phi(\eta/\mathrm{se}-z_{1-\alpha/2})-1$ when
-$\eta>z_{1-\alpha/2}\mathrm{se}$, and zero otherwise. If rejection of zero takes priority,
-the probability of the margin answer is additionally restricted by the non-rejection event;
-with the same Gaussian interval this replaces the argument of $\Phi$ by
-$\min(z_{1-\alpha/2},\eta/\mathrm{se}-z_{1-\alpha/2})$. These formulas assume known
-standard error in the linear Gaussian experiment. The implemented estimator uses a profile-likelihood
-rejection threshold and an estimated standard error, so its achieved answer rates are empirical. The margin is declared in the obstruction coordinate $c$, not as a
+mean [proved]; with unknown background they hold to first order [local]. At $c=0$, interval containment alone has probability
+$\Pr(\mathrm{CI}\subset(-\eta,\eta))=\max\{0,2\Phi(\eta/\mathrm{se}-z)-1\}$. With the priority of "depth 1" included, the
+probability of the answer "$|c|<\eta$" at $c=0$ is $\Pr(|\hat c|<\min(\eta-z\,\mathrm{se},\,z\,\mathrm{se}))
+=\max\{0,2\Phi(\min(\eta/\mathrm{se}-z,\,z))-1\}$, which never exceeds $1-\alpha$. For a target $1-\beta$ with $\beta\ge\alpha$
+the required margin is therefore $\eta=(z_{1-\alpha/2}+z_{1-\beta/2})\,\mathrm{se}$ [proved, Gaussian model]; which is the quantitative content of "observable margin" and the
+quantity a design should minimise. The margin is declared in the obstruction coordinate $c$, not as a
 geometric distance in coefficient space: along this family $|c|=36|x||\varepsilon|$, and converting it to a
 distance from the locus in any coefficient norm requires a declared normalisation and a local comparison
 bound between $|g_2|$ and that distance, which is not supplied here.
@@ -197,7 +197,8 @@ exact variational equations (agreement with DOP853 to $4\times10^{-12}$); the da
 with DOP853, so the fit does not share the generator's integrator. The comparator ("plug-in") is the study's
 analytic route made nonlinear: an unconstrained degree-5 trajectory fit (20 coefficients plus initial states)
 from the study's weak start, followed by a Wald test of $g_2=0$. It is a reimplementation, not the
-repository's guarded weak-locus pipeline, which was not rerun on the new data.
+repository's guarded weak-locus pipeline. The separate diagnostic in section 8 reruns that actual
+pipeline on the fresh design-A observations.
 
 **Freezing.** All settings, the prior, and the thresholds were fixed using only train and validation
 on-locus groups (9 groups, 4 noise replicates per design and noise level), then hashed in
@@ -237,25 +238,25 @@ against 4/24 under A (predicted 0.08), and nothing was resolvable at smaller off
 three previously examined test groups, rerun as a transfer check with 6 replicates, agree: 16/18 and 18/18 at
 $\varepsilon=10^{-1}$, and 0/18 against 14/18 at $\varepsilon=10^{-3}$, for A and B.
 
-**Selective rule.** With the three-way rule, design B answered every fresh $\sigma=10^{-5}$ pair. At
+**Selective rule.** The implementation gives "depth 1" priority through the profile test ($\Lambda>\lambda_{\rm crit}$) rather than through interval exclusion. The likelihood-ratio and Wald statistics are locally
+equivalent under regularity, but the calibrated profile threshold can differ from $z^2$;
+therefore the implemented priority need not coincide with exclusion by the reported 95% interval. With the three-way rule, design B answered every fresh $\sigma=10^{-5}$ pair. At
 $\varepsilon=10^{-5}$ it answers "$|c|<\eta$" for both members, which is correct in the rule's own terms
 ($|c|=3.6\times10^{-4}<\eta$) though it scores as a wrong depth pair. Rule-semantic errors (a "depth 1" on the
 locus, or "$|c|<\eta$" when $|c|\ge\eta$) occurred 1 time per 72 under B and 6 per 72 under A in each magnitude
 block, the latter being the six on-locus false positives counted once per block.
 
-**Reading.** First, the $\varepsilon=10^{-1}$ failure is an estimator failure, not an information limit: with the
+**Reading.** First, the published observation design carries usable information at $\varepsilon=10^{-1}$: with the
 published initial states, both a locus-constrained fit and an unconstrained trajectory fit in the study's own
-degree-5 library complete 92–97% of fresh pairs at $\sigma=10^{-5}$, so the 0/3 delta result of the guarded rule
-is consistent with a loss in its coefficient recovery, guards, calibration or optimization choices.
-The fresh-group comparison does not isolate that loss on the original three groups; the actual guarded
-pipeline must be rerun on identical observations to establish which stage is responsible.
+degree-5 library complete 92–97% of fresh pairs at $\sigma=10^{-5}$. This does not by itself explain why the
+guarded rule failed on its original three groups; section 8 diagnoses that directly.
 Second, the redesigned initial states deliver most of the predicted gain from observed data alone, raising
 complete-pair accuracy at $\varepsilon=10^{-3}$ from 0.18 to 0.75 against local predictions of 0.085 and 0.71; the
 gain appears only when the estimator imposes the locus, since the unconstrained plug-in stays near 0.08.
 Third, the local calculus is a reasonable but not exact guide: under design A the on-locus false-positive rate
-exceeded nominal and the achieved $\varepsilon=10^{-3}$ rate exceeded its prediction by about the same margin,
-which suggests a calibration issue but does not establish a heavier-than-$\chi^2_1$ null: the
-reported 3.9–17% interval includes 5%, and pair outcomes also depend on near-miss power.
+was 6/72 (Wilson 3.9–17%, compatible with the nominal 5%), and the achieved $\varepsilon=10^{-3}$ rate exceeded its
+prediction by a similar margin. That pattern suggests some miscalibration of the $\chi^2_1$ reference under the
+confounded design; it does not establish a heavier null.
 The limits are those of the design: one stratum, one perturbation axis, a known stratum hypothesis and known
 noise level, fresh groups drawn from the benchmark's own generator distribution rather than a shifted one, and
 replicates nested within 12 groups.
@@ -263,9 +264,64 @@ replicates nested within 12 groups.
 Replay: `sh observability/run_estimator.sh` (about 45 minutes on 2 cores; requires `python generate.py data`
 for the training-trajectory prior).
 
+## 8. Why the guarded pipeline lost the $\varepsilon=10^{-1}$ delta pairs (diagnostic)
+
+The confirmation records were hashed in `observability/FREEZE_CONFIRMATION.md` before this section's work;
+nothing here changes them. `observability/diagnose.py` runs the repository's own functions (`fit_field`,
+`distances`, `tolerance`, `locus_prediction`, `selection_threshold`) at 49 frames and $\sigma=10^{-5}$ on identical
+observations: the 12 original benchmark test delta cases, and the 288 fresh design-A observations of section 7,
+regenerated from the frozen seeds (a refit of one case reproduced its frozen $\Lambda$ to all printed digits).
+Each stage is replaced alone, and each replacement is recalibrated by the repository's own procedure on the
+benchmark validation split. The unchanged pipeline reproduced the published guarded forced and selective
+predictions on all 12 original delta cases. No nonlinear fit failed.
+
+| Stage (pairs at $\varepsilon=10^{-1}$) | original, forced | original, selective | fresh, forced | fresh, selective |
+| --- | ---: | ---: | ---: | ---: |
+| unchanged pipeline | 3/3 | 0/3 (0 answered) | 72/72 | 14/72 (14 answered) |
+| nonlinear trajectory-fit coefficients | 3/3 | 0/3 (0 answered) | 72/72 | 11/72 (11 answered) |
+| branch supplied, published tolerance, no abstention | 3/3 | — | 72/72 | — |
+| threshold-free: $d_\delta(\text{on})<d_\delta(\text{off})$ | 3/3 | | 72/72 | |
+
+**Coefficient recovery is not responsible.** Replacing the weak coefficients and their uncertainty with the
+nonlinear trajectory fit leaves all large-offset forced pairs correct. On the original groups,
+selective pairs remain unanswered; on the fresh groups, selective completions change from 14 to 11
+out of 72. Thus this replacement does not recover the lost selective coverage.
+
+**The branch guard is not responsible.** For every original and fresh case, with either coefficient source, the
+guard's eligible set was {delta, origin, gamma}, so the delta test was always evaluated.
+
+**The selective cutoff causes the observed loss.** The continuous delta distance separates every pair. The on-locus median is
+0.98 (original) and 0.96 (fresh), and the near-miss median is 10.1 and 19.9, against the frozen tolerance
+1.778. The forced decisions are therefore all correct. The loss is the selective step. By the definition in
+`locus_prediction`, a depth-2 answer has confidence at most $\log(\text{tol}/d_2)$. With the frozen selection
+cutoff 0.805 it is answered only if $d_2\le1.778\,e^{-0.805}=0.795$ [algebraic identity of the rule]. Noisy
+on-locus members sit near the whitened noise floor $d_2\approx1$. None of the 3 original on-locus members met
+the cutoff (median distance 0.98), and 14 of 72 fresh ones did. So the near-miss is answered and the
+depth-2 member abstains, and the pair counts as wrong. Here $d_2$ is the minimum over the
+eligible depth-two distances; it equals the delta distance for every original and fresh case in this diagnostic. The cutoff is chosen on validation pooled over all
+strata to reach 80% accuracy, and it is tighter than the delta distances can meet at this noise level.
+
+**A second calibration fragility.** With the branch supplied and the tolerance recalibrated by validation
+macro recall on the 12 validation delta cases alone, the chosen tolerance fell to 0.75. Most on-locus members
+were then called depth 1 (85% of fresh, all 3 original), and the pair rate collapsed to 11/72. With 3 depth-2
+members, and with near-misses at $10^{-5}$ that are indistinguishable from the locus, this particular recalibration is unstable evidence for choosing
+a tolerance, not a general impossibility theorem about calibration.
+
+**Scope.** These are diagnostic ablations on the same observations, not an improved estimator. A rule that
+drops or re-specifies the abstention step would need its own frozen calibration and a new confirmation sample.
+At $\varepsilon=10^{-3}$ and $10^{-5}$ under design A, the threshold-free ordering is near chance on the fresh
+observations (0.51 and 0.53 weak, 0.54 and 0.44 nonlinear), consistent with the information limit of section
+4. The 3/3 ordering at $10^{-3}$ on the original groups is too small a sample to say otherwise.
+
+Replay: `sh observability/run_diagnosis.sh` (about four minutes on two cores for a clean feature replay).
+The script resumes existing diagnostic features. Remove `observability/out/diagnosis/features.jsonl`
+in a clean copy to regenerate all 363 fits; `python observability/analyse_diagnosis.py` alone
+rebuilds the report from saved features. This diagnostic does not change the estimator or its frozen confirmation.
+
 ## Limits
 
 Everything here concerns one stratum and one perturbation axis; the other four strata, the closures of
 other branches' loci near these points, and correlated or non-Gaussian noise are not analysed. The
-unknown-background statements are first-order. The initial local design comparison uses three test groups of a public split; section 7 additionally
-evaluates the frozen estimator on 12 fresh generator-distribution groups, with replicates nested within groups.
+unknown-background statements are first-order. The initial local design comparison uses three public-split test groups. Section 7 adds 12 fresh
+generator-distribution groups; section 8 reuses the original and fresh design-A observations for diagnosis,
+not a new confirmation of an improved rule.
