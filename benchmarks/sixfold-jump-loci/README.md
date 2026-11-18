@@ -118,6 +118,13 @@ For a quick audit of the bundled estimator records, run `python observability/ve
 do not rerun nonlinear fitting. The full estimator replay resumes existing case records; use a clean
 copy with `observability/out/estimator/calibration.jsonl` and `confirm.jsonl` removed to refit every case.
 
+The [guarded-pipeline diagnosis](OBSERVABILITY.md)
+traces the large-offset selective failure to abstention: forced decisions already separated 3/3 original
+and 72/72 fresh design-A pairs. Run `sh observability/run_diagnosis.sh` for the diagnostic replay
+(about four minutes with a clean feature cache), or `python observability/verify_diagnosis.py` to audit
+the saved case grid, frozen confirmation hashes and cutoff mechanism. These ablations do not establish
+an improved selective rule.
+
 ## Reproduce
 
 Use Python 3.12 with the supplied dependency pins.

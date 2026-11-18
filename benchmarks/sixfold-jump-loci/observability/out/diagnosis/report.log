@@ -1,0 +1,90 @@
+{
+"S0 unchanged": {
+"tol": 1.7782794100389228,
+"selection": 0.8054027968829036
+},
+"S1 nonlinear coefficients": {
+"tol": 1.7782794100389228,
+"selection": 0.8452962763409975
+},
+"S2 branch supplied (weak), recalibrated": {
+"tol": 0.7498942093324558
+},
+"S2 branch supplied (weak), frozen S0 tol": {
+"tol": 1.7782794100389228
+},
+"S1+S2 nonlinear, branch supplied": {
+"tol": 0.7498942093324558
+}
+}
+{'cases': 12, 'identical': 12} nl failures 0
+orig|S0 unchanged|eps0.1 {'n': 3, 'forced': 3, 'selective': 0, 'answered': 0, 'on_locus_called_1': 0.0}
+orig|S0 unchanged|eps0.001 {'n': 3, 'forced': 0, 'selective': 0, 'answered': 0, 'on_locus_called_1': 0.0}
+orig|S0 unchanged|eps1e-05 {'n': 3, 'forced': 0, 'selective': 0, 'answered': 0, 'on_locus_called_1': 0.0}
+orig|S1 nonlinear coefficients|eps0.1 {'n': 3, 'forced': 3, 'selective': 0, 'answered': 0, 'on_locus_called_1': 0.0}
+orig|S1 nonlinear coefficients|eps0.001 {'n': 3, 'forced': 0, 'selective': 0, 'answered': 0, 'on_locus_called_1': 0.0}
+orig|S1 nonlinear coefficients|eps1e-05 {'n': 3, 'forced': 0, 'selective': 0, 'answered': 0, 'on_locus_called_1': 0.0}
+orig|S2 branch supplied (weak), recalibrated|eps0.1 {'n': 3, 'forced': 0, 'selective': 0, 'answered': 3, 'on_locus_called_1': 1.0}
+orig|S2 branch supplied (weak), recalibrated|eps0.001 {'n': 3, 'forced': 0, 'selective': 0, 'answered': 3, 'on_locus_called_1': 1.0}
+orig|S2 branch supplied (weak), recalibrated|eps1e-05 {'n': 3, 'forced': 0, 'selective': 0, 'answered': 3, 'on_locus_called_1': 1.0}
+orig|S2 branch supplied (weak), frozen S0 tol|eps0.1 {'n': 3, 'forced': 3, 'selective': 3, 'answered': 3, 'on_locus_called_1': 0.0}
+orig|S2 branch supplied (weak), frozen S0 tol|eps0.001 {'n': 3, 'forced': 0, 'selective': 0, 'answered': 3, 'on_locus_called_1': 0.0}
+orig|S2 branch supplied (weak), frozen S0 tol|eps1e-05 {'n': 3, 'forced': 0, 'selective': 0, 'answered': 3, 'on_locus_called_1': 0.0}
+orig|S1+S2 nonlinear, branch supplied|eps0.1 {'n': 3, 'forced': 0, 'selective': 0, 'answered': 3, 'on_locus_called_1': 1.0}
+orig|S1+S2 nonlinear, branch supplied|eps0.001 {'n': 3, 'forced': 0, 'selective': 0, 'answered': 3, 'on_locus_called_1': 1.0}
+orig|S1+S2 nonlinear, branch supplied|eps1e-05 {'n': 3, 'forced': 0, 'selective': 0, 'answered': 3, 'on_locus_called_1': 1.0}
+fresh|S0 unchanged|eps0.1 {'n': 72, 'forced': 72, 'selective': 14, 'answered': 14, 'on_locus_called_1': 0.0}
+fresh|S0 unchanged|eps0.001 {'n': 72, 'forced': 0, 'selective': 0, 'answered': 6, 'on_locus_called_1': 0.0}
+fresh|S0 unchanged|eps1e-05 {'n': 72, 'forced': 0, 'selective': 0, 'answered': 5, 'on_locus_called_1': 0.0}
+fresh|S1 nonlinear coefficients|eps0.1 {'n': 72, 'forced': 72, 'selective': 11, 'answered': 11, 'on_locus_called_1': 0.0}
+fresh|S1 nonlinear coefficients|eps0.001 {'n': 72, 'forced': 0, 'selective': 0, 'answered': 4, 'on_locus_called_1': 0.0}
+fresh|S1 nonlinear coefficients|eps1e-05 {'n': 72, 'forced': 0, 'selective': 0, 'answered': 2, 'on_locus_called_1': 0.0}
+fresh|S2 branch supplied (weak), recalibrated|eps0.1 {'n': 72, 'forced': 11, 'selective': 11, 'answered': 72, 'on_locus_called_1': 0.8472222222222222}
+fresh|S2 branch supplied (weak), recalibrated|eps0.001 {'n': 72, 'forced': 6, 'selective': 6, 'answered': 72, 'on_locus_called_1': 0.8472222222222222}
+fresh|S2 branch supplied (weak), recalibrated|eps1e-05 {'n': 72, 'forced': 7, 'selective': 7, 'answered': 72, 'on_locus_called_1': 0.8472222222222222}
+fresh|S2 branch supplied (weak), frozen S0 tol|eps0.1 {'n': 72, 'forced': 72, 'selective': 72, 'answered': 72, 'on_locus_called_1': 0.0}
+fresh|S2 branch supplied (weak), frozen S0 tol|eps0.001 {'n': 72, 'forced': 0, 'selective': 0, 'answered': 72, 'on_locus_called_1': 0.0}
+fresh|S2 branch supplied (weak), frozen S0 tol|eps1e-05 {'n': 72, 'forced': 0, 'selective': 0, 'answered': 72, 'on_locus_called_1': 0.0}
+fresh|S1+S2 nonlinear, branch supplied|eps0.1 {'n': 72, 'forced': 11, 'selective': 11, 'answered': 72, 'on_locus_called_1': 0.8472222222222222}
+fresh|S1+S2 nonlinear, branch supplied|eps0.001 {'n': 72, 'forced': 9, 'selective': 9, 'answered': 72, 'on_locus_called_1': 0.8472222222222222}
+fresh|S1+S2 nonlinear, branch supplied|eps1e-05 {'n': 72, 'forced': 9, 'selective': 9, 'answered': 72, 'on_locus_called_1': 0.8472222222222222}
+orig|weak_all|eps0.1 1.0
+orig|weak_all|eps0.001 1.0
+orig|weak_all|eps1e-05 0.3333333333333333
+orig|nl_all|eps0.1 1.0
+orig|nl_all|eps0.001 1.0
+orig|nl_all|eps1e-05 0.3333333333333333
+orig|weak_guarded|eps0.1 1.0
+orig|weak_guarded|eps0.001 1.0
+orig|weak_guarded|eps1e-05 0.3333333333333333
+orig|nl_guarded|eps0.1 1.0
+orig|nl_guarded|eps0.001 1.0
+orig|nl_guarded|eps1e-05 0.3333333333333333
+orig|median_delta_weak|eps0.1 [0.9778522701335294, 10.051156179445625]
+orig|median_delta_weak|eps0.001 [0.9778522701335294, 1.115867156634883]
+orig|median_delta_weak|eps1e-05 [0.9778522701335294, 0.9213874417947134]
+orig|median_delta_nl|eps0.1 [1.0896496076690387, 10.375204928933707]
+orig|median_delta_nl|eps0.001 [1.0896496076690387, 1.1671009422591498]
+orig|median_delta_nl|eps1e-05 [1.0896496076690387, 0.943257837473334]
+fresh|weak_all|eps0.1 1.0
+fresh|weak_all|eps0.001 0.5138888888888888
+fresh|weak_all|eps1e-05 0.5277777777777778
+fresh|nl_all|eps0.1 1.0
+fresh|nl_all|eps0.001 0.5416666666666666
+fresh|nl_all|eps1e-05 0.4444444444444444
+fresh|weak_guarded|eps0.1 1.0
+fresh|weak_guarded|eps0.001 0.5138888888888888
+fresh|weak_guarded|eps1e-05 0.5277777777777778
+fresh|nl_guarded|eps0.1 1.0
+fresh|nl_guarded|eps0.001 0.5416666666666666
+fresh|nl_guarded|eps1e-05 0.4444444444444444
+fresh|median_delta_weak|eps0.1 [0.9608340624210566, 19.884149786326716]
+fresh|median_delta_weak|eps0.001 [0.9608340624210566, 0.9476811317131031]
+fresh|median_delta_weak|eps1e-05 [0.9608340624210566, 0.9731706782788789]
+fresh|median_delta_nl|eps0.1 [1.0050440353351633, 20.82571980337363]
+fresh|median_delta_nl|eps0.001 [1.0050440353351633, 0.9818843217678783]
+fresh|median_delta_nl|eps1e-05 [1.0050440353351633, 0.9956238215511717]
+orig|weak {'delta+origin+gamma': 12}
+orig|nl {'delta+origin+gamma': 12}
+fresh|weak {'delta+origin+gamma': 288}
+fresh|nl {'delta+origin+gamma': 288}

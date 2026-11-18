@@ -47,6 +47,10 @@ jobs:
           cp observability/out/estimator/score.json /tmp/sixfold-saved-score.json
           python observability/score.py
           cmp /tmp/sixfold-saved-score.json observability/out/estimator/score.json
+          cp observability/out/diagnosis/report.json /tmp/sixfold-saved-diagnosis.json
+          python observability/analyse_diagnosis.py
+          cmp /tmp/sixfold-saved-diagnosis.json observability/out/diagnosis/report.json
+          python observability/verify_diagnosis.py
       - uses: actions/upload-artifact@v4
         with:
           name: sixfold-hamiltonian-jump-locus-benchmark
